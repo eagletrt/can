@@ -1,0 +1,149 @@
+{
+    "version": 1.3,
+    "topics": {
+        "BROADCAST": {
+            "id": 0,
+            "messages": {
+                "STEER_VERSION": {
+                    "STEER_VERSION": 1024
+                },
+                "DAS_VERSION": {
+                    "DAS_VERSION": 1056
+                },
+                "HV_VERSION": {
+                    "HV_VERSION": 1088
+                },
+                "LV_VERSION": {
+                    "LV_VERSION": 1120
+                },
+                "TLM_VERSION": {
+                    "TLM_VERSION": 1152
+                },
+                "TIMESTAMP": {
+                    "TIMESTAMP": 256
+                }
+            }
+        },
+        "TLM": {
+            "id": 1,
+            "messages": {
+                "SET_TLM_STATUS": {
+                    "SET_TLM_STATUS": 257
+                },
+                "STEER_SYSTEM_STATUS": {
+                    "STEER_SYSTEM_STATUS": 1793
+                },
+                "MARKER": {
+                    "MARKER": 1
+                }
+            }
+        },
+        "STEER": {
+            "id": 2,
+            "messages": {
+                "TLM_STATUS": {
+                    "TLM_STATUS": 258
+                },
+                "CAR_STATUS": {
+                    "CAR_STATUS": 514
+                },
+                "DAS_ERRORS": {
+                    "DAS_ERRORS": 2
+                },
+                "SPEED": {
+                    "SPEED": 546
+                }
+            }
+        },
+        "DASnSTEERnCART": {
+            "id": 3,
+            "messages": {
+                "HV_VOLTAGE": {
+                    "HV_VOLTAGE": 771
+                },
+                "HV_CURRENT": {
+                    "HV_CURRENT": 803
+                },
+                "HV_TEMP": {
+                    "HV_TEMP": 835
+                },
+                "HV_ERRORS": {
+                    "HV_ERRORS": 3
+                },
+                "TS_STATUS": {
+                    "TS_STATUS": 35
+                }
+            }
+        },
+        "BMS_HV": {
+            "id": 4,
+            "messages": {
+                "SET_TS_STATUS": {
+                    "SET_TS_STATUS_DAS": 4,
+                    "SET_TS_STATUS_HANDCART": 36
+                },
+                "SET_CELL_BALANCING_STATUS": {
+                    "SET_CELL_BALANCING_STATUS": 516
+                },
+                "HANDCART_STATUS": {
+                    "HANDCART_STATUS": 772
+                }
+            }
+        },
+        "DAS": {
+            "id": 5,
+            "messages": {
+                "STEER_STATUS": {
+                    "STEER_STATUS": 261
+                },
+                "SET_CAR_STATUS": {
+                    "SET_CAR_STATUS": 773
+                },
+                "SET_PEDALS_RANGE": {
+                    "SET_PEDALS_RANGE": 1029
+                }
+            }
+        },
+        "DASnSTEER": {
+            "id": 6,
+            "messages": {
+                "LV_CURRENT": {
+                    "LV_CURRENT": 774
+                },
+                "LV_VOLTAGE": {
+                    "LV_VOLTAGE": 806
+                },
+                "LV_TEMPERATURE": {
+                    "LV_TEMPERATURE": 838
+                },
+                "COOLING_STATUS": {
+                    "COOLING_STATUS": 870
+                }
+            }
+        },
+        "HANDCART": {
+            "id": 7,
+            "messages": {
+                "HV_CELLS_VOLTAGE": {
+                    "HV_CELLS_VOLTAGE": 519
+                },
+                "HV_CELLS_TEMP": {
+                    "HV_CELLS_TEMP": 551
+                },
+                "HV_CELL_BALANCING_STATUS": {
+                    "HV_CELL_BALANCING_STATUS": 583
+                }
+            }
+        },
+        "FIXED_IDS": {
+            "messages": {
+                "INV_L_SET_TORQUE": {
+                    "INV_L_SET_TORQUE": 513
+                },
+                "INV_L_RESPONSE": {
+                    "INV_L_RESPONSE": 385
+                }
+            }
+        }
+    }
+}
