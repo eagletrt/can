@@ -21,10 +21,10 @@ jobs:
       uses: arduino/setup-protoc@v1.1.2
       with:
         version: '3.x'
-    - name: Run ID generator
+    - name: Run canlib generator
       run: |
         pip install git+https://github.com/eagletrt/canlib.git#egg=canlib
-        canlib generate-all networks ids lib proto csv 
+        canlib generate-all networks ids lib proto csv
         mkdir -p /tmp/workspace
         cp -R networks ids lib proto csv /tmp/workspace
     - uses: actions/checkout@v2
