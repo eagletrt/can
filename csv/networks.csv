@@ -56,5 +56,5 @@ HV_CELL_BALANCING_STATUS,HV_CELL_BALANCING_STATUS: 583,primary,HANDCART,5,BMS_HV
 SET_CELL_BALANCING_STATUS,SET_CELL_BALANCING_STATUS: 516,primary,BMS_HV,5,HANDCART,BMS_HV,,set_balancing_status: Toggle,Set cell balancing status; only once
 HANDCART_STATUS,HANDCART_STATUS: 772,primary,BMS_HV,4,HANDCART,BMS_HV,500,connected: bool,Sends updates on the presence of the handcart
 SPEED,SPEED: 546,primary,STEER,5,DAS,STEER,100,"encoder_r: uint16, encoder_l: uint16, inverter_r: uint16, inverter_l: uint16",Encoder speed and inverter RPMs
-INV_L_SET_TORQUE,INV_L_SET_TORQUE: 513,primary,FIXED_IDS,,DAS,INVERTER_L,20,"regid: uint8, lsb: uint8, msb: uint8",
+INV_L_SET_TORQUE,INV_L_SET_TORQUE: 513,primary,FIXED_IDS,,DAS,INVERTER_L,20,"reg_id: uint8, lsb: uint8, msb: uint8",
 INV_L_RESPONSE,INV_L_RESPONSE: 385,primary,FIXED_IDS,,INVERTER_L,DAS,100,"reg_id: uint8, data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8",

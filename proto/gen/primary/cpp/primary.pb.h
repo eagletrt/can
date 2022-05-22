@@ -5784,18 +5784,18 @@ class InvLSetTorque final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRegidFieldNumber = 1,
+    kRegIdFieldNumber = 1,
     kLsbFieldNumber = 2,
     kMsbFieldNumber = 3,
     kTimestampFieldNumber = 4,
   };
-  // uint32 regid = 1;
-  void clear_regid();
-  uint32_t regid() const;
-  void set_regid(uint32_t value);
+  // uint32 reg_id = 1;
+  void clear_reg_id();
+  uint32_t reg_id() const;
+  void set_reg_id(uint32_t value);
   private:
-  uint32_t _internal_regid() const;
-  void _internal_set_regid(uint32_t value);
+  uint32_t _internal_reg_id() const;
+  void _internal_set_reg_id(uint32_t value);
   public:
 
   // uint32 lsb = 2;
@@ -5832,7 +5832,7 @@ class InvLSetTorque final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t regid_;
+  uint32_t reg_id_;
   uint32_t lsb_;
   uint32_t msb_;
   uint32_t timestamp_;
@@ -9037,24 +9037,24 @@ inline void HvCellBalancingStatus::set_timestamp(uint32_t value) {
 
 // InvLSetTorque
 
-// uint32 regid = 1;
-inline void InvLSetTorque::clear_regid() {
-  regid_ = 0u;
+// uint32 reg_id = 1;
+inline void InvLSetTorque::clear_reg_id() {
+  reg_id_ = 0u;
 }
-inline uint32_t InvLSetTorque::_internal_regid() const {
-  return regid_;
+inline uint32_t InvLSetTorque::_internal_reg_id() const {
+  return reg_id_;
 }
-inline uint32_t InvLSetTorque::regid() const {
-  // @@protoc_insertion_point(field_get:primary.InvLSetTorque.regid)
-  return _internal_regid();
+inline uint32_t InvLSetTorque::reg_id() const {
+  // @@protoc_insertion_point(field_get:primary.InvLSetTorque.reg_id)
+  return _internal_reg_id();
 }
-inline void InvLSetTorque::_internal_set_regid(uint32_t value) {
+inline void InvLSetTorque::_internal_set_reg_id(uint32_t value) {
   
-  regid_ = value;
+  reg_id_ = value;
 }
-inline void InvLSetTorque::set_regid(uint32_t value) {
-  _internal_set_regid(value);
-  // @@protoc_insertion_point(field_set:primary.InvLSetTorque.regid)
+inline void InvLSetTorque::set_reg_id(uint32_t value) {
+  _internal_set_reg_id(value);
+  // @@protoc_insertion_point(field_set:primary.InvLSetTorque.reg_id)
 }
 
 // uint32 lsb = 2;

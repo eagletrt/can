@@ -259,7 +259,7 @@ uint32 timestamp = 2;
 }
 
 message InvLSetTorque {
-uint32 regid = 1;
+uint32 reg_id = 1;
 uint32 lsb = 2;
 uint32 msb = 3;
 uint32 timestamp = 4;

@@ -531,7 +531,7 @@ PrimaryInvLSetTorqueMsg* primary_inv_l_set_torque_d = (PrimaryInvLSetTorqueMsg*)
 deserialize_PrimaryInvLSetTorque(payload, primary_inv_l_set_torque_d);
 
 primary::InvLSetTorque primary_inv_l_set_torque_p;
-primary_inv_l_set_torque_p.set_regid(primary_inv_l_set_torque_d->);
+primary_inv_l_set_torque_p.set_reg_id(primary_inv_l_set_torque_d->);
 primary_inv_l_set_torque_p.set_lsb(primary_inv_l_set_torque_d->);
 primary_inv_l_set_torque_p.set_msb(primary_inv_l_set_torque_d->);
 primary_inv_l_set_torque_p.set_timestamp(primary_inv_l_set_torque_d->);

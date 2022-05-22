@@ -575,7 +575,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SPEED;
 
 typedef struct __CANLIB_PACKED {
-    primary_uint8 regid;
+    primary_uint8 reg_id;
     primary_uint8 lsb;
     primary_uint8 msb;
 #ifdef CANLIB_TIMESTAMP
@@ -1355,7 +1355,7 @@ void primary_fields_file_SPEED(FILE* buffer);
 
 void primary_serialize_INV_L_SET_TORQUE(
     uint8_t* data,
-    primary_uint8 regid,
+    primary_uint8 reg_id,
     primary_uint8 lsb,
     primary_uint8 msb
 );
@@ -3627,11 +3627,11 @@ void primary_fields_file_SPEED(FILE* buffer) {
 
 void primary_serialize_INV_L_SET_TORQUE(
     uint8_t* data,
-    primary_uint8 regid,
+    primary_uint8 reg_id,
     primary_uint8 lsb,
     primary_uint8 msb
 ) {
-    data[0] = regid;
+    data[0] = reg_id;
     data[1] = lsb;
     data[2] = msb;
 }
@@ -3640,7 +3640,7 @@ void primary_serialize_struct_INV_L_SET_TORQUE(
     uint8_t* data,
     primary_message_INV_L_SET_TORQUE* message
 ) {
-    data[0] = message->regid;
+    data[0] = message->reg_id;
     data[1] = message->lsb;
     data[2] = message->msb;
 }
@@ -3655,7 +3655,7 @@ void primary_deserialize_INV_L_SET_TORQUE(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->regid = data[0];
+    message->reg_id = data[0];
     message->lsb = data[1];
     message->msb = data[2];
 }
@@ -3666,7 +3666,7 @@ void primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* messag
         "%u" CANLIB_SEPARATOR 
         "%u" CANLIB_SEPARATOR 
         "%u",
-        message->regid,
+        message->reg_id,
         message->lsb,
         message->msb
     );
@@ -3675,7 +3675,7 @@ void primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* messag
 void primary_fields_INV_L_SET_TORQUE(char* buffer) {
     sprintf(
         buffer,
-        "regid" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
     );
@@ -3687,7 +3687,7 @@ void primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* m
         "%u" CANLIB_SEPARATOR 
         "%u" CANLIB_SEPARATOR 
         "%u",
-        message->regid,
+        message->reg_id,
         message->lsb,
         message->msb
     );
@@ -3696,7 +3696,7 @@ void primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* m
 void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
     fprintf(
         buffer,
-        "regid" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
     );

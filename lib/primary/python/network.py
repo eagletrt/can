@@ -1162,11 +1162,11 @@ class message_SPEED:
 class message_INV_L_SET_TORQUE:
     def __init__(
         self,
-        regid,
+        reg_id,
         lsb,
         msb
     ):
-        self.regid = uint8(regid) if regid is not None else None
+        self.reg_id = uint8(reg_id) if reg_id is not None else None
         self.lsb = uint8(lsb) if lsb is not None else None
         self.msb = uint8(msb) if msb is not None else None
         self.size = 3
@@ -1174,18 +1174,18 @@ class message_INV_L_SET_TORQUE:
 
     def serialize(self):
         data = bytearray()
-        data.extend(pack("<BBB", self.regid, self.lsb, self.msb))
+        data.extend(pack("<BBB", self.reg_id, self.lsb, self.msb))
         return data
 
     def deserialize(self, data):
-        self.regid = uint8(unpack("<B", data[0:1])[0])
+        self.reg_id = uint8(unpack("<B", data[0:1])[0])
         self.lsb = uint8(unpack("<xB", data[0:2])[0])
         self.msb = uint8(unpack("<xxB", data[0:3])[0])
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_SET_TORQUE):
             return False
-        if self.regid != other.regid:
+        if self.reg_id != other.reg_id:
             return False
         if self.lsb != other.lsb:
             return False

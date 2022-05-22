@@ -482,7 +482,7 @@ struct HvCellBalancingStatusDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HvCellBalancingStatusDefaultTypeInternal _HvCellBalancingStatus_default_instance_;
 PROTOBUF_CONSTEXPR InvLSetTorque::InvLSetTorque(
     ::_pbi::ConstantInitialized)
-  : regid_(0u)
+  : reg_id_(0u)
   , lsb_(0u)
   , msb_(0u)
   , timestamp_(0u){}
@@ -859,7 +859,7 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::InvLSetTorque, regid_),
+  PROTOBUF_FIELD_OFFSET(::primary::InvLSetTorque, reg_id_),
   PROTOBUF_FIELD_OFFSET(::primary::InvLSetTorque, lsb_),
   PROTOBUF_FIELD_OFFSET(::primary::InvLSetTorque, msb_),
   PROTOBUF_FIELD_OFFSET(::primary::InvLSetTorque, timestamp_),
@@ -1065,75 +1065,75 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\n\006temp_5\030\007 \001(\r\022\016\n\006temp_6\030\010 \001(\r\022\021\n\ttimest"
   "amp\030\t \001(\r\"Y\n\025HvCellBalancingStatus\022-\n\020ba"
   "lancing_status\030\001 \001(\0162\023.primary.ToggleTyp"
-  "e\022\021\n\ttimestamp\030\002 \001(\r\"K\n\rInvLSetTorque\022\r\n"
-  "\005regid\030\001 \001(\r\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003 \001(\r\022\021"
-  "\n\ttimestamp\030\004 \001(\r\"\241\001\n\014InvLResponse\022\016\n\006re"
-  "g_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001"
-  "(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006da"
-  "ta_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001"
-  "(\r\022\021\n\ttimestamp\030\t \001(\r\"\312\013\n\rPrimaryFenice\022"
-  ",\n\rsteer_version\030\001 \003(\0132\025.primary.SteerVe"
-  "rsion\022(\n\013das_version\030\002 \003(\0132\023.primary.Das"
-  "Version\022&\n\nhv_version\030\003 \003(\0132\022.primary.Hv"
-  "Version\022&\n\nlv_version\030\004 \003(\0132\022.primary.Lv"
-  "Version\022(\n\013tlm_version\030\005 \003(\0132\023.primary.T"
-  "lmVersion\022%\n\ttimestamp\030\006 \003(\0132\022.primary.T"
-  "imestamp\022-\n\016set_tlm_status\030\007 \003(\0132\025.prima"
-  "ry.SetTlmStatus\0227\n\023steer_system_status\030\010"
-  " \003(\0132\032.primary.SteerSystemStatus\022\037\n\006mark"
-  "er\030\t \003(\0132\017.primary.Marker\022&\n\ntlm_status\030"
-  "\n \003(\0132\022.primary.TlmStatus\022&\n\ncar_status\030"
-  "\013 \003(\0132\022.primary.CarStatus\022&\n\ndas_errors\030"
-  "\014 \003(\0132\022.primary.DasErrors\022\035\n\005speed\030\r \003(\013"
-  "2\016.primary.Speed\022&\n\nhv_voltage\030\016 \003(\0132\022.p"
-  "rimary.HvVoltage\022&\n\nhv_current\030\017 \003(\0132\022.p"
-  "rimary.HvCurrent\022 \n\007hv_temp\030\020 \003(\0132\017.prim"
-  "ary.HvTemp\022$\n\thv_errors\030\021 \003(\0132\021.primary."
-  "HvErrors\022$\n\tts_status\030\022 \003(\0132\021.primary.Ts"
-  "Status\022+\n\rset_ts_status\030\023 \003(\0132\024.primary."
-  "SetTsStatus\022B\n\031set_cell_balancing_status"
-  "\030\024 \003(\0132\037.primary.SetCellBalancingStatus\022"
-  "0\n\017handcart_status\030\025 \003(\0132\027.primary.Handc"
-  "artStatus\022*\n\014steer_status\030\026 \003(\0132\024.primar"
-  "y.SteerStatus\022-\n\016set_car_status\030\027 \003(\0132\025."
-  "primary.SetCarStatus\0221\n\020set_pedals_range"
-  "\030\030 \003(\0132\027.primary.SetPedalsRange\022&\n\nlv_cu"
-  "rrent\030\031 \003(\0132\022.primary.LvCurrent\022&\n\nlv_vo"
-  "ltage\030\032 \003(\0132\022.primary.LvVoltage\022.\n\016lv_te"
-  "mperature\030\033 \003(\0132\026.primary.LvTemperature\022"
-  ".\n\016cooling_status\030\034 \003(\0132\026.primary.Coolin"
-  "gStatus\0221\n\020hv_cells_voltage\030\035 \003(\0132\027.prim"
-  "ary.HvCellsVoltage\022+\n\rhv_cells_temp\030\036 \003("
-  "\0132\024.primary.HvCellsTemp\022@\n\030hv_cell_balan"
-  "cing_status\030\037 \003(\0132\036.primary.HvCellBalanc"
-  "ingStatus\0220\n\020inv_l_set_torque\030  \003(\0132\026.pr"
-  "imary.InvLSetTorque\022-\n\016inv_l_response\030! "
-  "\003(\0132\025.primary.InvLResponse*o\n\014RacetypeTy"
-  "pe\022\031\n\025RACETYPE_ACCELERATION\020\000\022\024\n\020RACETYP"
-  "E_SKIDPAD\020\001\022\026\n\022RACETYPE_AUTOCROSS\020\002\022\026\n\022R"
-  "ACETYPE_ENDURANCE\020\003*\\\n\022InverterstatusTyp"
-  "e\022\026\n\022INVERTERSTATUS_OFF\020\000\022\027\n\023INVERTERSTA"
-  "TUS_IDLE\020\001\022\025\n\021INVERTERSTATUS_ON\020\002*K\n\rCar"
-  "statusType\022\022\n\016CARSTATUS_IDLE\020\000\022\023\n\017CARSTA"
-  "TUS_SETUP\020\001\022\021\n\rCARSTATUS_RUN\020\002*+\n\nToggle"
-  "Type\022\r\n\tTOGGLE_ON\020\000\022\016\n\nTOGGLE_OFF\020\001*\224\001\n\023"
-  "TractioncontrolType\022\027\n\023TRACTIONCONTROL_O"
-  "FF\020\000\022 \n\034TRACTIONCONTROL_SLIP_CONTROL\020\001\022$"
-  "\n TRACTIONCONTROL_TORQUE_VECTORING\020\002\022\034\n\030"
-  "TRACTIONCONTROL_COMPLETE\020\003*]\n\014TsstatusTy"
-  "pe\022\020\n\014TSSTATUS_OFF\020\000\022\026\n\022TSSTATUS_PRECHAR"
-  "GE\020\001\022\017\n\013TSSTATUS_ON\020\002\022\022\n\016TSSTATUS_FATAL\020"
-  "\003*V\n\007MapType\022\t\n\005MAP_R\020\000\022\013\n\007MAP_D20\020\001\022\013\n\007"
-  "MAP_D40\020\002\022\013\n\007MAP_D60\020\003\022\013\n\007MAP_D80\020\004\022\014\n\010M"
-  "AP_D100\020\005*\?\n\020SetcarstatusType\022\025\n\021SETCARS"
-  "TATUS_IDLE\020\000\022\024\n\020SETCARSTATUS_RUN\020\001*1\n\tBo"
-  "undType\022\021\n\rBOUND_SET_MAX\020\000\022\021\n\rBOUND_SET_"
-  "MIN\020\001*3\n\tPedalType\022\025\n\021PEDAL_ACCELERATOR\020"
-  "\000\022\017\n\013PEDAL_BRAKE\020\001b\006proto3"
+  "e\022\021\n\ttimestamp\030\002 \001(\r\"L\n\rInvLSetTorque\022\016\n"
+  "\006reg_id\030\001 \001(\r\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003 \001(\r\022"
+  "\021\n\ttimestamp\030\004 \001(\r\"\241\001\n\014InvLResponse\022\016\n\006r"
+  "eg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 "
+  "\001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006d"
+  "ata_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 "
+  "\001(\r\022\021\n\ttimestamp\030\t \001(\r\"\312\013\n\rPrimaryFenice"
+  "\022,\n\rsteer_version\030\001 \003(\0132\025.primary.SteerV"
+  "ersion\022(\n\013das_version\030\002 \003(\0132\023.primary.Da"
+  "sVersion\022&\n\nhv_version\030\003 \003(\0132\022.primary.H"
+  "vVersion\022&\n\nlv_version\030\004 \003(\0132\022.primary.L"
+  "vVersion\022(\n\013tlm_version\030\005 \003(\0132\023.primary."
+  "TlmVersion\022%\n\ttimestamp\030\006 \003(\0132\022.primary."
+  "Timestamp\022-\n\016set_tlm_status\030\007 \003(\0132\025.prim"
+  "ary.SetTlmStatus\0227\n\023steer_system_status\030"
+  "\010 \003(\0132\032.primary.SteerSystemStatus\022\037\n\006mar"
+  "ker\030\t \003(\0132\017.primary.Marker\022&\n\ntlm_status"
+  "\030\n \003(\0132\022.primary.TlmStatus\022&\n\ncar_status"
+  "\030\013 \003(\0132\022.primary.CarStatus\022&\n\ndas_errors"
+  "\030\014 \003(\0132\022.primary.DasErrors\022\035\n\005speed\030\r \003("
+  "\0132\016.primary.Speed\022&\n\nhv_voltage\030\016 \003(\0132\022."
+  "primary.HvVoltage\022&\n\nhv_current\030\017 \003(\0132\022."
+  "primary.HvCurrent\022 \n\007hv_temp\030\020 \003(\0132\017.pri"
+  "mary.HvTemp\022$\n\thv_errors\030\021 \003(\0132\021.primary"
+  ".HvErrors\022$\n\tts_status\030\022 \003(\0132\021.primary.T"
+  "sStatus\022+\n\rset_ts_status\030\023 \003(\0132\024.primary"
+  ".SetTsStatus\022B\n\031set_cell_balancing_statu"
+  "s\030\024 \003(\0132\037.primary.SetCellBalancingStatus"
+  "\0220\n\017handcart_status\030\025 \003(\0132\027.primary.Hand"
+  "cartStatus\022*\n\014steer_status\030\026 \003(\0132\024.prima"
+  "ry.SteerStatus\022-\n\016set_car_status\030\027 \003(\0132\025"
+  ".primary.SetCarStatus\0221\n\020set_pedals_rang"
+  "e\030\030 \003(\0132\027.primary.SetPedalsRange\022&\n\nlv_c"
+  "urrent\030\031 \003(\0132\022.primary.LvCurrent\022&\n\nlv_v"
+  "oltage\030\032 \003(\0132\022.primary.LvVoltage\022.\n\016lv_t"
+  "emperature\030\033 \003(\0132\026.primary.LvTemperature"
+  "\022.\n\016cooling_status\030\034 \003(\0132\026.primary.Cooli"
+  "ngStatus\0221\n\020hv_cells_voltage\030\035 \003(\0132\027.pri"
+  "mary.HvCellsVoltage\022+\n\rhv_cells_temp\030\036 \003"
+  "(\0132\024.primary.HvCellsTemp\022@\n\030hv_cell_bala"
+  "ncing_status\030\037 \003(\0132\036.primary.HvCellBalan"
+  "cingStatus\0220\n\020inv_l_set_torque\030  \003(\0132\026.p"
+  "rimary.InvLSetTorque\022-\n\016inv_l_response\030!"
+  " \003(\0132\025.primary.InvLResponse*o\n\014RacetypeT"
+  "ype\022\031\n\025RACETYPE_ACCELERATION\020\000\022\024\n\020RACETY"
+  "PE_SKIDPAD\020\001\022\026\n\022RACETYPE_AUTOCROSS\020\002\022\026\n\022"
+  "RACETYPE_ENDURANCE\020\003*\\\n\022InverterstatusTy"
+  "pe\022\026\n\022INVERTERSTATUS_OFF\020\000\022\027\n\023INVERTERST"
+  "ATUS_IDLE\020\001\022\025\n\021INVERTERSTATUS_ON\020\002*K\n\rCa"
+  "rstatusType\022\022\n\016CARSTATUS_IDLE\020\000\022\023\n\017CARST"
+  "ATUS_SETUP\020\001\022\021\n\rCARSTATUS_RUN\020\002*+\n\nToggl"
+  "eType\022\r\n\tTOGGLE_ON\020\000\022\016\n\nTOGGLE_OFF\020\001*\224\001\n"
+  "\023TractioncontrolType\022\027\n\023TRACTIONCONTROL_"
+  "OFF\020\000\022 \n\034TRACTIONCONTROL_SLIP_CONTROL\020\001\022"
+  "$\n TRACTIONCONTROL_TORQUE_VECTORING\020\002\022\034\n"
+  "\030TRACTIONCONTROL_COMPLETE\020\003*]\n\014TsstatusT"
+  "ype\022\020\n\014TSSTATUS_OFF\020\000\022\026\n\022TSSTATUS_PRECHA"
+  "RGE\020\001\022\017\n\013TSSTATUS_ON\020\002\022\022\n\016TSSTATUS_FATAL"
+  "\020\003*V\n\007MapType\022\t\n\005MAP_R\020\000\022\013\n\007MAP_D20\020\001\022\013\n"
+  "\007MAP_D40\020\002\022\013\n\007MAP_D60\020\003\022\013\n\007MAP_D80\020\004\022\014\n\010"
+  "MAP_D100\020\005*\?\n\020SetcarstatusType\022\025\n\021SETCAR"
+  "STATUS_IDLE\020\000\022\024\n\020SETCARSTATUS_RUN\020\001*1\n\tB"
+  "oundType\022\021\n\rBOUND_SET_MAX\020\000\022\021\n\rBOUND_SET"
+  "_MIN\020\001*3\n\tPedalType\022\025\n\021PEDAL_ACCELERATOR"
+  "\020\000\022\017\n\013PEDAL_BRAKE\020\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 5466, descriptor_table_protodef_primary_2eproto,
+    false, false, 5467, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
     &descriptor_table_primary_2eproto_once, nullptr, 0, 34,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
@@ -8574,17 +8574,17 @@ InvLSetTorque::InvLSetTorque(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 InvLSetTorque::InvLSetTorque(const InvLSetTorque& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&regid_, &from.regid_,
+  ::memcpy(&reg_id_, &from.reg_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&regid_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&reg_id_)) + sizeof(timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.InvLSetTorque)
 }
 
 inline void InvLSetTorque::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&regid_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&reg_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&regid_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&reg_id_)) + sizeof(timestamp_));
 }
 
 InvLSetTorque::~InvLSetTorque() {
@@ -8610,9 +8610,9 @@ void InvLSetTorque::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&regid_, 0, static_cast<size_t>(
+  ::memset(&reg_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&regid_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&reg_id_)) + sizeof(timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8622,10 +8622,10 @@ const char* InvLSetTorque::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 regid = 1;
+      // uint32 reg_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          regid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          reg_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8683,10 +8683,10 @@ uint8_t* InvLSetTorque::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 regid = 1;
-  if (this->_internal_regid() != 0) {
+  // uint32 reg_id = 1;
+  if (this->_internal_reg_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_regid(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_reg_id(), target);
   }
 
   // uint32 lsb = 2;
@@ -8723,9 +8723,9 @@ size_t InvLSetTorque::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 regid = 1;
-  if (this->_internal_regid() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_regid());
+  // uint32 reg_id = 1;
+  if (this->_internal_reg_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_reg_id());
   }
 
   // uint32 lsb = 2;
@@ -8765,8 +8765,8 @@ void InvLSetTorque::MergeFrom(const InvLSetTorque& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_regid() != 0) {
-    _internal_set_regid(from._internal_regid());
+  if (from._internal_reg_id() != 0) {
+    _internal_set_reg_id(from._internal_reg_id());
   }
   if (from._internal_lsb() != 0) {
     _internal_set_lsb(from._internal_lsb());
@@ -8797,9 +8797,9 @@ void InvLSetTorque::InternalSwap(InvLSetTorque* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(InvLSetTorque, timestamp_)
       + sizeof(InvLSetTorque::timestamp_)
-      - PROTOBUF_FIELD_OFFSET(InvLSetTorque, regid_)>(
-          reinterpret_cast<char*>(&regid_),
-          reinterpret_cast<char*>(&other->regid_));
+      - PROTOBUF_FIELD_OFFSET(InvLSetTorque, reg_id_)>(
+          reinterpret_cast<char*>(&reg_id_),
+          reinterpret_cast<char*>(&other->reg_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InvLSetTorque::GetMetadata() const {
