@@ -1,89 +1,90 @@
 from enum import IntEnum, IntFlag
 from struct import pack, unpack
+from typing import Any
 
-def bms_int8(value):
+def int8(value: Any) -> int:
     return int(value)
 
-def bms_uint8(value):
+def uint8(value: Any) -> int:
     return int(value)
 
-def bms_int16(value):
+def int16(value: Any) -> int:
     return int(value)
 
-def bms_uint16(value):
+def uint16(value: Any) -> int:
     return int(value)
 
-def bms_int32(value):
+def int32(value: Any) -> int:
     return int(value)
 
-def bms_uint32(value):
+def uint32(value: Any) -> int:
     return int(value)
 
-def bms_int64(value):
+def int64(value: Any) -> int:
     return int(value)
 
-def bms_uint64(value):
+def uint64(value: Any) -> int:
     return int(value)
 
-def bms_float32(value):
+def float32(value: Any) -> float:
     return float(value)
 
-def bms_float64(value):
+def float64(value: Any) -> float:
     return float(value)
 
-def bms_bool(value):
+def bool(value: Any) -> bool:
     return bool(value)
 
 
 # Bitsets
 
-class bms_Errors(IntFlag):
-    CAN_COMM = 2
-    LTC_COMM = 4
-    TEMP_COMM_0 = 8
-    TEMP_COMM_1 = 16
-    TEMP_COMM_2 = 32
-    TEMP_COMM_3 = 64
-    TEMP_COMM_4 = 128
-    TEMP_COMM_5 = 256
+class Errors(IntFlag):
+    CAN_COMM = 1
+    LTC_COMM = 2
+    TEMP_COMM_0 = 4
+    TEMP_COMM_1 = 8
+    TEMP_COMM_2 = 16
+    TEMP_COMM_3 = 32
+    TEMP_COMM_4 = 64
+    TEMP_COMM_5 = 128
 
-class bms_BalancingCells(IntFlag):
-    CELL0 = 2
-    CELL1 = 4
-    CELL2 = 8
-    CELL3 = 16
-    CELL4 = 32
-    CELL5 = 64
-    CELL6 = 128
-    CELL7 = 256
-    CELL8 = 512
-    CELL9 = 1024
-    CELL10 = 2048
-    CELL11 = 4096
-    CELL12 = 8192
-    CELL13 = 16384
-    CELL14 = 32768
-    CELL15 = 65536
-    CELL16 = 131072
-    CELL17 = 262144
+class BalancingCells(IntFlag):
+    CELL0 = 1
+    CELL1 = 2
+    CELL2 = 4
+    CELL3 = 8
+    CELL4 = 16
+    CELL5 = 32
+    CELL6 = 64
+    CELL7 = 128
+    CELL8 = 256
+    CELL9 = 512
+    CELL10 = 1024
+    CELL11 = 2048
+    CELL12 = 4096
+    CELL13 = 8192
+    CELL14 = 16384
+    CELL15 = 32768
+    CELL16 = 65536
+    CELL17 = 131072
 
 # Enums
 
-class bms_BalancingStatus(IntEnum):
-    OFF = 1
-    DISCHARGE = 2
+class BalancingStatus(IntEnum):
+    OFF = 0
+    DISCHARGE = 1
 
 # Messages
 
 
-class bms_message_BOARD_STATUS:
+class message_BOARD_STATUS:
     def __init__(
         self,
         errors,
         balancing_status
     ):
-        self.errors = bms_Errors(errors) if errors is not None else None
-        self.balancing_status = bms_BalancingStatus(balancing_status) if balancing_status is not None else None
+        self.errors = Errors(errors) if errors is not None else None
+        self.balancing_status = BalancingStatus(balancing_status) if balancing_status is not None else None
         self.size = 2
 
     def serialize(self):
@@ -92,11 +93,11 @@ class bms_message_BOARD_STATUS:
         return data
 
     def deserialize(self, data):
-        self.errors = bms_Errors(int((unpack("<B", data[0:1])[0] << 0)))
-        self.balancing_status = bms_BalancingStatus((unpack("<xB", data[0:2])[0] & 128) >> 7)
+        self.errors = Errors(int((unpack("<B", data[0:1])[0] << 0)))
+        self.balancing_status = BalancingStatus((unpack("<xB", data[0:2])[0] & 128) >> 7)
 
     def __eq__(self, other):
-        if not isinstance(other, bms_message_BOARD_STATUS):
+        if not isinstance(other, message_BOARD_STATUS):
             return False
         if self.errors != other.errors:
             return False
@@ -105,7 +106,7 @@ class bms_message_BOARD_STATUS:
         return True
 
 
-class bms_message_TEMPERATURES:
+class message_TEMPERATURES:
     def __init__(
         self,
         start_index,
@@ -116,13 +117,13 @@ class bms_message_TEMPERATURES:
         temp4,
         temp5
     ):
-        self.start_index = bms_uint8(start_index) if start_index is not None else None
-        self.temp0 = bms_uint8(temp0) if temp0 is not None else None
-        self.temp1 = bms_uint8(temp1) if temp1 is not None else None
-        self.temp2 = bms_uint8(temp2) if temp2 is not None else None
-        self.temp3 = bms_uint8(temp3) if temp3 is not None else None
-        self.temp4 = bms_uint8(temp4) if temp4 is not None else None
-        self.temp5 = bms_uint8(temp5) if temp5 is not None else None
+        self.start_index = uint8(start_index) if start_index is not None else None
+        self.temp0 = uint8(temp0) if temp0 is not None else None
+        self.temp1 = uint8(temp1) if temp1 is not None else None
+        self.temp2 = uint8(temp2) if temp2 is not None else None
+        self.temp3 = uint8(temp3) if temp3 is not None else None
+        self.temp4 = uint8(temp4) if temp4 is not None else None
+        self.temp5 = uint8(temp5) if temp5 is not None else None
         self.size = 7
 
     def serialize(self):
@@ -131,16 +132,16 @@ class bms_message_TEMPERATURES:
         return data
 
     def deserialize(self, data):
-        self.start_index = bms_uint8(unpack("<B", data[0:1])[0])
-        self.temp0 = bms_uint8(unpack("<xB", data[0:2])[0])
-        self.temp1 = bms_uint8(unpack("<xxB", data[0:3])[0])
-        self.temp2 = bms_uint8(unpack("<xxxB", data[0:4])[0])
-        self.temp3 = bms_uint8(unpack("<xxxxB", data[0:5])[0])
-        self.temp4 = bms_uint8(unpack("<xxxxxB", data[0:6])[0])
-        self.temp5 = bms_uint8(unpack("<xxxxxxB", data[0:7])[0])
+        self.start_index = uint8(unpack("<B", data[0:1])[0])
+        self.temp0 = uint8(unpack("<xB", data[0:2])[0])
+        self.temp1 = uint8(unpack("<xxB", data[0:3])[0])
+        self.temp2 = uint8(unpack("<xxxB", data[0:4])[0])
+        self.temp3 = uint8(unpack("<xxxxB", data[0:5])[0])
+        self.temp4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        self.temp5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
 
     def __eq__(self, other):
-        if not isinstance(other, bms_message_TEMPERATURES):
+        if not isinstance(other, message_TEMPERATURES):
             return False
         if self.start_index != other.start_index:
             return False
@@ -159,7 +160,7 @@ class bms_message_TEMPERATURES:
         return True
 
 
-class bms_message_VOLTAGES:
+class message_VOLTAGES:
     def __init__(
         self,
         voltage0,
@@ -167,10 +168,10 @@ class bms_message_VOLTAGES:
         voltage2,
         start_index
     ):
-        self.voltage0 = bms_uint16(voltage0) if voltage0 is not None else None
-        self.voltage1 = bms_uint16(voltage1) if voltage1 is not None else None
-        self.voltage2 = bms_uint16(voltage2) if voltage2 is not None else None
-        self.start_index = bms_uint8(start_index) if start_index is not None else None
+        self.voltage0 = uint16(voltage0) if voltage0 is not None else None
+        self.voltage1 = uint16(voltage1) if voltage1 is not None else None
+        self.voltage2 = uint16(voltage2) if voltage2 is not None else None
+        self.start_index = uint8(start_index) if start_index is not None else None
         self.size = 7
 
     def serialize(self):
@@ -179,13 +180,13 @@ class bms_message_VOLTAGES:
         return data
 
     def deserialize(self, data):
-        self.voltage0 = bms_uint16(unpack("<H", data[0:2])[0])
-        self.voltage1 = bms_uint16(unpack("<xxH", data[0:4])[0])
-        self.voltage2 = bms_uint16(unpack("<xxxxH", data[0:6])[0])
-        self.start_index = bms_uint8(unpack("<xxxxxxB", data[0:7])[0])
+        self.voltage0 = uint16(unpack("<H", data[0:2])[0])
+        self.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
+        self.voltage2 = uint16(unpack("<xxxxH", data[0:6])[0])
+        self.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
 
     def __eq__(self, other):
-        if not isinstance(other, bms_message_VOLTAGES):
+        if not isinstance(other, message_VOLTAGES):
             return False
         if self.voltage0 != other.voltage0:
             return False
@@ -198,27 +199,27 @@ class bms_message_VOLTAGES:
         return True
 
 
-class bms_message_BALANCING:
+class message_BALANCING:
     def __init__(
         self,
         cells,
         board_index
     ):
-        self.cells = bms_BalancingCells(cells) if cells is not None else None
-        self.board_index = bms_uint8(board_index) if board_index is not None else None
+        self.cells = BalancingCells(cells) if cells is not None else None
+        self.board_index = uint8(board_index) if board_index is not None else None
         self.size = 5
 
     def serialize(self):
         data = bytearray()
-        data.extend(pack("<BBBB", (int(self.cells) >> 24) & 255, (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
+        data.extend(pack("<BBBBB", (int(self.cells) >> 24) & 255, (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
         return data
 
     def deserialize(self, data):
-        self.cells = bms_BalancingCells(int((unpack("<BBB", data[0:4])[0] << 24) | (unpack("<BBB", data[0:4])[1] << 16) | (unpack("<BBB", data[0:4])[2] << 8) | (unpack("<BBB", data[0:4])[3] << 0)))
-        self.board_index = bms_uint8(unpack("<xxxxB", data[0:5])[0])
+        self.cells = BalancingCells(int((unpack("<BBBB", data[0:4])[0] << 24) | (unpack("<BBBB", data[0:4])[1] << 16) | (unpack("<BBBB", data[0:4])[2] << 8) | (unpack("<BBBB", data[0:4])[3] << 0)))
+        self.board_index = uint8(unpack("<xxxxB", data[0:5])[0])
 
     def __eq__(self, other):
-        if not isinstance(other, bms_message_BALANCING):
+        if not isinstance(other, message_BALANCING):
             return False
         if self.cells != other.cells:
             return False
@@ -227,12 +228,12 @@ class bms_message_BALANCING:
         return True
 
 
-class bms_message_FW_UPDATE:
+class message_FW_UPDATE:
     def __init__(
         self,
         board_index
     ):
-        self.board_index = bms_uint8(board_index) if board_index is not None else None
+        self.board_index = uint8(board_index) if board_index is not None else None
         self.size = 1
 
     def serialize(self):
@@ -241,10 +242,10 @@ class bms_message_FW_UPDATE:
         return data
 
     def deserialize(self, data):
-        self.board_index = bms_uint8(unpack("<B", data[0:1])[0])
+        self.board_index = uint8(unpack("<B", data[0:1])[0])
 
     def __eq__(self, other):
-        if not isinstance(other, bms_message_FW_UPDATE):
+        if not isinstance(other, message_FW_UPDATE):
             return False
         if self.board_index != other.board_index:
             return False

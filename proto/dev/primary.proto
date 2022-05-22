@@ -267,8 +267,14 @@ uint32 timestamp = 4;
 
 message InvLResponse {
 uint32 reg_id = 1;
-uint32 reg_val = 2;
-uint32 timestamp = 3;
+uint32 data_0 = 2;
+uint32 data_1 = 3;
+uint32 data_2 = 4;
+uint32 data_3 = 5;
+uint32 data_4 = 6;
+uint32 data_5 = 7;
+uint32 data_6 = 8;
+uint32 timestamp = 9;
 }
 
 message PrimaryFenice {

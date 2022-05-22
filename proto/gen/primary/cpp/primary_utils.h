@@ -549,7 +549,13 @@ deserialize_PrimaryInvLResponse(payload, primary_inv_l_response_d);
 
 primary::InvLResponse primary_inv_l_response_p;
 primary_inv_l_response_p.set_reg_id(primary_inv_l_response_d->);
-primary_inv_l_response_p.set_reg_val(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_0(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_1(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_2(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_3(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_4(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_5(primary_inv_l_response_d->);
+primary_inv_l_response_p.set_data_6(primary_inv_l_response_d->);
 primary_inv_l_response_p.set_timestamp(primary_inv_l_response_d->);
 free(primary_inv_l_response_d);
 std::string serialized;

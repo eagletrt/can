@@ -5961,8 +5961,14 @@ class InvLResponse final :
 
   enum : int {
     kRegIdFieldNumber = 1,
-    kRegValFieldNumber = 2,
-    kTimestampFieldNumber = 3,
+    kData0FieldNumber = 2,
+    kData1FieldNumber = 3,
+    kData2FieldNumber = 4,
+    kData3FieldNumber = 5,
+    kData4FieldNumber = 6,
+    kData5FieldNumber = 7,
+    kData6FieldNumber = 8,
+    kTimestampFieldNumber = 9,
   };
   // uint32 reg_id = 1;
   void clear_reg_id();
@@ -5973,16 +5979,70 @@ class InvLResponse final :
   void _internal_set_reg_id(uint32_t value);
   public:
 
-  // uint32 reg_val = 2;
-  void clear_reg_val();
-  uint32_t reg_val() const;
-  void set_reg_val(uint32_t value);
+  // uint32 data_0 = 2;
+  void clear_data_0();
+  uint32_t data_0() const;
+  void set_data_0(uint32_t value);
   private:
-  uint32_t _internal_reg_val() const;
-  void _internal_set_reg_val(uint32_t value);
+  uint32_t _internal_data_0() const;
+  void _internal_set_data_0(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
+  // uint32 data_1 = 3;
+  void clear_data_1();
+  uint32_t data_1() const;
+  void set_data_1(uint32_t value);
+  private:
+  uint32_t _internal_data_1() const;
+  void _internal_set_data_1(uint32_t value);
+  public:
+
+  // uint32 data_2 = 4;
+  void clear_data_2();
+  uint32_t data_2() const;
+  void set_data_2(uint32_t value);
+  private:
+  uint32_t _internal_data_2() const;
+  void _internal_set_data_2(uint32_t value);
+  public:
+
+  // uint32 data_3 = 5;
+  void clear_data_3();
+  uint32_t data_3() const;
+  void set_data_3(uint32_t value);
+  private:
+  uint32_t _internal_data_3() const;
+  void _internal_set_data_3(uint32_t value);
+  public:
+
+  // uint32 data_4 = 6;
+  void clear_data_4();
+  uint32_t data_4() const;
+  void set_data_4(uint32_t value);
+  private:
+  uint32_t _internal_data_4() const;
+  void _internal_set_data_4(uint32_t value);
+  public:
+
+  // uint32 data_5 = 7;
+  void clear_data_5();
+  uint32_t data_5() const;
+  void set_data_5(uint32_t value);
+  private:
+  uint32_t _internal_data_5() const;
+  void _internal_set_data_5(uint32_t value);
+  public:
+
+  // uint32 data_6 = 8;
+  void clear_data_6();
+  uint32_t data_6() const;
+  void set_data_6(uint32_t value);
+  private:
+  uint32_t _internal_data_6() const;
+  void _internal_set_data_6(uint32_t value);
+  public:
+
+  // uint32 timestamp = 9;
   void clear_timestamp();
   uint32_t timestamp() const;
   void set_timestamp(uint32_t value);
@@ -5999,7 +6059,13 @@ class InvLResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint32_t reg_id_;
-  uint32_t reg_val_;
+  uint32_t data_0_;
+  uint32_t data_1_;
+  uint32_t data_2_;
+  uint32_t data_3_;
+  uint32_t data_4_;
+  uint32_t data_5_;
+  uint32_t data_6_;
   uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -9075,27 +9141,147 @@ inline void InvLResponse::set_reg_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.InvLResponse.reg_id)
 }
 
-// uint32 reg_val = 2;
-inline void InvLResponse::clear_reg_val() {
-  reg_val_ = 0u;
+// uint32 data_0 = 2;
+inline void InvLResponse::clear_data_0() {
+  data_0_ = 0u;
 }
-inline uint32_t InvLResponse::_internal_reg_val() const {
-  return reg_val_;
+inline uint32_t InvLResponse::_internal_data_0() const {
+  return data_0_;
 }
-inline uint32_t InvLResponse::reg_val() const {
-  // @@protoc_insertion_point(field_get:primary.InvLResponse.reg_val)
-  return _internal_reg_val();
+inline uint32_t InvLResponse::data_0() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_0)
+  return _internal_data_0();
 }
-inline void InvLResponse::_internal_set_reg_val(uint32_t value) {
+inline void InvLResponse::_internal_set_data_0(uint32_t value) {
   
-  reg_val_ = value;
+  data_0_ = value;
 }
-inline void InvLResponse::set_reg_val(uint32_t value) {
-  _internal_set_reg_val(value);
-  // @@protoc_insertion_point(field_set:primary.InvLResponse.reg_val)
+inline void InvLResponse::set_data_0(uint32_t value) {
+  _internal_set_data_0(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_0)
 }
 
-// uint32 timestamp = 3;
+// uint32 data_1 = 3;
+inline void InvLResponse::clear_data_1() {
+  data_1_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_1() const {
+  return data_1_;
+}
+inline uint32_t InvLResponse::data_1() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_1)
+  return _internal_data_1();
+}
+inline void InvLResponse::_internal_set_data_1(uint32_t value) {
+  
+  data_1_ = value;
+}
+inline void InvLResponse::set_data_1(uint32_t value) {
+  _internal_set_data_1(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_1)
+}
+
+// uint32 data_2 = 4;
+inline void InvLResponse::clear_data_2() {
+  data_2_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_2() const {
+  return data_2_;
+}
+inline uint32_t InvLResponse::data_2() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_2)
+  return _internal_data_2();
+}
+inline void InvLResponse::_internal_set_data_2(uint32_t value) {
+  
+  data_2_ = value;
+}
+inline void InvLResponse::set_data_2(uint32_t value) {
+  _internal_set_data_2(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_2)
+}
+
+// uint32 data_3 = 5;
+inline void InvLResponse::clear_data_3() {
+  data_3_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_3() const {
+  return data_3_;
+}
+inline uint32_t InvLResponse::data_3() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_3)
+  return _internal_data_3();
+}
+inline void InvLResponse::_internal_set_data_3(uint32_t value) {
+  
+  data_3_ = value;
+}
+inline void InvLResponse::set_data_3(uint32_t value) {
+  _internal_set_data_3(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_3)
+}
+
+// uint32 data_4 = 6;
+inline void InvLResponse::clear_data_4() {
+  data_4_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_4() const {
+  return data_4_;
+}
+inline uint32_t InvLResponse::data_4() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_4)
+  return _internal_data_4();
+}
+inline void InvLResponse::_internal_set_data_4(uint32_t value) {
+  
+  data_4_ = value;
+}
+inline void InvLResponse::set_data_4(uint32_t value) {
+  _internal_set_data_4(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_4)
+}
+
+// uint32 data_5 = 7;
+inline void InvLResponse::clear_data_5() {
+  data_5_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_5() const {
+  return data_5_;
+}
+inline uint32_t InvLResponse::data_5() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_5)
+  return _internal_data_5();
+}
+inline void InvLResponse::_internal_set_data_5(uint32_t value) {
+  
+  data_5_ = value;
+}
+inline void InvLResponse::set_data_5(uint32_t value) {
+  _internal_set_data_5(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_5)
+}
+
+// uint32 data_6 = 8;
+inline void InvLResponse::clear_data_6() {
+  data_6_ = 0u;
+}
+inline uint32_t InvLResponse::_internal_data_6() const {
+  return data_6_;
+}
+inline uint32_t InvLResponse::data_6() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse.data_6)
+  return _internal_data_6();
+}
+inline void InvLResponse::_internal_set_data_6(uint32_t value) {
+  
+  data_6_ = value;
+}
+inline void InvLResponse::set_data_6(uint32_t value) {
+  _internal_set_data_6(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse.data_6)
+}
+
+// uint32 timestamp = 9;
 inline void InvLResponse::clear_timestamp() {
   timestamp_ = 0u;
 }
