@@ -89,6 +89,8 @@
 
 #define primary_MAX_MESSAGE_LENGTH 26
 
+#ifdef primary_IDS_IMPLEMENTATION
+
 int primary_message_name_from_id(uint16_t id, char *buffer) {
     switch (id) {
         case primary_id_STEER_VERSION:
@@ -201,5 +203,7 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
     }
     return 1;
 }
+
+#endif // primary_IDS_IMPLEMENTATION
 
 #endif // primary_IDS_H

@@ -41,6 +41,8 @@
 
 #define secondary_MAX_MESSAGE_LENGTH 17
 
+#ifdef secondary_IDS_IMPLEMENTATION
+
 int secondary_message_name_from_id(uint16_t id, char *buffer) {
     switch (id) {
         case secondary_id_IMU_ANGULAR_RATE:
@@ -111,5 +113,7 @@ int secondary_message_name_from_id(uint16_t id, char *buffer) {
     }
     return 1;
 }
+
+#endif // secondary_IDS_IMPLEMENTATION
 
 #endif // secondary_IDS_H

@@ -55,6 +55,8 @@
 
 #define bms_MAX_MESSAGE_LENGTH 24
 
+#ifdef bms_IDS_IMPLEMENTATION
+
 int bms_message_name_from_id(uint16_t id, char *buffer) {
     switch (id) {
         case bms_id_BOARD_STATUS_CELLBOARD0:
@@ -122,5 +124,7 @@ int bms_message_name_from_id(uint16_t id, char *buffer) {
     }
     return 1;
 }
+
+#endif // bms_IDS_IMPLEMENTATION
 
 #endif // bms_IDS_H
