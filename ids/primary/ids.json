@@ -113,11 +113,14 @@
                 "LV_VOLTAGE": {
                     "LV_VOLTAGE": 806
                 },
+                "LV_TOTAL_VOLTAGE": {
+                    "LV_TOTAL_VOLTAGE": 838
+                },
                 "LV_TEMPERATURE": {
-                    "LV_TEMPERATURE": 838
+                    "LV_TEMPERATURE": 870
                 },
                 "COOLING_STATUS": {
-                    "COOLING_STATUS": 870
+                    "COOLING_STATUS": 902
                 }
             }
         },

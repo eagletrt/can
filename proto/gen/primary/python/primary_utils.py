@@ -155,14 +155,21 @@ message = primary_pb2.LvVoltage()
 message.ParseFromString(payload)
 return {field.name: getattr(message, field.name) for field in message.DESCRIPTOR.fields}
 
-case {'LV_TEMPERATURE': 838}
+case {'LV_TOTAL_VOLTAGE': 838}
+:
+
+message = primary_pb2.LvTotalVoltage()
+message.ParseFromString(payload)
+return {field.name: getattr(message, field.name) for field in message.DESCRIPTOR.fields}
+
+case {'LV_TEMPERATURE': 870}
 :
 
 message = primary_pb2.LvTemperature()
 message.ParseFromString(payload)
 return {field.name: getattr(message, field.name) for field in message.DESCRIPTOR.fields}
 
-case {'COOLING_STATUS': 870}
+case {'COOLING_STATUS': 902}
 :
 
 message = primary_pb2.CoolingStatus()

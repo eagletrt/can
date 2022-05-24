@@ -818,36 +818,31 @@ class message_LV_CURRENT:
 class message_LV_VOLTAGE:
     def __init__(
         self,
-        total_voltage,
         voltage_1,
         voltage_2,
         voltage_3,
         voltage_4
     ):
-        self.total_voltage = uint16(total_voltage) if total_voltage is not None else None
         self.voltage_1 = uint8(voltage_1) if voltage_1 is not None else None
         self.voltage_2 = uint8(voltage_2) if voltage_2 is not None else None
         self.voltage_3 = uint8(voltage_3) if voltage_3 is not None else None
         self.voltage_4 = uint8(voltage_4) if voltage_4 is not None else None
-        self.size = 6
+        self.size = 4
         self.millis = 200
 
     def serialize(self):
         data = bytearray()
-        data.extend(pack("<HBBBB", self.total_voltage, self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
+        data.extend(pack("<BBBB", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
         return data
 
     def deserialize(self, data):
-        self.total_voltage = uint16(unpack("<H", data[0:2])[0])
-        self.voltage_1 = uint8(unpack("<xxB", data[0:3])[0])
-        self.voltage_2 = uint8(unpack("<xxxB", data[0:4])[0])
-        self.voltage_3 = uint8(unpack("<xxxxB", data[0:5])[0])
-        self.voltage_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        self.voltage_1 = uint8(unpack("<B", data[0:1])[0])
+        self.voltage_2 = uint8(unpack("<xB", data[0:2])[0])
+        self.voltage_3 = uint8(unpack("<xxB", data[0:3])[0])
+        self.voltage_4 = uint8(unpack("<xxxB", data[0:4])[0])
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VOLTAGE):
-            return False
-        if self.total_voltage != other.total_voltage:
             return False
         if self.voltage_1 != other.voltage_1:
             return False
@@ -856,6 +851,31 @@ class message_LV_VOLTAGE:
         if self.voltage_3 != other.voltage_3:
             return False
         if self.voltage_4 != other.voltage_4:
+            return False
+        return True
+
+
+class message_LV_TOTAL_VOLTAGE:
+    def __init__(
+        self,
+        total_voltage
+    ):
+        self.total_voltage = uint16(total_voltage) if total_voltage is not None else None
+        self.size = 2
+        self.millis = 200
+
+    def serialize(self):
+        data = bytearray()
+        data.extend(pack("<H", self.total_voltage))
+        return data
+
+    def deserialize(self, data):
+        self.total_voltage = uint16(unpack("<H", data[0:2])[0])
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_TOTAL_VOLTAGE):
+            return False
+        if self.total_voltage != other.total_voltage:
             return False
         return True
 

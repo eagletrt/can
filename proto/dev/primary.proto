@@ -212,12 +212,16 @@ uint32 timestamp = 2;
 }
 
 message LvVoltage {
+uint32 voltage_1 = 1;
+uint32 voltage_2 = 2;
+uint32 voltage_3 = 3;
+uint32 voltage_4 = 4;
+uint32 timestamp = 5;
+}
+
+message LvTotalVoltage {
 uint32 total_voltage = 1;
-uint32 voltage_1 = 2;
-uint32 voltage_2 = 3;
-uint32 voltage_3 = 4;
-uint32 voltage_4 = 5;
-uint32 timestamp = 6;
+uint32 timestamp = 2;
 }
 
 message LvTemperature {
@@ -304,11 +308,12 @@ repeated SetCarStatus set_car_status = 23;
 repeated SetPedalsRange set_pedals_range = 24;
 repeated LvCurrent lv_current = 25;
 repeated LvVoltage lv_voltage = 26;
-repeated LvTemperature lv_temperature = 27;
-repeated CoolingStatus cooling_status = 28;
-repeated HvCellsVoltage hv_cells_voltage = 29;
-repeated HvCellsTemp hv_cells_temp = 30;
-repeated HvCellBalancingStatus hv_cell_balancing_status = 31;
-repeated InvLSetTorque inv_l_set_torque = 32;
-repeated InvLResponse inv_l_response = 33;
+repeated LvTotalVoltage lv_total_voltage = 27;
+repeated LvTemperature lv_temperature = 28;
+repeated CoolingStatus cooling_status = 29;
+repeated HvCellsVoltage hv_cells_voltage = 30;
+repeated HvCellsTemp hv_cells_temp = 31;
+repeated HvCellBalancingStatus hv_cell_balancing_status = 32;
+repeated InvLSetTorque inv_l_set_torque = 33;
+repeated InvLResponse inv_l_response = 34;
 }

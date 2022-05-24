@@ -386,8 +386,7 @@ struct LvCurrentDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LvCurrentDefaultTypeInternal _LvCurrent_default_instance_;
 PROTOBUF_CONSTEXPR LvVoltage::LvVoltage(
     ::_pbi::ConstantInitialized)
-  : total_voltage_(0u)
-  , voltage_1_(0u)
+  : voltage_1_(0u)
   , voltage_2_(0u)
   , voltage_3_(0u)
   , voltage_4_(0u)
@@ -401,6 +400,19 @@ struct LvVoltageDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LvVoltageDefaultTypeInternal _LvVoltage_default_instance_;
+PROTOBUF_CONSTEXPR LvTotalVoltage::LvTotalVoltage(
+    ::_pbi::ConstantInitialized)
+  : total_voltage_(0u)
+  , timestamp_(0u){}
+struct LvTotalVoltageDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR LvTotalVoltageDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~LvTotalVoltageDefaultTypeInternal() {}
+  union {
+    LvTotalVoltage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LvTotalVoltageDefaultTypeInternal _LvTotalVoltage_default_instance_;
 PROTOBUF_CONSTEXPR LvTemperature::LvTemperature(
     ::_pbi::ConstantInitialized)
   : bp_temperature_(0u)
@@ -543,6 +555,7 @@ PROTOBUF_CONSTEXPR PrimaryFenice::PrimaryFenice(
   , set_pedals_range_()
   , lv_current_()
   , lv_voltage_()
+  , lv_total_voltage_()
   , lv_temperature_()
   , cooling_status_()
   , hv_cells_voltage_()
@@ -560,7 +573,7 @@ struct PrimaryFeniceDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PrimaryFeniceDefaultTypeInternal _PrimaryFenice_default_instance_;
 }  // namespace primary
-static ::_pb::Metadata file_level_metadata_primary_2eproto[34];
+static ::_pb::Metadata file_level_metadata_primary_2eproto[35];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_primary_2eproto[10];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_primary_2eproto = nullptr;
 
@@ -794,12 +807,19 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, total_voltage_),
   PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, voltage_1_),
   PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, voltage_2_),
   PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, voltage_3_),
   PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, voltage_4_),
   PROTOBUF_FIELD_OFFSET(::primary::LvVoltage, timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::LvTotalVoltage, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::LvTotalVoltage, total_voltage_),
+  PROTOBUF_FIELD_OFFSET(::primary::LvTotalVoltage, timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::LvTemperature, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -910,6 +930,7 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, set_pedals_range_),
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, lv_current_),
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, lv_voltage_),
+  PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, lv_total_voltage_),
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, lv_temperature_),
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, cooling_status_),
   PROTOBUF_FIELD_OFFSET(::primary::PrimaryFenice, hv_cells_voltage_),
@@ -945,14 +966,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 206, -1, -1, sizeof(::primary::SetPedalsRange)},
   { 215, -1, -1, sizeof(::primary::LvCurrent)},
   { 223, -1, -1, sizeof(::primary::LvVoltage)},
-  { 235, -1, -1, sizeof(::primary::LvTemperature)},
-  { 244, -1, -1, sizeof(::primary::CoolingStatus)},
-  { 254, -1, -1, sizeof(::primary::HvCellsVoltage)},
-  { 265, -1, -1, sizeof(::primary::HvCellsTemp)},
-  { 280, -1, -1, sizeof(::primary::HvCellBalancingStatus)},
-  { 288, -1, -1, sizeof(::primary::InvLSetTorque)},
-  { 298, -1, -1, sizeof(::primary::InvLResponse)},
-  { 313, -1, -1, sizeof(::primary::PrimaryFenice)},
+  { 234, -1, -1, sizeof(::primary::LvTotalVoltage)},
+  { 242, -1, -1, sizeof(::primary::LvTemperature)},
+  { 251, -1, -1, sizeof(::primary::CoolingStatus)},
+  { 261, -1, -1, sizeof(::primary::HvCellsVoltage)},
+  { 272, -1, -1, sizeof(::primary::HvCellsTemp)},
+  { 287, -1, -1, sizeof(::primary::HvCellBalancingStatus)},
+  { 295, -1, -1, sizeof(::primary::InvLSetTorque)},
+  { 305, -1, -1, sizeof(::primary::InvLResponse)},
+  { 320, -1, -1, sizeof(::primary::PrimaryFenice)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -982,6 +1004,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::primary::_SetPedalsRange_default_instance_._instance,
   &::primary::_LvCurrent_default_instance_._instance,
   &::primary::_LvVoltage_default_instance_._instance,
+  &::primary::_LvTotalVoltage_default_instance_._instance,
   &::primary::_LvTemperature_default_instance_._instance,
   &::primary::_CoolingStatus_default_instance_._instance,
   &::primary::_HvCellsVoltage_default_instance_._instance,
@@ -1048,94 +1071,96 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "d\030\001 \001(\0162\022.primary.BoundType\022!\n\005pedal\030\002 \001"
   "(\0162\022.primary.PedalType\022\021\n\ttimestamp\030\003 \001("
   "\r\"/\n\tLvCurrent\022\017\n\007current\030\001 \001(\r\022\021\n\ttimes"
-  "tamp\030\002 \001(\r\"\201\001\n\tLvVoltage\022\025\n\rtotal_voltag"
-  "e\030\001 \001(\r\022\021\n\tvoltage_1\030\002 \001(\r\022\021\n\tvoltage_2\030"
-  "\003 \001(\r\022\021\n\tvoltage_3\030\004 \001(\r\022\021\n\tvoltage_4\030\005 "
-  "\001(\r\022\021\n\ttimestamp\030\006 \001(\r\"T\n\rLvTemperature\022"
-  "\026\n\016bp_temperature\030\001 \001(\r\022\030\n\020dcdc_temperat"
-  "ure\030\002 \001(\r\022\021\n\ttimestamp\030\003 \001(\r\"b\n\rCoolingS"
-  "tatus\022\024\n\014hv_fan_speed\030\001 \001(\r\022\024\n\014lv_fan_sp"
-  "eed\030\002 \001(\r\022\022\n\npump_speed\030\003 \001(\r\022\021\n\ttimesta"
-  "mp\030\004 \001(\r\"p\n\016HvCellsVoltage\022\022\n\ncell_index"
-  "\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n\tvoltage_1\030\003"
-  " \001(\r\022\021\n\tvoltage_2\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001"
-  "(\r\"\244\001\n\013HvCellsTemp\022\022\n\ncell_index\030\001 \001(\r\022\016"
-  "\n\006temp_0\030\002 \001(\r\022\016\n\006temp_1\030\003 \001(\r\022\016\n\006temp_2"
-  "\030\004 \001(\r\022\016\n\006temp_3\030\005 \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016"
-  "\n\006temp_5\030\007 \001(\r\022\016\n\006temp_6\030\010 \001(\r\022\021\n\ttimest"
-  "amp\030\t \001(\r\"Y\n\025HvCellBalancingStatus\022-\n\020ba"
-  "lancing_status\030\001 \001(\0162\023.primary.ToggleTyp"
-  "e\022\021\n\ttimestamp\030\002 \001(\r\"L\n\rInvLSetTorque\022\016\n"
-  "\006reg_id\030\001 \001(\r\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003 \001(\r\022"
-  "\021\n\ttimestamp\030\004 \001(\r\"\241\001\n\014InvLResponse\022\016\n\006r"
-  "eg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 "
-  "\001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006d"
-  "ata_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 "
-  "\001(\r\022\021\n\ttimestamp\030\t \001(\r\"\312\013\n\rPrimaryFenice"
-  "\022,\n\rsteer_version\030\001 \003(\0132\025.primary.SteerV"
-  "ersion\022(\n\013das_version\030\002 \003(\0132\023.primary.Da"
-  "sVersion\022&\n\nhv_version\030\003 \003(\0132\022.primary.H"
-  "vVersion\022&\n\nlv_version\030\004 \003(\0132\022.primary.L"
-  "vVersion\022(\n\013tlm_version\030\005 \003(\0132\023.primary."
-  "TlmVersion\022%\n\ttimestamp\030\006 \003(\0132\022.primary."
-  "Timestamp\022-\n\016set_tlm_status\030\007 \003(\0132\025.prim"
-  "ary.SetTlmStatus\0227\n\023steer_system_status\030"
-  "\010 \003(\0132\032.primary.SteerSystemStatus\022\037\n\006mar"
-  "ker\030\t \003(\0132\017.primary.Marker\022&\n\ntlm_status"
-  "\030\n \003(\0132\022.primary.TlmStatus\022&\n\ncar_status"
-  "\030\013 \003(\0132\022.primary.CarStatus\022&\n\ndas_errors"
-  "\030\014 \003(\0132\022.primary.DasErrors\022\035\n\005speed\030\r \003("
-  "\0132\016.primary.Speed\022&\n\nhv_voltage\030\016 \003(\0132\022."
-  "primary.HvVoltage\022&\n\nhv_current\030\017 \003(\0132\022."
-  "primary.HvCurrent\022 \n\007hv_temp\030\020 \003(\0132\017.pri"
-  "mary.HvTemp\022$\n\thv_errors\030\021 \003(\0132\021.primary"
-  ".HvErrors\022$\n\tts_status\030\022 \003(\0132\021.primary.T"
-  "sStatus\022+\n\rset_ts_status\030\023 \003(\0132\024.primary"
-  ".SetTsStatus\022B\n\031set_cell_balancing_statu"
-  "s\030\024 \003(\0132\037.primary.SetCellBalancingStatus"
-  "\0220\n\017handcart_status\030\025 \003(\0132\027.primary.Hand"
-  "cartStatus\022*\n\014steer_status\030\026 \003(\0132\024.prima"
-  "ry.SteerStatus\022-\n\016set_car_status\030\027 \003(\0132\025"
-  ".primary.SetCarStatus\0221\n\020set_pedals_rang"
-  "e\030\030 \003(\0132\027.primary.SetPedalsRange\022&\n\nlv_c"
-  "urrent\030\031 \003(\0132\022.primary.LvCurrent\022&\n\nlv_v"
-  "oltage\030\032 \003(\0132\022.primary.LvVoltage\022.\n\016lv_t"
-  "emperature\030\033 \003(\0132\026.primary.LvTemperature"
-  "\022.\n\016cooling_status\030\034 \003(\0132\026.primary.Cooli"
-  "ngStatus\0221\n\020hv_cells_voltage\030\035 \003(\0132\027.pri"
-  "mary.HvCellsVoltage\022+\n\rhv_cells_temp\030\036 \003"
-  "(\0132\024.primary.HvCellsTemp\022@\n\030hv_cell_bala"
-  "ncing_status\030\037 \003(\0132\036.primary.HvCellBalan"
-  "cingStatus\0220\n\020inv_l_set_torque\030  \003(\0132\026.p"
-  "rimary.InvLSetTorque\022-\n\016inv_l_response\030!"
-  " \003(\0132\025.primary.InvLResponse*o\n\014RacetypeT"
-  "ype\022\031\n\025RACETYPE_ACCELERATION\020\000\022\024\n\020RACETY"
-  "PE_SKIDPAD\020\001\022\026\n\022RACETYPE_AUTOCROSS\020\002\022\026\n\022"
-  "RACETYPE_ENDURANCE\020\003*\\\n\022InverterstatusTy"
-  "pe\022\026\n\022INVERTERSTATUS_OFF\020\000\022\027\n\023INVERTERST"
-  "ATUS_IDLE\020\001\022\025\n\021INVERTERSTATUS_ON\020\002*K\n\rCa"
-  "rstatusType\022\022\n\016CARSTATUS_IDLE\020\000\022\023\n\017CARST"
-  "ATUS_SETUP\020\001\022\021\n\rCARSTATUS_RUN\020\002*+\n\nToggl"
-  "eType\022\r\n\tTOGGLE_ON\020\000\022\016\n\nTOGGLE_OFF\020\001*\224\001\n"
-  "\023TractioncontrolType\022\027\n\023TRACTIONCONTROL_"
-  "OFF\020\000\022 \n\034TRACTIONCONTROL_SLIP_CONTROL\020\001\022"
-  "$\n TRACTIONCONTROL_TORQUE_VECTORING\020\002\022\034\n"
-  "\030TRACTIONCONTROL_COMPLETE\020\003*]\n\014TsstatusT"
-  "ype\022\020\n\014TSSTATUS_OFF\020\000\022\026\n\022TSSTATUS_PRECHA"
-  "RGE\020\001\022\017\n\013TSSTATUS_ON\020\002\022\022\n\016TSSTATUS_FATAL"
-  "\020\003*V\n\007MapType\022\t\n\005MAP_R\020\000\022\013\n\007MAP_D20\020\001\022\013\n"
-  "\007MAP_D40\020\002\022\013\n\007MAP_D60\020\003\022\013\n\007MAP_D80\020\004\022\014\n\010"
-  "MAP_D100\020\005*\?\n\020SetcarstatusType\022\025\n\021SETCAR"
-  "STATUS_IDLE\020\000\022\024\n\020SETCARSTATUS_RUN\020\001*1\n\tB"
-  "oundType\022\021\n\rBOUND_SET_MAX\020\000\022\021\n\rBOUND_SET"
-  "_MIN\020\001*3\n\tPedalType\022\025\n\021PEDAL_ACCELERATOR"
-  "\020\000\022\017\n\013PEDAL_BRAKE\020\001b\006proto3"
+  "tamp\030\002 \001(\r\"j\n\tLvVoltage\022\021\n\tvoltage_1\030\001 \001"
+  "(\r\022\021\n\tvoltage_2\030\002 \001(\r\022\021\n\tvoltage_3\030\003 \001(\r"
+  "\022\021\n\tvoltage_4\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\":"
+  "\n\016LvTotalVoltage\022\025\n\rtotal_voltage\030\001 \001(\r\022"
+  "\021\n\ttimestamp\030\002 \001(\r\"T\n\rLvTemperature\022\026\n\016b"
+  "p_temperature\030\001 \001(\r\022\030\n\020dcdc_temperature\030"
+  "\002 \001(\r\022\021\n\ttimestamp\030\003 \001(\r\"b\n\rCoolingStatu"
+  "s\022\024\n\014hv_fan_speed\030\001 \001(\r\022\024\n\014lv_fan_speed\030"
+  "\002 \001(\r\022\022\n\npump_speed\030\003 \001(\r\022\021\n\ttimestamp\030\004"
+  " \001(\r\"p\n\016HvCellsVoltage\022\022\n\ncell_index\030\001 \001"
+  "(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n\tvoltage_1\030\003 \001(\r"
+  "\022\021\n\tvoltage_2\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"\244"
+  "\001\n\013HvCellsTemp\022\022\n\ncell_index\030\001 \001(\r\022\016\n\006te"
+  "mp_0\030\002 \001(\r\022\016\n\006temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001"
+  "(\r\022\016\n\006temp_3\030\005 \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006te"
+  "mp_5\030\007 \001(\r\022\016\n\006temp_6\030\010 \001(\r\022\021\n\ttimestamp\030"
+  "\t \001(\r\"Y\n\025HvCellBalancingStatus\022-\n\020balanc"
+  "ing_status\030\001 \001(\0162\023.primary.ToggleType\022\021\n"
+  "\ttimestamp\030\002 \001(\r\"L\n\rInvLSetTorque\022\016\n\006reg"
+  "_id\030\001 \001(\r\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003 \001(\r\022\021\n\tt"
+  "imestamp\030\004 \001(\r\"\241\001\n\014InvLResponse\022\016\n\006reg_i"
+  "d\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022"
+  "\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_"
+  "4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022"
+  "\021\n\ttimestamp\030\t \001(\r\"\375\013\n\rPrimaryFenice\022,\n\r"
+  "steer_version\030\001 \003(\0132\025.primary.SteerVersi"
+  "on\022(\n\013das_version\030\002 \003(\0132\023.primary.DasVer"
+  "sion\022&\n\nhv_version\030\003 \003(\0132\022.primary.HvVer"
+  "sion\022&\n\nlv_version\030\004 \003(\0132\022.primary.LvVer"
+  "sion\022(\n\013tlm_version\030\005 \003(\0132\023.primary.TlmV"
+  "ersion\022%\n\ttimestamp\030\006 \003(\0132\022.primary.Time"
+  "stamp\022-\n\016set_tlm_status\030\007 \003(\0132\025.primary."
+  "SetTlmStatus\0227\n\023steer_system_status\030\010 \003("
+  "\0132\032.primary.SteerSystemStatus\022\037\n\006marker\030"
+  "\t \003(\0132\017.primary.Marker\022&\n\ntlm_status\030\n \003"
+  "(\0132\022.primary.TlmStatus\022&\n\ncar_status\030\013 \003"
+  "(\0132\022.primary.CarStatus\022&\n\ndas_errors\030\014 \003"
+  "(\0132\022.primary.DasErrors\022\035\n\005speed\030\r \003(\0132\016."
+  "primary.Speed\022&\n\nhv_voltage\030\016 \003(\0132\022.prim"
+  "ary.HvVoltage\022&\n\nhv_current\030\017 \003(\0132\022.prim"
+  "ary.HvCurrent\022 \n\007hv_temp\030\020 \003(\0132\017.primary"
+  ".HvTemp\022$\n\thv_errors\030\021 \003(\0132\021.primary.HvE"
+  "rrors\022$\n\tts_status\030\022 \003(\0132\021.primary.TsSta"
+  "tus\022+\n\rset_ts_status\030\023 \003(\0132\024.primary.Set"
+  "TsStatus\022B\n\031set_cell_balancing_status\030\024 "
+  "\003(\0132\037.primary.SetCellBalancingStatus\0220\n\017"
+  "handcart_status\030\025 \003(\0132\027.primary.Handcart"
+  "Status\022*\n\014steer_status\030\026 \003(\0132\024.primary.S"
+  "teerStatus\022-\n\016set_car_status\030\027 \003(\0132\025.pri"
+  "mary.SetCarStatus\0221\n\020set_pedals_range\030\030 "
+  "\003(\0132\027.primary.SetPedalsRange\022&\n\nlv_curre"
+  "nt\030\031 \003(\0132\022.primary.LvCurrent\022&\n\nlv_volta"
+  "ge\030\032 \003(\0132\022.primary.LvVoltage\0221\n\020lv_total"
+  "_voltage\030\033 \003(\0132\027.primary.LvTotalVoltage\022"
+  ".\n\016lv_temperature\030\034 \003(\0132\026.primary.LvTemp"
+  "erature\022.\n\016cooling_status\030\035 \003(\0132\026.primar"
+  "y.CoolingStatus\0221\n\020hv_cells_voltage\030\036 \003("
+  "\0132\027.primary.HvCellsVoltage\022+\n\rhv_cells_t"
+  "emp\030\037 \003(\0132\024.primary.HvCellsTemp\022@\n\030hv_ce"
+  "ll_balancing_status\030  \003(\0132\036.primary.HvCe"
+  "llBalancingStatus\0220\n\020inv_l_set_torque\030! "
+  "\003(\0132\026.primary.InvLSetTorque\022-\n\016inv_l_res"
+  "ponse\030\" \003(\0132\025.primary.InvLResponse*o\n\014Ra"
+  "cetypeType\022\031\n\025RACETYPE_ACCELERATION\020\000\022\024\n"
+  "\020RACETYPE_SKIDPAD\020\001\022\026\n\022RACETYPE_AUTOCROS"
+  "S\020\002\022\026\n\022RACETYPE_ENDURANCE\020\003*\\\n\022Inverters"
+  "tatusType\022\026\n\022INVERTERSTATUS_OFF\020\000\022\027\n\023INV"
+  "ERTERSTATUS_IDLE\020\001\022\025\n\021INVERTERSTATUS_ON\020"
+  "\002*K\n\rCarstatusType\022\022\n\016CARSTATUS_IDLE\020\000\022\023"
+  "\n\017CARSTATUS_SETUP\020\001\022\021\n\rCARSTATUS_RUN\020\002*+"
+  "\n\nToggleType\022\r\n\tTOGGLE_ON\020\000\022\016\n\nTOGGLE_OF"
+  "F\020\001*\224\001\n\023TractioncontrolType\022\027\n\023TRACTIONC"
+  "ONTROL_OFF\020\000\022 \n\034TRACTIONCONTROL_SLIP_CON"
+  "TROL\020\001\022$\n TRACTIONCONTROL_TORQUE_VECTORI"
+  "NG\020\002\022\034\n\030TRACTIONCONTROL_COMPLETE\020\003*]\n\014Ts"
+  "statusType\022\020\n\014TSSTATUS_OFF\020\000\022\026\n\022TSSTATUS"
+  "_PRECHARGE\020\001\022\017\n\013TSSTATUS_ON\020\002\022\022\n\016TSSTATU"
+  "S_FATAL\020\003*V\n\007MapType\022\t\n\005MAP_R\020\000\022\013\n\007MAP_D"
+  "20\020\001\022\013\n\007MAP_D40\020\002\022\013\n\007MAP_D60\020\003\022\013\n\007MAP_D8"
+  "0\020\004\022\014\n\010MAP_D100\020\005*\?\n\020SetcarstatusType\022\025\n"
+  "\021SETCARSTATUS_IDLE\020\000\022\024\n\020SETCARSTATUS_RUN"
+  "\020\001*1\n\tBoundType\022\021\n\rBOUND_SET_MAX\020\000\022\021\n\rBO"
+  "UND_SET_MIN\020\001*3\n\tPedalType\022\025\n\021PEDAL_ACCE"
+  "LERATOR\020\000\022\017\n\013PEDAL_BRAKE\020\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 5467, descriptor_table_protodef_primary_2eproto,
+    false, false, 5554, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
-    &descriptor_table_primary_2eproto_once, nullptr, 0, 34,
+    &descriptor_table_primary_2eproto_once, nullptr, 0, 35,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
     file_level_metadata_primary_2eproto, file_level_enum_descriptors_primary_2eproto,
     file_level_service_descriptors_primary_2eproto,
@@ -6967,17 +6992,17 @@ LvVoltage::LvVoltage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 LvVoltage::LvVoltage(const LvVoltage& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&total_voltage_, &from.total_voltage_,
+  ::memcpy(&voltage_1_, &from.voltage_1_,
     static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&voltage_1_)) + sizeof(timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.LvVoltage)
 }
 
 inline void LvVoltage::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&total_voltage_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&voltage_1_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&voltage_1_)) + sizeof(timestamp_));
 }
 
 LvVoltage::~LvVoltage() {
@@ -7003,9 +7028,9 @@ void LvVoltage::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&total_voltage_, 0, static_cast<size_t>(
+  ::memset(&voltage_1_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&voltage_1_)) + sizeof(timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7015,49 +7040,41 @@ const char* LvVoltage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 total_voltage = 1;
+      // uint32 voltage_1 = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          total_voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 voltage_1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage_2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // uint32 voltage_2 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage_3 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+      // uint32 voltage_3 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage_4 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+      // uint32 voltage_4 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           voltage_4_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+      // uint32 timestamp = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
           timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -7092,40 +7109,34 @@ uint8_t* LvVoltage::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 total_voltage = 1;
-  if (this->_internal_total_voltage() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_total_voltage(), target);
-  }
-
-  // uint32 voltage_1 = 2;
+  // uint32 voltage_1 = 1;
   if (this->_internal_voltage_1() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage_1(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage_1(), target);
   }
 
-  // uint32 voltage_2 = 3;
+  // uint32 voltage_2 = 2;
   if (this->_internal_voltage_2() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage_2(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage_2(), target);
   }
 
-  // uint32 voltage_3 = 4;
+  // uint32 voltage_3 = 3;
   if (this->_internal_voltage_3() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage_3(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage_3(), target);
   }
 
-  // uint32 voltage_4 = 5;
+  // uint32 voltage_4 = 4;
   if (this->_internal_voltage_4() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_voltage_4(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage_4(), target);
   }
 
-  // uint32 timestamp = 6;
+  // uint32 timestamp = 5;
   if (this->_internal_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7144,32 +7155,27 @@ size_t LvVoltage::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 total_voltage = 1;
-  if (this->_internal_total_voltage() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_total_voltage());
-  }
-
-  // uint32 voltage_1 = 2;
+  // uint32 voltage_1 = 1;
   if (this->_internal_voltage_1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_1());
   }
 
-  // uint32 voltage_2 = 3;
+  // uint32 voltage_2 = 2;
   if (this->_internal_voltage_2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_2());
   }
 
-  // uint32 voltage_3 = 4;
+  // uint32 voltage_3 = 3;
   if (this->_internal_voltage_3() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_3());
   }
 
-  // uint32 voltage_4 = 5;
+  // uint32 voltage_4 = 4;
   if (this->_internal_voltage_4() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_4());
   }
 
-  // uint32 timestamp = 6;
+  // uint32 timestamp = 5;
   if (this->_internal_timestamp() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
   }
@@ -7196,9 +7202,6 @@ void LvVoltage::MergeFrom(const LvVoltage& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_total_voltage() != 0) {
-    _internal_set_total_voltage(from._internal_total_voltage());
-  }
   if (from._internal_voltage_1() != 0) {
     _internal_set_voltage_1(from._internal_voltage_1());
   }
@@ -7234,15 +7237,220 @@ void LvVoltage::InternalSwap(LvVoltage* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(LvVoltage, timestamp_)
       + sizeof(LvVoltage::timestamp_)
-      - PROTOBUF_FIELD_OFFSET(LvVoltage, total_voltage_)>(
-          reinterpret_cast<char*>(&total_voltage_),
-          reinterpret_cast<char*>(&other->total_voltage_));
+      - PROTOBUF_FIELD_OFFSET(LvVoltage, voltage_1_)>(
+          reinterpret_cast<char*>(&voltage_1_),
+          reinterpret_cast<char*>(&other->voltage_1_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LvVoltage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
       file_level_metadata_primary_2eproto[25]);
+}
+
+// ===================================================================
+
+class LvTotalVoltage::_Internal {
+ public:
+};
+
+LvTotalVoltage::LvTotalVoltage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.LvTotalVoltage)
+}
+LvTotalVoltage::LvTotalVoltage(const LvTotalVoltage& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&total_voltage_, &from.total_voltage_,
+    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
+    reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+  // @@protoc_insertion_point(copy_constructor:primary.LvTotalVoltage)
+}
+
+inline void LvTotalVoltage::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&total_voltage_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
+    reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+}
+
+LvTotalVoltage::~LvTotalVoltage() {
+  // @@protoc_insertion_point(destructor:primary.LvTotalVoltage)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void LvTotalVoltage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void LvTotalVoltage::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void LvTotalVoltage::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.LvTotalVoltage)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&total_voltage_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&timestamp_) -
+      reinterpret_cast<char*>(&total_voltage_)) + sizeof(timestamp_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LvTotalVoltage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 total_voltage = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          total_voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 timestamp = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* LvTotalVoltage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.LvTotalVoltage)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 total_voltage = 1;
+  if (this->_internal_total_voltage() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_total_voltage(), target);
+  }
+
+  // uint32 timestamp = 2;
+  if (this->_internal_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.LvTotalVoltage)
+  return target;
+}
+
+size_t LvTotalVoltage::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.LvTotalVoltage)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 total_voltage = 1;
+  if (this->_internal_total_voltage() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_total_voltage());
+  }
+
+  // uint32 timestamp = 2;
+  if (this->_internal_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LvTotalVoltage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    LvTotalVoltage::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LvTotalVoltage::GetClassData() const { return &_class_data_; }
+
+void LvTotalVoltage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<LvTotalVoltage *>(to)->MergeFrom(
+      static_cast<const LvTotalVoltage &>(from));
+}
+
+
+void LvTotalVoltage::MergeFrom(const LvTotalVoltage& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.LvTotalVoltage)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_total_voltage() != 0) {
+    _internal_set_total_voltage(from._internal_total_voltage());
+  }
+  if (from._internal_timestamp() != 0) {
+    _internal_set_timestamp(from._internal_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void LvTotalVoltage::CopyFrom(const LvTotalVoltage& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.LvTotalVoltage)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LvTotalVoltage::IsInitialized() const {
+  return true;
+}
+
+void LvTotalVoltage::InternalSwap(LvTotalVoltage* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(LvTotalVoltage, timestamp_)
+      + sizeof(LvTotalVoltage::timestamp_)
+      - PROTOBUF_FIELD_OFFSET(LvTotalVoltage, total_voltage_)>(
+          reinterpret_cast<char*>(&total_voltage_),
+          reinterpret_cast<char*>(&other->total_voltage_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LvTotalVoltage::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[26]);
 }
 
 // ===================================================================
@@ -7469,7 +7677,7 @@ void LvTemperature::InternalSwap(LvTemperature* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LvTemperature::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[26]);
+      file_level_metadata_primary_2eproto[27]);
 }
 
 // ===================================================================
@@ -7718,7 +7926,7 @@ void CoolingStatus::InternalSwap(CoolingStatus* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CoolingStatus::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[27]);
+      file_level_metadata_primary_2eproto[28]);
 }
 
 // ===================================================================
@@ -7989,7 +8197,7 @@ void HvCellsVoltage::InternalSwap(HvCellsVoltage* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HvCellsVoltage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[28]);
+      file_level_metadata_primary_2eproto[29]);
 }
 
 // ===================================================================
@@ -8348,7 +8556,7 @@ void HvCellsTemp::InternalSwap(HvCellsTemp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HvCellsTemp::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[29]);
+      file_level_metadata_primary_2eproto[30]);
 }
 
 // ===================================================================
@@ -8556,7 +8764,7 @@ void HvCellBalancingStatus::InternalSwap(HvCellBalancingStatus* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HvCellBalancingStatus::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[30]);
+      file_level_metadata_primary_2eproto[31]);
 }
 
 // ===================================================================
@@ -8805,7 +9013,7 @@ void InvLSetTorque::InternalSwap(InvLSetTorque* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata InvLSetTorque::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[31]);
+      file_level_metadata_primary_2eproto[32]);
 }
 
 // ===================================================================
@@ -9164,7 +9372,7 @@ void InvLResponse::InternalSwap(InvLResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata InvLResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[32]);
+      file_level_metadata_primary_2eproto[33]);
 }
 
 // ===================================================================
@@ -9202,6 +9410,7 @@ PrimaryFenice::PrimaryFenice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   set_pedals_range_(arena),
   lv_current_(arena),
   lv_voltage_(arena),
+  lv_total_voltage_(arena),
   lv_temperature_(arena),
   cooling_status_(arena),
   hv_cells_voltage_(arena),
@@ -9240,6 +9449,7 @@ PrimaryFenice::PrimaryFenice(const PrimaryFenice& from)
       set_pedals_range_(from.set_pedals_range_),
       lv_current_(from.lv_current_),
       lv_voltage_(from.lv_voltage_),
+      lv_total_voltage_(from.lv_total_voltage_),
       lv_temperature_(from.lv_temperature_),
       cooling_status_(from.cooling_status_),
       hv_cells_voltage_(from.hv_cells_voltage_),
@@ -9303,6 +9513,7 @@ void PrimaryFenice::Clear() {
   set_pedals_range_.Clear();
   lv_current_.Clear();
   lv_voltage_.Clear();
+  lv_total_voltage_.Clear();
   lv_temperature_.Clear();
   cooling_status_.Clear();
   hv_cells_voltage_.Clear();
@@ -9657,94 +9868,107 @@ const char* PrimaryFenice::_InternalParse(const char* ptr, ::_pbi::ParseContext*
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.LvTemperature lv_temperature = 27;
+      // repeated .primary.LvTotalVoltage lv_total_voltage = 27;
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_lv_temperature(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_total_voltage(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.CoolingStatus cooling_status = 28;
+      // repeated .primary.LvTemperature lv_temperature = 28;
       case 28:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 226)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_cooling_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_temperature(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HvCellsVoltage hv_cells_voltage = 29;
+      // repeated .primary.CoolingStatus cooling_status = 29;
       case 29:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cells_voltage(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_cooling_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HvCellsTemp hv_cells_temp = 30;
+      // repeated .primary.HvCellsVoltage hv_cells_voltage = 30;
       case 30:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 242)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cells_temp(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cells_voltage(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<242>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 31;
+      // repeated .primary.HvCellsTemp hv_cells_temp = 31;
       case 31:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 250)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cell_balancing_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cells_temp(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<250>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.InvLSetTorque inv_l_set_torque = 32;
+      // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 32;
       case 32:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 2)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_inv_l_set_torque(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cell_balancing_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.InvLResponse inv_l_response = 33;
+      // repeated .primary.InvLSetTorque inv_l_set_torque = 33;
       case 33:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_inv_l_set_torque(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<266>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.InvLResponse inv_l_response = 34;
+      case 34:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_inv_l_response(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<266>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<274>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -9985,60 +10209,68 @@ uint8_t* PrimaryFenice::_InternalSerialize(
         InternalWriteMessage(26, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.LvTemperature lv_temperature = 27;
+  // repeated .primary.LvTotalVoltage lv_total_voltage = 27;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lv_temperature_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lv_temperature(i);
+      n = static_cast<unsigned>(this->_internal_lv_total_voltage_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_total_voltage(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(27, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.CoolingStatus cooling_status = 28;
+  // repeated .primary.LvTemperature lv_temperature = 28;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_cooling_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_cooling_status(i);
+      n = static_cast<unsigned>(this->_internal_lv_temperature_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_temperature(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(28, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HvCellsVoltage hv_cells_voltage = 29;
+  // repeated .primary.CoolingStatus cooling_status = 29;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cells_voltage_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cells_voltage(i);
+      n = static_cast<unsigned>(this->_internal_cooling_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_cooling_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(29, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HvCellsTemp hv_cells_temp = 30;
+  // repeated .primary.HvCellsVoltage hv_cells_voltage = 30;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cells_temp_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cells_temp(i);
+      n = static_cast<unsigned>(this->_internal_hv_cells_voltage_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cells_voltage(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(30, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 31;
+  // repeated .primary.HvCellsTemp hv_cells_temp = 31;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cell_balancing_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cell_balancing_status(i);
+      n = static_cast<unsigned>(this->_internal_hv_cells_temp_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cells_temp(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(31, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.InvLSetTorque inv_l_set_torque = 32;
+  // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 32;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_inv_l_set_torque_size()); i < n; i++) {
-    const auto& repfield = this->_internal_inv_l_set_torque(i);
+      n = static_cast<unsigned>(this->_internal_hv_cell_balancing_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cell_balancing_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(32, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.InvLResponse inv_l_response = 33;
+  // repeated .primary.InvLSetTorque inv_l_set_torque = 33;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_inv_l_set_torque_size()); i < n; i++) {
+    const auto& repfield = this->_internal_inv_l_set_torque(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(33, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.InvLResponse inv_l_response = 34;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_inv_l_response_size()); i < n; i++) {
     const auto& repfield = this->_internal_inv_l_response(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(33, repfield, repfield.GetCachedSize(), target, stream);
+        InternalWriteMessage(34, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10239,49 +10471,56 @@ size_t PrimaryFenice::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.LvTemperature lv_temperature = 27;
+  // repeated .primary.LvTotalVoltage lv_total_voltage = 27;
+  total_size += 2UL * this->_internal_lv_total_voltage_size();
+  for (const auto& msg : this->lv_total_voltage_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.LvTemperature lv_temperature = 28;
   total_size += 2UL * this->_internal_lv_temperature_size();
   for (const auto& msg : this->lv_temperature_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.CoolingStatus cooling_status = 28;
+  // repeated .primary.CoolingStatus cooling_status = 29;
   total_size += 2UL * this->_internal_cooling_status_size();
   for (const auto& msg : this->cooling_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HvCellsVoltage hv_cells_voltage = 29;
+  // repeated .primary.HvCellsVoltage hv_cells_voltage = 30;
   total_size += 2UL * this->_internal_hv_cells_voltage_size();
   for (const auto& msg : this->hv_cells_voltage_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HvCellsTemp hv_cells_temp = 30;
+  // repeated .primary.HvCellsTemp hv_cells_temp = 31;
   total_size += 2UL * this->_internal_hv_cells_temp_size();
   for (const auto& msg : this->hv_cells_temp_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 31;
+  // repeated .primary.HvCellBalancingStatus hv_cell_balancing_status = 32;
   total_size += 2UL * this->_internal_hv_cell_balancing_status_size();
   for (const auto& msg : this->hv_cell_balancing_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.InvLSetTorque inv_l_set_torque = 32;
+  // repeated .primary.InvLSetTorque inv_l_set_torque = 33;
   total_size += 2UL * this->_internal_inv_l_set_torque_size();
   for (const auto& msg : this->inv_l_set_torque_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.InvLResponse inv_l_response = 33;
+  // repeated .primary.InvLResponse inv_l_response = 34;
   total_size += 2UL * this->_internal_inv_l_response_size();
   for (const auto& msg : this->inv_l_response_) {
     total_size +=
@@ -10336,6 +10575,7 @@ void PrimaryFenice::MergeFrom(const PrimaryFenice& from) {
   set_pedals_range_.MergeFrom(from.set_pedals_range_);
   lv_current_.MergeFrom(from.lv_current_);
   lv_voltage_.MergeFrom(from.lv_voltage_);
+  lv_total_voltage_.MergeFrom(from.lv_total_voltage_);
   lv_temperature_.MergeFrom(from.lv_temperature_);
   cooling_status_.MergeFrom(from.cooling_status_);
   hv_cells_voltage_.MergeFrom(from.hv_cells_voltage_);
@@ -10386,6 +10626,7 @@ void PrimaryFenice::InternalSwap(PrimaryFenice* other) {
   set_pedals_range_.InternalSwap(&other->set_pedals_range_);
   lv_current_.InternalSwap(&other->lv_current_);
   lv_voltage_.InternalSwap(&other->lv_voltage_);
+  lv_total_voltage_.InternalSwap(&other->lv_total_voltage_);
   lv_temperature_.InternalSwap(&other->lv_temperature_);
   cooling_status_.InternalSwap(&other->cooling_status_);
   hv_cells_voltage_.InternalSwap(&other->hv_cells_voltage_);
@@ -10398,7 +10639,7 @@ void PrimaryFenice::InternalSwap(PrimaryFenice* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PrimaryFenice::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[33]);
+      file_level_metadata_primary_2eproto[34]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -10507,6 +10748,10 @@ Arena::CreateMaybeMessage< ::primary::LvCurrent >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::primary::LvVoltage*
 Arena::CreateMaybeMessage< ::primary::LvVoltage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::LvVoltage >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::LvTotalVoltage*
+Arena::CreateMaybeMessage< ::primary::LvTotalVoltage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::LvTotalVoltage >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::LvTemperature*
 Arena::CreateMaybeMessage< ::primary::LvTemperature >(Arena* arena) {

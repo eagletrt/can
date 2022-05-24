@@ -362,7 +362,6 @@ PrimaryLvVoltageMsg* primary_lv_voltage_d = (PrimaryLvVoltageMsg*)malloc(PRIMARY
 deserialize_PrimaryLvVoltage(payload, primary_lv_voltage_d);
 
 primary::LvVoltage primary_lv_voltage_p;
-primary_lv_voltage_p.set_total_voltage(primary_lv_voltage_d->);
 primary_lv_voltage_p.set_voltage_1(primary_lv_voltage_d->);
 primary_lv_voltage_p.set_voltage_2(primary_lv_voltage_d->);
 primary_lv_voltage_p.set_voltage_3(primary_lv_voltage_d->);
@@ -375,7 +374,22 @@ return serialized;
 }
 
 
-case {'LV_TEMPERATURE': 838}:
+case {'LV_TOTAL_VOLTAGE': 838}:
+{
+PrimaryLvTotalVoltageMsg* primary_lv_total_voltage_d = (PrimaryLvTotalVoltageMsg*)malloc(PRIMARY_LV_TOTAL_VOLTAGE_SIZE);
+deserialize_PrimaryLvTotalVoltage(payload, primary_lv_total_voltage_d);
+
+primary::LvTotalVoltage primary_lv_total_voltage_p;
+primary_lv_total_voltage_p.set_total_voltage(primary_lv_total_voltage_d->);
+primary_lv_total_voltage_p.set_timestamp(primary_lv_total_voltage_d->);
+free(primary_lv_total_voltage_d);
+std::string serialized;
+primary_lv_total_voltage_p.SerializeToString(&serialized);
+return serialized;
+}
+
+
+case {'LV_TEMPERATURE': 870}:
 {
 PrimaryLvTemperatureMsg* primary_lv_temperature_d = (PrimaryLvTemperatureMsg*)malloc(PRIMARY_LV_TEMPERATURE_SIZE);
 deserialize_PrimaryLvTemperature(payload, primary_lv_temperature_d);
@@ -391,7 +405,7 @@ return serialized;
 }
 
 
-case {'COOLING_STATUS': 870}:
+case {'COOLING_STATUS': 902}:
 {
 PrimaryCoolingStatusMsg* primary_cooling_status_d = (PrimaryCoolingStatusMsg*)malloc(PRIMARY_COOLING_STATUS_SIZE);
 deserialize_PrimaryCoolingStatus(payload, primary_cooling_status_d);

@@ -66,8 +66,9 @@
 
 #define primary_id_LV_CURRENT 0b01100000110
 #define primary_id_LV_VOLTAGE 0b01100100110
-#define primary_id_LV_TEMPERATURE 0b01101000110
-#define primary_id_COOLING_STATUS 0b01101100110
+#define primary_id_LV_TOTAL_VOLTAGE 0b01101000110
+#define primary_id_LV_TEMPERATURE 0b01101100110
+#define primary_id_COOLING_STATUS 0b01110000110
 
 /* TOPIC HANDCART */
 #define primary_topic_mask_HANDCART 0b00000011111
@@ -158,6 +159,9 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
             return 0;
         case primary_id_LV_VOLTAGE:
             strcpy(buffer, "LV_VOLTAGE");
+            return 0;
+        case primary_id_LV_TOTAL_VOLTAGE:
+            strcpy(buffer, "LV_TOTAL_VOLTAGE");
             return 0;
         case primary_id_LV_TEMPERATURE:
             strcpy(buffer, "LV_TEMPERATURE");

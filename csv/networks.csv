@@ -46,9 +46,10 @@ SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1029,primary,DAS,3,STEER,DAS,,"bound: Bound, 
 CAR_STATUS,CAR_STATUS: 514,primary,STEER,5,DAS,STEER,100,"inverter_l: InverterStatus, inverter_r: InverterStatus, car_status: CarStatus","Car status, all states managed by the DAS will be send (car status, inverters status)"
 DAS_ERRORS,DAS_ERRORS: 2,primary,STEER,7,DAS,STEER,20,das_error: DasErrors,DAS errors messages
 LV_CURRENT,LV_CURRENT: 774,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",500,current: uint8,Current of LV battery pack: total current taken from the battery itself
-LV_VOLTAGE,LV_VOLTAGE: 806,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",200,"total_voltage: uint16, voltage_1: uint8, voltage_2: uint8, voltage_3: uint8, voltage_4: uint8","Voltages of LV battery pack: total voltage 16 bit 12,17.2V (0x0000 under_voltage,0xFFFF over_voltage), 4x single cell voltage 8bit 3,4.2V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)"
-LV_TEMPERATURE,LV_TEMPERATURE: 838,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",200,"bp_temperature: uint8, dcdc_temperature: uint8","Temperature of LV battery pack,0,80Celsius, uint8 0.32C/bit. battery pack and dcdc converter"
-COOLING_STATUS,COOLING_STATUS: 870,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",1000,"hv_fan_speed: uint8, lv_fan_speed: uint8, pump_speed: uint8","Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit"
+LV_VOLTAGE,LV_VOLTAGE: 806,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",200,"voltage_1: uint8, voltage_2: uint8, voltage_3: uint8, voltage_4: uint8","Voltages of LV battery pack: 4x single cell voltage 8bit 3.3,4.2V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)"
+LV_TOTAL_VOLTAGE,LV_TOTAL_VOLTAGE: 838,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",200,total_voltage: uint16,"Voltage of LV battery pack: total voltage 16 bit 12,17.2V (0x0000 under_voltage,0xFFFF over_voltage"
+LV_TEMPERATURE,LV_TEMPERATURE: 870,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",200,"bp_temperature: uint8, dcdc_temperature: uint8","Temperature of LV battery pack,0,80Celsius, uint8 0.32C/bit. battery pack and dcdc converter"
+COOLING_STATUS,COOLING_STATUS: 902,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",1000,"hv_fan_speed: uint8, lv_fan_speed: uint8, pump_speed: uint8","Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit"
 MARKER,MARKER: 1,primary,TLM,7,STEER,TLM,,,Send a marker to telemetry
 HV_CELLS_VOLTAGE,HV_CELLS_VOLTAGE: 519,primary,HANDCART,5,BMS_HV,HANDCART,200,"cell_index: uint8, voltage_0: uint16, voltage_1: uint16, voltage_2: uint16",Voltages for each cell
 HV_CELLS_TEMP,HV_CELLS_TEMP: 551,primary,HANDCART,5,BMS_HV,HANDCART,100,"cell_index: uint8, temp_0: uint8, temp_1: uint8, temp_2: uint8, temp_3: uint8, temp_4: uint8, temp_5: uint8, temp_6: uint8",Cell temperatures
