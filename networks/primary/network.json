@@ -420,14 +420,25 @@
       "priority": 4,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Voltages of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage), 4x single cell voltage 8bit [3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
+      "description": "Voltages of LV battery pack: 4x single cell voltage 8bit [3.3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
       "frequency": 200,
       "contents": {
-        "total_voltage": "uint16",
         "voltage_1": "uint8",
         "voltage_2": "uint8",
         "voltage_3": "uint8",
         "voltage_4": "uint8"
+      }
+    },
+    {
+      "name": "LV_TOTAL_VOLTAGE",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Voltage of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage",
+      "frequency": 200,
+      "contents": {
+        "total_voltage": "uint16"
       }
     },
     {
