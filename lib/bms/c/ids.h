@@ -51,7 +51,7 @@
 #define bms_id_FW_UPDATE 0b00100000100
 
 
-// Utils
+// ============== UTILS ============== //
 
 #define bms_MAX_MESSAGE_LENGTH 24
 

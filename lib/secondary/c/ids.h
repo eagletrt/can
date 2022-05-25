@@ -37,7 +37,7 @@
 #define secondary_id_LAP_COUNT 0b10001000001
 
 
-// Utils
+// ============== UTILS ============== //
 
 #define secondary_MAX_MESSAGE_LENGTH 17
 

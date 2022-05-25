@@ -5,14 +5,14 @@ message ImuAngularRate {
 uint32 ang_rate_x = 1;
 uint32 ang_rate_y = 2;
 uint32 ang_rate_z = 3;
-uint32 timestamp = 4;
+uint64 _timestamp = 4;
 }
 
 message ImuAcceleration {
 uint32 accel_x = 1;
 uint32 accel_y = 2;
 uint32 accel_z = 3;
-uint32 timestamp = 4;
+uint64 _timestamp = 4;
 }
 
 message IrtsFl0 {
@@ -20,7 +20,7 @@ uint32 channel1 = 1;
 uint32 channel2 = 2;
 uint32 channel3 = 3;
 uint32 channel4 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFl1 {
@@ -28,7 +28,7 @@ uint32 channel5 = 1;
 uint32 channel6 = 2;
 uint32 channel7 = 3;
 uint32 channel8 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFl2 {
@@ -36,7 +36,7 @@ uint32 channel9 = 1;
 uint32 channel10 = 2;
 uint32 channel11 = 3;
 uint32 channel12 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFl3 {
@@ -44,7 +44,7 @@ uint32 channel13 = 1;
 uint32 channel14 = 2;
 uint32 channel15 = 3;
 uint32 channel16 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFr0 {
@@ -52,7 +52,7 @@ uint32 channel1 = 1;
 uint32 channel2 = 2;
 uint32 channel3 = 3;
 uint32 channel4 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFr1 {
@@ -60,7 +60,7 @@ uint32 channel5 = 1;
 uint32 channel6 = 2;
 uint32 channel7 = 3;
 uint32 channel8 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFr2 {
@@ -68,7 +68,7 @@ uint32 channel9 = 1;
 uint32 channel10 = 2;
 uint32 channel11 = 3;
 uint32 channel12 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsFr3 {
@@ -76,7 +76,7 @@ uint32 channel13 = 1;
 uint32 channel14 = 2;
 uint32 channel15 = 3;
 uint32 channel16 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRl0 {
@@ -84,7 +84,7 @@ uint32 channel1 = 1;
 uint32 channel2 = 2;
 uint32 channel3 = 3;
 uint32 channel4 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRl1 {
@@ -92,7 +92,7 @@ uint32 channel5 = 1;
 uint32 channel6 = 2;
 uint32 channel7 = 3;
 uint32 channel8 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRl2 {
@@ -100,7 +100,7 @@ uint32 channel9 = 1;
 uint32 channel10 = 2;
 uint32 channel11 = 3;
 uint32 channel12 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRl3 {
@@ -108,7 +108,7 @@ uint32 channel13 = 1;
 uint32 channel14 = 2;
 uint32 channel15 = 3;
 uint32 channel16 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRr0 {
@@ -116,7 +116,7 @@ uint32 channel1 = 1;
 uint32 channel2 = 2;
 uint32 channel3 = 3;
 uint32 channel4 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRr1 {
@@ -124,7 +124,7 @@ uint32 channel5 = 1;
 uint32 channel6 = 2;
 uint32 channel7 = 3;
 uint32 channel8 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRr2 {
@@ -132,7 +132,7 @@ uint32 channel9 = 1;
 uint32 channel10 = 2;
 uint32 channel11 = 3;
 uint32 channel12 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message IrtsRr3 {
@@ -140,18 +140,18 @@ uint32 channel13 = 1;
 uint32 channel14 = 2;
 uint32 channel15 = 3;
 uint32 channel16 = 4;
-uint32 timestamp = 5;
+uint64 _timestamp = 5;
 }
 
 message GpsCoords {
 float latitude = 1;
 float longitude = 2;
-uint32 timestamp = 3;
+uint64 _timestamp = 3;
 }
 
 message GpsSpeed {
 uint32 speed = 1;
-uint32 timestamp = 2;
+uint64 _timestamp = 2;
 }
 
 message LapCount {

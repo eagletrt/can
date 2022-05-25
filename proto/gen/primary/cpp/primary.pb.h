@@ -596,13 +596,13 @@ class SteerVersion final :
   void _internal_set_cancicd_version(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SteerVersion)
@@ -614,7 +614,7 @@ class SteerVersion final :
   typedef void DestructorSkippable_;
   uint32_t component_version_;
   uint32_t cancicd_version_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -761,13 +761,13 @@ class DasVersion final :
   void _internal_set_cancicd_version(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.DasVersion)
@@ -779,7 +779,7 @@ class DasVersion final :
   typedef void DestructorSkippable_;
   uint32_t component_version_;
   uint32_t cancicd_version_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -926,13 +926,13 @@ class HvVersion final :
   void _internal_set_cancicd_version(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvVersion)
@@ -944,7 +944,7 @@ class HvVersion final :
   typedef void DestructorSkippable_;
   uint32_t component_version_;
   uint32_t cancicd_version_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -1091,13 +1091,13 @@ class LvVersion final :
   void _internal_set_cancicd_version(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.LvVersion)
@@ -1109,7 +1109,7 @@ class LvVersion final :
   typedef void DestructorSkippable_;
   uint32_t component_version_;
   uint32_t cancicd_version_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -1256,13 +1256,13 @@ class TlmVersion final :
   void _internal_set_cancicd_version(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.TlmVersion)
@@ -1274,7 +1274,7 @@ class TlmVersion final :
   typedef void DestructorSkippable_;
   uint32_t component_version_;
   uint32_t cancicd_version_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -1584,13 +1584,13 @@ class SetTlmStatus final :
   void _internal_set_circuit(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SetTlmStatus)
@@ -1604,7 +1604,7 @@ class SetTlmStatus final :
   int race_type_;
   uint32_t driver_;
   uint32_t circuit_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -1729,9 +1729,18 @@ class SteerSystemStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSocTempFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kSocTempFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 soc_temp = 1;
   void clear_soc_temp();
   uint32_t soc_temp() const;
@@ -1741,15 +1750,6 @@ class SteerSystemStatus final :
   void _internal_set_soc_temp(uint32_t value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.SteerSystemStatus)
  private:
   class _Internal;
@@ -1757,8 +1757,8 @@ class SteerSystemStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   uint32_t soc_temp_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -1885,13 +1885,13 @@ class Marker final :
   enum : int {
     kTimestampFieldNumber = 1,
   };
-  // uint32 timestamp = 1;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 1;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.Marker)
@@ -1901,7 +1901,7 @@ class Marker final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2068,13 +2068,13 @@ class TlmStatus final :
   void _internal_set_circuit(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.TlmStatus)
@@ -2088,7 +2088,7 @@ class TlmStatus final :
   int race_type_;
   uint32_t driver_;
   uint32_t circuit_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2215,8 +2215,8 @@ class CarStatus final :
   enum : int {
     kInverterLFieldNumber = 1,
     kInverterRFieldNumber = 2,
-    kCarStatusFieldNumber = 3,
     kTimestampFieldNumber = 4,
+    kCarStatusFieldNumber = 3,
   };
   // .primary.InverterstatusType inverter_l = 1;
   void clear_inverter_l();
@@ -2236,6 +2236,15 @@ class CarStatus final :
   void _internal_set_inverter_r(::primary::InverterstatusType value);
   public:
 
+  // uint64 _timestamp = 4;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.CarstatusType car_status = 3;
   void clear_car_status();
   ::primary::CarstatusType car_status() const;
@@ -2243,15 +2252,6 @@ class CarStatus final :
   private:
   ::primary::CarstatusType _internal_car_status() const;
   void _internal_set_car_status(::primary::CarstatusType value);
-  public:
-
-  // uint32 timestamp = 4;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.CarStatus)
@@ -2263,8 +2263,8 @@ class CarStatus final :
   typedef void DestructorSkippable_;
   int inverter_l_;
   int inverter_r_;
+  uint64_t _timestamp_;
   int car_status_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2389,9 +2389,18 @@ class DasErrors final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDasErrorFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kDasErrorFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 das_error = 1;
   void clear_das_error();
   uint32_t das_error() const;
@@ -2401,15 +2410,6 @@ class DasErrors final :
   void _internal_set_das_error(uint32_t value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.DasErrors)
  private:
   class _Internal;
@@ -2417,8 +2417,8 @@ class DasErrors final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   uint32_t das_error_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2585,13 +2585,13 @@ class Speed final :
   void _internal_set_inverter_l(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.Speed)
@@ -2605,7 +2605,7 @@ class Speed final :
   uint32_t encoder_l_;
   uint32_t inverter_r_;
   uint32_t inverter_l_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2772,13 +2772,13 @@ class HvVoltage final :
   void _internal_set_min_cell_voltage(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvVoltage)
@@ -2792,7 +2792,7 @@ class HvVoltage final :
   uint32_t bus_voltage_;
   uint32_t max_cell_voltage_;
   uint32_t min_cell_voltage_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -2939,13 +2939,13 @@ class HvCurrent final :
   void _internal_set_power(int32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvCurrent)
@@ -2957,7 +2957,7 @@ class HvCurrent final :
   typedef void DestructorSkippable_;
   uint32_t current_;
   int32_t power_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3084,8 +3084,8 @@ class HvTemp final :
   enum : int {
     kAverageTempFieldNumber = 1,
     kMaxTempFieldNumber = 2,
-    kMinTempFieldNumber = 3,
     kTimestampFieldNumber = 4,
+    kMinTempFieldNumber = 3,
   };
   // uint32 average_temp = 1;
   void clear_average_temp();
@@ -3105,6 +3105,15 @@ class HvTemp final :
   void _internal_set_max_temp(uint32_t value);
   public:
 
+  // uint64 _timestamp = 4;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 min_temp = 3;
   void clear_min_temp();
   uint32_t min_temp() const;
@@ -3112,15 +3121,6 @@ class HvTemp final :
   private:
   uint32_t _internal_min_temp() const;
   void _internal_set_min_temp(uint32_t value);
-  public:
-
-  // uint32 timestamp = 4;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvTemp)
@@ -3132,8 +3132,8 @@ class HvTemp final :
   typedef void DestructorSkippable_;
   uint32_t average_temp_;
   uint32_t max_temp_;
+  uint64_t _timestamp_;
   uint32_t min_temp_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3280,13 +3280,13 @@ class HvErrors final :
   void _internal_set_errors(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvErrors)
@@ -3298,7 +3298,7 @@ class HvErrors final :
   typedef void DestructorSkippable_;
   uint32_t warnings_;
   uint32_t errors_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3423,9 +3423,18 @@ class TsStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTsStatusFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kTsStatusFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.TsstatusType ts_status = 1;
   void clear_ts_status();
   ::primary::TsstatusType ts_status() const;
@@ -3435,15 +3444,6 @@ class TsStatus final :
   void _internal_set_ts_status(::primary::TsstatusType value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.TsStatus)
  private:
   class _Internal;
@@ -3451,8 +3451,8 @@ class TsStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   int ts_status_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3577,9 +3577,18 @@ class SetTsStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTsStatusSetFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kTsStatusSetFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.ToggleType ts_status_set = 1;
   void clear_ts_status_set();
   ::primary::ToggleType ts_status_set() const;
@@ -3589,15 +3598,6 @@ class SetTsStatus final :
   void _internal_set_ts_status_set(::primary::ToggleType value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.SetTsStatus)
  private:
   class _Internal;
@@ -3605,8 +3605,8 @@ class SetTsStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   int ts_status_set_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3731,9 +3731,18 @@ class SetCellBalancingStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSetBalancingStatusFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kSetBalancingStatusFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.ToggleType set_balancing_status = 1;
   void clear_set_balancing_status();
   ::primary::ToggleType set_balancing_status() const;
@@ -3743,15 +3752,6 @@ class SetCellBalancingStatus final :
   void _internal_set_set_balancing_status(::primary::ToggleType value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.SetCellBalancingStatus)
  private:
   class _Internal;
@@ -3759,8 +3759,8 @@ class SetCellBalancingStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   int set_balancing_status_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -3885,9 +3885,18 @@ class HandcartStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kConnectedFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kConnectedFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // bool connected = 1;
   void clear_connected();
   bool connected() const;
@@ -3897,15 +3906,6 @@ class HandcartStatus final :
   void _internal_set_connected(bool value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.HandcartStatus)
  private:
   class _Internal;
@@ -3913,8 +3913,8 @@ class HandcartStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   bool connected_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4061,13 +4061,13 @@ class SteerStatus final :
   void _internal_set_map(::primary::MapType value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SteerStatus)
@@ -4079,7 +4079,7 @@ class SteerStatus final :
   typedef void DestructorSkippable_;
   int traction_control_;
   int map_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4204,9 +4204,18 @@ class SetCarStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCarStatusSetFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kCarStatusSetFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.SetcarstatusType car_status_set = 1;
   void clear_car_status_set();
   ::primary::SetcarstatusType car_status_set() const;
@@ -4216,15 +4225,6 @@ class SetCarStatus final :
   void _internal_set_car_status_set(::primary::SetcarstatusType value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.SetCarStatus)
  private:
   class _Internal;
@@ -4232,8 +4232,8 @@ class SetCarStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   int car_status_set_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4380,13 +4380,13 @@ class SetPedalsRange final :
   void _internal_set_pedal(::primary::PedalType value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SetPedalsRange)
@@ -4398,7 +4398,7 @@ class SetPedalsRange final :
   typedef void DestructorSkippable_;
   int bound_;
   int pedal_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4523,9 +4523,18 @@ class LvCurrent final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCurrentFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kCurrentFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 current = 1;
   void clear_current();
   uint32_t current() const;
@@ -4535,15 +4544,6 @@ class LvCurrent final :
   void _internal_set_current(uint32_t value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.LvCurrent)
  private:
   class _Internal;
@@ -4551,8 +4551,8 @@ class LvCurrent final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   uint32_t current_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4719,13 +4719,13 @@ class LvVoltage final :
   void _internal_set_voltage_4(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.LvVoltage)
@@ -4739,7 +4739,7 @@ class LvVoltage final :
   uint32_t voltage_2_;
   uint32_t voltage_3_;
   uint32_t voltage_4_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -4864,9 +4864,18 @@ class LvTotalVoltage final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTotalVoltageFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kTotalVoltageFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 total_voltage = 1;
   void clear_total_voltage();
   uint32_t total_voltage() const;
@@ -4876,15 +4885,6 @@ class LvTotalVoltage final :
   void _internal_set_total_voltage(uint32_t value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.LvTotalVoltage)
  private:
   class _Internal;
@@ -4892,8 +4892,8 @@ class LvTotalVoltage final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   uint32_t total_voltage_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5040,13 +5040,13 @@ class LvTemperature final :
   void _internal_set_dcdc_temperature(uint32_t value);
   public:
 
-  // uint32 timestamp = 3;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 3;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.LvTemperature)
@@ -5058,7 +5058,7 @@ class LvTemperature final :
   typedef void DestructorSkippable_;
   uint32_t bp_temperature_;
   uint32_t dcdc_temperature_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5185,8 +5185,8 @@ class CoolingStatus final :
   enum : int {
     kHvFanSpeedFieldNumber = 1,
     kLvFanSpeedFieldNumber = 2,
-    kPumpSpeedFieldNumber = 3,
     kTimestampFieldNumber = 4,
+    kPumpSpeedFieldNumber = 3,
   };
   // uint32 hv_fan_speed = 1;
   void clear_hv_fan_speed();
@@ -5206,6 +5206,15 @@ class CoolingStatus final :
   void _internal_set_lv_fan_speed(uint32_t value);
   public:
 
+  // uint64 _timestamp = 4;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 pump_speed = 3;
   void clear_pump_speed();
   uint32_t pump_speed() const;
@@ -5213,15 +5222,6 @@ class CoolingStatus final :
   private:
   uint32_t _internal_pump_speed() const;
   void _internal_set_pump_speed(uint32_t value);
-  public:
-
-  // uint32 timestamp = 4;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.CoolingStatus)
@@ -5233,8 +5233,8 @@ class CoolingStatus final :
   typedef void DestructorSkippable_;
   uint32_t hv_fan_speed_;
   uint32_t lv_fan_speed_;
+  uint64_t _timestamp_;
   uint32_t pump_speed_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5401,13 +5401,13 @@ class HvCellsVoltage final :
   void _internal_set_voltage_2(uint32_t value);
   public:
 
-  // uint32 timestamp = 5;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 5;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvCellsVoltage)
@@ -5421,7 +5421,7 @@ class HvCellsVoltage final :
   uint32_t voltage_0_;
   uint32_t voltage_1_;
   uint32_t voltage_2_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5628,13 +5628,13 @@ class HvCellsTemp final :
   void _internal_set_temp_6(uint32_t value);
   public:
 
-  // uint32 timestamp = 9;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 9;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.HvCellsTemp)
@@ -5652,7 +5652,7 @@ class HvCellsTemp final :
   uint32_t temp_4_;
   uint32_t temp_5_;
   uint32_t temp_6_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5777,9 +5777,18 @@ class HvCellBalancingStatus final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBalancingStatusFieldNumber = 1,
     kTimestampFieldNumber = 2,
+    kBalancingStatusFieldNumber = 1,
   };
+  // uint64 _timestamp = 2;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // .primary.ToggleType balancing_status = 1;
   void clear_balancing_status();
   ::primary::ToggleType balancing_status() const;
@@ -5789,15 +5798,6 @@ class HvCellBalancingStatus final :
   void _internal_set_balancing_status(::primary::ToggleType value);
   public:
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:primary.HvCellBalancingStatus)
  private:
   class _Internal;
@@ -5805,8 +5805,8 @@ class HvCellBalancingStatus final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  uint64_t _timestamp_;
   int balancing_status_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -5933,8 +5933,8 @@ class InvLSetTorque final :
   enum : int {
     kRegIdFieldNumber = 1,
     kLsbFieldNumber = 2,
-    kMsbFieldNumber = 3,
     kTimestampFieldNumber = 4,
+    kMsbFieldNumber = 3,
   };
   // uint32 reg_id = 1;
   void clear_reg_id();
@@ -5954,6 +5954,15 @@ class InvLSetTorque final :
   void _internal_set_lsb(uint32_t value);
   public:
 
+  // uint64 _timestamp = 4;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
+  private:
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
+  public:
+
   // uint32 msb = 3;
   void clear_msb();
   uint32_t msb() const;
@@ -5961,15 +5970,6 @@ class InvLSetTorque final :
   private:
   uint32_t _internal_msb() const;
   void _internal_set_msb(uint32_t value);
-  public:
-
-  // uint32 timestamp = 4;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.InvLSetTorque)
@@ -5981,8 +5981,8 @@ class InvLSetTorque final :
   typedef void DestructorSkippable_;
   uint32_t reg_id_;
   uint32_t lsb_;
+  uint64_t _timestamp_;
   uint32_t msb_;
-  uint32_t timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -6189,13 +6189,13 @@ class InvLResponse final :
   void _internal_set_data_6(uint32_t value);
   public:
 
-  // uint32 timestamp = 9;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
+  // uint64 _timestamp = 9;
+  void clear__timestamp();
+  uint64_t _timestamp() const;
+  void set__timestamp(uint64_t value);
   private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
+  uint64_t _internal__timestamp() const;
+  void _internal_set__timestamp(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.InvLResponse)
@@ -6213,7 +6213,7 @@ class InvLResponse final :
   uint32_t data_4_;
   uint32_t data_5_;
   uint32_t data_6_;
-  uint32_t timestamp_;
+  uint64_t _timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -7080,24 +7080,24 @@ inline void SteerVersion::set_cancicd_version(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.SteerVersion.cancicd_version)
 }
 
-// uint32 timestamp = 3;
-inline void SteerVersion::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void SteerVersion::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SteerVersion::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SteerVersion::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SteerVersion::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SteerVersion.timestamp)
-  return _internal_timestamp();
+inline uint64_t SteerVersion::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SteerVersion._timestamp)
+  return _internal__timestamp();
 }
-inline void SteerVersion::_internal_set_timestamp(uint32_t value) {
+inline void SteerVersion::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SteerVersion::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SteerVersion.timestamp)
+inline void SteerVersion::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SteerVersion._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7144,24 +7144,24 @@ inline void DasVersion::set_cancicd_version(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.DasVersion.cancicd_version)
 }
 
-// uint32 timestamp = 3;
-inline void DasVersion::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void DasVersion::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t DasVersion::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t DasVersion::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t DasVersion::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.DasVersion.timestamp)
-  return _internal_timestamp();
+inline uint64_t DasVersion::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.DasVersion._timestamp)
+  return _internal__timestamp();
 }
-inline void DasVersion::_internal_set_timestamp(uint32_t value) {
+inline void DasVersion::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void DasVersion::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.DasVersion.timestamp)
+inline void DasVersion::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.DasVersion._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7208,24 +7208,24 @@ inline void HvVersion::set_cancicd_version(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvVersion.cancicd_version)
 }
 
-// uint32 timestamp = 3;
-inline void HvVersion::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void HvVersion::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvVersion::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvVersion::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvVersion::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvVersion.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvVersion::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvVersion._timestamp)
+  return _internal__timestamp();
 }
-inline void HvVersion::_internal_set_timestamp(uint32_t value) {
+inline void HvVersion::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvVersion::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvVersion.timestamp)
+inline void HvVersion::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvVersion._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7272,24 +7272,24 @@ inline void LvVersion::set_cancicd_version(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.LvVersion.cancicd_version)
 }
 
-// uint32 timestamp = 3;
-inline void LvVersion::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void LvVersion::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t LvVersion::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t LvVersion::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t LvVersion::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.LvVersion.timestamp)
-  return _internal_timestamp();
+inline uint64_t LvVersion::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LvVersion._timestamp)
+  return _internal__timestamp();
 }
-inline void LvVersion::_internal_set_timestamp(uint32_t value) {
+inline void LvVersion::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void LvVersion::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.LvVersion.timestamp)
+inline void LvVersion::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LvVersion._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7336,24 +7336,24 @@ inline void TlmVersion::set_cancicd_version(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.TlmVersion.cancicd_version)
 }
 
-// uint32 timestamp = 3;
-inline void TlmVersion::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void TlmVersion::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t TlmVersion::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t TlmVersion::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t TlmVersion::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.TlmVersion.timestamp)
-  return _internal_timestamp();
+inline uint64_t TlmVersion::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.TlmVersion._timestamp)
+  return _internal__timestamp();
 }
-inline void TlmVersion::_internal_set_timestamp(uint32_t value) {
+inline void TlmVersion::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void TlmVersion::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.TlmVersion.timestamp)
+inline void TlmVersion::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.TlmVersion._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7464,24 +7464,24 @@ inline void SetTlmStatus::set_circuit(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.SetTlmStatus.circuit)
 }
 
-// uint32 timestamp = 5;
-inline void SetTlmStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void SetTlmStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SetTlmStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SetTlmStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SetTlmStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SetTlmStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SetTlmStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SetTlmStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SetTlmStatus::_internal_set_timestamp(uint32_t value) {
+inline void SetTlmStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SetTlmStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SetTlmStatus.timestamp)
+inline void SetTlmStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SetTlmStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7508,48 +7508,48 @@ inline void SteerSystemStatus::set_soc_temp(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.SteerSystemStatus.soc_temp)
 }
 
-// uint32 timestamp = 2;
-inline void SteerSystemStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void SteerSystemStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SteerSystemStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SteerSystemStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SteerSystemStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SteerSystemStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SteerSystemStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SteerSystemStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SteerSystemStatus::_internal_set_timestamp(uint32_t value) {
+inline void SteerSystemStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SteerSystemStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SteerSystemStatus.timestamp)
+inline void SteerSystemStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SteerSystemStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
 
 // Marker
 
-// uint32 timestamp = 1;
-inline void Marker::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 1;
+inline void Marker::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t Marker::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t Marker::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t Marker::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.Marker.timestamp)
-  return _internal_timestamp();
+inline uint64_t Marker::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.Marker._timestamp)
+  return _internal__timestamp();
 }
-inline void Marker::_internal_set_timestamp(uint32_t value) {
+inline void Marker::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void Marker::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.Marker.timestamp)
+inline void Marker::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.Marker._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7636,24 +7636,24 @@ inline void TlmStatus::set_circuit(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.TlmStatus.circuit)
 }
 
-// uint32 timestamp = 5;
-inline void TlmStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void TlmStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t TlmStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t TlmStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t TlmStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.TlmStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t TlmStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.TlmStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void TlmStatus::_internal_set_timestamp(uint32_t value) {
+inline void TlmStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void TlmStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.TlmStatus.timestamp)
+inline void TlmStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.TlmStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7720,24 +7720,24 @@ inline void CarStatus::set_car_status(::primary::CarstatusType value) {
   // @@protoc_insertion_point(field_set:primary.CarStatus.car_status)
 }
 
-// uint32 timestamp = 4;
-inline void CarStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 4;
+inline void CarStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t CarStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t CarStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t CarStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.CarStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t CarStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.CarStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void CarStatus::_internal_set_timestamp(uint32_t value) {
+inline void CarStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void CarStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.CarStatus.timestamp)
+inline void CarStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.CarStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7764,24 +7764,24 @@ inline void DasErrors::set_das_error(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.DasErrors.das_error)
 }
 
-// uint32 timestamp = 2;
-inline void DasErrors::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void DasErrors::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t DasErrors::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t DasErrors::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t DasErrors::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.DasErrors.timestamp)
-  return _internal_timestamp();
+inline uint64_t DasErrors::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.DasErrors._timestamp)
+  return _internal__timestamp();
 }
-inline void DasErrors::_internal_set_timestamp(uint32_t value) {
+inline void DasErrors::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void DasErrors::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.DasErrors.timestamp)
+inline void DasErrors::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.DasErrors._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7868,24 +7868,24 @@ inline void Speed::set_inverter_l(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.Speed.inverter_l)
 }
 
-// uint32 timestamp = 5;
-inline void Speed::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void Speed::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t Speed::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t Speed::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t Speed::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.Speed.timestamp)
-  return _internal_timestamp();
+inline uint64_t Speed::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.Speed._timestamp)
+  return _internal__timestamp();
 }
-inline void Speed::_internal_set_timestamp(uint32_t value) {
+inline void Speed::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void Speed::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.Speed.timestamp)
+inline void Speed::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.Speed._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -7972,24 +7972,24 @@ inline void HvVoltage::set_min_cell_voltage(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvVoltage.min_cell_voltage)
 }
 
-// uint32 timestamp = 5;
-inline void HvVoltage::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void HvVoltage::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvVoltage::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvVoltage::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvVoltage::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvVoltage.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvVoltage::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvVoltage._timestamp)
+  return _internal__timestamp();
 }
-inline void HvVoltage::_internal_set_timestamp(uint32_t value) {
+inline void HvVoltage::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvVoltage::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvVoltage.timestamp)
+inline void HvVoltage::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvVoltage._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8036,24 +8036,24 @@ inline void HvCurrent::set_power(int32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvCurrent.power)
 }
 
-// uint32 timestamp = 3;
-inline void HvCurrent::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void HvCurrent::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvCurrent::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvCurrent::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvCurrent::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvCurrent.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvCurrent::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvCurrent._timestamp)
+  return _internal__timestamp();
 }
-inline void HvCurrent::_internal_set_timestamp(uint32_t value) {
+inline void HvCurrent::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvCurrent::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvCurrent.timestamp)
+inline void HvCurrent::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvCurrent._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8120,24 +8120,24 @@ inline void HvTemp::set_min_temp(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvTemp.min_temp)
 }
 
-// uint32 timestamp = 4;
-inline void HvTemp::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 4;
+inline void HvTemp::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvTemp::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvTemp::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvTemp::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvTemp.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvTemp::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvTemp._timestamp)
+  return _internal__timestamp();
 }
-inline void HvTemp::_internal_set_timestamp(uint32_t value) {
+inline void HvTemp::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvTemp::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvTemp.timestamp)
+inline void HvTemp::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvTemp._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8184,24 +8184,24 @@ inline void HvErrors::set_errors(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvErrors.errors)
 }
 
-// uint32 timestamp = 3;
-inline void HvErrors::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void HvErrors::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvErrors::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvErrors::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvErrors::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvErrors.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvErrors::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvErrors._timestamp)
+  return _internal__timestamp();
 }
-inline void HvErrors::_internal_set_timestamp(uint32_t value) {
+inline void HvErrors::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvErrors::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvErrors.timestamp)
+inline void HvErrors::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvErrors._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8228,24 +8228,24 @@ inline void TsStatus::set_ts_status(::primary::TsstatusType value) {
   // @@protoc_insertion_point(field_set:primary.TsStatus.ts_status)
 }
 
-// uint32 timestamp = 2;
-inline void TsStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void TsStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t TsStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t TsStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t TsStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.TsStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t TsStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.TsStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void TsStatus::_internal_set_timestamp(uint32_t value) {
+inline void TsStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void TsStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.TsStatus.timestamp)
+inline void TsStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.TsStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8272,24 +8272,24 @@ inline void SetTsStatus::set_ts_status_set(::primary::ToggleType value) {
   // @@protoc_insertion_point(field_set:primary.SetTsStatus.ts_status_set)
 }
 
-// uint32 timestamp = 2;
-inline void SetTsStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void SetTsStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SetTsStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SetTsStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SetTsStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SetTsStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SetTsStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SetTsStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SetTsStatus::_internal_set_timestamp(uint32_t value) {
+inline void SetTsStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SetTsStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SetTsStatus.timestamp)
+inline void SetTsStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SetTsStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8316,24 +8316,24 @@ inline void SetCellBalancingStatus::set_set_balancing_status(::primary::ToggleTy
   // @@protoc_insertion_point(field_set:primary.SetCellBalancingStatus.set_balancing_status)
 }
 
-// uint32 timestamp = 2;
-inline void SetCellBalancingStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void SetCellBalancingStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SetCellBalancingStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SetCellBalancingStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SetCellBalancingStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SetCellBalancingStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SetCellBalancingStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SetCellBalancingStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SetCellBalancingStatus::_internal_set_timestamp(uint32_t value) {
+inline void SetCellBalancingStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SetCellBalancingStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SetCellBalancingStatus.timestamp)
+inline void SetCellBalancingStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SetCellBalancingStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8360,24 +8360,24 @@ inline void HandcartStatus::set_connected(bool value) {
   // @@protoc_insertion_point(field_set:primary.HandcartStatus.connected)
 }
 
-// uint32 timestamp = 2;
-inline void HandcartStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void HandcartStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HandcartStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HandcartStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HandcartStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HandcartStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t HandcartStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HandcartStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void HandcartStatus::_internal_set_timestamp(uint32_t value) {
+inline void HandcartStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HandcartStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HandcartStatus.timestamp)
+inline void HandcartStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HandcartStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8424,24 +8424,24 @@ inline void SteerStatus::set_map(::primary::MapType value) {
   // @@protoc_insertion_point(field_set:primary.SteerStatus.map)
 }
 
-// uint32 timestamp = 3;
-inline void SteerStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void SteerStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SteerStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SteerStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SteerStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SteerStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SteerStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SteerStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SteerStatus::_internal_set_timestamp(uint32_t value) {
+inline void SteerStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SteerStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SteerStatus.timestamp)
+inline void SteerStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SteerStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8468,24 +8468,24 @@ inline void SetCarStatus::set_car_status_set(::primary::SetcarstatusType value) 
   // @@protoc_insertion_point(field_set:primary.SetCarStatus.car_status_set)
 }
 
-// uint32 timestamp = 2;
-inline void SetCarStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void SetCarStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SetCarStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SetCarStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SetCarStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SetCarStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t SetCarStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SetCarStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void SetCarStatus::_internal_set_timestamp(uint32_t value) {
+inline void SetCarStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SetCarStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SetCarStatus.timestamp)
+inline void SetCarStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SetCarStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8532,24 +8532,24 @@ inline void SetPedalsRange::set_pedal(::primary::PedalType value) {
   // @@protoc_insertion_point(field_set:primary.SetPedalsRange.pedal)
 }
 
-// uint32 timestamp = 3;
-inline void SetPedalsRange::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void SetPedalsRange::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t SetPedalsRange::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t SetPedalsRange::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t SetPedalsRange::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.SetPedalsRange.timestamp)
-  return _internal_timestamp();
+inline uint64_t SetPedalsRange::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SetPedalsRange._timestamp)
+  return _internal__timestamp();
 }
-inline void SetPedalsRange::_internal_set_timestamp(uint32_t value) {
+inline void SetPedalsRange::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void SetPedalsRange::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.SetPedalsRange.timestamp)
+inline void SetPedalsRange::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SetPedalsRange._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8576,24 +8576,24 @@ inline void LvCurrent::set_current(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.LvCurrent.current)
 }
 
-// uint32 timestamp = 2;
-inline void LvCurrent::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void LvCurrent::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t LvCurrent::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t LvCurrent::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t LvCurrent::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.LvCurrent.timestamp)
-  return _internal_timestamp();
+inline uint64_t LvCurrent::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LvCurrent._timestamp)
+  return _internal__timestamp();
 }
-inline void LvCurrent::_internal_set_timestamp(uint32_t value) {
+inline void LvCurrent::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void LvCurrent::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.LvCurrent.timestamp)
+inline void LvCurrent::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LvCurrent._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8680,24 +8680,24 @@ inline void LvVoltage::set_voltage_4(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.LvVoltage.voltage_4)
 }
 
-// uint32 timestamp = 5;
-inline void LvVoltage::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void LvVoltage::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t LvVoltage::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t LvVoltage::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t LvVoltage::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.LvVoltage.timestamp)
-  return _internal_timestamp();
+inline uint64_t LvVoltage::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LvVoltage._timestamp)
+  return _internal__timestamp();
 }
-inline void LvVoltage::_internal_set_timestamp(uint32_t value) {
+inline void LvVoltage::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void LvVoltage::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.LvVoltage.timestamp)
+inline void LvVoltage::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LvVoltage._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8724,24 +8724,24 @@ inline void LvTotalVoltage::set_total_voltage(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.LvTotalVoltage.total_voltage)
 }
 
-// uint32 timestamp = 2;
-inline void LvTotalVoltage::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void LvTotalVoltage::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t LvTotalVoltage::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t LvTotalVoltage::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t LvTotalVoltage::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.LvTotalVoltage.timestamp)
-  return _internal_timestamp();
+inline uint64_t LvTotalVoltage::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LvTotalVoltage._timestamp)
+  return _internal__timestamp();
 }
-inline void LvTotalVoltage::_internal_set_timestamp(uint32_t value) {
+inline void LvTotalVoltage::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void LvTotalVoltage::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.LvTotalVoltage.timestamp)
+inline void LvTotalVoltage::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LvTotalVoltage._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8788,24 +8788,24 @@ inline void LvTemperature::set_dcdc_temperature(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.LvTemperature.dcdc_temperature)
 }
 
-// uint32 timestamp = 3;
-inline void LvTemperature::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 3;
+inline void LvTemperature::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t LvTemperature::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t LvTemperature::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t LvTemperature::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.LvTemperature.timestamp)
-  return _internal_timestamp();
+inline uint64_t LvTemperature::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LvTemperature._timestamp)
+  return _internal__timestamp();
 }
-inline void LvTemperature::_internal_set_timestamp(uint32_t value) {
+inline void LvTemperature::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void LvTemperature::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.LvTemperature.timestamp)
+inline void LvTemperature::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LvTemperature._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8872,24 +8872,24 @@ inline void CoolingStatus::set_pump_speed(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.CoolingStatus.pump_speed)
 }
 
-// uint32 timestamp = 4;
-inline void CoolingStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 4;
+inline void CoolingStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t CoolingStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t CoolingStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t CoolingStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.CoolingStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t CoolingStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.CoolingStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void CoolingStatus::_internal_set_timestamp(uint32_t value) {
+inline void CoolingStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void CoolingStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.CoolingStatus.timestamp)
+inline void CoolingStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.CoolingStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8976,24 +8976,24 @@ inline void HvCellsVoltage::set_voltage_2(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvCellsVoltage.voltage_2)
 }
 
-// uint32 timestamp = 5;
-inline void HvCellsVoltage::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 5;
+inline void HvCellsVoltage::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvCellsVoltage::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvCellsVoltage::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvCellsVoltage::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvCellsVoltage.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvCellsVoltage::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvCellsVoltage._timestamp)
+  return _internal__timestamp();
 }
-inline void HvCellsVoltage::_internal_set_timestamp(uint32_t value) {
+inline void HvCellsVoltage::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvCellsVoltage::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvCellsVoltage.timestamp)
+inline void HvCellsVoltage::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvCellsVoltage._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -9160,24 +9160,24 @@ inline void HvCellsTemp::set_temp_6(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HvCellsTemp.temp_6)
 }
 
-// uint32 timestamp = 9;
-inline void HvCellsTemp::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 9;
+inline void HvCellsTemp::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvCellsTemp::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvCellsTemp::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvCellsTemp::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvCellsTemp.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvCellsTemp::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvCellsTemp._timestamp)
+  return _internal__timestamp();
 }
-inline void HvCellsTemp::_internal_set_timestamp(uint32_t value) {
+inline void HvCellsTemp::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvCellsTemp::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvCellsTemp.timestamp)
+inline void HvCellsTemp::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvCellsTemp._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -9204,24 +9204,24 @@ inline void HvCellBalancingStatus::set_balancing_status(::primary::ToggleType va
   // @@protoc_insertion_point(field_set:primary.HvCellBalancingStatus.balancing_status)
 }
 
-// uint32 timestamp = 2;
-inline void HvCellBalancingStatus::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 2;
+inline void HvCellBalancingStatus::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t HvCellBalancingStatus::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t HvCellBalancingStatus::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t HvCellBalancingStatus::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HvCellBalancingStatus.timestamp)
-  return _internal_timestamp();
+inline uint64_t HvCellBalancingStatus::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HvCellBalancingStatus._timestamp)
+  return _internal__timestamp();
 }
-inline void HvCellBalancingStatus::_internal_set_timestamp(uint32_t value) {
+inline void HvCellBalancingStatus::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void HvCellBalancingStatus::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HvCellBalancingStatus.timestamp)
+inline void HvCellBalancingStatus::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HvCellBalancingStatus._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -9288,24 +9288,24 @@ inline void InvLSetTorque::set_msb(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.InvLSetTorque.msb)
 }
 
-// uint32 timestamp = 4;
-inline void InvLSetTorque::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 4;
+inline void InvLSetTorque::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t InvLSetTorque::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t InvLSetTorque::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t InvLSetTorque::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.InvLSetTorque.timestamp)
-  return _internal_timestamp();
+inline uint64_t InvLSetTorque::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.InvLSetTorque._timestamp)
+  return _internal__timestamp();
 }
-inline void InvLSetTorque::_internal_set_timestamp(uint32_t value) {
+inline void InvLSetTorque::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void InvLSetTorque::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.InvLSetTorque.timestamp)
+inline void InvLSetTorque::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.InvLSetTorque._timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -9472,24 +9472,24 @@ inline void InvLResponse::set_data_6(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.InvLResponse.data_6)
 }
 
-// uint32 timestamp = 9;
-inline void InvLResponse::clear_timestamp() {
-  timestamp_ = 0u;
+// uint64 _timestamp = 9;
+inline void InvLResponse::clear__timestamp() {
+  _timestamp_ = uint64_t{0u};
 }
-inline uint32_t InvLResponse::_internal_timestamp() const {
-  return timestamp_;
+inline uint64_t InvLResponse::_internal__timestamp() const {
+  return _timestamp_;
 }
-inline uint32_t InvLResponse::timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.InvLResponse.timestamp)
-  return _internal_timestamp();
+inline uint64_t InvLResponse::_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.InvLResponse._timestamp)
+  return _internal__timestamp();
 }
-inline void InvLResponse::_internal_set_timestamp(uint32_t value) {
+inline void InvLResponse::_internal_set__timestamp(uint64_t value) {
   
-  timestamp_ = value;
+  _timestamp_ = value;
 }
-inline void InvLResponse::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.InvLResponse.timestamp)
+inline void InvLResponse::set__timestamp(uint64_t value) {
+  _internal_set__timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.InvLResponse._timestamp)
 }
 
 // -------------------------------------------------------------------

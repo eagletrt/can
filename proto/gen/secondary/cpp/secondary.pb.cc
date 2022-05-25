@@ -25,8 +25,8 @@ PROTOBUF_CONSTEXPR ImuAngularRate::ImuAngularRate(
     ::_pbi::ConstantInitialized)
   : ang_rate_x_(0u)
   , ang_rate_y_(0u)
-  , ang_rate_z_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u})
+  , ang_rate_z_(0u){}
 struct ImuAngularRateDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ImuAngularRateDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -40,8 +40,8 @@ PROTOBUF_CONSTEXPR ImuAcceleration::ImuAcceleration(
     ::_pbi::ConstantInitialized)
   : accel_x_(0u)
   , accel_y_(0u)
-  , accel_z_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u})
+  , accel_z_(0u){}
 struct ImuAccelerationDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ImuAccelerationDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -57,7 +57,7 @@ PROTOBUF_CONSTEXPR IrtsFl0::IrtsFl0(
   , channel2_(0u)
   , channel3_(0u)
   , channel4_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFl0DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFl0DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -73,7 +73,7 @@ PROTOBUF_CONSTEXPR IrtsFl1::IrtsFl1(
   , channel6_(0u)
   , channel7_(0u)
   , channel8_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFl1DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFl1DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -89,7 +89,7 @@ PROTOBUF_CONSTEXPR IrtsFl2::IrtsFl2(
   , channel10_(0u)
   , channel11_(0u)
   , channel12_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFl2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFl2DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -105,7 +105,7 @@ PROTOBUF_CONSTEXPR IrtsFl3::IrtsFl3(
   , channel14_(0u)
   , channel15_(0u)
   , channel16_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFl3DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFl3DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -121,7 +121,7 @@ PROTOBUF_CONSTEXPR IrtsFr0::IrtsFr0(
   , channel2_(0u)
   , channel3_(0u)
   , channel4_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFr0DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFr0DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -137,7 +137,7 @@ PROTOBUF_CONSTEXPR IrtsFr1::IrtsFr1(
   , channel6_(0u)
   , channel7_(0u)
   , channel8_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFr1DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFr1DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -153,7 +153,7 @@ PROTOBUF_CONSTEXPR IrtsFr2::IrtsFr2(
   , channel10_(0u)
   , channel11_(0u)
   , channel12_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFr2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFr2DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -169,7 +169,7 @@ PROTOBUF_CONSTEXPR IrtsFr3::IrtsFr3(
   , channel14_(0u)
   , channel15_(0u)
   , channel16_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsFr3DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsFr3DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -185,7 +185,7 @@ PROTOBUF_CONSTEXPR IrtsRl0::IrtsRl0(
   , channel2_(0u)
   , channel3_(0u)
   , channel4_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRl0DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRl0DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -201,7 +201,7 @@ PROTOBUF_CONSTEXPR IrtsRl1::IrtsRl1(
   , channel6_(0u)
   , channel7_(0u)
   , channel8_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRl1DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRl1DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -217,7 +217,7 @@ PROTOBUF_CONSTEXPR IrtsRl2::IrtsRl2(
   , channel10_(0u)
   , channel11_(0u)
   , channel12_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRl2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRl2DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -233,7 +233,7 @@ PROTOBUF_CONSTEXPR IrtsRl3::IrtsRl3(
   , channel14_(0u)
   , channel15_(0u)
   , channel16_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRl3DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRl3DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -249,7 +249,7 @@ PROTOBUF_CONSTEXPR IrtsRr0::IrtsRr0(
   , channel2_(0u)
   , channel3_(0u)
   , channel4_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRr0DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRr0DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -265,7 +265,7 @@ PROTOBUF_CONSTEXPR IrtsRr1::IrtsRr1(
   , channel6_(0u)
   , channel7_(0u)
   , channel8_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRr1DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRr1DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -281,7 +281,7 @@ PROTOBUF_CONSTEXPR IrtsRr2::IrtsRr2(
   , channel10_(0u)
   , channel11_(0u)
   , channel12_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRr2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRr2DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -297,7 +297,7 @@ PROTOBUF_CONSTEXPR IrtsRr3::IrtsRr3(
   , channel14_(0u)
   , channel15_(0u)
   , channel16_(0u)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct IrtsRr3DefaultTypeInternal {
   PROTOBUF_CONSTEXPR IrtsRr3DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -311,7 +311,7 @@ PROTOBUF_CONSTEXPR GpsCoords::GpsCoords(
     ::_pbi::ConstantInitialized)
   : latitude_(0)
   , longitude_(0)
-  , timestamp_(0u){}
+  , _timestamp_(uint64_t{0u}){}
 struct GpsCoordsDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GpsCoordsDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -323,8 +323,8 @@ struct GpsCoordsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GpsCoordsDefaultTypeInternal _GpsCoords_default_instance_;
 PROTOBUF_CONSTEXPR GpsSpeed::GpsSpeed(
     ::_pbi::ConstantInitialized)
-  : speed_(0u)
-  , timestamp_(0u){}
+  : _timestamp_(uint64_t{0u})
+  , speed_(0u){}
 struct GpsSpeedDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GpsSpeedDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -394,7 +394,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAngularRate, ang_rate_x_),
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAngularRate, ang_rate_y_),
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAngularRate, ang_rate_z_),
-  PROTOBUF_FIELD_OFFSET(::secondary::ImuAngularRate, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::ImuAngularRate, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -404,7 +404,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, accel_x_),
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, accel_y_),
   PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, accel_z_),
-  PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::ImuAcceleration, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -415,7 +415,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, channel2_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, channel3_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, channel4_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl0, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -426,7 +426,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, channel6_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, channel7_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, channel8_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl1, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -437,7 +437,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, channel10_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, channel11_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, channel12_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl2, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -448,7 +448,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, channel14_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, channel15_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, channel16_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFl3, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -459,7 +459,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, channel2_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, channel3_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, channel4_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr0, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -470,7 +470,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, channel6_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, channel7_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, channel8_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr1, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -481,7 +481,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, channel10_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, channel11_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, channel12_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr2, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -492,7 +492,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, channel14_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, channel15_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, channel16_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsFr3, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -503,7 +503,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, channel2_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, channel3_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, channel4_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl0, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -514,7 +514,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, channel6_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, channel7_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, channel8_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl1, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -525,7 +525,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, channel10_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, channel11_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, channel12_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl2, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -536,7 +536,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, channel14_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, channel15_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, channel16_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRl3, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -547,7 +547,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, channel2_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, channel3_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, channel4_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr0, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -558,7 +558,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, channel6_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, channel7_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, channel8_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr1, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -569,7 +569,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, channel10_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, channel11_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, channel12_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr2, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -580,7 +580,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, channel14_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, channel15_),
   PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, channel16_),
-  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::IrtsRr3, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::GpsCoords, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -589,7 +589,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::secondary::GpsCoords, latitude_),
   PROTOBUF_FIELD_OFFSET(::secondary::GpsCoords, longitude_),
-  PROTOBUF_FIELD_OFFSET(::secondary::GpsCoords, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::GpsCoords, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::GpsSpeed, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -597,7 +597,7 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::secondary::GpsSpeed, speed_),
-  PROTOBUF_FIELD_OFFSET(::secondary::GpsSpeed, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::secondary::GpsSpeed, _timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::LapCount, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -685,83 +685,84 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_secondary_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017secondary.proto\022\tsecondary\"_\n\016ImuAngul"
+  "\n\017secondary.proto\022\tsecondary\"`\n\016ImuAngul"
   "arRate\022\022\n\nang_rate_x\030\001 \001(\r\022\022\n\nang_rate_y"
-  "\030\002 \001(\r\022\022\n\nang_rate_z\030\003 \001(\r\022\021\n\ttimestamp\030"
-  "\004 \001(\r\"W\n\017ImuAcceleration\022\017\n\007accel_x\030\001 \001("
-  "\r\022\017\n\007accel_y\030\002 \001(\r\022\017\n\007accel_z\030\003 \001(\r\022\021\n\tt"
-  "imestamp\030\004 \001(\r\"d\n\007IrtsFl0\022\020\n\010channel1\030\001 "
-  "\001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022"
-  "\020\n\010channel4\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"d\n\007"
-  "IrtsFl1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002 "
-  "\001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022"
-  "\021\n\ttimestamp\030\005 \001(\r\"g\n\007IrtsFl2\022\020\n\010channel"
-  "9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030"
-  "\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\021\n\ttimestamp\030\005 "
-  "\001(\r\"h\n\007IrtsFl3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tcha"
-  "nnel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchann"
-  "el16\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"d\n\007IrtsFr0"
-  "\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010"
-  "channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\021\n\ttime"
-  "stamp\030\005 \001(\r\"d\n\007IrtsFr1\022\020\n\010channel5\030\001 \001(\r"
-  "\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010"
-  "channel8\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"g\n\007Irt"
-  "sFr2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001("
-  "\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022"
-  "\021\n\ttimestamp\030\005 \001(\r\"h\n\007IrtsFr3\022\021\n\tchannel"
-  "13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchannel15"
-  "\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\021\n\ttimestamp\030\005"
-  " \001(\r\"d\n\007IrtsRl0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010cha"
-  "nnel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel"
-  "4\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"d\n\007IrtsRl1\022\020\n"
-  "\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010cha"
-  "nnel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022\021\n\ttimesta"
-  "mp\030\005 \001(\r\"g\n\007IrtsRl2\022\020\n\010channel9\030\001 \001(\r\022\021\n"
-  "\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tc"
-  "hannel12\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"h\n\007Irt"
-  "sRl3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001"
-  "(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r"
-  "\022\021\n\ttimestamp\030\005 \001(\r\"d\n\007IrtsRr0\022\020\n\010channe"
-  "l1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003"
-  " \001(\r\022\020\n\010channel4\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001("
-  "\r\"d\n\007IrtsRr1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channe"
-  "l6\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004"
-  " \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"g\n\007IrtsRr2\022\020\n\010ch"
-  "annel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchann"
-  "el11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\021\n\ttimesta"
-  "mp\030\005 \001(\r\"h\n\007IrtsRr3\022\021\n\tchannel13\030\001 \001(\r\022\021"
+  "\030\002 \001(\r\022\022\n\nang_rate_z\030\003 \001(\r\022\022\n\n_timestamp"
+  "\030\004 \001(\004\"X\n\017ImuAcceleration\022\017\n\007accel_x\030\001 \001"
+  "(\r\022\017\n\007accel_y\030\002 \001(\r\022\017\n\007accel_z\030\003 \001(\r\022\022\n\n"
+  "_timestamp\030\004 \001(\004\"e\n\007IrtsFl0\022\020\n\010channel1\030"
+  "\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001("
+  "\r\022\020\n\010channel4\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\""
+  "e\n\007IrtsFl1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6"
+  "\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001"
+  "(\r\022\022\n\n_timestamp\030\005 \001(\004\"h\n\007IrtsFl2\022\020\n\010cha"
+  "nnel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchanne"
+  "l11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\022\n\n_timesta"
+  "mp\030\005 \001(\004\"i\n\007IrtsFl3\022\021\n\tchannel13\030\001 \001(\r\022\021"
   "\n\tchannel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\t"
-  "channel16\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"C\n\tGp"
-  "sCoords\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude\030\002"
-  " \001(\002\022\021\n\ttimestamp\030\003 \001(\r\",\n\010GpsSpeed\022\r\n\005s"
-  "peed\030\001 \001(\r\022\021\n\ttimestamp\030\002 \001(\r\"0\n\010LapCoun"
-  "t\022\021\n\tlap_count\030\001 \001(\r\022\021\n\ttimestamp\030\002 \001(\r\""
-  "\346\006\n\017SecondaryFenice\0223\n\020imu_angular_rate\030"
-  "\001 \003(\0132\031.secondary.ImuAngularRate\0224\n\020imu_"
-  "acceleration\030\002 \003(\0132\032.secondary.ImuAccele"
-  "ration\022%\n\tirts_fl_0\030\003 \003(\0132\022.secondary.Ir"
-  "tsFl0\022%\n\tirts_fl_1\030\004 \003(\0132\022.secondary.Irt"
-  "sFl1\022%\n\tirts_fl_2\030\005 \003(\0132\022.secondary.Irts"
-  "Fl2\022%\n\tirts_fl_3\030\006 \003(\0132\022.secondary.IrtsF"
-  "l3\022%\n\tirts_fr_0\030\007 \003(\0132\022.secondary.IrtsFr"
-  "0\022%\n\tirts_fr_1\030\010 \003(\0132\022.secondary.IrtsFr1"
-  "\022%\n\tirts_fr_2\030\t \003(\0132\022.secondary.IrtsFr2\022"
-  "%\n\tirts_fr_3\030\n \003(\0132\022.secondary.IrtsFr3\022%"
-  "\n\tirts_rl_0\030\013 \003(\0132\022.secondary.IrtsRl0\022%\n"
-  "\tirts_rl_1\030\014 \003(\0132\022.secondary.IrtsRl1\022%\n\t"
-  "irts_rl_2\030\r \003(\0132\022.secondary.IrtsRl2\022%\n\ti"
-  "rts_rl_3\030\016 \003(\0132\022.secondary.IrtsRl3\022%\n\tir"
-  "ts_rr_0\030\017 \003(\0132\022.secondary.IrtsRr0\022%\n\tirt"
-  "s_rr_1\030\020 \003(\0132\022.secondary.IrtsRr1\022%\n\tirts"
-  "_rr_2\030\021 \003(\0132\022.secondary.IrtsRr2\022%\n\tirts_"
-  "rr_3\030\022 \003(\0132\022.secondary.IrtsRr3\022(\n\ngps_co"
-  "ords\030\023 \003(\0132\024.secondary.GpsCoords\022&\n\tgps_"
-  "speed\030\024 \003(\0132\023.secondary.GpsSpeed\022&\n\tlap_"
-  "count\030\025 \003(\0132\023.secondary.LapCountb\006proto3"
+  "channel16\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\"e\n\007I"
+  "rtsFr0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001"
+  "(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\022"
+  "\n\n_timestamp\030\005 \001(\004\"e\n\007IrtsFr1\022\020\n\010channel"
+  "5\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 "
+  "\001(\r\022\020\n\010channel8\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001("
+  "\004\"h\n\007IrtsFr2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchanne"
+  "l10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel1"
+  "2\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\"i\n\007IrtsFr3\022\021"
+  "\n\tchannel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\t"
+  "channel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\022\n\n_t"
+  "imestamp\030\005 \001(\004\"e\n\007IrtsRl0\022\020\n\010channel1\030\001 "
+  "\001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022"
+  "\020\n\010channel4\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\"e\n"
+  "\007IrtsRl1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002"
+  " \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r"
+  "\022\022\n\n_timestamp\030\005 \001(\004\"h\n\007IrtsRl2\022\020\n\010chann"
+  "el9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchannel1"
+  "1\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\022\n\n_timestamp"
+  "\030\005 \001(\004\"i\n\007IrtsRl3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\t"
+  "channel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tch"
+  "annel16\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\"e\n\007Irt"
+  "sRr0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r"
+  "\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\022\n\n"
+  "_timestamp\030\005 \001(\004\"e\n\007IrtsRr1\022\020\n\010channel5\030"
+  "\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001("
+  "\r\022\020\n\010channel8\030\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\""
+  "h\n\007IrtsRr2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel1"
+  "0\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030"
+  "\004 \001(\r\022\022\n\n_timestamp\030\005 \001(\004\"i\n\007IrtsRr3\022\021\n\t"
+  "channel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tch"
+  "annel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\022\n\n_tim"
+  "estamp\030\005 \001(\004\"D\n\tGpsCoords\022\020\n\010latitude\030\001 "
+  "\001(\002\022\021\n\tlongitude\030\002 \001(\002\022\022\n\n_timestamp\030\003 \001"
+  "(\004\"-\n\010GpsSpeed\022\r\n\005speed\030\001 \001(\r\022\022\n\n_timest"
+  "amp\030\002 \001(\004\"0\n\010LapCount\022\021\n\tlap_count\030\001 \001(\r"
+  "\022\021\n\ttimestamp\030\002 \001(\r\"\346\006\n\017SecondaryFenice\022"
+  "3\n\020imu_angular_rate\030\001 \003(\0132\031.secondary.Im"
+  "uAngularRate\0224\n\020imu_acceleration\030\002 \003(\0132\032"
+  ".secondary.ImuAcceleration\022%\n\tirts_fl_0\030"
+  "\003 \003(\0132\022.secondary.IrtsFl0\022%\n\tirts_fl_1\030\004"
+  " \003(\0132\022.secondary.IrtsFl1\022%\n\tirts_fl_2\030\005 "
+  "\003(\0132\022.secondary.IrtsFl2\022%\n\tirts_fl_3\030\006 \003"
+  "(\0132\022.secondary.IrtsFl3\022%\n\tirts_fr_0\030\007 \003("
+  "\0132\022.secondary.IrtsFr0\022%\n\tirts_fr_1\030\010 \003(\013"
+  "2\022.secondary.IrtsFr1\022%\n\tirts_fr_2\030\t \003(\0132"
+  "\022.secondary.IrtsFr2\022%\n\tirts_fr_3\030\n \003(\0132\022"
+  ".secondary.IrtsFr3\022%\n\tirts_rl_0\030\013 \003(\0132\022."
+  "secondary.IrtsRl0\022%\n\tirts_rl_1\030\014 \003(\0132\022.s"
+  "econdary.IrtsRl1\022%\n\tirts_rl_2\030\r \003(\0132\022.se"
+  "condary.IrtsRl2\022%\n\tirts_rl_3\030\016 \003(\0132\022.sec"
+  "ondary.IrtsRl3\022%\n\tirts_rr_0\030\017 \003(\0132\022.seco"
+  "ndary.IrtsRr0\022%\n\tirts_rr_1\030\020 \003(\0132\022.secon"
+  "dary.IrtsRr1\022%\n\tirts_rr_2\030\021 \003(\0132\022.second"
+  "ary.IrtsRr2\022%\n\tirts_rr_3\030\022 \003(\0132\022.seconda"
+  "ry.IrtsRr3\022(\n\ngps_coords\030\023 \003(\0132\024.seconda"
+  "ry.GpsCoords\022&\n\tgps_speed\030\024 \003(\0132\023.second"
+  "ary.GpsSpeed\022&\n\tlap_count\030\025 \003(\0132\023.second"
+  "ary.LapCountb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_secondary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_secondary_2eproto = {
-    false, false, 2920, descriptor_table_protodef_secondary_2eproto,
+    false, false, 2940, descriptor_table_protodef_secondary_2eproto,
     "secondary.proto",
     &descriptor_table_secondary_2eproto_once, nullptr, 0, 22,
     schemas, file_default_instances, TableStruct_secondary_2eproto::offsets,
@@ -792,16 +793,16 @@ ImuAngularRate::ImuAngularRate(const ImuAngularRate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&ang_rate_x_, &from.ang_rate_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&ang_rate_z_) -
+    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
   // @@protoc_insertion_point(copy_constructor:secondary.ImuAngularRate)
 }
 
 inline void ImuAngularRate::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&ang_rate_x_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&ang_rate_z_) -
+    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
 }
 
 ImuAngularRate::~ImuAngularRate() {
@@ -828,8 +829,8 @@ void ImuAngularRate::Clear() {
   (void) cached_has_bits;
 
   ::memset(&ang_rate_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&ang_rate_z_) -
+      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -863,10 +864,10 @@ const char* ImuAngularRate::_InternalParse(const char* ptr, ::_pbi::ParseContext
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 4;
+      // uint64 _timestamp = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -918,10 +919,10 @@ uint8_t* ImuAngularRate::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_ang_rate_z(), target);
   }
 
-  // uint32 timestamp = 4;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 4;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -950,14 +951,14 @@ size_t ImuAngularRate::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ang_rate_y());
   }
 
+  // uint64 _timestamp = 4;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
+  }
+
   // uint32 ang_rate_z = 3;
   if (this->_internal_ang_rate_z() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ang_rate_z());
-  }
-
-  // uint32 timestamp = 4;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -988,11 +989,11 @@ void ImuAngularRate::MergeFrom(const ImuAngularRate& from) {
   if (from._internal_ang_rate_y() != 0) {
     _internal_set_ang_rate_y(from._internal_ang_rate_y());
   }
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
+  }
   if (from._internal_ang_rate_z() != 0) {
     _internal_set_ang_rate_z(from._internal_ang_rate_z());
-  }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1012,8 +1013,8 @@ void ImuAngularRate::InternalSwap(ImuAngularRate* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ImuAngularRate, timestamp_)
-      + sizeof(ImuAngularRate::timestamp_)
+      PROTOBUF_FIELD_OFFSET(ImuAngularRate, ang_rate_z_)
+      + sizeof(ImuAngularRate::ang_rate_z_)
       - PROTOBUF_FIELD_OFFSET(ImuAngularRate, ang_rate_x_)>(
           reinterpret_cast<char*>(&ang_rate_x_),
           reinterpret_cast<char*>(&other->ang_rate_x_));
@@ -1041,16 +1042,16 @@ ImuAcceleration::ImuAcceleration(const ImuAcceleration& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&accel_x_, &from.accel_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&accel_x_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&accel_z_) -
+    reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
   // @@protoc_insertion_point(copy_constructor:secondary.ImuAcceleration)
 }
 
 inline void ImuAcceleration::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&accel_x_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&accel_x_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&accel_z_) -
+    reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
 }
 
 ImuAcceleration::~ImuAcceleration() {
@@ -1077,8 +1078,8 @@ void ImuAcceleration::Clear() {
   (void) cached_has_bits;
 
   ::memset(&accel_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&accel_x_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&accel_z_) -
+      reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1112,10 +1113,10 @@ const char* ImuAcceleration::_InternalParse(const char* ptr, ::_pbi::ParseContex
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 4;
+      // uint64 _timestamp = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1167,10 +1168,10 @@ uint8_t* ImuAcceleration::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_accel_z(), target);
   }
 
-  // uint32 timestamp = 4;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 4;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(4, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1199,14 +1200,14 @@ size_t ImuAcceleration::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_accel_y());
   }
 
+  // uint64 _timestamp = 4;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
+  }
+
   // uint32 accel_z = 3;
   if (this->_internal_accel_z() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_accel_z());
-  }
-
-  // uint32 timestamp = 4;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1237,11 +1238,11 @@ void ImuAcceleration::MergeFrom(const ImuAcceleration& from) {
   if (from._internal_accel_y() != 0) {
     _internal_set_accel_y(from._internal_accel_y());
   }
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
+  }
   if (from._internal_accel_z() != 0) {
     _internal_set_accel_z(from._internal_accel_z());
-  }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1261,8 +1262,8 @@ void ImuAcceleration::InternalSwap(ImuAcceleration* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ImuAcceleration, timestamp_)
-      + sizeof(ImuAcceleration::timestamp_)
+      PROTOBUF_FIELD_OFFSET(ImuAcceleration, accel_z_)
+      + sizeof(ImuAcceleration::accel_z_)
       - PROTOBUF_FIELD_OFFSET(ImuAcceleration, accel_x_)>(
           reinterpret_cast<char*>(&accel_x_),
           reinterpret_cast<char*>(&other->accel_x_));
@@ -1290,16 +1291,16 @@ IrtsFl0::IrtsFl0(const IrtsFl0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel1_, &from.channel1_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFl0)
 }
 
 inline void IrtsFl0::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel1_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
 }
 
 IrtsFl0::~IrtsFl0() {
@@ -1326,8 +1327,8 @@ void IrtsFl0::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel1_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1369,10 +1370,10 @@ const char* IrtsFl0::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1430,10 +1431,10 @@ uint8_t* IrtsFl0::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1472,9 +1473,9 @@ size_t IrtsFl0::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel4());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1511,8 +1512,8 @@ void IrtsFl0::MergeFrom(const IrtsFl0& from) {
   if (from._internal_channel4() != 0) {
     _internal_set_channel4(from._internal_channel4());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1532,8 +1533,8 @@ void IrtsFl0::InternalSwap(IrtsFl0* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFl0, timestamp_)
-      + sizeof(IrtsFl0::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFl0, _timestamp_)
+      + sizeof(IrtsFl0::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFl0, channel1_)>(
           reinterpret_cast<char*>(&channel1_),
           reinterpret_cast<char*>(&other->channel1_));
@@ -1561,16 +1562,16 @@ IrtsFl1::IrtsFl1(const IrtsFl1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel5_, &from.channel5_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFl1)
 }
 
 inline void IrtsFl1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel5_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
 }
 
 IrtsFl1::~IrtsFl1() {
@@ -1597,8 +1598,8 @@ void IrtsFl1::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel5_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1640,10 +1641,10 @@ const char* IrtsFl1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1701,10 +1702,10 @@ uint8_t* IrtsFl1::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1743,9 +1744,9 @@ size_t IrtsFl1::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel8());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -1782,8 +1783,8 @@ void IrtsFl1::MergeFrom(const IrtsFl1& from) {
   if (from._internal_channel8() != 0) {
     _internal_set_channel8(from._internal_channel8());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1803,8 +1804,8 @@ void IrtsFl1::InternalSwap(IrtsFl1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFl1, timestamp_)
-      + sizeof(IrtsFl1::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFl1, _timestamp_)
+      + sizeof(IrtsFl1::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFl1, channel5_)>(
           reinterpret_cast<char*>(&channel5_),
           reinterpret_cast<char*>(&other->channel5_));
@@ -1832,16 +1833,16 @@ IrtsFl2::IrtsFl2(const IrtsFl2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel9_, &from.channel9_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFl2)
 }
 
 inline void IrtsFl2::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel9_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
 }
 
 IrtsFl2::~IrtsFl2() {
@@ -1868,8 +1869,8 @@ void IrtsFl2::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel9_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1911,10 +1912,10 @@ const char* IrtsFl2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1972,10 +1973,10 @@ uint8_t* IrtsFl2::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2014,9 +2015,9 @@ size_t IrtsFl2::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel12());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2053,8 +2054,8 @@ void IrtsFl2::MergeFrom(const IrtsFl2& from) {
   if (from._internal_channel12() != 0) {
     _internal_set_channel12(from._internal_channel12());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2074,8 +2075,8 @@ void IrtsFl2::InternalSwap(IrtsFl2* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFl2, timestamp_)
-      + sizeof(IrtsFl2::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFl2, _timestamp_)
+      + sizeof(IrtsFl2::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFl2, channel9_)>(
           reinterpret_cast<char*>(&channel9_),
           reinterpret_cast<char*>(&other->channel9_));
@@ -2103,16 +2104,16 @@ IrtsFl3::IrtsFl3(const IrtsFl3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel13_, &from.channel13_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFl3)
 }
 
 inline void IrtsFl3::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel13_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
 }
 
 IrtsFl3::~IrtsFl3() {
@@ -2139,8 +2140,8 @@ void IrtsFl3::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel13_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2182,10 +2183,10 @@ const char* IrtsFl3::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2243,10 +2244,10 @@ uint8_t* IrtsFl3::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2285,9 +2286,9 @@ size_t IrtsFl3::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel16());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2324,8 +2325,8 @@ void IrtsFl3::MergeFrom(const IrtsFl3& from) {
   if (from._internal_channel16() != 0) {
     _internal_set_channel16(from._internal_channel16());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2345,8 +2346,8 @@ void IrtsFl3::InternalSwap(IrtsFl3* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFl3, timestamp_)
-      + sizeof(IrtsFl3::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFl3, _timestamp_)
+      + sizeof(IrtsFl3::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFl3, channel13_)>(
           reinterpret_cast<char*>(&channel13_),
           reinterpret_cast<char*>(&other->channel13_));
@@ -2374,16 +2375,16 @@ IrtsFr0::IrtsFr0(const IrtsFr0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel1_, &from.channel1_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFr0)
 }
 
 inline void IrtsFr0::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel1_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
 }
 
 IrtsFr0::~IrtsFr0() {
@@ -2410,8 +2411,8 @@ void IrtsFr0::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel1_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2453,10 +2454,10 @@ const char* IrtsFr0::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2514,10 +2515,10 @@ uint8_t* IrtsFr0::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2556,9 +2557,9 @@ size_t IrtsFr0::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel4());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2595,8 +2596,8 @@ void IrtsFr0::MergeFrom(const IrtsFr0& from) {
   if (from._internal_channel4() != 0) {
     _internal_set_channel4(from._internal_channel4());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2616,8 +2617,8 @@ void IrtsFr0::InternalSwap(IrtsFr0* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFr0, timestamp_)
-      + sizeof(IrtsFr0::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFr0, _timestamp_)
+      + sizeof(IrtsFr0::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFr0, channel1_)>(
           reinterpret_cast<char*>(&channel1_),
           reinterpret_cast<char*>(&other->channel1_));
@@ -2645,16 +2646,16 @@ IrtsFr1::IrtsFr1(const IrtsFr1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel5_, &from.channel5_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFr1)
 }
 
 inline void IrtsFr1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel5_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
 }
 
 IrtsFr1::~IrtsFr1() {
@@ -2681,8 +2682,8 @@ void IrtsFr1::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel5_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2724,10 +2725,10 @@ const char* IrtsFr1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2785,10 +2786,10 @@ uint8_t* IrtsFr1::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2827,9 +2828,9 @@ size_t IrtsFr1::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel8());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -2866,8 +2867,8 @@ void IrtsFr1::MergeFrom(const IrtsFr1& from) {
   if (from._internal_channel8() != 0) {
     _internal_set_channel8(from._internal_channel8());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2887,8 +2888,8 @@ void IrtsFr1::InternalSwap(IrtsFr1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFr1, timestamp_)
-      + sizeof(IrtsFr1::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFr1, _timestamp_)
+      + sizeof(IrtsFr1::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFr1, channel5_)>(
           reinterpret_cast<char*>(&channel5_),
           reinterpret_cast<char*>(&other->channel5_));
@@ -2916,16 +2917,16 @@ IrtsFr2::IrtsFr2(const IrtsFr2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel9_, &from.channel9_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFr2)
 }
 
 inline void IrtsFr2::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel9_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
 }
 
 IrtsFr2::~IrtsFr2() {
@@ -2952,8 +2953,8 @@ void IrtsFr2::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel9_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2995,10 +2996,10 @@ const char* IrtsFr2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3056,10 +3057,10 @@ uint8_t* IrtsFr2::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3098,9 +3099,9 @@ size_t IrtsFr2::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel12());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3137,8 +3138,8 @@ void IrtsFr2::MergeFrom(const IrtsFr2& from) {
   if (from._internal_channel12() != 0) {
     _internal_set_channel12(from._internal_channel12());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3158,8 +3159,8 @@ void IrtsFr2::InternalSwap(IrtsFr2* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFr2, timestamp_)
-      + sizeof(IrtsFr2::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFr2, _timestamp_)
+      + sizeof(IrtsFr2::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFr2, channel9_)>(
           reinterpret_cast<char*>(&channel9_),
           reinterpret_cast<char*>(&other->channel9_));
@@ -3187,16 +3188,16 @@ IrtsFr3::IrtsFr3(const IrtsFr3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel13_, &from.channel13_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsFr3)
 }
 
 inline void IrtsFr3::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel13_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
 }
 
 IrtsFr3::~IrtsFr3() {
@@ -3223,8 +3224,8 @@ void IrtsFr3::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel13_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3266,10 +3267,10 @@ const char* IrtsFr3::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3327,10 +3328,10 @@ uint8_t* IrtsFr3::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3369,9 +3370,9 @@ size_t IrtsFr3::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel16());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3408,8 +3409,8 @@ void IrtsFr3::MergeFrom(const IrtsFr3& from) {
   if (from._internal_channel16() != 0) {
     _internal_set_channel16(from._internal_channel16());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3429,8 +3430,8 @@ void IrtsFr3::InternalSwap(IrtsFr3* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsFr3, timestamp_)
-      + sizeof(IrtsFr3::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsFr3, _timestamp_)
+      + sizeof(IrtsFr3::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsFr3, channel13_)>(
           reinterpret_cast<char*>(&channel13_),
           reinterpret_cast<char*>(&other->channel13_));
@@ -3458,16 +3459,16 @@ IrtsRl0::IrtsRl0(const IrtsRl0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel1_, &from.channel1_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRl0)
 }
 
 inline void IrtsRl0::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel1_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
 }
 
 IrtsRl0::~IrtsRl0() {
@@ -3494,8 +3495,8 @@ void IrtsRl0::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel1_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3537,10 +3538,10 @@ const char* IrtsRl0::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3598,10 +3599,10 @@ uint8_t* IrtsRl0::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3640,9 +3641,9 @@ size_t IrtsRl0::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel4());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3679,8 +3680,8 @@ void IrtsRl0::MergeFrom(const IrtsRl0& from) {
   if (from._internal_channel4() != 0) {
     _internal_set_channel4(from._internal_channel4());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3700,8 +3701,8 @@ void IrtsRl0::InternalSwap(IrtsRl0* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRl0, timestamp_)
-      + sizeof(IrtsRl0::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRl0, _timestamp_)
+      + sizeof(IrtsRl0::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRl0, channel1_)>(
           reinterpret_cast<char*>(&channel1_),
           reinterpret_cast<char*>(&other->channel1_));
@@ -3729,16 +3730,16 @@ IrtsRl1::IrtsRl1(const IrtsRl1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel5_, &from.channel5_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRl1)
 }
 
 inline void IrtsRl1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel5_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
 }
 
 IrtsRl1::~IrtsRl1() {
@@ -3765,8 +3766,8 @@ void IrtsRl1::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel5_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3808,10 +3809,10 @@ const char* IrtsRl1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3869,10 +3870,10 @@ uint8_t* IrtsRl1::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3911,9 +3912,9 @@ size_t IrtsRl1::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel8());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -3950,8 +3951,8 @@ void IrtsRl1::MergeFrom(const IrtsRl1& from) {
   if (from._internal_channel8() != 0) {
     _internal_set_channel8(from._internal_channel8());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3971,8 +3972,8 @@ void IrtsRl1::InternalSwap(IrtsRl1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRl1, timestamp_)
-      + sizeof(IrtsRl1::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRl1, _timestamp_)
+      + sizeof(IrtsRl1::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRl1, channel5_)>(
           reinterpret_cast<char*>(&channel5_),
           reinterpret_cast<char*>(&other->channel5_));
@@ -4000,16 +4001,16 @@ IrtsRl2::IrtsRl2(const IrtsRl2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel9_, &from.channel9_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRl2)
 }
 
 inline void IrtsRl2::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel9_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
 }
 
 IrtsRl2::~IrtsRl2() {
@@ -4036,8 +4037,8 @@ void IrtsRl2::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel9_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4079,10 +4080,10 @@ const char* IrtsRl2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4140,10 +4141,10 @@ uint8_t* IrtsRl2::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4182,9 +4183,9 @@ size_t IrtsRl2::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel12());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4221,8 +4222,8 @@ void IrtsRl2::MergeFrom(const IrtsRl2& from) {
   if (from._internal_channel12() != 0) {
     _internal_set_channel12(from._internal_channel12());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4242,8 +4243,8 @@ void IrtsRl2::InternalSwap(IrtsRl2* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRl2, timestamp_)
-      + sizeof(IrtsRl2::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRl2, _timestamp_)
+      + sizeof(IrtsRl2::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRl2, channel9_)>(
           reinterpret_cast<char*>(&channel9_),
           reinterpret_cast<char*>(&other->channel9_));
@@ -4271,16 +4272,16 @@ IrtsRl3::IrtsRl3(const IrtsRl3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel13_, &from.channel13_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRl3)
 }
 
 inline void IrtsRl3::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel13_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
 }
 
 IrtsRl3::~IrtsRl3() {
@@ -4307,8 +4308,8 @@ void IrtsRl3::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel13_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4350,10 +4351,10 @@ const char* IrtsRl3::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4411,10 +4412,10 @@ uint8_t* IrtsRl3::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4453,9 +4454,9 @@ size_t IrtsRl3::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel16());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4492,8 +4493,8 @@ void IrtsRl3::MergeFrom(const IrtsRl3& from) {
   if (from._internal_channel16() != 0) {
     _internal_set_channel16(from._internal_channel16());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4513,8 +4514,8 @@ void IrtsRl3::InternalSwap(IrtsRl3* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRl3, timestamp_)
-      + sizeof(IrtsRl3::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRl3, _timestamp_)
+      + sizeof(IrtsRl3::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRl3, channel13_)>(
           reinterpret_cast<char*>(&channel13_),
           reinterpret_cast<char*>(&other->channel13_));
@@ -4542,16 +4543,16 @@ IrtsRr0::IrtsRr0(const IrtsRr0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel1_, &from.channel1_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRr0)
 }
 
 inline void IrtsRr0::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel1_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
 }
 
 IrtsRr0::~IrtsRr0() {
@@ -4578,8 +4579,8 @@ void IrtsRr0::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel1_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel1_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel1_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4621,10 +4622,10 @@ const char* IrtsRr0::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4682,10 +4683,10 @@ uint8_t* IrtsRr0::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4724,9 +4725,9 @@ size_t IrtsRr0::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel4());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -4763,8 +4764,8 @@ void IrtsRr0::MergeFrom(const IrtsRr0& from) {
   if (from._internal_channel4() != 0) {
     _internal_set_channel4(from._internal_channel4());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -4784,8 +4785,8 @@ void IrtsRr0::InternalSwap(IrtsRr0* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRr0, timestamp_)
-      + sizeof(IrtsRr0::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRr0, _timestamp_)
+      + sizeof(IrtsRr0::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRr0, channel1_)>(
           reinterpret_cast<char*>(&channel1_),
           reinterpret_cast<char*>(&other->channel1_));
@@ -4813,16 +4814,16 @@ IrtsRr1::IrtsRr1(const IrtsRr1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel5_, &from.channel5_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRr1)
 }
 
 inline void IrtsRr1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel5_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
 }
 
 IrtsRr1::~IrtsRr1() {
@@ -4849,8 +4850,8 @@ void IrtsRr1::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel5_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel5_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel5_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4892,10 +4893,10 @@ const char* IrtsRr1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4953,10 +4954,10 @@ uint8_t* IrtsRr1::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4995,9 +4996,9 @@ size_t IrtsRr1::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel8());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5034,8 +5035,8 @@ void IrtsRr1::MergeFrom(const IrtsRr1& from) {
   if (from._internal_channel8() != 0) {
     _internal_set_channel8(from._internal_channel8());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5055,8 +5056,8 @@ void IrtsRr1::InternalSwap(IrtsRr1* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRr1, timestamp_)
-      + sizeof(IrtsRr1::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRr1, _timestamp_)
+      + sizeof(IrtsRr1::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRr1, channel5_)>(
           reinterpret_cast<char*>(&channel5_),
           reinterpret_cast<char*>(&other->channel5_));
@@ -5084,16 +5085,16 @@ IrtsRr2::IrtsRr2(const IrtsRr2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel9_, &from.channel9_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRr2)
 }
 
 inline void IrtsRr2::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel9_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
 }
 
 IrtsRr2::~IrtsRr2() {
@@ -5120,8 +5121,8 @@ void IrtsRr2::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel9_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel9_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel9_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5163,10 +5164,10 @@ const char* IrtsRr2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5224,10 +5225,10 @@ uint8_t* IrtsRr2::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5266,9 +5267,9 @@ size_t IrtsRr2::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel12());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5305,8 +5306,8 @@ void IrtsRr2::MergeFrom(const IrtsRr2& from) {
   if (from._internal_channel12() != 0) {
     _internal_set_channel12(from._internal_channel12());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5326,8 +5327,8 @@ void IrtsRr2::InternalSwap(IrtsRr2* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRr2, timestamp_)
-      + sizeof(IrtsRr2::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRr2, _timestamp_)
+      + sizeof(IrtsRr2::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRr2, channel9_)>(
           reinterpret_cast<char*>(&channel9_),
           reinterpret_cast<char*>(&other->channel9_));
@@ -5355,16 +5356,16 @@ IrtsRr3::IrtsRr3(const IrtsRr3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&channel13_, &from.channel13_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IrtsRr3)
 }
 
 inline void IrtsRr3::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&channel13_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
 }
 
 IrtsRr3::~IrtsRr3() {
@@ -5391,8 +5392,8 @@ void IrtsRr3::Clear() {
   (void) cached_has_bits;
 
   ::memset(&channel13_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&channel13_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&channel13_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5434,10 +5435,10 @@ const char* IrtsRr3::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 5;
+      // uint64 _timestamp = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5495,10 +5496,10 @@ uint8_t* IrtsRr3::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(5, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5537,9 +5538,9 @@ size_t IrtsRr3::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_channel16());
   }
 
-  // uint32 timestamp = 5;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 5;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5576,8 +5577,8 @@ void IrtsRr3::MergeFrom(const IrtsRr3& from) {
   if (from._internal_channel16() != 0) {
     _internal_set_channel16(from._internal_channel16());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5597,8 +5598,8 @@ void IrtsRr3::InternalSwap(IrtsRr3* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IrtsRr3, timestamp_)
-      + sizeof(IrtsRr3::timestamp_)
+      PROTOBUF_FIELD_OFFSET(IrtsRr3, _timestamp_)
+      + sizeof(IrtsRr3::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(IrtsRr3, channel13_)>(
           reinterpret_cast<char*>(&channel13_),
           reinterpret_cast<char*>(&other->channel13_));
@@ -5626,16 +5627,16 @@ GpsCoords::GpsCoords(const GpsCoords& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&latitude_, &from.latitude_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&latitude_)) + sizeof(timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&latitude_)) + sizeof(_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.GpsCoords)
 }
 
 inline void GpsCoords::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&latitude_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&latitude_)) + sizeof(timestamp_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_timestamp_) -
+    reinterpret_cast<char*>(&latitude_)) + sizeof(_timestamp_));
 }
 
 GpsCoords::~GpsCoords() {
@@ -5662,8 +5663,8 @@ void GpsCoords::Clear() {
   (void) cached_has_bits;
 
   ::memset(&latitude_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&latitude_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&_timestamp_) -
+      reinterpret_cast<char*>(&latitude_)) + sizeof(_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5689,10 +5690,10 @@ const char* GpsCoords::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 3;
+      // uint64 _timestamp = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5746,10 +5747,10 @@ uint8_t* GpsCoords::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_longitude(), target);
   }
 
-  // uint32 timestamp = 3;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 3;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5786,9 +5787,9 @@ size_t GpsCoords::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // uint32 timestamp = 3;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+  // uint64 _timestamp = 3;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -5827,8 +5828,8 @@ void GpsCoords::MergeFrom(const GpsCoords& from) {
   if (raw_longitude != 0) {
     _internal_set_longitude(from._internal_longitude());
   }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5848,8 +5849,8 @@ void GpsCoords::InternalSwap(GpsCoords* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GpsCoords, timestamp_)
-      + sizeof(GpsCoords::timestamp_)
+      PROTOBUF_FIELD_OFFSET(GpsCoords, _timestamp_)
+      + sizeof(GpsCoords::_timestamp_)
       - PROTOBUF_FIELD_OFFSET(GpsCoords, latitude_)>(
           reinterpret_cast<char*>(&latitude_),
           reinterpret_cast<char*>(&other->latitude_));
@@ -5876,17 +5877,17 @@ GpsSpeed::GpsSpeed(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 GpsSpeed::GpsSpeed(const GpsSpeed& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&speed_, &from.speed_,
-    static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&speed_)) + sizeof(timestamp_));
+  ::memcpy(&_timestamp_, &from._timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&_timestamp_)) + sizeof(speed_));
   // @@protoc_insertion_point(copy_constructor:secondary.GpsSpeed)
 }
 
 inline void GpsSpeed::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&speed_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&speed_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&_timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&speed_) -
+    reinterpret_cast<char*>(&_timestamp_)) + sizeof(speed_));
 }
 
 GpsSpeed::~GpsSpeed() {
@@ -5912,9 +5913,9 @@ void GpsSpeed::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&speed_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&speed_)) + sizeof(timestamp_));
+  ::memset(&_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&speed_) -
+      reinterpret_cast<char*>(&_timestamp_)) + sizeof(speed_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5932,10 +5933,10 @@ const char* GpsSpeed::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // uint32 timestamp = 2;
+      // uint64 _timestamp = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5975,10 +5976,10 @@ uint8_t* GpsSpeed::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_speed(), target);
   }
 
-  // uint32 timestamp = 2;
-  if (this->_internal_timestamp() != 0) {
+  // uint64 _timestamp = 2;
+  if (this->_internal__timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_timestamp(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal__timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5997,14 +5998,14 @@ size_t GpsSpeed::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // uint64 _timestamp = 2;
+  if (this->_internal__timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__timestamp());
+  }
+
   // uint32 speed = 1;
   if (this->_internal_speed() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_speed());
-  }
-
-  // uint32 timestamp = 2;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6029,11 +6030,11 @@ void GpsSpeed::MergeFrom(const GpsSpeed& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal__timestamp() != 0) {
+    _internal_set__timestamp(from._internal__timestamp());
+  }
   if (from._internal_speed() != 0) {
     _internal_set_speed(from._internal_speed());
-  }
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6053,11 +6054,11 @@ void GpsSpeed::InternalSwap(GpsSpeed* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GpsSpeed, timestamp_)
-      + sizeof(GpsSpeed::timestamp_)
-      - PROTOBUF_FIELD_OFFSET(GpsSpeed, speed_)>(
-          reinterpret_cast<char*>(&speed_),
-          reinterpret_cast<char*>(&other->speed_));
+      PROTOBUF_FIELD_OFFSET(GpsSpeed, speed_)
+      + sizeof(GpsSpeed::speed_)
+      - PROTOBUF_FIELD_OFFSET(GpsSpeed, _timestamp_)>(
+          reinterpret_cast<char*>(&_timestamp_),
+          reinterpret_cast<char*>(&other->_timestamp_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GpsSpeed::GetMetadata() const {

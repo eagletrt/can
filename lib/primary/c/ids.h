@@ -85,7 +85,7 @@
 #define primary_id_INV_L_RESPONSE 0b00110000001
 
 
-// Utils
+// ============== UTILS ============== //
 
 #define primary_MAX_MESSAGE_LENGTH 26
 
