@@ -73,7 +73,7 @@ typedef union {
 typedef struct {
     uint16_t id;
     void* raw_message;
-    void* conversion_message;
+    void* message;
 } primary_devices[primary_NUMBER_OF_MESSAGES];
 
 // ============== FREQUENCIES ============== //
@@ -318,6 +318,7 @@ typedef enum __CANLIB_PACKED {
 // Structs
 
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
@@ -325,6 +326,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_VERSION;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 component_version;
@@ -334,6 +336,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_DAS_VERSION;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
@@ -341,6 +344,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VERSION;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 component_version;
@@ -350,6 +354,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_VERSION;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
@@ -358,12 +363,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TLM_VERSION;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint32 timestamp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_TIMESTAMP;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 driver;
@@ -375,6 +382,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_TLM_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 driver;
     primary_uint8 circuit;
@@ -385,12 +393,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TLM_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 soc_temp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_SYSTEM_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 pack_voltage;
@@ -402,6 +412,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VOLTAGE;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint16 current;
     primary_int16 power;
@@ -409,6 +420,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CURRENT;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 average_temp;
@@ -419,6 +431,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_TEMP;
 
+
 typedef struct __CANLIB_PACKED {
     primary_HvErrors warnings;
     primary_HvErrors errors;
@@ -427,6 +440,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_ERRORS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_TsStatus ts_status;
 #ifdef CANLIB_TIMESTAMP
@@ -434,12 +448,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TS_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_Toggle ts_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_TS_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     primary_Map map;
@@ -449,12 +465,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_SetCarStatus car_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_CAR_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     primary_Bound bound;
@@ -463,6 +481,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_PEDALS_RANGE;
+
 
 typedef struct __CANLIB_PACKED {
     primary_InverterStatus inverter_l;
@@ -473,6 +492,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_CAR_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_DasErrors das_error;
 #ifdef CANLIB_TIMESTAMP
@@ -480,12 +500,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_DAS_ERRORS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 current;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_CURRENT;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 voltage_1;
@@ -497,12 +519,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_VOLTAGE;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint16 total_voltage;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TOTAL_VOLTAGE;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 bp_temperature;
@@ -511,6 +535,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TEMPERATURE;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 hv_fan_speed;
@@ -521,12 +546,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_COOLING_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_MARKER;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 voltage_0;
@@ -537,6 +564,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_VOLTAGE;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 cell_index;
@@ -552,12 +580,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_TEMP;
 
+
 typedef struct __CANLIB_PACKED {
     primary_Toggle balancing_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELL_BALANCING_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     primary_Toggle set_balancing_status;
@@ -566,12 +596,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_CELL_BALANCING_STATUS;
 
+
 typedef struct __CANLIB_PACKED {
     primary_bool connected;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HANDCART_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 encoder_r;
@@ -583,6 +615,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SPEED;
 
+
 typedef struct __CANLIB_PACKED {
     primary_uint8 reg_id;
     primary_uint8 lsb;
@@ -591,6 +624,7 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_L_SET_TORQUE;
+
 
 typedef struct __CANLIB_PACKED {
     primary_uint8 reg_id;
@@ -1452,7 +1486,7 @@ void primary_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4793,7 +4827,7 @@ void primary_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -5161,148 +5195,148 @@ bool primary_is_message_id(uint16_t message_id) {
 void primary_devices_new(primary_devices* map) {
     (*map)[0].id = 1024;
     (*map)[0].raw_message = (void*) malloc(sizeof(primary_message_STEER_VERSION));
-    (*map)[0].conversion_message = NULL;
+    (*map)[0].message = NULL;
 
     (*map)[1].id = 1056;
     (*map)[1].raw_message = (void*) malloc(sizeof(primary_message_DAS_VERSION));
-    (*map)[1].conversion_message = NULL;
+    (*map)[1].message = NULL;
 
     (*map)[2].id = 1088;
     (*map)[2].raw_message = (void*) malloc(sizeof(primary_message_HV_VERSION));
-    (*map)[2].conversion_message = NULL;
+    (*map)[2].message = NULL;
 
     (*map)[3].id = 1120;
     (*map)[3].raw_message = (void*) malloc(sizeof(primary_message_LV_VERSION));
-    (*map)[3].conversion_message = NULL;
+    (*map)[3].message = NULL;
 
     (*map)[4].id = 1152;
     (*map)[4].raw_message = (void*) malloc(sizeof(primary_message_TLM_VERSION));
-    (*map)[4].conversion_message = NULL;
+    (*map)[4].message = NULL;
 
     (*map)[5].id = 256;
     (*map)[5].raw_message = (void*) malloc(sizeof(primary_message_TIMESTAMP));
-    (*map)[5].conversion_message = NULL;
+    (*map)[5].message = NULL;
 
     (*map)[6].id = 257;
     (*map)[6].raw_message = (void*) malloc(sizeof(primary_message_SET_TLM_STATUS));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[7].id = 258;
     (*map)[7].raw_message = (void*) malloc(sizeof(primary_message_TLM_STATUS));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[8].id = 1793;
     (*map)[8].raw_message = (void*) malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
-    (*map)[8].conversion_message = NULL;
+    (*map)[8].message = NULL;
 
     (*map)[9].id = 771;
     (*map)[9].raw_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
-    (*map)[9].conversion_message = NULL;
+    (*map)[9].message = NULL;
 
     (*map)[10].id = 803;
     (*map)[10].raw_message = (void*) malloc(sizeof(primary_message_HV_CURRENT));
-    (*map)[10].conversion_message = NULL;
+    (*map)[10].message = NULL;
 
     (*map)[11].id = 835;
     (*map)[11].raw_message = (void*) malloc(sizeof(primary_message_HV_TEMP));
-    (*map)[11].conversion_message = NULL;
+    (*map)[11].message = NULL;
 
     (*map)[12].id = 3;
     (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
-    (*map)[12].conversion_message = NULL;
+    (*map)[12].message = NULL;
 
     (*map)[13].id = 35;
     (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
-    (*map)[13].conversion_message = NULL;
+    (*map)[13].message = NULL;
 
     (*map)[14].id = 4;
     (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*map)[14].conversion_message = NULL;
+    (*map)[14].message = NULL;
 
     (*map)[15].id = 36;
     (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*map)[15].conversion_message = NULL;
+    (*map)[15].message = NULL;
 
     (*map)[16].id = 261;
     (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
-    (*map)[16].conversion_message = NULL;
+    (*map)[16].message = NULL;
 
     (*map)[17].id = 773;
     (*map)[17].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
-    (*map)[17].conversion_message = NULL;
+    (*map)[17].message = NULL;
 
     (*map)[18].id = 1029;
     (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
-    (*map)[18].conversion_message = NULL;
+    (*map)[18].message = NULL;
 
     (*map)[19].id = 514;
     (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
-    (*map)[19].conversion_message = NULL;
+    (*map)[19].message = NULL;
 
     (*map)[20].id = 2;
     (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
-    (*map)[20].conversion_message = NULL;
+    (*map)[20].message = NULL;
 
     (*map)[21].id = 774;
     (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
-    (*map)[21].conversion_message = NULL;
+    (*map)[21].message = NULL;
 
     (*map)[22].id = 806;
     (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
-    (*map)[22].conversion_message = NULL;
+    (*map)[22].message = NULL;
 
     (*map)[23].id = 838;
     (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
-    (*map)[23].conversion_message = NULL;
+    (*map)[23].message = NULL;
 
     (*map)[24].id = 870;
     (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
-    (*map)[24].conversion_message = NULL;
+    (*map)[24].message = NULL;
 
     (*map)[25].id = 902;
     (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
-    (*map)[25].conversion_message = NULL;
+    (*map)[25].message = NULL;
 
     (*map)[26].id = 1;
     (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
-    (*map)[26].conversion_message = NULL;
+    (*map)[26].message = NULL;
 
     (*map)[27].id = 519;
     (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[27].conversion_message = NULL;
+    (*map)[27].message = NULL;
 
     (*map)[28].id = 551;
     (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[28].conversion_message = NULL;
+    (*map)[28].message = NULL;
 
     (*map)[29].id = 583;
     (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
-    (*map)[29].conversion_message = NULL;
+    (*map)[29].message = NULL;
 
     (*map)[30].id = 516;
     (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
-    (*map)[30].conversion_message = NULL;
+    (*map)[30].message = NULL;
 
     (*map)[31].id = 772;
     (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
-    (*map)[31].conversion_message = NULL;
+    (*map)[31].message = NULL;
 
     (*map)[32].id = 546;
     (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[32].conversion_message = NULL;
+    (*map)[32].message = NULL;
 
     (*map)[33].id = 513;
     (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
-    (*map)[33].conversion_message = NULL;
+    (*map)[33].message = NULL;
 
     (*map)[34].id = 385;
     (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
-    (*map)[34].conversion_message = NULL;
+    (*map)[34].message = NULL;
 
 }
 
 int primary_devices_index_from_id(uint16_t message_id, primary_devices* map) {
-    for(int index = 0; index < primary_NUMBER_OF_MESSAGES; index++) {
+    for (int index = 0; index < primary_NUMBER_OF_MESSAGES; index++) {
         if ((*map)[index].id == message_id)
             return index;
     }

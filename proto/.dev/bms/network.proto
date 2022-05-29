@@ -1,0 +1,178 @@
+syntax = "proto3";
+package bms;
+
+
+enum BalancingStatus {
+    BalancingStatus_OFF = 0;
+    BalancingStatus_DISCHARGE = 1;
+}
+
+message BOARD_STATUS_CELLBOARD0 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+message BOARD_STATUS_CELLBOARD1 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+message BOARD_STATUS_CELLBOARD2 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+message BOARD_STATUS_CELLBOARD3 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+message BOARD_STATUS_CELLBOARD4 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+message BOARD_STATUS_CELLBOARD5 {
+    uint32 errors = 1;
+    BalancingStatus balancing_status = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message TEMPERATURES_CELLBOARD0 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+message TEMPERATURES_CELLBOARD1 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+message TEMPERATURES_CELLBOARD2 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+message TEMPERATURES_CELLBOARD3 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+message TEMPERATURES_CELLBOARD4 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+message TEMPERATURES_CELLBOARD5 {
+    uint32 start_index = 1;
+    uint32 temp0 = 2;
+    uint32 temp1 = 3;
+    uint32 temp2 = 4;
+    uint32 temp3 = 5;
+    uint32 temp4 = 6;
+    uint32 temp5 = 7;
+    uint64 _internal_timestamp = 8;
+}
+
+message VOLTAGES_CELLBOARD0 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+message VOLTAGES_CELLBOARD1 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+message VOLTAGES_CELLBOARD2 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+message VOLTAGES_CELLBOARD3 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+message VOLTAGES_CELLBOARD4 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+message VOLTAGES_CELLBOARD5 {
+    uint32 voltage0 = 1;
+    uint32 voltage1 = 2;
+    uint32 voltage2 = 3;
+    uint32 start_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message BALANCING {
+    uint64 cells = 1;
+    uint32 board_index = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message FW_UPDATE {
+    uint32 board_index = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+
+message Pack {
+    repeated BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
+    repeated BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
+    repeated BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
+    repeated BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
+    repeated BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
+    repeated BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
+    repeated TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
+    repeated TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
+    repeated TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
+    repeated TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
+    repeated TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
+    repeated TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
+    repeated VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
+    repeated VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
+    repeated VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
+    repeated VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
+    repeated VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
+    repeated VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
+    repeated BALANCING BALANCING = 19;
+    repeated FW_UPDATE FW_UPDATE = 20;
+}

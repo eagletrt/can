@@ -1,0 +1,327 @@
+syntax = "proto3";
+package primary;
+
+
+enum RaceType {
+    RaceType_ACCELERATION = 0;
+    RaceType_SKIDPAD = 1;
+    RaceType_AUTOCROSS = 2;
+    RaceType_ENDURANCE = 3;
+}
+
+enum InverterStatus {
+    InverterStatus_OFF = 0;
+    InverterStatus_IDLE = 1;
+    InverterStatus_ON = 2;
+}
+
+enum CarStatus {
+    CarStatus_IDLE = 0;
+    CarStatus_SETUP = 1;
+    CarStatus_RUN = 2;
+}
+
+enum Toggle {
+    Toggle_ON = 0;
+    Toggle_OFF = 1;
+}
+
+enum TractionControl {
+    TractionControl_OFF = 0;
+    TractionControl_SLIP_CONTROL = 1;
+    TractionControl_TORQUE_VECTORING = 2;
+    TractionControl_COMPLETE = 3;
+}
+
+enum TsStatus {
+    TsStatus_OFF = 0;
+    TsStatus_PRECHARGE = 1;
+    TsStatus_ON = 2;
+    TsStatus_FATAL = 3;
+}
+
+enum Map {
+    Map_R = 0;
+    Map_D20 = 1;
+    Map_D40 = 2;
+    Map_D60 = 3;
+    Map_D80 = 4;
+    Map_D100 = 5;
+}
+
+enum SetCarStatus {
+    SetCarStatus_IDLE = 0;
+    SetCarStatus_RUN = 1;
+}
+
+enum Bound {
+    Bound_SET_MAX = 0;
+    Bound_SET_MIN = 1;
+}
+
+enum Pedal {
+    Pedal_ACCELERATOR = 0;
+    Pedal_BRAKE = 1;
+}
+
+message STEER_VERSION {
+    uint32 component_version = 1;
+    uint32 cancicd_version = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message DAS_VERSION {
+    uint32 component_version = 1;
+    uint32 cancicd_version = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message HV_VERSION {
+    uint32 component_version = 1;
+    uint32 cancicd_version = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message LV_VERSION {
+    uint32 component_version = 1;
+    uint32 cancicd_version = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message TLM_VERSION {
+    uint32 component_version = 1;
+    uint32 cancicd_version = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message TIMESTAMP {
+    uint32 timestamp = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SET_TLM_STATUS {
+    uint32 driver = 1;
+    uint32 circuit = 2;
+    RaceType race_type = 3;
+    Toggle tlm_status = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message TLM_STATUS {
+    uint32 driver = 1;
+    uint32 circuit = 2;
+    RaceType race_type = 3;
+    Toggle tlm_status = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message STEER_SYSTEM_STATUS {
+    uint32 soc_temp = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message HV_VOLTAGE {
+    uint32 pack_voltage = 1;
+    uint32 bus_voltage = 2;
+    uint32 max_cell_voltage = 3;
+    uint32 min_cell_voltage = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message HV_CURRENT {
+    uint32 current = 1;
+    sint32 power = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message HV_TEMP {
+    uint32 average_temp = 1;
+    uint32 max_temp = 2;
+    uint32 min_temp = 3;
+    uint64 _internal_timestamp = 4;
+}
+
+message HV_ERRORS {
+    uint32 warnings = 1;
+    uint32 errors = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message TS_STATUS {
+    TsStatus ts_status = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SET_TS_STATUS_DAS {
+    Toggle ts_status_set = 1;
+    uint64 _internal_timestamp = 2;
+}
+message SET_TS_STATUS_HANDCART {
+    Toggle ts_status_set = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message STEER_STATUS {
+    Map map = 1;
+    TractionControl traction_control = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message SET_CAR_STATUS {
+    SetCarStatus car_status_set = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SET_PEDALS_RANGE {
+    Bound bound = 1;
+    Pedal pedal = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message CAR_STATUS {
+    InverterStatus inverter_l = 1;
+    InverterStatus inverter_r = 2;
+    CarStatus car_status = 3;
+    uint64 _internal_timestamp = 4;
+}
+
+message DAS_ERRORS {
+    uint32 das_error = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message LV_CURRENT {
+    uint32 current = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message LV_VOLTAGE {
+    uint32 voltage_1 = 1;
+    uint32 voltage_2 = 2;
+    uint32 voltage_3 = 3;
+    uint32 voltage_4 = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message LV_TOTAL_VOLTAGE {
+    uint32 total_voltage = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message LV_TEMPERATURE {
+    uint32 bp_temperature = 1;
+    uint32 dcdc_temperature = 2;
+    uint64 _internal_timestamp = 3;
+}
+
+message COOLING_STATUS {
+    uint32 hv_fan_speed = 1;
+    uint32 lv_fan_speed = 2;
+    uint32 pump_speed = 3;
+    uint64 _internal_timestamp = 4;
+}
+
+message MARKER {
+    uint64 _internal_timestamp = 1;
+}
+
+message HV_CELLS_VOLTAGE {
+    uint32 voltage_0 = 1;
+    uint32 voltage_1 = 2;
+    uint32 voltage_2 = 3;
+    uint32 cell_index = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message HV_CELLS_TEMP {
+    uint32 cell_index = 1;
+    uint32 temp_0 = 2;
+    uint32 temp_1 = 3;
+    uint32 temp_2 = 4;
+    uint32 temp_3 = 5;
+    uint32 temp_4 = 6;
+    uint32 temp_5 = 7;
+    uint32 temp_6 = 8;
+    uint64 _internal_timestamp = 9;
+}
+
+message HV_CELL_BALANCING_STATUS {
+    Toggle balancing_status = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SET_CELL_BALANCING_STATUS {
+    Toggle set_balancing_status = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message HANDCART_STATUS {
+    bool connected = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SPEED {
+    uint32 encoder_r = 1;
+    uint32 encoder_l = 2;
+    uint32 inverter_r = 3;
+    uint32 inverter_l = 4;
+    uint64 _internal_timestamp = 5;
+}
+
+message INV_L_SET_TORQUE {
+    uint32 reg_id = 1;
+    uint32 lsb = 2;
+    uint32 msb = 3;
+    uint64 _internal_timestamp = 4;
+}
+
+message INV_L_RESPONSE {
+    uint32 reg_id = 1;
+    uint32 data_0 = 2;
+    uint32 data_1 = 3;
+    uint32 data_2 = 4;
+    uint32 data_3 = 5;
+    uint32 data_4 = 6;
+    uint32 data_5 = 7;
+    uint32 data_6 = 8;
+    uint64 _internal_timestamp = 9;
+}
+
+
+message Pack {
+    repeated STEER_VERSION STEER_VERSION = 1;
+    repeated DAS_VERSION DAS_VERSION = 2;
+    repeated HV_VERSION HV_VERSION = 3;
+    repeated LV_VERSION LV_VERSION = 4;
+    repeated TLM_VERSION TLM_VERSION = 5;
+    repeated TIMESTAMP TIMESTAMP = 6;
+    repeated SET_TLM_STATUS SET_TLM_STATUS = 7;
+    repeated TLM_STATUS TLM_STATUS = 8;
+    repeated STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 9;
+    repeated HV_VOLTAGE HV_VOLTAGE = 10;
+    repeated HV_CURRENT HV_CURRENT = 11;
+    repeated HV_TEMP HV_TEMP = 12;
+    repeated HV_ERRORS HV_ERRORS = 13;
+    repeated TS_STATUS TS_STATUS = 14;
+    repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
+    repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+    repeated STEER_STATUS STEER_STATUS = 17;
+    repeated SET_CAR_STATUS SET_CAR_STATUS = 18;
+    repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+    repeated CAR_STATUS CAR_STATUS = 20;
+    repeated DAS_ERRORS DAS_ERRORS = 21;
+    repeated LV_CURRENT LV_CURRENT = 22;
+    repeated LV_VOLTAGE LV_VOLTAGE = 23;
+    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 24;
+    repeated LV_TEMPERATURE LV_TEMPERATURE = 25;
+    repeated COOLING_STATUS COOLING_STATUS = 26;
+    repeated MARKER MARKER = 27;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 28;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 29;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 30;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 31;
+    repeated HANDCART_STATUS HANDCART_STATUS = 32;
+    repeated SPEED SPEED = 33;
+    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 34;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 35;
+}

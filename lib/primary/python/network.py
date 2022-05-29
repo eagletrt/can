@@ -187,22 +187,13 @@ class Pedal(IntEnum):
 class message_STEER_VERSION:
     def __init__(
         self,
-        component_version,
-        cancicd_version
+        component_version = None,
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
-        return data
-
-    def deserialize(self, data):
-        self.component_version = uint8(unpack("<B", data[0:1])[0])
-        self.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_VERSION):
@@ -214,25 +205,29 @@ class message_STEER_VERSION:
         return True
 
 
+
+def serialize_STEER_VERSION(message: message_STEER_VERSION) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.component_version, message.cancicd_version))
+    return data
+
+def deserialize_STEER_VERSION(data: bytearray) -> message_STEER_VERSION:
+    message = message_STEER_VERSION()
+    message.component_version = uint8(unpack("<B", data[0:1])[0])
+    message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_DAS_VERSION:
     def __init__(
         self,
-        component_version,
-        cancicd_version
+        component_version = None,
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
-        return data
-
-    def deserialize(self, data):
-        self.component_version = uint8(unpack("<B", data[0:1])[0])
-        self.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_DAS_VERSION):
@@ -244,25 +239,29 @@ class message_DAS_VERSION:
         return True
 
 
+
+def serialize_DAS_VERSION(message: message_DAS_VERSION) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.component_version, message.cancicd_version))
+    return data
+
+def deserialize_DAS_VERSION(data: bytearray) -> message_DAS_VERSION:
+    message = message_DAS_VERSION()
+    message.component_version = uint8(unpack("<B", data[0:1])[0])
+    message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_HV_VERSION:
     def __init__(
         self,
-        component_version,
-        cancicd_version
+        component_version = None,
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
-        return data
-
-    def deserialize(self, data):
-        self.component_version = uint8(unpack("<B", data[0:1])[0])
-        self.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VERSION):
@@ -274,25 +273,29 @@ class message_HV_VERSION:
         return True
 
 
+
+def serialize_HV_VERSION(message: message_HV_VERSION) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.component_version, message.cancicd_version))
+    return data
+
+def deserialize_HV_VERSION(data: bytearray) -> message_HV_VERSION:
+    message = message_HV_VERSION()
+    message.component_version = uint8(unpack("<B", data[0:1])[0])
+    message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_LV_VERSION:
     def __init__(
         self,
-        component_version,
-        cancicd_version
+        component_version = None,
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
-        return data
-
-    def deserialize(self, data):
-        self.component_version = uint8(unpack("<B", data[0:1])[0])
-        self.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VERSION):
@@ -304,25 +307,29 @@ class message_LV_VERSION:
         return True
 
 
+
+def serialize_LV_VERSION(message: message_LV_VERSION) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.component_version, message.cancicd_version))
+    return data
+
+def deserialize_LV_VERSION(data: bytearray) -> message_LV_VERSION:
+    message = message_LV_VERSION()
+    message.component_version = uint8(unpack("<B", data[0:1])[0])
+    message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_TLM_VERSION:
     def __init__(
         self,
-        component_version,
-        cancicd_version
+        component_version = None,
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
-        return data
-
-    def deserialize(self, data):
-        self.component_version = uint8(unpack("<B", data[0:1])[0])
-        self.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TLM_VERSION):
@@ -334,22 +341,27 @@ class message_TLM_VERSION:
         return True
 
 
+
+def serialize_TLM_VERSION(message: message_TLM_VERSION) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.component_version, message.cancicd_version))
+    return data
+
+def deserialize_TLM_VERSION(data: bytearray) -> message_TLM_VERSION:
+    message = message_TLM_VERSION()
+    message.component_version = uint8(unpack("<B", data[0:1])[0])
+    message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_TIMESTAMP:
     def __init__(
         self,
-        timestamp
+        timestamp = None
     ):
         self.timestamp = uint32(timestamp) if timestamp is not None else None
         self.size = 4
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<I", self.timestamp))
-        return data
-
-    def deserialize(self, data):
-        self.timestamp = uint32(unpack("<I", data[0:4])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TIMESTAMP):
@@ -359,30 +371,31 @@ class message_TIMESTAMP:
         return True
 
 
+
+def serialize_TIMESTAMP(message: message_TIMESTAMP) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<I", message.timestamp))
+    return data
+
+def deserialize_TIMESTAMP(data: bytearray) -> message_TIMESTAMP:
+    message = message_TIMESTAMP()
+    message.timestamp = uint32(unpack("<I", data[0:4])[0])
+    return message
+
+
 class message_SET_TLM_STATUS:
     def __init__(
         self,
-        driver,
-        circuit,
-        race_type,
-        tlm_status
+        driver = None,
+        circuit = None,
+        race_type = None,
+        tlm_status = None
     ):
         self.driver = uint8(driver) if driver is not None else None
         self.circuit = uint8(circuit) if circuit is not None else None
         self.race_type = RaceType(race_type) if race_type is not None else None
         self.tlm_status = Toggle(tlm_status) if tlm_status is not None else None
         self.size = 3
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBB", self.driver, self.circuit, self.race_type << 6 & 255 | self.tlm_status << 5 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.driver = uint8(unpack("<B", data[0:1])[0])
-        self.circuit = uint8(unpack("<xB", data[0:2])[0])
-        self.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        self.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_TLM_STATUS):
@@ -398,31 +411,35 @@ class message_SET_TLM_STATUS:
         return True
 
 
+
+def serialize_SET_TLM_STATUS(message: message_SET_TLM_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBB", message.driver, message.circuit, message.race_type << 6 & 255 | message.tlm_status << 5 & 255))
+    return data
+
+def deserialize_SET_TLM_STATUS(data: bytearray) -> message_SET_TLM_STATUS:
+    message = message_SET_TLM_STATUS()
+    message.driver = uint8(unpack("<B", data[0:1])[0])
+    message.circuit = uint8(unpack("<xB", data[0:2])[0])
+    message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
+    message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
+    return message
+
+
 class message_TLM_STATUS:
     def __init__(
         self,
-        driver,
-        circuit,
-        race_type,
-        tlm_status
+        driver = None,
+        circuit = None,
+        race_type = None,
+        tlm_status = None
     ):
         self.driver = uint8(driver) if driver is not None else None
         self.circuit = uint8(circuit) if circuit is not None else None
         self.race_type = RaceType(race_type) if race_type is not None else None
         self.tlm_status = Toggle(tlm_status) if tlm_status is not None else None
         self.size = 3
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBB", self.driver, self.circuit, self.race_type << 6 & 255 | self.tlm_status << 5 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.driver = uint8(unpack("<B", data[0:1])[0])
-        self.circuit = uint8(unpack("<xB", data[0:2])[0])
-        self.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        self.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TLM_STATUS):
@@ -438,22 +455,29 @@ class message_TLM_STATUS:
         return True
 
 
+
+def serialize_TLM_STATUS(message: message_TLM_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBB", message.driver, message.circuit, message.race_type << 6 & 255 | message.tlm_status << 5 & 255))
+    return data
+
+def deserialize_TLM_STATUS(data: bytearray) -> message_TLM_STATUS:
+    message = message_TLM_STATUS()
+    message.driver = uint8(unpack("<B", data[0:1])[0])
+    message.circuit = uint8(unpack("<xB", data[0:2])[0])
+    message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
+    message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
+    return message
+
+
 class message_STEER_SYSTEM_STATUS:
     def __init__(
         self,
-        soc_temp
+        soc_temp = None
     ):
         self.soc_temp = uint8(soc_temp) if soc_temp is not None else None
         self.size = 1
-        self.millis = 2000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.soc_temp))
-        return data
-
-    def deserialize(self, data):
-        self.soc_temp = uint8(unpack("<B", data[0:1])[0])
+        self.frequency = 2000
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_SYSTEM_STATUS):
@@ -463,31 +487,32 @@ class message_STEER_SYSTEM_STATUS:
         return True
 
 
+
+def serialize_STEER_SYSTEM_STATUS(message: message_STEER_SYSTEM_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.soc_temp))
+    return data
+
+def deserialize_STEER_SYSTEM_STATUS(data: bytearray) -> message_STEER_SYSTEM_STATUS:
+    message = message_STEER_SYSTEM_STATUS()
+    message.soc_temp = uint8(unpack("<B", data[0:1])[0])
+    return message
+
+
 class message_HV_VOLTAGE:
     def __init__(
         self,
-        pack_voltage,
-        bus_voltage,
-        max_cell_voltage,
-        min_cell_voltage
+        pack_voltage = None,
+        bus_voltage = None,
+        max_cell_voltage = None,
+        min_cell_voltage = None
     ):
         self.pack_voltage = uint16(pack_voltage) if pack_voltage is not None else None
         self.bus_voltage = uint16(bus_voltage) if bus_voltage is not None else None
         self.max_cell_voltage = uint16(max_cell_voltage) if max_cell_voltage is not None else None
         self.min_cell_voltage = uint16(min_cell_voltage) if min_cell_voltage is not None else None
         self.size = 8
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<HHHH", self.pack_voltage, self.bus_voltage, self.max_cell_voltage, self.min_cell_voltage))
-        return data
-
-    def deserialize(self, data):
-        self.pack_voltage = uint16(unpack("<H", data[0:2])[0])
-        self.bus_voltage = uint16(unpack("<xxH", data[0:4])[0])
-        self.max_cell_voltage = uint16(unpack("<xxxxH", data[0:6])[0])
-        self.min_cell_voltage = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VOLTAGE):
@@ -503,25 +528,31 @@ class message_HV_VOLTAGE:
         return True
 
 
+
+def serialize_HV_VOLTAGE(message: message_HV_VOLTAGE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<HHHH", message.pack_voltage, message.bus_voltage, message.max_cell_voltage, message.min_cell_voltage))
+    return data
+
+def deserialize_HV_VOLTAGE(data: bytearray) -> message_HV_VOLTAGE:
+    message = message_HV_VOLTAGE()
+    message.pack_voltage = uint16(unpack("<H", data[0:2])[0])
+    message.bus_voltage = uint16(unpack("<xxH", data[0:4])[0])
+    message.max_cell_voltage = uint16(unpack("<xxxxH", data[0:6])[0])
+    message.min_cell_voltage = uint16(unpack("<xxxxxxH", data[0:8])[0])
+    return message
+
+
 class message_HV_CURRENT:
     def __init__(
         self,
-        current,
-        power
+        current = None,
+        power = None
     ):
         self.current = uint16(current) if current is not None else None
         self.power = int16(power) if power is not None else None
         self.size = 4
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<Hh", self.current, self.power))
-        return data
-
-    def deserialize(self, data):
-        self.current = uint16(unpack("<H", data[0:2])[0])
-        self.power = int16(unpack("<xxh", data[0:4])[0])
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CURRENT):
@@ -533,28 +564,31 @@ class message_HV_CURRENT:
         return True
 
 
+
+def serialize_HV_CURRENT(message: message_HV_CURRENT) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<Hh", message.current, message.power))
+    return data
+
+def deserialize_HV_CURRENT(data: bytearray) -> message_HV_CURRENT:
+    message = message_HV_CURRENT()
+    message.current = uint16(unpack("<H", data[0:2])[0])
+    message.power = int16(unpack("<xxh", data[0:4])[0])
+    return message
+
+
 class message_HV_TEMP:
     def __init__(
         self,
-        average_temp,
-        max_temp,
-        min_temp
+        average_temp = None,
+        max_temp = None,
+        min_temp = None
     ):
         self.average_temp = uint16(average_temp) if average_temp is not None else None
         self.max_temp = uint16(max_temp) if max_temp is not None else None
         self.min_temp = uint16(min_temp) if min_temp is not None else None
         self.size = 6
-        self.millis = 200
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<HHH", self.average_temp, self.max_temp, self.min_temp))
-        return data
-
-    def deserialize(self, data):
-        self.average_temp = uint16(unpack("<H", data[0:2])[0])
-        self.max_temp = uint16(unpack("<xxH", data[0:4])[0])
-        self.min_temp = uint16(unpack("<xxxxH", data[0:6])[0])
+        self.frequency = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_TEMP):
@@ -568,25 +602,30 @@ class message_HV_TEMP:
         return True
 
 
+
+def serialize_HV_TEMP(message: message_HV_TEMP) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<HHH", message.average_temp, message.max_temp, message.min_temp))
+    return data
+
+def deserialize_HV_TEMP(data: bytearray) -> message_HV_TEMP:
+    message = message_HV_TEMP()
+    message.average_temp = uint16(unpack("<H", data[0:2])[0])
+    message.max_temp = uint16(unpack("<xxH", data[0:4])[0])
+    message.min_temp = uint16(unpack("<xxxxH", data[0:6])[0])
+    return message
+
+
 class message_HV_ERRORS:
     def __init__(
         self,
-        warnings,
-        errors
+        warnings = None,
+        errors = None
     ):
         self.warnings = HvErrors(warnings) if warnings is not None else None
         self.errors = HvErrors(errors) if errors is not None else None
         self.size = 4
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBBB", (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
-        return data
-
-    def deserialize(self, data):
-        self.warnings = HvErrors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
-        self.errors = HvErrors(int((unpack("<xxBB", data[0:4])[0] << 8) | (unpack("<xxBB", data[0:4])[1] << 0)))
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_ERRORS):
@@ -598,22 +637,27 @@ class message_HV_ERRORS:
         return True
 
 
+
+def serialize_HV_ERRORS(message: message_HV_ERRORS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBBB", (int(message.warnings) >> 8) & 255, (int(message.warnings) >> 0) & 255, (int(message.errors) >> 8) & 255, (int(message.errors) >> 0) & 255))
+    return data
+
+def deserialize_HV_ERRORS(data: bytearray) -> message_HV_ERRORS:
+    message = message_HV_ERRORS()
+    message.warnings = HvErrors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
+    message.errors = HvErrors(int((unpack("<xxBB", data[0:4])[0] << 8) | (unpack("<xxBB", data[0:4])[1] << 0)))
+    return message
+
+
 class message_TS_STATUS:
     def __init__(
         self,
-        ts_status
+        ts_status = None
     ):
         self.ts_status = TsStatus(ts_status) if ts_status is not None else None
         self.size = 1
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.ts_status << 6 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.ts_status = TsStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_TS_STATUS):
@@ -623,21 +667,25 @@ class message_TS_STATUS:
         return True
 
 
+
+def serialize_TS_STATUS(message: message_TS_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.ts_status << 6 & 255))
+    return data
+
+def deserialize_TS_STATUS(data: bytearray) -> message_TS_STATUS:
+    message = message_TS_STATUS()
+    message.ts_status = TsStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
+    return message
+
+
 class message_SET_TS_STATUS:
     def __init__(
         self,
-        ts_status_set
+        ts_status_set = None
     ):
         self.ts_status_set = Toggle(ts_status_set) if ts_status_set is not None else None
         self.size = 1
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.ts_status_set << 7 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.ts_status_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_TS_STATUS):
@@ -647,25 +695,28 @@ class message_SET_TS_STATUS:
         return True
 
 
+
+def serialize_SET_TS_STATUS(message: message_SET_TS_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.ts_status_set << 7 & 255))
+    return data
+
+def deserialize_SET_TS_STATUS(data: bytearray) -> message_SET_TS_STATUS:
+    message = message_SET_TS_STATUS()
+    message.ts_status_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+    return message
+
+
 class message_STEER_STATUS:
     def __init__(
         self,
-        map,
-        traction_control
+        map = None,
+        traction_control = None
     ):
         self.map = Map(map) if map is not None else None
         self.traction_control = TractionControl(traction_control) if traction_control is not None else None
         self.size = 1
-        self.millis = 100
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.map << 5 & 255 | self.traction_control << 3 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.map = Map((unpack("<B", data[0:1])[0] & 224) >> 5)
-        self.traction_control = TractionControl((unpack("<B", data[0:1])[0] & 24) >> 3)
+        self.frequency = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_STATUS):
@@ -677,21 +728,26 @@ class message_STEER_STATUS:
         return True
 
 
+
+def serialize_STEER_STATUS(message: message_STEER_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.map << 5 & 255 | message.traction_control << 3 & 255))
+    return data
+
+def deserialize_STEER_STATUS(data: bytearray) -> message_STEER_STATUS:
+    message = message_STEER_STATUS()
+    message.map = Map((unpack("<B", data[0:1])[0] & 224) >> 5)
+    message.traction_control = TractionControl((unpack("<B", data[0:1])[0] & 24) >> 3)
+    return message
+
+
 class message_SET_CAR_STATUS:
     def __init__(
         self,
-        car_status_set
+        car_status_set = None
     ):
         self.car_status_set = SetCarStatus(car_status_set) if car_status_set is not None else None
         self.size = 1
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.car_status_set << 7 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.car_status_set = SetCarStatus((unpack("<B", data[0:1])[0] & 128) >> 7)
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_CAR_STATUS):
@@ -701,24 +757,27 @@ class message_SET_CAR_STATUS:
         return True
 
 
+
+def serialize_SET_CAR_STATUS(message: message_SET_CAR_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.car_status_set << 7 & 255))
+    return data
+
+def deserialize_SET_CAR_STATUS(data: bytearray) -> message_SET_CAR_STATUS:
+    message = message_SET_CAR_STATUS()
+    message.car_status_set = SetCarStatus((unpack("<B", data[0:1])[0] & 128) >> 7)
+    return message
+
+
 class message_SET_PEDALS_RANGE:
     def __init__(
         self,
-        bound,
-        pedal
+        bound = None,
+        pedal = None
     ):
         self.bound = Bound(bound) if bound is not None else None
         self.pedal = Pedal(pedal) if pedal is not None else None
         self.size = 1
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.bound << 7 & 255 | self.pedal << 6 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.bound = Bound((unpack("<B", data[0:1])[0] & 128) >> 7)
-        self.pedal = Pedal((unpack("<B", data[0:1])[0] & 64) >> 6)
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_PEDALS_RANGE):
@@ -730,28 +789,31 @@ class message_SET_PEDALS_RANGE:
         return True
 
 
+
+def serialize_SET_PEDALS_RANGE(message: message_SET_PEDALS_RANGE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.bound << 7 & 255 | message.pedal << 6 & 255))
+    return data
+
+def deserialize_SET_PEDALS_RANGE(data: bytearray) -> message_SET_PEDALS_RANGE:
+    message = message_SET_PEDALS_RANGE()
+    message.bound = Bound((unpack("<B", data[0:1])[0] & 128) >> 7)
+    message.pedal = Pedal((unpack("<B", data[0:1])[0] & 64) >> 6)
+    return message
+
+
 class message_CAR_STATUS:
     def __init__(
         self,
-        inverter_l,
-        inverter_r,
-        car_status
+        inverter_l = None,
+        inverter_r = None,
+        car_status = None
     ):
         self.inverter_l = InverterStatus(inverter_l) if inverter_l is not None else None
         self.inverter_r = InverterStatus(inverter_r) if inverter_r is not None else None
         self.car_status = CarStatus(car_status) if car_status is not None else None
         self.size = 1
-        self.millis = 100
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.inverter_l << 6 & 255 | self.inverter_r << 4 & 255 | self.car_status << 2 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
-        self.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 48) >> 4)
-        self.car_status = CarStatus((unpack("<B", data[0:1])[0] & 12) >> 2)
+        self.frequency = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CAR_STATUS):
@@ -765,22 +827,28 @@ class message_CAR_STATUS:
         return True
 
 
+
+def serialize_CAR_STATUS(message: message_CAR_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.inverter_l << 6 & 255 | message.inverter_r << 4 & 255 | message.car_status << 2 & 255))
+    return data
+
+def deserialize_CAR_STATUS(data: bytearray) -> message_CAR_STATUS:
+    message = message_CAR_STATUS()
+    message.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
+    message.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 48) >> 4)
+    message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 12) >> 2)
+    return message
+
+
 class message_DAS_ERRORS:
     def __init__(
         self,
-        das_error
+        das_error = None
     ):
         self.das_error = DasErrors(das_error) if das_error is not None else None
         self.size = 1
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", (int(self.das_error) >> 0) & 255))
-        return data
-
-    def deserialize(self, data):
-        self.das_error = DasErrors(int((unpack("<B", data[0:1])[0] << 0)))
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_DAS_ERRORS):
@@ -790,22 +858,26 @@ class message_DAS_ERRORS:
         return True
 
 
+
+def serialize_DAS_ERRORS(message: message_DAS_ERRORS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", (int(message.das_error) >> 0) & 255))
+    return data
+
+def deserialize_DAS_ERRORS(data: bytearray) -> message_DAS_ERRORS:
+    message = message_DAS_ERRORS()
+    message.das_error = DasErrors(int((unpack("<B", data[0:1])[0] << 0)))
+    return message
+
+
 class message_LV_CURRENT:
     def __init__(
         self,
-        current
+        current = None
     ):
         self.current = uint8(current) if current is not None else None
         self.size = 1
-        self.millis = 500
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.current))
-        return data
-
-    def deserialize(self, data):
-        self.current = uint8(unpack("<B", data[0:1])[0])
+        self.frequency = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_CURRENT):
@@ -815,31 +887,32 @@ class message_LV_CURRENT:
         return True
 
 
+
+def serialize_LV_CURRENT(message: message_LV_CURRENT) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.current))
+    return data
+
+def deserialize_LV_CURRENT(data: bytearray) -> message_LV_CURRENT:
+    message = message_LV_CURRENT()
+    message.current = uint8(unpack("<B", data[0:1])[0])
+    return message
+
+
 class message_LV_VOLTAGE:
     def __init__(
         self,
-        voltage_1,
-        voltage_2,
-        voltage_3,
-        voltage_4
+        voltage_1 = None,
+        voltage_2 = None,
+        voltage_3 = None,
+        voltage_4 = None
     ):
         self.voltage_1 = uint8(voltage_1) if voltage_1 is not None else None
         self.voltage_2 = uint8(voltage_2) if voltage_2 is not None else None
         self.voltage_3 = uint8(voltage_3) if voltage_3 is not None else None
         self.voltage_4 = uint8(voltage_4) if voltage_4 is not None else None
         self.size = 4
-        self.millis = 200
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBBB", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
-        return data
-
-    def deserialize(self, data):
-        self.voltage_1 = uint8(unpack("<B", data[0:1])[0])
-        self.voltage_2 = uint8(unpack("<xB", data[0:2])[0])
-        self.voltage_3 = uint8(unpack("<xxB", data[0:3])[0])
-        self.voltage_4 = uint8(unpack("<xxxB", data[0:4])[0])
+        self.frequency = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VOLTAGE):
@@ -855,22 +928,29 @@ class message_LV_VOLTAGE:
         return True
 
 
+
+def serialize_LV_VOLTAGE(message: message_LV_VOLTAGE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBBB", message.voltage_1, message.voltage_2, message.voltage_3, message.voltage_4))
+    return data
+
+def deserialize_LV_VOLTAGE(data: bytearray) -> message_LV_VOLTAGE:
+    message = message_LV_VOLTAGE()
+    message.voltage_1 = uint8(unpack("<B", data[0:1])[0])
+    message.voltage_2 = uint8(unpack("<xB", data[0:2])[0])
+    message.voltage_3 = uint8(unpack("<xxB", data[0:3])[0])
+    message.voltage_4 = uint8(unpack("<xxxB", data[0:4])[0])
+    return message
+
+
 class message_LV_TOTAL_VOLTAGE:
     def __init__(
         self,
-        total_voltage
+        total_voltage = None
     ):
         self.total_voltage = uint16(total_voltage) if total_voltage is not None else None
         self.size = 2
-        self.millis = 200
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<H", self.total_voltage))
-        return data
-
-    def deserialize(self, data):
-        self.total_voltage = uint16(unpack("<H", data[0:2])[0])
+        self.frequency = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TOTAL_VOLTAGE):
@@ -880,25 +960,28 @@ class message_LV_TOTAL_VOLTAGE:
         return True
 
 
+
+def serialize_LV_TOTAL_VOLTAGE(message: message_LV_TOTAL_VOLTAGE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<H", message.total_voltage))
+    return data
+
+def deserialize_LV_TOTAL_VOLTAGE(data: bytearray) -> message_LV_TOTAL_VOLTAGE:
+    message = message_LV_TOTAL_VOLTAGE()
+    message.total_voltage = uint16(unpack("<H", data[0:2])[0])
+    return message
+
+
 class message_LV_TEMPERATURE:
     def __init__(
         self,
-        bp_temperature,
-        dcdc_temperature
+        bp_temperature = None,
+        dcdc_temperature = None
     ):
         self.bp_temperature = uint8(bp_temperature) if bp_temperature is not None else None
         self.dcdc_temperature = uint8(dcdc_temperature) if dcdc_temperature is not None else None
         self.size = 2
-        self.millis = 200
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BB", self.bp_temperature, self.dcdc_temperature))
-        return data
-
-    def deserialize(self, data):
-        self.bp_temperature = uint8(unpack("<B", data[0:1])[0])
-        self.dcdc_temperature = uint8(unpack("<xB", data[0:2])[0])
+        self.frequency = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TEMPERATURE):
@@ -910,28 +993,31 @@ class message_LV_TEMPERATURE:
         return True
 
 
+
+def serialize_LV_TEMPERATURE(message: message_LV_TEMPERATURE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BB", message.bp_temperature, message.dcdc_temperature))
+    return data
+
+def deserialize_LV_TEMPERATURE(data: bytearray) -> message_LV_TEMPERATURE:
+    message = message_LV_TEMPERATURE()
+    message.bp_temperature = uint8(unpack("<B", data[0:1])[0])
+    message.dcdc_temperature = uint8(unpack("<xB", data[0:2])[0])
+    return message
+
+
 class message_COOLING_STATUS:
     def __init__(
         self,
-        hv_fan_speed,
-        lv_fan_speed,
-        pump_speed
+        hv_fan_speed = None,
+        lv_fan_speed = None,
+        pump_speed = None
     ):
         self.hv_fan_speed = uint8(hv_fan_speed) if hv_fan_speed is not None else None
         self.lv_fan_speed = uint8(lv_fan_speed) if lv_fan_speed is not None else None
         self.pump_speed = uint8(pump_speed) if pump_speed is not None else None
         self.size = 3
-        self.millis = 1000
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBB", self.hv_fan_speed, self.lv_fan_speed, self.pump_speed))
-        return data
-
-    def deserialize(self, data):
-        self.hv_fan_speed = uint8(unpack("<B", data[0:1])[0])
-        self.lv_fan_speed = uint8(unpack("<xB", data[0:2])[0])
-        self.pump_speed = uint8(unpack("<xxB", data[0:3])[0])
+        self.frequency = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
@@ -945,19 +1031,25 @@ class message_COOLING_STATUS:
         return True
 
 
+
+def serialize_COOLING_STATUS(message: message_COOLING_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBB", message.hv_fan_speed, message.lv_fan_speed, message.pump_speed))
+    return data
+
+def deserialize_COOLING_STATUS(data: bytearray) -> message_COOLING_STATUS:
+    message = message_COOLING_STATUS()
+    message.hv_fan_speed = uint8(unpack("<B", data[0:1])[0])
+    message.lv_fan_speed = uint8(unpack("<xB", data[0:2])[0])
+    message.pump_speed = uint8(unpack("<xxB", data[0:3])[0])
+    return message
+
+
 class message_MARKER:
     def __init__(
         self
     ):
         self.size = 0
-
-    def serialize(self):
-        data = bytearray()
-        data.extend()
-        return data
-
-    def deserialize(self, data):
-        pass
 
     def __eq__(self, other):
         if not isinstance(other, message_MARKER):
@@ -965,31 +1057,31 @@ class message_MARKER:
         return True
 
 
+
+def serialize_MARKER(message: message_MARKER) -> bytearray:
+    data = bytearray()
+    data.extend()
+    return data
+
+def deserialize_MARKER(data: bytearray) -> message_MARKER:
+    message = message_MARKER()
+    return message
+
+
 class message_HV_CELLS_VOLTAGE:
     def __init__(
         self,
-        voltage_0,
-        voltage_1,
-        voltage_2,
-        cell_index
+        voltage_0 = None,
+        voltage_1 = None,
+        voltage_2 = None,
+        cell_index = None
     ):
         self.voltage_0 = uint16(voltage_0) if voltage_0 is not None else None
         self.voltage_1 = uint16(voltage_1) if voltage_1 is not None else None
         self.voltage_2 = uint16(voltage_2) if voltage_2 is not None else None
         self.cell_index = uint8(cell_index) if cell_index is not None else None
         self.size = 7
-        self.millis = 200
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<HHHB", self.voltage_0, self.voltage_1, self.voltage_2, self.cell_index))
-        return data
-
-    def deserialize(self, data):
-        self.voltage_0 = uint16(unpack("<H", data[0:2])[0])
-        self.voltage_1 = uint16(unpack("<xxH", data[0:4])[0])
-        self.voltage_2 = uint16(unpack("<xxxxH", data[0:6])[0])
-        self.cell_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        self.frequency = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
@@ -1005,17 +1097,32 @@ class message_HV_CELLS_VOLTAGE:
         return True
 
 
+
+def serialize_HV_CELLS_VOLTAGE(message: message_HV_CELLS_VOLTAGE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<HHHB", message.voltage_0, message.voltage_1, message.voltage_2, message.cell_index))
+    return data
+
+def deserialize_HV_CELLS_VOLTAGE(data: bytearray) -> message_HV_CELLS_VOLTAGE:
+    message = message_HV_CELLS_VOLTAGE()
+    message.voltage_0 = uint16(unpack("<H", data[0:2])[0])
+    message.voltage_1 = uint16(unpack("<xxH", data[0:4])[0])
+    message.voltage_2 = uint16(unpack("<xxxxH", data[0:6])[0])
+    message.cell_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
+    return message
+
+
 class message_HV_CELLS_TEMP:
     def __init__(
         self,
-        cell_index,
-        temp_0,
-        temp_1,
-        temp_2,
-        temp_3,
-        temp_4,
-        temp_5,
-        temp_6
+        cell_index = None,
+        temp_0 = None,
+        temp_1 = None,
+        temp_2 = None,
+        temp_3 = None,
+        temp_4 = None,
+        temp_5 = None,
+        temp_6 = None
     ):
         self.cell_index = uint8(cell_index) if cell_index is not None else None
         self.temp_0 = uint8(temp_0) if temp_0 is not None else None
@@ -1026,22 +1133,7 @@ class message_HV_CELLS_TEMP:
         self.temp_5 = uint8(temp_5) if temp_5 is not None else None
         self.temp_6 = uint8(temp_6) if temp_6 is not None else None
         self.size = 8
-        self.millis = 100
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBBBBBBB", self.cell_index, self.temp_0, self.temp_1, self.temp_2, self.temp_3, self.temp_4, self.temp_5, self.temp_6))
-        return data
-
-    def deserialize(self, data):
-        self.cell_index = uint8(unpack("<B", data[0:1])[0])
-        self.temp_0 = uint8(unpack("<xB", data[0:2])[0])
-        self.temp_1 = uint8(unpack("<xxB", data[0:3])[0])
-        self.temp_2 = uint8(unpack("<xxxB", data[0:4])[0])
-        self.temp_3 = uint8(unpack("<xxxxB", data[0:5])[0])
-        self.temp_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
-        self.temp_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
-        self.temp_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
+        self.frequency = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_TEMP):
@@ -1065,22 +1157,33 @@ class message_HV_CELLS_TEMP:
         return True
 
 
+
+def serialize_HV_CELLS_TEMP(message: message_HV_CELLS_TEMP) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBBBBBBB", message.cell_index, message.temp_0, message.temp_1, message.temp_2, message.temp_3, message.temp_4, message.temp_5, message.temp_6))
+    return data
+
+def deserialize_HV_CELLS_TEMP(data: bytearray) -> message_HV_CELLS_TEMP:
+    message = message_HV_CELLS_TEMP()
+    message.cell_index = uint8(unpack("<B", data[0:1])[0])
+    message.temp_0 = uint8(unpack("<xB", data[0:2])[0])
+    message.temp_1 = uint8(unpack("<xxB", data[0:3])[0])
+    message.temp_2 = uint8(unpack("<xxxB", data[0:4])[0])
+    message.temp_3 = uint8(unpack("<xxxxB", data[0:5])[0])
+    message.temp_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+    message.temp_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+    message.temp_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
+    return message
+
+
 class message_HV_CELL_BALANCING_STATUS:
     def __init__(
         self,
-        balancing_status
+        balancing_status = None
     ):
         self.balancing_status = Toggle(balancing_status) if balancing_status is not None else None
         self.size = 1
-        self.millis = 500
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.balancing_status << 7 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        self.frequency = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELL_BALANCING_STATUS):
@@ -1090,21 +1193,25 @@ class message_HV_CELL_BALANCING_STATUS:
         return True
 
 
+
+def serialize_HV_CELL_BALANCING_STATUS(message: message_HV_CELL_BALANCING_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.balancing_status << 7 & 255))
+    return data
+
+def deserialize_HV_CELL_BALANCING_STATUS(data: bytearray) -> message_HV_CELL_BALANCING_STATUS:
+    message = message_HV_CELL_BALANCING_STATUS()
+    message.balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+    return message
+
+
 class message_SET_CELL_BALANCING_STATUS:
     def __init__(
         self,
-        set_balancing_status
+        set_balancing_status = None
     ):
         self.set_balancing_status = Toggle(set_balancing_status) if set_balancing_status is not None else None
         self.size = 1
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.set_balancing_status << 7 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.set_balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_CELL_BALANCING_STATUS):
@@ -1114,22 +1221,26 @@ class message_SET_CELL_BALANCING_STATUS:
         return True
 
 
+
+def serialize_SET_CELL_BALANCING_STATUS(message: message_SET_CELL_BALANCING_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.set_balancing_status << 7 & 255))
+    return data
+
+def deserialize_SET_CELL_BALANCING_STATUS(data: bytearray) -> message_SET_CELL_BALANCING_STATUS:
+    message = message_SET_CELL_BALANCING_STATUS()
+    message.set_balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+    return message
+
+
 class message_HANDCART_STATUS:
     def __init__(
         self,
-        connected
+        connected = None
     ):
         self.connected = bool(connected) if connected is not None else None
         self.size = 1
-        self.millis = 500
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<B", self.connected << 7 & 255))
-        return data
-
-    def deserialize(self, data):
-        self.connected = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
+        self.frequency = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_HANDCART_STATUS):
@@ -1139,31 +1250,32 @@ class message_HANDCART_STATUS:
         return True
 
 
+
+def serialize_HANDCART_STATUS(message: message_HANDCART_STATUS) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<B", message.connected << 7 & 255))
+    return data
+
+def deserialize_HANDCART_STATUS(data: bytearray) -> message_HANDCART_STATUS:
+    message = message_HANDCART_STATUS()
+    message.connected = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
+    return message
+
+
 class message_SPEED:
     def __init__(
         self,
-        encoder_r,
-        encoder_l,
-        inverter_r,
-        inverter_l
+        encoder_r = None,
+        encoder_l = None,
+        inverter_r = None,
+        inverter_l = None
     ):
         self.encoder_r = uint16(encoder_r) if encoder_r is not None else None
         self.encoder_l = uint16(encoder_l) if encoder_l is not None else None
         self.inverter_r = uint16(inverter_r) if inverter_r is not None else None
         self.inverter_l = uint16(inverter_l) if inverter_l is not None else None
         self.size = 8
-        self.millis = 100
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<HHHH", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
-        return data
-
-    def deserialize(self, data):
-        self.encoder_r = uint16(unpack("<H", data[0:2])[0])
-        self.encoder_l = uint16(unpack("<xxH", data[0:4])[0])
-        self.inverter_r = uint16(unpack("<xxxxH", data[0:6])[0])
-        self.inverter_l = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        self.frequency = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):
@@ -1179,28 +1291,33 @@ class message_SPEED:
         return True
 
 
+
+def serialize_SPEED(message: message_SPEED) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<HHHH", message.encoder_r, message.encoder_l, message.inverter_r, message.inverter_l))
+    return data
+
+def deserialize_SPEED(data: bytearray) -> message_SPEED:
+    message = message_SPEED()
+    message.encoder_r = uint16(unpack("<H", data[0:2])[0])
+    message.encoder_l = uint16(unpack("<xxH", data[0:4])[0])
+    message.inverter_r = uint16(unpack("<xxxxH", data[0:6])[0])
+    message.inverter_l = uint16(unpack("<xxxxxxH", data[0:8])[0])
+    return message
+
+
 class message_INV_L_SET_TORQUE:
     def __init__(
         self,
-        reg_id,
-        lsb,
-        msb
+        reg_id = None,
+        lsb = None,
+        msb = None
     ):
         self.reg_id = uint8(reg_id) if reg_id is not None else None
         self.lsb = uint8(lsb) if lsb is not None else None
         self.msb = uint8(msb) if msb is not None else None
         self.size = 3
-        self.millis = 20
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBB", self.reg_id, self.lsb, self.msb))
-        return data
-
-    def deserialize(self, data):
-        self.reg_id = uint8(unpack("<B", data[0:1])[0])
-        self.lsb = uint8(unpack("<xB", data[0:2])[0])
-        self.msb = uint8(unpack("<xxB", data[0:3])[0])
+        self.frequency = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_SET_TORQUE):
@@ -1214,17 +1331,31 @@ class message_INV_L_SET_TORQUE:
         return True
 
 
+
+def serialize_INV_L_SET_TORQUE(message: message_INV_L_SET_TORQUE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBB", message.reg_id, message.lsb, message.msb))
+    return data
+
+def deserialize_INV_L_SET_TORQUE(data: bytearray) -> message_INV_L_SET_TORQUE:
+    message = message_INV_L_SET_TORQUE()
+    message.reg_id = uint8(unpack("<B", data[0:1])[0])
+    message.lsb = uint8(unpack("<xB", data[0:2])[0])
+    message.msb = uint8(unpack("<xxB", data[0:3])[0])
+    return message
+
+
 class message_INV_L_RESPONSE:
     def __init__(
         self,
-        reg_id,
-        data_0,
-        data_1,
-        data_2,
-        data_3,
-        data_4,
-        data_5,
-        data_6
+        reg_id = None,
+        data_0 = None,
+        data_1 = None,
+        data_2 = None,
+        data_3 = None,
+        data_4 = None,
+        data_5 = None,
+        data_6 = None
     ):
         self.reg_id = uint8(reg_id) if reg_id is not None else None
         self.data_0 = uint8(data_0) if data_0 is not None else None
@@ -1235,22 +1366,7 @@ class message_INV_L_RESPONSE:
         self.data_5 = uint8(data_5) if data_5 is not None else None
         self.data_6 = uint8(data_6) if data_6 is not None else None
         self.size = 8
-        self.millis = 100
-
-    def serialize(self):
-        data = bytearray()
-        data.extend(pack("<BBBBBBBB", self.reg_id, self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6))
-        return data
-
-    def deserialize(self, data):
-        self.reg_id = uint8(unpack("<B", data[0:1])[0])
-        self.data_0 = uint8(unpack("<xB", data[0:2])[0])
-        self.data_1 = uint8(unpack("<xxB", data[0:3])[0])
-        self.data_2 = uint8(unpack("<xxxB", data[0:4])[0])
-        self.data_3 = uint8(unpack("<xxxxB", data[0:5])[0])
-        self.data_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
-        self.data_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
-        self.data_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
+        self.frequency = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_RESPONSE):
@@ -1272,4 +1388,23 @@ class message_INV_L_RESPONSE:
         if self.data_6 != other.data_6:
             return False
         return True
+
+
+
+def serialize_INV_L_RESPONSE(message: message_INV_L_RESPONSE) -> bytearray:
+    data = bytearray()
+    data.extend(pack("<BBBBBBBB", message.reg_id, message.data_0, message.data_1, message.data_2, message.data_3, message.data_4, message.data_5, message.data_6))
+    return data
+
+def deserialize_INV_L_RESPONSE(data: bytearray) -> message_INV_L_RESPONSE:
+    message = message_INV_L_RESPONSE()
+    message.reg_id = uint8(unpack("<B", data[0:1])[0])
+    message.data_0 = uint8(unpack("<xB", data[0:2])[0])
+    message.data_1 = uint8(unpack("<xxB", data[0:3])[0])
+    message.data_2 = uint8(unpack("<xxxB", data[0:4])[0])
+    message.data_3 = uint8(unpack("<xxxxB", data[0:5])[0])
+    message.data_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+    message.data_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+    message.data_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
+    return message
 

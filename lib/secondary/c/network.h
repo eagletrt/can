@@ -73,7 +73,7 @@ typedef union {
 typedef struct {
     uint16_t id;
     void* raw_message;
-    void* conversion_message;
+    void* message;
 } secondary_devices[secondary_NUMBER_OF_MESSAGES];
 
 // ============== FREQUENCIES ============== //
@@ -137,6 +137,7 @@ typedef struct {
 // Structs
 
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 ang_rate_x;
     secondary_uint16 ang_rate_y;
@@ -146,6 +147,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IMU_ANGULAR_RATE;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 accel_x;
     secondary_uint16 accel_y;
@@ -154,6 +156,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IMU_ACCELERATION;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel1;
@@ -165,6 +168,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_0;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -174,6 +178,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_1;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel9;
@@ -185,6 +190,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_2;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -194,6 +200,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_3;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel1;
@@ -205,6 +212,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_0;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -214,6 +222,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_1;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel9;
@@ -225,6 +234,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_2;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -234,6 +244,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_3;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel1;
@@ -245,6 +256,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_0;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -254,6 +266,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_1;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel9;
@@ -265,6 +278,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_2;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -274,6 +288,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_3;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel1;
@@ -285,6 +300,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_0;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -294,6 +310,7 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_1;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel9;
@@ -305,6 +322,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_2;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -315,6 +333,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_3;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_float32 latitude;
     secondary_float32 longitude;
@@ -323,12 +342,14 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_GPS_COORDS;
 
+
 typedef struct __CANLIB_PACKED {
     secondary_uint16 speed;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_GPS_SPEED;
+
 
 typedef struct __CANLIB_PACKED {
     secondary_uint32 timestamp;
@@ -890,7 +911,7 @@ void secondary_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3358,7 +3379,7 @@ void secondary_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3586,92 +3607,92 @@ bool secondary_is_message_id(uint16_t message_id) {
 void secondary_devices_new(secondary_devices* map) {
     (*map)[0].id = 1260;
     (*map)[0].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
-    (*map)[0].conversion_message = NULL;
+    (*map)[0].message = NULL;
 
     (*map)[1].id = 1261;
     (*map)[1].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION));
-    (*map)[1].conversion_message = NULL;
+    (*map)[1].message = NULL;
 
     (*map)[2].id = 1460;
     (*map)[2].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_0));
-    (*map)[2].conversion_message = NULL;
+    (*map)[2].message = NULL;
 
     (*map)[3].id = 1461;
     (*map)[3].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_1));
-    (*map)[3].conversion_message = NULL;
+    (*map)[3].message = NULL;
 
     (*map)[4].id = 1462;
     (*map)[4].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_2));
-    (*map)[4].conversion_message = NULL;
+    (*map)[4].message = NULL;
 
     (*map)[5].id = 1463;
     (*map)[5].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_3));
-    (*map)[5].conversion_message = NULL;
+    (*map)[5].message = NULL;
 
     (*map)[6].id = 1464;
     (*map)[6].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_0));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[7].id = 1465;
     (*map)[7].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_1));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[8].id = 1466;
     (*map)[8].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_2));
-    (*map)[8].conversion_message = NULL;
+    (*map)[8].message = NULL;
 
     (*map)[9].id = 1467;
     (*map)[9].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_3));
-    (*map)[9].conversion_message = NULL;
+    (*map)[9].message = NULL;
 
     (*map)[10].id = 1468;
     (*map)[10].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_0));
-    (*map)[10].conversion_message = NULL;
+    (*map)[10].message = NULL;
 
     (*map)[11].id = 1469;
     (*map)[11].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_1));
-    (*map)[11].conversion_message = NULL;
+    (*map)[11].message = NULL;
 
     (*map)[12].id = 1470;
     (*map)[12].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_2));
-    (*map)[12].conversion_message = NULL;
+    (*map)[12].message = NULL;
 
     (*map)[13].id = 1471;
     (*map)[13].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_3));
-    (*map)[13].conversion_message = NULL;
+    (*map)[13].message = NULL;
 
     (*map)[14].id = 1472;
     (*map)[14].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_0));
-    (*map)[14].conversion_message = NULL;
+    (*map)[14].message = NULL;
 
     (*map)[15].id = 1473;
     (*map)[15].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_1));
-    (*map)[15].conversion_message = NULL;
+    (*map)[15].message = NULL;
 
     (*map)[16].id = 1474;
     (*map)[16].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_2));
-    (*map)[16].conversion_message = NULL;
+    (*map)[16].message = NULL;
 
     (*map)[17].id = 1475;
     (*map)[17].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_3));
-    (*map)[17].conversion_message = NULL;
+    (*map)[17].message = NULL;
 
     (*map)[18].id = 1025;
     (*map)[18].raw_message = (void*) malloc(sizeof(secondary_message_GPS_COORDS));
-    (*map)[18].conversion_message = NULL;
+    (*map)[18].message = NULL;
 
     (*map)[19].id = 1057;
     (*map)[19].raw_message = (void*) malloc(sizeof(secondary_message_GPS_SPEED));
-    (*map)[19].conversion_message = NULL;
+    (*map)[19].message = NULL;
 
     (*map)[20].id = 1089;
     (*map)[20].raw_message = (void*) malloc(sizeof(secondary_message_LAP_COUNT));
-    (*map)[20].conversion_message = NULL;
+    (*map)[20].message = NULL;
 
 }
 
 int secondary_devices_index_from_id(uint16_t message_id, secondary_devices* map) {
-    for(int index = 0; index < secondary_NUMBER_OF_MESSAGES; index++) {
+    for (int index = 0; index < secondary_NUMBER_OF_MESSAGES; index++) {
         if ((*map)[index].id == message_id)
             return index;
     }

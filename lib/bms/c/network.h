@@ -73,7 +73,7 @@ typedef union {
 typedef struct {
     uint16_t id;
     void* raw_message;
-    void* conversion_message;
+    void* message;
 } bms_devices[bms_NUMBER_OF_MESSAGES];
 
 // ============== FREQUENCIES ============== //
@@ -142,6 +142,7 @@ typedef enum __CANLIB_PACKED {
 // Structs
 
 
+
 typedef struct __CANLIB_PACKED {
     bms_Errors errors;
     bms_BalancingStatus balancing_status;
@@ -149,6 +150,7 @@ typedef struct __CANLIB_PACKED {
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_BOARD_STATUS;
+
 
 typedef struct __CANLIB_PACKED {
     bms_uint8 start_index;
@@ -163,6 +165,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES;
 
+
 typedef struct __CANLIB_PACKED {
     bms_uint16 voltage0;
     bms_uint16 voltage1;
@@ -173,6 +176,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_VOLTAGES;
 
+
 typedef struct __CANLIB_PACKED {
     bms_BalancingCells cells;
     bms_uint8 board_index;
@@ -180,6 +184,7 @@ typedef struct __CANLIB_PACKED {
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_BALANCING;
+
 
 typedef struct __CANLIB_PACKED {
     bms_uint8 board_index;
@@ -329,7 +334,7 @@ void bms_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -981,7 +986,7 @@ void bms_deserialize_from_id(
     uint16_t message_id,
     uint8_t* data,
     void* raw_message,
-    void* conversion_message
+    void* message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1199,88 +1204,88 @@ bool bms_is_message_id(uint16_t message_id) {
 void bms_devices_new(bms_devices* map) {
     (*map)[0].id = 1536;
     (*map)[0].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[0].conversion_message = NULL;
+    (*map)[0].message = NULL;
 
     (*map)[1].id = 1568;
     (*map)[1].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[1].conversion_message = NULL;
+    (*map)[1].message = NULL;
 
     (*map)[2].id = 1600;
     (*map)[2].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[2].conversion_message = NULL;
+    (*map)[2].message = NULL;
 
     (*map)[3].id = 1632;
     (*map)[3].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[3].conversion_message = NULL;
+    (*map)[3].message = NULL;
 
     (*map)[4].id = 1664;
     (*map)[4].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[4].conversion_message = NULL;
+    (*map)[4].message = NULL;
 
     (*map)[5].id = 1696;
     (*map)[5].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*map)[5].conversion_message = NULL;
+    (*map)[5].message = NULL;
 
     (*map)[6].id = 1281;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[6].id = 1313;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[6].id = 1345;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[6].id = 1377;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[6].id = 1409;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[6].id = 1441;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].conversion_message = NULL;
+    (*map)[6].message = NULL;
 
     (*map)[7].id = 514;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[7].id = 546;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[7].id = 578;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[7].id = 610;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[7].id = 642;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[7].id = 674;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].conversion_message = NULL;
+    (*map)[7].message = NULL;
 
     (*map)[8].id = 515;
     (*map)[8].raw_message = (void*) malloc(sizeof(bms_message_BALANCING));
-    (*map)[8].conversion_message = NULL;
+    (*map)[8].message = NULL;
 
     (*map)[9].id = 260;
     (*map)[9].raw_message = (void*) malloc(sizeof(bms_message_FW_UPDATE));
-    (*map)[9].conversion_message = NULL;
+    (*map)[9].message = NULL;
 
 }
 
 int bms_devices_index_from_id(uint16_t message_id, bms_devices* map) {
-    for(int index = 0; index < bms_NUMBER_OF_MESSAGES; index++) {
+    for (int index = 0; index < bms_NUMBER_OF_MESSAGES; index++) {
         if ((*map)[index].id == message_id)
             return index;
     }
