@@ -1,3 +1,6 @@
+#ifndef primary_MAPPING_H
+#define primary_MAPPING_H
+
 #include <string>
 #include <vector>
 
@@ -753,3 +756,5 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
 }
 
 #endif // primary_MAPPING_IMPLEMENTATION
+
+#endif // primary_MAPPING_H

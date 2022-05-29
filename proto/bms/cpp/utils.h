@@ -1,3 +1,6 @@
+#ifndef bms_MAPPING_H
+#define bms_MAPPING_H
+
 #include <string>
 #include <vector>
 
@@ -510,3 +513,5 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
 }
 
 #endif // bms_MAPPING_IMPLEMENTATION
+
+#endif // bms_MAPPING_H

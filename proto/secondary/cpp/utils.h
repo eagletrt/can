@@ -1,3 +1,6 @@
+#ifndef secondary_MAPPING_H
+#define secondary_MAPPING_H
+
 #include <string>
 #include <vector>
 
@@ -514,3 +517,5 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
 }
 
 #endif // secondary_MAPPING_IMPLEMENTATION
+
+#endif // secondary_MAPPING_H
