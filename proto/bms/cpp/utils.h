@@ -7,6 +7,34 @@ extern "C" {
     #include "../../../../lib/bms/c/network.h"
 }
 
+typedef struct {
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD0;
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD1;
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD2;
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD3;
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD4;
+    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD5;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD0;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD1;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD2;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD3;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD4;
+    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD5;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD0;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD1;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD2;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD3;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD4;
+    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD5;
+    std::vector<bms_message_BALANCING> BALANCING;
+    std::vector<bms_message_FW_UPDATE> FW_UPDATE;
+} bms_proto_pack;
+
+void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map);
+void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map);
+
+#ifdef bms_MAPPING_IMPLEMENTATION
+
 void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map) {
     int index = bms_devices_index_from_id(id, map);
 
@@ -277,29 +305,6 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
     }
 }
 
-typedef struct {
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD0;
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD1;
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD2;
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD3;
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD4;
-    std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD5;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD0;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD1;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD2;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD3;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD4;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD5;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD0;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD1;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD2;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD3;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD4;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD5;
-    std::vector<bms_message_BALANCING> BALANCING;
-    std::vector<bms_message_FW_UPDATE> FW_UPDATE;
-} bms_proto_pack;
-
 void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     map->BOARD_STATUS_CELLBOARD0.resize(pack->board_status_cellboard0_size());
     for(int i = 0; i < pack->board_status_cellboard0_size(); i++){
@@ -503,3 +508,5 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
 #endif // CANLIB_TIMESTAMP
     }
 }
+
+#endif // bms_MAPPING_IMPLEMENTATION

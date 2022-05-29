@@ -7,6 +7,35 @@ extern "C" {
     #include "../../../../lib/secondary/c/network.h"
 }
 
+typedef struct {
+    std::vector<secondary_message_IMU_ANGULAR_RATE> IMU_ANGULAR_RATE;
+    std::vector<secondary_message_IMU_ACCELERATION> IMU_ACCELERATION;
+    std::vector<secondary_message_IRTS_FL_0> IRTS_FL_0;
+    std::vector<secondary_message_IRTS_FL_1> IRTS_FL_1;
+    std::vector<secondary_message_IRTS_FL_2> IRTS_FL_2;
+    std::vector<secondary_message_IRTS_FL_3> IRTS_FL_3;
+    std::vector<secondary_message_IRTS_FR_0> IRTS_FR_0;
+    std::vector<secondary_message_IRTS_FR_1> IRTS_FR_1;
+    std::vector<secondary_message_IRTS_FR_2> IRTS_FR_2;
+    std::vector<secondary_message_IRTS_FR_3> IRTS_FR_3;
+    std::vector<secondary_message_IRTS_RL_0> IRTS_RL_0;
+    std::vector<secondary_message_IRTS_RL_1> IRTS_RL_1;
+    std::vector<secondary_message_IRTS_RL_2> IRTS_RL_2;
+    std::vector<secondary_message_IRTS_RL_3> IRTS_RL_3;
+    std::vector<secondary_message_IRTS_RR_0> IRTS_RR_0;
+    std::vector<secondary_message_IRTS_RR_1> IRTS_RR_1;
+    std::vector<secondary_message_IRTS_RR_2> IRTS_RR_2;
+    std::vector<secondary_message_IRTS_RR_3> IRTS_RR_3;
+    std::vector<secondary_message_GPS_COORDS> GPS_COORDS;
+    std::vector<secondary_message_GPS_SPEED> GPS_SPEED;
+    std::vector<secondary_message_LAP_COUNT> LAP_COUNT;
+} secondary_proto_pack;
+
+void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secondary_devices* map);
+void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* map);
+
+#ifdef secondary_MAPPING_IMPLEMENTATION
+
 void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secondary_devices* map) {
     int index = secondary_devices_index_from_id(id, map);
 
@@ -280,30 +309,6 @@ void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secon
     }
 }
 
-typedef struct {
-    std::vector<secondary_message_IMU_ANGULAR_RATE> IMU_ANGULAR_RATE;
-    std::vector<secondary_message_IMU_ACCELERATION> IMU_ACCELERATION;
-    std::vector<secondary_message_IRTS_FL_0> IRTS_FL_0;
-    std::vector<secondary_message_IRTS_FL_1> IRTS_FL_1;
-    std::vector<secondary_message_IRTS_FL_2> IRTS_FL_2;
-    std::vector<secondary_message_IRTS_FL_3> IRTS_FL_3;
-    std::vector<secondary_message_IRTS_FR_0> IRTS_FR_0;
-    std::vector<secondary_message_IRTS_FR_1> IRTS_FR_1;
-    std::vector<secondary_message_IRTS_FR_2> IRTS_FR_2;
-    std::vector<secondary_message_IRTS_FR_3> IRTS_FR_3;
-    std::vector<secondary_message_IRTS_RL_0> IRTS_RL_0;
-    std::vector<secondary_message_IRTS_RL_1> IRTS_RL_1;
-    std::vector<secondary_message_IRTS_RL_2> IRTS_RL_2;
-    std::vector<secondary_message_IRTS_RL_3> IRTS_RL_3;
-    std::vector<secondary_message_IRTS_RR_0> IRTS_RR_0;
-    std::vector<secondary_message_IRTS_RR_1> IRTS_RR_1;
-    std::vector<secondary_message_IRTS_RR_2> IRTS_RR_2;
-    std::vector<secondary_message_IRTS_RR_3> IRTS_RR_3;
-    std::vector<secondary_message_GPS_COORDS> GPS_COORDS;
-    std::vector<secondary_message_GPS_SPEED> GPS_SPEED;
-    std::vector<secondary_message_LAP_COUNT> LAP_COUNT;
-} secondary_proto_pack;
-
 void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* map) {
     map->IMU_ANGULAR_RATE.resize(pack->imu_angular_rate_size());
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
@@ -507,3 +512,5 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
 #endif // CANLIB_TIMESTAMP
     }
 }
+
+#endif // secondary_MAPPING_IMPLEMENTATION

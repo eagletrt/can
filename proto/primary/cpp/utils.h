@@ -7,6 +7,49 @@ extern "C" {
     #include "../../../../lib/primary/c/network.h"
 }
 
+typedef struct {
+    std::vector<primary_message_STEER_VERSION> STEER_VERSION;
+    std::vector<primary_message_DAS_VERSION> DAS_VERSION;
+    std::vector<primary_message_HV_VERSION> HV_VERSION;
+    std::vector<primary_message_LV_VERSION> LV_VERSION;
+    std::vector<primary_message_TLM_VERSION> TLM_VERSION;
+    std::vector<primary_message_TIMESTAMP> TIMESTAMP;
+    std::vector<primary_message_SET_TLM_STATUS> SET_TLM_STATUS;
+    std::vector<primary_message_TLM_STATUS> TLM_STATUS;
+    std::vector<primary_message_STEER_SYSTEM_STATUS> STEER_SYSTEM_STATUS;
+    std::vector<primary_message_HV_VOLTAGE> HV_VOLTAGE;
+    std::vector<primary_message_HV_CURRENT> HV_CURRENT;
+    std::vector<primary_message_HV_TEMP> HV_TEMP;
+    std::vector<primary_message_HV_ERRORS> HV_ERRORS;
+    std::vector<primary_message_TS_STATUS> TS_STATUS;
+    std::vector<primary_message_SET_TS_STATUS> SET_TS_STATUS_DAS;
+    std::vector<primary_message_SET_TS_STATUS> SET_TS_STATUS_HANDCART;
+    std::vector<primary_message_STEER_STATUS> STEER_STATUS;
+    std::vector<primary_message_SET_CAR_STATUS> SET_CAR_STATUS;
+    std::vector<primary_message_SET_PEDALS_RANGE> SET_PEDALS_RANGE;
+    std::vector<primary_message_CAR_STATUS> CAR_STATUS;
+    std::vector<primary_message_DAS_ERRORS> DAS_ERRORS;
+    std::vector<primary_message_LV_CURRENT> LV_CURRENT;
+    std::vector<primary_message_LV_VOLTAGE> LV_VOLTAGE;
+    std::vector<primary_message_LV_TOTAL_VOLTAGE> LV_TOTAL_VOLTAGE;
+    std::vector<primary_message_LV_TEMPERATURE> LV_TEMPERATURE;
+    std::vector<primary_message_COOLING_STATUS> COOLING_STATUS;
+    std::vector<primary_message_MARKER> MARKER;
+    std::vector<primary_message_HV_CELLS_VOLTAGE> HV_CELLS_VOLTAGE;
+    std::vector<primary_message_HV_CELLS_TEMP> HV_CELLS_TEMP;
+    std::vector<primary_message_HV_CELL_BALANCING_STATUS> HV_CELL_BALANCING_STATUS;
+    std::vector<primary_message_SET_CELL_BALANCING_STATUS> SET_CELL_BALANCING_STATUS;
+    std::vector<primary_message_HANDCART_STATUS> HANDCART_STATUS;
+    std::vector<primary_message_SPEED> SPEED;
+    std::vector<primary_message_INV_L_SET_TORQUE> INV_L_SET_TORQUE;
+    std::vector<primary_message_INV_L_RESPONSE> INV_L_RESPONSE;
+} primary_proto_pack;
+
+void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_devices* map);
+void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map);
+
+#ifdef primary_MAPPING_IMPLEMENTATION
+
 void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_devices* map) {
     int index = primary_devices_index_from_id(id, map);
 
@@ -412,44 +455,6 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
     }
 }
 
-typedef struct {
-    std::vector<primary_message_STEER_VERSION> STEER_VERSION;
-    std::vector<primary_message_DAS_VERSION> DAS_VERSION;
-    std::vector<primary_message_HV_VERSION> HV_VERSION;
-    std::vector<primary_message_LV_VERSION> LV_VERSION;
-    std::vector<primary_message_TLM_VERSION> TLM_VERSION;
-    std::vector<primary_message_TIMESTAMP> TIMESTAMP;
-    std::vector<primary_message_SET_TLM_STATUS> SET_TLM_STATUS;
-    std::vector<primary_message_TLM_STATUS> TLM_STATUS;
-    std::vector<primary_message_STEER_SYSTEM_STATUS> STEER_SYSTEM_STATUS;
-    std::vector<primary_message_HV_VOLTAGE> HV_VOLTAGE;
-    std::vector<primary_message_HV_CURRENT> HV_CURRENT;
-    std::vector<primary_message_HV_TEMP> HV_TEMP;
-    std::vector<primary_message_HV_ERRORS> HV_ERRORS;
-    std::vector<primary_message_TS_STATUS> TS_STATUS;
-    std::vector<primary_message_SET_TS_STATUS> SET_TS_STATUS_DAS;
-    std::vector<primary_message_SET_TS_STATUS> SET_TS_STATUS_HANDCART;
-    std::vector<primary_message_STEER_STATUS> STEER_STATUS;
-    std::vector<primary_message_SET_CAR_STATUS> SET_CAR_STATUS;
-    std::vector<primary_message_SET_PEDALS_RANGE> SET_PEDALS_RANGE;
-    std::vector<primary_message_CAR_STATUS> CAR_STATUS;
-    std::vector<primary_message_DAS_ERRORS> DAS_ERRORS;
-    std::vector<primary_message_LV_CURRENT> LV_CURRENT;
-    std::vector<primary_message_LV_VOLTAGE> LV_VOLTAGE;
-    std::vector<primary_message_LV_TOTAL_VOLTAGE> LV_TOTAL_VOLTAGE;
-    std::vector<primary_message_LV_TEMPERATURE> LV_TEMPERATURE;
-    std::vector<primary_message_COOLING_STATUS> COOLING_STATUS;
-    std::vector<primary_message_MARKER> MARKER;
-    std::vector<primary_message_HV_CELLS_VOLTAGE> HV_CELLS_VOLTAGE;
-    std::vector<primary_message_HV_CELLS_TEMP> HV_CELLS_TEMP;
-    std::vector<primary_message_HV_CELL_BALANCING_STATUS> HV_CELL_BALANCING_STATUS;
-    std::vector<primary_message_SET_CELL_BALANCING_STATUS> SET_CELL_BALANCING_STATUS;
-    std::vector<primary_message_HANDCART_STATUS> HANDCART_STATUS;
-    std::vector<primary_message_SPEED> SPEED;
-    std::vector<primary_message_INV_L_SET_TORQUE> INV_L_SET_TORQUE;
-    std::vector<primary_message_INV_L_RESPONSE> INV_L_RESPONSE;
-} primary_proto_pack;
-
 void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     map->STEER_VERSION.resize(pack->steer_version_size());
     for(int i = 0; i < pack->steer_version_size(); i++){
@@ -746,3 +751,5 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
 #endif // CANLIB_TIMESTAMP
     }
 }
+
+#endif // primary_MAPPING_IMPLEMENTATION
