@@ -172,7 +172,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR HV_CURRENT::HV_CURRENT(
     ::_pbi::ConstantInitialized)
   : current_(0u)
-  , power_(0)
+  , power_(0u)
   , _internal_timestamp_(uint64_t{0u}){}
 struct HV_CURRENTDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_CURRENTDefaultTypeInternal()
@@ -419,7 +419,7 @@ PROTOBUF_CONSTEXPR HV_CELLS_VOLTAGE::HV_CELLS_VOLTAGE(
   : voltage_0_(0u)
   , voltage_1_(0u)
   , voltage_2_(0u)
-  , cell_index_(0u)
+  , start_index_(0u)
   , _internal_timestamp_(uint64_t{0u}){}
 struct HV_CELLS_VOLTAGEDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_CELLS_VOLTAGEDefaultTypeInternal()
@@ -432,7 +432,7 @@ struct HV_CELLS_VOLTAGEDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_CELLS_VOLTAGEDefaultTypeInternal _HV_CELLS_VOLTAGE_default_instance_;
 PROTOBUF_CONSTEXPR HV_CELLS_TEMP::HV_CELLS_TEMP(
     ::_pbi::ConstantInitialized)
-  : cell_index_(0u)
+  : start_index_(0u)
   , temp_0_(0u)
   , temp_1_(0u)
   , temp_2_(0u)
@@ -846,7 +846,7 @@ const uint32_t TableStruct_network_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_0_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_1_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_2_),
-  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, cell_index_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, start_index_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, _internal_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, _internal_metadata_),
@@ -854,7 +854,7 @@ const uint32_t TableStruct_network_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, cell_index_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, start_index_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_0_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_1_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_2_),
@@ -1072,7 +1072,7 @@ const char descriptor_table_protodef_network_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\r\022\030\n\020max_cell_voltage\030\003 \001(\r\022\030\n\020min_cell_"
   "voltage\030\004 \001(\r\022\033\n\023_internal_timestamp\030\005 \001"
   "(\004\"I\n\nHV_CURRENT\022\017\n\007current\030\001 \001(\r\022\r\n\005pow"
-  "er\030\002 \001(\021\022\033\n\023_internal_timestamp\030\003 \001(\004\"`\n"
+  "er\030\002 \001(\r\022\033\n\023_internal_timestamp\030\003 \001(\004\"`\n"
   "\007HV_TEMP\022\024\n\014average_temp\030\001 \001(\r\022\020\n\010max_te"
   "mp\030\002 \001(\r\022\020\n\010min_temp\030\003 \001(\r\022\033\n\023_internal_"
   "timestamp\030\004 \001(\004\"J\n\tHV_ERRORS\022\020\n\010warnings"
@@ -1110,96 +1110,96 @@ const char descriptor_table_protodef_network_2eproto[] PROTOBUF_SECTION_VARIABLE
   "_STATUS\022\024\n\014hv_fan_speed\030\001 \001(\r\022\024\n\014lv_fan_"
   "speed\030\002 \001(\r\022\022\n\npump_speed\030\003 \001(\r\022\033\n\023_inte"
   "rnal_timestamp\030\004 \001(\004\"%\n\006MARKER\022\033\n\023_inter"
-  "nal_timestamp\030\001 \001(\004\"|\n\020HV_CELLS_VOLTAGE\022"
+  "nal_timestamp\030\001 \001(\004\"}\n\020HV_CELLS_VOLTAGE\022"
   "\021\n\tvoltage_0\030\001 \001(\r\022\021\n\tvoltage_1\030\002 \001(\r\022\021\n"
-  "\tvoltage_2\030\003 \001(\r\022\022\n\ncell_index\030\004 \001(\r\022\033\n\023"
-  "_internal_timestamp\030\005 \001(\004\"\260\001\n\rHV_CELLS_T"
-  "EMP\022\022\n\ncell_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\r\022"
-  "\016\n\006temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006temp_"
-  "3\030\005 \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006temp_5\030\007 \001(\r\022"
-  "\016\n\006temp_6\030\010 \001(\r\022\033\n\023_internal_timestamp\030\t"
-  " \001(\004\"b\n\030HV_CELL_BALANCING_STATUS\022)\n\020bala"
-  "ncing_status\030\001 \001(\0162\017.primary.Toggle\022\033\n\023_"
-  "internal_timestamp\030\002 \001(\004\"g\n\031SET_CELL_BAL"
-  "ANCING_STATUS\022-\n\024set_balancing_status\030\001 "
-  "\001(\0162\017.primary.Toggle\022\033\n\023_internal_timest"
-  "amp\030\002 \001(\004\"A\n\017HANDCART_STATUS\022\021\n\tconnecte"
-  "d\030\001 \001(\010\022\033\n\023_internal_timestamp\030\002 \001(\004\"r\n\005"
-  "SPEED\022\021\n\tencoder_r\030\001 \001(\r\022\021\n\tencoder_l\030\002 "
-  "\001(\r\022\022\n\ninverter_r\030\003 \001(\r\022\022\n\ninverter_l\030\004 "
-  "\001(\r\022\033\n\023_internal_timestamp\030\005 \001(\004\"Y\n\020INV_"
-  "L_SET_TORQUE\022\016\n\006reg_id\030\001 \001(\r\022\013\n\003lsb\030\002 \001("
-  "\r\022\013\n\003msb\030\003 \001(\r\022\033\n\023_internal_timestamp\030\004 "
-  "\001(\004\"\255\001\n\016INV_L_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016"
-  "\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2"
-  "\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016"
-  "\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\033\n\023_inter"
-  "nal_timestamp\030\t \001(\004\"\353\014\n\004Pack\022-\n\rSTEER_VE"
-  "RSION\030\001 \003(\0132\026.primary.STEER_VERSION\022)\n\013D"
-  "AS_VERSION\030\002 \003(\0132\024.primary.DAS_VERSION\022\'"
-  "\n\nHV_VERSION\030\003 \003(\0132\023.primary.HV_VERSION\022"
-  "\'\n\nLV_VERSION\030\004 \003(\0132\023.primary.LV_VERSION"
-  "\022)\n\013TLM_VERSION\030\005 \003(\0132\024.primary.TLM_VERS"
-  "ION\022%\n\tTIMESTAMP\030\006 \003(\0132\022.primary.TIMESTA"
-  "MP\022/\n\016SET_TLM_STATUS\030\007 \003(\0132\027.primary.SET"
-  "_TLM_STATUS\022\'\n\nTLM_STATUS\030\010 \003(\0132\023.primar"
-  "y.TLM_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\t \003("
-  "\0132\034.primary.STEER_SYSTEM_STATUS\022\'\n\nHV_VO"
-  "LTAGE\030\n \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV_C"
-  "URRENT\030\013 \003(\0132\023.primary.HV_CURRENT\022!\n\007HV_"
-  "TEMP\030\014 \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERROR"
-  "S\030\r \003(\0132\022.primary.HV_ERRORS\022%\n\tTS_STATUS"
-  "\030\016 \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_STA"
-  "TUS_DAS\030\017 \003(\0132\032.primary.SET_TS_STATUS_DA"
-  "S\022\?\n\026SET_TS_STATUS_HANDCART\030\020 \003(\0132\037.prim"
-  "ary.SET_TS_STATUS_HANDCART\022+\n\014STEER_STAT"
-  "US\030\021 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET_C"
-  "AR_STATUS\030\022 \003(\0132\027.primary.SET_CAR_STATUS"
-  "\0223\n\020SET_PEDALS_RANGE\030\023 \003(\0132\031.primary.SET"
-  "_PEDALS_RANGE\022\'\n\nCAR_STATUS\030\024 \003(\0132\023.prim"
-  "ary.CAR_STATUS\022\'\n\nDAS_ERRORS\030\025 \003(\0132\023.pri"
-  "mary.DAS_ERRORS\022\'\n\nLV_CURRENT\030\026 \003(\0132\023.pr"
-  "imary.LV_CURRENT\022\'\n\nLV_VOLTAGE\030\027 \003(\0132\023.p"
-  "rimary.LV_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030\030 "
-  "\003(\0132\031.primary.LV_TOTAL_VOLTAGE\022/\n\016LV_TEM"
-  "PERATURE\030\031 \003(\0132\027.primary.LV_TEMPERATURE\022"
-  "/\n\016COOLING_STATUS\030\032 \003(\0132\027.primary.COOLIN"
-  "G_STATUS\022\037\n\006MARKER\030\033 \003(\0132\017.primary.MARKE"
-  "R\0223\n\020HV_CELLS_VOLTAGE\030\034 \003(\0132\031.primary.HV"
-  "_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030\035 \003(\0132\026."
-  "primary.HV_CELLS_TEMP\022C\n\030HV_CELL_BALANCI"
-  "NG_STATUS\030\036 \003(\0132!.primary.HV_CELL_BALANC"
-  "ING_STATUS\022E\n\031SET_CELL_BALANCING_STATUS\030"
-  "\037 \003(\0132\".primary.SET_CELL_BALANCING_STATU"
-  "S\0221\n\017HANDCART_STATUS\030  \003(\0132\030.primary.HAN"
-  "DCART_STATUS\022\035\n\005SPEED\030! \003(\0132\016.primary.SP"
-  "EED\0223\n\020INV_L_SET_TORQUE\030\" \003(\0132\031.primary."
-  "INV_L_SET_TORQUE\022/\n\016INV_L_RESPONSE\030# \003(\013"
-  "2\027.primary.INV_L_RESPONSE*k\n\010RaceType\022\031\n"
-  "\025RaceType_ACCELERATION\020\000\022\024\n\020RaceType_SKI"
-  "DPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022RaceTy"
-  "pe_ENDURANCE\020\003*X\n\016InverterStatus\022\026\n\022Inve"
-  "rterStatus_OFF\020\000\022\027\n\023InverterStatus_IDLE\020"
-  "\001\022\025\n\021InverterStatus_ON\020\002*G\n\tCarStatus\022\022\n"
-  "\016CarStatus_IDLE\020\000\022\023\n\017CarStatus_SETUP\020\001\022\021"
-  "\n\rCarStatus_RUN\020\002*\'\n\006Toggle\022\r\n\tToggle_ON"
-  "\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017TractionControl\022\027"
-  "\n\023TractionControl_OFF\020\000\022 \n\034TractionContr"
-  "ol_SLIP_CONTROL\020\001\022$\n TractionControl_TOR"
-  "QUE_VECTORING\020\002\022\034\n\030TractionControl_COMPL"
-  "ETE\020\003*Y\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022T"
-  "sStatus_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016"
-  "TsStatus_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Ma"
-  "p_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map"
-  "_D80\020\004\022\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025\n\021"
-  "SetCarStatus_IDLE\020\000\022\024\n\020SetCarStatus_RUN\020"
-  "\001*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_S"
-  "ET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000"
-  "\022\017\n\013Pedal_BRAKE\020\001b\006proto3"
+  "\tvoltage_2\030\003 \001(\r\022\023\n\013start_index\030\004 \001(\r\022\033\n"
+  "\023_internal_timestamp\030\005 \001(\004\"\261\001\n\rHV_CELLS_"
+  "TEMP\022\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001("
+  "\r\022\016\n\006temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006tem"
+  "p_3\030\005 \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006temp_5\030\007 \001("
+  "\r\022\016\n\006temp_6\030\010 \001(\r\022\033\n\023_internal_timestamp"
+  "\030\t \001(\004\"b\n\030HV_CELL_BALANCING_STATUS\022)\n\020ba"
+  "lancing_status\030\001 \001(\0162\017.primary.Toggle\022\033\n"
+  "\023_internal_timestamp\030\002 \001(\004\"g\n\031SET_CELL_B"
+  "ALANCING_STATUS\022-\n\024set_balancing_status\030"
+  "\001 \001(\0162\017.primary.Toggle\022\033\n\023_internal_time"
+  "stamp\030\002 \001(\004\"A\n\017HANDCART_STATUS\022\021\n\tconnec"
+  "ted\030\001 \001(\010\022\033\n\023_internal_timestamp\030\002 \001(\004\"r"
+  "\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\r\022\021\n\tencoder_l\030"
+  "\002 \001(\r\022\022\n\ninverter_r\030\003 \001(\r\022\022\n\ninverter_l\030"
+  "\004 \001(\r\022\033\n\023_internal_timestamp\030\005 \001(\004\"Y\n\020IN"
+  "V_L_SET_TORQUE\022\016\n\006reg_id\030\001 \001(\r\022\013\n\003lsb\030\002 "
+  "\001(\r\022\013\n\003msb\030\003 \001(\r\022\033\n\023_internal_timestamp\030"
+  "\004 \001(\004\"\255\001\n\016INV_L_RESPONSE\022\016\n\006reg_id\030\001 \001(\r"
+  "\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data"
+  "_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r"
+  "\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\033\n\023_int"
+  "ernal_timestamp\030\t \001(\004\"\353\014\n\004Pack\022-\n\rSTEER_"
+  "VERSION\030\001 \003(\0132\026.primary.STEER_VERSION\022)\n"
+  "\013DAS_VERSION\030\002 \003(\0132\024.primary.DAS_VERSION"
+  "\022\'\n\nHV_VERSION\030\003 \003(\0132\023.primary.HV_VERSIO"
+  "N\022\'\n\nLV_VERSION\030\004 \003(\0132\023.primary.LV_VERSI"
+  "ON\022)\n\013TLM_VERSION\030\005 \003(\0132\024.primary.TLM_VE"
+  "RSION\022%\n\tTIMESTAMP\030\006 \003(\0132\022.primary.TIMES"
+  "TAMP\022/\n\016SET_TLM_STATUS\030\007 \003(\0132\027.primary.S"
+  "ET_TLM_STATUS\022\'\n\nTLM_STATUS\030\010 \003(\0132\023.prim"
+  "ary.TLM_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\t "
+  "\003(\0132\034.primary.STEER_SYSTEM_STATUS\022\'\n\nHV_"
+  "VOLTAGE\030\n \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV"
+  "_CURRENT\030\013 \003(\0132\023.primary.HV_CURRENT\022!\n\007H"
+  "V_TEMP\030\014 \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERR"
+  "ORS\030\r \003(\0132\022.primary.HV_ERRORS\022%\n\tTS_STAT"
+  "US\030\016 \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_S"
+  "TATUS_DAS\030\017 \003(\0132\032.primary.SET_TS_STATUS_"
+  "DAS\022\?\n\026SET_TS_STATUS_HANDCART\030\020 \003(\0132\037.pr"
+  "imary.SET_TS_STATUS_HANDCART\022+\n\014STEER_ST"
+  "ATUS\030\021 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET"
+  "_CAR_STATUS\030\022 \003(\0132\027.primary.SET_CAR_STAT"
+  "US\0223\n\020SET_PEDALS_RANGE\030\023 \003(\0132\031.primary.S"
+  "ET_PEDALS_RANGE\022\'\n\nCAR_STATUS\030\024 \003(\0132\023.pr"
+  "imary.CAR_STATUS\022\'\n\nDAS_ERRORS\030\025 \003(\0132\023.p"
+  "rimary.DAS_ERRORS\022\'\n\nLV_CURRENT\030\026 \003(\0132\023."
+  "primary.LV_CURRENT\022\'\n\nLV_VOLTAGE\030\027 \003(\0132\023"
+  ".primary.LV_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030"
+  "\030 \003(\0132\031.primary.LV_TOTAL_VOLTAGE\022/\n\016LV_T"
+  "EMPERATURE\030\031 \003(\0132\027.primary.LV_TEMPERATUR"
+  "E\022/\n\016COOLING_STATUS\030\032 \003(\0132\027.primary.COOL"
+  "ING_STATUS\022\037\n\006MARKER\030\033 \003(\0132\017.primary.MAR"
+  "KER\0223\n\020HV_CELLS_VOLTAGE\030\034 \003(\0132\031.primary."
+  "HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030\035 \003(\0132"
+  "\026.primary.HV_CELLS_TEMP\022C\n\030HV_CELL_BALAN"
+  "CING_STATUS\030\036 \003(\0132!.primary.HV_CELL_BALA"
+  "NCING_STATUS\022E\n\031SET_CELL_BALANCING_STATU"
+  "S\030\037 \003(\0132\".primary.SET_CELL_BALANCING_STA"
+  "TUS\0221\n\017HANDCART_STATUS\030  \003(\0132\030.primary.H"
+  "ANDCART_STATUS\022\035\n\005SPEED\030! \003(\0132\016.primary."
+  "SPEED\0223\n\020INV_L_SET_TORQUE\030\" \003(\0132\031.primar"
+  "y.INV_L_SET_TORQUE\022/\n\016INV_L_RESPONSE\030# \003"
+  "(\0132\027.primary.INV_L_RESPONSE*k\n\010RaceType\022"
+  "\031\n\025RaceType_ACCELERATION\020\000\022\024\n\020RaceType_S"
+  "KIDPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022Race"
+  "Type_ENDURANCE\020\003*X\n\016InverterStatus\022\026\n\022In"
+  "verterStatus_OFF\020\000\022\027\n\023InverterStatus_IDL"
+  "E\020\001\022\025\n\021InverterStatus_ON\020\002*G\n\tCarStatus\022"
+  "\022\n\016CarStatus_IDLE\020\000\022\023\n\017CarStatus_SETUP\020\001"
+  "\022\021\n\rCarStatus_RUN\020\002*\'\n\006Toggle\022\r\n\tToggle_"
+  "ON\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017TractionControl"
+  "\022\027\n\023TractionControl_OFF\020\000\022 \n\034TractionCon"
+  "trol_SLIP_CONTROL\020\001\022$\n TractionControl_T"
+  "ORQUE_VECTORING\020\002\022\034\n\030TractionControl_COM"
+  "PLETE\020\003*Y\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n"
+  "\022TsStatus_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022"
+  "\n\016TsStatus_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007"
+  "Map_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007M"
+  "ap_D80\020\004\022\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025"
+  "\n\021SetCarStatus_IDLE\020\000\022\024\n\020SetCarStatus_RU"
+  "N\020\001*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound"
+  "_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR"
+  "\020\000\022\017\n\013Pedal_BRAKE\020\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_network_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_network_2eproto = {
-    false, false, 6065, descriptor_table_protodef_network_2eproto,
+    false, false, 6067, descriptor_table_protodef_network_2eproto,
     "network.proto",
     &descriptor_table_network_2eproto_once, nullptr, 0, 36,
     schemas, file_default_instances, TableStruct_network_2eproto::offsets,
@@ -3807,10 +3807,10 @@ const char* HV_CURRENT::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
         } else
           goto handle_unusual;
         continue;
-      // sint32 power = 2;
+      // uint32 power = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          power_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          power_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3858,10 +3858,10 @@ uint8_t* HV_CURRENT::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_current(), target);
   }
 
-  // sint32 power = 2;
+  // uint32 power = 2;
   if (this->_internal_power() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_power(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_power(), target);
   }
 
   // uint64 _internal_timestamp = 3;
@@ -3891,9 +3891,9 @@ size_t HV_CURRENT::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_current());
   }
 
-  // sint32 power = 2;
+  // uint32 power = 2;
   if (this->_internal_power() != 0) {
-    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_power());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_power());
   }
 
   // uint64 _internal_timestamp = 3;
@@ -7615,10 +7615,10 @@ const char* HV_CELLS_VOLTAGE::_InternalParse(const char* ptr, ::_pbi::ParseConte
         } else
           goto handle_unusual;
         continue;
-      // uint32 cell_index = 4;
+      // uint32 start_index = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          cell_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7678,10 +7678,10 @@ uint8_t* HV_CELLS_VOLTAGE::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage_2(), target);
   }
 
-  // uint32 cell_index = 4;
-  if (this->_internal_cell_index() != 0) {
+  // uint32 start_index = 4;
+  if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_cell_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
   }
 
   // uint64 _internal_timestamp = 5;
@@ -7721,9 +7721,9 @@ size_t HV_CELLS_VOLTAGE::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_2());
   }
 
-  // uint32 cell_index = 4;
-  if (this->_internal_cell_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cell_index());
+  // uint32 start_index = 4;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _internal_timestamp = 5;
@@ -7762,8 +7762,8 @@ void HV_CELLS_VOLTAGE::MergeFrom(const HV_CELLS_VOLTAGE& from) {
   if (from._internal_voltage_2() != 0) {
     _internal_set_voltage_2(from._internal_voltage_2());
   }
-  if (from._internal_cell_index() != 0) {
-    _internal_set_cell_index(from._internal_cell_index());
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__internal_timestamp() != 0) {
     _internal_set__internal_timestamp(from._internal__internal_timestamp());
@@ -7814,17 +7814,17 @@ HV_CELLS_TEMP::HV_CELLS_TEMP(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HV_CELLS_TEMP::HV_CELLS_TEMP(const HV_CELLS_TEMP& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&cell_index_, &from.cell_index_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_internal_timestamp_) -
-    reinterpret_cast<char*>(&cell_index_)) + sizeof(_internal_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_internal_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_CELLS_TEMP)
 }
 
 inline void HV_CELLS_TEMP::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&cell_index_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_internal_timestamp_) -
-    reinterpret_cast<char*>(&cell_index_)) + sizeof(_internal_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_internal_timestamp_));
 }
 
 HV_CELLS_TEMP::~HV_CELLS_TEMP() {
@@ -7850,9 +7850,9 @@ void HV_CELLS_TEMP::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&cell_index_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_internal_timestamp_) -
-      reinterpret_cast<char*>(&cell_index_)) + sizeof(_internal_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_internal_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7862,10 +7862,10 @@ const char* HV_CELLS_TEMP::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 cell_index = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          cell_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7963,10 +7963,10 @@ uint8_t* HV_CELLS_TEMP::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 cell_index = 1;
-  if (this->_internal_cell_index() != 0) {
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_cell_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // uint32 temp_0 = 2;
@@ -8033,9 +8033,9 @@ size_t HV_CELLS_TEMP::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 cell_index = 1;
-  if (this->_internal_cell_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cell_index());
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint32 temp_0 = 2;
@@ -8100,8 +8100,8 @@ void HV_CELLS_TEMP::MergeFrom(const HV_CELLS_TEMP& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_cell_index() != 0) {
-    _internal_set_cell_index(from._internal_cell_index());
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal_temp_0() != 0) {
     _internal_set_temp_0(from._internal_temp_0());
@@ -8147,9 +8147,9 @@ void HV_CELLS_TEMP::InternalSwap(HV_CELLS_TEMP* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(HV_CELLS_TEMP, _internal_timestamp_)
       + sizeof(HV_CELLS_TEMP::_internal_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(HV_CELLS_TEMP, cell_index_)>(
-          reinterpret_cast<char*>(&cell_index_),
-          reinterpret_cast<char*>(&other->cell_index_));
+      - PROTOBUF_FIELD_OFFSET(HV_CELLS_TEMP, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_CELLS_TEMP::GetMetadata() const {

@@ -271,10 +271,26 @@
       "description": "Pack stats",
       "frequency": 20,
       "contents": {
-        "pack_voltage": "uint16",
-        "bus_voltage": "uint16",
-        "max_cell_voltage": "uint16",
-        "min_cell_voltage": "uint16"
+        "pack_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "bus_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "max_cell_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "min_cell_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -286,8 +302,16 @@
       "description": "Current supplied by the pack",
       "frequency": 20,
       "contents": {
-        "current": "uint16",
-        "power": "int16"
+        "current": {
+          "type": "float32",
+          "range": [0, 200],
+          "force": "uint16"
+        },
+        "power": {
+          "type": "float32",
+          "range": [0, 100],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -299,9 +323,21 @@
       "description": "Cell temperatures",
       "frequency": 200,
       "contents": {
-        "average_temp": "uint16",
-        "max_temp": "uint16",
-        "min_temp": "uint16"
+        "average_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "max_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "min_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -486,10 +522,22 @@
       "description": "Voltages for each cell",
       "frequency": 200,
       "contents": {
-        "cell_index": "uint8",
-        "voltage_0": "uint16",
-        "voltage_1": "uint16",
-        "voltage_2": "uint16"
+        "start_index": "uint8",
+        "voltage_0": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        },
+        "voltage_1": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        },
+        "voltage_2": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -501,14 +549,42 @@
       "description": "Cell temperatures",
       "frequency": 100,
       "contents": {
-        "cell_index": "uint8",
-        "temp_0": "uint8",
-        "temp_1": "uint8",
-        "temp_2": "uint8",
-        "temp_3": "uint8",
-        "temp_4": "uint8",
-        "temp_5": "uint8",
-        "temp_6": "uint8"
+        "start_index": "uint8",
+        "temp_0": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_1": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_2": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_3": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_4": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_5": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_6": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        }
       }
     },
     {

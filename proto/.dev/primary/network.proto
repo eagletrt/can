@@ -130,7 +130,7 @@ message HV_VOLTAGE {
 
 message HV_CURRENT {
     uint32 current = 1;
-    sint32 power = 2;
+    uint32 power = 2;
     uint64 _internal_timestamp = 3;
 }
 
@@ -229,12 +229,12 @@ message HV_CELLS_VOLTAGE {
     uint32 voltage_0 = 1;
     uint32 voltage_1 = 2;
     uint32 voltage_2 = 3;
-    uint32 cell_index = 4;
+    uint32 start_index = 4;
     uint64 _internal_timestamp = 5;
 }
 
 message HV_CELLS_TEMP {
-    uint32 cell_index = 1;
+    uint32 start_index = 1;
     uint32 temp_0 = 2;
     uint32 temp_1 = 3;
     uint32 temp_2 = 4;

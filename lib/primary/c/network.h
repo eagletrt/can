@@ -407,6 +407,15 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_SYSTEM_STATUS;
 
+typedef struct __CANLIB_PACKED {
+    primary_float32 pack_voltage;
+    primary_float32 bus_voltage;
+    primary_float32 max_cell_voltage;
+    primary_float32 min_cell_voltage;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_VOLTAGE_conversion;
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 pack_voltage;
@@ -418,15 +427,30 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VOLTAGE;
 
+typedef struct __CANLIB_PACKED {
+    primary_float32 current;
+    primary_float32 power;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CURRENT_conversion;
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 current;
-    primary_int16 power;
+    primary_uint16 power;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CURRENT;
 
+typedef struct __CANLIB_PACKED {
+    primary_float32 average_temp;
+    primary_float32 max_temp;
+    primary_float32 min_temp;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_TEMP_conversion;
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 average_temp;
@@ -560,20 +584,42 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_MARKER;
 
+typedef struct __CANLIB_PACKED {
+    primary_float32 voltage_0;
+    primary_float32 voltage_1;
+    primary_float32 voltage_2;
+    primary_uint8 start_index;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CELLS_VOLTAGE_conversion;
 
 typedef struct __CANLIB_PACKED {
     primary_uint16 voltage_0;
     primary_uint16 voltage_1;
     primary_uint16 voltage_2;
-    primary_uint8 cell_index;
+    primary_uint8 start_index;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_VOLTAGE;
 
+typedef struct __CANLIB_PACKED {
+    primary_uint8 start_index;
+    primary_float32 temp_0;
+    primary_float32 temp_1;
+    primary_float32 temp_2;
+    primary_float32 temp_3;
+    primary_float32 temp_4;
+    primary_float32 temp_5;
+    primary_float32 temp_6;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CELLS_TEMP_conversion;
 
 typedef struct __CANLIB_PACKED {
-    primary_uint8 cell_index;
+    primary_uint8 start_index;
     primary_uint8 temp_0;
     primary_uint8 temp_1;
     primary_uint8 temp_2;
@@ -886,9 +932,17 @@ void primary_deserialize_HV_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE* message, char* buffer);
+void primary_raw_to_conversion_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE* raw,
+    primary_message_HV_VOLTAGE_conversion* conversion
+);
+void primary_conversion_to_raw_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE_conversion* conversion,
+    primary_message_HV_VOLTAGE* raw
+);
+void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer);
 void primary_fields_HV_VOLTAGE(char* buffer);
-void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE* message, FILE* buffer);
+void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer);
 void primary_fields_file_HV_VOLTAGE(FILE* buffer);
 
 
@@ -897,7 +951,7 @@ void primary_fields_file_HV_VOLTAGE(FILE* buffer);
 primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
-    primary_int16 power
+    primary_uint16 power
 );
 primary_byte_size primary_serialize_struct_HV_CURRENT(
     uint8_t* data,
@@ -910,9 +964,17 @@ void primary_deserialize_HV_CURRENT(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT* message, char* buffer);
+void primary_raw_to_conversion_HV_CURRENT(
+    primary_message_HV_CURRENT* raw,
+    primary_message_HV_CURRENT_conversion* conversion
+);
+void primary_conversion_to_raw_HV_CURRENT(
+    primary_message_HV_CURRENT_conversion* conversion,
+    primary_message_HV_CURRENT* raw
+);
+void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer);
 void primary_fields_HV_CURRENT(char* buffer);
-void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT* message, FILE* buffer);
+void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer);
 void primary_fields_file_HV_CURRENT(FILE* buffer);
 
 
@@ -935,9 +997,17 @@ void primary_deserialize_HV_TEMP(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_TEMP(primary_message_HV_TEMP* message, char* buffer);
+void primary_raw_to_conversion_HV_TEMP(
+    primary_message_HV_TEMP* raw,
+    primary_message_HV_TEMP_conversion* conversion
+);
+void primary_conversion_to_raw_HV_TEMP(
+    primary_message_HV_TEMP_conversion* conversion,
+    primary_message_HV_TEMP* raw
+);
+void primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer);
 void primary_fields_HV_TEMP(char* buffer);
-void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP* message, FILE* buffer);
+void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer);
 void primary_fields_file_HV_TEMP(FILE* buffer);
 
 
@@ -1280,7 +1350,7 @@ primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
     primary_uint16 voltage_2,
-    primary_uint8 cell_index
+    primary_uint8 start_index
 );
 primary_byte_size primary_serialize_struct_HV_CELLS_VOLTAGE(
     uint8_t* data,
@@ -1293,9 +1363,17 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* message, char* buffer);
+void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
+);
+void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_message_HV_CELLS_VOLTAGE* raw
+);
+void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer);
 void primary_fields_HV_CELLS_VOLTAGE(char* buffer);
-void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* message, FILE* buffer);
+void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer);
 void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer);
 
 
@@ -1303,7 +1381,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_CELLS_TEMP(
     uint8_t* data,
-    primary_uint8 cell_index,
+    primary_uint8 start_index,
     primary_uint8 temp_0,
     primary_uint8 temp_1,
     primary_uint8 temp_2,
@@ -1323,9 +1401,17 @@ void primary_deserialize_HV_CELLS_TEMP(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP* message, char* buffer);
+void primary_raw_to_conversion_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_message_HV_CELLS_TEMP_conversion* conversion
+);
+void primary_conversion_to_raw_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP_conversion* conversion,
+    primary_message_HV_CELLS_TEMP* raw
+);
+void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer);
 void primary_fields_HV_CELLS_TEMP(char* buffer);
-void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP* message, FILE* buffer);
+void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer);
 void primary_fields_file_HV_CELLS_TEMP(FILE* buffer);
 
 
@@ -2383,20 +2469,45 @@ void primary_deserialize_HV_VOLTAGE(
     message->bus_voltage = data[2] | (data[3] << 8);
     message->max_cell_voltage = data[4] | (data[5] << 8);
     message->min_cell_voltage = data[6] | (data[7] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE* raw,
+    primary_message_HV_VOLTAGE_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->pack_voltage = (((primary_float32)raw->pack_voltage) / 142.469565) + 0;
+    conversion->bus_voltage = (((primary_float32)raw->bus_voltage) / 142.469565) + 0;
+    conversion->max_cell_voltage = (((primary_float32)raw->max_cell_voltage) / 142.469565) + 0;
+    conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 142.469565) + 0;
+}
+void primary_conversion_to_raw_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE_conversion* conversion,
+    primary_message_HV_VOLTAGE* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->pack_voltage = (primary_uint16)((conversion->pack_voltage + 0) * 142.469565);
+    raw->bus_voltage = (primary_uint16)((conversion->bus_voltage + 0) * 142.469565);
+    raw->max_cell_voltage = (primary_uint16)((conversion->max_cell_voltage + 0) * 142.469565);
+    raw->min_cell_voltage = (primary_uint16)((conversion->min_cell_voltage + 0) * 142.469565);
 }
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE* message, char* buffer) {
+void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -2418,16 +2529,16 @@ void primary_fields_HV_VOLTAGE(char* buffer) {
         "min_cell_voltage"
     );
 }
-void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE* message, FILE* buffer) {
+void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -2455,7 +2566,7 @@ void primary_fields_file_HV_VOLTAGE(FILE* buffer) {
 primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
-    primary_int16 power
+    primary_uint16 power
 ) {
     data[0] = current & 255;
     data[1] = (current >> 8) & 255;
@@ -2489,18 +2600,39 @@ void primary_deserialize_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     message->current = data[0] | (data[1] << 8);
     message->power = data[2] | (data[3] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_CURRENT(
+    primary_message_HV_CURRENT* raw,
+    primary_message_HV_CURRENT_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->current = (((primary_float32)raw->current) / 327.68) + 0;
+    conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
+}
+void primary_conversion_to_raw_HV_CURRENT(
+    primary_message_HV_CURRENT_conversion* conversion,
+    primary_message_HV_CURRENT* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->current = (primary_uint16)((conversion->current + 0) * 327.68);
+    raw->power = (primary_uint16)((conversion->power + 0) * 655.36);
 }
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT* message, char* buffer) {
+void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%i",
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -2518,14 +2650,14 @@ void primary_fields_HV_CURRENT(char* buffer) {
         "power"
     );
 }
-void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT* message, FILE* buffer) {
+void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%i",
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -2589,19 +2721,42 @@ void primary_deserialize_HV_TEMP(
     message->average_temp = data[0] | (data[1] << 8);
     message->max_temp = data[2] | (data[3] << 8);
     message->min_temp = data[4] | (data[5] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_TEMP(
+    primary_message_HV_TEMP* raw,
+    primary_message_HV_TEMP_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->average_temp = (((primary_float32)raw->average_temp) / 655.36) - 20;
+    conversion->max_temp = (((primary_float32)raw->max_temp) / 655.36) - 20;
+    conversion->min_temp = (((primary_float32)raw->min_temp) / 655.36) - 20;
+}
+void primary_conversion_to_raw_HV_TEMP(
+    primary_message_HV_TEMP_conversion* conversion,
+    primary_message_HV_TEMP* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->average_temp = (primary_uint16)((conversion->average_temp + 20) * 655.36);
+    raw->max_temp = (primary_uint16)((conversion->max_temp + 20) * 655.36);
+    raw->min_temp = (primary_uint16)((conversion->min_temp + 20) * 655.36);
 }
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_TEMP(primary_message_HV_TEMP* message, char* buffer) {
+void primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -2621,15 +2776,15 @@ void primary_fields_HV_TEMP(char* buffer) {
         "min_temp"
     );
 }
-void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP* message, FILE* buffer) {
+void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -3841,7 +3996,7 @@ primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
     primary_uint16 voltage_2,
-    primary_uint8 cell_index
+    primary_uint8 start_index
 ) {
     data[0] = voltage_0 & 255;
     data[1] = (voltage_0 >> 8) & 255;
@@ -3849,7 +4004,7 @@ primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     data[3] = (voltage_1 >> 8) & 255;
     data[4] = voltage_2 & 255;
     data[5] = (voltage_2 >> 8) & 255;
-    data[6] = cell_index;
+    data[6] = start_index;
     return 7;
 }
 
@@ -3863,7 +4018,7 @@ primary_byte_size primary_serialize_struct_HV_CELLS_VOLTAGE(
     data[3] = (message->voltage_1 >> 8) & 255;
     data[4] = message->voltage_2 & 255;
     data[5] = (message->voltage_2 >> 8) & 255;
-    data[6] = message->cell_index;
+    data[6] = message->start_index;
     return 7;
 }
 
@@ -3882,20 +4037,45 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
     message->voltage_0 = data[0] | (data[1] << 8);
     message->voltage_1 = data[2] | (data[3] << 8);
     message->voltage_2 = data[4] | (data[5] << 8);
-    message->cell_index = data[6];
+    message->start_index = data[6];
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->voltage_0 = (((primary_float32)raw->voltage_0) / 13107.2) + 0;
+    conversion->voltage_1 = (((primary_float32)raw->voltage_1) / 13107.2) + 0;
+    conversion->voltage_2 = (((primary_float32)raw->voltage_2) / 13107.2) + 0;
+    conversion->start_index = raw->start_index;
+}
+void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_message_HV_CELLS_VOLTAGE* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->voltage_0 = (primary_uint16)((conversion->voltage_0 + 0) * 13107.2);
+    raw->voltage_1 = (primary_uint16)((conversion->voltage_1 + 0) * 13107.2);
+    raw->voltage_2 = (primary_uint16)((conversion->voltage_2 + 0) * 13107.2);
+    raw->start_index = conversion->start_index;
 }
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* message, char* buffer) {
+void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -3903,7 +4083,7 @@ void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* messag
         message->voltage_0,
         message->voltage_1,
         message->voltage_2,
-        message->cell_index
+        message->start_index
     );
 }
 void primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
@@ -3915,18 +4095,18 @@ void primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
         "voltage_0" CANLIB_SEPARATOR 
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
-        "cell_index"
+        "start_index"
     );
 }
-void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* message, FILE* buffer) {
+void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -3934,7 +4114,7 @@ void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE* m
         message->voltage_0,
         message->voltage_1,
         message->voltage_2,
-        message->cell_index
+        message->start_index
     );
 }
 void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
@@ -3946,7 +4126,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
         "voltage_0" CANLIB_SEPARATOR 
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
-        "cell_index"
+        "start_index"
     );
 }
 
@@ -3954,7 +4134,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_CELLS_TEMP(
     uint8_t* data,
-    primary_uint8 cell_index,
+    primary_uint8 start_index,
     primary_uint8 temp_0,
     primary_uint8 temp_1,
     primary_uint8 temp_2,
@@ -3963,7 +4143,7 @@ primary_byte_size primary_serialize_HV_CELLS_TEMP(
     primary_uint8 temp_5,
     primary_uint8 temp_6
 ) {
-    data[0] = cell_index;
+    data[0] = start_index;
     data[1] = temp_0;
     data[2] = temp_1;
     data[3] = temp_2;
@@ -3978,7 +4158,7 @@ primary_byte_size primary_serialize_struct_HV_CELLS_TEMP(
     uint8_t* data,
     primary_message_HV_CELLS_TEMP* message
 ) {
-    data[0] = message->cell_index;
+    data[0] = message->start_index;
     data[1] = message->temp_0;
     data[2] = message->temp_1;
     data[3] = message->temp_2;
@@ -4001,7 +4181,7 @@ void primary_deserialize_HV_CELLS_TEMP(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->cell_index = data[0];
+    message->start_index = data[0];
     message->temp_0 = data[1];
     message->temp_1 = data[2];
     message->temp_2 = data[3];
@@ -4009,28 +4189,61 @@ void primary_deserialize_HV_CELLS_TEMP(
     message->temp_4 = data[5];
     message->temp_5 = data[6];
     message->temp_6 = data[7];
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_message_HV_CELLS_TEMP_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->start_index = raw->start_index;
+    conversion->temp_0 = (((primary_float32)raw->temp_0) / 2.56) - 20;
+    conversion->temp_1 = (((primary_float32)raw->temp_1) / 2.56) - 20;
+    conversion->temp_2 = (((primary_float32)raw->temp_2) / 2.56) - 20;
+    conversion->temp_3 = (((primary_float32)raw->temp_3) / 2.56) - 20;
+    conversion->temp_4 = (((primary_float32)raw->temp_4) / 2.56) - 20;
+    conversion->temp_5 = (((primary_float32)raw->temp_5) / 2.56) - 20;
+    conversion->temp_6 = (((primary_float32)raw->temp_6) / 2.56) - 20;
+}
+void primary_conversion_to_raw_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP_conversion* conversion,
+    primary_message_HV_CELLS_TEMP* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->start_index = conversion->start_index;
+    raw->temp_0 = (primary_uint8)((conversion->temp_0 + 20) * 2.56);
+    raw->temp_1 = (primary_uint8)((conversion->temp_1 + 20) * 2.56);
+    raw->temp_2 = (primary_uint8)((conversion->temp_2 + 20) * 2.56);
+    raw->temp_3 = (primary_uint8)((conversion->temp_3 + 20) * 2.56);
+    raw->temp_4 = (primary_uint8)((conversion->temp_4 + 20) * 2.56);
+    raw->temp_5 = (primary_uint8)((conversion->temp_5 + 20) * 2.56);
+    raw->temp_6 = (primary_uint8)((conversion->temp_6 + 20) * 2.56);
 }
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP* message, char* buffer) {
+void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cell_index,
+        message->start_index,
         message->temp_0,
         message->temp_1,
         message->temp_2,
@@ -4046,7 +4259,7 @@ void primary_fields_HV_CELLS_TEMP(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cell_index" CANLIB_SEPARATOR 
+        "start_index" CANLIB_SEPARATOR 
         "temp_0" CANLIB_SEPARATOR 
         "temp_1" CANLIB_SEPARATOR 
         "temp_2" CANLIB_SEPARATOR 
@@ -4056,24 +4269,24 @@ void primary_fields_HV_CELLS_TEMP(char* buffer) {
         "temp_6"
     );
 }
-void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP* message, FILE* buffer) {
+void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cell_index,
+        message->start_index,
         message->temp_0,
         message->temp_1,
         message->temp_2,
@@ -4089,7 +4302,7 @@ void primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cell_index" CANLIB_SEPARATOR 
+        "start_index" CANLIB_SEPARATOR 
         "temp_0" CANLIB_SEPARATOR 
         "temp_1" CANLIB_SEPARATOR 
         "temp_2" CANLIB_SEPARATOR 
@@ -4851,13 +5064,13 @@ void primary_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
             primary_to_string_file_STEER_SYSTEM_STATUS((primary_message_STEER_SYSTEM_STATUS*) message, buffer);
         break;
         case 771:
-            primary_to_string_file_HV_VOLTAGE((primary_message_HV_VOLTAGE*) message, buffer);
+            primary_to_string_file_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
         break;
         case 803:
-            primary_to_string_file_HV_CURRENT((primary_message_HV_CURRENT*) message, buffer);
+            primary_to_string_file_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
         break;
         case 835:
-            primary_to_string_file_HV_TEMP((primary_message_HV_TEMP*) message, buffer);
+            primary_to_string_file_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
         break;
         case 3:
             primary_to_string_file_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
@@ -4905,10 +5118,10 @@ void primary_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
             primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
         break;
         case 519:
-            primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE*) message, buffer);
+            primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
         break;
         case 551:
-            primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP*) message, buffer);
+            primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
         break;
         case 583:
             primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
@@ -5030,6 +5243,10 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            primary_raw_to_conversion_HV_VOLTAGE(
+                (primary_message_HV_VOLTAGE*) raw_message,
+                (primary_message_HV_VOLTAGE_conversion*) message
+            );
         break;
         case 803:
             primary_deserialize_HV_CURRENT(
@@ -5039,6 +5256,10 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            primary_raw_to_conversion_HV_CURRENT(
+                (primary_message_HV_CURRENT*) raw_message,
+                (primary_message_HV_CURRENT_conversion*) message
+            );
         break;
         case 835:
             primary_deserialize_HV_TEMP(
@@ -5047,6 +5268,10 @@ void primary_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            primary_raw_to_conversion_HV_TEMP(
+                (primary_message_HV_TEMP*) raw_message,
+                (primary_message_HV_TEMP_conversion*) message
             );
         break;
         case 3:
@@ -5192,6 +5417,10 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+                (primary_message_HV_CELLS_VOLTAGE*) raw_message,
+                (primary_message_HV_CELLS_VOLTAGE_conversion*) message
+            );
         break;
         case 551:
             primary_deserialize_HV_CELLS_TEMP(
@@ -5200,6 +5429,10 @@ void primary_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            primary_raw_to_conversion_HV_CELLS_TEMP(
+                (primary_message_HV_CELLS_TEMP*) raw_message,
+                (primary_message_HV_CELLS_TEMP_conversion*) message
             );
         break;
         case 583:
@@ -5339,15 +5572,15 @@ void primary_devices_new(primary_devices* map) {
 
     (*map)[9].id = 771;
     (*map)[9].raw_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
-    (*map)[9].message = NULL;
+    (*map)[9].message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
 
     (*map)[10].id = 803;
     (*map)[10].raw_message = (void*) malloc(sizeof(primary_message_HV_CURRENT));
-    (*map)[10].message = NULL;
+    (*map)[10].message = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
 
     (*map)[11].id = 835;
     (*map)[11].raw_message = (void*) malloc(sizeof(primary_message_HV_TEMP));
-    (*map)[11].message = NULL;
+    (*map)[11].message = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
 
     (*map)[12].id = 3;
     (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
@@ -5411,11 +5644,11 @@ void primary_devices_new(primary_devices* map) {
 
     (*map)[27].id = 519;
     (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[27].message = NULL;
+    (*map)[27].message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
     (*map)[28].id = 551;
     (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[28].message = NULL;
+    (*map)[28].message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
     (*map)[29].id = 583;
     (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));

@@ -2285,13 +2285,13 @@ class HV_CURRENT final :
   void _internal_set_current(uint32_t value);
   public:
 
-  // sint32 power = 2;
+  // uint32 power = 2;
   void clear_power();
-  int32_t power() const;
-  void set_power(int32_t value);
+  uint32_t power() const;
+  void set_power(uint32_t value);
   private:
-  int32_t _internal_power() const;
-  void _internal_set_power(int32_t value);
+  uint32_t _internal_power() const;
+  void _internal_set_power(uint32_t value);
   public:
 
   // uint64 _internal_timestamp = 3;
@@ -2311,7 +2311,7 @@ class HV_CURRENT final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint32_t current_;
-  int32_t power_;
+  uint32_t power_;
   uint64_t _internal_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
@@ -5036,7 +5036,7 @@ class HV_CELLS_VOLTAGE final :
     kVoltage0FieldNumber = 1,
     kVoltage1FieldNumber = 2,
     kVoltage2FieldNumber = 3,
-    kCellIndexFieldNumber = 4,
+    kStartIndexFieldNumber = 4,
     kInternalTimestampFieldNumber = 5,
   };
   // uint32 voltage_0 = 1;
@@ -5066,13 +5066,13 @@ class HV_CELLS_VOLTAGE final :
   void _internal_set_voltage_2(uint32_t value);
   public:
 
-  // uint32 cell_index = 4;
-  void clear_cell_index();
-  uint32_t cell_index() const;
-  void set_cell_index(uint32_t value);
+  // uint32 start_index = 4;
+  void clear_start_index();
+  uint32_t start_index() const;
+  void set_start_index(uint32_t value);
   private:
-  uint32_t _internal_cell_index() const;
-  void _internal_set_cell_index(uint32_t value);
+  uint32_t _internal_start_index() const;
+  void _internal_set_start_index(uint32_t value);
   public:
 
   // uint64 _internal_timestamp = 5;
@@ -5094,7 +5094,7 @@ class HV_CELLS_VOLTAGE final :
   uint32_t voltage_0_;
   uint32_t voltage_1_;
   uint32_t voltage_2_;
-  uint32_t cell_index_;
+  uint32_t start_index_;
   uint64_t _internal_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
@@ -5220,7 +5220,7 @@ class HV_CELLS_TEMP final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCellIndexFieldNumber = 1,
+    kStartIndexFieldNumber = 1,
     kTemp0FieldNumber = 2,
     kTemp1FieldNumber = 3,
     kTemp2FieldNumber = 4,
@@ -5230,13 +5230,13 @@ class HV_CELLS_TEMP final :
     kTemp6FieldNumber = 8,
     kInternalTimestampFieldNumber = 9,
   };
-  // uint32 cell_index = 1;
-  void clear_cell_index();
-  uint32_t cell_index() const;
-  void set_cell_index(uint32_t value);
+  // uint32 start_index = 1;
+  void clear_start_index();
+  uint32_t start_index() const;
+  void set_start_index(uint32_t value);
   private:
-  uint32_t _internal_cell_index() const;
-  void _internal_set_cell_index(uint32_t value);
+  uint32_t _internal_start_index() const;
+  void _internal_set_start_index(uint32_t value);
   public:
 
   // uint32 temp_0 = 2;
@@ -5318,7 +5318,7 @@ class HV_CELLS_TEMP final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t cell_index_;
+  uint32_t start_index_;
   uint32_t temp_0_;
   uint32_t temp_1_;
   uint32_t temp_2_;
@@ -7969,22 +7969,22 @@ inline void HV_CURRENT::set_current(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.current)
 }
 
-// sint32 power = 2;
+// uint32 power = 2;
 inline void HV_CURRENT::clear_power() {
-  power_ = 0;
+  power_ = 0u;
 }
-inline int32_t HV_CURRENT::_internal_power() const {
+inline uint32_t HV_CURRENT::_internal_power() const {
   return power_;
 }
-inline int32_t HV_CURRENT::power() const {
+inline uint32_t HV_CURRENT::power() const {
   // @@protoc_insertion_point(field_get:primary.HV_CURRENT.power)
   return _internal_power();
 }
-inline void HV_CURRENT::_internal_set_power(int32_t value) {
+inline void HV_CURRENT::_internal_set_power(uint32_t value) {
   
   power_ = value;
 }
-inline void HV_CURRENT::set_power(int32_t value) {
+inline void HV_CURRENT::set_power(uint32_t value) {
   _internal_set_power(value);
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.power)
 }
@@ -9017,24 +9017,24 @@ inline void HV_CELLS_VOLTAGE::set_voltage_2(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.voltage_2)
 }
 
-// uint32 cell_index = 4;
-inline void HV_CELLS_VOLTAGE::clear_cell_index() {
-  cell_index_ = 0u;
+// uint32 start_index = 4;
+inline void HV_CELLS_VOLTAGE::clear_start_index() {
+  start_index_ = 0u;
 }
-inline uint32_t HV_CELLS_VOLTAGE::_internal_cell_index() const {
-  return cell_index_;
+inline uint32_t HV_CELLS_VOLTAGE::_internal_start_index() const {
+  return start_index_;
 }
-inline uint32_t HV_CELLS_VOLTAGE::cell_index() const {
-  // @@protoc_insertion_point(field_get:primary.HV_CELLS_VOLTAGE.cell_index)
-  return _internal_cell_index();
+inline uint32_t HV_CELLS_VOLTAGE::start_index() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CELLS_VOLTAGE.start_index)
+  return _internal_start_index();
 }
-inline void HV_CELLS_VOLTAGE::_internal_set_cell_index(uint32_t value) {
+inline void HV_CELLS_VOLTAGE::_internal_set_start_index(uint32_t value) {
   
-  cell_index_ = value;
+  start_index_ = value;
 }
-inline void HV_CELLS_VOLTAGE::set_cell_index(uint32_t value) {
-  _internal_set_cell_index(value);
-  // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.cell_index)
+inline void HV_CELLS_VOLTAGE::set_start_index(uint32_t value) {
+  _internal_set_start_index(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.start_index)
 }
 
 // uint64 _internal_timestamp = 5;
@@ -9061,24 +9061,24 @@ inline void HV_CELLS_VOLTAGE::set__internal_timestamp(uint64_t value) {
 
 // HV_CELLS_TEMP
 
-// uint32 cell_index = 1;
-inline void HV_CELLS_TEMP::clear_cell_index() {
-  cell_index_ = 0u;
+// uint32 start_index = 1;
+inline void HV_CELLS_TEMP::clear_start_index() {
+  start_index_ = 0u;
 }
-inline uint32_t HV_CELLS_TEMP::_internal_cell_index() const {
-  return cell_index_;
+inline uint32_t HV_CELLS_TEMP::_internal_start_index() const {
+  return start_index_;
 }
-inline uint32_t HV_CELLS_TEMP::cell_index() const {
-  // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.cell_index)
-  return _internal_cell_index();
+inline uint32_t HV_CELLS_TEMP::start_index() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.start_index)
+  return _internal_start_index();
 }
-inline void HV_CELLS_TEMP::_internal_set_cell_index(uint32_t value) {
+inline void HV_CELLS_TEMP::_internal_set_start_index(uint32_t value) {
   
-  cell_index_ = value;
+  start_index_ = value;
 }
-inline void HV_CELLS_TEMP::set_cell_index(uint32_t value) {
-  _internal_set_cell_index(value);
-  // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.cell_index)
+inline void HV_CELLS_TEMP::set_start_index(uint32_t value) {
+  _internal_set_start_index(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.start_index)
 }
 
 // uint32 temp_0 = 2;

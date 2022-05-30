@@ -17,18 +17,18 @@ typedef struct {
     std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD3;
     std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD4;
     std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD5;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD0;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD1;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD2;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD3;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD4;
-    std::vector<bms_message_TEMPERATURES> TEMPERATURES_CELLBOARD5;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD0;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD1;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD2;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD3;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD4;
-    std::vector<bms_message_VOLTAGES> VOLTAGES_CELLBOARD5;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD0;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD1;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD2;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD3;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD4;
+    std::vector<bms_message_TEMPERATURES_conversion> TEMPERATURES_CELLBOARD5;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD0;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD1;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD2;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD3;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD4;
+    std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD5;
     std::vector<bms_message_BALANCING> BALANCING;
     std::vector<bms_message_FW_UPDATE> FW_UPDATE;
 } bms_proto_pack;
@@ -111,7 +111,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1281: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD0* proto_msg = pack->add_temperatures_cellboard0();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -127,7 +127,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1313: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD1* proto_msg = pack->add_temperatures_cellboard1();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -143,7 +143,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1345: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD2* proto_msg = pack->add_temperatures_cellboard2();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -159,7 +159,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1377: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD3* proto_msg = pack->add_temperatures_cellboard3();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -175,7 +175,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1409: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD4* proto_msg = pack->add_temperatures_cellboard4();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -191,7 +191,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 1441: {
-            bms_message_TEMPERATURES* msg = (bms_message_TEMPERATURES*) (*map)[index].raw_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
             bms::TEMPERATURES_CELLBOARD5* proto_msg = pack->add_temperatures_cellboard5();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -207,7 +207,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 514: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD0* proto_msg = pack->add_voltages_cellboard0();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -220,7 +220,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 546: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD1* proto_msg = pack->add_voltages_cellboard1();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -233,7 +233,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 578: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD2* proto_msg = pack->add_voltages_cellboard2();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -246,7 +246,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 610: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD3* proto_msg = pack->add_voltages_cellboard3();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -259,7 +259,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 642: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD4* proto_msg = pack->add_voltages_cellboard4();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -272,7 +272,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
         }
 
         case 674: {
-            bms_message_VOLTAGES* msg = (bms_message_VOLTAGES*) (*map)[index].raw_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
             bms::VOLTAGES_CELLBOARD5* proto_msg = pack->add_voltages_cellboard5();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);

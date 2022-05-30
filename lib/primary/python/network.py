@@ -527,7 +527,24 @@ class message_HV_VOLTAGE:
             return False
         return True
 
+class message_HV_VOLTAGE_conversion:
+    pass
 
+def raw_to_conversion_HV_VOLTAGE(raw: message_HV_VOLTAGE) -> message_HV_VOLTAGE_conversion:
+    conversion = message_HV_VOLTAGE_conversion()
+    conversion.pack_voltage = ((float32(raw.pack_voltage)) / 142.469565) + 0
+    conversion.bus_voltage = ((float32(raw.bus_voltage)) / 142.469565) + 0
+    conversion.max_cell_voltage = ((float32(raw.max_cell_voltage)) / 142.469565) + 0
+    conversion.min_cell_voltage = ((float32(raw.min_cell_voltage)) / 142.469565) + 0
+    return conversion
+
+def conversion_to_raw_HV_VOLTAGE(conversion: message_HV_VOLTAGE_conversion) -> message_HV_VOLTAGE:
+    raw = message_HV_VOLTAGE()
+    raw.pack_voltage = uint16((conversion.pack_voltage + 0) * 142.469565)
+    raw.bus_voltage = uint16((conversion.bus_voltage + 0) * 142.469565)
+    raw.max_cell_voltage = uint16((conversion.max_cell_voltage + 0) * 142.469565)
+    raw.min_cell_voltage = uint16((conversion.min_cell_voltage + 0) * 142.469565)
+    return raw
 
 def serialize_HV_VOLTAGE(message: message_HV_VOLTAGE) -> bytearray:
     data = bytearray()
@@ -550,7 +567,7 @@ class message_HV_CURRENT:
         power = None
     ):
         self.current = uint16(current) if current is not None else None
-        self.power = int16(power) if power is not None else None
+        self.power = uint16(power) if power is not None else None
         self.size = 4
         self.frequency = 20
 
@@ -563,17 +580,30 @@ class message_HV_CURRENT:
             return False
         return True
 
+class message_HV_CURRENT_conversion:
+    pass
 
+def raw_to_conversion_HV_CURRENT(raw: message_HV_CURRENT) -> message_HV_CURRENT_conversion:
+    conversion = message_HV_CURRENT_conversion()
+    conversion.current = ((float32(raw.current)) / 327.68) + 0
+    conversion.power = ((float32(raw.power)) / 655.36) + 0
+    return conversion
+
+def conversion_to_raw_HV_CURRENT(conversion: message_HV_CURRENT_conversion) -> message_HV_CURRENT:
+    raw = message_HV_CURRENT()
+    raw.current = uint16((conversion.current + 0) * 327.68)
+    raw.power = uint16((conversion.power + 0) * 655.36)
+    return raw
 
 def serialize_HV_CURRENT(message: message_HV_CURRENT) -> bytearray:
     data = bytearray()
-    data.extend(pack("<Hh", message.current, message.power))
+    data.extend(pack("<HH", message.current, message.power))
     return data
 
 def deserialize_HV_CURRENT(data: bytearray) -> message_HV_CURRENT:
     message = message_HV_CURRENT()
     message.current = uint16(unpack("<H", data[0:2])[0])
-    message.power = int16(unpack("<xxh", data[0:4])[0])
+    message.power = uint16(unpack("<xxH", data[0:4])[0])
     return message
 
 
@@ -601,7 +631,22 @@ class message_HV_TEMP:
             return False
         return True
 
+class message_HV_TEMP_conversion:
+    pass
 
+def raw_to_conversion_HV_TEMP(raw: message_HV_TEMP) -> message_HV_TEMP_conversion:
+    conversion = message_HV_TEMP_conversion()
+    conversion.average_temp = ((float32(raw.average_temp)) / 655.36) - 20
+    conversion.max_temp = ((float32(raw.max_temp)) / 655.36) - 20
+    conversion.min_temp = ((float32(raw.min_temp)) / 655.36) - 20
+    return conversion
+
+def conversion_to_raw_HV_TEMP(conversion: message_HV_TEMP_conversion) -> message_HV_TEMP:
+    raw = message_HV_TEMP()
+    raw.average_temp = uint16((conversion.average_temp + 20) * 655.36)
+    raw.max_temp = uint16((conversion.max_temp + 20) * 655.36)
+    raw.min_temp = uint16((conversion.min_temp + 20) * 655.36)
+    return raw
 
 def serialize_HV_TEMP(message: message_HV_TEMP) -> bytearray:
     data = bytearray()
@@ -1074,12 +1119,12 @@ class message_HV_CELLS_VOLTAGE:
         voltage_0 = None,
         voltage_1 = None,
         voltage_2 = None,
-        cell_index = None
+        start_index = None
     ):
         self.voltage_0 = uint16(voltage_0) if voltage_0 is not None else None
         self.voltage_1 = uint16(voltage_1) if voltage_1 is not None else None
         self.voltage_2 = uint16(voltage_2) if voltage_2 is not None else None
-        self.cell_index = uint8(cell_index) if cell_index is not None else None
+        self.start_index = uint8(start_index) if start_index is not None else None
         self.size = 7
         self.frequency = 200
 
@@ -1092,15 +1137,32 @@ class message_HV_CELLS_VOLTAGE:
             return False
         if self.voltage_2 != other.voltage_2:
             return False
-        if self.cell_index != other.cell_index:
+        if self.start_index != other.start_index:
             return False
         return True
 
+class message_HV_CELLS_VOLTAGE_conversion:
+    pass
 
+def raw_to_conversion_HV_CELLS_VOLTAGE(raw: message_HV_CELLS_VOLTAGE) -> message_HV_CELLS_VOLTAGE_conversion:
+    conversion = message_HV_CELLS_VOLTAGE_conversion()
+    conversion.voltage_0 = ((float32(raw.voltage_0)) / 13107.2) + 0
+    conversion.voltage_1 = ((float32(raw.voltage_1)) / 13107.2) + 0
+    conversion.voltage_2 = ((float32(raw.voltage_2)) / 13107.2) + 0
+    conversion.start_index = raw.start_index
+    return conversion
+
+def conversion_to_raw_HV_CELLS_VOLTAGE(conversion: message_HV_CELLS_VOLTAGE_conversion) -> message_HV_CELLS_VOLTAGE:
+    raw = message_HV_CELLS_VOLTAGE()
+    raw.voltage_0 = uint16((conversion.voltage_0 + 0) * 13107.2)
+    raw.voltage_1 = uint16((conversion.voltage_1 + 0) * 13107.2)
+    raw.voltage_2 = uint16((conversion.voltage_2 + 0) * 13107.2)
+    raw.start_index = conversion.start_index
+    return raw
 
 def serialize_HV_CELLS_VOLTAGE(message: message_HV_CELLS_VOLTAGE) -> bytearray:
     data = bytearray()
-    data.extend(pack("<HHHB", message.voltage_0, message.voltage_1, message.voltage_2, message.cell_index))
+    data.extend(pack("<HHHB", message.voltage_0, message.voltage_1, message.voltage_2, message.start_index))
     return data
 
 def deserialize_HV_CELLS_VOLTAGE(data: bytearray) -> message_HV_CELLS_VOLTAGE:
@@ -1108,14 +1170,14 @@ def deserialize_HV_CELLS_VOLTAGE(data: bytearray) -> message_HV_CELLS_VOLTAGE:
     message.voltage_0 = uint16(unpack("<H", data[0:2])[0])
     message.voltage_1 = uint16(unpack("<xxH", data[0:4])[0])
     message.voltage_2 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.cell_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
+    message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
     return message
 
 
 class message_HV_CELLS_TEMP:
     def __init__(
         self,
-        cell_index = None,
+        start_index = None,
         temp_0 = None,
         temp_1 = None,
         temp_2 = None,
@@ -1124,7 +1186,7 @@ class message_HV_CELLS_TEMP:
         temp_5 = None,
         temp_6 = None
     ):
-        self.cell_index = uint8(cell_index) if cell_index is not None else None
+        self.start_index = uint8(start_index) if start_index is not None else None
         self.temp_0 = uint8(temp_0) if temp_0 is not None else None
         self.temp_1 = uint8(temp_1) if temp_1 is not None else None
         self.temp_2 = uint8(temp_2) if temp_2 is not None else None
@@ -1138,7 +1200,7 @@ class message_HV_CELLS_TEMP:
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_TEMP):
             return False
-        if self.cell_index != other.cell_index:
+        if self.start_index != other.start_index:
             return False
         if self.temp_0 != other.temp_0:
             return False
@@ -1156,16 +1218,41 @@ class message_HV_CELLS_TEMP:
             return False
         return True
 
+class message_HV_CELLS_TEMP_conversion:
+    pass
 
+def raw_to_conversion_HV_CELLS_TEMP(raw: message_HV_CELLS_TEMP) -> message_HV_CELLS_TEMP_conversion:
+    conversion = message_HV_CELLS_TEMP_conversion()
+    conversion.start_index = raw.start_index
+    conversion.temp_0 = ((float32(raw.temp_0)) / 2.56) - 20
+    conversion.temp_1 = ((float32(raw.temp_1)) / 2.56) - 20
+    conversion.temp_2 = ((float32(raw.temp_2)) / 2.56) - 20
+    conversion.temp_3 = ((float32(raw.temp_3)) / 2.56) - 20
+    conversion.temp_4 = ((float32(raw.temp_4)) / 2.56) - 20
+    conversion.temp_5 = ((float32(raw.temp_5)) / 2.56) - 20
+    conversion.temp_6 = ((float32(raw.temp_6)) / 2.56) - 20
+    return conversion
+
+def conversion_to_raw_HV_CELLS_TEMP(conversion: message_HV_CELLS_TEMP_conversion) -> message_HV_CELLS_TEMP:
+    raw = message_HV_CELLS_TEMP()
+    raw.start_index = conversion.start_index
+    raw.temp_0 = uint8((conversion.temp_0 + 20) * 2.56)
+    raw.temp_1 = uint8((conversion.temp_1 + 20) * 2.56)
+    raw.temp_2 = uint8((conversion.temp_2 + 20) * 2.56)
+    raw.temp_3 = uint8((conversion.temp_3 + 20) * 2.56)
+    raw.temp_4 = uint8((conversion.temp_4 + 20) * 2.56)
+    raw.temp_5 = uint8((conversion.temp_5 + 20) * 2.56)
+    raw.temp_6 = uint8((conversion.temp_6 + 20) * 2.56)
+    return raw
 
 def serialize_HV_CELLS_TEMP(message: message_HV_CELLS_TEMP) -> bytearray:
     data = bytearray()
-    data.extend(pack("<BBBBBBBB", message.cell_index, message.temp_0, message.temp_1, message.temp_2, message.temp_3, message.temp_4, message.temp_5, message.temp_6))
+    data.extend(pack("<BBBBBBBB", message.start_index, message.temp_0, message.temp_1, message.temp_2, message.temp_3, message.temp_4, message.temp_5, message.temp_6))
     return data
 
 def deserialize_HV_CELLS_TEMP(data: bytearray) -> message_HV_CELLS_TEMP:
     message = message_HV_CELLS_TEMP()
-    message.cell_index = uint8(unpack("<B", data[0:1])[0])
+    message.start_index = uint8(unpack("<B", data[0:1])[0])
     message.temp_0 = uint8(unpack("<xB", data[0:2])[0])
     message.temp_1 = uint8(unpack("<xxB", data[0:3])[0])
     message.temp_2 = uint8(unpack("<xxxB", data[0:4])[0])

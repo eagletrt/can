@@ -94,7 +94,7 @@ typedef struct {
 // ============== SIZES ============== //
 
 
-#define bms_BOARD_STATUS_SIZE 2
+#define bms_BOARD_STATUS_SIZE 3
 #define bms_TEMPERATURES_SIZE 7
 #define bms_VOLTAGES_SIZE 7
 #define bms_BALANCING_SIZE 5
@@ -103,7 +103,7 @@ typedef struct {
 // ============== BIT SETS ============== //
 
 
-typedef bms_uint8 bms_Errors;
+typedef bms_uint16 bms_Errors;
 #define bms_Errors_DEFAULT 0
 #define bms_Errors_CAN_COMM 1
 #define bms_Errors_LTC_COMM 2
@@ -113,6 +113,7 @@ typedef bms_uint8 bms_Errors;
 #define bms_Errors_TEMP_COMM_3 32
 #define bms_Errors_TEMP_COMM_4 64
 #define bms_Errors_TEMP_COMM_5 128
+#define bms_Errors_OPEN_WIRE 256
 
 typedef bms_uint64 bms_BalancingCells;
 #define bms_BalancingCells_DEFAULT 0
@@ -157,6 +158,18 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_BOARD_STATUS;
 
+typedef struct __CANLIB_PACKED {
+    bms_uint8 start_index;
+    bms_float32 temp0;
+    bms_float32 temp1;
+    bms_float32 temp2;
+    bms_float32 temp3;
+    bms_float32 temp4;
+    bms_float32 temp5;
+#ifdef CANLIB_TIMESTAMP
+    bms_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} bms_message_TEMPERATURES_conversion;
 
 typedef struct __CANLIB_PACKED {
     bms_uint8 start_index;
@@ -171,6 +184,15 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES;
 
+typedef struct __CANLIB_PACKED {
+    bms_float32 voltage0;
+    bms_float32 voltage1;
+    bms_float32 voltage2;
+    bms_uint8 start_index;
+#ifdef CANLIB_TIMESTAMP
+    bms_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} bms_message_VOLTAGES_conversion;
 
 typedef struct __CANLIB_PACKED {
     bms_uint16 voltage0;
@@ -248,9 +270,17 @@ void bms_deserialize_TEMPERATURES(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES* message, char* buffer);
+void bms_raw_to_conversion_TEMPERATURES(
+    bms_message_TEMPERATURES* raw,
+    bms_message_TEMPERATURES_conversion* conversion
+);
+void bms_conversion_to_raw_TEMPERATURES(
+    bms_message_TEMPERATURES_conversion* conversion,
+    bms_message_TEMPERATURES* raw
+);
+void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer);
 void bms_fields_TEMPERATURES(char* buffer);
-void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES* message, FILE* buffer);
+void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer);
 void bms_fields_file_TEMPERATURES(FILE* buffer);
 
 
@@ -274,9 +304,17 @@ void bms_deserialize_VOLTAGES(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_to_string_VOLTAGES(bms_message_VOLTAGES* message, char* buffer);
+void bms_raw_to_conversion_VOLTAGES(
+    bms_message_VOLTAGES* raw,
+    bms_message_VOLTAGES_conversion* conversion
+);
+void bms_conversion_to_raw_VOLTAGES(
+    bms_message_VOLTAGES_conversion* conversion,
+    bms_message_VOLTAGES* raw
+);
+void bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer);
 void bms_fields_VOLTAGES(char* buffer);
-void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES* message, FILE* buffer);
+void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer);
 void bms_fields_file_VOLTAGES(FILE* buffer);
 
 
@@ -355,18 +393,20 @@ bms_byte_size bms_serialize_BOARD_STATUS(
     bms_Errors errors,
     bms_BalancingStatus balancing_status
 ) {
-    data[0] = errors;
-    data[1] = balancing_status << 7;
-    return 2;
+    data[0] = errors & 255;
+    data[1] = (errors >> 8) & 255;
+    data[2] = balancing_status << 7;
+    return 3;
 }
 
 bms_byte_size bms_serialize_struct_BOARD_STATUS(
     uint8_t* data,
     bms_message_BOARD_STATUS* message
 ) {
-    data[0] = message->errors;
-    data[1] = message->balancing_status << 7;
-    return 2;
+    data[0] = message->errors & 255;
+    data[1] = (message->errors >> 8) & 255;
+    data[2] = message->balancing_status << 7;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -381,8 +421,8 @@ void bms_deserialize_BOARD_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->errors = data[0];
-    message->balancing_status = (bms_BalancingStatus) ((data[1] & 128) >> 7);
+    message->errors = data[0] | (data[1] << 8);
+    message->balancing_status = (bms_BalancingStatus) ((data[2] & 128) >> 7);
 }
 
 // ============== STRING ============== //
@@ -493,23 +533,54 @@ void bms_deserialize_TEMPERATURES(
     message->temp3 = data[4];
     message->temp4 = data[5];
     message->temp5 = data[6];
+}// ============== CONVERSION ============== //
+
+void bms_raw_to_conversion_TEMPERATURES(
+    bms_message_TEMPERATURES* raw,
+    bms_message_TEMPERATURES_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->start_index = raw->start_index;
+    conversion->temp0 = (((bms_float32)raw->temp0) / 2.56) - 20;
+    conversion->temp1 = (((bms_float32)raw->temp1) / 2.56) - 20;
+    conversion->temp2 = (((bms_float32)raw->temp2) / 2.56) - 20;
+    conversion->temp3 = (((bms_float32)raw->temp3) / 2.56) - 20;
+    conversion->temp4 = (((bms_float32)raw->temp4) / 2.56) - 20;
+    conversion->temp5 = (((bms_float32)raw->temp5) / 2.56) - 20;
+}
+void bms_conversion_to_raw_TEMPERATURES(
+    bms_message_TEMPERATURES_conversion* conversion,
+    bms_message_TEMPERATURES* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->start_index = conversion->start_index;
+    raw->temp0 = (bms_uint8)((conversion->temp0 + 20) * 2.56);
+    raw->temp1 = (bms_uint8)((conversion->temp1 + 20) * 2.56);
+    raw->temp2 = (bms_uint8)((conversion->temp2 + 20) * 2.56);
+    raw->temp3 = (bms_uint8)((conversion->temp3 + 20) * 2.56);
+    raw->temp4 = (bms_uint8)((conversion->temp4 + 20) * 2.56);
+    raw->temp5 = (bms_uint8)((conversion->temp5 + 20) * 2.56);
 }
 
 // ============== STRING ============== //
 
-void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES* message, char* buffer) {
+void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -537,19 +608,19 @@ void bms_fields_TEMPERATURES(char* buffer) {
         "temp5"
     );
 }
-void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES* message, FILE* buffer) {
+void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -627,19 +698,44 @@ void bms_deserialize_VOLTAGES(
     message->voltage1 = data[2] | (data[3] << 8);
     message->voltage2 = data[4] | (data[5] << 8);
     message->start_index = data[6];
+}// ============== CONVERSION ============== //
+
+void bms_raw_to_conversion_VOLTAGES(
+    bms_message_VOLTAGES* raw,
+    bms_message_VOLTAGES_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->voltage0 = (((bms_float32)raw->voltage0) / 13107.2) + 0;
+    conversion->voltage1 = (((bms_float32)raw->voltage1) / 13107.2) + 0;
+    conversion->voltage2 = (((bms_float32)raw->voltage2) / 13107.2) + 0;
+    conversion->start_index = raw->start_index;
+}
+void bms_conversion_to_raw_VOLTAGES(
+    bms_message_VOLTAGES_conversion* conversion,
+    bms_message_VOLTAGES* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->voltage0 = (bms_uint16)((conversion->voltage0 + 0) * 13107.2);
+    raw->voltage1 = (bms_uint16)((conversion->voltage1 + 0) * 13107.2);
+    raw->voltage2 = (bms_uint16)((conversion->voltage2 + 0) * 13107.2);
+    raw->start_index = conversion->start_index;
 }
 
 // ============== STRING ============== //
 
-void bms_to_string_VOLTAGES(bms_message_VOLTAGES* message, char* buffer) {
+void bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer) {
     sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -662,15 +758,15 @@ void bms_fields_VOLTAGES(char* buffer) {
         "start_index"
     );
 }
-void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES* message, FILE* buffer) {
+void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer) {
     fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
-        "%u" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
+        "%f" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -959,40 +1055,40 @@ void bms_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
             bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         break;
         case 1281:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 1313:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 1345:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 1377:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 1409:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 1441:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES*) message, buffer);
+            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         break;
         case 514:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 546:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 578:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 610:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 642:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 674:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES*) message, buffer);
+            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         break;
         case 515:
             bms_to_string_file_BALANCING((bms_message_BALANCING*) message, buffer);
@@ -1075,6 +1171,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
+            );
         break;
         case 1313:
             bms_deserialize_TEMPERATURES(
@@ -1083,6 +1183,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
             );
         break;
         case 1345:
@@ -1093,6 +1197,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
+            );
         break;
         case 1377:
             bms_deserialize_TEMPERATURES(
@@ -1101,6 +1209,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
             );
         break;
         case 1409:
@@ -1111,6 +1223,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
+            );
         break;
         case 1441:
             bms_deserialize_TEMPERATURES(
@@ -1119,6 +1235,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_TEMPERATURES(
+                (bms_message_TEMPERATURES*) raw_message,
+                (bms_message_TEMPERATURES_conversion*) message
             );
         break;
         case 514:
@@ -1129,6 +1249,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
+            );
         break;
         case 546:
             bms_deserialize_VOLTAGES(
@@ -1137,6 +1261,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
             );
         break;
         case 578:
@@ -1147,6 +1275,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
+            );
         break;
         case 610:
             bms_deserialize_VOLTAGES(
@@ -1155,6 +1287,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
             );
         break;
         case 642:
@@ -1165,6 +1301,10 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
+            );
         break;
         case 674:
             bms_deserialize_VOLTAGES(
@@ -1173,6 +1313,10 @@ void bms_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            bms_raw_to_conversion_VOLTAGES(
+                (bms_message_VOLTAGES*) raw_message,
+                (bms_message_VOLTAGES_conversion*) message
             );
         break;
         case 515:
@@ -1249,51 +1393,51 @@ void bms_devices_new(bms_devices* map) {
 
     (*map)[6].id = 1281;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[6].id = 1313;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[6].id = 1345;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[6].id = 1377;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[6].id = 1409;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[6].id = 1441;
     (*map)[6].raw_message = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*map)[6].message = NULL;
+    (*map)[6].message = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
 
     (*map)[7].id = 514;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[7].id = 546;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[7].id = 578;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[7].id = 610;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[7].id = 642;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[7].id = 674;
     (*map)[7].raw_message = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*map)[7].message = NULL;
+    (*map)[7].message = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
 
     (*map)[8].id = 515;
     (*map)[8].raw_message = (void*) malloc(sizeof(bms_message_BALANCING));

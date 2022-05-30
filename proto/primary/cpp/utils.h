@@ -20,9 +20,9 @@ typedef struct {
     std::vector<primary_message_SET_TLM_STATUS> SET_TLM_STATUS;
     std::vector<primary_message_TLM_STATUS> TLM_STATUS;
     std::vector<primary_message_STEER_SYSTEM_STATUS> STEER_SYSTEM_STATUS;
-    std::vector<primary_message_HV_VOLTAGE> HV_VOLTAGE;
-    std::vector<primary_message_HV_CURRENT> HV_CURRENT;
-    std::vector<primary_message_HV_TEMP> HV_TEMP;
+    std::vector<primary_message_HV_VOLTAGE_conversion> HV_VOLTAGE;
+    std::vector<primary_message_HV_CURRENT_conversion> HV_CURRENT;
+    std::vector<primary_message_HV_TEMP_conversion> HV_TEMP;
     std::vector<primary_message_HV_ERRORS> HV_ERRORS;
     std::vector<primary_message_TS_STATUS> TS_STATUS;
     std::vector<primary_message_SET_TS_STATUS> SET_TS_STATUS_DAS;
@@ -38,8 +38,8 @@ typedef struct {
     std::vector<primary_message_LV_TEMPERATURE> LV_TEMPERATURE;
     std::vector<primary_message_COOLING_STATUS> COOLING_STATUS;
     std::vector<primary_message_MARKER> MARKER;
-    std::vector<primary_message_HV_CELLS_VOLTAGE> HV_CELLS_VOLTAGE;
-    std::vector<primary_message_HV_CELLS_TEMP> HV_CELLS_TEMP;
+    std::vector<primary_message_HV_CELLS_VOLTAGE_conversion> HV_CELLS_VOLTAGE;
+    std::vector<primary_message_HV_CELLS_TEMP_conversion> HV_CELLS_TEMP;
     std::vector<primary_message_HV_CELL_BALANCING_STATUS> HV_CELL_BALANCING_STATUS;
     std::vector<primary_message_SET_CELL_BALANCING_STATUS> SET_CELL_BALANCING_STATUS;
     std::vector<primary_message_HANDCART_STATUS> HANDCART_STATUS;
@@ -161,7 +161,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 771: {
-            primary_message_HV_VOLTAGE* msg = (primary_message_HV_VOLTAGE*) (*map)[index].raw_message;
+            primary_message_HV_VOLTAGE_conversion* msg = (primary_message_HV_VOLTAGE_conversion*) (*map)[index].conversion_message;
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
             proto_msg->set_pack_voltage(msg->pack_voltage);
             proto_msg->set_bus_voltage(msg->bus_voltage);
@@ -174,7 +174,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 803: {
-            primary_message_HV_CURRENT* msg = (primary_message_HV_CURRENT*) (*map)[index].raw_message;
+            primary_message_HV_CURRENT_conversion* msg = (primary_message_HV_CURRENT_conversion*) (*map)[index].conversion_message;
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
             proto_msg->set_current(msg->current);
             proto_msg->set_power(msg->power);
@@ -185,7 +185,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 835: {
-            primary_message_HV_TEMP* msg = (primary_message_HV_TEMP*) (*map)[index].raw_message;
+            primary_message_HV_TEMP_conversion* msg = (primary_message_HV_TEMP_conversion*) (*map)[index].conversion_message;
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
             proto_msg->set_average_temp(msg->average_temp);
             proto_msg->set_max_temp(msg->max_temp);
@@ -354,12 +354,12 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 519: {
-            primary_message_HV_CELLS_VOLTAGE* msg = (primary_message_HV_CELLS_VOLTAGE*) (*map)[index].raw_message;
+            primary_message_HV_CELLS_VOLTAGE_conversion* msg = (primary_message_HV_CELLS_VOLTAGE_conversion*) (*map)[index].conversion_message;
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
             proto_msg->set_voltage_0(msg->voltage_0);
             proto_msg->set_voltage_1(msg->voltage_1);
             proto_msg->set_voltage_2(msg->voltage_2);
-            proto_msg->set_cell_index(msg->cell_index);
+            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -367,9 +367,9 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 551: {
-            primary_message_HV_CELLS_TEMP* msg = (primary_message_HV_CELLS_TEMP*) (*map)[index].raw_message;
+            primary_message_HV_CELLS_TEMP_conversion* msg = (primary_message_HV_CELLS_TEMP_conversion*) (*map)[index].conversion_message;
             primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
-            proto_msg->set_cell_index(msg->cell_index);
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp_0(msg->temp_0);
             proto_msg->set_temp_1(msg->temp_1);
             proto_msg->set_temp_2(msg->temp_2);
@@ -680,14 +680,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_CELLS_VOLTAGE[i].voltage_0 =pack->hv_cells_voltage(i).voltage_0();
         map->HV_CELLS_VOLTAGE[i].voltage_1 =pack->hv_cells_voltage(i).voltage_1();
         map->HV_CELLS_VOLTAGE[i].voltage_2 =pack->hv_cells_voltage(i).voltage_2();
-        map->HV_CELLS_VOLTAGE[i].cell_index =pack->hv_cells_voltage(i).cell_index();
+        map->HV_CELLS_VOLTAGE[i].start_index =pack->hv_cells_voltage(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         map->HV_CELLS_VOLTAGE[i]._timestamp = pack->hv_cells_voltage(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_CELLS_TEMP.resize(pack->hv_cells_temp_size());
     for(int i = 0; i < pack->hv_cells_temp_size(); i++){
-        map->HV_CELLS_TEMP[i].cell_index =pack->hv_cells_temp(i).cell_index();
+        map->HV_CELLS_TEMP[i].start_index =pack->hv_cells_temp(i).start_index();
         map->HV_CELLS_TEMP[i].temp_0 =pack->hv_cells_temp(i).temp_0();
         map->HV_CELLS_TEMP[i].temp_1 =pack->hv_cells_temp(i).temp_1();
         map->HV_CELLS_TEMP[i].temp_2 =pack->hv_cells_temp(i).temp_2();
