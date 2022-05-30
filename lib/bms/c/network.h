@@ -58,6 +58,7 @@ static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
 #define bms_float32 float
 #define bms_float64 double
 #define bms_bool bool
+#define bms_byte_size uint32_t
 
 typedef union {
     bms_uint8 bytes[4];
@@ -202,12 +203,12 @@ typedef struct __CANLIB_PACKED {
 
 // ============== BOARD_STATUS ============== //
 
-void bms_serialize_BOARD_STATUS(
+bms_byte_size bms_serialize_BOARD_STATUS(
     uint8_t* data,
     bms_Errors errors,
     bms_BalancingStatus balancing_status
 );
-void bms_serialize_struct_BOARD_STATUS(
+bms_byte_size bms_serialize_struct_BOARD_STATUS(
     uint8_t* data,
     bms_message_BOARD_STATUS* message
 );
@@ -226,7 +227,7 @@ void bms_fields_file_BOARD_STATUS(FILE* buffer);
 
 // ============== TEMPERATURES ============== //
 
-void bms_serialize_TEMPERATURES(
+bms_byte_size bms_serialize_TEMPERATURES(
     uint8_t* data,
     bms_uint8 start_index,
     bms_uint8 temp0,
@@ -236,7 +237,7 @@ void bms_serialize_TEMPERATURES(
     bms_uint8 temp4,
     bms_uint8 temp5
 );
-void bms_serialize_struct_TEMPERATURES(
+bms_byte_size bms_serialize_struct_TEMPERATURES(
     uint8_t* data,
     bms_message_TEMPERATURES* message
 );
@@ -255,14 +256,14 @@ void bms_fields_file_TEMPERATURES(FILE* buffer);
 
 // ============== VOLTAGES ============== //
 
-void bms_serialize_VOLTAGES(
+bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
     bms_uint16 voltage2,
     bms_uint8 start_index
 );
-void bms_serialize_struct_VOLTAGES(
+bms_byte_size bms_serialize_struct_VOLTAGES(
     uint8_t* data,
     bms_message_VOLTAGES* message
 );
@@ -281,12 +282,12 @@ void bms_fields_file_VOLTAGES(FILE* buffer);
 
 // ============== BALANCING ============== //
 
-void bms_serialize_BALANCING(
+bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
     bms_BalancingCells cells,
     bms_uint8 board_index
 );
-void bms_serialize_struct_BALANCING(
+bms_byte_size bms_serialize_struct_BALANCING(
     uint8_t* data,
     bms_message_BALANCING* message
 );
@@ -305,11 +306,11 @@ void bms_fields_file_BALANCING(FILE* buffer);
 
 // ============== FW_UPDATE ============== //
 
-void bms_serialize_FW_UPDATE(
+bms_byte_size bms_serialize_FW_UPDATE(
     uint8_t* data,
     bms_uint8 board_index
 );
-void bms_serialize_struct_FW_UPDATE(
+bms_byte_size bms_serialize_struct_FW_UPDATE(
     uint8_t* data,
     bms_message_FW_UPDATE* message
 );
@@ -349,20 +350,23 @@ void bms_deserialize_from_id(
 #ifdef bms_IMPLEMENTATION
 // ============== SERIALIZE ============== //
 
-void bms_serialize_BOARD_STATUS(
+bms_byte_size bms_serialize_BOARD_STATUS(
     uint8_t* data,
     bms_Errors errors,
     bms_BalancingStatus balancing_status
 ) {
     data[0] = errors;
     data[1] = balancing_status << 7;
+    return 2;
 }
-void bms_serialize_struct_BOARD_STATUS(
+
+bms_byte_size bms_serialize_struct_BOARD_STATUS(
     uint8_t* data,
     bms_message_BOARD_STATUS* message
 ) {
     data[0] = message->errors;
     data[1] = message->balancing_status << 7;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -436,7 +440,7 @@ void bms_fields_file_BOARD_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void bms_serialize_TEMPERATURES(
+bms_byte_size bms_serialize_TEMPERATURES(
     uint8_t* data,
     bms_uint8 start_index,
     bms_uint8 temp0,
@@ -453,8 +457,10 @@ void bms_serialize_TEMPERATURES(
     data[4] = temp3;
     data[5] = temp4;
     data[6] = temp5;
+    return 7;
 }
-void bms_serialize_struct_TEMPERATURES(
+
+bms_byte_size bms_serialize_struct_TEMPERATURES(
     uint8_t* data,
     bms_message_TEMPERATURES* message
 ) {
@@ -465,6 +471,7 @@ void bms_serialize_struct_TEMPERATURES(
     data[4] = message->temp3;
     data[5] = message->temp4;
     data[6] = message->temp5;
+    return 7;
 }
 
 // ============== DESERIALIZE ============== //
@@ -573,7 +580,7 @@ void bms_fields_file_TEMPERATURES(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void bms_serialize_VOLTAGES(
+bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
@@ -587,8 +594,10 @@ void bms_serialize_VOLTAGES(
     data[4] = voltage2 & 255;
     data[5] = (voltage2 >> 8) & 255;
     data[6] = start_index;
+    return 7;
 }
-void bms_serialize_struct_VOLTAGES(
+
+bms_byte_size bms_serialize_struct_VOLTAGES(
     uint8_t* data,
     bms_message_VOLTAGES* message
 ) {
@@ -599,6 +608,7 @@ void bms_serialize_struct_VOLTAGES(
     data[4] = message->voltage2 & 255;
     data[5] = (message->voltage2 >> 8) & 255;
     data[6] = message->start_index;
+    return 7;
 }
 
 // ============== DESERIALIZE ============== //
@@ -686,7 +696,7 @@ void bms_fields_file_VOLTAGES(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void bms_serialize_BALANCING(
+bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
     bms_BalancingCells cells,
     bms_uint8 board_index
@@ -696,8 +706,10 @@ void bms_serialize_BALANCING(
     data[2] = (cells >> 16) & 255;
     data[3] = (cells >> 24) & 255;
     data[4] = board_index;
+    return 5;
 }
-void bms_serialize_struct_BALANCING(
+
+bms_byte_size bms_serialize_struct_BALANCING(
     uint8_t* data,
     bms_message_BALANCING* message
 ) {
@@ -706,6 +718,7 @@ void bms_serialize_struct_BALANCING(
     data[2] = (message->cells >> 16) & 255;
     data[3] = (message->cells >> 24) & 255;
     data[4] = message->board_index;
+    return 5;
 }
 
 // ============== DESERIALIZE ============== //
@@ -779,17 +792,20 @@ void bms_fields_file_BALANCING(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void bms_serialize_FW_UPDATE(
+bms_byte_size bms_serialize_FW_UPDATE(
     uint8_t* data,
     bms_uint8 board_index
 ) {
     data[0] = board_index;
+    return 1;
 }
-void bms_serialize_struct_FW_UPDATE(
+
+bms_byte_size bms_serialize_struct_FW_UPDATE(
     uint8_t* data,
     bms_message_FW_UPDATE* message
 ) {
     data[0] = message->board_index;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //

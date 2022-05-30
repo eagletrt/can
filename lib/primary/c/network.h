@@ -58,6 +58,7 @@ static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
 #define primary_float32 float
 #define primary_float64 double
 #define primary_bool bool
+#define primary_byte_size uint32_t
 
 typedef union {
     primary_uint8 bytes[4];
@@ -649,12 +650,12 @@ typedef struct __CANLIB_PACKED {
 
 // ============== STEER_VERSION ============== //
 
-void primary_serialize_STEER_VERSION(
+primary_byte_size primary_serialize_STEER_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 );
-void primary_serialize_struct_STEER_VERSION(
+primary_byte_size primary_serialize_struct_STEER_VERSION(
     uint8_t* data,
     primary_message_STEER_VERSION* message
 );
@@ -673,12 +674,12 @@ void primary_fields_file_STEER_VERSION(FILE* buffer);
 
 // ============== DAS_VERSION ============== //
 
-void primary_serialize_DAS_VERSION(
+primary_byte_size primary_serialize_DAS_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 );
-void primary_serialize_struct_DAS_VERSION(
+primary_byte_size primary_serialize_struct_DAS_VERSION(
     uint8_t* data,
     primary_message_DAS_VERSION* message
 );
@@ -697,12 +698,12 @@ void primary_fields_file_DAS_VERSION(FILE* buffer);
 
 // ============== HV_VERSION ============== //
 
-void primary_serialize_HV_VERSION(
+primary_byte_size primary_serialize_HV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 );
-void primary_serialize_struct_HV_VERSION(
+primary_byte_size primary_serialize_struct_HV_VERSION(
     uint8_t* data,
     primary_message_HV_VERSION* message
 );
@@ -721,12 +722,12 @@ void primary_fields_file_HV_VERSION(FILE* buffer);
 
 // ============== LV_VERSION ============== //
 
-void primary_serialize_LV_VERSION(
+primary_byte_size primary_serialize_LV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 );
-void primary_serialize_struct_LV_VERSION(
+primary_byte_size primary_serialize_struct_LV_VERSION(
     uint8_t* data,
     primary_message_LV_VERSION* message
 );
@@ -745,12 +746,12 @@ void primary_fields_file_LV_VERSION(FILE* buffer);
 
 // ============== TLM_VERSION ============== //
 
-void primary_serialize_TLM_VERSION(
+primary_byte_size primary_serialize_TLM_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 );
-void primary_serialize_struct_TLM_VERSION(
+primary_byte_size primary_serialize_struct_TLM_VERSION(
     uint8_t* data,
     primary_message_TLM_VERSION* message
 );
@@ -769,11 +770,11 @@ void primary_fields_file_TLM_VERSION(FILE* buffer);
 
 // ============== TIMESTAMP ============== //
 
-void primary_serialize_TIMESTAMP(
+primary_byte_size primary_serialize_TIMESTAMP(
     uint8_t* data,
     primary_uint32 timestamp
 );
-void primary_serialize_struct_TIMESTAMP(
+primary_byte_size primary_serialize_struct_TIMESTAMP(
     uint8_t* data,
     primary_message_TIMESTAMP* message
 );
@@ -792,14 +793,14 @@ void primary_fields_file_TIMESTAMP(FILE* buffer);
 
 // ============== SET_TLM_STATUS ============== //
 
-void primary_serialize_SET_TLM_STATUS(
+primary_byte_size primary_serialize_SET_TLM_STATUS(
     uint8_t* data,
     primary_uint8 driver,
     primary_uint8 circuit,
     primary_RaceType race_type,
     primary_Toggle tlm_status
 );
-void primary_serialize_struct_SET_TLM_STATUS(
+primary_byte_size primary_serialize_struct_SET_TLM_STATUS(
     uint8_t* data,
     primary_message_SET_TLM_STATUS* message
 );
@@ -818,14 +819,14 @@ void primary_fields_file_SET_TLM_STATUS(FILE* buffer);
 
 // ============== TLM_STATUS ============== //
 
-void primary_serialize_TLM_STATUS(
+primary_byte_size primary_serialize_TLM_STATUS(
     uint8_t* data,
     primary_uint8 driver,
     primary_uint8 circuit,
     primary_RaceType race_type,
     primary_Toggle tlm_status
 );
-void primary_serialize_struct_TLM_STATUS(
+primary_byte_size primary_serialize_struct_TLM_STATUS(
     uint8_t* data,
     primary_message_TLM_STATUS* message
 );
@@ -844,11 +845,11 @@ void primary_fields_file_TLM_STATUS(FILE* buffer);
 
 // ============== STEER_SYSTEM_STATUS ============== //
 
-void primary_serialize_STEER_SYSTEM_STATUS(
+primary_byte_size primary_serialize_STEER_SYSTEM_STATUS(
     uint8_t* data,
     primary_uint8 soc_temp
 );
-void primary_serialize_struct_STEER_SYSTEM_STATUS(
+primary_byte_size primary_serialize_struct_STEER_SYSTEM_STATUS(
     uint8_t* data,
     primary_message_STEER_SYSTEM_STATUS* message
 );
@@ -867,14 +868,14 @@ void primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer);
 
 // ============== HV_VOLTAGE ============== //
 
-void primary_serialize_HV_VOLTAGE(
+primary_byte_size primary_serialize_HV_VOLTAGE(
     uint8_t* data,
     primary_uint16 pack_voltage,
     primary_uint16 bus_voltage,
     primary_uint16 max_cell_voltage,
     primary_uint16 min_cell_voltage
 );
-void primary_serialize_struct_HV_VOLTAGE(
+primary_byte_size primary_serialize_struct_HV_VOLTAGE(
     uint8_t* data,
     primary_message_HV_VOLTAGE* message
 );
@@ -893,12 +894,12 @@ void primary_fields_file_HV_VOLTAGE(FILE* buffer);
 
 // ============== HV_CURRENT ============== //
 
-void primary_serialize_HV_CURRENT(
+primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
     primary_int16 power
 );
-void primary_serialize_struct_HV_CURRENT(
+primary_byte_size primary_serialize_struct_HV_CURRENT(
     uint8_t* data,
     primary_message_HV_CURRENT* message
 );
@@ -917,13 +918,13 @@ void primary_fields_file_HV_CURRENT(FILE* buffer);
 
 // ============== HV_TEMP ============== //
 
-void primary_serialize_HV_TEMP(
+primary_byte_size primary_serialize_HV_TEMP(
     uint8_t* data,
     primary_uint16 average_temp,
     primary_uint16 max_temp,
     primary_uint16 min_temp
 );
-void primary_serialize_struct_HV_TEMP(
+primary_byte_size primary_serialize_struct_HV_TEMP(
     uint8_t* data,
     primary_message_HV_TEMP* message
 );
@@ -942,12 +943,12 @@ void primary_fields_file_HV_TEMP(FILE* buffer);
 
 // ============== HV_ERRORS ============== //
 
-void primary_serialize_HV_ERRORS(
+primary_byte_size primary_serialize_HV_ERRORS(
     uint8_t* data,
     primary_HvErrors warnings,
     primary_HvErrors errors
 );
-void primary_serialize_struct_HV_ERRORS(
+primary_byte_size primary_serialize_struct_HV_ERRORS(
     uint8_t* data,
     primary_message_HV_ERRORS* message
 );
@@ -966,11 +967,11 @@ void primary_fields_file_HV_ERRORS(FILE* buffer);
 
 // ============== TS_STATUS ============== //
 
-void primary_serialize_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS(
     uint8_t* data,
     primary_TsStatus ts_status
 );
-void primary_serialize_struct_TS_STATUS(
+primary_byte_size primary_serialize_struct_TS_STATUS(
     uint8_t* data,
     primary_message_TS_STATUS* message
 );
@@ -989,11 +990,11 @@ void primary_fields_file_TS_STATUS(FILE* buffer);
 
 // ============== SET_TS_STATUS ============== //
 
-void primary_serialize_SET_TS_STATUS(
+primary_byte_size primary_serialize_SET_TS_STATUS(
     uint8_t* data,
     primary_Toggle ts_status_set
 );
-void primary_serialize_struct_SET_TS_STATUS(
+primary_byte_size primary_serialize_struct_SET_TS_STATUS(
     uint8_t* data,
     primary_message_SET_TS_STATUS* message
 );
@@ -1012,12 +1013,12 @@ void primary_fields_file_SET_TS_STATUS(FILE* buffer);
 
 // ============== STEER_STATUS ============== //
 
-void primary_serialize_STEER_STATUS(
+primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_Map map,
     primary_TractionControl traction_control
 );
-void primary_serialize_struct_STEER_STATUS(
+primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
     primary_message_STEER_STATUS* message
 );
@@ -1036,11 +1037,11 @@ void primary_fields_file_STEER_STATUS(FILE* buffer);
 
 // ============== SET_CAR_STATUS ============== //
 
-void primary_serialize_SET_CAR_STATUS(
+primary_byte_size primary_serialize_SET_CAR_STATUS(
     uint8_t* data,
     primary_SetCarStatus car_status_set
 );
-void primary_serialize_struct_SET_CAR_STATUS(
+primary_byte_size primary_serialize_struct_SET_CAR_STATUS(
     uint8_t* data,
     primary_message_SET_CAR_STATUS* message
 );
@@ -1059,12 +1060,12 @@ void primary_fields_file_SET_CAR_STATUS(FILE* buffer);
 
 // ============== SET_PEDALS_RANGE ============== //
 
-void primary_serialize_SET_PEDALS_RANGE(
+primary_byte_size primary_serialize_SET_PEDALS_RANGE(
     uint8_t* data,
     primary_Bound bound,
     primary_Pedal pedal
 );
-void primary_serialize_struct_SET_PEDALS_RANGE(
+primary_byte_size primary_serialize_struct_SET_PEDALS_RANGE(
     uint8_t* data,
     primary_message_SET_PEDALS_RANGE* message
 );
@@ -1083,13 +1084,13 @@ void primary_fields_file_SET_PEDALS_RANGE(FILE* buffer);
 
 // ============== CAR_STATUS ============== //
 
-void primary_serialize_CAR_STATUS(
+primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
     primary_InverterStatus inverter_l,
     primary_InverterStatus inverter_r,
     primary_CarStatus car_status
 );
-void primary_serialize_struct_CAR_STATUS(
+primary_byte_size primary_serialize_struct_CAR_STATUS(
     uint8_t* data,
     primary_message_CAR_STATUS* message
 );
@@ -1108,11 +1109,11 @@ void primary_fields_file_CAR_STATUS(FILE* buffer);
 
 // ============== DAS_ERRORS ============== //
 
-void primary_serialize_DAS_ERRORS(
+primary_byte_size primary_serialize_DAS_ERRORS(
     uint8_t* data,
     primary_DasErrors das_error
 );
-void primary_serialize_struct_DAS_ERRORS(
+primary_byte_size primary_serialize_struct_DAS_ERRORS(
     uint8_t* data,
     primary_message_DAS_ERRORS* message
 );
@@ -1131,11 +1132,11 @@ void primary_fields_file_DAS_ERRORS(FILE* buffer);
 
 // ============== LV_CURRENT ============== //
 
-void primary_serialize_LV_CURRENT(
+primary_byte_size primary_serialize_LV_CURRENT(
     uint8_t* data,
     primary_uint8 current
 );
-void primary_serialize_struct_LV_CURRENT(
+primary_byte_size primary_serialize_struct_LV_CURRENT(
     uint8_t* data,
     primary_message_LV_CURRENT* message
 );
@@ -1154,14 +1155,14 @@ void primary_fields_file_LV_CURRENT(FILE* buffer);
 
 // ============== LV_VOLTAGE ============== //
 
-void primary_serialize_LV_VOLTAGE(
+primary_byte_size primary_serialize_LV_VOLTAGE(
     uint8_t* data,
     primary_uint8 voltage_1,
     primary_uint8 voltage_2,
     primary_uint8 voltage_3,
     primary_uint8 voltage_4
 );
-void primary_serialize_struct_LV_VOLTAGE(
+primary_byte_size primary_serialize_struct_LV_VOLTAGE(
     uint8_t* data,
     primary_message_LV_VOLTAGE* message
 );
@@ -1180,11 +1181,11 @@ void primary_fields_file_LV_VOLTAGE(FILE* buffer);
 
 // ============== LV_TOTAL_VOLTAGE ============== //
 
-void primary_serialize_LV_TOTAL_VOLTAGE(
+primary_byte_size primary_serialize_LV_TOTAL_VOLTAGE(
     uint8_t* data,
     primary_uint16 total_voltage
 );
-void primary_serialize_struct_LV_TOTAL_VOLTAGE(
+primary_byte_size primary_serialize_struct_LV_TOTAL_VOLTAGE(
     uint8_t* data,
     primary_message_LV_TOTAL_VOLTAGE* message
 );
@@ -1203,12 +1204,12 @@ void primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer);
 
 // ============== LV_TEMPERATURE ============== //
 
-void primary_serialize_LV_TEMPERATURE(
+primary_byte_size primary_serialize_LV_TEMPERATURE(
     uint8_t* data,
     primary_uint8 bp_temperature,
     primary_uint8 dcdc_temperature
 );
-void primary_serialize_struct_LV_TEMPERATURE(
+primary_byte_size primary_serialize_struct_LV_TEMPERATURE(
     uint8_t* data,
     primary_message_LV_TEMPERATURE* message
 );
@@ -1227,13 +1228,13 @@ void primary_fields_file_LV_TEMPERATURE(FILE* buffer);
 
 // ============== COOLING_STATUS ============== //
 
-void primary_serialize_COOLING_STATUS(
+primary_byte_size primary_serialize_COOLING_STATUS(
     uint8_t* data,
     primary_uint8 hv_fan_speed,
     primary_uint8 lv_fan_speed,
     primary_uint8 pump_speed
 );
-void primary_serialize_struct_COOLING_STATUS(
+primary_byte_size primary_serialize_struct_COOLING_STATUS(
     uint8_t* data,
     primary_message_COOLING_STATUS* message
 );
@@ -1252,10 +1253,10 @@ void primary_fields_file_COOLING_STATUS(FILE* buffer);
 
 // ============== MARKER ============== //
 
-void primary_serialize_MARKER(
+primary_byte_size primary_serialize_MARKER(
     uint8_t* data
 );
-void primary_serialize_struct_MARKER(
+primary_byte_size primary_serialize_struct_MARKER(
     uint8_t* data,
     primary_message_MARKER* message
 );
@@ -1274,14 +1275,14 @@ void primary_fields_file_MARKER(FILE* buffer);
 
 // ============== HV_CELLS_VOLTAGE ============== //
 
-void primary_serialize_HV_CELLS_VOLTAGE(
+primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     uint8_t* data,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
     primary_uint16 voltage_2,
     primary_uint8 cell_index
 );
-void primary_serialize_struct_HV_CELLS_VOLTAGE(
+primary_byte_size primary_serialize_struct_HV_CELLS_VOLTAGE(
     uint8_t* data,
     primary_message_HV_CELLS_VOLTAGE* message
 );
@@ -1300,7 +1301,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer);
 
 // ============== HV_CELLS_TEMP ============== //
 
-void primary_serialize_HV_CELLS_TEMP(
+primary_byte_size primary_serialize_HV_CELLS_TEMP(
     uint8_t* data,
     primary_uint8 cell_index,
     primary_uint8 temp_0,
@@ -1311,7 +1312,7 @@ void primary_serialize_HV_CELLS_TEMP(
     primary_uint8 temp_5,
     primary_uint8 temp_6
 );
-void primary_serialize_struct_HV_CELLS_TEMP(
+primary_byte_size primary_serialize_struct_HV_CELLS_TEMP(
     uint8_t* data,
     primary_message_HV_CELLS_TEMP* message
 );
@@ -1330,11 +1331,11 @@ void primary_fields_file_HV_CELLS_TEMP(FILE* buffer);
 
 // ============== HV_CELL_BALANCING_STATUS ============== //
 
-void primary_serialize_HV_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_HV_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_Toggle balancing_status
 );
-void primary_serialize_struct_HV_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_struct_HV_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_message_HV_CELL_BALANCING_STATUS* message
 );
@@ -1353,11 +1354,11 @@ void primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer);
 
 // ============== SET_CELL_BALANCING_STATUS ============== //
 
-void primary_serialize_SET_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_SET_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_Toggle set_balancing_status
 );
-void primary_serialize_struct_SET_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_struct_SET_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_message_SET_CELL_BALANCING_STATUS* message
 );
@@ -1376,11 +1377,11 @@ void primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer);
 
 // ============== HANDCART_STATUS ============== //
 
-void primary_serialize_HANDCART_STATUS(
+primary_byte_size primary_serialize_HANDCART_STATUS(
     uint8_t* data,
     primary_bool connected
 );
-void primary_serialize_struct_HANDCART_STATUS(
+primary_byte_size primary_serialize_struct_HANDCART_STATUS(
     uint8_t* data,
     primary_message_HANDCART_STATUS* message
 );
@@ -1399,14 +1400,14 @@ void primary_fields_file_HANDCART_STATUS(FILE* buffer);
 
 // ============== SPEED ============== //
 
-void primary_serialize_SPEED(
+primary_byte_size primary_serialize_SPEED(
     uint8_t* data,
     primary_uint16 encoder_r,
     primary_uint16 encoder_l,
     primary_uint16 inverter_r,
     primary_uint16 inverter_l
 );
-void primary_serialize_struct_SPEED(
+primary_byte_size primary_serialize_struct_SPEED(
     uint8_t* data,
     primary_message_SPEED* message
 );
@@ -1425,13 +1426,13 @@ void primary_fields_file_SPEED(FILE* buffer);
 
 // ============== INV_L_SET_TORQUE ============== //
 
-void primary_serialize_INV_L_SET_TORQUE(
+primary_byte_size primary_serialize_INV_L_SET_TORQUE(
     uint8_t* data,
     primary_uint8 reg_id,
     primary_uint8 lsb,
     primary_uint8 msb
 );
-void primary_serialize_struct_INV_L_SET_TORQUE(
+primary_byte_size primary_serialize_struct_INV_L_SET_TORQUE(
     uint8_t* data,
     primary_message_INV_L_SET_TORQUE* message
 );
@@ -1450,7 +1451,7 @@ void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer);
 
 // ============== INV_L_RESPONSE ============== //
 
-void primary_serialize_INV_L_RESPONSE(
+primary_byte_size primary_serialize_INV_L_RESPONSE(
     uint8_t* data,
     primary_uint8 reg_id,
     primary_uint8 data_0,
@@ -1461,7 +1462,7 @@ void primary_serialize_INV_L_RESPONSE(
     primary_uint8 data_5,
     primary_uint8 data_6
 );
-void primary_serialize_struct_INV_L_RESPONSE(
+primary_byte_size primary_serialize_struct_INV_L_RESPONSE(
     uint8_t* data,
     primary_message_INV_L_RESPONSE* message
 );
@@ -1501,20 +1502,23 @@ void primary_deserialize_from_id(
 #ifdef primary_IMPLEMENTATION
 // ============== SERIALIZE ============== //
 
-void primary_serialize_STEER_VERSION(
+primary_byte_size primary_serialize_STEER_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 ) {
     data[0] = component_version;
     data[1] = cancicd_version;
+    return 2;
 }
-void primary_serialize_struct_STEER_VERSION(
+
+primary_byte_size primary_serialize_struct_STEER_VERSION(
     uint8_t* data,
     primary_message_STEER_VERSION* message
 ) {
     data[0] = message->component_version;
     data[1] = message->cancicd_version;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1588,20 +1592,23 @@ void primary_fields_file_STEER_VERSION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_DAS_VERSION(
+primary_byte_size primary_serialize_DAS_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 ) {
     data[0] = component_version;
     data[1] = cancicd_version;
+    return 2;
 }
-void primary_serialize_struct_DAS_VERSION(
+
+primary_byte_size primary_serialize_struct_DAS_VERSION(
     uint8_t* data,
     primary_message_DAS_VERSION* message
 ) {
     data[0] = message->component_version;
     data[1] = message->cancicd_version;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1675,20 +1682,23 @@ void primary_fields_file_DAS_VERSION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_VERSION(
+primary_byte_size primary_serialize_HV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 ) {
     data[0] = component_version;
     data[1] = cancicd_version;
+    return 2;
 }
-void primary_serialize_struct_HV_VERSION(
+
+primary_byte_size primary_serialize_struct_HV_VERSION(
     uint8_t* data,
     primary_message_HV_VERSION* message
 ) {
     data[0] = message->component_version;
     data[1] = message->cancicd_version;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1762,20 +1772,23 @@ void primary_fields_file_HV_VERSION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_LV_VERSION(
+primary_byte_size primary_serialize_LV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 ) {
     data[0] = component_version;
     data[1] = cancicd_version;
+    return 2;
 }
-void primary_serialize_struct_LV_VERSION(
+
+primary_byte_size primary_serialize_struct_LV_VERSION(
     uint8_t* data,
     primary_message_LV_VERSION* message
 ) {
     data[0] = message->component_version;
     data[1] = message->cancicd_version;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1849,20 +1862,23 @@ void primary_fields_file_LV_VERSION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_TLM_VERSION(
+primary_byte_size primary_serialize_TLM_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
     primary_uint8 cancicd_version
 ) {
     data[0] = component_version;
     data[1] = cancicd_version;
+    return 2;
 }
-void primary_serialize_struct_TLM_VERSION(
+
+primary_byte_size primary_serialize_struct_TLM_VERSION(
     uint8_t* data,
     primary_message_TLM_VERSION* message
 ) {
     data[0] = message->component_version;
     data[1] = message->cancicd_version;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1936,7 +1952,7 @@ void primary_fields_file_TLM_VERSION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_TIMESTAMP(
+primary_byte_size primary_serialize_TIMESTAMP(
     uint8_t* data,
     primary_uint32 timestamp
 ) {
@@ -1944,8 +1960,10 @@ void primary_serialize_TIMESTAMP(
     data[1] = (timestamp >> 8) & 255;
     data[2] = (timestamp >> 16) & 255;
     data[3] = (timestamp >> 24) & 255;
+    return 4;
 }
-void primary_serialize_struct_TIMESTAMP(
+
+primary_byte_size primary_serialize_struct_TIMESTAMP(
     uint8_t* data,
     primary_message_TIMESTAMP* message
 ) {
@@ -1953,6 +1971,7 @@ void primary_serialize_struct_TIMESTAMP(
     data[1] = (message->timestamp >> 8) & 255;
     data[2] = (message->timestamp >> 16) & 255;
     data[3] = (message->timestamp >> 24) & 255;
+    return 4;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2019,7 +2038,7 @@ void primary_fields_file_TIMESTAMP(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SET_TLM_STATUS(
+primary_byte_size primary_serialize_SET_TLM_STATUS(
     uint8_t* data,
     primary_uint8 driver,
     primary_uint8 circuit,
@@ -2029,14 +2048,17 @@ void primary_serialize_SET_TLM_STATUS(
     data[0] = driver;
     data[1] = circuit;
     data[2] = race_type << 6 | tlm_status << 5;
+    return 3;
 }
-void primary_serialize_struct_SET_TLM_STATUS(
+
+primary_byte_size primary_serialize_struct_SET_TLM_STATUS(
     uint8_t* data,
     primary_message_SET_TLM_STATUS* message
 ) {
     data[0] = message->driver;
     data[1] = message->circuit;
     data[2] = message->race_type << 6 | message->tlm_status << 5;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2124,7 +2146,7 @@ void primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_TLM_STATUS(
+primary_byte_size primary_serialize_TLM_STATUS(
     uint8_t* data,
     primary_uint8 driver,
     primary_uint8 circuit,
@@ -2134,14 +2156,17 @@ void primary_serialize_TLM_STATUS(
     data[0] = driver;
     data[1] = circuit;
     data[2] = race_type << 6 | tlm_status << 5;
+    return 3;
 }
-void primary_serialize_struct_TLM_STATUS(
+
+primary_byte_size primary_serialize_struct_TLM_STATUS(
     uint8_t* data,
     primary_message_TLM_STATUS* message
 ) {
     data[0] = message->driver;
     data[1] = message->circuit;
     data[2] = message->race_type << 6 | message->tlm_status << 5;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2229,17 +2254,20 @@ void primary_fields_file_TLM_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_STEER_SYSTEM_STATUS(
+primary_byte_size primary_serialize_STEER_SYSTEM_STATUS(
     uint8_t* data,
     primary_uint8 soc_temp
 ) {
     data[0] = soc_temp;
+    return 1;
 }
-void primary_serialize_struct_STEER_SYSTEM_STATUS(
+
+primary_byte_size primary_serialize_struct_STEER_SYSTEM_STATUS(
     uint8_t* data,
     primary_message_STEER_SYSTEM_STATUS* message
 ) {
     data[0] = message->soc_temp;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2306,7 +2334,7 @@ void primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_VOLTAGE(
+primary_byte_size primary_serialize_HV_VOLTAGE(
     uint8_t* data,
     primary_uint16 pack_voltage,
     primary_uint16 bus_voltage,
@@ -2321,8 +2349,10 @@ void primary_serialize_HV_VOLTAGE(
     data[5] = (max_cell_voltage >> 8) & 255;
     data[6] = min_cell_voltage & 255;
     data[7] = (min_cell_voltage >> 8) & 255;
+    return 8;
 }
-void primary_serialize_struct_HV_VOLTAGE(
+
+primary_byte_size primary_serialize_struct_HV_VOLTAGE(
     uint8_t* data,
     primary_message_HV_VOLTAGE* message
 ) {
@@ -2334,6 +2364,7 @@ void primary_serialize_struct_HV_VOLTAGE(
     data[5] = (message->max_cell_voltage >> 8) & 255;
     data[6] = message->min_cell_voltage & 255;
     data[7] = (message->min_cell_voltage >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2421,7 +2452,7 @@ void primary_fields_file_HV_VOLTAGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_CURRENT(
+primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
     primary_int16 power
@@ -2430,8 +2461,10 @@ void primary_serialize_HV_CURRENT(
     data[1] = (current >> 8) & 255;
     data[2] = power & 255;
     data[3] = (power >> 8) & 255;
+    return 4;
 }
-void primary_serialize_struct_HV_CURRENT(
+
+primary_byte_size primary_serialize_struct_HV_CURRENT(
     uint8_t* data,
     primary_message_HV_CURRENT* message
 ) {
@@ -2439,6 +2472,7 @@ void primary_serialize_struct_HV_CURRENT(
     data[1] = (message->current >> 8) & 255;
     data[2] = message->power & 255;
     data[3] = (message->power >> 8) & 255;
+    return 4;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2512,7 +2546,7 @@ void primary_fields_file_HV_CURRENT(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_TEMP(
+primary_byte_size primary_serialize_HV_TEMP(
     uint8_t* data,
     primary_uint16 average_temp,
     primary_uint16 max_temp,
@@ -2524,8 +2558,10 @@ void primary_serialize_HV_TEMP(
     data[3] = (max_temp >> 8) & 255;
     data[4] = min_temp & 255;
     data[5] = (min_temp >> 8) & 255;
+    return 6;
 }
-void primary_serialize_struct_HV_TEMP(
+
+primary_byte_size primary_serialize_struct_HV_TEMP(
     uint8_t* data,
     primary_message_HV_TEMP* message
 ) {
@@ -2535,6 +2571,7 @@ void primary_serialize_struct_HV_TEMP(
     data[3] = (message->max_temp >> 8) & 255;
     data[4] = message->min_temp & 255;
     data[5] = (message->min_temp >> 8) & 255;
+    return 6;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2615,7 +2652,7 @@ void primary_fields_file_HV_TEMP(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_ERRORS(
+primary_byte_size primary_serialize_HV_ERRORS(
     uint8_t* data,
     primary_HvErrors warnings,
     primary_HvErrors errors
@@ -2624,8 +2661,10 @@ void primary_serialize_HV_ERRORS(
     data[1] = (warnings >> 8) & 255;
     data[2] = errors & 255;
     data[3] = (errors >> 8) & 255;
+    return 4;
 }
-void primary_serialize_struct_HV_ERRORS(
+
+primary_byte_size primary_serialize_struct_HV_ERRORS(
     uint8_t* data,
     primary_message_HV_ERRORS* message
 ) {
@@ -2633,6 +2672,7 @@ void primary_serialize_struct_HV_ERRORS(
     data[1] = (message->warnings >> 8) & 255;
     data[2] = message->errors & 255;
     data[3] = (message->errors >> 8) & 255;
+    return 4;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2706,17 +2746,20 @@ void primary_fields_file_HV_ERRORS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS(
     uint8_t* data,
     primary_TsStatus ts_status
 ) {
     data[0] = ts_status << 6;
+    return 1;
 }
-void primary_serialize_struct_TS_STATUS(
+
+primary_byte_size primary_serialize_struct_TS_STATUS(
     uint8_t* data,
     primary_message_TS_STATUS* message
 ) {
     data[0] = message->ts_status << 6;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2783,17 +2826,20 @@ void primary_fields_file_TS_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SET_TS_STATUS(
+primary_byte_size primary_serialize_SET_TS_STATUS(
     uint8_t* data,
     primary_Toggle ts_status_set
 ) {
     data[0] = ts_status_set << 7;
+    return 1;
 }
-void primary_serialize_struct_SET_TS_STATUS(
+
+primary_byte_size primary_serialize_struct_SET_TS_STATUS(
     uint8_t* data,
     primary_message_SET_TS_STATUS* message
 ) {
     data[0] = message->ts_status_set << 7;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2860,18 +2906,21 @@ void primary_fields_file_SET_TS_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_STEER_STATUS(
+primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_Map map,
     primary_TractionControl traction_control
 ) {
     data[0] = map << 5 | traction_control << 3;
+    return 1;
 }
-void primary_serialize_struct_STEER_STATUS(
+
+primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
     primary_message_STEER_STATUS* message
 ) {
     data[0] = message->map << 5 | message->traction_control << 3;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2945,17 +2994,20 @@ void primary_fields_file_STEER_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SET_CAR_STATUS(
+primary_byte_size primary_serialize_SET_CAR_STATUS(
     uint8_t* data,
     primary_SetCarStatus car_status_set
 ) {
     data[0] = car_status_set << 7;
+    return 1;
 }
-void primary_serialize_struct_SET_CAR_STATUS(
+
+primary_byte_size primary_serialize_struct_SET_CAR_STATUS(
     uint8_t* data,
     primary_message_SET_CAR_STATUS* message
 ) {
     data[0] = message->car_status_set << 7;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3022,18 +3074,21 @@ void primary_fields_file_SET_CAR_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SET_PEDALS_RANGE(
+primary_byte_size primary_serialize_SET_PEDALS_RANGE(
     uint8_t* data,
     primary_Bound bound,
     primary_Pedal pedal
 ) {
     data[0] = bound << 7 | pedal << 6;
+    return 1;
 }
-void primary_serialize_struct_SET_PEDALS_RANGE(
+
+primary_byte_size primary_serialize_struct_SET_PEDALS_RANGE(
     uint8_t* data,
     primary_message_SET_PEDALS_RANGE* message
 ) {
     data[0] = message->bound << 7 | message->pedal << 6;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3107,19 +3162,22 @@ void primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_CAR_STATUS(
+primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
     primary_InverterStatus inverter_l,
     primary_InverterStatus inverter_r,
     primary_CarStatus car_status
 ) {
     data[0] = inverter_l << 6 | inverter_r << 4 | car_status << 2;
+    return 1;
 }
-void primary_serialize_struct_CAR_STATUS(
+
+primary_byte_size primary_serialize_struct_CAR_STATUS(
     uint8_t* data,
     primary_message_CAR_STATUS* message
 ) {
     data[0] = message->inverter_l << 6 | message->inverter_r << 4 | message->car_status << 2;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3200,17 +3258,20 @@ void primary_fields_file_CAR_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_DAS_ERRORS(
+primary_byte_size primary_serialize_DAS_ERRORS(
     uint8_t* data,
     primary_DasErrors das_error
 ) {
     data[0] = das_error;
+    return 1;
 }
-void primary_serialize_struct_DAS_ERRORS(
+
+primary_byte_size primary_serialize_struct_DAS_ERRORS(
     uint8_t* data,
     primary_message_DAS_ERRORS* message
 ) {
     data[0] = message->das_error;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3277,17 +3338,20 @@ void primary_fields_file_DAS_ERRORS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_LV_CURRENT(
+primary_byte_size primary_serialize_LV_CURRENT(
     uint8_t* data,
     primary_uint8 current
 ) {
     data[0] = current;
+    return 1;
 }
-void primary_serialize_struct_LV_CURRENT(
+
+primary_byte_size primary_serialize_struct_LV_CURRENT(
     uint8_t* data,
     primary_message_LV_CURRENT* message
 ) {
     data[0] = message->current;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3354,7 +3418,7 @@ void primary_fields_file_LV_CURRENT(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_LV_VOLTAGE(
+primary_byte_size primary_serialize_LV_VOLTAGE(
     uint8_t* data,
     primary_uint8 voltage_1,
     primary_uint8 voltage_2,
@@ -3365,8 +3429,10 @@ void primary_serialize_LV_VOLTAGE(
     data[1] = voltage_2;
     data[2] = voltage_3;
     data[3] = voltage_4;
+    return 4;
 }
-void primary_serialize_struct_LV_VOLTAGE(
+
+primary_byte_size primary_serialize_struct_LV_VOLTAGE(
     uint8_t* data,
     primary_message_LV_VOLTAGE* message
 ) {
@@ -3374,6 +3440,7 @@ void primary_serialize_struct_LV_VOLTAGE(
     data[1] = message->voltage_2;
     data[2] = message->voltage_3;
     data[3] = message->voltage_4;
+    return 4;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3461,19 +3528,22 @@ void primary_fields_file_LV_VOLTAGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_LV_TOTAL_VOLTAGE(
+primary_byte_size primary_serialize_LV_TOTAL_VOLTAGE(
     uint8_t* data,
     primary_uint16 total_voltage
 ) {
     data[0] = total_voltage & 255;
     data[1] = (total_voltage >> 8) & 255;
+    return 2;
 }
-void primary_serialize_struct_LV_TOTAL_VOLTAGE(
+
+primary_byte_size primary_serialize_struct_LV_TOTAL_VOLTAGE(
     uint8_t* data,
     primary_message_LV_TOTAL_VOLTAGE* message
 ) {
     data[0] = message->total_voltage & 255;
     data[1] = (message->total_voltage >> 8) & 255;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3540,20 +3610,23 @@ void primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_LV_TEMPERATURE(
+primary_byte_size primary_serialize_LV_TEMPERATURE(
     uint8_t* data,
     primary_uint8 bp_temperature,
     primary_uint8 dcdc_temperature
 ) {
     data[0] = bp_temperature;
     data[1] = dcdc_temperature;
+    return 2;
 }
-void primary_serialize_struct_LV_TEMPERATURE(
+
+primary_byte_size primary_serialize_struct_LV_TEMPERATURE(
     uint8_t* data,
     primary_message_LV_TEMPERATURE* message
 ) {
     data[0] = message->bp_temperature;
     data[1] = message->dcdc_temperature;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3627,7 +3700,7 @@ void primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_COOLING_STATUS(
+primary_byte_size primary_serialize_COOLING_STATUS(
     uint8_t* data,
     primary_uint8 hv_fan_speed,
     primary_uint8 lv_fan_speed,
@@ -3636,14 +3709,17 @@ void primary_serialize_COOLING_STATUS(
     data[0] = hv_fan_speed;
     data[1] = lv_fan_speed;
     data[2] = pump_speed;
+    return 3;
 }
-void primary_serialize_struct_COOLING_STATUS(
+
+primary_byte_size primary_serialize_struct_COOLING_STATUS(
     uint8_t* data,
     primary_message_COOLING_STATUS* message
 ) {
     data[0] = message->hv_fan_speed;
     data[1] = message->lv_fan_speed;
     data[2] = message->pump_speed;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3724,14 +3800,17 @@ void primary_fields_file_COOLING_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_MARKER(
+primary_byte_size primary_serialize_MARKER(
     uint8_t* data
 ) {
+    return 0;
 }
-void primary_serialize_struct_MARKER(
+
+primary_byte_size primary_serialize_struct_MARKER(
     uint8_t* data,
     primary_message_MARKER* message
 ) {
+    return 0;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3757,7 +3836,7 @@ void primary_fields_file_MARKER(FILE* buffer) {}
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_CELLS_VOLTAGE(
+primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     uint8_t* data,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
@@ -3771,8 +3850,10 @@ void primary_serialize_HV_CELLS_VOLTAGE(
     data[4] = voltage_2 & 255;
     data[5] = (voltage_2 >> 8) & 255;
     data[6] = cell_index;
+    return 7;
 }
-void primary_serialize_struct_HV_CELLS_VOLTAGE(
+
+primary_byte_size primary_serialize_struct_HV_CELLS_VOLTAGE(
     uint8_t* data,
     primary_message_HV_CELLS_VOLTAGE* message
 ) {
@@ -3783,6 +3864,7 @@ void primary_serialize_struct_HV_CELLS_VOLTAGE(
     data[4] = message->voltage_2 & 255;
     data[5] = (message->voltage_2 >> 8) & 255;
     data[6] = message->cell_index;
+    return 7;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3870,7 +3952,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_CELLS_TEMP(
+primary_byte_size primary_serialize_HV_CELLS_TEMP(
     uint8_t* data,
     primary_uint8 cell_index,
     primary_uint8 temp_0,
@@ -3889,8 +3971,10 @@ void primary_serialize_HV_CELLS_TEMP(
     data[5] = temp_4;
     data[6] = temp_5;
     data[7] = temp_6;
+    return 8;
 }
-void primary_serialize_struct_HV_CELLS_TEMP(
+
+primary_byte_size primary_serialize_struct_HV_CELLS_TEMP(
     uint8_t* data,
     primary_message_HV_CELLS_TEMP* message
 ) {
@@ -3902,6 +3986,7 @@ void primary_serialize_struct_HV_CELLS_TEMP(
     data[5] = message->temp_4;
     data[6] = message->temp_5;
     data[7] = message->temp_6;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4017,17 +4102,20 @@ void primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HV_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_HV_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_Toggle balancing_status
 ) {
     data[0] = balancing_status << 7;
+    return 1;
 }
-void primary_serialize_struct_HV_CELL_BALANCING_STATUS(
+
+primary_byte_size primary_serialize_struct_HV_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_message_HV_CELL_BALANCING_STATUS* message
 ) {
     data[0] = message->balancing_status << 7;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4094,17 +4182,20 @@ void primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SET_CELL_BALANCING_STATUS(
+primary_byte_size primary_serialize_SET_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_Toggle set_balancing_status
 ) {
     data[0] = set_balancing_status << 7;
+    return 1;
 }
-void primary_serialize_struct_SET_CELL_BALANCING_STATUS(
+
+primary_byte_size primary_serialize_struct_SET_CELL_BALANCING_STATUS(
     uint8_t* data,
     primary_message_SET_CELL_BALANCING_STATUS* message
 ) {
     data[0] = message->set_balancing_status << 7;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4171,17 +4262,20 @@ void primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_HANDCART_STATUS(
+primary_byte_size primary_serialize_HANDCART_STATUS(
     uint8_t* data,
     primary_bool connected
 ) {
     data[0] = connected << 7;
+    return 1;
 }
-void primary_serialize_struct_HANDCART_STATUS(
+
+primary_byte_size primary_serialize_struct_HANDCART_STATUS(
     uint8_t* data,
     primary_message_HANDCART_STATUS* message
 ) {
     data[0] = message->connected << 7;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4248,7 +4342,7 @@ void primary_fields_file_HANDCART_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_SPEED(
+primary_byte_size primary_serialize_SPEED(
     uint8_t* data,
     primary_uint16 encoder_r,
     primary_uint16 encoder_l,
@@ -4263,8 +4357,10 @@ void primary_serialize_SPEED(
     data[5] = (inverter_r >> 8) & 255;
     data[6] = inverter_l & 255;
     data[7] = (inverter_l >> 8) & 255;
+    return 8;
 }
-void primary_serialize_struct_SPEED(
+
+primary_byte_size primary_serialize_struct_SPEED(
     uint8_t* data,
     primary_message_SPEED* message
 ) {
@@ -4276,6 +4372,7 @@ void primary_serialize_struct_SPEED(
     data[5] = (message->inverter_r >> 8) & 255;
     data[6] = message->inverter_l & 255;
     data[7] = (message->inverter_l >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4363,7 +4460,7 @@ void primary_fields_file_SPEED(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_INV_L_SET_TORQUE(
+primary_byte_size primary_serialize_INV_L_SET_TORQUE(
     uint8_t* data,
     primary_uint8 reg_id,
     primary_uint8 lsb,
@@ -4372,14 +4469,17 @@ void primary_serialize_INV_L_SET_TORQUE(
     data[0] = reg_id;
     data[1] = lsb;
     data[2] = msb;
+    return 3;
 }
-void primary_serialize_struct_INV_L_SET_TORQUE(
+
+primary_byte_size primary_serialize_struct_INV_L_SET_TORQUE(
     uint8_t* data,
     primary_message_INV_L_SET_TORQUE* message
 ) {
     data[0] = message->reg_id;
     data[1] = message->lsb;
     data[2] = message->msb;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4460,7 +4560,7 @@ void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void primary_serialize_INV_L_RESPONSE(
+primary_byte_size primary_serialize_INV_L_RESPONSE(
     uint8_t* data,
     primary_uint8 reg_id,
     primary_uint8 data_0,
@@ -4479,8 +4579,10 @@ void primary_serialize_INV_L_RESPONSE(
     data[5] = data_4;
     data[6] = data_5;
     data[7] = data_6;
+    return 8;
 }
-void primary_serialize_struct_INV_L_RESPONSE(
+
+primary_byte_size primary_serialize_struct_INV_L_RESPONSE(
     uint8_t* data,
     primary_message_INV_L_RESPONSE* message
 ) {
@@ -4492,6 +4594,7 @@ void primary_serialize_struct_INV_L_RESPONSE(
     data[5] = message->data_4;
     data[6] = message->data_5;
     data[7] = message->data_6;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //

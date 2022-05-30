@@ -58,6 +58,7 @@ static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
 #define secondary_float32 float
 #define secondary_float64 double
 #define secondary_bool bool
+#define secondary_byte_size uint32_t
 
 typedef union {
     secondary_uint8 bytes[4];
@@ -368,13 +369,13 @@ typedef struct __CANLIB_PACKED {
 
 // ============== IMU_ANGULAR_RATE ============== //
 
-void secondary_serialize_IMU_ANGULAR_RATE(
+secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_uint16 ang_rate_x,
     secondary_uint16 ang_rate_y,
     secondary_uint16 ang_rate_z
 );
-void secondary_serialize_struct_IMU_ANGULAR_RATE(
+secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_message_IMU_ANGULAR_RATE* message
 );
@@ -393,13 +394,13 @@ void secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer);
 
 // ============== IMU_ACCELERATION ============== //
 
-void secondary_serialize_IMU_ACCELERATION(
+secondary_byte_size secondary_serialize_IMU_ACCELERATION(
     uint8_t* data,
     secondary_uint16 accel_x,
     secondary_uint16 accel_y,
     secondary_uint16 accel_z
 );
-void secondary_serialize_struct_IMU_ACCELERATION(
+secondary_byte_size secondary_serialize_struct_IMU_ACCELERATION(
     uint8_t* data,
     secondary_message_IMU_ACCELERATION* message
 );
@@ -418,14 +419,14 @@ void secondary_fields_file_IMU_ACCELERATION(FILE* buffer);
 
 // ============== IRTS_FL_0 ============== //
 
-void secondary_serialize_IRTS_FL_0(
+secondary_byte_size secondary_serialize_IRTS_FL_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
     secondary_uint16 channel3,
     secondary_uint16 channel4
 );
-void secondary_serialize_struct_IRTS_FL_0(
+secondary_byte_size secondary_serialize_struct_IRTS_FL_0(
     uint8_t* data,
     secondary_message_IRTS_FL_0* message
 );
@@ -444,14 +445,14 @@ void secondary_fields_file_IRTS_FL_0(FILE* buffer);
 
 // ============== IRTS_FL_1 ============== //
 
-void secondary_serialize_IRTS_FL_1(
+secondary_byte_size secondary_serialize_IRTS_FL_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
     secondary_uint16 channel7,
     secondary_uint16 channel8
 );
-void secondary_serialize_struct_IRTS_FL_1(
+secondary_byte_size secondary_serialize_struct_IRTS_FL_1(
     uint8_t* data,
     secondary_message_IRTS_FL_1* message
 );
@@ -470,14 +471,14 @@ void secondary_fields_file_IRTS_FL_1(FILE* buffer);
 
 // ============== IRTS_FL_2 ============== //
 
-void secondary_serialize_IRTS_FL_2(
+secondary_byte_size secondary_serialize_IRTS_FL_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
     secondary_uint16 channel11,
     secondary_uint16 channel12
 );
-void secondary_serialize_struct_IRTS_FL_2(
+secondary_byte_size secondary_serialize_struct_IRTS_FL_2(
     uint8_t* data,
     secondary_message_IRTS_FL_2* message
 );
@@ -496,14 +497,14 @@ void secondary_fields_file_IRTS_FL_2(FILE* buffer);
 
 // ============== IRTS_FL_3 ============== //
 
-void secondary_serialize_IRTS_FL_3(
+secondary_byte_size secondary_serialize_IRTS_FL_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
     secondary_uint16 channel15,
     secondary_uint16 channel16
 );
-void secondary_serialize_struct_IRTS_FL_3(
+secondary_byte_size secondary_serialize_struct_IRTS_FL_3(
     uint8_t* data,
     secondary_message_IRTS_FL_3* message
 );
@@ -522,14 +523,14 @@ void secondary_fields_file_IRTS_FL_3(FILE* buffer);
 
 // ============== IRTS_FR_0 ============== //
 
-void secondary_serialize_IRTS_FR_0(
+secondary_byte_size secondary_serialize_IRTS_FR_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
     secondary_uint16 channel3,
     secondary_uint16 channel4
 );
-void secondary_serialize_struct_IRTS_FR_0(
+secondary_byte_size secondary_serialize_struct_IRTS_FR_0(
     uint8_t* data,
     secondary_message_IRTS_FR_0* message
 );
@@ -548,14 +549,14 @@ void secondary_fields_file_IRTS_FR_0(FILE* buffer);
 
 // ============== IRTS_FR_1 ============== //
 
-void secondary_serialize_IRTS_FR_1(
+secondary_byte_size secondary_serialize_IRTS_FR_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
     secondary_uint16 channel7,
     secondary_uint16 channel8
 );
-void secondary_serialize_struct_IRTS_FR_1(
+secondary_byte_size secondary_serialize_struct_IRTS_FR_1(
     uint8_t* data,
     secondary_message_IRTS_FR_1* message
 );
@@ -574,14 +575,14 @@ void secondary_fields_file_IRTS_FR_1(FILE* buffer);
 
 // ============== IRTS_FR_2 ============== //
 
-void secondary_serialize_IRTS_FR_2(
+secondary_byte_size secondary_serialize_IRTS_FR_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
     secondary_uint16 channel11,
     secondary_uint16 channel12
 );
-void secondary_serialize_struct_IRTS_FR_2(
+secondary_byte_size secondary_serialize_struct_IRTS_FR_2(
     uint8_t* data,
     secondary_message_IRTS_FR_2* message
 );
@@ -600,14 +601,14 @@ void secondary_fields_file_IRTS_FR_2(FILE* buffer);
 
 // ============== IRTS_FR_3 ============== //
 
-void secondary_serialize_IRTS_FR_3(
+secondary_byte_size secondary_serialize_IRTS_FR_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
     secondary_uint16 channel15,
     secondary_uint16 channel16
 );
-void secondary_serialize_struct_IRTS_FR_3(
+secondary_byte_size secondary_serialize_struct_IRTS_FR_3(
     uint8_t* data,
     secondary_message_IRTS_FR_3* message
 );
@@ -626,14 +627,14 @@ void secondary_fields_file_IRTS_FR_3(FILE* buffer);
 
 // ============== IRTS_RL_0 ============== //
 
-void secondary_serialize_IRTS_RL_0(
+secondary_byte_size secondary_serialize_IRTS_RL_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
     secondary_uint16 channel3,
     secondary_uint16 channel4
 );
-void secondary_serialize_struct_IRTS_RL_0(
+secondary_byte_size secondary_serialize_struct_IRTS_RL_0(
     uint8_t* data,
     secondary_message_IRTS_RL_0* message
 );
@@ -652,14 +653,14 @@ void secondary_fields_file_IRTS_RL_0(FILE* buffer);
 
 // ============== IRTS_RL_1 ============== //
 
-void secondary_serialize_IRTS_RL_1(
+secondary_byte_size secondary_serialize_IRTS_RL_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
     secondary_uint16 channel7,
     secondary_uint16 channel8
 );
-void secondary_serialize_struct_IRTS_RL_1(
+secondary_byte_size secondary_serialize_struct_IRTS_RL_1(
     uint8_t* data,
     secondary_message_IRTS_RL_1* message
 );
@@ -678,14 +679,14 @@ void secondary_fields_file_IRTS_RL_1(FILE* buffer);
 
 // ============== IRTS_RL_2 ============== //
 
-void secondary_serialize_IRTS_RL_2(
+secondary_byte_size secondary_serialize_IRTS_RL_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
     secondary_uint16 channel11,
     secondary_uint16 channel12
 );
-void secondary_serialize_struct_IRTS_RL_2(
+secondary_byte_size secondary_serialize_struct_IRTS_RL_2(
     uint8_t* data,
     secondary_message_IRTS_RL_2* message
 );
@@ -704,14 +705,14 @@ void secondary_fields_file_IRTS_RL_2(FILE* buffer);
 
 // ============== IRTS_RL_3 ============== //
 
-void secondary_serialize_IRTS_RL_3(
+secondary_byte_size secondary_serialize_IRTS_RL_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
     secondary_uint16 channel15,
     secondary_uint16 channel16
 );
-void secondary_serialize_struct_IRTS_RL_3(
+secondary_byte_size secondary_serialize_struct_IRTS_RL_3(
     uint8_t* data,
     secondary_message_IRTS_RL_3* message
 );
@@ -730,14 +731,14 @@ void secondary_fields_file_IRTS_RL_3(FILE* buffer);
 
 // ============== IRTS_RR_0 ============== //
 
-void secondary_serialize_IRTS_RR_0(
+secondary_byte_size secondary_serialize_IRTS_RR_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
     secondary_uint16 channel3,
     secondary_uint16 channel4
 );
-void secondary_serialize_struct_IRTS_RR_0(
+secondary_byte_size secondary_serialize_struct_IRTS_RR_0(
     uint8_t* data,
     secondary_message_IRTS_RR_0* message
 );
@@ -756,14 +757,14 @@ void secondary_fields_file_IRTS_RR_0(FILE* buffer);
 
 // ============== IRTS_RR_1 ============== //
 
-void secondary_serialize_IRTS_RR_1(
+secondary_byte_size secondary_serialize_IRTS_RR_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
     secondary_uint16 channel7,
     secondary_uint16 channel8
 );
-void secondary_serialize_struct_IRTS_RR_1(
+secondary_byte_size secondary_serialize_struct_IRTS_RR_1(
     uint8_t* data,
     secondary_message_IRTS_RR_1* message
 );
@@ -782,14 +783,14 @@ void secondary_fields_file_IRTS_RR_1(FILE* buffer);
 
 // ============== IRTS_RR_2 ============== //
 
-void secondary_serialize_IRTS_RR_2(
+secondary_byte_size secondary_serialize_IRTS_RR_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
     secondary_uint16 channel11,
     secondary_uint16 channel12
 );
-void secondary_serialize_struct_IRTS_RR_2(
+secondary_byte_size secondary_serialize_struct_IRTS_RR_2(
     uint8_t* data,
     secondary_message_IRTS_RR_2* message
 );
@@ -808,14 +809,14 @@ void secondary_fields_file_IRTS_RR_2(FILE* buffer);
 
 // ============== IRTS_RR_3 ============== //
 
-void secondary_serialize_IRTS_RR_3(
+secondary_byte_size secondary_serialize_IRTS_RR_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
     secondary_uint16 channel15,
     secondary_uint16 channel16
 );
-void secondary_serialize_struct_IRTS_RR_3(
+secondary_byte_size secondary_serialize_struct_IRTS_RR_3(
     uint8_t* data,
     secondary_message_IRTS_RR_3* message
 );
@@ -834,12 +835,12 @@ void secondary_fields_file_IRTS_RR_3(FILE* buffer);
 
 // ============== GPS_COORDS ============== //
 
-void secondary_serialize_GPS_COORDS(
+secondary_byte_size secondary_serialize_GPS_COORDS(
     uint8_t* data,
     secondary_float32 latitude,
     secondary_float32 longitude
 );
-void secondary_serialize_struct_GPS_COORDS(
+secondary_byte_size secondary_serialize_struct_GPS_COORDS(
     uint8_t* data,
     secondary_message_GPS_COORDS* message
 );
@@ -858,11 +859,11 @@ void secondary_fields_file_GPS_COORDS(FILE* buffer);
 
 // ============== GPS_SPEED ============== //
 
-void secondary_serialize_GPS_SPEED(
+secondary_byte_size secondary_serialize_GPS_SPEED(
     uint8_t* data,
     secondary_uint16 speed
 );
-void secondary_serialize_struct_GPS_SPEED(
+secondary_byte_size secondary_serialize_struct_GPS_SPEED(
     uint8_t* data,
     secondary_message_GPS_SPEED* message
 );
@@ -881,12 +882,12 @@ void secondary_fields_file_GPS_SPEED(FILE* buffer);
 
 // ============== LAP_COUNT ============== //
 
-void secondary_serialize_LAP_COUNT(
+secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
     secondary_uint32 timestamp,
     secondary_uint8 lap_count
 );
-void secondary_serialize_struct_LAP_COUNT(
+secondary_byte_size secondary_serialize_struct_LAP_COUNT(
     uint8_t* data,
     secondary_message_LAP_COUNT* message
 );
@@ -926,7 +927,7 @@ void secondary_deserialize_from_id(
 #ifdef secondary_IMPLEMENTATION
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IMU_ANGULAR_RATE(
+secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_uint16 ang_rate_x,
     secondary_uint16 ang_rate_y,
@@ -938,8 +939,10 @@ void secondary_serialize_IMU_ANGULAR_RATE(
     data[3] = (ang_rate_y >> 8) & 255;
     data[4] = ang_rate_z & 255;
     data[5] = (ang_rate_z >> 8) & 255;
+    return 6;
 }
-void secondary_serialize_struct_IMU_ANGULAR_RATE(
+
+secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_message_IMU_ANGULAR_RATE* message
 ) {
@@ -949,6 +952,7 @@ void secondary_serialize_struct_IMU_ANGULAR_RATE(
     data[3] = (message->ang_rate_y >> 8) & 255;
     data[4] = message->ang_rate_z & 255;
     data[5] = (message->ang_rate_z >> 8) & 255;
+    return 6;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1029,7 +1033,7 @@ void secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IMU_ACCELERATION(
+secondary_byte_size secondary_serialize_IMU_ACCELERATION(
     uint8_t* data,
     secondary_uint16 accel_x,
     secondary_uint16 accel_y,
@@ -1041,8 +1045,10 @@ void secondary_serialize_IMU_ACCELERATION(
     data[3] = (accel_y >> 8) & 255;
     data[4] = accel_z & 255;
     data[5] = (accel_z >> 8) & 255;
+    return 6;
 }
-void secondary_serialize_struct_IMU_ACCELERATION(
+
+secondary_byte_size secondary_serialize_struct_IMU_ACCELERATION(
     uint8_t* data,
     secondary_message_IMU_ACCELERATION* message
 ) {
@@ -1052,6 +1058,7 @@ void secondary_serialize_struct_IMU_ACCELERATION(
     data[3] = (message->accel_y >> 8) & 255;
     data[4] = message->accel_z & 255;
     data[5] = (message->accel_z >> 8) & 255;
+    return 6;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1132,7 +1139,7 @@ void secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FL_0(
+secondary_byte_size secondary_serialize_IRTS_FL_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
@@ -1147,8 +1154,10 @@ void secondary_serialize_IRTS_FL_0(
     data[5] = (channel3 >> 8) & 255;
     data[6] = channel4 & 255;
     data[7] = (channel4 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FL_0(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FL_0(
     uint8_t* data,
     secondary_message_IRTS_FL_0* message
 ) {
@@ -1160,6 +1169,7 @@ void secondary_serialize_struct_IRTS_FL_0(
     data[5] = (message->channel3 >> 8) & 255;
     data[6] = message->channel4 & 255;
     data[7] = (message->channel4 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1247,7 +1257,7 @@ void secondary_fields_file_IRTS_FL_0(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FL_1(
+secondary_byte_size secondary_serialize_IRTS_FL_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
@@ -1262,8 +1272,10 @@ void secondary_serialize_IRTS_FL_1(
     data[5] = (channel7 >> 8) & 255;
     data[6] = channel8 & 255;
     data[7] = (channel8 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FL_1(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FL_1(
     uint8_t* data,
     secondary_message_IRTS_FL_1* message
 ) {
@@ -1275,6 +1287,7 @@ void secondary_serialize_struct_IRTS_FL_1(
     data[5] = (message->channel7 >> 8) & 255;
     data[6] = message->channel8 & 255;
     data[7] = (message->channel8 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1362,7 +1375,7 @@ void secondary_fields_file_IRTS_FL_1(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FL_2(
+secondary_byte_size secondary_serialize_IRTS_FL_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
@@ -1377,8 +1390,10 @@ void secondary_serialize_IRTS_FL_2(
     data[5] = (channel11 >> 8) & 255;
     data[6] = channel12 & 255;
     data[7] = (channel12 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FL_2(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FL_2(
     uint8_t* data,
     secondary_message_IRTS_FL_2* message
 ) {
@@ -1390,6 +1405,7 @@ void secondary_serialize_struct_IRTS_FL_2(
     data[5] = (message->channel11 >> 8) & 255;
     data[6] = message->channel12 & 255;
     data[7] = (message->channel12 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1477,7 +1493,7 @@ void secondary_fields_file_IRTS_FL_2(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FL_3(
+secondary_byte_size secondary_serialize_IRTS_FL_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
@@ -1492,8 +1508,10 @@ void secondary_serialize_IRTS_FL_3(
     data[5] = (channel15 >> 8) & 255;
     data[6] = channel16 & 255;
     data[7] = (channel16 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FL_3(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FL_3(
     uint8_t* data,
     secondary_message_IRTS_FL_3* message
 ) {
@@ -1505,6 +1523,7 @@ void secondary_serialize_struct_IRTS_FL_3(
     data[5] = (message->channel15 >> 8) & 255;
     data[6] = message->channel16 & 255;
     data[7] = (message->channel16 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1592,7 +1611,7 @@ void secondary_fields_file_IRTS_FL_3(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FR_0(
+secondary_byte_size secondary_serialize_IRTS_FR_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
@@ -1607,8 +1626,10 @@ void secondary_serialize_IRTS_FR_0(
     data[5] = (channel3 >> 8) & 255;
     data[6] = channel4 & 255;
     data[7] = (channel4 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FR_0(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FR_0(
     uint8_t* data,
     secondary_message_IRTS_FR_0* message
 ) {
@@ -1620,6 +1641,7 @@ void secondary_serialize_struct_IRTS_FR_0(
     data[5] = (message->channel3 >> 8) & 255;
     data[6] = message->channel4 & 255;
     data[7] = (message->channel4 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1707,7 +1729,7 @@ void secondary_fields_file_IRTS_FR_0(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FR_1(
+secondary_byte_size secondary_serialize_IRTS_FR_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
@@ -1722,8 +1744,10 @@ void secondary_serialize_IRTS_FR_1(
     data[5] = (channel7 >> 8) & 255;
     data[6] = channel8 & 255;
     data[7] = (channel8 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FR_1(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FR_1(
     uint8_t* data,
     secondary_message_IRTS_FR_1* message
 ) {
@@ -1735,6 +1759,7 @@ void secondary_serialize_struct_IRTS_FR_1(
     data[5] = (message->channel7 >> 8) & 255;
     data[6] = message->channel8 & 255;
     data[7] = (message->channel8 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1822,7 +1847,7 @@ void secondary_fields_file_IRTS_FR_1(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FR_2(
+secondary_byte_size secondary_serialize_IRTS_FR_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
@@ -1837,8 +1862,10 @@ void secondary_serialize_IRTS_FR_2(
     data[5] = (channel11 >> 8) & 255;
     data[6] = channel12 & 255;
     data[7] = (channel12 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FR_2(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FR_2(
     uint8_t* data,
     secondary_message_IRTS_FR_2* message
 ) {
@@ -1850,6 +1877,7 @@ void secondary_serialize_struct_IRTS_FR_2(
     data[5] = (message->channel11 >> 8) & 255;
     data[6] = message->channel12 & 255;
     data[7] = (message->channel12 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1937,7 +1965,7 @@ void secondary_fields_file_IRTS_FR_2(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_FR_3(
+secondary_byte_size secondary_serialize_IRTS_FR_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
@@ -1952,8 +1980,10 @@ void secondary_serialize_IRTS_FR_3(
     data[5] = (channel15 >> 8) & 255;
     data[6] = channel16 & 255;
     data[7] = (channel16 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_FR_3(
+
+secondary_byte_size secondary_serialize_struct_IRTS_FR_3(
     uint8_t* data,
     secondary_message_IRTS_FR_3* message
 ) {
@@ -1965,6 +1995,7 @@ void secondary_serialize_struct_IRTS_FR_3(
     data[5] = (message->channel15 >> 8) & 255;
     data[6] = message->channel16 & 255;
     data[7] = (message->channel16 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2052,7 +2083,7 @@ void secondary_fields_file_IRTS_FR_3(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RL_0(
+secondary_byte_size secondary_serialize_IRTS_RL_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
@@ -2067,8 +2098,10 @@ void secondary_serialize_IRTS_RL_0(
     data[5] = (channel3 >> 8) & 255;
     data[6] = channel4 & 255;
     data[7] = (channel4 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RL_0(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RL_0(
     uint8_t* data,
     secondary_message_IRTS_RL_0* message
 ) {
@@ -2080,6 +2113,7 @@ void secondary_serialize_struct_IRTS_RL_0(
     data[5] = (message->channel3 >> 8) & 255;
     data[6] = message->channel4 & 255;
     data[7] = (message->channel4 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2167,7 +2201,7 @@ void secondary_fields_file_IRTS_RL_0(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RL_1(
+secondary_byte_size secondary_serialize_IRTS_RL_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
@@ -2182,8 +2216,10 @@ void secondary_serialize_IRTS_RL_1(
     data[5] = (channel7 >> 8) & 255;
     data[6] = channel8 & 255;
     data[7] = (channel8 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RL_1(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RL_1(
     uint8_t* data,
     secondary_message_IRTS_RL_1* message
 ) {
@@ -2195,6 +2231,7 @@ void secondary_serialize_struct_IRTS_RL_1(
     data[5] = (message->channel7 >> 8) & 255;
     data[6] = message->channel8 & 255;
     data[7] = (message->channel8 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2282,7 +2319,7 @@ void secondary_fields_file_IRTS_RL_1(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RL_2(
+secondary_byte_size secondary_serialize_IRTS_RL_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
@@ -2297,8 +2334,10 @@ void secondary_serialize_IRTS_RL_2(
     data[5] = (channel11 >> 8) & 255;
     data[6] = channel12 & 255;
     data[7] = (channel12 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RL_2(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RL_2(
     uint8_t* data,
     secondary_message_IRTS_RL_2* message
 ) {
@@ -2310,6 +2349,7 @@ void secondary_serialize_struct_IRTS_RL_2(
     data[5] = (message->channel11 >> 8) & 255;
     data[6] = message->channel12 & 255;
     data[7] = (message->channel12 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2397,7 +2437,7 @@ void secondary_fields_file_IRTS_RL_2(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RL_3(
+secondary_byte_size secondary_serialize_IRTS_RL_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
@@ -2412,8 +2452,10 @@ void secondary_serialize_IRTS_RL_3(
     data[5] = (channel15 >> 8) & 255;
     data[6] = channel16 & 255;
     data[7] = (channel16 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RL_3(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RL_3(
     uint8_t* data,
     secondary_message_IRTS_RL_3* message
 ) {
@@ -2425,6 +2467,7 @@ void secondary_serialize_struct_IRTS_RL_3(
     data[5] = (message->channel15 >> 8) & 255;
     data[6] = message->channel16 & 255;
     data[7] = (message->channel16 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2512,7 +2555,7 @@ void secondary_fields_file_IRTS_RL_3(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RR_0(
+secondary_byte_size secondary_serialize_IRTS_RR_0(
     uint8_t* data,
     secondary_uint16 channel1,
     secondary_uint16 channel2,
@@ -2527,8 +2570,10 @@ void secondary_serialize_IRTS_RR_0(
     data[5] = (channel3 >> 8) & 255;
     data[6] = channel4 & 255;
     data[7] = (channel4 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RR_0(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RR_0(
     uint8_t* data,
     secondary_message_IRTS_RR_0* message
 ) {
@@ -2540,6 +2585,7 @@ void secondary_serialize_struct_IRTS_RR_0(
     data[5] = (message->channel3 >> 8) & 255;
     data[6] = message->channel4 & 255;
     data[7] = (message->channel4 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2627,7 +2673,7 @@ void secondary_fields_file_IRTS_RR_0(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RR_1(
+secondary_byte_size secondary_serialize_IRTS_RR_1(
     uint8_t* data,
     secondary_uint16 channel5,
     secondary_uint16 channel6,
@@ -2642,8 +2688,10 @@ void secondary_serialize_IRTS_RR_1(
     data[5] = (channel7 >> 8) & 255;
     data[6] = channel8 & 255;
     data[7] = (channel8 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RR_1(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RR_1(
     uint8_t* data,
     secondary_message_IRTS_RR_1* message
 ) {
@@ -2655,6 +2703,7 @@ void secondary_serialize_struct_IRTS_RR_1(
     data[5] = (message->channel7 >> 8) & 255;
     data[6] = message->channel8 & 255;
     data[7] = (message->channel8 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2742,7 +2791,7 @@ void secondary_fields_file_IRTS_RR_1(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RR_2(
+secondary_byte_size secondary_serialize_IRTS_RR_2(
     uint8_t* data,
     secondary_uint16 channel9,
     secondary_uint16 channel10,
@@ -2757,8 +2806,10 @@ void secondary_serialize_IRTS_RR_2(
     data[5] = (channel11 >> 8) & 255;
     data[6] = channel12 & 255;
     data[7] = (channel12 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RR_2(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RR_2(
     uint8_t* data,
     secondary_message_IRTS_RR_2* message
 ) {
@@ -2770,6 +2821,7 @@ void secondary_serialize_struct_IRTS_RR_2(
     data[5] = (message->channel11 >> 8) & 255;
     data[6] = message->channel12 & 255;
     data[7] = (message->channel12 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2857,7 +2909,7 @@ void secondary_fields_file_IRTS_RR_2(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_IRTS_RR_3(
+secondary_byte_size secondary_serialize_IRTS_RR_3(
     uint8_t* data,
     secondary_uint16 channel13,
     secondary_uint16 channel14,
@@ -2872,8 +2924,10 @@ void secondary_serialize_IRTS_RR_3(
     data[5] = (channel15 >> 8) & 255;
     data[6] = channel16 & 255;
     data[7] = (channel16 >> 8) & 255;
+    return 8;
 }
-void secondary_serialize_struct_IRTS_RR_3(
+
+secondary_byte_size secondary_serialize_struct_IRTS_RR_3(
     uint8_t* data,
     secondary_message_IRTS_RR_3* message
 ) {
@@ -2885,6 +2939,7 @@ void secondary_serialize_struct_IRTS_RR_3(
     data[5] = (message->channel15 >> 8) & 255;
     data[6] = message->channel16 & 255;
     data[7] = (message->channel16 >> 8) & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -2972,7 +3027,7 @@ void secondary_fields_file_IRTS_RR_3(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_GPS_COORDS(
+secondary_byte_size secondary_serialize_GPS_COORDS(
     uint8_t* data,
     secondary_float32 latitude,
     secondary_float32 longitude
@@ -2985,8 +3040,10 @@ void secondary_serialize_GPS_COORDS(
     data[5] = secondary_float32_to_bytes(longitude, 1);
     data[6] = secondary_float32_to_bytes(longitude, 2);
     data[7] = secondary_float32_to_bytes(longitude, 3);
+    return 8;
 }
-void secondary_serialize_struct_GPS_COORDS(
+
+secondary_byte_size secondary_serialize_struct_GPS_COORDS(
     uint8_t* data,
     secondary_message_GPS_COORDS* message
 ) {
@@ -2998,6 +3055,7 @@ void secondary_serialize_struct_GPS_COORDS(
     data[5] = secondary_float32_to_bytes(message->longitude, 1);
     data[6] = secondary_float32_to_bytes(message->longitude, 2);
     data[7] = secondary_float32_to_bytes(message->longitude, 3);
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3071,19 +3129,22 @@ void secondary_fields_file_GPS_COORDS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_GPS_SPEED(
+secondary_byte_size secondary_serialize_GPS_SPEED(
     uint8_t* data,
     secondary_uint16 speed
 ) {
     data[0] = speed & 255;
     data[1] = (speed >> 8) & 255;
+    return 2;
 }
-void secondary_serialize_struct_GPS_SPEED(
+
+secondary_byte_size secondary_serialize_struct_GPS_SPEED(
     uint8_t* data,
     secondary_message_GPS_SPEED* message
 ) {
     data[0] = message->speed & 255;
     data[1] = (message->speed >> 8) & 255;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3150,7 +3211,7 @@ void secondary_fields_file_GPS_SPEED(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-void secondary_serialize_LAP_COUNT(
+secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
     secondary_uint32 timestamp,
     secondary_uint8 lap_count
@@ -3160,8 +3221,10 @@ void secondary_serialize_LAP_COUNT(
     data[2] = (timestamp >> 16) & 255;
     data[3] = (timestamp >> 24) & 255;
     data[4] = lap_count;
+    return 5;
 }
-void secondary_serialize_struct_LAP_COUNT(
+
+secondary_byte_size secondary_serialize_struct_LAP_COUNT(
     uint8_t* data,
     secondary_message_LAP_COUNT* message
 ) {
@@ -3170,6 +3233,7 @@ void secondary_serialize_struct_LAP_COUNT(
     data[2] = (message->timestamp >> 16) & 255;
     data[3] = (message->timestamp >> 24) & 255;
     data[4] = message->lap_count;
+    return 5;
 }
 
 // ============== DESERIALIZE ============== //

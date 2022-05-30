@@ -8,6 +8,7 @@
 
 /* TOPIC BROADCAST */
 #define primary_topic_mask_BROADCAST 0b00000011111
+#define primary_topic_filter_BROADCAST 0b00000000000
 
 #define primary_id_STEER_VERSION 0b10000000000
 #define primary_id_DAS_VERSION 0b10000100000

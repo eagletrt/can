@@ -8,6 +8,7 @@
 
 /* TOPIC STATUS */
 #define bms_topic_mask_STATUS 0b00000011111
+#define bms_topic_filter_STATUS 0b00000000000
 
 #define bms_id_BOARD_STATUS_CELLBOARD0 0b11000000000
 #define bms_id_BOARD_STATUS_CELLBOARD1 0b11000100000
