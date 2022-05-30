@@ -39,16 +39,20 @@ def bool(value: Any) -> bool:
 # Bitsets
 
 class HvErrors(IntFlag):
-    LTC_PEC_ERROR = 1
+    CELL_LOW_VOLTAGE = 1
     CELL_UNDER_VOLTAGE = 2
     CELL_OVER_VOLTAGE = 4
-    CELL_OVER_TEMPERATURE = 8
-    OVER_CURRENT = 16
-    ADC_INIT = 32
-    ADC_TIMEOUT = 64
+    CELL_HIGH_TEMPERATURE = 8
+    CELL_OVER_TEMPERATURE = 16
+    OVER_CURRENT = 32
+    CAN = 64
     INT_VOLTAGE_MISMATCH = 128
-    FEEDBACK_HARD = 256
-    FEEDBACK_SOFT = 512
+    CELLBOARD_COMM = 256
+    CELLBOARD_INTERNAL = 512
+    FEEDBACK = 1024
+    FEEDBACK_CIRCUITRY = 2048
+    EEPROM_COMM = 4096
+    EEPROM_WRITE = 8192
 
 class DasErrors(IntFlag):
     PEDAL_ADC = 1
@@ -534,16 +538,16 @@ def raw_to_conversion_HV_VOLTAGE(raw: message_HV_VOLTAGE) -> message_HV_VOLTAGE_
     conversion = message_HV_VOLTAGE_conversion()
     conversion.pack_voltage = ((float32(raw.pack_voltage)) / 142.469565) + 0
     conversion.bus_voltage = ((float32(raw.bus_voltage)) / 142.469565) + 0
-    conversion.max_cell_voltage = ((float32(raw.max_cell_voltage)) / 142.469565) + 0
-    conversion.min_cell_voltage = ((float32(raw.min_cell_voltage)) / 142.469565) + 0
+    conversion.max_cell_voltage = ((float32(raw.max_cell_voltage)) / 10000.0) + 0
+    conversion.min_cell_voltage = ((float32(raw.min_cell_voltage)) / 10000.0) + 0
     return conversion
 
 def conversion_to_raw_HV_VOLTAGE(conversion: message_HV_VOLTAGE_conversion) -> message_HV_VOLTAGE:
     raw = message_HV_VOLTAGE()
     raw.pack_voltage = uint16((conversion.pack_voltage + 0) * 142.469565)
     raw.bus_voltage = uint16((conversion.bus_voltage + 0) * 142.469565)
-    raw.max_cell_voltage = uint16((conversion.max_cell_voltage + 0) * 142.469565)
-    raw.min_cell_voltage = uint16((conversion.min_cell_voltage + 0) * 142.469565)
+    raw.max_cell_voltage = uint16((conversion.max_cell_voltage + 0) * 10000.0)
+    raw.min_cell_voltage = uint16((conversion.min_cell_voltage + 0) * 10000.0)
     return raw
 
 def serialize_HV_VOLTAGE(message: message_HV_VOLTAGE) -> bytearray:

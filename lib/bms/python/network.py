@@ -224,17 +224,17 @@ class message_VOLTAGES_conversion:
 
 def raw_to_conversion_VOLTAGES(raw: message_VOLTAGES) -> message_VOLTAGES_conversion:
     conversion = message_VOLTAGES_conversion()
-    conversion.voltage0 = ((float32(raw.voltage0)) / 13107.2) + 0
-    conversion.voltage1 = ((float32(raw.voltage1)) / 13107.2) + 0
-    conversion.voltage2 = ((float32(raw.voltage2)) / 13107.2) + 0
+    conversion.voltage0 = ((float32(raw.voltage0)) / 10000.0) + 0
+    conversion.voltage1 = ((float32(raw.voltage1)) / 10000.0) + 0
+    conversion.voltage2 = ((float32(raw.voltage2)) / 10000.0) + 0
     conversion.start_index = raw.start_index
     return conversion
 
 def conversion_to_raw_VOLTAGES(conversion: message_VOLTAGES_conversion) -> message_VOLTAGES:
     raw = message_VOLTAGES()
-    raw.voltage0 = uint16((conversion.voltage0 + 0) * 13107.2)
-    raw.voltage1 = uint16((conversion.voltage1 + 0) * 13107.2)
-    raw.voltage2 = uint16((conversion.voltage2 + 0) * 13107.2)
+    raw.voltage0 = uint16((conversion.voltage0 + 0) * 10000.0)
+    raw.voltage1 = uint16((conversion.voltage1 + 0) * 10000.0)
+    raw.voltage2 = uint16((conversion.voltage2 + 0) * 10000.0)
     raw.start_index = conversion.start_index
     return raw
 

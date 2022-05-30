@@ -707,9 +707,9 @@ void bms_raw_to_conversion_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->voltage0 = (((bms_float32)raw->voltage0) / 13107.2) + 0;
-    conversion->voltage1 = (((bms_float32)raw->voltage1) / 13107.2) + 0;
-    conversion->voltage2 = (((bms_float32)raw->voltage2) / 13107.2) + 0;
+    conversion->voltage0 = (((bms_float32)raw->voltage0) / 10000.0) + 0;
+    conversion->voltage1 = (((bms_float32)raw->voltage1) / 10000.0) + 0;
+    conversion->voltage2 = (((bms_float32)raw->voltage2) / 10000.0) + 0;
     conversion->start_index = raw->start_index;
 }
 void bms_conversion_to_raw_VOLTAGES(
@@ -719,9 +719,9 @@ void bms_conversion_to_raw_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->voltage0 = (bms_uint16)((conversion->voltage0 + 0) * 13107.2);
-    raw->voltage1 = (bms_uint16)((conversion->voltage1 + 0) * 13107.2);
-    raw->voltage2 = (bms_uint16)((conversion->voltage2 + 0) * 13107.2);
+    raw->voltage0 = (bms_uint16)((conversion->voltage0 + 0) * 10000.0);
+    raw->voltage1 = (bms_uint16)((conversion->voltage1 + 0) * 10000.0);
+    raw->voltage2 = (bms_uint16)((conversion->voltage2 + 0) * 10000.0);
     raw->start_index = conversion->start_index;
 }
 

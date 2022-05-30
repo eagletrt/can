@@ -163,16 +163,20 @@ typedef struct {
 
 typedef primary_uint16 primary_HvErrors;
 #define primary_HvErrors_DEFAULT 0
-#define primary_HvErrors_LTC_PEC_ERROR 1
+#define primary_HvErrors_CELL_LOW_VOLTAGE 1
 #define primary_HvErrors_CELL_UNDER_VOLTAGE 2
 #define primary_HvErrors_CELL_OVER_VOLTAGE 4
-#define primary_HvErrors_CELL_OVER_TEMPERATURE 8
-#define primary_HvErrors_OVER_CURRENT 16
-#define primary_HvErrors_ADC_INIT 32
-#define primary_HvErrors_ADC_TIMEOUT 64
+#define primary_HvErrors_CELL_HIGH_TEMPERATURE 8
+#define primary_HvErrors_CELL_OVER_TEMPERATURE 16
+#define primary_HvErrors_OVER_CURRENT 32
+#define primary_HvErrors_CAN 64
 #define primary_HvErrors_INT_VOLTAGE_MISMATCH 128
-#define primary_HvErrors_FEEDBACK_HARD 256
-#define primary_HvErrors_FEEDBACK_SOFT 512
+#define primary_HvErrors_CELLBOARD_COMM 256
+#define primary_HvErrors_CELLBOARD_INTERNAL 512
+#define primary_HvErrors_FEEDBACK 1024
+#define primary_HvErrors_FEEDBACK_CIRCUITRY 2048
+#define primary_HvErrors_EEPROM_COMM 4096
+#define primary_HvErrors_EEPROM_WRITE 8192
 
 typedef primary_uint8 primary_DasErrors;
 #define primary_DasErrors_DEFAULT 0
@@ -2480,8 +2484,8 @@ void primary_raw_to_conversion_HV_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
     conversion->pack_voltage = (((primary_float32)raw->pack_voltage) / 142.469565) + 0;
     conversion->bus_voltage = (((primary_float32)raw->bus_voltage) / 142.469565) + 0;
-    conversion->max_cell_voltage = (((primary_float32)raw->max_cell_voltage) / 142.469565) + 0;
-    conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 142.469565) + 0;
+    conversion->max_cell_voltage = (((primary_float32)raw->max_cell_voltage) / 10000.0) + 0;
+    conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 10000.0) + 0;
 }
 void primary_conversion_to_raw_HV_VOLTAGE(
     primary_message_HV_VOLTAGE_conversion* conversion,
@@ -2492,8 +2496,8 @@ void primary_conversion_to_raw_HV_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
     raw->pack_voltage = (primary_uint16)((conversion->pack_voltage + 0) * 142.469565);
     raw->bus_voltage = (primary_uint16)((conversion->bus_voltage + 0) * 142.469565);
-    raw->max_cell_voltage = (primary_uint16)((conversion->max_cell_voltage + 0) * 142.469565);
-    raw->min_cell_voltage = (primary_uint16)((conversion->min_cell_voltage + 0) * 142.469565);
+    raw->max_cell_voltage = (primary_uint16)((conversion->max_cell_voltage + 0) * 10000.0);
+    raw->min_cell_voltage = (primary_uint16)((conversion->min_cell_voltage + 0) * 10000.0);
 }
 
 // ============== STRING ============== //
