@@ -4,16 +4,20 @@
     "HvErrors": {
       "type": "bitset",
       "items": [
-        "LTC_PEC_ERROR",
+        "CELL_LOW_VOLTAGE",
         "CELL_UNDER_VOLTAGE",
         "CELL_OVER_VOLTAGE",
+        "CELL_HIGH_TEMPERATURE",
         "CELL_OVER_TEMPERATURE",
         "OVER_CURRENT",
-        "ADC_INIT",
-        "ADC_TIMEOUT",
+        "CAN",
         "INT_VOLTAGE_MISMATCH",
-        "FEEDBACK_HARD",
-        "FEEDBACK_SOFT"
+        "CELLBOARD_COMM",
+        "CELLBOARD_INTERNAL",
+        "FEEDBACK",
+        "FEEDBACK_CIRCUITRY",
+        "EEPROM_COMM",
+        "EEPROM_WRITE"
       ]
     },
     "DasErrors": {
@@ -283,13 +287,13 @@
         },
         "max_cell_voltage": {
           "type": "float32",
-          "range": [0, 460],
-          "force": "uint16"
+          "range": [0, 5],
+          "precision": 0.0001
         },
         "min_cell_voltage": {
           "type": "float32",
-          "range": [0, 460],
-          "force": "uint16"
+          "range": [0, 5],
+          "precision": 0.0001
         }
       }
     },
