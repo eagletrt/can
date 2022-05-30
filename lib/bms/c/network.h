@@ -745,7 +745,7 @@ void bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%lu" CANLIB_SEPARATOR 
+        "%llu" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -770,7 +770,7 @@ void bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) 
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%lu" CANLIB_SEPARATOR 
+        "%llu" CANLIB_SEPARATOR 
         "%u",
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
