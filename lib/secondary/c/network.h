@@ -85,27 +85,27 @@ typedef struct {
 // ============== FREQUENCIES ============== //
 
 
-#define secondary_IMU_ANGULAR_RATE_FREQUENCY -1
-#define secondary_IMU_ACCELERATION_FREQUENCY -1
-#define secondary_IRTS_FL_0_FREQUENCY -1
-#define secondary_IRTS_FL_1_FREQUENCY -1
-#define secondary_IRTS_FL_2_FREQUENCY -1
-#define secondary_IRTS_FL_3_FREQUENCY -1
-#define secondary_IRTS_FR_0_FREQUENCY -1
-#define secondary_IRTS_FR_1_FREQUENCY -1
-#define secondary_IRTS_FR_2_FREQUENCY -1
-#define secondary_IRTS_FR_3_FREQUENCY -1
-#define secondary_IRTS_RL_0_FREQUENCY -1
-#define secondary_IRTS_RL_1_FREQUENCY -1
-#define secondary_IRTS_RL_2_FREQUENCY -1
-#define secondary_IRTS_RL_3_FREQUENCY -1
-#define secondary_IRTS_RR_0_FREQUENCY -1
-#define secondary_IRTS_RR_1_FREQUENCY -1
-#define secondary_IRTS_RR_2_FREQUENCY -1
-#define secondary_IRTS_RR_3_FREQUENCY -1
-#define secondary_GPS_COORDS_FREQUENCY -1
-#define secondary_GPS_SPEED_FREQUENCY -1
-#define secondary_LAP_COUNT_FREQUENCY -1
+#define secondary_IMU_ANGULAR_RATE_INTERVAL -1
+#define secondary_IMU_ACCELERATION_INTERVAL -1
+#define secondary_IRTS_FL_0_INTERVAL -1
+#define secondary_IRTS_FL_1_INTERVAL -1
+#define secondary_IRTS_FL_2_INTERVAL -1
+#define secondary_IRTS_FL_3_INTERVAL -1
+#define secondary_IRTS_FR_0_INTERVAL -1
+#define secondary_IRTS_FR_1_INTERVAL -1
+#define secondary_IRTS_FR_2_INTERVAL -1
+#define secondary_IRTS_FR_3_INTERVAL -1
+#define secondary_IRTS_RL_0_INTERVAL -1
+#define secondary_IRTS_RL_1_INTERVAL -1
+#define secondary_IRTS_RL_2_INTERVAL -1
+#define secondary_IRTS_RL_3_INTERVAL -1
+#define secondary_IRTS_RR_0_INTERVAL -1
+#define secondary_IRTS_RR_1_INTERVAL -1
+#define secondary_IRTS_RR_2_INTERVAL -1
+#define secondary_IRTS_RR_3_INTERVAL -1
+#define secondary_GPS_COORDS_INTERVAL -1
+#define secondary_GPS_SPEED_INTERVAL -1
+#define secondary_LAP_COUNT_INTERVAL -1
 
 // ============== SIZES ============== //
 
@@ -386,10 +386,10 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, char* buffer);
-void secondary_fields_IMU_ANGULAR_RATE(char* buffer);
-void secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer);
-void secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer);
+int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, uint8_t* buffer);
+int secondary_fields_IMU_ANGULAR_RATE(uint8_t* buffer);
+int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer);
+int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer);
 
 
 // ============== IMU_ACCELERATION ============== //
@@ -411,10 +411,10 @@ void secondary_deserialize_IMU_ACCELERATION(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, char* buffer);
-void secondary_fields_IMU_ACCELERATION(char* buffer);
-void secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer);
-void secondary_fields_file_IMU_ACCELERATION(FILE* buffer);
+int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, uint8_t* buffer);
+int secondary_fields_IMU_ACCELERATION(uint8_t* buffer);
+int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer);
+int secondary_fields_file_IMU_ACCELERATION(FILE* buffer);
 
 
 // ============== IRTS_FL_0 ============== //
@@ -437,10 +437,10 @@ void secondary_deserialize_IRTS_FL_0(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* buffer);
-void secondary_fields_IRTS_FL_0(char* buffer);
-void secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer);
-void secondary_fields_file_IRTS_FL_0(FILE* buffer);
+int secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, uint8_t* buffer);
+int secondary_fields_IRTS_FL_0(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer);
+int secondary_fields_file_IRTS_FL_0(FILE* buffer);
 
 
 // ============== IRTS_FL_1 ============== //
@@ -463,10 +463,10 @@ void secondary_deserialize_IRTS_FL_1(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* buffer);
-void secondary_fields_IRTS_FL_1(char* buffer);
-void secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer);
-void secondary_fields_file_IRTS_FL_1(FILE* buffer);
+int secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, uint8_t* buffer);
+int secondary_fields_IRTS_FL_1(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer);
+int secondary_fields_file_IRTS_FL_1(FILE* buffer);
 
 
 // ============== IRTS_FL_2 ============== //
@@ -489,10 +489,10 @@ void secondary_deserialize_IRTS_FL_2(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* buffer);
-void secondary_fields_IRTS_FL_2(char* buffer);
-void secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer);
-void secondary_fields_file_IRTS_FL_2(FILE* buffer);
+int secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, uint8_t* buffer);
+int secondary_fields_IRTS_FL_2(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer);
+int secondary_fields_file_IRTS_FL_2(FILE* buffer);
 
 
 // ============== IRTS_FL_3 ============== //
@@ -515,10 +515,10 @@ void secondary_deserialize_IRTS_FL_3(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* buffer);
-void secondary_fields_IRTS_FL_3(char* buffer);
-void secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer);
-void secondary_fields_file_IRTS_FL_3(FILE* buffer);
+int secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, uint8_t* buffer);
+int secondary_fields_IRTS_FL_3(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer);
+int secondary_fields_file_IRTS_FL_3(FILE* buffer);
 
 
 // ============== IRTS_FR_0 ============== //
@@ -541,10 +541,10 @@ void secondary_deserialize_IRTS_FR_0(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* buffer);
-void secondary_fields_IRTS_FR_0(char* buffer);
-void secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer);
-void secondary_fields_file_IRTS_FR_0(FILE* buffer);
+int secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, uint8_t* buffer);
+int secondary_fields_IRTS_FR_0(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer);
+int secondary_fields_file_IRTS_FR_0(FILE* buffer);
 
 
 // ============== IRTS_FR_1 ============== //
@@ -567,10 +567,10 @@ void secondary_deserialize_IRTS_FR_1(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* buffer);
-void secondary_fields_IRTS_FR_1(char* buffer);
-void secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer);
-void secondary_fields_file_IRTS_FR_1(FILE* buffer);
+int secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, uint8_t* buffer);
+int secondary_fields_IRTS_FR_1(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer);
+int secondary_fields_file_IRTS_FR_1(FILE* buffer);
 
 
 // ============== IRTS_FR_2 ============== //
@@ -593,10 +593,10 @@ void secondary_deserialize_IRTS_FR_2(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* buffer);
-void secondary_fields_IRTS_FR_2(char* buffer);
-void secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer);
-void secondary_fields_file_IRTS_FR_2(FILE* buffer);
+int secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, uint8_t* buffer);
+int secondary_fields_IRTS_FR_2(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer);
+int secondary_fields_file_IRTS_FR_2(FILE* buffer);
 
 
 // ============== IRTS_FR_3 ============== //
@@ -619,10 +619,10 @@ void secondary_deserialize_IRTS_FR_3(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* buffer);
-void secondary_fields_IRTS_FR_3(char* buffer);
-void secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer);
-void secondary_fields_file_IRTS_FR_3(FILE* buffer);
+int secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, uint8_t* buffer);
+int secondary_fields_IRTS_FR_3(uint8_t* buffer);
+int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer);
+int secondary_fields_file_IRTS_FR_3(FILE* buffer);
 
 
 // ============== IRTS_RL_0 ============== //
@@ -645,10 +645,10 @@ void secondary_deserialize_IRTS_RL_0(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* buffer);
-void secondary_fields_IRTS_RL_0(char* buffer);
-void secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer);
-void secondary_fields_file_IRTS_RL_0(FILE* buffer);
+int secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, uint8_t* buffer);
+int secondary_fields_IRTS_RL_0(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer);
+int secondary_fields_file_IRTS_RL_0(FILE* buffer);
 
 
 // ============== IRTS_RL_1 ============== //
@@ -671,10 +671,10 @@ void secondary_deserialize_IRTS_RL_1(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* buffer);
-void secondary_fields_IRTS_RL_1(char* buffer);
-void secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer);
-void secondary_fields_file_IRTS_RL_1(FILE* buffer);
+int secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, uint8_t* buffer);
+int secondary_fields_IRTS_RL_1(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer);
+int secondary_fields_file_IRTS_RL_1(FILE* buffer);
 
 
 // ============== IRTS_RL_2 ============== //
@@ -697,10 +697,10 @@ void secondary_deserialize_IRTS_RL_2(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* buffer);
-void secondary_fields_IRTS_RL_2(char* buffer);
-void secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer);
-void secondary_fields_file_IRTS_RL_2(FILE* buffer);
+int secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, uint8_t* buffer);
+int secondary_fields_IRTS_RL_2(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer);
+int secondary_fields_file_IRTS_RL_2(FILE* buffer);
 
 
 // ============== IRTS_RL_3 ============== //
@@ -723,10 +723,10 @@ void secondary_deserialize_IRTS_RL_3(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* buffer);
-void secondary_fields_IRTS_RL_3(char* buffer);
-void secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer);
-void secondary_fields_file_IRTS_RL_3(FILE* buffer);
+int secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, uint8_t* buffer);
+int secondary_fields_IRTS_RL_3(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer);
+int secondary_fields_file_IRTS_RL_3(FILE* buffer);
 
 
 // ============== IRTS_RR_0 ============== //
@@ -749,10 +749,10 @@ void secondary_deserialize_IRTS_RR_0(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* buffer);
-void secondary_fields_IRTS_RR_0(char* buffer);
-void secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer);
-void secondary_fields_file_IRTS_RR_0(FILE* buffer);
+int secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, uint8_t* buffer);
+int secondary_fields_IRTS_RR_0(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer);
+int secondary_fields_file_IRTS_RR_0(FILE* buffer);
 
 
 // ============== IRTS_RR_1 ============== //
@@ -775,10 +775,10 @@ void secondary_deserialize_IRTS_RR_1(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* buffer);
-void secondary_fields_IRTS_RR_1(char* buffer);
-void secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer);
-void secondary_fields_file_IRTS_RR_1(FILE* buffer);
+int secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, uint8_t* buffer);
+int secondary_fields_IRTS_RR_1(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer);
+int secondary_fields_file_IRTS_RR_1(FILE* buffer);
 
 
 // ============== IRTS_RR_2 ============== //
@@ -801,10 +801,10 @@ void secondary_deserialize_IRTS_RR_2(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* buffer);
-void secondary_fields_IRTS_RR_2(char* buffer);
-void secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer);
-void secondary_fields_file_IRTS_RR_2(FILE* buffer);
+int secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, uint8_t* buffer);
+int secondary_fields_IRTS_RR_2(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer);
+int secondary_fields_file_IRTS_RR_2(FILE* buffer);
 
 
 // ============== IRTS_RR_3 ============== //
@@ -827,10 +827,10 @@ void secondary_deserialize_IRTS_RR_3(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* buffer);
-void secondary_fields_IRTS_RR_3(char* buffer);
-void secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer);
-void secondary_fields_file_IRTS_RR_3(FILE* buffer);
+int secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, uint8_t* buffer);
+int secondary_fields_IRTS_RR_3(uint8_t* buffer);
+int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer);
+int secondary_fields_file_IRTS_RR_3(FILE* buffer);
 
 
 // ============== GPS_COORDS ============== //
@@ -851,10 +851,10 @@ void secondary_deserialize_GPS_COORDS(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char* buffer);
-void secondary_fields_GPS_COORDS(char* buffer);
-void secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer);
-void secondary_fields_file_GPS_COORDS(FILE* buffer);
+int secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, uint8_t* buffer);
+int secondary_fields_GPS_COORDS(uint8_t* buffer);
+int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer);
+int secondary_fields_file_GPS_COORDS(FILE* buffer);
 
 
 // ============== GPS_SPEED ============== //
@@ -874,10 +874,10 @@ void secondary_deserialize_GPS_SPEED(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* buffer);
-void secondary_fields_GPS_SPEED(char* buffer);
-void secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer);
-void secondary_fields_file_GPS_SPEED(FILE* buffer);
+int secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, uint8_t* buffer);
+int secondary_fields_GPS_SPEED(uint8_t* buffer);
+int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer);
+int secondary_fields_file_GPS_SPEED(FILE* buffer);
 
 
 // ============== LAP_COUNT ============== //
@@ -898,10 +898,10 @@ void secondary_deserialize_LAP_COUNT(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* buffer);
-void secondary_fields_LAP_COUNT(char* buffer);
-void secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer);
-void secondary_fields_file_LAP_COUNT(FILE* buffer);
+int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, uint8_t* buffer);
+int secondary_fields_LAP_COUNT(uint8_t* buffer);
+int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer);
+int secondary_fields_file_LAP_COUNT(FILE* buffer);
 
 
 
@@ -974,8 +974,8 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -989,10 +989,9 @@ void secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* me
         message->ang_rate_x,
         message->ang_rate_y,
         message->ang_rate_z
-    );
-}
-void secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IMU_ANGULAR_RATE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1000,10 +999,9 @@ void secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
         "ang_rate_z"
-    );
-}
-void secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1017,10 +1015,9 @@ void secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RAT
         message->ang_rate_x,
         message->ang_rate_y,
         message->ang_rate_z
-    );
-}
-void secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1028,8 +1025,7 @@ void secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
         "ang_rate_z"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1080,8 +1076,8 @@ void secondary_deserialize_IMU_ACCELERATION(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1095,10 +1091,9 @@ void secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* me
         message->accel_x,
         message->accel_y,
         message->accel_z
-    );
-}
-void secondary_fields_IMU_ACCELERATION(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IMU_ACCELERATION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1106,10 +1101,9 @@ void secondary_fields_IMU_ACCELERATION(char* buffer) {
         "accel_x" CANLIB_SEPARATOR 
         "accel_y" CANLIB_SEPARATOR 
         "accel_z"
-    );
-}
-void secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1123,10 +1117,9 @@ void secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATIO
         message->accel_x,
         message->accel_y,
         message->accel_z
-    );
-}
-void secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1134,8 +1127,7 @@ void secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
         "accel_x" CANLIB_SEPARATOR 
         "accel_y" CANLIB_SEPARATOR 
         "accel_z"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1192,8 +1184,8 @@ void secondary_deserialize_IRTS_FL_0(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1209,10 +1201,9 @@ void secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* b
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_IRTS_FL_0(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FL_0(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1221,10 +1212,9 @@ void secondary_fields_IRTS_FL_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
-void secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1240,10 +1230,9 @@ void secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FI
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_file_IRTS_FL_0(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FL_0(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1252,8 +1241,7 @@ void secondary_fields_file_IRTS_FL_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1310,8 +1298,8 @@ void secondary_deserialize_IRTS_FL_1(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1327,10 +1315,9 @@ void secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* b
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_IRTS_FL_1(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FL_1(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1339,10 +1326,9 @@ void secondary_fields_IRTS_FL_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
-void secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1358,10 +1344,9 @@ void secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FI
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_file_IRTS_FL_1(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FL_1(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1370,8 +1355,7 @@ void secondary_fields_file_IRTS_FL_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1428,8 +1412,8 @@ void secondary_deserialize_IRTS_FL_2(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1445,10 +1429,9 @@ void secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* b
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_IRTS_FL_2(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FL_2(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1457,10 +1440,9 @@ void secondary_fields_IRTS_FL_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
-void secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1476,10 +1458,9 @@ void secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FI
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_file_IRTS_FL_2(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FL_2(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1488,8 +1469,7 @@ void secondary_fields_file_IRTS_FL_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1546,8 +1526,8 @@ void secondary_deserialize_IRTS_FL_3(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1563,10 +1543,9 @@ void secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* b
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_IRTS_FL_3(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FL_3(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1575,10 +1554,9 @@ void secondary_fields_IRTS_FL_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
-void secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1594,10 +1572,9 @@ void secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FI
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_file_IRTS_FL_3(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FL_3(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1606,8 +1583,7 @@ void secondary_fields_file_IRTS_FL_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1664,8 +1640,8 @@ void secondary_deserialize_IRTS_FR_0(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1681,10 +1657,9 @@ void secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* b
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_IRTS_FR_0(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FR_0(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1693,10 +1668,9 @@ void secondary_fields_IRTS_FR_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
-void secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1712,10 +1686,9 @@ void secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FI
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_file_IRTS_FR_0(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FR_0(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1724,8 +1697,7 @@ void secondary_fields_file_IRTS_FR_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1782,8 +1754,8 @@ void secondary_deserialize_IRTS_FR_1(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1799,10 +1771,9 @@ void secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* b
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_IRTS_FR_1(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FR_1(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1811,10 +1782,9 @@ void secondary_fields_IRTS_FR_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
-void secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1830,10 +1800,9 @@ void secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FI
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_file_IRTS_FR_1(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FR_1(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1842,8 +1811,7 @@ void secondary_fields_file_IRTS_FR_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1900,8 +1868,8 @@ void secondary_deserialize_IRTS_FR_2(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1917,10 +1885,9 @@ void secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* b
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_IRTS_FR_2(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FR_2(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1929,10 +1896,9 @@ void secondary_fields_IRTS_FR_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
-void secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1948,10 +1914,9 @@ void secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FI
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_file_IRTS_FR_2(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FR_2(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -1960,8 +1925,7 @@ void secondary_fields_file_IRTS_FR_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2018,8 +1982,8 @@ void secondary_deserialize_IRTS_FR_3(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2035,10 +1999,9 @@ void secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* b
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_IRTS_FR_3(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_FR_3(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2047,10 +2010,9 @@ void secondary_fields_IRTS_FR_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
-void secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2066,10 +2028,9 @@ void secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FI
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_file_IRTS_FR_3(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_FR_3(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2078,8 +2039,7 @@ void secondary_fields_file_IRTS_FR_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2136,8 +2096,8 @@ void secondary_deserialize_IRTS_RL_0(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2153,10 +2113,9 @@ void secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* b
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_IRTS_RL_0(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RL_0(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2165,10 +2124,9 @@ void secondary_fields_IRTS_RL_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
-void secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2184,10 +2142,9 @@ void secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FI
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_file_IRTS_RL_0(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RL_0(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2196,8 +2153,7 @@ void secondary_fields_file_IRTS_RL_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2254,8 +2210,8 @@ void secondary_deserialize_IRTS_RL_1(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2271,10 +2227,9 @@ void secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* b
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_IRTS_RL_1(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RL_1(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2283,10 +2238,9 @@ void secondary_fields_IRTS_RL_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
-void secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2302,10 +2256,9 @@ void secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FI
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_file_IRTS_RL_1(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RL_1(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2314,8 +2267,7 @@ void secondary_fields_file_IRTS_RL_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2372,8 +2324,8 @@ void secondary_deserialize_IRTS_RL_2(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2389,10 +2341,9 @@ void secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* b
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_IRTS_RL_2(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RL_2(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2401,10 +2352,9 @@ void secondary_fields_IRTS_RL_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
-void secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2420,10 +2370,9 @@ void secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FI
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_file_IRTS_RL_2(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RL_2(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2432,8 +2381,7 @@ void secondary_fields_file_IRTS_RL_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2490,8 +2438,8 @@ void secondary_deserialize_IRTS_RL_3(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2507,10 +2455,9 @@ void secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* b
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_IRTS_RL_3(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RL_3(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2519,10 +2466,9 @@ void secondary_fields_IRTS_RL_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
-void secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2538,10 +2484,9 @@ void secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FI
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_file_IRTS_RL_3(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RL_3(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2550,8 +2495,7 @@ void secondary_fields_file_IRTS_RL_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2608,8 +2552,8 @@ void secondary_deserialize_IRTS_RR_0(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2625,10 +2569,9 @@ void secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* b
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_IRTS_RR_0(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RR_0(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2637,10 +2580,9 @@ void secondary_fields_IRTS_RR_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
-void secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2656,10 +2598,9 @@ void secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FI
         message->channel2,
         message->channel3,
         message->channel4
-    );
-}
-void secondary_fields_file_IRTS_RR_0(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RR_0(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2668,8 +2609,7 @@ void secondary_fields_file_IRTS_RR_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2726,8 +2666,8 @@ void secondary_deserialize_IRTS_RR_1(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2743,10 +2683,9 @@ void secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* b
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_IRTS_RR_1(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RR_1(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2755,10 +2694,9 @@ void secondary_fields_IRTS_RR_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
-void secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2774,10 +2712,9 @@ void secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FI
         message->channel6,
         message->channel7,
         message->channel8
-    );
-}
-void secondary_fields_file_IRTS_RR_1(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RR_1(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2786,8 +2723,7 @@ void secondary_fields_file_IRTS_RR_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2844,8 +2780,8 @@ void secondary_deserialize_IRTS_RR_2(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2861,10 +2797,9 @@ void secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* b
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_IRTS_RR_2(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RR_2(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2873,10 +2808,9 @@ void secondary_fields_IRTS_RR_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
-void secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2892,10 +2826,9 @@ void secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FI
         message->channel10,
         message->channel11,
         message->channel12
-    );
-}
-void secondary_fields_file_IRTS_RR_2(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RR_2(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2904,8 +2837,7 @@ void secondary_fields_file_IRTS_RR_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2962,8 +2894,8 @@ void secondary_deserialize_IRTS_RR_3(
 
 // ============== STRING ============== //
 
-void secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* buffer) {
-    sprintf(
+int secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2979,10 +2911,9 @@ void secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* b
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_IRTS_RR_3(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_IRTS_RR_3(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2991,10 +2922,9 @@ void secondary_fields_IRTS_RR_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
-void secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3010,10 +2940,9 @@ void secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FI
         message->channel14,
         message->channel15,
         message->channel16
-    );
-}
-void secondary_fields_file_IRTS_RR_3(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_IRTS_RR_3(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3022,8 +2951,7 @@ void secondary_fields_file_IRTS_RR_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3076,8 +3004,8 @@ void secondary_deserialize_GPS_COORDS(
 
 // ============== STRING ============== //
 
-void secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char* buffer) {
-    sprintf(
+int secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3089,20 +3017,18 @@ void secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char*
 #endif // CANLIB_TIMESTAMP
         message->latitude,
         message->longitude
-    );
-}
-void secondary_fields_GPS_COORDS(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_GPS_COORDS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "latitude" CANLIB_SEPARATOR 
         "longitude"
-    );
-}
-void secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3114,18 +3040,16 @@ void secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, 
 #endif // CANLIB_TIMESTAMP
         message->latitude,
         message->longitude
-    );
-}
-void secondary_fields_file_GPS_COORDS(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_GPS_COORDS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "latitude" CANLIB_SEPARATOR 
         "longitude"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3164,8 +3088,8 @@ void secondary_deserialize_GPS_SPEED(
 
 // ============== STRING ============== //
 
-void secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* buffer) {
-    sprintf(
+int secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3175,19 +3099,17 @@ void secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* b
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->speed
-    );
-}
-void secondary_fields_GPS_SPEED(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_GPS_SPEED(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "speed"
-    );
-}
-void secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3197,17 +3119,15 @@ void secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FI
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->speed
-    );
-}
-void secondary_fields_file_GPS_SPEED(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_GPS_SPEED(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "speed"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3254,8 +3174,8 @@ void secondary_deserialize_LAP_COUNT(
 
 // ============== STRING ============== //
 
-void secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* buffer) {
-    sprintf(
+int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3267,20 +3187,18 @@ void secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* b
 #endif // CANLIB_TIMESTAMP
         message->timestamp,
         message->lap_count
-    );
-}
-void secondary_fields_LAP_COUNT(char* buffer) {
-    sprintf(
+    );}
+int secondary_fields_LAP_COUNT(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp" CANLIB_SEPARATOR 
         "lap_count"
-    );
-}
-void secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer) {
-    fprintf(
+    );}
+int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3292,18 +3210,16 @@ void secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FI
 #endif // CANLIB_TIMESTAMP
         message->timestamp,
         message->lap_count
-    );
-}
-void secondary_fields_file_LAP_COUNT(FILE* buffer) {
-    fprintf(
+    );}
+int secondary_fields_file_LAP_COUNT(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp" CANLIB_SEPARATOR 
         "lap_count"
-    );
-}
+    );}
 
 
 // ============== UTILS ============== //

@@ -85,11 +85,11 @@ typedef struct {
 // ============== FREQUENCIES ============== //
 
 
-#define bms_BOARD_STATUS_FREQUENCY -1
-#define bms_TEMPERATURES_FREQUENCY -1
-#define bms_VOLTAGES_FREQUENCY -1
-#define bms_BALANCING_FREQUENCY -1
-#define bms_FW_UPDATE_FREQUENCY -1
+#define bms_BOARD_STATUS_INTERVAL -1
+#define bms_TEMPERATURES_INTERVAL -1
+#define bms_VOLTAGES_INTERVAL -1
+#define bms_BALANCING_INTERVAL -1
+#define bms_FW_UPDATE_INTERVAL -1
 
 // ============== SIZES ============== //
 
@@ -241,10 +241,10 @@ void bms_deserialize_BOARD_STATUS(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer);
-void bms_fields_BOARD_STATUS(char* buffer);
-void bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buffer);
-void bms_fields_file_BOARD_STATUS(FILE* buffer);
+int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, uint8_t* buffer);
+int bms_fields_BOARD_STATUS(uint8_t* buffer);
+int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buffer);
+int bms_fields_file_BOARD_STATUS(FILE* buffer);
 
 
 // ============== TEMPERATURES ============== //
@@ -278,10 +278,10 @@ void bms_conversion_to_raw_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
     bms_message_TEMPERATURES* raw
 );
-void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer);
-void bms_fields_TEMPERATURES(char* buffer);
-void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer);
-void bms_fields_file_TEMPERATURES(FILE* buffer);
+int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, uint8_t* buffer);
+int bms_fields_TEMPERATURES(uint8_t* buffer);
+int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer);
+int bms_fields_file_TEMPERATURES(FILE* buffer);
 
 
 // ============== VOLTAGES ============== //
@@ -312,10 +312,10 @@ void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
     bms_message_VOLTAGES* raw
 );
-void bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer);
-void bms_fields_VOLTAGES(char* buffer);
-void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer);
-void bms_fields_file_VOLTAGES(FILE* buffer);
+int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, uint8_t* buffer);
+int bms_fields_VOLTAGES(uint8_t* buffer);
+int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer);
+int bms_fields_file_VOLTAGES(FILE* buffer);
 
 
 // ============== BALANCING ============== //
@@ -336,10 +336,10 @@ void bms_deserialize_BALANCING(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer);
-void bms_fields_BALANCING(char* buffer);
-void bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer);
-void bms_fields_file_BALANCING(FILE* buffer);
+int bms_to_string_BALANCING(bms_message_BALANCING* message, uint8_t* buffer);
+int bms_fields_BALANCING(uint8_t* buffer);
+int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer);
+int bms_fields_file_BALANCING(FILE* buffer);
 
 
 // ============== FW_UPDATE ============== //
@@ -359,10 +359,10 @@ void bms_deserialize_FW_UPDATE(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer);
-void bms_fields_FW_UPDATE(char* buffer);
-void bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer);
-void bms_fields_file_FW_UPDATE(FILE* buffer);
+int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, uint8_t* buffer);
+int bms_fields_FW_UPDATE(uint8_t* buffer);
+int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer);
+int bms_fields_file_FW_UPDATE(FILE* buffer);
 
 
 
@@ -427,8 +427,8 @@ void bms_deserialize_BOARD_STATUS(
 
 // ============== STRING ============== //
 
-void bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) {
-    sprintf(
+int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -440,20 +440,18 @@ void bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer)
 #endif // CANLIB_TIMESTAMP
         message->errors,
         message->balancing_status
-    );
-}
-void bms_fields_BOARD_STATUS(char* buffer) {
-    sprintf(
+    );}
+int bms_fields_BOARD_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
-    );
-}
-void bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -465,18 +463,16 @@ void bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* bu
 #endif // CANLIB_TIMESTAMP
         message->errors,
         message->balancing_status
-    );
-}
-void bms_fields_file_BOARD_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int bms_fields_file_BOARD_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -568,8 +564,8 @@ void bms_conversion_to_raw_TEMPERATURES(
 
 // ============== STRING ============== //
 
-void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer) {
-    sprintf(
+int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -591,10 +587,9 @@ void bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, ch
         message->temp3,
         message->temp4,
         message->temp5
-    );
-}
-void bms_fields_TEMPERATURES(char* buffer) {
-    sprintf(
+    );}
+int bms_fields_TEMPERATURES(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -606,10 +601,9 @@ void bms_fields_TEMPERATURES(char* buffer) {
         "temp3" CANLIB_SEPARATOR 
         "temp4" CANLIB_SEPARATOR 
         "temp5"
-    );
-}
-void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -631,10 +625,9 @@ void bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* messag
         message->temp3,
         message->temp4,
         message->temp5
-    );
-}
-void bms_fields_file_TEMPERATURES(FILE* buffer) {
-    fprintf(
+    );}
+int bms_fields_file_TEMPERATURES(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -646,8 +639,7 @@ void bms_fields_file_TEMPERATURES(FILE* buffer) {
         "temp3" CANLIB_SEPARATOR 
         "temp4" CANLIB_SEPARATOR 
         "temp5"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -727,8 +719,8 @@ void bms_conversion_to_raw_VOLTAGES(
 
 // ============== STRING ============== //
 
-void bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer) {
-    sprintf(
+int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -744,10 +736,9 @@ void bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buff
         message->voltage1,
         message->voltage2,
         message->start_index
-    );
-}
-void bms_fields_VOLTAGES(char* buffer) {
-    sprintf(
+    );}
+int bms_fields_VOLTAGES(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -756,10 +747,9 @@ void bms_fields_VOLTAGES(char* buffer) {
         "voltage1" CANLIB_SEPARATOR 
         "voltage2" CANLIB_SEPARATOR 
         "start_index"
-    );
-}
-void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -775,10 +765,9 @@ void bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE*
         message->voltage1,
         message->voltage2,
         message->start_index
-    );
-}
-void bms_fields_file_VOLTAGES(FILE* buffer) {
-    fprintf(
+    );}
+int bms_fields_file_VOLTAGES(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -787,8 +776,7 @@ void bms_fields_file_VOLTAGES(FILE* buffer) {
         "voltage1" CANLIB_SEPARATOR 
         "voltage2" CANLIB_SEPARATOR 
         "start_index"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -835,8 +823,8 @@ void bms_deserialize_BALANCING(
 
 // ============== STRING ============== //
 
-void bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
-    sprintf(
+int bms_to_string_BALANCING(bms_message_BALANCING* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -848,20 +836,18 @@ void bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
 #endif // CANLIB_TIMESTAMP
         message->cells,
         message->board_index
-    );
-}
-void bms_fields_BALANCING(char* buffer) {
-    sprintf(
+    );}
+int bms_fields_BALANCING(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "cells" CANLIB_SEPARATOR 
         "board_index"
-    );
-}
-void bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
-    fprintf(
+    );}
+int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -873,18 +859,16 @@ void bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) 
 #endif // CANLIB_TIMESTAMP
         message->cells,
         message->board_index
-    );
-}
-void bms_fields_file_BALANCING(FILE* buffer) {
-    fprintf(
+    );}
+int bms_fields_file_BALANCING(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "cells" CANLIB_SEPARATOR 
         "board_index"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -921,8 +905,8 @@ void bms_deserialize_FW_UPDATE(
 
 // ============== STRING ============== //
 
-void bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
-    sprintf(
+int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -932,19 +916,17 @@ void bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->board_index
-    );
-}
-void bms_fields_FW_UPDATE(char* buffer) {
-    sprintf(
+    );}
+int bms_fields_FW_UPDATE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "board_index"
-    );
-}
-void bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
-    fprintf(
+    );}
+int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -954,17 +936,15 @@ void bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->board_index
-    );
-}
-void bms_fields_file_FW_UPDATE(FILE* buffer) {
-    fprintf(
+    );}
+int bms_fields_file_FW_UPDATE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "board_index"
-    );
-}
+    );}
 
 
 // ============== UTILS ============== //

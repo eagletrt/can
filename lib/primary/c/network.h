@@ -85,40 +85,40 @@ typedef struct {
 // ============== FREQUENCIES ============== //
 
 
-#define primary_STEER_VERSION_FREQUENCY 1000
-#define primary_DAS_VERSION_FREQUENCY 1000
-#define primary_HV_VERSION_FREQUENCY 1000
-#define primary_LV_VERSION_FREQUENCY 1000
-#define primary_TLM_VERSION_FREQUENCY 1000
-#define primary_TIMESTAMP_FREQUENCY 1000
-#define primary_SET_TLM_STATUS_FREQUENCY -1
-#define primary_TLM_STATUS_FREQUENCY 1000
-#define primary_STEER_SYSTEM_STATUS_FREQUENCY 2000
-#define primary_HV_VOLTAGE_FREQUENCY 20
-#define primary_HV_CURRENT_FREQUENCY 20
-#define primary_HV_TEMP_FREQUENCY 200
-#define primary_HV_ERRORS_FREQUENCY 20
-#define primary_TS_STATUS_FREQUENCY 20
-#define primary_SET_TS_STATUS_FREQUENCY -1
-#define primary_STEER_STATUS_FREQUENCY 100
-#define primary_SET_CAR_STATUS_FREQUENCY -1
-#define primary_SET_PEDALS_RANGE_FREQUENCY -1
-#define primary_CAR_STATUS_FREQUENCY 100
-#define primary_DAS_ERRORS_FREQUENCY 20
-#define primary_LV_CURRENT_FREQUENCY 500
-#define primary_LV_VOLTAGE_FREQUENCY 200
-#define primary_LV_TOTAL_VOLTAGE_FREQUENCY 200
-#define primary_LV_TEMPERATURE_FREQUENCY 200
-#define primary_COOLING_STATUS_FREQUENCY 1000
-#define primary_MARKER_FREQUENCY -1
-#define primary_HV_CELLS_VOLTAGE_FREQUENCY 200
-#define primary_HV_CELLS_TEMP_FREQUENCY 100
-#define primary_HV_CELL_BALANCING_STATUS_FREQUENCY 500
-#define primary_SET_CELL_BALANCING_STATUS_FREQUENCY -1
-#define primary_HANDCART_STATUS_FREQUENCY 500
-#define primary_SPEED_FREQUENCY 100
-#define primary_INV_L_SET_TORQUE_FREQUENCY 20
-#define primary_INV_L_RESPONSE_FREQUENCY 100
+#define primary_STEER_VERSION_INTERVAL 1000
+#define primary_DAS_VERSION_INTERVAL 1000
+#define primary_HV_VERSION_INTERVAL 1000
+#define primary_LV_VERSION_INTERVAL 1000
+#define primary_TLM_VERSION_INTERVAL 1000
+#define primary_TIMESTAMP_INTERVAL 1000
+#define primary_SET_TLM_STATUS_INTERVAL -1
+#define primary_TLM_STATUS_INTERVAL 1000
+#define primary_STEER_SYSTEM_STATUS_INTERVAL 2000
+#define primary_HV_VOLTAGE_INTERVAL 20
+#define primary_HV_CURRENT_INTERVAL 20
+#define primary_HV_TEMP_INTERVAL 200
+#define primary_HV_ERRORS_INTERVAL 20
+#define primary_TS_STATUS_INTERVAL 20
+#define primary_SET_TS_STATUS_INTERVAL -1
+#define primary_STEER_STATUS_INTERVAL 100
+#define primary_SET_CAR_STATUS_INTERVAL -1
+#define primary_SET_PEDALS_RANGE_INTERVAL -1
+#define primary_CAR_STATUS_INTERVAL 100
+#define primary_DAS_ERRORS_INTERVAL 20
+#define primary_LV_CURRENT_INTERVAL 500
+#define primary_LV_VOLTAGE_INTERVAL 200
+#define primary_LV_TOTAL_VOLTAGE_INTERVAL 200
+#define primary_LV_TEMPERATURE_INTERVAL 200
+#define primary_COOLING_STATUS_INTERVAL 1000
+#define primary_MARKER_INTERVAL -1
+#define primary_HV_CELLS_VOLTAGE_INTERVAL 200
+#define primary_HV_CELLS_TEMP_INTERVAL 100
+#define primary_HV_CELL_BALANCING_STATUS_INTERVAL 500
+#define primary_SET_CELL_BALANCING_STATUS_INTERVAL -1
+#define primary_HANDCART_STATUS_INTERVAL 500
+#define primary_SPEED_INTERVAL 100
+#define primary_INV_L_SET_TORQUE_INTERVAL 20
+#define primary_INV_L_RESPONSE_INTERVAL 100
 
 // ============== SIZES ============== //
 
@@ -716,10 +716,10 @@ void primary_deserialize_STEER_VERSION(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, char* buffer);
-void primary_fields_STEER_VERSION(char* buffer);
-void primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message, FILE* buffer);
-void primary_fields_file_STEER_VERSION(FILE* buffer);
+int primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, uint8_t* buffer);
+int primary_fields_STEER_VERSION(uint8_t* buffer);
+int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message, FILE* buffer);
+int primary_fields_file_STEER_VERSION(FILE* buffer);
 
 
 // ============== DAS_VERSION ============== //
@@ -740,10 +740,10 @@ void primary_deserialize_DAS_VERSION(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* buffer);
-void primary_fields_DAS_VERSION(char* buffer);
-void primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FILE* buffer);
-void primary_fields_file_DAS_VERSION(FILE* buffer);
+int primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, uint8_t* buffer);
+int primary_fields_DAS_VERSION(uint8_t* buffer);
+int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FILE* buffer);
+int primary_fields_file_DAS_VERSION(FILE* buffer);
 
 
 // ============== HV_VERSION ============== //
@@ -764,10 +764,10 @@ void primary_deserialize_HV_VERSION(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buffer);
-void primary_fields_HV_VERSION(char* buffer);
-void primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE* buffer);
-void primary_fields_file_HV_VERSION(FILE* buffer);
+int primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, uint8_t* buffer);
+int primary_fields_HV_VERSION(uint8_t* buffer);
+int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE* buffer);
+int primary_fields_file_HV_VERSION(FILE* buffer);
 
 
 // ============== LV_VERSION ============== //
@@ -788,10 +788,10 @@ void primary_deserialize_LV_VERSION(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buffer);
-void primary_fields_LV_VERSION(char* buffer);
-void primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE* buffer);
-void primary_fields_file_LV_VERSION(FILE* buffer);
+int primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, uint8_t* buffer);
+int primary_fields_LV_VERSION(uint8_t* buffer);
+int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE* buffer);
+int primary_fields_file_LV_VERSION(FILE* buffer);
 
 
 // ============== TLM_VERSION ============== //
@@ -812,10 +812,10 @@ void primary_deserialize_TLM_VERSION(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* buffer);
-void primary_fields_TLM_VERSION(char* buffer);
-void primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FILE* buffer);
-void primary_fields_file_TLM_VERSION(FILE* buffer);
+int primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, uint8_t* buffer);
+int primary_fields_TLM_VERSION(uint8_t* buffer);
+int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FILE* buffer);
+int primary_fields_file_TLM_VERSION(FILE* buffer);
 
 
 // ============== TIMESTAMP ============== //
@@ -835,10 +835,10 @@ void primary_deserialize_TIMESTAMP(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffer);
-void primary_fields_TIMESTAMP(char* buffer);
-void primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer);
-void primary_fields_file_TIMESTAMP(FILE* buffer);
+int primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, uint8_t* buffer);
+int primary_fields_TIMESTAMP(uint8_t* buffer);
+int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer);
+int primary_fields_file_TIMESTAMP(FILE* buffer);
 
 
 // ============== SET_TLM_STATUS ============== //
@@ -861,10 +861,10 @@ void primary_deserialize_SET_TLM_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, char* buffer);
-void primary_fields_SET_TLM_STATUS(char* buffer);
-void primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, FILE* buffer);
-void primary_fields_file_SET_TLM_STATUS(FILE* buffer);
+int primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, uint8_t* buffer);
+int primary_fields_SET_TLM_STATUS(uint8_t* buffer);
+int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, FILE* buffer);
+int primary_fields_file_SET_TLM_STATUS(FILE* buffer);
 
 
 // ============== TLM_STATUS ============== //
@@ -887,10 +887,10 @@ void primary_deserialize_TLM_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buffer);
-void primary_fields_TLM_STATUS(char* buffer);
-void primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE* buffer);
-void primary_fields_file_TLM_STATUS(FILE* buffer);
+int primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, uint8_t* buffer);
+int primary_fields_TLM_STATUS(uint8_t* buffer);
+int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE* buffer);
+int primary_fields_file_TLM_STATUS(FILE* buffer);
 
 
 // ============== STEER_SYSTEM_STATUS ============== //
@@ -910,10 +910,10 @@ void primary_deserialize_STEER_SYSTEM_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, char* buffer);
-void primary_fields_STEER_SYSTEM_STATUS(char* buffer);
-void primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, FILE* buffer);
-void primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer);
+int primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, uint8_t* buffer);
+int primary_fields_STEER_SYSTEM_STATUS(uint8_t* buffer);
+int primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, FILE* buffer);
+int primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer);
 
 
 // ============== HV_VOLTAGE ============== //
@@ -944,10 +944,10 @@ void primary_conversion_to_raw_HV_VOLTAGE(
     primary_message_HV_VOLTAGE_conversion* conversion,
     primary_message_HV_VOLTAGE* raw
 );
-void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer);
-void primary_fields_HV_VOLTAGE(char* buffer);
-void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer);
-void primary_fields_file_HV_VOLTAGE(FILE* buffer);
+int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, uint8_t* buffer);
+int primary_fields_HV_VOLTAGE(uint8_t* buffer);
+int primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer);
+int primary_fields_file_HV_VOLTAGE(FILE* buffer);
 
 
 // ============== HV_CURRENT ============== //
@@ -976,10 +976,10 @@ void primary_conversion_to_raw_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
     primary_message_HV_CURRENT* raw
 );
-void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer);
-void primary_fields_HV_CURRENT(char* buffer);
-void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer);
-void primary_fields_file_HV_CURRENT(FILE* buffer);
+int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, uint8_t* buffer);
+int primary_fields_HV_CURRENT(uint8_t* buffer);
+int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer);
+int primary_fields_file_HV_CURRENT(FILE* buffer);
 
 
 // ============== HV_TEMP ============== //
@@ -1009,10 +1009,10 @@ void primary_conversion_to_raw_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
     primary_message_HV_TEMP* raw
 );
-void primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer);
-void primary_fields_HV_TEMP(char* buffer);
-void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer);
-void primary_fields_file_HV_TEMP(FILE* buffer);
+int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, uint8_t* buffer);
+int primary_fields_HV_TEMP(uint8_t* buffer);
+int primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer);
+int primary_fields_file_HV_TEMP(FILE* buffer);
 
 
 // ============== HV_ERRORS ============== //
@@ -1033,10 +1033,10 @@ void primary_deserialize_HV_ERRORS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffer);
-void primary_fields_HV_ERRORS(char* buffer);
-void primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer);
-void primary_fields_file_HV_ERRORS(FILE* buffer);
+int primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, uint8_t* buffer);
+int primary_fields_HV_ERRORS(uint8_t* buffer);
+int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer);
+int primary_fields_file_HV_ERRORS(FILE* buffer);
 
 
 // ============== TS_STATUS ============== //
@@ -1056,10 +1056,10 @@ void primary_deserialize_TS_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer);
-void primary_fields_TS_STATUS(char* buffer);
-void primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer);
-void primary_fields_file_TS_STATUS(FILE* buffer);
+int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, uint8_t* buffer);
+int primary_fields_TS_STATUS(uint8_t* buffer);
+int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer);
+int primary_fields_file_TS_STATUS(FILE* buffer);
 
 
 // ============== SET_TS_STATUS ============== //
@@ -1079,10 +1079,10 @@ void primary_deserialize_SET_TS_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char* buffer);
-void primary_fields_SET_TS_STATUS(char* buffer);
-void primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer);
-void primary_fields_file_SET_TS_STATUS(FILE* buffer);
+int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, uint8_t* buffer);
+int primary_fields_SET_TS_STATUS(uint8_t* buffer);
+int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer);
+int primary_fields_file_SET_TS_STATUS(FILE* buffer);
 
 
 // ============== STEER_STATUS ============== //
@@ -1103,10 +1103,10 @@ void primary_deserialize_STEER_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* buffer);
-void primary_fields_STEER_STATUS(char* buffer);
-void primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, FILE* buffer);
-void primary_fields_file_STEER_STATUS(FILE* buffer);
+int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, uint8_t* buffer);
+int primary_fields_STEER_STATUS(uint8_t* buffer);
+int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, FILE* buffer);
+int primary_fields_file_STEER_STATUS(FILE* buffer);
 
 
 // ============== SET_CAR_STATUS ============== //
@@ -1126,10 +1126,10 @@ void primary_deserialize_SET_CAR_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, char* buffer);
-void primary_fields_SET_CAR_STATUS(char* buffer);
-void primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, FILE* buffer);
-void primary_fields_file_SET_CAR_STATUS(FILE* buffer);
+int primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, uint8_t* buffer);
+int primary_fields_SET_CAR_STATUS(uint8_t* buffer);
+int primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, FILE* buffer);
+int primary_fields_file_SET_CAR_STATUS(FILE* buffer);
 
 
 // ============== SET_PEDALS_RANGE ============== //
@@ -1150,10 +1150,10 @@ void primary_deserialize_SET_PEDALS_RANGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, char* buffer);
-void primary_fields_SET_PEDALS_RANGE(char* buffer);
-void primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer);
-void primary_fields_file_SET_PEDALS_RANGE(FILE* buffer);
+int primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, uint8_t* buffer);
+int primary_fields_SET_PEDALS_RANGE(uint8_t* buffer);
+int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer);
+int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer);
 
 
 // ============== CAR_STATUS ============== //
@@ -1175,10 +1175,10 @@ void primary_deserialize_CAR_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buffer);
-void primary_fields_CAR_STATUS(char* buffer);
-void primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE* buffer);
-void primary_fields_file_CAR_STATUS(FILE* buffer);
+int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, uint8_t* buffer);
+int primary_fields_CAR_STATUS(uint8_t* buffer);
+int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE* buffer);
+int primary_fields_file_CAR_STATUS(FILE* buffer);
 
 
 // ============== DAS_ERRORS ============== //
@@ -1198,10 +1198,10 @@ void primary_deserialize_DAS_ERRORS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buffer);
-void primary_fields_DAS_ERRORS(char* buffer);
-void primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE* buffer);
-void primary_fields_file_DAS_ERRORS(FILE* buffer);
+int primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, uint8_t* buffer);
+int primary_fields_DAS_ERRORS(uint8_t* buffer);
+int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE* buffer);
+int primary_fields_file_DAS_ERRORS(FILE* buffer);
 
 
 // ============== LV_CURRENT ============== //
@@ -1221,10 +1221,10 @@ void primary_deserialize_LV_CURRENT(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_LV_CURRENT(primary_message_LV_CURRENT* message, char* buffer);
-void primary_fields_LV_CURRENT(char* buffer);
-void primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT* message, FILE* buffer);
-void primary_fields_file_LV_CURRENT(FILE* buffer);
+int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT* message, uint8_t* buffer);
+int primary_fields_LV_CURRENT(uint8_t* buffer);
+int primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT* message, FILE* buffer);
+int primary_fields_file_LV_CURRENT(FILE* buffer);
 
 
 // ============== LV_VOLTAGE ============== //
@@ -1247,10 +1247,10 @@ void primary_deserialize_LV_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, char* buffer);
-void primary_fields_LV_VOLTAGE(char* buffer);
-void primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, FILE* buffer);
-void primary_fields_file_LV_VOLTAGE(FILE* buffer);
+int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, uint8_t* buffer);
+int primary_fields_LV_VOLTAGE(uint8_t* buffer);
+int primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, FILE* buffer);
+int primary_fields_file_LV_VOLTAGE(FILE* buffer);
 
 
 // ============== LV_TOTAL_VOLTAGE ============== //
@@ -1270,10 +1270,10 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, char* buffer);
-void primary_fields_LV_TOTAL_VOLTAGE(char* buffer);
-void primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, FILE* buffer);
-void primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer);
+int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, uint8_t* buffer);
+int primary_fields_LV_TOTAL_VOLTAGE(uint8_t* buffer);
+int primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, FILE* buffer);
+int primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer);
 
 
 // ============== LV_TEMPERATURE ============== //
@@ -1294,10 +1294,10 @@ void primary_deserialize_LV_TEMPERATURE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, char* buffer);
-void primary_fields_LV_TEMPERATURE(char* buffer);
-void primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, FILE* buffer);
-void primary_fields_file_LV_TEMPERATURE(FILE* buffer);
+int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, uint8_t* buffer);
+int primary_fields_LV_TEMPERATURE(uint8_t* buffer);
+int primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, FILE* buffer);
+int primary_fields_file_LV_TEMPERATURE(FILE* buffer);
 
 
 // ============== COOLING_STATUS ============== //
@@ -1319,10 +1319,10 @@ void primary_deserialize_COOLING_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS* message, char* buffer);
-void primary_fields_COOLING_STATUS(char* buffer);
-void primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS* message, FILE* buffer);
-void primary_fields_file_COOLING_STATUS(FILE* buffer);
+int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS* message, uint8_t* buffer);
+int primary_fields_COOLING_STATUS(uint8_t* buffer);
+int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS* message, FILE* buffer);
+int primary_fields_file_COOLING_STATUS(FILE* buffer);
 
 
 // ============== MARKER ============== //
@@ -1341,10 +1341,10 @@ void primary_deserialize_MARKER(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_MARKER(primary_message_MARKER* message, char* buffer);
-void primary_fields_MARKER(char* buffer);
-void primary_to_string_file_MARKER(primary_message_MARKER* message, FILE* buffer);
-void primary_fields_file_MARKER(FILE* buffer);
+int primary_to_string_MARKER(primary_message_MARKER* message, uint8_t* buffer);
+int primary_fields_MARKER(uint8_t* buffer);
+int primary_to_string_file_MARKER(primary_message_MARKER* message, FILE* buffer);
+int primary_fields_file_MARKER(FILE* buffer);
 
 
 // ============== HV_CELLS_VOLTAGE ============== //
@@ -1375,10 +1375,10 @@ void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
     primary_message_HV_CELLS_VOLTAGE* raw
 );
-void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer);
-void primary_fields_HV_CELLS_VOLTAGE(char* buffer);
-void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer);
-void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer);
+int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, uint8_t* buffer);
+int primary_fields_HV_CELLS_VOLTAGE(uint8_t* buffer);
+int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer);
+int primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer);
 
 
 // ============== HV_CELLS_TEMP ============== //
@@ -1413,10 +1413,10 @@ void primary_conversion_to_raw_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP_conversion* conversion,
     primary_message_HV_CELLS_TEMP* raw
 );
-void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer);
-void primary_fields_HV_CELLS_TEMP(char* buffer);
-void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer);
-void primary_fields_file_HV_CELLS_TEMP(FILE* buffer);
+int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, uint8_t* buffer);
+int primary_fields_HV_CELLS_TEMP(uint8_t* buffer);
+int primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer);
+int primary_fields_file_HV_CELLS_TEMP(FILE* buffer);
 
 
 // ============== HV_CELL_BALANCING_STATUS ============== //
@@ -1436,10 +1436,10 @@ void primary_deserialize_HV_CELL_BALANCING_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, char* buffer);
-void primary_fields_HV_CELL_BALANCING_STATUS(char* buffer);
-void primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, FILE* buffer);
-void primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer);
+int primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, uint8_t* buffer);
+int primary_fields_HV_CELL_BALANCING_STATUS(uint8_t* buffer);
+int primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, FILE* buffer);
+int primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer);
 
 
 // ============== SET_CELL_BALANCING_STATUS ============== //
@@ -1459,10 +1459,10 @@ void primary_deserialize_SET_CELL_BALANCING_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, char* buffer);
-void primary_fields_SET_CELL_BALANCING_STATUS(char* buffer);
-void primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, FILE* buffer);
-void primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer);
+int primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, uint8_t* buffer);
+int primary_fields_SET_CELL_BALANCING_STATUS(uint8_t* buffer);
+int primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, FILE* buffer);
+int primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer);
 
 
 // ============== HANDCART_STATUS ============== //
@@ -1482,10 +1482,10 @@ void primary_deserialize_HANDCART_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, char* buffer);
-void primary_fields_HANDCART_STATUS(char* buffer);
-void primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, FILE* buffer);
-void primary_fields_file_HANDCART_STATUS(FILE* buffer);
+int primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, uint8_t* buffer);
+int primary_fields_HANDCART_STATUS(uint8_t* buffer);
+int primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, FILE* buffer);
+int primary_fields_file_HANDCART_STATUS(FILE* buffer);
 
 
 // ============== SPEED ============== //
@@ -1508,10 +1508,10 @@ void primary_deserialize_SPEED(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_SPEED(primary_message_SPEED* message, char* buffer);
-void primary_fields_SPEED(char* buffer);
-void primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer);
-void primary_fields_file_SPEED(FILE* buffer);
+int primary_to_string_SPEED(primary_message_SPEED* message, uint8_t* buffer);
+int primary_fields_SPEED(uint8_t* buffer);
+int primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer);
+int primary_fields_file_SPEED(FILE* buffer);
 
 
 // ============== INV_L_SET_TORQUE ============== //
@@ -1533,10 +1533,10 @@ void primary_deserialize_INV_L_SET_TORQUE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, char* buffer);
-void primary_fields_INV_L_SET_TORQUE(char* buffer);
-void primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer);
-void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer);
+int primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, uint8_t* buffer);
+int primary_fields_INV_L_SET_TORQUE(uint8_t* buffer);
+int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer);
+int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer);
 
 
 // ============== INV_L_RESPONSE ============== //
@@ -1563,10 +1563,10 @@ void primary_deserialize_INV_L_RESPONSE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, char* buffer);
-void primary_fields_INV_L_RESPONSE(char* buffer);
-void primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer);
-void primary_fields_file_INV_L_RESPONSE(FILE* buffer);
+int primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, uint8_t* buffer);
+int primary_fields_INV_L_RESPONSE(uint8_t* buffer);
+int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer);
+int primary_fields_file_INV_L_RESPONSE(FILE* buffer);
 
 
 
@@ -1629,8 +1629,8 @@ void primary_deserialize_STEER_VERSION(
 
 // ============== STRING ============== //
 
-void primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, char* buffer) {
-    sprintf(
+int primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1642,20 +1642,18 @@ void primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, cha
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_STEER_VERSION(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_STEER_VERSION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
-void primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1667,18 +1665,16 @@ void primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_file_STEER_VERSION(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_STEER_VERSION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1719,8 +1715,8 @@ void primary_deserialize_DAS_VERSION(
 
 // ============== STRING ============== //
 
-void primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* buffer) {
-    sprintf(
+int primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1732,20 +1728,18 @@ void primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* b
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_DAS_VERSION(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_DAS_VERSION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
-void primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1757,18 +1751,16 @@ void primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FI
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_file_DAS_VERSION(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_DAS_VERSION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1809,8 +1801,8 @@ void primary_deserialize_HV_VERSION(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1822,20 +1814,18 @@ void primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buf
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_HV_VERSION(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_VERSION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
-void primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1847,18 +1837,16 @@ void primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_file_HV_VERSION(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_VERSION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1899,8 +1887,8 @@ void primary_deserialize_LV_VERSION(
 
 // ============== STRING ============== //
 
-void primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buffer) {
-    sprintf(
+int primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1912,20 +1900,18 @@ void primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buf
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_LV_VERSION(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_LV_VERSION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
-void primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -1937,18 +1923,16 @@ void primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_file_LV_VERSION(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_LV_VERSION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -1989,8 +1973,8 @@ void primary_deserialize_TLM_VERSION(
 
 // ============== STRING ============== //
 
-void primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* buffer) {
-    sprintf(
+int primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2002,20 +1986,18 @@ void primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* b
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_TLM_VERSION(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_TLM_VERSION(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
-void primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2027,18 +2009,16 @@ void primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FI
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );
-}
-void primary_fields_file_TLM_VERSION(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_TLM_VERSION(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2081,8 +2061,8 @@ void primary_deserialize_TIMESTAMP(
 
 // ============== STRING ============== //
 
-void primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffer) {
-    sprintf(
+int primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2092,19 +2072,17 @@ void primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffe
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->timestamp
-    );
-}
-void primary_fields_TIMESTAMP(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_TIMESTAMP(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp"
-    );
-}
-void primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2114,17 +2092,15 @@ void primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->timestamp
-    );
-}
-void primary_fields_file_TIMESTAMP(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_TIMESTAMP(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2171,8 +2147,8 @@ void primary_deserialize_SET_TLM_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2188,10 +2164,9 @@ void primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, c
         message->circuit,
         message->race_type,
         message->tlm_status
-    );
-}
-void primary_fields_SET_TLM_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SET_TLM_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2200,10 +2175,9 @@ void primary_fields_SET_TLM_STATUS(char* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );
-}
-void primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2219,10 +2193,9 @@ void primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* messa
         message->circuit,
         message->race_type,
         message->tlm_status
-    );
-}
-void primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2231,8 +2204,7 @@ void primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2279,8 +2251,8 @@ void primary_deserialize_TLM_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2296,10 +2268,9 @@ void primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buf
         message->circuit,
         message->race_type,
         message->tlm_status
-    );
-}
-void primary_fields_TLM_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_TLM_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2308,10 +2279,9 @@ void primary_fields_TLM_STATUS(char* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );
-}
-void primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2327,10 +2297,9 @@ void primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE
         message->circuit,
         message->race_type,
         message->tlm_status
-    );
-}
-void primary_fields_file_TLM_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_TLM_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2339,8 +2308,7 @@ void primary_fields_file_TLM_STATUS(FILE* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2377,8 +2345,8 @@ void primary_deserialize_STEER_SYSTEM_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2388,19 +2356,17 @@ void primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->soc_temp
-    );
-}
-void primary_fields_STEER_SYSTEM_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_STEER_SYSTEM_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "soc_temp"
-    );
-}
-void primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2410,17 +2376,15 @@ void primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STA
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->soc_temp
-    );
-}
-void primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "soc_temp"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2502,8 +2466,8 @@ void primary_conversion_to_raw_HV_VOLTAGE(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2519,10 +2483,9 @@ void primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message
         message->bus_voltage,
         message->max_cell_voltage,
         message->min_cell_voltage
-    );
-}
-void primary_fields_HV_VOLTAGE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_VOLTAGE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2531,10 +2494,9 @@ void primary_fields_HV_VOLTAGE(char* buffer) {
         "bus_voltage" CANLIB_SEPARATOR 
         "max_cell_voltage" CANLIB_SEPARATOR 
         "min_cell_voltage"
-    );
-}
-void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2550,10 +2512,9 @@ void primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* me
         message->bus_voltage,
         message->max_cell_voltage,
         message->min_cell_voltage
-    );
-}
-void primary_fields_file_HV_VOLTAGE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_VOLTAGE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2562,8 +2523,7 @@ void primary_fields_file_HV_VOLTAGE(FILE* buffer) {
         "bus_voltage" CANLIB_SEPARATOR 
         "max_cell_voltage" CANLIB_SEPARATOR 
         "min_cell_voltage"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2629,8 +2589,8 @@ void primary_conversion_to_raw_HV_CURRENT(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2642,20 +2602,18 @@ void primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message
 #endif // CANLIB_TIMESTAMP
         message->current,
         message->power
-    );
-}
-void primary_fields_HV_CURRENT(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_CURRENT(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
         "power"
-    );
-}
-void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2667,18 +2625,16 @@ void primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* me
 #endif // CANLIB_TIMESTAMP
         message->current,
         message->power
-    );
-}
-void primary_fields_file_HV_CURRENT(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_CURRENT(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
         "power"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2752,8 +2708,8 @@ void primary_conversion_to_raw_HV_TEMP(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2767,10 +2723,9 @@ void primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char
         message->average_temp,
         message->max_temp,
         message->min_temp
-    );
-}
-void primary_fields_HV_TEMP(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_TEMP(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2778,10 +2733,9 @@ void primary_fields_HV_TEMP(char* buffer) {
         "average_temp" CANLIB_SEPARATOR 
         "max_temp" CANLIB_SEPARATOR 
         "min_temp"
-    );
-}
-void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2795,10 +2749,9 @@ void primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message,
         message->average_temp,
         message->max_temp,
         message->min_temp
-    );
-}
-void primary_fields_file_HV_TEMP(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_TEMP(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -2806,8 +2759,7 @@ void primary_fields_file_HV_TEMP(FILE* buffer) {
         "average_temp" CANLIB_SEPARATOR 
         "max_temp" CANLIB_SEPARATOR 
         "min_temp"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2852,8 +2804,8 @@ void primary_deserialize_HV_ERRORS(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2865,20 +2817,18 @@ void primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffe
 #endif // CANLIB_TIMESTAMP
         message->warnings,
         message->errors
-    );
-}
-void primary_fields_HV_ERRORS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_ERRORS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "warnings" CANLIB_SEPARATOR 
         "errors"
-    );
-}
-void primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2890,18 +2840,16 @@ void primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* 
 #endif // CANLIB_TIMESTAMP
         message->warnings,
         message->errors
-    );
-}
-void primary_fields_file_HV_ERRORS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_ERRORS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "warnings" CANLIB_SEPARATOR 
         "errors"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -2938,8 +2886,8 @@ void primary_deserialize_TS_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2949,19 +2897,17 @@ void primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffe
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status
-    );
-}
-void primary_fields_TS_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_TS_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status"
-    );
-}
-void primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -2971,17 +2917,15 @@ void primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status
-    );
-}
-void primary_fields_file_TS_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_TS_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3018,8 +2962,8 @@ void primary_deserialize_SET_TS_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3029,19 +2973,17 @@ void primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, cha
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status_set
-    );
-}
-void primary_fields_SET_TS_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SET_TS_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status_set"
-    );
-}
-void primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3051,17 +2993,15 @@ void primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status_set
-    );
-}
-void primary_fields_file_SET_TS_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status_set"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3100,8 +3040,8 @@ void primary_deserialize_STEER_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3113,20 +3053,18 @@ void primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char*
 #endif // CANLIB_TIMESTAMP
         message->map,
         message->traction_control
-    );
-}
-void primary_fields_STEER_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_STEER_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "map" CANLIB_SEPARATOR 
         "traction_control"
-    );
-}
-void primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3138,18 +3076,16 @@ void primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, 
 #endif // CANLIB_TIMESTAMP
         message->map,
         message->traction_control
-    );
-}
-void primary_fields_file_STEER_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_STEER_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "map" CANLIB_SEPARATOR 
         "traction_control"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3186,8 +3122,8 @@ void primary_deserialize_SET_CAR_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3197,19 +3133,17 @@ void primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, c
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_status_set
-    );
-}
-void primary_fields_SET_CAR_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SET_CAR_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_status_set"
-    );
-}
-void primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3219,17 +3153,15 @@ void primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* messa
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_status_set
-    );
-}
-void primary_fields_file_SET_CAR_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SET_CAR_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_status_set"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3268,8 +3200,8 @@ void primary_deserialize_SET_PEDALS_RANGE(
 
 // ============== STRING ============== //
 
-void primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, char* buffer) {
-    sprintf(
+int primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3281,20 +3213,18 @@ void primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* messag
 #endif // CANLIB_TIMESTAMP
         message->bound,
         message->pedal
-    );
-}
-void primary_fields_SET_PEDALS_RANGE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SET_PEDALS_RANGE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bound" CANLIB_SEPARATOR 
         "pedal"
-    );
-}
-void primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3306,18 +3236,16 @@ void primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* m
 #endif // CANLIB_TIMESTAMP
         message->bound,
         message->pedal
-    );
-}
-void primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bound" CANLIB_SEPARATOR 
         "pedal"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3358,8 +3286,8 @@ void primary_deserialize_CAR_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3373,10 +3301,9 @@ void primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buf
         message->inverter_l,
         message->inverter_r,
         message->car_status
-    );
-}
-void primary_fields_CAR_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_CAR_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3384,10 +3311,9 @@ void primary_fields_CAR_STATUS(char* buffer) {
         "inverter_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "car_status"
-    );
-}
-void primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3401,10 +3327,9 @@ void primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE
         message->inverter_l,
         message->inverter_r,
         message->car_status
-    );
-}
-void primary_fields_file_CAR_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_CAR_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3412,8 +3337,7 @@ void primary_fields_file_CAR_STATUS(FILE* buffer) {
         "inverter_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "car_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3450,8 +3374,8 @@ void primary_deserialize_DAS_ERRORS(
 
 // ============== STRING ============== //
 
-void primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buffer) {
-    sprintf(
+int primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3461,19 +3385,17 @@ void primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buf
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->das_error
-    );
-}
-void primary_fields_DAS_ERRORS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_DAS_ERRORS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "das_error"
-    );
-}
-void primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3483,17 +3405,15 @@ void primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->das_error
-    );
-}
-void primary_fields_file_DAS_ERRORS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_DAS_ERRORS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "das_error"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3530,8 +3450,8 @@ void primary_deserialize_LV_CURRENT(
 
 // ============== STRING ============== //
 
-void primary_to_string_LV_CURRENT(primary_message_LV_CURRENT* message, char* buffer) {
-    sprintf(
+int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3541,19 +3461,17 @@ void primary_to_string_LV_CURRENT(primary_message_LV_CURRENT* message, char* buf
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current
-    );
-}
-void primary_fields_LV_CURRENT(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_LV_CURRENT(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current"
-    );
-}
-void primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3563,17 +3481,15 @@ void primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT* message, FILE
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current
-    );
-}
-void primary_fields_file_LV_CURRENT(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_LV_CURRENT(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3622,8 +3538,8 @@ void primary_deserialize_LV_VOLTAGE(
 
 // ============== STRING ============== //
 
-void primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, char* buffer) {
-    sprintf(
+int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3639,10 +3555,9 @@ void primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, char* buf
         message->voltage_2,
         message->voltage_3,
         message->voltage_4
-    );
-}
-void primary_fields_LV_VOLTAGE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_LV_VOLTAGE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3651,10 +3566,9 @@ void primary_fields_LV_VOLTAGE(char* buffer) {
         "voltage_2" CANLIB_SEPARATOR 
         "voltage_3" CANLIB_SEPARATOR 
         "voltage_4"
-    );
-}
-void primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3670,10 +3584,9 @@ void primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE* message, FILE
         message->voltage_2,
         message->voltage_3,
         message->voltage_4
-    );
-}
-void primary_fields_file_LV_VOLTAGE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_LV_VOLTAGE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3682,8 +3595,7 @@ void primary_fields_file_LV_VOLTAGE(FILE* buffer) {
         "voltage_2" CANLIB_SEPARATOR 
         "voltage_3" CANLIB_SEPARATOR 
         "voltage_4"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3722,8 +3634,8 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
 
 // ============== STRING ============== //
 
-void primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, char* buffer) {
-    sprintf(
+int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3733,19 +3645,17 @@ void primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* messag
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->total_voltage
-    );
-}
-void primary_fields_LV_TOTAL_VOLTAGE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_LV_TOTAL_VOLTAGE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "total_voltage"
-    );
-}
-void primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3755,17 +3665,15 @@ void primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE* m
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->total_voltage
-    );
-}
-void primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "total_voltage"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3806,8 +3714,8 @@ void primary_deserialize_LV_TEMPERATURE(
 
 // ============== STRING ============== //
 
-void primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, char* buffer) {
-    sprintf(
+int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3819,20 +3727,18 @@ void primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, c
 #endif // CANLIB_TIMESTAMP
         message->bp_temperature,
         message->dcdc_temperature
-    );
-}
-void primary_fields_LV_TEMPERATURE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_LV_TEMPERATURE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bp_temperature" CANLIB_SEPARATOR 
         "dcdc_temperature"
-    );
-}
-void primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3844,18 +3750,16 @@ void primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE* messa
 #endif // CANLIB_TIMESTAMP
         message->bp_temperature,
         message->dcdc_temperature
-    );
-}
-void primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bp_temperature" CANLIB_SEPARATOR 
         "dcdc_temperature"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3900,8 +3804,8 @@ void primary_deserialize_COOLING_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3915,10 +3819,9 @@ void primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS* message, c
         message->hv_fan_speed,
         message->lv_fan_speed,
         message->pump_speed
-    );
-}
-void primary_fields_COOLING_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_COOLING_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3926,10 +3829,9 @@ void primary_fields_COOLING_STATUS(char* buffer) {
         "hv_fan_speed" CANLIB_SEPARATOR 
         "lv_fan_speed" CANLIB_SEPARATOR 
         "pump_speed"
-    );
-}
-void primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -3943,10 +3845,9 @@ void primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS* messa
         message->hv_fan_speed,
         message->lv_fan_speed,
         message->pump_speed
-    );
-}
-void primary_fields_file_COOLING_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_COOLING_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -3954,8 +3855,7 @@ void primary_fields_file_COOLING_STATUS(FILE* buffer) {
         "hv_fan_speed" CANLIB_SEPARATOR 
         "lv_fan_speed" CANLIB_SEPARATOR 
         "pump_speed"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -3988,10 +3888,18 @@ void primary_deserialize_MARKER(
 
 // ============== STRING ============== //
 
-void primary_to_string_MARKER(primary_message_MARKER* message, char* buffer) {}
-void primary_fields_MARKER(char* buffer) {}
-void primary_to_string_file_MARKER(primary_message_MARKER* message, FILE* buffer) {}
-void primary_fields_file_MARKER(FILE* buffer) {}
+int primary_to_string_MARKER(primary_message_MARKER* message, uint8_t* buffer) {
+    return 0;
+}
+int primary_fields_MARKER(uint8_t* buffer) {
+    return 0;
+}
+int primary_to_string_file_MARKER(primary_message_MARKER* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_MARKER(FILE* buffer) {
+    return 0;
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4071,8 +3979,8 @@ void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4088,10 +3996,9 @@ void primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_convers
         message->voltage_1,
         message->voltage_2,
         message->start_index
-    );
-}
-void primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_CELLS_VOLTAGE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4100,10 +4007,9 @@ void primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
         "start_index"
-    );
-}
-void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4119,10 +4025,9 @@ void primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_co
         message->voltage_1,
         message->voltage_2,
         message->start_index
-    );
-}
-void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4131,8 +4036,7 @@ void primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
         "start_index"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4230,8 +4134,8 @@ void primary_conversion_to_raw_HV_CELLS_TEMP(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4255,10 +4159,9 @@ void primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* m
         message->temp_4,
         message->temp_5,
         message->temp_6
-    );
-}
-void primary_fields_HV_CELLS_TEMP(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_CELLS_TEMP(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4271,10 +4174,9 @@ void primary_fields_HV_CELLS_TEMP(char* buffer) {
         "temp_4" CANLIB_SEPARATOR 
         "temp_5" CANLIB_SEPARATOR 
         "temp_6"
-    );
-}
-void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4298,10 +4200,9 @@ void primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversi
         message->temp_4,
         message->temp_5,
         message->temp_6
-    );
-}
-void primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4314,8 +4215,7 @@ void primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
         "temp_4" CANLIB_SEPARATOR 
         "temp_5" CANLIB_SEPARATOR 
         "temp_6"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4352,8 +4252,8 @@ void primary_deserialize_HV_CELL_BALANCING_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4363,19 +4263,17 @@ void primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCIN
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->balancing_status
-    );
-}
-void primary_fields_HV_CELL_BALANCING_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HV_CELL_BALANCING_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "balancing_status"
-    );
-}
-void primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4385,17 +4283,15 @@ void primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BAL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->balancing_status
-    );
-}
-void primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "balancing_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4432,8 +4328,8 @@ void primary_deserialize_SET_CELL_BALANCING_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4443,19 +4339,17 @@ void primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANC
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->set_balancing_status
-    );
-}
-void primary_fields_SET_CELL_BALANCING_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SET_CELL_BALANCING_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "set_balancing_status"
-    );
-}
-void primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4465,17 +4359,15 @@ void primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_B
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->set_balancing_status
-    );
-}
-void primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "set_balancing_status"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4512,8 +4404,8 @@ void primary_deserialize_HANDCART_STATUS(
 
 // ============== STRING ============== //
 
-void primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, char* buffer) {
-    sprintf(
+int primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4523,19 +4415,17 @@ void primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message,
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->connected
-    );
-}
-void primary_fields_HANDCART_STATUS(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_HANDCART_STATUS(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "connected"
-    );
-}
-void primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4545,17 +4435,15 @@ void primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* mes
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->connected
-    );
-}
-void primary_fields_file_HANDCART_STATUS(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_HANDCART_STATUS(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "connected"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4612,8 +4500,8 @@ void primary_deserialize_SPEED(
 
 // ============== STRING ============== //
 
-void primary_to_string_SPEED(primary_message_SPEED* message, char* buffer) {
-    sprintf(
+int primary_to_string_SPEED(primary_message_SPEED* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4629,10 +4517,9 @@ void primary_to_string_SPEED(primary_message_SPEED* message, char* buffer) {
         message->encoder_l,
         message->inverter_r,
         message->inverter_l
-    );
-}
-void primary_fields_SPEED(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_SPEED(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4641,10 +4528,9 @@ void primary_fields_SPEED(char* buffer) {
         "encoder_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "inverter_l"
-    );
-}
-void primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4660,10 +4546,9 @@ void primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer) 
         message->encoder_l,
         message->inverter_r,
         message->inverter_l
-    );
-}
-void primary_fields_file_SPEED(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_SPEED(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4672,8 +4557,7 @@ void primary_fields_file_SPEED(FILE* buffer) {
         "encoder_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "inverter_l"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4718,8 +4602,8 @@ void primary_deserialize_INV_L_SET_TORQUE(
 
 // ============== STRING ============== //
 
-void primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, char* buffer) {
-    sprintf(
+int primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4733,10 +4617,9 @@ void primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* messag
         message->reg_id,
         message->lsb,
         message->msb
-    );
-}
-void primary_fields_INV_L_SET_TORQUE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_INV_L_SET_TORQUE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4744,10 +4627,9 @@ void primary_fields_INV_L_SET_TORQUE(char* buffer) {
         "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
-    );
-}
-void primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4761,10 +4643,9 @@ void primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* m
         message->reg_id,
         message->lsb,
         message->msb
-    );
-}
-void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4772,8 +4653,7 @@ void primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
         "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
-    );
-}
+    );}
 
 // ============== SERIALIZE ============== //
 
@@ -4838,8 +4718,8 @@ void primary_deserialize_INV_L_RESPONSE(
 
 // ============== STRING ============== //
 
-void primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, char* buffer) {
-    sprintf(
+int primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4863,10 +4743,9 @@ void primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, c
         message->data_4,
         message->data_5,
         message->data_6
-    );
-}
-void primary_fields_INV_L_RESPONSE(char* buffer) {
-    sprintf(
+    );}
+int primary_fields_INV_L_RESPONSE(uint8_t* buffer) {
+    return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4879,10 +4758,9 @@ void primary_fields_INV_L_RESPONSE(char* buffer) {
         "data_4" CANLIB_SEPARATOR 
         "data_5" CANLIB_SEPARATOR 
         "data_6"
-    );
-}
-void primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer) {
-    fprintf(
+    );}
+int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%ju" CANLIB_SEPARATOR
@@ -4906,10 +4784,9 @@ void primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* messa
         message->data_4,
         message->data_5,
         message->data_6
-    );
-}
-void primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
-    fprintf(
+    );}
+int primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
+    return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
@@ -4922,8 +4799,7 @@ void primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
         "data_4" CANLIB_SEPARATOR 
         "data_5" CANLIB_SEPARATOR 
         "data_6"
-    );
-}
+    );}
 
 
 // ============== UTILS ============== //

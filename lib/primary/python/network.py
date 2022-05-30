@@ -197,7 +197,7 @@ class message_STEER_VERSION:
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_VERSION):
@@ -231,7 +231,7 @@ class message_DAS_VERSION:
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_DAS_VERSION):
@@ -265,7 +265,7 @@ class message_HV_VERSION:
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VERSION):
@@ -299,7 +299,7 @@ class message_LV_VERSION:
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VERSION):
@@ -333,7 +333,7 @@ class message_TLM_VERSION:
         self.component_version = uint8(component_version) if component_version is not None else None
         self.cancicd_version = uint8(cancicd_version) if cancicd_version is not None else None
         self.size = 2
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TLM_VERSION):
@@ -365,7 +365,7 @@ class message_TIMESTAMP:
     ):
         self.timestamp = uint32(timestamp) if timestamp is not None else None
         self.size = 4
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TIMESTAMP):
@@ -443,7 +443,7 @@ class message_TLM_STATUS:
         self.race_type = RaceType(race_type) if race_type is not None else None
         self.tlm_status = Toggle(tlm_status) if tlm_status is not None else None
         self.size = 3
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TLM_STATUS):
@@ -481,7 +481,7 @@ class message_STEER_SYSTEM_STATUS:
     ):
         self.soc_temp = uint8(soc_temp) if soc_temp is not None else None
         self.size = 1
-        self.frequency = 2000
+        self.interval = 2000
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_SYSTEM_STATUS):
@@ -516,7 +516,7 @@ class message_HV_VOLTAGE:
         self.max_cell_voltage = uint16(max_cell_voltage) if max_cell_voltage is not None else None
         self.min_cell_voltage = uint16(min_cell_voltage) if min_cell_voltage is not None else None
         self.size = 8
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VOLTAGE):
@@ -573,7 +573,7 @@ class message_HV_CURRENT:
         self.current = uint16(current) if current is not None else None
         self.power = uint16(power) if power is not None else None
         self.size = 4
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CURRENT):
@@ -622,7 +622,7 @@ class message_HV_TEMP:
         self.max_temp = uint16(max_temp) if max_temp is not None else None
         self.min_temp = uint16(min_temp) if min_temp is not None else None
         self.size = 6
-        self.frequency = 200
+        self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_TEMP):
@@ -674,7 +674,7 @@ class message_HV_ERRORS:
         self.warnings = HvErrors(warnings) if warnings is not None else None
         self.errors = HvErrors(errors) if errors is not None else None
         self.size = 4
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_ERRORS):
@@ -706,7 +706,7 @@ class message_TS_STATUS:
     ):
         self.ts_status = TsStatus(ts_status) if ts_status is not None else None
         self.size = 1
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_TS_STATUS):
@@ -765,7 +765,7 @@ class message_STEER_STATUS:
         self.map = Map(map) if map is not None else None
         self.traction_control = TractionControl(traction_control) if traction_control is not None else None
         self.size = 1
-        self.frequency = 100
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_STATUS):
@@ -862,7 +862,7 @@ class message_CAR_STATUS:
         self.inverter_r = InverterStatus(inverter_r) if inverter_r is not None else None
         self.car_status = CarStatus(car_status) if car_status is not None else None
         self.size = 1
-        self.frequency = 100
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CAR_STATUS):
@@ -897,7 +897,7 @@ class message_DAS_ERRORS:
     ):
         self.das_error = DasErrors(das_error) if das_error is not None else None
         self.size = 1
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_DAS_ERRORS):
@@ -926,7 +926,7 @@ class message_LV_CURRENT:
     ):
         self.current = uint8(current) if current is not None else None
         self.size = 1
-        self.frequency = 500
+        self.interval = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_CURRENT):
@@ -961,7 +961,7 @@ class message_LV_VOLTAGE:
         self.voltage_3 = uint8(voltage_3) if voltage_3 is not None else None
         self.voltage_4 = uint8(voltage_4) if voltage_4 is not None else None
         self.size = 4
-        self.frequency = 200
+        self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VOLTAGE):
@@ -999,7 +999,7 @@ class message_LV_TOTAL_VOLTAGE:
     ):
         self.total_voltage = uint16(total_voltage) if total_voltage is not None else None
         self.size = 2
-        self.frequency = 200
+        self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TOTAL_VOLTAGE):
@@ -1030,7 +1030,7 @@ class message_LV_TEMPERATURE:
         self.bp_temperature = uint8(bp_temperature) if bp_temperature is not None else None
         self.dcdc_temperature = uint8(dcdc_temperature) if dcdc_temperature is not None else None
         self.size = 2
-        self.frequency = 200
+        self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TEMPERATURE):
@@ -1066,7 +1066,7 @@ class message_COOLING_STATUS:
         self.lv_fan_speed = uint8(lv_fan_speed) if lv_fan_speed is not None else None
         self.pump_speed = uint8(pump_speed) if pump_speed is not None else None
         self.size = 3
-        self.frequency = 1000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
@@ -1130,7 +1130,7 @@ class message_HV_CELLS_VOLTAGE:
         self.voltage_2 = uint16(voltage_2) if voltage_2 is not None else None
         self.start_index = uint8(start_index) if start_index is not None else None
         self.size = 7
-        self.frequency = 200
+        self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
@@ -1199,7 +1199,7 @@ class message_HV_CELLS_TEMP:
         self.temp_5 = uint8(temp_5) if temp_5 is not None else None
         self.temp_6 = uint8(temp_6) if temp_6 is not None else None
         self.size = 8
-        self.frequency = 100
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_TEMP):
@@ -1274,7 +1274,7 @@ class message_HV_CELL_BALANCING_STATUS:
     ):
         self.balancing_status = Toggle(balancing_status) if balancing_status is not None else None
         self.size = 1
-        self.frequency = 500
+        self.interval = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELL_BALANCING_STATUS):
@@ -1331,7 +1331,7 @@ class message_HANDCART_STATUS:
     ):
         self.connected = bool(connected) if connected is not None else None
         self.size = 1
-        self.frequency = 500
+        self.interval = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_HANDCART_STATUS):
@@ -1366,7 +1366,7 @@ class message_SPEED:
         self.inverter_r = uint16(inverter_r) if inverter_r is not None else None
         self.inverter_l = uint16(inverter_l) if inverter_l is not None else None
         self.size = 8
-        self.frequency = 100
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):
@@ -1408,7 +1408,7 @@ class message_INV_L_SET_TORQUE:
         self.lsb = uint8(lsb) if lsb is not None else None
         self.msb = uint8(msb) if msb is not None else None
         self.size = 3
-        self.frequency = 20
+        self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_SET_TORQUE):
@@ -1457,7 +1457,7 @@ class message_INV_L_RESPONSE:
         self.data_5 = uint8(data_5) if data_5 is not None else None
         self.data_6 = uint8(data_6) if data_6 is not None else None
         self.size = 8
-        self.frequency = 100
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_RESPONSE):
