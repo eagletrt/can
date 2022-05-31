@@ -73,9 +73,14 @@ class BalancingCells(IntFlag):
 
 # Enums
 
+
 class BalancingStatus(IntEnum):
     OFF = 0
     DISCHARGE = 1
+
+    @classmethod
+    def _missing_(cls, _):
+        return BalancingStatus(0)
 
 # Messages
 

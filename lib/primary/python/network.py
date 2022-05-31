@@ -135,25 +135,46 @@ class InvErrors(IntFlag):
 
 # Enums
 
+
 class RaceType(IntEnum):
     ACCELERATION = 0
     SKIDPAD = 1
     AUTOCROSS = 2
     ENDURANCE = 3
 
+    @classmethod
+    def _missing_(cls, _):
+        return RaceType(0)
+
+
 class InverterStatus(IntEnum):
     OFF = 0
     IDLE = 1
     ON = 2
+
+    @classmethod
+    def _missing_(cls, _):
+        return InverterStatus(0)
+
 
 class CarStatus(IntEnum):
     IDLE = 0
     SETUP = 1
     RUN = 2
 
+    @classmethod
+    def _missing_(cls, _):
+        return CarStatus(0)
+
+
 class Toggle(IntEnum):
     ON = 0
     OFF = 1
+
+    @classmethod
+    def _missing_(cls, _):
+        return Toggle(0)
+
 
 class TractionControl(IntEnum):
     OFF = 0
@@ -161,11 +182,21 @@ class TractionControl(IntEnum):
     TORQUE_VECTORING = 2
     COMPLETE = 3
 
+    @classmethod
+    def _missing_(cls, _):
+        return TractionControl(0)
+
+
 class TsStatus(IntEnum):
     OFF = 0
     PRECHARGE = 1
     ON = 2
     FATAL = 3
+
+    @classmethod
+    def _missing_(cls, _):
+        return TsStatus(0)
+
 
 class Map(IntEnum):
     R = 0
@@ -175,17 +206,36 @@ class Map(IntEnum):
     D80 = 4
     D100 = 5
 
+    @classmethod
+    def _missing_(cls, _):
+        return Map(0)
+
+
 class SetCarStatus(IntEnum):
     IDLE = 0
     RUN = 1
+
+    @classmethod
+    def _missing_(cls, _):
+        return SetCarStatus(0)
+
 
 class Bound(IntEnum):
     SET_MAX = 0
     SET_MIN = 1
 
+    @classmethod
+    def _missing_(cls, _):
+        return Bound(0)
+
+
 class Pedal(IntEnum):
     ACCELERATOR = 0
     BRAKE = 1
+
+    @classmethod
+    def _missing_(cls, _):
+        return Pedal(0)
 
 # Messages
 
