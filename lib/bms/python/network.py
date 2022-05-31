@@ -1,39 +1,40 @@
+from __future__ import annotations
 from enum import IntEnum, IntFlag
 from struct import pack, unpack
-from typing import Any
+from typing import Any, Optional
 
-def int8(value: Any) -> int:
-    return int(value)
+def int8(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint8(value: Any) -> int:
-    return int(value)
+def uint8(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int16(value: Any) -> int:
-    return int(value)
+def int16(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint16(value: Any) -> int:
-    return int(value)
+def uint16(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int32(value: Any) -> int:
-    return int(value)
+def int32(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint32(value: Any) -> int:
-    return int(value)
+def uint32(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int64(value: Any) -> int:
-    return int(value)
+def int64(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint64(value: Any) -> int:
-    return int(value)
+def uint64(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def float32(value: Any) -> float:
-    return float(value)
+def float32(value: Any) -> Optional[float]:
+    return float(value) if value is not None else None
 
-def float64(value: Any) -> float:
-    return float(value)
+def float64(value: Any) -> Optional[float]:
+    return float(value) if value is not None else None
 
-def bool(value: Any) -> bool:
-    return bool(value)
+def bool(value: Any) -> Optional[bool]:
+    return bool(value) if value is not None else None
 
 
 # Bitsets
@@ -84,8 +85,8 @@ class message_BOARD_STATUS:
         errors = None,
         balancing_status = None
     ):
-        self.errors = Errors(errors) if errors is not None else None
-        self.balancing_status = BalancingStatus(balancing_status) if balancing_status is not None else None
+        self.errors = Errors(errors)
+        self.balancing_status = BalancingStatus(balancing_status)
         self.size = 3
 
     def __eq__(self, other):
@@ -97,18 +98,17 @@ class message_BOARD_STATUS:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBB", (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255, self.balancing_status << 7 & 255))
+        return data
 
-
-def serialize_BOARD_STATUS(message: message_BOARD_STATUS) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<BBB", (int(message.errors) >> 8) & 255, (int(message.errors) >> 0) & 255, message.balancing_status << 7 & 255))
-    return data
-
-def deserialize_BOARD_STATUS(data: bytearray) -> message_BOARD_STATUS:
-    message = message_BOARD_STATUS()
-    message.errors = Errors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
-    message.balancing_status = BalancingStatus((unpack("<xxB", data[0:3])[0] & 128) >> 7)
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.errors = Errors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
+        message.balancing_status = BalancingStatus((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        return message
 
 
 class message_TEMPERATURES:
@@ -122,13 +122,13 @@ class message_TEMPERATURES:
         temp4 = None,
         temp5 = None
     ):
-        self.start_index = uint8(start_index) if start_index is not None else None
-        self.temp0 = uint8(temp0) if temp0 is not None else None
-        self.temp1 = uint8(temp1) if temp1 is not None else None
-        self.temp2 = uint8(temp2) if temp2 is not None else None
-        self.temp3 = uint8(temp3) if temp3 is not None else None
-        self.temp4 = uint8(temp4) if temp4 is not None else None
-        self.temp5 = uint8(temp5) if temp5 is not None else None
+        self.start_index = uint8(start_index)
+        self.temp0 = uint8(temp0)
+        self.temp1 = uint8(temp1)
+        self.temp2 = uint8(temp2)
+        self.temp3 = uint8(temp3)
+        self.temp4 = uint8(temp4)
+        self.temp5 = uint8(temp5)
         self.size = 7
 
     def __eq__(self, other):
@@ -150,47 +150,85 @@ class message_TEMPERATURES:
             return False
         return True
 
-class message_TEMPERATURES_conversion(message_TEMPERATURES):
-    pass
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBBBBBB", self.start_index, self.temp0, self.temp1, self.temp2, self.temp3, self.temp4, self.temp5))
+        return data
 
-def raw_to_conversion_TEMPERATURES(raw: message_TEMPERATURES) -> message_TEMPERATURES_conversion:
-    conversion = message_TEMPERATURES_conversion()
-    conversion.start_index = raw.start_index
-    conversion.temp0 = ((float32(raw.temp0)) / 2.56) - 20
-    conversion.temp1 = ((float32(raw.temp1)) / 2.56) - 20
-    conversion.temp2 = ((float32(raw.temp2)) / 2.56) - 20
-    conversion.temp3 = ((float32(raw.temp3)) / 2.56) - 20
-    conversion.temp4 = ((float32(raw.temp4)) / 2.56) - 20
-    conversion.temp5 = ((float32(raw.temp5)) / 2.56) - 20
-    return conversion
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.start_index = uint8(unpack("<B", data[0:1])[0])
+        message.temp0 = uint8(unpack("<xB", data[0:2])[0])
+        message.temp1 = uint8(unpack("<xxB", data[0:3])[0])
+        message.temp2 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.temp3 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.temp4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.temp5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        return message
 
-def conversion_to_raw_TEMPERATURES(conversion: message_TEMPERATURES_conversion) -> message_TEMPERATURES:
-    raw = message_TEMPERATURES()
-    raw.start_index = conversion.start_index
-    raw.temp0 = uint8((conversion.temp0 + 20) * 2.56)
-    raw.temp1 = uint8((conversion.temp1 + 20) * 2.56)
-    raw.temp2 = uint8((conversion.temp2 + 20) * 2.56)
-    raw.temp3 = uint8((conversion.temp3 + 20) * 2.56)
-    raw.temp4 = uint8((conversion.temp4 + 20) * 2.56)
-    raw.temp5 = uint8((conversion.temp5 + 20) * 2.56)
-    return raw
 
-def serialize_TEMPERATURES(message: message_TEMPERATURES) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<BBBBBBB", message.start_index, message.temp0, message.temp1, message.temp2, message.temp3, message.temp4, message.temp5))
-    return data
+    def convert(self) -> message_TEMPERATURES_conversion:
+        conversion = message_TEMPERATURES_conversion()
+        conversion.start_index = self.start_index
+        conversion.temp0 = ((float32(self.temp0)) / 2.56) - 20
+        conversion.temp1 = ((float32(self.temp1)) / 2.56) - 20
+        conversion.temp2 = ((float32(self.temp2)) / 2.56) - 20
+        conversion.temp3 = ((float32(self.temp3)) / 2.56) - 20
+        conversion.temp4 = ((float32(self.temp4)) / 2.56) - 20
+        conversion.temp5 = ((float32(self.temp5)) / 2.56) - 20
+        return conversion
 
-def deserialize_TEMPERATURES(data: bytearray) -> message_TEMPERATURES:
-    message = message_TEMPERATURES()
-    message.start_index = uint8(unpack("<B", data[0:1])[0])
-    message.temp0 = uint8(unpack("<xB", data[0:2])[0])
-    message.temp1 = uint8(unpack("<xxB", data[0:3])[0])
-    message.temp2 = uint8(unpack("<xxxB", data[0:4])[0])
-    message.temp3 = uint8(unpack("<xxxxB", data[0:5])[0])
-    message.temp4 = uint8(unpack("<xxxxxB", data[0:6])[0])
-    message.temp5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
-    return message
 
+class message_TEMPERATURES_conversion:
+    def __init__(
+        self,
+        start_index = None,
+        temp0 = None,
+        temp1 = None,
+        temp2 = None,
+        temp3 = None,
+        temp4 = None,
+        temp5 = None
+    ):
+        self.start_index = uint8(start_index)
+        self.temp0 = float32(temp0)
+        self.temp1 = float32(temp1)
+        self.temp2 = float32(temp2)
+        self.temp3 = float32(temp3)
+        self.temp4 = float32(temp4)
+        self.temp5 = float32(temp5)
+        self.size = 7
+
+    def __eq__(self, other):
+        if not isinstance(other, message_TEMPERATURES):
+            return False
+        if self.start_index != other.start_index:
+            return False
+        if self.temp0 != other.temp0:
+            return False
+        if self.temp1 != other.temp1:
+            return False
+        if self.temp2 != other.temp2:
+            return False
+        if self.temp3 != other.temp3:
+            return False
+        if self.temp4 != other.temp4:
+            return False
+        if self.temp5 != other.temp5:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_TEMPERATURES:
+        raw = message_TEMPERATURES()
+        raw.start_index = self.start_index
+        raw.temp0 = uint8((self.temp0 + 20) * 2.56)
+        raw.temp1 = uint8((self.temp1 + 20) * 2.56)
+        raw.temp2 = uint8((self.temp2 + 20) * 2.56)
+        raw.temp3 = uint8((self.temp3 + 20) * 2.56)
+        raw.temp4 = uint8((self.temp4 + 20) * 2.56)
+        raw.temp5 = uint8((self.temp5 + 20) * 2.56)
+        return raw
 
 class message_VOLTAGES:
     def __init__(
@@ -200,10 +238,10 @@ class message_VOLTAGES:
         voltage2 = None,
         start_index = None
     ):
-        self.voltage0 = uint16(voltage0) if voltage0 is not None else None
-        self.voltage1 = uint16(voltage1) if voltage1 is not None else None
-        self.voltage2 = uint16(voltage2) if voltage2 is not None else None
-        self.start_index = uint8(start_index) if start_index is not None else None
+        self.voltage0 = uint16(voltage0)
+        self.voltage1 = uint16(voltage1)
+        self.voltage2 = uint16(voltage2)
+        self.start_index = uint8(start_index)
         self.size = 7
 
     def __eq__(self, other):
@@ -219,38 +257,64 @@ class message_VOLTAGES:
             return False
         return True
 
-class message_VOLTAGES_conversion(message_VOLTAGES):
-    pass
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHB", self.voltage0, self.voltage1, self.voltage2, self.start_index))
+        return data
 
-def raw_to_conversion_VOLTAGES(raw: message_VOLTAGES) -> message_VOLTAGES_conversion:
-    conversion = message_VOLTAGES_conversion()
-    conversion.voltage0 = ((float32(raw.voltage0)) / 10000.0) + 0
-    conversion.voltage1 = ((float32(raw.voltage1)) / 10000.0) + 0
-    conversion.voltage2 = ((float32(raw.voltage2)) / 10000.0) + 0
-    conversion.start_index = raw.start_index
-    return conversion
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.voltage0 = uint16(unpack("<H", data[0:2])[0])
+        message.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
+        message.voltage2 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        return message
 
-def conversion_to_raw_VOLTAGES(conversion: message_VOLTAGES_conversion) -> message_VOLTAGES:
-    raw = message_VOLTAGES()
-    raw.voltage0 = uint16((conversion.voltage0 + 0) * 10000.0)
-    raw.voltage1 = uint16((conversion.voltage1 + 0) * 10000.0)
-    raw.voltage2 = uint16((conversion.voltage2 + 0) * 10000.0)
-    raw.start_index = conversion.start_index
-    return raw
 
-def serialize_VOLTAGES(message: message_VOLTAGES) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHB", message.voltage0, message.voltage1, message.voltage2, message.start_index))
-    return data
+    def convert(self) -> message_VOLTAGES_conversion:
+        conversion = message_VOLTAGES_conversion()
+        conversion.voltage0 = ((float32(self.voltage0)) / 10000.0) + 0
+        conversion.voltage1 = ((float32(self.voltage1)) / 10000.0) + 0
+        conversion.voltage2 = ((float32(self.voltage2)) / 10000.0) + 0
+        conversion.start_index = self.start_index
+        return conversion
 
-def deserialize_VOLTAGES(data: bytearray) -> message_VOLTAGES:
-    message = message_VOLTAGES()
-    message.voltage0 = uint16(unpack("<H", data[0:2])[0])
-    message.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
-    message.voltage2 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
-    return message
 
+class message_VOLTAGES_conversion:
+    def __init__(
+        self,
+        voltage0 = None,
+        voltage1 = None,
+        voltage2 = None,
+        start_index = None
+    ):
+        self.voltage0 = float32(voltage0)
+        self.voltage1 = float32(voltage1)
+        self.voltage2 = float32(voltage2)
+        self.start_index = uint8(start_index)
+        self.size = 7
+
+    def __eq__(self, other):
+        if not isinstance(other, message_VOLTAGES):
+            return False
+        if self.voltage0 != other.voltage0:
+            return False
+        if self.voltage1 != other.voltage1:
+            return False
+        if self.voltage2 != other.voltage2:
+            return False
+        if self.start_index != other.start_index:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_VOLTAGES:
+        raw = message_VOLTAGES()
+        raw.voltage0 = uint16((self.voltage0 + 0) * 10000.0)
+        raw.voltage1 = uint16((self.voltage1 + 0) * 10000.0)
+        raw.voltage2 = uint16((self.voltage2 + 0) * 10000.0)
+        raw.start_index = self.start_index
+        return raw
 
 class message_BALANCING:
     def __init__(
@@ -258,8 +322,8 @@ class message_BALANCING:
         cells = None,
         board_index = None
     ):
-        self.cells = BalancingCells(cells) if cells is not None else None
-        self.board_index = uint8(board_index) if board_index is not None else None
+        self.cells = BalancingCells(cells)
+        self.board_index = uint8(board_index)
         self.size = 5
 
     def __eq__(self, other):
@@ -271,18 +335,17 @@ class message_BALANCING:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBBBB", (int(self.cells) >> 24) & 255, (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
+        return data
 
-
-def serialize_BALANCING(message: message_BALANCING) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<BBBBB", (int(message.cells) >> 24) & 255, (int(message.cells) >> 16) & 255, (int(message.cells) >> 8) & 255, (int(message.cells) >> 0) & 255, message.board_index))
-    return data
-
-def deserialize_BALANCING(data: bytearray) -> message_BALANCING:
-    message = message_BALANCING()
-    message.cells = BalancingCells(int((unpack("<BBBB", data[0:4])[0] << 24) | (unpack("<BBBB", data[0:4])[1] << 16) | (unpack("<BBBB", data[0:4])[2] << 8) | (unpack("<BBBB", data[0:4])[3] << 0)))
-    message.board_index = uint8(unpack("<xxxxB", data[0:5])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.cells = BalancingCells(int((unpack("<BBBB", data[0:4])[0] << 24) | (unpack("<BBBB", data[0:4])[1] << 16) | (unpack("<BBBB", data[0:4])[2] << 8) | (unpack("<BBBB", data[0:4])[3] << 0)))
+        message.board_index = uint8(unpack("<xxxxB", data[0:5])[0])
+        return message
 
 
 class message_FW_UPDATE:
@@ -290,7 +353,7 @@ class message_FW_UPDATE:
         self,
         board_index = None
     ):
-        self.board_index = uint8(board_index) if board_index is not None else None
+        self.board_index = uint8(board_index)
         self.size = 1
 
     def __eq__(self, other):
@@ -300,15 +363,14 @@ class message_FW_UPDATE:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.board_index))
+        return data
 
-
-def serialize_FW_UPDATE(message: message_FW_UPDATE) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<B", message.board_index))
-    return data
-
-def deserialize_FW_UPDATE(data: bytearray) -> message_FW_UPDATE:
-    message = message_FW_UPDATE()
-    message.board_index = uint8(unpack("<B", data[0:1])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.board_index = uint8(unpack("<B", data[0:1])[0])
+        return message
 

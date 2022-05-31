@@ -1,39 +1,40 @@
+from __future__ import annotations
 from enum import IntEnum, IntFlag
 from struct import pack, unpack
-from typing import Any
+from typing import Any, Optional
 
-def int8(value: Any) -> int:
-    return int(value)
+def int8(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint8(value: Any) -> int:
-    return int(value)
+def uint8(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int16(value: Any) -> int:
-    return int(value)
+def int16(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint16(value: Any) -> int:
-    return int(value)
+def uint16(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int32(value: Any) -> int:
-    return int(value)
+def int32(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint32(value: Any) -> int:
-    return int(value)
+def uint32(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def int64(value: Any) -> int:
-    return int(value)
+def int64(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def uint64(value: Any) -> int:
-    return int(value)
+def uint64(value: Any) -> Optional[int]:
+    return int(value) if value is not None else None
 
-def float32(value: Any) -> float:
-    return float(value)
+def float32(value: Any) -> Optional[float]:
+    return float(value) if value is not None else None
 
-def float64(value: Any) -> float:
-    return float(value)
+def float64(value: Any) -> Optional[float]:
+    return float(value) if value is not None else None
 
-def bool(value: Any) -> bool:
-    return bool(value)
+def bool(value: Any) -> Optional[bool]:
+    return bool(value) if value is not None else None
 
 
 # Bitsets
@@ -50,9 +51,9 @@ class message_IMU_ANGULAR_RATE:
         ang_rate_y = None,
         ang_rate_z = None
     ):
-        self.ang_rate_x = uint16(ang_rate_x) if ang_rate_x is not None else None
-        self.ang_rate_y = uint16(ang_rate_y) if ang_rate_y is not None else None
-        self.ang_rate_z = uint16(ang_rate_z) if ang_rate_z is not None else None
+        self.ang_rate_x = uint16(ang_rate_x)
+        self.ang_rate_y = uint16(ang_rate_y)
+        self.ang_rate_z = uint16(ang_rate_z)
         self.size = 6
 
     def __eq__(self, other):
@@ -66,19 +67,18 @@ class message_IMU_ANGULAR_RATE:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHH", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
+        return data
 
-
-def serialize_IMU_ANGULAR_RATE(message: message_IMU_ANGULAR_RATE) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHH", message.ang_rate_x, message.ang_rate_y, message.ang_rate_z))
-    return data
-
-def deserialize_IMU_ANGULAR_RATE(data: bytearray) -> message_IMU_ANGULAR_RATE:
-    message = message_IMU_ANGULAR_RATE()
-    message.ang_rate_x = uint16(unpack("<H", data[0:2])[0])
-    message.ang_rate_y = uint16(unpack("<xxH", data[0:4])[0])
-    message.ang_rate_z = uint16(unpack("<xxxxH", data[0:6])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.ang_rate_x = uint16(unpack("<H", data[0:2])[0])
+        message.ang_rate_y = uint16(unpack("<xxH", data[0:4])[0])
+        message.ang_rate_z = uint16(unpack("<xxxxH", data[0:6])[0])
+        return message
 
 
 class message_IMU_ACCELERATION:
@@ -88,9 +88,9 @@ class message_IMU_ACCELERATION:
         accel_y = None,
         accel_z = None
     ):
-        self.accel_x = uint16(accel_x) if accel_x is not None else None
-        self.accel_y = uint16(accel_y) if accel_y is not None else None
-        self.accel_z = uint16(accel_z) if accel_z is not None else None
+        self.accel_x = uint16(accel_x)
+        self.accel_y = uint16(accel_y)
+        self.accel_z = uint16(accel_z)
         self.size = 6
 
     def __eq__(self, other):
@@ -104,19 +104,18 @@ class message_IMU_ACCELERATION:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHH", self.accel_x, self.accel_y, self.accel_z))
+        return data
 
-
-def serialize_IMU_ACCELERATION(message: message_IMU_ACCELERATION) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHH", message.accel_x, message.accel_y, message.accel_z))
-    return data
-
-def deserialize_IMU_ACCELERATION(data: bytearray) -> message_IMU_ACCELERATION:
-    message = message_IMU_ACCELERATION()
-    message.accel_x = uint16(unpack("<H", data[0:2])[0])
-    message.accel_y = uint16(unpack("<xxH", data[0:4])[0])
-    message.accel_z = uint16(unpack("<xxxxH", data[0:6])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.accel_x = uint16(unpack("<H", data[0:2])[0])
+        message.accel_y = uint16(unpack("<xxH", data[0:4])[0])
+        message.accel_z = uint16(unpack("<xxxxH", data[0:6])[0])
+        return message
 
 
 class message_IRTS_FL_0:
@@ -127,10 +126,10 @@ class message_IRTS_FL_0:
         channel3 = None,
         channel4 = None
     ):
-        self.channel1 = uint16(channel1) if channel1 is not None else None
-        self.channel2 = uint16(channel2) if channel2 is not None else None
-        self.channel3 = uint16(channel3) if channel3 is not None else None
-        self.channel4 = uint16(channel4) if channel4 is not None else None
+        self.channel1 = uint16(channel1)
+        self.channel2 = uint16(channel2)
+        self.channel3 = uint16(channel3)
+        self.channel4 = uint16(channel4)
         self.size = 8
 
     def __eq__(self, other):
@@ -146,20 +145,19 @@ class message_IRTS_FL_0:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        return data
 
-
-def serialize_IRTS_FL_0(message: message_IRTS_FL_0) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel1, message.channel2, message.channel3, message.channel4))
-    return data
-
-def deserialize_IRTS_FL_0(data: bytearray) -> message_IRTS_FL_0:
-    message = message_IRTS_FL_0()
-    message.channel1 = uint16(unpack("<H", data[0:2])[0])
-    message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FL_1:
@@ -170,10 +168,10 @@ class message_IRTS_FL_1:
         channel7 = None,
         channel8 = None
     ):
-        self.channel5 = uint16(channel5) if channel5 is not None else None
-        self.channel6 = uint16(channel6) if channel6 is not None else None
-        self.channel7 = uint16(channel7) if channel7 is not None else None
-        self.channel8 = uint16(channel8) if channel8 is not None else None
+        self.channel5 = uint16(channel5)
+        self.channel6 = uint16(channel6)
+        self.channel7 = uint16(channel7)
+        self.channel8 = uint16(channel8)
         self.size = 8
 
     def __eq__(self, other):
@@ -189,20 +187,19 @@ class message_IRTS_FL_1:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        return data
 
-
-def serialize_IRTS_FL_1(message: message_IRTS_FL_1) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel5, message.channel6, message.channel7, message.channel8))
-    return data
-
-def deserialize_IRTS_FL_1(data: bytearray) -> message_IRTS_FL_1:
-    message = message_IRTS_FL_1()
-    message.channel5 = uint16(unpack("<H", data[0:2])[0])
-    message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FL_2:
@@ -213,10 +210,10 @@ class message_IRTS_FL_2:
         channel11 = None,
         channel12 = None
     ):
-        self.channel9 = uint16(channel9) if channel9 is not None else None
-        self.channel10 = uint16(channel10) if channel10 is not None else None
-        self.channel11 = uint16(channel11) if channel11 is not None else None
-        self.channel12 = uint16(channel12) if channel12 is not None else None
+        self.channel9 = uint16(channel9)
+        self.channel10 = uint16(channel10)
+        self.channel11 = uint16(channel11)
+        self.channel12 = uint16(channel12)
         self.size = 8
 
     def __eq__(self, other):
@@ -232,20 +229,19 @@ class message_IRTS_FL_2:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        return data
 
-
-def serialize_IRTS_FL_2(message: message_IRTS_FL_2) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel9, message.channel10, message.channel11, message.channel12))
-    return data
-
-def deserialize_IRTS_FL_2(data: bytearray) -> message_IRTS_FL_2:
-    message = message_IRTS_FL_2()
-    message.channel9 = uint16(unpack("<H", data[0:2])[0])
-    message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FL_3:
@@ -256,10 +252,10 @@ class message_IRTS_FL_3:
         channel15 = None,
         channel16 = None
     ):
-        self.channel13 = uint16(channel13) if channel13 is not None else None
-        self.channel14 = uint16(channel14) if channel14 is not None else None
-        self.channel15 = uint16(channel15) if channel15 is not None else None
-        self.channel16 = uint16(channel16) if channel16 is not None else None
+        self.channel13 = uint16(channel13)
+        self.channel14 = uint16(channel14)
+        self.channel15 = uint16(channel15)
+        self.channel16 = uint16(channel16)
         self.size = 8
 
     def __eq__(self, other):
@@ -275,20 +271,19 @@ class message_IRTS_FL_3:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        return data
 
-
-def serialize_IRTS_FL_3(message: message_IRTS_FL_3) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel13, message.channel14, message.channel15, message.channel16))
-    return data
-
-def deserialize_IRTS_FL_3(data: bytearray) -> message_IRTS_FL_3:
-    message = message_IRTS_FL_3()
-    message.channel13 = uint16(unpack("<H", data[0:2])[0])
-    message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FR_0:
@@ -299,10 +294,10 @@ class message_IRTS_FR_0:
         channel3 = None,
         channel4 = None
     ):
-        self.channel1 = uint16(channel1) if channel1 is not None else None
-        self.channel2 = uint16(channel2) if channel2 is not None else None
-        self.channel3 = uint16(channel3) if channel3 is not None else None
-        self.channel4 = uint16(channel4) if channel4 is not None else None
+        self.channel1 = uint16(channel1)
+        self.channel2 = uint16(channel2)
+        self.channel3 = uint16(channel3)
+        self.channel4 = uint16(channel4)
         self.size = 8
 
     def __eq__(self, other):
@@ -318,20 +313,19 @@ class message_IRTS_FR_0:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        return data
 
-
-def serialize_IRTS_FR_0(message: message_IRTS_FR_0) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel1, message.channel2, message.channel3, message.channel4))
-    return data
-
-def deserialize_IRTS_FR_0(data: bytearray) -> message_IRTS_FR_0:
-    message = message_IRTS_FR_0()
-    message.channel1 = uint16(unpack("<H", data[0:2])[0])
-    message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FR_1:
@@ -342,10 +336,10 @@ class message_IRTS_FR_1:
         channel7 = None,
         channel8 = None
     ):
-        self.channel5 = uint16(channel5) if channel5 is not None else None
-        self.channel6 = uint16(channel6) if channel6 is not None else None
-        self.channel7 = uint16(channel7) if channel7 is not None else None
-        self.channel8 = uint16(channel8) if channel8 is not None else None
+        self.channel5 = uint16(channel5)
+        self.channel6 = uint16(channel6)
+        self.channel7 = uint16(channel7)
+        self.channel8 = uint16(channel8)
         self.size = 8
 
     def __eq__(self, other):
@@ -361,20 +355,19 @@ class message_IRTS_FR_1:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        return data
 
-
-def serialize_IRTS_FR_1(message: message_IRTS_FR_1) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel5, message.channel6, message.channel7, message.channel8))
-    return data
-
-def deserialize_IRTS_FR_1(data: bytearray) -> message_IRTS_FR_1:
-    message = message_IRTS_FR_1()
-    message.channel5 = uint16(unpack("<H", data[0:2])[0])
-    message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FR_2:
@@ -385,10 +378,10 @@ class message_IRTS_FR_2:
         channel11 = None,
         channel12 = None
     ):
-        self.channel9 = uint16(channel9) if channel9 is not None else None
-        self.channel10 = uint16(channel10) if channel10 is not None else None
-        self.channel11 = uint16(channel11) if channel11 is not None else None
-        self.channel12 = uint16(channel12) if channel12 is not None else None
+        self.channel9 = uint16(channel9)
+        self.channel10 = uint16(channel10)
+        self.channel11 = uint16(channel11)
+        self.channel12 = uint16(channel12)
         self.size = 8
 
     def __eq__(self, other):
@@ -404,20 +397,19 @@ class message_IRTS_FR_2:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        return data
 
-
-def serialize_IRTS_FR_2(message: message_IRTS_FR_2) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel9, message.channel10, message.channel11, message.channel12))
-    return data
-
-def deserialize_IRTS_FR_2(data: bytearray) -> message_IRTS_FR_2:
-    message = message_IRTS_FR_2()
-    message.channel9 = uint16(unpack("<H", data[0:2])[0])
-    message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_FR_3:
@@ -428,10 +420,10 @@ class message_IRTS_FR_3:
         channel15 = None,
         channel16 = None
     ):
-        self.channel13 = uint16(channel13) if channel13 is not None else None
-        self.channel14 = uint16(channel14) if channel14 is not None else None
-        self.channel15 = uint16(channel15) if channel15 is not None else None
-        self.channel16 = uint16(channel16) if channel16 is not None else None
+        self.channel13 = uint16(channel13)
+        self.channel14 = uint16(channel14)
+        self.channel15 = uint16(channel15)
+        self.channel16 = uint16(channel16)
         self.size = 8
 
     def __eq__(self, other):
@@ -447,20 +439,19 @@ class message_IRTS_FR_3:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        return data
 
-
-def serialize_IRTS_FR_3(message: message_IRTS_FR_3) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel13, message.channel14, message.channel15, message.channel16))
-    return data
-
-def deserialize_IRTS_FR_3(data: bytearray) -> message_IRTS_FR_3:
-    message = message_IRTS_FR_3()
-    message.channel13 = uint16(unpack("<H", data[0:2])[0])
-    message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RL_0:
@@ -471,10 +462,10 @@ class message_IRTS_RL_0:
         channel3 = None,
         channel4 = None
     ):
-        self.channel1 = uint16(channel1) if channel1 is not None else None
-        self.channel2 = uint16(channel2) if channel2 is not None else None
-        self.channel3 = uint16(channel3) if channel3 is not None else None
-        self.channel4 = uint16(channel4) if channel4 is not None else None
+        self.channel1 = uint16(channel1)
+        self.channel2 = uint16(channel2)
+        self.channel3 = uint16(channel3)
+        self.channel4 = uint16(channel4)
         self.size = 8
 
     def __eq__(self, other):
@@ -490,20 +481,19 @@ class message_IRTS_RL_0:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        return data
 
-
-def serialize_IRTS_RL_0(message: message_IRTS_RL_0) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel1, message.channel2, message.channel3, message.channel4))
-    return data
-
-def deserialize_IRTS_RL_0(data: bytearray) -> message_IRTS_RL_0:
-    message = message_IRTS_RL_0()
-    message.channel1 = uint16(unpack("<H", data[0:2])[0])
-    message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RL_1:
@@ -514,10 +504,10 @@ class message_IRTS_RL_1:
         channel7 = None,
         channel8 = None
     ):
-        self.channel5 = uint16(channel5) if channel5 is not None else None
-        self.channel6 = uint16(channel6) if channel6 is not None else None
-        self.channel7 = uint16(channel7) if channel7 is not None else None
-        self.channel8 = uint16(channel8) if channel8 is not None else None
+        self.channel5 = uint16(channel5)
+        self.channel6 = uint16(channel6)
+        self.channel7 = uint16(channel7)
+        self.channel8 = uint16(channel8)
         self.size = 8
 
     def __eq__(self, other):
@@ -533,20 +523,19 @@ class message_IRTS_RL_1:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        return data
 
-
-def serialize_IRTS_RL_1(message: message_IRTS_RL_1) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel5, message.channel6, message.channel7, message.channel8))
-    return data
-
-def deserialize_IRTS_RL_1(data: bytearray) -> message_IRTS_RL_1:
-    message = message_IRTS_RL_1()
-    message.channel5 = uint16(unpack("<H", data[0:2])[0])
-    message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RL_2:
@@ -557,10 +546,10 @@ class message_IRTS_RL_2:
         channel11 = None,
         channel12 = None
     ):
-        self.channel9 = uint16(channel9) if channel9 is not None else None
-        self.channel10 = uint16(channel10) if channel10 is not None else None
-        self.channel11 = uint16(channel11) if channel11 is not None else None
-        self.channel12 = uint16(channel12) if channel12 is not None else None
+        self.channel9 = uint16(channel9)
+        self.channel10 = uint16(channel10)
+        self.channel11 = uint16(channel11)
+        self.channel12 = uint16(channel12)
         self.size = 8
 
     def __eq__(self, other):
@@ -576,20 +565,19 @@ class message_IRTS_RL_2:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        return data
 
-
-def serialize_IRTS_RL_2(message: message_IRTS_RL_2) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel9, message.channel10, message.channel11, message.channel12))
-    return data
-
-def deserialize_IRTS_RL_2(data: bytearray) -> message_IRTS_RL_2:
-    message = message_IRTS_RL_2()
-    message.channel9 = uint16(unpack("<H", data[0:2])[0])
-    message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RL_3:
@@ -600,10 +588,10 @@ class message_IRTS_RL_3:
         channel15 = None,
         channel16 = None
     ):
-        self.channel13 = uint16(channel13) if channel13 is not None else None
-        self.channel14 = uint16(channel14) if channel14 is not None else None
-        self.channel15 = uint16(channel15) if channel15 is not None else None
-        self.channel16 = uint16(channel16) if channel16 is not None else None
+        self.channel13 = uint16(channel13)
+        self.channel14 = uint16(channel14)
+        self.channel15 = uint16(channel15)
+        self.channel16 = uint16(channel16)
         self.size = 8
 
     def __eq__(self, other):
@@ -619,20 +607,19 @@ class message_IRTS_RL_3:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        return data
 
-
-def serialize_IRTS_RL_3(message: message_IRTS_RL_3) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel13, message.channel14, message.channel15, message.channel16))
-    return data
-
-def deserialize_IRTS_RL_3(data: bytearray) -> message_IRTS_RL_3:
-    message = message_IRTS_RL_3()
-    message.channel13 = uint16(unpack("<H", data[0:2])[0])
-    message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RR_0:
@@ -643,10 +630,10 @@ class message_IRTS_RR_0:
         channel3 = None,
         channel4 = None
     ):
-        self.channel1 = uint16(channel1) if channel1 is not None else None
-        self.channel2 = uint16(channel2) if channel2 is not None else None
-        self.channel3 = uint16(channel3) if channel3 is not None else None
-        self.channel4 = uint16(channel4) if channel4 is not None else None
+        self.channel1 = uint16(channel1)
+        self.channel2 = uint16(channel2)
+        self.channel3 = uint16(channel3)
+        self.channel4 = uint16(channel4)
         self.size = 8
 
     def __eq__(self, other):
@@ -662,20 +649,19 @@ class message_IRTS_RR_0:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        return data
 
-
-def serialize_IRTS_RR_0(message: message_IRTS_RR_0) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel1, message.channel2, message.channel3, message.channel4))
-    return data
-
-def deserialize_IRTS_RR_0(data: bytearray) -> message_IRTS_RR_0:
-    message = message_IRTS_RR_0()
-    message.channel1 = uint16(unpack("<H", data[0:2])[0])
-    message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RR_1:
@@ -686,10 +672,10 @@ class message_IRTS_RR_1:
         channel7 = None,
         channel8 = None
     ):
-        self.channel5 = uint16(channel5) if channel5 is not None else None
-        self.channel6 = uint16(channel6) if channel6 is not None else None
-        self.channel7 = uint16(channel7) if channel7 is not None else None
-        self.channel8 = uint16(channel8) if channel8 is not None else None
+        self.channel5 = uint16(channel5)
+        self.channel6 = uint16(channel6)
+        self.channel7 = uint16(channel7)
+        self.channel8 = uint16(channel8)
         self.size = 8
 
     def __eq__(self, other):
@@ -705,20 +691,19 @@ class message_IRTS_RR_1:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        return data
 
-
-def serialize_IRTS_RR_1(message: message_IRTS_RR_1) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel5, message.channel6, message.channel7, message.channel8))
-    return data
-
-def deserialize_IRTS_RR_1(data: bytearray) -> message_IRTS_RR_1:
-    message = message_IRTS_RR_1()
-    message.channel5 = uint16(unpack("<H", data[0:2])[0])
-    message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RR_2:
@@ -729,10 +714,10 @@ class message_IRTS_RR_2:
         channel11 = None,
         channel12 = None
     ):
-        self.channel9 = uint16(channel9) if channel9 is not None else None
-        self.channel10 = uint16(channel10) if channel10 is not None else None
-        self.channel11 = uint16(channel11) if channel11 is not None else None
-        self.channel12 = uint16(channel12) if channel12 is not None else None
+        self.channel9 = uint16(channel9)
+        self.channel10 = uint16(channel10)
+        self.channel11 = uint16(channel11)
+        self.channel12 = uint16(channel12)
         self.size = 8
 
     def __eq__(self, other):
@@ -748,20 +733,19 @@ class message_IRTS_RR_2:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        return data
 
-
-def serialize_IRTS_RR_2(message: message_IRTS_RR_2) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel9, message.channel10, message.channel11, message.channel12))
-    return data
-
-def deserialize_IRTS_RR_2(data: bytearray) -> message_IRTS_RR_2:
-    message = message_IRTS_RR_2()
-    message.channel9 = uint16(unpack("<H", data[0:2])[0])
-    message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_IRTS_RR_3:
@@ -772,10 +756,10 @@ class message_IRTS_RR_3:
         channel15 = None,
         channel16 = None
     ):
-        self.channel13 = uint16(channel13) if channel13 is not None else None
-        self.channel14 = uint16(channel14) if channel14 is not None else None
-        self.channel15 = uint16(channel15) if channel15 is not None else None
-        self.channel16 = uint16(channel16) if channel16 is not None else None
+        self.channel13 = uint16(channel13)
+        self.channel14 = uint16(channel14)
+        self.channel15 = uint16(channel15)
+        self.channel16 = uint16(channel16)
         self.size = 8
 
     def __eq__(self, other):
@@ -791,20 +775,19 @@ class message_IRTS_RR_3:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        return data
 
-
-def serialize_IRTS_RR_3(message: message_IRTS_RR_3) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<HHHH", message.channel13, message.channel14, message.channel15, message.channel16))
-    return data
-
-def deserialize_IRTS_RR_3(data: bytearray) -> message_IRTS_RR_3:
-    message = message_IRTS_RR_3()
-    message.channel13 = uint16(unpack("<H", data[0:2])[0])
-    message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-    message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-    message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        return message
 
 
 class message_GPS_COORDS:
@@ -813,8 +796,8 @@ class message_GPS_COORDS:
         latitude = None,
         longitude = None
     ):
-        self.latitude = float32(latitude) if latitude is not None else None
-        self.longitude = float32(longitude) if longitude is not None else None
+        self.latitude = float32(latitude)
+        self.longitude = float32(longitude)
         self.size = 8
 
     def __eq__(self, other):
@@ -826,18 +809,17 @@ class message_GPS_COORDS:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<ff", self.latitude, self.longitude))
+        return data
 
-
-def serialize_GPS_COORDS(message: message_GPS_COORDS) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<ff", message.latitude, message.longitude))
-    return data
-
-def deserialize_GPS_COORDS(data: bytearray) -> message_GPS_COORDS:
-    message = message_GPS_COORDS()
-    message.latitude = float32(unpack("<f", data[0:4])[0])
-    message.longitude = float32(unpack("<xxxxf", data[0:8])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.latitude = float32(unpack("<f", data[0:4])[0])
+        message.longitude = float32(unpack("<xxxxf", data[0:8])[0])
+        return message
 
 
 class message_GPS_SPEED:
@@ -845,7 +827,7 @@ class message_GPS_SPEED:
         self,
         speed = None
     ):
-        self.speed = uint16(speed) if speed is not None else None
+        self.speed = uint16(speed)
         self.size = 2
 
     def __eq__(self, other):
@@ -855,17 +837,16 @@ class message_GPS_SPEED:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<H", self.speed))
+        return data
 
-
-def serialize_GPS_SPEED(message: message_GPS_SPEED) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<H", message.speed))
-    return data
-
-def deserialize_GPS_SPEED(data: bytearray) -> message_GPS_SPEED:
-    message = message_GPS_SPEED()
-    message.speed = uint16(unpack("<H", data[0:2])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.speed = uint16(unpack("<H", data[0:2])[0])
+        return message
 
 
 class message_LAP_COUNT:
@@ -874,8 +855,8 @@ class message_LAP_COUNT:
         timestamp = None,
         lap_count = None
     ):
-        self.timestamp = uint32(timestamp) if timestamp is not None else None
-        self.lap_count = uint8(lap_count) if lap_count is not None else None
+        self.timestamp = uint32(timestamp)
+        self.lap_count = uint8(lap_count)
         self.size = 5
 
     def __eq__(self, other):
@@ -887,16 +868,15 @@ class message_LAP_COUNT:
             return False
         return True
 
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<IB", self.timestamp, self.lap_count))
+        return data
 
-
-def serialize_LAP_COUNT(message: message_LAP_COUNT) -> bytearray:
-    data = bytearray()
-    data.extend(pack("<IB", message.timestamp, message.lap_count))
-    return data
-
-def deserialize_LAP_COUNT(data: bytearray) -> message_LAP_COUNT:
-    message = message_LAP_COUNT()
-    message.timestamp = uint32(unpack("<I", data[0:4])[0])
-    message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
-    return message
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.timestamp = uint32(unpack("<I", data[0:4])[0])
+        message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
+        return message
 
