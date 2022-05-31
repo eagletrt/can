@@ -40,6 +40,7 @@ def bool(value: Any) -> Optional[Bool]:
 
 # Bitsets
 
+
 class Errors(IntFlag):
     CAN_COMM = 1
     LTC_COMM = 2
@@ -50,6 +51,13 @@ class Errors(IntFlag):
     TEMP_COMM_4 = 64
     TEMP_COMM_5 = 128
     OPEN_WIRE = 256
+
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 
 class BalancingCells(IntFlag):
     CELL0 = 1
@@ -71,6 +79,12 @@ class BalancingCells(IntFlag):
     CELL16 = 65536
     CELL17 = 131072
 
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 # Enums
 
 
@@ -80,7 +94,7 @@ class BalancingStatus(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return BalancingStatus(0)
+        return cls(0)
 
 # Messages
 

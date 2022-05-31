@@ -40,6 +40,7 @@ def bool(value: Any) -> Optional[Bool]:
 
 # Bitsets
 
+
 class HvErrors(IntFlag):
     CELL_LOW_VOLTAGE = 1
     CELL_UNDER_VOLTAGE = 2
@@ -56,6 +57,13 @@ class HvErrors(IntFlag):
     EEPROM_COMM = 4096
     EEPROM_WRITE = 8192
 
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
+
 class DasErrors(IntFlag):
     PEDAL_ADC = 1
     PEDAL_IMPLAUSIBILITY = 2
@@ -65,6 +73,13 @@ class DasErrors(IntFlag):
     INVL_TOUT = 32
     INVR_TOUT = 64
     FSM = 128
+
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 
 class InvStatus(IntFlag):
     DRIVE_ENABLE = 1
@@ -100,6 +115,13 @@ class InvStatus(IntFlag):
     MD = 1073741824
     HND_WHL = 2147483648
 
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
+
 class InvErrors(IntFlag):
     BAD_PARAM = 1
     HW_FAULT = 2
@@ -133,6 +155,12 @@ class InvErrors(IntFlag):
     UNKNOWN_ERR_30 = 536870912
     BALLAST_OVERLOAD_WARN = 1073741824
 
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 # Enums
 
 
@@ -144,7 +172,7 @@ class RaceType(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return RaceType(0)
+        return cls(0)
 
 
 class InverterStatus(IntEnum):
@@ -154,7 +182,7 @@ class InverterStatus(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return InverterStatus(0)
+        return cls(0)
 
 
 class CarStatus(IntEnum):
@@ -164,7 +192,7 @@ class CarStatus(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return CarStatus(0)
+        return cls(0)
 
 
 class Toggle(IntEnum):
@@ -173,7 +201,7 @@ class Toggle(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return Toggle(0)
+        return cls(0)
 
 
 class TractionControl(IntEnum):
@@ -184,7 +212,7 @@ class TractionControl(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return TractionControl(0)
+        return cls(0)
 
 
 class TsStatus(IntEnum):
@@ -195,7 +223,7 @@ class TsStatus(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return TsStatus(0)
+        return cls(0)
 
 
 class Map(IntEnum):
@@ -208,7 +236,7 @@ class Map(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return Map(0)
+        return cls(0)
 
 
 class SetCarStatus(IntEnum):
@@ -217,7 +245,7 @@ class SetCarStatus(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return SetCarStatus(0)
+        return cls(0)
 
 
 class Bound(IntEnum):
@@ -226,7 +254,7 @@ class Bound(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return Bound(0)
+        return cls(0)
 
 
 class Pedal(IntEnum):
@@ -235,7 +263,7 @@ class Pedal(IntEnum):
 
     @classmethod
     def _missing_(cls, _):
-        return Pedal(0)
+        return cls(0)
 
 # Messages
 
