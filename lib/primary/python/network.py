@@ -531,7 +531,7 @@ class message_HV_VOLTAGE:
             return False
         return True
 
-class message_HV_VOLTAGE_conversion:
+class message_HV_VOLTAGE_conversion(message_HV_VOLTAGE):
     pass
 
 def raw_to_conversion_HV_VOLTAGE(raw: message_HV_VOLTAGE) -> message_HV_VOLTAGE_conversion:
@@ -584,7 +584,7 @@ class message_HV_CURRENT:
             return False
         return True
 
-class message_HV_CURRENT_conversion:
+class message_HV_CURRENT_conversion(message_HV_CURRENT):
     pass
 
 def raw_to_conversion_HV_CURRENT(raw: message_HV_CURRENT) -> message_HV_CURRENT_conversion:
@@ -635,7 +635,7 @@ class message_HV_TEMP:
             return False
         return True
 
-class message_HV_TEMP_conversion:
+class message_HV_TEMP_conversion(message_HV_TEMP):
     pass
 
 def raw_to_conversion_HV_TEMP(raw: message_HV_TEMP) -> message_HV_TEMP_conversion:
@@ -1145,7 +1145,7 @@ class message_HV_CELLS_VOLTAGE:
             return False
         return True
 
-class message_HV_CELLS_VOLTAGE_conversion:
+class message_HV_CELLS_VOLTAGE_conversion(message_HV_CELLS_VOLTAGE):
     pass
 
 def raw_to_conversion_HV_CELLS_VOLTAGE(raw: message_HV_CELLS_VOLTAGE) -> message_HV_CELLS_VOLTAGE_conversion:
@@ -1222,7 +1222,7 @@ class message_HV_CELLS_TEMP:
             return False
         return True
 
-class message_HV_CELLS_TEMP_conversion:
+class message_HV_CELLS_TEMP_conversion(message_HV_CELLS_TEMP):
     pass
 
 def raw_to_conversion_HV_CELLS_TEMP(raw: message_HV_CELLS_TEMP) -> message_HV_CELLS_TEMP_conversion:

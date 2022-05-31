@@ -150,7 +150,7 @@ class message_TEMPERATURES:
             return False
         return True
 
-class message_TEMPERATURES_conversion:
+class message_TEMPERATURES_conversion(message_TEMPERATURES):
     pass
 
 def raw_to_conversion_TEMPERATURES(raw: message_TEMPERATURES) -> message_TEMPERATURES_conversion:
@@ -219,7 +219,7 @@ class message_VOLTAGES:
             return False
         return True
 
-class message_VOLTAGES_conversion:
+class message_VOLTAGES_conversion(message_VOLTAGES):
     pass
 
 def raw_to_conversion_VOLTAGES(raw: message_VOLTAGES) -> message_VOLTAGES_conversion:
