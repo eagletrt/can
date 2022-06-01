@@ -265,6 +265,17 @@ class Pedal(IntEnum):
     def _missing_(cls, _):
         return cls(0)
 
+
+class Cooling(IntEnum):
+    RADIATORS_MAX = 0
+    RADIATORS_OFF = 1
+    PUMPS_MAX = 2
+    PUMPS_OFF = 3
+
+    @classmethod
+    def _missing_(cls, _):
+        return cls(0)
+
 # Messages
 
 
@@ -1056,8 +1067,8 @@ class message_LV_CURRENT:
         self,
         current = None
     ):
-        self.current = uint8(current)
-        self.size = 1
+        self.current = uint16(current)
+        self.size = 2
         self.interval = 500
 
     def __eq__(self, other):
@@ -1069,15 +1080,42 @@ class message_LV_CURRENT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.current))
+        data.extend(pack("<H", self.current))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.current = uint8(unpack("<B", data[0:1])[0])
+        message.current = uint16(unpack("<H", data[0:2])[0])
         return message
 
+
+    def convert(self) -> message_LV_CURRENT_conversion:
+        conversion = message_LV_CURRENT_conversion()
+        conversion.current = ((float32(self.current)) / 1310.72) + 0
+        return conversion
+
+
+class message_LV_CURRENT_conversion:
+    def __init__(
+        self,
+        current = None
+    ):
+        self.current = float32(current)
+        self.size = 2
+        self.interval = 500
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_CURRENT):
+            return False
+        if self.current != other.current:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_LV_CURRENT:
+        raw = message_LV_CURRENT()
+        raw.current = uint16((self.current + 0) * 1310.72)
+        return raw
 
 class message_LV_VOLTAGE:
     def __init__(
@@ -1087,11 +1125,11 @@ class message_LV_VOLTAGE:
         voltage_3 = None,
         voltage_4 = None
     ):
-        self.voltage_1 = uint8(voltage_1)
-        self.voltage_2 = uint8(voltage_2)
-        self.voltage_3 = uint8(voltage_3)
-        self.voltage_4 = uint8(voltage_4)
-        self.size = 4
+        self.voltage_1 = uint16(voltage_1)
+        self.voltage_2 = uint16(voltage_2)
+        self.voltage_3 = uint16(voltage_3)
+        self.voltage_4 = uint16(voltage_4)
+        self.size = 8
         self.interval = 200
 
     def __eq__(self, other):
@@ -1109,26 +1147,71 @@ class message_LV_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBB", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
+        data.extend(pack("<HHHH", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.voltage_1 = uint8(unpack("<B", data[0:1])[0])
-        message.voltage_2 = uint8(unpack("<xB", data[0:2])[0])
-        message.voltage_3 = uint8(unpack("<xxB", data[0:3])[0])
-        message.voltage_4 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.voltage_1 = uint16(unpack("<H", data[0:2])[0])
+        message.voltage_2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.voltage_3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.voltage_4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_LV_VOLTAGE_conversion:
+        conversion = message_LV_VOLTAGE_conversion()
+        conversion.voltage_1 = ((float32(self.voltage_1)) / 10000.0) + 0
+        conversion.voltage_2 = ((float32(self.voltage_2)) / 10000.0) + 0
+        conversion.voltage_3 = ((float32(self.voltage_3)) / 10000.0) + 0
+        conversion.voltage_4 = ((float32(self.voltage_4)) / 10000.0) + 0
+        return conversion
+
+
+class message_LV_VOLTAGE_conversion:
+    def __init__(
+        self,
+        voltage_1 = None,
+        voltage_2 = None,
+        voltage_3 = None,
+        voltage_4 = None
+    ):
+        self.voltage_1 = float32(voltage_1)
+        self.voltage_2 = float32(voltage_2)
+        self.voltage_3 = float32(voltage_3)
+        self.voltage_4 = float32(voltage_4)
+        self.size = 8
+        self.interval = 200
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_VOLTAGE):
+            return False
+        if self.voltage_1 != other.voltage_1:
+            return False
+        if self.voltage_2 != other.voltage_2:
+            return False
+        if self.voltage_3 != other.voltage_3:
+            return False
+        if self.voltage_4 != other.voltage_4:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_LV_VOLTAGE:
+        raw = message_LV_VOLTAGE()
+        raw.voltage_1 = uint16((self.voltage_1 + 0) * 10000.0)
+        raw.voltage_2 = uint16((self.voltage_2 + 0) * 10000.0)
+        raw.voltage_3 = uint16((self.voltage_3 + 0) * 10000.0)
+        raw.voltage_4 = uint16((self.voltage_4 + 0) * 10000.0)
+        return raw
 
 class message_LV_TOTAL_VOLTAGE:
     def __init__(
         self,
         total_voltage = None
     ):
-        self.total_voltage = uint16(total_voltage)
-        self.size = 2
+        self.total_voltage = uint32(total_voltage)
+        self.size = 4
         self.interval = 200
 
     def __eq__(self, other):
@@ -1140,48 +1223,130 @@ class message_LV_TOTAL_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<H", self.total_voltage))
+        data.extend(pack("<I", self.total_voltage))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.total_voltage = uint16(unpack("<H", data[0:2])[0])
+        message.total_voltage = uint32(unpack("<I", data[0:4])[0])
         return message
 
+
+    def convert(self) -> message_LV_TOTAL_VOLTAGE_conversion:
+        conversion = message_LV_TOTAL_VOLTAGE_conversion()
+        conversion.total_voltage = ((float32(self.total_voltage)) / 10000.0) + 0
+        return conversion
+
+
+class message_LV_TOTAL_VOLTAGE_conversion:
+    def __init__(
+        self,
+        total_voltage = None
+    ):
+        self.total_voltage = float32(total_voltage)
+        self.size = 4
+        self.interval = 200
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_TOTAL_VOLTAGE):
+            return False
+        if self.total_voltage != other.total_voltage:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_LV_TOTAL_VOLTAGE:
+        raw = message_LV_TOTAL_VOLTAGE()
+        raw.total_voltage = uint32((self.total_voltage + 0) * 10000.0)
+        return raw
 
 class message_LV_TEMPERATURE:
     def __init__(
         self,
-        bp_temperature = None,
-        dcdc_temperature = None
+        bp_temperature_1 = None,
+        bp_temperature_2 = None,
+        dcdc12_temperature = None,
+        dcdc24_temperature = None
     ):
-        self.bp_temperature = uint8(bp_temperature)
-        self.dcdc_temperature = uint8(dcdc_temperature)
-        self.size = 2
+        self.bp_temperature_1 = uint16(bp_temperature_1)
+        self.bp_temperature_2 = uint16(bp_temperature_2)
+        self.dcdc12_temperature = uint16(dcdc12_temperature)
+        self.dcdc24_temperature = uint16(dcdc24_temperature)
+        self.size = 8
         self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TEMPERATURE):
             return False
-        if self.bp_temperature != other.bp_temperature:
+        if self.bp_temperature_1 != other.bp_temperature_1:
             return False
-        if self.dcdc_temperature != other.dcdc_temperature:
+        if self.bp_temperature_2 != other.bp_temperature_2:
+            return False
+        if self.dcdc12_temperature != other.dcdc12_temperature:
+            return False
+        if self.dcdc24_temperature != other.dcdc24_temperature:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.bp_temperature, self.dcdc_temperature))
+        data.extend(pack("<HHHH", self.bp_temperature_1, self.bp_temperature_2, self.dcdc12_temperature, self.dcdc24_temperature))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.bp_temperature = uint8(unpack("<B", data[0:1])[0])
-        message.dcdc_temperature = uint8(unpack("<xB", data[0:2])[0])
+        message.bp_temperature_1 = uint16(unpack("<H", data[0:2])[0])
+        message.bp_temperature_2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.dcdc12_temperature = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.dcdc24_temperature = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_LV_TEMPERATURE_conversion:
+        conversion = message_LV_TEMPERATURE_conversion()
+        conversion.bp_temperature_1 = ((float32(self.bp_temperature_1)) / 655.36) - 20
+        conversion.bp_temperature_2 = ((float32(self.bp_temperature_2)) / 655.36) - 20
+        conversion.dcdc12_temperature = ((float32(self.dcdc12_temperature)) / 655.36) - 20
+        conversion.dcdc24_temperature = ((float32(self.dcdc24_temperature)) / 655.36) - 20
+        return conversion
+
+
+class message_LV_TEMPERATURE_conversion:
+    def __init__(
+        self,
+        bp_temperature_1 = None,
+        bp_temperature_2 = None,
+        dcdc12_temperature = None,
+        dcdc24_temperature = None
+    ):
+        self.bp_temperature_1 = float32(bp_temperature_1)
+        self.bp_temperature_2 = float32(bp_temperature_2)
+        self.dcdc12_temperature = float32(dcdc12_temperature)
+        self.dcdc24_temperature = float32(dcdc24_temperature)
+        self.size = 8
+        self.interval = 200
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_TEMPERATURE):
+            return False
+        if self.bp_temperature_1 != other.bp_temperature_1:
+            return False
+        if self.bp_temperature_2 != other.bp_temperature_2:
+            return False
+        if self.dcdc12_temperature != other.dcdc12_temperature:
+            return False
+        if self.dcdc24_temperature != other.dcdc24_temperature:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_LV_TEMPERATURE:
+        raw = message_LV_TEMPERATURE()
+        raw.bp_temperature_1 = uint16((self.bp_temperature_1 + 20) * 655.36)
+        raw.bp_temperature_2 = uint16((self.bp_temperature_2 + 20) * 655.36)
+        raw.dcdc12_temperature = uint16((self.dcdc12_temperature + 20) * 655.36)
+        raw.dcdc24_temperature = uint16((self.dcdc24_temperature + 20) * 655.36)
+        return raw
 
 class message_COOLING_STATUS:
     def __init__(
@@ -1190,10 +1355,10 @@ class message_COOLING_STATUS:
         lv_fan_speed = None,
         pump_speed = None
     ):
-        self.hv_fan_speed = uint8(hv_fan_speed)
-        self.lv_fan_speed = uint8(lv_fan_speed)
-        self.pump_speed = uint8(pump_speed)
-        self.size = 3
+        self.hv_fan_speed = uint16(hv_fan_speed)
+        self.lv_fan_speed = uint16(lv_fan_speed)
+        self.pump_speed = uint16(pump_speed)
+        self.size = 6
         self.interval = 1000
 
     def __eq__(self, other):
@@ -1209,15 +1374,108 @@ class message_COOLING_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", self.hv_fan_speed, self.lv_fan_speed, self.pump_speed))
+        data.extend(pack("<HHH", self.hv_fan_speed, self.lv_fan_speed, self.pump_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.hv_fan_speed = uint8(unpack("<B", data[0:1])[0])
-        message.lv_fan_speed = uint8(unpack("<xB", data[0:2])[0])
-        message.pump_speed = uint8(unpack("<xxB", data[0:3])[0])
+        message.hv_fan_speed = uint16(unpack("<H", data[0:2])[0])
+        message.lv_fan_speed = uint16(unpack("<xxH", data[0:4])[0])
+        message.pump_speed = uint16(unpack("<xxxxH", data[0:6])[0])
+        return message
+
+
+    def convert(self) -> message_COOLING_STATUS_conversion:
+        conversion = message_COOLING_STATUS_conversion()
+        conversion.hv_fan_speed = ((float32(self.hv_fan_speed)) / 65536.0) + 0
+        conversion.lv_fan_speed = ((float32(self.lv_fan_speed)) / 65536.0) + 0
+        conversion.pump_speed = ((float32(self.pump_speed)) / 65536.0) + 0
+        return conversion
+
+
+class message_COOLING_STATUS_conversion:
+    def __init__(
+        self,
+        hv_fan_speed = None,
+        lv_fan_speed = None,
+        pump_speed = None
+    ):
+        self.hv_fan_speed = float32(hv_fan_speed)
+        self.lv_fan_speed = float32(lv_fan_speed)
+        self.pump_speed = float32(pump_speed)
+        self.size = 6
+        self.interval = 1000
+
+    def __eq__(self, other):
+        if not isinstance(other, message_COOLING_STATUS):
+            return False
+        if self.hv_fan_speed != other.hv_fan_speed:
+            return False
+        if self.lv_fan_speed != other.lv_fan_speed:
+            return False
+        if self.pump_speed != other.pump_speed:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_COOLING_STATUS:
+        raw = message_COOLING_STATUS()
+        raw.hv_fan_speed = uint16((self.hv_fan_speed + 0) * 65536.0)
+        raw.lv_fan_speed = uint16((self.lv_fan_speed + 0) * 65536.0)
+        raw.pump_speed = uint16((self.pump_speed + 0) * 65536.0)
+        return raw
+
+class message_SET_RADIATOR_SPEED:
+    def __init__(
+        self,
+        car_radiators_speed = None
+    ):
+        self.car_radiators_speed = Cooling(car_radiators_speed)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_RADIATOR_SPEED):
+            return False
+        if self.car_radiators_speed != other.car_radiators_speed:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.car_radiators_speed << 6 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.car_radiators_speed = Cooling((unpack("<B", data[0:1])[0] & 192) >> 6)
+        return message
+
+
+class message_SET_PUMPS_POWER:
+    def __init__(
+        self,
+        car_pumps_power = None
+    ):
+        self.car_pumps_power = Cooling(car_pumps_power)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_PUMPS_POWER):
+            return False
+        if self.car_pumps_power != other.car_pumps_power:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.car_pumps_power << 6 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.car_pumps_power = Cooling((unpack("<B", data[0:1])[0] & 192) >> 6)
         return message
 
 

@@ -121,6 +121,12 @@
                 },
                 "COOLING_STATUS": {
                     "COOLING_STATUS": 902
+                },
+                "SET_RADIATOR_SPEED": {
+                    "SET_RADIATOR_SPEED": 934
+                },
+                "SET_PUMPS_POWER": {
+                    "SET_PUMPS_POWER": 966
                 }
             }
         },

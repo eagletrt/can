@@ -70,6 +70,8 @@
 #define primary_id_LV_TOTAL_VOLTAGE 0b01101000110
 #define primary_id_LV_TEMPERATURE 0b01101100110
 #define primary_id_COOLING_STATUS 0b01110000110
+#define primary_id_SET_RADIATOR_SPEED 0b01110100110
+#define primary_id_SET_PUMPS_POWER 0b01111000110
 
 /* TOPIC HANDCART */
 #define primary_topic_mask_HANDCART 0b00000011111
@@ -171,6 +173,12 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
             return 0;
         case primary_id_COOLING_STATUS:
             strcpy(buffer, "COOLING_STATUS");
+            return 0;
+        case primary_id_SET_RADIATOR_SPEED:
+            strcpy(buffer, "SET_RADIATOR_SPEED");
+            return 0;
+        case primary_id_SET_PUMPS_POWER:
+            strcpy(buffer, "SET_PUMPS_POWER");
             return 0;
         case primary_id_MARKER:
             strcpy(buffer, "MARKER");

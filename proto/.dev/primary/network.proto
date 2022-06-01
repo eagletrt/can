@@ -64,6 +64,13 @@ enum Pedal {
     Pedal_BRAKE = 1;
 }
 
+enum Cooling {
+    Cooling_RADIATORS_MAX = 0;
+    Cooling_RADIATORS_OFF = 1;
+    Cooling_PUMPS_MAX = 2;
+    Cooling_PUMPS_OFF = 3;
+}
+
 message STEER_VERSION {
     uint32 component_version = 1;
     uint32 cancicd_version = 2;
@@ -209,9 +216,11 @@ message LV_TOTAL_VOLTAGE {
 }
 
 message LV_TEMPERATURE {
-    uint32 bp_temperature = 1;
-    uint32 dcdc_temperature = 2;
-    uint64 _internal_timestamp = 3;
+    uint32 bp_temperature_1 = 1;
+    uint32 bp_temperature_2 = 2;
+    uint32 dcdc12_temperature = 3;
+    uint32 dcdc24_temperature = 4;
+    uint64 _internal_timestamp = 5;
 }
 
 message COOLING_STATUS {
@@ -219,6 +228,16 @@ message COOLING_STATUS {
     uint32 lv_fan_speed = 2;
     uint32 pump_speed = 3;
     uint64 _internal_timestamp = 4;
+}
+
+message SET_RADIATOR_SPEED {
+    Cooling car_radiators_speed = 1;
+    uint64 _internal_timestamp = 2;
+}
+
+message SET_PUMPS_POWER {
+    Cooling car_pumps_power = 1;
+    uint64 _internal_timestamp = 2;
 }
 
 message MARKER {
@@ -315,13 +334,15 @@ message Pack {
     repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 24;
     repeated LV_TEMPERATURE LV_TEMPERATURE = 25;
     repeated COOLING_STATUS COOLING_STATUS = 26;
-    repeated MARKER MARKER = 27;
-    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 28;
-    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 29;
-    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 30;
-    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 31;
-    repeated HANDCART_STATUS HANDCART_STATUS = 32;
-    repeated SPEED SPEED = 33;
-    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 34;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 35;
+    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
+    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 28;
+    repeated MARKER MARKER = 29;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 31;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
+    repeated HANDCART_STATUS HANDCART_STATUS = 34;
+    repeated SPEED SPEED = 35;
+    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 37;
 }

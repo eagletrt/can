@@ -32,11 +32,13 @@ typedef struct {
     std::vector<primary_message_SET_PEDALS_RANGE> SET_PEDALS_RANGE;
     std::vector<primary_message_CAR_STATUS> CAR_STATUS;
     std::vector<primary_message_DAS_ERRORS> DAS_ERRORS;
-    std::vector<primary_message_LV_CURRENT> LV_CURRENT;
-    std::vector<primary_message_LV_VOLTAGE> LV_VOLTAGE;
-    std::vector<primary_message_LV_TOTAL_VOLTAGE> LV_TOTAL_VOLTAGE;
-    std::vector<primary_message_LV_TEMPERATURE> LV_TEMPERATURE;
-    std::vector<primary_message_COOLING_STATUS> COOLING_STATUS;
+    std::vector<primary_message_LV_CURRENT_conversion> LV_CURRENT;
+    std::vector<primary_message_LV_VOLTAGE_conversion> LV_VOLTAGE;
+    std::vector<primary_message_LV_TOTAL_VOLTAGE_conversion> LV_TOTAL_VOLTAGE;
+    std::vector<primary_message_LV_TEMPERATURE_conversion> LV_TEMPERATURE;
+    std::vector<primary_message_COOLING_STATUS_conversion> COOLING_STATUS;
+    std::vector<primary_message_SET_RADIATOR_SPEED> SET_RADIATOR_SPEED;
+    std::vector<primary_message_SET_PUMPS_POWER> SET_PUMPS_POWER;
     std::vector<primary_message_MARKER> MARKER;
     std::vector<primary_message_HV_CELLS_VOLTAGE_conversion> HV_CELLS_VOLTAGE;
     std::vector<primary_message_HV_CELLS_TEMP_conversion> HV_CELLS_TEMP;
@@ -292,7 +294,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 774: {
-            primary_message_LV_CURRENT* msg = (primary_message_LV_CURRENT*) (*map)[index].raw_message;
+            primary_message_LV_CURRENT_conversion* msg = (primary_message_LV_CURRENT_conversion*) (*map)[index].conversion_message;
             primary::LV_CURRENT* proto_msg = pack->add_lv_current();
             proto_msg->set_current(msg->current);
 #ifdef CANLIB_TIMESTAMP
@@ -302,7 +304,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 806: {
-            primary_message_LV_VOLTAGE* msg = (primary_message_LV_VOLTAGE*) (*map)[index].raw_message;
+            primary_message_LV_VOLTAGE_conversion* msg = (primary_message_LV_VOLTAGE_conversion*) (*map)[index].conversion_message;
             primary::LV_VOLTAGE* proto_msg = pack->add_lv_voltage();
             proto_msg->set_voltage_1(msg->voltage_1);
             proto_msg->set_voltage_2(msg->voltage_2);
@@ -315,7 +317,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 838: {
-            primary_message_LV_TOTAL_VOLTAGE* msg = (primary_message_LV_TOTAL_VOLTAGE*) (*map)[index].raw_message;
+            primary_message_LV_TOTAL_VOLTAGE_conversion* msg = (primary_message_LV_TOTAL_VOLTAGE_conversion*) (*map)[index].conversion_message;
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
             proto_msg->set_total_voltage(msg->total_voltage);
 #ifdef CANLIB_TIMESTAMP
@@ -325,10 +327,12 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 870: {
-            primary_message_LV_TEMPERATURE* msg = (primary_message_LV_TEMPERATURE*) (*map)[index].raw_message;
+            primary_message_LV_TEMPERATURE_conversion* msg = (primary_message_LV_TEMPERATURE_conversion*) (*map)[index].conversion_message;
             primary::LV_TEMPERATURE* proto_msg = pack->add_lv_temperature();
-            proto_msg->set_bp_temperature(msg->bp_temperature);
-            proto_msg->set_dcdc_temperature(msg->dcdc_temperature);
+            proto_msg->set_bp_temperature_1(msg->bp_temperature_1);
+            proto_msg->set_bp_temperature_2(msg->bp_temperature_2);
+            proto_msg->set_dcdc12_temperature(msg->dcdc12_temperature);
+            proto_msg->set_dcdc24_temperature(msg->dcdc24_temperature);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -336,11 +340,31 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 902: {
-            primary_message_COOLING_STATUS* msg = (primary_message_COOLING_STATUS*) (*map)[index].raw_message;
+            primary_message_COOLING_STATUS_conversion* msg = (primary_message_COOLING_STATUS_conversion*) (*map)[index].conversion_message;
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
             proto_msg->set_hv_fan_speed(msg->hv_fan_speed);
             proto_msg->set_lv_fan_speed(msg->lv_fan_speed);
             proto_msg->set_pump_speed(msg->pump_speed);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__internal_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 934: {
+            primary_message_SET_RADIATOR_SPEED* msg = (primary_message_SET_RADIATOR_SPEED*) (*map)[index].raw_message;
+            primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
+            proto_msg->set_car_radiators_speed((primary::Cooling)msg->car_radiators_speed);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__internal_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 966: {
+            primary_message_SET_PUMPS_POWER* msg = (primary_message_SET_PUMPS_POWER*) (*map)[index].raw_message;
+            primary::SET_PUMPS_POWER* proto_msg = pack->add_set_pumps_power();
+            proto_msg->set_car_pumps_power((primary::Cooling)msg->car_pumps_power);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -654,8 +678,10 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     map->LV_TEMPERATURE.resize(pack->lv_temperature_size());
     for(int i = 0; i < pack->lv_temperature_size(); i++){
-        map->LV_TEMPERATURE[i].bp_temperature =pack->lv_temperature(i).bp_temperature();
-        map->LV_TEMPERATURE[i].dcdc_temperature =pack->lv_temperature(i).dcdc_temperature();
+        map->LV_TEMPERATURE[i].bp_temperature_1 =pack->lv_temperature(i).bp_temperature_1();
+        map->LV_TEMPERATURE[i].bp_temperature_2 =pack->lv_temperature(i).bp_temperature_2();
+        map->LV_TEMPERATURE[i].dcdc12_temperature =pack->lv_temperature(i).dcdc12_temperature();
+        map->LV_TEMPERATURE[i].dcdc24_temperature =pack->lv_temperature(i).dcdc24_temperature();
 #ifdef CANLIB_TIMESTAMP
         map->LV_TEMPERATURE[i]._timestamp = pack->lv_temperature(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -667,6 +693,20 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->COOLING_STATUS[i].pump_speed =pack->cooling_status(i).pump_speed();
 #ifdef CANLIB_TIMESTAMP
         map->COOLING_STATUS[i]._timestamp = pack->cooling_status(i)._internal_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->SET_RADIATOR_SPEED.resize(pack->set_radiator_speed_size());
+    for(int i = 0; i < pack->set_radiator_speed_size(); i++){
+        map->SET_RADIATOR_SPEED[i].car_radiators_speed =(primary_Cooling)pack->set_radiator_speed(i).car_radiators_speed();
+#ifdef CANLIB_TIMESTAMP
+        map->SET_RADIATOR_SPEED[i]._timestamp = pack->set_radiator_speed(i)._internal_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->SET_PUMPS_POWER.resize(pack->set_pumps_power_size());
+    for(int i = 0; i < pack->set_pumps_power_size(); i++){
+        map->SET_PUMPS_POWER[i].car_pumps_power =(primary_Cooling)pack->set_pumps_power(i).car_pumps_power();
+#ifdef CANLIB_TIMESTAMP
+        map->SET_PUMPS_POWER[i]._timestamp = pack->set_pumps_power(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->MARKER.resize(pack->marker_size());

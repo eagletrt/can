@@ -121,6 +121,12 @@ extern SET_CELL_BALANCING_STATUSDefaultTypeInternal _SET_CELL_BALANCING_STATUS_d
 class SET_PEDALS_RANGE;
 struct SET_PEDALS_RANGEDefaultTypeInternal;
 extern SET_PEDALS_RANGEDefaultTypeInternal _SET_PEDALS_RANGE_default_instance_;
+class SET_PUMPS_POWER;
+struct SET_PUMPS_POWERDefaultTypeInternal;
+extern SET_PUMPS_POWERDefaultTypeInternal _SET_PUMPS_POWER_default_instance_;
+class SET_RADIATOR_SPEED;
+struct SET_RADIATOR_SPEEDDefaultTypeInternal;
+extern SET_RADIATOR_SPEEDDefaultTypeInternal _SET_RADIATOR_SPEED_default_instance_;
 class SET_TLM_STATUS;
 struct SET_TLM_STATUSDefaultTypeInternal;
 extern SET_TLM_STATUSDefaultTypeInternal _SET_TLM_STATUS_default_instance_;
@@ -181,6 +187,8 @@ template<> ::primary::Pack* Arena::CreateMaybeMessage<::primary::Pack>(Arena*);
 template<> ::primary::SET_CAR_STATUS* Arena::CreateMaybeMessage<::primary::SET_CAR_STATUS>(Arena*);
 template<> ::primary::SET_CELL_BALANCING_STATUS* Arena::CreateMaybeMessage<::primary::SET_CELL_BALANCING_STATUS>(Arena*);
 template<> ::primary::SET_PEDALS_RANGE* Arena::CreateMaybeMessage<::primary::SET_PEDALS_RANGE>(Arena*);
+template<> ::primary::SET_PUMPS_POWER* Arena::CreateMaybeMessage<::primary::SET_PUMPS_POWER>(Arena*);
+template<> ::primary::SET_RADIATOR_SPEED* Arena::CreateMaybeMessage<::primary::SET_RADIATOR_SPEED>(Arena*);
 template<> ::primary::SET_TLM_STATUS* Arena::CreateMaybeMessage<::primary::SET_TLM_STATUS>(Arena*);
 template<> ::primary::SET_TS_STATUS_DAS* Arena::CreateMaybeMessage<::primary::SET_TS_STATUS_DAS>(Arena*);
 template<> ::primary::SET_TS_STATUS_HANDCART* Arena::CreateMaybeMessage<::primary::SET_TS_STATUS_HANDCART>(Arena*);
@@ -456,6 +464,33 @@ inline bool Pedal_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Pedal* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Pedal>(
     Pedal_descriptor(), name, value);
+}
+enum Cooling : int {
+  Cooling_RADIATORS_MAX = 0,
+  Cooling_RADIATORS_OFF = 1,
+  Cooling_PUMPS_MAX = 2,
+  Cooling_PUMPS_OFF = 3,
+  Cooling_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  Cooling_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool Cooling_IsValid(int value);
+constexpr Cooling Cooling_MIN = Cooling_RADIATORS_MAX;
+constexpr Cooling Cooling_MAX = Cooling_PUMPS_OFF;
+constexpr int Cooling_ARRAYSIZE = Cooling_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cooling_descriptor();
+template<typename T>
+inline const std::string& Cooling_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Cooling>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Cooling_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Cooling_descriptor(), enum_t_value);
+}
+inline bool Cooling_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Cooling* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Cooling>(
+    Cooling_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -4549,29 +4584,49 @@ class LV_TEMPERATURE final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBpTemperatureFieldNumber = 1,
-    kDcdcTemperatureFieldNumber = 2,
-    kInternalTimestampFieldNumber = 3,
+    kBpTemperature1FieldNumber = 1,
+    kBpTemperature2FieldNumber = 2,
+    kDcdc12TemperatureFieldNumber = 3,
+    kDcdc24TemperatureFieldNumber = 4,
+    kInternalTimestampFieldNumber = 5,
   };
-  // uint32 bp_temperature = 1;
-  void clear_bp_temperature();
-  uint32_t bp_temperature() const;
-  void set_bp_temperature(uint32_t value);
+  // uint32 bp_temperature_1 = 1;
+  void clear_bp_temperature_1();
+  uint32_t bp_temperature_1() const;
+  void set_bp_temperature_1(uint32_t value);
   private:
-  uint32_t _internal_bp_temperature() const;
-  void _internal_set_bp_temperature(uint32_t value);
+  uint32_t _internal_bp_temperature_1() const;
+  void _internal_set_bp_temperature_1(uint32_t value);
   public:
 
-  // uint32 dcdc_temperature = 2;
-  void clear_dcdc_temperature();
-  uint32_t dcdc_temperature() const;
-  void set_dcdc_temperature(uint32_t value);
+  // uint32 bp_temperature_2 = 2;
+  void clear_bp_temperature_2();
+  uint32_t bp_temperature_2() const;
+  void set_bp_temperature_2(uint32_t value);
   private:
-  uint32_t _internal_dcdc_temperature() const;
-  void _internal_set_dcdc_temperature(uint32_t value);
+  uint32_t _internal_bp_temperature_2() const;
+  void _internal_set_bp_temperature_2(uint32_t value);
   public:
 
-  // uint64 _internal_timestamp = 3;
+  // uint32 dcdc12_temperature = 3;
+  void clear_dcdc12_temperature();
+  uint32_t dcdc12_temperature() const;
+  void set_dcdc12_temperature(uint32_t value);
+  private:
+  uint32_t _internal_dcdc12_temperature() const;
+  void _internal_set_dcdc12_temperature(uint32_t value);
+  public:
+
+  // uint32 dcdc24_temperature = 4;
+  void clear_dcdc24_temperature();
+  uint32_t dcdc24_temperature() const;
+  void set_dcdc24_temperature(uint32_t value);
+  private:
+  uint32_t _internal_dcdc24_temperature() const;
+  void _internal_set_dcdc24_temperature(uint32_t value);
+  public:
+
+  // uint64 _internal_timestamp = 5;
   void clear__internal_timestamp();
   uint64_t _internal_timestamp() const;
   void set__internal_timestamp(uint64_t value);
@@ -4587,8 +4642,10 @@ class LV_TEMPERATURE final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t bp_temperature_;
-  uint32_t dcdc_temperature_;
+  uint32_t bp_temperature_1_;
+  uint32_t bp_temperature_2_;
+  uint32_t dcdc12_temperature_;
+  uint32_t dcdc24_temperature_;
   uint64_t _internal_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
@@ -4771,6 +4828,314 @@ class COOLING_STATUS final :
 };
 // -------------------------------------------------------------------
 
+class SET_RADIATOR_SPEED final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.SET_RADIATOR_SPEED) */ {
+ public:
+  inline SET_RADIATOR_SPEED() : SET_RADIATOR_SPEED(nullptr) {}
+  ~SET_RADIATOR_SPEED() override;
+  explicit PROTOBUF_CONSTEXPR SET_RADIATOR_SPEED(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SET_RADIATOR_SPEED(const SET_RADIATOR_SPEED& from);
+  SET_RADIATOR_SPEED(SET_RADIATOR_SPEED&& from) noexcept
+    : SET_RADIATOR_SPEED() {
+    *this = ::std::move(from);
+  }
+
+  inline SET_RADIATOR_SPEED& operator=(const SET_RADIATOR_SPEED& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SET_RADIATOR_SPEED& operator=(SET_RADIATOR_SPEED&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SET_RADIATOR_SPEED& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SET_RADIATOR_SPEED* internal_default_instance() {
+    return reinterpret_cast<const SET_RADIATOR_SPEED*>(
+               &_SET_RADIATOR_SPEED_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(SET_RADIATOR_SPEED& a, SET_RADIATOR_SPEED& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SET_RADIATOR_SPEED* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SET_RADIATOR_SPEED* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SET_RADIATOR_SPEED* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SET_RADIATOR_SPEED>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SET_RADIATOR_SPEED& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SET_RADIATOR_SPEED& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SET_RADIATOR_SPEED* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.SET_RADIATOR_SPEED";
+  }
+  protected:
+  explicit SET_RADIATOR_SPEED(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInternalTimestampFieldNumber = 2,
+    kCarRadiatorsSpeedFieldNumber = 1,
+  };
+  // uint64 _internal_timestamp = 2;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // .primary.Cooling car_radiators_speed = 1;
+  void clear_car_radiators_speed();
+  ::primary::Cooling car_radiators_speed() const;
+  void set_car_radiators_speed(::primary::Cooling value);
+  private:
+  ::primary::Cooling _internal_car_radiators_speed() const;
+  void _internal_set_car_radiators_speed(::primary::Cooling value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.SET_RADIATOR_SPEED)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _internal_timestamp_;
+  int car_radiators_speed_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SET_PUMPS_POWER final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.SET_PUMPS_POWER) */ {
+ public:
+  inline SET_PUMPS_POWER() : SET_PUMPS_POWER(nullptr) {}
+  ~SET_PUMPS_POWER() override;
+  explicit PROTOBUF_CONSTEXPR SET_PUMPS_POWER(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SET_PUMPS_POWER(const SET_PUMPS_POWER& from);
+  SET_PUMPS_POWER(SET_PUMPS_POWER&& from) noexcept
+    : SET_PUMPS_POWER() {
+    *this = ::std::move(from);
+  }
+
+  inline SET_PUMPS_POWER& operator=(const SET_PUMPS_POWER& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SET_PUMPS_POWER& operator=(SET_PUMPS_POWER&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SET_PUMPS_POWER& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SET_PUMPS_POWER* internal_default_instance() {
+    return reinterpret_cast<const SET_PUMPS_POWER*>(
+               &_SET_PUMPS_POWER_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(SET_PUMPS_POWER& a, SET_PUMPS_POWER& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SET_PUMPS_POWER* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SET_PUMPS_POWER* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SET_PUMPS_POWER* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SET_PUMPS_POWER>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SET_PUMPS_POWER& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SET_PUMPS_POWER& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SET_PUMPS_POWER* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.SET_PUMPS_POWER";
+  }
+  protected:
+  explicit SET_PUMPS_POWER(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInternalTimestampFieldNumber = 2,
+    kCarPumpsPowerFieldNumber = 1,
+  };
+  // uint64 _internal_timestamp = 2;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // .primary.Cooling car_pumps_power = 1;
+  void clear_car_pumps_power();
+  ::primary::Cooling car_pumps_power() const;
+  void set_car_pumps_power(::primary::Cooling value);
+  private:
+  ::primary::Cooling _internal_car_pumps_power() const;
+  void _internal_set_car_pumps_power(::primary::Cooling value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.SET_PUMPS_POWER)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _internal_timestamp_;
+  int car_pumps_power_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
 class MARKER final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.MARKER) */ {
  public:
@@ -4819,7 +5184,7 @@ class MARKER final :
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(MARKER& a, MARKER& b) {
     a.Swap(&b);
@@ -4962,7 +5327,7 @@ class HV_CELLS_VOLTAGE final :
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
     a.Swap(&b);
@@ -5149,7 +5514,7 @@ class HV_CELLS_TEMP final :
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
     a.Swap(&b);
@@ -5380,7 +5745,7 @@ class HV_CELL_BALANCING_STATUS final :
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -5534,7 +5899,7 @@ class SET_CELL_BALANCING_STATUS final :
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -5688,7 +6053,7 @@ class HANDCART_STATUS final :
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
     a.Swap(&b);
@@ -5842,7 +6207,7 @@ class SPEED final :
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(SPEED& a, SPEED& b) {
     a.Swap(&b);
@@ -6029,7 +6394,7 @@ class INV_L_SET_TORQUE final :
                &_INV_L_SET_TORQUE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(INV_L_SET_TORQUE& a, INV_L_SET_TORQUE& b) {
     a.Swap(&b);
@@ -6205,7 +6570,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -6436,7 +6801,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -6533,15 +6898,17 @@ class Pack final :
     kLVTOTALVOLTAGEFieldNumber = 24,
     kLVTEMPERATUREFieldNumber = 25,
     kCOOLINGSTATUSFieldNumber = 26,
-    kMARKERFieldNumber = 27,
-    kHVCELLSVOLTAGEFieldNumber = 28,
-    kHVCELLSTEMPFieldNumber = 29,
-    kHVCELLBALANCINGSTATUSFieldNumber = 30,
-    kSETCELLBALANCINGSTATUSFieldNumber = 31,
-    kHANDCARTSTATUSFieldNumber = 32,
-    kSPEEDFieldNumber = 33,
-    kINVLSETTORQUEFieldNumber = 34,
-    kINVLRESPONSEFieldNumber = 35,
+    kSETRADIATORSPEEDFieldNumber = 27,
+    kSETPUMPSPOWERFieldNumber = 28,
+    kMARKERFieldNumber = 29,
+    kHVCELLSVOLTAGEFieldNumber = 30,
+    kHVCELLSTEMPFieldNumber = 31,
+    kHVCELLBALANCINGSTATUSFieldNumber = 32,
+    kSETCELLBALANCINGSTATUSFieldNumber = 33,
+    kHANDCARTSTATUSFieldNumber = 34,
+    kSPEEDFieldNumber = 35,
+    kINVLSETTORQUEFieldNumber = 36,
+    kINVLRESPONSEFieldNumber = 37,
   };
   // repeated .primary.STEER_VERSION STEER_VERSION = 1;
   int steer_version_size() const;
@@ -7011,7 +7378,43 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::COOLING_STATUS >&
       cooling_status() const;
 
-  // repeated .primary.MARKER MARKER = 27;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
+  int set_radiator_speed_size() const;
+  private:
+  int _internal_set_radiator_speed_size() const;
+  public:
+  void clear_set_radiator_speed();
+  ::primary::SET_RADIATOR_SPEED* mutable_set_radiator_speed(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >*
+      mutable_set_radiator_speed();
+  private:
+  const ::primary::SET_RADIATOR_SPEED& _internal_set_radiator_speed(int index) const;
+  ::primary::SET_RADIATOR_SPEED* _internal_add_set_radiator_speed();
+  public:
+  const ::primary::SET_RADIATOR_SPEED& set_radiator_speed(int index) const;
+  ::primary::SET_RADIATOR_SPEED* add_set_radiator_speed();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
+      set_radiator_speed() const;
+
+  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 28;
+  int set_pumps_power_size() const;
+  private:
+  int _internal_set_pumps_power_size() const;
+  public:
+  void clear_set_pumps_power();
+  ::primary::SET_PUMPS_POWER* mutable_set_pumps_power(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >*
+      mutable_set_pumps_power();
+  private:
+  const ::primary::SET_PUMPS_POWER& _internal_set_pumps_power(int index) const;
+  ::primary::SET_PUMPS_POWER* _internal_add_set_pumps_power();
+  public:
+  const ::primary::SET_PUMPS_POWER& set_pumps_power(int index) const;
+  ::primary::SET_PUMPS_POWER* add_set_pumps_power();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >&
+      set_pumps_power() const;
+
+  // repeated .primary.MARKER MARKER = 29;
   int marker_size() const;
   private:
   int _internal_marker_size() const;
@@ -7029,7 +7432,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 28;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
   int hv_cells_voltage_size() const;
   private:
   int _internal_hv_cells_voltage_size() const;
@@ -7047,7 +7450,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 29;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 31;
   int hv_cells_temp_size() const;
   private:
   int _internal_hv_cells_temp_size() const;
@@ -7065,7 +7468,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 30;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
   int hv_cell_balancing_status_size() const;
   private:
   int _internal_hv_cell_balancing_status_size() const;
@@ -7083,7 +7486,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 31;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
   int set_cell_balancing_status_size() const;
   private:
   int _internal_set_cell_balancing_status_size() const;
@@ -7101,7 +7504,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 32;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 34;
   int handcart_status_size() const;
   private:
   int _internal_handcart_status_size() const;
@@ -7119,7 +7522,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 33;
+  // repeated .primary.SPEED SPEED = 35;
   int speed_size() const;
   private:
   int _internal_speed_size() const;
@@ -7137,7 +7540,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 34;
+  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
   int inv_l_set_torque_size() const;
   private:
   int _internal_inv_l_set_torque_size() const;
@@ -7155,7 +7558,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_SET_TORQUE >&
       inv_l_set_torque() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 35;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 37;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -7206,6 +7609,8 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE > lv_total_voltage_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TEMPERATURE > lv_temperature_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::COOLING_STATUS > cooling_status_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED > set_radiator_speed_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER > set_pumps_power_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER > marker_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE > hv_cells_voltage_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP > hv_cells_temp_;
@@ -8785,47 +9190,87 @@ inline void LV_TOTAL_VOLTAGE::set__internal_timestamp(uint64_t value) {
 
 // LV_TEMPERATURE
 
-// uint32 bp_temperature = 1;
-inline void LV_TEMPERATURE::clear_bp_temperature() {
-  bp_temperature_ = 0u;
+// uint32 bp_temperature_1 = 1;
+inline void LV_TEMPERATURE::clear_bp_temperature_1() {
+  bp_temperature_1_ = 0u;
 }
-inline uint32_t LV_TEMPERATURE::_internal_bp_temperature() const {
-  return bp_temperature_;
+inline uint32_t LV_TEMPERATURE::_internal_bp_temperature_1() const {
+  return bp_temperature_1_;
 }
-inline uint32_t LV_TEMPERATURE::bp_temperature() const {
-  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.bp_temperature)
-  return _internal_bp_temperature();
+inline uint32_t LV_TEMPERATURE::bp_temperature_1() const {
+  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.bp_temperature_1)
+  return _internal_bp_temperature_1();
 }
-inline void LV_TEMPERATURE::_internal_set_bp_temperature(uint32_t value) {
+inline void LV_TEMPERATURE::_internal_set_bp_temperature_1(uint32_t value) {
   
-  bp_temperature_ = value;
+  bp_temperature_1_ = value;
 }
-inline void LV_TEMPERATURE::set_bp_temperature(uint32_t value) {
-  _internal_set_bp_temperature(value);
-  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.bp_temperature)
+inline void LV_TEMPERATURE::set_bp_temperature_1(uint32_t value) {
+  _internal_set_bp_temperature_1(value);
+  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.bp_temperature_1)
 }
 
-// uint32 dcdc_temperature = 2;
-inline void LV_TEMPERATURE::clear_dcdc_temperature() {
-  dcdc_temperature_ = 0u;
+// uint32 bp_temperature_2 = 2;
+inline void LV_TEMPERATURE::clear_bp_temperature_2() {
+  bp_temperature_2_ = 0u;
 }
-inline uint32_t LV_TEMPERATURE::_internal_dcdc_temperature() const {
-  return dcdc_temperature_;
+inline uint32_t LV_TEMPERATURE::_internal_bp_temperature_2() const {
+  return bp_temperature_2_;
 }
-inline uint32_t LV_TEMPERATURE::dcdc_temperature() const {
-  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.dcdc_temperature)
-  return _internal_dcdc_temperature();
+inline uint32_t LV_TEMPERATURE::bp_temperature_2() const {
+  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.bp_temperature_2)
+  return _internal_bp_temperature_2();
 }
-inline void LV_TEMPERATURE::_internal_set_dcdc_temperature(uint32_t value) {
+inline void LV_TEMPERATURE::_internal_set_bp_temperature_2(uint32_t value) {
   
-  dcdc_temperature_ = value;
+  bp_temperature_2_ = value;
 }
-inline void LV_TEMPERATURE::set_dcdc_temperature(uint32_t value) {
-  _internal_set_dcdc_temperature(value);
-  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.dcdc_temperature)
+inline void LV_TEMPERATURE::set_bp_temperature_2(uint32_t value) {
+  _internal_set_bp_temperature_2(value);
+  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.bp_temperature_2)
 }
 
-// uint64 _internal_timestamp = 3;
+// uint32 dcdc12_temperature = 3;
+inline void LV_TEMPERATURE::clear_dcdc12_temperature() {
+  dcdc12_temperature_ = 0u;
+}
+inline uint32_t LV_TEMPERATURE::_internal_dcdc12_temperature() const {
+  return dcdc12_temperature_;
+}
+inline uint32_t LV_TEMPERATURE::dcdc12_temperature() const {
+  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.dcdc12_temperature)
+  return _internal_dcdc12_temperature();
+}
+inline void LV_TEMPERATURE::_internal_set_dcdc12_temperature(uint32_t value) {
+  
+  dcdc12_temperature_ = value;
+}
+inline void LV_TEMPERATURE::set_dcdc12_temperature(uint32_t value) {
+  _internal_set_dcdc12_temperature(value);
+  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.dcdc12_temperature)
+}
+
+// uint32 dcdc24_temperature = 4;
+inline void LV_TEMPERATURE::clear_dcdc24_temperature() {
+  dcdc24_temperature_ = 0u;
+}
+inline uint32_t LV_TEMPERATURE::_internal_dcdc24_temperature() const {
+  return dcdc24_temperature_;
+}
+inline uint32_t LV_TEMPERATURE::dcdc24_temperature() const {
+  // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.dcdc24_temperature)
+  return _internal_dcdc24_temperature();
+}
+inline void LV_TEMPERATURE::_internal_set_dcdc24_temperature(uint32_t value) {
+  
+  dcdc24_temperature_ = value;
+}
+inline void LV_TEMPERATURE::set_dcdc24_temperature(uint32_t value) {
+  _internal_set_dcdc24_temperature(value);
+  // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.dcdc24_temperature)
+}
+
+// uint64 _internal_timestamp = 5;
 inline void LV_TEMPERATURE::clear__internal_timestamp() {
   _internal_timestamp_ = uint64_t{0u};
 }
@@ -8927,6 +9372,94 @@ inline void COOLING_STATUS::_internal_set__internal_timestamp(uint64_t value) {
 inline void COOLING_STATUS::set__internal_timestamp(uint64_t value) {
   _internal_set__internal_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.COOLING_STATUS._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// SET_RADIATOR_SPEED
+
+// .primary.Cooling car_radiators_speed = 1;
+inline void SET_RADIATOR_SPEED::clear_car_radiators_speed() {
+  car_radiators_speed_ = 0;
+}
+inline ::primary::Cooling SET_RADIATOR_SPEED::_internal_car_radiators_speed() const {
+  return static_cast< ::primary::Cooling >(car_radiators_speed_);
+}
+inline ::primary::Cooling SET_RADIATOR_SPEED::car_radiators_speed() const {
+  // @@protoc_insertion_point(field_get:primary.SET_RADIATOR_SPEED.car_radiators_speed)
+  return _internal_car_radiators_speed();
+}
+inline void SET_RADIATOR_SPEED::_internal_set_car_radiators_speed(::primary::Cooling value) {
+  
+  car_radiators_speed_ = value;
+}
+inline void SET_RADIATOR_SPEED::set_car_radiators_speed(::primary::Cooling value) {
+  _internal_set_car_radiators_speed(value);
+  // @@protoc_insertion_point(field_set:primary.SET_RADIATOR_SPEED.car_radiators_speed)
+}
+
+// uint64 _internal_timestamp = 2;
+inline void SET_RADIATOR_SPEED::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t SET_RADIATOR_SPEED::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t SET_RADIATOR_SPEED::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SET_RADIATOR_SPEED._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void SET_RADIATOR_SPEED::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void SET_RADIATOR_SPEED::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SET_RADIATOR_SPEED._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// SET_PUMPS_POWER
+
+// .primary.Cooling car_pumps_power = 1;
+inline void SET_PUMPS_POWER::clear_car_pumps_power() {
+  car_pumps_power_ = 0;
+}
+inline ::primary::Cooling SET_PUMPS_POWER::_internal_car_pumps_power() const {
+  return static_cast< ::primary::Cooling >(car_pumps_power_);
+}
+inline ::primary::Cooling SET_PUMPS_POWER::car_pumps_power() const {
+  // @@protoc_insertion_point(field_get:primary.SET_PUMPS_POWER.car_pumps_power)
+  return _internal_car_pumps_power();
+}
+inline void SET_PUMPS_POWER::_internal_set_car_pumps_power(::primary::Cooling value) {
+  
+  car_pumps_power_ = value;
+}
+inline void SET_PUMPS_POWER::set_car_pumps_power(::primary::Cooling value) {
+  _internal_set_car_pumps_power(value);
+  // @@protoc_insertion_point(field_set:primary.SET_PUMPS_POWER.car_pumps_power)
+}
+
+// uint64 _internal_timestamp = 2;
+inline void SET_PUMPS_POWER::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t SET_PUMPS_POWER::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t SET_PUMPS_POWER::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SET_PUMPS_POWER._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void SET_PUMPS_POWER::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void SET_PUMPS_POWER::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SET_PUMPS_POWER._internal_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -10789,7 +11322,87 @@ Pack::cooling_status() const {
   return cooling_status_;
 }
 
-// repeated .primary.MARKER MARKER = 27;
+// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
+inline int Pack::_internal_set_radiator_speed_size() const {
+  return set_radiator_speed_.size();
+}
+inline int Pack::set_radiator_speed_size() const {
+  return _internal_set_radiator_speed_size();
+}
+inline void Pack::clear_set_radiator_speed() {
+  set_radiator_speed_.Clear();
+}
+inline ::primary::SET_RADIATOR_SPEED* Pack::mutable_set_radiator_speed(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.SET_RADIATOR_SPEED)
+  return set_radiator_speed_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >*
+Pack::mutable_set_radiator_speed() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.SET_RADIATOR_SPEED)
+  return &set_radiator_speed_;
+}
+inline const ::primary::SET_RADIATOR_SPEED& Pack::_internal_set_radiator_speed(int index) const {
+  return set_radiator_speed_.Get(index);
+}
+inline const ::primary::SET_RADIATOR_SPEED& Pack::set_radiator_speed(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.SET_RADIATOR_SPEED)
+  return _internal_set_radiator_speed(index);
+}
+inline ::primary::SET_RADIATOR_SPEED* Pack::_internal_add_set_radiator_speed() {
+  return set_radiator_speed_.Add();
+}
+inline ::primary::SET_RADIATOR_SPEED* Pack::add_set_radiator_speed() {
+  ::primary::SET_RADIATOR_SPEED* _add = _internal_add_set_radiator_speed();
+  // @@protoc_insertion_point(field_add:primary.Pack.SET_RADIATOR_SPEED)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
+Pack::set_radiator_speed() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.SET_RADIATOR_SPEED)
+  return set_radiator_speed_;
+}
+
+// repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 28;
+inline int Pack::_internal_set_pumps_power_size() const {
+  return set_pumps_power_.size();
+}
+inline int Pack::set_pumps_power_size() const {
+  return _internal_set_pumps_power_size();
+}
+inline void Pack::clear_set_pumps_power() {
+  set_pumps_power_.Clear();
+}
+inline ::primary::SET_PUMPS_POWER* Pack::mutable_set_pumps_power(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.SET_PUMPS_POWER)
+  return set_pumps_power_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >*
+Pack::mutable_set_pumps_power() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.SET_PUMPS_POWER)
+  return &set_pumps_power_;
+}
+inline const ::primary::SET_PUMPS_POWER& Pack::_internal_set_pumps_power(int index) const {
+  return set_pumps_power_.Get(index);
+}
+inline const ::primary::SET_PUMPS_POWER& Pack::set_pumps_power(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.SET_PUMPS_POWER)
+  return _internal_set_pumps_power(index);
+}
+inline ::primary::SET_PUMPS_POWER* Pack::_internal_add_set_pumps_power() {
+  return set_pumps_power_.Add();
+}
+inline ::primary::SET_PUMPS_POWER* Pack::add_set_pumps_power() {
+  ::primary::SET_PUMPS_POWER* _add = _internal_add_set_pumps_power();
+  // @@protoc_insertion_point(field_add:primary.Pack.SET_PUMPS_POWER)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >&
+Pack::set_pumps_power() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.SET_PUMPS_POWER)
+  return set_pumps_power_;
+}
+
+// repeated .primary.MARKER MARKER = 29;
 inline int Pack::_internal_marker_size() const {
   return marker_.size();
 }
@@ -10829,7 +11442,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 28;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
 inline int Pack::_internal_hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -10869,7 +11482,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 29;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 31;
 inline int Pack::_internal_hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -10909,7 +11522,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 30;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
 inline int Pack::_internal_hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -10949,7 +11562,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 31;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
 inline int Pack::_internal_set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -10989,7 +11602,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 32;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 34;
 inline int Pack::_internal_handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -11029,7 +11642,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 33;
+// repeated .primary.SPEED SPEED = 35;
 inline int Pack::_internal_speed_size() const {
   return speed_.size();
 }
@@ -11069,7 +11682,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 34;
+// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
 inline int Pack::_internal_inv_l_set_torque_size() const {
   return inv_l_set_torque_.size();
 }
@@ -11109,7 +11722,7 @@ Pack::inv_l_set_torque() const {
   return inv_l_set_torque_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 35;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 37;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -11152,6 +11765,10 @@ Pack::inv_l_response() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -11278,6 +11895,11 @@ template <> struct is_proto_enum< ::primary::Pedal> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::primary::Pedal>() {
   return ::primary::Pedal_descriptor();
+}
+template <> struct is_proto_enum< ::primary::Cooling> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::primary::Cooling>() {
+  return ::primary::Cooling_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE
