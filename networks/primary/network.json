@@ -4,16 +4,20 @@
     "HvErrors": {
       "type": "bitset",
       "items": [
-        "LTC_PEC_ERROR",
+        "CELL_LOW_VOLTAGE",
         "CELL_UNDER_VOLTAGE",
         "CELL_OVER_VOLTAGE",
+        "CELL_HIGH_TEMPERATURE",
         "CELL_OVER_TEMPERATURE",
         "OVER_CURRENT",
-        "ADC_INIT",
-        "ADC_TIMEOUT",
+        "CAN",
         "INT_VOLTAGE_MISMATCH",
-        "FEEDBACK_HARD",
-        "FEEDBACK_SOFT"
+        "CELLBOARD_COMM",
+        "CELLBOARD_INTERNAL",
+        "FEEDBACK",
+        "FEEDBACK_CIRCUITRY",
+        "EEPROM_COMM",
+        "EEPROM_WRITE"
       ]
     },
     "DasErrors": {
@@ -155,7 +159,7 @@
       "sending": ["STEER"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "component_version": "uint8",
         "cancicd_version": "uint8"
@@ -168,7 +172,7 @@
       "sending": ["DAS"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "component_version": "uint8",
         "cancicd_version": "uint8"
@@ -181,7 +185,7 @@
       "sending": ["BMS_HW"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "component_version": "uint8",
         "cancicd_version": "uint8"
@@ -194,7 +198,7 @@
       "sending": ["BMS_LW"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "component_version": "uint8",
         "cancicd_version": "uint8"
@@ -207,7 +211,7 @@
       "sending": ["TLM"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "component_version": "uint8",
         "cancicd_version": "uint8"
@@ -220,7 +224,7 @@
       "sending": ["TLM"],
       "receiving": ["STEER", "DAS", "BMS_HV", "BMS_LV"],
       "description": "every second unix encoded time and date used by logging devices to sync",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "timestamp": "uint32"
       }
@@ -246,7 +250,7 @@
       "sending": ["TLM"],
       "receiving": ["STEER"],
       "description": "The answer to the steering wheel's message that changes the status of the telemetry",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "tlm_status": "Toggle",
         "race_type": "RaceType",
@@ -261,7 +265,7 @@
       "sending": ["STEER"],
       "receiving": ["TLM"],
       "description": "System stats of the raspberry pi inside the steering wheel",
-      "frequency": 2000,
+      "interval": 2000,
       "contents": {
         "soc_temp": "uint8"
       }
@@ -273,12 +277,28 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Pack stats",
-      "frequency": 20,
+      "interval": 20,
       "contents": {
-        "pack_voltage": "uint16",
-        "bus_voltage": "uint16",
-        "max_cell_voltage": "uint16",
-        "min_cell_voltage": "uint16"
+        "pack_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "bus_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "max_cell_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "min_cell_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        }
       }
     },
     {
@@ -288,10 +308,18 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Current supplied by the pack",
-      "frequency": 20,
+      "interval": 20,
       "contents": {
-        "current": "uint16",
-        "power": "int16"
+        "current": {
+          "type": "float32",
+          "range": [0, 200],
+          "force": "uint16"
+        },
+        "power": {
+          "type": "float32",
+          "range": [0, 100],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -301,11 +329,23 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Cell temperatures",
-      "frequency": 200,
+      "interval": 200,
       "contents": {
-        "average_temp": "uint16",
-        "max_temp": "uint16",
-        "min_temp": "uint16"
+        "average_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "max_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "min_temp": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -315,7 +355,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Battery-related errors",
-      "frequency": 20,
+      "interval": 20,
       "contents": {
         "warnings": "HvErrors",
         "errors": "HvErrors"
@@ -328,7 +368,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "BMS status",
-      "frequency": 20,
+      "interval": 20,
       "contents": {
         "ts_status": "TsStatus"
       }
@@ -351,7 +391,7 @@
       "sending": ["STEER"],
       "receiving": ["DAS"],
       "description": "Send update of the tuneable values from the steering wheel",
-      "frequency": 100,
+      "interval": 100,
       "contents": {
         "traction_control": "TractionControl",
         "map": "Map"
@@ -387,7 +427,7 @@
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Car status, all states managed by the DAS will be send (car status, inverters status)",
-      "frequency": 100,
+      "interval": 100,
       "contents": {
         "inverter_l": "InverterStatus",
         "inverter_r": "InverterStatus",
@@ -401,7 +441,7 @@
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "DAS errors messages",
-      "frequency": 20,
+      "interval": 20,
       "contents": {
         "das_error": "DasErrors"
       }
@@ -413,7 +453,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Current of LV battery pack: total current taken from the battery itself",
-      "frequency": 500,
+      "interval": 500,
       "contents": {
         "current": "uint8"
       }
@@ -424,14 +464,25 @@
       "priority": 4,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Voltages of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage), 4x single cell voltage 8bit [3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
-      "frequency": 200,
+      "description": "Voltages of LV battery pack: 4x single cell voltage 8bit [3.3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
+      "interval": 200,
       "contents": {
-        "total_voltage": "uint16",
         "voltage_1": "uint8",
         "voltage_2": "uint8",
         "voltage_3": "uint8",
         "voltage_4": "uint8"
+      }
+    },
+    {
+      "name": "LV_TOTAL_VOLTAGE",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Voltage of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage",
+      "interval": 200,
+      "contents": {
+        "total_voltage": "uint16"
       }
     },
     {
@@ -441,7 +492,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Temperature of LV battery pack,[0,80]Celsius, uint8 0.32C/bit. battery pack and dcdc converter",
-      "frequency": 200,
+      "interval": 200,
       "contents": {
         "bp_temperature": "uint8",
         "dcdc_temperature": "uint8"
@@ -454,7 +505,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit",
-      "frequency": 1000,
+      "interval": 1000,
       "contents": {
         "hv_fan_speed": "uint8",
         "lv_fan_speed": "uint8",
@@ -499,12 +550,24 @@
       "sending": ["BMS_HV"],
       "receiving": ["HANDCART"],
       "description": "Voltages for each cell",
-      "frequency": 200,
+      "interval": 200,
       "contents": {
-        "cell_index": "uint8",
-        "voltage_0": "uint16",
-        "voltage_1": "uint16",
-        "voltage_2": "uint16"
+        "start_index": "uint8",
+        "voltage_0": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        },
+        "voltage_1": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        },
+        "voltage_2": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -514,16 +577,44 @@
       "sending": ["BMS_HV"],
       "receiving": ["HANDCART"],
       "description": "Cell temperatures",
-      "frequency": 100,
+      "interval": 100,
       "contents": {
-        "cell_index": "uint8",
-        "temp_0": "uint8",
-        "temp_1": "uint8",
-        "temp_2": "uint8",
-        "temp_3": "uint8",
-        "temp_4": "uint8",
-        "temp_5": "uint8",
-        "temp_6": "uint8"
+        "start_index": "uint8",
+        "temp_0": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_1": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_2": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_3": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_4": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_5": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp_6": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        }
       }
     },
     {
@@ -533,7 +624,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["HANDCART"],
       "description": "Cell balancing status",
-      "frequency": 500,
+      "interval": 500,
       "contents": {
         "balancing_status": "Toggle"
       }
@@ -556,7 +647,7 @@
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "description": "Sends updates on the presence of the handcart",
-      "frequency": 500,
+      "interval": 500,
       "contents": {
         "connected": "bool"
       }
@@ -568,7 +659,7 @@
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Encoder speed and inverter RPMs",
-      "frequency": 100,
+      "interval": 100,
       "contents": {
         "encoder_r": "uint16",
         "encoder_l": "uint16",
@@ -581,7 +672,7 @@
       "fixed_id": 513,
       "sending": ["DAS"],
       "receiving": ["INVERTER_L"],
-      "frequency": 20,
+      "interval": 20,
       "contents": {
         "reg_id": "uint8",
         "lsb": "uint8",
@@ -593,7 +684,7 @@
       "fixed_id": 385,
       "sending": ["INVERTER_L"],
       "receiving": ["DAS"],
-      "frequency": 100,
+      "interval": 100,
       "contents": {
         "reg_id": "uint8",
         "data_0": "uint8",

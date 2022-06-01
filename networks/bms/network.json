@@ -11,7 +11,8 @@
         "TEMP_COMM_2",
         "TEMP_COMM_3",
         "TEMP_COMM_4",
-        "TEMP_COMM_5"
+        "TEMP_COMM_5",
+        "OPEN_WIRE"
       ]
     },
     "BalancingStatus": {
@@ -79,12 +80,36 @@
       "description": "Cells' temperatures",
       "contents": {
         "start_index": "uint8",
-        "temp0": "uint8",
-        "temp1": "uint8",
-        "temp2": "uint8",
-        "temp3": "uint8",
-        "temp4": "uint8",
-        "temp5": "uint8"
+        "temp0": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp1": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp2": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp3": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp4": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        },
+        "temp5": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint8"
+        }
       }
     },
     {
@@ -103,9 +128,21 @@
       "description": "Cells' voltages",
       "contents": {
         "start_index": "uint8",
-        "voltage0": "uint16",
-        "voltage1": "uint16",
-        "voltage2": "uint16"
+        "voltage0": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "voltage1": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "voltage2": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        }
       }
     },
     {
