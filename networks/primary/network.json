@@ -145,6 +145,10 @@
     "Pedal": {
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
+    },
+    "Cooling":{
+      "type": "enum",
+      "items": ["RADIATORS_MAX", "RADIATORS_OFF", "PUMPS_MAX", "PUMPS_OFF"]
     }
   },
   "messages": [
@@ -451,7 +455,11 @@
       "description": "Current of LV battery pack: total current taken from the battery itself",
       "interval": 500,
       "contents": {
-        "current": "uint8"
+        "current": {
+          "type": "float32",
+          "range": [0, 50],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -463,10 +471,26 @@
       "description": "Voltages of LV battery pack: 4x single cell voltage 8bit [3.3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
       "interval": 200,
       "contents": {
-        "voltage_1": "uint8",
-        "voltage_2": "uint8",
-        "voltage_3": "uint8",
-        "voltage_4": "uint8"
+        "voltage_1": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "voltage_2": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "voltage_3": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "voltage_4": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        }
       }
     },
     {
@@ -478,7 +502,11 @@
       "description": "Voltage of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage",
       "interval": 200,
       "contents": {
-        "total_voltage": "uint16"
+        "total_voltage": {
+          "type": "float32",
+          "range": [0, 16],
+          "precision": 0.0001
+        }
       }
     },
     {
@@ -487,11 +515,29 @@
       "priority": 4,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Temperature of LV battery pack,[0,80]Celsius, uint8 0.32C/bit. battery pack and dcdc converter",
+      "description": "Temperature of LV battery pack (two sensors),[-20,80] Celsius. Temperature of dcdc12V and dcdc24V converter",
       "interval": 200,
       "contents": {
-        "bp_temperature": "uint8",
-        "dcdc_temperature": "uint8"
+        "bp_temperature_1": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "bp_temperature_2": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "dcdc12_temperature": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        },
+        "dcdc24_temperature": {
+          "type": "float32",
+          "range": [-20, 80],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -503,9 +549,43 @@
       "description": "Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit",
       "interval": 1000,
       "contents": {
-        "hv_fan_speed": "uint8",
-        "lv_fan_speed": "uint8",
-        "pump_speed": "uint8"
+        "hv_fan_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        },
+        "lv_fan_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        },
+        "pump_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "SET_RADIATOR_SPEED",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["STEER"],
+      "receiving": ["DAS", "BMS_LV"],
+      "description": "Set both radiators speed",
+      "contents": {
+        "car_radiators_speed": "Cooling"
+      }
+    },
+    {
+      "name": "SET_PUMPS_POWER",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["STEER"],
+      "receiving": ["DAS", "BMS_LV"],
+      "description": "Set both pumps power",
+      "contents": {
+        "car_pumps_power": "Cooling"
       }
     },
     {
