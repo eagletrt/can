@@ -141,6 +141,10 @@
     "Pedal": {
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
+    },
+    "Cooling":{
+      "type": "enum",
+      "items": ["RADIATORS_MAX", "RADIATORS_OFF", "PUMPS_MAX", "PUMPS_OFF"]
     }
   },
   "messages": [
@@ -455,6 +459,28 @@
         "hv_fan_speed": "uint8",
         "lv_fan_speed": "uint8",
         "pump_speed": "uint8"
+      }
+    },
+    {
+      "name": "SET_RADIATOR_SPEED",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["STEER"],
+      "receiving": ["DAS", "BMS_LV"],
+      "description": "Set both radiators speed",
+      "contents": {
+        "car_radiators_speed": "Cooling"
+      }
+    },
+    {
+      "name": "SET_PUMPS_POWER",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["STEER"],
+      "receiving": ["DAS", "BMS_LV"],
+      "description": "Set both pumps power",
+      "contents": {
+        "car_pumps_power": "Cooling"
       }
     },
     {
