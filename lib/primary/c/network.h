@@ -5350,22 +5350,22 @@ void primary_fields_from_id(uint16_t message_id, FILE *buffer) {
     case 902:
         primary_fields_file_COOLING_STATUS(buffer);
         break;
-    case 934:
+    case 775:
         primary_fields_file_SET_RADIATOR_SPEED(buffer);
         break;
-    case 966:
+    case 807:
         primary_fields_file_SET_PUMPS_POWER(buffer);
         break;
     case 1:
         primary_fields_file_MARKER(buffer);
         break;
-    case 519:
+    case 520:
         primary_fields_file_HV_CELLS_VOLTAGE(buffer);
         break;
-    case 551:
+    case 552:
         primary_fields_file_HV_CELLS_TEMP(buffer);
         break;
-    case 583:
+    case 584:
         primary_fields_file_HV_CELL_BALANCING_STATUS(buffer);
         break;
     case 516:
@@ -5466,22 +5466,22 @@ void primary_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
         case 902:
             primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
         break;
-        case 934:
+        case 775:
             primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
         break;
-        case 966:
+        case 807:
             primary_to_string_file_SET_PUMPS_POWER((primary_message_SET_PUMPS_POWER*) message, buffer);
         break;
         case 1:
             primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
         break;
-        case 519:
+        case 520:
             primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
         break;
-        case 551:
+        case 552:
             primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
         break;
-        case 583:
+        case 584:
             primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
         break;
         case 516:
@@ -5778,7 +5778,7 @@ void primary_deserialize_from_id(
                 (primary_message_COOLING_STATUS_conversion*) message
             );
         break;
-        case 934:
+        case 775:
             primary_deserialize_SET_RADIATOR_SPEED(
                 (primary_message_SET_RADIATOR_SPEED*) raw_message,
                 data
@@ -5787,7 +5787,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 966:
+        case 807:
             primary_deserialize_SET_PUMPS_POWER(
                 (primary_message_SET_PUMPS_POWER*) raw_message,
                 data
@@ -5805,7 +5805,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 519:
+        case 520:
             primary_deserialize_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message,
                 data
@@ -5818,7 +5818,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_VOLTAGE_conversion*) message
             );
         break;
-        case 551:
+        case 552:
             primary_deserialize_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP*) raw_message,
                 data
@@ -5831,7 +5831,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_TEMP_conversion*) message
             );
         break;
-        case 583:
+        case 584:
             primary_deserialize_HV_CELL_BALANCING_STATUS(
                 (primary_message_HV_CELL_BALANCING_STATUS*) raw_message,
                 data
@@ -5888,47 +5888,84 @@ void primary_deserialize_from_id(
     }
 }
 
-bool primary_is_message_id(uint16_t message_id) {
+int primary_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-        case 1024: return true; break;
-        case 1056: return true; break;
-        case 1088: return true; break;
-        case 1120: return true; break;
-        case 1152: return true; break;
-        case 256: return true; break;
-        case 257: return true; break;
-        case 258: return true; break;
-        case 1793: return true; break;
-        case 771: return true; break;
-        case 803: return true; break;
-        case 835: return true; break;
-        case 3: return true; break;
-        case 35: return true; break;
-        case 4: return true; break;
-        case 36: return true; break;
-        case 261: return true; break;
-        case 773: return true; break;
-        case 1029: return true; break;
-        case 514: return true; break;
-        case 2: return true; break;
-        case 774: return true; break;
-        case 806: return true; break;
-        case 838: return true; break;
-        case 870: return true; break;
-        case 902: return true; break;
-        case 934: return true; break;
-        case 966: return true; break;
-        case 1: return true; break;
-        case 519: return true; break;
-        case 551: return true; break;
-        case 583: return true; break;
-        case 516: return true; break;
-        case 772: return true; break;
-        case 546: return true; break;
-        case 513: return true; break;
-        case 385: return true; break;
+    case 1024:
+        return primary_STEER_VERSION_INTERVAL;
+    case 1056:
+        return primary_DAS_VERSION_INTERVAL;
+    case 1088:
+        return primary_HV_VERSION_INTERVAL;
+    case 1120:
+        return primary_LV_VERSION_INTERVAL;
+    case 1152:
+        return primary_TLM_VERSION_INTERVAL;
+    case 256:
+        return primary_TIMESTAMP_INTERVAL;
+    case 257:
+        return primary_SET_TLM_STATUS_INTERVAL;
+    case 258:
+        return primary_TLM_STATUS_INTERVAL;
+    case 1793:
+        return primary_STEER_SYSTEM_STATUS_INTERVAL;
+    case 771:
+        return primary_HV_VOLTAGE_INTERVAL;
+    case 803:
+        return primary_HV_CURRENT_INTERVAL;
+    case 835:
+        return primary_HV_TEMP_INTERVAL;
+    case 3:
+        return primary_HV_ERRORS_INTERVAL;
+    case 35:
+        return primary_TS_STATUS_INTERVAL;
+    case 4:
+        return primary_SET_TS_STATUS_INTERVAL;
+    case 36:
+        return primary_SET_TS_STATUS_INTERVAL;
+    case 261:
+        return primary_STEER_STATUS_INTERVAL;
+    case 773:
+        return primary_SET_CAR_STATUS_INTERVAL;
+    case 1029:
+        return primary_SET_PEDALS_RANGE_INTERVAL;
+    case 514:
+        return primary_CAR_STATUS_INTERVAL;
+    case 2:
+        return primary_DAS_ERRORS_INTERVAL;
+    case 774:
+        return primary_LV_CURRENT_INTERVAL;
+    case 806:
+        return primary_LV_VOLTAGE_INTERVAL;
+    case 838:
+        return primary_LV_TOTAL_VOLTAGE_INTERVAL;
+    case 870:
+        return primary_LV_TEMPERATURE_INTERVAL;
+    case 902:
+        return primary_COOLING_STATUS_INTERVAL;
+    case 775:
+        return primary_SET_RADIATOR_SPEED_INTERVAL;
+    case 807:
+        return primary_SET_PUMPS_POWER_INTERVAL;
+    case 1:
+        return primary_MARKER_INTERVAL;
+    case 520:
+        return primary_HV_CELLS_VOLTAGE_INTERVAL;
+    case 552:
+        return primary_HV_CELLS_TEMP_INTERVAL;
+    case 584:
+        return primary_HV_CELL_BALANCING_STATUS_INTERVAL;
+    case 516:
+        return primary_SET_CELL_BALANCING_STATUS_INTERVAL;
+    case 772:
+        return primary_HANDCART_STATUS_INTERVAL;
+    case 546:
+        return primary_SPEED_INTERVAL;
+    case 513:
+        return primary_INV_L_SET_TORQUE_INTERVAL;
+    case 385:
+        return primary_INV_L_RESPONSE_INTERVAL;
     }
-    return false;
+    return -1;
 }
 
 void primary_devices_new(primary_devices* map) {
@@ -6036,11 +6073,11 @@ void primary_devices_new(primary_devices* map) {
     (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
     (*map)[25].message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
 
-    (*map)[26].id = 934;
+    (*map)[26].id = 775;
     (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
     (*map)[26].message = NULL;
 
-    (*map)[27].id = 966;
+    (*map)[27].id = 807;
     (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
     (*map)[27].message = NULL;
 
@@ -6048,15 +6085,15 @@ void primary_devices_new(primary_devices* map) {
     (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
     (*map)[28].message = NULL;
 
-    (*map)[29].id = 519;
+    (*map)[29].id = 520;
     (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
     (*map)[29].message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
-    (*map)[30].id = 551;
+    (*map)[30].id = 552;
     (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
     (*map)[30].message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
-    (*map)[31].id = 583;
+    (*map)[31].id = 584;
     (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
     (*map)[31].message = NULL;
 

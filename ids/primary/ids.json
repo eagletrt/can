@@ -121,26 +121,31 @@
                 },
                 "COOLING_STATUS": {
                     "COOLING_STATUS": 902
-                },
+                }
+            }
+        },
+        "DASnLV": {
+            "id": 7,
+            "messages": {
                 "SET_RADIATOR_SPEED": {
-                    "SET_RADIATOR_SPEED": 934
+                    "SET_RADIATOR_SPEED": 775
                 },
                 "SET_PUMPS_POWER": {
-                    "SET_PUMPS_POWER": 966
+                    "SET_PUMPS_POWER": 807
                 }
             }
         },
         "HANDCART": {
-            "id": 7,
+            "id": 8,
             "messages": {
                 "HV_CELLS_VOLTAGE": {
-                    "HV_CELLS_VOLTAGE": 519
+                    "HV_CELLS_VOLTAGE": 520
                 },
                 "HV_CELLS_TEMP": {
-                    "HV_CELLS_TEMP": 551
+                    "HV_CELLS_TEMP": 552
                 },
                 "HV_CELL_BALANCING_STATUS": {
-                    "HV_CELL_BALANCING_STATUS": 583
+                    "HV_CELL_BALANCING_STATUS": 584
                 }
             }
         },

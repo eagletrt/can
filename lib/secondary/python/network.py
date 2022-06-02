@@ -881,3 +881,110 @@ class message_LAP_COUNT:
         message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
         return message
 
+
+class message_PEDALS_OUTPUT:
+    def __init__(
+        self,
+        brake_front = None,
+        brake_rear = None,
+        apps = None
+    ):
+        self.brake_front = uint16(brake_front)
+        self.brake_rear = uint16(brake_rear)
+        self.apps = uint8(apps)
+        self.size = 5
+
+    def __eq__(self, other):
+        if not isinstance(other, message_PEDALS_OUTPUT):
+            return False
+        if self.brake_front != other.brake_front:
+            return False
+        if self.brake_rear != other.brake_rear:
+            return False
+        if self.apps != other.apps:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HHB", self.brake_front, self.brake_rear, self.apps))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.brake_front = uint16(unpack("<H", data[0:2])[0])
+        message.brake_rear = uint16(unpack("<xxH", data[0:4])[0])
+        message.apps = uint8(unpack("<xxxxB", data[0:5])[0])
+        return message
+
+
+    def convert(self) -> message_PEDALS_OUTPUT_conversion:
+        conversion = message_PEDALS_OUTPUT_conversion()
+        conversion.brake_front = ((float32(self.brake_front)) / 655.36) + 0
+        conversion.brake_rear = ((float32(self.brake_rear)) / 655.36) + 0
+        conversion.apps = self.apps
+        return conversion
+
+
+class message_PEDALS_OUTPUT_conversion:
+    def __init__(
+        self,
+        brake_front = None,
+        brake_rear = None,
+        apps = None
+    ):
+        self.brake_front = float32(brake_front)
+        self.brake_rear = float32(brake_rear)
+        self.apps = uint8(apps)
+        self.size = 5
+
+    def __eq__(self, other):
+        if not isinstance(other, message_PEDALS_OUTPUT):
+            return False
+        if self.brake_front != other.brake_front:
+            return False
+        if self.brake_rear != other.brake_rear:
+            return False
+        if self.apps != other.apps:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_PEDALS_OUTPUT:
+        raw = message_PEDALS_OUTPUT()
+        raw.brake_front = uint16((self.brake_front + 0) * 655.36)
+        raw.brake_rear = uint16((self.brake_rear + 0) * 655.36)
+        raw.apps = self.apps
+        return raw
+
+class message_CONTROL_OUTPUT:
+    def __init__(
+        self,
+        right = None,
+        left = None
+    ):
+        self.right = float32(right)
+        self.left = float32(left)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_CONTROL_OUTPUT):
+            return False
+        if self.right != other.right:
+            return False
+        if self.left != other.left:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<ff", self.right, self.left))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.right = float32(unpack("<f", data[0:4])[0])
+        message.left = float32(unpack("<xxxxf", data[0:8])[0])
+        return message
+

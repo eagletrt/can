@@ -12,6 +12,12 @@
                 },
                 "LAP_COUNT": {
                     "LAP_COUNT": 1089
+                },
+                "PEDALS_OUTPUT": {
+                    "PEDALS_OUTPUT": 769
+                },
+                "CONTROL_OUTPUT": {
+                    "CONTROL_OUTPUT": 801
                 }
             }
         },

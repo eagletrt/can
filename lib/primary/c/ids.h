@@ -70,16 +70,21 @@
 #define primary_id_LV_TOTAL_VOLTAGE 0b01101000110
 #define primary_id_LV_TEMPERATURE 0b01101100110
 #define primary_id_COOLING_STATUS 0b01110000110
-#define primary_id_SET_RADIATOR_SPEED 0b01110100110
-#define primary_id_SET_PUMPS_POWER 0b01111000110
+
+/* TOPIC DASnLV */
+#define primary_topic_mask_DASnLV 0b00000011111
+#define primary_topic_filter_DASnLV 0b00000000111
+
+#define primary_id_SET_RADIATOR_SPEED 0b01100000111
+#define primary_id_SET_PUMPS_POWER 0b01100100111
 
 /* TOPIC HANDCART */
 #define primary_topic_mask_HANDCART 0b00000011111
-#define primary_topic_filter_HANDCART 0b00000000111
+#define primary_topic_filter_HANDCART 0b00000001000
 
-#define primary_id_HV_CELLS_VOLTAGE 0b01000000111
-#define primary_id_HV_CELLS_TEMP 0b01000100111
-#define primary_id_HV_CELL_BALANCING_STATUS 0b01001000111
+#define primary_id_HV_CELLS_VOLTAGE 0b01000001000
+#define primary_id_HV_CELLS_TEMP 0b01000101000
+#define primary_id_HV_CELL_BALANCING_STATUS 0b01001001000
 
 /* TOPIC FIXED_IDS */
 #define primary_topic_mask_FIXED_IDS 0b00000011111
@@ -211,6 +216,49 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
             strcpy(buffer, ""); // Unknown message
     }
     return 1;
+}
+
+bool primary_is_message_id(uint16_t message_id) {
+    switch (message_id) {
+        case 1024: return true; break;
+        case 1056: return true; break;
+        case 1088: return true; break;
+        case 1120: return true; break;
+        case 1152: return true; break;
+        case 256: return true; break;
+        case 257: return true; break;
+        case 258: return true; break;
+        case 1793: return true; break;
+        case 771: return true; break;
+        case 803: return true; break;
+        case 835: return true; break;
+        case 3: return true; break;
+        case 35: return true; break;
+        case 4: return true; break;
+        case 36: return true; break;
+        case 261: return true; break;
+        case 773: return true; break;
+        case 1029: return true; break;
+        case 514: return true; break;
+        case 2: return true; break;
+        case 774: return true; break;
+        case 806: return true; break;
+        case 838: return true; break;
+        case 870: return true; break;
+        case 902: return true; break;
+        case 775: return true; break;
+        case 807: return true; break;
+        case 1: return true; break;
+        case 520: return true; break;
+        case 552: return true; break;
+        case 584: return true; break;
+        case 516: return true; break;
+        case 772: return true; break;
+        case 546: return true; break;
+        case 513: return true; break;
+        case 385: return true; break;
+    }
+    return false;
 }
 
 #endif // primary_IDS_IMPLEMENTATION

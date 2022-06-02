@@ -1320,30 +1320,50 @@ void bms_deserialize_from_id(
     }
 }
 
-bool bms_is_message_id(uint16_t message_id) {
+int bms_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-        case 1536: return true; break;
-        case 1568: return true; break;
-        case 1600: return true; break;
-        case 1632: return true; break;
-        case 1664: return true; break;
-        case 1696: return true; break;
-        case 1281: return true; break;
-        case 1313: return true; break;
-        case 1345: return true; break;
-        case 1377: return true; break;
-        case 1409: return true; break;
-        case 1441: return true; break;
-        case 514: return true; break;
-        case 546: return true; break;
-        case 578: return true; break;
-        case 610: return true; break;
-        case 642: return true; break;
-        case 674: return true; break;
-        case 515: return true; break;
-        case 260: return true; break;
+    case 1536:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1568:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1600:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1632:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1664:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1696:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1281:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1313:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1345:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1377:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1409:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1441:
+        return bms_TEMPERATURES_INTERVAL;
+    case 514:
+        return bms_VOLTAGES_INTERVAL;
+    case 546:
+        return bms_VOLTAGES_INTERVAL;
+    case 578:
+        return bms_VOLTAGES_INTERVAL;
+    case 610:
+        return bms_VOLTAGES_INTERVAL;
+    case 642:
+        return bms_VOLTAGES_INTERVAL;
+    case 674:
+        return bms_VOLTAGES_INTERVAL;
+    case 515:
+        return bms_BALANCING_INTERVAL;
+    case 260:
+        return bms_FW_UPDATE_INTERVAL;
     }
-    return false;
+    return -1;
 }
 
 void bms_devices_new(bms_devices* map) {

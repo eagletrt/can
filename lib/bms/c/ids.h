@@ -126,6 +126,32 @@ int bms_message_name_from_id(uint16_t id, char *buffer) {
     return 1;
 }
 
+bool bms_is_message_id(uint16_t message_id) {
+    switch (message_id) {
+        case 1536: return true; break;
+        case 1568: return true; break;
+        case 1600: return true; break;
+        case 1632: return true; break;
+        case 1664: return true; break;
+        case 1696: return true; break;
+        case 1281: return true; break;
+        case 1313: return true; break;
+        case 1345: return true; break;
+        case 1377: return true; break;
+        case 1409: return true; break;
+        case 1441: return true; break;
+        case 514: return true; break;
+        case 546: return true; break;
+        case 578: return true; break;
+        case 610: return true; break;
+        case 642: return true; break;
+        case 674: return true; break;
+        case 515: return true; break;
+        case 260: return true; break;
+    }
+    return false;
+}
+
 #endif // bms_IDS_IMPLEMENTATION
 
 #endif // bms_IDS_H

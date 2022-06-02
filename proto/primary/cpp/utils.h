@@ -351,7 +351,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             break;
         }
 
-        case 934: {
+        case 775: {
             primary_message_SET_RADIATOR_SPEED* msg = (primary_message_SET_RADIATOR_SPEED*) (*map)[index].raw_message;
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
             proto_msg->set_car_radiators_speed((primary::Cooling)msg->car_radiators_speed);
@@ -361,7 +361,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             break;
         }
 
-        case 966: {
+        case 807: {
             primary_message_SET_PUMPS_POWER* msg = (primary_message_SET_PUMPS_POWER*) (*map)[index].raw_message;
             primary::SET_PUMPS_POWER* proto_msg = pack->add_set_pumps_power();
             proto_msg->set_car_pumps_power((primary::Cooling)msg->car_pumps_power);
@@ -377,7 +377,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             break;
         }
 
-        case 519: {
+        case 520: {
             primary_message_HV_CELLS_VOLTAGE_conversion* msg = (primary_message_HV_CELLS_VOLTAGE_conversion*) (*map)[index].conversion_message;
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
             proto_msg->set_voltage_0(msg->voltage_0);
@@ -390,7 +390,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             break;
         }
 
-        case 551: {
+        case 552: {
             primary_message_HV_CELLS_TEMP_conversion* msg = (primary_message_HV_CELLS_TEMP_conversion*) (*map)[index].conversion_message;
             primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
             proto_msg->set_start_index(msg->start_index);
@@ -407,7 +407,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             break;
         }
 
-        case 583: {
+        case 584: {
             primary_message_HV_CELL_BALANCING_STATUS* msg = (primary_message_HV_CELL_BALANCING_STATUS*) (*map)[index].raw_message;
             primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
             proto_msg->set_balancing_status((primary::Toggle)msg->balancing_status);

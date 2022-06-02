@@ -45,6 +45,9 @@ struct TableStruct_network_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_network_2eproto;
 namespace secondary {
+class CONTROL_OUTPUT;
+struct CONTROL_OUTPUTDefaultTypeInternal;
+extern CONTROL_OUTPUTDefaultTypeInternal _CONTROL_OUTPUT_default_instance_;
 class GPS_COORDS;
 struct GPS_COORDSDefaultTypeInternal;
 extern GPS_COORDSDefaultTypeInternal _GPS_COORDS_default_instance_;
@@ -108,11 +111,15 @@ extern IRTS_RR_3DefaultTypeInternal _IRTS_RR_3_default_instance_;
 class LAP_COUNT;
 struct LAP_COUNTDefaultTypeInternal;
 extern LAP_COUNTDefaultTypeInternal _LAP_COUNT_default_instance_;
+class PEDALS_OUTPUT;
+struct PEDALS_OUTPUTDefaultTypeInternal;
+extern PEDALS_OUTPUTDefaultTypeInternal _PEDALS_OUTPUT_default_instance_;
 class Pack;
 struct PackDefaultTypeInternal;
 extern PackDefaultTypeInternal _Pack_default_instance_;
 }  // namespace secondary
 PROTOBUF_NAMESPACE_OPEN
+template<> ::secondary::CONTROL_OUTPUT* Arena::CreateMaybeMessage<::secondary::CONTROL_OUTPUT>(Arena*);
 template<> ::secondary::GPS_COORDS* Arena::CreateMaybeMessage<::secondary::GPS_COORDS>(Arena*);
 template<> ::secondary::GPS_SPEED* Arena::CreateMaybeMessage<::secondary::GPS_SPEED>(Arena*);
 template<> ::secondary::IMU_ACCELERATION* Arena::CreateMaybeMessage<::secondary::IMU_ACCELERATION>(Arena*);
@@ -134,6 +141,7 @@ template<> ::secondary::IRTS_RR_1* Arena::CreateMaybeMessage<::secondary::IRTS_R
 template<> ::secondary::IRTS_RR_2* Arena::CreateMaybeMessage<::secondary::IRTS_RR_2>(Arena*);
 template<> ::secondary::IRTS_RR_3* Arena::CreateMaybeMessage<::secondary::IRTS_RR_3>(Arena*);
 template<> ::secondary::LAP_COUNT* Arena::CreateMaybeMessage<::secondary::LAP_COUNT>(Arena*);
+template<> ::secondary::PEDALS_OUTPUT* Arena::CreateMaybeMessage<::secondary::PEDALS_OUTPUT>(Arena*);
 template<> ::secondary::Pack* Arena::CreateMaybeMessage<::secondary::Pack>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace secondary {
@@ -3968,6 +3976,347 @@ class LAP_COUNT final :
 };
 // -------------------------------------------------------------------
 
+class PEDALS_OUTPUT final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.PEDALS_OUTPUT) */ {
+ public:
+  inline PEDALS_OUTPUT() : PEDALS_OUTPUT(nullptr) {}
+  ~PEDALS_OUTPUT() override;
+  explicit PROTOBUF_CONSTEXPR PEDALS_OUTPUT(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PEDALS_OUTPUT(const PEDALS_OUTPUT& from);
+  PEDALS_OUTPUT(PEDALS_OUTPUT&& from) noexcept
+    : PEDALS_OUTPUT() {
+    *this = ::std::move(from);
+  }
+
+  inline PEDALS_OUTPUT& operator=(const PEDALS_OUTPUT& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PEDALS_OUTPUT& operator=(PEDALS_OUTPUT&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PEDALS_OUTPUT& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PEDALS_OUTPUT* internal_default_instance() {
+    return reinterpret_cast<const PEDALS_OUTPUT*>(
+               &_PEDALS_OUTPUT_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(PEDALS_OUTPUT& a, PEDALS_OUTPUT& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PEDALS_OUTPUT* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PEDALS_OUTPUT* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  PEDALS_OUTPUT* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PEDALS_OUTPUT>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const PEDALS_OUTPUT& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const PEDALS_OUTPUT& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PEDALS_OUTPUT* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.PEDALS_OUTPUT";
+  }
+  protected:
+  explicit PEDALS_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBrakeFrontFieldNumber = 1,
+    kBrakeRearFieldNumber = 2,
+    kInternalTimestampFieldNumber = 4,
+    kAppsFieldNumber = 3,
+  };
+  // uint32 brake_front = 1;
+  void clear_brake_front();
+  uint32_t brake_front() const;
+  void set_brake_front(uint32_t value);
+  private:
+  uint32_t _internal_brake_front() const;
+  void _internal_set_brake_front(uint32_t value);
+  public:
+
+  // uint32 brake_rear = 2;
+  void clear_brake_rear();
+  uint32_t brake_rear() const;
+  void set_brake_rear(uint32_t value);
+  private:
+  uint32_t _internal_brake_rear() const;
+  void _internal_set_brake_rear(uint32_t value);
+  public:
+
+  // uint64 _internal_timestamp = 4;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // uint32 apps = 3;
+  void clear_apps();
+  uint32_t apps() const;
+  void set_apps(uint32_t value);
+  private:
+  uint32_t _internal_apps() const;
+  void _internal_set_apps(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.PEDALS_OUTPUT)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t brake_front_;
+  uint32_t brake_rear_;
+  uint64_t _internal_timestamp_;
+  uint32_t apps_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CONTROL_OUTPUT final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.CONTROL_OUTPUT) */ {
+ public:
+  inline CONTROL_OUTPUT() : CONTROL_OUTPUT(nullptr) {}
+  ~CONTROL_OUTPUT() override;
+  explicit PROTOBUF_CONSTEXPR CONTROL_OUTPUT(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CONTROL_OUTPUT(const CONTROL_OUTPUT& from);
+  CONTROL_OUTPUT(CONTROL_OUTPUT&& from) noexcept
+    : CONTROL_OUTPUT() {
+    *this = ::std::move(from);
+  }
+
+  inline CONTROL_OUTPUT& operator=(const CONTROL_OUTPUT& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CONTROL_OUTPUT& operator=(CONTROL_OUTPUT&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CONTROL_OUTPUT& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CONTROL_OUTPUT* internal_default_instance() {
+    return reinterpret_cast<const CONTROL_OUTPUT*>(
+               &_CONTROL_OUTPUT_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(CONTROL_OUTPUT& a, CONTROL_OUTPUT& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CONTROL_OUTPUT* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CONTROL_OUTPUT* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CONTROL_OUTPUT* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CONTROL_OUTPUT>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CONTROL_OUTPUT& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const CONTROL_OUTPUT& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CONTROL_OUTPUT* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.CONTROL_OUTPUT";
+  }
+  protected:
+  explicit CONTROL_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRightFieldNumber = 1,
+    kLeftFieldNumber = 2,
+    kInternalTimestampFieldNumber = 3,
+  };
+  // float right = 1;
+  void clear_right();
+  float right() const;
+  void set_right(float value);
+  private:
+  float _internal_right() const;
+  void _internal_set_right(float value);
+  public:
+
+  // float left = 2;
+  void clear_left();
+  float left() const;
+  void set_left(float value);
+  private:
+  float _internal_left() const;
+  void _internal_set_left(float value);
+  public:
+
+  // uint64 _internal_timestamp = 3;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.CONTROL_OUTPUT)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  float right_;
+  float left_;
+  uint64_t _internal_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.Pack) */ {
  public:
@@ -4016,7 +4365,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -4108,6 +4457,8 @@ class Pack final :
     kGPSCOORDSFieldNumber = 19,
     kGPSSPEEDFieldNumber = 20,
     kLAPCOUNTFieldNumber = 21,
+    kPEDALSOUTPUTFieldNumber = 22,
+    kCONTROLOUTPUTFieldNumber = 23,
   };
   // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
   int imu_angular_rate_size() const;
@@ -4487,6 +4838,42 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LAP_COUNT >&
       lap_count() const;
 
+  // repeated .secondary.PEDALS_OUTPUT PEDALS_OUTPUT = 22;
+  int pedals_output_size() const;
+  private:
+  int _internal_pedals_output_size() const;
+  public:
+  void clear_pedals_output();
+  ::secondary::PEDALS_OUTPUT* mutable_pedals_output(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT >*
+      mutable_pedals_output();
+  private:
+  const ::secondary::PEDALS_OUTPUT& _internal_pedals_output(int index) const;
+  ::secondary::PEDALS_OUTPUT* _internal_add_pedals_output();
+  public:
+  const ::secondary::PEDALS_OUTPUT& pedals_output(int index) const;
+  ::secondary::PEDALS_OUTPUT* add_pedals_output();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT >&
+      pedals_output() const;
+
+  // repeated .secondary.CONTROL_OUTPUT CONTROL_OUTPUT = 23;
+  int control_output_size() const;
+  private:
+  int _internal_control_output_size() const;
+  public:
+  void clear_control_output();
+  ::secondary::CONTROL_OUTPUT* mutable_control_output(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >*
+      mutable_control_output();
+  private:
+  const ::secondary::CONTROL_OUTPUT& _internal_control_output(int index) const;
+  ::secondary::CONTROL_OUTPUT* _internal_add_control_output();
+  public:
+  const ::secondary::CONTROL_OUTPUT& control_output(int index) const;
+  ::secondary::CONTROL_OUTPUT* add_control_output();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >&
+      control_output() const;
+
   // @@protoc_insertion_point(class_scope:secondary.Pack)
  private:
   class _Internal;
@@ -4515,6 +4902,8 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::GPS_COORDS > gps_coords_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::GPS_SPEED > gps_speed_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LAP_COUNT > lap_count_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT > pedals_output_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT > control_output_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
 };
@@ -6531,6 +6920,154 @@ inline void LAP_COUNT::set__internal_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// PEDALS_OUTPUT
+
+// uint32 brake_front = 1;
+inline void PEDALS_OUTPUT::clear_brake_front() {
+  brake_front_ = 0u;
+}
+inline uint32_t PEDALS_OUTPUT::_internal_brake_front() const {
+  return brake_front_;
+}
+inline uint32_t PEDALS_OUTPUT::brake_front() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.brake_front)
+  return _internal_brake_front();
+}
+inline void PEDALS_OUTPUT::_internal_set_brake_front(uint32_t value) {
+  
+  brake_front_ = value;
+}
+inline void PEDALS_OUTPUT::set_brake_front(uint32_t value) {
+  _internal_set_brake_front(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.brake_front)
+}
+
+// uint32 brake_rear = 2;
+inline void PEDALS_OUTPUT::clear_brake_rear() {
+  brake_rear_ = 0u;
+}
+inline uint32_t PEDALS_OUTPUT::_internal_brake_rear() const {
+  return brake_rear_;
+}
+inline uint32_t PEDALS_OUTPUT::brake_rear() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.brake_rear)
+  return _internal_brake_rear();
+}
+inline void PEDALS_OUTPUT::_internal_set_brake_rear(uint32_t value) {
+  
+  brake_rear_ = value;
+}
+inline void PEDALS_OUTPUT::set_brake_rear(uint32_t value) {
+  _internal_set_brake_rear(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.brake_rear)
+}
+
+// uint32 apps = 3;
+inline void PEDALS_OUTPUT::clear_apps() {
+  apps_ = 0u;
+}
+inline uint32_t PEDALS_OUTPUT::_internal_apps() const {
+  return apps_;
+}
+inline uint32_t PEDALS_OUTPUT::apps() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.apps)
+  return _internal_apps();
+}
+inline void PEDALS_OUTPUT::_internal_set_apps(uint32_t value) {
+  
+  apps_ = value;
+}
+inline void PEDALS_OUTPUT::set_apps(uint32_t value) {
+  _internal_set_apps(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.apps)
+}
+
+// uint64 _internal_timestamp = 4;
+inline void PEDALS_OUTPUT::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t PEDALS_OUTPUT::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t PEDALS_OUTPUT::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void PEDALS_OUTPUT::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void PEDALS_OUTPUT::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// CONTROL_OUTPUT
+
+// float right = 1;
+inline void CONTROL_OUTPUT::clear_right() {
+  right_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_right() const {
+  return right_;
+}
+inline float CONTROL_OUTPUT::right() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.right)
+  return _internal_right();
+}
+inline void CONTROL_OUTPUT::_internal_set_right(float value) {
+  
+  right_ = value;
+}
+inline void CONTROL_OUTPUT::set_right(float value) {
+  _internal_set_right(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.right)
+}
+
+// float left = 2;
+inline void CONTROL_OUTPUT::clear_left() {
+  left_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_left() const {
+  return left_;
+}
+inline float CONTROL_OUTPUT::left() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.left)
+  return _internal_left();
+}
+inline void CONTROL_OUTPUT::_internal_set_left(float value) {
+  
+  left_ = value;
+}
+inline void CONTROL_OUTPUT::set_left(float value) {
+  _internal_set_left(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.left)
+}
+
+// uint64 _internal_timestamp = 3;
+inline void CONTROL_OUTPUT::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t CONTROL_OUTPUT::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t CONTROL_OUTPUT::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void CONTROL_OUTPUT::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void CONTROL_OUTPUT::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -7373,9 +7910,93 @@ Pack::lap_count() const {
   return lap_count_;
 }
 
+// repeated .secondary.PEDALS_OUTPUT PEDALS_OUTPUT = 22;
+inline int Pack::_internal_pedals_output_size() const {
+  return pedals_output_.size();
+}
+inline int Pack::pedals_output_size() const {
+  return _internal_pedals_output_size();
+}
+inline void Pack::clear_pedals_output() {
+  pedals_output_.Clear();
+}
+inline ::secondary::PEDALS_OUTPUT* Pack::mutable_pedals_output(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.PEDALS_OUTPUT)
+  return pedals_output_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT >*
+Pack::mutable_pedals_output() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.PEDALS_OUTPUT)
+  return &pedals_output_;
+}
+inline const ::secondary::PEDALS_OUTPUT& Pack::_internal_pedals_output(int index) const {
+  return pedals_output_.Get(index);
+}
+inline const ::secondary::PEDALS_OUTPUT& Pack::pedals_output(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.PEDALS_OUTPUT)
+  return _internal_pedals_output(index);
+}
+inline ::secondary::PEDALS_OUTPUT* Pack::_internal_add_pedals_output() {
+  return pedals_output_.Add();
+}
+inline ::secondary::PEDALS_OUTPUT* Pack::add_pedals_output() {
+  ::secondary::PEDALS_OUTPUT* _add = _internal_add_pedals_output();
+  // @@protoc_insertion_point(field_add:secondary.Pack.PEDALS_OUTPUT)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT >&
+Pack::pedals_output() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.PEDALS_OUTPUT)
+  return pedals_output_;
+}
+
+// repeated .secondary.CONTROL_OUTPUT CONTROL_OUTPUT = 23;
+inline int Pack::_internal_control_output_size() const {
+  return control_output_.size();
+}
+inline int Pack::control_output_size() const {
+  return _internal_control_output_size();
+}
+inline void Pack::clear_control_output() {
+  control_output_.Clear();
+}
+inline ::secondary::CONTROL_OUTPUT* Pack::mutable_control_output(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.CONTROL_OUTPUT)
+  return control_output_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >*
+Pack::mutable_control_output() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.CONTROL_OUTPUT)
+  return &control_output_;
+}
+inline const ::secondary::CONTROL_OUTPUT& Pack::_internal_control_output(int index) const {
+  return control_output_.Get(index);
+}
+inline const ::secondary::CONTROL_OUTPUT& Pack::control_output(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.CONTROL_OUTPUT)
+  return _internal_control_output(index);
+}
+inline ::secondary::CONTROL_OUTPUT* Pack::_internal_add_control_output() {
+  return control_output_.Add();
+}
+inline ::secondary::CONTROL_OUTPUT* Pack::add_control_output() {
+  ::secondary::CONTROL_OUTPUT* _add = _internal_add_control_output();
+  // @@protoc_insertion_point(field_add:secondary.Pack.CONTROL_OUTPUT)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >&
+Pack::control_output() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.CONTROL_OUTPUT)
+  return control_output_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

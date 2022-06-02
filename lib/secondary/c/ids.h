@@ -35,6 +35,8 @@
 #define secondary_id_GPS_COORDS 0b10000000001
 #define secondary_id_GPS_SPEED 0b10000100001
 #define secondary_id_LAP_COUNT 0b10001000001
+#define secondary_id_PEDALS_OUTPUT 0b01100000001
+#define secondary_id_CONTROL_OUTPUT 0b01100100001
 
 
 // ============== UTILS ============== //
@@ -108,10 +110,45 @@ int secondary_message_name_from_id(uint16_t id, char *buffer) {
         case secondary_id_LAP_COUNT:
             strcpy(buffer, "LAP_COUNT");
             return 0;
+        case secondary_id_PEDALS_OUTPUT:
+            strcpy(buffer, "PEDALS_OUTPUT");
+            return 0;
+        case secondary_id_CONTROL_OUTPUT:
+            strcpy(buffer, "CONTROL_OUTPUT");
+            return 0;
         default:
             strcpy(buffer, ""); // Unknown message
     }
     return 1;
+}
+
+bool secondary_is_message_id(uint16_t message_id) {
+    switch (message_id) {
+        case 1260: return true; break;
+        case 1261: return true; break;
+        case 1460: return true; break;
+        case 1461: return true; break;
+        case 1462: return true; break;
+        case 1463: return true; break;
+        case 1464: return true; break;
+        case 1465: return true; break;
+        case 1466: return true; break;
+        case 1467: return true; break;
+        case 1468: return true; break;
+        case 1469: return true; break;
+        case 1470: return true; break;
+        case 1471: return true; break;
+        case 1472: return true; break;
+        case 1473: return true; break;
+        case 1474: return true; break;
+        case 1475: return true; break;
+        case 1025: return true; break;
+        case 1057: return true; break;
+        case 1089: return true; break;
+        case 769: return true; break;
+        case 801: return true; break;
+    }
+    return false;
 }
 
 #endif // secondary_IDS_IMPLEMENTATION
