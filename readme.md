@@ -1,6 +1,6 @@
 # CAN-bus Definitions for E-Agle TRT
 
-This repository contains the **CAN-bus** message definition for the E-Agle TRT team. 
+This repository contains the **CAN-bus** message definition for the E-Agle TRT team.
 The definitions are used to **automatically generate** a C/C++/Python library which
 contains serialization / deserialization and util functions.
 
@@ -16,7 +16,7 @@ You can just download the branch or add it as a submodule to your existing repos
 
 ```
 git submodule add -b build git@github.com:eagletrt/can.git <path>
-git submodule update --remote 
+git submodule update --remote
 ```
 
 ## How do I use these libraries?
