@@ -516,7 +516,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Temperature of LV battery pack (two sensors),[-20,80] Celsius. Temperature of dcdc12V and dcdc24V converter",
-      "interval": 200,
+      "interval": 100,
       "contents": {
         "bp_temperature_1": {
           "type": "float32",
@@ -715,10 +715,26 @@
       "description": "Encoder speed and inverter RPMs",
       "interval": 100,
       "contents": {
-        "encoder_r": "uint16",
-        "encoder_l": "uint16",
-        "inverter_r": "uint16",
-        "inverter_l": "uint16"
+        "encoder_r": {
+          "type": "float32",
+          "range": [-70, 280],
+          "force": "uint8"
+        },
+        "encoder_l": {
+          "type": "float32",
+          "range": [-70, 280],
+          "force": "uint8"
+        },
+        "inverter_r": {
+          "type": "float32",
+          "range": [-70, 280],
+          "force": "uint8"
+        },
+        "inverter_l": {
+          "type": "float32",
+          "range": [-70, 280],
+          "force": "uint8"
+        }
       }
     },
     {
