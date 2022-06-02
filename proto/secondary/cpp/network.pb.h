@@ -117,6 +117,9 @@ extern PEDALS_OUTPUTDefaultTypeInternal _PEDALS_OUTPUT_default_instance_;
 class Pack;
 struct PackDefaultTypeInternal;
 extern PackDefaultTypeInternal _Pack_default_instance_;
+class STEERING_ANGLE;
+struct STEERING_ANGLEDefaultTypeInternal;
+extern STEERING_ANGLEDefaultTypeInternal _STEERING_ANGLE_default_instance_;
 }  // namespace secondary
 PROTOBUF_NAMESPACE_OPEN
 template<> ::secondary::CONTROL_OUTPUT* Arena::CreateMaybeMessage<::secondary::CONTROL_OUTPUT>(Arena*);
@@ -143,6 +146,7 @@ template<> ::secondary::IRTS_RR_3* Arena::CreateMaybeMessage<::secondary::IRTS_R
 template<> ::secondary::LAP_COUNT* Arena::CreateMaybeMessage<::secondary::LAP_COUNT>(Arena*);
 template<> ::secondary::PEDALS_OUTPUT* Arena::CreateMaybeMessage<::secondary::PEDALS_OUTPUT>(Arena*);
 template<> ::secondary::Pack* Arena::CreateMaybeMessage<::secondary::Pack>(Arena*);
+template<> ::secondary::STEERING_ANGLE* Arena::CreateMaybeMessage<::secondary::STEERING_ANGLE>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace secondary {
 
@@ -4317,6 +4321,160 @@ class CONTROL_OUTPUT final :
 };
 // -------------------------------------------------------------------
 
+class STEERING_ANGLE final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.STEERING_ANGLE) */ {
+ public:
+  inline STEERING_ANGLE() : STEERING_ANGLE(nullptr) {}
+  ~STEERING_ANGLE() override;
+  explicit PROTOBUF_CONSTEXPR STEERING_ANGLE(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  STEERING_ANGLE(const STEERING_ANGLE& from);
+  STEERING_ANGLE(STEERING_ANGLE&& from) noexcept
+    : STEERING_ANGLE() {
+    *this = ::std::move(from);
+  }
+
+  inline STEERING_ANGLE& operator=(const STEERING_ANGLE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline STEERING_ANGLE& operator=(STEERING_ANGLE&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const STEERING_ANGLE& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const STEERING_ANGLE* internal_default_instance() {
+    return reinterpret_cast<const STEERING_ANGLE*>(
+               &_STEERING_ANGLE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(STEERING_ANGLE& a, STEERING_ANGLE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(STEERING_ANGLE* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(STEERING_ANGLE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  STEERING_ANGLE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<STEERING_ANGLE>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const STEERING_ANGLE& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const STEERING_ANGLE& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(STEERING_ANGLE* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.STEERING_ANGLE";
+  }
+  protected:
+  explicit STEERING_ANGLE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInternalTimestampFieldNumber = 2,
+    kBrakeRearFieldNumber = 1,
+  };
+  // uint64 _internal_timestamp = 2;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // float brake_rear = 1;
+  void clear_brake_rear();
+  float brake_rear() const;
+  void set_brake_rear(float value);
+  private:
+  float _internal_brake_rear() const;
+  void _internal_set_brake_rear(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.STEERING_ANGLE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _internal_timestamp_;
+  float brake_rear_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.Pack) */ {
  public:
@@ -4365,7 +4523,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -4459,6 +4617,7 @@ class Pack final :
     kLAPCOUNTFieldNumber = 21,
     kPEDALSOUTPUTFieldNumber = 22,
     kCONTROLOUTPUTFieldNumber = 23,
+    kSTEERINGANGLEFieldNumber = 24,
   };
   // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
   int imu_angular_rate_size() const;
@@ -4874,6 +5033,24 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >&
       control_output() const;
 
+  // repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 24;
+  int steering_angle_size() const;
+  private:
+  int _internal_steering_angle_size() const;
+  public:
+  void clear_steering_angle();
+  ::secondary::STEERING_ANGLE* mutable_steering_angle(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >*
+      mutable_steering_angle();
+  private:
+  const ::secondary::STEERING_ANGLE& _internal_steering_angle(int index) const;
+  ::secondary::STEERING_ANGLE* _internal_add_steering_angle();
+  public:
+  const ::secondary::STEERING_ANGLE& steering_angle(int index) const;
+  ::secondary::STEERING_ANGLE* add_steering_angle();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >&
+      steering_angle() const;
+
   // @@protoc_insertion_point(class_scope:secondary.Pack)
  private:
   class _Internal;
@@ -4904,6 +5081,7 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LAP_COUNT > lap_count_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT > pedals_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT > control_output_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE > steering_angle_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
 };
@@ -7068,6 +7246,50 @@ inline void CONTROL_OUTPUT::set__internal_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// STEERING_ANGLE
+
+// float brake_rear = 1;
+inline void STEERING_ANGLE::clear_brake_rear() {
+  brake_rear_ = 0;
+}
+inline float STEERING_ANGLE::_internal_brake_rear() const {
+  return brake_rear_;
+}
+inline float STEERING_ANGLE::brake_rear() const {
+  // @@protoc_insertion_point(field_get:secondary.STEERING_ANGLE.brake_rear)
+  return _internal_brake_rear();
+}
+inline void STEERING_ANGLE::_internal_set_brake_rear(float value) {
+  
+  brake_rear_ = value;
+}
+inline void STEERING_ANGLE::set_brake_rear(float value) {
+  _internal_set_brake_rear(value);
+  // @@protoc_insertion_point(field_set:secondary.STEERING_ANGLE.brake_rear)
+}
+
+// uint64 _internal_timestamp = 2;
+inline void STEERING_ANGLE::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t STEERING_ANGLE::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t STEERING_ANGLE::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.STEERING_ANGLE._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void STEERING_ANGLE::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void STEERING_ANGLE::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.STEERING_ANGLE._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -7990,9 +8212,51 @@ Pack::control_output() const {
   return control_output_;
 }
 
+// repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 24;
+inline int Pack::_internal_steering_angle_size() const {
+  return steering_angle_.size();
+}
+inline int Pack::steering_angle_size() const {
+  return _internal_steering_angle_size();
+}
+inline void Pack::clear_steering_angle() {
+  steering_angle_.Clear();
+}
+inline ::secondary::STEERING_ANGLE* Pack::mutable_steering_angle(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.STEERING_ANGLE)
+  return steering_angle_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >*
+Pack::mutable_steering_angle() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.STEERING_ANGLE)
+  return &steering_angle_;
+}
+inline const ::secondary::STEERING_ANGLE& Pack::_internal_steering_angle(int index) const {
+  return steering_angle_.Get(index);
+}
+inline const ::secondary::STEERING_ANGLE& Pack::steering_angle(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.STEERING_ANGLE)
+  return _internal_steering_angle(index);
+}
+inline ::secondary::STEERING_ANGLE* Pack::_internal_add_steering_angle() {
+  return steering_angle_.Add();
+}
+inline ::secondary::STEERING_ANGLE* Pack::add_steering_angle() {
+  ::secondary::STEERING_ANGLE* _add = _internal_add_steering_angle();
+  // @@protoc_insertion_point(field_add:secondary.Pack.STEERING_ANGLE)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >&
+Pack::steering_angle() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.STEERING_ANGLE)
+  return steering_angle_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

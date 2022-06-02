@@ -45,7 +45,7 @@ typedef struct {
     std::vector<primary_message_HV_CELL_BALANCING_STATUS> HV_CELL_BALANCING_STATUS;
     std::vector<primary_message_SET_CELL_BALANCING_STATUS> SET_CELL_BALANCING_STATUS;
     std::vector<primary_message_HANDCART_STATUS> HANDCART_STATUS;
-    std::vector<primary_message_SPEED> SPEED;
+    std::vector<primary_message_SPEED_conversion> SPEED;
     std::vector<primary_message_INV_L_SET_TORQUE> INV_L_SET_TORQUE;
     std::vector<primary_message_INV_L_RESPONSE> INV_L_RESPONSE;
 } primary_proto_pack;
@@ -438,7 +438,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
         }
 
         case 546: {
-            primary_message_SPEED* msg = (primary_message_SPEED*) (*map)[index].raw_message;
+            primary_message_SPEED_conversion* msg = (primary_message_SPEED_conversion*) (*map)[index].conversion_message;
             primary::SPEED* proto_msg = pack->add_speed();
             proto_msg->set_encoder_r(msg->encoder_r);
             proto_msg->set_encoder_l(msg->encoder_l);

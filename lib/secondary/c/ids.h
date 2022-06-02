@@ -38,6 +38,12 @@
 #define secondary_id_PEDALS_OUTPUT 0b01100000001
 #define secondary_id_CONTROL_OUTPUT 0b01100100001
 
+/* TOPIC TELEMETRY */
+#define secondary_topic_mask_TELEMETRY 0b00000011111
+#define secondary_topic_filter_TELEMETRY 0b00000000010
+
+#define secondary_id_STEERING_ANGLE 0b00100000010
+
 
 // ============== UTILS ============== //
 
@@ -116,6 +122,9 @@ int secondary_message_name_from_id(uint16_t id, char *buffer) {
         case secondary_id_CONTROL_OUTPUT:
             strcpy(buffer, "CONTROL_OUTPUT");
             return 0;
+        case secondary_id_STEERING_ANGLE:
+            strcpy(buffer, "STEERING_ANGLE");
+            return 0;
         default:
             strcpy(buffer, ""); // Unknown message
     }
@@ -147,6 +156,7 @@ bool secondary_is_message_id(uint16_t message_id) {
         case 1089: return true; break;
         case 769: return true; break;
         case 801: return true; break;
+        case 258: return true; break;
     }
     return false;
 }

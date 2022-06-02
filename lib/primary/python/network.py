@@ -1273,7 +1273,7 @@ class message_LV_TEMPERATURE:
         self.dcdc12_temperature = uint16(dcdc12_temperature)
         self.dcdc24_temperature = uint16(dcdc24_temperature)
         self.size = 8
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TEMPERATURE):
@@ -1325,7 +1325,7 @@ class message_LV_TEMPERATURE_conversion:
         self.dcdc12_temperature = float32(dcdc12_temperature)
         self.dcdc24_temperature = float32(dcdc24_temperature)
         self.size = 8
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TEMPERATURE):
@@ -1812,11 +1812,11 @@ class message_SPEED:
         inverter_r = None,
         inverter_l = None
     ):
-        self.encoder_r = uint16(encoder_r)
-        self.encoder_l = uint16(encoder_l)
-        self.inverter_r = uint16(inverter_r)
-        self.inverter_l = uint16(inverter_l)
-        self.size = 8
+        self.encoder_r = uint8(encoder_r)
+        self.encoder_l = uint8(encoder_l)
+        self.inverter_r = uint8(inverter_r)
+        self.inverter_l = uint8(inverter_l)
+        self.size = 4
         self.interval = 100
 
     def __eq__(self, other):
@@ -1834,18 +1834,63 @@ class message_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
+        data.extend(pack("<BBBB", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.encoder_r = uint16(unpack("<H", data[0:2])[0])
-        message.encoder_l = uint16(unpack("<xxH", data[0:4])[0])
-        message.inverter_r = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.inverter_l = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.encoder_r = uint8(unpack("<B", data[0:1])[0])
+        message.encoder_l = uint8(unpack("<xB", data[0:2])[0])
+        message.inverter_r = uint8(unpack("<xxB", data[0:3])[0])
+        message.inverter_l = uint8(unpack("<xxxB", data[0:4])[0])
         return message
 
+
+    def convert(self) -> message_SPEED_conversion:
+        conversion = message_SPEED_conversion()
+        conversion.encoder_r = ((float32(self.encoder_r)) / 0.731429) - 70
+        conversion.encoder_l = ((float32(self.encoder_l)) / 0.731429) - 70
+        conversion.inverter_r = ((float32(self.inverter_r)) / 0.731429) - 70
+        conversion.inverter_l = ((float32(self.inverter_l)) / 0.731429) - 70
+        return conversion
+
+
+class message_SPEED_conversion:
+    def __init__(
+        self,
+        encoder_r = None,
+        encoder_l = None,
+        inverter_r = None,
+        inverter_l = None
+    ):
+        self.encoder_r = float32(encoder_r)
+        self.encoder_l = float32(encoder_l)
+        self.inverter_r = float32(inverter_r)
+        self.inverter_l = float32(inverter_l)
+        self.size = 4
+        self.interval = 100
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SPEED):
+            return False
+        if self.encoder_r != other.encoder_r:
+            return False
+        if self.encoder_l != other.encoder_l:
+            return False
+        if self.inverter_r != other.inverter_r:
+            return False
+        if self.inverter_l != other.inverter_l:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_SPEED:
+        raw = message_SPEED()
+        raw.encoder_r = uint8((self.encoder_r + 70) * 0.731429)
+        raw.encoder_l = uint8((self.encoder_l + 70) * 0.731429)
+        raw.inverter_r = uint8((self.inverter_r + 70) * 0.731429)
+        raw.inverter_l = uint8((self.inverter_l + 70) * 0.731429)
+        return raw
 
 class message_INV_L_SET_TORQUE:
     def __init__(

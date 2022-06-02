@@ -43,7 +43,7 @@ static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
 
 // Info
 
-#define secondary_NUMBER_OF_MESSAGES 23
+#define secondary_NUMBER_OF_MESSAGES 24
 
 // Custom types
 
@@ -106,8 +106,9 @@ typedef struct {
 #define secondary_GPS_COORDS_INTERVAL -1
 #define secondary_GPS_SPEED_INTERVAL -1
 #define secondary_LAP_COUNT_INTERVAL -1
-#define secondary_PEDALS_OUTPUT_INTERVAL -1
-#define secondary_CONTROL_OUTPUT_INTERVAL -1
+#define secondary_PEDALS_OUTPUT_INTERVAL 100
+#define secondary_CONTROL_OUTPUT_INTERVAL 100
+#define secondary_STEERING_ANGLE_INTERVAL 200
 
 // ============== SIZES ============== //
 
@@ -135,6 +136,7 @@ typedef struct {
 #define secondary_LAP_COUNT_SIZE 5
 #define secondary_PEDALS_OUTPUT_SIZE 5
 #define secondary_CONTROL_OUTPUT_SIZE 8
+#define secondary_STEERING_ANGLE_SIZE 4
 
 // ============== BIT SETS ============== //
 
@@ -395,6 +397,14 @@ typedef struct __CANLIB_PACKED {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_CONTROL_OUTPUT;
+
+
+typedef struct __CANLIB_PACKED {
+    secondary_float32 brake_rear;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_STEERING_ANGLE;
 
 
 
@@ -990,6 +1000,29 @@ int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message
 int secondary_fields_CONTROL_OUTPUT(char* buffer);
 int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message, FILE* buffer);
 int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer);
+
+
+// ============== STEERING_ANGLE ============== //
+
+secondary_byte_size secondary_serialize_STEERING_ANGLE(
+    uint8_t* data,
+    secondary_float32 brake_rear
+);
+secondary_byte_size secondary_serialize_struct_STEERING_ANGLE(
+    uint8_t* data,
+    secondary_message_STEERING_ANGLE* message
+);
+void secondary_deserialize_STEERING_ANGLE(
+    secondary_message_STEERING_ANGLE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, char* buffer);
+int secondary_fields_STEERING_ANGLE(char* buffer);
+int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer);
+int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 
 
@@ -3530,6 +3563,88 @@ int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
         "left"
     );}
 
+// ============== SERIALIZE ============== //
+
+secondary_byte_size secondary_serialize_STEERING_ANGLE(
+    uint8_t* data,
+    secondary_float32 brake_rear
+) {
+    data[0] = secondary_float32_to_bytes(brake_rear, 0);
+    data[1] = secondary_float32_to_bytes(brake_rear, 1);
+    data[2] = secondary_float32_to_bytes(brake_rear, 2);
+    data[3] = secondary_float32_to_bytes(brake_rear, 3);
+    return 4;
+}
+
+secondary_byte_size secondary_serialize_struct_STEERING_ANGLE(
+    uint8_t* data,
+    secondary_message_STEERING_ANGLE* message
+) {
+    data[0] = secondary_float32_to_bytes(message->brake_rear, 0);
+    data[1] = secondary_float32_to_bytes(message->brake_rear, 1);
+    data[2] = secondary_float32_to_bytes(message->brake_rear, 2);
+    data[3] = secondary_float32_to_bytes(message->brake_rear, 3);
+    return 4;
+}
+
+// ============== DESERIALIZE ============== //
+
+void secondary_deserialize_STEERING_ANGLE(
+    secondary_message_STEERING_ANGLE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->brake_rear = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
+}
+
+// ============== STRING ============== //
+
+int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%ju" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%f",
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->brake_rear
+    );}
+int secondary_fields_STEERING_ANGLE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "brake_rear"
+    );}
+int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%ju" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%f",
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->brake_rear
+    );}
+int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "brake_rear"
+    );}
+
 
 // ============== UTILS ============== //
 
@@ -3604,6 +3719,9 @@ void secondary_fields_from_id(uint16_t message_id, FILE *buffer) {
     case 801:
         secondary_fields_file_CONTROL_OUTPUT(buffer);
         break;
+    case 258:
+        secondary_fields_file_STEERING_ANGLE(buffer);
+        break;
     }
 }
 
@@ -3677,6 +3795,9 @@ void secondary_string_from_id(uint16_t message_id, void* message, FILE *buffer) 
         break;
         case 801:
             secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT*) message, buffer);
+        break;
+        case 258:
+            secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
         break;
     }
 }
@@ -3902,6 +4023,15 @@ void secondary_deserialize_from_id(
                 #endif
             );
         break;
+        case 258:
+            secondary_deserialize_STEERING_ANGLE(
+                (secondary_message_STEERING_ANGLE*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
     }
 }
 
@@ -3953,6 +4083,8 @@ int secondary_interval_from_id(uint16_t message_id) {
         return secondary_PEDALS_OUTPUT_INTERVAL;
     case 801:
         return secondary_CONTROL_OUTPUT_INTERVAL;
+    case 258:
+        return secondary_STEERING_ANGLE_INTERVAL;
     }
     return -1;
 }
@@ -4049,6 +4181,10 @@ void secondary_devices_new(secondary_devices* map) {
     (*map)[22].id = 801;
     (*map)[22].raw_message = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT));
     (*map)[22].message = NULL;
+
+    (*map)[23].id = 258;
+    (*map)[23].raw_message = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
+    (*map)[23].message = NULL;
 
 }
 

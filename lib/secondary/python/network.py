@@ -893,6 +893,7 @@ class message_PEDALS_OUTPUT:
         self.brake_rear = uint16(brake_rear)
         self.apps = uint8(apps)
         self.size = 5
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
@@ -938,6 +939,7 @@ class message_PEDALS_OUTPUT_conversion:
         self.brake_rear = float32(brake_rear)
         self.apps = uint8(apps)
         self.size = 5
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
@@ -966,6 +968,7 @@ class message_CONTROL_OUTPUT:
         self.right = float32(right)
         self.left = float32(left)
         self.size = 8
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CONTROL_OUTPUT):
@@ -986,5 +989,33 @@ class message_CONTROL_OUTPUT:
         message = cls()
         message.right = float32(unpack("<f", data[0:4])[0])
         message.left = float32(unpack("<xxxxf", data[0:8])[0])
+        return message
+
+
+class message_STEERING_ANGLE:
+    def __init__(
+        self,
+        brake_rear = None
+    ):
+        self.brake_rear = float32(brake_rear)
+        self.size = 4
+        self.interval = 200
+
+    def __eq__(self, other):
+        if not isinstance(other, message_STEERING_ANGLE):
+            return False
+        if self.brake_rear != other.brake_rear:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<f", self.brake_rear))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.brake_rear = float32(unpack("<f", data[0:4])[0])
         return message
 

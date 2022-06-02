@@ -34,6 +34,7 @@ typedef struct {
     std::vector<secondary_message_LAP_COUNT> LAP_COUNT;
     std::vector<secondary_message_PEDALS_OUTPUT_conversion> PEDALS_OUTPUT;
     std::vector<secondary_message_CONTROL_OUTPUT> CONTROL_OUTPUT;
+    std::vector<secondary_message_STEERING_ANGLE> STEERING_ANGLE;
 } secondary_proto_pack;
 
 void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secondary_devices* map);
@@ -334,6 +335,16 @@ void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secon
             break;
         }
 
+        case 258: {
+            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].raw_message;
+            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
+            proto_msg->set_brake_rear(msg->brake_rear);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__internal_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
     }
 }
 
@@ -554,6 +565,13 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->CONTROL_OUTPUT[i].left =pack->control_output(i).left();
 #ifdef CANLIB_TIMESTAMP
         map->CONTROL_OUTPUT[i]._timestamp = pack->control_output(i)._internal_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->STEERING_ANGLE.resize(pack->steering_angle_size());
+    for(int i = 0; i < pack->steering_angle_size(); i++){
+        map->STEERING_ANGLE[i].brake_rear =pack->steering_angle(i).brake_rear();
+#ifdef CANLIB_TIMESTAMP
+        map->STEERING_ANGLE[i]._timestamp = pack->steering_angle(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
 }

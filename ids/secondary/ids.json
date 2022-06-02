@@ -21,6 +21,14 @@
                 }
             }
         },
+        "TELEMETRY": {
+            "id": 2,
+            "messages": {
+                "STEERING_ANGLE": {
+                    "STEERING_ANGLE": 258
+                }
+            }
+        },
         "FIXED_IDS": {
             "messages": {
                 "IMU_ANGULAR_RATE": {
