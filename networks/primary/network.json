@@ -146,7 +146,7 @@
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
     },
-    "Cooling":{
+    "Cooling": {
       "type": "enum",
       "items": ["RADIATORS_MAX", "RADIATORS_OFF", "PUMPS_MAX", "PUMPS_OFF"]
     }
@@ -568,7 +568,7 @@
     },
     {
       "name": "SET_RADIATOR_SPEED",
-      "topic": "DASnSTEER",
+      "topic": "DASnLV",
       "priority": 4,
       "sending": ["STEER"],
       "receiving": ["DAS", "BMS_LV"],
@@ -579,7 +579,7 @@
     },
     {
       "name": "SET_PUMPS_POWER",
-      "topic": "DASnSTEER",
+      "topic": "DASnLV",
       "priority": 4,
       "sending": ["STEER"],
       "receiving": ["DAS", "BMS_LV"],
