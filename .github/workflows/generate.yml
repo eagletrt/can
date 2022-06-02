@@ -1,4 +1,4 @@
-name: Generate CAN-bus Library
+name: Generate
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  generate:
+  library:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v3
