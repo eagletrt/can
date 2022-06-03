@@ -400,7 +400,7 @@ typedef struct __CANLIB_PACKED {
 
 
 typedef struct __CANLIB_PACKED {
-    secondary_float32 brake_rear;
+    secondary_float32 angle;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1006,7 +1006,7 @@ int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer);
 
 secondary_byte_size secondary_serialize_STEERING_ANGLE(
     uint8_t* data,
-    secondary_float32 brake_rear
+    secondary_float32 angle
 );
 secondary_byte_size secondary_serialize_struct_STEERING_ANGLE(
     uint8_t* data,
@@ -3566,12 +3566,12 @@ int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
 
 secondary_byte_size secondary_serialize_STEERING_ANGLE(
     uint8_t* data,
-    secondary_float32 brake_rear
+    secondary_float32 angle
 ) {
-    data[0] = secondary_float32_to_bytes(brake_rear, 0);
-    data[1] = secondary_float32_to_bytes(brake_rear, 1);
-    data[2] = secondary_float32_to_bytes(brake_rear, 2);
-    data[3] = secondary_float32_to_bytes(brake_rear, 3);
+    data[0] = secondary_float32_to_bytes(angle, 0);
+    data[1] = secondary_float32_to_bytes(angle, 1);
+    data[2] = secondary_float32_to_bytes(angle, 2);
+    data[3] = secondary_float32_to_bytes(angle, 3);
     return 4;
 }
 
@@ -3579,10 +3579,10 @@ secondary_byte_size secondary_serialize_struct_STEERING_ANGLE(
     uint8_t* data,
     secondary_message_STEERING_ANGLE* message
 ) {
-    data[0] = secondary_float32_to_bytes(message->brake_rear, 0);
-    data[1] = secondary_float32_to_bytes(message->brake_rear, 1);
-    data[2] = secondary_float32_to_bytes(message->brake_rear, 2);
-    data[3] = secondary_float32_to_bytes(message->brake_rear, 3);
+    data[0] = secondary_float32_to_bytes(message->angle, 0);
+    data[1] = secondary_float32_to_bytes(message->angle, 1);
+    data[2] = secondary_float32_to_bytes(message->angle, 2);
+    data[3] = secondary_float32_to_bytes(message->angle, 3);
     return 4;
 }
 
@@ -3598,7 +3598,7 @@ void secondary_deserialize_STEERING_ANGLE(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->brake_rear = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
+    message->angle = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
 }
 
 // ============== STRING ============== //
@@ -3613,7 +3613,7 @@ int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->brake_rear
+        message->angle
     );}
 int secondary_fields_STEERING_ANGLE(char* buffer) {
     return sprintf(
@@ -3621,7 +3621,7 @@ int secondary_fields_STEERING_ANGLE(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "brake_rear"
+        "angle"
     );}
 int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer) {
     return fprintf(
@@ -3633,7 +3633,7 @@ int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* me
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->brake_rear
+        message->angle
     );}
 int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
     return fprintf(
@@ -3641,7 +3641,7 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "brake_rear"
+        "angle"
     );}
 
 

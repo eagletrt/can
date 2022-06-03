@@ -175,7 +175,7 @@ message CONTROL_OUTPUT {
 }
 
 message STEERING_ANGLE {
-    float brake_rear = 1;
+    float angle = 1;
     uint64 _internal_timestamp = 2;
 }
 

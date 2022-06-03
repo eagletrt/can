@@ -380,7 +380,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR STEERING_ANGLE::STEERING_ANGLE(
     ::_pbi::ConstantInitialized)
   : _internal_timestamp_(uint64_t{0u})
-  , brake_rear_(0){}
+  , angle_(0){}
 struct STEERING_ANGLEDefaultTypeInternal {
   PROTOBUF_CONSTEXPR STEERING_ANGLEDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -678,7 +678,7 @@ const uint32_t TableStruct_network_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::secondary::STEERING_ANGLE, brake_rear_),
+  PROTOBUF_FIELD_OFFSET(::secondary::STEERING_ANGLE, angle_),
   PROTOBUF_FIELD_OFFSET(::secondary::STEERING_ANGLE, _internal_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::Pack, _internal_metadata_),
@@ -830,39 +830,39 @@ const char descriptor_table_protodef_network_2eproto[] PROTOBUF_SECTION_VARIABLE
   "(\r\022\014\n\004apps\030\003 \001(\r\022\033\n\023_internal_timestamp\030"
   "\004 \001(\004\"J\n\016CONTROL_OUTPUT\022\r\n\005right\030\001 \001(\002\022\014"
   "\n\004left\030\002 \001(\002\022\033\n\023_internal_timestamp\030\003 \001("
-  "\004\"A\n\016STEERING_ANGLE\022\022\n\nbrake_rear\030\001 \001(\002\022"
-  "\033\n\023_internal_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n"
-  "\020IMU_ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU_"
-  "ANGULAR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033"
-  ".secondary.IMU_ACCELERATION\022\'\n\tIRTS_FL_0"
-  "\030\003 \003(\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL_"
-  "1\030\004 \003(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_FL"
-  "_2\030\005 \003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_F"
-  "L_3\030\006 \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS_"
-  "FR_0\030\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS"
-  "_FR_1\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRT"
-  "S_FR_2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIR"
-  "TS_FR_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tI"
-  "RTS_RL_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\t"
-  "IRTS_RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n"
-  "\tIRTS_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'"
-  "\n\tIRTS_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022"
-  "\'\n\tIRTS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_0"
-  "\022\'\n\tIRTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_"
-  "1\022\'\n\tIRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR"
-  "_2\022\'\n\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_R"
-  "R_3\022)\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS_"
-  "COORDS\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.GP"
-  "S_SPEED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.L"
-  "AP_COUNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.second"
-  "ary.PEDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003("
-  "\0132\031.secondary.CONTROL_OUTPUT\0221\n\016STEERING"
-  "_ANGLE\030\030 \003(\0132\031.secondary.STEERING_ANGLEb"
-  "\006proto3"
+  "\004\"<\n\016STEERING_ANGLE\022\r\n\005angle\030\001 \001(\002\022\033\n\023_i"
+  "nternal_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n\020IMU_"
+  "ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU_ANGUL"
+  "AR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033.seco"
+  "ndary.IMU_ACCELERATION\022\'\n\tIRTS_FL_0\030\003 \003("
+  "\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL_1\030\004 \003"
+  "(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_FL_2\030\005 "
+  "\003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_FL_3\030\006"
+  " \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS_FR_0\030"
+  "\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS_FR_1"
+  "\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRTS_FR_"
+  "2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIRTS_FR"
+  "_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tIRTS_R"
+  "L_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\tIRTS_"
+  "RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n\tIRTS"
+  "_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'\n\tIRT"
+  "S_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022\'\n\tIR"
+  "TS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_0\022\'\n\tI"
+  "RTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_1\022\'\n\t"
+  "IRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR_2\022\'\n"
+  "\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_RR_3\022)"
+  "\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS_COORD"
+  "S\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.GPS_SPE"
+  "ED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.LAP_CO"
+  "UNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.secondary.P"
+  "EDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003(\0132\031.s"
+  "econdary.CONTROL_OUTPUT\0221\n\016STEERING_ANGL"
+  "E\030\030 \003(\0132\031.secondary.STEERING_ANGLEb\006prot"
+  "o3"
   ;
 static ::_pbi::once_flag descriptor_table_network_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_network_2eproto = {
-    false, false, 3607, descriptor_table_protodef_network_2eproto,
+    false, false, 3602, descriptor_table_protodef_network_2eproto,
     "network.proto",
     &descriptor_table_network_2eproto_once, nullptr, 0, 25,
     schemas, file_default_instances, TableStruct_network_2eproto::offsets,
@@ -6910,16 +6910,16 @@ STEERING_ANGLE::STEERING_ANGLE(const STEERING_ANGLE& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_internal_timestamp_, &from._internal_timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&brake_rear_) -
-    reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(brake_rear_));
+    static_cast<size_t>(reinterpret_cast<char*>(&angle_) -
+    reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(angle_));
   // @@protoc_insertion_point(copy_constructor:secondary.STEERING_ANGLE)
 }
 
 inline void STEERING_ANGLE::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&_internal_timestamp_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&brake_rear_) -
-    reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(brake_rear_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&angle_) -
+    reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(angle_));
 }
 
 STEERING_ANGLE::~STEERING_ANGLE() {
@@ -6946,8 +6946,8 @@ void STEERING_ANGLE::Clear() {
   (void) cached_has_bits;
 
   ::memset(&_internal_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&brake_rear_) -
-      reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(brake_rear_));
+      reinterpret_cast<char*>(&angle_) -
+      reinterpret_cast<char*>(&_internal_timestamp_)) + sizeof(angle_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6957,10 +6957,10 @@ const char* STEERING_ANGLE::_InternalParse(const char* ptr, ::_pbi::ParseContext
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float brake_rear = 1;
+      // float angle = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          brake_rear_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -7002,14 +7002,14 @@ uint8_t* STEERING_ANGLE::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float brake_rear = 1;
+  // float angle = 1;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_brake_rear = this->_internal_brake_rear();
-  uint32_t raw_brake_rear;
-  memcpy(&raw_brake_rear, &tmp_brake_rear, sizeof(tmp_brake_rear));
-  if (raw_brake_rear != 0) {
+  float tmp_angle = this->_internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_brake_rear(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_angle(), target);
   }
 
   // uint64 _internal_timestamp = 2;
@@ -7039,12 +7039,12 @@ size_t STEERING_ANGLE::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__internal_timestamp());
   }
 
-  // float brake_rear = 1;
+  // float angle = 1;
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_brake_rear = this->_internal_brake_rear();
-  uint32_t raw_brake_rear;
-  memcpy(&raw_brake_rear, &tmp_brake_rear, sizeof(tmp_brake_rear));
-  if (raw_brake_rear != 0) {
+  float tmp_angle = this->_internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
     total_size += 1 + 4;
   }
 
@@ -7074,11 +7074,11 @@ void STEERING_ANGLE::MergeFrom(const STEERING_ANGLE& from) {
     _internal_set__internal_timestamp(from._internal__internal_timestamp());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_brake_rear = from._internal_brake_rear();
-  uint32_t raw_brake_rear;
-  memcpy(&raw_brake_rear, &tmp_brake_rear, sizeof(tmp_brake_rear));
-  if (raw_brake_rear != 0) {
-    _internal_set_brake_rear(from._internal_brake_rear());
+  float tmp_angle = from._internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
+    _internal_set_angle(from._internal_angle());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7098,8 +7098,8 @@ void STEERING_ANGLE::InternalSwap(STEERING_ANGLE* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(STEERING_ANGLE, brake_rear_)
-      + sizeof(STEERING_ANGLE::brake_rear_)
+      PROTOBUF_FIELD_OFFSET(STEERING_ANGLE, angle_)
+      + sizeof(STEERING_ANGLE::angle_)
       - PROTOBUF_FIELD_OFFSET(STEERING_ANGLE, _internal_timestamp_)>(
           reinterpret_cast<char*>(&_internal_timestamp_),
           reinterpret_cast<char*>(&other->_internal_timestamp_));

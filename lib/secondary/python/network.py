@@ -995,27 +995,27 @@ class message_CONTROL_OUTPUT:
 class message_STEERING_ANGLE:
     def __init__(
         self,
-        brake_rear = None
+        angle = None
     ):
-        self.brake_rear = float32(brake_rear)
+        self.angle = float32(angle)
         self.size = 4
         self.interval = 200
 
     def __eq__(self, other):
         if not isinstance(other, message_STEERING_ANGLE):
             return False
-        if self.brake_rear != other.brake_rear:
+        if self.angle != other.angle:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<f", self.brake_rear))
+        data.extend(pack("<f", self.angle))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.brake_rear = float32(unpack("<f", data[0:4])[0])
+        message.angle = float32(unpack("<f", data[0:4])[0])
         return message
 

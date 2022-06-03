@@ -4441,7 +4441,7 @@ class STEERING_ANGLE final :
 
   enum : int {
     kInternalTimestampFieldNumber = 2,
-    kBrakeRearFieldNumber = 1,
+    kAngleFieldNumber = 1,
   };
   // uint64 _internal_timestamp = 2;
   void clear__internal_timestamp();
@@ -4452,13 +4452,13 @@ class STEERING_ANGLE final :
   void _internal_set__internal_timestamp(uint64_t value);
   public:
 
-  // float brake_rear = 1;
-  void clear_brake_rear();
-  float brake_rear() const;
-  void set_brake_rear(float value);
+  // float angle = 1;
+  void clear_angle();
+  float angle() const;
+  void set_angle(float value);
   private:
-  float _internal_brake_rear() const;
-  void _internal_set_brake_rear(float value);
+  float _internal_angle() const;
+  void _internal_set_angle(float value);
   public:
 
   // @@protoc_insertion_point(class_scope:secondary.STEERING_ANGLE)
@@ -4469,7 +4469,7 @@ class STEERING_ANGLE final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint64_t _internal_timestamp_;
-  float brake_rear_;
+  float angle_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_network_2eproto;
 };
@@ -7248,24 +7248,24 @@ inline void CONTROL_OUTPUT::set__internal_timestamp(uint64_t value) {
 
 // STEERING_ANGLE
 
-// float brake_rear = 1;
-inline void STEERING_ANGLE::clear_brake_rear() {
-  brake_rear_ = 0;
+// float angle = 1;
+inline void STEERING_ANGLE::clear_angle() {
+  angle_ = 0;
 }
-inline float STEERING_ANGLE::_internal_brake_rear() const {
-  return brake_rear_;
+inline float STEERING_ANGLE::_internal_angle() const {
+  return angle_;
 }
-inline float STEERING_ANGLE::brake_rear() const {
-  // @@protoc_insertion_point(field_get:secondary.STEERING_ANGLE.brake_rear)
-  return _internal_brake_rear();
+inline float STEERING_ANGLE::angle() const {
+  // @@protoc_insertion_point(field_get:secondary.STEERING_ANGLE.angle)
+  return _internal_angle();
 }
-inline void STEERING_ANGLE::_internal_set_brake_rear(float value) {
+inline void STEERING_ANGLE::_internal_set_angle(float value) {
   
-  brake_rear_ = value;
+  angle_ = value;
 }
-inline void STEERING_ANGLE::set_brake_rear(float value) {
-  _internal_set_brake_rear(value);
-  // @@protoc_insertion_point(field_set:secondary.STEERING_ANGLE.brake_rear)
+inline void STEERING_ANGLE::set_angle(float value) {
+  _internal_set_angle(value);
+  // @@protoc_insertion_point(field_set:secondary.STEERING_ANGLE.angle)
 }
 
 // uint64 _internal_timestamp = 2;

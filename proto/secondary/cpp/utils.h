@@ -338,7 +338,7 @@ void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secon
         case 258: {
             secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].raw_message;
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
-            proto_msg->set_brake_rear(msg->brake_rear);
+            proto_msg->set_angle(msg->angle);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -569,7 +569,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
     }
     map->STEERING_ANGLE.resize(pack->steering_angle_size());
     for(int i = 0; i < pack->steering_angle_size(); i++){
-        map->STEERING_ANGLE[i].brake_rear =pack->steering_angle(i).brake_rear();
+        map->STEERING_ANGLE[i].angle =pack->steering_angle(i).angle();
 #ifdef CANLIB_TIMESTAMP
         map->STEERING_ANGLE[i]._timestamp = pack->steering_angle(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
