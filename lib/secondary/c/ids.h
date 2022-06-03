@@ -47,6 +47,9 @@
 
 // ============== UTILS ============== //
 
+int secondary_message_name_from_id(uint16_t id, char *buffer);
+bool secondary_is_message_id(uint16_t message_id);
+
 #define secondary_MAX_MESSAGE_LENGTH 17
 
 #ifdef secondary_IDS_IMPLEMENTATION

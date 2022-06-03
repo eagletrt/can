@@ -369,7 +369,6 @@ int bms_fields_file_FW_UPDATE(FILE* buffer);
 
 // ============== UTILS ============== //
 
-bool bms_is_message_id(uint16_t message_id);
 void bms_devices_new(bms_devices* map);
 int bms_devices_index_from_id(uint16_t message_id, bms_devices* map);
 void bms_fields_from_id(uint16_t message_id, FILE *buffer);

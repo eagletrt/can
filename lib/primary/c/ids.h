@@ -96,6 +96,9 @@
 
 // ============== UTILS ============== //
 
+int primary_message_name_from_id(uint16_t id, char *buffer);
+bool primary_is_message_id(uint16_t message_id);
+
 #define primary_MAX_MESSAGE_LENGTH 26
 
 #ifdef primary_IDS_IMPLEMENTATION

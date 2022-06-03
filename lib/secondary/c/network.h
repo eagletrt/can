@@ -1029,7 +1029,6 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 // ============== UTILS ============== //
 
-bool secondary_is_message_id(uint16_t message_id);
 void secondary_devices_new(secondary_devices* map);
 int secondary_devices_index_from_id(uint16_t message_id, secondary_devices* map);
 void secondary_fields_from_id(uint16_t message_id, FILE *buffer);

@@ -54,6 +54,9 @@
 
 // ============== UTILS ============== //
 
+int bms_message_name_from_id(uint16_t id, char *buffer);
+bool bms_is_message_id(uint16_t message_id);
+
 #define bms_MAX_MESSAGE_LENGTH 24
 
 #ifdef bms_IDS_IMPLEMENTATION

@@ -1778,7 +1778,6 @@ int primary_fields_file_INV_L_RESPONSE(FILE* buffer);
 
 // ============== UTILS ============== //
 
-bool primary_is_message_id(uint16_t message_id);
 void primary_devices_new(primary_devices* map);
 int primary_devices_index_from_id(uint16_t message_id, primary_devices* map);
 void primary_fields_from_id(uint16_t message_id, FILE *buffer);
