@@ -313,7 +313,7 @@
       "receiving": ["TELEMETRY"],
       "description": "Steering angle in degrees",
       "contents": {
-        "brake_rear": "float32"
+        "angle": "float32"
       }
     }
   ]
