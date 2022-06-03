@@ -1023,12 +1023,12 @@ void primary_deserialize_HV_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_HV_VOLTAGE(
-    primary_message_HV_VOLTAGE* raw,
-    primary_message_HV_VOLTAGE_conversion* conversion
-);
-void primary_conversion_to_raw_HV_VOLTAGE(
     primary_message_HV_VOLTAGE_conversion* conversion,
     primary_message_HV_VOLTAGE* raw
+);
+void primary_conversion_to_raw_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE* raw,
+    primary_message_HV_VOLTAGE_conversion* conversion
 );
 int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_HV_VOLTAGE(char* buffer);
@@ -1055,12 +1055,12 @@ void primary_deserialize_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_HV_CURRENT(
-    primary_message_HV_CURRENT* raw,
-    primary_message_HV_CURRENT_conversion* conversion
-);
-void primary_conversion_to_raw_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
     primary_message_HV_CURRENT* raw
+);
+void primary_conversion_to_raw_HV_CURRENT(
+    primary_message_HV_CURRENT* raw,
+    primary_message_HV_CURRENT_conversion* conversion
 );
 int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer);
 int primary_fields_HV_CURRENT(char* buffer);
@@ -1088,12 +1088,12 @@ void primary_deserialize_HV_TEMP(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_HV_TEMP(
-    primary_message_HV_TEMP* raw,
-    primary_message_HV_TEMP_conversion* conversion
-);
-void primary_conversion_to_raw_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
     primary_message_HV_TEMP* raw
+);
+void primary_conversion_to_raw_HV_TEMP(
+    primary_message_HV_TEMP* raw,
+    primary_message_HV_TEMP_conversion* conversion
 );
 int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer);
 int primary_fields_HV_TEMP(char* buffer);
@@ -1331,12 +1331,12 @@ void primary_deserialize_LV_CURRENT(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_LV_CURRENT(
-    primary_message_LV_CURRENT* raw,
-    primary_message_LV_CURRENT_conversion* conversion
-);
-void primary_conversion_to_raw_LV_CURRENT(
     primary_message_LV_CURRENT_conversion* conversion,
     primary_message_LV_CURRENT* raw
+);
+void primary_conversion_to_raw_LV_CURRENT(
+    primary_message_LV_CURRENT* raw,
+    primary_message_LV_CURRENT_conversion* conversion
 );
 int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT_conversion* message, char* buffer);
 int primary_fields_LV_CURRENT(char* buffer);
@@ -1365,12 +1365,12 @@ void primary_deserialize_LV_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_LV_VOLTAGE(
-    primary_message_LV_VOLTAGE* raw,
-    primary_message_LV_VOLTAGE_conversion* conversion
-);
-void primary_conversion_to_raw_LV_VOLTAGE(
     primary_message_LV_VOLTAGE_conversion* conversion,
     primary_message_LV_VOLTAGE* raw
+);
+void primary_conversion_to_raw_LV_VOLTAGE(
+    primary_message_LV_VOLTAGE* raw,
+    primary_message_LV_VOLTAGE_conversion* conversion
 );
 int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_LV_VOLTAGE(char* buffer);
@@ -1396,12 +1396,12 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
-    primary_message_LV_TOTAL_VOLTAGE* raw,
-    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
-);
-void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
     primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
     primary_message_LV_TOTAL_VOLTAGE* raw
+);
+void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
+    primary_message_LV_TOTAL_VOLTAGE* raw,
+    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
 );
 int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_LV_TOTAL_VOLTAGE(char* buffer);
@@ -1430,12 +1430,12 @@ void primary_deserialize_LV_TEMPERATURE(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_LV_TEMPERATURE(
-    primary_message_LV_TEMPERATURE* raw,
-    primary_message_LV_TEMPERATURE_conversion* conversion
-);
-void primary_conversion_to_raw_LV_TEMPERATURE(
     primary_message_LV_TEMPERATURE_conversion* conversion,
     primary_message_LV_TEMPERATURE* raw
+);
+void primary_conversion_to_raw_LV_TEMPERATURE(
+    primary_message_LV_TEMPERATURE* raw,
+    primary_message_LV_TEMPERATURE_conversion* conversion
 );
 int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_conversion* message, char* buffer);
 int primary_fields_LV_TEMPERATURE(char* buffer);
@@ -1463,12 +1463,12 @@ void primary_deserialize_COOLING_STATUS(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_COOLING_STATUS(
-    primary_message_COOLING_STATUS* raw,
-    primary_message_COOLING_STATUS_conversion* conversion
-);
-void primary_conversion_to_raw_COOLING_STATUS(
     primary_message_COOLING_STATUS_conversion* conversion,
     primary_message_COOLING_STATUS* raw
+);
+void primary_conversion_to_raw_COOLING_STATUS(
+    primary_message_COOLING_STATUS* raw,
+    primary_message_COOLING_STATUS_conversion* conversion
 );
 int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* message, char* buffer);
 int primary_fields_COOLING_STATUS(char* buffer);
@@ -1565,12 +1565,12 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
-    primary_message_HV_CELLS_VOLTAGE* raw,
-    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
-);
-void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
     primary_message_HV_CELLS_VOLTAGE* raw
+);
+void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
 );
 int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_HV_CELLS_VOLTAGE(char* buffer);
@@ -1603,12 +1603,12 @@ void primary_deserialize_HV_CELLS_TEMP(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_HV_CELLS_TEMP(
-    primary_message_HV_CELLS_TEMP* raw,
-    primary_message_HV_CELLS_TEMP_conversion* conversion
-);
-void primary_conversion_to_raw_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP_conversion* conversion,
     primary_message_HV_CELLS_TEMP* raw
+);
+void primary_conversion_to_raw_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_message_HV_CELLS_TEMP_conversion* conversion
 );
 int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer);
 int primary_fields_HV_CELLS_TEMP(char* buffer);
@@ -1706,12 +1706,12 @@ void primary_deserialize_SPEED(
 #endif // CANLIB_TIMESTAMP
 );
 void primary_raw_to_conversion_SPEED(
-    primary_message_SPEED* raw,
-    primary_message_SPEED_conversion* conversion
-);
-void primary_conversion_to_raw_SPEED(
     primary_message_SPEED_conversion* conversion,
     primary_message_SPEED* raw
+);
+void primary_conversion_to_raw_SPEED(
+    primary_message_SPEED* raw,
+    primary_message_SPEED_conversion* conversion
 );
 int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buffer);
 int primary_fields_SPEED(char* buffer);
@@ -2644,8 +2644,8 @@ void primary_deserialize_HV_VOLTAGE(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_VOLTAGE(
-    primary_message_HV_VOLTAGE* raw,
-    primary_message_HV_VOLTAGE_conversion* conversion
+    primary_message_HV_VOLTAGE_conversion* conversion,
+    primary_message_HV_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -2656,8 +2656,8 @@ void primary_raw_to_conversion_HV_VOLTAGE(
     conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 10000.0) + 0;
 }
 void primary_conversion_to_raw_HV_VOLTAGE(
-    primary_message_HV_VOLTAGE_conversion* conversion,
-    primary_message_HV_VOLTAGE* raw
+    primary_message_HV_VOLTAGE* raw,
+    primary_message_HV_VOLTAGE_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -2771,8 +2771,8 @@ void primary_deserialize_HV_CURRENT(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_CURRENT(
-    primary_message_HV_CURRENT* raw,
-    primary_message_HV_CURRENT_conversion* conversion
+    primary_message_HV_CURRENT_conversion* conversion,
+    primary_message_HV_CURRENT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -2781,8 +2781,8 @@ void primary_raw_to_conversion_HV_CURRENT(
     conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
 }
 void primary_conversion_to_raw_HV_CURRENT(
-    primary_message_HV_CURRENT_conversion* conversion,
-    primary_message_HV_CURRENT* raw
+    primary_message_HV_CURRENT* raw,
+    primary_message_HV_CURRENT_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -2888,8 +2888,8 @@ void primary_deserialize_HV_TEMP(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_TEMP(
-    primary_message_HV_TEMP* raw,
-    primary_message_HV_TEMP_conversion* conversion
+    primary_message_HV_TEMP_conversion* conversion,
+    primary_message_HV_TEMP* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -2899,8 +2899,8 @@ void primary_raw_to_conversion_HV_TEMP(
     conversion->min_temp = (((primary_float32)raw->min_temp) / 655.36) - 20;
 }
 void primary_conversion_to_raw_HV_TEMP(
-    primary_message_HV_TEMP_conversion* conversion,
-    primary_message_HV_TEMP* raw
+    primary_message_HV_TEMP* raw,
+    primary_message_HV_TEMP_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -3731,8 +3731,8 @@ void primary_deserialize_LV_CURRENT(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_LV_CURRENT(
-    primary_message_LV_CURRENT* raw,
-    primary_message_LV_CURRENT_conversion* conversion
+    primary_message_LV_CURRENT_conversion* conversion,
+    primary_message_LV_CURRENT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -3740,8 +3740,8 @@ void primary_raw_to_conversion_LV_CURRENT(
     conversion->current = (((primary_float32)raw->current) / 1310.72) + 0;
 }
 void primary_conversion_to_raw_LV_CURRENT(
-    primary_message_LV_CURRENT_conversion* conversion,
-    primary_message_LV_CURRENT* raw
+    primary_message_LV_CURRENT* raw,
+    primary_message_LV_CURRENT_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -3846,8 +3846,8 @@ void primary_deserialize_LV_VOLTAGE(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_LV_VOLTAGE(
-    primary_message_LV_VOLTAGE* raw,
-    primary_message_LV_VOLTAGE_conversion* conversion
+    primary_message_LV_VOLTAGE_conversion* conversion,
+    primary_message_LV_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -3858,8 +3858,8 @@ void primary_raw_to_conversion_LV_VOLTAGE(
     conversion->voltage_4 = (((primary_float32)raw->voltage_4) / 10000.0) + 0;
 }
 void primary_conversion_to_raw_LV_VOLTAGE(
-    primary_message_LV_VOLTAGE_conversion* conversion,
-    primary_message_LV_VOLTAGE* raw
+    primary_message_LV_VOLTAGE* raw,
+    primary_message_LV_VOLTAGE_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -3971,8 +3971,8 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
-    primary_message_LV_TOTAL_VOLTAGE* raw,
-    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
+    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
+    primary_message_LV_TOTAL_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -3980,8 +3980,8 @@ void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
     conversion->total_voltage = (((primary_float32)raw->total_voltage) / 10000.0) + 0;
 }
 void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
-    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
-    primary_message_LV_TOTAL_VOLTAGE* raw
+    primary_message_LV_TOTAL_VOLTAGE* raw,
+    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -4086,8 +4086,8 @@ void primary_deserialize_LV_TEMPERATURE(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_LV_TEMPERATURE(
-    primary_message_LV_TEMPERATURE* raw,
-    primary_message_LV_TEMPERATURE_conversion* conversion
+    primary_message_LV_TEMPERATURE_conversion* conversion,
+    primary_message_LV_TEMPERATURE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -4098,8 +4098,8 @@ void primary_raw_to_conversion_LV_TEMPERATURE(
     conversion->dcdc24_temperature = (((primary_float32)raw->dcdc24_temperature) / 655.36) - 20;
 }
 void primary_conversion_to_raw_LV_TEMPERATURE(
-    primary_message_LV_TEMPERATURE_conversion* conversion,
-    primary_message_LV_TEMPERATURE* raw
+    primary_message_LV_TEMPERATURE* raw,
+    primary_message_LV_TEMPERATURE_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -4219,8 +4219,8 @@ void primary_deserialize_COOLING_STATUS(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_COOLING_STATUS(
-    primary_message_COOLING_STATUS* raw,
-    primary_message_COOLING_STATUS_conversion* conversion
+    primary_message_COOLING_STATUS_conversion* conversion,
+    primary_message_COOLING_STATUS* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -4230,8 +4230,8 @@ void primary_raw_to_conversion_COOLING_STATUS(
     conversion->pump_speed = (((primary_float32)raw->pump_speed) / 65536.0) + 0;
 }
 void primary_conversion_to_raw_COOLING_STATUS(
-    primary_message_COOLING_STATUS_conversion* conversion,
-    primary_message_COOLING_STATUS* raw
+    primary_message_COOLING_STATUS* raw,
+    primary_message_COOLING_STATUS_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -4544,8 +4544,8 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
-    primary_message_HV_CELLS_VOLTAGE* raw,
-    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_message_HV_CELLS_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -4556,8 +4556,8 @@ void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
     conversion->start_index = raw->start_index;
 }
 void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
-    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
-    primary_message_HV_CELLS_VOLTAGE* raw
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -4691,8 +4691,8 @@ void primary_deserialize_HV_CELLS_TEMP(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_CELLS_TEMP(
-    primary_message_HV_CELLS_TEMP* raw,
-    primary_message_HV_CELLS_TEMP_conversion* conversion
+    primary_message_HV_CELLS_TEMP_conversion* conversion,
+    primary_message_HV_CELLS_TEMP* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -4707,8 +4707,8 @@ void primary_raw_to_conversion_HV_CELLS_TEMP(
     conversion->temp_6 = (((primary_float32)raw->temp_6) / 2.56) - 20;
 }
 void primary_conversion_to_raw_HV_CELLS_TEMP(
-    primary_message_HV_CELLS_TEMP_conversion* conversion,
-    primary_message_HV_CELLS_TEMP* raw
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_message_HV_CELLS_TEMP_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -5082,8 +5082,8 @@ void primary_deserialize_SPEED(
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_SPEED(
-    primary_message_SPEED* raw,
-    primary_message_SPEED_conversion* conversion
+    primary_message_SPEED_conversion* conversion,
+    primary_message_SPEED* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -5094,8 +5094,8 @@ void primary_raw_to_conversion_SPEED(
     conversion->inverter_l = (((primary_float32)raw->inverter_l) / 0.731429) - 70;
 }
 void primary_conversion_to_raw_SPEED(
-    primary_message_SPEED_conversion* conversion,
-    primary_message_SPEED* raw
+    primary_message_SPEED* raw,
+    primary_message_SPEED_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -5750,8 +5750,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_HV_VOLTAGE(
-                (primary_message_HV_VOLTAGE*) raw_message,
-                (primary_message_HV_VOLTAGE_conversion*) message
+                (primary_message_HV_VOLTAGE_conversion*) message,
+                (primary_message_HV_VOLTAGE*) raw_message
             );
         break;
         case 803:
@@ -5763,8 +5763,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_HV_CURRENT(
-                (primary_message_HV_CURRENT*) raw_message,
-                (primary_message_HV_CURRENT_conversion*) message
+                (primary_message_HV_CURRENT_conversion*) message,
+                (primary_message_HV_CURRENT*) raw_message
             );
         break;
         case 835:
@@ -5776,8 +5776,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_HV_TEMP(
-                (primary_message_HV_TEMP*) raw_message,
-                (primary_message_HV_TEMP_conversion*) message
+                (primary_message_HV_TEMP_conversion*) message,
+                (primary_message_HV_TEMP*) raw_message
             );
         break;
         case 3:
@@ -5879,8 +5879,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_LV_CURRENT(
-                (primary_message_LV_CURRENT*) raw_message,
-                (primary_message_LV_CURRENT_conversion*) message
+                (primary_message_LV_CURRENT_conversion*) message,
+                (primary_message_LV_CURRENT*) raw_message
             );
         break;
         case 806:
@@ -5892,8 +5892,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_LV_VOLTAGE(
-                (primary_message_LV_VOLTAGE*) raw_message,
-                (primary_message_LV_VOLTAGE_conversion*) message
+                (primary_message_LV_VOLTAGE_conversion*) message,
+                (primary_message_LV_VOLTAGE*) raw_message
             );
         break;
         case 838:
@@ -5905,8 +5905,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
-                (primary_message_LV_TOTAL_VOLTAGE*) raw_message,
-                (primary_message_LV_TOTAL_VOLTAGE_conversion*) message
+                (primary_message_LV_TOTAL_VOLTAGE_conversion*) message,
+                (primary_message_LV_TOTAL_VOLTAGE*) raw_message
             );
         break;
         case 870:
@@ -5918,8 +5918,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_LV_TEMPERATURE(
-                (primary_message_LV_TEMPERATURE*) raw_message,
-                (primary_message_LV_TEMPERATURE_conversion*) message
+                (primary_message_LV_TEMPERATURE_conversion*) message,
+                (primary_message_LV_TEMPERATURE*) raw_message
             );
         break;
         case 902:
@@ -5931,8 +5931,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_COOLING_STATUS(
-                (primary_message_COOLING_STATUS*) raw_message,
-                (primary_message_COOLING_STATUS_conversion*) message
+                (primary_message_COOLING_STATUS_conversion*) message,
+                (primary_message_COOLING_STATUS*) raw_message
             );
         break;
         case 775:
@@ -5971,8 +5971,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_HV_CELLS_VOLTAGE(
-                (primary_message_HV_CELLS_VOLTAGE*) raw_message,
-                (primary_message_HV_CELLS_VOLTAGE_conversion*) message
+                (primary_message_HV_CELLS_VOLTAGE_conversion*) message,
+                (primary_message_HV_CELLS_VOLTAGE*) raw_message
             );
         break;
         case 552:
@@ -5984,8 +5984,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_HV_CELLS_TEMP(
-                (primary_message_HV_CELLS_TEMP*) raw_message,
-                (primary_message_HV_CELLS_TEMP_conversion*) message
+                (primary_message_HV_CELLS_TEMP_conversion*) message,
+                (primary_message_HV_CELLS_TEMP*) raw_message
             );
         break;
         case 584:
@@ -6024,8 +6024,8 @@ void primary_deserialize_from_id(
                 #endif
             );
             primary_raw_to_conversion_SPEED(
-                (primary_message_SPEED*) raw_message,
-                (primary_message_SPEED_conversion*) message
+                (primary_message_SPEED_conversion*) message,
+                (primary_message_SPEED*) raw_message
             );
         break;
         case 513:

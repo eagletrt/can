@@ -271,12 +271,12 @@ void bms_deserialize_TEMPERATURES(
 #endif // CANLIB_TIMESTAMP
 );
 void bms_raw_to_conversion_TEMPERATURES(
-    bms_message_TEMPERATURES* raw,
-    bms_message_TEMPERATURES_conversion* conversion
-);
-void bms_conversion_to_raw_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
     bms_message_TEMPERATURES* raw
+);
+void bms_conversion_to_raw_TEMPERATURES(
+    bms_message_TEMPERATURES* raw,
+    bms_message_TEMPERATURES_conversion* conversion
 );
 int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer);
 int bms_fields_TEMPERATURES(char* buffer);
@@ -305,12 +305,12 @@ void bms_deserialize_VOLTAGES(
 #endif // CANLIB_TIMESTAMP
 );
 void bms_raw_to_conversion_VOLTAGES(
-    bms_message_VOLTAGES* raw,
-    bms_message_VOLTAGES_conversion* conversion
-);
-void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
     bms_message_VOLTAGES* raw
+);
+void bms_conversion_to_raw_VOLTAGES(
+    bms_message_VOLTAGES* raw,
+    bms_message_VOLTAGES_conversion* conversion
 );
 int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer);
 int bms_fields_VOLTAGES(char* buffer);
@@ -531,8 +531,8 @@ void bms_deserialize_TEMPERATURES(
 }// ============== CONVERSION ============== //
 
 void bms_raw_to_conversion_TEMPERATURES(
-    bms_message_TEMPERATURES* raw,
-    bms_message_TEMPERATURES_conversion* conversion
+    bms_message_TEMPERATURES_conversion* conversion,
+    bms_message_TEMPERATURES* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -546,8 +546,8 @@ void bms_raw_to_conversion_TEMPERATURES(
     conversion->temp5 = (((bms_float32)raw->temp5) / 2.56) - 20;
 }
 void bms_conversion_to_raw_TEMPERATURES(
-    bms_message_TEMPERATURES_conversion* conversion,
-    bms_message_TEMPERATURES* raw
+    bms_message_TEMPERATURES* raw,
+    bms_message_TEMPERATURES_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -692,8 +692,8 @@ void bms_deserialize_VOLTAGES(
 }// ============== CONVERSION ============== //
 
 void bms_raw_to_conversion_VOLTAGES(
-    bms_message_VOLTAGES* raw,
-    bms_message_VOLTAGES_conversion* conversion
+    bms_message_VOLTAGES_conversion* conversion,
+    bms_message_VOLTAGES* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -704,8 +704,8 @@ void bms_raw_to_conversion_VOLTAGES(
     conversion->start_index = raw->start_index;
 }
 void bms_conversion_to_raw_VOLTAGES(
-    bms_message_VOLTAGES_conversion* conversion,
-    bms_message_VOLTAGES* raw
+    bms_message_VOLTAGES* raw,
+    bms_message_VOLTAGES_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -1151,8 +1151,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 1313:
@@ -1164,8 +1164,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 1345:
@@ -1177,8 +1177,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 1377:
@@ -1190,8 +1190,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 1409:
@@ -1203,8 +1203,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 1441:
@@ -1216,8 +1216,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
-                (bms_message_TEMPERATURES_conversion*) message
+                (bms_message_TEMPERATURES_conversion*) message,
+                (bms_message_TEMPERATURES*) raw_message
             );
         break;
         case 514:
@@ -1229,8 +1229,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 546:
@@ -1242,8 +1242,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 578:
@@ -1255,8 +1255,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 610:
@@ -1268,8 +1268,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 642:
@@ -1281,8 +1281,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 674:
@@ -1294,8 +1294,8 @@ void bms_deserialize_from_id(
                 #endif
             );
             bms_raw_to_conversion_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
-                (bms_message_VOLTAGES_conversion*) message
+                (bms_message_VOLTAGES_conversion*) message,
+                (bms_message_VOLTAGES*) raw_message
             );
         break;
         case 515:

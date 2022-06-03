@@ -965,12 +965,12 @@ void secondary_deserialize_PEDALS_OUTPUT(
 #endif // CANLIB_TIMESTAMP
 );
 void secondary_raw_to_conversion_PEDALS_OUTPUT(
-    secondary_message_PEDALS_OUTPUT* raw,
-    secondary_message_PEDALS_OUTPUT_conversion* conversion
-);
-void secondary_conversion_to_raw_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT_conversion* conversion,
     secondary_message_PEDALS_OUTPUT* raw
+);
+void secondary_conversion_to_raw_PEDALS_OUTPUT(
+    secondary_message_PEDALS_OUTPUT* raw,
+    secondary_message_PEDALS_OUTPUT_conversion* conversion
 );
 int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, char* buffer);
 int secondary_fields_PEDALS_OUTPUT(char* buffer);
@@ -3387,8 +3387,8 @@ void secondary_deserialize_PEDALS_OUTPUT(
 }// ============== CONVERSION ============== //
 
 void secondary_raw_to_conversion_PEDALS_OUTPUT(
-    secondary_message_PEDALS_OUTPUT* raw,
-    secondary_message_PEDALS_OUTPUT_conversion* conversion
+    secondary_message_PEDALS_OUTPUT_conversion* conversion,
+    secondary_message_PEDALS_OUTPUT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
@@ -3398,8 +3398,8 @@ void secondary_raw_to_conversion_PEDALS_OUTPUT(
     conversion->apps = raw->apps;
 }
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
-    secondary_message_PEDALS_OUTPUT_conversion* conversion,
-    secondary_message_PEDALS_OUTPUT* raw
+    secondary_message_PEDALS_OUTPUT* raw,
+    secondary_message_PEDALS_OUTPUT_conversion* conversion
 ){
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
@@ -4009,8 +4009,8 @@ void secondary_deserialize_from_id(
                 #endif
             );
             secondary_raw_to_conversion_PEDALS_OUTPUT(
-                (secondary_message_PEDALS_OUTPUT*) raw_message,
-                (secondary_message_PEDALS_OUTPUT_conversion*) message
+                (secondary_message_PEDALS_OUTPUT_conversion*) message,
+                (secondary_message_PEDALS_OUTPUT*) raw_message
             );
         break;
         case 801:
