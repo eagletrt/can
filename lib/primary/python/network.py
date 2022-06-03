@@ -996,6 +996,33 @@ class message_SET_PEDALS_RANGE:
         return message
 
 
+class message_SET_STEERING_ANGLE_RANGE:
+    def __init__(
+        self,
+        bound = None
+    ):
+        self.bound = Bound(bound)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_STEERING_ANGLE_RANGE):
+            return False
+        if self.bound != other.bound:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.bound << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.bound = Bound((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
 class message_CAR_STATUS:
     def __init__(
         self,

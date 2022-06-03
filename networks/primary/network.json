@@ -414,10 +414,21 @@
       "priority": 3,
       "sending": ["STEER"],
       "receiving": ["DAS"],
-      "description": "Ask to calibrate pedals and steer in x_START, x_END steps; only once",
+      "description": "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min",
       "contents": {
         "bound": "Bound",
         "pedal": "Pedal"
+      }
+    },
+    {
+      "name": "SET_STEERING_ANGLE_RANGE",
+      "topic": "DAS",
+      "priority": 3,
+      "sending": ["STEER"],
+      "receiving": ["DAS"],
+      "description": "Ask to calibrate steering encoder by specifying if the value is max or min",
+      "contents": {
+        "bound": "Bound"
       }
     },
     {

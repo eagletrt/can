@@ -30,6 +30,7 @@ typedef struct {
     std::vector<primary_message_STEER_STATUS> STEER_STATUS;
     std::vector<primary_message_SET_CAR_STATUS> SET_CAR_STATUS;
     std::vector<primary_message_SET_PEDALS_RANGE> SET_PEDALS_RANGE;
+    std::vector<primary_message_SET_STEERING_ANGLE_RANGE> SET_STEERING_ANGLE_RANGE;
     std::vector<primary_message_CAR_STATUS> CAR_STATUS;
     std::vector<primary_message_DAS_ERRORS> DAS_ERRORS;
     std::vector<primary_message_LV_CURRENT_conversion> LV_CURRENT;
@@ -265,6 +266,16 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_PEDALS_RANGE* proto_msg = pack->add_set_pedals_range();
             proto_msg->set_bound((primary::Bound)msg->bound);
             proto_msg->set_pedal((primary::Pedal)msg->pedal);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__internal_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1061: {
+            primary_message_SET_STEERING_ANGLE_RANGE* msg = (primary_message_SET_STEERING_ANGLE_RANGE*) (*map)[index].raw_message;
+            primary::SET_STEERING_ANGLE_RANGE* proto_msg = pack->add_set_steering_angle_range();
+            proto_msg->set_bound((primary::Bound)msg->bound);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -634,6 +645,13 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->SET_PEDALS_RANGE[i].pedal =(primary_Pedal)pack->set_pedals_range(i).pedal();
 #ifdef CANLIB_TIMESTAMP
         map->SET_PEDALS_RANGE[i]._timestamp = pack->set_pedals_range(i)._internal_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->SET_STEERING_ANGLE_RANGE.resize(pack->set_steering_angle_range_size());
+    for(int i = 0; i < pack->set_steering_angle_range_size(); i++){
+        map->SET_STEERING_ANGLE_RANGE[i].bound =(primary_Bound)pack->set_steering_angle_range(i).bound();
+#ifdef CANLIB_TIMESTAMP
+        map->SET_STEERING_ANGLE_RANGE[i]._timestamp = pack->set_steering_angle_range(i)._internal_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->CAR_STATUS.resize(pack->car_status_size());

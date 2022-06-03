@@ -45,7 +45,8 @@ TS_STATUS,TS_STATUS: 35,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",2
 SET_TS_STATUS,"SET_TS_STATUS_DAS: 4, SET_TS_STATUS_HANDCART: 36",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,,ts_status_set: Toggle,Requests a TS status; only once
 STEER_STATUS,STEER_STATUS: 261,primary,DAS,6,STEER,DAS,100,"traction_control: TractionControl, map: Map",Send update of the tuneable values from the steering wheel
 SET_CAR_STATUS,SET_CAR_STATUS: 773,primary,DAS,4,STEER,DAS,,car_status_set: SetCarStatus,Ask to DAS to change car status; only once
-SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1029,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal","Ask to calibrate pedals and steer in x_START, x_END steps; only once"
+SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1029,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal",Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min
+SET_STEERING_ANGLE_RANGE,SET_STEERING_ANGLE_RANGE: 1061,primary,DAS,3,STEER,DAS,,bound: Bound,Ask to calibrate steering encoder by specifying if the value is max or min
 CAR_STATUS,CAR_STATUS: 514,primary,STEER,5,DAS,STEER,100,"inverter_l: InverterStatus, inverter_r: InverterStatus, car_status: CarStatus","Car status, all states managed by the DAS will be send (car status, inverters status)"
 DAS_ERRORS,DAS_ERRORS: 2,primary,STEER,7,DAS,STEER,20,das_error: DasErrors,DAS errors messages
 LV_CURRENT,LV_CURRENT: 774,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",500,"current: type: float32, range: 0, 50, force: uint16",Current of LV battery pack: total current taken from the battery itself

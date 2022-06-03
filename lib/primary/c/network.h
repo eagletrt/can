@@ -43,7 +43,7 @@ static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 37
+#define primary_NUMBER_OF_MESSAGES 38
 
 // Custom types
 
@@ -103,6 +103,7 @@ typedef struct {
 #define primary_STEER_STATUS_INTERVAL 100
 #define primary_SET_CAR_STATUS_INTERVAL -1
 #define primary_SET_PEDALS_RANGE_INTERVAL -1
+#define primary_SET_STEERING_ANGLE_RANGE_INTERVAL -1
 #define primary_CAR_STATUS_INTERVAL 100
 #define primary_DAS_ERRORS_INTERVAL 20
 #define primary_LV_CURRENT_INTERVAL 500
@@ -143,6 +144,7 @@ typedef struct {
 #define primary_STEER_STATUS_SIZE 1
 #define primary_SET_CAR_STATUS_SIZE 1
 #define primary_SET_PEDALS_RANGE_SIZE 1
+#define primary_SET_STEERING_ANGLE_RANGE_SIZE 1
 #define primary_CAR_STATUS_SIZE 1
 #define primary_DAS_ERRORS_SIZE 1
 #define primary_LV_CURRENT_SIZE 2
@@ -526,6 +528,14 @@ typedef struct __CANLIB_PACKED {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_PEDALS_RANGE;
+
+
+typedef struct __CANLIB_PACKED {
+    primary_Bound bound;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SET_STEERING_ANGLE_RANGE;
 
 
 typedef struct __CANLIB_PACKED {
@@ -1230,6 +1240,29 @@ int primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message
 int primary_fields_SET_PEDALS_RANGE(char* buffer);
 int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer);
 int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer);
+
+
+// ============== SET_STEERING_ANGLE_RANGE ============== //
+
+primary_byte_size primary_serialize_SET_STEERING_ANGLE_RANGE(
+    uint8_t* data,
+    primary_Bound bound
+);
+primary_byte_size primary_serialize_struct_SET_STEERING_ANGLE_RANGE(
+    uint8_t* data,
+    primary_message_SET_STEERING_ANGLE_RANGE* message
+);
+void primary_deserialize_SET_STEERING_ANGLE_RANGE(
+    primary_message_SET_STEERING_ANGLE_RANGE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGLE_RANGE* message, char* buffer);
+int primary_fields_SET_STEERING_ANGLE_RANGE(char* buffer);
+int primary_to_string_file_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGLE_RANGE* message, FILE* buffer);
+int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer);
 
 
 // ============== CAR_STATUS ============== //
@@ -3421,6 +3454,82 @@ int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
+primary_byte_size primary_serialize_SET_STEERING_ANGLE_RANGE(
+    uint8_t* data,
+    primary_Bound bound
+) {
+    data[0] = bound << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_SET_STEERING_ANGLE_RANGE(
+    uint8_t* data,
+    primary_message_SET_STEERING_ANGLE_RANGE* message
+) {
+    data[0] = message->bound << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_SET_STEERING_ANGLE_RANGE(
+    primary_message_SET_STEERING_ANGLE_RANGE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->bound = (primary_Bound) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGLE_RANGE* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%ju" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%u",
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->bound
+    );}
+int primary_fields_SET_STEERING_ANGLE_RANGE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "bound"
+    );}
+int primary_to_string_file_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGLE_RANGE* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%ju" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%u",
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->bound
+    );}
+int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "bound"
+    );}
+
+// ============== SERIALIZE ============== //
+
 primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
     primary_InverterStatus inverter_l,
@@ -5363,6 +5472,9 @@ void primary_fields_from_id(uint16_t message_id, FILE *buffer) {
     case 1029:
         primary_fields_file_SET_PEDALS_RANGE(buffer);
         break;
+    case 1061:
+        primary_fields_file_SET_STEERING_ANGLE_RANGE(buffer);
+        break;
     case 514:
         primary_fields_file_CAR_STATUS(buffer);
         break;
@@ -5478,6 +5590,9 @@ void primary_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
         break;
         case 1029:
             primary_to_string_file_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
+        break;
+        case 1061:
+            primary_to_string_file_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
         break;
         case 514:
             primary_to_string_file_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
@@ -5729,6 +5844,15 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
+        case 1061:
+            primary_deserialize_SET_STEERING_ANGLE_RANGE(
+                (primary_message_SET_STEERING_ANGLE_RANGE*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
         case 514:
             primary_deserialize_CAR_STATUS(
                 (primary_message_CAR_STATUS*) raw_message,
@@ -5966,6 +6090,8 @@ int primary_interval_from_id(uint16_t message_id) {
         return primary_SET_CAR_STATUS_INTERVAL;
     case 1029:
         return primary_SET_PEDALS_RANGE_INTERVAL;
+    case 1061:
+        return primary_SET_STEERING_ANGLE_RANGE_INTERVAL;
     case 514:
         return primary_CAR_STATUS_INTERVAL;
     case 2:
@@ -6083,77 +6209,81 @@ void primary_devices_new(primary_devices* map) {
     (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
     (*map)[18].message = NULL;
 
-    (*map)[19].id = 514;
-    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
+    (*map)[19].id = 1061;
+    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
     (*map)[19].message = NULL;
 
-    (*map)[20].id = 2;
-    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[20].id = 514;
+    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
     (*map)[20].message = NULL;
 
-    (*map)[21].id = 774;
-    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
-    (*map)[21].message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
+    (*map)[21].id = 2;
+    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[21].message = NULL;
 
-    (*map)[22].id = 806;
-    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
-    (*map)[22].message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
+    (*map)[22].id = 774;
+    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
+    (*map)[22].message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
 
-    (*map)[23].id = 838;
-    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
-    (*map)[23].message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
+    (*map)[23].id = 806;
+    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
+    (*map)[23].message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
 
-    (*map)[24].id = 870;
-    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
-    (*map)[24].message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
+    (*map)[24].id = 838;
+    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
+    (*map)[24].message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
 
-    (*map)[25].id = 902;
-    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
-    (*map)[25].message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
+    (*map)[25].id = 870;
+    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
+    (*map)[25].message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
 
-    (*map)[26].id = 775;
-    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
-    (*map)[26].message = NULL;
+    (*map)[26].id = 902;
+    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
+    (*map)[26].message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
 
-    (*map)[27].id = 807;
-    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
+    (*map)[27].id = 775;
+    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
     (*map)[27].message = NULL;
 
-    (*map)[28].id = 1;
-    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[28].id = 807;
+    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
     (*map)[28].message = NULL;
 
-    (*map)[29].id = 520;
-    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[29].message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
+    (*map)[29].id = 1;
+    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[29].message = NULL;
 
-    (*map)[30].id = 552;
-    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[30].message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
+    (*map)[30].id = 520;
+    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
+    (*map)[30].message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
-    (*map)[31].id = 584;
-    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
-    (*map)[31].message = NULL;
+    (*map)[31].id = 552;
+    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
+    (*map)[31].message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
-    (*map)[32].id = 516;
-    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
+    (*map)[32].id = 584;
+    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
     (*map)[32].message = NULL;
 
-    (*map)[33].id = 772;
-    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
+    (*map)[33].id = 516;
+    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
     (*map)[33].message = NULL;
 
-    (*map)[34].id = 546;
-    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[34].message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+    (*map)[34].id = 772;
+    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
+    (*map)[34].message = NULL;
 
-    (*map)[35].id = 513;
-    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
-    (*map)[35].message = NULL;
+    (*map)[35].id = 546;
+    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
+    (*map)[35].message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
 
-    (*map)[36].id = 385;
-    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[36].id = 513;
+    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
     (*map)[36].message = NULL;
+
+    (*map)[37].id = 385;
+    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[37].message = NULL;
 
 }
 

@@ -60,6 +60,7 @@
 #define primary_id_STEER_STATUS 0b00100000101
 #define primary_id_SET_CAR_STATUS 0b01100000101
 #define primary_id_SET_PEDALS_RANGE 0b10000000101
+#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100101
 
 /* TOPIC DASnSTEER */
 #define primary_topic_mask_DASnSTEER 0b00000011111
@@ -158,6 +159,9 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
         case primary_id_SET_PEDALS_RANGE:
             strcpy(buffer, "SET_PEDALS_RANGE");
             return 0;
+        case primary_id_SET_STEERING_ANGLE_RANGE:
+            strcpy(buffer, "SET_STEERING_ANGLE_RANGE");
+            return 0;
         case primary_id_CAR_STATUS:
             strcpy(buffer, "CAR_STATUS");
             return 0;
@@ -239,6 +243,7 @@ bool primary_is_message_id(uint16_t message_id) {
         case 261: return true; break;
         case 773: return true; break;
         case 1029: return true; break;
+        case 1061: return true; break;
         case 514: return true; break;
         case 2: return true; break;
         case 774: return true; break;

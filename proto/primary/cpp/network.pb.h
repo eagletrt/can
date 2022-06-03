@@ -127,6 +127,9 @@ extern SET_PUMPS_POWERDefaultTypeInternal _SET_PUMPS_POWER_default_instance_;
 class SET_RADIATOR_SPEED;
 struct SET_RADIATOR_SPEEDDefaultTypeInternal;
 extern SET_RADIATOR_SPEEDDefaultTypeInternal _SET_RADIATOR_SPEED_default_instance_;
+class SET_STEERING_ANGLE_RANGE;
+struct SET_STEERING_ANGLE_RANGEDefaultTypeInternal;
+extern SET_STEERING_ANGLE_RANGEDefaultTypeInternal _SET_STEERING_ANGLE_RANGE_default_instance_;
 class SET_TLM_STATUS;
 struct SET_TLM_STATUSDefaultTypeInternal;
 extern SET_TLM_STATUSDefaultTypeInternal _SET_TLM_STATUS_default_instance_;
@@ -189,6 +192,7 @@ template<> ::primary::SET_CELL_BALANCING_STATUS* Arena::CreateMaybeMessage<::pri
 template<> ::primary::SET_PEDALS_RANGE* Arena::CreateMaybeMessage<::primary::SET_PEDALS_RANGE>(Arena*);
 template<> ::primary::SET_PUMPS_POWER* Arena::CreateMaybeMessage<::primary::SET_PUMPS_POWER>(Arena*);
 template<> ::primary::SET_RADIATOR_SPEED* Arena::CreateMaybeMessage<::primary::SET_RADIATOR_SPEED>(Arena*);
+template<> ::primary::SET_STEERING_ANGLE_RANGE* Arena::CreateMaybeMessage<::primary::SET_STEERING_ANGLE_RANGE>(Arena*);
 template<> ::primary::SET_TLM_STATUS* Arena::CreateMaybeMessage<::primary::SET_TLM_STATUS>(Arena*);
 template<> ::primary::SET_TS_STATUS_DAS* Arena::CreateMaybeMessage<::primary::SET_TS_STATUS_DAS>(Arena*);
 template<> ::primary::SET_TS_STATUS_HANDCART* Arena::CreateMaybeMessage<::primary::SET_TS_STATUS_HANDCART>(Arena*);
@@ -3640,6 +3644,160 @@ class SET_PEDALS_RANGE final :
 };
 // -------------------------------------------------------------------
 
+class SET_STEERING_ANGLE_RANGE final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.SET_STEERING_ANGLE_RANGE) */ {
+ public:
+  inline SET_STEERING_ANGLE_RANGE() : SET_STEERING_ANGLE_RANGE(nullptr) {}
+  ~SET_STEERING_ANGLE_RANGE() override;
+  explicit PROTOBUF_CONSTEXPR SET_STEERING_ANGLE_RANGE(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SET_STEERING_ANGLE_RANGE(const SET_STEERING_ANGLE_RANGE& from);
+  SET_STEERING_ANGLE_RANGE(SET_STEERING_ANGLE_RANGE&& from) noexcept
+    : SET_STEERING_ANGLE_RANGE() {
+    *this = ::std::move(from);
+  }
+
+  inline SET_STEERING_ANGLE_RANGE& operator=(const SET_STEERING_ANGLE_RANGE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SET_STEERING_ANGLE_RANGE& operator=(SET_STEERING_ANGLE_RANGE&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SET_STEERING_ANGLE_RANGE& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SET_STEERING_ANGLE_RANGE* internal_default_instance() {
+    return reinterpret_cast<const SET_STEERING_ANGLE_RANGE*>(
+               &_SET_STEERING_ANGLE_RANGE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(SET_STEERING_ANGLE_RANGE& a, SET_STEERING_ANGLE_RANGE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SET_STEERING_ANGLE_RANGE* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SET_STEERING_ANGLE_RANGE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SET_STEERING_ANGLE_RANGE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SET_STEERING_ANGLE_RANGE>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SET_STEERING_ANGLE_RANGE& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SET_STEERING_ANGLE_RANGE& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SET_STEERING_ANGLE_RANGE* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.SET_STEERING_ANGLE_RANGE";
+  }
+  protected:
+  explicit SET_STEERING_ANGLE_RANGE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInternalTimestampFieldNumber = 2,
+    kBoundFieldNumber = 1,
+  };
+  // uint64 _internal_timestamp = 2;
+  void clear__internal_timestamp();
+  uint64_t _internal_timestamp() const;
+  void set__internal_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__internal_timestamp() const;
+  void _internal_set__internal_timestamp(uint64_t value);
+  public:
+
+  // .primary.Bound bound = 1;
+  void clear_bound();
+  ::primary::Bound bound() const;
+  void set_bound(::primary::Bound value);
+  private:
+  ::primary::Bound _internal_bound() const;
+  void _internal_set_bound(::primary::Bound value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.SET_STEERING_ANGLE_RANGE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _internal_timestamp_;
+  int bound_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_network_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CAR_STATUS final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.CAR_STATUS) */ {
  public:
@@ -3688,7 +3846,7 @@ class CAR_STATUS final :
                &_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(CAR_STATUS& a, CAR_STATUS& b) {
     a.Swap(&b);
@@ -3864,7 +4022,7 @@ class DAS_ERRORS final :
                &_DAS_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(DAS_ERRORS& a, DAS_ERRORS& b) {
     a.Swap(&b);
@@ -4018,7 +4176,7 @@ class LV_CURRENT final :
                &_LV_CURRENT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(LV_CURRENT& a, LV_CURRENT& b) {
     a.Swap(&b);
@@ -4172,7 +4330,7 @@ class LV_VOLTAGE final :
                &_LV_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(LV_VOLTAGE& a, LV_VOLTAGE& b) {
     a.Swap(&b);
@@ -4359,7 +4517,7 @@ class LV_TOTAL_VOLTAGE final :
                &_LV_TOTAL_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(LV_TOTAL_VOLTAGE& a, LV_TOTAL_VOLTAGE& b) {
     a.Swap(&b);
@@ -4513,7 +4671,7 @@ class LV_TEMPERATURE final :
                &_LV_TEMPERATURE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(LV_TEMPERATURE& a, LV_TEMPERATURE& b) {
     a.Swap(&b);
@@ -4700,7 +4858,7 @@ class COOLING_STATUS final :
                &_COOLING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(COOLING_STATUS& a, COOLING_STATUS& b) {
     a.Swap(&b);
@@ -4876,7 +5034,7 @@ class SET_RADIATOR_SPEED final :
                &_SET_RADIATOR_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(SET_RADIATOR_SPEED& a, SET_RADIATOR_SPEED& b) {
     a.Swap(&b);
@@ -5030,7 +5188,7 @@ class SET_PUMPS_POWER final :
                &_SET_PUMPS_POWER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(SET_PUMPS_POWER& a, SET_PUMPS_POWER& b) {
     a.Swap(&b);
@@ -5184,7 +5342,7 @@ class MARKER final :
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(MARKER& a, MARKER& b) {
     a.Swap(&b);
@@ -5327,7 +5485,7 @@ class HV_CELLS_VOLTAGE final :
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
     a.Swap(&b);
@@ -5514,7 +5672,7 @@ class HV_CELLS_TEMP final :
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
     a.Swap(&b);
@@ -5745,7 +5903,7 @@ class HV_CELL_BALANCING_STATUS final :
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -5899,7 +6057,7 @@ class SET_CELL_BALANCING_STATUS final :
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -6053,7 +6211,7 @@ class HANDCART_STATUS final :
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
     a.Swap(&b);
@@ -6207,7 +6365,7 @@ class SPEED final :
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(SPEED& a, SPEED& b) {
     a.Swap(&b);
@@ -6394,7 +6552,7 @@ class INV_L_SET_TORQUE final :
                &_INV_L_SET_TORQUE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(INV_L_SET_TORQUE& a, INV_L_SET_TORQUE& b) {
     a.Swap(&b);
@@ -6570,7 +6728,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -6801,7 +6959,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -6891,24 +7049,25 @@ class Pack final :
     kSTEERSTATUSFieldNumber = 17,
     kSETCARSTATUSFieldNumber = 18,
     kSETPEDALSRANGEFieldNumber = 19,
-    kCARSTATUSFieldNumber = 20,
-    kDASERRORSFieldNumber = 21,
-    kLVCURRENTFieldNumber = 22,
-    kLVVOLTAGEFieldNumber = 23,
-    kLVTOTALVOLTAGEFieldNumber = 24,
-    kLVTEMPERATUREFieldNumber = 25,
-    kCOOLINGSTATUSFieldNumber = 26,
-    kSETRADIATORSPEEDFieldNumber = 27,
-    kSETPUMPSPOWERFieldNumber = 28,
-    kMARKERFieldNumber = 29,
-    kHVCELLSVOLTAGEFieldNumber = 30,
-    kHVCELLSTEMPFieldNumber = 31,
-    kHVCELLBALANCINGSTATUSFieldNumber = 32,
-    kSETCELLBALANCINGSTATUSFieldNumber = 33,
-    kHANDCARTSTATUSFieldNumber = 34,
-    kSPEEDFieldNumber = 35,
-    kINVLSETTORQUEFieldNumber = 36,
-    kINVLRESPONSEFieldNumber = 37,
+    kSETSTEERINGANGLERANGEFieldNumber = 20,
+    kCARSTATUSFieldNumber = 21,
+    kDASERRORSFieldNumber = 22,
+    kLVCURRENTFieldNumber = 23,
+    kLVVOLTAGEFieldNumber = 24,
+    kLVTOTALVOLTAGEFieldNumber = 25,
+    kLVTEMPERATUREFieldNumber = 26,
+    kCOOLINGSTATUSFieldNumber = 27,
+    kSETRADIATORSPEEDFieldNumber = 28,
+    kSETPUMPSPOWERFieldNumber = 29,
+    kMARKERFieldNumber = 30,
+    kHVCELLSVOLTAGEFieldNumber = 31,
+    kHVCELLSTEMPFieldNumber = 32,
+    kHVCELLBALANCINGSTATUSFieldNumber = 33,
+    kSETCELLBALANCINGSTATUSFieldNumber = 34,
+    kHANDCARTSTATUSFieldNumber = 35,
+    kSPEEDFieldNumber = 36,
+    kINVLSETTORQUEFieldNumber = 37,
+    kINVLRESPONSEFieldNumber = 38,
   };
   // repeated .primary.STEER_VERSION STEER_VERSION = 1;
   int steer_version_size() const;
@@ -7252,7 +7411,25 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PEDALS_RANGE >&
       set_pedals_range() const;
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 20;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+  int set_steering_angle_range_size() const;
+  private:
+  int _internal_set_steering_angle_range_size() const;
+  public:
+  void clear_set_steering_angle_range();
+  ::primary::SET_STEERING_ANGLE_RANGE* mutable_set_steering_angle_range(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >*
+      mutable_set_steering_angle_range();
+  private:
+  const ::primary::SET_STEERING_ANGLE_RANGE& _internal_set_steering_angle_range(int index) const;
+  ::primary::SET_STEERING_ANGLE_RANGE* _internal_add_set_steering_angle_range();
+  public:
+  const ::primary::SET_STEERING_ANGLE_RANGE& set_steering_angle_range(int index) const;
+  ::primary::SET_STEERING_ANGLE_RANGE* add_set_steering_angle_range();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >&
+      set_steering_angle_range() const;
+
+  // repeated .primary.CAR_STATUS CAR_STATUS = 21;
   int car_status_size() const;
   private:
   int _internal_car_status_size() const;
@@ -7270,7 +7447,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CAR_STATUS >&
       car_status() const;
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 21;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
   int das_errors_size() const;
   private:
   int _internal_das_errors_size() const;
@@ -7288,7 +7465,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::DAS_ERRORS >&
       das_errors() const;
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 22;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 23;
   int lv_current_size() const;
   private:
   int _internal_lv_current_size() const;
@@ -7306,7 +7483,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_CURRENT >&
       lv_current() const;
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 23;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
   int lv_voltage_size() const;
   private:
   int _internal_lv_voltage_size() const;
@@ -7324,7 +7501,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_VOLTAGE >&
       lv_voltage() const;
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 24;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
   int lv_total_voltage_size() const;
   private:
   int _internal_lv_total_voltage_size() const;
@@ -7342,7 +7519,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE >&
       lv_total_voltage() const;
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 25;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
   int lv_temperature_size() const;
   private:
   int _internal_lv_temperature_size() const;
@@ -7360,7 +7537,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TEMPERATURE >&
       lv_temperature() const;
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 26;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
   int cooling_status_size() const;
   private:
   int _internal_cooling_status_size() const;
@@ -7378,7 +7555,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::COOLING_STATUS >&
       cooling_status() const;
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
   int set_radiator_speed_size() const;
   private:
   int _internal_set_radiator_speed_size() const;
@@ -7396,7 +7573,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
       set_radiator_speed() const;
 
-  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 28;
+  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
   int set_pumps_power_size() const;
   private:
   int _internal_set_pumps_power_size() const;
@@ -7414,7 +7591,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >&
       set_pumps_power() const;
 
-  // repeated .primary.MARKER MARKER = 29;
+  // repeated .primary.MARKER MARKER = 30;
   int marker_size() const;
   private:
   int _internal_marker_size() const;
@@ -7432,7 +7609,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
   int hv_cells_voltage_size() const;
   private:
   int _internal_hv_cells_voltage_size() const;
@@ -7450,7 +7627,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 31;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
   int hv_cells_temp_size() const;
   private:
   int _internal_hv_cells_temp_size() const;
@@ -7468,7 +7645,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
   int hv_cell_balancing_status_size() const;
   private:
   int _internal_hv_cell_balancing_status_size() const;
@@ -7486,7 +7663,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
   int set_cell_balancing_status_size() const;
   private:
   int _internal_set_cell_balancing_status_size() const;
@@ -7504,7 +7681,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 34;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
   int handcart_status_size() const;
   private:
   int _internal_handcart_status_size() const;
@@ -7522,7 +7699,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 35;
+  // repeated .primary.SPEED SPEED = 36;
   int speed_size() const;
   private:
   int _internal_speed_size() const;
@@ -7540,7 +7717,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
+  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
   int inv_l_set_torque_size() const;
   private:
   int _internal_inv_l_set_torque_size() const;
@@ -7558,7 +7735,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_SET_TORQUE >&
       inv_l_set_torque() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 37;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -7602,6 +7779,7 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::STEER_STATUS > steer_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CAR_STATUS > set_car_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PEDALS_RANGE > set_pedals_range_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE > set_steering_angle_range_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CAR_STATUS > car_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::DAS_ERRORS > das_errors_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_CURRENT > lv_current_;
@@ -8864,6 +9042,50 @@ inline void SET_PEDALS_RANGE::_internal_set__internal_timestamp(uint64_t value) 
 inline void SET_PEDALS_RANGE::set__internal_timestamp(uint64_t value) {
   _internal_set__internal_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.SET_PEDALS_RANGE._internal_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// SET_STEERING_ANGLE_RANGE
+
+// .primary.Bound bound = 1;
+inline void SET_STEERING_ANGLE_RANGE::clear_bound() {
+  bound_ = 0;
+}
+inline ::primary::Bound SET_STEERING_ANGLE_RANGE::_internal_bound() const {
+  return static_cast< ::primary::Bound >(bound_);
+}
+inline ::primary::Bound SET_STEERING_ANGLE_RANGE::bound() const {
+  // @@protoc_insertion_point(field_get:primary.SET_STEERING_ANGLE_RANGE.bound)
+  return _internal_bound();
+}
+inline void SET_STEERING_ANGLE_RANGE::_internal_set_bound(::primary::Bound value) {
+  
+  bound_ = value;
+}
+inline void SET_STEERING_ANGLE_RANGE::set_bound(::primary::Bound value) {
+  _internal_set_bound(value);
+  // @@protoc_insertion_point(field_set:primary.SET_STEERING_ANGLE_RANGE.bound)
+}
+
+// uint64 _internal_timestamp = 2;
+inline void SET_STEERING_ANGLE_RANGE::clear__internal_timestamp() {
+  _internal_timestamp_ = uint64_t{0u};
+}
+inline uint64_t SET_STEERING_ANGLE_RANGE::_internal__internal_timestamp() const {
+  return _internal_timestamp_;
+}
+inline uint64_t SET_STEERING_ANGLE_RANGE::_internal_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.SET_STEERING_ANGLE_RANGE._internal_timestamp)
+  return _internal__internal_timestamp();
+}
+inline void SET_STEERING_ANGLE_RANGE::_internal_set__internal_timestamp(uint64_t value) {
+  
+  _internal_timestamp_ = value;
+}
+inline void SET_STEERING_ANGLE_RANGE::set__internal_timestamp(uint64_t value) {
+  _internal_set__internal_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.SET_STEERING_ANGLE_RANGE._internal_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -11042,7 +11264,47 @@ Pack::set_pedals_range() const {
   return set_pedals_range_;
 }
 
-// repeated .primary.CAR_STATUS CAR_STATUS = 20;
+// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+inline int Pack::_internal_set_steering_angle_range_size() const {
+  return set_steering_angle_range_.size();
+}
+inline int Pack::set_steering_angle_range_size() const {
+  return _internal_set_steering_angle_range_size();
+}
+inline void Pack::clear_set_steering_angle_range() {
+  set_steering_angle_range_.Clear();
+}
+inline ::primary::SET_STEERING_ANGLE_RANGE* Pack::mutable_set_steering_angle_range(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.SET_STEERING_ANGLE_RANGE)
+  return set_steering_angle_range_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >*
+Pack::mutable_set_steering_angle_range() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.SET_STEERING_ANGLE_RANGE)
+  return &set_steering_angle_range_;
+}
+inline const ::primary::SET_STEERING_ANGLE_RANGE& Pack::_internal_set_steering_angle_range(int index) const {
+  return set_steering_angle_range_.Get(index);
+}
+inline const ::primary::SET_STEERING_ANGLE_RANGE& Pack::set_steering_angle_range(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.SET_STEERING_ANGLE_RANGE)
+  return _internal_set_steering_angle_range(index);
+}
+inline ::primary::SET_STEERING_ANGLE_RANGE* Pack::_internal_add_set_steering_angle_range() {
+  return set_steering_angle_range_.Add();
+}
+inline ::primary::SET_STEERING_ANGLE_RANGE* Pack::add_set_steering_angle_range() {
+  ::primary::SET_STEERING_ANGLE_RANGE* _add = _internal_add_set_steering_angle_range();
+  // @@protoc_insertion_point(field_add:primary.Pack.SET_STEERING_ANGLE_RANGE)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >&
+Pack::set_steering_angle_range() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.SET_STEERING_ANGLE_RANGE)
+  return set_steering_angle_range_;
+}
+
+// repeated .primary.CAR_STATUS CAR_STATUS = 21;
 inline int Pack::_internal_car_status_size() const {
   return car_status_.size();
 }
@@ -11082,7 +11344,7 @@ Pack::car_status() const {
   return car_status_;
 }
 
-// repeated .primary.DAS_ERRORS DAS_ERRORS = 21;
+// repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
 inline int Pack::_internal_das_errors_size() const {
   return das_errors_.size();
 }
@@ -11122,7 +11384,7 @@ Pack::das_errors() const {
   return das_errors_;
 }
 
-// repeated .primary.LV_CURRENT LV_CURRENT = 22;
+// repeated .primary.LV_CURRENT LV_CURRENT = 23;
 inline int Pack::_internal_lv_current_size() const {
   return lv_current_.size();
 }
@@ -11162,7 +11424,7 @@ Pack::lv_current() const {
   return lv_current_;
 }
 
-// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 23;
+// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
 inline int Pack::_internal_lv_voltage_size() const {
   return lv_voltage_.size();
 }
@@ -11202,7 +11464,7 @@ Pack::lv_voltage() const {
   return lv_voltage_;
 }
 
-// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 24;
+// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
 inline int Pack::_internal_lv_total_voltage_size() const {
   return lv_total_voltage_.size();
 }
@@ -11242,7 +11504,7 @@ Pack::lv_total_voltage() const {
   return lv_total_voltage_;
 }
 
-// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 25;
+// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
 inline int Pack::_internal_lv_temperature_size() const {
   return lv_temperature_.size();
 }
@@ -11282,7 +11544,7 @@ Pack::lv_temperature() const {
   return lv_temperature_;
 }
 
-// repeated .primary.COOLING_STATUS COOLING_STATUS = 26;
+// repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
 inline int Pack::_internal_cooling_status_size() const {
   return cooling_status_.size();
 }
@@ -11322,7 +11584,7 @@ Pack::cooling_status() const {
   return cooling_status_;
 }
 
-// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
+// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
 inline int Pack::_internal_set_radiator_speed_size() const {
   return set_radiator_speed_.size();
 }
@@ -11362,7 +11624,7 @@ Pack::set_radiator_speed() const {
   return set_radiator_speed_;
 }
 
-// repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 28;
+// repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
 inline int Pack::_internal_set_pumps_power_size() const {
   return set_pumps_power_.size();
 }
@@ -11402,7 +11664,7 @@ Pack::set_pumps_power() const {
   return set_pumps_power_;
 }
 
-// repeated .primary.MARKER MARKER = 29;
+// repeated .primary.MARKER MARKER = 30;
 inline int Pack::_internal_marker_size() const {
   return marker_.size();
 }
@@ -11442,7 +11704,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
 inline int Pack::_internal_hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -11482,7 +11744,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 31;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
 inline int Pack::_internal_hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -11522,7 +11784,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
 inline int Pack::_internal_hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -11562,7 +11824,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
 inline int Pack::_internal_set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -11602,7 +11864,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 34;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
 inline int Pack::_internal_handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -11642,7 +11904,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 35;
+// repeated .primary.SPEED SPEED = 36;
 inline int Pack::_internal_speed_size() const {
   return speed_.size();
 }
@@ -11682,7 +11944,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
+// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
 inline int Pack::_internal_inv_l_set_torque_size() const {
   return inv_l_set_torque_.size();
 }
@@ -11722,7 +11984,7 @@ Pack::inv_l_set_torque() const {
   return inv_l_set_torque_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 37;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -11765,6 +12027,8 @@ Pack::inv_l_response() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

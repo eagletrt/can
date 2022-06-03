@@ -185,6 +185,11 @@ message SET_PEDALS_RANGE {
     uint64 _internal_timestamp = 3;
 }
 
+message SET_STEERING_ANGLE_RANGE {
+    Bound bound = 1;
+    uint64 _internal_timestamp = 2;
+}
+
 message CAR_STATUS {
     InverterStatus inverter_l = 1;
     InverterStatus inverter_r = 2;
@@ -327,22 +332,23 @@ message Pack {
     repeated STEER_STATUS STEER_STATUS = 17;
     repeated SET_CAR_STATUS SET_CAR_STATUS = 18;
     repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
-    repeated CAR_STATUS CAR_STATUS = 20;
-    repeated DAS_ERRORS DAS_ERRORS = 21;
-    repeated LV_CURRENT LV_CURRENT = 22;
-    repeated LV_VOLTAGE LV_VOLTAGE = 23;
-    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 24;
-    repeated LV_TEMPERATURE LV_TEMPERATURE = 25;
-    repeated COOLING_STATUS COOLING_STATUS = 26;
-    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 27;
-    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 28;
-    repeated MARKER MARKER = 29;
-    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 30;
-    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 31;
-    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 32;
-    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 33;
-    repeated HANDCART_STATUS HANDCART_STATUS = 34;
-    repeated SPEED SPEED = 35;
-    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 36;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 37;
+    repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+    repeated CAR_STATUS CAR_STATUS = 21;
+    repeated DAS_ERRORS DAS_ERRORS = 22;
+    repeated LV_CURRENT LV_CURRENT = 23;
+    repeated LV_VOLTAGE LV_VOLTAGE = 24;
+    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+    repeated LV_TEMPERATURE LV_TEMPERATURE = 26;
+    repeated COOLING_STATUS COOLING_STATUS = 27;
+    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+    repeated MARKER MARKER = 30;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+    repeated HANDCART_STATUS HANDCART_STATUS = 35;
+    repeated SPEED SPEED = 36;
+    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 38;
 }

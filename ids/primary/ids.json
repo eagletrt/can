@@ -101,6 +101,9 @@
                 },
                 "SET_PEDALS_RANGE": {
                     "SET_PEDALS_RANGE": 1029
+                },
+                "SET_STEERING_ANGLE_RANGE": {
+                    "SET_STEERING_ANGLE_RANGE": 1061
                 }
             }
         },
