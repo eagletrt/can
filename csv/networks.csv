@@ -20,7 +20,7 @@ IRTS_RR_3,IRTS_RR_3: 1475,secondary,FIXED_IDS,,IRTS_RR,DAS,,"channel13: uint16, 
 GPS_COORDS,GPS_COORDS: 1025,secondary,STEER,3,TLM,STEER,,"latitude: float32, longitude: float32",Coordinates received from GPS
 GPS_SPEED,GPS_SPEED: 1057,secondary,STEER,3,TLM,STEER,,speed: uint16,Speed received from GPS
 LAP_COUNT,LAP_COUNT: 1089,secondary,STEER,3,TLM,STEER,,"lap_count: uint8, timestamp: uint32",Lap counter and associated timestamp
-PEDALS_OUTPUT,PEDALS_OUTPUT: 769,secondary,STEER,4,DAS,STEER,100,"apps: uint8, brake_front: type: float32, range: 0, 100, force: uint16, brake_rear: type: float32, range: 0, 100, force: uint16","Pedal output, already calibrated"
+PEDALS_OUTPUT,PEDALS_OUTPUT: 769,secondary,STEER,4,DAS,STEER,100,"apps: uint8, bse_front: type: float32, range: 0, 100, force: uint16, bse_rear: type: float32, range: 0, 100, force: uint16","Pedal output, already calibrated"
 CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,STEER,100,"right: float32, left: float32","Control output, N*m"
 STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,200,angle: float32,Steering angle in degrees
 BOARD_STATUS,"BOARD_STATUS_CELLBOARD0: 1536, BOARD_STATUS_CELLBOARD1: 1568, BOARD_STATUS_CELLBOARD2: 1600, BOARD_STATUS_CELLBOARD3: 1632, BOARD_STATUS_CELLBOARD4: 1664, BOARD_STATUS_CELLBOARD5: 1696",bms,STATUS,1,"CELLBOARD0, CELLBOARD1, CELLBOARD2, CELLBOARD3, CELLBOARD4, CELLBOARD5",MAINBOARD,,"errors: Errors, balancing_status: BalancingStatus",Cellboards status

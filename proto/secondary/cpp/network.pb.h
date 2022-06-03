@@ -4099,27 +4099,27 @@ class PEDALS_OUTPUT final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBrakeFrontFieldNumber = 1,
-    kBrakeRearFieldNumber = 2,
+    kBseFrontFieldNumber = 1,
+    kBseRearFieldNumber = 2,
     kInternalTimestampFieldNumber = 4,
     kAppsFieldNumber = 3,
   };
-  // uint32 brake_front = 1;
-  void clear_brake_front();
-  uint32_t brake_front() const;
-  void set_brake_front(uint32_t value);
+  // uint32 bse_front = 1;
+  void clear_bse_front();
+  uint32_t bse_front() const;
+  void set_bse_front(uint32_t value);
   private:
-  uint32_t _internal_brake_front() const;
-  void _internal_set_brake_front(uint32_t value);
+  uint32_t _internal_bse_front() const;
+  void _internal_set_bse_front(uint32_t value);
   public:
 
-  // uint32 brake_rear = 2;
-  void clear_brake_rear();
-  uint32_t brake_rear() const;
-  void set_brake_rear(uint32_t value);
+  // uint32 bse_rear = 2;
+  void clear_bse_rear();
+  uint32_t bse_rear() const;
+  void set_bse_rear(uint32_t value);
   private:
-  uint32_t _internal_brake_rear() const;
-  void _internal_set_brake_rear(uint32_t value);
+  uint32_t _internal_bse_rear() const;
+  void _internal_set_bse_rear(uint32_t value);
   public:
 
   // uint64 _internal_timestamp = 4;
@@ -4147,8 +4147,8 @@ class PEDALS_OUTPUT final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t brake_front_;
-  uint32_t brake_rear_;
+  uint32_t bse_front_;
+  uint32_t bse_rear_;
   uint64_t _internal_timestamp_;
   uint32_t apps_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7100,44 +7100,44 @@ inline void LAP_COUNT::set__internal_timestamp(uint64_t value) {
 
 // PEDALS_OUTPUT
 
-// uint32 brake_front = 1;
-inline void PEDALS_OUTPUT::clear_brake_front() {
-  brake_front_ = 0u;
+// uint32 bse_front = 1;
+inline void PEDALS_OUTPUT::clear_bse_front() {
+  bse_front_ = 0u;
 }
-inline uint32_t PEDALS_OUTPUT::_internal_brake_front() const {
-  return brake_front_;
+inline uint32_t PEDALS_OUTPUT::_internal_bse_front() const {
+  return bse_front_;
 }
-inline uint32_t PEDALS_OUTPUT::brake_front() const {
-  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.brake_front)
-  return _internal_brake_front();
+inline uint32_t PEDALS_OUTPUT::bse_front() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.bse_front)
+  return _internal_bse_front();
 }
-inline void PEDALS_OUTPUT::_internal_set_brake_front(uint32_t value) {
+inline void PEDALS_OUTPUT::_internal_set_bse_front(uint32_t value) {
   
-  brake_front_ = value;
+  bse_front_ = value;
 }
-inline void PEDALS_OUTPUT::set_brake_front(uint32_t value) {
-  _internal_set_brake_front(value);
-  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.brake_front)
+inline void PEDALS_OUTPUT::set_bse_front(uint32_t value) {
+  _internal_set_bse_front(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_front)
 }
 
-// uint32 brake_rear = 2;
-inline void PEDALS_OUTPUT::clear_brake_rear() {
-  brake_rear_ = 0u;
+// uint32 bse_rear = 2;
+inline void PEDALS_OUTPUT::clear_bse_rear() {
+  bse_rear_ = 0u;
 }
-inline uint32_t PEDALS_OUTPUT::_internal_brake_rear() const {
-  return brake_rear_;
+inline uint32_t PEDALS_OUTPUT::_internal_bse_rear() const {
+  return bse_rear_;
 }
-inline uint32_t PEDALS_OUTPUT::brake_rear() const {
-  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.brake_rear)
-  return _internal_brake_rear();
+inline uint32_t PEDALS_OUTPUT::bse_rear() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.bse_rear)
+  return _internal_bse_rear();
 }
-inline void PEDALS_OUTPUT::_internal_set_brake_rear(uint32_t value) {
+inline void PEDALS_OUTPUT::_internal_set_bse_rear(uint32_t value) {
   
-  brake_rear_ = value;
+  bse_rear_ = value;
 }
-inline void PEDALS_OUTPUT::set_brake_rear(uint32_t value) {
-  _internal_set_brake_rear(value);
-  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.brake_rear)
+inline void PEDALS_OUTPUT::set_bse_rear(uint32_t value) {
+  _internal_set_bse_rear(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_rear)
 }
 
 // uint32 apps = 3;

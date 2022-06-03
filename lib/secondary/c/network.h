@@ -372,8 +372,8 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_LAP_COUNT;
 
 typedef struct __CANLIB_PACKED {
-    secondary_float32 brake_front;
-    secondary_float32 brake_rear;
+    secondary_float32 bse_front;
+    secondary_float32 bse_rear;
     secondary_uint8 apps;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
@@ -381,8 +381,8 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_PEDALS_OUTPUT_conversion;
 
 typedef struct __CANLIB_PACKED {
-    secondary_uint16 brake_front;
-    secondary_uint16 brake_rear;
+    secondary_uint16 bse_front;
+    secondary_uint16 bse_rear;
     secondary_uint8 apps;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
@@ -949,8 +949,8 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer);
 
 secondary_byte_size secondary_serialize_PEDALS_OUTPUT(
     uint8_t* data,
-    secondary_uint16 brake_front,
-    secondary_uint16 brake_rear,
+    secondary_uint16 bse_front,
+    secondary_uint16 bse_rear,
     secondary_uint8 apps
 );
 secondary_byte_size secondary_serialize_struct_PEDALS_OUTPUT(
@@ -3345,14 +3345,14 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer) {
 
 secondary_byte_size secondary_serialize_PEDALS_OUTPUT(
     uint8_t* data,
-    secondary_uint16 brake_front,
-    secondary_uint16 brake_rear,
+    secondary_uint16 bse_front,
+    secondary_uint16 bse_rear,
     secondary_uint8 apps
 ) {
-    data[0] = brake_front & 255;
-    data[1] = (brake_front >> 8) & 255;
-    data[2] = brake_rear & 255;
-    data[3] = (brake_rear >> 8) & 255;
+    data[0] = bse_front & 255;
+    data[1] = (bse_front >> 8) & 255;
+    data[2] = bse_rear & 255;
+    data[3] = (bse_rear >> 8) & 255;
     data[4] = apps;
     return 5;
 }
@@ -3361,10 +3361,10 @@ secondary_byte_size secondary_serialize_struct_PEDALS_OUTPUT(
     uint8_t* data,
     secondary_message_PEDALS_OUTPUT* message
 ) {
-    data[0] = message->brake_front & 255;
-    data[1] = (message->brake_front >> 8) & 255;
-    data[2] = message->brake_rear & 255;
-    data[3] = (message->brake_rear >> 8) & 255;
+    data[0] = message->bse_front & 255;
+    data[1] = (message->bse_front >> 8) & 255;
+    data[2] = message->bse_rear & 255;
+    data[3] = (message->bse_rear >> 8) & 255;
     data[4] = message->apps;
     return 5;
 }
@@ -3381,8 +3381,8 @@ void secondary_deserialize_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->brake_front = data[0] | (data[1] << 8);
-    message->brake_rear = data[2] | (data[3] << 8);
+    message->bse_front = data[0] | (data[1] << 8);
+    message->bse_rear = data[2] | (data[3] << 8);
     message->apps = data[4];
 }// ============== CONVERSION ============== //
 
@@ -3393,8 +3393,8 @@ void secondary_raw_to_conversion_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->brake_front = (((secondary_float32)raw->brake_front) / 655.36) + 0;
-    conversion->brake_rear = (((secondary_float32)raw->brake_rear) / 655.36) + 0;
+    conversion->bse_front = (((secondary_float32)raw->bse_front) / 655.36) + 0;
+    conversion->bse_rear = (((secondary_float32)raw->bse_rear) / 655.36) + 0;
     conversion->apps = raw->apps;
 }
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
@@ -3404,8 +3404,8 @@ void secondary_conversion_to_raw_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->brake_front = (secondary_uint16)((conversion->brake_front + 0) * 655.36);
-    raw->brake_rear = (secondary_uint16)((conversion->brake_rear + 0) * 655.36);
+    raw->bse_front = (secondary_uint16)((conversion->bse_front + 0) * 655.36);
+    raw->bse_rear = (secondary_uint16)((conversion->bse_rear + 0) * 655.36);
     raw->apps = conversion->apps;
 }
 
@@ -3423,8 +3423,8 @@ int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->brake_front,
-        message->brake_rear,
+        message->bse_front,
+        message->bse_rear,
         message->apps
     );}
 int secondary_fields_PEDALS_OUTPUT(char* buffer) {
@@ -3433,8 +3433,8 @@ int secondary_fields_PEDALS_OUTPUT(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "brake_front" CANLIB_SEPARATOR 
-        "brake_rear" CANLIB_SEPARATOR 
+        "bse_front" CANLIB_SEPARATOR 
+        "bse_rear" CANLIB_SEPARATOR 
         "apps"
     );}
 int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, FILE* buffer) {
@@ -3449,8 +3449,8 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->brake_front,
-        message->brake_rear,
+        message->bse_front,
+        message->bse_rear,
         message->apps
     );}
 int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
@@ -3459,8 +3459,8 @@ int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "brake_front" CANLIB_SEPARATOR 
-        "brake_rear" CANLIB_SEPARATOR 
+        "bse_front" CANLIB_SEPARATOR 
+        "bse_rear" CANLIB_SEPARATOR 
         "apps"
     );}
 

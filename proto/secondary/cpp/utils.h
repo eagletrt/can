@@ -315,8 +315,8 @@ void secondary_proto_serialize_from_id(uint32_t id, secondary::Pack* pack, secon
         case 769: {
             secondary_message_PEDALS_OUTPUT_conversion* msg = (secondary_message_PEDALS_OUTPUT_conversion*) (*map)[index].conversion_message;
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
-            proto_msg->set_brake_front(msg->brake_front);
-            proto_msg->set_brake_rear(msg->brake_rear);
+            proto_msg->set_bse_front(msg->bse_front);
+            proto_msg->set_bse_rear(msg->bse_rear);
             proto_msg->set_apps(msg->apps);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__internal_timestamp(msg->_timestamp);
@@ -552,8 +552,8 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
     }
     map->PEDALS_OUTPUT.resize(pack->pedals_output_size());
     for(int i = 0; i < pack->pedals_output_size(); i++){
-        map->PEDALS_OUTPUT[i].brake_front =pack->pedals_output(i).brake_front();
-        map->PEDALS_OUTPUT[i].brake_rear =pack->pedals_output(i).brake_rear();
+        map->PEDALS_OUTPUT[i].bse_front =pack->pedals_output(i).bse_front();
+        map->PEDALS_OUTPUT[i].bse_rear =pack->pedals_output(i).bse_rear();
         map->PEDALS_OUTPUT[i].apps =pack->pedals_output(i).apps();
 #ifdef CANLIB_TIMESTAMP
         map->PEDALS_OUTPUT[i]._timestamp = pack->pedals_output(i)._internal_timestamp();

@@ -350,8 +350,8 @@ struct LAP_COUNTDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LAP_COUNTDefaultTypeInternal _LAP_COUNT_default_instance_;
 PROTOBUF_CONSTEXPR PEDALS_OUTPUT::PEDALS_OUTPUT(
     ::_pbi::ConstantInitialized)
-  : brake_front_(0u)
-  , brake_rear_(0u)
+  : bse_front_(0u)
+  , bse_rear_(0u)
   , _internal_timestamp_(uint64_t{0u})
   , apps_(0u){}
 struct PEDALS_OUTPUTDefaultTypeInternal {
@@ -659,8 +659,8 @@ const uint32_t TableStruct_network_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, brake_front_),
-  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, brake_rear_),
+  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, bse_front_),
+  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, bse_rear_),
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, apps_),
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, _internal_timestamp_),
   ~0u,  // no _has_bits_
@@ -825,44 +825,43 @@ const char descriptor_table_protodef_network_2eproto[] PROTOBUF_SECTION_VARIABLE
   "p\030\003 \001(\004\"7\n\tGPS_SPEED\022\r\n\005speed\030\001 \001(\r\022\033\n\023_"
   "internal_timestamp\030\002 \001(\004\"N\n\tLAP_COUNT\022\021\n"
   "\ttimestamp\030\001 \001(\r\022\021\n\tlap_count\030\002 \001(\r\022\033\n\023_"
-  "internal_timestamp\030\003 \001(\004\"c\n\rPEDALS_OUTPU"
-  "T\022\023\n\013brake_front\030\001 \001(\r\022\022\n\nbrake_rear\030\002 \001"
-  "(\r\022\014\n\004apps\030\003 \001(\r\022\033\n\023_internal_timestamp\030"
-  "\004 \001(\004\"J\n\016CONTROL_OUTPUT\022\r\n\005right\030\001 \001(\002\022\014"
-  "\n\004left\030\002 \001(\002\022\033\n\023_internal_timestamp\030\003 \001("
-  "\004\"<\n\016STEERING_ANGLE\022\r\n\005angle\030\001 \001(\002\022\033\n\023_i"
-  "nternal_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n\020IMU_"
-  "ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU_ANGUL"
-  "AR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033.seco"
-  "ndary.IMU_ACCELERATION\022\'\n\tIRTS_FL_0\030\003 \003("
-  "\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL_1\030\004 \003"
-  "(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_FL_2\030\005 "
-  "\003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_FL_3\030\006"
-  " \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS_FR_0\030"
-  "\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS_FR_1"
-  "\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRTS_FR_"
-  "2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIRTS_FR"
-  "_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tIRTS_R"
-  "L_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\tIRTS_"
-  "RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n\tIRTS"
-  "_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'\n\tIRT"
-  "S_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022\'\n\tIR"
-  "TS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_0\022\'\n\tI"
-  "RTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_1\022\'\n\t"
-  "IRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR_2\022\'\n"
-  "\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_RR_3\022)"
-  "\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS_COORD"
-  "S\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.GPS_SPE"
-  "ED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.LAP_CO"
-  "UNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.secondary.P"
-  "EDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003(\0132\031.s"
-  "econdary.CONTROL_OUTPUT\0221\n\016STEERING_ANGL"
-  "E\030\030 \003(\0132\031.secondary.STEERING_ANGLEb\006prot"
-  "o3"
+  "internal_timestamp\030\003 \001(\004\"_\n\rPEDALS_OUTPU"
+  "T\022\021\n\tbse_front\030\001 \001(\r\022\020\n\010bse_rear\030\002 \001(\r\022\014"
+  "\n\004apps\030\003 \001(\r\022\033\n\023_internal_timestamp\030\004 \001("
+  "\004\"J\n\016CONTROL_OUTPUT\022\r\n\005right\030\001 \001(\002\022\014\n\004le"
+  "ft\030\002 \001(\002\022\033\n\023_internal_timestamp\030\003 \001(\004\"<\n"
+  "\016STEERING_ANGLE\022\r\n\005angle\030\001 \001(\002\022\033\n\023_inter"
+  "nal_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n\020IMU_ANGU"
+  "LAR_RATE\030\001 \003(\0132\033.secondary.IMU_ANGULAR_R"
+  "ATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033.secondar"
+  "y.IMU_ACCELERATION\022\'\n\tIRTS_FL_0\030\003 \003(\0132\024."
+  "secondary.IRTS_FL_0\022\'\n\tIRTS_FL_1\030\004 \003(\0132\024"
+  ".secondary.IRTS_FL_1\022\'\n\tIRTS_FL_2\030\005 \003(\0132"
+  "\024.secondary.IRTS_FL_2\022\'\n\tIRTS_FL_3\030\006 \003(\013"
+  "2\024.secondary.IRTS_FL_3\022\'\n\tIRTS_FR_0\030\007 \003("
+  "\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS_FR_1\030\010 \003"
+  "(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRTS_FR_2\030\t "
+  "\003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIRTS_FR_3\030\n"
+  " \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tIRTS_RL_0\030"
+  "\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\tIRTS_RL_1"
+  "\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n\tIRTS_RL_"
+  "2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'\n\tIRTS_RL"
+  "_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022\'\n\tIRTS_R"
+  "R_0\030\017 \003(\0132\024.secondary.IRTS_RR_0\022\'\n\tIRTS_"
+  "RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_1\022\'\n\tIRTS"
+  "_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR_2\022\'\n\tIRT"
+  "S_RR_3\030\022 \003(\0132\024.secondary.IRTS_RR_3\022)\n\nGP"
+  "S_COORDS\030\023 \003(\0132\025.secondary.GPS_COORDS\022\'\n"
+  "\tGPS_SPEED\030\024 \003(\0132\024.secondary.GPS_SPEED\022\'"
+  "\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.LAP_COUNT\022"
+  "/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.secondary.PEDAL"
+  "S_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003(\0132\031.secon"
+  "dary.CONTROL_OUTPUT\0221\n\016STEERING_ANGLE\030\030 "
+  "\003(\0132\031.secondary.STEERING_ANGLEb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_network_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_network_2eproto = {
-    false, false, 3602, descriptor_table_protodef_network_2eproto,
+    false, false, 3598, descriptor_table_protodef_network_2eproto,
     "network.proto",
     &descriptor_table_network_2eproto_once, nullptr, 0, 25,
     schemas, file_default_instances, TableStruct_network_2eproto::offsets,
@@ -6409,17 +6408,17 @@ PEDALS_OUTPUT::PEDALS_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 PEDALS_OUTPUT::PEDALS_OUTPUT(const PEDALS_OUTPUT& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&brake_front_, &from.brake_front_,
+  ::memcpy(&bse_front_, &from.bse_front_,
     static_cast<size_t>(reinterpret_cast<char*>(&apps_) -
-    reinterpret_cast<char*>(&brake_front_)) + sizeof(apps_));
+    reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
   // @@protoc_insertion_point(copy_constructor:secondary.PEDALS_OUTPUT)
 }
 
 inline void PEDALS_OUTPUT::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&brake_front_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&bse_front_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&apps_) -
-    reinterpret_cast<char*>(&brake_front_)) + sizeof(apps_));
+    reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
 }
 
 PEDALS_OUTPUT::~PEDALS_OUTPUT() {
@@ -6445,9 +6444,9 @@ void PEDALS_OUTPUT::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&brake_front_, 0, static_cast<size_t>(
+  ::memset(&bse_front_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&apps_) -
-      reinterpret_cast<char*>(&brake_front_)) + sizeof(apps_));
+      reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6457,18 +6456,18 @@ const char* PEDALS_OUTPUT::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 brake_front = 1;
+      // uint32 bse_front = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          brake_front_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          bse_front_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 brake_rear = 2;
+      // uint32 bse_rear = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          brake_rear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          bse_rear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6518,16 +6517,16 @@ uint8_t* PEDALS_OUTPUT::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 brake_front = 1;
-  if (this->_internal_brake_front() != 0) {
+  // uint32 bse_front = 1;
+  if (this->_internal_bse_front() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_brake_front(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_bse_front(), target);
   }
 
-  // uint32 brake_rear = 2;
-  if (this->_internal_brake_rear() != 0) {
+  // uint32 bse_rear = 2;
+  if (this->_internal_bse_rear() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_brake_rear(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_bse_rear(), target);
   }
 
   // uint32 apps = 3;
@@ -6558,14 +6557,14 @@ size_t PEDALS_OUTPUT::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 brake_front = 1;
-  if (this->_internal_brake_front() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_brake_front());
+  // uint32 bse_front = 1;
+  if (this->_internal_bse_front() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_front());
   }
 
-  // uint32 brake_rear = 2;
-  if (this->_internal_brake_rear() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_brake_rear());
+  // uint32 bse_rear = 2;
+  if (this->_internal_bse_rear() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_rear());
   }
 
   // uint64 _internal_timestamp = 4;
@@ -6600,11 +6599,11 @@ void PEDALS_OUTPUT::MergeFrom(const PEDALS_OUTPUT& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_brake_front() != 0) {
-    _internal_set_brake_front(from._internal_brake_front());
+  if (from._internal_bse_front() != 0) {
+    _internal_set_bse_front(from._internal_bse_front());
   }
-  if (from._internal_brake_rear() != 0) {
-    _internal_set_brake_rear(from._internal_brake_rear());
+  if (from._internal_bse_rear() != 0) {
+    _internal_set_bse_rear(from._internal_bse_rear());
   }
   if (from._internal__internal_timestamp() != 0) {
     _internal_set__internal_timestamp(from._internal__internal_timestamp());
@@ -6632,9 +6631,9 @@ void PEDALS_OUTPUT::InternalSwap(PEDALS_OUTPUT* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, apps_)
       + sizeof(PEDALS_OUTPUT::apps_)
-      - PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, brake_front_)>(
-          reinterpret_cast<char*>(&brake_front_),
-          reinterpret_cast<char*>(&other->brake_front_));
+      - PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, bse_front_)>(
+          reinterpret_cast<char*>(&bse_front_),
+          reinterpret_cast<char*>(&other->bse_front_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PEDALS_OUTPUT::GetMetadata() const {

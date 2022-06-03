@@ -885,12 +885,12 @@ class message_LAP_COUNT:
 class message_PEDALS_OUTPUT:
     def __init__(
         self,
-        brake_front = None,
-        brake_rear = None,
+        bse_front = None,
+        bse_rear = None,
         apps = None
     ):
-        self.brake_front = uint16(brake_front)
-        self.brake_rear = uint16(brake_rear)
+        self.bse_front = uint16(bse_front)
+        self.bse_rear = uint16(bse_rear)
         self.apps = uint8(apps)
         self.size = 5
         self.interval = 100
@@ -898,9 +898,9 @@ class message_PEDALS_OUTPUT:
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
             return False
-        if self.brake_front != other.brake_front:
+        if self.bse_front != other.bse_front:
             return False
-        if self.brake_rear != other.brake_rear:
+        if self.bse_rear != other.bse_rear:
             return False
         if self.apps != other.apps:
             return False
@@ -908,22 +908,22 @@ class message_PEDALS_OUTPUT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHB", self.brake_front, self.brake_rear, self.apps))
+        data.extend(pack("<HHB", self.bse_front, self.bse_rear, self.apps))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.brake_front = uint16(unpack("<H", data[0:2])[0])
-        message.brake_rear = uint16(unpack("<xxH", data[0:4])[0])
+        message.bse_front = uint16(unpack("<H", data[0:2])[0])
+        message.bse_rear = uint16(unpack("<xxH", data[0:4])[0])
         message.apps = uint8(unpack("<xxxxB", data[0:5])[0])
         return message
 
 
     def convert(self) -> message_PEDALS_OUTPUT_conversion:
         conversion = message_PEDALS_OUTPUT_conversion()
-        conversion.brake_front = ((float32(self.brake_front)) / 655.36) + 0
-        conversion.brake_rear = ((float32(self.brake_rear)) / 655.36) + 0
+        conversion.bse_front = ((float32(self.bse_front)) / 655.36) + 0
+        conversion.bse_rear = ((float32(self.bse_rear)) / 655.36) + 0
         conversion.apps = self.apps
         return conversion
 
@@ -931,12 +931,12 @@ class message_PEDALS_OUTPUT:
 class message_PEDALS_OUTPUT_conversion:
     def __init__(
         self,
-        brake_front = None,
-        brake_rear = None,
+        bse_front = None,
+        bse_rear = None,
         apps = None
     ):
-        self.brake_front = float32(brake_front)
-        self.brake_rear = float32(brake_rear)
+        self.bse_front = float32(bse_front)
+        self.bse_rear = float32(bse_rear)
         self.apps = uint8(apps)
         self.size = 5
         self.interval = 100
@@ -944,9 +944,9 @@ class message_PEDALS_OUTPUT_conversion:
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
             return False
-        if self.brake_front != other.brake_front:
+        if self.bse_front != other.bse_front:
             return False
-        if self.brake_rear != other.brake_rear:
+        if self.bse_rear != other.bse_rear:
             return False
         if self.apps != other.apps:
             return False
@@ -954,8 +954,8 @@ class message_PEDALS_OUTPUT_conversion:
 
     def convert_to_raw(self) -> message_PEDALS_OUTPUT:
         raw = message_PEDALS_OUTPUT()
-        raw.brake_front = uint16((self.brake_front + 0) * 655.36)
-        raw.brake_rear = uint16((self.brake_rear + 0) * 655.36)
+        raw.bse_front = uint16((self.bse_front + 0) * 655.36)
+        raw.bse_rear = uint16((self.bse_rear + 0) * 655.36)
         raw.apps = self.apps
         return raw
 
