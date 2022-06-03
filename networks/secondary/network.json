@@ -279,12 +279,12 @@
       "description": "Pedal output, already calibrated",
       "contents": {
         "apps": "uint8",
-        "brake_front": {
+        "bse_front": {
           "type": "float32",
           "range": [0, 100],
           "force": "uint16"
         },
-        "brake_rear": {
+        "bse_rear": {
           "type": "float32",
           "range": [0, 100],
           "force": "uint16"
