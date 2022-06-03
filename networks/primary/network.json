@@ -610,17 +610,17 @@
         "voltage_0": {
           "type": "float32",
           "range": [0, 5],
-          "force": "uint16"
+          "precision": 0.0001
         },
         "voltage_1": {
           "type": "float32",
           "range": [0, 5],
-          "force": "uint16"
+          "precision": 0.0001
         },
         "voltage_2": {
           "type": "float32",
           "range": [0, 5],
-          "force": "uint16"
+          "precision": 0.0001
         }
       }
     },

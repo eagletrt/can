@@ -4442,9 +4442,9 @@ void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->voltage_0 = (((primary_float32)raw->voltage_0) / 13107.2) + 0;
-    conversion->voltage_1 = (((primary_float32)raw->voltage_1) / 13107.2) + 0;
-    conversion->voltage_2 = (((primary_float32)raw->voltage_2) / 13107.2) + 0;
+    conversion->voltage_0 = (((primary_float32)raw->voltage_0) / 10000.0) + 0;
+    conversion->voltage_1 = (((primary_float32)raw->voltage_1) / 10000.0) + 0;
+    conversion->voltage_2 = (((primary_float32)raw->voltage_2) / 10000.0) + 0;
     conversion->start_index = raw->start_index;
 }
 void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
@@ -4454,9 +4454,9 @@ void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->voltage_0 = (primary_uint16)((conversion->voltage_0 + 0) * 13107.2);
-    raw->voltage_1 = (primary_uint16)((conversion->voltage_1 + 0) * 13107.2);
-    raw->voltage_2 = (primary_uint16)((conversion->voltage_2 + 0) * 13107.2);
+    raw->voltage_0 = (primary_uint16)((conversion->voltage_0 + 0) * 10000.0);
+    raw->voltage_1 = (primary_uint16)((conversion->voltage_1 + 0) * 10000.0);
+    raw->voltage_2 = (primary_uint16)((conversion->voltage_2 + 0) * 10000.0);
     raw->start_index = conversion->start_index;
 }
 

@@ -1546,9 +1546,9 @@ class message_HV_CELLS_VOLTAGE:
 
     def convert(self) -> message_HV_CELLS_VOLTAGE_conversion:
         conversion = message_HV_CELLS_VOLTAGE_conversion()
-        conversion.voltage_0 = ((float32(self.voltage_0)) / 13107.2) + 0
-        conversion.voltage_1 = ((float32(self.voltage_1)) / 13107.2) + 0
-        conversion.voltage_2 = ((float32(self.voltage_2)) / 13107.2) + 0
+        conversion.voltage_0 = ((float32(self.voltage_0)) / 10000.0) + 0
+        conversion.voltage_1 = ((float32(self.voltage_1)) / 10000.0) + 0
+        conversion.voltage_2 = ((float32(self.voltage_2)) / 10000.0) + 0
         conversion.start_index = self.start_index
         return conversion
 
@@ -1583,9 +1583,9 @@ class message_HV_CELLS_VOLTAGE_conversion:
 
     def convert_to_raw(self) -> message_HV_CELLS_VOLTAGE:
         raw = message_HV_CELLS_VOLTAGE()
-        raw.voltage_0 = uint16((self.voltage_0 + 0) * 13107.2)
-        raw.voltage_1 = uint16((self.voltage_1 + 0) * 13107.2)
-        raw.voltage_2 = uint16((self.voltage_2 + 0) * 13107.2)
+        raw.voltage_0 = uint16((self.voltage_0 + 0) * 10000.0)
+        raw.voltage_1 = uint16((self.voltage_1 + 0) * 10000.0)
+        raw.voltage_2 = uint16((self.voltage_2 + 0) * 10000.0)
         raw.start_index = self.start_index
         return raw
 
