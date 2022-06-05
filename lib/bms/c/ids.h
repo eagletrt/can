@@ -1,10 +1,20 @@
 #ifndef bms_IDS_H
 #define bms_IDS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <string.h>
 
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
+
 #define bms_IDS_VERSION 1.2
+
 
 /* TOPIC STATUS */
 #define bms_topic_mask_STATUS 0b00000011111
@@ -54,14 +64,14 @@
 
 // ============== UTILS ============== //
 
-int bms_message_name_from_id(uint16_t id, char *buffer);
-bool bms_is_message_id(uint16_t message_id);
+int bms_message_name_from_id(canlib_message_id id, char *buffer);
+bool bms_is_message_id(canlib_message_id message_id);
 
 #define bms_MAX_MESSAGE_LENGTH 24
 
 #ifdef bms_IDS_IMPLEMENTATION
 
-int bms_message_name_from_id(uint16_t id, char *buffer) {
+int bms_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case bms_id_BOARD_STATUS_CELLBOARD0:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD0");
@@ -129,7 +139,7 @@ int bms_message_name_from_id(uint16_t id, char *buffer) {
     return 1;
 }
 
-bool bms_is_message_id(uint16_t message_id) {
+bool bms_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 1536: return true; break;
         case 1568: return true; break;
@@ -156,5 +166,9 @@ bool bms_is_message_id(uint16_t message_id) {
 }
 
 #endif // bms_IDS_IMPLEMENTATION
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // bms_IDS_H

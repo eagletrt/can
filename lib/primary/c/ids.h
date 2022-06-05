@@ -1,10 +1,20 @@
 #ifndef primary_IDS_H
 #define primary_IDS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <string.h>
 
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
+
 #define primary_IDS_VERSION 1.3
+
 
 /* TOPIC BROADCAST */
 #define primary_topic_mask_BROADCAST 0b00000011111
@@ -96,14 +106,14 @@
 
 // ============== UTILS ============== //
 
-int primary_message_name_from_id(uint16_t id, char *buffer);
-bool primary_is_message_id(uint16_t message_id);
+int primary_message_name_from_id(canlib_message_id id, char *buffer);
+bool primary_is_message_id(canlib_message_id message_id);
 
 #define primary_MAX_MESSAGE_LENGTH 26
 
 #ifdef primary_IDS_IMPLEMENTATION
 
-int primary_message_name_from_id(uint16_t id, char *buffer) {
+int primary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case primary_id_STEER_VERSION:
             strcpy(buffer, "STEER_VERSION");
@@ -225,7 +235,7 @@ int primary_message_name_from_id(uint16_t id, char *buffer) {
     return 1;
 }
 
-bool primary_is_message_id(uint16_t message_id) {
+bool primary_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 1024: return true; break;
         case 1056: return true; break;
@@ -270,5 +280,9 @@ bool primary_is_message_id(uint16_t message_id) {
 }
 
 #endif // primary_IDS_IMPLEMENTATION
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // primary_IDS_H

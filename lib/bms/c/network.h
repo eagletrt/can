@@ -5,6 +5,7 @@
 extern "C" {
 #endif
 
+#include <inttypes.h>
 #include <stdbool.h>
 #include <assert.h>
 #include <stdint.h>
@@ -18,18 +19,6 @@ extern "C" {
 
 static_assert(sizeof(float) == 4, "canlib: sizeof(float) != 4 BYTES");
 static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
-
-#endif // CANLIB_ASSERTS
-
-#ifndef CANLIB_SHARED
-#define CANLIB_SHARED
-
-/* We know it's PACKING but PARKING sounds a bit better ;) */
-#if defined(__MINGW32__)
-#define __CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
-#else
-#define __CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
-#endif
 
 /* Is it little endian?
 
@@ -70,16 +59,51 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
     #error "canlib: endianess not supported"
 #endif
 
+#endif // CANLIB_ASSERTS
+
+#ifndef CANLIB_SHARED
+#define CANLIB_SHARED
+
+/* We know it's PACKING but PARKING sounds a bit better ;) */
+#if defined(__MINGW32__)
+#define CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
+#else
+#define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
+#endif
+
+#define PRIf32 "f"
+#define PRIf64 "f"
+
+#endif // CANLIB_SHARED
+
+#ifndef CANLIB_BITMASK_UTILS
+#define CANLIB_BITMASK_UTILS
+
+#define CANLIB_BITMASK_TYPE uint8_t
+#define CANLIB_BITMASK_TYPE_BITS 8
+
+#define CANLIB_BITMASK_ARRAY(b) (1 << ((b) % CANLIB_BITMASK_TYPE_BITS))
+#define CANLIB_BITSLOT_ARRAY(b) ((b) / CANLIB_BITMASK_TYPE_BITS)
+#define CANLIB_BITSET_ARRAY(a, b) ((a)[CANLIB_BITSLOT_ARRAY(b)] |= CANLIB_BITMASK_ARRAY(b))
+#define CANLIB_BITCLEAR_ARRAY(a, b) ((a)[CANLIB_BITSLOT_ARRAY(b)] &= ~CANLIB_BITMASK_ARRAY(b))
+#define CANLIB_BITTEST_ARRAY(a, b) ((a)[CANLIB_BITSLOT_ARRAY(b)] & CANLIB_BITMASK_ARRAY(b))
+#define CANLIB_BITNSLOTS_ARRAY(nb) ((nb + CANLIB_BITMASK_TYPE_BITS - 1) / CANLIB_BITMASK_TYPE_BITS)
+
 #define CANLIB_BITMASK(b) (1 << (b))
 #define CANLIB_BITSET(a, b) ((a) |= CANLIB_BITMASK(b))
 #define CANLIB_BITCLEAR(a, b) ((a) &= ~CANLIB_BITMASK(b))
 #define CANLIB_BITTEST(a, b) ((a) & CANLIB_BITMASK(b))
 
-#endif // CANLIB_SHARED
+#endif // CANLIB_BITMASK_UTILS
 
 #ifndef CANLIB_SEPARATOR
 #define CANLIB_SEPARATOR ","
 #endif // CANLIB_SEPARATOR
+
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
 
 // Info
 
@@ -121,15 +145,6 @@ typedef struct {
     void* raw_message;
     void* message;
 } bms_devices[bms_NUMBER_OF_MESSAGES];
-
-// ============== FREQUENCIES ============== //
-
-
-#define bms_BOARD_STATUS_INTERVAL -1
-#define bms_TEMPERATURES_INTERVAL -1
-#define bms_VOLTAGES_INTERVAL -1
-#define bms_BALANCING_INTERVAL -1
-#define bms_FW_UPDATE_INTERVAL -1
 
 // ============== SIZES ============== //
 
@@ -180,7 +195,7 @@ typedef bms_uint64 bms_BalancingCells;
 // ============== ENUMS ============== //
 
 
-typedef enum __CANLIB_PARKING {
+typedef enum CANLIB_PARKING {
     bms_BalancingStatus_OFF = 0,
     bms_BalancingStatus_DISCHARGE = 1,
 } bms_BalancingStatus;
@@ -190,7 +205,7 @@ typedef enum __CANLIB_PARKING {
 
 
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_Errors errors;
     bms_BalancingStatus balancing_status;
 #ifdef CANLIB_TIMESTAMP
@@ -198,7 +213,7 @@ typedef struct __CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_BOARD_STATUS;
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_uint8 start_index;
     bms_float32 temp0;
     bms_float32 temp1;
@@ -211,7 +226,7 @@ typedef struct __CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES_conversion;
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_uint8 start_index;
     bms_uint8 temp0;
     bms_uint8 temp1;
@@ -224,7 +239,7 @@ typedef struct __CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES;
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_float32 voltage0;
     bms_float32 voltage1;
     bms_float32 voltage2;
@@ -234,7 +249,7 @@ typedef struct __CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_VOLTAGES_conversion;
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_uint16 voltage0;
     bms_uint16 voltage1;
     bms_uint16 voltage2;
@@ -245,7 +260,7 @@ typedef struct __CANLIB_PARKING {
 } bms_message_VOLTAGES;
 
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_BalancingCells cells;
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
@@ -254,7 +269,7 @@ typedef struct __CANLIB_PARKING {
 } bms_message_BALANCING;
 
 
-typedef struct __CANLIB_PARKING {
+typedef struct CANLIB_PARKING {
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
@@ -410,11 +425,11 @@ int bms_fields_file_FW_UPDATE(FILE* buffer);
 // ============== UTILS ============== //
 
 void bms_devices_new(bms_devices* map);
-int bms_devices_index_from_id(uint16_t message_id, bms_devices* map);
-void bms_fields_from_id(uint16_t message_id, FILE *buffer);
-void bms_string_from_id(uint16_t message_id, void* message, FILE *buffer);
+int bms_devices_index_from_id(canlib_message_id message_id, bms_devices* map);
+void bms_fields_from_id(canlib_message_id message_id, FILE *buffer);
+void bms_string_from_id(canlib_message_id message_id, void* message, FILE *buffer);
 void bms_deserialize_from_id(
-    uint16_t message_id,
+    canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
     void* message
@@ -422,7 +437,6 @@ void bms_deserialize_from_id(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-
 
 #ifdef bms_IMPLEMENTATION
 // ============== SERIALIZE ============== //
@@ -470,10 +484,10 @@ int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIu16 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -493,10 +507,10 @@ int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buf
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIu16 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -607,15 +621,15 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f",
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -645,15 +659,15 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f",
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -762,12 +776,12 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -791,12 +805,12 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%f" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -866,10 +880,10 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%llu" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIu64 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -889,10 +903,10 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%llu" CANLIB_SEPARATOR 
-        "%u",
+        "%" PRIu64 CANLIB_SEPARATOR 
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -948,9 +962,9 @@ int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u",
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -968,9 +982,9 @@ int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        "%ju" CANLIB_SEPARATOR
+        PRIXu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%u",
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -988,7 +1002,7 @@ int bms_fields_file_FW_UPDATE(FILE* buffer) {
 
 // ============== UTILS ============== //
 
-void bms_fields_from_id(uint16_t message_id, FILE *buffer) {
+void bms_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     switch (message_id) {
     case 1536:
         bms_fields_file_BOARD_STATUS(buffer);
@@ -1053,7 +1067,7 @@ void bms_fields_from_id(uint16_t message_id, FILE *buffer) {
     }
 }
 
-void bms_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
+void bms_string_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
     switch (message_id) {
         case 1536:
             bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
@@ -1119,7 +1133,7 @@ void bms_string_from_id(uint16_t message_id, void* message, FILE *buffer) {
 }
 
 void bms_deserialize_from_id(
-    uint16_t message_id,
+    canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
     void* message
@@ -1359,52 +1373,6 @@ void bms_deserialize_from_id(
     }
 }
 
-int bms_interval_from_id(uint16_t message_id) {
-    switch (message_id) {
-    case 1536:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1568:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1600:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1632:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1664:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1696:
-        return bms_BOARD_STATUS_INTERVAL;
-    case 1281:
-        return bms_TEMPERATURES_INTERVAL;
-    case 1313:
-        return bms_TEMPERATURES_INTERVAL;
-    case 1345:
-        return bms_TEMPERATURES_INTERVAL;
-    case 1377:
-        return bms_TEMPERATURES_INTERVAL;
-    case 1409:
-        return bms_TEMPERATURES_INTERVAL;
-    case 1441:
-        return bms_TEMPERATURES_INTERVAL;
-    case 514:
-        return bms_VOLTAGES_INTERVAL;
-    case 546:
-        return bms_VOLTAGES_INTERVAL;
-    case 578:
-        return bms_VOLTAGES_INTERVAL;
-    case 610:
-        return bms_VOLTAGES_INTERVAL;
-    case 642:
-        return bms_VOLTAGES_INTERVAL;
-    case 674:
-        return bms_VOLTAGES_INTERVAL;
-    case 515:
-        return bms_BALANCING_INTERVAL;
-    case 260:
-        return bms_FW_UPDATE_INTERVAL;
-    }
-    return -1;
-}
-
 void bms_devices_new(bms_devices* map) {
     (*map)[0].id = 1536;
     (*map)[0].raw_message = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
@@ -1488,7 +1456,7 @@ void bms_devices_new(bms_devices* map) {
 
 }
 
-int bms_devices_index_from_id(uint16_t message_id, bms_devices* map) {
+int bms_devices_index_from_id(canlib_message_id message_id, bms_devices* map) {
     for (int index = 0; index < bms_NUMBER_OF_MESSAGES; index++) {
         if ((*map)[index].id == message_id)
             return index;

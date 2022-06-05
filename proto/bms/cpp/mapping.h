@@ -10,6 +10,11 @@ extern "C" {
     #include "../../../lib/bms/c/network.h"
 }
 
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
+
 typedef struct {
     std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD0;
     std::vector<bms_message_BOARD_STATUS> BOARD_STATUS_CELLBOARD1;
@@ -33,12 +38,12 @@ typedef struct {
     std::vector<bms_message_FW_UPDATE> FW_UPDATE;
 } bms_proto_pack;
 
-void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map);
+void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map);
 void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map);
 
 #ifdef bms_MAPPING_IMPLEMENTATION
 
-void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map) {
+void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map) {
     int index = bms_devices_index_from_id(id, map);
 
     if (index == -1) return;
@@ -50,7 +55,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -61,7 +66,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -72,7 +77,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -83,7 +88,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -94,7 +99,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -105,7 +110,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -121,7 +126,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -137,7 +142,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -153,7 +158,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -169,7 +174,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -185,7 +190,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -201,7 +206,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_temp4(msg->temp4);
             proto_msg->set_temp5(msg->temp5);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -214,7 +219,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -227,7 +232,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -240,7 +245,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -253,7 +258,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -266,7 +271,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -279,7 +284,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_voltage2(msg->voltage2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -290,7 +295,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             proto_msg->set_cells(msg->cells);
             proto_msg->set_board_index(msg->board_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -300,7 +305,7 @@ void bms_proto_serialize_from_id(uint32_t id, bms::Pack* pack, bms_devices* map)
             bms::FW_UPDATE* proto_msg = pack->add_fw_update();
             proto_msg->set_board_index(msg->board_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -314,7 +319,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD0[i].errors =pack->board_status_cellboard0(i).errors();
         map->BOARD_STATUS_CELLBOARD0[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard0(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD0[i]._timestamp = pack->board_status_cellboard0(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD0[i]._timestamp = pack->board_status_cellboard0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BOARD_STATUS_CELLBOARD1.resize(pack->board_status_cellboard1_size());
@@ -322,7 +327,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD1[i].errors =pack->board_status_cellboard1(i).errors();
         map->BOARD_STATUS_CELLBOARD1[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard1(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD1[i]._timestamp = pack->board_status_cellboard1(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD1[i]._timestamp = pack->board_status_cellboard1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BOARD_STATUS_CELLBOARD2.resize(pack->board_status_cellboard2_size());
@@ -330,7 +335,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD2[i].errors =pack->board_status_cellboard2(i).errors();
         map->BOARD_STATUS_CELLBOARD2[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard2(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD2[i]._timestamp = pack->board_status_cellboard2(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD2[i]._timestamp = pack->board_status_cellboard2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BOARD_STATUS_CELLBOARD3.resize(pack->board_status_cellboard3_size());
@@ -338,7 +343,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD3[i].errors =pack->board_status_cellboard3(i).errors();
         map->BOARD_STATUS_CELLBOARD3[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard3(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD3[i]._timestamp = pack->board_status_cellboard3(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD3[i]._timestamp = pack->board_status_cellboard3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BOARD_STATUS_CELLBOARD4.resize(pack->board_status_cellboard4_size());
@@ -346,7 +351,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD4[i].errors =pack->board_status_cellboard4(i).errors();
         map->BOARD_STATUS_CELLBOARD4[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard4(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD4[i]._timestamp = pack->board_status_cellboard4(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD4[i]._timestamp = pack->board_status_cellboard4(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BOARD_STATUS_CELLBOARD5.resize(pack->board_status_cellboard5_size());
@@ -354,7 +359,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BOARD_STATUS_CELLBOARD5[i].errors =pack->board_status_cellboard5(i).errors();
         map->BOARD_STATUS_CELLBOARD5[i].balancing_status =(bms_BalancingStatus)pack->board_status_cellboard5(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->BOARD_STATUS_CELLBOARD5[i]._timestamp = pack->board_status_cellboard5(i)._internal_timestamp();
+        map->BOARD_STATUS_CELLBOARD5[i]._timestamp = pack->board_status_cellboard5(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD0.resize(pack->temperatures_cellboard0_size());
@@ -367,7 +372,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD0[i].temp4 =pack->temperatures_cellboard0(i).temp4();
         map->TEMPERATURES_CELLBOARD0[i].temp5 =pack->temperatures_cellboard0(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD0[i]._timestamp = pack->temperatures_cellboard0(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD0[i]._timestamp = pack->temperatures_cellboard0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD1.resize(pack->temperatures_cellboard1_size());
@@ -380,7 +385,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD1[i].temp4 =pack->temperatures_cellboard1(i).temp4();
         map->TEMPERATURES_CELLBOARD1[i].temp5 =pack->temperatures_cellboard1(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD1[i]._timestamp = pack->temperatures_cellboard1(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD1[i]._timestamp = pack->temperatures_cellboard1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD2.resize(pack->temperatures_cellboard2_size());
@@ -393,7 +398,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD2[i].temp4 =pack->temperatures_cellboard2(i).temp4();
         map->TEMPERATURES_CELLBOARD2[i].temp5 =pack->temperatures_cellboard2(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD2[i]._timestamp = pack->temperatures_cellboard2(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD2[i]._timestamp = pack->temperatures_cellboard2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD3.resize(pack->temperatures_cellboard3_size());
@@ -406,7 +411,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD3[i].temp4 =pack->temperatures_cellboard3(i).temp4();
         map->TEMPERATURES_CELLBOARD3[i].temp5 =pack->temperatures_cellboard3(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD3[i]._timestamp = pack->temperatures_cellboard3(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD3[i]._timestamp = pack->temperatures_cellboard3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD4.resize(pack->temperatures_cellboard4_size());
@@ -419,7 +424,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD4[i].temp4 =pack->temperatures_cellboard4(i).temp4();
         map->TEMPERATURES_CELLBOARD4[i].temp5 =pack->temperatures_cellboard4(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD4[i]._timestamp = pack->temperatures_cellboard4(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD4[i]._timestamp = pack->temperatures_cellboard4(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TEMPERATURES_CELLBOARD5.resize(pack->temperatures_cellboard5_size());
@@ -432,7 +437,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->TEMPERATURES_CELLBOARD5[i].temp4 =pack->temperatures_cellboard5(i).temp4();
         map->TEMPERATURES_CELLBOARD5[i].temp5 =pack->temperatures_cellboard5(i).temp5();
 #ifdef CANLIB_TIMESTAMP
-        map->TEMPERATURES_CELLBOARD5[i]._timestamp = pack->temperatures_cellboard5(i)._internal_timestamp();
+        map->TEMPERATURES_CELLBOARD5[i]._timestamp = pack->temperatures_cellboard5(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD0.resize(pack->voltages_cellboard0_size());
@@ -442,7 +447,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD0[i].voltage2 =pack->voltages_cellboard0(i).voltage2();
         map->VOLTAGES_CELLBOARD0[i].start_index =pack->voltages_cellboard0(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD0[i]._timestamp = pack->voltages_cellboard0(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD0[i]._timestamp = pack->voltages_cellboard0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD1.resize(pack->voltages_cellboard1_size());
@@ -452,7 +457,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD1[i].voltage2 =pack->voltages_cellboard1(i).voltage2();
         map->VOLTAGES_CELLBOARD1[i].start_index =pack->voltages_cellboard1(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD1[i]._timestamp = pack->voltages_cellboard1(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD1[i]._timestamp = pack->voltages_cellboard1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD2.resize(pack->voltages_cellboard2_size());
@@ -462,7 +467,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD2[i].voltage2 =pack->voltages_cellboard2(i).voltage2();
         map->VOLTAGES_CELLBOARD2[i].start_index =pack->voltages_cellboard2(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD2[i]._timestamp = pack->voltages_cellboard2(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD2[i]._timestamp = pack->voltages_cellboard2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD3.resize(pack->voltages_cellboard3_size());
@@ -472,7 +477,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD3[i].voltage2 =pack->voltages_cellboard3(i).voltage2();
         map->VOLTAGES_CELLBOARD3[i].start_index =pack->voltages_cellboard3(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD3[i]._timestamp = pack->voltages_cellboard3(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD3[i]._timestamp = pack->voltages_cellboard3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD4.resize(pack->voltages_cellboard4_size());
@@ -482,7 +487,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD4[i].voltage2 =pack->voltages_cellboard4(i).voltage2();
         map->VOLTAGES_CELLBOARD4[i].start_index =pack->voltages_cellboard4(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD4[i]._timestamp = pack->voltages_cellboard4(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD4[i]._timestamp = pack->voltages_cellboard4(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->VOLTAGES_CELLBOARD5.resize(pack->voltages_cellboard5_size());
@@ -492,7 +497,7 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->VOLTAGES_CELLBOARD5[i].voltage2 =pack->voltages_cellboard5(i).voltage2();
         map->VOLTAGES_CELLBOARD5[i].start_index =pack->voltages_cellboard5(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->VOLTAGES_CELLBOARD5[i]._timestamp = pack->voltages_cellboard5(i)._internal_timestamp();
+        map->VOLTAGES_CELLBOARD5[i]._timestamp = pack->voltages_cellboard5(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->BALANCING.resize(pack->balancing_size());
@@ -500,14 +505,14 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->BALANCING[i].cells =pack->balancing(i).cells();
         map->BALANCING[i].board_index =pack->balancing(i).board_index();
 #ifdef CANLIB_TIMESTAMP
-        map->BALANCING[i]._timestamp = pack->balancing(i)._internal_timestamp();
+        map->BALANCING[i]._timestamp = pack->balancing(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->FW_UPDATE.resize(pack->fw_update_size());
     for(int i = 0; i < pack->fw_update_size(); i++){
         map->FW_UPDATE[i].board_index =pack->fw_update(i).board_index();
 #ifdef CANLIB_TIMESTAMP
-        map->FW_UPDATE[i]._timestamp = pack->fw_update(i)._internal_timestamp();
+        map->FW_UPDATE[i]._timestamp = pack->fw_update(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
 }

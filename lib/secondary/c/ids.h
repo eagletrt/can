@@ -1,10 +1,20 @@
 #ifndef secondary_IDS_H
 #define secondary_IDS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <string.h>
 
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
+
 #define secondary_IDS_VERSION 1.0
+
 
 /* TOPIC FIXED_IDS */
 #define secondary_topic_mask_FIXED_IDS 0b00000011111
@@ -47,14 +57,14 @@
 
 // ============== UTILS ============== //
 
-int secondary_message_name_from_id(uint16_t id, char *buffer);
-bool secondary_is_message_id(uint16_t message_id);
+int secondary_message_name_from_id(canlib_message_id id, char *buffer);
+bool secondary_is_message_id(canlib_message_id message_id);
 
 #define secondary_MAX_MESSAGE_LENGTH 17
 
 #ifdef secondary_IDS_IMPLEMENTATION
 
-int secondary_message_name_from_id(uint16_t id, char *buffer) {
+int secondary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case secondary_id_IMU_ANGULAR_RATE:
             strcpy(buffer, "IMU_ANGULAR_RATE");
@@ -134,7 +144,7 @@ int secondary_message_name_from_id(uint16_t id, char *buffer) {
     return 1;
 }
 
-bool secondary_is_message_id(uint16_t message_id) {
+bool secondary_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 1260: return true; break;
         case 1261: return true; break;
@@ -165,5 +175,9 @@ bool secondary_is_message_id(uint16_t message_id) {
 }
 
 #endif // secondary_IDS_IMPLEMENTATION
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // secondary_IDS_H

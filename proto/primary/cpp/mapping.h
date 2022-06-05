@@ -10,6 +10,11 @@ extern "C" {
     #include "../../../lib/primary/c/network.h"
 }
 
+#ifndef CANLIB_MESSAGE_ID_TYPE
+#define CANLIB_MESSAGE_ID_TYPE
+typedef uint16_t canlib_message_id;
+#endif // CANLIB_MESSAGE_ID_TYPE
+
 typedef struct {
     std::vector<primary_message_STEER_VERSION> STEER_VERSION;
     std::vector<primary_message_DAS_VERSION> DAS_VERSION;
@@ -51,12 +56,12 @@ typedef struct {
     std::vector<primary_message_INV_L_RESPONSE> INV_L_RESPONSE;
 } primary_proto_pack;
 
-void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_devices* map);
+void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
 void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map);
 
 #ifdef primary_MAPPING_IMPLEMENTATION
 
-void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_devices* map) {
+void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
     int index = primary_devices_index_from_id(id, map);
 
     if (index == -1) return;
@@ -68,7 +73,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_component_version(msg->component_version);
             proto_msg->set_cancicd_version(msg->cancicd_version);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -79,7 +84,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_component_version(msg->component_version);
             proto_msg->set_cancicd_version(msg->cancicd_version);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -90,7 +95,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_component_version(msg->component_version);
             proto_msg->set_cancicd_version(msg->cancicd_version);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -101,7 +106,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_component_version(msg->component_version);
             proto_msg->set_cancicd_version(msg->cancicd_version);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -112,7 +117,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_component_version(msg->component_version);
             proto_msg->set_cancicd_version(msg->cancicd_version);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -122,7 +127,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::TIMESTAMP* proto_msg = pack->add_timestamp();
             proto_msg->set_timestamp(msg->timestamp);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -135,7 +140,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_race_type((primary::RaceType)msg->race_type);
             proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -148,7 +153,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_race_type((primary::RaceType)msg->race_type);
             proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -158,7 +163,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
             proto_msg->set_soc_temp(msg->soc_temp);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -171,7 +176,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_max_cell_voltage(msg->max_cell_voltage);
             proto_msg->set_min_cell_voltage(msg->min_cell_voltage);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -182,7 +187,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_current(msg->current);
             proto_msg->set_power(msg->power);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -194,7 +199,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_max_temp(msg->max_temp);
             proto_msg->set_min_temp(msg->min_temp);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -205,7 +210,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_warnings(msg->warnings);
             proto_msg->set_errors(msg->errors);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -215,7 +220,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::TS_STATUS* proto_msg = pack->add_ts_status();
             proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -225,7 +230,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -235,7 +240,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -246,7 +251,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_map((primary::Map)msg->map);
             proto_msg->set_traction_control((primary::TractionControl)msg->traction_control);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -256,7 +261,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_CAR_STATUS* proto_msg = pack->add_set_car_status();
             proto_msg->set_car_status_set((primary::SetCarStatus)msg->car_status_set);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -267,7 +272,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_bound((primary::Bound)msg->bound);
             proto_msg->set_pedal((primary::Pedal)msg->pedal);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -277,7 +282,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_STEERING_ANGLE_RANGE* proto_msg = pack->add_set_steering_angle_range();
             proto_msg->set_bound((primary::Bound)msg->bound);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -289,7 +294,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_inverter_r((primary::InverterStatus)msg->inverter_r);
             proto_msg->set_car_status((primary::CarStatus)msg->car_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -299,7 +304,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::DAS_ERRORS* proto_msg = pack->add_das_errors();
             proto_msg->set_das_error(msg->das_error);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -309,7 +314,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::LV_CURRENT* proto_msg = pack->add_lv_current();
             proto_msg->set_current(msg->current);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -322,7 +327,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_voltage_3(msg->voltage_3);
             proto_msg->set_voltage_4(msg->voltage_4);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -332,7 +337,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
             proto_msg->set_total_voltage(msg->total_voltage);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -345,7 +350,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_dcdc12_temperature(msg->dcdc12_temperature);
             proto_msg->set_dcdc24_temperature(msg->dcdc24_temperature);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -357,7 +362,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_lv_fan_speed(msg->lv_fan_speed);
             proto_msg->set_pump_speed(msg->pump_speed);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -367,7 +372,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
             proto_msg->set_car_radiators_speed((primary::Cooling)msg->car_radiators_speed);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -377,7 +382,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_PUMPS_POWER* proto_msg = pack->add_set_pumps_power();
             proto_msg->set_car_pumps_power((primary::Cooling)msg->car_pumps_power);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -396,7 +401,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_voltage_2(msg->voltage_2);
             proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -413,7 +418,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_temp_5(msg->temp_5);
             proto_msg->set_temp_6(msg->temp_6);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -423,7 +428,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
             proto_msg->set_balancing_status((primary::Toggle)msg->balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -433,7 +438,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
             proto_msg->set_set_balancing_status((primary::Toggle)msg->set_balancing_status);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -443,7 +448,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
             proto_msg->set_connected(msg->connected);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -456,7 +461,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_inverter_r(msg->inverter_r);
             proto_msg->set_inverter_l(msg->inverter_l);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -468,7 +473,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_lsb(msg->lsb);
             proto_msg->set_msb(msg->msb);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -485,7 +490,7 @@ void primary_proto_serialize_from_id(uint32_t id, primary::Pack* pack, primary_d
             proto_msg->set_data_5(msg->data_5);
             proto_msg->set_data_6(msg->data_6);
 #ifdef CANLIB_TIMESTAMP
-            proto_msg->set__internal_timestamp(msg->_timestamp);
+            proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
@@ -499,7 +504,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->STEER_VERSION[i].component_version =pack->steer_version(i).component_version();
         map->STEER_VERSION[i].cancicd_version =pack->steer_version(i).cancicd_version();
 #ifdef CANLIB_TIMESTAMP
-        map->STEER_VERSION[i]._timestamp = pack->steer_version(i)._internal_timestamp();
+        map->STEER_VERSION[i]._timestamp = pack->steer_version(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->DAS_VERSION.resize(pack->das_version_size());
@@ -507,7 +512,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->DAS_VERSION[i].component_version =pack->das_version(i).component_version();
         map->DAS_VERSION[i].cancicd_version =pack->das_version(i).cancicd_version();
 #ifdef CANLIB_TIMESTAMP
-        map->DAS_VERSION[i]._timestamp = pack->das_version(i)._internal_timestamp();
+        map->DAS_VERSION[i]._timestamp = pack->das_version(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_VERSION.resize(pack->hv_version_size());
@@ -515,7 +520,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_VERSION[i].component_version =pack->hv_version(i).component_version();
         map->HV_VERSION[i].cancicd_version =pack->hv_version(i).cancicd_version();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_VERSION[i]._timestamp = pack->hv_version(i)._internal_timestamp();
+        map->HV_VERSION[i]._timestamp = pack->hv_version(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->LV_VERSION.resize(pack->lv_version_size());
@@ -523,7 +528,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->LV_VERSION[i].component_version =pack->lv_version(i).component_version();
         map->LV_VERSION[i].cancicd_version =pack->lv_version(i).cancicd_version();
 #ifdef CANLIB_TIMESTAMP
-        map->LV_VERSION[i]._timestamp = pack->lv_version(i)._internal_timestamp();
+        map->LV_VERSION[i]._timestamp = pack->lv_version(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TLM_VERSION.resize(pack->tlm_version_size());
@@ -531,14 +536,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->TLM_VERSION[i].component_version =pack->tlm_version(i).component_version();
         map->TLM_VERSION[i].cancicd_version =pack->tlm_version(i).cancicd_version();
 #ifdef CANLIB_TIMESTAMP
-        map->TLM_VERSION[i]._timestamp = pack->tlm_version(i)._internal_timestamp();
+        map->TLM_VERSION[i]._timestamp = pack->tlm_version(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TIMESTAMP.resize(pack->timestamp_size());
     for(int i = 0; i < pack->timestamp_size(); i++){
         map->TIMESTAMP[i].timestamp =pack->timestamp(i).timestamp();
 #ifdef CANLIB_TIMESTAMP
-        map->TIMESTAMP[i]._timestamp = pack->timestamp(i)._internal_timestamp();
+        map->TIMESTAMP[i]._timestamp = pack->timestamp(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_TLM_STATUS.resize(pack->set_tlm_status_size());
@@ -548,7 +553,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->SET_TLM_STATUS[i].race_type =(primary_RaceType)pack->set_tlm_status(i).race_type();
         map->SET_TLM_STATUS[i].tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_TLM_STATUS[i]._timestamp = pack->set_tlm_status(i)._internal_timestamp();
+        map->SET_TLM_STATUS[i]._timestamp = pack->set_tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TLM_STATUS.resize(pack->tlm_status_size());
@@ -558,14 +563,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->TLM_STATUS[i].race_type =(primary_RaceType)pack->tlm_status(i).race_type();
         map->TLM_STATUS[i].tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
-        map->TLM_STATUS[i]._timestamp = pack->tlm_status(i)._internal_timestamp();
+        map->TLM_STATUS[i]._timestamp = pack->tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->STEER_SYSTEM_STATUS.resize(pack->steer_system_status_size());
     for(int i = 0; i < pack->steer_system_status_size(); i++){
         map->STEER_SYSTEM_STATUS[i].soc_temp =pack->steer_system_status(i).soc_temp();
 #ifdef CANLIB_TIMESTAMP
-        map->STEER_SYSTEM_STATUS[i]._timestamp = pack->steer_system_status(i)._internal_timestamp();
+        map->STEER_SYSTEM_STATUS[i]._timestamp = pack->steer_system_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_VOLTAGE.resize(pack->hv_voltage_size());
@@ -575,7 +580,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_VOLTAGE[i].max_cell_voltage =pack->hv_voltage(i).max_cell_voltage();
         map->HV_VOLTAGE[i].min_cell_voltage =pack->hv_voltage(i).min_cell_voltage();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_VOLTAGE[i]._timestamp = pack->hv_voltage(i)._internal_timestamp();
+        map->HV_VOLTAGE[i]._timestamp = pack->hv_voltage(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_CURRENT.resize(pack->hv_current_size());
@@ -583,7 +588,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_CURRENT[i].current =pack->hv_current(i).current();
         map->HV_CURRENT[i].power =pack->hv_current(i).power();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_CURRENT[i]._timestamp = pack->hv_current(i)._internal_timestamp();
+        map->HV_CURRENT[i]._timestamp = pack->hv_current(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_TEMP.resize(pack->hv_temp_size());
@@ -592,7 +597,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_TEMP[i].max_temp =pack->hv_temp(i).max_temp();
         map->HV_TEMP[i].min_temp =pack->hv_temp(i).min_temp();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_TEMP[i]._timestamp = pack->hv_temp(i)._internal_timestamp();
+        map->HV_TEMP[i]._timestamp = pack->hv_temp(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_ERRORS.resize(pack->hv_errors_size());
@@ -600,28 +605,28 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_ERRORS[i].warnings =pack->hv_errors(i).warnings();
         map->HV_ERRORS[i].errors =pack->hv_errors(i).errors();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_ERRORS[i]._timestamp = pack->hv_errors(i)._internal_timestamp();
+        map->HV_ERRORS[i]._timestamp = pack->hv_errors(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->TS_STATUS.resize(pack->ts_status_size());
     for(int i = 0; i < pack->ts_status_size(); i++){
         map->TS_STATUS[i].ts_status =(primary_TsStatus)pack->ts_status(i).ts_status();
 #ifdef CANLIB_TIMESTAMP
-        map->TS_STATUS[i]._timestamp = pack->ts_status(i)._internal_timestamp();
+        map->TS_STATUS[i]._timestamp = pack->ts_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_TS_STATUS_DAS.resize(pack->set_ts_status_das_size());
     for(int i = 0; i < pack->set_ts_status_das_size(); i++){
         map->SET_TS_STATUS_DAS[i].ts_status_set =(primary_Toggle)pack->set_ts_status_das(i).ts_status_set();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_TS_STATUS_DAS[i]._timestamp = pack->set_ts_status_das(i)._internal_timestamp();
+        map->SET_TS_STATUS_DAS[i]._timestamp = pack->set_ts_status_das(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_TS_STATUS_HANDCART.resize(pack->set_ts_status_handcart_size());
     for(int i = 0; i < pack->set_ts_status_handcart_size(); i++){
         map->SET_TS_STATUS_HANDCART[i].ts_status_set =(primary_Toggle)pack->set_ts_status_handcart(i).ts_status_set();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_TS_STATUS_HANDCART[i]._timestamp = pack->set_ts_status_handcart(i)._internal_timestamp();
+        map->SET_TS_STATUS_HANDCART[i]._timestamp = pack->set_ts_status_handcart(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->STEER_STATUS.resize(pack->steer_status_size());
@@ -629,14 +634,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->STEER_STATUS[i].map =(primary_Map)pack->steer_status(i).map();
         map->STEER_STATUS[i].traction_control =(primary_TractionControl)pack->steer_status(i).traction_control();
 #ifdef CANLIB_TIMESTAMP
-        map->STEER_STATUS[i]._timestamp = pack->steer_status(i)._internal_timestamp();
+        map->STEER_STATUS[i]._timestamp = pack->steer_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_CAR_STATUS.resize(pack->set_car_status_size());
     for(int i = 0; i < pack->set_car_status_size(); i++){
         map->SET_CAR_STATUS[i].car_status_set =(primary_SetCarStatus)pack->set_car_status(i).car_status_set();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_CAR_STATUS[i]._timestamp = pack->set_car_status(i)._internal_timestamp();
+        map->SET_CAR_STATUS[i]._timestamp = pack->set_car_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_PEDALS_RANGE.resize(pack->set_pedals_range_size());
@@ -644,14 +649,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->SET_PEDALS_RANGE[i].bound =(primary_Bound)pack->set_pedals_range(i).bound();
         map->SET_PEDALS_RANGE[i].pedal =(primary_Pedal)pack->set_pedals_range(i).pedal();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_PEDALS_RANGE[i]._timestamp = pack->set_pedals_range(i)._internal_timestamp();
+        map->SET_PEDALS_RANGE[i]._timestamp = pack->set_pedals_range(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_STEERING_ANGLE_RANGE.resize(pack->set_steering_angle_range_size());
     for(int i = 0; i < pack->set_steering_angle_range_size(); i++){
         map->SET_STEERING_ANGLE_RANGE[i].bound =(primary_Bound)pack->set_steering_angle_range(i).bound();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_STEERING_ANGLE_RANGE[i]._timestamp = pack->set_steering_angle_range(i)._internal_timestamp();
+        map->SET_STEERING_ANGLE_RANGE[i]._timestamp = pack->set_steering_angle_range(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->CAR_STATUS.resize(pack->car_status_size());
@@ -660,21 +665,21 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->CAR_STATUS[i].inverter_r =(primary_InverterStatus)pack->car_status(i).inverter_r();
         map->CAR_STATUS[i].car_status =(primary_CarStatus)pack->car_status(i).car_status();
 #ifdef CANLIB_TIMESTAMP
-        map->CAR_STATUS[i]._timestamp = pack->car_status(i)._internal_timestamp();
+        map->CAR_STATUS[i]._timestamp = pack->car_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->DAS_ERRORS.resize(pack->das_errors_size());
     for(int i = 0; i < pack->das_errors_size(); i++){
         map->DAS_ERRORS[i].das_error =pack->das_errors(i).das_error();
 #ifdef CANLIB_TIMESTAMP
-        map->DAS_ERRORS[i]._timestamp = pack->das_errors(i)._internal_timestamp();
+        map->DAS_ERRORS[i]._timestamp = pack->das_errors(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->LV_CURRENT.resize(pack->lv_current_size());
     for(int i = 0; i < pack->lv_current_size(); i++){
         map->LV_CURRENT[i].current =pack->lv_current(i).current();
 #ifdef CANLIB_TIMESTAMP
-        map->LV_CURRENT[i]._timestamp = pack->lv_current(i)._internal_timestamp();
+        map->LV_CURRENT[i]._timestamp = pack->lv_current(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->LV_VOLTAGE.resize(pack->lv_voltage_size());
@@ -684,14 +689,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->LV_VOLTAGE[i].voltage_3 =pack->lv_voltage(i).voltage_3();
         map->LV_VOLTAGE[i].voltage_4 =pack->lv_voltage(i).voltage_4();
 #ifdef CANLIB_TIMESTAMP
-        map->LV_VOLTAGE[i]._timestamp = pack->lv_voltage(i)._internal_timestamp();
+        map->LV_VOLTAGE[i]._timestamp = pack->lv_voltage(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->LV_TOTAL_VOLTAGE.resize(pack->lv_total_voltage_size());
     for(int i = 0; i < pack->lv_total_voltage_size(); i++){
         map->LV_TOTAL_VOLTAGE[i].total_voltage =pack->lv_total_voltage(i).total_voltage();
 #ifdef CANLIB_TIMESTAMP
-        map->LV_TOTAL_VOLTAGE[i]._timestamp = pack->lv_total_voltage(i)._internal_timestamp();
+        map->LV_TOTAL_VOLTAGE[i]._timestamp = pack->lv_total_voltage(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->LV_TEMPERATURE.resize(pack->lv_temperature_size());
@@ -701,7 +706,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->LV_TEMPERATURE[i].dcdc12_temperature =pack->lv_temperature(i).dcdc12_temperature();
         map->LV_TEMPERATURE[i].dcdc24_temperature =pack->lv_temperature(i).dcdc24_temperature();
 #ifdef CANLIB_TIMESTAMP
-        map->LV_TEMPERATURE[i]._timestamp = pack->lv_temperature(i)._internal_timestamp();
+        map->LV_TEMPERATURE[i]._timestamp = pack->lv_temperature(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->COOLING_STATUS.resize(pack->cooling_status_size());
@@ -710,27 +715,27 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->COOLING_STATUS[i].lv_fan_speed =pack->cooling_status(i).lv_fan_speed();
         map->COOLING_STATUS[i].pump_speed =pack->cooling_status(i).pump_speed();
 #ifdef CANLIB_TIMESTAMP
-        map->COOLING_STATUS[i]._timestamp = pack->cooling_status(i)._internal_timestamp();
+        map->COOLING_STATUS[i]._timestamp = pack->cooling_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_RADIATOR_SPEED.resize(pack->set_radiator_speed_size());
     for(int i = 0; i < pack->set_radiator_speed_size(); i++){
         map->SET_RADIATOR_SPEED[i].car_radiators_speed =(primary_Cooling)pack->set_radiator_speed(i).car_radiators_speed();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_RADIATOR_SPEED[i]._timestamp = pack->set_radiator_speed(i)._internal_timestamp();
+        map->SET_RADIATOR_SPEED[i]._timestamp = pack->set_radiator_speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_PUMPS_POWER.resize(pack->set_pumps_power_size());
     for(int i = 0; i < pack->set_pumps_power_size(); i++){
         map->SET_PUMPS_POWER[i].car_pumps_power =(primary_Cooling)pack->set_pumps_power(i).car_pumps_power();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_PUMPS_POWER[i]._timestamp = pack->set_pumps_power(i)._internal_timestamp();
+        map->SET_PUMPS_POWER[i]._timestamp = pack->set_pumps_power(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->MARKER.resize(pack->marker_size());
     for(int i = 0; i < pack->marker_size(); i++){
 #ifdef CANLIB_TIMESTAMP
-        map->MARKER[i]._timestamp = pack->marker(i)._internal_timestamp();
+        map->MARKER[i]._timestamp = pack->marker(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_CELLS_VOLTAGE.resize(pack->hv_cells_voltage_size());
@@ -740,7 +745,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_CELLS_VOLTAGE[i].voltage_2 =pack->hv_cells_voltage(i).voltage_2();
         map->HV_CELLS_VOLTAGE[i].start_index =pack->hv_cells_voltage(i).start_index();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_CELLS_VOLTAGE[i]._timestamp = pack->hv_cells_voltage(i)._internal_timestamp();
+        map->HV_CELLS_VOLTAGE[i]._timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_CELLS_TEMP.resize(pack->hv_cells_temp_size());
@@ -754,28 +759,28 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HV_CELLS_TEMP[i].temp_5 =pack->hv_cells_temp(i).temp_5();
         map->HV_CELLS_TEMP[i].temp_6 =pack->hv_cells_temp(i).temp_6();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_CELLS_TEMP[i]._timestamp = pack->hv_cells_temp(i)._internal_timestamp();
+        map->HV_CELLS_TEMP[i]._timestamp = pack->hv_cells_temp(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HV_CELL_BALANCING_STATUS.resize(pack->hv_cell_balancing_status_size());
     for(int i = 0; i < pack->hv_cell_balancing_status_size(); i++){
         map->HV_CELL_BALANCING_STATUS[i].balancing_status =(primary_Toggle)pack->hv_cell_balancing_status(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->HV_CELL_BALANCING_STATUS[i]._timestamp = pack->hv_cell_balancing_status(i)._internal_timestamp();
+        map->HV_CELL_BALANCING_STATUS[i]._timestamp = pack->hv_cell_balancing_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SET_CELL_BALANCING_STATUS.resize(pack->set_cell_balancing_status_size());
     for(int i = 0; i < pack->set_cell_balancing_status_size(); i++){
         map->SET_CELL_BALANCING_STATUS[i].set_balancing_status =(primary_Toggle)pack->set_cell_balancing_status(i).set_balancing_status();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_CELL_BALANCING_STATUS[i]._timestamp = pack->set_cell_balancing_status(i)._internal_timestamp();
+        map->SET_CELL_BALANCING_STATUS[i]._timestamp = pack->set_cell_balancing_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->HANDCART_STATUS.resize(pack->handcart_status_size());
     for(int i = 0; i < pack->handcart_status_size(); i++){
         map->HANDCART_STATUS[i].connected =pack->handcart_status(i).connected();
 #ifdef CANLIB_TIMESTAMP
-        map->HANDCART_STATUS[i]._timestamp = pack->handcart_status(i)._internal_timestamp();
+        map->HANDCART_STATUS[i]._timestamp = pack->handcart_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->SPEED.resize(pack->speed_size());
@@ -785,7 +790,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->SPEED[i].inverter_r =pack->speed(i).inverter_r();
         map->SPEED[i].inverter_l =pack->speed(i).inverter_l();
 #ifdef CANLIB_TIMESTAMP
-        map->SPEED[i]._timestamp = pack->speed(i)._internal_timestamp();
+        map->SPEED[i]._timestamp = pack->speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->INV_L_SET_TORQUE.resize(pack->inv_l_set_torque_size());
@@ -794,7 +799,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->INV_L_SET_TORQUE[i].lsb =pack->inv_l_set_torque(i).lsb();
         map->INV_L_SET_TORQUE[i].msb =pack->inv_l_set_torque(i).msb();
 #ifdef CANLIB_TIMESTAMP
-        map->INV_L_SET_TORQUE[i]._timestamp = pack->inv_l_set_torque(i)._internal_timestamp();
+        map->INV_L_SET_TORQUE[i]._timestamp = pack->inv_l_set_torque(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->INV_L_RESPONSE.resize(pack->inv_l_response_size());
@@ -808,7 +813,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->INV_L_RESPONSE[i].data_5 =pack->inv_l_response(i).data_5();
         map->INV_L_RESPONSE[i].data_6 =pack->inv_l_response(i).data_6();
 #ifdef CANLIB_TIMESTAMP
-        map->INV_L_RESPONSE[i]._timestamp = pack->inv_l_response(i)._internal_timestamp();
+        map->INV_L_RESPONSE[i]._timestamp = pack->inv_l_response(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
 }
