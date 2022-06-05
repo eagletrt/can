@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-#include "network.pb.h"
+#include "secondary.pb.h"
 
 extern "C" {
-    #include "../../../../lib/secondary/c/network.h"
+    #include "../../../lib/secondary/c/network.h"
 }
 
 typedef struct {

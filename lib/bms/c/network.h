@@ -16,18 +16,58 @@ extern "C" {
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
-static_assert(sizeof(float) == 4, "sizeof(float) != 4 BYTES");
-static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
+static_assert(sizeof(float) == 4, "canlib: sizeof(float) != 4 BYTES");
+static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
 #ifndef CANLIB_SHARED
 #define CANLIB_SHARED
 
+/* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
-#define __CANLIB_PACKED __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
-#define __CANLIB_PACKED __attribute__((__packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
+#endif
+
+/* Is it little endian?
+
+          ████████                        ████████
+        ██        ██                  ████        ████
+      ██▒▒▒▒        ██              ██▒▒              ██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒            ▒▒▒▒██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██
+  ██  ▒▒▒▒        ▒▒▒▒▒▒██      ██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██
+  ██                ▒▒▒▒██      ██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██
+██▒▒      ▒▒▒▒▒▒          ██    ██      ▒▒▒▒▒▒▒▒▒▒        ██
+██      ▒▒▒▒▒▒▒▒▒▒        ██    ██▒▒      ▒▒▒▒▒▒          ██
+██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██      ██                ▒▒▒▒██
+██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██      ██  ▒▒▒▒        ▒▒▒▒▒▒██
+  ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+  ██▒▒▒▒            ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+    ██▒▒              ██              ██▒▒▒▒        ██
+      ████        ████                  ██        ██
+          ████████                        ████████
+
+                                    Or is it big endian? */
+#ifndef __CANLIB_ENDIAN_ORDER
+    #define __CANLIB_ENDIAN_ORDER 1094861636L // "ABCD"
+#endif
+#if !defined(__CANLIB_LITTLE_ENDIAN) && !defined(__CANLIB_BIG_ENDIAN) && !defined(__CANLIB_PDP_ENDIAN)
+    #if __CANLIB_ENDIAN_ORDER==0x41424344UL
+        #define __CANLIB_LITTLE_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x44434241UL
+        #define __CANLIB_BIG_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x42414443UL
+        #define __CANLIB_PDP_ENDIAN
+    #else
+        #error "canlib: endianess not supported"
+    #endif
+#endif
+
+#ifndef __CANLIB_LITTLE_ENDIAN
+    #error "canlib: endianess not supported"
 #endif
 
 #define CANLIB_BITMASK(b) (1 << (b))
@@ -140,7 +180,7 @@ typedef bms_uint64 bms_BalancingCells;
 // ============== ENUMS ============== //
 
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     bms_BalancingStatus_OFF = 0,
     bms_BalancingStatus_DISCHARGE = 1,
 } bms_BalancingStatus;
@@ -150,7 +190,7 @@ typedef enum __CANLIB_PACKED {
 
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_Errors errors;
     bms_BalancingStatus balancing_status;
 #ifdef CANLIB_TIMESTAMP
@@ -158,7 +198,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_BOARD_STATUS;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_uint8 start_index;
     bms_float32 temp0;
     bms_float32 temp1;
@@ -171,7 +211,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_uint8 start_index;
     bms_uint8 temp0;
     bms_uint8 temp1;
@@ -184,7 +224,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_float32 voltage0;
     bms_float32 voltage1;
     bms_float32 voltage2;
@@ -194,7 +234,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } bms_message_VOLTAGES_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_uint16 voltage0;
     bms_uint16 voltage1;
     bms_uint16 voltage2;
@@ -205,7 +245,7 @@ typedef struct __CANLIB_PACKED {
 } bms_message_VOLTAGES;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_BalancingCells cells;
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
@@ -214,7 +254,7 @@ typedef struct __CANLIB_PACKED {
 } bms_message_BALANCING;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;

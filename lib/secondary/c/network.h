@@ -16,18 +16,58 @@ extern "C" {
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
-static_assert(sizeof(float) == 4, "sizeof(float) != 4 BYTES");
-static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
+static_assert(sizeof(float) == 4, "canlib: sizeof(float) != 4 BYTES");
+static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
 #ifndef CANLIB_SHARED
 #define CANLIB_SHARED
 
+/* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
-#define __CANLIB_PACKED __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
-#define __CANLIB_PACKED __attribute__((__packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
+#endif
+
+/* Is it little endian?
+
+          ████████                        ████████
+        ██        ██                  ████        ████
+      ██▒▒▒▒        ██              ██▒▒              ██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒            ▒▒▒▒██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██
+  ██  ▒▒▒▒        ▒▒▒▒▒▒██      ██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██
+  ██                ▒▒▒▒██      ██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██
+██▒▒      ▒▒▒▒▒▒          ██    ██      ▒▒▒▒▒▒▒▒▒▒        ██
+██      ▒▒▒▒▒▒▒▒▒▒        ██    ██▒▒      ▒▒▒▒▒▒          ██
+██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██      ██                ▒▒▒▒██
+██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██      ██  ▒▒▒▒        ▒▒▒▒▒▒██
+  ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+  ██▒▒▒▒            ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+    ██▒▒              ██              ██▒▒▒▒        ██
+      ████        ████                  ██        ██
+          ████████                        ████████
+
+                                    Or is it big endian? */
+#ifndef __CANLIB_ENDIAN_ORDER
+    #define __CANLIB_ENDIAN_ORDER 1094861636L // "ABCD"
+#endif
+#if !defined(__CANLIB_LITTLE_ENDIAN) && !defined(__CANLIB_BIG_ENDIAN) && !defined(__CANLIB_PDP_ENDIAN)
+    #if __CANLIB_ENDIAN_ORDER==0x41424344UL
+        #define __CANLIB_LITTLE_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x44434241UL
+        #define __CANLIB_BIG_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x42414443UL
+        #define __CANLIB_PDP_ENDIAN
+    #else
+        #error "canlib: endianess not supported"
+    #endif
+#endif
+
+#ifndef __CANLIB_LITTLE_ENDIAN
+    #error "canlib: endianess not supported"
 #endif
 
 #define CANLIB_BITMASK(b) (1 << (b))
@@ -150,7 +190,7 @@ typedef struct {
 
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 ang_rate_x;
     secondary_uint16 ang_rate_y;
     secondary_uint16 ang_rate_z;
@@ -160,7 +200,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IMU_ANGULAR_RATE;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 accel_x;
     secondary_uint16 accel_y;
     secondary_uint16 accel_z;
@@ -170,7 +210,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IMU_ACCELERATION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel1;
     secondary_uint16 channel2;
     secondary_uint16 channel3;
@@ -181,7 +221,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FL_0;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
     secondary_uint16 channel7;
@@ -192,7 +232,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FL_1;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel9;
     secondary_uint16 channel10;
     secondary_uint16 channel11;
@@ -203,7 +243,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FL_2;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
     secondary_uint16 channel15;
@@ -214,7 +254,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FL_3;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel1;
     secondary_uint16 channel2;
     secondary_uint16 channel3;
@@ -225,7 +265,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FR_0;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
     secondary_uint16 channel7;
@@ -236,7 +276,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FR_1;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel9;
     secondary_uint16 channel10;
     secondary_uint16 channel11;
@@ -247,7 +287,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FR_2;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
     secondary_uint16 channel15;
@@ -258,7 +298,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_FR_3;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel1;
     secondary_uint16 channel2;
     secondary_uint16 channel3;
@@ -269,7 +309,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RL_0;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
     secondary_uint16 channel7;
@@ -280,7 +320,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RL_1;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel9;
     secondary_uint16 channel10;
     secondary_uint16 channel11;
@@ -291,7 +331,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RL_2;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
     secondary_uint16 channel15;
@@ -302,7 +342,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RL_3;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel1;
     secondary_uint16 channel2;
     secondary_uint16 channel3;
@@ -313,7 +353,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RR_0;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
     secondary_uint16 channel7;
@@ -324,7 +364,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RR_1;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel9;
     secondary_uint16 channel10;
     secondary_uint16 channel11;
@@ -335,7 +375,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RR_2;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
     secondary_uint16 channel15;
@@ -346,7 +386,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_IRTS_RR_3;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_float32 latitude;
     secondary_float32 longitude;
 #ifdef CANLIB_TIMESTAMP
@@ -355,7 +395,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_GPS_COORDS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 speed;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
@@ -363,7 +403,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_GPS_SPEED;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint32 timestamp;
     secondary_uint8 lap_count;
 #ifdef CANLIB_TIMESTAMP
@@ -371,7 +411,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_LAP_COUNT;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_float32 bse_front;
     secondary_float32 bse_rear;
     secondary_uint8 apps;
@@ -380,7 +420,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_PEDALS_OUTPUT_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_uint16 bse_front;
     secondary_uint16 bse_rear;
     secondary_uint8 apps;
@@ -390,7 +430,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_PEDALS_OUTPUT;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_float32 right;
     secondary_float32 left;
 #ifdef CANLIB_TIMESTAMP
@@ -399,7 +439,7 @@ typedef struct __CANLIB_PACKED {
 } secondary_message_CONTROL_OUTPUT;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     secondary_float32 angle;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;

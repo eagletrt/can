@@ -16,18 +16,58 @@ extern "C" {
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
-static_assert(sizeof(float) == 4, "sizeof(float) != 4 BYTES");
-static_assert(sizeof(double) == 8, "sizeof(double) != 8 BYTES");
+static_assert(sizeof(float) == 4, "canlib: sizeof(float) != 4 BYTES");
+static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
 #ifndef CANLIB_SHARED
 #define CANLIB_SHARED
 
+/* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
-#define __CANLIB_PACKED __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
-#define __CANLIB_PACKED __attribute__((__packed__)) // , __aligned__(1)))
+#define __CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
+#endif
+
+/* Is it little endian?
+
+          ████████                        ████████
+        ██        ██                  ████        ████
+      ██▒▒▒▒        ██              ██▒▒              ██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒            ▒▒▒▒██
+    ██▒▒▒▒▒▒      ▒▒▒▒██          ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██
+  ██  ▒▒▒▒        ▒▒▒▒▒▒██      ██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██
+  ██                ▒▒▒▒██      ██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██
+██▒▒      ▒▒▒▒▒▒          ██    ██      ▒▒▒▒▒▒▒▒▒▒        ██
+██      ▒▒▒▒▒▒▒▒▒▒        ██    ██▒▒      ▒▒▒▒▒▒          ██
+██      ▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒██      ██                ▒▒▒▒██
+██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒██      ██  ▒▒▒▒        ▒▒▒▒▒▒██
+  ██▒▒▒▒  ▒▒▒▒▒▒    ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+  ██▒▒▒▒            ▒▒▒▒██          ██▒▒▒▒▒▒      ▒▒▒▒██
+    ██▒▒              ██              ██▒▒▒▒        ██
+      ████        ████                  ██        ██
+          ████████                        ████████
+
+                                    Or is it big endian? */
+#ifndef __CANLIB_ENDIAN_ORDER
+    #define __CANLIB_ENDIAN_ORDER 1094861636L // "ABCD"
+#endif
+#if !defined(__CANLIB_LITTLE_ENDIAN) && !defined(__CANLIB_BIG_ENDIAN) && !defined(__CANLIB_PDP_ENDIAN)
+    #if __CANLIB_ENDIAN_ORDER==0x41424344UL
+        #define __CANLIB_LITTLE_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x44434241UL
+        #define __CANLIB_BIG_ENDIAN
+    #elif __CANLIB_ENDIAN_ORDER==0x42414443UL
+        #define __CANLIB_PDP_ENDIAN
+    #else
+        #error "canlib: endianess not supported"
+    #endif
+#endif
+
+#ifndef __CANLIB_LITTLE_ENDIAN
+    #error "canlib: endianess not supported"
 #endif
 
 #define CANLIB_BITMASK(b) (1 << (b))
@@ -268,45 +308,45 @@ typedef primary_uint64 primary_InvErrors;
 // ============== ENUMS ============== //
 
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_RaceType_ACCELERATION = 0,
     primary_RaceType_SKIDPAD = 1,
     primary_RaceType_AUTOCROSS = 2,
     primary_RaceType_ENDURANCE = 3,
 } primary_RaceType;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_InverterStatus_OFF = 0,
     primary_InverterStatus_IDLE = 1,
     primary_InverterStatus_ON = 2,
 } primary_InverterStatus;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_CarStatus_IDLE = 0,
     primary_CarStatus_SETUP = 1,
     primary_CarStatus_RUN = 2,
 } primary_CarStatus;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_Toggle_ON = 0,
     primary_Toggle_OFF = 1,
 } primary_Toggle;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_TractionControl_OFF = 0,
     primary_TractionControl_SLIP_CONTROL = 1,
     primary_TractionControl_TORQUE_VECTORING = 2,
     primary_TractionControl_COMPLETE = 3,
 } primary_TractionControl;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_TsStatus_OFF = 0,
     primary_TsStatus_PRECHARGE = 1,
     primary_TsStatus_ON = 2,
     primary_TsStatus_FATAL = 3,
 } primary_TsStatus;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_Map_R = 0,
     primary_Map_D20 = 1,
     primary_Map_D40 = 2,
@@ -315,22 +355,22 @@ typedef enum __CANLIB_PACKED {
     primary_Map_D100 = 5,
 } primary_Map;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_SetCarStatus_IDLE = 0,
     primary_SetCarStatus_RUN = 1,
 } primary_SetCarStatus;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_Bound_SET_MAX = 0,
     primary_Bound_SET_MIN = 1,
 } primary_Bound;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_Pedal_ACCELERATOR = 0,
     primary_Pedal_BRAKE = 1,
 } primary_Pedal;
 
-typedef enum __CANLIB_PACKED {
+typedef enum __CANLIB_PARKING {
     primary_Cooling_RADIATORS_MAX = 0,
     primary_Cooling_RADIATORS_OFF = 1,
     primary_Cooling_PUMPS_MAX = 2,
@@ -342,7 +382,7 @@ typedef enum __CANLIB_PACKED {
 
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
@@ -351,7 +391,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_STEER_VERSION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
@@ -360,7 +400,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_DAS_VERSION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
@@ -369,7 +409,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_HV_VERSION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
@@ -378,7 +418,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_LV_VERSION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
@@ -387,7 +427,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_TLM_VERSION;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint32 timestamp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -395,7 +435,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_TIMESTAMP;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 driver;
     primary_uint8 circuit;
     primary_RaceType race_type;
@@ -406,7 +446,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_TLM_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 driver;
     primary_uint8 circuit;
     primary_RaceType race_type;
@@ -417,14 +457,14 @@ typedef struct __CANLIB_PACKED {
 } primary_message_TLM_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 soc_temp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_SYSTEM_STATUS;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 pack_voltage;
     primary_float32 bus_voltage;
     primary_float32 max_cell_voltage;
@@ -434,7 +474,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VOLTAGE_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 pack_voltage;
     primary_uint16 bus_voltage;
     primary_uint16 max_cell_voltage;
@@ -444,7 +484,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VOLTAGE;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 current;
     primary_float32 power;
 #ifdef CANLIB_TIMESTAMP
@@ -452,7 +492,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CURRENT_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 current;
     primary_uint16 power;
 #ifdef CANLIB_TIMESTAMP
@@ -460,7 +500,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CURRENT;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 average_temp;
     primary_float32 max_temp;
     primary_float32 min_temp;
@@ -469,7 +509,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_TEMP_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 average_temp;
     primary_uint16 max_temp;
     primary_uint16 min_temp;
@@ -479,7 +519,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_HV_TEMP;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_HvErrors warnings;
     primary_HvErrors errors;
 #ifdef CANLIB_TIMESTAMP
@@ -488,7 +528,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_HV_ERRORS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_TsStatus ts_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -496,7 +536,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_TS_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Toggle ts_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -504,7 +544,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_TS_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Map map;
     primary_TractionControl traction_control;
 #ifdef CANLIB_TIMESTAMP
@@ -513,7 +553,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_STEER_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_SetCarStatus car_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -521,7 +561,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_CAR_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Bound bound;
     primary_Pedal pedal;
 #ifdef CANLIB_TIMESTAMP
@@ -530,7 +570,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_PEDALS_RANGE;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Bound bound;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -538,7 +578,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_STEERING_ANGLE_RANGE;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_InverterStatus inverter_l;
     primary_InverterStatus inverter_r;
     primary_CarStatus car_status;
@@ -548,28 +588,28 @@ typedef struct __CANLIB_PACKED {
 } primary_message_CAR_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_DasErrors das_error;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_DAS_ERRORS;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 current;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_CURRENT_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 current;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_CURRENT;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 voltage_1;
     primary_float32 voltage_2;
     primary_float32 voltage_3;
@@ -579,7 +619,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_VOLTAGE_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 voltage_1;
     primary_uint16 voltage_2;
     primary_uint16 voltage_3;
@@ -589,21 +629,21 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_VOLTAGE;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 total_voltage;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TOTAL_VOLTAGE_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint32 total_voltage;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TOTAL_VOLTAGE;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 bp_temperature_1;
     primary_float32 bp_temperature_2;
     primary_float32 dcdc12_temperature;
@@ -613,7 +653,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TEMPERATURE_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 bp_temperature_1;
     primary_uint16 bp_temperature_2;
     primary_uint16 dcdc12_temperature;
@@ -623,7 +663,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_TEMPERATURE;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 hv_fan_speed;
     primary_float32 lv_fan_speed;
     primary_float32 pump_speed;
@@ -632,7 +672,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_COOLING_STATUS_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 hv_fan_speed;
     primary_uint16 lv_fan_speed;
     primary_uint16 pump_speed;
@@ -642,7 +682,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_COOLING_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Cooling car_radiators_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -650,7 +690,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_RADIATOR_SPEED;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Cooling car_pumps_power;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -658,14 +698,14 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_PUMPS_POWER;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_MARKER;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 voltage_0;
     primary_float32 voltage_1;
     primary_float32 voltage_2;
@@ -675,7 +715,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_VOLTAGE_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint16 voltage_0;
     primary_uint16 voltage_1;
     primary_uint16 voltage_2;
@@ -685,7 +725,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_VOLTAGE;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 start_index;
     primary_float32 temp_0;
     primary_float32 temp_1;
@@ -699,7 +739,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_TEMP_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 start_index;
     primary_uint8 temp_0;
     primary_uint8 temp_1;
@@ -714,7 +754,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_HV_CELLS_TEMP;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Toggle balancing_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -722,7 +762,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_HV_CELL_BALANCING_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_Toggle set_balancing_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -730,14 +770,14 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SET_CELL_BALANCING_STATUS;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_bool connected;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HANDCART_STATUS;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_float32 encoder_r;
     primary_float32 encoder_l;
     primary_float32 inverter_r;
@@ -747,7 +787,7 @@ typedef struct __CANLIB_PACKED {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SPEED_conversion;
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 encoder_r;
     primary_uint8 encoder_l;
     primary_uint8 inverter_r;
@@ -758,7 +798,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_SPEED;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 reg_id;
     primary_uint8 lsb;
     primary_uint8 msb;
@@ -768,7 +808,7 @@ typedef struct __CANLIB_PACKED {
 } primary_message_INV_L_SET_TORQUE;
 
 
-typedef struct __CANLIB_PACKED {
+typedef struct __CANLIB_PARKING {
     primary_uint8 reg_id;
     primary_uint8 data_0;
     primary_uint8 data_1;

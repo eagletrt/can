@@ -1,0 +1,208 @@
+syntax = "proto3";
+package secondary;
+
+
+message IMU_ANGULAR_RATE {
+    uint32 ang_rate_x = 1;
+    uint32 ang_rate_y = 2;
+    uint32 ang_rate_z = 3;
+    uint64 _inner_timestamp = 4;
+}
+
+message IMU_ACCELERATION {
+    uint32 accel_x = 1;
+    uint32 accel_y = 2;
+    uint32 accel_z = 3;
+    uint64 _inner_timestamp = 4;
+}
+
+message IRTS_FL_0 {
+    uint32 channel1 = 1;
+    uint32 channel2 = 2;
+    uint32 channel3 = 3;
+    uint32 channel4 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FL_1 {
+    uint32 channel5 = 1;
+    uint32 channel6 = 2;
+    uint32 channel7 = 3;
+    uint32 channel8 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FL_2 {
+    uint32 channel9 = 1;
+    uint32 channel10 = 2;
+    uint32 channel11 = 3;
+    uint32 channel12 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FL_3 {
+    uint32 channel13 = 1;
+    uint32 channel14 = 2;
+    uint32 channel15 = 3;
+    uint32 channel16 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FR_0 {
+    uint32 channel1 = 1;
+    uint32 channel2 = 2;
+    uint32 channel3 = 3;
+    uint32 channel4 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FR_1 {
+    uint32 channel5 = 1;
+    uint32 channel6 = 2;
+    uint32 channel7 = 3;
+    uint32 channel8 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FR_2 {
+    uint32 channel9 = 1;
+    uint32 channel10 = 2;
+    uint32 channel11 = 3;
+    uint32 channel12 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_FR_3 {
+    uint32 channel13 = 1;
+    uint32 channel14 = 2;
+    uint32 channel15 = 3;
+    uint32 channel16 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RL_0 {
+    uint32 channel1 = 1;
+    uint32 channel2 = 2;
+    uint32 channel3 = 3;
+    uint32 channel4 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RL_1 {
+    uint32 channel5 = 1;
+    uint32 channel6 = 2;
+    uint32 channel7 = 3;
+    uint32 channel8 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RL_2 {
+    uint32 channel9 = 1;
+    uint32 channel10 = 2;
+    uint32 channel11 = 3;
+    uint32 channel12 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RL_3 {
+    uint32 channel13 = 1;
+    uint32 channel14 = 2;
+    uint32 channel15 = 3;
+    uint32 channel16 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RR_0 {
+    uint32 channel1 = 1;
+    uint32 channel2 = 2;
+    uint32 channel3 = 3;
+    uint32 channel4 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RR_1 {
+    uint32 channel5 = 1;
+    uint32 channel6 = 2;
+    uint32 channel7 = 3;
+    uint32 channel8 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RR_2 {
+    uint32 channel9 = 1;
+    uint32 channel10 = 2;
+    uint32 channel11 = 3;
+    uint32 channel12 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message IRTS_RR_3 {
+    uint32 channel13 = 1;
+    uint32 channel14 = 2;
+    uint32 channel15 = 3;
+    uint32 channel16 = 4;
+    uint64 _inner_timestamp = 5;
+}
+
+message GPS_COORDS {
+    float latitude = 1;
+    float longitude = 2;
+    uint64 _inner_timestamp = 3;
+}
+
+message GPS_SPEED {
+    uint32 speed = 1;
+    uint64 _inner_timestamp = 2;
+}
+
+message LAP_COUNT {
+    uint32 timestamp = 1;
+    uint32 lap_count = 2;
+    uint64 _inner_timestamp = 3;
+}
+
+message PEDALS_OUTPUT {
+    uint32 bse_front = 1;
+    uint32 bse_rear = 2;
+    uint32 apps = 3;
+    uint64 _inner_timestamp = 4;
+}
+
+message CONTROL_OUTPUT {
+    float right = 1;
+    float left = 2;
+    uint64 _inner_timestamp = 3;
+}
+
+message STEERING_ANGLE {
+    float angle = 1;
+    uint64 _inner_timestamp = 2;
+}
+
+
+message Pack {
+    repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
+    repeated IMU_ACCELERATION IMU_ACCELERATION = 2;
+    repeated IRTS_FL_0 IRTS_FL_0 = 3;
+    repeated IRTS_FL_1 IRTS_FL_1 = 4;
+    repeated IRTS_FL_2 IRTS_FL_2 = 5;
+    repeated IRTS_FL_3 IRTS_FL_3 = 6;
+    repeated IRTS_FR_0 IRTS_FR_0 = 7;
+    repeated IRTS_FR_1 IRTS_FR_1 = 8;
+    repeated IRTS_FR_2 IRTS_FR_2 = 9;
+    repeated IRTS_FR_3 IRTS_FR_3 = 10;
+    repeated IRTS_RL_0 IRTS_RL_0 = 11;
+    repeated IRTS_RL_1 IRTS_RL_1 = 12;
+    repeated IRTS_RL_2 IRTS_RL_2 = 13;
+    repeated IRTS_RL_3 IRTS_RL_3 = 14;
+    repeated IRTS_RR_0 IRTS_RR_0 = 15;
+    repeated IRTS_RR_1 IRTS_RR_1 = 16;
+    repeated IRTS_RR_2 IRTS_RR_2 = 17;
+    repeated IRTS_RR_3 IRTS_RR_3 = 18;
+    repeated GPS_COORDS GPS_COORDS = 19;
+    repeated GPS_SPEED GPS_SPEED = 20;
+    repeated LAP_COUNT LAP_COUNT = 21;
+    repeated PEDALS_OUTPUT PEDALS_OUTPUT = 22;
+    repeated CONTROL_OUTPUT CONTROL_OUTPUT = 23;
+    repeated STEERING_ANGLE STEERING_ANGLE = 24;
+}
