@@ -484,7 +484,7 @@ int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -507,7 +507,7 @@ int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buf
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -621,7 +621,7 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -659,7 +659,7 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -776,7 +776,7 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -805,7 +805,7 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -880,7 +880,7 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -903,7 +903,7 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -962,7 +962,7 @@ int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -982,7 +982,7 @@ int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIXu64 CANLIB_SEPARATOR
+        PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
