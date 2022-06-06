@@ -143,7 +143,7 @@ typedef union {
 typedef struct {
     uint16_t id;
     void* raw_message;
-    void* message;
+    void* conversion_message;
 } secondary_devices[secondary_NUMBER_OF_MESSAGES];
 
 // ============== SIZES ============== //
@@ -4072,99 +4072,99 @@ void secondary_deserialize_from_id(
 void secondary_devices_new(secondary_devices* map) {
     (*map)[0].id = 1260;
     (*map)[0].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
-    (*map)[0].message = NULL;
+    (*map)[0].conversion_message = NULL;
 
     (*map)[1].id = 1261;
     (*map)[1].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION));
-    (*map)[1].message = NULL;
+    (*map)[1].conversion_message = NULL;
 
     (*map)[2].id = 1460;
     (*map)[2].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_0));
-    (*map)[2].message = NULL;
+    (*map)[2].conversion_message = NULL;
 
     (*map)[3].id = 1461;
     (*map)[3].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_1));
-    (*map)[3].message = NULL;
+    (*map)[3].conversion_message = NULL;
 
     (*map)[4].id = 1462;
     (*map)[4].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_2));
-    (*map)[4].message = NULL;
+    (*map)[4].conversion_message = NULL;
 
     (*map)[5].id = 1463;
     (*map)[5].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_3));
-    (*map)[5].message = NULL;
+    (*map)[5].conversion_message = NULL;
 
     (*map)[6].id = 1464;
     (*map)[6].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_0));
-    (*map)[6].message = NULL;
+    (*map)[6].conversion_message = NULL;
 
     (*map)[7].id = 1465;
     (*map)[7].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_1));
-    (*map)[7].message = NULL;
+    (*map)[7].conversion_message = NULL;
 
     (*map)[8].id = 1466;
     (*map)[8].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_2));
-    (*map)[8].message = NULL;
+    (*map)[8].conversion_message = NULL;
 
     (*map)[9].id = 1467;
     (*map)[9].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_3));
-    (*map)[9].message = NULL;
+    (*map)[9].conversion_message = NULL;
 
     (*map)[10].id = 1468;
     (*map)[10].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_0));
-    (*map)[10].message = NULL;
+    (*map)[10].conversion_message = NULL;
 
     (*map)[11].id = 1469;
     (*map)[11].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_1));
-    (*map)[11].message = NULL;
+    (*map)[11].conversion_message = NULL;
 
     (*map)[12].id = 1470;
     (*map)[12].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_2));
-    (*map)[12].message = NULL;
+    (*map)[12].conversion_message = NULL;
 
     (*map)[13].id = 1471;
     (*map)[13].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_3));
-    (*map)[13].message = NULL;
+    (*map)[13].conversion_message = NULL;
 
     (*map)[14].id = 1472;
     (*map)[14].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_0));
-    (*map)[14].message = NULL;
+    (*map)[14].conversion_message = NULL;
 
     (*map)[15].id = 1473;
     (*map)[15].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_1));
-    (*map)[15].message = NULL;
+    (*map)[15].conversion_message = NULL;
 
     (*map)[16].id = 1474;
     (*map)[16].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_2));
-    (*map)[16].message = NULL;
+    (*map)[16].conversion_message = NULL;
 
     (*map)[17].id = 1475;
     (*map)[17].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_3));
-    (*map)[17].message = NULL;
+    (*map)[17].conversion_message = NULL;
 
     (*map)[18].id = 1025;
     (*map)[18].raw_message = (void*) malloc(sizeof(secondary_message_GPS_COORDS));
-    (*map)[18].message = NULL;
+    (*map)[18].conversion_message = NULL;
 
     (*map)[19].id = 1057;
     (*map)[19].raw_message = (void*) malloc(sizeof(secondary_message_GPS_SPEED));
-    (*map)[19].message = NULL;
+    (*map)[19].conversion_message = NULL;
 
     (*map)[20].id = 1089;
     (*map)[20].raw_message = (void*) malloc(sizeof(secondary_message_LAP_COUNT));
-    (*map)[20].message = NULL;
+    (*map)[20].conversion_message = NULL;
 
     (*map)[21].id = 769;
     (*map)[21].raw_message = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
-    (*map)[21].message = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
+    (*map)[21].conversion_message = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
 
     (*map)[22].id = 801;
     (*map)[22].raw_message = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT));
-    (*map)[22].message = NULL;
+    (*map)[22].conversion_message = NULL;
 
     (*map)[23].id = 258;
     (*map)[23].raw_message = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
-    (*map)[23].message = NULL;
+    (*map)[23].conversion_message = NULL;
 
 }
 

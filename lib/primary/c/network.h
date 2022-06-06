@@ -143,7 +143,7 @@ typedef union {
 typedef struct {
     uint16_t id;
     void* raw_message;
-    void* message;
+    void* conversion_message;
 } primary_devices[primary_NUMBER_OF_MESSAGES];
 
 // ============== SIZES ============== //
@@ -6074,155 +6074,155 @@ void primary_deserialize_from_id(
 void primary_devices_new(primary_devices* map) {
     (*map)[0].id = 1024;
     (*map)[0].raw_message = (void*) malloc(sizeof(primary_message_STEER_VERSION));
-    (*map)[0].message = NULL;
+    (*map)[0].conversion_message = NULL;
 
     (*map)[1].id = 1056;
     (*map)[1].raw_message = (void*) malloc(sizeof(primary_message_DAS_VERSION));
-    (*map)[1].message = NULL;
+    (*map)[1].conversion_message = NULL;
 
     (*map)[2].id = 1088;
     (*map)[2].raw_message = (void*) malloc(sizeof(primary_message_HV_VERSION));
-    (*map)[2].message = NULL;
+    (*map)[2].conversion_message = NULL;
 
     (*map)[3].id = 1120;
     (*map)[3].raw_message = (void*) malloc(sizeof(primary_message_LV_VERSION));
-    (*map)[3].message = NULL;
+    (*map)[3].conversion_message = NULL;
 
     (*map)[4].id = 1152;
     (*map)[4].raw_message = (void*) malloc(sizeof(primary_message_TLM_VERSION));
-    (*map)[4].message = NULL;
+    (*map)[4].conversion_message = NULL;
 
     (*map)[5].id = 256;
     (*map)[5].raw_message = (void*) malloc(sizeof(primary_message_TIMESTAMP));
-    (*map)[5].message = NULL;
+    (*map)[5].conversion_message = NULL;
 
     (*map)[6].id = 257;
     (*map)[6].raw_message = (void*) malloc(sizeof(primary_message_SET_TLM_STATUS));
-    (*map)[6].message = NULL;
+    (*map)[6].conversion_message = NULL;
 
     (*map)[7].id = 258;
     (*map)[7].raw_message = (void*) malloc(sizeof(primary_message_TLM_STATUS));
-    (*map)[7].message = NULL;
+    (*map)[7].conversion_message = NULL;
 
     (*map)[8].id = 1793;
     (*map)[8].raw_message = (void*) malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
-    (*map)[8].message = NULL;
+    (*map)[8].conversion_message = NULL;
 
     (*map)[9].id = 771;
     (*map)[9].raw_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
-    (*map)[9].message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
+    (*map)[9].conversion_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
 
     (*map)[10].id = 803;
     (*map)[10].raw_message = (void*) malloc(sizeof(primary_message_HV_CURRENT));
-    (*map)[10].message = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
+    (*map)[10].conversion_message = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
 
     (*map)[11].id = 835;
     (*map)[11].raw_message = (void*) malloc(sizeof(primary_message_HV_TEMP));
-    (*map)[11].message = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
+    (*map)[11].conversion_message = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
 
     (*map)[12].id = 3;
     (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
-    (*map)[12].message = NULL;
+    (*map)[12].conversion_message = NULL;
 
     (*map)[13].id = 35;
     (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
-    (*map)[13].message = NULL;
+    (*map)[13].conversion_message = NULL;
 
     (*map)[14].id = 4;
     (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*map)[14].message = NULL;
+    (*map)[14].conversion_message = NULL;
 
     (*map)[15].id = 36;
     (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*map)[15].message = NULL;
+    (*map)[15].conversion_message = NULL;
 
     (*map)[16].id = 261;
     (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
-    (*map)[16].message = NULL;
+    (*map)[16].conversion_message = NULL;
 
     (*map)[17].id = 773;
     (*map)[17].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
-    (*map)[17].message = NULL;
+    (*map)[17].conversion_message = NULL;
 
     (*map)[18].id = 1029;
     (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
-    (*map)[18].message = NULL;
+    (*map)[18].conversion_message = NULL;
 
     (*map)[19].id = 1061;
     (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
-    (*map)[19].message = NULL;
+    (*map)[19].conversion_message = NULL;
 
     (*map)[20].id = 514;
     (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
-    (*map)[20].message = NULL;
+    (*map)[20].conversion_message = NULL;
 
     (*map)[21].id = 2;
     (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
-    (*map)[21].message = NULL;
+    (*map)[21].conversion_message = NULL;
 
     (*map)[22].id = 774;
     (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
-    (*map)[22].message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
+    (*map)[22].conversion_message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
 
     (*map)[23].id = 806;
     (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
-    (*map)[23].message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
+    (*map)[23].conversion_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
 
     (*map)[24].id = 838;
     (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
-    (*map)[24].message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
+    (*map)[24].conversion_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
 
     (*map)[25].id = 870;
     (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
-    (*map)[25].message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
+    (*map)[25].conversion_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
 
     (*map)[26].id = 902;
     (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
-    (*map)[26].message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
+    (*map)[26].conversion_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
 
     (*map)[27].id = 775;
     (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
-    (*map)[27].message = NULL;
+    (*map)[27].conversion_message = NULL;
 
     (*map)[28].id = 807;
     (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
-    (*map)[28].message = NULL;
+    (*map)[28].conversion_message = NULL;
 
     (*map)[29].id = 1;
     (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
-    (*map)[29].message = NULL;
+    (*map)[29].conversion_message = NULL;
 
     (*map)[30].id = 520;
     (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[30].message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
+    (*map)[30].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
     (*map)[31].id = 552;
     (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[31].message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
+    (*map)[31].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
     (*map)[32].id = 584;
     (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
-    (*map)[32].message = NULL;
+    (*map)[32].conversion_message = NULL;
 
     (*map)[33].id = 516;
     (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
-    (*map)[33].message = NULL;
+    (*map)[33].conversion_message = NULL;
 
     (*map)[34].id = 772;
     (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
-    (*map)[34].message = NULL;
+    (*map)[34].conversion_message = NULL;
 
     (*map)[35].id = 546;
     (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[35].message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+    (*map)[35].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
 
     (*map)[36].id = 513;
     (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
-    (*map)[36].message = NULL;
+    (*map)[36].conversion_message = NULL;
 
     (*map)[37].id = 385;
     (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
-    (*map)[37].message = NULL;
+    (*map)[37].conversion_message = NULL;
 
 }
 
