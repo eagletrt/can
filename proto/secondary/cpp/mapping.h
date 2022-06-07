@@ -6,9 +6,17 @@
 
 #include "secondary.pb.h"
 
-extern "C" {
-    #include "../../../lib/secondary/c/network.h"
-}
+#ifdef secondary_IMPLEMENTATION
+#undef secondary_IMPLEMENTATION
+#define __secondary_IMPLEMENTATION
+#endif
+
+#include "../../../lib/secondary/c/network.h"
+
+#ifdef __secondary_IMPLEMENTATION
+#undef __secondary_IMPLEMENTATION
+#define secondary_IMPLEMENTATION
+#endif
 
 #ifndef CANLIB_MESSAGE_ID_TYPE
 #define CANLIB_MESSAGE_ID_TYPE

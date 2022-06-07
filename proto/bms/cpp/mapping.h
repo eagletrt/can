@@ -6,9 +6,17 @@
 
 #include "bms.pb.h"
 
-extern "C" {
-    #include "../../../lib/bms/c/network.h"
-}
+#ifdef bms_IMPLEMENTATION
+#undef bms_IMPLEMENTATION
+#define __bms_IMPLEMENTATION
+#endif
+
+#include "../../../lib/bms/c/network.h"
+
+#ifdef __bms_IMPLEMENTATION
+#undef __bms_IMPLEMENTATION
+#define bms_IMPLEMENTATION
+#endif
 
 #ifndef CANLIB_MESSAGE_ID_TYPE
 #define CANLIB_MESSAGE_ID_TYPE

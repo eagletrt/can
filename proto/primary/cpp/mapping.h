@@ -6,9 +6,17 @@
 
 #include "primary.pb.h"
 
-extern "C" {
-    #include "../../../lib/primary/c/network.h"
-}
+#ifdef primary_IMPLEMENTATION
+#undef primary_IMPLEMENTATION
+#define __primary_IMPLEMENTATION
+#endif
+
+#include "../../../lib/primary/c/network.h"
+
+#ifdef __primary_IMPLEMENTATION
+#undef __primary_IMPLEMENTATION
+#define primary_IMPLEMENTATION
+#endif
 
 #ifndef CANLIB_MESSAGE_ID_TYPE
 #define CANLIB_MESSAGE_ID_TYPE
