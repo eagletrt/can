@@ -708,7 +708,7 @@ class message_HV_CURRENT:
 
     def convert(self) -> message_HV_CURRENT_conversion:
         conversion = message_HV_CURRENT_conversion()
-        conversion.current = ((float32(self.current)) / 327.68) + 0
+        conversion.current = ((float32(self.current)) / 312.07619) - 10
         conversion.power = ((float32(self.power)) / 655.36) + 0
         return conversion
 
@@ -735,7 +735,7 @@ class message_HV_CURRENT_conversion:
 
     def convert_to_raw(self) -> message_HV_CURRENT:
         raw = message_HV_CURRENT()
-        raw.current = uint16((self.current + 0) * 327.68)
+        raw.current = uint16((self.current + 10) * 312.07619)
         raw.power = uint16((self.power + 0) * 655.36)
         return raw
 

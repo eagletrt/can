@@ -312,7 +312,7 @@
       "contents": {
         "current": {
           "type": "float32",
-          "range": [0, 200],
+          "range": [-10, 200],
           "force": "uint16"
         },
         "power": {

@@ -2799,7 +2799,7 @@ void primary_raw_to_conversion_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)raw->current) / 327.68) + 0;
+    conversion->current = (((primary_float32)raw->current) / 312.07619) - 10;
     conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
 }
 void primary_conversion_to_raw_HV_CURRENT(
@@ -2809,7 +2809,7 @@ void primary_conversion_to_raw_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((conversion->current + 0) * 327.68);
+    raw->current = (primary_uint16)((conversion->current + 10) * 312.07619);
     raw->power = (primary_uint16)((conversion->power + 0) * 655.36);
 }
 
