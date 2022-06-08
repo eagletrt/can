@@ -96,6 +96,10 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_CONTROL_OUTPUT_INTERVAL 100
 #define secondary_STEERING_ANGLE_INTERVAL 200
 
+// Messages with this interval will be ignored by the watchdog as they are not
+// expected to be sent regularly.
+#define secondary_INTERVAL_ONCE -1
+
 typedef struct {
     uint8_t activated[3];
     uint8_t timeout[3];
@@ -167,132 +171,6 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
 
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IMU_ANGULAR_RATE)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IMU_ANGULAR_RATE] > secondary_IMU_ANGULAR_RATE_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IMU_ANGULAR_RATE);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IMU_ACCELERATION)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IMU_ACCELERATION] > secondary_IMU_ACCELERATION_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IMU_ACCELERATION);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FL_0)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FL_0] > secondary_IRTS_FL_0_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FL_0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FL_1)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FL_1] > secondary_IRTS_FL_1_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FL_1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FL_2)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FL_2] > secondary_IRTS_FL_2_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FL_2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FL_3)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FL_3] > secondary_IRTS_FL_3_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FL_3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FR_0)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FR_0] > secondary_IRTS_FR_0_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FR_0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FR_1)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FR_1] > secondary_IRTS_FR_1_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FR_1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FR_2)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FR_2] > secondary_IRTS_FR_2_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FR_2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_FR_3)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_FR_3] > secondary_IRTS_FR_3_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_FR_3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RL_0)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RL_0] > secondary_IRTS_RL_0_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RL_0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RL_1)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RL_1] > secondary_IRTS_RL_1_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RL_1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RL_2)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RL_2] > secondary_IRTS_RL_2_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RL_2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RL_3)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RL_3] > secondary_IRTS_RL_3_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RL_3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RR_0)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RR_0] > secondary_IRTS_RR_0_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RR_0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RR_1)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RR_1] > secondary_IRTS_RR_1_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RR_1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RR_2)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RR_2] > secondary_IRTS_RR_2_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RR_2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_IRTS_RR_3)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_IRTS_RR_3] > secondary_IRTS_RR_3_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_IRTS_RR_3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_GPS_COORDS)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_GPS_COORDS] > secondary_GPS_COORDS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_GPS_COORDS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_GPS_SPEED)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_GPS_SPEED] > secondary_GPS_SPEED_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_GPS_SPEED);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_LAP_COUNT)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_LAP_COUNT] > secondary_LAP_COUNT_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_LAP_COUNT);
-    }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_PEDALS_OUTPUT)
         && timestamp - watchdog->last_reset[secondary_watchdog_index_PEDALS_OUTPUT] > secondary_PEDALS_OUTPUT_INTERVAL

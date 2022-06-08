@@ -212,6 +212,34 @@ struct HV_ERRORSDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_ERRORSDefaultTypeInternal _HV_ERRORS_default_instance_;
+PROTOBUF_CONSTEXPR HV_CAN_FORWARD::HV_CAN_FORWARD(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u})
+  , can_forward_set_(0)
+{}
+struct HV_CAN_FORWARDDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HV_CAN_FORWARDDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~HV_CAN_FORWARDDefaultTypeInternal() {}
+  union {
+    HV_CAN_FORWARD _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_CAN_FORWARDDefaultTypeInternal _HV_CAN_FORWARD_default_instance_;
+PROTOBUF_CONSTEXPR HV_CAN_FORWARD_STATUS::HV_CAN_FORWARD_STATUS(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u})
+  , can_forward_status_(0)
+{}
+struct HV_CAN_FORWARD_STATUSDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HV_CAN_FORWARD_STATUSDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~HV_CAN_FORWARD_STATUSDefaultTypeInternal() {}
+  union {
+    HV_CAN_FORWARD_STATUS _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_CAN_FORWARD_STATUSDefaultTypeInternal _HV_CAN_FORWARD_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR TS_STATUS::TS_STATUS(
     ::_pbi::ConstantInitialized)
   : _inner_timestamp_(uint64_t{0u})
@@ -601,6 +629,8 @@ PROTOBUF_CONSTEXPR Pack::Pack(
   , hv_current_()
   , hv_temp_()
   , hv_errors_()
+  , hv_can_forward_()
+  , hv_can_forward_status_()
   , ts_status_()
   , set_ts_status_das_()
   , set_ts_status_handcart_()
@@ -636,7 +666,7 @@ struct PackDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PackDefaultTypeInternal _Pack_default_instance_;
 }  // namespace primary
-static ::_pb::Metadata file_level_metadata_primary_2eproto[39];
+static ::_pb::Metadata file_level_metadata_primary_2eproto[41];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_primary_2eproto[11];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_primary_2eproto = nullptr;
 
@@ -763,6 +793,22 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::HV_ERRORS, warnings_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_ERRORS, errors_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_ERRORS, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD, can_forward_set_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD_STATUS, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD_STATUS, can_forward_status_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::TS_STATUS, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1015,6 +1061,8 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_current_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_temp_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_errors_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_can_forward_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_can_forward_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, ts_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, set_ts_status_das_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, set_ts_status_handcart_),
@@ -1055,32 +1103,34 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 94, -1, -1, sizeof(::primary::HV_CURRENT)},
   { 103, -1, -1, sizeof(::primary::HV_TEMP)},
   { 113, -1, -1, sizeof(::primary::HV_ERRORS)},
-  { 122, -1, -1, sizeof(::primary::TS_STATUS)},
-  { 130, -1, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
-  { 138, -1, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
-  { 146, -1, -1, sizeof(::primary::STEER_STATUS)},
-  { 155, -1, -1, sizeof(::primary::SET_CAR_STATUS)},
-  { 163, -1, -1, sizeof(::primary::SET_PEDALS_RANGE)},
-  { 172, -1, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
-  { 180, -1, -1, sizeof(::primary::CAR_STATUS)},
-  { 190, -1, -1, sizeof(::primary::DAS_ERRORS)},
-  { 198, -1, -1, sizeof(::primary::LV_CURRENT)},
-  { 206, -1, -1, sizeof(::primary::LV_VOLTAGE)},
-  { 217, -1, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
-  { 225, -1, -1, sizeof(::primary::LV_TEMPERATURE)},
-  { 236, -1, -1, sizeof(::primary::COOLING_STATUS)},
-  { 246, -1, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
-  { 254, -1, -1, sizeof(::primary::SET_PUMPS_POWER)},
-  { 262, -1, -1, sizeof(::primary::MARKER)},
-  { 269, -1, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
-  { 280, -1, -1, sizeof(::primary::HV_CELLS_TEMP)},
-  { 295, -1, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
-  { 303, -1, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
-  { 311, -1, -1, sizeof(::primary::HANDCART_STATUS)},
-  { 319, -1, -1, sizeof(::primary::SPEED)},
-  { 330, -1, -1, sizeof(::primary::INV_L_SET_TORQUE)},
-  { 340, -1, -1, sizeof(::primary::INV_L_RESPONSE)},
-  { 355, -1, -1, sizeof(::primary::Pack)},
+  { 122, -1, -1, sizeof(::primary::HV_CAN_FORWARD)},
+  { 130, -1, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
+  { 138, -1, -1, sizeof(::primary::TS_STATUS)},
+  { 146, -1, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
+  { 154, -1, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
+  { 162, -1, -1, sizeof(::primary::STEER_STATUS)},
+  { 171, -1, -1, sizeof(::primary::SET_CAR_STATUS)},
+  { 179, -1, -1, sizeof(::primary::SET_PEDALS_RANGE)},
+  { 188, -1, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
+  { 196, -1, -1, sizeof(::primary::CAR_STATUS)},
+  { 206, -1, -1, sizeof(::primary::DAS_ERRORS)},
+  { 214, -1, -1, sizeof(::primary::LV_CURRENT)},
+  { 222, -1, -1, sizeof(::primary::LV_VOLTAGE)},
+  { 233, -1, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
+  { 241, -1, -1, sizeof(::primary::LV_TEMPERATURE)},
+  { 252, -1, -1, sizeof(::primary::COOLING_STATUS)},
+  { 262, -1, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
+  { 270, -1, -1, sizeof(::primary::SET_PUMPS_POWER)},
+  { 278, -1, -1, sizeof(::primary::MARKER)},
+  { 285, -1, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
+  { 296, -1, -1, sizeof(::primary::HV_CELLS_TEMP)},
+  { 311, -1, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
+  { 319, -1, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
+  { 327, -1, -1, sizeof(::primary::HANDCART_STATUS)},
+  { 335, -1, -1, sizeof(::primary::SPEED)},
+  { 346, -1, -1, sizeof(::primary::INV_L_SET_TORQUE)},
+  { 356, -1, -1, sizeof(::primary::INV_L_RESPONSE)},
+  { 371, -1, -1, sizeof(::primary::Pack)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1097,6 +1147,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::primary::_HV_CURRENT_default_instance_._instance,
   &::primary::_HV_TEMP_default_instance_._instance,
   &::primary::_HV_ERRORS_default_instance_._instance,
+  &::primary::_HV_CAN_FORWARD_default_instance_._instance,
+  &::primary::_HV_CAN_FORWARD_STATUS_default_instance_._instance,
   &::primary::_TS_STATUS_default_instance_._instance,
   &::primary::_SET_TS_STATUS_DAS_default_instance_._instance,
   &::primary::_SET_TS_STATUS_HANDCART_default_instance_._instance,
@@ -1158,145 +1210,152 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\010max_temp\030\002 \001(\r\022\020\n\010min_temp\030\003 \001(\r\022\030\n\020_in"
   "ner_timestamp\030\004 \001(\004\"G\n\tHV_ERRORS\022\020\n\010warn"
   "ings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022\030\n\020_inner_tim"
-  "estamp\030\003 \001(\004\"K\n\tTS_STATUS\022$\n\tts_status\030\001"
-  " \001(\0162\021.primary.TsStatus\022\030\n\020_inner_timest"
-  "amp\030\002 \001(\004\"U\n\021SET_TS_STATUS_DAS\022&\n\rts_sta"
-  "tus_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner"
-  "_timestamp\030\002 \001(\004\"Z\n\026SET_TS_STATUS_HANDCA"
-  "RT\022&\n\rts_status_set\030\001 \001(\0162\017.primary.Togg"
-  "le\022\030\n\020_inner_timestamp\030\002 \001(\004\"w\n\014STEER_ST"
-  "ATUS\022\031\n\003map\030\001 \001(\0162\014.primary.Map\0222\n\020tract"
-  "ion_control\030\002 \001(\0162\030.primary.TractionCont"
-  "rol\022\030\n\020_inner_timestamp\030\003 \001(\004\"Y\n\016SET_CAR"
-  "_STATUS\022-\n\016car_status_set\030\001 \001(\0162\025.primar"
-  "y.SetCarStatus\022\030\n\020_inner_timestamp\030\002 \001(\004"
-  "\"j\n\020SET_PEDALS_RANGE\022\035\n\005bound\030\001 \001(\0162\016.pr"
-  "imary.Bound\022\035\n\005pedal\030\002 \001(\0162\016.primary.Ped"
-  "al\022\030\n\020_inner_timestamp\030\003 \001(\004\"S\n\030SET_STEE"
-  "RING_ANGLE_RANGE\022\035\n\005bound\030\001 \001(\0162\016.primar"
-  "y.Bound\022\030\n\020_inner_timestamp\030\002 \001(\004\"\250\001\n\nCA"
-  "R_STATUS\022+\n\ninverter_l\030\001 \001(\0162\027.primary.I"
-  "nverterStatus\022+\n\ninverter_r\030\002 \001(\0162\027.prim"
-  "ary.InverterStatus\022&\n\ncar_status\030\003 \001(\0162\022"
-  ".primary.CarStatus\022\030\n\020_inner_timestamp\030\004"
-  " \001(\004\"9\n\nDAS_ERRORS\022\021\n\tdas_error\030\001 \001(\r\022\030\n"
-  "\020_inner_timestamp\030\002 \001(\004\"7\n\nLV_CURRENT\022\017\n"
-  "\007current\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 \001(\004"
-  "\"r\n\nLV_VOLTAGE\022\021\n\tvoltage_1\030\001 \001(\r\022\021\n\tvol"
-  "tage_2\030\002 \001(\r\022\021\n\tvoltage_3\030\003 \001(\r\022\021\n\tvolta"
-  "ge_4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"C\n\020"
-  "LV_TOTAL_VOLTAGE\022\025\n\rtotal_voltage\030\001 \001(\r\022"
-  "\030\n\020_inner_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMPERA"
-  "TURE\022\030\n\020bp_temperature_1\030\001 \001(\r\022\030\n\020bp_tem"
-  "perature_2\030\002 \001(\r\022\032\n\022dcdc12_temperature\030\003"
-  " \001(\r\022\032\n\022dcdc24_temperature\030\004 \001(\r\022\030\n\020_inn"
-  "er_timestamp\030\005 \001(\004\"j\n\016COOLING_STATUS\022\024\n\014"
-  "hv_fan_speed\030\001 \001(\r\022\024\n\014lv_fan_speed\030\002 \001(\r"
-  "\022\022\n\npump_speed\030\003 \001(\r\022\030\n\020_inner_timestamp"
-  "\030\004 \001(\004\"]\n\022SET_RADIATOR_SPEED\022-\n\023car_radi"
-  "ators_speed\030\001 \001(\0162\020.primary.Cooling\022\030\n\020_"
-  "inner_timestamp\030\002 \001(\004\"V\n\017SET_PUMPS_POWER"
-  "\022)\n\017car_pumps_power\030\001 \001(\0162\020.primary.Cool"
-  "ing\022\030\n\020_inner_timestamp\030\002 \001(\004\"\"\n\006MARKER\022"
-  "\030\n\020_inner_timestamp\030\001 \001(\004\"z\n\020HV_CELLS_VO"
-  "LTAGE\022\021\n\tvoltage_0\030\001 \001(\r\022\021\n\tvoltage_1\030\002 "
-  "\001(\r\022\021\n\tvoltage_2\030\003 \001(\r\022\023\n\013start_index\030\004 "
-  "\001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"\256\001\n\rHV_CEL"
-  "LS_TEMP\022\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002"
-  " \001(\r\022\016\n\006temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006"
-  "temp_3\030\005 \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006temp_5\030\007"
-  " \001(\r\022\016\n\006temp_6\030\010 \001(\r\022\030\n\020_inner_timestamp"
-  "\030\t \001(\004\"_\n\030HV_CELL_BALANCING_STATUS\022)\n\020ba"
-  "lancing_status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
-  "\020_inner_timestamp\030\002 \001(\004\"d\n\031SET_CELL_BALA"
-  "NCING_STATUS\022-\n\024set_balancing_status\030\001 \001"
+  "estamp\030\003 \001(\004\"T\n\016HV_CAN_FORWARD\022(\n\017can_fo"
+  "rward_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inn"
+  "er_timestamp\030\002 \001(\004\"^\n\025HV_CAN_FORWARD_STA"
+  "TUS\022+\n\022can_forward_status\030\001 \001(\0162\017.primar"
+  "y.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"K\n\tTS"
+  "_STATUS\022$\n\tts_status\030\001 \001(\0162\021.primary.TsS"
+  "tatus\022\030\n\020_inner_timestamp\030\002 \001(\004\"U\n\021SET_T"
+  "S_STATUS_DAS\022&\n\rts_status_set\030\001 \001(\0162\017.pr"
+  "imary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"Z"
+  "\n\026SET_TS_STATUS_HANDCART\022&\n\rts_status_se"
+  "t\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_times"
+  "tamp\030\002 \001(\004\"w\n\014STEER_STATUS\022\031\n\003map\030\001 \001(\0162"
+  "\014.primary.Map\0222\n\020traction_control\030\002 \001(\0162"
+  "\030.primary.TractionControl\022\030\n\020_inner_time"
+  "stamp\030\003 \001(\004\"Y\n\016SET_CAR_STATUS\022-\n\016car_sta"
+  "tus_set\030\001 \001(\0162\025.primary.SetCarStatus\022\030\n\020"
+  "_inner_timestamp\030\002 \001(\004\"j\n\020SET_PEDALS_RAN"
+  "GE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\035\n\005ped"
+  "al\030\002 \001(\0162\016.primary.Pedal\022\030\n\020_inner_times"
+  "tamp\030\003 \001(\004\"S\n\030SET_STEERING_ANGLE_RANGE\022\035"
+  "\n\005bound\030\001 \001(\0162\016.primary.Bound\022\030\n\020_inner_"
+  "timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022+\n\ninvert"
+  "er_l\030\001 \001(\0162\027.primary.InverterStatus\022+\n\ni"
+  "nverter_r\030\002 \001(\0162\027.primary.InverterStatus"
+  "\022&\n\ncar_status\030\003 \001(\0162\022.primary.CarStatus"
+  "\022\030\n\020_inner_timestamp\030\004 \001(\004\"9\n\nDAS_ERRORS"
+  "\022\021\n\tdas_error\030\001 \001(\r\022\030\n\020_inner_timestamp\030"
+  "\002 \001(\004\"7\n\nLV_CURRENT\022\017\n\007current\030\001 \001(\r\022\030\n\020"
+  "_inner_timestamp\030\002 \001(\004\"r\n\nLV_VOLTAGE\022\021\n\t"
+  "voltage_1\030\001 \001(\r\022\021\n\tvoltage_2\030\002 \001(\r\022\021\n\tvo"
+  "ltage_3\030\003 \001(\r\022\021\n\tvoltage_4\030\004 \001(\r\022\030\n\020_inn"
+  "er_timestamp\030\005 \001(\004\"C\n\020LV_TOTAL_VOLTAGE\022\025"
+  "\n\rtotal_voltage\030\001 \001(\r\022\030\n\020_inner_timestam"
+  "p\030\002 \001(\004\"\226\001\n\016LV_TEMPERATURE\022\030\n\020bp_tempera"
+  "ture_1\030\001 \001(\r\022\030\n\020bp_temperature_2\030\002 \001(\r\022\032"
+  "\n\022dcdc12_temperature\030\003 \001(\r\022\032\n\022dcdc24_tem"
+  "perature\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004"
+  "\"j\n\016COOLING_STATUS\022\024\n\014hv_fan_speed\030\001 \001(\r"
+  "\022\024\n\014lv_fan_speed\030\002 \001(\r\022\022\n\npump_speed\030\003 \001"
+  "(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"]\n\022SET_RADI"
+  "ATOR_SPEED\022-\n\023car_radiators_speed\030\001 \001(\0162"
+  "\020.primary.Cooling\022\030\n\020_inner_timestamp\030\002 "
+  "\001(\004\"V\n\017SET_PUMPS_POWER\022)\n\017car_pumps_powe"
+  "r\030\001 \001(\0162\020.primary.Cooling\022\030\n\020_inner_time"
+  "stamp\030\002 \001(\004\"\"\n\006MARKER\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"z\n\020HV_CELLS_VOLTAGE\022\021\n\tvoltage_0"
+  "\030\001 \001(\r\022\021\n\tvoltage_1\030\002 \001(\r\022\021\n\tvoltage_2\030\003"
+  " \001(\r\022\023\n\013start_index\030\004 \001(\r\022\030\n\020_inner_time"
+  "stamp\030\005 \001(\004\"\256\001\n\rHV_CELLS_TEMP\022\023\n\013start_i"
+  "ndex\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\r\022\016\n\006temp_1\030\003 \001"
+  "(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006temp_3\030\005 \001(\r\022\016\n\006te"
+  "mp_4\030\006 \001(\r\022\016\n\006temp_5\030\007 \001(\r\022\016\n\006temp_6\030\010 \001"
+  "(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"_\n\030HV_CELL_"
+  "BALANCING_STATUS\022)\n\020balancing_status\030\001 \001"
   "(\0162\017.primary.Toggle\022\030\n\020_inner_timestamp\030"
-  "\002 \001(\004\">\n\017HANDCART_STATUS\022\021\n\tconnected\030\001 "
-  "\001(\010\022\030\n\020_inner_timestamp\030\002 \001(\004\"o\n\005SPEED\022\021"
-  "\n\tencoder_r\030\001 \001(\r\022\021\n\tencoder_l\030\002 \001(\r\022\022\n\n"
-  "inverter_r\030\003 \001(\r\022\022\n\ninverter_l\030\004 \001(\r\022\030\n\020"
-  "_inner_timestamp\030\005 \001(\004\"V\n\020INV_L_SET_TORQ"
-  "UE\022\016\n\006reg_id\030\001 \001(\r\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003"
-  " \001(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"\252\001\n\016INV_L"
-  "_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001("
-  "\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006dat"
-  "a_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001("
-  "\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t "
-  "\001(\004\"\234\016\n\004Pack\022-\n\rSTEER_VERSION\030\001 \003(\0132\026.pr"
-  "imary.STEER_VERSION\022)\n\013DAS_VERSION\030\002 \003(\013"
-  "2\024.primary.DAS_VERSION\022\'\n\nHV_VERSION\030\003 \003"
-  "(\0132\023.primary.HV_VERSION\022\'\n\nLV_VERSION\030\004 "
-  "\003(\0132\023.primary.LV_VERSION\022)\n\013TLM_VERSION\030"
-  "\005 \003(\0132\024.primary.TLM_VERSION\022%\n\tTIMESTAMP"
-  "\030\006 \003(\0132\022.primary.TIMESTAMP\022/\n\016SET_TLM_ST"
-  "ATUS\030\007 \003(\0132\027.primary.SET_TLM_STATUS\022\'\n\nT"
-  "LM_STATUS\030\010 \003(\0132\023.primary.TLM_STATUS\0229\n\023"
-  "STEER_SYSTEM_STATUS\030\t \003(\0132\034.primary.STEE"
-  "R_SYSTEM_STATUS\022\'\n\nHV_VOLTAGE\030\n \003(\0132\023.pr"
-  "imary.HV_VOLTAGE\022\'\n\nHV_CURRENT\030\013 \003(\0132\023.p"
-  "rimary.HV_CURRENT\022!\n\007HV_TEMP\030\014 \003(\0132\020.pri"
-  "mary.HV_TEMP\022%\n\tHV_ERRORS\030\r \003(\0132\022.primar"
-  "y.HV_ERRORS\022%\n\tTS_STATUS\030\016 \003(\0132\022.primary"
-  ".TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\017 \003(\0132\032."
-  "primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS_STAT"
-  "US_HANDCART\030\020 \003(\0132\037.primary.SET_TS_STATU"
-  "S_HANDCART\022+\n\014STEER_STATUS\030\021 \003(\0132\025.prima"
-  "ry.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\022 \003(\0132"
-  "\027.primary.SET_CAR_STATUS\0223\n\020SET_PEDALS_R"
-  "ANGE\030\023 \003(\0132\031.primary.SET_PEDALS_RANGE\022C\n"
-  "\030SET_STEERING_ANGLE_RANGE\030\024 \003(\0132!.primar"
-  "y.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_STATUS"
-  "\030\025 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_ERROR"
-  "S\030\026 \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_CURRE"
-  "NT\030\027 \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV_VOLT"
-  "AGE\030\030 \003(\0132\023.primary.LV_VOLTAGE\0223\n\020LV_TOT"
-  "AL_VOLTAGE\030\031 \003(\0132\031.primary.LV_TOTAL_VOLT"
-  "AGE\022/\n\016LV_TEMPERATURE\030\032 \003(\0132\027.primary.LV"
-  "_TEMPERATURE\022/\n\016COOLING_STATUS\030\033 \003(\0132\027.p"
-  "rimary.COOLING_STATUS\0227\n\022SET_RADIATOR_SP"
-  "EED\030\034 \003(\0132\033.primary.SET_RADIATOR_SPEED\0221"
-  "\n\017SET_PUMPS_POWER\030\035 \003(\0132\030.primary.SET_PU"
-  "MPS_POWER\022\037\n\006MARKER\030\036 \003(\0132\017.primary.MARK"
-  "ER\0223\n\020HV_CELLS_VOLTAGE\030\037 \003(\0132\031.primary.H"
-  "V_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030  \003(\0132\026"
-  ".primary.HV_CELLS_TEMP\022C\n\030HV_CELL_BALANC"
-  "ING_STATUS\030! \003(\0132!.primary.HV_CELL_BALAN"
-  "CING_STATUS\022E\n\031SET_CELL_BALANCING_STATUS"
-  "\030\" \003(\0132\".primary.SET_CELL_BALANCING_STAT"
-  "US\0221\n\017HANDCART_STATUS\030# \003(\0132\030.primary.HA"
-  "NDCART_STATUS\022\035\n\005SPEED\030$ \003(\0132\016.primary.S"
-  "PEED\0223\n\020INV_L_SET_TORQUE\030% \003(\0132\031.primary"
-  ".INV_L_SET_TORQUE\022/\n\016INV_L_RESPONSE\030& \003("
-  "\0132\027.primary.INV_L_RESPONSE*k\n\010RaceType\022\031"
-  "\n\025RaceType_ACCELERATION\020\000\022\024\n\020RaceType_SK"
-  "IDPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022RaceT"
-  "ype_ENDURANCE\020\003*X\n\016InverterStatus\022\026\n\022Inv"
-  "erterStatus_OFF\020\000\022\027\n\023InverterStatus_IDLE"
-  "\020\001\022\025\n\021InverterStatus_ON\020\002*G\n\tCarStatus\022\022"
-  "\n\016CarStatus_IDLE\020\000\022\023\n\017CarStatus_SETUP\020\001\022"
-  "\021\n\rCarStatus_RUN\020\002*\'\n\006Toggle\022\r\n\tToggle_O"
-  "N\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017TractionControl\022"
-  "\027\n\023TractionControl_OFF\020\000\022 \n\034TractionCont"
-  "rol_SLIP_CONTROL\020\001\022$\n TractionControl_TO"
-  "RQUE_VECTORING\020\002\022\034\n\030TractionControl_COMP"
-  "LETE\020\003*Y\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022"
-  "TsStatus_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n"
-  "\016TsStatus_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007M"
-  "ap_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Ma"
-  "p_D80\020\004\022\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025\n"
-  "\021SetCarStatus_IDLE\020\000\022\024\n\020SetCarStatus_RUN"
-  "\020\001*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_"
-  "SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020"
-  "\000\022\017\n\013Pedal_BRAKE\020\001*m\n\007Cooling\022\031\n\025Cooling"
-  "_RADIATORS_MAX\020\000\022\031\n\025Cooling_RADIATORS_OF"
-  "F\020\001\022\025\n\021Cooling_PUMPS_MAX\020\002\022\025\n\021Cooling_PU"
-  "MPS_OFF\020\003b\006proto3"
+  "\002 \001(\004\"d\n\031SET_CELL_BALANCING_STATUS\022-\n\024se"
+  "t_balancing_status\030\001 \001(\0162\017.primary.Toggl"
+  "e\022\030\n\020_inner_timestamp\030\002 \001(\004\">\n\017HANDCART_"
+  "STATUS\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_inner_time"
+  "stamp\030\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\r\022"
+  "\021\n\tencoder_l\030\002 \001(\r\022\022\n\ninverter_r\030\003 \001(\r\022\022"
+  "\n\ninverter_l\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005"
+  " \001(\004\"V\n\020INV_L_SET_TORQUE\022\016\n\006reg_id\030\001 \001(\r"
+  "\022\013\n\003lsb\030\002 \001(\r\022\013\n\003msb\030\003 \001(\r\022\030\n\020_inner_tim"
+  "estamp\030\004 \001(\004\"\252\001\n\016INV_L_RESPONSE\022\016\n\006reg_i"
+  "d\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022"
+  "\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_"
+  "4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022"
+  "\030\n\020_inner_timestamp\030\t \001(\004\"\214\017\n\004Pack\022-\n\rST"
+  "EER_VERSION\030\001 \003(\0132\026.primary.STEER_VERSIO"
+  "N\022)\n\013DAS_VERSION\030\002 \003(\0132\024.primary.DAS_VER"
+  "SION\022\'\n\nHV_VERSION\030\003 \003(\0132\023.primary.HV_VE"
+  "RSION\022\'\n\nLV_VERSION\030\004 \003(\0132\023.primary.LV_V"
+  "ERSION\022)\n\013TLM_VERSION\030\005 \003(\0132\024.primary.TL"
+  "M_VERSION\022%\n\tTIMESTAMP\030\006 \003(\0132\022.primary.T"
+  "IMESTAMP\022/\n\016SET_TLM_STATUS\030\007 \003(\0132\027.prima"
+  "ry.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\010 \003(\0132\023."
+  "primary.TLM_STATUS\0229\n\023STEER_SYSTEM_STATU"
+  "S\030\t \003(\0132\034.primary.STEER_SYSTEM_STATUS\022\'\n"
+  "\nHV_VOLTAGE\030\n \003(\0132\023.primary.HV_VOLTAGE\022\'"
+  "\n\nHV_CURRENT\030\013 \003(\0132\023.primary.HV_CURRENT\022"
+  "!\n\007HV_TEMP\030\014 \003(\0132\020.primary.HV_TEMP\022%\n\tHV"
+  "_ERRORS\030\r \003(\0132\022.primary.HV_ERRORS\022/\n\016HV_"
+  "CAN_FORWARD\030\016 \003(\0132\027.primary.HV_CAN_FORWA"
+  "RD\022=\n\025HV_CAN_FORWARD_STATUS\030\017 \003(\0132\036.prim"
+  "ary.HV_CAN_FORWARD_STATUS\022%\n\tTS_STATUS\030\020"
+  " \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_STATU"
+  "S_DAS\030\021 \003(\0132\032.primary.SET_TS_STATUS_DAS\022"
+  "\?\n\026SET_TS_STATUS_HANDCART\030\022 \003(\0132\037.primar"
+  "y.SET_TS_STATUS_HANDCART\022+\n\014STEER_STATUS"
+  "\030\023 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET_CAR"
+  "_STATUS\030\024 \003(\0132\027.primary.SET_CAR_STATUS\0223"
+  "\n\020SET_PEDALS_RANGE\030\025 \003(\0132\031.primary.SET_P"
+  "EDALS_RANGE\022C\n\030SET_STEERING_ANGLE_RANGE\030"
+  "\026 \003(\0132!.primary.SET_STEERING_ANGLE_RANGE"
+  "\022\'\n\nCAR_STATUS\030\027 \003(\0132\023.primary.CAR_STATU"
+  "S\022\'\n\nDAS_ERRORS\030\030 \003(\0132\023.primary.DAS_ERRO"
+  "RS\022\'\n\nLV_CURRENT\030\031 \003(\0132\023.primary.LV_CURR"
+  "ENT\022\'\n\nLV_VOLTAGE\030\032 \003(\0132\023.primary.LV_VOL"
+  "TAGE\0223\n\020LV_TOTAL_VOLTAGE\030\033 \003(\0132\031.primary"
+  ".LV_TOTAL_VOLTAGE\022/\n\016LV_TEMPERATURE\030\034 \003("
+  "\0132\027.primary.LV_TEMPERATURE\022/\n\016COOLING_ST"
+  "ATUS\030\035 \003(\0132\027.primary.COOLING_STATUS\0227\n\022S"
+  "ET_RADIATOR_SPEED\030\036 \003(\0132\033.primary.SET_RA"
+  "DIATOR_SPEED\0221\n\017SET_PUMPS_POWER\030\037 \003(\0132\030."
+  "primary.SET_PUMPS_POWER\022\037\n\006MARKER\030  \003(\0132"
+  "\017.primary.MARKER\0223\n\020HV_CELLS_VOLTAGE\030! \003"
+  "(\0132\031.primary.HV_CELLS_VOLTAGE\022-\n\rHV_CELL"
+  "S_TEMP\030\" \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030"
+  "HV_CELL_BALANCING_STATUS\030# \003(\0132!.primary"
+  ".HV_CELL_BALANCING_STATUS\022E\n\031SET_CELL_BA"
+  "LANCING_STATUS\030$ \003(\0132\".primary.SET_CELL_"
+  "BALANCING_STATUS\0221\n\017HANDCART_STATUS\030% \003("
+  "\0132\030.primary.HANDCART_STATUS\022\035\n\005SPEED\030& \003"
+  "(\0132\016.primary.SPEED\0223\n\020INV_L_SET_TORQUE\030\'"
+  " \003(\0132\031.primary.INV_L_SET_TORQUE\022/\n\016INV_L"
+  "_RESPONSE\030( \003(\0132\027.primary.INV_L_RESPONSE"
+  "*k\n\010RaceType\022\031\n\025RaceType_ACCELERATION\020\000\022"
+  "\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022RaceType_AUTOCR"
+  "OSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016Inverte"
+  "rStatus\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023Inver"
+  "terStatus_IDLE\020\001\022\025\n\021InverterStatus_ON\020\002*"
+  "G\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022\023\n\017CarS"
+  "tatus_SETUP\020\001\022\021\n\rCarStatus_RUN\020\002*\'\n\006Togg"
+  "le\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017Tr"
+  "actionControl\022\027\n\023TractionControl_OFF\020\000\022 "
+  "\n\034TractionControl_SLIP_CONTROL\020\001\022$\n Trac"
+  "tionControl_TORQUE_VECTORING\020\002\022\034\n\030Tracti"
+  "onControl_COMPLETE\020\003*Y\n\010TsStatus\022\020\n\014TsSt"
+  "atus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013Ts"
+  "Status_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003Map\022\t"
+  "\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n\007M"
+  "ap_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005*;\n\014S"
+  "etCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022\024\n\020Se"
+  "tCarStatus_RUN\020\001*-\n\005Bound\022\021\n\rBound_SET_M"
+  "AX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Peda"
+  "l_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*m\n\007Cool"
+  "ing\022\031\n\025Cooling_RADIATORS_MAX\020\000\022\031\n\025Coolin"
+  "g_RADIATORS_OFF\020\001\022\025\n\021Cooling_PUMPS_MAX\020\002"
+  "\022\025\n\021Cooling_PUMPS_OFF\020\003b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 6577, descriptor_table_protodef_primary_2eproto,
+    false, false, 6871, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
-    &descriptor_table_primary_2eproto_once, nullptr, 0, 39,
+    &descriptor_table_primary_2eproto_once, nullptr, 0, 41,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
     file_level_metadata_primary_2eproto, file_level_enum_descriptors_primary_2eproto,
     file_level_service_descriptors_primary_2eproto,
@@ -4552,6 +4611,422 @@ void HV_ERRORS::InternalSwap(HV_ERRORS* other) {
 
 // ===================================================================
 
+class HV_CAN_FORWARD::_Internal {
+ public:
+};
+
+HV_CAN_FORWARD::HV_CAN_FORWARD(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.HV_CAN_FORWARD)
+}
+HV_CAN_FORWARD::HV_CAN_FORWARD(const HV_CAN_FORWARD& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&can_forward_set_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_set_));
+  // @@protoc_insertion_point(copy_constructor:primary.HV_CAN_FORWARD)
+}
+
+inline void HV_CAN_FORWARD::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&_inner_timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&can_forward_set_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_set_));
+}
+
+HV_CAN_FORWARD::~HV_CAN_FORWARD() {
+  // @@protoc_insertion_point(destructor:primary.HV_CAN_FORWARD)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void HV_CAN_FORWARD::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void HV_CAN_FORWARD::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void HV_CAN_FORWARD::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.HV_CAN_FORWARD)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&can_forward_set_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_set_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* HV_CAN_FORWARD::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .primary.Toggle can_forward_set = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_can_forward_set(static_cast<::primary::Toggle>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 _inner_timestamp = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* HV_CAN_FORWARD::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.HV_CAN_FORWARD)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .primary.Toggle can_forward_set = 1;
+  if (this->_internal_can_forward_set() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_can_forward_set(), target);
+  }
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.HV_CAN_FORWARD)
+  return target;
+}
+
+size_t HV_CAN_FORWARD::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.HV_CAN_FORWARD)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  // .primary.Toggle can_forward_set = 1;
+  if (this->_internal_can_forward_set() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_can_forward_set());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HV_CAN_FORWARD::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HV_CAN_FORWARD::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HV_CAN_FORWARD::GetClassData() const { return &_class_data_; }
+
+void HV_CAN_FORWARD::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HV_CAN_FORWARD *>(to)->MergeFrom(
+      static_cast<const HV_CAN_FORWARD &>(from));
+}
+
+
+void HV_CAN_FORWARD::MergeFrom(const HV_CAN_FORWARD& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.HV_CAN_FORWARD)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  if (from._internal_can_forward_set() != 0) {
+    _internal_set_can_forward_set(from._internal_can_forward_set());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void HV_CAN_FORWARD::CopyFrom(const HV_CAN_FORWARD& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.HV_CAN_FORWARD)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HV_CAN_FORWARD::IsInitialized() const {
+  return true;
+}
+
+void HV_CAN_FORWARD::InternalSwap(HV_CAN_FORWARD* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(HV_CAN_FORWARD, can_forward_set_)
+      + sizeof(HV_CAN_FORWARD::can_forward_set_)
+      - PROTOBUF_FIELD_OFFSET(HV_CAN_FORWARD, _inner_timestamp_)>(
+          reinterpret_cast<char*>(&_inner_timestamp_),
+          reinterpret_cast<char*>(&other->_inner_timestamp_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata HV_CAN_FORWARD::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[13]);
+}
+
+// ===================================================================
+
+class HV_CAN_FORWARD_STATUS::_Internal {
+ public:
+};
+
+HV_CAN_FORWARD_STATUS::HV_CAN_FORWARD_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.HV_CAN_FORWARD_STATUS)
+}
+HV_CAN_FORWARD_STATUS::HV_CAN_FORWARD_STATUS(const HV_CAN_FORWARD_STATUS& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&can_forward_status_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_status_));
+  // @@protoc_insertion_point(copy_constructor:primary.HV_CAN_FORWARD_STATUS)
+}
+
+inline void HV_CAN_FORWARD_STATUS::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&_inner_timestamp_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&can_forward_status_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_status_));
+}
+
+HV_CAN_FORWARD_STATUS::~HV_CAN_FORWARD_STATUS() {
+  // @@protoc_insertion_point(destructor:primary.HV_CAN_FORWARD_STATUS)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void HV_CAN_FORWARD_STATUS::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void HV_CAN_FORWARD_STATUS::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void HV_CAN_FORWARD_STATUS::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.HV_CAN_FORWARD_STATUS)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&can_forward_status_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(can_forward_status_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* HV_CAN_FORWARD_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .primary.Toggle can_forward_status = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_can_forward_status(static_cast<::primary::Toggle>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint64 _inner_timestamp = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* HV_CAN_FORWARD_STATUS::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.HV_CAN_FORWARD_STATUS)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .primary.Toggle can_forward_status = 1;
+  if (this->_internal_can_forward_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_can_forward_status(), target);
+  }
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.HV_CAN_FORWARD_STATUS)
+  return target;
+}
+
+size_t HV_CAN_FORWARD_STATUS::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.HV_CAN_FORWARD_STATUS)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  // .primary.Toggle can_forward_status = 1;
+  if (this->_internal_can_forward_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_can_forward_status());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HV_CAN_FORWARD_STATUS::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    HV_CAN_FORWARD_STATUS::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HV_CAN_FORWARD_STATUS::GetClassData() const { return &_class_data_; }
+
+void HV_CAN_FORWARD_STATUS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<HV_CAN_FORWARD_STATUS *>(to)->MergeFrom(
+      static_cast<const HV_CAN_FORWARD_STATUS &>(from));
+}
+
+
+void HV_CAN_FORWARD_STATUS::MergeFrom(const HV_CAN_FORWARD_STATUS& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.HV_CAN_FORWARD_STATUS)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  if (from._internal_can_forward_status() != 0) {
+    _internal_set_can_forward_status(from._internal_can_forward_status());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void HV_CAN_FORWARD_STATUS::CopyFrom(const HV_CAN_FORWARD_STATUS& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.HV_CAN_FORWARD_STATUS)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool HV_CAN_FORWARD_STATUS::IsInitialized() const {
+  return true;
+}
+
+void HV_CAN_FORWARD_STATUS::InternalSwap(HV_CAN_FORWARD_STATUS* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(HV_CAN_FORWARD_STATUS, can_forward_status_)
+      + sizeof(HV_CAN_FORWARD_STATUS::can_forward_status_)
+      - PROTOBUF_FIELD_OFFSET(HV_CAN_FORWARD_STATUS, _inner_timestamp_)>(
+          reinterpret_cast<char*>(&_inner_timestamp_),
+          reinterpret_cast<char*>(&other->_inner_timestamp_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata HV_CAN_FORWARD_STATUS::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[14]);
+}
+
+// ===================================================================
+
 class TS_STATUS::_Internal {
  public:
 };
@@ -4755,7 +5230,7 @@ void TS_STATUS::InternalSwap(TS_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TS_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[13]);
+      file_level_metadata_primary_2eproto[15]);
 }
 
 // ===================================================================
@@ -4963,7 +5438,7 @@ void SET_TS_STATUS_DAS::InternalSwap(SET_TS_STATUS_DAS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_TS_STATUS_DAS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[14]);
+      file_level_metadata_primary_2eproto[16]);
 }
 
 // ===================================================================
@@ -5171,7 +5646,7 @@ void SET_TS_STATUS_HANDCART::InternalSwap(SET_TS_STATUS_HANDCART* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_TS_STATUS_HANDCART::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[15]);
+      file_level_metadata_primary_2eproto[17]);
 }
 
 // ===================================================================
@@ -5404,7 +5879,7 @@ void STEER_STATUS::InternalSwap(STEER_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata STEER_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[16]);
+      file_level_metadata_primary_2eproto[18]);
 }
 
 // ===================================================================
@@ -5612,7 +6087,7 @@ void SET_CAR_STATUS::InternalSwap(SET_CAR_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_CAR_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[17]);
+      file_level_metadata_primary_2eproto[19]);
 }
 
 // ===================================================================
@@ -5845,7 +6320,7 @@ void SET_PEDALS_RANGE::InternalSwap(SET_PEDALS_RANGE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_PEDALS_RANGE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[18]);
+      file_level_metadata_primary_2eproto[20]);
 }
 
 // ===================================================================
@@ -6053,7 +6528,7 @@ void SET_STEERING_ANGLE_RANGE::InternalSwap(SET_STEERING_ANGLE_RANGE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_STEERING_ANGLE_RANGE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[19]);
+      file_level_metadata_primary_2eproto[21]);
 }
 
 // ===================================================================
@@ -6311,7 +6786,7 @@ void CAR_STATUS::InternalSwap(CAR_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CAR_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[20]);
+      file_level_metadata_primary_2eproto[22]);
 }
 
 // ===================================================================
@@ -6516,7 +6991,7 @@ void DAS_ERRORS::InternalSwap(DAS_ERRORS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DAS_ERRORS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[21]);
+      file_level_metadata_primary_2eproto[23]);
 }
 
 // ===================================================================
@@ -6721,7 +7196,7 @@ void LV_CURRENT::InternalSwap(LV_CURRENT* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LV_CURRENT::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[22]);
+      file_level_metadata_primary_2eproto[24]);
 }
 
 // ===================================================================
@@ -6992,7 +7467,7 @@ void LV_VOLTAGE::InternalSwap(LV_VOLTAGE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LV_VOLTAGE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[23]);
+      file_level_metadata_primary_2eproto[25]);
 }
 
 // ===================================================================
@@ -7197,7 +7672,7 @@ void LV_TOTAL_VOLTAGE::InternalSwap(LV_TOTAL_VOLTAGE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LV_TOTAL_VOLTAGE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[24]);
+      file_level_metadata_primary_2eproto[26]);
 }
 
 // ===================================================================
@@ -7468,7 +7943,7 @@ void LV_TEMPERATURE::InternalSwap(LV_TEMPERATURE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata LV_TEMPERATURE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[25]);
+      file_level_metadata_primary_2eproto[27]);
 }
 
 // ===================================================================
@@ -7717,7 +8192,7 @@ void COOLING_STATUS::InternalSwap(COOLING_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata COOLING_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[26]);
+      file_level_metadata_primary_2eproto[28]);
 }
 
 // ===================================================================
@@ -7925,7 +8400,7 @@ void SET_RADIATOR_SPEED::InternalSwap(SET_RADIATOR_SPEED* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_RADIATOR_SPEED::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[27]);
+      file_level_metadata_primary_2eproto[29]);
 }
 
 // ===================================================================
@@ -8133,7 +8608,7 @@ void SET_PUMPS_POWER::InternalSwap(SET_PUMPS_POWER* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_PUMPS_POWER::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[28]);
+      file_level_metadata_primary_2eproto[30]);
 }
 
 // ===================================================================
@@ -8304,7 +8779,7 @@ void MARKER::InternalSwap(MARKER* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MARKER::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[29]);
+      file_level_metadata_primary_2eproto[31]);
 }
 
 // ===================================================================
@@ -8575,7 +9050,7 @@ void HV_CELLS_VOLTAGE::InternalSwap(HV_CELLS_VOLTAGE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_CELLS_VOLTAGE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[30]);
+      file_level_metadata_primary_2eproto[32]);
 }
 
 // ===================================================================
@@ -8934,7 +9409,7 @@ void HV_CELLS_TEMP::InternalSwap(HV_CELLS_TEMP* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_CELLS_TEMP::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[31]);
+      file_level_metadata_primary_2eproto[33]);
 }
 
 // ===================================================================
@@ -9142,7 +9617,7 @@ void HV_CELL_BALANCING_STATUS::InternalSwap(HV_CELL_BALANCING_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_CELL_BALANCING_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[32]);
+      file_level_metadata_primary_2eproto[34]);
 }
 
 // ===================================================================
@@ -9350,7 +9825,7 @@ void SET_CELL_BALANCING_STATUS::InternalSwap(SET_CELL_BALANCING_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_CELL_BALANCING_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[33]);
+      file_level_metadata_primary_2eproto[35]);
 }
 
 // ===================================================================
@@ -9555,7 +10030,7 @@ void HANDCART_STATUS::InternalSwap(HANDCART_STATUS* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata HANDCART_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[34]);
+      file_level_metadata_primary_2eproto[36]);
 }
 
 // ===================================================================
@@ -9826,7 +10301,7 @@ void SPEED::InternalSwap(SPEED* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SPEED::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[35]);
+      file_level_metadata_primary_2eproto[37]);
 }
 
 // ===================================================================
@@ -10075,7 +10550,7 @@ void INV_L_SET_TORQUE::InternalSwap(INV_L_SET_TORQUE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata INV_L_SET_TORQUE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[36]);
+      file_level_metadata_primary_2eproto[38]);
 }
 
 // ===================================================================
@@ -10434,7 +10909,7 @@ void INV_L_RESPONSE::InternalSwap(INV_L_RESPONSE* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata INV_L_RESPONSE::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[37]);
+      file_level_metadata_primary_2eproto[39]);
 }
 
 // ===================================================================
@@ -10459,6 +10934,8 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   hv_current_(arena),
   hv_temp_(arena),
   hv_errors_(arena),
+  hv_can_forward_(arena),
+  hv_can_forward_status_(arena),
   ts_status_(arena),
   set_ts_status_das_(arena),
   set_ts_status_handcart_(arena),
@@ -10502,6 +10979,8 @@ Pack::Pack(const Pack& from)
       hv_current_(from.hv_current_),
       hv_temp_(from.hv_temp_),
       hv_errors_(from.hv_errors_),
+      hv_can_forward_(from.hv_can_forward_),
+      hv_can_forward_status_(from.hv_can_forward_status_),
       ts_status_(from.ts_status_),
       set_ts_status_das_(from.set_ts_status_das_),
       set_ts_status_handcart_(from.set_ts_status_handcart_),
@@ -10570,6 +11049,8 @@ void Pack::Clear() {
   hv_current_.Clear();
   hv_temp_.Clear();
   hv_errors_.Clear();
+  hv_can_forward_.Clear();
+  hv_can_forward_status_.Clear();
   ts_status_.Clear();
   set_ts_status_das_.Clear();
   set_ts_status_handcart_.Clear();
@@ -10773,328 +11254,354 @@ const char* Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.TS_STATUS TS_STATUS = 14;
+      // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_ts_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_can_forward(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
+      // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_set_ts_status_das(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_can_forward_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+      // repeated .primary.TS_STATUS TS_STATUS = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_ts_status_handcart(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_ts_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.STEER_STATUS STEER_STATUS = 17;
+      // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_steer_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_ts_status_das(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 18;
+      // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
       case 18:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_car_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_ts_status_handcart(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<146>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+      // repeated .primary.STEER_STATUS STEER_STATUS = 19;
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_pedals_range(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_steer_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<154>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+      // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 20;
       case 20:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_steering_angle_range(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_car_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.CAR_STATUS CAR_STATUS = 21;
+      // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
       case 21:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_car_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_pedals_range(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<170>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
+      // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
       case 22:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_das_errors(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_steering_angle_range(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.LV_CURRENT LV_CURRENT = 23;
+      // repeated .primary.CAR_STATUS CAR_STATUS = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_lv_current(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_car_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
+      // repeated .primary.DAS_ERRORS DAS_ERRORS = 24;
       case 24:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_lv_voltage(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_das_errors(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<194>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+      // repeated .primary.LV_CURRENT LV_CURRENT = 25;
       case 25:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_lv_total_voltage(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_current(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<202>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
+      // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 26;
       case 26:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 210)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_lv_temperature(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_voltage(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<210>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
+      // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_cooling_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_total_voltage(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+      // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 28;
       case 28:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 226)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_radiator_speed(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_lv_temperature(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+      // repeated .primary.COOLING_STATUS COOLING_STATUS = 29;
       case 29:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_pumps_power(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_cooling_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.MARKER MARKER = 30;
+      // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
       case 30:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 242)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_marker(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_radiator_speed(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<242>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+      // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 31;
       case 31:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 250)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cells_voltage(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_pumps_power(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<250>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+      // repeated .primary.MARKER MARKER = 32;
       case 32:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 2)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cells_temp(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_marker(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+      // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
       case 33:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_cell_balancing_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cells_voltage(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<266>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+      // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 34;
       case 34:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_set_cell_balancing_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cells_temp(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<274>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
+      // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
       case 35:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_handcart_status(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_cell_balancing_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<282>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.SPEED SPEED = 36;
+      // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
       case 36:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_speed(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_set_cell_balancing_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<290>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+      // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 37;
       case 37:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_inv_l_set_torque(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_handcart_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<298>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
+      // repeated .primary.SPEED SPEED = 38;
       case 38:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_speed(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<306>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
+      case 39:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_inv_l_set_torque(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<314>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 40;
+      case 40:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_inv_l_response(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<306>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<322>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -11231,204 +11738,220 @@ uint8_t* Pack::_InternalSerialize(
         InternalWriteMessage(13, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.TS_STATUS TS_STATUS = 14;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 14;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_ts_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_ts_status(i);
+      n = static_cast<unsigned>(this->_internal_hv_can_forward_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_can_forward(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_ts_status_das_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_ts_status_das(i);
+      n = static_cast<unsigned>(this->_internal_hv_can_forward_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_can_forward_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(15, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+  // repeated .primary.TS_STATUS TS_STATUS = 16;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_ts_status_handcart_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_ts_status_handcart(i);
+      n = static_cast<unsigned>(this->_internal_ts_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ts_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(16, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 17;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_steer_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_steer_status(i);
+      n = static_cast<unsigned>(this->_internal_set_ts_status_das_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_ts_status_das(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(17, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 18;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_car_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_car_status(i);
+      n = static_cast<unsigned>(this->_internal_set_ts_status_handcart_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_ts_status_handcart(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(18, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 19;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_pedals_range_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_pedals_range(i);
+      n = static_cast<unsigned>(this->_internal_steer_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_steer_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(19, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 20;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_steering_angle_range_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_steering_angle_range(i);
+      n = static_cast<unsigned>(this->_internal_set_car_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_car_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(20, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 21;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_car_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_car_status(i);
+      n = static_cast<unsigned>(this->_internal_set_pedals_range_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_pedals_range(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(21, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_das_errors_size()); i < n; i++) {
-    const auto& repfield = this->_internal_das_errors(i);
+      n = static_cast<unsigned>(this->_internal_set_steering_angle_range_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_steering_angle_range(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(22, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 23;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 23;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lv_current_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lv_current(i);
+      n = static_cast<unsigned>(this->_internal_car_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_car_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(23, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 24;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lv_voltage_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lv_voltage(i);
+      n = static_cast<unsigned>(this->_internal_das_errors_size()); i < n; i++) {
+    const auto& repfield = this->_internal_das_errors(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(24, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 25;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lv_total_voltage_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lv_total_voltage(i);
+      n = static_cast<unsigned>(this->_internal_lv_current_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_current(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(25, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 26;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lv_temperature_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lv_temperature(i);
+      n = static_cast<unsigned>(this->_internal_lv_voltage_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_voltage(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(26, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_cooling_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_cooling_status(i);
+      n = static_cast<unsigned>(this->_internal_lv_total_voltage_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_total_voltage(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(27, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 28;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_radiator_speed_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_radiator_speed(i);
+      n = static_cast<unsigned>(this->_internal_lv_temperature_size()); i < n; i++) {
+    const auto& repfield = this->_internal_lv_temperature(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(28, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 29;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_pumps_power_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_pumps_power(i);
+      n = static_cast<unsigned>(this->_internal_cooling_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_cooling_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(29, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.MARKER MARKER = 30;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_marker_size()); i < n; i++) {
-    const auto& repfield = this->_internal_marker(i);
+      n = static_cast<unsigned>(this->_internal_set_radiator_speed_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_radiator_speed(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(30, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 31;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cells_voltage_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cells_voltage(i);
+      n = static_cast<unsigned>(this->_internal_set_pumps_power_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_pumps_power(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(31, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+  // repeated .primary.MARKER MARKER = 32;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cells_temp_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cells_temp(i);
+      n = static_cast<unsigned>(this->_internal_marker_size()); i < n; i++) {
+    const auto& repfield = this->_internal_marker(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(32, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_cell_balancing_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_cell_balancing_status(i);
+      n = static_cast<unsigned>(this->_internal_hv_cells_voltage_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cells_voltage(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(33, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 34;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_set_cell_balancing_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_set_cell_balancing_status(i);
+      n = static_cast<unsigned>(this->_internal_hv_cells_temp_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cells_temp(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(34, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_handcart_status_size()); i < n; i++) {
-    const auto& repfield = this->_internal_handcart_status(i);
+      n = static_cast<unsigned>(this->_internal_hv_cell_balancing_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_cell_balancing_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(35, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.SPEED SPEED = 36;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_speed_size()); i < n; i++) {
-    const auto& repfield = this->_internal_speed(i);
+      n = static_cast<unsigned>(this->_internal_set_cell_balancing_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_set_cell_balancing_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(36, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 37;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_inv_l_set_torque_size()); i < n; i++) {
-    const auto& repfield = this->_internal_inv_l_set_torque(i);
+      n = static_cast<unsigned>(this->_internal_handcart_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_handcart_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(37, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
+  // repeated .primary.SPEED SPEED = 38;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_speed_size()); i < n; i++) {
+    const auto& repfield = this->_internal_speed(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(38, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_inv_l_set_torque_size()); i < n; i++) {
+    const auto& repfield = this->_internal_inv_l_set_torque(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(39, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 40;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_inv_l_response_size()); i < n; i++) {
     const auto& repfield = this->_internal_inv_l_response(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(38, repfield, repfield.GetCachedSize(), target, stream);
+        InternalWriteMessage(40, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -11538,175 +12061,189 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.TS_STATUS TS_STATUS = 14;
-  total_size += 1UL * this->_internal_ts_status_size();
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 14;
+  total_size += 1UL * this->_internal_hv_can_forward_size();
+  for (const auto& msg : this->hv_can_forward_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
+  total_size += 1UL * this->_internal_hv_can_forward_status_size();
+  for (const auto& msg : this->hv_can_forward_status_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.TS_STATUS TS_STATUS = 16;
+  total_size += 2UL * this->_internal_ts_status_size();
   for (const auto& msg : this->ts_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
-  total_size += 1UL * this->_internal_set_ts_status_das_size();
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
+  total_size += 2UL * this->_internal_set_ts_status_das_size();
   for (const auto& msg : this->set_ts_status_das_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
   total_size += 2UL * this->_internal_set_ts_status_handcart_size();
   for (const auto& msg : this->set_ts_status_handcart_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 17;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 19;
   total_size += 2UL * this->_internal_steer_status_size();
   for (const auto& msg : this->steer_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 18;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 20;
   total_size += 2UL * this->_internal_set_car_status_size();
   for (const auto& msg : this->set_car_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
   total_size += 2UL * this->_internal_set_pedals_range_size();
   for (const auto& msg : this->set_pedals_range_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
   total_size += 2UL * this->_internal_set_steering_angle_range_size();
   for (const auto& msg : this->set_steering_angle_range_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 21;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 23;
   total_size += 2UL * this->_internal_car_status_size();
   for (const auto& msg : this->car_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 24;
   total_size += 2UL * this->_internal_das_errors_size();
   for (const auto& msg : this->das_errors_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 23;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 25;
   total_size += 2UL * this->_internal_lv_current_size();
   for (const auto& msg : this->lv_current_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 26;
   total_size += 2UL * this->_internal_lv_voltage_size();
   for (const auto& msg : this->lv_voltage_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
   total_size += 2UL * this->_internal_lv_total_voltage_size();
   for (const auto& msg : this->lv_total_voltage_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 28;
   total_size += 2UL * this->_internal_lv_temperature_size();
   for (const auto& msg : this->lv_temperature_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 29;
   total_size += 2UL * this->_internal_cooling_status_size();
   for (const auto& msg : this->cooling_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
   total_size += 2UL * this->_internal_set_radiator_speed_size();
   for (const auto& msg : this->set_radiator_speed_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 31;
   total_size += 2UL * this->_internal_set_pumps_power_size();
   for (const auto& msg : this->set_pumps_power_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.MARKER MARKER = 30;
+  // repeated .primary.MARKER MARKER = 32;
   total_size += 2UL * this->_internal_marker_size();
   for (const auto& msg : this->marker_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
   total_size += 2UL * this->_internal_hv_cells_voltage_size();
   for (const auto& msg : this->hv_cells_voltage_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 34;
   total_size += 2UL * this->_internal_hv_cells_temp_size();
   for (const auto& msg : this->hv_cells_temp_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
   total_size += 2UL * this->_internal_hv_cell_balancing_status_size();
   for (const auto& msg : this->hv_cell_balancing_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
   total_size += 2UL * this->_internal_set_cell_balancing_status_size();
   for (const auto& msg : this->set_cell_balancing_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 37;
   total_size += 2UL * this->_internal_handcart_status_size();
   for (const auto& msg : this->handcart_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.SPEED SPEED = 36;
+  // repeated .primary.SPEED SPEED = 38;
   total_size += 2UL * this->_internal_speed_size();
   for (const auto& msg : this->speed_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
   total_size += 2UL * this->_internal_inv_l_set_torque_size();
   for (const auto& msg : this->inv_l_set_torque_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 40;
   total_size += 2UL * this->_internal_inv_l_response_size();
   for (const auto& msg : this->inv_l_response_) {
     total_size +=
@@ -11748,6 +12285,8 @@ void Pack::MergeFrom(const Pack& from) {
   hv_current_.MergeFrom(from.hv_current_);
   hv_temp_.MergeFrom(from.hv_temp_);
   hv_errors_.MergeFrom(from.hv_errors_);
+  hv_can_forward_.MergeFrom(from.hv_can_forward_);
+  hv_can_forward_status_.MergeFrom(from.hv_can_forward_status_);
   ts_status_.MergeFrom(from.ts_status_);
   set_ts_status_das_.MergeFrom(from.set_ts_status_das_);
   set_ts_status_handcart_.MergeFrom(from.set_ts_status_handcart_);
@@ -11803,6 +12342,8 @@ void Pack::InternalSwap(Pack* other) {
   hv_current_.InternalSwap(&other->hv_current_);
   hv_temp_.InternalSwap(&other->hv_temp_);
   hv_errors_.InternalSwap(&other->hv_errors_);
+  hv_can_forward_.InternalSwap(&other->hv_can_forward_);
+  hv_can_forward_status_.InternalSwap(&other->hv_can_forward_status_);
   ts_status_.InternalSwap(&other->ts_status_);
   set_ts_status_das_.InternalSwap(&other->set_ts_status_das_);
   set_ts_status_handcart_.InternalSwap(&other->set_ts_status_handcart_);
@@ -11833,7 +12374,7 @@ void Pack::InternalSwap(Pack* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Pack::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[38]);
+      file_level_metadata_primary_2eproto[40]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -11890,6 +12431,14 @@ Arena::CreateMaybeMessage< ::primary::HV_TEMP >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::primary::HV_ERRORS*
 Arena::CreateMaybeMessage< ::primary::HV_ERRORS >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::HV_ERRORS >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::HV_CAN_FORWARD*
+Arena::CreateMaybeMessage< ::primary::HV_CAN_FORWARD >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::HV_CAN_FORWARD >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::HV_CAN_FORWARD_STATUS*
+Arena::CreateMaybeMessage< ::primary::HV_CAN_FORWARD_STATUS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::HV_CAN_FORWARD_STATUS >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::TS_STATUS*
 Arena::CreateMaybeMessage< ::primary::TS_STATUS >(Arena* arena) {

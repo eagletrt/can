@@ -61,6 +61,12 @@ extern DAS_VERSIONDefaultTypeInternal _DAS_VERSION_default_instance_;
 class HANDCART_STATUS;
 struct HANDCART_STATUSDefaultTypeInternal;
 extern HANDCART_STATUSDefaultTypeInternal _HANDCART_STATUS_default_instance_;
+class HV_CAN_FORWARD;
+struct HV_CAN_FORWARDDefaultTypeInternal;
+extern HV_CAN_FORWARDDefaultTypeInternal _HV_CAN_FORWARD_default_instance_;
+class HV_CAN_FORWARD_STATUS;
+struct HV_CAN_FORWARD_STATUSDefaultTypeInternal;
+extern HV_CAN_FORWARD_STATUSDefaultTypeInternal _HV_CAN_FORWARD_STATUS_default_instance_;
 class HV_CELLS_TEMP;
 struct HV_CELLS_TEMPDefaultTypeInternal;
 extern HV_CELLS_TEMPDefaultTypeInternal _HV_CELLS_TEMP_default_instance_;
@@ -170,6 +176,8 @@ template<> ::primary::COOLING_STATUS* Arena::CreateMaybeMessage<::primary::COOLI
 template<> ::primary::DAS_ERRORS* Arena::CreateMaybeMessage<::primary::DAS_ERRORS>(Arena*);
 template<> ::primary::DAS_VERSION* Arena::CreateMaybeMessage<::primary::DAS_VERSION>(Arena*);
 template<> ::primary::HANDCART_STATUS* Arena::CreateMaybeMessage<::primary::HANDCART_STATUS>(Arena*);
+template<> ::primary::HV_CAN_FORWARD* Arena::CreateMaybeMessage<::primary::HV_CAN_FORWARD>(Arena*);
+template<> ::primary::HV_CAN_FORWARD_STATUS* Arena::CreateMaybeMessage<::primary::HV_CAN_FORWARD_STATUS>(Arena*);
 template<> ::primary::HV_CELLS_TEMP* Arena::CreateMaybeMessage<::primary::HV_CELLS_TEMP>(Arena*);
 template<> ::primary::HV_CELLS_VOLTAGE* Arena::CreateMaybeMessage<::primary::HV_CELLS_VOLTAGE>(Arena*);
 template<> ::primary::HV_CELL_BALANCING_STATUS* Arena::CreateMaybeMessage<::primary::HV_CELL_BALANCING_STATUS>(Arena*);
@@ -2698,6 +2706,314 @@ class HV_ERRORS final :
 };
 // -------------------------------------------------------------------
 
+class HV_CAN_FORWARD final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.HV_CAN_FORWARD) */ {
+ public:
+  inline HV_CAN_FORWARD() : HV_CAN_FORWARD(nullptr) {}
+  ~HV_CAN_FORWARD() override;
+  explicit PROTOBUF_CONSTEXPR HV_CAN_FORWARD(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HV_CAN_FORWARD(const HV_CAN_FORWARD& from);
+  HV_CAN_FORWARD(HV_CAN_FORWARD&& from) noexcept
+    : HV_CAN_FORWARD() {
+    *this = ::std::move(from);
+  }
+
+  inline HV_CAN_FORWARD& operator=(const HV_CAN_FORWARD& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HV_CAN_FORWARD& operator=(HV_CAN_FORWARD&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HV_CAN_FORWARD& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HV_CAN_FORWARD* internal_default_instance() {
+    return reinterpret_cast<const HV_CAN_FORWARD*>(
+               &_HV_CAN_FORWARD_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(HV_CAN_FORWARD& a, HV_CAN_FORWARD& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HV_CAN_FORWARD* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HV_CAN_FORWARD* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HV_CAN_FORWARD* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HV_CAN_FORWARD>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HV_CAN_FORWARD& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const HV_CAN_FORWARD& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HV_CAN_FORWARD* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.HV_CAN_FORWARD";
+  }
+  protected:
+  explicit HV_CAN_FORWARD(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 2,
+    kCanForwardSetFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 2;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // .primary.Toggle can_forward_set = 1;
+  void clear_can_forward_set();
+  ::primary::Toggle can_forward_set() const;
+  void set_can_forward_set(::primary::Toggle value);
+  private:
+  ::primary::Toggle _internal_can_forward_set() const;
+  void _internal_set_can_forward_set(::primary::Toggle value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.HV_CAN_FORWARD)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  int can_forward_set_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HV_CAN_FORWARD_STATUS final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.HV_CAN_FORWARD_STATUS) */ {
+ public:
+  inline HV_CAN_FORWARD_STATUS() : HV_CAN_FORWARD_STATUS(nullptr) {}
+  ~HV_CAN_FORWARD_STATUS() override;
+  explicit PROTOBUF_CONSTEXPR HV_CAN_FORWARD_STATUS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HV_CAN_FORWARD_STATUS(const HV_CAN_FORWARD_STATUS& from);
+  HV_CAN_FORWARD_STATUS(HV_CAN_FORWARD_STATUS&& from) noexcept
+    : HV_CAN_FORWARD_STATUS() {
+    *this = ::std::move(from);
+  }
+
+  inline HV_CAN_FORWARD_STATUS& operator=(const HV_CAN_FORWARD_STATUS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HV_CAN_FORWARD_STATUS& operator=(HV_CAN_FORWARD_STATUS&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HV_CAN_FORWARD_STATUS& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HV_CAN_FORWARD_STATUS* internal_default_instance() {
+    return reinterpret_cast<const HV_CAN_FORWARD_STATUS*>(
+               &_HV_CAN_FORWARD_STATUS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(HV_CAN_FORWARD_STATUS& a, HV_CAN_FORWARD_STATUS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HV_CAN_FORWARD_STATUS* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HV_CAN_FORWARD_STATUS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HV_CAN_FORWARD_STATUS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HV_CAN_FORWARD_STATUS>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HV_CAN_FORWARD_STATUS& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const HV_CAN_FORWARD_STATUS& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HV_CAN_FORWARD_STATUS* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.HV_CAN_FORWARD_STATUS";
+  }
+  protected:
+  explicit HV_CAN_FORWARD_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 2,
+    kCanForwardStatusFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 2;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // .primary.Toggle can_forward_status = 1;
+  void clear_can_forward_status();
+  ::primary::Toggle can_forward_status() const;
+  void set_can_forward_status(::primary::Toggle value);
+  private:
+  ::primary::Toggle _internal_can_forward_status() const;
+  void _internal_set_can_forward_status(::primary::Toggle value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.HV_CAN_FORWARD_STATUS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  int can_forward_status_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TS_STATUS final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.TS_STATUS) */ {
  public:
@@ -2746,7 +3062,7 @@ class TS_STATUS final :
                &_TS_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(TS_STATUS& a, TS_STATUS& b) {
     a.Swap(&b);
@@ -2900,7 +3216,7 @@ class SET_TS_STATUS_DAS final :
                &_SET_TS_STATUS_DAS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(SET_TS_STATUS_DAS& a, SET_TS_STATUS_DAS& b) {
     a.Swap(&b);
@@ -3054,7 +3370,7 @@ class SET_TS_STATUS_HANDCART final :
                &_SET_TS_STATUS_HANDCART_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(SET_TS_STATUS_HANDCART& a, SET_TS_STATUS_HANDCART& b) {
     a.Swap(&b);
@@ -3208,7 +3524,7 @@ class STEER_STATUS final :
                &_STEER_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(STEER_STATUS& a, STEER_STATUS& b) {
     a.Swap(&b);
@@ -3373,7 +3689,7 @@ class SET_CAR_STATUS final :
                &_SET_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(SET_CAR_STATUS& a, SET_CAR_STATUS& b) {
     a.Swap(&b);
@@ -3527,7 +3843,7 @@ class SET_PEDALS_RANGE final :
                &_SET_PEDALS_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(SET_PEDALS_RANGE& a, SET_PEDALS_RANGE& b) {
     a.Swap(&b);
@@ -3692,7 +4008,7 @@ class SET_STEERING_ANGLE_RANGE final :
                &_SET_STEERING_ANGLE_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(SET_STEERING_ANGLE_RANGE& a, SET_STEERING_ANGLE_RANGE& b) {
     a.Swap(&b);
@@ -3846,7 +4162,7 @@ class CAR_STATUS final :
                &_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(CAR_STATUS& a, CAR_STATUS& b) {
     a.Swap(&b);
@@ -4022,7 +4338,7 @@ class DAS_ERRORS final :
                &_DAS_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(DAS_ERRORS& a, DAS_ERRORS& b) {
     a.Swap(&b);
@@ -4176,7 +4492,7 @@ class LV_CURRENT final :
                &_LV_CURRENT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(LV_CURRENT& a, LV_CURRENT& b) {
     a.Swap(&b);
@@ -4330,7 +4646,7 @@ class LV_VOLTAGE final :
                &_LV_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(LV_VOLTAGE& a, LV_VOLTAGE& b) {
     a.Swap(&b);
@@ -4517,7 +4833,7 @@ class LV_TOTAL_VOLTAGE final :
                &_LV_TOTAL_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(LV_TOTAL_VOLTAGE& a, LV_TOTAL_VOLTAGE& b) {
     a.Swap(&b);
@@ -4671,7 +4987,7 @@ class LV_TEMPERATURE final :
                &_LV_TEMPERATURE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(LV_TEMPERATURE& a, LV_TEMPERATURE& b) {
     a.Swap(&b);
@@ -4858,7 +5174,7 @@ class COOLING_STATUS final :
                &_COOLING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(COOLING_STATUS& a, COOLING_STATUS& b) {
     a.Swap(&b);
@@ -5034,7 +5350,7 @@ class SET_RADIATOR_SPEED final :
                &_SET_RADIATOR_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(SET_RADIATOR_SPEED& a, SET_RADIATOR_SPEED& b) {
     a.Swap(&b);
@@ -5188,7 +5504,7 @@ class SET_PUMPS_POWER final :
                &_SET_PUMPS_POWER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(SET_PUMPS_POWER& a, SET_PUMPS_POWER& b) {
     a.Swap(&b);
@@ -5342,7 +5658,7 @@ class MARKER final :
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(MARKER& a, MARKER& b) {
     a.Swap(&b);
@@ -5485,7 +5801,7 @@ class HV_CELLS_VOLTAGE final :
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
     a.Swap(&b);
@@ -5672,7 +5988,7 @@ class HV_CELLS_TEMP final :
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
     a.Swap(&b);
@@ -5903,7 +6219,7 @@ class HV_CELL_BALANCING_STATUS final :
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -6057,7 +6373,7 @@ class SET_CELL_BALANCING_STATUS final :
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -6211,7 +6527,7 @@ class HANDCART_STATUS final :
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
     a.Swap(&b);
@@ -6365,7 +6681,7 @@ class SPEED final :
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(SPEED& a, SPEED& b) {
     a.Swap(&b);
@@ -6552,7 +6868,7 @@ class INV_L_SET_TORQUE final :
                &_INV_L_SET_TORQUE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(INV_L_SET_TORQUE& a, INV_L_SET_TORQUE& b) {
     a.Swap(&b);
@@ -6728,7 +7044,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -6959,7 +7275,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -7043,31 +7359,33 @@ class Pack final :
     kHVCURRENTFieldNumber = 11,
     kHVTEMPFieldNumber = 12,
     kHVERRORSFieldNumber = 13,
-    kTSSTATUSFieldNumber = 14,
-    kSETTSSTATUSDASFieldNumber = 15,
-    kSETTSSTATUSHANDCARTFieldNumber = 16,
-    kSTEERSTATUSFieldNumber = 17,
-    kSETCARSTATUSFieldNumber = 18,
-    kSETPEDALSRANGEFieldNumber = 19,
-    kSETSTEERINGANGLERANGEFieldNumber = 20,
-    kCARSTATUSFieldNumber = 21,
-    kDASERRORSFieldNumber = 22,
-    kLVCURRENTFieldNumber = 23,
-    kLVVOLTAGEFieldNumber = 24,
-    kLVTOTALVOLTAGEFieldNumber = 25,
-    kLVTEMPERATUREFieldNumber = 26,
-    kCOOLINGSTATUSFieldNumber = 27,
-    kSETRADIATORSPEEDFieldNumber = 28,
-    kSETPUMPSPOWERFieldNumber = 29,
-    kMARKERFieldNumber = 30,
-    kHVCELLSVOLTAGEFieldNumber = 31,
-    kHVCELLSTEMPFieldNumber = 32,
-    kHVCELLBALANCINGSTATUSFieldNumber = 33,
-    kSETCELLBALANCINGSTATUSFieldNumber = 34,
-    kHANDCARTSTATUSFieldNumber = 35,
-    kSPEEDFieldNumber = 36,
-    kINVLSETTORQUEFieldNumber = 37,
-    kINVLRESPONSEFieldNumber = 38,
+    kHVCANFORWARDFieldNumber = 14,
+    kHVCANFORWARDSTATUSFieldNumber = 15,
+    kTSSTATUSFieldNumber = 16,
+    kSETTSSTATUSDASFieldNumber = 17,
+    kSETTSSTATUSHANDCARTFieldNumber = 18,
+    kSTEERSTATUSFieldNumber = 19,
+    kSETCARSTATUSFieldNumber = 20,
+    kSETPEDALSRANGEFieldNumber = 21,
+    kSETSTEERINGANGLERANGEFieldNumber = 22,
+    kCARSTATUSFieldNumber = 23,
+    kDASERRORSFieldNumber = 24,
+    kLVCURRENTFieldNumber = 25,
+    kLVVOLTAGEFieldNumber = 26,
+    kLVTOTALVOLTAGEFieldNumber = 27,
+    kLVTEMPERATUREFieldNumber = 28,
+    kCOOLINGSTATUSFieldNumber = 29,
+    kSETRADIATORSPEEDFieldNumber = 30,
+    kSETPUMPSPOWERFieldNumber = 31,
+    kMARKERFieldNumber = 32,
+    kHVCELLSVOLTAGEFieldNumber = 33,
+    kHVCELLSTEMPFieldNumber = 34,
+    kHVCELLBALANCINGSTATUSFieldNumber = 35,
+    kSETCELLBALANCINGSTATUSFieldNumber = 36,
+    kHANDCARTSTATUSFieldNumber = 37,
+    kSPEEDFieldNumber = 38,
+    kINVLSETTORQUEFieldNumber = 39,
+    kINVLRESPONSEFieldNumber = 40,
   };
   // repeated .primary.STEER_VERSION STEER_VERSION = 1;
   int steer_version_size() const;
@@ -7303,7 +7621,43 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_ERRORS >&
       hv_errors() const;
 
-  // repeated .primary.TS_STATUS TS_STATUS = 14;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 14;
+  int hv_can_forward_size() const;
+  private:
+  int _internal_hv_can_forward_size() const;
+  public:
+  void clear_hv_can_forward();
+  ::primary::HV_CAN_FORWARD* mutable_hv_can_forward(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD >*
+      mutable_hv_can_forward();
+  private:
+  const ::primary::HV_CAN_FORWARD& _internal_hv_can_forward(int index) const;
+  ::primary::HV_CAN_FORWARD* _internal_add_hv_can_forward();
+  public:
+  const ::primary::HV_CAN_FORWARD& hv_can_forward(int index) const;
+  ::primary::HV_CAN_FORWARD* add_hv_can_forward();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD >&
+      hv_can_forward() const;
+
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
+  int hv_can_forward_status_size() const;
+  private:
+  int _internal_hv_can_forward_status_size() const;
+  public:
+  void clear_hv_can_forward_status();
+  ::primary::HV_CAN_FORWARD_STATUS* mutable_hv_can_forward_status(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >*
+      mutable_hv_can_forward_status();
+  private:
+  const ::primary::HV_CAN_FORWARD_STATUS& _internal_hv_can_forward_status(int index) const;
+  ::primary::HV_CAN_FORWARD_STATUS* _internal_add_hv_can_forward_status();
+  public:
+  const ::primary::HV_CAN_FORWARD_STATUS& hv_can_forward_status(int index) const;
+  ::primary::HV_CAN_FORWARD_STATUS* add_hv_can_forward_status();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >&
+      hv_can_forward_status() const;
+
+  // repeated .primary.TS_STATUS TS_STATUS = 16;
   int ts_status_size() const;
   private:
   int _internal_ts_status_size() const;
@@ -7321,7 +7675,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::TS_STATUS >&
       ts_status() const;
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
   int set_ts_status_das_size() const;
   private:
   int _internal_set_ts_status_das_size() const;
@@ -7339,7 +7693,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS >&
       set_ts_status_das() const;
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
   int set_ts_status_handcart_size() const;
   private:
   int _internal_set_ts_status_handcart_size() const;
@@ -7357,7 +7711,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART >&
       set_ts_status_handcart() const;
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 17;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 19;
   int steer_status_size() const;
   private:
   int _internal_steer_status_size() const;
@@ -7375,7 +7729,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::STEER_STATUS >&
       steer_status() const;
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 18;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 20;
   int set_car_status_size() const;
   private:
   int _internal_set_car_status_size() const;
@@ -7393,7 +7747,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CAR_STATUS >&
       set_car_status() const;
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
   int set_pedals_range_size() const;
   private:
   int _internal_set_pedals_range_size() const;
@@ -7411,7 +7765,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PEDALS_RANGE >&
       set_pedals_range() const;
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
   int set_steering_angle_range_size() const;
   private:
   int _internal_set_steering_angle_range_size() const;
@@ -7429,7 +7783,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >&
       set_steering_angle_range() const;
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 21;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 23;
   int car_status_size() const;
   private:
   int _internal_car_status_size() const;
@@ -7447,7 +7801,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CAR_STATUS >&
       car_status() const;
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 24;
   int das_errors_size() const;
   private:
   int _internal_das_errors_size() const;
@@ -7465,7 +7819,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::DAS_ERRORS >&
       das_errors() const;
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 23;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 25;
   int lv_current_size() const;
   private:
   int _internal_lv_current_size() const;
@@ -7483,7 +7837,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_CURRENT >&
       lv_current() const;
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 26;
   int lv_voltage_size() const;
   private:
   int _internal_lv_voltage_size() const;
@@ -7501,7 +7855,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_VOLTAGE >&
       lv_voltage() const;
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
   int lv_total_voltage_size() const;
   private:
   int _internal_lv_total_voltage_size() const;
@@ -7519,7 +7873,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE >&
       lv_total_voltage() const;
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 28;
   int lv_temperature_size() const;
   private:
   int _internal_lv_temperature_size() const;
@@ -7537,7 +7891,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TEMPERATURE >&
       lv_temperature() const;
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 29;
   int cooling_status_size() const;
   private:
   int _internal_cooling_status_size() const;
@@ -7555,7 +7909,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::COOLING_STATUS >&
       cooling_status() const;
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
   int set_radiator_speed_size() const;
   private:
   int _internal_set_radiator_speed_size() const;
@@ -7573,7 +7927,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
       set_radiator_speed() const;
 
-  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+  // repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 31;
   int set_pumps_power_size() const;
   private:
   int _internal_set_pumps_power_size() const;
@@ -7591,7 +7945,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_POWER >&
       set_pumps_power() const;
 
-  // repeated .primary.MARKER MARKER = 30;
+  // repeated .primary.MARKER MARKER = 32;
   int marker_size() const;
   private:
   int _internal_marker_size() const;
@@ -7609,7 +7963,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
   int hv_cells_voltage_size() const;
   private:
   int _internal_hv_cells_voltage_size() const;
@@ -7627,7 +7981,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 34;
   int hv_cells_temp_size() const;
   private:
   int _internal_hv_cells_temp_size() const;
@@ -7645,7 +7999,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
   int hv_cell_balancing_status_size() const;
   private:
   int _internal_hv_cell_balancing_status_size() const;
@@ -7663,7 +8017,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
   int set_cell_balancing_status_size() const;
   private:
   int _internal_set_cell_balancing_status_size() const;
@@ -7681,7 +8035,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 37;
   int handcart_status_size() const;
   private:
   int _internal_handcart_status_size() const;
@@ -7699,7 +8053,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 36;
+  // repeated .primary.SPEED SPEED = 38;
   int speed_size() const;
   private:
   int _internal_speed_size() const;
@@ -7717,7 +8071,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+  // repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
   int inv_l_set_torque_size() const;
   private:
   int _internal_inv_l_set_torque_size() const;
@@ -7735,7 +8089,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_SET_TORQUE >&
       inv_l_set_torque() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 40;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -7773,6 +8127,8 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CURRENT > hv_current_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_TEMP > hv_temp_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_ERRORS > hv_errors_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD > hv_can_forward_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS > hv_can_forward_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::TS_STATUS > ts_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS > set_ts_status_das_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART > set_ts_status_handcart_;
@@ -8738,6 +9094,94 @@ inline void HV_ERRORS::_internal_set__inner_timestamp(uint64_t value) {
 inline void HV_ERRORS::set__inner_timestamp(uint64_t value) {
   _internal_set__inner_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.HV_ERRORS._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// HV_CAN_FORWARD
+
+// .primary.Toggle can_forward_set = 1;
+inline void HV_CAN_FORWARD::clear_can_forward_set() {
+  can_forward_set_ = 0;
+}
+inline ::primary::Toggle HV_CAN_FORWARD::_internal_can_forward_set() const {
+  return static_cast< ::primary::Toggle >(can_forward_set_);
+}
+inline ::primary::Toggle HV_CAN_FORWARD::can_forward_set() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CAN_FORWARD.can_forward_set)
+  return _internal_can_forward_set();
+}
+inline void HV_CAN_FORWARD::_internal_set_can_forward_set(::primary::Toggle value) {
+  
+  can_forward_set_ = value;
+}
+inline void HV_CAN_FORWARD::set_can_forward_set(::primary::Toggle value) {
+  _internal_set_can_forward_set(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CAN_FORWARD.can_forward_set)
+}
+
+// uint64 _inner_timestamp = 2;
+inline void HV_CAN_FORWARD::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t HV_CAN_FORWARD::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t HV_CAN_FORWARD::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CAN_FORWARD._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void HV_CAN_FORWARD::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void HV_CAN_FORWARD::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CAN_FORWARD._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// HV_CAN_FORWARD_STATUS
+
+// .primary.Toggle can_forward_status = 1;
+inline void HV_CAN_FORWARD_STATUS::clear_can_forward_status() {
+  can_forward_status_ = 0;
+}
+inline ::primary::Toggle HV_CAN_FORWARD_STATUS::_internal_can_forward_status() const {
+  return static_cast< ::primary::Toggle >(can_forward_status_);
+}
+inline ::primary::Toggle HV_CAN_FORWARD_STATUS::can_forward_status() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CAN_FORWARD_STATUS.can_forward_status)
+  return _internal_can_forward_status();
+}
+inline void HV_CAN_FORWARD_STATUS::_internal_set_can_forward_status(::primary::Toggle value) {
+  
+  can_forward_status_ = value;
+}
+inline void HV_CAN_FORWARD_STATUS::set_can_forward_status(::primary::Toggle value) {
+  _internal_set_can_forward_status(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CAN_FORWARD_STATUS.can_forward_status)
+}
+
+// uint64 _inner_timestamp = 2;
+inline void HV_CAN_FORWARD_STATUS::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t HV_CAN_FORWARD_STATUS::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t HV_CAN_FORWARD_STATUS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CAN_FORWARD_STATUS._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void HV_CAN_FORWARD_STATUS::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void HV_CAN_FORWARD_STATUS::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CAN_FORWARD_STATUS._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -11024,7 +11468,87 @@ Pack::hv_errors() const {
   return hv_errors_;
 }
 
-// repeated .primary.TS_STATUS TS_STATUS = 14;
+// repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 14;
+inline int Pack::_internal_hv_can_forward_size() const {
+  return hv_can_forward_.size();
+}
+inline int Pack::hv_can_forward_size() const {
+  return _internal_hv_can_forward_size();
+}
+inline void Pack::clear_hv_can_forward() {
+  hv_can_forward_.Clear();
+}
+inline ::primary::HV_CAN_FORWARD* Pack::mutable_hv_can_forward(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.HV_CAN_FORWARD)
+  return hv_can_forward_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD >*
+Pack::mutable_hv_can_forward() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.HV_CAN_FORWARD)
+  return &hv_can_forward_;
+}
+inline const ::primary::HV_CAN_FORWARD& Pack::_internal_hv_can_forward(int index) const {
+  return hv_can_forward_.Get(index);
+}
+inline const ::primary::HV_CAN_FORWARD& Pack::hv_can_forward(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.HV_CAN_FORWARD)
+  return _internal_hv_can_forward(index);
+}
+inline ::primary::HV_CAN_FORWARD* Pack::_internal_add_hv_can_forward() {
+  return hv_can_forward_.Add();
+}
+inline ::primary::HV_CAN_FORWARD* Pack::add_hv_can_forward() {
+  ::primary::HV_CAN_FORWARD* _add = _internal_add_hv_can_forward();
+  // @@protoc_insertion_point(field_add:primary.Pack.HV_CAN_FORWARD)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD >&
+Pack::hv_can_forward() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.HV_CAN_FORWARD)
+  return hv_can_forward_;
+}
+
+// repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
+inline int Pack::_internal_hv_can_forward_status_size() const {
+  return hv_can_forward_status_.size();
+}
+inline int Pack::hv_can_forward_status_size() const {
+  return _internal_hv_can_forward_status_size();
+}
+inline void Pack::clear_hv_can_forward_status() {
+  hv_can_forward_status_.Clear();
+}
+inline ::primary::HV_CAN_FORWARD_STATUS* Pack::mutable_hv_can_forward_status(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.HV_CAN_FORWARD_STATUS)
+  return hv_can_forward_status_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >*
+Pack::mutable_hv_can_forward_status() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.HV_CAN_FORWARD_STATUS)
+  return &hv_can_forward_status_;
+}
+inline const ::primary::HV_CAN_FORWARD_STATUS& Pack::_internal_hv_can_forward_status(int index) const {
+  return hv_can_forward_status_.Get(index);
+}
+inline const ::primary::HV_CAN_FORWARD_STATUS& Pack::hv_can_forward_status(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.HV_CAN_FORWARD_STATUS)
+  return _internal_hv_can_forward_status(index);
+}
+inline ::primary::HV_CAN_FORWARD_STATUS* Pack::_internal_add_hv_can_forward_status() {
+  return hv_can_forward_status_.Add();
+}
+inline ::primary::HV_CAN_FORWARD_STATUS* Pack::add_hv_can_forward_status() {
+  ::primary::HV_CAN_FORWARD_STATUS* _add = _internal_add_hv_can_forward_status();
+  // @@protoc_insertion_point(field_add:primary.Pack.HV_CAN_FORWARD_STATUS)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >&
+Pack::hv_can_forward_status() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.HV_CAN_FORWARD_STATUS)
+  return hv_can_forward_status_;
+}
+
+// repeated .primary.TS_STATUS TS_STATUS = 16;
 inline int Pack::_internal_ts_status_size() const {
   return ts_status_.size();
 }
@@ -11064,7 +11588,7 @@ Pack::ts_status() const {
   return ts_status_;
 }
 
-// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
+// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
 inline int Pack::_internal_set_ts_status_das_size() const {
   return set_ts_status_das_.size();
 }
@@ -11104,7 +11628,7 @@ Pack::set_ts_status_das() const {
   return set_ts_status_das_;
 }
 
-// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
+// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
 inline int Pack::_internal_set_ts_status_handcart_size() const {
   return set_ts_status_handcart_.size();
 }
@@ -11144,7 +11668,7 @@ Pack::set_ts_status_handcart() const {
   return set_ts_status_handcart_;
 }
 
-// repeated .primary.STEER_STATUS STEER_STATUS = 17;
+// repeated .primary.STEER_STATUS STEER_STATUS = 19;
 inline int Pack::_internal_steer_status_size() const {
   return steer_status_.size();
 }
@@ -11184,7 +11708,7 @@ Pack::steer_status() const {
   return steer_status_;
 }
 
-// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 18;
+// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 20;
 inline int Pack::_internal_set_car_status_size() const {
   return set_car_status_.size();
 }
@@ -11224,7 +11748,7 @@ Pack::set_car_status() const {
   return set_car_status_;
 }
 
-// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
+// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
 inline int Pack::_internal_set_pedals_range_size() const {
   return set_pedals_range_.size();
 }
@@ -11264,7 +11788,7 @@ Pack::set_pedals_range() const {
   return set_pedals_range_;
 }
 
-// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
+// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
 inline int Pack::_internal_set_steering_angle_range_size() const {
   return set_steering_angle_range_.size();
 }
@@ -11304,7 +11828,7 @@ Pack::set_steering_angle_range() const {
   return set_steering_angle_range_;
 }
 
-// repeated .primary.CAR_STATUS CAR_STATUS = 21;
+// repeated .primary.CAR_STATUS CAR_STATUS = 23;
 inline int Pack::_internal_car_status_size() const {
   return car_status_.size();
 }
@@ -11344,7 +11868,7 @@ Pack::car_status() const {
   return car_status_;
 }
 
-// repeated .primary.DAS_ERRORS DAS_ERRORS = 22;
+// repeated .primary.DAS_ERRORS DAS_ERRORS = 24;
 inline int Pack::_internal_das_errors_size() const {
   return das_errors_.size();
 }
@@ -11384,7 +11908,7 @@ Pack::das_errors() const {
   return das_errors_;
 }
 
-// repeated .primary.LV_CURRENT LV_CURRENT = 23;
+// repeated .primary.LV_CURRENT LV_CURRENT = 25;
 inline int Pack::_internal_lv_current_size() const {
   return lv_current_.size();
 }
@@ -11424,7 +11948,7 @@ Pack::lv_current() const {
   return lv_current_;
 }
 
-// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 24;
+// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 26;
 inline int Pack::_internal_lv_voltage_size() const {
   return lv_voltage_.size();
 }
@@ -11464,7 +11988,7 @@ Pack::lv_voltage() const {
   return lv_voltage_;
 }
 
-// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
+// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
 inline int Pack::_internal_lv_total_voltage_size() const {
   return lv_total_voltage_.size();
 }
@@ -11504,7 +12028,7 @@ Pack::lv_total_voltage() const {
   return lv_total_voltage_;
 }
 
-// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 26;
+// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 28;
 inline int Pack::_internal_lv_temperature_size() const {
   return lv_temperature_.size();
 }
@@ -11544,7 +12068,7 @@ Pack::lv_temperature() const {
   return lv_temperature_;
 }
 
-// repeated .primary.COOLING_STATUS COOLING_STATUS = 27;
+// repeated .primary.COOLING_STATUS COOLING_STATUS = 29;
 inline int Pack::_internal_cooling_status_size() const {
   return cooling_status_.size();
 }
@@ -11584,7 +12108,7 @@ Pack::cooling_status() const {
   return cooling_status_;
 }
 
-// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
+// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
 inline int Pack::_internal_set_radiator_speed_size() const {
   return set_radiator_speed_.size();
 }
@@ -11624,7 +12148,7 @@ Pack::set_radiator_speed() const {
   return set_radiator_speed_;
 }
 
-// repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 29;
+// repeated .primary.SET_PUMPS_POWER SET_PUMPS_POWER = 31;
 inline int Pack::_internal_set_pumps_power_size() const {
   return set_pumps_power_.size();
 }
@@ -11664,7 +12188,7 @@ Pack::set_pumps_power() const {
   return set_pumps_power_;
 }
 
-// repeated .primary.MARKER MARKER = 30;
+// repeated .primary.MARKER MARKER = 32;
 inline int Pack::_internal_marker_size() const {
   return marker_.size();
 }
@@ -11704,7 +12228,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
 inline int Pack::_internal_hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -11744,7 +12268,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 32;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 34;
 inline int Pack::_internal_hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -11784,7 +12308,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
 inline int Pack::_internal_hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -11824,7 +12348,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
 inline int Pack::_internal_set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -11864,7 +12388,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 35;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 37;
 inline int Pack::_internal_handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -11904,7 +12428,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 36;
+// repeated .primary.SPEED SPEED = 38;
 inline int Pack::_internal_speed_size() const {
   return speed_.size();
 }
@@ -11944,7 +12468,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
+// repeated .primary.INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
 inline int Pack::_internal_inv_l_set_torque_size() const {
   return inv_l_set_torque_.size();
 }
@@ -11984,7 +12508,7 @@ Pack::inv_l_set_torque() const {
   return inv_l_set_torque_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 38;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 40;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -12027,6 +12551,10 @@ Pack::inv_l_response() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

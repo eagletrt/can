@@ -362,6 +362,28 @@
       }
     },
     {
+      "name": "HV_CAN_FORWARD",
+      "topic": "BMS_HV",
+      "priority": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Enable/disable can forwarding to internal bms network",
+      "contents": {
+        "can_forward_set": "Toggle"
+      }
+    },
+    {
+      "name": "HV_CAN_FORWARD_STATUS",
+      "topic": "HANDCART",
+      "priority": 7,
+      "sending": ["BMS_HV"],
+      "receiving": ["HANDCART"],
+      "description": "Status of can forwarding to internal bms network",
+      "contents": {
+        "can_forward_status": "Toggle"
+      }
+    },
+    {
       "name": "TS_STATUS",
       "topic": "DASnSTEERnCART",
       "priority": 7,

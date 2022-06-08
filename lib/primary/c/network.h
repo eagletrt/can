@@ -107,7 +107,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 38
+#define primary_NUMBER_OF_MESSAGES 40
 
 // Custom types
 
@@ -162,6 +162,8 @@ typedef struct {
 #define primary_HV_CURRENT_SIZE 4
 #define primary_HV_TEMP_SIZE 6
 #define primary_HV_ERRORS_SIZE 4
+#define primary_HV_CAN_FORWARD_SIZE 1
+#define primary_HV_CAN_FORWARD_STATUS_SIZE 1
 #define primary_TS_STATUS_SIZE 1
 #define primary_SET_TS_STATUS_SIZE 1
 #define primary_STEER_STATUS_SIZE 1
@@ -509,6 +511,22 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_ERRORS;
+
+
+typedef struct CANLIB_PARKING {
+    primary_Toggle can_forward_set;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CAN_FORWARD;
+
+
+typedef struct CANLIB_PARKING {
+    primary_Toggle can_forward_status;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CAN_FORWARD_STATUS;
 
 
 typedef struct CANLIB_PARKING {
@@ -1146,6 +1164,52 @@ int primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffer
 int primary_fields_HV_ERRORS(char* buffer);
 int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer);
 int primary_fields_file_HV_ERRORS(FILE* buffer);
+
+
+// ============== HV_CAN_FORWARD ============== //
+
+primary_byte_size primary_serialize_HV_CAN_FORWARD(
+    uint8_t* data,
+    primary_Toggle can_forward_set
+);
+primary_byte_size primary_serialize_struct_HV_CAN_FORWARD(
+    uint8_t* data,
+    primary_message_HV_CAN_FORWARD* message
+);
+void primary_deserialize_HV_CAN_FORWARD(
+    primary_message_HV_CAN_FORWARD* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, char* buffer);
+int primary_fields_HV_CAN_FORWARD(char* buffer);
+int primary_to_string_file_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, FILE* buffer);
+int primary_fields_file_HV_CAN_FORWARD(FILE* buffer);
+
+
+// ============== HV_CAN_FORWARD_STATUS ============== //
+
+primary_byte_size primary_serialize_HV_CAN_FORWARD_STATUS(
+    uint8_t* data,
+    primary_Toggle can_forward_status
+);
+primary_byte_size primary_serialize_struct_HV_CAN_FORWARD_STATUS(
+    uint8_t* data,
+    primary_message_HV_CAN_FORWARD_STATUS* message
+);
+void primary_deserialize_HV_CAN_FORWARD_STATUS(
+    primary_message_HV_CAN_FORWARD_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, char* buffer);
+int primary_fields_HV_CAN_FORWARD_STATUS(char* buffer);
+int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, FILE* buffer);
+int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer);
 
 
 // ============== TS_STATUS ============== //
@@ -3075,6 +3139,158 @@ int primary_fields_file_HV_ERRORS(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "warnings" CANLIB_SEPARATOR 
         "errors"
+    );}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_HV_CAN_FORWARD(
+    uint8_t* data,
+    primary_Toggle can_forward_set
+) {
+    data[0] = can_forward_set << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_HV_CAN_FORWARD(
+    uint8_t* data,
+    primary_message_HV_CAN_FORWARD* message
+) {
+    data[0] = message->can_forward_set << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_HV_CAN_FORWARD(
+    primary_message_HV_CAN_FORWARD* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->can_forward_set = (primary_Toggle) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->can_forward_set
+    );}
+int primary_fields_HV_CAN_FORWARD(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "can_forward_set"
+    );}
+int primary_to_string_file_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->can_forward_set
+    );}
+int primary_fields_file_HV_CAN_FORWARD(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "can_forward_set"
+    );}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_HV_CAN_FORWARD_STATUS(
+    uint8_t* data,
+    primary_Toggle can_forward_status
+) {
+    data[0] = can_forward_status << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_HV_CAN_FORWARD_STATUS(
+    uint8_t* data,
+    primary_message_HV_CAN_FORWARD_STATUS* message
+) {
+    data[0] = message->can_forward_status << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_HV_CAN_FORWARD_STATUS(
+    primary_message_HV_CAN_FORWARD_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->can_forward_status = (primary_Toggle) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->can_forward_status
+    );}
+int primary_fields_HV_CAN_FORWARD_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "can_forward_status"
+    );}
+int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->can_forward_status
+    );}
+int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "can_forward_status"
     );}
 
 // ============== SERIALIZE ============== //
@@ -5475,25 +5691,31 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     case 3:
         primary_fields_file_HV_ERRORS(buffer);
         break;
+    case 4:
+        primary_fields_file_HV_CAN_FORWARD(buffer);
+        break;
+    case 5:
+        primary_fields_file_HV_CAN_FORWARD_STATUS(buffer);
+        break;
     case 35:
         primary_fields_file_TS_STATUS(buffer);
-        break;
-    case 4:
-        primary_fields_file_SET_TS_STATUS(buffer);
         break;
     case 36:
         primary_fields_file_SET_TS_STATUS(buffer);
         break;
-    case 261:
+    case 68:
+        primary_fields_file_SET_TS_STATUS(buffer);
+        break;
+    case 262:
         primary_fields_file_STEER_STATUS(buffer);
         break;
-    case 773:
+    case 774:
         primary_fields_file_SET_CAR_STATUS(buffer);
         break;
-    case 1029:
+    case 1030:
         primary_fields_file_SET_PEDALS_RANGE(buffer);
         break;
-    case 1061:
+    case 1062:
         primary_fields_file_SET_STEERING_ANGLE_RANGE(buffer);
         break;
     case 514:
@@ -5502,37 +5724,37 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     case 2:
         primary_fields_file_DAS_ERRORS(buffer);
         break;
-    case 774:
+    case 775:
         primary_fields_file_LV_CURRENT(buffer);
         break;
-    case 806:
+    case 807:
         primary_fields_file_LV_VOLTAGE(buffer);
         break;
-    case 838:
+    case 839:
         primary_fields_file_LV_TOTAL_VOLTAGE(buffer);
         break;
-    case 870:
+    case 871:
         primary_fields_file_LV_TEMPERATURE(buffer);
         break;
-    case 902:
+    case 903:
         primary_fields_file_COOLING_STATUS(buffer);
         break;
-    case 775:
+    case 776:
         primary_fields_file_SET_RADIATOR_SPEED(buffer);
         break;
-    case 807:
+    case 808:
         primary_fields_file_SET_PUMPS_POWER(buffer);
         break;
     case 1:
         primary_fields_file_MARKER(buffer);
         break;
-    case 520:
+    case 517:
         primary_fields_file_HV_CELLS_VOLTAGE(buffer);
         break;
-    case 552:
+    case 549:
         primary_fields_file_HV_CELLS_TEMP(buffer);
         break;
-    case 584:
+    case 581:
         primary_fields_file_HV_CELL_BALANCING_STATUS(buffer);
         break;
     case 516:
@@ -5594,25 +5816,31 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
         case 3:
             primary_to_string_file_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
         break;
+        case 4:
+            primary_to_string_file_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
+        break;
+        case 5:
+            primary_to_string_file_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
+        break;
         case 35:
             primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
-        break;
-        case 4:
-            primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
         break;
         case 36:
             primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
         break;
-        case 261:
+        case 68:
+            primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+        break;
+        case 262:
             primary_to_string_file_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
         break;
-        case 773:
+        case 774:
             primary_to_string_file_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
         break;
-        case 1029:
+        case 1030:
             primary_to_string_file_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
         break;
-        case 1061:
+        case 1062:
             primary_to_string_file_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
         break;
         case 514:
@@ -5621,37 +5849,37 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
         case 2:
             primary_to_string_file_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
         break;
-        case 774:
+        case 775:
             primary_to_string_file_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
         break;
-        case 806:
+        case 807:
             primary_to_string_file_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
         break;
-        case 838:
+        case 839:
             primary_to_string_file_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
         break;
-        case 870:
+        case 871:
             primary_to_string_file_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
         break;
-        case 902:
+        case 903:
             primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
         break;
-        case 775:
+        case 776:
             primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
         break;
-        case 807:
+        case 808:
             primary_to_string_file_SET_PUMPS_POWER((primary_message_SET_PUMPS_POWER*) message, buffer);
         break;
         case 1:
             primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
         break;
-        case 520:
+        case 517:
             primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
         break;
-        case 552:
+        case 549:
             primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
         break;
-        case 584:
+        case 581:
             primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
         break;
         case 516:
@@ -5811,18 +6039,27 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 35:
-            primary_deserialize_TS_STATUS(
-                (primary_message_TS_STATUS*) raw_message,
+        case 4:
+            primary_deserialize_HV_CAN_FORWARD(
+                (primary_message_HV_CAN_FORWARD*) raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
         break;
-        case 4:
-            primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) raw_message,
+        case 5:
+            primary_deserialize_HV_CAN_FORWARD_STATUS(
+                (primary_message_HV_CAN_FORWARD_STATUS*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 35:
+            primary_deserialize_TS_STATUS(
+                (primary_message_TS_STATUS*) raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -5838,7 +6075,16 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 261:
+        case 68:
+            primary_deserialize_SET_TS_STATUS(
+                (primary_message_SET_TS_STATUS*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 262:
             primary_deserialize_STEER_STATUS(
                 (primary_message_STEER_STATUS*) raw_message,
                 data
@@ -5847,7 +6093,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 773:
+        case 774:
             primary_deserialize_SET_CAR_STATUS(
                 (primary_message_SET_CAR_STATUS*) raw_message,
                 data
@@ -5856,7 +6102,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1029:
+        case 1030:
             primary_deserialize_SET_PEDALS_RANGE(
                 (primary_message_SET_PEDALS_RANGE*) raw_message,
                 data
@@ -5865,7 +6111,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1061:
+        case 1062:
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
                 (primary_message_SET_STEERING_ANGLE_RANGE*) raw_message,
                 data
@@ -5892,7 +6138,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 774:
+        case 775:
             primary_deserialize_LV_CURRENT(
                 (primary_message_LV_CURRENT*) raw_message,
                 data
@@ -5905,7 +6151,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_CURRENT*) raw_message
             );
         break;
-        case 806:
+        case 807:
             primary_deserialize_LV_VOLTAGE(
                 (primary_message_LV_VOLTAGE*) raw_message,
                 data
@@ -5918,7 +6164,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_VOLTAGE*) raw_message
             );
         break;
-        case 838:
+        case 839:
             primary_deserialize_LV_TOTAL_VOLTAGE(
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message,
                 data
@@ -5931,7 +6177,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message
             );
         break;
-        case 870:
+        case 871:
             primary_deserialize_LV_TEMPERATURE(
                 (primary_message_LV_TEMPERATURE*) raw_message,
                 data
@@ -5944,7 +6190,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_TEMPERATURE*) raw_message
             );
         break;
-        case 902:
+        case 903:
             primary_deserialize_COOLING_STATUS(
                 (primary_message_COOLING_STATUS*) raw_message,
                 data
@@ -5957,7 +6203,7 @@ void primary_deserialize_from_id(
                 (primary_message_COOLING_STATUS*) raw_message
             );
         break;
-        case 775:
+        case 776:
             primary_deserialize_SET_RADIATOR_SPEED(
                 (primary_message_SET_RADIATOR_SPEED*) raw_message,
                 data
@@ -5966,7 +6212,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 807:
+        case 808:
             primary_deserialize_SET_PUMPS_POWER(
                 (primary_message_SET_PUMPS_POWER*) raw_message,
                 data
@@ -5984,7 +6230,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 520:
+        case 517:
             primary_deserialize_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message,
                 data
@@ -5997,7 +6243,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message
             );
         break;
-        case 552:
+        case 549:
             primary_deserialize_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP*) raw_message,
                 data
@@ -6010,7 +6256,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_TEMP*) raw_message
             );
         break;
-        case 584:
+        case 581:
             primary_deserialize_HV_CELL_BALANCING_STATUS(
                 (primary_message_HV_CELL_BALANCING_STATUS*) raw_message,
                 data
@@ -6124,105 +6370,113 @@ void primary_devices_new(primary_devices* map) {
     (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
     (*map)[12].conversion_message = NULL;
 
-    (*map)[13].id = 35;
-    (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
+    (*map)[13].id = 4;
+    (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD));
     (*map)[13].conversion_message = NULL;
 
-    (*map)[14].id = 4;
-    (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
+    (*map)[14].id = 5;
+    (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
     (*map)[14].conversion_message = NULL;
 
-    (*map)[15].id = 36;
-    (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
+    (*map)[15].id = 35;
+    (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
     (*map)[15].conversion_message = NULL;
 
-    (*map)[16].id = 261;
-    (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
+    (*map)[16].id = 36;
+    (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*map)[16].conversion_message = NULL;
 
-    (*map)[17].id = 773;
-    (*map)[17].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
+    (*map)[17].id = 68;
+    (*map)[17].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*map)[17].conversion_message = NULL;
 
-    (*map)[18].id = 1029;
-    (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
+    (*map)[18].id = 262;
+    (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
     (*map)[18].conversion_message = NULL;
 
-    (*map)[19].id = 1061;
-    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
+    (*map)[19].id = 774;
+    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
     (*map)[19].conversion_message = NULL;
 
-    (*map)[20].id = 514;
-    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
+    (*map)[20].id = 1030;
+    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
     (*map)[20].conversion_message = NULL;
 
-    (*map)[21].id = 2;
-    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[21].id = 1062;
+    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
     (*map)[21].conversion_message = NULL;
 
-    (*map)[22].id = 774;
-    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
-    (*map)[22].conversion_message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
+    (*map)[22].id = 514;
+    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
+    (*map)[22].conversion_message = NULL;
 
-    (*map)[23].id = 806;
-    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
-    (*map)[23].conversion_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
+    (*map)[23].id = 2;
+    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[23].conversion_message = NULL;
 
-    (*map)[24].id = 838;
-    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
-    (*map)[24].conversion_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
+    (*map)[24].id = 775;
+    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
+    (*map)[24].conversion_message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
 
-    (*map)[25].id = 870;
-    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
-    (*map)[25].conversion_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
+    (*map)[25].id = 807;
+    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
+    (*map)[25].conversion_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
 
-    (*map)[26].id = 902;
-    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
-    (*map)[26].conversion_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
+    (*map)[26].id = 839;
+    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
+    (*map)[26].conversion_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
 
-    (*map)[27].id = 775;
-    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
-    (*map)[27].conversion_message = NULL;
+    (*map)[27].id = 871;
+    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
+    (*map)[27].conversion_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
 
-    (*map)[28].id = 807;
-    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
-    (*map)[28].conversion_message = NULL;
+    (*map)[28].id = 903;
+    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
+    (*map)[28].conversion_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
 
-    (*map)[29].id = 1;
-    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[29].id = 776;
+    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
     (*map)[29].conversion_message = NULL;
 
-    (*map)[30].id = 520;
-    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[30].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
+    (*map)[30].id = 808;
+    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
+    (*map)[30].conversion_message = NULL;
 
-    (*map)[31].id = 552;
-    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[31].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
+    (*map)[31].id = 1;
+    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[31].conversion_message = NULL;
 
-    (*map)[32].id = 584;
-    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
-    (*map)[32].conversion_message = NULL;
+    (*map)[32].id = 517;
+    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
+    (*map)[32].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
-    (*map)[33].id = 516;
-    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
-    (*map)[33].conversion_message = NULL;
+    (*map)[33].id = 549;
+    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
+    (*map)[33].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
-    (*map)[34].id = 772;
-    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
+    (*map)[34].id = 581;
+    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
     (*map)[34].conversion_message = NULL;
 
-    (*map)[35].id = 546;
-    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[35].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+    (*map)[35].id = 516;
+    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
+    (*map)[35].conversion_message = NULL;
 
-    (*map)[36].id = 513;
-    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
+    (*map)[36].id = 772;
+    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
     (*map)[36].conversion_message = NULL;
 
-    (*map)[37].id = 385;
-    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
-    (*map)[37].conversion_message = NULL;
+    (*map)[37].id = 546;
+    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
+    (*map)[37].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+
+    (*map)[38].id = 513;
+    (*map)[38].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
+    (*map)[38].conversion_message = NULL;
+
+    (*map)[39].id = 385;
+    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[39].conversion_message = NULL;
 
 }
 

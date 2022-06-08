@@ -58,31 +58,33 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_watchdog_index_HV_CURRENT 10
 #define primary_watchdog_index_HV_TEMP 11
 #define primary_watchdog_index_HV_ERRORS 12
-#define primary_watchdog_index_TS_STATUS 13
-#define primary_watchdog_index_SET_TS_STATUS_DAS 14
-#define primary_watchdog_index_SET_TS_STATUS_HANDCART 15
-#define primary_watchdog_index_STEER_STATUS 16
-#define primary_watchdog_index_SET_CAR_STATUS 17
-#define primary_watchdog_index_SET_PEDALS_RANGE 18
-#define primary_watchdog_index_SET_STEERING_ANGLE_RANGE 19
-#define primary_watchdog_index_CAR_STATUS 20
-#define primary_watchdog_index_DAS_ERRORS 21
-#define primary_watchdog_index_LV_CURRENT 22
-#define primary_watchdog_index_LV_VOLTAGE 23
-#define primary_watchdog_index_LV_TOTAL_VOLTAGE 24
-#define primary_watchdog_index_LV_TEMPERATURE 25
-#define primary_watchdog_index_COOLING_STATUS 26
-#define primary_watchdog_index_SET_RADIATOR_SPEED 27
-#define primary_watchdog_index_SET_PUMPS_POWER 28
-#define primary_watchdog_index_MARKER 29
-#define primary_watchdog_index_HV_CELLS_VOLTAGE 30
-#define primary_watchdog_index_HV_CELLS_TEMP 31
-#define primary_watchdog_index_HV_CELL_BALANCING_STATUS 32
-#define primary_watchdog_index_SET_CELL_BALANCING_STATUS 33
-#define primary_watchdog_index_HANDCART_STATUS 34
-#define primary_watchdog_index_SPEED 35
-#define primary_watchdog_index_INV_L_SET_TORQUE 36
-#define primary_watchdog_index_INV_L_RESPONSE 37
+#define primary_watchdog_index_HV_CAN_FORWARD 13
+#define primary_watchdog_index_HV_CAN_FORWARD_STATUS 14
+#define primary_watchdog_index_TS_STATUS 15
+#define primary_watchdog_index_SET_TS_STATUS_DAS 16
+#define primary_watchdog_index_SET_TS_STATUS_HANDCART 17
+#define primary_watchdog_index_STEER_STATUS 18
+#define primary_watchdog_index_SET_CAR_STATUS 19
+#define primary_watchdog_index_SET_PEDALS_RANGE 20
+#define primary_watchdog_index_SET_STEERING_ANGLE_RANGE 21
+#define primary_watchdog_index_CAR_STATUS 22
+#define primary_watchdog_index_DAS_ERRORS 23
+#define primary_watchdog_index_LV_CURRENT 24
+#define primary_watchdog_index_LV_VOLTAGE 25
+#define primary_watchdog_index_LV_TOTAL_VOLTAGE 26
+#define primary_watchdog_index_LV_TEMPERATURE 27
+#define primary_watchdog_index_COOLING_STATUS 28
+#define primary_watchdog_index_SET_RADIATOR_SPEED 29
+#define primary_watchdog_index_SET_PUMPS_POWER 30
+#define primary_watchdog_index_MARKER 31
+#define primary_watchdog_index_HV_CELLS_VOLTAGE 32
+#define primary_watchdog_index_HV_CELLS_TEMP 33
+#define primary_watchdog_index_HV_CELL_BALANCING_STATUS 34
+#define primary_watchdog_index_SET_CELL_BALANCING_STATUS 35
+#define primary_watchdog_index_HANDCART_STATUS 36
+#define primary_watchdog_index_SPEED 37
+#define primary_watchdog_index_INV_L_SET_TORQUE 38
+#define primary_watchdog_index_INV_L_RESPONSE 39
 
 
 #define primary_STEER_VERSION_INTERVAL 1000
@@ -98,6 +100,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_HV_CURRENT_INTERVAL 20
 #define primary_HV_TEMP_INTERVAL 200
 #define primary_HV_ERRORS_INTERVAL 20
+#define primary_HV_CAN_FORWARD_INTERVAL -1
+#define primary_HV_CAN_FORWARD_STATUS_INTERVAL -1
 #define primary_TS_STATUS_INTERVAL 20
 #define primary_SET_TS_STATUS_INTERVAL -1
 #define primary_STEER_STATUS_INTERVAL 100
@@ -123,10 +127,14 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INV_L_SET_TORQUE_INTERVAL 20
 #define primary_INV_L_RESPONSE_INTERVAL 100
 
+// Messages with this interval will be ignored by the watchdog as they are not
+// expected to be sent regularly.
+#define primary_INTERVAL_ONCE -1
+
 typedef struct {
     uint8_t activated[5];
     uint8_t timeout[5];
-    canlib_watchdog_timestamp last_reset[38];
+    canlib_watchdog_timestamp last_reset[40];
 } primary_watchdog;
 
 int primary_watchdog_index_from_id(canlib_message_id id);
@@ -153,33 +161,35 @@ int primary_watchdog_index_from_id(canlib_message_id id) {
         case 803: return primary_watchdog_index_HV_CURRENT;
         case 835: return primary_watchdog_index_HV_TEMP;
         case 3: return primary_watchdog_index_HV_ERRORS;
+        case 4: return primary_watchdog_index_HV_CAN_FORWARD;
+        case 5: return primary_watchdog_index_HV_CAN_FORWARD_STATUS;
         case 35: return primary_watchdog_index_TS_STATUS;
-        case 4: return primary_watchdog_index_SET_TS_STATUS_DAS;
-        case 36: return primary_watchdog_index_SET_TS_STATUS_HANDCART;
-        case 261: return primary_watchdog_index_STEER_STATUS;
-        case 773: return primary_watchdog_index_SET_CAR_STATUS;
-        case 1029: return primary_watchdog_index_SET_PEDALS_RANGE;
-        case 1061: return primary_watchdog_index_SET_STEERING_ANGLE_RANGE;
+        case 36: return primary_watchdog_index_SET_TS_STATUS_DAS;
+        case 68: return primary_watchdog_index_SET_TS_STATUS_HANDCART;
+        case 262: return primary_watchdog_index_STEER_STATUS;
+        case 774: return primary_watchdog_index_SET_CAR_STATUS;
+        case 1030: return primary_watchdog_index_SET_PEDALS_RANGE;
+        case 1062: return primary_watchdog_index_SET_STEERING_ANGLE_RANGE;
         case 514: return primary_watchdog_index_CAR_STATUS;
         case 2: return primary_watchdog_index_DAS_ERRORS;
-        case 774: return primary_watchdog_index_LV_CURRENT;
-        case 806: return primary_watchdog_index_LV_VOLTAGE;
-        case 838: return primary_watchdog_index_LV_TOTAL_VOLTAGE;
-        case 870: return primary_watchdog_index_LV_TEMPERATURE;
-        case 902: return primary_watchdog_index_COOLING_STATUS;
-        case 775: return primary_watchdog_index_SET_RADIATOR_SPEED;
-        case 807: return primary_watchdog_index_SET_PUMPS_POWER;
+        case 775: return primary_watchdog_index_LV_CURRENT;
+        case 807: return primary_watchdog_index_LV_VOLTAGE;
+        case 839: return primary_watchdog_index_LV_TOTAL_VOLTAGE;
+        case 871: return primary_watchdog_index_LV_TEMPERATURE;
+        case 903: return primary_watchdog_index_COOLING_STATUS;
+        case 776: return primary_watchdog_index_SET_RADIATOR_SPEED;
+        case 808: return primary_watchdog_index_SET_PUMPS_POWER;
         case 1: return primary_watchdog_index_MARKER;
-        case 520: return primary_watchdog_index_HV_CELLS_VOLTAGE;
-        case 552: return primary_watchdog_index_HV_CELLS_TEMP;
-        case 584: return primary_watchdog_index_HV_CELL_BALANCING_STATUS;
+        case 517: return primary_watchdog_index_HV_CELLS_VOLTAGE;
+        case 549: return primary_watchdog_index_HV_CELLS_TEMP;
+        case 581: return primary_watchdog_index_HV_CELL_BALANCING_STATUS;
         case 516: return primary_watchdog_index_SET_CELL_BALANCING_STATUS;
         case 772: return primary_watchdog_index_HANDCART_STATUS;
         case 546: return primary_watchdog_index_SPEED;
         case 513: return primary_watchdog_index_INV_L_SET_TORQUE;
         case 385: return primary_watchdog_index_INV_L_RESPONSE;
     }
-    return 38; // invalid
+    return 40; // invalid
 }
 
 primary_watchdog* primary_watchdog_new() {
@@ -195,7 +205,7 @@ primary_watchdog* primary_watchdog_new() {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 38 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 40 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -245,12 +255,6 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_TIMESTAMP);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_TLM_STATUS)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_TLM_STATUS] > primary_SET_TLM_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_TLM_STATUS);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_TLM_STATUS)
         && timestamp - watchdog->last_reset[primary_watchdog_index_TLM_STATUS] > primary_TLM_STATUS_INTERVAL
     ) {
@@ -293,40 +297,10 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_TS_STATUS);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_TS_STATUS_DAS)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_TS_STATUS_DAS] > primary_SET_TS_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_TS_STATUS_DAS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_TS_STATUS_HANDCART)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_TS_STATUS_HANDCART] > primary_SET_TS_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_TS_STATUS_HANDCART);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_STEER_STATUS)
         && timestamp - watchdog->last_reset[primary_watchdog_index_STEER_STATUS] > primary_STEER_STATUS_INTERVAL
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_STEER_STATUS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_CAR_STATUS)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_CAR_STATUS] > primary_SET_CAR_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_CAR_STATUS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_PEDALS_RANGE)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_PEDALS_RANGE] > primary_SET_PEDALS_RANGE_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_PEDALS_RANGE);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_STEERING_ANGLE_RANGE)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_STEERING_ANGLE_RANGE] > primary_SET_STEERING_ANGLE_RANGE_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_STEERING_ANGLE_RANGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_CAR_STATUS)
@@ -371,24 +345,6 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_COOLING_STATUS);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_RADIATOR_SPEED)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_RADIATOR_SPEED] > primary_SET_RADIATOR_SPEED_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_RADIATOR_SPEED);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_PUMPS_POWER)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_PUMPS_POWER] > primary_SET_PUMPS_POWER_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_PUMPS_POWER);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_MARKER)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_MARKER] > primary_MARKER_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_MARKER);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_HV_CELLS_VOLTAGE)
         && timestamp - watchdog->last_reset[primary_watchdog_index_HV_CELLS_VOLTAGE] > primary_HV_CELLS_VOLTAGE_INTERVAL
     ) {
@@ -405,12 +361,6 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[primary_watchdog_index_HV_CELL_BALANCING_STATUS] > primary_HV_CELL_BALANCING_STATUS_INTERVAL
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_HV_CELL_BALANCING_STATUS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SET_CELL_BALANCING_STATUS)
-        && timestamp - watchdog->last_reset[primary_watchdog_index_SET_CELL_BALANCING_STATUS] > primary_SET_CELL_BALANCING_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SET_CELL_BALANCING_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_HANDCART_STATUS)

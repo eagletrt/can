@@ -849,6 +849,60 @@ class message_HV_ERRORS:
         return message
 
 
+class message_HV_CAN_FORWARD:
+    def __init__(
+        self,
+        can_forward_set = None
+    ):
+        self.can_forward_set = Toggle(can_forward_set)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_CAN_FORWARD):
+            return False
+        if self.can_forward_set != other.can_forward_set:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.can_forward_set << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.can_forward_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_HV_CAN_FORWARD_STATUS:
+    def __init__(
+        self,
+        can_forward_status = None
+    ):
+        self.can_forward_status = Toggle(can_forward_status)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_CAN_FORWARD_STATUS):
+            return False
+        if self.can_forward_status != other.can_forward_status:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.can_forward_status << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.can_forward_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
 class message_TS_STATUS:
     def __init__(
         self,

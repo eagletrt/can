@@ -154,6 +154,16 @@ message HV_ERRORS {
     uint64 _inner_timestamp = 3;
 }
 
+message HV_CAN_FORWARD {
+    Toggle can_forward_set = 1;
+    uint64 _inner_timestamp = 2;
+}
+
+message HV_CAN_FORWARD_STATUS {
+    Toggle can_forward_status = 1;
+    uint64 _inner_timestamp = 2;
+}
+
 message TS_STATUS {
     TsStatus ts_status = 1;
     uint64 _inner_timestamp = 2;
@@ -326,29 +336,31 @@ message Pack {
     repeated HV_CURRENT HV_CURRENT = 11;
     repeated HV_TEMP HV_TEMP = 12;
     repeated HV_ERRORS HV_ERRORS = 13;
-    repeated TS_STATUS TS_STATUS = 14;
-    repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 15;
-    repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 16;
-    repeated STEER_STATUS STEER_STATUS = 17;
-    repeated SET_CAR_STATUS SET_CAR_STATUS = 18;
-    repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 19;
-    repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 20;
-    repeated CAR_STATUS CAR_STATUS = 21;
-    repeated DAS_ERRORS DAS_ERRORS = 22;
-    repeated LV_CURRENT LV_CURRENT = 23;
-    repeated LV_VOLTAGE LV_VOLTAGE = 24;
-    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 25;
-    repeated LV_TEMPERATURE LV_TEMPERATURE = 26;
-    repeated COOLING_STATUS COOLING_STATUS = 27;
-    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 28;
-    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 29;
-    repeated MARKER MARKER = 30;
-    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 31;
-    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 32;
-    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 33;
-    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 34;
-    repeated HANDCART_STATUS HANDCART_STATUS = 35;
-    repeated SPEED SPEED = 36;
-    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 37;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 38;
+    repeated HV_CAN_FORWARD HV_CAN_FORWARD = 14;
+    repeated HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
+    repeated TS_STATUS TS_STATUS = 16;
+    repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
+    repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
+    repeated STEER_STATUS STEER_STATUS = 19;
+    repeated SET_CAR_STATUS SET_CAR_STATUS = 20;
+    repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
+    repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
+    repeated CAR_STATUS CAR_STATUS = 23;
+    repeated DAS_ERRORS DAS_ERRORS = 24;
+    repeated LV_CURRENT LV_CURRENT = 25;
+    repeated LV_VOLTAGE LV_VOLTAGE = 26;
+    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
+    repeated LV_TEMPERATURE LV_TEMPERATURE = 28;
+    repeated COOLING_STATUS COOLING_STATUS = 29;
+    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
+    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 31;
+    repeated MARKER MARKER = 32;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 34;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
+    repeated HANDCART_STATUS HANDCART_STATUS = 37;
+    repeated SPEED SPEED = 38;
+    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 40;
 }

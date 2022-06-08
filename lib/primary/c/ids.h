@@ -59,44 +59,46 @@ typedef uint16_t canlib_message_id;
 #define primary_topic_mask_BMS_HV 0b00000011111
 #define primary_topic_filter_BMS_HV 0b00000000100
 
-#define primary_id_SET_TS_STATUS_DAS 0b00000000100
-#define primary_id_SET_TS_STATUS_HANDCART 0b00000100100
+#define primary_id_HV_CAN_FORWARD 0b00000000100
+#define primary_id_SET_TS_STATUS_DAS 0b00000100100
+#define primary_id_SET_TS_STATUS_HANDCART 0b00001000100
 #define primary_id_SET_CELL_BALANCING_STATUS 0b01000000100
 #define primary_id_HANDCART_STATUS 0b01100000100
 
+/* TOPIC HANDCART */
+#define primary_topic_mask_HANDCART 0b00000011111
+#define primary_topic_filter_HANDCART 0b00000000101
+
+#define primary_id_HV_CAN_FORWARD_STATUS 0b00000000101
+#define primary_id_HV_CELLS_VOLTAGE 0b01000000101
+#define primary_id_HV_CELLS_TEMP 0b01000100101
+#define primary_id_HV_CELL_BALANCING_STATUS 0b01001000101
+
 /* TOPIC DAS */
 #define primary_topic_mask_DAS 0b00000011111
-#define primary_topic_filter_DAS 0b00000000101
+#define primary_topic_filter_DAS 0b00000000110
 
-#define primary_id_STEER_STATUS 0b00100000101
-#define primary_id_SET_CAR_STATUS 0b01100000101
-#define primary_id_SET_PEDALS_RANGE 0b10000000101
-#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100101
+#define primary_id_STEER_STATUS 0b00100000110
+#define primary_id_SET_CAR_STATUS 0b01100000110
+#define primary_id_SET_PEDALS_RANGE 0b10000000110
+#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100110
 
 /* TOPIC DASnSTEER */
 #define primary_topic_mask_DASnSTEER 0b00000011111
-#define primary_topic_filter_DASnSTEER 0b00000000110
+#define primary_topic_filter_DASnSTEER 0b00000000111
 
-#define primary_id_LV_CURRENT 0b01100000110
-#define primary_id_LV_VOLTAGE 0b01100100110
-#define primary_id_LV_TOTAL_VOLTAGE 0b01101000110
-#define primary_id_LV_TEMPERATURE 0b01101100110
-#define primary_id_COOLING_STATUS 0b01110000110
+#define primary_id_LV_CURRENT 0b01100000111
+#define primary_id_LV_VOLTAGE 0b01100100111
+#define primary_id_LV_TOTAL_VOLTAGE 0b01101000111
+#define primary_id_LV_TEMPERATURE 0b01101100111
+#define primary_id_COOLING_STATUS 0b01110000111
 
 /* TOPIC DASnLV */
 #define primary_topic_mask_DASnLV 0b00000011111
-#define primary_topic_filter_DASnLV 0b00000000111
+#define primary_topic_filter_DASnLV 0b00000001000
 
-#define primary_id_SET_RADIATOR_SPEED 0b01100000111
-#define primary_id_SET_PUMPS_POWER 0b01100100111
-
-/* TOPIC HANDCART */
-#define primary_topic_mask_HANDCART 0b00000011111
-#define primary_topic_filter_HANDCART 0b00000001000
-
-#define primary_id_HV_CELLS_VOLTAGE 0b01000001000
-#define primary_id_HV_CELLS_TEMP 0b01000101000
-#define primary_id_HV_CELL_BALANCING_STATUS 0b01001001000
+#define primary_id_SET_RADIATOR_SPEED 0b01100001000
+#define primary_id_SET_PUMPS_POWER 0b01100101000
 
 /* TOPIC FIXED_IDS */
 #define primary_topic_mask_FIXED_IDS 0b00000011111
@@ -154,6 +156,12 @@ int primary_message_name_from_id(canlib_message_id id, char *buffer) {
             return 0;
         case primary_id_HV_ERRORS:
             strcpy(buffer, "HV_ERRORS");
+            return 0;
+        case primary_id_HV_CAN_FORWARD:
+            strcpy(buffer, "HV_CAN_FORWARD");
+            return 0;
+        case primary_id_HV_CAN_FORWARD_STATUS:
+            strcpy(buffer, "HV_CAN_FORWARD_STATUS");
             return 0;
         case primary_id_TS_STATUS:
             strcpy(buffer, "TS_STATUS");
@@ -251,26 +259,28 @@ bool primary_is_message_id(canlib_message_id message_id) {
         case 803: return true; break;
         case 835: return true; break;
         case 3: return true; break;
-        case 35: return true; break;
         case 4: return true; break;
+        case 5: return true; break;
+        case 35: return true; break;
         case 36: return true; break;
-        case 261: return true; break;
-        case 773: return true; break;
-        case 1029: return true; break;
-        case 1061: return true; break;
+        case 68: return true; break;
+        case 262: return true; break;
+        case 774: return true; break;
+        case 1030: return true; break;
+        case 1062: return true; break;
         case 514: return true; break;
         case 2: return true; break;
-        case 774: return true; break;
-        case 806: return true; break;
-        case 838: return true; break;
-        case 870: return true; break;
-        case 902: return true; break;
         case 775: return true; break;
         case 807: return true; break;
+        case 839: return true; break;
+        case 871: return true; break;
+        case 903: return true; break;
+        case 776: return true; break;
+        case 808: return true; break;
         case 1: return true; break;
-        case 520: return true; break;
-        case 552: return true; break;
-        case 584: return true; break;
+        case 517: return true; break;
+        case 549: return true; break;
+        case 581: return true; break;
         case 516: return true; break;
         case 772: return true; break;
         case 546: return true; break;

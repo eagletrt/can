@@ -73,6 +73,10 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_BALANCING_INTERVAL -1
 #define bms_FW_UPDATE_INTERVAL -1
 
+// Messages with this interval will be ignored by the watchdog as they are not
+// expected to be sent regularly.
+#define bms_INTERVAL_ONCE -1
+
 typedef struct {
     uint8_t activated[3];
     uint8_t timeout[3];
@@ -140,126 +144,6 @@ void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp ti
 
 void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD0)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD0] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD1)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD1] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD2)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD2] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD3)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD3] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD4)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD4] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD4);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BOARD_STATUS_CELLBOARD5)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BOARD_STATUS_CELLBOARD5] > bms_BOARD_STATUS_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BOARD_STATUS_CELLBOARD5);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD0)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD0] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD1)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD1] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD2)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD2] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD3)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD3] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD4)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD4] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD4);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_TEMPERATURES_CELLBOARD5)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_TEMPERATURES_CELLBOARD5] > bms_TEMPERATURES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_TEMPERATURES_CELLBOARD5);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD0)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD0] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD0);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD1)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD1] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD1);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD2)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD2] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD2);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD3)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD3] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD3);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD4)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD4] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD4);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_VOLTAGES_CELLBOARD5)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_VOLTAGES_CELLBOARD5] > bms_VOLTAGES_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_VOLTAGES_CELLBOARD5);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_BALANCING)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_BALANCING] > bms_BALANCING_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_BALANCING);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, bms_watchdog_index_FW_UPDATE)
-        && timestamp - watchdog->last_reset[bms_watchdog_index_FW_UPDATE] > bms_FW_UPDATE_INTERVAL
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, bms_watchdog_index_FW_UPDATE);
-    }
 }
 
 #endif // bms_WATCHDOG_IMPLEMENTATION

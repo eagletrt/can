@@ -78,9 +78,12 @@
         "BMS_HV": {
             "id": 4,
             "messages": {
+                "HV_CAN_FORWARD": {
+                    "HV_CAN_FORWARD": 4
+                },
                 "SET_TS_STATUS": {
-                    "SET_TS_STATUS_DAS": 4,
-                    "SET_TS_STATUS_HANDCART": 36
+                    "SET_TS_STATUS_DAS": 36,
+                    "SET_TS_STATUS_HANDCART": 68
                 },
                 "SET_CELL_BALANCING_STATUS": {
                     "SET_CELL_BALANCING_STATUS": 516
@@ -90,65 +93,68 @@
                 }
             }
         },
-        "DAS": {
+        "HANDCART": {
             "id": 5,
             "messages": {
+                "HV_CAN_FORWARD_STATUS": {
+                    "HV_CAN_FORWARD_STATUS": 5
+                },
+                "HV_CELLS_VOLTAGE": {
+                    "HV_CELLS_VOLTAGE": 517
+                },
+                "HV_CELLS_TEMP": {
+                    "HV_CELLS_TEMP": 549
+                },
+                "HV_CELL_BALANCING_STATUS": {
+                    "HV_CELL_BALANCING_STATUS": 581
+                }
+            }
+        },
+        "DAS": {
+            "id": 6,
+            "messages": {
                 "STEER_STATUS": {
-                    "STEER_STATUS": 261
+                    "STEER_STATUS": 262
                 },
                 "SET_CAR_STATUS": {
-                    "SET_CAR_STATUS": 773
+                    "SET_CAR_STATUS": 774
                 },
                 "SET_PEDALS_RANGE": {
-                    "SET_PEDALS_RANGE": 1029
+                    "SET_PEDALS_RANGE": 1030
                 },
                 "SET_STEERING_ANGLE_RANGE": {
-                    "SET_STEERING_ANGLE_RANGE": 1061
+                    "SET_STEERING_ANGLE_RANGE": 1062
                 }
             }
         },
         "DASnSTEER": {
-            "id": 6,
+            "id": 7,
             "messages": {
                 "LV_CURRENT": {
-                    "LV_CURRENT": 774
+                    "LV_CURRENT": 775
                 },
                 "LV_VOLTAGE": {
-                    "LV_VOLTAGE": 806
+                    "LV_VOLTAGE": 807
                 },
                 "LV_TOTAL_VOLTAGE": {
-                    "LV_TOTAL_VOLTAGE": 838
+                    "LV_TOTAL_VOLTAGE": 839
                 },
                 "LV_TEMPERATURE": {
-                    "LV_TEMPERATURE": 870
+                    "LV_TEMPERATURE": 871
                 },
                 "COOLING_STATUS": {
-                    "COOLING_STATUS": 902
+                    "COOLING_STATUS": 903
                 }
             }
         },
         "DASnLV": {
-            "id": 7,
-            "messages": {
-                "SET_RADIATOR_SPEED": {
-                    "SET_RADIATOR_SPEED": 775
-                },
-                "SET_PUMPS_POWER": {
-                    "SET_PUMPS_POWER": 807
-                }
-            }
-        },
-        "HANDCART": {
             "id": 8,
             "messages": {
-                "HV_CELLS_VOLTAGE": {
-                    "HV_CELLS_VOLTAGE": 520
+                "SET_RADIATOR_SPEED": {
+                    "SET_RADIATOR_SPEED": 776
                 },
-                "HV_CELLS_TEMP": {
-                    "HV_CELLS_TEMP": 552
-                },
-                "HV_CELL_BALANCING_STATUS": {
-                    "HV_CELL_BALANCING_STATUS": 584
+                "SET_PUMPS_POWER": {
+                    "SET_PUMPS_POWER": 808
                 }
             }
         },
