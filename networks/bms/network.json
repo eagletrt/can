@@ -167,7 +167,7 @@
     {
       "name": "FW_UPDATE",
       "topic": "FW_UPDATE",
-      "priority": 6,
+      "fixed_id": 10,
       "sending": ["MAINBOARD"],
       "receiving": [
         "CELLBOARD0",
