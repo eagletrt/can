@@ -107,6 +107,7 @@ typedef struct {
 } secondary_watchdog;
 
 int secondary_watchdog_index_from_id(canlib_message_id id);
+int secondary_watchdog_interval_from_id(uint16_t message_id);
 
 secondary_watchdog* secondary_watchdog_new();
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
@@ -114,6 +115,60 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef secondary_WATCHDOG_IMPLEMENTATION
+
+int secondary_watchdog_interval_from_id(uint16_t message_id) {
+    switch (message_id) {
+    case 1260:
+        return secondary_IMU_ANGULAR_RATE_INTERVAL;
+    case 1261:
+        return secondary_IMU_ACCELERATION_INTERVAL;
+    case 1460:
+        return secondary_IRTS_FL_0_INTERVAL;
+    case 1461:
+        return secondary_IRTS_FL_1_INTERVAL;
+    case 1462:
+        return secondary_IRTS_FL_2_INTERVAL;
+    case 1463:
+        return secondary_IRTS_FL_3_INTERVAL;
+    case 1464:
+        return secondary_IRTS_FR_0_INTERVAL;
+    case 1465:
+        return secondary_IRTS_FR_1_INTERVAL;
+    case 1466:
+        return secondary_IRTS_FR_2_INTERVAL;
+    case 1467:
+        return secondary_IRTS_FR_3_INTERVAL;
+    case 1468:
+        return secondary_IRTS_RL_0_INTERVAL;
+    case 1469:
+        return secondary_IRTS_RL_1_INTERVAL;
+    case 1470:
+        return secondary_IRTS_RL_2_INTERVAL;
+    case 1471:
+        return secondary_IRTS_RL_3_INTERVAL;
+    case 1472:
+        return secondary_IRTS_RR_0_INTERVAL;
+    case 1473:
+        return secondary_IRTS_RR_1_INTERVAL;
+    case 1474:
+        return secondary_IRTS_RR_2_INTERVAL;
+    case 1475:
+        return secondary_IRTS_RR_3_INTERVAL;
+    case 1025:
+        return secondary_GPS_COORDS_INTERVAL;
+    case 1057:
+        return secondary_GPS_SPEED_INTERVAL;
+    case 1089:
+        return secondary_LAP_COUNT_INTERVAL;
+    case 769:
+        return secondary_PEDALS_OUTPUT_INTERVAL;
+    case 801:
+        return secondary_CONTROL_OUTPUT_INTERVAL;
+    case 258:
+        return secondary_STEERING_ANGLE_INTERVAL;
+    }
+    return -1;
+}
 
 int secondary_watchdog_index_from_id(canlib_message_id id) {
     switch (id) {

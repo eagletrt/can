@@ -108,6 +108,7 @@ typedef struct {
 } bms_watchdog;
 
 int bms_watchdog_index_from_id(canlib_message_id id);
+int bms_watchdog_interval_from_id(uint16_t message_id);
 
 bms_watchdog* bms_watchdog_new();
 void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
@@ -115,6 +116,76 @@ void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp ti
 void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef bms_WATCHDOG_IMPLEMENTATION
+
+int bms_watchdog_interval_from_id(uint16_t message_id) {
+    switch (message_id) {
+    case 1536:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1568:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1600:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1632:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1664:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1696:
+        return bms_BOARD_STATUS_INTERVAL;
+    case 1281:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1313:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1345:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1377:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1409:
+        return bms_TEMPERATURES_INTERVAL;
+    case 1441:
+        return bms_TEMPERATURES_INTERVAL;
+    case 514:
+        return bms_VOLTAGES_INTERVAL;
+    case 546:
+        return bms_VOLTAGES_INTERVAL;
+    case 578:
+        return bms_VOLTAGES_INTERVAL;
+    case 610:
+        return bms_VOLTAGES_INTERVAL;
+    case 642:
+        return bms_VOLTAGES_INTERVAL;
+    case 674:
+        return bms_VOLTAGES_INTERVAL;
+    case 515:
+        return bms_BALANCING_INTERVAL;
+    case 10:
+        return bms_FW_UPDATE_INTERVAL;
+    case 16:
+        return bms_FLASH_CELLBOARD_0_TX_INTERVAL;
+    case 17:
+        return bms_FLASH_CELLBOARD_0_RX_INTERVAL;
+    case 18:
+        return bms_FLASH_CELLBOARD_1_TX_INTERVAL;
+    case 19:
+        return bms_FLASH_CELLBOARD_1_RX_INTERVAL;
+    case 20:
+        return bms_FLASH_CELLBOARD_2_TX_INTERVAL;
+    case 21:
+        return bms_FLASH_CELLBOARD_2_RX_INTERVAL;
+    case 22:
+        return bms_FLASH_CELLBOARD_3_TX_INTERVAL;
+    case 23:
+        return bms_FLASH_CELLBOARD_3_RX_INTERVAL;
+    case 24:
+        return bms_FLASH_CELLBOARD_4_TX_INTERVAL;
+    case 25:
+        return bms_FLASH_CELLBOARD_4_RX_INTERVAL;
+    case 26:
+        return bms_FLASH_CELLBOARD_5_TX_INTERVAL;
+    case 27:
+        return bms_FLASH_CELLBOARD_5_RX_INTERVAL;
+    }
+    return -1;
+}
 
 int bms_watchdog_index_from_id(canlib_message_id id) {
     switch (id) {

@@ -71,6 +71,8 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
 #endif
 
+#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
+
 #define PRIf32 "f"
 #define PRIf64 "f"
 
@@ -2288,6 +2290,7 @@ void primary_deserialize_from_id(
 primary_byte_size primary_serialize_BMS_HV_JMP_TO_BLT(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -2295,6 +2298,8 @@ primary_byte_size primary_serialize_struct_BMS_HV_JMP_TO_BLT(
     uint8_t* data,
     primary_message_BMS_HV_JMP_TO_BLT* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -2307,6 +2312,10 @@ void primary_deserialize_BMS_HV_JMP_TO_BLT(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -2315,16 +2324,26 @@ void primary_deserialize_BMS_HV_JMP_TO_BLT(
 // ============== STRING ============== //
 
 int primary_to_string_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_BMS_HV_JMP_TO_BLT(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_BMS_HV_JMP_TO_BLT(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -2379,7 +2398,8 @@ int primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, char
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_STEER_VERSION(char* buffer) {
     return sprintf(
         buffer,
@@ -2388,7 +2408,8 @@ int primary_fields_STEER_VERSION(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2402,7 +2423,8 @@ int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_file_STEER_VERSION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2411,7 +2433,8 @@ int primary_fields_file_STEER_VERSION(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2465,7 +2488,8 @@ int primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* bu
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_DAS_VERSION(char* buffer) {
     return sprintf(
         buffer,
@@ -2474,7 +2498,8 @@ int primary_fields_DAS_VERSION(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2488,7 +2513,8 @@ int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FIL
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_file_DAS_VERSION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2497,7 +2523,8 @@ int primary_fields_file_DAS_VERSION(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2551,7 +2578,8 @@ int primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buff
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_HV_VERSION(char* buffer) {
     return sprintf(
         buffer,
@@ -2560,7 +2588,8 @@ int primary_fields_HV_VERSION(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2574,7 +2603,8 @@ int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE*
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_file_HV_VERSION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2583,7 +2613,8 @@ int primary_fields_file_HV_VERSION(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2637,7 +2668,8 @@ int primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buff
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_LV_VERSION(char* buffer) {
     return sprintf(
         buffer,
@@ -2646,7 +2678,8 @@ int primary_fields_LV_VERSION(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2660,7 +2693,8 @@ int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE*
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_file_LV_VERSION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2669,7 +2703,8 @@ int primary_fields_file_LV_VERSION(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2723,7 +2758,8 @@ int primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* bu
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_TLM_VERSION(char* buffer) {
     return sprintf(
         buffer,
@@ -2732,7 +2768,8 @@ int primary_fields_TLM_VERSION(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2746,7 +2783,8 @@ int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FIL
 #endif // CANLIB_TIMESTAMP
         message->component_version,
         message->cancicd_version
-    );}
+    );
+}
 int primary_fields_file_TLM_VERSION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2755,7 +2793,8 @@ int primary_fields_file_TLM_VERSION(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
         "cancicd_version"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2809,7 +2848,8 @@ int primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffer
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->timestamp
-    );}
+    );
+}
 int primary_fields_TIMESTAMP(char* buffer) {
     return sprintf(
         buffer,
@@ -2817,7 +2857,8 @@ int primary_fields_TIMESTAMP(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp"
-    );}
+    );
+}
 int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2829,7 +2870,8 @@ int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* b
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->timestamp
-    );}
+    );
+}
 int primary_fields_file_TIMESTAMP(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2837,7 +2879,8 @@ int primary_fields_file_TIMESTAMP(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2901,7 +2944,8 @@ int primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, ch
         message->circuit,
         message->race_type,
         message->tlm_status
-    );}
+    );
+}
 int primary_fields_SET_TLM_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -2912,7 +2956,8 @@ int primary_fields_SET_TLM_STATUS(char* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );}
+    );
+}
 int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2930,7 +2975,8 @@ int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* messag
         message->circuit,
         message->race_type,
         message->tlm_status
-    );}
+    );
+}
 int primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2941,7 +2987,8 @@ int primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3005,7 +3052,8 @@ int primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buff
         message->circuit,
         message->race_type,
         message->tlm_status
-    );}
+    );
+}
 int primary_fields_TLM_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3016,7 +3064,8 @@ int primary_fields_TLM_STATUS(char* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );}
+    );
+}
 int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3034,7 +3083,8 @@ int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE*
         message->circuit,
         message->race_type,
         message->tlm_status
-    );}
+    );
+}
 int primary_fields_file_TLM_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3045,7 +3095,8 @@ int primary_fields_file_TLM_STATUS(FILE* buffer) {
         "circuit" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
         "tlm_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3093,7 +3144,8 @@ int primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* m
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->soc_temp
-    );}
+    );
+}
 int primary_fields_STEER_SYSTEM_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3101,7 +3153,8 @@ int primary_fields_STEER_SYSTEM_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "soc_temp"
-    );}
+    );
+}
 int primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3113,7 +3166,8 @@ int primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STAT
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->soc_temp
-    );}
+    );
+}
 int primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3121,7 +3175,8 @@ int primary_fields_file_STEER_SYSTEM_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "soc_temp"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3220,7 +3275,8 @@ int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message,
         message->bus_voltage,
         message->max_cell_voltage,
         message->min_cell_voltage
-    );}
+    );
+}
 int primary_fields_HV_VOLTAGE(char* buffer) {
     return sprintf(
         buffer,
@@ -3231,7 +3287,8 @@ int primary_fields_HV_VOLTAGE(char* buffer) {
         "bus_voltage" CANLIB_SEPARATOR 
         "max_cell_voltage" CANLIB_SEPARATOR 
         "min_cell_voltage"
-    );}
+    );
+}
 int primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3249,7 +3306,8 @@ int primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* mes
         message->bus_voltage,
         message->max_cell_voltage,
         message->min_cell_voltage
-    );}
+    );
+}
 int primary_fields_file_HV_VOLTAGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3260,7 +3318,8 @@ int primary_fields_file_HV_VOLTAGE(FILE* buffer) {
         "bus_voltage" CANLIB_SEPARATOR 
         "max_cell_voltage" CANLIB_SEPARATOR 
         "min_cell_voltage"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3339,7 +3398,8 @@ int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message,
 #endif // CANLIB_TIMESTAMP
         message->current,
         message->power
-    );}
+    );
+}
 int primary_fields_HV_CURRENT(char* buffer) {
     return sprintf(
         buffer,
@@ -3348,7 +3408,8 @@ int primary_fields_HV_CURRENT(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
         "power"
-    );}
+    );
+}
 int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3362,7 +3423,8 @@ int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* mes
 #endif // CANLIB_TIMESTAMP
         message->current,
         message->power
-    );}
+    );
+}
 int primary_fields_file_HV_CURRENT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3371,7 +3433,8 @@ int primary_fields_file_HV_CURRENT(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
         "power"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3460,7 +3523,8 @@ int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char*
         message->average_temp,
         message->max_temp,
         message->min_temp
-    );}
+    );
+}
 int primary_fields_HV_TEMP(char* buffer) {
     return sprintf(
         buffer,
@@ -3470,7 +3534,8 @@ int primary_fields_HV_TEMP(char* buffer) {
         "average_temp" CANLIB_SEPARATOR 
         "max_temp" CANLIB_SEPARATOR 
         "min_temp"
-    );}
+    );
+}
 int primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3486,7 +3551,8 @@ int primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, 
         message->average_temp,
         message->max_temp,
         message->min_temp
-    );}
+    );
+}
 int primary_fields_file_HV_TEMP(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3496,7 +3562,8 @@ int primary_fields_file_HV_TEMP(FILE* buffer) {
         "average_temp" CANLIB_SEPARATOR 
         "max_temp" CANLIB_SEPARATOR 
         "min_temp"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3554,7 +3621,8 @@ int primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffer
 #endif // CANLIB_TIMESTAMP
         message->warnings,
         message->errors
-    );}
+    );
+}
 int primary_fields_HV_ERRORS(char* buffer) {
     return sprintf(
         buffer,
@@ -3563,7 +3631,8 @@ int primary_fields_HV_ERRORS(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "warnings" CANLIB_SEPARATOR 
         "errors"
-    );}
+    );
+}
 int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3577,7 +3646,8 @@ int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* b
 #endif // CANLIB_TIMESTAMP
         message->warnings,
         message->errors
-    );}
+    );
+}
 int primary_fields_file_HV_ERRORS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3586,7 +3656,8 @@ int primary_fields_file_HV_ERRORS(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "warnings" CANLIB_SEPARATOR 
         "errors"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3634,7 +3705,8 @@ int primary_to_string_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, ch
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->can_forward_set
-    );}
+    );
+}
 int primary_fields_HV_CAN_FORWARD(char* buffer) {
     return sprintf(
         buffer,
@@ -3642,7 +3714,8 @@ int primary_fields_HV_CAN_FORWARD(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "can_forward_set"
-    );}
+    );
+}
 int primary_to_string_file_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3654,7 +3727,8 @@ int primary_to_string_file_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* messag
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->can_forward_set
-    );}
+    );
+}
 int primary_fields_file_HV_CAN_FORWARD(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3662,7 +3736,8 @@ int primary_fields_file_HV_CAN_FORWARD(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "can_forward_set"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3710,7 +3785,8 @@ int primary_to_string_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATU
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->can_forward_status
-    );}
+    );
+}
 int primary_fields_HV_CAN_FORWARD_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3718,7 +3794,8 @@ int primary_fields_HV_CAN_FORWARD_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "can_forward_status"
-    );}
+    );
+}
 int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3730,7 +3807,8 @@ int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->can_forward_status
-    );}
+    );
+}
 int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3738,7 +3816,8 @@ int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "can_forward_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3786,7 +3865,8 @@ int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status
-    );}
+    );
+}
 int primary_fields_TS_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3794,7 +3874,8 @@ int primary_fields_TS_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status"
-    );}
+    );
+}
 int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3806,7 +3887,8 @@ int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* b
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status
-    );}
+    );
+}
 int primary_fields_file_TS_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3814,7 +3896,8 @@ int primary_fields_file_TS_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3862,7 +3945,8 @@ int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status_set
-    );}
+    );
+}
 int primary_fields_SET_TS_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3870,7 +3954,8 @@ int primary_fields_SET_TS_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status_set"
-    );}
+    );
+}
 int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3882,7 +3967,8 @@ int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message,
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ts_status_set
-    );}
+    );
+}
 int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3890,7 +3976,8 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "ts_status_set"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3942,7 +4029,8 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* 
 #endif // CANLIB_TIMESTAMP
         message->map,
         message->traction_control
-    );}
+    );
+}
 int primary_fields_STEER_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -3951,7 +4039,8 @@ int primary_fields_STEER_STATUS(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "map" CANLIB_SEPARATOR 
         "traction_control"
-    );}
+    );
+}
 int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3965,7 +4054,8 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, F
 #endif // CANLIB_TIMESTAMP
         message->map,
         message->traction_control
-    );}
+    );
+}
 int primary_fields_file_STEER_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3974,7 +4064,8 @@ int primary_fields_file_STEER_STATUS(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "map" CANLIB_SEPARATOR 
         "traction_control"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4022,7 +4113,8 @@ int primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, ch
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_status_set
-    );}
+    );
+}
 int primary_fields_SET_CAR_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -4030,7 +4122,8 @@ int primary_fields_SET_CAR_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_status_set"
-    );}
+    );
+}
 int primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4042,7 +4135,8 @@ int primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* messag
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_status_set
-    );}
+    );
+}
 int primary_fields_file_SET_CAR_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4050,7 +4144,8 @@ int primary_fields_file_SET_CAR_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_status_set"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4102,7 +4197,8 @@ int primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message
 #endif // CANLIB_TIMESTAMP
         message->bound,
         message->pedal
-    );}
+    );
+}
 int primary_fields_SET_PEDALS_RANGE(char* buffer) {
     return sprintf(
         buffer,
@@ -4111,7 +4207,8 @@ int primary_fields_SET_PEDALS_RANGE(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "bound" CANLIB_SEPARATOR 
         "pedal"
-    );}
+    );
+}
 int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4125,7 +4222,8 @@ int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* me
 #endif // CANLIB_TIMESTAMP
         message->bound,
         message->pedal
-    );}
+    );
+}
 int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4134,7 +4232,8 @@ int primary_fields_file_SET_PEDALS_RANGE(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "bound" CANLIB_SEPARATOR 
         "pedal"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4182,7 +4281,8 @@ int primary_to_string_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->bound
-    );}
+    );
+}
 int primary_fields_SET_STEERING_ANGLE_RANGE(char* buffer) {
     return sprintf(
         buffer,
@@ -4190,7 +4290,8 @@ int primary_fields_SET_STEERING_ANGLE_RANGE(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bound"
-    );}
+    );
+}
 int primary_to_string_file_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGLE_RANGE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4202,7 +4303,8 @@ int primary_to_string_file_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->bound
-    );}
+    );
+}
 int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4210,7 +4312,8 @@ int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "bound"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4266,7 +4369,8 @@ int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buff
         message->inverter_l,
         message->inverter_r,
         message->car_status
-    );}
+    );
+}
 int primary_fields_CAR_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -4276,7 +4380,8 @@ int primary_fields_CAR_STATUS(char* buffer) {
         "inverter_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "car_status"
-    );}
+    );
+}
 int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4292,7 +4397,8 @@ int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE*
         message->inverter_l,
         message->inverter_r,
         message->car_status
-    );}
+    );
+}
 int primary_fields_file_CAR_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4302,7 +4408,8 @@ int primary_fields_file_CAR_STATUS(FILE* buffer) {
         "inverter_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "car_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4350,7 +4457,8 @@ int primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buff
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->das_error
-    );}
+    );
+}
 int primary_fields_DAS_ERRORS(char* buffer) {
     return sprintf(
         buffer,
@@ -4358,7 +4466,8 @@ int primary_fields_DAS_ERRORS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "das_error"
-    );}
+    );
+}
 int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4370,7 +4479,8 @@ int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE*
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->das_error
-    );}
+    );
+}
 int primary_fields_file_DAS_ERRORS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4378,7 +4488,8 @@ int primary_fields_file_DAS_ERRORS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "das_error"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4447,7 +4558,8 @@ int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT_conversion* message,
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current
-    );}
+    );
+}
 int primary_fields_LV_CURRENT(char* buffer) {
     return sprintf(
         buffer,
@@ -4455,7 +4567,8 @@ int primary_fields_LV_CURRENT(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current"
-    );}
+    );
+}
 int primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4467,7 +4580,8 @@ int primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT_conversion* mes
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current
-    );}
+    );
+}
 int primary_fields_file_LV_CURRENT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4475,7 +4589,8 @@ int primary_fields_file_LV_CURRENT(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4574,7 +4689,8 @@ int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* message,
         message->voltage_2,
         message->voltage_3,
         message->voltage_4
-    );}
+    );
+}
 int primary_fields_LV_VOLTAGE(char* buffer) {
     return sprintf(
         buffer,
@@ -4585,7 +4701,8 @@ int primary_fields_LV_VOLTAGE(char* buffer) {
         "voltage_2" CANLIB_SEPARATOR 
         "voltage_3" CANLIB_SEPARATOR 
         "voltage_4"
-    );}
+    );
+}
 int primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4603,7 +4720,8 @@ int primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* mes
         message->voltage_2,
         message->voltage_3,
         message->voltage_4
-    );}
+    );
+}
 int primary_fields_file_LV_VOLTAGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4614,7 +4732,8 @@ int primary_fields_file_LV_VOLTAGE(FILE* buffer) {
         "voltage_2" CANLIB_SEPARATOR 
         "voltage_3" CANLIB_SEPARATOR 
         "voltage_4"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4687,7 +4806,8 @@ int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_conversi
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->total_voltage
-    );}
+    );
+}
 int primary_fields_LV_TOTAL_VOLTAGE(char* buffer) {
     return sprintf(
         buffer,
@@ -4695,7 +4815,8 @@ int primary_fields_LV_TOTAL_VOLTAGE(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "total_voltage"
-    );}
+    );
+}
 int primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4707,7 +4828,8 @@ int primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_con
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->total_voltage
-    );}
+    );
+}
 int primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4715,7 +4837,8 @@ int primary_fields_file_LV_TOTAL_VOLTAGE(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "total_voltage"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4814,7 +4937,8 @@ int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_conversion* 
         message->bp_temperature_2,
         message->dcdc12_temperature,
         message->dcdc24_temperature
-    );}
+    );
+}
 int primary_fields_LV_TEMPERATURE(char* buffer) {
     return sprintf(
         buffer,
@@ -4825,7 +4949,8 @@ int primary_fields_LV_TEMPERATURE(char* buffer) {
         "bp_temperature_2" CANLIB_SEPARATOR 
         "dcdc12_temperature" CANLIB_SEPARATOR 
         "dcdc24_temperature"
-    );}
+    );
+}
 int primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4843,7 +4968,8 @@ int primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_convers
         message->bp_temperature_2,
         message->dcdc12_temperature,
         message->dcdc24_temperature
-    );}
+    );
+}
 int primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4854,7 +4980,8 @@ int primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
         "bp_temperature_2" CANLIB_SEPARATOR 
         "dcdc12_temperature" CANLIB_SEPARATOR 
         "dcdc24_temperature"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -4943,7 +5070,8 @@ int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* 
         message->hv_fan_speed,
         message->lv_fan_speed,
         message->pump_speed
-    );}
+    );
+}
 int primary_fields_COOLING_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -4953,7 +5081,8 @@ int primary_fields_COOLING_STATUS(char* buffer) {
         "hv_fan_speed" CANLIB_SEPARATOR 
         "lv_fan_speed" CANLIB_SEPARATOR 
         "pump_speed"
-    );}
+    );
+}
 int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -4969,7 +5098,8 @@ int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS_convers
         message->hv_fan_speed,
         message->lv_fan_speed,
         message->pump_speed
-    );}
+    );
+}
 int primary_fields_file_COOLING_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -4979,7 +5109,8 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer) {
         "hv_fan_speed" CANLIB_SEPARATOR 
         "lv_fan_speed" CANLIB_SEPARATOR 
         "pump_speed"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5027,7 +5158,8 @@ int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* mes
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_radiators_speed
-    );}
+    );
+}
 int primary_fields_SET_RADIATOR_SPEED(char* buffer) {
     return sprintf(
         buffer,
@@ -5035,7 +5167,8 @@ int primary_fields_SET_RADIATOR_SPEED(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_radiators_speed"
-    );}
+    );
+}
 int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5047,7 +5180,8 @@ int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_radiators_speed
-    );}
+    );
+}
 int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5055,7 +5189,8 @@ int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_radiators_speed"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5103,7 +5238,8 @@ int primary_to_string_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_pumps_power
-    );}
+    );
+}
 int primary_fields_SET_PUMPS_POWER(char* buffer) {
     return sprintf(
         buffer,
@@ -5111,7 +5247,8 @@ int primary_fields_SET_PUMPS_POWER(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_pumps_power"
-    );}
+    );
+}
 int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5123,7 +5260,8 @@ int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* mess
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->car_pumps_power
-    );}
+    );
+}
 int primary_fields_file_SET_PUMPS_POWER(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5131,13 +5269,15 @@ int primary_fields_file_SET_PUMPS_POWER(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "car_pumps_power"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
 primary_byte_size primary_serialize_MARKER(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -5145,6 +5285,8 @@ primary_byte_size primary_serialize_struct_MARKER(
     uint8_t* data,
     primary_message_MARKER* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -5157,6 +5299,10 @@ void primary_deserialize_MARKER(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -5165,16 +5311,26 @@ void primary_deserialize_MARKER(
 // ============== STRING ============== //
 
 int primary_to_string_MARKER(primary_message_MARKER* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_MARKER(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_MARKER(primary_message_MARKER* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_MARKER(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -5272,7 +5428,8 @@ int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversi
         message->voltage_1,
         message->voltage_2,
         message->start_index
-    );}
+    );
+}
 int primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
     return sprintf(
         buffer,
@@ -5283,7 +5440,8 @@ int primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
         "start_index"
-    );}
+    );
+}
 int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5301,7 +5459,8 @@ int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_con
         message->voltage_1,
         message->voltage_2,
         message->start_index
-    );}
+    );
+}
 int primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5312,7 +5471,8 @@ int primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
         "voltage_1" CANLIB_SEPARATOR 
         "voltage_2" CANLIB_SEPARATOR 
         "start_index"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5435,7 +5595,8 @@ int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* me
         message->temp_4,
         message->temp_5,
         message->temp_6
-    );}
+    );
+}
 int primary_fields_HV_CELLS_TEMP(char* buffer) {
     return sprintf(
         buffer,
@@ -5450,7 +5611,8 @@ int primary_fields_HV_CELLS_TEMP(char* buffer) {
         "temp_4" CANLIB_SEPARATOR 
         "temp_5" CANLIB_SEPARATOR 
         "temp_6"
-    );}
+    );
+}
 int primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5476,7 +5638,8 @@ int primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversio
         message->temp_4,
         message->temp_5,
         message->temp_6
-    );}
+    );
+}
 int primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5491,7 +5654,8 @@ int primary_fields_file_HV_CELLS_TEMP(FILE* buffer) {
         "temp_4" CANLIB_SEPARATOR 
         "temp_5" CANLIB_SEPARATOR 
         "temp_6"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5539,7 +5703,8 @@ int primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->balancing_status
-    );}
+    );
+}
 int primary_fields_HV_CELL_BALANCING_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -5547,7 +5712,8 @@ int primary_fields_HV_CELL_BALANCING_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "balancing_status"
-    );}
+    );
+}
 int primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5559,7 +5725,8 @@ int primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALA
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->balancing_status
-    );}
+    );
+}
 int primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5567,7 +5734,8 @@ int primary_fields_file_HV_CELL_BALANCING_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "balancing_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5615,7 +5783,8 @@ int primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCI
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->set_balancing_status
-    );}
+    );
+}
 int primary_fields_SET_CELL_BALANCING_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -5623,7 +5792,8 @@ int primary_fields_SET_CELL_BALANCING_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "set_balancing_status"
-    );}
+    );
+}
 int primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCING_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5635,7 +5805,8 @@ int primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BA
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->set_balancing_status
-    );}
+    );
+}
 int primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5643,7 +5814,8 @@ int primary_fields_file_SET_CELL_BALANCING_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "set_balancing_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5691,7 +5863,8 @@ int primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, 
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->connected
-    );}
+    );
+}
 int primary_fields_HANDCART_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -5699,7 +5872,8 @@ int primary_fields_HANDCART_STATUS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "connected"
-    );}
+    );
+}
 int primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5711,7 +5885,8 @@ int primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* mess
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->connected
-    );}
+    );
+}
 int primary_fields_file_HANDCART_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5719,7 +5894,8 @@ int primary_fields_file_HANDCART_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "connected"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5810,7 +5986,8 @@ int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buf
         message->encoder_l,
         message->inverter_r,
         message->inverter_l
-    );}
+    );
+}
 int primary_fields_SPEED(char* buffer) {
     return sprintf(
         buffer,
@@ -5821,7 +5998,8 @@ int primary_fields_SPEED(char* buffer) {
         "encoder_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "inverter_l"
-    );}
+    );
+}
 int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5839,7 +6017,8 @@ int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE
         message->encoder_l,
         message->inverter_r,
         message->inverter_l
-    );}
+    );
+}
 int primary_fields_file_SPEED(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5850,7 +6029,8 @@ int primary_fields_file_SPEED(FILE* buffer) {
         "encoder_l" CANLIB_SEPARATOR 
         "inverter_r" CANLIB_SEPARATOR 
         "inverter_l"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -5910,7 +6090,8 @@ int primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message
         message->reg_id,
         message->lsb,
         message->msb
-    );}
+    );
+}
 int primary_fields_INV_L_SET_TORQUE(char* buffer) {
     return sprintf(
         buffer,
@@ -5920,7 +6101,8 @@ int primary_fields_INV_L_SET_TORQUE(char* buffer) {
         "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
-    );}
+    );
+}
 int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -5936,7 +6118,8 @@ int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* me
         message->reg_id,
         message->lsb,
         message->msb
-    );}
+    );
+}
 int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -5946,7 +6129,8 @@ int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
         "reg_id" CANLIB_SEPARATOR 
         "lsb" CANLIB_SEPARATOR 
         "msb"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -6036,7 +6220,8 @@ int primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, ch
         message->data_4,
         message->data_5,
         message->data_6
-    );}
+    );
+}
 int primary_fields_INV_L_RESPONSE(char* buffer) {
     return sprintf(
         buffer,
@@ -6051,7 +6236,8 @@ int primary_fields_INV_L_RESPONSE(char* buffer) {
         "data_4" CANLIB_SEPARATOR 
         "data_5" CANLIB_SEPARATOR 
         "data_6"
-    );}
+    );
+}
 int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -6077,7 +6263,8 @@ int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* messag
         message->data_4,
         message->data_5,
         message->data_6
-    );}
+    );
+}
 int primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -6092,13 +6279,15 @@ int primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
         "data_4" CANLIB_SEPARATOR 
         "data_5" CANLIB_SEPARATOR 
         "data_6"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
 primary_byte_size primary_serialize_FLASH_CELLBOARD_0_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6106,6 +6295,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_0_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6118,6 +6309,10 @@ void primary_deserialize_FLASH_CELLBOARD_0_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6126,16 +6321,26 @@ void primary_deserialize_FLASH_CELLBOARD_0_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_0_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6143,6 +6348,7 @@ int primary_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_0_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6150,6 +6356,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_0_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6162,6 +6370,10 @@ void primary_deserialize_FLASH_CELLBOARD_0_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6170,16 +6382,26 @@ void primary_deserialize_FLASH_CELLBOARD_0_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_0_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6187,6 +6409,7 @@ int primary_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_1_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6194,6 +6417,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_1_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6206,6 +6431,10 @@ void primary_deserialize_FLASH_CELLBOARD_1_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6214,16 +6443,26 @@ void primary_deserialize_FLASH_CELLBOARD_1_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_1_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6231,6 +6470,7 @@ int primary_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_1_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6238,6 +6478,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_1_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6250,6 +6492,10 @@ void primary_deserialize_FLASH_CELLBOARD_1_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6258,16 +6504,26 @@ void primary_deserialize_FLASH_CELLBOARD_1_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_1_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6275,6 +6531,7 @@ int primary_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_2_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6282,6 +6539,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_2_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6294,6 +6553,10 @@ void primary_deserialize_FLASH_CELLBOARD_2_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6302,16 +6565,26 @@ void primary_deserialize_FLASH_CELLBOARD_2_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_2_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6319,6 +6592,7 @@ int primary_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_2_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6326,6 +6600,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_2_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6338,6 +6614,10 @@ void primary_deserialize_FLASH_CELLBOARD_2_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6346,16 +6626,26 @@ void primary_deserialize_FLASH_CELLBOARD_2_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_2_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6363,6 +6653,7 @@ int primary_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_3_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6370,6 +6661,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_3_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6382,6 +6675,10 @@ void primary_deserialize_FLASH_CELLBOARD_3_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6390,16 +6687,26 @@ void primary_deserialize_FLASH_CELLBOARD_3_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_3_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6407,6 +6714,7 @@ int primary_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_3_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6414,6 +6722,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_3_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6426,6 +6736,10 @@ void primary_deserialize_FLASH_CELLBOARD_3_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6434,16 +6748,26 @@ void primary_deserialize_FLASH_CELLBOARD_3_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_3_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6451,6 +6775,7 @@ int primary_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_4_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6458,6 +6783,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_4_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6470,6 +6797,10 @@ void primary_deserialize_FLASH_CELLBOARD_4_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6478,16 +6809,26 @@ void primary_deserialize_FLASH_CELLBOARD_4_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_4_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6495,6 +6836,7 @@ int primary_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_4_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6502,6 +6844,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_4_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6514,6 +6858,10 @@ void primary_deserialize_FLASH_CELLBOARD_4_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6522,16 +6870,26 @@ void primary_deserialize_FLASH_CELLBOARD_4_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_4_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6539,6 +6897,7 @@ int primary_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_5_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6546,6 +6905,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_TX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_5_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6558,6 +6919,10 @@ void primary_deserialize_FLASH_CELLBOARD_5_TX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6566,16 +6931,26 @@ void primary_deserialize_FLASH_CELLBOARD_5_TX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_5_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -6583,6 +6958,7 @@ int primary_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer) {
 primary_byte_size primary_serialize_FLASH_CELLBOARD_5_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -6590,6 +6966,8 @@ primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_RX(
     uint8_t* data,
     primary_message_FLASH_CELLBOARD_5_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -6602,6 +6980,10 @@ void primary_deserialize_FLASH_CELLBOARD_5_RX(
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -6610,16 +6992,26 @@ void primary_deserialize_FLASH_CELLBOARD_5_RX(
 // ============== STRING ============== //
 
 int primary_to_string_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_FLASH_CELLBOARD_5_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_to_string_file_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 

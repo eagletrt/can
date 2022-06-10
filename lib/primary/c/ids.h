@@ -19,110 +19,110 @@ typedef uint16_t canlib_message_id;
 
 /* TOPIC FLASH */
 #define primary_topic_mask_FLASH 0b00000011111
-#define primary_topic_filter_FLASH 0b00000000000
+#define primary_topic_filter_FLASH 0b00000000000 // dec: 0 hex: 0x0
 
-#define primary_id_BMS_HV_JMP_TO_BLT 0b00000000000
+#define primary_id_BMS_HV_JMP_TO_BLT 0b00000000000 // dec: 0 hex: 0x0
 
 /* TOPIC BROADCAST */
 #define primary_topic_mask_BROADCAST 0b00000011111
-#define primary_topic_filter_BROADCAST 0b00000000001
+#define primary_topic_filter_BROADCAST 0b00000000001 // dec: 1 hex: 0x1
 
-#define primary_id_STEER_VERSION 0b10000000001
-#define primary_id_DAS_VERSION 0b10000100001
-#define primary_id_HV_VERSION 0b10001000001
-#define primary_id_LV_VERSION 0b10001100001
-#define primary_id_TLM_VERSION 0b10010000001
-#define primary_id_TIMESTAMP 0b00100000001
+#define primary_id_STEER_VERSION 0b10000000001 // dec: 1025 hex: 0x401
+#define primary_id_DAS_VERSION 0b10000100001 // dec: 1057 hex: 0x421
+#define primary_id_HV_VERSION 0b10001000001 // dec: 1089 hex: 0x441
+#define primary_id_LV_VERSION 0b10001100001 // dec: 1121 hex: 0x461
+#define primary_id_TLM_VERSION 0b10010000001 // dec: 1153 hex: 0x481
+#define primary_id_TIMESTAMP 0b00100000001 // dec: 257 hex: 0x101
 
 /* TOPIC TLM */
 #define primary_topic_mask_TLM 0b00000011111
-#define primary_topic_filter_TLM 0b00000000010
+#define primary_topic_filter_TLM 0b00000000010 // dec: 2 hex: 0x2
 
-#define primary_id_SET_TLM_STATUS 0b00100000010
-#define primary_id_STEER_SYSTEM_STATUS 0b11100000010
-#define primary_id_MARKER 0b00000000010
+#define primary_id_SET_TLM_STATUS 0b00100000010 // dec: 258 hex: 0x102
+#define primary_id_STEER_SYSTEM_STATUS 0b11100000010 // dec: 1794 hex: 0x702
+#define primary_id_MARKER 0b00000000010 // dec: 2 hex: 0x2
 
 /* TOPIC STEER */
 #define primary_topic_mask_STEER 0b00000011111
-#define primary_topic_filter_STEER 0b00000000011
+#define primary_topic_filter_STEER 0b00000000011 // dec: 3 hex: 0x3
 
-#define primary_id_TLM_STATUS 0b00100000011
-#define primary_id_CAR_STATUS 0b01000000011
-#define primary_id_DAS_ERRORS 0b00000000011
-#define primary_id_SPEED 0b01000100011
+#define primary_id_TLM_STATUS 0b00100000011 // dec: 259 hex: 0x103
+#define primary_id_CAR_STATUS 0b01000000011 // dec: 515 hex: 0x203
+#define primary_id_DAS_ERRORS 0b00000000011 // dec: 3 hex: 0x3
+#define primary_id_SPEED 0b01000100011 // dec: 547 hex: 0x223
 
 /* TOPIC DASnSTEERnCART */
 #define primary_topic_mask_DASnSTEERnCART 0b00000011111
-#define primary_topic_filter_DASnSTEERnCART 0b00000000100
+#define primary_topic_filter_DASnSTEERnCART 0b00000000100 // dec: 4 hex: 0x4
 
-#define primary_id_HV_VOLTAGE 0b01100000100
-#define primary_id_HV_CURRENT 0b01100100100
-#define primary_id_HV_TEMP 0b01101000100
-#define primary_id_HV_ERRORS 0b00000000100
-#define primary_id_TS_STATUS 0b00000100100
+#define primary_id_HV_VOLTAGE 0b01100000100 // dec: 772 hex: 0x304
+#define primary_id_HV_CURRENT 0b01100100100 // dec: 804 hex: 0x324
+#define primary_id_HV_TEMP 0b01101000100 // dec: 836 hex: 0x344
+#define primary_id_HV_ERRORS 0b00000000100 // dec: 4 hex: 0x4
+#define primary_id_TS_STATUS 0b00000100100 // dec: 36 hex: 0x24
 
 /* TOPIC BMS_HV */
 #define primary_topic_mask_BMS_HV 0b00000011111
-#define primary_topic_filter_BMS_HV 0b00000000101
+#define primary_topic_filter_BMS_HV 0b00000000101 // dec: 5 hex: 0x5
 
-#define primary_id_HV_CAN_FORWARD 0b00000000101
-#define primary_id_SET_TS_STATUS_DAS 0b00000100101
-#define primary_id_SET_TS_STATUS_HANDCART 0b00001000101
-#define primary_id_SET_CELL_BALANCING_STATUS 0b01000000101
-#define primary_id_HANDCART_STATUS 0b01100000101
+#define primary_id_HV_CAN_FORWARD 0b00000000101 // dec: 5 hex: 0x5
+#define primary_id_SET_TS_STATUS_DAS 0b00000100101 // dec: 37 hex: 0x25
+#define primary_id_SET_TS_STATUS_HANDCART 0b00001000101 // dec: 69 hex: 0x45
+#define primary_id_SET_CELL_BALANCING_STATUS 0b01000000101 // dec: 517 hex: 0x205
+#define primary_id_HANDCART_STATUS 0b01100000101 // dec: 773 hex: 0x305
 
 /* TOPIC HANDCART */
 #define primary_topic_mask_HANDCART 0b00000011111
-#define primary_topic_filter_HANDCART 0b00000000110
+#define primary_topic_filter_HANDCART 0b00000000110 // dec: 6 hex: 0x6
 
-#define primary_id_HV_CAN_FORWARD_STATUS 0b00000000110
-#define primary_id_HV_CELLS_VOLTAGE 0b01000000110
-#define primary_id_HV_CELLS_TEMP 0b01000100110
-#define primary_id_HV_CELL_BALANCING_STATUS 0b01001000110
+#define primary_id_HV_CAN_FORWARD_STATUS 0b00000000110 // dec: 6 hex: 0x6
+#define primary_id_HV_CELLS_VOLTAGE 0b01000000110 // dec: 518 hex: 0x206
+#define primary_id_HV_CELLS_TEMP 0b01000100110 // dec: 550 hex: 0x226
+#define primary_id_HV_CELL_BALANCING_STATUS 0b01001000110 // dec: 582 hex: 0x246
 
 /* TOPIC DAS */
 #define primary_topic_mask_DAS 0b00000011111
-#define primary_topic_filter_DAS 0b00000000111
+#define primary_topic_filter_DAS 0b00000000111 // dec: 7 hex: 0x7
 
-#define primary_id_STEER_STATUS 0b00100000111
-#define primary_id_SET_CAR_STATUS 0b01100000111
-#define primary_id_SET_PEDALS_RANGE 0b10000000111
-#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100111
+#define primary_id_STEER_STATUS 0b00100000111 // dec: 263 hex: 0x107
+#define primary_id_SET_CAR_STATUS 0b01100000111 // dec: 775 hex: 0x307
+#define primary_id_SET_PEDALS_RANGE 0b10000000111 // dec: 1031 hex: 0x407
+#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100111 // dec: 1063 hex: 0x427
 
 /* TOPIC DASnSTEER */
 #define primary_topic_mask_DASnSTEER 0b00000011111
-#define primary_topic_filter_DASnSTEER 0b00000001000
+#define primary_topic_filter_DASnSTEER 0b00000001000 // dec: 8 hex: 0x8
 
-#define primary_id_LV_CURRENT 0b01100001000
-#define primary_id_LV_VOLTAGE 0b01100101000
-#define primary_id_LV_TOTAL_VOLTAGE 0b01101001000
-#define primary_id_LV_TEMPERATURE 0b01101101000
-#define primary_id_COOLING_STATUS 0b01110001000
+#define primary_id_LV_CURRENT 0b01100001000 // dec: 776 hex: 0x308
+#define primary_id_LV_VOLTAGE 0b01100101000 // dec: 808 hex: 0x328
+#define primary_id_LV_TOTAL_VOLTAGE 0b01101001000 // dec: 840 hex: 0x348
+#define primary_id_LV_TEMPERATURE 0b01101101000 // dec: 872 hex: 0x368
+#define primary_id_COOLING_STATUS 0b01110001000 // dec: 904 hex: 0x388
 
 /* TOPIC DASnLV */
 #define primary_topic_mask_DASnLV 0b00000011111
-#define primary_topic_filter_DASnLV 0b00000001001
+#define primary_topic_filter_DASnLV 0b00000001001 // dec: 9 hex: 0x9
 
-#define primary_id_SET_RADIATOR_SPEED 0b01100001001
-#define primary_id_SET_PUMPS_POWER 0b01100101001
+#define primary_id_SET_RADIATOR_SPEED 0b01100001001 // dec: 777 hex: 0x309
+#define primary_id_SET_PUMPS_POWER 0b01100101001 // dec: 809 hex: 0x329
 
 /* TOPIC FIXED_IDS */
 #define primary_topic_mask_FIXED_IDS 0b00000011111
 
-#define primary_id_INV_L_SET_TORQUE 0b01000000001
-#define primary_id_INV_L_RESPONSE 0b00110000001
-#define primary_id_FLASH_CELLBOARD_0_TX 0b00000010000
-#define primary_id_FLASH_CELLBOARD_0_RX 0b00000010001
-#define primary_id_FLASH_CELLBOARD_1_TX 0b00000010010
-#define primary_id_FLASH_CELLBOARD_1_RX 0b00000010011
-#define primary_id_FLASH_CELLBOARD_2_TX 0b00000010100
-#define primary_id_FLASH_CELLBOARD_2_RX 0b00000010101
-#define primary_id_FLASH_CELLBOARD_3_TX 0b00000010110
-#define primary_id_FLASH_CELLBOARD_3_RX 0b00000010111
-#define primary_id_FLASH_CELLBOARD_4_TX 0b00000011000
-#define primary_id_FLASH_CELLBOARD_4_RX 0b00000011001
-#define primary_id_FLASH_CELLBOARD_5_TX 0b00000011010
-#define primary_id_FLASH_CELLBOARD_5_RX 0b00000011011
+#define primary_id_INV_L_SET_TORQUE 0b01000000001 // dec: 513 hex: 0x201
+#define primary_id_INV_L_RESPONSE 0b00110000001 // dec: 385 hex: 0x181
+#define primary_id_FLASH_CELLBOARD_0_TX 0b00000010000 // dec: 16 hex: 0x10
+#define primary_id_FLASH_CELLBOARD_0_RX 0b00000010001 // dec: 17 hex: 0x11
+#define primary_id_FLASH_CELLBOARD_1_TX 0b00000010010 // dec: 18 hex: 0x12
+#define primary_id_FLASH_CELLBOARD_1_RX 0b00000010011 // dec: 19 hex: 0x13
+#define primary_id_FLASH_CELLBOARD_2_TX 0b00000010100 // dec: 20 hex: 0x14
+#define primary_id_FLASH_CELLBOARD_2_RX 0b00000010101 // dec: 21 hex: 0x15
+#define primary_id_FLASH_CELLBOARD_3_TX 0b00000010110 // dec: 22 hex: 0x16
+#define primary_id_FLASH_CELLBOARD_3_RX 0b00000010111 // dec: 23 hex: 0x17
+#define primary_id_FLASH_CELLBOARD_4_TX 0b00000011000 // dec: 24 hex: 0x18
+#define primary_id_FLASH_CELLBOARD_4_RX 0b00000011001 // dec: 25 hex: 0x19
+#define primary_id_FLASH_CELLBOARD_5_TX 0b00000011010 // dec: 26 hex: 0x1A
+#define primary_id_FLASH_CELLBOARD_5_RX 0b00000011011 // dec: 27 hex: 0x1B
 
 
 // ============== UTILS ============== //

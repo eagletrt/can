@@ -71,6 +71,8 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
 #endif
 
+#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
+
 #define PRIf32 "f"
 #define PRIf64 "f"
 
@@ -865,7 +867,8 @@ int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) 
 #endif // CANLIB_TIMESTAMP
         message->errors,
         message->balancing_status
-    );}
+    );
+}
 int bms_fields_BOARD_STATUS(char* buffer) {
     return sprintf(
         buffer,
@@ -874,7 +877,8 @@ int bms_fields_BOARD_STATUS(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
-    );}
+    );
+}
 int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -888,7 +892,8 @@ int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buf
 #endif // CANLIB_TIMESTAMP
         message->errors,
         message->balancing_status
-    );}
+    );
+}
 int bms_fields_file_BOARD_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -897,7 +902,8 @@ int bms_fields_file_BOARD_STATUS(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1012,7 +1018,8 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
         message->temp3,
         message->temp4,
         message->temp5
-    );}
+    );
+}
 int bms_fields_TEMPERATURES(char* buffer) {
     return sprintf(
         buffer,
@@ -1026,7 +1033,8 @@ int bms_fields_TEMPERATURES(char* buffer) {
         "temp3" CANLIB_SEPARATOR 
         "temp4" CANLIB_SEPARATOR 
         "temp5"
-    );}
+    );
+}
 int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1050,7 +1058,8 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
         message->temp3,
         message->temp4,
         message->temp5
-    );}
+    );
+}
 int bms_fields_file_TEMPERATURES(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1064,7 +1073,8 @@ int bms_fields_file_TEMPERATURES(FILE* buffer) {
         "temp3" CANLIB_SEPARATOR 
         "temp4" CANLIB_SEPARATOR 
         "temp5"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1161,7 +1171,8 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
         message->voltage1,
         message->voltage2,
         message->start_index
-    );}
+    );
+}
 int bms_fields_VOLTAGES(char* buffer) {
     return sprintf(
         buffer,
@@ -1172,7 +1183,8 @@ int bms_fields_VOLTAGES(char* buffer) {
         "voltage1" CANLIB_SEPARATOR 
         "voltage2" CANLIB_SEPARATOR 
         "start_index"
-    );}
+    );
+}
 int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1190,7 +1202,8 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
         message->voltage1,
         message->voltage2,
         message->start_index
-    );}
+    );
+}
 int bms_fields_file_VOLTAGES(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1201,7 +1214,8 @@ int bms_fields_file_VOLTAGES(FILE* buffer) {
         "voltage1" CANLIB_SEPARATOR 
         "voltage2" CANLIB_SEPARATOR 
         "start_index"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1261,7 +1275,8 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
 #endif // CANLIB_TIMESTAMP
         message->cells,
         message->board_index
-    );}
+    );
+}
 int bms_fields_BALANCING(char* buffer) {
     return sprintf(
         buffer,
@@ -1270,7 +1285,8 @@ int bms_fields_BALANCING(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "cells" CANLIB_SEPARATOR 
         "board_index"
-    );}
+    );
+}
 int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1284,7 +1300,8 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         message->cells,
         message->board_index
-    );}
+    );
+}
 int bms_fields_file_BALANCING(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1293,7 +1310,8 @@ int bms_fields_file_BALANCING(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "cells" CANLIB_SEPARATOR 
         "board_index"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1341,7 +1359,8 @@ int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->board_index
-    );}
+    );
+}
 int bms_fields_FW_UPDATE(char* buffer) {
     return sprintf(
         buffer,
@@ -1349,7 +1368,8 @@ int bms_fields_FW_UPDATE(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "board_index"
-    );}
+    );
+}
 int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1361,7 +1381,8 @@ int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->board_index
-    );}
+    );
+}
 int bms_fields_file_FW_UPDATE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1369,13 +1390,15 @@ int bms_fields_file_FW_UPDATE(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "board_index"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
 bms_byte_size bms_serialize_FLASH_CELLBOARD_0_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1383,6 +1406,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_0_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_0_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1395,6 +1420,10 @@ void bms_deserialize_FLASH_CELLBOARD_0_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1403,16 +1432,26 @@ void bms_deserialize_FLASH_CELLBOARD_0_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_0_TX(bms_message_FLASH_CELLBOARD_0_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_0_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_0_TX(bms_message_FLASH_CELLBOARD_0_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1420,6 +1459,7 @@ int bms_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_0_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1427,6 +1467,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_0_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_0_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1439,6 +1481,10 @@ void bms_deserialize_FLASH_CELLBOARD_0_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1447,16 +1493,26 @@ void bms_deserialize_FLASH_CELLBOARD_0_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_0_RX(bms_message_FLASH_CELLBOARD_0_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_0_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_0_RX(bms_message_FLASH_CELLBOARD_0_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1464,6 +1520,7 @@ int bms_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_1_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1471,6 +1528,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_1_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_1_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1483,6 +1542,10 @@ void bms_deserialize_FLASH_CELLBOARD_1_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1491,16 +1554,26 @@ void bms_deserialize_FLASH_CELLBOARD_1_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_1_TX(bms_message_FLASH_CELLBOARD_1_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_1_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_1_TX(bms_message_FLASH_CELLBOARD_1_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1508,6 +1581,7 @@ int bms_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_1_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1515,6 +1589,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_1_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_1_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1527,6 +1603,10 @@ void bms_deserialize_FLASH_CELLBOARD_1_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1535,16 +1615,26 @@ void bms_deserialize_FLASH_CELLBOARD_1_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_1_RX(bms_message_FLASH_CELLBOARD_1_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_1_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_1_RX(bms_message_FLASH_CELLBOARD_1_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1552,6 +1642,7 @@ int bms_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_2_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1559,6 +1650,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_2_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_2_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1571,6 +1664,10 @@ void bms_deserialize_FLASH_CELLBOARD_2_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1579,16 +1676,26 @@ void bms_deserialize_FLASH_CELLBOARD_2_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_2_TX(bms_message_FLASH_CELLBOARD_2_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_2_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_2_TX(bms_message_FLASH_CELLBOARD_2_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1596,6 +1703,7 @@ int bms_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_2_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1603,6 +1711,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_2_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_2_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1615,6 +1725,10 @@ void bms_deserialize_FLASH_CELLBOARD_2_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1623,16 +1737,26 @@ void bms_deserialize_FLASH_CELLBOARD_2_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_2_RX(bms_message_FLASH_CELLBOARD_2_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_2_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_2_RX(bms_message_FLASH_CELLBOARD_2_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1640,6 +1764,7 @@ int bms_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_3_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1647,6 +1772,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_3_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_3_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1659,6 +1786,10 @@ void bms_deserialize_FLASH_CELLBOARD_3_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1667,16 +1798,26 @@ void bms_deserialize_FLASH_CELLBOARD_3_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_3_TX(bms_message_FLASH_CELLBOARD_3_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_3_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_3_TX(bms_message_FLASH_CELLBOARD_3_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1684,6 +1825,7 @@ int bms_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_3_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1691,6 +1833,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_3_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_3_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1703,6 +1847,10 @@ void bms_deserialize_FLASH_CELLBOARD_3_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1711,16 +1859,26 @@ void bms_deserialize_FLASH_CELLBOARD_3_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_3_RX(bms_message_FLASH_CELLBOARD_3_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_3_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_3_RX(bms_message_FLASH_CELLBOARD_3_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1728,6 +1886,7 @@ int bms_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_4_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1735,6 +1894,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_4_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_4_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1747,6 +1908,10 @@ void bms_deserialize_FLASH_CELLBOARD_4_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1755,16 +1920,26 @@ void bms_deserialize_FLASH_CELLBOARD_4_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_4_TX(bms_message_FLASH_CELLBOARD_4_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_4_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_4_TX(bms_message_FLASH_CELLBOARD_4_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1772,6 +1947,7 @@ int bms_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_4_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1779,6 +1955,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_4_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_4_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1791,6 +1969,10 @@ void bms_deserialize_FLASH_CELLBOARD_4_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1799,16 +1981,26 @@ void bms_deserialize_FLASH_CELLBOARD_4_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_4_RX(bms_message_FLASH_CELLBOARD_4_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_4_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_4_RX(bms_message_FLASH_CELLBOARD_4_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1816,6 +2008,7 @@ int bms_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_5_TX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1823,6 +2016,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_5_TX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_5_TX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1835,6 +2030,10 @@ void bms_deserialize_FLASH_CELLBOARD_5_TX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1843,16 +2042,26 @@ void bms_deserialize_FLASH_CELLBOARD_5_TX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_5_TX(bms_message_FLASH_CELLBOARD_5_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_5_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_5_TX(bms_message_FLASH_CELLBOARD_5_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 // ============== SERIALIZE ============== //
@@ -1860,6 +2069,7 @@ int bms_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer) {
 bms_byte_size bms_serialize_FLASH_CELLBOARD_5_RX(
     uint8_t* data
 ) {
+    CANLIB_UNUSED(data);
     return 0;
 }
 
@@ -1867,6 +2077,8 @@ bms_byte_size bms_serialize_struct_FLASH_CELLBOARD_5_RX(
     uint8_t* data,
     bms_message_FLASH_CELLBOARD_5_RX* message
 ) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
     return 0;
 }
 
@@ -1879,6 +2091,10 @@ void bms_deserialize_FLASH_CELLBOARD_5_RX(
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1887,16 +2103,26 @@ void bms_deserialize_FLASH_CELLBOARD_5_RX(
 // ============== STRING ============== //
 
 int bms_to_string_FLASH_CELLBOARD_5_RX(bms_message_FLASH_CELLBOARD_5_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_FLASH_CELLBOARD_5_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_to_string_file_FLASH_CELLBOARD_5_RX(bms_message_FLASH_CELLBOARD_5_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
     return 0;
+
 }
 
 

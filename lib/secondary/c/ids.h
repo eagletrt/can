@@ -20,40 +20,40 @@ typedef uint16_t canlib_message_id;
 /* TOPIC FIXED_IDS */
 #define secondary_topic_mask_FIXED_IDS 0b00000011111
 
-#define secondary_id_IMU_ANGULAR_RATE 0b10011101100
-#define secondary_id_IMU_ACCELERATION 0b10011101101
-#define secondary_id_IRTS_FL_0 0b10110110100
-#define secondary_id_IRTS_FL_1 0b10110110101
-#define secondary_id_IRTS_FL_2 0b10110110110
-#define secondary_id_IRTS_FL_3 0b10110110111
-#define secondary_id_IRTS_FR_0 0b10110111000
-#define secondary_id_IRTS_FR_1 0b10110111001
-#define secondary_id_IRTS_FR_2 0b10110111010
-#define secondary_id_IRTS_FR_3 0b10110111011
-#define secondary_id_IRTS_RL_0 0b10110111100
-#define secondary_id_IRTS_RL_1 0b10110111101
-#define secondary_id_IRTS_RL_2 0b10110111110
-#define secondary_id_IRTS_RL_3 0b10110111111
-#define secondary_id_IRTS_RR_0 0b10111000000
-#define secondary_id_IRTS_RR_1 0b10111000001
-#define secondary_id_IRTS_RR_2 0b10111000010
-#define secondary_id_IRTS_RR_3 0b10111000011
+#define secondary_id_IMU_ANGULAR_RATE 0b10011101100 // dec: 1260 hex: 0x4EC
+#define secondary_id_IMU_ACCELERATION 0b10011101101 // dec: 1261 hex: 0x4ED
+#define secondary_id_IRTS_FL_0 0b10110110100 // dec: 1460 hex: 0x5B4
+#define secondary_id_IRTS_FL_1 0b10110110101 // dec: 1461 hex: 0x5B5
+#define secondary_id_IRTS_FL_2 0b10110110110 // dec: 1462 hex: 0x5B6
+#define secondary_id_IRTS_FL_3 0b10110110111 // dec: 1463 hex: 0x5B7
+#define secondary_id_IRTS_FR_0 0b10110111000 // dec: 1464 hex: 0x5B8
+#define secondary_id_IRTS_FR_1 0b10110111001 // dec: 1465 hex: 0x5B9
+#define secondary_id_IRTS_FR_2 0b10110111010 // dec: 1466 hex: 0x5BA
+#define secondary_id_IRTS_FR_3 0b10110111011 // dec: 1467 hex: 0x5BB
+#define secondary_id_IRTS_RL_0 0b10110111100 // dec: 1468 hex: 0x5BC
+#define secondary_id_IRTS_RL_1 0b10110111101 // dec: 1469 hex: 0x5BD
+#define secondary_id_IRTS_RL_2 0b10110111110 // dec: 1470 hex: 0x5BE
+#define secondary_id_IRTS_RL_3 0b10110111111 // dec: 1471 hex: 0x5BF
+#define secondary_id_IRTS_RR_0 0b10111000000 // dec: 1472 hex: 0x5C0
+#define secondary_id_IRTS_RR_1 0b10111000001 // dec: 1473 hex: 0x5C1
+#define secondary_id_IRTS_RR_2 0b10111000010 // dec: 1474 hex: 0x5C2
+#define secondary_id_IRTS_RR_3 0b10111000011 // dec: 1475 hex: 0x5C3
 
 /* TOPIC STEER */
 #define secondary_topic_mask_STEER 0b00000011111
-#define secondary_topic_filter_STEER 0b00000000001
+#define secondary_topic_filter_STEER 0b00000000001 // dec: 1 hex: 0x1
 
-#define secondary_id_GPS_COORDS 0b10000000001
-#define secondary_id_GPS_SPEED 0b10000100001
-#define secondary_id_LAP_COUNT 0b10001000001
-#define secondary_id_PEDALS_OUTPUT 0b01100000001
-#define secondary_id_CONTROL_OUTPUT 0b01100100001
+#define secondary_id_GPS_COORDS 0b10000000001 // dec: 1025 hex: 0x401
+#define secondary_id_GPS_SPEED 0b10000100001 // dec: 1057 hex: 0x421
+#define secondary_id_LAP_COUNT 0b10001000001 // dec: 1089 hex: 0x441
+#define secondary_id_PEDALS_OUTPUT 0b01100000001 // dec: 769 hex: 0x301
+#define secondary_id_CONTROL_OUTPUT 0b01100100001 // dec: 801 hex: 0x321
 
 /* TOPIC TELEMETRY */
 #define secondary_topic_mask_TELEMETRY 0b00000011111
-#define secondary_topic_filter_TELEMETRY 0b00000000010
+#define secondary_topic_filter_TELEMETRY 0b00000000010 // dec: 2 hex: 0x2
 
-#define secondary_id_STEERING_ANGLE 0b00100000010
+#define secondary_id_STEERING_ANGLE 0b00100000010 // dec: 258 hex: 0x102
 
 
 // ============== UTILS ============== //

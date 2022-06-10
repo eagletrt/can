@@ -164,6 +164,7 @@ typedef struct {
 } primary_watchdog;
 
 int primary_watchdog_index_from_id(canlib_message_id id);
+int primary_watchdog_interval_from_id(uint16_t message_id);
 
 primary_watchdog* primary_watchdog_new();
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
@@ -171,6 +172,118 @@ void primary_watchdog_reset_all(primary_watchdog *watchdog, canlib_watchdog_time
 void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef primary_WATCHDOG_IMPLEMENTATION
+
+int primary_watchdog_interval_from_id(uint16_t message_id) {
+    switch (message_id) {
+    case 0:
+        return primary_BMS_HV_JMP_TO_BLT_INTERVAL;
+    case 1025:
+        return primary_STEER_VERSION_INTERVAL;
+    case 1057:
+        return primary_DAS_VERSION_INTERVAL;
+    case 1089:
+        return primary_HV_VERSION_INTERVAL;
+    case 1121:
+        return primary_LV_VERSION_INTERVAL;
+    case 1153:
+        return primary_TLM_VERSION_INTERVAL;
+    case 257:
+        return primary_TIMESTAMP_INTERVAL;
+    case 258:
+        return primary_SET_TLM_STATUS_INTERVAL;
+    case 259:
+        return primary_TLM_STATUS_INTERVAL;
+    case 1794:
+        return primary_STEER_SYSTEM_STATUS_INTERVAL;
+    case 772:
+        return primary_HV_VOLTAGE_INTERVAL;
+    case 804:
+        return primary_HV_CURRENT_INTERVAL;
+    case 836:
+        return primary_HV_TEMP_INTERVAL;
+    case 4:
+        return primary_HV_ERRORS_INTERVAL;
+    case 5:
+        return primary_HV_CAN_FORWARD_INTERVAL;
+    case 6:
+        return primary_HV_CAN_FORWARD_STATUS_INTERVAL;
+    case 36:
+        return primary_TS_STATUS_INTERVAL;
+    case 37:
+        return primary_SET_TS_STATUS_INTERVAL;
+    case 69:
+        return primary_SET_TS_STATUS_INTERVAL;
+    case 263:
+        return primary_STEER_STATUS_INTERVAL;
+    case 775:
+        return primary_SET_CAR_STATUS_INTERVAL;
+    case 1031:
+        return primary_SET_PEDALS_RANGE_INTERVAL;
+    case 1063:
+        return primary_SET_STEERING_ANGLE_RANGE_INTERVAL;
+    case 515:
+        return primary_CAR_STATUS_INTERVAL;
+    case 3:
+        return primary_DAS_ERRORS_INTERVAL;
+    case 776:
+        return primary_LV_CURRENT_INTERVAL;
+    case 808:
+        return primary_LV_VOLTAGE_INTERVAL;
+    case 840:
+        return primary_LV_TOTAL_VOLTAGE_INTERVAL;
+    case 872:
+        return primary_LV_TEMPERATURE_INTERVAL;
+    case 904:
+        return primary_COOLING_STATUS_INTERVAL;
+    case 777:
+        return primary_SET_RADIATOR_SPEED_INTERVAL;
+    case 809:
+        return primary_SET_PUMPS_POWER_INTERVAL;
+    case 2:
+        return primary_MARKER_INTERVAL;
+    case 518:
+        return primary_HV_CELLS_VOLTAGE_INTERVAL;
+    case 550:
+        return primary_HV_CELLS_TEMP_INTERVAL;
+    case 582:
+        return primary_HV_CELL_BALANCING_STATUS_INTERVAL;
+    case 517:
+        return primary_SET_CELL_BALANCING_STATUS_INTERVAL;
+    case 773:
+        return primary_HANDCART_STATUS_INTERVAL;
+    case 547:
+        return primary_SPEED_INTERVAL;
+    case 513:
+        return primary_INV_L_SET_TORQUE_INTERVAL;
+    case 385:
+        return primary_INV_L_RESPONSE_INTERVAL;
+    case 16:
+        return primary_FLASH_CELLBOARD_0_TX_INTERVAL;
+    case 17:
+        return primary_FLASH_CELLBOARD_0_RX_INTERVAL;
+    case 18:
+        return primary_FLASH_CELLBOARD_1_TX_INTERVAL;
+    case 19:
+        return primary_FLASH_CELLBOARD_1_RX_INTERVAL;
+    case 20:
+        return primary_FLASH_CELLBOARD_2_TX_INTERVAL;
+    case 21:
+        return primary_FLASH_CELLBOARD_2_RX_INTERVAL;
+    case 22:
+        return primary_FLASH_CELLBOARD_3_TX_INTERVAL;
+    case 23:
+        return primary_FLASH_CELLBOARD_3_RX_INTERVAL;
+    case 24:
+        return primary_FLASH_CELLBOARD_4_TX_INTERVAL;
+    case 25:
+        return primary_FLASH_CELLBOARD_4_RX_INTERVAL;
+    case 26:
+        return primary_FLASH_CELLBOARD_5_TX_INTERVAL;
+    case 27:
+        return primary_FLASH_CELLBOARD_5_RX_INTERVAL;
+    }
+    return -1;
+}
 
 int primary_watchdog_index_from_id(canlib_message_id id) {
     switch (id) {

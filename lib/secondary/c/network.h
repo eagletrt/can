@@ -71,6 +71,8 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
 #endif
 
+#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
+
 #define PRIf32 "f"
 #define PRIf64 "f"
 
@@ -1144,7 +1146,8 @@ int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* mes
         message->ang_rate_x,
         message->ang_rate_y,
         message->ang_rate_z
-    );}
+    );
+}
 int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
     return sprintf(
         buffer,
@@ -1154,7 +1157,8 @@ int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
         "ang_rate_z"
-    );}
+    );
+}
 int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1170,7 +1174,8 @@ int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE
         message->ang_rate_x,
         message->ang_rate_y,
         message->ang_rate_z
-    );}
+    );
+}
 int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1180,7 +1185,8 @@ int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
         "ang_rate_z"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1246,7 +1252,8 @@ int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* mes
         message->accel_x,
         message->accel_y,
         message->accel_z
-    );}
+    );
+}
 int secondary_fields_IMU_ACCELERATION(char* buffer) {
     return sprintf(
         buffer,
@@ -1256,7 +1263,8 @@ int secondary_fields_IMU_ACCELERATION(char* buffer) {
         "accel_x" CANLIB_SEPARATOR 
         "accel_y" CANLIB_SEPARATOR 
         "accel_z"
-    );}
+    );
+}
 int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1272,7 +1280,8 @@ int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION
         message->accel_x,
         message->accel_y,
         message->accel_z
-    );}
+    );
+}
 int secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1282,7 +1291,8 @@ int secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
         "accel_x" CANLIB_SEPARATOR 
         "accel_y" CANLIB_SEPARATOR 
         "accel_z"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1356,7 +1366,8 @@ int secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* bu
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_IRTS_FL_0(char* buffer) {
     return sprintf(
         buffer,
@@ -1367,7 +1378,8 @@ int secondary_fields_IRTS_FL_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1385,7 +1397,8 @@ int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FIL
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FL_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1396,7 +1409,8 @@ int secondary_fields_file_IRTS_FL_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1470,7 +1484,8 @@ int secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* bu
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_IRTS_FL_1(char* buffer) {
     return sprintf(
         buffer,
@@ -1481,7 +1496,8 @@ int secondary_fields_IRTS_FL_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1499,7 +1515,8 @@ int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FIL
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FL_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1510,7 +1527,8 @@ int secondary_fields_file_IRTS_FL_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1584,7 +1602,8 @@ int secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* bu
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_IRTS_FL_2(char* buffer) {
     return sprintf(
         buffer,
@@ -1595,7 +1614,8 @@ int secondary_fields_IRTS_FL_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1613,7 +1633,8 @@ int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FIL
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FL_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1624,7 +1645,8 @@ int secondary_fields_file_IRTS_FL_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1698,7 +1720,8 @@ int secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* bu
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_IRTS_FL_3(char* buffer) {
     return sprintf(
         buffer,
@@ -1709,7 +1732,8 @@ int secondary_fields_IRTS_FL_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1727,7 +1751,8 @@ int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FIL
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FL_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1738,7 +1763,8 @@ int secondary_fields_file_IRTS_FL_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1812,7 +1838,8 @@ int secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* bu
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_IRTS_FR_0(char* buffer) {
     return sprintf(
         buffer,
@@ -1823,7 +1850,8 @@ int secondary_fields_IRTS_FR_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1841,7 +1869,8 @@ int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FIL
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FR_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1852,7 +1881,8 @@ int secondary_fields_file_IRTS_FR_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -1926,7 +1956,8 @@ int secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* bu
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_IRTS_FR_1(char* buffer) {
     return sprintf(
         buffer,
@@ -1937,7 +1968,8 @@ int secondary_fields_IRTS_FR_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1955,7 +1987,8 @@ int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FIL
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FR_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1966,7 +1999,8 @@ int secondary_fields_file_IRTS_FR_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2040,7 +2074,8 @@ int secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* bu
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_IRTS_FR_2(char* buffer) {
     return sprintf(
         buffer,
@@ -2051,7 +2086,8 @@ int secondary_fields_IRTS_FR_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2069,7 +2105,8 @@ int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FIL
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FR_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2080,7 +2117,8 @@ int secondary_fields_file_IRTS_FR_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2154,7 +2192,8 @@ int secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* bu
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_IRTS_FR_3(char* buffer) {
     return sprintf(
         buffer,
@@ -2165,7 +2204,8 @@ int secondary_fields_IRTS_FR_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2183,7 +2223,8 @@ int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FIL
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_file_IRTS_FR_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2194,7 +2235,8 @@ int secondary_fields_file_IRTS_FR_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2268,7 +2310,8 @@ int secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* bu
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_IRTS_RL_0(char* buffer) {
     return sprintf(
         buffer,
@@ -2279,7 +2322,8 @@ int secondary_fields_IRTS_RL_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2297,7 +2341,8 @@ int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FIL
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RL_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2308,7 +2353,8 @@ int secondary_fields_file_IRTS_RL_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2382,7 +2428,8 @@ int secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* bu
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_IRTS_RL_1(char* buffer) {
     return sprintf(
         buffer,
@@ -2393,7 +2440,8 @@ int secondary_fields_IRTS_RL_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2411,7 +2459,8 @@ int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FIL
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RL_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2422,7 +2471,8 @@ int secondary_fields_file_IRTS_RL_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2496,7 +2546,8 @@ int secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* bu
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_IRTS_RL_2(char* buffer) {
     return sprintf(
         buffer,
@@ -2507,7 +2558,8 @@ int secondary_fields_IRTS_RL_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2525,7 +2577,8 @@ int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FIL
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RL_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2536,7 +2589,8 @@ int secondary_fields_file_IRTS_RL_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2610,7 +2664,8 @@ int secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* bu
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_IRTS_RL_3(char* buffer) {
     return sprintf(
         buffer,
@@ -2621,7 +2676,8 @@ int secondary_fields_IRTS_RL_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2639,7 +2695,8 @@ int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FIL
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RL_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2650,7 +2707,8 @@ int secondary_fields_file_IRTS_RL_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2724,7 +2782,8 @@ int secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* bu
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_IRTS_RR_0(char* buffer) {
     return sprintf(
         buffer,
@@ -2735,7 +2794,8 @@ int secondary_fields_IRTS_RR_0(char* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2753,7 +2813,8 @@ int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FIL
         message->channel2,
         message->channel3,
         message->channel4
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RR_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2764,7 +2825,8 @@ int secondary_fields_file_IRTS_RR_0(FILE* buffer) {
         "channel2" CANLIB_SEPARATOR 
         "channel3" CANLIB_SEPARATOR 
         "channel4"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2838,7 +2900,8 @@ int secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* bu
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_IRTS_RR_1(char* buffer) {
     return sprintf(
         buffer,
@@ -2849,7 +2912,8 @@ int secondary_fields_IRTS_RR_1(char* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2867,7 +2931,8 @@ int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FIL
         message->channel6,
         message->channel7,
         message->channel8
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RR_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2878,7 +2943,8 @@ int secondary_fields_file_IRTS_RR_1(FILE* buffer) {
         "channel6" CANLIB_SEPARATOR 
         "channel7" CANLIB_SEPARATOR 
         "channel8"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -2952,7 +3018,8 @@ int secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* bu
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_IRTS_RR_2(char* buffer) {
     return sprintf(
         buffer,
@@ -2963,7 +3030,8 @@ int secondary_fields_IRTS_RR_2(char* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2981,7 +3049,8 @@ int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FIL
         message->channel10,
         message->channel11,
         message->channel12
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RR_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2992,7 +3061,8 @@ int secondary_fields_file_IRTS_RR_2(FILE* buffer) {
         "channel10" CANLIB_SEPARATOR 
         "channel11" CANLIB_SEPARATOR 
         "channel12"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3066,7 +3136,8 @@ int secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* bu
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_IRTS_RR_3(char* buffer) {
     return sprintf(
         buffer,
@@ -3077,7 +3148,8 @@ int secondary_fields_IRTS_RR_3(char* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3095,7 +3167,8 @@ int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FIL
         message->channel14,
         message->channel15,
         message->channel16
-    );}
+    );
+}
 int secondary_fields_file_IRTS_RR_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3106,7 +3179,8 @@ int secondary_fields_file_IRTS_RR_3(FILE* buffer) {
         "channel14" CANLIB_SEPARATOR 
         "channel15" CANLIB_SEPARATOR 
         "channel16"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3172,7 +3246,8 @@ int secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char* 
 #endif // CANLIB_TIMESTAMP
         message->latitude,
         message->longitude
-    );}
+    );
+}
 int secondary_fields_GPS_COORDS(char* buffer) {
     return sprintf(
         buffer,
@@ -3181,7 +3256,8 @@ int secondary_fields_GPS_COORDS(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "latitude" CANLIB_SEPARATOR 
         "longitude"
-    );}
+    );
+}
 int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3195,7 +3271,8 @@ int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, F
 #endif // CANLIB_TIMESTAMP
         message->latitude,
         message->longitude
-    );}
+    );
+}
 int secondary_fields_file_GPS_COORDS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3204,7 +3281,8 @@ int secondary_fields_file_GPS_COORDS(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "latitude" CANLIB_SEPARATOR 
         "longitude"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3254,7 +3332,8 @@ int secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* bu
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->speed
-    );}
+    );
+}
 int secondary_fields_GPS_SPEED(char* buffer) {
     return sprintf(
         buffer,
@@ -3262,7 +3341,8 @@ int secondary_fields_GPS_SPEED(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "speed"
-    );}
+    );
+}
 int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3274,7 +3354,8 @@ int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FIL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->speed
-    );}
+    );
+}
 int secondary_fields_file_GPS_SPEED(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3282,7 +3363,8 @@ int secondary_fields_file_GPS_SPEED(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "speed"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3342,7 +3424,8 @@ int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* bu
 #endif // CANLIB_TIMESTAMP
         message->timestamp,
         message->lap_count
-    );}
+    );
+}
 int secondary_fields_LAP_COUNT(char* buffer) {
     return sprintf(
         buffer,
@@ -3351,7 +3434,8 @@ int secondary_fields_LAP_COUNT(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "timestamp" CANLIB_SEPARATOR 
         "lap_count"
-    );}
+    );
+}
 int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3365,7 +3449,8 @@ int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FIL
 #endif // CANLIB_TIMESTAMP
         message->timestamp,
         message->lap_count
-    );}
+    );
+}
 int secondary_fields_file_LAP_COUNT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3374,7 +3459,8 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "timestamp" CANLIB_SEPARATOR 
         "lap_count"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3461,7 +3547,8 @@ int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion
         message->bse_front,
         message->bse_rear,
         message->apps
-    );}
+    );
+}
 int secondary_fields_PEDALS_OUTPUT(char* buffer) {
     return sprintf(
         buffer,
@@ -3471,7 +3558,8 @@ int secondary_fields_PEDALS_OUTPUT(char* buffer) {
         "bse_front" CANLIB_SEPARATOR 
         "bse_rear" CANLIB_SEPARATOR 
         "apps"
-    );}
+    );
+}
 int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3487,7 +3575,8 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
         message->bse_front,
         message->bse_rear,
         message->apps
-    );}
+    );
+}
 int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3497,7 +3586,8 @@ int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
         "bse_front" CANLIB_SEPARATOR 
         "bse_rear" CANLIB_SEPARATOR 
         "apps"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3563,7 +3653,8 @@ int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message
 #endif // CANLIB_TIMESTAMP
         message->right,
         message->left
-    );}
+    );
+}
 int secondary_fields_CONTROL_OUTPUT(char* buffer) {
     return sprintf(
         buffer,
@@ -3572,7 +3663,8 @@ int secondary_fields_CONTROL_OUTPUT(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "right" CANLIB_SEPARATOR 
         "left"
-    );}
+    );
+}
 int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3586,7 +3678,8 @@ int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* me
 #endif // CANLIB_TIMESTAMP
         message->right,
         message->left
-    );}
+    );
+}
 int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3595,7 +3688,8 @@ int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "right" CANLIB_SEPARATOR 
         "left"
-    );}
+    );
+}
 
 // ============== SERIALIZE ============== //
 
@@ -3649,7 +3743,8 @@ int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->angle
-    );}
+    );
+}
 int secondary_fields_STEERING_ANGLE(char* buffer) {
     return sprintf(
         buffer,
@@ -3657,7 +3752,8 @@ int secondary_fields_STEERING_ANGLE(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "angle"
-    );}
+    );
+}
 int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3669,7 +3765,8 @@ int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* me
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->angle
-    );}
+    );
+}
 int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3677,7 +3774,8 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "angle"
-    );}
+    );
+}
 
 
 // ============== UTILS ============== //
