@@ -56,15 +56,10 @@ typedef uint16_t canlib_message_id;
 
 #define bms_id_BALANCING 0b01000000011
 
-/* TOPIC FW_UPDATE */
-#define bms_topic_mask_FW_UPDATE 0b00000011111
-#define bms_topic_filter_FW_UPDATE 0b00000000100
-
-#define bms_id_FW_UPDATE 0b00100000100
-
 /* TOPIC FIXED_IDS */
 #define bms_topic_mask_FIXED_IDS 0b00000011111
 
+#define bms_id_FW_UPDATE 0b00000001010
 #define bms_id_FLASH_CELLBOARD_0_TX 0b00000010000
 #define bms_id_FLASH_CELLBOARD_0_RX 0b00000010001
 #define bms_id_FLASH_CELLBOARD_1_TX 0b00000010010
@@ -213,7 +208,7 @@ bool bms_is_message_id(canlib_message_id message_id) {
         case 642: return true; break;
         case 674: return true; break;
         case 515: return true; break;
-        case 260: return true; break;
+        case 10: return true; break;
         case 16: return true; break;
         case 17: return true; break;
         case 18: return true; break;

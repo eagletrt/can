@@ -137,7 +137,7 @@ int bms_watchdog_index_from_id(canlib_message_id id) {
         case 642: return bms_watchdog_index_VOLTAGES_CELLBOARD4;
         case 674: return bms_watchdog_index_VOLTAGES_CELLBOARD5;
         case 515: return bms_watchdog_index_BALANCING;
-        case 260: return bms_watchdog_index_FW_UPDATE;
+        case 10: return bms_watchdog_index_FW_UPDATE;
         case 16: return bms_watchdog_index_FLASH_CELLBOARD_0_TX;
         case 17: return bms_watchdog_index_FLASH_CELLBOARD_0_RX;
         case 18: return bms_watchdog_index_FLASH_CELLBOARD_1_TX;

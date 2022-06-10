@@ -1961,7 +1961,7 @@ void bms_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     case 515:
         bms_fields_file_BALANCING(buffer);
         break;
-    case 260:
+    case 10:
         bms_fields_file_FW_UPDATE(buffer);
         break;
     case 16:
@@ -2062,7 +2062,7 @@ void bms_string_from_id(canlib_message_id message_id, void* message, FILE *buffe
         case 515:
             bms_to_string_file_BALANCING((bms_message_BALANCING*) message, buffer);
         break;
-        case 260:
+        case 10:
             bms_to_string_file_FW_UPDATE((bms_message_FW_UPDATE*) message, buffer);
         break;
         case 16:
@@ -2333,7 +2333,7 @@ void bms_deserialize_from_id(
                 #endif
             );
         break;
-        case 260:
+        case 10:
             bms_deserialize_FW_UPDATE(
                 (bms_message_FW_UPDATE*) raw_message,
                 data
@@ -2530,7 +2530,7 @@ void bms_devices_new(bms_devices* map) {
     (*map)[8].raw_message = (void*) malloc(sizeof(bms_message_BALANCING));
     (*map)[8].conversion_message = NULL;
 
-    (*map)[9].id = 260;
+    (*map)[9].id = 10;
     (*map)[9].raw_message = (void*) malloc(sizeof(bms_message_FW_UPDATE));
     (*map)[9].conversion_message = NULL;
 

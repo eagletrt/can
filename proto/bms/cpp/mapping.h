@@ -320,7 +320,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
             break;
         }
 
-        case 260: {
+        case 10: {
             bms_message_FW_UPDATE* msg = (bms_message_FW_UPDATE*) (*map)[index].raw_message;
             bms::FW_UPDATE* proto_msg = pack->add_fw_update();
             proto_msg->set_board_index(msg->board_index);

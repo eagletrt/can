@@ -48,16 +48,11 @@
                 }
             }
         },
-        "FW_UPDATE": {
-            "id": 4,
-            "messages": {
-                "FW_UPDATE": {
-                    "FW_UPDATE": 260
-                }
-            }
-        },
         "FIXED_IDS": {
             "messages": {
+                "FW_UPDATE": {
+                    "FW_UPDATE": 10
+                },
                 "FLASH_CELLBOARD_0_TX": {
                     "FLASH_CELLBOARD_0_TX": 16
                 },
