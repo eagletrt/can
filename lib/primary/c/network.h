@@ -107,7 +107,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 40
+#define primary_NUMBER_OF_MESSAGES 53
 
 // Custom types
 
@@ -149,6 +149,7 @@ typedef struct {
 // ============== SIZES ============== //
 
 
+#define primary_BMS_HV_JMP_TO_BLT_SIZE 0
 #define primary_STEER_VERSION_SIZE 2
 #define primary_DAS_VERSION_SIZE 2
 #define primary_HV_VERSION_SIZE 2
@@ -188,6 +189,18 @@ typedef struct {
 #define primary_SPEED_SIZE 4
 #define primary_INV_L_SET_TORQUE_SIZE 3
 #define primary_INV_L_RESPONSE_SIZE 8
+#define primary_FLASH_CELLBOARD_0_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_0_RX_SIZE 0
+#define primary_FLASH_CELLBOARD_1_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_1_RX_SIZE 0
+#define primary_FLASH_CELLBOARD_2_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_2_RX_SIZE 0
+#define primary_FLASH_CELLBOARD_3_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_3_RX_SIZE 0
+#define primary_FLASH_CELLBOARD_4_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_4_RX_SIZE 0
+#define primary_FLASH_CELLBOARD_5_TX_SIZE 0
+#define primary_FLASH_CELLBOARD_5_RX_SIZE 0
 
 // ============== BIT SETS ============== //
 
@@ -365,6 +378,14 @@ typedef enum CANLIB_PARKING {
 
 // Structs
 
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BMS_HV_JMP_TO_BLT;
 
 
 typedef struct CANLIB_PARKING {
@@ -823,6 +844,124 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_L_RESPONSE;
 
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_0_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_0_RX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_1_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_1_RX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_2_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_2_RX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_3_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_3_RX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_4_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_4_RX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_5_TX;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_CELLBOARD_5_RX;
+
+
+
+// ============== BMS_HV_JMP_TO_BLT ============== //
+
+primary_byte_size primary_serialize_BMS_HV_JMP_TO_BLT(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BMS_HV_JMP_TO_BLT(
+    uint8_t* data,
+    primary_message_BMS_HV_JMP_TO_BLT* message
+);
+void primary_deserialize_BMS_HV_JMP_TO_BLT(
+    primary_message_BMS_HV_JMP_TO_BLT* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, char* buffer);
+int primary_fields_BMS_HV_JMP_TO_BLT(char* buffer);
+int primary_to_string_file_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, FILE* buffer);
+int primary_fields_file_BMS_HV_JMP_TO_BLT(FILE* buffer);
 
 
 // ============== STEER_VERSION ============== //
@@ -1861,6 +2000,270 @@ int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* messag
 int primary_fields_file_INV_L_RESPONSE(FILE* buffer);
 
 
+// ============== FLASH_CELLBOARD_0_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_0_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_0_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_0_TX(
+    primary_message_FLASH_CELLBOARD_0_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_0_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_0_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_0_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_0_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_0_RX(
+    primary_message_FLASH_CELLBOARD_0_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_0_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_1_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_1_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_1_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_1_TX(
+    primary_message_FLASH_CELLBOARD_1_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_1_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_1_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_1_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_1_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_1_RX(
+    primary_message_FLASH_CELLBOARD_1_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_1_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_2_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_2_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_2_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_2_TX(
+    primary_message_FLASH_CELLBOARD_2_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_2_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_2_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_2_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_2_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_2_RX(
+    primary_message_FLASH_CELLBOARD_2_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_2_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_3_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_3_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_3_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_3_TX(
+    primary_message_FLASH_CELLBOARD_3_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_3_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_3_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_3_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_3_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_3_RX(
+    primary_message_FLASH_CELLBOARD_3_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_3_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_4_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_4_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_4_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_4_TX(
+    primary_message_FLASH_CELLBOARD_4_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_4_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_4_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_4_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_4_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_4_RX(
+    primary_message_FLASH_CELLBOARD_4_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_4_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_5_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_5_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_5_TX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_5_TX(
+    primary_message_FLASH_CELLBOARD_5_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_5_TX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer);
+
+
+// ============== FLASH_CELLBOARD_5_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_5_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_5_RX* message
+);
+void primary_deserialize_FLASH_CELLBOARD_5_RX(
+    primary_message_FLASH_CELLBOARD_5_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, char* buffer);
+int primary_fields_FLASH_CELLBOARD_5_RX(char* buffer);
+int primary_to_string_file_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
+
+
 
 
 // ============== UTILS ============== //
@@ -1880,6 +2283,50 @@ void primary_deserialize_from_id(
 );
 
 #ifdef primary_IMPLEMENTATION
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BMS_HV_JMP_TO_BLT(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BMS_HV_JMP_TO_BLT(
+    uint8_t* data,
+    primary_message_BMS_HV_JMP_TO_BLT* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BMS_HV_JMP_TO_BLT(
+    primary_message_BMS_HV_JMP_TO_BLT* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, char* buffer) {
+    return 0;
+}
+int primary_fields_BMS_HV_JMP_TO_BLT(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_BMS_HV_JMP_TO_BLT(FILE* buffer) {
+    return 0;
+}
+
 // ============== SERIALIZE ============== //
 
 primary_byte_size primary_serialize_STEER_VERSION(
@@ -5647,123 +6094,654 @@ int primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
         "data_6"
     );}
 
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_0_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_0_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_0_TX(
+    primary_message_FLASH_CELLBOARD_0_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_0_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_0_TX(primary_message_FLASH_CELLBOARD_0_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_0_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_0_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_0_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_0_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_0_RX(
+    primary_message_FLASH_CELLBOARD_0_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_0_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_0_RX(primary_message_FLASH_CELLBOARD_0_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_0_RX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_1_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_1_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_1_TX(
+    primary_message_FLASH_CELLBOARD_1_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_1_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_1_TX(primary_message_FLASH_CELLBOARD_1_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_1_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_1_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_1_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_1_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_1_RX(
+    primary_message_FLASH_CELLBOARD_1_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_1_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_1_RX(primary_message_FLASH_CELLBOARD_1_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_1_RX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_2_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_2_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_2_TX(
+    primary_message_FLASH_CELLBOARD_2_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_2_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_2_TX(primary_message_FLASH_CELLBOARD_2_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_2_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_2_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_2_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_2_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_2_RX(
+    primary_message_FLASH_CELLBOARD_2_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_2_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_2_RX(primary_message_FLASH_CELLBOARD_2_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_2_RX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_3_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_3_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_3_TX(
+    primary_message_FLASH_CELLBOARD_3_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_3_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_3_TX(primary_message_FLASH_CELLBOARD_3_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_3_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_3_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_3_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_3_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_3_RX(
+    primary_message_FLASH_CELLBOARD_3_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_3_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_3_RX(primary_message_FLASH_CELLBOARD_3_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_3_RX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_4_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_4_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_4_TX(
+    primary_message_FLASH_CELLBOARD_4_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_4_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_4_TX(primary_message_FLASH_CELLBOARD_4_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_4_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_4_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_4_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_4_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_4_RX(
+    primary_message_FLASH_CELLBOARD_4_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_4_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_4_RX(primary_message_FLASH_CELLBOARD_4_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_4_RX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_5_TX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_TX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_5_TX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_5_TX(
+    primary_message_FLASH_CELLBOARD_5_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_5_TX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_5_TX(primary_message_FLASH_CELLBOARD_5_TX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_5_TX(FILE* buffer) {
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_CELLBOARD_5_RX(
+    uint8_t* data
+) {
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_CELLBOARD_5_RX(
+    uint8_t* data,
+    primary_message_FLASH_CELLBOARD_5_RX* message
+) {
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_CELLBOARD_5_RX(
+    primary_message_FLASH_CELLBOARD_5_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, char* buffer) {
+    return 0;
+}
+int primary_fields_FLASH_CELLBOARD_5_RX(char* buffer) {
+    return 0;
+}
+int primary_to_string_file_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_5_RX* message, FILE* buffer) {
+    return 0;
+}
+int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
+    return 0;
+}
+
 
 // ============== UTILS ============== //
 
 void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     switch (message_id) {
-    case 1024:
+    case 0:
+        primary_fields_file_BMS_HV_JMP_TO_BLT(buffer);
+        break;
+    case 1025:
         primary_fields_file_STEER_VERSION(buffer);
         break;
-    case 1056:
+    case 1057:
         primary_fields_file_DAS_VERSION(buffer);
         break;
-    case 1088:
+    case 1089:
         primary_fields_file_HV_VERSION(buffer);
         break;
-    case 1120:
+    case 1121:
         primary_fields_file_LV_VERSION(buffer);
         break;
-    case 1152:
+    case 1153:
         primary_fields_file_TLM_VERSION(buffer);
         break;
-    case 256:
+    case 257:
         primary_fields_file_TIMESTAMP(buffer);
         break;
-    case 257:
+    case 258:
         primary_fields_file_SET_TLM_STATUS(buffer);
         break;
-    case 258:
+    case 259:
         primary_fields_file_TLM_STATUS(buffer);
         break;
-    case 1793:
+    case 1794:
         primary_fields_file_STEER_SYSTEM_STATUS(buffer);
         break;
-    case 771:
+    case 772:
         primary_fields_file_HV_VOLTAGE(buffer);
         break;
-    case 803:
+    case 804:
         primary_fields_file_HV_CURRENT(buffer);
         break;
-    case 835:
+    case 836:
         primary_fields_file_HV_TEMP(buffer);
         break;
-    case 3:
+    case 4:
         primary_fields_file_HV_ERRORS(buffer);
         break;
-    case 4:
+    case 5:
         primary_fields_file_HV_CAN_FORWARD(buffer);
         break;
-    case 5:
+    case 6:
         primary_fields_file_HV_CAN_FORWARD_STATUS(buffer);
         break;
-    case 35:
+    case 36:
         primary_fields_file_TS_STATUS(buffer);
         break;
-    case 36:
+    case 37:
         primary_fields_file_SET_TS_STATUS(buffer);
         break;
-    case 68:
+    case 69:
         primary_fields_file_SET_TS_STATUS(buffer);
         break;
-    case 262:
+    case 263:
         primary_fields_file_STEER_STATUS(buffer);
         break;
-    case 774:
+    case 775:
         primary_fields_file_SET_CAR_STATUS(buffer);
         break;
-    case 1030:
+    case 1031:
         primary_fields_file_SET_PEDALS_RANGE(buffer);
         break;
-    case 1062:
+    case 1063:
         primary_fields_file_SET_STEERING_ANGLE_RANGE(buffer);
         break;
-    case 514:
+    case 515:
         primary_fields_file_CAR_STATUS(buffer);
         break;
-    case 2:
+    case 3:
         primary_fields_file_DAS_ERRORS(buffer);
         break;
-    case 775:
+    case 776:
         primary_fields_file_LV_CURRENT(buffer);
         break;
-    case 807:
+    case 808:
         primary_fields_file_LV_VOLTAGE(buffer);
         break;
-    case 839:
+    case 840:
         primary_fields_file_LV_TOTAL_VOLTAGE(buffer);
         break;
-    case 871:
+    case 872:
         primary_fields_file_LV_TEMPERATURE(buffer);
         break;
-    case 903:
+    case 904:
         primary_fields_file_COOLING_STATUS(buffer);
         break;
-    case 776:
+    case 777:
         primary_fields_file_SET_RADIATOR_SPEED(buffer);
         break;
-    case 808:
+    case 809:
         primary_fields_file_SET_PUMPS_POWER(buffer);
         break;
-    case 1:
+    case 2:
         primary_fields_file_MARKER(buffer);
         break;
-    case 517:
+    case 518:
         primary_fields_file_HV_CELLS_VOLTAGE(buffer);
         break;
-    case 549:
+    case 550:
         primary_fields_file_HV_CELLS_TEMP(buffer);
         break;
-    case 581:
+    case 582:
         primary_fields_file_HV_CELL_BALANCING_STATUS(buffer);
         break;
-    case 516:
+    case 517:
         primary_fields_file_SET_CELL_BALANCING_STATUS(buffer);
         break;
-    case 772:
+    case 773:
         primary_fields_file_HANDCART_STATUS(buffer);
         break;
-    case 546:
+    case 547:
         primary_fields_file_SPEED(buffer);
         break;
     case 513:
@@ -5772,123 +6750,162 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     case 385:
         primary_fields_file_INV_L_RESPONSE(buffer);
         break;
+    case 16:
+        primary_fields_file_FLASH_CELLBOARD_0_TX(buffer);
+        break;
+    case 17:
+        primary_fields_file_FLASH_CELLBOARD_0_RX(buffer);
+        break;
+    case 18:
+        primary_fields_file_FLASH_CELLBOARD_1_TX(buffer);
+        break;
+    case 19:
+        primary_fields_file_FLASH_CELLBOARD_1_RX(buffer);
+        break;
+    case 20:
+        primary_fields_file_FLASH_CELLBOARD_2_TX(buffer);
+        break;
+    case 21:
+        primary_fields_file_FLASH_CELLBOARD_2_RX(buffer);
+        break;
+    case 22:
+        primary_fields_file_FLASH_CELLBOARD_3_TX(buffer);
+        break;
+    case 23:
+        primary_fields_file_FLASH_CELLBOARD_3_RX(buffer);
+        break;
+    case 24:
+        primary_fields_file_FLASH_CELLBOARD_4_TX(buffer);
+        break;
+    case 25:
+        primary_fields_file_FLASH_CELLBOARD_4_RX(buffer);
+        break;
+    case 26:
+        primary_fields_file_FLASH_CELLBOARD_5_TX(buffer);
+        break;
+    case 27:
+        primary_fields_file_FLASH_CELLBOARD_5_RX(buffer);
+        break;
     }
 }
 
 void primary_string_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
     switch (message_id) {
-        case 1024:
+        case 0:
+            primary_to_string_file_BMS_HV_JMP_TO_BLT((primary_message_BMS_HV_JMP_TO_BLT*) message, buffer);
+        break;
+        case 1025:
             primary_to_string_file_STEER_VERSION((primary_message_STEER_VERSION*) message, buffer);
         break;
-        case 1056:
+        case 1057:
             primary_to_string_file_DAS_VERSION((primary_message_DAS_VERSION*) message, buffer);
         break;
-        case 1088:
+        case 1089:
             primary_to_string_file_HV_VERSION((primary_message_HV_VERSION*) message, buffer);
         break;
-        case 1120:
+        case 1121:
             primary_to_string_file_LV_VERSION((primary_message_LV_VERSION*) message, buffer);
         break;
-        case 1152:
+        case 1153:
             primary_to_string_file_TLM_VERSION((primary_message_TLM_VERSION*) message, buffer);
         break;
-        case 256:
+        case 257:
             primary_to_string_file_TIMESTAMP((primary_message_TIMESTAMP*) message, buffer);
         break;
-        case 257:
+        case 258:
             primary_to_string_file_SET_TLM_STATUS((primary_message_SET_TLM_STATUS*) message, buffer);
         break;
-        case 258:
+        case 259:
             primary_to_string_file_TLM_STATUS((primary_message_TLM_STATUS*) message, buffer);
         break;
-        case 1793:
+        case 1794:
             primary_to_string_file_STEER_SYSTEM_STATUS((primary_message_STEER_SYSTEM_STATUS*) message, buffer);
         break;
-        case 771:
+        case 772:
             primary_to_string_file_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
         break;
-        case 803:
+        case 804:
             primary_to_string_file_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
         break;
-        case 835:
+        case 836:
             primary_to_string_file_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
         break;
-        case 3:
+        case 4:
             primary_to_string_file_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
         break;
-        case 4:
+        case 5:
             primary_to_string_file_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
         break;
-        case 5:
+        case 6:
             primary_to_string_file_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
         break;
-        case 35:
+        case 36:
             primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
         break;
-        case 36:
+        case 37:
             primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
         break;
-        case 68:
+        case 69:
             primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
         break;
-        case 262:
+        case 263:
             primary_to_string_file_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
         break;
-        case 774:
+        case 775:
             primary_to_string_file_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
         break;
-        case 1030:
+        case 1031:
             primary_to_string_file_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
         break;
-        case 1062:
+        case 1063:
             primary_to_string_file_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
         break;
-        case 514:
+        case 515:
             primary_to_string_file_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
         break;
-        case 2:
+        case 3:
             primary_to_string_file_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
         break;
-        case 775:
+        case 776:
             primary_to_string_file_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
         break;
-        case 807:
+        case 808:
             primary_to_string_file_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
         break;
-        case 839:
+        case 840:
             primary_to_string_file_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
         break;
-        case 871:
+        case 872:
             primary_to_string_file_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
         break;
-        case 903:
+        case 904:
             primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
         break;
-        case 776:
+        case 777:
             primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
         break;
-        case 808:
+        case 809:
             primary_to_string_file_SET_PUMPS_POWER((primary_message_SET_PUMPS_POWER*) message, buffer);
         break;
-        case 1:
+        case 2:
             primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
         break;
-        case 517:
+        case 518:
             primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
         break;
-        case 549:
+        case 550:
             primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
         break;
-        case 581:
+        case 582:
             primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
         break;
-        case 516:
+        case 517:
             primary_to_string_file_SET_CELL_BALANCING_STATUS((primary_message_SET_CELL_BALANCING_STATUS*) message, buffer);
         break;
-        case 772:
+        case 773:
             primary_to_string_file_HANDCART_STATUS((primary_message_HANDCART_STATUS*) message, buffer);
         break;
-        case 546:
+        case 547:
             primary_to_string_file_SPEED((primary_message_SPEED_conversion*) message, buffer);
         break;
         case 513:
@@ -5896,6 +6913,42 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
         break;
         case 385:
             primary_to_string_file_INV_L_RESPONSE((primary_message_INV_L_RESPONSE*) message, buffer);
+        break;
+        case 16:
+            primary_to_string_file_FLASH_CELLBOARD_0_TX((primary_message_FLASH_CELLBOARD_0_TX*) message, buffer);
+        break;
+        case 17:
+            primary_to_string_file_FLASH_CELLBOARD_0_RX((primary_message_FLASH_CELLBOARD_0_RX*) message, buffer);
+        break;
+        case 18:
+            primary_to_string_file_FLASH_CELLBOARD_1_TX((primary_message_FLASH_CELLBOARD_1_TX*) message, buffer);
+        break;
+        case 19:
+            primary_to_string_file_FLASH_CELLBOARD_1_RX((primary_message_FLASH_CELLBOARD_1_RX*) message, buffer);
+        break;
+        case 20:
+            primary_to_string_file_FLASH_CELLBOARD_2_TX((primary_message_FLASH_CELLBOARD_2_TX*) message, buffer);
+        break;
+        case 21:
+            primary_to_string_file_FLASH_CELLBOARD_2_RX((primary_message_FLASH_CELLBOARD_2_RX*) message, buffer);
+        break;
+        case 22:
+            primary_to_string_file_FLASH_CELLBOARD_3_TX((primary_message_FLASH_CELLBOARD_3_TX*) message, buffer);
+        break;
+        case 23:
+            primary_to_string_file_FLASH_CELLBOARD_3_RX((primary_message_FLASH_CELLBOARD_3_RX*) message, buffer);
+        break;
+        case 24:
+            primary_to_string_file_FLASH_CELLBOARD_4_TX((primary_message_FLASH_CELLBOARD_4_TX*) message, buffer);
+        break;
+        case 25:
+            primary_to_string_file_FLASH_CELLBOARD_4_RX((primary_message_FLASH_CELLBOARD_4_RX*) message, buffer);
+        break;
+        case 26:
+            primary_to_string_file_FLASH_CELLBOARD_5_TX((primary_message_FLASH_CELLBOARD_5_TX*) message, buffer);
+        break;
+        case 27:
+            primary_to_string_file_FLASH_CELLBOARD_5_RX((primary_message_FLASH_CELLBOARD_5_RX*) message, buffer);
         break;
     }
 }
@@ -5910,7 +6963,16 @@ void primary_deserialize_from_id(
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
-        case 1024:
+        case 0:
+            primary_deserialize_BMS_HV_JMP_TO_BLT(
+                (primary_message_BMS_HV_JMP_TO_BLT*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 1025:
             primary_deserialize_STEER_VERSION(
                 (primary_message_STEER_VERSION*) raw_message,
                 data
@@ -5919,7 +6981,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1056:
+        case 1057:
             primary_deserialize_DAS_VERSION(
                 (primary_message_DAS_VERSION*) raw_message,
                 data
@@ -5928,7 +6990,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1088:
+        case 1089:
             primary_deserialize_HV_VERSION(
                 (primary_message_HV_VERSION*) raw_message,
                 data
@@ -5937,7 +6999,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1120:
+        case 1121:
             primary_deserialize_LV_VERSION(
                 (primary_message_LV_VERSION*) raw_message,
                 data
@@ -5946,7 +7008,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1152:
+        case 1153:
             primary_deserialize_TLM_VERSION(
                 (primary_message_TLM_VERSION*) raw_message,
                 data
@@ -5955,7 +7017,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 256:
+        case 257:
             primary_deserialize_TIMESTAMP(
                 (primary_message_TIMESTAMP*) raw_message,
                 data
@@ -5964,7 +7026,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 257:
+        case 258:
             primary_deserialize_SET_TLM_STATUS(
                 (primary_message_SET_TLM_STATUS*) raw_message,
                 data
@@ -5973,7 +7035,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 258:
+        case 259:
             primary_deserialize_TLM_STATUS(
                 (primary_message_TLM_STATUS*) raw_message,
                 data
@@ -5982,7 +7044,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1793:
+        case 1794:
             primary_deserialize_STEER_SYSTEM_STATUS(
                 (primary_message_STEER_SYSTEM_STATUS*) raw_message,
                 data
@@ -5991,7 +7053,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 771:
+        case 772:
             primary_deserialize_HV_VOLTAGE(
                 (primary_message_HV_VOLTAGE*) raw_message,
                 data
@@ -6004,7 +7066,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_VOLTAGE*) raw_message
             );
         break;
-        case 803:
+        case 804:
             primary_deserialize_HV_CURRENT(
                 (primary_message_HV_CURRENT*) raw_message,
                 data
@@ -6017,7 +7079,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CURRENT*) raw_message
             );
         break;
-        case 835:
+        case 836:
             primary_deserialize_HV_TEMP(
                 (primary_message_HV_TEMP*) raw_message,
                 data
@@ -6030,7 +7092,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_TEMP*) raw_message
             );
         break;
-        case 3:
+        case 4:
             primary_deserialize_HV_ERRORS(
                 (primary_message_HV_ERRORS*) raw_message,
                 data
@@ -6039,7 +7101,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 4:
+        case 5:
             primary_deserialize_HV_CAN_FORWARD(
                 (primary_message_HV_CAN_FORWARD*) raw_message,
                 data
@@ -6048,7 +7110,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 5:
+        case 6:
             primary_deserialize_HV_CAN_FORWARD_STATUS(
                 (primary_message_HV_CAN_FORWARD_STATUS*) raw_message,
                 data
@@ -6057,7 +7119,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 35:
+        case 36:
             primary_deserialize_TS_STATUS(
                 (primary_message_TS_STATUS*) raw_message,
                 data
@@ -6066,7 +7128,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 36:
+        case 37:
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) raw_message,
                 data
@@ -6075,7 +7137,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 68:
+        case 69:
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) raw_message,
                 data
@@ -6084,7 +7146,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 262:
+        case 263:
             primary_deserialize_STEER_STATUS(
                 (primary_message_STEER_STATUS*) raw_message,
                 data
@@ -6093,7 +7155,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 774:
+        case 775:
             primary_deserialize_SET_CAR_STATUS(
                 (primary_message_SET_CAR_STATUS*) raw_message,
                 data
@@ -6102,7 +7164,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1030:
+        case 1031:
             primary_deserialize_SET_PEDALS_RANGE(
                 (primary_message_SET_PEDALS_RANGE*) raw_message,
                 data
@@ -6111,7 +7173,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1062:
+        case 1063:
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
                 (primary_message_SET_STEERING_ANGLE_RANGE*) raw_message,
                 data
@@ -6120,7 +7182,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 514:
+        case 515:
             primary_deserialize_CAR_STATUS(
                 (primary_message_CAR_STATUS*) raw_message,
                 data
@@ -6129,7 +7191,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 2:
+        case 3:
             primary_deserialize_DAS_ERRORS(
                 (primary_message_DAS_ERRORS*) raw_message,
                 data
@@ -6138,7 +7200,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 775:
+        case 776:
             primary_deserialize_LV_CURRENT(
                 (primary_message_LV_CURRENT*) raw_message,
                 data
@@ -6151,7 +7213,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_CURRENT*) raw_message
             );
         break;
-        case 807:
+        case 808:
             primary_deserialize_LV_VOLTAGE(
                 (primary_message_LV_VOLTAGE*) raw_message,
                 data
@@ -6164,7 +7226,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_VOLTAGE*) raw_message
             );
         break;
-        case 839:
+        case 840:
             primary_deserialize_LV_TOTAL_VOLTAGE(
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message,
                 data
@@ -6177,7 +7239,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message
             );
         break;
-        case 871:
+        case 872:
             primary_deserialize_LV_TEMPERATURE(
                 (primary_message_LV_TEMPERATURE*) raw_message,
                 data
@@ -6190,7 +7252,7 @@ void primary_deserialize_from_id(
                 (primary_message_LV_TEMPERATURE*) raw_message
             );
         break;
-        case 903:
+        case 904:
             primary_deserialize_COOLING_STATUS(
                 (primary_message_COOLING_STATUS*) raw_message,
                 data
@@ -6203,7 +7265,7 @@ void primary_deserialize_from_id(
                 (primary_message_COOLING_STATUS*) raw_message
             );
         break;
-        case 776:
+        case 777:
             primary_deserialize_SET_RADIATOR_SPEED(
                 (primary_message_SET_RADIATOR_SPEED*) raw_message,
                 data
@@ -6212,7 +7274,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 808:
+        case 809:
             primary_deserialize_SET_PUMPS_POWER(
                 (primary_message_SET_PUMPS_POWER*) raw_message,
                 data
@@ -6221,7 +7283,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 1:
+        case 2:
             primary_deserialize_MARKER(
                 (primary_message_MARKER*) raw_message,
                 data
@@ -6230,7 +7292,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 517:
+        case 518:
             primary_deserialize_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message,
                 data
@@ -6243,7 +7305,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message
             );
         break;
-        case 549:
+        case 550:
             primary_deserialize_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP*) raw_message,
                 data
@@ -6256,7 +7318,7 @@ void primary_deserialize_from_id(
                 (primary_message_HV_CELLS_TEMP*) raw_message
             );
         break;
-        case 581:
+        case 582:
             primary_deserialize_HV_CELL_BALANCING_STATUS(
                 (primary_message_HV_CELL_BALANCING_STATUS*) raw_message,
                 data
@@ -6265,7 +7327,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 516:
+        case 517:
             primary_deserialize_SET_CELL_BALANCING_STATUS(
                 (primary_message_SET_CELL_BALANCING_STATUS*) raw_message,
                 data
@@ -6274,7 +7336,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 772:
+        case 773:
             primary_deserialize_HANDCART_STATUS(
                 (primary_message_HANDCART_STATUS*) raw_message,
                 data
@@ -6283,7 +7345,7 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
-        case 546:
+        case 547:
             primary_deserialize_SPEED(
                 (primary_message_SPEED*) raw_message,
                 data
@@ -6314,169 +7376,329 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
+        case 16:
+            primary_deserialize_FLASH_CELLBOARD_0_TX(
+                (primary_message_FLASH_CELLBOARD_0_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 17:
+            primary_deserialize_FLASH_CELLBOARD_0_RX(
+                (primary_message_FLASH_CELLBOARD_0_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 18:
+            primary_deserialize_FLASH_CELLBOARD_1_TX(
+                (primary_message_FLASH_CELLBOARD_1_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 19:
+            primary_deserialize_FLASH_CELLBOARD_1_RX(
+                (primary_message_FLASH_CELLBOARD_1_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 20:
+            primary_deserialize_FLASH_CELLBOARD_2_TX(
+                (primary_message_FLASH_CELLBOARD_2_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 21:
+            primary_deserialize_FLASH_CELLBOARD_2_RX(
+                (primary_message_FLASH_CELLBOARD_2_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 22:
+            primary_deserialize_FLASH_CELLBOARD_3_TX(
+                (primary_message_FLASH_CELLBOARD_3_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 23:
+            primary_deserialize_FLASH_CELLBOARD_3_RX(
+                (primary_message_FLASH_CELLBOARD_3_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 24:
+            primary_deserialize_FLASH_CELLBOARD_4_TX(
+                (primary_message_FLASH_CELLBOARD_4_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 25:
+            primary_deserialize_FLASH_CELLBOARD_4_RX(
+                (primary_message_FLASH_CELLBOARD_4_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 26:
+            primary_deserialize_FLASH_CELLBOARD_5_TX(
+                (primary_message_FLASH_CELLBOARD_5_TX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 27:
+            primary_deserialize_FLASH_CELLBOARD_5_RX(
+                (primary_message_FLASH_CELLBOARD_5_RX*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
     }
 }
 
 void primary_devices_new(primary_devices* map) {
-    (*map)[0].id = 1024;
-    (*map)[0].raw_message = (void*) malloc(sizeof(primary_message_STEER_VERSION));
+    (*map)[0].id = 0;
+    (*map)[0].raw_message = (void*) malloc(sizeof(primary_message_BMS_HV_JMP_TO_BLT));
     (*map)[0].conversion_message = NULL;
 
-    (*map)[1].id = 1056;
-    (*map)[1].raw_message = (void*) malloc(sizeof(primary_message_DAS_VERSION));
+    (*map)[1].id = 1025;
+    (*map)[1].raw_message = (void*) malloc(sizeof(primary_message_STEER_VERSION));
     (*map)[1].conversion_message = NULL;
 
-    (*map)[2].id = 1088;
-    (*map)[2].raw_message = (void*) malloc(sizeof(primary_message_HV_VERSION));
+    (*map)[2].id = 1057;
+    (*map)[2].raw_message = (void*) malloc(sizeof(primary_message_DAS_VERSION));
     (*map)[2].conversion_message = NULL;
 
-    (*map)[3].id = 1120;
-    (*map)[3].raw_message = (void*) malloc(sizeof(primary_message_LV_VERSION));
+    (*map)[3].id = 1089;
+    (*map)[3].raw_message = (void*) malloc(sizeof(primary_message_HV_VERSION));
     (*map)[3].conversion_message = NULL;
 
-    (*map)[4].id = 1152;
-    (*map)[4].raw_message = (void*) malloc(sizeof(primary_message_TLM_VERSION));
+    (*map)[4].id = 1121;
+    (*map)[4].raw_message = (void*) malloc(sizeof(primary_message_LV_VERSION));
     (*map)[4].conversion_message = NULL;
 
-    (*map)[5].id = 256;
-    (*map)[5].raw_message = (void*) malloc(sizeof(primary_message_TIMESTAMP));
+    (*map)[5].id = 1153;
+    (*map)[5].raw_message = (void*) malloc(sizeof(primary_message_TLM_VERSION));
     (*map)[5].conversion_message = NULL;
 
     (*map)[6].id = 257;
-    (*map)[6].raw_message = (void*) malloc(sizeof(primary_message_SET_TLM_STATUS));
+    (*map)[6].raw_message = (void*) malloc(sizeof(primary_message_TIMESTAMP));
     (*map)[6].conversion_message = NULL;
 
     (*map)[7].id = 258;
-    (*map)[7].raw_message = (void*) malloc(sizeof(primary_message_TLM_STATUS));
+    (*map)[7].raw_message = (void*) malloc(sizeof(primary_message_SET_TLM_STATUS));
     (*map)[7].conversion_message = NULL;
 
-    (*map)[8].id = 1793;
-    (*map)[8].raw_message = (void*) malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
+    (*map)[8].id = 259;
+    (*map)[8].raw_message = (void*) malloc(sizeof(primary_message_TLM_STATUS));
     (*map)[8].conversion_message = NULL;
 
-    (*map)[9].id = 771;
-    (*map)[9].raw_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
-    (*map)[9].conversion_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
+    (*map)[9].id = 1794;
+    (*map)[9].raw_message = (void*) malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
+    (*map)[9].conversion_message = NULL;
 
-    (*map)[10].id = 803;
-    (*map)[10].raw_message = (void*) malloc(sizeof(primary_message_HV_CURRENT));
-    (*map)[10].conversion_message = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
+    (*map)[10].id = 772;
+    (*map)[10].raw_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
+    (*map)[10].conversion_message = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
 
-    (*map)[11].id = 835;
-    (*map)[11].raw_message = (void*) malloc(sizeof(primary_message_HV_TEMP));
-    (*map)[11].conversion_message = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
+    (*map)[11].id = 804;
+    (*map)[11].raw_message = (void*) malloc(sizeof(primary_message_HV_CURRENT));
+    (*map)[11].conversion_message = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
 
-    (*map)[12].id = 3;
-    (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
-    (*map)[12].conversion_message = NULL;
+    (*map)[12].id = 836;
+    (*map)[12].raw_message = (void*) malloc(sizeof(primary_message_HV_TEMP));
+    (*map)[12].conversion_message = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
 
     (*map)[13].id = 4;
-    (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD));
+    (*map)[13].raw_message = (void*) malloc(sizeof(primary_message_HV_ERRORS));
     (*map)[13].conversion_message = NULL;
 
     (*map)[14].id = 5;
-    (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
+    (*map)[14].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD));
     (*map)[14].conversion_message = NULL;
 
-    (*map)[15].id = 35;
-    (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
+    (*map)[15].id = 6;
+    (*map)[15].raw_message = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
     (*map)[15].conversion_message = NULL;
 
     (*map)[16].id = 36;
-    (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
+    (*map)[16].raw_message = (void*) malloc(sizeof(primary_message_TS_STATUS));
     (*map)[16].conversion_message = NULL;
 
-    (*map)[17].id = 68;
+    (*map)[17].id = 37;
     (*map)[17].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*map)[17].conversion_message = NULL;
 
-    (*map)[18].id = 262;
-    (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
+    (*map)[18].id = 69;
+    (*map)[18].raw_message = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*map)[18].conversion_message = NULL;
 
-    (*map)[19].id = 774;
-    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
+    (*map)[19].id = 263;
+    (*map)[19].raw_message = (void*) malloc(sizeof(primary_message_STEER_STATUS));
     (*map)[19].conversion_message = NULL;
 
-    (*map)[20].id = 1030;
-    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
+    (*map)[20].id = 775;
+    (*map)[20].raw_message = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
     (*map)[20].conversion_message = NULL;
 
-    (*map)[21].id = 1062;
-    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
+    (*map)[21].id = 1031;
+    (*map)[21].raw_message = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
     (*map)[21].conversion_message = NULL;
 
-    (*map)[22].id = 514;
-    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
+    (*map)[22].id = 1063;
+    (*map)[22].raw_message = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
     (*map)[22].conversion_message = NULL;
 
-    (*map)[23].id = 2;
-    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[23].id = 515;
+    (*map)[23].raw_message = (void*) malloc(sizeof(primary_message_CAR_STATUS));
     (*map)[23].conversion_message = NULL;
 
-    (*map)[24].id = 775;
-    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
-    (*map)[24].conversion_message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
+    (*map)[24].id = 3;
+    (*map)[24].raw_message = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
+    (*map)[24].conversion_message = NULL;
 
-    (*map)[25].id = 807;
-    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
-    (*map)[25].conversion_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
+    (*map)[25].id = 776;
+    (*map)[25].raw_message = (void*) malloc(sizeof(primary_message_LV_CURRENT));
+    (*map)[25].conversion_message = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
 
-    (*map)[26].id = 839;
-    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
-    (*map)[26].conversion_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
+    (*map)[26].id = 808;
+    (*map)[26].raw_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
+    (*map)[26].conversion_message = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
 
-    (*map)[27].id = 871;
-    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
-    (*map)[27].conversion_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
+    (*map)[27].id = 840;
+    (*map)[27].raw_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
+    (*map)[27].conversion_message = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
 
-    (*map)[28].id = 903;
-    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
-    (*map)[28].conversion_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
+    (*map)[28].id = 872;
+    (*map)[28].raw_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
+    (*map)[28].conversion_message = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
 
-    (*map)[29].id = 776;
-    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
-    (*map)[29].conversion_message = NULL;
+    (*map)[29].id = 904;
+    (*map)[29].raw_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
+    (*map)[29].conversion_message = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
 
-    (*map)[30].id = 808;
-    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
+    (*map)[30].id = 777;
+    (*map)[30].raw_message = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
     (*map)[30].conversion_message = NULL;
 
-    (*map)[31].id = 1;
-    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[31].id = 809;
+    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
     (*map)[31].conversion_message = NULL;
 
-    (*map)[32].id = 517;
-    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[32].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
+    (*map)[32].id = 2;
+    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[32].conversion_message = NULL;
 
-    (*map)[33].id = 549;
-    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[33].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
+    (*map)[33].id = 518;
+    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
+    (*map)[33].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
-    (*map)[34].id = 581;
-    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
-    (*map)[34].conversion_message = NULL;
+    (*map)[34].id = 550;
+    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
+    (*map)[34].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
-    (*map)[35].id = 516;
-    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
+    (*map)[35].id = 582;
+    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
     (*map)[35].conversion_message = NULL;
 
-    (*map)[36].id = 772;
-    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
+    (*map)[36].id = 517;
+    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
     (*map)[36].conversion_message = NULL;
 
-    (*map)[37].id = 546;
-    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[37].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+    (*map)[37].id = 773;
+    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
+    (*map)[37].conversion_message = NULL;
 
-    (*map)[38].id = 513;
-    (*map)[38].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
-    (*map)[38].conversion_message = NULL;
+    (*map)[38].id = 547;
+    (*map)[38].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
+    (*map)[38].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
 
-    (*map)[39].id = 385;
-    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[39].id = 513;
+    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
     (*map)[39].conversion_message = NULL;
+
+    (*map)[40].id = 385;
+    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[40].conversion_message = NULL;
+
+    (*map)[41].id = 16;
+    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
+    (*map)[41].conversion_message = NULL;
+
+    (*map)[42].id = 17;
+    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
+    (*map)[42].conversion_message = NULL;
+
+    (*map)[43].id = 18;
+    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
+    (*map)[43].conversion_message = NULL;
+
+    (*map)[44].id = 19;
+    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
+    (*map)[44].conversion_message = NULL;
+
+    (*map)[45].id = 20;
+    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
+    (*map)[45].conversion_message = NULL;
+
+    (*map)[46].id = 21;
+    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
+    (*map)[46].conversion_message = NULL;
+
+    (*map)[47].id = 22;
+    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
+    (*map)[47].conversion_message = NULL;
+
+    (*map)[48].id = 23;
+    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
+    (*map)[48].conversion_message = NULL;
+
+    (*map)[49].id = 24;
+    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
+    (*map)[49].conversion_message = NULL;
+
+    (*map)[50].id = 25;
+    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[50].conversion_message = NULL;
+
+    (*map)[51].id = 26;
+    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
+    (*map)[51].conversion_message = NULL;
+
+    (*map)[52].id = 27;
+    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
+    (*map)[52].conversion_message = NULL;
 
 }
 

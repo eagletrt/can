@@ -67,6 +67,42 @@ extern BOARD_STATUS_CELLBOARD4DefaultTypeInternal _BOARD_STATUS_CELLBOARD4_defau
 class BOARD_STATUS_CELLBOARD5;
 struct BOARD_STATUS_CELLBOARD5DefaultTypeInternal;
 extern BOARD_STATUS_CELLBOARD5DefaultTypeInternal _BOARD_STATUS_CELLBOARD5_default_instance_;
+class FLASH_CELLBOARD_0_RX;
+struct FLASH_CELLBOARD_0_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_0_RXDefaultTypeInternal _FLASH_CELLBOARD_0_RX_default_instance_;
+class FLASH_CELLBOARD_0_TX;
+struct FLASH_CELLBOARD_0_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_0_TXDefaultTypeInternal _FLASH_CELLBOARD_0_TX_default_instance_;
+class FLASH_CELLBOARD_1_RX;
+struct FLASH_CELLBOARD_1_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_1_RXDefaultTypeInternal _FLASH_CELLBOARD_1_RX_default_instance_;
+class FLASH_CELLBOARD_1_TX;
+struct FLASH_CELLBOARD_1_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_1_TXDefaultTypeInternal _FLASH_CELLBOARD_1_TX_default_instance_;
+class FLASH_CELLBOARD_2_RX;
+struct FLASH_CELLBOARD_2_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_2_RXDefaultTypeInternal _FLASH_CELLBOARD_2_RX_default_instance_;
+class FLASH_CELLBOARD_2_TX;
+struct FLASH_CELLBOARD_2_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_2_TXDefaultTypeInternal _FLASH_CELLBOARD_2_TX_default_instance_;
+class FLASH_CELLBOARD_3_RX;
+struct FLASH_CELLBOARD_3_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_3_RXDefaultTypeInternal _FLASH_CELLBOARD_3_RX_default_instance_;
+class FLASH_CELLBOARD_3_TX;
+struct FLASH_CELLBOARD_3_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_3_TXDefaultTypeInternal _FLASH_CELLBOARD_3_TX_default_instance_;
+class FLASH_CELLBOARD_4_RX;
+struct FLASH_CELLBOARD_4_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_4_RXDefaultTypeInternal _FLASH_CELLBOARD_4_RX_default_instance_;
+class FLASH_CELLBOARD_4_TX;
+struct FLASH_CELLBOARD_4_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_4_TXDefaultTypeInternal _FLASH_CELLBOARD_4_TX_default_instance_;
+class FLASH_CELLBOARD_5_RX;
+struct FLASH_CELLBOARD_5_RXDefaultTypeInternal;
+extern FLASH_CELLBOARD_5_RXDefaultTypeInternal _FLASH_CELLBOARD_5_RX_default_instance_;
+class FLASH_CELLBOARD_5_TX;
+struct FLASH_CELLBOARD_5_TXDefaultTypeInternal;
+extern FLASH_CELLBOARD_5_TXDefaultTypeInternal _FLASH_CELLBOARD_5_TX_default_instance_;
 class FW_UPDATE;
 struct FW_UPDATEDefaultTypeInternal;
 extern FW_UPDATEDefaultTypeInternal _FW_UPDATE_default_instance_;
@@ -118,6 +154,18 @@ template<> ::bms::BOARD_STATUS_CELLBOARD2* Arena::CreateMaybeMessage<::bms::BOAR
 template<> ::bms::BOARD_STATUS_CELLBOARD3* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD3>(Arena*);
 template<> ::bms::BOARD_STATUS_CELLBOARD4* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD4>(Arena*);
 template<> ::bms::BOARD_STATUS_CELLBOARD5* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD5>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_0_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_0_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_0_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_0_TX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_1_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_1_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_1_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_1_TX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_2_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_2_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_2_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_2_TX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_3_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_3_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_3_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_3_TX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_4_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_4_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_4_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_4_TX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_5_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_5_RX>(Arena*);
+template<> ::bms::FLASH_CELLBOARD_5_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_5_TX>(Arena*);
 template<> ::bms::FW_UPDATE* Arena::CreateMaybeMessage<::bms::FW_UPDATE>(Arena*);
 template<> ::bms::Pack* Arena::CreateMaybeMessage<::bms::Pack>(Arena*);
 template<> ::bms::TEMPERATURES_CELLBOARD0* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD0>(Arena*);
@@ -3913,6 +3961,1722 @@ class FW_UPDATE final :
 };
 // -------------------------------------------------------------------
 
+class FLASH_CELLBOARD_0_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_0_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_0_TX() : FLASH_CELLBOARD_0_TX(nullptr) {}
+  ~FLASH_CELLBOARD_0_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_0_TX(const FLASH_CELLBOARD_0_TX& from);
+  FLASH_CELLBOARD_0_TX(FLASH_CELLBOARD_0_TX&& from) noexcept
+    : FLASH_CELLBOARD_0_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_0_TX& operator=(const FLASH_CELLBOARD_0_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_0_TX& operator=(FLASH_CELLBOARD_0_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_0_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_0_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_0_TX*>(
+               &_FLASH_CELLBOARD_0_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_0_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_0_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_0_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_0_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_0_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_0_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_0_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_0_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_0_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_0_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_0_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_0_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_0_RX() : FLASH_CELLBOARD_0_RX(nullptr) {}
+  ~FLASH_CELLBOARD_0_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_0_RX(const FLASH_CELLBOARD_0_RX& from);
+  FLASH_CELLBOARD_0_RX(FLASH_CELLBOARD_0_RX&& from) noexcept
+    : FLASH_CELLBOARD_0_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_0_RX& operator=(const FLASH_CELLBOARD_0_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_0_RX& operator=(FLASH_CELLBOARD_0_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_0_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_0_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_0_RX*>(
+               &_FLASH_CELLBOARD_0_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_0_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_0_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_0_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_0_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_0_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_0_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_0_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_0_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_0_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_0_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_1_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_1_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_1_TX() : FLASH_CELLBOARD_1_TX(nullptr) {}
+  ~FLASH_CELLBOARD_1_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_1_TX(const FLASH_CELLBOARD_1_TX& from);
+  FLASH_CELLBOARD_1_TX(FLASH_CELLBOARD_1_TX&& from) noexcept
+    : FLASH_CELLBOARD_1_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_1_TX& operator=(const FLASH_CELLBOARD_1_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_1_TX& operator=(FLASH_CELLBOARD_1_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_1_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_1_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_1_TX*>(
+               &_FLASH_CELLBOARD_1_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_1_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_1_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_1_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_1_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_1_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_1_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_1_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_1_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_1_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_1_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_1_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_1_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_1_RX() : FLASH_CELLBOARD_1_RX(nullptr) {}
+  ~FLASH_CELLBOARD_1_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_1_RX(const FLASH_CELLBOARD_1_RX& from);
+  FLASH_CELLBOARD_1_RX(FLASH_CELLBOARD_1_RX&& from) noexcept
+    : FLASH_CELLBOARD_1_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_1_RX& operator=(const FLASH_CELLBOARD_1_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_1_RX& operator=(FLASH_CELLBOARD_1_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_1_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_1_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_1_RX*>(
+               &_FLASH_CELLBOARD_1_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_1_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_1_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_1_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_1_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_1_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_1_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_1_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_1_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_1_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_1_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_2_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_2_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_2_TX() : FLASH_CELLBOARD_2_TX(nullptr) {}
+  ~FLASH_CELLBOARD_2_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_2_TX(const FLASH_CELLBOARD_2_TX& from);
+  FLASH_CELLBOARD_2_TX(FLASH_CELLBOARD_2_TX&& from) noexcept
+    : FLASH_CELLBOARD_2_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_2_TX& operator=(const FLASH_CELLBOARD_2_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_2_TX& operator=(FLASH_CELLBOARD_2_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_2_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_2_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_2_TX*>(
+               &_FLASH_CELLBOARD_2_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_2_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_2_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_2_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_2_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_2_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_2_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_2_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_2_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_2_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_2_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_2_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_2_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_2_RX() : FLASH_CELLBOARD_2_RX(nullptr) {}
+  ~FLASH_CELLBOARD_2_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_2_RX(const FLASH_CELLBOARD_2_RX& from);
+  FLASH_CELLBOARD_2_RX(FLASH_CELLBOARD_2_RX&& from) noexcept
+    : FLASH_CELLBOARD_2_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_2_RX& operator=(const FLASH_CELLBOARD_2_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_2_RX& operator=(FLASH_CELLBOARD_2_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_2_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_2_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_2_RX*>(
+               &_FLASH_CELLBOARD_2_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_2_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_2_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_2_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_2_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_2_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_2_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_2_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_2_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_2_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_2_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_3_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_3_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_3_TX() : FLASH_CELLBOARD_3_TX(nullptr) {}
+  ~FLASH_CELLBOARD_3_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_3_TX(const FLASH_CELLBOARD_3_TX& from);
+  FLASH_CELLBOARD_3_TX(FLASH_CELLBOARD_3_TX&& from) noexcept
+    : FLASH_CELLBOARD_3_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_3_TX& operator=(const FLASH_CELLBOARD_3_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_3_TX& operator=(FLASH_CELLBOARD_3_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_3_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_3_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_3_TX*>(
+               &_FLASH_CELLBOARD_3_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_3_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_3_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_3_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_3_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_3_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_3_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_3_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_3_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_3_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_3_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_3_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_3_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_3_RX() : FLASH_CELLBOARD_3_RX(nullptr) {}
+  ~FLASH_CELLBOARD_3_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_3_RX(const FLASH_CELLBOARD_3_RX& from);
+  FLASH_CELLBOARD_3_RX(FLASH_CELLBOARD_3_RX&& from) noexcept
+    : FLASH_CELLBOARD_3_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_3_RX& operator=(const FLASH_CELLBOARD_3_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_3_RX& operator=(FLASH_CELLBOARD_3_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_3_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_3_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_3_RX*>(
+               &_FLASH_CELLBOARD_3_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_3_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_3_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_3_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_3_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_3_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_3_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_3_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_3_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_3_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_3_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_4_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_4_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_4_TX() : FLASH_CELLBOARD_4_TX(nullptr) {}
+  ~FLASH_CELLBOARD_4_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_4_TX(const FLASH_CELLBOARD_4_TX& from);
+  FLASH_CELLBOARD_4_TX(FLASH_CELLBOARD_4_TX&& from) noexcept
+    : FLASH_CELLBOARD_4_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_4_TX& operator=(const FLASH_CELLBOARD_4_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_4_TX& operator=(FLASH_CELLBOARD_4_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_4_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_4_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_4_TX*>(
+               &_FLASH_CELLBOARD_4_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_4_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_4_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_4_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_4_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_4_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_4_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_4_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_4_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_4_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_4_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_4_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_4_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_4_RX() : FLASH_CELLBOARD_4_RX(nullptr) {}
+  ~FLASH_CELLBOARD_4_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_4_RX(const FLASH_CELLBOARD_4_RX& from);
+  FLASH_CELLBOARD_4_RX(FLASH_CELLBOARD_4_RX&& from) noexcept
+    : FLASH_CELLBOARD_4_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_4_RX& operator=(const FLASH_CELLBOARD_4_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_4_RX& operator=(FLASH_CELLBOARD_4_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_4_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_4_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_4_RX*>(
+               &_FLASH_CELLBOARD_4_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    29;
+
+  friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_4_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_4_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_4_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_4_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_4_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_4_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_4_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_4_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_4_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_4_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_5_TX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_5_TX) */ {
+ public:
+  inline FLASH_CELLBOARD_5_TX() : FLASH_CELLBOARD_5_TX(nullptr) {}
+  ~FLASH_CELLBOARD_5_TX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_TX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_5_TX(const FLASH_CELLBOARD_5_TX& from);
+  FLASH_CELLBOARD_5_TX(FLASH_CELLBOARD_5_TX&& from) noexcept
+    : FLASH_CELLBOARD_5_TX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_5_TX& operator=(const FLASH_CELLBOARD_5_TX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_5_TX& operator=(FLASH_CELLBOARD_5_TX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_5_TX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_5_TX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_5_TX*>(
+               &_FLASH_CELLBOARD_5_TX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_5_TX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_5_TX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_5_TX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_5_TX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_5_TX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_5_TX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_5_TX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_5_TX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_5_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_5_TX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FLASH_CELLBOARD_5_RX final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.FLASH_CELLBOARD_5_RX) */ {
+ public:
+  inline FLASH_CELLBOARD_5_RX() : FLASH_CELLBOARD_5_RX(nullptr) {}
+  ~FLASH_CELLBOARD_5_RX() override;
+  explicit PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_RX(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FLASH_CELLBOARD_5_RX(const FLASH_CELLBOARD_5_RX& from);
+  FLASH_CELLBOARD_5_RX(FLASH_CELLBOARD_5_RX&& from) noexcept
+    : FLASH_CELLBOARD_5_RX() {
+    *this = ::std::move(from);
+  }
+
+  inline FLASH_CELLBOARD_5_RX& operator=(const FLASH_CELLBOARD_5_RX& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FLASH_CELLBOARD_5_RX& operator=(FLASH_CELLBOARD_5_RX&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FLASH_CELLBOARD_5_RX& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FLASH_CELLBOARD_5_RX* internal_default_instance() {
+    return reinterpret_cast<const FLASH_CELLBOARD_5_RX*>(
+               &_FLASH_CELLBOARD_5_RX_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FLASH_CELLBOARD_5_RX* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FLASH_CELLBOARD_5_RX* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FLASH_CELLBOARD_5_RX* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FLASH_CELLBOARD_5_RX>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FLASH_CELLBOARD_5_RX& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const FLASH_CELLBOARD_5_RX& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FLASH_CELLBOARD_5_RX* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "bms.FLASH_CELLBOARD_5_RX";
+  }
+  protected:
+  explicit FLASH_CELLBOARD_5_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.FLASH_CELLBOARD_5_RX)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_bms_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.Pack) */ {
  public:
@@ -3961,7 +5725,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    32;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -4052,6 +5816,18 @@ class Pack final :
     kVOLTAGESCELLBOARD5FieldNumber = 18,
     kBALANCINGFieldNumber = 19,
     kFWUPDATEFieldNumber = 20,
+    kFLASHCELLBOARD0TXFieldNumber = 21,
+    kFLASHCELLBOARD0RXFieldNumber = 22,
+    kFLASHCELLBOARD1TXFieldNumber = 23,
+    kFLASHCELLBOARD1RXFieldNumber = 24,
+    kFLASHCELLBOARD2TXFieldNumber = 25,
+    kFLASHCELLBOARD2RXFieldNumber = 26,
+    kFLASHCELLBOARD3TXFieldNumber = 27,
+    kFLASHCELLBOARD3RXFieldNumber = 28,
+    kFLASHCELLBOARD4TXFieldNumber = 29,
+    kFLASHCELLBOARD4RXFieldNumber = 30,
+    kFLASHCELLBOARD5TXFieldNumber = 31,
+    kFLASHCELLBOARD5RXFieldNumber = 32,
   };
   // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
   int board_status_cellboard0_size() const;
@@ -4413,6 +6189,222 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FW_UPDATE >&
       fw_update() const;
 
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+  int flash_cellboard_0_tx_size() const;
+  private:
+  int _internal_flash_cellboard_0_tx_size() const;
+  public:
+  void clear_flash_cellboard_0_tx();
+  ::bms::FLASH_CELLBOARD_0_TX* mutable_flash_cellboard_0_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX >*
+      mutable_flash_cellboard_0_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_0_TX& _internal_flash_cellboard_0_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_0_TX* _internal_add_flash_cellboard_0_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_0_TX& flash_cellboard_0_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_0_TX* add_flash_cellboard_0_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX >&
+      flash_cellboard_0_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+  int flash_cellboard_0_rx_size() const;
+  private:
+  int _internal_flash_cellboard_0_rx_size() const;
+  public:
+  void clear_flash_cellboard_0_rx();
+  ::bms::FLASH_CELLBOARD_0_RX* mutable_flash_cellboard_0_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX >*
+      mutable_flash_cellboard_0_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_0_RX& _internal_flash_cellboard_0_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_0_RX* _internal_add_flash_cellboard_0_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_0_RX& flash_cellboard_0_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_0_RX* add_flash_cellboard_0_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX >&
+      flash_cellboard_0_rx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+  int flash_cellboard_1_tx_size() const;
+  private:
+  int _internal_flash_cellboard_1_tx_size() const;
+  public:
+  void clear_flash_cellboard_1_tx();
+  ::bms::FLASH_CELLBOARD_1_TX* mutable_flash_cellboard_1_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX >*
+      mutable_flash_cellboard_1_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_1_TX& _internal_flash_cellboard_1_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_1_TX* _internal_add_flash_cellboard_1_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_1_TX& flash_cellboard_1_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_1_TX* add_flash_cellboard_1_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX >&
+      flash_cellboard_1_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+  int flash_cellboard_1_rx_size() const;
+  private:
+  int _internal_flash_cellboard_1_rx_size() const;
+  public:
+  void clear_flash_cellboard_1_rx();
+  ::bms::FLASH_CELLBOARD_1_RX* mutable_flash_cellboard_1_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX >*
+      mutable_flash_cellboard_1_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_1_RX& _internal_flash_cellboard_1_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_1_RX* _internal_add_flash_cellboard_1_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_1_RX& flash_cellboard_1_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_1_RX* add_flash_cellboard_1_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX >&
+      flash_cellboard_1_rx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+  int flash_cellboard_2_tx_size() const;
+  private:
+  int _internal_flash_cellboard_2_tx_size() const;
+  public:
+  void clear_flash_cellboard_2_tx();
+  ::bms::FLASH_CELLBOARD_2_TX* mutable_flash_cellboard_2_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX >*
+      mutable_flash_cellboard_2_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_2_TX& _internal_flash_cellboard_2_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_2_TX* _internal_add_flash_cellboard_2_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_2_TX& flash_cellboard_2_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_2_TX* add_flash_cellboard_2_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX >&
+      flash_cellboard_2_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+  int flash_cellboard_2_rx_size() const;
+  private:
+  int _internal_flash_cellboard_2_rx_size() const;
+  public:
+  void clear_flash_cellboard_2_rx();
+  ::bms::FLASH_CELLBOARD_2_RX* mutable_flash_cellboard_2_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX >*
+      mutable_flash_cellboard_2_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_2_RX& _internal_flash_cellboard_2_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_2_RX* _internal_add_flash_cellboard_2_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_2_RX& flash_cellboard_2_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_2_RX* add_flash_cellboard_2_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX >&
+      flash_cellboard_2_rx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+  int flash_cellboard_3_tx_size() const;
+  private:
+  int _internal_flash_cellboard_3_tx_size() const;
+  public:
+  void clear_flash_cellboard_3_tx();
+  ::bms::FLASH_CELLBOARD_3_TX* mutable_flash_cellboard_3_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX >*
+      mutable_flash_cellboard_3_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_3_TX& _internal_flash_cellboard_3_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_3_TX* _internal_add_flash_cellboard_3_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_3_TX& flash_cellboard_3_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_3_TX* add_flash_cellboard_3_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX >&
+      flash_cellboard_3_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+  int flash_cellboard_3_rx_size() const;
+  private:
+  int _internal_flash_cellboard_3_rx_size() const;
+  public:
+  void clear_flash_cellboard_3_rx();
+  ::bms::FLASH_CELLBOARD_3_RX* mutable_flash_cellboard_3_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX >*
+      mutable_flash_cellboard_3_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_3_RX& _internal_flash_cellboard_3_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_3_RX* _internal_add_flash_cellboard_3_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_3_RX& flash_cellboard_3_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_3_RX* add_flash_cellboard_3_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX >&
+      flash_cellboard_3_rx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+  int flash_cellboard_4_tx_size() const;
+  private:
+  int _internal_flash_cellboard_4_tx_size() const;
+  public:
+  void clear_flash_cellboard_4_tx();
+  ::bms::FLASH_CELLBOARD_4_TX* mutable_flash_cellboard_4_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX >*
+      mutable_flash_cellboard_4_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_4_TX& _internal_flash_cellboard_4_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_4_TX* _internal_add_flash_cellboard_4_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_4_TX& flash_cellboard_4_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_4_TX* add_flash_cellboard_4_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX >&
+      flash_cellboard_4_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+  int flash_cellboard_4_rx_size() const;
+  private:
+  int _internal_flash_cellboard_4_rx_size() const;
+  public:
+  void clear_flash_cellboard_4_rx();
+  ::bms::FLASH_CELLBOARD_4_RX* mutable_flash_cellboard_4_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX >*
+      mutable_flash_cellboard_4_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_4_RX& _internal_flash_cellboard_4_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_4_RX* _internal_add_flash_cellboard_4_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_4_RX& flash_cellboard_4_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_4_RX* add_flash_cellboard_4_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX >&
+      flash_cellboard_4_rx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  int flash_cellboard_5_tx_size() const;
+  private:
+  int _internal_flash_cellboard_5_tx_size() const;
+  public:
+  void clear_flash_cellboard_5_tx();
+  ::bms::FLASH_CELLBOARD_5_TX* mutable_flash_cellboard_5_tx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX >*
+      mutable_flash_cellboard_5_tx();
+  private:
+  const ::bms::FLASH_CELLBOARD_5_TX& _internal_flash_cellboard_5_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_5_TX* _internal_add_flash_cellboard_5_tx();
+  public:
+  const ::bms::FLASH_CELLBOARD_5_TX& flash_cellboard_5_tx(int index) const;
+  ::bms::FLASH_CELLBOARD_5_TX* add_flash_cellboard_5_tx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX >&
+      flash_cellboard_5_tx() const;
+
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  int flash_cellboard_5_rx_size() const;
+  private:
+  int _internal_flash_cellboard_5_rx_size() const;
+  public:
+  void clear_flash_cellboard_5_rx();
+  ::bms::FLASH_CELLBOARD_5_RX* mutable_flash_cellboard_5_rx(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_RX >*
+      mutable_flash_cellboard_5_rx();
+  private:
+  const ::bms::FLASH_CELLBOARD_5_RX& _internal_flash_cellboard_5_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_5_RX* _internal_add_flash_cellboard_5_rx();
+  public:
+  const ::bms::FLASH_CELLBOARD_5_RX& flash_cellboard_5_rx(int index) const;
+  ::bms::FLASH_CELLBOARD_5_RX* add_flash_cellboard_5_rx();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_RX >&
+      flash_cellboard_5_rx() const;
+
   // @@protoc_insertion_point(class_scope:bms.Pack)
  private:
   class _Internal;
@@ -4440,6 +6432,18 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 > voltages_cellboard5_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BALANCING > balancing_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FW_UPDATE > fw_update_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX > flash_cellboard_0_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX > flash_cellboard_0_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX > flash_cellboard_1_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX > flash_cellboard_1_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX > flash_cellboard_2_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX > flash_cellboard_2_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX > flash_cellboard_3_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX > flash_cellboard_3_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX > flash_cellboard_4_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX > flash_cellboard_4_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX > flash_cellboard_5_tx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_RX > flash_cellboard_5_rx_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
@@ -6552,6 +8556,294 @@ inline void FW_UPDATE::set__inner_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// FLASH_CELLBOARD_0_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_0_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_0_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_0_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_0_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_0_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_0_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_0_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_0_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_0_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_0_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_0_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_0_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_0_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_0_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_0_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_1_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_1_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_1_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_1_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_1_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_1_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_1_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_1_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_1_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_1_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_1_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_1_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_1_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_1_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_1_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_1_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_2_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_2_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_2_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_2_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_2_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_2_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_2_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_2_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_2_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_2_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_2_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_2_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_2_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_2_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_2_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_2_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_3_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_3_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_3_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_3_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_3_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_3_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_3_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_3_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_3_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_3_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_3_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_3_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_3_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_3_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_3_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_3_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_4_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_4_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_4_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_4_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_4_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_4_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_4_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_4_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_4_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_4_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_4_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_4_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_4_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_4_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_4_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_4_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_5_TX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_5_TX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_5_TX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_5_TX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_5_TX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_5_TX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_5_TX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_5_TX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// FLASH_CELLBOARD_5_RX
+
+// uint64 _inner_timestamp = 1;
+inline void FLASH_CELLBOARD_5_RX::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t FLASH_CELLBOARD_5_RX::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t FLASH_CELLBOARD_5_RX::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.FLASH_CELLBOARD_5_RX._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void FLASH_CELLBOARD_5_RX::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void FLASH_CELLBOARD_5_RX::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:bms.FLASH_CELLBOARD_5_RX._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
@@ -7354,9 +9646,513 @@ Pack::fw_update() const {
   return fw_update_;
 }
 
+// repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+inline int Pack::_internal_flash_cellboard_0_tx_size() const {
+  return flash_cellboard_0_tx_.size();
+}
+inline int Pack::flash_cellboard_0_tx_size() const {
+  return _internal_flash_cellboard_0_tx_size();
+}
+inline void Pack::clear_flash_cellboard_0_tx() {
+  flash_cellboard_0_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_0_TX* Pack::mutable_flash_cellboard_0_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_0_TX)
+  return flash_cellboard_0_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX >*
+Pack::mutable_flash_cellboard_0_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_0_TX)
+  return &flash_cellboard_0_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_0_TX& Pack::_internal_flash_cellboard_0_tx(int index) const {
+  return flash_cellboard_0_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_0_TX& Pack::flash_cellboard_0_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_0_TX)
+  return _internal_flash_cellboard_0_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_0_TX* Pack::_internal_add_flash_cellboard_0_tx() {
+  return flash_cellboard_0_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_0_TX* Pack::add_flash_cellboard_0_tx() {
+  ::bms::FLASH_CELLBOARD_0_TX* _add = _internal_add_flash_cellboard_0_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_0_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX >&
+Pack::flash_cellboard_0_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_0_TX)
+  return flash_cellboard_0_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+inline int Pack::_internal_flash_cellboard_0_rx_size() const {
+  return flash_cellboard_0_rx_.size();
+}
+inline int Pack::flash_cellboard_0_rx_size() const {
+  return _internal_flash_cellboard_0_rx_size();
+}
+inline void Pack::clear_flash_cellboard_0_rx() {
+  flash_cellboard_0_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_0_RX* Pack::mutable_flash_cellboard_0_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_0_RX)
+  return flash_cellboard_0_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX >*
+Pack::mutable_flash_cellboard_0_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_0_RX)
+  return &flash_cellboard_0_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_0_RX& Pack::_internal_flash_cellboard_0_rx(int index) const {
+  return flash_cellboard_0_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_0_RX& Pack::flash_cellboard_0_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_0_RX)
+  return _internal_flash_cellboard_0_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_0_RX* Pack::_internal_add_flash_cellboard_0_rx() {
+  return flash_cellboard_0_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_0_RX* Pack::add_flash_cellboard_0_rx() {
+  ::bms::FLASH_CELLBOARD_0_RX* _add = _internal_add_flash_cellboard_0_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_0_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX >&
+Pack::flash_cellboard_0_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_0_RX)
+  return flash_cellboard_0_rx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+inline int Pack::_internal_flash_cellboard_1_tx_size() const {
+  return flash_cellboard_1_tx_.size();
+}
+inline int Pack::flash_cellboard_1_tx_size() const {
+  return _internal_flash_cellboard_1_tx_size();
+}
+inline void Pack::clear_flash_cellboard_1_tx() {
+  flash_cellboard_1_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_1_TX* Pack::mutable_flash_cellboard_1_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_1_TX)
+  return flash_cellboard_1_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX >*
+Pack::mutable_flash_cellboard_1_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_1_TX)
+  return &flash_cellboard_1_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_1_TX& Pack::_internal_flash_cellboard_1_tx(int index) const {
+  return flash_cellboard_1_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_1_TX& Pack::flash_cellboard_1_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_1_TX)
+  return _internal_flash_cellboard_1_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_1_TX* Pack::_internal_add_flash_cellboard_1_tx() {
+  return flash_cellboard_1_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_1_TX* Pack::add_flash_cellboard_1_tx() {
+  ::bms::FLASH_CELLBOARD_1_TX* _add = _internal_add_flash_cellboard_1_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_1_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX >&
+Pack::flash_cellboard_1_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_1_TX)
+  return flash_cellboard_1_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+inline int Pack::_internal_flash_cellboard_1_rx_size() const {
+  return flash_cellboard_1_rx_.size();
+}
+inline int Pack::flash_cellboard_1_rx_size() const {
+  return _internal_flash_cellboard_1_rx_size();
+}
+inline void Pack::clear_flash_cellboard_1_rx() {
+  flash_cellboard_1_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_1_RX* Pack::mutable_flash_cellboard_1_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_1_RX)
+  return flash_cellboard_1_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX >*
+Pack::mutable_flash_cellboard_1_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_1_RX)
+  return &flash_cellboard_1_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_1_RX& Pack::_internal_flash_cellboard_1_rx(int index) const {
+  return flash_cellboard_1_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_1_RX& Pack::flash_cellboard_1_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_1_RX)
+  return _internal_flash_cellboard_1_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_1_RX* Pack::_internal_add_flash_cellboard_1_rx() {
+  return flash_cellboard_1_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_1_RX* Pack::add_flash_cellboard_1_rx() {
+  ::bms::FLASH_CELLBOARD_1_RX* _add = _internal_add_flash_cellboard_1_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_1_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX >&
+Pack::flash_cellboard_1_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_1_RX)
+  return flash_cellboard_1_rx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+inline int Pack::_internal_flash_cellboard_2_tx_size() const {
+  return flash_cellboard_2_tx_.size();
+}
+inline int Pack::flash_cellboard_2_tx_size() const {
+  return _internal_flash_cellboard_2_tx_size();
+}
+inline void Pack::clear_flash_cellboard_2_tx() {
+  flash_cellboard_2_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_2_TX* Pack::mutable_flash_cellboard_2_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_2_TX)
+  return flash_cellboard_2_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX >*
+Pack::mutable_flash_cellboard_2_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_2_TX)
+  return &flash_cellboard_2_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_2_TX& Pack::_internal_flash_cellboard_2_tx(int index) const {
+  return flash_cellboard_2_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_2_TX& Pack::flash_cellboard_2_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_2_TX)
+  return _internal_flash_cellboard_2_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_2_TX* Pack::_internal_add_flash_cellboard_2_tx() {
+  return flash_cellboard_2_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_2_TX* Pack::add_flash_cellboard_2_tx() {
+  ::bms::FLASH_CELLBOARD_2_TX* _add = _internal_add_flash_cellboard_2_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_2_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX >&
+Pack::flash_cellboard_2_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_2_TX)
+  return flash_cellboard_2_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+inline int Pack::_internal_flash_cellboard_2_rx_size() const {
+  return flash_cellboard_2_rx_.size();
+}
+inline int Pack::flash_cellboard_2_rx_size() const {
+  return _internal_flash_cellboard_2_rx_size();
+}
+inline void Pack::clear_flash_cellboard_2_rx() {
+  flash_cellboard_2_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_2_RX* Pack::mutable_flash_cellboard_2_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_2_RX)
+  return flash_cellboard_2_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX >*
+Pack::mutable_flash_cellboard_2_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_2_RX)
+  return &flash_cellboard_2_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_2_RX& Pack::_internal_flash_cellboard_2_rx(int index) const {
+  return flash_cellboard_2_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_2_RX& Pack::flash_cellboard_2_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_2_RX)
+  return _internal_flash_cellboard_2_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_2_RX* Pack::_internal_add_flash_cellboard_2_rx() {
+  return flash_cellboard_2_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_2_RX* Pack::add_flash_cellboard_2_rx() {
+  ::bms::FLASH_CELLBOARD_2_RX* _add = _internal_add_flash_cellboard_2_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_2_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX >&
+Pack::flash_cellboard_2_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_2_RX)
+  return flash_cellboard_2_rx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+inline int Pack::_internal_flash_cellboard_3_tx_size() const {
+  return flash_cellboard_3_tx_.size();
+}
+inline int Pack::flash_cellboard_3_tx_size() const {
+  return _internal_flash_cellboard_3_tx_size();
+}
+inline void Pack::clear_flash_cellboard_3_tx() {
+  flash_cellboard_3_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_3_TX* Pack::mutable_flash_cellboard_3_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_3_TX)
+  return flash_cellboard_3_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX >*
+Pack::mutable_flash_cellboard_3_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_3_TX)
+  return &flash_cellboard_3_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_3_TX& Pack::_internal_flash_cellboard_3_tx(int index) const {
+  return flash_cellboard_3_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_3_TX& Pack::flash_cellboard_3_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_3_TX)
+  return _internal_flash_cellboard_3_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_3_TX* Pack::_internal_add_flash_cellboard_3_tx() {
+  return flash_cellboard_3_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_3_TX* Pack::add_flash_cellboard_3_tx() {
+  ::bms::FLASH_CELLBOARD_3_TX* _add = _internal_add_flash_cellboard_3_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_3_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX >&
+Pack::flash_cellboard_3_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_3_TX)
+  return flash_cellboard_3_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+inline int Pack::_internal_flash_cellboard_3_rx_size() const {
+  return flash_cellboard_3_rx_.size();
+}
+inline int Pack::flash_cellboard_3_rx_size() const {
+  return _internal_flash_cellboard_3_rx_size();
+}
+inline void Pack::clear_flash_cellboard_3_rx() {
+  flash_cellboard_3_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_3_RX* Pack::mutable_flash_cellboard_3_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_3_RX)
+  return flash_cellboard_3_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX >*
+Pack::mutable_flash_cellboard_3_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_3_RX)
+  return &flash_cellboard_3_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_3_RX& Pack::_internal_flash_cellboard_3_rx(int index) const {
+  return flash_cellboard_3_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_3_RX& Pack::flash_cellboard_3_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_3_RX)
+  return _internal_flash_cellboard_3_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_3_RX* Pack::_internal_add_flash_cellboard_3_rx() {
+  return flash_cellboard_3_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_3_RX* Pack::add_flash_cellboard_3_rx() {
+  ::bms::FLASH_CELLBOARD_3_RX* _add = _internal_add_flash_cellboard_3_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_3_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX >&
+Pack::flash_cellboard_3_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_3_RX)
+  return flash_cellboard_3_rx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+inline int Pack::_internal_flash_cellboard_4_tx_size() const {
+  return flash_cellboard_4_tx_.size();
+}
+inline int Pack::flash_cellboard_4_tx_size() const {
+  return _internal_flash_cellboard_4_tx_size();
+}
+inline void Pack::clear_flash_cellboard_4_tx() {
+  flash_cellboard_4_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_4_TX* Pack::mutable_flash_cellboard_4_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_4_TX)
+  return flash_cellboard_4_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX >*
+Pack::mutable_flash_cellboard_4_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_4_TX)
+  return &flash_cellboard_4_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_4_TX& Pack::_internal_flash_cellboard_4_tx(int index) const {
+  return flash_cellboard_4_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_4_TX& Pack::flash_cellboard_4_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_4_TX)
+  return _internal_flash_cellboard_4_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_4_TX* Pack::_internal_add_flash_cellboard_4_tx() {
+  return flash_cellboard_4_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_4_TX* Pack::add_flash_cellboard_4_tx() {
+  ::bms::FLASH_CELLBOARD_4_TX* _add = _internal_add_flash_cellboard_4_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_4_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX >&
+Pack::flash_cellboard_4_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_4_TX)
+  return flash_cellboard_4_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+inline int Pack::_internal_flash_cellboard_4_rx_size() const {
+  return flash_cellboard_4_rx_.size();
+}
+inline int Pack::flash_cellboard_4_rx_size() const {
+  return _internal_flash_cellboard_4_rx_size();
+}
+inline void Pack::clear_flash_cellboard_4_rx() {
+  flash_cellboard_4_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_4_RX* Pack::mutable_flash_cellboard_4_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_4_RX)
+  return flash_cellboard_4_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX >*
+Pack::mutable_flash_cellboard_4_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_4_RX)
+  return &flash_cellboard_4_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_4_RX& Pack::_internal_flash_cellboard_4_rx(int index) const {
+  return flash_cellboard_4_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_4_RX& Pack::flash_cellboard_4_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_4_RX)
+  return _internal_flash_cellboard_4_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_4_RX* Pack::_internal_add_flash_cellboard_4_rx() {
+  return flash_cellboard_4_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_4_RX* Pack::add_flash_cellboard_4_rx() {
+  ::bms::FLASH_CELLBOARD_4_RX* _add = _internal_add_flash_cellboard_4_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_4_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX >&
+Pack::flash_cellboard_4_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_4_RX)
+  return flash_cellboard_4_rx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+inline int Pack::_internal_flash_cellboard_5_tx_size() const {
+  return flash_cellboard_5_tx_.size();
+}
+inline int Pack::flash_cellboard_5_tx_size() const {
+  return _internal_flash_cellboard_5_tx_size();
+}
+inline void Pack::clear_flash_cellboard_5_tx() {
+  flash_cellboard_5_tx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_5_TX* Pack::mutable_flash_cellboard_5_tx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_5_TX)
+  return flash_cellboard_5_tx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX >*
+Pack::mutable_flash_cellboard_5_tx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_5_TX)
+  return &flash_cellboard_5_tx_;
+}
+inline const ::bms::FLASH_CELLBOARD_5_TX& Pack::_internal_flash_cellboard_5_tx(int index) const {
+  return flash_cellboard_5_tx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_5_TX& Pack::flash_cellboard_5_tx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_5_TX)
+  return _internal_flash_cellboard_5_tx(index);
+}
+inline ::bms::FLASH_CELLBOARD_5_TX* Pack::_internal_add_flash_cellboard_5_tx() {
+  return flash_cellboard_5_tx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_5_TX* Pack::add_flash_cellboard_5_tx() {
+  ::bms::FLASH_CELLBOARD_5_TX* _add = _internal_add_flash_cellboard_5_tx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_5_TX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX >&
+Pack::flash_cellboard_5_tx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_5_TX)
+  return flash_cellboard_5_tx_;
+}
+
+// repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+inline int Pack::_internal_flash_cellboard_5_rx_size() const {
+  return flash_cellboard_5_rx_.size();
+}
+inline int Pack::flash_cellboard_5_rx_size() const {
+  return _internal_flash_cellboard_5_rx_size();
+}
+inline void Pack::clear_flash_cellboard_5_rx() {
+  flash_cellboard_5_rx_.Clear();
+}
+inline ::bms::FLASH_CELLBOARD_5_RX* Pack::mutable_flash_cellboard_5_rx(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.FLASH_CELLBOARD_5_RX)
+  return flash_cellboard_5_rx_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_RX >*
+Pack::mutable_flash_cellboard_5_rx() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.FLASH_CELLBOARD_5_RX)
+  return &flash_cellboard_5_rx_;
+}
+inline const ::bms::FLASH_CELLBOARD_5_RX& Pack::_internal_flash_cellboard_5_rx(int index) const {
+  return flash_cellboard_5_rx_.Get(index);
+}
+inline const ::bms::FLASH_CELLBOARD_5_RX& Pack::flash_cellboard_5_rx(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.FLASH_CELLBOARD_5_RX)
+  return _internal_flash_cellboard_5_rx(index);
+}
+inline ::bms::FLASH_CELLBOARD_5_RX* Pack::_internal_add_flash_cellboard_5_rx() {
+  return flash_cellboard_5_rx_.Add();
+}
+inline ::bms::FLASH_CELLBOARD_5_RX* Pack::add_flash_cellboard_5_rx() {
+  ::bms::FLASH_CELLBOARD_5_RX* _add = _internal_add_flash_cellboard_5_rx();
+  // @@protoc_insertion_point(field_add:bms.Pack.FLASH_CELLBOARD_5_RX)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_RX >&
+Pack::flash_cellboard_5_rx() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.FLASH_CELLBOARD_5_RX)
+  return flash_cellboard_5_rx_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

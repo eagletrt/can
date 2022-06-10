@@ -348,6 +348,150 @@ struct FW_UPDATEDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FW_UPDATEDefaultTypeInternal _FW_UPDATE_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_0_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_0_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_0_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_0_TXDefaultTypeInternal _FLASH_CELLBOARD_0_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_0_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_0_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_0_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_0_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_0_RXDefaultTypeInternal _FLASH_CELLBOARD_0_RX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_1_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_1_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_1_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_1_TXDefaultTypeInternal _FLASH_CELLBOARD_1_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_1_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_1_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_1_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_1_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_1_RXDefaultTypeInternal _FLASH_CELLBOARD_1_RX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_2_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_2_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_2_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_2_TXDefaultTypeInternal _FLASH_CELLBOARD_2_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_2_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_2_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_2_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_2_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_2_RXDefaultTypeInternal _FLASH_CELLBOARD_2_RX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_3_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_3_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_3_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_3_TXDefaultTypeInternal _FLASH_CELLBOARD_3_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_3_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_3_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_3_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_3_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_3_RXDefaultTypeInternal _FLASH_CELLBOARD_3_RX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_4_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_4_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_4_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_4_TXDefaultTypeInternal _FLASH_CELLBOARD_4_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_4_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_4_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_4_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_4_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_4_RXDefaultTypeInternal _FLASH_CELLBOARD_4_RX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_5_TXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_TXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_5_TXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_5_TX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_5_TXDefaultTypeInternal _FLASH_CELLBOARD_5_TX_default_instance_;
+PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct FLASH_CELLBOARD_5_RXDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FLASH_CELLBOARD_5_RXDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~FLASH_CELLBOARD_5_RXDefaultTypeInternal() {}
+  union {
+    FLASH_CELLBOARD_5_RX _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_5_RXDefaultTypeInternal _FLASH_CELLBOARD_5_RX_default_instance_;
 PROTOBUF_CONSTEXPR Pack::Pack(
     ::_pbi::ConstantInitialized)
   : board_status_cellboard0_()
@@ -369,7 +513,19 @@ PROTOBUF_CONSTEXPR Pack::Pack(
   , voltages_cellboard4_()
   , voltages_cellboard5_()
   , balancing_()
-  , fw_update_(){}
+  , fw_update_()
+  , flash_cellboard_0_tx_()
+  , flash_cellboard_0_rx_()
+  , flash_cellboard_1_tx_()
+  , flash_cellboard_1_rx_()
+  , flash_cellboard_2_tx_()
+  , flash_cellboard_2_rx_()
+  , flash_cellboard_3_tx_()
+  , flash_cellboard_3_rx_()
+  , flash_cellboard_4_tx_()
+  , flash_cellboard_4_rx_()
+  , flash_cellboard_5_tx_()
+  , flash_cellboard_5_rx_(){}
 struct PackDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PackDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -380,7 +536,7 @@ struct PackDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PackDefaultTypeInternal _Pack_default_instance_;
 }  // namespace bms
-static ::_pb::Metadata file_level_metadata_bms_2eproto[21];
+static ::_pb::Metadata file_level_metadata_bms_2eproto[33];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_bms_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_bms_2eproto = nullptr;
 
@@ -607,6 +763,90 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, board_index_),
   PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, _inner_timestamp_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _inner_timestamp_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -632,6 +872,18 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard5_),
   PROTOBUF_FIELD_OFFSET(::bms::Pack, balancing_),
   PROTOBUF_FIELD_OFFSET(::bms::Pack, fw_update_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_rx_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD0)},
@@ -654,7 +906,19 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 193, -1, -1, sizeof(::bms::VOLTAGES_CELLBOARD5)},
   { 204, -1, -1, sizeof(::bms::BALANCING)},
   { 213, -1, -1, sizeof(::bms::FW_UPDATE)},
-  { 221, -1, -1, sizeof(::bms::Pack)},
+  { 221, -1, -1, sizeof(::bms::FLASH_CELLBOARD_0_TX)},
+  { 228, -1, -1, sizeof(::bms::FLASH_CELLBOARD_0_RX)},
+  { 235, -1, -1, sizeof(::bms::FLASH_CELLBOARD_1_TX)},
+  { 242, -1, -1, sizeof(::bms::FLASH_CELLBOARD_1_RX)},
+  { 249, -1, -1, sizeof(::bms::FLASH_CELLBOARD_2_TX)},
+  { 256, -1, -1, sizeof(::bms::FLASH_CELLBOARD_2_RX)},
+  { 263, -1, -1, sizeof(::bms::FLASH_CELLBOARD_3_TX)},
+  { 270, -1, -1, sizeof(::bms::FLASH_CELLBOARD_3_RX)},
+  { 277, -1, -1, sizeof(::bms::FLASH_CELLBOARD_4_TX)},
+  { 284, -1, -1, sizeof(::bms::FLASH_CELLBOARD_4_RX)},
+  { 291, -1, -1, sizeof(::bms::FLASH_CELLBOARD_5_TX)},
+  { 298, -1, -1, sizeof(::bms::FLASH_CELLBOARD_5_RX)},
+  { 305, -1, -1, sizeof(::bms::Pack)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -678,6 +942,18 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::bms::_VOLTAGES_CELLBOARD5_default_instance_._instance,
   &::bms::_BALANCING_default_instance_._instance,
   &::bms::_FW_UPDATE_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_0_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_0_RX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_1_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_1_RX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_2_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_2_RX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_3_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_3_RX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_4_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_4_RX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_5_TX_default_instance_._instance,
+  &::bms::_FLASH_CELLBOARD_5_RX_default_instance_._instance,
   &::bms::_Pack_default_instance_._instance,
 };
 
@@ -746,7 +1022,22 @@ const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "estamp\030\005 \001(\004\"I\n\tBALANCING\022\r\n\005cells\030\001 \001(\004"
   "\022\023\n\013board_index\030\002 \001(\r\022\030\n\020_inner_timestam"
   "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
-  "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"\212\t\n\004Pack\022=\n\027"
+  "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_0_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_2_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_4_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"\266\016\n\004Pack\022=\n\027"
   "BOARD_STATUS_CELLBOARD0\030\001 \003(\0132\034.bms.BOAR"
   "D_STATUS_CELLBOARD0\022=\n\027BOARD_STATUS_CELL"
   "BOARD1\030\002 \003(\0132\034.bms.BOARD_STATUS_CELLBOAR"
@@ -775,15 +1066,32 @@ const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "\0132\030.bms.VOLTAGES_CELLBOARD4\0225\n\023VOLTAGES_"
   "CELLBOARD5\030\022 \003(\0132\030.bms.VOLTAGES_CELLBOAR"
   "D5\022!\n\tBALANCING\030\023 \003(\0132\016.bms.BALANCING\022!\n"
-  "\tFW_UPDATE\030\024 \003(\0132\016.bms.FW_UPDATE*I\n\017Bala"
-  "ncingStatus\022\027\n\023BalancingStatus_OFF\020\000\022\035\n\031"
-  "BalancingStatus_DISCHARGE\020\001b\006proto3"
+  "\tFW_UPDATE\030\024 \003(\0132\016.bms.FW_UPDATE\0227\n\024FLAS"
+  "H_CELLBOARD_0_TX\030\025 \003(\0132\031.bms.FLASH_CELLB"
+  "OARD_0_TX\0227\n\024FLASH_CELLBOARD_0_RX\030\026 \003(\0132"
+  "\031.bms.FLASH_CELLBOARD_0_RX\0227\n\024FLASH_CELL"
+  "BOARD_1_TX\030\027 \003(\0132\031.bms.FLASH_CELLBOARD_1"
+  "_TX\0227\n\024FLASH_CELLBOARD_1_RX\030\030 \003(\0132\031.bms."
+  "FLASH_CELLBOARD_1_RX\0227\n\024FLASH_CELLBOARD_"
+  "2_TX\030\031 \003(\0132\031.bms.FLASH_CELLBOARD_2_TX\0227\n"
+  "\024FLASH_CELLBOARD_2_RX\030\032 \003(\0132\031.bms.FLASH_"
+  "CELLBOARD_2_RX\0227\n\024FLASH_CELLBOARD_3_TX\030\033"
+  " \003(\0132\031.bms.FLASH_CELLBOARD_3_TX\0227\n\024FLASH"
+  "_CELLBOARD_3_RX\030\034 \003(\0132\031.bms.FLASH_CELLBO"
+  "ARD_3_RX\0227\n\024FLASH_CELLBOARD_4_TX\030\035 \003(\0132\031"
+  ".bms.FLASH_CELLBOARD_4_TX\0227\n\024FLASH_CELLB"
+  "OARD_4_RX\030\036 \003(\0132\031.bms.FLASH_CELLBOARD_4_"
+  "RX\0227\n\024FLASH_CELLBOARD_5_TX\030\037 \003(\0132\031.bms.F"
+  "LASH_CELLBOARD_5_TX\0227\n\024FLASH_CELLBOARD_5"
+  "_RX\030  \003(\0132\031.bms.FLASH_CELLBOARD_5_RX*I\n\017"
+  "BalancingStatus\022\027\n\023BalancingStatus_OFF\020\000"
+  "\022\035\n\031BalancingStatus_DISCHARGE\020\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_bms_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_bms_2eproto = {
-    false, false, 3835, descriptor_table_protodef_bms_2eproto,
+    false, false, 5119, descriptor_table_protodef_bms_2eproto,
     "bms.proto",
-    &descriptor_table_bms_2eproto_once, nullptr, 0, 21,
+    &descriptor_table_bms_2eproto_once, nullptr, 0, 33,
     schemas, file_default_instances, TableStruct_bms_2eproto::offsets,
     file_level_metadata_bms_2eproto, file_level_enum_descriptors_bms_2eproto,
     file_level_service_descriptors_bms_2eproto,
@@ -6272,6 +6580,2058 @@ void FW_UPDATE::InternalSwap(FW_UPDATE* other) {
 
 // ===================================================================
 
+class FLASH_CELLBOARD_0_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_0_TX)
+}
+FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX(const FLASH_CELLBOARD_0_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_0_TX)
+}
+
+inline void FLASH_CELLBOARD_0_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_0_TX::~FLASH_CELLBOARD_0_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_0_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_0_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_0_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_0_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_0_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_0_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_0_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_0_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_0_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_0_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_0_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_0_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_0_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_0_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_0_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_0_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_0_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_0_TX::MergeFrom(const FLASH_CELLBOARD_0_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_0_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_0_TX::CopyFrom(const FLASH_CELLBOARD_0_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_0_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_0_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_0_TX::InternalSwap(FLASH_CELLBOARD_0_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_0_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[20]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_0_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_0_RX)
+}
+FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX(const FLASH_CELLBOARD_0_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_0_RX)
+}
+
+inline void FLASH_CELLBOARD_0_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_0_RX::~FLASH_CELLBOARD_0_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_0_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_0_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_0_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_0_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_0_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_0_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_0_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_0_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_0_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_0_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_0_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_0_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_0_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_0_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_0_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_0_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_0_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_0_RX::MergeFrom(const FLASH_CELLBOARD_0_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_0_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_0_RX::CopyFrom(const FLASH_CELLBOARD_0_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_0_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_0_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_0_RX::InternalSwap(FLASH_CELLBOARD_0_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_0_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[21]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_1_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_1_TX)
+}
+FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX(const FLASH_CELLBOARD_1_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_1_TX)
+}
+
+inline void FLASH_CELLBOARD_1_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_1_TX::~FLASH_CELLBOARD_1_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_1_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_1_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_1_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_1_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_1_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_1_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_1_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_1_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_1_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_1_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_1_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_1_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_1_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_1_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_1_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_1_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_1_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_1_TX::MergeFrom(const FLASH_CELLBOARD_1_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_1_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_1_TX::CopyFrom(const FLASH_CELLBOARD_1_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_1_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_1_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_1_TX::InternalSwap(FLASH_CELLBOARD_1_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_1_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[22]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_1_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_1_RX)
+}
+FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX(const FLASH_CELLBOARD_1_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_1_RX)
+}
+
+inline void FLASH_CELLBOARD_1_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_1_RX::~FLASH_CELLBOARD_1_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_1_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_1_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_1_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_1_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_1_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_1_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_1_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_1_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_1_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_1_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_1_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_1_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_1_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_1_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_1_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_1_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_1_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_1_RX::MergeFrom(const FLASH_CELLBOARD_1_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_1_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_1_RX::CopyFrom(const FLASH_CELLBOARD_1_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_1_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_1_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_1_RX::InternalSwap(FLASH_CELLBOARD_1_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_1_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[23]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_2_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_2_TX)
+}
+FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX(const FLASH_CELLBOARD_2_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_2_TX)
+}
+
+inline void FLASH_CELLBOARD_2_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_2_TX::~FLASH_CELLBOARD_2_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_2_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_2_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_2_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_2_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_2_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_2_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_2_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_2_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_2_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_2_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_2_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_2_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_2_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_2_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_2_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_2_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_2_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_2_TX::MergeFrom(const FLASH_CELLBOARD_2_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_2_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_2_TX::CopyFrom(const FLASH_CELLBOARD_2_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_2_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_2_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_2_TX::InternalSwap(FLASH_CELLBOARD_2_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_2_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[24]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_2_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_2_RX)
+}
+FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX(const FLASH_CELLBOARD_2_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_2_RX)
+}
+
+inline void FLASH_CELLBOARD_2_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_2_RX::~FLASH_CELLBOARD_2_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_2_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_2_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_2_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_2_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_2_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_2_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_2_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_2_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_2_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_2_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_2_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_2_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_2_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_2_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_2_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_2_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_2_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_2_RX::MergeFrom(const FLASH_CELLBOARD_2_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_2_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_2_RX::CopyFrom(const FLASH_CELLBOARD_2_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_2_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_2_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_2_RX::InternalSwap(FLASH_CELLBOARD_2_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_2_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[25]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_3_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_3_TX)
+}
+FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX(const FLASH_CELLBOARD_3_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_3_TX)
+}
+
+inline void FLASH_CELLBOARD_3_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_3_TX::~FLASH_CELLBOARD_3_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_3_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_3_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_3_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_3_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_3_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_3_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_3_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_3_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_3_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_3_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_3_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_3_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_3_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_3_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_3_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_3_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_3_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_3_TX::MergeFrom(const FLASH_CELLBOARD_3_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_3_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_3_TX::CopyFrom(const FLASH_CELLBOARD_3_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_3_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_3_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_3_TX::InternalSwap(FLASH_CELLBOARD_3_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_3_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[26]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_3_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_3_RX)
+}
+FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX(const FLASH_CELLBOARD_3_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_3_RX)
+}
+
+inline void FLASH_CELLBOARD_3_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_3_RX::~FLASH_CELLBOARD_3_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_3_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_3_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_3_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_3_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_3_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_3_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_3_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_3_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_3_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_3_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_3_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_3_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_3_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_3_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_3_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_3_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_3_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_3_RX::MergeFrom(const FLASH_CELLBOARD_3_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_3_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_3_RX::CopyFrom(const FLASH_CELLBOARD_3_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_3_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_3_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_3_RX::InternalSwap(FLASH_CELLBOARD_3_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_3_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[27]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_4_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_4_TX)
+}
+FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX(const FLASH_CELLBOARD_4_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_4_TX)
+}
+
+inline void FLASH_CELLBOARD_4_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_4_TX::~FLASH_CELLBOARD_4_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_4_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_4_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_4_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_4_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_4_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_4_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_4_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_4_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_4_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_4_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_4_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_4_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_4_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_4_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_4_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_4_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_4_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_4_TX::MergeFrom(const FLASH_CELLBOARD_4_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_4_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_4_TX::CopyFrom(const FLASH_CELLBOARD_4_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_4_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_4_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_4_TX::InternalSwap(FLASH_CELLBOARD_4_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_4_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[28]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_4_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_4_RX)
+}
+FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX(const FLASH_CELLBOARD_4_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_4_RX)
+}
+
+inline void FLASH_CELLBOARD_4_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_4_RX::~FLASH_CELLBOARD_4_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_4_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_4_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_4_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_4_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_4_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_4_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_4_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_4_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_4_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_4_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_4_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_4_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_4_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_4_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_4_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_4_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_4_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_4_RX::MergeFrom(const FLASH_CELLBOARD_4_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_4_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_4_RX::CopyFrom(const FLASH_CELLBOARD_4_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_4_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_4_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_4_RX::InternalSwap(FLASH_CELLBOARD_4_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_4_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[29]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_5_TX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_5_TX)
+}
+FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX(const FLASH_CELLBOARD_5_TX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_5_TX)
+}
+
+inline void FLASH_CELLBOARD_5_TX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_5_TX::~FLASH_CELLBOARD_5_TX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_5_TX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_5_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_5_TX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_5_TX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_5_TX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_5_TX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_5_TX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_5_TX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_5_TX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_5_TX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_5_TX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_5_TX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_5_TX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_5_TX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_5_TX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_5_TX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_5_TX &>(from));
+}
+
+
+void FLASH_CELLBOARD_5_TX::MergeFrom(const FLASH_CELLBOARD_5_TX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_5_TX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_5_TX::CopyFrom(const FLASH_CELLBOARD_5_TX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_5_TX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_5_TX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_5_TX::InternalSwap(FLASH_CELLBOARD_5_TX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_5_TX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[30]);
+}
+
+// ===================================================================
+
+class FLASH_CELLBOARD_5_RX::_Internal {
+ public:
+};
+
+FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_5_RX)
+}
+FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX(const FLASH_CELLBOARD_5_RX& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_5_RX)
+}
+
+inline void FLASH_CELLBOARD_5_RX::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+FLASH_CELLBOARD_5_RX::~FLASH_CELLBOARD_5_RX() {
+  // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_5_RX)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void FLASH_CELLBOARD_5_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void FLASH_CELLBOARD_5_RX::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void FLASH_CELLBOARD_5_RX::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_5_RX)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* FLASH_CELLBOARD_5_RX::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* FLASH_CELLBOARD_5_RX::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_5_RX)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_5_RX)
+  return target;
+}
+
+size_t FLASH_CELLBOARD_5_RX::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_5_RX)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FLASH_CELLBOARD_5_RX::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    FLASH_CELLBOARD_5_RX::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FLASH_CELLBOARD_5_RX::GetClassData() const { return &_class_data_; }
+
+void FLASH_CELLBOARD_5_RX::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<FLASH_CELLBOARD_5_RX *>(to)->MergeFrom(
+      static_cast<const FLASH_CELLBOARD_5_RX &>(from));
+}
+
+
+void FLASH_CELLBOARD_5_RX::MergeFrom(const FLASH_CELLBOARD_5_RX& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_5_RX)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void FLASH_CELLBOARD_5_RX::CopyFrom(const FLASH_CELLBOARD_5_RX& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.FLASH_CELLBOARD_5_RX)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool FLASH_CELLBOARD_5_RX::IsInitialized() const {
+  return true;
+}
+
+void FLASH_CELLBOARD_5_RX::InternalSwap(FLASH_CELLBOARD_5_RX* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_5_RX::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
+      file_level_metadata_bms_2eproto[31]);
+}
+
+// ===================================================================
+
 class Pack::_Internal {
  public:
 };
@@ -6298,7 +8658,19 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   voltages_cellboard4_(arena),
   voltages_cellboard5_(arena),
   balancing_(arena),
-  fw_update_(arena) {
+  fw_update_(arena),
+  flash_cellboard_0_tx_(arena),
+  flash_cellboard_0_rx_(arena),
+  flash_cellboard_1_tx_(arena),
+  flash_cellboard_1_rx_(arena),
+  flash_cellboard_2_tx_(arena),
+  flash_cellboard_2_rx_(arena),
+  flash_cellboard_3_tx_(arena),
+  flash_cellboard_3_rx_(arena),
+  flash_cellboard_4_tx_(arena),
+  flash_cellboard_4_rx_(arena),
+  flash_cellboard_5_tx_(arena),
+  flash_cellboard_5_rx_(arena) {
   SharedCtor();
   // @@protoc_insertion_point(arena_constructor:bms.Pack)
 }
@@ -6323,7 +8695,19 @@ Pack::Pack(const Pack& from)
       voltages_cellboard4_(from.voltages_cellboard4_),
       voltages_cellboard5_(from.voltages_cellboard5_),
       balancing_(from.balancing_),
-      fw_update_(from.fw_update_) {
+      fw_update_(from.fw_update_),
+      flash_cellboard_0_tx_(from.flash_cellboard_0_tx_),
+      flash_cellboard_0_rx_(from.flash_cellboard_0_rx_),
+      flash_cellboard_1_tx_(from.flash_cellboard_1_tx_),
+      flash_cellboard_1_rx_(from.flash_cellboard_1_rx_),
+      flash_cellboard_2_tx_(from.flash_cellboard_2_tx_),
+      flash_cellboard_2_rx_(from.flash_cellboard_2_rx_),
+      flash_cellboard_3_tx_(from.flash_cellboard_3_tx_),
+      flash_cellboard_3_rx_(from.flash_cellboard_3_rx_),
+      flash_cellboard_4_tx_(from.flash_cellboard_4_tx_),
+      flash_cellboard_4_rx_(from.flash_cellboard_4_rx_),
+      flash_cellboard_5_tx_(from.flash_cellboard_5_tx_),
+      flash_cellboard_5_rx_(from.flash_cellboard_5_rx_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bms.Pack)
 }
@@ -6374,6 +8758,18 @@ void Pack::Clear() {
   voltages_cellboard5_.Clear();
   balancing_.Clear();
   fw_update_.Clear();
+  flash_cellboard_0_tx_.Clear();
+  flash_cellboard_0_rx_.Clear();
+  flash_cellboard_1_tx_.Clear();
+  flash_cellboard_1_rx_.Clear();
+  flash_cellboard_2_tx_.Clear();
+  flash_cellboard_2_rx_.Clear();
+  flash_cellboard_3_tx_.Clear();
+  flash_cellboard_3_rx_.Clear();
+  flash_cellboard_4_tx_.Clear();
+  flash_cellboard_4_rx_.Clear();
+  flash_cellboard_5_tx_.Clear();
+  flash_cellboard_5_rx_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6643,6 +9039,162 @@ const char* Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<170>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<194>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<202>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 210)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<210>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 226)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 242)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<242>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+      case 31:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 250)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<250>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 2)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -6832,6 +9384,102 @@ uint8_t* Pack::_InternalSerialize(
         InternalWriteMessage(20, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_0_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_0_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(21, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_0_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_0_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(22, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_1_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_1_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(23, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_1_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_1_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(24, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_2_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_2_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(25, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_2_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_2_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(26, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_3_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_3_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(27, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_3_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_3_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(28, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_4_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_4_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(29, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_4_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_4_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(30, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_5_tx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_5_tx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(31, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_flash_cellboard_5_rx_size()); i < n; i++) {
+    const auto& repfield = this->_internal_flash_cellboard_5_rx(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(32, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6988,6 +9636,90 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+  total_size += 2UL * this->_internal_flash_cellboard_0_tx_size();
+  for (const auto& msg : this->flash_cellboard_0_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+  total_size += 2UL * this->_internal_flash_cellboard_0_rx_size();
+  for (const auto& msg : this->flash_cellboard_0_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+  total_size += 2UL * this->_internal_flash_cellboard_1_tx_size();
+  for (const auto& msg : this->flash_cellboard_1_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+  total_size += 2UL * this->_internal_flash_cellboard_1_rx_size();
+  for (const auto& msg : this->flash_cellboard_1_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+  total_size += 2UL * this->_internal_flash_cellboard_2_tx_size();
+  for (const auto& msg : this->flash_cellboard_2_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+  total_size += 2UL * this->_internal_flash_cellboard_2_rx_size();
+  for (const auto& msg : this->flash_cellboard_2_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+  total_size += 2UL * this->_internal_flash_cellboard_3_tx_size();
+  for (const auto& msg : this->flash_cellboard_3_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+  total_size += 2UL * this->_internal_flash_cellboard_3_rx_size();
+  for (const auto& msg : this->flash_cellboard_3_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+  total_size += 2UL * this->_internal_flash_cellboard_4_tx_size();
+  for (const auto& msg : this->flash_cellboard_4_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+  total_size += 2UL * this->_internal_flash_cellboard_4_rx_size();
+  for (const auto& msg : this->flash_cellboard_4_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  total_size += 2UL * this->_internal_flash_cellboard_5_tx_size();
+  for (const auto& msg : this->flash_cellboard_5_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  total_size += 2UL * this->_internal_flash_cellboard_5_rx_size();
+  for (const auto& msg : this->flash_cellboard_5_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -7030,6 +9762,18 @@ void Pack::MergeFrom(const Pack& from) {
   voltages_cellboard5_.MergeFrom(from.voltages_cellboard5_);
   balancing_.MergeFrom(from.balancing_);
   fw_update_.MergeFrom(from.fw_update_);
+  flash_cellboard_0_tx_.MergeFrom(from.flash_cellboard_0_tx_);
+  flash_cellboard_0_rx_.MergeFrom(from.flash_cellboard_0_rx_);
+  flash_cellboard_1_tx_.MergeFrom(from.flash_cellboard_1_tx_);
+  flash_cellboard_1_rx_.MergeFrom(from.flash_cellboard_1_rx_);
+  flash_cellboard_2_tx_.MergeFrom(from.flash_cellboard_2_tx_);
+  flash_cellboard_2_rx_.MergeFrom(from.flash_cellboard_2_rx_);
+  flash_cellboard_3_tx_.MergeFrom(from.flash_cellboard_3_tx_);
+  flash_cellboard_3_rx_.MergeFrom(from.flash_cellboard_3_rx_);
+  flash_cellboard_4_tx_.MergeFrom(from.flash_cellboard_4_tx_);
+  flash_cellboard_4_rx_.MergeFrom(from.flash_cellboard_4_rx_);
+  flash_cellboard_5_tx_.MergeFrom(from.flash_cellboard_5_tx_);
+  flash_cellboard_5_rx_.MergeFrom(from.flash_cellboard_5_rx_);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -7067,12 +9811,24 @@ void Pack::InternalSwap(Pack* other) {
   voltages_cellboard5_.InternalSwap(&other->voltages_cellboard5_);
   balancing_.InternalSwap(&other->balancing_);
   fw_update_.InternalSwap(&other->fw_update_);
+  flash_cellboard_0_tx_.InternalSwap(&other->flash_cellboard_0_tx_);
+  flash_cellboard_0_rx_.InternalSwap(&other->flash_cellboard_0_rx_);
+  flash_cellboard_1_tx_.InternalSwap(&other->flash_cellboard_1_tx_);
+  flash_cellboard_1_rx_.InternalSwap(&other->flash_cellboard_1_rx_);
+  flash_cellboard_2_tx_.InternalSwap(&other->flash_cellboard_2_tx_);
+  flash_cellboard_2_rx_.InternalSwap(&other->flash_cellboard_2_rx_);
+  flash_cellboard_3_tx_.InternalSwap(&other->flash_cellboard_3_tx_);
+  flash_cellboard_3_rx_.InternalSwap(&other->flash_cellboard_3_rx_);
+  flash_cellboard_4_tx_.InternalSwap(&other->flash_cellboard_4_tx_);
+  flash_cellboard_4_rx_.InternalSwap(&other->flash_cellboard_4_rx_);
+  flash_cellboard_5_tx_.InternalSwap(&other->flash_cellboard_5_tx_);
+  flash_cellboard_5_rx_.InternalSwap(&other->flash_cellboard_5_rx_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Pack::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_bms_2eproto_getter, &descriptor_table_bms_2eproto_once,
-      file_level_metadata_bms_2eproto[20]);
+      file_level_metadata_bms_2eproto[32]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7157,6 +9913,54 @@ Arena::CreateMaybeMessage< ::bms::BALANCING >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::bms::FW_UPDATE*
 Arena::CreateMaybeMessage< ::bms::FW_UPDATE >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bms::FW_UPDATE >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_0_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_0_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_0_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_0_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_1_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_1_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_1_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_1_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_2_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_2_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_2_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_2_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_3_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_3_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_3_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_3_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_4_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_4_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_4_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_4_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_5_TX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_5_TX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_5_RX*
+Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_5_RX >(arena);
 }
 template<> PROTOBUF_NOINLINE ::bms::Pack*
 Arena::CreateMaybeMessage< ::bms::Pack >(Arena* arena) {

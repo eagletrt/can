@@ -394,3 +394,267 @@ class message_FW_UPDATE:
         message.board_index = uint8(unpack("<B", data[0:1])[0])
         return message
 
+
+class message_FLASH_CELLBOARD_0_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_0_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_0_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_0_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_1_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_1_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_1_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_1_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_2_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_2_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_2_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_2_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_3_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_3_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_3_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_3_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_4_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_4_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_4_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_4_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_5_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_5_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_CELLBOARD_5_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_CELLBOARD_5_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+

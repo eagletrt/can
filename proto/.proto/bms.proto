@@ -153,6 +153,54 @@ message FW_UPDATE {
     uint64 _inner_timestamp = 2;
 }
 
+message FLASH_CELLBOARD_0_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_0_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_1_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_1_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_2_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_2_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_3_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_3_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_4_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_4_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_5_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_5_RX {
+    uint64 _inner_timestamp = 1;
+}
+
 
 message Pack {
     repeated BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
@@ -175,4 +223,16 @@ message Pack {
     repeated VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
     repeated BALANCING BALANCING = 19;
     repeated FW_UPDATE FW_UPDATE = 20;
+    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
 }

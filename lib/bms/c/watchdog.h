@@ -65,6 +65,18 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_watchdog_index_VOLTAGES_CELLBOARD5 17
 #define bms_watchdog_index_BALANCING 18
 #define bms_watchdog_index_FW_UPDATE 19
+#define bms_watchdog_index_FLASH_CELLBOARD_0_TX 20
+#define bms_watchdog_index_FLASH_CELLBOARD_0_RX 21
+#define bms_watchdog_index_FLASH_CELLBOARD_1_TX 22
+#define bms_watchdog_index_FLASH_CELLBOARD_1_RX 23
+#define bms_watchdog_index_FLASH_CELLBOARD_2_TX 24
+#define bms_watchdog_index_FLASH_CELLBOARD_2_RX 25
+#define bms_watchdog_index_FLASH_CELLBOARD_3_TX 26
+#define bms_watchdog_index_FLASH_CELLBOARD_3_RX 27
+#define bms_watchdog_index_FLASH_CELLBOARD_4_TX 28
+#define bms_watchdog_index_FLASH_CELLBOARD_4_RX 29
+#define bms_watchdog_index_FLASH_CELLBOARD_5_TX 30
+#define bms_watchdog_index_FLASH_CELLBOARD_5_RX 31
 
 
 #define bms_BOARD_STATUS_INTERVAL -1
@@ -72,15 +84,27 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_VOLTAGES_INTERVAL -1
 #define bms_BALANCING_INTERVAL -1
 #define bms_FW_UPDATE_INTERVAL -1
+#define bms_FLASH_CELLBOARD_0_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_0_RX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_1_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_1_RX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_2_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_2_RX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_3_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_3_RX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_4_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_4_RX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_5_TX_INTERVAL -1
+#define bms_FLASH_CELLBOARD_5_RX_INTERVAL -1
 
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.
 #define bms_INTERVAL_ONCE -1
 
 typedef struct {
-    uint8_t activated[3];
-    uint8_t timeout[3];
-    canlib_watchdog_timestamp last_reset[20];
+    uint8_t activated[4];
+    uint8_t timeout[4];
+    canlib_watchdog_timestamp last_reset[32];
 } bms_watchdog;
 
 int bms_watchdog_index_from_id(canlib_message_id id);
@@ -114,8 +138,20 @@ int bms_watchdog_index_from_id(canlib_message_id id) {
         case 674: return bms_watchdog_index_VOLTAGES_CELLBOARD5;
         case 515: return bms_watchdog_index_BALANCING;
         case 260: return bms_watchdog_index_FW_UPDATE;
+        case 16: return bms_watchdog_index_FLASH_CELLBOARD_0_TX;
+        case 17: return bms_watchdog_index_FLASH_CELLBOARD_0_RX;
+        case 18: return bms_watchdog_index_FLASH_CELLBOARD_1_TX;
+        case 19: return bms_watchdog_index_FLASH_CELLBOARD_1_RX;
+        case 20: return bms_watchdog_index_FLASH_CELLBOARD_2_TX;
+        case 21: return bms_watchdog_index_FLASH_CELLBOARD_2_RX;
+        case 22: return bms_watchdog_index_FLASH_CELLBOARD_3_TX;
+        case 23: return bms_watchdog_index_FLASH_CELLBOARD_3_RX;
+        case 24: return bms_watchdog_index_FLASH_CELLBOARD_4_TX;
+        case 25: return bms_watchdog_index_FLASH_CELLBOARD_4_RX;
+        case 26: return bms_watchdog_index_FLASH_CELLBOARD_5_TX;
+        case 27: return bms_watchdog_index_FLASH_CELLBOARD_5_RX;
     }
-    return 20; // invalid
+    return 32; // invalid
 }
 
 bms_watchdog* bms_watchdog_new() {
@@ -131,7 +167,7 @@ bms_watchdog* bms_watchdog_new() {
 
 void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = bms_watchdog_index_from_id(id);
-    if (index < 20 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 32 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

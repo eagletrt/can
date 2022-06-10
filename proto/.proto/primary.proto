@@ -71,6 +71,10 @@ enum Cooling {
     Cooling_PUMPS_OFF = 3;
 }
 
+message BMS_HV_JMP_TO_BLT {
+    uint64 _inner_timestamp = 1;
+}
+
 message STEER_VERSION {
     uint32 component_version = 1;
     uint32 cancicd_version = 2;
@@ -321,46 +325,107 @@ message INV_L_RESPONSE {
     uint64 _inner_timestamp = 9;
 }
 
+message FLASH_CELLBOARD_0_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_0_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_1_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_1_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_2_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_2_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_3_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_3_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_4_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_4_RX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_5_TX {
+    uint64 _inner_timestamp = 1;
+}
+
+message FLASH_CELLBOARD_5_RX {
+    uint64 _inner_timestamp = 1;
+}
+
 
 message Pack {
-    repeated STEER_VERSION STEER_VERSION = 1;
-    repeated DAS_VERSION DAS_VERSION = 2;
-    repeated HV_VERSION HV_VERSION = 3;
-    repeated LV_VERSION LV_VERSION = 4;
-    repeated TLM_VERSION TLM_VERSION = 5;
-    repeated TIMESTAMP TIMESTAMP = 6;
-    repeated SET_TLM_STATUS SET_TLM_STATUS = 7;
-    repeated TLM_STATUS TLM_STATUS = 8;
-    repeated STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 9;
-    repeated HV_VOLTAGE HV_VOLTAGE = 10;
-    repeated HV_CURRENT HV_CURRENT = 11;
-    repeated HV_TEMP HV_TEMP = 12;
-    repeated HV_ERRORS HV_ERRORS = 13;
-    repeated HV_CAN_FORWARD HV_CAN_FORWARD = 14;
-    repeated HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 15;
-    repeated TS_STATUS TS_STATUS = 16;
-    repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 17;
-    repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 18;
-    repeated STEER_STATUS STEER_STATUS = 19;
-    repeated SET_CAR_STATUS SET_CAR_STATUS = 20;
-    repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 21;
-    repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 22;
-    repeated CAR_STATUS CAR_STATUS = 23;
-    repeated DAS_ERRORS DAS_ERRORS = 24;
-    repeated LV_CURRENT LV_CURRENT = 25;
-    repeated LV_VOLTAGE LV_VOLTAGE = 26;
-    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 27;
-    repeated LV_TEMPERATURE LV_TEMPERATURE = 28;
-    repeated COOLING_STATUS COOLING_STATUS = 29;
-    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 30;
-    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 31;
-    repeated MARKER MARKER = 32;
-    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 33;
-    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 34;
-    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 35;
-    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 36;
-    repeated HANDCART_STATUS HANDCART_STATUS = 37;
-    repeated SPEED SPEED = 38;
-    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 39;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 40;
+    repeated BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
+    repeated STEER_VERSION STEER_VERSION = 2;
+    repeated DAS_VERSION DAS_VERSION = 3;
+    repeated HV_VERSION HV_VERSION = 4;
+    repeated LV_VERSION LV_VERSION = 5;
+    repeated TLM_VERSION TLM_VERSION = 6;
+    repeated TIMESTAMP TIMESTAMP = 7;
+    repeated SET_TLM_STATUS SET_TLM_STATUS = 8;
+    repeated TLM_STATUS TLM_STATUS = 9;
+    repeated STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 10;
+    repeated HV_VOLTAGE HV_VOLTAGE = 11;
+    repeated HV_CURRENT HV_CURRENT = 12;
+    repeated HV_TEMP HV_TEMP = 13;
+    repeated HV_ERRORS HV_ERRORS = 14;
+    repeated HV_CAN_FORWARD HV_CAN_FORWARD = 15;
+    repeated HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 16;
+    repeated TS_STATUS TS_STATUS = 17;
+    repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 18;
+    repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 19;
+    repeated STEER_STATUS STEER_STATUS = 20;
+    repeated SET_CAR_STATUS SET_CAR_STATUS = 21;
+    repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 22;
+    repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 23;
+    repeated CAR_STATUS CAR_STATUS = 24;
+    repeated DAS_ERRORS DAS_ERRORS = 25;
+    repeated LV_CURRENT LV_CURRENT = 26;
+    repeated LV_VOLTAGE LV_VOLTAGE = 27;
+    repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 28;
+    repeated LV_TEMPERATURE LV_TEMPERATURE = 29;
+    repeated COOLING_STATUS COOLING_STATUS = 30;
+    repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 31;
+    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 32;
+    repeated MARKER MARKER = 33;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 34;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 35;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 36;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 37;
+    repeated HANDCART_STATUS HANDCART_STATUS = 38;
+    repeated SPEED SPEED = 39;
+    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 40;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 41;
+    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 42;
+    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 43;
+    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 44;
+    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 45;
+    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 46;
+    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 47;
+    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 48;
+    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 49;
+    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 50;
+    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 51;
+    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 52;
+    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 53;
 }

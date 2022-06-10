@@ -62,6 +62,22 @@ typedef uint16_t canlib_message_id;
 
 #define bms_id_FW_UPDATE 0b00100000100
 
+/* TOPIC FIXED_IDS */
+#define bms_topic_mask_FIXED_IDS 0b00000011111
+
+#define bms_id_FLASH_CELLBOARD_0_TX 0b00000010000
+#define bms_id_FLASH_CELLBOARD_0_RX 0b00000010001
+#define bms_id_FLASH_CELLBOARD_1_TX 0b00000010010
+#define bms_id_FLASH_CELLBOARD_1_RX 0b00000010011
+#define bms_id_FLASH_CELLBOARD_2_TX 0b00000010100
+#define bms_id_FLASH_CELLBOARD_2_RX 0b00000010101
+#define bms_id_FLASH_CELLBOARD_3_TX 0b00000010110
+#define bms_id_FLASH_CELLBOARD_3_RX 0b00000010111
+#define bms_id_FLASH_CELLBOARD_4_TX 0b00000011000
+#define bms_id_FLASH_CELLBOARD_4_RX 0b00000011001
+#define bms_id_FLASH_CELLBOARD_5_TX 0b00000011010
+#define bms_id_FLASH_CELLBOARD_5_RX 0b00000011011
+
 
 // ============== UTILS ============== //
 
@@ -134,6 +150,42 @@ int bms_message_name_from_id(canlib_message_id id, char *buffer) {
         case bms_id_FW_UPDATE:
             strcpy(buffer, "FW_UPDATE");
             return 0;
+        case bms_id_FLASH_CELLBOARD_0_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_0_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_0_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_0_RX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_1_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_1_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_1_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_1_RX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_2_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_2_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_2_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_2_RX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_3_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_3_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_3_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_3_RX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_4_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_4_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_4_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_4_RX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_5_TX:
+            strcpy(buffer, "FLASH_CELLBOARD_5_TX");
+            return 0;
+        case bms_id_FLASH_CELLBOARD_5_RX:
+            strcpy(buffer, "FLASH_CELLBOARD_5_RX");
+            return 0;
         default:
             strcpy(buffer, ""); // Unknown message
     }
@@ -162,6 +214,18 @@ bool bms_is_message_id(canlib_message_id message_id) {
         case 674: return true; break;
         case 515: return true; break;
         case 260: return true; break;
+        case 16: return true; break;
+        case 17: return true; break;
+        case 18: return true; break;
+        case 19: return true; break;
+        case 20: return true; break;
+        case 21: return true; break;
+        case 22: return true; break;
+        case 23: return true; break;
+        case 24: return true; break;
+        case 25: return true; break;
+        case 26: return true; break;
+        case 27: return true; break;
     }
     return false;
 }

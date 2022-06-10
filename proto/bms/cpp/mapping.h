@@ -44,6 +44,18 @@ typedef struct {
     std::vector<bms_message_VOLTAGES_conversion> VOLTAGES_CELLBOARD5;
     std::vector<bms_message_BALANCING> BALANCING;
     std::vector<bms_message_FW_UPDATE> FW_UPDATE;
+    std::vector<bms_message_FLASH_CELLBOARD_0_TX> FLASH_CELLBOARD_0_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_0_RX> FLASH_CELLBOARD_0_RX;
+    std::vector<bms_message_FLASH_CELLBOARD_1_TX> FLASH_CELLBOARD_1_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_1_RX> FLASH_CELLBOARD_1_RX;
+    std::vector<bms_message_FLASH_CELLBOARD_2_TX> FLASH_CELLBOARD_2_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_2_RX> FLASH_CELLBOARD_2_RX;
+    std::vector<bms_message_FLASH_CELLBOARD_3_TX> FLASH_CELLBOARD_3_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_3_RX> FLASH_CELLBOARD_3_RX;
+    std::vector<bms_message_FLASH_CELLBOARD_4_TX> FLASH_CELLBOARD_4_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_4_RX> FLASH_CELLBOARD_4_RX;
+    std::vector<bms_message_FLASH_CELLBOARD_5_TX> FLASH_CELLBOARD_5_TX;
+    std::vector<bms_message_FLASH_CELLBOARD_5_RX> FLASH_CELLBOARD_5_RX;
 } bms_proto_pack;
 
 void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map);
@@ -318,6 +330,78 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
             break;
         }
 
+        case 16: {
+            bms_message_FLASH_CELLBOARD_0_TX* msg = (bms_message_FLASH_CELLBOARD_0_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
+            break;
+        }
+
+        case 17: {
+            bms_message_FLASH_CELLBOARD_0_RX* msg = (bms_message_FLASH_CELLBOARD_0_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
+            break;
+        }
+
+        case 18: {
+            bms_message_FLASH_CELLBOARD_1_TX* msg = (bms_message_FLASH_CELLBOARD_1_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
+            break;
+        }
+
+        case 19: {
+            bms_message_FLASH_CELLBOARD_1_RX* msg = (bms_message_FLASH_CELLBOARD_1_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
+            break;
+        }
+
+        case 20: {
+            bms_message_FLASH_CELLBOARD_2_TX* msg = (bms_message_FLASH_CELLBOARD_2_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
+            break;
+        }
+
+        case 21: {
+            bms_message_FLASH_CELLBOARD_2_RX* msg = (bms_message_FLASH_CELLBOARD_2_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
+            break;
+        }
+
+        case 22: {
+            bms_message_FLASH_CELLBOARD_3_TX* msg = (bms_message_FLASH_CELLBOARD_3_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
+            break;
+        }
+
+        case 23: {
+            bms_message_FLASH_CELLBOARD_3_RX* msg = (bms_message_FLASH_CELLBOARD_3_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
+            break;
+        }
+
+        case 24: {
+            bms_message_FLASH_CELLBOARD_4_TX* msg = (bms_message_FLASH_CELLBOARD_4_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
+            break;
+        }
+
+        case 25: {
+            bms_message_FLASH_CELLBOARD_4_RX* msg = (bms_message_FLASH_CELLBOARD_4_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
+            break;
+        }
+
+        case 26: {
+            bms_message_FLASH_CELLBOARD_5_TX* msg = (bms_message_FLASH_CELLBOARD_5_TX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
+            break;
+        }
+
+        case 27: {
+            bms_message_FLASH_CELLBOARD_5_RX* msg = (bms_message_FLASH_CELLBOARD_5_RX*) (*map)[index].raw_message;
+            bms::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
+            break;
+        }
+
     }
 }
 
@@ -521,6 +605,78 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
         map->FW_UPDATE[i].board_index =pack->fw_update(i).board_index();
 #ifdef CANLIB_TIMESTAMP
         map->FW_UPDATE[i]._timestamp = pack->fw_update(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_0_TX.resize(pack->flash_cellboard_0_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_0_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_0_TX[i]._timestamp = pack->flash_cellboard_0_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_0_RX.resize(pack->flash_cellboard_0_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_0_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_0_RX[i]._timestamp = pack->flash_cellboard_0_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_1_TX.resize(pack->flash_cellboard_1_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_1_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_1_TX[i]._timestamp = pack->flash_cellboard_1_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_1_RX.resize(pack->flash_cellboard_1_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_1_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_1_RX[i]._timestamp = pack->flash_cellboard_1_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_2_TX.resize(pack->flash_cellboard_2_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_2_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_2_TX[i]._timestamp = pack->flash_cellboard_2_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_2_RX.resize(pack->flash_cellboard_2_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_2_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_2_RX[i]._timestamp = pack->flash_cellboard_2_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_3_TX.resize(pack->flash_cellboard_3_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_3_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_3_TX[i]._timestamp = pack->flash_cellboard_3_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_3_RX.resize(pack->flash_cellboard_3_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_3_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_3_RX[i]._timestamp = pack->flash_cellboard_3_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_4_TX.resize(pack->flash_cellboard_4_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_4_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_4_TX[i]._timestamp = pack->flash_cellboard_4_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_4_RX.resize(pack->flash_cellboard_4_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_4_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_4_RX[i]._timestamp = pack->flash_cellboard_4_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_5_TX.resize(pack->flash_cellboard_5_tx_size());
+    for(int i = 0; i < pack->flash_cellboard_5_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_5_TX[i]._timestamp = pack->flash_cellboard_5_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->FLASH_CELLBOARD_5_RX.resize(pack->flash_cellboard_5_rx_size());
+    for(int i = 0; i < pack->flash_cellboard_5_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        map->FLASH_CELLBOARD_5_RX[i]._timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
 }
