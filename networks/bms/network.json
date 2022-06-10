@@ -166,7 +166,6 @@
     },
     {
       "name": "FW_UPDATE",
-      "topic": "FW_UPDATE",
       "fixed_id": 10,
       "sending": ["MAINBOARD"],
       "receiving": [
