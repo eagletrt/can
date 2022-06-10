@@ -138,8 +138,10 @@ typedef union {
 
 #ifdef __cplusplus
 #define bms_float32_to_bytes(float, index) (reinterpret_cast<bms_uint8*>(&((float)))[(index)])
+#define bms_float64_to_bytes(float, index) (reinterpret_cast<bms_uint8*>(&((float)))[(index)])
 #else
-#define bms_float32_to_bytes(float, index) ({(bms_float32_helper)bms_float32_helper.value = (f)}.bytes[(index)])
+#define bms_float32_to_bytes(float, index) (((bms_float32_helper) (float)).bytes[(index)])
+#define bms_float64_to_bytes(float, index) (((bms_float64_helper) (float)).bytes[(index)])
 #endif
 
 typedef struct {

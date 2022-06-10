@@ -138,8 +138,10 @@ typedef union {
 
 #ifdef __cplusplus
 #define secondary_float32_to_bytes(float, index) (reinterpret_cast<secondary_uint8*>(&((float)))[(index)])
+#define secondary_float64_to_bytes(float, index) (reinterpret_cast<secondary_uint8*>(&((float)))[(index)])
 #else
-#define secondary_float32_to_bytes(float, index) ({(secondary_float32_helper)secondary_float32_helper.value = (f)}.bytes[(index)])
+#define secondary_float32_to_bytes(float, index) (((secondary_float32_helper) (float)).bytes[(index)])
+#define secondary_float64_to_bytes(float, index) (((secondary_float64_helper) (float)).bytes[(index)])
 #endif
 
 typedef struct {
@@ -3227,8 +3229,8 @@ void secondary_deserialize_GPS_COORDS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->latitude = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
-    message->longitude = ((secondary_float32_helper) {data[4] ,data[5] ,data[6] ,data[7]}).value;
+    message->latitude = ((secondary_float32_helper) {{data[0], data[1], data[2], data[3]}}).value;
+    message->longitude = ((secondary_float32_helper) {{data[4], data[5], data[6], data[7]}}).value;
 }
 
 // ============== STRING ============== //
@@ -3634,8 +3636,8 @@ void secondary_deserialize_CONTROL_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->right = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
-    message->left = ((secondary_float32_helper) {data[4] ,data[5] ,data[6] ,data[7]}).value;
+    message->right = ((secondary_float32_helper) {{data[0], data[1], data[2], data[3]}}).value;
+    message->left = ((secondary_float32_helper) {{data[4], data[5], data[6], data[7]}}).value;
 }
 
 // ============== STRING ============== //
@@ -3727,7 +3729,7 @@ void secondary_deserialize_STEERING_ANGLE(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->angle = ((secondary_float32_helper) {data[0] ,data[1] ,data[2] ,data[3]}).value;
+    message->angle = ((secondary_float32_helper) {{data[0], data[1], data[2], data[3]}}).value;
 }
 
 // ============== STRING ============== //
