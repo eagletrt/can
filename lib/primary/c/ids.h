@@ -109,8 +109,6 @@ typedef uint16_t canlib_message_id;
 /* TOPIC FIXED_IDS */
 #define primary_topic_mask_FIXED_IDS 0b00000011111
 
-#define primary_id_INV_L_SET_TORQUE 0b01000000001 // dec: 513 hex: 0x201
-#define primary_id_INV_R_SET_TORQUE 0b01000000010 // dec: 514 hex: 0x202
 #define primary_id_INV_L_REQUEST 0b01000000001 // dec: 513 hex: 0x201
 #define primary_id_INV_R_REQUEST 0b01000000010 // dec: 514 hex: 0x202
 #define primary_id_INV_L_RESPONSE 0b00110000001 // dec: 385 hex: 0x181
@@ -257,12 +255,6 @@ int primary_message_name_from_id(canlib_message_id id, char *buffer) {
         case primary_id_SPEED:
             strcpy(buffer, "SPEED");
             return 0;
-        case primary_id_INV_L_SET_TORQUE:
-            strcpy(buffer, "INV_L_SET_TORQUE");
-            return 0;
-        case primary_id_INV_R_SET_TORQUE:
-            strcpy(buffer, "INV_R_SET_TORQUE");
-            return 0;
         case primary_id_INV_L_REQUEST:
             strcpy(buffer, "INV_L_REQUEST");
             return 0;
@@ -358,8 +350,6 @@ bool primary_is_message_id(canlib_message_id message_id) {
         case 517: return true; break;
         case 773: return true; break;
         case 547: return true; break;
-        case 513: return true; break;
-        case 514: return true; break;
         case 513: return true; break;
         case 514: return true; break;
         case 385: return true; break;

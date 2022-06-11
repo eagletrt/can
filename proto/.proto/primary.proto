@@ -306,32 +306,28 @@ message SPEED {
     uint64 _inner_timestamp = 5;
 }
 
-message INV_L_SET_TORQUE {
-    uint32 reg_id = 1;
-    uint32 lsb = 2;
-    uint32 msb = 3;
-    uint64 _inner_timestamp = 4;
-}
-
-message INV_R_SET_TORQUE {
-    uint32 reg_id = 1;
-    uint32 lsb = 2;
-    uint32 msb = 3;
-    uint64 _inner_timestamp = 4;
-}
-
 message INV_L_REQUEST {
-    uint32 cmd = 1;
-    uint32 reg_id = 2;
-    uint32 interval = 3;
-    uint64 _inner_timestamp = 4;
+    uint32 data_0 = 1;
+    uint32 data_1 = 2;
+    uint32 data_2 = 3;
+    uint32 data_3 = 4;
+    uint32 data_4 = 5;
+    uint32 data_5 = 6;
+    uint32 data_6 = 7;
+    uint32 data_7 = 8;
+    uint64 _inner_timestamp = 9;
 }
 
 message INV_R_REQUEST {
-    uint32 cmd = 1;
-    uint32 reg_id = 2;
-    uint32 interval = 3;
-    uint64 _inner_timestamp = 4;
+    uint32 data_0 = 1;
+    uint32 data_1 = 2;
+    uint32 data_2 = 3;
+    uint32 data_3 = 4;
+    uint32 data_4 = 5;
+    uint32 data_5 = 6;
+    uint32 data_6 = 7;
+    uint32 data_7 = 8;
+    uint64 _inner_timestamp = 9;
 }
 
 message INV_L_RESPONSE {
@@ -447,22 +443,20 @@ message Pack {
     repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 37;
     repeated HANDCART_STATUS HANDCART_STATUS = 38;
     repeated SPEED SPEED = 39;
-    repeated INV_L_SET_TORQUE INV_L_SET_TORQUE = 40;
-    repeated INV_R_SET_TORQUE INV_R_SET_TORQUE = 41;
-    repeated INV_L_REQUEST INV_L_REQUEST = 42;
-    repeated INV_R_REQUEST INV_R_REQUEST = 43;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 44;
-    repeated INV_R_RESPONSE INV_R_RESPONSE = 45;
-    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 46;
-    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 47;
-    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 48;
-    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 49;
-    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 50;
-    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 51;
-    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 52;
-    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 53;
-    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 54;
-    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 55;
-    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 56;
-    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 57;
+    repeated INV_L_REQUEST INV_L_REQUEST = 40;
+    repeated INV_R_REQUEST INV_R_REQUEST = 41;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 42;
+    repeated INV_R_RESPONSE INV_R_RESPONSE = 43;
+    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 44;
+    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 45;
+    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 46;
+    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 47;
+    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 48;
+    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 49;
+    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 50;
+    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 51;
+    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 52;
+    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 53;
+    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 54;
+    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 55;
 }

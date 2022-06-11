@@ -1995,155 +1995,129 @@ class message_SPEED_conversion:
         raw.inverter_l = uint8((self.inverter_l + 70) * 0.731429)
         return raw
 
-class message_INV_L_SET_TORQUE:
-    def __init__(
-        self,
-        reg_id = None,
-        lsb = None,
-        msb = None
-    ):
-        self.reg_id = uint8(reg_id)
-        self.lsb = uint8(lsb)
-        self.msb = uint8(msb)
-        self.size = 3
-        self.interval = 20
-
-    def __eq__(self, other):
-        if not isinstance(other, message_INV_L_SET_TORQUE):
-            return False
-        if self.reg_id != other.reg_id:
-            return False
-        if self.lsb != other.lsb:
-            return False
-        if self.msb != other.msb:
-            return False
-        return True
-
-    def serialize(self) -> bytearray:
-        data = bytearray()
-        data.extend(pack("<BBB", self.reg_id, self.lsb, self.msb))
-        return data
-
-    @classmethod
-    def deserialize(cls, data: bytearray):
-        message = cls()
-        message.reg_id = uint8(unpack("<B", data[0:1])[0])
-        message.lsb = uint8(unpack("<xB", data[0:2])[0])
-        message.msb = uint8(unpack("<xxB", data[0:3])[0])
-        return message
-
-
-class message_INV_R_SET_TORQUE:
-    def __init__(
-        self,
-        reg_id = None,
-        lsb = None,
-        msb = None
-    ):
-        self.reg_id = uint8(reg_id)
-        self.lsb = uint8(lsb)
-        self.msb = uint8(msb)
-        self.size = 3
-        self.interval = 20
-
-    def __eq__(self, other):
-        if not isinstance(other, message_INV_R_SET_TORQUE):
-            return False
-        if self.reg_id != other.reg_id:
-            return False
-        if self.lsb != other.lsb:
-            return False
-        if self.msb != other.msb:
-            return False
-        return True
-
-    def serialize(self) -> bytearray:
-        data = bytearray()
-        data.extend(pack("<BBB", self.reg_id, self.lsb, self.msb))
-        return data
-
-    @classmethod
-    def deserialize(cls, data: bytearray):
-        message = cls()
-        message.reg_id = uint8(unpack("<B", data[0:1])[0])
-        message.lsb = uint8(unpack("<xB", data[0:2])[0])
-        message.msb = uint8(unpack("<xxB", data[0:3])[0])
-        return message
-
-
 class message_INV_L_REQUEST:
     def __init__(
         self,
-        cmd = None,
-        reg_id = None,
-        interval = None
+        data_0 = None,
+        data_1 = None,
+        data_2 = None,
+        data_3 = None,
+        data_4 = None,
+        data_5 = None,
+        data_6 = None,
+        data_7 = None
     ):
-        self.cmd = uint8(cmd)
-        self.reg_id = uint8(reg_id)
-        self.interval = uint8(interval)
-        self.size = 3
+        self.data_0 = uint8(data_0)
+        self.data_1 = uint8(data_1)
+        self.data_2 = uint8(data_2)
+        self.data_3 = uint8(data_3)
+        self.data_4 = uint8(data_4)
+        self.data_5 = uint8(data_5)
+        self.data_6 = uint8(data_6)
+        self.data_7 = uint8(data_7)
+        self.size = 8
         self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_REQUEST):
             return False
-        if self.cmd != other.cmd:
+        if self.data_0 != other.data_0:
             return False
-        if self.reg_id != other.reg_id:
+        if self.data_1 != other.data_1:
             return False
-        if self.interval != other.interval:
+        if self.data_2 != other.data_2:
+            return False
+        if self.data_3 != other.data_3:
+            return False
+        if self.data_4 != other.data_4:
+            return False
+        if self.data_5 != other.data_5:
+            return False
+        if self.data_6 != other.data_6:
+            return False
+        if self.data_7 != other.data_7:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", self.cmd, self.reg_id, self.interval))
+        data.extend(pack("<BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.cmd = uint8(unpack("<B", data[0:1])[0])
-        message.reg_id = uint8(unpack("<xB", data[0:2])[0])
-        message.interval = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_0 = uint8(unpack("<B", data[0:1])[0])
+        message.data_1 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_2 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_3 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_4 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_5 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_6 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_7 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 
 class message_INV_R_REQUEST:
     def __init__(
         self,
-        cmd = None,
-        reg_id = None,
-        interval = None
+        data_0 = None,
+        data_1 = None,
+        data_2 = None,
+        data_3 = None,
+        data_4 = None,
+        data_5 = None,
+        data_6 = None,
+        data_7 = None
     ):
-        self.cmd = uint8(cmd)
-        self.reg_id = uint8(reg_id)
-        self.interval = uint8(interval)
-        self.size = 3
+        self.data_0 = uint8(data_0)
+        self.data_1 = uint8(data_1)
+        self.data_2 = uint8(data_2)
+        self.data_3 = uint8(data_3)
+        self.data_4 = uint8(data_4)
+        self.data_5 = uint8(data_5)
+        self.data_6 = uint8(data_6)
+        self.data_7 = uint8(data_7)
+        self.size = 8
         self.interval = 20
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_R_REQUEST):
             return False
-        if self.cmd != other.cmd:
+        if self.data_0 != other.data_0:
             return False
-        if self.reg_id != other.reg_id:
+        if self.data_1 != other.data_1:
             return False
-        if self.interval != other.interval:
+        if self.data_2 != other.data_2:
+            return False
+        if self.data_3 != other.data_3:
+            return False
+        if self.data_4 != other.data_4:
+            return False
+        if self.data_5 != other.data_5:
+            return False
+        if self.data_6 != other.data_6:
+            return False
+        if self.data_7 != other.data_7:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", self.cmd, self.reg_id, self.interval))
+        data.extend(pack("<BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.cmd = uint8(unpack("<B", data[0:1])[0])
-        message.reg_id = uint8(unpack("<xB", data[0:2])[0])
-        message.interval = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_0 = uint8(unpack("<B", data[0:1])[0])
+        message.data_1 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_2 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_3 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_4 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_5 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_6 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_7 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 

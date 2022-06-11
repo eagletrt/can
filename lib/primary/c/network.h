@@ -109,7 +109,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 57
+#define primary_NUMBER_OF_MESSAGES 55
 
 // Custom types
 
@@ -191,10 +191,8 @@ typedef struct {
 #define primary_SET_CELL_BALANCING_STATUS_SIZE 1
 #define primary_HANDCART_STATUS_SIZE 1
 #define primary_SPEED_SIZE 4
-#define primary_INV_L_SET_TORQUE_SIZE 3
-#define primary_INV_R_SET_TORQUE_SIZE 3
-#define primary_INV_L_REQUEST_SIZE 3
-#define primary_INV_R_REQUEST_SIZE 3
+#define primary_INV_L_REQUEST_SIZE 8
+#define primary_INV_R_REQUEST_SIZE 8
 #define primary_INV_L_RESPONSE_SIZE 8
 #define primary_INV_R_RESPONSE_SIZE 8
 #define primary_FLASH_CELLBOARD_0_TX_SIZE 0
@@ -387,14 +385,12 @@ typedef enum CANLIB_PARKING {
 // Structs
 
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_BMS_HV_JMP_TO_BLT;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
@@ -404,7 +400,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_VERSION;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
@@ -412,7 +407,6 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_DAS_VERSION;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
@@ -422,7 +416,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_VERSION;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
     primary_uint8 cancicd_version;
@@ -430,7 +423,6 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_LV_VERSION;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
@@ -440,14 +432,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TLM_VERSION;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint32 timestamp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_TIMESTAMP;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 driver;
@@ -459,7 +449,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_TLM_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 driver;
     primary_uint8 circuit;
@@ -470,7 +459,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TLM_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 soc_temp;
 #ifdef CANLIB_TIMESTAMP
@@ -478,6 +466,15 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_SYSTEM_STATUS;
 
+typedef struct CANLIB_PARKING {
+    primary_uint16 pack_voltage;
+    primary_uint16 bus_voltage;
+    primary_uint16 max_cell_voltage;
+    primary_uint16 min_cell_voltage;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_VOLTAGE;
 typedef struct CANLIB_PARKING {
     primary_float32 pack_voltage;
     primary_float32 bus_voltage;
@@ -489,15 +486,12 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_VOLTAGE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 pack_voltage;
-    primary_uint16 bus_voltage;
-    primary_uint16 max_cell_voltage;
-    primary_uint16 min_cell_voltage;
+    primary_uint16 current;
+    primary_uint16 power;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_HV_VOLTAGE;
-
+} primary_message_HV_CURRENT;
 typedef struct CANLIB_PARKING {
     primary_float32 current;
     primary_float32 power;
@@ -507,13 +501,13 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CURRENT_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 current;
-    primary_uint16 power;
+    primary_uint16 average_temp;
+    primary_uint16 max_temp;
+    primary_uint16 min_temp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_HV_CURRENT;
-
+} primary_message_HV_TEMP;
 typedef struct CANLIB_PARKING {
     primary_float32 average_temp;
     primary_float32 max_temp;
@@ -524,23 +518,12 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_TEMP_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 average_temp;
-    primary_uint16 max_temp;
-    primary_uint16 min_temp;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_HV_TEMP;
-
-
-typedef struct CANLIB_PARKING {
     primary_HvErrors warnings;
     primary_HvErrors errors;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_ERRORS;
-
 
 typedef struct CANLIB_PARKING {
     primary_Toggle can_forward_set;
@@ -549,14 +532,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CAN_FORWARD;
 
-
 typedef struct CANLIB_PARKING {
     primary_Toggle can_forward_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CAN_FORWARD_STATUS;
-
 
 typedef struct CANLIB_PARKING {
     primary_TsStatus ts_status;
@@ -565,14 +546,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_TS_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_Toggle ts_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_TS_STATUS;
-
 
 typedef struct CANLIB_PARKING {
     primary_Map map;
@@ -582,14 +561,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_SetCarStatus car_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_CAR_STATUS;
-
 
 typedef struct CANLIB_PARKING {
     primary_Bound bound;
@@ -599,14 +576,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_PEDALS_RANGE;
 
-
 typedef struct CANLIB_PARKING {
     primary_Bound bound;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_STEERING_ANGLE_RANGE;
-
 
 typedef struct CANLIB_PARKING {
     primary_InverterStatus inverter_l;
@@ -617,7 +592,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_CAR_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_DasErrors das_error;
 #ifdef CANLIB_TIMESTAMP
@@ -626,6 +600,12 @@ typedef struct CANLIB_PARKING {
 } primary_message_DAS_ERRORS;
 
 typedef struct CANLIB_PARKING {
+    primary_uint16 current;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_LV_CURRENT;
+typedef struct CANLIB_PARKING {
     primary_float32 current;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -633,12 +613,14 @@ typedef struct CANLIB_PARKING {
 } primary_message_LV_CURRENT_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 current;
+    primary_uint16 voltage_1;
+    primary_uint16 voltage_2;
+    primary_uint16 voltage_3;
+    primary_uint16 voltage_4;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_LV_CURRENT;
-
+} primary_message_LV_VOLTAGE;
 typedef struct CANLIB_PARKING {
     primary_float32 voltage_1;
     primary_float32 voltage_2;
@@ -650,15 +632,11 @@ typedef struct CANLIB_PARKING {
 } primary_message_LV_VOLTAGE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 voltage_1;
-    primary_uint16 voltage_2;
-    primary_uint16 voltage_3;
-    primary_uint16 voltage_4;
+    primary_uint32 total_voltage;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_LV_VOLTAGE;
-
+} primary_message_LV_TOTAL_VOLTAGE;
 typedef struct CANLIB_PARKING {
     primary_float32 total_voltage;
 #ifdef CANLIB_TIMESTAMP
@@ -667,12 +645,14 @@ typedef struct CANLIB_PARKING {
 } primary_message_LV_TOTAL_VOLTAGE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint32 total_voltage;
+    primary_uint16 bp_temperature_1;
+    primary_uint16 bp_temperature_2;
+    primary_uint16 dcdc12_temperature;
+    primary_uint16 dcdc24_temperature;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_LV_TOTAL_VOLTAGE;
-
+} primary_message_LV_TEMPERATURE;
 typedef struct CANLIB_PARKING {
     primary_float32 bp_temperature_1;
     primary_float32 bp_temperature_2;
@@ -684,15 +664,13 @@ typedef struct CANLIB_PARKING {
 } primary_message_LV_TEMPERATURE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 bp_temperature_1;
-    primary_uint16 bp_temperature_2;
-    primary_uint16 dcdc12_temperature;
-    primary_uint16 dcdc24_temperature;
+    primary_uint16 hv_fan_speed;
+    primary_uint16 lv_fan_speed;
+    primary_uint16 pump_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_LV_TEMPERATURE;
-
+} primary_message_COOLING_STATUS;
 typedef struct CANLIB_PARKING {
     primary_float32 hv_fan_speed;
     primary_float32 lv_fan_speed;
@@ -703,22 +681,11 @@ typedef struct CANLIB_PARKING {
 } primary_message_COOLING_STATUS_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 hv_fan_speed;
-    primary_uint16 lv_fan_speed;
-    primary_uint16 pump_speed;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_COOLING_STATUS;
-
-
-typedef struct CANLIB_PARKING {
     primary_Cooling car_radiators_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_RADIATOR_SPEED;
-
 
 typedef struct CANLIB_PARKING {
     primary_Cooling car_pumps_power;
@@ -727,7 +694,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_PUMPS_POWER;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
@@ -735,6 +701,15 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_MARKER;
 
+typedef struct CANLIB_PARKING {
+    primary_uint16 voltage_0;
+    primary_uint16 voltage_1;
+    primary_uint16 voltage_2;
+    primary_uint8 start_index;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_CELLS_VOLTAGE;
 typedef struct CANLIB_PARKING {
     primary_float32 voltage_0;
     primary_float32 voltage_1;
@@ -746,15 +721,18 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CELLS_VOLTAGE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 voltage_0;
-    primary_uint16 voltage_1;
-    primary_uint16 voltage_2;
     primary_uint8 start_index;
+    primary_uint8 temp_0;
+    primary_uint8 temp_1;
+    primary_uint8 temp_2;
+    primary_uint8 temp_3;
+    primary_uint8 temp_4;
+    primary_uint8 temp_5;
+    primary_uint8 temp_6;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_HV_CELLS_VOLTAGE;
-
+} primary_message_HV_CELLS_TEMP;
 typedef struct CANLIB_PARKING {
     primary_uint8 start_index;
     primary_float32 temp_0;
@@ -770,27 +748,11 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CELLS_TEMP_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint8 start_index;
-    primary_uint8 temp_0;
-    primary_uint8 temp_1;
-    primary_uint8 temp_2;
-    primary_uint8 temp_3;
-    primary_uint8 temp_4;
-    primary_uint8 temp_5;
-    primary_uint8 temp_6;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_HV_CELLS_TEMP;
-
-
-typedef struct CANLIB_PARKING {
     primary_Toggle balancing_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELL_BALANCING_STATUS;
-
 
 typedef struct CANLIB_PARKING {
     primary_Toggle set_balancing_status;
@@ -799,7 +761,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_CELL_BALANCING_STATUS;
 
-
 typedef struct CANLIB_PARKING {
     primary_bool connected;
 #ifdef CANLIB_TIMESTAMP
@@ -807,6 +768,15 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_HANDCART_STATUS;
 
+typedef struct CANLIB_PARKING {
+    primary_uint8 encoder_r;
+    primary_uint8 encoder_l;
+    primary_uint8 inverter_r;
+    primary_uint8 inverter_l;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SPEED;
 typedef struct CANLIB_PARKING {
     primary_float32 encoder_r;
     primary_float32 encoder_l;
@@ -818,55 +788,32 @@ typedef struct CANLIB_PARKING {
 } primary_message_SPEED_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint8 encoder_r;
-    primary_uint8 encoder_l;
-    primary_uint8 inverter_r;
-    primary_uint8 inverter_l;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_SPEED;
-
-
-typedef struct CANLIB_PARKING {
-    primary_uint8 reg_id;
-    primary_uint8 lsb;
-    primary_uint8 msb;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_INV_L_SET_TORQUE;
-
-
-typedef struct CANLIB_PARKING {
-    primary_uint8 reg_id;
-    primary_uint8 lsb;
-    primary_uint8 msb;
-#ifdef CANLIB_TIMESTAMP
-    primary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} primary_message_INV_R_SET_TORQUE;
-
-
-typedef struct CANLIB_PARKING {
-    primary_uint8 cmd;
-    primary_uint8 reg_id;
-    primary_uint8 interval;
+    primary_uint8 data_0;
+    primary_uint8 data_1;
+    primary_uint8 data_2;
+    primary_uint8 data_3;
+    primary_uint8 data_4;
+    primary_uint8 data_5;
+    primary_uint8 data_6;
+    primary_uint8 data_7;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_L_REQUEST;
 
-
 typedef struct CANLIB_PARKING {
-    primary_uint8 cmd;
-    primary_uint8 reg_id;
-    primary_uint8 interval;
+    primary_uint8 data_0;
+    primary_uint8 data_1;
+    primary_uint8 data_2;
+    primary_uint8 data_3;
+    primary_uint8 data_4;
+    primary_uint8 data_5;
+    primary_uint8 data_6;
+    primary_uint8 data_7;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_R_REQUEST;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 reg_id;
@@ -882,7 +829,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_L_RESPONSE;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 reg_id;
     primary_uint8 data_0;
@@ -897,14 +843,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_R_RESPONSE;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_0_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -913,14 +857,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_0_RX;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_1_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -929,14 +871,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_1_RX;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_2_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -945,14 +885,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_2_RX;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_3_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -961,14 +899,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_3_RX;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_4_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -977,14 +913,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_4_RX;
 
-
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_5_TX;
-
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -1255,13 +1189,36 @@ void primary_deserialize_HV_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_HV_VOLTAGE(
+void primary_raw_to_conversion_struct_HV_VOLTAGE(
     primary_message_HV_VOLTAGE_conversion* conversion,
     primary_message_HV_VOLTAGE* raw
 );
-void primary_conversion_to_raw_HV_VOLTAGE(
+
+void primary_conversion_to_raw_struct_HV_VOLTAGE(
     primary_message_HV_VOLTAGE* raw,
     primary_message_HV_VOLTAGE_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE* raw,
+    primary_float32 pack_voltage,
+    primary_float32 bus_voltage,
+    primary_float32 max_cell_voltage,
+    primary_float32 min_cell_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE_conversion* conversion,
+    primary_uint16 pack_voltage,
+    primary_uint16 bus_voltage,
+    primary_uint16 max_cell_voltage,
+    primary_uint16 min_cell_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_HV_VOLTAGE(char* buffer);
@@ -1287,13 +1244,32 @@ void primary_deserialize_HV_CURRENT(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_HV_CURRENT(
+void primary_raw_to_conversion_struct_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
     primary_message_HV_CURRENT* raw
 );
-void primary_conversion_to_raw_HV_CURRENT(
+
+void primary_conversion_to_raw_struct_HV_CURRENT(
     primary_message_HV_CURRENT* raw,
     primary_message_HV_CURRENT_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_CURRENT(
+    primary_message_HV_CURRENT* raw,
+    primary_float32 current,
+    primary_float32 power
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_CURRENT(
+    primary_message_HV_CURRENT_conversion* conversion,
+    primary_uint16 current,
+    primary_uint16 power
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message, char* buffer);
 int primary_fields_HV_CURRENT(char* buffer);
@@ -1320,13 +1296,34 @@ void primary_deserialize_HV_TEMP(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_HV_TEMP(
+void primary_raw_to_conversion_struct_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
     primary_message_HV_TEMP* raw
 );
-void primary_conversion_to_raw_HV_TEMP(
+
+void primary_conversion_to_raw_struct_HV_TEMP(
     primary_message_HV_TEMP* raw,
     primary_message_HV_TEMP_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_TEMP(
+    primary_message_HV_TEMP* raw,
+    primary_float32 average_temp,
+    primary_float32 max_temp,
+    primary_float32 min_temp
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_TEMP(
+    primary_message_HV_TEMP_conversion* conversion,
+    primary_uint16 average_temp,
+    primary_uint16 max_temp,
+    primary_uint16 min_temp
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char* buffer);
 int primary_fields_HV_TEMP(char* buffer);
@@ -1609,13 +1606,30 @@ void primary_deserialize_LV_CURRENT(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_LV_CURRENT(
+void primary_raw_to_conversion_struct_LV_CURRENT(
     primary_message_LV_CURRENT_conversion* conversion,
     primary_message_LV_CURRENT* raw
 );
-void primary_conversion_to_raw_LV_CURRENT(
+
+void primary_conversion_to_raw_struct_LV_CURRENT(
     primary_message_LV_CURRENT* raw,
     primary_message_LV_CURRENT_conversion* conversion
+);
+
+void primary_conversion_to_raw_LV_CURRENT(
+    primary_message_LV_CURRENT* raw,
+    primary_float32 current
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_LV_CURRENT(
+    primary_message_LV_CURRENT_conversion* conversion,
+    primary_uint16 current
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT_conversion* message, char* buffer);
 int primary_fields_LV_CURRENT(char* buffer);
@@ -1643,13 +1657,36 @@ void primary_deserialize_LV_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_LV_VOLTAGE(
+void primary_raw_to_conversion_struct_LV_VOLTAGE(
     primary_message_LV_VOLTAGE_conversion* conversion,
     primary_message_LV_VOLTAGE* raw
 );
-void primary_conversion_to_raw_LV_VOLTAGE(
+
+void primary_conversion_to_raw_struct_LV_VOLTAGE(
     primary_message_LV_VOLTAGE* raw,
     primary_message_LV_VOLTAGE_conversion* conversion
+);
+
+void primary_conversion_to_raw_LV_VOLTAGE(
+    primary_message_LV_VOLTAGE* raw,
+    primary_float32 voltage_1,
+    primary_float32 voltage_2,
+    primary_float32 voltage_3,
+    primary_float32 voltage_4
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_LV_VOLTAGE(
+    primary_message_LV_VOLTAGE_conversion* conversion,
+    primary_uint16 voltage_1,
+    primary_uint16 voltage_2,
+    primary_uint16 voltage_3,
+    primary_uint16 voltage_4
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_LV_VOLTAGE(char* buffer);
@@ -1674,13 +1711,30 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
+void primary_raw_to_conversion_struct_LV_TOTAL_VOLTAGE(
     primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
     primary_message_LV_TOTAL_VOLTAGE* raw
 );
-void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
+
+void primary_conversion_to_raw_struct_LV_TOTAL_VOLTAGE(
     primary_message_LV_TOTAL_VOLTAGE* raw,
     primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
+);
+
+void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
+    primary_message_LV_TOTAL_VOLTAGE* raw,
+    primary_float32 total_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
+    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
+    primary_uint32 total_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_LV_TOTAL_VOLTAGE(char* buffer);
@@ -1708,13 +1762,36 @@ void primary_deserialize_LV_TEMPERATURE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_LV_TEMPERATURE(
+void primary_raw_to_conversion_struct_LV_TEMPERATURE(
     primary_message_LV_TEMPERATURE_conversion* conversion,
     primary_message_LV_TEMPERATURE* raw
 );
-void primary_conversion_to_raw_LV_TEMPERATURE(
+
+void primary_conversion_to_raw_struct_LV_TEMPERATURE(
     primary_message_LV_TEMPERATURE* raw,
     primary_message_LV_TEMPERATURE_conversion* conversion
+);
+
+void primary_conversion_to_raw_LV_TEMPERATURE(
+    primary_message_LV_TEMPERATURE* raw,
+    primary_float32 bp_temperature_1,
+    primary_float32 bp_temperature_2,
+    primary_float32 dcdc12_temperature,
+    primary_float32 dcdc24_temperature
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_LV_TEMPERATURE(
+    primary_message_LV_TEMPERATURE_conversion* conversion,
+    primary_uint16 bp_temperature_1,
+    primary_uint16 bp_temperature_2,
+    primary_uint16 dcdc12_temperature,
+    primary_uint16 dcdc24_temperature
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_conversion* message, char* buffer);
 int primary_fields_LV_TEMPERATURE(char* buffer);
@@ -1741,13 +1818,34 @@ void primary_deserialize_COOLING_STATUS(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_COOLING_STATUS(
+void primary_raw_to_conversion_struct_COOLING_STATUS(
     primary_message_COOLING_STATUS_conversion* conversion,
     primary_message_COOLING_STATUS* raw
 );
-void primary_conversion_to_raw_COOLING_STATUS(
+
+void primary_conversion_to_raw_struct_COOLING_STATUS(
     primary_message_COOLING_STATUS* raw,
     primary_message_COOLING_STATUS_conversion* conversion
+);
+
+void primary_conversion_to_raw_COOLING_STATUS(
+    primary_message_COOLING_STATUS* raw,
+    primary_float32 hv_fan_speed,
+    primary_float32 lv_fan_speed,
+    primary_float32 pump_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_COOLING_STATUS(
+    primary_message_COOLING_STATUS_conversion* conversion,
+    primary_uint16 hv_fan_speed,
+    primary_uint16 lv_fan_speed,
+    primary_uint16 pump_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* message, char* buffer);
 int primary_fields_COOLING_STATUS(char* buffer);
@@ -1843,13 +1941,36 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+void primary_raw_to_conversion_struct_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
     primary_message_HV_CELLS_VOLTAGE* raw
 );
-void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+
+void primary_conversion_to_raw_struct_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE* raw,
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_float32 voltage_0,
+    primary_float32 voltage_1,
+    primary_float32 voltage_2,
+    primary_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_uint16 voltage_0,
+    primary_uint16 voltage_1,
+    primary_uint16 voltage_2,
+    primary_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversion* message, char* buffer);
 int primary_fields_HV_CELLS_VOLTAGE(char* buffer);
@@ -1881,13 +2002,44 @@ void primary_deserialize_HV_CELLS_TEMP(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_HV_CELLS_TEMP(
+void primary_raw_to_conversion_struct_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP_conversion* conversion,
     primary_message_HV_CELLS_TEMP* raw
 );
-void primary_conversion_to_raw_HV_CELLS_TEMP(
+
+void primary_conversion_to_raw_struct_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP* raw,
     primary_message_HV_CELLS_TEMP_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_uint8 start_index,
+    primary_float32 temp_0,
+    primary_float32 temp_1,
+    primary_float32 temp_2,
+    primary_float32 temp_3,
+    primary_float32 temp_4,
+    primary_float32 temp_5,
+    primary_float32 temp_6
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP_conversion* conversion,
+    primary_uint8 start_index,
+    primary_uint8 temp_0,
+    primary_uint8 temp_1,
+    primary_uint8 temp_2,
+    primary_uint8 temp_3,
+    primary_uint8 temp_4,
+    primary_uint8 temp_5,
+    primary_uint8 temp_6
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* message, char* buffer);
 int primary_fields_HV_CELLS_TEMP(char* buffer);
@@ -1984,13 +2136,36 @@ void primary_deserialize_SPEED(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void primary_raw_to_conversion_SPEED(
+void primary_raw_to_conversion_struct_SPEED(
     primary_message_SPEED_conversion* conversion,
     primary_message_SPEED* raw
 );
-void primary_conversion_to_raw_SPEED(
+
+void primary_conversion_to_raw_struct_SPEED(
     primary_message_SPEED* raw,
     primary_message_SPEED_conversion* conversion
+);
+
+void primary_conversion_to_raw_SPEED(
+    primary_message_SPEED* raw,
+    primary_float32 encoder_r,
+    primary_float32 encoder_l,
+    primary_float32 inverter_r,
+    primary_float32 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_SPEED(
+    primary_message_SPEED_conversion* conversion,
+    primary_uint8 encoder_r,
+    primary_uint8 encoder_l,
+    primary_uint8 inverter_r,
+    primary_uint8 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buffer);
 int primary_fields_SPEED(char* buffer);
@@ -1998,63 +2173,18 @@ int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE
 int primary_fields_file_SPEED(FILE* buffer);
 
 
-// ============== INV_L_SET_TORQUE ============== //
-
-primary_byte_size primary_serialize_INV_L_SET_TORQUE(
-    uint8_t* data,
-    primary_uint8 reg_id,
-    primary_uint8 lsb,
-    primary_uint8 msb
-);
-primary_byte_size primary_serialize_struct_INV_L_SET_TORQUE(
-    uint8_t* data,
-    primary_message_INV_L_SET_TORQUE* message
-);
-void primary_deserialize_INV_L_SET_TORQUE(
-    primary_message_INV_L_SET_TORQUE* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , primary_uint64 timestamp
-#endif // CANLIB_TIMESTAMP
-);
-int primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, char* buffer);
-int primary_fields_INV_L_SET_TORQUE(char* buffer);
-int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer);
-int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer);
-
-
-// ============== INV_R_SET_TORQUE ============== //
-
-primary_byte_size primary_serialize_INV_R_SET_TORQUE(
-    uint8_t* data,
-    primary_uint8 reg_id,
-    primary_uint8 lsb,
-    primary_uint8 msb
-);
-primary_byte_size primary_serialize_struct_INV_R_SET_TORQUE(
-    uint8_t* data,
-    primary_message_INV_R_SET_TORQUE* message
-);
-void primary_deserialize_INV_R_SET_TORQUE(
-    primary_message_INV_R_SET_TORQUE* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , primary_uint64 timestamp
-#endif // CANLIB_TIMESTAMP
-);
-int primary_to_string_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, char* buffer);
-int primary_fields_INV_R_SET_TORQUE(char* buffer);
-int primary_to_string_file_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, FILE* buffer);
-int primary_fields_file_INV_R_SET_TORQUE(FILE* buffer);
-
-
 // ============== INV_L_REQUEST ============== //
 
 primary_byte_size primary_serialize_INV_L_REQUEST(
     uint8_t* data,
-    primary_uint8 cmd,
-    primary_uint8 reg_id,
-    primary_uint8 interval
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6,
+    primary_uint8 data_7
 );
 primary_byte_size primary_serialize_struct_INV_L_REQUEST(
     uint8_t* data,
@@ -2077,9 +2207,14 @@ int primary_fields_file_INV_L_REQUEST(FILE* buffer);
 
 primary_byte_size primary_serialize_INV_R_REQUEST(
     uint8_t* data,
-    primary_uint8 cmd,
-    primary_uint8 reg_id,
-    primary_uint8 interval
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6,
+    primary_uint8 data_7
 );
 primary_byte_size primary_serialize_struct_INV_R_REQUEST(
     uint8_t* data,
@@ -2545,7 +2680,7 @@ int primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, char
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2570,7 +2705,7 @@ int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message,
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2635,7 +2770,7 @@ int primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2660,7 +2795,7 @@ int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2725,7 +2860,7 @@ int primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buff
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2750,7 +2885,7 @@ int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE*
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2815,7 +2950,7 @@ int primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buff
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2840,7 +2975,7 @@ int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE*
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2905,7 +3040,7 @@ int primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2930,7 +3065,7 @@ int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -2997,7 +3132,7 @@ int primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffer
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
@@ -3019,7 +3154,7 @@ int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* b
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
@@ -3087,7 +3222,7 @@ int primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, ch
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -3118,7 +3253,7 @@ int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* messag
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -3195,7 +3330,7 @@ int primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buff
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -3226,7 +3361,7 @@ int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE*
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -3293,7 +3428,7 @@ int primary_to_string_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STATUS* m
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -3315,7 +3450,7 @@ int primary_to_string_file_STEER_SYSTEM_STATUS(primary_message_STEER_SYSTEM_STAT
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -3389,6 +3524,25 @@ void primary_deserialize_HV_VOLTAGE(
 
 void primary_raw_to_conversion_HV_VOLTAGE(
     primary_message_HV_VOLTAGE_conversion* conversion,
+    primary_uint16 pack_voltage,
+    primary_uint16 bus_voltage,
+    primary_uint16 max_cell_voltage,
+    primary_uint16 min_cell_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->pack_voltage = (((primary_float32)pack_voltage) / 142.469565) + 0;
+    conversion->bus_voltage = (((primary_float32)bus_voltage) / 142.469565) + 0;
+    conversion->max_cell_voltage = (((primary_float32)max_cell_voltage) / 10000.0) + 0;
+    conversion->min_cell_voltage = (((primary_float32)min_cell_voltage) / 10000.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE_conversion* conversion,
     primary_message_HV_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -3399,7 +3553,27 @@ void primary_raw_to_conversion_HV_VOLTAGE(
     conversion->max_cell_voltage = (((primary_float32)raw->max_cell_voltage) / 10000.0) + 0;
     conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 10000.0) + 0;
 }
+
 void primary_conversion_to_raw_HV_VOLTAGE(
+    primary_message_HV_VOLTAGE* raw,
+    primary_float32 pack_voltage,
+    primary_float32 bus_voltage,
+    primary_float32 max_cell_voltage,
+    primary_float32 min_cell_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->pack_voltage = (primary_uint16)((pack_voltage + 0) * 142.469565);
+    raw->bus_voltage = (primary_uint16)((bus_voltage + 0) * 142.469565);
+    raw->max_cell_voltage = (primary_uint16)((max_cell_voltage + 0) * 10000.0);
+    raw->min_cell_voltage = (primary_uint16)((min_cell_voltage + 0) * 10000.0);
+}
+
+void primary_conversion_to_raw_struct_HV_VOLTAGE(
     primary_message_HV_VOLTAGE* raw,
     primary_message_HV_VOLTAGE_conversion* conversion
 ){
@@ -3418,7 +3592,7 @@ int primary_to_string_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* message,
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3449,7 +3623,7 @@ int primary_to_string_file_HV_VOLTAGE(primary_message_HV_VOLTAGE_conversion* mes
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3520,6 +3694,21 @@ void primary_deserialize_HV_CURRENT(
 
 void primary_raw_to_conversion_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
+    primary_uint16 current,
+    primary_uint16 power
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->current = (((primary_float32)current) / 312.07619) - 10;
+    conversion->power = (((primary_float32)power) / 655.36) + 0;
+}
+
+void primary_raw_to_conversion_struct_HV_CURRENT(
+    primary_message_HV_CURRENT_conversion* conversion,
     primary_message_HV_CURRENT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -3528,7 +3717,23 @@ void primary_raw_to_conversion_HV_CURRENT(
     conversion->current = (((primary_float32)raw->current) / 312.07619) - 10;
     conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
 }
+
 void primary_conversion_to_raw_HV_CURRENT(
+    primary_message_HV_CURRENT* raw,
+    primary_float32 current,
+    primary_float32 power
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->current = (primary_uint16)((current + 10) * 312.07619);
+    raw->power = (primary_uint16)((power + 0) * 655.36);
+}
+
+void primary_conversion_to_raw_struct_HV_CURRENT(
     primary_message_HV_CURRENT* raw,
     primary_message_HV_CURRENT_conversion* conversion
 ){
@@ -3545,7 +3750,7 @@ int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message,
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3570,7 +3775,7 @@ int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* mes
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3641,6 +3846,23 @@ void primary_deserialize_HV_TEMP(
 
 void primary_raw_to_conversion_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
+    primary_uint16 average_temp,
+    primary_uint16 max_temp,
+    primary_uint16 min_temp
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->average_temp = (((primary_float32)average_temp) / 655.36) - 20;
+    conversion->max_temp = (((primary_float32)max_temp) / 655.36) - 20;
+    conversion->min_temp = (((primary_float32)min_temp) / 655.36) - 20;
+}
+
+void primary_raw_to_conversion_struct_HV_TEMP(
+    primary_message_HV_TEMP_conversion* conversion,
     primary_message_HV_TEMP* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -3650,7 +3872,25 @@ void primary_raw_to_conversion_HV_TEMP(
     conversion->max_temp = (((primary_float32)raw->max_temp) / 655.36) - 20;
     conversion->min_temp = (((primary_float32)raw->min_temp) / 655.36) - 20;
 }
+
 void primary_conversion_to_raw_HV_TEMP(
+    primary_message_HV_TEMP* raw,
+    primary_float32 average_temp,
+    primary_float32 max_temp,
+    primary_float32 min_temp
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->average_temp = (primary_uint16)((average_temp + 20) * 655.36);
+    raw->max_temp = (primary_uint16)((max_temp + 20) * 655.36);
+    raw->min_temp = (primary_uint16)((min_temp + 20) * 655.36);
+}
+
+void primary_conversion_to_raw_struct_HV_TEMP(
     primary_message_HV_TEMP* raw,
     primary_message_HV_TEMP_conversion* conversion
 ){
@@ -3668,7 +3908,7 @@ int primary_to_string_HV_TEMP(primary_message_HV_TEMP_conversion* message, char*
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3696,7 +3936,7 @@ int primary_to_string_file_HV_TEMP(primary_message_HV_TEMP_conversion* message, 
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3768,7 +4008,7 @@ int primary_to_string_HV_ERRORS(primary_message_HV_ERRORS* message, char* buffer
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16,
@@ -3793,7 +4033,7 @@ int primary_to_string_file_HV_ERRORS(primary_message_HV_ERRORS* message, FILE* b
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16,
@@ -3854,7 +4094,7 @@ int primary_to_string_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* message, ch
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -3876,7 +4116,7 @@ int primary_to_string_file_HV_CAN_FORWARD(primary_message_HV_CAN_FORWARD* messag
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -3934,7 +4174,7 @@ int primary_to_string_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATU
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -3956,7 +4196,7 @@ int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4014,7 +4254,7 @@ int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4036,7 +4276,7 @@ int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* b
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4094,7 +4334,7 @@ int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4116,7 +4356,7 @@ int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message,
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4176,7 +4416,7 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -4201,7 +4441,7 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, F
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -4262,7 +4502,7 @@ int primary_to_string_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* message, ch
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4284,7 +4524,7 @@ int primary_to_string_file_SET_CAR_STATUS(primary_message_SET_CAR_STATUS* messag
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4344,7 +4584,7 @@ int primary_to_string_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* message
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -4369,7 +4609,7 @@ int primary_to_string_file_SET_PEDALS_RANGE(primary_message_SET_PEDALS_RANGE* me
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -4430,7 +4670,7 @@ int primary_to_string_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING_ANGL
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4452,7 +4692,7 @@ int primary_to_string_file_SET_STEERING_ANGLE_RANGE(primary_message_SET_STEERING
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4514,7 +4754,7 @@ int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buff
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -4542,7 +4782,7 @@ int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE*
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -4606,7 +4846,7 @@ int primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buff
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4628,7 +4868,7 @@ int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE*
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -4684,6 +4924,19 @@ void primary_deserialize_LV_CURRENT(
 
 void primary_raw_to_conversion_LV_CURRENT(
     primary_message_LV_CURRENT_conversion* conversion,
+    primary_uint16 current
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->current = (((primary_float32)current) / 1310.72) + 0;
+}
+
+void primary_raw_to_conversion_struct_LV_CURRENT(
+    primary_message_LV_CURRENT_conversion* conversion,
     primary_message_LV_CURRENT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -4691,7 +4944,21 @@ void primary_raw_to_conversion_LV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     conversion->current = (((primary_float32)raw->current) / 1310.72) + 0;
 }
+
 void primary_conversion_to_raw_LV_CURRENT(
+    primary_message_LV_CURRENT* raw,
+    primary_float32 current
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->current = (primary_uint16)((current + 0) * 1310.72);
+}
+
+void primary_conversion_to_raw_struct_LV_CURRENT(
     primary_message_LV_CURRENT* raw,
     primary_message_LV_CURRENT_conversion* conversion
 ){
@@ -4707,7 +4974,7 @@ int primary_to_string_LV_CURRENT(primary_message_LV_CURRENT_conversion* message,
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -4729,7 +4996,7 @@ int primary_to_string_file_LV_CURRENT(primary_message_LV_CURRENT_conversion* mes
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -4803,6 +5070,25 @@ void primary_deserialize_LV_VOLTAGE(
 
 void primary_raw_to_conversion_LV_VOLTAGE(
     primary_message_LV_VOLTAGE_conversion* conversion,
+    primary_uint16 voltage_1,
+    primary_uint16 voltage_2,
+    primary_uint16 voltage_3,
+    primary_uint16 voltage_4
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->voltage_1 = (((primary_float32)voltage_1) / 10000.0) + 0;
+    conversion->voltage_2 = (((primary_float32)voltage_2) / 10000.0) + 0;
+    conversion->voltage_3 = (((primary_float32)voltage_3) / 10000.0) + 0;
+    conversion->voltage_4 = (((primary_float32)voltage_4) / 10000.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_LV_VOLTAGE(
+    primary_message_LV_VOLTAGE_conversion* conversion,
     primary_message_LV_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -4813,7 +5099,27 @@ void primary_raw_to_conversion_LV_VOLTAGE(
     conversion->voltage_3 = (((primary_float32)raw->voltage_3) / 10000.0) + 0;
     conversion->voltage_4 = (((primary_float32)raw->voltage_4) / 10000.0) + 0;
 }
+
 void primary_conversion_to_raw_LV_VOLTAGE(
+    primary_message_LV_VOLTAGE* raw,
+    primary_float32 voltage_1,
+    primary_float32 voltage_2,
+    primary_float32 voltage_3,
+    primary_float32 voltage_4
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->voltage_1 = (primary_uint16)((voltage_1 + 0) * 10000.0);
+    raw->voltage_2 = (primary_uint16)((voltage_2 + 0) * 10000.0);
+    raw->voltage_3 = (primary_uint16)((voltage_3 + 0) * 10000.0);
+    raw->voltage_4 = (primary_uint16)((voltage_4 + 0) * 10000.0);
+}
+
+void primary_conversion_to_raw_struct_LV_VOLTAGE(
     primary_message_LV_VOLTAGE* raw,
     primary_message_LV_VOLTAGE_conversion* conversion
 ){
@@ -4832,7 +5138,7 @@ int primary_to_string_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* message,
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -4863,7 +5169,7 @@ int primary_to_string_file_LV_VOLTAGE(primary_message_LV_VOLTAGE_conversion* mes
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -4932,6 +5238,19 @@ void primary_deserialize_LV_TOTAL_VOLTAGE(
 
 void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
     primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
+    primary_uint32 total_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->total_voltage = (((primary_float32)total_voltage) / 10000.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_LV_TOTAL_VOLTAGE(
+    primary_message_LV_TOTAL_VOLTAGE_conversion* conversion,
     primary_message_LV_TOTAL_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -4939,7 +5258,21 @@ void primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
 #endif // CANLIB_TIMESTAMP
     conversion->total_voltage = (((primary_float32)raw->total_voltage) / 10000.0) + 0;
 }
+
 void primary_conversion_to_raw_LV_TOTAL_VOLTAGE(
+    primary_message_LV_TOTAL_VOLTAGE* raw,
+    primary_float32 total_voltage
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->total_voltage = (primary_uint32)((total_voltage + 0) * 10000.0);
+}
+
+void primary_conversion_to_raw_struct_LV_TOTAL_VOLTAGE(
     primary_message_LV_TOTAL_VOLTAGE* raw,
     primary_message_LV_TOTAL_VOLTAGE_conversion* conversion
 ){
@@ -4955,7 +5288,7 @@ int primary_to_string_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_conversi
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -4977,7 +5310,7 @@ int primary_to_string_file_LV_TOTAL_VOLTAGE(primary_message_LV_TOTAL_VOLTAGE_con
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -5051,6 +5384,25 @@ void primary_deserialize_LV_TEMPERATURE(
 
 void primary_raw_to_conversion_LV_TEMPERATURE(
     primary_message_LV_TEMPERATURE_conversion* conversion,
+    primary_uint16 bp_temperature_1,
+    primary_uint16 bp_temperature_2,
+    primary_uint16 dcdc12_temperature,
+    primary_uint16 dcdc24_temperature
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->bp_temperature_1 = (((primary_float32)bp_temperature_1) / 655.36) - 20;
+    conversion->bp_temperature_2 = (((primary_float32)bp_temperature_2) / 655.36) - 20;
+    conversion->dcdc12_temperature = (((primary_float32)dcdc12_temperature) / 655.36) - 20;
+    conversion->dcdc24_temperature = (((primary_float32)dcdc24_temperature) / 655.36) - 20;
+}
+
+void primary_raw_to_conversion_struct_LV_TEMPERATURE(
+    primary_message_LV_TEMPERATURE_conversion* conversion,
     primary_message_LV_TEMPERATURE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -5061,7 +5413,27 @@ void primary_raw_to_conversion_LV_TEMPERATURE(
     conversion->dcdc12_temperature = (((primary_float32)raw->dcdc12_temperature) / 655.36) - 20;
     conversion->dcdc24_temperature = (((primary_float32)raw->dcdc24_temperature) / 655.36) - 20;
 }
+
 void primary_conversion_to_raw_LV_TEMPERATURE(
+    primary_message_LV_TEMPERATURE* raw,
+    primary_float32 bp_temperature_1,
+    primary_float32 bp_temperature_2,
+    primary_float32 dcdc12_temperature,
+    primary_float32 dcdc24_temperature
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->bp_temperature_1 = (primary_uint16)((bp_temperature_1 + 20) * 655.36);
+    raw->bp_temperature_2 = (primary_uint16)((bp_temperature_2 + 20) * 655.36);
+    raw->dcdc12_temperature = (primary_uint16)((dcdc12_temperature + 20) * 655.36);
+    raw->dcdc24_temperature = (primary_uint16)((dcdc24_temperature + 20) * 655.36);
+}
+
+void primary_conversion_to_raw_struct_LV_TEMPERATURE(
     primary_message_LV_TEMPERATURE* raw,
     primary_message_LV_TEMPERATURE_conversion* conversion
 ){
@@ -5080,7 +5452,7 @@ int primary_to_string_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_conversion* 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5111,7 +5483,7 @@ int primary_to_string_file_LV_TEMPERATURE(primary_message_LV_TEMPERATURE_convers
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5188,6 +5560,23 @@ void primary_deserialize_COOLING_STATUS(
 
 void primary_raw_to_conversion_COOLING_STATUS(
     primary_message_COOLING_STATUS_conversion* conversion,
+    primary_uint16 hv_fan_speed,
+    primary_uint16 lv_fan_speed,
+    primary_uint16 pump_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->hv_fan_speed = (((primary_float32)hv_fan_speed) / 65536.0) + 0;
+    conversion->lv_fan_speed = (((primary_float32)lv_fan_speed) / 65536.0) + 0;
+    conversion->pump_speed = (((primary_float32)pump_speed) / 65536.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_COOLING_STATUS(
+    primary_message_COOLING_STATUS_conversion* conversion,
     primary_message_COOLING_STATUS* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -5197,7 +5586,25 @@ void primary_raw_to_conversion_COOLING_STATUS(
     conversion->lv_fan_speed = (((primary_float32)raw->lv_fan_speed) / 65536.0) + 0;
     conversion->pump_speed = (((primary_float32)raw->pump_speed) / 65536.0) + 0;
 }
+
 void primary_conversion_to_raw_COOLING_STATUS(
+    primary_message_COOLING_STATUS* raw,
+    primary_float32 hv_fan_speed,
+    primary_float32 lv_fan_speed,
+    primary_float32 pump_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->hv_fan_speed = (primary_uint16)((hv_fan_speed + 0) * 65536.0);
+    raw->lv_fan_speed = (primary_uint16)((lv_fan_speed + 0) * 65536.0);
+    raw->pump_speed = (primary_uint16)((pump_speed + 0) * 65536.0);
+}
+
+void primary_conversion_to_raw_struct_COOLING_STATUS(
     primary_message_COOLING_STATUS* raw,
     primary_message_COOLING_STATUS_conversion* conversion
 ){
@@ -5215,7 +5622,7 @@ int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5243,7 +5650,7 @@ int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS_convers
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5307,7 +5714,7 @@ int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* mes
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5329,7 +5736,7 @@ int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5387,7 +5794,7 @@ int primary_to_string_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5409,7 +5816,7 @@ int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* mess
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5542,6 +5949,25 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
 
 void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_uint16 voltage_0,
+    primary_uint16 voltage_1,
+    primary_uint16 voltage_2,
+    primary_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->voltage_0 = (((primary_float32)voltage_0) / 10000.0) + 0;
+    conversion->voltage_1 = (((primary_float32)voltage_1) / 10000.0) + 0;
+    conversion->voltage_2 = (((primary_float32)voltage_2) / 10000.0) + 0;
+    conversion->start_index = start_index;
+}
+
+void primary_raw_to_conversion_struct_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
     primary_message_HV_CELLS_VOLTAGE* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -5552,7 +5978,27 @@ void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
     conversion->voltage_2 = (((primary_float32)raw->voltage_2) / 10000.0) + 0;
     conversion->start_index = raw->start_index;
 }
+
 void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
+    primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_float32 voltage_0,
+    primary_float32 voltage_1,
+    primary_float32 voltage_2,
+    primary_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->voltage_0 = (primary_uint16)((voltage_0 + 0) * 10000.0);
+    raw->voltage_1 = (primary_uint16)((voltage_1 + 0) * 10000.0);
+    raw->voltage_2 = (primary_uint16)((voltage_2 + 0) * 10000.0);
+    raw->start_index = start_index;
+}
+
+void primary_conversion_to_raw_struct_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE* raw,
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion
 ){
@@ -5571,7 +6017,7 @@ int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversi
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5602,7 +6048,7 @@ int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_con
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5693,6 +6139,33 @@ void primary_deserialize_HV_CELLS_TEMP(
 
 void primary_raw_to_conversion_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP_conversion* conversion,
+    primary_uint8 start_index,
+    primary_uint8 temp_0,
+    primary_uint8 temp_1,
+    primary_uint8 temp_2,
+    primary_uint8 temp_3,
+    primary_uint8 temp_4,
+    primary_uint8 temp_5,
+    primary_uint8 temp_6
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->start_index = start_index;
+    conversion->temp_0 = (((primary_float32)temp_0) / 2.56) - 20;
+    conversion->temp_1 = (((primary_float32)temp_1) / 2.56) - 20;
+    conversion->temp_2 = (((primary_float32)temp_2) / 2.56) - 20;
+    conversion->temp_3 = (((primary_float32)temp_3) / 2.56) - 20;
+    conversion->temp_4 = (((primary_float32)temp_4) / 2.56) - 20;
+    conversion->temp_5 = (((primary_float32)temp_5) / 2.56) - 20;
+    conversion->temp_6 = (((primary_float32)temp_6) / 2.56) - 20;
+}
+
+void primary_raw_to_conversion_struct_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP_conversion* conversion,
     primary_message_HV_CELLS_TEMP* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -5707,7 +6180,35 @@ void primary_raw_to_conversion_HV_CELLS_TEMP(
     conversion->temp_5 = (((primary_float32)raw->temp_5) / 2.56) - 20;
     conversion->temp_6 = (((primary_float32)raw->temp_6) / 2.56) - 20;
 }
+
 void primary_conversion_to_raw_HV_CELLS_TEMP(
+    primary_message_HV_CELLS_TEMP* raw,
+    primary_uint8 start_index,
+    primary_float32 temp_0,
+    primary_float32 temp_1,
+    primary_float32 temp_2,
+    primary_float32 temp_3,
+    primary_float32 temp_4,
+    primary_float32 temp_5,
+    primary_float32 temp_6
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->start_index = start_index;
+    raw->temp_0 = (primary_uint8)((temp_0 + 20) * 2.56);
+    raw->temp_1 = (primary_uint8)((temp_1 + 20) * 2.56);
+    raw->temp_2 = (primary_uint8)((temp_2 + 20) * 2.56);
+    raw->temp_3 = (primary_uint8)((temp_3 + 20) * 2.56);
+    raw->temp_4 = (primary_uint8)((temp_4 + 20) * 2.56);
+    raw->temp_5 = (primary_uint8)((temp_5 + 20) * 2.56);
+    raw->temp_6 = (primary_uint8)((temp_6 + 20) * 2.56);
+}
+
+void primary_conversion_to_raw_struct_HV_CELLS_TEMP(
     primary_message_HV_CELLS_TEMP* raw,
     primary_message_HV_CELLS_TEMP_conversion* conversion
 ){
@@ -5730,7 +6231,7 @@ int primary_to_string_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversion* me
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5773,7 +6274,7 @@ int primary_to_string_file_HV_CELLS_TEMP(primary_message_HV_CELLS_TEMP_conversio
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -5852,7 +6353,7 @@ int primary_to_string_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALANCING
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5874,7 +6375,7 @@ int primary_to_string_file_HV_CELL_BALANCING_STATUS(primary_message_HV_CELL_BALA
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5932,7 +6433,7 @@ int primary_to_string_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BALANCI
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5954,7 +6455,7 @@ int primary_to_string_file_SET_CELL_BALANCING_STATUS(primary_message_SET_CELL_BA
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -6012,7 +6513,7 @@ int primary_to_string_HANDCART_STATUS(primary_message_HANDCART_STATUS* message, 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -6034,7 +6535,7 @@ int primary_to_string_file_HANDCART_STATUS(primary_message_HANDCART_STATUS* mess
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -6100,6 +6601,25 @@ void primary_deserialize_SPEED(
 
 void primary_raw_to_conversion_SPEED(
     primary_message_SPEED_conversion* conversion,
+    primary_uint8 encoder_r,
+    primary_uint8 encoder_l,
+    primary_uint8 inverter_r,
+    primary_uint8 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->encoder_r = (((primary_float32)encoder_r) / 0.731429) - 70;
+    conversion->encoder_l = (((primary_float32)encoder_l) / 0.731429) - 70;
+    conversion->inverter_r = (((primary_float32)inverter_r) / 0.731429) - 70;
+    conversion->inverter_l = (((primary_float32)inverter_l) / 0.731429) - 70;
+}
+
+void primary_raw_to_conversion_struct_SPEED(
+    primary_message_SPEED_conversion* conversion,
     primary_message_SPEED* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -6110,7 +6630,27 @@ void primary_raw_to_conversion_SPEED(
     conversion->inverter_r = (((primary_float32)raw->inverter_r) / 0.731429) - 70;
     conversion->inverter_l = (((primary_float32)raw->inverter_l) / 0.731429) - 70;
 }
+
 void primary_conversion_to_raw_SPEED(
+    primary_message_SPEED* raw,
+    primary_float32 encoder_r,
+    primary_float32 encoder_l,
+    primary_float32 inverter_r,
+    primary_float32 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->encoder_r = (primary_uint8)((encoder_r + 70) * 0.731429);
+    raw->encoder_l = (primary_uint8)((encoder_l + 70) * 0.731429);
+    raw->inverter_r = (primary_uint8)((inverter_r + 70) * 0.731429);
+    raw->inverter_l = (primary_uint8)((inverter_l + 70) * 0.731429);
+}
+
+void primary_conversion_to_raw_struct_SPEED(
     primary_message_SPEED* raw,
     primary_message_SPEED_conversion* conversion
 ){
@@ -6129,7 +6669,7 @@ int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buf
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -6160,7 +6700,7 @@ int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -6190,226 +6730,41 @@ int primary_fields_file_SPEED(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_INV_L_SET_TORQUE(
-    uint8_t* data,
-    primary_uint8 reg_id,
-    primary_uint8 lsb,
-    primary_uint8 msb
-) {
-    data[0] = reg_id;
-    data[1] = lsb;
-    data[2] = msb;
-    return 3;
-}
-
-primary_byte_size primary_serialize_struct_INV_L_SET_TORQUE(
-    uint8_t* data,
-    primary_message_INV_L_SET_TORQUE* message
-) {
-    data[0] = message->reg_id;
-    data[1] = message->lsb;
-    data[2] = message->msb;
-    return 3;
-}
-
-// ============== DESERIALIZE ============== //
-
-void primary_deserialize_INV_L_SET_TORQUE(
-    primary_message_INV_L_SET_TORQUE* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , primary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-) {
-#ifdef CANLIB_TIMESTAMP
-    message->_timestamp = _timestamp;
-#endif // CANLIB_TIMESTAMP
-    message->reg_id = data[0];
-    message->lsb = data[1];
-    message->msb = data[2];
-}
-
-// ============== STRING ============== //
-
-int primary_to_string_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->reg_id,
-        message->lsb,
-        message->msb
-    );
-}
-int primary_fields_INV_L_SET_TORQUE(char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "reg_id" CANLIB_SEPARATOR 
-        "lsb" CANLIB_SEPARATOR 
-        "msb"
-    );
-}
-int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* message, FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->reg_id,
-        message->lsb,
-        message->msb
-    );
-}
-int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "reg_id" CANLIB_SEPARATOR 
-        "lsb" CANLIB_SEPARATOR 
-        "msb"
-    );
-}
-
-// ============== SERIALIZE ============== //
-
-primary_byte_size primary_serialize_INV_R_SET_TORQUE(
-    uint8_t* data,
-    primary_uint8 reg_id,
-    primary_uint8 lsb,
-    primary_uint8 msb
-) {
-    data[0] = reg_id;
-    data[1] = lsb;
-    data[2] = msb;
-    return 3;
-}
-
-primary_byte_size primary_serialize_struct_INV_R_SET_TORQUE(
-    uint8_t* data,
-    primary_message_INV_R_SET_TORQUE* message
-) {
-    data[0] = message->reg_id;
-    data[1] = message->lsb;
-    data[2] = message->msb;
-    return 3;
-}
-
-// ============== DESERIALIZE ============== //
-
-void primary_deserialize_INV_R_SET_TORQUE(
-    primary_message_INV_R_SET_TORQUE* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , primary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-) {
-#ifdef CANLIB_TIMESTAMP
-    message->_timestamp = _timestamp;
-#endif // CANLIB_TIMESTAMP
-    message->reg_id = data[0];
-    message->lsb = data[1];
-    message->msb = data[2];
-}
-
-// ============== STRING ============== //
-
-int primary_to_string_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->reg_id,
-        message->lsb,
-        message->msb
-    );
-}
-int primary_fields_INV_R_SET_TORQUE(char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "reg_id" CANLIB_SEPARATOR 
-        "lsb" CANLIB_SEPARATOR 
-        "msb"
-    );
-}
-int primary_to_string_file_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->reg_id,
-        message->lsb,
-        message->msb
-    );
-}
-int primary_fields_file_INV_R_SET_TORQUE(FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "reg_id" CANLIB_SEPARATOR 
-        "lsb" CANLIB_SEPARATOR 
-        "msb"
-    );
-}
-
-// ============== SERIALIZE ============== //
-
 primary_byte_size primary_serialize_INV_L_REQUEST(
     uint8_t* data,
-    primary_uint8 cmd,
-    primary_uint8 reg_id,
-    primary_uint8 interval
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6,
+    primary_uint8 data_7
 ) {
-    data[0] = cmd;
-    data[1] = reg_id;
-    data[2] = interval;
-    return 3;
+    data[0] = data_0;
+    data[1] = data_1;
+    data[2] = data_2;
+    data[3] = data_3;
+    data[4] = data_4;
+    data[5] = data_5;
+    data[6] = data_6;
+    data[7] = data_7;
+    return 8;
 }
 
 primary_byte_size primary_serialize_struct_INV_L_REQUEST(
     uint8_t* data,
     primary_message_INV_L_REQUEST* message
 ) {
-    data[0] = message->cmd;
-    data[1] = message->reg_id;
-    data[2] = message->interval;
-    return 3;
+    data[0] = message->data_0;
+    data[1] = message->data_1;
+    data[2] = message->data_2;
+    data[3] = message->data_3;
+    data[4] = message->data_4;
+    data[5] = message->data_5;
+    data[6] = message->data_6;
+    data[7] = message->data_7;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6424,9 +6779,14 @@ void primary_deserialize_INV_L_REQUEST(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->cmd = data[0];
-    message->reg_id = data[1];
-    message->interval = data[2];
+    message->data_0 = data[0];
+    message->data_1 = data[1];
+    message->data_2 = data[2];
+    message->data_3 = data[3];
+    message->data_4 = data[4];
+    message->data_5 = data[5];
+    message->data_6 = data[6];
+    message->data_7 = data[7];
 }
 
 // ============== STRING ============== //
@@ -6435,17 +6795,27 @@ int primary_to_string_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, char
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cmd,
-        message->reg_id,
-        message->interval
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6,
+        message->data_7
     );
 }
 int primary_fields_INV_L_REQUEST(char* buffer) {
@@ -6454,26 +6824,41 @@ int primary_fields_INV_L_REQUEST(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cmd" CANLIB_SEPARATOR 
-        "reg_id" CANLIB_SEPARATOR 
-        "interval"
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6" CANLIB_SEPARATOR 
+        "data_7"
     );
 }
 int primary_to_string_file_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cmd,
-        message->reg_id,
-        message->interval
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6,
+        message->data_7
     );
 }
 int primary_fields_file_INV_L_REQUEST(FILE* buffer) {
@@ -6482,9 +6867,14 @@ int primary_fields_file_INV_L_REQUEST(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cmd" CANLIB_SEPARATOR 
-        "reg_id" CANLIB_SEPARATOR 
-        "interval"
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6" CANLIB_SEPARATOR 
+        "data_7"
     );
 }
 
@@ -6492,24 +6882,39 @@ int primary_fields_file_INV_L_REQUEST(FILE* buffer) {
 
 primary_byte_size primary_serialize_INV_R_REQUEST(
     uint8_t* data,
-    primary_uint8 cmd,
-    primary_uint8 reg_id,
-    primary_uint8 interval
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6,
+    primary_uint8 data_7
 ) {
-    data[0] = cmd;
-    data[1] = reg_id;
-    data[2] = interval;
-    return 3;
+    data[0] = data_0;
+    data[1] = data_1;
+    data[2] = data_2;
+    data[3] = data_3;
+    data[4] = data_4;
+    data[5] = data_5;
+    data[6] = data_6;
+    data[7] = data_7;
+    return 8;
 }
 
 primary_byte_size primary_serialize_struct_INV_R_REQUEST(
     uint8_t* data,
     primary_message_INV_R_REQUEST* message
 ) {
-    data[0] = message->cmd;
-    data[1] = message->reg_id;
-    data[2] = message->interval;
-    return 3;
+    data[0] = message->data_0;
+    data[1] = message->data_1;
+    data[2] = message->data_2;
+    data[3] = message->data_3;
+    data[4] = message->data_4;
+    data[5] = message->data_5;
+    data[6] = message->data_6;
+    data[7] = message->data_7;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6524,9 +6929,14 @@ void primary_deserialize_INV_R_REQUEST(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->cmd = data[0];
-    message->reg_id = data[1];
-    message->interval = data[2];
+    message->data_0 = data[0];
+    message->data_1 = data[1];
+    message->data_2 = data[2];
+    message->data_3 = data[3];
+    message->data_4 = data[4];
+    message->data_5 = data[5];
+    message->data_6 = data[6];
+    message->data_7 = data[7];
 }
 
 // ============== STRING ============== //
@@ -6535,17 +6945,27 @@ int primary_to_string_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, char
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cmd,
-        message->reg_id,
-        message->interval
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6,
+        message->data_7
     );
 }
 int primary_fields_INV_R_REQUEST(char* buffer) {
@@ -6554,26 +6974,41 @@ int primary_fields_INV_R_REQUEST(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cmd" CANLIB_SEPARATOR 
-        "reg_id" CANLIB_SEPARATOR 
-        "interval"
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6" CANLIB_SEPARATOR 
+        "data_7"
     );
 }
 int primary_to_string_file_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cmd,
-        message->reg_id,
-        message->interval
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6,
+        message->data_7
     );
 }
 int primary_fields_file_INV_R_REQUEST(FILE* buffer) {
@@ -6582,9 +7017,14 @@ int primary_fields_file_INV_R_REQUEST(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cmd" CANLIB_SEPARATOR 
-        "reg_id" CANLIB_SEPARATOR 
-        "interval"
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6" CANLIB_SEPARATOR 
+        "data_7"
     );
 }
 
@@ -6655,7 +7095,7 @@ int primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, ch
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -6698,7 +7138,7 @@ int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* messag
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -6805,7 +7245,7 @@ int primary_to_string_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* message, ch
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -6848,7 +7288,7 @@ int primary_to_string_file_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* messag
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -7743,12 +8183,6 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
         primary_fields_file_SPEED(buffer);
         break;
     case 513:
-        primary_fields_file_INV_L_SET_TORQUE(buffer);
-        break;
-    case 514:
-        primary_fields_file_INV_R_SET_TORQUE(buffer);
-        break;
-    case 513:
         primary_fields_file_INV_L_REQUEST(buffer);
         break;
     case 514:
@@ -7919,12 +8353,6 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
             primary_to_string_file_SPEED((primary_message_SPEED_conversion*) message, buffer);
         break;
         case 513:
-            primary_to_string_file_INV_L_SET_TORQUE((primary_message_INV_L_SET_TORQUE*) message, buffer);
-        break;
-        case 514:
-            primary_to_string_file_INV_R_SET_TORQUE((primary_message_INV_R_SET_TORQUE*) message, buffer);
-        break;
-        case 513:
             primary_to_string_file_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
         break;
         case 514:
@@ -8083,7 +8511,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_HV_VOLTAGE(
+            primary_raw_to_conversion_struct_HV_VOLTAGE(
                 (primary_message_HV_VOLTAGE_conversion*) message,
                 (primary_message_HV_VOLTAGE*) raw_message
             );
@@ -8096,7 +8524,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_HV_CURRENT(
+            primary_raw_to_conversion_struct_HV_CURRENT(
                 (primary_message_HV_CURRENT_conversion*) message,
                 (primary_message_HV_CURRENT*) raw_message
             );
@@ -8109,7 +8537,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_HV_TEMP(
+            primary_raw_to_conversion_struct_HV_TEMP(
                 (primary_message_HV_TEMP_conversion*) message,
                 (primary_message_HV_TEMP*) raw_message
             );
@@ -8230,7 +8658,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_LV_CURRENT(
+            primary_raw_to_conversion_struct_LV_CURRENT(
                 (primary_message_LV_CURRENT_conversion*) message,
                 (primary_message_LV_CURRENT*) raw_message
             );
@@ -8243,7 +8671,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_LV_VOLTAGE(
+            primary_raw_to_conversion_struct_LV_VOLTAGE(
                 (primary_message_LV_VOLTAGE_conversion*) message,
                 (primary_message_LV_VOLTAGE*) raw_message
             );
@@ -8256,7 +8684,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_LV_TOTAL_VOLTAGE(
+            primary_raw_to_conversion_struct_LV_TOTAL_VOLTAGE(
                 (primary_message_LV_TOTAL_VOLTAGE_conversion*) message,
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message
             );
@@ -8269,7 +8697,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_LV_TEMPERATURE(
+            primary_raw_to_conversion_struct_LV_TEMPERATURE(
                 (primary_message_LV_TEMPERATURE_conversion*) message,
                 (primary_message_LV_TEMPERATURE*) raw_message
             );
@@ -8282,7 +8710,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_COOLING_STATUS(
+            primary_raw_to_conversion_struct_COOLING_STATUS(
                 (primary_message_COOLING_STATUS_conversion*) message,
                 (primary_message_COOLING_STATUS*) raw_message
             );
@@ -8322,7 +8750,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_HV_CELLS_VOLTAGE(
+            primary_raw_to_conversion_struct_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE_conversion*) message,
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message
             );
@@ -8335,7 +8763,7 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_HV_CELLS_TEMP(
+            primary_raw_to_conversion_struct_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP_conversion*) message,
                 (primary_message_HV_CELLS_TEMP*) raw_message
             );
@@ -8375,27 +8803,9 @@ void primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            primary_raw_to_conversion_SPEED(
+            primary_raw_to_conversion_struct_SPEED(
                 (primary_message_SPEED_conversion*) message,
                 (primary_message_SPEED*) raw_message
-            );
-        break;
-        case 513:
-            primary_deserialize_INV_L_SET_TORQUE(
-                (primary_message_INV_L_SET_TORQUE*) raw_message,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-        break;
-        case 514:
-            primary_deserialize_INV_R_SET_TORQUE(
-                (primary_message_INV_R_SET_TORQUE*) raw_message,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
             );
         break;
         case 513:
@@ -8703,76 +9113,68 @@ void primary_devices_new(primary_devices* map) {
     (*map)[38].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
 
     (*map)[39].id = 513;
-    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
+    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
     (*map)[39].conversion_message = NULL;
 
     (*map)[40].id = 514;
-    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_R_SET_TORQUE));
+    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_R_REQUEST));
     (*map)[40].conversion_message = NULL;
 
-    (*map)[41].id = 513;
-    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
+    (*map)[41].id = 385;
+    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
     (*map)[41].conversion_message = NULL;
 
-    (*map)[42].id = 514;
-    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_INV_R_REQUEST));
+    (*map)[42].id = 386;
+    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_INV_R_RESPONSE));
     (*map)[42].conversion_message = NULL;
 
-    (*map)[43].id = 385;
-    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[43].id = 16;
+    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
     (*map)[43].conversion_message = NULL;
 
-    (*map)[44].id = 386;
-    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_INV_R_RESPONSE));
+    (*map)[44].id = 17;
+    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
     (*map)[44].conversion_message = NULL;
 
-    (*map)[45].id = 16;
-    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
+    (*map)[45].id = 18;
+    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
     (*map)[45].conversion_message = NULL;
 
-    (*map)[46].id = 17;
-    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
+    (*map)[46].id = 19;
+    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
     (*map)[46].conversion_message = NULL;
 
-    (*map)[47].id = 18;
-    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
+    (*map)[47].id = 20;
+    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
     (*map)[47].conversion_message = NULL;
 
-    (*map)[48].id = 19;
-    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
+    (*map)[48].id = 21;
+    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
     (*map)[48].conversion_message = NULL;
 
-    (*map)[49].id = 20;
-    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
+    (*map)[49].id = 22;
+    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
     (*map)[49].conversion_message = NULL;
 
-    (*map)[50].id = 21;
-    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
+    (*map)[50].id = 23;
+    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
     (*map)[50].conversion_message = NULL;
 
-    (*map)[51].id = 22;
-    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
+    (*map)[51].id = 24;
+    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
     (*map)[51].conversion_message = NULL;
 
-    (*map)[52].id = 23;
-    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
+    (*map)[52].id = 25;
+    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
     (*map)[52].conversion_message = NULL;
 
-    (*map)[53].id = 24;
-    (*map)[53].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
+    (*map)[53].id = 26;
+    (*map)[53].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
     (*map)[53].conversion_message = NULL;
 
-    (*map)[54].id = 25;
-    (*map)[54].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[54].id = 27;
+    (*map)[54].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
     (*map)[54].conversion_message = NULL;
-
-    (*map)[55].id = 26;
-    (*map)[55].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
-    (*map)[55].conversion_message = NULL;
-
-    (*map)[56].id = 27;
-    (*map)[56].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
-    (*map)[56].conversion_message = NULL;
 
 }
 

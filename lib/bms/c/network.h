@@ -220,7 +220,6 @@ typedef enum CANLIB_PARKING {
 // Structs
 
 
-
 typedef struct CANLIB_PARKING {
     bms_Errors errors;
     bms_BalancingStatus balancing_status;
@@ -229,6 +228,18 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_BOARD_STATUS;
 
+typedef struct CANLIB_PARKING {
+    bms_uint8 start_index;
+    bms_uint8 temp0;
+    bms_uint8 temp1;
+    bms_uint8 temp2;
+    bms_uint8 temp3;
+    bms_uint8 temp4;
+    bms_uint8 temp5;
+#ifdef CANLIB_TIMESTAMP
+    bms_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} bms_message_TEMPERATURES;
 typedef struct CANLIB_PARKING {
     bms_uint8 start_index;
     bms_float32 temp0;
@@ -243,18 +254,14 @@ typedef struct CANLIB_PARKING {
 } bms_message_TEMPERATURES_conversion;
 
 typedef struct CANLIB_PARKING {
+    bms_uint16 voltage0;
+    bms_uint16 voltage1;
+    bms_uint16 voltage2;
     bms_uint8 start_index;
-    bms_uint8 temp0;
-    bms_uint8 temp1;
-    bms_uint8 temp2;
-    bms_uint8 temp3;
-    bms_uint8 temp4;
-    bms_uint8 temp5;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} bms_message_TEMPERATURES;
-
+} bms_message_VOLTAGES;
 typedef struct CANLIB_PARKING {
     bms_float32 voltage0;
     bms_float32 voltage1;
@@ -266,24 +273,12 @@ typedef struct CANLIB_PARKING {
 } bms_message_VOLTAGES_conversion;
 
 typedef struct CANLIB_PARKING {
-    bms_uint16 voltage0;
-    bms_uint16 voltage1;
-    bms_uint16 voltage2;
-    bms_uint8 start_index;
-#ifdef CANLIB_TIMESTAMP
-    bms_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} bms_message_VOLTAGES;
-
-
-typedef struct CANLIB_PARKING {
     bms_BalancingCells cells;
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_BALANCING;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 board_index;
@@ -292,14 +287,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FW_UPDATE;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_0_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -308,14 +301,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_0_RX;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_1_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -324,14 +315,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_1_RX;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_2_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -340,14 +329,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_2_RX;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_3_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -356,14 +343,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_3_RX;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_4_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -372,14 +357,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_4_RX;
 
-
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_FLASH_CELLBOARD_5_TX;
-
 
 typedef struct CANLIB_PARKING {
     bms_uint8 _placeholder; // C++ doesn't like empty structs
@@ -437,13 +420,42 @@ void bms_deserialize_TEMPERATURES(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_raw_to_conversion_TEMPERATURES(
+void bms_raw_to_conversion_struct_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
     bms_message_TEMPERATURES* raw
 );
-void bms_conversion_to_raw_TEMPERATURES(
+
+void bms_conversion_to_raw_struct_TEMPERATURES(
     bms_message_TEMPERATURES* raw,
     bms_message_TEMPERATURES_conversion* conversion
+);
+
+void bms_conversion_to_raw_TEMPERATURES(
+    bms_message_TEMPERATURES* raw,
+    bms_uint8 start_index,
+    bms_float32 temp0,
+    bms_float32 temp1,
+    bms_float32 temp2,
+    bms_float32 temp3,
+    bms_float32 temp4,
+    bms_float32 temp5
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void bms_raw_to_conversion_TEMPERATURES(
+    bms_message_TEMPERATURES_conversion* conversion,
+    bms_uint8 start_index,
+    bms_uint8 temp0,
+    bms_uint8 temp1,
+    bms_uint8 temp2,
+    bms_uint8 temp3,
+    bms_uint8 temp4,
+    bms_uint8 temp5
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, char* buffer);
 int bms_fields_TEMPERATURES(char* buffer);
@@ -471,13 +483,36 @@ void bms_deserialize_VOLTAGES(
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void bms_raw_to_conversion_VOLTAGES(
+void bms_raw_to_conversion_struct_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
     bms_message_VOLTAGES* raw
 );
-void bms_conversion_to_raw_VOLTAGES(
+
+void bms_conversion_to_raw_struct_VOLTAGES(
     bms_message_VOLTAGES* raw,
     bms_message_VOLTAGES_conversion* conversion
+);
+
+void bms_conversion_to_raw_VOLTAGES(
+    bms_message_VOLTAGES* raw,
+    bms_float32 voltage0,
+    bms_float32 voltage1,
+    bms_float32 voltage2,
+    bms_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void bms_raw_to_conversion_VOLTAGES(
+    bms_message_VOLTAGES_conversion* conversion,
+    bms_uint16 voltage0,
+    bms_uint16 voltage1,
+    bms_uint16 voltage2,
+    bms_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffer);
 int bms_fields_VOLTAGES(char* buffer);
@@ -860,7 +895,7 @@ int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -885,7 +920,7 @@ int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buf
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -966,6 +1001,31 @@ void bms_deserialize_TEMPERATURES(
 
 void bms_raw_to_conversion_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
+    bms_uint8 start_index,
+    bms_uint8 temp0,
+    bms_uint8 temp1,
+    bms_uint8 temp2,
+    bms_uint8 temp3,
+    bms_uint8 temp4,
+    bms_uint8 temp5
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->start_index = start_index;
+    conversion->temp0 = (((bms_float32)temp0) / 2.56) - 20;
+    conversion->temp1 = (((bms_float32)temp1) / 2.56) - 20;
+    conversion->temp2 = (((bms_float32)temp2) / 2.56) - 20;
+    conversion->temp3 = (((bms_float32)temp3) / 2.56) - 20;
+    conversion->temp4 = (((bms_float32)temp4) / 2.56) - 20;
+    conversion->temp5 = (((bms_float32)temp5) / 2.56) - 20;
+}
+
+void bms_raw_to_conversion_struct_TEMPERATURES(
+    bms_message_TEMPERATURES_conversion* conversion,
     bms_message_TEMPERATURES* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -979,7 +1039,33 @@ void bms_raw_to_conversion_TEMPERATURES(
     conversion->temp4 = (((bms_float32)raw->temp4) / 2.56) - 20;
     conversion->temp5 = (((bms_float32)raw->temp5) / 2.56) - 20;
 }
+
 void bms_conversion_to_raw_TEMPERATURES(
+    bms_message_TEMPERATURES* raw,
+    bms_uint8 start_index,
+    bms_float32 temp0,
+    bms_float32 temp1,
+    bms_float32 temp2,
+    bms_float32 temp3,
+    bms_float32 temp4,
+    bms_float32 temp5
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->start_index = start_index;
+    raw->temp0 = (bms_uint8)((temp0 + 20) * 2.56);
+    raw->temp1 = (bms_uint8)((temp1 + 20) * 2.56);
+    raw->temp2 = (bms_uint8)((temp2 + 20) * 2.56);
+    raw->temp3 = (bms_uint8)((temp3 + 20) * 2.56);
+    raw->temp4 = (bms_uint8)((temp4 + 20) * 2.56);
+    raw->temp5 = (bms_uint8)((temp5 + 20) * 2.56);
+}
+
+void bms_conversion_to_raw_struct_TEMPERATURES(
     bms_message_TEMPERATURES* raw,
     bms_message_TEMPERATURES_conversion* conversion
 ){
@@ -1001,7 +1087,7 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1041,7 +1127,7 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1131,6 +1217,25 @@ void bms_deserialize_VOLTAGES(
 
 void bms_raw_to_conversion_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
+    bms_uint16 voltage0,
+    bms_uint16 voltage1,
+    bms_uint16 voltage2,
+    bms_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->voltage0 = (((bms_float32)voltage0) / 10000.0) + 0;
+    conversion->voltage1 = (((bms_float32)voltage1) / 10000.0) + 0;
+    conversion->voltage2 = (((bms_float32)voltage2) / 10000.0) + 0;
+    conversion->start_index = start_index;
+}
+
+void bms_raw_to_conversion_struct_VOLTAGES(
+    bms_message_VOLTAGES_conversion* conversion,
     bms_message_VOLTAGES* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -1141,7 +1246,27 @@ void bms_raw_to_conversion_VOLTAGES(
     conversion->voltage2 = (((bms_float32)raw->voltage2) / 10000.0) + 0;
     conversion->start_index = raw->start_index;
 }
+
 void bms_conversion_to_raw_VOLTAGES(
+    bms_message_VOLTAGES* raw,
+    bms_float32 voltage0,
+    bms_float32 voltage1,
+    bms_float32 voltage2,
+    bms_uint8 start_index
+#ifdef CANLIB_TIMESTAMP
+    , bms_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->voltage0 = (bms_uint16)((voltage0 + 0) * 10000.0);
+    raw->voltage1 = (bms_uint16)((voltage1 + 0) * 10000.0);
+    raw->voltage2 = (bms_uint16)((voltage2 + 0) * 10000.0);
+    raw->start_index = start_index;
+}
+
+void bms_conversion_to_raw_struct_VOLTAGES(
     bms_message_VOLTAGES* raw,
     bms_message_VOLTAGES_conversion* conversion
 ){
@@ -1160,7 +1285,7 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1191,7 +1316,7 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1268,7 +1393,7 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -1293,7 +1418,7 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -1354,7 +1479,7 @@ int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -1376,7 +1501,7 @@ int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -2404,7 +2529,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2417,7 +2542,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2430,7 +2555,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2443,7 +2568,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2456,7 +2581,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2469,7 +2594,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_TEMPERATURES(
+            bms_raw_to_conversion_struct_TEMPERATURES(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
@@ -2482,7 +2607,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
@@ -2495,7 +2620,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
@@ -2508,7 +2633,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
@@ -2521,7 +2646,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
@@ -2534,7 +2659,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
@@ -2547,7 +2672,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            bms_raw_to_conversion_VOLTAGES(
+            bms_raw_to_conversion_struct_VOLTAGES(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );

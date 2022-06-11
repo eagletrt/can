@@ -78,10 +78,8 @@ HV_CELL_BALANCING_STATUS,HV_CELL_BALANCING_STATUS: 582,primary,HANDCART,5,BMS_HV
 SET_CELL_BALANCING_STATUS,SET_CELL_BALANCING_STATUS: 517,primary,BMS_HV,5,HANDCART,BMS_HV,,set_balancing_status: Toggle,Set cell balancing status; only once
 HANDCART_STATUS,HANDCART_STATUS: 773,primary,BMS_HV,4,HANDCART,BMS_HV,500,connected: bool,Sends updates on the presence of the handcart
 SPEED,SPEED: 547,primary,STEER,5,DAS,STEER,100,"encoder_r: type: float32, range: -70, 280, force: uint8, encoder_l: type: float32, range: -70, 280, force: uint8, inverter_r: type: float32, range: -70, 280, force: uint8, inverter_l: type: float32, range: -70, 280, force: uint8",Encoder speed and inverter RPMs
-INV_L_SET_TORQUE,INV_L_SET_TORQUE: 513,primary,FIXED_IDS,,DAS,INVERTER_L,20,"reg_id: uint8, lsb: uint8, msb: uint8",
-INV_R_SET_TORQUE,INV_R_SET_TORQUE: 514,primary,FIXED_IDS,,DAS,INVERTER_L,20,"reg_id: uint8, lsb: uint8, msb: uint8",
-INV_L_REQUEST,INV_L_REQUEST: 513,primary,FIXED_IDS,,DAS,INVERTER_L,20,"cmd: uint8, reg_id: uint8, interval: uint8",
-INV_R_REQUEST,INV_R_REQUEST: 514,primary,FIXED_IDS,,DAS,INVERTER_L,20,"cmd: uint8, reg_id: uint8, interval: uint8",
+INV_L_REQUEST,INV_L_REQUEST: 513,primary,FIXED_IDS,,DAS,INVERTER_L,20,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
+INV_R_REQUEST,INV_R_REQUEST: 514,primary,FIXED_IDS,,DAS,INVERTER_L,20,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
 INV_L_RESPONSE,INV_L_RESPONSE: 385,primary,FIXED_IDS,,INVERTER_L,DAS,100,"reg_id: uint8, data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8",
 INV_R_RESPONSE,INV_R_RESPONSE: 386,primary,FIXED_IDS,,INVERTER_L,DAS,100,"reg_id: uint8, data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8",
 FLASH_CELLBOARD_0_TX,FLASH_CELLBOARD_0_TX: 16,primary,FIXED_IDS,,HANDCART,BMS_HV,,,

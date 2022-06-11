@@ -189,7 +189,6 @@ typedef struct {
 // Structs
 
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 ang_rate_x;
     secondary_uint16 ang_rate_y;
@@ -199,7 +198,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IMU_ANGULAR_RATE;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 accel_x;
     secondary_uint16 accel_y;
@@ -208,7 +206,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IMU_ACCELERATION;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel1;
@@ -220,7 +217,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_0;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -230,7 +226,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_1;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel9;
@@ -242,7 +237,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_2;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -252,7 +246,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FL_3;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel1;
@@ -264,7 +257,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_0;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -274,7 +266,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_1;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel9;
@@ -286,7 +277,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_2;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -296,7 +286,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_FR_3;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel1;
@@ -308,7 +297,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_0;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -318,7 +306,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_1;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel9;
@@ -330,7 +317,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_2;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -340,7 +326,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RL_3;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel1;
@@ -352,7 +337,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_0;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel5;
     secondary_uint16 channel6;
@@ -362,7 +346,6 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_1;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel9;
@@ -374,7 +357,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_2;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel13;
     secondary_uint16 channel14;
@@ -385,7 +367,6 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IRTS_RR_3;
 
-
 typedef struct CANLIB_PARKING {
     secondary_float32 latitude;
     secondary_float32 longitude;
@@ -394,14 +375,12 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_GPS_COORDS;
 
-
 typedef struct CANLIB_PARKING {
     secondary_uint16 speed;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_GPS_SPEED;
-
 
 typedef struct CANLIB_PARKING {
     secondary_uint32 timestamp;
@@ -412,6 +391,14 @@ typedef struct CANLIB_PARKING {
 } secondary_message_LAP_COUNT;
 
 typedef struct CANLIB_PARKING {
+    secondary_uint16 bse_front;
+    secondary_uint16 bse_rear;
+    secondary_uint8 apps;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_PEDALS_OUTPUT;
+typedef struct CANLIB_PARKING {
     secondary_float32 bse_front;
     secondary_float32 bse_rear;
     secondary_uint8 apps;
@@ -421,23 +408,12 @@ typedef struct CANLIB_PARKING {
 } secondary_message_PEDALS_OUTPUT_conversion;
 
 typedef struct CANLIB_PARKING {
-    secondary_uint16 bse_front;
-    secondary_uint16 bse_rear;
-    secondary_uint8 apps;
-#ifdef CANLIB_TIMESTAMP
-    secondary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} secondary_message_PEDALS_OUTPUT;
-
-
-typedef struct CANLIB_PARKING {
     secondary_float32 right;
     secondary_float32 left;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_CONTROL_OUTPUT;
-
 
 typedef struct CANLIB_PARKING {
     secondary_float32 angle;
@@ -1004,13 +980,34 @@ void secondary_deserialize_PEDALS_OUTPUT(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-void secondary_raw_to_conversion_PEDALS_OUTPUT(
+void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT_conversion* conversion,
     secondary_message_PEDALS_OUTPUT* raw
 );
-void secondary_conversion_to_raw_PEDALS_OUTPUT(
+
+void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT* raw,
     secondary_message_PEDALS_OUTPUT_conversion* conversion
+);
+
+void secondary_conversion_to_raw_PEDALS_OUTPUT(
+    secondary_message_PEDALS_OUTPUT* raw,
+    secondary_float32 bse_front,
+    secondary_float32 bse_rear,
+    secondary_uint8 apps
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void secondary_raw_to_conversion_PEDALS_OUTPUT(
+    secondary_message_PEDALS_OUTPUT_conversion* conversion,
+    secondary_uint16 bse_front,
+    secondary_uint16 bse_rear,
+    secondary_uint8 apps
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
 );
 int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, char* buffer);
 int secondary_fields_PEDALS_OUTPUT(char* buffer);
@@ -1137,7 +1134,7 @@ int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* mes
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1165,7 +1162,7 @@ int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1243,7 +1240,7 @@ int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* mes
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1271,7 +1268,7 @@ int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1355,7 +1352,7 @@ int secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1386,7 +1383,7 @@ int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1473,7 +1470,7 @@ int secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1504,7 +1501,7 @@ int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1591,7 +1588,7 @@ int secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1622,7 +1619,7 @@ int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1709,7 +1706,7 @@ int secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1740,7 +1737,7 @@ int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1827,7 +1824,7 @@ int secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1858,7 +1855,7 @@ int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1945,7 +1942,7 @@ int secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -1976,7 +1973,7 @@ int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2063,7 +2060,7 @@ int secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2094,7 +2091,7 @@ int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2181,7 +2178,7 @@ int secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2212,7 +2209,7 @@ int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2299,7 +2296,7 @@ int secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2330,7 +2327,7 @@ int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2417,7 +2414,7 @@ int secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2448,7 +2445,7 @@ int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2535,7 +2532,7 @@ int secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2566,7 +2563,7 @@ int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2653,7 +2650,7 @@ int secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2684,7 +2681,7 @@ int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2771,7 +2768,7 @@ int secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2802,7 +2799,7 @@ int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2889,7 +2886,7 @@ int secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -2920,7 +2917,7 @@ int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -3007,7 +3004,7 @@ int secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -3038,7 +3035,7 @@ int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -3125,7 +3122,7 @@ int secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -3156,7 +3153,7 @@ int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
@@ -3239,7 +3236,7 @@ int secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char* 
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3264,7 +3261,7 @@ int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, F
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3327,7 +3324,7 @@ int secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16,
 #ifdef CANLIB_TIMESTAMP
@@ -3349,7 +3346,7 @@ int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu16,
 #ifdef CANLIB_TIMESTAMP
@@ -3417,7 +3414,7 @@ int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* bu
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -3442,7 +3439,7 @@ int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FIL
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32 CANLIB_SEPARATOR 
         "%" PRIu8,
@@ -3511,6 +3508,23 @@ void secondary_deserialize_PEDALS_OUTPUT(
 
 void secondary_raw_to_conversion_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT_conversion* conversion,
+    secondary_uint16 bse_front,
+    secondary_uint16 bse_rear,
+    secondary_uint8 apps
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->bse_front = (((secondary_float32)bse_front) / 655.36) + 0;
+    conversion->bse_rear = (((secondary_float32)bse_rear) / 655.36) + 0;
+    conversion->apps = apps;
+}
+
+void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
+    secondary_message_PEDALS_OUTPUT_conversion* conversion,
     secondary_message_PEDALS_OUTPUT* raw
 ){
 #ifdef CANLIB_TIMESTAMP
@@ -3520,7 +3534,25 @@ void secondary_raw_to_conversion_PEDALS_OUTPUT(
     conversion->bse_rear = (((secondary_float32)raw->bse_rear) / 655.36) + 0;
     conversion->apps = raw->apps;
 }
+
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
+    secondary_message_PEDALS_OUTPUT* raw,
+    secondary_float32 bse_front,
+    secondary_float32 bse_rear,
+    secondary_uint8 apps
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->bse_front = (secondary_uint16)((bse_front + 0) * 655.36);
+    raw->bse_rear = (secondary_uint16)((bse_rear + 0) * 655.36);
+    raw->apps = apps;
+}
+
+void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT* raw,
     secondary_message_PEDALS_OUTPUT_conversion* conversion
 ){
@@ -3538,7 +3570,7 @@ int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3566,7 +3598,7 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -3646,7 +3678,7 @@ int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3671,7 +3703,7 @@ int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* me
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
@@ -3738,7 +3770,7 @@ int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -3760,7 +3792,7 @@ int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* me
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
-        PRIu64 CANLIB_SEPARATOR
+        "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
@@ -4143,7 +4175,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            secondary_raw_to_conversion_PEDALS_OUTPUT(
+            secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
                 (secondary_message_PEDALS_OUTPUT_conversion*) message,
                 (secondary_message_PEDALS_OUTPUT*) raw_message
             );

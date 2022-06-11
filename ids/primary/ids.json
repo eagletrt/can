@@ -168,12 +168,6 @@
         },
         "FIXED_IDS": {
             "messages": {
-                "INV_L_SET_TORQUE": {
-                    "INV_L_SET_TORQUE": 513
-                },
-                "INV_R_SET_TORQUE": {
-                    "INV_R_SET_TORQUE": 514
-                },
                 "INV_L_REQUEST": {
                     "INV_L_REQUEST": 513
                 },
