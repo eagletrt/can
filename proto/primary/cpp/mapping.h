@@ -64,7 +64,11 @@ typedef struct {
     std::vector<primary_message_HANDCART_STATUS> HANDCART_STATUS;
     std::vector<primary_message_SPEED_conversion> SPEED;
     std::vector<primary_message_INV_L_SET_TORQUE> INV_L_SET_TORQUE;
+    std::vector<primary_message_INV_R_SET_TORQUE> INV_R_SET_TORQUE;
+    std::vector<primary_message_INV_L_REQUEST> INV_L_REQUEST;
+    std::vector<primary_message_INV_R_REQUEST> INV_R_REQUEST;
     std::vector<primary_message_INV_L_RESPONSE> INV_L_RESPONSE;
+    std::vector<primary_message_INV_R_RESPONSE> INV_R_RESPONSE;
     std::vector<primary_message_FLASH_CELLBOARD_0_TX> FLASH_CELLBOARD_0_TX;
     std::vector<primary_message_FLASH_CELLBOARD_0_RX> FLASH_CELLBOARD_0_RX;
     std::vector<primary_message_FLASH_CELLBOARD_1_TX> FLASH_CELLBOARD_1_TX;
@@ -527,9 +531,62 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
+        case 514: {
+            primary_message_INV_R_SET_TORQUE* msg = (primary_message_INV_R_SET_TORQUE*) (*map)[index].raw_message;
+            primary::INV_R_SET_TORQUE* proto_msg = pack->add_inv_r_set_torque();
+            proto_msg->set_reg_id(msg->reg_id);
+            proto_msg->set_lsb(msg->lsb);
+            proto_msg->set_msb(msg->msb);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 513: {
+            primary_message_INV_L_REQUEST* msg = (primary_message_INV_L_REQUEST*) (*map)[index].raw_message;
+            primary::INV_L_REQUEST* proto_msg = pack->add_inv_l_request();
+            proto_msg->set_cmd(msg->cmd);
+            proto_msg->set_reg_id(msg->reg_id);
+            proto_msg->set_interval(msg->interval);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 514: {
+            primary_message_INV_R_REQUEST* msg = (primary_message_INV_R_REQUEST*) (*map)[index].raw_message;
+            primary::INV_R_REQUEST* proto_msg = pack->add_inv_r_request();
+            proto_msg->set_cmd(msg->cmd);
+            proto_msg->set_reg_id(msg->reg_id);
+            proto_msg->set_interval(msg->interval);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 385: {
             primary_message_INV_L_RESPONSE* msg = (primary_message_INV_L_RESPONSE*) (*map)[index].raw_message;
             primary::INV_L_RESPONSE* proto_msg = pack->add_inv_l_response();
+            proto_msg->set_reg_id(msg->reg_id);
+            proto_msg->set_data_0(msg->data_0);
+            proto_msg->set_data_1(msg->data_1);
+            proto_msg->set_data_2(msg->data_2);
+            proto_msg->set_data_3(msg->data_3);
+            proto_msg->set_data_4(msg->data_4);
+            proto_msg->set_data_5(msg->data_5);
+            proto_msg->set_data_6(msg->data_6);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 386: {
+            primary_message_INV_R_RESPONSE* msg = (primary_message_INV_R_RESPONSE*) (*map)[index].raw_message;
+            primary::INV_R_RESPONSE* proto_msg = pack->add_inv_r_response();
             proto_msg->set_reg_id(msg->reg_id);
             proto_msg->set_data_0(msg->data_0);
             proto_msg->set_data_1(msg->data_1);
@@ -943,6 +1000,33 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->INV_L_SET_TORQUE[i]._timestamp = pack->inv_l_set_torque(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
+    map->INV_R_SET_TORQUE.resize(pack->inv_r_set_torque_size());
+    for(int i = 0; i < pack->inv_r_set_torque_size(); i++){
+        map->INV_R_SET_TORQUE[i].reg_id =pack->inv_r_set_torque(i).reg_id();
+        map->INV_R_SET_TORQUE[i].lsb =pack->inv_r_set_torque(i).lsb();
+        map->INV_R_SET_TORQUE[i].msb =pack->inv_r_set_torque(i).msb();
+#ifdef CANLIB_TIMESTAMP
+        map->INV_R_SET_TORQUE[i]._timestamp = pack->inv_r_set_torque(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->INV_L_REQUEST.resize(pack->inv_l_request_size());
+    for(int i = 0; i < pack->inv_l_request_size(); i++){
+        map->INV_L_REQUEST[i].cmd =pack->inv_l_request(i).cmd();
+        map->INV_L_REQUEST[i].reg_id =pack->inv_l_request(i).reg_id();
+        map->INV_L_REQUEST[i].interval =pack->inv_l_request(i).interval();
+#ifdef CANLIB_TIMESTAMP
+        map->INV_L_REQUEST[i]._timestamp = pack->inv_l_request(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->INV_R_REQUEST.resize(pack->inv_r_request_size());
+    for(int i = 0; i < pack->inv_r_request_size(); i++){
+        map->INV_R_REQUEST[i].cmd =pack->inv_r_request(i).cmd();
+        map->INV_R_REQUEST[i].reg_id =pack->inv_r_request(i).reg_id();
+        map->INV_R_REQUEST[i].interval =pack->inv_r_request(i).interval();
+#ifdef CANLIB_TIMESTAMP
+        map->INV_R_REQUEST[i]._timestamp = pack->inv_r_request(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
     map->INV_L_RESPONSE.resize(pack->inv_l_response_size());
     for(int i = 0; i < pack->inv_l_response_size(); i++){
         map->INV_L_RESPONSE[i].reg_id =pack->inv_l_response(i).reg_id();
@@ -955,6 +1039,20 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->INV_L_RESPONSE[i].data_6 =pack->inv_l_response(i).data_6();
 #ifdef CANLIB_TIMESTAMP
         map->INV_L_RESPONSE[i]._timestamp = pack->inv_l_response(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->INV_R_RESPONSE.resize(pack->inv_r_response_size());
+    for(int i = 0; i < pack->inv_r_response_size(); i++){
+        map->INV_R_RESPONSE[i].reg_id =pack->inv_r_response(i).reg_id();
+        map->INV_R_RESPONSE[i].data_0 =pack->inv_r_response(i).data_0();
+        map->INV_R_RESPONSE[i].data_1 =pack->inv_r_response(i).data_1();
+        map->INV_R_RESPONSE[i].data_2 =pack->inv_r_response(i).data_2();
+        map->INV_R_RESPONSE[i].data_3 =pack->inv_r_response(i).data_3();
+        map->INV_R_RESPONSE[i].data_4 =pack->inv_r_response(i).data_4();
+        map->INV_R_RESPONSE[i].data_5 =pack->inv_r_response(i).data_5();
+        map->INV_R_RESPONSE[i].data_6 =pack->inv_r_response(i).data_6();
+#ifdef CANLIB_TIMESTAMP
+        map->INV_R_RESPONSE[i]._timestamp = pack->inv_r_response(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->FLASH_CELLBOARD_0_TX.resize(pack->flash_cellboard_0_tx_size());

@@ -171,8 +171,20 @@
                 "INV_L_SET_TORQUE": {
                     "INV_L_SET_TORQUE": 513
                 },
+                "INV_R_SET_TORQUE": {
+                    "INV_R_SET_TORQUE": 514
+                },
+                "INV_L_REQUEST": {
+                    "INV_L_REQUEST": 513
+                },
+                "INV_R_REQUEST": {
+                    "INV_R_REQUEST": 514
+                },
                 "INV_L_RESPONSE": {
                     "INV_L_RESPONSE": 385
+                },
+                "INV_R_RESPONSE": {
+                    "INV_R_RESPONSE": 386
                 },
                 "FLASH_CELLBOARD_0_TX": {
                     "FLASH_CELLBOARD_0_TX": 16

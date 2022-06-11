@@ -791,8 +791,61 @@
       }
     },
     {
+      "name": "INV_R_SET_TORQUE",
+      "fixed_id": 514,
+      "sending": ["DAS"],
+      "receiving": ["INVERTER_L"],
+      "interval": 20,
+      "contents": {
+        "reg_id": "uint8",
+        "lsb": "uint8",
+        "msb": "uint8"
+      }
+    },
+    {
+      "name": "INV_L_REQUEST",
+      "fixed_id": 513,
+      "sending": ["DAS"],
+      "receiving": ["INVERTER_L"],
+      "interval": 20,
+      "contents": {
+        "cmd": "uint8",
+        "reg_id": "uint8",
+        "interval": "uint8"
+      }
+    },
+    {
+      "name": "INV_R_REQUEST",
+      "fixed_id": 514,
+      "sending": ["DAS"],
+      "receiving": ["INVERTER_L"],
+      "interval": 20,
+      "contents": {
+        "cmd": "uint8",
+        "reg_id": "uint8",
+        "interval": "uint8"
+      }
+    },
+    {
       "name": "INV_L_RESPONSE",
       "fixed_id": 385,
+      "sending": ["INVERTER_L"],
+      "receiving": ["DAS"],
+      "interval": 100,
+      "contents": {
+        "reg_id": "uint8",
+        "data_0": "uint8",
+        "data_1": "uint8",
+        "data_2": "uint8",
+        "data_3": "uint8",
+        "data_4": "uint8",
+        "data_5": "uint8",
+        "data_6": "uint8"
+      }
+    },
+    {
+      "name": "INV_R_RESPONSE",
+      "fixed_id": 386,
       "sending": ["INVERTER_L"],
       "receiving": ["DAS"],
       "interval": 100,

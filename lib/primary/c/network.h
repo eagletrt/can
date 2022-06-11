@@ -109,7 +109,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 53
+#define primary_NUMBER_OF_MESSAGES 57
 
 // Custom types
 
@@ -192,7 +192,11 @@ typedef struct {
 #define primary_HANDCART_STATUS_SIZE 1
 #define primary_SPEED_SIZE 4
 #define primary_INV_L_SET_TORQUE_SIZE 3
+#define primary_INV_R_SET_TORQUE_SIZE 3
+#define primary_INV_L_REQUEST_SIZE 3
+#define primary_INV_R_REQUEST_SIZE 3
 #define primary_INV_L_RESPONSE_SIZE 8
+#define primary_INV_R_RESPONSE_SIZE 8
 #define primary_FLASH_CELLBOARD_0_TX_SIZE 0
 #define primary_FLASH_CELLBOARD_0_RX_SIZE 0
 #define primary_FLASH_CELLBOARD_1_TX_SIZE 0
@@ -836,6 +840,36 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 reg_id;
+    primary_uint8 lsb;
+    primary_uint8 msb;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_INV_R_SET_TORQUE;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 cmd;
+    primary_uint8 reg_id;
+    primary_uint8 interval;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_INV_L_REQUEST;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 cmd;
+    primary_uint8 reg_id;
+    primary_uint8 interval;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_INV_R_REQUEST;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 reg_id;
     primary_uint8 data_0;
     primary_uint8 data_1;
     primary_uint8 data_2;
@@ -847,6 +881,21 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_INV_L_RESPONSE;
+
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 reg_id;
+    primary_uint8 data_0;
+    primary_uint8 data_1;
+    primary_uint8 data_2;
+    primary_uint8 data_3;
+    primary_uint8 data_4;
+    primary_uint8 data_5;
+    primary_uint8 data_6;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_INV_R_RESPONSE;
 
 
 typedef struct CANLIB_PARKING {
@@ -1974,6 +2023,81 @@ int primary_to_string_file_INV_L_SET_TORQUE(primary_message_INV_L_SET_TORQUE* me
 int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer);
 
 
+// ============== INV_R_SET_TORQUE ============== //
+
+primary_byte_size primary_serialize_INV_R_SET_TORQUE(
+    uint8_t* data,
+    primary_uint8 reg_id,
+    primary_uint8 lsb,
+    primary_uint8 msb
+);
+primary_byte_size primary_serialize_struct_INV_R_SET_TORQUE(
+    uint8_t* data,
+    primary_message_INV_R_SET_TORQUE* message
+);
+void primary_deserialize_INV_R_SET_TORQUE(
+    primary_message_INV_R_SET_TORQUE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, char* buffer);
+int primary_fields_INV_R_SET_TORQUE(char* buffer);
+int primary_to_string_file_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, FILE* buffer);
+int primary_fields_file_INV_R_SET_TORQUE(FILE* buffer);
+
+
+// ============== INV_L_REQUEST ============== //
+
+primary_byte_size primary_serialize_INV_L_REQUEST(
+    uint8_t* data,
+    primary_uint8 cmd,
+    primary_uint8 reg_id,
+    primary_uint8 interval
+);
+primary_byte_size primary_serialize_struct_INV_L_REQUEST(
+    uint8_t* data,
+    primary_message_INV_L_REQUEST* message
+);
+void primary_deserialize_INV_L_REQUEST(
+    primary_message_INV_L_REQUEST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, char* buffer);
+int primary_fields_INV_L_REQUEST(char* buffer);
+int primary_to_string_file_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, FILE* buffer);
+int primary_fields_file_INV_L_REQUEST(FILE* buffer);
+
+
+// ============== INV_R_REQUEST ============== //
+
+primary_byte_size primary_serialize_INV_R_REQUEST(
+    uint8_t* data,
+    primary_uint8 cmd,
+    primary_uint8 reg_id,
+    primary_uint8 interval
+);
+primary_byte_size primary_serialize_struct_INV_R_REQUEST(
+    uint8_t* data,
+    primary_message_INV_R_REQUEST* message
+);
+void primary_deserialize_INV_R_REQUEST(
+    primary_message_INV_R_REQUEST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, char* buffer);
+int primary_fields_INV_R_REQUEST(char* buffer);
+int primary_to_string_file_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, FILE* buffer);
+int primary_fields_file_INV_R_REQUEST(FILE* buffer);
+
+
 // ============== INV_L_RESPONSE ============== //
 
 primary_byte_size primary_serialize_INV_L_RESPONSE(
@@ -2002,6 +2126,36 @@ int primary_to_string_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, ch
 int primary_fields_INV_L_RESPONSE(char* buffer);
 int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* message, FILE* buffer);
 int primary_fields_file_INV_L_RESPONSE(FILE* buffer);
+
+
+// ============== INV_R_RESPONSE ============== //
+
+primary_byte_size primary_serialize_INV_R_RESPONSE(
+    uint8_t* data,
+    primary_uint8 reg_id,
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6
+);
+primary_byte_size primary_serialize_struct_INV_R_RESPONSE(
+    uint8_t* data,
+    primary_message_INV_R_RESPONSE* message
+);
+void primary_deserialize_INV_R_RESPONSE(
+    primary_message_INV_R_RESPONSE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* message, char* buffer);
+int primary_fields_INV_R_RESPONSE(char* buffer);
+int primary_to_string_file_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* message, FILE* buffer);
+int primary_fields_file_INV_R_RESPONSE(FILE* buffer);
 
 
 // ============== FLASH_CELLBOARD_0_TX ============== //
@@ -6136,6 +6290,306 @@ int primary_fields_file_INV_L_SET_TORQUE(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
+primary_byte_size primary_serialize_INV_R_SET_TORQUE(
+    uint8_t* data,
+    primary_uint8 reg_id,
+    primary_uint8 lsb,
+    primary_uint8 msb
+) {
+    data[0] = reg_id;
+    data[1] = lsb;
+    data[2] = msb;
+    return 3;
+}
+
+primary_byte_size primary_serialize_struct_INV_R_SET_TORQUE(
+    uint8_t* data,
+    primary_message_INV_R_SET_TORQUE* message
+) {
+    data[0] = message->reg_id;
+    data[1] = message->lsb;
+    data[2] = message->msb;
+    return 3;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_INV_R_SET_TORQUE(
+    primary_message_INV_R_SET_TORQUE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->reg_id = data[0];
+    message->lsb = data[1];
+    message->msb = data[2];
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->reg_id,
+        message->lsb,
+        message->msb
+    );
+}
+int primary_fields_INV_R_SET_TORQUE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "reg_id" CANLIB_SEPARATOR 
+        "lsb" CANLIB_SEPARATOR 
+        "msb"
+    );
+}
+int primary_to_string_file_INV_R_SET_TORQUE(primary_message_INV_R_SET_TORQUE* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->reg_id,
+        message->lsb,
+        message->msb
+    );
+}
+int primary_fields_file_INV_R_SET_TORQUE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "reg_id" CANLIB_SEPARATOR 
+        "lsb" CANLIB_SEPARATOR 
+        "msb"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_INV_L_REQUEST(
+    uint8_t* data,
+    primary_uint8 cmd,
+    primary_uint8 reg_id,
+    primary_uint8 interval
+) {
+    data[0] = cmd;
+    data[1] = reg_id;
+    data[2] = interval;
+    return 3;
+}
+
+primary_byte_size primary_serialize_struct_INV_L_REQUEST(
+    uint8_t* data,
+    primary_message_INV_L_REQUEST* message
+) {
+    data[0] = message->cmd;
+    data[1] = message->reg_id;
+    data[2] = message->interval;
+    return 3;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_INV_L_REQUEST(
+    primary_message_INV_L_REQUEST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->cmd = data[0];
+    message->reg_id = data[1];
+    message->interval = data[2];
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->cmd,
+        message->reg_id,
+        message->interval
+    );
+}
+int primary_fields_INV_L_REQUEST(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "cmd" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
+        "interval"
+    );
+}
+int primary_to_string_file_INV_L_REQUEST(primary_message_INV_L_REQUEST* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->cmd,
+        message->reg_id,
+        message->interval
+    );
+}
+int primary_fields_file_INV_L_REQUEST(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "cmd" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
+        "interval"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_INV_R_REQUEST(
+    uint8_t* data,
+    primary_uint8 cmd,
+    primary_uint8 reg_id,
+    primary_uint8 interval
+) {
+    data[0] = cmd;
+    data[1] = reg_id;
+    data[2] = interval;
+    return 3;
+}
+
+primary_byte_size primary_serialize_struct_INV_R_REQUEST(
+    uint8_t* data,
+    primary_message_INV_R_REQUEST* message
+) {
+    data[0] = message->cmd;
+    data[1] = message->reg_id;
+    data[2] = message->interval;
+    return 3;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_INV_R_REQUEST(
+    primary_message_INV_R_REQUEST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->cmd = data[0];
+    message->reg_id = data[1];
+    message->interval = data[2];
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->cmd,
+        message->reg_id,
+        message->interval
+    );
+}
+int primary_fields_INV_R_REQUEST(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "cmd" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
+        "interval"
+    );
+}
+int primary_to_string_file_INV_R_REQUEST(primary_message_INV_R_REQUEST* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->cmd,
+        message->reg_id,
+        message->interval
+    );
+}
+int primary_fields_file_INV_R_REQUEST(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "cmd" CANLIB_SEPARATOR 
+        "reg_id" CANLIB_SEPARATOR 
+        "interval"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
 primary_byte_size primary_serialize_INV_L_RESPONSE(
     uint8_t* data,
     primary_uint8 reg_id,
@@ -6268,6 +6722,156 @@ int primary_to_string_file_INV_L_RESPONSE(primary_message_INV_L_RESPONSE* messag
     );
 }
 int primary_fields_file_INV_L_RESPONSE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "reg_id" CANLIB_SEPARATOR 
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_INV_R_RESPONSE(
+    uint8_t* data,
+    primary_uint8 reg_id,
+    primary_uint8 data_0,
+    primary_uint8 data_1,
+    primary_uint8 data_2,
+    primary_uint8 data_3,
+    primary_uint8 data_4,
+    primary_uint8 data_5,
+    primary_uint8 data_6
+) {
+    data[0] = reg_id;
+    data[1] = data_0;
+    data[2] = data_1;
+    data[3] = data_2;
+    data[4] = data_3;
+    data[5] = data_4;
+    data[6] = data_5;
+    data[7] = data_6;
+    return 8;
+}
+
+primary_byte_size primary_serialize_struct_INV_R_RESPONSE(
+    uint8_t* data,
+    primary_message_INV_R_RESPONSE* message
+) {
+    data[0] = message->reg_id;
+    data[1] = message->data_0;
+    data[2] = message->data_1;
+    data[3] = message->data_2;
+    data[4] = message->data_3;
+    data[5] = message->data_4;
+    data[6] = message->data_5;
+    data[7] = message->data_6;
+    return 8;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_INV_R_RESPONSE(
+    primary_message_INV_R_RESPONSE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->reg_id = data[0];
+    message->data_0 = data[1];
+    message->data_1 = data[2];
+    message->data_2 = data[3];
+    message->data_3 = data[4];
+    message->data_4 = data[5];
+    message->data_5 = data[6];
+    message->data_6 = data[7];
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->reg_id,
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6
+    );
+}
+int primary_fields_INV_R_RESPONSE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "reg_id" CANLIB_SEPARATOR 
+        "data_0" CANLIB_SEPARATOR 
+        "data_1" CANLIB_SEPARATOR 
+        "data_2" CANLIB_SEPARATOR 
+        "data_3" CANLIB_SEPARATOR 
+        "data_4" CANLIB_SEPARATOR 
+        "data_5" CANLIB_SEPARATOR 
+        "data_6"
+    );
+}
+int primary_to_string_file_INV_R_RESPONSE(primary_message_INV_R_RESPONSE* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->reg_id,
+        message->data_0,
+        message->data_1,
+        message->data_2,
+        message->data_3,
+        message->data_4,
+        message->data_5,
+        message->data_6
+    );
+}
+int primary_fields_file_INV_R_RESPONSE(FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -7141,8 +7745,20 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
     case 513:
         primary_fields_file_INV_L_SET_TORQUE(buffer);
         break;
+    case 514:
+        primary_fields_file_INV_R_SET_TORQUE(buffer);
+        break;
+    case 513:
+        primary_fields_file_INV_L_REQUEST(buffer);
+        break;
+    case 514:
+        primary_fields_file_INV_R_REQUEST(buffer);
+        break;
     case 385:
         primary_fields_file_INV_L_RESPONSE(buffer);
+        break;
+    case 386:
+        primary_fields_file_INV_R_RESPONSE(buffer);
         break;
     case 16:
         primary_fields_file_FLASH_CELLBOARD_0_TX(buffer);
@@ -7305,8 +7921,20 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
         case 513:
             primary_to_string_file_INV_L_SET_TORQUE((primary_message_INV_L_SET_TORQUE*) message, buffer);
         break;
+        case 514:
+            primary_to_string_file_INV_R_SET_TORQUE((primary_message_INV_R_SET_TORQUE*) message, buffer);
+        break;
+        case 513:
+            primary_to_string_file_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
+        break;
+        case 514:
+            primary_to_string_file_INV_R_REQUEST((primary_message_INV_R_REQUEST*) message, buffer);
+        break;
         case 385:
             primary_to_string_file_INV_L_RESPONSE((primary_message_INV_L_RESPONSE*) message, buffer);
+        break;
+        case 386:
+            primary_to_string_file_INV_R_RESPONSE((primary_message_INV_R_RESPONSE*) message, buffer);
         break;
         case 16:
             primary_to_string_file_FLASH_CELLBOARD_0_TX((primary_message_FLASH_CELLBOARD_0_TX*) message, buffer);
@@ -7761,9 +8389,45 @@ void primary_deserialize_from_id(
                 #endif
             );
         break;
+        case 514:
+            primary_deserialize_INV_R_SET_TORQUE(
+                (primary_message_INV_R_SET_TORQUE*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 513:
+            primary_deserialize_INV_L_REQUEST(
+                (primary_message_INV_L_REQUEST*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 514:
+            primary_deserialize_INV_R_REQUEST(
+                (primary_message_INV_R_REQUEST*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
         case 385:
             primary_deserialize_INV_L_RESPONSE(
                 (primary_message_INV_L_RESPONSE*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 386:
+            primary_deserialize_INV_R_RESPONSE(
+                (primary_message_INV_R_RESPONSE*) raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -8042,57 +8706,73 @@ void primary_devices_new(primary_devices* map) {
     (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_SET_TORQUE));
     (*map)[39].conversion_message = NULL;
 
-    (*map)[40].id = 385;
-    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
+    (*map)[40].id = 514;
+    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_R_SET_TORQUE));
     (*map)[40].conversion_message = NULL;
 
-    (*map)[41].id = 16;
-    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
+    (*map)[41].id = 513;
+    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
     (*map)[41].conversion_message = NULL;
 
-    (*map)[42].id = 17;
-    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
+    (*map)[42].id = 514;
+    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_INV_R_REQUEST));
     (*map)[42].conversion_message = NULL;
 
-    (*map)[43].id = 18;
-    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
+    (*map)[43].id = 385;
+    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
     (*map)[43].conversion_message = NULL;
 
-    (*map)[44].id = 19;
-    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
+    (*map)[44].id = 386;
+    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_INV_R_RESPONSE));
     (*map)[44].conversion_message = NULL;
 
-    (*map)[45].id = 20;
-    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
+    (*map)[45].id = 16;
+    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
     (*map)[45].conversion_message = NULL;
 
-    (*map)[46].id = 21;
-    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
+    (*map)[46].id = 17;
+    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
     (*map)[46].conversion_message = NULL;
 
-    (*map)[47].id = 22;
-    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
+    (*map)[47].id = 18;
+    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
     (*map)[47].conversion_message = NULL;
 
-    (*map)[48].id = 23;
-    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
+    (*map)[48].id = 19;
+    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
     (*map)[48].conversion_message = NULL;
 
-    (*map)[49].id = 24;
-    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
+    (*map)[49].id = 20;
+    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
     (*map)[49].conversion_message = NULL;
 
-    (*map)[50].id = 25;
-    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[50].id = 21;
+    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
     (*map)[50].conversion_message = NULL;
 
-    (*map)[51].id = 26;
-    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
+    (*map)[51].id = 22;
+    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
     (*map)[51].conversion_message = NULL;
 
-    (*map)[52].id = 27;
-    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
+    (*map)[52].id = 23;
+    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
     (*map)[52].conversion_message = NULL;
+
+    (*map)[53].id = 24;
+    (*map)[53].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
+    (*map)[53].conversion_message = NULL;
+
+    (*map)[54].id = 25;
+    (*map)[54].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[54].conversion_message = NULL;
+
+    (*map)[55].id = 26;
+    (*map)[55].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
+    (*map)[55].conversion_message = NULL;
+
+    (*map)[56].id = 27;
+    (*map)[56].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
+    (*map)[56].conversion_message = NULL;
 
 }
 

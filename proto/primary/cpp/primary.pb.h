@@ -130,12 +130,24 @@ extern HV_VERSIONDefaultTypeInternal _HV_VERSION_default_instance_;
 class HV_VOLTAGE;
 struct HV_VOLTAGEDefaultTypeInternal;
 extern HV_VOLTAGEDefaultTypeInternal _HV_VOLTAGE_default_instance_;
+class INV_L_REQUEST;
+struct INV_L_REQUESTDefaultTypeInternal;
+extern INV_L_REQUESTDefaultTypeInternal _INV_L_REQUEST_default_instance_;
 class INV_L_RESPONSE;
 struct INV_L_RESPONSEDefaultTypeInternal;
 extern INV_L_RESPONSEDefaultTypeInternal _INV_L_RESPONSE_default_instance_;
 class INV_L_SET_TORQUE;
 struct INV_L_SET_TORQUEDefaultTypeInternal;
 extern INV_L_SET_TORQUEDefaultTypeInternal _INV_L_SET_TORQUE_default_instance_;
+class INV_R_REQUEST;
+struct INV_R_REQUESTDefaultTypeInternal;
+extern INV_R_REQUESTDefaultTypeInternal _INV_R_REQUEST_default_instance_;
+class INV_R_RESPONSE;
+struct INV_R_RESPONSEDefaultTypeInternal;
+extern INV_R_RESPONSEDefaultTypeInternal _INV_R_RESPONSE_default_instance_;
+class INV_R_SET_TORQUE;
+struct INV_R_SET_TORQUEDefaultTypeInternal;
+extern INV_R_SET_TORQUEDefaultTypeInternal _INV_R_SET_TORQUE_default_instance_;
 class LV_CURRENT;
 struct LV_CURRENTDefaultTypeInternal;
 extern LV_CURRENTDefaultTypeInternal _LV_CURRENT_default_instance_;
@@ -238,8 +250,12 @@ template<> ::primary::HV_ERRORS* Arena::CreateMaybeMessage<::primary::HV_ERRORS>
 template<> ::primary::HV_TEMP* Arena::CreateMaybeMessage<::primary::HV_TEMP>(Arena*);
 template<> ::primary::HV_VERSION* Arena::CreateMaybeMessage<::primary::HV_VERSION>(Arena*);
 template<> ::primary::HV_VOLTAGE* Arena::CreateMaybeMessage<::primary::HV_VOLTAGE>(Arena*);
+template<> ::primary::INV_L_REQUEST* Arena::CreateMaybeMessage<::primary::INV_L_REQUEST>(Arena*);
 template<> ::primary::INV_L_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_L_RESPONSE>(Arena*);
 template<> ::primary::INV_L_SET_TORQUE* Arena::CreateMaybeMessage<::primary::INV_L_SET_TORQUE>(Arena*);
+template<> ::primary::INV_R_REQUEST* Arena::CreateMaybeMessage<::primary::INV_R_REQUEST>(Arena*);
+template<> ::primary::INV_R_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_R_RESPONSE>(Arena*);
+template<> ::primary::INV_R_SET_TORQUE* Arena::CreateMaybeMessage<::primary::INV_R_SET_TORQUE>(Arena*);
 template<> ::primary::LV_CURRENT* Arena::CreateMaybeMessage<::primary::LV_CURRENT>(Arena*);
 template<> ::primary::LV_TEMPERATURE* Arena::CreateMaybeMessage<::primary::LV_TEMPERATURE>(Arena*);
 template<> ::primary::LV_TOTAL_VOLTAGE* Arena::CreateMaybeMessage<::primary::LV_TOTAL_VOLTAGE>(Arena*);
@@ -7191,6 +7207,534 @@ class INV_L_SET_TORQUE final :
 };
 // -------------------------------------------------------------------
 
+class INV_R_SET_TORQUE final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.INV_R_SET_TORQUE) */ {
+ public:
+  inline INV_R_SET_TORQUE() : INV_R_SET_TORQUE(nullptr) {}
+  ~INV_R_SET_TORQUE() override;
+  explicit PROTOBUF_CONSTEXPR INV_R_SET_TORQUE(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  INV_R_SET_TORQUE(const INV_R_SET_TORQUE& from);
+  INV_R_SET_TORQUE(INV_R_SET_TORQUE&& from) noexcept
+    : INV_R_SET_TORQUE() {
+    *this = ::std::move(from);
+  }
+
+  inline INV_R_SET_TORQUE& operator=(const INV_R_SET_TORQUE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline INV_R_SET_TORQUE& operator=(INV_R_SET_TORQUE&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const INV_R_SET_TORQUE& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const INV_R_SET_TORQUE* internal_default_instance() {
+    return reinterpret_cast<const INV_R_SET_TORQUE*>(
+               &_INV_R_SET_TORQUE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    40;
+
+  friend void swap(INV_R_SET_TORQUE& a, INV_R_SET_TORQUE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(INV_R_SET_TORQUE* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(INV_R_SET_TORQUE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  INV_R_SET_TORQUE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<INV_R_SET_TORQUE>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const INV_R_SET_TORQUE& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const INV_R_SET_TORQUE& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(INV_R_SET_TORQUE* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.INV_R_SET_TORQUE";
+  }
+  protected:
+  explicit INV_R_SET_TORQUE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegIdFieldNumber = 1,
+    kLsbFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kMsbFieldNumber = 3,
+  };
+  // uint32 reg_id = 1;
+  void clear_reg_id();
+  uint32_t reg_id() const;
+  void set_reg_id(uint32_t value);
+  private:
+  uint32_t _internal_reg_id() const;
+  void _internal_set_reg_id(uint32_t value);
+  public:
+
+  // uint32 lsb = 2;
+  void clear_lsb();
+  uint32_t lsb() const;
+  void set_lsb(uint32_t value);
+  private:
+  uint32_t _internal_lsb() const;
+  void _internal_set_lsb(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 4;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // uint32 msb = 3;
+  void clear_msb();
+  uint32_t msb() const;
+  void set_msb(uint32_t value);
+  private:
+  uint32_t _internal_msb() const;
+  void _internal_set_msb(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.INV_R_SET_TORQUE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t reg_id_;
+  uint32_t lsb_;
+  uint64_t _inner_timestamp_;
+  uint32_t msb_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class INV_L_REQUEST final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.INV_L_REQUEST) */ {
+ public:
+  inline INV_L_REQUEST() : INV_L_REQUEST(nullptr) {}
+  ~INV_L_REQUEST() override;
+  explicit PROTOBUF_CONSTEXPR INV_L_REQUEST(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  INV_L_REQUEST(const INV_L_REQUEST& from);
+  INV_L_REQUEST(INV_L_REQUEST&& from) noexcept
+    : INV_L_REQUEST() {
+    *this = ::std::move(from);
+  }
+
+  inline INV_L_REQUEST& operator=(const INV_L_REQUEST& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline INV_L_REQUEST& operator=(INV_L_REQUEST&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const INV_L_REQUEST& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const INV_L_REQUEST* internal_default_instance() {
+    return reinterpret_cast<const INV_L_REQUEST*>(
+               &_INV_L_REQUEST_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  friend void swap(INV_L_REQUEST& a, INV_L_REQUEST& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(INV_L_REQUEST* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(INV_L_REQUEST* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  INV_L_REQUEST* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<INV_L_REQUEST>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const INV_L_REQUEST& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const INV_L_REQUEST& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(INV_L_REQUEST* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.INV_L_REQUEST";
+  }
+  protected:
+  explicit INV_L_REQUEST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCmdFieldNumber = 1,
+    kRegIdFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kIntervalFieldNumber = 3,
+  };
+  // uint32 cmd = 1;
+  void clear_cmd();
+  uint32_t cmd() const;
+  void set_cmd(uint32_t value);
+  private:
+  uint32_t _internal_cmd() const;
+  void _internal_set_cmd(uint32_t value);
+  public:
+
+  // uint32 reg_id = 2;
+  void clear_reg_id();
+  uint32_t reg_id() const;
+  void set_reg_id(uint32_t value);
+  private:
+  uint32_t _internal_reg_id() const;
+  void _internal_set_reg_id(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 4;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // uint32 interval = 3;
+  void clear_interval();
+  uint32_t interval() const;
+  void set_interval(uint32_t value);
+  private:
+  uint32_t _internal_interval() const;
+  void _internal_set_interval(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.INV_L_REQUEST)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t cmd_;
+  uint32_t reg_id_;
+  uint64_t _inner_timestamp_;
+  uint32_t interval_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class INV_R_REQUEST final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.INV_R_REQUEST) */ {
+ public:
+  inline INV_R_REQUEST() : INV_R_REQUEST(nullptr) {}
+  ~INV_R_REQUEST() override;
+  explicit PROTOBUF_CONSTEXPR INV_R_REQUEST(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  INV_R_REQUEST(const INV_R_REQUEST& from);
+  INV_R_REQUEST(INV_R_REQUEST&& from) noexcept
+    : INV_R_REQUEST() {
+    *this = ::std::move(from);
+  }
+
+  inline INV_R_REQUEST& operator=(const INV_R_REQUEST& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline INV_R_REQUEST& operator=(INV_R_REQUEST&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const INV_R_REQUEST& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const INV_R_REQUEST* internal_default_instance() {
+    return reinterpret_cast<const INV_R_REQUEST*>(
+               &_INV_R_REQUEST_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    42;
+
+  friend void swap(INV_R_REQUEST& a, INV_R_REQUEST& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(INV_R_REQUEST* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(INV_R_REQUEST* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  INV_R_REQUEST* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<INV_R_REQUEST>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const INV_R_REQUEST& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const INV_R_REQUEST& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(INV_R_REQUEST* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.INV_R_REQUEST";
+  }
+  protected:
+  explicit INV_R_REQUEST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCmdFieldNumber = 1,
+    kRegIdFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kIntervalFieldNumber = 3,
+  };
+  // uint32 cmd = 1;
+  void clear_cmd();
+  uint32_t cmd() const;
+  void set_cmd(uint32_t value);
+  private:
+  uint32_t _internal_cmd() const;
+  void _internal_set_cmd(uint32_t value);
+  public:
+
+  // uint32 reg_id = 2;
+  void clear_reg_id();
+  uint32_t reg_id() const;
+  void set_reg_id(uint32_t value);
+  private:
+  uint32_t _internal_reg_id() const;
+  void _internal_set_reg_id(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 4;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // uint32 interval = 3;
+  void clear_interval();
+  uint32_t interval() const;
+  void set_interval(uint32_t value);
+  private:
+  uint32_t _internal_interval() const;
+  void _internal_set_interval(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.INV_R_REQUEST)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t cmd_;
+  uint32_t reg_id_;
+  uint64_t _inner_timestamp_;
+  uint32_t interval_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class INV_L_RESPONSE final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.INV_L_RESPONSE) */ {
  public:
@@ -7239,7 +7783,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    43;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -7422,6 +7966,237 @@ class INV_L_RESPONSE final :
 };
 // -------------------------------------------------------------------
 
+class INV_R_RESPONSE final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.INV_R_RESPONSE) */ {
+ public:
+  inline INV_R_RESPONSE() : INV_R_RESPONSE(nullptr) {}
+  ~INV_R_RESPONSE() override;
+  explicit PROTOBUF_CONSTEXPR INV_R_RESPONSE(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  INV_R_RESPONSE(const INV_R_RESPONSE& from);
+  INV_R_RESPONSE(INV_R_RESPONSE&& from) noexcept
+    : INV_R_RESPONSE() {
+    *this = ::std::move(from);
+  }
+
+  inline INV_R_RESPONSE& operator=(const INV_R_RESPONSE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline INV_R_RESPONSE& operator=(INV_R_RESPONSE&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const INV_R_RESPONSE& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const INV_R_RESPONSE* internal_default_instance() {
+    return reinterpret_cast<const INV_R_RESPONSE*>(
+               &_INV_R_RESPONSE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    44;
+
+  friend void swap(INV_R_RESPONSE& a, INV_R_RESPONSE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(INV_R_RESPONSE* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(INV_R_RESPONSE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  INV_R_RESPONSE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<INV_R_RESPONSE>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const INV_R_RESPONSE& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const INV_R_RESPONSE& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(INV_R_RESPONSE* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.INV_R_RESPONSE";
+  }
+  protected:
+  explicit INV_R_RESPONSE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRegIdFieldNumber = 1,
+    kData0FieldNumber = 2,
+    kData1FieldNumber = 3,
+    kData2FieldNumber = 4,
+    kData3FieldNumber = 5,
+    kData4FieldNumber = 6,
+    kData5FieldNumber = 7,
+    kData6FieldNumber = 8,
+    kInnerTimestampFieldNumber = 9,
+  };
+  // uint32 reg_id = 1;
+  void clear_reg_id();
+  uint32_t reg_id() const;
+  void set_reg_id(uint32_t value);
+  private:
+  uint32_t _internal_reg_id() const;
+  void _internal_set_reg_id(uint32_t value);
+  public:
+
+  // uint32 data_0 = 2;
+  void clear_data_0();
+  uint32_t data_0() const;
+  void set_data_0(uint32_t value);
+  private:
+  uint32_t _internal_data_0() const;
+  void _internal_set_data_0(uint32_t value);
+  public:
+
+  // uint32 data_1 = 3;
+  void clear_data_1();
+  uint32_t data_1() const;
+  void set_data_1(uint32_t value);
+  private:
+  uint32_t _internal_data_1() const;
+  void _internal_set_data_1(uint32_t value);
+  public:
+
+  // uint32 data_2 = 4;
+  void clear_data_2();
+  uint32_t data_2() const;
+  void set_data_2(uint32_t value);
+  private:
+  uint32_t _internal_data_2() const;
+  void _internal_set_data_2(uint32_t value);
+  public:
+
+  // uint32 data_3 = 5;
+  void clear_data_3();
+  uint32_t data_3() const;
+  void set_data_3(uint32_t value);
+  private:
+  uint32_t _internal_data_3() const;
+  void _internal_set_data_3(uint32_t value);
+  public:
+
+  // uint32 data_4 = 6;
+  void clear_data_4();
+  uint32_t data_4() const;
+  void set_data_4(uint32_t value);
+  private:
+  uint32_t _internal_data_4() const;
+  void _internal_set_data_4(uint32_t value);
+  public:
+
+  // uint32 data_5 = 7;
+  void clear_data_5();
+  uint32_t data_5() const;
+  void set_data_5(uint32_t value);
+  private:
+  uint32_t _internal_data_5() const;
+  void _internal_set_data_5(uint32_t value);
+  public:
+
+  // uint32 data_6 = 8;
+  void clear_data_6();
+  uint32_t data_6() const;
+  void set_data_6(uint32_t value);
+  private:
+  uint32_t _internal_data_6() const;
+  void _internal_set_data_6(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 9;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.INV_R_RESPONSE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t reg_id_;
+  uint32_t data_0_;
+  uint32_t data_1_;
+  uint32_t data_2_;
+  uint32_t data_3_;
+  uint32_t data_4_;
+  uint32_t data_5_;
+  uint32_t data_6_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class FLASH_CELLBOARD_0_TX final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.FLASH_CELLBOARD_0_TX) */ {
  public:
@@ -7470,7 +8245,7 @@ class FLASH_CELLBOARD_0_TX final :
                &_FLASH_CELLBOARD_0_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    45;
 
   friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
     a.Swap(&b);
@@ -7613,7 +8388,7 @@ class FLASH_CELLBOARD_0_RX final :
                &_FLASH_CELLBOARD_0_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
     a.Swap(&b);
@@ -7756,7 +8531,7 @@ class FLASH_CELLBOARD_1_TX final :
                &_FLASH_CELLBOARD_1_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    47;
 
   friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
     a.Swap(&b);
@@ -7899,7 +8674,7 @@ class FLASH_CELLBOARD_1_RX final :
                &_FLASH_CELLBOARD_1_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
     a.Swap(&b);
@@ -8042,7 +8817,7 @@ class FLASH_CELLBOARD_2_TX final :
                &_FLASH_CELLBOARD_2_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    49;
 
   friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
     a.Swap(&b);
@@ -8185,7 +8960,7 @@ class FLASH_CELLBOARD_2_RX final :
                &_FLASH_CELLBOARD_2_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    50;
 
   friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
     a.Swap(&b);
@@ -8328,7 +9103,7 @@ class FLASH_CELLBOARD_3_TX final :
                &_FLASH_CELLBOARD_3_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    51;
 
   friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
     a.Swap(&b);
@@ -8471,7 +9246,7 @@ class FLASH_CELLBOARD_3_RX final :
                &_FLASH_CELLBOARD_3_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    52;
 
   friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
     a.Swap(&b);
@@ -8614,7 +9389,7 @@ class FLASH_CELLBOARD_4_TX final :
                &_FLASH_CELLBOARD_4_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    53;
 
   friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
     a.Swap(&b);
@@ -8757,7 +9532,7 @@ class FLASH_CELLBOARD_4_RX final :
                &_FLASH_CELLBOARD_4_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    54;
 
   friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
     a.Swap(&b);
@@ -8900,7 +9675,7 @@ class FLASH_CELLBOARD_5_TX final :
                &_FLASH_CELLBOARD_5_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    55;
 
   friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
     a.Swap(&b);
@@ -9043,7 +9818,7 @@ class FLASH_CELLBOARD_5_RX final :
                &_FLASH_CELLBOARD_5_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    56;
 
   friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
     a.Swap(&b);
@@ -9186,7 +9961,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    57;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -9297,19 +10072,23 @@ class Pack final :
     kHANDCARTSTATUSFieldNumber = 38,
     kSPEEDFieldNumber = 39,
     kINVLSETTORQUEFieldNumber = 40,
-    kINVLRESPONSEFieldNumber = 41,
-    kFLASHCELLBOARD0TXFieldNumber = 42,
-    kFLASHCELLBOARD0RXFieldNumber = 43,
-    kFLASHCELLBOARD1TXFieldNumber = 44,
-    kFLASHCELLBOARD1RXFieldNumber = 45,
-    kFLASHCELLBOARD2TXFieldNumber = 46,
-    kFLASHCELLBOARD2RXFieldNumber = 47,
-    kFLASHCELLBOARD3TXFieldNumber = 48,
-    kFLASHCELLBOARD3RXFieldNumber = 49,
-    kFLASHCELLBOARD4TXFieldNumber = 50,
-    kFLASHCELLBOARD4RXFieldNumber = 51,
-    kFLASHCELLBOARD5TXFieldNumber = 52,
-    kFLASHCELLBOARD5RXFieldNumber = 53,
+    kINVRSETTORQUEFieldNumber = 41,
+    kINVLREQUESTFieldNumber = 42,
+    kINVRREQUESTFieldNumber = 43,
+    kINVLRESPONSEFieldNumber = 44,
+    kINVRRESPONSEFieldNumber = 45,
+    kFLASHCELLBOARD0TXFieldNumber = 46,
+    kFLASHCELLBOARD0RXFieldNumber = 47,
+    kFLASHCELLBOARD1TXFieldNumber = 48,
+    kFLASHCELLBOARD1RXFieldNumber = 49,
+    kFLASHCELLBOARD2TXFieldNumber = 50,
+    kFLASHCELLBOARD2RXFieldNumber = 51,
+    kFLASHCELLBOARD3TXFieldNumber = 52,
+    kFLASHCELLBOARD3RXFieldNumber = 53,
+    kFLASHCELLBOARD4TXFieldNumber = 54,
+    kFLASHCELLBOARD4RXFieldNumber = 55,
+    kFLASHCELLBOARD5TXFieldNumber = 56,
+    kFLASHCELLBOARD5RXFieldNumber = 57,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -10031,7 +10810,61 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_SET_TORQUE >&
       inv_l_set_torque() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 41;
+  // repeated .primary.INV_R_SET_TORQUE INV_R_SET_TORQUE = 41;
+  int inv_r_set_torque_size() const;
+  private:
+  int _internal_inv_r_set_torque_size() const;
+  public:
+  void clear_inv_r_set_torque();
+  ::primary::INV_R_SET_TORQUE* mutable_inv_r_set_torque(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_SET_TORQUE >*
+      mutable_inv_r_set_torque();
+  private:
+  const ::primary::INV_R_SET_TORQUE& _internal_inv_r_set_torque(int index) const;
+  ::primary::INV_R_SET_TORQUE* _internal_add_inv_r_set_torque();
+  public:
+  const ::primary::INV_R_SET_TORQUE& inv_r_set_torque(int index) const;
+  ::primary::INV_R_SET_TORQUE* add_inv_r_set_torque();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_SET_TORQUE >&
+      inv_r_set_torque() const;
+
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 42;
+  int inv_l_request_size() const;
+  private:
+  int _internal_inv_l_request_size() const;
+  public:
+  void clear_inv_l_request();
+  ::primary::INV_L_REQUEST* mutable_inv_l_request(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >*
+      mutable_inv_l_request();
+  private:
+  const ::primary::INV_L_REQUEST& _internal_inv_l_request(int index) const;
+  ::primary::INV_L_REQUEST* _internal_add_inv_l_request();
+  public:
+  const ::primary::INV_L_REQUEST& inv_l_request(int index) const;
+  ::primary::INV_L_REQUEST* add_inv_l_request();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >&
+      inv_l_request() const;
+
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 43;
+  int inv_r_request_size() const;
+  private:
+  int _internal_inv_r_request_size() const;
+  public:
+  void clear_inv_r_request();
+  ::primary::INV_R_REQUEST* mutable_inv_r_request(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >*
+      mutable_inv_r_request();
+  private:
+  const ::primary::INV_R_REQUEST& _internal_inv_r_request(int index) const;
+  ::primary::INV_R_REQUEST* _internal_add_inv_r_request();
+  public:
+  const ::primary::INV_R_REQUEST& inv_r_request(int index) const;
+  ::primary::INV_R_REQUEST* add_inv_r_request();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >&
+      inv_r_request() const;
+
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 44;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -10049,7 +10882,25 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_RESPONSE >&
       inv_l_response() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 42;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 45;
+  int inv_r_response_size() const;
+  private:
+  int _internal_inv_r_response_size() const;
+  public:
+  void clear_inv_r_response();
+  ::primary::INV_R_RESPONSE* mutable_inv_r_response(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >*
+      mutable_inv_r_response();
+  private:
+  const ::primary::INV_R_RESPONSE& _internal_inv_r_response(int index) const;
+  ::primary::INV_R_RESPONSE* _internal_add_inv_r_response();
+  public:
+  const ::primary::INV_R_RESPONSE& inv_r_response(int index) const;
+  ::primary::INV_R_RESPONSE* add_inv_r_response();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >&
+      inv_r_response() const;
+
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 46;
   int flash_cellboard_0_tx_size() const;
   private:
   int _internal_flash_cellboard_0_tx_size() const;
@@ -10067,7 +10918,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX >&
       flash_cellboard_0_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 43;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 47;
   int flash_cellboard_0_rx_size() const;
   private:
   int _internal_flash_cellboard_0_rx_size() const;
@@ -10085,7 +10936,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX >&
       flash_cellboard_0_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 44;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 48;
   int flash_cellboard_1_tx_size() const;
   private:
   int _internal_flash_cellboard_1_tx_size() const;
@@ -10103,7 +10954,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX >&
       flash_cellboard_1_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 45;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 49;
   int flash_cellboard_1_rx_size() const;
   private:
   int _internal_flash_cellboard_1_rx_size() const;
@@ -10121,7 +10972,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_RX >&
       flash_cellboard_1_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 46;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 50;
   int flash_cellboard_2_tx_size() const;
   private:
   int _internal_flash_cellboard_2_tx_size() const;
@@ -10139,7 +10990,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_TX >&
       flash_cellboard_2_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 47;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 51;
   int flash_cellboard_2_rx_size() const;
   private:
   int _internal_flash_cellboard_2_rx_size() const;
@@ -10157,7 +11008,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_RX >&
       flash_cellboard_2_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 48;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 52;
   int flash_cellboard_3_tx_size() const;
   private:
   int _internal_flash_cellboard_3_tx_size() const;
@@ -10175,7 +11026,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_TX >&
       flash_cellboard_3_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 49;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 53;
   int flash_cellboard_3_rx_size() const;
   private:
   int _internal_flash_cellboard_3_rx_size() const;
@@ -10193,7 +11044,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_RX >&
       flash_cellboard_3_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 50;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 54;
   int flash_cellboard_4_tx_size() const;
   private:
   int _internal_flash_cellboard_4_tx_size() const;
@@ -10211,7 +11062,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_TX >&
       flash_cellboard_4_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 51;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 55;
   int flash_cellboard_4_rx_size() const;
   private:
   int _internal_flash_cellboard_4_rx_size() const;
@@ -10229,7 +11080,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX >&
       flash_cellboard_4_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 52;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 56;
   int flash_cellboard_5_tx_size() const;
   private:
   int _internal_flash_cellboard_5_tx_size() const;
@@ -10247,7 +11098,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX >&
       flash_cellboard_5_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 53;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 57;
   int flash_cellboard_5_rx_size() const;
   private:
   int _internal_flash_cellboard_5_rx_size() const;
@@ -10312,7 +11163,11 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS > handcart_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED > speed_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_SET_TORQUE > inv_l_set_torque_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_SET_TORQUE > inv_r_set_torque_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST > inv_l_request_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST > inv_r_request_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_RESPONSE > inv_l_response_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE > inv_r_response_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX > flash_cellboard_0_tx_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX > flash_cellboard_0_rx_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX > flash_cellboard_1_tx_;
@@ -12957,6 +13812,258 @@ inline void INV_L_SET_TORQUE::set__inner_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// INV_R_SET_TORQUE
+
+// uint32 reg_id = 1;
+inline void INV_R_SET_TORQUE::clear_reg_id() {
+  reg_id_ = 0u;
+}
+inline uint32_t INV_R_SET_TORQUE::_internal_reg_id() const {
+  return reg_id_;
+}
+inline uint32_t INV_R_SET_TORQUE::reg_id() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_SET_TORQUE.reg_id)
+  return _internal_reg_id();
+}
+inline void INV_R_SET_TORQUE::_internal_set_reg_id(uint32_t value) {
+  
+  reg_id_ = value;
+}
+inline void INV_R_SET_TORQUE::set_reg_id(uint32_t value) {
+  _internal_set_reg_id(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_SET_TORQUE.reg_id)
+}
+
+// uint32 lsb = 2;
+inline void INV_R_SET_TORQUE::clear_lsb() {
+  lsb_ = 0u;
+}
+inline uint32_t INV_R_SET_TORQUE::_internal_lsb() const {
+  return lsb_;
+}
+inline uint32_t INV_R_SET_TORQUE::lsb() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_SET_TORQUE.lsb)
+  return _internal_lsb();
+}
+inline void INV_R_SET_TORQUE::_internal_set_lsb(uint32_t value) {
+  
+  lsb_ = value;
+}
+inline void INV_R_SET_TORQUE::set_lsb(uint32_t value) {
+  _internal_set_lsb(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_SET_TORQUE.lsb)
+}
+
+// uint32 msb = 3;
+inline void INV_R_SET_TORQUE::clear_msb() {
+  msb_ = 0u;
+}
+inline uint32_t INV_R_SET_TORQUE::_internal_msb() const {
+  return msb_;
+}
+inline uint32_t INV_R_SET_TORQUE::msb() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_SET_TORQUE.msb)
+  return _internal_msb();
+}
+inline void INV_R_SET_TORQUE::_internal_set_msb(uint32_t value) {
+  
+  msb_ = value;
+}
+inline void INV_R_SET_TORQUE::set_msb(uint32_t value) {
+  _internal_set_msb(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_SET_TORQUE.msb)
+}
+
+// uint64 _inner_timestamp = 4;
+inline void INV_R_SET_TORQUE::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t INV_R_SET_TORQUE::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t INV_R_SET_TORQUE::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_SET_TORQUE._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void INV_R_SET_TORQUE::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void INV_R_SET_TORQUE::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_SET_TORQUE._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// INV_L_REQUEST
+
+// uint32 cmd = 1;
+inline void INV_L_REQUEST::clear_cmd() {
+  cmd_ = 0u;
+}
+inline uint32_t INV_L_REQUEST::_internal_cmd() const {
+  return cmd_;
+}
+inline uint32_t INV_L_REQUEST::cmd() const {
+  // @@protoc_insertion_point(field_get:primary.INV_L_REQUEST.cmd)
+  return _internal_cmd();
+}
+inline void INV_L_REQUEST::_internal_set_cmd(uint32_t value) {
+  
+  cmd_ = value;
+}
+inline void INV_L_REQUEST::set_cmd(uint32_t value) {
+  _internal_set_cmd(value);
+  // @@protoc_insertion_point(field_set:primary.INV_L_REQUEST.cmd)
+}
+
+// uint32 reg_id = 2;
+inline void INV_L_REQUEST::clear_reg_id() {
+  reg_id_ = 0u;
+}
+inline uint32_t INV_L_REQUEST::_internal_reg_id() const {
+  return reg_id_;
+}
+inline uint32_t INV_L_REQUEST::reg_id() const {
+  // @@protoc_insertion_point(field_get:primary.INV_L_REQUEST.reg_id)
+  return _internal_reg_id();
+}
+inline void INV_L_REQUEST::_internal_set_reg_id(uint32_t value) {
+  
+  reg_id_ = value;
+}
+inline void INV_L_REQUEST::set_reg_id(uint32_t value) {
+  _internal_set_reg_id(value);
+  // @@protoc_insertion_point(field_set:primary.INV_L_REQUEST.reg_id)
+}
+
+// uint32 interval = 3;
+inline void INV_L_REQUEST::clear_interval() {
+  interval_ = 0u;
+}
+inline uint32_t INV_L_REQUEST::_internal_interval() const {
+  return interval_;
+}
+inline uint32_t INV_L_REQUEST::interval() const {
+  // @@protoc_insertion_point(field_get:primary.INV_L_REQUEST.interval)
+  return _internal_interval();
+}
+inline void INV_L_REQUEST::_internal_set_interval(uint32_t value) {
+  
+  interval_ = value;
+}
+inline void INV_L_REQUEST::set_interval(uint32_t value) {
+  _internal_set_interval(value);
+  // @@protoc_insertion_point(field_set:primary.INV_L_REQUEST.interval)
+}
+
+// uint64 _inner_timestamp = 4;
+inline void INV_L_REQUEST::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t INV_L_REQUEST::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t INV_L_REQUEST::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.INV_L_REQUEST._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void INV_L_REQUEST::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void INV_L_REQUEST::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.INV_L_REQUEST._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// INV_R_REQUEST
+
+// uint32 cmd = 1;
+inline void INV_R_REQUEST::clear_cmd() {
+  cmd_ = 0u;
+}
+inline uint32_t INV_R_REQUEST::_internal_cmd() const {
+  return cmd_;
+}
+inline uint32_t INV_R_REQUEST::cmd() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_REQUEST.cmd)
+  return _internal_cmd();
+}
+inline void INV_R_REQUEST::_internal_set_cmd(uint32_t value) {
+  
+  cmd_ = value;
+}
+inline void INV_R_REQUEST::set_cmd(uint32_t value) {
+  _internal_set_cmd(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_REQUEST.cmd)
+}
+
+// uint32 reg_id = 2;
+inline void INV_R_REQUEST::clear_reg_id() {
+  reg_id_ = 0u;
+}
+inline uint32_t INV_R_REQUEST::_internal_reg_id() const {
+  return reg_id_;
+}
+inline uint32_t INV_R_REQUEST::reg_id() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_REQUEST.reg_id)
+  return _internal_reg_id();
+}
+inline void INV_R_REQUEST::_internal_set_reg_id(uint32_t value) {
+  
+  reg_id_ = value;
+}
+inline void INV_R_REQUEST::set_reg_id(uint32_t value) {
+  _internal_set_reg_id(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_REQUEST.reg_id)
+}
+
+// uint32 interval = 3;
+inline void INV_R_REQUEST::clear_interval() {
+  interval_ = 0u;
+}
+inline uint32_t INV_R_REQUEST::_internal_interval() const {
+  return interval_;
+}
+inline uint32_t INV_R_REQUEST::interval() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_REQUEST.interval)
+  return _internal_interval();
+}
+inline void INV_R_REQUEST::_internal_set_interval(uint32_t value) {
+  
+  interval_ = value;
+}
+inline void INV_R_REQUEST::set_interval(uint32_t value) {
+  _internal_set_interval(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_REQUEST.interval)
+}
+
+// uint64 _inner_timestamp = 4;
+inline void INV_R_REQUEST::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t INV_R_REQUEST::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t INV_R_REQUEST::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_REQUEST._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void INV_R_REQUEST::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void INV_R_REQUEST::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_REQUEST._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // INV_L_RESPONSE
 
 // uint32 reg_id = 1;
@@ -13137,6 +14244,190 @@ inline void INV_L_RESPONSE::_internal_set__inner_timestamp(uint64_t value) {
 inline void INV_L_RESPONSE::set__inner_timestamp(uint64_t value) {
   _internal_set__inner_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.INV_L_RESPONSE._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// INV_R_RESPONSE
+
+// uint32 reg_id = 1;
+inline void INV_R_RESPONSE::clear_reg_id() {
+  reg_id_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_reg_id() const {
+  return reg_id_;
+}
+inline uint32_t INV_R_RESPONSE::reg_id() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.reg_id)
+  return _internal_reg_id();
+}
+inline void INV_R_RESPONSE::_internal_set_reg_id(uint32_t value) {
+  
+  reg_id_ = value;
+}
+inline void INV_R_RESPONSE::set_reg_id(uint32_t value) {
+  _internal_set_reg_id(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.reg_id)
+}
+
+// uint32 data_0 = 2;
+inline void INV_R_RESPONSE::clear_data_0() {
+  data_0_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_0() const {
+  return data_0_;
+}
+inline uint32_t INV_R_RESPONSE::data_0() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_0)
+  return _internal_data_0();
+}
+inline void INV_R_RESPONSE::_internal_set_data_0(uint32_t value) {
+  
+  data_0_ = value;
+}
+inline void INV_R_RESPONSE::set_data_0(uint32_t value) {
+  _internal_set_data_0(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_0)
+}
+
+// uint32 data_1 = 3;
+inline void INV_R_RESPONSE::clear_data_1() {
+  data_1_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_1() const {
+  return data_1_;
+}
+inline uint32_t INV_R_RESPONSE::data_1() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_1)
+  return _internal_data_1();
+}
+inline void INV_R_RESPONSE::_internal_set_data_1(uint32_t value) {
+  
+  data_1_ = value;
+}
+inline void INV_R_RESPONSE::set_data_1(uint32_t value) {
+  _internal_set_data_1(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_1)
+}
+
+// uint32 data_2 = 4;
+inline void INV_R_RESPONSE::clear_data_2() {
+  data_2_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_2() const {
+  return data_2_;
+}
+inline uint32_t INV_R_RESPONSE::data_2() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_2)
+  return _internal_data_2();
+}
+inline void INV_R_RESPONSE::_internal_set_data_2(uint32_t value) {
+  
+  data_2_ = value;
+}
+inline void INV_R_RESPONSE::set_data_2(uint32_t value) {
+  _internal_set_data_2(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_2)
+}
+
+// uint32 data_3 = 5;
+inline void INV_R_RESPONSE::clear_data_3() {
+  data_3_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_3() const {
+  return data_3_;
+}
+inline uint32_t INV_R_RESPONSE::data_3() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_3)
+  return _internal_data_3();
+}
+inline void INV_R_RESPONSE::_internal_set_data_3(uint32_t value) {
+  
+  data_3_ = value;
+}
+inline void INV_R_RESPONSE::set_data_3(uint32_t value) {
+  _internal_set_data_3(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_3)
+}
+
+// uint32 data_4 = 6;
+inline void INV_R_RESPONSE::clear_data_4() {
+  data_4_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_4() const {
+  return data_4_;
+}
+inline uint32_t INV_R_RESPONSE::data_4() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_4)
+  return _internal_data_4();
+}
+inline void INV_R_RESPONSE::_internal_set_data_4(uint32_t value) {
+  
+  data_4_ = value;
+}
+inline void INV_R_RESPONSE::set_data_4(uint32_t value) {
+  _internal_set_data_4(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_4)
+}
+
+// uint32 data_5 = 7;
+inline void INV_R_RESPONSE::clear_data_5() {
+  data_5_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_5() const {
+  return data_5_;
+}
+inline uint32_t INV_R_RESPONSE::data_5() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_5)
+  return _internal_data_5();
+}
+inline void INV_R_RESPONSE::_internal_set_data_5(uint32_t value) {
+  
+  data_5_ = value;
+}
+inline void INV_R_RESPONSE::set_data_5(uint32_t value) {
+  _internal_set_data_5(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_5)
+}
+
+// uint32 data_6 = 8;
+inline void INV_R_RESPONSE::clear_data_6() {
+  data_6_ = 0u;
+}
+inline uint32_t INV_R_RESPONSE::_internal_data_6() const {
+  return data_6_;
+}
+inline uint32_t INV_R_RESPONSE::data_6() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE.data_6)
+  return _internal_data_6();
+}
+inline void INV_R_RESPONSE::_internal_set_data_6(uint32_t value) {
+  
+  data_6_ = value;
+}
+inline void INV_R_RESPONSE::set_data_6(uint32_t value) {
+  _internal_set_data_6(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE.data_6)
+}
+
+// uint64 _inner_timestamp = 9;
+inline void INV_R_RESPONSE::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t INV_R_RESPONSE::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t INV_R_RESPONSE::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.INV_R_RESPONSE._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void INV_R_RESPONSE::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void INV_R_RESPONSE::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.INV_R_RESPONSE._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -15031,7 +16322,127 @@ Pack::inv_l_set_torque() const {
   return inv_l_set_torque_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 41;
+// repeated .primary.INV_R_SET_TORQUE INV_R_SET_TORQUE = 41;
+inline int Pack::_internal_inv_r_set_torque_size() const {
+  return inv_r_set_torque_.size();
+}
+inline int Pack::inv_r_set_torque_size() const {
+  return _internal_inv_r_set_torque_size();
+}
+inline void Pack::clear_inv_r_set_torque() {
+  inv_r_set_torque_.Clear();
+}
+inline ::primary::INV_R_SET_TORQUE* Pack::mutable_inv_r_set_torque(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.INV_R_SET_TORQUE)
+  return inv_r_set_torque_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_SET_TORQUE >*
+Pack::mutable_inv_r_set_torque() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.INV_R_SET_TORQUE)
+  return &inv_r_set_torque_;
+}
+inline const ::primary::INV_R_SET_TORQUE& Pack::_internal_inv_r_set_torque(int index) const {
+  return inv_r_set_torque_.Get(index);
+}
+inline const ::primary::INV_R_SET_TORQUE& Pack::inv_r_set_torque(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.INV_R_SET_TORQUE)
+  return _internal_inv_r_set_torque(index);
+}
+inline ::primary::INV_R_SET_TORQUE* Pack::_internal_add_inv_r_set_torque() {
+  return inv_r_set_torque_.Add();
+}
+inline ::primary::INV_R_SET_TORQUE* Pack::add_inv_r_set_torque() {
+  ::primary::INV_R_SET_TORQUE* _add = _internal_add_inv_r_set_torque();
+  // @@protoc_insertion_point(field_add:primary.Pack.INV_R_SET_TORQUE)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_SET_TORQUE >&
+Pack::inv_r_set_torque() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.INV_R_SET_TORQUE)
+  return inv_r_set_torque_;
+}
+
+// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 42;
+inline int Pack::_internal_inv_l_request_size() const {
+  return inv_l_request_.size();
+}
+inline int Pack::inv_l_request_size() const {
+  return _internal_inv_l_request_size();
+}
+inline void Pack::clear_inv_l_request() {
+  inv_l_request_.Clear();
+}
+inline ::primary::INV_L_REQUEST* Pack::mutable_inv_l_request(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.INV_L_REQUEST)
+  return inv_l_request_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >*
+Pack::mutable_inv_l_request() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.INV_L_REQUEST)
+  return &inv_l_request_;
+}
+inline const ::primary::INV_L_REQUEST& Pack::_internal_inv_l_request(int index) const {
+  return inv_l_request_.Get(index);
+}
+inline const ::primary::INV_L_REQUEST& Pack::inv_l_request(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.INV_L_REQUEST)
+  return _internal_inv_l_request(index);
+}
+inline ::primary::INV_L_REQUEST* Pack::_internal_add_inv_l_request() {
+  return inv_l_request_.Add();
+}
+inline ::primary::INV_L_REQUEST* Pack::add_inv_l_request() {
+  ::primary::INV_L_REQUEST* _add = _internal_add_inv_l_request();
+  // @@protoc_insertion_point(field_add:primary.Pack.INV_L_REQUEST)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >&
+Pack::inv_l_request() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.INV_L_REQUEST)
+  return inv_l_request_;
+}
+
+// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 43;
+inline int Pack::_internal_inv_r_request_size() const {
+  return inv_r_request_.size();
+}
+inline int Pack::inv_r_request_size() const {
+  return _internal_inv_r_request_size();
+}
+inline void Pack::clear_inv_r_request() {
+  inv_r_request_.Clear();
+}
+inline ::primary::INV_R_REQUEST* Pack::mutable_inv_r_request(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.INV_R_REQUEST)
+  return inv_r_request_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >*
+Pack::mutable_inv_r_request() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.INV_R_REQUEST)
+  return &inv_r_request_;
+}
+inline const ::primary::INV_R_REQUEST& Pack::_internal_inv_r_request(int index) const {
+  return inv_r_request_.Get(index);
+}
+inline const ::primary::INV_R_REQUEST& Pack::inv_r_request(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.INV_R_REQUEST)
+  return _internal_inv_r_request(index);
+}
+inline ::primary::INV_R_REQUEST* Pack::_internal_add_inv_r_request() {
+  return inv_r_request_.Add();
+}
+inline ::primary::INV_R_REQUEST* Pack::add_inv_r_request() {
+  ::primary::INV_R_REQUEST* _add = _internal_add_inv_r_request();
+  // @@protoc_insertion_point(field_add:primary.Pack.INV_R_REQUEST)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >&
+Pack::inv_r_request() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.INV_R_REQUEST)
+  return inv_r_request_;
+}
+
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 44;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -15071,7 +16482,47 @@ Pack::inv_l_response() const {
   return inv_l_response_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 42;
+// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 45;
+inline int Pack::_internal_inv_r_response_size() const {
+  return inv_r_response_.size();
+}
+inline int Pack::inv_r_response_size() const {
+  return _internal_inv_r_response_size();
+}
+inline void Pack::clear_inv_r_response() {
+  inv_r_response_.Clear();
+}
+inline ::primary::INV_R_RESPONSE* Pack::mutable_inv_r_response(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.INV_R_RESPONSE)
+  return inv_r_response_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >*
+Pack::mutable_inv_r_response() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.INV_R_RESPONSE)
+  return &inv_r_response_;
+}
+inline const ::primary::INV_R_RESPONSE& Pack::_internal_inv_r_response(int index) const {
+  return inv_r_response_.Get(index);
+}
+inline const ::primary::INV_R_RESPONSE& Pack::inv_r_response(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.INV_R_RESPONSE)
+  return _internal_inv_r_response(index);
+}
+inline ::primary::INV_R_RESPONSE* Pack::_internal_add_inv_r_response() {
+  return inv_r_response_.Add();
+}
+inline ::primary::INV_R_RESPONSE* Pack::add_inv_r_response() {
+  ::primary::INV_R_RESPONSE* _add = _internal_add_inv_r_response();
+  // @@protoc_insertion_point(field_add:primary.Pack.INV_R_RESPONSE)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >&
+Pack::inv_r_response() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.INV_R_RESPONSE)
+  return inv_r_response_;
+}
+
+// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 46;
 inline int Pack::_internal_flash_cellboard_0_tx_size() const {
   return flash_cellboard_0_tx_.size();
 }
@@ -15111,7 +16562,7 @@ Pack::flash_cellboard_0_tx() const {
   return flash_cellboard_0_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 43;
+// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 47;
 inline int Pack::_internal_flash_cellboard_0_rx_size() const {
   return flash_cellboard_0_rx_.size();
 }
@@ -15151,7 +16602,7 @@ Pack::flash_cellboard_0_rx() const {
   return flash_cellboard_0_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 44;
+// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 48;
 inline int Pack::_internal_flash_cellboard_1_tx_size() const {
   return flash_cellboard_1_tx_.size();
 }
@@ -15191,7 +16642,7 @@ Pack::flash_cellboard_1_tx() const {
   return flash_cellboard_1_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 45;
+// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 49;
 inline int Pack::_internal_flash_cellboard_1_rx_size() const {
   return flash_cellboard_1_rx_.size();
 }
@@ -15231,7 +16682,7 @@ Pack::flash_cellboard_1_rx() const {
   return flash_cellboard_1_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 46;
+// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 50;
 inline int Pack::_internal_flash_cellboard_2_tx_size() const {
   return flash_cellboard_2_tx_.size();
 }
@@ -15271,7 +16722,7 @@ Pack::flash_cellboard_2_tx() const {
   return flash_cellboard_2_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 47;
+// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 51;
 inline int Pack::_internal_flash_cellboard_2_rx_size() const {
   return flash_cellboard_2_rx_.size();
 }
@@ -15311,7 +16762,7 @@ Pack::flash_cellboard_2_rx() const {
   return flash_cellboard_2_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 48;
+// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 52;
 inline int Pack::_internal_flash_cellboard_3_tx_size() const {
   return flash_cellboard_3_tx_.size();
 }
@@ -15351,7 +16802,7 @@ Pack::flash_cellboard_3_tx() const {
   return flash_cellboard_3_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 49;
+// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 53;
 inline int Pack::_internal_flash_cellboard_3_rx_size() const {
   return flash_cellboard_3_rx_.size();
 }
@@ -15391,7 +16842,7 @@ Pack::flash_cellboard_3_rx() const {
   return flash_cellboard_3_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 50;
+// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 54;
 inline int Pack::_internal_flash_cellboard_4_tx_size() const {
   return flash_cellboard_4_tx_.size();
 }
@@ -15431,7 +16882,7 @@ Pack::flash_cellboard_4_tx() const {
   return flash_cellboard_4_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 51;
+// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 55;
 inline int Pack::_internal_flash_cellboard_4_rx_size() const {
   return flash_cellboard_4_rx_.size();
 }
@@ -15471,7 +16922,7 @@ Pack::flash_cellboard_4_rx() const {
   return flash_cellboard_4_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 52;
+// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 56;
 inline int Pack::_internal_flash_cellboard_5_tx_size() const {
   return flash_cellboard_5_tx_.size();
 }
@@ -15511,7 +16962,7 @@ Pack::flash_cellboard_5_tx() const {
   return flash_cellboard_5_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 53;
+// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 57;
 inline int Pack::_internal_flash_cellboard_5_rx_size() const {
   return flash_cellboard_5_rx_.size();
 }
@@ -15554,6 +17005,14 @@ Pack::flash_cellboard_5_rx() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

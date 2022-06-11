@@ -85,19 +85,23 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_watchdog_index_HANDCART_STATUS 37
 #define primary_watchdog_index_SPEED 38
 #define primary_watchdog_index_INV_L_SET_TORQUE 39
-#define primary_watchdog_index_INV_L_RESPONSE 40
-#define primary_watchdog_index_FLASH_CELLBOARD_0_TX 41
-#define primary_watchdog_index_FLASH_CELLBOARD_0_RX 42
-#define primary_watchdog_index_FLASH_CELLBOARD_1_TX 43
-#define primary_watchdog_index_FLASH_CELLBOARD_1_RX 44
-#define primary_watchdog_index_FLASH_CELLBOARD_2_TX 45
-#define primary_watchdog_index_FLASH_CELLBOARD_2_RX 46
-#define primary_watchdog_index_FLASH_CELLBOARD_3_TX 47
-#define primary_watchdog_index_FLASH_CELLBOARD_3_RX 48
-#define primary_watchdog_index_FLASH_CELLBOARD_4_TX 49
-#define primary_watchdog_index_FLASH_CELLBOARD_4_RX 50
-#define primary_watchdog_index_FLASH_CELLBOARD_5_TX 51
-#define primary_watchdog_index_FLASH_CELLBOARD_5_RX 52
+#define primary_watchdog_index_INV_R_SET_TORQUE 40
+#define primary_watchdog_index_INV_L_REQUEST 41
+#define primary_watchdog_index_INV_R_REQUEST 42
+#define primary_watchdog_index_INV_L_RESPONSE 43
+#define primary_watchdog_index_INV_R_RESPONSE 44
+#define primary_watchdog_index_FLASH_CELLBOARD_0_TX 45
+#define primary_watchdog_index_FLASH_CELLBOARD_0_RX 46
+#define primary_watchdog_index_FLASH_CELLBOARD_1_TX 47
+#define primary_watchdog_index_FLASH_CELLBOARD_1_RX 48
+#define primary_watchdog_index_FLASH_CELLBOARD_2_TX 49
+#define primary_watchdog_index_FLASH_CELLBOARD_2_RX 50
+#define primary_watchdog_index_FLASH_CELLBOARD_3_TX 51
+#define primary_watchdog_index_FLASH_CELLBOARD_3_RX 52
+#define primary_watchdog_index_FLASH_CELLBOARD_4_TX 53
+#define primary_watchdog_index_FLASH_CELLBOARD_4_RX 54
+#define primary_watchdog_index_FLASH_CELLBOARD_5_TX 55
+#define primary_watchdog_index_FLASH_CELLBOARD_5_RX 56
 
 
 #define primary_BMS_HV_JMP_TO_BLT_INTERVAL -1
@@ -139,7 +143,11 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_HANDCART_STATUS_INTERVAL 500
 #define primary_SPEED_INTERVAL 100
 #define primary_INV_L_SET_TORQUE_INTERVAL 20
+#define primary_INV_R_SET_TORQUE_INTERVAL 20
+#define primary_INV_L_REQUEST_INTERVAL 20
+#define primary_INV_R_REQUEST_INTERVAL 20
 #define primary_INV_L_RESPONSE_INTERVAL 100
+#define primary_INV_R_RESPONSE_INTERVAL 100
 #define primary_FLASH_CELLBOARD_0_TX_INTERVAL -1
 #define primary_FLASH_CELLBOARD_0_RX_INTERVAL -1
 #define primary_FLASH_CELLBOARD_1_TX_INTERVAL -1
@@ -158,9 +166,9 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_ONCE -1
 
 typedef struct {
-    uint8_t activated[7];
-    uint8_t timeout[7];
-    canlib_watchdog_timestamp last_reset[53];
+    uint8_t activated[8];
+    uint8_t timeout[8];
+    canlib_watchdog_timestamp last_reset[57];
 } primary_watchdog;
 
 int primary_watchdog_index_from_id(canlib_message_id id);
@@ -255,8 +263,16 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
         return primary_SPEED_INTERVAL;
     case 513:
         return primary_INV_L_SET_TORQUE_INTERVAL;
+    case 514:
+        return primary_INV_R_SET_TORQUE_INTERVAL;
+    case 513:
+        return primary_INV_L_REQUEST_INTERVAL;
+    case 514:
+        return primary_INV_R_REQUEST_INTERVAL;
     case 385:
         return primary_INV_L_RESPONSE_INTERVAL;
+    case 386:
+        return primary_INV_R_RESPONSE_INTERVAL;
     case 16:
         return primary_FLASH_CELLBOARD_0_TX_INTERVAL;
     case 17:
@@ -327,7 +343,11 @@ int primary_watchdog_index_from_id(canlib_message_id id) {
         case 773: return primary_watchdog_index_HANDCART_STATUS;
         case 547: return primary_watchdog_index_SPEED;
         case 513: return primary_watchdog_index_INV_L_SET_TORQUE;
+        case 514: return primary_watchdog_index_INV_R_SET_TORQUE;
+        case 513: return primary_watchdog_index_INV_L_REQUEST;
+        case 514: return primary_watchdog_index_INV_R_REQUEST;
         case 385: return primary_watchdog_index_INV_L_RESPONSE;
+        case 386: return primary_watchdog_index_INV_R_RESPONSE;
         case 16: return primary_watchdog_index_FLASH_CELLBOARD_0_TX;
         case 17: return primary_watchdog_index_FLASH_CELLBOARD_0_RX;
         case 18: return primary_watchdog_index_FLASH_CELLBOARD_1_TX;
@@ -341,7 +361,7 @@ int primary_watchdog_index_from_id(canlib_message_id id) {
         case 26: return primary_watchdog_index_FLASH_CELLBOARD_5_TX;
         case 27: return primary_watchdog_index_FLASH_CELLBOARD_5_RX;
     }
-    return 53; // invalid
+    return 57; // invalid
 }
 
 primary_watchdog* primary_watchdog_new() {
@@ -357,7 +377,7 @@ primary_watchdog* primary_watchdog_new() {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 53 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 57 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -533,10 +553,34 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_L_SET_TORQUE);
     }
     if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INV_R_SET_TORQUE)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_INV_R_SET_TORQUE] > primary_INV_R_SET_TORQUE_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_R_SET_TORQUE);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INV_L_REQUEST)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_INV_L_REQUEST] > primary_INV_L_REQUEST_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_L_REQUEST);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INV_R_REQUEST)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_INV_R_REQUEST] > primary_INV_R_REQUEST_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_R_REQUEST);
+    }
+    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INV_L_RESPONSE)
         && timestamp - watchdog->last_reset[primary_watchdog_index_INV_L_RESPONSE] > primary_INV_L_RESPONSE_INTERVAL
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_L_RESPONSE);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INV_R_RESPONSE)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_INV_R_RESPONSE] > primary_INV_R_RESPONSE_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INV_R_RESPONSE);
     }
 }
 

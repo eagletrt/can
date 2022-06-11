@@ -110,7 +110,11 @@ typedef uint16_t canlib_message_id;
 #define primary_topic_mask_FIXED_IDS 0b00000011111
 
 #define primary_id_INV_L_SET_TORQUE 0b01000000001 // dec: 513 hex: 0x201
+#define primary_id_INV_R_SET_TORQUE 0b01000000010 // dec: 514 hex: 0x202
+#define primary_id_INV_L_REQUEST 0b01000000001 // dec: 513 hex: 0x201
+#define primary_id_INV_R_REQUEST 0b01000000010 // dec: 514 hex: 0x202
 #define primary_id_INV_L_RESPONSE 0b00110000001 // dec: 385 hex: 0x181
+#define primary_id_INV_R_RESPONSE 0b00110000010 // dec: 386 hex: 0x182
 #define primary_id_FLASH_CELLBOARD_0_TX 0b00000010000 // dec: 16 hex: 0x10
 #define primary_id_FLASH_CELLBOARD_0_RX 0b00000010001 // dec: 17 hex: 0x11
 #define primary_id_FLASH_CELLBOARD_1_TX 0b00000010010 // dec: 18 hex: 0x12
@@ -256,8 +260,20 @@ int primary_message_name_from_id(canlib_message_id id, char *buffer) {
         case primary_id_INV_L_SET_TORQUE:
             strcpy(buffer, "INV_L_SET_TORQUE");
             return 0;
+        case primary_id_INV_R_SET_TORQUE:
+            strcpy(buffer, "INV_R_SET_TORQUE");
+            return 0;
+        case primary_id_INV_L_REQUEST:
+            strcpy(buffer, "INV_L_REQUEST");
+            return 0;
+        case primary_id_INV_R_REQUEST:
+            strcpy(buffer, "INV_R_REQUEST");
+            return 0;
         case primary_id_INV_L_RESPONSE:
             strcpy(buffer, "INV_L_RESPONSE");
+            return 0;
+        case primary_id_INV_R_RESPONSE:
+            strcpy(buffer, "INV_R_RESPONSE");
             return 0;
         case primary_id_FLASH_CELLBOARD_0_TX:
             strcpy(buffer, "FLASH_CELLBOARD_0_TX");
@@ -343,7 +359,11 @@ bool primary_is_message_id(canlib_message_id message_id) {
         case 773: return true; break;
         case 547: return true; break;
         case 513: return true; break;
+        case 514: return true; break;
+        case 513: return true; break;
+        case 514: return true; break;
         case 385: return true; break;
+        case 386: return true; break;
         case 16: return true; break;
         case 17: return true; break;
         case 18: return true; break;
