@@ -778,7 +778,6 @@
         }
       }
     },
-    },
     {
       "name": "INV_R_SET_TORQUE",
       "fixed_id": 514,
