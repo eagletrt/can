@@ -156,7 +156,7 @@ typedef struct {
 #define bms_BOARD_STATUS_SIZE 3
 #define bms_TEMPERATURES_SIZE 7
 #define bms_VOLTAGES_SIZE 7
-#define bms_BALANCING_SIZE 5
+#define bms_BALANCING_SIZE 4
 #define bms_FW_UPDATE_SIZE 1
 #define bms_FLASH_CELLBOARD_0_TX_SIZE 0
 #define bms_FLASH_CELLBOARD_0_RX_SIZE 0
@@ -186,7 +186,7 @@ typedef bms_uint16 bms_Errors;
 #define bms_Errors_TEMP_COMM_5 128
 #define bms_Errors_OPEN_WIRE 256
 
-typedef bms_uint64 bms_BalancingCells;
+typedef bms_uint32 bms_BalancingCells;
 #define bms_BalancingCells_DEFAULT 0
 #define bms_BalancingCells_CELL0 1
 #define bms_BalancingCells_CELL1 2
@@ -1354,9 +1354,8 @@ bms_byte_size bms_serialize_BALANCING(
     data[0] = cells & 255;
     data[1] = (cells >> 8) & 255;
     data[2] = (cells >> 16) & 255;
-    data[3] = (cells >> 24) & 255;
-    data[4] = board_index;
-    return 5;
+    data[3] = board_index;
+    return 4;
 }
 
 bms_byte_size bms_serialize_struct_BALANCING(
@@ -1366,9 +1365,8 @@ bms_byte_size bms_serialize_struct_BALANCING(
     data[0] = message->cells & 255;
     data[1] = (message->cells >> 8) & 255;
     data[2] = (message->cells >> 16) & 255;
-    data[3] = (message->cells >> 24) & 255;
-    data[4] = message->board_index;
-    return 5;
+    data[3] = message->board_index;
+    return 4;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1383,8 +1381,8 @@ void bms_deserialize_BALANCING(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->cells = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
-    message->board_index = data[4];
+    message->cells = data[0] | (data[1] << 8) | (data[2] << 16);
+    message->board_index = data[3];
 }
 
 // ============== STRING ============== //
@@ -1395,7 +1393,7 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu64 CANLIB_SEPARATOR 
+        "%" PRIu32 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
@@ -1420,7 +1418,7 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu64 CANLIB_SEPARATOR 
+        "%" PRIu32 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,

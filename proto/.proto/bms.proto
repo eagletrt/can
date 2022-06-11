@@ -143,7 +143,7 @@ message VOLTAGES_CELLBOARD5 {
 }
 
 message BALANCING {
-    uint64 cells = 1;
+    uint32 cells = 1;
     uint32 board_index = 2;
     uint64 _inner_timestamp = 3;
 }

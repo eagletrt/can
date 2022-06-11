@@ -323,9 +323,9 @@ struct VOLTAGES_CELLBOARD5DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD5DefaultTypeInternal _VOLTAGES_CELLBOARD5_default_instance_;
 PROTOBUF_CONSTEXPR BALANCING::BALANCING(
     ::_pbi::ConstantInitialized)
-  : cells_(uint64_t{0u})
-  , _inner_timestamp_(uint64_t{0u})
-  , board_index_(0u){}
+  : cells_(0u)
+  , board_index_(0u)
+  , _inner_timestamp_(uint64_t{0u}){}
 struct BALANCINGDefaultTypeInternal {
   PROTOBUF_CONSTEXPR BALANCINGDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1019,7 +1019,7 @@ const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\020\n\010volta"
   "ge0\030\001 \001(\r\022\020\n\010voltage1\030\002 \001(\r\022\020\n\010voltage2\030"
   "\003 \001(\r\022\023\n\013start_index\030\004 \001(\r\022\030\n\020_inner_tim"
-  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\r\n\005cells\030\001 \001(\004"
+  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\r\n\005cells\030\001 \001(\r"
   "\022\023\n\013board_index\030\002 \001(\r\022\030\n\020_inner_timestam"
   "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
   "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
@@ -6162,16 +6162,16 @@ BALANCING::BALANCING(const BALANCING& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&cells_, &from.cells_,
-    static_cast<size_t>(reinterpret_cast<char*>(&board_index_) -
-    reinterpret_cast<char*>(&cells_)) + sizeof(board_index_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.BALANCING)
 }
 
 inline void BALANCING::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&cells_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&board_index_) -
-    reinterpret_cast<char*>(&cells_)) + sizeof(board_index_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
 }
 
 BALANCING::~BALANCING() {
@@ -6198,8 +6198,8 @@ void BALANCING::Clear() {
   (void) cached_has_bits;
 
   ::memset(&cells_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&board_index_) -
-      reinterpret_cast<char*>(&cells_)) + sizeof(board_index_));
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6209,10 +6209,10 @@ const char* BALANCING::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 cells = 1;
+      // uint32 cells = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6262,10 +6262,10 @@ uint8_t* BALANCING::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 cells = 1;
+  // uint32 cells = 1;
   if (this->_internal_cells() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_cells(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_cells(), target);
   }
 
   // uint32 board_index = 2;
@@ -6296,19 +6296,19 @@ size_t BALANCING::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 cells = 1;
+  // uint32 cells = 1;
   if (this->_internal_cells() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_cells());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_internal__inner_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cells());
   }
 
   // uint32 board_index = 2;
   if (this->_internal_board_index() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_board_index());
+  }
+
+  // uint64 _inner_timestamp = 3;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6336,11 +6336,11 @@ void BALANCING::MergeFrom(const BALANCING& from) {
   if (from._internal_cells() != 0) {
     _internal_set_cells(from._internal_cells());
   }
-  if (from._internal__inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
   if (from._internal_board_index() != 0) {
     _internal_set_board_index(from._internal_board_index());
+  }
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6360,8 +6360,8 @@ void BALANCING::InternalSwap(BALANCING* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BALANCING, board_index_)
-      + sizeof(BALANCING::board_index_)
+      PROTOBUF_FIELD_OFFSET(BALANCING, _inner_timestamp_)
+      + sizeof(BALANCING::_inner_timestamp_)
       - PROTOBUF_FIELD_OFFSET(BALANCING, cells_)>(
           reinterpret_cast<char*>(&cells_),
           reinterpret_cast<char*>(&other->cells_));

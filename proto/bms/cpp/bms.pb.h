@@ -3762,25 +3762,16 @@ class BALANCING final :
 
   enum : int {
     kCellsFieldNumber = 1,
-    kInnerTimestampFieldNumber = 3,
     kBoardIndexFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
   };
-  // uint64 cells = 1;
+  // uint32 cells = 1;
   void clear_cells();
-  uint64_t cells() const;
-  void set_cells(uint64_t value);
+  uint32_t cells() const;
+  void set_cells(uint32_t value);
   private:
-  uint64_t _internal_cells() const;
-  void _internal_set_cells(uint64_t value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
-  void clear__inner_timestamp();
-  uint64_t _inner_timestamp() const;
-  void set__inner_timestamp(uint64_t value);
-  private:
-  uint64_t _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(uint64_t value);
+  uint32_t _internal_cells() const;
+  void _internal_set_cells(uint32_t value);
   public:
 
   // uint32 board_index = 2;
@@ -3792,6 +3783,15 @@ class BALANCING final :
   void _internal_set_board_index(uint32_t value);
   public:
 
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:bms.BALANCING)
  private:
   class _Internal;
@@ -3799,9 +3799,9 @@ class BALANCING final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint64_t cells_;
-  uint64_t _inner_timestamp_;
+  uint32_t cells_;
   uint32_t board_index_;
+  uint64_t _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
@@ -8450,22 +8450,22 @@ inline void VOLTAGES_CELLBOARD5::set__inner_timestamp(uint64_t value) {
 
 // BALANCING
 
-// uint64 cells = 1;
+// uint32 cells = 1;
 inline void BALANCING::clear_cells() {
-  cells_ = uint64_t{0u};
+  cells_ = 0u;
 }
-inline uint64_t BALANCING::_internal_cells() const {
+inline uint32_t BALANCING::_internal_cells() const {
   return cells_;
 }
-inline uint64_t BALANCING::cells() const {
+inline uint32_t BALANCING::cells() const {
   // @@protoc_insertion_point(field_get:bms.BALANCING.cells)
   return _internal_cells();
 }
-inline void BALANCING::_internal_set_cells(uint64_t value) {
+inline void BALANCING::_internal_set_cells(uint32_t value) {
   
   cells_ = value;
 }
-inline void BALANCING::set_cells(uint64_t value) {
+inline void BALANCING::set_cells(uint32_t value) {
   _internal_set_cells(value);
   // @@protoc_insertion_point(field_set:bms.BALANCING.cells)
 }

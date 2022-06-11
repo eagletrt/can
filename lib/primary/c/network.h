@@ -239,7 +239,7 @@ typedef primary_uint8 primary_DasErrors;
 #define primary_DasErrors_INVR_TOUT 64
 #define primary_DasErrors_FSM 128
 
-typedef primary_uint64 primary_InvStatus;
+typedef primary_uint32 primary_InvStatus;
 #define primary_InvStatus_DEFAULT 0
 #define primary_InvStatus_DRIVE_ENABLE 1
 #define primary_InvStatus_NCR0 2
@@ -274,7 +274,7 @@ typedef primary_uint64 primary_InvStatus;
 #define primary_InvStatus_MD 1073741824
 #define primary_InvStatus_HND_WHL 2147483648
 
-typedef primary_uint64 primary_InvErrors;
+typedef primary_uint32 primary_InvErrors;
 #define primary_InvErrors_DEFAULT 0
 #define primary_InvErrors_BAD_PARAM 1
 #define primary_InvErrors_HW_FAULT 2

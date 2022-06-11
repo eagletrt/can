@@ -344,7 +344,7 @@ class message_BALANCING:
     ):
         self.cells = BalancingCells(cells)
         self.board_index = uint8(board_index)
-        self.size = 5
+        self.size = 4
 
     def __eq__(self, other):
         if not isinstance(other, message_BALANCING):
@@ -357,14 +357,14 @@ class message_BALANCING:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBB", (int(self.cells) >> 24) & 255, (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
+        data.extend(pack("<BBBB", (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.cells = BalancingCells(int((unpack("<BBBB", data[0:4])[0] << 24) | (unpack("<BBBB", data[0:4])[1] << 16) | (unpack("<BBBB", data[0:4])[2] << 8) | (unpack("<BBBB", data[0:4])[3] << 0)))
-        message.board_index = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cells = BalancingCells(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.board_index = uint8(unpack("<xxxB", data[0:4])[0])
         return message
 
 
