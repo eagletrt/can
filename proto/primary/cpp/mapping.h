@@ -409,8 +409,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 904: {
             primary_message_COOLING_STATUS_conversion* msg = (primary_message_COOLING_STATUS_conversion*) (*map)[index].conversion_message;
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
-            proto_msg->set_hv_fan_speed(msg->hv_fan_speed);
-            proto_msg->set_lv_fan_speed(msg->lv_fan_speed);
+            proto_msg->set_inverters_radiator_speed(msg->inverters_radiator_speed);
+            proto_msg->set_motors_radiator_speed(msg->motors_radiator_speed);
             proto_msg->set_pump_speed(msg->pump_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -893,8 +893,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     map->COOLING_STATUS.resize(pack->cooling_status_size());
     for(int i = 0; i < pack->cooling_status_size(); i++){
-        map->COOLING_STATUS[i].hv_fan_speed =pack->cooling_status(i).hv_fan_speed();
-        map->COOLING_STATUS[i].lv_fan_speed =pack->cooling_status(i).lv_fan_speed();
+        map->COOLING_STATUS[i].inverters_radiator_speed =pack->cooling_status(i).inverters_radiator_speed();
+        map->COOLING_STATUS[i].motors_radiator_speed =pack->cooling_status(i).motors_radiator_speed();
         map->COOLING_STATUS[i].pump_speed =pack->cooling_status(i).pump_speed();
 #ifdef CANLIB_TIMESTAMP
         map->COOLING_STATUS[i]._timestamp = pack->cooling_status(i)._inner_timestamp();

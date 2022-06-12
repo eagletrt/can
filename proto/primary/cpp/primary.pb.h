@@ -5448,27 +5448,27 @@ class COOLING_STATUS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kHvFanSpeedFieldNumber = 1,
-    kLvFanSpeedFieldNumber = 2,
+    kInvertersRadiatorSpeedFieldNumber = 1,
+    kMotorsRadiatorSpeedFieldNumber = 2,
     kInnerTimestampFieldNumber = 4,
     kPumpSpeedFieldNumber = 3,
   };
-  // uint32 hv_fan_speed = 1;
-  void clear_hv_fan_speed();
-  uint32_t hv_fan_speed() const;
-  void set_hv_fan_speed(uint32_t value);
+  // uint32 inverters_radiator_speed = 1;
+  void clear_inverters_radiator_speed();
+  uint32_t inverters_radiator_speed() const;
+  void set_inverters_radiator_speed(uint32_t value);
   private:
-  uint32_t _internal_hv_fan_speed() const;
-  void _internal_set_hv_fan_speed(uint32_t value);
+  uint32_t _internal_inverters_radiator_speed() const;
+  void _internal_set_inverters_radiator_speed(uint32_t value);
   public:
 
-  // uint32 lv_fan_speed = 2;
-  void clear_lv_fan_speed();
-  uint32_t lv_fan_speed() const;
-  void set_lv_fan_speed(uint32_t value);
+  // uint32 motors_radiator_speed = 2;
+  void clear_motors_radiator_speed();
+  uint32_t motors_radiator_speed() const;
+  void set_motors_radiator_speed(uint32_t value);
   private:
-  uint32_t _internal_lv_fan_speed() const;
-  void _internal_set_lv_fan_speed(uint32_t value);
+  uint32_t _internal_motors_radiator_speed() const;
+  void _internal_set_motors_radiator_speed(uint32_t value);
   public:
 
   // uint64 _inner_timestamp = 4;
@@ -5496,8 +5496,8 @@ class COOLING_STATUS final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t hv_fan_speed_;
-  uint32_t lv_fan_speed_;
+  uint32_t inverters_radiator_speed_;
+  uint32_t motors_radiator_speed_;
   uint64_t _inner_timestamp_;
   uint32_t pump_speed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -12720,44 +12720,44 @@ inline void LV_TEMPERATURE::set__inner_timestamp(uint64_t value) {
 
 // COOLING_STATUS
 
-// uint32 hv_fan_speed = 1;
-inline void COOLING_STATUS::clear_hv_fan_speed() {
-  hv_fan_speed_ = 0u;
+// uint32 inverters_radiator_speed = 1;
+inline void COOLING_STATUS::clear_inverters_radiator_speed() {
+  inverters_radiator_speed_ = 0u;
 }
-inline uint32_t COOLING_STATUS::_internal_hv_fan_speed() const {
-  return hv_fan_speed_;
+inline uint32_t COOLING_STATUS::_internal_inverters_radiator_speed() const {
+  return inverters_radiator_speed_;
 }
-inline uint32_t COOLING_STATUS::hv_fan_speed() const {
-  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.hv_fan_speed)
-  return _internal_hv_fan_speed();
+inline uint32_t COOLING_STATUS::inverters_radiator_speed() const {
+  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.inverters_radiator_speed)
+  return _internal_inverters_radiator_speed();
 }
-inline void COOLING_STATUS::_internal_set_hv_fan_speed(uint32_t value) {
+inline void COOLING_STATUS::_internal_set_inverters_radiator_speed(uint32_t value) {
   
-  hv_fan_speed_ = value;
+  inverters_radiator_speed_ = value;
 }
-inline void COOLING_STATUS::set_hv_fan_speed(uint32_t value) {
-  _internal_set_hv_fan_speed(value);
-  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.hv_fan_speed)
+inline void COOLING_STATUS::set_inverters_radiator_speed(uint32_t value) {
+  _internal_set_inverters_radiator_speed(value);
+  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.inverters_radiator_speed)
 }
 
-// uint32 lv_fan_speed = 2;
-inline void COOLING_STATUS::clear_lv_fan_speed() {
-  lv_fan_speed_ = 0u;
+// uint32 motors_radiator_speed = 2;
+inline void COOLING_STATUS::clear_motors_radiator_speed() {
+  motors_radiator_speed_ = 0u;
 }
-inline uint32_t COOLING_STATUS::_internal_lv_fan_speed() const {
-  return lv_fan_speed_;
+inline uint32_t COOLING_STATUS::_internal_motors_radiator_speed() const {
+  return motors_radiator_speed_;
 }
-inline uint32_t COOLING_STATUS::lv_fan_speed() const {
-  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.lv_fan_speed)
-  return _internal_lv_fan_speed();
+inline uint32_t COOLING_STATUS::motors_radiator_speed() const {
+  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.motors_radiator_speed)
+  return _internal_motors_radiator_speed();
 }
-inline void COOLING_STATUS::_internal_set_lv_fan_speed(uint32_t value) {
+inline void COOLING_STATUS::_internal_set_motors_radiator_speed(uint32_t value) {
   
-  lv_fan_speed_ = value;
+  motors_radiator_speed_ = value;
 }
-inline void COOLING_STATUS::set_lv_fan_speed(uint32_t value) {
-  _internal_set_lv_fan_speed(value);
-  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.lv_fan_speed)
+inline void COOLING_STATUS::set_motors_radiator_speed(uint32_t value) {
+  _internal_set_motors_radiator_speed(value);
+  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.motors_radiator_speed)
 }
 
 // uint32 pump_speed = 3;

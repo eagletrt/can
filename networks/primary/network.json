@@ -106,6 +106,27 @@
         "BALLAST_OVERLOAD_WARN"
       ]
     },
+    "Inv_IOInfo": {
+      "type": "bitset",
+      "items": [
+        "LMT1",
+        "LMT2",
+        "IN2",
+        "IN1",
+        "FRG",
+        "RFE",
+        "UNK6",
+        "UNK7",
+        "OUT1",
+        "OUT2",
+        "BTB",
+        "GO",
+        "OUT3",
+        "OUT4",
+        "G_OFF",
+        "BRK1"
+      ]
+    },
     "RaceType": {
       "type": "enum",
       "items": ["ACCELERATION", "SKIDPAD", "AUTOCROSS", "ENDURANCE"]
@@ -587,15 +608,15 @@
       "priority": 4,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit",
+      "description": "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit",
       "interval": 1000,
       "contents": {
-        "hv_fan_speed": {
+        "inverters_radiator_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"
         },
-        "lv_fan_speed": {
+        "motors_radiator_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"

@@ -161,6 +161,31 @@ class InvErrors(IntFlag):
             return cls(0)
         return super(IntFlag, cls)._missing_(value)
 
+
+class Inv_IOInfo(IntFlag):
+    LMT1 = 1
+    LMT2 = 2
+    IN2 = 4
+    IN1 = 8
+    FRG = 16
+    RFE = 32
+    UNK6 = 64
+    UNK7 = 128
+    OUT1 = 256
+    OUT2 = 512
+    BTB = 1024
+    GO = 2048
+    OUT3 = 4096
+    OUT4 = 8192
+    G_OFF = 16384
+    BRK1 = 32768
+
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 # Enums
 
 
@@ -1454,12 +1479,12 @@ class message_LV_TEMPERATURE_conversion:
 class message_COOLING_STATUS:
     def __init__(
         self,
-        hv_fan_speed = None,
-        lv_fan_speed = None,
+        inverters_radiator_speed = None,
+        motors_radiator_speed = None,
         pump_speed = None
     ):
-        self.hv_fan_speed = uint16(hv_fan_speed)
-        self.lv_fan_speed = uint16(lv_fan_speed)
+        self.inverters_radiator_speed = uint16(inverters_radiator_speed)
+        self.motors_radiator_speed = uint16(motors_radiator_speed)
         self.pump_speed = uint16(pump_speed)
         self.size = 6
         self.interval = 1000
@@ -1467,9 +1492,9 @@ class message_COOLING_STATUS:
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
             return False
-        if self.hv_fan_speed != other.hv_fan_speed:
+        if self.inverters_radiator_speed != other.inverters_radiator_speed:
             return False
-        if self.lv_fan_speed != other.lv_fan_speed:
+        if self.motors_radiator_speed != other.motors_radiator_speed:
             return False
         if self.pump_speed != other.pump_speed:
             return False
@@ -1477,22 +1502,22 @@ class message_COOLING_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHH", self.hv_fan_speed, self.lv_fan_speed, self.pump_speed))
+        data.extend(pack("<HHH", self.inverters_radiator_speed, self.motors_radiator_speed, self.pump_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.hv_fan_speed = uint16(unpack("<H", data[0:2])[0])
-        message.lv_fan_speed = uint16(unpack("<xxH", data[0:4])[0])
+        message.inverters_radiator_speed = uint16(unpack("<H", data[0:2])[0])
+        message.motors_radiator_speed = uint16(unpack("<xxH", data[0:4])[0])
         message.pump_speed = uint16(unpack("<xxxxH", data[0:6])[0])
         return message
 
 
     def convert(self) -> message_COOLING_STATUS_conversion:
         conversion = message_COOLING_STATUS_conversion()
-        conversion.hv_fan_speed = ((float32(self.hv_fan_speed)) / 65536.0) + 0
-        conversion.lv_fan_speed = ((float32(self.lv_fan_speed)) / 65536.0) + 0
+        conversion.inverters_radiator_speed = ((float32(self.inverters_radiator_speed)) / 65536.0) + 0
+        conversion.motors_radiator_speed = ((float32(self.motors_radiator_speed)) / 65536.0) + 0
         conversion.pump_speed = ((float32(self.pump_speed)) / 65536.0) + 0
         return conversion
 
@@ -1500,12 +1525,12 @@ class message_COOLING_STATUS:
 class message_COOLING_STATUS_conversion:
     def __init__(
         self,
-        hv_fan_speed = None,
-        lv_fan_speed = None,
+        inverters_radiator_speed = None,
+        motors_radiator_speed = None,
         pump_speed = None
     ):
-        self.hv_fan_speed = float32(hv_fan_speed)
-        self.lv_fan_speed = float32(lv_fan_speed)
+        self.inverters_radiator_speed = float32(inverters_radiator_speed)
+        self.motors_radiator_speed = float32(motors_radiator_speed)
         self.pump_speed = float32(pump_speed)
         self.size = 6
         self.interval = 1000
@@ -1513,9 +1538,9 @@ class message_COOLING_STATUS_conversion:
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
             return False
-        if self.hv_fan_speed != other.hv_fan_speed:
+        if self.inverters_radiator_speed != other.inverters_radiator_speed:
             return False
-        if self.lv_fan_speed != other.lv_fan_speed:
+        if self.motors_radiator_speed != other.motors_radiator_speed:
             return False
         if self.pump_speed != other.pump_speed:
             return False
@@ -1523,8 +1548,8 @@ class message_COOLING_STATUS_conversion:
 
     def convert_to_raw(self) -> message_COOLING_STATUS:
         raw = message_COOLING_STATUS()
-        raw.hv_fan_speed = uint16((self.hv_fan_speed + 0) * 65536.0)
-        raw.lv_fan_speed = uint16((self.lv_fan_speed + 0) * 65536.0)
+        raw.inverters_radiator_speed = uint16((self.inverters_radiator_speed + 0) * 65536.0)
+        raw.motors_radiator_speed = uint16((self.motors_radiator_speed + 0) * 65536.0)
         raw.pump_speed = uint16((self.pump_speed + 0) * 65536.0)
         return raw
 

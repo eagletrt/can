@@ -308,6 +308,25 @@ typedef primary_uint32 primary_InvErrors;
 #define primary_InvErrors_UNKNOWN_ERR_30 536870912
 #define primary_InvErrors_BALLAST_OVERLOAD_WARN 1073741824
 
+typedef primary_uint16 primary_Inv_IOInfo;
+#define primary_Inv_IOInfo_DEFAULT 0
+#define primary_Inv_IOInfo_LMT1 1
+#define primary_Inv_IOInfo_LMT2 2
+#define primary_Inv_IOInfo_IN2 4
+#define primary_Inv_IOInfo_IN1 8
+#define primary_Inv_IOInfo_FRG 16
+#define primary_Inv_IOInfo_RFE 32
+#define primary_Inv_IOInfo_UNK6 64
+#define primary_Inv_IOInfo_UNK7 128
+#define primary_Inv_IOInfo_OUT1 256
+#define primary_Inv_IOInfo_OUT2 512
+#define primary_Inv_IOInfo_BTB 1024
+#define primary_Inv_IOInfo_GO 2048
+#define primary_Inv_IOInfo_OUT3 4096
+#define primary_Inv_IOInfo_OUT4 8192
+#define primary_Inv_IOInfo_G_OFF 16384
+#define primary_Inv_IOInfo_BRK1 32768
+
 
 // ============== ENUMS ============== //
 
@@ -664,16 +683,16 @@ typedef struct CANLIB_PARKING {
 } primary_message_LV_TEMPERATURE_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 hv_fan_speed;
-    primary_uint16 lv_fan_speed;
+    primary_uint16 inverters_radiator_speed;
+    primary_uint16 motors_radiator_speed;
     primary_uint16 pump_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_COOLING_STATUS;
 typedef struct CANLIB_PARKING {
-    primary_float32 hv_fan_speed;
-    primary_float32 lv_fan_speed;
+    primary_float32 inverters_radiator_speed;
+    primary_float32 motors_radiator_speed;
     primary_float32 pump_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
@@ -1803,8 +1822,8 @@ int primary_fields_file_LV_TEMPERATURE(FILE* buffer);
 
 primary_byte_size primary_serialize_COOLING_STATUS(
     uint8_t* data,
-    primary_uint16 hv_fan_speed,
-    primary_uint16 lv_fan_speed,
+    primary_uint16 inverters_radiator_speed,
+    primary_uint16 motors_radiator_speed,
     primary_uint16 pump_speed
 );
 primary_byte_size primary_serialize_struct_COOLING_STATUS(
@@ -1830,8 +1849,8 @@ void primary_conversion_to_raw_struct_COOLING_STATUS(
 
 void primary_conversion_to_raw_COOLING_STATUS(
     primary_message_COOLING_STATUS* raw,
-    primary_float32 hv_fan_speed,
-    primary_float32 lv_fan_speed,
+    primary_float32 inverters_radiator_speed,
+    primary_float32 motors_radiator_speed,
     primary_float32 pump_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -1840,8 +1859,8 @@ void primary_conversion_to_raw_COOLING_STATUS(
 
 void primary_raw_to_conversion_COOLING_STATUS(
     primary_message_COOLING_STATUS_conversion* conversion,
-    primary_uint16 hv_fan_speed,
-    primary_uint16 lv_fan_speed,
+    primary_uint16 inverters_radiator_speed,
+    primary_uint16 motors_radiator_speed,
     primary_uint16 pump_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -5515,14 +5534,14 @@ int primary_fields_file_LV_TEMPERATURE(FILE* buffer) {
 
 primary_byte_size primary_serialize_COOLING_STATUS(
     uint8_t* data,
-    primary_uint16 hv_fan_speed,
-    primary_uint16 lv_fan_speed,
+    primary_uint16 inverters_radiator_speed,
+    primary_uint16 motors_radiator_speed,
     primary_uint16 pump_speed
 ) {
-    data[0] = hv_fan_speed & 255;
-    data[1] = (hv_fan_speed >> 8) & 255;
-    data[2] = lv_fan_speed & 255;
-    data[3] = (lv_fan_speed >> 8) & 255;
+    data[0] = inverters_radiator_speed & 255;
+    data[1] = (inverters_radiator_speed >> 8) & 255;
+    data[2] = motors_radiator_speed & 255;
+    data[3] = (motors_radiator_speed >> 8) & 255;
     data[4] = pump_speed & 255;
     data[5] = (pump_speed >> 8) & 255;
     return 6;
@@ -5532,10 +5551,10 @@ primary_byte_size primary_serialize_struct_COOLING_STATUS(
     uint8_t* data,
     primary_message_COOLING_STATUS* message
 ) {
-    data[0] = message->hv_fan_speed & 255;
-    data[1] = (message->hv_fan_speed >> 8) & 255;
-    data[2] = message->lv_fan_speed & 255;
-    data[3] = (message->lv_fan_speed >> 8) & 255;
+    data[0] = message->inverters_radiator_speed & 255;
+    data[1] = (message->inverters_radiator_speed >> 8) & 255;
+    data[2] = message->motors_radiator_speed & 255;
+    data[3] = (message->motors_radiator_speed >> 8) & 255;
     data[4] = message->pump_speed & 255;
     data[5] = (message->pump_speed >> 8) & 255;
     return 6;
@@ -5553,15 +5572,15 @@ void primary_deserialize_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->hv_fan_speed = data[0] | (data[1] << 8);
-    message->lv_fan_speed = data[2] | (data[3] << 8);
+    message->inverters_radiator_speed = data[0] | (data[1] << 8);
+    message->motors_radiator_speed = data[2] | (data[3] << 8);
     message->pump_speed = data[4] | (data[5] << 8);
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_COOLING_STATUS(
     primary_message_COOLING_STATUS_conversion* conversion,
-    primary_uint16 hv_fan_speed,
-    primary_uint16 lv_fan_speed,
+    primary_uint16 inverters_radiator_speed,
+    primary_uint16 motors_radiator_speed,
     primary_uint16 pump_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -5570,8 +5589,8 @@ void primary_raw_to_conversion_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->hv_fan_speed = (((primary_float32)hv_fan_speed) / 65536.0) + 0;
-    conversion->lv_fan_speed = (((primary_float32)lv_fan_speed) / 65536.0) + 0;
+    conversion->inverters_radiator_speed = (((primary_float32)inverters_radiator_speed) / 65536.0) + 0;
+    conversion->motors_radiator_speed = (((primary_float32)motors_radiator_speed) / 65536.0) + 0;
     conversion->pump_speed = (((primary_float32)pump_speed) / 65536.0) + 0;
 }
 
@@ -5582,15 +5601,15 @@ void primary_raw_to_conversion_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->hv_fan_speed = (((primary_float32)raw->hv_fan_speed) / 65536.0) + 0;
-    conversion->lv_fan_speed = (((primary_float32)raw->lv_fan_speed) / 65536.0) + 0;
+    conversion->inverters_radiator_speed = (((primary_float32)raw->inverters_radiator_speed) / 65536.0) + 0;
+    conversion->motors_radiator_speed = (((primary_float32)raw->motors_radiator_speed) / 65536.0) + 0;
     conversion->pump_speed = (((primary_float32)raw->pump_speed) / 65536.0) + 0;
 }
 
 void primary_conversion_to_raw_COOLING_STATUS(
     primary_message_COOLING_STATUS* raw,
-    primary_float32 hv_fan_speed,
-    primary_float32 lv_fan_speed,
+    primary_float32 inverters_radiator_speed,
+    primary_float32 motors_radiator_speed,
     primary_float32 pump_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -5599,8 +5618,8 @@ void primary_conversion_to_raw_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->hv_fan_speed = (primary_uint16)((hv_fan_speed + 0) * 65536.0);
-    raw->lv_fan_speed = (primary_uint16)((lv_fan_speed + 0) * 65536.0);
+    raw->inverters_radiator_speed = (primary_uint16)((inverters_radiator_speed + 0) * 65536.0);
+    raw->motors_radiator_speed = (primary_uint16)((motors_radiator_speed + 0) * 65536.0);
     raw->pump_speed = (primary_uint16)((pump_speed + 0) * 65536.0);
 }
 
@@ -5611,8 +5630,8 @@ void primary_conversion_to_raw_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->hv_fan_speed = (primary_uint16)((conversion->hv_fan_speed + 0) * 65536.0);
-    raw->lv_fan_speed = (primary_uint16)((conversion->lv_fan_speed + 0) * 65536.0);
+    raw->inverters_radiator_speed = (primary_uint16)((conversion->inverters_radiator_speed + 0) * 65536.0);
+    raw->motors_radiator_speed = (primary_uint16)((conversion->motors_radiator_speed + 0) * 65536.0);
     raw->pump_speed = (primary_uint16)((conversion->pump_speed + 0) * 65536.0);
 }
 
@@ -5630,8 +5649,8 @@ int primary_to_string_COOLING_STATUS(primary_message_COOLING_STATUS_conversion* 
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->hv_fan_speed,
-        message->lv_fan_speed,
+        message->inverters_radiator_speed,
+        message->motors_radiator_speed,
         message->pump_speed
     );
 }
@@ -5641,8 +5660,8 @@ int primary_fields_COOLING_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "hv_fan_speed" CANLIB_SEPARATOR 
-        "lv_fan_speed" CANLIB_SEPARATOR 
+        "inverters_radiator_speed" CANLIB_SEPARATOR 
+        "motors_radiator_speed" CANLIB_SEPARATOR 
         "pump_speed"
     );
 }
@@ -5658,8 +5677,8 @@ int primary_to_string_file_COOLING_STATUS(primary_message_COOLING_STATUS_convers
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->hv_fan_speed,
-        message->lv_fan_speed,
+        message->inverters_radiator_speed,
+        message->motors_radiator_speed,
         message->pump_speed
     );
 }
@@ -5669,8 +5688,8 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "hv_fan_speed" CANLIB_SEPARATOR 
-        "lv_fan_speed" CANLIB_SEPARATOR 
+        "inverters_radiator_speed" CANLIB_SEPARATOR 
+        "motors_radiator_speed" CANLIB_SEPARATOR 
         "pump_speed"
     );
 }
