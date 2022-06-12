@@ -608,15 +608,15 @@
       "priority": 4,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Percentage value 0% to 100% of bms_hv_fans, bms_lv_fans, pump_speed, 8bit",
+      "description": "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit",
       "interval": 1000,
       "contents": {
-        "hv_fan_speed": {
+        "inverters_radiator_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"
         },
-        "lv_fan_speed": {
+        "motors_radiator_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"
