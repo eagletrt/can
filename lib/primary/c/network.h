@@ -165,7 +165,7 @@ typedef struct {
 #define primary_STEER_SYSTEM_STATUS_SIZE 1
 #define primary_HV_VOLTAGE_SIZE 8
 #define primary_HV_CURRENT_SIZE 4
-#define primary_HV_TEMP_SIZE 6
+#define primary_HV_TEMP_SIZE 3
 #define primary_HV_ERRORS_SIZE 4
 #define primary_HV_CAN_FORWARD_SIZE 1
 #define primary_HV_CAN_FORWARD_STATUS_SIZE 1
@@ -520,9 +520,9 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CURRENT_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 average_temp;
-    primary_uint16 max_temp;
-    primary_uint16 min_temp;
+    primary_uint8 average_temp;
+    primary_uint8 max_temp;
+    primary_uint8 min_temp;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1300,9 +1300,9 @@ int primary_fields_file_HV_CURRENT(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_TEMP(
     uint8_t* data,
-    primary_uint16 average_temp,
-    primary_uint16 max_temp,
-    primary_uint16 min_temp
+    primary_uint8 average_temp,
+    primary_uint8 max_temp,
+    primary_uint8 min_temp
 );
 primary_byte_size primary_serialize_struct_HV_TEMP(
     uint8_t* data,
@@ -1337,9 +1337,9 @@ void primary_conversion_to_raw_HV_TEMP(
 
 void primary_raw_to_conversion_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
-    primary_uint16 average_temp,
-    primary_uint16 max_temp,
-    primary_uint16 min_temp
+    primary_uint8 average_temp,
+    primary_uint8 max_temp,
+    primary_uint8 min_temp
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3820,30 +3820,24 @@ int primary_fields_file_HV_CURRENT(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_TEMP(
     uint8_t* data,
-    primary_uint16 average_temp,
-    primary_uint16 max_temp,
-    primary_uint16 min_temp
+    primary_uint8 average_temp,
+    primary_uint8 max_temp,
+    primary_uint8 min_temp
 ) {
-    data[0] = average_temp & 255;
-    data[1] = (average_temp >> 8) & 255;
-    data[2] = max_temp & 255;
-    data[3] = (max_temp >> 8) & 255;
-    data[4] = min_temp & 255;
-    data[5] = (min_temp >> 8) & 255;
-    return 6;
+    data[0] = average_temp;
+    data[1] = max_temp;
+    data[2] = min_temp;
+    return 3;
 }
 
 primary_byte_size primary_serialize_struct_HV_TEMP(
     uint8_t* data,
     primary_message_HV_TEMP* message
 ) {
-    data[0] = message->average_temp & 255;
-    data[1] = (message->average_temp >> 8) & 255;
-    data[2] = message->max_temp & 255;
-    data[3] = (message->max_temp >> 8) & 255;
-    data[4] = message->min_temp & 255;
-    data[5] = (message->min_temp >> 8) & 255;
-    return 6;
+    data[0] = message->average_temp;
+    data[1] = message->max_temp;
+    data[2] = message->min_temp;
+    return 3;
 }
 
 // ============== DESERIALIZE ============== //
@@ -3858,16 +3852,16 @@ void primary_deserialize_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->average_temp = data[0] | (data[1] << 8);
-    message->max_temp = data[2] | (data[3] << 8);
-    message->min_temp = data[4] | (data[5] << 8);
+    message->average_temp = data[0];
+    message->max_temp = data[1];
+    message->min_temp = data[2];
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_TEMP(
     primary_message_HV_TEMP_conversion* conversion,
-    primary_uint16 average_temp,
-    primary_uint16 max_temp,
-    primary_uint16 min_temp
+    primary_uint8 average_temp,
+    primary_uint8 max_temp,
+    primary_uint8 min_temp
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3875,9 +3869,9 @@ void primary_raw_to_conversion_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->average_temp = (((primary_float32)average_temp) / 655.36) - 20;
-    conversion->max_temp = (((primary_float32)max_temp) / 655.36) - 20;
-    conversion->min_temp = (((primary_float32)min_temp) / 655.36) - 20;
+    conversion->average_temp = (((primary_float32)average_temp) / 2.56) - 20;
+    conversion->max_temp = (((primary_float32)max_temp) / 2.56) - 20;
+    conversion->min_temp = (((primary_float32)min_temp) / 2.56) - 20;
 }
 
 void primary_raw_to_conversion_struct_HV_TEMP(
@@ -3887,9 +3881,9 @@ void primary_raw_to_conversion_struct_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->average_temp = (((primary_float32)raw->average_temp) / 655.36) - 20;
-    conversion->max_temp = (((primary_float32)raw->max_temp) / 655.36) - 20;
-    conversion->min_temp = (((primary_float32)raw->min_temp) / 655.36) - 20;
+    conversion->average_temp = (((primary_float32)raw->average_temp) / 2.56) - 20;
+    conversion->max_temp = (((primary_float32)raw->max_temp) / 2.56) - 20;
+    conversion->min_temp = (((primary_float32)raw->min_temp) / 2.56) - 20;
 }
 
 void primary_conversion_to_raw_HV_TEMP(
@@ -3904,9 +3898,9 @@ void primary_conversion_to_raw_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->average_temp = (primary_uint16)((average_temp + 20) * 655.36);
-    raw->max_temp = (primary_uint16)((max_temp + 20) * 655.36);
-    raw->min_temp = (primary_uint16)((min_temp + 20) * 655.36);
+    raw->average_temp = (primary_uint8)((average_temp + 20) * 2.56);
+    raw->max_temp = (primary_uint8)((max_temp + 20) * 2.56);
+    raw->min_temp = (primary_uint8)((min_temp + 20) * 2.56);
 }
 
 void primary_conversion_to_raw_struct_HV_TEMP(
@@ -3916,9 +3910,9 @@ void primary_conversion_to_raw_struct_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->average_temp = (primary_uint16)((conversion->average_temp + 20) * 655.36);
-    raw->max_temp = (primary_uint16)((conversion->max_temp + 20) * 655.36);
-    raw->min_temp = (primary_uint16)((conversion->min_temp + 20) * 655.36);
+    raw->average_temp = (primary_uint8)((conversion->average_temp + 20) * 2.56);
+    raw->max_temp = (primary_uint8)((conversion->max_temp + 20) * 2.56);
+    raw->min_temp = (primary_uint8)((conversion->min_temp + 20) * 2.56);
 }
 
 // ============== STRING ============== //

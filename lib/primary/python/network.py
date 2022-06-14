@@ -793,10 +793,10 @@ class message_HV_TEMP:
         max_temp = None,
         min_temp = None
     ):
-        self.average_temp = uint16(average_temp)
-        self.max_temp = uint16(max_temp)
-        self.min_temp = uint16(min_temp)
-        self.size = 6
+        self.average_temp = uint8(average_temp)
+        self.max_temp = uint8(max_temp)
+        self.min_temp = uint8(min_temp)
+        self.size = 3
         self.interval = 200
 
     def __eq__(self, other):
@@ -812,23 +812,23 @@ class message_HV_TEMP:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHH", self.average_temp, self.max_temp, self.min_temp))
+        data.extend(pack("<BBB", self.average_temp, self.max_temp, self.min_temp))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.average_temp = uint16(unpack("<H", data[0:2])[0])
-        message.max_temp = uint16(unpack("<xxH", data[0:4])[0])
-        message.min_temp = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.average_temp = uint8(unpack("<B", data[0:1])[0])
+        message.max_temp = uint8(unpack("<xB", data[0:2])[0])
+        message.min_temp = uint8(unpack("<xxB", data[0:3])[0])
         return message
 
 
     def convert(self) -> message_HV_TEMP_conversion:
         conversion = message_HV_TEMP_conversion()
-        conversion.average_temp = ((float32(self.average_temp)) / 655.36) - 20
-        conversion.max_temp = ((float32(self.max_temp)) / 655.36) - 20
-        conversion.min_temp = ((float32(self.min_temp)) / 655.36) - 20
+        conversion.average_temp = ((float32(self.average_temp)) / 2.56) - 20
+        conversion.max_temp = ((float32(self.max_temp)) / 2.56) - 20
+        conversion.min_temp = ((float32(self.min_temp)) / 2.56) - 20
         return conversion
 
 
@@ -842,7 +842,7 @@ class message_HV_TEMP_conversion:
         self.average_temp = float32(average_temp)
         self.max_temp = float32(max_temp)
         self.min_temp = float32(min_temp)
-        self.size = 6
+        self.size = 3
         self.interval = 200
 
     def __eq__(self, other):
@@ -858,9 +858,9 @@ class message_HV_TEMP_conversion:
 
     def convert_to_raw(self) -> message_HV_TEMP:
         raw = message_HV_TEMP()
-        raw.average_temp = uint16((self.average_temp + 20) * 655.36)
-        raw.max_temp = uint16((self.max_temp + 20) * 655.36)
-        raw.min_temp = uint16((self.min_temp + 20) * 655.36)
+        raw.average_temp = uint8((self.average_temp + 20) * 2.56)
+        raw.max_temp = uint8((self.max_temp + 20) * 2.56)
+        raw.min_temp = uint8((self.min_temp + 20) * 2.56)
         return raw
 
 class message_HV_ERRORS:
