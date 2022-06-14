@@ -363,17 +363,17 @@
         "average_temp": {
           "type": "float32",
           "range": [-20, 80],
-          "force": "uint16"
+          "force": "uint8"
         },
         "max_temp": {
           "type": "float32",
           "range": [-20, 80],
-          "force": "uint16"
+          "force": "uint8"
         },
         "min_temp": {
           "type": "float32",
           "range": [-20, 80],
-          "force": "uint16"
+          "force": "uint8"
         }
       }
     },
