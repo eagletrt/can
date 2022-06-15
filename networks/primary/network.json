@@ -169,7 +169,7 @@
     },
     "Cooling": {
       "type": "enum",
-      "items": ["RADIATORS_MAX", "RADIATORS_OFF", "PUMPS_MAX", "PUMPS_OFF"]
+      "items": ["MAX", "OFF"]
     }
   },
   "messages": [
@@ -630,24 +630,58 @@
     },
     {
       "name": "SET_RADIATOR_SPEED",
-      "topic": "DASnLV",
+      "topic": "LV",
       "priority": 4,
       "sending": ["STEER"],
-      "receiving": ["DAS", "BMS_LV"],
+      "receiving": ["BMS_LV"],
       "description": "Set both radiators speed",
       "contents": {
-        "car_radiators_speed": "Cooling"
+        "radiator_speed": "Cooling"
       }
     },
     {
-      "name": "SET_PUMPS_POWER",
-      "topic": "DASnLV",
+      "name": "SET_PUMPS_SPEED",
+      "topic": "LV",
       "priority": 4,
       "sending": ["STEER"],
-      "receiving": ["DAS", "BMS_LV"],
-      "description": "Set both pumps power",
+      "receiving": ["BMS_LV"],
+      "description": "Set both pumps speed",
       "contents": {
-        "car_pumps_power": "Cooling"
+        "pumps_speed": "Cooling"
+      }
+    },
+    {
+      "name": "SET_INVERTER_CONNECTION_STATUS",
+      "topic": "LV",
+      "priority": 6,
+      "sending": ["DAS"],
+      "receiving": ["BMS_LV"],
+      "description": "Set inverter status",
+      "contents": {
+        "status": "Toggle"
+      }
+    },
+    {
+      "name": "INVERTER_CONNECTION_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 6,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Inverter status",
+      "contents": {
+        "status": "Toggle"
+      }
+    },
+    {
+      "name": "SHUTDOWN_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 6,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Shutdown status",
+      "contents": {
+        "in": "bool",
+        "end": "bool"
       }
     },
     {
