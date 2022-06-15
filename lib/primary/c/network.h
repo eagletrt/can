@@ -109,7 +109,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_NUMBER_OF_MESSAGES 55
+#define primary_NUMBER_OF_MESSAGES 58
 
 // Custom types
 
@@ -183,7 +183,10 @@ typedef struct {
 #define primary_LV_TEMPERATURE_SIZE 8
 #define primary_COOLING_STATUS_SIZE 6
 #define primary_SET_RADIATOR_SPEED_SIZE 1
-#define primary_SET_PUMPS_POWER_SIZE 1
+#define primary_SET_PUMPS_SPEED_SIZE 1
+#define primary_SET_INVERTER_CONNECTION_STATUS_SIZE 1
+#define primary_INVERTER_CONNECTION_STATUS_SIZE 1
+#define primary_SHUTDOWN_STATUS_SIZE 1
 #define primary_MARKER_SIZE 0
 #define primary_HV_CELLS_VOLTAGE_SIZE 7
 #define primary_HV_CELLS_TEMP_SIZE 8
@@ -394,10 +397,8 @@ typedef enum CANLIB_PARKING {
 } primary_Pedal;
 
 typedef enum CANLIB_PARKING {
-    primary_Cooling_RADIATORS_MAX = 0,
-    primary_Cooling_RADIATORS_OFF = 1,
-    primary_Cooling_PUMPS_MAX = 2,
-    primary_Cooling_PUMPS_OFF = 3,
+    primary_Cooling_MAX = 0,
+    primary_Cooling_OFF = 1,
 } primary_Cooling;
 
 
@@ -700,18 +701,40 @@ typedef struct CANLIB_PARKING {
 } primary_message_COOLING_STATUS_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_Cooling car_radiators_speed;
+    primary_Cooling radiator_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_RADIATOR_SPEED;
 
 typedef struct CANLIB_PARKING {
-    primary_Cooling car_pumps_power;
+    primary_Cooling pumps_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_SET_PUMPS_POWER;
+} primary_message_SET_PUMPS_SPEED;
+
+typedef struct CANLIB_PARKING {
+    primary_Toggle status;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SET_INVERTER_CONNECTION_STATUS;
+
+typedef struct CANLIB_PARKING {
+    primary_Toggle status;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_INVERTER_CONNECTION_STATUS;
+
+typedef struct CANLIB_PARKING {
+    primary_bool in;
+    primary_bool end;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SHUTDOWN_STATUS;
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -1876,7 +1899,7 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_SET_RADIATOR_SPEED(
     uint8_t* data,
-    primary_Cooling car_radiators_speed
+    primary_Cooling radiator_speed
 );
 primary_byte_size primary_serialize_struct_SET_RADIATOR_SPEED(
     uint8_t* data,
@@ -1895,27 +1918,97 @@ int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED
 int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer);
 
 
-// ============== SET_PUMPS_POWER ============== //
+// ============== SET_PUMPS_SPEED ============== //
 
-primary_byte_size primary_serialize_SET_PUMPS_POWER(
+primary_byte_size primary_serialize_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_Cooling car_pumps_power
+    primary_Cooling pumps_speed
 );
-primary_byte_size primary_serialize_struct_SET_PUMPS_POWER(
+primary_byte_size primary_serialize_struct_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_message_SET_PUMPS_POWER* message
+    primary_message_SET_PUMPS_SPEED* message
 );
-void primary_deserialize_SET_PUMPS_POWER(
-    primary_message_SET_PUMPS_POWER* message,
+void primary_deserialize_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, char* buffer);
-int primary_fields_SET_PUMPS_POWER(char* buffer);
-int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, FILE* buffer);
-int primary_fields_file_SET_PUMPS_POWER(FILE* buffer);
+int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, char* buffer);
+int primary_fields_SET_PUMPS_SPEED(char* buffer);
+int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, FILE* buffer);
+int primary_fields_file_SET_PUMPS_SPEED(FILE* buffer);
+
+
+// ============== SET_INVERTER_CONNECTION_STATUS ============== //
+
+primary_byte_size primary_serialize_SET_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_Toggle status
+);
+primary_byte_size primary_serialize_struct_SET_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_message_SET_INVERTER_CONNECTION_STATUS* message
+);
+void primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
+    primary_message_SET_INVERTER_CONNECTION_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SET_INVERTER_CONNECTION_STATUS(primary_message_SET_INVERTER_CONNECTION_STATUS* message, char* buffer);
+int primary_fields_SET_INVERTER_CONNECTION_STATUS(char* buffer);
+int primary_to_string_file_SET_INVERTER_CONNECTION_STATUS(primary_message_SET_INVERTER_CONNECTION_STATUS* message, FILE* buffer);
+int primary_fields_file_SET_INVERTER_CONNECTION_STATUS(FILE* buffer);
+
+
+// ============== INVERTER_CONNECTION_STATUS ============== //
+
+primary_byte_size primary_serialize_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_Toggle status
+);
+primary_byte_size primary_serialize_struct_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_message_INVERTER_CONNECTION_STATUS* message
+);
+void primary_deserialize_INVERTER_CONNECTION_STATUS(
+    primary_message_INVERTER_CONNECTION_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_INVERTER_CONNECTION_STATUS(primary_message_INVERTER_CONNECTION_STATUS* message, char* buffer);
+int primary_fields_INVERTER_CONNECTION_STATUS(char* buffer);
+int primary_to_string_file_INVERTER_CONNECTION_STATUS(primary_message_INVERTER_CONNECTION_STATUS* message, FILE* buffer);
+int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer);
+
+
+// ============== SHUTDOWN_STATUS ============== //
+
+primary_byte_size primary_serialize_SHUTDOWN_STATUS(
+    uint8_t* data,
+    primary_bool in,
+    primary_bool end
+);
+primary_byte_size primary_serialize_struct_SHUTDOWN_STATUS(
+    uint8_t* data,
+    primary_message_SHUTDOWN_STATUS* message
+);
+void primary_deserialize_SHUTDOWN_STATUS(
+    primary_message_SHUTDOWN_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, char* buffer);
+int primary_fields_SHUTDOWN_STATUS(char* buffer);
+int primary_to_string_file_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, FILE* buffer);
+int primary_fields_file_SHUTDOWN_STATUS(FILE* buffer);
 
 
 // ============== MARKER ============== //
@@ -5692,9 +5785,9 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_SET_RADIATOR_SPEED(
     uint8_t* data,
-    primary_Cooling car_radiators_speed
+    primary_Cooling radiator_speed
 ) {
-    data[0] = car_radiators_speed << 6;
+    data[0] = radiator_speed << 7;
     return 1;
 }
 
@@ -5702,7 +5795,7 @@ primary_byte_size primary_serialize_struct_SET_RADIATOR_SPEED(
     uint8_t* data,
     primary_message_SET_RADIATOR_SPEED* message
 ) {
-    data[0] = message->car_radiators_speed << 6;
+    data[0] = message->radiator_speed << 7;
     return 1;
 }
 
@@ -5718,7 +5811,7 @@ void primary_deserialize_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->car_radiators_speed = (primary_Cooling) ((data[0] & 192) >> 6);
+    message->radiator_speed = (primary_Cooling) ((data[0] & 128) >> 7);
 }
 
 // ============== STRING ============== //
@@ -5733,7 +5826,7 @@ int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* mes
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_radiators_speed
+        message->radiator_speed
     );
 }
 int primary_fields_SET_RADIATOR_SPEED(char* buffer) {
@@ -5742,7 +5835,7 @@ int primary_fields_SET_RADIATOR_SPEED(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_radiators_speed"
+        "radiator_speed"
     );
 }
 int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, FILE* buffer) {
@@ -5755,7 +5848,7 @@ int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_radiators_speed
+        message->radiator_speed
     );
 }
 int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
@@ -5764,32 +5857,32 @@ int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_radiators_speed"
+        "radiator_speed"
     );
 }
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_SET_PUMPS_POWER(
+primary_byte_size primary_serialize_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_Cooling car_pumps_power
+    primary_Cooling pumps_speed
 ) {
-    data[0] = car_pumps_power << 6;
+    data[0] = pumps_speed << 7;
     return 1;
 }
 
-primary_byte_size primary_serialize_struct_SET_PUMPS_POWER(
+primary_byte_size primary_serialize_struct_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_message_SET_PUMPS_POWER* message
+    primary_message_SET_PUMPS_SPEED* message
 ) {
-    data[0] = message->car_pumps_power << 6;
+    data[0] = message->pumps_speed << 7;
     return 1;
 }
 
 // ============== DESERIALIZE ============== //
 
-void primary_deserialize_SET_PUMPS_POWER(
-    primary_message_SET_PUMPS_POWER* message,
+void primary_deserialize_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -5798,12 +5891,12 @@ void primary_deserialize_SET_PUMPS_POWER(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->car_pumps_power = (primary_Cooling) ((data[0] & 192) >> 6);
+    message->pumps_speed = (primary_Cooling) ((data[0] & 128) >> 7);
 }
 
 // ============== STRING ============== //
 
-int primary_to_string_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, char* buffer) {
+int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -5813,19 +5906,19 @@ int primary_to_string_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, 
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_pumps_power
+        message->pumps_speed
     );
 }
-int primary_fields_SET_PUMPS_POWER(char* buffer) {
+int primary_fields_SET_PUMPS_SPEED(char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_pumps_power"
+        "pumps_speed"
     );
 }
-int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* message, FILE* buffer) {
+int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -5835,16 +5928,264 @@ int primary_to_string_file_SET_PUMPS_POWER(primary_message_SET_PUMPS_POWER* mess
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_pumps_power
+        message->pumps_speed
     );
 }
-int primary_fields_file_SET_PUMPS_POWER(FILE* buffer) {
+int primary_fields_file_SET_PUMPS_SPEED(FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_pumps_power"
+        "pumps_speed"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_SET_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_Toggle status
+) {
+    data[0] = status << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_SET_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_message_SET_INVERTER_CONNECTION_STATUS* message
+) {
+    data[0] = message->status << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
+    primary_message_SET_INVERTER_CONNECTION_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->status = (primary_Toggle) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_SET_INVERTER_CONNECTION_STATUS(primary_message_SET_INVERTER_CONNECTION_STATUS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->status
+    );
+}
+int primary_fields_SET_INVERTER_CONNECTION_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "status"
+    );
+}
+int primary_to_string_file_SET_INVERTER_CONNECTION_STATUS(primary_message_SET_INVERTER_CONNECTION_STATUS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->status
+    );
+}
+int primary_fields_file_SET_INVERTER_CONNECTION_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "status"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_Toggle status
+) {
+    data[0] = status << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_INVERTER_CONNECTION_STATUS(
+    uint8_t* data,
+    primary_message_INVERTER_CONNECTION_STATUS* message
+) {
+    data[0] = message->status << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_INVERTER_CONNECTION_STATUS(
+    primary_message_INVERTER_CONNECTION_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->status = (primary_Toggle) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_INVERTER_CONNECTION_STATUS(primary_message_INVERTER_CONNECTION_STATUS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->status
+    );
+}
+int primary_fields_INVERTER_CONNECTION_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "status"
+    );
+}
+int primary_to_string_file_INVERTER_CONNECTION_STATUS(primary_message_INVERTER_CONNECTION_STATUS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->status
+    );
+}
+int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "status"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_SHUTDOWN_STATUS(
+    uint8_t* data,
+    primary_bool in,
+    primary_bool end
+) {
+    data[0] = in << 7 | end << 6;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_SHUTDOWN_STATUS(
+    uint8_t* data,
+    primary_message_SHUTDOWN_STATUS* message
+) {
+    data[0] = message->in << 7 | message->end << 6;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_SHUTDOWN_STATUS(
+    primary_message_SHUTDOWN_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->in = (data[0] & 128) >> 7;
+    message->end = (data[0] & 64) >> 6;
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->in,
+        message->end
+    );
+}
+int primary_fields_SHUTDOWN_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "in" CANLIB_SEPARATOR 
+        "end"
+    );
+}
+int primary_to_string_file_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->in,
+        message->end
+    );
+}
+int primary_fields_file_SHUTDOWN_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "in" CANLIB_SEPARATOR 
+        "end"
     );
 }
 
@@ -8172,7 +8513,16 @@ void primary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
         primary_fields_file_SET_RADIATOR_SPEED(buffer);
         break;
     case 809:
-        primary_fields_file_SET_PUMPS_POWER(buffer);
+        primary_fields_file_SET_PUMPS_SPEED(buffer);
+        break;
+    case 265:
+        primary_fields_file_SET_INVERTER_CONNECTION_STATUS(buffer);
+        break;
+    case 264:
+        primary_fields_file_INVERTER_CONNECTION_STATUS(buffer);
+        break;
+    case 296:
+        primary_fields_file_SHUTDOWN_STATUS(buffer);
         break;
     case 2:
         primary_fields_file_MARKER(buffer);
@@ -8342,7 +8692,16 @@ void primary_string_from_id(canlib_message_id message_id, void* message, FILE *b
             primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
         break;
         case 809:
-            primary_to_string_file_SET_PUMPS_POWER((primary_message_SET_PUMPS_POWER*) message, buffer);
+            primary_to_string_file_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED*) message, buffer);
+        break;
+        case 265:
+            primary_to_string_file_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
+        break;
+        case 264:
+            primary_to_string_file_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
+        break;
+        case 296:
+            primary_to_string_file_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
         break;
         case 2:
             primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
@@ -8738,8 +9097,35 @@ void primary_deserialize_from_id(
             );
         break;
         case 809:
-            primary_deserialize_SET_PUMPS_POWER(
-                (primary_message_SET_PUMPS_POWER*) raw_message,
+            primary_deserialize_SET_PUMPS_SPEED(
+                (primary_message_SET_PUMPS_SPEED*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 265:
+            primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
+                (primary_message_SET_INVERTER_CONNECTION_STATUS*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 264:
+            primary_deserialize_INVERTER_CONNECTION_STATUS(
+                (primary_message_INVERTER_CONNECTION_STATUS*) raw_message,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        break;
+        case 296:
+            primary_deserialize_SHUTDOWN_STATUS(
+                (primary_message_SHUTDOWN_STATUS*) raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9094,100 +9480,112 @@ void primary_devices_new(primary_devices* map) {
     (*map)[30].conversion_message = NULL;
 
     (*map)[31].id = 809;
-    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_POWER));
+    (*map)[31].raw_message = (void*) malloc(sizeof(primary_message_SET_PUMPS_SPEED));
     (*map)[31].conversion_message = NULL;
 
-    (*map)[32].id = 2;
-    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
+    (*map)[32].id = 265;
+    (*map)[32].raw_message = (void*) malloc(sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS));
     (*map)[32].conversion_message = NULL;
 
-    (*map)[33].id = 518;
-    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
-    (*map)[33].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
+    (*map)[33].id = 264;
+    (*map)[33].raw_message = (void*) malloc(sizeof(primary_message_INVERTER_CONNECTION_STATUS));
+    (*map)[33].conversion_message = NULL;
 
-    (*map)[34].id = 550;
-    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
-    (*map)[34].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
+    (*map)[34].id = 296;
+    (*map)[34].raw_message = (void*) malloc(sizeof(primary_message_SHUTDOWN_STATUS));
+    (*map)[34].conversion_message = NULL;
 
-    (*map)[35].id = 582;
-    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
+    (*map)[35].id = 2;
+    (*map)[35].raw_message = (void*) malloc(sizeof(primary_message_MARKER));
     (*map)[35].conversion_message = NULL;
 
-    (*map)[36].id = 517;
-    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
-    (*map)[36].conversion_message = NULL;
+    (*map)[36].id = 518;
+    (*map)[36].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
+    (*map)[36].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
 
-    (*map)[37].id = 773;
-    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
-    (*map)[37].conversion_message = NULL;
+    (*map)[37].id = 550;
+    (*map)[37].raw_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
+    (*map)[37].conversion_message = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
 
-    (*map)[38].id = 547;
-    (*map)[38].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
-    (*map)[38].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
+    (*map)[38].id = 582;
+    (*map)[38].raw_message = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
+    (*map)[38].conversion_message = NULL;
 
-    (*map)[39].id = 513;
-    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
+    (*map)[39].id = 517;
+    (*map)[39].raw_message = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
     (*map)[39].conversion_message = NULL;
 
-    (*map)[40].id = 514;
-    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_INV_R_REQUEST));
+    (*map)[40].id = 773;
+    (*map)[40].raw_message = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
     (*map)[40].conversion_message = NULL;
 
-    (*map)[41].id = 385;
-    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
-    (*map)[41].conversion_message = NULL;
+    (*map)[41].id = 547;
+    (*map)[41].raw_message = (void*) malloc(sizeof(primary_message_SPEED));
+    (*map)[41].conversion_message = (void*) malloc(sizeof(primary_message_SPEED_conversion));
 
-    (*map)[42].id = 386;
-    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_INV_R_RESPONSE));
+    (*map)[42].id = 513;
+    (*map)[42].raw_message = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
     (*map)[42].conversion_message = NULL;
 
-    (*map)[43].id = 16;
-    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
+    (*map)[43].id = 514;
+    (*map)[43].raw_message = (void*) malloc(sizeof(primary_message_INV_R_REQUEST));
     (*map)[43].conversion_message = NULL;
 
-    (*map)[44].id = 17;
-    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
+    (*map)[44].id = 385;
+    (*map)[44].raw_message = (void*) malloc(sizeof(primary_message_INV_L_RESPONSE));
     (*map)[44].conversion_message = NULL;
 
-    (*map)[45].id = 18;
-    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
+    (*map)[45].id = 386;
+    (*map)[45].raw_message = (void*) malloc(sizeof(primary_message_INV_R_RESPONSE));
     (*map)[45].conversion_message = NULL;
 
-    (*map)[46].id = 19;
-    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
+    (*map)[46].id = 16;
+    (*map)[46].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
     (*map)[46].conversion_message = NULL;
 
-    (*map)[47].id = 20;
-    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
+    (*map)[47].id = 17;
+    (*map)[47].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
     (*map)[47].conversion_message = NULL;
 
-    (*map)[48].id = 21;
-    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
+    (*map)[48].id = 18;
+    (*map)[48].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
     (*map)[48].conversion_message = NULL;
 
-    (*map)[49].id = 22;
-    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
+    (*map)[49].id = 19;
+    (*map)[49].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
     (*map)[49].conversion_message = NULL;
 
-    (*map)[50].id = 23;
-    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
+    (*map)[50].id = 20;
+    (*map)[50].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
     (*map)[50].conversion_message = NULL;
 
-    (*map)[51].id = 24;
-    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
+    (*map)[51].id = 21;
+    (*map)[51].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
     (*map)[51].conversion_message = NULL;
 
-    (*map)[52].id = 25;
-    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[52].id = 22;
+    (*map)[52].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
     (*map)[52].conversion_message = NULL;
 
-    (*map)[53].id = 26;
-    (*map)[53].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
+    (*map)[53].id = 23;
+    (*map)[53].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
     (*map)[53].conversion_message = NULL;
 
-    (*map)[54].id = 27;
-    (*map)[54].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
+    (*map)[54].id = 24;
+    (*map)[54].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
     (*map)[54].conversion_message = NULL;
+
+    (*map)[55].id = 25;
+    (*map)[55].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
+    (*map)[55].conversion_message = NULL;
+
+    (*map)[56].id = 26;
+    (*map)[56].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
+    (*map)[56].conversion_message = NULL;
+
+    (*map)[57].id = 27;
+    (*map)[57].raw_message = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
+    (*map)[57].conversion_message = NULL;
 
 }
 

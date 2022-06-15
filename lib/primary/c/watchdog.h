@@ -76,30 +76,33 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_watchdog_index_LV_TEMPERATURE 28
 #define primary_watchdog_index_COOLING_STATUS 29
 #define primary_watchdog_index_SET_RADIATOR_SPEED 30
-#define primary_watchdog_index_SET_PUMPS_POWER 31
-#define primary_watchdog_index_MARKER 32
-#define primary_watchdog_index_HV_CELLS_VOLTAGE 33
-#define primary_watchdog_index_HV_CELLS_TEMP 34
-#define primary_watchdog_index_HV_CELL_BALANCING_STATUS 35
-#define primary_watchdog_index_SET_CELL_BALANCING_STATUS 36
-#define primary_watchdog_index_HANDCART_STATUS 37
-#define primary_watchdog_index_SPEED 38
-#define primary_watchdog_index_INV_L_REQUEST 39
-#define primary_watchdog_index_INV_R_REQUEST 40
-#define primary_watchdog_index_INV_L_RESPONSE 41
-#define primary_watchdog_index_INV_R_RESPONSE 42
-#define primary_watchdog_index_FLASH_CELLBOARD_0_TX 43
-#define primary_watchdog_index_FLASH_CELLBOARD_0_RX 44
-#define primary_watchdog_index_FLASH_CELLBOARD_1_TX 45
-#define primary_watchdog_index_FLASH_CELLBOARD_1_RX 46
-#define primary_watchdog_index_FLASH_CELLBOARD_2_TX 47
-#define primary_watchdog_index_FLASH_CELLBOARD_2_RX 48
-#define primary_watchdog_index_FLASH_CELLBOARD_3_TX 49
-#define primary_watchdog_index_FLASH_CELLBOARD_3_RX 50
-#define primary_watchdog_index_FLASH_CELLBOARD_4_TX 51
-#define primary_watchdog_index_FLASH_CELLBOARD_4_RX 52
-#define primary_watchdog_index_FLASH_CELLBOARD_5_TX 53
-#define primary_watchdog_index_FLASH_CELLBOARD_5_RX 54
+#define primary_watchdog_index_SET_PUMPS_SPEED 31
+#define primary_watchdog_index_SET_INVERTER_CONNECTION_STATUS 32
+#define primary_watchdog_index_INVERTER_CONNECTION_STATUS 33
+#define primary_watchdog_index_SHUTDOWN_STATUS 34
+#define primary_watchdog_index_MARKER 35
+#define primary_watchdog_index_HV_CELLS_VOLTAGE 36
+#define primary_watchdog_index_HV_CELLS_TEMP 37
+#define primary_watchdog_index_HV_CELL_BALANCING_STATUS 38
+#define primary_watchdog_index_SET_CELL_BALANCING_STATUS 39
+#define primary_watchdog_index_HANDCART_STATUS 40
+#define primary_watchdog_index_SPEED 41
+#define primary_watchdog_index_INV_L_REQUEST 42
+#define primary_watchdog_index_INV_R_REQUEST 43
+#define primary_watchdog_index_INV_L_RESPONSE 44
+#define primary_watchdog_index_INV_R_RESPONSE 45
+#define primary_watchdog_index_FLASH_CELLBOARD_0_TX 46
+#define primary_watchdog_index_FLASH_CELLBOARD_0_RX 47
+#define primary_watchdog_index_FLASH_CELLBOARD_1_TX 48
+#define primary_watchdog_index_FLASH_CELLBOARD_1_RX 49
+#define primary_watchdog_index_FLASH_CELLBOARD_2_TX 50
+#define primary_watchdog_index_FLASH_CELLBOARD_2_RX 51
+#define primary_watchdog_index_FLASH_CELLBOARD_3_TX 52
+#define primary_watchdog_index_FLASH_CELLBOARD_3_RX 53
+#define primary_watchdog_index_FLASH_CELLBOARD_4_TX 54
+#define primary_watchdog_index_FLASH_CELLBOARD_4_RX 55
+#define primary_watchdog_index_FLASH_CELLBOARD_5_TX 56
+#define primary_watchdog_index_FLASH_CELLBOARD_5_RX 57
 
 
 #define primary_BMS_HV_JMP_TO_BLT_INTERVAL -1
@@ -132,7 +135,10 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_LV_TEMPERATURE_INTERVAL 100
 #define primary_COOLING_STATUS_INTERVAL 1000
 #define primary_SET_RADIATOR_SPEED_INTERVAL -1
-#define primary_SET_PUMPS_POWER_INTERVAL -1
+#define primary_SET_PUMPS_SPEED_INTERVAL -1
+#define primary_SET_INVERTER_CONNECTION_STATUS_INTERVAL -1
+#define primary_INVERTER_CONNECTION_STATUS_INTERVAL -1
+#define primary_SHUTDOWN_STATUS_INTERVAL -1
 #define primary_MARKER_INTERVAL -1
 #define primary_HV_CELLS_VOLTAGE_INTERVAL 200
 #define primary_HV_CELLS_TEMP_INTERVAL 100
@@ -162,9 +168,9 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_ONCE -1
 
 typedef struct {
-    uint8_t activated[7];
-    uint8_t timeout[7];
-    canlib_watchdog_timestamp last_reset[55];
+    uint8_t activated[8];
+    uint8_t timeout[8];
+    canlib_watchdog_timestamp last_reset[58];
 } primary_watchdog;
 
 int primary_watchdog_index_from_id(canlib_message_id id);
@@ -242,7 +248,13 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
     case 777:
         return primary_SET_RADIATOR_SPEED_INTERVAL;
     case 809:
-        return primary_SET_PUMPS_POWER_INTERVAL;
+        return primary_SET_PUMPS_SPEED_INTERVAL;
+    case 265:
+        return primary_SET_INVERTER_CONNECTION_STATUS_INTERVAL;
+    case 264:
+        return primary_INVERTER_CONNECTION_STATUS_INTERVAL;
+    case 296:
+        return primary_SHUTDOWN_STATUS_INTERVAL;
     case 2:
         return primary_MARKER_INTERVAL;
     case 518:
@@ -326,7 +338,10 @@ int primary_watchdog_index_from_id(canlib_message_id id) {
         case 872: return primary_watchdog_index_LV_TEMPERATURE;
         case 904: return primary_watchdog_index_COOLING_STATUS;
         case 777: return primary_watchdog_index_SET_RADIATOR_SPEED;
-        case 809: return primary_watchdog_index_SET_PUMPS_POWER;
+        case 809: return primary_watchdog_index_SET_PUMPS_SPEED;
+        case 265: return primary_watchdog_index_SET_INVERTER_CONNECTION_STATUS;
+        case 264: return primary_watchdog_index_INVERTER_CONNECTION_STATUS;
+        case 296: return primary_watchdog_index_SHUTDOWN_STATUS;
         case 2: return primary_watchdog_index_MARKER;
         case 518: return primary_watchdog_index_HV_CELLS_VOLTAGE;
         case 550: return primary_watchdog_index_HV_CELLS_TEMP;
@@ -351,7 +366,7 @@ int primary_watchdog_index_from_id(canlib_message_id id) {
         case 26: return primary_watchdog_index_FLASH_CELLBOARD_5_TX;
         case 27: return primary_watchdog_index_FLASH_CELLBOARD_5_RX;
     }
-    return 55; // invalid
+    return 58; // invalid
 }
 
 primary_watchdog* primary_watchdog_new() {
@@ -367,7 +382,7 @@ primary_watchdog* primary_watchdog_new() {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 55 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 58 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

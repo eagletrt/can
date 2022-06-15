@@ -98,13 +98,16 @@ typedef uint16_t canlib_message_id;
 #define primary_id_LV_TOTAL_VOLTAGE 0b01101001000 // dec: 840 hex: 0x348
 #define primary_id_LV_TEMPERATURE 0b01101101000 // dec: 872 hex: 0x368
 #define primary_id_COOLING_STATUS 0b01110001000 // dec: 904 hex: 0x388
+#define primary_id_INVERTER_CONNECTION_STATUS 0b00100001000 // dec: 264 hex: 0x108
+#define primary_id_SHUTDOWN_STATUS 0b00100101000 // dec: 296 hex: 0x128
 
-/* TOPIC DASnLV */
-#define primary_topic_mask_DASnLV 0b00000011111
-#define primary_topic_filter_DASnLV 0b00000001001 // dec: 9 hex: 0x9
+/* TOPIC LV */
+#define primary_topic_mask_LV 0b00000011111
+#define primary_topic_filter_LV 0b00000001001 // dec: 9 hex: 0x9
 
 #define primary_id_SET_RADIATOR_SPEED 0b01100001001 // dec: 777 hex: 0x309
-#define primary_id_SET_PUMPS_POWER 0b01100101001 // dec: 809 hex: 0x329
+#define primary_id_SET_PUMPS_SPEED 0b01100101001 // dec: 809 hex: 0x329
+#define primary_id_SET_INVERTER_CONNECTION_STATUS 0b00100001001 // dec: 265 hex: 0x109
 
 /* TOPIC FIXED_IDS */
 #define primary_topic_mask_FIXED_IDS 0b00000011111
@@ -132,7 +135,7 @@ typedef uint16_t canlib_message_id;
 int primary_message_name_from_id(canlib_message_id id, char *buffer);
 bool primary_is_message_id(canlib_message_id message_id);
 
-#define primary_MAX_MESSAGE_LENGTH 26
+#define primary_MAX_MESSAGE_LENGTH 31
 
 #ifdef primary_IDS_IMPLEMENTATION
 
@@ -231,8 +234,17 @@ int primary_message_name_from_id(canlib_message_id id, char *buffer) {
         case primary_id_SET_RADIATOR_SPEED:
             strcpy(buffer, "SET_RADIATOR_SPEED");
             return 0;
-        case primary_id_SET_PUMPS_POWER:
-            strcpy(buffer, "SET_PUMPS_POWER");
+        case primary_id_SET_PUMPS_SPEED:
+            strcpy(buffer, "SET_PUMPS_SPEED");
+            return 0;
+        case primary_id_SET_INVERTER_CONNECTION_STATUS:
+            strcpy(buffer, "SET_INVERTER_CONNECTION_STATUS");
+            return 0;
+        case primary_id_INVERTER_CONNECTION_STATUS:
+            strcpy(buffer, "INVERTER_CONNECTION_STATUS");
+            return 0;
+        case primary_id_SHUTDOWN_STATUS:
+            strcpy(buffer, "SHUTDOWN_STATUS");
             return 0;
         case primary_id_MARKER:
             strcpy(buffer, "MARKER");
@@ -343,6 +355,9 @@ bool primary_is_message_id(canlib_message_id message_id) {
         case 904: return true; break;
         case 777: return true; break;
         case 809: return true; break;
+        case 265: return true; break;
+        case 264: return true; break;
+        case 296: return true; break;
         case 2: return true; break;
         case 518: return true; break;
         case 550: return true; break;

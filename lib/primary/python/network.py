@@ -292,10 +292,8 @@ class Pedal(IntEnum):
 
 
 class Cooling(IntEnum):
-    RADIATORS_MAX = 0
-    RADIATORS_OFF = 1
-    PUMPS_MAX = 2
-    PUMPS_OFF = 3
+    MAX = 0
+    OFF = 1
 
     @classmethod
     def _missing_(cls, _):
@@ -1556,54 +1554,140 @@ class message_COOLING_STATUS_conversion:
 class message_SET_RADIATOR_SPEED:
     def __init__(
         self,
-        car_radiators_speed = None
+        radiator_speed = None
     ):
-        self.car_radiators_speed = Cooling(car_radiators_speed)
+        self.radiator_speed = Cooling(radiator_speed)
         self.size = 1
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_RADIATOR_SPEED):
             return False
-        if self.car_radiators_speed != other.car_radiators_speed:
+        if self.radiator_speed != other.radiator_speed:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.car_radiators_speed << 6 & 255))
+        data.extend(pack("<B", self.radiator_speed << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.car_radiators_speed = Cooling((unpack("<B", data[0:1])[0] & 192) >> 6)
+        message.radiator_speed = Cooling((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
-class message_SET_PUMPS_POWER:
+class message_SET_PUMPS_SPEED:
     def __init__(
         self,
-        car_pumps_power = None
+        pumps_speed = None
     ):
-        self.car_pumps_power = Cooling(car_pumps_power)
+        self.pumps_speed = Cooling(pumps_speed)
         self.size = 1
 
     def __eq__(self, other):
-        if not isinstance(other, message_SET_PUMPS_POWER):
+        if not isinstance(other, message_SET_PUMPS_SPEED):
             return False
-        if self.car_pumps_power != other.car_pumps_power:
+        if self.pumps_speed != other.pumps_speed:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.car_pumps_power << 6 & 255))
+        data.extend(pack("<B", self.pumps_speed << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.car_pumps_power = Cooling((unpack("<B", data[0:1])[0] & 192) >> 6)
+        message.pumps_speed = Cooling((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_SET_INVERTER_CONNECTION_STATUS:
+    def __init__(
+        self,
+        status = None
+    ):
+        self.status = Toggle(status)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_INVERTER_CONNECTION_STATUS):
+            return False
+        if self.status != other.status:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.status << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_INVERTER_CONNECTION_STATUS:
+    def __init__(
+        self,
+        status = None
+    ):
+        self.status = Toggle(status)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_INVERTER_CONNECTION_STATUS):
+            return False
+        if self.status != other.status:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.status << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_SHUTDOWN_STATUS:
+    def __init__(
+        self,
+        in = None,
+        end = None
+    ):
+        self.in = bool(in)
+        self.end = bool(end)
+        self.size = 1
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SHUTDOWN_STATUS):
+            return False
+        if self.in != other.in:
+            return False
+        if self.end != other.end:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.in << 7 & 255 | self.end << 6 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.in = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.end = bool((unpack("<B", data[0:1])[0] & 64) >> 6)
         return message
 
 

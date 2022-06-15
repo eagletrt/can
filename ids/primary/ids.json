@@ -152,17 +152,26 @@
                 },
                 "COOLING_STATUS": {
                     "COOLING_STATUS": 904
+                },
+                "INVERTER_CONNECTION_STATUS": {
+                    "INVERTER_CONNECTION_STATUS": 264
+                },
+                "SHUTDOWN_STATUS": {
+                    "SHUTDOWN_STATUS": 296
                 }
             }
         },
-        "DASnLV": {
+        "LV": {
             "id": 9,
             "messages": {
                 "SET_RADIATOR_SPEED": {
                     "SET_RADIATOR_SPEED": 777
                 },
-                "SET_PUMPS_POWER": {
-                    "SET_PUMPS_POWER": 809
+                "SET_PUMPS_SPEED": {
+                    "SET_PUMPS_SPEED": 809
+                },
+                "SET_INVERTER_CONNECTION_STATUS": {
+                    "SET_INVERTER_CONNECTION_STATUS": 265
                 }
             }
         },

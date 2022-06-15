@@ -55,7 +55,10 @@ typedef struct {
     std::vector<primary_message_LV_TEMPERATURE_conversion> LV_TEMPERATURE;
     std::vector<primary_message_COOLING_STATUS_conversion> COOLING_STATUS;
     std::vector<primary_message_SET_RADIATOR_SPEED> SET_RADIATOR_SPEED;
-    std::vector<primary_message_SET_PUMPS_POWER> SET_PUMPS_POWER;
+    std::vector<primary_message_SET_PUMPS_SPEED> SET_PUMPS_SPEED;
+    std::vector<primary_message_SET_INVERTER_CONNECTION_STATUS> SET_INVERTER_CONNECTION_STATUS;
+    std::vector<primary_message_INVERTER_CONNECTION_STATUS> INVERTER_CONNECTION_STATUS;
+    std::vector<primary_message_SHUTDOWN_STATUS> SHUTDOWN_STATUS;
     std::vector<primary_message_MARKER> MARKER;
     std::vector<primary_message_HV_CELLS_VOLTAGE_conversion> HV_CELLS_VOLTAGE;
     std::vector<primary_message_HV_CELLS_TEMP_conversion> HV_CELLS_TEMP;
@@ -421,7 +424,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 777: {
             primary_message_SET_RADIATOR_SPEED* msg = (primary_message_SET_RADIATOR_SPEED*) (*map)[index].raw_message;
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
-            proto_msg->set_car_radiators_speed((primary::Cooling)msg->car_radiators_speed);
+            proto_msg->set_radiator_speed((primary::Cooling)msg->radiator_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -429,9 +432,40 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 809: {
-            primary_message_SET_PUMPS_POWER* msg = (primary_message_SET_PUMPS_POWER*) (*map)[index].raw_message;
-            primary::SET_PUMPS_POWER* proto_msg = pack->add_set_pumps_power();
-            proto_msg->set_car_pumps_power((primary::Cooling)msg->car_pumps_power);
+            primary_message_SET_PUMPS_SPEED* msg = (primary_message_SET_PUMPS_SPEED*) (*map)[index].raw_message;
+            primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
+            proto_msg->set_pumps_speed((primary::Cooling)msg->pumps_speed);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 265: {
+            primary_message_SET_INVERTER_CONNECTION_STATUS* msg = (primary_message_SET_INVERTER_CONNECTION_STATUS*) (*map)[index].raw_message;
+            primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
+            proto_msg->set_status((primary::Toggle)msg->status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 264: {
+            primary_message_INVERTER_CONNECTION_STATUS* msg = (primary_message_INVERTER_CONNECTION_STATUS*) (*map)[index].raw_message;
+            primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
+            proto_msg->set_status((primary::Toggle)msg->status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 296: {
+            primary_message_SHUTDOWN_STATUS* msg = (primary_message_SHUTDOWN_STATUS*) (*map)[index].raw_message;
+            primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
+            proto_msg->set_in(msg->in);
+            proto_msg->set_end(msg->end);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -902,16 +936,38 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     map->SET_RADIATOR_SPEED.resize(pack->set_radiator_speed_size());
     for(int i = 0; i < pack->set_radiator_speed_size(); i++){
-        map->SET_RADIATOR_SPEED[i].car_radiators_speed =(primary_Cooling)pack->set_radiator_speed(i).car_radiators_speed();
+        map->SET_RADIATOR_SPEED[i].radiator_speed =(primary_Cooling)pack->set_radiator_speed(i).radiator_speed();
 #ifdef CANLIB_TIMESTAMP
         map->SET_RADIATOR_SPEED[i]._timestamp = pack->set_radiator_speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
-    map->SET_PUMPS_POWER.resize(pack->set_pumps_power_size());
-    for(int i = 0; i < pack->set_pumps_power_size(); i++){
-        map->SET_PUMPS_POWER[i].car_pumps_power =(primary_Cooling)pack->set_pumps_power(i).car_pumps_power();
+    map->SET_PUMPS_SPEED.resize(pack->set_pumps_speed_size());
+    for(int i = 0; i < pack->set_pumps_speed_size(); i++){
+        map->SET_PUMPS_SPEED[i].pumps_speed =(primary_Cooling)pack->set_pumps_speed(i).pumps_speed();
 #ifdef CANLIB_TIMESTAMP
-        map->SET_PUMPS_POWER[i]._timestamp = pack->set_pumps_power(i)._inner_timestamp();
+        map->SET_PUMPS_SPEED[i]._timestamp = pack->set_pumps_speed(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->SET_INVERTER_CONNECTION_STATUS.resize(pack->set_inverter_connection_status_size());
+    for(int i = 0; i < pack->set_inverter_connection_status_size(); i++){
+        map->SET_INVERTER_CONNECTION_STATUS[i].status =(primary_Toggle)pack->set_inverter_connection_status(i).status();
+#ifdef CANLIB_TIMESTAMP
+        map->SET_INVERTER_CONNECTION_STATUS[i]._timestamp = pack->set_inverter_connection_status(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->INVERTER_CONNECTION_STATUS.resize(pack->inverter_connection_status_size());
+    for(int i = 0; i < pack->inverter_connection_status_size(); i++){
+        map->INVERTER_CONNECTION_STATUS[i].status =(primary_Toggle)pack->inverter_connection_status(i).status();
+#ifdef CANLIB_TIMESTAMP
+        map->INVERTER_CONNECTION_STATUS[i]._timestamp = pack->inverter_connection_status(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+    }
+    map->SHUTDOWN_STATUS.resize(pack->shutdown_status_size());
+    for(int i = 0; i < pack->shutdown_status_size(); i++){
+        map->SHUTDOWN_STATUS[i].in =pack->shutdown_status(i).in();
+        map->SHUTDOWN_STATUS[i].end =pack->shutdown_status(i).end();
+#ifdef CANLIB_TIMESTAMP
+        map->SHUTDOWN_STATUS[i]._timestamp = pack->shutdown_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
     }
     map->MARKER.resize(pack->marker_size());

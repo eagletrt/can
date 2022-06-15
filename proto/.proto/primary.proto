@@ -65,10 +65,8 @@ enum Pedal {
 }
 
 enum Cooling {
-    Cooling_RADIATORS_MAX = 0;
-    Cooling_RADIATORS_OFF = 1;
-    Cooling_PUMPS_MAX = 2;
-    Cooling_PUMPS_OFF = 3;
+    Cooling_MAX = 0;
+    Cooling_OFF = 1;
 }
 
 message BMS_HV_JMP_TO_BLT {
@@ -250,13 +248,29 @@ message COOLING_STATUS {
 }
 
 message SET_RADIATOR_SPEED {
-    Cooling car_radiators_speed = 1;
+    Cooling radiator_speed = 1;
     uint64 _inner_timestamp = 2;
 }
 
-message SET_PUMPS_POWER {
-    Cooling car_pumps_power = 1;
+message SET_PUMPS_SPEED {
+    Cooling pumps_speed = 1;
     uint64 _inner_timestamp = 2;
+}
+
+message SET_INVERTER_CONNECTION_STATUS {
+    Toggle status = 1;
+    uint64 _inner_timestamp = 2;
+}
+
+message INVERTER_CONNECTION_STATUS {
+    Toggle status = 1;
+    uint64 _inner_timestamp = 2;
+}
+
+message SHUTDOWN_STATUS {
+    bool in = 1;
+    bool end = 2;
+    uint64 _inner_timestamp = 3;
 }
 
 message MARKER {
@@ -435,28 +449,31 @@ message Pack {
     repeated LV_TEMPERATURE LV_TEMPERATURE = 29;
     repeated COOLING_STATUS COOLING_STATUS = 30;
     repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 31;
-    repeated SET_PUMPS_POWER SET_PUMPS_POWER = 32;
-    repeated MARKER MARKER = 33;
-    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 34;
-    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 35;
-    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 36;
-    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 37;
-    repeated HANDCART_STATUS HANDCART_STATUS = 38;
-    repeated SPEED SPEED = 39;
-    repeated INV_L_REQUEST INV_L_REQUEST = 40;
-    repeated INV_R_REQUEST INV_R_REQUEST = 41;
-    repeated INV_L_RESPONSE INV_L_RESPONSE = 42;
-    repeated INV_R_RESPONSE INV_R_RESPONSE = 43;
-    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 44;
-    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 45;
-    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 46;
-    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 47;
-    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 48;
-    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 49;
-    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 50;
-    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 51;
-    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 52;
-    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 53;
-    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 54;
-    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 55;
+    repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 32;
+    repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 33;
+    repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 34;
+    repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 35;
+    repeated MARKER MARKER = 36;
+    repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 37;
+    repeated HV_CELLS_TEMP HV_CELLS_TEMP = 38;
+    repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 39;
+    repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 40;
+    repeated HANDCART_STATUS HANDCART_STATUS = 41;
+    repeated SPEED SPEED = 42;
+    repeated INV_L_REQUEST INV_L_REQUEST = 43;
+    repeated INV_R_REQUEST INV_R_REQUEST = 44;
+    repeated INV_L_RESPONSE INV_L_RESPONSE = 45;
+    repeated INV_R_RESPONSE INV_R_RESPONSE = 46;
+    repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 47;
+    repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 48;
+    repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 49;
+    repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 50;
+    repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 51;
+    repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 52;
+    repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 53;
+    repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 54;
+    repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 55;
+    repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 56;
+    repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 57;
+    repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 58;
 }
