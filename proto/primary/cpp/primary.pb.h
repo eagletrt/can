@@ -5458,45 +5458,35 @@ class COOLING_STATUS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInvertersRadiatorSpeedFieldNumber = 1,
-    kMotorsRadiatorSpeedFieldNumber = 2,
-    kInnerTimestampFieldNumber = 4,
-    kPumpSpeedFieldNumber = 3,
+    kRadiatorsSpeedFieldNumber = 1,
+    kPumpsSpeedFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
   };
-  // uint32 inverters_radiator_speed = 1;
-  void clear_inverters_radiator_speed();
-  uint32_t inverters_radiator_speed() const;
-  void set_inverters_radiator_speed(uint32_t value);
+  // uint32 radiators_speed = 1;
+  void clear_radiators_speed();
+  uint32_t radiators_speed() const;
+  void set_radiators_speed(uint32_t value);
   private:
-  uint32_t _internal_inverters_radiator_speed() const;
-  void _internal_set_inverters_radiator_speed(uint32_t value);
+  uint32_t _internal_radiators_speed() const;
+  void _internal_set_radiators_speed(uint32_t value);
   public:
 
-  // uint32 motors_radiator_speed = 2;
-  void clear_motors_radiator_speed();
-  uint32_t motors_radiator_speed() const;
-  void set_motors_radiator_speed(uint32_t value);
+  // uint32 pumps_speed = 2;
+  void clear_pumps_speed();
+  uint32_t pumps_speed() const;
+  void set_pumps_speed(uint32_t value);
   private:
-  uint32_t _internal_motors_radiator_speed() const;
-  void _internal_set_motors_radiator_speed(uint32_t value);
+  uint32_t _internal_pumps_speed() const;
+  void _internal_set_pumps_speed(uint32_t value);
   public:
 
-  // uint64 _inner_timestamp = 4;
+  // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
   uint64_t _inner_timestamp() const;
   void set__inner_timestamp(uint64_t value);
   private:
   uint64_t _internal__inner_timestamp() const;
   void _internal_set__inner_timestamp(uint64_t value);
-  public:
-
-  // uint32 pump_speed = 3;
-  void clear_pump_speed();
-  uint32_t pump_speed() const;
-  void set_pump_speed(uint32_t value);
-  private:
-  uint32_t _internal_pump_speed() const;
-  void _internal_set_pump_speed(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.COOLING_STATUS)
@@ -5506,10 +5496,9 @@ class COOLING_STATUS final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t inverters_radiator_speed_;
-  uint32_t motors_radiator_speed_;
+  uint32_t radiators_speed_;
+  uint32_t pumps_speed_;
   uint64_t _inner_timestamp_;
-  uint32_t pump_speed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -13263,67 +13252,47 @@ inline void LV_TEMPERATURE::set__inner_timestamp(uint64_t value) {
 
 // COOLING_STATUS
 
-// uint32 inverters_radiator_speed = 1;
-inline void COOLING_STATUS::clear_inverters_radiator_speed() {
-  inverters_radiator_speed_ = 0u;
+// uint32 radiators_speed = 1;
+inline void COOLING_STATUS::clear_radiators_speed() {
+  radiators_speed_ = 0u;
 }
-inline uint32_t COOLING_STATUS::_internal_inverters_radiator_speed() const {
-  return inverters_radiator_speed_;
+inline uint32_t COOLING_STATUS::_internal_radiators_speed() const {
+  return radiators_speed_;
 }
-inline uint32_t COOLING_STATUS::inverters_radiator_speed() const {
-  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.inverters_radiator_speed)
-  return _internal_inverters_radiator_speed();
+inline uint32_t COOLING_STATUS::radiators_speed() const {
+  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.radiators_speed)
+  return _internal_radiators_speed();
 }
-inline void COOLING_STATUS::_internal_set_inverters_radiator_speed(uint32_t value) {
+inline void COOLING_STATUS::_internal_set_radiators_speed(uint32_t value) {
   
-  inverters_radiator_speed_ = value;
+  radiators_speed_ = value;
 }
-inline void COOLING_STATUS::set_inverters_radiator_speed(uint32_t value) {
-  _internal_set_inverters_radiator_speed(value);
-  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.inverters_radiator_speed)
+inline void COOLING_STATUS::set_radiators_speed(uint32_t value) {
+  _internal_set_radiators_speed(value);
+  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.radiators_speed)
 }
 
-// uint32 motors_radiator_speed = 2;
-inline void COOLING_STATUS::clear_motors_radiator_speed() {
-  motors_radiator_speed_ = 0u;
+// uint32 pumps_speed = 2;
+inline void COOLING_STATUS::clear_pumps_speed() {
+  pumps_speed_ = 0u;
 }
-inline uint32_t COOLING_STATUS::_internal_motors_radiator_speed() const {
-  return motors_radiator_speed_;
+inline uint32_t COOLING_STATUS::_internal_pumps_speed() const {
+  return pumps_speed_;
 }
-inline uint32_t COOLING_STATUS::motors_radiator_speed() const {
-  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.motors_radiator_speed)
-  return _internal_motors_radiator_speed();
+inline uint32_t COOLING_STATUS::pumps_speed() const {
+  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.pumps_speed)
+  return _internal_pumps_speed();
 }
-inline void COOLING_STATUS::_internal_set_motors_radiator_speed(uint32_t value) {
+inline void COOLING_STATUS::_internal_set_pumps_speed(uint32_t value) {
   
-  motors_radiator_speed_ = value;
+  pumps_speed_ = value;
 }
-inline void COOLING_STATUS::set_motors_radiator_speed(uint32_t value) {
-  _internal_set_motors_radiator_speed(value);
-  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.motors_radiator_speed)
+inline void COOLING_STATUS::set_pumps_speed(uint32_t value) {
+  _internal_set_pumps_speed(value);
+  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.pumps_speed)
 }
 
-// uint32 pump_speed = 3;
-inline void COOLING_STATUS::clear_pump_speed() {
-  pump_speed_ = 0u;
-}
-inline uint32_t COOLING_STATUS::_internal_pump_speed() const {
-  return pump_speed_;
-}
-inline uint32_t COOLING_STATUS::pump_speed() const {
-  // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.pump_speed)
-  return _internal_pump_speed();
-}
-inline void COOLING_STATUS::_internal_set_pump_speed(uint32_t value) {
-  
-  pump_speed_ = value;
-}
-inline void COOLING_STATUS::set_pump_speed(uint32_t value) {
-  _internal_set_pump_speed(value);
-  // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.pump_speed)
-}
-
-// uint64 _inner_timestamp = 4;
+// uint64 _inner_timestamp = 3;
 inline void COOLING_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = uint64_t{0u};
 }

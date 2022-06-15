@@ -611,17 +611,12 @@
       "description": "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit",
       "interval": 1000,
       "contents": {
-        "inverters_radiator_speed": {
+        "radiators_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"
         },
-        "motors_radiator_speed": {
-          "type": "float32",
-          "range": [0, 1],
-          "force": "uint16"
-        },
-        "pump_speed": {
+        "pumps_speed": {
           "type": "float32",
           "range": [0, 1],
           "force": "uint16"

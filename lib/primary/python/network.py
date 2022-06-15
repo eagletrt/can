@@ -1477,78 +1477,67 @@ class message_LV_TEMPERATURE_conversion:
 class message_COOLING_STATUS:
     def __init__(
         self,
-        inverters_radiator_speed = None,
-        motors_radiator_speed = None,
-        pump_speed = None
+        radiators_speed = None,
+        pumps_speed = None
     ):
-        self.inverters_radiator_speed = uint16(inverters_radiator_speed)
-        self.motors_radiator_speed = uint16(motors_radiator_speed)
-        self.pump_speed = uint16(pump_speed)
-        self.size = 6
+        self.radiators_speed = uint16(radiators_speed)
+        self.pumps_speed = uint16(pumps_speed)
+        self.size = 4
         self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
             return False
-        if self.inverters_radiator_speed != other.inverters_radiator_speed:
+        if self.radiators_speed != other.radiators_speed:
             return False
-        if self.motors_radiator_speed != other.motors_radiator_speed:
-            return False
-        if self.pump_speed != other.pump_speed:
+        if self.pumps_speed != other.pumps_speed:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHH", self.inverters_radiator_speed, self.motors_radiator_speed, self.pump_speed))
+        data.extend(pack("<HH", self.radiators_speed, self.pumps_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.inverters_radiator_speed = uint16(unpack("<H", data[0:2])[0])
-        message.motors_radiator_speed = uint16(unpack("<xxH", data[0:4])[0])
-        message.pump_speed = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.radiators_speed = uint16(unpack("<H", data[0:2])[0])
+        message.pumps_speed = uint16(unpack("<xxH", data[0:4])[0])
         return message
 
 
     def convert(self) -> message_COOLING_STATUS_conversion:
         conversion = message_COOLING_STATUS_conversion()
-        conversion.inverters_radiator_speed = ((float32(self.inverters_radiator_speed)) / 65536.0) + 0
-        conversion.motors_radiator_speed = ((float32(self.motors_radiator_speed)) / 65536.0) + 0
-        conversion.pump_speed = ((float32(self.pump_speed)) / 65536.0) + 0
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 65536.0) + 0
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 65536.0) + 0
         return conversion
 
 
 class message_COOLING_STATUS_conversion:
     def __init__(
         self,
-        inverters_radiator_speed = None,
-        motors_radiator_speed = None,
-        pump_speed = None
+        radiators_speed = None,
+        pumps_speed = None
     ):
-        self.inverters_radiator_speed = float32(inverters_radiator_speed)
-        self.motors_radiator_speed = float32(motors_radiator_speed)
-        self.pump_speed = float32(pump_speed)
-        self.size = 6
+        self.radiators_speed = float32(radiators_speed)
+        self.pumps_speed = float32(pumps_speed)
+        self.size = 4
         self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_COOLING_STATUS):
             return False
-        if self.inverters_radiator_speed != other.inverters_radiator_speed:
+        if self.radiators_speed != other.radiators_speed:
             return False
-        if self.motors_radiator_speed != other.motors_radiator_speed:
-            return False
-        if self.pump_speed != other.pump_speed:
+        if self.pumps_speed != other.pumps_speed:
             return False
         return True
 
     def convert_to_raw(self) -> message_COOLING_STATUS:
         raw = message_COOLING_STATUS()
-        raw.inverters_radiator_speed = uint16((self.inverters_radiator_speed + 0) * 65536.0)
-        raw.motors_radiator_speed = uint16((self.motors_radiator_speed + 0) * 65536.0)
-        raw.pump_speed = uint16((self.pump_speed + 0) * 65536.0)
+        raw.radiators_speed = uint16((self.radiators_speed + 0) * 65536.0)
+        raw.pumps_speed = uint16((self.pumps_speed + 0) * 65536.0)
         return raw
 
 class message_SET_RADIATOR_SPEED:

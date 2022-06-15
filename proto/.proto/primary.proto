@@ -241,10 +241,9 @@ message LV_TEMPERATURE {
 }
 
 message COOLING_STATUS {
-    uint32 inverters_radiator_speed = 1;
-    uint32 motors_radiator_speed = 2;
-    uint32 pump_speed = 3;
-    uint64 _inner_timestamp = 4;
+    uint32 radiators_speed = 1;
+    uint32 pumps_speed = 2;
+    uint64 _inner_timestamp = 3;
 }
 
 message SET_RADIATOR_SPEED {
