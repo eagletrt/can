@@ -292,8 +292,8 @@ class Pedal(IntEnum):
 
 
 class Cooling(IntEnum):
-    MAX = 0
-    OFF = 1
+    SET_MAX = 0
+    SET_OFF = 1
 
     @classmethod
     def _missing_(cls, _):
@@ -609,7 +609,7 @@ class message_STEER_SYSTEM_STATUS:
     ):
         self.soc_temp = uint8(soc_temp)
         self.size = 1
-        self.interval = 2000
+        self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_SYSTEM_STATUS):
@@ -643,7 +643,7 @@ class message_HV_VOLTAGE:
         self.max_cell_voltage = uint16(max_cell_voltage)
         self.min_cell_voltage = uint16(min_cell_voltage)
         self.size = 8
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VOLTAGE):
@@ -695,7 +695,7 @@ class message_HV_VOLTAGE_conversion:
         self.max_cell_voltage = float32(max_cell_voltage)
         self.min_cell_voltage = float32(min_cell_voltage)
         self.size = 8
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_VOLTAGE):
@@ -727,7 +727,7 @@ class message_HV_CURRENT:
         self.current = uint16(current)
         self.power = uint16(power)
         self.size = 4
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CURRENT):
@@ -767,7 +767,7 @@ class message_HV_CURRENT_conversion:
         self.current = float32(current)
         self.power = float32(power)
         self.size = 4
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CURRENT):
@@ -795,7 +795,7 @@ class message_HV_TEMP:
         self.max_temp = uint8(max_temp)
         self.min_temp = uint8(min_temp)
         self.size = 3
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_TEMP):
@@ -841,7 +841,7 @@ class message_HV_TEMP_conversion:
         self.max_temp = float32(max_temp)
         self.min_temp = float32(min_temp)
         self.size = 3
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_TEMP):
@@ -870,7 +870,7 @@ class message_HV_ERRORS:
         self.warnings = HvErrors(warnings)
         self.errors = HvErrors(errors)
         self.size = 4
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_ERRORS):
@@ -955,7 +955,7 @@ class message_TS_STATUS:
     ):
         self.ts_status = TsStatus(ts_status)
         self.size = 1
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_TS_STATUS):
@@ -1167,7 +1167,7 @@ class message_DAS_ERRORS:
     ):
         self.das_error = DasErrors(das_error)
         self.size = 1
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_DAS_ERRORS):
@@ -1256,7 +1256,7 @@ class message_LV_VOLTAGE:
         self.voltage_3 = uint16(voltage_3)
         self.voltage_4 = uint16(voltage_4)
         self.size = 8
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VOLTAGE):
@@ -1308,7 +1308,7 @@ class message_LV_VOLTAGE_conversion:
         self.voltage_3 = float32(voltage_3)
         self.voltage_4 = float32(voltage_4)
         self.size = 8
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_VOLTAGE):
@@ -1338,7 +1338,7 @@ class message_LV_TOTAL_VOLTAGE:
     ):
         self.total_voltage = uint32(total_voltage)
         self.size = 4
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TOTAL_VOLTAGE):
@@ -1372,7 +1372,7 @@ class message_LV_TOTAL_VOLTAGE_conversion:
     ):
         self.total_voltage = float32(total_voltage)
         self.size = 4
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_LV_TOTAL_VOLTAGE):
@@ -1728,7 +1728,7 @@ class message_HV_CELLS_VOLTAGE:
         self.voltage_2 = uint16(voltage_2)
         self.start_index = uint8(start_index)
         self.size = 7
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
@@ -1780,7 +1780,7 @@ class message_HV_CELLS_VOLTAGE_conversion:
         self.voltage_2 = float32(voltage_2)
         self.start_index = uint8(start_index)
         self.size = 7
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
@@ -2127,7 +2127,7 @@ class message_INV_L_REQUEST:
         self.data_6 = uint8(data_6)
         self.data_7 = uint8(data_7)
         self.size = 8
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_L_REQUEST):
@@ -2190,7 +2190,7 @@ class message_INV_R_REQUEST:
         self.data_6 = uint8(data_6)
         self.data_7 = uint8(data_7)
         self.size = 8
-        self.interval = 20
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_INV_R_REQUEST):

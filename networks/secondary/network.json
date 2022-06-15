@@ -308,7 +308,7 @@
       "name": "STEERING_ANGLE",
       "topic": "TELEMETRY",
       "priority": 6,
-      "interval": 200,
+      "interval": 100,
       "sending": ["DAS"],
       "receiving": ["TELEMETRY"],
       "description": "Steering angle in degrees",

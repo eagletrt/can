@@ -94,7 +94,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_LAP_COUNT_INTERVAL -1
 #define secondary_PEDALS_OUTPUT_INTERVAL 100
 #define secondary_CONTROL_OUTPUT_INTERVAL 100
-#define secondary_STEERING_ANGLE_INTERVAL 200
+#define secondary_STEERING_ANGLE_INTERVAL 100
 
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.

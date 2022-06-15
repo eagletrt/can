@@ -550,14 +550,14 @@ inline bool Pedal_Parse(
     Pedal_descriptor(), name, value);
 }
 enum Cooling : int {
-  Cooling_MAX = 0,
-  Cooling_OFF = 1,
+  Cooling_SET_MAX = 0,
+  Cooling_SET_OFF = 1,
   Cooling_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   Cooling_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool Cooling_IsValid(int value);
-constexpr Cooling Cooling_MIN = Cooling_MAX;
-constexpr Cooling Cooling_MAX = Cooling_OFF;
+constexpr Cooling Cooling_MIN = Cooling_SET_MAX;
+constexpr Cooling Cooling_MAX = Cooling_SET_OFF;
 constexpr int Cooling_ARRAYSIZE = Cooling_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cooling_descriptor();

@@ -65,8 +65,8 @@ enum Pedal {
 }
 
 enum Cooling {
-    Cooling_MAX = 0;
-    Cooling_OFF = 1;
+    Cooling_SET_MAX = 0;
+    Cooling_SET_OFF = 1;
 }
 
 message BMS_HV_JMP_TO_BLT {

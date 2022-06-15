@@ -397,8 +397,8 @@ typedef enum CANLIB_PARKING {
 } primary_Pedal;
 
 typedef enum CANLIB_PARKING {
-    primary_Cooling_MAX = 0,
-    primary_Cooling_OFF = 1,
+    primary_Cooling_SET_MAX = 0,
+    primary_Cooling_SET_OFF = 1,
 } primary_Cooling;
 
 

@@ -999,7 +999,7 @@ class message_STEERING_ANGLE:
     ):
         self.angle = float32(angle)
         self.size = 4
-        self.interval = 200
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_STEERING_ANGLE):

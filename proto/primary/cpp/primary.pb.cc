@@ -1873,12 +1873,13 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\025\n\021SetCarStatus_IDLE\020\000\022\024\n\020SetCarStatus_R"
   "UN\020\001*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBoun"
   "d_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATO"
-  "R\020\000\022\017\n\013Pedal_BRAKE\020\001*+\n\007Cooling\022\017\n\013Cooli"
-  "ng_MAX\020\000\022\017\n\013Cooling_OFF\020\001b\006proto3"
+  "R\020\000\022\017\n\013Pedal_BRAKE\020\001*3\n\007Cooling\022\023\n\017Cooli"
+  "ng_SET_MAX\020\000\022\023\n\017Cooling_SET_OFF\020\001b\006proto"
+  "3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 9233, descriptor_table_protodef_primary_2eproto,
+    false, false, 9241, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
     &descriptor_table_primary_2eproto_once, nullptr, 0, 59,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
