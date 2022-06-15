@@ -137,8 +137,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_SET_RADIATOR_SPEED_INTERVAL -1
 #define primary_SET_PUMPS_SPEED_INTERVAL -1
 #define primary_SET_INVERTER_CONNECTION_STATUS_INTERVAL -1
-#define primary_INVERTER_CONNECTION_STATUS_INTERVAL -1
-#define primary_SHUTDOWN_STATUS_INTERVAL -1
+#define primary_INVERTER_CONNECTION_STATUS_INTERVAL 100
+#define primary_SHUTDOWN_STATUS_INTERVAL 100
 #define primary_MARKER_INTERVAL -1
 #define primary_HV_CELLS_VOLTAGE_INTERVAL 200
 #define primary_HV_CELLS_TEMP_INTERVAL 100
@@ -520,6 +520,18 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[primary_watchdog_index_COOLING_STATUS] > primary_COOLING_STATUS_INTERVAL
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_COOLING_STATUS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_INVERTER_CONNECTION_STATUS)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_INVERTER_CONNECTION_STATUS] > primary_INVERTER_CONNECTION_STATUS_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_INVERTER_CONNECTION_STATUS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_SHUTDOWN_STATUS)
+        && timestamp - watchdog->last_reset[primary_watchdog_index_SHUTDOWN_STATUS] > primary_SHUTDOWN_STATUS_INTERVAL
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_watchdog_index_SHUTDOWN_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_watchdog_index_HV_CELLS_VOLTAGE)

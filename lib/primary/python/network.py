@@ -1639,6 +1639,7 @@ class message_INVERTER_CONNECTION_STATUS:
     ):
         self.status = Toggle(status)
         self.size = 1
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_INVERTER_CONNECTION_STATUS):
@@ -1668,6 +1669,7 @@ class message_SHUTDOWN_STATUS:
         self.in = bool(in)
         self.end = bool(end)
         self.size = 1
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SHUTDOWN_STATUS):
