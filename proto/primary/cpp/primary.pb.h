@@ -6251,8 +6251,8 @@ class SHUTDOWN_STATUS final :
 
   enum : int {
     kInnerTimestampFieldNumber = 3,
-    kInFieldNumber = 1,
-    kEndFieldNumber = 2,
+    kInputFieldNumber = 1,
+    kOutputFieldNumber = 2,
   };
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -6263,22 +6263,22 @@ class SHUTDOWN_STATUS final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // bool in = 1;
-  void clear_in();
-  bool in() const;
-  void set_in(bool value);
+  // bool input = 1;
+  void clear_input();
+  bool input() const;
+  void set_input(bool value);
   private:
-  bool _internal_in() const;
-  void _internal_set_in(bool value);
+  bool _internal_input() const;
+  void _internal_set_input(bool value);
   public:
 
-  // bool end = 2;
-  void clear_end();
-  bool end() const;
-  void set_end(bool value);
+  // bool output = 2;
+  void clear_output();
+  bool output() const;
+  void set_output(bool value);
   private:
-  bool _internal_end() const;
-  void _internal_set_end(bool value);
+  bool _internal_output() const;
+  void _internal_set_output(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SHUTDOWN_STATUS)
@@ -6289,8 +6289,8 @@ class SHUTDOWN_STATUS final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint64_t _inner_timestamp_;
-  bool in_;
-  bool end_;
+  bool input_;
+  bool output_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -13523,44 +13523,44 @@ inline void INVERTER_CONNECTION_STATUS::set__inner_timestamp(uint64_t value) {
 
 // SHUTDOWN_STATUS
 
-// bool in = 1;
-inline void SHUTDOWN_STATUS::clear_in() {
-  in_ = false;
+// bool input = 1;
+inline void SHUTDOWN_STATUS::clear_input() {
+  input_ = false;
 }
-inline bool SHUTDOWN_STATUS::_internal_in() const {
-  return in_;
+inline bool SHUTDOWN_STATUS::_internal_input() const {
+  return input_;
 }
-inline bool SHUTDOWN_STATUS::in() const {
-  // @@protoc_insertion_point(field_get:primary.SHUTDOWN_STATUS.in)
-  return _internal_in();
+inline bool SHUTDOWN_STATUS::input() const {
+  // @@protoc_insertion_point(field_get:primary.SHUTDOWN_STATUS.input)
+  return _internal_input();
 }
-inline void SHUTDOWN_STATUS::_internal_set_in(bool value) {
+inline void SHUTDOWN_STATUS::_internal_set_input(bool value) {
   
-  in_ = value;
+  input_ = value;
 }
-inline void SHUTDOWN_STATUS::set_in(bool value) {
-  _internal_set_in(value);
-  // @@protoc_insertion_point(field_set:primary.SHUTDOWN_STATUS.in)
+inline void SHUTDOWN_STATUS::set_input(bool value) {
+  _internal_set_input(value);
+  // @@protoc_insertion_point(field_set:primary.SHUTDOWN_STATUS.input)
 }
 
-// bool end = 2;
-inline void SHUTDOWN_STATUS::clear_end() {
-  end_ = false;
+// bool output = 2;
+inline void SHUTDOWN_STATUS::clear_output() {
+  output_ = false;
 }
-inline bool SHUTDOWN_STATUS::_internal_end() const {
-  return end_;
+inline bool SHUTDOWN_STATUS::_internal_output() const {
+  return output_;
 }
-inline bool SHUTDOWN_STATUS::end() const {
-  // @@protoc_insertion_point(field_get:primary.SHUTDOWN_STATUS.end)
-  return _internal_end();
+inline bool SHUTDOWN_STATUS::output() const {
+  // @@protoc_insertion_point(field_get:primary.SHUTDOWN_STATUS.output)
+  return _internal_output();
 }
-inline void SHUTDOWN_STATUS::_internal_set_end(bool value) {
+inline void SHUTDOWN_STATUS::_internal_set_output(bool value) {
   
-  end_ = value;
+  output_ = value;
 }
-inline void SHUTDOWN_STATUS::set_end(bool value) {
-  _internal_set_end(value);
-  // @@protoc_insertion_point(field_set:primary.SHUTDOWN_STATUS.end)
+inline void SHUTDOWN_STATUS::set_output(bool value) {
+  _internal_set_output(value);
+  // @@protoc_insertion_point(field_set:primary.SHUTDOWN_STATUS.output)
 }
 
 // uint64 _inner_timestamp = 3;

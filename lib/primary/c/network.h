@@ -729,8 +729,8 @@ typedef struct CANLIB_PARKING {
 } primary_message_INVERTER_CONNECTION_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_bool in;
-    primary_bool end;
+    primary_bool input;
+    primary_bool output;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1991,8 +1991,8 @@ int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_SHUTDOWN_STATUS(
     uint8_t* data,
-    primary_bool in,
-    primary_bool end
+    primary_bool input,
+    primary_bool output
 );
 primary_byte_size primary_serialize_struct_SHUTDOWN_STATUS(
     uint8_t* data,
@@ -6105,10 +6105,10 @@ int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_SHUTDOWN_STATUS(
     uint8_t* data,
-    primary_bool in,
-    primary_bool end
+    primary_bool input,
+    primary_bool output
 ) {
-    data[0] = in << 7 | end << 6;
+    data[0] = input << 7 | output << 6;
     return 1;
 }
 
@@ -6116,7 +6116,7 @@ primary_byte_size primary_serialize_struct_SHUTDOWN_STATUS(
     uint8_t* data,
     primary_message_SHUTDOWN_STATUS* message
 ) {
-    data[0] = message->in << 7 | message->end << 6;
+    data[0] = message->input << 7 | message->output << 6;
     return 1;
 }
 
@@ -6132,8 +6132,8 @@ void primary_deserialize_SHUTDOWN_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->in = (data[0] & 128) >> 7;
-    message->end = (data[0] & 64) >> 6;
+    message->input = (data[0] & 128) >> 7;
+    message->output = (data[0] & 64) >> 6;
 }
 
 // ============== STRING ============== //
@@ -6149,8 +6149,8 @@ int primary_to_string_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, 
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->in,
-        message->end
+        message->input,
+        message->output
     );
 }
 int primary_fields_SHUTDOWN_STATUS(char* buffer) {
@@ -6159,8 +6159,8 @@ int primary_fields_SHUTDOWN_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "in" CANLIB_SEPARATOR 
-        "end"
+        "input" CANLIB_SEPARATOR 
+        "output"
     );
 }
 int primary_to_string_file_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* message, FILE* buffer) {
@@ -6174,8 +6174,8 @@ int primary_to_string_file_SHUTDOWN_STATUS(primary_message_SHUTDOWN_STATUS* mess
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->in,
-        message->end
+        message->input,
+        message->output
     );
 }
 int primary_fields_file_SHUTDOWN_STATUS(FILE* buffer) {
@@ -6184,8 +6184,8 @@ int primary_fields_file_SHUTDOWN_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "in" CANLIB_SEPARATOR 
-        "end"
+        "input" CANLIB_SEPARATOR 
+        "output"
     );
 }
 

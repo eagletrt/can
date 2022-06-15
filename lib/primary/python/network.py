@@ -1663,33 +1663,33 @@ class message_INVERTER_CONNECTION_STATUS:
 class message_SHUTDOWN_STATUS:
     def __init__(
         self,
-        in = None,
-        end = None
+        input = None,
+        output = None
     ):
-        self.in = bool(in)
-        self.end = bool(end)
+        self.input = bool(input)
+        self.output = bool(output)
         self.size = 1
-        self.interval = 100
+        self.interval = 500
 
     def __eq__(self, other):
         if not isinstance(other, message_SHUTDOWN_STATUS):
             return False
-        if self.in != other.in:
+        if self.input != other.input:
             return False
-        if self.end != other.end:
+        if self.output != other.output:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.in << 7 & 255 | self.end << 6 & 255))
+        data.extend(pack("<B", self.input << 7 & 255 | self.output << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.in = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
-        message.end = bool((unpack("<B", data[0:1])[0] & 64) >> 6)
+        message.input = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.output = bool((unpack("<B", data[0:1])[0] & 64) >> 6)
         return message
 
 

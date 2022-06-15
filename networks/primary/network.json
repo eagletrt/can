@@ -677,13 +677,13 @@
       "name": "SHUTDOWN_STATUS",
       "topic": "DASnSTEER",
       "priority": 6,
-      "interval": 100,
+      "interval": 500,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER"],
       "description": "Shutdown status",
       "contents": {
-        "in": "bool",
-        "end": "bool"
+        "input": "bool",
+        "output": "bool"
       }
     },
     {

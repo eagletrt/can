@@ -268,8 +268,8 @@ message INVERTER_CONNECTION_STATUS {
 }
 
 message SHUTDOWN_STATUS {
-    bool in = 1;
-    bool end = 2;
+    bool input = 1;
+    bool output = 2;
     uint64 _inner_timestamp = 3;
 }
 

@@ -138,7 +138,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_SET_PUMPS_SPEED_INTERVAL -1
 #define primary_SET_INVERTER_CONNECTION_STATUS_INTERVAL -1
 #define primary_INVERTER_CONNECTION_STATUS_INTERVAL 100
-#define primary_SHUTDOWN_STATUS_INTERVAL 100
+#define primary_SHUTDOWN_STATUS_INTERVAL 500
 #define primary_MARKER_INTERVAL -1
 #define primary_HV_CELLS_VOLTAGE_INTERVAL 200
 #define primary_HV_CELLS_TEMP_INTERVAL 100

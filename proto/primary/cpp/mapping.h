@@ -464,8 +464,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 296: {
             primary_message_SHUTDOWN_STATUS* msg = (primary_message_SHUTDOWN_STATUS*) (*map)[index].raw_message;
             primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
-            proto_msg->set_in(msg->in);
-            proto_msg->set_end(msg->end);
+            proto_msg->set_input(msg->input);
+            proto_msg->set_output(msg->output);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -964,8 +964,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     map->SHUTDOWN_STATUS.resize(pack->shutdown_status_size());
     for(int i = 0; i < pack->shutdown_status_size(); i++){
-        map->SHUTDOWN_STATUS[i].in =pack->shutdown_status(i).in();
-        map->SHUTDOWN_STATUS[i].end =pack->shutdown_status(i).end();
+        map->SHUTDOWN_STATUS[i].input =pack->shutdown_status(i).input();
+        map->SHUTDOWN_STATUS[i].output =pack->shutdown_status(i).output();
 #ifdef CANLIB_TIMESTAMP
         map->SHUTDOWN_STATUS[i]._timestamp = pack->shutdown_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
