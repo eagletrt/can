@@ -844,7 +844,6 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
 int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
@@ -2538,70 +2537,83 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
 int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
-        case 1536:
+        case 1536: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1568:
+        }
+        case 1568: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1600:
+        }
+        case 1600: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1632:
+        }
+        case 1632: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1664:
+        }
+        case 1664: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1696:
+        }
+        case 1696: {
+            message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) raw_message,
+                (bms_message_BOARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BOARD_STATUS);
-        case 1281:
+        }
+        case 1281: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2611,10 +2623,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 1313:
+        }
+        case 1313: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2624,10 +2640,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 1345:
+        }
+        case 1345: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2637,10 +2657,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 1377:
+        }
+        case 1377: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2650,10 +2674,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 1409:
+        }
+        case 1409: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2663,10 +2691,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 1441:
+        }
+        case 1441: {
+            bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
+            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2676,10 +2708,14 @@ int bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_TEMPERATURES_conversion);
-        case 514:
+        }
+        case 514: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2689,10 +2725,14 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 546:
+        }
+        case 546: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2702,10 +2742,14 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 578:
+        }
+        case 578: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2715,10 +2759,14 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 610:
+        }
+        case 610: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2728,10 +2776,14 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 642:
+        }
+        case 642: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2741,10 +2793,14 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 674:
+        }
+        case 674: {
+            bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
+            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -2754,133 +2810,163 @@ int bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
+            free(raw_message);
             return sizeof(bms_message_VOLTAGES_conversion);
-        case 515:
+        }
+        case 515: {
+            message = malloc(sizeof(bms_message_BALANCING));
             bms_deserialize_BALANCING(
-                (bms_message_BALANCING*) raw_message,
+                (bms_message_BALANCING*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_BALANCING);
-        case 10:
+        }
+        case 10: {
+            message = malloc(sizeof(bms_message_FW_UPDATE));
             bms_deserialize_FW_UPDATE(
-                (bms_message_FW_UPDATE*) raw_message,
+                (bms_message_FW_UPDATE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FW_UPDATE);
-        case 16:
+        }
+        case 16: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_TX));
             bms_deserialize_FLASH_CELLBOARD_0_TX(
-                (bms_message_FLASH_CELLBOARD_0_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_0_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_0_TX);
-        case 17:
+        }
+        case 17: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_RX));
             bms_deserialize_FLASH_CELLBOARD_0_RX(
-                (bms_message_FLASH_CELLBOARD_0_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_0_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_0_RX);
-        case 18:
+        }
+        case 18: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_TX));
             bms_deserialize_FLASH_CELLBOARD_1_TX(
-                (bms_message_FLASH_CELLBOARD_1_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_1_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_1_TX);
-        case 19:
+        }
+        case 19: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_RX));
             bms_deserialize_FLASH_CELLBOARD_1_RX(
-                (bms_message_FLASH_CELLBOARD_1_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_1_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_1_RX);
-        case 20:
+        }
+        case 20: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_TX));
             bms_deserialize_FLASH_CELLBOARD_2_TX(
-                (bms_message_FLASH_CELLBOARD_2_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_2_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_2_TX);
-        case 21:
+        }
+        case 21: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_RX));
             bms_deserialize_FLASH_CELLBOARD_2_RX(
-                (bms_message_FLASH_CELLBOARD_2_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_2_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_2_RX);
-        case 22:
+        }
+        case 22: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_TX));
             bms_deserialize_FLASH_CELLBOARD_3_TX(
-                (bms_message_FLASH_CELLBOARD_3_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_3_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_3_TX);
-        case 23:
+        }
+        case 23: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_RX));
             bms_deserialize_FLASH_CELLBOARD_3_RX(
-                (bms_message_FLASH_CELLBOARD_3_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_3_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_3_RX);
-        case 24:
+        }
+        case 24: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_TX));
             bms_deserialize_FLASH_CELLBOARD_4_TX(
-                (bms_message_FLASH_CELLBOARD_4_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_4_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_4_TX);
-        case 25:
+        }
+        case 25: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_RX));
             bms_deserialize_FLASH_CELLBOARD_4_RX(
-                (bms_message_FLASH_CELLBOARD_4_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_4_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_4_RX);
-        case 26:
+        }
+        case 26: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_TX));
             bms_deserialize_FLASH_CELLBOARD_5_TX(
-                (bms_message_FLASH_CELLBOARD_5_TX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_5_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_5_TX);
-        case 27:
+        }
+        case 27: {
+            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_RX));
             bms_deserialize_FLASH_CELLBOARD_5_RX(
-                (bms_message_FLASH_CELLBOARD_5_RX*) raw_message,
+                (bms_message_FLASH_CELLBOARD_5_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(bms_message_FLASH_CELLBOARD_5_RX);
+        }
     }
     return 0;
 }

@@ -1075,7 +1075,6 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
 int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
@@ -4035,205 +4034,248 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
 int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
-        case 1260:
+        case 1260: {
+            message = malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
             secondary_deserialize_IMU_ANGULAR_RATE(
-                (secondary_message_IMU_ANGULAR_RATE*) raw_message,
+                (secondary_message_IMU_ANGULAR_RATE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IMU_ANGULAR_RATE);
-        case 1261:
+        }
+        case 1261: {
+            message = malloc(sizeof(secondary_message_IMU_ACCELERATION));
             secondary_deserialize_IMU_ACCELERATION(
-                (secondary_message_IMU_ACCELERATION*) raw_message,
+                (secondary_message_IMU_ACCELERATION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IMU_ACCELERATION);
-        case 1460:
+        }
+        case 1460: {
+            message = malloc(sizeof(secondary_message_IRTS_FL_0));
             secondary_deserialize_IRTS_FL_0(
-                (secondary_message_IRTS_FL_0*) raw_message,
+                (secondary_message_IRTS_FL_0*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FL_0);
-        case 1461:
+        }
+        case 1461: {
+            message = malloc(sizeof(secondary_message_IRTS_FL_1));
             secondary_deserialize_IRTS_FL_1(
-                (secondary_message_IRTS_FL_1*) raw_message,
+                (secondary_message_IRTS_FL_1*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FL_1);
-        case 1462:
+        }
+        case 1462: {
+            message = malloc(sizeof(secondary_message_IRTS_FL_2));
             secondary_deserialize_IRTS_FL_2(
-                (secondary_message_IRTS_FL_2*) raw_message,
+                (secondary_message_IRTS_FL_2*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FL_2);
-        case 1463:
+        }
+        case 1463: {
+            message = malloc(sizeof(secondary_message_IRTS_FL_3));
             secondary_deserialize_IRTS_FL_3(
-                (secondary_message_IRTS_FL_3*) raw_message,
+                (secondary_message_IRTS_FL_3*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FL_3);
-        case 1464:
+        }
+        case 1464: {
+            message = malloc(sizeof(secondary_message_IRTS_FR_0));
             secondary_deserialize_IRTS_FR_0(
-                (secondary_message_IRTS_FR_0*) raw_message,
+                (secondary_message_IRTS_FR_0*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FR_0);
-        case 1465:
+        }
+        case 1465: {
+            message = malloc(sizeof(secondary_message_IRTS_FR_1));
             secondary_deserialize_IRTS_FR_1(
-                (secondary_message_IRTS_FR_1*) raw_message,
+                (secondary_message_IRTS_FR_1*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FR_1);
-        case 1466:
+        }
+        case 1466: {
+            message = malloc(sizeof(secondary_message_IRTS_FR_2));
             secondary_deserialize_IRTS_FR_2(
-                (secondary_message_IRTS_FR_2*) raw_message,
+                (secondary_message_IRTS_FR_2*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FR_2);
-        case 1467:
+        }
+        case 1467: {
+            message = malloc(sizeof(secondary_message_IRTS_FR_3));
             secondary_deserialize_IRTS_FR_3(
-                (secondary_message_IRTS_FR_3*) raw_message,
+                (secondary_message_IRTS_FR_3*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_FR_3);
-        case 1468:
+        }
+        case 1468: {
+            message = malloc(sizeof(secondary_message_IRTS_RL_0));
             secondary_deserialize_IRTS_RL_0(
-                (secondary_message_IRTS_RL_0*) raw_message,
+                (secondary_message_IRTS_RL_0*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RL_0);
-        case 1469:
+        }
+        case 1469: {
+            message = malloc(sizeof(secondary_message_IRTS_RL_1));
             secondary_deserialize_IRTS_RL_1(
-                (secondary_message_IRTS_RL_1*) raw_message,
+                (secondary_message_IRTS_RL_1*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RL_1);
-        case 1470:
+        }
+        case 1470: {
+            message = malloc(sizeof(secondary_message_IRTS_RL_2));
             secondary_deserialize_IRTS_RL_2(
-                (secondary_message_IRTS_RL_2*) raw_message,
+                (secondary_message_IRTS_RL_2*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RL_2);
-        case 1471:
+        }
+        case 1471: {
+            message = malloc(sizeof(secondary_message_IRTS_RL_3));
             secondary_deserialize_IRTS_RL_3(
-                (secondary_message_IRTS_RL_3*) raw_message,
+                (secondary_message_IRTS_RL_3*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RL_3);
-        case 1472:
+        }
+        case 1472: {
+            message = malloc(sizeof(secondary_message_IRTS_RR_0));
             secondary_deserialize_IRTS_RR_0(
-                (secondary_message_IRTS_RR_0*) raw_message,
+                (secondary_message_IRTS_RR_0*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RR_0);
-        case 1473:
+        }
+        case 1473: {
+            message = malloc(sizeof(secondary_message_IRTS_RR_1));
             secondary_deserialize_IRTS_RR_1(
-                (secondary_message_IRTS_RR_1*) raw_message,
+                (secondary_message_IRTS_RR_1*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RR_1);
-        case 1474:
+        }
+        case 1474: {
+            message = malloc(sizeof(secondary_message_IRTS_RR_2));
             secondary_deserialize_IRTS_RR_2(
-                (secondary_message_IRTS_RR_2*) raw_message,
+                (secondary_message_IRTS_RR_2*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RR_2);
-        case 1475:
+        }
+        case 1475: {
+            message = malloc(sizeof(secondary_message_IRTS_RR_3));
             secondary_deserialize_IRTS_RR_3(
-                (secondary_message_IRTS_RR_3*) raw_message,
+                (secondary_message_IRTS_RR_3*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_IRTS_RR_3);
-        case 1025:
+        }
+        case 1025: {
+            message = malloc(sizeof(secondary_message_GPS_COORDS));
             secondary_deserialize_GPS_COORDS(
-                (secondary_message_GPS_COORDS*) raw_message,
+                (secondary_message_GPS_COORDS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_GPS_COORDS);
-        case 1057:
+        }
+        case 1057: {
+            message = malloc(sizeof(secondary_message_GPS_SPEED));
             secondary_deserialize_GPS_SPEED(
-                (secondary_message_GPS_SPEED*) raw_message,
+                (secondary_message_GPS_SPEED*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_GPS_SPEED);
-        case 1089:
+        }
+        case 1089: {
+            message = malloc(sizeof(secondary_message_LAP_COUNT));
             secondary_deserialize_LAP_COUNT(
-                (secondary_message_LAP_COUNT*) raw_message,
+                (secondary_message_LAP_COUNT*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_LAP_COUNT);
-        case 769:
+        }
+        case 769: {
+            secondary_message_PEDALS_OUTPUT* raw_message = (secondary_message_PEDALS_OUTPUT*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
+            message = malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
             secondary_deserialize_PEDALS_OUTPUT(
-                (secondary_message_PEDALS_OUTPUT*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4243,25 +4285,31 @@ int secondary_deserialize_from_id(
                 (secondary_message_PEDALS_OUTPUT_conversion*) message,
                 (secondary_message_PEDALS_OUTPUT*) raw_message
             );
+            free(raw_message);
             return sizeof(secondary_message_PEDALS_OUTPUT_conversion);
-        case 801:
+        }
+        case 801: {
+            message = malloc(sizeof(secondary_message_CONTROL_OUTPUT));
             secondary_deserialize_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT*) raw_message,
+                (secondary_message_CONTROL_OUTPUT*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_CONTROL_OUTPUT);
-        case 258:
+        }
+        case 258: {
+            message = malloc(sizeof(secondary_message_STEERING_ANGLE));
             secondary_deserialize_STEERING_ANGLE(
-                (secondary_message_STEERING_ANGLE*) raw_message,
+                (secondary_message_STEERING_ANGLE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(secondary_message_STEERING_ANGLE);
+        }
     }
     return 0;
 }

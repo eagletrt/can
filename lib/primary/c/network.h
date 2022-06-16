@@ -2677,7 +2677,6 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
 int primary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
@@ -8887,106 +8886,127 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
 int primary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* raw_message,
     void* message
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
-        case 0:
+        case 0: {
+            message = malloc(sizeof(primary_message_BMS_HV_JMP_TO_BLT));
             primary_deserialize_BMS_HV_JMP_TO_BLT(
-                (primary_message_BMS_HV_JMP_TO_BLT*) raw_message,
+                (primary_message_BMS_HV_JMP_TO_BLT*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_BMS_HV_JMP_TO_BLT);
-        case 1025:
+        }
+        case 1025: {
+            message = malloc(sizeof(primary_message_STEER_VERSION));
             primary_deserialize_STEER_VERSION(
-                (primary_message_STEER_VERSION*) raw_message,
+                (primary_message_STEER_VERSION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_STEER_VERSION);
-        case 1057:
+        }
+        case 1057: {
+            message = malloc(sizeof(primary_message_DAS_VERSION));
             primary_deserialize_DAS_VERSION(
-                (primary_message_DAS_VERSION*) raw_message,
+                (primary_message_DAS_VERSION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_DAS_VERSION);
-        case 1089:
+        }
+        case 1089: {
+            message = malloc(sizeof(primary_message_HV_VERSION));
             primary_deserialize_HV_VERSION(
-                (primary_message_HV_VERSION*) raw_message,
+                (primary_message_HV_VERSION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HV_VERSION);
-        case 1121:
+        }
+        case 1121: {
+            message = malloc(sizeof(primary_message_LV_VERSION));
             primary_deserialize_LV_VERSION(
-                (primary_message_LV_VERSION*) raw_message,
+                (primary_message_LV_VERSION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_LV_VERSION);
-        case 1153:
+        }
+        case 1153: {
+            message = malloc(sizeof(primary_message_TLM_VERSION));
             primary_deserialize_TLM_VERSION(
-                (primary_message_TLM_VERSION*) raw_message,
+                (primary_message_TLM_VERSION*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_TLM_VERSION);
-        case 257:
+        }
+        case 257: {
+            message = malloc(sizeof(primary_message_TIMESTAMP));
             primary_deserialize_TIMESTAMP(
-                (primary_message_TIMESTAMP*) raw_message,
+                (primary_message_TIMESTAMP*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_TIMESTAMP);
-        case 258:
+        }
+        case 258: {
+            message = malloc(sizeof(primary_message_SET_TLM_STATUS));
             primary_deserialize_SET_TLM_STATUS(
-                (primary_message_SET_TLM_STATUS*) raw_message,
+                (primary_message_SET_TLM_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_TLM_STATUS);
-        case 259:
+        }
+        case 259: {
+            message = malloc(sizeof(primary_message_TLM_STATUS));
             primary_deserialize_TLM_STATUS(
-                (primary_message_TLM_STATUS*) raw_message,
+                (primary_message_TLM_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_TLM_STATUS);
-        case 1794:
+        }
+        case 1794: {
+            message = malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
             primary_deserialize_STEER_SYSTEM_STATUS(
-                (primary_message_STEER_SYSTEM_STATUS*) raw_message,
+                (primary_message_STEER_SYSTEM_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_STEER_SYSTEM_STATUS);
-        case 772:
+        }
+        case 772: {
+            primary_message_HV_VOLTAGE* raw_message = (primary_message_HV_VOLTAGE*) malloc(sizeof(primary_message_HV_VOLTAGE));
+            message = malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
             primary_deserialize_HV_VOLTAGE(
-                (primary_message_HV_VOLTAGE*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -8996,10 +9016,14 @@ int primary_deserialize_from_id(
                 (primary_message_HV_VOLTAGE_conversion*) message,
                 (primary_message_HV_VOLTAGE*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_HV_VOLTAGE_conversion);
-        case 804:
+        }
+        case 804: {
+            primary_message_HV_CURRENT* raw_message = (primary_message_HV_CURRENT*) malloc(sizeof(primary_message_HV_CURRENT));
+            message = malloc(sizeof(primary_message_HV_CURRENT_conversion));
             primary_deserialize_HV_CURRENT(
-                (primary_message_HV_CURRENT*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9009,10 +9033,14 @@ int primary_deserialize_from_id(
                 (primary_message_HV_CURRENT_conversion*) message,
                 (primary_message_HV_CURRENT*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_HV_CURRENT_conversion);
-        case 836:
+        }
+        case 836: {
+            primary_message_HV_TEMP* raw_message = (primary_message_HV_TEMP*) malloc(sizeof(primary_message_HV_TEMP));
+            message = malloc(sizeof(primary_message_HV_TEMP_conversion));
             primary_deserialize_HV_TEMP(
-                (primary_message_HV_TEMP*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9022,118 +9050,146 @@ int primary_deserialize_from_id(
                 (primary_message_HV_TEMP_conversion*) message,
                 (primary_message_HV_TEMP*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_HV_TEMP_conversion);
-        case 4:
+        }
+        case 4: {
+            message = malloc(sizeof(primary_message_HV_ERRORS));
             primary_deserialize_HV_ERRORS(
-                (primary_message_HV_ERRORS*) raw_message,
+                (primary_message_HV_ERRORS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HV_ERRORS);
-        case 5:
+        }
+        case 5: {
+            message = malloc(sizeof(primary_message_HV_CAN_FORWARD));
             primary_deserialize_HV_CAN_FORWARD(
-                (primary_message_HV_CAN_FORWARD*) raw_message,
+                (primary_message_HV_CAN_FORWARD*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HV_CAN_FORWARD);
-        case 6:
+        }
+        case 6: {
+            message = malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
             primary_deserialize_HV_CAN_FORWARD_STATUS(
-                (primary_message_HV_CAN_FORWARD_STATUS*) raw_message,
+                (primary_message_HV_CAN_FORWARD_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HV_CAN_FORWARD_STATUS);
-        case 36:
+        }
+        case 36: {
+            message = malloc(sizeof(primary_message_TS_STATUS));
             primary_deserialize_TS_STATUS(
-                (primary_message_TS_STATUS*) raw_message,
+                (primary_message_TS_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_TS_STATUS);
-        case 37:
+        }
+        case 37: {
+            message = malloc(sizeof(primary_message_SET_TS_STATUS));
             primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) raw_message,
+                (primary_message_SET_TS_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_TS_STATUS);
-        case 69:
+        }
+        case 69: {
+            message = malloc(sizeof(primary_message_SET_TS_STATUS));
             primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) raw_message,
+                (primary_message_SET_TS_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_TS_STATUS);
-        case 263:
+        }
+        case 263: {
+            message = malloc(sizeof(primary_message_STEER_STATUS));
             primary_deserialize_STEER_STATUS(
-                (primary_message_STEER_STATUS*) raw_message,
+                (primary_message_STEER_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_STEER_STATUS);
-        case 775:
+        }
+        case 775: {
+            message = malloc(sizeof(primary_message_SET_CAR_STATUS));
             primary_deserialize_SET_CAR_STATUS(
-                (primary_message_SET_CAR_STATUS*) raw_message,
+                (primary_message_SET_CAR_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_CAR_STATUS);
-        case 1031:
+        }
+        case 1031: {
+            message = malloc(sizeof(primary_message_SET_PEDALS_RANGE));
             primary_deserialize_SET_PEDALS_RANGE(
-                (primary_message_SET_PEDALS_RANGE*) raw_message,
+                (primary_message_SET_PEDALS_RANGE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_PEDALS_RANGE);
-        case 1063:
+        }
+        case 1063: {
+            message = malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
-                (primary_message_SET_STEERING_ANGLE_RANGE*) raw_message,
+                (primary_message_SET_STEERING_ANGLE_RANGE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_STEERING_ANGLE_RANGE);
-        case 515:
+        }
+        case 515: {
+            message = malloc(sizeof(primary_message_CAR_STATUS));
             primary_deserialize_CAR_STATUS(
-                (primary_message_CAR_STATUS*) raw_message,
+                (primary_message_CAR_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_CAR_STATUS);
-        case 3:
+        }
+        case 3: {
+            message = malloc(sizeof(primary_message_DAS_ERRORS));
             primary_deserialize_DAS_ERRORS(
-                (primary_message_DAS_ERRORS*) raw_message,
+                (primary_message_DAS_ERRORS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_DAS_ERRORS);
-        case 776:
+        }
+        case 776: {
+            primary_message_LV_CURRENT* raw_message = (primary_message_LV_CURRENT*) malloc(sizeof(primary_message_LV_CURRENT));
+            message = malloc(sizeof(primary_message_LV_CURRENT_conversion));
             primary_deserialize_LV_CURRENT(
-                (primary_message_LV_CURRENT*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9143,10 +9199,14 @@ int primary_deserialize_from_id(
                 (primary_message_LV_CURRENT_conversion*) message,
                 (primary_message_LV_CURRENT*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_LV_CURRENT_conversion);
-        case 808:
+        }
+        case 808: {
+            primary_message_LV_VOLTAGE* raw_message = (primary_message_LV_VOLTAGE*) malloc(sizeof(primary_message_LV_VOLTAGE));
+            message = malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
             primary_deserialize_LV_VOLTAGE(
-                (primary_message_LV_VOLTAGE*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9156,10 +9216,14 @@ int primary_deserialize_from_id(
                 (primary_message_LV_VOLTAGE_conversion*) message,
                 (primary_message_LV_VOLTAGE*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_LV_VOLTAGE_conversion);
-        case 840:
+        }
+        case 840: {
+            primary_message_LV_TOTAL_VOLTAGE* raw_message = (primary_message_LV_TOTAL_VOLTAGE*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
+            message = malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
             primary_deserialize_LV_TOTAL_VOLTAGE(
-                (primary_message_LV_TOTAL_VOLTAGE*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9169,10 +9233,14 @@ int primary_deserialize_from_id(
                 (primary_message_LV_TOTAL_VOLTAGE_conversion*) message,
                 (primary_message_LV_TOTAL_VOLTAGE*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion);
-        case 872:
+        }
+        case 872: {
+            primary_message_LV_TEMPERATURE* raw_message = (primary_message_LV_TEMPERATURE*) malloc(sizeof(primary_message_LV_TEMPERATURE));
+            message = malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
             primary_deserialize_LV_TEMPERATURE(
-                (primary_message_LV_TEMPERATURE*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9182,10 +9250,14 @@ int primary_deserialize_from_id(
                 (primary_message_LV_TEMPERATURE_conversion*) message,
                 (primary_message_LV_TEMPERATURE*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_LV_TEMPERATURE_conversion);
-        case 904:
+        }
+        case 904: {
+            primary_message_COOLING_STATUS* raw_message = (primary_message_COOLING_STATUS*) malloc(sizeof(primary_message_COOLING_STATUS));
+            message = malloc(sizeof(primary_message_COOLING_STATUS_conversion));
             primary_deserialize_COOLING_STATUS(
-                (primary_message_COOLING_STATUS*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9195,64 +9267,80 @@ int primary_deserialize_from_id(
                 (primary_message_COOLING_STATUS_conversion*) message,
                 (primary_message_COOLING_STATUS*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_COOLING_STATUS_conversion);
-        case 777:
+        }
+        case 777: {
+            message = malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
             primary_deserialize_SET_RADIATOR_SPEED(
-                (primary_message_SET_RADIATOR_SPEED*) raw_message,
+                (primary_message_SET_RADIATOR_SPEED*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_RADIATOR_SPEED);
-        case 809:
+        }
+        case 809: {
+            message = malloc(sizeof(primary_message_SET_PUMPS_SPEED));
             primary_deserialize_SET_PUMPS_SPEED(
-                (primary_message_SET_PUMPS_SPEED*) raw_message,
+                (primary_message_SET_PUMPS_SPEED*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_PUMPS_SPEED);
-        case 265:
+        }
+        case 265: {
+            message = malloc(sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS));
             primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
-                (primary_message_SET_INVERTER_CONNECTION_STATUS*) raw_message,
+                (primary_message_SET_INVERTER_CONNECTION_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS);
-        case 264:
+        }
+        case 264: {
+            message = malloc(sizeof(primary_message_INVERTER_CONNECTION_STATUS));
             primary_deserialize_INVERTER_CONNECTION_STATUS(
-                (primary_message_INVERTER_CONNECTION_STATUS*) raw_message,
+                (primary_message_INVERTER_CONNECTION_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_INVERTER_CONNECTION_STATUS);
-        case 296:
+        }
+        case 296: {
+            message = malloc(sizeof(primary_message_SHUTDOWN_STATUS));
             primary_deserialize_SHUTDOWN_STATUS(
-                (primary_message_SHUTDOWN_STATUS*) raw_message,
+                (primary_message_SHUTDOWN_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SHUTDOWN_STATUS);
-        case 2:
+        }
+        case 2: {
+            message = malloc(sizeof(primary_message_MARKER));
             primary_deserialize_MARKER(
-                (primary_message_MARKER*) raw_message,
+                (primary_message_MARKER*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_MARKER);
-        case 518:
+        }
+        case 518: {
+            primary_message_HV_CELLS_VOLTAGE* raw_message = (primary_message_HV_CELLS_VOLTAGE*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
+            message = malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
             primary_deserialize_HV_CELLS_VOLTAGE(
-                (primary_message_HV_CELLS_VOLTAGE*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9262,10 +9350,14 @@ int primary_deserialize_from_id(
                 (primary_message_HV_CELLS_VOLTAGE_conversion*) message,
                 (primary_message_HV_CELLS_VOLTAGE*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_HV_CELLS_VOLTAGE_conversion);
-        case 550:
+        }
+        case 550: {
+            primary_message_HV_CELLS_TEMP* raw_message = (primary_message_HV_CELLS_TEMP*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
+            message = malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
             primary_deserialize_HV_CELLS_TEMP(
-                (primary_message_HV_CELLS_TEMP*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9275,37 +9367,47 @@ int primary_deserialize_from_id(
                 (primary_message_HV_CELLS_TEMP_conversion*) message,
                 (primary_message_HV_CELLS_TEMP*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_HV_CELLS_TEMP_conversion);
-        case 582:
+        }
+        case 582: {
+            message = malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
             primary_deserialize_HV_CELL_BALANCING_STATUS(
-                (primary_message_HV_CELL_BALANCING_STATUS*) raw_message,
+                (primary_message_HV_CELL_BALANCING_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HV_CELL_BALANCING_STATUS);
-        case 517:
+        }
+        case 517: {
+            message = malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
             primary_deserialize_SET_CELL_BALANCING_STATUS(
-                (primary_message_SET_CELL_BALANCING_STATUS*) raw_message,
+                (primary_message_SET_CELL_BALANCING_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_SET_CELL_BALANCING_STATUS);
-        case 773:
+        }
+        case 773: {
+            message = malloc(sizeof(primary_message_HANDCART_STATUS));
             primary_deserialize_HANDCART_STATUS(
-                (primary_message_HANDCART_STATUS*) raw_message,
+                (primary_message_HANDCART_STATUS*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_HANDCART_STATUS);
-        case 547:
+        }
+        case 547: {
+            primary_message_SPEED* raw_message = (primary_message_SPEED*) malloc(sizeof(primary_message_SPEED));
+            message = malloc(sizeof(primary_message_SPEED_conversion));
             primary_deserialize_SPEED(
-                (primary_message_SPEED*) raw_message,
+                raw_message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -9315,151 +9417,185 @@ int primary_deserialize_from_id(
                 (primary_message_SPEED_conversion*) message,
                 (primary_message_SPEED*) raw_message
             );
+            free(raw_message);
             return sizeof(primary_message_SPEED_conversion);
-        case 513:
+        }
+        case 513: {
+            message = malloc(sizeof(primary_message_INV_L_REQUEST));
             primary_deserialize_INV_L_REQUEST(
-                (primary_message_INV_L_REQUEST*) raw_message,
+                (primary_message_INV_L_REQUEST*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_INV_L_REQUEST);
-        case 514:
+        }
+        case 514: {
+            message = malloc(sizeof(primary_message_INV_R_REQUEST));
             primary_deserialize_INV_R_REQUEST(
-                (primary_message_INV_R_REQUEST*) raw_message,
+                (primary_message_INV_R_REQUEST*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_INV_R_REQUEST);
-        case 385:
+        }
+        case 385: {
+            message = malloc(sizeof(primary_message_INV_L_RESPONSE));
             primary_deserialize_INV_L_RESPONSE(
-                (primary_message_INV_L_RESPONSE*) raw_message,
+                (primary_message_INV_L_RESPONSE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_INV_L_RESPONSE);
-        case 386:
+        }
+        case 386: {
+            message = malloc(sizeof(primary_message_INV_R_RESPONSE));
             primary_deserialize_INV_R_RESPONSE(
-                (primary_message_INV_R_RESPONSE*) raw_message,
+                (primary_message_INV_R_RESPONSE*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_INV_R_RESPONSE);
-        case 16:
+        }
+        case 16: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_0_TX));
             primary_deserialize_FLASH_CELLBOARD_0_TX(
-                (primary_message_FLASH_CELLBOARD_0_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_0_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_0_TX);
-        case 17:
+        }
+        case 17: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_0_RX));
             primary_deserialize_FLASH_CELLBOARD_0_RX(
-                (primary_message_FLASH_CELLBOARD_0_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_0_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_0_RX);
-        case 18:
+        }
+        case 18: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_1_TX));
             primary_deserialize_FLASH_CELLBOARD_1_TX(
-                (primary_message_FLASH_CELLBOARD_1_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_1_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_1_TX);
-        case 19:
+        }
+        case 19: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_1_RX));
             primary_deserialize_FLASH_CELLBOARD_1_RX(
-                (primary_message_FLASH_CELLBOARD_1_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_1_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_1_RX);
-        case 20:
+        }
+        case 20: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_2_TX));
             primary_deserialize_FLASH_CELLBOARD_2_TX(
-                (primary_message_FLASH_CELLBOARD_2_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_2_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_2_TX);
-        case 21:
+        }
+        case 21: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_2_RX));
             primary_deserialize_FLASH_CELLBOARD_2_RX(
-                (primary_message_FLASH_CELLBOARD_2_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_2_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_2_RX);
-        case 22:
+        }
+        case 22: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_3_TX));
             primary_deserialize_FLASH_CELLBOARD_3_TX(
-                (primary_message_FLASH_CELLBOARD_3_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_3_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_3_TX);
-        case 23:
+        }
+        case 23: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_3_RX));
             primary_deserialize_FLASH_CELLBOARD_3_RX(
-                (primary_message_FLASH_CELLBOARD_3_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_3_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_3_RX);
-        case 24:
+        }
+        case 24: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_4_TX));
             primary_deserialize_FLASH_CELLBOARD_4_TX(
-                (primary_message_FLASH_CELLBOARD_4_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_4_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_4_TX);
-        case 25:
+        }
+        case 25: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_4_RX));
             primary_deserialize_FLASH_CELLBOARD_4_RX(
-                (primary_message_FLASH_CELLBOARD_4_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_4_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_4_RX);
-        case 26:
+        }
+        case 26: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_5_TX));
             primary_deserialize_FLASH_CELLBOARD_5_TX(
-                (primary_message_FLASH_CELLBOARD_5_TX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_5_TX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_5_TX);
-        case 27:
+        }
+        case 27: {
+            message = malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
             primary_deserialize_FLASH_CELLBOARD_5_RX(
-                (primary_message_FLASH_CELLBOARD_5_RX*) raw_message,
+                (primary_message_FLASH_CELLBOARD_5_RX*) message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             return sizeof(primary_message_FLASH_CELLBOARD_5_RX);
+        }
     }
     return 0;
 }
