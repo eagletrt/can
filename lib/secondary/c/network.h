@@ -4043,7 +4043,7 @@ int secondary_deserialize_from_id(
         case 1260: {
             *message = malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
             secondary_deserialize_IMU_ANGULAR_RATE(
-                (secondary_message_IMU_ANGULAR_RATE*) message,
+                (secondary_message_IMU_ANGULAR_RATE*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4054,7 +4054,7 @@ int secondary_deserialize_from_id(
         case 1261: {
             *message = malloc(sizeof(secondary_message_IMU_ACCELERATION));
             secondary_deserialize_IMU_ACCELERATION(
-                (secondary_message_IMU_ACCELERATION*) message,
+                (secondary_message_IMU_ACCELERATION*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4065,7 +4065,7 @@ int secondary_deserialize_from_id(
         case 1460: {
             *message = malloc(sizeof(secondary_message_IRTS_FL_0));
             secondary_deserialize_IRTS_FL_0(
-                (secondary_message_IRTS_FL_0*) message,
+                (secondary_message_IRTS_FL_0*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4076,7 +4076,7 @@ int secondary_deserialize_from_id(
         case 1461: {
             *message = malloc(sizeof(secondary_message_IRTS_FL_1));
             secondary_deserialize_IRTS_FL_1(
-                (secondary_message_IRTS_FL_1*) message,
+                (secondary_message_IRTS_FL_1*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4087,7 +4087,7 @@ int secondary_deserialize_from_id(
         case 1462: {
             *message = malloc(sizeof(secondary_message_IRTS_FL_2));
             secondary_deserialize_IRTS_FL_2(
-                (secondary_message_IRTS_FL_2*) message,
+                (secondary_message_IRTS_FL_2*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4098,7 +4098,7 @@ int secondary_deserialize_from_id(
         case 1463: {
             *message = malloc(sizeof(secondary_message_IRTS_FL_3));
             secondary_deserialize_IRTS_FL_3(
-                (secondary_message_IRTS_FL_3*) message,
+                (secondary_message_IRTS_FL_3*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4109,7 +4109,7 @@ int secondary_deserialize_from_id(
         case 1464: {
             *message = malloc(sizeof(secondary_message_IRTS_FR_0));
             secondary_deserialize_IRTS_FR_0(
-                (secondary_message_IRTS_FR_0*) message,
+                (secondary_message_IRTS_FR_0*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4120,7 +4120,7 @@ int secondary_deserialize_from_id(
         case 1465: {
             *message = malloc(sizeof(secondary_message_IRTS_FR_1));
             secondary_deserialize_IRTS_FR_1(
-                (secondary_message_IRTS_FR_1*) message,
+                (secondary_message_IRTS_FR_1*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4131,7 +4131,7 @@ int secondary_deserialize_from_id(
         case 1466: {
             *message = malloc(sizeof(secondary_message_IRTS_FR_2));
             secondary_deserialize_IRTS_FR_2(
-                (secondary_message_IRTS_FR_2*) message,
+                (secondary_message_IRTS_FR_2*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4142,7 +4142,7 @@ int secondary_deserialize_from_id(
         case 1467: {
             *message = malloc(sizeof(secondary_message_IRTS_FR_3));
             secondary_deserialize_IRTS_FR_3(
-                (secondary_message_IRTS_FR_3*) message,
+                (secondary_message_IRTS_FR_3*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4153,7 +4153,7 @@ int secondary_deserialize_from_id(
         case 1468: {
             *message = malloc(sizeof(secondary_message_IRTS_RL_0));
             secondary_deserialize_IRTS_RL_0(
-                (secondary_message_IRTS_RL_0*) message,
+                (secondary_message_IRTS_RL_0*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4164,7 +4164,7 @@ int secondary_deserialize_from_id(
         case 1469: {
             *message = malloc(sizeof(secondary_message_IRTS_RL_1));
             secondary_deserialize_IRTS_RL_1(
-                (secondary_message_IRTS_RL_1*) message,
+                (secondary_message_IRTS_RL_1*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4175,7 +4175,7 @@ int secondary_deserialize_from_id(
         case 1470: {
             *message = malloc(sizeof(secondary_message_IRTS_RL_2));
             secondary_deserialize_IRTS_RL_2(
-                (secondary_message_IRTS_RL_2*) message,
+                (secondary_message_IRTS_RL_2*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4186,7 +4186,7 @@ int secondary_deserialize_from_id(
         case 1471: {
             *message = malloc(sizeof(secondary_message_IRTS_RL_3));
             secondary_deserialize_IRTS_RL_3(
-                (secondary_message_IRTS_RL_3*) message,
+                (secondary_message_IRTS_RL_3*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4197,7 +4197,7 @@ int secondary_deserialize_from_id(
         case 1472: {
             *message = malloc(sizeof(secondary_message_IRTS_RR_0));
             secondary_deserialize_IRTS_RR_0(
-                (secondary_message_IRTS_RR_0*) message,
+                (secondary_message_IRTS_RR_0*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4208,7 +4208,7 @@ int secondary_deserialize_from_id(
         case 1473: {
             *message = malloc(sizeof(secondary_message_IRTS_RR_1));
             secondary_deserialize_IRTS_RR_1(
-                (secondary_message_IRTS_RR_1*) message,
+                (secondary_message_IRTS_RR_1*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4219,7 +4219,7 @@ int secondary_deserialize_from_id(
         case 1474: {
             *message = malloc(sizeof(secondary_message_IRTS_RR_2));
             secondary_deserialize_IRTS_RR_2(
-                (secondary_message_IRTS_RR_2*) message,
+                (secondary_message_IRTS_RR_2*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4230,7 +4230,7 @@ int secondary_deserialize_from_id(
         case 1475: {
             *message = malloc(sizeof(secondary_message_IRTS_RR_3));
             secondary_deserialize_IRTS_RR_3(
-                (secondary_message_IRTS_RR_3*) message,
+                (secondary_message_IRTS_RR_3*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4241,7 +4241,7 @@ int secondary_deserialize_from_id(
         case 1025: {
             *message = malloc(sizeof(secondary_message_GPS_COORDS));
             secondary_deserialize_GPS_COORDS(
-                (secondary_message_GPS_COORDS*) message,
+                (secondary_message_GPS_COORDS*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4252,7 +4252,7 @@ int secondary_deserialize_from_id(
         case 1057: {
             *message = malloc(sizeof(secondary_message_GPS_SPEED));
             secondary_deserialize_GPS_SPEED(
-                (secondary_message_GPS_SPEED*) message,
+                (secondary_message_GPS_SPEED*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4263,7 +4263,7 @@ int secondary_deserialize_from_id(
         case 1089: {
             *message = malloc(sizeof(secondary_message_LAP_COUNT));
             secondary_deserialize_LAP_COUNT(
-                (secondary_message_LAP_COUNT*) message,
+                (secondary_message_LAP_COUNT*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4282,7 +4282,7 @@ int secondary_deserialize_from_id(
                 #endif
             );
             secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
-                (secondary_message_PEDALS_OUTPUT_conversion*) message,
+                (secondary_message_PEDALS_OUTPUT_conversion*) *message,
                 (secondary_message_PEDALS_OUTPUT*) raw_message
             );
             free(raw_message);
@@ -4291,7 +4291,7 @@ int secondary_deserialize_from_id(
         case 801: {
             *message = malloc(sizeof(secondary_message_CONTROL_OUTPUT));
             secondary_deserialize_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT*) message,
+                (secondary_message_CONTROL_OUTPUT*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -4302,7 +4302,7 @@ int secondary_deserialize_from_id(
         case 258: {
             *message = malloc(sizeof(secondary_message_STEERING_ANGLE));
             secondary_deserialize_STEERING_ANGLE(
-                (secondary_message_STEERING_ANGLE*) message,
+                (secondary_message_STEERING_ANGLE*) *message,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
