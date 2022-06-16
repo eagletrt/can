@@ -69,80 +69,80 @@ int secondary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case secondary_id_IMU_ANGULAR_RATE:
             strcpy(buffer, "IMU_ANGULAR_RATE");
-            return 0;
+            return 16;
         case secondary_id_IMU_ACCELERATION:
             strcpy(buffer, "IMU_ACCELERATION");
-            return 0;
+            return 16;
         case secondary_id_IRTS_FL_0:
             strcpy(buffer, "IRTS_FL_0");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FL_1:
             strcpy(buffer, "IRTS_FL_1");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FL_2:
             strcpy(buffer, "IRTS_FL_2");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FL_3:
             strcpy(buffer, "IRTS_FL_3");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FR_0:
             strcpy(buffer, "IRTS_FR_0");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FR_1:
             strcpy(buffer, "IRTS_FR_1");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FR_2:
             strcpy(buffer, "IRTS_FR_2");
-            return 0;
+            return 9;
         case secondary_id_IRTS_FR_3:
             strcpy(buffer, "IRTS_FR_3");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RL_0:
             strcpy(buffer, "IRTS_RL_0");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RL_1:
             strcpy(buffer, "IRTS_RL_1");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RL_2:
             strcpy(buffer, "IRTS_RL_2");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RL_3:
             strcpy(buffer, "IRTS_RL_3");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RR_0:
             strcpy(buffer, "IRTS_RR_0");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RR_1:
             strcpy(buffer, "IRTS_RR_1");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RR_2:
             strcpy(buffer, "IRTS_RR_2");
-            return 0;
+            return 9;
         case secondary_id_IRTS_RR_3:
             strcpy(buffer, "IRTS_RR_3");
-            return 0;
+            return 9;
         case secondary_id_GPS_COORDS:
             strcpy(buffer, "GPS_COORDS");
-            return 0;
+            return 10;
         case secondary_id_GPS_SPEED:
             strcpy(buffer, "GPS_SPEED");
-            return 0;
+            return 9;
         case secondary_id_LAP_COUNT:
             strcpy(buffer, "LAP_COUNT");
-            return 0;
+            return 9;
         case secondary_id_PEDALS_OUTPUT:
             strcpy(buffer, "PEDALS_OUTPUT");
-            return 0;
+            return 13;
         case secondary_id_CONTROL_OUTPUT:
             strcpy(buffer, "CONTROL_OUTPUT");
-            return 0;
+            return 14;
         case secondary_id_STEERING_ANGLE:
             strcpy(buffer, "STEERING_ANGLE");
-            return 0;
+            return 14;
         default:
             strcpy(buffer, ""); // Unknown message
     }
-    return 1;
+    return 0;
 }
 
 bool secondary_is_message_id(canlib_message_id message_id) {

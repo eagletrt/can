@@ -87,104 +87,104 @@ int bms_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case bms_id_BOARD_STATUS_CELLBOARD0:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD0");
-            return 0;
+            return 23;
         case bms_id_BOARD_STATUS_CELLBOARD1:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD1");
-            return 0;
+            return 23;
         case bms_id_BOARD_STATUS_CELLBOARD2:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD2");
-            return 0;
+            return 23;
         case bms_id_BOARD_STATUS_CELLBOARD3:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD3");
-            return 0;
+            return 23;
         case bms_id_BOARD_STATUS_CELLBOARD4:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD4");
-            return 0;
+            return 23;
         case bms_id_BOARD_STATUS_CELLBOARD5:
             strcpy(buffer, "BOARD_STATUS_CELLBOARD5");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD0:
             strcpy(buffer, "TEMPERATURES_CELLBOARD0");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD1:
             strcpy(buffer, "TEMPERATURES_CELLBOARD1");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD2:
             strcpy(buffer, "TEMPERATURES_CELLBOARD2");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD3:
             strcpy(buffer, "TEMPERATURES_CELLBOARD3");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD4:
             strcpy(buffer, "TEMPERATURES_CELLBOARD4");
-            return 0;
+            return 23;
         case bms_id_TEMPERATURES_CELLBOARD5:
             strcpy(buffer, "TEMPERATURES_CELLBOARD5");
-            return 0;
+            return 23;
         case bms_id_VOLTAGES_CELLBOARD0:
             strcpy(buffer, "VOLTAGES_CELLBOARD0");
-            return 0;
+            return 19;
         case bms_id_VOLTAGES_CELLBOARD1:
             strcpy(buffer, "VOLTAGES_CELLBOARD1");
-            return 0;
+            return 19;
         case bms_id_VOLTAGES_CELLBOARD2:
             strcpy(buffer, "VOLTAGES_CELLBOARD2");
-            return 0;
+            return 19;
         case bms_id_VOLTAGES_CELLBOARD3:
             strcpy(buffer, "VOLTAGES_CELLBOARD3");
-            return 0;
+            return 19;
         case bms_id_VOLTAGES_CELLBOARD4:
             strcpy(buffer, "VOLTAGES_CELLBOARD4");
-            return 0;
+            return 19;
         case bms_id_VOLTAGES_CELLBOARD5:
             strcpy(buffer, "VOLTAGES_CELLBOARD5");
-            return 0;
+            return 19;
         case bms_id_BALANCING:
             strcpy(buffer, "BALANCING");
-            return 0;
+            return 9;
         case bms_id_FW_UPDATE:
             strcpy(buffer, "FW_UPDATE");
-            return 0;
+            return 9;
         case bms_id_FLASH_CELLBOARD_0_TX:
             strcpy(buffer, "FLASH_CELLBOARD_0_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_0_RX:
             strcpy(buffer, "FLASH_CELLBOARD_0_RX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_1_TX:
             strcpy(buffer, "FLASH_CELLBOARD_1_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_1_RX:
             strcpy(buffer, "FLASH_CELLBOARD_1_RX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_2_TX:
             strcpy(buffer, "FLASH_CELLBOARD_2_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_2_RX:
             strcpy(buffer, "FLASH_CELLBOARD_2_RX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_3_TX:
             strcpy(buffer, "FLASH_CELLBOARD_3_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_3_RX:
             strcpy(buffer, "FLASH_CELLBOARD_3_RX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_4_TX:
             strcpy(buffer, "FLASH_CELLBOARD_4_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_4_RX:
             strcpy(buffer, "FLASH_CELLBOARD_4_RX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_5_TX:
             strcpy(buffer, "FLASH_CELLBOARD_5_TX");
-            return 0;
+            return 20;
         case bms_id_FLASH_CELLBOARD_5_RX:
             strcpy(buffer, "FLASH_CELLBOARD_5_RX");
-            return 0;
+            return 20;
         default:
             strcpy(buffer, ""); // Unknown message
     }
-    return 1;
+    return 0;
 }
 
 bool bms_is_message_id(canlib_message_id message_id) {

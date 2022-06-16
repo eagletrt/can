@@ -143,182 +143,182 @@ int primary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
         case primary_id_BMS_HV_JMP_TO_BLT:
             strcpy(buffer, "BMS_HV_JMP_TO_BLT");
-            return 0;
+            return 17;
         case primary_id_STEER_VERSION:
             strcpy(buffer, "STEER_VERSION");
-            return 0;
+            return 13;
         case primary_id_DAS_VERSION:
             strcpy(buffer, "DAS_VERSION");
-            return 0;
+            return 11;
         case primary_id_HV_VERSION:
             strcpy(buffer, "HV_VERSION");
-            return 0;
+            return 10;
         case primary_id_LV_VERSION:
             strcpy(buffer, "LV_VERSION");
-            return 0;
+            return 10;
         case primary_id_TLM_VERSION:
             strcpy(buffer, "TLM_VERSION");
-            return 0;
+            return 11;
         case primary_id_TIMESTAMP:
             strcpy(buffer, "TIMESTAMP");
-            return 0;
+            return 9;
         case primary_id_SET_TLM_STATUS:
             strcpy(buffer, "SET_TLM_STATUS");
-            return 0;
+            return 14;
         case primary_id_TLM_STATUS:
             strcpy(buffer, "TLM_STATUS");
-            return 0;
+            return 10;
         case primary_id_STEER_SYSTEM_STATUS:
             strcpy(buffer, "STEER_SYSTEM_STATUS");
-            return 0;
+            return 19;
         case primary_id_HV_VOLTAGE:
             strcpy(buffer, "HV_VOLTAGE");
-            return 0;
+            return 10;
         case primary_id_HV_CURRENT:
             strcpy(buffer, "HV_CURRENT");
-            return 0;
+            return 10;
         case primary_id_HV_TEMP:
             strcpy(buffer, "HV_TEMP");
-            return 0;
+            return 7;
         case primary_id_HV_ERRORS:
             strcpy(buffer, "HV_ERRORS");
-            return 0;
+            return 9;
         case primary_id_HV_CAN_FORWARD:
             strcpy(buffer, "HV_CAN_FORWARD");
-            return 0;
+            return 14;
         case primary_id_HV_CAN_FORWARD_STATUS:
             strcpy(buffer, "HV_CAN_FORWARD_STATUS");
-            return 0;
+            return 21;
         case primary_id_TS_STATUS:
             strcpy(buffer, "TS_STATUS");
-            return 0;
+            return 9;
         case primary_id_SET_TS_STATUS_DAS:
             strcpy(buffer, "SET_TS_STATUS_DAS");
-            return 0;
+            return 17;
         case primary_id_SET_TS_STATUS_HANDCART:
             strcpy(buffer, "SET_TS_STATUS_HANDCART");
-            return 0;
+            return 22;
         case primary_id_STEER_STATUS:
             strcpy(buffer, "STEER_STATUS");
-            return 0;
+            return 12;
         case primary_id_SET_CAR_STATUS:
             strcpy(buffer, "SET_CAR_STATUS");
-            return 0;
+            return 14;
         case primary_id_SET_PEDALS_RANGE:
             strcpy(buffer, "SET_PEDALS_RANGE");
-            return 0;
+            return 16;
         case primary_id_SET_STEERING_ANGLE_RANGE:
             strcpy(buffer, "SET_STEERING_ANGLE_RANGE");
-            return 0;
+            return 24;
         case primary_id_CAR_STATUS:
             strcpy(buffer, "CAR_STATUS");
-            return 0;
+            return 10;
         case primary_id_DAS_ERRORS:
             strcpy(buffer, "DAS_ERRORS");
-            return 0;
+            return 10;
         case primary_id_LV_CURRENT:
             strcpy(buffer, "LV_CURRENT");
-            return 0;
+            return 10;
         case primary_id_LV_VOLTAGE:
             strcpy(buffer, "LV_VOLTAGE");
-            return 0;
+            return 10;
         case primary_id_LV_TOTAL_VOLTAGE:
             strcpy(buffer, "LV_TOTAL_VOLTAGE");
-            return 0;
+            return 16;
         case primary_id_LV_TEMPERATURE:
             strcpy(buffer, "LV_TEMPERATURE");
-            return 0;
+            return 14;
         case primary_id_COOLING_STATUS:
             strcpy(buffer, "COOLING_STATUS");
-            return 0;
+            return 14;
         case primary_id_SET_RADIATOR_SPEED:
             strcpy(buffer, "SET_RADIATOR_SPEED");
-            return 0;
+            return 18;
         case primary_id_SET_PUMPS_SPEED:
             strcpy(buffer, "SET_PUMPS_SPEED");
-            return 0;
+            return 15;
         case primary_id_SET_INVERTER_CONNECTION_STATUS:
             strcpy(buffer, "SET_INVERTER_CONNECTION_STATUS");
-            return 0;
+            return 30;
         case primary_id_INVERTER_CONNECTION_STATUS:
             strcpy(buffer, "INVERTER_CONNECTION_STATUS");
-            return 0;
+            return 26;
         case primary_id_SHUTDOWN_STATUS:
             strcpy(buffer, "SHUTDOWN_STATUS");
-            return 0;
+            return 15;
         case primary_id_MARKER:
             strcpy(buffer, "MARKER");
-            return 0;
+            return 6;
         case primary_id_HV_CELLS_VOLTAGE:
             strcpy(buffer, "HV_CELLS_VOLTAGE");
-            return 0;
+            return 16;
         case primary_id_HV_CELLS_TEMP:
             strcpy(buffer, "HV_CELLS_TEMP");
-            return 0;
+            return 13;
         case primary_id_HV_CELL_BALANCING_STATUS:
             strcpy(buffer, "HV_CELL_BALANCING_STATUS");
-            return 0;
+            return 24;
         case primary_id_SET_CELL_BALANCING_STATUS:
             strcpy(buffer, "SET_CELL_BALANCING_STATUS");
-            return 0;
+            return 25;
         case primary_id_HANDCART_STATUS:
             strcpy(buffer, "HANDCART_STATUS");
-            return 0;
+            return 15;
         case primary_id_SPEED:
             strcpy(buffer, "SPEED");
-            return 0;
+            return 5;
         case primary_id_INV_L_REQUEST:
             strcpy(buffer, "INV_L_REQUEST");
-            return 0;
+            return 13;
         case primary_id_INV_R_REQUEST:
             strcpy(buffer, "INV_R_REQUEST");
-            return 0;
+            return 13;
         case primary_id_INV_L_RESPONSE:
             strcpy(buffer, "INV_L_RESPONSE");
-            return 0;
+            return 14;
         case primary_id_INV_R_RESPONSE:
             strcpy(buffer, "INV_R_RESPONSE");
-            return 0;
+            return 14;
         case primary_id_FLASH_CELLBOARD_0_TX:
             strcpy(buffer, "FLASH_CELLBOARD_0_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_0_RX:
             strcpy(buffer, "FLASH_CELLBOARD_0_RX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_1_TX:
             strcpy(buffer, "FLASH_CELLBOARD_1_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_1_RX:
             strcpy(buffer, "FLASH_CELLBOARD_1_RX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_2_TX:
             strcpy(buffer, "FLASH_CELLBOARD_2_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_2_RX:
             strcpy(buffer, "FLASH_CELLBOARD_2_RX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_3_TX:
             strcpy(buffer, "FLASH_CELLBOARD_3_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_3_RX:
             strcpy(buffer, "FLASH_CELLBOARD_3_RX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_4_TX:
             strcpy(buffer, "FLASH_CELLBOARD_4_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_4_RX:
             strcpy(buffer, "FLASH_CELLBOARD_4_RX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_5_TX:
             strcpy(buffer, "FLASH_CELLBOARD_5_TX");
-            return 0;
+            return 20;
         case primary_id_FLASH_CELLBOARD_5_RX:
             strcpy(buffer, "FLASH_CELLBOARD_5_RX");
-            return 0;
+            return 20;
         default:
             strcpy(buffer, ""); // Unknown message
     }
-    return 1;
+    return 0;
 }
 
 bool primary_is_message_id(canlib_message_id message_id) {
