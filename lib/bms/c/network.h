@@ -837,9 +837,11 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 void bms_devices_new(bms_devices* map);
 int bms_devices_index_from_id(canlib_message_id message_id, bms_devices* map);
-void bms_fields_from_id(canlib_message_id message_id, FILE *buffer);
-void bms_string_from_id(canlib_message_id message_id, void* message, FILE *buffer);
-void bms_deserialize_from_id(
+int bms_fields_from_id(canlib_message_id message_id, char *buffer);
+int bms_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
+int bms_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
+int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer);
+int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
@@ -2253,209 +2255,287 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
 
 // ============== UTILS ============== //
 
-void bms_fields_from_id(canlib_message_id message_id, FILE *buffer) {
+int bms_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {
     case 1536:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1568:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1600:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1632:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1664:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1696:
-        bms_fields_file_BOARD_STATUS(buffer);
-        break;
+        return bms_fields_BOARD_STATUS(buffer);
     case 1281:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 1313:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 1345:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 1377:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 1409:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 1441:
-        bms_fields_file_TEMPERATURES(buffer);
-        break;
+        return bms_fields_TEMPERATURES(buffer);
     case 514:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 546:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 578:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 610:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 642:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 674:
-        bms_fields_file_VOLTAGES(buffer);
-        break;
+        return bms_fields_VOLTAGES(buffer);
     case 515:
-        bms_fields_file_BALANCING(buffer);
-        break;
+        return bms_fields_BALANCING(buffer);
     case 10:
-        bms_fields_file_FW_UPDATE(buffer);
-        break;
+        return bms_fields_FW_UPDATE(buffer);
     case 16:
-        bms_fields_file_FLASH_CELLBOARD_0_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_0_TX(buffer);
     case 17:
-        bms_fields_file_FLASH_CELLBOARD_0_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_0_RX(buffer);
     case 18:
-        bms_fields_file_FLASH_CELLBOARD_1_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_1_TX(buffer);
     case 19:
-        bms_fields_file_FLASH_CELLBOARD_1_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_1_RX(buffer);
     case 20:
-        bms_fields_file_FLASH_CELLBOARD_2_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_2_TX(buffer);
     case 21:
-        bms_fields_file_FLASH_CELLBOARD_2_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_2_RX(buffer);
     case 22:
-        bms_fields_file_FLASH_CELLBOARD_3_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_3_TX(buffer);
     case 23:
-        bms_fields_file_FLASH_CELLBOARD_3_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_3_RX(buffer);
     case 24:
-        bms_fields_file_FLASH_CELLBOARD_4_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_4_TX(buffer);
     case 25:
-        bms_fields_file_FLASH_CELLBOARD_4_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_4_RX(buffer);
     case 26:
-        bms_fields_file_FLASH_CELLBOARD_5_TX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_5_TX(buffer);
     case 27:
-        bms_fields_file_FLASH_CELLBOARD_5_RX(buffer);
-        break;
+        return bms_fields_FLASH_CELLBOARD_5_RX(buffer);
     }
+    return 0;
 }
 
-void bms_string_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
+int bms_to_string_from_id(canlib_message_id message_id, void* message, char* buffer) {
     switch (message_id) {
         case 1536:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1568:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1600:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1632:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1664:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1696:
-            bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        break;
+            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1281:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 1313:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 1345:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 1377:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 1409:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 1441:
-            bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        break;
+            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 514:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 546:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 578:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 610:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 642:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 674:
-            bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        break;
+            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 515:
-            bms_to_string_file_BALANCING((bms_message_BALANCING*) message, buffer);
-        break;
+            return bms_to_string_BALANCING((bms_message_BALANCING*) message, buffer);
         case 10:
-            bms_to_string_file_FW_UPDATE((bms_message_FW_UPDATE*) message, buffer);
-        break;
+            return bms_to_string_FW_UPDATE((bms_message_FW_UPDATE*) message, buffer);
         case 16:
-            bms_to_string_file_FLASH_CELLBOARD_0_TX((bms_message_FLASH_CELLBOARD_0_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_0_TX((bms_message_FLASH_CELLBOARD_0_TX*) message, buffer);
         case 17:
-            bms_to_string_file_FLASH_CELLBOARD_0_RX((bms_message_FLASH_CELLBOARD_0_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_0_RX((bms_message_FLASH_CELLBOARD_0_RX*) message, buffer);
         case 18:
-            bms_to_string_file_FLASH_CELLBOARD_1_TX((bms_message_FLASH_CELLBOARD_1_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_1_TX((bms_message_FLASH_CELLBOARD_1_TX*) message, buffer);
         case 19:
-            bms_to_string_file_FLASH_CELLBOARD_1_RX((bms_message_FLASH_CELLBOARD_1_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_1_RX((bms_message_FLASH_CELLBOARD_1_RX*) message, buffer);
         case 20:
-            bms_to_string_file_FLASH_CELLBOARD_2_TX((bms_message_FLASH_CELLBOARD_2_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_2_TX((bms_message_FLASH_CELLBOARD_2_TX*) message, buffer);
         case 21:
-            bms_to_string_file_FLASH_CELLBOARD_2_RX((bms_message_FLASH_CELLBOARD_2_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_2_RX((bms_message_FLASH_CELLBOARD_2_RX*) message, buffer);
         case 22:
-            bms_to_string_file_FLASH_CELLBOARD_3_TX((bms_message_FLASH_CELLBOARD_3_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_3_TX((bms_message_FLASH_CELLBOARD_3_TX*) message, buffer);
         case 23:
-            bms_to_string_file_FLASH_CELLBOARD_3_RX((bms_message_FLASH_CELLBOARD_3_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_3_RX((bms_message_FLASH_CELLBOARD_3_RX*) message, buffer);
         case 24:
-            bms_to_string_file_FLASH_CELLBOARD_4_TX((bms_message_FLASH_CELLBOARD_4_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_4_TX((bms_message_FLASH_CELLBOARD_4_TX*) message, buffer);
         case 25:
-            bms_to_string_file_FLASH_CELLBOARD_4_RX((bms_message_FLASH_CELLBOARD_4_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_4_RX((bms_message_FLASH_CELLBOARD_4_RX*) message, buffer);
         case 26:
-            bms_to_string_file_FLASH_CELLBOARD_5_TX((bms_message_FLASH_CELLBOARD_5_TX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_5_TX((bms_message_FLASH_CELLBOARD_5_TX*) message, buffer);
         case 27:
-            bms_to_string_file_FLASH_CELLBOARD_5_RX((bms_message_FLASH_CELLBOARD_5_RX*) message, buffer);
-        break;
+            return bms_to_string_FLASH_CELLBOARD_5_RX((bms_message_FLASH_CELLBOARD_5_RX*) message, buffer);
     }
+    return 0;
 }
 
-void bms_deserialize_from_id(
+int bms_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
+    switch (message_id) {
+    case 1536:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1568:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1600:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1632:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1664:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1696:
+        return bms_fields_file_BOARD_STATUS(buffer);
+    case 1281:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 1313:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 1345:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 1377:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 1409:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 1441:
+        return bms_fields_file_TEMPERATURES(buffer);
+    case 514:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 546:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 578:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 610:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 642:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 674:
+        return bms_fields_file_VOLTAGES(buffer);
+    case 515:
+        return bms_fields_file_BALANCING(buffer);
+    case 10:
+        return bms_fields_file_FW_UPDATE(buffer);
+    case 16:
+        return bms_fields_file_FLASH_CELLBOARD_0_TX(buffer);
+    case 17:
+        return bms_fields_file_FLASH_CELLBOARD_0_RX(buffer);
+    case 18:
+        return bms_fields_file_FLASH_CELLBOARD_1_TX(buffer);
+    case 19:
+        return bms_fields_file_FLASH_CELLBOARD_1_RX(buffer);
+    case 20:
+        return bms_fields_file_FLASH_CELLBOARD_2_TX(buffer);
+    case 21:
+        return bms_fields_file_FLASH_CELLBOARD_2_RX(buffer);
+    case 22:
+        return bms_fields_file_FLASH_CELLBOARD_3_TX(buffer);
+    case 23:
+        return bms_fields_file_FLASH_CELLBOARD_3_RX(buffer);
+    case 24:
+        return bms_fields_file_FLASH_CELLBOARD_4_TX(buffer);
+    case 25:
+        return bms_fields_file_FLASH_CELLBOARD_4_RX(buffer);
+    case 26:
+        return bms_fields_file_FLASH_CELLBOARD_5_TX(buffer);
+    case 27:
+        return bms_fields_file_FLASH_CELLBOARD_5_RX(buffer);
+    }
+    return 0;
+}
+
+int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
+    switch (message_id) {
+        case 1536:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1568:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1600:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1632:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1664:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1696:
+            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
+        case 1281:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 1313:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 1345:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 1377:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 1409:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 1441:
+            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
+        case 514:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 546:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 578:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 610:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 642:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 674:
+            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
+        case 515:
+            return bms_to_string_file_BALANCING((bms_message_BALANCING*) message, buffer);
+        case 10:
+            return bms_to_string_file_FW_UPDATE((bms_message_FW_UPDATE*) message, buffer);
+        case 16:
+            return bms_to_string_file_FLASH_CELLBOARD_0_TX((bms_message_FLASH_CELLBOARD_0_TX*) message, buffer);
+        case 17:
+            return bms_to_string_file_FLASH_CELLBOARD_0_RX((bms_message_FLASH_CELLBOARD_0_RX*) message, buffer);
+        case 18:
+            return bms_to_string_file_FLASH_CELLBOARD_1_TX((bms_message_FLASH_CELLBOARD_1_TX*) message, buffer);
+        case 19:
+            return bms_to_string_file_FLASH_CELLBOARD_1_RX((bms_message_FLASH_CELLBOARD_1_RX*) message, buffer);
+        case 20:
+            return bms_to_string_file_FLASH_CELLBOARD_2_TX((bms_message_FLASH_CELLBOARD_2_TX*) message, buffer);
+        case 21:
+            return bms_to_string_file_FLASH_CELLBOARD_2_RX((bms_message_FLASH_CELLBOARD_2_RX*) message, buffer);
+        case 22:
+            return bms_to_string_file_FLASH_CELLBOARD_3_TX((bms_message_FLASH_CELLBOARD_3_TX*) message, buffer);
+        case 23:
+            return bms_to_string_file_FLASH_CELLBOARD_3_RX((bms_message_FLASH_CELLBOARD_3_RX*) message, buffer);
+        case 24:
+            return bms_to_string_file_FLASH_CELLBOARD_4_TX((bms_message_FLASH_CELLBOARD_4_TX*) message, buffer);
+        case 25:
+            return bms_to_string_file_FLASH_CELLBOARD_4_RX((bms_message_FLASH_CELLBOARD_4_RX*) message, buffer);
+        case 26:
+            return bms_to_string_file_FLASH_CELLBOARD_5_TX((bms_message_FLASH_CELLBOARD_5_TX*) message, buffer);
+        case 27:
+            return bms_to_string_file_FLASH_CELLBOARD_5_RX((bms_message_FLASH_CELLBOARD_5_RX*) message, buffer);
+    }
+    return 0;
+}
+
+int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
@@ -2473,7 +2553,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1568:
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) raw_message,
@@ -2482,7 +2562,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1600:
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) raw_message,
@@ -2491,7 +2571,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1632:
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) raw_message,
@@ -2500,7 +2580,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1664:
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) raw_message,
@@ -2509,7 +2589,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1696:
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) raw_message,
@@ -2518,7 +2598,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BOARD_STATUS);
         case 1281:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2531,7 +2611,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 1313:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2544,7 +2624,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 1345:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2557,7 +2637,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 1377:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2570,7 +2650,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 1409:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2583,7 +2663,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 1441:
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) raw_message,
@@ -2596,7 +2676,7 @@ void bms_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) message,
                 (bms_message_TEMPERATURES*) raw_message
             );
-        break;
+            return sizeof(bms_message_TEMPERATURES_conversion);
         case 514:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2609,7 +2689,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 546:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2622,7 +2702,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 578:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2635,7 +2715,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 610:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2648,7 +2728,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 642:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2661,7 +2741,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 674:
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) raw_message,
@@ -2674,7 +2754,7 @@ void bms_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) message,
                 (bms_message_VOLTAGES*) raw_message
             );
-        break;
+            return sizeof(bms_message_VOLTAGES_conversion);
         case 515:
             bms_deserialize_BALANCING(
                 (bms_message_BALANCING*) raw_message,
@@ -2683,7 +2763,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_BALANCING);
         case 10:
             bms_deserialize_FW_UPDATE(
                 (bms_message_FW_UPDATE*) raw_message,
@@ -2692,7 +2772,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FW_UPDATE);
         case 16:
             bms_deserialize_FLASH_CELLBOARD_0_TX(
                 (bms_message_FLASH_CELLBOARD_0_TX*) raw_message,
@@ -2701,7 +2781,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_0_TX);
         case 17:
             bms_deserialize_FLASH_CELLBOARD_0_RX(
                 (bms_message_FLASH_CELLBOARD_0_RX*) raw_message,
@@ -2710,7 +2790,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_0_RX);
         case 18:
             bms_deserialize_FLASH_CELLBOARD_1_TX(
                 (bms_message_FLASH_CELLBOARD_1_TX*) raw_message,
@@ -2719,7 +2799,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_1_TX);
         case 19:
             bms_deserialize_FLASH_CELLBOARD_1_RX(
                 (bms_message_FLASH_CELLBOARD_1_RX*) raw_message,
@@ -2728,7 +2808,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_1_RX);
         case 20:
             bms_deserialize_FLASH_CELLBOARD_2_TX(
                 (bms_message_FLASH_CELLBOARD_2_TX*) raw_message,
@@ -2737,7 +2817,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_2_TX);
         case 21:
             bms_deserialize_FLASH_CELLBOARD_2_RX(
                 (bms_message_FLASH_CELLBOARD_2_RX*) raw_message,
@@ -2746,7 +2826,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_2_RX);
         case 22:
             bms_deserialize_FLASH_CELLBOARD_3_TX(
                 (bms_message_FLASH_CELLBOARD_3_TX*) raw_message,
@@ -2755,7 +2835,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_3_TX);
         case 23:
             bms_deserialize_FLASH_CELLBOARD_3_RX(
                 (bms_message_FLASH_CELLBOARD_3_RX*) raw_message,
@@ -2764,7 +2844,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_3_RX);
         case 24:
             bms_deserialize_FLASH_CELLBOARD_4_TX(
                 (bms_message_FLASH_CELLBOARD_4_TX*) raw_message,
@@ -2773,7 +2853,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_4_TX);
         case 25:
             bms_deserialize_FLASH_CELLBOARD_4_RX(
                 (bms_message_FLASH_CELLBOARD_4_RX*) raw_message,
@@ -2782,7 +2862,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_4_RX);
         case 26:
             bms_deserialize_FLASH_CELLBOARD_5_TX(
                 (bms_message_FLASH_CELLBOARD_5_TX*) raw_message,
@@ -2791,7 +2871,7 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_5_TX);
         case 27:
             bms_deserialize_FLASH_CELLBOARD_5_RX(
                 (bms_message_FLASH_CELLBOARD_5_RX*) raw_message,
@@ -2800,8 +2880,9 @@ void bms_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(bms_message_FLASH_CELLBOARD_5_RX);
     }
+    return 0;
 }
 
 void bms_devices_new(bms_devices* map) {

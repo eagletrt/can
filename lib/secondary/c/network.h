@@ -1068,9 +1068,11 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 void secondary_devices_new(secondary_devices* map);
 int secondary_devices_index_from_id(canlib_message_id message_id, secondary_devices* map);
-void secondary_fields_from_id(canlib_message_id message_id, FILE *buffer);
-void secondary_string_from_id(canlib_message_id message_id, void* message, FILE *buffer);
-void secondary_deserialize_from_id(
+int secondary_fields_from_id(canlib_message_id message_id, char *buffer);
+int secondary_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
+int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
+int secondary_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer);
+int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
@@ -3814,161 +3816,223 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
 
 // ============== UTILS ============== //
 
-void secondary_fields_from_id(canlib_message_id message_id, FILE *buffer) {
+int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {
     case 1260:
-        secondary_fields_file_IMU_ANGULAR_RATE(buffer);
-        break;
+        return secondary_fields_IMU_ANGULAR_RATE(buffer);
     case 1261:
-        secondary_fields_file_IMU_ACCELERATION(buffer);
-        break;
+        return secondary_fields_IMU_ACCELERATION(buffer);
     case 1460:
-        secondary_fields_file_IRTS_FL_0(buffer);
-        break;
+        return secondary_fields_IRTS_FL_0(buffer);
     case 1461:
-        secondary_fields_file_IRTS_FL_1(buffer);
-        break;
+        return secondary_fields_IRTS_FL_1(buffer);
     case 1462:
-        secondary_fields_file_IRTS_FL_2(buffer);
-        break;
+        return secondary_fields_IRTS_FL_2(buffer);
     case 1463:
-        secondary_fields_file_IRTS_FL_3(buffer);
-        break;
+        return secondary_fields_IRTS_FL_3(buffer);
     case 1464:
-        secondary_fields_file_IRTS_FR_0(buffer);
-        break;
+        return secondary_fields_IRTS_FR_0(buffer);
     case 1465:
-        secondary_fields_file_IRTS_FR_1(buffer);
-        break;
+        return secondary_fields_IRTS_FR_1(buffer);
     case 1466:
-        secondary_fields_file_IRTS_FR_2(buffer);
-        break;
+        return secondary_fields_IRTS_FR_2(buffer);
     case 1467:
-        secondary_fields_file_IRTS_FR_3(buffer);
-        break;
+        return secondary_fields_IRTS_FR_3(buffer);
     case 1468:
-        secondary_fields_file_IRTS_RL_0(buffer);
-        break;
+        return secondary_fields_IRTS_RL_0(buffer);
     case 1469:
-        secondary_fields_file_IRTS_RL_1(buffer);
-        break;
+        return secondary_fields_IRTS_RL_1(buffer);
     case 1470:
-        secondary_fields_file_IRTS_RL_2(buffer);
-        break;
+        return secondary_fields_IRTS_RL_2(buffer);
     case 1471:
-        secondary_fields_file_IRTS_RL_3(buffer);
-        break;
+        return secondary_fields_IRTS_RL_3(buffer);
     case 1472:
-        secondary_fields_file_IRTS_RR_0(buffer);
-        break;
+        return secondary_fields_IRTS_RR_0(buffer);
     case 1473:
-        secondary_fields_file_IRTS_RR_1(buffer);
-        break;
+        return secondary_fields_IRTS_RR_1(buffer);
     case 1474:
-        secondary_fields_file_IRTS_RR_2(buffer);
-        break;
+        return secondary_fields_IRTS_RR_2(buffer);
     case 1475:
-        secondary_fields_file_IRTS_RR_3(buffer);
-        break;
+        return secondary_fields_IRTS_RR_3(buffer);
     case 1025:
-        secondary_fields_file_GPS_COORDS(buffer);
-        break;
+        return secondary_fields_GPS_COORDS(buffer);
     case 1057:
-        secondary_fields_file_GPS_SPEED(buffer);
-        break;
+        return secondary_fields_GPS_SPEED(buffer);
     case 1089:
-        secondary_fields_file_LAP_COUNT(buffer);
-        break;
+        return secondary_fields_LAP_COUNT(buffer);
     case 769:
-        secondary_fields_file_PEDALS_OUTPUT(buffer);
-        break;
+        return secondary_fields_PEDALS_OUTPUT(buffer);
     case 801:
-        secondary_fields_file_CONTROL_OUTPUT(buffer);
-        break;
+        return secondary_fields_CONTROL_OUTPUT(buffer);
     case 258:
-        secondary_fields_file_STEERING_ANGLE(buffer);
-        break;
+        return secondary_fields_STEERING_ANGLE(buffer);
     }
+    return 0;
 }
 
-void secondary_string_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
+int secondary_to_string_from_id(canlib_message_id message_id, void* message, char* buffer) {
     switch (message_id) {
         case 1260:
-            secondary_to_string_file_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE*) message, buffer);
-        break;
+            return secondary_to_string_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE*) message, buffer);
         case 1261:
-            secondary_to_string_file_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION*) message, buffer);
-        break;
+            return secondary_to_string_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION*) message, buffer);
         case 1460:
-            secondary_to_string_file_IRTS_FL_0((secondary_message_IRTS_FL_0*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FL_0((secondary_message_IRTS_FL_0*) message, buffer);
         case 1461:
-            secondary_to_string_file_IRTS_FL_1((secondary_message_IRTS_FL_1*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FL_1((secondary_message_IRTS_FL_1*) message, buffer);
         case 1462:
-            secondary_to_string_file_IRTS_FL_2((secondary_message_IRTS_FL_2*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FL_2((secondary_message_IRTS_FL_2*) message, buffer);
         case 1463:
-            secondary_to_string_file_IRTS_FL_3((secondary_message_IRTS_FL_3*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FL_3((secondary_message_IRTS_FL_3*) message, buffer);
         case 1464:
-            secondary_to_string_file_IRTS_FR_0((secondary_message_IRTS_FR_0*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FR_0((secondary_message_IRTS_FR_0*) message, buffer);
         case 1465:
-            secondary_to_string_file_IRTS_FR_1((secondary_message_IRTS_FR_1*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FR_1((secondary_message_IRTS_FR_1*) message, buffer);
         case 1466:
-            secondary_to_string_file_IRTS_FR_2((secondary_message_IRTS_FR_2*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FR_2((secondary_message_IRTS_FR_2*) message, buffer);
         case 1467:
-            secondary_to_string_file_IRTS_FR_3((secondary_message_IRTS_FR_3*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_FR_3((secondary_message_IRTS_FR_3*) message, buffer);
         case 1468:
-            secondary_to_string_file_IRTS_RL_0((secondary_message_IRTS_RL_0*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RL_0((secondary_message_IRTS_RL_0*) message, buffer);
         case 1469:
-            secondary_to_string_file_IRTS_RL_1((secondary_message_IRTS_RL_1*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RL_1((secondary_message_IRTS_RL_1*) message, buffer);
         case 1470:
-            secondary_to_string_file_IRTS_RL_2((secondary_message_IRTS_RL_2*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RL_2((secondary_message_IRTS_RL_2*) message, buffer);
         case 1471:
-            secondary_to_string_file_IRTS_RL_3((secondary_message_IRTS_RL_3*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RL_3((secondary_message_IRTS_RL_3*) message, buffer);
         case 1472:
-            secondary_to_string_file_IRTS_RR_0((secondary_message_IRTS_RR_0*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RR_0((secondary_message_IRTS_RR_0*) message, buffer);
         case 1473:
-            secondary_to_string_file_IRTS_RR_1((secondary_message_IRTS_RR_1*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RR_1((secondary_message_IRTS_RR_1*) message, buffer);
         case 1474:
-            secondary_to_string_file_IRTS_RR_2((secondary_message_IRTS_RR_2*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RR_2((secondary_message_IRTS_RR_2*) message, buffer);
         case 1475:
-            secondary_to_string_file_IRTS_RR_3((secondary_message_IRTS_RR_3*) message, buffer);
-        break;
+            return secondary_to_string_IRTS_RR_3((secondary_message_IRTS_RR_3*) message, buffer);
         case 1025:
-            secondary_to_string_file_GPS_COORDS((secondary_message_GPS_COORDS*) message, buffer);
-        break;
+            return secondary_to_string_GPS_COORDS((secondary_message_GPS_COORDS*) message, buffer);
         case 1057:
-            secondary_to_string_file_GPS_SPEED((secondary_message_GPS_SPEED*) message, buffer);
-        break;
+            return secondary_to_string_GPS_SPEED((secondary_message_GPS_SPEED*) message, buffer);
         case 1089:
-            secondary_to_string_file_LAP_COUNT((secondary_message_LAP_COUNT*) message, buffer);
-        break;
+            return secondary_to_string_LAP_COUNT((secondary_message_LAP_COUNT*) message, buffer);
         case 769:
-            secondary_to_string_file_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
-        break;
+            return secondary_to_string_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
         case 801:
-            secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT*) message, buffer);
-        break;
+            return secondary_to_string_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT*) message, buffer);
         case 258:
-            secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
-        break;
+            return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
     }
+    return 0;
 }
 
-void secondary_deserialize_from_id(
+int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
+    switch (message_id) {
+    case 1260:
+        return secondary_fields_file_IMU_ANGULAR_RATE(buffer);
+    case 1261:
+        return secondary_fields_file_IMU_ACCELERATION(buffer);
+    case 1460:
+        return secondary_fields_file_IRTS_FL_0(buffer);
+    case 1461:
+        return secondary_fields_file_IRTS_FL_1(buffer);
+    case 1462:
+        return secondary_fields_file_IRTS_FL_2(buffer);
+    case 1463:
+        return secondary_fields_file_IRTS_FL_3(buffer);
+    case 1464:
+        return secondary_fields_file_IRTS_FR_0(buffer);
+    case 1465:
+        return secondary_fields_file_IRTS_FR_1(buffer);
+    case 1466:
+        return secondary_fields_file_IRTS_FR_2(buffer);
+    case 1467:
+        return secondary_fields_file_IRTS_FR_3(buffer);
+    case 1468:
+        return secondary_fields_file_IRTS_RL_0(buffer);
+    case 1469:
+        return secondary_fields_file_IRTS_RL_1(buffer);
+    case 1470:
+        return secondary_fields_file_IRTS_RL_2(buffer);
+    case 1471:
+        return secondary_fields_file_IRTS_RL_3(buffer);
+    case 1472:
+        return secondary_fields_file_IRTS_RR_0(buffer);
+    case 1473:
+        return secondary_fields_file_IRTS_RR_1(buffer);
+    case 1474:
+        return secondary_fields_file_IRTS_RR_2(buffer);
+    case 1475:
+        return secondary_fields_file_IRTS_RR_3(buffer);
+    case 1025:
+        return secondary_fields_file_GPS_COORDS(buffer);
+    case 1057:
+        return secondary_fields_file_GPS_SPEED(buffer);
+    case 1089:
+        return secondary_fields_file_LAP_COUNT(buffer);
+    case 769:
+        return secondary_fields_file_PEDALS_OUTPUT(buffer);
+    case 801:
+        return secondary_fields_file_CONTROL_OUTPUT(buffer);
+    case 258:
+        return secondary_fields_file_STEERING_ANGLE(buffer);
+    }
+    return 0;
+}
+
+int secondary_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
+    switch (message_id) {
+        case 1260:
+            return secondary_to_string_file_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE*) message, buffer);
+        case 1261:
+            return secondary_to_string_file_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION*) message, buffer);
+        case 1460:
+            return secondary_to_string_file_IRTS_FL_0((secondary_message_IRTS_FL_0*) message, buffer);
+        case 1461:
+            return secondary_to_string_file_IRTS_FL_1((secondary_message_IRTS_FL_1*) message, buffer);
+        case 1462:
+            return secondary_to_string_file_IRTS_FL_2((secondary_message_IRTS_FL_2*) message, buffer);
+        case 1463:
+            return secondary_to_string_file_IRTS_FL_3((secondary_message_IRTS_FL_3*) message, buffer);
+        case 1464:
+            return secondary_to_string_file_IRTS_FR_0((secondary_message_IRTS_FR_0*) message, buffer);
+        case 1465:
+            return secondary_to_string_file_IRTS_FR_1((secondary_message_IRTS_FR_1*) message, buffer);
+        case 1466:
+            return secondary_to_string_file_IRTS_FR_2((secondary_message_IRTS_FR_2*) message, buffer);
+        case 1467:
+            return secondary_to_string_file_IRTS_FR_3((secondary_message_IRTS_FR_3*) message, buffer);
+        case 1468:
+            return secondary_to_string_file_IRTS_RL_0((secondary_message_IRTS_RL_0*) message, buffer);
+        case 1469:
+            return secondary_to_string_file_IRTS_RL_1((secondary_message_IRTS_RL_1*) message, buffer);
+        case 1470:
+            return secondary_to_string_file_IRTS_RL_2((secondary_message_IRTS_RL_2*) message, buffer);
+        case 1471:
+            return secondary_to_string_file_IRTS_RL_3((secondary_message_IRTS_RL_3*) message, buffer);
+        case 1472:
+            return secondary_to_string_file_IRTS_RR_0((secondary_message_IRTS_RR_0*) message, buffer);
+        case 1473:
+            return secondary_to_string_file_IRTS_RR_1((secondary_message_IRTS_RR_1*) message, buffer);
+        case 1474:
+            return secondary_to_string_file_IRTS_RR_2((secondary_message_IRTS_RR_2*) message, buffer);
+        case 1475:
+            return secondary_to_string_file_IRTS_RR_3((secondary_message_IRTS_RR_3*) message, buffer);
+        case 1025:
+            return secondary_to_string_file_GPS_COORDS((secondary_message_GPS_COORDS*) message, buffer);
+        case 1057:
+            return secondary_to_string_file_GPS_SPEED((secondary_message_GPS_SPEED*) message, buffer);
+        case 1089:
+            return secondary_to_string_file_LAP_COUNT((secondary_message_LAP_COUNT*) message, buffer);
+        case 769:
+            return secondary_to_string_file_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
+        case 801:
+            return secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT*) message, buffer);
+        case 258:
+            return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
+    }
+    return 0;
+}
+
+int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
     void* raw_message,
@@ -3986,7 +4050,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IMU_ANGULAR_RATE);
         case 1261:
             secondary_deserialize_IMU_ACCELERATION(
                 (secondary_message_IMU_ACCELERATION*) raw_message,
@@ -3995,7 +4059,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IMU_ACCELERATION);
         case 1460:
             secondary_deserialize_IRTS_FL_0(
                 (secondary_message_IRTS_FL_0*) raw_message,
@@ -4004,7 +4068,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FL_0);
         case 1461:
             secondary_deserialize_IRTS_FL_1(
                 (secondary_message_IRTS_FL_1*) raw_message,
@@ -4013,7 +4077,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FL_1);
         case 1462:
             secondary_deserialize_IRTS_FL_2(
                 (secondary_message_IRTS_FL_2*) raw_message,
@@ -4022,7 +4086,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FL_2);
         case 1463:
             secondary_deserialize_IRTS_FL_3(
                 (secondary_message_IRTS_FL_3*) raw_message,
@@ -4031,7 +4095,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FL_3);
         case 1464:
             secondary_deserialize_IRTS_FR_0(
                 (secondary_message_IRTS_FR_0*) raw_message,
@@ -4040,7 +4104,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FR_0);
         case 1465:
             secondary_deserialize_IRTS_FR_1(
                 (secondary_message_IRTS_FR_1*) raw_message,
@@ -4049,7 +4113,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FR_1);
         case 1466:
             secondary_deserialize_IRTS_FR_2(
                 (secondary_message_IRTS_FR_2*) raw_message,
@@ -4058,7 +4122,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FR_2);
         case 1467:
             secondary_deserialize_IRTS_FR_3(
                 (secondary_message_IRTS_FR_3*) raw_message,
@@ -4067,7 +4131,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_FR_3);
         case 1468:
             secondary_deserialize_IRTS_RL_0(
                 (secondary_message_IRTS_RL_0*) raw_message,
@@ -4076,7 +4140,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RL_0);
         case 1469:
             secondary_deserialize_IRTS_RL_1(
                 (secondary_message_IRTS_RL_1*) raw_message,
@@ -4085,7 +4149,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RL_1);
         case 1470:
             secondary_deserialize_IRTS_RL_2(
                 (secondary_message_IRTS_RL_2*) raw_message,
@@ -4094,7 +4158,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RL_2);
         case 1471:
             secondary_deserialize_IRTS_RL_3(
                 (secondary_message_IRTS_RL_3*) raw_message,
@@ -4103,7 +4167,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RL_3);
         case 1472:
             secondary_deserialize_IRTS_RR_0(
                 (secondary_message_IRTS_RR_0*) raw_message,
@@ -4112,7 +4176,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RR_0);
         case 1473:
             secondary_deserialize_IRTS_RR_1(
                 (secondary_message_IRTS_RR_1*) raw_message,
@@ -4121,7 +4185,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RR_1);
         case 1474:
             secondary_deserialize_IRTS_RR_2(
                 (secondary_message_IRTS_RR_2*) raw_message,
@@ -4130,7 +4194,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RR_2);
         case 1475:
             secondary_deserialize_IRTS_RR_3(
                 (secondary_message_IRTS_RR_3*) raw_message,
@@ -4139,7 +4203,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_IRTS_RR_3);
         case 1025:
             secondary_deserialize_GPS_COORDS(
                 (secondary_message_GPS_COORDS*) raw_message,
@@ -4148,7 +4212,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_GPS_COORDS);
         case 1057:
             secondary_deserialize_GPS_SPEED(
                 (secondary_message_GPS_SPEED*) raw_message,
@@ -4157,7 +4221,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_GPS_SPEED);
         case 1089:
             secondary_deserialize_LAP_COUNT(
                 (secondary_message_LAP_COUNT*) raw_message,
@@ -4166,7 +4230,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_LAP_COUNT);
         case 769:
             secondary_deserialize_PEDALS_OUTPUT(
                 (secondary_message_PEDALS_OUTPUT*) raw_message,
@@ -4179,7 +4243,7 @@ void secondary_deserialize_from_id(
                 (secondary_message_PEDALS_OUTPUT_conversion*) message,
                 (secondary_message_PEDALS_OUTPUT*) raw_message
             );
-        break;
+            return sizeof(secondary_message_PEDALS_OUTPUT_conversion);
         case 801:
             secondary_deserialize_CONTROL_OUTPUT(
                 (secondary_message_CONTROL_OUTPUT*) raw_message,
@@ -4188,7 +4252,7 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_CONTROL_OUTPUT);
         case 258:
             secondary_deserialize_STEERING_ANGLE(
                 (secondary_message_STEERING_ANGLE*) raw_message,
@@ -4197,8 +4261,9 @@ void secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-        break;
+            return sizeof(secondary_message_STEERING_ANGLE);
     }
+    return 0;
 }
 
 void secondary_devices_new(secondary_devices* map) {
