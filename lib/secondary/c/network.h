@@ -1075,7 +1075,7 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
 int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* message
+    void** message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4034,14 +4034,14 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
 int secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* message
+    void** message
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
         case 1260: {
-            message = malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
+            *message = malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
             secondary_deserialize_IMU_ANGULAR_RATE(
                 (secondary_message_IMU_ANGULAR_RATE*) message,
                 data
@@ -4052,7 +4052,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IMU_ANGULAR_RATE);
         }
         case 1261: {
-            message = malloc(sizeof(secondary_message_IMU_ACCELERATION));
+            *message = malloc(sizeof(secondary_message_IMU_ACCELERATION));
             secondary_deserialize_IMU_ACCELERATION(
                 (secondary_message_IMU_ACCELERATION*) message,
                 data
@@ -4063,7 +4063,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IMU_ACCELERATION);
         }
         case 1460: {
-            message = malloc(sizeof(secondary_message_IRTS_FL_0));
+            *message = malloc(sizeof(secondary_message_IRTS_FL_0));
             secondary_deserialize_IRTS_FL_0(
                 (secondary_message_IRTS_FL_0*) message,
                 data
@@ -4074,7 +4074,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FL_0);
         }
         case 1461: {
-            message = malloc(sizeof(secondary_message_IRTS_FL_1));
+            *message = malloc(sizeof(secondary_message_IRTS_FL_1));
             secondary_deserialize_IRTS_FL_1(
                 (secondary_message_IRTS_FL_1*) message,
                 data
@@ -4085,7 +4085,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FL_1);
         }
         case 1462: {
-            message = malloc(sizeof(secondary_message_IRTS_FL_2));
+            *message = malloc(sizeof(secondary_message_IRTS_FL_2));
             secondary_deserialize_IRTS_FL_2(
                 (secondary_message_IRTS_FL_2*) message,
                 data
@@ -4096,7 +4096,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FL_2);
         }
         case 1463: {
-            message = malloc(sizeof(secondary_message_IRTS_FL_3));
+            *message = malloc(sizeof(secondary_message_IRTS_FL_3));
             secondary_deserialize_IRTS_FL_3(
                 (secondary_message_IRTS_FL_3*) message,
                 data
@@ -4107,7 +4107,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FL_3);
         }
         case 1464: {
-            message = malloc(sizeof(secondary_message_IRTS_FR_0));
+            *message = malloc(sizeof(secondary_message_IRTS_FR_0));
             secondary_deserialize_IRTS_FR_0(
                 (secondary_message_IRTS_FR_0*) message,
                 data
@@ -4118,7 +4118,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FR_0);
         }
         case 1465: {
-            message = malloc(sizeof(secondary_message_IRTS_FR_1));
+            *message = malloc(sizeof(secondary_message_IRTS_FR_1));
             secondary_deserialize_IRTS_FR_1(
                 (secondary_message_IRTS_FR_1*) message,
                 data
@@ -4129,7 +4129,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FR_1);
         }
         case 1466: {
-            message = malloc(sizeof(secondary_message_IRTS_FR_2));
+            *message = malloc(sizeof(secondary_message_IRTS_FR_2));
             secondary_deserialize_IRTS_FR_2(
                 (secondary_message_IRTS_FR_2*) message,
                 data
@@ -4140,7 +4140,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FR_2);
         }
         case 1467: {
-            message = malloc(sizeof(secondary_message_IRTS_FR_3));
+            *message = malloc(sizeof(secondary_message_IRTS_FR_3));
             secondary_deserialize_IRTS_FR_3(
                 (secondary_message_IRTS_FR_3*) message,
                 data
@@ -4151,7 +4151,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_FR_3);
         }
         case 1468: {
-            message = malloc(sizeof(secondary_message_IRTS_RL_0));
+            *message = malloc(sizeof(secondary_message_IRTS_RL_0));
             secondary_deserialize_IRTS_RL_0(
                 (secondary_message_IRTS_RL_0*) message,
                 data
@@ -4162,7 +4162,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RL_0);
         }
         case 1469: {
-            message = malloc(sizeof(secondary_message_IRTS_RL_1));
+            *message = malloc(sizeof(secondary_message_IRTS_RL_1));
             secondary_deserialize_IRTS_RL_1(
                 (secondary_message_IRTS_RL_1*) message,
                 data
@@ -4173,7 +4173,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RL_1);
         }
         case 1470: {
-            message = malloc(sizeof(secondary_message_IRTS_RL_2));
+            *message = malloc(sizeof(secondary_message_IRTS_RL_2));
             secondary_deserialize_IRTS_RL_2(
                 (secondary_message_IRTS_RL_2*) message,
                 data
@@ -4184,7 +4184,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RL_2);
         }
         case 1471: {
-            message = malloc(sizeof(secondary_message_IRTS_RL_3));
+            *message = malloc(sizeof(secondary_message_IRTS_RL_3));
             secondary_deserialize_IRTS_RL_3(
                 (secondary_message_IRTS_RL_3*) message,
                 data
@@ -4195,7 +4195,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RL_3);
         }
         case 1472: {
-            message = malloc(sizeof(secondary_message_IRTS_RR_0));
+            *message = malloc(sizeof(secondary_message_IRTS_RR_0));
             secondary_deserialize_IRTS_RR_0(
                 (secondary_message_IRTS_RR_0*) message,
                 data
@@ -4206,7 +4206,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RR_0);
         }
         case 1473: {
-            message = malloc(sizeof(secondary_message_IRTS_RR_1));
+            *message = malloc(sizeof(secondary_message_IRTS_RR_1));
             secondary_deserialize_IRTS_RR_1(
                 (secondary_message_IRTS_RR_1*) message,
                 data
@@ -4217,7 +4217,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RR_1);
         }
         case 1474: {
-            message = malloc(sizeof(secondary_message_IRTS_RR_2));
+            *message = malloc(sizeof(secondary_message_IRTS_RR_2));
             secondary_deserialize_IRTS_RR_2(
                 (secondary_message_IRTS_RR_2*) message,
                 data
@@ -4228,7 +4228,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RR_2);
         }
         case 1475: {
-            message = malloc(sizeof(secondary_message_IRTS_RR_3));
+            *message = malloc(sizeof(secondary_message_IRTS_RR_3));
             secondary_deserialize_IRTS_RR_3(
                 (secondary_message_IRTS_RR_3*) message,
                 data
@@ -4239,7 +4239,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_IRTS_RR_3);
         }
         case 1025: {
-            message = malloc(sizeof(secondary_message_GPS_COORDS));
+            *message = malloc(sizeof(secondary_message_GPS_COORDS));
             secondary_deserialize_GPS_COORDS(
                 (secondary_message_GPS_COORDS*) message,
                 data
@@ -4250,7 +4250,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_GPS_COORDS);
         }
         case 1057: {
-            message = malloc(sizeof(secondary_message_GPS_SPEED));
+            *message = malloc(sizeof(secondary_message_GPS_SPEED));
             secondary_deserialize_GPS_SPEED(
                 (secondary_message_GPS_SPEED*) message,
                 data
@@ -4261,7 +4261,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_GPS_SPEED);
         }
         case 1089: {
-            message = malloc(sizeof(secondary_message_LAP_COUNT));
+            *message = malloc(sizeof(secondary_message_LAP_COUNT));
             secondary_deserialize_LAP_COUNT(
                 (secondary_message_LAP_COUNT*) message,
                 data
@@ -4273,7 +4273,7 @@ int secondary_deserialize_from_id(
         }
         case 769: {
             secondary_message_PEDALS_OUTPUT* raw_message = (secondary_message_PEDALS_OUTPUT*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
-            message = malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
+            *message = malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
             secondary_deserialize_PEDALS_OUTPUT(
                 raw_message,
                 data
@@ -4289,7 +4289,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_PEDALS_OUTPUT_conversion);
         }
         case 801: {
-            message = malloc(sizeof(secondary_message_CONTROL_OUTPUT));
+            *message = malloc(sizeof(secondary_message_CONTROL_OUTPUT));
             secondary_deserialize_CONTROL_OUTPUT(
                 (secondary_message_CONTROL_OUTPUT*) message,
                 data
@@ -4300,7 +4300,7 @@ int secondary_deserialize_from_id(
             return sizeof(secondary_message_CONTROL_OUTPUT);
         }
         case 258: {
-            message = malloc(sizeof(secondary_message_STEERING_ANGLE));
+            *message = malloc(sizeof(secondary_message_STEERING_ANGLE));
             secondary_deserialize_STEERING_ANGLE(
                 (secondary_message_STEERING_ANGLE*) message,
                 data

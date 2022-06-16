@@ -844,7 +844,7 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
 int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* message
+    void** message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
@@ -2537,14 +2537,14 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
 int bms_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void* message
+    void** message
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
         case 1536: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2555,7 +2555,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BOARD_STATUS);
         }
         case 1568: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2566,7 +2566,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BOARD_STATUS);
         }
         case 1600: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2577,7 +2577,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BOARD_STATUS);
         }
         case 1632: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2588,7 +2588,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BOARD_STATUS);
         }
         case 1664: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2599,7 +2599,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BOARD_STATUS);
         }
         case 1696: {
-            message = malloc(sizeof(bms_message_BOARD_STATUS));
+            *message = malloc(sizeof(bms_message_BOARD_STATUS));
             bms_deserialize_BOARD_STATUS(
                 (bms_message_BOARD_STATUS*) message,
                 data
@@ -2611,7 +2611,7 @@ int bms_deserialize_from_id(
         }
         case 1281: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2628,7 +2628,7 @@ int bms_deserialize_from_id(
         }
         case 1313: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2645,7 +2645,7 @@ int bms_deserialize_from_id(
         }
         case 1345: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2662,7 +2662,7 @@ int bms_deserialize_from_id(
         }
         case 1377: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2679,7 +2679,7 @@ int bms_deserialize_from_id(
         }
         case 1409: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2696,7 +2696,7 @@ int bms_deserialize_from_id(
         }
         case 1441: {
             bms_message_TEMPERATURES* raw_message = (bms_message_TEMPERATURES*) malloc(sizeof(bms_message_TEMPERATURES));
-            message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
+            *message = malloc(sizeof(bms_message_TEMPERATURES_conversion));
             bms_deserialize_TEMPERATURES(
                 raw_message,
                 data
@@ -2713,7 +2713,7 @@ int bms_deserialize_from_id(
         }
         case 514: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2730,7 +2730,7 @@ int bms_deserialize_from_id(
         }
         case 546: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2747,7 +2747,7 @@ int bms_deserialize_from_id(
         }
         case 578: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2764,7 +2764,7 @@ int bms_deserialize_from_id(
         }
         case 610: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2781,7 +2781,7 @@ int bms_deserialize_from_id(
         }
         case 642: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2798,7 +2798,7 @@ int bms_deserialize_from_id(
         }
         case 674: {
             bms_message_VOLTAGES* raw_message = (bms_message_VOLTAGES*) malloc(sizeof(bms_message_VOLTAGES));
-            message = malloc(sizeof(bms_message_VOLTAGES_conversion));
+            *message = malloc(sizeof(bms_message_VOLTAGES_conversion));
             bms_deserialize_VOLTAGES(
                 raw_message,
                 data
@@ -2814,7 +2814,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_VOLTAGES_conversion);
         }
         case 515: {
-            message = malloc(sizeof(bms_message_BALANCING));
+            *message = malloc(sizeof(bms_message_BALANCING));
             bms_deserialize_BALANCING(
                 (bms_message_BALANCING*) message,
                 data
@@ -2825,7 +2825,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_BALANCING);
         }
         case 10: {
-            message = malloc(sizeof(bms_message_FW_UPDATE));
+            *message = malloc(sizeof(bms_message_FW_UPDATE));
             bms_deserialize_FW_UPDATE(
                 (bms_message_FW_UPDATE*) message,
                 data
@@ -2836,7 +2836,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FW_UPDATE);
         }
         case 16: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_TX));
             bms_deserialize_FLASH_CELLBOARD_0_TX(
                 (bms_message_FLASH_CELLBOARD_0_TX*) message,
                 data
@@ -2847,7 +2847,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_0_TX);
         }
         case 17: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_0_RX));
             bms_deserialize_FLASH_CELLBOARD_0_RX(
                 (bms_message_FLASH_CELLBOARD_0_RX*) message,
                 data
@@ -2858,7 +2858,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_0_RX);
         }
         case 18: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_TX));
             bms_deserialize_FLASH_CELLBOARD_1_TX(
                 (bms_message_FLASH_CELLBOARD_1_TX*) message,
                 data
@@ -2869,7 +2869,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_1_TX);
         }
         case 19: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_1_RX));
             bms_deserialize_FLASH_CELLBOARD_1_RX(
                 (bms_message_FLASH_CELLBOARD_1_RX*) message,
                 data
@@ -2880,7 +2880,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_1_RX);
         }
         case 20: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_TX));
             bms_deserialize_FLASH_CELLBOARD_2_TX(
                 (bms_message_FLASH_CELLBOARD_2_TX*) message,
                 data
@@ -2891,7 +2891,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_2_TX);
         }
         case 21: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_2_RX));
             bms_deserialize_FLASH_CELLBOARD_2_RX(
                 (bms_message_FLASH_CELLBOARD_2_RX*) message,
                 data
@@ -2902,7 +2902,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_2_RX);
         }
         case 22: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_TX));
             bms_deserialize_FLASH_CELLBOARD_3_TX(
                 (bms_message_FLASH_CELLBOARD_3_TX*) message,
                 data
@@ -2913,7 +2913,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_3_TX);
         }
         case 23: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_3_RX));
             bms_deserialize_FLASH_CELLBOARD_3_RX(
                 (bms_message_FLASH_CELLBOARD_3_RX*) message,
                 data
@@ -2924,7 +2924,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_3_RX);
         }
         case 24: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_TX));
             bms_deserialize_FLASH_CELLBOARD_4_TX(
                 (bms_message_FLASH_CELLBOARD_4_TX*) message,
                 data
@@ -2935,7 +2935,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_4_TX);
         }
         case 25: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_4_RX));
             bms_deserialize_FLASH_CELLBOARD_4_RX(
                 (bms_message_FLASH_CELLBOARD_4_RX*) message,
                 data
@@ -2946,7 +2946,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_4_RX);
         }
         case 26: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_TX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_TX));
             bms_deserialize_FLASH_CELLBOARD_5_TX(
                 (bms_message_FLASH_CELLBOARD_5_TX*) message,
                 data
@@ -2957,7 +2957,7 @@ int bms_deserialize_from_id(
             return sizeof(bms_message_FLASH_CELLBOARD_5_TX);
         }
         case 27: {
-            message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_RX));
+            *message = malloc(sizeof(bms_message_FLASH_CELLBOARD_5_RX));
             bms_deserialize_FLASH_CELLBOARD_5_RX(
                 (bms_message_FLASH_CELLBOARD_5_RX*) message,
                 data
