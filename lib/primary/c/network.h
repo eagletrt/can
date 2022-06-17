@@ -5034,7 +5034,7 @@ void primary_raw_to_conversion_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)current) / 1310.72) + 0;
+    conversion->current = (((primary_float32)current) / 1092.266667) - 10;
 }
 
 void primary_raw_to_conversion_struct_LV_CURRENT(
@@ -5044,7 +5044,7 @@ void primary_raw_to_conversion_struct_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)raw->current) / 1310.72) + 0;
+    conversion->current = (((primary_float32)raw->current) / 1092.266667) - 10;
 }
 
 void primary_conversion_to_raw_LV_CURRENT(
@@ -5057,7 +5057,7 @@ void primary_conversion_to_raw_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((current + 0) * 1310.72);
+    raw->current = (primary_uint16)((current + 10) * 1092.266667);
 }
 
 void primary_conversion_to_raw_struct_LV_CURRENT(
@@ -5067,7 +5067,7 @@ void primary_conversion_to_raw_struct_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((conversion->current + 0) * 1310.72);
+    raw->current = (primary_uint16)((conversion->current + 10) * 1092.266667);
 }
 
 // ============== STRING ============== //

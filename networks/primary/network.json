@@ -519,7 +519,7 @@
       "contents": {
         "current": {
           "type": "float32",
-          "range": [0, 50],
+          "range": [-10, 50],
           "force": "uint16"
         }
       }

@@ -1218,7 +1218,7 @@ class message_LV_CURRENT:
 
     def convert(self) -> message_LV_CURRENT_conversion:
         conversion = message_LV_CURRENT_conversion()
-        conversion.current = ((float32(self.current)) / 1310.72) + 0
+        conversion.current = ((float32(self.current)) / 1092.266667) - 10
         return conversion
 
 
@@ -1240,7 +1240,7 @@ class message_LV_CURRENT_conversion:
 
     def convert_to_raw(self) -> message_LV_CURRENT:
         raw = message_LV_CURRENT()
-        raw.current = uint16((self.current + 0) * 1310.72)
+        raw.current = uint16((self.current + 10) * 1092.266667)
         return raw
 
 class message_LV_VOLTAGE:
