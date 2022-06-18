@@ -1137,7 +1137,37 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 // ============== UTILS ============== //
 
-static inline int secondary_index_from_id(canlib_message_id message_id);
+
+static inline int secondary_index_from_id(canlib_message_id id) {
+    switch (id) {
+        case 1260: return secondary_INDEX_IMU_ANGULAR_RATE;
+        case 1261: return secondary_INDEX_IMU_ACCELERATION;
+        case 1460: return secondary_INDEX_IRTS_FL_0;
+        case 1461: return secondary_INDEX_IRTS_FL_1;
+        case 1462: return secondary_INDEX_IRTS_FL_2;
+        case 1463: return secondary_INDEX_IRTS_FL_3;
+        case 1464: return secondary_INDEX_IRTS_FR_0;
+        case 1465: return secondary_INDEX_IRTS_FR_1;
+        case 1466: return secondary_INDEX_IRTS_FR_2;
+        case 1467: return secondary_INDEX_IRTS_FR_3;
+        case 1468: return secondary_INDEX_IRTS_RL_0;
+        case 1469: return secondary_INDEX_IRTS_RL_1;
+        case 1470: return secondary_INDEX_IRTS_RL_2;
+        case 1471: return secondary_INDEX_IRTS_RL_3;
+        case 1472: return secondary_INDEX_IRTS_RR_0;
+        case 1473: return secondary_INDEX_IRTS_RR_1;
+        case 1474: return secondary_INDEX_IRTS_RR_2;
+        case 1475: return secondary_INDEX_IRTS_RR_3;
+        case 1025: return secondary_INDEX_GPS_COORDS;
+        case 1057: return secondary_INDEX_GPS_SPEED;
+        case 1089: return secondary_INDEX_LAP_COUNT;
+        case 769: return secondary_INDEX_PEDALS_OUTPUT;
+        case 801: return secondary_INDEX_CONTROL_OUTPUT;
+        case 258: return secondary_INDEX_STEERING_ANGLE;
+    }
+    return 24; // invalid
+}
+
 int secondary_fields_from_id(canlib_message_id message_id, char *buffer);
 int secondary_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
 int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
@@ -3966,36 +3996,6 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
 
 
 // ============== UTILS ============== //
-
-static inline int secondary_index_from_id(canlib_message_id id) {
-    switch (id) {
-        case 1260: return secondary_INDEX_IMU_ANGULAR_RATE;
-        case 1261: return secondary_INDEX_IMU_ACCELERATION;
-        case 1460: return secondary_INDEX_IRTS_FL_0;
-        case 1461: return secondary_INDEX_IRTS_FL_1;
-        case 1462: return secondary_INDEX_IRTS_FL_2;
-        case 1463: return secondary_INDEX_IRTS_FL_3;
-        case 1464: return secondary_INDEX_IRTS_FR_0;
-        case 1465: return secondary_INDEX_IRTS_FR_1;
-        case 1466: return secondary_INDEX_IRTS_FR_2;
-        case 1467: return secondary_INDEX_IRTS_FR_3;
-        case 1468: return secondary_INDEX_IRTS_RL_0;
-        case 1469: return secondary_INDEX_IRTS_RL_1;
-        case 1470: return secondary_INDEX_IRTS_RL_2;
-        case 1471: return secondary_INDEX_IRTS_RL_3;
-        case 1472: return secondary_INDEX_IRTS_RR_0;
-        case 1473: return secondary_INDEX_IRTS_RR_1;
-        case 1474: return secondary_INDEX_IRTS_RR_2;
-        case 1475: return secondary_INDEX_IRTS_RR_3;
-        case 1025: return secondary_INDEX_GPS_COORDS;
-        case 1057: return secondary_INDEX_GPS_SPEED;
-        case 1089: return secondary_INDEX_LAP_COUNT;
-        case 769: return secondary_INDEX_PEDALS_OUTPUT;
-        case 801: return secondary_INDEX_CONTROL_OUTPUT;
-        case 258: return secondary_INDEX_STEERING_ANGLE;
-    }
-    return 24; // invalid
-}
 
 int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {

@@ -130,14 +130,9 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
 
 
+#define primary_MAX_MESSAGE_NAME_LENGTH 31
+
 // ============== UTILS ============== //
-
-static inline int primary_message_name_from_id(canlib_message_id id, char *buffer);
-static inline bool primary_is_message_id(canlib_message_id message_id);
-
-#define primary_MAX_MESSAGE_LENGTH 31
-
-#ifdef primary_IDS_IMPLEMENTATION
 
 static inline int primary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
@@ -326,6 +321,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
     return false;
 }
 
+#ifdef primary_IDS_IMPLEMENTATION
 #endif // primary_IDS_IMPLEMENTATION
 
 #ifdef __cplusplus

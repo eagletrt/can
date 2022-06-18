@@ -111,17 +111,6 @@ typedef struct {
     canlib_watchdog_timestamp last_reset[32];
 } bms_watchdog;
 
-static inline int bms_watchdog_index_from_id(canlib_message_id id);
-static inline int bms_watchdog_interval_from_id(uint16_t message_id);
-
-bms_watchdog* bms_watchdog_new();
-void bms_watchdog_free(bms_watchdog *watchdog);
-void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
-void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-
-#ifdef bms_WATCHDOG_IMPLEMENTATION
-
 static inline int bms_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
         case 1536: return bms_INTERVAL_BOARD_STATUS;
@@ -197,6 +186,14 @@ static inline int bms_watchdog_index_from_id(canlib_message_id id) {
     }
     return 32; // invalid
 }
+
+bms_watchdog* bms_watchdog_new();
+void bms_watchdog_free(bms_watchdog *watchdog);
+void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+
+#ifdef bms_WATCHDOG_IMPLEMENTATION
 
 bms_watchdog* bms_watchdog_new() {
     bms_watchdog *watchdog = (bms_watchdog*)malloc(sizeof(bms_watchdog));

@@ -2826,7 +2826,71 @@ int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 // ============== UTILS ============== //
 
-static inline int primary_index_from_id(canlib_message_id message_id);
+
+static inline int primary_index_from_id(canlib_message_id id) {
+    switch (id) {
+        case 0: return primary_INDEX_BMS_HV_JMP_TO_BLT;
+        case 1025: return primary_INDEX_STEER_VERSION;
+        case 1057: return primary_INDEX_DAS_VERSION;
+        case 1089: return primary_INDEX_HV_VERSION;
+        case 1121: return primary_INDEX_LV_VERSION;
+        case 1153: return primary_INDEX_TLM_VERSION;
+        case 257: return primary_INDEX_TIMESTAMP;
+        case 258: return primary_INDEX_SET_TLM_STATUS;
+        case 259: return primary_INDEX_TLM_STATUS;
+        case 1794: return primary_INDEX_STEER_SYSTEM_STATUS;
+        case 772: return primary_INDEX_HV_VOLTAGE;
+        case 804: return primary_INDEX_HV_CURRENT;
+        case 836: return primary_INDEX_HV_TEMP;
+        case 4: return primary_INDEX_HV_ERRORS;
+        case 5: return primary_INDEX_HV_CAN_FORWARD;
+        case 6: return primary_INDEX_HV_CAN_FORWARD_STATUS;
+        case 36: return primary_INDEX_TS_STATUS;
+        case 37: return primary_INDEX_SET_TS_STATUS_DAS;
+        case 69: return primary_INDEX_SET_TS_STATUS_HANDCART;
+        case 263: return primary_INDEX_STEER_STATUS;
+        case 775: return primary_INDEX_SET_CAR_STATUS;
+        case 1031: return primary_INDEX_SET_PEDALS_RANGE;
+        case 1063: return primary_INDEX_SET_STEERING_ANGLE_RANGE;
+        case 515: return primary_INDEX_CAR_STATUS;
+        case 3: return primary_INDEX_DAS_ERRORS;
+        case 776: return primary_INDEX_LV_CURRENT;
+        case 808: return primary_INDEX_LV_VOLTAGE;
+        case 840: return primary_INDEX_LV_TOTAL_VOLTAGE;
+        case 872: return primary_INDEX_LV_TEMPERATURE;
+        case 904: return primary_INDEX_COOLING_STATUS;
+        case 777: return primary_INDEX_SET_RADIATOR_SPEED;
+        case 809: return primary_INDEX_SET_PUMPS_SPEED;
+        case 265: return primary_INDEX_SET_INVERTER_CONNECTION_STATUS;
+        case 264: return primary_INDEX_INVERTER_CONNECTION_STATUS;
+        case 296: return primary_INDEX_SHUTDOWN_STATUS;
+        case 2: return primary_INDEX_MARKER;
+        case 518: return primary_INDEX_HV_CELLS_VOLTAGE;
+        case 550: return primary_INDEX_HV_CELLS_TEMP;
+        case 582: return primary_INDEX_HV_CELL_BALANCING_STATUS;
+        case 517: return primary_INDEX_SET_CELL_BALANCING_STATUS;
+        case 773: return primary_INDEX_HANDCART_STATUS;
+        case 547: return primary_INDEX_SPEED;
+        case 513: return primary_INDEX_INV_L_REQUEST;
+        case 514: return primary_INDEX_INV_R_REQUEST;
+        case 385: return primary_INDEX_INV_L_RESPONSE;
+        case 386: return primary_INDEX_INV_R_RESPONSE;
+        case 16: return primary_INDEX_FLASH_CELLBOARD_0_TX;
+        case 17: return primary_INDEX_FLASH_CELLBOARD_0_RX;
+        case 18: return primary_INDEX_FLASH_CELLBOARD_1_TX;
+        case 19: return primary_INDEX_FLASH_CELLBOARD_1_RX;
+        case 20: return primary_INDEX_FLASH_CELLBOARD_2_TX;
+        case 21: return primary_INDEX_FLASH_CELLBOARD_2_RX;
+        case 22: return primary_INDEX_FLASH_CELLBOARD_3_TX;
+        case 23: return primary_INDEX_FLASH_CELLBOARD_3_RX;
+        case 24: return primary_INDEX_FLASH_CELLBOARD_4_TX;
+        case 25: return primary_INDEX_FLASH_CELLBOARD_4_RX;
+        case 26: return primary_INDEX_FLASH_CELLBOARD_5_TX;
+        case 27: return primary_INDEX_FLASH_CELLBOARD_5_RX;
+    }
+    return 58; // invalid
+}
+
 int primary_fields_from_id(canlib_message_id message_id, char *buffer);
 int primary_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
 int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
@@ -8680,70 +8744,6 @@ int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
 
 
 // ============== UTILS ============== //
-
-static inline int primary_index_from_id(canlib_message_id id) {
-    switch (id) {
-        case 0: return primary_INDEX_BMS_HV_JMP_TO_BLT;
-        case 1025: return primary_INDEX_STEER_VERSION;
-        case 1057: return primary_INDEX_DAS_VERSION;
-        case 1089: return primary_INDEX_HV_VERSION;
-        case 1121: return primary_INDEX_LV_VERSION;
-        case 1153: return primary_INDEX_TLM_VERSION;
-        case 257: return primary_INDEX_TIMESTAMP;
-        case 258: return primary_INDEX_SET_TLM_STATUS;
-        case 259: return primary_INDEX_TLM_STATUS;
-        case 1794: return primary_INDEX_STEER_SYSTEM_STATUS;
-        case 772: return primary_INDEX_HV_VOLTAGE;
-        case 804: return primary_INDEX_HV_CURRENT;
-        case 836: return primary_INDEX_HV_TEMP;
-        case 4: return primary_INDEX_HV_ERRORS;
-        case 5: return primary_INDEX_HV_CAN_FORWARD;
-        case 6: return primary_INDEX_HV_CAN_FORWARD_STATUS;
-        case 36: return primary_INDEX_TS_STATUS;
-        case 37: return primary_INDEX_SET_TS_STATUS_DAS;
-        case 69: return primary_INDEX_SET_TS_STATUS_HANDCART;
-        case 263: return primary_INDEX_STEER_STATUS;
-        case 775: return primary_INDEX_SET_CAR_STATUS;
-        case 1031: return primary_INDEX_SET_PEDALS_RANGE;
-        case 1063: return primary_INDEX_SET_STEERING_ANGLE_RANGE;
-        case 515: return primary_INDEX_CAR_STATUS;
-        case 3: return primary_INDEX_DAS_ERRORS;
-        case 776: return primary_INDEX_LV_CURRENT;
-        case 808: return primary_INDEX_LV_VOLTAGE;
-        case 840: return primary_INDEX_LV_TOTAL_VOLTAGE;
-        case 872: return primary_INDEX_LV_TEMPERATURE;
-        case 904: return primary_INDEX_COOLING_STATUS;
-        case 777: return primary_INDEX_SET_RADIATOR_SPEED;
-        case 809: return primary_INDEX_SET_PUMPS_SPEED;
-        case 265: return primary_INDEX_SET_INVERTER_CONNECTION_STATUS;
-        case 264: return primary_INDEX_INVERTER_CONNECTION_STATUS;
-        case 296: return primary_INDEX_SHUTDOWN_STATUS;
-        case 2: return primary_INDEX_MARKER;
-        case 518: return primary_INDEX_HV_CELLS_VOLTAGE;
-        case 550: return primary_INDEX_HV_CELLS_TEMP;
-        case 582: return primary_INDEX_HV_CELL_BALANCING_STATUS;
-        case 517: return primary_INDEX_SET_CELL_BALANCING_STATUS;
-        case 773: return primary_INDEX_HANDCART_STATUS;
-        case 547: return primary_INDEX_SPEED;
-        case 513: return primary_INDEX_INV_L_REQUEST;
-        case 514: return primary_INDEX_INV_R_REQUEST;
-        case 385: return primary_INDEX_INV_L_RESPONSE;
-        case 386: return primary_INDEX_INV_R_RESPONSE;
-        case 16: return primary_INDEX_FLASH_CELLBOARD_0_TX;
-        case 17: return primary_INDEX_FLASH_CELLBOARD_0_RX;
-        case 18: return primary_INDEX_FLASH_CELLBOARD_1_TX;
-        case 19: return primary_INDEX_FLASH_CELLBOARD_1_RX;
-        case 20: return primary_INDEX_FLASH_CELLBOARD_2_TX;
-        case 21: return primary_INDEX_FLASH_CELLBOARD_2_RX;
-        case 22: return primary_INDEX_FLASH_CELLBOARD_3_TX;
-        case 23: return primary_INDEX_FLASH_CELLBOARD_3_RX;
-        case 24: return primary_INDEX_FLASH_CELLBOARD_4_TX;
-        case 25: return primary_INDEX_FLASH_CELLBOARD_4_RX;
-        case 26: return primary_INDEX_FLASH_CELLBOARD_5_TX;
-        case 27: return primary_INDEX_FLASH_CELLBOARD_5_RX;
-    }
-    return 58; // invalid
-}
 
 int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {

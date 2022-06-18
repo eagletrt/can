@@ -74,14 +74,9 @@ typedef uint16_t canlib_message_id;
 #define bms_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
 
 
+#define bms_MAX_MESSAGE_NAME_LENGTH 24
+
 // ============== UTILS ============== //
-
-static inline int bms_message_name_from_id(canlib_message_id id, char *buffer);
-static inline bool bms_is_message_id(canlib_message_id message_id);
-
-#define bms_MAX_MESSAGE_LENGTH 24
-
-#ifdef bms_IDS_IMPLEMENTATION
 
 static inline int bms_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
@@ -192,6 +187,7 @@ static inline bool bms_is_message_id(canlib_message_id message_id) {
     return false;
 }
 
+#ifdef bms_IDS_IMPLEMENTATION
 #endif // bms_IDS_IMPLEMENTATION
 
 #ifdef __cplusplus

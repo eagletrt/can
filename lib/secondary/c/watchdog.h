@@ -110,17 +110,6 @@ typedef struct {
     canlib_watchdog_timestamp last_reset[24];
 } secondary_watchdog;
 
-static inline int secondary_watchdog_index_from_id(canlib_message_id id);
-static inline int secondary_watchdog_interval_from_id(uint16_t message_id);
-
-secondary_watchdog* secondary_watchdog_new();
-void secondary_watchdog_free(secondary_watchdog *watchdog);
-void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
-void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-
-#ifdef secondary_WATCHDOG_IMPLEMENTATION
-
 static inline int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
         case 1260: return secondary_INTERVAL_IMU_ANGULAR_RATE;
@@ -180,6 +169,14 @@ static inline int secondary_watchdog_index_from_id(canlib_message_id id) {
     }
     return 24; // invalid
 }
+
+secondary_watchdog* secondary_watchdog_new();
+void secondary_watchdog_free(secondary_watchdog *watchdog);
+void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+
+#ifdef secondary_WATCHDOG_IMPLEMENTATION
 
 secondary_watchdog* secondary_watchdog_new() {
     secondary_watchdog *watchdog = (secondary_watchdog*)malloc(sizeof(secondary_watchdog));

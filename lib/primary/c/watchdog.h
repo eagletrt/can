@@ -177,17 +177,6 @@ typedef struct {
     canlib_watchdog_timestamp last_reset[58];
 } primary_watchdog;
 
-static inline int primary_watchdog_index_from_id(canlib_message_id id);
-static inline int primary_watchdog_interval_from_id(uint16_t message_id);
-
-primary_watchdog* primary_watchdog_new();
-void primary_watchdog_free(primary_watchdog *watchdog);
-void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
-void primary_watchdog_reset_all(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-
-#ifdef primary_WATCHDOG_IMPLEMENTATION
-
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
         case 0: return primary_INTERVAL_BMS_HV_JMP_TO_BLT;
@@ -315,6 +304,14 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
     }
     return 58; // invalid
 }
+
+primary_watchdog* primary_watchdog_new();
+void primary_watchdog_free(primary_watchdog *watchdog);
+void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_reset_all(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+
+#ifdef primary_WATCHDOG_IMPLEMENTATION
 
 primary_watchdog* primary_watchdog_new() {
     primary_watchdog *watchdog = (primary_watchdog*)malloc(sizeof(primary_watchdog));

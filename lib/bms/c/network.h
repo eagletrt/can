@@ -909,7 +909,45 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 // ============== UTILS ============== //
 
-static inline int bms_index_from_id(canlib_message_id message_id);
+
+static inline int bms_index_from_id(canlib_message_id id) {
+    switch (id) {
+        case 1536: return bms_INDEX_BOARD_STATUS_CELLBOARD0;
+        case 1568: return bms_INDEX_BOARD_STATUS_CELLBOARD1;
+        case 1600: return bms_INDEX_BOARD_STATUS_CELLBOARD2;
+        case 1632: return bms_INDEX_BOARD_STATUS_CELLBOARD3;
+        case 1664: return bms_INDEX_BOARD_STATUS_CELLBOARD4;
+        case 1696: return bms_INDEX_BOARD_STATUS_CELLBOARD5;
+        case 1281: return bms_INDEX_TEMPERATURES_CELLBOARD0;
+        case 1313: return bms_INDEX_TEMPERATURES_CELLBOARD1;
+        case 1345: return bms_INDEX_TEMPERATURES_CELLBOARD2;
+        case 1377: return bms_INDEX_TEMPERATURES_CELLBOARD3;
+        case 1409: return bms_INDEX_TEMPERATURES_CELLBOARD4;
+        case 1441: return bms_INDEX_TEMPERATURES_CELLBOARD5;
+        case 514: return bms_INDEX_VOLTAGES_CELLBOARD0;
+        case 546: return bms_INDEX_VOLTAGES_CELLBOARD1;
+        case 578: return bms_INDEX_VOLTAGES_CELLBOARD2;
+        case 610: return bms_INDEX_VOLTAGES_CELLBOARD3;
+        case 642: return bms_INDEX_VOLTAGES_CELLBOARD4;
+        case 674: return bms_INDEX_VOLTAGES_CELLBOARD5;
+        case 515: return bms_INDEX_BALANCING;
+        case 10: return bms_INDEX_FW_UPDATE;
+        case 16: return bms_INDEX_FLASH_CELLBOARD_0_TX;
+        case 17: return bms_INDEX_FLASH_CELLBOARD_0_RX;
+        case 18: return bms_INDEX_FLASH_CELLBOARD_1_TX;
+        case 19: return bms_INDEX_FLASH_CELLBOARD_1_RX;
+        case 20: return bms_INDEX_FLASH_CELLBOARD_2_TX;
+        case 21: return bms_INDEX_FLASH_CELLBOARD_2_RX;
+        case 22: return bms_INDEX_FLASH_CELLBOARD_3_TX;
+        case 23: return bms_INDEX_FLASH_CELLBOARD_3_RX;
+        case 24: return bms_INDEX_FLASH_CELLBOARD_4_TX;
+        case 25: return bms_INDEX_FLASH_CELLBOARD_4_RX;
+        case 26: return bms_INDEX_FLASH_CELLBOARD_5_TX;
+        case 27: return bms_INDEX_FLASH_CELLBOARD_5_RX;
+    }
+    return 32; // invalid
+}
+
 int bms_fields_from_id(canlib_message_id message_id, char *buffer);
 int bms_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
 int bms_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
@@ -2350,44 +2388,6 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
 
 
 // ============== UTILS ============== //
-
-static inline int bms_index_from_id(canlib_message_id id) {
-    switch (id) {
-        case 1536: return bms_INDEX_BOARD_STATUS_CELLBOARD0;
-        case 1568: return bms_INDEX_BOARD_STATUS_CELLBOARD1;
-        case 1600: return bms_INDEX_BOARD_STATUS_CELLBOARD2;
-        case 1632: return bms_INDEX_BOARD_STATUS_CELLBOARD3;
-        case 1664: return bms_INDEX_BOARD_STATUS_CELLBOARD4;
-        case 1696: return bms_INDEX_BOARD_STATUS_CELLBOARD5;
-        case 1281: return bms_INDEX_TEMPERATURES_CELLBOARD0;
-        case 1313: return bms_INDEX_TEMPERATURES_CELLBOARD1;
-        case 1345: return bms_INDEX_TEMPERATURES_CELLBOARD2;
-        case 1377: return bms_INDEX_TEMPERATURES_CELLBOARD3;
-        case 1409: return bms_INDEX_TEMPERATURES_CELLBOARD4;
-        case 1441: return bms_INDEX_TEMPERATURES_CELLBOARD5;
-        case 514: return bms_INDEX_VOLTAGES_CELLBOARD0;
-        case 546: return bms_INDEX_VOLTAGES_CELLBOARD1;
-        case 578: return bms_INDEX_VOLTAGES_CELLBOARD2;
-        case 610: return bms_INDEX_VOLTAGES_CELLBOARD3;
-        case 642: return bms_INDEX_VOLTAGES_CELLBOARD4;
-        case 674: return bms_INDEX_VOLTAGES_CELLBOARD5;
-        case 515: return bms_INDEX_BALANCING;
-        case 10: return bms_INDEX_FW_UPDATE;
-        case 16: return bms_INDEX_FLASH_CELLBOARD_0_TX;
-        case 17: return bms_INDEX_FLASH_CELLBOARD_0_RX;
-        case 18: return bms_INDEX_FLASH_CELLBOARD_1_TX;
-        case 19: return bms_INDEX_FLASH_CELLBOARD_1_RX;
-        case 20: return bms_INDEX_FLASH_CELLBOARD_2_TX;
-        case 21: return bms_INDEX_FLASH_CELLBOARD_2_RX;
-        case 22: return bms_INDEX_FLASH_CELLBOARD_3_TX;
-        case 23: return bms_INDEX_FLASH_CELLBOARD_3_RX;
-        case 24: return bms_INDEX_FLASH_CELLBOARD_4_TX;
-        case 25: return bms_INDEX_FLASH_CELLBOARD_4_RX;
-        case 26: return bms_INDEX_FLASH_CELLBOARD_5_TX;
-        case 27: return bms_INDEX_FLASH_CELLBOARD_5_RX;
-    }
-    return 32; // invalid
-}
 
 int bms_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {

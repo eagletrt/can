@@ -56,14 +56,9 @@ typedef uint16_t canlib_message_id;
 #define secondary_ID_STEERING_ANGLE 0x102 // dec: 258 bin: 0b00100000010
 
 
+#define secondary_MAX_MESSAGE_NAME_LENGTH 17
+
 // ============== UTILS ============== //
-
-static inline int secondary_message_name_from_id(canlib_message_id id, char *buffer);
-static inline bool secondary_is_message_id(canlib_message_id message_id);
-
-#define secondary_MAX_MESSAGE_LENGTH 17
-
-#ifdef secondary_IDS_IMPLEMENTATION
 
 static inline int secondary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
@@ -150,6 +145,7 @@ static inline bool secondary_is_message_id(canlib_message_id message_id) {
     return false;
 }
 
+#ifdef secondary_IDS_IMPLEMENTATION
 #endif // secondary_IDS_IMPLEMENTATION
 
 #ifdef __cplusplus
