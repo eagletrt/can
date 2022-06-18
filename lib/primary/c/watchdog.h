@@ -108,7 +108,6 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 56
 #define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 57
 
-
 #define primary_INTERVAL_BMS_HV_JMP_TO_BLT -1
 #define primary_INTERVAL_STEER_VERSION 1000
 #define primary_INTERVAL_DAS_VERSION 1000
@@ -167,9 +166,69 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_FLASH_CELLBOARD_5_TX -1
 #define primary_INTERVAL_FLASH_CELLBOARD_5_RX -1
 
+
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.
 #define primary_INTERVAL_ONCE -1
+
+#define primary_INTERVAL_WITH_THRESHOLD_BMS_HV_JMP_TO_BLT -1
+#define primary_INTERVAL_WITH_THRESHOLD_STEER_VERSION 1100
+#define primary_INTERVAL_WITH_THRESHOLD_DAS_VERSION 1100
+#define primary_INTERVAL_WITH_THRESHOLD_HV_VERSION 1100
+#define primary_INTERVAL_WITH_THRESHOLD_LV_VERSION 1100
+#define primary_INTERVAL_WITH_THRESHOLD_TLM_VERSION 1100
+#define primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP 1100
+#define primary_INTERVAL_WITH_THRESHOLD_SET_TLM_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_TLM_STATUS 1100
+#define primary_INTERVAL_WITH_THRESHOLD_STEER_SYSTEM_STATUS 1100
+#define primary_INTERVAL_WITH_THRESHOLD_HV_VOLTAGE 11
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CURRENT 11
+#define primary_INTERVAL_WITH_THRESHOLD_HV_TEMP 110
+#define primary_INTERVAL_WITH_THRESHOLD_HV_ERRORS 11
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CAN_FORWARD -1
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CAN_FORWARD_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_TS_STATUS 11
+#define primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_STEER_STATUS 110
+#define primary_INTERVAL_WITH_THRESHOLD_SET_CAR_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_SET_PEDALS_RANGE -1
+#define primary_INTERVAL_WITH_THRESHOLD_SET_STEERING_ANGLE_RANGE -1
+#define primary_INTERVAL_WITH_THRESHOLD_CAR_STATUS 110
+#define primary_INTERVAL_WITH_THRESHOLD_DAS_ERRORS 11
+#define primary_INTERVAL_WITH_THRESHOLD_LV_CURRENT 550
+#define primary_INTERVAL_WITH_THRESHOLD_LV_VOLTAGE 110
+#define primary_INTERVAL_WITH_THRESHOLD_LV_TOTAL_VOLTAGE 110
+#define primary_INTERVAL_WITH_THRESHOLD_LV_TEMPERATURE 110
+#define primary_INTERVAL_WITH_THRESHOLD_COOLING_STATUS 1100
+#define primary_INTERVAL_WITH_THRESHOLD_SET_RADIATOR_SPEED -1
+#define primary_INTERVAL_WITH_THRESHOLD_SET_PUMPS_SPEED -1
+#define primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS 110
+#define primary_INTERVAL_WITH_THRESHOLD_SHUTDOWN_STATUS 550
+#define primary_INTERVAL_WITH_THRESHOLD_MARKER -1
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_VOLTAGE 110
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_TEMP 110
+#define primary_INTERVAL_WITH_THRESHOLD_HV_CELL_BALANCING_STATUS 550
+#define primary_INTERVAL_WITH_THRESHOLD_SET_CELL_BALANCING_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_HANDCART_STATUS 550
+#define primary_INTERVAL_WITH_THRESHOLD_SPEED 110
+#define primary_INTERVAL_WITH_THRESHOLD_INV_L_REQUEST 11
+#define primary_INTERVAL_WITH_THRESHOLD_INV_R_REQUEST 11
+#define primary_INTERVAL_WITH_THRESHOLD_INV_L_RESPONSE 110
+#define primary_INTERVAL_WITH_THRESHOLD_INV_R_RESPONSE 110
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_0_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_0_RX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_1_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_1_RX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_2_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_2_RX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_3_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_3_RX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_4_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_4_RX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_5_TX -1
+#define primary_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_5_RX -1
+
 
 typedef struct {
     uint8_t activated[8];
@@ -310,6 +369,12 @@ void primary_watchdog_free(primary_watchdog *watchdog);
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
 void primary_watchdog_reset_all(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_1000(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_5000(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_50(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void primary_watchdog_timeout_500(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef primary_WATCHDOG_IMPLEMENTATION
 
@@ -345,267 +410,268 @@ void primary_watchdog_reset_all(primary_watchdog *watchdog, canlib_watchdog_time
 void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_VERSION] > primary_INTERVAL_STEER_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_VERSION] > primary_INTERVAL_WITH_THRESHOLD_STEER_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DAS_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_VERSION] > primary_INTERVAL_DAS_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_VERSION] > primary_INTERVAL_WITH_THRESHOLD_DAS_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DAS_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VERSION] > primary_INTERVAL_HV_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VERSION] > primary_INTERVAL_WITH_THRESHOLD_HV_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VERSION] > primary_INTERVAL_LV_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VERSION] > primary_INTERVAL_WITH_THRESHOLD_LV_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_VERSION] > primary_INTERVAL_TLM_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_VERSION] > primary_INTERVAL_WITH_THRESHOLD_TLM_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TLM_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TIMESTAMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_TIMESTAMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TIMESTAMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_STATUS] > primary_INTERVAL_TLM_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TLM_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TLM_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS] > primary_INTERVAL_STEER_SYSTEM_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS] > primary_INTERVAL_WITH_THRESHOLD_STEER_SYSTEM_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VOLTAGE] > primary_INTERVAL_HV_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_HV_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CURRENT)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CURRENT] > primary_INTERVAL_HV_CURRENT
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CURRENT] > primary_INTERVAL_WITH_THRESHOLD_HV_CURRENT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CURRENT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_TEMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_TEMP] > primary_INTERVAL_HV_TEMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_TEMP] > primary_INTERVAL_WITH_THRESHOLD_HV_TEMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_TEMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_ERRORS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_ERRORS] > primary_INTERVAL_HV_ERRORS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_HV_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_STATUS] > primary_INTERVAL_STEER_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_STATUS] > primary_INTERVAL_WITH_THRESHOLD_STEER_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_CAR_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CAR_STATUS] > primary_INTERVAL_CAR_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CAR_STATUS] > primary_INTERVAL_WITH_THRESHOLD_CAR_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_CAR_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DAS_ERRORS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_ERRORS] > primary_INTERVAL_DAS_ERRORS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_DAS_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DAS_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_CURRENT)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_CURRENT] > primary_INTERVAL_LV_CURRENT
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_CURRENT] > primary_INTERVAL_WITH_THRESHOLD_LV_CURRENT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_CURRENT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VOLTAGE] > primary_INTERVAL_LV_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_LV_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE] > primary_INTERVAL_LV_TOTAL_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_LV_TOTAL_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_TEMPERATURE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TEMPERATURE] > primary_INTERVAL_LV_TEMPERATURE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TEMPERATURE] > primary_INTERVAL_WITH_THRESHOLD_LV_TEMPERATURE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_TEMPERATURE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_COOLING_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_COOLING_STATUS] > primary_INTERVAL_COOLING_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_COOLING_STATUS] > primary_INTERVAL_WITH_THRESHOLD_COOLING_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_COOLING_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_INVERTER_CONNECTION_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SHUTDOWN_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SHUTDOWN_STATUS] > primary_INTERVAL_SHUTDOWN_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SHUTDOWN_STATUS] > primary_INTERVAL_WITH_THRESHOLD_SHUTDOWN_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SHUTDOWN_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE] > primary_INTERVAL_HV_CELLS_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELLS_TEMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_TEMP] > primary_INTERVAL_HV_CELLS_TEMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_TEMP] > primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_TEMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_TEMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS] > primary_INTERVAL_HV_CELL_BALANCING_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS] > primary_INTERVAL_WITH_THRESHOLD_HV_CELL_BALANCING_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HANDCART_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HANDCART_STATUS] > primary_INTERVAL_HANDCART_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HANDCART_STATUS] > primary_INTERVAL_WITH_THRESHOLD_HANDCART_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HANDCART_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_SPEED
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_REQUEST)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_REQUEST] > primary_INTERVAL_INV_L_REQUEST
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_REQUEST] > primary_INTERVAL_WITH_THRESHOLD_INV_L_REQUEST
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_L_REQUEST);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_R_REQUEST)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_REQUEST] > primary_INTERVAL_INV_R_REQUEST
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_REQUEST] > primary_INTERVAL_WITH_THRESHOLD_INV_R_REQUEST
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_REQUEST);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_RESPONSE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_RESPONSE] > primary_INTERVAL_INV_L_RESPONSE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_L_RESPONSE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_L_RESPONSE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_R_RESPONSE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_RESPONSE] > primary_INTERVAL_INV_R_RESPONSE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_R_RESPONSE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_RESPONSE);
     }
 }
+
 void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_TEMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_TEMP] > primary_INTERVAL_HV_TEMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_TEMP] > primary_INTERVAL_WITH_THRESHOLD_HV_TEMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_TEMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_STATUS] > primary_INTERVAL_STEER_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_STATUS] > primary_INTERVAL_WITH_THRESHOLD_STEER_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_CAR_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CAR_STATUS] > primary_INTERVAL_CAR_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CAR_STATUS] > primary_INTERVAL_WITH_THRESHOLD_CAR_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_CAR_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VOLTAGE] > primary_INTERVAL_LV_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_LV_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE] > primary_INTERVAL_LV_TOTAL_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_LV_TOTAL_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_TEMPERATURE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TEMPERATURE] > primary_INTERVAL_LV_TEMPERATURE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_TEMPERATURE] > primary_INTERVAL_WITH_THRESHOLD_LV_TEMPERATURE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_TEMPERATURE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_INVERTER_CONNECTION_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE] > primary_INTERVAL_HV_CELLS_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELLS_TEMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_TEMP] > primary_INTERVAL_HV_CELLS_TEMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_TEMP] > primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_TEMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_TEMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_SPEED
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_RESPONSE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_RESPONSE] > primary_INTERVAL_INV_L_RESPONSE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_L_RESPONSE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_L_RESPONSE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_R_RESPONSE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_RESPONSE] > primary_INTERVAL_INV_R_RESPONSE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_R_RESPONSE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_RESPONSE);
     }
@@ -614,55 +680,55 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
 void primary_watchdog_timeout_1000(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_VERSION] > primary_INTERVAL_STEER_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_VERSION] > primary_INTERVAL_WITH_THRESHOLD_STEER_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DAS_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_VERSION] > primary_INTERVAL_DAS_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_VERSION] > primary_INTERVAL_WITH_THRESHOLD_DAS_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DAS_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VERSION] > primary_INTERVAL_HV_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VERSION] > primary_INTERVAL_WITH_THRESHOLD_HV_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VERSION] > primary_INTERVAL_LV_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_VERSION] > primary_INTERVAL_WITH_THRESHOLD_LV_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_VERSION)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_VERSION] > primary_INTERVAL_TLM_VERSION
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_VERSION] > primary_INTERVAL_WITH_THRESHOLD_TLM_VERSION
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TLM_VERSION);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TIMESTAMP)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_TIMESTAMP
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TIMESTAMP);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_STATUS] > primary_INTERVAL_TLM_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TLM_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TLM_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TLM_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS] > primary_INTERVAL_STEER_SYSTEM_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS] > primary_INTERVAL_WITH_THRESHOLD_STEER_SYSTEM_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_COOLING_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_COOLING_STATUS] > primary_INTERVAL_COOLING_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_COOLING_STATUS] > primary_INTERVAL_WITH_THRESHOLD_COOLING_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_COOLING_STATUS);
     }
@@ -677,43 +743,43 @@ void primary_watchdog_timeout_5000(primary_watchdog *watchdog, canlib_watchdog_t
 void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_VOLTAGE)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VOLTAGE] > primary_INTERVAL_HV_VOLTAGE
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_VOLTAGE] > primary_INTERVAL_WITH_THRESHOLD_HV_VOLTAGE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_VOLTAGE);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CURRENT)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CURRENT] > primary_INTERVAL_HV_CURRENT
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CURRENT] > primary_INTERVAL_WITH_THRESHOLD_HV_CURRENT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CURRENT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_ERRORS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_ERRORS] > primary_INTERVAL_HV_ERRORS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_HV_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DAS_ERRORS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_ERRORS] > primary_INTERVAL_DAS_ERRORS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_DAS_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DAS_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_REQUEST)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_REQUEST] > primary_INTERVAL_INV_L_REQUEST
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_REQUEST] > primary_INTERVAL_WITH_THRESHOLD_INV_L_REQUEST
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_L_REQUEST);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_R_REQUEST)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_REQUEST] > primary_INTERVAL_INV_R_REQUEST
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_REQUEST] > primary_INTERVAL_WITH_THRESHOLD_INV_R_REQUEST
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_REQUEST);
     }
@@ -728,25 +794,25 @@ void primary_watchdog_timeout_50(primary_watchdog *watchdog, canlib_watchdog_tim
 void primary_watchdog_timeout_500(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_CURRENT)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_CURRENT] > primary_INTERVAL_LV_CURRENT
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_CURRENT] > primary_INTERVAL_WITH_THRESHOLD_LV_CURRENT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_CURRENT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SHUTDOWN_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SHUTDOWN_STATUS] > primary_INTERVAL_SHUTDOWN_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SHUTDOWN_STATUS] > primary_INTERVAL_WITH_THRESHOLD_SHUTDOWN_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SHUTDOWN_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS] > primary_INTERVAL_HV_CELL_BALANCING_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS] > primary_INTERVAL_WITH_THRESHOLD_HV_CELL_BALANCING_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_HANDCART_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HANDCART_STATUS] > primary_INTERVAL_HANDCART_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HANDCART_STATUS] > primary_INTERVAL_WITH_THRESHOLD_HANDCART_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HANDCART_STATUS);
     }

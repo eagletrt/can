@@ -74,7 +74,6 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_WATCHDOG_INDEX_CONTROL_OUTPUT 22
 #define secondary_WATCHDOG_INDEX_STEERING_ANGLE 23
 
-
 #define secondary_INTERVAL_IMU_ANGULAR_RATE -1
 #define secondary_INTERVAL_IMU_ACCELERATION -1
 #define secondary_INTERVAL_IRTS_FL_0 -1
@@ -100,9 +99,36 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_INTERVAL_CONTROL_OUTPUT 100
 #define secondary_INTERVAL_STEERING_ANGLE 100
 
+
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.
 #define secondary_INTERVAL_ONCE -1
+
+#define secondary_INTERVAL_WITH_THRESHOLD_IMU_ANGULAR_RATE -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IMU_ACCELERATION -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FL_0 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FL_1 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FL_2 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FL_3 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FR_0 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FR_1 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FR_2 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_FR_3 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RL_0 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RL_1 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RL_2 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RL_3 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RR_0 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RR_1 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RR_2 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_IRTS_RR_3 -1
+#define secondary_INTERVAL_WITH_THRESHOLD_GPS_COORDS -1
+#define secondary_INTERVAL_WITH_THRESHOLD_GPS_SPEED -1
+#define secondary_INTERVAL_WITH_THRESHOLD_LAP_COUNT -1
+#define secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT 110
+#define secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT 110
+#define secondary_INTERVAL_WITH_THRESHOLD_STEERING_ANGLE 110
+
 
 typedef struct {
     uint8_t activated[3];
@@ -175,6 +201,12 @@ void secondary_watchdog_free(secondary_watchdog *watchdog);
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
 void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_100(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_1000(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_5000(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_10(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_50(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void secondary_watchdog_timeout_500(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef secondary_WATCHDOG_IMPLEMENTATION
 
@@ -210,39 +242,40 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_PEDALS_OUTPUT
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_CONTROL_OUTPUT
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_STEERING_ANGLE)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_STEERING_ANGLE
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_WITH_THRESHOLD_STEERING_ANGLE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_STEERING_ANGLE);
     }
 }
+
 void secondary_watchdog_timeout_100(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_PEDALS_OUTPUT
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_CONTROL_OUTPUT
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_STEERING_ANGLE)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_STEERING_ANGLE
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_WITH_THRESHOLD_STEERING_ANGLE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_STEERING_ANGLE);
     }

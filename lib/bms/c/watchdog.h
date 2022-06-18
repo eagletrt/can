@@ -82,7 +82,6 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 30
 #define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 31
 
-
 #define bms_INTERVAL_BOARD_STATUS -1
 #define bms_INTERVAL_TEMPERATURES -1
 #define bms_INTERVAL_VOLTAGES -1
@@ -101,9 +100,29 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_INTERVAL_FLASH_CELLBOARD_5_TX -1
 #define bms_INTERVAL_FLASH_CELLBOARD_5_RX -1
 
+
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.
 #define bms_INTERVAL_ONCE -1
+
+#define bms_INTERVAL_WITH_THRESHOLD_BOARD_STATUS -1
+#define bms_INTERVAL_WITH_THRESHOLD_TEMPERATURES -1
+#define bms_INTERVAL_WITH_THRESHOLD_VOLTAGES -1
+#define bms_INTERVAL_WITH_THRESHOLD_BALANCING -1
+#define bms_INTERVAL_WITH_THRESHOLD_FW_UPDATE -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_0_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_0_RX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_1_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_1_RX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_2_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_2_RX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_3_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_3_RX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_4_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_4_RX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_5_TX -1
+#define bms_INTERVAL_WITH_THRESHOLD_FLASH_CELLBOARD_5_RX -1
+
 
 typedef struct {
     uint8_t activated[4];
@@ -192,6 +211,12 @@ void bms_watchdog_free(bms_watchdog *watchdog);
 void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
 void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_100(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_1000(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_5000(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_10(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_50(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void bms_watchdog_timeout_500(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef bms_WATCHDOG_IMPLEMENTATION
 
@@ -226,6 +251,7 @@ void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp ti
 
 void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
 }
+
 void bms_watchdog_timeout_100(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     // no messages in this interval
     CANLIB_UNUSED(watchdog);
