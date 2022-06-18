@@ -1122,9 +1122,9 @@ typedef union CANLIB_PARKING {
     _primary_all_structs_conversion conversion;
 } _primary_all_structs;
 
-#define primary_MAX_STRUCT_SIZE_RAW sizeof(_primary_all_structs_raw);
-#define primary_MAX_STRUCT_SIZE_CONVERSION sizeof(_primary_all_structs_conversion);
-#define primary_MAX_STRUCT_SIZE sizeof(_primary_all_structs);
+#define primary_MAX_STRUCT_SIZE_RAW sizeof(_primary_all_structs_raw)
+#define primary_MAX_STRUCT_SIZE_CONVERSION sizeof(_primary_all_structs_conversion)
+#define primary_MAX_STRUCT_SIZE sizeof(_primary_all_structs)
 
 
 // ============== BMS_HV_JMP_TO_BLT ============== //

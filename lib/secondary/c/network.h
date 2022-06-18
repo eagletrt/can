@@ -490,9 +490,9 @@ typedef union CANLIB_PARKING {
     _secondary_all_structs_conversion conversion;
 } _secondary_all_structs;
 
-#define secondary_MAX_STRUCT_SIZE_RAW sizeof(_secondary_all_structs_raw);
-#define secondary_MAX_STRUCT_SIZE_CONVERSION sizeof(_secondary_all_structs_conversion);
-#define secondary_MAX_STRUCT_SIZE sizeof(_secondary_all_structs);
+#define secondary_MAX_STRUCT_SIZE_RAW sizeof(_secondary_all_structs_raw)
+#define secondary_MAX_STRUCT_SIZE_CONVERSION sizeof(_secondary_all_structs_conversion)
+#define secondary_MAX_STRUCT_SIZE sizeof(_secondary_all_structs)
 
 
 // ============== IMU_ANGULAR_RATE ============== //

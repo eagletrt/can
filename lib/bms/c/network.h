@@ -442,9 +442,9 @@ typedef union CANLIB_PARKING {
     _bms_all_structs_conversion conversion;
 } _bms_all_structs;
 
-#define bms_MAX_STRUCT_SIZE_RAW sizeof(_bms_all_structs_raw);
-#define bms_MAX_STRUCT_SIZE_CONVERSION sizeof(_bms_all_structs_conversion);
-#define bms_MAX_STRUCT_SIZE sizeof(_bms_all_structs);
+#define bms_MAX_STRUCT_SIZE_RAW sizeof(_bms_all_structs_raw)
+#define bms_MAX_STRUCT_SIZE_CONVERSION sizeof(_bms_all_structs_conversion)
+#define bms_MAX_STRUCT_SIZE sizeof(_bms_all_structs)
 
 
 // ============== BOARD_STATUS ============== //
