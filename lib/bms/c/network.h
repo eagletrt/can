@@ -3638,6 +3638,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1568: {
             bms_deserialize_BOARD_STATUS(
@@ -3647,6 +3648,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1600: {
             bms_deserialize_BOARD_STATUS(
@@ -3656,6 +3658,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1632: {
             bms_deserialize_BOARD_STATUS(
@@ -3665,6 +3668,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1664: {
             bms_deserialize_BOARD_STATUS(
@@ -3674,6 +3678,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1696: {
             bms_deserialize_BOARD_STATUS(
@@ -3683,6 +3688,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1281: {
             bms_deserialize_TEMPERATURES(
@@ -3696,6 +3702,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw
             );
+            return;
         }
         case 1313: {
             bms_deserialize_TEMPERATURES(
@@ -3709,6 +3716,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw
             );
+            return;
         }
         case 1345: {
             bms_deserialize_TEMPERATURES(
@@ -3722,6 +3730,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw
             );
+            return;
         }
         case 1377: {
             bms_deserialize_TEMPERATURES(
@@ -3735,6 +3744,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw
             );
+            return;
         }
         case 1409: {
             bms_deserialize_TEMPERATURES(
@@ -3748,6 +3758,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw
             );
+            return;
         }
         case 1441: {
             bms_deserialize_TEMPERATURES(
@@ -3761,6 +3772,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion,
                 (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw
             );
+            return;
         }
         case 514: {
             bms_deserialize_VOLTAGES(
@@ -3774,6 +3786,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw
             );
+            return;
         }
         case 546: {
             bms_deserialize_VOLTAGES(
@@ -3787,6 +3800,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw
             );
+            return;
         }
         case 578: {
             bms_deserialize_VOLTAGES(
@@ -3800,6 +3814,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw
             );
+            return;
         }
         case 610: {
             bms_deserialize_VOLTAGES(
@@ -3813,6 +3828,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw
             );
+            return;
         }
         case 642: {
             bms_deserialize_VOLTAGES(
@@ -3826,6 +3842,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw
             );
+            return;
         }
         case 674: {
             bms_deserialize_VOLTAGES(
@@ -3839,6 +3856,7 @@ void bms_devices_deserialize_from_id(
                 (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion,
                 (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw
             );
+            return;
         }
         case 515: {
             bms_deserialize_BALANCING(
@@ -3848,6 +3866,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 10: {
             bms_deserialize_FW_UPDATE(
@@ -3857,6 +3876,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 16: {
             bms_deserialize_FLASH_CELLBOARD_0_TX(
@@ -3866,6 +3886,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 17: {
             bms_deserialize_FLASH_CELLBOARD_0_RX(
@@ -3875,6 +3896,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 18: {
             bms_deserialize_FLASH_CELLBOARD_1_TX(
@@ -3884,6 +3906,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 19: {
             bms_deserialize_FLASH_CELLBOARD_1_RX(
@@ -3893,6 +3916,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 20: {
             bms_deserialize_FLASH_CELLBOARD_2_TX(
@@ -3902,6 +3926,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 21: {
             bms_deserialize_FLASH_CELLBOARD_2_RX(
@@ -3911,6 +3936,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 22: {
             bms_deserialize_FLASH_CELLBOARD_3_TX(
@@ -3920,6 +3946,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 23: {
             bms_deserialize_FLASH_CELLBOARD_3_RX(
@@ -3929,6 +3956,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 24: {
             bms_deserialize_FLASH_CELLBOARD_4_TX(
@@ -3938,6 +3966,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 25: {
             bms_deserialize_FLASH_CELLBOARD_4_RX(
@@ -3947,6 +3976,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 26: {
             bms_deserialize_FLASH_CELLBOARD_5_TX(
@@ -3956,6 +3986,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 27: {
             bms_deserialize_FLASH_CELLBOARD_5_RX(
@@ -3965,6 +3996,7 @@ void bms_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
     }
 }

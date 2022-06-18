@@ -10149,6 +10149,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1025: {
             primary_deserialize_STEER_VERSION(
@@ -10158,6 +10159,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1057: {
             primary_deserialize_DAS_VERSION(
@@ -10167,6 +10169,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1089: {
             primary_deserialize_HV_VERSION(
@@ -10176,6 +10179,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1121: {
             primary_deserialize_LV_VERSION(
@@ -10185,6 +10189,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1153: {
             primary_deserialize_TLM_VERSION(
@@ -10194,6 +10199,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 257: {
             primary_deserialize_TIMESTAMP(
@@ -10203,6 +10209,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 258: {
             primary_deserialize_SET_TLM_STATUS(
@@ -10212,6 +10219,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 259: {
             primary_deserialize_TLM_STATUS(
@@ -10221,6 +10229,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1794: {
             primary_deserialize_STEER_SYSTEM_STATUS(
@@ -10230,6 +10239,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 772: {
             primary_deserialize_HV_VOLTAGE(
@@ -10243,6 +10253,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_HV_VOLTAGE_conversion*) &(*devices)[primary_INDEX_HV_VOLTAGE].message_conversion,
                 (primary_message_HV_VOLTAGE*) &(*devices)[primary_INDEX_HV_VOLTAGE].message_raw
             );
+            return;
         }
         case 804: {
             primary_deserialize_HV_CURRENT(
@@ -10256,6 +10267,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_HV_CURRENT_conversion*) &(*devices)[primary_INDEX_HV_CURRENT].message_conversion,
                 (primary_message_HV_CURRENT*) &(*devices)[primary_INDEX_HV_CURRENT].message_raw
             );
+            return;
         }
         case 836: {
             primary_deserialize_HV_TEMP(
@@ -10269,6 +10281,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_HV_TEMP_conversion*) &(*devices)[primary_INDEX_HV_TEMP].message_conversion,
                 (primary_message_HV_TEMP*) &(*devices)[primary_INDEX_HV_TEMP].message_raw
             );
+            return;
         }
         case 4: {
             primary_deserialize_HV_ERRORS(
@@ -10278,6 +10291,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 5: {
             primary_deserialize_HV_CAN_FORWARD(
@@ -10287,6 +10301,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 6: {
             primary_deserialize_HV_CAN_FORWARD_STATUS(
@@ -10296,6 +10311,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 36: {
             primary_deserialize_TS_STATUS(
@@ -10305,6 +10321,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 37: {
             primary_deserialize_SET_TS_STATUS(
@@ -10314,6 +10331,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 69: {
             primary_deserialize_SET_TS_STATUS(
@@ -10323,6 +10341,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 263: {
             primary_deserialize_STEER_STATUS(
@@ -10332,6 +10351,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 775: {
             primary_deserialize_SET_CAR_STATUS(
@@ -10341,6 +10361,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1031: {
             primary_deserialize_SET_PEDALS_RANGE(
@@ -10350,6 +10371,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1063: {
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
@@ -10359,6 +10381,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 515: {
             primary_deserialize_CAR_STATUS(
@@ -10368,6 +10391,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 3: {
             primary_deserialize_DAS_ERRORS(
@@ -10377,6 +10401,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 776: {
             primary_deserialize_LV_CURRENT(
@@ -10390,6 +10415,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_LV_CURRENT_conversion*) &(*devices)[primary_INDEX_LV_CURRENT].message_conversion,
                 (primary_message_LV_CURRENT*) &(*devices)[primary_INDEX_LV_CURRENT].message_raw
             );
+            return;
         }
         case 808: {
             primary_deserialize_LV_VOLTAGE(
@@ -10403,6 +10429,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_LV_VOLTAGE_conversion*) &(*devices)[primary_INDEX_LV_VOLTAGE].message_conversion,
                 (primary_message_LV_VOLTAGE*) &(*devices)[primary_INDEX_LV_VOLTAGE].message_raw
             );
+            return;
         }
         case 840: {
             primary_deserialize_LV_TOTAL_VOLTAGE(
@@ -10416,6 +10443,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_LV_TOTAL_VOLTAGE_conversion*) &(*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].message_conversion,
                 (primary_message_LV_TOTAL_VOLTAGE*) &(*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].message_raw
             );
+            return;
         }
         case 872: {
             primary_deserialize_LV_TEMPERATURE(
@@ -10429,6 +10457,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_LV_TEMPERATURE_conversion*) &(*devices)[primary_INDEX_LV_TEMPERATURE].message_conversion,
                 (primary_message_LV_TEMPERATURE*) &(*devices)[primary_INDEX_LV_TEMPERATURE].message_raw
             );
+            return;
         }
         case 904: {
             primary_deserialize_COOLING_STATUS(
@@ -10442,6 +10471,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_COOLING_STATUS_conversion*) &(*devices)[primary_INDEX_COOLING_STATUS].message_conversion,
                 (primary_message_COOLING_STATUS*) &(*devices)[primary_INDEX_COOLING_STATUS].message_raw
             );
+            return;
         }
         case 777: {
             primary_deserialize_SET_RADIATOR_SPEED(
@@ -10451,6 +10481,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 809: {
             primary_deserialize_SET_PUMPS_SPEED(
@@ -10460,6 +10491,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 265: {
             primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
@@ -10469,6 +10501,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 264: {
             primary_deserialize_INVERTER_CONNECTION_STATUS(
@@ -10478,6 +10511,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 296: {
             primary_deserialize_SHUTDOWN_STATUS(
@@ -10487,6 +10521,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 2: {
             primary_deserialize_MARKER(
@@ -10496,6 +10531,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 518: {
             primary_deserialize_HV_CELLS_VOLTAGE(
@@ -10509,6 +10545,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_HV_CELLS_VOLTAGE_conversion*) &(*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_conversion,
                 (primary_message_HV_CELLS_VOLTAGE*) &(*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_raw
             );
+            return;
         }
         case 550: {
             primary_deserialize_HV_CELLS_TEMP(
@@ -10522,6 +10559,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_HV_CELLS_TEMP_conversion*) &(*devices)[primary_INDEX_HV_CELLS_TEMP].message_conversion,
                 (primary_message_HV_CELLS_TEMP*) &(*devices)[primary_INDEX_HV_CELLS_TEMP].message_raw
             );
+            return;
         }
         case 582: {
             primary_deserialize_HV_CELL_BALANCING_STATUS(
@@ -10531,6 +10569,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 517: {
             primary_deserialize_SET_CELL_BALANCING_STATUS(
@@ -10540,6 +10579,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 773: {
             primary_deserialize_HANDCART_STATUS(
@@ -10549,6 +10589,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 547: {
             primary_deserialize_SPEED(
@@ -10562,6 +10603,7 @@ void primary_devices_deserialize_from_id(
                 (primary_message_SPEED_conversion*) &(*devices)[primary_INDEX_SPEED].message_conversion,
                 (primary_message_SPEED*) &(*devices)[primary_INDEX_SPEED].message_raw
             );
+            return;
         }
         case 513: {
             primary_deserialize_INV_L_REQUEST(
@@ -10571,6 +10613,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 514: {
             primary_deserialize_INV_R_REQUEST(
@@ -10580,6 +10623,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 385: {
             primary_deserialize_INV_L_RESPONSE(
@@ -10589,6 +10633,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 386: {
             primary_deserialize_INV_R_RESPONSE(
@@ -10598,6 +10643,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 16: {
             primary_deserialize_FLASH_CELLBOARD_0_TX(
@@ -10607,6 +10653,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 17: {
             primary_deserialize_FLASH_CELLBOARD_0_RX(
@@ -10616,6 +10663,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 18: {
             primary_deserialize_FLASH_CELLBOARD_1_TX(
@@ -10625,6 +10673,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 19: {
             primary_deserialize_FLASH_CELLBOARD_1_RX(
@@ -10634,6 +10683,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 20: {
             primary_deserialize_FLASH_CELLBOARD_2_TX(
@@ -10643,6 +10693,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 21: {
             primary_deserialize_FLASH_CELLBOARD_2_RX(
@@ -10652,6 +10703,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 22: {
             primary_deserialize_FLASH_CELLBOARD_3_TX(
@@ -10661,6 +10713,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 23: {
             primary_deserialize_FLASH_CELLBOARD_3_RX(
@@ -10670,6 +10723,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 24: {
             primary_deserialize_FLASH_CELLBOARD_4_TX(
@@ -10679,6 +10733,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 25: {
             primary_deserialize_FLASH_CELLBOARD_4_RX(
@@ -10688,6 +10743,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 26: {
             primary_deserialize_FLASH_CELLBOARD_5_TX(
@@ -10697,6 +10753,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 27: {
             primary_deserialize_FLASH_CELLBOARD_5_RX(
@@ -10706,6 +10763,7 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
     }
 }

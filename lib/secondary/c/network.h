@@ -4595,6 +4595,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1261: {
             secondary_deserialize_IMU_ACCELERATION(
@@ -4604,6 +4605,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1460: {
             secondary_deserialize_IRTS_FL_0(
@@ -4613,6 +4615,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1461: {
             secondary_deserialize_IRTS_FL_1(
@@ -4622,6 +4625,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1462: {
             secondary_deserialize_IRTS_FL_2(
@@ -4631,6 +4635,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1463: {
             secondary_deserialize_IRTS_FL_3(
@@ -4640,6 +4645,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1464: {
             secondary_deserialize_IRTS_FR_0(
@@ -4649,6 +4655,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1465: {
             secondary_deserialize_IRTS_FR_1(
@@ -4658,6 +4665,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1466: {
             secondary_deserialize_IRTS_FR_2(
@@ -4667,6 +4675,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1467: {
             secondary_deserialize_IRTS_FR_3(
@@ -4676,6 +4685,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1468: {
             secondary_deserialize_IRTS_RL_0(
@@ -4685,6 +4695,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1469: {
             secondary_deserialize_IRTS_RL_1(
@@ -4694,6 +4705,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1470: {
             secondary_deserialize_IRTS_RL_2(
@@ -4703,6 +4715,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1471: {
             secondary_deserialize_IRTS_RL_3(
@@ -4712,6 +4725,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1472: {
             secondary_deserialize_IRTS_RR_0(
@@ -4721,6 +4735,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1473: {
             secondary_deserialize_IRTS_RR_1(
@@ -4730,6 +4745,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1474: {
             secondary_deserialize_IRTS_RR_2(
@@ -4739,6 +4755,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1475: {
             secondary_deserialize_IRTS_RR_3(
@@ -4748,6 +4765,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1025: {
             secondary_deserialize_GPS_COORDS(
@@ -4757,6 +4775,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1057: {
             secondary_deserialize_GPS_SPEED(
@@ -4766,6 +4785,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 1089: {
             secondary_deserialize_LAP_COUNT(
@@ -4775,6 +4795,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 769: {
             secondary_deserialize_PEDALS_OUTPUT(
@@ -4788,6 +4809,7 @@ void secondary_devices_deserialize_from_id(
                 (secondary_message_PEDALS_OUTPUT_conversion*) &(*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion,
                 (secondary_message_PEDALS_OUTPUT*) &(*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw
             );
+            return;
         }
         case 801: {
             secondary_deserialize_CONTROL_OUTPUT(
@@ -4797,6 +4819,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
         case 258: {
             secondary_deserialize_STEERING_ANGLE(
@@ -4806,6 +4829,7 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            return;
         }
     }
 }
