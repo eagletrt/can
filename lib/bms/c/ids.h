@@ -18,176 +18,143 @@ typedef uint16_t canlib_message_id;
 
 
 /* TOPIC STATUS */
-#define bms_topic_mask_STATUS 0b00000011111
-#define bms_topic_filter_STATUS 0b00000000000 // dec: 0 hex: 0x0
+#define bms_TOPIC_MASK_STATUS 0b00000011111
+#define bms_TOPIC_FILTER_STATUS 0x0 // dec: 0 bin: 0b00000000000
 
-#define bms_id_BOARD_STATUS_CELLBOARD0 0b11000000000 // dec: 1536 hex: 0x600
-#define bms_id_BOARD_STATUS_CELLBOARD1 0b11000100000 // dec: 1568 hex: 0x620
-#define bms_id_BOARD_STATUS_CELLBOARD2 0b11001000000 // dec: 1600 hex: 0x640
-#define bms_id_BOARD_STATUS_CELLBOARD3 0b11001100000 // dec: 1632 hex: 0x660
-#define bms_id_BOARD_STATUS_CELLBOARD4 0b11010000000 // dec: 1664 hex: 0x680
-#define bms_id_BOARD_STATUS_CELLBOARD5 0b11010100000 // dec: 1696 hex: 0x6A0
+#define bms_ID_BOARD_STATUS_CELLBOARD0 0x600 // dec: 1536 bin: 0b11000000000
+#define bms_ID_BOARD_STATUS_CELLBOARD1 0x620 // dec: 1568 bin: 0b11000100000
+#define bms_ID_BOARD_STATUS_CELLBOARD2 0x640 // dec: 1600 bin: 0b11001000000
+#define bms_ID_BOARD_STATUS_CELLBOARD3 0x660 // dec: 1632 bin: 0b11001100000
+#define bms_ID_BOARD_STATUS_CELLBOARD4 0x680 // dec: 1664 bin: 0b11010000000
+#define bms_ID_BOARD_STATUS_CELLBOARD5 0x6A0 // dec: 1696 bin: 0b11010100000
 
 /* TOPIC TEMPERATURE_INFO */
-#define bms_topic_mask_TEMPERATURE_INFO 0b00000011111
-#define bms_topic_filter_TEMPERATURE_INFO 0b00000000001 // dec: 1 hex: 0x1
+#define bms_TOPIC_MASK_TEMPERATURE_INFO 0b00000011111
+#define bms_TOPIC_FILTER_TEMPERATURE_INFO 0x1 // dec: 1 bin: 0b00000000001
 
-#define bms_id_TEMPERATURES_CELLBOARD0 0b10100000001 // dec: 1281 hex: 0x501
-#define bms_id_TEMPERATURES_CELLBOARD1 0b10100100001 // dec: 1313 hex: 0x521
-#define bms_id_TEMPERATURES_CELLBOARD2 0b10101000001 // dec: 1345 hex: 0x541
-#define bms_id_TEMPERATURES_CELLBOARD3 0b10101100001 // dec: 1377 hex: 0x561
-#define bms_id_TEMPERATURES_CELLBOARD4 0b10110000001 // dec: 1409 hex: 0x581
-#define bms_id_TEMPERATURES_CELLBOARD5 0b10110100001 // dec: 1441 hex: 0x5A1
+#define bms_ID_TEMPERATURES_CELLBOARD0 0x501 // dec: 1281 bin: 0b10100000001
+#define bms_ID_TEMPERATURES_CELLBOARD1 0x521 // dec: 1313 bin: 0b10100100001
+#define bms_ID_TEMPERATURES_CELLBOARD2 0x541 // dec: 1345 bin: 0b10101000001
+#define bms_ID_TEMPERATURES_CELLBOARD3 0x561 // dec: 1377 bin: 0b10101100001
+#define bms_ID_TEMPERATURES_CELLBOARD4 0x581 // dec: 1409 bin: 0b10110000001
+#define bms_ID_TEMPERATURES_CELLBOARD5 0x5A1 // dec: 1441 bin: 0b10110100001
 
 /* TOPIC VOLTAGE_INFO */
-#define bms_topic_mask_VOLTAGE_INFO 0b00000011111
-#define bms_topic_filter_VOLTAGE_INFO 0b00000000010 // dec: 2 hex: 0x2
+#define bms_TOPIC_MASK_VOLTAGE_INFO 0b00000011111
+#define bms_TOPIC_FILTER_VOLTAGE_INFO 0x2 // dec: 2 bin: 0b00000000010
 
-#define bms_id_VOLTAGES_CELLBOARD0 0b01000000010 // dec: 514 hex: 0x202
-#define bms_id_VOLTAGES_CELLBOARD1 0b01000100010 // dec: 546 hex: 0x222
-#define bms_id_VOLTAGES_CELLBOARD2 0b01001000010 // dec: 578 hex: 0x242
-#define bms_id_VOLTAGES_CELLBOARD3 0b01001100010 // dec: 610 hex: 0x262
-#define bms_id_VOLTAGES_CELLBOARD4 0b01010000010 // dec: 642 hex: 0x282
-#define bms_id_VOLTAGES_CELLBOARD5 0b01010100010 // dec: 674 hex: 0x2A2
+#define bms_ID_VOLTAGES_CELLBOARD0 0x202 // dec: 514 bin: 0b01000000010
+#define bms_ID_VOLTAGES_CELLBOARD1 0x222 // dec: 546 bin: 0b01000100010
+#define bms_ID_VOLTAGES_CELLBOARD2 0x242 // dec: 578 bin: 0b01001000010
+#define bms_ID_VOLTAGES_CELLBOARD3 0x262 // dec: 610 bin: 0b01001100010
+#define bms_ID_VOLTAGES_CELLBOARD4 0x282 // dec: 642 bin: 0b01010000010
+#define bms_ID_VOLTAGES_CELLBOARD5 0x2A2 // dec: 674 bin: 0b01010100010
 
 /* TOPIC BALANCING */
-#define bms_topic_mask_BALANCING 0b00000011111
-#define bms_topic_filter_BALANCING 0b00000000011 // dec: 3 hex: 0x3
+#define bms_TOPIC_MASK_BALANCING 0b00000011111
+#define bms_TOPIC_FILTER_BALANCING 0x3 // dec: 3 bin: 0b00000000011
 
-#define bms_id_BALANCING 0b01000000011 // dec: 515 hex: 0x203
+#define bms_ID_BALANCING 0x203 // dec: 515 bin: 0b01000000011
 
 /* TOPIC FIXED_IDS */
-#define bms_topic_mask_FIXED_IDS 0b00000011111
+#define bms_TOPIC_MASK_FIXED_IDS 0b00000011111
 
-#define bms_id_FW_UPDATE 0b00000001010 // dec: 10 hex: 0xA
-#define bms_id_FLASH_CELLBOARD_0_TX 0b00000010000 // dec: 16 hex: 0x10
-#define bms_id_FLASH_CELLBOARD_0_RX 0b00000010001 // dec: 17 hex: 0x11
-#define bms_id_FLASH_CELLBOARD_1_TX 0b00000010010 // dec: 18 hex: 0x12
-#define bms_id_FLASH_CELLBOARD_1_RX 0b00000010011 // dec: 19 hex: 0x13
-#define bms_id_FLASH_CELLBOARD_2_TX 0b00000010100 // dec: 20 hex: 0x14
-#define bms_id_FLASH_CELLBOARD_2_RX 0b00000010101 // dec: 21 hex: 0x15
-#define bms_id_FLASH_CELLBOARD_3_TX 0b00000010110 // dec: 22 hex: 0x16
-#define bms_id_FLASH_CELLBOARD_3_RX 0b00000010111 // dec: 23 hex: 0x17
-#define bms_id_FLASH_CELLBOARD_4_TX 0b00000011000 // dec: 24 hex: 0x18
-#define bms_id_FLASH_CELLBOARD_4_RX 0b00000011001 // dec: 25 hex: 0x19
-#define bms_id_FLASH_CELLBOARD_5_TX 0b00000011010 // dec: 26 hex: 0x1A
-#define bms_id_FLASH_CELLBOARD_5_RX 0b00000011011 // dec: 27 hex: 0x1B
+#define bms_ID_FW_UPDATE 0xA // dec: 10 bin: 0b00000001010
+#define bms_ID_FLASH_CELLBOARD_0_TX 0x10 // dec: 16 bin: 0b00000010000
+#define bms_ID_FLASH_CELLBOARD_0_RX 0x11 // dec: 17 bin: 0b00000010001
+#define bms_ID_FLASH_CELLBOARD_1_TX 0x12 // dec: 18 bin: 0b00000010010
+#define bms_ID_FLASH_CELLBOARD_1_RX 0x13 // dec: 19 bin: 0b00000010011
+#define bms_ID_FLASH_CELLBOARD_2_TX 0x14 // dec: 20 bin: 0b00000010100
+#define bms_ID_FLASH_CELLBOARD_2_RX 0x15 // dec: 21 bin: 0b00000010101
+#define bms_ID_FLASH_CELLBOARD_3_TX 0x16 // dec: 22 bin: 0b00000010110
+#define bms_ID_FLASH_CELLBOARD_3_RX 0x17 // dec: 23 bin: 0b00000010111
+#define bms_ID_FLASH_CELLBOARD_4_TX 0x18 // dec: 24 bin: 0b00000011000
+#define bms_ID_FLASH_CELLBOARD_4_RX 0x19 // dec: 25 bin: 0b00000011001
+#define bms_ID_FLASH_CELLBOARD_5_TX 0x1A // dec: 26 bin: 0b00000011010
+#define bms_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
 
 
 // ============== UTILS ============== //
 
-int bms_message_name_from_id(canlib_message_id id, char *buffer);
-bool bms_is_message_id(canlib_message_id message_id);
+static inline int bms_message_name_from_id(canlib_message_id id, char *buffer);
+static inline bool bms_is_message_id(canlib_message_id message_id);
 
 #define bms_MAX_MESSAGE_LENGTH 24
 
 #ifdef bms_IDS_IMPLEMENTATION
 
-int bms_message_name_from_id(canlib_message_id id, char *buffer) {
+static inline int bms_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
-        case bms_id_BOARD_STATUS_CELLBOARD0:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD0");
-            return 23;
-        case bms_id_BOARD_STATUS_CELLBOARD1:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD1");
-            return 23;
-        case bms_id_BOARD_STATUS_CELLBOARD2:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD2");
-            return 23;
-        case bms_id_BOARD_STATUS_CELLBOARD3:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD3");
-            return 23;
-        case bms_id_BOARD_STATUS_CELLBOARD4:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD4");
-            return 23;
-        case bms_id_BOARD_STATUS_CELLBOARD5:
-            strcpy(buffer, "BOARD_STATUS_CELLBOARD5");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD0:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD0");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD1:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD1");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD2:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD2");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD3:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD3");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD4:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD4");
-            return 23;
-        case bms_id_TEMPERATURES_CELLBOARD5:
-            strcpy(buffer, "TEMPERATURES_CELLBOARD5");
-            return 23;
-        case bms_id_VOLTAGES_CELLBOARD0:
-            strcpy(buffer, "VOLTAGES_CELLBOARD0");
-            return 19;
-        case bms_id_VOLTAGES_CELLBOARD1:
-            strcpy(buffer, "VOLTAGES_CELLBOARD1");
-            return 19;
-        case bms_id_VOLTAGES_CELLBOARD2:
-            strcpy(buffer, "VOLTAGES_CELLBOARD2");
-            return 19;
-        case bms_id_VOLTAGES_CELLBOARD3:
-            strcpy(buffer, "VOLTAGES_CELLBOARD3");
-            return 19;
-        case bms_id_VOLTAGES_CELLBOARD4:
-            strcpy(buffer, "VOLTAGES_CELLBOARD4");
-            return 19;
-        case bms_id_VOLTAGES_CELLBOARD5:
-            strcpy(buffer, "VOLTAGES_CELLBOARD5");
-            return 19;
-        case bms_id_BALANCING:
-            strcpy(buffer, "BALANCING");
-            return 9;
-        case bms_id_FW_UPDATE:
-            strcpy(buffer, "FW_UPDATE");
-            return 9;
-        case bms_id_FLASH_CELLBOARD_0_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_0_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_0_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_0_RX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_1_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_1_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_1_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_1_RX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_2_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_2_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_2_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_2_RX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_3_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_3_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_3_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_3_RX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_4_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_4_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_4_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_4_RX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_5_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_5_TX");
-            return 20;
-        case bms_id_FLASH_CELLBOARD_5_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_5_RX");
-            return 20;
+        case bms_ID_BOARD_STATUS_CELLBOARD0:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD0");;
+        case bms_ID_BOARD_STATUS_CELLBOARD1:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD1");;
+        case bms_ID_BOARD_STATUS_CELLBOARD2:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD2");;
+        case bms_ID_BOARD_STATUS_CELLBOARD3:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD3");;
+        case bms_ID_BOARD_STATUS_CELLBOARD4:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD4");;
+        case bms_ID_BOARD_STATUS_CELLBOARD5:
+            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD5");;
+        case bms_ID_TEMPERATURES_CELLBOARD0:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD0");;
+        case bms_ID_TEMPERATURES_CELLBOARD1:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD1");;
+        case bms_ID_TEMPERATURES_CELLBOARD2:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD2");;
+        case bms_ID_TEMPERATURES_CELLBOARD3:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD3");;
+        case bms_ID_TEMPERATURES_CELLBOARD4:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD4");;
+        case bms_ID_TEMPERATURES_CELLBOARD5:
+            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD5");;
+        case bms_ID_VOLTAGES_CELLBOARD0:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD0");;
+        case bms_ID_VOLTAGES_CELLBOARD1:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD1");;
+        case bms_ID_VOLTAGES_CELLBOARD2:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD2");;
+        case bms_ID_VOLTAGES_CELLBOARD3:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD3");;
+        case bms_ID_VOLTAGES_CELLBOARD4:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD4");;
+        case bms_ID_VOLTAGES_CELLBOARD5:
+            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD5");;
+        case bms_ID_BALANCING:
+            return sprintf(buffer, "%s", "BALANCING");;
+        case bms_ID_FW_UPDATE:
+            return sprintf(buffer, "%s", "FW_UPDATE");;
+        case bms_ID_FLASH_CELLBOARD_0_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_0_TX");;
+        case bms_ID_FLASH_CELLBOARD_0_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_0_RX");;
+        case bms_ID_FLASH_CELLBOARD_1_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_1_TX");;
+        case bms_ID_FLASH_CELLBOARD_1_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_1_RX");;
+        case bms_ID_FLASH_CELLBOARD_2_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_2_TX");;
+        case bms_ID_FLASH_CELLBOARD_2_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_2_RX");;
+        case bms_ID_FLASH_CELLBOARD_3_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_3_TX");;
+        case bms_ID_FLASH_CELLBOARD_3_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_3_RX");;
+        case bms_ID_FLASH_CELLBOARD_4_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_4_TX");;
+        case bms_ID_FLASH_CELLBOARD_4_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_4_RX");;
+        case bms_ID_FLASH_CELLBOARD_5_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_TX");;
+        case bms_ID_FLASH_CELLBOARD_5_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_RX");;
         default:
-            strcpy(buffer, ""); // Unknown message
+            return 0; // Unknown message
     }
-    return 0;
 }
 
-bool bms_is_message_id(canlib_message_id message_id) {
+static inline bool bms_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 1536: return true; break;
         case 1568: return true; break;

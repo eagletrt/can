@@ -44,57 +44,61 @@ typedef void (*canlib_watchdog_callback)(int);
 
 #endif // CANLIB_BITMASK_UTILS
 
-
-#define secondary_watchdog_index_IMU_ANGULAR_RATE 0
-#define secondary_watchdog_index_IMU_ACCELERATION 1
-#define secondary_watchdog_index_IRTS_FL_0 2
-#define secondary_watchdog_index_IRTS_FL_1 3
-#define secondary_watchdog_index_IRTS_FL_2 4
-#define secondary_watchdog_index_IRTS_FL_3 5
-#define secondary_watchdog_index_IRTS_FR_0 6
-#define secondary_watchdog_index_IRTS_FR_1 7
-#define secondary_watchdog_index_IRTS_FR_2 8
-#define secondary_watchdog_index_IRTS_FR_3 9
-#define secondary_watchdog_index_IRTS_RL_0 10
-#define secondary_watchdog_index_IRTS_RL_1 11
-#define secondary_watchdog_index_IRTS_RL_2 12
-#define secondary_watchdog_index_IRTS_RL_3 13
-#define secondary_watchdog_index_IRTS_RR_0 14
-#define secondary_watchdog_index_IRTS_RR_1 15
-#define secondary_watchdog_index_IRTS_RR_2 16
-#define secondary_watchdog_index_IRTS_RR_3 17
-#define secondary_watchdog_index_GPS_COORDS 18
-#define secondary_watchdog_index_GPS_SPEED 19
-#define secondary_watchdog_index_LAP_COUNT 20
-#define secondary_watchdog_index_PEDALS_OUTPUT 21
-#define secondary_watchdog_index_CONTROL_OUTPUT 22
-#define secondary_watchdog_index_STEERING_ANGLE 23
+#ifndef CANLIB_UNUSED
+#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
+#endif // CANLIB_UNUSED
 
 
-#define secondary_IMU_ANGULAR_RATE_INTERVAL -1
-#define secondary_IMU_ACCELERATION_INTERVAL -1
-#define secondary_IRTS_FL_0_INTERVAL -1
-#define secondary_IRTS_FL_1_INTERVAL -1
-#define secondary_IRTS_FL_2_INTERVAL -1
-#define secondary_IRTS_FL_3_INTERVAL -1
-#define secondary_IRTS_FR_0_INTERVAL -1
-#define secondary_IRTS_FR_1_INTERVAL -1
-#define secondary_IRTS_FR_2_INTERVAL -1
-#define secondary_IRTS_FR_3_INTERVAL -1
-#define secondary_IRTS_RL_0_INTERVAL -1
-#define secondary_IRTS_RL_1_INTERVAL -1
-#define secondary_IRTS_RL_2_INTERVAL -1
-#define secondary_IRTS_RL_3_INTERVAL -1
-#define secondary_IRTS_RR_0_INTERVAL -1
-#define secondary_IRTS_RR_1_INTERVAL -1
-#define secondary_IRTS_RR_2_INTERVAL -1
-#define secondary_IRTS_RR_3_INTERVAL -1
-#define secondary_GPS_COORDS_INTERVAL -1
-#define secondary_GPS_SPEED_INTERVAL -1
-#define secondary_LAP_COUNT_INTERVAL -1
-#define secondary_PEDALS_OUTPUT_INTERVAL 100
-#define secondary_CONTROL_OUTPUT_INTERVAL 100
-#define secondary_STEERING_ANGLE_INTERVAL 100
+#define secondary_WATCHDOG_INDEX_IMU_ANGULAR_RATE 0
+#define secondary_WATCHDOG_INDEX_IMU_ACCELERATION 1
+#define secondary_WATCHDOG_INDEX_IRTS_FL_0 2
+#define secondary_WATCHDOG_INDEX_IRTS_FL_1 3
+#define secondary_WATCHDOG_INDEX_IRTS_FL_2 4
+#define secondary_WATCHDOG_INDEX_IRTS_FL_3 5
+#define secondary_WATCHDOG_INDEX_IRTS_FR_0 6
+#define secondary_WATCHDOG_INDEX_IRTS_FR_1 7
+#define secondary_WATCHDOG_INDEX_IRTS_FR_2 8
+#define secondary_WATCHDOG_INDEX_IRTS_FR_3 9
+#define secondary_WATCHDOG_INDEX_IRTS_RL_0 10
+#define secondary_WATCHDOG_INDEX_IRTS_RL_1 11
+#define secondary_WATCHDOG_INDEX_IRTS_RL_2 12
+#define secondary_WATCHDOG_INDEX_IRTS_RL_3 13
+#define secondary_WATCHDOG_INDEX_IRTS_RR_0 14
+#define secondary_WATCHDOG_INDEX_IRTS_RR_1 15
+#define secondary_WATCHDOG_INDEX_IRTS_RR_2 16
+#define secondary_WATCHDOG_INDEX_IRTS_RR_3 17
+#define secondary_WATCHDOG_INDEX_GPS_COORDS 18
+#define secondary_WATCHDOG_INDEX_GPS_SPEED 19
+#define secondary_WATCHDOG_INDEX_LAP_COUNT 20
+#define secondary_WATCHDOG_INDEX_PEDALS_OUTPUT 21
+#define secondary_WATCHDOG_INDEX_CONTROL_OUTPUT 22
+#define secondary_WATCHDOG_INDEX_STEERING_ANGLE 23
+
+
+#define secondary_INTERVAL_IMU_ANGULAR_RATE -1
+#define secondary_INTERVAL_IMU_ACCELERATION -1
+#define secondary_INTERVAL_IRTS_FL_0 -1
+#define secondary_INTERVAL_IRTS_FL_1 -1
+#define secondary_INTERVAL_IRTS_FL_2 -1
+#define secondary_INTERVAL_IRTS_FL_3 -1
+#define secondary_INTERVAL_IRTS_FR_0 -1
+#define secondary_INTERVAL_IRTS_FR_1 -1
+#define secondary_INTERVAL_IRTS_FR_2 -1
+#define secondary_INTERVAL_IRTS_FR_3 -1
+#define secondary_INTERVAL_IRTS_RL_0 -1
+#define secondary_INTERVAL_IRTS_RL_1 -1
+#define secondary_INTERVAL_IRTS_RL_2 -1
+#define secondary_INTERVAL_IRTS_RL_3 -1
+#define secondary_INTERVAL_IRTS_RR_0 -1
+#define secondary_INTERVAL_IRTS_RR_1 -1
+#define secondary_INTERVAL_IRTS_RR_2 -1
+#define secondary_INTERVAL_IRTS_RR_3 -1
+#define secondary_INTERVAL_GPS_COORDS -1
+#define secondary_INTERVAL_GPS_SPEED -1
+#define secondary_INTERVAL_LAP_COUNT -1
+#define secondary_INTERVAL_PEDALS_OUTPUT 100
+#define secondary_INTERVAL_CONTROL_OUTPUT 100
+#define secondary_INTERVAL_STEERING_ANGLE 100
 
 // Messages with this interval will be ignored by the watchdog as they are not
 // expected to be sent regularly.
@@ -106,96 +110,73 @@ typedef struct {
     canlib_watchdog_timestamp last_reset[24];
 } secondary_watchdog;
 
-int secondary_watchdog_index_from_id(canlib_message_id id);
-int secondary_watchdog_interval_from_id(uint16_t message_id);
+static inline int secondary_watchdog_index_from_id(canlib_message_id id);
+static inline int secondary_watchdog_interval_from_id(uint16_t message_id);
 
 secondary_watchdog* secondary_watchdog_new();
+void secondary_watchdog_free(secondary_watchdog *watchdog);
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
 void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 #ifdef secondary_WATCHDOG_IMPLEMENTATION
 
-int secondary_watchdog_interval_from_id(uint16_t message_id) {
+static inline int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-    case 1260:
-        return secondary_IMU_ANGULAR_RATE_INTERVAL;
-    case 1261:
-        return secondary_IMU_ACCELERATION_INTERVAL;
-    case 1460:
-        return secondary_IRTS_FL_0_INTERVAL;
-    case 1461:
-        return secondary_IRTS_FL_1_INTERVAL;
-    case 1462:
-        return secondary_IRTS_FL_2_INTERVAL;
-    case 1463:
-        return secondary_IRTS_FL_3_INTERVAL;
-    case 1464:
-        return secondary_IRTS_FR_0_INTERVAL;
-    case 1465:
-        return secondary_IRTS_FR_1_INTERVAL;
-    case 1466:
-        return secondary_IRTS_FR_2_INTERVAL;
-    case 1467:
-        return secondary_IRTS_FR_3_INTERVAL;
-    case 1468:
-        return secondary_IRTS_RL_0_INTERVAL;
-    case 1469:
-        return secondary_IRTS_RL_1_INTERVAL;
-    case 1470:
-        return secondary_IRTS_RL_2_INTERVAL;
-    case 1471:
-        return secondary_IRTS_RL_3_INTERVAL;
-    case 1472:
-        return secondary_IRTS_RR_0_INTERVAL;
-    case 1473:
-        return secondary_IRTS_RR_1_INTERVAL;
-    case 1474:
-        return secondary_IRTS_RR_2_INTERVAL;
-    case 1475:
-        return secondary_IRTS_RR_3_INTERVAL;
-    case 1025:
-        return secondary_GPS_COORDS_INTERVAL;
-    case 1057:
-        return secondary_GPS_SPEED_INTERVAL;
-    case 1089:
-        return secondary_LAP_COUNT_INTERVAL;
-    case 769:
-        return secondary_PEDALS_OUTPUT_INTERVAL;
-    case 801:
-        return secondary_CONTROL_OUTPUT_INTERVAL;
-    case 258:
-        return secondary_STEERING_ANGLE_INTERVAL;
+        case 1260: return secondary_INTERVAL_IMU_ANGULAR_RATE;
+        case 1261: return secondary_INTERVAL_IMU_ACCELERATION;
+        case 1460: return secondary_INTERVAL_IRTS_FL_0;
+        case 1461: return secondary_INTERVAL_IRTS_FL_1;
+        case 1462: return secondary_INTERVAL_IRTS_FL_2;
+        case 1463: return secondary_INTERVAL_IRTS_FL_3;
+        case 1464: return secondary_INTERVAL_IRTS_FR_0;
+        case 1465: return secondary_INTERVAL_IRTS_FR_1;
+        case 1466: return secondary_INTERVAL_IRTS_FR_2;
+        case 1467: return secondary_INTERVAL_IRTS_FR_3;
+        case 1468: return secondary_INTERVAL_IRTS_RL_0;
+        case 1469: return secondary_INTERVAL_IRTS_RL_1;
+        case 1470: return secondary_INTERVAL_IRTS_RL_2;
+        case 1471: return secondary_INTERVAL_IRTS_RL_3;
+        case 1472: return secondary_INTERVAL_IRTS_RR_0;
+        case 1473: return secondary_INTERVAL_IRTS_RR_1;
+        case 1474: return secondary_INTERVAL_IRTS_RR_2;
+        case 1475: return secondary_INTERVAL_IRTS_RR_3;
+        case 1025: return secondary_INTERVAL_GPS_COORDS;
+        case 1057: return secondary_INTERVAL_GPS_SPEED;
+        case 1089: return secondary_INTERVAL_LAP_COUNT;
+        case 769: return secondary_INTERVAL_PEDALS_OUTPUT;
+        case 801: return secondary_INTERVAL_CONTROL_OUTPUT;
+        case 258: return secondary_INTERVAL_STEERING_ANGLE;
     }
     return -1;
 }
 
-int secondary_watchdog_index_from_id(canlib_message_id id) {
+static inline int secondary_watchdog_index_from_id(canlib_message_id id) {
     switch (id) {
-        case 1260: return secondary_watchdog_index_IMU_ANGULAR_RATE;
-        case 1261: return secondary_watchdog_index_IMU_ACCELERATION;
-        case 1460: return secondary_watchdog_index_IRTS_FL_0;
-        case 1461: return secondary_watchdog_index_IRTS_FL_1;
-        case 1462: return secondary_watchdog_index_IRTS_FL_2;
-        case 1463: return secondary_watchdog_index_IRTS_FL_3;
-        case 1464: return secondary_watchdog_index_IRTS_FR_0;
-        case 1465: return secondary_watchdog_index_IRTS_FR_1;
-        case 1466: return secondary_watchdog_index_IRTS_FR_2;
-        case 1467: return secondary_watchdog_index_IRTS_FR_3;
-        case 1468: return secondary_watchdog_index_IRTS_RL_0;
-        case 1469: return secondary_watchdog_index_IRTS_RL_1;
-        case 1470: return secondary_watchdog_index_IRTS_RL_2;
-        case 1471: return secondary_watchdog_index_IRTS_RL_3;
-        case 1472: return secondary_watchdog_index_IRTS_RR_0;
-        case 1473: return secondary_watchdog_index_IRTS_RR_1;
-        case 1474: return secondary_watchdog_index_IRTS_RR_2;
-        case 1475: return secondary_watchdog_index_IRTS_RR_3;
-        case 1025: return secondary_watchdog_index_GPS_COORDS;
-        case 1057: return secondary_watchdog_index_GPS_SPEED;
-        case 1089: return secondary_watchdog_index_LAP_COUNT;
-        case 769: return secondary_watchdog_index_PEDALS_OUTPUT;
-        case 801: return secondary_watchdog_index_CONTROL_OUTPUT;
-        case 258: return secondary_watchdog_index_STEERING_ANGLE;
+        case 1260: return secondary_WATCHDOG_INDEX_IMU_ANGULAR_RATE;
+        case 1261: return secondary_WATCHDOG_INDEX_IMU_ACCELERATION;
+        case 1460: return secondary_WATCHDOG_INDEX_IRTS_FL_0;
+        case 1461: return secondary_WATCHDOG_INDEX_IRTS_FL_1;
+        case 1462: return secondary_WATCHDOG_INDEX_IRTS_FL_2;
+        case 1463: return secondary_WATCHDOG_INDEX_IRTS_FL_3;
+        case 1464: return secondary_WATCHDOG_INDEX_IRTS_FR_0;
+        case 1465: return secondary_WATCHDOG_INDEX_IRTS_FR_1;
+        case 1466: return secondary_WATCHDOG_INDEX_IRTS_FR_2;
+        case 1467: return secondary_WATCHDOG_INDEX_IRTS_FR_3;
+        case 1468: return secondary_WATCHDOG_INDEX_IRTS_RL_0;
+        case 1469: return secondary_WATCHDOG_INDEX_IRTS_RL_1;
+        case 1470: return secondary_WATCHDOG_INDEX_IRTS_RL_2;
+        case 1471: return secondary_WATCHDOG_INDEX_IRTS_RL_3;
+        case 1472: return secondary_WATCHDOG_INDEX_IRTS_RR_0;
+        case 1473: return secondary_WATCHDOG_INDEX_IRTS_RR_1;
+        case 1474: return secondary_WATCHDOG_INDEX_IRTS_RR_2;
+        case 1475: return secondary_WATCHDOG_INDEX_IRTS_RR_3;
+        case 1025: return secondary_WATCHDOG_INDEX_GPS_COORDS;
+        case 1057: return secondary_WATCHDOG_INDEX_GPS_SPEED;
+        case 1089: return secondary_WATCHDOG_INDEX_LAP_COUNT;
+        case 769: return secondary_WATCHDOG_INDEX_PEDALS_OUTPUT;
+        case 801: return secondary_WATCHDOG_INDEX_CONTROL_OUTPUT;
+        case 258: return secondary_WATCHDOG_INDEX_STEERING_ANGLE;
     }
     return 24; // invalid
 }
@@ -209,6 +190,11 @@ secondary_watchdog* secondary_watchdog_new() {
     memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
     memset(watchdog->last_reset, 0, sizeof(watchdog->last_reset));
     return watchdog;
+}
+
+
+void secondary_watchdog_free(secondary_watchdog *watchdog) {
+    free(watchdog);
 }
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
@@ -225,26 +211,77 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
 }
 
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
-    memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_PEDALS_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_PEDALS_OUTPUT] > secondary_PEDALS_OUTPUT_INTERVAL
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_PEDALS_OUTPUT
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_PEDALS_OUTPUT);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_CONTROL_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_CONTROL_OUTPUT] > secondary_CONTROL_OUTPUT_INTERVAL
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_CONTROL_OUTPUT
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_CONTROL_OUTPUT);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_watchdog_index_STEERING_ANGLE)
-        && timestamp - watchdog->last_reset[secondary_watchdog_index_STEERING_ANGLE] > secondary_STEERING_ANGLE_INTERVAL
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_STEERING_ANGLE)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_STEERING_ANGLE
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_watchdog_index_STEERING_ANGLE);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_STEERING_ANGLE);
     }
 }
+void secondary_watchdog_timeout_100(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_PEDALS_OUTPUT
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_CONTROL_OUTPUT
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_STEERING_ANGLE)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_STEERING_ANGLE] > secondary_INTERVAL_STEERING_ANGLE
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_STEERING_ANGLE);
+    }
+}
+
+void secondary_watchdog_timeout_1000(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    // no messages in this interval
+    CANLIB_UNUSED(watchdog);
+    CANLIB_UNUSED(timestamp);
+}
+
+void secondary_watchdog_timeout_5000(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    // no messages in this interval
+    CANLIB_UNUSED(watchdog);
+    CANLIB_UNUSED(timestamp);
+}
+
+void secondary_watchdog_timeout_10(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    // no messages in this interval
+    CANLIB_UNUSED(watchdog);
+    CANLIB_UNUSED(timestamp);
+}
+
+void secondary_watchdog_timeout_50(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    // no messages in this interval
+    CANLIB_UNUSED(watchdog);
+    CANLIB_UNUSED(timestamp);
+}
+
+void secondary_watchdog_timeout_500(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+    // no messages in this interval
+    CANLIB_UNUSED(watchdog);
+    CANLIB_UNUSED(timestamp);
+}
+
+
 
 #endif // secondary_WATCHDOG_IMPLEMENTATION
 

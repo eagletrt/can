@@ -71,8 +71,6 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
 #endif
 
-#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
-
 #define PRIf32 "f"
 #define PRIf64 "f"
 
@@ -98,6 +96,10 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_BITMASK_UTILS
 
+#ifndef CANLIB_UNUSED
+#define CANLIB_UNUSED(expr) do { (void)(expr); } while (0)
+#endif // CANLIB_UNUSED
+
 #ifndef CANLIB_SEPARATOR
 #define CANLIB_SEPARATOR ","
 #endif // CANLIB_SEPARATOR
@@ -109,7 +111,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define secondary_NUMBER_OF_MESSAGES 24
+#define secondary_MESSAGE_COUNT 24
 
 // Custom types
 
@@ -146,39 +148,67 @@ typedef union {
 
 typedef struct {
     uint16_t id;
-    void* raw_message;
-    void* conversion_message;
-} secondary_devices[secondary_NUMBER_OF_MESSAGES];
+    void* message_raw;
+    void* message_conversion;
+} secondary_devices[secondary_MESSAGE_COUNT];
+
+// ============== INDEXES ============ //
+
+
+#define secondary_INDEX_IMU_ANGULAR_RATE 0
+#define secondary_INDEX_IMU_ACCELERATION 1
+#define secondary_INDEX_IRTS_FL_0 2
+#define secondary_INDEX_IRTS_FL_1 3
+#define secondary_INDEX_IRTS_FL_2 4
+#define secondary_INDEX_IRTS_FL_3 5
+#define secondary_INDEX_IRTS_FR_0 6
+#define secondary_INDEX_IRTS_FR_1 7
+#define secondary_INDEX_IRTS_FR_2 8
+#define secondary_INDEX_IRTS_FR_3 9
+#define secondary_INDEX_IRTS_RL_0 10
+#define secondary_INDEX_IRTS_RL_1 11
+#define secondary_INDEX_IRTS_RL_2 12
+#define secondary_INDEX_IRTS_RL_3 13
+#define secondary_INDEX_IRTS_RR_0 14
+#define secondary_INDEX_IRTS_RR_1 15
+#define secondary_INDEX_IRTS_RR_2 16
+#define secondary_INDEX_IRTS_RR_3 17
+#define secondary_INDEX_GPS_COORDS 18
+#define secondary_INDEX_GPS_SPEED 19
+#define secondary_INDEX_LAP_COUNT 20
+#define secondary_INDEX_PEDALS_OUTPUT 21
+#define secondary_INDEX_CONTROL_OUTPUT 22
+#define secondary_INDEX_STEERING_ANGLE 23
 
 // ============== SIZES ============== //
 
 
-#define secondary_IMU_ANGULAR_RATE_SIZE 6
-#define secondary_IMU_ACCELERATION_SIZE 6
-#define secondary_IRTS_FL_0_SIZE 8
-#define secondary_IRTS_FL_1_SIZE 8
-#define secondary_IRTS_FL_2_SIZE 8
-#define secondary_IRTS_FL_3_SIZE 8
-#define secondary_IRTS_FR_0_SIZE 8
-#define secondary_IRTS_FR_1_SIZE 8
-#define secondary_IRTS_FR_2_SIZE 8
-#define secondary_IRTS_FR_3_SIZE 8
-#define secondary_IRTS_RL_0_SIZE 8
-#define secondary_IRTS_RL_1_SIZE 8
-#define secondary_IRTS_RL_2_SIZE 8
-#define secondary_IRTS_RL_3_SIZE 8
-#define secondary_IRTS_RR_0_SIZE 8
-#define secondary_IRTS_RR_1_SIZE 8
-#define secondary_IRTS_RR_2_SIZE 8
-#define secondary_IRTS_RR_3_SIZE 8
-#define secondary_GPS_COORDS_SIZE 8
-#define secondary_GPS_SPEED_SIZE 2
-#define secondary_LAP_COUNT_SIZE 5
-#define secondary_PEDALS_OUTPUT_SIZE 5
-#define secondary_CONTROL_OUTPUT_SIZE 8
-#define secondary_STEERING_ANGLE_SIZE 4
+#define secondary_SIZE_IMU_ANGULAR_RATE 6
+#define secondary_SIZE_IMU_ACCELERATION 6
+#define secondary_SIZE_IRTS_FL_0 8
+#define secondary_SIZE_IRTS_FL_1 8
+#define secondary_SIZE_IRTS_FL_2 8
+#define secondary_SIZE_IRTS_FL_3 8
+#define secondary_SIZE_IRTS_FR_0 8
+#define secondary_SIZE_IRTS_FR_1 8
+#define secondary_SIZE_IRTS_FR_2 8
+#define secondary_SIZE_IRTS_FR_3 8
+#define secondary_SIZE_IRTS_RL_0 8
+#define secondary_SIZE_IRTS_RL_1 8
+#define secondary_SIZE_IRTS_RL_2 8
+#define secondary_SIZE_IRTS_RL_3 8
+#define secondary_SIZE_IRTS_RR_0 8
+#define secondary_SIZE_IRTS_RR_1 8
+#define secondary_SIZE_IRTS_RR_2 8
+#define secondary_SIZE_IRTS_RR_3 8
+#define secondary_SIZE_GPS_COORDS 8
+#define secondary_SIZE_GPS_SPEED 2
+#define secondary_SIZE_LAP_COUNT 5
+#define secondary_SIZE_PEDALS_OUTPUT 5
+#define secondary_SIZE_CONTROL_OUTPUT 8
+#define secondary_SIZE_STEERING_ANGLE 4
 
-// ============== BIT SETS ============== //
+// ============== BIT SETS =========== //
 
 
 
@@ -398,6 +428,7 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_PEDALS_OUTPUT;
+
 typedef struct CANLIB_PARKING {
     secondary_float32 bse_front;
     secondary_float32 bse_rear;
@@ -422,6 +453,46 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_STEERING_ANGLE;
 
+
+typedef union CANLIB_PARKING {
+    secondary_message_IMU_ANGULAR_RATE _IMU_ANGULAR_RATE;
+    secondary_message_IMU_ACCELERATION _IMU_ACCELERATION;
+    secondary_message_IRTS_FL_0 _IRTS_FL_0;
+    secondary_message_IRTS_FL_1 _IRTS_FL_1;
+    secondary_message_IRTS_FL_2 _IRTS_FL_2;
+    secondary_message_IRTS_FL_3 _IRTS_FL_3;
+    secondary_message_IRTS_FR_0 _IRTS_FR_0;
+    secondary_message_IRTS_FR_1 _IRTS_FR_1;
+    secondary_message_IRTS_FR_2 _IRTS_FR_2;
+    secondary_message_IRTS_FR_3 _IRTS_FR_3;
+    secondary_message_IRTS_RL_0 _IRTS_RL_0;
+    secondary_message_IRTS_RL_1 _IRTS_RL_1;
+    secondary_message_IRTS_RL_2 _IRTS_RL_2;
+    secondary_message_IRTS_RL_3 _IRTS_RL_3;
+    secondary_message_IRTS_RR_0 _IRTS_RR_0;
+    secondary_message_IRTS_RR_1 _IRTS_RR_1;
+    secondary_message_IRTS_RR_2 _IRTS_RR_2;
+    secondary_message_IRTS_RR_3 _IRTS_RR_3;
+    secondary_message_GPS_COORDS _GPS_COORDS;
+    secondary_message_GPS_SPEED _GPS_SPEED;
+    secondary_message_LAP_COUNT _LAP_COUNT;
+    secondary_message_PEDALS_OUTPUT _PEDALS_OUTPUT;
+    secondary_message_CONTROL_OUTPUT _CONTROL_OUTPUT;
+    secondary_message_STEERING_ANGLE _STEERING_ANGLE;
+} _secondary_all_structs_raw;
+
+typedef union CANLIB_PARKING {
+    secondary_message_PEDALS_OUTPUT_conversion _PEDALS_OUTPUT;
+} _secondary_all_structs_conversion;
+
+typedef union CANLIB_PARKING {
+    _secondary_all_structs_raw raw;
+    _secondary_all_structs_conversion conversion;
+} _secondary_all_structs;
+
+#define secondary_MAX_STRUCT_SIZE_RAW sizeof(_secondary_all_structs_raw);
+#define secondary_MAX_STRUCT_SIZE_CONVERSION sizeof(_secondary_all_structs_conversion);
+#define secondary_MAX_STRUCT_SIZE sizeof(_secondary_all_structs);
 
 
 // ============== IMU_ANGULAR_RATE ============== //
@@ -1066,22 +1137,32 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 // ============== UTILS ============== //
 
-void secondary_devices_new(secondary_devices* map);
-int secondary_devices_index_from_id(canlib_message_id message_id, secondary_devices* map);
+static inline int secondary_index_from_id(canlib_message_id message_id);
 int secondary_fields_from_id(canlib_message_id message_id, char *buffer);
 int secondary_to_string_from_id(canlib_message_id message_id, void* message, char *buffer);
 int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer);
 int secondary_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer);
-int secondary_deserialize_from_id(
+void* secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void** message
+    void* message_raw,
+    void* message_conversion
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+secondary_devices* secondary_devices_new();
+void secondary_devices_free(secondary_devices* devices);
+void secondary_devices_deserialize_from_id(
+    secondary_devices* devices,
+    canlib_message_id message_id,
+    uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
 
-#ifdef secondary_IMPLEMENTATION
+#ifdef secondary_NETWORK_IMPLEMENTATION
 // ============== SERIALIZE ============== //
 
 secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
@@ -1148,6 +1229,7 @@ int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* mes
         message->ang_rate_z
     );
 }
+
 int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
     return sprintf(
         buffer,
@@ -1159,6 +1241,7 @@ int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
         "ang_rate_z"
     );
 }
+
 int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1176,6 +1259,7 @@ int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE
         message->ang_rate_z
     );
 }
+
 int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1254,6 +1338,7 @@ int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* mes
         message->accel_z
     );
 }
+
 int secondary_fields_IMU_ACCELERATION(char* buffer) {
     return sprintf(
         buffer,
@@ -1265,6 +1350,7 @@ int secondary_fields_IMU_ACCELERATION(char* buffer) {
         "accel_z"
     );
 }
+
 int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1282,6 +1368,7 @@ int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION
         message->accel_z
     );
 }
+
 int secondary_fields_file_IMU_ACCELERATION(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1368,6 +1455,7 @@ int secondary_to_string_IRTS_FL_0(secondary_message_IRTS_FL_0* message, char* bu
         message->channel4
     );
 }
+
 int secondary_fields_IRTS_FL_0(char* buffer) {
     return sprintf(
         buffer,
@@ -1380,6 +1468,7 @@ int secondary_fields_IRTS_FL_0(char* buffer) {
         "channel4"
     );
 }
+
 int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1399,6 +1488,7 @@ int secondary_to_string_file_IRTS_FL_0(secondary_message_IRTS_FL_0* message, FIL
         message->channel4
     );
 }
+
 int secondary_fields_file_IRTS_FL_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1486,6 +1576,7 @@ int secondary_to_string_IRTS_FL_1(secondary_message_IRTS_FL_1* message, char* bu
         message->channel8
     );
 }
+
 int secondary_fields_IRTS_FL_1(char* buffer) {
     return sprintf(
         buffer,
@@ -1498,6 +1589,7 @@ int secondary_fields_IRTS_FL_1(char* buffer) {
         "channel8"
     );
 }
+
 int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1517,6 +1609,7 @@ int secondary_to_string_file_IRTS_FL_1(secondary_message_IRTS_FL_1* message, FIL
         message->channel8
     );
 }
+
 int secondary_fields_file_IRTS_FL_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1604,6 +1697,7 @@ int secondary_to_string_IRTS_FL_2(secondary_message_IRTS_FL_2* message, char* bu
         message->channel12
     );
 }
+
 int secondary_fields_IRTS_FL_2(char* buffer) {
     return sprintf(
         buffer,
@@ -1616,6 +1710,7 @@ int secondary_fields_IRTS_FL_2(char* buffer) {
         "channel12"
     );
 }
+
 int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1635,6 +1730,7 @@ int secondary_to_string_file_IRTS_FL_2(secondary_message_IRTS_FL_2* message, FIL
         message->channel12
     );
 }
+
 int secondary_fields_file_IRTS_FL_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1722,6 +1818,7 @@ int secondary_to_string_IRTS_FL_3(secondary_message_IRTS_FL_3* message, char* bu
         message->channel16
     );
 }
+
 int secondary_fields_IRTS_FL_3(char* buffer) {
     return sprintf(
         buffer,
@@ -1734,6 +1831,7 @@ int secondary_fields_IRTS_FL_3(char* buffer) {
         "channel16"
     );
 }
+
 int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1753,6 +1851,7 @@ int secondary_to_string_file_IRTS_FL_3(secondary_message_IRTS_FL_3* message, FIL
         message->channel16
     );
 }
+
 int secondary_fields_file_IRTS_FL_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1840,6 +1939,7 @@ int secondary_to_string_IRTS_FR_0(secondary_message_IRTS_FR_0* message, char* bu
         message->channel4
     );
 }
+
 int secondary_fields_IRTS_FR_0(char* buffer) {
     return sprintf(
         buffer,
@@ -1852,6 +1952,7 @@ int secondary_fields_IRTS_FR_0(char* buffer) {
         "channel4"
     );
 }
+
 int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1871,6 +1972,7 @@ int secondary_to_string_file_IRTS_FR_0(secondary_message_IRTS_FR_0* message, FIL
         message->channel4
     );
 }
+
 int secondary_fields_file_IRTS_FR_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -1958,6 +2060,7 @@ int secondary_to_string_IRTS_FR_1(secondary_message_IRTS_FR_1* message, char* bu
         message->channel8
     );
 }
+
 int secondary_fields_IRTS_FR_1(char* buffer) {
     return sprintf(
         buffer,
@@ -1970,6 +2073,7 @@ int secondary_fields_IRTS_FR_1(char* buffer) {
         "channel8"
     );
 }
+
 int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -1989,6 +2093,7 @@ int secondary_to_string_file_IRTS_FR_1(secondary_message_IRTS_FR_1* message, FIL
         message->channel8
     );
 }
+
 int secondary_fields_file_IRTS_FR_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2076,6 +2181,7 @@ int secondary_to_string_IRTS_FR_2(secondary_message_IRTS_FR_2* message, char* bu
         message->channel12
     );
 }
+
 int secondary_fields_IRTS_FR_2(char* buffer) {
     return sprintf(
         buffer,
@@ -2088,6 +2194,7 @@ int secondary_fields_IRTS_FR_2(char* buffer) {
         "channel12"
     );
 }
+
 int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2107,6 +2214,7 @@ int secondary_to_string_file_IRTS_FR_2(secondary_message_IRTS_FR_2* message, FIL
         message->channel12
     );
 }
+
 int secondary_fields_file_IRTS_FR_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2194,6 +2302,7 @@ int secondary_to_string_IRTS_FR_3(secondary_message_IRTS_FR_3* message, char* bu
         message->channel16
     );
 }
+
 int secondary_fields_IRTS_FR_3(char* buffer) {
     return sprintf(
         buffer,
@@ -2206,6 +2315,7 @@ int secondary_fields_IRTS_FR_3(char* buffer) {
         "channel16"
     );
 }
+
 int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2225,6 +2335,7 @@ int secondary_to_string_file_IRTS_FR_3(secondary_message_IRTS_FR_3* message, FIL
         message->channel16
     );
 }
+
 int secondary_fields_file_IRTS_FR_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2312,6 +2423,7 @@ int secondary_to_string_IRTS_RL_0(secondary_message_IRTS_RL_0* message, char* bu
         message->channel4
     );
 }
+
 int secondary_fields_IRTS_RL_0(char* buffer) {
     return sprintf(
         buffer,
@@ -2324,6 +2436,7 @@ int secondary_fields_IRTS_RL_0(char* buffer) {
         "channel4"
     );
 }
+
 int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2343,6 +2456,7 @@ int secondary_to_string_file_IRTS_RL_0(secondary_message_IRTS_RL_0* message, FIL
         message->channel4
     );
 }
+
 int secondary_fields_file_IRTS_RL_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2430,6 +2544,7 @@ int secondary_to_string_IRTS_RL_1(secondary_message_IRTS_RL_1* message, char* bu
         message->channel8
     );
 }
+
 int secondary_fields_IRTS_RL_1(char* buffer) {
     return sprintf(
         buffer,
@@ -2442,6 +2557,7 @@ int secondary_fields_IRTS_RL_1(char* buffer) {
         "channel8"
     );
 }
+
 int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2461,6 +2577,7 @@ int secondary_to_string_file_IRTS_RL_1(secondary_message_IRTS_RL_1* message, FIL
         message->channel8
     );
 }
+
 int secondary_fields_file_IRTS_RL_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2548,6 +2665,7 @@ int secondary_to_string_IRTS_RL_2(secondary_message_IRTS_RL_2* message, char* bu
         message->channel12
     );
 }
+
 int secondary_fields_IRTS_RL_2(char* buffer) {
     return sprintf(
         buffer,
@@ -2560,6 +2678,7 @@ int secondary_fields_IRTS_RL_2(char* buffer) {
         "channel12"
     );
 }
+
 int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2579,6 +2698,7 @@ int secondary_to_string_file_IRTS_RL_2(secondary_message_IRTS_RL_2* message, FIL
         message->channel12
     );
 }
+
 int secondary_fields_file_IRTS_RL_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2666,6 +2786,7 @@ int secondary_to_string_IRTS_RL_3(secondary_message_IRTS_RL_3* message, char* bu
         message->channel16
     );
 }
+
 int secondary_fields_IRTS_RL_3(char* buffer) {
     return sprintf(
         buffer,
@@ -2678,6 +2799,7 @@ int secondary_fields_IRTS_RL_3(char* buffer) {
         "channel16"
     );
 }
+
 int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2697,6 +2819,7 @@ int secondary_to_string_file_IRTS_RL_3(secondary_message_IRTS_RL_3* message, FIL
         message->channel16
     );
 }
+
 int secondary_fields_file_IRTS_RL_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2784,6 +2907,7 @@ int secondary_to_string_IRTS_RR_0(secondary_message_IRTS_RR_0* message, char* bu
         message->channel4
     );
 }
+
 int secondary_fields_IRTS_RR_0(char* buffer) {
     return sprintf(
         buffer,
@@ -2796,6 +2920,7 @@ int secondary_fields_IRTS_RR_0(char* buffer) {
         "channel4"
     );
 }
+
 int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2815,6 +2940,7 @@ int secondary_to_string_file_IRTS_RR_0(secondary_message_IRTS_RR_0* message, FIL
         message->channel4
     );
 }
+
 int secondary_fields_file_IRTS_RR_0(FILE* buffer) {
     return fprintf(
         buffer,
@@ -2902,6 +3028,7 @@ int secondary_to_string_IRTS_RR_1(secondary_message_IRTS_RR_1* message, char* bu
         message->channel8
     );
 }
+
 int secondary_fields_IRTS_RR_1(char* buffer) {
     return sprintf(
         buffer,
@@ -2914,6 +3041,7 @@ int secondary_fields_IRTS_RR_1(char* buffer) {
         "channel8"
     );
 }
+
 int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -2933,6 +3061,7 @@ int secondary_to_string_file_IRTS_RR_1(secondary_message_IRTS_RR_1* message, FIL
         message->channel8
     );
 }
+
 int secondary_fields_file_IRTS_RR_1(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3020,6 +3149,7 @@ int secondary_to_string_IRTS_RR_2(secondary_message_IRTS_RR_2* message, char* bu
         message->channel12
     );
 }
+
 int secondary_fields_IRTS_RR_2(char* buffer) {
     return sprintf(
         buffer,
@@ -3032,6 +3162,7 @@ int secondary_fields_IRTS_RR_2(char* buffer) {
         "channel12"
     );
 }
+
 int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3051,6 +3182,7 @@ int secondary_to_string_file_IRTS_RR_2(secondary_message_IRTS_RR_2* message, FIL
         message->channel12
     );
 }
+
 int secondary_fields_file_IRTS_RR_2(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3138,6 +3270,7 @@ int secondary_to_string_IRTS_RR_3(secondary_message_IRTS_RR_3* message, char* bu
         message->channel16
     );
 }
+
 int secondary_fields_IRTS_RR_3(char* buffer) {
     return sprintf(
         buffer,
@@ -3150,6 +3283,7 @@ int secondary_fields_IRTS_RR_3(char* buffer) {
         "channel16"
     );
 }
+
 int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3169,6 +3303,7 @@ int secondary_to_string_file_IRTS_RR_3(secondary_message_IRTS_RR_3* message, FIL
         message->channel16
     );
 }
+
 int secondary_fields_file_IRTS_RR_3(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3248,6 +3383,7 @@ int secondary_to_string_GPS_COORDS(secondary_message_GPS_COORDS* message, char* 
         message->longitude
     );
 }
+
 int secondary_fields_GPS_COORDS(char* buffer) {
     return sprintf(
         buffer,
@@ -3258,6 +3394,7 @@ int secondary_fields_GPS_COORDS(char* buffer) {
         "longitude"
     );
 }
+
 int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3273,6 +3410,7 @@ int secondary_to_string_file_GPS_COORDS(secondary_message_GPS_COORDS* message, F
         message->longitude
     );
 }
+
 int secondary_fields_file_GPS_COORDS(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3334,6 +3472,7 @@ int secondary_to_string_GPS_SPEED(secondary_message_GPS_SPEED* message, char* bu
         message->speed
     );
 }
+
 int secondary_fields_GPS_SPEED(char* buffer) {
     return sprintf(
         buffer,
@@ -3343,6 +3482,7 @@ int secondary_fields_GPS_SPEED(char* buffer) {
         "speed"
     );
 }
+
 int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3356,6 +3496,7 @@ int secondary_to_string_file_GPS_SPEED(secondary_message_GPS_SPEED* message, FIL
         message->speed
     );
 }
+
 int secondary_fields_file_GPS_SPEED(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3426,6 +3567,7 @@ int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* bu
         message->lap_count
     );
 }
+
 int secondary_fields_LAP_COUNT(char* buffer) {
     return sprintf(
         buffer,
@@ -3436,6 +3578,7 @@ int secondary_fields_LAP_COUNT(char* buffer) {
         "lap_count"
     );
 }
+
 int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3451,6 +3594,7 @@ int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FIL
         message->lap_count
     );
 }
+
 int secondary_fields_file_LAP_COUNT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3566,7 +3710,6 @@ void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
 }
 
 // ============== STRING ============== //
-
 int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, char* buffer) {
     return sprintf(
         buffer,
@@ -3584,6 +3727,7 @@ int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion
         message->apps
     );
 }
+
 int secondary_fields_PEDALS_OUTPUT(char* buffer) {
     return sprintf(
         buffer,
@@ -3595,6 +3739,7 @@ int secondary_fields_PEDALS_OUTPUT(char* buffer) {
         "apps"
     );
 }
+
 int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3612,6 +3757,7 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
         message->apps
     );
 }
+
 int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3690,6 +3836,7 @@ int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message
         message->left
     );
 }
+
 int secondary_fields_CONTROL_OUTPUT(char* buffer) {
     return sprintf(
         buffer,
@@ -3700,6 +3847,7 @@ int secondary_fields_CONTROL_OUTPUT(char* buffer) {
         "left"
     );
 }
+
 int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3715,6 +3863,7 @@ int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT* me
         message->left
     );
 }
+
 int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3780,6 +3929,7 @@ int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message
         message->angle
     );
 }
+
 int secondary_fields_STEERING_ANGLE(char* buffer) {
     return sprintf(
         buffer,
@@ -3789,6 +3939,7 @@ int secondary_fields_STEERING_ANGLE(char* buffer) {
         "angle"
     );
 }
+
 int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer) {
     return fprintf(
         buffer,
@@ -3802,6 +3953,7 @@ int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* me
         message->angle
     );
 }
+
 int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
     return fprintf(
         buffer,
@@ -3815,56 +3967,86 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
 
 // ============== UTILS ============== //
 
+static inline int secondary_index_from_id(canlib_message_id id) {
+    switch (id) {
+        case 1260: return secondary_INDEX_IMU_ANGULAR_RATE;
+        case 1261: return secondary_INDEX_IMU_ACCELERATION;
+        case 1460: return secondary_INDEX_IRTS_FL_0;
+        case 1461: return secondary_INDEX_IRTS_FL_1;
+        case 1462: return secondary_INDEX_IRTS_FL_2;
+        case 1463: return secondary_INDEX_IRTS_FL_3;
+        case 1464: return secondary_INDEX_IRTS_FR_0;
+        case 1465: return secondary_INDEX_IRTS_FR_1;
+        case 1466: return secondary_INDEX_IRTS_FR_2;
+        case 1467: return secondary_INDEX_IRTS_FR_3;
+        case 1468: return secondary_INDEX_IRTS_RL_0;
+        case 1469: return secondary_INDEX_IRTS_RL_1;
+        case 1470: return secondary_INDEX_IRTS_RL_2;
+        case 1471: return secondary_INDEX_IRTS_RL_3;
+        case 1472: return secondary_INDEX_IRTS_RR_0;
+        case 1473: return secondary_INDEX_IRTS_RR_1;
+        case 1474: return secondary_INDEX_IRTS_RR_2;
+        case 1475: return secondary_INDEX_IRTS_RR_3;
+        case 1025: return secondary_INDEX_GPS_COORDS;
+        case 1057: return secondary_INDEX_GPS_SPEED;
+        case 1089: return secondary_INDEX_LAP_COUNT;
+        case 769: return secondary_INDEX_PEDALS_OUTPUT;
+        case 801: return secondary_INDEX_CONTROL_OUTPUT;
+        case 258: return secondary_INDEX_STEERING_ANGLE;
+    }
+    return 24; // invalid
+}
+
 int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {
-    case 1260:
-        return secondary_fields_IMU_ANGULAR_RATE(buffer);
-    case 1261:
-        return secondary_fields_IMU_ACCELERATION(buffer);
-    case 1460:
-        return secondary_fields_IRTS_FL_0(buffer);
-    case 1461:
-        return secondary_fields_IRTS_FL_1(buffer);
-    case 1462:
-        return secondary_fields_IRTS_FL_2(buffer);
-    case 1463:
-        return secondary_fields_IRTS_FL_3(buffer);
-    case 1464:
-        return secondary_fields_IRTS_FR_0(buffer);
-    case 1465:
-        return secondary_fields_IRTS_FR_1(buffer);
-    case 1466:
-        return secondary_fields_IRTS_FR_2(buffer);
-    case 1467:
-        return secondary_fields_IRTS_FR_3(buffer);
-    case 1468:
-        return secondary_fields_IRTS_RL_0(buffer);
-    case 1469:
-        return secondary_fields_IRTS_RL_1(buffer);
-    case 1470:
-        return secondary_fields_IRTS_RL_2(buffer);
-    case 1471:
-        return secondary_fields_IRTS_RL_3(buffer);
-    case 1472:
-        return secondary_fields_IRTS_RR_0(buffer);
-    case 1473:
-        return secondary_fields_IRTS_RR_1(buffer);
-    case 1474:
-        return secondary_fields_IRTS_RR_2(buffer);
-    case 1475:
-        return secondary_fields_IRTS_RR_3(buffer);
-    case 1025:
-        return secondary_fields_GPS_COORDS(buffer);
-    case 1057:
-        return secondary_fields_GPS_SPEED(buffer);
-    case 1089:
-        return secondary_fields_LAP_COUNT(buffer);
-    case 769:
-        return secondary_fields_PEDALS_OUTPUT(buffer);
-    case 801:
-        return secondary_fields_CONTROL_OUTPUT(buffer);
-    case 258:
-        return secondary_fields_STEERING_ANGLE(buffer);
+        case 1260:
+            return secondary_fields_IMU_ANGULAR_RATE(buffer);
+        case 1261:
+            return secondary_fields_IMU_ACCELERATION(buffer);
+        case 1460:
+            return secondary_fields_IRTS_FL_0(buffer);
+        case 1461:
+            return secondary_fields_IRTS_FL_1(buffer);
+        case 1462:
+            return secondary_fields_IRTS_FL_2(buffer);
+        case 1463:
+            return secondary_fields_IRTS_FL_3(buffer);
+        case 1464:
+            return secondary_fields_IRTS_FR_0(buffer);
+        case 1465:
+            return secondary_fields_IRTS_FR_1(buffer);
+        case 1466:
+            return secondary_fields_IRTS_FR_2(buffer);
+        case 1467:
+            return secondary_fields_IRTS_FR_3(buffer);
+        case 1468:
+            return secondary_fields_IRTS_RL_0(buffer);
+        case 1469:
+            return secondary_fields_IRTS_RL_1(buffer);
+        case 1470:
+            return secondary_fields_IRTS_RL_2(buffer);
+        case 1471:
+            return secondary_fields_IRTS_RL_3(buffer);
+        case 1472:
+            return secondary_fields_IRTS_RR_0(buffer);
+        case 1473:
+            return secondary_fields_IRTS_RR_1(buffer);
+        case 1474:
+            return secondary_fields_IRTS_RR_2(buffer);
+        case 1475:
+            return secondary_fields_IRTS_RR_3(buffer);
+        case 1025:
+            return secondary_fields_GPS_COORDS(buffer);
+        case 1057:
+            return secondary_fields_GPS_SPEED(buffer);
+        case 1089:
+            return secondary_fields_LAP_COUNT(buffer);
+        case 769:
+            return secondary_fields_PEDALS_OUTPUT(buffer);
+        case 801:
+            return secondary_fields_CONTROL_OUTPUT(buffer);
+        case 258:
+            return secondary_fields_STEERING_ANGLE(buffer);
     }
     return 0;
 }
@@ -3925,54 +4107,54 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
 
 int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
     switch (message_id) {
-    case 1260:
-        return secondary_fields_file_IMU_ANGULAR_RATE(buffer);
-    case 1261:
-        return secondary_fields_file_IMU_ACCELERATION(buffer);
-    case 1460:
-        return secondary_fields_file_IRTS_FL_0(buffer);
-    case 1461:
-        return secondary_fields_file_IRTS_FL_1(buffer);
-    case 1462:
-        return secondary_fields_file_IRTS_FL_2(buffer);
-    case 1463:
-        return secondary_fields_file_IRTS_FL_3(buffer);
-    case 1464:
-        return secondary_fields_file_IRTS_FR_0(buffer);
-    case 1465:
-        return secondary_fields_file_IRTS_FR_1(buffer);
-    case 1466:
-        return secondary_fields_file_IRTS_FR_2(buffer);
-    case 1467:
-        return secondary_fields_file_IRTS_FR_3(buffer);
-    case 1468:
-        return secondary_fields_file_IRTS_RL_0(buffer);
-    case 1469:
-        return secondary_fields_file_IRTS_RL_1(buffer);
-    case 1470:
-        return secondary_fields_file_IRTS_RL_2(buffer);
-    case 1471:
-        return secondary_fields_file_IRTS_RL_3(buffer);
-    case 1472:
-        return secondary_fields_file_IRTS_RR_0(buffer);
-    case 1473:
-        return secondary_fields_file_IRTS_RR_1(buffer);
-    case 1474:
-        return secondary_fields_file_IRTS_RR_2(buffer);
-    case 1475:
-        return secondary_fields_file_IRTS_RR_3(buffer);
-    case 1025:
-        return secondary_fields_file_GPS_COORDS(buffer);
-    case 1057:
-        return secondary_fields_file_GPS_SPEED(buffer);
-    case 1089:
-        return secondary_fields_file_LAP_COUNT(buffer);
-    case 769:
-        return secondary_fields_file_PEDALS_OUTPUT(buffer);
-    case 801:
-        return secondary_fields_file_CONTROL_OUTPUT(buffer);
-    case 258:
-        return secondary_fields_file_STEERING_ANGLE(buffer);
+        case 1260:
+            return secondary_fields_file_IMU_ANGULAR_RATE(buffer);
+        case 1261:
+            return secondary_fields_file_IMU_ACCELERATION(buffer);
+        case 1460:
+            return secondary_fields_file_IRTS_FL_0(buffer);
+        case 1461:
+            return secondary_fields_file_IRTS_FL_1(buffer);
+        case 1462:
+            return secondary_fields_file_IRTS_FL_2(buffer);
+        case 1463:
+            return secondary_fields_file_IRTS_FL_3(buffer);
+        case 1464:
+            return secondary_fields_file_IRTS_FR_0(buffer);
+        case 1465:
+            return secondary_fields_file_IRTS_FR_1(buffer);
+        case 1466:
+            return secondary_fields_file_IRTS_FR_2(buffer);
+        case 1467:
+            return secondary_fields_file_IRTS_FR_3(buffer);
+        case 1468:
+            return secondary_fields_file_IRTS_RL_0(buffer);
+        case 1469:
+            return secondary_fields_file_IRTS_RL_1(buffer);
+        case 1470:
+            return secondary_fields_file_IRTS_RL_2(buffer);
+        case 1471:
+            return secondary_fields_file_IRTS_RL_3(buffer);
+        case 1472:
+            return secondary_fields_file_IRTS_RR_0(buffer);
+        case 1473:
+            return secondary_fields_file_IRTS_RR_1(buffer);
+        case 1474:
+            return secondary_fields_file_IRTS_RR_2(buffer);
+        case 1475:
+            return secondary_fields_file_IRTS_RR_3(buffer);
+        case 1025:
+            return secondary_fields_file_GPS_COORDS(buffer);
+        case 1057:
+            return secondary_fields_file_GPS_SPEED(buffer);
+        case 1089:
+            return secondary_fields_file_LAP_COUNT(buffer);
+        case 769:
+            return secondary_fields_file_PEDALS_OUTPUT(buffer);
+        case 801:
+            return secondary_fields_file_CONTROL_OUTPUT(buffer);
+        case 258:
+            return secondary_fields_file_STEERING_ANGLE(buffer);
     }
     return 0;
 }
@@ -4031,397 +4213,604 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
     return 0;
 }
 
-int secondary_deserialize_from_id(
+
+void* secondary_deserialize_from_id(
     canlib_message_id message_id,
     uint8_t* data,
-    void** message
+    void* message_raw,
+    void* message_conversion
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
     switch (message_id) {
         case 1260: {
-            *message = malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
             secondary_deserialize_IMU_ANGULAR_RATE(
-                (secondary_message_IMU_ANGULAR_RATE*) *message,
+                (secondary_message_IMU_ANGULAR_RATE*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IMU_ANGULAR_RATE);
+            return message_raw;
         }
         case 1261: {
-            *message = malloc(sizeof(secondary_message_IMU_ACCELERATION));
             secondary_deserialize_IMU_ACCELERATION(
-                (secondary_message_IMU_ACCELERATION*) *message,
+                (secondary_message_IMU_ACCELERATION*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IMU_ACCELERATION);
+            return message_raw;
         }
         case 1460: {
-            *message = malloc(sizeof(secondary_message_IRTS_FL_0));
             secondary_deserialize_IRTS_FL_0(
-                (secondary_message_IRTS_FL_0*) *message,
+                (secondary_message_IRTS_FL_0*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FL_0);
+            return message_raw;
         }
         case 1461: {
-            *message = malloc(sizeof(secondary_message_IRTS_FL_1));
             secondary_deserialize_IRTS_FL_1(
-                (secondary_message_IRTS_FL_1*) *message,
+                (secondary_message_IRTS_FL_1*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FL_1);
+            return message_raw;
         }
         case 1462: {
-            *message = malloc(sizeof(secondary_message_IRTS_FL_2));
             secondary_deserialize_IRTS_FL_2(
-                (secondary_message_IRTS_FL_2*) *message,
+                (secondary_message_IRTS_FL_2*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FL_2);
+            return message_raw;
         }
         case 1463: {
-            *message = malloc(sizeof(secondary_message_IRTS_FL_3));
             secondary_deserialize_IRTS_FL_3(
-                (secondary_message_IRTS_FL_3*) *message,
+                (secondary_message_IRTS_FL_3*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FL_3);
+            return message_raw;
         }
         case 1464: {
-            *message = malloc(sizeof(secondary_message_IRTS_FR_0));
             secondary_deserialize_IRTS_FR_0(
-                (secondary_message_IRTS_FR_0*) *message,
+                (secondary_message_IRTS_FR_0*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FR_0);
+            return message_raw;
         }
         case 1465: {
-            *message = malloc(sizeof(secondary_message_IRTS_FR_1));
             secondary_deserialize_IRTS_FR_1(
-                (secondary_message_IRTS_FR_1*) *message,
+                (secondary_message_IRTS_FR_1*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FR_1);
+            return message_raw;
         }
         case 1466: {
-            *message = malloc(sizeof(secondary_message_IRTS_FR_2));
             secondary_deserialize_IRTS_FR_2(
-                (secondary_message_IRTS_FR_2*) *message,
+                (secondary_message_IRTS_FR_2*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FR_2);
+            return message_raw;
         }
         case 1467: {
-            *message = malloc(sizeof(secondary_message_IRTS_FR_3));
             secondary_deserialize_IRTS_FR_3(
-                (secondary_message_IRTS_FR_3*) *message,
+                (secondary_message_IRTS_FR_3*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_FR_3);
+            return message_raw;
         }
         case 1468: {
-            *message = malloc(sizeof(secondary_message_IRTS_RL_0));
             secondary_deserialize_IRTS_RL_0(
-                (secondary_message_IRTS_RL_0*) *message,
+                (secondary_message_IRTS_RL_0*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RL_0);
+            return message_raw;
         }
         case 1469: {
-            *message = malloc(sizeof(secondary_message_IRTS_RL_1));
             secondary_deserialize_IRTS_RL_1(
-                (secondary_message_IRTS_RL_1*) *message,
+                (secondary_message_IRTS_RL_1*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RL_1);
+            return message_raw;
         }
         case 1470: {
-            *message = malloc(sizeof(secondary_message_IRTS_RL_2));
             secondary_deserialize_IRTS_RL_2(
-                (secondary_message_IRTS_RL_2*) *message,
+                (secondary_message_IRTS_RL_2*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RL_2);
+            return message_raw;
         }
         case 1471: {
-            *message = malloc(sizeof(secondary_message_IRTS_RL_3));
             secondary_deserialize_IRTS_RL_3(
-                (secondary_message_IRTS_RL_3*) *message,
+                (secondary_message_IRTS_RL_3*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RL_3);
+            return message_raw;
         }
         case 1472: {
-            *message = malloc(sizeof(secondary_message_IRTS_RR_0));
             secondary_deserialize_IRTS_RR_0(
-                (secondary_message_IRTS_RR_0*) *message,
+                (secondary_message_IRTS_RR_0*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RR_0);
+            return message_raw;
         }
         case 1473: {
-            *message = malloc(sizeof(secondary_message_IRTS_RR_1));
             secondary_deserialize_IRTS_RR_1(
-                (secondary_message_IRTS_RR_1*) *message,
+                (secondary_message_IRTS_RR_1*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RR_1);
+            return message_raw;
         }
         case 1474: {
-            *message = malloc(sizeof(secondary_message_IRTS_RR_2));
             secondary_deserialize_IRTS_RR_2(
-                (secondary_message_IRTS_RR_2*) *message,
+                (secondary_message_IRTS_RR_2*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RR_2);
+            return message_raw;
         }
         case 1475: {
-            *message = malloc(sizeof(secondary_message_IRTS_RR_3));
             secondary_deserialize_IRTS_RR_3(
-                (secondary_message_IRTS_RR_3*) *message,
+                (secondary_message_IRTS_RR_3*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_IRTS_RR_3);
+            return message_raw;
         }
         case 1025: {
-            *message = malloc(sizeof(secondary_message_GPS_COORDS));
             secondary_deserialize_GPS_COORDS(
-                (secondary_message_GPS_COORDS*) *message,
+                (secondary_message_GPS_COORDS*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_GPS_COORDS);
+            return message_raw;
         }
         case 1057: {
-            *message = malloc(sizeof(secondary_message_GPS_SPEED));
             secondary_deserialize_GPS_SPEED(
-                (secondary_message_GPS_SPEED*) *message,
+                (secondary_message_GPS_SPEED*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_GPS_SPEED);
+            return message_raw;
         }
         case 1089: {
-            *message = malloc(sizeof(secondary_message_LAP_COUNT));
             secondary_deserialize_LAP_COUNT(
-                (secondary_message_LAP_COUNT*) *message,
+                (secondary_message_LAP_COUNT*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_LAP_COUNT);
+            return message_raw;
         }
         case 769: {
-            secondary_message_PEDALS_OUTPUT* raw_message = (secondary_message_PEDALS_OUTPUT*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
-            *message = malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
             secondary_deserialize_PEDALS_OUTPUT(
-                raw_message,
+                (secondary_message_PEDALS_OUTPUT*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
-                (secondary_message_PEDALS_OUTPUT_conversion*) *message,
-                (secondary_message_PEDALS_OUTPUT*) raw_message
+                (secondary_message_PEDALS_OUTPUT_conversion*) message_conversion,
+                (secondary_message_PEDALS_OUTPUT*) message_raw
             );
-            free(raw_message);
-            return sizeof(secondary_message_PEDALS_OUTPUT_conversion);
+            return message_conversion;
         }
         case 801: {
-            *message = malloc(sizeof(secondary_message_CONTROL_OUTPUT));
             secondary_deserialize_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT*) *message,
+                (secondary_message_CONTROL_OUTPUT*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_CONTROL_OUTPUT);
+            return message_raw;
         }
         case 258: {
-            *message = malloc(sizeof(secondary_message_STEERING_ANGLE));
             secondary_deserialize_STEERING_ANGLE(
-                (secondary_message_STEERING_ANGLE*) *message,
+                (secondary_message_STEERING_ANGLE*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return sizeof(secondary_message_STEERING_ANGLE);
+            return message_raw;
         }
     }
-    return 0;
+    return NULL;
 }
 
-void secondary_devices_new(secondary_devices* map) {
-    (*map)[0].id = 1260;
-    (*map)[0].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
-    (*map)[0].conversion_message = NULL;
-
-    (*map)[1].id = 1261;
-    (*map)[1].raw_message = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION));
-    (*map)[1].conversion_message = NULL;
-
-    (*map)[2].id = 1460;
-    (*map)[2].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_0));
-    (*map)[2].conversion_message = NULL;
-
-    (*map)[3].id = 1461;
-    (*map)[3].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_1));
-    (*map)[3].conversion_message = NULL;
-
-    (*map)[4].id = 1462;
-    (*map)[4].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_2));
-    (*map)[4].conversion_message = NULL;
-
-    (*map)[5].id = 1463;
-    (*map)[5].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FL_3));
-    (*map)[5].conversion_message = NULL;
-
-    (*map)[6].id = 1464;
-    (*map)[6].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_0));
-    (*map)[6].conversion_message = NULL;
-
-    (*map)[7].id = 1465;
-    (*map)[7].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_1));
-    (*map)[7].conversion_message = NULL;
-
-    (*map)[8].id = 1466;
-    (*map)[8].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_2));
-    (*map)[8].conversion_message = NULL;
-
-    (*map)[9].id = 1467;
-    (*map)[9].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_FR_3));
-    (*map)[9].conversion_message = NULL;
-
-    (*map)[10].id = 1468;
-    (*map)[10].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_0));
-    (*map)[10].conversion_message = NULL;
-
-    (*map)[11].id = 1469;
-    (*map)[11].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_1));
-    (*map)[11].conversion_message = NULL;
-
-    (*map)[12].id = 1470;
-    (*map)[12].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_2));
-    (*map)[12].conversion_message = NULL;
-
-    (*map)[13].id = 1471;
-    (*map)[13].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RL_3));
-    (*map)[13].conversion_message = NULL;
-
-    (*map)[14].id = 1472;
-    (*map)[14].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_0));
-    (*map)[14].conversion_message = NULL;
-
-    (*map)[15].id = 1473;
-    (*map)[15].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_1));
-    (*map)[15].conversion_message = NULL;
-
-    (*map)[16].id = 1474;
-    (*map)[16].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_2));
-    (*map)[16].conversion_message = NULL;
-
-    (*map)[17].id = 1475;
-    (*map)[17].raw_message = (void*) malloc(sizeof(secondary_message_IRTS_RR_3));
-    (*map)[17].conversion_message = NULL;
-
-    (*map)[18].id = 1025;
-    (*map)[18].raw_message = (void*) malloc(sizeof(secondary_message_GPS_COORDS));
-    (*map)[18].conversion_message = NULL;
-
-    (*map)[19].id = 1057;
-    (*map)[19].raw_message = (void*) malloc(sizeof(secondary_message_GPS_SPEED));
-    (*map)[19].conversion_message = NULL;
-
-    (*map)[20].id = 1089;
-    (*map)[20].raw_message = (void*) malloc(sizeof(secondary_message_LAP_COUNT));
-    (*map)[20].conversion_message = NULL;
-
-    (*map)[21].id = 769;
-    (*map)[21].raw_message = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
-    (*map)[21].conversion_message = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
-
-    (*map)[22].id = 801;
-    (*map)[22].raw_message = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT));
-    (*map)[22].conversion_message = NULL;
-
-    (*map)[23].id = 258;
-    (*map)[23].raw_message = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
-    (*map)[23].conversion_message = NULL;
-
+secondary_devices* secondary_devices_new() {
+    secondary_devices* devices = (secondary_devices*) malloc(sizeof(secondary_devices));
+    (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].id = 1260;
+    (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
+    (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IMU_ACCELERATION].id = 1261;
+    (*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION));
+    (*devices)[secondary_INDEX_IMU_ACCELERATION].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FL_0].id = 1460;
+    (*devices)[secondary_INDEX_IRTS_FL_0].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FL_0));
+    (*devices)[secondary_INDEX_IRTS_FL_0].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FL_1].id = 1461;
+    (*devices)[secondary_INDEX_IRTS_FL_1].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FL_1));
+    (*devices)[secondary_INDEX_IRTS_FL_1].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FL_2].id = 1462;
+    (*devices)[secondary_INDEX_IRTS_FL_2].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FL_2));
+    (*devices)[secondary_INDEX_IRTS_FL_2].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FL_3].id = 1463;
+    (*devices)[secondary_INDEX_IRTS_FL_3].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FL_3));
+    (*devices)[secondary_INDEX_IRTS_FL_3].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FR_0].id = 1464;
+    (*devices)[secondary_INDEX_IRTS_FR_0].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FR_0));
+    (*devices)[secondary_INDEX_IRTS_FR_0].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FR_1].id = 1465;
+    (*devices)[secondary_INDEX_IRTS_FR_1].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FR_1));
+    (*devices)[secondary_INDEX_IRTS_FR_1].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FR_2].id = 1466;
+    (*devices)[secondary_INDEX_IRTS_FR_2].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FR_2));
+    (*devices)[secondary_INDEX_IRTS_FR_2].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_FR_3].id = 1467;
+    (*devices)[secondary_INDEX_IRTS_FR_3].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FR_3));
+    (*devices)[secondary_INDEX_IRTS_FR_3].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RL_0].id = 1468;
+    (*devices)[secondary_INDEX_IRTS_RL_0].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RL_0));
+    (*devices)[secondary_INDEX_IRTS_RL_0].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RL_1].id = 1469;
+    (*devices)[secondary_INDEX_IRTS_RL_1].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RL_1));
+    (*devices)[secondary_INDEX_IRTS_RL_1].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RL_2].id = 1470;
+    (*devices)[secondary_INDEX_IRTS_RL_2].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RL_2));
+    (*devices)[secondary_INDEX_IRTS_RL_2].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RL_3].id = 1471;
+    (*devices)[secondary_INDEX_IRTS_RL_3].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RL_3));
+    (*devices)[secondary_INDEX_IRTS_RL_3].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RR_0].id = 1472;
+    (*devices)[secondary_INDEX_IRTS_RR_0].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RR_0));
+    (*devices)[secondary_INDEX_IRTS_RR_0].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RR_1].id = 1473;
+    (*devices)[secondary_INDEX_IRTS_RR_1].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RR_1));
+    (*devices)[secondary_INDEX_IRTS_RR_1].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RR_2].id = 1474;
+    (*devices)[secondary_INDEX_IRTS_RR_2].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RR_2));
+    (*devices)[secondary_INDEX_IRTS_RR_2].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IRTS_RR_3].id = 1475;
+    (*devices)[secondary_INDEX_IRTS_RR_3].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_RR_3));
+    (*devices)[secondary_INDEX_IRTS_RR_3].message_conversion = NULL;
+    (*devices)[secondary_INDEX_GPS_COORDS].id = 1025;
+    (*devices)[secondary_INDEX_GPS_COORDS].message_raw = (void*) malloc(sizeof(secondary_message_GPS_COORDS));
+    (*devices)[secondary_INDEX_GPS_COORDS].message_conversion = NULL;
+    (*devices)[secondary_INDEX_GPS_SPEED].id = 1057;
+    (*devices)[secondary_INDEX_GPS_SPEED].message_raw = (void*) malloc(sizeof(secondary_message_GPS_SPEED));
+    (*devices)[secondary_INDEX_GPS_SPEED].message_conversion = NULL;
+    (*devices)[secondary_INDEX_LAP_COUNT].id = 1089;
+    (*devices)[secondary_INDEX_LAP_COUNT].message_raw = (void*) malloc(sizeof(secondary_message_LAP_COUNT));
+    (*devices)[secondary_INDEX_LAP_COUNT].message_conversion = NULL;
+    (*devices)[secondary_INDEX_PEDALS_OUTPUT].id = 769;
+    (*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
+    (*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
+    (*devices)[secondary_INDEX_CONTROL_OUTPUT].id = 801;
+    (*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT));
+    (*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion = NULL;
+    (*devices)[secondary_INDEX_STEERING_ANGLE].id = 258;
+    (*devices)[secondary_INDEX_STEERING_ANGLE].message_raw = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
+    (*devices)[secondary_INDEX_STEERING_ANGLE].message_conversion = NULL;
+    return devices;
 }
 
-int secondary_devices_index_from_id(canlib_message_id message_id, secondary_devices* map) {
-    for (int index = 0; index < secondary_NUMBER_OF_MESSAGES; index++) {
-        if ((*map)[index].id == message_id)
-            return index;
+void secondary_devices_free(secondary_devices* devices) {
+    free((*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw);
+    free((*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FL_0].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FL_1].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FL_2].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FL_3].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FR_0].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FR_1].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FR_2].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_FR_3].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RL_0].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RL_1].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RL_2].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RL_3].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RR_0].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RR_1].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RR_2].message_raw);
+    free((*devices)[secondary_INDEX_IRTS_RR_3].message_raw);
+    free((*devices)[secondary_INDEX_GPS_COORDS].message_raw);
+    free((*devices)[secondary_INDEX_GPS_SPEED].message_raw);
+    free((*devices)[secondary_INDEX_LAP_COUNT].message_raw);
+    free((*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw);
+    free((*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion);
+    free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw);
+    free((*devices)[secondary_INDEX_STEERING_ANGLE].message_raw);
+    free(devices);
+}
+
+void secondary_devices_deserialize_from_id(
+    secondary_devices* devices,
+    canlib_message_id message_id,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    switch (message_id) {
+        case 1260: {
+            secondary_deserialize_IMU_ANGULAR_RATE(
+                (secondary_message_IMU_ANGULAR_RATE*) &(*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1261: {
+            secondary_deserialize_IMU_ACCELERATION(
+                (secondary_message_IMU_ACCELERATION*) &(*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1460: {
+            secondary_deserialize_IRTS_FL_0(
+                (secondary_message_IRTS_FL_0*) &(*devices)[secondary_INDEX_IRTS_FL_0].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1461: {
+            secondary_deserialize_IRTS_FL_1(
+                (secondary_message_IRTS_FL_1*) &(*devices)[secondary_INDEX_IRTS_FL_1].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1462: {
+            secondary_deserialize_IRTS_FL_2(
+                (secondary_message_IRTS_FL_2*) &(*devices)[secondary_INDEX_IRTS_FL_2].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1463: {
+            secondary_deserialize_IRTS_FL_3(
+                (secondary_message_IRTS_FL_3*) &(*devices)[secondary_INDEX_IRTS_FL_3].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1464: {
+            secondary_deserialize_IRTS_FR_0(
+                (secondary_message_IRTS_FR_0*) &(*devices)[secondary_INDEX_IRTS_FR_0].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1465: {
+            secondary_deserialize_IRTS_FR_1(
+                (secondary_message_IRTS_FR_1*) &(*devices)[secondary_INDEX_IRTS_FR_1].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1466: {
+            secondary_deserialize_IRTS_FR_2(
+                (secondary_message_IRTS_FR_2*) &(*devices)[secondary_INDEX_IRTS_FR_2].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1467: {
+            secondary_deserialize_IRTS_FR_3(
+                (secondary_message_IRTS_FR_3*) &(*devices)[secondary_INDEX_IRTS_FR_3].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1468: {
+            secondary_deserialize_IRTS_RL_0(
+                (secondary_message_IRTS_RL_0*) &(*devices)[secondary_INDEX_IRTS_RL_0].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1469: {
+            secondary_deserialize_IRTS_RL_1(
+                (secondary_message_IRTS_RL_1*) &(*devices)[secondary_INDEX_IRTS_RL_1].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1470: {
+            secondary_deserialize_IRTS_RL_2(
+                (secondary_message_IRTS_RL_2*) &(*devices)[secondary_INDEX_IRTS_RL_2].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1471: {
+            secondary_deserialize_IRTS_RL_3(
+                (secondary_message_IRTS_RL_3*) &(*devices)[secondary_INDEX_IRTS_RL_3].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1472: {
+            secondary_deserialize_IRTS_RR_0(
+                (secondary_message_IRTS_RR_0*) &(*devices)[secondary_INDEX_IRTS_RR_0].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1473: {
+            secondary_deserialize_IRTS_RR_1(
+                (secondary_message_IRTS_RR_1*) &(*devices)[secondary_INDEX_IRTS_RR_1].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1474: {
+            secondary_deserialize_IRTS_RR_2(
+                (secondary_message_IRTS_RR_2*) &(*devices)[secondary_INDEX_IRTS_RR_2].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1475: {
+            secondary_deserialize_IRTS_RR_3(
+                (secondary_message_IRTS_RR_3*) &(*devices)[secondary_INDEX_IRTS_RR_3].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1025: {
+            secondary_deserialize_GPS_COORDS(
+                (secondary_message_GPS_COORDS*) &(*devices)[secondary_INDEX_GPS_COORDS].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1057: {
+            secondary_deserialize_GPS_SPEED(
+                (secondary_message_GPS_SPEED*) &(*devices)[secondary_INDEX_GPS_SPEED].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 1089: {
+            secondary_deserialize_LAP_COUNT(
+                (secondary_message_LAP_COUNT*) &(*devices)[secondary_INDEX_LAP_COUNT].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 769: {
+            secondary_deserialize_PEDALS_OUTPUT(
+                (secondary_message_PEDALS_OUTPUT*) &(*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
+                (secondary_message_PEDALS_OUTPUT_conversion*) &(*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion,
+                (secondary_message_PEDALS_OUTPUT*) &(*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw
+            );
+        }
+        case 801: {
+            secondary_deserialize_CONTROL_OUTPUT(
+                (secondary_message_CONTROL_OUTPUT*) &(*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
+        case 258: {
+            secondary_deserialize_STEERING_ANGLE(
+                (secondary_message_STEERING_ANGLE*) &(*devices)[secondary_INDEX_STEERING_ANGLE].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+        }
     }
-    return -1;
 }
 
-#endif
+#endif // secondary_NETWORK_IMPLEMENTATION
 
 #ifdef __cplusplus
 }

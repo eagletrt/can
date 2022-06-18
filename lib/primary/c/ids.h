@@ -18,310 +18,251 @@ typedef uint16_t canlib_message_id;
 
 
 /* TOPIC FLASH */
-#define primary_topic_mask_FLASH 0b00000011111
-#define primary_topic_filter_FLASH 0b00000000000 // dec: 0 hex: 0x0
+#define primary_TOPIC_MASK_FLASH 0b00000011111
+#define primary_TOPIC_FILTER_FLASH 0x0 // dec: 0 bin: 0b00000000000
 
-#define primary_id_BMS_HV_JMP_TO_BLT 0b00000000000 // dec: 0 hex: 0x0
+#define primary_ID_BMS_HV_JMP_TO_BLT 0x0 // dec: 0 bin: 0b00000000000
 
 /* TOPIC BROADCAST */
-#define primary_topic_mask_BROADCAST 0b00000011111
-#define primary_topic_filter_BROADCAST 0b00000000001 // dec: 1 hex: 0x1
+#define primary_TOPIC_MASK_BROADCAST 0b00000011111
+#define primary_TOPIC_FILTER_BROADCAST 0x1 // dec: 1 bin: 0b00000000001
 
-#define primary_id_STEER_VERSION 0b10000000001 // dec: 1025 hex: 0x401
-#define primary_id_DAS_VERSION 0b10000100001 // dec: 1057 hex: 0x421
-#define primary_id_HV_VERSION 0b10001000001 // dec: 1089 hex: 0x441
-#define primary_id_LV_VERSION 0b10001100001 // dec: 1121 hex: 0x461
-#define primary_id_TLM_VERSION 0b10010000001 // dec: 1153 hex: 0x481
-#define primary_id_TIMESTAMP 0b00100000001 // dec: 257 hex: 0x101
+#define primary_ID_STEER_VERSION 0x401 // dec: 1025 bin: 0b10000000001
+#define primary_ID_DAS_VERSION 0x421 // dec: 1057 bin: 0b10000100001
+#define primary_ID_HV_VERSION 0x441 // dec: 1089 bin: 0b10001000001
+#define primary_ID_LV_VERSION 0x461 // dec: 1121 bin: 0b10001100001
+#define primary_ID_TLM_VERSION 0x481 // dec: 1153 bin: 0b10010000001
+#define primary_ID_TIMESTAMP 0x101 // dec: 257 bin: 0b00100000001
 
 /* TOPIC TLM */
-#define primary_topic_mask_TLM 0b00000011111
-#define primary_topic_filter_TLM 0b00000000010 // dec: 2 hex: 0x2
+#define primary_TOPIC_MASK_TLM 0b00000011111
+#define primary_TOPIC_FILTER_TLM 0x2 // dec: 2 bin: 0b00000000010
 
-#define primary_id_SET_TLM_STATUS 0b00100000010 // dec: 258 hex: 0x102
-#define primary_id_STEER_SYSTEM_STATUS 0b11100000010 // dec: 1794 hex: 0x702
-#define primary_id_MARKER 0b00000000010 // dec: 2 hex: 0x2
+#define primary_ID_SET_TLM_STATUS 0x102 // dec: 258 bin: 0b00100000010
+#define primary_ID_STEER_SYSTEM_STATUS 0x702 // dec: 1794 bin: 0b11100000010
+#define primary_ID_MARKER 0x2 // dec: 2 bin: 0b00000000010
 
 /* TOPIC STEER */
-#define primary_topic_mask_STEER 0b00000011111
-#define primary_topic_filter_STEER 0b00000000011 // dec: 3 hex: 0x3
+#define primary_TOPIC_MASK_STEER 0b00000011111
+#define primary_TOPIC_FILTER_STEER 0x3 // dec: 3 bin: 0b00000000011
 
-#define primary_id_TLM_STATUS 0b00100000011 // dec: 259 hex: 0x103
-#define primary_id_CAR_STATUS 0b01000000011 // dec: 515 hex: 0x203
-#define primary_id_DAS_ERRORS 0b00000000011 // dec: 3 hex: 0x3
-#define primary_id_SPEED 0b01000100011 // dec: 547 hex: 0x223
+#define primary_ID_TLM_STATUS 0x103 // dec: 259 bin: 0b00100000011
+#define primary_ID_CAR_STATUS 0x203 // dec: 515 bin: 0b01000000011
+#define primary_ID_DAS_ERRORS 0x3 // dec: 3 bin: 0b00000000011
+#define primary_ID_SPEED 0x223 // dec: 547 bin: 0b01000100011
 
 /* TOPIC DASnSTEERnCART */
-#define primary_topic_mask_DASnSTEERnCART 0b00000011111
-#define primary_topic_filter_DASnSTEERnCART 0b00000000100 // dec: 4 hex: 0x4
+#define primary_TOPIC_MASK_DASnSTEERnCART 0b00000011111
+#define primary_TOPIC_FILTER_DASnSTEERnCART 0x4 // dec: 4 bin: 0b00000000100
 
-#define primary_id_HV_VOLTAGE 0b01100000100 // dec: 772 hex: 0x304
-#define primary_id_HV_CURRENT 0b01100100100 // dec: 804 hex: 0x324
-#define primary_id_HV_TEMP 0b01101000100 // dec: 836 hex: 0x344
-#define primary_id_HV_ERRORS 0b00000000100 // dec: 4 hex: 0x4
-#define primary_id_TS_STATUS 0b00000100100 // dec: 36 hex: 0x24
+#define primary_ID_HV_VOLTAGE 0x304 // dec: 772 bin: 0b01100000100
+#define primary_ID_HV_CURRENT 0x324 // dec: 804 bin: 0b01100100100
+#define primary_ID_HV_TEMP 0x344 // dec: 836 bin: 0b01101000100
+#define primary_ID_HV_ERRORS 0x4 // dec: 4 bin: 0b00000000100
+#define primary_ID_TS_STATUS 0x24 // dec: 36 bin: 0b00000100100
 
 /* TOPIC BMS_HV */
-#define primary_topic_mask_BMS_HV 0b00000011111
-#define primary_topic_filter_BMS_HV 0b00000000101 // dec: 5 hex: 0x5
+#define primary_TOPIC_MASK_BMS_HV 0b00000011111
+#define primary_TOPIC_FILTER_BMS_HV 0x5 // dec: 5 bin: 0b00000000101
 
-#define primary_id_HV_CAN_FORWARD 0b00000000101 // dec: 5 hex: 0x5
-#define primary_id_SET_TS_STATUS_DAS 0b00000100101 // dec: 37 hex: 0x25
-#define primary_id_SET_TS_STATUS_HANDCART 0b00001000101 // dec: 69 hex: 0x45
-#define primary_id_SET_CELL_BALANCING_STATUS 0b01000000101 // dec: 517 hex: 0x205
-#define primary_id_HANDCART_STATUS 0b01100000101 // dec: 773 hex: 0x305
+#define primary_ID_HV_CAN_FORWARD 0x5 // dec: 5 bin: 0b00000000101
+#define primary_ID_SET_TS_STATUS_DAS 0x25 // dec: 37 bin: 0b00000100101
+#define primary_ID_SET_TS_STATUS_HANDCART 0x45 // dec: 69 bin: 0b00001000101
+#define primary_ID_SET_CELL_BALANCING_STATUS 0x205 // dec: 517 bin: 0b01000000101
+#define primary_ID_HANDCART_STATUS 0x305 // dec: 773 bin: 0b01100000101
 
 /* TOPIC HANDCART */
-#define primary_topic_mask_HANDCART 0b00000011111
-#define primary_topic_filter_HANDCART 0b00000000110 // dec: 6 hex: 0x6
+#define primary_TOPIC_MASK_HANDCART 0b00000011111
+#define primary_TOPIC_FILTER_HANDCART 0x6 // dec: 6 bin: 0b00000000110
 
-#define primary_id_HV_CAN_FORWARD_STATUS 0b00000000110 // dec: 6 hex: 0x6
-#define primary_id_HV_CELLS_VOLTAGE 0b01000000110 // dec: 518 hex: 0x206
-#define primary_id_HV_CELLS_TEMP 0b01000100110 // dec: 550 hex: 0x226
-#define primary_id_HV_CELL_BALANCING_STATUS 0b01001000110 // dec: 582 hex: 0x246
+#define primary_ID_HV_CAN_FORWARD_STATUS 0x6 // dec: 6 bin: 0b00000000110
+#define primary_ID_HV_CELLS_VOLTAGE 0x206 // dec: 518 bin: 0b01000000110
+#define primary_ID_HV_CELLS_TEMP 0x226 // dec: 550 bin: 0b01000100110
+#define primary_ID_HV_CELL_BALANCING_STATUS 0x246 // dec: 582 bin: 0b01001000110
 
 /* TOPIC DAS */
-#define primary_topic_mask_DAS 0b00000011111
-#define primary_topic_filter_DAS 0b00000000111 // dec: 7 hex: 0x7
+#define primary_TOPIC_MASK_DAS 0b00000011111
+#define primary_TOPIC_FILTER_DAS 0x7 // dec: 7 bin: 0b00000000111
 
-#define primary_id_STEER_STATUS 0b00100000111 // dec: 263 hex: 0x107
-#define primary_id_SET_CAR_STATUS 0b01100000111 // dec: 775 hex: 0x307
-#define primary_id_SET_PEDALS_RANGE 0b10000000111 // dec: 1031 hex: 0x407
-#define primary_id_SET_STEERING_ANGLE_RANGE 0b10000100111 // dec: 1063 hex: 0x427
+#define primary_ID_STEER_STATUS 0x107 // dec: 263 bin: 0b00100000111
+#define primary_ID_SET_CAR_STATUS 0x307 // dec: 775 bin: 0b01100000111
+#define primary_ID_SET_PEDALS_RANGE 0x407 // dec: 1031 bin: 0b10000000111
+#define primary_ID_SET_STEERING_ANGLE_RANGE 0x427 // dec: 1063 bin: 0b10000100111
 
 /* TOPIC DASnSTEER */
-#define primary_topic_mask_DASnSTEER 0b00000011111
-#define primary_topic_filter_DASnSTEER 0b00000001000 // dec: 8 hex: 0x8
+#define primary_TOPIC_MASK_DASnSTEER 0b00000011111
+#define primary_TOPIC_FILTER_DASnSTEER 0x8 // dec: 8 bin: 0b00000001000
 
-#define primary_id_LV_CURRENT 0b01100001000 // dec: 776 hex: 0x308
-#define primary_id_LV_VOLTAGE 0b01100101000 // dec: 808 hex: 0x328
-#define primary_id_LV_TOTAL_VOLTAGE 0b01101001000 // dec: 840 hex: 0x348
-#define primary_id_LV_TEMPERATURE 0b01101101000 // dec: 872 hex: 0x368
-#define primary_id_COOLING_STATUS 0b01110001000 // dec: 904 hex: 0x388
-#define primary_id_INVERTER_CONNECTION_STATUS 0b00100001000 // dec: 264 hex: 0x108
-#define primary_id_SHUTDOWN_STATUS 0b00100101000 // dec: 296 hex: 0x128
+#define primary_ID_LV_CURRENT 0x308 // dec: 776 bin: 0b01100001000
+#define primary_ID_LV_VOLTAGE 0x328 // dec: 808 bin: 0b01100101000
+#define primary_ID_LV_TOTAL_VOLTAGE 0x348 // dec: 840 bin: 0b01101001000
+#define primary_ID_LV_TEMPERATURE 0x368 // dec: 872 bin: 0b01101101000
+#define primary_ID_COOLING_STATUS 0x388 // dec: 904 bin: 0b01110001000
+#define primary_ID_INVERTER_CONNECTION_STATUS 0x108 // dec: 264 bin: 0b00100001000
+#define primary_ID_SHUTDOWN_STATUS 0x128 // dec: 296 bin: 0b00100101000
 
 /* TOPIC LV */
-#define primary_topic_mask_LV 0b00000011111
-#define primary_topic_filter_LV 0b00000001001 // dec: 9 hex: 0x9
+#define primary_TOPIC_MASK_LV 0b00000011111
+#define primary_TOPIC_FILTER_LV 0x9 // dec: 9 bin: 0b00000001001
 
-#define primary_id_SET_RADIATOR_SPEED 0b01100001001 // dec: 777 hex: 0x309
-#define primary_id_SET_PUMPS_SPEED 0b01100101001 // dec: 809 hex: 0x329
-#define primary_id_SET_INVERTER_CONNECTION_STATUS 0b00100001001 // dec: 265 hex: 0x109
+#define primary_ID_SET_RADIATOR_SPEED 0x309 // dec: 777 bin: 0b01100001001
+#define primary_ID_SET_PUMPS_SPEED 0x329 // dec: 809 bin: 0b01100101001
+#define primary_ID_SET_INVERTER_CONNECTION_STATUS 0x109 // dec: 265 bin: 0b00100001001
 
 /* TOPIC FIXED_IDS */
-#define primary_topic_mask_FIXED_IDS 0b00000011111
+#define primary_TOPIC_MASK_FIXED_IDS 0b00000011111
 
-#define primary_id_INV_L_REQUEST 0b01000000001 // dec: 513 hex: 0x201
-#define primary_id_INV_R_REQUEST 0b01000000010 // dec: 514 hex: 0x202
-#define primary_id_INV_L_RESPONSE 0b00110000001 // dec: 385 hex: 0x181
-#define primary_id_INV_R_RESPONSE 0b00110000010 // dec: 386 hex: 0x182
-#define primary_id_FLASH_CELLBOARD_0_TX 0b00000010000 // dec: 16 hex: 0x10
-#define primary_id_FLASH_CELLBOARD_0_RX 0b00000010001 // dec: 17 hex: 0x11
-#define primary_id_FLASH_CELLBOARD_1_TX 0b00000010010 // dec: 18 hex: 0x12
-#define primary_id_FLASH_CELLBOARD_1_RX 0b00000010011 // dec: 19 hex: 0x13
-#define primary_id_FLASH_CELLBOARD_2_TX 0b00000010100 // dec: 20 hex: 0x14
-#define primary_id_FLASH_CELLBOARD_2_RX 0b00000010101 // dec: 21 hex: 0x15
-#define primary_id_FLASH_CELLBOARD_3_TX 0b00000010110 // dec: 22 hex: 0x16
-#define primary_id_FLASH_CELLBOARD_3_RX 0b00000010111 // dec: 23 hex: 0x17
-#define primary_id_FLASH_CELLBOARD_4_TX 0b00000011000 // dec: 24 hex: 0x18
-#define primary_id_FLASH_CELLBOARD_4_RX 0b00000011001 // dec: 25 hex: 0x19
-#define primary_id_FLASH_CELLBOARD_5_TX 0b00000011010 // dec: 26 hex: 0x1A
-#define primary_id_FLASH_CELLBOARD_5_RX 0b00000011011 // dec: 27 hex: 0x1B
+#define primary_ID_INV_L_REQUEST 0x201 // dec: 513 bin: 0b01000000001
+#define primary_ID_INV_R_REQUEST 0x202 // dec: 514 bin: 0b01000000010
+#define primary_ID_INV_L_RESPONSE 0x181 // dec: 385 bin: 0b00110000001
+#define primary_ID_INV_R_RESPONSE 0x182 // dec: 386 bin: 0b00110000010
+#define primary_ID_FLASH_CELLBOARD_0_TX 0x10 // dec: 16 bin: 0b00000010000
+#define primary_ID_FLASH_CELLBOARD_0_RX 0x11 // dec: 17 bin: 0b00000010001
+#define primary_ID_FLASH_CELLBOARD_1_TX 0x12 // dec: 18 bin: 0b00000010010
+#define primary_ID_FLASH_CELLBOARD_1_RX 0x13 // dec: 19 bin: 0b00000010011
+#define primary_ID_FLASH_CELLBOARD_2_TX 0x14 // dec: 20 bin: 0b00000010100
+#define primary_ID_FLASH_CELLBOARD_2_RX 0x15 // dec: 21 bin: 0b00000010101
+#define primary_ID_FLASH_CELLBOARD_3_TX 0x16 // dec: 22 bin: 0b00000010110
+#define primary_ID_FLASH_CELLBOARD_3_RX 0x17 // dec: 23 bin: 0b00000010111
+#define primary_ID_FLASH_CELLBOARD_4_TX 0x18 // dec: 24 bin: 0b00000011000
+#define primary_ID_FLASH_CELLBOARD_4_RX 0x19 // dec: 25 bin: 0b00000011001
+#define primary_ID_FLASH_CELLBOARD_5_TX 0x1A // dec: 26 bin: 0b00000011010
+#define primary_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
 
 
 // ============== UTILS ============== //
 
-int primary_message_name_from_id(canlib_message_id id, char *buffer);
-bool primary_is_message_id(canlib_message_id message_id);
+static inline int primary_message_name_from_id(canlib_message_id id, char *buffer);
+static inline bool primary_is_message_id(canlib_message_id message_id);
 
 #define primary_MAX_MESSAGE_LENGTH 31
 
 #ifdef primary_IDS_IMPLEMENTATION
 
-int primary_message_name_from_id(canlib_message_id id, char *buffer) {
+static inline int primary_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
-        case primary_id_BMS_HV_JMP_TO_BLT:
-            strcpy(buffer, "BMS_HV_JMP_TO_BLT");
-            return 17;
-        case primary_id_STEER_VERSION:
-            strcpy(buffer, "STEER_VERSION");
-            return 13;
-        case primary_id_DAS_VERSION:
-            strcpy(buffer, "DAS_VERSION");
-            return 11;
-        case primary_id_HV_VERSION:
-            strcpy(buffer, "HV_VERSION");
-            return 10;
-        case primary_id_LV_VERSION:
-            strcpy(buffer, "LV_VERSION");
-            return 10;
-        case primary_id_TLM_VERSION:
-            strcpy(buffer, "TLM_VERSION");
-            return 11;
-        case primary_id_TIMESTAMP:
-            strcpy(buffer, "TIMESTAMP");
-            return 9;
-        case primary_id_SET_TLM_STATUS:
-            strcpy(buffer, "SET_TLM_STATUS");
-            return 14;
-        case primary_id_TLM_STATUS:
-            strcpy(buffer, "TLM_STATUS");
-            return 10;
-        case primary_id_STEER_SYSTEM_STATUS:
-            strcpy(buffer, "STEER_SYSTEM_STATUS");
-            return 19;
-        case primary_id_HV_VOLTAGE:
-            strcpy(buffer, "HV_VOLTAGE");
-            return 10;
-        case primary_id_HV_CURRENT:
-            strcpy(buffer, "HV_CURRENT");
-            return 10;
-        case primary_id_HV_TEMP:
-            strcpy(buffer, "HV_TEMP");
-            return 7;
-        case primary_id_HV_ERRORS:
-            strcpy(buffer, "HV_ERRORS");
-            return 9;
-        case primary_id_HV_CAN_FORWARD:
-            strcpy(buffer, "HV_CAN_FORWARD");
-            return 14;
-        case primary_id_HV_CAN_FORWARD_STATUS:
-            strcpy(buffer, "HV_CAN_FORWARD_STATUS");
-            return 21;
-        case primary_id_TS_STATUS:
-            strcpy(buffer, "TS_STATUS");
-            return 9;
-        case primary_id_SET_TS_STATUS_DAS:
-            strcpy(buffer, "SET_TS_STATUS_DAS");
-            return 17;
-        case primary_id_SET_TS_STATUS_HANDCART:
-            strcpy(buffer, "SET_TS_STATUS_HANDCART");
-            return 22;
-        case primary_id_STEER_STATUS:
-            strcpy(buffer, "STEER_STATUS");
-            return 12;
-        case primary_id_SET_CAR_STATUS:
-            strcpy(buffer, "SET_CAR_STATUS");
-            return 14;
-        case primary_id_SET_PEDALS_RANGE:
-            strcpy(buffer, "SET_PEDALS_RANGE");
-            return 16;
-        case primary_id_SET_STEERING_ANGLE_RANGE:
-            strcpy(buffer, "SET_STEERING_ANGLE_RANGE");
-            return 24;
-        case primary_id_CAR_STATUS:
-            strcpy(buffer, "CAR_STATUS");
-            return 10;
-        case primary_id_DAS_ERRORS:
-            strcpy(buffer, "DAS_ERRORS");
-            return 10;
-        case primary_id_LV_CURRENT:
-            strcpy(buffer, "LV_CURRENT");
-            return 10;
-        case primary_id_LV_VOLTAGE:
-            strcpy(buffer, "LV_VOLTAGE");
-            return 10;
-        case primary_id_LV_TOTAL_VOLTAGE:
-            strcpy(buffer, "LV_TOTAL_VOLTAGE");
-            return 16;
-        case primary_id_LV_TEMPERATURE:
-            strcpy(buffer, "LV_TEMPERATURE");
-            return 14;
-        case primary_id_COOLING_STATUS:
-            strcpy(buffer, "COOLING_STATUS");
-            return 14;
-        case primary_id_SET_RADIATOR_SPEED:
-            strcpy(buffer, "SET_RADIATOR_SPEED");
-            return 18;
-        case primary_id_SET_PUMPS_SPEED:
-            strcpy(buffer, "SET_PUMPS_SPEED");
-            return 15;
-        case primary_id_SET_INVERTER_CONNECTION_STATUS:
-            strcpy(buffer, "SET_INVERTER_CONNECTION_STATUS");
-            return 30;
-        case primary_id_INVERTER_CONNECTION_STATUS:
-            strcpy(buffer, "INVERTER_CONNECTION_STATUS");
-            return 26;
-        case primary_id_SHUTDOWN_STATUS:
-            strcpy(buffer, "SHUTDOWN_STATUS");
-            return 15;
-        case primary_id_MARKER:
-            strcpy(buffer, "MARKER");
-            return 6;
-        case primary_id_HV_CELLS_VOLTAGE:
-            strcpy(buffer, "HV_CELLS_VOLTAGE");
-            return 16;
-        case primary_id_HV_CELLS_TEMP:
-            strcpy(buffer, "HV_CELLS_TEMP");
-            return 13;
-        case primary_id_HV_CELL_BALANCING_STATUS:
-            strcpy(buffer, "HV_CELL_BALANCING_STATUS");
-            return 24;
-        case primary_id_SET_CELL_BALANCING_STATUS:
-            strcpy(buffer, "SET_CELL_BALANCING_STATUS");
-            return 25;
-        case primary_id_HANDCART_STATUS:
-            strcpy(buffer, "HANDCART_STATUS");
-            return 15;
-        case primary_id_SPEED:
-            strcpy(buffer, "SPEED");
-            return 5;
-        case primary_id_INV_L_REQUEST:
-            strcpy(buffer, "INV_L_REQUEST");
-            return 13;
-        case primary_id_INV_R_REQUEST:
-            strcpy(buffer, "INV_R_REQUEST");
-            return 13;
-        case primary_id_INV_L_RESPONSE:
-            strcpy(buffer, "INV_L_RESPONSE");
-            return 14;
-        case primary_id_INV_R_RESPONSE:
-            strcpy(buffer, "INV_R_RESPONSE");
-            return 14;
-        case primary_id_FLASH_CELLBOARD_0_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_0_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_0_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_0_RX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_1_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_1_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_1_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_1_RX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_2_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_2_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_2_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_2_RX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_3_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_3_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_3_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_3_RX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_4_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_4_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_4_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_4_RX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_5_TX:
-            strcpy(buffer, "FLASH_CELLBOARD_5_TX");
-            return 20;
-        case primary_id_FLASH_CELLBOARD_5_RX:
-            strcpy(buffer, "FLASH_CELLBOARD_5_RX");
-            return 20;
+        case primary_ID_BMS_HV_JMP_TO_BLT:
+            return sprintf(buffer, "%s", "BMS_HV_JMP_TO_BLT");;
+        case primary_ID_STEER_VERSION:
+            return sprintf(buffer, "%s", "STEER_VERSION");;
+        case primary_ID_DAS_VERSION:
+            return sprintf(buffer, "%s", "DAS_VERSION");;
+        case primary_ID_HV_VERSION:
+            return sprintf(buffer, "%s", "HV_VERSION");;
+        case primary_ID_LV_VERSION:
+            return sprintf(buffer, "%s", "LV_VERSION");;
+        case primary_ID_TLM_VERSION:
+            return sprintf(buffer, "%s", "TLM_VERSION");;
+        case primary_ID_TIMESTAMP:
+            return sprintf(buffer, "%s", "TIMESTAMP");;
+        case primary_ID_SET_TLM_STATUS:
+            return sprintf(buffer, "%s", "SET_TLM_STATUS");;
+        case primary_ID_TLM_STATUS:
+            return sprintf(buffer, "%s", "TLM_STATUS");;
+        case primary_ID_STEER_SYSTEM_STATUS:
+            return sprintf(buffer, "%s", "STEER_SYSTEM_STATUS");;
+        case primary_ID_HV_VOLTAGE:
+            return sprintf(buffer, "%s", "HV_VOLTAGE");;
+        case primary_ID_HV_CURRENT:
+            return sprintf(buffer, "%s", "HV_CURRENT");;
+        case primary_ID_HV_TEMP:
+            return sprintf(buffer, "%s", "HV_TEMP");;
+        case primary_ID_HV_ERRORS:
+            return sprintf(buffer, "%s", "HV_ERRORS");;
+        case primary_ID_HV_CAN_FORWARD:
+            return sprintf(buffer, "%s", "HV_CAN_FORWARD");;
+        case primary_ID_HV_CAN_FORWARD_STATUS:
+            return sprintf(buffer, "%s", "HV_CAN_FORWARD_STATUS");;
+        case primary_ID_TS_STATUS:
+            return sprintf(buffer, "%s", "TS_STATUS");;
+        case primary_ID_SET_TS_STATUS_DAS:
+            return sprintf(buffer, "%s", "SET_TS_STATUS_DAS");;
+        case primary_ID_SET_TS_STATUS_HANDCART:
+            return sprintf(buffer, "%s", "SET_TS_STATUS_HANDCART");;
+        case primary_ID_STEER_STATUS:
+            return sprintf(buffer, "%s", "STEER_STATUS");;
+        case primary_ID_SET_CAR_STATUS:
+            return sprintf(buffer, "%s", "SET_CAR_STATUS");;
+        case primary_ID_SET_PEDALS_RANGE:
+            return sprintf(buffer, "%s", "SET_PEDALS_RANGE");;
+        case primary_ID_SET_STEERING_ANGLE_RANGE:
+            return sprintf(buffer, "%s", "SET_STEERING_ANGLE_RANGE");;
+        case primary_ID_CAR_STATUS:
+            return sprintf(buffer, "%s", "CAR_STATUS");;
+        case primary_ID_DAS_ERRORS:
+            return sprintf(buffer, "%s", "DAS_ERRORS");;
+        case primary_ID_LV_CURRENT:
+            return sprintf(buffer, "%s", "LV_CURRENT");;
+        case primary_ID_LV_VOLTAGE:
+            return sprintf(buffer, "%s", "LV_VOLTAGE");;
+        case primary_ID_LV_TOTAL_VOLTAGE:
+            return sprintf(buffer, "%s", "LV_TOTAL_VOLTAGE");;
+        case primary_ID_LV_TEMPERATURE:
+            return sprintf(buffer, "%s", "LV_TEMPERATURE");;
+        case primary_ID_COOLING_STATUS:
+            return sprintf(buffer, "%s", "COOLING_STATUS");;
+        case primary_ID_SET_RADIATOR_SPEED:
+            return sprintf(buffer, "%s", "SET_RADIATOR_SPEED");;
+        case primary_ID_SET_PUMPS_SPEED:
+            return sprintf(buffer, "%s", "SET_PUMPS_SPEED");;
+        case primary_ID_SET_INVERTER_CONNECTION_STATUS:
+            return sprintf(buffer, "%s", "SET_INVERTER_CONNECTION_STATUS");;
+        case primary_ID_INVERTER_CONNECTION_STATUS:
+            return sprintf(buffer, "%s", "INVERTER_CONNECTION_STATUS");;
+        case primary_ID_SHUTDOWN_STATUS:
+            return sprintf(buffer, "%s", "SHUTDOWN_STATUS");;
+        case primary_ID_MARKER:
+            return sprintf(buffer, "%s", "MARKER");;
+        case primary_ID_HV_CELLS_VOLTAGE:
+            return sprintf(buffer, "%s", "HV_CELLS_VOLTAGE");;
+        case primary_ID_HV_CELLS_TEMP:
+            return sprintf(buffer, "%s", "HV_CELLS_TEMP");;
+        case primary_ID_HV_CELL_BALANCING_STATUS:
+            return sprintf(buffer, "%s", "HV_CELL_BALANCING_STATUS");;
+        case primary_ID_SET_CELL_BALANCING_STATUS:
+            return sprintf(buffer, "%s", "SET_CELL_BALANCING_STATUS");;
+        case primary_ID_HANDCART_STATUS:
+            return sprintf(buffer, "%s", "HANDCART_STATUS");;
+        case primary_ID_SPEED:
+            return sprintf(buffer, "%s", "SPEED");;
+        case primary_ID_INV_L_REQUEST:
+            return sprintf(buffer, "%s", "INV_L_REQUEST");;
+        case primary_ID_INV_R_REQUEST:
+            return sprintf(buffer, "%s", "INV_R_REQUEST");;
+        case primary_ID_INV_L_RESPONSE:
+            return sprintf(buffer, "%s", "INV_L_RESPONSE");;
+        case primary_ID_INV_R_RESPONSE:
+            return sprintf(buffer, "%s", "INV_R_RESPONSE");;
+        case primary_ID_FLASH_CELLBOARD_0_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_0_TX");;
+        case primary_ID_FLASH_CELLBOARD_0_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_0_RX");;
+        case primary_ID_FLASH_CELLBOARD_1_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_1_TX");;
+        case primary_ID_FLASH_CELLBOARD_1_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_1_RX");;
+        case primary_ID_FLASH_CELLBOARD_2_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_2_TX");;
+        case primary_ID_FLASH_CELLBOARD_2_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_2_RX");;
+        case primary_ID_FLASH_CELLBOARD_3_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_3_TX");;
+        case primary_ID_FLASH_CELLBOARD_3_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_3_RX");;
+        case primary_ID_FLASH_CELLBOARD_4_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_4_TX");;
+        case primary_ID_FLASH_CELLBOARD_4_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_4_RX");;
+        case primary_ID_FLASH_CELLBOARD_5_TX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_TX");;
+        case primary_ID_FLASH_CELLBOARD_5_RX:
+            return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_RX");;
         default:
-            strcpy(buffer, ""); // Unknown message
+            return 0; // Unknown message
     }
-    return 0;
 }
 
-bool primary_is_message_id(canlib_message_id message_id) {
+static inline bool primary_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 0: return true; break;
         case 1025: return true; break;

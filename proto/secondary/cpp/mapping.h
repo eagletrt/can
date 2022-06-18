@@ -56,13 +56,13 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
 #ifdef secondary_MAPPING_IMPLEMENTATION
 
 void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pack, secondary_devices* map) {
-    int index = secondary_devices_index_from_id(id, map);
+    int index = secondary_index_from_id(id);
 
     if (index == -1) return;
 
     switch(id) {
         case 1260: {
-            secondary_message_IMU_ANGULAR_RATE* msg = (secondary_message_IMU_ANGULAR_RATE*) (*map)[index].raw_message;
+            secondary_message_IMU_ANGULAR_RATE* msg = (secondary_message_IMU_ANGULAR_RATE*) (*map)[index].message_raw;
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
             proto_msg->set_ang_rate_x(msg->ang_rate_x);
             proto_msg->set_ang_rate_y(msg->ang_rate_y);
@@ -74,7 +74,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1261: {
-            secondary_message_IMU_ACCELERATION* msg = (secondary_message_IMU_ACCELERATION*) (*map)[index].raw_message;
+            secondary_message_IMU_ACCELERATION* msg = (secondary_message_IMU_ACCELERATION*) (*map)[index].message_raw;
             secondary::IMU_ACCELERATION* proto_msg = pack->add_imu_acceleration();
             proto_msg->set_accel_x(msg->accel_x);
             proto_msg->set_accel_y(msg->accel_y);
@@ -86,7 +86,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1460: {
-            secondary_message_IRTS_FL_0* msg = (secondary_message_IRTS_FL_0*) (*map)[index].raw_message;
+            secondary_message_IRTS_FL_0* msg = (secondary_message_IRTS_FL_0*) (*map)[index].message_raw;
             secondary::IRTS_FL_0* proto_msg = pack->add_irts_fl_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -99,7 +99,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1461: {
-            secondary_message_IRTS_FL_1* msg = (secondary_message_IRTS_FL_1*) (*map)[index].raw_message;
+            secondary_message_IRTS_FL_1* msg = (secondary_message_IRTS_FL_1*) (*map)[index].message_raw;
             secondary::IRTS_FL_1* proto_msg = pack->add_irts_fl_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -112,7 +112,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1462: {
-            secondary_message_IRTS_FL_2* msg = (secondary_message_IRTS_FL_2*) (*map)[index].raw_message;
+            secondary_message_IRTS_FL_2* msg = (secondary_message_IRTS_FL_2*) (*map)[index].message_raw;
             secondary::IRTS_FL_2* proto_msg = pack->add_irts_fl_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -125,7 +125,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1463: {
-            secondary_message_IRTS_FL_3* msg = (secondary_message_IRTS_FL_3*) (*map)[index].raw_message;
+            secondary_message_IRTS_FL_3* msg = (secondary_message_IRTS_FL_3*) (*map)[index].message_raw;
             secondary::IRTS_FL_3* proto_msg = pack->add_irts_fl_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -138,7 +138,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1464: {
-            secondary_message_IRTS_FR_0* msg = (secondary_message_IRTS_FR_0*) (*map)[index].raw_message;
+            secondary_message_IRTS_FR_0* msg = (secondary_message_IRTS_FR_0*) (*map)[index].message_raw;
             secondary::IRTS_FR_0* proto_msg = pack->add_irts_fr_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -151,7 +151,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1465: {
-            secondary_message_IRTS_FR_1* msg = (secondary_message_IRTS_FR_1*) (*map)[index].raw_message;
+            secondary_message_IRTS_FR_1* msg = (secondary_message_IRTS_FR_1*) (*map)[index].message_raw;
             secondary::IRTS_FR_1* proto_msg = pack->add_irts_fr_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -164,7 +164,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1466: {
-            secondary_message_IRTS_FR_2* msg = (secondary_message_IRTS_FR_2*) (*map)[index].raw_message;
+            secondary_message_IRTS_FR_2* msg = (secondary_message_IRTS_FR_2*) (*map)[index].message_raw;
             secondary::IRTS_FR_2* proto_msg = pack->add_irts_fr_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -177,7 +177,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1467: {
-            secondary_message_IRTS_FR_3* msg = (secondary_message_IRTS_FR_3*) (*map)[index].raw_message;
+            secondary_message_IRTS_FR_3* msg = (secondary_message_IRTS_FR_3*) (*map)[index].message_raw;
             secondary::IRTS_FR_3* proto_msg = pack->add_irts_fr_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -190,7 +190,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1468: {
-            secondary_message_IRTS_RL_0* msg = (secondary_message_IRTS_RL_0*) (*map)[index].raw_message;
+            secondary_message_IRTS_RL_0* msg = (secondary_message_IRTS_RL_0*) (*map)[index].message_raw;
             secondary::IRTS_RL_0* proto_msg = pack->add_irts_rl_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -203,7 +203,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1469: {
-            secondary_message_IRTS_RL_1* msg = (secondary_message_IRTS_RL_1*) (*map)[index].raw_message;
+            secondary_message_IRTS_RL_1* msg = (secondary_message_IRTS_RL_1*) (*map)[index].message_raw;
             secondary::IRTS_RL_1* proto_msg = pack->add_irts_rl_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -216,7 +216,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1470: {
-            secondary_message_IRTS_RL_2* msg = (secondary_message_IRTS_RL_2*) (*map)[index].raw_message;
+            secondary_message_IRTS_RL_2* msg = (secondary_message_IRTS_RL_2*) (*map)[index].message_raw;
             secondary::IRTS_RL_2* proto_msg = pack->add_irts_rl_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -229,7 +229,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1471: {
-            secondary_message_IRTS_RL_3* msg = (secondary_message_IRTS_RL_3*) (*map)[index].raw_message;
+            secondary_message_IRTS_RL_3* msg = (secondary_message_IRTS_RL_3*) (*map)[index].message_raw;
             secondary::IRTS_RL_3* proto_msg = pack->add_irts_rl_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -242,7 +242,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1472: {
-            secondary_message_IRTS_RR_0* msg = (secondary_message_IRTS_RR_0*) (*map)[index].raw_message;
+            secondary_message_IRTS_RR_0* msg = (secondary_message_IRTS_RR_0*) (*map)[index].message_raw;
             secondary::IRTS_RR_0* proto_msg = pack->add_irts_rr_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -255,7 +255,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1473: {
-            secondary_message_IRTS_RR_1* msg = (secondary_message_IRTS_RR_1*) (*map)[index].raw_message;
+            secondary_message_IRTS_RR_1* msg = (secondary_message_IRTS_RR_1*) (*map)[index].message_raw;
             secondary::IRTS_RR_1* proto_msg = pack->add_irts_rr_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -268,7 +268,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1474: {
-            secondary_message_IRTS_RR_2* msg = (secondary_message_IRTS_RR_2*) (*map)[index].raw_message;
+            secondary_message_IRTS_RR_2* msg = (secondary_message_IRTS_RR_2*) (*map)[index].message_raw;
             secondary::IRTS_RR_2* proto_msg = pack->add_irts_rr_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -281,7 +281,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1475: {
-            secondary_message_IRTS_RR_3* msg = (secondary_message_IRTS_RR_3*) (*map)[index].raw_message;
+            secondary_message_IRTS_RR_3* msg = (secondary_message_IRTS_RR_3*) (*map)[index].message_raw;
             secondary::IRTS_RR_3* proto_msg = pack->add_irts_rr_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -294,7 +294,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1025: {
-            secondary_message_GPS_COORDS* msg = (secondary_message_GPS_COORDS*) (*map)[index].raw_message;
+            secondary_message_GPS_COORDS* msg = (secondary_message_GPS_COORDS*) (*map)[index].message_raw;
             secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
             proto_msg->set_latitude(msg->latitude);
             proto_msg->set_longitude(msg->longitude);
@@ -305,7 +305,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1057: {
-            secondary_message_GPS_SPEED* msg = (secondary_message_GPS_SPEED*) (*map)[index].raw_message;
+            secondary_message_GPS_SPEED* msg = (secondary_message_GPS_SPEED*) (*map)[index].message_raw;
             secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
             proto_msg->set_speed(msg->speed);
 #ifdef CANLIB_TIMESTAMP
@@ -315,7 +315,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1089: {
-            secondary_message_LAP_COUNT* msg = (secondary_message_LAP_COUNT*) (*map)[index].raw_message;
+            secondary_message_LAP_COUNT* msg = (secondary_message_LAP_COUNT*) (*map)[index].message_raw;
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
             proto_msg->set_timestamp(msg->timestamp);
             proto_msg->set_lap_count(msg->lap_count);
@@ -326,7 +326,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 769: {
-            secondary_message_PEDALS_OUTPUT_conversion* msg = (secondary_message_PEDALS_OUTPUT_conversion*) (*map)[index].conversion_message;
+            secondary_message_PEDALS_OUTPUT_conversion* msg = (secondary_message_PEDALS_OUTPUT_conversion*) (*map)[index].message_conversion;
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
             proto_msg->set_bse_front(msg->bse_front);
             proto_msg->set_bse_rear(msg->bse_rear);
@@ -338,7 +338,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 801: {
-            secondary_message_CONTROL_OUTPUT* msg = (secondary_message_CONTROL_OUTPUT*) (*map)[index].raw_message;
+            secondary_message_CONTROL_OUTPUT* msg = (secondary_message_CONTROL_OUTPUT*) (*map)[index].message_raw;
             secondary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
             proto_msg->set_right(msg->right);
             proto_msg->set_left(msg->left);
@@ -349,7 +349,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 258: {
-            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].raw_message;
+            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].message_raw;
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
             proto_msg->set_angle(msg->angle);
 #ifdef CANLIB_TIMESTAMP

@@ -64,13 +64,13 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map);
 #ifdef bms_MAPPING_IMPLEMENTATION
 
 void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map) {
-    int index = bms_devices_index_from_id(id, map);
+    int index = bms_index_from_id(id);
 
     if (index == -1) return;
 
     switch(id) {
         case 1536: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD0* proto_msg = pack->add_board_status_cellboard0();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -81,7 +81,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1568: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD1* proto_msg = pack->add_board_status_cellboard1();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -92,7 +92,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1600: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD2* proto_msg = pack->add_board_status_cellboard2();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -103,7 +103,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1632: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD3* proto_msg = pack->add_board_status_cellboard3();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -114,7 +114,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1664: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD4* proto_msg = pack->add_board_status_cellboard4();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -125,7 +125,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1696: {
-            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].raw_message;
+            bms_message_BOARD_STATUS* msg = (bms_message_BOARD_STATUS*) (*map)[index].message_raw;
             bms::BOARD_STATUS_CELLBOARD5* proto_msg = pack->add_board_status_cellboard5();
             proto_msg->set_errors(msg->errors);
             proto_msg->set_balancing_status((bms::BalancingStatus)msg->balancing_status);
@@ -136,7 +136,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1281: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD0* proto_msg = pack->add_temperatures_cellboard0();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -152,7 +152,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1313: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD1* proto_msg = pack->add_temperatures_cellboard1();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -168,7 +168,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1345: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD2* proto_msg = pack->add_temperatures_cellboard2();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -184,7 +184,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1377: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD3* proto_msg = pack->add_temperatures_cellboard3();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -200,7 +200,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1409: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD4* proto_msg = pack->add_temperatures_cellboard4();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -216,7 +216,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 1441: {
-            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].conversion_message;
+            bms_message_TEMPERATURES_conversion* msg = (bms_message_TEMPERATURES_conversion*) (*map)[index].message_conversion;
             bms::TEMPERATURES_CELLBOARD5* proto_msg = pack->add_temperatures_cellboard5();
             proto_msg->set_start_index(msg->start_index);
             proto_msg->set_temp0(msg->temp0);
@@ -232,7 +232,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 514: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD0* proto_msg = pack->add_voltages_cellboard0();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -245,7 +245,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 546: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD1* proto_msg = pack->add_voltages_cellboard1();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -258,7 +258,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 578: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD2* proto_msg = pack->add_voltages_cellboard2();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -271,7 +271,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 610: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD3* proto_msg = pack->add_voltages_cellboard3();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -284,7 +284,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 642: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD4* proto_msg = pack->add_voltages_cellboard4();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -297,7 +297,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 674: {
-            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].conversion_message;
+            bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD5* proto_msg = pack->add_voltages_cellboard5();
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
@@ -310,7 +310,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 515: {
-            bms_message_BALANCING* msg = (bms_message_BALANCING*) (*map)[index].raw_message;
+            bms_message_BALANCING* msg = (bms_message_BALANCING*) (*map)[index].message_raw;
             bms::BALANCING* proto_msg = pack->add_balancing();
             proto_msg->set_cells(msg->cells);
             proto_msg->set_board_index(msg->board_index);
@@ -321,7 +321,7 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 10: {
-            bms_message_FW_UPDATE* msg = (bms_message_FW_UPDATE*) (*map)[index].raw_message;
+            bms_message_FW_UPDATE* msg = (bms_message_FW_UPDATE*) (*map)[index].message_raw;
             bms::FW_UPDATE* proto_msg = pack->add_fw_update();
             proto_msg->set_board_index(msg->board_index);
 #ifdef CANLIB_TIMESTAMP
@@ -331,73 +331,73 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         }
 
         case 16: {
-            bms_message_FLASH_CELLBOARD_0_TX* msg = (bms_message_FLASH_CELLBOARD_0_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_0_TX* msg = (bms_message_FLASH_CELLBOARD_0_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
             break;
         }
 
         case 17: {
-            bms_message_FLASH_CELLBOARD_0_RX* msg = (bms_message_FLASH_CELLBOARD_0_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_0_RX* msg = (bms_message_FLASH_CELLBOARD_0_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
             break;
         }
 
         case 18: {
-            bms_message_FLASH_CELLBOARD_1_TX* msg = (bms_message_FLASH_CELLBOARD_1_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_1_TX* msg = (bms_message_FLASH_CELLBOARD_1_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
             break;
         }
 
         case 19: {
-            bms_message_FLASH_CELLBOARD_1_RX* msg = (bms_message_FLASH_CELLBOARD_1_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_1_RX* msg = (bms_message_FLASH_CELLBOARD_1_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
             break;
         }
 
         case 20: {
-            bms_message_FLASH_CELLBOARD_2_TX* msg = (bms_message_FLASH_CELLBOARD_2_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_2_TX* msg = (bms_message_FLASH_CELLBOARD_2_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
             break;
         }
 
         case 21: {
-            bms_message_FLASH_CELLBOARD_2_RX* msg = (bms_message_FLASH_CELLBOARD_2_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_2_RX* msg = (bms_message_FLASH_CELLBOARD_2_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
             break;
         }
 
         case 22: {
-            bms_message_FLASH_CELLBOARD_3_TX* msg = (bms_message_FLASH_CELLBOARD_3_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_3_TX* msg = (bms_message_FLASH_CELLBOARD_3_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
             break;
         }
 
         case 23: {
-            bms_message_FLASH_CELLBOARD_3_RX* msg = (bms_message_FLASH_CELLBOARD_3_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_3_RX* msg = (bms_message_FLASH_CELLBOARD_3_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
             break;
         }
 
         case 24: {
-            bms_message_FLASH_CELLBOARD_4_TX* msg = (bms_message_FLASH_CELLBOARD_4_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_4_TX* msg = (bms_message_FLASH_CELLBOARD_4_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
             break;
         }
 
         case 25: {
-            bms_message_FLASH_CELLBOARD_4_RX* msg = (bms_message_FLASH_CELLBOARD_4_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_4_RX* msg = (bms_message_FLASH_CELLBOARD_4_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
             break;
         }
 
         case 26: {
-            bms_message_FLASH_CELLBOARD_5_TX* msg = (bms_message_FLASH_CELLBOARD_5_TX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_5_TX* msg = (bms_message_FLASH_CELLBOARD_5_TX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
             break;
         }
 
         case 27: {
-            bms_message_FLASH_CELLBOARD_5_RX* msg = (bms_message_FLASH_CELLBOARD_5_RX*) (*map)[index].raw_message;
+            bms_message_FLASH_CELLBOARD_5_RX* msg = (bms_message_FLASH_CELLBOARD_5_RX*) (*map)[index].message_raw;
             bms::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
             break;
         }
