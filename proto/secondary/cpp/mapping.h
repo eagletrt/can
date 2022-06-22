@@ -23,31 +23,200 @@
 typedef uint16_t canlib_message_id;
 #endif // CANLIB_MESSAGE_ID_TYPE
 
+#ifndef CANLIB_CIRCULAR_BUFFER
+#define CANLIB_CIRCULAR_BUFFER
+namespace Helper {
+template <bool FITS8, bool FITS16>
+struct Index {
+  using Type = uint32_t;
+};
+
+template <>
+struct Index<false, true> {
+  using Type = uint16_t;
+};
+
+template <>
+struct Index<true, true> {
+  using Type = uint8_t;
+};
+}  // namespace Helper
+
+template <typename T, size_t S,
+          typename IT =
+              typename Helper::Index<(S <= UINT8_MAX), (S <= UINT16_MAX)>::Type>
+class canlib_circular_buffer {
+ public:
+  static constexpr IT capacity = static_cast<IT>(S);
+
+  using index_t = IT;
+
+  constexpr canlib_circular_buffer();
+  canlib_circular_buffer(const canlib_circular_buffer &) = delete;
+  canlib_circular_buffer(canlib_circular_buffer &&) = delete;
+  canlib_circular_buffer &operator=(const canlib_circular_buffer &) = delete;
+  canlib_circular_buffer &operator=(canlib_circular_buffer &&) = delete;
+
+  bool unshift(T value);
+  bool push(T value);
+  T shift();
+  T pop();
+  T inline first() const;
+  T inline last() const;
+  T operator[](IT index) const;
+  IT inline size() const;
+  IT inline available() const;
+  bool inline empty() const;
+  bool inline full() const;
+  void inline clear();
+
+ private:
+  T buffer[S];
+  T *head;
+  T *tail;
+#ifndef CIRCULAR_BUFFER_INT_SAFE
+  IT count;
+#else
+  volatile IT count;
+#endif
+};
+
+template <typename T, size_t S, typename IT>
+constexpr canlib_circular_buffer<T, S, IT>::canlib_circular_buffer()
+    : head(buffer), tail(buffer), count(0) {}
+
+template <typename T, size_t S, typename IT>
+bool canlib_circular_buffer<T, S, IT>::unshift(T value) {
+  if (head == buffer) {
+    head = buffer + capacity;
+  }
+  *--head = value;
+  if (count == capacity) {
+    if (tail-- == buffer) {
+      tail = buffer + capacity - 1;
+    }
+    return false;
+  } else {
+    if (count++ == 0) {
+      tail = head;
+    }
+    return true;
+  }
+}
+
+template <typename T, size_t S, typename IT>
+bool canlib_circular_buffer<T, S, IT>::push(T value) {
+  if (++tail == buffer + capacity) {
+    tail = buffer;
+  }
+  *tail = value;
+  if (count == capacity) {
+    if (++head == buffer + capacity) {
+      head = buffer;
+    }
+    return false;
+  } else {
+    if (count++ == 0) {
+      head = tail;
+    }
+    return true;
+  }
+}
+
+template <typename T, size_t S, typename IT>
+T canlib_circular_buffer<T, S, IT>::shift() {
+  if (count == 0) return *head;
+  T result = *head++;
+  if (head >= buffer + capacity) {
+    head = buffer;
+  }
+  count--;
+  return result;
+}
+
+template <typename T, size_t S, typename IT>
+T canlib_circular_buffer<T, S, IT>::pop() {
+  if (count == 0) return *tail;
+  T result = *tail--;
+  if (tail < buffer) {
+    tail = buffer + capacity - 1;
+  }
+  count--;
+  return result;
+}
+
+template <typename T, size_t S, typename IT>
+T inline canlib_circular_buffer<T, S, IT>::first() const {
+  return *head;
+}
+
+template <typename T, size_t S, typename IT>
+T inline canlib_circular_buffer<T, S, IT>::last() const {
+  return *tail;
+}
+
+template <typename T, size_t S, typename IT>
+T canlib_circular_buffer<T, S, IT>::operator[](IT index) const {
+  if (index >= count) return *tail;
+  return *(buffer + ((head - buffer + index) % capacity));
+}
+
+template <typename T, size_t S, typename IT>
+IT inline canlib_circular_buffer<T, S, IT>::size() const {
+  return count;
+}
+
+template <typename T, size_t S, typename IT>
+IT inline canlib_circular_buffer<T, S, IT>::available() const {
+  return capacity - count;
+}
+
+template <typename T, size_t S, typename IT>
+bool inline canlib_circular_buffer<T, S, IT>::empty() const {
+  return count == 0;
+}
+
+template <typename T, size_t S, typename IT>
+bool inline canlib_circular_buffer<T, S, IT>::full() const {
+  return count == capacity;
+}
+
+template <typename T, size_t S, typename IT>
+void inline canlib_circular_buffer<T, S, IT>::clear() {
+  head = tail = buffer;
+  count = 0;
+}
+#endif // CANLIB_CIRCULAR_BUFFER
+
+#ifndef CANLIB_CIRCULAR_BUFFER_SIZE
+#define CANLIB_CIRCULAR_BUFFER_SIZE 500
+#endif // CANLIB_CIRCULAR_BUFFER_SIZE
+
 typedef struct {
-    std::vector<secondary_message_IMU_ANGULAR_RATE> IMU_ANGULAR_RATE;
-    std::vector<secondary_message_IMU_ACCELERATION> IMU_ACCELERATION;
-    std::vector<secondary_message_IRTS_FL_0> IRTS_FL_0;
-    std::vector<secondary_message_IRTS_FL_1> IRTS_FL_1;
-    std::vector<secondary_message_IRTS_FL_2> IRTS_FL_2;
-    std::vector<secondary_message_IRTS_FL_3> IRTS_FL_3;
-    std::vector<secondary_message_IRTS_FR_0> IRTS_FR_0;
-    std::vector<secondary_message_IRTS_FR_1> IRTS_FR_1;
-    std::vector<secondary_message_IRTS_FR_2> IRTS_FR_2;
-    std::vector<secondary_message_IRTS_FR_3> IRTS_FR_3;
-    std::vector<secondary_message_IRTS_RL_0> IRTS_RL_0;
-    std::vector<secondary_message_IRTS_RL_1> IRTS_RL_1;
-    std::vector<secondary_message_IRTS_RL_2> IRTS_RL_2;
-    std::vector<secondary_message_IRTS_RL_3> IRTS_RL_3;
-    std::vector<secondary_message_IRTS_RR_0> IRTS_RR_0;
-    std::vector<secondary_message_IRTS_RR_1> IRTS_RR_1;
-    std::vector<secondary_message_IRTS_RR_2> IRTS_RR_2;
-    std::vector<secondary_message_IRTS_RR_3> IRTS_RR_3;
-    std::vector<secondary_message_GPS_COORDS> GPS_COORDS;
-    std::vector<secondary_message_GPS_SPEED> GPS_SPEED;
-    std::vector<secondary_message_LAP_COUNT> LAP_COUNT;
-    std::vector<secondary_message_PEDALS_OUTPUT_conversion> PEDALS_OUTPUT;
-    std::vector<secondary_message_CONTROL_OUTPUT> CONTROL_OUTPUT;
-    std::vector<secondary_message_STEERING_ANGLE> STEERING_ANGLE;
+    canlib_circular_buffer<secondary_message_IMU_ANGULAR_RATE, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ANGULAR_RATE;
+    canlib_circular_buffer<secondary_message_IMU_ACCELERATION, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ACCELERATION;
+    canlib_circular_buffer<secondary_message_IRTS_FL_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_0;
+    canlib_circular_buffer<secondary_message_IRTS_FL_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_1;
+    canlib_circular_buffer<secondary_message_IRTS_FL_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_2;
+    canlib_circular_buffer<secondary_message_IRTS_FL_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_3;
+    canlib_circular_buffer<secondary_message_IRTS_FR_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_0;
+    canlib_circular_buffer<secondary_message_IRTS_FR_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_1;
+    canlib_circular_buffer<secondary_message_IRTS_FR_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_2;
+    canlib_circular_buffer<secondary_message_IRTS_FR_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_3;
+    canlib_circular_buffer<secondary_message_IRTS_RL_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_0;
+    canlib_circular_buffer<secondary_message_IRTS_RL_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_1;
+    canlib_circular_buffer<secondary_message_IRTS_RL_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_2;
+    canlib_circular_buffer<secondary_message_IRTS_RL_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_3;
+    canlib_circular_buffer<secondary_message_IRTS_RR_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_0;
+    canlib_circular_buffer<secondary_message_IRTS_RR_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_1;
+    canlib_circular_buffer<secondary_message_IRTS_RR_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_2;
+    canlib_circular_buffer<secondary_message_IRTS_RR_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_3;
+    canlib_circular_buffer<secondary_message_GPS_COORDS, CANLIB_CIRCULAR_BUFFER_SIZE> GPS_COORDS;
+    canlib_circular_buffer<secondary_message_GPS_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> GPS_SPEED;
+    canlib_circular_buffer<secondary_message_LAP_COUNT, CANLIB_CIRCULAR_BUFFER_SIZE> LAP_COUNT;
+    canlib_circular_buffer<secondary_message_PEDALS_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> PEDALS_OUTPUT;
+    canlib_circular_buffer<secondary_message_CONTROL_OUTPUT, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_OUTPUT;
+    canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE> STEERING_ANGLE;
 } secondary_proto_pack;
 
 void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pack, secondary_devices* map);
@@ -362,230 +531,254 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
 }
 
 void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* map) {
-    map->IMU_ANGULAR_RATE.resize(pack->imu_angular_rate_size());
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
-        map->IMU_ANGULAR_RATE[i].ang_rate_x =pack->imu_angular_rate(i).ang_rate_x();
-        map->IMU_ANGULAR_RATE[i].ang_rate_y =pack->imu_angular_rate(i).ang_rate_y();
-        map->IMU_ANGULAR_RATE[i].ang_rate_z =pack->imu_angular_rate(i).ang_rate_z();
+        static secondary_message_IMU_ANGULAR_RATE instance;
+        instance.ang_rate_x =pack->imu_angular_rate(i).ang_rate_x();
+        instance.ang_rate_y =pack->imu_angular_rate(i).ang_rate_y();
+        instance.ang_rate_z =pack->imu_angular_rate(i).ang_rate_z();
 #ifdef CANLIB_TIMESTAMP
-        map->IMU_ANGULAR_RATE[i]._timestamp = pack->imu_angular_rate(i)._inner_timestamp();
+        instance._timestamp = pack->imu_angular_rate(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IMU_ANGULAR_RATE.push(instance);
     }
-    map->IMU_ACCELERATION.resize(pack->imu_acceleration_size());
     for(int i = 0; i < pack->imu_acceleration_size(); i++){
-        map->IMU_ACCELERATION[i].accel_x =pack->imu_acceleration(i).accel_x();
-        map->IMU_ACCELERATION[i].accel_y =pack->imu_acceleration(i).accel_y();
-        map->IMU_ACCELERATION[i].accel_z =pack->imu_acceleration(i).accel_z();
+        static secondary_message_IMU_ACCELERATION instance;
+        instance.accel_x =pack->imu_acceleration(i).accel_x();
+        instance.accel_y =pack->imu_acceleration(i).accel_y();
+        instance.accel_z =pack->imu_acceleration(i).accel_z();
 #ifdef CANLIB_TIMESTAMP
-        map->IMU_ACCELERATION[i]._timestamp = pack->imu_acceleration(i)._inner_timestamp();
+        instance._timestamp = pack->imu_acceleration(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IMU_ACCELERATION.push(instance);
     }
-    map->IRTS_FL_0.resize(pack->irts_fl_0_size());
     for(int i = 0; i < pack->irts_fl_0_size(); i++){
-        map->IRTS_FL_0[i].channel1 =pack->irts_fl_0(i).channel1();
-        map->IRTS_FL_0[i].channel2 =pack->irts_fl_0(i).channel2();
-        map->IRTS_FL_0[i].channel3 =pack->irts_fl_0(i).channel3();
-        map->IRTS_FL_0[i].channel4 =pack->irts_fl_0(i).channel4();
+        static secondary_message_IRTS_FL_0 instance;
+        instance.channel1 =pack->irts_fl_0(i).channel1();
+        instance.channel2 =pack->irts_fl_0(i).channel2();
+        instance.channel3 =pack->irts_fl_0(i).channel3();
+        instance.channel4 =pack->irts_fl_0(i).channel4();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FL_0[i]._timestamp = pack->irts_fl_0(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fl_0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FL_0.push(instance);
     }
-    map->IRTS_FL_1.resize(pack->irts_fl_1_size());
     for(int i = 0; i < pack->irts_fl_1_size(); i++){
-        map->IRTS_FL_1[i].channel5 =pack->irts_fl_1(i).channel5();
-        map->IRTS_FL_1[i].channel6 =pack->irts_fl_1(i).channel6();
-        map->IRTS_FL_1[i].channel7 =pack->irts_fl_1(i).channel7();
-        map->IRTS_FL_1[i].channel8 =pack->irts_fl_1(i).channel8();
+        static secondary_message_IRTS_FL_1 instance;
+        instance.channel5 =pack->irts_fl_1(i).channel5();
+        instance.channel6 =pack->irts_fl_1(i).channel6();
+        instance.channel7 =pack->irts_fl_1(i).channel7();
+        instance.channel8 =pack->irts_fl_1(i).channel8();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FL_1[i]._timestamp = pack->irts_fl_1(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fl_1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FL_1.push(instance);
     }
-    map->IRTS_FL_2.resize(pack->irts_fl_2_size());
     for(int i = 0; i < pack->irts_fl_2_size(); i++){
-        map->IRTS_FL_2[i].channel9 =pack->irts_fl_2(i).channel9();
-        map->IRTS_FL_2[i].channel10 =pack->irts_fl_2(i).channel10();
-        map->IRTS_FL_2[i].channel11 =pack->irts_fl_2(i).channel11();
-        map->IRTS_FL_2[i].channel12 =pack->irts_fl_2(i).channel12();
+        static secondary_message_IRTS_FL_2 instance;
+        instance.channel9 =pack->irts_fl_2(i).channel9();
+        instance.channel10 =pack->irts_fl_2(i).channel10();
+        instance.channel11 =pack->irts_fl_2(i).channel11();
+        instance.channel12 =pack->irts_fl_2(i).channel12();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FL_2[i]._timestamp = pack->irts_fl_2(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fl_2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FL_2.push(instance);
     }
-    map->IRTS_FL_3.resize(pack->irts_fl_3_size());
     for(int i = 0; i < pack->irts_fl_3_size(); i++){
-        map->IRTS_FL_3[i].channel13 =pack->irts_fl_3(i).channel13();
-        map->IRTS_FL_3[i].channel14 =pack->irts_fl_3(i).channel14();
-        map->IRTS_FL_3[i].channel15 =pack->irts_fl_3(i).channel15();
-        map->IRTS_FL_3[i].channel16 =pack->irts_fl_3(i).channel16();
+        static secondary_message_IRTS_FL_3 instance;
+        instance.channel13 =pack->irts_fl_3(i).channel13();
+        instance.channel14 =pack->irts_fl_3(i).channel14();
+        instance.channel15 =pack->irts_fl_3(i).channel15();
+        instance.channel16 =pack->irts_fl_3(i).channel16();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FL_3[i]._timestamp = pack->irts_fl_3(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fl_3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FL_3.push(instance);
     }
-    map->IRTS_FR_0.resize(pack->irts_fr_0_size());
     for(int i = 0; i < pack->irts_fr_0_size(); i++){
-        map->IRTS_FR_0[i].channel1 =pack->irts_fr_0(i).channel1();
-        map->IRTS_FR_0[i].channel2 =pack->irts_fr_0(i).channel2();
-        map->IRTS_FR_0[i].channel3 =pack->irts_fr_0(i).channel3();
-        map->IRTS_FR_0[i].channel4 =pack->irts_fr_0(i).channel4();
+        static secondary_message_IRTS_FR_0 instance;
+        instance.channel1 =pack->irts_fr_0(i).channel1();
+        instance.channel2 =pack->irts_fr_0(i).channel2();
+        instance.channel3 =pack->irts_fr_0(i).channel3();
+        instance.channel4 =pack->irts_fr_0(i).channel4();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FR_0[i]._timestamp = pack->irts_fr_0(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fr_0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FR_0.push(instance);
     }
-    map->IRTS_FR_1.resize(pack->irts_fr_1_size());
     for(int i = 0; i < pack->irts_fr_1_size(); i++){
-        map->IRTS_FR_1[i].channel5 =pack->irts_fr_1(i).channel5();
-        map->IRTS_FR_1[i].channel6 =pack->irts_fr_1(i).channel6();
-        map->IRTS_FR_1[i].channel7 =pack->irts_fr_1(i).channel7();
-        map->IRTS_FR_1[i].channel8 =pack->irts_fr_1(i).channel8();
+        static secondary_message_IRTS_FR_1 instance;
+        instance.channel5 =pack->irts_fr_1(i).channel5();
+        instance.channel6 =pack->irts_fr_1(i).channel6();
+        instance.channel7 =pack->irts_fr_1(i).channel7();
+        instance.channel8 =pack->irts_fr_1(i).channel8();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FR_1[i]._timestamp = pack->irts_fr_1(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fr_1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FR_1.push(instance);
     }
-    map->IRTS_FR_2.resize(pack->irts_fr_2_size());
     for(int i = 0; i < pack->irts_fr_2_size(); i++){
-        map->IRTS_FR_2[i].channel9 =pack->irts_fr_2(i).channel9();
-        map->IRTS_FR_2[i].channel10 =pack->irts_fr_2(i).channel10();
-        map->IRTS_FR_2[i].channel11 =pack->irts_fr_2(i).channel11();
-        map->IRTS_FR_2[i].channel12 =pack->irts_fr_2(i).channel12();
+        static secondary_message_IRTS_FR_2 instance;
+        instance.channel9 =pack->irts_fr_2(i).channel9();
+        instance.channel10 =pack->irts_fr_2(i).channel10();
+        instance.channel11 =pack->irts_fr_2(i).channel11();
+        instance.channel12 =pack->irts_fr_2(i).channel12();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FR_2[i]._timestamp = pack->irts_fr_2(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fr_2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FR_2.push(instance);
     }
-    map->IRTS_FR_3.resize(pack->irts_fr_3_size());
     for(int i = 0; i < pack->irts_fr_3_size(); i++){
-        map->IRTS_FR_3[i].channel13 =pack->irts_fr_3(i).channel13();
-        map->IRTS_FR_3[i].channel14 =pack->irts_fr_3(i).channel14();
-        map->IRTS_FR_3[i].channel15 =pack->irts_fr_3(i).channel15();
-        map->IRTS_FR_3[i].channel16 =pack->irts_fr_3(i).channel16();
+        static secondary_message_IRTS_FR_3 instance;
+        instance.channel13 =pack->irts_fr_3(i).channel13();
+        instance.channel14 =pack->irts_fr_3(i).channel14();
+        instance.channel15 =pack->irts_fr_3(i).channel15();
+        instance.channel16 =pack->irts_fr_3(i).channel16();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_FR_3[i]._timestamp = pack->irts_fr_3(i)._inner_timestamp();
+        instance._timestamp = pack->irts_fr_3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_FR_3.push(instance);
     }
-    map->IRTS_RL_0.resize(pack->irts_rl_0_size());
     for(int i = 0; i < pack->irts_rl_0_size(); i++){
-        map->IRTS_RL_0[i].channel1 =pack->irts_rl_0(i).channel1();
-        map->IRTS_RL_0[i].channel2 =pack->irts_rl_0(i).channel2();
-        map->IRTS_RL_0[i].channel3 =pack->irts_rl_0(i).channel3();
-        map->IRTS_RL_0[i].channel4 =pack->irts_rl_0(i).channel4();
+        static secondary_message_IRTS_RL_0 instance;
+        instance.channel1 =pack->irts_rl_0(i).channel1();
+        instance.channel2 =pack->irts_rl_0(i).channel2();
+        instance.channel3 =pack->irts_rl_0(i).channel3();
+        instance.channel4 =pack->irts_rl_0(i).channel4();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RL_0[i]._timestamp = pack->irts_rl_0(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rl_0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RL_0.push(instance);
     }
-    map->IRTS_RL_1.resize(pack->irts_rl_1_size());
     for(int i = 0; i < pack->irts_rl_1_size(); i++){
-        map->IRTS_RL_1[i].channel5 =pack->irts_rl_1(i).channel5();
-        map->IRTS_RL_1[i].channel6 =pack->irts_rl_1(i).channel6();
-        map->IRTS_RL_1[i].channel7 =pack->irts_rl_1(i).channel7();
-        map->IRTS_RL_1[i].channel8 =pack->irts_rl_1(i).channel8();
+        static secondary_message_IRTS_RL_1 instance;
+        instance.channel5 =pack->irts_rl_1(i).channel5();
+        instance.channel6 =pack->irts_rl_1(i).channel6();
+        instance.channel7 =pack->irts_rl_1(i).channel7();
+        instance.channel8 =pack->irts_rl_1(i).channel8();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RL_1[i]._timestamp = pack->irts_rl_1(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rl_1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RL_1.push(instance);
     }
-    map->IRTS_RL_2.resize(pack->irts_rl_2_size());
     for(int i = 0; i < pack->irts_rl_2_size(); i++){
-        map->IRTS_RL_2[i].channel9 =pack->irts_rl_2(i).channel9();
-        map->IRTS_RL_2[i].channel10 =pack->irts_rl_2(i).channel10();
-        map->IRTS_RL_2[i].channel11 =pack->irts_rl_2(i).channel11();
-        map->IRTS_RL_2[i].channel12 =pack->irts_rl_2(i).channel12();
+        static secondary_message_IRTS_RL_2 instance;
+        instance.channel9 =pack->irts_rl_2(i).channel9();
+        instance.channel10 =pack->irts_rl_2(i).channel10();
+        instance.channel11 =pack->irts_rl_2(i).channel11();
+        instance.channel12 =pack->irts_rl_2(i).channel12();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RL_2[i]._timestamp = pack->irts_rl_2(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rl_2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RL_2.push(instance);
     }
-    map->IRTS_RL_3.resize(pack->irts_rl_3_size());
     for(int i = 0; i < pack->irts_rl_3_size(); i++){
-        map->IRTS_RL_3[i].channel13 =pack->irts_rl_3(i).channel13();
-        map->IRTS_RL_3[i].channel14 =pack->irts_rl_3(i).channel14();
-        map->IRTS_RL_3[i].channel15 =pack->irts_rl_3(i).channel15();
-        map->IRTS_RL_3[i].channel16 =pack->irts_rl_3(i).channel16();
+        static secondary_message_IRTS_RL_3 instance;
+        instance.channel13 =pack->irts_rl_3(i).channel13();
+        instance.channel14 =pack->irts_rl_3(i).channel14();
+        instance.channel15 =pack->irts_rl_3(i).channel15();
+        instance.channel16 =pack->irts_rl_3(i).channel16();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RL_3[i]._timestamp = pack->irts_rl_3(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rl_3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RL_3.push(instance);
     }
-    map->IRTS_RR_0.resize(pack->irts_rr_0_size());
     for(int i = 0; i < pack->irts_rr_0_size(); i++){
-        map->IRTS_RR_0[i].channel1 =pack->irts_rr_0(i).channel1();
-        map->IRTS_RR_0[i].channel2 =pack->irts_rr_0(i).channel2();
-        map->IRTS_RR_0[i].channel3 =pack->irts_rr_0(i).channel3();
-        map->IRTS_RR_0[i].channel4 =pack->irts_rr_0(i).channel4();
+        static secondary_message_IRTS_RR_0 instance;
+        instance.channel1 =pack->irts_rr_0(i).channel1();
+        instance.channel2 =pack->irts_rr_0(i).channel2();
+        instance.channel3 =pack->irts_rr_0(i).channel3();
+        instance.channel4 =pack->irts_rr_0(i).channel4();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RR_0[i]._timestamp = pack->irts_rr_0(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rr_0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RR_0.push(instance);
     }
-    map->IRTS_RR_1.resize(pack->irts_rr_1_size());
     for(int i = 0; i < pack->irts_rr_1_size(); i++){
-        map->IRTS_RR_1[i].channel5 =pack->irts_rr_1(i).channel5();
-        map->IRTS_RR_1[i].channel6 =pack->irts_rr_1(i).channel6();
-        map->IRTS_RR_1[i].channel7 =pack->irts_rr_1(i).channel7();
-        map->IRTS_RR_1[i].channel8 =pack->irts_rr_1(i).channel8();
+        static secondary_message_IRTS_RR_1 instance;
+        instance.channel5 =pack->irts_rr_1(i).channel5();
+        instance.channel6 =pack->irts_rr_1(i).channel6();
+        instance.channel7 =pack->irts_rr_1(i).channel7();
+        instance.channel8 =pack->irts_rr_1(i).channel8();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RR_1[i]._timestamp = pack->irts_rr_1(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rr_1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RR_1.push(instance);
     }
-    map->IRTS_RR_2.resize(pack->irts_rr_2_size());
     for(int i = 0; i < pack->irts_rr_2_size(); i++){
-        map->IRTS_RR_2[i].channel9 =pack->irts_rr_2(i).channel9();
-        map->IRTS_RR_2[i].channel10 =pack->irts_rr_2(i).channel10();
-        map->IRTS_RR_2[i].channel11 =pack->irts_rr_2(i).channel11();
-        map->IRTS_RR_2[i].channel12 =pack->irts_rr_2(i).channel12();
+        static secondary_message_IRTS_RR_2 instance;
+        instance.channel9 =pack->irts_rr_2(i).channel9();
+        instance.channel10 =pack->irts_rr_2(i).channel10();
+        instance.channel11 =pack->irts_rr_2(i).channel11();
+        instance.channel12 =pack->irts_rr_2(i).channel12();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RR_2[i]._timestamp = pack->irts_rr_2(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rr_2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RR_2.push(instance);
     }
-    map->IRTS_RR_3.resize(pack->irts_rr_3_size());
     for(int i = 0; i < pack->irts_rr_3_size(); i++){
-        map->IRTS_RR_3[i].channel13 =pack->irts_rr_3(i).channel13();
-        map->IRTS_RR_3[i].channel14 =pack->irts_rr_3(i).channel14();
-        map->IRTS_RR_3[i].channel15 =pack->irts_rr_3(i).channel15();
-        map->IRTS_RR_3[i].channel16 =pack->irts_rr_3(i).channel16();
+        static secondary_message_IRTS_RR_3 instance;
+        instance.channel13 =pack->irts_rr_3(i).channel13();
+        instance.channel14 =pack->irts_rr_3(i).channel14();
+        instance.channel15 =pack->irts_rr_3(i).channel15();
+        instance.channel16 =pack->irts_rr_3(i).channel16();
 #ifdef CANLIB_TIMESTAMP
-        map->IRTS_RR_3[i]._timestamp = pack->irts_rr_3(i)._inner_timestamp();
+        instance._timestamp = pack->irts_rr_3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->IRTS_RR_3.push(instance);
     }
-    map->GPS_COORDS.resize(pack->gps_coords_size());
     for(int i = 0; i < pack->gps_coords_size(); i++){
-        map->GPS_COORDS[i].latitude =pack->gps_coords(i).latitude();
-        map->GPS_COORDS[i].longitude =pack->gps_coords(i).longitude();
+        static secondary_message_GPS_COORDS instance;
+        instance.latitude =pack->gps_coords(i).latitude();
+        instance.longitude =pack->gps_coords(i).longitude();
 #ifdef CANLIB_TIMESTAMP
-        map->GPS_COORDS[i]._timestamp = pack->gps_coords(i)._inner_timestamp();
+        instance._timestamp = pack->gps_coords(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->GPS_COORDS.push(instance);
     }
-    map->GPS_SPEED.resize(pack->gps_speed_size());
     for(int i = 0; i < pack->gps_speed_size(); i++){
-        map->GPS_SPEED[i].speed =pack->gps_speed(i).speed();
+        static secondary_message_GPS_SPEED instance;
+        instance.speed =pack->gps_speed(i).speed();
 #ifdef CANLIB_TIMESTAMP
-        map->GPS_SPEED[i]._timestamp = pack->gps_speed(i)._inner_timestamp();
+        instance._timestamp = pack->gps_speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->GPS_SPEED.push(instance);
     }
-    map->LAP_COUNT.resize(pack->lap_count_size());
     for(int i = 0; i < pack->lap_count_size(); i++){
-        map->LAP_COUNT[i].timestamp =pack->lap_count(i).timestamp();
-        map->LAP_COUNT[i].lap_count =pack->lap_count(i).lap_count();
+        static secondary_message_LAP_COUNT instance;
+        instance.timestamp =pack->lap_count(i).timestamp();
+        instance.lap_count =pack->lap_count(i).lap_count();
 #ifdef CANLIB_TIMESTAMP
-        map->LAP_COUNT[i]._timestamp = pack->lap_count(i)._inner_timestamp();
+        instance._timestamp = pack->lap_count(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->LAP_COUNT.push(instance);
     }
-    map->PEDALS_OUTPUT.resize(pack->pedals_output_size());
     for(int i = 0; i < pack->pedals_output_size(); i++){
-        map->PEDALS_OUTPUT[i].bse_front =pack->pedals_output(i).bse_front();
-        map->PEDALS_OUTPUT[i].bse_rear =pack->pedals_output(i).bse_rear();
-        map->PEDALS_OUTPUT[i].apps =pack->pedals_output(i).apps();
+        static secondary_message_PEDALS_OUTPUT_conversion instance;
+        instance.bse_front =pack->pedals_output(i).bse_front();
+        instance.bse_rear =pack->pedals_output(i).bse_rear();
+        instance.apps =pack->pedals_output(i).apps();
 #ifdef CANLIB_TIMESTAMP
-        map->PEDALS_OUTPUT[i]._timestamp = pack->pedals_output(i)._inner_timestamp();
+        instance._timestamp = pack->pedals_output(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->PEDALS_OUTPUT.push(instance);
     }
-    map->CONTROL_OUTPUT.resize(pack->control_output_size());
     for(int i = 0; i < pack->control_output_size(); i++){
-        map->CONTROL_OUTPUT[i].right =pack->control_output(i).right();
-        map->CONTROL_OUTPUT[i].left =pack->control_output(i).left();
+        static secondary_message_CONTROL_OUTPUT instance;
+        instance.right =pack->control_output(i).right();
+        instance.left =pack->control_output(i).left();
 #ifdef CANLIB_TIMESTAMP
-        map->CONTROL_OUTPUT[i]._timestamp = pack->control_output(i)._inner_timestamp();
+        instance._timestamp = pack->control_output(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->CONTROL_OUTPUT.push(instance);
     }
-    map->STEERING_ANGLE.resize(pack->steering_angle_size());
     for(int i = 0; i < pack->steering_angle_size(); i++){
-        map->STEERING_ANGLE[i].angle =pack->steering_angle(i).angle();
+        static secondary_message_STEERING_ANGLE instance;
+        instance.angle =pack->steering_angle(i).angle();
 #ifdef CANLIB_TIMESTAMP
-        map->STEERING_ANGLE[i]._timestamp = pack->steering_angle(i)._inner_timestamp();
+        instance._timestamp = pack->steering_angle(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
+        map->STEERING_ANGLE.push(instance);
     }
 }
 
