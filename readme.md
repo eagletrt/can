@@ -33,7 +33,7 @@ For example, to use stb_image, you should have exactly one C/C++ file that doesn
 include stb_image.h regularly, but instead does
 
 ```c
-#define primary_IMPLEMENTATION
+#define primary_NETWORK_IMPLEMENTATION
 #include "can/lib/primary/c/network.h"
 ```
 
