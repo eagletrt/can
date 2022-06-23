@@ -352,7 +352,7 @@
         "energy": {
           "type": "float32",
           "range": [0, 7000],
-          "force":"uint16"
+          "force": "uint16"
         },
         "soc": {
           "type": "float32",
