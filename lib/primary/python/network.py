@@ -722,11 +722,15 @@ class message_HV_CURRENT:
     def __init__(
         self,
         current = None,
-        power = None
+        power = None,
+        energy = None,
+        soc = None
     ):
         self.current = uint16(current)
         self.power = uint16(power)
-        self.size = 4
+        self.energy = uint16(energy)
+        self.soc = uint8(soc)
+        self.size = 7
         self.interval = 10
 
     def __eq__(self, other):
@@ -736,11 +740,15 @@ class message_HV_CURRENT:
             return False
         if self.power != other.power:
             return False
+        if self.energy != other.energy:
+            return False
+        if self.soc != other.soc:
+            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HH", self.current, self.power))
+        data.extend(pack("<HHHB", self.current, self.power, self.energy, self.soc))
         return data
 
     @classmethod
@@ -748,6 +756,8 @@ class message_HV_CURRENT:
         message = cls()
         message.current = uint16(unpack("<H", data[0:2])[0])
         message.power = uint16(unpack("<xxH", data[0:4])[0])
+        message.energy = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.soc = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
@@ -755,6 +765,8 @@ class message_HV_CURRENT:
         conversion = message_HV_CURRENT_conversion()
         conversion.current = ((float32(self.current)) / 312.07619) - 10
         conversion.power = ((float32(self.power)) / 655.36) + 0
+        conversion.energy = ((float32(self.energy)) / 9.362286) + 0
+        conversion.soc = ((float32(self.soc)) / 2.56) + 0
         return conversion
 
 
@@ -762,11 +774,15 @@ class message_HV_CURRENT_conversion:
     def __init__(
         self,
         current = None,
-        power = None
+        power = None,
+        energy = None,
+        soc = None
     ):
         self.current = float32(current)
         self.power = float32(power)
-        self.size = 4
+        self.energy = float32(energy)
+        self.soc = float32(soc)
+        self.size = 7
         self.interval = 10
 
     def __eq__(self, other):
@@ -776,12 +792,18 @@ class message_HV_CURRENT_conversion:
             return False
         if self.power != other.power:
             return False
+        if self.energy != other.energy:
+            return False
+        if self.soc != other.soc:
+            return False
         return True
 
     def convert_to_raw(self) -> message_HV_CURRENT:
         raw = message_HV_CURRENT()
         raw.current = uint16((self.current + 10) * 312.07619)
         raw.power = uint16((self.power + 0) * 655.36)
+        raw.energy = uint16((self.energy + 0) * 9.362286)
+        raw.soc = uint8((self.soc + 0) * 2.56)
         return raw
 
 class message_HV_TEMP:

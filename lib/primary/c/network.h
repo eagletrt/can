@@ -228,7 +228,7 @@ typedef struct {
 #define primary_SIZE_TLM_STATUS 3
 #define primary_SIZE_STEER_SYSTEM_STATUS 1
 #define primary_SIZE_HV_VOLTAGE 8
-#define primary_SIZE_HV_CURRENT 4
+#define primary_SIZE_HV_CURRENT 7
 #define primary_SIZE_HV_TEMP 3
 #define primary_SIZE_HV_ERRORS 4
 #define primary_SIZE_HV_CAN_FORWARD 1
@@ -573,6 +573,8 @@ typedef struct CANLIB_PARKING {
 typedef struct CANLIB_PARKING {
     primary_uint16 current;
     primary_uint16 power;
+    primary_uint16 energy;
+    primary_uint8 soc;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -581,6 +583,8 @@ typedef struct CANLIB_PARKING {
 typedef struct CANLIB_PARKING {
     primary_float32 current;
     primary_float32 power;
+    primary_float32 energy;
+    primary_float32 soc;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1429,7 +1433,9 @@ int primary_fields_file_HV_VOLTAGE(FILE* buffer);
 primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
-    primary_uint16 power
+    primary_uint16 power,
+    primary_uint16 energy,
+    primary_uint8 soc
 );
 primary_byte_size primary_serialize_struct_HV_CURRENT(
     uint8_t* data,
@@ -1455,7 +1461,9 @@ void primary_conversion_to_raw_struct_HV_CURRENT(
 void primary_conversion_to_raw_HV_CURRENT(
     primary_message_HV_CURRENT* raw,
     primary_float32 current,
-    primary_float32 power
+    primary_float32 power,
+    primary_float32 energy,
+    primary_float32 soc
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1464,7 +1472,9 @@ void primary_conversion_to_raw_HV_CURRENT(
 void primary_raw_to_conversion_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
     primary_uint16 current,
-    primary_uint16 power
+    primary_uint16 power,
+    primary_uint16 energy,
+    primary_uint8 soc
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4025,13 +4035,18 @@ int primary_fields_file_HV_VOLTAGE(FILE* buffer) {
 primary_byte_size primary_serialize_HV_CURRENT(
     uint8_t* data,
     primary_uint16 current,
-    primary_uint16 power
+    primary_uint16 power,
+    primary_uint16 energy,
+    primary_uint8 soc
 ) {
     data[0] = current & 255;
     data[1] = (current >> 8) & 255;
     data[2] = power & 255;
     data[3] = (power >> 8) & 255;
-    return 4;
+    data[4] = energy & 255;
+    data[5] = (energy >> 8) & 255;
+    data[6] = soc;
+    return 7;
 }
 
 primary_byte_size primary_serialize_struct_HV_CURRENT(
@@ -4042,7 +4057,10 @@ primary_byte_size primary_serialize_struct_HV_CURRENT(
     data[1] = (message->current >> 8) & 255;
     data[2] = message->power & 255;
     data[3] = (message->power >> 8) & 255;
-    return 4;
+    data[4] = message->energy & 255;
+    data[5] = (message->energy >> 8) & 255;
+    data[6] = message->soc;
+    return 7;
 }
 
 // ============== DESERIALIZE ============== //
@@ -4059,12 +4077,16 @@ void primary_deserialize_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     message->current = data[0] | (data[1] << 8);
     message->power = data[2] | (data[3] << 8);
+    message->energy = data[4] | (data[5] << 8);
+    message->soc = data[6];
 }// ============== CONVERSION ============== //
 
 void primary_raw_to_conversion_HV_CURRENT(
     primary_message_HV_CURRENT_conversion* conversion,
     primary_uint16 current,
-    primary_uint16 power
+    primary_uint16 power,
+    primary_uint16 energy,
+    primary_uint8 soc
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4074,6 +4096,8 @@ void primary_raw_to_conversion_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     conversion->current = (((primary_float32)current) / 312.07619) - 10;
     conversion->power = (((primary_float32)power) / 655.36) + 0;
+    conversion->energy = (((primary_float32)energy) / 9.362286) + 0;
+    conversion->soc = (((primary_float32)soc) / 2.56) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_CURRENT(
@@ -4085,12 +4109,16 @@ void primary_raw_to_conversion_struct_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     conversion->current = (((primary_float32)raw->current) / 312.07619) - 10;
     conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
+    conversion->energy = (((primary_float32)raw->energy) / 9.362286) + 0;
+    conversion->soc = (((primary_float32)raw->soc) / 2.56) + 0;
 }
 
 void primary_conversion_to_raw_HV_CURRENT(
     primary_message_HV_CURRENT* raw,
     primary_float32 current,
-    primary_float32 power
+    primary_float32 power,
+    primary_float32 energy,
+    primary_float32 soc
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4100,6 +4128,8 @@ void primary_conversion_to_raw_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     raw->current = (primary_uint16)((current + 10) * 312.07619);
     raw->power = (primary_uint16)((power + 0) * 655.36);
+    raw->energy = (primary_uint16)((energy + 0) * 9.362286);
+    raw->soc = (primary_uint8)((soc + 0) * 2.56);
 }
 
 void primary_conversion_to_raw_struct_HV_CURRENT(
@@ -4111,6 +4141,8 @@ void primary_conversion_to_raw_struct_HV_CURRENT(
 #endif // CANLIB_TIMESTAMP
     raw->current = (primary_uint16)((conversion->current + 10) * 312.07619);
     raw->power = (primary_uint16)((conversion->power + 0) * 655.36);
+    raw->energy = (primary_uint16)((conversion->energy + 0) * 9.362286);
+    raw->soc = (primary_uint8)((conversion->soc + 0) * 2.56);
 }
 
 // ============== STRING ============== //
@@ -4121,12 +4153,16 @@ int primary_to_string_HV_CURRENT(primary_message_HV_CURRENT_conversion* message,
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current,
-        message->power
+        message->power,
+        message->energy,
+        message->soc
     );
 }
 
@@ -4137,7 +4173,9 @@ int primary_fields_HV_CURRENT(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
-        "power"
+        "power" CANLIB_SEPARATOR 
+        "energy" CANLIB_SEPARATOR 
+        "soc"
     );
 }
 
@@ -4148,12 +4186,16 @@ int primary_to_string_file_HV_CURRENT(primary_message_HV_CURRENT_conversion* mes
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->current,
-        message->power
+        message->power,
+        message->energy,
+        message->soc
     );
 }
 
@@ -4164,7 +4206,9 @@ int primary_fields_file_HV_CURRENT(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "current" CANLIB_SEPARATOR 
-        "power"
+        "power" CANLIB_SEPARATOR 
+        "energy" CANLIB_SEPARATOR 
+        "soc"
     );
 }
 

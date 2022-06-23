@@ -389,6 +389,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
             proto_msg->set_current(msg->current);
             proto_msg->set_power(msg->power);
+            proto_msg->set_energy(msg->energy);
+            proto_msg->set_soc(msg->soc);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -968,6 +970,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         static primary_message_HV_CURRENT_conversion instance;
         instance.current =pack->hv_current(i).current();
         instance.power =pack->hv_current(i).power();
+        instance.energy =pack->hv_current(i).energy();
+        instance.soc =pack->hv_current(i).soc();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_current(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

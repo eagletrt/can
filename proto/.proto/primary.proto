@@ -140,7 +140,9 @@ message HV_VOLTAGE {
 message HV_CURRENT {
     uint32 current = 1;
     uint32 power = 2;
-    uint64 _inner_timestamp = 3;
+    uint32 energy = 3;
+    uint32 soc = 4;
+    uint64 _inner_timestamp = 5;
 }
 
 message HV_TEMP {

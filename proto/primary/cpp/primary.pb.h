@@ -2534,7 +2534,9 @@ class HV_CURRENT final :
   enum : int {
     kCurrentFieldNumber = 1,
     kPowerFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kEnergyFieldNumber = 3,
+    kSocFieldNumber = 4,
+    kInnerTimestampFieldNumber = 5,
   };
   // uint32 current = 1;
   void clear_current();
@@ -2554,7 +2556,25 @@ class HV_CURRENT final :
   void _internal_set_power(uint32_t value);
   public:
 
-  // uint64 _inner_timestamp = 3;
+  // uint32 energy = 3;
+  void clear_energy();
+  uint32_t energy() const;
+  void set_energy(uint32_t value);
+  private:
+  uint32_t _internal_energy() const;
+  void _internal_set_energy(uint32_t value);
+  public:
+
+  // uint32 soc = 4;
+  void clear_soc();
+  uint32_t soc() const;
+  void set_soc(uint32_t value);
+  private:
+  uint32_t _internal_soc() const;
+  void _internal_set_soc(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
   uint64_t _inner_timestamp() const;
   void set__inner_timestamp(uint64_t value);
@@ -2572,6 +2592,8 @@ class HV_CURRENT final :
   typedef void DestructorSkippable_;
   uint32_t current_;
   uint32_t power_;
+  uint32_t energy_;
+  uint32_t soc_;
   uint64_t _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -12220,7 +12242,47 @@ inline void HV_CURRENT::set_power(uint32_t value) {
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.power)
 }
 
-// uint64 _inner_timestamp = 3;
+// uint32 energy = 3;
+inline void HV_CURRENT::clear_energy() {
+  energy_ = 0u;
+}
+inline uint32_t HV_CURRENT::_internal_energy() const {
+  return energy_;
+}
+inline uint32_t HV_CURRENT::energy() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CURRENT.energy)
+  return _internal_energy();
+}
+inline void HV_CURRENT::_internal_set_energy(uint32_t value) {
+  
+  energy_ = value;
+}
+inline void HV_CURRENT::set_energy(uint32_t value) {
+  _internal_set_energy(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CURRENT.energy)
+}
+
+// uint32 soc = 4;
+inline void HV_CURRENT::clear_soc() {
+  soc_ = 0u;
+}
+inline uint32_t HV_CURRENT::_internal_soc() const {
+  return soc_;
+}
+inline uint32_t HV_CURRENT::soc() const {
+  // @@protoc_insertion_point(field_get:primary.HV_CURRENT.soc)
+  return _internal_soc();
+}
+inline void HV_CURRENT::_internal_set_soc(uint32_t value) {
+  
+  soc_ = value;
+}
+inline void HV_CURRENT::set_soc(uint32_t value) {
+  _internal_set_soc(value);
+  // @@protoc_insertion_point(field_set:primary.HV_CURRENT.soc)
+}
+
+// uint64 _inner_timestamp = 5;
 inline void HV_CURRENT::clear__inner_timestamp() {
   _inner_timestamp_ = uint64_t{0u};
 }
