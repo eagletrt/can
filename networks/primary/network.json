@@ -336,7 +336,7 @@
       "priority": 4,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Current supplied by the pack",
+      "description": "Current and power supplied by the pack, energy and state of charge of the pack",
       "interval": 10,
       "contents": {
         "current": {
@@ -348,6 +348,16 @@
           "type": "float32",
           "range": [0, 100],
           "force": "uint16"
+        },
+        "energy": {
+          "type": "float32",
+          "range": [0, 7000],
+          "force":"uint16"
+        },
+        "soc": {
+          "type": "float32",
+          "range": [0, 100],
+          "force": "uint8"
         }
       }
     },
