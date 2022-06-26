@@ -991,6 +991,62 @@
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
+    },
+    {
+      "name": "BRUSA_NLG5_CTL",
+      "fixed_id": 618,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BRUSA_ST",
+      "fixed_id": 610,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BRUSA_ACT_I",
+      "fixed_id": 611,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BRUSA_ACT_II",
+      "fixed_id": 612,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BRUSA_TEMP",
+      "fixed_id": 613,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BRUSA_ERR",
+      "fixed_id": 614,
+      "sending": ["BRUSA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "BMS_HV_CHIMERA",
+      "fixed_id": 170,
+      "sending": ["BMS_HV_CHIMERA"],
+      "receiving": ["HANDCART"],
+      "contents": {}
+    },
+    {
+      "name": "ECU_CHIMERA",
+      "fixed_id": 85,
+      "sending": ["ECU_CHIMERA"],
+      "receiving": ["BMS_HV_CHIMERA"],
+      "contents": {}
     }
   ]
 }
