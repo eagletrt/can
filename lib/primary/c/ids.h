@@ -129,6 +129,14 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_FLASH_CELLBOARD_4_RX 0x19 // dec: 25 bin: 0b00000011001
 #define primary_ID_FLASH_CELLBOARD_5_TX 0x1A // dec: 26 bin: 0b00000011010
 #define primary_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
+#define primary_ID_BRUSA_NLG5_CTL 0x26A // dec: 618 bin: 0b01001101010
+#define primary_ID_BRUSA_ST 0x262 // dec: 610 bin: 0b01001100010
+#define primary_ID_BRUSA_ACT_I 0x263 // dec: 611 bin: 0b01001100011
+#define primary_ID_BRUSA_ACT_II 0x264 // dec: 612 bin: 0b01001100100
+#define primary_ID_BRUSA_TEMP 0x265 // dec: 613 bin: 0b01001100101
+#define primary_ID_BRUSA_ERR 0x266 // dec: 614 bin: 0b01001100110
+#define primary_ID_BMS_HV_CHIMERA 0xAA // dec: 170 bin: 0b00010101010
+#define primary_ID_ECU_CHIMERA 0x55 // dec: 85 bin: 0b00001010101
 
 
 #define primary_MAX_MESSAGE_NAME_LENGTH 31
@@ -253,6 +261,22 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_TX");;
         case primary_ID_FLASH_CELLBOARD_5_RX:
             return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_RX");;
+        case primary_ID_BRUSA_NLG5_CTL:
+            return sprintf(buffer, "%s", "BRUSA_NLG5_CTL");;
+        case primary_ID_BRUSA_ST:
+            return sprintf(buffer, "%s", "BRUSA_ST");;
+        case primary_ID_BRUSA_ACT_I:
+            return sprintf(buffer, "%s", "BRUSA_ACT_I");;
+        case primary_ID_BRUSA_ACT_II:
+            return sprintf(buffer, "%s", "BRUSA_ACT_II");;
+        case primary_ID_BRUSA_TEMP:
+            return sprintf(buffer, "%s", "BRUSA_TEMP");;
+        case primary_ID_BRUSA_ERR:
+            return sprintf(buffer, "%s", "BRUSA_ERR");;
+        case primary_ID_BMS_HV_CHIMERA:
+            return sprintf(buffer, "%s", "BMS_HV_CHIMERA");;
+        case primary_ID_ECU_CHIMERA:
+            return sprintf(buffer, "%s", "ECU_CHIMERA");;
         default:
             return 0; // Unknown message
     }
@@ -318,6 +342,14 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 25: return true; break;
         case 26: return true; break;
         case 27: return true; break;
+        case 618: return true; break;
+        case 610: return true; break;
+        case 611: return true; break;
+        case 612: return true; break;
+        case 613: return true; break;
+        case 614: return true; break;
+        case 170: return true; break;
+        case 85: return true; break;
     }
     return false;
 }

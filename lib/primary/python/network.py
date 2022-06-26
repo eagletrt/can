@@ -2632,3 +2632,179 @@ class message_FLASH_CELLBOARD_5_RX:
         message = cls()
         return message
 
+
+class message_BRUSA_NLG5_CTL:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_NLG5_CTL):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BRUSA_ST:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_ST):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BRUSA_ACT_I:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_ACT_I):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BRUSA_ACT_II:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_ACT_II):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BRUSA_TEMP:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_TEMP):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BRUSA_ERR:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BRUSA_ERR):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_BMS_HV_CHIMERA:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BMS_HV_CHIMERA):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_ECU_CHIMERA:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_ECU_CHIMERA):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+

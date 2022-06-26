@@ -858,6 +858,102 @@ struct FLASH_CELLBOARD_5_RXDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FLASH_CELLBOARD_5_RXDefaultTypeInternal _FLASH_CELLBOARD_5_RX_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_NLG5_CTL::BRUSA_NLG5_CTL(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_NLG5_CTLDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_NLG5_CTLDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_NLG5_CTLDefaultTypeInternal() {}
+  union {
+    BRUSA_NLG5_CTL _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_NLG5_CTLDefaultTypeInternal _BRUSA_NLG5_CTL_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_ST::BRUSA_ST(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_STDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_STDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_STDefaultTypeInternal() {}
+  union {
+    BRUSA_ST _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_STDefaultTypeInternal _BRUSA_ST_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_ACT_I::BRUSA_ACT_I(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_ACT_IDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_ACT_IDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_ACT_IDefaultTypeInternal() {}
+  union {
+    BRUSA_ACT_I _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_ACT_IDefaultTypeInternal _BRUSA_ACT_I_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_ACT_II::BRUSA_ACT_II(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_ACT_IIDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_ACT_IIDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_ACT_IIDefaultTypeInternal() {}
+  union {
+    BRUSA_ACT_II _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_ACT_IIDefaultTypeInternal _BRUSA_ACT_II_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_TEMP::BRUSA_TEMP(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_TEMPDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_TEMPDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_TEMPDefaultTypeInternal() {}
+  union {
+    BRUSA_TEMP _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_TEMPDefaultTypeInternal _BRUSA_TEMP_default_instance_;
+PROTOBUF_CONSTEXPR BRUSA_ERR::BRUSA_ERR(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BRUSA_ERRDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BRUSA_ERRDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BRUSA_ERRDefaultTypeInternal() {}
+  union {
+    BRUSA_ERR _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BRUSA_ERRDefaultTypeInternal _BRUSA_ERR_default_instance_;
+PROTOBUF_CONSTEXPR BMS_HV_CHIMERA::BMS_HV_CHIMERA(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct BMS_HV_CHIMERADefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BMS_HV_CHIMERADefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BMS_HV_CHIMERADefaultTypeInternal() {}
+  union {
+    BMS_HV_CHIMERA _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BMS_HV_CHIMERADefaultTypeInternal _BMS_HV_CHIMERA_default_instance_;
+PROTOBUF_CONSTEXPR ECU_CHIMERA::ECU_CHIMERA(
+    ::_pbi::ConstantInitialized)
+  : _inner_timestamp_(uint64_t{0u}){}
+struct ECU_CHIMERADefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ECU_CHIMERADefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ECU_CHIMERADefaultTypeInternal() {}
+  union {
+    ECU_CHIMERA _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ECU_CHIMERADefaultTypeInternal _ECU_CHIMERA_default_instance_;
 PROTOBUF_CONSTEXPR Pack::Pack(
     ::_pbi::ConstantInitialized)
   : bms_hv_jmp_to_blt_()
@@ -917,7 +1013,15 @@ PROTOBUF_CONSTEXPR Pack::Pack(
   , flash_cellboard_4_tx_()
   , flash_cellboard_4_rx_()
   , flash_cellboard_5_tx_()
-  , flash_cellboard_5_rx_(){}
+  , flash_cellboard_5_rx_()
+  , brusa_nlg5_ctl_()
+  , brusa_st_()
+  , brusa_act_i_()
+  , brusa_act_ii_()
+  , brusa_temp_()
+  , brusa_err_()
+  , bms_hv_chimera_()
+  , ecu_chimera_(){}
 struct PackDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PackDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -928,7 +1032,7 @@ struct PackDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PackDefaultTypeInternal _Pack_default_instance_;
 }  // namespace primary
-static ::_pb::Metadata file_level_metadata_primary_2eproto[59];
+static ::_pb::Metadata file_level_metadata_primary_2eproto[67];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_primary_2eproto[11];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_primary_2eproto = nullptr;
 
@@ -1457,6 +1561,62 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::primary::FLASH_CELLBOARD_5_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_NLG5_CTL, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_NLG5_CTL, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ST, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ST, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ACT_I, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ACT_I, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ACT_II, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ACT_II, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_TEMP, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_TEMP, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ERR, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ERR, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::BMS_HV_CHIMERA, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::BMS_HV_CHIMERA, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::ECU_CHIMERA, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::ECU_CHIMERA, _inner_timestamp_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -1520,6 +1680,14 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::Pack, flash_cellboard_4_rx_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, flash_cellboard_5_tx_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, flash_cellboard_5_rx_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_nlg5_ctl_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_st_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_act_i_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_act_ii_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_temp_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_err_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, bms_hv_chimera_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, ecu_chimera_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::primary::BMS_HV_JMP_TO_BLT)},
@@ -1580,7 +1748,15 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 502, -1, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
   { 509, -1, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
   { 516, -1, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
-  { 523, -1, -1, sizeof(::primary::Pack)},
+  { 523, -1, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
+  { 530, -1, -1, sizeof(::primary::BRUSA_ST)},
+  { 537, -1, -1, sizeof(::primary::BRUSA_ACT_I)},
+  { 544, -1, -1, sizeof(::primary::BRUSA_ACT_II)},
+  { 551, -1, -1, sizeof(::primary::BRUSA_TEMP)},
+  { 558, -1, -1, sizeof(::primary::BRUSA_ERR)},
+  { 565, -1, -1, sizeof(::primary::BMS_HV_CHIMERA)},
+  { 572, -1, -1, sizeof(::primary::ECU_CHIMERA)},
+  { 579, -1, -1, sizeof(::primary::Pack)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1642,6 +1818,14 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::primary::_FLASH_CELLBOARD_4_RX_default_instance_._instance,
   &::primary::_FLASH_CELLBOARD_5_TX_default_instance_._instance,
   &::primary::_FLASH_CELLBOARD_5_RX_default_instance_._instance,
+  &::primary::_BRUSA_NLG5_CTL_default_instance_._instance,
+  &::primary::_BRUSA_ST_default_instance_._instance,
+  &::primary::_BRUSA_ACT_I_default_instance_._instance,
+  &::primary::_BRUSA_ACT_II_default_instance_._instance,
+  &::primary::_BRUSA_TEMP_default_instance_._instance,
+  &::primary::_BRUSA_ERR_default_instance_._instance,
+  &::primary::_BMS_HV_CHIMERA_default_instance_._instance,
+  &::primary::_ECU_CHIMERA_default_instance_._instance,
   &::primary::_Pack_default_instance_._instance,
 };
 
@@ -1780,109 +1964,126 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD"
   "_5_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH"
   "_CELLBOARD_5_RX\022\030\n\020_inner_timestamp\030\001 \001("
-  "\004\"\306\027\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032."
-  "primary.BMS_HV_JMP_TO_BLT\022-\n\rSTEER_VERSI"
-  "ON\030\002 \003(\0132\026.primary.STEER_VERSION\022)\n\013DAS_"
-  "VERSION\030\003 \003(\0132\024.primary.DAS_VERSION\022\'\n\nH"
-  "V_VERSION\030\004 \003(\0132\023.primary.HV_VERSION\022\'\n\n"
-  "LV_VERSION\030\005 \003(\0132\023.primary.LV_VERSION\022)\n"
-  "\013TLM_VERSION\030\006 \003(\0132\024.primary.TLM_VERSION"
-  "\022%\n\tTIMESTAMP\030\007 \003(\0132\022.primary.TIMESTAMP\022"
-  "/\n\016SET_TLM_STATUS\030\010 \003(\0132\027.primary.SET_TL"
-  "M_STATUS\022\'\n\nTLM_STATUS\030\t \003(\0132\023.primary.T"
-  "LM_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\n \003(\0132\034"
-  ".primary.STEER_SYSTEM_STATUS\022\'\n\nHV_VOLTA"
-  "GE\030\013 \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV_CURR"
-  "ENT\030\014 \003(\0132\023.primary.HV_CURRENT\022!\n\007HV_TEM"
-  "P\030\r \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERRORS\030\016"
-  " \003(\0132\022.primary.HV_ERRORS\022/\n\016HV_CAN_FORWA"
-  "RD\030\017 \003(\0132\027.primary.HV_CAN_FORWARD\022=\n\025HV_"
-  "CAN_FORWARD_STATUS\030\020 \003(\0132\036.primary.HV_CA"
-  "N_FORWARD_STATUS\022%\n\tTS_STATUS\030\021 \003(\0132\022.pr"
-  "imary.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\022 \003"
-  "(\0132\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS"
-  "_STATUS_HANDCART\030\023 \003(\0132\037.primary.SET_TS_"
-  "STATUS_HANDCART\022+\n\014STEER_STATUS\030\024 \003(\0132\025."
-  "primary.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\025"
-  " \003(\0132\027.primary.SET_CAR_STATUS\0223\n\020SET_PED"
-  "ALS_RANGE\030\026 \003(\0132\031.primary.SET_PEDALS_RAN"
-  "GE\022C\n\030SET_STEERING_ANGLE_RANGE\030\027 \003(\0132!.p"
-  "rimary.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_S"
-  "TATUS\030\030 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_"
-  "ERRORS\030\031 \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_"
-  "CURRENT\030\032 \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV"
-  "_VOLTAGE\030\033 \003(\0132\023.primary.LV_VOLTAGE\0223\n\020L"
-  "V_TOTAL_VOLTAGE\030\034 \003(\0132\031.primary.LV_TOTAL"
-  "_VOLTAGE\022/\n\016LV_TEMPERATURE\030\035 \003(\0132\027.prima"
-  "ry.LV_TEMPERATURE\022/\n\016COOLING_STATUS\030\036 \003("
-  "\0132\027.primary.COOLING_STATUS\0227\n\022SET_RADIAT"
-  "OR_SPEED\030\037 \003(\0132\033.primary.SET_RADIATOR_SP"
-  "EED\0221\n\017SET_PUMPS_SPEED\030  \003(\0132\030.primary.S"
-  "ET_PUMPS_SPEED\022O\n\036SET_INVERTER_CONNECTIO"
-  "N_STATUS\030! \003(\0132\'.primary.SET_INVERTER_CO"
-  "NNECTION_STATUS\022G\n\032INVERTER_CONNECTION_S"
-  "TATUS\030\" \003(\0132#.primary.INVERTER_CONNECTIO"
-  "N_STATUS\0221\n\017SHUTDOWN_STATUS\030# \003(\0132\030.prim"
-  "ary.SHUTDOWN_STATUS\022\037\n\006MARKER\030$ \003(\0132\017.pr"
-  "imary.MARKER\0223\n\020HV_CELLS_VOLTAGE\030% \003(\0132\031"
-  ".primary.HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TE"
-  "MP\030& \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030HV_C"
-  "ELL_BALANCING_STATUS\030\' \003(\0132!.primary.HV_"
-  "CELL_BALANCING_STATUS\022E\n\031SET_CELL_BALANC"
-  "ING_STATUS\030( \003(\0132\".primary.SET_CELL_BALA"
-  "NCING_STATUS\0221\n\017HANDCART_STATUS\030) \003(\0132\030."
-  "primary.HANDCART_STATUS\022\035\n\005SPEED\030* \003(\0132\016"
-  ".primary.SPEED\022-\n\rINV_L_REQUEST\030+ \003(\0132\026."
-  "primary.INV_L_REQUEST\022-\n\rINV_R_REQUEST\030,"
-  " \003(\0132\026.primary.INV_R_REQUEST\022/\n\016INV_L_RE"
-  "SPONSE\030- \003(\0132\027.primary.INV_L_RESPONSE\022/\n"
-  "\016INV_R_RESPONSE\030. \003(\0132\027.primary.INV_R_RE"
-  "SPONSE\022;\n\024FLASH_CELLBOARD_0_TX\030/ \003(\0132\035.p"
-  "rimary.FLASH_CELLBOARD_0_TX\022;\n\024FLASH_CEL"
-  "LBOARD_0_RX\0300 \003(\0132\035.primary.FLASH_CELLBO"
-  "ARD_0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0301 \003(\0132\035"
-  ".primary.FLASH_CELLBOARD_1_TX\022;\n\024FLASH_C"
-  "ELLBOARD_1_RX\0302 \003(\0132\035.primary.FLASH_CELL"
-  "BOARD_1_RX\022;\n\024FLASH_CELLBOARD_2_TX\0303 \003(\013"
-  "2\035.primary.FLASH_CELLBOARD_2_TX\022;\n\024FLASH"
-  "_CELLBOARD_2_RX\0304 \003(\0132\035.primary.FLASH_CE"
-  "LLBOARD_2_RX\022;\n\024FLASH_CELLBOARD_3_TX\0305 \003"
-  "(\0132\035.primary.FLASH_CELLBOARD_3_TX\022;\n\024FLA"
-  "SH_CELLBOARD_3_RX\0306 \003(\0132\035.primary.FLASH_"
-  "CELLBOARD_3_RX\022;\n\024FLASH_CELLBOARD_4_TX\0307"
-  " \003(\0132\035.primary.FLASH_CELLBOARD_4_TX\022;\n\024F"
-  "LASH_CELLBOARD_4_RX\0308 \003(\0132\035.primary.FLAS"
-  "H_CELLBOARD_4_RX\022;\n\024FLASH_CELLBOARD_5_TX"
-  "\0309 \003(\0132\035.primary.FLASH_CELLBOARD_5_TX\022;\n"
-  "\024FLASH_CELLBOARD_5_RX\030: \003(\0132\035.primary.FL"
-  "ASH_CELLBOARD_5_RX*k\n\010RaceType\022\031\n\025RaceTy"
-  "pe_ACCELERATION\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022"
-  "\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022RaceType_ENDU"
-  "RANCE\020\003*X\n\016InverterStatus\022\026\n\022InverterSta"
-  "tus_OFF\020\000\022\027\n\023InverterStatus_IDLE\020\001\022\025\n\021In"
-  "verterStatus_ON\020\002*G\n\tCarStatus\022\022\n\016CarSta"
-  "tus_IDLE\020\000\022\023\n\017CarStatus_SETUP\020\001\022\021\n\rCarSt"
-  "atus_RUN\020\002*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nT"
-  "oggle_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023Tract"
-  "ionControl_OFF\020\000\022 \n\034TractionControl_SLIP"
-  "_CONTROL\020\001\022$\n TractionControl_TORQUE_VEC"
-  "TORING\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y"
-  "\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus"
-  "_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatu"
-  "s_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001"
-  "\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022"
-  "\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025\n\021SetCarS"
-  "tatus_IDLE\020\000\022\024\n\020SetCarStatus_RUN\020\001*-\n\005Bo"
-  "und\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_MIN\020"
-  "\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013Ped"
-  "al_BRAKE\020\001*3\n\007Cooling\022\023\n\017Cooling_SET_MAX"
-  "\020\000\022\023\n\017Cooling_SET_OFF\020\001b\006proto3"
+  "\004\"*\n\016BRUSA_NLG5_CTL\022\030\n\020_inner_timestamp\030"
+  "\001 \001(\004\"$\n\010BRUSA_ST\022\030\n\020_inner_timestamp\030\001 "
+  "\001(\004\"\'\n\013BRUSA_ACT_I\022\030\n\020_inner_timestamp\030\001"
+  " \001(\004\"(\n\014BRUSA_ACT_II\022\030\n\020_inner_timestamp"
+  "\030\001 \001(\004\"&\n\nBRUSA_TEMP\022\030\n\020_inner_timestamp"
+  "\030\001 \001(\004\"%\n\tBRUSA_ERR\022\030\n\020_inner_timestamp\030"
+  "\001 \001(\004\"*\n\016BMS_HV_CHIMERA\022\030\n\020_inner_timest"
+  "amp\030\001 \001(\004\"\'\n\013ECU_CHIMERA\022\030\n\020_inner_times"
+  "tamp\030\001 \001(\004\"\240\032\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT"
+  "\030\001 \003(\0132\032.primary.BMS_HV_JMP_TO_BLT\022-\n\rST"
+  "EER_VERSION\030\002 \003(\0132\026.primary.STEER_VERSIO"
+  "N\022)\n\013DAS_VERSION\030\003 \003(\0132\024.primary.DAS_VER"
+  "SION\022\'\n\nHV_VERSION\030\004 \003(\0132\023.primary.HV_VE"
+  "RSION\022\'\n\nLV_VERSION\030\005 \003(\0132\023.primary.LV_V"
+  "ERSION\022)\n\013TLM_VERSION\030\006 \003(\0132\024.primary.TL"
+  "M_VERSION\022%\n\tTIMESTAMP\030\007 \003(\0132\022.primary.T"
+  "IMESTAMP\022/\n\016SET_TLM_STATUS\030\010 \003(\0132\027.prima"
+  "ry.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\t \003(\0132\023."
+  "primary.TLM_STATUS\0229\n\023STEER_SYSTEM_STATU"
+  "S\030\n \003(\0132\034.primary.STEER_SYSTEM_STATUS\022\'\n"
+  "\nHV_VOLTAGE\030\013 \003(\0132\023.primary.HV_VOLTAGE\022\'"
+  "\n\nHV_CURRENT\030\014 \003(\0132\023.primary.HV_CURRENT\022"
+  "!\n\007HV_TEMP\030\r \003(\0132\020.primary.HV_TEMP\022%\n\tHV"
+  "_ERRORS\030\016 \003(\0132\022.primary.HV_ERRORS\022/\n\016HV_"
+  "CAN_FORWARD\030\017 \003(\0132\027.primary.HV_CAN_FORWA"
+  "RD\022=\n\025HV_CAN_FORWARD_STATUS\030\020 \003(\0132\036.prim"
+  "ary.HV_CAN_FORWARD_STATUS\022%\n\tTS_STATUS\030\021"
+  " \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_STATU"
+  "S_DAS\030\022 \003(\0132\032.primary.SET_TS_STATUS_DAS\022"
+  "\?\n\026SET_TS_STATUS_HANDCART\030\023 \003(\0132\037.primar"
+  "y.SET_TS_STATUS_HANDCART\022+\n\014STEER_STATUS"
+  "\030\024 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET_CAR"
+  "_STATUS\030\025 \003(\0132\027.primary.SET_CAR_STATUS\0223"
+  "\n\020SET_PEDALS_RANGE\030\026 \003(\0132\031.primary.SET_P"
+  "EDALS_RANGE\022C\n\030SET_STEERING_ANGLE_RANGE\030"
+  "\027 \003(\0132!.primary.SET_STEERING_ANGLE_RANGE"
+  "\022\'\n\nCAR_STATUS\030\030 \003(\0132\023.primary.CAR_STATU"
+  "S\022\'\n\nDAS_ERRORS\030\031 \003(\0132\023.primary.DAS_ERRO"
+  "RS\022\'\n\nLV_CURRENT\030\032 \003(\0132\023.primary.LV_CURR"
+  "ENT\022\'\n\nLV_VOLTAGE\030\033 \003(\0132\023.primary.LV_VOL"
+  "TAGE\0223\n\020LV_TOTAL_VOLTAGE\030\034 \003(\0132\031.primary"
+  ".LV_TOTAL_VOLTAGE\022/\n\016LV_TEMPERATURE\030\035 \003("
+  "\0132\027.primary.LV_TEMPERATURE\022/\n\016COOLING_ST"
+  "ATUS\030\036 \003(\0132\027.primary.COOLING_STATUS\0227\n\022S"
+  "ET_RADIATOR_SPEED\030\037 \003(\0132\033.primary.SET_RA"
+  "DIATOR_SPEED\0221\n\017SET_PUMPS_SPEED\030  \003(\0132\030."
+  "primary.SET_PUMPS_SPEED\022O\n\036SET_INVERTER_"
+  "CONNECTION_STATUS\030! \003(\0132\'.primary.SET_IN"
+  "VERTER_CONNECTION_STATUS\022G\n\032INVERTER_CON"
+  "NECTION_STATUS\030\" \003(\0132#.primary.INVERTER_"
+  "CONNECTION_STATUS\0221\n\017SHUTDOWN_STATUS\030# \003"
+  "(\0132\030.primary.SHUTDOWN_STATUS\022\037\n\006MARKER\030$"
+  " \003(\0132\017.primary.MARKER\0223\n\020HV_CELLS_VOLTAG"
+  "E\030% \003(\0132\031.primary.HV_CELLS_VOLTAGE\022-\n\rHV"
+  "_CELLS_TEMP\030& \003(\0132\026.primary.HV_CELLS_TEM"
+  "P\022C\n\030HV_CELL_BALANCING_STATUS\030\' \003(\0132!.pr"
+  "imary.HV_CELL_BALANCING_STATUS\022E\n\031SET_CE"
+  "LL_BALANCING_STATUS\030( \003(\0132\".primary.SET_"
+  "CELL_BALANCING_STATUS\0221\n\017HANDCART_STATUS"
+  "\030) \003(\0132\030.primary.HANDCART_STATUS\022\035\n\005SPEE"
+  "D\030* \003(\0132\016.primary.SPEED\022-\n\rINV_L_REQUEST"
+  "\030+ \003(\0132\026.primary.INV_L_REQUEST\022-\n\rINV_R_"
+  "REQUEST\030, \003(\0132\026.primary.INV_R_REQUEST\022/\n"
+  "\016INV_L_RESPONSE\030- \003(\0132\027.primary.INV_L_RE"
+  "SPONSE\022/\n\016INV_R_RESPONSE\030. \003(\0132\027.primary"
+  ".INV_R_RESPONSE\022;\n\024FLASH_CELLBOARD_0_TX\030"
+  "/ \003(\0132\035.primary.FLASH_CELLBOARD_0_TX\022;\n\024"
+  "FLASH_CELLBOARD_0_RX\0300 \003(\0132\035.primary.FLA"
+  "SH_CELLBOARD_0_RX\022;\n\024FLASH_CELLBOARD_1_T"
+  "X\0301 \003(\0132\035.primary.FLASH_CELLBOARD_1_TX\022;"
+  "\n\024FLASH_CELLBOARD_1_RX\0302 \003(\0132\035.primary.F"
+  "LASH_CELLBOARD_1_RX\022;\n\024FLASH_CELLBOARD_2"
+  "_TX\0303 \003(\0132\035.primary.FLASH_CELLBOARD_2_TX"
+  "\022;\n\024FLASH_CELLBOARD_2_RX\0304 \003(\0132\035.primary"
+  ".FLASH_CELLBOARD_2_RX\022;\n\024FLASH_CELLBOARD"
+  "_3_TX\0305 \003(\0132\035.primary.FLASH_CELLBOARD_3_"
+  "TX\022;\n\024FLASH_CELLBOARD_3_RX\0306 \003(\0132\035.prima"
+  "ry.FLASH_CELLBOARD_3_RX\022;\n\024FLASH_CELLBOA"
+  "RD_4_TX\0307 \003(\0132\035.primary.FLASH_CELLBOARD_"
+  "4_TX\022;\n\024FLASH_CELLBOARD_4_RX\0308 \003(\0132\035.pri"
+  "mary.FLASH_CELLBOARD_4_RX\022;\n\024FLASH_CELLB"
+  "OARD_5_TX\0309 \003(\0132\035.primary.FLASH_CELLBOAR"
+  "D_5_TX\022;\n\024FLASH_CELLBOARD_5_RX\030: \003(\0132\035.p"
+  "rimary.FLASH_CELLBOARD_5_RX\022/\n\016BRUSA_NLG"
+  "5_CTL\030; \003(\0132\027.primary.BRUSA_NLG5_CTL\022#\n\010"
+  "BRUSA_ST\030< \003(\0132\021.primary.BRUSA_ST\022)\n\013BRU"
+  "SA_ACT_I\030= \003(\0132\024.primary.BRUSA_ACT_I\022+\n\014"
+  "BRUSA_ACT_II\030> \003(\0132\025.primary.BRUSA_ACT_I"
+  "I\022\'\n\nBRUSA_TEMP\030\? \003(\0132\023.primary.BRUSA_TE"
+  "MP\022%\n\tBRUSA_ERR\030@ \003(\0132\022.primary.BRUSA_ER"
+  "R\022/\n\016BMS_HV_CHIMERA\030A \003(\0132\027.primary.BMS_"
+  "HV_CHIMERA\022)\n\013ECU_CHIMERA\030B \003(\0132\024.primar"
+  "y.ECU_CHIMERA*k\n\010RaceType\022\031\n\025RaceType_AC"
+  "CELERATION\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022Ra"
+  "ceType_AUTOCROSS\020\002\022\026\n\022RaceType_ENDURANCE"
+  "\020\003*X\n\016InverterStatus\022\026\n\022InverterStatus_O"
+  "FF\020\000\022\027\n\023InverterStatus_IDLE\020\001\022\025\n\021Inverte"
+  "rStatus_ON\020\002*G\n\tCarStatus\022\022\n\016CarStatus_I"
+  "DLE\020\000\022\023\n\017CarStatus_SETUP\020\001\022\021\n\rCarStatus_"
+  "RUN\020\002*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle"
+  "_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023TractionCo"
+  "ntrol_OFF\020\000\022 \n\034TractionControl_SLIP_CONT"
+  "ROL\020\001\022$\n TractionControl_TORQUE_VECTORIN"
+  "G\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y\n\010TsS"
+  "tatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PREC"
+  "HARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FAT"
+  "AL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007M"
+  "ap_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Ma"
+  "p_D100\020\005*;\n\014SetCarStatus\022\025\n\021SetCarStatus"
+  "_IDLE\020\000\022\024\n\020SetCarStatus_RUN\020\001*-\n\005Bound\022\021"
+  "\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005"
+  "Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BR"
+  "AKE\020\001*3\n\007Cooling\022\023\n\017Cooling_SET_MAX\020\000\022\023\n"
+  "\017Cooling_SET_OFF\020\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 9231, descriptor_table_protodef_primary_2eproto,
+    false, false, 9906, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
-    &descriptor_table_primary_2eproto_once, nullptr, 0, 59,
+    &descriptor_table_primary_2eproto_once, nullptr, 0, 67,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
     file_level_metadata_primary_2eproto, file_level_enum_descriptors_primary_2eproto,
     file_level_service_descriptors_primary_2eproto,
@@ -15155,6 +15356,1374 @@ void FLASH_CELLBOARD_5_RX::InternalSwap(FLASH_CELLBOARD_5_RX* other) {
 
 // ===================================================================
 
+class BRUSA_NLG5_CTL::_Internal {
+ public:
+};
+
+BRUSA_NLG5_CTL::BRUSA_NLG5_CTL(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_NLG5_CTL)
+}
+BRUSA_NLG5_CTL::BRUSA_NLG5_CTL(const BRUSA_NLG5_CTL& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_NLG5_CTL)
+}
+
+inline void BRUSA_NLG5_CTL::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_NLG5_CTL::~BRUSA_NLG5_CTL() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_NLG5_CTL)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_NLG5_CTL::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_NLG5_CTL::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_NLG5_CTL::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_NLG5_CTL)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_NLG5_CTL::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_NLG5_CTL::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_NLG5_CTL)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_NLG5_CTL)
+  return target;
+}
+
+size_t BRUSA_NLG5_CTL::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_NLG5_CTL)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_NLG5_CTL::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_NLG5_CTL::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_NLG5_CTL::GetClassData() const { return &_class_data_; }
+
+void BRUSA_NLG5_CTL::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_NLG5_CTL *>(to)->MergeFrom(
+      static_cast<const BRUSA_NLG5_CTL &>(from));
+}
+
+
+void BRUSA_NLG5_CTL::MergeFrom(const BRUSA_NLG5_CTL& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_NLG5_CTL)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_NLG5_CTL::CopyFrom(const BRUSA_NLG5_CTL& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_NLG5_CTL)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_NLG5_CTL::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_NLG5_CTL::InternalSwap(BRUSA_NLG5_CTL* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_NLG5_CTL::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[58]);
+}
+
+// ===================================================================
+
+class BRUSA_ST::_Internal {
+ public:
+};
+
+BRUSA_ST::BRUSA_ST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_ST)
+}
+BRUSA_ST::BRUSA_ST(const BRUSA_ST& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_ST)
+}
+
+inline void BRUSA_ST::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_ST::~BRUSA_ST() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_ST)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_ST::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_ST::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_ST::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_ST)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_ST::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_ST::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_ST)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_ST)
+  return target;
+}
+
+size_t BRUSA_ST::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_ST)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_ST::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_ST::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_ST::GetClassData() const { return &_class_data_; }
+
+void BRUSA_ST::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_ST *>(to)->MergeFrom(
+      static_cast<const BRUSA_ST &>(from));
+}
+
+
+void BRUSA_ST::MergeFrom(const BRUSA_ST& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_ST)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_ST::CopyFrom(const BRUSA_ST& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_ST)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_ST::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_ST::InternalSwap(BRUSA_ST* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_ST::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[59]);
+}
+
+// ===================================================================
+
+class BRUSA_ACT_I::_Internal {
+ public:
+};
+
+BRUSA_ACT_I::BRUSA_ACT_I(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_ACT_I)
+}
+BRUSA_ACT_I::BRUSA_ACT_I(const BRUSA_ACT_I& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_ACT_I)
+}
+
+inline void BRUSA_ACT_I::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_ACT_I::~BRUSA_ACT_I() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_ACT_I)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_ACT_I::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_ACT_I::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_ACT_I::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_ACT_I)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_ACT_I::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_ACT_I::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_ACT_I)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_ACT_I)
+  return target;
+}
+
+size_t BRUSA_ACT_I::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_ACT_I)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_ACT_I::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_ACT_I::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_ACT_I::GetClassData() const { return &_class_data_; }
+
+void BRUSA_ACT_I::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_ACT_I *>(to)->MergeFrom(
+      static_cast<const BRUSA_ACT_I &>(from));
+}
+
+
+void BRUSA_ACT_I::MergeFrom(const BRUSA_ACT_I& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_ACT_I)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_ACT_I::CopyFrom(const BRUSA_ACT_I& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_ACT_I)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_ACT_I::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_ACT_I::InternalSwap(BRUSA_ACT_I* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_ACT_I::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[60]);
+}
+
+// ===================================================================
+
+class BRUSA_ACT_II::_Internal {
+ public:
+};
+
+BRUSA_ACT_II::BRUSA_ACT_II(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_ACT_II)
+}
+BRUSA_ACT_II::BRUSA_ACT_II(const BRUSA_ACT_II& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_ACT_II)
+}
+
+inline void BRUSA_ACT_II::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_ACT_II::~BRUSA_ACT_II() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_ACT_II)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_ACT_II::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_ACT_II::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_ACT_II::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_ACT_II)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_ACT_II::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_ACT_II::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_ACT_II)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_ACT_II)
+  return target;
+}
+
+size_t BRUSA_ACT_II::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_ACT_II)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_ACT_II::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_ACT_II::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_ACT_II::GetClassData() const { return &_class_data_; }
+
+void BRUSA_ACT_II::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_ACT_II *>(to)->MergeFrom(
+      static_cast<const BRUSA_ACT_II &>(from));
+}
+
+
+void BRUSA_ACT_II::MergeFrom(const BRUSA_ACT_II& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_ACT_II)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_ACT_II::CopyFrom(const BRUSA_ACT_II& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_ACT_II)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_ACT_II::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_ACT_II::InternalSwap(BRUSA_ACT_II* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_ACT_II::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[61]);
+}
+
+// ===================================================================
+
+class BRUSA_TEMP::_Internal {
+ public:
+};
+
+BRUSA_TEMP::BRUSA_TEMP(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_TEMP)
+}
+BRUSA_TEMP::BRUSA_TEMP(const BRUSA_TEMP& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_TEMP)
+}
+
+inline void BRUSA_TEMP::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_TEMP::~BRUSA_TEMP() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_TEMP)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_TEMP::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_TEMP::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_TEMP::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_TEMP)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_TEMP::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_TEMP::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_TEMP)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_TEMP)
+  return target;
+}
+
+size_t BRUSA_TEMP::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_TEMP)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_TEMP::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_TEMP::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_TEMP::GetClassData() const { return &_class_data_; }
+
+void BRUSA_TEMP::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_TEMP *>(to)->MergeFrom(
+      static_cast<const BRUSA_TEMP &>(from));
+}
+
+
+void BRUSA_TEMP::MergeFrom(const BRUSA_TEMP& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_TEMP)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_TEMP::CopyFrom(const BRUSA_TEMP& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_TEMP)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_TEMP::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_TEMP::InternalSwap(BRUSA_TEMP* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_TEMP::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[62]);
+}
+
+// ===================================================================
+
+class BRUSA_ERR::_Internal {
+ public:
+};
+
+BRUSA_ERR::BRUSA_ERR(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BRUSA_ERR)
+}
+BRUSA_ERR::BRUSA_ERR(const BRUSA_ERR& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BRUSA_ERR)
+}
+
+inline void BRUSA_ERR::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BRUSA_ERR::~BRUSA_ERR() {
+  // @@protoc_insertion_point(destructor:primary.BRUSA_ERR)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BRUSA_ERR::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BRUSA_ERR::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BRUSA_ERR::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BRUSA_ERR)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BRUSA_ERR::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BRUSA_ERR::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BRUSA_ERR)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BRUSA_ERR)
+  return target;
+}
+
+size_t BRUSA_ERR::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BRUSA_ERR)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BRUSA_ERR::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BRUSA_ERR::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BRUSA_ERR::GetClassData() const { return &_class_data_; }
+
+void BRUSA_ERR::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BRUSA_ERR *>(to)->MergeFrom(
+      static_cast<const BRUSA_ERR &>(from));
+}
+
+
+void BRUSA_ERR::MergeFrom(const BRUSA_ERR& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BRUSA_ERR)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BRUSA_ERR::CopyFrom(const BRUSA_ERR& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BRUSA_ERR)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BRUSA_ERR::IsInitialized() const {
+  return true;
+}
+
+void BRUSA_ERR::InternalSwap(BRUSA_ERR* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BRUSA_ERR::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[63]);
+}
+
+// ===================================================================
+
+class BMS_HV_CHIMERA::_Internal {
+ public:
+};
+
+BMS_HV_CHIMERA::BMS_HV_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.BMS_HV_CHIMERA)
+}
+BMS_HV_CHIMERA::BMS_HV_CHIMERA(const BMS_HV_CHIMERA& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.BMS_HV_CHIMERA)
+}
+
+inline void BMS_HV_CHIMERA::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+BMS_HV_CHIMERA::~BMS_HV_CHIMERA() {
+  // @@protoc_insertion_point(destructor:primary.BMS_HV_CHIMERA)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BMS_HV_CHIMERA::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BMS_HV_CHIMERA::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void BMS_HV_CHIMERA::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.BMS_HV_CHIMERA)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BMS_HV_CHIMERA::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BMS_HV_CHIMERA::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.BMS_HV_CHIMERA)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.BMS_HV_CHIMERA)
+  return target;
+}
+
+size_t BMS_HV_CHIMERA::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.BMS_HV_CHIMERA)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BMS_HV_CHIMERA::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    BMS_HV_CHIMERA::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BMS_HV_CHIMERA::GetClassData() const { return &_class_data_; }
+
+void BMS_HV_CHIMERA::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<BMS_HV_CHIMERA *>(to)->MergeFrom(
+      static_cast<const BMS_HV_CHIMERA &>(from));
+}
+
+
+void BMS_HV_CHIMERA::MergeFrom(const BMS_HV_CHIMERA& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.BMS_HV_CHIMERA)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BMS_HV_CHIMERA::CopyFrom(const BMS_HV_CHIMERA& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.BMS_HV_CHIMERA)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BMS_HV_CHIMERA::IsInitialized() const {
+  return true;
+}
+
+void BMS_HV_CHIMERA::InternalSwap(BMS_HV_CHIMERA* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BMS_HV_CHIMERA::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[64]);
+}
+
+// ===================================================================
+
+class ECU_CHIMERA::_Internal {
+ public:
+};
+
+ECU_CHIMERA::ECU_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  // @@protoc_insertion_point(arena_constructor:primary.ECU_CHIMERA)
+}
+ECU_CHIMERA::ECU_CHIMERA(const ECU_CHIMERA& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.ECU_CHIMERA)
+}
+
+inline void ECU_CHIMERA::SharedCtor() {
+_inner_timestamp_ = uint64_t{0u};
+}
+
+ECU_CHIMERA::~ECU_CHIMERA() {
+  // @@protoc_insertion_point(destructor:primary.ECU_CHIMERA)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ECU_CHIMERA::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void ECU_CHIMERA::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ECU_CHIMERA::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.ECU_CHIMERA)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ECU_CHIMERA::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ECU_CHIMERA::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.ECU_CHIMERA)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.ECU_CHIMERA)
+  return target;
+}
+
+size_t ECU_CHIMERA::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.ECU_CHIMERA)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_internal__inner_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ECU_CHIMERA::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ECU_CHIMERA::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ECU_CHIMERA::GetClassData() const { return &_class_data_; }
+
+void ECU_CHIMERA::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ECU_CHIMERA *>(to)->MergeFrom(
+      static_cast<const ECU_CHIMERA &>(from));
+}
+
+
+void ECU_CHIMERA::MergeFrom(const ECU_CHIMERA& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.ECU_CHIMERA)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal__inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ECU_CHIMERA::CopyFrom(const ECU_CHIMERA& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.ECU_CHIMERA)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ECU_CHIMERA::IsInitialized() const {
+  return true;
+}
+
+void ECU_CHIMERA::InternalSwap(ECU_CHIMERA* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ECU_CHIMERA::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
+      file_level_metadata_primary_2eproto[65]);
+}
+
+// ===================================================================
+
 class Pack::_Internal {
  public:
 };
@@ -15219,7 +16788,15 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   flash_cellboard_4_tx_(arena),
   flash_cellboard_4_rx_(arena),
   flash_cellboard_5_tx_(arena),
-  flash_cellboard_5_rx_(arena) {
+  flash_cellboard_5_rx_(arena),
+  brusa_nlg5_ctl_(arena),
+  brusa_st_(arena),
+  brusa_act_i_(arena),
+  brusa_act_ii_(arena),
+  brusa_temp_(arena),
+  brusa_err_(arena),
+  bms_hv_chimera_(arena),
+  ecu_chimera_(arena) {
   SharedCtor();
   // @@protoc_insertion_point(arena_constructor:primary.Pack)
 }
@@ -15282,7 +16859,15 @@ Pack::Pack(const Pack& from)
       flash_cellboard_4_tx_(from.flash_cellboard_4_tx_),
       flash_cellboard_4_rx_(from.flash_cellboard_4_rx_),
       flash_cellboard_5_tx_(from.flash_cellboard_5_tx_),
-      flash_cellboard_5_rx_(from.flash_cellboard_5_rx_) {
+      flash_cellboard_5_rx_(from.flash_cellboard_5_rx_),
+      brusa_nlg5_ctl_(from.brusa_nlg5_ctl_),
+      brusa_st_(from.brusa_st_),
+      brusa_act_i_(from.brusa_act_i_),
+      brusa_act_ii_(from.brusa_act_ii_),
+      brusa_temp_(from.brusa_temp_),
+      brusa_err_(from.brusa_err_),
+      bms_hv_chimera_(from.bms_hv_chimera_),
+      ecu_chimera_(from.ecu_chimera_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:primary.Pack)
 }
@@ -15371,6 +16956,14 @@ void Pack::Clear() {
   flash_cellboard_4_rx_.Clear();
   flash_cellboard_5_tx_.Clear();
   flash_cellboard_5_rx_.Clear();
+  brusa_nlg5_ctl_.Clear();
+  brusa_st_.Clear();
+  brusa_act_i_.Clear();
+  brusa_act_ii_.Clear();
+  brusa_temp_.Clear();
+  brusa_err_.Clear();
+  bms_hv_chimera_.Clear();
+  ecu_chimera_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16134,6 +17727,110 @@ const char* Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+      case 59:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 218)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_nlg5_ctl(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<474>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BRUSA_ST BRUSA_ST = 60;
+      case 60:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 226)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_st(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<482>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 61;
+      case 61:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 234)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_act_i(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<490>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 62;
+      case 62:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 242)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_act_ii(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<498>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 63;
+      case 63:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 250)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_temp(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<506>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BRUSA_ERR BRUSA_ERR = 64;
+      case 64:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 2)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_brusa_err(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<514>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+      case 65:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_bms_hv_chimera(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<522>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 66;
+      case 66:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_ecu_chimera(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<530>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -16627,6 +18324,70 @@ uint8_t* Pack::_InternalSerialize(
         InternalWriteMessage(58, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_nlg5_ctl_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_nlg5_ctl(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(59, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BRUSA_ST BRUSA_ST = 60;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_st_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_st(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(60, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 61;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_act_i_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_act_i(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(61, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 62;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_act_ii_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_act_ii(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(62, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 63;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_temp_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_temp(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(63, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 64;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_brusa_err_size()); i < n; i++) {
+    const auto& repfield = this->_internal_brusa_err(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(64, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_bms_hv_chimera_size()); i < n; i++) {
+    const auto& repfield = this->_internal_bms_hv_chimera(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(65, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 66;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_ecu_chimera_size()); i < n; i++) {
+    const auto& repfield = this->_internal_ecu_chimera(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(66, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -17049,6 +18810,62 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+  total_size += 2UL * this->_internal_brusa_nlg5_ctl_size();
+  for (const auto& msg : this->brusa_nlg5_ctl_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BRUSA_ST BRUSA_ST = 60;
+  total_size += 2UL * this->_internal_brusa_st_size();
+  for (const auto& msg : this->brusa_st_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 61;
+  total_size += 2UL * this->_internal_brusa_act_i_size();
+  for (const auto& msg : this->brusa_act_i_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 62;
+  total_size += 2UL * this->_internal_brusa_act_ii_size();
+  for (const auto& msg : this->brusa_act_ii_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 63;
+  total_size += 2UL * this->_internal_brusa_temp_size();
+  for (const auto& msg : this->brusa_temp_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 64;
+  total_size += 2UL * this->_internal_brusa_err_size();
+  for (const auto& msg : this->brusa_err_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+  total_size += 2UL * this->_internal_bms_hv_chimera_size();
+  for (const auto& msg : this->bms_hv_chimera_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 66;
+  total_size += 2UL * this->_internal_ecu_chimera_size();
+  for (const auto& msg : this->ecu_chimera_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -17129,6 +18946,14 @@ void Pack::MergeFrom(const Pack& from) {
   flash_cellboard_4_rx_.MergeFrom(from.flash_cellboard_4_rx_);
   flash_cellboard_5_tx_.MergeFrom(from.flash_cellboard_5_tx_);
   flash_cellboard_5_rx_.MergeFrom(from.flash_cellboard_5_rx_);
+  brusa_nlg5_ctl_.MergeFrom(from.brusa_nlg5_ctl_);
+  brusa_st_.MergeFrom(from.brusa_st_);
+  brusa_act_i_.MergeFrom(from.brusa_act_i_);
+  brusa_act_ii_.MergeFrom(from.brusa_act_ii_);
+  brusa_temp_.MergeFrom(from.brusa_temp_);
+  brusa_err_.MergeFrom(from.brusa_err_);
+  bms_hv_chimera_.MergeFrom(from.bms_hv_chimera_);
+  ecu_chimera_.MergeFrom(from.ecu_chimera_);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -17204,12 +19029,20 @@ void Pack::InternalSwap(Pack* other) {
   flash_cellboard_4_rx_.InternalSwap(&other->flash_cellboard_4_rx_);
   flash_cellboard_5_tx_.InternalSwap(&other->flash_cellboard_5_tx_);
   flash_cellboard_5_rx_.InternalSwap(&other->flash_cellboard_5_rx_);
+  brusa_nlg5_ctl_.InternalSwap(&other->brusa_nlg5_ctl_);
+  brusa_st_.InternalSwap(&other->brusa_st_);
+  brusa_act_i_.InternalSwap(&other->brusa_act_i_);
+  brusa_act_ii_.InternalSwap(&other->brusa_act_ii_);
+  brusa_temp_.InternalSwap(&other->brusa_temp_);
+  brusa_err_.InternalSwap(&other->brusa_err_);
+  bms_hv_chimera_.InternalSwap(&other->bms_hv_chimera_);
+  ecu_chimera_.InternalSwap(&other->ecu_chimera_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Pack::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
-      file_level_metadata_primary_2eproto[58]);
+      file_level_metadata_primary_2eproto[66]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -17446,6 +19279,38 @@ Arena::CreateMaybeMessage< ::primary::FLASH_CELLBOARD_5_TX >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::primary::FLASH_CELLBOARD_5_RX*
 Arena::CreateMaybeMessage< ::primary::FLASH_CELLBOARD_5_RX >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::FLASH_CELLBOARD_5_RX >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_NLG5_CTL*
+Arena::CreateMaybeMessage< ::primary::BRUSA_NLG5_CTL >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_NLG5_CTL >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_ST*
+Arena::CreateMaybeMessage< ::primary::BRUSA_ST >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_ST >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_ACT_I*
+Arena::CreateMaybeMessage< ::primary::BRUSA_ACT_I >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_ACT_I >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_ACT_II*
+Arena::CreateMaybeMessage< ::primary::BRUSA_ACT_II >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_ACT_II >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_TEMP*
+Arena::CreateMaybeMessage< ::primary::BRUSA_TEMP >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_TEMP >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BRUSA_ERR*
+Arena::CreateMaybeMessage< ::primary::BRUSA_ERR >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BRUSA_ERR >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::BMS_HV_CHIMERA*
+Arena::CreateMaybeMessage< ::primary::BMS_HV_CHIMERA >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::BMS_HV_CHIMERA >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::ECU_CHIMERA*
+Arena::CreateMaybeMessage< ::primary::ECU_CHIMERA >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::ECU_CHIMERA >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::Pack*
 Arena::CreateMaybeMessage< ::primary::Pack >(Arena* arena) {

@@ -417,6 +417,38 @@ message FLASH_CELLBOARD_5_RX {
     uint64 _inner_timestamp = 1;
 }
 
+message BRUSA_NLG5_CTL {
+    uint64 _inner_timestamp = 1;
+}
+
+message BRUSA_ST {
+    uint64 _inner_timestamp = 1;
+}
+
+message BRUSA_ACT_I {
+    uint64 _inner_timestamp = 1;
+}
+
+message BRUSA_ACT_II {
+    uint64 _inner_timestamp = 1;
+}
+
+message BRUSA_TEMP {
+    uint64 _inner_timestamp = 1;
+}
+
+message BRUSA_ERR {
+    uint64 _inner_timestamp = 1;
+}
+
+message BMS_HV_CHIMERA {
+    uint64 _inner_timestamp = 1;
+}
+
+message ECU_CHIMERA {
+    uint64 _inner_timestamp = 1;
+}
+
 
 message Pack {
     repeated BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
@@ -477,4 +509,12 @@ message Pack {
     repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 56;
     repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 57;
     repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 58;
+    repeated BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+    repeated BRUSA_ST BRUSA_ST = 60;
+    repeated BRUSA_ACT_I BRUSA_ACT_I = 61;
+    repeated BRUSA_ACT_II BRUSA_ACT_II = 62;
+    repeated BRUSA_TEMP BRUSA_TEMP = 63;
+    repeated BRUSA_ERR BRUSA_ERR = 64;
+    repeated BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+    repeated ECU_CHIMERA ECU_CHIMERA = 66;
 }

@@ -251,6 +251,14 @@ typedef struct {
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_4_RX;
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_TX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_5_TX;
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_5_RX;
+    canlib_circular_buffer<primary_message_BRUSA_NLG5_CTL, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_NLG5_CTL;
+    canlib_circular_buffer<primary_message_BRUSA_ST, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ST;
+    canlib_circular_buffer<primary_message_BRUSA_ACT_I, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ACT_I;
+    canlib_circular_buffer<primary_message_BRUSA_ACT_II, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ACT_II;
+    canlib_circular_buffer<primary_message_BRUSA_TEMP, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_TEMP;
+    canlib_circular_buffer<primary_message_BRUSA_ERR, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ERR;
+    canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_HV_CHIMERA;
+    canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> ECU_CHIMERA;
 } primary_proto_pack;
 
 void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
@@ -861,6 +869,54 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
+        case 618: {
+            primary_message_BRUSA_NLG5_CTL* msg = (primary_message_BRUSA_NLG5_CTL*) (*map)[index].message_raw;
+            primary::BRUSA_NLG5_CTL* proto_msg = pack->add_brusa_nlg5_ctl();
+            break;
+        }
+
+        case 610: {
+            primary_message_BRUSA_ST* msg = (primary_message_BRUSA_ST*) (*map)[index].message_raw;
+            primary::BRUSA_ST* proto_msg = pack->add_brusa_st();
+            break;
+        }
+
+        case 611: {
+            primary_message_BRUSA_ACT_I* msg = (primary_message_BRUSA_ACT_I*) (*map)[index].message_raw;
+            primary::BRUSA_ACT_I* proto_msg = pack->add_brusa_act_i();
+            break;
+        }
+
+        case 612: {
+            primary_message_BRUSA_ACT_II* msg = (primary_message_BRUSA_ACT_II*) (*map)[index].message_raw;
+            primary::BRUSA_ACT_II* proto_msg = pack->add_brusa_act_ii();
+            break;
+        }
+
+        case 613: {
+            primary_message_BRUSA_TEMP* msg = (primary_message_BRUSA_TEMP*) (*map)[index].message_raw;
+            primary::BRUSA_TEMP* proto_msg = pack->add_brusa_temp();
+            break;
+        }
+
+        case 614: {
+            primary_message_BRUSA_ERR* msg = (primary_message_BRUSA_ERR*) (*map)[index].message_raw;
+            primary::BRUSA_ERR* proto_msg = pack->add_brusa_err();
+            break;
+        }
+
+        case 170: {
+            primary_message_BMS_HV_CHIMERA* msg = (primary_message_BMS_HV_CHIMERA*) (*map)[index].message_raw;
+            primary::BMS_HV_CHIMERA* proto_msg = pack->add_bms_hv_chimera();
+            break;
+        }
+
+        case 85: {
+            primary_message_ECU_CHIMERA* msg = (primary_message_ECU_CHIMERA*) (*map)[index].message_raw;
+            primary::ECU_CHIMERA* proto_msg = pack->add_ecu_chimera();
+            break;
+        }
+
     }
 }
 
@@ -1387,6 +1443,62 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_5_RX.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_nlg5_ctl_size(); i++){
+        static primary_message_BRUSA_NLG5_CTL instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_nlg5_ctl(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_NLG5_CTL.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_st_size(); i++){
+        static primary_message_BRUSA_ST instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_st(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_ST.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_act_i_size(); i++){
+        static primary_message_BRUSA_ACT_I instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_act_i(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_ACT_I.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_act_ii_size(); i++){
+        static primary_message_BRUSA_ACT_II instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_act_ii(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_ACT_II.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_temp_size(); i++){
+        static primary_message_BRUSA_TEMP instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_temp(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_TEMP.push(instance);
+    }
+    for(int i = 0; i < pack->brusa_err_size(); i++){
+        static primary_message_BRUSA_ERR instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->brusa_err(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BRUSA_ERR.push(instance);
+    }
+    for(int i = 0; i < pack->bms_hv_chimera_size(); i++){
+        static primary_message_BMS_HV_CHIMERA instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->bms_hv_chimera(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BMS_HV_CHIMERA.push(instance);
+    }
+    for(int i = 0; i < pack->ecu_chimera_size(); i++){
+        static primary_message_ECU_CHIMERA instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->ecu_chimera(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->ECU_CHIMERA.push(instance);
     }
 }
 

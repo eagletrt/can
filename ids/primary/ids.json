@@ -224,6 +224,30 @@
                 },
                 "FLASH_CELLBOARD_5_RX": {
                     "FLASH_CELLBOARD_5_RX": 27
+                },
+                "BRUSA_NLG5_CTL": {
+                    "BRUSA_NLG5_CTL": 618
+                },
+                "BRUSA_ST": {
+                    "BRUSA_ST": 610
+                },
+                "BRUSA_ACT_I": {
+                    "BRUSA_ACT_I": 611
+                },
+                "BRUSA_ACT_II": {
+                    "BRUSA_ACT_II": 612
+                },
+                "BRUSA_TEMP": {
+                    "BRUSA_TEMP": 613
+                },
+                "BRUSA_ERR": {
+                    "BRUSA_ERR": 614
+                },
+                "BMS_HV_CHIMERA": {
+                    "BMS_HV_CHIMERA": 170
+                },
+                "ECU_CHIMERA": {
+                    "ECU_CHIMERA": 85
                 }
             }
         }

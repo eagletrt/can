@@ -46,9 +46,30 @@ struct TableStruct_primary_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_primary_2eproto;
 namespace primary {
+class BMS_HV_CHIMERA;
+struct BMS_HV_CHIMERADefaultTypeInternal;
+extern BMS_HV_CHIMERADefaultTypeInternal _BMS_HV_CHIMERA_default_instance_;
 class BMS_HV_JMP_TO_BLT;
 struct BMS_HV_JMP_TO_BLTDefaultTypeInternal;
 extern BMS_HV_JMP_TO_BLTDefaultTypeInternal _BMS_HV_JMP_TO_BLT_default_instance_;
+class BRUSA_ACT_I;
+struct BRUSA_ACT_IDefaultTypeInternal;
+extern BRUSA_ACT_IDefaultTypeInternal _BRUSA_ACT_I_default_instance_;
+class BRUSA_ACT_II;
+struct BRUSA_ACT_IIDefaultTypeInternal;
+extern BRUSA_ACT_IIDefaultTypeInternal _BRUSA_ACT_II_default_instance_;
+class BRUSA_ERR;
+struct BRUSA_ERRDefaultTypeInternal;
+extern BRUSA_ERRDefaultTypeInternal _BRUSA_ERR_default_instance_;
+class BRUSA_NLG5_CTL;
+struct BRUSA_NLG5_CTLDefaultTypeInternal;
+extern BRUSA_NLG5_CTLDefaultTypeInternal _BRUSA_NLG5_CTL_default_instance_;
+class BRUSA_ST;
+struct BRUSA_STDefaultTypeInternal;
+extern BRUSA_STDefaultTypeInternal _BRUSA_ST_default_instance_;
+class BRUSA_TEMP;
+struct BRUSA_TEMPDefaultTypeInternal;
+extern BRUSA_TEMPDefaultTypeInternal _BRUSA_TEMP_default_instance_;
 class CAR_STATUS;
 struct CAR_STATUSDefaultTypeInternal;
 extern CAR_STATUSDefaultTypeInternal _CAR_STATUS_default_instance_;
@@ -61,6 +82,9 @@ extern DAS_ERRORSDefaultTypeInternal _DAS_ERRORS_default_instance_;
 class DAS_VERSION;
 struct DAS_VERSIONDefaultTypeInternal;
 extern DAS_VERSIONDefaultTypeInternal _DAS_VERSION_default_instance_;
+class ECU_CHIMERA;
+struct ECU_CHIMERADefaultTypeInternal;
+extern ECU_CHIMERADefaultTypeInternal _ECU_CHIMERA_default_instance_;
 class FLASH_CELLBOARD_0_RX;
 struct FLASH_CELLBOARD_0_RXDefaultTypeInternal;
 extern FLASH_CELLBOARD_0_RXDefaultTypeInternal _FLASH_CELLBOARD_0_RX_default_instance_;
@@ -225,11 +249,19 @@ struct TS_STATUSDefaultTypeInternal;
 extern TS_STATUSDefaultTypeInternal _TS_STATUS_default_instance_;
 }  // namespace primary
 PROTOBUF_NAMESPACE_OPEN
+template<> ::primary::BMS_HV_CHIMERA* Arena::CreateMaybeMessage<::primary::BMS_HV_CHIMERA>(Arena*);
 template<> ::primary::BMS_HV_JMP_TO_BLT* Arena::CreateMaybeMessage<::primary::BMS_HV_JMP_TO_BLT>(Arena*);
+template<> ::primary::BRUSA_ACT_I* Arena::CreateMaybeMessage<::primary::BRUSA_ACT_I>(Arena*);
+template<> ::primary::BRUSA_ACT_II* Arena::CreateMaybeMessage<::primary::BRUSA_ACT_II>(Arena*);
+template<> ::primary::BRUSA_ERR* Arena::CreateMaybeMessage<::primary::BRUSA_ERR>(Arena*);
+template<> ::primary::BRUSA_NLG5_CTL* Arena::CreateMaybeMessage<::primary::BRUSA_NLG5_CTL>(Arena*);
+template<> ::primary::BRUSA_ST* Arena::CreateMaybeMessage<::primary::BRUSA_ST>(Arena*);
+template<> ::primary::BRUSA_TEMP* Arena::CreateMaybeMessage<::primary::BRUSA_TEMP>(Arena*);
 template<> ::primary::CAR_STATUS* Arena::CreateMaybeMessage<::primary::CAR_STATUS>(Arena*);
 template<> ::primary::COOLING_STATUS* Arena::CreateMaybeMessage<::primary::COOLING_STATUS>(Arena*);
 template<> ::primary::DAS_ERRORS* Arena::CreateMaybeMessage<::primary::DAS_ERRORS>(Arena*);
 template<> ::primary::DAS_VERSION* Arena::CreateMaybeMessage<::primary::DAS_VERSION>(Arena*);
+template<> ::primary::ECU_CHIMERA* Arena::CreateMaybeMessage<::primary::ECU_CHIMERA>(Arena*);
 template<> ::primary::FLASH_CELLBOARD_0_RX* Arena::CreateMaybeMessage<::primary::FLASH_CELLBOARD_0_RX>(Arena*);
 template<> ::primary::FLASH_CELLBOARD_0_TX* Arena::CreateMaybeMessage<::primary::FLASH_CELLBOARD_0_TX>(Arena*);
 template<> ::primary::FLASH_CELLBOARD_1_RX* Arena::CreateMaybeMessage<::primary::FLASH_CELLBOARD_1_RX>(Arena*);
@@ -10157,6 +10189,1150 @@ class FLASH_CELLBOARD_5_RX final :
 };
 // -------------------------------------------------------------------
 
+class BRUSA_NLG5_CTL final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_NLG5_CTL) */ {
+ public:
+  inline BRUSA_NLG5_CTL() : BRUSA_NLG5_CTL(nullptr) {}
+  ~BRUSA_NLG5_CTL() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_NLG5_CTL(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_NLG5_CTL(const BRUSA_NLG5_CTL& from);
+  BRUSA_NLG5_CTL(BRUSA_NLG5_CTL&& from) noexcept
+    : BRUSA_NLG5_CTL() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_NLG5_CTL& operator=(const BRUSA_NLG5_CTL& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_NLG5_CTL& operator=(BRUSA_NLG5_CTL&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_NLG5_CTL& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_NLG5_CTL* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_NLG5_CTL*>(
+               &_BRUSA_NLG5_CTL_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    58;
+
+  friend void swap(BRUSA_NLG5_CTL& a, BRUSA_NLG5_CTL& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_NLG5_CTL* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_NLG5_CTL* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_NLG5_CTL* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_NLG5_CTL>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_NLG5_CTL& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_NLG5_CTL& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_NLG5_CTL* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_NLG5_CTL";
+  }
+  protected:
+  explicit BRUSA_NLG5_CTL(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_NLG5_CTL)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BRUSA_ST final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_ST) */ {
+ public:
+  inline BRUSA_ST() : BRUSA_ST(nullptr) {}
+  ~BRUSA_ST() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_ST(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_ST(const BRUSA_ST& from);
+  BRUSA_ST(BRUSA_ST&& from) noexcept
+    : BRUSA_ST() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_ST& operator=(const BRUSA_ST& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_ST& operator=(BRUSA_ST&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_ST& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_ST* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_ST*>(
+               &_BRUSA_ST_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    59;
+
+  friend void swap(BRUSA_ST& a, BRUSA_ST& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_ST* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_ST* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_ST* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_ST>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_ST& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_ST& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_ST* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_ST";
+  }
+  protected:
+  explicit BRUSA_ST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_ST)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BRUSA_ACT_I final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_ACT_I) */ {
+ public:
+  inline BRUSA_ACT_I() : BRUSA_ACT_I(nullptr) {}
+  ~BRUSA_ACT_I() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_ACT_I(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_ACT_I(const BRUSA_ACT_I& from);
+  BRUSA_ACT_I(BRUSA_ACT_I&& from) noexcept
+    : BRUSA_ACT_I() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_ACT_I& operator=(const BRUSA_ACT_I& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_ACT_I& operator=(BRUSA_ACT_I&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_ACT_I& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_ACT_I* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_ACT_I*>(
+               &_BRUSA_ACT_I_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    60;
+
+  friend void swap(BRUSA_ACT_I& a, BRUSA_ACT_I& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_ACT_I* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_ACT_I* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_ACT_I* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_ACT_I>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_ACT_I& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_ACT_I& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_ACT_I* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_ACT_I";
+  }
+  protected:
+  explicit BRUSA_ACT_I(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_ACT_I)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BRUSA_ACT_II final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_ACT_II) */ {
+ public:
+  inline BRUSA_ACT_II() : BRUSA_ACT_II(nullptr) {}
+  ~BRUSA_ACT_II() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_ACT_II(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_ACT_II(const BRUSA_ACT_II& from);
+  BRUSA_ACT_II(BRUSA_ACT_II&& from) noexcept
+    : BRUSA_ACT_II() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_ACT_II& operator=(const BRUSA_ACT_II& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_ACT_II& operator=(BRUSA_ACT_II&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_ACT_II& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_ACT_II* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_ACT_II*>(
+               &_BRUSA_ACT_II_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    61;
+
+  friend void swap(BRUSA_ACT_II& a, BRUSA_ACT_II& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_ACT_II* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_ACT_II* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_ACT_II* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_ACT_II>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_ACT_II& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_ACT_II& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_ACT_II* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_ACT_II";
+  }
+  protected:
+  explicit BRUSA_ACT_II(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_ACT_II)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BRUSA_TEMP final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_TEMP) */ {
+ public:
+  inline BRUSA_TEMP() : BRUSA_TEMP(nullptr) {}
+  ~BRUSA_TEMP() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_TEMP(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_TEMP(const BRUSA_TEMP& from);
+  BRUSA_TEMP(BRUSA_TEMP&& from) noexcept
+    : BRUSA_TEMP() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_TEMP& operator=(const BRUSA_TEMP& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_TEMP& operator=(BRUSA_TEMP&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_TEMP& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_TEMP* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_TEMP*>(
+               &_BRUSA_TEMP_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    62;
+
+  friend void swap(BRUSA_TEMP& a, BRUSA_TEMP& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_TEMP* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_TEMP* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_TEMP* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_TEMP>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_TEMP& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_TEMP& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_TEMP* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_TEMP";
+  }
+  protected:
+  explicit BRUSA_TEMP(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_TEMP)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BRUSA_ERR final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BRUSA_ERR) */ {
+ public:
+  inline BRUSA_ERR() : BRUSA_ERR(nullptr) {}
+  ~BRUSA_ERR() override;
+  explicit PROTOBUF_CONSTEXPR BRUSA_ERR(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BRUSA_ERR(const BRUSA_ERR& from);
+  BRUSA_ERR(BRUSA_ERR&& from) noexcept
+    : BRUSA_ERR() {
+    *this = ::std::move(from);
+  }
+
+  inline BRUSA_ERR& operator=(const BRUSA_ERR& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BRUSA_ERR& operator=(BRUSA_ERR&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BRUSA_ERR& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BRUSA_ERR* internal_default_instance() {
+    return reinterpret_cast<const BRUSA_ERR*>(
+               &_BRUSA_ERR_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    63;
+
+  friend void swap(BRUSA_ERR& a, BRUSA_ERR& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BRUSA_ERR* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BRUSA_ERR* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BRUSA_ERR* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BRUSA_ERR>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BRUSA_ERR& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BRUSA_ERR& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BRUSA_ERR* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BRUSA_ERR";
+  }
+  protected:
+  explicit BRUSA_ERR(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BRUSA_ERR)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BMS_HV_CHIMERA final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BMS_HV_CHIMERA) */ {
+ public:
+  inline BMS_HV_CHIMERA() : BMS_HV_CHIMERA(nullptr) {}
+  ~BMS_HV_CHIMERA() override;
+  explicit PROTOBUF_CONSTEXPR BMS_HV_CHIMERA(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BMS_HV_CHIMERA(const BMS_HV_CHIMERA& from);
+  BMS_HV_CHIMERA(BMS_HV_CHIMERA&& from) noexcept
+    : BMS_HV_CHIMERA() {
+    *this = ::std::move(from);
+  }
+
+  inline BMS_HV_CHIMERA& operator=(const BMS_HV_CHIMERA& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BMS_HV_CHIMERA& operator=(BMS_HV_CHIMERA&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BMS_HV_CHIMERA& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BMS_HV_CHIMERA* internal_default_instance() {
+    return reinterpret_cast<const BMS_HV_CHIMERA*>(
+               &_BMS_HV_CHIMERA_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    64;
+
+  friend void swap(BMS_HV_CHIMERA& a, BMS_HV_CHIMERA& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BMS_HV_CHIMERA* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BMS_HV_CHIMERA* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BMS_HV_CHIMERA* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BMS_HV_CHIMERA>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BMS_HV_CHIMERA& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const BMS_HV_CHIMERA& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BMS_HV_CHIMERA* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.BMS_HV_CHIMERA";
+  }
+  protected:
+  explicit BMS_HV_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.BMS_HV_CHIMERA)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ECU_CHIMERA final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.ECU_CHIMERA) */ {
+ public:
+  inline ECU_CHIMERA() : ECU_CHIMERA(nullptr) {}
+  ~ECU_CHIMERA() override;
+  explicit PROTOBUF_CONSTEXPR ECU_CHIMERA(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ECU_CHIMERA(const ECU_CHIMERA& from);
+  ECU_CHIMERA(ECU_CHIMERA&& from) noexcept
+    : ECU_CHIMERA() {
+    *this = ::std::move(from);
+  }
+
+  inline ECU_CHIMERA& operator=(const ECU_CHIMERA& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ECU_CHIMERA& operator=(ECU_CHIMERA&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ECU_CHIMERA& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ECU_CHIMERA* internal_default_instance() {
+    return reinterpret_cast<const ECU_CHIMERA*>(
+               &_ECU_CHIMERA_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    65;
+
+  friend void swap(ECU_CHIMERA& a, ECU_CHIMERA& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ECU_CHIMERA* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ECU_CHIMERA* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ECU_CHIMERA* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ECU_CHIMERA>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ECU_CHIMERA& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ECU_CHIMERA& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ECU_CHIMERA* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.ECU_CHIMERA";
+  }
+  protected:
+  explicit ECU_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.ECU_CHIMERA)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.Pack) */ {
  public:
@@ -10205,7 +11381,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    66;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -10334,6 +11510,14 @@ class Pack final :
     kFLASHCELLBOARD4RXFieldNumber = 56,
     kFLASHCELLBOARD5TXFieldNumber = 57,
     kFLASHCELLBOARD5RXFieldNumber = 58,
+    kBRUSANLG5CTLFieldNumber = 59,
+    kBRUSASTFieldNumber = 60,
+    kBRUSAACTIFieldNumber = 61,
+    kBRUSAACTIIFieldNumber = 62,
+    kBRUSATEMPFieldNumber = 63,
+    kBRUSAERRFieldNumber = 64,
+    kBMSHVCHIMERAFieldNumber = 65,
+    kECUCHIMERAFieldNumber = 66,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -11379,6 +12563,150 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX >&
       flash_cellboard_5_rx() const;
 
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+  int brusa_nlg5_ctl_size() const;
+  private:
+  int _internal_brusa_nlg5_ctl_size() const;
+  public:
+  void clear_brusa_nlg5_ctl();
+  ::primary::BRUSA_NLG5_CTL* mutable_brusa_nlg5_ctl(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >*
+      mutable_brusa_nlg5_ctl();
+  private:
+  const ::primary::BRUSA_NLG5_CTL& _internal_brusa_nlg5_ctl(int index) const;
+  ::primary::BRUSA_NLG5_CTL* _internal_add_brusa_nlg5_ctl();
+  public:
+  const ::primary::BRUSA_NLG5_CTL& brusa_nlg5_ctl(int index) const;
+  ::primary::BRUSA_NLG5_CTL* add_brusa_nlg5_ctl();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >&
+      brusa_nlg5_ctl() const;
+
+  // repeated .primary.BRUSA_ST BRUSA_ST = 60;
+  int brusa_st_size() const;
+  private:
+  int _internal_brusa_st_size() const;
+  public:
+  void clear_brusa_st();
+  ::primary::BRUSA_ST* mutable_brusa_st(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >*
+      mutable_brusa_st();
+  private:
+  const ::primary::BRUSA_ST& _internal_brusa_st(int index) const;
+  ::primary::BRUSA_ST* _internal_add_brusa_st();
+  public:
+  const ::primary::BRUSA_ST& brusa_st(int index) const;
+  ::primary::BRUSA_ST* add_brusa_st();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >&
+      brusa_st() const;
+
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 61;
+  int brusa_act_i_size() const;
+  private:
+  int _internal_brusa_act_i_size() const;
+  public:
+  void clear_brusa_act_i();
+  ::primary::BRUSA_ACT_I* mutable_brusa_act_i(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >*
+      mutable_brusa_act_i();
+  private:
+  const ::primary::BRUSA_ACT_I& _internal_brusa_act_i(int index) const;
+  ::primary::BRUSA_ACT_I* _internal_add_brusa_act_i();
+  public:
+  const ::primary::BRUSA_ACT_I& brusa_act_i(int index) const;
+  ::primary::BRUSA_ACT_I* add_brusa_act_i();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >&
+      brusa_act_i() const;
+
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 62;
+  int brusa_act_ii_size() const;
+  private:
+  int _internal_brusa_act_ii_size() const;
+  public:
+  void clear_brusa_act_ii();
+  ::primary::BRUSA_ACT_II* mutable_brusa_act_ii(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >*
+      mutable_brusa_act_ii();
+  private:
+  const ::primary::BRUSA_ACT_II& _internal_brusa_act_ii(int index) const;
+  ::primary::BRUSA_ACT_II* _internal_add_brusa_act_ii();
+  public:
+  const ::primary::BRUSA_ACT_II& brusa_act_ii(int index) const;
+  ::primary::BRUSA_ACT_II* add_brusa_act_ii();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >&
+      brusa_act_ii() const;
+
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 63;
+  int brusa_temp_size() const;
+  private:
+  int _internal_brusa_temp_size() const;
+  public:
+  void clear_brusa_temp();
+  ::primary::BRUSA_TEMP* mutable_brusa_temp(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >*
+      mutable_brusa_temp();
+  private:
+  const ::primary::BRUSA_TEMP& _internal_brusa_temp(int index) const;
+  ::primary::BRUSA_TEMP* _internal_add_brusa_temp();
+  public:
+  const ::primary::BRUSA_TEMP& brusa_temp(int index) const;
+  ::primary::BRUSA_TEMP* add_brusa_temp();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >&
+      brusa_temp() const;
+
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 64;
+  int brusa_err_size() const;
+  private:
+  int _internal_brusa_err_size() const;
+  public:
+  void clear_brusa_err();
+  ::primary::BRUSA_ERR* mutable_brusa_err(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >*
+      mutable_brusa_err();
+  private:
+  const ::primary::BRUSA_ERR& _internal_brusa_err(int index) const;
+  ::primary::BRUSA_ERR* _internal_add_brusa_err();
+  public:
+  const ::primary::BRUSA_ERR& brusa_err(int index) const;
+  ::primary::BRUSA_ERR* add_brusa_err();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >&
+      brusa_err() const;
+
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+  int bms_hv_chimera_size() const;
+  private:
+  int _internal_bms_hv_chimera_size() const;
+  public:
+  void clear_bms_hv_chimera();
+  ::primary::BMS_HV_CHIMERA* mutable_bms_hv_chimera(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >*
+      mutable_bms_hv_chimera();
+  private:
+  const ::primary::BMS_HV_CHIMERA& _internal_bms_hv_chimera(int index) const;
+  ::primary::BMS_HV_CHIMERA* _internal_add_bms_hv_chimera();
+  public:
+  const ::primary::BMS_HV_CHIMERA& bms_hv_chimera(int index) const;
+  ::primary::BMS_HV_CHIMERA* add_bms_hv_chimera();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
+      bms_hv_chimera() const;
+
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 66;
+  int ecu_chimera_size() const;
+  private:
+  int _internal_ecu_chimera_size() const;
+  public:
+  void clear_ecu_chimera();
+  ::primary::ECU_CHIMERA* mutable_ecu_chimera(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >*
+      mutable_ecu_chimera();
+  private:
+  const ::primary::ECU_CHIMERA& _internal_ecu_chimera(int index) const;
+  ::primary::ECU_CHIMERA* _internal_add_ecu_chimera();
+  public:
+  const ::primary::ECU_CHIMERA& ecu_chimera(int index) const;
+  ::primary::ECU_CHIMERA* add_ecu_chimera();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >&
+      ecu_chimera() const;
+
   // @@protoc_insertion_point(class_scope:primary.Pack)
  private:
   class _Internal;
@@ -11444,6 +12772,14 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX > flash_cellboard_4_rx_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX > flash_cellboard_5_tx_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX > flash_cellboard_5_rx_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL > brusa_nlg5_ctl_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST > brusa_st_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I > brusa_act_i_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II > brusa_act_ii_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP > brusa_temp_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR > brusa_err_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA > bms_hv_chimera_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA > ecu_chimera_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -15188,6 +16524,198 @@ inline void FLASH_CELLBOARD_5_RX::set__inner_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
+// BRUSA_NLG5_CTL
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_NLG5_CTL::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_NLG5_CTL::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_NLG5_CTL::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_NLG5_CTL._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_NLG5_CTL::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_NLG5_CTL::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_NLG5_CTL._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BRUSA_ST
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_ST::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_ST::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_ST::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_ST._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_ST::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_ST::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_ST._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BRUSA_ACT_I
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_ACT_I::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_ACT_I::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_ACT_I::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_ACT_I._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_ACT_I::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_ACT_I::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_ACT_I._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BRUSA_ACT_II
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_ACT_II::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_ACT_II::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_ACT_II::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_ACT_II._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_ACT_II::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_ACT_II::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_ACT_II._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BRUSA_TEMP
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_TEMP::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_TEMP::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_TEMP::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_TEMP._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_TEMP::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_TEMP::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_TEMP._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BRUSA_ERR
+
+// uint64 _inner_timestamp = 1;
+inline void BRUSA_ERR::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BRUSA_ERR::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BRUSA_ERR::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BRUSA_ERR._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BRUSA_ERR::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BRUSA_ERR::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BRUSA_ERR._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// BMS_HV_CHIMERA
+
+// uint64 _inner_timestamp = 1;
+inline void BMS_HV_CHIMERA::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t BMS_HV_CHIMERA::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t BMS_HV_CHIMERA::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.BMS_HV_CHIMERA._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void BMS_HV_CHIMERA::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void BMS_HV_CHIMERA::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.BMS_HV_CHIMERA._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// ECU_CHIMERA
+
+// uint64 _inner_timestamp = 1;
+inline void ECU_CHIMERA::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t ECU_CHIMERA::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t ECU_CHIMERA::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.ECU_CHIMERA._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void ECU_CHIMERA::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void ECU_CHIMERA::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.ECU_CHIMERA._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
@@ -17510,9 +19038,345 @@ Pack::flash_cellboard_5_rx() const {
   return flash_cellboard_5_rx_;
 }
 
+// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 59;
+inline int Pack::_internal_brusa_nlg5_ctl_size() const {
+  return brusa_nlg5_ctl_.size();
+}
+inline int Pack::brusa_nlg5_ctl_size() const {
+  return _internal_brusa_nlg5_ctl_size();
+}
+inline void Pack::clear_brusa_nlg5_ctl() {
+  brusa_nlg5_ctl_.Clear();
+}
+inline ::primary::BRUSA_NLG5_CTL* Pack::mutable_brusa_nlg5_ctl(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_NLG5_CTL)
+  return brusa_nlg5_ctl_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >*
+Pack::mutable_brusa_nlg5_ctl() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_NLG5_CTL)
+  return &brusa_nlg5_ctl_;
+}
+inline const ::primary::BRUSA_NLG5_CTL& Pack::_internal_brusa_nlg5_ctl(int index) const {
+  return brusa_nlg5_ctl_.Get(index);
+}
+inline const ::primary::BRUSA_NLG5_CTL& Pack::brusa_nlg5_ctl(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_NLG5_CTL)
+  return _internal_brusa_nlg5_ctl(index);
+}
+inline ::primary::BRUSA_NLG5_CTL* Pack::_internal_add_brusa_nlg5_ctl() {
+  return brusa_nlg5_ctl_.Add();
+}
+inline ::primary::BRUSA_NLG5_CTL* Pack::add_brusa_nlg5_ctl() {
+  ::primary::BRUSA_NLG5_CTL* _add = _internal_add_brusa_nlg5_ctl();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_NLG5_CTL)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >&
+Pack::brusa_nlg5_ctl() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_NLG5_CTL)
+  return brusa_nlg5_ctl_;
+}
+
+// repeated .primary.BRUSA_ST BRUSA_ST = 60;
+inline int Pack::_internal_brusa_st_size() const {
+  return brusa_st_.size();
+}
+inline int Pack::brusa_st_size() const {
+  return _internal_brusa_st_size();
+}
+inline void Pack::clear_brusa_st() {
+  brusa_st_.Clear();
+}
+inline ::primary::BRUSA_ST* Pack::mutable_brusa_st(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_ST)
+  return brusa_st_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >*
+Pack::mutable_brusa_st() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_ST)
+  return &brusa_st_;
+}
+inline const ::primary::BRUSA_ST& Pack::_internal_brusa_st(int index) const {
+  return brusa_st_.Get(index);
+}
+inline const ::primary::BRUSA_ST& Pack::brusa_st(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_ST)
+  return _internal_brusa_st(index);
+}
+inline ::primary::BRUSA_ST* Pack::_internal_add_brusa_st() {
+  return brusa_st_.Add();
+}
+inline ::primary::BRUSA_ST* Pack::add_brusa_st() {
+  ::primary::BRUSA_ST* _add = _internal_add_brusa_st();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_ST)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >&
+Pack::brusa_st() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_ST)
+  return brusa_st_;
+}
+
+// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 61;
+inline int Pack::_internal_brusa_act_i_size() const {
+  return brusa_act_i_.size();
+}
+inline int Pack::brusa_act_i_size() const {
+  return _internal_brusa_act_i_size();
+}
+inline void Pack::clear_brusa_act_i() {
+  brusa_act_i_.Clear();
+}
+inline ::primary::BRUSA_ACT_I* Pack::mutable_brusa_act_i(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_ACT_I)
+  return brusa_act_i_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >*
+Pack::mutable_brusa_act_i() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_ACT_I)
+  return &brusa_act_i_;
+}
+inline const ::primary::BRUSA_ACT_I& Pack::_internal_brusa_act_i(int index) const {
+  return brusa_act_i_.Get(index);
+}
+inline const ::primary::BRUSA_ACT_I& Pack::brusa_act_i(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_ACT_I)
+  return _internal_brusa_act_i(index);
+}
+inline ::primary::BRUSA_ACT_I* Pack::_internal_add_brusa_act_i() {
+  return brusa_act_i_.Add();
+}
+inline ::primary::BRUSA_ACT_I* Pack::add_brusa_act_i() {
+  ::primary::BRUSA_ACT_I* _add = _internal_add_brusa_act_i();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_ACT_I)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >&
+Pack::brusa_act_i() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_ACT_I)
+  return brusa_act_i_;
+}
+
+// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 62;
+inline int Pack::_internal_brusa_act_ii_size() const {
+  return brusa_act_ii_.size();
+}
+inline int Pack::brusa_act_ii_size() const {
+  return _internal_brusa_act_ii_size();
+}
+inline void Pack::clear_brusa_act_ii() {
+  brusa_act_ii_.Clear();
+}
+inline ::primary::BRUSA_ACT_II* Pack::mutable_brusa_act_ii(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_ACT_II)
+  return brusa_act_ii_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >*
+Pack::mutable_brusa_act_ii() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_ACT_II)
+  return &brusa_act_ii_;
+}
+inline const ::primary::BRUSA_ACT_II& Pack::_internal_brusa_act_ii(int index) const {
+  return brusa_act_ii_.Get(index);
+}
+inline const ::primary::BRUSA_ACT_II& Pack::brusa_act_ii(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_ACT_II)
+  return _internal_brusa_act_ii(index);
+}
+inline ::primary::BRUSA_ACT_II* Pack::_internal_add_brusa_act_ii() {
+  return brusa_act_ii_.Add();
+}
+inline ::primary::BRUSA_ACT_II* Pack::add_brusa_act_ii() {
+  ::primary::BRUSA_ACT_II* _add = _internal_add_brusa_act_ii();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_ACT_II)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >&
+Pack::brusa_act_ii() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_ACT_II)
+  return brusa_act_ii_;
+}
+
+// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 63;
+inline int Pack::_internal_brusa_temp_size() const {
+  return brusa_temp_.size();
+}
+inline int Pack::brusa_temp_size() const {
+  return _internal_brusa_temp_size();
+}
+inline void Pack::clear_brusa_temp() {
+  brusa_temp_.Clear();
+}
+inline ::primary::BRUSA_TEMP* Pack::mutable_brusa_temp(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_TEMP)
+  return brusa_temp_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >*
+Pack::mutable_brusa_temp() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_TEMP)
+  return &brusa_temp_;
+}
+inline const ::primary::BRUSA_TEMP& Pack::_internal_brusa_temp(int index) const {
+  return brusa_temp_.Get(index);
+}
+inline const ::primary::BRUSA_TEMP& Pack::brusa_temp(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_TEMP)
+  return _internal_brusa_temp(index);
+}
+inline ::primary::BRUSA_TEMP* Pack::_internal_add_brusa_temp() {
+  return brusa_temp_.Add();
+}
+inline ::primary::BRUSA_TEMP* Pack::add_brusa_temp() {
+  ::primary::BRUSA_TEMP* _add = _internal_add_brusa_temp();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_TEMP)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >&
+Pack::brusa_temp() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_TEMP)
+  return brusa_temp_;
+}
+
+// repeated .primary.BRUSA_ERR BRUSA_ERR = 64;
+inline int Pack::_internal_brusa_err_size() const {
+  return brusa_err_.size();
+}
+inline int Pack::brusa_err_size() const {
+  return _internal_brusa_err_size();
+}
+inline void Pack::clear_brusa_err() {
+  brusa_err_.Clear();
+}
+inline ::primary::BRUSA_ERR* Pack::mutable_brusa_err(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BRUSA_ERR)
+  return brusa_err_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >*
+Pack::mutable_brusa_err() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BRUSA_ERR)
+  return &brusa_err_;
+}
+inline const ::primary::BRUSA_ERR& Pack::_internal_brusa_err(int index) const {
+  return brusa_err_.Get(index);
+}
+inline const ::primary::BRUSA_ERR& Pack::brusa_err(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BRUSA_ERR)
+  return _internal_brusa_err(index);
+}
+inline ::primary::BRUSA_ERR* Pack::_internal_add_brusa_err() {
+  return brusa_err_.Add();
+}
+inline ::primary::BRUSA_ERR* Pack::add_brusa_err() {
+  ::primary::BRUSA_ERR* _add = _internal_add_brusa_err();
+  // @@protoc_insertion_point(field_add:primary.Pack.BRUSA_ERR)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >&
+Pack::brusa_err() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BRUSA_ERR)
+  return brusa_err_;
+}
+
+// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 65;
+inline int Pack::_internal_bms_hv_chimera_size() const {
+  return bms_hv_chimera_.size();
+}
+inline int Pack::bms_hv_chimera_size() const {
+  return _internal_bms_hv_chimera_size();
+}
+inline void Pack::clear_bms_hv_chimera() {
+  bms_hv_chimera_.Clear();
+}
+inline ::primary::BMS_HV_CHIMERA* Pack::mutable_bms_hv_chimera(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.BMS_HV_CHIMERA)
+  return bms_hv_chimera_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >*
+Pack::mutable_bms_hv_chimera() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BMS_HV_CHIMERA)
+  return &bms_hv_chimera_;
+}
+inline const ::primary::BMS_HV_CHIMERA& Pack::_internal_bms_hv_chimera(int index) const {
+  return bms_hv_chimera_.Get(index);
+}
+inline const ::primary::BMS_HV_CHIMERA& Pack::bms_hv_chimera(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.BMS_HV_CHIMERA)
+  return _internal_bms_hv_chimera(index);
+}
+inline ::primary::BMS_HV_CHIMERA* Pack::_internal_add_bms_hv_chimera() {
+  return bms_hv_chimera_.Add();
+}
+inline ::primary::BMS_HV_CHIMERA* Pack::add_bms_hv_chimera() {
+  ::primary::BMS_HV_CHIMERA* _add = _internal_add_bms_hv_chimera();
+  // @@protoc_insertion_point(field_add:primary.Pack.BMS_HV_CHIMERA)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
+Pack::bms_hv_chimera() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.BMS_HV_CHIMERA)
+  return bms_hv_chimera_;
+}
+
+// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 66;
+inline int Pack::_internal_ecu_chimera_size() const {
+  return ecu_chimera_.size();
+}
+inline int Pack::ecu_chimera_size() const {
+  return _internal_ecu_chimera_size();
+}
+inline void Pack::clear_ecu_chimera() {
+  ecu_chimera_.Clear();
+}
+inline ::primary::ECU_CHIMERA* Pack::mutable_ecu_chimera(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.ECU_CHIMERA)
+  return ecu_chimera_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >*
+Pack::mutable_ecu_chimera() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.ECU_CHIMERA)
+  return &ecu_chimera_;
+}
+inline const ::primary::ECU_CHIMERA& Pack::_internal_ecu_chimera(int index) const {
+  return ecu_chimera_.Get(index);
+}
+inline const ::primary::ECU_CHIMERA& Pack::ecu_chimera(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.ECU_CHIMERA)
+  return _internal_ecu_chimera(index);
+}
+inline ::primary::ECU_CHIMERA* Pack::_internal_add_ecu_chimera() {
+  return ecu_chimera_.Add();
+}
+inline ::primary::ECU_CHIMERA* Pack::add_ecu_chimera() {
+  ::primary::ECU_CHIMERA* _add = _internal_add_ecu_chimera();
+  // @@protoc_insertion_point(field_add:primary.Pack.ECU_CHIMERA)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >&
+Pack::ecu_chimera() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.ECU_CHIMERA)
+  return ecu_chimera_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

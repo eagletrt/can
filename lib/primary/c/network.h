@@ -111,7 +111,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 58
+#define primary_MESSAGE_COUNT 66
 
 // Custom types
 
@@ -213,6 +213,14 @@ typedef struct {
 #define primary_INDEX_FLASH_CELLBOARD_4_RX 55
 #define primary_INDEX_FLASH_CELLBOARD_5_TX 56
 #define primary_INDEX_FLASH_CELLBOARD_5_RX 57
+#define primary_INDEX_BRUSA_NLG5_CTL 58
+#define primary_INDEX_BRUSA_ST 59
+#define primary_INDEX_BRUSA_ACT_I 60
+#define primary_INDEX_BRUSA_ACT_II 61
+#define primary_INDEX_BRUSA_TEMP 62
+#define primary_INDEX_BRUSA_ERR 63
+#define primary_INDEX_BMS_HV_CHIMERA 64
+#define primary_INDEX_ECU_CHIMERA 65
 
 // ============== SIZES ============== //
 
@@ -274,6 +282,14 @@ typedef struct {
 #define primary_SIZE_FLASH_CELLBOARD_4_RX 0
 #define primary_SIZE_FLASH_CELLBOARD_5_TX 0
 #define primary_SIZE_FLASH_CELLBOARD_5_RX 0
+#define primary_SIZE_BRUSA_NLG5_CTL 0
+#define primary_SIZE_BRUSA_ST 0
+#define primary_SIZE_BRUSA_ACT_I 0
+#define primary_SIZE_BRUSA_ACT_II 0
+#define primary_SIZE_BRUSA_TEMP 0
+#define primary_SIZE_BRUSA_ERR 0
+#define primary_SIZE_BMS_HV_CHIMERA 0
+#define primary_SIZE_ECU_CHIMERA 0
 
 // ============== BIT SETS =========== //
 
@@ -1046,6 +1062,62 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_FLASH_CELLBOARD_5_RX;
 
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_NLG5_CTL;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_ST;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_ACT_I;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_ACT_II;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_TEMP;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BRUSA_ERR;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BMS_HV_CHIMERA;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_ECU_CHIMERA;
+
 
 typedef union CANLIB_PARKING {
     primary_message_BMS_HV_JMP_TO_BLT _BMS_HV_JMP_TO_BLT;
@@ -1105,6 +1177,14 @@ typedef union CANLIB_PARKING {
     primary_message_FLASH_CELLBOARD_4_RX _FLASH_CELLBOARD_4_RX;
     primary_message_FLASH_CELLBOARD_5_TX _FLASH_CELLBOARD_5_TX;
     primary_message_FLASH_CELLBOARD_5_RX _FLASH_CELLBOARD_5_RX;
+    primary_message_BRUSA_NLG5_CTL _BRUSA_NLG5_CTL;
+    primary_message_BRUSA_ST _BRUSA_ST;
+    primary_message_BRUSA_ACT_I _BRUSA_ACT_I;
+    primary_message_BRUSA_ACT_II _BRUSA_ACT_II;
+    primary_message_BRUSA_TEMP _BRUSA_TEMP;
+    primary_message_BRUSA_ERR _BRUSA_ERR;
+    primary_message_BMS_HV_CHIMERA _BMS_HV_CHIMERA;
+    primary_message_ECU_CHIMERA _ECU_CHIMERA;
 } _primary_all_structs_raw;
 
 typedef union CANLIB_PARKING {
@@ -2832,6 +2912,182 @@ int primary_to_string_file_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_
 int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 
+// ============== BRUSA_NLG5_CTL ============== //
+
+primary_byte_size primary_serialize_BRUSA_NLG5_CTL(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_NLG5_CTL(
+    uint8_t* data,
+    primary_message_BRUSA_NLG5_CTL* message
+);
+void primary_deserialize_BRUSA_NLG5_CTL(
+    primary_message_BRUSA_NLG5_CTL* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_NLG5_CTL(primary_message_BRUSA_NLG5_CTL* message, char* buffer);
+int primary_fields_BRUSA_NLG5_CTL(char* buffer);
+int primary_to_string_file_BRUSA_NLG5_CTL(primary_message_BRUSA_NLG5_CTL* message, FILE* buffer);
+int primary_fields_file_BRUSA_NLG5_CTL(FILE* buffer);
+
+
+// ============== BRUSA_ST ============== //
+
+primary_byte_size primary_serialize_BRUSA_ST(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_ST(
+    uint8_t* data,
+    primary_message_BRUSA_ST* message
+);
+void primary_deserialize_BRUSA_ST(
+    primary_message_BRUSA_ST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_ST(primary_message_BRUSA_ST* message, char* buffer);
+int primary_fields_BRUSA_ST(char* buffer);
+int primary_to_string_file_BRUSA_ST(primary_message_BRUSA_ST* message, FILE* buffer);
+int primary_fields_file_BRUSA_ST(FILE* buffer);
+
+
+// ============== BRUSA_ACT_I ============== //
+
+primary_byte_size primary_serialize_BRUSA_ACT_I(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_ACT_I(
+    uint8_t* data,
+    primary_message_BRUSA_ACT_I* message
+);
+void primary_deserialize_BRUSA_ACT_I(
+    primary_message_BRUSA_ACT_I* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_ACT_I(primary_message_BRUSA_ACT_I* message, char* buffer);
+int primary_fields_BRUSA_ACT_I(char* buffer);
+int primary_to_string_file_BRUSA_ACT_I(primary_message_BRUSA_ACT_I* message, FILE* buffer);
+int primary_fields_file_BRUSA_ACT_I(FILE* buffer);
+
+
+// ============== BRUSA_ACT_II ============== //
+
+primary_byte_size primary_serialize_BRUSA_ACT_II(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_ACT_II(
+    uint8_t* data,
+    primary_message_BRUSA_ACT_II* message
+);
+void primary_deserialize_BRUSA_ACT_II(
+    primary_message_BRUSA_ACT_II* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_ACT_II(primary_message_BRUSA_ACT_II* message, char* buffer);
+int primary_fields_BRUSA_ACT_II(char* buffer);
+int primary_to_string_file_BRUSA_ACT_II(primary_message_BRUSA_ACT_II* message, FILE* buffer);
+int primary_fields_file_BRUSA_ACT_II(FILE* buffer);
+
+
+// ============== BRUSA_TEMP ============== //
+
+primary_byte_size primary_serialize_BRUSA_TEMP(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_TEMP(
+    uint8_t* data,
+    primary_message_BRUSA_TEMP* message
+);
+void primary_deserialize_BRUSA_TEMP(
+    primary_message_BRUSA_TEMP* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_TEMP(primary_message_BRUSA_TEMP* message, char* buffer);
+int primary_fields_BRUSA_TEMP(char* buffer);
+int primary_to_string_file_BRUSA_TEMP(primary_message_BRUSA_TEMP* message, FILE* buffer);
+int primary_fields_file_BRUSA_TEMP(FILE* buffer);
+
+
+// ============== BRUSA_ERR ============== //
+
+primary_byte_size primary_serialize_BRUSA_ERR(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BRUSA_ERR(
+    uint8_t* data,
+    primary_message_BRUSA_ERR* message
+);
+void primary_deserialize_BRUSA_ERR(
+    primary_message_BRUSA_ERR* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BRUSA_ERR(primary_message_BRUSA_ERR* message, char* buffer);
+int primary_fields_BRUSA_ERR(char* buffer);
+int primary_to_string_file_BRUSA_ERR(primary_message_BRUSA_ERR* message, FILE* buffer);
+int primary_fields_file_BRUSA_ERR(FILE* buffer);
+
+
+// ============== BMS_HV_CHIMERA ============== //
+
+primary_byte_size primary_serialize_BMS_HV_CHIMERA(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BMS_HV_CHIMERA(
+    uint8_t* data,
+    primary_message_BMS_HV_CHIMERA* message
+);
+void primary_deserialize_BMS_HV_CHIMERA(
+    primary_message_BMS_HV_CHIMERA* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, char* buffer);
+int primary_fields_BMS_HV_CHIMERA(char* buffer);
+int primary_to_string_file_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, FILE* buffer);
+int primary_fields_file_BMS_HV_CHIMERA(FILE* buffer);
+
+
+// ============== ECU_CHIMERA ============== //
+
+primary_byte_size primary_serialize_ECU_CHIMERA(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_ECU_CHIMERA(
+    uint8_t* data,
+    primary_message_ECU_CHIMERA* message
+);
+void primary_deserialize_ECU_CHIMERA(
+    primary_message_ECU_CHIMERA* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, char* buffer);
+int primary_fields_ECU_CHIMERA(char* buffer);
+int primary_to_string_file_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, FILE* buffer);
+int primary_fields_file_ECU_CHIMERA(FILE* buffer);
+
+
 
 
 // ============== UTILS ============== //
@@ -2897,8 +3153,16 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 25: return primary_INDEX_FLASH_CELLBOARD_4_RX;
         case 26: return primary_INDEX_FLASH_CELLBOARD_5_TX;
         case 27: return primary_INDEX_FLASH_CELLBOARD_5_RX;
+        case 618: return primary_INDEX_BRUSA_NLG5_CTL;
+        case 610: return primary_INDEX_BRUSA_ST;
+        case 611: return primary_INDEX_BRUSA_ACT_I;
+        case 612: return primary_INDEX_BRUSA_ACT_II;
+        case 613: return primary_INDEX_BRUSA_TEMP;
+        case 614: return primary_INDEX_BRUSA_ERR;
+        case 170: return primary_INDEX_BMS_HV_CHIMERA;
+        case 85: return primary_INDEX_ECU_CHIMERA;
     }
-    return 58; // invalid
+    return 66; // invalid
 }
 
 int primary_fields_from_id(canlib_message_id message_id, char *buffer);
@@ -8786,6 +9050,494 @@ int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
     return 0;
 }
 
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_NLG5_CTL(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_NLG5_CTL(
+    uint8_t* data,
+    primary_message_BRUSA_NLG5_CTL* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_NLG5_CTL(
+    primary_message_BRUSA_NLG5_CTL* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_NLG5_CTL(primary_message_BRUSA_NLG5_CTL* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_NLG5_CTL(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_NLG5_CTL(primary_message_BRUSA_NLG5_CTL* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_NLG5_CTL(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_ST(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_ST(
+    uint8_t* data,
+    primary_message_BRUSA_ST* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_ST(
+    primary_message_BRUSA_ST* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_ST(primary_message_BRUSA_ST* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_ST(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_ST(primary_message_BRUSA_ST* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_ST(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_ACT_I(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_ACT_I(
+    uint8_t* data,
+    primary_message_BRUSA_ACT_I* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_ACT_I(
+    primary_message_BRUSA_ACT_I* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_ACT_I(primary_message_BRUSA_ACT_I* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_ACT_I(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_ACT_I(primary_message_BRUSA_ACT_I* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_ACT_I(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_ACT_II(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_ACT_II(
+    uint8_t* data,
+    primary_message_BRUSA_ACT_II* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_ACT_II(
+    primary_message_BRUSA_ACT_II* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_ACT_II(primary_message_BRUSA_ACT_II* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_ACT_II(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_ACT_II(primary_message_BRUSA_ACT_II* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_ACT_II(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_TEMP(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_TEMP(
+    uint8_t* data,
+    primary_message_BRUSA_TEMP* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_TEMP(
+    primary_message_BRUSA_TEMP* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_TEMP(primary_message_BRUSA_TEMP* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_TEMP(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_TEMP(primary_message_BRUSA_TEMP* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_TEMP(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BRUSA_ERR(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BRUSA_ERR(
+    uint8_t* data,
+    primary_message_BRUSA_ERR* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BRUSA_ERR(
+    primary_message_BRUSA_ERR* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BRUSA_ERR(primary_message_BRUSA_ERR* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BRUSA_ERR(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BRUSA_ERR(primary_message_BRUSA_ERR* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BRUSA_ERR(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BMS_HV_CHIMERA(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BMS_HV_CHIMERA(
+    uint8_t* data,
+    primary_message_BMS_HV_CHIMERA* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BMS_HV_CHIMERA(
+    primary_message_BMS_HV_CHIMERA* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BMS_HV_CHIMERA(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BMS_HV_CHIMERA(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_ECU_CHIMERA(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_ECU_CHIMERA(
+    uint8_t* data,
+    primary_message_ECU_CHIMERA* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_ECU_CHIMERA(
+    primary_message_ECU_CHIMERA* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_ECU_CHIMERA(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_ECU_CHIMERA(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
 
 // ============== UTILS ============== //
 
@@ -8907,6 +9659,22 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_FLASH_CELLBOARD_5_TX(buffer);
         case 27:
             return primary_fields_FLASH_CELLBOARD_5_RX(buffer);
+        case 618:
+            return primary_fields_BRUSA_NLG5_CTL(buffer);
+        case 610:
+            return primary_fields_BRUSA_ST(buffer);
+        case 611:
+            return primary_fields_BRUSA_ACT_I(buffer);
+        case 612:
+            return primary_fields_BRUSA_ACT_II(buffer);
+        case 613:
+            return primary_fields_BRUSA_TEMP(buffer);
+        case 614:
+            return primary_fields_BRUSA_ERR(buffer);
+        case 170:
+            return primary_fields_BMS_HV_CHIMERA(buffer);
+        case 85:
+            return primary_fields_ECU_CHIMERA(buffer);
     }
     return 0;
 }
@@ -9029,6 +9797,22 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_FLASH_CELLBOARD_5_TX((primary_message_FLASH_CELLBOARD_5_TX*) message, buffer);
         case 27:
             return primary_to_string_FLASH_CELLBOARD_5_RX((primary_message_FLASH_CELLBOARD_5_RX*) message, buffer);
+        case 618:
+            return primary_to_string_BRUSA_NLG5_CTL((primary_message_BRUSA_NLG5_CTL*) message, buffer);
+        case 610:
+            return primary_to_string_BRUSA_ST((primary_message_BRUSA_ST*) message, buffer);
+        case 611:
+            return primary_to_string_BRUSA_ACT_I((primary_message_BRUSA_ACT_I*) message, buffer);
+        case 612:
+            return primary_to_string_BRUSA_ACT_II((primary_message_BRUSA_ACT_II*) message, buffer);
+        case 613:
+            return primary_to_string_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
+        case 614:
+            return primary_to_string_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
+        case 170:
+            return primary_to_string_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
+        case 85:
+            return primary_to_string_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
     }
     return 0;
 }
@@ -9151,6 +9935,22 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_FLASH_CELLBOARD_5_TX(buffer);
         case 27:
             return primary_fields_file_FLASH_CELLBOARD_5_RX(buffer);
+        case 618:
+            return primary_fields_file_BRUSA_NLG5_CTL(buffer);
+        case 610:
+            return primary_fields_file_BRUSA_ST(buffer);
+        case 611:
+            return primary_fields_file_BRUSA_ACT_I(buffer);
+        case 612:
+            return primary_fields_file_BRUSA_ACT_II(buffer);
+        case 613:
+            return primary_fields_file_BRUSA_TEMP(buffer);
+        case 614:
+            return primary_fields_file_BRUSA_ERR(buffer);
+        case 170:
+            return primary_fields_file_BMS_HV_CHIMERA(buffer);
+        case 85:
+            return primary_fields_file_ECU_CHIMERA(buffer);
     }
     return 0;
 }
@@ -9273,6 +10073,22 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_FLASH_CELLBOARD_5_TX((primary_message_FLASH_CELLBOARD_5_TX*) message, buffer);
         case 27:
             return primary_to_string_file_FLASH_CELLBOARD_5_RX((primary_message_FLASH_CELLBOARD_5_RX*) message, buffer);
+        case 618:
+            return primary_to_string_file_BRUSA_NLG5_CTL((primary_message_BRUSA_NLG5_CTL*) message, buffer);
+        case 610:
+            return primary_to_string_file_BRUSA_ST((primary_message_BRUSA_ST*) message, buffer);
+        case 611:
+            return primary_to_string_file_BRUSA_ACT_I((primary_message_BRUSA_ACT_I*) message, buffer);
+        case 612:
+            return primary_to_string_file_BRUSA_ACT_II((primary_message_BRUSA_ACT_II*) message, buffer);
+        case 613:
+            return primary_to_string_file_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
+        case 614:
+            return primary_to_string_file_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
+        case 170:
+            return primary_to_string_file_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
+        case 85:
+            return primary_to_string_file_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
     }
     return 0;
 }
@@ -9912,6 +10728,86 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
+        case 618: {
+            primary_deserialize_BRUSA_NLG5_CTL(
+                (primary_message_BRUSA_NLG5_CTL*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 610: {
+            primary_deserialize_BRUSA_ST(
+                (primary_message_BRUSA_ST*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 611: {
+            primary_deserialize_BRUSA_ACT_I(
+                (primary_message_BRUSA_ACT_I*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 612: {
+            primary_deserialize_BRUSA_ACT_II(
+                (primary_message_BRUSA_ACT_II*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 613: {
+            primary_deserialize_BRUSA_TEMP(
+                (primary_message_BRUSA_TEMP*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 614: {
+            primary_deserialize_BRUSA_ERR(
+                (primary_message_BRUSA_ERR*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 170: {
+            primary_deserialize_BMS_HV_CHIMERA(
+                (primary_message_BMS_HV_CHIMERA*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 85: {
+            primary_deserialize_ECU_CHIMERA(
+                (primary_message_ECU_CHIMERA*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
     }
     return NULL;
 }
@@ -10098,6 +10994,30 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].id = 27;
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_NLG5_CTL].id = 618;
+    (*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_NLG5_CTL));
+    (*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_ST].id = 610;
+    (*devices)[primary_INDEX_BRUSA_ST].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ST));
+    (*devices)[primary_INDEX_BRUSA_ST].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_ACT_I].id = 611;
+    (*devices)[primary_INDEX_BRUSA_ACT_I].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ACT_I));
+    (*devices)[primary_INDEX_BRUSA_ACT_I].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_ACT_II].id = 612;
+    (*devices)[primary_INDEX_BRUSA_ACT_II].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ACT_II));
+    (*devices)[primary_INDEX_BRUSA_ACT_II].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_TEMP].id = 613;
+    (*devices)[primary_INDEX_BRUSA_TEMP].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_TEMP));
+    (*devices)[primary_INDEX_BRUSA_TEMP].message_conversion = NULL;
+    (*devices)[primary_INDEX_BRUSA_ERR].id = 614;
+    (*devices)[primary_INDEX_BRUSA_ERR].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ERR));
+    (*devices)[primary_INDEX_BRUSA_ERR].message_conversion = NULL;
+    (*devices)[primary_INDEX_BMS_HV_CHIMERA].id = 170;
+    (*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw = (void*) malloc(sizeof(primary_message_BMS_HV_CHIMERA));
+    (*devices)[primary_INDEX_BMS_HV_CHIMERA].message_conversion = NULL;
+    (*devices)[primary_INDEX_ECU_CHIMERA].id = 85;
+    (*devices)[primary_INDEX_ECU_CHIMERA].message_raw = (void*) malloc(sizeof(primary_message_ECU_CHIMERA));
+    (*devices)[primary_INDEX_ECU_CHIMERA].message_conversion = NULL;
     return devices;
 }
 
@@ -10173,6 +11093,14 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_4_RX].message_raw);
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_5_TX].message_raw);
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_ST].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_ACT_I].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_ACT_II].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_TEMP].message_raw);
+    free((*devices)[primary_INDEX_BRUSA_ERR].message_raw);
+    free((*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw);
+    free((*devices)[primary_INDEX_ECU_CHIMERA].message_raw);
     free(devices);
 }
 
@@ -10802,6 +11730,86 @@ void primary_devices_deserialize_from_id(
         case 27: {
             primary_deserialize_FLASH_CELLBOARD_5_RX(
                 (primary_message_FLASH_CELLBOARD_5_RX*) &(*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 618: {
+            primary_deserialize_BRUSA_NLG5_CTL(
+                (primary_message_BRUSA_NLG5_CTL*) &(*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 610: {
+            primary_deserialize_BRUSA_ST(
+                (primary_message_BRUSA_ST*) &(*devices)[primary_INDEX_BRUSA_ST].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 611: {
+            primary_deserialize_BRUSA_ACT_I(
+                (primary_message_BRUSA_ACT_I*) &(*devices)[primary_INDEX_BRUSA_ACT_I].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 612: {
+            primary_deserialize_BRUSA_ACT_II(
+                (primary_message_BRUSA_ACT_II*) &(*devices)[primary_INDEX_BRUSA_ACT_II].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 613: {
+            primary_deserialize_BRUSA_TEMP(
+                (primary_message_BRUSA_TEMP*) &(*devices)[primary_INDEX_BRUSA_TEMP].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 614: {
+            primary_deserialize_BRUSA_ERR(
+                (primary_message_BRUSA_ERR*) &(*devices)[primary_INDEX_BRUSA_ERR].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 170: {
+            primary_deserialize_BMS_HV_CHIMERA(
+                (primary_message_BMS_HV_CHIMERA*) &(*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 85: {
+            primary_deserialize_ECU_CHIMERA(
+                (primary_message_ECU_CHIMERA*) &(*devices)[primary_INDEX_ECU_CHIMERA].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
