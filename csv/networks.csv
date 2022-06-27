@@ -14,9 +14,10 @@ HV_CURRENT,HV_CURRENT: 804,primary,DASnSTEERnCART,4,BMS_HV,"DAS, STEER, HANDCART
 HV_TEMP,HV_TEMP: 836,primary,DASnSTEERnCART,4,BMS_HV,"DAS, STEER, HANDCART",100,"average_temp: type: float32, range: -20, 80, force: uint8, max_temp: type: float32, range: -20, 80, force: uint8, min_temp: type: float32, range: -20, 80, force: uint8",Cell temperatures
 HV_ERRORS,HV_ERRORS: 4,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,"warnings: HvErrors, errors: HvErrors",Battery-related errors
 HV_CAN_FORWARD,HV_CAN_FORWARD: 5,primary,BMS_HV,7,HANDCART,BMS_HV,,can_forward_set: Toggle,Enable/disable can forwarding to internal bms network
+HV_FANS_OVERRIDE,HV_FANS_OVERRIDE: 37,primary,BMS_HV,7,HANDCART,BMS_HV,,"fans_override: Toggle, fans_speed: type: float32, range: 0, 1, force: uint16",override fans speed
 HV_CAN_FORWARD_STATUS,HV_CAN_FORWARD_STATUS: 6,primary,HANDCART,7,BMS_HV,HANDCART,,can_forward_status: Toggle,Status of can forwarding to internal bms network
 TS_STATUS,TS_STATUS: 36,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,ts_status: TsStatus,BMS status
-SET_TS_STATUS,"SET_TS_STATUS_DAS: 37, SET_TS_STATUS_HANDCART: 69",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,,ts_status_set: Toggle,Requests a TS status; only once
+SET_TS_STATUS,"SET_TS_STATUS_DAS: 69, SET_TS_STATUS_HANDCART: 101",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,,ts_status_set: Toggle,Requests a TS status; only once
 STEER_STATUS,STEER_STATUS: 263,primary,DAS,6,STEER,DAS,100,"traction_control: TractionControl, map: Map",Send update of the tuneable values from the steering wheel
 SET_CAR_STATUS,SET_CAR_STATUS: 775,primary,DAS,4,STEER,DAS,,car_status_set: SetCarStatus,Ask to DAS to change car status; only once
 SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1031,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal",Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min

@@ -208,6 +208,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_TEMP_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_TEMP;
     canlib_circular_buffer<primary_message_HV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_ERRORS;
     canlib_circular_buffer<primary_message_HV_CAN_FORWARD, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CAN_FORWARD;
+    canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE;
     canlib_circular_buffer<primary_message_HV_CAN_FORWARD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CAN_FORWARD_STATUS;
     canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS;
     canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_DAS;
@@ -438,6 +439,17 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
+        case 37: {
+            primary_message_HV_FANS_OVERRIDE_conversion* msg = (primary_message_HV_FANS_OVERRIDE_conversion*) (*map)[index].message_conversion;
+            primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
+            proto_msg->set_fans_speed(msg->fans_speed);
+            proto_msg->set_fans_override((primary::Toggle)msg->fans_override);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 6: {
             primary_message_HV_CAN_FORWARD_STATUS* msg = (primary_message_HV_CAN_FORWARD_STATUS*) (*map)[index].message_raw;
             primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
@@ -458,7 +470,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
-        case 37: {
+        case 69: {
             primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*) (*map)[index].message_raw;
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
@@ -468,7 +480,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
-        case 69: {
+        case 101: {
             primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*) (*map)[index].message_raw;
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
@@ -1059,6 +1071,15 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->hv_can_forward(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->HV_CAN_FORWARD.push(instance);
+    }
+    for(int i = 0; i < pack->hv_fans_override_size(); i++){
+        static primary_message_HV_FANS_OVERRIDE_conversion instance;
+        instance.fans_speed =pack->hv_fans_override(i).fans_speed();
+        instance.fans_override =(primary_Toggle)pack->hv_fans_override(i).fans_override();
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->hv_fans_override(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->HV_FANS_OVERRIDE.push(instance);
     }
     for(int i = 0; i < pack->hv_can_forward_status_size(); i++){
         static primary_message_HV_CAN_FORWARD_STATUS instance;

@@ -89,9 +89,12 @@
                 "HV_CAN_FORWARD": {
                     "HV_CAN_FORWARD": 5
                 },
+                "HV_FANS_OVERRIDE": {
+                    "HV_FANS_OVERRIDE": 37
+                },
                 "SET_TS_STATUS": {
-                    "SET_TS_STATUS_DAS": 37,
-                    "SET_TS_STATUS_HANDCART": 69
+                    "SET_TS_STATUS_DAS": 69,
+                    "SET_TS_STATUS_HANDCART": 101
                 },
                 "SET_CELL_BALANCING_STATUS": {
                     "SET_CELL_BALANCING_STATUS": 517

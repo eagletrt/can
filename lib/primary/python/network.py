@@ -943,6 +943,70 @@ class message_HV_CAN_FORWARD:
         return message
 
 
+class message_HV_FANS_OVERRIDE:
+    def __init__(
+        self,
+        fans_speed = None,
+        fans_override = None
+    ):
+        self.fans_speed = uint16(fans_speed)
+        self.fans_override = Toggle(fans_override)
+        self.size = 3
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_FANS_OVERRIDE):
+            return False
+        if self.fans_speed != other.fans_speed:
+            return False
+        if self.fans_override != other.fans_override:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HB", self.fans_speed, self.fans_override << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
+        message.fans_override = Toggle((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        return message
+
+
+    def convert(self) -> message_HV_FANS_OVERRIDE_conversion:
+        conversion = message_HV_FANS_OVERRIDE_conversion()
+        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
+        conversion.fans_override = self.fans_override
+        return conversion
+
+
+class message_HV_FANS_OVERRIDE_conversion:
+    def __init__(
+        self,
+        fans_speed = None,
+        fans_override = None
+    ):
+        self.fans_speed = float32(fans_speed)
+        self.fans_override = Toggle(fans_override)
+        self.size = 3
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_FANS_OVERRIDE):
+            return False
+        if self.fans_speed != other.fans_speed:
+            return False
+        if self.fans_override != other.fans_override:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_HV_FANS_OVERRIDE:
+        raw = message_HV_FANS_OVERRIDE()
+        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
+        raw.fans_override = self.fans_override
+        return raw
+
 class message_HV_CAN_FORWARD_STATUS:
     def __init__(
         self,
