@@ -210,6 +210,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_CAN_FORWARD, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CAN_FORWARD;
     canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE;
     canlib_circular_buffer<primary_message_HV_CAN_FORWARD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CAN_FORWARD_STATUS;
+    canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE_STATUS;
     canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS;
     canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_DAS;
     canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_HANDCART;
@@ -454,6 +455,17 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_HV_CAN_FORWARD_STATUS* msg = (primary_message_HV_CAN_FORWARD_STATUS*) (*map)[index].message_raw;
             primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
             proto_msg->set_can_forward_status((primary::Toggle)msg->can_forward_status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 774: {
+            primary_message_HV_FANS_OVERRIDE_STATUS_conversion* msg = (primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) (*map)[index].message_conversion;
+            primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
+            proto_msg->set_fans_speed(msg->fans_speed);
+            proto_msg->set_fans_override((primary::Toggle)msg->fans_override);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1088,6 +1100,15 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->hv_can_forward_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->HV_CAN_FORWARD_STATUS.push(instance);
+    }
+    for(int i = 0; i < pack->hv_fans_override_status_size(); i++){
+        static primary_message_HV_FANS_OVERRIDE_STATUS_conversion instance;
+        instance.fans_speed =pack->hv_fans_override_status(i).fans_speed();
+        instance.fans_override =(primary_Toggle)pack->hv_fans_override_status(i).fans_override();
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->hv_fans_override_status(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->HV_FANS_OVERRIDE_STATUS.push(instance);
     }
     for(int i = 0; i < pack->ts_status_size(); i++){
         static primary_message_TS_STATUS instance;

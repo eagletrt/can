@@ -119,7 +119,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 67
+#define primary_MESSAGE_COUNT 68
 
 // Custom types
 
@@ -180,56 +180,57 @@ typedef struct {
 #define primary_INDEX_HV_CAN_FORWARD 14
 #define primary_INDEX_HV_FANS_OVERRIDE 15
 #define primary_INDEX_HV_CAN_FORWARD_STATUS 16
-#define primary_INDEX_TS_STATUS 17
-#define primary_INDEX_SET_TS_STATUS_DAS 18
-#define primary_INDEX_SET_TS_STATUS_HANDCART 19
-#define primary_INDEX_STEER_STATUS 20
-#define primary_INDEX_SET_CAR_STATUS 21
-#define primary_INDEX_SET_PEDALS_RANGE 22
-#define primary_INDEX_SET_STEERING_ANGLE_RANGE 23
-#define primary_INDEX_CAR_STATUS 24
-#define primary_INDEX_DAS_ERRORS 25
-#define primary_INDEX_LV_CURRENT 26
-#define primary_INDEX_LV_VOLTAGE 27
-#define primary_INDEX_LV_TOTAL_VOLTAGE 28
-#define primary_INDEX_LV_TEMPERATURE 29
-#define primary_INDEX_COOLING_STATUS 30
-#define primary_INDEX_SET_RADIATOR_SPEED 31
-#define primary_INDEX_SET_PUMPS_SPEED 32
-#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 33
-#define primary_INDEX_INVERTER_CONNECTION_STATUS 34
-#define primary_INDEX_SHUTDOWN_STATUS 35
-#define primary_INDEX_MARKER 36
-#define primary_INDEX_HV_CELLS_VOLTAGE 37
-#define primary_INDEX_HV_CELLS_TEMP 38
-#define primary_INDEX_HV_CELL_BALANCING_STATUS 39
-#define primary_INDEX_SET_CELL_BALANCING_STATUS 40
-#define primary_INDEX_HANDCART_STATUS 41
-#define primary_INDEX_SPEED 42
-#define primary_INDEX_INV_L_REQUEST 43
-#define primary_INDEX_INV_R_REQUEST 44
-#define primary_INDEX_INV_L_RESPONSE 45
-#define primary_INDEX_INV_R_RESPONSE 46
-#define primary_INDEX_FLASH_CELLBOARD_0_TX 47
-#define primary_INDEX_FLASH_CELLBOARD_0_RX 48
-#define primary_INDEX_FLASH_CELLBOARD_1_TX 49
-#define primary_INDEX_FLASH_CELLBOARD_1_RX 50
-#define primary_INDEX_FLASH_CELLBOARD_2_TX 51
-#define primary_INDEX_FLASH_CELLBOARD_2_RX 52
-#define primary_INDEX_FLASH_CELLBOARD_3_TX 53
-#define primary_INDEX_FLASH_CELLBOARD_3_RX 54
-#define primary_INDEX_FLASH_CELLBOARD_4_TX 55
-#define primary_INDEX_FLASH_CELLBOARD_4_RX 56
-#define primary_INDEX_FLASH_CELLBOARD_5_TX 57
-#define primary_INDEX_FLASH_CELLBOARD_5_RX 58
-#define primary_INDEX_BRUSA_NLG5_CTL 59
-#define primary_INDEX_BRUSA_ST 60
-#define primary_INDEX_BRUSA_ACT_I 61
-#define primary_INDEX_BRUSA_ACT_II 62
-#define primary_INDEX_BRUSA_TEMP 63
-#define primary_INDEX_BRUSA_ERR 64
-#define primary_INDEX_BMS_HV_CHIMERA 65
-#define primary_INDEX_ECU_CHIMERA 66
+#define primary_INDEX_HV_FANS_OVERRIDE_STATUS 17
+#define primary_INDEX_TS_STATUS 18
+#define primary_INDEX_SET_TS_STATUS_DAS 19
+#define primary_INDEX_SET_TS_STATUS_HANDCART 20
+#define primary_INDEX_STEER_STATUS 21
+#define primary_INDEX_SET_CAR_STATUS 22
+#define primary_INDEX_SET_PEDALS_RANGE 23
+#define primary_INDEX_SET_STEERING_ANGLE_RANGE 24
+#define primary_INDEX_CAR_STATUS 25
+#define primary_INDEX_DAS_ERRORS 26
+#define primary_INDEX_LV_CURRENT 27
+#define primary_INDEX_LV_VOLTAGE 28
+#define primary_INDEX_LV_TOTAL_VOLTAGE 29
+#define primary_INDEX_LV_TEMPERATURE 30
+#define primary_INDEX_COOLING_STATUS 31
+#define primary_INDEX_SET_RADIATOR_SPEED 32
+#define primary_INDEX_SET_PUMPS_SPEED 33
+#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 34
+#define primary_INDEX_INVERTER_CONNECTION_STATUS 35
+#define primary_INDEX_SHUTDOWN_STATUS 36
+#define primary_INDEX_MARKER 37
+#define primary_INDEX_HV_CELLS_VOLTAGE 38
+#define primary_INDEX_HV_CELLS_TEMP 39
+#define primary_INDEX_HV_CELL_BALANCING_STATUS 40
+#define primary_INDEX_SET_CELL_BALANCING_STATUS 41
+#define primary_INDEX_HANDCART_STATUS 42
+#define primary_INDEX_SPEED 43
+#define primary_INDEX_INV_L_REQUEST 44
+#define primary_INDEX_INV_R_REQUEST 45
+#define primary_INDEX_INV_L_RESPONSE 46
+#define primary_INDEX_INV_R_RESPONSE 47
+#define primary_INDEX_FLASH_CELLBOARD_0_TX 48
+#define primary_INDEX_FLASH_CELLBOARD_0_RX 49
+#define primary_INDEX_FLASH_CELLBOARD_1_TX 50
+#define primary_INDEX_FLASH_CELLBOARD_1_RX 51
+#define primary_INDEX_FLASH_CELLBOARD_2_TX 52
+#define primary_INDEX_FLASH_CELLBOARD_2_RX 53
+#define primary_INDEX_FLASH_CELLBOARD_3_TX 54
+#define primary_INDEX_FLASH_CELLBOARD_3_RX 55
+#define primary_INDEX_FLASH_CELLBOARD_4_TX 56
+#define primary_INDEX_FLASH_CELLBOARD_4_RX 57
+#define primary_INDEX_FLASH_CELLBOARD_5_TX 58
+#define primary_INDEX_FLASH_CELLBOARD_5_RX 59
+#define primary_INDEX_BRUSA_NLG5_CTL 60
+#define primary_INDEX_BRUSA_ST 61
+#define primary_INDEX_BRUSA_ACT_I 62
+#define primary_INDEX_BRUSA_ACT_II 63
+#define primary_INDEX_BRUSA_TEMP 64
+#define primary_INDEX_BRUSA_ERR 65
+#define primary_INDEX_BMS_HV_CHIMERA 66
+#define primary_INDEX_ECU_CHIMERA 67
 
 // ============== SIZES ============== //
 
@@ -251,6 +252,7 @@ typedef struct {
 #define primary_SIZE_HV_CAN_FORWARD 1
 #define primary_SIZE_HV_FANS_OVERRIDE 3
 #define primary_SIZE_HV_CAN_FORWARD_STATUS 1
+#define primary_SIZE_HV_FANS_OVERRIDE_STATUS 3
 #define primary_SIZE_TS_STATUS 1
 #define primary_SIZE_SET_TS_STATUS 1
 #define primary_SIZE_STEER_STATUS 1
@@ -671,6 +673,22 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CAN_FORWARD_STATUS;
+
+typedef struct CANLIB_PARKING {
+    primary_uint16 fans_speed;
+    primary_Toggle fans_override;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_FANS_OVERRIDE_STATUS;
+
+typedef struct CANLIB_PARKING {
+    primary_float32 fans_speed;
+    primary_Toggle fans_override;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_HV_FANS_OVERRIDE_STATUS_conversion;
 
 typedef struct CANLIB_PARKING {
     primary_TsStatus ts_status;
@@ -1163,6 +1181,7 @@ typedef union CANLIB_PARKING {
     primary_message_HV_CAN_FORWARD _HV_CAN_FORWARD;
     primary_message_HV_FANS_OVERRIDE _HV_FANS_OVERRIDE;
     primary_message_HV_CAN_FORWARD_STATUS _HV_CAN_FORWARD_STATUS;
+    primary_message_HV_FANS_OVERRIDE_STATUS _HV_FANS_OVERRIDE_STATUS;
     primary_message_TS_STATUS _TS_STATUS;
     primary_message_SET_TS_STATUS _SET_TS_STATUS;
     primary_message_STEER_STATUS _STEER_STATUS;
@@ -1219,6 +1238,7 @@ typedef union CANLIB_PARKING {
     primary_message_HV_CURRENT_conversion _HV_CURRENT;
     primary_message_HV_TEMP_conversion _HV_TEMP;
     primary_message_HV_FANS_OVERRIDE_conversion _HV_FANS_OVERRIDE;
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion _HV_FANS_OVERRIDE_STATUS;
     primary_message_LV_CURRENT_conversion _LV_CURRENT;
     primary_message_LV_VOLTAGE_conversion _LV_VOLTAGE;
     primary_message_LV_TOTAL_VOLTAGE_conversion _LV_TOTAL_VOLTAGE;
@@ -1766,6 +1786,57 @@ int primary_to_string_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATU
 int primary_fields_HV_CAN_FORWARD_STATUS(char* buffer);
 int primary_to_string_file_HV_CAN_FORWARD_STATUS(primary_message_HV_CAN_FORWARD_STATUS* message, FILE* buffer);
 int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer);
+
+
+// ============== HV_FANS_OVERRIDE_STATUS ============== //
+
+primary_byte_size primary_serialize_HV_FANS_OVERRIDE_STATUS(
+    uint8_t* data,
+    primary_uint16 fans_speed,
+    primary_Toggle fans_override
+);
+primary_byte_size primary_serialize_struct_HV_FANS_OVERRIDE_STATUS(
+    uint8_t* data,
+    primary_message_HV_FANS_OVERRIDE_STATUS* message
+);
+void primary_deserialize_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw
+);
+
+void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw,
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion
+);
+
+void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw,
+    primary_float32 fans_speed,
+    primary_Toggle fans_override
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
+    primary_uint16 fans_speed,
+    primary_Toggle fans_override
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERRIDE_STATUS_conversion* message, char* buffer);
+int primary_fields_HV_FANS_OVERRIDE_STATUS(char* buffer);
+int primary_to_string_file_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERRIDE_STATUS_conversion* message, FILE* buffer);
+int primary_fields_file_HV_FANS_OVERRIDE_STATUS(FILE* buffer);
 
 
 // ============== TS_STATUS ============== //
@@ -3191,6 +3262,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 5: return primary_INDEX_HV_CAN_FORWARD;
         case 37: return primary_INDEX_HV_FANS_OVERRIDE;
         case 6: return primary_INDEX_HV_CAN_FORWARD_STATUS;
+        case 774: return primary_INDEX_HV_FANS_OVERRIDE_STATUS;
         case 36: return primary_INDEX_TS_STATUS;
         case 69: return primary_INDEX_SET_TS_STATUS_DAS;
         case 101: return primary_INDEX_SET_TS_STATUS_HANDCART;
@@ -3242,7 +3314,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 170: return primary_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_INDEX_ECU_CHIMERA;
     }
-    return 67; // invalid
+    return 68; // invalid
 }
 
 int primary_fields_from_id(canlib_message_id message_id, char *buffer);
@@ -5122,6 +5194,152 @@ int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "can_forward_status"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_HV_FANS_OVERRIDE_STATUS(
+    uint8_t* data,
+    primary_uint16 fans_speed,
+    primary_Toggle fans_override
+) {
+    data[0] = fans_speed & 255;
+    data[1] = (fans_speed >> 8) & 255;
+    data[2] = fans_override << 7;
+    return 3;
+}
+
+primary_byte_size primary_serialize_struct_HV_FANS_OVERRIDE_STATUS(
+    uint8_t* data,
+    primary_message_HV_FANS_OVERRIDE_STATUS* message
+) {
+    data[0] = message->fans_speed & 255;
+    data[1] = (message->fans_speed >> 8) & 255;
+    data[2] = message->fans_override << 7;
+    return 3;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->fans_speed = data[0] | (data[1] << 8);
+    message->fans_override = (primary_Toggle) ((data[2] & 128) >> 7);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
+    primary_uint16 fans_speed,
+    primary_Toggle fans_override
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
+    conversion->fans_override = fans_override;
+}
+
+void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
+    conversion->fans_override = raw->fans_override;
+}
+
+void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw,
+    primary_float32 fans_speed,
+    primary_Toggle fans_override
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
+    raw->fans_override = fans_override;
+}
+
+void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
+    primary_message_HV_FANS_OVERRIDE_STATUS* raw,
+    primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
+    raw->fans_override = conversion->fans_override;
+}
+
+// ============== STRING ============== //
+int primary_to_string_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERRIDE_STATUS_conversion* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->fans_speed,
+        message->fans_override
+    );
+}
+
+int primary_fields_HV_FANS_OVERRIDE_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "fans_speed" CANLIB_SEPARATOR 
+        "fans_override"
+    );
+}
+
+int primary_to_string_file_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERRIDE_STATUS_conversion* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->fans_speed,
+        message->fans_override
+    );
+}
+
+int primary_fields_file_HV_FANS_OVERRIDE_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "fans_speed" CANLIB_SEPARATOR 
+        "fans_override"
     );
 }
 
@@ -9803,6 +10021,8 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_HV_FANS_OVERRIDE(buffer);
         case 6:
             return primary_fields_HV_CAN_FORWARD_STATUS(buffer);
+        case 774:
+            return primary_fields_HV_FANS_OVERRIDE_STATUS(buffer);
         case 36:
             return primary_fields_TS_STATUS(buffer);
         case 69:
@@ -9943,6 +10163,8 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
         case 6:
             return primary_to_string_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
+        case 774:
+            return primary_to_string_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
         case 36:
             return primary_to_string_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
         case 69:
@@ -10083,6 +10305,8 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_HV_FANS_OVERRIDE(buffer);
         case 6:
             return primary_fields_file_HV_CAN_FORWARD_STATUS(buffer);
+        case 774:
+            return primary_fields_file_HV_FANS_OVERRIDE_STATUS(buffer);
         case 36:
             return primary_fields_file_TS_STATUS(buffer);
         case 69:
@@ -10223,6 +10447,8 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
         case 6:
             return primary_to_string_file_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
+        case 774:
+            return primary_to_string_file_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
         case 36:
             return primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
         case 69:
@@ -10523,6 +10749,20 @@ void* primary_deserialize_from_id(
                 #endif
             );
             return message_raw;
+        }
+        case 774: {
+            primary_deserialize_HV_FANS_OVERRIDE_STATUS(
+                (primary_message_HV_FANS_OVERRIDE_STATUS*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
+                (primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message_conversion,
+                (primary_message_HV_FANS_OVERRIDE_STATUS*) message_raw
+            );
+            return message_conversion;
         }
         case 36: {
             primary_deserialize_TS_STATUS(
@@ -11113,6 +11353,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].id = 6;
     (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
     (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_conversion = NULL;
+    (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].id = 774;
+    (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS));
+    (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS_conversion));
     (*devices)[primary_INDEX_TS_STATUS].id = 36;
     (*devices)[primary_INDEX_TS_STATUS].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS));
     (*devices)[primary_INDEX_TS_STATUS].message_conversion = NULL;
@@ -11294,6 +11537,8 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_HV_FANS_OVERRIDE].message_raw);
     free((*devices)[primary_INDEX_HV_FANS_OVERRIDE].message_conversion);
     free((*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_raw);
+    free((*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw);
+    free((*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion);
     free((*devices)[primary_INDEX_TS_STATUS].message_raw);
     free((*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw);
     free((*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw);
@@ -11549,6 +11794,20 @@ void primary_devices_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            return;
+        }
+        case 774: {
+            primary_deserialize_HV_FANS_OVERRIDE_STATUS(
+                (primary_message_HV_FANS_OVERRIDE_STATUS*) &(*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
+                (primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) &(*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion,
+                (primary_message_HV_FANS_OVERRIDE_STATUS*) &(*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw
             );
             return;
         }

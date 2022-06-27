@@ -148,6 +148,9 @@ extern HV_ERRORSDefaultTypeInternal _HV_ERRORS_default_instance_;
 class HV_FANS_OVERRIDE;
 struct HV_FANS_OVERRIDEDefaultTypeInternal;
 extern HV_FANS_OVERRIDEDefaultTypeInternal _HV_FANS_OVERRIDE_default_instance_;
+class HV_FANS_OVERRIDE_STATUS;
+struct HV_FANS_OVERRIDE_STATUSDefaultTypeInternal;
+extern HV_FANS_OVERRIDE_STATUSDefaultTypeInternal _HV_FANS_OVERRIDE_STATUS_default_instance_;
 class HV_TEMP;
 struct HV_TEMPDefaultTypeInternal;
 extern HV_TEMPDefaultTypeInternal _HV_TEMP_default_instance_;
@@ -286,6 +289,7 @@ template<> ::primary::HV_CELL_BALANCING_STATUS* Arena::CreateMaybeMessage<::prim
 template<> ::primary::HV_CURRENT* Arena::CreateMaybeMessage<::primary::HV_CURRENT>(Arena*);
 template<> ::primary::HV_ERRORS* Arena::CreateMaybeMessage<::primary::HV_ERRORS>(Arena*);
 template<> ::primary::HV_FANS_OVERRIDE* Arena::CreateMaybeMessage<::primary::HV_FANS_OVERRIDE>(Arena*);
+template<> ::primary::HV_FANS_OVERRIDE_STATUS* Arena::CreateMaybeMessage<::primary::HV_FANS_OVERRIDE_STATUS>(Arena*);
 template<> ::primary::HV_TEMP* Arena::CreateMaybeMessage<::primary::HV_TEMP>(Arena*);
 template<> ::primary::HV_VERSION* Arena::CreateMaybeMessage<::primary::HV_VERSION>(Arena*);
 template<> ::primary::HV_VOLTAGE* Arena::CreateMaybeMessage<::primary::HV_VOLTAGE>(Arena*);
@@ -3450,6 +3454,171 @@ class HV_CAN_FORWARD_STATUS final :
 };
 // -------------------------------------------------------------------
 
+class HV_FANS_OVERRIDE_STATUS final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.HV_FANS_OVERRIDE_STATUS) */ {
+ public:
+  inline HV_FANS_OVERRIDE_STATUS() : HV_FANS_OVERRIDE_STATUS(nullptr) {}
+  ~HV_FANS_OVERRIDE_STATUS() override;
+  explicit PROTOBUF_CONSTEXPR HV_FANS_OVERRIDE_STATUS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HV_FANS_OVERRIDE_STATUS(const HV_FANS_OVERRIDE_STATUS& from);
+  HV_FANS_OVERRIDE_STATUS(HV_FANS_OVERRIDE_STATUS&& from) noexcept
+    : HV_FANS_OVERRIDE_STATUS() {
+    *this = ::std::move(from);
+  }
+
+  inline HV_FANS_OVERRIDE_STATUS& operator=(const HV_FANS_OVERRIDE_STATUS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HV_FANS_OVERRIDE_STATUS& operator=(HV_FANS_OVERRIDE_STATUS&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HV_FANS_OVERRIDE_STATUS& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HV_FANS_OVERRIDE_STATUS* internal_default_instance() {
+    return reinterpret_cast<const HV_FANS_OVERRIDE_STATUS*>(
+               &_HV_FANS_OVERRIDE_STATUS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(HV_FANS_OVERRIDE_STATUS& a, HV_FANS_OVERRIDE_STATUS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HV_FANS_OVERRIDE_STATUS* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HV_FANS_OVERRIDE_STATUS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HV_FANS_OVERRIDE_STATUS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HV_FANS_OVERRIDE_STATUS>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HV_FANS_OVERRIDE_STATUS& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const HV_FANS_OVERRIDE_STATUS& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HV_FANS_OVERRIDE_STATUS* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.HV_FANS_OVERRIDE_STATUS";
+  }
+  protected:
+  explicit HV_FANS_OVERRIDE_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFansSpeedFieldNumber = 1,
+    kFansOverrideFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
+  };
+  // uint32 fans_speed = 1;
+  void clear_fans_speed();
+  uint32_t fans_speed() const;
+  void set_fans_speed(uint32_t value);
+  private:
+  uint32_t _internal_fans_speed() const;
+  void _internal_set_fans_speed(uint32_t value);
+  public:
+
+  // .primary.Toggle fans_override = 2;
+  void clear_fans_override();
+  ::primary::Toggle fans_override() const;
+  void set_fans_override(::primary::Toggle value);
+  private:
+  ::primary::Toggle _internal_fans_override() const;
+  void _internal_set_fans_override(::primary::Toggle value);
+  public:
+
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.HV_FANS_OVERRIDE_STATUS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t fans_speed_;
+  int fans_override_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class TS_STATUS final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.TS_STATUS) */ {
  public:
@@ -3498,7 +3667,7 @@ class TS_STATUS final :
                &_TS_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(TS_STATUS& a, TS_STATUS& b) {
     a.Swap(&b);
@@ -3652,7 +3821,7 @@ class SET_TS_STATUS_DAS final :
                &_SET_TS_STATUS_DAS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(SET_TS_STATUS_DAS& a, SET_TS_STATUS_DAS& b) {
     a.Swap(&b);
@@ -3806,7 +3975,7 @@ class SET_TS_STATUS_HANDCART final :
                &_SET_TS_STATUS_HANDCART_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(SET_TS_STATUS_HANDCART& a, SET_TS_STATUS_HANDCART& b) {
     a.Swap(&b);
@@ -3960,7 +4129,7 @@ class STEER_STATUS final :
                &_STEER_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(STEER_STATUS& a, STEER_STATUS& b) {
     a.Swap(&b);
@@ -4125,7 +4294,7 @@ class SET_CAR_STATUS final :
                &_SET_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(SET_CAR_STATUS& a, SET_CAR_STATUS& b) {
     a.Swap(&b);
@@ -4279,7 +4448,7 @@ class SET_PEDALS_RANGE final :
                &_SET_PEDALS_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(SET_PEDALS_RANGE& a, SET_PEDALS_RANGE& b) {
     a.Swap(&b);
@@ -4444,7 +4613,7 @@ class SET_STEERING_ANGLE_RANGE final :
                &_SET_STEERING_ANGLE_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(SET_STEERING_ANGLE_RANGE& a, SET_STEERING_ANGLE_RANGE& b) {
     a.Swap(&b);
@@ -4598,7 +4767,7 @@ class CAR_STATUS final :
                &_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(CAR_STATUS& a, CAR_STATUS& b) {
     a.Swap(&b);
@@ -4774,7 +4943,7 @@ class DAS_ERRORS final :
                &_DAS_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(DAS_ERRORS& a, DAS_ERRORS& b) {
     a.Swap(&b);
@@ -4928,7 +5097,7 @@ class LV_CURRENT final :
                &_LV_CURRENT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(LV_CURRENT& a, LV_CURRENT& b) {
     a.Swap(&b);
@@ -5082,7 +5251,7 @@ class LV_VOLTAGE final :
                &_LV_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(LV_VOLTAGE& a, LV_VOLTAGE& b) {
     a.Swap(&b);
@@ -5269,7 +5438,7 @@ class LV_TOTAL_VOLTAGE final :
                &_LV_TOTAL_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(LV_TOTAL_VOLTAGE& a, LV_TOTAL_VOLTAGE& b) {
     a.Swap(&b);
@@ -5423,7 +5592,7 @@ class LV_TEMPERATURE final :
                &_LV_TEMPERATURE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(LV_TEMPERATURE& a, LV_TEMPERATURE& b) {
     a.Swap(&b);
@@ -5610,7 +5779,7 @@ class COOLING_STATUS final :
                &_COOLING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(COOLING_STATUS& a, COOLING_STATUS& b) {
     a.Swap(&b);
@@ -5775,7 +5944,7 @@ class SET_RADIATOR_SPEED final :
                &_SET_RADIATOR_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(SET_RADIATOR_SPEED& a, SET_RADIATOR_SPEED& b) {
     a.Swap(&b);
@@ -5929,7 +6098,7 @@ class SET_PUMPS_SPEED final :
                &_SET_PUMPS_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(SET_PUMPS_SPEED& a, SET_PUMPS_SPEED& b) {
     a.Swap(&b);
@@ -6083,7 +6252,7 @@ class SET_INVERTER_CONNECTION_STATUS final :
                &_SET_INVERTER_CONNECTION_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(SET_INVERTER_CONNECTION_STATUS& a, SET_INVERTER_CONNECTION_STATUS& b) {
     a.Swap(&b);
@@ -6237,7 +6406,7 @@ class INVERTER_CONNECTION_STATUS final :
                &_INVERTER_CONNECTION_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(INVERTER_CONNECTION_STATUS& a, INVERTER_CONNECTION_STATUS& b) {
     a.Swap(&b);
@@ -6391,7 +6560,7 @@ class SHUTDOWN_STATUS final :
                &_SHUTDOWN_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(SHUTDOWN_STATUS& a, SHUTDOWN_STATUS& b) {
     a.Swap(&b);
@@ -6556,7 +6725,7 @@ class MARKER final :
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(MARKER& a, MARKER& b) {
     a.Swap(&b);
@@ -6699,7 +6868,7 @@ class HV_CELLS_VOLTAGE final :
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
     a.Swap(&b);
@@ -6886,7 +7055,7 @@ class HV_CELLS_TEMP final :
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
     a.Swap(&b);
@@ -7117,7 +7286,7 @@ class HV_CELL_BALANCING_STATUS final :
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -7271,7 +7440,7 @@ class SET_CELL_BALANCING_STATUS final :
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -7425,7 +7594,7 @@ class HANDCART_STATUS final :
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
     a.Swap(&b);
@@ -7579,7 +7748,7 @@ class SPEED final :
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(SPEED& a, SPEED& b) {
     a.Swap(&b);
@@ -7766,7 +7935,7 @@ class INV_L_REQUEST final :
                &_INV_L_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(INV_L_REQUEST& a, INV_L_REQUEST& b) {
     a.Swap(&b);
@@ -7997,7 +8166,7 @@ class INV_R_REQUEST final :
                &_INV_R_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(INV_R_REQUEST& a, INV_R_REQUEST& b) {
     a.Swap(&b);
@@ -8228,7 +8397,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -8459,7 +8628,7 @@ class INV_R_RESPONSE final :
                &_INV_R_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(INV_R_RESPONSE& a, INV_R_RESPONSE& b) {
     a.Swap(&b);
@@ -8690,7 +8859,7 @@ class FLASH_CELLBOARD_0_TX final :
                &_FLASH_CELLBOARD_0_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
     a.Swap(&b);
@@ -8833,7 +9002,7 @@ class FLASH_CELLBOARD_0_RX final :
                &_FLASH_CELLBOARD_0_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
     a.Swap(&b);
@@ -8976,7 +9145,7 @@ class FLASH_CELLBOARD_1_TX final :
                &_FLASH_CELLBOARD_1_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
     a.Swap(&b);
@@ -9119,7 +9288,7 @@ class FLASH_CELLBOARD_1_RX final :
                &_FLASH_CELLBOARD_1_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
     a.Swap(&b);
@@ -9262,7 +9431,7 @@ class FLASH_CELLBOARD_2_TX final :
                &_FLASH_CELLBOARD_2_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
     a.Swap(&b);
@@ -9405,7 +9574,7 @@ class FLASH_CELLBOARD_2_RX final :
                &_FLASH_CELLBOARD_2_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
     a.Swap(&b);
@@ -9548,7 +9717,7 @@ class FLASH_CELLBOARD_3_TX final :
                &_FLASH_CELLBOARD_3_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
     a.Swap(&b);
@@ -9691,7 +9860,7 @@ class FLASH_CELLBOARD_3_RX final :
                &_FLASH_CELLBOARD_3_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
     a.Swap(&b);
@@ -9834,7 +10003,7 @@ class FLASH_CELLBOARD_4_TX final :
                &_FLASH_CELLBOARD_4_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
     a.Swap(&b);
@@ -9977,7 +10146,7 @@ class FLASH_CELLBOARD_4_RX final :
                &_FLASH_CELLBOARD_4_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
     a.Swap(&b);
@@ -10120,7 +10289,7 @@ class FLASH_CELLBOARD_5_TX final :
                &_FLASH_CELLBOARD_5_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
     a.Swap(&b);
@@ -10263,7 +10432,7 @@ class FLASH_CELLBOARD_5_RX final :
                &_FLASH_CELLBOARD_5_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
     a.Swap(&b);
@@ -10406,7 +10575,7 @@ class BRUSA_NLG5_CTL final :
                &_BRUSA_NLG5_CTL_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(BRUSA_NLG5_CTL& a, BRUSA_NLG5_CTL& b) {
     a.Swap(&b);
@@ -10549,7 +10718,7 @@ class BRUSA_ST final :
                &_BRUSA_ST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(BRUSA_ST& a, BRUSA_ST& b) {
     a.Swap(&b);
@@ -10692,7 +10861,7 @@ class BRUSA_ACT_I final :
                &_BRUSA_ACT_I_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(BRUSA_ACT_I& a, BRUSA_ACT_I& b) {
     a.Swap(&b);
@@ -10835,7 +11004,7 @@ class BRUSA_ACT_II final :
                &_BRUSA_ACT_II_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(BRUSA_ACT_II& a, BRUSA_ACT_II& b) {
     a.Swap(&b);
@@ -10978,7 +11147,7 @@ class BRUSA_TEMP final :
                &_BRUSA_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(BRUSA_TEMP& a, BRUSA_TEMP& b) {
     a.Swap(&b);
@@ -11121,7 +11290,7 @@ class BRUSA_ERR final :
                &_BRUSA_ERR_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(BRUSA_ERR& a, BRUSA_ERR& b) {
     a.Swap(&b);
@@ -11264,7 +11433,7 @@ class BMS_HV_CHIMERA final :
                &_BMS_HV_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(BMS_HV_CHIMERA& a, BMS_HV_CHIMERA& b) {
     a.Swap(&b);
@@ -11407,7 +11576,7 @@ class ECU_CHIMERA final :
                &_ECU_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   friend void swap(ECU_CHIMERA& a, ECU_CHIMERA& b) {
     a.Swap(&b);
@@ -11550,7 +11719,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -11638,56 +11807,57 @@ class Pack final :
     kHVCANFORWARDFieldNumber = 15,
     kHVFANSOVERRIDEFieldNumber = 16,
     kHVCANFORWARDSTATUSFieldNumber = 17,
-    kTSSTATUSFieldNumber = 18,
-    kSETTSSTATUSDASFieldNumber = 19,
-    kSETTSSTATUSHANDCARTFieldNumber = 20,
-    kSTEERSTATUSFieldNumber = 21,
-    kSETCARSTATUSFieldNumber = 22,
-    kSETPEDALSRANGEFieldNumber = 23,
-    kSETSTEERINGANGLERANGEFieldNumber = 24,
-    kCARSTATUSFieldNumber = 25,
-    kDASERRORSFieldNumber = 26,
-    kLVCURRENTFieldNumber = 27,
-    kLVVOLTAGEFieldNumber = 28,
-    kLVTOTALVOLTAGEFieldNumber = 29,
-    kLVTEMPERATUREFieldNumber = 30,
-    kCOOLINGSTATUSFieldNumber = 31,
-    kSETRADIATORSPEEDFieldNumber = 32,
-    kSETPUMPSSPEEDFieldNumber = 33,
-    kSETINVERTERCONNECTIONSTATUSFieldNumber = 34,
-    kINVERTERCONNECTIONSTATUSFieldNumber = 35,
-    kSHUTDOWNSTATUSFieldNumber = 36,
-    kMARKERFieldNumber = 37,
-    kHVCELLSVOLTAGEFieldNumber = 38,
-    kHVCELLSTEMPFieldNumber = 39,
-    kHVCELLBALANCINGSTATUSFieldNumber = 40,
-    kSETCELLBALANCINGSTATUSFieldNumber = 41,
-    kHANDCARTSTATUSFieldNumber = 42,
-    kSPEEDFieldNumber = 43,
-    kINVLREQUESTFieldNumber = 44,
-    kINVRREQUESTFieldNumber = 45,
-    kINVLRESPONSEFieldNumber = 46,
-    kINVRRESPONSEFieldNumber = 47,
-    kFLASHCELLBOARD0TXFieldNumber = 48,
-    kFLASHCELLBOARD0RXFieldNumber = 49,
-    kFLASHCELLBOARD1TXFieldNumber = 50,
-    kFLASHCELLBOARD1RXFieldNumber = 51,
-    kFLASHCELLBOARD2TXFieldNumber = 52,
-    kFLASHCELLBOARD2RXFieldNumber = 53,
-    kFLASHCELLBOARD3TXFieldNumber = 54,
-    kFLASHCELLBOARD3RXFieldNumber = 55,
-    kFLASHCELLBOARD4TXFieldNumber = 56,
-    kFLASHCELLBOARD4RXFieldNumber = 57,
-    kFLASHCELLBOARD5TXFieldNumber = 58,
-    kFLASHCELLBOARD5RXFieldNumber = 59,
-    kBRUSANLG5CTLFieldNumber = 60,
-    kBRUSASTFieldNumber = 61,
-    kBRUSAACTIFieldNumber = 62,
-    kBRUSAACTIIFieldNumber = 63,
-    kBRUSATEMPFieldNumber = 64,
-    kBRUSAERRFieldNumber = 65,
-    kBMSHVCHIMERAFieldNumber = 66,
-    kECUCHIMERAFieldNumber = 67,
+    kHVFANSOVERRIDESTATUSFieldNumber = 18,
+    kTSSTATUSFieldNumber = 19,
+    kSETTSSTATUSDASFieldNumber = 20,
+    kSETTSSTATUSHANDCARTFieldNumber = 21,
+    kSTEERSTATUSFieldNumber = 22,
+    kSETCARSTATUSFieldNumber = 23,
+    kSETPEDALSRANGEFieldNumber = 24,
+    kSETSTEERINGANGLERANGEFieldNumber = 25,
+    kCARSTATUSFieldNumber = 26,
+    kDASERRORSFieldNumber = 27,
+    kLVCURRENTFieldNumber = 28,
+    kLVVOLTAGEFieldNumber = 29,
+    kLVTOTALVOLTAGEFieldNumber = 30,
+    kLVTEMPERATUREFieldNumber = 31,
+    kCOOLINGSTATUSFieldNumber = 32,
+    kSETRADIATORSPEEDFieldNumber = 33,
+    kSETPUMPSSPEEDFieldNumber = 34,
+    kSETINVERTERCONNECTIONSTATUSFieldNumber = 35,
+    kINVERTERCONNECTIONSTATUSFieldNumber = 36,
+    kSHUTDOWNSTATUSFieldNumber = 37,
+    kMARKERFieldNumber = 38,
+    kHVCELLSVOLTAGEFieldNumber = 39,
+    kHVCELLSTEMPFieldNumber = 40,
+    kHVCELLBALANCINGSTATUSFieldNumber = 41,
+    kSETCELLBALANCINGSTATUSFieldNumber = 42,
+    kHANDCARTSTATUSFieldNumber = 43,
+    kSPEEDFieldNumber = 44,
+    kINVLREQUESTFieldNumber = 45,
+    kINVRREQUESTFieldNumber = 46,
+    kINVLRESPONSEFieldNumber = 47,
+    kINVRRESPONSEFieldNumber = 48,
+    kFLASHCELLBOARD0TXFieldNumber = 49,
+    kFLASHCELLBOARD0RXFieldNumber = 50,
+    kFLASHCELLBOARD1TXFieldNumber = 51,
+    kFLASHCELLBOARD1RXFieldNumber = 52,
+    kFLASHCELLBOARD2TXFieldNumber = 53,
+    kFLASHCELLBOARD2RXFieldNumber = 54,
+    kFLASHCELLBOARD3TXFieldNumber = 55,
+    kFLASHCELLBOARD3RXFieldNumber = 56,
+    kFLASHCELLBOARD4TXFieldNumber = 57,
+    kFLASHCELLBOARD4RXFieldNumber = 58,
+    kFLASHCELLBOARD5TXFieldNumber = 59,
+    kFLASHCELLBOARD5RXFieldNumber = 60,
+    kBRUSANLG5CTLFieldNumber = 61,
+    kBRUSASTFieldNumber = 62,
+    kBRUSAACTIFieldNumber = 63,
+    kBRUSAACTIIFieldNumber = 64,
+    kBRUSATEMPFieldNumber = 65,
+    kBRUSAERRFieldNumber = 66,
+    kBMSHVCHIMERAFieldNumber = 67,
+    kECUCHIMERAFieldNumber = 68,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -11995,7 +12165,25 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >&
       hv_can_forward_status() const;
 
-  // repeated .primary.TS_STATUS TS_STATUS = 18;
+  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 18;
+  int hv_fans_override_status_size() const;
+  private:
+  int _internal_hv_fans_override_status_size() const;
+  public:
+  void clear_hv_fans_override_status();
+  ::primary::HV_FANS_OVERRIDE_STATUS* mutable_hv_fans_override_status(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >*
+      mutable_hv_fans_override_status();
+  private:
+  const ::primary::HV_FANS_OVERRIDE_STATUS& _internal_hv_fans_override_status(int index) const;
+  ::primary::HV_FANS_OVERRIDE_STATUS* _internal_add_hv_fans_override_status();
+  public:
+  const ::primary::HV_FANS_OVERRIDE_STATUS& hv_fans_override_status(int index) const;
+  ::primary::HV_FANS_OVERRIDE_STATUS* add_hv_fans_override_status();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >&
+      hv_fans_override_status() const;
+
+  // repeated .primary.TS_STATUS TS_STATUS = 19;
   int ts_status_size() const;
   private:
   int _internal_ts_status_size() const;
@@ -12013,7 +12201,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::TS_STATUS >&
       ts_status() const;
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 19;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 20;
   int set_ts_status_das_size() const;
   private:
   int _internal_set_ts_status_das_size() const;
@@ -12031,7 +12219,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS >&
       set_ts_status_das() const;
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 20;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 21;
   int set_ts_status_handcart_size() const;
   private:
   int _internal_set_ts_status_handcart_size() const;
@@ -12049,7 +12237,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART >&
       set_ts_status_handcart() const;
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 21;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 22;
   int steer_status_size() const;
   private:
   int _internal_steer_status_size() const;
@@ -12067,7 +12255,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::STEER_STATUS >&
       steer_status() const;
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 22;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 23;
   int set_car_status_size() const;
   private:
   int _internal_set_car_status_size() const;
@@ -12085,7 +12273,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CAR_STATUS >&
       set_car_status() const;
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 23;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 24;
   int set_pedals_range_size() const;
   private:
   int _internal_set_pedals_range_size() const;
@@ -12103,7 +12291,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PEDALS_RANGE >&
       set_pedals_range() const;
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 24;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 25;
   int set_steering_angle_range_size() const;
   private:
   int _internal_set_steering_angle_range_size() const;
@@ -12121,7 +12309,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >&
       set_steering_angle_range() const;
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 25;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 26;
   int car_status_size() const;
   private:
   int _internal_car_status_size() const;
@@ -12139,7 +12327,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CAR_STATUS >&
       car_status() const;
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 26;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 27;
   int das_errors_size() const;
   private:
   int _internal_das_errors_size() const;
@@ -12157,7 +12345,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::DAS_ERRORS >&
       das_errors() const;
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 27;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 28;
   int lv_current_size() const;
   private:
   int _internal_lv_current_size() const;
@@ -12175,7 +12363,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_CURRENT >&
       lv_current() const;
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 28;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 29;
   int lv_voltage_size() const;
   private:
   int _internal_lv_voltage_size() const;
@@ -12193,7 +12381,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_VOLTAGE >&
       lv_voltage() const;
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 29;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 30;
   int lv_total_voltage_size() const;
   private:
   int _internal_lv_total_voltage_size() const;
@@ -12211,7 +12399,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE >&
       lv_total_voltage() const;
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 30;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 31;
   int lv_temperature_size() const;
   private:
   int _internal_lv_temperature_size() const;
@@ -12229,7 +12417,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_TEMPERATURE >&
       lv_temperature() const;
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 31;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 32;
   int cooling_status_size() const;
   private:
   int _internal_cooling_status_size() const;
@@ -12247,7 +12435,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::COOLING_STATUS >&
       cooling_status() const;
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 32;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 33;
   int set_radiator_speed_size() const;
   private:
   int _internal_set_radiator_speed_size() const;
@@ -12265,7 +12453,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
       set_radiator_speed() const;
 
-  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 33;
+  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 34;
   int set_pumps_speed_size() const;
   private:
   int _internal_set_pumps_speed_size() const;
@@ -12283,7 +12471,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_SPEED >&
       set_pumps_speed() const;
 
-  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 34;
+  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 35;
   int set_inverter_connection_status_size() const;
   private:
   int _internal_set_inverter_connection_status_size() const;
@@ -12301,7 +12489,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_INVERTER_CONNECTION_STATUS >&
       set_inverter_connection_status() const;
 
-  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 35;
+  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 36;
   int inverter_connection_status_size() const;
   private:
   int _internal_inverter_connection_status_size() const;
@@ -12319,7 +12507,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INVERTER_CONNECTION_STATUS >&
       inverter_connection_status() const;
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 36;
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 37;
   int shutdown_status_size() const;
   private:
   int _internal_shutdown_status_size() const;
@@ -12337,7 +12525,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SHUTDOWN_STATUS >&
       shutdown_status() const;
 
-  // repeated .primary.MARKER MARKER = 37;
+  // repeated .primary.MARKER MARKER = 38;
   int marker_size() const;
   private:
   int _internal_marker_size() const;
@@ -12355,7 +12543,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 38;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 39;
   int hv_cells_voltage_size() const;
   private:
   int _internal_hv_cells_voltage_size() const;
@@ -12373,7 +12561,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 39;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 40;
   int hv_cells_temp_size() const;
   private:
   int _internal_hv_cells_temp_size() const;
@@ -12391,7 +12579,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 40;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 41;
   int hv_cell_balancing_status_size() const;
   private:
   int _internal_hv_cell_balancing_status_size() const;
@@ -12409,7 +12597,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 41;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 42;
   int set_cell_balancing_status_size() const;
   private:
   int _internal_set_cell_balancing_status_size() const;
@@ -12427,7 +12615,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 42;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 43;
   int handcart_status_size() const;
   private:
   int _internal_handcart_status_size() const;
@@ -12445,7 +12633,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 43;
+  // repeated .primary.SPEED SPEED = 44;
   int speed_size() const;
   private:
   int _internal_speed_size() const;
@@ -12463,7 +12651,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 44;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 45;
   int inv_l_request_size() const;
   private:
   int _internal_inv_l_request_size() const;
@@ -12481,7 +12669,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >&
       inv_l_request() const;
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 45;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 46;
   int inv_r_request_size() const;
   private:
   int _internal_inv_r_request_size() const;
@@ -12499,7 +12687,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >&
       inv_r_request() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 46;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 47;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -12517,7 +12705,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_RESPONSE >&
       inv_l_response() const;
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 47;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 48;
   int inv_r_response_size() const;
   private:
   int _internal_inv_r_response_size() const;
@@ -12535,7 +12723,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >&
       inv_r_response() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 48;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 49;
   int flash_cellboard_0_tx_size() const;
   private:
   int _internal_flash_cellboard_0_tx_size() const;
@@ -12553,7 +12741,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX >&
       flash_cellboard_0_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 49;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 50;
   int flash_cellboard_0_rx_size() const;
   private:
   int _internal_flash_cellboard_0_rx_size() const;
@@ -12571,7 +12759,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX >&
       flash_cellboard_0_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 50;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 51;
   int flash_cellboard_1_tx_size() const;
   private:
   int _internal_flash_cellboard_1_tx_size() const;
@@ -12589,7 +12777,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX >&
       flash_cellboard_1_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 51;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 52;
   int flash_cellboard_1_rx_size() const;
   private:
   int _internal_flash_cellboard_1_rx_size() const;
@@ -12607,7 +12795,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_RX >&
       flash_cellboard_1_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 52;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 53;
   int flash_cellboard_2_tx_size() const;
   private:
   int _internal_flash_cellboard_2_tx_size() const;
@@ -12625,7 +12813,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_TX >&
       flash_cellboard_2_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 53;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 54;
   int flash_cellboard_2_rx_size() const;
   private:
   int _internal_flash_cellboard_2_rx_size() const;
@@ -12643,7 +12831,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_RX >&
       flash_cellboard_2_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 54;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 55;
   int flash_cellboard_3_tx_size() const;
   private:
   int _internal_flash_cellboard_3_tx_size() const;
@@ -12661,7 +12849,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_TX >&
       flash_cellboard_3_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 55;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 56;
   int flash_cellboard_3_rx_size() const;
   private:
   int _internal_flash_cellboard_3_rx_size() const;
@@ -12679,7 +12867,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_RX >&
       flash_cellboard_3_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 56;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 57;
   int flash_cellboard_4_tx_size() const;
   private:
   int _internal_flash_cellboard_4_tx_size() const;
@@ -12697,7 +12885,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_TX >&
       flash_cellboard_4_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 57;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 58;
   int flash_cellboard_4_rx_size() const;
   private:
   int _internal_flash_cellboard_4_rx_size() const;
@@ -12715,7 +12903,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX >&
       flash_cellboard_4_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 58;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 59;
   int flash_cellboard_5_tx_size() const;
   private:
   int _internal_flash_cellboard_5_tx_size() const;
@@ -12733,7 +12921,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX >&
       flash_cellboard_5_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 59;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 60;
   int flash_cellboard_5_rx_size() const;
   private:
   int _internal_flash_cellboard_5_rx_size() const;
@@ -12751,7 +12939,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX >&
       flash_cellboard_5_rx() const;
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 60;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 61;
   int brusa_nlg5_ctl_size() const;
   private:
   int _internal_brusa_nlg5_ctl_size() const;
@@ -12769,7 +12957,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >&
       brusa_nlg5_ctl() const;
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 61;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 62;
   int brusa_st_size() const;
   private:
   int _internal_brusa_st_size() const;
@@ -12787,7 +12975,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >&
       brusa_st() const;
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 62;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 63;
   int brusa_act_i_size() const;
   private:
   int _internal_brusa_act_i_size() const;
@@ -12805,7 +12993,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >&
       brusa_act_i() const;
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 63;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 64;
   int brusa_act_ii_size() const;
   private:
   int _internal_brusa_act_ii_size() const;
@@ -12823,7 +13011,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >&
       brusa_act_ii() const;
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 64;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 65;
   int brusa_temp_size() const;
   private:
   int _internal_brusa_temp_size() const;
@@ -12841,7 +13029,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >&
       brusa_temp() const;
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 65;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 66;
   int brusa_err_size() const;
   private:
   int _internal_brusa_err_size() const;
@@ -12859,7 +13047,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >&
       brusa_err() const;
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 66;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 67;
   int bms_hv_chimera_size() const;
   private:
   int _internal_bms_hv_chimera_size() const;
@@ -12877,7 +13065,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
       bms_hv_chimera() const;
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 67;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 68;
   int ecu_chimera_size() const;
   private:
   int _internal_ecu_chimera_size() const;
@@ -12919,6 +13107,7 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD > hv_can_forward_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE > hv_fans_override_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS > hv_can_forward_status_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS > hv_fans_override_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::TS_STATUS > ts_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS > set_ts_status_das_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART > set_ts_status_handcart_;
@@ -14125,6 +14314,70 @@ inline void HV_CAN_FORWARD_STATUS::_internal_set__inner_timestamp(uint64_t value
 inline void HV_CAN_FORWARD_STATUS::set__inner_timestamp(uint64_t value) {
   _internal_set__inner_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.HV_CAN_FORWARD_STATUS._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// HV_FANS_OVERRIDE_STATUS
+
+// uint32 fans_speed = 1;
+inline void HV_FANS_OVERRIDE_STATUS::clear_fans_speed() {
+  fans_speed_ = 0u;
+}
+inline uint32_t HV_FANS_OVERRIDE_STATUS::_internal_fans_speed() const {
+  return fans_speed_;
+}
+inline uint32_t HV_FANS_OVERRIDE_STATUS::fans_speed() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FANS_OVERRIDE_STATUS.fans_speed)
+  return _internal_fans_speed();
+}
+inline void HV_FANS_OVERRIDE_STATUS::_internal_set_fans_speed(uint32_t value) {
+  
+  fans_speed_ = value;
+}
+inline void HV_FANS_OVERRIDE_STATUS::set_fans_speed(uint32_t value) {
+  _internal_set_fans_speed(value);
+  // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE_STATUS.fans_speed)
+}
+
+// .primary.Toggle fans_override = 2;
+inline void HV_FANS_OVERRIDE_STATUS::clear_fans_override() {
+  fans_override_ = 0;
+}
+inline ::primary::Toggle HV_FANS_OVERRIDE_STATUS::_internal_fans_override() const {
+  return static_cast< ::primary::Toggle >(fans_override_);
+}
+inline ::primary::Toggle HV_FANS_OVERRIDE_STATUS::fans_override() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FANS_OVERRIDE_STATUS.fans_override)
+  return _internal_fans_override();
+}
+inline void HV_FANS_OVERRIDE_STATUS::_internal_set_fans_override(::primary::Toggle value) {
+  
+  fans_override_ = value;
+}
+inline void HV_FANS_OVERRIDE_STATUS::set_fans_override(::primary::Toggle value) {
+  _internal_set_fans_override(value);
+  // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE_STATUS.fans_override)
+}
+
+// uint64 _inner_timestamp = 3;
+inline void HV_FANS_OVERRIDE_STATUS::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t HV_FANS_OVERRIDE_STATUS::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t HV_FANS_OVERRIDE_STATUS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FANS_OVERRIDE_STATUS._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void HV_FANS_OVERRIDE_STATUS::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void HV_FANS_OVERRIDE_STATUS::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE_STATUS._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -17651,7 +17904,47 @@ Pack::hv_can_forward_status() const {
   return hv_can_forward_status_;
 }
 
-// repeated .primary.TS_STATUS TS_STATUS = 18;
+// repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 18;
+inline int Pack::_internal_hv_fans_override_status_size() const {
+  return hv_fans_override_status_.size();
+}
+inline int Pack::hv_fans_override_status_size() const {
+  return _internal_hv_fans_override_status_size();
+}
+inline void Pack::clear_hv_fans_override_status() {
+  hv_fans_override_status_.Clear();
+}
+inline ::primary::HV_FANS_OVERRIDE_STATUS* Pack::mutable_hv_fans_override_status(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.HV_FANS_OVERRIDE_STATUS)
+  return hv_fans_override_status_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >*
+Pack::mutable_hv_fans_override_status() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.HV_FANS_OVERRIDE_STATUS)
+  return &hv_fans_override_status_;
+}
+inline const ::primary::HV_FANS_OVERRIDE_STATUS& Pack::_internal_hv_fans_override_status(int index) const {
+  return hv_fans_override_status_.Get(index);
+}
+inline const ::primary::HV_FANS_OVERRIDE_STATUS& Pack::hv_fans_override_status(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.HV_FANS_OVERRIDE_STATUS)
+  return _internal_hv_fans_override_status(index);
+}
+inline ::primary::HV_FANS_OVERRIDE_STATUS* Pack::_internal_add_hv_fans_override_status() {
+  return hv_fans_override_status_.Add();
+}
+inline ::primary::HV_FANS_OVERRIDE_STATUS* Pack::add_hv_fans_override_status() {
+  ::primary::HV_FANS_OVERRIDE_STATUS* _add = _internal_add_hv_fans_override_status();
+  // @@protoc_insertion_point(field_add:primary.Pack.HV_FANS_OVERRIDE_STATUS)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >&
+Pack::hv_fans_override_status() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.HV_FANS_OVERRIDE_STATUS)
+  return hv_fans_override_status_;
+}
+
+// repeated .primary.TS_STATUS TS_STATUS = 19;
 inline int Pack::_internal_ts_status_size() const {
   return ts_status_.size();
 }
@@ -17691,7 +17984,7 @@ Pack::ts_status() const {
   return ts_status_;
 }
 
-// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 19;
+// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 20;
 inline int Pack::_internal_set_ts_status_das_size() const {
   return set_ts_status_das_.size();
 }
@@ -17731,7 +18024,7 @@ Pack::set_ts_status_das() const {
   return set_ts_status_das_;
 }
 
-// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 20;
+// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 21;
 inline int Pack::_internal_set_ts_status_handcart_size() const {
   return set_ts_status_handcart_.size();
 }
@@ -17771,7 +18064,7 @@ Pack::set_ts_status_handcart() const {
   return set_ts_status_handcart_;
 }
 
-// repeated .primary.STEER_STATUS STEER_STATUS = 21;
+// repeated .primary.STEER_STATUS STEER_STATUS = 22;
 inline int Pack::_internal_steer_status_size() const {
   return steer_status_.size();
 }
@@ -17811,7 +18104,7 @@ Pack::steer_status() const {
   return steer_status_;
 }
 
-// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 22;
+// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 23;
 inline int Pack::_internal_set_car_status_size() const {
   return set_car_status_.size();
 }
@@ -17851,7 +18144,7 @@ Pack::set_car_status() const {
   return set_car_status_;
 }
 
-// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 23;
+// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 24;
 inline int Pack::_internal_set_pedals_range_size() const {
   return set_pedals_range_.size();
 }
@@ -17891,7 +18184,7 @@ Pack::set_pedals_range() const {
   return set_pedals_range_;
 }
 
-// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 24;
+// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 25;
 inline int Pack::_internal_set_steering_angle_range_size() const {
   return set_steering_angle_range_.size();
 }
@@ -17931,7 +18224,7 @@ Pack::set_steering_angle_range() const {
   return set_steering_angle_range_;
 }
 
-// repeated .primary.CAR_STATUS CAR_STATUS = 25;
+// repeated .primary.CAR_STATUS CAR_STATUS = 26;
 inline int Pack::_internal_car_status_size() const {
   return car_status_.size();
 }
@@ -17971,7 +18264,7 @@ Pack::car_status() const {
   return car_status_;
 }
 
-// repeated .primary.DAS_ERRORS DAS_ERRORS = 26;
+// repeated .primary.DAS_ERRORS DAS_ERRORS = 27;
 inline int Pack::_internal_das_errors_size() const {
   return das_errors_.size();
 }
@@ -18011,7 +18304,7 @@ Pack::das_errors() const {
   return das_errors_;
 }
 
-// repeated .primary.LV_CURRENT LV_CURRENT = 27;
+// repeated .primary.LV_CURRENT LV_CURRENT = 28;
 inline int Pack::_internal_lv_current_size() const {
   return lv_current_.size();
 }
@@ -18051,7 +18344,7 @@ Pack::lv_current() const {
   return lv_current_;
 }
 
-// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 28;
+// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 29;
 inline int Pack::_internal_lv_voltage_size() const {
   return lv_voltage_.size();
 }
@@ -18091,7 +18384,7 @@ Pack::lv_voltage() const {
   return lv_voltage_;
 }
 
-// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 29;
+// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 30;
 inline int Pack::_internal_lv_total_voltage_size() const {
   return lv_total_voltage_.size();
 }
@@ -18131,7 +18424,7 @@ Pack::lv_total_voltage() const {
   return lv_total_voltage_;
 }
 
-// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 30;
+// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 31;
 inline int Pack::_internal_lv_temperature_size() const {
   return lv_temperature_.size();
 }
@@ -18171,7 +18464,7 @@ Pack::lv_temperature() const {
   return lv_temperature_;
 }
 
-// repeated .primary.COOLING_STATUS COOLING_STATUS = 31;
+// repeated .primary.COOLING_STATUS COOLING_STATUS = 32;
 inline int Pack::_internal_cooling_status_size() const {
   return cooling_status_.size();
 }
@@ -18211,7 +18504,7 @@ Pack::cooling_status() const {
   return cooling_status_;
 }
 
-// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 32;
+// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 33;
 inline int Pack::_internal_set_radiator_speed_size() const {
   return set_radiator_speed_.size();
 }
@@ -18251,7 +18544,7 @@ Pack::set_radiator_speed() const {
   return set_radiator_speed_;
 }
 
-// repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 33;
+// repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 34;
 inline int Pack::_internal_set_pumps_speed_size() const {
   return set_pumps_speed_.size();
 }
@@ -18291,7 +18584,7 @@ Pack::set_pumps_speed() const {
   return set_pumps_speed_;
 }
 
-// repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 34;
+// repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 35;
 inline int Pack::_internal_set_inverter_connection_status_size() const {
   return set_inverter_connection_status_.size();
 }
@@ -18331,7 +18624,7 @@ Pack::set_inverter_connection_status() const {
   return set_inverter_connection_status_;
 }
 
-// repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 35;
+// repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 36;
 inline int Pack::_internal_inverter_connection_status_size() const {
   return inverter_connection_status_.size();
 }
@@ -18371,7 +18664,7 @@ Pack::inverter_connection_status() const {
   return inverter_connection_status_;
 }
 
-// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 36;
+// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 37;
 inline int Pack::_internal_shutdown_status_size() const {
   return shutdown_status_.size();
 }
@@ -18411,7 +18704,7 @@ Pack::shutdown_status() const {
   return shutdown_status_;
 }
 
-// repeated .primary.MARKER MARKER = 37;
+// repeated .primary.MARKER MARKER = 38;
 inline int Pack::_internal_marker_size() const {
   return marker_.size();
 }
@@ -18451,7 +18744,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 38;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 39;
 inline int Pack::_internal_hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -18491,7 +18784,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 39;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 40;
 inline int Pack::_internal_hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -18531,7 +18824,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 40;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 41;
 inline int Pack::_internal_hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -18571,7 +18864,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 41;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 42;
 inline int Pack::_internal_set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -18611,7 +18904,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 42;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 43;
 inline int Pack::_internal_handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -18651,7 +18944,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 43;
+// repeated .primary.SPEED SPEED = 44;
 inline int Pack::_internal_speed_size() const {
   return speed_.size();
 }
@@ -18691,7 +18984,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 44;
+// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 45;
 inline int Pack::_internal_inv_l_request_size() const {
   return inv_l_request_.size();
 }
@@ -18731,7 +19024,7 @@ Pack::inv_l_request() const {
   return inv_l_request_;
 }
 
-// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 45;
+// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 46;
 inline int Pack::_internal_inv_r_request_size() const {
   return inv_r_request_.size();
 }
@@ -18771,7 +19064,7 @@ Pack::inv_r_request() const {
   return inv_r_request_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 46;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 47;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -18811,7 +19104,7 @@ Pack::inv_l_response() const {
   return inv_l_response_;
 }
 
-// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 47;
+// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 48;
 inline int Pack::_internal_inv_r_response_size() const {
   return inv_r_response_.size();
 }
@@ -18851,7 +19144,7 @@ Pack::inv_r_response() const {
   return inv_r_response_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 48;
+// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 49;
 inline int Pack::_internal_flash_cellboard_0_tx_size() const {
   return flash_cellboard_0_tx_.size();
 }
@@ -18891,7 +19184,7 @@ Pack::flash_cellboard_0_tx() const {
   return flash_cellboard_0_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 49;
+// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 50;
 inline int Pack::_internal_flash_cellboard_0_rx_size() const {
   return flash_cellboard_0_rx_.size();
 }
@@ -18931,7 +19224,7 @@ Pack::flash_cellboard_0_rx() const {
   return flash_cellboard_0_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 50;
+// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 51;
 inline int Pack::_internal_flash_cellboard_1_tx_size() const {
   return flash_cellboard_1_tx_.size();
 }
@@ -18971,7 +19264,7 @@ Pack::flash_cellboard_1_tx() const {
   return flash_cellboard_1_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 51;
+// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 52;
 inline int Pack::_internal_flash_cellboard_1_rx_size() const {
   return flash_cellboard_1_rx_.size();
 }
@@ -19011,7 +19304,7 @@ Pack::flash_cellboard_1_rx() const {
   return flash_cellboard_1_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 52;
+// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 53;
 inline int Pack::_internal_flash_cellboard_2_tx_size() const {
   return flash_cellboard_2_tx_.size();
 }
@@ -19051,7 +19344,7 @@ Pack::flash_cellboard_2_tx() const {
   return flash_cellboard_2_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 53;
+// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 54;
 inline int Pack::_internal_flash_cellboard_2_rx_size() const {
   return flash_cellboard_2_rx_.size();
 }
@@ -19091,7 +19384,7 @@ Pack::flash_cellboard_2_rx() const {
   return flash_cellboard_2_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 54;
+// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 55;
 inline int Pack::_internal_flash_cellboard_3_tx_size() const {
   return flash_cellboard_3_tx_.size();
 }
@@ -19131,7 +19424,7 @@ Pack::flash_cellboard_3_tx() const {
   return flash_cellboard_3_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 55;
+// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 56;
 inline int Pack::_internal_flash_cellboard_3_rx_size() const {
   return flash_cellboard_3_rx_.size();
 }
@@ -19171,7 +19464,7 @@ Pack::flash_cellboard_3_rx() const {
   return flash_cellboard_3_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 56;
+// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 57;
 inline int Pack::_internal_flash_cellboard_4_tx_size() const {
   return flash_cellboard_4_tx_.size();
 }
@@ -19211,7 +19504,7 @@ Pack::flash_cellboard_4_tx() const {
   return flash_cellboard_4_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 57;
+// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 58;
 inline int Pack::_internal_flash_cellboard_4_rx_size() const {
   return flash_cellboard_4_rx_.size();
 }
@@ -19251,7 +19544,7 @@ Pack::flash_cellboard_4_rx() const {
   return flash_cellboard_4_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 58;
+// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 59;
 inline int Pack::_internal_flash_cellboard_5_tx_size() const {
   return flash_cellboard_5_tx_.size();
 }
@@ -19291,7 +19584,7 @@ Pack::flash_cellboard_5_tx() const {
   return flash_cellboard_5_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 59;
+// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 60;
 inline int Pack::_internal_flash_cellboard_5_rx_size() const {
   return flash_cellboard_5_rx_.size();
 }
@@ -19331,7 +19624,7 @@ Pack::flash_cellboard_5_rx() const {
   return flash_cellboard_5_rx_;
 }
 
-// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 60;
+// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 61;
 inline int Pack::_internal_brusa_nlg5_ctl_size() const {
   return brusa_nlg5_ctl_.size();
 }
@@ -19371,7 +19664,7 @@ Pack::brusa_nlg5_ctl() const {
   return brusa_nlg5_ctl_;
 }
 
-// repeated .primary.BRUSA_ST BRUSA_ST = 61;
+// repeated .primary.BRUSA_ST BRUSA_ST = 62;
 inline int Pack::_internal_brusa_st_size() const {
   return brusa_st_.size();
 }
@@ -19411,7 +19704,7 @@ Pack::brusa_st() const {
   return brusa_st_;
 }
 
-// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 62;
+// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 63;
 inline int Pack::_internal_brusa_act_i_size() const {
   return brusa_act_i_.size();
 }
@@ -19451,7 +19744,7 @@ Pack::brusa_act_i() const {
   return brusa_act_i_;
 }
 
-// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 63;
+// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 64;
 inline int Pack::_internal_brusa_act_ii_size() const {
   return brusa_act_ii_.size();
 }
@@ -19491,7 +19784,7 @@ Pack::brusa_act_ii() const {
   return brusa_act_ii_;
 }
 
-// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 64;
+// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 65;
 inline int Pack::_internal_brusa_temp_size() const {
   return brusa_temp_.size();
 }
@@ -19531,7 +19824,7 @@ Pack::brusa_temp() const {
   return brusa_temp_;
 }
 
-// repeated .primary.BRUSA_ERR BRUSA_ERR = 65;
+// repeated .primary.BRUSA_ERR BRUSA_ERR = 66;
 inline int Pack::_internal_brusa_err_size() const {
   return brusa_err_.size();
 }
@@ -19571,7 +19864,7 @@ Pack::brusa_err() const {
   return brusa_err_;
 }
 
-// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 66;
+// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 67;
 inline int Pack::_internal_bms_hv_chimera_size() const {
   return bms_hv_chimera_.size();
 }
@@ -19611,7 +19904,7 @@ Pack::bms_hv_chimera() const {
   return bms_hv_chimera_;
 }
 
-// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 67;
+// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 68;
 inline int Pack::_internal_ecu_chimera_size() const {
   return ecu_chimera_.size();
 }
@@ -19654,6 +19947,8 @@ Pack::ecu_chimera() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

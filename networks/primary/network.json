@@ -439,6 +439,22 @@
       }
     },
     {
+      "name": "HV_FANS_OVERRIDE_STATUS",
+      "topic": "HANDCART",
+      "priority": 4,
+      "sending": ["BMS_HV"],
+      "receiving": ["HANDCART"],
+      "description": "Status of fans override",
+      "contents": {
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        }
+      }
+    },
+    {
       "name": "TS_STATUS",
       "topic": "DASnSTEERnCART",
       "priority": 7,

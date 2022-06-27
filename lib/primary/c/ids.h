@@ -78,6 +78,7 @@ typedef uint16_t canlib_message_id;
 #define primary_TOPIC_FILTER_HANDCART 0x6 // dec: 6 bin: 0b00000000110
 
 #define primary_ID_HV_CAN_FORWARD_STATUS 0x6 // dec: 6 bin: 0b00000000110
+#define primary_ID_HV_FANS_OVERRIDE_STATUS 0x306 // dec: 774 bin: 0b01100000110
 #define primary_ID_HV_CELLS_VOLTAGE 0x206 // dec: 518 bin: 0b01000000110
 #define primary_ID_HV_CELLS_TEMP 0x226 // dec: 550 bin: 0b01000100110
 #define primary_ID_HV_CELL_BALANCING_STATUS 0x246 // dec: 582 bin: 0b01001000110
@@ -180,6 +181,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "HV_FANS_OVERRIDE");;
         case primary_ID_HV_CAN_FORWARD_STATUS:
             return sprintf(buffer, "%s", "HV_CAN_FORWARD_STATUS");;
+        case primary_ID_HV_FANS_OVERRIDE_STATUS:
+            return sprintf(buffer, "%s", "HV_FANS_OVERRIDE_STATUS");;
         case primary_ID_TS_STATUS:
             return sprintf(buffer, "%s", "TS_STATUS");;
         case primary_ID_SET_TS_STATUS_DAS:
@@ -304,6 +307,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 5: return true; break;
         case 37: return true; break;
         case 6: return true; break;
+        case 774: return true; break;
         case 36: return true; break;
         case 69: return true; break;
         case 101: return true; break;

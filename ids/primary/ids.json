@@ -110,6 +110,9 @@
                 "HV_CAN_FORWARD_STATUS": {
                     "HV_CAN_FORWARD_STATUS": 6
                 },
+                "HV_FANS_OVERRIDE_STATUS": {
+                    "HV_FANS_OVERRIDE_STATUS": 774
+                },
                 "HV_CELLS_VOLTAGE": {
                     "HV_CELLS_VOLTAGE": 518
                 },
