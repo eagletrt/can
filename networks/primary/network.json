@@ -412,6 +412,22 @@
       }
     },
     {
+      "name": "HV_FANS_OVERRIDE",
+      "topic": "BMS_HV",
+      "priority": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "override fans speed",
+      "contents": {
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        }
+      }
+    },
+    {
       "name": "HV_CAN_FORWARD_STATUS",
       "topic": "HANDCART",
       "priority": 7,
