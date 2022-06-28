@@ -490,14 +490,14 @@
       }
     },
     {
-      "name": "HV_FEEDBACKS_ERRORS",
+      "name": "HV_FEEDBACKS_STATUS",
       "topic": "DASnSTEER",
       "priority": 4,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER"],
       "description": "Errors on the feedbacks checks",
       "contents": {
-        "feedbacks_errors": "HvFeedbacks",
+        "feedbacks_status": "HvFeedbacks",
         "is_circuitry_error": "HvFeedbacks"
       }
     },

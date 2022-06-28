@@ -127,8 +127,8 @@
         "DASnSTEER": {
             "id": 7,
             "messages": {
-                "HV_FEEDBACKS_ERRORS": {
-                    "HV_FEEDBACKS_ERRORS": 775
+                "HV_FEEDBACKS_STATUS": {
+                    "HV_FEEDBACKS_STATUS": 775
                 },
                 "HV_IMD_STATUS": {
                     "HV_IMD_STATUS": 807

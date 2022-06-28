@@ -284,20 +284,20 @@ struct HV_FANS_OVERRIDE_STATUSDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_FANS_OVERRIDE_STATUSDefaultTypeInternal _HV_FANS_OVERRIDE_STATUS_default_instance_;
-PROTOBUF_CONSTEXPR HV_FEEDBACKS_ERRORS::HV_FEEDBACKS_ERRORS(
+PROTOBUF_CONSTEXPR HV_FEEDBACKS_STATUS::HV_FEEDBACKS_STATUS(
     ::_pbi::ConstantInitialized)
-  : feedbacks_errors_(0u)
+  : feedbacks_status_(0u)
   , is_circuitry_error_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
-struct HV_FEEDBACKS_ERRORSDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR HV_FEEDBACKS_ERRORSDefaultTypeInternal()
+struct HV_FEEDBACKS_STATUSDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR HV_FEEDBACKS_STATUSDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~HV_FEEDBACKS_ERRORSDefaultTypeInternal() {}
+  ~HV_FEEDBACKS_STATUSDefaultTypeInternal() {}
   union {
-    HV_FEEDBACKS_ERRORS _instance;
+    HV_FEEDBACKS_STATUS _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_FEEDBACKS_ERRORSDefaultTypeInternal _HV_FEEDBACKS_ERRORS_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_FEEDBACKS_STATUSDefaultTypeInternal _HV_FEEDBACKS_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR HV_IMD_STATUS::HV_IMD_STATUS(
     ::_pbi::ConstantInitialized)
   : imd_info_(0u)
@@ -1034,7 +1034,7 @@ PROTOBUF_CONSTEXPR Pack::Pack(
   , hv_fans_override_()
   , hv_can_forward_status_()
   , hv_fans_override_status_()
-  , hv_feedbacks_errors_()
+  , hv_feedbacks_status_()
   , hv_imd_status_()
   , ts_status_()
   , set_ts_status_das_()
@@ -1267,14 +1267,14 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, fans_override_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_ERRORS, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_STATUS, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_ERRORS, feedbacks_errors_),
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_ERRORS, is_circuitry_error_),
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_ERRORS, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_STATUS, feedbacks_status_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_STATUS, is_circuitry_error_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1741,7 +1741,7 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_fans_override_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_can_forward_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_fans_override_status_),
-  PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_feedbacks_errors_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_feedbacks_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, hv_imd_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, ts_status_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, set_ts_status_das_),
@@ -1813,7 +1813,7 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 139, -1, -1, sizeof(::primary::HV_FANS_OVERRIDE)},
   { 148, -1, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
   { 156, -1, -1, sizeof(::primary::HV_FANS_OVERRIDE_STATUS)},
-  { 165, -1, -1, sizeof(::primary::HV_FEEDBACKS_ERRORS)},
+  { 165, -1, -1, sizeof(::primary::HV_FEEDBACKS_STATUS)},
   { 174, -1, -1, sizeof(::primary::HV_IMD_STATUS)},
   { 184, -1, -1, sizeof(::primary::TS_STATUS)},
   { 192, -1, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
@@ -1887,7 +1887,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::primary::_HV_FANS_OVERRIDE_default_instance_._instance,
   &::primary::_HV_CAN_FORWARD_STATUS_default_instance_._instance,
   &::primary::_HV_FANS_OVERRIDE_STATUS_default_instance_._instance,
-  &::primary::_HV_FEEDBACKS_ERRORS_default_instance_._instance,
+  &::primary::_HV_FEEDBACKS_STATUS_default_instance_._instance,
   &::primary::_HV_IMD_STATUS_default_instance_._instance,
   &::primary::_TS_STATUS_default_instance_._instance,
   &::primary::_SET_TS_STATUS_DAS_default_instance_._instance,
@@ -1987,8 +1987,8 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "_timestamp\030\002 \001(\004\"o\n\027HV_FANS_OVERRIDE_STA"
   "TUS\022\022\n\nfans_speed\030\001 \001(\r\022&\n\rfans_override"
   "\030\002 \001(\0162\017.primary.Toggle\022\030\n\020_inner_timest"
-  "amp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_ERRORS\022\030\n\020feed"
-  "backs_errors\030\001 \001(\r\022\032\n\022is_circuitry_error"
+  "amp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_STATUS\022\030\n\020feed"
+  "backs_status\030\001 \001(\r\022\032\n\022is_circuitry_error"
   "\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"v\n\rHV_I"
   "MD_STATUS\022\020\n\010imd_info\030\001 \001(\r\022&\n\nimd_statu"
   "s\030\002 \001(\0162\022.primary.ImdStatus\022\021\n\timd_fault"
@@ -2118,8 +2118,8 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "US\030\021 \003(\0132\036.primary.HV_CAN_FORWARD_STATUS"
   "\022A\n\027HV_FANS_OVERRIDE_STATUS\030\022 \003(\0132 .prim"
   "ary.HV_FANS_OVERRIDE_STATUS\0229\n\023HV_FEEDBA"
-  "CKS_ERRORS\030\023 \003(\0132\034.primary.HV_FEEDBACKS_"
-  "ERRORS\022-\n\rHV_IMD_STATUS\030\024 \003(\0132\026.primary."
+  "CKS_STATUS\030\023 \003(\0132\034.primary.HV_FEEDBACKS_"
+  "STATUS\022-\n\rHV_IMD_STATUS\030\024 \003(\0132\026.primary."
   "HV_IMD_STATUS\022%\n\tTS_STATUS\030\025 \003(\0132\022.prima"
   "ry.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\026 \003(\0132"
   "\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS_ST"
@@ -6581,34 +6581,34 @@ void HV_FANS_OVERRIDE_STATUS::InternalSwap(HV_FANS_OVERRIDE_STATUS* other) {
 
 // ===================================================================
 
-class HV_FEEDBACKS_ERRORS::_Internal {
+class HV_FEEDBACKS_STATUS::_Internal {
  public:
 };
 
-HV_FEEDBACKS_ERRORS::HV_FEEDBACKS_ERRORS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+HV_FEEDBACKS_STATUS::HV_FEEDBACKS_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:primary.HV_FEEDBACKS_ERRORS)
+  // @@protoc_insertion_point(arena_constructor:primary.HV_FEEDBACKS_STATUS)
 }
-HV_FEEDBACKS_ERRORS::HV_FEEDBACKS_ERRORS(const HV_FEEDBACKS_ERRORS& from)
+HV_FEEDBACKS_STATUS::HV_FEEDBACKS_STATUS(const HV_FEEDBACKS_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&feedbacks_errors_, &from.feedbacks_errors_,
+  ::memcpy(&feedbacks_status_, &from.feedbacks_status_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&feedbacks_errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:primary.HV_FEEDBACKS_ERRORS)
+    reinterpret_cast<char*>(&feedbacks_status_)) + sizeof(_inner_timestamp_));
+  // @@protoc_insertion_point(copy_constructor:primary.HV_FEEDBACKS_STATUS)
 }
 
-inline void HV_FEEDBACKS_ERRORS::SharedCtor() {
+inline void HV_FEEDBACKS_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&feedbacks_errors_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&feedbacks_status_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&feedbacks_errors_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&feedbacks_status_)) + sizeof(_inner_timestamp_));
 }
 
-HV_FEEDBACKS_ERRORS::~HV_FEEDBACKS_ERRORS() {
-  // @@protoc_insertion_point(destructor:primary.HV_FEEDBACKS_ERRORS)
+HV_FEEDBACKS_STATUS::~HV_FEEDBACKS_STATUS() {
+  // @@protoc_insertion_point(destructor:primary.HV_FEEDBACKS_STATUS)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -6616,36 +6616,36 @@ HV_FEEDBACKS_ERRORS::~HV_FEEDBACKS_ERRORS() {
   SharedDtor();
 }
 
-inline void HV_FEEDBACKS_ERRORS::SharedDtor() {
+inline void HV_FEEDBACKS_STATUS::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void HV_FEEDBACKS_ERRORS::SetCachedSize(int size) const {
+void HV_FEEDBACKS_STATUS::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void HV_FEEDBACKS_ERRORS::Clear() {
-// @@protoc_insertion_point(message_clear_start:primary.HV_FEEDBACKS_ERRORS)
+void HV_FEEDBACKS_STATUS::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.HV_FEEDBACKS_STATUS)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&feedbacks_errors_, 0, static_cast<size_t>(
+  ::memset(&feedbacks_status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&feedbacks_errors_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&feedbacks_status_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* HV_FEEDBACKS_ERRORS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* HV_FEEDBACKS_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 feedbacks_errors = 1;
+      // uint32 feedbacks_status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          feedbacks_errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          feedbacks_status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6689,16 +6689,16 @@ failure:
 #undef CHK_
 }
 
-uint8_t* HV_FEEDBACKS_ERRORS::_InternalSerialize(
+uint8_t* HV_FEEDBACKS_STATUS::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:primary.HV_FEEDBACKS_ERRORS)
+  // @@protoc_insertion_point(serialize_to_array_start:primary.HV_FEEDBACKS_STATUS)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 feedbacks_errors = 1;
-  if (this->_internal_feedbacks_errors() != 0) {
+  // uint32 feedbacks_status = 1;
+  if (this->_internal_feedbacks_status() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_feedbacks_errors(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_feedbacks_status(), target);
   }
 
   // uint32 is_circuitry_error = 2;
@@ -6717,21 +6717,21 @@ uint8_t* HV_FEEDBACKS_ERRORS::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:primary.HV_FEEDBACKS_ERRORS)
+  // @@protoc_insertion_point(serialize_to_array_end:primary.HV_FEEDBACKS_STATUS)
   return target;
 }
 
-size_t HV_FEEDBACKS_ERRORS::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:primary.HV_FEEDBACKS_ERRORS)
+size_t HV_FEEDBACKS_STATUS::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.HV_FEEDBACKS_STATUS)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 feedbacks_errors = 1;
-  if (this->_internal_feedbacks_errors() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_feedbacks_errors());
+  // uint32 feedbacks_status = 1;
+  if (this->_internal_feedbacks_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_feedbacks_status());
   }
 
   // uint32 is_circuitry_error = 2;
@@ -6747,27 +6747,27 @@ size_t HV_FEEDBACKS_ERRORS::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HV_FEEDBACKS_ERRORS::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HV_FEEDBACKS_STATUS::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    HV_FEEDBACKS_ERRORS::MergeImpl
+    HV_FEEDBACKS_STATUS::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HV_FEEDBACKS_ERRORS::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HV_FEEDBACKS_STATUS::GetClassData() const { return &_class_data_; }
 
-void HV_FEEDBACKS_ERRORS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+void HV_FEEDBACKS_STATUS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
                       const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<HV_FEEDBACKS_ERRORS *>(to)->MergeFrom(
-      static_cast<const HV_FEEDBACKS_ERRORS &>(from));
+  static_cast<HV_FEEDBACKS_STATUS *>(to)->MergeFrom(
+      static_cast<const HV_FEEDBACKS_STATUS &>(from));
 }
 
 
-void HV_FEEDBACKS_ERRORS::MergeFrom(const HV_FEEDBACKS_ERRORS& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:primary.HV_FEEDBACKS_ERRORS)
+void HV_FEEDBACKS_STATUS::MergeFrom(const HV_FEEDBACKS_STATUS& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.HV_FEEDBACKS_STATUS)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_feedbacks_errors() != 0) {
-    _internal_set_feedbacks_errors(from._internal_feedbacks_errors());
+  if (from._internal_feedbacks_status() != 0) {
+    _internal_set_feedbacks_status(from._internal_feedbacks_status());
   }
   if (from._internal_is_circuitry_error() != 0) {
     _internal_set_is_circuitry_error(from._internal_is_circuitry_error());
@@ -6778,29 +6778,29 @@ void HV_FEEDBACKS_ERRORS::MergeFrom(const HV_FEEDBACKS_ERRORS& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void HV_FEEDBACKS_ERRORS::CopyFrom(const HV_FEEDBACKS_ERRORS& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:primary.HV_FEEDBACKS_ERRORS)
+void HV_FEEDBACKS_STATUS::CopyFrom(const HV_FEEDBACKS_STATUS& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.HV_FEEDBACKS_STATUS)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool HV_FEEDBACKS_ERRORS::IsInitialized() const {
+bool HV_FEEDBACKS_STATUS::IsInitialized() const {
   return true;
 }
 
-void HV_FEEDBACKS_ERRORS::InternalSwap(HV_FEEDBACKS_ERRORS* other) {
+void HV_FEEDBACKS_STATUS::InternalSwap(HV_FEEDBACKS_STATUS* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HV_FEEDBACKS_ERRORS, _inner_timestamp_)
-      + sizeof(HV_FEEDBACKS_ERRORS::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(HV_FEEDBACKS_ERRORS, feedbacks_errors_)>(
-          reinterpret_cast<char*>(&feedbacks_errors_),
-          reinterpret_cast<char*>(&other->feedbacks_errors_));
+      PROTOBUF_FIELD_OFFSET(HV_FEEDBACKS_STATUS, _inner_timestamp_)
+      + sizeof(HV_FEEDBACKS_STATUS::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(HV_FEEDBACKS_STATUS, feedbacks_status_)>(
+          reinterpret_cast<char*>(&feedbacks_status_),
+          reinterpret_cast<char*>(&other->feedbacks_status_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata HV_FEEDBACKS_ERRORS::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata HV_FEEDBACKS_STATUS::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_primary_2eproto_getter, &descriptor_table_primary_2eproto_once,
       file_level_metadata_primary_2eproto[18]);
@@ -17841,7 +17841,7 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   hv_fans_override_(arena),
   hv_can_forward_status_(arena),
   hv_fans_override_status_(arena),
-  hv_feedbacks_errors_(arena),
+  hv_feedbacks_status_(arena),
   hv_imd_status_(arena),
   ts_status_(arena),
   set_ts_status_das_(arena),
@@ -17916,7 +17916,7 @@ Pack::Pack(const Pack& from)
       hv_fans_override_(from.hv_fans_override_),
       hv_can_forward_status_(from.hv_can_forward_status_),
       hv_fans_override_status_(from.hv_fans_override_status_),
-      hv_feedbacks_errors_(from.hv_feedbacks_errors_),
+      hv_feedbacks_status_(from.hv_feedbacks_status_),
       hv_imd_status_(from.hv_imd_status_),
       ts_status_(from.ts_status_),
       set_ts_status_das_(from.set_ts_status_das_),
@@ -18016,7 +18016,7 @@ void Pack::Clear() {
   hv_fans_override_.Clear();
   hv_can_forward_status_.Clear();
   hv_fans_override_status_.Clear();
-  hv_feedbacks_errors_.Clear();
+  hv_feedbacks_status_.Clear();
   hv_imd_status_.Clear();
   ts_status_.Clear();
   set_ts_status_das_.Clear();
@@ -18311,13 +18311,13 @@ const char* Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated .primary.HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
+      // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_hv_feedbacks_errors(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_hv_feedbacks_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<154>(ptr));
@@ -19160,10 +19160,10 @@ uint8_t* Pack::_InternalSerialize(
         InternalWriteMessage(18, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .primary.HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_hv_feedbacks_errors_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hv_feedbacks_errors(i);
+      n = static_cast<unsigned>(this->_internal_hv_feedbacks_status_size()); i < n; i++) {
+    const auto& repfield = this->_internal_hv_feedbacks_status(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(19, repfield, repfield.GetCachedSize(), target, stream);
   }
@@ -19718,9 +19718,9 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
-  total_size += 2UL * this->_internal_hv_feedbacks_errors_size();
-  for (const auto& msg : this->hv_feedbacks_errors_) {
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
+  total_size += 2UL * this->_internal_hv_feedbacks_status_size();
+  for (const auto& msg : this->hv_feedbacks_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -20122,7 +20122,7 @@ void Pack::MergeFrom(const Pack& from) {
   hv_fans_override_.MergeFrom(from.hv_fans_override_);
   hv_can_forward_status_.MergeFrom(from.hv_can_forward_status_);
   hv_fans_override_status_.MergeFrom(from.hv_fans_override_status_);
-  hv_feedbacks_errors_.MergeFrom(from.hv_feedbacks_errors_);
+  hv_feedbacks_status_.MergeFrom(from.hv_feedbacks_status_);
   hv_imd_status_.MergeFrom(from.hv_imd_status_);
   ts_status_.MergeFrom(from.ts_status_);
   set_ts_status_das_.MergeFrom(from.set_ts_status_das_);
@@ -20209,7 +20209,7 @@ void Pack::InternalSwap(Pack* other) {
   hv_fans_override_.InternalSwap(&other->hv_fans_override_);
   hv_can_forward_status_.InternalSwap(&other->hv_can_forward_status_);
   hv_fans_override_status_.InternalSwap(&other->hv_fans_override_status_);
-  hv_feedbacks_errors_.InternalSwap(&other->hv_feedbacks_errors_);
+  hv_feedbacks_status_.InternalSwap(&other->hv_feedbacks_status_);
   hv_imd_status_.InternalSwap(&other->hv_imd_status_);
   ts_status_.InternalSwap(&other->ts_status_);
   set_ts_status_das_.InternalSwap(&other->set_ts_status_das_);
@@ -20344,9 +20344,9 @@ template<> PROTOBUF_NOINLINE ::primary::HV_FANS_OVERRIDE_STATUS*
 Arena::CreateMaybeMessage< ::primary::HV_FANS_OVERRIDE_STATUS >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::HV_FANS_OVERRIDE_STATUS >(arena);
 }
-template<> PROTOBUF_NOINLINE ::primary::HV_FEEDBACKS_ERRORS*
-Arena::CreateMaybeMessage< ::primary::HV_FEEDBACKS_ERRORS >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::primary::HV_FEEDBACKS_ERRORS >(arena);
+template<> PROTOBUF_NOINLINE ::primary::HV_FEEDBACKS_STATUS*
+Arena::CreateMaybeMessage< ::primary::HV_FEEDBACKS_STATUS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::HV_FEEDBACKS_STATUS >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::HV_IMD_STATUS*
 Arena::CreateMaybeMessage< ::primary::HV_IMD_STATUS >(Arena* arena) {

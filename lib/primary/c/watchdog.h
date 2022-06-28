@@ -67,7 +67,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE 15
 #define primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS 16
 #define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS 17
-#define primary_WATCHDOG_INDEX_HV_FEEDBACKS_ERRORS 18
+#define primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS 18
 #define primary_WATCHDOG_INDEX_HV_IMD_STATUS 19
 #define primary_WATCHDOG_INDEX_TS_STATUS 20
 #define primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS 21
@@ -160,8 +160,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_HV_CAN_FORWARD_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_HV_FANS_OVERRIDE_STATUS -1
 #define primary_INTERVAL_WITH_THRESHOLD_HV_FANS_OVERRIDE_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_HV_FEEDBACKS_ERRORS -1
-#define primary_INTERVAL_WITH_THRESHOLD_HV_FEEDBACKS_ERRORS (-1 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_HV_FEEDBACKS_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_HV_FEEDBACKS_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_HV_IMD_STATUS -1
 #define primary_INTERVAL_WITH_THRESHOLD_HV_IMD_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_TS_STATUS 10
@@ -294,7 +294,7 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 37: return primary_INTERVAL_HV_FANS_OVERRIDE;
         case 6: return primary_INTERVAL_HV_CAN_FORWARD_STATUS;
         case 774: return primary_INTERVAL_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_INTERVAL_HV_FEEDBACKS_ERRORS;
+        case 775: return primary_INTERVAL_HV_FEEDBACKS_STATUS;
         case 807: return primary_INTERVAL_HV_IMD_STATUS;
         case 36: return primary_INTERVAL_TS_STATUS;
         case 69: return primary_INTERVAL_SET_TS_STATUS;
@@ -370,7 +370,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 37: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE;
         case 6: return primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS;
         case 774: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_WATCHDOG_INDEX_HV_FEEDBACKS_ERRORS;
+        case 775: return primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS;
         case 807: return primary_WATCHDOG_INDEX_HV_IMD_STATUS;
         case 36: return primary_WATCHDOG_INDEX_TS_STATUS;
         case 69: return primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS;

@@ -87,7 +87,7 @@ typedef uint16_t canlib_message_id;
 #define primary_TOPIC_MASK_DASnSTEER 0b00000011111
 #define primary_TOPIC_FILTER_DASnSTEER 0x7 // dec: 7 bin: 0b00000000111
 
-#define primary_ID_HV_FEEDBACKS_ERRORS 0x307 // dec: 775 bin: 0b01100000111
+#define primary_ID_HV_FEEDBACKS_STATUS 0x307 // dec: 775 bin: 0b01100000111
 #define primary_ID_HV_IMD_STATUS 0x327 // dec: 807 bin: 0b01100100111
 #define primary_ID_LV_CURRENT 0x347 // dec: 839 bin: 0b01101000111
 #define primary_ID_LV_VOLTAGE 0x367 // dec: 871 bin: 0b01101100111
@@ -185,8 +185,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "HV_CAN_FORWARD_STATUS");;
         case primary_ID_HV_FANS_OVERRIDE_STATUS:
             return sprintf(buffer, "%s", "HV_FANS_OVERRIDE_STATUS");;
-        case primary_ID_HV_FEEDBACKS_ERRORS:
-            return sprintf(buffer, "%s", "HV_FEEDBACKS_ERRORS");;
+        case primary_ID_HV_FEEDBACKS_STATUS:
+            return sprintf(buffer, "%s", "HV_FEEDBACKS_STATUS");;
         case primary_ID_HV_IMD_STATUS:
             return sprintf(buffer, "%s", "HV_IMD_STATUS");;
         case primary_ID_TS_STATUS:

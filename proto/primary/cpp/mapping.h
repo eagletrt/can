@@ -211,7 +211,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE;
     canlib_circular_buffer<primary_message_HV_CAN_FORWARD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CAN_FORWARD_STATUS;
     canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE_STATUS;
-    canlib_circular_buffer<primary_message_HV_FEEDBACKS_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FEEDBACKS_ERRORS;
+    canlib_circular_buffer<primary_message_HV_FEEDBACKS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FEEDBACKS_STATUS;
     canlib_circular_buffer<primary_message_HV_IMD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_IMD_STATUS;
     canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS;
     canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_DAS;
@@ -475,9 +475,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 775: {
-            primary_message_HV_FEEDBACKS_ERRORS* msg = (primary_message_HV_FEEDBACKS_ERRORS*) (*map)[index].message_raw;
-            primary::HV_FEEDBACKS_ERRORS* proto_msg = pack->add_hv_feedbacks_errors();
-            proto_msg->set_feedbacks_errors(msg->feedbacks_errors);
+            primary_message_HV_FEEDBACKS_STATUS* msg = (primary_message_HV_FEEDBACKS_STATUS*) (*map)[index].message_raw;
+            primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
+            proto_msg->set_feedbacks_status(msg->feedbacks_status);
             proto_msg->set_is_circuitry_error(msg->is_circuitry_error);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1135,14 +1135,14 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
 #endif // CANLIB_TIMESTAMP
         map->HV_FANS_OVERRIDE_STATUS.push(instance);
     }
-    for(int i = 0; i < pack->hv_feedbacks_errors_size(); i++){
-        static primary_message_HV_FEEDBACKS_ERRORS instance;
-        instance.feedbacks_errors =pack->hv_feedbacks_errors(i).feedbacks_errors();
-        instance.is_circuitry_error =pack->hv_feedbacks_errors(i).is_circuitry_error();
+    for(int i = 0; i < pack->hv_feedbacks_status_size(); i++){
+        static primary_message_HV_FEEDBACKS_STATUS instance;
+        instance.feedbacks_status =pack->hv_feedbacks_status(i).feedbacks_status();
+        instance.is_circuitry_error =pack->hv_feedbacks_status(i).is_circuitry_error();
 #ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_feedbacks_errors(i)._inner_timestamp();
+        instance._timestamp = pack->hv_feedbacks_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
-        map->HV_FEEDBACKS_ERRORS.push(instance);
+        map->HV_FEEDBACKS_STATUS.push(instance);
     }
     for(int i = 0; i < pack->hv_imd_status_size(); i++){
         static primary_message_HV_IMD_STATUS instance;

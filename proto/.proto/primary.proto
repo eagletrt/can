@@ -189,8 +189,8 @@ message HV_FANS_OVERRIDE_STATUS {
     uint64 _inner_timestamp = 3;
 }
 
-message HV_FEEDBACKS_ERRORS {
-    uint32 feedbacks_errors = 1;
+message HV_FEEDBACKS_STATUS {
+    uint32 feedbacks_status = 1;
     uint32 is_circuitry_error = 2;
     uint64 _inner_timestamp = 3;
 }
@@ -503,7 +503,7 @@ message Pack {
     repeated HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 16;
     repeated HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 17;
     repeated HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 18;
-    repeated HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
+    repeated HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
     repeated HV_IMD_STATUS HV_IMD_STATUS = 20;
     repeated TS_STATUS TS_STATUS = 21;
     repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 22;

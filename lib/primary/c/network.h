@@ -181,7 +181,7 @@ typedef struct {
 #define primary_INDEX_HV_FANS_OVERRIDE 15
 #define primary_INDEX_HV_CAN_FORWARD_STATUS 16
 #define primary_INDEX_HV_FANS_OVERRIDE_STATUS 17
-#define primary_INDEX_HV_FEEDBACKS_ERRORS 18
+#define primary_INDEX_HV_FEEDBACKS_STATUS 18
 #define primary_INDEX_HV_IMD_STATUS 19
 #define primary_INDEX_TS_STATUS 20
 #define primary_INDEX_SET_TS_STATUS_DAS 21
@@ -255,7 +255,7 @@ typedef struct {
 #define primary_SIZE_HV_FANS_OVERRIDE 3
 #define primary_SIZE_HV_CAN_FORWARD_STATUS 1
 #define primary_SIZE_HV_FANS_OVERRIDE_STATUS 3
-#define primary_SIZE_HV_FEEDBACKS_ERRORS 6
+#define primary_SIZE_HV_FEEDBACKS_STATUS 6
 #define primary_SIZE_HV_IMD_STATUS 3
 #define primary_SIZE_TS_STATUS 1
 #define primary_SIZE_SET_TS_STATUS 1
@@ -726,12 +726,12 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_FANS_OVERRIDE_STATUS_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_HvFeedbacks feedbacks_errors;
+    primary_HvFeedbacks feedbacks_status;
     primary_HvFeedbacks is_circuitry_error;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_HV_FEEDBACKS_ERRORS;
+} primary_message_HV_FEEDBACKS_STATUS;
 
 typedef struct CANLIB_PARKING {
     primary_uint16 imd_info;
@@ -1234,7 +1234,7 @@ typedef union CANLIB_PARKING {
     primary_message_HV_FANS_OVERRIDE _HV_FANS_OVERRIDE;
     primary_message_HV_CAN_FORWARD_STATUS _HV_CAN_FORWARD_STATUS;
     primary_message_HV_FANS_OVERRIDE_STATUS _HV_FANS_OVERRIDE_STATUS;
-    primary_message_HV_FEEDBACKS_ERRORS _HV_FEEDBACKS_ERRORS;
+    primary_message_HV_FEEDBACKS_STATUS _HV_FEEDBACKS_STATUS;
     primary_message_HV_IMD_STATUS _HV_IMD_STATUS;
     primary_message_TS_STATUS _TS_STATUS;
     primary_message_SET_TS_STATUS _SET_TS_STATUS;
@@ -1893,28 +1893,28 @@ int primary_to_string_file_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERR
 int primary_fields_file_HV_FANS_OVERRIDE_STATUS(FILE* buffer);
 
 
-// ============== HV_FEEDBACKS_ERRORS ============== //
+// ============== HV_FEEDBACKS_STATUS ============== //
 
-primary_byte_size primary_serialize_HV_FEEDBACKS_ERRORS(
+primary_byte_size primary_serialize_HV_FEEDBACKS_STATUS(
     uint8_t* data,
-    primary_HvFeedbacks feedbacks_errors,
+    primary_HvFeedbacks feedbacks_status,
     primary_HvFeedbacks is_circuitry_error
 );
-primary_byte_size primary_serialize_struct_HV_FEEDBACKS_ERRORS(
+primary_byte_size primary_serialize_struct_HV_FEEDBACKS_STATUS(
     uint8_t* data,
-    primary_message_HV_FEEDBACKS_ERRORS* message
+    primary_message_HV_FEEDBACKS_STATUS* message
 );
-void primary_deserialize_HV_FEEDBACKS_ERRORS(
-    primary_message_HV_FEEDBACKS_ERRORS* message,
+void primary_deserialize_HV_FEEDBACKS_STATUS(
+    primary_message_HV_FEEDBACKS_STATUS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRORS* message, char* buffer);
-int primary_fields_HV_FEEDBACKS_ERRORS(char* buffer);
-int primary_to_string_file_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRORS* message, FILE* buffer);
-int primary_fields_file_HV_FEEDBACKS_ERRORS(FILE* buffer);
+int primary_to_string_HV_FEEDBACKS_STATUS(primary_message_HV_FEEDBACKS_STATUS* message, char* buffer);
+int primary_fields_HV_FEEDBACKS_STATUS(char* buffer);
+int primary_to_string_file_HV_FEEDBACKS_STATUS(primary_message_HV_FEEDBACKS_STATUS* message, FILE* buffer);
+int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer);
 
 
 // ============== HV_IMD_STATUS ============== //
@@ -3366,7 +3366,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 37: return primary_INDEX_HV_FANS_OVERRIDE;
         case 6: return primary_INDEX_HV_CAN_FORWARD_STATUS;
         case 774: return primary_INDEX_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_INDEX_HV_FEEDBACKS_ERRORS;
+        case 775: return primary_INDEX_HV_FEEDBACKS_STATUS;
         case 807: return primary_INDEX_HV_IMD_STATUS;
         case 36: return primary_INDEX_TS_STATUS;
         case 69: return primary_INDEX_SET_TS_STATUS_DAS;
@@ -5450,27 +5450,27 @@ int primary_fields_file_HV_FANS_OVERRIDE_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_HV_FEEDBACKS_ERRORS(
+primary_byte_size primary_serialize_HV_FEEDBACKS_STATUS(
     uint8_t* data,
-    primary_HvFeedbacks feedbacks_errors,
+    primary_HvFeedbacks feedbacks_status,
     primary_HvFeedbacks is_circuitry_error
 ) {
-    data[0] = feedbacks_errors & 255;
-    data[1] = (feedbacks_errors >> 8) & 255;
-    data[2] = (feedbacks_errors >> 16) & 255;
+    data[0] = feedbacks_status & 255;
+    data[1] = (feedbacks_status >> 8) & 255;
+    data[2] = (feedbacks_status >> 16) & 255;
     data[3] = is_circuitry_error & 255;
     data[4] = (is_circuitry_error >> 8) & 255;
     data[5] = (is_circuitry_error >> 16) & 255;
     return 6;
 }
 
-primary_byte_size primary_serialize_struct_HV_FEEDBACKS_ERRORS(
+primary_byte_size primary_serialize_struct_HV_FEEDBACKS_STATUS(
     uint8_t* data,
-    primary_message_HV_FEEDBACKS_ERRORS* message
+    primary_message_HV_FEEDBACKS_STATUS* message
 ) {
-    data[0] = message->feedbacks_errors & 255;
-    data[1] = (message->feedbacks_errors >> 8) & 255;
-    data[2] = (message->feedbacks_errors >> 16) & 255;
+    data[0] = message->feedbacks_status & 255;
+    data[1] = (message->feedbacks_status >> 8) & 255;
+    data[2] = (message->feedbacks_status >> 16) & 255;
     data[3] = message->is_circuitry_error & 255;
     data[4] = (message->is_circuitry_error >> 8) & 255;
     data[5] = (message->is_circuitry_error >> 16) & 255;
@@ -5479,8 +5479,8 @@ primary_byte_size primary_serialize_struct_HV_FEEDBACKS_ERRORS(
 
 // ============== DESERIALIZE ============== //
 
-void primary_deserialize_HV_FEEDBACKS_ERRORS(
-    primary_message_HV_FEEDBACKS_ERRORS* message,
+void primary_deserialize_HV_FEEDBACKS_STATUS(
+    primary_message_HV_FEEDBACKS_STATUS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -5489,13 +5489,13 @@ void primary_deserialize_HV_FEEDBACKS_ERRORS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->feedbacks_errors = data[0] | (data[1] << 8) | (data[2] << 16);
+    message->feedbacks_status = data[0] | (data[1] << 8) | (data[2] << 16);
     message->is_circuitry_error = data[3] | (data[4] << 8) | (data[5] << 16);
 }
 
 // ============== STRING ============== //
 
-int primary_to_string_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRORS* message, char* buffer) {
+int primary_to_string_HV_FEEDBACKS_STATUS(primary_message_HV_FEEDBACKS_STATUS* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -5506,23 +5506,23 @@ int primary_to_string_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRORS* m
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->feedbacks_errors,
+        message->feedbacks_status,
         message->is_circuitry_error
     );
 }
 
-int primary_fields_HV_FEEDBACKS_ERRORS(char* buffer) {
+int primary_fields_HV_FEEDBACKS_STATUS(char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "feedbacks_errors" CANLIB_SEPARATOR 
+        "feedbacks_status" CANLIB_SEPARATOR 
         "is_circuitry_error"
     );
 }
 
-int primary_to_string_file_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRORS* message, FILE* buffer) {
+int primary_to_string_file_HV_FEEDBACKS_STATUS(primary_message_HV_FEEDBACKS_STATUS* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -5533,18 +5533,18 @@ int primary_to_string_file_HV_FEEDBACKS_ERRORS(primary_message_HV_FEEDBACKS_ERRO
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->feedbacks_errors,
+        message->feedbacks_status,
         message->is_circuitry_error
     );
 }
 
-int primary_fields_file_HV_FEEDBACKS_ERRORS(FILE* buffer) {
+int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "feedbacks_errors" CANLIB_SEPARATOR 
+        "feedbacks_status" CANLIB_SEPARATOR 
         "is_circuitry_error"
     );
 }
@@ -10333,7 +10333,7 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
         case 774:
             return primary_fields_HV_FANS_OVERRIDE_STATUS(buffer);
         case 775:
-            return primary_fields_HV_FEEDBACKS_ERRORS(buffer);
+            return primary_fields_HV_FEEDBACKS_STATUS(buffer);
         case 807:
             return primary_fields_HV_IMD_STATUS(buffer);
         case 36:
@@ -10479,7 +10479,7 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
         case 774:
             return primary_to_string_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
         case 775:
-            return primary_to_string_HV_FEEDBACKS_ERRORS((primary_message_HV_FEEDBACKS_ERRORS*) message, buffer);
+            return primary_to_string_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
         case 807:
             return primary_to_string_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
         case 36:
@@ -10625,7 +10625,7 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
         case 774:
             return primary_fields_file_HV_FANS_OVERRIDE_STATUS(buffer);
         case 775:
-            return primary_fields_file_HV_FEEDBACKS_ERRORS(buffer);
+            return primary_fields_file_HV_FEEDBACKS_STATUS(buffer);
         case 807:
             return primary_fields_file_HV_IMD_STATUS(buffer);
         case 36:
@@ -10771,7 +10771,7 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
         case 774:
             return primary_to_string_file_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
         case 775:
-            return primary_to_string_file_HV_FEEDBACKS_ERRORS((primary_message_HV_FEEDBACKS_ERRORS*) message, buffer);
+            return primary_to_string_file_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
         case 807:
             return primary_to_string_file_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
         case 36:
@@ -11090,8 +11090,8 @@ void* primary_deserialize_from_id(
             return message_conversion;
         }
         case 775: {
-            primary_deserialize_HV_FEEDBACKS_ERRORS(
-                (primary_message_HV_FEEDBACKS_ERRORS*) message_raw,
+            primary_deserialize_HV_FEEDBACKS_STATUS(
+                (primary_message_HV_FEEDBACKS_STATUS*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -11701,9 +11701,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].id = 774;
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS));
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS_conversion));
-    (*devices)[primary_INDEX_HV_FEEDBACKS_ERRORS].id = 775;
-    (*devices)[primary_INDEX_HV_FEEDBACKS_ERRORS].message_raw = (void*) malloc(sizeof(primary_message_HV_FEEDBACKS_ERRORS));
-    (*devices)[primary_INDEX_HV_FEEDBACKS_ERRORS].message_conversion = NULL;
+    (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].id = 775;
+    (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_FEEDBACKS_STATUS));
+    (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_conversion = NULL;
     (*devices)[primary_INDEX_HV_IMD_STATUS].id = 807;
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_IMD_STATUS));
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_conversion = NULL;
@@ -11890,7 +11890,7 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_raw);
     free((*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw);
     free((*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion);
-    free((*devices)[primary_INDEX_HV_FEEDBACKS_ERRORS].message_raw);
+    free((*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw);
     free((*devices)[primary_INDEX_HV_IMD_STATUS].message_raw);
     free((*devices)[primary_INDEX_TS_STATUS].message_raw);
     free((*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw);
@@ -12165,8 +12165,8 @@ void primary_devices_deserialize_from_id(
             return;
         }
         case 775: {
-            primary_deserialize_HV_FEEDBACKS_ERRORS(
-                (primary_message_HV_FEEDBACKS_ERRORS*) &(*devices)[primary_INDEX_HV_FEEDBACKS_ERRORS].message_raw,
+            primary_deserialize_HV_FEEDBACKS_STATUS(
+                (primary_message_HV_FEEDBACKS_STATUS*) &(*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

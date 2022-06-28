@@ -17,7 +17,7 @@ HV_CAN_FORWARD,HV_CAN_FORWARD: 5,primary,BMS_HV,7,HANDCART,BMS_HV,,can_forward_s
 HV_FANS_OVERRIDE,HV_FANS_OVERRIDE: 37,primary,BMS_HV,7,HANDCART,BMS_HV,,"fans_override: Toggle, fans_speed: type: float32, range: 0, 1, force: uint16",override fans speed
 HV_CAN_FORWARD_STATUS,HV_CAN_FORWARD_STATUS: 6,primary,HANDCART,7,BMS_HV,HANDCART,,can_forward_status: Toggle,Status of can forwarding to internal bms network
 HV_FANS_OVERRIDE_STATUS,HV_FANS_OVERRIDE_STATUS: 774,primary,HANDCART,4,BMS_HV,HANDCART,,"fans_override: Toggle, fans_speed: type: float32, range: 0, 1, force: uint16",Status of fans override
-HV_FEEDBACKS_ERRORS,HV_FEEDBACKS_ERRORS: 775,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"feedbacks_errors: HvFeedbacks, is_circuitry_error: HvFeedbacks",Errors on the feedbacks checks
+HV_FEEDBACKS_STATUS,HV_FEEDBACKS_STATUS: 775,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"feedbacks_status: HvFeedbacks, is_circuitry_error: HvFeedbacks",Errors on the feedbacks checks
 HV_IMD_STATUS,HV_IMD_STATUS: 807,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"imd_fault: bool, imd_status: ImdStatus, imd_info: uint16",Status of fans override
 TS_STATUS,TS_STATUS: 36,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,ts_status: TsStatus,BMS status
 SET_TS_STATUS,"SET_TS_STATUS_DAS: 69, SET_TS_STATUS_HANDCART: 101",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,,ts_status_set: Toggle,Requests a TS status; only once

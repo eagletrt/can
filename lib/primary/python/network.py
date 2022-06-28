@@ -1139,20 +1139,20 @@ class message_HV_FANS_OVERRIDE_STATUS_conversion:
         raw.fans_override = self.fans_override
         return raw
 
-class message_HV_FEEDBACKS_ERRORS:
+class message_HV_FEEDBACKS_STATUS:
     def __init__(
         self,
-        feedbacks_errors = None,
+        feedbacks_status = None,
         is_circuitry_error = None
     ):
-        self.feedbacks_errors = HvFeedbacks(feedbacks_errors)
+        self.feedbacks_status = HvFeedbacks(feedbacks_status)
         self.is_circuitry_error = HvFeedbacks(is_circuitry_error)
         self.size = 6
 
     def __eq__(self, other):
-        if not isinstance(other, message_HV_FEEDBACKS_ERRORS):
+        if not isinstance(other, message_HV_FEEDBACKS_STATUS):
             return False
-        if self.feedbacks_errors != other.feedbacks_errors:
+        if self.feedbacks_status != other.feedbacks_status:
             return False
         if self.is_circuitry_error != other.is_circuitry_error:
             return False
@@ -1160,13 +1160,13 @@ class message_HV_FEEDBACKS_ERRORS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBBB", (int(self.feedbacks_errors) >> 16) & 255, (int(self.feedbacks_errors) >> 8) & 255, (int(self.feedbacks_errors) >> 0) & 255, (int(self.is_circuitry_error) >> 16) & 255, (int(self.is_circuitry_error) >> 8) & 255, (int(self.is_circuitry_error) >> 0) & 255))
+        data.extend(pack("<BBBBBB", (int(self.feedbacks_status) >> 16) & 255, (int(self.feedbacks_status) >> 8) & 255, (int(self.feedbacks_status) >> 0) & 255, (int(self.is_circuitry_error) >> 16) & 255, (int(self.is_circuitry_error) >> 8) & 255, (int(self.is_circuitry_error) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.feedbacks_errors = HvFeedbacks(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.feedbacks_status = HvFeedbacks(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
         message.is_circuitry_error = HvFeedbacks(int((unpack("<xxxBBB", data[0:6])[0] << 16) | (unpack("<xxxBBB", data[0:6])[1] << 8) | (unpack("<xxxBBB", data[0:6])[2] << 0)))
         return message
 

@@ -151,9 +151,9 @@ extern HV_FANS_OVERRIDEDefaultTypeInternal _HV_FANS_OVERRIDE_default_instance_;
 class HV_FANS_OVERRIDE_STATUS;
 struct HV_FANS_OVERRIDE_STATUSDefaultTypeInternal;
 extern HV_FANS_OVERRIDE_STATUSDefaultTypeInternal _HV_FANS_OVERRIDE_STATUS_default_instance_;
-class HV_FEEDBACKS_ERRORS;
-struct HV_FEEDBACKS_ERRORSDefaultTypeInternal;
-extern HV_FEEDBACKS_ERRORSDefaultTypeInternal _HV_FEEDBACKS_ERRORS_default_instance_;
+class HV_FEEDBACKS_STATUS;
+struct HV_FEEDBACKS_STATUSDefaultTypeInternal;
+extern HV_FEEDBACKS_STATUSDefaultTypeInternal _HV_FEEDBACKS_STATUS_default_instance_;
 class HV_IMD_STATUS;
 struct HV_IMD_STATUSDefaultTypeInternal;
 extern HV_IMD_STATUSDefaultTypeInternal _HV_IMD_STATUS_default_instance_;
@@ -296,7 +296,7 @@ template<> ::primary::HV_CURRENT* Arena::CreateMaybeMessage<::primary::HV_CURREN
 template<> ::primary::HV_ERRORS* Arena::CreateMaybeMessage<::primary::HV_ERRORS>(Arena*);
 template<> ::primary::HV_FANS_OVERRIDE* Arena::CreateMaybeMessage<::primary::HV_FANS_OVERRIDE>(Arena*);
 template<> ::primary::HV_FANS_OVERRIDE_STATUS* Arena::CreateMaybeMessage<::primary::HV_FANS_OVERRIDE_STATUS>(Arena*);
-template<> ::primary::HV_FEEDBACKS_ERRORS* Arena::CreateMaybeMessage<::primary::HV_FEEDBACKS_ERRORS>(Arena*);
+template<> ::primary::HV_FEEDBACKS_STATUS* Arena::CreateMaybeMessage<::primary::HV_FEEDBACKS_STATUS>(Arena*);
 template<> ::primary::HV_IMD_STATUS* Arena::CreateMaybeMessage<::primary::HV_IMD_STATUS>(Arena*);
 template<> ::primary::HV_TEMP* Arena::CreateMaybeMessage<::primary::HV_TEMP>(Arena*);
 template<> ::primary::HV_VERSION* Arena::CreateMaybeMessage<::primary::HV_VERSION>(Arena*);
@@ -3656,24 +3656,24 @@ class HV_FANS_OVERRIDE_STATUS final :
 };
 // -------------------------------------------------------------------
 
-class HV_FEEDBACKS_ERRORS final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.HV_FEEDBACKS_ERRORS) */ {
+class HV_FEEDBACKS_STATUS final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.HV_FEEDBACKS_STATUS) */ {
  public:
-  inline HV_FEEDBACKS_ERRORS() : HV_FEEDBACKS_ERRORS(nullptr) {}
-  ~HV_FEEDBACKS_ERRORS() override;
-  explicit PROTOBUF_CONSTEXPR HV_FEEDBACKS_ERRORS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline HV_FEEDBACKS_STATUS() : HV_FEEDBACKS_STATUS(nullptr) {}
+  ~HV_FEEDBACKS_STATUS() override;
+  explicit PROTOBUF_CONSTEXPR HV_FEEDBACKS_STATUS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  HV_FEEDBACKS_ERRORS(const HV_FEEDBACKS_ERRORS& from);
-  HV_FEEDBACKS_ERRORS(HV_FEEDBACKS_ERRORS&& from) noexcept
-    : HV_FEEDBACKS_ERRORS() {
+  HV_FEEDBACKS_STATUS(const HV_FEEDBACKS_STATUS& from);
+  HV_FEEDBACKS_STATUS(HV_FEEDBACKS_STATUS&& from) noexcept
+    : HV_FEEDBACKS_STATUS() {
     *this = ::std::move(from);
   }
 
-  inline HV_FEEDBACKS_ERRORS& operator=(const HV_FEEDBACKS_ERRORS& from) {
+  inline HV_FEEDBACKS_STATUS& operator=(const HV_FEEDBACKS_STATUS& from) {
     CopyFrom(from);
     return *this;
   }
-  inline HV_FEEDBACKS_ERRORS& operator=(HV_FEEDBACKS_ERRORS&& from) noexcept {
+  inline HV_FEEDBACKS_STATUS& operator=(HV_FEEDBACKS_STATUS&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -3696,20 +3696,20 @@ class HV_FEEDBACKS_ERRORS final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const HV_FEEDBACKS_ERRORS& default_instance() {
+  static const HV_FEEDBACKS_STATUS& default_instance() {
     return *internal_default_instance();
   }
-  static inline const HV_FEEDBACKS_ERRORS* internal_default_instance() {
-    return reinterpret_cast<const HV_FEEDBACKS_ERRORS*>(
-               &_HV_FEEDBACKS_ERRORS_default_instance_);
+  static inline const HV_FEEDBACKS_STATUS* internal_default_instance() {
+    return reinterpret_cast<const HV_FEEDBACKS_STATUS*>(
+               &_HV_FEEDBACKS_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     18;
 
-  friend void swap(HV_FEEDBACKS_ERRORS& a, HV_FEEDBACKS_ERRORS& b) {
+  friend void swap(HV_FEEDBACKS_STATUS& a, HV_FEEDBACKS_STATUS& b) {
     a.Swap(&b);
   }
-  inline void Swap(HV_FEEDBACKS_ERRORS* other) {
+  inline void Swap(HV_FEEDBACKS_STATUS* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -3722,7 +3722,7 @@ class HV_FEEDBACKS_ERRORS final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(HV_FEEDBACKS_ERRORS* other) {
+  void UnsafeArenaSwap(HV_FEEDBACKS_STATUS* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3730,13 +3730,13 @@ class HV_FEEDBACKS_ERRORS final :
 
   // implements Message ----------------------------------------------
 
-  HV_FEEDBACKS_ERRORS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<HV_FEEDBACKS_ERRORS>(arena);
+  HV_FEEDBACKS_STATUS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HV_FEEDBACKS_STATUS>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const HV_FEEDBACKS_ERRORS& from);
+  void CopyFrom(const HV_FEEDBACKS_STATUS& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const HV_FEEDBACKS_ERRORS& from);
+  void MergeFrom(const HV_FEEDBACKS_STATUS& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -3753,15 +3753,15 @@ class HV_FEEDBACKS_ERRORS final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(HV_FEEDBACKS_ERRORS* other);
+  void InternalSwap(HV_FEEDBACKS_STATUS* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "primary.HV_FEEDBACKS_ERRORS";
+    return "primary.HV_FEEDBACKS_STATUS";
   }
   protected:
-  explicit HV_FEEDBACKS_ERRORS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit HV_FEEDBACKS_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -3775,17 +3775,17 @@ class HV_FEEDBACKS_ERRORS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFeedbacksErrorsFieldNumber = 1,
+    kFeedbacksStatusFieldNumber = 1,
     kIsCircuitryErrorFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
-  // uint32 feedbacks_errors = 1;
-  void clear_feedbacks_errors();
-  uint32_t feedbacks_errors() const;
-  void set_feedbacks_errors(uint32_t value);
+  // uint32 feedbacks_status = 1;
+  void clear_feedbacks_status();
+  uint32_t feedbacks_status() const;
+  void set_feedbacks_status(uint32_t value);
   private:
-  uint32_t _internal_feedbacks_errors() const;
-  void _internal_set_feedbacks_errors(uint32_t value);
+  uint32_t _internal_feedbacks_status() const;
+  void _internal_set_feedbacks_status(uint32_t value);
   public:
 
   // uint32 is_circuitry_error = 2;
@@ -3806,14 +3806,14 @@ class HV_FEEDBACKS_ERRORS final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:primary.HV_FEEDBACKS_ERRORS)
+  // @@protoc_insertion_point(class_scope:primary.HV_FEEDBACKS_STATUS)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t feedbacks_errors_;
+  uint32_t feedbacks_status_;
   uint32_t is_circuitry_error_;
   uint64_t _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -12186,7 +12186,7 @@ class Pack final :
     kHVFANSOVERRIDEFieldNumber = 16,
     kHVCANFORWARDSTATUSFieldNumber = 17,
     kHVFANSOVERRIDESTATUSFieldNumber = 18,
-    kHVFEEDBACKSERRORSFieldNumber = 19,
+    kHVFEEDBACKSSTATUSFieldNumber = 19,
     kHVIMDSTATUSFieldNumber = 20,
     kTSSTATUSFieldNumber = 21,
     kSETTSSTATUSDASFieldNumber = 22,
@@ -12563,23 +12563,23 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >&
       hv_fans_override_status() const;
 
-  // repeated .primary.HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
-  int hv_feedbacks_errors_size() const;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
+  int hv_feedbacks_status_size() const;
   private:
-  int _internal_hv_feedbacks_errors_size() const;
+  int _internal_hv_feedbacks_status_size() const;
   public:
-  void clear_hv_feedbacks_errors();
-  ::primary::HV_FEEDBACKS_ERRORS* mutable_hv_feedbacks_errors(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_ERRORS >*
-      mutable_hv_feedbacks_errors();
+  void clear_hv_feedbacks_status();
+  ::primary::HV_FEEDBACKS_STATUS* mutable_hv_feedbacks_status(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >*
+      mutable_hv_feedbacks_status();
   private:
-  const ::primary::HV_FEEDBACKS_ERRORS& _internal_hv_feedbacks_errors(int index) const;
-  ::primary::HV_FEEDBACKS_ERRORS* _internal_add_hv_feedbacks_errors();
+  const ::primary::HV_FEEDBACKS_STATUS& _internal_hv_feedbacks_status(int index) const;
+  ::primary::HV_FEEDBACKS_STATUS* _internal_add_hv_feedbacks_status();
   public:
-  const ::primary::HV_FEEDBACKS_ERRORS& hv_feedbacks_errors(int index) const;
-  ::primary::HV_FEEDBACKS_ERRORS* add_hv_feedbacks_errors();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_ERRORS >&
-      hv_feedbacks_errors() const;
+  const ::primary::HV_FEEDBACKS_STATUS& hv_feedbacks_status(int index) const;
+  ::primary::HV_FEEDBACKS_STATUS* add_hv_feedbacks_status();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >&
+      hv_feedbacks_status() const;
 
   // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 20;
   int hv_imd_status_size() const;
@@ -13524,7 +13524,7 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE > hv_fans_override_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS > hv_can_forward_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS > hv_fans_override_status_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_ERRORS > hv_feedbacks_errors_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS > hv_feedbacks_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_IMD_STATUS > hv_imd_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::TS_STATUS > ts_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS > set_ts_status_das_;
@@ -14800,66 +14800,66 @@ inline void HV_FANS_OVERRIDE_STATUS::set__inner_timestamp(uint64_t value) {
 
 // -------------------------------------------------------------------
 
-// HV_FEEDBACKS_ERRORS
+// HV_FEEDBACKS_STATUS
 
-// uint32 feedbacks_errors = 1;
-inline void HV_FEEDBACKS_ERRORS::clear_feedbacks_errors() {
-  feedbacks_errors_ = 0u;
+// uint32 feedbacks_status = 1;
+inline void HV_FEEDBACKS_STATUS::clear_feedbacks_status() {
+  feedbacks_status_ = 0u;
 }
-inline uint32_t HV_FEEDBACKS_ERRORS::_internal_feedbacks_errors() const {
-  return feedbacks_errors_;
+inline uint32_t HV_FEEDBACKS_STATUS::_internal_feedbacks_status() const {
+  return feedbacks_status_;
 }
-inline uint32_t HV_FEEDBACKS_ERRORS::feedbacks_errors() const {
-  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_ERRORS.feedbacks_errors)
-  return _internal_feedbacks_errors();
+inline uint32_t HV_FEEDBACKS_STATUS::feedbacks_status() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_STATUS.feedbacks_status)
+  return _internal_feedbacks_status();
 }
-inline void HV_FEEDBACKS_ERRORS::_internal_set_feedbacks_errors(uint32_t value) {
+inline void HV_FEEDBACKS_STATUS::_internal_set_feedbacks_status(uint32_t value) {
   
-  feedbacks_errors_ = value;
+  feedbacks_status_ = value;
 }
-inline void HV_FEEDBACKS_ERRORS::set_feedbacks_errors(uint32_t value) {
-  _internal_set_feedbacks_errors(value);
-  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_ERRORS.feedbacks_errors)
+inline void HV_FEEDBACKS_STATUS::set_feedbacks_status(uint32_t value) {
+  _internal_set_feedbacks_status(value);
+  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_STATUS.feedbacks_status)
 }
 
 // uint32 is_circuitry_error = 2;
-inline void HV_FEEDBACKS_ERRORS::clear_is_circuitry_error() {
+inline void HV_FEEDBACKS_STATUS::clear_is_circuitry_error() {
   is_circuitry_error_ = 0u;
 }
-inline uint32_t HV_FEEDBACKS_ERRORS::_internal_is_circuitry_error() const {
+inline uint32_t HV_FEEDBACKS_STATUS::_internal_is_circuitry_error() const {
   return is_circuitry_error_;
 }
-inline uint32_t HV_FEEDBACKS_ERRORS::is_circuitry_error() const {
-  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_ERRORS.is_circuitry_error)
+inline uint32_t HV_FEEDBACKS_STATUS::is_circuitry_error() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_STATUS.is_circuitry_error)
   return _internal_is_circuitry_error();
 }
-inline void HV_FEEDBACKS_ERRORS::_internal_set_is_circuitry_error(uint32_t value) {
+inline void HV_FEEDBACKS_STATUS::_internal_set_is_circuitry_error(uint32_t value) {
   
   is_circuitry_error_ = value;
 }
-inline void HV_FEEDBACKS_ERRORS::set_is_circuitry_error(uint32_t value) {
+inline void HV_FEEDBACKS_STATUS::set_is_circuitry_error(uint32_t value) {
   _internal_set_is_circuitry_error(value);
-  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_ERRORS.is_circuitry_error)
+  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_STATUS.is_circuitry_error)
 }
 
 // uint64 _inner_timestamp = 3;
-inline void HV_FEEDBACKS_ERRORS::clear__inner_timestamp() {
+inline void HV_FEEDBACKS_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = uint64_t{0u};
 }
-inline uint64_t HV_FEEDBACKS_ERRORS::_internal__inner_timestamp() const {
+inline uint64_t HV_FEEDBACKS_STATUS::_internal__inner_timestamp() const {
   return _inner_timestamp_;
 }
-inline uint64_t HV_FEEDBACKS_ERRORS::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_ERRORS._inner_timestamp)
+inline uint64_t HV_FEEDBACKS_STATUS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.HV_FEEDBACKS_STATUS._inner_timestamp)
   return _internal__inner_timestamp();
 }
-inline void HV_FEEDBACKS_ERRORS::_internal_set__inner_timestamp(uint64_t value) {
+inline void HV_FEEDBACKS_STATUS::_internal_set__inner_timestamp(uint64_t value) {
   
   _inner_timestamp_ = value;
 }
-inline void HV_FEEDBACKS_ERRORS::set__inner_timestamp(uint64_t value) {
+inline void HV_FEEDBACKS_STATUS::set__inner_timestamp(uint64_t value) {
   _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_ERRORS._inner_timestamp)
+  // @@protoc_insertion_point(field_set:primary.HV_FEEDBACKS_STATUS._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -18510,44 +18510,44 @@ Pack::hv_fans_override_status() const {
   return hv_fans_override_status_;
 }
 
-// repeated .primary.HV_FEEDBACKS_ERRORS HV_FEEDBACKS_ERRORS = 19;
-inline int Pack::_internal_hv_feedbacks_errors_size() const {
-  return hv_feedbacks_errors_.size();
+// repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 19;
+inline int Pack::_internal_hv_feedbacks_status_size() const {
+  return hv_feedbacks_status_.size();
 }
-inline int Pack::hv_feedbacks_errors_size() const {
-  return _internal_hv_feedbacks_errors_size();
+inline int Pack::hv_feedbacks_status_size() const {
+  return _internal_hv_feedbacks_status_size();
 }
-inline void Pack::clear_hv_feedbacks_errors() {
-  hv_feedbacks_errors_.Clear();
+inline void Pack::clear_hv_feedbacks_status() {
+  hv_feedbacks_status_.Clear();
 }
-inline ::primary::HV_FEEDBACKS_ERRORS* Pack::mutable_hv_feedbacks_errors(int index) {
-  // @@protoc_insertion_point(field_mutable:primary.Pack.HV_FEEDBACKS_ERRORS)
-  return hv_feedbacks_errors_.Mutable(index);
+inline ::primary::HV_FEEDBACKS_STATUS* Pack::mutable_hv_feedbacks_status(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.HV_FEEDBACKS_STATUS)
+  return hv_feedbacks_status_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_ERRORS >*
-Pack::mutable_hv_feedbacks_errors() {
-  // @@protoc_insertion_point(field_mutable_list:primary.Pack.HV_FEEDBACKS_ERRORS)
-  return &hv_feedbacks_errors_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >*
+Pack::mutable_hv_feedbacks_status() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.HV_FEEDBACKS_STATUS)
+  return &hv_feedbacks_status_;
 }
-inline const ::primary::HV_FEEDBACKS_ERRORS& Pack::_internal_hv_feedbacks_errors(int index) const {
-  return hv_feedbacks_errors_.Get(index);
+inline const ::primary::HV_FEEDBACKS_STATUS& Pack::_internal_hv_feedbacks_status(int index) const {
+  return hv_feedbacks_status_.Get(index);
 }
-inline const ::primary::HV_FEEDBACKS_ERRORS& Pack::hv_feedbacks_errors(int index) const {
-  // @@protoc_insertion_point(field_get:primary.Pack.HV_FEEDBACKS_ERRORS)
-  return _internal_hv_feedbacks_errors(index);
+inline const ::primary::HV_FEEDBACKS_STATUS& Pack::hv_feedbacks_status(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.HV_FEEDBACKS_STATUS)
+  return _internal_hv_feedbacks_status(index);
 }
-inline ::primary::HV_FEEDBACKS_ERRORS* Pack::_internal_add_hv_feedbacks_errors() {
-  return hv_feedbacks_errors_.Add();
+inline ::primary::HV_FEEDBACKS_STATUS* Pack::_internal_add_hv_feedbacks_status() {
+  return hv_feedbacks_status_.Add();
 }
-inline ::primary::HV_FEEDBACKS_ERRORS* Pack::add_hv_feedbacks_errors() {
-  ::primary::HV_FEEDBACKS_ERRORS* _add = _internal_add_hv_feedbacks_errors();
-  // @@protoc_insertion_point(field_add:primary.Pack.HV_FEEDBACKS_ERRORS)
+inline ::primary::HV_FEEDBACKS_STATUS* Pack::add_hv_feedbacks_status() {
+  ::primary::HV_FEEDBACKS_STATUS* _add = _internal_add_hv_feedbacks_status();
+  // @@protoc_insertion_point(field_add:primary.Pack.HV_FEEDBACKS_STATUS)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_ERRORS >&
-Pack::hv_feedbacks_errors() const {
-  // @@protoc_insertion_point(field_list:primary.Pack.HV_FEEDBACKS_ERRORS)
-  return hv_feedbacks_errors_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >&
+Pack::hv_feedbacks_status() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.HV_FEEDBACKS_STATUS)
+  return hv_feedbacks_status_;
 }
 
 // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 20;
