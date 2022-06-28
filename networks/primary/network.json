@@ -170,6 +170,41 @@
     "Cooling": {
       "type": "enum",
       "items": ["SET_MAX", "SET_OFF"]
+    },
+    "ImdStatus": {
+      "type": "enum",
+      "items": [
+        "IMD_SC",
+        "IMD_NORMAL",
+        "IMD_UNDER_VOLTAGE",
+        "IMD_START_MEASURE",
+        "IMD_DEVICE_ERROR",
+        "IMD_EARTH_FAULT"
+      ]
+    },
+    "HvFeedbacks": {
+      "type": "bitset",
+      "items": [
+        "FEEDBACK_TSAL_GREEN_FAULT",
+        "FEEDBACK_IMD_LATCHED",
+        "FEEDBACK_TSAL_GREEN_FAULT_LATCHED",
+        "FEEDBACK_BMS_LATCHED",
+        "FEEDBACK_EXT_LATCHED",
+        "FEEDBACK_TSAL_GREEN",
+        "FEEDBACK_TS_OVER_60V_STATUS",
+        "FEEDBACK_AIRN_STATUS",
+        "FEEDBACK_AIRP_STATUS",
+        "FEEDBACK_AIRP_GATE",
+        "FEEDBACK_AIRN_GATE",
+        "FEEDBACK_PRECHARGE_STATUS",
+        "FEEDBACK_TSP_OVER_60V_STATUS",
+        "FEEDBACK_CHECK_MUX",
+        "FEEDBACK_SD_IN",
+        "FEEDBACK_SD_OUT",
+        "FEEDBACK_RELAY_SD",
+        "FEEDBACK_IMD_FAULT",
+        "FEEDBACK_SD_END"
+      ]
     }
   },
   "messages": [
@@ -452,6 +487,31 @@
           "range": [0, 1],
           "force": "uint16"
         }
+      }
+    },
+    {
+      "name": "HV_FEEDBACKS_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Errors on the feedbacks checks",
+      "contents": {
+        "feedbacks_status": "HvFeedbacks",
+        "is_circuitry_error": "HvFeedbacks"
+      }
+    },
+    {
+      "name": "HV_IMD_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Status of fans override",
+      "contents": {
+        "imd_fault": "bool",
+        "imd_status": "ImdStatus",
+        "imd_info": "int32"
       }
     },
     {
