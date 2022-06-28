@@ -119,7 +119,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 70
+#define primary_MESSAGE_COUNT 75
 
 // Custom types
 
@@ -164,80 +164,86 @@ typedef struct {
 
 
 #define primary_INDEX_BMS_HV_JMP_TO_BLT 0
-#define primary_INDEX_STEER_VERSION 1
-#define primary_INDEX_DAS_VERSION 2
-#define primary_INDEX_HV_VERSION 3
-#define primary_INDEX_LV_VERSION 4
-#define primary_INDEX_TLM_VERSION 5
-#define primary_INDEX_TIMESTAMP 6
-#define primary_INDEX_SET_TLM_STATUS 7
-#define primary_INDEX_TLM_STATUS 8
-#define primary_INDEX_STEER_SYSTEM_STATUS 9
-#define primary_INDEX_HV_VOLTAGE 10
-#define primary_INDEX_HV_CURRENT 11
-#define primary_INDEX_HV_TEMP 12
-#define primary_INDEX_HV_ERRORS 13
-#define primary_INDEX_HV_CAN_FORWARD 14
-#define primary_INDEX_HV_FANS_OVERRIDE 15
-#define primary_INDEX_HV_CAN_FORWARD_STATUS 16
-#define primary_INDEX_HV_FANS_OVERRIDE_STATUS 17
-#define primary_INDEX_HV_FEEDBACKS_STATUS 18
-#define primary_INDEX_HV_IMD_STATUS 19
-#define primary_INDEX_TS_STATUS 20
-#define primary_INDEX_SET_TS_STATUS_DAS 21
-#define primary_INDEX_SET_TS_STATUS_HANDCART 22
-#define primary_INDEX_STEER_STATUS 23
-#define primary_INDEX_SET_CAR_STATUS 24
-#define primary_INDEX_SET_PEDALS_RANGE 25
-#define primary_INDEX_SET_STEERING_ANGLE_RANGE 26
-#define primary_INDEX_CAR_STATUS 27
-#define primary_INDEX_DAS_ERRORS 28
-#define primary_INDEX_LV_CURRENT 29
-#define primary_INDEX_LV_VOLTAGE 30
-#define primary_INDEX_LV_TOTAL_VOLTAGE 31
-#define primary_INDEX_LV_TEMPERATURE 32
-#define primary_INDEX_COOLING_STATUS 33
-#define primary_INDEX_SET_RADIATOR_SPEED 34
-#define primary_INDEX_SET_PUMPS_SPEED 35
-#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 36
-#define primary_INDEX_INVERTER_CONNECTION_STATUS 37
-#define primary_INDEX_SHUTDOWN_STATUS 38
-#define primary_INDEX_MARKER 39
-#define primary_INDEX_HV_CELLS_VOLTAGE 40
-#define primary_INDEX_HV_CELLS_TEMP 41
-#define primary_INDEX_HV_CELL_BALANCING_STATUS 42
-#define primary_INDEX_SET_CELL_BALANCING_STATUS 43
-#define primary_INDEX_HANDCART_STATUS 44
-#define primary_INDEX_SPEED 45
-#define primary_INDEX_INV_L_REQUEST 46
-#define primary_INDEX_INV_R_REQUEST 47
-#define primary_INDEX_INV_L_RESPONSE 48
-#define primary_INDEX_INV_R_RESPONSE 49
-#define primary_INDEX_FLASH_CELLBOARD_0_TX 50
-#define primary_INDEX_FLASH_CELLBOARD_0_RX 51
-#define primary_INDEX_FLASH_CELLBOARD_1_TX 52
-#define primary_INDEX_FLASH_CELLBOARD_1_RX 53
-#define primary_INDEX_FLASH_CELLBOARD_2_TX 54
-#define primary_INDEX_FLASH_CELLBOARD_2_RX 55
-#define primary_INDEX_FLASH_CELLBOARD_3_TX 56
-#define primary_INDEX_FLASH_CELLBOARD_3_RX 57
-#define primary_INDEX_FLASH_CELLBOARD_4_TX 58
-#define primary_INDEX_FLASH_CELLBOARD_4_RX 59
-#define primary_INDEX_FLASH_CELLBOARD_5_TX 60
-#define primary_INDEX_FLASH_CELLBOARD_5_RX 61
-#define primary_INDEX_BRUSA_NLG5_CTL 62
-#define primary_INDEX_BRUSA_ST 63
-#define primary_INDEX_BRUSA_ACT_I 64
-#define primary_INDEX_BRUSA_ACT_II 65
-#define primary_INDEX_BRUSA_TEMP 66
-#define primary_INDEX_BRUSA_ERR 67
-#define primary_INDEX_BMS_HV_CHIMERA 68
-#define primary_INDEX_ECU_CHIMERA 69
+#define primary_INDEX_BMS_LV_JMP_TO_BLT 1
+#define primary_INDEX_STEER_VERSION 2
+#define primary_INDEX_DAS_VERSION 3
+#define primary_INDEX_HV_VERSION 4
+#define primary_INDEX_LV_VERSION 5
+#define primary_INDEX_TLM_VERSION 6
+#define primary_INDEX_TIMESTAMP 7
+#define primary_INDEX_SET_TLM_STATUS 8
+#define primary_INDEX_TLM_STATUS 9
+#define primary_INDEX_STEER_SYSTEM_STATUS 10
+#define primary_INDEX_HV_VOLTAGE 11
+#define primary_INDEX_HV_CURRENT 12
+#define primary_INDEX_HV_TEMP 13
+#define primary_INDEX_HV_ERRORS 14
+#define primary_INDEX_HV_CAN_FORWARD 15
+#define primary_INDEX_HV_FANS_OVERRIDE 16
+#define primary_INDEX_HV_CAN_FORWARD_STATUS 17
+#define primary_INDEX_HV_FANS_OVERRIDE_STATUS 18
+#define primary_INDEX_HV_FEEDBACKS_STATUS 19
+#define primary_INDEX_HV_IMD_STATUS 20
+#define primary_INDEX_TS_STATUS 21
+#define primary_INDEX_SET_TS_STATUS_DAS 22
+#define primary_INDEX_SET_TS_STATUS_HANDCART 23
+#define primary_INDEX_STEER_STATUS 24
+#define primary_INDEX_SET_CAR_STATUS 25
+#define primary_INDEX_SET_PEDALS_RANGE 26
+#define primary_INDEX_SET_STEERING_ANGLE_RANGE 27
+#define primary_INDEX_CAR_STATUS 28
+#define primary_INDEX_DAS_ERRORS 29
+#define primary_INDEX_LV_CURRENT 30
+#define primary_INDEX_LV_VOLTAGE 31
+#define primary_INDEX_LV_TOTAL_VOLTAGE 32
+#define primary_INDEX_LV_TEMPERATURE 33
+#define primary_INDEX_COOLING_STATUS 34
+#define primary_INDEX_SET_RADIATOR_SPEED 35
+#define primary_INDEX_SET_PUMPS_SPEED 36
+#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 37
+#define primary_INDEX_INVERTER_CONNECTION_STATUS 38
+#define primary_INDEX_SHUTDOWN_STATUS 39
+#define primary_INDEX_MARKER 40
+#define primary_INDEX_HV_CELLS_VOLTAGE 41
+#define primary_INDEX_HV_CELLS_TEMP 42
+#define primary_INDEX_HV_CELL_BALANCING_STATUS 43
+#define primary_INDEX_SET_CELL_BALANCING_STATUS 44
+#define primary_INDEX_HANDCART_STATUS 45
+#define primary_INDEX_SPEED 46
+#define primary_INDEX_INV_L_REQUEST 47
+#define primary_INDEX_INV_R_REQUEST 48
+#define primary_INDEX_INV_L_RESPONSE 49
+#define primary_INDEX_INV_R_RESPONSE 50
+#define primary_INDEX_FLASH_CELLBOARD_0_TX 51
+#define primary_INDEX_FLASH_CELLBOARD_0_RX 52
+#define primary_INDEX_FLASH_CELLBOARD_1_TX 53
+#define primary_INDEX_FLASH_CELLBOARD_1_RX 54
+#define primary_INDEX_FLASH_CELLBOARD_2_TX 55
+#define primary_INDEX_FLASH_CELLBOARD_2_RX 56
+#define primary_INDEX_FLASH_CELLBOARD_3_TX 57
+#define primary_INDEX_FLASH_CELLBOARD_3_RX 58
+#define primary_INDEX_FLASH_CELLBOARD_4_TX 59
+#define primary_INDEX_FLASH_CELLBOARD_4_RX 60
+#define primary_INDEX_FLASH_CELLBOARD_5_TX 61
+#define primary_INDEX_FLASH_CELLBOARD_5_RX 62
+#define primary_INDEX_FLASH_BMS_HV_TX 63
+#define primary_INDEX_FLASH_BMS_HV_RX 64
+#define primary_INDEX_FLASH_BMS_LV_TX 65
+#define primary_INDEX_FLASH_BMS_LV_RX 66
+#define primary_INDEX_BRUSA_NLG5_CTL 67
+#define primary_INDEX_BRUSA_ST 68
+#define primary_INDEX_BRUSA_ACT_I 69
+#define primary_INDEX_BRUSA_ACT_II 70
+#define primary_INDEX_BRUSA_TEMP 71
+#define primary_INDEX_BRUSA_ERR 72
+#define primary_INDEX_BMS_HV_CHIMERA 73
+#define primary_INDEX_ECU_CHIMERA 74
 
 // ============== SIZES ============== //
 
 
 #define primary_SIZE_BMS_HV_JMP_TO_BLT 0
+#define primary_SIZE_BMS_LV_JMP_TO_BLT 0
 #define primary_SIZE_STEER_VERSION 2
 #define primary_SIZE_DAS_VERSION 2
 #define primary_SIZE_HV_VERSION 2
@@ -298,6 +304,10 @@ typedef struct {
 #define primary_SIZE_FLASH_CELLBOARD_4_RX 0
 #define primary_SIZE_FLASH_CELLBOARD_5_TX 0
 #define primary_SIZE_FLASH_CELLBOARD_5_RX 0
+#define primary_SIZE_FLASH_BMS_HV_TX 0
+#define primary_SIZE_FLASH_BMS_HV_RX 0
+#define primary_SIZE_FLASH_BMS_LV_TX 0
+#define primary_SIZE_FLASH_BMS_LV_RX 0
 #define primary_SIZE_BRUSA_NLG5_CTL 0
 #define primary_SIZE_BRUSA_ST 0
 #define primary_SIZE_BRUSA_ACT_I 0
@@ -538,6 +548,13 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_BMS_HV_JMP_TO_BLT;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_BMS_LV_JMP_TO_BLT;
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
@@ -1163,6 +1180,34 @@ typedef struct CANLIB_PARKING {
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_BMS_HV_TX;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_BMS_HV_RX;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_BMS_LV_TX;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_FLASH_BMS_LV_RX;
+
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
 } primary_message_BRUSA_NLG5_CTL;
 
 typedef struct CANLIB_PARKING {
@@ -1217,6 +1262,7 @@ typedef struct CANLIB_PARKING {
 
 typedef union CANLIB_PARKING {
     primary_message_BMS_HV_JMP_TO_BLT _BMS_HV_JMP_TO_BLT;
+    primary_message_BMS_LV_JMP_TO_BLT _BMS_LV_JMP_TO_BLT;
     primary_message_STEER_VERSION _STEER_VERSION;
     primary_message_DAS_VERSION _DAS_VERSION;
     primary_message_HV_VERSION _HV_VERSION;
@@ -1277,6 +1323,10 @@ typedef union CANLIB_PARKING {
     primary_message_FLASH_CELLBOARD_4_RX _FLASH_CELLBOARD_4_RX;
     primary_message_FLASH_CELLBOARD_5_TX _FLASH_CELLBOARD_5_TX;
     primary_message_FLASH_CELLBOARD_5_RX _FLASH_CELLBOARD_5_RX;
+    primary_message_FLASH_BMS_HV_TX _FLASH_BMS_HV_TX;
+    primary_message_FLASH_BMS_HV_RX _FLASH_BMS_HV_RX;
+    primary_message_FLASH_BMS_LV_TX _FLASH_BMS_LV_TX;
+    primary_message_FLASH_BMS_LV_RX _FLASH_BMS_LV_RX;
     primary_message_BRUSA_NLG5_CTL _BRUSA_NLG5_CTL;
     primary_message_BRUSA_ST _BRUSA_ST;
     primary_message_BRUSA_ACT_I _BRUSA_ACT_I;
@@ -1333,6 +1383,28 @@ int primary_to_string_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* messa
 int primary_fields_BMS_HV_JMP_TO_BLT(char* buffer);
 int primary_to_string_file_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* message, FILE* buffer);
 int primary_fields_file_BMS_HV_JMP_TO_BLT(FILE* buffer);
+
+
+// ============== BMS_LV_JMP_TO_BLT ============== //
+
+primary_byte_size primary_serialize_BMS_LV_JMP_TO_BLT(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_BMS_LV_JMP_TO_BLT(
+    uint8_t* data,
+    primary_message_BMS_LV_JMP_TO_BLT* message
+);
+void primary_deserialize_BMS_LV_JMP_TO_BLT(
+    primary_message_BMS_LV_JMP_TO_BLT* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_BMS_LV_JMP_TO_BLT(primary_message_BMS_LV_JMP_TO_BLT* message, char* buffer);
+int primary_fields_BMS_LV_JMP_TO_BLT(char* buffer);
+int primary_to_string_file_BMS_LV_JMP_TO_BLT(primary_message_BMS_LV_JMP_TO_BLT* message, FILE* buffer);
+int primary_fields_file_BMS_LV_JMP_TO_BLT(FILE* buffer);
 
 
 // ============== STEER_VERSION ============== //
@@ -3165,6 +3237,94 @@ int primary_to_string_file_FLASH_CELLBOARD_5_RX(primary_message_FLASH_CELLBOARD_
 int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 
+// ============== FLASH_BMS_HV_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_HV_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_BMS_HV_TX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_HV_TX* message
+);
+void primary_deserialize_FLASH_BMS_HV_TX(
+    primary_message_FLASH_BMS_HV_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_BMS_HV_TX(primary_message_FLASH_BMS_HV_TX* message, char* buffer);
+int primary_fields_FLASH_BMS_HV_TX(char* buffer);
+int primary_to_string_file_FLASH_BMS_HV_TX(primary_message_FLASH_BMS_HV_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_BMS_HV_TX(FILE* buffer);
+
+
+// ============== FLASH_BMS_HV_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_HV_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_BMS_HV_RX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_HV_RX* message
+);
+void primary_deserialize_FLASH_BMS_HV_RX(
+    primary_message_FLASH_BMS_HV_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_BMS_HV_RX(primary_message_FLASH_BMS_HV_RX* message, char* buffer);
+int primary_fields_FLASH_BMS_HV_RX(char* buffer);
+int primary_to_string_file_FLASH_BMS_HV_RX(primary_message_FLASH_BMS_HV_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_BMS_HV_RX(FILE* buffer);
+
+
+// ============== FLASH_BMS_LV_TX ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_LV_TX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_BMS_LV_TX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_LV_TX* message
+);
+void primary_deserialize_FLASH_BMS_LV_TX(
+    primary_message_FLASH_BMS_LV_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_BMS_LV_TX(primary_message_FLASH_BMS_LV_TX* message, char* buffer);
+int primary_fields_FLASH_BMS_LV_TX(char* buffer);
+int primary_to_string_file_FLASH_BMS_LV_TX(primary_message_FLASH_BMS_LV_TX* message, FILE* buffer);
+int primary_fields_file_FLASH_BMS_LV_TX(FILE* buffer);
+
+
+// ============== FLASH_BMS_LV_RX ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_LV_RX(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_FLASH_BMS_LV_RX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_LV_RX* message
+);
+void primary_deserialize_FLASH_BMS_LV_RX(
+    primary_message_FLASH_BMS_LV_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_FLASH_BMS_LV_RX(primary_message_FLASH_BMS_LV_RX* message, char* buffer);
+int primary_fields_FLASH_BMS_LV_RX(char* buffer);
+int primary_to_string_file_FLASH_BMS_LV_RX(primary_message_FLASH_BMS_LV_RX* message, FILE* buffer);
+int primary_fields_file_FLASH_BMS_LV_RX(FILE* buffer);
+
+
 // ============== BRUSA_NLG5_CTL ============== //
 
 primary_byte_size primary_serialize_BRUSA_NLG5_CTL(
@@ -3349,6 +3509,7 @@ int primary_fields_file_ECU_CHIMERA(FILE* buffer);
 static inline int primary_index_from_id(canlib_message_id id) {
     switch (id) {
         case 0: return primary_INDEX_BMS_HV_JMP_TO_BLT;
+        case 32: return primary_INDEX_BMS_LV_JMP_TO_BLT;
         case 1025: return primary_INDEX_STEER_VERSION;
         case 1057: return primary_INDEX_DAS_VERSION;
         case 1089: return primary_INDEX_HV_VERSION;
@@ -3410,6 +3571,10 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 25: return primary_INDEX_FLASH_CELLBOARD_4_RX;
         case 26: return primary_INDEX_FLASH_CELLBOARD_5_TX;
         case 27: return primary_INDEX_FLASH_CELLBOARD_5_RX;
+        case 2017: return primary_INDEX_FLASH_BMS_HV_TX;
+        case 1639: return primary_INDEX_FLASH_BMS_HV_RX;
+        case 2033: return primary_INDEX_FLASH_BMS_LV_TX;
+        case 1655: return primary_INDEX_FLASH_BMS_LV_RX;
         case 618: return primary_INDEX_BRUSA_NLG5_CTL;
         case 610: return primary_INDEX_BRUSA_ST;
         case 611: return primary_INDEX_BRUSA_ACT_I;
@@ -3419,7 +3584,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 170: return primary_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_INDEX_ECU_CHIMERA;
     }
-    return 70; // invalid
+    return 75; // invalid
 }
 
 int primary_fields_from_id(canlib_message_id message_id, char *buffer);
@@ -3504,6 +3669,67 @@ int primary_to_string_file_BMS_HV_JMP_TO_BLT(primary_message_BMS_HV_JMP_TO_BLT* 
 }
 
 int primary_fields_file_BMS_HV_JMP_TO_BLT(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_BMS_LV_JMP_TO_BLT(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_BMS_LV_JMP_TO_BLT(
+    uint8_t* data,
+    primary_message_BMS_LV_JMP_TO_BLT* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_BMS_LV_JMP_TO_BLT(
+    primary_message_BMS_LV_JMP_TO_BLT* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_BMS_LV_JMP_TO_BLT(primary_message_BMS_LV_JMP_TO_BLT* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_BMS_LV_JMP_TO_BLT(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_BMS_LV_JMP_TO_BLT(primary_message_BMS_LV_JMP_TO_BLT* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_BMS_LV_JMP_TO_BLT(FILE* buffer) {
     CANLIB_UNUSED(buffer);
     return 0;
 }
@@ -9809,6 +10035,250 @@ int primary_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
+primary_byte_size primary_serialize_FLASH_BMS_HV_TX(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_BMS_HV_TX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_HV_TX* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_BMS_HV_TX(
+    primary_message_FLASH_BMS_HV_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_BMS_HV_TX(primary_message_FLASH_BMS_HV_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_FLASH_BMS_HV_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_FLASH_BMS_HV_TX(primary_message_FLASH_BMS_HV_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_FLASH_BMS_HV_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_HV_RX(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_BMS_HV_RX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_HV_RX* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_BMS_HV_RX(
+    primary_message_FLASH_BMS_HV_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_BMS_HV_RX(primary_message_FLASH_BMS_HV_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_FLASH_BMS_HV_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_FLASH_BMS_HV_RX(primary_message_FLASH_BMS_HV_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_FLASH_BMS_HV_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_LV_TX(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_BMS_LV_TX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_LV_TX* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_BMS_LV_TX(
+    primary_message_FLASH_BMS_LV_TX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_BMS_LV_TX(primary_message_FLASH_BMS_LV_TX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_FLASH_BMS_LV_TX(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_FLASH_BMS_LV_TX(primary_message_FLASH_BMS_LV_TX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_FLASH_BMS_LV_TX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_FLASH_BMS_LV_RX(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_FLASH_BMS_LV_RX(
+    uint8_t* data,
+    primary_message_FLASH_BMS_LV_RX* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_FLASH_BMS_LV_RX(
+    primary_message_FLASH_BMS_LV_RX* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_FLASH_BMS_LV_RX(primary_message_FLASH_BMS_LV_RX* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_FLASH_BMS_LV_RX(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_FLASH_BMS_LV_RX(primary_message_FLASH_BMS_LV_RX* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_FLASH_BMS_LV_RX(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+// ============== SERIALIZE ============== //
+
 primary_byte_size primary_serialize_BRUSA_NLG5_CTL(
     uint8_t* data
 ) {
@@ -10302,6 +10772,8 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {
         case 0:
             return primary_fields_BMS_HV_JMP_TO_BLT(buffer);
+        case 32:
+            return primary_fields_BMS_LV_JMP_TO_BLT(buffer);
         case 1025:
             return primary_fields_STEER_VERSION(buffer);
         case 1057:
@@ -10424,6 +10896,14 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_FLASH_CELLBOARD_5_TX(buffer);
         case 27:
             return primary_fields_FLASH_CELLBOARD_5_RX(buffer);
+        case 2017:
+            return primary_fields_FLASH_BMS_HV_TX(buffer);
+        case 1639:
+            return primary_fields_FLASH_BMS_HV_RX(buffer);
+        case 2033:
+            return primary_fields_FLASH_BMS_LV_TX(buffer);
+        case 1655:
+            return primary_fields_FLASH_BMS_LV_RX(buffer);
         case 618:
             return primary_fields_BRUSA_NLG5_CTL(buffer);
         case 610:
@@ -10448,6 +10928,8 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
     switch (message_id) {
         case 0:
             return primary_to_string_BMS_HV_JMP_TO_BLT((primary_message_BMS_HV_JMP_TO_BLT*) message, buffer);
+        case 32:
+            return primary_to_string_BMS_LV_JMP_TO_BLT((primary_message_BMS_LV_JMP_TO_BLT*) message, buffer);
         case 1025:
             return primary_to_string_STEER_VERSION((primary_message_STEER_VERSION*) message, buffer);
         case 1057:
@@ -10570,6 +11052,14 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_FLASH_CELLBOARD_5_TX((primary_message_FLASH_CELLBOARD_5_TX*) message, buffer);
         case 27:
             return primary_to_string_FLASH_CELLBOARD_5_RX((primary_message_FLASH_CELLBOARD_5_RX*) message, buffer);
+        case 2017:
+            return primary_to_string_FLASH_BMS_HV_TX((primary_message_FLASH_BMS_HV_TX*) message, buffer);
+        case 1639:
+            return primary_to_string_FLASH_BMS_HV_RX((primary_message_FLASH_BMS_HV_RX*) message, buffer);
+        case 2033:
+            return primary_to_string_FLASH_BMS_LV_TX((primary_message_FLASH_BMS_LV_TX*) message, buffer);
+        case 1655:
+            return primary_to_string_FLASH_BMS_LV_RX((primary_message_FLASH_BMS_LV_RX*) message, buffer);
         case 618:
             return primary_to_string_BRUSA_NLG5_CTL((primary_message_BRUSA_NLG5_CTL*) message, buffer);
         case 610:
@@ -10594,6 +11084,8 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
     switch (message_id) {
         case 0:
             return primary_fields_file_BMS_HV_JMP_TO_BLT(buffer);
+        case 32:
+            return primary_fields_file_BMS_LV_JMP_TO_BLT(buffer);
         case 1025:
             return primary_fields_file_STEER_VERSION(buffer);
         case 1057:
@@ -10716,6 +11208,14 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_FLASH_CELLBOARD_5_TX(buffer);
         case 27:
             return primary_fields_file_FLASH_CELLBOARD_5_RX(buffer);
+        case 2017:
+            return primary_fields_file_FLASH_BMS_HV_TX(buffer);
+        case 1639:
+            return primary_fields_file_FLASH_BMS_HV_RX(buffer);
+        case 2033:
+            return primary_fields_file_FLASH_BMS_LV_TX(buffer);
+        case 1655:
+            return primary_fields_file_FLASH_BMS_LV_RX(buffer);
         case 618:
             return primary_fields_file_BRUSA_NLG5_CTL(buffer);
         case 610:
@@ -10740,6 +11240,8 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
     switch (message_id) {
         case 0:
             return primary_to_string_file_BMS_HV_JMP_TO_BLT((primary_message_BMS_HV_JMP_TO_BLT*) message, buffer);
+        case 32:
+            return primary_to_string_file_BMS_LV_JMP_TO_BLT((primary_message_BMS_LV_JMP_TO_BLT*) message, buffer);
         case 1025:
             return primary_to_string_file_STEER_VERSION((primary_message_STEER_VERSION*) message, buffer);
         case 1057:
@@ -10862,6 +11364,14 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_FLASH_CELLBOARD_5_TX((primary_message_FLASH_CELLBOARD_5_TX*) message, buffer);
         case 27:
             return primary_to_string_file_FLASH_CELLBOARD_5_RX((primary_message_FLASH_CELLBOARD_5_RX*) message, buffer);
+        case 2017:
+            return primary_to_string_file_FLASH_BMS_HV_TX((primary_message_FLASH_BMS_HV_TX*) message, buffer);
+        case 1639:
+            return primary_to_string_file_FLASH_BMS_HV_RX((primary_message_FLASH_BMS_HV_RX*) message, buffer);
+        case 2033:
+            return primary_to_string_file_FLASH_BMS_LV_TX((primary_message_FLASH_BMS_LV_TX*) message, buffer);
+        case 1655:
+            return primary_to_string_file_FLASH_BMS_LV_RX((primary_message_FLASH_BMS_LV_RX*) message, buffer);
         case 618:
             return primary_to_string_file_BRUSA_NLG5_CTL((primary_message_BRUSA_NLG5_CTL*) message, buffer);
         case 610:
@@ -10896,6 +11406,16 @@ void* primary_deserialize_from_id(
         case 0: {
             primary_deserialize_BMS_HV_JMP_TO_BLT(
                 (primary_message_BMS_HV_JMP_TO_BLT*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 32: {
+            primary_deserialize_BMS_LV_JMP_TO_BLT(
+                (primary_message_BMS_LV_JMP_TO_BLT*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -11565,6 +12085,46 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
+        case 2017: {
+            primary_deserialize_FLASH_BMS_HV_TX(
+                (primary_message_FLASH_BMS_HV_TX*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 1639: {
+            primary_deserialize_FLASH_BMS_HV_RX(
+                (primary_message_FLASH_BMS_HV_RX*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 2033: {
+            primary_deserialize_FLASH_BMS_LV_TX(
+                (primary_message_FLASH_BMS_LV_TX*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 1655: {
+            primary_deserialize_FLASH_BMS_LV_RX(
+                (primary_message_FLASH_BMS_LV_RX*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
         case 618: {
             primary_deserialize_BRUSA_NLG5_CTL(
                 (primary_message_BRUSA_NLG5_CTL*) message_raw,
@@ -11654,6 +12214,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_BMS_HV_JMP_TO_BLT].id = 0;
     (*devices)[primary_INDEX_BMS_HV_JMP_TO_BLT].message_raw = (void*) malloc(sizeof(primary_message_BMS_HV_JMP_TO_BLT));
     (*devices)[primary_INDEX_BMS_HV_JMP_TO_BLT].message_conversion = NULL;
+    (*devices)[primary_INDEX_BMS_LV_JMP_TO_BLT].id = 32;
+    (*devices)[primary_INDEX_BMS_LV_JMP_TO_BLT].message_raw = (void*) malloc(sizeof(primary_message_BMS_LV_JMP_TO_BLT));
+    (*devices)[primary_INDEX_BMS_LV_JMP_TO_BLT].message_conversion = NULL;
     (*devices)[primary_INDEX_STEER_VERSION].id = 1025;
     (*devices)[primary_INDEX_STEER_VERSION].message_raw = (void*) malloc(sizeof(primary_message_STEER_VERSION));
     (*devices)[primary_INDEX_STEER_VERSION].message_conversion = NULL;
@@ -11843,6 +12406,18 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].id = 27;
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_CELLBOARD_5_RX));
     (*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_conversion = NULL;
+    (*devices)[primary_INDEX_FLASH_BMS_HV_TX].id = 2017;
+    (*devices)[primary_INDEX_FLASH_BMS_HV_TX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_BMS_HV_TX));
+    (*devices)[primary_INDEX_FLASH_BMS_HV_TX].message_conversion = NULL;
+    (*devices)[primary_INDEX_FLASH_BMS_HV_RX].id = 1639;
+    (*devices)[primary_INDEX_FLASH_BMS_HV_RX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_BMS_HV_RX));
+    (*devices)[primary_INDEX_FLASH_BMS_HV_RX].message_conversion = NULL;
+    (*devices)[primary_INDEX_FLASH_BMS_LV_TX].id = 2033;
+    (*devices)[primary_INDEX_FLASH_BMS_LV_TX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_BMS_LV_TX));
+    (*devices)[primary_INDEX_FLASH_BMS_LV_TX].message_conversion = NULL;
+    (*devices)[primary_INDEX_FLASH_BMS_LV_RX].id = 1655;
+    (*devices)[primary_INDEX_FLASH_BMS_LV_RX].message_raw = (void*) malloc(sizeof(primary_message_FLASH_BMS_LV_RX));
+    (*devices)[primary_INDEX_FLASH_BMS_LV_RX].message_conversion = NULL;
     (*devices)[primary_INDEX_BRUSA_NLG5_CTL].id = 618;
     (*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_NLG5_CTL));
     (*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_conversion = NULL;
@@ -11872,6 +12447,7 @@ primary_devices* primary_devices_new() {
 
 void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_BMS_HV_JMP_TO_BLT].message_raw);
+    free((*devices)[primary_INDEX_BMS_LV_JMP_TO_BLT].message_raw);
     free((*devices)[primary_INDEX_STEER_VERSION].message_raw);
     free((*devices)[primary_INDEX_DAS_VERSION].message_raw);
     free((*devices)[primary_INDEX_HV_VERSION].message_raw);
@@ -11948,6 +12524,10 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_4_RX].message_raw);
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_5_TX].message_raw);
     free((*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw);
+    free((*devices)[primary_INDEX_FLASH_BMS_HV_TX].message_raw);
+    free((*devices)[primary_INDEX_FLASH_BMS_HV_RX].message_raw);
+    free((*devices)[primary_INDEX_FLASH_BMS_LV_TX].message_raw);
+    free((*devices)[primary_INDEX_FLASH_BMS_LV_RX].message_raw);
     free((*devices)[primary_INDEX_BRUSA_NLG5_CTL].message_raw);
     free((*devices)[primary_INDEX_BRUSA_ST].message_raw);
     free((*devices)[primary_INDEX_BRUSA_ACT_I].message_raw);
@@ -11971,6 +12551,16 @@ void primary_devices_deserialize_from_id(
         case 0: {
             primary_deserialize_BMS_HV_JMP_TO_BLT(
                 (primary_message_BMS_HV_JMP_TO_BLT*) &(*devices)[primary_INDEX_BMS_HV_JMP_TO_BLT].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 32: {
+            primary_deserialize_BMS_LV_JMP_TO_BLT(
+                (primary_message_BMS_LV_JMP_TO_BLT*) &(*devices)[primary_INDEX_BMS_LV_JMP_TO_BLT].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -12633,6 +13223,46 @@ void primary_devices_deserialize_from_id(
         case 27: {
             primary_deserialize_FLASH_CELLBOARD_5_RX(
                 (primary_message_FLASH_CELLBOARD_5_RX*) &(*devices)[primary_INDEX_FLASH_CELLBOARD_5_RX].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 2017: {
+            primary_deserialize_FLASH_BMS_HV_TX(
+                (primary_message_FLASH_BMS_HV_TX*) &(*devices)[primary_INDEX_FLASH_BMS_HV_TX].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 1639: {
+            primary_deserialize_FLASH_BMS_HV_RX(
+                (primary_message_FLASH_BMS_HV_RX*) &(*devices)[primary_INDEX_FLASH_BMS_HV_RX].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 2033: {
+            primary_deserialize_FLASH_BMS_LV_TX(
+                (primary_message_FLASH_BMS_LV_TX*) &(*devices)[primary_INDEX_FLASH_BMS_LV_TX].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 1655: {
+            primary_deserialize_FLASH_BMS_LV_RX(
+                (primary_message_FLASH_BMS_LV_RX*) &(*devices)[primary_INDEX_FLASH_BMS_LV_RX].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

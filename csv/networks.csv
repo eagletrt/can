@@ -1,5 +1,6 @@
 name,id,network,topic,priority,sending,receiving,interval,contents,description
 BMS_HV_JMP_TO_BLT,BMS_HV_JMP_TO_BLT: 0,primary,FLASH,7,HANDCART,BMS_HV,,,
+BMS_LV_JMP_TO_BLT,BMS_LV_JMP_TO_BLT: 32,primary,FLASH,7,HANDCART,BMS_LV,,,
 STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
 DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
 HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
@@ -60,6 +61,10 @@ FLASH_CELLBOARD_4_TX,FLASH_CELLBOARD_4_TX: 24,primary,FIXED_IDS,,HANDCART,BMS_HV
 FLASH_CELLBOARD_4_RX,FLASH_CELLBOARD_4_RX: 25,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
 FLASH_CELLBOARD_5_TX,FLASH_CELLBOARD_5_TX: 26,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
 FLASH_CELLBOARD_5_RX,FLASH_CELLBOARD_5_RX: 27,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
+FLASH_BMS_HV_TX,FLASH_BMS_HV_TX: 2017,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
+FLASH_BMS_HV_RX,FLASH_BMS_HV_RX: 1639,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
+FLASH_BMS_LV_TX,FLASH_BMS_LV_TX: 2033,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
+FLASH_BMS_LV_RX,FLASH_BMS_LV_RX: 1655,primary,FIXED_IDS,,HANDCART,BMS_HV,,,
 BRUSA_NLG5_CTL,BRUSA_NLG5_CTL: 618,primary,FIXED_IDS,,BRUSA,HANDCART,,,
 BRUSA_ST,BRUSA_ST: 610,primary,FIXED_IDS,,BRUSA,HANDCART,,,
 BRUSA_ACT_I,BRUSA_ACT_I: 611,primary,FIXED_IDS,,BRUSA,HANDCART,,,

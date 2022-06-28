@@ -6,6 +6,9 @@
             "messages": {
                 "BMS_HV_JMP_TO_BLT": {
                     "BMS_HV_JMP_TO_BLT": 0
+                },
+                "BMS_LV_JMP_TO_BLT": {
+                    "BMS_LV_JMP_TO_BLT": 32
                 }
             }
         },
@@ -236,6 +239,18 @@
                 },
                 "FLASH_CELLBOARD_5_RX": {
                     "FLASH_CELLBOARD_5_RX": 27
+                },
+                "FLASH_BMS_HV_TX": {
+                    "FLASH_BMS_HV_TX": 2017
+                },
+                "FLASH_BMS_HV_RX": {
+                    "FLASH_BMS_HV_RX": 1639
+                },
+                "FLASH_BMS_LV_TX": {
+                    "FLASH_BMS_LV_TX": 2033
+                },
+                "FLASH_BMS_LV_RX": {
+                    "FLASH_BMS_LV_RX": 1655
                 },
                 "BRUSA_NLG5_CTL": {
                     "BRUSA_NLG5_CTL": 618

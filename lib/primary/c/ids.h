@@ -23,6 +23,7 @@ typedef uint16_t canlib_message_id;
 #define primary_TOPIC_FILTER_FLASH 0x0 // dec: 0 bin: 0b00000000000
 
 #define primary_ID_BMS_HV_JMP_TO_BLT 0x0 // dec: 0 bin: 0b00000000000
+#define primary_ID_BMS_LV_JMP_TO_BLT 0x20 // dec: 32 bin: 0b00000100000
 
 /* TOPIC BROADCAST */
 #define primary_TOPIC_MASK_BROADCAST 0b00000011111
@@ -133,6 +134,10 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_FLASH_CELLBOARD_4_RX 0x19 // dec: 25 bin: 0b00000011001
 #define primary_ID_FLASH_CELLBOARD_5_TX 0x1A // dec: 26 bin: 0b00000011010
 #define primary_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
+#define primary_ID_FLASH_BMS_HV_TX 0x7E1 // dec: 2017 bin: 0b11111100001
+#define primary_ID_FLASH_BMS_HV_RX 0x667 // dec: 1639 bin: 0b11001100111
+#define primary_ID_FLASH_BMS_LV_TX 0x7F1 // dec: 2033 bin: 0b11111110001
+#define primary_ID_FLASH_BMS_LV_RX 0x677 // dec: 1655 bin: 0b11001110111
 #define primary_ID_BRUSA_NLG5_CTL 0x26A // dec: 618 bin: 0b01001101010
 #define primary_ID_BRUSA_ST 0x262 // dec: 610 bin: 0b01001100010
 #define primary_ID_BRUSA_ACT_I 0x263 // dec: 611 bin: 0b01001100011
@@ -151,6 +156,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
     switch (id) {
         case primary_ID_BMS_HV_JMP_TO_BLT:
             return sprintf(buffer, "%s", "BMS_HV_JMP_TO_BLT");;
+        case primary_ID_BMS_LV_JMP_TO_BLT:
+            return sprintf(buffer, "%s", "BMS_LV_JMP_TO_BLT");;
         case primary_ID_STEER_VERSION:
             return sprintf(buffer, "%s", "STEER_VERSION");;
         case primary_ID_DAS_VERSION:
@@ -273,6 +280,14 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_TX");;
         case primary_ID_FLASH_CELLBOARD_5_RX:
             return sprintf(buffer, "%s", "FLASH_CELLBOARD_5_RX");;
+        case primary_ID_FLASH_BMS_HV_TX:
+            return sprintf(buffer, "%s", "FLASH_BMS_HV_TX");;
+        case primary_ID_FLASH_BMS_HV_RX:
+            return sprintf(buffer, "%s", "FLASH_BMS_HV_RX");;
+        case primary_ID_FLASH_BMS_LV_TX:
+            return sprintf(buffer, "%s", "FLASH_BMS_LV_TX");;
+        case primary_ID_FLASH_BMS_LV_RX:
+            return sprintf(buffer, "%s", "FLASH_BMS_LV_RX");;
         case primary_ID_BRUSA_NLG5_CTL:
             return sprintf(buffer, "%s", "BRUSA_NLG5_CTL");;
         case primary_ID_BRUSA_ST:
@@ -297,6 +312,7 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
 static inline bool primary_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 0: return true; break;
+        case 32: return true; break;
         case 1025: return true; break;
         case 1057: return true; break;
         case 1089: return true; break;
@@ -358,6 +374,10 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 25: return true; break;
         case 26: return true; break;
         case 27: return true; break;
+        case 2017: return true; break;
+        case 1639: return true; break;
+        case 2033: return true; break;
+        case 1655: return true; break;
         case 618: return true; break;
         case 610: return true; break;
         case 611: return true; break;

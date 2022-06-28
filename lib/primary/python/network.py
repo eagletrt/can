@@ -365,6 +365,28 @@ class message_BMS_HV_JMP_TO_BLT:
         return message
 
 
+class message_BMS_LV_JMP_TO_BLT:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_BMS_LV_JMP_TO_BLT):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
 class message_STEER_VERSION:
     def __init__(
         self,
@@ -2857,6 +2879,94 @@ class message_FLASH_CELLBOARD_5_RX:
 
     def __eq__(self, other):
         if not isinstance(other, message_FLASH_CELLBOARD_5_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_BMS_HV_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_BMS_HV_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_BMS_HV_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_BMS_HV_RX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_BMS_LV_TX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_BMS_LV_TX):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_FLASH_BMS_LV_RX:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_FLASH_BMS_LV_RX):
             return False
         return True
 

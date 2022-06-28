@@ -217,6 +217,14 @@
       "contents": {}
     },
     {
+      "name": "BMS_LV_JMP_TO_BLT",
+      "topic": "FLASH",
+      "priority": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_LV"],
+      "contents": {}
+    },
+    {
       "name": "STEER_VERSION",
       "topic": "BROADCAST",
       "priority": 3,
@@ -1080,6 +1088,34 @@
     {
       "name": "FLASH_CELLBOARD_5_RX",
       "fixed_id": 27,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_HV_TX",
+      "fixed_id": 2017,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_HV_RX",
+      "fixed_id": 1639,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_LV_TX",
+      "fixed_id": 2033,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_LV_RX",
+      "fixed_id": 1655,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}

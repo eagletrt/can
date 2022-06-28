@@ -194,6 +194,7 @@ void inline canlib_circular_buffer<T, S, IT>::clear() {
 
 typedef struct {
     canlib_circular_buffer<primary_message_BMS_HV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_HV_JMP_TO_BLT;
+    canlib_circular_buffer<primary_message_BMS_LV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_LV_JMP_TO_BLT;
     canlib_circular_buffer<primary_message_STEER_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE> STEER_VERSION;
     canlib_circular_buffer<primary_message_DAS_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE> DAS_VERSION;
     canlib_circular_buffer<primary_message_HV_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE> HV_VERSION;
@@ -255,6 +256,10 @@ typedef struct {
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_4_RX;
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_TX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_5_TX;
     canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_CELLBOARD_5_RX;
+    canlib_circular_buffer<primary_message_FLASH_BMS_HV_TX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_BMS_HV_TX;
+    canlib_circular_buffer<primary_message_FLASH_BMS_HV_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_BMS_HV_RX;
+    canlib_circular_buffer<primary_message_FLASH_BMS_LV_TX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_BMS_LV_TX;
+    canlib_circular_buffer<primary_message_FLASH_BMS_LV_RX, CANLIB_CIRCULAR_BUFFER_SIZE> FLASH_BMS_LV_RX;
     canlib_circular_buffer<primary_message_BRUSA_NLG5_CTL, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_NLG5_CTL;
     canlib_circular_buffer<primary_message_BRUSA_ST, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ST;
     canlib_circular_buffer<primary_message_BRUSA_ACT_I, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ACT_I;
@@ -279,6 +284,12 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 0: {
             primary_message_BMS_HV_JMP_TO_BLT* msg = (primary_message_BMS_HV_JMP_TO_BLT*) (*map)[index].message_raw;
             primary::BMS_HV_JMP_TO_BLT* proto_msg = pack->add_bms_hv_jmp_to_blt();
+            break;
+        }
+
+        case 32: {
+            primary_message_BMS_LV_JMP_TO_BLT* msg = (primary_message_BMS_LV_JMP_TO_BLT*) (*map)[index].message_raw;
+            primary::BMS_LV_JMP_TO_BLT* proto_msg = pack->add_bms_lv_jmp_to_blt();
             break;
         }
 
@@ -918,6 +929,30 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
+        case 2017: {
+            primary_message_FLASH_BMS_HV_TX* msg = (primary_message_FLASH_BMS_HV_TX*) (*map)[index].message_raw;
+            primary::FLASH_BMS_HV_TX* proto_msg = pack->add_flash_bms_hv_tx();
+            break;
+        }
+
+        case 1639: {
+            primary_message_FLASH_BMS_HV_RX* msg = (primary_message_FLASH_BMS_HV_RX*) (*map)[index].message_raw;
+            primary::FLASH_BMS_HV_RX* proto_msg = pack->add_flash_bms_hv_rx();
+            break;
+        }
+
+        case 2033: {
+            primary_message_FLASH_BMS_LV_TX* msg = (primary_message_FLASH_BMS_LV_TX*) (*map)[index].message_raw;
+            primary::FLASH_BMS_LV_TX* proto_msg = pack->add_flash_bms_lv_tx();
+            break;
+        }
+
+        case 1655: {
+            primary_message_FLASH_BMS_LV_RX* msg = (primary_message_FLASH_BMS_LV_RX*) (*map)[index].message_raw;
+            primary::FLASH_BMS_LV_RX* proto_msg = pack->add_flash_bms_lv_rx();
+            break;
+        }
+
         case 618: {
             primary_message_BRUSA_NLG5_CTL* msg = (primary_message_BRUSA_NLG5_CTL*) (*map)[index].message_raw;
             primary::BRUSA_NLG5_CTL* proto_msg = pack->add_brusa_nlg5_ctl();
@@ -976,6 +1011,13 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->bms_hv_jmp_to_blt(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->BMS_HV_JMP_TO_BLT.push(instance);
+    }
+    for(int i = 0; i < pack->bms_lv_jmp_to_blt_size(); i++){
+        static primary_message_BMS_LV_JMP_TO_BLT instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->bms_lv_jmp_to_blt(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->BMS_LV_JMP_TO_BLT.push(instance);
     }
     for(int i = 0; i < pack->steer_version_size(); i++){
         static primary_message_STEER_VERSION instance;
@@ -1529,6 +1571,34 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_5_RX.push(instance);
+    }
+    for(int i = 0; i < pack->flash_bms_hv_tx_size(); i++){
+        static primary_message_FLASH_BMS_HV_TX instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->flash_bms_hv_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->FLASH_BMS_HV_TX.push(instance);
+    }
+    for(int i = 0; i < pack->flash_bms_hv_rx_size(); i++){
+        static primary_message_FLASH_BMS_HV_RX instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->flash_bms_hv_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->FLASH_BMS_HV_RX.push(instance);
+    }
+    for(int i = 0; i < pack->flash_bms_lv_tx_size(); i++){
+        static primary_message_FLASH_BMS_LV_TX instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->flash_bms_lv_tx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->FLASH_BMS_LV_TX.push(instance);
+    }
+    for(int i = 0; i < pack->flash_bms_lv_rx_size(); i++){
+        static primary_message_FLASH_BMS_LV_RX instance;
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->flash_bms_lv_rx(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->FLASH_BMS_LV_RX.push(instance);
     }
     for(int i = 0; i < pack->brusa_nlg5_ctl_size(); i++){
         static primary_message_BRUSA_NLG5_CTL instance;
