@@ -83,26 +83,28 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_HV_CELLS_TEMP 0x226 // dec: 550 bin: 0b01000100110
 #define primary_ID_HV_CELL_BALANCING_STATUS 0x246 // dec: 582 bin: 0b01001000110
 
-/* TOPIC DAS */
-#define primary_TOPIC_MASK_DAS 0b00000011111
-#define primary_TOPIC_FILTER_DAS 0x7 // dec: 7 bin: 0b00000000111
-
-#define primary_ID_STEER_STATUS 0x107 // dec: 263 bin: 0b00100000111
-#define primary_ID_SET_CAR_STATUS 0x307 // dec: 775 bin: 0b01100000111
-#define primary_ID_SET_PEDALS_RANGE 0x407 // dec: 1031 bin: 0b10000000111
-#define primary_ID_SET_STEERING_ANGLE_RANGE 0x427 // dec: 1063 bin: 0b10000100111
-
 /* TOPIC DASnSTEER */
 #define primary_TOPIC_MASK_DASnSTEER 0b00000011111
-#define primary_TOPIC_FILTER_DASnSTEER 0x8 // dec: 8 bin: 0b00000001000
+#define primary_TOPIC_FILTER_DASnSTEER 0x7 // dec: 7 bin: 0b00000000111
 
-#define primary_ID_LV_CURRENT 0x308 // dec: 776 bin: 0b01100001000
-#define primary_ID_LV_VOLTAGE 0x328 // dec: 808 bin: 0b01100101000
-#define primary_ID_LV_TOTAL_VOLTAGE 0x348 // dec: 840 bin: 0b01101001000
-#define primary_ID_LV_TEMPERATURE 0x368 // dec: 872 bin: 0b01101101000
-#define primary_ID_COOLING_STATUS 0x388 // dec: 904 bin: 0b01110001000
-#define primary_ID_INVERTER_CONNECTION_STATUS 0x108 // dec: 264 bin: 0b00100001000
-#define primary_ID_SHUTDOWN_STATUS 0x128 // dec: 296 bin: 0b00100101000
+#define primary_ID_HV_FEEDBACKS_ERRORS 0x307 // dec: 775 bin: 0b01100000111
+#define primary_ID_HV_IMD_STATUS 0x327 // dec: 807 bin: 0b01100100111
+#define primary_ID_LV_CURRENT 0x347 // dec: 839 bin: 0b01101000111
+#define primary_ID_LV_VOLTAGE 0x367 // dec: 871 bin: 0b01101100111
+#define primary_ID_LV_TOTAL_VOLTAGE 0x387 // dec: 903 bin: 0b01110000111
+#define primary_ID_LV_TEMPERATURE 0x3A7 // dec: 935 bin: 0b01110100111
+#define primary_ID_COOLING_STATUS 0x3C7 // dec: 967 bin: 0b01111000111
+#define primary_ID_INVERTER_CONNECTION_STATUS 0x107 // dec: 263 bin: 0b00100000111
+#define primary_ID_SHUTDOWN_STATUS 0x127 // dec: 295 bin: 0b00100100111
+
+/* TOPIC DAS */
+#define primary_TOPIC_MASK_DAS 0b00000011111
+#define primary_TOPIC_FILTER_DAS 0x8 // dec: 8 bin: 0b00000001000
+
+#define primary_ID_STEER_STATUS 0x108 // dec: 264 bin: 0b00100001000
+#define primary_ID_SET_CAR_STATUS 0x308 // dec: 776 bin: 0b01100001000
+#define primary_ID_SET_PEDALS_RANGE 0x408 // dec: 1032 bin: 0b10000001000
+#define primary_ID_SET_STEERING_ANGLE_RANGE 0x428 // dec: 1064 bin: 0b10000101000
 
 /* TOPIC LV */
 #define primary_TOPIC_MASK_LV 0b00000011111
@@ -183,6 +185,10 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "HV_CAN_FORWARD_STATUS");;
         case primary_ID_HV_FANS_OVERRIDE_STATUS:
             return sprintf(buffer, "%s", "HV_FANS_OVERRIDE_STATUS");;
+        case primary_ID_HV_FEEDBACKS_ERRORS:
+            return sprintf(buffer, "%s", "HV_FEEDBACKS_ERRORS");;
+        case primary_ID_HV_IMD_STATUS:
+            return sprintf(buffer, "%s", "HV_IMD_STATUS");;
         case primary_ID_TS_STATUS:
             return sprintf(buffer, "%s", "TS_STATUS");;
         case primary_ID_SET_TS_STATUS_DAS:
@@ -308,25 +314,27 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 37: return true; break;
         case 6: return true; break;
         case 774: return true; break;
+        case 775: return true; break;
+        case 807: return true; break;
         case 36: return true; break;
         case 69: return true; break;
         case 101: return true; break;
-        case 263: return true; break;
-        case 775: return true; break;
-        case 1031: return true; break;
-        case 1063: return true; break;
+        case 264: return true; break;
+        case 776: return true; break;
+        case 1032: return true; break;
+        case 1064: return true; break;
         case 515: return true; break;
         case 3: return true; break;
-        case 776: return true; break;
-        case 808: return true; break;
-        case 840: return true; break;
-        case 872: return true; break;
-        case 904: return true; break;
+        case 839: return true; break;
+        case 871: return true; break;
+        case 903: return true; break;
+        case 935: return true; break;
+        case 967: return true; break;
         case 777: return true; break;
         case 809: return true; break;
         case 265: return true; break;
-        case 264: return true; break;
-        case 296: return true; break;
+        case 263: return true; break;
+        case 295: return true; break;
         case 2: return true; break;
         case 518: return true; break;
         case 550: return true; break;

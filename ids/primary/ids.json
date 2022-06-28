@@ -124,46 +124,52 @@
                 }
             }
         },
-        "DAS": {
+        "DASnSTEER": {
             "id": 7,
             "messages": {
-                "STEER_STATUS": {
-                    "STEER_STATUS": 263
+                "HV_FEEDBACKS_ERRORS": {
+                    "HV_FEEDBACKS_ERRORS": 775
                 },
-                "SET_CAR_STATUS": {
-                    "SET_CAR_STATUS": 775
+                "HV_IMD_STATUS": {
+                    "HV_IMD_STATUS": 807
                 },
-                "SET_PEDALS_RANGE": {
-                    "SET_PEDALS_RANGE": 1031
+                "LV_CURRENT": {
+                    "LV_CURRENT": 839
                 },
-                "SET_STEERING_ANGLE_RANGE": {
-                    "SET_STEERING_ANGLE_RANGE": 1063
+                "LV_VOLTAGE": {
+                    "LV_VOLTAGE": 871
+                },
+                "LV_TOTAL_VOLTAGE": {
+                    "LV_TOTAL_VOLTAGE": 903
+                },
+                "LV_TEMPERATURE": {
+                    "LV_TEMPERATURE": 935
+                },
+                "COOLING_STATUS": {
+                    "COOLING_STATUS": 967
+                },
+                "INVERTER_CONNECTION_STATUS": {
+                    "INVERTER_CONNECTION_STATUS": 263
+                },
+                "SHUTDOWN_STATUS": {
+                    "SHUTDOWN_STATUS": 295
                 }
             }
         },
-        "DASnSTEER": {
+        "DAS": {
             "id": 8,
             "messages": {
-                "LV_CURRENT": {
-                    "LV_CURRENT": 776
+                "STEER_STATUS": {
+                    "STEER_STATUS": 264
                 },
-                "LV_VOLTAGE": {
-                    "LV_VOLTAGE": 808
+                "SET_CAR_STATUS": {
+                    "SET_CAR_STATUS": 776
                 },
-                "LV_TOTAL_VOLTAGE": {
-                    "LV_TOTAL_VOLTAGE": 840
+                "SET_PEDALS_RANGE": {
+                    "SET_PEDALS_RANGE": 1032
                 },
-                "LV_TEMPERATURE": {
-                    "LV_TEMPERATURE": 872
-                },
-                "COOLING_STATUS": {
-                    "COOLING_STATUS": 904
-                },
-                "INVERTER_CONNECTION_STATUS": {
-                    "INVERTER_CONNECTION_STATUS": 264
-                },
-                "SHUTDOWN_STATUS": {
-                    "SHUTDOWN_STATUS": 296
+                "SET_STEERING_ANGLE_RANGE": {
+                    "SET_STEERING_ANGLE_RANGE": 1064
                 }
             }
         },

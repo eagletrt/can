@@ -186,6 +186,34 @@ class Inv_IOInfo(IntFlag):
             return cls(0)
         return super(IntFlag, cls)._missing_(value)
 
+
+class HvFeedbacks(IntFlag):
+    FEEDBACK_TSAL_GREEN_FAULT = 1
+    FEEDBACK_IMD_LATCHED = 2
+    FEEDBACK_TSAL_GREEN_FAULT_LATCHED = 4
+    FEEDBACK_BMS_LATCHED = 8
+    FEEDBACK_EXT_LATCHED = 16
+    FEEDBACK_TSAL_GREEN = 32
+    FEEDBACK_TS_OVER_60V_STATUS = 64
+    FEEDBACK_AIRN_STATUS = 128
+    FEEDBACK_AIRP_STATUS = 256
+    FEEDBACK_AIRP_GATE = 512
+    FEEDBACK_AIRN_GATE = 1024
+    FEEDBACK_PRECHARGE_STATUS = 2048
+    FEEDBACK_TSP_OVER_60V_STATUS = 4096
+    FEEDBACK_CHECK_MUX = 8192
+    FEEDBACK_SD_IN = 16384
+    FEEDBACK_SD_OUT = 32768
+    FEEDBACK_RELAY_SD = 65536
+    FEEDBACK_IMD_FAULT = 131072
+    FEEDBACK_SD_END = 262144
+
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
 # Enums
 
 
@@ -294,6 +322,19 @@ class Pedal(IntEnum):
 class Cooling(IntEnum):
     SET_MAX = 0
     SET_OFF = 1
+
+    @classmethod
+    def _missing_(cls, _):
+        return cls(0)
+
+
+class ImdStatus(IntEnum):
+    IMD_SC = 0
+    IMD_NORMAL = 1
+    IMD_UNDER_VOLTAGE = 2
+    IMD_START_MEASURE = 3
+    IMD_DEVICE_ERROR = 4
+    IMD_EARTH_FAULT = 5
 
     @classmethod
     def _missing_(cls, _):
@@ -1097,6 +1138,75 @@ class message_HV_FANS_OVERRIDE_STATUS_conversion:
         raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
         raw.fans_override = self.fans_override
         return raw
+
+class message_HV_FEEDBACKS_ERRORS:
+    def __init__(
+        self,
+        feedbacks_errors = None,
+        is_circuitry_error = None
+    ):
+        self.feedbacks_errors = HvFeedbacks(feedbacks_errors)
+        self.is_circuitry_error = HvFeedbacks(is_circuitry_error)
+        self.size = 6
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_FEEDBACKS_ERRORS):
+            return False
+        if self.feedbacks_errors != other.feedbacks_errors:
+            return False
+        if self.is_circuitry_error != other.is_circuitry_error:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBBBBB", (int(self.feedbacks_errors) >> 16) & 255, (int(self.feedbacks_errors) >> 8) & 255, (int(self.feedbacks_errors) >> 0) & 255, (int(self.is_circuitry_error) >> 16) & 255, (int(self.is_circuitry_error) >> 8) & 255, (int(self.is_circuitry_error) >> 0) & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.feedbacks_errors = HvFeedbacks(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.is_circuitry_error = HvFeedbacks(int((unpack("<xxxBBB", data[0:6])[0] << 16) | (unpack("<xxxBBB", data[0:6])[1] << 8) | (unpack("<xxxBBB", data[0:6])[2] << 0)))
+        return message
+
+
+class message_HV_IMD_STATUS:
+    def __init__(
+        self,
+        imd_info = None,
+        imd_status = None,
+        imd_fault = None
+    ):
+        self.imd_info = uint16(imd_info)
+        self.imd_status = ImdStatus(imd_status)
+        self.imd_fault = bool(imd_fault)
+        self.size = 3
+
+    def __eq__(self, other):
+        if not isinstance(other, message_HV_IMD_STATUS):
+            return False
+        if self.imd_info != other.imd_info:
+            return False
+        if self.imd_status != other.imd_status:
+            return False
+        if self.imd_fault != other.imd_fault:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<HB", self.imd_info, self.imd_status << 5 & 255 | self.imd_fault << 4 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.imd_info = uint16(unpack("<H", data[0:2])[0])
+        message.imd_status = ImdStatus((unpack("<xxB", data[0:3])[0] & 224) >> 5)
+        message.imd_fault = bool((unpack("<xxB", data[0:3])[0] & 16) >> 4)
+        return message
+
 
 class message_TS_STATUS:
     def __init__(
