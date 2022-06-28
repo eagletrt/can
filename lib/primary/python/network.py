@@ -1178,10 +1178,10 @@ class message_HV_IMD_STATUS:
         imd_status = None,
         imd_fault = None
     ):
-        self.imd_info = uint16(imd_info)
+        self.imd_info = int32(imd_info)
         self.imd_status = ImdStatus(imd_status)
         self.imd_fault = bool(imd_fault)
-        self.size = 3
+        self.size = 5
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_IMD_STATUS):
@@ -1196,15 +1196,15 @@ class message_HV_IMD_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HB", self.imd_info, self.imd_status << 5 & 255 | self.imd_fault << 4 & 255))
+        data.extend(pack("<iB", self.imd_info, self.imd_status << 5 & 255 | self.imd_fault << 4 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.imd_info = uint16(unpack("<H", data[0:2])[0])
-        message.imd_status = ImdStatus((unpack("<xxB", data[0:3])[0] & 224) >> 5)
-        message.imd_fault = bool((unpack("<xxB", data[0:3])[0] & 16) >> 4)
+        message.imd_info = int32(unpack("<i", data[0:4])[0])
+        message.imd_status = ImdStatus((unpack("<xxxxB", data[0:5])[0] & 224) >> 5)
+        message.imd_fault = bool((unpack("<xxxxB", data[0:5])[0] & 16) >> 4)
         return message
 
 

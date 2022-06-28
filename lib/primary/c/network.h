@@ -256,7 +256,7 @@ typedef struct {
 #define primary_SIZE_HV_CAN_FORWARD_STATUS 1
 #define primary_SIZE_HV_FANS_OVERRIDE_STATUS 3
 #define primary_SIZE_HV_FEEDBACKS_STATUS 6
-#define primary_SIZE_HV_IMD_STATUS 3
+#define primary_SIZE_HV_IMD_STATUS 5
 #define primary_SIZE_TS_STATUS 1
 #define primary_SIZE_SET_TS_STATUS 1
 #define primary_SIZE_STEER_STATUS 1
@@ -734,7 +734,7 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_FEEDBACKS_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 imd_info;
+    primary_int32 imd_info;
     primary_ImdStatus imd_status;
     primary_bool imd_fault;
 #ifdef CANLIB_TIMESTAMP
@@ -1921,7 +1921,7 @@ int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_IMD_STATUS(
     uint8_t* data,
-    primary_uint16 imd_info,
+    primary_int32 imd_info,
     primary_ImdStatus imd_status,
     primary_bool imd_fault
 );
@@ -5553,14 +5553,16 @@ int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_IMD_STATUS(
     uint8_t* data,
-    primary_uint16 imd_info,
+    primary_int32 imd_info,
     primary_ImdStatus imd_status,
     primary_bool imd_fault
 ) {
     data[0] = imd_info & 255;
     data[1] = (imd_info >> 8) & 255;
-    data[2] = imd_status << 5 | imd_fault << 4;
-    return 3;
+    data[2] = (imd_info >> 16) & 255;
+    data[3] = (imd_info >> 24) & 255;
+    data[4] = imd_status << 5 | imd_fault << 4;
+    return 5;
 }
 
 primary_byte_size primary_serialize_struct_HV_IMD_STATUS(
@@ -5569,8 +5571,10 @@ primary_byte_size primary_serialize_struct_HV_IMD_STATUS(
 ) {
     data[0] = message->imd_info & 255;
     data[1] = (message->imd_info >> 8) & 255;
-    data[2] = message->imd_status << 5 | message->imd_fault << 4;
-    return 3;
+    data[2] = (message->imd_info >> 16) & 255;
+    data[3] = (message->imd_info >> 24) & 255;
+    data[4] = message->imd_status << 5 | message->imd_fault << 4;
+    return 5;
 }
 
 // ============== DESERIALIZE ============== //
@@ -5585,9 +5589,9 @@ void primary_deserialize_HV_IMD_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->imd_info = data[0] | (data[1] << 8);
-    message->imd_status = (primary_ImdStatus) ((data[2] & 224) >> 5);
-    message->imd_fault = (data[2] & 16) >> 4;
+    message->imd_info = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->imd_status = (primary_ImdStatus) ((data[4] & 224) >> 5);
+    message->imd_fault = (data[4] & 16) >> 4;
 }
 
 // ============== STRING ============== //
@@ -5598,7 +5602,7 @@ int primary_to_string_HV_IMD_STATUS(primary_message_HV_IMD_STATUS* message, char
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
+        "%" PRIi32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
@@ -5628,7 +5632,7 @@ int primary_to_string_file_HV_IMD_STATUS(primary_message_HV_IMD_STATUS* message,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
+        "%" PRIi32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP

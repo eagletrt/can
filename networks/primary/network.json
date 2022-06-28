@@ -511,7 +511,7 @@
       "contents": {
         "imd_fault": "bool",
         "imd_status": "ImdStatus",
-        "imd_info": "uint16"
+        "imd_info": "int32"
       }
     },
     {

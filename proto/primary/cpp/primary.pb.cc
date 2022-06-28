@@ -300,7 +300,7 @@ struct HV_FEEDBACKS_STATUSDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_FEEDBACKS_STATUSDefaultTypeInternal _HV_FEEDBACKS_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR HV_IMD_STATUS::HV_IMD_STATUS(
     ::_pbi::ConstantInitialized)
-  : imd_info_(0u)
+  : imd_info_(0)
   , imd_status_(0)
 
   , _inner_timestamp_(uint64_t{0u})
@@ -1990,7 +1990,7 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "amp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_STATUS\022\030\n\020feed"
   "backs_status\030\001 \001(\r\022\032\n\022is_circuitry_error"
   "\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"v\n\rHV_I"
-  "MD_STATUS\022\020\n\010imd_info\030\001 \001(\r\022&\n\nimd_statu"
+  "MD_STATUS\022\020\n\010imd_info\030\001 \001(\021\022&\n\nimd_statu"
   "s\030\002 \001(\0162\022.primary.ImdStatus\022\021\n\timd_fault"
   "\030\003 \001(\010\022\030\n\020_inner_timestamp\030\004 \001(\004\"K\n\tTS_S"
   "TATUS\022$\n\tts_status\030\001 \001(\0162\021.primary.TsSta"
@@ -6869,10 +6869,10 @@ const char* HV_IMD_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 imd_info = 1;
+      // sint32 imd_info = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          imd_info_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          imd_info_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6931,10 +6931,10 @@ uint8_t* HV_IMD_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 imd_info = 1;
+  // sint32 imd_info = 1;
   if (this->_internal_imd_info() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_imd_info(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_imd_info(), target);
   }
 
   // .primary.ImdStatus imd_status = 2;
@@ -6972,9 +6972,9 @@ size_t HV_IMD_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 imd_info = 1;
+  // sint32 imd_info = 1;
   if (this->_internal_imd_info() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_imd_info());
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_imd_info());
   }
 
   // .primary.ImdStatus imd_status = 2;

@@ -3945,13 +3945,13 @@ class HV_IMD_STATUS final :
     kInnerTimestampFieldNumber = 4,
     kImdFaultFieldNumber = 3,
   };
-  // uint32 imd_info = 1;
+  // sint32 imd_info = 1;
   void clear_imd_info();
-  uint32_t imd_info() const;
-  void set_imd_info(uint32_t value);
+  int32_t imd_info() const;
+  void set_imd_info(int32_t value);
   private:
-  uint32_t _internal_imd_info() const;
-  void _internal_set_imd_info(uint32_t value);
+  int32_t _internal_imd_info() const;
+  void _internal_set_imd_info(int32_t value);
   public:
 
   // .primary.ImdStatus imd_status = 2;
@@ -3988,7 +3988,7 @@ class HV_IMD_STATUS final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t imd_info_;
+  int32_t imd_info_;
   int imd_status_;
   uint64_t _inner_timestamp_;
   bool imd_fault_;
@@ -14866,22 +14866,22 @@ inline void HV_FEEDBACKS_STATUS::set__inner_timestamp(uint64_t value) {
 
 // HV_IMD_STATUS
 
-// uint32 imd_info = 1;
+// sint32 imd_info = 1;
 inline void HV_IMD_STATUS::clear_imd_info() {
-  imd_info_ = 0u;
+  imd_info_ = 0;
 }
-inline uint32_t HV_IMD_STATUS::_internal_imd_info() const {
+inline int32_t HV_IMD_STATUS::_internal_imd_info() const {
   return imd_info_;
 }
-inline uint32_t HV_IMD_STATUS::imd_info() const {
+inline int32_t HV_IMD_STATUS::imd_info() const {
   // @@protoc_insertion_point(field_get:primary.HV_IMD_STATUS.imd_info)
   return _internal_imd_info();
 }
-inline void HV_IMD_STATUS::_internal_set_imd_info(uint32_t value) {
+inline void HV_IMD_STATUS::_internal_set_imd_info(int32_t value) {
   
   imd_info_ = value;
 }
-inline void HV_IMD_STATUS::set_imd_info(uint32_t value) {
+inline void HV_IMD_STATUS::set_imd_info(int32_t value) {
   _internal_set_imd_info(value);
   // @@protoc_insertion_point(field_set:primary.HV_IMD_STATUS.imd_info)
 }

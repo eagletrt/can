@@ -196,7 +196,7 @@ message HV_FEEDBACKS_STATUS {
 }
 
 message HV_IMD_STATUS {
-    uint32 imd_info = 1;
+    sint32 imd_info = 1;
     ImdStatus imd_status = 2;
     bool imd_fault = 3;
     uint64 _inner_timestamp = 4;
