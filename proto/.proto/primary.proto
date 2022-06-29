@@ -17,8 +17,10 @@ enum InverterStatus {
 
 enum CarStatus {
     CarStatus_IDLE = 0;
-    CarStatus_SETUP = 1;
-    CarStatus_RUN = 2;
+    CarStatus_PRE_SETUP = 1;
+    CarStatus_TS_ON = 2;
+    CarStatus_POST_SETUP = 3;
+    CarStatus_DRIVE = 4;
 }
 
 enum Toggle {
@@ -243,9 +245,9 @@ message SET_STEERING_ANGLE_RANGE {
 }
 
 message CAR_STATUS {
-    InverterStatus inverter_l = 1;
-    InverterStatus inverter_r = 2;
-    CarStatus car_status = 3;
+    CarStatus car_status = 1;
+    InverterStatus inverter_l = 2;
+    InverterStatus inverter_r = 3;
     uint64 _inner_timestamp = 4;
 }
 

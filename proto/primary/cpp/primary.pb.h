@@ -410,14 +410,16 @@ inline bool InverterStatus_Parse(
 }
 enum CarStatus : int {
   CarStatus_IDLE = 0,
-  CarStatus_SETUP = 1,
-  CarStatus_RUN = 2,
+  CarStatus_PRE_SETUP = 1,
+  CarStatus_TS_ON = 2,
+  CarStatus_POST_SETUP = 3,
+  CarStatus_DRIVE = 4,
   CarStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   CarStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool CarStatus_IsValid(int value);
 constexpr CarStatus CarStatus_MIN = CarStatus_IDLE;
-constexpr CarStatus CarStatus_MAX = CarStatus_RUN;
+constexpr CarStatus CarStatus_MAX = CarStatus_DRIVE;
 constexpr int CarStatus_ARRAYSIZE = CarStatus_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CarStatus_descriptor();
@@ -5379,27 +5381,27 @@ class CAR_STATUS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInverterLFieldNumber = 1,
-    kInverterRFieldNumber = 2,
+    kCarStatusFieldNumber = 1,
+    kInverterLFieldNumber = 2,
     kInnerTimestampFieldNumber = 4,
-    kCarStatusFieldNumber = 3,
+    kInverterRFieldNumber = 3,
   };
-  // .primary.InverterStatus inverter_l = 1;
+  // .primary.CarStatus car_status = 1;
+  void clear_car_status();
+  ::primary::CarStatus car_status() const;
+  void set_car_status(::primary::CarStatus value);
+  private:
+  ::primary::CarStatus _internal_car_status() const;
+  void _internal_set_car_status(::primary::CarStatus value);
+  public:
+
+  // .primary.InverterStatus inverter_l = 2;
   void clear_inverter_l();
   ::primary::InverterStatus inverter_l() const;
   void set_inverter_l(::primary::InverterStatus value);
   private:
   ::primary::InverterStatus _internal_inverter_l() const;
   void _internal_set_inverter_l(::primary::InverterStatus value);
-  public:
-
-  // .primary.InverterStatus inverter_r = 2;
-  void clear_inverter_r();
-  ::primary::InverterStatus inverter_r() const;
-  void set_inverter_r(::primary::InverterStatus value);
-  private:
-  ::primary::InverterStatus _internal_inverter_r() const;
-  void _internal_set_inverter_r(::primary::InverterStatus value);
   public:
 
   // uint64 _inner_timestamp = 4;
@@ -5411,13 +5413,13 @@ class CAR_STATUS final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // .primary.CarStatus car_status = 3;
-  void clear_car_status();
-  ::primary::CarStatus car_status() const;
-  void set_car_status(::primary::CarStatus value);
+  // .primary.InverterStatus inverter_r = 3;
+  void clear_inverter_r();
+  ::primary::InverterStatus inverter_r() const;
+  void set_inverter_r(::primary::InverterStatus value);
   private:
-  ::primary::CarStatus _internal_car_status() const;
-  void _internal_set_car_status(::primary::CarStatus value);
+  ::primary::InverterStatus _internal_inverter_r() const;
+  void _internal_set_inverter_r(::primary::InverterStatus value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.CAR_STATUS)
@@ -5427,10 +5429,10 @@ class CAR_STATUS final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int inverter_l_;
-  int inverter_r_;
-  uint64_t _inner_timestamp_;
   int car_status_;
+  int inverter_l_;
+  uint64_t _inner_timestamp_;
+  int inverter_r_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -16157,7 +16159,27 @@ inline void SET_STEERING_ANGLE_RANGE::set__inner_timestamp(uint64_t value) {
 
 // CAR_STATUS
 
-// .primary.InverterStatus inverter_l = 1;
+// .primary.CarStatus car_status = 1;
+inline void CAR_STATUS::clear_car_status() {
+  car_status_ = 0;
+}
+inline ::primary::CarStatus CAR_STATUS::_internal_car_status() const {
+  return static_cast< ::primary::CarStatus >(car_status_);
+}
+inline ::primary::CarStatus CAR_STATUS::car_status() const {
+  // @@protoc_insertion_point(field_get:primary.CAR_STATUS.car_status)
+  return _internal_car_status();
+}
+inline void CAR_STATUS::_internal_set_car_status(::primary::CarStatus value) {
+  
+  car_status_ = value;
+}
+inline void CAR_STATUS::set_car_status(::primary::CarStatus value) {
+  _internal_set_car_status(value);
+  // @@protoc_insertion_point(field_set:primary.CAR_STATUS.car_status)
+}
+
+// .primary.InverterStatus inverter_l = 2;
 inline void CAR_STATUS::clear_inverter_l() {
   inverter_l_ = 0;
 }
@@ -16177,7 +16199,7 @@ inline void CAR_STATUS::set_inverter_l(::primary::InverterStatus value) {
   // @@protoc_insertion_point(field_set:primary.CAR_STATUS.inverter_l)
 }
 
-// .primary.InverterStatus inverter_r = 2;
+// .primary.InverterStatus inverter_r = 3;
 inline void CAR_STATUS::clear_inverter_r() {
   inverter_r_ = 0;
 }
@@ -16195,26 +16217,6 @@ inline void CAR_STATUS::_internal_set_inverter_r(::primary::InverterStatus value
 inline void CAR_STATUS::set_inverter_r(::primary::InverterStatus value) {
   _internal_set_inverter_r(value);
   // @@protoc_insertion_point(field_set:primary.CAR_STATUS.inverter_r)
-}
-
-// .primary.CarStatus car_status = 3;
-inline void CAR_STATUS::clear_car_status() {
-  car_status_ = 0;
-}
-inline ::primary::CarStatus CAR_STATUS::_internal_car_status() const {
-  return static_cast< ::primary::CarStatus >(car_status_);
-}
-inline ::primary::CarStatus CAR_STATUS::car_status() const {
-  // @@protoc_insertion_point(field_get:primary.CAR_STATUS.car_status)
-  return _internal_car_status();
-}
-inline void CAR_STATUS::_internal_set_car_status(::primary::CarStatus value) {
-  
-  car_status_ = value;
-}
-inline void CAR_STATUS::set_car_status(::primary::CarStatus value) {
-  _internal_set_car_status(value);
-  // @@protoc_insertion_point(field_set:primary.CAR_STATUS.car_status)
 }
 
 // uint64 _inner_timestamp = 4;

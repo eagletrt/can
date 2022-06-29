@@ -430,12 +430,12 @@ struct SET_STEERING_ANGLE_RANGEDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SET_STEERING_ANGLE_RANGEDefaultTypeInternal _SET_STEERING_ANGLE_RANGE_default_instance_;
 PROTOBUF_CONSTEXPR CAR_STATUS::CAR_STATUS(
     ::_pbi::ConstantInitialized)
-  : inverter_l_(0)
+  : car_status_(0)
 
-  , inverter_r_(0)
+  , inverter_l_(0)
 
   , _inner_timestamp_(uint64_t{0u})
-  , car_status_(0)
+  , inverter_r_(0)
 {}
 struct CAR_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CAR_STATUSDefaultTypeInternal()
@@ -1421,9 +1421,9 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, car_status_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, inverter_l_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, inverter_r_),
-  PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, car_status_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::DAS_ERRORS, _internal_metadata_),
@@ -2125,10 +2125,10 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\n\005pedal\030\002 \001(\0162\016.primary.Pedal\022\030\n\020_inner_"
   "timestamp\030\003 \001(\004\"S\n\030SET_STEERING_ANGLE_RA"
   "NGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\030\n\020_i"
-  "nner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022+\n\ni"
-  "nverter_l\030\001 \001(\0162\027.primary.InverterStatus"
-  "\022+\n\ninverter_r\030\002 \001(\0162\027.primary.InverterS"
-  "tatus\022&\n\ncar_status\030\003 \001(\0162\022.primary.CarS"
+  "nner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022&\n\nc"
+  "ar_status\030\001 \001(\0162\022.primary.CarStatus\022+\n\ni"
+  "nverter_l\030\002 \001(\0162\027.primary.InverterStatus"
+  "\022+\n\ninverter_r\030\003 \001(\0162\027.primary.InverterS"
   "tatus\022\030\n\020_inner_timestamp\030\004 \001(\004\"9\n\nDAS_E"
   "RRORS\022\021\n\tdas_error\030\001 \001(\r\022\030\n\020_inner_times"
   "tamp\030\002 \001(\004\"7\n\nLV_CURRENT\022\017\n\007current\030\001 \001("
@@ -2318,32 +2318,33 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "_AUTOCROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016"
   "InverterStatus\022\026\n\022InverterStatus_OFF\020\000\022\027"
   "\n\023InverterStatus_IDLE\020\001\022\025\n\021InverterStatu"
-  "s_ON\020\002*G\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022"
-  "\023\n\017CarStatus_SETUP\020\001\022\021\n\rCarStatus_RUN\020\002*"
-  "\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001"
-  "*\220\001\n\017TractionControl\022\027\n\023TractionControl_"
-  "OFF\020\000\022 \n\034TractionControl_SLIP_CONTROL\020\001\022"
-  "$\n TractionControl_TORQUE_VECTORING\020\002\022\034\n"
-  "\030TractionControl_COMPLETE\020\003*Y\n\010TsStatus\022"
-  "\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020"
-  "\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R"
-  "\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40"
-  "\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100"
-  "\020\005*;\n\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020"
-  "\000\022\024\n\020SetCarStatus_RUN\020\001*-\n\005Bound\022\021\n\rBoun"
-  "d_SET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022"
-  "\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*"
-  "3\n\007Cooling\022\023\n\017Cooling_SET_MAX\020\000\022\023\n\017Cooli"
-  "ng_SET_OFF\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus_"
-  "IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033Im"
-  "dStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatus"
-  "_IMD_START_MEASURE\020\003\022\036\n\032ImdStatus_IMD_DE"
-  "VICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAUL"
-  "T\020\005b\006proto3"
+  "s_ON\020\002*|\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022"
+  "\027\n\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS"
+  "_ON\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarSt"
+  "atus_DRIVE\020\004*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n"
+  "\nToggle_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023Tra"
+  "ctionControl_OFF\020\000\022 \n\034TractionControl_SL"
+  "IP_CONTROL\020\001\022$\n TractionControl_TORQUE_V"
+  "ECTORING\020\002\022\034\n\030TractionControl_COMPLETE\020\003"
+  "*Y\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStat"
+  "us_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsSta"
+  "tus_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20"
+  "\020\001\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020"
+  "\004\022\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025\n\021SetCa"
+  "rStatus_IDLE\020\000\022\024\n\020SetCarStatus_RUN\020\001*-\n\005"
+  "Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_MI"
+  "N\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013P"
+  "edal_BRAKE\020\001*3\n\007Cooling\022\023\n\017Cooling_SET_M"
+  "AX\020\000\022\023\n\017Cooling_SET_OFF\020\001*\274\001\n\tImdStatus\022"
+  "\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_N"
+  "ORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002"
+  "\022\037\n\033ImdStatus_IMD_START_MEASURE\020\003\022\036\n\032Imd"
+  "Status_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_I"
+  "MD_EARTH_FAULT\020\005b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 11251, descriptor_table_protodef_primary_2eproto,
+    false, false, 11304, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
     &descriptor_table_primary_2eproto_once, nullptr, 0, 76,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
@@ -2397,6 +2398,8 @@ bool CarStatus_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -8877,17 +8880,17 @@ CAR_STATUS::CAR_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CAR_STATUS::CAR_STATUS(const CAR_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&inverter_l_, &from.inverter_l_,
-    static_cast<size_t>(reinterpret_cast<char*>(&car_status_) -
-    reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
+  ::memcpy(&car_status_, &from.car_status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&inverter_r_) -
+    reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
   // @@protoc_insertion_point(copy_constructor:primary.CAR_STATUS)
 }
 
 inline void CAR_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&inverter_l_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&car_status_) -
-    reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
+    reinterpret_cast<char*>(&car_status_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&inverter_r_) -
+    reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
 }
 
 CAR_STATUS::~CAR_STATUS() {
@@ -8913,9 +8916,9 @@ void CAR_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&inverter_l_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&car_status_) -
-      reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
+  ::memset(&car_status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&inverter_r_) -
+      reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8925,30 +8928,30 @@ const char* CAR_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .primary.InverterStatus inverter_l = 1;
+      // .primary.CarStatus car_status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_car_status(static_cast<::primary::CarStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .primary.InverterStatus inverter_l = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_inverter_l(static_cast<::primary::InverterStatus>(val));
         } else
           goto handle_unusual;
         continue;
-      // .primary.InverterStatus inverter_r = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_inverter_r(static_cast<::primary::InverterStatus>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.CarStatus car_status = 3;
+      // .primary.InverterStatus inverter_r = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_car_status(static_cast<::primary::CarStatus>(val));
+          _internal_set_inverter_r(static_cast<::primary::InverterStatus>(val));
         } else
           goto handle_unusual;
         continue;
@@ -8989,25 +8992,25 @@ uint8_t* CAR_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .primary.InverterStatus inverter_l = 1;
-  if (this->_internal_inverter_l() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_inverter_l(), target);
-  }
-
-  // .primary.InverterStatus inverter_r = 2;
-  if (this->_internal_inverter_r() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_inverter_r(), target);
-  }
-
-  // .primary.CarStatus car_status = 3;
+  // .primary.CarStatus car_status = 1;
   if (this->_internal_car_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_car_status(), target);
+      1, this->_internal_car_status(), target);
+  }
+
+  // .primary.InverterStatus inverter_l = 2;
+  if (this->_internal_inverter_l() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_inverter_l(), target);
+  }
+
+  // .primary.InverterStatus inverter_r = 3;
+  if (this->_internal_inverter_r() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_inverter_r(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9032,16 +9035,16 @@ size_t CAR_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .primary.InverterStatus inverter_l = 1;
+  // .primary.CarStatus car_status = 1;
+  if (this->_internal_car_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_car_status());
+  }
+
+  // .primary.InverterStatus inverter_l = 2;
   if (this->_internal_inverter_l() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_l());
-  }
-
-  // .primary.InverterStatus inverter_r = 2;
-  if (this->_internal_inverter_r() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_r());
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9049,10 +9052,10 @@ size_t CAR_STATUS::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
   }
 
-  // .primary.CarStatus car_status = 3;
-  if (this->_internal_car_status() != 0) {
+  // .primary.InverterStatus inverter_r = 3;
+  if (this->_internal_inverter_r() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_car_status());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_r());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -9077,17 +9080,17 @@ void CAR_STATUS::MergeFrom(const CAR_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_car_status() != 0) {
+    _internal_set_car_status(from._internal_car_status());
+  }
   if (from._internal_inverter_l() != 0) {
     _internal_set_inverter_l(from._internal_inverter_l());
-  }
-  if (from._internal_inverter_r() != 0) {
-    _internal_set_inverter_r(from._internal_inverter_r());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from._internal_car_status() != 0) {
-    _internal_set_car_status(from._internal_car_status());
+  if (from._internal_inverter_r() != 0) {
+    _internal_set_inverter_r(from._internal_inverter_r());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -9107,11 +9110,11 @@ void CAR_STATUS::InternalSwap(CAR_STATUS* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CAR_STATUS, car_status_)
-      + sizeof(CAR_STATUS::car_status_)
-      - PROTOBUF_FIELD_OFFSET(CAR_STATUS, inverter_l_)>(
-          reinterpret_cast<char*>(&inverter_l_),
-          reinterpret_cast<char*>(&other->inverter_l_));
+      PROTOBUF_FIELD_OFFSET(CAR_STATUS, inverter_r_)
+      + sizeof(CAR_STATUS::inverter_r_)
+      - PROTOBUF_FIELD_OFFSET(CAR_STATUS, car_status_)>(
+          reinterpret_cast<char*>(&car_status_),
+          reinterpret_cast<char*>(&other->car_status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CAR_STATUS::GetMetadata() const {

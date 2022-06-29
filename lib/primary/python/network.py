@@ -240,8 +240,10 @@ class InverterStatus(IntEnum):
 
 class CarStatus(IntEnum):
     IDLE = 0
-    SETUP = 1
-    RUN = 2
+    PRE_SETUP = 1
+    TS_ON = 2
+    POST_SETUP = 3
+    DRIVE = 4
 
     @classmethod
     def _missing_(cls, _):
@@ -1407,38 +1409,38 @@ class message_SET_STEERING_ANGLE_RANGE:
 class message_CAR_STATUS:
     def __init__(
         self,
+        car_status = None,
         inverter_l = None,
-        inverter_r = None,
-        car_status = None
+        inverter_r = None
     ):
+        self.car_status = CarStatus(car_status)
         self.inverter_l = InverterStatus(inverter_l)
         self.inverter_r = InverterStatus(inverter_r)
-        self.car_status = CarStatus(car_status)
         self.size = 1
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CAR_STATUS):
             return False
+        if self.car_status != other.car_status:
+            return False
         if self.inverter_l != other.inverter_l:
             return False
         if self.inverter_r != other.inverter_r:
-            return False
-        if self.car_status != other.car_status:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.inverter_l << 6 & 255 | self.inverter_r << 4 & 255 | self.car_status << 2 & 255))
+        data.extend(pack("<B", self.car_status << 5 & 255 | self.inverter_l << 3 & 255 | self.inverter_r << 1 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
-        message.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 48) >> 4)
-        message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 12) >> 2)
+        message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 224) >> 5)
+        message.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 24) >> 3)
+        message.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 6) >> 1)
         return message
 
 

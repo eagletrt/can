@@ -1142,9 +1142,7 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 
 
-
 // ============== UTILS ============== //
-
 
 static inline int secondary_index_from_id(canlib_message_id id) {
     switch (id) {
@@ -1201,6 +1199,10 @@ void secondary_devices_deserialize_from_id(
 );
 
 #ifdef secondary_NETWORK_IMPLEMENTATION
+
+
+
+
 // ============== SERIALIZE ============== //
 
 secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
@@ -4220,7 +4222,6 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
     }
     return 0;
 }
-
 
 void* secondary_deserialize_from_id(
     canlib_message_id message_id,

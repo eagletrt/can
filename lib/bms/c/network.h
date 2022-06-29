@@ -232,6 +232,9 @@ typedef bms_uint16 bms_Errors;
 #define bms_Errors_TEMP_COMM_5 128
 #define bms_Errors_OPEN_WIRE 256
 
+#define bms_MAX_STRING_LENGTH_Errors 100
+int bms_to_string_Errors(bms_Errors value, char* buffer);
+
 typedef bms_uint32 bms_BalancingCells;
 #define bms_BalancingCells_DEFAULT 0
 #define bms_BalancingCells_CELL0 1
@@ -253,6 +256,9 @@ typedef bms_uint32 bms_BalancingCells;
 #define bms_BalancingCells_CELL16 65536
 #define bms_BalancingCells_CELL17 131072
 
+#define bms_MAX_STRING_LENGTH_BalancingCells 116
+int bms_to_string_BalancingCells(bms_BalancingCells value, char* buffer);
+
 
 // ============== ENUMS ============== //
 
@@ -261,6 +267,9 @@ typedef enum CANLIB_PARKING {
     bms_BalancingStatus_OFF = 0,
     bms_BalancingStatus_DISCHARGE = 1,
 } bms_BalancingStatus;
+
+#define bms_MAX_STRING_LENGTH_BalancingStatus 10
+int bms_to_string_BalancingStatus(bms_BalancingStatus value, char* buffer);
 
 
 // Structs
@@ -914,9 +923,7 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 
 
-
 // ============== UTILS ============== //
-
 
 static inline int bms_index_from_id(canlib_message_id id) {
     switch (id) {
@@ -981,6 +988,57 @@ void bms_devices_deserialize_from_id(
 );
 
 #ifdef bms_NETWORK_IMPLEMENTATION
+
+
+int bms_to_string_Errors(bms_Errors value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "CAN_COMM ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "LTC_COMM ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "TEMP_COMM_0 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "TEMP_COMM_1 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "TEMP_COMM_2 ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "TEMP_COMM_3 ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "TEMP_COMM_4 ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "TEMP_COMM_5 ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "OPEN_WIRE ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int bms_to_string_BalancingCells(bms_BalancingCells value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "CELL0 ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "CELL1 ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "CELL2 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "CELL3 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "CELL4 ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "CELL5 ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "CELL6 ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "CELL7 ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "CELL8 ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "CELL9 ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "CELL10 ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "CELL11 ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "CELL12 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "CELL13 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "CELL14 ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "CELL15 ");
+    if (CANLIB_BITTEST_BITMASK(value, 65536)) offset += sprintf(buffer + offset, "CELL16 ");
+    if (CANLIB_BITTEST_BITMASK(value, 131072)) offset += sprintf(buffer + offset, "CELL17 ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+
+
+int bms_to_string_BalancingStatus(bms_BalancingStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "OFF");
+        case 1: return sprintf(buffer, "DISCHARGE");
+    }
+    return 0;
+}
+
 // ============== SERIALIZE ============== //
 
 bms_byte_size bms_serialize_BOARD_STATUS(
@@ -2676,7 +2734,6 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
     }
     return 0;
 }
-
 
 void* bms_deserialize_from_id(
     canlib_message_id message_id,

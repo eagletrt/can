@@ -337,6 +337,9 @@ typedef primary_uint16 primary_HvErrors;
 #define primary_HvErrors_EEPROM_COMM 4096
 #define primary_HvErrors_EEPROM_WRITE 8192
 
+#define primary_MAX_STRING_LENGTH_HvErrors 223
+int primary_to_string_HvErrors(primary_HvErrors value, char* buffer);
+
 typedef primary_uint8 primary_DasErrors;
 #define primary_DasErrors_DEFAULT 0
 #define primary_DasErrors_PEDAL_ADC 1
@@ -347,6 +350,9 @@ typedef primary_uint8 primary_DasErrors;
 #define primary_DasErrors_INVL_TOUT 32
 #define primary_DasErrors_INVR_TOUT 64
 #define primary_DasErrors_FSM 128
+
+#define primary_MAX_STRING_LENGTH_DasErrors 82
+int primary_to_string_DasErrors(primary_DasErrors value, char* buffer);
 
 typedef primary_uint32 primary_InvStatus;
 #define primary_InvStatus_DEFAULT 0
@@ -383,6 +389,9 @@ typedef primary_uint32 primary_InvStatus;
 #define primary_InvStatus_MD 1073741824
 #define primary_InvStatus_HND_WHL 2147483648
 
+#define primary_MAX_STRING_LENGTH_InvStatus 208
+int primary_to_string_InvStatus(primary_InvStatus value, char* buffer);
+
 typedef primary_uint32 primary_InvErrors;
 #define primary_InvErrors_DEFAULT 0
 #define primary_InvErrors_BAD_PARAM 1
@@ -417,6 +426,9 @@ typedef primary_uint32 primary_InvErrors;
 #define primary_InvErrors_UNKNOWN_ERR_30 536870912
 #define primary_InvErrors_BALLAST_OVERLOAD_WARN 1073741824
 
+#define primary_MAX_STRING_LENGTH_InvErrors 447
+int primary_to_string_InvErrors(primary_InvErrors value, char* buffer);
+
 typedef primary_uint16 primary_Inv_IOInfo;
 #define primary_Inv_IOInfo_DEFAULT 0
 #define primary_Inv_IOInfo_LMT1 1
@@ -435,6 +447,9 @@ typedef primary_uint16 primary_Inv_IOInfo;
 #define primary_Inv_IOInfo_OUT4 8192
 #define primary_Inv_IOInfo_G_OFF 16384
 #define primary_Inv_IOInfo_BRK1 32768
+
+#define primary_MAX_STRING_LENGTH_Inv_IOInfo 74
+int primary_to_string_Inv_IOInfo(primary_Inv_IOInfo value, char* buffer);
 
 typedef primary_uint32 primary_HvFeedbacks;
 #define primary_HvFeedbacks_DEFAULT 0
@@ -458,6 +473,9 @@ typedef primary_uint32 primary_HvFeedbacks;
 #define primary_HvFeedbacks_FEEDBACK_IMD_FAULT 131072
 #define primary_HvFeedbacks_FEEDBACK_SD_END 262144
 
+#define primary_MAX_STRING_LENGTH_HvFeedbacks 409
+int primary_to_string_HvFeedbacks(primary_HvFeedbacks value, char* buffer);
+
 
 // ============== ENUMS ============== //
 
@@ -469,22 +487,36 @@ typedef enum CANLIB_PARKING {
     primary_RaceType_ENDURANCE = 3,
 } primary_RaceType;
 
+#define primary_MAX_STRING_LENGTH_RaceType 13
+int primary_to_string_RaceType(primary_RaceType value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_InverterStatus_OFF = 0,
     primary_InverterStatus_IDLE = 1,
     primary_InverterStatus_ON = 2,
 } primary_InverterStatus;
 
+#define primary_MAX_STRING_LENGTH_InverterStatus 5
+int primary_to_string_InverterStatus(primary_InverterStatus value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_CarStatus_IDLE = 0,
-    primary_CarStatus_SETUP = 1,
-    primary_CarStatus_RUN = 2,
+    primary_CarStatus_PRE_SETUP = 1,
+    primary_CarStatus_TS_ON = 2,
+    primary_CarStatus_POST_SETUP = 3,
+    primary_CarStatus_DRIVE = 4,
 } primary_CarStatus;
+
+#define primary_MAX_STRING_LENGTH_CarStatus 11
+int primary_to_string_CarStatus(primary_CarStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_Toggle_ON = 0,
     primary_Toggle_OFF = 1,
 } primary_Toggle;
+
+#define primary_MAX_STRING_LENGTH_Toggle 4
+int primary_to_string_Toggle(primary_Toggle value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_TractionControl_OFF = 0,
@@ -493,12 +525,18 @@ typedef enum CANLIB_PARKING {
     primary_TractionControl_COMPLETE = 3,
 } primary_TractionControl;
 
+#define primary_MAX_STRING_LENGTH_TractionControl 17
+int primary_to_string_TractionControl(primary_TractionControl value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_TsStatus_OFF = 0,
     primary_TsStatus_PRECHARGE = 1,
     primary_TsStatus_ON = 2,
     primary_TsStatus_FATAL = 3,
 } primary_TsStatus;
+
+#define primary_MAX_STRING_LENGTH_TsStatus 10
+int primary_to_string_TsStatus(primary_TsStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_Map_R = 0,
@@ -509,25 +547,40 @@ typedef enum CANLIB_PARKING {
     primary_Map_D100 = 5,
 } primary_Map;
 
+#define primary_MAX_STRING_LENGTH_Map 5
+int primary_to_string_Map(primary_Map value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_SetCarStatus_IDLE = 0,
     primary_SetCarStatus_RUN = 1,
 } primary_SetCarStatus;
+
+#define primary_MAX_STRING_LENGTH_SetCarStatus 5
+int primary_to_string_SetCarStatus(primary_SetCarStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_Bound_SET_MAX = 0,
     primary_Bound_SET_MIN = 1,
 } primary_Bound;
 
+#define primary_MAX_STRING_LENGTH_Bound 8
+int primary_to_string_Bound(primary_Bound value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_Pedal_ACCELERATOR = 0,
     primary_Pedal_BRAKE = 1,
 } primary_Pedal;
 
+#define primary_MAX_STRING_LENGTH_Pedal 12
+int primary_to_string_Pedal(primary_Pedal value, char* buffer);
+
 typedef enum CANLIB_PARKING {
     primary_Cooling_SET_MAX = 0,
     primary_Cooling_SET_OFF = 1,
 } primary_Cooling;
+
+#define primary_MAX_STRING_LENGTH_Cooling 8
+int primary_to_string_Cooling(primary_Cooling value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_ImdStatus_IMD_SC = 0,
@@ -537,6 +590,9 @@ typedef enum CANLIB_PARKING {
     primary_ImdStatus_IMD_DEVICE_ERROR = 4,
     primary_ImdStatus_IMD_EARTH_FAULT = 5,
 } primary_ImdStatus;
+
+#define primary_MAX_STRING_LENGTH_ImdStatus 18
+int primary_to_string_ImdStatus(primary_ImdStatus value, char* buffer);
 
 
 // Structs
@@ -804,9 +860,9 @@ typedef struct CANLIB_PARKING {
 } primary_message_SET_STEERING_ANGLE_RANGE;
 
 typedef struct CANLIB_PARKING {
+    primary_CarStatus car_status;
     primary_InverterStatus inverter_l;
     primary_InverterStatus inverter_r;
-    primary_CarStatus car_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -2158,9 +2214,9 @@ int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer);
 
 primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
+    primary_CarStatus car_status,
     primary_InverterStatus inverter_l,
-    primary_InverterStatus inverter_r,
-    primary_CarStatus car_status
+    primary_InverterStatus inverter_r
 );
 primary_byte_size primary_serialize_struct_CAR_STATUS(
     uint8_t* data,
@@ -3502,9 +3558,7 @@ int primary_fields_file_ECU_CHIMERA(FILE* buffer);
 
 
 
-
 // ============== UTILS ============== //
-
 
 static inline int primary_index_from_id(canlib_message_id id) {
     switch (id) {
@@ -3612,6 +3666,280 @@ void primary_devices_deserialize_from_id(
 );
 
 #ifdef primary_NETWORK_IMPLEMENTATION
+
+
+int primary_to_string_HvErrors(primary_HvErrors value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "CELL_LOW_VOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "CELL_UNDER_VOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "CELL_OVER_VOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "CELL_HIGH_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "CELL_OVER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "OVER_CURRENT ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "CAN ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "INT_VOLTAGE_MISMATCH ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "CELLBOARD_COMM ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "CELLBOARD_INTERNAL ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "FEEDBACK ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "FEEDBACK_CIRCUITRY ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "EEPROM_COMM ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "EEPROM_WRITE ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_DasErrors(primary_DasErrors value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "PEDAL_ADC ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "PEDAL_IMPLAUSIBILITY ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "IMU_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "IRTS_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "TS_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "INVL_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "INVR_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "FSM ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_InvStatus(primary_InvStatus value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "DRIVE_ENABLE ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "NCR0 ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "LIMP ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "LIMM ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "DRIVE_OK ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "ICNS ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "T_NLIM ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "P_N ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "N_I ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "N0 ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "RSW ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "CAL0 ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "CAL ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "TOL ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "DRIVE_READY ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "BRK ");
+    if (CANLIB_BITTEST_BITMASK(value, 65536)) offset += sprintf(buffer + offset, "SIGN_MAG ");
+    if (CANLIB_BITTEST_BITMASK(value, 131072)) offset += sprintf(buffer + offset, "NCLIP ");
+    if (CANLIB_BITTEST_BITMASK(value, 262144)) offset += sprintf(buffer + offset, "NCLIPP ");
+    if (CANLIB_BITTEST_BITMASK(value, 524288)) offset += sprintf(buffer + offset, "NCLIPM ");
+    if (CANLIB_BITTEST_BITMASK(value, 1048576)) offset += sprintf(buffer + offset, "IRD_DIG ");
+    if (CANLIB_BITTEST_BITMASK(value, 2097152)) offset += sprintf(buffer + offset, "IUSE_RCHD ");
+    if (CANLIB_BITTEST_BITMASK(value, 4194304)) offset += sprintf(buffer + offset, "IRD_N ");
+    if (CANLIB_BITTEST_BITMASK(value, 8388608)) offset += sprintf(buffer + offset, "IRD_TI ");
+    if (CANLIB_BITTEST_BITMASK(value, 16777216)) offset += sprintf(buffer + offset, "IRD_TIR ");
+    if (CANLIB_BITTEST_BITMASK(value, 33554432)) offset += sprintf(buffer + offset, "HZ10 ");
+    if (CANLIB_BITTEST_BITMASK(value, 67108864)) offset += sprintf(buffer + offset, "IRD_TM ");
+    if (CANLIB_BITTEST_BITMASK(value, 134217728)) offset += sprintf(buffer + offset, "IRD_ANA ");
+    if (CANLIB_BITTEST_BITMASK(value, 268435456)) offset += sprintf(buffer + offset, "IWCNS ");
+    if (CANLIB_BITTEST_BITMASK(value, 536870912)) offset += sprintf(buffer + offset, "RFE_PULSE ");
+    if (CANLIB_BITTEST_BITMASK(value, 1073741824)) offset += sprintf(buffer + offset, "MD ");
+    if (CANLIB_BITTEST_BITMASK(value, 2147483648)) offset += sprintf(buffer + offset, "HND_WHL ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_InvErrors(primary_InvErrors value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "BAD_PARAM ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "HW_FAULT ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "SAFETY_FAULT ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "CAN_TIMEOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "ENCODER_ERR ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "NO_POWER_VOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "HI_MOTOR_TEMP ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "HI_DEVICE_TEMP ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "OVERVOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "OVERCURRENT ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "RACEAWAY ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "USER_ERR ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_12 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_13 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "CURRENT_ERR ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "BALLAST_OVERLOAD ");
+    if (CANLIB_BITTEST_BITMASK(value, 65536)) offset += sprintf(buffer + offset, "DEVICE_ID_ERR ");
+    if (CANLIB_BITTEST_BITMASK(value, 131072)) offset += sprintf(buffer + offset, "RUN_SIG_FAULT ");
+    if (CANLIB_BITTEST_BITMASK(value, 262144)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_19 ");
+    if (CANLIB_BITTEST_BITMASK(value, 524288)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_20 ");
+    if (CANLIB_BITTEST_BITMASK(value, 1048576)) offset += sprintf(buffer + offset, "POWERVOLTAGE_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 2097152)) offset += sprintf(buffer + offset, "HI_MOTOR_TEMP_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 4194304)) offset += sprintf(buffer + offset, "HI_DEVICE_TEMP_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 8388608)) offset += sprintf(buffer + offset, "VOUT_LIMIT_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 16777216)) offset += sprintf(buffer + offset, "OVERCURRENT_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 33554432)) offset += sprintf(buffer + offset, "RACEAWAY_WARN ");
+    if (CANLIB_BITTEST_BITMASK(value, 67108864)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_27 ");
+    if (CANLIB_BITTEST_BITMASK(value, 134217728)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_28 ");
+    if (CANLIB_BITTEST_BITMASK(value, 268435456)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_29 ");
+    if (CANLIB_BITTEST_BITMASK(value, 536870912)) offset += sprintf(buffer + offset, "UNKNOWN_ERR_30 ");
+    if (CANLIB_BITTEST_BITMASK(value, 1073741824)) offset += sprintf(buffer + offset, "BALLAST_OVERLOAD_WARN ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_Inv_IOInfo(primary_Inv_IOInfo value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "LMT1 ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "LMT2 ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "IN2 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "IN1 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "FRG ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "RFE ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "UNK6 ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "UNK7 ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "OUT1 ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "OUT2 ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "BTB ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "GO ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "OUT3 ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "OUT4 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "G_OFF ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "BRK1 ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_HvFeedbacks(primary_HvFeedbacks value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "FEEDBACK_TSAL_GREEN_FAULT ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "FEEDBACK_IMD_LATCHED ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "FEEDBACK_TSAL_GREEN_FAULT_LATCHED ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "FEEDBACK_BMS_LATCHED ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "FEEDBACK_EXT_LATCHED ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "FEEDBACK_TSAL_GREEN ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "FEEDBACK_TS_OVER_60V_STATUS ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "FEEDBACK_AIRN_STATUS ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "FEEDBACK_AIRP_STATUS ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "FEEDBACK_AIRP_GATE ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "FEEDBACK_AIRN_GATE ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "FEEDBACK_PRECHARGE_STATUS ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "FEEDBACK_TSP_OVER_60V_STATUS ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "FEEDBACK_CHECK_MUX ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "FEEDBACK_SD_IN ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "FEEDBACK_SD_OUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 65536)) offset += sprintf(buffer + offset, "FEEDBACK_RELAY_SD ");
+    if (CANLIB_BITTEST_BITMASK(value, 131072)) offset += sprintf(buffer + offset, "FEEDBACK_IMD_FAULT ");
+    if (CANLIB_BITTEST_BITMASK(value, 262144)) offset += sprintf(buffer + offset, "FEEDBACK_SD_END ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+
+
+int primary_to_string_RaceType(primary_RaceType value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "ACCELERATION");
+        case 1: return sprintf(buffer, "SKIDPAD");
+        case 2: return sprintf(buffer, "AUTOCROSS");
+        case 3: return sprintf(buffer, "ENDURANCE");
+    }
+    return 0;
+}
+
+int primary_to_string_InverterStatus(primary_InverterStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "OFF");
+        case 1: return sprintf(buffer, "IDLE");
+        case 2: return sprintf(buffer, "ON");
+    }
+    return 0;
+}
+
+int primary_to_string_CarStatus(primary_CarStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "IDLE");
+        case 1: return sprintf(buffer, "PRE_SETUP");
+        case 2: return sprintf(buffer, "TS_ON");
+        case 3: return sprintf(buffer, "POST_SETUP");
+        case 4: return sprintf(buffer, "DRIVE");
+    }
+    return 0;
+}
+
+int primary_to_string_Toggle(primary_Toggle value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "ON");
+        case 1: return sprintf(buffer, "OFF");
+    }
+    return 0;
+}
+
+int primary_to_string_TractionControl(primary_TractionControl value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "OFF");
+        case 1: return sprintf(buffer, "SLIP_CONTROL");
+        case 2: return sprintf(buffer, "TORQUE_VECTORING");
+        case 3: return sprintf(buffer, "COMPLETE");
+    }
+    return 0;
+}
+
+int primary_to_string_TsStatus(primary_TsStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "OFF");
+        case 1: return sprintf(buffer, "PRECHARGE");
+        case 2: return sprintf(buffer, "ON");
+        case 3: return sprintf(buffer, "FATAL");
+    }
+    return 0;
+}
+
+int primary_to_string_Map(primary_Map value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "R");
+        case 1: return sprintf(buffer, "D20");
+        case 2: return sprintf(buffer, "D40");
+        case 3: return sprintf(buffer, "D60");
+        case 4: return sprintf(buffer, "D80");
+        case 5: return sprintf(buffer, "D100");
+    }
+    return 0;
+}
+
+int primary_to_string_SetCarStatus(primary_SetCarStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "IDLE");
+        case 1: return sprintf(buffer, "RUN");
+    }
+    return 0;
+}
+
+int primary_to_string_Bound(primary_Bound value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "SET_MAX");
+        case 1: return sprintf(buffer, "SET_MIN");
+    }
+    return 0;
+}
+
+int primary_to_string_Pedal(primary_Pedal value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "ACCELERATOR");
+        case 1: return sprintf(buffer, "BRAKE");
+    }
+    return 0;
+}
+
+int primary_to_string_Cooling(primary_Cooling value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "SET_MAX");
+        case 1: return sprintf(buffer, "SET_OFF");
+    }
+    return 0;
+}
+
+int primary_to_string_ImdStatus(primary_ImdStatus value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "IMD_SC");
+        case 1: return sprintf(buffer, "IMD_NORMAL");
+        case 2: return sprintf(buffer, "IMD_UNDER_VOLTAGE");
+        case 3: return sprintf(buffer, "IMD_START_MEASURE");
+        case 4: return sprintf(buffer, "IMD_DEVICE_ERROR");
+        case 5: return sprintf(buffer, "IMD_EARTH_FAULT");
+    }
+    return 0;
+}
+
 // ============== SERIALIZE ============== //
 
 primary_byte_size primary_serialize_BMS_HV_JMP_TO_BLT(
@@ -6400,11 +6728,11 @@ int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer) {
 
 primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
+    primary_CarStatus car_status,
     primary_InverterStatus inverter_l,
-    primary_InverterStatus inverter_r,
-    primary_CarStatus car_status
+    primary_InverterStatus inverter_r
 ) {
-    data[0] = inverter_l << 6 | inverter_r << 4 | car_status << 2;
+    data[0] = car_status << 5 | inverter_l << 3 | inverter_r << 1;
     return 1;
 }
 
@@ -6412,7 +6740,7 @@ primary_byte_size primary_serialize_struct_CAR_STATUS(
     uint8_t* data,
     primary_message_CAR_STATUS* message
 ) {
-    data[0] = message->inverter_l << 6 | message->inverter_r << 4 | message->car_status << 2;
+    data[0] = message->car_status << 5 | message->inverter_l << 3 | message->inverter_r << 1;
     return 1;
 }
 
@@ -6428,9 +6756,9 @@ void primary_deserialize_CAR_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->inverter_l = (primary_InverterStatus) ((data[0] & 192) >> 6);
-    message->inverter_r = (primary_InverterStatus) ((data[0] & 48) >> 4);
-    message->car_status = (primary_CarStatus) ((data[0] & 12) >> 2);
+    message->car_status = (primary_CarStatus) ((data[0] & 224) >> 5);
+    message->inverter_l = (primary_InverterStatus) ((data[0] & 24) >> 3);
+    message->inverter_r = (primary_InverterStatus) ((data[0] & 6) >> 1);
 }
 
 // ============== STRING ============== //
@@ -6447,9 +6775,9 @@ int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buff
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->car_status,
         message->inverter_l,
-        message->inverter_r,
-        message->car_status
+        message->inverter_r
     );
 }
 
@@ -6459,9 +6787,9 @@ int primary_fields_CAR_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "car_status" CANLIB_SEPARATOR 
         "inverter_l" CANLIB_SEPARATOR 
-        "inverter_r" CANLIB_SEPARATOR 
-        "car_status"
+        "inverter_r"
     );
 }
 
@@ -6477,9 +6805,9 @@ int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE*
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->car_status,
         message->inverter_l,
-        message->inverter_r,
-        message->car_status
+        message->inverter_r
     );
 }
 
@@ -6489,9 +6817,9 @@ int primary_fields_file_CAR_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "car_status" CANLIB_SEPARATOR 
         "inverter_l" CANLIB_SEPARATOR 
-        "inverter_r" CANLIB_SEPARATOR 
-        "car_status"
+        "inverter_r"
     );
 }
 
@@ -11391,7 +11719,6 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
     }
     return 0;
 }
-
 
 void* primary_deserialize_from_id(
     canlib_message_id message_id,

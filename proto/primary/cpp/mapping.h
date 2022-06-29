@@ -583,9 +583,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 515: {
             primary_message_CAR_STATUS* msg = (primary_message_CAR_STATUS*) (*map)[index].message_raw;
             primary::CAR_STATUS* proto_msg = pack->add_car_status();
+            proto_msg->set_car_status((primary::CarStatus)msg->car_status);
             proto_msg->set_inverter_l((primary::InverterStatus)msg->inverter_l);
             proto_msg->set_inverter_r((primary::InverterStatus)msg->inverter_r);
-            proto_msg->set_car_status((primary::CarStatus)msg->car_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1256,9 +1256,9 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->car_status_size(); i++){
         static primary_message_CAR_STATUS instance;
+        instance.car_status =(primary_CarStatus)pack->car_status(i).car_status();
         instance.inverter_l =(primary_InverterStatus)pack->car_status(i).inverter_l();
         instance.inverter_r =(primary_InverterStatus)pack->car_status(i).inverter_r();
-        instance.car_status =(primary_CarStatus)pack->car_status(i).car_status();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->car_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
