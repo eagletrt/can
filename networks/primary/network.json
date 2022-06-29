@@ -137,7 +137,7 @@
     },
     "CarStatus": {
       "type": "enum",
-      "items": ["IDLE", "SETUP", "RUN"]
+      "items": ["IDLE", "PRE_SETUP", "TS_ON", "POST_SETUP", "DRIVE"]
     },
     "Toggle": {
       "type": "enum",
