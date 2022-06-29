@@ -414,12 +414,13 @@ enum CarStatus : int {
   CarStatus_TS_ON = 2,
   CarStatus_POST_SETUP = 3,
   CarStatus_DRIVE = 4,
+  CarStatus_TEARDOWN = 5,
   CarStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   CarStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool CarStatus_IsValid(int value);
 constexpr CarStatus CarStatus_MIN = CarStatus_IDLE;
-constexpr CarStatus CarStatus_MAX = CarStatus_DRIVE;
+constexpr CarStatus CarStatus_MAX = CarStatus_TEARDOWN;
 constexpr int CarStatus_ARRAYSIZE = CarStatus_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CarStatus_descriptor();

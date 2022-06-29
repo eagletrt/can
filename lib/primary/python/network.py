@@ -244,6 +244,7 @@ class CarStatus(IntEnum):
     TS_ON = 2
     POST_SETUP = 3
     DRIVE = 4
+    TEARDOWN = 5
 
     @classmethod
     def _missing_(cls, _):

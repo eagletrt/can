@@ -21,6 +21,7 @@ enum CarStatus {
     CarStatus_TS_ON = 2;
     CarStatus_POST_SETUP = 3;
     CarStatus_DRIVE = 4;
+    CarStatus_TEARDOWN = 5;
 }
 
 enum Toggle {

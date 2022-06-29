@@ -2318,33 +2318,34 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "_AUTOCROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016"
   "InverterStatus\022\026\n\022InverterStatus_OFF\020\000\022\027"
   "\n\023InverterStatus_IDLE\020\001\022\025\n\021InverterStatu"
-  "s_ON\020\002*|\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022"
-  "\027\n\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS"
-  "_ON\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarSt"
-  "atus_DRIVE\020\004*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n"
-  "\nToggle_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023Tra"
-  "ctionControl_OFF\020\000\022 \n\034TractionControl_SL"
-  "IP_CONTROL\020\001\022$\n TractionControl_TORQUE_V"
-  "ECTORING\020\002\022\034\n\030TractionControl_COMPLETE\020\003"
-  "*Y\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStat"
-  "us_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsSta"
-  "tus_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20"
-  "\020\001\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020"
-  "\004\022\014\n\010Map_D100\020\005*;\n\014SetCarStatus\022\025\n\021SetCa"
-  "rStatus_IDLE\020\000\022\024\n\020SetCarStatus_RUN\020\001*-\n\005"
-  "Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_MI"
-  "N\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013P"
-  "edal_BRAKE\020\001*3\n\007Cooling\022\023\n\017Cooling_SET_M"
-  "AX\020\000\022\023\n\017Cooling_SET_OFF\020\001*\274\001\n\tImdStatus\022"
-  "\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_N"
-  "ORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002"
-  "\022\037\n\033ImdStatus_IMD_START_MEASURE\020\003\022\036\n\032Imd"
-  "Status_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_I"
-  "MD_EARTH_FAULT\020\005b\006proto3"
+  "s_ON\020\002*\224\001\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000"
+  "\022\027\n\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_T"
+  "S_ON\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarS"
+  "tatus_DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n"
+  "\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001*\220"
+  "\001\n\017TractionControl\022\027\n\023TractionControl_OF"
+  "F\020\000\022 \n\034TractionControl_SLIP_CONTROL\020\001\022$\n"
+  " TractionControl_TORQUE_VECTORING\020\002\022\034\n\030T"
+  "ractionControl_COMPLETE\020\003*Y\n\010TsStatus\022\020\n"
+  "\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022"
+  "\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003"
+  "Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002"
+  "\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005"
+  "*;\n\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022"
+  "\024\n\020SetCarStatus_RUN\020\001*-\n\005Bound\022\021\n\rBound_"
+  "SET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n"
+  "\021Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*3\n"
+  "\007Cooling\022\023\n\017Cooling_SET_MAX\020\000\022\023\n\017Cooling"
+  "_SET_OFF\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus_IM"
+  "D_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033ImdS"
+  "tatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatus_I"
+  "MD_START_MEASURE\020\003\022\036\n\032ImdStatus_IMD_DEVI"
+  "CE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAULT\020"
+  "\005b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 11304, descriptor_table_protodef_primary_2eproto,
+    false, false, 11329, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
     &descriptor_table_primary_2eproto_once, nullptr, 0, 76,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
@@ -2400,6 +2401,7 @@ bool CarStatus_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
       return true;
     default:
       return false;

@@ -505,6 +505,7 @@ typedef enum CANLIB_PARKING {
     primary_CarStatus_TS_ON = 2,
     primary_CarStatus_POST_SETUP = 3,
     primary_CarStatus_DRIVE = 4,
+    primary_CarStatus_TEARDOWN = 5,
 } primary_CarStatus;
 
 #define primary_MAX_STRING_LENGTH_CarStatus 11
@@ -3852,6 +3853,7 @@ int primary_to_string_CarStatus(primary_CarStatus value, char* buffer) {
         case 2: return sprintf(buffer, "TS_ON");
         case 3: return sprintf(buffer, "POST_SETUP");
         case 4: return sprintf(buffer, "DRIVE");
+        case 5: return sprintf(buffer, "TEARDOWN");
     }
     return 0;
 }
