@@ -297,7 +297,8 @@ class Map(IntEnum):
 
 class SetCarStatus(IntEnum):
     IDLE = 0
-    RUN = 1
+    READY = 1
+    DRIVE = 2
 
     @classmethod
     def _missing_(cls, _):
@@ -1338,13 +1339,13 @@ class message_SET_CAR_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.car_status_set << 7 & 255))
+        data.extend(pack("<B", self.car_status_set << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.car_status_set = SetCarStatus((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.car_status_set = SetCarStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
         return message
 
 

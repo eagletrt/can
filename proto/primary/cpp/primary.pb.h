@@ -547,13 +547,14 @@ inline bool Map_Parse(
 }
 enum SetCarStatus : int {
   SetCarStatus_IDLE = 0,
-  SetCarStatus_RUN = 1,
+  SetCarStatus_READY = 1,
+  SetCarStatus_DRIVE = 2,
   SetCarStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   SetCarStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool SetCarStatus_IsValid(int value);
 constexpr SetCarStatus SetCarStatus_MIN = SetCarStatus_IDLE;
-constexpr SetCarStatus SetCarStatus_MAX = SetCarStatus_RUN;
+constexpr SetCarStatus SetCarStatus_MAX = SetCarStatus_DRIVE;
 constexpr int SetCarStatus_ARRAYSIZE = SetCarStatus_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SetCarStatus_descriptor();

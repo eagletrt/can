@@ -553,10 +553,11 @@ int primary_to_string_Map(primary_Map value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_SetCarStatus_IDLE = 0,
-    primary_SetCarStatus_RUN = 1,
+    primary_SetCarStatus_READY = 1,
+    primary_SetCarStatus_DRIVE = 2,
 } primary_SetCarStatus;
 
-#define primary_MAX_STRING_LENGTH_SetCarStatus 5
+#define primary_MAX_STRING_LENGTH_SetCarStatus 6
 int primary_to_string_SetCarStatus(primary_SetCarStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
@@ -3901,7 +3902,8 @@ int primary_to_string_Map(primary_Map value, char* buffer) {
 int primary_to_string_SetCarStatus(primary_SetCarStatus value, char* buffer) {
     switch (value) {
         case 0: return sprintf(buffer, "IDLE");
-        case 1: return sprintf(buffer, "RUN");
+        case 1: return sprintf(buffer, "READY");
+        case 2: return sprintf(buffer, "DRIVE");
     }
     return 0;
 }
@@ -6475,7 +6477,7 @@ primary_byte_size primary_serialize_SET_CAR_STATUS(
     uint8_t* data,
     primary_SetCarStatus car_status_set
 ) {
-    data[0] = car_status_set << 7;
+    data[0] = car_status_set << 6;
     return 1;
 }
 
@@ -6483,7 +6485,7 @@ primary_byte_size primary_serialize_struct_SET_CAR_STATUS(
     uint8_t* data,
     primary_message_SET_CAR_STATUS* message
 ) {
-    data[0] = message->car_status_set << 7;
+    data[0] = message->car_status_set << 6;
     return 1;
 }
 
@@ -6499,7 +6501,7 @@ void primary_deserialize_SET_CAR_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->car_status_set = (primary_SetCarStatus) ((data[0] & 128) >> 7);
+    message->car_status_set = (primary_SetCarStatus) ((data[0] & 192) >> 6);
 }
 
 // ============== STRING ============== //

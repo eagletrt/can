@@ -157,7 +157,7 @@
     },
     "SetCarStatus": {
       "type": "enum",
-      "items": ["IDLE", "RUN"]
+      "items": ["IDLE", "READY", "DRIVE"]
     },
     "Bound": {
       "type": "enum",

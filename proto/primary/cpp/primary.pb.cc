@@ -2331,21 +2331,21 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003"
   "Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002"
   "\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005"
-  "*;\n\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022"
-  "\024\n\020SetCarStatus_RUN\020\001*-\n\005Bound\022\021\n\rBound_"
-  "SET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n"
-  "\021Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*3\n"
-  "\007Cooling\022\023\n\017Cooling_SET_MAX\020\000\022\023\n\017Cooling"
-  "_SET_OFF\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus_IM"
-  "D_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033ImdS"
-  "tatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatus_I"
-  "MD_START_MEASURE\020\003\022\036\n\032ImdStatus_IMD_DEVI"
-  "CE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAULT\020"
-  "\005b\006proto3"
+  "*U\n\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022"
+  "\026\n\022SetCarStatus_READY\020\001\022\026\n\022SetCarStatus_"
+  "DRIVE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rB"
+  "ound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELER"
+  "ATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*3\n\007Cooling\022\023\n\017Co"
+  "oling_SET_MAX\020\000\022\023\n\017Cooling_SET_OFF\020\001*\274\001\n"
+  "\tImdStatus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdS"
+  "tatus_IMD_NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDE"
+  "R_VOLTAGE\020\002\022\037\n\033ImdStatus_IMD_START_MEASU"
+  "RE\020\003\022\036\n\032ImdStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031"
+  "ImdStatus_IMD_EARTH_FAULT\020\005b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_primary_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_primary_2eproto = {
-    false, false, 11329, descriptor_table_protodef_primary_2eproto,
+    false, false, 11355, descriptor_table_protodef_primary_2eproto,
     "primary.proto",
     &descriptor_table_primary_2eproto_once, nullptr, 0, 76,
     schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
@@ -2480,6 +2480,7 @@ bool SetCarStatus_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
       return true;
     default:
       return false;

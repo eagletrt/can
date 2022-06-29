@@ -54,7 +54,8 @@ enum Map {
 
 enum SetCarStatus {
     SetCarStatus_IDLE = 0;
-    SetCarStatus_RUN = 1;
+    SetCarStatus_READY = 1;
+    SetCarStatus_DRIVE = 2;
 }
 
 enum Bound {
