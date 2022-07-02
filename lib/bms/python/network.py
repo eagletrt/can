@@ -4,6 +4,9 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
+CANLIB_BUILD_TIME = 1656775510
+CANLIB_BUILD_HASH = 0x631e594b
+
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
 
@@ -253,27 +256,27 @@ class message_TEMPERATURES_conversion:
 class message_VOLTAGES:
     def __init__(
         self,
+        start_index = None,
         voltage0 = None,
         voltage1 = None,
-        voltage2 = None,
-        start_index = None
+        voltage2 = None
     ):
+        self.start_index = uint8(start_index)
         self.voltage0 = uint16(voltage0)
         self.voltage1 = uint16(voltage1)
         self.voltage2 = uint16(voltage2)
-        self.start_index = uint8(start_index)
         self.size = 7
 
     def __eq__(self, other):
         if not isinstance(other, message_VOLTAGES):
+            return False
+        if self.start_index != other.start_index:
             return False
         if self.voltage0 != other.voltage0:
             return False
         if self.voltage1 != other.voltage1:
             return False
         if self.voltage2 != other.voltage2:
-            return False
-        if self.start_index != other.start_index:
             return False
         return True
 
@@ -285,38 +288,40 @@ class message_VOLTAGES:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
         message.voltage0 = uint16(unpack("<H", data[0:2])[0])
         message.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
         message.voltage2 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
     def convert(self) -> message_VOLTAGES_conversion:
         conversion = message_VOLTAGES_conversion()
+        conversion.start_index = self.start_index
         conversion.voltage0 = ((float32(self.voltage0)) / 10000.0) + 0
         conversion.voltage1 = ((float32(self.voltage1)) / 10000.0) + 0
         conversion.voltage2 = ((float32(self.voltage2)) / 10000.0) + 0
-        conversion.start_index = self.start_index
         return conversion
 
 
 class message_VOLTAGES_conversion:
     def __init__(
         self,
+        start_index = None,
         voltage0 = None,
         voltage1 = None,
-        voltage2 = None,
-        start_index = None
+        voltage2 = None
     ):
+        self.start_index = uint8(start_index)
         self.voltage0 = float32(voltage0)
         self.voltage1 = float32(voltage1)
         self.voltage2 = float32(voltage2)
-        self.start_index = uint8(start_index)
         self.size = 7
 
     def __eq__(self, other):
         if not isinstance(other, message_VOLTAGES):
+            return False
+        if self.start_index != other.start_index:
             return False
         if self.voltage0 != other.voltage0:
             return False
@@ -324,34 +329,32 @@ class message_VOLTAGES_conversion:
             return False
         if self.voltage2 != other.voltage2:
             return False
-        if self.start_index != other.start_index:
-            return False
         return True
 
     def convert_to_raw(self) -> message_VOLTAGES:
         raw = message_VOLTAGES()
+        raw.start_index = self.start_index
         raw.voltage0 = uint16((self.voltage0 + 0) * 10000.0)
         raw.voltage1 = uint16((self.voltage1 + 0) * 10000.0)
         raw.voltage2 = uint16((self.voltage2 + 0) * 10000.0)
-        raw.start_index = self.start_index
         return raw
 
 class message_BALANCING:
     def __init__(
         self,
-        cells = None,
-        board_index = None
+        board_index = None,
+        cells = None
     ):
-        self.cells = BalancingCells(cells)
         self.board_index = uint8(board_index)
+        self.cells = BalancingCells(cells)
         self.size = 4
 
     def __eq__(self, other):
         if not isinstance(other, message_BALANCING):
             return False
-        if self.cells != other.cells:
-            return False
         if self.board_index != other.board_index:
+            return False
+        if self.cells != other.cells:
             return False
         return True
 
@@ -363,8 +366,8 @@ class message_BALANCING:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.cells = BalancingCells(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
         message.board_index = uint8(unpack("<xxxB", data[0:4])[0])
+        message.cells = BalancingCells(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
         return message
 
 

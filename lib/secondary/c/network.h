@@ -14,6 +14,11 @@ extern "C" {
 #include <memory.h>
 #include <stdio.h>
 
+#ifndef CANLIB_BUILD
+#define CANLIB_BUILD_TIME 1656775510
+#define CANLIB_BUILD_HASH 0x631e594b
+#endif // CANLIB_BUILD
+
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
@@ -421,26 +426,26 @@ typedef struct CANLIB_PARKING {
 } secondary_message_GPS_SPEED;
 
 typedef struct CANLIB_PARKING {
-    secondary_uint32 timestamp;
     secondary_uint8 lap_count;
+    secondary_uint32 timestamp;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_LAP_COUNT;
 
 typedef struct CANLIB_PARKING {
+    secondary_uint8 apps;
     secondary_uint16 bse_front;
     secondary_uint16 bse_rear;
-    secondary_uint8 apps;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_PEDALS_OUTPUT;
 
 typedef struct CANLIB_PARKING {
+    secondary_uint8 apps;
     secondary_float32 bse_front;
     secondary_float32 bse_rear;
-    secondary_uint8 apps;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1020,8 +1025,8 @@ int secondary_fields_file_GPS_SPEED(FILE* buffer);
 
 secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
-    secondary_uint32 timestamp,
-    secondary_uint8 lap_count
+    secondary_uint8 lap_count,
+    secondary_uint32 timestamp
 );
 secondary_byte_size secondary_serialize_struct_LAP_COUNT(
     uint8_t* data,
@@ -1044,9 +1049,9 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer);
 
 secondary_byte_size secondary_serialize_PEDALS_OUTPUT(
     uint8_t* data,
+    secondary_uint8 apps,
     secondary_uint16 bse_front,
-    secondary_uint16 bse_rear,
-    secondary_uint8 apps
+    secondary_uint16 bse_rear
 );
 secondary_byte_size secondary_serialize_struct_PEDALS_OUTPUT(
     uint8_t* data,
@@ -1071,9 +1076,9 @@ void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
 
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT* raw,
+    secondary_uint8 apps,
     secondary_float32 bse_front,
-    secondary_float32 bse_rear,
-    secondary_uint8 apps
+    secondary_float32 bse_rear
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1081,9 +1086,9 @@ void secondary_conversion_to_raw_PEDALS_OUTPUT(
 
 void secondary_raw_to_conversion_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT_conversion* conversion,
+    secondary_uint8 apps,
     secondary_uint16 bse_front,
-    secondary_uint16 bse_rear,
-    secondary_uint8 apps
+    secondary_uint16 bse_rear
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3551,8 +3556,8 @@ int secondary_fields_file_GPS_SPEED(FILE* buffer) {
 
 secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
-    secondary_uint32 timestamp,
-    secondary_uint8 lap_count
+    secondary_uint8 lap_count,
+    secondary_uint32 timestamp
 ) {
     data[0] = timestamp & 255;
     data[1] = (timestamp >> 8) & 255;
@@ -3598,13 +3603,13 @@ int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* bu
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->timestamp,
-        message->lap_count
+        message->lap_count,
+        message->timestamp
     );
 }
 
@@ -3614,8 +3619,8 @@ int secondary_fields_LAP_COUNT(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "timestamp" CANLIB_SEPARATOR 
-        "lap_count"
+        "lap_count" CANLIB_SEPARATOR 
+        "timestamp"
     );
 }
 
@@ -3625,13 +3630,13 @@ int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FIL
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->timestamp,
-        message->lap_count
+        message->lap_count,
+        message->timestamp
     );
 }
 
@@ -3641,8 +3646,8 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "timestamp" CANLIB_SEPARATOR 
-        "lap_count"
+        "lap_count" CANLIB_SEPARATOR 
+        "timestamp"
     );
 }
 
@@ -3650,9 +3655,9 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer) {
 
 secondary_byte_size secondary_serialize_PEDALS_OUTPUT(
     uint8_t* data,
+    secondary_uint8 apps,
     secondary_uint16 bse_front,
-    secondary_uint16 bse_rear,
-    secondary_uint8 apps
+    secondary_uint16 bse_rear
 ) {
     data[0] = bse_front & 255;
     data[1] = (bse_front >> 8) & 255;
@@ -3693,9 +3698,9 @@ void secondary_deserialize_PEDALS_OUTPUT(
 
 void secondary_raw_to_conversion_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT_conversion* conversion,
+    secondary_uint8 apps,
     secondary_uint16 bse_front,
-    secondary_uint16 bse_rear,
-    secondary_uint8 apps
+    secondary_uint16 bse_rear
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3703,9 +3708,9 @@ void secondary_raw_to_conversion_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->apps = apps;
     conversion->bse_front = (((secondary_float32)bse_front) / 655.36) + 0;
     conversion->bse_rear = (((secondary_float32)bse_rear) / 655.36) + 0;
-    conversion->apps = apps;
 }
 
 void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
@@ -3715,16 +3720,16 @@ void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->apps = raw->apps;
     conversion->bse_front = (((secondary_float32)raw->bse_front) / 655.36) + 0;
     conversion->bse_rear = (((secondary_float32)raw->bse_rear) / 655.36) + 0;
-    conversion->apps = raw->apps;
 }
 
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
     secondary_message_PEDALS_OUTPUT* raw,
+    secondary_uint8 apps,
     secondary_float32 bse_front,
-    secondary_float32 bse_rear,
-    secondary_uint8 apps
+    secondary_float32 bse_rear
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -3732,9 +3737,9 @@ void secondary_conversion_to_raw_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->apps = apps;
     raw->bse_front = (secondary_uint16)((bse_front + 0) * 655.36);
     raw->bse_rear = (secondary_uint16)((bse_rear + 0) * 655.36);
-    raw->apps = apps;
 }
 
 void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
@@ -3744,9 +3749,9 @@ void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->apps = conversion->apps;
     raw->bse_front = (secondary_uint16)((conversion->bse_front + 0) * 655.36);
     raw->bse_rear = (secondary_uint16)((conversion->bse_rear + 0) * 655.36);
-    raw->apps = conversion->apps;
 }
 
 // ============== STRING ============== //
@@ -3756,15 +3761,15 @@ int secondary_to_string_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conversion
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->apps,
         message->bse_front,
-        message->bse_rear,
-        message->apps
+        message->bse_rear
     );
 }
 
@@ -3774,9 +3779,9 @@ int secondary_fields_PEDALS_OUTPUT(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "apps" CANLIB_SEPARATOR 
         "bse_front" CANLIB_SEPARATOR 
-        "bse_rear" CANLIB_SEPARATOR 
-        "apps"
+        "bse_rear"
     );
 }
 
@@ -3786,15 +3791,15 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->apps,
         message->bse_front,
-        message->bse_rear,
-        message->apps
+        message->bse_rear
     );
 }
 
@@ -3804,9 +3809,9 @@ int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "apps" CANLIB_SEPARATOR 
         "bse_front" CANLIB_SEPARATOR 
-        "bse_rear" CANLIB_SEPARATOR 
-        "apps"
+        "bse_rear"
     );
 }
 

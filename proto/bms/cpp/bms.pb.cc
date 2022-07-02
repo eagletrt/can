@@ -227,10 +227,10 @@ struct TEMPERATURES_CELLBOARD5DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TEMPERATURES_CELLBOARD5DefaultTypeInternal _TEMPERATURES_CELLBOARD5_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD0DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD0DefaultTypeInternal()
@@ -243,10 +243,10 @@ struct VOLTAGES_CELLBOARD0DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD0DefaultTypeInternal _VOLTAGES_CELLBOARD0_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD1DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD1DefaultTypeInternal()
@@ -259,10 +259,10 @@ struct VOLTAGES_CELLBOARD1DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD1DefaultTypeInternal _VOLTAGES_CELLBOARD1_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD2DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD2DefaultTypeInternal()
@@ -275,10 +275,10 @@ struct VOLTAGES_CELLBOARD2DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD2DefaultTypeInternal _VOLTAGES_CELLBOARD2_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD3DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD3DefaultTypeInternal()
@@ -291,10 +291,10 @@ struct VOLTAGES_CELLBOARD3DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD3DefaultTypeInternal _VOLTAGES_CELLBOARD3_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD4DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD4DefaultTypeInternal()
@@ -307,10 +307,10 @@ struct VOLTAGES_CELLBOARD4DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD4DefaultTypeInternal _VOLTAGES_CELLBOARD4_default_instance_;
 PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(
     ::_pbi::ConstantInitialized)
-  : voltage0_(0u)
+  : start_index_(0u)
+  , voltage0_(0u)
   , voltage1_(0u)
   , voltage2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct VOLTAGES_CELLBOARD5DefaultTypeInternal {
   PROTOBUF_CONSTEXPR VOLTAGES_CELLBOARD5DefaultTypeInternal()
@@ -323,8 +323,8 @@ struct VOLTAGES_CELLBOARD5DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VOLTAGES_CELLBOARD5DefaultTypeInternal _VOLTAGES_CELLBOARD5_default_instance_;
 PROTOBUF_CONSTEXPR BALANCING::BALANCING(
     ::_pbi::ConstantInitialized)
-  : cells_(0u)
-  , board_index_(0u)
+  : board_index_(0u)
+  , cells_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct BALANCINGDefaultTypeInternal {
   PROTOBUF_CONSTEXPR BALANCINGDefaultTypeInternal()
@@ -685,10 +685,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _internal_metadata_),
@@ -696,10 +696,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _internal_metadata_),
@@ -707,10 +707,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _internal_metadata_),
@@ -718,10 +718,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _internal_metadata_),
@@ -729,10 +729,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _internal_metadata_),
@@ -740,10 +740,10 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage0_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage1_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, start_index_),
   PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _internal_metadata_),
@@ -751,8 +751,8 @@ const uint32_t TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, cells_),
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, board_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, cells_),
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, _internal_metadata_),
@@ -1001,26 +1001,26 @@ const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "0\030\002 \001(\r\022\r\n\005temp1\030\003 \001(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n"
   "\005temp3\030\005 \001(\r\022\r\n\005temp4\030\006 \001(\r\022\r\n\005temp5\030\007 \001"
   "(\r\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
-  "_CELLBOARD0\022\020\n\010voltage0\030\001 \001(\r\022\020\n\010voltage"
-  "1\030\002 \001(\r\022\020\n\010voltage2\030\003 \001(\r\022\023\n\013start_index"
+  "_CELLBOARD0\022\023\n\013start_index\030\001 \001(\r\022\020\n\010volt"
+  "age0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010voltage2"
   "\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
-  "AGES_CELLBOARD1\022\020\n\010voltage0\030\001 \001(\r\022\020\n\010vol"
-  "tage1\030\002 \001(\r\022\020\n\010voltage2\030\003 \001(\r\022\023\n\013start_i"
-  "ndex\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
-  "VOLTAGES_CELLBOARD2\022\020\n\010voltage0\030\001 \001(\r\022\020\n"
-  "\010voltage1\030\002 \001(\r\022\020\n\010voltage2\030\003 \001(\r\022\023\n\013sta"
-  "rt_index\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004"
-  "\"z\n\023VOLTAGES_CELLBOARD3\022\020\n\010voltage0\030\001 \001("
-  "\r\022\020\n\010voltage1\030\002 \001(\r\022\020\n\010voltage2\030\003 \001(\r\022\023\n"
-  "\013start_index\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005"
-  " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\020\n\010voltage0\030"
-  "\001 \001(\r\022\020\n\010voltage1\030\002 \001(\r\022\020\n\010voltage2\030\003 \001("
-  "\r\022\023\n\013start_index\030\004 \001(\r\022\030\n\020_inner_timesta"
-  "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\020\n\010volta"
-  "ge0\030\001 \001(\r\022\020\n\010voltage1\030\002 \001(\r\022\020\n\010voltage2\030"
-  "\003 \001(\r\022\023\n\013start_index\030\004 \001(\r\022\030\n\020_inner_tim"
-  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\r\n\005cells\030\001 \001(\r"
-  "\022\023\n\013board_index\030\002 \001(\r\022\030\n\020_inner_timestam"
+  "AGES_CELLBOARD1\022\023\n\013start_index\030\001 \001(\r\022\020\n\010"
+  "voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010volt"
+  "age2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
+  "VOLTAGES_CELLBOARD2\022\023\n\013start_index\030\001 \001(\r"
+  "\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010"
+  "voltage2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004"
+  "\"z\n\023VOLTAGES_CELLBOARD3\022\023\n\013start_index\030\001"
+  " \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r"
+  "\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005"
+  " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\023\n\013start_ind"
+  "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003"
+  " \001(\r\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_timesta"
+  "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\023\n\013start"
+  "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltag"
+  "e1\030\003 \001(\r\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_tim"
+  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\023\n\013board_index"
+  "\030\001 \001(\r\022\r\n\005cells\030\002 \001(\r\022\030\n\020_inner_timestam"
   "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
   "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
   "LBOARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
@@ -4535,17 +4535,17 @@ VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(const VOLTAGES_CELLBOARD0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD0)
 }
 
 inline void VOLTAGES_CELLBOARD0::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD0::~VOLTAGES_CELLBOARD0() {
@@ -4571,9 +4571,9 @@ void VOLTAGES_CELLBOARD0::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4583,34 +4583,34 @@ const char* VOLTAGES_CELLBOARD0::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4652,28 +4652,28 @@ uint8_t* VOLTAGES_CELLBOARD0::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4698,24 +4698,24 @@ size_t VOLTAGES_CELLBOARD0::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4745,6 +4745,9 @@ void VOLTAGES_CELLBOARD0::MergeFrom(const VOLTAGES_CELLBOARD0& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -4753,9 +4756,6 @@ void VOLTAGES_CELLBOARD0::MergeFrom(const VOLTAGES_CELLBOARD0& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -4780,9 +4780,9 @@ void VOLTAGES_CELLBOARD0::InternalSwap(VOLTAGES_CELLBOARD0* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD0::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD0::GetMetadata() const {
@@ -4806,17 +4806,17 @@ VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(const VOLTAGES_CELLBOARD1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD1)
 }
 
 inline void VOLTAGES_CELLBOARD1::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD1::~VOLTAGES_CELLBOARD1() {
@@ -4842,9 +4842,9 @@ void VOLTAGES_CELLBOARD1::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4854,34 +4854,34 @@ const char* VOLTAGES_CELLBOARD1::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4923,28 +4923,28 @@ uint8_t* VOLTAGES_CELLBOARD1::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4969,24 +4969,24 @@ size_t VOLTAGES_CELLBOARD1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5016,6 +5016,9 @@ void VOLTAGES_CELLBOARD1::MergeFrom(const VOLTAGES_CELLBOARD1& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -5024,9 +5027,6 @@ void VOLTAGES_CELLBOARD1::MergeFrom(const VOLTAGES_CELLBOARD1& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -5051,9 +5051,9 @@ void VOLTAGES_CELLBOARD1::InternalSwap(VOLTAGES_CELLBOARD1* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD1::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD1::GetMetadata() const {
@@ -5077,17 +5077,17 @@ VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(const VOLTAGES_CELLBOARD2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD2)
 }
 
 inline void VOLTAGES_CELLBOARD2::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD2::~VOLTAGES_CELLBOARD2() {
@@ -5113,9 +5113,9 @@ void VOLTAGES_CELLBOARD2::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5125,34 +5125,34 @@ const char* VOLTAGES_CELLBOARD2::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5194,28 +5194,28 @@ uint8_t* VOLTAGES_CELLBOARD2::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5240,24 +5240,24 @@ size_t VOLTAGES_CELLBOARD2::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5287,6 +5287,9 @@ void VOLTAGES_CELLBOARD2::MergeFrom(const VOLTAGES_CELLBOARD2& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -5295,9 +5298,6 @@ void VOLTAGES_CELLBOARD2::MergeFrom(const VOLTAGES_CELLBOARD2& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -5322,9 +5322,9 @@ void VOLTAGES_CELLBOARD2::InternalSwap(VOLTAGES_CELLBOARD2* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD2::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD2::GetMetadata() const {
@@ -5348,17 +5348,17 @@ VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(const VOLTAGES_CELLBOARD3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD3)
 }
 
 inline void VOLTAGES_CELLBOARD3::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD3::~VOLTAGES_CELLBOARD3() {
@@ -5384,9 +5384,9 @@ void VOLTAGES_CELLBOARD3::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5396,34 +5396,34 @@ const char* VOLTAGES_CELLBOARD3::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5465,28 +5465,28 @@ uint8_t* VOLTAGES_CELLBOARD3::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5511,24 +5511,24 @@ size_t VOLTAGES_CELLBOARD3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5558,6 +5558,9 @@ void VOLTAGES_CELLBOARD3::MergeFrom(const VOLTAGES_CELLBOARD3& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -5566,9 +5569,6 @@ void VOLTAGES_CELLBOARD3::MergeFrom(const VOLTAGES_CELLBOARD3& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -5593,9 +5593,9 @@ void VOLTAGES_CELLBOARD3::InternalSwap(VOLTAGES_CELLBOARD3* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD3::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD3::GetMetadata() const {
@@ -5619,17 +5619,17 @@ VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(const VOLTAGES_CELLBOARD4& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD4)
 }
 
 inline void VOLTAGES_CELLBOARD4::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD4::~VOLTAGES_CELLBOARD4() {
@@ -5655,9 +5655,9 @@ void VOLTAGES_CELLBOARD4::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5667,34 +5667,34 @@ const char* VOLTAGES_CELLBOARD4::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -5736,28 +5736,28 @@ uint8_t* VOLTAGES_CELLBOARD4::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5782,24 +5782,24 @@ size_t VOLTAGES_CELLBOARD4::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5829,6 +5829,9 @@ void VOLTAGES_CELLBOARD4::MergeFrom(const VOLTAGES_CELLBOARD4& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -5837,9 +5840,6 @@ void VOLTAGES_CELLBOARD4::MergeFrom(const VOLTAGES_CELLBOARD4& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -5864,9 +5864,9 @@ void VOLTAGES_CELLBOARD4::InternalSwap(VOLTAGES_CELLBOARD4* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD4::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD4::GetMetadata() const {
@@ -5890,17 +5890,17 @@ VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(const VOLTAGES_CELLBOARD5& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage0_, &from.voltage0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD5)
 }
 
 inline void VOLTAGES_CELLBOARD5::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 VOLTAGES_CELLBOARD5::~VOLTAGES_CELLBOARD5() {
@@ -5926,9 +5926,9 @@ void VOLTAGES_CELLBOARD5::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5938,34 +5938,34 @@ const char* VOLTAGES_CELLBOARD5::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6007,28 +6007,28 @@ uint8_t* VOLTAGES_CELLBOARD5::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
-  if (this->_internal_voltage0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage0(), target);
-  }
-
-  // uint32 voltage1 = 2;
-  if (this->_internal_voltage1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage1(), target);
-  }
-
-  // uint32 voltage2 = 3;
-  if (this->_internal_voltage2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage0 = 2;
+  if (this->_internal_voltage0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage0(), target);
+  }
+
+  // uint32 voltage1 = 3;
+  if (this->_internal_voltage1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage1(), target);
+  }
+
+  // uint32 voltage2 = 4;
+  if (this->_internal_voltage2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6053,24 +6053,24 @@ size_t VOLTAGES_CELLBOARD5::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage0 = 2;
   if (this->_internal_voltage0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage0());
   }
 
-  // uint32 voltage1 = 2;
+  // uint32 voltage1 = 3;
   if (this->_internal_voltage1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage1());
   }
 
-  // uint32 voltage2 = 3;
+  // uint32 voltage2 = 4;
   if (this->_internal_voltage2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6100,6 +6100,9 @@ void VOLTAGES_CELLBOARD5::MergeFrom(const VOLTAGES_CELLBOARD5& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage0() != 0) {
     _internal_set_voltage0(from._internal_voltage0());
   }
@@ -6108,9 +6111,6 @@ void VOLTAGES_CELLBOARD5::MergeFrom(const VOLTAGES_CELLBOARD5& from) {
   }
   if (from._internal_voltage2() != 0) {
     _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -6135,9 +6135,9 @@ void VOLTAGES_CELLBOARD5::InternalSwap(VOLTAGES_CELLBOARD5* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, _inner_timestamp_)
       + sizeof(VOLTAGES_CELLBOARD5::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, voltage0_)>(
-          reinterpret_cast<char*>(&voltage0_),
-          reinterpret_cast<char*>(&other->voltage0_));
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD5::GetMetadata() const {
@@ -6161,17 +6161,17 @@ BALANCING::BALANCING(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 BALANCING::BALANCING(const BALANCING& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&cells_, &from.cells_,
+  ::memcpy(&board_index_, &from.board_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.BALANCING)
 }
 
 inline void BALANCING::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&cells_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&board_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
 }
 
 BALANCING::~BALANCING() {
@@ -6197,9 +6197,9 @@ void BALANCING::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&cells_, 0, static_cast<size_t>(
+  ::memset(&board_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&cells_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6209,18 +6209,18 @@ const char* BALANCING::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 cells = 1;
+      // uint32 board_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 board_index = 2;
+      // uint32 cells = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6262,16 +6262,16 @@ uint8_t* BALANCING::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 cells = 1;
-  if (this->_internal_cells() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_cells(), target);
-  }
-
-  // uint32 board_index = 2;
+  // uint32 board_index = 1;
   if (this->_internal_board_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_board_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_board_index(), target);
+  }
+
+  // uint32 cells = 2;
+  if (this->_internal_cells() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cells(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6296,14 +6296,14 @@ size_t BALANCING::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 cells = 1;
-  if (this->_internal_cells() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cells());
-  }
-
-  // uint32 board_index = 2;
+  // uint32 board_index = 1;
   if (this->_internal_board_index() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_board_index());
+  }
+
+  // uint32 cells = 2;
+  if (this->_internal_cells() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_cells());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6333,11 +6333,11 @@ void BALANCING::MergeFrom(const BALANCING& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_cells() != 0) {
-    _internal_set_cells(from._internal_cells());
-  }
   if (from._internal_board_index() != 0) {
     _internal_set_board_index(from._internal_board_index());
+  }
+  if (from._internal_cells() != 0) {
+    _internal_set_cells(from._internal_cells());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -6362,9 +6362,9 @@ void BALANCING::InternalSwap(BALANCING* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BALANCING, _inner_timestamp_)
       + sizeof(BALANCING::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BALANCING, cells_)>(
-          reinterpret_cast<char*>(&cells_),
-          reinterpret_cast<char*>(&other->cells_));
+      - PROTOBUF_FIELD_OFFSET(BALANCING, board_index_)>(
+          reinterpret_cast<char*>(&board_index_),
+          reinterpret_cast<char*>(&other->board_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BALANCING::GetMetadata() const {

@@ -486,8 +486,8 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         case 1089: {
             secondary_message_LAP_COUNT* msg = (secondary_message_LAP_COUNT*) (*map)[index].message_raw;
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
-            proto_msg->set_timestamp(msg->timestamp);
             proto_msg->set_lap_count(msg->lap_count);
+            proto_msg->set_timestamp(msg->timestamp);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -497,9 +497,9 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         case 769: {
             secondary_message_PEDALS_OUTPUT_conversion* msg = (secondary_message_PEDALS_OUTPUT_conversion*) (*map)[index].message_conversion;
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
+            proto_msg->set_apps(msg->apps);
             proto_msg->set_bse_front(msg->bse_front);
             proto_msg->set_bse_rear(msg->bse_rear);
-            proto_msg->set_apps(msg->apps);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -746,8 +746,8 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
     }
     for(int i = 0; i < pack->lap_count_size(); i++){
         static secondary_message_LAP_COUNT instance;
-        instance.timestamp =pack->lap_count(i).timestamp();
         instance.lap_count =pack->lap_count(i).lap_count();
+        instance.timestamp =pack->lap_count(i).timestamp();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->lap_count(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -755,9 +755,9 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
     }
     for(int i = 0; i < pack->pedals_output_size(); i++){
         static secondary_message_PEDALS_OUTPUT_conversion instance;
+        instance.apps =pack->pedals_output(i).apps();
         instance.bse_front =pack->pedals_output(i).bse_front();
         instance.bse_rear =pack->pedals_output(i).bse_rear();
-        instance.apps =pack->pedals_output(i).apps();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->pedals_output(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

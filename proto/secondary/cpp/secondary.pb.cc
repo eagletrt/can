@@ -336,8 +336,8 @@ struct GPS_SPEEDDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GPS_SPEEDDefaultTypeInternal _GPS_SPEED_default_instance_;
 PROTOBUF_CONSTEXPR LAP_COUNT::LAP_COUNT(
     ::_pbi::ConstantInitialized)
-  : timestamp_(0u)
-  , lap_count_(0u)
+  : lap_count_(0u)
+  , timestamp_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct LAP_COUNTDefaultTypeInternal {
   PROTOBUF_CONSTEXPR LAP_COUNTDefaultTypeInternal()
@@ -350,10 +350,10 @@ struct LAP_COUNTDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LAP_COUNTDefaultTypeInternal _LAP_COUNT_default_instance_;
 PROTOBUF_CONSTEXPR PEDALS_OUTPUT::PEDALS_OUTPUT(
     ::_pbi::ConstantInitialized)
-  : bse_front_(0u)
-  , bse_rear_(0u)
+  : apps_(0u)
+  , bse_front_(0u)
   , _inner_timestamp_(uint64_t{0u})
-  , apps_(0u){}
+  , bse_rear_(0u){}
 struct PEDALS_OUTPUTDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PEDALS_OUTPUTDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -650,8 +650,8 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::secondary::LAP_COUNT, timestamp_),
   PROTOBUF_FIELD_OFFSET(::secondary::LAP_COUNT, lap_count_),
+  PROTOBUF_FIELD_OFFSET(::secondary::LAP_COUNT, timestamp_),
   PROTOBUF_FIELD_OFFSET(::secondary::LAP_COUNT, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, _internal_metadata_),
@@ -659,9 +659,9 @@ const uint32_t TableStruct_secondary_2eproto::offsets[] PROTOBUF_SECTION_VARIABL
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, apps_),
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, bse_front_),
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, bse_rear_),
-  PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, apps_),
   PROTOBUF_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::secondary::CONTROL_OUTPUT, _internal_metadata_),
@@ -822,10 +822,10 @@ const char descriptor_table_protodef_secondary_2eproto[] PROTOBUF_SECTION_VARIAB
   "PS_COORDS\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude"
   "\030\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"4\n\tGPS_"
   "SPEED\022\r\n\005speed\030\001 \001(\r\022\030\n\020_inner_timestamp"
-  "\030\002 \001(\004\"K\n\tLAP_COUNT\022\021\n\ttimestamp\030\001 \001(\r\022\021"
-  "\n\tlap_count\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 "
-  "\001(\004\"\\\n\rPEDALS_OUTPUT\022\021\n\tbse_front\030\001 \001(\r\022"
-  "\020\n\010bse_rear\030\002 \001(\r\022\014\n\004apps\030\003 \001(\r\022\030\n\020_inne"
+  "\030\002 \001(\004\"K\n\tLAP_COUNT\022\021\n\tlap_count\030\001 \001(\r\022\021"
+  "\n\ttimestamp\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 "
+  "\001(\004\"\\\n\rPEDALS_OUTPUT\022\014\n\004apps\030\001 \001(\r\022\021\n\tbs"
+  "e_front\030\002 \001(\r\022\020\n\010bse_rear\030\003 \001(\r\022\030\n\020_inne"
   "r_timestamp\030\004 \001(\004\"G\n\016CONTROL_OUTPUT\022\r\n\005r"
   "ight\030\001 \001(\002\022\014\n\004left\030\002 \001(\002\022\030\n\020_inner_times"
   "tamp\030\003 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005angle\030\001 "
@@ -6180,17 +6180,17 @@ LAP_COUNT::LAP_COUNT(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 LAP_COUNT::LAP_COUNT(const LAP_COUNT& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&timestamp_, &from.timestamp_,
+  ::memcpy(&lap_count_, &from.lap_count_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&timestamp_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&lap_count_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.LAP_COUNT)
 }
 
 inline void LAP_COUNT::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&timestamp_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&lap_count_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&timestamp_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&lap_count_)) + sizeof(_inner_timestamp_));
 }
 
 LAP_COUNT::~LAP_COUNT() {
@@ -6216,9 +6216,9 @@ void LAP_COUNT::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&timestamp_, 0, static_cast<size_t>(
+  ::memset(&lap_count_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&timestamp_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&lap_count_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6228,18 +6228,18 @@ const char* LAP_COUNT::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 timestamp = 1;
+      // uint32 lap_count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          lap_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 lap_count = 2;
+      // uint32 timestamp = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          lap_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6281,16 +6281,16 @@ uint8_t* LAP_COUNT::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 timestamp = 1;
-  if (this->_internal_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_timestamp(), target);
-  }
-
-  // uint32 lap_count = 2;
+  // uint32 lap_count = 1;
   if (this->_internal_lap_count() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_lap_count(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_lap_count(), target);
+  }
+
+  // uint32 timestamp = 2;
+  if (this->_internal_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_timestamp(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6315,14 +6315,14 @@ size_t LAP_COUNT::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 timestamp = 1;
-  if (this->_internal_timestamp() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
-  }
-
-  // uint32 lap_count = 2;
+  // uint32 lap_count = 1;
   if (this->_internal_lap_count() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_lap_count());
+  }
+
+  // uint32 timestamp = 2;
+  if (this->_internal_timestamp() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6352,11 +6352,11 @@ void LAP_COUNT::MergeFrom(const LAP_COUNT& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_timestamp() != 0) {
-    _internal_set_timestamp(from._internal_timestamp());
-  }
   if (from._internal_lap_count() != 0) {
     _internal_set_lap_count(from._internal_lap_count());
+  }
+  if (from._internal_timestamp() != 0) {
+    _internal_set_timestamp(from._internal_timestamp());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -6381,9 +6381,9 @@ void LAP_COUNT::InternalSwap(LAP_COUNT* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(LAP_COUNT, _inner_timestamp_)
       + sizeof(LAP_COUNT::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(LAP_COUNT, timestamp_)>(
-          reinterpret_cast<char*>(&timestamp_),
-          reinterpret_cast<char*>(&other->timestamp_));
+      - PROTOBUF_FIELD_OFFSET(LAP_COUNT, lap_count_)>(
+          reinterpret_cast<char*>(&lap_count_),
+          reinterpret_cast<char*>(&other->lap_count_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LAP_COUNT::GetMetadata() const {
@@ -6407,17 +6407,17 @@ PEDALS_OUTPUT::PEDALS_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 PEDALS_OUTPUT::PEDALS_OUTPUT(const PEDALS_OUTPUT& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&bse_front_, &from.bse_front_,
-    static_cast<size_t>(reinterpret_cast<char*>(&apps_) -
-    reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
+  ::memcpy(&apps_, &from.apps_,
+    static_cast<size_t>(reinterpret_cast<char*>(&bse_rear_) -
+    reinterpret_cast<char*>(&apps_)) + sizeof(bse_rear_));
   // @@protoc_insertion_point(copy_constructor:secondary.PEDALS_OUTPUT)
 }
 
 inline void PEDALS_OUTPUT::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&bse_front_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&apps_) -
-    reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
+    reinterpret_cast<char*>(&apps_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&bse_rear_) -
+    reinterpret_cast<char*>(&apps_)) + sizeof(bse_rear_));
 }
 
 PEDALS_OUTPUT::~PEDALS_OUTPUT() {
@@ -6443,9 +6443,9 @@ void PEDALS_OUTPUT::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&bse_front_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&apps_) -
-      reinterpret_cast<char*>(&bse_front_)) + sizeof(apps_));
+  ::memset(&apps_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&bse_rear_) -
+      reinterpret_cast<char*>(&apps_)) + sizeof(bse_rear_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6455,26 +6455,26 @@ const char* PEDALS_OUTPUT::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 bse_front = 1;
+      // uint32 apps = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          apps_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 bse_front = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           bse_front_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 bse_rear = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          bse_rear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 apps = 3;
+      // uint32 bse_rear = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          apps_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          bse_rear_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6516,22 +6516,22 @@ uint8_t* PEDALS_OUTPUT::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 bse_front = 1;
-  if (this->_internal_bse_front() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_bse_front(), target);
-  }
-
-  // uint32 bse_rear = 2;
-  if (this->_internal_bse_rear() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_bse_rear(), target);
-  }
-
-  // uint32 apps = 3;
+  // uint32 apps = 1;
   if (this->_internal_apps() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_apps(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_apps(), target);
+  }
+
+  // uint32 bse_front = 2;
+  if (this->_internal_bse_front() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_bse_front(), target);
+  }
+
+  // uint32 bse_rear = 3;
+  if (this->_internal_bse_rear() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_bse_rear(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -6556,14 +6556,14 @@ size_t PEDALS_OUTPUT::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 bse_front = 1;
-  if (this->_internal_bse_front() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_front());
+  // uint32 apps = 1;
+  if (this->_internal_apps() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_apps());
   }
 
-  // uint32 bse_rear = 2;
-  if (this->_internal_bse_rear() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_rear());
+  // uint32 bse_front = 2;
+  if (this->_internal_bse_front() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_front());
   }
 
   // uint64 _inner_timestamp = 4;
@@ -6571,9 +6571,9 @@ size_t PEDALS_OUTPUT::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
   }
 
-  // uint32 apps = 3;
-  if (this->_internal_apps() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_apps());
+  // uint32 bse_rear = 3;
+  if (this->_internal_bse_rear() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bse_rear());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -6598,17 +6598,17 @@ void PEDALS_OUTPUT::MergeFrom(const PEDALS_OUTPUT& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_apps() != 0) {
+    _internal_set_apps(from._internal_apps());
+  }
   if (from._internal_bse_front() != 0) {
     _internal_set_bse_front(from._internal_bse_front());
-  }
-  if (from._internal_bse_rear() != 0) {
-    _internal_set_bse_rear(from._internal_bse_rear());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from._internal_apps() != 0) {
-    _internal_set_apps(from._internal_apps());
+  if (from._internal_bse_rear() != 0) {
+    _internal_set_bse_rear(from._internal_bse_rear());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -6628,11 +6628,11 @@ void PEDALS_OUTPUT::InternalSwap(PEDALS_OUTPUT* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, apps_)
-      + sizeof(PEDALS_OUTPUT::apps_)
-      - PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, bse_front_)>(
-          reinterpret_cast<char*>(&bse_front_),
-          reinterpret_cast<char*>(&other->bse_front_));
+      PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, bse_rear_)
+      + sizeof(PEDALS_OUTPUT::bse_rear_)
+      - PROTOBUF_FIELD_OFFSET(PEDALS_OUTPUT, apps_)>(
+          reinterpret_cast<char*>(&apps_),
+          reinterpret_cast<char*>(&other->apps_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PEDALS_OUTPUT::GetMetadata() const {

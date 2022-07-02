@@ -14,6 +14,11 @@ extern "C" {
 #include <memory.h>
 #include <stdio.h>
 
+#ifndef CANLIB_BUILD
+#define CANLIB_BUILD_TIME 1656775510
+#define CANLIB_BUILD_HASH 0x631e594b
+#endif // CANLIB_BUILD
+
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
@@ -662,20 +667,20 @@ typedef struct CANLIB_PARKING {
 } primary_message_TIMESTAMP;
 
 typedef struct CANLIB_PARKING {
+    primary_Toggle tlm_status;
+    primary_RaceType race_type;
     primary_uint8 driver;
     primary_uint8 circuit;
-    primary_RaceType race_type;
-    primary_Toggle tlm_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_TLM_STATUS;
 
 typedef struct CANLIB_PARKING {
+    primary_Toggle tlm_status;
+    primary_RaceType race_type;
     primary_uint8 driver;
     primary_uint8 circuit;
-    primary_RaceType race_type;
-    primary_Toggle tlm_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -762,16 +767,16 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CAN_FORWARD;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 fans_speed;
     primary_Toggle fans_override;
+    primary_uint16 fans_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_FANS_OVERRIDE;
 
 typedef struct CANLIB_PARKING {
-    primary_float32 fans_speed;
     primary_Toggle fans_override;
+    primary_float32 fans_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -785,16 +790,16 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_CAN_FORWARD_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_uint16 fans_speed;
     primary_Toggle fans_override;
+    primary_uint16 fans_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_FANS_OVERRIDE_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_float32 fans_speed;
     primary_Toggle fans_override;
+    primary_float32 fans_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -809,9 +814,9 @@ typedef struct CANLIB_PARKING {
 } primary_message_HV_FEEDBACKS_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_int32 imd_info;
-    primary_ImdStatus imd_status;
     primary_bool imd_fault;
+    primary_ImdStatus imd_status;
+    primary_int32 imd_info;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -832,8 +837,8 @@ typedef struct CANLIB_PARKING {
 } primary_message_SET_TS_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_Map map;
     primary_TractionControl traction_control;
+    primary_Map map;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -862,9 +867,9 @@ typedef struct CANLIB_PARKING {
 } primary_message_SET_STEERING_ANGLE_RANGE;
 
 typedef struct CANLIB_PARKING {
-    primary_CarStatus car_status;
     primary_InverterStatus inverter_l;
     primary_InverterStatus inverter_r;
+    primary_CarStatus car_status;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1005,20 +1010,20 @@ typedef struct CANLIB_PARKING {
 } primary_message_MARKER;
 
 typedef struct CANLIB_PARKING {
+    primary_uint8 start_index;
     primary_uint16 voltage_0;
     primary_uint16 voltage_1;
     primary_uint16 voltage_2;
-    primary_uint8 start_index;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_HV_CELLS_VOLTAGE;
 
 typedef struct CANLIB_PARKING {
+    primary_uint8 start_index;
     primary_float32 voltage_0;
     primary_float32 voltage_1;
     primary_float32 voltage_2;
-    primary_uint8 start_index;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1612,10 +1617,10 @@ int primary_fields_file_TIMESTAMP(FILE* buffer);
 
 primary_byte_size primary_serialize_SET_TLM_STATUS(
     uint8_t* data,
-    primary_uint8 driver,
-    primary_uint8 circuit,
+    primary_Toggle tlm_status,
     primary_RaceType race_type,
-    primary_Toggle tlm_status
+    primary_uint8 driver,
+    primary_uint8 circuit
 );
 primary_byte_size primary_serialize_struct_SET_TLM_STATUS(
     uint8_t* data,
@@ -1638,10 +1643,10 @@ int primary_fields_file_SET_TLM_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_TLM_STATUS(
     uint8_t* data,
-    primary_uint8 driver,
-    primary_uint8 circuit,
+    primary_Toggle tlm_status,
     primary_RaceType race_type,
-    primary_Toggle tlm_status
+    primary_uint8 driver,
+    primary_uint8 circuit
 );
 primary_byte_size primary_serialize_struct_TLM_STATUS(
     uint8_t* data,
@@ -1902,8 +1907,8 @@ int primary_fields_file_HV_CAN_FORWARD(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_FANS_OVERRIDE(
     uint8_t* data,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 );
 primary_byte_size primary_serialize_struct_HV_FANS_OVERRIDE(
     uint8_t* data,
@@ -1928,8 +1933,8 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE(
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE(
     primary_message_HV_FANS_OVERRIDE* raw,
-    primary_float32 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_float32 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1937,8 +1942,8 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE(
 
 void primary_raw_to_conversion_HV_FANS_OVERRIDE(
     primary_message_HV_FANS_OVERRIDE_conversion* conversion,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1976,8 +1981,8 @@ int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_FANS_OVERRIDE_STATUS(
     uint8_t* data,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 );
 primary_byte_size primary_serialize_struct_HV_FANS_OVERRIDE_STATUS(
     uint8_t* data,
@@ -2002,8 +2007,8 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
     primary_message_HV_FANS_OVERRIDE_STATUS* raw,
-    primary_float32 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_float32 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -2011,8 +2016,8 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
 
 void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
     primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -2051,9 +2056,9 @@ int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_IMD_STATUS(
     uint8_t* data,
-    primary_int32 imd_info,
+    primary_bool imd_fault,
     primary_ImdStatus imd_status,
-    primary_bool imd_fault
+    primary_int32 imd_info
 );
 primary_byte_size primary_serialize_struct_HV_IMD_STATUS(
     uint8_t* data,
@@ -2122,8 +2127,8 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
-    primary_Map map,
-    primary_TractionControl traction_control
+    primary_TractionControl traction_control,
+    primary_Map map
 );
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
@@ -2216,9 +2221,9 @@ int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer);
 
 primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
-    primary_CarStatus car_status,
     primary_InverterStatus inverter_l,
-    primary_InverterStatus inverter_r
+    primary_InverterStatus inverter_r,
+    primary_CarStatus car_status
 );
 primary_byte_size primary_serialize_struct_CAR_STATUS(
     uint8_t* data,
@@ -2663,10 +2668,10 @@ int primary_fields_file_MARKER(FILE* buffer);
 
 primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     uint8_t* data,
+    primary_uint8 start_index,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
-    primary_uint16 voltage_2,
-    primary_uint8 start_index
+    primary_uint16 voltage_2
 );
 primary_byte_size primary_serialize_struct_HV_CELLS_VOLTAGE(
     uint8_t* data,
@@ -2691,10 +2696,10 @@ void primary_conversion_to_raw_struct_HV_CELLS_VOLTAGE(
 
 void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_uint8 start_index,
     primary_float32 voltage_0,
     primary_float32 voltage_1,
-    primary_float32 voltage_2,
-    primary_uint8 start_index
+    primary_float32 voltage_2
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -2702,10 +2707,10 @@ void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
 
 void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_uint8 start_index,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
-    primary_uint16 voltage_2,
-    primary_uint8 start_index
+    primary_uint16 voltage_2
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -4624,10 +4629,10 @@ int primary_fields_file_TIMESTAMP(FILE* buffer) {
 
 primary_byte_size primary_serialize_SET_TLM_STATUS(
     uint8_t* data,
-    primary_uint8 driver,
-    primary_uint8 circuit,
+    primary_Toggle tlm_status,
     primary_RaceType race_type,
-    primary_Toggle tlm_status
+    primary_uint8 driver,
+    primary_uint8 circuit
 ) {
     data[0] = driver;
     data[1] = circuit;
@@ -4678,10 +4683,10 @@ int primary_to_string_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* message, ch
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->driver,
-        message->circuit,
+        message->tlm_status,
         message->race_type,
-        message->tlm_status
+        message->driver,
+        message->circuit
     );
 }
 
@@ -4691,10 +4696,10 @@ int primary_fields_SET_TLM_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "driver" CANLIB_SEPARATOR 
-        "circuit" CANLIB_SEPARATOR 
+        "tlm_status" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
-        "tlm_status"
+        "driver" CANLIB_SEPARATOR 
+        "circuit"
     );
 }
 
@@ -4711,10 +4716,10 @@ int primary_to_string_file_SET_TLM_STATUS(primary_message_SET_TLM_STATUS* messag
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->driver,
-        message->circuit,
+        message->tlm_status,
         message->race_type,
-        message->tlm_status
+        message->driver,
+        message->circuit
     );
 }
 
@@ -4724,10 +4729,10 @@ int primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "driver" CANLIB_SEPARATOR 
-        "circuit" CANLIB_SEPARATOR 
+        "tlm_status" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
-        "tlm_status"
+        "driver" CANLIB_SEPARATOR 
+        "circuit"
     );
 }
 
@@ -4735,10 +4740,10 @@ int primary_fields_file_SET_TLM_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_TLM_STATUS(
     uint8_t* data,
-    primary_uint8 driver,
-    primary_uint8 circuit,
+    primary_Toggle tlm_status,
     primary_RaceType race_type,
-    primary_Toggle tlm_status
+    primary_uint8 driver,
+    primary_uint8 circuit
 ) {
     data[0] = driver;
     data[1] = circuit;
@@ -4789,10 +4794,10 @@ int primary_to_string_TLM_STATUS(primary_message_TLM_STATUS* message, char* buff
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->driver,
-        message->circuit,
+        message->tlm_status,
         message->race_type,
-        message->tlm_status
+        message->driver,
+        message->circuit
     );
 }
 
@@ -4802,10 +4807,10 @@ int primary_fields_TLM_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "driver" CANLIB_SEPARATOR 
-        "circuit" CANLIB_SEPARATOR 
+        "tlm_status" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
-        "tlm_status"
+        "driver" CANLIB_SEPARATOR 
+        "circuit"
     );
 }
 
@@ -4822,10 +4827,10 @@ int primary_to_string_file_TLM_STATUS(primary_message_TLM_STATUS* message, FILE*
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->driver,
-        message->circuit,
+        message->tlm_status,
         message->race_type,
-        message->tlm_status
+        message->driver,
+        message->circuit
     );
 }
 
@@ -4835,10 +4840,10 @@ int primary_fields_file_TLM_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "driver" CANLIB_SEPARATOR 
-        "circuit" CANLIB_SEPARATOR 
+        "tlm_status" CANLIB_SEPARATOR 
         "race_type" CANLIB_SEPARATOR 
-        "tlm_status"
+        "driver" CANLIB_SEPARATOR 
+        "circuit"
     );
 }
 
@@ -5635,8 +5640,8 @@ int primary_fields_file_HV_CAN_FORWARD(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_FANS_OVERRIDE(
     uint8_t* data,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 ) {
     data[0] = fans_speed & 255;
     data[1] = (fans_speed >> 8) & 255;
@@ -5672,8 +5677,8 @@ void primary_deserialize_HV_FANS_OVERRIDE(
 
 void primary_raw_to_conversion_HV_FANS_OVERRIDE(
     primary_message_HV_FANS_OVERRIDE_conversion* conversion,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -5681,8 +5686,8 @@ void primary_raw_to_conversion_HV_FANS_OVERRIDE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
     conversion->fans_override = fans_override;
+    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE(
@@ -5692,14 +5697,14 @@ void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
     conversion->fans_override = raw->fans_override;
+    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
 }
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE(
     primary_message_HV_FANS_OVERRIDE* raw,
-    primary_float32 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_float32 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -5707,8 +5712,8 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
     raw->fans_override = fans_override;
+    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
 }
 
 void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE(
@@ -5718,8 +5723,8 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
     raw->fans_override = conversion->fans_override;
+    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
 }
 
 // ============== STRING ============== //
@@ -5729,13 +5734,13 @@ int primary_to_string_HV_FANS_OVERRIDE(primary_message_HV_FANS_OVERRIDE_conversi
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->fans_speed,
-        message->fans_override
+        message->fans_override,
+        message->fans_speed
     );
 }
 
@@ -5745,8 +5750,8 @@ int primary_fields_HV_FANS_OVERRIDE(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "fans_speed" CANLIB_SEPARATOR 
-        "fans_override"
+        "fans_override" CANLIB_SEPARATOR 
+        "fans_speed"
     );
 }
 
@@ -5756,13 +5761,13 @@ int primary_to_string_file_HV_FANS_OVERRIDE(primary_message_HV_FANS_OVERRIDE_con
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->fans_speed,
-        message->fans_override
+        message->fans_override,
+        message->fans_speed
     );
 }
 
@@ -5772,8 +5777,8 @@ int primary_fields_file_HV_FANS_OVERRIDE(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "fans_speed" CANLIB_SEPARATOR 
-        "fans_override"
+        "fans_override" CANLIB_SEPARATOR 
+        "fans_speed"
     );
 }
 
@@ -5864,8 +5869,8 @@ int primary_fields_file_HV_CAN_FORWARD_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_FANS_OVERRIDE_STATUS(
     uint8_t* data,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 ) {
     data[0] = fans_speed & 255;
     data[1] = (fans_speed >> 8) & 255;
@@ -5901,8 +5906,8 @@ void primary_deserialize_HV_FANS_OVERRIDE_STATUS(
 
 void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
     primary_message_HV_FANS_OVERRIDE_STATUS_conversion* conversion,
-    primary_uint16 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_uint16 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -5910,8 +5915,8 @@ void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
     conversion->fans_override = fans_override;
+    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
@@ -5921,14 +5926,14 @@ void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
     conversion->fans_override = raw->fans_override;
+    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
 }
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
     primary_message_HV_FANS_OVERRIDE_STATUS* raw,
-    primary_float32 fans_speed,
-    primary_Toggle fans_override
+    primary_Toggle fans_override,
+    primary_float32 fans_speed
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -5936,8 +5941,8 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
     raw->fans_override = fans_override;
+    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
 }
 
 void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
@@ -5947,8 +5952,8 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
     raw->fans_override = conversion->fans_override;
+    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
 }
 
 // ============== STRING ============== //
@@ -5958,13 +5963,13 @@ int primary_to_string_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERRIDE_S
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->fans_speed,
-        message->fans_override
+        message->fans_override,
+        message->fans_speed
     );
 }
 
@@ -5974,8 +5979,8 @@ int primary_fields_HV_FANS_OVERRIDE_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "fans_speed" CANLIB_SEPARATOR 
-        "fans_override"
+        "fans_override" CANLIB_SEPARATOR 
+        "fans_speed"
     );
 }
 
@@ -5985,13 +5990,13 @@ int primary_to_string_file_HV_FANS_OVERRIDE_STATUS(primary_message_HV_FANS_OVERR
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->fans_speed,
-        message->fans_override
+        message->fans_override,
+        message->fans_speed
     );
 }
 
@@ -6001,8 +6006,8 @@ int primary_fields_file_HV_FANS_OVERRIDE_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "fans_speed" CANLIB_SEPARATOR 
-        "fans_override"
+        "fans_override" CANLIB_SEPARATOR 
+        "fans_speed"
     );
 }
 
@@ -6111,9 +6116,9 @@ int primary_fields_file_HV_FEEDBACKS_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_IMD_STATUS(
     uint8_t* data,
-    primary_int32 imd_info,
+    primary_bool imd_fault,
     primary_ImdStatus imd_status,
-    primary_bool imd_fault
+    primary_int32 imd_info
 ) {
     data[0] = imd_info & 255;
     data[1] = (imd_info >> 8) & 255;
@@ -6160,15 +6165,15 @@ int primary_to_string_HV_IMD_STATUS(primary_message_HV_IMD_STATUS* message, char
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIi32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->imd_info,
+        message->imd_fault,
         message->imd_status,
-        message->imd_fault
+        message->imd_info
     );
 }
 
@@ -6178,9 +6183,9 @@ int primary_fields_HV_IMD_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "imd_info" CANLIB_SEPARATOR 
+        "imd_fault" CANLIB_SEPARATOR 
         "imd_status" CANLIB_SEPARATOR 
-        "imd_fault"
+        "imd_info"
     );
 }
 
@@ -6190,15 +6195,15 @@ int primary_to_string_file_HV_IMD_STATUS(primary_message_HV_IMD_STATUS* message,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIi32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->imd_info,
+        message->imd_fault,
         message->imd_status,
-        message->imd_fault
+        message->imd_info
     );
 }
 
@@ -6208,9 +6213,9 @@ int primary_fields_file_HV_IMD_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "imd_info" CANLIB_SEPARATOR 
+        "imd_fault" CANLIB_SEPARATOR 
         "imd_status" CANLIB_SEPARATOR 
-        "imd_fault"
+        "imd_info"
     );
 }
 
@@ -6384,8 +6389,8 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
-    primary_Map map,
-    primary_TractionControl traction_control
+    primary_TractionControl traction_control,
+    primary_Map map
 ) {
     data[0] = map << 5 | traction_control << 3;
     return 1;
@@ -6428,8 +6433,8 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* 
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->map,
-        message->traction_control
+        message->traction_control,
+        message->map
     );
 }
 
@@ -6439,8 +6444,8 @@ int primary_fields_STEER_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "map" CANLIB_SEPARATOR 
-        "traction_control"
+        "traction_control" CANLIB_SEPARATOR 
+        "map"
     );
 }
 
@@ -6455,8 +6460,8 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, F
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->map,
-        message->traction_control
+        message->traction_control,
+        message->map
     );
 }
 
@@ -6466,8 +6471,8 @@ int primary_fields_file_STEER_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "map" CANLIB_SEPARATOR 
-        "traction_control"
+        "traction_control" CANLIB_SEPARATOR 
+        "map"
     );
 }
 
@@ -6732,9 +6737,9 @@ int primary_fields_file_SET_STEERING_ANGLE_RANGE(FILE* buffer) {
 
 primary_byte_size primary_serialize_CAR_STATUS(
     uint8_t* data,
-    primary_CarStatus car_status,
     primary_InverterStatus inverter_l,
-    primary_InverterStatus inverter_r
+    primary_InverterStatus inverter_r,
+    primary_CarStatus car_status
 ) {
     data[0] = car_status << 5 | inverter_l << 3 | inverter_r << 1;
     return 1;
@@ -6779,9 +6784,9 @@ int primary_to_string_CAR_STATUS(primary_message_CAR_STATUS* message, char* buff
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_status,
         message->inverter_l,
-        message->inverter_r
+        message->inverter_r,
+        message->car_status
     );
 }
 
@@ -6791,9 +6796,9 @@ int primary_fields_CAR_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_status" CANLIB_SEPARATOR 
         "inverter_l" CANLIB_SEPARATOR 
-        "inverter_r"
+        "inverter_r" CANLIB_SEPARATOR 
+        "car_status"
     );
 }
 
@@ -6809,9 +6814,9 @@ int primary_to_string_file_CAR_STATUS(primary_message_CAR_STATUS* message, FILE*
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->car_status,
         message->inverter_l,
-        message->inverter_r
+        message->inverter_r,
+        message->car_status
     );
 }
 
@@ -6821,9 +6826,9 @@ int primary_fields_file_CAR_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "car_status" CANLIB_SEPARATOR 
         "inverter_l" CANLIB_SEPARATOR 
-        "inverter_r"
+        "inverter_r" CANLIB_SEPARATOR 
+        "car_status"
     );
 }
 
@@ -8178,10 +8183,10 @@ int primary_fields_file_MARKER(FILE* buffer) {
 
 primary_byte_size primary_serialize_HV_CELLS_VOLTAGE(
     uint8_t* data,
+    primary_uint8 start_index,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
-    primary_uint16 voltage_2,
-    primary_uint8 start_index
+    primary_uint16 voltage_2
 ) {
     data[0] = voltage_0 & 255;
     data[1] = (voltage_0 >> 8) & 255;
@@ -8227,10 +8232,10 @@ void primary_deserialize_HV_CELLS_VOLTAGE(
 
 void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE_conversion* conversion,
+    primary_uint8 start_index,
     primary_uint16 voltage_0,
     primary_uint16 voltage_1,
-    primary_uint16 voltage_2,
-    primary_uint8 start_index
+    primary_uint16 voltage_2
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -8238,10 +8243,10 @@ void primary_raw_to_conversion_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->start_index = start_index;
     conversion->voltage_0 = (((primary_float32)voltage_0) / 10000.0) + 0;
     conversion->voltage_1 = (((primary_float32)voltage_1) / 10000.0) + 0;
     conversion->voltage_2 = (((primary_float32)voltage_2) / 10000.0) + 0;
-    conversion->start_index = start_index;
 }
 
 void primary_raw_to_conversion_struct_HV_CELLS_VOLTAGE(
@@ -8251,18 +8256,18 @@ void primary_raw_to_conversion_struct_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->start_index = raw->start_index;
     conversion->voltage_0 = (((primary_float32)raw->voltage_0) / 10000.0) + 0;
     conversion->voltage_1 = (((primary_float32)raw->voltage_1) / 10000.0) + 0;
     conversion->voltage_2 = (((primary_float32)raw->voltage_2) / 10000.0) + 0;
-    conversion->start_index = raw->start_index;
 }
 
 void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
     primary_message_HV_CELLS_VOLTAGE* raw,
+    primary_uint8 start_index,
     primary_float32 voltage_0,
     primary_float32 voltage_1,
-    primary_float32 voltage_2,
-    primary_uint8 start_index
+    primary_float32 voltage_2
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -8270,10 +8275,10 @@ void primary_conversion_to_raw_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->start_index = start_index;
     raw->voltage_0 = (primary_uint16)((voltage_0 + 0) * 10000.0);
     raw->voltage_1 = (primary_uint16)((voltage_1 + 0) * 10000.0);
     raw->voltage_2 = (primary_uint16)((voltage_2 + 0) * 10000.0);
-    raw->start_index = start_index;
 }
 
 void primary_conversion_to_raw_struct_HV_CELLS_VOLTAGE(
@@ -8283,10 +8288,10 @@ void primary_conversion_to_raw_struct_HV_CELLS_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->start_index = conversion->start_index;
     raw->voltage_0 = (primary_uint16)((conversion->voltage_0 + 0) * 10000.0);
     raw->voltage_1 = (primary_uint16)((conversion->voltage_1 + 0) * 10000.0);
     raw->voltage_2 = (primary_uint16)((conversion->voltage_2 + 0) * 10000.0);
-    raw->start_index = conversion->start_index;
 }
 
 // ============== STRING ============== //
@@ -8296,17 +8301,17 @@ int primary_to_string_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_conversi
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->start_index,
         message->voltage_0,
         message->voltage_1,
-        message->voltage_2,
-        message->start_index
+        message->voltage_2
     );
 }
 
@@ -8316,10 +8321,10 @@ int primary_fields_HV_CELLS_VOLTAGE(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "start_index" CANLIB_SEPARATOR 
         "voltage_0" CANLIB_SEPARATOR 
         "voltage_1" CANLIB_SEPARATOR 
-        "voltage_2" CANLIB_SEPARATOR 
-        "start_index"
+        "voltage_2"
     );
 }
 
@@ -8329,17 +8334,17 @@ int primary_to_string_file_HV_CELLS_VOLTAGE(primary_message_HV_CELLS_VOLTAGE_con
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->start_index,
         message->voltage_0,
         message->voltage_1,
-        message->voltage_2,
-        message->start_index
+        message->voltage_2
     );
 }
 
@@ -8349,10 +8354,10 @@ int primary_fields_file_HV_CELLS_VOLTAGE(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "start_index" CANLIB_SEPARATOR 
         "voltage_0" CANLIB_SEPARATOR 
         "voltage_1" CANLIB_SEPARATOR 
-        "voltage_2" CANLIB_SEPARATOR 
-        "start_index"
+        "voltage_2"
     );
 }
 

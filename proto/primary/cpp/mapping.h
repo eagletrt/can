@@ -361,10 +361,10 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 258: {
             primary_message_SET_TLM_STATUS* msg = (primary_message_SET_TLM_STATUS*) (*map)[index].message_raw;
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
+            proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
+            proto_msg->set_race_type((primary::RaceType)msg->race_type);
             proto_msg->set_driver(msg->driver);
             proto_msg->set_circuit(msg->circuit);
-            proto_msg->set_race_type((primary::RaceType)msg->race_type);
-            proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -374,10 +374,10 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 259: {
             primary_message_TLM_STATUS* msg = (primary_message_TLM_STATUS*) (*map)[index].message_raw;
             primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
+            proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
+            proto_msg->set_race_type((primary::RaceType)msg->race_type);
             proto_msg->set_driver(msg->driver);
             proto_msg->set_circuit(msg->circuit);
-            proto_msg->set_race_type((primary::RaceType)msg->race_type);
-            proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -456,8 +456,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 37: {
             primary_message_HV_FANS_OVERRIDE_conversion* msg = (primary_message_HV_FANS_OVERRIDE_conversion*) (*map)[index].message_conversion;
             primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
-            proto_msg->set_fans_speed(msg->fans_speed);
             proto_msg->set_fans_override((primary::Toggle)msg->fans_override);
+            proto_msg->set_fans_speed(msg->fans_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -477,8 +477,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 774: {
             primary_message_HV_FANS_OVERRIDE_STATUS_conversion* msg = (primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) (*map)[index].message_conversion;
             primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
-            proto_msg->set_fans_speed(msg->fans_speed);
             proto_msg->set_fans_override((primary::Toggle)msg->fans_override);
+            proto_msg->set_fans_speed(msg->fans_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -499,9 +499,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 807: {
             primary_message_HV_IMD_STATUS* msg = (primary_message_HV_IMD_STATUS*) (*map)[index].message_raw;
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
-            proto_msg->set_imd_info(msg->imd_info);
-            proto_msg->set_imd_status((primary::ImdStatus)msg->imd_status);
             proto_msg->set_imd_fault(msg->imd_fault);
+            proto_msg->set_imd_status((primary::ImdStatus)msg->imd_status);
+            proto_msg->set_imd_info(msg->imd_info);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -541,8 +541,8 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 264: {
             primary_message_STEER_STATUS* msg = (primary_message_STEER_STATUS*) (*map)[index].message_raw;
             primary::STEER_STATUS* proto_msg = pack->add_steer_status();
-            proto_msg->set_map((primary::Map)msg->map);
             proto_msg->set_traction_control((primary::TractionControl)msg->traction_control);
+            proto_msg->set_map((primary::Map)msg->map);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -583,9 +583,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 515: {
             primary_message_CAR_STATUS* msg = (primary_message_CAR_STATUS*) (*map)[index].message_raw;
             primary::CAR_STATUS* proto_msg = pack->add_car_status();
-            proto_msg->set_car_status((primary::CarStatus)msg->car_status);
             proto_msg->set_inverter_l((primary::InverterStatus)msg->inverter_l);
             proto_msg->set_inverter_r((primary::InverterStatus)msg->inverter_r);
+            proto_msg->set_car_status((primary::CarStatus)msg->car_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -719,10 +719,10 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 518: {
             primary_message_HV_CELLS_VOLTAGE_conversion* msg = (primary_message_HV_CELLS_VOLTAGE_conversion*) (*map)[index].message_conversion;
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage_0(msg->voltage_0);
             proto_msg->set_voltage_1(msg->voltage_1);
             proto_msg->set_voltage_2(msg->voltage_2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1074,10 +1074,10 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->set_tlm_status_size(); i++){
         static primary_message_SET_TLM_STATUS instance;
+        instance.tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
+        instance.race_type =(primary_RaceType)pack->set_tlm_status(i).race_type();
         instance.driver =pack->set_tlm_status(i).driver();
         instance.circuit =pack->set_tlm_status(i).circuit();
-        instance.race_type =(primary_RaceType)pack->set_tlm_status(i).race_type();
-        instance.tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->set_tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1085,10 +1085,10 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->tlm_status_size(); i++){
         static primary_message_TLM_STATUS instance;
+        instance.tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
+        instance.race_type =(primary_RaceType)pack->tlm_status(i).race_type();
         instance.driver =pack->tlm_status(i).driver();
         instance.circuit =pack->tlm_status(i).circuit();
-        instance.race_type =(primary_RaceType)pack->tlm_status(i).race_type();
-        instance.tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1153,8 +1153,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->hv_fans_override_size(); i++){
         static primary_message_HV_FANS_OVERRIDE_conversion instance;
-        instance.fans_speed =pack->hv_fans_override(i).fans_speed();
         instance.fans_override =(primary_Toggle)pack->hv_fans_override(i).fans_override();
+        instance.fans_speed =pack->hv_fans_override(i).fans_speed();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_fans_override(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1170,8 +1170,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->hv_fans_override_status_size(); i++){
         static primary_message_HV_FANS_OVERRIDE_STATUS_conversion instance;
-        instance.fans_speed =pack->hv_fans_override_status(i).fans_speed();
         instance.fans_override =(primary_Toggle)pack->hv_fans_override_status(i).fans_override();
+        instance.fans_speed =pack->hv_fans_override_status(i).fans_speed();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_fans_override_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1188,9 +1188,9 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->hv_imd_status_size(); i++){
         static primary_message_HV_IMD_STATUS instance;
-        instance.imd_info =pack->hv_imd_status(i).imd_info();
-        instance.imd_status =(primary_ImdStatus)pack->hv_imd_status(i).imd_status();
         instance.imd_fault =pack->hv_imd_status(i).imd_fault();
+        instance.imd_status =(primary_ImdStatus)pack->hv_imd_status(i).imd_status();
+        instance.imd_info =pack->hv_imd_status(i).imd_info();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_imd_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1222,8 +1222,8 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->steer_status_size(); i++){
         static primary_message_STEER_STATUS instance;
-        instance.map =(primary_Map)pack->steer_status(i).map();
         instance.traction_control =(primary_TractionControl)pack->steer_status(i).traction_control();
+        instance.map =(primary_Map)pack->steer_status(i).map();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->steer_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1256,9 +1256,9 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->car_status_size(); i++){
         static primary_message_CAR_STATUS instance;
-        instance.car_status =(primary_CarStatus)pack->car_status(i).car_status();
         instance.inverter_l =(primary_InverterStatus)pack->car_status(i).inverter_l();
         instance.inverter_r =(primary_InverterStatus)pack->car_status(i).inverter_r();
+        instance.car_status =(primary_CarStatus)pack->car_status(i).car_status();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->car_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1369,10 +1369,10 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     }
     for(int i = 0; i < pack->hv_cells_voltage_size(); i++){
         static primary_message_HV_CELLS_VOLTAGE_conversion instance;
+        instance.start_index =pack->hv_cells_voltage(i).start_index();
         instance.voltage_0 =pack->hv_cells_voltage(i).voltage_0();
         instance.voltage_1 =pack->hv_cells_voltage(i).voltage_1();
         instance.voltage_2 =pack->hv_cells_voltage(i).voltage_2();
-        instance.start_index =pack->hv_cells_voltage(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

@@ -4,6 +4,9 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
+CANLIB_BUILD_TIME = 1656775510
+CANLIB_BUILD_HASH = 0x631e594b
+
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
 
@@ -853,19 +856,19 @@ class message_GPS_SPEED:
 class message_LAP_COUNT:
     def __init__(
         self,
-        timestamp = None,
-        lap_count = None
+        lap_count = None,
+        timestamp = None
     ):
-        self.timestamp = uint32(timestamp)
         self.lap_count = uint8(lap_count)
+        self.timestamp = uint32(timestamp)
         self.size = 5
 
     def __eq__(self, other):
         if not isinstance(other, message_LAP_COUNT):
             return False
-        if self.timestamp != other.timestamp:
-            return False
         if self.lap_count != other.lap_count:
+            return False
+        if self.timestamp != other.timestamp:
             return False
         return True
 
@@ -877,32 +880,32 @@ class message_LAP_COUNT:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.timestamp = uint32(unpack("<I", data[0:4])[0])
         message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.timestamp = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
 class message_PEDALS_OUTPUT:
     def __init__(
         self,
+        apps = None,
         bse_front = None,
-        bse_rear = None,
-        apps = None
+        bse_rear = None
     ):
+        self.apps = uint8(apps)
         self.bse_front = uint16(bse_front)
         self.bse_rear = uint16(bse_rear)
-        self.apps = uint8(apps)
         self.size = 5
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
             return False
+        if self.apps != other.apps:
+            return False
         if self.bse_front != other.bse_front:
             return False
         if self.bse_rear != other.bse_rear:
-            return False
-        if self.apps != other.apps:
             return False
         return True
 
@@ -914,49 +917,49 @@ class message_PEDALS_OUTPUT:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.apps = uint8(unpack("<xxxxB", data[0:5])[0])
         message.bse_front = uint16(unpack("<H", data[0:2])[0])
         message.bse_rear = uint16(unpack("<xxH", data[0:4])[0])
-        message.apps = uint8(unpack("<xxxxB", data[0:5])[0])
         return message
 
 
     def convert(self) -> message_PEDALS_OUTPUT_conversion:
         conversion = message_PEDALS_OUTPUT_conversion()
+        conversion.apps = self.apps
         conversion.bse_front = ((float32(self.bse_front)) / 655.36) + 0
         conversion.bse_rear = ((float32(self.bse_rear)) / 655.36) + 0
-        conversion.apps = self.apps
         return conversion
 
 
 class message_PEDALS_OUTPUT_conversion:
     def __init__(
         self,
+        apps = None,
         bse_front = None,
-        bse_rear = None,
-        apps = None
+        bse_rear = None
     ):
+        self.apps = uint8(apps)
         self.bse_front = float32(bse_front)
         self.bse_rear = float32(bse_rear)
-        self.apps = uint8(apps)
         self.size = 5
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
             return False
+        if self.apps != other.apps:
+            return False
         if self.bse_front != other.bse_front:
             return False
         if self.bse_rear != other.bse_rear:
-            return False
-        if self.apps != other.apps:
             return False
         return True
 
     def convert_to_raw(self) -> message_PEDALS_OUTPUT:
         raw = message_PEDALS_OUTPUT()
+        raw.apps = self.apps
         raw.bse_front = uint16((self.bse_front + 0) * 655.36)
         raw.bse_rear = uint16((self.bse_rear + 0) * 655.36)
-        raw.apps = self.apps
         return raw
 
 class message_CONTROL_OUTPUT:

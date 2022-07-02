@@ -403,10 +403,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 514: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD0* proto_msg = pack->add_voltages_cellboard0();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -416,10 +416,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 546: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD1* proto_msg = pack->add_voltages_cellboard1();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -429,10 +429,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 578: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD2* proto_msg = pack->add_voltages_cellboard2();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -442,10 +442,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 610: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD3* proto_msg = pack->add_voltages_cellboard3();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -455,10 +455,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 642: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD4* proto_msg = pack->add_voltages_cellboard4();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -468,10 +468,10 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 674: {
             bms_message_VOLTAGES_conversion* msg = (bms_message_VOLTAGES_conversion*) (*map)[index].message_conversion;
             bms::VOLTAGES_CELLBOARD5* proto_msg = pack->add_voltages_cellboard5();
+            proto_msg->set_start_index(msg->start_index);
             proto_msg->set_voltage0(msg->voltage0);
             proto_msg->set_voltage1(msg->voltage1);
             proto_msg->set_voltage2(msg->voltage2);
-            proto_msg->set_start_index(msg->start_index);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -481,8 +481,8 @@ void bms_proto_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devi
         case 515: {
             bms_message_BALANCING* msg = (bms_message_BALANCING*) (*map)[index].message_raw;
             bms::BALANCING* proto_msg = pack->add_balancing();
-            proto_msg->set_cells(msg->cells);
             proto_msg->set_board_index(msg->board_index);
+            proto_msg->set_cells(msg->cells);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -715,10 +715,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard0_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard0(i).start_index();
         instance.voltage0 =pack->voltages_cellboard0(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard0(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard0(i).voltage2();
-        instance.start_index =pack->voltages_cellboard0(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard0(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -726,10 +726,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard1_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard1(i).start_index();
         instance.voltage0 =pack->voltages_cellboard1(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard1(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard1(i).voltage2();
-        instance.start_index =pack->voltages_cellboard1(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard1(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -737,10 +737,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard2_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard2(i).start_index();
         instance.voltage0 =pack->voltages_cellboard2(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard2(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard2(i).voltage2();
-        instance.start_index =pack->voltages_cellboard2(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard2(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -748,10 +748,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard3_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard3(i).start_index();
         instance.voltage0 =pack->voltages_cellboard3(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard3(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard3(i).voltage2();
-        instance.start_index =pack->voltages_cellboard3(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard3(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -759,10 +759,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard4_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard4(i).start_index();
         instance.voltage0 =pack->voltages_cellboard4(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard4(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard4(i).voltage2();
-        instance.start_index =pack->voltages_cellboard4(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard4(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -770,10 +770,10 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->voltages_cellboard5_size(); i++){
         static bms_message_VOLTAGES_conversion instance;
+        instance.start_index =pack->voltages_cellboard5(i).start_index();
         instance.voltage0 =pack->voltages_cellboard5(i).voltage0();
         instance.voltage1 =pack->voltages_cellboard5(i).voltage1();
         instance.voltage2 =pack->voltages_cellboard5(i).voltage2();
-        instance.start_index =pack->voltages_cellboard5(i).start_index();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->voltages_cellboard5(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -781,8 +781,8 @@ void bms_proto_deserialize(bms::Pack* pack, bms_proto_pack* map) {
     }
     for(int i = 0; i < pack->balancing_size(); i++){
         static bms_message_BALANCING instance;
-        instance.cells =pack->balancing(i).cells();
         instance.board_index =pack->balancing(i).board_index();
+        instance.cells =pack->balancing(i).cells();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->balancing(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

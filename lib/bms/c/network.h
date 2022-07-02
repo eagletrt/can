@@ -14,6 +14,11 @@ extern "C" {
 #include <memory.h>
 #include <stdio.h>
 
+#ifndef CANLIB_BUILD
+#define CANLIB_BUILD_TIME 1656775510
+#define CANLIB_BUILD_HASH 0x631e594b
+#endif // CANLIB_BUILD
+
 #ifndef CANLIB_ASSERTS
 #define CANLIB_ASSERTS
 
@@ -310,28 +315,28 @@ typedef struct CANLIB_PARKING {
 } bms_message_TEMPERATURES_conversion;
 
 typedef struct CANLIB_PARKING {
+    bms_uint8 start_index;
     bms_uint16 voltage0;
     bms_uint16 voltage1;
     bms_uint16 voltage2;
-    bms_uint8 start_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_VOLTAGES;
 
 typedef struct CANLIB_PARKING {
+    bms_uint8 start_index;
     bms_float32 voltage0;
     bms_float32 voltage1;
     bms_float32 voltage2;
-    bms_uint8 start_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_VOLTAGES_conversion;
 
 typedef struct CANLIB_PARKING {
-    bms_BalancingCells cells;
     bms_uint8 board_index;
+    bms_BalancingCells cells;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -558,10 +563,10 @@ int bms_fields_file_TEMPERATURES(FILE* buffer);
 
 bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
+    bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
-    bms_uint16 voltage2,
-    bms_uint8 start_index
+    bms_uint16 voltage2
 );
 bms_byte_size bms_serialize_struct_VOLTAGES(
     uint8_t* data,
@@ -586,10 +591,10 @@ void bms_conversion_to_raw_struct_VOLTAGES(
 
 void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES* raw,
+    bms_uint8 start_index,
     bms_float32 voltage0,
     bms_float32 voltage1,
-    bms_float32 voltage2,
-    bms_uint8 start_index
+    bms_float32 voltage2
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -597,10 +602,10 @@ void bms_conversion_to_raw_VOLTAGES(
 
 void bms_raw_to_conversion_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
+    bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
-    bms_uint16 voltage2,
-    bms_uint8 start_index
+    bms_uint16 voltage2
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -615,8 +620,8 @@ int bms_fields_file_VOLTAGES(FILE* buffer);
 
 bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
-    bms_BalancingCells cells,
-    bms_uint8 board_index
+    bms_uint8 board_index,
+    bms_BalancingCells cells
 );
 bms_byte_size bms_serialize_struct_BALANCING(
     uint8_t* data,
@@ -1362,10 +1367,10 @@ int bms_fields_file_TEMPERATURES(FILE* buffer) {
 
 bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
+    bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
-    bms_uint16 voltage2,
-    bms_uint8 start_index
+    bms_uint16 voltage2
 ) {
     data[0] = voltage0 & 255;
     data[1] = (voltage0 >> 8) & 255;
@@ -1411,10 +1416,10 @@ void bms_deserialize_VOLTAGES(
 
 void bms_raw_to_conversion_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
+    bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
-    bms_uint16 voltage2,
-    bms_uint8 start_index
+    bms_uint16 voltage2
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1422,10 +1427,10 @@ void bms_raw_to_conversion_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->start_index = start_index;
     conversion->voltage0 = (((bms_float32)voltage0) / 10000.0) + 0;
     conversion->voltage1 = (((bms_float32)voltage1) / 10000.0) + 0;
     conversion->voltage2 = (((bms_float32)voltage2) / 10000.0) + 0;
-    conversion->start_index = start_index;
 }
 
 void bms_raw_to_conversion_struct_VOLTAGES(
@@ -1435,18 +1440,18 @@ void bms_raw_to_conversion_struct_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->start_index = raw->start_index;
     conversion->voltage0 = (((bms_float32)raw->voltage0) / 10000.0) + 0;
     conversion->voltage1 = (((bms_float32)raw->voltage1) / 10000.0) + 0;
     conversion->voltage2 = (((bms_float32)raw->voltage2) / 10000.0) + 0;
-    conversion->start_index = raw->start_index;
 }
 
 void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES* raw,
+    bms_uint8 start_index,
     bms_float32 voltage0,
     bms_float32 voltage1,
-    bms_float32 voltage2,
-    bms_uint8 start_index
+    bms_float32 voltage2
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1454,10 +1459,10 @@ void bms_conversion_to_raw_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->start_index = start_index;
     raw->voltage0 = (bms_uint16)((voltage0 + 0) * 10000.0);
     raw->voltage1 = (bms_uint16)((voltage1 + 0) * 10000.0);
     raw->voltage2 = (bms_uint16)((voltage2 + 0) * 10000.0);
-    raw->start_index = start_index;
 }
 
 void bms_conversion_to_raw_struct_VOLTAGES(
@@ -1467,10 +1472,10 @@ void bms_conversion_to_raw_struct_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->start_index = conversion->start_index;
     raw->voltage0 = (bms_uint16)((conversion->voltage0 + 0) * 10000.0);
     raw->voltage1 = (bms_uint16)((conversion->voltage1 + 0) * 10000.0);
     raw->voltage2 = (bms_uint16)((conversion->voltage2 + 0) * 10000.0);
-    raw->start_index = conversion->start_index;
 }
 
 // ============== STRING ============== //
@@ -1480,17 +1485,17 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->start_index,
         message->voltage0,
         message->voltage1,
-        message->voltage2,
-        message->start_index
+        message->voltage2
     );
 }
 
@@ -1500,10 +1505,10 @@ int bms_fields_VOLTAGES(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "start_index" CANLIB_SEPARATOR 
         "voltage0" CANLIB_SEPARATOR 
         "voltage1" CANLIB_SEPARATOR 
-        "voltage2" CANLIB_SEPARATOR 
-        "start_index"
+        "voltage2"
     );
 }
 
@@ -1513,17 +1518,17 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->start_index,
         message->voltage0,
         message->voltage1,
-        message->voltage2,
-        message->start_index
+        message->voltage2
     );
 }
 
@@ -1533,10 +1538,10 @@ int bms_fields_file_VOLTAGES(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "start_index" CANLIB_SEPARATOR 
         "voltage0" CANLIB_SEPARATOR 
         "voltage1" CANLIB_SEPARATOR 
-        "voltage2" CANLIB_SEPARATOR 
-        "start_index"
+        "voltage2"
     );
 }
 
@@ -1544,8 +1549,8 @@ int bms_fields_file_VOLTAGES(FILE* buffer) {
 
 bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
-    bms_BalancingCells cells,
-    bms_uint8 board_index
+    bms_uint8 board_index,
+    bms_BalancingCells cells
 ) {
     data[0] = cells & 255;
     data[1] = (cells >> 8) & 255;
@@ -1589,13 +1594,13 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cells,
-        message->board_index
+        message->board_index,
+        message->cells
     );
 }
 
@@ -1605,8 +1610,8 @@ int bms_fields_BALANCING(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cells" CANLIB_SEPARATOR 
-        "board_index"
+        "board_index" CANLIB_SEPARATOR 
+        "cells"
     );
 }
 
@@ -1616,13 +1621,13 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->cells,
-        message->board_index
+        message->board_index,
+        message->cells
     );
 }
 
@@ -1632,8 +1637,8 @@ int bms_fields_file_BALANCING(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "cells" CANLIB_SEPARATOR 
-        "board_index"
+        "board_index" CANLIB_SEPARATOR 
+        "cells"
     );
 }
 

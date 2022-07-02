@@ -156,15 +156,15 @@ message GPS_SPEED {
 }
 
 message LAP_COUNT {
-    uint32 timestamp = 1;
-    uint32 lap_count = 2;
+    uint32 lap_count = 1;
+    uint32 timestamp = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message PEDALS_OUTPUT {
-    uint32 bse_front = 1;
-    uint32 bse_rear = 2;
-    uint32 apps = 3;
+    uint32 apps = 1;
+    uint32 bse_front = 2;
+    uint32 bse_rear = 3;
     uint64 _inner_timestamp = 4;
 }
 

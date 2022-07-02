@@ -4,6 +4,9 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
+CANLIB_BUILD_TIME = 1656775510
+CANLIB_BUILD_HASH = 0x631e594b
+
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
 
@@ -587,27 +590,27 @@ class message_TIMESTAMP:
 class message_SET_TLM_STATUS:
     def __init__(
         self,
-        driver = None,
-        circuit = None,
+        tlm_status = None,
         race_type = None,
-        tlm_status = None
+        driver = None,
+        circuit = None
     ):
+        self.tlm_status = Toggle(tlm_status)
+        self.race_type = RaceType(race_type)
         self.driver = uint8(driver)
         self.circuit = uint8(circuit)
-        self.race_type = RaceType(race_type)
-        self.tlm_status = Toggle(tlm_status)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_TLM_STATUS):
             return False
-        if self.driver != other.driver:
-            return False
-        if self.circuit != other.circuit:
+        if self.tlm_status != other.tlm_status:
             return False
         if self.race_type != other.race_type:
             return False
-        if self.tlm_status != other.tlm_status:
+        if self.driver != other.driver:
+            return False
+        if self.circuit != other.circuit:
             return False
         return True
 
@@ -619,38 +622,38 @@ class message_SET_TLM_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
+        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
         message.driver = uint8(unpack("<B", data[0:1])[0])
         message.circuit = uint8(unpack("<xB", data[0:2])[0])
-        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
         return message
 
 
 class message_TLM_STATUS:
     def __init__(
         self,
-        driver = None,
-        circuit = None,
+        tlm_status = None,
         race_type = None,
-        tlm_status = None
+        driver = None,
+        circuit = None
     ):
+        self.tlm_status = Toggle(tlm_status)
+        self.race_type = RaceType(race_type)
         self.driver = uint8(driver)
         self.circuit = uint8(circuit)
-        self.race_type = RaceType(race_type)
-        self.tlm_status = Toggle(tlm_status)
         self.size = 3
         self.interval = 1000
 
     def __eq__(self, other):
         if not isinstance(other, message_TLM_STATUS):
             return False
-        if self.driver != other.driver:
-            return False
-        if self.circuit != other.circuit:
+        if self.tlm_status != other.tlm_status:
             return False
         if self.race_type != other.race_type:
             return False
-        if self.tlm_status != other.tlm_status:
+        if self.driver != other.driver:
+            return False
+        if self.circuit != other.circuit:
             return False
         return True
 
@@ -662,10 +665,10 @@ class message_TLM_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
+        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
         message.driver = uint8(unpack("<B", data[0:1])[0])
         message.circuit = uint8(unpack("<xB", data[0:2])[0])
-        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
         return message
 
 
@@ -1013,19 +1016,19 @@ class message_HV_CAN_FORWARD:
 class message_HV_FANS_OVERRIDE:
     def __init__(
         self,
-        fans_speed = None,
-        fans_override = None
+        fans_override = None,
+        fans_speed = None
     ):
-        self.fans_speed = uint16(fans_speed)
         self.fans_override = Toggle(fans_override)
+        self.fans_speed = uint16(fans_speed)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_FANS_OVERRIDE):
             return False
-        if self.fans_speed != other.fans_speed:
-            return False
         if self.fans_override != other.fans_override:
+            return False
+        if self.fans_speed != other.fans_speed:
             return False
         return True
 
@@ -1037,41 +1040,41 @@ class message_HV_FANS_OVERRIDE:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         message.fans_override = Toggle((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
     def convert(self) -> message_HV_FANS_OVERRIDE_conversion:
         conversion = message_HV_FANS_OVERRIDE_conversion()
-        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
         conversion.fans_override = self.fans_override
+        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
         return conversion
 
 
 class message_HV_FANS_OVERRIDE_conversion:
     def __init__(
         self,
-        fans_speed = None,
-        fans_override = None
+        fans_override = None,
+        fans_speed = None
     ):
-        self.fans_speed = float32(fans_speed)
         self.fans_override = Toggle(fans_override)
+        self.fans_speed = float32(fans_speed)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_FANS_OVERRIDE):
             return False
-        if self.fans_speed != other.fans_speed:
-            return False
         if self.fans_override != other.fans_override:
+            return False
+        if self.fans_speed != other.fans_speed:
             return False
         return True
 
     def convert_to_raw(self) -> message_HV_FANS_OVERRIDE:
         raw = message_HV_FANS_OVERRIDE()
-        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
         raw.fans_override = self.fans_override
+        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
         return raw
 
 class message_HV_CAN_FORWARD_STATUS:
@@ -1104,19 +1107,19 @@ class message_HV_CAN_FORWARD_STATUS:
 class message_HV_FANS_OVERRIDE_STATUS:
     def __init__(
         self,
-        fans_speed = None,
-        fans_override = None
+        fans_override = None,
+        fans_speed = None
     ):
-        self.fans_speed = uint16(fans_speed)
         self.fans_override = Toggle(fans_override)
+        self.fans_speed = uint16(fans_speed)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_FANS_OVERRIDE_STATUS):
             return False
-        if self.fans_speed != other.fans_speed:
-            return False
         if self.fans_override != other.fans_override:
+            return False
+        if self.fans_speed != other.fans_speed:
             return False
         return True
 
@@ -1128,41 +1131,41 @@ class message_HV_FANS_OVERRIDE_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         message.fans_override = Toggle((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
     def convert(self) -> message_HV_FANS_OVERRIDE_STATUS_conversion:
         conversion = message_HV_FANS_OVERRIDE_STATUS_conversion()
-        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
         conversion.fans_override = self.fans_override
+        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
         return conversion
 
 
 class message_HV_FANS_OVERRIDE_STATUS_conversion:
     def __init__(
         self,
-        fans_speed = None,
-        fans_override = None
+        fans_override = None,
+        fans_speed = None
     ):
-        self.fans_speed = float32(fans_speed)
         self.fans_override = Toggle(fans_override)
+        self.fans_speed = float32(fans_speed)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_FANS_OVERRIDE_STATUS):
             return False
-        if self.fans_speed != other.fans_speed:
-            return False
         if self.fans_override != other.fans_override:
+            return False
+        if self.fans_speed != other.fans_speed:
             return False
         return True
 
     def convert_to_raw(self) -> message_HV_FANS_OVERRIDE_STATUS:
         raw = message_HV_FANS_OVERRIDE_STATUS()
-        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
         raw.fans_override = self.fans_override
+        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
         return raw
 
 class message_HV_FEEDBACKS_STATUS:
@@ -1200,23 +1203,23 @@ class message_HV_FEEDBACKS_STATUS:
 class message_HV_IMD_STATUS:
     def __init__(
         self,
-        imd_info = None,
+        imd_fault = None,
         imd_status = None,
-        imd_fault = None
+        imd_info = None
     ):
-        self.imd_info = int32(imd_info)
-        self.imd_status = ImdStatus(imd_status)
         self.imd_fault = bool(imd_fault)
+        self.imd_status = ImdStatus(imd_status)
+        self.imd_info = int32(imd_info)
         self.size = 5
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_IMD_STATUS):
             return False
-        if self.imd_info != other.imd_info:
+        if self.imd_fault != other.imd_fault:
             return False
         if self.imd_status != other.imd_status:
             return False
-        if self.imd_fault != other.imd_fault:
+        if self.imd_info != other.imd_info:
             return False
         return True
 
@@ -1228,9 +1231,9 @@ class message_HV_IMD_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.imd_info = int32(unpack("<i", data[0:4])[0])
-        message.imd_status = ImdStatus((unpack("<xxxxB", data[0:5])[0] & 224) >> 5)
         message.imd_fault = bool((unpack("<xxxxB", data[0:5])[0] & 16) >> 4)
+        message.imd_status = ImdStatus((unpack("<xxxxB", data[0:5])[0] & 224) >> 5)
+        message.imd_info = int32(unpack("<i", data[0:4])[0])
         return message
 
 
@@ -1292,20 +1295,20 @@ class message_SET_TS_STATUS:
 class message_STEER_STATUS:
     def __init__(
         self,
-        map = None,
-        traction_control = None
+        traction_control = None,
+        map = None
     ):
-        self.map = Map(map)
         self.traction_control = TractionControl(traction_control)
+        self.map = Map(map)
         self.size = 1
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_STEER_STATUS):
             return False
-        if self.map != other.map:
-            return False
         if self.traction_control != other.traction_control:
+            return False
+        if self.map != other.map:
             return False
         return True
 
@@ -1317,8 +1320,8 @@ class message_STEER_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.map = Map((unpack("<B", data[0:1])[0] & 224) >> 5)
         message.traction_control = TractionControl((unpack("<B", data[0:1])[0] & 24) >> 3)
+        message.map = Map((unpack("<B", data[0:1])[0] & 224) >> 5)
         return message
 
 
@@ -1411,24 +1414,24 @@ class message_SET_STEERING_ANGLE_RANGE:
 class message_CAR_STATUS:
     def __init__(
         self,
-        car_status = None,
         inverter_l = None,
-        inverter_r = None
+        inverter_r = None,
+        car_status = None
     ):
-        self.car_status = CarStatus(car_status)
         self.inverter_l = InverterStatus(inverter_l)
         self.inverter_r = InverterStatus(inverter_r)
+        self.car_status = CarStatus(car_status)
         self.size = 1
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CAR_STATUS):
             return False
-        if self.car_status != other.car_status:
-            return False
         if self.inverter_l != other.inverter_l:
             return False
         if self.inverter_r != other.inverter_r:
+            return False
+        if self.car_status != other.car_status:
             return False
         return True
 
@@ -1440,9 +1443,9 @@ class message_CAR_STATUS:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 224) >> 5)
         message.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 24) >> 3)
         message.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 6) >> 1)
+        message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 224) >> 5)
         return message
 
 
@@ -1993,28 +1996,28 @@ class message_MARKER:
 class message_HV_CELLS_VOLTAGE:
     def __init__(
         self,
+        start_index = None,
         voltage_0 = None,
         voltage_1 = None,
-        voltage_2 = None,
-        start_index = None
+        voltage_2 = None
     ):
+        self.start_index = uint8(start_index)
         self.voltage_0 = uint16(voltage_0)
         self.voltage_1 = uint16(voltage_1)
         self.voltage_2 = uint16(voltage_2)
-        self.start_index = uint8(start_index)
         self.size = 7
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
             return False
+        if self.start_index != other.start_index:
+            return False
         if self.voltage_0 != other.voltage_0:
             return False
         if self.voltage_1 != other.voltage_1:
             return False
         if self.voltage_2 != other.voltage_2:
-            return False
-        if self.start_index != other.start_index:
             return False
         return True
 
@@ -2026,39 +2029,41 @@ class message_HV_CELLS_VOLTAGE:
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
         message.voltage_0 = uint16(unpack("<H", data[0:2])[0])
         message.voltage_1 = uint16(unpack("<xxH", data[0:4])[0])
         message.voltage_2 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
     def convert(self) -> message_HV_CELLS_VOLTAGE_conversion:
         conversion = message_HV_CELLS_VOLTAGE_conversion()
+        conversion.start_index = self.start_index
         conversion.voltage_0 = ((float32(self.voltage_0)) / 10000.0) + 0
         conversion.voltage_1 = ((float32(self.voltage_1)) / 10000.0) + 0
         conversion.voltage_2 = ((float32(self.voltage_2)) / 10000.0) + 0
-        conversion.start_index = self.start_index
         return conversion
 
 
 class message_HV_CELLS_VOLTAGE_conversion:
     def __init__(
         self,
+        start_index = None,
         voltage_0 = None,
         voltage_1 = None,
-        voltage_2 = None,
-        start_index = None
+        voltage_2 = None
     ):
+        self.start_index = uint8(start_index)
         self.voltage_0 = float32(voltage_0)
         self.voltage_1 = float32(voltage_1)
         self.voltage_2 = float32(voltage_2)
-        self.start_index = uint8(start_index)
         self.size = 7
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_HV_CELLS_VOLTAGE):
+            return False
+        if self.start_index != other.start_index:
             return False
         if self.voltage_0 != other.voltage_0:
             return False
@@ -2066,16 +2071,14 @@ class message_HV_CELLS_VOLTAGE_conversion:
             return False
         if self.voltage_2 != other.voltage_2:
             return False
-        if self.start_index != other.start_index:
-            return False
         return True
 
     def convert_to_raw(self) -> message_HV_CELLS_VOLTAGE:
         raw = message_HV_CELLS_VOLTAGE()
+        raw.start_index = self.start_index
         raw.voltage_0 = uint16((self.voltage_0 + 0) * 10000.0)
         raw.voltage_1 = uint16((self.voltage_1 + 0) * 10000.0)
         raw.voltage_2 = uint16((self.voltage_2 + 0) * 10000.0)
-        raw.start_index = self.start_index
         return raw
 
 class message_HV_CELLS_TEMP:

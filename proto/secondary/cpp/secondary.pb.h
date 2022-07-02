@@ -3934,26 +3934,26 @@ class LAP_COUNT final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTimestampFieldNumber = 1,
-    kLapCountFieldNumber = 2,
+    kLapCountFieldNumber = 1,
+    kTimestampFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
-  // uint32 timestamp = 1;
-  void clear_timestamp();
-  uint32_t timestamp() const;
-  void set_timestamp(uint32_t value);
-  private:
-  uint32_t _internal_timestamp() const;
-  void _internal_set_timestamp(uint32_t value);
-  public:
-
-  // uint32 lap_count = 2;
+  // uint32 lap_count = 1;
   void clear_lap_count();
   uint32_t lap_count() const;
   void set_lap_count(uint32_t value);
   private:
   uint32_t _internal_lap_count() const;
   void _internal_set_lap_count(uint32_t value);
+  public:
+
+  // uint32 timestamp = 2;
+  void clear_timestamp();
+  uint32_t timestamp() const;
+  void set_timestamp(uint32_t value);
+  private:
+  uint32_t _internal_timestamp() const;
+  void _internal_set_timestamp(uint32_t value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -3972,8 +3972,8 @@ class LAP_COUNT final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t timestamp_;
   uint32_t lap_count_;
+  uint32_t timestamp_;
   uint64_t _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -4099,27 +4099,27 @@ class PEDALS_OUTPUT final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBseFrontFieldNumber = 1,
-    kBseRearFieldNumber = 2,
+    kAppsFieldNumber = 1,
+    kBseFrontFieldNumber = 2,
     kInnerTimestampFieldNumber = 4,
-    kAppsFieldNumber = 3,
+    kBseRearFieldNumber = 3,
   };
-  // uint32 bse_front = 1;
+  // uint32 apps = 1;
+  void clear_apps();
+  uint32_t apps() const;
+  void set_apps(uint32_t value);
+  private:
+  uint32_t _internal_apps() const;
+  void _internal_set_apps(uint32_t value);
+  public:
+
+  // uint32 bse_front = 2;
   void clear_bse_front();
   uint32_t bse_front() const;
   void set_bse_front(uint32_t value);
   private:
   uint32_t _internal_bse_front() const;
   void _internal_set_bse_front(uint32_t value);
-  public:
-
-  // uint32 bse_rear = 2;
-  void clear_bse_rear();
-  uint32_t bse_rear() const;
-  void set_bse_rear(uint32_t value);
-  private:
-  uint32_t _internal_bse_rear() const;
-  void _internal_set_bse_rear(uint32_t value);
   public:
 
   // uint64 _inner_timestamp = 4;
@@ -4131,13 +4131,13 @@ class PEDALS_OUTPUT final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // uint32 apps = 3;
-  void clear_apps();
-  uint32_t apps() const;
-  void set_apps(uint32_t value);
+  // uint32 bse_rear = 3;
+  void clear_bse_rear();
+  uint32_t bse_rear() const;
+  void set_bse_rear(uint32_t value);
   private:
-  uint32_t _internal_apps() const;
-  void _internal_set_apps(uint32_t value);
+  uint32_t _internal_bse_rear() const;
+  void _internal_set_bse_rear(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:secondary.PEDALS_OUTPUT)
@@ -4147,10 +4147,10 @@ class PEDALS_OUTPUT final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t bse_front_;
-  uint32_t bse_rear_;
-  uint64_t _inner_timestamp_;
   uint32_t apps_;
+  uint32_t bse_front_;
+  uint64_t _inner_timestamp_;
+  uint32_t bse_rear_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
 };
@@ -7036,27 +7036,7 @@ inline void GPS_SPEED::set__inner_timestamp(uint64_t value) {
 
 // LAP_COUNT
 
-// uint32 timestamp = 1;
-inline void LAP_COUNT::clear_timestamp() {
-  timestamp_ = 0u;
-}
-inline uint32_t LAP_COUNT::_internal_timestamp() const {
-  return timestamp_;
-}
-inline uint32_t LAP_COUNT::timestamp() const {
-  // @@protoc_insertion_point(field_get:secondary.LAP_COUNT.timestamp)
-  return _internal_timestamp();
-}
-inline void LAP_COUNT::_internal_set_timestamp(uint32_t value) {
-  
-  timestamp_ = value;
-}
-inline void LAP_COUNT::set_timestamp(uint32_t value) {
-  _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.timestamp)
-}
-
-// uint32 lap_count = 2;
+// uint32 lap_count = 1;
 inline void LAP_COUNT::clear_lap_count() {
   lap_count_ = 0u;
 }
@@ -7074,6 +7054,26 @@ inline void LAP_COUNT::_internal_set_lap_count(uint32_t value) {
 inline void LAP_COUNT::set_lap_count(uint32_t value) {
   _internal_set_lap_count(value);
   // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.lap_count)
+}
+
+// uint32 timestamp = 2;
+inline void LAP_COUNT::clear_timestamp() {
+  timestamp_ = 0u;
+}
+inline uint32_t LAP_COUNT::_internal_timestamp() const {
+  return timestamp_;
+}
+inline uint32_t LAP_COUNT::timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.LAP_COUNT.timestamp)
+  return _internal_timestamp();
+}
+inline void LAP_COUNT::_internal_set_timestamp(uint32_t value) {
+  
+  timestamp_ = value;
+}
+inline void LAP_COUNT::set_timestamp(uint32_t value) {
+  _internal_set_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.timestamp)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -7100,7 +7100,27 @@ inline void LAP_COUNT::set__inner_timestamp(uint64_t value) {
 
 // PEDALS_OUTPUT
 
-// uint32 bse_front = 1;
+// uint32 apps = 1;
+inline void PEDALS_OUTPUT::clear_apps() {
+  apps_ = 0u;
+}
+inline uint32_t PEDALS_OUTPUT::_internal_apps() const {
+  return apps_;
+}
+inline uint32_t PEDALS_OUTPUT::apps() const {
+  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.apps)
+  return _internal_apps();
+}
+inline void PEDALS_OUTPUT::_internal_set_apps(uint32_t value) {
+  
+  apps_ = value;
+}
+inline void PEDALS_OUTPUT::set_apps(uint32_t value) {
+  _internal_set_apps(value);
+  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.apps)
+}
+
+// uint32 bse_front = 2;
 inline void PEDALS_OUTPUT::clear_bse_front() {
   bse_front_ = 0u;
 }
@@ -7120,7 +7140,7 @@ inline void PEDALS_OUTPUT::set_bse_front(uint32_t value) {
   // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_front)
 }
 
-// uint32 bse_rear = 2;
+// uint32 bse_rear = 3;
 inline void PEDALS_OUTPUT::clear_bse_rear() {
   bse_rear_ = 0u;
 }
@@ -7138,26 +7158,6 @@ inline void PEDALS_OUTPUT::_internal_set_bse_rear(uint32_t value) {
 inline void PEDALS_OUTPUT::set_bse_rear(uint32_t value) {
   _internal_set_bse_rear(value);
   // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_rear)
-}
-
-// uint32 apps = 3;
-inline void PEDALS_OUTPUT::clear_apps() {
-  apps_ = 0u;
-}
-inline uint32_t PEDALS_OUTPUT::_internal_apps() const {
-  return apps_;
-}
-inline uint32_t PEDALS_OUTPUT::apps() const {
-  // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.apps)
-  return _internal_apps();
-}
-inline void PEDALS_OUTPUT::_internal_set_apps(uint32_t value) {
-  
-  apps_ = value;
-}
-inline void PEDALS_OUTPUT::set_apps(uint32_t value) {
-  _internal_set_apps(value);
-  // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.apps)
 }
 
 // uint64 _inner_timestamp = 4;

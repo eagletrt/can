@@ -100,51 +100,51 @@ message TEMPERATURES_CELLBOARD5 {
 }
 
 message VOLTAGES_CELLBOARD0 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 message VOLTAGES_CELLBOARD1 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 message VOLTAGES_CELLBOARD2 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 message VOLTAGES_CELLBOARD3 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 message VOLTAGES_CELLBOARD4 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 message VOLTAGES_CELLBOARD5 {
-    uint32 voltage0 = 1;
-    uint32 voltage1 = 2;
-    uint32 voltage2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage0 = 2;
+    uint32 voltage1 = 3;
+    uint32 voltage2 = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message BALANCING {
-    uint32 cells = 1;
-    uint32 board_index = 2;
+    uint32 board_index = 1;
+    uint32 cells = 2;
     uint64 _inner_timestamp = 3;
 }
 

@@ -130,12 +130,12 @@ struct TIMESTAMPDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TIMESTAMPDefaultTypeInternal _TIMESTAMP_default_instance_;
 PROTOBUF_CONSTEXPR SET_TLM_STATUS::SET_TLM_STATUS(
     ::_pbi::ConstantInitialized)
-  : driver_(0u)
-  , circuit_(0u)
+  : tlm_status_(0)
+
   , race_type_(0)
 
-  , tlm_status_(0)
-
+  , driver_(0u)
+  , circuit_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct SET_TLM_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SET_TLM_STATUSDefaultTypeInternal()
@@ -148,12 +148,12 @@ struct SET_TLM_STATUSDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SET_TLM_STATUSDefaultTypeInternal _SET_TLM_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR TLM_STATUS::TLM_STATUS(
     ::_pbi::ConstantInitialized)
-  : driver_(0u)
-  , circuit_(0u)
+  : tlm_status_(0)
+
   , race_type_(0)
 
-  , tlm_status_(0)
-
+  , driver_(0u)
+  , circuit_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct TLM_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR TLM_STATUSDefaultTypeInternal()
@@ -254,9 +254,9 @@ struct HV_CAN_FORWARDDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_CAN_FORWARDDefaultTypeInternal _HV_CAN_FORWARD_default_instance_;
 PROTOBUF_CONSTEXPR HV_FANS_OVERRIDE::HV_FANS_OVERRIDE(
     ::_pbi::ConstantInitialized)
-  : fans_speed_(0u)
-  , fans_override_(0)
+  : fans_override_(0)
 
+  , fans_speed_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct HV_FANS_OVERRIDEDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_FANS_OVERRIDEDefaultTypeInternal()
@@ -283,9 +283,9 @@ struct HV_CAN_FORWARD_STATUSDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_CAN_FORWARD_STATUSDefaultTypeInternal _HV_CAN_FORWARD_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR HV_FANS_OVERRIDE_STATUS::HV_FANS_OVERRIDE_STATUS(
     ::_pbi::ConstantInitialized)
-  : fans_speed_(0u)
-  , fans_override_(0)
+  : fans_override_(0)
 
+  , fans_speed_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct HV_FANS_OVERRIDE_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_FANS_OVERRIDE_STATUSDefaultTypeInternal()
@@ -312,11 +312,11 @@ struct HV_FEEDBACKS_STATUSDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HV_FEEDBACKS_STATUSDefaultTypeInternal _HV_FEEDBACKS_STATUS_default_instance_;
 PROTOBUF_CONSTEXPR HV_IMD_STATUS::HV_IMD_STATUS(
     ::_pbi::ConstantInitialized)
-  : imd_info_(0)
+  : imd_fault_(false)
   , imd_status_(0)
 
   , _inner_timestamp_(uint64_t{0u})
-  , imd_fault_(false){}
+  , imd_info_(0){}
 struct HV_IMD_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_IMD_STATUSDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -370,9 +370,9 @@ struct SET_TS_STATUS_HANDCARTDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SET_TS_STATUS_HANDCARTDefaultTypeInternal _SET_TS_STATUS_HANDCART_default_instance_;
 PROTOBUF_CONSTEXPR STEER_STATUS::STEER_STATUS(
     ::_pbi::ConstantInitialized)
-  : map_(0)
+  : traction_control_(0)
 
-  , traction_control_(0)
+  , map_(0)
 
   , _inner_timestamp_(uint64_t{0u}){}
 struct STEER_STATUSDefaultTypeInternal {
@@ -430,12 +430,12 @@ struct SET_STEERING_ANGLE_RANGEDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SET_STEERING_ANGLE_RANGEDefaultTypeInternal _SET_STEERING_ANGLE_RANGE_default_instance_;
 PROTOBUF_CONSTEXPR CAR_STATUS::CAR_STATUS(
     ::_pbi::ConstantInitialized)
-  : car_status_(0)
+  : inverter_l_(0)
 
-  , inverter_l_(0)
+  , inverter_r_(0)
 
   , _inner_timestamp_(uint64_t{0u})
-  , inverter_r_(0)
+  , car_status_(0)
 {}
 struct CAR_STATUSDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CAR_STATUSDefaultTypeInternal()
@@ -615,10 +615,10 @@ struct MARKERDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MARKERDefaultTypeInternal _MARKER_default_instance_;
 PROTOBUF_CONSTEXPR HV_CELLS_VOLTAGE::HV_CELLS_VOLTAGE(
     ::_pbi::ConstantInitialized)
-  : voltage_0_(0u)
+  : start_index_(0u)
+  , voltage_0_(0u)
   , voltage_1_(0u)
   , voltage_2_(0u)
-  , start_index_(0u)
   , _inner_timestamp_(uint64_t{0u}){}
 struct HV_CELLS_VOLTAGEDefaultTypeInternal {
   PROTOBUF_CONSTEXPR HV_CELLS_VOLTAGEDefaultTypeInternal()
@@ -1239,10 +1239,10 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, tlm_status_),
+  PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, race_type_),
   PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, driver_),
   PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, circuit_),
-  PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, race_type_),
-  PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, tlm_status_),
   PROTOBUF_FIELD_OFFSET(::primary::SET_TLM_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, _internal_metadata_),
@@ -1250,10 +1250,10 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, tlm_status_),
+  PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, race_type_),
   PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, driver_),
   PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, circuit_),
-  PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, race_type_),
-  PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, tlm_status_),
   PROTOBUF_FIELD_OFFSET(::primary::TLM_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::STEER_SYSTEM_STATUS, _internal_metadata_),
@@ -1318,8 +1318,8 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE, fans_speed_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE, fans_override_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE, fans_speed_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::HV_CAN_FORWARD_STATUS, _internal_metadata_),
@@ -1335,8 +1335,8 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, fans_speed_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, fans_override_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, fans_speed_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_FANS_OVERRIDE_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::HV_FEEDBACKS_STATUS, _internal_metadata_),
@@ -1353,9 +1353,9 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, imd_info_),
-  PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, imd_status_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, imd_fault_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, imd_status_),
+  PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, imd_info_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_IMD_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::TS_STATUS, _internal_metadata_),
@@ -1387,8 +1387,8 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::STEER_STATUS, map_),
   PROTOBUF_FIELD_OFFSET(::primary::STEER_STATUS, traction_control_),
+  PROTOBUF_FIELD_OFFSET(::primary::STEER_STATUS, map_),
   PROTOBUF_FIELD_OFFSET(::primary::STEER_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::SET_CAR_STATUS, _internal_metadata_),
@@ -1421,9 +1421,9 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, car_status_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, inverter_l_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, inverter_r_),
+  PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, car_status_),
   PROTOBUF_FIELD_OFFSET(::primary::CAR_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::DAS_ERRORS, _internal_metadata_),
@@ -1534,10 +1534,10 @@ const uint32_t TableStruct_primary_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, start_index_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_0_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_1_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, voltage_2_),
-  PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, start_index_),
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_VOLTAGE, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::HV_CELLS_TEMP, _internal_metadata_),
@@ -2074,13 +2074,13 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "ersion\030\001 \001(\r\022\027\n\017cancicd_version\030\002 \001(\r\022\030\n"
   "\020_inner_timestamp\030\003 \001(\004\"8\n\tTIMESTAMP\022\021\n\t"
   "timestamp\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 \001("
-  "\004\"\226\001\n\016SET_TLM_STATUS\022\016\n\006driver\030\001 \001(\r\022\017\n\007"
-  "circuit\030\002 \001(\r\022$\n\trace_type\030\003 \001(\0162\021.prima"
-  "ry.RaceType\022#\n\ntlm_status\030\004 \001(\0162\017.primar"
-  "y.Toggle\022\030\n\020_inner_timestamp\030\005 \001(\004\"\222\001\n\nT"
-  "LM_STATUS\022\016\n\006driver\030\001 \001(\r\022\017\n\007circuit\030\002 \001"
-  "(\r\022$\n\trace_type\030\003 \001(\0162\021.primary.RaceType"
-  "\022#\n\ntlm_status\030\004 \001(\0162\017.primary.Toggle\022\030\n"
+  "\004\"\226\001\n\016SET_TLM_STATUS\022#\n\ntlm_status\030\001 \001(\016"
+  "2\017.primary.Toggle\022$\n\trace_type\030\002 \001(\0162\021.p"
+  "rimary.RaceType\022\016\n\006driver\030\003 \001(\r\022\017\n\007circu"
+  "it\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"\222\001\n\nT"
+  "LM_STATUS\022#\n\ntlm_status\030\001 \001(\0162\017.primary."
+  "Toggle\022$\n\trace_type\030\002 \001(\0162\021.primary.Race"
+  "Type\022\016\n\006driver\030\003 \001(\r\022\017\n\007circuit\030\004 \001(\r\022\030\n"
   "\020_inner_timestamp\030\005 \001(\004\"A\n\023STEER_SYSTEM_"
   "STATUS\022\020\n\010soc_temp\030\001 \001(\r\022\030\n\020_inner_times"
   "tamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAGE\022\024\n\014pack_voltag"
@@ -2096,28 +2096,28 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "timestamp\030\003 \001(\004\"T\n\016HV_CAN_FORWARD\022(\n\017can"
   "_forward_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
   "inner_timestamp\030\002 \001(\004\"h\n\020HV_FANS_OVERRID"
-  "E\022\022\n\nfans_speed\030\001 \001(\r\022&\n\rfans_override\030\002"
-  " \001(\0162\017.primary.Toggle\022\030\n\020_inner_timestam"
+  "E\022&\n\rfans_override\030\001 \001(\0162\017.primary.Toggl"
+  "e\022\022\n\nfans_speed\030\002 \001(\r\022\030\n\020_inner_timestam"
   "p\030\003 \001(\004\"^\n\025HV_CAN_FORWARD_STATUS\022+\n\022can_"
   "forward_status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
   "\020_inner_timestamp\030\002 \001(\004\"o\n\027HV_FANS_OVERR"
-  "IDE_STATUS\022\022\n\nfans_speed\030\001 \001(\r\022&\n\rfans_o"
-  "verride\030\002 \001(\0162\017.primary.Toggle\022\030\n\020_inner"
+  "IDE_STATUS\022&\n\rfans_override\030\001 \001(\0162\017.prim"
+  "ary.Toggle\022\022\n\nfans_speed\030\002 \001(\r\022\030\n\020_inner"
   "_timestamp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_STATUS\022"
   "\030\n\020feedbacks_status\030\001 \001(\r\022\032\n\022is_circuitr"
   "y_error\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\""
-  "v\n\rHV_IMD_STATUS\022\020\n\010imd_info\030\001 \001(\021\022&\n\nim"
-  "d_status\030\002 \001(\0162\022.primary.ImdStatus\022\021\n\tim"
-  "d_fault\030\003 \001(\010\022\030\n\020_inner_timestamp\030\004 \001(\004\""
+  "v\n\rHV_IMD_STATUS\022\021\n\timd_fault\030\001 \001(\010\022&\n\ni"
+  "md_status\030\002 \001(\0162\022.primary.ImdStatus\022\020\n\010i"
+  "md_info\030\003 \001(\021\022\030\n\020_inner_timestamp\030\004 \001(\004\""
   "K\n\tTS_STATUS\022$\n\tts_status\030\001 \001(\0162\021.primar"
   "y.TsStatus\022\030\n\020_inner_timestamp\030\002 \001(\004\"U\n\021"
   "SET_TS_STATUS_DAS\022&\n\rts_status_set\030\001 \001(\016"
   "2\017.primary.Toggle\022\030\n\020_inner_timestamp\030\002 "
   "\001(\004\"Z\n\026SET_TS_STATUS_HANDCART\022&\n\rts_stat"
   "us_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_"
-  "timestamp\030\002 \001(\004\"w\n\014STEER_STATUS\022\031\n\003map\030\001"
-  " \001(\0162\014.primary.Map\0222\n\020traction_control\030\002"
-  " \001(\0162\030.primary.TractionControl\022\030\n\020_inner"
+  "timestamp\030\002 \001(\004\"w\n\014STEER_STATUS\0222\n\020tract"
+  "ion_control\030\001 \001(\0162\030.primary.TractionCont"
+  "rol\022\031\n\003map\030\002 \001(\0162\014.primary.Map\022\030\n\020_inner"
   "_timestamp\030\003 \001(\004\"Y\n\016SET_CAR_STATUS\022-\n\016ca"
   "r_status_set\030\001 \001(\0162\025.primary.SetCarStatu"
   "s\022\030\n\020_inner_timestamp\030\002 \001(\004\"j\n\020SET_PEDAL"
@@ -2125,10 +2125,10 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\n\005pedal\030\002 \001(\0162\016.primary.Pedal\022\030\n\020_inner_"
   "timestamp\030\003 \001(\004\"S\n\030SET_STEERING_ANGLE_RA"
   "NGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\030\n\020_i"
-  "nner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022&\n\nc"
-  "ar_status\030\001 \001(\0162\022.primary.CarStatus\022+\n\ni"
-  "nverter_l\030\002 \001(\0162\027.primary.InverterStatus"
-  "\022+\n\ninverter_r\030\003 \001(\0162\027.primary.InverterS"
+  "nner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022+\n\ni"
+  "nverter_l\030\001 \001(\0162\027.primary.InverterStatus"
+  "\022+\n\ninverter_r\030\002 \001(\0162\027.primary.InverterS"
+  "tatus\022&\n\ncar_status\030\003 \001(\0162\022.primary.CarS"
   "tatus\022\030\n\020_inner_timestamp\030\004 \001(\004\"9\n\nDAS_E"
   "RRORS\022\021\n\tdas_error\030\001 \001(\r\022\030\n\020_inner_times"
   "tamp\030\002 \001(\004\"7\n\nLV_CURRENT\022\017\n\007current\030\001 \001("
@@ -2155,9 +2155,9 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "stamp\030\002 \001(\004\"J\n\017SHUTDOWN_STATUS\022\r\n\005input\030"
   "\001 \001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_inner_timestam"
   "p\030\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inner_timestamp\030\001 "
-  "\001(\004\"z\n\020HV_CELLS_VOLTAGE\022\021\n\tvoltage_0\030\001 \001"
-  "(\r\022\021\n\tvoltage_1\030\002 \001(\r\022\021\n\tvoltage_2\030\003 \001(\r"
-  "\022\023\n\013start_index\030\004 \001(\r\022\030\n\020_inner_timestam"
+  "\001(\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n\013start_index\030\001"
+  " \001(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n\tvoltage_1\030\003 \001"
+  "(\r\022\021\n\tvoltage_2\030\004 \001(\r\022\030\n\020_inner_timestam"
   "p\030\005 \001(\004\"\256\001\n\rHV_CELLS_TEMP\022\023\n\013start_index"
   "\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\r\022\016\n\006temp_1\030\003 \001(\r\022\016"
   "\n\006temp_2\030\004 \001(\r\022\016\n\006temp_3\030\005 \001(\r\022\016\n\006temp_4"
@@ -4245,17 +4245,17 @@ SET_TLM_STATUS::SET_TLM_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 SET_TLM_STATUS::SET_TLM_STATUS(const SET_TLM_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&driver_, &from.driver_,
+  ::memcpy(&tlm_status_, &from.tlm_status_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.SET_TLM_STATUS)
 }
 
 inline void SET_TLM_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&driver_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&tlm_status_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
 }
 
 SET_TLM_STATUS::~SET_TLM_STATUS() {
@@ -4281,9 +4281,9 @@ void SET_TLM_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&driver_, 0, static_cast<size_t>(
+  ::memset(&tlm_status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4293,37 +4293,37 @@ const char* SET_TLM_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 driver = 1;
+      // .primary.Toggle tlm_status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          driver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+          _internal_set_tlm_status(static_cast<::primary::Toggle>(val));
         } else
           goto handle_unusual;
         continue;
-      // uint32 circuit = 2;
+      // .primary.RaceType race_type = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          circuit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.RaceType race_type = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_race_type(static_cast<::primary::RaceType>(val));
         } else
           goto handle_unusual;
         continue;
-      // .primary.Toggle tlm_status = 4;
+      // uint32 driver = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          driver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 circuit = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          circuit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-          _internal_set_tlm_status(static_cast<::primary::Toggle>(val));
         } else
           goto handle_unusual;
         continue;
@@ -4364,30 +4364,30 @@ uint8_t* SET_TLM_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 driver = 1;
-  if (this->_internal_driver() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_driver(), target);
-  }
-
-  // uint32 circuit = 2;
-  if (this->_internal_circuit() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_circuit(), target);
-  }
-
-  // .primary.RaceType race_type = 3;
-  if (this->_internal_race_type() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_race_type(), target);
-  }
-
-  // .primary.Toggle tlm_status = 4;
+  // .primary.Toggle tlm_status = 1;
   if (this->_internal_tlm_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_tlm_status(), target);
+      1, this->_internal_tlm_status(), target);
+  }
+
+  // .primary.RaceType race_type = 2;
+  if (this->_internal_race_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_race_type(), target);
+  }
+
+  // uint32 driver = 3;
+  if (this->_internal_driver() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_driver(), target);
+  }
+
+  // uint32 circuit = 4;
+  if (this->_internal_circuit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_circuit(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4412,26 +4412,26 @@ size_t SET_TLM_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 driver = 1;
-  if (this->_internal_driver() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_driver());
+  // .primary.Toggle tlm_status = 1;
+  if (this->_internal_tlm_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_tlm_status());
   }
 
-  // uint32 circuit = 2;
-  if (this->_internal_circuit() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_circuit());
-  }
-
-  // .primary.RaceType race_type = 3;
+  // .primary.RaceType race_type = 2;
   if (this->_internal_race_type() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_race_type());
   }
 
-  // .primary.Toggle tlm_status = 4;
-  if (this->_internal_tlm_status() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_tlm_status());
+  // uint32 driver = 3;
+  if (this->_internal_driver() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_driver());
+  }
+
+  // uint32 circuit = 4;
+  if (this->_internal_circuit() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_circuit());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4461,17 +4461,17 @@ void SET_TLM_STATUS::MergeFrom(const SET_TLM_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_tlm_status() != 0) {
+    _internal_set_tlm_status(from._internal_tlm_status());
+  }
+  if (from._internal_race_type() != 0) {
+    _internal_set_race_type(from._internal_race_type());
+  }
   if (from._internal_driver() != 0) {
     _internal_set_driver(from._internal_driver());
   }
   if (from._internal_circuit() != 0) {
     _internal_set_circuit(from._internal_circuit());
-  }
-  if (from._internal_race_type() != 0) {
-    _internal_set_race_type(from._internal_race_type());
-  }
-  if (from._internal_tlm_status() != 0) {
-    _internal_set_tlm_status(from._internal_tlm_status());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -4496,9 +4496,9 @@ void SET_TLM_STATUS::InternalSwap(SET_TLM_STATUS* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SET_TLM_STATUS, _inner_timestamp_)
       + sizeof(SET_TLM_STATUS::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(SET_TLM_STATUS, driver_)>(
-          reinterpret_cast<char*>(&driver_),
-          reinterpret_cast<char*>(&other->driver_));
+      - PROTOBUF_FIELD_OFFSET(SET_TLM_STATUS, tlm_status_)>(
+          reinterpret_cast<char*>(&tlm_status_),
+          reinterpret_cast<char*>(&other->tlm_status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SET_TLM_STATUS::GetMetadata() const {
@@ -4522,17 +4522,17 @@ TLM_STATUS::TLM_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TLM_STATUS::TLM_STATUS(const TLM_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&driver_, &from.driver_,
+  ::memcpy(&tlm_status_, &from.tlm_status_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.TLM_STATUS)
 }
 
 inline void TLM_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&driver_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&tlm_status_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
 }
 
 TLM_STATUS::~TLM_STATUS() {
@@ -4558,9 +4558,9 @@ void TLM_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&driver_, 0, static_cast<size_t>(
+  ::memset(&tlm_status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&driver_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4570,37 +4570,37 @@ const char* TLM_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 driver = 1;
+      // .primary.Toggle tlm_status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          driver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+          _internal_set_tlm_status(static_cast<::primary::Toggle>(val));
         } else
           goto handle_unusual;
         continue;
-      // uint32 circuit = 2;
+      // .primary.RaceType race_type = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          circuit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.RaceType race_type = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_race_type(static_cast<::primary::RaceType>(val));
         } else
           goto handle_unusual;
         continue;
-      // .primary.Toggle tlm_status = 4;
+      // uint32 driver = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          driver_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 circuit = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          circuit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-          _internal_set_tlm_status(static_cast<::primary::Toggle>(val));
         } else
           goto handle_unusual;
         continue;
@@ -4641,30 +4641,30 @@ uint8_t* TLM_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 driver = 1;
-  if (this->_internal_driver() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_driver(), target);
-  }
-
-  // uint32 circuit = 2;
-  if (this->_internal_circuit() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_circuit(), target);
-  }
-
-  // .primary.RaceType race_type = 3;
-  if (this->_internal_race_type() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_race_type(), target);
-  }
-
-  // .primary.Toggle tlm_status = 4;
+  // .primary.Toggle tlm_status = 1;
   if (this->_internal_tlm_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_tlm_status(), target);
+      1, this->_internal_tlm_status(), target);
+  }
+
+  // .primary.RaceType race_type = 2;
+  if (this->_internal_race_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_race_type(), target);
+  }
+
+  // uint32 driver = 3;
+  if (this->_internal_driver() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_driver(), target);
+  }
+
+  // uint32 circuit = 4;
+  if (this->_internal_circuit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_circuit(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4689,26 +4689,26 @@ size_t TLM_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 driver = 1;
-  if (this->_internal_driver() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_driver());
+  // .primary.Toggle tlm_status = 1;
+  if (this->_internal_tlm_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_tlm_status());
   }
 
-  // uint32 circuit = 2;
-  if (this->_internal_circuit() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_circuit());
-  }
-
-  // .primary.RaceType race_type = 3;
+  // .primary.RaceType race_type = 2;
   if (this->_internal_race_type() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_race_type());
   }
 
-  // .primary.Toggle tlm_status = 4;
-  if (this->_internal_tlm_status() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_tlm_status());
+  // uint32 driver = 3;
+  if (this->_internal_driver() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_driver());
+  }
+
+  // uint32 circuit = 4;
+  if (this->_internal_circuit() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_circuit());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4738,17 +4738,17 @@ void TLM_STATUS::MergeFrom(const TLM_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_tlm_status() != 0) {
+    _internal_set_tlm_status(from._internal_tlm_status());
+  }
+  if (from._internal_race_type() != 0) {
+    _internal_set_race_type(from._internal_race_type());
+  }
   if (from._internal_driver() != 0) {
     _internal_set_driver(from._internal_driver());
   }
   if (from._internal_circuit() != 0) {
     _internal_set_circuit(from._internal_circuit());
-  }
-  if (from._internal_race_type() != 0) {
-    _internal_set_race_type(from._internal_race_type());
-  }
-  if (from._internal_tlm_status() != 0) {
-    _internal_set_tlm_status(from._internal_tlm_status());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -4773,9 +4773,9 @@ void TLM_STATUS::InternalSwap(TLM_STATUS* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(TLM_STATUS, _inner_timestamp_)
       + sizeof(TLM_STATUS::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(TLM_STATUS, driver_)>(
-          reinterpret_cast<char*>(&driver_),
-          reinterpret_cast<char*>(&other->driver_));
+      - PROTOBUF_FIELD_OFFSET(TLM_STATUS, tlm_status_)>(
+          reinterpret_cast<char*>(&tlm_status_),
+          reinterpret_cast<char*>(&other->tlm_status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TLM_STATUS::GetMetadata() const {
@@ -6230,17 +6230,17 @@ HV_FANS_OVERRIDE::HV_FANS_OVERRIDE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HV_FANS_OVERRIDE::HV_FANS_OVERRIDE(const HV_FANS_OVERRIDE& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&fans_speed_, &from.fans_speed_,
+  ::memcpy(&fans_override_, &from.fans_override_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_FANS_OVERRIDE)
 }
 
 inline void HV_FANS_OVERRIDE::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&fans_speed_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&fans_override_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
 }
 
 HV_FANS_OVERRIDE::~HV_FANS_OVERRIDE() {
@@ -6266,9 +6266,9 @@ void HV_FANS_OVERRIDE::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&fans_speed_, 0, static_cast<size_t>(
+  ::memset(&fans_override_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6278,20 +6278,20 @@ const char* HV_FANS_OVERRIDE::_InternalParse(const char* ptr, ::_pbi::ParseConte
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 fans_speed = 1;
+      // .primary.Toggle fans_override = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          fans_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.Toggle fans_override = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_fans_override(static_cast<::primary::Toggle>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 fans_speed = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          fans_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -6332,17 +6332,17 @@ uint8_t* HV_FANS_OVERRIDE::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 fans_speed = 1;
-  if (this->_internal_fans_speed() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_fans_speed(), target);
-  }
-
-  // .primary.Toggle fans_override = 2;
+  // .primary.Toggle fans_override = 1;
   if (this->_internal_fans_override() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_fans_override(), target);
+      1, this->_internal_fans_override(), target);
+  }
+
+  // uint32 fans_speed = 2;
+  if (this->_internal_fans_speed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fans_speed(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6367,15 +6367,15 @@ size_t HV_FANS_OVERRIDE::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 fans_speed = 1;
-  if (this->_internal_fans_speed() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fans_speed());
-  }
-
-  // .primary.Toggle fans_override = 2;
+  // .primary.Toggle fans_override = 1;
   if (this->_internal_fans_override() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_fans_override());
+  }
+
+  // uint32 fans_speed = 2;
+  if (this->_internal_fans_speed() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fans_speed());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6405,11 +6405,11 @@ void HV_FANS_OVERRIDE::MergeFrom(const HV_FANS_OVERRIDE& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_fans_speed() != 0) {
-    _internal_set_fans_speed(from._internal_fans_speed());
-  }
   if (from._internal_fans_override() != 0) {
     _internal_set_fans_override(from._internal_fans_override());
+  }
+  if (from._internal_fans_speed() != 0) {
+    _internal_set_fans_speed(from._internal_fans_speed());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -6434,9 +6434,9 @@ void HV_FANS_OVERRIDE::InternalSwap(HV_FANS_OVERRIDE* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE, _inner_timestamp_)
       + sizeof(HV_FANS_OVERRIDE::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE, fans_speed_)>(
-          reinterpret_cast<char*>(&fans_speed_),
-          reinterpret_cast<char*>(&other->fans_speed_));
+      - PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE, fans_override_)>(
+          reinterpret_cast<char*>(&fans_override_),
+          reinterpret_cast<char*>(&other->fans_override_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_FANS_OVERRIDE::GetMetadata() const {
@@ -6668,17 +6668,17 @@ HV_FANS_OVERRIDE_STATUS::HV_FANS_OVERRIDE_STATUS(::PROTOBUF_NAMESPACE_ID::Arena*
 HV_FANS_OVERRIDE_STATUS::HV_FANS_OVERRIDE_STATUS(const HV_FANS_OVERRIDE_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&fans_speed_, &from.fans_speed_,
+  ::memcpy(&fans_override_, &from.fans_override_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_FANS_OVERRIDE_STATUS)
 }
 
 inline void HV_FANS_OVERRIDE_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&fans_speed_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&fans_override_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
 }
 
 HV_FANS_OVERRIDE_STATUS::~HV_FANS_OVERRIDE_STATUS() {
@@ -6704,9 +6704,9 @@ void HV_FANS_OVERRIDE_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&fans_speed_, 0, static_cast<size_t>(
+  ::memset(&fans_override_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&fans_speed_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&fans_override_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6716,20 +6716,20 @@ const char* HV_FANS_OVERRIDE_STATUS::_InternalParse(const char* ptr, ::_pbi::Par
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 fans_speed = 1;
+      // .primary.Toggle fans_override = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          fans_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.Toggle fans_override = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_fans_override(static_cast<::primary::Toggle>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 fans_speed = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          fans_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -6770,17 +6770,17 @@ uint8_t* HV_FANS_OVERRIDE_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 fans_speed = 1;
-  if (this->_internal_fans_speed() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_fans_speed(), target);
-  }
-
-  // .primary.Toggle fans_override = 2;
+  // .primary.Toggle fans_override = 1;
   if (this->_internal_fans_override() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_fans_override(), target);
+      1, this->_internal_fans_override(), target);
+  }
+
+  // uint32 fans_speed = 2;
+  if (this->_internal_fans_speed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fans_speed(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6805,15 +6805,15 @@ size_t HV_FANS_OVERRIDE_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 fans_speed = 1;
-  if (this->_internal_fans_speed() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fans_speed());
-  }
-
-  // .primary.Toggle fans_override = 2;
+  // .primary.Toggle fans_override = 1;
   if (this->_internal_fans_override() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_fans_override());
+  }
+
+  // uint32 fans_speed = 2;
+  if (this->_internal_fans_speed() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fans_speed());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -6843,11 +6843,11 @@ void HV_FANS_OVERRIDE_STATUS::MergeFrom(const HV_FANS_OVERRIDE_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_fans_speed() != 0) {
-    _internal_set_fans_speed(from._internal_fans_speed());
-  }
   if (from._internal_fans_override() != 0) {
     _internal_set_fans_override(from._internal_fans_override());
+  }
+  if (from._internal_fans_speed() != 0) {
+    _internal_set_fans_speed(from._internal_fans_speed());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -6872,9 +6872,9 @@ void HV_FANS_OVERRIDE_STATUS::InternalSwap(HV_FANS_OVERRIDE_STATUS* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE_STATUS, _inner_timestamp_)
       + sizeof(HV_FANS_OVERRIDE_STATUS::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE_STATUS, fans_speed_)>(
-          reinterpret_cast<char*>(&fans_speed_),
-          reinterpret_cast<char*>(&other->fans_speed_));
+      - PROTOBUF_FIELD_OFFSET(HV_FANS_OVERRIDE_STATUS, fans_override_)>(
+          reinterpret_cast<char*>(&fans_override_),
+          reinterpret_cast<char*>(&other->fans_override_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_FANS_OVERRIDE_STATUS::GetMetadata() const {
@@ -7125,17 +7125,17 @@ HV_IMD_STATUS::HV_IMD_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HV_IMD_STATUS::HV_IMD_STATUS(const HV_IMD_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&imd_info_, &from.imd_info_,
-    static_cast<size_t>(reinterpret_cast<char*>(&imd_fault_) -
-    reinterpret_cast<char*>(&imd_info_)) + sizeof(imd_fault_));
+  ::memcpy(&imd_fault_, &from.imd_fault_,
+    static_cast<size_t>(reinterpret_cast<char*>(&imd_info_) -
+    reinterpret_cast<char*>(&imd_fault_)) + sizeof(imd_info_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_IMD_STATUS)
 }
 
 inline void HV_IMD_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&imd_info_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&imd_fault_) -
-    reinterpret_cast<char*>(&imd_info_)) + sizeof(imd_fault_));
+    reinterpret_cast<char*>(&imd_fault_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&imd_info_) -
+    reinterpret_cast<char*>(&imd_fault_)) + sizeof(imd_info_));
 }
 
 HV_IMD_STATUS::~HV_IMD_STATUS() {
@@ -7161,9 +7161,9 @@ void HV_IMD_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&imd_info_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&imd_fault_) -
-      reinterpret_cast<char*>(&imd_info_)) + sizeof(imd_fault_));
+  ::memset(&imd_fault_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&imd_info_) -
+      reinterpret_cast<char*>(&imd_fault_)) + sizeof(imd_info_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7173,10 +7173,10 @@ const char* HV_IMD_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // sint32 imd_info = 1;
+      // bool imd_fault = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          imd_info_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
+          imd_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7190,10 +7190,10 @@ const char* HV_IMD_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext*
         } else
           goto handle_unusual;
         continue;
-      // bool imd_fault = 3;
+      // sint32 imd_info = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          imd_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          imd_info_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -7235,10 +7235,10 @@ uint8_t* HV_IMD_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 imd_info = 1;
-  if (this->_internal_imd_info() != 0) {
+  // bool imd_fault = 1;
+  if (this->_internal_imd_fault() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_imd_info(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_imd_fault(), target);
   }
 
   // .primary.ImdStatus imd_status = 2;
@@ -7248,10 +7248,10 @@ uint8_t* HV_IMD_STATUS::_InternalSerialize(
       2, this->_internal_imd_status(), target);
   }
 
-  // bool imd_fault = 3;
-  if (this->_internal_imd_fault() != 0) {
+  // sint32 imd_info = 3;
+  if (this->_internal_imd_info() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_imd_fault(), target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(3, this->_internal_imd_info(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -7276,9 +7276,9 @@ size_t HV_IMD_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // sint32 imd_info = 1;
-  if (this->_internal_imd_info() != 0) {
-    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_imd_info());
+  // bool imd_fault = 1;
+  if (this->_internal_imd_fault() != 0) {
+    total_size += 1 + 1;
   }
 
   // .primary.ImdStatus imd_status = 2;
@@ -7292,9 +7292,9 @@ size_t HV_IMD_STATUS::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
   }
 
-  // bool imd_fault = 3;
-  if (this->_internal_imd_fault() != 0) {
-    total_size += 1 + 1;
+  // sint32 imd_info = 3;
+  if (this->_internal_imd_info() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_imd_info());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -7319,8 +7319,8 @@ void HV_IMD_STATUS::MergeFrom(const HV_IMD_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_imd_info() != 0) {
-    _internal_set_imd_info(from._internal_imd_info());
+  if (from._internal_imd_fault() != 0) {
+    _internal_set_imd_fault(from._internal_imd_fault());
   }
   if (from._internal_imd_status() != 0) {
     _internal_set_imd_status(from._internal_imd_status());
@@ -7328,8 +7328,8 @@ void HV_IMD_STATUS::MergeFrom(const HV_IMD_STATUS& from) {
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from._internal_imd_fault() != 0) {
-    _internal_set_imd_fault(from._internal_imd_fault());
+  if (from._internal_imd_info() != 0) {
+    _internal_set_imd_info(from._internal_imd_info());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7349,11 +7349,11 @@ void HV_IMD_STATUS::InternalSwap(HV_IMD_STATUS* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(HV_IMD_STATUS, imd_fault_)
-      + sizeof(HV_IMD_STATUS::imd_fault_)
-      - PROTOBUF_FIELD_OFFSET(HV_IMD_STATUS, imd_info_)>(
-          reinterpret_cast<char*>(&imd_info_),
-          reinterpret_cast<char*>(&other->imd_info_));
+      PROTOBUF_FIELD_OFFSET(HV_IMD_STATUS, imd_info_)
+      + sizeof(HV_IMD_STATUS::imd_info_)
+      - PROTOBUF_FIELD_OFFSET(HV_IMD_STATUS, imd_fault_)>(
+          reinterpret_cast<char*>(&imd_fault_),
+          reinterpret_cast<char*>(&other->imd_fault_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_IMD_STATUS::GetMetadata() const {
@@ -8001,17 +8001,17 @@ STEER_STATUS::STEER_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 STEER_STATUS::STEER_STATUS(const STEER_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&map_, &from.map_,
+  ::memcpy(&traction_control_, &from.traction_control_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&map_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&traction_control_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.STEER_STATUS)
 }
 
 inline void STEER_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&map_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&traction_control_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&map_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&traction_control_)) + sizeof(_inner_timestamp_));
 }
 
 STEER_STATUS::~STEER_STATUS() {
@@ -8037,9 +8037,9 @@ void STEER_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&map_, 0, static_cast<size_t>(
+  ::memset(&traction_control_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&map_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&traction_control_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8049,21 +8049,21 @@ const char* STEER_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .primary.Map map = 1;
+      // .primary.TractionControl traction_control = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_map(static_cast<::primary::Map>(val));
+          _internal_set_traction_control(static_cast<::primary::TractionControl>(val));
         } else
           goto handle_unusual;
         continue;
-      // .primary.TractionControl traction_control = 2;
+      // .primary.Map map = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_traction_control(static_cast<::primary::TractionControl>(val));
+          _internal_set_map(static_cast<::primary::Map>(val));
         } else
           goto handle_unusual;
         continue;
@@ -8104,18 +8104,18 @@ uint8_t* STEER_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .primary.Map map = 1;
-  if (this->_internal_map() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_map(), target);
-  }
-
-  // .primary.TractionControl traction_control = 2;
+  // .primary.TractionControl traction_control = 1;
   if (this->_internal_traction_control() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_traction_control(), target);
+      1, this->_internal_traction_control(), target);
+  }
+
+  // .primary.Map map = 2;
+  if (this->_internal_map() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_map(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8140,16 +8140,16 @@ size_t STEER_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .primary.Map map = 1;
-  if (this->_internal_map() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_map());
-  }
-
-  // .primary.TractionControl traction_control = 2;
+  // .primary.TractionControl traction_control = 1;
   if (this->_internal_traction_control() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_traction_control());
+  }
+
+  // .primary.Map map = 2;
+  if (this->_internal_map() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_map());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8179,11 +8179,11 @@ void STEER_STATUS::MergeFrom(const STEER_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_map() != 0) {
-    _internal_set_map(from._internal_map());
-  }
   if (from._internal_traction_control() != 0) {
     _internal_set_traction_control(from._internal_traction_control());
+  }
+  if (from._internal_map() != 0) {
+    _internal_set_map(from._internal_map());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -8208,9 +8208,9 @@ void STEER_STATUS::InternalSwap(STEER_STATUS* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(STEER_STATUS, _inner_timestamp_)
       + sizeof(STEER_STATUS::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(STEER_STATUS, map_)>(
-          reinterpret_cast<char*>(&map_),
-          reinterpret_cast<char*>(&other->map_));
+      - PROTOBUF_FIELD_OFFSET(STEER_STATUS, traction_control_)>(
+          reinterpret_cast<char*>(&traction_control_),
+          reinterpret_cast<char*>(&other->traction_control_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata STEER_STATUS::GetMetadata() const {
@@ -8883,17 +8883,17 @@ CAR_STATUS::CAR_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 CAR_STATUS::CAR_STATUS(const CAR_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&car_status_, &from.car_status_,
-    static_cast<size_t>(reinterpret_cast<char*>(&inverter_r_) -
-    reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
+  ::memcpy(&inverter_l_, &from.inverter_l_,
+    static_cast<size_t>(reinterpret_cast<char*>(&car_status_) -
+    reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
   // @@protoc_insertion_point(copy_constructor:primary.CAR_STATUS)
 }
 
 inline void CAR_STATUS::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&car_status_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&inverter_r_) -
-    reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
+    reinterpret_cast<char*>(&inverter_l_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&car_status_) -
+    reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
 }
 
 CAR_STATUS::~CAR_STATUS() {
@@ -8919,9 +8919,9 @@ void CAR_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&car_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&inverter_r_) -
-      reinterpret_cast<char*>(&car_status_)) + sizeof(inverter_r_));
+  ::memset(&inverter_l_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&car_status_) -
+      reinterpret_cast<char*>(&inverter_l_)) + sizeof(car_status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8931,30 +8931,30 @@ const char* CAR_STATUS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .primary.CarStatus car_status = 1;
+      // .primary.InverterStatus inverter_l = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_car_status(static_cast<::primary::CarStatus>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // .primary.InverterStatus inverter_l = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_inverter_l(static_cast<::primary::InverterStatus>(val));
         } else
           goto handle_unusual;
         continue;
-      // .primary.InverterStatus inverter_r = 3;
+      // .primary.InverterStatus inverter_r = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_inverter_r(static_cast<::primary::InverterStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .primary.CarStatus car_status = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_inverter_r(static_cast<::primary::InverterStatus>(val));
+          _internal_set_car_status(static_cast<::primary::CarStatus>(val));
         } else
           goto handle_unusual;
         continue;
@@ -8995,25 +8995,25 @@ uint8_t* CAR_STATUS::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .primary.CarStatus car_status = 1;
-  if (this->_internal_car_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_car_status(), target);
-  }
-
-  // .primary.InverterStatus inverter_l = 2;
+  // .primary.InverterStatus inverter_l = 1;
   if (this->_internal_inverter_l() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_inverter_l(), target);
+      1, this->_internal_inverter_l(), target);
   }
 
-  // .primary.InverterStatus inverter_r = 3;
+  // .primary.InverterStatus inverter_r = 2;
   if (this->_internal_inverter_r() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_inverter_r(), target);
+      2, this->_internal_inverter_r(), target);
+  }
+
+  // .primary.CarStatus car_status = 3;
+  if (this->_internal_car_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      3, this->_internal_car_status(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9038,16 +9038,16 @@ size_t CAR_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .primary.CarStatus car_status = 1;
-  if (this->_internal_car_status() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_car_status());
-  }
-
-  // .primary.InverterStatus inverter_l = 2;
+  // .primary.InverterStatus inverter_l = 1;
   if (this->_internal_inverter_l() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_l());
+  }
+
+  // .primary.InverterStatus inverter_r = 2;
+  if (this->_internal_inverter_r() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_r());
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9055,10 +9055,10 @@ size_t CAR_STATUS::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal__inner_timestamp());
   }
 
-  // .primary.InverterStatus inverter_r = 3;
-  if (this->_internal_inverter_r() != 0) {
+  // .primary.CarStatus car_status = 3;
+  if (this->_internal_car_status() != 0) {
     total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_inverter_r());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_car_status());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -9083,17 +9083,17 @@ void CAR_STATUS::MergeFrom(const CAR_STATUS& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_car_status() != 0) {
-    _internal_set_car_status(from._internal_car_status());
-  }
   if (from._internal_inverter_l() != 0) {
     _internal_set_inverter_l(from._internal_inverter_l());
+  }
+  if (from._internal_inverter_r() != 0) {
+    _internal_set_inverter_r(from._internal_inverter_r());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from._internal_inverter_r() != 0) {
-    _internal_set_inverter_r(from._internal_inverter_r());
+  if (from._internal_car_status() != 0) {
+    _internal_set_car_status(from._internal_car_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -9113,11 +9113,11 @@ void CAR_STATUS::InternalSwap(CAR_STATUS* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CAR_STATUS, inverter_r_)
-      + sizeof(CAR_STATUS::inverter_r_)
-      - PROTOBUF_FIELD_OFFSET(CAR_STATUS, car_status_)>(
-          reinterpret_cast<char*>(&car_status_),
-          reinterpret_cast<char*>(&other->car_status_));
+      PROTOBUF_FIELD_OFFSET(CAR_STATUS, car_status_)
+      + sizeof(CAR_STATUS::car_status_)
+      - PROTOBUF_FIELD_OFFSET(CAR_STATUS, inverter_l_)>(
+          reinterpret_cast<char*>(&inverter_l_),
+          reinterpret_cast<char*>(&other->inverter_l_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CAR_STATUS::GetMetadata() const {
@@ -11755,17 +11755,17 @@ HV_CELLS_VOLTAGE::HV_CELLS_VOLTAGE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 HV_CELLS_VOLTAGE::HV_CELLS_VOLTAGE(const HV_CELLS_VOLTAGE& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&voltage_0_, &from.voltage_0_,
+  ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage_0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_CELLS_VOLTAGE)
 }
 
 inline void HV_CELLS_VOLTAGE::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&voltage_0_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&start_index_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&voltage_0_)) + sizeof(_inner_timestamp_));
+    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
 }
 
 HV_CELLS_VOLTAGE::~HV_CELLS_VOLTAGE() {
@@ -11791,9 +11791,9 @@ void HV_CELLS_VOLTAGE::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&voltage_0_, 0, static_cast<size_t>(
+  ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&voltage_0_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11803,34 +11803,34 @@ const char* HV_CELLS_VOLTAGE::_InternalParse(const char* ptr, ::_pbi::ParseConte
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 voltage_0 = 1;
+      // uint32 start_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // uint32 voltage_0 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           voltage_0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage_1 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // uint32 voltage_1 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           voltage_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 voltage_2 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          voltage_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // uint32 start_index = 4;
+      // uint32 voltage_2 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -11872,28 +11872,28 @@ uint8_t* HV_CELLS_VOLTAGE::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage_0 = 1;
-  if (this->_internal_voltage_0() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_voltage_0(), target);
-  }
-
-  // uint32 voltage_1 = 2;
-  if (this->_internal_voltage_1() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage_1(), target);
-  }
-
-  // uint32 voltage_2 = 3;
-  if (this->_internal_voltage_2() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage_2(), target);
-  }
-
-  // uint32 start_index = 4;
+  // uint32 start_index = 1;
   if (this->_internal_start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_start_index(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+  }
+
+  // uint32 voltage_0 = 2;
+  if (this->_internal_voltage_0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_voltage_0(), target);
+  }
+
+  // uint32 voltage_1 = 3;
+  if (this->_internal_voltage_1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_voltage_1(), target);
+  }
+
+  // uint32 voltage_2 = 4;
+  if (this->_internal_voltage_2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_voltage_2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -11918,24 +11918,24 @@ size_t HV_CELLS_VOLTAGE::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 voltage_0 = 1;
+  // uint32 start_index = 1;
+  if (this->_internal_start_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
+  }
+
+  // uint32 voltage_0 = 2;
   if (this->_internal_voltage_0() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_0());
   }
 
-  // uint32 voltage_1 = 2;
+  // uint32 voltage_1 = 3;
   if (this->_internal_voltage_1() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_1());
   }
 
-  // uint32 voltage_2 = 3;
+  // uint32 voltage_2 = 4;
   if (this->_internal_voltage_2() != 0) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_voltage_2());
-  }
-
-  // uint32 start_index = 4;
-  if (this->_internal_start_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_start_index());
   }
 
   // uint64 _inner_timestamp = 5;
@@ -11965,6 +11965,9 @@ void HV_CELLS_VOLTAGE::MergeFrom(const HV_CELLS_VOLTAGE& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_start_index() != 0) {
+    _internal_set_start_index(from._internal_start_index());
+  }
   if (from._internal_voltage_0() != 0) {
     _internal_set_voltage_0(from._internal_voltage_0());
   }
@@ -11973,9 +11976,6 @@ void HV_CELLS_VOLTAGE::MergeFrom(const HV_CELLS_VOLTAGE& from) {
   }
   if (from._internal_voltage_2() != 0) {
     _internal_set_voltage_2(from._internal_voltage_2());
-  }
-  if (from._internal_start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
   }
   if (from._internal__inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
@@ -12000,9 +12000,9 @@ void HV_CELLS_VOLTAGE::InternalSwap(HV_CELLS_VOLTAGE* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(HV_CELLS_VOLTAGE, _inner_timestamp_)
       + sizeof(HV_CELLS_VOLTAGE::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(HV_CELLS_VOLTAGE, voltage_0_)>(
-          reinterpret_cast<char*>(&voltage_0_),
-          reinterpret_cast<char*>(&other->voltage_0_));
+      - PROTOBUF_FIELD_OFFSET(HV_CELLS_VOLTAGE, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata HV_CELLS_VOLTAGE::GetMetadata() const {

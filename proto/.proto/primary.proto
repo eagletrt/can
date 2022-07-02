@@ -126,18 +126,18 @@ message TIMESTAMP {
 }
 
 message SET_TLM_STATUS {
-    uint32 driver = 1;
-    uint32 circuit = 2;
-    RaceType race_type = 3;
-    Toggle tlm_status = 4;
+    Toggle tlm_status = 1;
+    RaceType race_type = 2;
+    uint32 driver = 3;
+    uint32 circuit = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message TLM_STATUS {
-    uint32 driver = 1;
-    uint32 circuit = 2;
-    RaceType race_type = 3;
-    Toggle tlm_status = 4;
+    Toggle tlm_status = 1;
+    RaceType race_type = 2;
+    uint32 driver = 3;
+    uint32 circuit = 4;
     uint64 _inner_timestamp = 5;
 }
 
@@ -181,8 +181,8 @@ message HV_CAN_FORWARD {
 }
 
 message HV_FANS_OVERRIDE {
-    uint32 fans_speed = 1;
-    Toggle fans_override = 2;
+    Toggle fans_override = 1;
+    uint32 fans_speed = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -192,8 +192,8 @@ message HV_CAN_FORWARD_STATUS {
 }
 
 message HV_FANS_OVERRIDE_STATUS {
-    uint32 fans_speed = 1;
-    Toggle fans_override = 2;
+    Toggle fans_override = 1;
+    uint32 fans_speed = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -204,9 +204,9 @@ message HV_FEEDBACKS_STATUS {
 }
 
 message HV_IMD_STATUS {
-    sint32 imd_info = 1;
+    bool imd_fault = 1;
     ImdStatus imd_status = 2;
-    bool imd_fault = 3;
+    sint32 imd_info = 3;
     uint64 _inner_timestamp = 4;
 }
 
@@ -225,8 +225,8 @@ message SET_TS_STATUS_HANDCART {
 }
 
 message STEER_STATUS {
-    Map map = 1;
-    TractionControl traction_control = 2;
+    TractionControl traction_control = 1;
+    Map map = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -247,9 +247,9 @@ message SET_STEERING_ANGLE_RANGE {
 }
 
 message CAR_STATUS {
-    CarStatus car_status = 1;
-    InverterStatus inverter_l = 2;
-    InverterStatus inverter_r = 3;
+    InverterStatus inverter_l = 1;
+    InverterStatus inverter_r = 2;
+    CarStatus car_status = 3;
     uint64 _inner_timestamp = 4;
 }
 
@@ -321,10 +321,10 @@ message MARKER {
 }
 
 message HV_CELLS_VOLTAGE {
-    uint32 voltage_0 = 1;
-    uint32 voltage_1 = 2;
-    uint32 voltage_2 = 3;
-    uint32 start_index = 4;
+    uint32 start_index = 1;
+    uint32 voltage_0 = 2;
+    uint32 voltage_1 = 3;
+    uint32 voltage_2 = 4;
     uint64 _inner_timestamp = 5;
 }
 
