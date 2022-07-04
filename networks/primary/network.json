@@ -541,6 +541,7 @@
       "sending": ["DAS", "HANDCART"],
       "receiving": ["BMS_HV"],
       "description": "Requests a TS status; only once",
+      "interval": 100,
       "contents": {
         "ts_status_set": "Toggle"
       }
