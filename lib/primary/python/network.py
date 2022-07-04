@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1656775510
-CANLIB_BUILD_HASH = 0x631e594b
+CANLIB_BUILD_TIME = 1656943872
+CANLIB_BUILD_HASH = 0xf6651b48
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1272,6 +1272,7 @@ class message_SET_TS_STATUS:
     ):
         self.ts_status_set = Toggle(ts_status_set)
         self.size = 1
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_TS_STATUS):
