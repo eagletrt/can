@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1656943872
-#define CANLIB_BUILD_HASH 0xf6651b48
+#define CANLIB_BUILD_TIME 1657195680
+#define CANLIB_BUILD_HASH 0x9c9e676d
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -275,7 +275,7 @@ typedef struct {
 #define primary_SIZE_SET_PEDALS_RANGE 1
 #define primary_SIZE_SET_STEERING_ANGLE_RANGE 1
 #define primary_SIZE_CAR_STATUS 1
-#define primary_SIZE_DAS_ERRORS 1
+#define primary_SIZE_DAS_ERRORS 2
 #define primary_SIZE_LV_CURRENT 2
 #define primary_SIZE_LV_VOLTAGE 8
 #define primary_SIZE_LV_TOTAL_VOLTAGE 4
@@ -345,7 +345,7 @@ typedef primary_uint16 primary_HvErrors;
 #define primary_MAX_STRING_LENGTH_HvErrors 223
 int primary_to_string_HvErrors(primary_HvErrors value, char* buffer);
 
-typedef primary_uint8 primary_DasErrors;
+typedef primary_uint16 primary_DasErrors;
 #define primary_DasErrors_DEFAULT 0
 #define primary_DasErrors_PEDAL_ADC 1
 #define primary_DasErrors_PEDAL_IMPLAUSIBILITY 2
@@ -354,9 +354,10 @@ typedef primary_uint8 primary_DasErrors;
 #define primary_DasErrors_TS_TOUT 16
 #define primary_DasErrors_INVL_TOUT 32
 #define primary_DasErrors_INVR_TOUT 64
-#define primary_DasErrors_FSM 128
+#define primary_DasErrors_STEER_TOUT 128
+#define primary_DasErrors_FSM 256
 
-#define primary_MAX_STRING_LENGTH_DasErrors 82
+#define primary_MAX_STRING_LENGTH_DasErrors 93
 int primary_to_string_DasErrors(primary_DasErrors value, char* buffer);
 
 typedef primary_uint32 primary_InvStatus;
@@ -3704,7 +3705,8 @@ int primary_to_string_DasErrors(primary_DasErrors value, char* buffer) {
     if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "TS_TOUT ");
     if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "INVL_TOUT ");
     if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "INVR_TOUT ");
-    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "FSM ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "STEER_TOUT ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "FSM ");
     buffer[offset] = '\0';
     return offset;
 }
@@ -6838,16 +6840,18 @@ primary_byte_size primary_serialize_DAS_ERRORS(
     uint8_t* data,
     primary_DasErrors das_error
 ) {
-    data[0] = das_error;
-    return 1;
+    data[0] = das_error & 255;
+    data[1] = (das_error >> 8) & 255;
+    return 2;
 }
 
 primary_byte_size primary_serialize_struct_DAS_ERRORS(
     uint8_t* data,
     primary_message_DAS_ERRORS* message
 ) {
-    data[0] = message->das_error;
-    return 1;
+    data[0] = message->das_error & 255;
+    data[1] = (message->das_error >> 8) & 255;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6862,7 +6866,7 @@ void primary_deserialize_DAS_ERRORS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->das_error = data[0];
+    message->das_error = data[0] | (data[1] << 8);
 }
 
 // ============== STRING ============== //
@@ -6873,7 +6877,7 @@ int primary_to_string_DAS_ERRORS(primary_message_DAS_ERRORS* message, char* buff
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIu16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -6897,7 +6901,7 @@ int primary_to_string_file_DAS_ERRORS(primary_message_DAS_ERRORS* message, FILE*
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIu16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP

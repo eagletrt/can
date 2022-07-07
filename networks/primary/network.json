@@ -30,6 +30,7 @@
         "TS_TOUT",
         "INVL_TOUT",
         "INVR_TOUT",
+        "STEER_TOUT",
         "FSM"
       ]
     },

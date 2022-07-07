@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1656943872
-CANLIB_BUILD_HASH = 0xf6651b48
+CANLIB_BUILD_TIME = 1657195680
+CANLIB_BUILD_HASH = 0x9c9e676d
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -75,7 +75,8 @@ class DasErrors(IntFlag):
     TS_TOUT = 16
     INVL_TOUT = 32
     INVR_TOUT = 64
-    FSM = 128
+    STEER_TOUT = 128
+    FSM = 256
 
     @classmethod
     def _missing_(cls, value):
@@ -1456,7 +1457,7 @@ class message_DAS_ERRORS:
         das_error = None
     ):
         self.das_error = DasErrors(das_error)
-        self.size = 1
+        self.size = 2
         self.interval = 10
 
     def __eq__(self, other):
@@ -1468,13 +1469,13 @@ class message_DAS_ERRORS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", (int(self.das_error) >> 0) & 255))
+        data.extend(pack("<BB", (int(self.das_error) >> 8) & 255, (int(self.das_error) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.das_error = DasErrors(int((unpack("<B", data[0:1])[0] << 0)))
+        message.das_error = DasErrors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
         return message
 
 
