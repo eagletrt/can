@@ -199,6 +199,9 @@ extern INV_R_RESPONSEDefaultTypeInternal _INV_R_RESPONSE_default_instance_;
 class LV_CURRENT;
 struct LV_CURRENTDefaultTypeInternal;
 extern LV_CURRENTDefaultTypeInternal _LV_CURRENT_default_instance_;
+class LV_ERRORS;
+struct LV_ERRORSDefaultTypeInternal;
+extern LV_ERRORSDefaultTypeInternal _LV_ERRORS_default_instance_;
 class LV_TEMPERATURE;
 struct LV_TEMPERATUREDefaultTypeInternal;
 extern LV_TEMPERATUREDefaultTypeInternal _LV_TEMPERATURE_default_instance_;
@@ -327,6 +330,7 @@ template<> ::primary::INV_L_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_L
 template<> ::primary::INV_R_REQUEST* Arena::CreateMaybeMessage<::primary::INV_R_REQUEST>(Arena*);
 template<> ::primary::INV_R_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_R_RESPONSE>(Arena*);
 template<> ::primary::LV_CURRENT* Arena::CreateMaybeMessage<::primary::LV_CURRENT>(Arena*);
+template<> ::primary::LV_ERRORS* Arena::CreateMaybeMessage<::primary::LV_ERRORS>(Arena*);
 template<> ::primary::LV_TEMPERATURE* Arena::CreateMaybeMessage<::primary::LV_TEMPERATURE>(Arena*);
 template<> ::primary::LV_TOTAL_VOLTAGE* Arena::CreateMaybeMessage<::primary::LV_TOTAL_VOLTAGE>(Arena*);
 template<> ::primary::LV_VERSION* Arena::CreateMaybeMessage<::primary::LV_VERSION>(Arena*);
@@ -7032,6 +7036,171 @@ class INVERTER_CONNECTION_STATUS final :
 };
 // -------------------------------------------------------------------
 
+class LV_ERRORS final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.LV_ERRORS) */ {
+ public:
+  inline LV_ERRORS() : LV_ERRORS(nullptr) {}
+  ~LV_ERRORS() override;
+  explicit PROTOBUF_CONSTEXPR LV_ERRORS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  LV_ERRORS(const LV_ERRORS& from);
+  LV_ERRORS(LV_ERRORS&& from) noexcept
+    : LV_ERRORS() {
+    *this = ::std::move(from);
+  }
+
+  inline LV_ERRORS& operator=(const LV_ERRORS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LV_ERRORS& operator=(LV_ERRORS&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const LV_ERRORS& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const LV_ERRORS* internal_default_instance() {
+    return reinterpret_cast<const LV_ERRORS*>(
+               &_LV_ERRORS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  friend void swap(LV_ERRORS& a, LV_ERRORS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LV_ERRORS* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LV_ERRORS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  LV_ERRORS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<LV_ERRORS>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const LV_ERRORS& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const LV_ERRORS& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LV_ERRORS* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.LV_ERRORS";
+  }
+  protected:
+  explicit LV_ERRORS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kWarningsFieldNumber = 1,
+    kErrorsFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
+  };
+  // uint32 warnings = 1;
+  void clear_warnings();
+  uint32_t warnings() const;
+  void set_warnings(uint32_t value);
+  private:
+  uint32_t _internal_warnings() const;
+  void _internal_set_warnings(uint32_t value);
+  public:
+
+  // uint32 errors = 2;
+  void clear_errors();
+  uint32_t errors() const;
+  void set_errors(uint32_t value);
+  private:
+  uint32_t _internal_errors() const;
+  void _internal_set_errors(uint32_t value);
+  public:
+
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  uint64_t _inner_timestamp() const;
+  void set__inner_timestamp(uint64_t value);
+  private:
+  uint64_t _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.LV_ERRORS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  uint32_t warnings_;
+  uint32_t errors_;
+  uint64_t _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SHUTDOWN_STATUS final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.SHUTDOWN_STATUS) */ {
  public:
@@ -7080,7 +7249,7 @@ class SHUTDOWN_STATUS final :
                &_SHUTDOWN_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   friend void swap(SHUTDOWN_STATUS& a, SHUTDOWN_STATUS& b) {
     a.Swap(&b);
@@ -7245,7 +7414,7 @@ class MARKER final :
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   friend void swap(MARKER& a, MARKER& b) {
     a.Swap(&b);
@@ -7388,7 +7557,7 @@ class HV_CELLS_VOLTAGE final :
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
     a.Swap(&b);
@@ -7575,7 +7744,7 @@ class HV_CELLS_TEMP final :
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
     a.Swap(&b);
@@ -7806,7 +7975,7 @@ class HV_CELL_BALANCING_STATUS final :
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -7960,7 +8129,7 @@ class SET_CELL_BALANCING_STATUS final :
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
     a.Swap(&b);
@@ -8114,7 +8283,7 @@ class HANDCART_STATUS final :
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    46;
 
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
     a.Swap(&b);
@@ -8268,7 +8437,7 @@ class SPEED final :
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   friend void swap(SPEED& a, SPEED& b) {
     a.Swap(&b);
@@ -8455,7 +8624,7 @@ class INV_L_REQUEST final :
                &_INV_L_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    48;
 
   friend void swap(INV_L_REQUEST& a, INV_L_REQUEST& b) {
     a.Swap(&b);
@@ -8686,7 +8855,7 @@ class INV_R_REQUEST final :
                &_INV_R_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   friend void swap(INV_R_REQUEST& a, INV_R_REQUEST& b) {
     a.Swap(&b);
@@ -8917,7 +9086,7 @@ class INV_L_RESPONSE final :
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
     a.Swap(&b);
@@ -9148,7 +9317,7 @@ class INV_R_RESPONSE final :
                &_INV_R_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    51;
 
   friend void swap(INV_R_RESPONSE& a, INV_R_RESPONSE& b) {
     a.Swap(&b);
@@ -9379,7 +9548,7 @@ class FLASH_CELLBOARD_0_TX final :
                &_FLASH_CELLBOARD_0_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    52;
 
   friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
     a.Swap(&b);
@@ -9522,7 +9691,7 @@ class FLASH_CELLBOARD_0_RX final :
                &_FLASH_CELLBOARD_0_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    53;
 
   friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
     a.Swap(&b);
@@ -9665,7 +9834,7 @@ class FLASH_CELLBOARD_1_TX final :
                &_FLASH_CELLBOARD_1_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    54;
 
   friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
     a.Swap(&b);
@@ -9808,7 +9977,7 @@ class FLASH_CELLBOARD_1_RX final :
                &_FLASH_CELLBOARD_1_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    55;
 
   friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
     a.Swap(&b);
@@ -9951,7 +10120,7 @@ class FLASH_CELLBOARD_2_TX final :
                &_FLASH_CELLBOARD_2_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    56;
 
   friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
     a.Swap(&b);
@@ -10094,7 +10263,7 @@ class FLASH_CELLBOARD_2_RX final :
                &_FLASH_CELLBOARD_2_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    57;
 
   friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
     a.Swap(&b);
@@ -10237,7 +10406,7 @@ class FLASH_CELLBOARD_3_TX final :
                &_FLASH_CELLBOARD_3_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    58;
 
   friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
     a.Swap(&b);
@@ -10380,7 +10549,7 @@ class FLASH_CELLBOARD_3_RX final :
                &_FLASH_CELLBOARD_3_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    59;
 
   friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
     a.Swap(&b);
@@ -10523,7 +10692,7 @@ class FLASH_CELLBOARD_4_TX final :
                &_FLASH_CELLBOARD_4_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    60;
 
   friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
     a.Swap(&b);
@@ -10666,7 +10835,7 @@ class FLASH_CELLBOARD_4_RX final :
                &_FLASH_CELLBOARD_4_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    61;
 
   friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
     a.Swap(&b);
@@ -10809,7 +10978,7 @@ class FLASH_CELLBOARD_5_TX final :
                &_FLASH_CELLBOARD_5_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    62;
 
   friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
     a.Swap(&b);
@@ -10952,7 +11121,7 @@ class FLASH_CELLBOARD_5_RX final :
                &_FLASH_CELLBOARD_5_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    63;
 
   friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
     a.Swap(&b);
@@ -11095,7 +11264,7 @@ class FLASH_BMS_HV_TX final :
                &_FLASH_BMS_HV_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    64;
 
   friend void swap(FLASH_BMS_HV_TX& a, FLASH_BMS_HV_TX& b) {
     a.Swap(&b);
@@ -11238,7 +11407,7 @@ class FLASH_BMS_HV_RX final :
                &_FLASH_BMS_HV_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    65;
 
   friend void swap(FLASH_BMS_HV_RX& a, FLASH_BMS_HV_RX& b) {
     a.Swap(&b);
@@ -11381,7 +11550,7 @@ class FLASH_BMS_LV_TX final :
                &_FLASH_BMS_LV_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    66;
 
   friend void swap(FLASH_BMS_LV_TX& a, FLASH_BMS_LV_TX& b) {
     a.Swap(&b);
@@ -11524,7 +11693,7 @@ class FLASH_BMS_LV_RX final :
                &_FLASH_BMS_LV_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    67;
 
   friend void swap(FLASH_BMS_LV_RX& a, FLASH_BMS_LV_RX& b) {
     a.Swap(&b);
@@ -11667,7 +11836,7 @@ class BRUSA_NLG5_CTL final :
                &_BRUSA_NLG5_CTL_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    68;
 
   friend void swap(BRUSA_NLG5_CTL& a, BRUSA_NLG5_CTL& b) {
     a.Swap(&b);
@@ -11810,7 +11979,7 @@ class BRUSA_ST final :
                &_BRUSA_ST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    69;
 
   friend void swap(BRUSA_ST& a, BRUSA_ST& b) {
     a.Swap(&b);
@@ -11953,7 +12122,7 @@ class BRUSA_ACT_I final :
                &_BRUSA_ACT_I_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    70;
 
   friend void swap(BRUSA_ACT_I& a, BRUSA_ACT_I& b) {
     a.Swap(&b);
@@ -12096,7 +12265,7 @@ class BRUSA_ACT_II final :
                &_BRUSA_ACT_II_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    71;
 
   friend void swap(BRUSA_ACT_II& a, BRUSA_ACT_II& b) {
     a.Swap(&b);
@@ -12239,7 +12408,7 @@ class BRUSA_TEMP final :
                &_BRUSA_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    72;
 
   friend void swap(BRUSA_TEMP& a, BRUSA_TEMP& b) {
     a.Swap(&b);
@@ -12382,7 +12551,7 @@ class BRUSA_ERR final :
                &_BRUSA_ERR_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    73;
 
   friend void swap(BRUSA_ERR& a, BRUSA_ERR& b) {
     a.Swap(&b);
@@ -12525,7 +12694,7 @@ class BMS_HV_CHIMERA final :
                &_BMS_HV_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    74;
 
   friend void swap(BMS_HV_CHIMERA& a, BMS_HV_CHIMERA& b) {
     a.Swap(&b);
@@ -12668,7 +12837,7 @@ class ECU_CHIMERA final :
                &_ECU_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    75;
 
   friend void swap(ECU_CHIMERA& a, ECU_CHIMERA& b) {
     a.Swap(&b);
@@ -12811,7 +12980,7 @@ class Pack final :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    76;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -12921,42 +13090,43 @@ class Pack final :
     kSETPUMPSSPEEDFieldNumber = 37,
     kSETINVERTERCONNECTIONSTATUSFieldNumber = 38,
     kINVERTERCONNECTIONSTATUSFieldNumber = 39,
-    kSHUTDOWNSTATUSFieldNumber = 40,
-    kMARKERFieldNumber = 41,
-    kHVCELLSVOLTAGEFieldNumber = 42,
-    kHVCELLSTEMPFieldNumber = 43,
-    kHVCELLBALANCINGSTATUSFieldNumber = 44,
-    kSETCELLBALANCINGSTATUSFieldNumber = 45,
-    kHANDCARTSTATUSFieldNumber = 46,
-    kSPEEDFieldNumber = 47,
-    kINVLREQUESTFieldNumber = 48,
-    kINVRREQUESTFieldNumber = 49,
-    kINVLRESPONSEFieldNumber = 50,
-    kINVRRESPONSEFieldNumber = 51,
-    kFLASHCELLBOARD0TXFieldNumber = 52,
-    kFLASHCELLBOARD0RXFieldNumber = 53,
-    kFLASHCELLBOARD1TXFieldNumber = 54,
-    kFLASHCELLBOARD1RXFieldNumber = 55,
-    kFLASHCELLBOARD2TXFieldNumber = 56,
-    kFLASHCELLBOARD2RXFieldNumber = 57,
-    kFLASHCELLBOARD3TXFieldNumber = 58,
-    kFLASHCELLBOARD3RXFieldNumber = 59,
-    kFLASHCELLBOARD4TXFieldNumber = 60,
-    kFLASHCELLBOARD4RXFieldNumber = 61,
-    kFLASHCELLBOARD5TXFieldNumber = 62,
-    kFLASHCELLBOARD5RXFieldNumber = 63,
-    kFLASHBMSHVTXFieldNumber = 64,
-    kFLASHBMSHVRXFieldNumber = 65,
-    kFLASHBMSLVTXFieldNumber = 66,
-    kFLASHBMSLVRXFieldNumber = 67,
-    kBRUSANLG5CTLFieldNumber = 68,
-    kBRUSASTFieldNumber = 69,
-    kBRUSAACTIFieldNumber = 70,
-    kBRUSAACTIIFieldNumber = 71,
-    kBRUSATEMPFieldNumber = 72,
-    kBRUSAERRFieldNumber = 73,
-    kBMSHVCHIMERAFieldNumber = 74,
-    kECUCHIMERAFieldNumber = 75,
+    kLVERRORSFieldNumber = 40,
+    kSHUTDOWNSTATUSFieldNumber = 41,
+    kMARKERFieldNumber = 42,
+    kHVCELLSVOLTAGEFieldNumber = 43,
+    kHVCELLSTEMPFieldNumber = 44,
+    kHVCELLBALANCINGSTATUSFieldNumber = 45,
+    kSETCELLBALANCINGSTATUSFieldNumber = 46,
+    kHANDCARTSTATUSFieldNumber = 47,
+    kSPEEDFieldNumber = 48,
+    kINVLREQUESTFieldNumber = 49,
+    kINVRREQUESTFieldNumber = 50,
+    kINVLRESPONSEFieldNumber = 51,
+    kINVRRESPONSEFieldNumber = 52,
+    kFLASHCELLBOARD0TXFieldNumber = 53,
+    kFLASHCELLBOARD0RXFieldNumber = 54,
+    kFLASHCELLBOARD1TXFieldNumber = 55,
+    kFLASHCELLBOARD1RXFieldNumber = 56,
+    kFLASHCELLBOARD2TXFieldNumber = 57,
+    kFLASHCELLBOARD2RXFieldNumber = 58,
+    kFLASHCELLBOARD3TXFieldNumber = 59,
+    kFLASHCELLBOARD3RXFieldNumber = 60,
+    kFLASHCELLBOARD4TXFieldNumber = 61,
+    kFLASHCELLBOARD4RXFieldNumber = 62,
+    kFLASHCELLBOARD5TXFieldNumber = 63,
+    kFLASHCELLBOARD5RXFieldNumber = 64,
+    kFLASHBMSHVTXFieldNumber = 65,
+    kFLASHBMSHVRXFieldNumber = 66,
+    kFLASHBMSLVTXFieldNumber = 67,
+    kFLASHBMSLVRXFieldNumber = 68,
+    kBRUSANLG5CTLFieldNumber = 69,
+    kBRUSASTFieldNumber = 70,
+    kBRUSAACTIFieldNumber = 71,
+    kBRUSAACTIIFieldNumber = 72,
+    kBRUSATEMPFieldNumber = 73,
+    kBRUSAERRFieldNumber = 74,
+    kBMSHVCHIMERAFieldNumber = 75,
+    kECUCHIMERAFieldNumber = 76,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -13660,7 +13830,25 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INVERTER_CONNECTION_STATUS >&
       inverter_connection_status() const;
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 40;
+  // repeated .primary.LV_ERRORS LV_ERRORS = 40;
+  int lv_errors_size() const;
+  private:
+  int _internal_lv_errors_size() const;
+  public:
+  void clear_lv_errors();
+  ::primary::LV_ERRORS* mutable_lv_errors(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_ERRORS >*
+      mutable_lv_errors();
+  private:
+  const ::primary::LV_ERRORS& _internal_lv_errors(int index) const;
+  ::primary::LV_ERRORS* _internal_add_lv_errors();
+  public:
+  const ::primary::LV_ERRORS& lv_errors(int index) const;
+  ::primary::LV_ERRORS* add_lv_errors();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_ERRORS >&
+      lv_errors() const;
+
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
   int shutdown_status_size() const;
   private:
   int _internal_shutdown_status_size() const;
@@ -13678,7 +13866,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SHUTDOWN_STATUS >&
       shutdown_status() const;
 
-  // repeated .primary.MARKER MARKER = 41;
+  // repeated .primary.MARKER MARKER = 42;
   int marker_size() const;
   private:
   int _internal_marker_size() const;
@@ -13696,7 +13884,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 42;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
   int hv_cells_voltage_size() const;
   private:
   int _internal_hv_cells_voltage_size() const;
@@ -13714,7 +13902,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 43;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
   int hv_cells_temp_size() const;
   private:
   int _internal_hv_cells_temp_size() const;
@@ -13732,7 +13920,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 44;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
   int hv_cell_balancing_status_size() const;
   private:
   int _internal_hv_cell_balancing_status_size() const;
@@ -13750,7 +13938,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 45;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
   int set_cell_balancing_status_size() const;
   private:
   int _internal_set_cell_balancing_status_size() const;
@@ -13768,7 +13956,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 46;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
   int handcart_status_size() const;
   private:
   int _internal_handcart_status_size() const;
@@ -13786,7 +13974,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 47;
+  // repeated .primary.SPEED SPEED = 48;
   int speed_size() const;
   private:
   int _internal_speed_size() const;
@@ -13804,7 +13992,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 48;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
   int inv_l_request_size() const;
   private:
   int _internal_inv_l_request_size() const;
@@ -13822,7 +14010,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_REQUEST >&
       inv_l_request() const;
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 49;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
   int inv_r_request_size() const;
   private:
   int _internal_inv_r_request_size() const;
@@ -13840,7 +14028,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_REQUEST >&
       inv_r_request() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 50;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
   int inv_l_response_size() const;
   private:
   int _internal_inv_l_response_size() const;
@@ -13858,7 +14046,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_L_RESPONSE >&
       inv_l_response() const;
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 51;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
   int inv_r_response_size() const;
   private:
   int _internal_inv_r_response_size() const;
@@ -13876,7 +14064,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INV_R_RESPONSE >&
       inv_r_response() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 52;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
   int flash_cellboard_0_tx_size() const;
   private:
   int _internal_flash_cellboard_0_tx_size() const;
@@ -13894,7 +14082,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX >&
       flash_cellboard_0_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 53;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
   int flash_cellboard_0_rx_size() const;
   private:
   int _internal_flash_cellboard_0_rx_size() const;
@@ -13912,7 +14100,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX >&
       flash_cellboard_0_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 54;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
   int flash_cellboard_1_tx_size() const;
   private:
   int _internal_flash_cellboard_1_tx_size() const;
@@ -13930,7 +14118,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX >&
       flash_cellboard_1_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 55;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
   int flash_cellboard_1_rx_size() const;
   private:
   int _internal_flash_cellboard_1_rx_size() const;
@@ -13948,7 +14136,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_RX >&
       flash_cellboard_1_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 56;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
   int flash_cellboard_2_tx_size() const;
   private:
   int _internal_flash_cellboard_2_tx_size() const;
@@ -13966,7 +14154,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_TX >&
       flash_cellboard_2_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 57;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
   int flash_cellboard_2_rx_size() const;
   private:
   int _internal_flash_cellboard_2_rx_size() const;
@@ -13984,7 +14172,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_RX >&
       flash_cellboard_2_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 58;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
   int flash_cellboard_3_tx_size() const;
   private:
   int _internal_flash_cellboard_3_tx_size() const;
@@ -14002,7 +14190,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_TX >&
       flash_cellboard_3_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 59;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
   int flash_cellboard_3_rx_size() const;
   private:
   int _internal_flash_cellboard_3_rx_size() const;
@@ -14020,7 +14208,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_RX >&
       flash_cellboard_3_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 60;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
   int flash_cellboard_4_tx_size() const;
   private:
   int _internal_flash_cellboard_4_tx_size() const;
@@ -14038,7 +14226,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_TX >&
       flash_cellboard_4_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 61;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
   int flash_cellboard_4_rx_size() const;
   private:
   int _internal_flash_cellboard_4_rx_size() const;
@@ -14056,7 +14244,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX >&
       flash_cellboard_4_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 62;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
   int flash_cellboard_5_tx_size() const;
   private:
   int _internal_flash_cellboard_5_tx_size() const;
@@ -14074,7 +14262,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX >&
       flash_cellboard_5_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 63;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
   int flash_cellboard_5_rx_size() const;
   private:
   int _internal_flash_cellboard_5_rx_size() const;
@@ -14092,7 +14280,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX >&
       flash_cellboard_5_rx() const;
 
-  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 64;
+  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
   int flash_bms_hv_tx_size() const;
   private:
   int _internal_flash_bms_hv_tx_size() const;
@@ -14110,7 +14298,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_BMS_HV_TX >&
       flash_bms_hv_tx() const;
 
-  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 65;
+  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
   int flash_bms_hv_rx_size() const;
   private:
   int _internal_flash_bms_hv_rx_size() const;
@@ -14128,7 +14316,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_BMS_HV_RX >&
       flash_bms_hv_rx() const;
 
-  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 66;
+  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
   int flash_bms_lv_tx_size() const;
   private:
   int _internal_flash_bms_lv_tx_size() const;
@@ -14146,7 +14334,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_BMS_LV_TX >&
       flash_bms_lv_tx() const;
 
-  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 67;
+  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
   int flash_bms_lv_rx_size() const;
   private:
   int _internal_flash_bms_lv_rx_size() const;
@@ -14164,7 +14352,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::FLASH_BMS_LV_RX >&
       flash_bms_lv_rx() const;
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 68;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
   int brusa_nlg5_ctl_size() const;
   private:
   int _internal_brusa_nlg5_ctl_size() const;
@@ -14182,7 +14370,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >&
       brusa_nlg5_ctl() const;
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 69;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 70;
   int brusa_st_size() const;
   private:
   int _internal_brusa_st_size() const;
@@ -14200,7 +14388,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ST >&
       brusa_st() const;
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 70;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
   int brusa_act_i_size() const;
   private:
   int _internal_brusa_act_i_size() const;
@@ -14218,7 +14406,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_I >&
       brusa_act_i() const;
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 71;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
   int brusa_act_ii_size() const;
   private:
   int _internal_brusa_act_ii_size() const;
@@ -14236,7 +14424,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II >&
       brusa_act_ii() const;
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 72;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
   int brusa_temp_size() const;
   private:
   int _internal_brusa_temp_size() const;
@@ -14254,7 +14442,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP >&
       brusa_temp() const;
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 73;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
   int brusa_err_size() const;
   private:
   int _internal_brusa_err_size() const;
@@ -14272,7 +14460,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >&
       brusa_err() const;
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 74;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
   int bms_hv_chimera_size() const;
   private:
   int _internal_bms_hv_chimera_size() const;
@@ -14290,7 +14478,7 @@ class Pack final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
       bms_hv_chimera() const;
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 75;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
   int ecu_chimera_size() const;
   private:
   int _internal_ecu_chimera_size() const;
@@ -14354,6 +14542,7 @@ class Pack final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_PUMPS_SPEED > set_pumps_speed_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SET_INVERTER_CONNECTION_STATUS > set_inverter_connection_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::INVERTER_CONNECTION_STATUS > inverter_connection_status_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_ERRORS > lv_errors_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::SHUTDOWN_STATUS > shutdown_status_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::MARKER > marker_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE > hv_cells_voltage_;
@@ -16794,6 +16983,70 @@ inline void INVERTER_CONNECTION_STATUS::_internal_set__inner_timestamp(uint64_t 
 inline void INVERTER_CONNECTION_STATUS::set__inner_timestamp(uint64_t value) {
   _internal_set__inner_timestamp(value);
   // @@protoc_insertion_point(field_set:primary.INVERTER_CONNECTION_STATUS._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// LV_ERRORS
+
+// uint32 warnings = 1;
+inline void LV_ERRORS::clear_warnings() {
+  warnings_ = 0u;
+}
+inline uint32_t LV_ERRORS::_internal_warnings() const {
+  return warnings_;
+}
+inline uint32_t LV_ERRORS::warnings() const {
+  // @@protoc_insertion_point(field_get:primary.LV_ERRORS.warnings)
+  return _internal_warnings();
+}
+inline void LV_ERRORS::_internal_set_warnings(uint32_t value) {
+  
+  warnings_ = value;
+}
+inline void LV_ERRORS::set_warnings(uint32_t value) {
+  _internal_set_warnings(value);
+  // @@protoc_insertion_point(field_set:primary.LV_ERRORS.warnings)
+}
+
+// uint32 errors = 2;
+inline void LV_ERRORS::clear_errors() {
+  errors_ = 0u;
+}
+inline uint32_t LV_ERRORS::_internal_errors() const {
+  return errors_;
+}
+inline uint32_t LV_ERRORS::errors() const {
+  // @@protoc_insertion_point(field_get:primary.LV_ERRORS.errors)
+  return _internal_errors();
+}
+inline void LV_ERRORS::_internal_set_errors(uint32_t value) {
+  
+  errors_ = value;
+}
+inline void LV_ERRORS::set_errors(uint32_t value) {
+  _internal_set_errors(value);
+  // @@protoc_insertion_point(field_set:primary.LV_ERRORS.errors)
+}
+
+// uint64 _inner_timestamp = 3;
+inline void LV_ERRORS::clear__inner_timestamp() {
+  _inner_timestamp_ = uint64_t{0u};
+}
+inline uint64_t LV_ERRORS::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline uint64_t LV_ERRORS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LV_ERRORS._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void LV_ERRORS::_internal_set__inner_timestamp(uint64_t value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void LV_ERRORS::set__inner_timestamp(uint64_t value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LV_ERRORS._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -20284,7 +20537,47 @@ Pack::inverter_connection_status() const {
   return inverter_connection_status_;
 }
 
-// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 40;
+// repeated .primary.LV_ERRORS LV_ERRORS = 40;
+inline int Pack::_internal_lv_errors_size() const {
+  return lv_errors_.size();
+}
+inline int Pack::lv_errors_size() const {
+  return _internal_lv_errors_size();
+}
+inline void Pack::clear_lv_errors() {
+  lv_errors_.Clear();
+}
+inline ::primary::LV_ERRORS* Pack::mutable_lv_errors(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.LV_ERRORS)
+  return lv_errors_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_ERRORS >*
+Pack::mutable_lv_errors() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.LV_ERRORS)
+  return &lv_errors_;
+}
+inline const ::primary::LV_ERRORS& Pack::_internal_lv_errors(int index) const {
+  return lv_errors_.Get(index);
+}
+inline const ::primary::LV_ERRORS& Pack::lv_errors(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.LV_ERRORS)
+  return _internal_lv_errors(index);
+}
+inline ::primary::LV_ERRORS* Pack::_internal_add_lv_errors() {
+  return lv_errors_.Add();
+}
+inline ::primary::LV_ERRORS* Pack::add_lv_errors() {
+  ::primary::LV_ERRORS* _add = _internal_add_lv_errors();
+  // @@protoc_insertion_point(field_add:primary.Pack.LV_ERRORS)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LV_ERRORS >&
+Pack::lv_errors() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.LV_ERRORS)
+  return lv_errors_;
+}
+
+// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
 inline int Pack::_internal_shutdown_status_size() const {
   return shutdown_status_.size();
 }
@@ -20324,7 +20617,7 @@ Pack::shutdown_status() const {
   return shutdown_status_;
 }
 
-// repeated .primary.MARKER MARKER = 41;
+// repeated .primary.MARKER MARKER = 42;
 inline int Pack::_internal_marker_size() const {
   return marker_.size();
 }
@@ -20364,7 +20657,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 42;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
 inline int Pack::_internal_hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -20404,7 +20697,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 43;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
 inline int Pack::_internal_hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -20444,7 +20737,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 44;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
 inline int Pack::_internal_hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -20484,7 +20777,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 45;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
 inline int Pack::_internal_set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -20524,7 +20817,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 46;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
 inline int Pack::_internal_handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -20564,7 +20857,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 47;
+// repeated .primary.SPEED SPEED = 48;
 inline int Pack::_internal_speed_size() const {
   return speed_.size();
 }
@@ -20604,7 +20897,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 48;
+// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
 inline int Pack::_internal_inv_l_request_size() const {
   return inv_l_request_.size();
 }
@@ -20644,7 +20937,7 @@ Pack::inv_l_request() const {
   return inv_l_request_;
 }
 
-// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 49;
+// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
 inline int Pack::_internal_inv_r_request_size() const {
   return inv_r_request_.size();
 }
@@ -20684,7 +20977,7 @@ Pack::inv_r_request() const {
   return inv_r_request_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 50;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
 inline int Pack::_internal_inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -20724,7 +21017,7 @@ Pack::inv_l_response() const {
   return inv_l_response_;
 }
 
-// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 51;
+// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
 inline int Pack::_internal_inv_r_response_size() const {
   return inv_r_response_.size();
 }
@@ -20764,7 +21057,7 @@ Pack::inv_r_response() const {
   return inv_r_response_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 52;
+// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
 inline int Pack::_internal_flash_cellboard_0_tx_size() const {
   return flash_cellboard_0_tx_.size();
 }
@@ -20804,7 +21097,7 @@ Pack::flash_cellboard_0_tx() const {
   return flash_cellboard_0_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 53;
+// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
 inline int Pack::_internal_flash_cellboard_0_rx_size() const {
   return flash_cellboard_0_rx_.size();
 }
@@ -20844,7 +21137,7 @@ Pack::flash_cellboard_0_rx() const {
   return flash_cellboard_0_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 54;
+// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
 inline int Pack::_internal_flash_cellboard_1_tx_size() const {
   return flash_cellboard_1_tx_.size();
 }
@@ -20884,7 +21177,7 @@ Pack::flash_cellboard_1_tx() const {
   return flash_cellboard_1_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 55;
+// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
 inline int Pack::_internal_flash_cellboard_1_rx_size() const {
   return flash_cellboard_1_rx_.size();
 }
@@ -20924,7 +21217,7 @@ Pack::flash_cellboard_1_rx() const {
   return flash_cellboard_1_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 56;
+// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
 inline int Pack::_internal_flash_cellboard_2_tx_size() const {
   return flash_cellboard_2_tx_.size();
 }
@@ -20964,7 +21257,7 @@ Pack::flash_cellboard_2_tx() const {
   return flash_cellboard_2_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 57;
+// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
 inline int Pack::_internal_flash_cellboard_2_rx_size() const {
   return flash_cellboard_2_rx_.size();
 }
@@ -21004,7 +21297,7 @@ Pack::flash_cellboard_2_rx() const {
   return flash_cellboard_2_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 58;
+// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
 inline int Pack::_internal_flash_cellboard_3_tx_size() const {
   return flash_cellboard_3_tx_.size();
 }
@@ -21044,7 +21337,7 @@ Pack::flash_cellboard_3_tx() const {
   return flash_cellboard_3_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 59;
+// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
 inline int Pack::_internal_flash_cellboard_3_rx_size() const {
   return flash_cellboard_3_rx_.size();
 }
@@ -21084,7 +21377,7 @@ Pack::flash_cellboard_3_rx() const {
   return flash_cellboard_3_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 60;
+// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
 inline int Pack::_internal_flash_cellboard_4_tx_size() const {
   return flash_cellboard_4_tx_.size();
 }
@@ -21124,7 +21417,7 @@ Pack::flash_cellboard_4_tx() const {
   return flash_cellboard_4_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 61;
+// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
 inline int Pack::_internal_flash_cellboard_4_rx_size() const {
   return flash_cellboard_4_rx_.size();
 }
@@ -21164,7 +21457,7 @@ Pack::flash_cellboard_4_rx() const {
   return flash_cellboard_4_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 62;
+// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
 inline int Pack::_internal_flash_cellboard_5_tx_size() const {
   return flash_cellboard_5_tx_.size();
 }
@@ -21204,7 +21497,7 @@ Pack::flash_cellboard_5_tx() const {
   return flash_cellboard_5_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 63;
+// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
 inline int Pack::_internal_flash_cellboard_5_rx_size() const {
   return flash_cellboard_5_rx_.size();
 }
@@ -21244,7 +21537,7 @@ Pack::flash_cellboard_5_rx() const {
   return flash_cellboard_5_rx_;
 }
 
-// repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 64;
+// repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
 inline int Pack::_internal_flash_bms_hv_tx_size() const {
   return flash_bms_hv_tx_.size();
 }
@@ -21284,7 +21577,7 @@ Pack::flash_bms_hv_tx() const {
   return flash_bms_hv_tx_;
 }
 
-// repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 65;
+// repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
 inline int Pack::_internal_flash_bms_hv_rx_size() const {
   return flash_bms_hv_rx_.size();
 }
@@ -21324,7 +21617,7 @@ Pack::flash_bms_hv_rx() const {
   return flash_bms_hv_rx_;
 }
 
-// repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 66;
+// repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
 inline int Pack::_internal_flash_bms_lv_tx_size() const {
   return flash_bms_lv_tx_.size();
 }
@@ -21364,7 +21657,7 @@ Pack::flash_bms_lv_tx() const {
   return flash_bms_lv_tx_;
 }
 
-// repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 67;
+// repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
 inline int Pack::_internal_flash_bms_lv_rx_size() const {
   return flash_bms_lv_rx_.size();
 }
@@ -21404,7 +21697,7 @@ Pack::flash_bms_lv_rx() const {
   return flash_bms_lv_rx_;
 }
 
-// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 68;
+// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
 inline int Pack::_internal_brusa_nlg5_ctl_size() const {
   return brusa_nlg5_ctl_.size();
 }
@@ -21444,7 +21737,7 @@ Pack::brusa_nlg5_ctl() const {
   return brusa_nlg5_ctl_;
 }
 
-// repeated .primary.BRUSA_ST BRUSA_ST = 69;
+// repeated .primary.BRUSA_ST BRUSA_ST = 70;
 inline int Pack::_internal_brusa_st_size() const {
   return brusa_st_.size();
 }
@@ -21484,7 +21777,7 @@ Pack::brusa_st() const {
   return brusa_st_;
 }
 
-// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 70;
+// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
 inline int Pack::_internal_brusa_act_i_size() const {
   return brusa_act_i_.size();
 }
@@ -21524,7 +21817,7 @@ Pack::brusa_act_i() const {
   return brusa_act_i_;
 }
 
-// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 71;
+// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
 inline int Pack::_internal_brusa_act_ii_size() const {
   return brusa_act_ii_.size();
 }
@@ -21564,7 +21857,7 @@ Pack::brusa_act_ii() const {
   return brusa_act_ii_;
 }
 
-// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 72;
+// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
 inline int Pack::_internal_brusa_temp_size() const {
   return brusa_temp_.size();
 }
@@ -21604,7 +21897,7 @@ Pack::brusa_temp() const {
   return brusa_temp_;
 }
 
-// repeated .primary.BRUSA_ERR BRUSA_ERR = 73;
+// repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
 inline int Pack::_internal_brusa_err_size() const {
   return brusa_err_.size();
 }
@@ -21644,7 +21937,7 @@ Pack::brusa_err() const {
   return brusa_err_;
 }
 
-// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 74;
+// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
 inline int Pack::_internal_bms_hv_chimera_size() const {
   return bms_hv_chimera_.size();
 }
@@ -21684,7 +21977,7 @@ Pack::bms_hv_chimera() const {
   return bms_hv_chimera_;
 }
 
-// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 75;
+// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
 inline int Pack::_internal_ecu_chimera_size() const {
   return ecu_chimera_.size();
 }
@@ -21727,6 +22020,8 @@ Pack::ecu_chimera() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

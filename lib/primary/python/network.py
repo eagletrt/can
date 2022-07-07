@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657221636
-CANLIB_BUILD_HASH = 0xd031e1c5
+CANLIB_BUILD_TIME = 1657224057
+CANLIB_BUILD_HASH = 0xc09ae0c0
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -2011,6 +2011,39 @@ class message_INVERTER_CONNECTION_STATUS:
     def deserialize(cls, data: bytearray):
         message = cls()
         message.status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_LV_ERRORS:
+    def __init__(
+        self,
+        warnings = None,
+        errors = None
+    ):
+        self.warnings = LvErrors(warnings)
+        self.errors = LvErrors(errors)
+        self.size = 6
+        self.interval = 10
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LV_ERRORS):
+            return False
+        if self.warnings != other.warnings:
+            return False
+        if self.errors != other.errors:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBBBBB", (int(self.warnings) >> 16) & 255, (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 16) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.warnings = LvErrors(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.errors = LvErrors(int((unpack("<xxxBBB", data[0:6])[0] << 16) | (unpack("<xxxBBB", data[0:6])[1] << 8) | (unpack("<xxxBBB", data[0:6])[2] << 0)))
         return message
 
 

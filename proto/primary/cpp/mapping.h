@@ -232,6 +232,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_SET_PUMPS_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> SET_PUMPS_SPEED;
     canlib_circular_buffer<primary_message_SET_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_INVERTER_CONNECTION_STATUS;
     canlib_circular_buffer<primary_message_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> INVERTER_CONNECTION_STATUS;
+    canlib_circular_buffer<primary_message_LV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE> LV_ERRORS;
     canlib_circular_buffer<primary_message_SHUTDOWN_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SHUTDOWN_STATUS;
     canlib_circular_buffer<primary_message_MARKER, CANLIB_CIRCULAR_BUFFER_SIZE> MARKER;
     canlib_circular_buffer<primary_message_HV_CELLS_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CELLS_VOLTAGE;
@@ -693,6 +694,17 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_INVERTER_CONNECTION_STATUS* msg = (primary_message_INVERTER_CONNECTION_STATUS*) (*map)[index].message_raw;
             primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
             proto_msg->set_status((primary::Toggle)msg->status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 7: {
+            primary_message_LV_ERRORS* msg = (primary_message_LV_ERRORS*) (*map)[index].message_raw;
+            primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
+            proto_msg->set_warnings(msg->warnings);
+            proto_msg->set_errors(msg->errors);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1350,6 +1362,15 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance._timestamp = pack->inverter_connection_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->INVERTER_CONNECTION_STATUS.push(instance);
+    }
+    for(int i = 0; i < pack->lv_errors_size(); i++){
+        static primary_message_LV_ERRORS instance;
+        instance.warnings =pack->lv_errors(i).warnings();
+        instance.errors =pack->lv_errors(i).errors();
+#ifdef CANLIB_TIMESTAMP
+        instance._timestamp = pack->lv_errors(i)._inner_timestamp();
+#endif // CANLIB_TIMESTAMP
+        map->LV_ERRORS.push(instance);
     }
     for(int i = 0; i < pack->shutdown_status_size(); i++){
         static primary_message_SHUTDOWN_STATUS instance;

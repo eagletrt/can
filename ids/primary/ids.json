@@ -154,6 +154,9 @@
                 "INVERTER_CONNECTION_STATUS": {
                     "INVERTER_CONNECTION_STATUS": 263
                 },
+                "LV_ERRORS": {
+                    "LV_ERRORS": 7
+                },
                 "SHUTDOWN_STATUS": {
                     "SHUTDOWN_STATUS": 295
                 }

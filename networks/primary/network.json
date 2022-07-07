@@ -812,6 +812,19 @@
       }
     },
     {
+      "name": "LV_ERRORS",
+      "topic": "DASnSTEER",
+      "priority": 7,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER", "TLM"],
+      "description": "LV Battery-related errors",
+      "interval": 10,
+      "contents": {
+        "warnings": "LvErrors",
+        "errors": "LvErrors"
+      }
+    },
+    {
       "name": "SHUTDOWN_STATUS",
       "topic": "DASnSTEER",
       "priority": 6,

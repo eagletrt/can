@@ -37,6 +37,7 @@ SET_RADIATOR_SPEED,SET_RADIATOR_SPEED: 777,primary,LV,4,STEER,BMS_LV,,"radiators
 SET_PUMPS_SPEED,SET_PUMPS_SPEED: 809,primary,LV,4,STEER,BMS_LV,,"pumps_speed: type: float32, range: -1, 1, force: uint16",Set both pumps speed
 SET_INVERTER_CONNECTION_STATUS,SET_INVERTER_CONNECTION_STATUS: 265,primary,LV,6,DAS,BMS_LV,,status: Toggle,Set inverter status
 INVERTER_CONNECTION_STATUS,INVERTER_CONNECTION_STATUS: 263,primary,DASnSTEER,6,BMS_LV,"DAS, STEER",100,status: Toggle,Inverter status
+LV_ERRORS,LV_ERRORS: 7,primary,DASnSTEER,7,BMS_LV,"DAS, STEER, TLM",10,"warnings: LvErrors, errors: LvErrors",LV Battery-related errors
 SHUTDOWN_STATUS,SHUTDOWN_STATUS: 295,primary,DASnSTEER,6,BMS_HV,"DAS, STEER",500,"input: bool, output: bool",Shutdown status
 MARKER,MARKER: 2,primary,TLM,7,STEER,TLM,,,Send a marker to telemetry
 HV_CELLS_VOLTAGE,HV_CELLS_VOLTAGE: 518,primary,HANDCART,5,BMS_HV,HANDCART,100,"start_index: uint8, voltage_0: type: float32, range: 0, 5, precision: 0.0001, voltage_1: type: float32, range: 0, 5, precision: 0.0001, voltage_2: type: float32, range: 0, 5, precision: 0.0001",Voltages for each cell

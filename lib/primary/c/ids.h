@@ -96,6 +96,7 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_LV_TEMPERATURE 0x3A7 // dec: 935 bin: 0b01110100111
 #define primary_ID_COOLING_STATUS 0x3C7 // dec: 967 bin: 0b01111000111
 #define primary_ID_INVERTER_CONNECTION_STATUS 0x107 // dec: 263 bin: 0b00100000111
+#define primary_ID_LV_ERRORS 0x7 // dec: 7 bin: 0b00000000111
 #define primary_ID_SHUTDOWN_STATUS 0x127 // dec: 295 bin: 0b00100100111
 
 /* TOPIC DAS */
@@ -232,6 +233,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "SET_INVERTER_CONNECTION_STATUS");;
         case primary_ID_INVERTER_CONNECTION_STATUS:
             return sprintf(buffer, "%s", "INVERTER_CONNECTION_STATUS");;
+        case primary_ID_LV_ERRORS:
+            return sprintf(buffer, "%s", "LV_ERRORS");;
         case primary_ID_SHUTDOWN_STATUS:
             return sprintf(buffer, "%s", "SHUTDOWN_STATUS");;
         case primary_ID_MARKER:
@@ -350,6 +353,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 809: return true; break;
         case 265: return true; break;
         case 263: return true; break;
+        case 7: return true; break;
         case 295: return true; break;
         case 2: return true; break;
         case 518: return true; break;

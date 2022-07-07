@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657221636
-#define CANLIB_BUILD_HASH 0xd031e1c5
+#define CANLIB_BUILD_TIME 1657224057
+#define CANLIB_BUILD_HASH 0xc09ae0c0
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -124,7 +124,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 75
+#define primary_MESSAGE_COUNT 76
 
 // Custom types
 
@@ -207,42 +207,43 @@ typedef struct {
 #define primary_INDEX_SET_PUMPS_SPEED 36
 #define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 37
 #define primary_INDEX_INVERTER_CONNECTION_STATUS 38
-#define primary_INDEX_SHUTDOWN_STATUS 39
-#define primary_INDEX_MARKER 40
-#define primary_INDEX_HV_CELLS_VOLTAGE 41
-#define primary_INDEX_HV_CELLS_TEMP 42
-#define primary_INDEX_HV_CELL_BALANCING_STATUS 43
-#define primary_INDEX_SET_CELL_BALANCING_STATUS 44
-#define primary_INDEX_HANDCART_STATUS 45
-#define primary_INDEX_SPEED 46
-#define primary_INDEX_INV_L_REQUEST 47
-#define primary_INDEX_INV_R_REQUEST 48
-#define primary_INDEX_INV_L_RESPONSE 49
-#define primary_INDEX_INV_R_RESPONSE 50
-#define primary_INDEX_FLASH_CELLBOARD_0_TX 51
-#define primary_INDEX_FLASH_CELLBOARD_0_RX 52
-#define primary_INDEX_FLASH_CELLBOARD_1_TX 53
-#define primary_INDEX_FLASH_CELLBOARD_1_RX 54
-#define primary_INDEX_FLASH_CELLBOARD_2_TX 55
-#define primary_INDEX_FLASH_CELLBOARD_2_RX 56
-#define primary_INDEX_FLASH_CELLBOARD_3_TX 57
-#define primary_INDEX_FLASH_CELLBOARD_3_RX 58
-#define primary_INDEX_FLASH_CELLBOARD_4_TX 59
-#define primary_INDEX_FLASH_CELLBOARD_4_RX 60
-#define primary_INDEX_FLASH_CELLBOARD_5_TX 61
-#define primary_INDEX_FLASH_CELLBOARD_5_RX 62
-#define primary_INDEX_FLASH_BMS_HV_TX 63
-#define primary_INDEX_FLASH_BMS_HV_RX 64
-#define primary_INDEX_FLASH_BMS_LV_TX 65
-#define primary_INDEX_FLASH_BMS_LV_RX 66
-#define primary_INDEX_BRUSA_NLG5_CTL 67
-#define primary_INDEX_BRUSA_ST 68
-#define primary_INDEX_BRUSA_ACT_I 69
-#define primary_INDEX_BRUSA_ACT_II 70
-#define primary_INDEX_BRUSA_TEMP 71
-#define primary_INDEX_BRUSA_ERR 72
-#define primary_INDEX_BMS_HV_CHIMERA 73
-#define primary_INDEX_ECU_CHIMERA 74
+#define primary_INDEX_LV_ERRORS 39
+#define primary_INDEX_SHUTDOWN_STATUS 40
+#define primary_INDEX_MARKER 41
+#define primary_INDEX_HV_CELLS_VOLTAGE 42
+#define primary_INDEX_HV_CELLS_TEMP 43
+#define primary_INDEX_HV_CELL_BALANCING_STATUS 44
+#define primary_INDEX_SET_CELL_BALANCING_STATUS 45
+#define primary_INDEX_HANDCART_STATUS 46
+#define primary_INDEX_SPEED 47
+#define primary_INDEX_INV_L_REQUEST 48
+#define primary_INDEX_INV_R_REQUEST 49
+#define primary_INDEX_INV_L_RESPONSE 50
+#define primary_INDEX_INV_R_RESPONSE 51
+#define primary_INDEX_FLASH_CELLBOARD_0_TX 52
+#define primary_INDEX_FLASH_CELLBOARD_0_RX 53
+#define primary_INDEX_FLASH_CELLBOARD_1_TX 54
+#define primary_INDEX_FLASH_CELLBOARD_1_RX 55
+#define primary_INDEX_FLASH_CELLBOARD_2_TX 56
+#define primary_INDEX_FLASH_CELLBOARD_2_RX 57
+#define primary_INDEX_FLASH_CELLBOARD_3_TX 58
+#define primary_INDEX_FLASH_CELLBOARD_3_RX 59
+#define primary_INDEX_FLASH_CELLBOARD_4_TX 60
+#define primary_INDEX_FLASH_CELLBOARD_4_RX 61
+#define primary_INDEX_FLASH_CELLBOARD_5_TX 62
+#define primary_INDEX_FLASH_CELLBOARD_5_RX 63
+#define primary_INDEX_FLASH_BMS_HV_TX 64
+#define primary_INDEX_FLASH_BMS_HV_RX 65
+#define primary_INDEX_FLASH_BMS_LV_TX 66
+#define primary_INDEX_FLASH_BMS_LV_RX 67
+#define primary_INDEX_BRUSA_NLG5_CTL 68
+#define primary_INDEX_BRUSA_ST 69
+#define primary_INDEX_BRUSA_ACT_I 70
+#define primary_INDEX_BRUSA_ACT_II 71
+#define primary_INDEX_BRUSA_TEMP 72
+#define primary_INDEX_BRUSA_ERR 73
+#define primary_INDEX_BMS_HV_CHIMERA 74
+#define primary_INDEX_ECU_CHIMERA 75
 
 // ============== SIZES ============== //
 
@@ -285,6 +286,7 @@ typedef struct {
 #define primary_SIZE_SET_PUMPS_SPEED 2
 #define primary_SIZE_SET_INVERTER_CONNECTION_STATUS 1
 #define primary_SIZE_INVERTER_CONNECTION_STATUS 1
+#define primary_SIZE_LV_ERRORS 6
 #define primary_SIZE_SHUTDOWN_STATUS 1
 #define primary_SIZE_MARKER 0
 #define primary_SIZE_HV_CELLS_VOLTAGE 7
@@ -1030,6 +1032,14 @@ typedef struct CANLIB_PARKING {
 } primary_message_INVERTER_CONNECTION_STATUS;
 
 typedef struct CANLIB_PARKING {
+    primary_LvErrors warnings;
+    primary_LvErrors errors;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_LV_ERRORS;
+
+typedef struct CANLIB_PARKING {
     primary_bool input;
     primary_bool output;
 #ifdef CANLIB_TIMESTAMP
@@ -1397,6 +1407,7 @@ typedef union CANLIB_PARKING {
     primary_message_SET_PUMPS_SPEED _SET_PUMPS_SPEED;
     primary_message_SET_INVERTER_CONNECTION_STATUS _SET_INVERTER_CONNECTION_STATUS;
     primary_message_INVERTER_CONNECTION_STATUS _INVERTER_CONNECTION_STATUS;
+    primary_message_LV_ERRORS _LV_ERRORS;
     primary_message_SHUTDOWN_STATUS _SHUTDOWN_STATUS;
     primary_message_MARKER _MARKER;
     primary_message_HV_CELLS_VOLTAGE _HV_CELLS_VOLTAGE;
@@ -2705,6 +2716,30 @@ int primary_to_string_file_INVERTER_CONNECTION_STATUS(primary_message_INVERTER_C
 int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer);
 
 
+// ============== LV_ERRORS ============== //
+
+primary_byte_size primary_serialize_LV_ERRORS(
+    uint8_t* data,
+    primary_LvErrors warnings,
+    primary_LvErrors errors
+);
+primary_byte_size primary_serialize_struct_LV_ERRORS(
+    uint8_t* data,
+    primary_message_LV_ERRORS* message
+);
+void primary_deserialize_LV_ERRORS(
+    primary_message_LV_ERRORS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_LV_ERRORS(primary_message_LV_ERRORS* message, char* buffer);
+int primary_fields_LV_ERRORS(char* buffer);
+int primary_to_string_file_LV_ERRORS(primary_message_LV_ERRORS* message, FILE* buffer);
+int primary_fields_file_LV_ERRORS(FILE* buffer);
+
+
 // ============== SHUTDOWN_STATUS ============== //
 
 primary_byte_size primary_serialize_SHUTDOWN_STATUS(
@@ -3695,6 +3730,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 809: return primary_INDEX_SET_PUMPS_SPEED;
         case 265: return primary_INDEX_SET_INVERTER_CONNECTION_STATUS;
         case 263: return primary_INDEX_INVERTER_CONNECTION_STATUS;
+        case 7: return primary_INDEX_LV_ERRORS;
         case 295: return primary_INDEX_SHUTDOWN_STATUS;
         case 2: return primary_INDEX_MARKER;
         case 518: return primary_INDEX_HV_CELLS_VOLTAGE;
@@ -3732,7 +3768,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 170: return primary_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_INDEX_ECU_CHIMERA;
     }
-    return 75; // invalid
+    return 76; // invalid
 }
 
 int primary_fields_from_id(canlib_message_id message_id, char *buffer);
@@ -8233,6 +8269,107 @@ int primary_fields_file_INVERTER_CONNECTION_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
+primary_byte_size primary_serialize_LV_ERRORS(
+    uint8_t* data,
+    primary_LvErrors warnings,
+    primary_LvErrors errors
+) {
+    data[0] = warnings & 255;
+    data[1] = (warnings >> 8) & 255;
+    data[2] = (warnings >> 16) & 255;
+    data[3] = errors & 255;
+    data[4] = (errors >> 8) & 255;
+    data[5] = (errors >> 16) & 255;
+    return 6;
+}
+
+primary_byte_size primary_serialize_struct_LV_ERRORS(
+    uint8_t* data,
+    primary_message_LV_ERRORS* message
+) {
+    data[0] = message->warnings & 255;
+    data[1] = (message->warnings >> 8) & 255;
+    data[2] = (message->warnings >> 16) & 255;
+    data[3] = message->errors & 255;
+    data[4] = (message->errors >> 8) & 255;
+    data[5] = (message->errors >> 16) & 255;
+    return 6;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_LV_ERRORS(
+    primary_message_LV_ERRORS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->warnings = data[0] | (data[1] << 8) | (data[2] << 16);
+    message->errors = data[3] | (data[4] << 8) | (data[5] << 16);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_LV_ERRORS(primary_message_LV_ERRORS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->warnings,
+        message->errors
+    );
+}
+
+int primary_fields_LV_ERRORS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "warnings" CANLIB_SEPARATOR 
+        "errors"
+    );
+}
+
+int primary_to_string_file_LV_ERRORS(primary_message_LV_ERRORS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->warnings,
+        message->errors
+    );
+}
+
+int primary_fields_file_LV_ERRORS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "warnings" CANLIB_SEPARATOR 
+        "errors"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
 primary_byte_size primary_serialize_SHUTDOWN_STATUS(
     uint8_t* data,
     primary_bool input,
@@ -11389,6 +11526,8 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_SET_INVERTER_CONNECTION_STATUS(buffer);
         case 263:
             return primary_fields_INVERTER_CONNECTION_STATUS(buffer);
+        case 7:
+            return primary_fields_LV_ERRORS(buffer);
         case 295:
             return primary_fields_SHUTDOWN_STATUS(buffer);
         case 2:
@@ -11545,6 +11684,8 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
         case 263:
             return primary_to_string_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 7:
+            return primary_to_string_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
         case 295:
             return primary_to_string_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
         case 2:
@@ -11701,6 +11842,8 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_SET_INVERTER_CONNECTION_STATUS(buffer);
         case 263:
             return primary_fields_file_INVERTER_CONNECTION_STATUS(buffer);
+        case 7:
+            return primary_fields_file_LV_ERRORS(buffer);
         case 295:
             return primary_fields_file_SHUTDOWN_STATUS(buffer);
         case 2:
@@ -11857,6 +12000,8 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
         case 263:
             return primary_to_string_file_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 7:
+            return primary_to_string_file_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
         case 295:
             return primary_to_string_file_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
         case 2:
@@ -12381,6 +12526,16 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
+        case 7: {
+            primary_deserialize_LV_ERRORS(
+                (primary_message_LV_ERRORS*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
         case 295: {
             primary_deserialize_SHUTDOWN_STATUS(
                 (primary_message_SHUTDOWN_STATUS*) message_raw,
@@ -12882,6 +13037,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].id = 263;
     (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw = (void*) malloc(sizeof(primary_message_INVERTER_CONNECTION_STATUS));
     (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_conversion = NULL;
+    (*devices)[primary_INDEX_LV_ERRORS].id = 7;
+    (*devices)[primary_INDEX_LV_ERRORS].message_raw = (void*) malloc(sizeof(primary_message_LV_ERRORS));
+    (*devices)[primary_INDEX_LV_ERRORS].message_conversion = NULL;
     (*devices)[primary_INDEX_SHUTDOWN_STATUS].id = 295;
     (*devices)[primary_INDEX_SHUTDOWN_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SHUTDOWN_STATUS));
     (*devices)[primary_INDEX_SHUTDOWN_STATUS].message_conversion = NULL;
@@ -13047,6 +13205,7 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion);
     free((*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_raw);
     free((*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw);
+    free((*devices)[primary_INDEX_LV_ERRORS].message_raw);
     free((*devices)[primary_INDEX_SHUTDOWN_STATUS].message_raw);
     free((*devices)[primary_INDEX_MARKER].message_raw);
     free((*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_raw);
@@ -13529,6 +13688,16 @@ void primary_devices_deserialize_from_id(
         case 263: {
             primary_deserialize_INVERTER_CONNECTION_STATUS(
                 (primary_message_INVERTER_CONNECTION_STATUS*) &(*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 7: {
+            primary_deserialize_LV_ERRORS(
+                (primary_message_LV_ERRORS*) &(*devices)[primary_INDEX_LV_ERRORS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

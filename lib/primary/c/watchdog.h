@@ -88,42 +88,43 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_SET_PUMPS_SPEED 36
 #define primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS 37
 #define primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS 38
-#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 39
-#define primary_WATCHDOG_INDEX_MARKER 40
-#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 41
-#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 42
-#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 43
-#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 44
-#define primary_WATCHDOG_INDEX_HANDCART_STATUS 45
-#define primary_WATCHDOG_INDEX_SPEED 46
-#define primary_WATCHDOG_INDEX_INV_L_REQUEST 47
-#define primary_WATCHDOG_INDEX_INV_R_REQUEST 48
-#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 49
-#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 50
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 51
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 52
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 53
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 54
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 55
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 56
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 57
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 58
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 59
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 60
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 61
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 62
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 63
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 64
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 65
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 66
-#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 67
-#define primary_WATCHDOG_INDEX_BRUSA_ST 68
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 69
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 70
-#define primary_WATCHDOG_INDEX_BRUSA_TEMP 71
-#define primary_WATCHDOG_INDEX_BRUSA_ERR 72
-#define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 73
-#define primary_WATCHDOG_INDEX_ECU_CHIMERA 74
+#define primary_WATCHDOG_INDEX_LV_ERRORS 39
+#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 40
+#define primary_WATCHDOG_INDEX_MARKER 41
+#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 42
+#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 43
+#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 44
+#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 45
+#define primary_WATCHDOG_INDEX_HANDCART_STATUS 46
+#define primary_WATCHDOG_INDEX_SPEED 47
+#define primary_WATCHDOG_INDEX_INV_L_REQUEST 48
+#define primary_WATCHDOG_INDEX_INV_R_REQUEST 49
+#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 50
+#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 51
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 52
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 53
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 54
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 55
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 56
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 57
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 58
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 59
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 60
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 61
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 62
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 63
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 64
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 65
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 66
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 67
+#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 68
+#define primary_WATCHDOG_INDEX_BRUSA_ST 69
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 70
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 71
+#define primary_WATCHDOG_INDEX_BRUSA_TEMP 72
+#define primary_WATCHDOG_INDEX_BRUSA_ERR 73
+#define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 74
+#define primary_WATCHDOG_INDEX_ECU_CHIMERA 75
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -205,6 +206,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INVERTER_CONNECTION_STATUS 100
 #define primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS (100 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_LV_ERRORS 10
+#define primary_INTERVAL_WITH_THRESHOLD_LV_ERRORS (10 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_SHUTDOWN_STATUS 500
 #define primary_INTERVAL_WITH_THRESHOLD_SHUTDOWN_STATUS (500 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_MARKER -1
@@ -286,7 +289,7 @@ typedef void (*canlib_watchdog_callback)(int);
 typedef struct {
     uint8_t activated[10];
     uint8_t timeout[10];
-    canlib_watchdog_timestamp last_reset[75];
+    canlib_watchdog_timestamp last_reset[76];
 } primary_watchdog;
 
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
@@ -330,6 +333,7 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 809: return primary_INTERVAL_SET_PUMPS_SPEED;
         case 265: return primary_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
         case 263: return primary_INTERVAL_INVERTER_CONNECTION_STATUS;
+        case 7: return primary_INTERVAL_LV_ERRORS;
         case 295: return primary_INTERVAL_SHUTDOWN_STATUS;
         case 2: return primary_INTERVAL_MARKER;
         case 518: return primary_INTERVAL_HV_CELLS_VOLTAGE;
@@ -411,6 +415,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 809: return primary_WATCHDOG_INDEX_SET_PUMPS_SPEED;
         case 265: return primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS;
         case 263: return primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS;
+        case 7: return primary_WATCHDOG_INDEX_LV_ERRORS;
         case 295: return primary_WATCHDOG_INDEX_SHUTDOWN_STATUS;
         case 2: return primary_WATCHDOG_INDEX_MARKER;
         case 518: return primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE;
@@ -448,7 +453,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 170: return primary_WATCHDOG_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_WATCHDOG_INDEX_ECU_CHIMERA;
     }
-    return 75; // invalid
+    return 76; // invalid
 }
 
 primary_watchdog* primary_watchdog_new();
@@ -483,7 +488,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 75 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 76 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -638,6 +643,12 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_ERRORS)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_LV_ERRORS
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SHUTDOWN_STATUS)
@@ -881,6 +892,12 @@ void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_tim
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DAS_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_DAS_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DAS_ERRORS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_LV_ERRORS)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_LV_ERRORS
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_ERRORS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_REQUEST)
