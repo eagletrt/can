@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657202749
-#define CANLIB_BUILD_HASH 0x44dd416a
+#define CANLIB_BUILD_TIME 1657205566
+#define CANLIB_BUILD_HASH 0x7d55288a
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -7653,8 +7653,8 @@ void primary_raw_to_conversion_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)radiators_speed) / 65536.0) + 0;
-    conversion->pumps_speed = (((primary_float32)pumps_speed) / 65536.0) + 0;
+    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32768.0) - 1;
+    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32768.0) - 1;
 }
 
 void primary_raw_to_conversion_struct_COOLING_STATUS(
@@ -7664,8 +7664,8 @@ void primary_raw_to_conversion_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 65536.0) + 0;
-    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 65536.0) + 0;
+    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32768.0) - 1;
+    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32768.0) - 1;
 }
 
 void primary_conversion_to_raw_COOLING_STATUS(
@@ -7679,8 +7679,8 @@ void primary_conversion_to_raw_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((radiators_speed + 0) * 65536.0);
-    raw->pumps_speed = (primary_uint16)((pumps_speed + 0) * 65536.0);
+    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32768.0);
+    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32768.0);
 }
 
 void primary_conversion_to_raw_struct_COOLING_STATUS(
@@ -7690,8 +7690,8 @@ void primary_conversion_to_raw_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 0) * 65536.0);
-    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 0) * 65536.0);
+    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32768.0);
+    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32768.0);
 }
 
 // ============== STRING ============== //
@@ -7794,7 +7794,7 @@ void primary_raw_to_conversion_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)radiators_speed) / 65536.0) + 0;
+    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32768.0) - 1;
 }
 
 void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
@@ -7804,7 +7804,7 @@ void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 65536.0) + 0;
+    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32768.0) - 1;
 }
 
 void primary_conversion_to_raw_SET_RADIATOR_SPEED(
@@ -7817,7 +7817,7 @@ void primary_conversion_to_raw_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((radiators_speed + 0) * 65536.0);
+    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32768.0);
 }
 
 void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
@@ -7827,7 +7827,7 @@ void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 0) * 65536.0);
+    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32768.0);
 }
 
 // ============== STRING ============== //
@@ -7924,7 +7924,7 @@ void primary_raw_to_conversion_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pumps_speed = (((primary_float32)pumps_speed) / 65536.0) + 0;
+    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32768.0) - 1;
 }
 
 void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
@@ -7934,7 +7934,7 @@ void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 65536.0) + 0;
+    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32768.0) - 1;
 }
 
 void primary_conversion_to_raw_SET_PUMPS_SPEED(
@@ -7947,7 +7947,7 @@ void primary_conversion_to_raw_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pumps_speed = (primary_uint16)((pumps_speed + 0) * 65536.0);
+    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32768.0);
 }
 
 void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
@@ -7957,7 +7957,7 @@ void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 0) * 65536.0);
+    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32768.0);
 }
 
 // ============== STRING ============== //

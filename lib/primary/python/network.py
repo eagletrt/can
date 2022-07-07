@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657202749
-CANLIB_BUILD_HASH = 0x44dd416a
+CANLIB_BUILD_TIME = 1657205566
+CANLIB_BUILD_HASH = 0x7d55288a
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1791,8 +1791,8 @@ class message_COOLING_STATUS:
 
     def convert(self) -> message_COOLING_STATUS_conversion:
         conversion = message_COOLING_STATUS_conversion()
-        conversion.radiators_speed = ((float32(self.radiators_speed)) / 65536.0) + 0
-        conversion.pumps_speed = ((float32(self.pumps_speed)) / 65536.0) + 0
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32768.0) - 1
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32768.0) - 1
         return conversion
 
 
@@ -1818,8 +1818,8 @@ class message_COOLING_STATUS_conversion:
 
     def convert_to_raw(self) -> message_COOLING_STATUS:
         raw = message_COOLING_STATUS()
-        raw.radiators_speed = uint16((self.radiators_speed + 0) * 65536.0)
-        raw.pumps_speed = uint16((self.pumps_speed + 0) * 65536.0)
+        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32768.0)
+        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32768.0)
         return raw
 
 class message_SET_RADIATOR_SPEED:
@@ -1851,7 +1851,7 @@ class message_SET_RADIATOR_SPEED:
 
     def convert(self) -> message_SET_RADIATOR_SPEED_conversion:
         conversion = message_SET_RADIATOR_SPEED_conversion()
-        conversion.radiators_speed = ((float32(self.radiators_speed)) / 65536.0) + 0
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32768.0) - 1
         return conversion
 
 
@@ -1872,7 +1872,7 @@ class message_SET_RADIATOR_SPEED_conversion:
 
     def convert_to_raw(self) -> message_SET_RADIATOR_SPEED:
         raw = message_SET_RADIATOR_SPEED()
-        raw.radiators_speed = uint16((self.radiators_speed + 0) * 65536.0)
+        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32768.0)
         return raw
 
 class message_SET_PUMPS_SPEED:
@@ -1904,7 +1904,7 @@ class message_SET_PUMPS_SPEED:
 
     def convert(self) -> message_SET_PUMPS_SPEED_conversion:
         conversion = message_SET_PUMPS_SPEED_conversion()
-        conversion.pumps_speed = ((float32(self.pumps_speed)) / 65536.0) + 0
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32768.0) - 1
         return conversion
 
 
@@ -1925,7 +1925,7 @@ class message_SET_PUMPS_SPEED_conversion:
 
     def convert_to_raw(self) -> message_SET_PUMPS_SPEED:
         raw = message_SET_PUMPS_SPEED()
-        raw.pumps_speed = uint16((self.pumps_speed + 0) * 65536.0)
+        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32768.0)
         return raw
 
 class message_SET_INVERTER_CONNECTION_STATUS:

@@ -721,12 +721,12 @@
       "contents": {
         "radiators_speed": {
           "type": "float32",
-          "range": [0, 1],
+          "range": [-1, 1],
           "force": "uint16"
         },
         "pumps_speed": {
           "type": "float32",
-          "range": [0, 1],
+          "range": [-1, 1],
           "force": "uint16"
         }
       }
@@ -741,7 +741,7 @@
       "contents": {
         "radiators_speed": {
           "type": "float32",
-          "range": [0, 1],
+          "range": [-1, 1],
           "force": "uint16"
         }
       }
@@ -756,7 +756,7 @@
       "contents": {
         "pumps_speed": {
           "type": "float32",
-          "range": [0, 1],
+          "range": [-1, 1],
           "force": "uint16"
         }
       }
