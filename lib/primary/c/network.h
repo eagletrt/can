@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657205566
-#define CANLIB_BUILD_HASH 0x7d55288a
+#define CANLIB_BUILD_TIME 1657221636
+#define CANLIB_BUILD_HASH 0xd031e1c5
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -344,6 +344,34 @@ typedef primary_uint16 primary_HvErrors;
 
 #define primary_MAX_STRING_LENGTH_HvErrors 223
 int primary_to_string_HvErrors(primary_HvErrors value, char* buffer);
+
+typedef primary_uint32 primary_LvErrors;
+#define primary_LvErrors_DEFAULT 0
+#define primary_LvErrors_CELL_UNDERVOLTAGE 1
+#define primary_LvErrors_CELL_OVERVOLTAGE 2
+#define primary_LvErrors_OPEN_WIRE 4
+#define primary_LvErrors_CAN 8
+#define primary_LvErrors_SPI 16
+#define primary_LvErrors_OVER_CURRENT 32
+#define primary_LvErrors_DCDC12_UNDER_TEMPERATURE 64
+#define primary_LvErrors_DCDC12_OVER_TEMPERATURE 128
+#define primary_LvErrors_DCDC24_UNDER_TEMPERATURE 256
+#define primary_LvErrors_DCDC24_OVER_TEMPERATURE 512
+#define primary_LvErrors_CELL_UNDER_TEMPERATURE 1024
+#define primary_LvErrors_CELL_OVER_TEMPERATURE 2048
+#define primary_LvErrors_RELAY 4096
+#define primary_LvErrors_LTC6810 8192
+#define primary_LvErrors_VOLTAGES_NOT_READY 16384
+#define primary_LvErrors_MCP23017 32768
+#define primary_LvErrors_RADIATOR 65536
+#define primary_LvErrors_FAN 131072
+#define primary_LvErrors_PUMP 262144
+#define primary_LvErrors_ADC_INIT 524288
+#define primary_LvErrors_DCDC12 1048576
+#define primary_LvErrors_DCDC24 2097152
+
+#define primary_MAX_STRING_LENGTH_LvErrors 292
+int primary_to_string_LvErrors(primary_LvErrors value, char* buffer);
 
 typedef primary_uint16 primary_DasErrors;
 #define primary_DasErrors_DEFAULT 0
@@ -3750,6 +3778,34 @@ int primary_to_string_HvErrors(primary_HvErrors value, char* buffer) {
     if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "FEEDBACK_CIRCUITRY ");
     if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "EEPROM_COMM ");
     if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "EEPROM_WRITE ");
+    buffer[offset] = '\0';
+    return offset;
+}
+
+int primary_to_string_LvErrors(primary_LvErrors value, char* buffer) {
+    int offset = 0;
+    if (CANLIB_BITTEST_BITMASK(value, 1)) offset += sprintf(buffer + offset, "CELL_UNDERVOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 2)) offset += sprintf(buffer + offset, "CELL_OVERVOLTAGE ");
+    if (CANLIB_BITTEST_BITMASK(value, 4)) offset += sprintf(buffer + offset, "OPEN_WIRE ");
+    if (CANLIB_BITTEST_BITMASK(value, 8)) offset += sprintf(buffer + offset, "CAN ");
+    if (CANLIB_BITTEST_BITMASK(value, 16)) offset += sprintf(buffer + offset, "SPI ");
+    if (CANLIB_BITTEST_BITMASK(value, 32)) offset += sprintf(buffer + offset, "OVER_CURRENT ");
+    if (CANLIB_BITTEST_BITMASK(value, 64)) offset += sprintf(buffer + offset, "DCDC12_UNDER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 128)) offset += sprintf(buffer + offset, "DCDC12_OVER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 256)) offset += sprintf(buffer + offset, "DCDC24_UNDER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 512)) offset += sprintf(buffer + offset, "DCDC24_OVER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 1024)) offset += sprintf(buffer + offset, "CELL_UNDER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 2048)) offset += sprintf(buffer + offset, "CELL_OVER_TEMPERATURE ");
+    if (CANLIB_BITTEST_BITMASK(value, 4096)) offset += sprintf(buffer + offset, "RELAY ");
+    if (CANLIB_BITTEST_BITMASK(value, 8192)) offset += sprintf(buffer + offset, "LTC6810 ");
+    if (CANLIB_BITTEST_BITMASK(value, 16384)) offset += sprintf(buffer + offset, "VOLTAGES_NOT_READY ");
+    if (CANLIB_BITTEST_BITMASK(value, 32768)) offset += sprintf(buffer + offset, "MCP23017 ");
+    if (CANLIB_BITTEST_BITMASK(value, 65536)) offset += sprintf(buffer + offset, "RADIATOR ");
+    if (CANLIB_BITTEST_BITMASK(value, 131072)) offset += sprintf(buffer + offset, "FAN ");
+    if (CANLIB_BITTEST_BITMASK(value, 262144)) offset += sprintf(buffer + offset, "PUMP ");
+    if (CANLIB_BITTEST_BITMASK(value, 524288)) offset += sprintf(buffer + offset, "ADC_INIT ");
+    if (CANLIB_BITTEST_BITMASK(value, 1048576)) offset += sprintf(buffer + offset, "DCDC12 ");
+    if (CANLIB_BITTEST_BITMASK(value, 2097152)) offset += sprintf(buffer + offset, "DCDC24 ");
     buffer[offset] = '\0';
     return offset;
 }

@@ -20,6 +20,33 @@
         "EEPROM_WRITE"
       ]
     },
+    "LvErrors": {
+      "type": "bitset",
+      "items": [
+        "CELL_UNDERVOLTAGE",
+        "CELL_OVERVOLTAGE",
+        "OPEN_WIRE",
+        "CAN",
+        "SPI",
+        "OVER_CURRENT",
+        "DCDC12_UNDER_TEMPERATURE",
+        "DCDC12_OVER_TEMPERATURE",
+        "DCDC24_UNDER_TEMPERATURE",
+        "DCDC24_OVER_TEMPERATURE",
+        "CELL_UNDER_TEMPERATURE",
+        "CELL_OVER_TEMPERATURE",
+        "RELAY",
+        "LTC6810",
+        "VOLTAGES_NOT_READY",
+        "MCP23017",
+        "RADIATOR",
+        "FAN",
+        "PUMP",
+        "ADC_INIT",
+        "DCDC12",
+        "DCDC24"
+      ]
+    },
     "DasErrors": {
       "type": "bitset",
       "items": [

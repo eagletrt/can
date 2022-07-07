@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657205566
-CANLIB_BUILD_HASH = 0x7d55288a
+CANLIB_BUILD_TIME = 1657221636
+CANLIB_BUILD_HASH = 0xd031e1c5
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -59,6 +59,37 @@ class HvErrors(IntFlag):
     FEEDBACK_CIRCUITRY = 2048
     EEPROM_COMM = 4096
     EEPROM_WRITE = 8192
+
+    @classmethod
+    def _missing_(cls, value):
+        if value is None:
+            return cls(0)
+        return super(IntFlag, cls)._missing_(value)
+
+
+class LvErrors(IntFlag):
+    CELL_UNDERVOLTAGE = 1
+    CELL_OVERVOLTAGE = 2
+    OPEN_WIRE = 4
+    CAN = 8
+    SPI = 16
+    OVER_CURRENT = 32
+    DCDC12_UNDER_TEMPERATURE = 64
+    DCDC12_OVER_TEMPERATURE = 128
+    DCDC24_UNDER_TEMPERATURE = 256
+    DCDC24_OVER_TEMPERATURE = 512
+    CELL_UNDER_TEMPERATURE = 1024
+    CELL_OVER_TEMPERATURE = 2048
+    RELAY = 4096
+    LTC6810 = 8192
+    VOLTAGES_NOT_READY = 16384
+    MCP23017 = 32768
+    RADIATOR = 65536
+    FAN = 131072
+    PUMP = 262144
+    ADC_INIT = 524288
+    DCDC12 = 1048576
+    DCDC24 = 2097152
 
     @classmethod
     def _missing_(cls, value):
