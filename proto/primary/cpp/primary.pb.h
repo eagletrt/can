@@ -621,31 +621,6 @@ inline bool Pedal_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Pedal>(
     Pedal_descriptor(), name, value);
 }
-enum Cooling : int {
-  Cooling_SET_MAX = 0,
-  Cooling_SET_OFF = 1,
-  Cooling_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  Cooling_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool Cooling_IsValid(int value);
-constexpr Cooling Cooling_MIN = Cooling_SET_MAX;
-constexpr Cooling Cooling_MAX = Cooling_SET_OFF;
-constexpr int Cooling_ARRAYSIZE = Cooling_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cooling_descriptor();
-template<typename T>
-inline const std::string& Cooling_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Cooling>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function Cooling_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Cooling_descriptor(), enum_t_value);
-}
-inline bool Cooling_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, Cooling* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Cooling>(
-    Cooling_descriptor(), name, value);
-}
 enum ImdStatus : int {
   ImdStatus_IMD_SC = 0,
   ImdStatus_IMD_NORMAL = 1,
@@ -6561,7 +6536,7 @@ class SET_RADIATOR_SPEED final :
 
   enum : int {
     kInnerTimestampFieldNumber = 2,
-    kRadiatorSpeedFieldNumber = 1,
+    kRadiatorsSpeedFieldNumber = 1,
   };
   // uint64 _inner_timestamp = 2;
   void clear__inner_timestamp();
@@ -6572,13 +6547,13 @@ class SET_RADIATOR_SPEED final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // .primary.Cooling radiator_speed = 1;
-  void clear_radiator_speed();
-  ::primary::Cooling radiator_speed() const;
-  void set_radiator_speed(::primary::Cooling value);
+  // uint32 radiators_speed = 1;
+  void clear_radiators_speed();
+  uint32_t radiators_speed() const;
+  void set_radiators_speed(uint32_t value);
   private:
-  ::primary::Cooling _internal_radiator_speed() const;
-  void _internal_set_radiator_speed(::primary::Cooling value);
+  uint32_t _internal_radiators_speed() const;
+  void _internal_set_radiators_speed(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SET_RADIATOR_SPEED)
@@ -6589,7 +6564,7 @@ class SET_RADIATOR_SPEED final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint64_t _inner_timestamp_;
-  int radiator_speed_;
+  uint32_t radiators_speed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -6726,13 +6701,13 @@ class SET_PUMPS_SPEED final :
   void _internal_set__inner_timestamp(uint64_t value);
   public:
 
-  // .primary.Cooling pumps_speed = 1;
+  // uint32 pumps_speed = 1;
   void clear_pumps_speed();
-  ::primary::Cooling pumps_speed() const;
-  void set_pumps_speed(::primary::Cooling value);
+  uint32_t pumps_speed() const;
+  void set_pumps_speed(uint32_t value);
   private:
-  ::primary::Cooling _internal_pumps_speed() const;
-  void _internal_set_pumps_speed(::primary::Cooling value);
+  uint32_t _internal_pumps_speed() const;
+  void _internal_set_pumps_speed(uint32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.SET_PUMPS_SPEED)
@@ -6743,7 +6718,7 @@ class SET_PUMPS_SPEED final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   uint64_t _inner_timestamp_;
-  int pumps_speed_;
+  uint32_t pumps_speed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -16649,24 +16624,24 @@ inline void COOLING_STATUS::set__inner_timestamp(uint64_t value) {
 
 // SET_RADIATOR_SPEED
 
-// .primary.Cooling radiator_speed = 1;
-inline void SET_RADIATOR_SPEED::clear_radiator_speed() {
-  radiator_speed_ = 0;
+// uint32 radiators_speed = 1;
+inline void SET_RADIATOR_SPEED::clear_radiators_speed() {
+  radiators_speed_ = 0u;
 }
-inline ::primary::Cooling SET_RADIATOR_SPEED::_internal_radiator_speed() const {
-  return static_cast< ::primary::Cooling >(radiator_speed_);
+inline uint32_t SET_RADIATOR_SPEED::_internal_radiators_speed() const {
+  return radiators_speed_;
 }
-inline ::primary::Cooling SET_RADIATOR_SPEED::radiator_speed() const {
-  // @@protoc_insertion_point(field_get:primary.SET_RADIATOR_SPEED.radiator_speed)
-  return _internal_radiator_speed();
+inline uint32_t SET_RADIATOR_SPEED::radiators_speed() const {
+  // @@protoc_insertion_point(field_get:primary.SET_RADIATOR_SPEED.radiators_speed)
+  return _internal_radiators_speed();
 }
-inline void SET_RADIATOR_SPEED::_internal_set_radiator_speed(::primary::Cooling value) {
+inline void SET_RADIATOR_SPEED::_internal_set_radiators_speed(uint32_t value) {
   
-  radiator_speed_ = value;
+  radiators_speed_ = value;
 }
-inline void SET_RADIATOR_SPEED::set_radiator_speed(::primary::Cooling value) {
-  _internal_set_radiator_speed(value);
-  // @@protoc_insertion_point(field_set:primary.SET_RADIATOR_SPEED.radiator_speed)
+inline void SET_RADIATOR_SPEED::set_radiators_speed(uint32_t value) {
+  _internal_set_radiators_speed(value);
+  // @@protoc_insertion_point(field_set:primary.SET_RADIATOR_SPEED.radiators_speed)
 }
 
 // uint64 _inner_timestamp = 2;
@@ -16693,22 +16668,22 @@ inline void SET_RADIATOR_SPEED::set__inner_timestamp(uint64_t value) {
 
 // SET_PUMPS_SPEED
 
-// .primary.Cooling pumps_speed = 1;
+// uint32 pumps_speed = 1;
 inline void SET_PUMPS_SPEED::clear_pumps_speed() {
-  pumps_speed_ = 0;
+  pumps_speed_ = 0u;
 }
-inline ::primary::Cooling SET_PUMPS_SPEED::_internal_pumps_speed() const {
-  return static_cast< ::primary::Cooling >(pumps_speed_);
+inline uint32_t SET_PUMPS_SPEED::_internal_pumps_speed() const {
+  return pumps_speed_;
 }
-inline ::primary::Cooling SET_PUMPS_SPEED::pumps_speed() const {
+inline uint32_t SET_PUMPS_SPEED::pumps_speed() const {
   // @@protoc_insertion_point(field_get:primary.SET_PUMPS_SPEED.pumps_speed)
   return _internal_pumps_speed();
 }
-inline void SET_PUMPS_SPEED::_internal_set_pumps_speed(::primary::Cooling value) {
+inline void SET_PUMPS_SPEED::_internal_set_pumps_speed(uint32_t value) {
   
   pumps_speed_ = value;
 }
-inline void SET_PUMPS_SPEED::set_pumps_speed(::primary::Cooling value) {
+inline void SET_PUMPS_SPEED::set_pumps_speed(uint32_t value) {
   _internal_set_pumps_speed(value);
   // @@protoc_insertion_point(field_set:primary.SET_PUMPS_SPEED.pumps_speed)
 }
@@ -21958,11 +21933,6 @@ template <> struct is_proto_enum< ::primary::Pedal> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::primary::Pedal>() {
   return ::primary::Pedal_descriptor();
-}
-template <> struct is_proto_enum< ::primary::Cooling> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::primary::Cooling>() {
-  return ::primary::Cooling_descriptor();
 }
 template <> struct is_proto_enum< ::primary::ImdStatus> : ::std::true_type {};
 template <>

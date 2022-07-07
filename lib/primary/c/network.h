@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657195680
-#define CANLIB_BUILD_HASH 0x9c9e676d
+#define CANLIB_BUILD_TIME 1657202749
+#define CANLIB_BUILD_HASH 0x44dd416a
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -281,8 +281,8 @@ typedef struct {
 #define primary_SIZE_LV_TOTAL_VOLTAGE 4
 #define primary_SIZE_LV_TEMPERATURE 8
 #define primary_SIZE_COOLING_STATUS 4
-#define primary_SIZE_SET_RADIATOR_SPEED 1
-#define primary_SIZE_SET_PUMPS_SPEED 1
+#define primary_SIZE_SET_RADIATOR_SPEED 2
+#define primary_SIZE_SET_PUMPS_SPEED 2
 #define primary_SIZE_SET_INVERTER_CONNECTION_STATUS 1
 #define primary_SIZE_INVERTER_CONNECTION_STATUS 1
 #define primary_SIZE_SHUTDOWN_STATUS 1
@@ -581,14 +581,6 @@ typedef enum CANLIB_PARKING {
 
 #define primary_MAX_STRING_LENGTH_Pedal 12
 int primary_to_string_Pedal(primary_Pedal value, char* buffer);
-
-typedef enum CANLIB_PARKING {
-    primary_Cooling_SET_MAX = 0,
-    primary_Cooling_SET_OFF = 1,
-} primary_Cooling;
-
-#define primary_MAX_STRING_LENGTH_Cooling 8
-int primary_to_string_Cooling(primary_Cooling value, char* buffer);
 
 typedef enum CANLIB_PARKING {
     primary_ImdStatus_IMD_SC = 0,
@@ -968,18 +960,32 @@ typedef struct CANLIB_PARKING {
 } primary_message_COOLING_STATUS_conversion;
 
 typedef struct CANLIB_PARKING {
-    primary_Cooling radiator_speed;
+    primary_uint16 radiators_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_RADIATOR_SPEED;
 
 typedef struct CANLIB_PARKING {
-    primary_Cooling pumps_speed;
+    primary_float32 radiators_speed;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SET_RADIATOR_SPEED_conversion;
+
+typedef struct CANLIB_PARKING {
+    primary_uint16 pumps_speed;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SET_PUMPS_SPEED;
+
+typedef struct CANLIB_PARKING {
+    primary_float32 pumps_speed;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SET_PUMPS_SPEED_conversion;
 
 typedef struct CANLIB_PARKING {
     primary_Toggle status;
@@ -1412,6 +1418,8 @@ typedef union CANLIB_PARKING {
     primary_message_LV_TOTAL_VOLTAGE_conversion _LV_TOTAL_VOLTAGE;
     primary_message_LV_TEMPERATURE_conversion _LV_TEMPERATURE;
     primary_message_COOLING_STATUS_conversion _COOLING_STATUS;
+    primary_message_SET_RADIATOR_SPEED_conversion _SET_RADIATOR_SPEED;
+    primary_message_SET_PUMPS_SPEED_conversion _SET_PUMPS_SPEED;
     primary_message_HV_CELLS_VOLTAGE_conversion _HV_CELLS_VOLTAGE;
     primary_message_HV_CELLS_TEMP_conversion _HV_CELLS_TEMP;
     primary_message_SPEED_conversion _SPEED;
@@ -2531,7 +2539,7 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_SET_RADIATOR_SPEED(
     uint8_t* data,
-    primary_Cooling radiator_speed
+    primary_uint16 radiators_speed
 );
 primary_byte_size primary_serialize_struct_SET_RADIATOR_SPEED(
     uint8_t* data,
@@ -2544,9 +2552,34 @@ void primary_deserialize_SET_RADIATOR_SPEED(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, char* buffer);
+void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion,
+    primary_message_SET_RADIATOR_SPEED* raw
+);
+
+void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED* raw,
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion
+);
+
+void primary_conversion_to_raw_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED* raw,
+    primary_float32 radiators_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion,
+    primary_uint16 radiators_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED_conversion* message, char* buffer);
 int primary_fields_SET_RADIATOR_SPEED(char* buffer);
-int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, FILE* buffer);
+int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED_conversion* message, FILE* buffer);
 int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer);
 
 
@@ -2554,7 +2587,7 @@ int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer);
 
 primary_byte_size primary_serialize_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_Cooling pumps_speed
+    primary_uint16 pumps_speed
 );
 primary_byte_size primary_serialize_struct_SET_PUMPS_SPEED(
     uint8_t* data,
@@ -2567,9 +2600,34 @@ void primary_deserialize_SET_PUMPS_SPEED(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, char* buffer);
+void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED_conversion* conversion,
+    primary_message_SET_PUMPS_SPEED* raw
+);
+
+void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* raw,
+    primary_message_SET_PUMPS_SPEED_conversion* conversion
+);
+
+void primary_conversion_to_raw_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* raw,
+    primary_float32 pumps_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED_conversion* conversion,
+    primary_uint16 pumps_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED_conversion* message, char* buffer);
 int primary_fields_SET_PUMPS_SPEED(char* buffer);
-int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, FILE* buffer);
+int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED_conversion* message, FILE* buffer);
 int primary_fields_file_SET_PUMPS_SPEED(FILE* buffer);
 
 
@@ -3927,14 +3985,6 @@ int primary_to_string_Pedal(primary_Pedal value, char* buffer) {
     switch (value) {
         case 0: return sprintf(buffer, "ACCELERATOR");
         case 1: return sprintf(buffer, "BRAKE");
-    }
-    return 0;
-}
-
-int primary_to_string_Cooling(primary_Cooling value, char* buffer) {
-    switch (value) {
-        case 0: return sprintf(buffer, "SET_MAX");
-        case 1: return sprintf(buffer, "SET_OFF");
     }
     return 0;
 }
@@ -7703,18 +7753,20 @@ int primary_fields_file_COOLING_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_SET_RADIATOR_SPEED(
     uint8_t* data,
-    primary_Cooling radiator_speed
+    primary_uint16 radiators_speed
 ) {
-    data[0] = radiator_speed << 7;
-    return 1;
+    data[0] = radiators_speed & 255;
+    data[1] = (radiators_speed >> 8) & 255;
+    return 2;
 }
 
 primary_byte_size primary_serialize_struct_SET_RADIATOR_SPEED(
     uint8_t* data,
     primary_message_SET_RADIATOR_SPEED* message
 ) {
-    data[0] = message->radiator_speed << 7;
-    return 1;
+    data[0] = message->radiators_speed & 255;
+    data[1] = (message->radiators_speed >> 8) & 255;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -7729,22 +7781,67 @@ void primary_deserialize_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->radiator_speed = (primary_Cooling) ((data[0] & 128) >> 7);
+    message->radiators_speed = data[0] | (data[1] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion,
+    primary_uint16 radiators_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->radiators_speed = (((primary_float32)radiators_speed) / 65536.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion,
+    primary_message_SET_RADIATOR_SPEED* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 65536.0) + 0;
+}
+
+void primary_conversion_to_raw_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED* raw,
+    primary_float32 radiators_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->radiators_speed = (primary_uint16)((radiators_speed + 0) * 65536.0);
+}
+
+void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
+    primary_message_SET_RADIATOR_SPEED* raw,
+    primary_message_SET_RADIATOR_SPEED_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 0) * 65536.0);
 }
 
 // ============== STRING ============== //
-
-int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, char* buffer) {
+int primary_to_string_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->radiator_speed
+        message->radiators_speed
     );
 }
 
@@ -7754,21 +7851,21 @@ int primary_fields_SET_RADIATOR_SPEED(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "radiator_speed"
+        "radiators_speed"
     );
 }
 
-int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED* message, FILE* buffer) {
+int primary_to_string_file_SET_RADIATOR_SPEED(primary_message_SET_RADIATOR_SPEED_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
-        message->radiator_speed
+        message->radiators_speed
     );
 }
 
@@ -7778,7 +7875,7 @@ int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "radiator_speed"
+        "radiators_speed"
     );
 }
 
@@ -7786,18 +7883,20 @@ int primary_fields_file_SET_RADIATOR_SPEED(FILE* buffer) {
 
 primary_byte_size primary_serialize_SET_PUMPS_SPEED(
     uint8_t* data,
-    primary_Cooling pumps_speed
+    primary_uint16 pumps_speed
 ) {
-    data[0] = pumps_speed << 7;
-    return 1;
+    data[0] = pumps_speed & 255;
+    data[1] = (pumps_speed >> 8) & 255;
+    return 2;
 }
 
 primary_byte_size primary_serialize_struct_SET_PUMPS_SPEED(
     uint8_t* data,
     primary_message_SET_PUMPS_SPEED* message
 ) {
-    data[0] = message->pumps_speed << 7;
-    return 1;
+    data[0] = message->pumps_speed & 255;
+    data[1] = (message->pumps_speed >> 8) & 255;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -7812,18 +7911,63 @@ void primary_deserialize_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->pumps_speed = (primary_Cooling) ((data[0] & 128) >> 7);
+    message->pumps_speed = data[0] | (data[1] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED_conversion* conversion,
+    primary_uint16 pumps_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->pumps_speed = (((primary_float32)pumps_speed) / 65536.0) + 0;
+}
+
+void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED_conversion* conversion,
+    primary_message_SET_PUMPS_SPEED* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 65536.0) + 0;
+}
+
+void primary_conversion_to_raw_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* raw,
+    primary_float32 pumps_speed
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->pumps_speed = (primary_uint16)((pumps_speed + 0) * 65536.0);
+}
+
+void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
+    primary_message_SET_PUMPS_SPEED* raw,
+    primary_message_SET_PUMPS_SPEED_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 0) * 65536.0);
 }
 
 // ============== STRING ============== //
-
-int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, char* buffer) {
+int primary_to_string_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -7841,13 +7985,13 @@ int primary_fields_SET_PUMPS_SPEED(char* buffer) {
     );
 }
 
-int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED* message, FILE* buffer) {
+int primary_to_string_file_SET_PUMPS_SPEED(primary_message_SET_PUMPS_SPEED_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8,
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -11338,9 +11482,9 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
         case 967:
             return primary_to_string_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
         case 777:
-            return primary_to_string_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
+            return primary_to_string_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
         case 809:
-            return primary_to_string_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED*) message, buffer);
+            return primary_to_string_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
         case 265:
             return primary_to_string_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
         case 263:
@@ -11650,9 +11794,9 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
         case 967:
             return primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
         case 777:
-            return primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED*) message, buffer);
+            return primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
         case 809:
-            return primary_to_string_file_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED*) message, buffer);
+            return primary_to_string_file_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
         case 265:
             return primary_to_string_file_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
         case 263:
@@ -12141,7 +12285,11 @@ void* primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
+                (primary_message_SET_RADIATOR_SPEED_conversion*) message_conversion,
+                (primary_message_SET_RADIATOR_SPEED*) message_raw
+            );
+            return message_conversion;
         }
         case 809: {
             primary_deserialize_SET_PUMPS_SPEED(
@@ -12151,7 +12299,11 @@ void* primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
+                (primary_message_SET_PUMPS_SPEED_conversion*) message_conversion,
+                (primary_message_SET_PUMPS_SPEED*) message_raw
+            );
+            return message_conversion;
         }
         case 265: {
             primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
@@ -12664,10 +12816,10 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_COOLING_STATUS].message_conversion = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
     (*devices)[primary_INDEX_SET_RADIATOR_SPEED].id = 777;
     (*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
-    (*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_conversion = NULL;
+    (*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED_conversion));
     (*devices)[primary_INDEX_SET_PUMPS_SPEED].id = 809;
     (*devices)[primary_INDEX_SET_PUMPS_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SET_PUMPS_SPEED));
-    (*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion = NULL;
+    (*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SET_PUMPS_SPEED_conversion));
     (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].id = 265;
     (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS));
     (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_conversion = NULL;
@@ -12834,7 +12986,9 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_COOLING_STATUS].message_raw);
     free((*devices)[primary_INDEX_COOLING_STATUS].message_conversion);
     free((*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_raw);
+    free((*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_conversion);
     free((*devices)[primary_INDEX_SET_PUMPS_SPEED].message_raw);
+    free((*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion);
     free((*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_raw);
     free((*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw);
     free((*devices)[primary_INDEX_SHUTDOWN_STATUS].message_raw);
@@ -13286,6 +13440,10 @@ void primary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
+                (primary_message_SET_RADIATOR_SPEED_conversion*) &(*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_conversion,
+                (primary_message_SET_RADIATOR_SPEED*) &(*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_raw
+            );
             return;
         }
         case 809: {
@@ -13295,6 +13453,10 @@ void primary_devices_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
+                (primary_message_SET_PUMPS_SPEED_conversion*) &(*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion,
+                (primary_message_SET_PUMPS_SPEED*) &(*devices)[primary_INDEX_SET_PUMPS_SPEED].message_raw
             );
             return;
         }

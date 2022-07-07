@@ -228,8 +228,8 @@ typedef struct {
     canlib_circular_buffer<primary_message_LV_TOTAL_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> LV_TOTAL_VOLTAGE;
     canlib_circular_buffer<primary_message_LV_TEMPERATURE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> LV_TEMPERATURE;
     canlib_circular_buffer<primary_message_COOLING_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> COOLING_STATUS;
-    canlib_circular_buffer<primary_message_SET_RADIATOR_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> SET_RADIATOR_SPEED;
-    canlib_circular_buffer<primary_message_SET_PUMPS_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> SET_PUMPS_SPEED;
+    canlib_circular_buffer<primary_message_SET_RADIATOR_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> SET_RADIATOR_SPEED;
+    canlib_circular_buffer<primary_message_SET_PUMPS_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> SET_PUMPS_SPEED;
     canlib_circular_buffer<primary_message_SET_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_INVERTER_CONNECTION_STATUS;
     canlib_circular_buffer<primary_message_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> INVERTER_CONNECTION_STATUS;
     canlib_circular_buffer<primary_message_SHUTDOWN_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SHUTDOWN_STATUS;
@@ -660,9 +660,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 777: {
-            primary_message_SET_RADIATOR_SPEED* msg = (primary_message_SET_RADIATOR_SPEED*) (*map)[index].message_raw;
+            primary_message_SET_RADIATOR_SPEED_conversion* msg = (primary_message_SET_RADIATOR_SPEED_conversion*) (*map)[index].message_conversion;
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
-            proto_msg->set_radiator_speed((primary::Cooling)msg->radiator_speed);
+            proto_msg->set_radiators_speed(msg->radiators_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -670,9 +670,9 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 809: {
-            primary_message_SET_PUMPS_SPEED* msg = (primary_message_SET_PUMPS_SPEED*) (*map)[index].message_raw;
+            primary_message_SET_PUMPS_SPEED_conversion* msg = (primary_message_SET_PUMPS_SPEED_conversion*) (*map)[index].message_conversion;
             primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
-            proto_msg->set_pumps_speed((primary::Cooling)msg->pumps_speed);
+            proto_msg->set_pumps_speed(msg->pumps_speed);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1320,16 +1320,16 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->COOLING_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_radiator_speed_size(); i++){
-        static primary_message_SET_RADIATOR_SPEED instance;
-        instance.radiator_speed =(primary_Cooling)pack->set_radiator_speed(i).radiator_speed();
+        static primary_message_SET_RADIATOR_SPEED_conversion instance;
+        instance.radiators_speed =pack->set_radiator_speed(i).radiators_speed();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->set_radiator_speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
         map->SET_RADIATOR_SPEED.push(instance);
     }
     for(int i = 0; i < pack->set_pumps_speed_size(); i++){
-        static primary_message_SET_PUMPS_SPEED instance;
-        instance.pumps_speed =(primary_Cooling)pack->set_pumps_speed(i).pumps_speed();
+        static primary_message_SET_PUMPS_SPEED_conversion instance;
+        instance.pumps_speed =pack->set_pumps_speed(i).pumps_speed();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->set_pumps_speed(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

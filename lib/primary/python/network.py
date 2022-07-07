@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657195680
-CANLIB_BUILD_HASH = 0x9c9e676d
+CANLIB_BUILD_TIME = 1657202749
+CANLIB_BUILD_HASH = 0x44dd416a
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -321,15 +321,6 @@ class Bound(IntEnum):
 class Pedal(IntEnum):
     ACCELERATOR = 0
     BRAKE = 1
-
-    @classmethod
-    def _missing_(cls, _):
-        return cls(0)
-
-
-class Cooling(IntEnum):
-    SET_MAX = 0
-    SET_OFF = 1
 
     @classmethod
     def _missing_(cls, _):
@@ -1834,37 +1825,63 @@ class message_COOLING_STATUS_conversion:
 class message_SET_RADIATOR_SPEED:
     def __init__(
         self,
-        radiator_speed = None
+        radiators_speed = None
     ):
-        self.radiator_speed = Cooling(radiator_speed)
-        self.size = 1
+        self.radiators_speed = uint16(radiators_speed)
+        self.size = 2
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_RADIATOR_SPEED):
             return False
-        if self.radiator_speed != other.radiator_speed:
+        if self.radiators_speed != other.radiators_speed:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.radiator_speed << 7 & 255))
+        data.extend(pack("<H", self.radiators_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.radiator_speed = Cooling((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.radiators_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
+
+    def convert(self) -> message_SET_RADIATOR_SPEED_conversion:
+        conversion = message_SET_RADIATOR_SPEED_conversion()
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 65536.0) + 0
+        return conversion
+
+
+class message_SET_RADIATOR_SPEED_conversion:
+    def __init__(
+        self,
+        radiators_speed = None
+    ):
+        self.radiators_speed = float32(radiators_speed)
+        self.size = 2
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_RADIATOR_SPEED):
+            return False
+        if self.radiators_speed != other.radiators_speed:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_SET_RADIATOR_SPEED:
+        raw = message_SET_RADIATOR_SPEED()
+        raw.radiators_speed = uint16((self.radiators_speed + 0) * 65536.0)
+        return raw
 
 class message_SET_PUMPS_SPEED:
     def __init__(
         self,
         pumps_speed = None
     ):
-        self.pumps_speed = Cooling(pumps_speed)
-        self.size = 1
+        self.pumps_speed = uint16(pumps_speed)
+        self.size = 2
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_PUMPS_SPEED):
@@ -1875,15 +1892,41 @@ class message_SET_PUMPS_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.pumps_speed << 7 & 255))
+        data.extend(pack("<H", self.pumps_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.pumps_speed = Cooling((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.pumps_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
+
+    def convert(self) -> message_SET_PUMPS_SPEED_conversion:
+        conversion = message_SET_PUMPS_SPEED_conversion()
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 65536.0) + 0
+        return conversion
+
+
+class message_SET_PUMPS_SPEED_conversion:
+    def __init__(
+        self,
+        pumps_speed = None
+    ):
+        self.pumps_speed = float32(pumps_speed)
+        self.size = 2
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_PUMPS_SPEED):
+            return False
+        if self.pumps_speed != other.pumps_speed:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_SET_PUMPS_SPEED:
+        raw = message_SET_PUMPS_SPEED()
+        raw.pumps_speed = uint16((self.pumps_speed + 0) * 65536.0)
+        return raw
 
 class message_SET_INVERTER_CONNECTION_STATUS:
     def __init__(

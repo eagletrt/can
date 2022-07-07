@@ -68,11 +68,6 @@ enum Pedal {
     Pedal_BRAKE = 1;
 }
 
-enum Cooling {
-    Cooling_SET_MAX = 0;
-    Cooling_SET_OFF = 1;
-}
-
 enum ImdStatus {
     ImdStatus_IMD_SC = 0;
     ImdStatus_IMD_NORMAL = 1;
@@ -291,12 +286,12 @@ message COOLING_STATUS {
 }
 
 message SET_RADIATOR_SPEED {
-    Cooling radiator_speed = 1;
+    uint32 radiators_speed = 1;
     uint64 _inner_timestamp = 2;
 }
 
 message SET_PUMPS_SPEED {
-    Cooling pumps_speed = 1;
+    uint32 pumps_speed = 1;
     uint64 _inner_timestamp = 2;
 }
 
