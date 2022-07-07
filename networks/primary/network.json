@@ -168,10 +168,6 @@
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
     },
-    "Cooling": {
-      "type": "enum",
-      "items": ["SET_MAX", "SET_OFF"]
-    },
     "ImdStatus": {
       "type": "enum",
       "items": [
@@ -743,7 +739,11 @@
       "receiving": ["BMS_LV"],
       "description": "Set both radiators speed",
       "contents": {
-        "radiator_speed": "Cooling"
+        "radiators_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        }
       }
     },
     {
@@ -754,7 +754,11 @@
       "receiving": ["BMS_LV"],
       "description": "Set both pumps speed",
       "contents": {
-        "pumps_speed": "Cooling"
+        "pumps_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint16"
+        }
       }
     },
     {
