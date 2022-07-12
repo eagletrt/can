@@ -278,7 +278,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Pack stats",
-      "interval": 20,
+      "interval": 50,
       "contents": {
         "pack_voltage": {
           "type": "float32",
@@ -309,7 +309,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Current supplied by the pack",
-      "interval": 20,
+      "interval": 50,
       "contents": {
         "current": {
           "type": "float32",
@@ -330,7 +330,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Cell temperatures",
-      "interval": 200,
+      "interval": 100,
       "contents": {
         "average_temp": {
           "type": "float32",
@@ -356,7 +356,7 @@
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "Battery-related errors",
-      "interval": 20,
+      "interval": 10,
       "contents": {
         "warnings": "HvErrors",
         "errors": "HvErrors"
@@ -487,7 +487,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Current of LV battery pack: total current taken from the battery itself",
-      "interval": 500,
+      "interval": 50,
       "contents": {
         "current": {
           "type": "float32",
@@ -503,7 +503,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Voltages of LV battery pack: 4x single cell voltage 8bit [3.3,4.2]V 0.005mV/bit (no additional info, 0x000 is 3V 0xFFFF is 4.2V)",
-      "interval": 200,
+      "interval": 50,
       "contents": {
         "voltage_1": {
           "type": "float32",
@@ -534,7 +534,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Voltage of LV battery pack: total voltage 16 bit [12,17.2]V (0x0000 under_voltage,0xFFFF over_voltage",
-      "interval": 200,
+      "interval": 100,
       "contents": {
         "total_voltage": {
           "type": "float32",
