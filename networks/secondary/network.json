@@ -266,7 +266,7 @@
       "description": "Lap counter and associated timestamp",
       "contents": {
         "lap_count": "uint8",
-        "timestamp": "uint32"
+        "lap_time": "uint32"
       }
     },
     {
@@ -308,7 +308,7 @@
       "name": "STEERING_ANGLE",
       "topic": "TELEMETRY",
       "priority": 6,
-      "interval": 100,
+      "interval": 200,
       "sending": ["DAS"],
       "receiving": ["TELEMETRY"],
       "description": "Steering angle in degrees",
