@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657558420
+CANLIB_BUILD_TIME = 1657617256
 CANLIB_BUILD_HASH = 0xc183abd7
 
 def int8(value: Any) -> Optional[int]:
@@ -194,12 +194,12 @@ class message_TEMPERATURES:
     def convert(self) -> message_TEMPERATURES_conversion:
         conversion = message_TEMPERATURES_conversion()
         conversion.start_index = self.start_index
-        conversion.temp0 = ((float32(self.temp0)) / 2.56) - 20
-        conversion.temp1 = ((float32(self.temp1)) / 2.56) - 20
-        conversion.temp2 = ((float32(self.temp2)) / 2.56) - 20
-        conversion.temp3 = ((float32(self.temp3)) / 2.56) - 20
-        conversion.temp4 = ((float32(self.temp4)) / 2.56) - 20
-        conversion.temp5 = ((float32(self.temp5)) / 2.56) - 20
+        conversion.temp0 = ((float32(self.temp0)) / 2.55) - 20
+        conversion.temp1 = ((float32(self.temp1)) / 2.55) - 20
+        conversion.temp2 = ((float32(self.temp2)) / 2.55) - 20
+        conversion.temp3 = ((float32(self.temp3)) / 2.55) - 20
+        conversion.temp4 = ((float32(self.temp4)) / 2.55) - 20
+        conversion.temp5 = ((float32(self.temp5)) / 2.55) - 20
         return conversion
 
 
@@ -245,12 +245,12 @@ class message_TEMPERATURES_conversion:
     def convert_to_raw(self) -> message_TEMPERATURES:
         raw = message_TEMPERATURES()
         raw.start_index = self.start_index
-        raw.temp0 = uint8((self.temp0 + 20) * 2.56)
-        raw.temp1 = uint8((self.temp1 + 20) * 2.56)
-        raw.temp2 = uint8((self.temp2 + 20) * 2.56)
-        raw.temp3 = uint8((self.temp3 + 20) * 2.56)
-        raw.temp4 = uint8((self.temp4 + 20) * 2.56)
-        raw.temp5 = uint8((self.temp5 + 20) * 2.56)
+        raw.temp0 = uint8((self.temp0 + 20) * 2.55)
+        raw.temp1 = uint8((self.temp1 + 20) * 2.55)
+        raw.temp2 = uint8((self.temp2 + 20) * 2.55)
+        raw.temp3 = uint8((self.temp3 + 20) * 2.55)
+        raw.temp4 = uint8((self.temp4 + 20) * 2.55)
+        raw.temp5 = uint8((self.temp5 + 20) * 2.55)
         return raw
 
 class message_VOLTAGES:

@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657558420
+#define CANLIB_BUILD_TIME 1657617256
 #define CANLIB_BUILD_HASH 0xc183abd7
 #endif // CANLIB_BUILD
 
@@ -5140,8 +5140,8 @@ void primary_raw_to_conversion_HV_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pack_voltage = (((primary_float32)pack_voltage) / 142.469565) + 0;
-    conversion->bus_voltage = (((primary_float32)bus_voltage) / 142.469565) + 0;
+    conversion->pack_voltage = (((primary_float32)pack_voltage) / 142.467391) + 0;
+    conversion->bus_voltage = (((primary_float32)bus_voltage) / 142.467391) + 0;
     conversion->max_cell_voltage = (((primary_float32)max_cell_voltage) / 10000.0) + 0;
     conversion->min_cell_voltage = (((primary_float32)min_cell_voltage) / 10000.0) + 0;
 }
@@ -5153,8 +5153,8 @@ void primary_raw_to_conversion_struct_HV_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pack_voltage = (((primary_float32)raw->pack_voltage) / 142.469565) + 0;
-    conversion->bus_voltage = (((primary_float32)raw->bus_voltage) / 142.469565) + 0;
+    conversion->pack_voltage = (((primary_float32)raw->pack_voltage) / 142.467391) + 0;
+    conversion->bus_voltage = (((primary_float32)raw->bus_voltage) / 142.467391) + 0;
     conversion->max_cell_voltage = (((primary_float32)raw->max_cell_voltage) / 10000.0) + 0;
     conversion->min_cell_voltage = (((primary_float32)raw->min_cell_voltage) / 10000.0) + 0;
 }
@@ -5172,8 +5172,8 @@ void primary_conversion_to_raw_HV_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pack_voltage = (primary_uint16)((pack_voltage + 0) * 142.469565);
-    raw->bus_voltage = (primary_uint16)((bus_voltage + 0) * 142.469565);
+    raw->pack_voltage = (primary_uint16)((pack_voltage + 0) * 142.467391);
+    raw->bus_voltage = (primary_uint16)((bus_voltage + 0) * 142.467391);
     raw->max_cell_voltage = (primary_uint16)((max_cell_voltage + 0) * 10000.0);
     raw->min_cell_voltage = (primary_uint16)((min_cell_voltage + 0) * 10000.0);
 }
@@ -5185,8 +5185,8 @@ void primary_conversion_to_raw_struct_HV_VOLTAGE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pack_voltage = (primary_uint16)((conversion->pack_voltage + 0) * 142.469565);
-    raw->bus_voltage = (primary_uint16)((conversion->bus_voltage + 0) * 142.469565);
+    raw->pack_voltage = (primary_uint16)((conversion->pack_voltage + 0) * 142.467391);
+    raw->bus_voltage = (primary_uint16)((conversion->bus_voltage + 0) * 142.467391);
     raw->max_cell_voltage = (primary_uint16)((conversion->max_cell_voltage + 0) * 10000.0);
     raw->min_cell_voltage = (primary_uint16)((conversion->min_cell_voltage + 0) * 10000.0);
 }
@@ -5322,10 +5322,10 @@ void primary_raw_to_conversion_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)current) / 312.07619) - 10;
-    conversion->power = (((primary_float32)power) / 655.36) + 0;
-    conversion->energy = (((primary_float32)energy) / 9.362286) + 0;
-    conversion->soc = (((primary_float32)soc) / 2.56) + 0;
+    conversion->current = (((primary_float32)current) / 312.071429) - 10;
+    conversion->power = (((primary_float32)power) / 655.35) + 0;
+    conversion->energy = (((primary_float32)energy) / 9.362143) + 0;
+    conversion->soc = (((primary_float32)soc) / 2.55) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_CURRENT(
@@ -5335,10 +5335,10 @@ void primary_raw_to_conversion_struct_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)raw->current) / 312.07619) - 10;
-    conversion->power = (((primary_float32)raw->power) / 655.36) + 0;
-    conversion->energy = (((primary_float32)raw->energy) / 9.362286) + 0;
-    conversion->soc = (((primary_float32)raw->soc) / 2.56) + 0;
+    conversion->current = (((primary_float32)raw->current) / 312.071429) - 10;
+    conversion->power = (((primary_float32)raw->power) / 655.35) + 0;
+    conversion->energy = (((primary_float32)raw->energy) / 9.362143) + 0;
+    conversion->soc = (((primary_float32)raw->soc) / 2.55) + 0;
 }
 
 void primary_conversion_to_raw_HV_CURRENT(
@@ -5354,10 +5354,10 @@ void primary_conversion_to_raw_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((current + 10) * 312.07619);
-    raw->power = (primary_uint16)((power + 0) * 655.36);
-    raw->energy = (primary_uint16)((energy + 0) * 9.362286);
-    raw->soc = (primary_uint8)((soc + 0) * 2.56);
+    raw->current = (primary_uint16)((current + 10) * 312.071429);
+    raw->power = (primary_uint16)((power + 0) * 655.35);
+    raw->energy = (primary_uint16)((energy + 0) * 9.362143);
+    raw->soc = (primary_uint8)((soc + 0) * 2.55);
 }
 
 void primary_conversion_to_raw_struct_HV_CURRENT(
@@ -5367,10 +5367,10 @@ void primary_conversion_to_raw_struct_HV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((conversion->current + 10) * 312.07619);
-    raw->power = (primary_uint16)((conversion->power + 0) * 655.36);
-    raw->energy = (primary_uint16)((conversion->energy + 0) * 9.362286);
-    raw->soc = (primary_uint8)((conversion->soc + 0) * 2.56);
+    raw->current = (primary_uint16)((conversion->current + 10) * 312.071429);
+    raw->power = (primary_uint16)((conversion->power + 0) * 655.35);
+    raw->energy = (primary_uint16)((conversion->energy + 0) * 9.362143);
+    raw->soc = (primary_uint8)((conversion->soc + 0) * 2.55);
 }
 
 // ============== STRING ============== //
@@ -5493,9 +5493,9 @@ void primary_raw_to_conversion_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->average_temp = (((primary_float32)average_temp) / 2.56) - 20;
-    conversion->max_temp = (((primary_float32)max_temp) / 2.56) - 20;
-    conversion->min_temp = (((primary_float32)min_temp) / 2.56) - 20;
+    conversion->average_temp = (((primary_float32)average_temp) / 2.55) - 20;
+    conversion->max_temp = (((primary_float32)max_temp) / 2.55) - 20;
+    conversion->min_temp = (((primary_float32)min_temp) / 2.55) - 20;
 }
 
 void primary_raw_to_conversion_struct_HV_TEMP(
@@ -5505,9 +5505,9 @@ void primary_raw_to_conversion_struct_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->average_temp = (((primary_float32)raw->average_temp) / 2.56) - 20;
-    conversion->max_temp = (((primary_float32)raw->max_temp) / 2.56) - 20;
-    conversion->min_temp = (((primary_float32)raw->min_temp) / 2.56) - 20;
+    conversion->average_temp = (((primary_float32)raw->average_temp) / 2.55) - 20;
+    conversion->max_temp = (((primary_float32)raw->max_temp) / 2.55) - 20;
+    conversion->min_temp = (((primary_float32)raw->min_temp) / 2.55) - 20;
 }
 
 void primary_conversion_to_raw_HV_TEMP(
@@ -5522,9 +5522,9 @@ void primary_conversion_to_raw_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->average_temp = (primary_uint8)((average_temp + 20) * 2.56);
-    raw->max_temp = (primary_uint8)((max_temp + 20) * 2.56);
-    raw->min_temp = (primary_uint8)((min_temp + 20) * 2.56);
+    raw->average_temp = (primary_uint8)((average_temp + 20) * 2.55);
+    raw->max_temp = (primary_uint8)((max_temp + 20) * 2.55);
+    raw->min_temp = (primary_uint8)((min_temp + 20) * 2.55);
 }
 
 void primary_conversion_to_raw_struct_HV_TEMP(
@@ -5534,9 +5534,9 @@ void primary_conversion_to_raw_struct_HV_TEMP(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->average_temp = (primary_uint8)((conversion->average_temp + 20) * 2.56);
-    raw->max_temp = (primary_uint8)((conversion->max_temp + 20) * 2.56);
-    raw->min_temp = (primary_uint8)((conversion->min_temp + 20) * 2.56);
+    raw->average_temp = (primary_uint8)((conversion->average_temp + 20) * 2.55);
+    raw->max_temp = (primary_uint8)((conversion->max_temp + 20) * 2.55);
+    raw->min_temp = (primary_uint8)((conversion->min_temp + 20) * 2.55);
 }
 
 // ============== STRING ============== //
@@ -5831,7 +5831,7 @@ void primary_raw_to_conversion_HV_FANS_OVERRIDE(
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->fans_override = fans_override;
-    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
+    conversion->fans_speed = (((primary_float32)fans_speed) / 65535.0) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE(
@@ -5842,7 +5842,7 @@ void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE(
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->fans_override = raw->fans_override;
-    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
+    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65535.0) + 0;
 }
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE(
@@ -5857,7 +5857,7 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE(
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->fans_override = fans_override;
-    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
+    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65535.0);
 }
 
 void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE(
@@ -5868,7 +5868,7 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE(
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->fans_override = conversion->fans_override;
-    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
+    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65535.0);
 }
 
 // ============== STRING ============== //
@@ -6060,7 +6060,7 @@ void primary_raw_to_conversion_HV_FANS_OVERRIDE_STATUS(
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->fans_override = fans_override;
-    conversion->fans_speed = (((primary_float32)fans_speed) / 65536.0) + 0;
+    conversion->fans_speed = (((primary_float32)fans_speed) / 65535.0) + 0;
 }
 
 void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
@@ -6071,7 +6071,7 @@ void primary_raw_to_conversion_struct_HV_FANS_OVERRIDE_STATUS(
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->fans_override = raw->fans_override;
-    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65536.0) + 0;
+    conversion->fans_speed = (((primary_float32)raw->fans_speed) / 65535.0) + 0;
 }
 
 void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
@@ -6086,7 +6086,7 @@ void primary_conversion_to_raw_HV_FANS_OVERRIDE_STATUS(
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->fans_override = fans_override;
-    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65536.0);
+    raw->fans_speed = (primary_uint16)((fans_speed + 0) * 65535.0);
 }
 
 void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
@@ -6097,7 +6097,7 @@ void primary_conversion_to_raw_struct_HV_FANS_OVERRIDE_STATUS(
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->fans_override = conversion->fans_override;
-    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65536.0);
+    raw->fans_speed = (primary_uint16)((conversion->fans_speed + 0) * 65535.0);
 }
 
 // ============== STRING ============== //
@@ -7106,7 +7106,7 @@ void primary_raw_to_conversion_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)current) / 1092.266667) - 10;
+    conversion->current = (((primary_float32)current) / 1092.25) - 10;
 }
 
 void primary_raw_to_conversion_struct_LV_CURRENT(
@@ -7116,7 +7116,7 @@ void primary_raw_to_conversion_struct_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->current = (((primary_float32)raw->current) / 1092.266667) - 10;
+    conversion->current = (((primary_float32)raw->current) / 1092.25) - 10;
 }
 
 void primary_conversion_to_raw_LV_CURRENT(
@@ -7129,7 +7129,7 @@ void primary_conversion_to_raw_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((current + 10) * 1092.266667);
+    raw->current = (primary_uint16)((current + 10) * 1092.25);
 }
 
 void primary_conversion_to_raw_struct_LV_CURRENT(
@@ -7139,7 +7139,7 @@ void primary_conversion_to_raw_struct_LV_CURRENT(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->current = (primary_uint16)((conversion->current + 10) * 1092.266667);
+    raw->current = (primary_uint16)((conversion->current + 10) * 1092.25);
 }
 
 // ============== STRING ============== //
@@ -7575,10 +7575,10 @@ void primary_raw_to_conversion_LV_TEMPERATURE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->bp_temperature_1 = (((primary_float32)bp_temperature_1) / 655.36) - 20;
-    conversion->bp_temperature_2 = (((primary_float32)bp_temperature_2) / 655.36) - 20;
-    conversion->dcdc12_temperature = (((primary_float32)dcdc12_temperature) / 655.36) - 20;
-    conversion->dcdc24_temperature = (((primary_float32)dcdc24_temperature) / 655.36) - 20;
+    conversion->bp_temperature_1 = (((primary_float32)bp_temperature_1) / 655.35) - 20;
+    conversion->bp_temperature_2 = (((primary_float32)bp_temperature_2) / 655.35) - 20;
+    conversion->dcdc12_temperature = (((primary_float32)dcdc12_temperature) / 655.35) - 20;
+    conversion->dcdc24_temperature = (((primary_float32)dcdc24_temperature) / 655.35) - 20;
 }
 
 void primary_raw_to_conversion_struct_LV_TEMPERATURE(
@@ -7588,10 +7588,10 @@ void primary_raw_to_conversion_struct_LV_TEMPERATURE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->bp_temperature_1 = (((primary_float32)raw->bp_temperature_1) / 655.36) - 20;
-    conversion->bp_temperature_2 = (((primary_float32)raw->bp_temperature_2) / 655.36) - 20;
-    conversion->dcdc12_temperature = (((primary_float32)raw->dcdc12_temperature) / 655.36) - 20;
-    conversion->dcdc24_temperature = (((primary_float32)raw->dcdc24_temperature) / 655.36) - 20;
+    conversion->bp_temperature_1 = (((primary_float32)raw->bp_temperature_1) / 655.35) - 20;
+    conversion->bp_temperature_2 = (((primary_float32)raw->bp_temperature_2) / 655.35) - 20;
+    conversion->dcdc12_temperature = (((primary_float32)raw->dcdc12_temperature) / 655.35) - 20;
+    conversion->dcdc24_temperature = (((primary_float32)raw->dcdc24_temperature) / 655.35) - 20;
 }
 
 void primary_conversion_to_raw_LV_TEMPERATURE(
@@ -7607,10 +7607,10 @@ void primary_conversion_to_raw_LV_TEMPERATURE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->bp_temperature_1 = (primary_uint16)((bp_temperature_1 + 20) * 655.36);
-    raw->bp_temperature_2 = (primary_uint16)((bp_temperature_2 + 20) * 655.36);
-    raw->dcdc12_temperature = (primary_uint16)((dcdc12_temperature + 20) * 655.36);
-    raw->dcdc24_temperature = (primary_uint16)((dcdc24_temperature + 20) * 655.36);
+    raw->bp_temperature_1 = (primary_uint16)((bp_temperature_1 + 20) * 655.35);
+    raw->bp_temperature_2 = (primary_uint16)((bp_temperature_2 + 20) * 655.35);
+    raw->dcdc12_temperature = (primary_uint16)((dcdc12_temperature + 20) * 655.35);
+    raw->dcdc24_temperature = (primary_uint16)((dcdc24_temperature + 20) * 655.35);
 }
 
 void primary_conversion_to_raw_struct_LV_TEMPERATURE(
@@ -7620,10 +7620,10 @@ void primary_conversion_to_raw_struct_LV_TEMPERATURE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->bp_temperature_1 = (primary_uint16)((conversion->bp_temperature_1 + 20) * 655.36);
-    raw->bp_temperature_2 = (primary_uint16)((conversion->bp_temperature_2 + 20) * 655.36);
-    raw->dcdc12_temperature = (primary_uint16)((conversion->dcdc12_temperature + 20) * 655.36);
-    raw->dcdc24_temperature = (primary_uint16)((conversion->dcdc24_temperature + 20) * 655.36);
+    raw->bp_temperature_1 = (primary_uint16)((conversion->bp_temperature_1 + 20) * 655.35);
+    raw->bp_temperature_2 = (primary_uint16)((conversion->bp_temperature_2 + 20) * 655.35);
+    raw->dcdc12_temperature = (primary_uint16)((conversion->dcdc12_temperature + 20) * 655.35);
+    raw->dcdc24_temperature = (primary_uint16)((conversion->dcdc24_temperature + 20) * 655.35);
 }
 
 // ============== STRING ============== //
@@ -7745,8 +7745,8 @@ void primary_raw_to_conversion_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32768.0) - 1;
-    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32768.0) - 1;
+    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32767.5) - 1;
+    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32767.5) - 1;
 }
 
 void primary_raw_to_conversion_struct_COOLING_STATUS(
@@ -7756,8 +7756,8 @@ void primary_raw_to_conversion_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32768.0) - 1;
-    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32768.0) - 1;
+    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32767.5) - 1;
+    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32767.5) - 1;
 }
 
 void primary_conversion_to_raw_COOLING_STATUS(
@@ -7771,8 +7771,8 @@ void primary_conversion_to_raw_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32768.0);
-    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32768.0);
+    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32767.5);
+    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32767.5);
 }
 
 void primary_conversion_to_raw_struct_COOLING_STATUS(
@@ -7782,8 +7782,8 @@ void primary_conversion_to_raw_struct_COOLING_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32768.0);
-    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32768.0);
+    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32767.5);
+    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32767.5);
 }
 
 // ============== STRING ============== //
@@ -7886,7 +7886,7 @@ void primary_raw_to_conversion_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32768.0) - 1;
+    conversion->radiators_speed = (((primary_float32)radiators_speed) / 32767.5) - 1;
 }
 
 void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
@@ -7896,7 +7896,7 @@ void primary_raw_to_conversion_struct_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32768.0) - 1;
+    conversion->radiators_speed = (((primary_float32)raw->radiators_speed) / 32767.5) - 1;
 }
 
 void primary_conversion_to_raw_SET_RADIATOR_SPEED(
@@ -7909,7 +7909,7 @@ void primary_conversion_to_raw_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32768.0);
+    raw->radiators_speed = (primary_uint16)((radiators_speed + 1) * 32767.5);
 }
 
 void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
@@ -7919,7 +7919,7 @@ void primary_conversion_to_raw_struct_SET_RADIATOR_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32768.0);
+    raw->radiators_speed = (primary_uint16)((conversion->radiators_speed + 1) * 32767.5);
 }
 
 // ============== STRING ============== //
@@ -8016,7 +8016,7 @@ void primary_raw_to_conversion_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32768.0) - 1;
+    conversion->pumps_speed = (((primary_float32)pumps_speed) / 32767.5) - 1;
 }
 
 void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
@@ -8026,7 +8026,7 @@ void primary_raw_to_conversion_struct_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32768.0) - 1;
+    conversion->pumps_speed = (((primary_float32)raw->pumps_speed) / 32767.5) - 1;
 }
 
 void primary_conversion_to_raw_SET_PUMPS_SPEED(
@@ -8039,7 +8039,7 @@ void primary_conversion_to_raw_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32768.0);
+    raw->pumps_speed = (primary_uint16)((pumps_speed + 1) * 32767.5);
 }
 
 void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
@@ -8049,7 +8049,7 @@ void primary_conversion_to_raw_struct_SET_PUMPS_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32768.0);
+    raw->pumps_speed = (primary_uint16)((conversion->pumps_speed + 1) * 32767.5);
 }
 
 // ============== STRING ============== //
@@ -8781,13 +8781,13 @@ void primary_raw_to_conversion_HV_CELLS_TEMP(
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->start_index = start_index;
-    conversion->temp_0 = (((primary_float32)temp_0) / 2.56) - 20;
-    conversion->temp_1 = (((primary_float32)temp_1) / 2.56) - 20;
-    conversion->temp_2 = (((primary_float32)temp_2) / 2.56) - 20;
-    conversion->temp_3 = (((primary_float32)temp_3) / 2.56) - 20;
-    conversion->temp_4 = (((primary_float32)temp_4) / 2.56) - 20;
-    conversion->temp_5 = (((primary_float32)temp_5) / 2.56) - 20;
-    conversion->temp_6 = (((primary_float32)temp_6) / 2.56) - 20;
+    conversion->temp_0 = (((primary_float32)temp_0) / 2.55) - 20;
+    conversion->temp_1 = (((primary_float32)temp_1) / 2.55) - 20;
+    conversion->temp_2 = (((primary_float32)temp_2) / 2.55) - 20;
+    conversion->temp_3 = (((primary_float32)temp_3) / 2.55) - 20;
+    conversion->temp_4 = (((primary_float32)temp_4) / 2.55) - 20;
+    conversion->temp_5 = (((primary_float32)temp_5) / 2.55) - 20;
+    conversion->temp_6 = (((primary_float32)temp_6) / 2.55) - 20;
 }
 
 void primary_raw_to_conversion_struct_HV_CELLS_TEMP(
@@ -8798,13 +8798,13 @@ void primary_raw_to_conversion_struct_HV_CELLS_TEMP(
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->start_index = raw->start_index;
-    conversion->temp_0 = (((primary_float32)raw->temp_0) / 2.56) - 20;
-    conversion->temp_1 = (((primary_float32)raw->temp_1) / 2.56) - 20;
-    conversion->temp_2 = (((primary_float32)raw->temp_2) / 2.56) - 20;
-    conversion->temp_3 = (((primary_float32)raw->temp_3) / 2.56) - 20;
-    conversion->temp_4 = (((primary_float32)raw->temp_4) / 2.56) - 20;
-    conversion->temp_5 = (((primary_float32)raw->temp_5) / 2.56) - 20;
-    conversion->temp_6 = (((primary_float32)raw->temp_6) / 2.56) - 20;
+    conversion->temp_0 = (((primary_float32)raw->temp_0) / 2.55) - 20;
+    conversion->temp_1 = (((primary_float32)raw->temp_1) / 2.55) - 20;
+    conversion->temp_2 = (((primary_float32)raw->temp_2) / 2.55) - 20;
+    conversion->temp_3 = (((primary_float32)raw->temp_3) / 2.55) - 20;
+    conversion->temp_4 = (((primary_float32)raw->temp_4) / 2.55) - 20;
+    conversion->temp_5 = (((primary_float32)raw->temp_5) / 2.55) - 20;
+    conversion->temp_6 = (((primary_float32)raw->temp_6) / 2.55) - 20;
 }
 
 void primary_conversion_to_raw_HV_CELLS_TEMP(
@@ -8825,13 +8825,13 @@ void primary_conversion_to_raw_HV_CELLS_TEMP(
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->start_index = start_index;
-    raw->temp_0 = (primary_uint8)((temp_0 + 20) * 2.56);
-    raw->temp_1 = (primary_uint8)((temp_1 + 20) * 2.56);
-    raw->temp_2 = (primary_uint8)((temp_2 + 20) * 2.56);
-    raw->temp_3 = (primary_uint8)((temp_3 + 20) * 2.56);
-    raw->temp_4 = (primary_uint8)((temp_4 + 20) * 2.56);
-    raw->temp_5 = (primary_uint8)((temp_5 + 20) * 2.56);
-    raw->temp_6 = (primary_uint8)((temp_6 + 20) * 2.56);
+    raw->temp_0 = (primary_uint8)((temp_0 + 20) * 2.55);
+    raw->temp_1 = (primary_uint8)((temp_1 + 20) * 2.55);
+    raw->temp_2 = (primary_uint8)((temp_2 + 20) * 2.55);
+    raw->temp_3 = (primary_uint8)((temp_3 + 20) * 2.55);
+    raw->temp_4 = (primary_uint8)((temp_4 + 20) * 2.55);
+    raw->temp_5 = (primary_uint8)((temp_5 + 20) * 2.55);
+    raw->temp_6 = (primary_uint8)((temp_6 + 20) * 2.55);
 }
 
 void primary_conversion_to_raw_struct_HV_CELLS_TEMP(
@@ -8842,13 +8842,13 @@ void primary_conversion_to_raw_struct_HV_CELLS_TEMP(
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->start_index = conversion->start_index;
-    raw->temp_0 = (primary_uint8)((conversion->temp_0 + 20) * 2.56);
-    raw->temp_1 = (primary_uint8)((conversion->temp_1 + 20) * 2.56);
-    raw->temp_2 = (primary_uint8)((conversion->temp_2 + 20) * 2.56);
-    raw->temp_3 = (primary_uint8)((conversion->temp_3 + 20) * 2.56);
-    raw->temp_4 = (primary_uint8)((conversion->temp_4 + 20) * 2.56);
-    raw->temp_5 = (primary_uint8)((conversion->temp_5 + 20) * 2.56);
-    raw->temp_6 = (primary_uint8)((conversion->temp_6 + 20) * 2.56);
+    raw->temp_0 = (primary_uint8)((conversion->temp_0 + 20) * 2.55);
+    raw->temp_1 = (primary_uint8)((conversion->temp_1 + 20) * 2.55);
+    raw->temp_2 = (primary_uint8)((conversion->temp_2 + 20) * 2.55);
+    raw->temp_3 = (primary_uint8)((conversion->temp_3 + 20) * 2.55);
+    raw->temp_4 = (primary_uint8)((conversion->temp_4 + 20) * 2.55);
+    raw->temp_5 = (primary_uint8)((conversion->temp_5 + 20) * 2.55);
+    raw->temp_6 = (primary_uint8)((conversion->temp_6 + 20) * 2.55);
 }
 
 // ============== STRING ============== //
@@ -9249,10 +9249,10 @@ void primary_raw_to_conversion_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->encoder_r = (((primary_float32)encoder_r) / 0.731429) - 70;
-    conversion->encoder_l = (((primary_float32)encoder_l) / 0.731429) - 70;
-    conversion->inverter_r = (((primary_float32)inverter_r) / 0.731429) - 70;
-    conversion->inverter_l = (((primary_float32)inverter_l) / 0.731429) - 70;
+    conversion->encoder_r = (((primary_float32)encoder_r) / 0.728571) - 70;
+    conversion->encoder_l = (((primary_float32)encoder_l) / 0.728571) - 70;
+    conversion->inverter_r = (((primary_float32)inverter_r) / 0.728571) - 70;
+    conversion->inverter_l = (((primary_float32)inverter_l) / 0.728571) - 70;
 }
 
 void primary_raw_to_conversion_struct_SPEED(
@@ -9262,10 +9262,10 @@ void primary_raw_to_conversion_struct_SPEED(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->encoder_r = (((primary_float32)raw->encoder_r) / 0.731429) - 70;
-    conversion->encoder_l = (((primary_float32)raw->encoder_l) / 0.731429) - 70;
-    conversion->inverter_r = (((primary_float32)raw->inverter_r) / 0.731429) - 70;
-    conversion->inverter_l = (((primary_float32)raw->inverter_l) / 0.731429) - 70;
+    conversion->encoder_r = (((primary_float32)raw->encoder_r) / 0.728571) - 70;
+    conversion->encoder_l = (((primary_float32)raw->encoder_l) / 0.728571) - 70;
+    conversion->inverter_r = (((primary_float32)raw->inverter_r) / 0.728571) - 70;
+    conversion->inverter_l = (((primary_float32)raw->inverter_l) / 0.728571) - 70;
 }
 
 void primary_conversion_to_raw_SPEED(
@@ -9281,10 +9281,10 @@ void primary_conversion_to_raw_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->encoder_r = (primary_uint8)((encoder_r + 70) * 0.731429);
-    raw->encoder_l = (primary_uint8)((encoder_l + 70) * 0.731429);
-    raw->inverter_r = (primary_uint8)((inverter_r + 70) * 0.731429);
-    raw->inverter_l = (primary_uint8)((inverter_l + 70) * 0.731429);
+    raw->encoder_r = (primary_uint8)((encoder_r + 70) * 0.728571);
+    raw->encoder_l = (primary_uint8)((encoder_l + 70) * 0.728571);
+    raw->inverter_r = (primary_uint8)((inverter_r + 70) * 0.728571);
+    raw->inverter_l = (primary_uint8)((inverter_l + 70) * 0.728571);
 }
 
 void primary_conversion_to_raw_struct_SPEED(
@@ -9294,10 +9294,10 @@ void primary_conversion_to_raw_struct_SPEED(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->encoder_r = (primary_uint8)((conversion->encoder_r + 70) * 0.731429);
-    raw->encoder_l = (primary_uint8)((conversion->encoder_l + 70) * 0.731429);
-    raw->inverter_r = (primary_uint8)((conversion->inverter_r + 70) * 0.731429);
-    raw->inverter_l = (primary_uint8)((conversion->inverter_l + 70) * 0.731429);
+    raw->encoder_r = (primary_uint8)((conversion->encoder_r + 70) * 0.728571);
+    raw->encoder_l = (primary_uint8)((conversion->encoder_l + 70) * 0.728571);
+    raw->inverter_r = (primary_uint8)((conversion->inverter_r + 70) * 0.728571);
+    raw->inverter_l = (primary_uint8)((conversion->inverter_l + 70) * 0.728571);
 }
 
 // ============== STRING ============== //

@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657558420
+#define CANLIB_BUILD_TIME 1657617256
 #define CANLIB_BUILD_HASH 0xc183abd7
 #endif // CANLIB_BUILD
 
@@ -3709,8 +3709,8 @@ void secondary_raw_to_conversion_PEDALS_OUTPUT(
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->apps = apps;
-    conversion->bse_front = (((secondary_float32)bse_front) / 655.36) + 0;
-    conversion->bse_rear = (((secondary_float32)bse_rear) / 655.36) + 0;
+    conversion->bse_front = (((secondary_float32)bse_front) / 655.35) + 0;
+    conversion->bse_rear = (((secondary_float32)bse_rear) / 655.35) + 0;
 }
 
 void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
@@ -3721,8 +3721,8 @@ void secondary_raw_to_conversion_struct_PEDALS_OUTPUT(
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->apps = raw->apps;
-    conversion->bse_front = (((secondary_float32)raw->bse_front) / 655.36) + 0;
-    conversion->bse_rear = (((secondary_float32)raw->bse_rear) / 655.36) + 0;
+    conversion->bse_front = (((secondary_float32)raw->bse_front) / 655.35) + 0;
+    conversion->bse_rear = (((secondary_float32)raw->bse_rear) / 655.35) + 0;
 }
 
 void secondary_conversion_to_raw_PEDALS_OUTPUT(
@@ -3738,8 +3738,8 @@ void secondary_conversion_to_raw_PEDALS_OUTPUT(
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->apps = apps;
-    raw->bse_front = (secondary_uint16)((bse_front + 0) * 655.36);
-    raw->bse_rear = (secondary_uint16)((bse_rear + 0) * 655.36);
+    raw->bse_front = (secondary_uint16)((bse_front + 0) * 655.35);
+    raw->bse_rear = (secondary_uint16)((bse_rear + 0) * 655.35);
 }
 
 void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
@@ -3750,8 +3750,8 @@ void secondary_conversion_to_raw_struct_PEDALS_OUTPUT(
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->apps = conversion->apps;
-    raw->bse_front = (secondary_uint16)((conversion->bse_front + 0) * 655.36);
-    raw->bse_rear = (secondary_uint16)((conversion->bse_rear + 0) * 655.36);
+    raw->bse_front = (secondary_uint16)((conversion->bse_front + 0) * 655.35);
+    raw->bse_rear = (secondary_uint16)((conversion->bse_rear + 0) * 655.35);
 }
 
 // ============== STRING ============== //

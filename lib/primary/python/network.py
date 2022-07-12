@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657558420
+CANLIB_BUILD_TIME = 1657617256
 CANLIB_BUILD_HASH = 0xc183abd7
 
 def int8(value: Any) -> Optional[int]:
@@ -768,8 +768,8 @@ class message_HV_VOLTAGE:
 
     def convert(self) -> message_HV_VOLTAGE_conversion:
         conversion = message_HV_VOLTAGE_conversion()
-        conversion.pack_voltage = ((float32(self.pack_voltage)) / 142.469565) + 0
-        conversion.bus_voltage = ((float32(self.bus_voltage)) / 142.469565) + 0
+        conversion.pack_voltage = ((float32(self.pack_voltage)) / 142.467391) + 0
+        conversion.bus_voltage = ((float32(self.bus_voltage)) / 142.467391) + 0
         conversion.max_cell_voltage = ((float32(self.max_cell_voltage)) / 10000.0) + 0
         conversion.min_cell_voltage = ((float32(self.min_cell_voltage)) / 10000.0) + 0
         return conversion
@@ -805,8 +805,8 @@ class message_HV_VOLTAGE_conversion:
 
     def convert_to_raw(self) -> message_HV_VOLTAGE:
         raw = message_HV_VOLTAGE()
-        raw.pack_voltage = uint16((self.pack_voltage + 0) * 142.469565)
-        raw.bus_voltage = uint16((self.bus_voltage + 0) * 142.469565)
+        raw.pack_voltage = uint16((self.pack_voltage + 0) * 142.467391)
+        raw.bus_voltage = uint16((self.bus_voltage + 0) * 142.467391)
         raw.max_cell_voltage = uint16((self.max_cell_voltage + 0) * 10000.0)
         raw.min_cell_voltage = uint16((self.min_cell_voltage + 0) * 10000.0)
         return raw
@@ -856,10 +856,10 @@ class message_HV_CURRENT:
 
     def convert(self) -> message_HV_CURRENT_conversion:
         conversion = message_HV_CURRENT_conversion()
-        conversion.current = ((float32(self.current)) / 312.07619) - 10
-        conversion.power = ((float32(self.power)) / 655.36) + 0
-        conversion.energy = ((float32(self.energy)) / 9.362286) + 0
-        conversion.soc = ((float32(self.soc)) / 2.56) + 0
+        conversion.current = ((float32(self.current)) / 312.071429) - 10
+        conversion.power = ((float32(self.power)) / 655.35) + 0
+        conversion.energy = ((float32(self.energy)) / 9.362143) + 0
+        conversion.soc = ((float32(self.soc)) / 2.55) + 0
         return conversion
 
 
@@ -893,10 +893,10 @@ class message_HV_CURRENT_conversion:
 
     def convert_to_raw(self) -> message_HV_CURRENT:
         raw = message_HV_CURRENT()
-        raw.current = uint16((self.current + 10) * 312.07619)
-        raw.power = uint16((self.power + 0) * 655.36)
-        raw.energy = uint16((self.energy + 0) * 9.362286)
-        raw.soc = uint8((self.soc + 0) * 2.56)
+        raw.current = uint16((self.current + 10) * 312.071429)
+        raw.power = uint16((self.power + 0) * 655.35)
+        raw.energy = uint16((self.energy + 0) * 9.362143)
+        raw.soc = uint8((self.soc + 0) * 2.55)
         return raw
 
 class message_HV_TEMP:
@@ -939,9 +939,9 @@ class message_HV_TEMP:
 
     def convert(self) -> message_HV_TEMP_conversion:
         conversion = message_HV_TEMP_conversion()
-        conversion.average_temp = ((float32(self.average_temp)) / 2.56) - 20
-        conversion.max_temp = ((float32(self.max_temp)) / 2.56) - 20
-        conversion.min_temp = ((float32(self.min_temp)) / 2.56) - 20
+        conversion.average_temp = ((float32(self.average_temp)) / 2.55) - 20
+        conversion.max_temp = ((float32(self.max_temp)) / 2.55) - 20
+        conversion.min_temp = ((float32(self.min_temp)) / 2.55) - 20
         return conversion
 
 
@@ -971,9 +971,9 @@ class message_HV_TEMP_conversion:
 
     def convert_to_raw(self) -> message_HV_TEMP:
         raw = message_HV_TEMP()
-        raw.average_temp = uint8((self.average_temp + 20) * 2.56)
-        raw.max_temp = uint8((self.max_temp + 20) * 2.56)
-        raw.min_temp = uint8((self.min_temp + 20) * 2.56)
+        raw.average_temp = uint8((self.average_temp + 20) * 2.55)
+        raw.max_temp = uint8((self.max_temp + 20) * 2.55)
+        raw.min_temp = uint8((self.min_temp + 20) * 2.55)
         return raw
 
 class message_HV_ERRORS:
@@ -1071,7 +1071,7 @@ class message_HV_FANS_OVERRIDE:
     def convert(self) -> message_HV_FANS_OVERRIDE_conversion:
         conversion = message_HV_FANS_OVERRIDE_conversion()
         conversion.fans_override = self.fans_override
-        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
+        conversion.fans_speed = ((float32(self.fans_speed)) / 65535.0) + 0
         return conversion
 
 
@@ -1097,7 +1097,7 @@ class message_HV_FANS_OVERRIDE_conversion:
     def convert_to_raw(self) -> message_HV_FANS_OVERRIDE:
         raw = message_HV_FANS_OVERRIDE()
         raw.fans_override = self.fans_override
-        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
+        raw.fans_speed = uint16((self.fans_speed + 0) * 65535.0)
         return raw
 
 class message_HV_CAN_FORWARD_STATUS:
@@ -1162,7 +1162,7 @@ class message_HV_FANS_OVERRIDE_STATUS:
     def convert(self) -> message_HV_FANS_OVERRIDE_STATUS_conversion:
         conversion = message_HV_FANS_OVERRIDE_STATUS_conversion()
         conversion.fans_override = self.fans_override
-        conversion.fans_speed = ((float32(self.fans_speed)) / 65536.0) + 0
+        conversion.fans_speed = ((float32(self.fans_speed)) / 65535.0) + 0
         return conversion
 
 
@@ -1188,7 +1188,7 @@ class message_HV_FANS_OVERRIDE_STATUS_conversion:
     def convert_to_raw(self) -> message_HV_FANS_OVERRIDE_STATUS:
         raw = message_HV_FANS_OVERRIDE_STATUS()
         raw.fans_override = self.fans_override
-        raw.fans_speed = uint16((self.fans_speed + 0) * 65536.0)
+        raw.fans_speed = uint16((self.fans_speed + 0) * 65535.0)
         return raw
 
 class message_HV_FEEDBACKS_STATUS:
@@ -1531,7 +1531,7 @@ class message_LV_CURRENT:
 
     def convert(self) -> message_LV_CURRENT_conversion:
         conversion = message_LV_CURRENT_conversion()
-        conversion.current = ((float32(self.current)) / 1092.266667) - 10
+        conversion.current = ((float32(self.current)) / 1092.25) - 10
         return conversion
 
 
@@ -1553,7 +1553,7 @@ class message_LV_CURRENT_conversion:
 
     def convert_to_raw(self) -> message_LV_CURRENT:
         raw = message_LV_CURRENT()
-        raw.current = uint16((self.current + 10) * 1092.266667)
+        raw.current = uint16((self.current + 10) * 1092.25)
         return raw
 
 class message_LV_VOLTAGE:
@@ -1744,10 +1744,10 @@ class message_LV_TEMPERATURE:
 
     def convert(self) -> message_LV_TEMPERATURE_conversion:
         conversion = message_LV_TEMPERATURE_conversion()
-        conversion.bp_temperature_1 = ((float32(self.bp_temperature_1)) / 655.36) - 20
-        conversion.bp_temperature_2 = ((float32(self.bp_temperature_2)) / 655.36) - 20
-        conversion.dcdc12_temperature = ((float32(self.dcdc12_temperature)) / 655.36) - 20
-        conversion.dcdc24_temperature = ((float32(self.dcdc24_temperature)) / 655.36) - 20
+        conversion.bp_temperature_1 = ((float32(self.bp_temperature_1)) / 655.35) - 20
+        conversion.bp_temperature_2 = ((float32(self.bp_temperature_2)) / 655.35) - 20
+        conversion.dcdc12_temperature = ((float32(self.dcdc12_temperature)) / 655.35) - 20
+        conversion.dcdc24_temperature = ((float32(self.dcdc24_temperature)) / 655.35) - 20
         return conversion
 
 
@@ -1781,10 +1781,10 @@ class message_LV_TEMPERATURE_conversion:
 
     def convert_to_raw(self) -> message_LV_TEMPERATURE:
         raw = message_LV_TEMPERATURE()
-        raw.bp_temperature_1 = uint16((self.bp_temperature_1 + 20) * 655.36)
-        raw.bp_temperature_2 = uint16((self.bp_temperature_2 + 20) * 655.36)
-        raw.dcdc12_temperature = uint16((self.dcdc12_temperature + 20) * 655.36)
-        raw.dcdc24_temperature = uint16((self.dcdc24_temperature + 20) * 655.36)
+        raw.bp_temperature_1 = uint16((self.bp_temperature_1 + 20) * 655.35)
+        raw.bp_temperature_2 = uint16((self.bp_temperature_2 + 20) * 655.35)
+        raw.dcdc12_temperature = uint16((self.dcdc12_temperature + 20) * 655.35)
+        raw.dcdc24_temperature = uint16((self.dcdc24_temperature + 20) * 655.35)
         return raw
 
 class message_COOLING_STATUS:
@@ -1822,8 +1822,8 @@ class message_COOLING_STATUS:
 
     def convert(self) -> message_COOLING_STATUS_conversion:
         conversion = message_COOLING_STATUS_conversion()
-        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32768.0) - 1
-        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32768.0) - 1
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32767.5) - 1
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32767.5) - 1
         return conversion
 
 
@@ -1849,8 +1849,8 @@ class message_COOLING_STATUS_conversion:
 
     def convert_to_raw(self) -> message_COOLING_STATUS:
         raw = message_COOLING_STATUS()
-        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32768.0)
-        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32768.0)
+        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32767.5)
+        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32767.5)
         return raw
 
 class message_SET_RADIATOR_SPEED:
@@ -1882,7 +1882,7 @@ class message_SET_RADIATOR_SPEED:
 
     def convert(self) -> message_SET_RADIATOR_SPEED_conversion:
         conversion = message_SET_RADIATOR_SPEED_conversion()
-        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32768.0) - 1
+        conversion.radiators_speed = ((float32(self.radiators_speed)) / 32767.5) - 1
         return conversion
 
 
@@ -1903,7 +1903,7 @@ class message_SET_RADIATOR_SPEED_conversion:
 
     def convert_to_raw(self) -> message_SET_RADIATOR_SPEED:
         raw = message_SET_RADIATOR_SPEED()
-        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32768.0)
+        raw.radiators_speed = uint16((self.radiators_speed + 1) * 32767.5)
         return raw
 
 class message_SET_PUMPS_SPEED:
@@ -1935,7 +1935,7 @@ class message_SET_PUMPS_SPEED:
 
     def convert(self) -> message_SET_PUMPS_SPEED_conversion:
         conversion = message_SET_PUMPS_SPEED_conversion()
-        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32768.0) - 1
+        conversion.pumps_speed = ((float32(self.pumps_speed)) / 32767.5) - 1
         return conversion
 
 
@@ -1956,7 +1956,7 @@ class message_SET_PUMPS_SPEED_conversion:
 
     def convert_to_raw(self) -> message_SET_PUMPS_SPEED:
         raw = message_SET_PUMPS_SPEED()
-        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32768.0)
+        raw.pumps_speed = uint16((self.pumps_speed + 1) * 32767.5)
         return raw
 
 class message_SET_INVERTER_CONNECTION_STATUS:
@@ -2256,13 +2256,13 @@ class message_HV_CELLS_TEMP:
     def convert(self) -> message_HV_CELLS_TEMP_conversion:
         conversion = message_HV_CELLS_TEMP_conversion()
         conversion.start_index = self.start_index
-        conversion.temp_0 = ((float32(self.temp_0)) / 2.56) - 20
-        conversion.temp_1 = ((float32(self.temp_1)) / 2.56) - 20
-        conversion.temp_2 = ((float32(self.temp_2)) / 2.56) - 20
-        conversion.temp_3 = ((float32(self.temp_3)) / 2.56) - 20
-        conversion.temp_4 = ((float32(self.temp_4)) / 2.56) - 20
-        conversion.temp_5 = ((float32(self.temp_5)) / 2.56) - 20
-        conversion.temp_6 = ((float32(self.temp_6)) / 2.56) - 20
+        conversion.temp_0 = ((float32(self.temp_0)) / 2.55) - 20
+        conversion.temp_1 = ((float32(self.temp_1)) / 2.55) - 20
+        conversion.temp_2 = ((float32(self.temp_2)) / 2.55) - 20
+        conversion.temp_3 = ((float32(self.temp_3)) / 2.55) - 20
+        conversion.temp_4 = ((float32(self.temp_4)) / 2.55) - 20
+        conversion.temp_5 = ((float32(self.temp_5)) / 2.55) - 20
+        conversion.temp_6 = ((float32(self.temp_6)) / 2.55) - 20
         return conversion
 
 
@@ -2313,13 +2313,13 @@ class message_HV_CELLS_TEMP_conversion:
     def convert_to_raw(self) -> message_HV_CELLS_TEMP:
         raw = message_HV_CELLS_TEMP()
         raw.start_index = self.start_index
-        raw.temp_0 = uint8((self.temp_0 + 20) * 2.56)
-        raw.temp_1 = uint8((self.temp_1 + 20) * 2.56)
-        raw.temp_2 = uint8((self.temp_2 + 20) * 2.56)
-        raw.temp_3 = uint8((self.temp_3 + 20) * 2.56)
-        raw.temp_4 = uint8((self.temp_4 + 20) * 2.56)
-        raw.temp_5 = uint8((self.temp_5 + 20) * 2.56)
-        raw.temp_6 = uint8((self.temp_6 + 20) * 2.56)
+        raw.temp_0 = uint8((self.temp_0 + 20) * 2.55)
+        raw.temp_1 = uint8((self.temp_1 + 20) * 2.55)
+        raw.temp_2 = uint8((self.temp_2 + 20) * 2.55)
+        raw.temp_3 = uint8((self.temp_3 + 20) * 2.55)
+        raw.temp_4 = uint8((self.temp_4 + 20) * 2.55)
+        raw.temp_5 = uint8((self.temp_5 + 20) * 2.55)
+        raw.temp_6 = uint8((self.temp_6 + 20) * 2.55)
         return raw
 
 class message_HV_CELL_BALANCING_STATUS:
@@ -2450,10 +2450,10 @@ class message_SPEED:
 
     def convert(self) -> message_SPEED_conversion:
         conversion = message_SPEED_conversion()
-        conversion.encoder_r = ((float32(self.encoder_r)) / 0.731429) - 70
-        conversion.encoder_l = ((float32(self.encoder_l)) / 0.731429) - 70
-        conversion.inverter_r = ((float32(self.inverter_r)) / 0.731429) - 70
-        conversion.inverter_l = ((float32(self.inverter_l)) / 0.731429) - 70
+        conversion.encoder_r = ((float32(self.encoder_r)) / 0.728571) - 70
+        conversion.encoder_l = ((float32(self.encoder_l)) / 0.728571) - 70
+        conversion.inverter_r = ((float32(self.inverter_r)) / 0.728571) - 70
+        conversion.inverter_l = ((float32(self.inverter_l)) / 0.728571) - 70
         return conversion
 
 
@@ -2487,10 +2487,10 @@ class message_SPEED_conversion:
 
     def convert_to_raw(self) -> message_SPEED:
         raw = message_SPEED()
-        raw.encoder_r = uint8((self.encoder_r + 70) * 0.731429)
-        raw.encoder_l = uint8((self.encoder_l + 70) * 0.731429)
-        raw.inverter_r = uint8((self.inverter_r + 70) * 0.731429)
-        raw.inverter_l = uint8((self.inverter_l + 70) * 0.731429)
+        raw.encoder_r = uint8((self.encoder_r + 70) * 0.728571)
+        raw.encoder_l = uint8((self.encoder_l + 70) * 0.728571)
+        raw.inverter_r = uint8((self.inverter_r + 70) * 0.728571)
+        raw.inverter_l = uint8((self.inverter_l + 70) * 0.728571)
         return raw
 
 class message_INV_L_REQUEST:

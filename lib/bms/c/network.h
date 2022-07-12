@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657558420
+#define CANLIB_BUILD_TIME 1657617256
 #define CANLIB_BUILD_HASH 0xc183abd7
 #endif // CANLIB_BUILD
 
@@ -1213,12 +1213,12 @@ void bms_raw_to_conversion_TEMPERATURES(
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->start_index = start_index;
-    conversion->temp0 = (((bms_float32)temp0) / 2.56) - 20;
-    conversion->temp1 = (((bms_float32)temp1) / 2.56) - 20;
-    conversion->temp2 = (((bms_float32)temp2) / 2.56) - 20;
-    conversion->temp3 = (((bms_float32)temp3) / 2.56) - 20;
-    conversion->temp4 = (((bms_float32)temp4) / 2.56) - 20;
-    conversion->temp5 = (((bms_float32)temp5) / 2.56) - 20;
+    conversion->temp0 = (((bms_float32)temp0) / 2.55) - 20;
+    conversion->temp1 = (((bms_float32)temp1) / 2.55) - 20;
+    conversion->temp2 = (((bms_float32)temp2) / 2.55) - 20;
+    conversion->temp3 = (((bms_float32)temp3) / 2.55) - 20;
+    conversion->temp4 = (((bms_float32)temp4) / 2.55) - 20;
+    conversion->temp5 = (((bms_float32)temp5) / 2.55) - 20;
 }
 
 void bms_raw_to_conversion_struct_TEMPERATURES(
@@ -1229,12 +1229,12 @@ void bms_raw_to_conversion_struct_TEMPERATURES(
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
     conversion->start_index = raw->start_index;
-    conversion->temp0 = (((bms_float32)raw->temp0) / 2.56) - 20;
-    conversion->temp1 = (((bms_float32)raw->temp1) / 2.56) - 20;
-    conversion->temp2 = (((bms_float32)raw->temp2) / 2.56) - 20;
-    conversion->temp3 = (((bms_float32)raw->temp3) / 2.56) - 20;
-    conversion->temp4 = (((bms_float32)raw->temp4) / 2.56) - 20;
-    conversion->temp5 = (((bms_float32)raw->temp5) / 2.56) - 20;
+    conversion->temp0 = (((bms_float32)raw->temp0) / 2.55) - 20;
+    conversion->temp1 = (((bms_float32)raw->temp1) / 2.55) - 20;
+    conversion->temp2 = (((bms_float32)raw->temp2) / 2.55) - 20;
+    conversion->temp3 = (((bms_float32)raw->temp3) / 2.55) - 20;
+    conversion->temp4 = (((bms_float32)raw->temp4) / 2.55) - 20;
+    conversion->temp5 = (((bms_float32)raw->temp5) / 2.55) - 20;
 }
 
 void bms_conversion_to_raw_TEMPERATURES(
@@ -1254,12 +1254,12 @@ void bms_conversion_to_raw_TEMPERATURES(
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->start_index = start_index;
-    raw->temp0 = (bms_uint8)((temp0 + 20) * 2.56);
-    raw->temp1 = (bms_uint8)((temp1 + 20) * 2.56);
-    raw->temp2 = (bms_uint8)((temp2 + 20) * 2.56);
-    raw->temp3 = (bms_uint8)((temp3 + 20) * 2.56);
-    raw->temp4 = (bms_uint8)((temp4 + 20) * 2.56);
-    raw->temp5 = (bms_uint8)((temp5 + 20) * 2.56);
+    raw->temp0 = (bms_uint8)((temp0 + 20) * 2.55);
+    raw->temp1 = (bms_uint8)((temp1 + 20) * 2.55);
+    raw->temp2 = (bms_uint8)((temp2 + 20) * 2.55);
+    raw->temp3 = (bms_uint8)((temp3 + 20) * 2.55);
+    raw->temp4 = (bms_uint8)((temp4 + 20) * 2.55);
+    raw->temp5 = (bms_uint8)((temp5 + 20) * 2.55);
 }
 
 void bms_conversion_to_raw_struct_TEMPERATURES(
@@ -1270,12 +1270,12 @@ void bms_conversion_to_raw_struct_TEMPERATURES(
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
     raw->start_index = conversion->start_index;
-    raw->temp0 = (bms_uint8)((conversion->temp0 + 20) * 2.56);
-    raw->temp1 = (bms_uint8)((conversion->temp1 + 20) * 2.56);
-    raw->temp2 = (bms_uint8)((conversion->temp2 + 20) * 2.56);
-    raw->temp3 = (bms_uint8)((conversion->temp3 + 20) * 2.56);
-    raw->temp4 = (bms_uint8)((conversion->temp4 + 20) * 2.56);
-    raw->temp5 = (bms_uint8)((conversion->temp5 + 20) * 2.56);
+    raw->temp0 = (bms_uint8)((conversion->temp0 + 20) * 2.55);
+    raw->temp1 = (bms_uint8)((conversion->temp1 + 20) * 2.55);
+    raw->temp2 = (bms_uint8)((conversion->temp2 + 20) * 2.55);
+    raw->temp3 = (bms_uint8)((conversion->temp3 + 20) * 2.55);
+    raw->temp4 = (bms_uint8)((conversion->temp4 + 20) * 2.55);
+    raw->temp5 = (bms_uint8)((conversion->temp5 + 20) * 2.55);
 }
 
 // ============== STRING ============== //

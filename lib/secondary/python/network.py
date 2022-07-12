@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657558420
+CANLIB_BUILD_TIME = 1657617256
 CANLIB_BUILD_HASH = 0xc183abd7
 
 def int8(value: Any) -> Optional[int]:
@@ -926,8 +926,8 @@ class message_PEDALS_OUTPUT:
     def convert(self) -> message_PEDALS_OUTPUT_conversion:
         conversion = message_PEDALS_OUTPUT_conversion()
         conversion.apps = self.apps
-        conversion.bse_front = ((float32(self.bse_front)) / 655.36) + 0
-        conversion.bse_rear = ((float32(self.bse_rear)) / 655.36) + 0
+        conversion.bse_front = ((float32(self.bse_front)) / 655.35) + 0
+        conversion.bse_rear = ((float32(self.bse_rear)) / 655.35) + 0
         return conversion
 
 
@@ -958,8 +958,8 @@ class message_PEDALS_OUTPUT_conversion:
     def convert_to_raw(self) -> message_PEDALS_OUTPUT:
         raw = message_PEDALS_OUTPUT()
         raw.apps = self.apps
-        raw.bse_front = uint16((self.bse_front + 0) * 655.36)
-        raw.bse_rear = uint16((self.bse_rear + 0) * 655.36)
+        raw.bse_front = uint16((self.bse_front + 0) * 655.35)
+        raw.bse_rear = uint16((self.bse_rear + 0) * 655.35)
         return raw
 
 class message_CONTROL_OUTPUT:
