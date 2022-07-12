@@ -2,7 +2,7 @@
 
 This repository contains the **CAN-bus** message definition for the E-Agle TRT team.
 The definitions are used to **automatically generate** a C/C++/Python library which
-contains serialization / deserialization and util functions.
+contains serialization and deserialization and util functions.
 
 ## How can I add new messages?
 
