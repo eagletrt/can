@@ -258,7 +258,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint8"
+        "cancicd_version": "uint32"
       }
     },
     {
@@ -271,7 +271,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint8"
+        "cancicd_version": "uint32"
       }
     },
     {
@@ -284,7 +284,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint8"
+        "cancicd_version": "uint32"
       }
     },
     {
@@ -297,7 +297,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint8"
+        "cancicd_version": "uint32"
       }
     },
     {
@@ -310,7 +310,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint8"
+        "cancicd_version": "uint32"
       }
     },
     {
@@ -333,10 +333,7 @@
       "receiving": ["TLM"],
       "description": "Ask telemetry to turn on/off and send a tuple containing the current{test, driver, map); only once",
       "contents": {
-        "tlm_status": "Toggle",
-        "race_type": "RaceType",
-        "driver": "uint8",
-        "circuit": "uint8"
+        "tlm_status": "Toggle"
       }
     },
     {
@@ -348,10 +345,7 @@
       "description": "The answer to the steering wheel's message that changes the status of the telemetry",
       "interval": 1000,
       "contents": {
-        "tlm_status": "Toggle",
-        "race_type": "RaceType",
-        "driver": "uint8",
-        "circuit": "uint8"
+        "tlm_status": "Toggle"
       }
     },
     {
