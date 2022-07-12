@@ -9,9 +9,21 @@
       "receiving": ["DAS"],
       "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
       "contents": {
-        "ang_rate_x": "uint16",
-        "ang_rate_y": "uint16",
-        "ang_rate_z": "uint16"
+        "ang_rate_x": {
+          "type": "float32",
+          "range": [-245, 245],
+          "precision": 0.01
+        },
+        "ang_rate_y": {
+          "type": "float32",
+          "range": [-245, 245],
+          "precision": 0.01
+        },
+        "ang_rate_z": {
+          "type": "float32",
+          "range": [-245, 245],
+          "precision": 0.01
+        }
       }
     },
     {
@@ -21,9 +33,21 @@
       "receiving": ["DAS"],
       "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
       "contents": {
-        "accel_x": "uint16",
-        "accel_y": "uint16",
-        "accel_z": "uint16"
+        "accel_x": {
+          "type": "float32",
+          "range": [-8, 8],
+          "precision": 0.01
+        },
+        "accel_y": {
+          "type": "float32",
+          "range": [-8, 8],
+          "precision": 0.01
+        },
+        "accel_z": {
+          "type": "float32",
+          "range": [-8, 8],
+          "precision": 0.01
+        }
       }
     },
     {
@@ -266,7 +290,7 @@
       "description": "Lap counter and associated timestamp",
       "contents": {
         "lap_count": "uint8",
-        "timestamp": "uint32"
+        "lap_time": "uint32"
       }
     },
     {
