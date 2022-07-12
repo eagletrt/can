@@ -1603,45 +1603,24 @@ class SET_TLM_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
+  // uint64 _inner_timestamp = 2;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 2;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
+
   // .primary.Toggle tlm_status = 1;
   void clear_tlm_status();
   static const int kTlmStatusFieldNumber = 1;
   ::primary::Toggle tlm_status() const;
   void set_tlm_status(::primary::Toggle value);
 
-  // .primary.RaceType race_type = 2;
-  void clear_race_type();
-  static const int kRaceTypeFieldNumber = 2;
-  ::primary::RaceType race_type() const;
-  void set_race_type(::primary::RaceType value);
-
-  // uint32 driver = 3;
-  void clear_driver();
-  static const int kDriverFieldNumber = 3;
-  ::google::protobuf::uint32 driver() const;
-  void set_driver(::google::protobuf::uint32 value);
-
-  // uint32 circuit = 4;
-  void clear_circuit();
-  static const int kCircuitFieldNumber = 4;
-  ::google::protobuf::uint32 circuit() const;
-  void set_circuit(::google::protobuf::uint32 value);
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  static const int kInnerTimestampFieldNumber = 5;
-  ::google::protobuf::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::google::protobuf::uint64 value);
-
   // @@protoc_insertion_point(class_scope:primary.SET_TLM_STATUS)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  int tlm_status_;
-  int race_type_;
-  ::google::protobuf::uint32 driver_;
-  ::google::protobuf::uint32 circuit_;
   ::google::protobuf::uint64 _inner_timestamp_;
+  int tlm_status_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -1734,45 +1713,24 @@ class TLM_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
+  // uint64 _inner_timestamp = 2;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 2;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
+
   // .primary.Toggle tlm_status = 1;
   void clear_tlm_status();
   static const int kTlmStatusFieldNumber = 1;
   ::primary::Toggle tlm_status() const;
   void set_tlm_status(::primary::Toggle value);
 
-  // .primary.RaceType race_type = 2;
-  void clear_race_type();
-  static const int kRaceTypeFieldNumber = 2;
-  ::primary::RaceType race_type() const;
-  void set_race_type(::primary::RaceType value);
-
-  // uint32 driver = 3;
-  void clear_driver();
-  static const int kDriverFieldNumber = 3;
-  ::google::protobuf::uint32 driver() const;
-  void set_driver(::google::protobuf::uint32 value);
-
-  // uint32 circuit = 4;
-  void clear_circuit();
-  static const int kCircuitFieldNumber = 4;
-  ::google::protobuf::uint32 circuit() const;
-  void set_circuit(::google::protobuf::uint32 value);
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  static const int kInnerTimestampFieldNumber = 5;
-  ::google::protobuf::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::google::protobuf::uint64 value);
-
   // @@protoc_insertion_point(class_scope:primary.TLM_STATUS)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  int tlm_status_;
-  int race_type_;
-  ::google::protobuf::uint32 driver_;
-  ::google::protobuf::uint32 circuit_;
   ::google::protobuf::uint64 _inner_timestamp_;
+  int tlm_status_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -10744,49 +10702,7 @@ inline void SET_TLM_STATUS::set_tlm_status(::primary::Toggle value) {
   // @@protoc_insertion_point(field_set:primary.SET_TLM_STATUS.tlm_status)
 }
 
-// .primary.RaceType race_type = 2;
-inline void SET_TLM_STATUS::clear_race_type() {
-  race_type_ = 0;
-}
-inline ::primary::RaceType SET_TLM_STATUS::race_type() const {
-  // @@protoc_insertion_point(field_get:primary.SET_TLM_STATUS.race_type)
-  return static_cast< ::primary::RaceType >(race_type_);
-}
-inline void SET_TLM_STATUS::set_race_type(::primary::RaceType value) {
-  
-  race_type_ = value;
-  // @@protoc_insertion_point(field_set:primary.SET_TLM_STATUS.race_type)
-}
-
-// uint32 driver = 3;
-inline void SET_TLM_STATUS::clear_driver() {
-  driver_ = 0u;
-}
-inline ::google::protobuf::uint32 SET_TLM_STATUS::driver() const {
-  // @@protoc_insertion_point(field_get:primary.SET_TLM_STATUS.driver)
-  return driver_;
-}
-inline void SET_TLM_STATUS::set_driver(::google::protobuf::uint32 value) {
-  
-  driver_ = value;
-  // @@protoc_insertion_point(field_set:primary.SET_TLM_STATUS.driver)
-}
-
-// uint32 circuit = 4;
-inline void SET_TLM_STATUS::clear_circuit() {
-  circuit_ = 0u;
-}
-inline ::google::protobuf::uint32 SET_TLM_STATUS::circuit() const {
-  // @@protoc_insertion_point(field_get:primary.SET_TLM_STATUS.circuit)
-  return circuit_;
-}
-inline void SET_TLM_STATUS::set_circuit(::google::protobuf::uint32 value) {
-  
-  circuit_ = value;
-  // @@protoc_insertion_point(field_set:primary.SET_TLM_STATUS.circuit)
-}
-
-// uint64 _inner_timestamp = 5;
+// uint64 _inner_timestamp = 2;
 inline void SET_TLM_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = GOOGLE_ULONGLONG(0);
 }
@@ -10818,49 +10734,7 @@ inline void TLM_STATUS::set_tlm_status(::primary::Toggle value) {
   // @@protoc_insertion_point(field_set:primary.TLM_STATUS.tlm_status)
 }
 
-// .primary.RaceType race_type = 2;
-inline void TLM_STATUS::clear_race_type() {
-  race_type_ = 0;
-}
-inline ::primary::RaceType TLM_STATUS::race_type() const {
-  // @@protoc_insertion_point(field_get:primary.TLM_STATUS.race_type)
-  return static_cast< ::primary::RaceType >(race_type_);
-}
-inline void TLM_STATUS::set_race_type(::primary::RaceType value) {
-  
-  race_type_ = value;
-  // @@protoc_insertion_point(field_set:primary.TLM_STATUS.race_type)
-}
-
-// uint32 driver = 3;
-inline void TLM_STATUS::clear_driver() {
-  driver_ = 0u;
-}
-inline ::google::protobuf::uint32 TLM_STATUS::driver() const {
-  // @@protoc_insertion_point(field_get:primary.TLM_STATUS.driver)
-  return driver_;
-}
-inline void TLM_STATUS::set_driver(::google::protobuf::uint32 value) {
-  
-  driver_ = value;
-  // @@protoc_insertion_point(field_set:primary.TLM_STATUS.driver)
-}
-
-// uint32 circuit = 4;
-inline void TLM_STATUS::clear_circuit() {
-  circuit_ = 0u;
-}
-inline ::google::protobuf::uint32 TLM_STATUS::circuit() const {
-  // @@protoc_insertion_point(field_get:primary.TLM_STATUS.circuit)
-  return circuit_;
-}
-inline void TLM_STATUS::set_circuit(::google::protobuf::uint32 value) {
-  
-  circuit_ = value;
-  // @@protoc_insertion_point(field_set:primary.TLM_STATUS.circuit)
-}
-
-// uint64 _inner_timestamp = 5;
+// uint64 _inner_timestamp = 2;
 inline void TLM_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = GOOGLE_ULONGLONG(0);
 }

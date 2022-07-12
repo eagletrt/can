@@ -157,7 +157,7 @@ message GPS_SPEED {
 
 message LAP_COUNT {
     uint32 lap_count = 1;
-    uint32 timestamp = 2;
+    uint32 lap_time = 2;
     uint64 _inner_timestamp = 3;
 }
 

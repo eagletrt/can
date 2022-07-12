@@ -122,18 +122,12 @@ message TIMESTAMP {
 
 message SET_TLM_STATUS {
     Toggle tlm_status = 1;
-    RaceType race_type = 2;
-    uint32 driver = 3;
-    uint32 circuit = 4;
-    uint64 _inner_timestamp = 5;
+    uint64 _inner_timestamp = 2;
 }
 
 message TLM_STATUS {
     Toggle tlm_status = 1;
-    RaceType race_type = 2;
-    uint32 driver = 3;
-    uint32 circuit = 4;
-    uint64 _inner_timestamp = 5;
+    uint64 _inner_timestamp = 2;
 }
 
 message STEER_SYSTEM_STATUS {

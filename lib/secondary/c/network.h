@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657617256
-#define CANLIB_BUILD_HASH 0xc183abd7
+#define CANLIB_BUILD_TIME 1657621183
+#define CANLIB_BUILD_HASH 0x9001115c
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -242,6 +242,15 @@ typedef struct CANLIB_PARKING {
 } secondary_message_IMU_ANGULAR_RATE;
 
 typedef struct CANLIB_PARKING {
+    secondary_float32 ang_rate_x;
+    secondary_float32 ang_rate_y;
+    secondary_float32 ang_rate_z;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_IMU_ANGULAR_RATE_conversion;
+
+typedef struct CANLIB_PARKING {
     secondary_uint16 accel_x;
     secondary_uint16 accel_y;
     secondary_uint16 accel_z;
@@ -249,6 +258,15 @@ typedef struct CANLIB_PARKING {
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_IMU_ACCELERATION;
+
+typedef struct CANLIB_PARKING {
+    secondary_float32 accel_x;
+    secondary_float32 accel_y;
+    secondary_float32 accel_z;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_IMU_ACCELERATION_conversion;
 
 typedef struct CANLIB_PARKING {
     secondary_uint16 channel1;
@@ -427,7 +445,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     secondary_uint8 lap_count;
-    secondary_uint32 timestamp;
+    secondary_uint32 lap_time;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -495,6 +513,8 @@ typedef union CANLIB_PARKING {
 } _secondary_all_structs_raw;
 
 typedef union CANLIB_PARKING {
+    secondary_message_IMU_ANGULAR_RATE_conversion _IMU_ANGULAR_RATE;
+    secondary_message_IMU_ACCELERATION_conversion _IMU_ACCELERATION;
     secondary_message_PEDALS_OUTPUT_conversion _PEDALS_OUTPUT;
 } _secondary_all_structs_conversion;
 
@@ -527,9 +547,38 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, char* buffer);
+void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
+    secondary_message_IMU_ANGULAR_RATE* raw
+);
+
+void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE* raw,
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion
+);
+
+void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE* raw,
+    secondary_float32 ang_rate_x,
+    secondary_float32 ang_rate_y,
+    secondary_float32 ang_rate_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
+    secondary_uint16 ang_rate_x,
+    secondary_uint16 ang_rate_y,
+    secondary_uint16 ang_rate_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE_conversion* message, char* buffer);
 int secondary_fields_IMU_ANGULAR_RATE(char* buffer);
-int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer);
+int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE_conversion* message, FILE* buffer);
 int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer);
 
 
@@ -552,9 +601,38 @@ void secondary_deserialize_IMU_ACCELERATION(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, char* buffer);
+void secondary_raw_to_conversion_struct_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION_conversion* conversion,
+    secondary_message_IMU_ACCELERATION* raw
+);
+
+void secondary_conversion_to_raw_struct_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION* raw,
+    secondary_message_IMU_ACCELERATION_conversion* conversion
+);
+
+void secondary_conversion_to_raw_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION* raw,
+    secondary_float32 accel_x,
+    secondary_float32 accel_y,
+    secondary_float32 accel_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void secondary_raw_to_conversion_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION_conversion* conversion,
+    secondary_uint16 accel_x,
+    secondary_uint16 accel_y,
+    secondary_uint16 accel_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION_conversion* message, char* buffer);
 int secondary_fields_IMU_ACCELERATION(char* buffer);
-int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer);
+int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION_conversion* message, FILE* buffer);
 int secondary_fields_file_IMU_ACCELERATION(FILE* buffer);
 
 
@@ -1026,7 +1104,7 @@ int secondary_fields_file_GPS_SPEED(FILE* buffer);
 secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
     secondary_uint8 lap_count,
-    secondary_uint32 timestamp
+    secondary_uint32 lap_time
 );
 secondary_byte_size secondary_serialize_struct_LAP_COUNT(
     uint8_t* data,
@@ -1253,19 +1331,76 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
     message->ang_rate_x = data[0] | (data[1] << 8);
     message->ang_rate_y = data[2] | (data[3] << 8);
     message->ang_rate_z = data[4] | (data[5] << 8);
+}// ============== CONVERSION ============== //
+
+void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
+    secondary_uint16 ang_rate_x,
+    secondary_uint16 ang_rate_y,
+    secondary_uint16 ang_rate_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->ang_rate_x = (((secondary_float32)ang_rate_x) / 100.0) - 245;
+    conversion->ang_rate_y = (((secondary_float32)ang_rate_y) / 100.0) - 245;
+    conversion->ang_rate_z = (((secondary_float32)ang_rate_z) / 100.0) - 245;
+}
+
+void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
+    secondary_message_IMU_ANGULAR_RATE* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->ang_rate_x = (((secondary_float32)raw->ang_rate_x) / 100.0) - 245;
+    conversion->ang_rate_y = (((secondary_float32)raw->ang_rate_y) / 100.0) - 245;
+    conversion->ang_rate_z = (((secondary_float32)raw->ang_rate_z) / 100.0) - 245;
+}
+
+void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE* raw,
+    secondary_float32 ang_rate_x,
+    secondary_float32 ang_rate_y,
+    secondary_float32 ang_rate_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->ang_rate_x = (secondary_uint16)((ang_rate_x + 245) * 100.0);
+    raw->ang_rate_y = (secondary_uint16)((ang_rate_y + 245) * 100.0);
+    raw->ang_rate_z = (secondary_uint16)((ang_rate_z + 245) * 100.0);
+}
+
+void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
+    secondary_message_IMU_ANGULAR_RATE* raw,
+    secondary_message_IMU_ANGULAR_RATE_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->ang_rate_x = (secondary_uint16)((conversion->ang_rate_x + 245) * 100.0);
+    raw->ang_rate_y = (secondary_uint16)((conversion->ang_rate_y + 245) * 100.0);
+    raw->ang_rate_z = (secondary_uint16)((conversion->ang_rate_z + 245) * 100.0);
 }
 
 // ============== STRING ============== //
-
-int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, char* buffer) {
+int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -1287,15 +1422,15 @@ int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
     );
 }
 
-int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE* message, FILE* buffer) {
+int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -1362,19 +1497,76 @@ void secondary_deserialize_IMU_ACCELERATION(
     message->accel_x = data[0] | (data[1] << 8);
     message->accel_y = data[2] | (data[3] << 8);
     message->accel_z = data[4] | (data[5] << 8);
+}// ============== CONVERSION ============== //
+
+void secondary_raw_to_conversion_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION_conversion* conversion,
+    secondary_uint16 accel_x,
+    secondary_uint16 accel_y,
+    secondary_uint16 accel_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->accel_x = (((secondary_float32)accel_x) / 100.0) - 8;
+    conversion->accel_y = (((secondary_float32)accel_y) / 100.0) - 8;
+    conversion->accel_z = (((secondary_float32)accel_z) / 100.0) - 8;
+}
+
+void secondary_raw_to_conversion_struct_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION_conversion* conversion,
+    secondary_message_IMU_ACCELERATION* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->accel_x = (((secondary_float32)raw->accel_x) / 100.0) - 8;
+    conversion->accel_y = (((secondary_float32)raw->accel_y) / 100.0) - 8;
+    conversion->accel_z = (((secondary_float32)raw->accel_z) / 100.0) - 8;
+}
+
+void secondary_conversion_to_raw_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION* raw,
+    secondary_float32 accel_x,
+    secondary_float32 accel_y,
+    secondary_float32 accel_z
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->accel_x = (secondary_uint16)((accel_x + 8) * 100.0);
+    raw->accel_y = (secondary_uint16)((accel_y + 8) * 100.0);
+    raw->accel_z = (secondary_uint16)((accel_z + 8) * 100.0);
+}
+
+void secondary_conversion_to_raw_struct_IMU_ACCELERATION(
+    secondary_message_IMU_ACCELERATION* raw,
+    secondary_message_IMU_ACCELERATION_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->accel_x = (secondary_uint16)((conversion->accel_x + 8) * 100.0);
+    raw->accel_y = (secondary_uint16)((conversion->accel_y + 8) * 100.0);
+    raw->accel_z = (secondary_uint16)((conversion->accel_z + 8) * 100.0);
 }
 
 // ============== STRING ============== //
-
-int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, char* buffer) {
+int secondary_to_string_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -1396,15 +1588,15 @@ int secondary_fields_IMU_ACCELERATION(char* buffer) {
     );
 }
 
-int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION* message, FILE* buffer) {
+int secondary_to_string_file_IMU_ACCELERATION(secondary_message_IMU_ACCELERATION_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16 CANLIB_SEPARATOR 
-        "%" PRIu16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -3557,12 +3749,12 @@ int secondary_fields_file_GPS_SPEED(FILE* buffer) {
 secondary_byte_size secondary_serialize_LAP_COUNT(
     uint8_t* data,
     secondary_uint8 lap_count,
-    secondary_uint32 timestamp
+    secondary_uint32 lap_time
 ) {
-    data[0] = timestamp & 255;
-    data[1] = (timestamp >> 8) & 255;
-    data[2] = (timestamp >> 16) & 255;
-    data[3] = (timestamp >> 24) & 255;
+    data[0] = lap_time & 255;
+    data[1] = (lap_time >> 8) & 255;
+    data[2] = (lap_time >> 16) & 255;
+    data[3] = (lap_time >> 24) & 255;
     data[4] = lap_count;
     return 5;
 }
@@ -3571,10 +3763,10 @@ secondary_byte_size secondary_serialize_struct_LAP_COUNT(
     uint8_t* data,
     secondary_message_LAP_COUNT* message
 ) {
-    data[0] = message->timestamp & 255;
-    data[1] = (message->timestamp >> 8) & 255;
-    data[2] = (message->timestamp >> 16) & 255;
-    data[3] = (message->timestamp >> 24) & 255;
+    data[0] = message->lap_time & 255;
+    data[1] = (message->lap_time >> 8) & 255;
+    data[2] = (message->lap_time >> 16) & 255;
+    data[3] = (message->lap_time >> 24) & 255;
     data[4] = message->lap_count;
     return 5;
 }
@@ -3591,7 +3783,7 @@ void secondary_deserialize_LAP_COUNT(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->timestamp = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->lap_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->lap_count = data[4];
 }
 
@@ -3609,7 +3801,7 @@ int secondary_to_string_LAP_COUNT(secondary_message_LAP_COUNT* message, char* bu
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->lap_count,
-        message->timestamp
+        message->lap_time
     );
 }
 
@@ -3620,7 +3812,7 @@ int secondary_fields_LAP_COUNT(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "lap_count" CANLIB_SEPARATOR 
-        "timestamp"
+        "lap_time"
     );
 }
 
@@ -3636,7 +3828,7 @@ int secondary_to_string_file_LAP_COUNT(secondary_message_LAP_COUNT* message, FIL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->lap_count,
-        message->timestamp
+        message->lap_time
     );
 }
 
@@ -3647,7 +3839,7 @@ int secondary_fields_file_LAP_COUNT(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "lap_count" CANLIB_SEPARATOR 
-        "timestamp"
+        "lap_time"
     );
 }
 
@@ -4069,9 +4261,9 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
 int secondary_to_string_from_id(canlib_message_id message_id, void* message, char* buffer) {
     switch (message_id) {
         case 1260:
-            return secondary_to_string_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE*) message, buffer);
+            return secondary_to_string_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE_conversion*) message, buffer);
         case 1261:
-            return secondary_to_string_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION*) message, buffer);
+            return secondary_to_string_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION_conversion*) message, buffer);
         case 1460:
             return secondary_to_string_IRTS_FL_0((secondary_message_IRTS_FL_0*) message, buffer);
         case 1461:
@@ -4177,9 +4369,9 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
 int secondary_to_string_file_from_id(canlib_message_id message_id, void* message, FILE *buffer) {
     switch (message_id) {
         case 1260:
-            return secondary_to_string_file_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE*) message, buffer);
+            return secondary_to_string_file_IMU_ANGULAR_RATE((secondary_message_IMU_ANGULAR_RATE_conversion*) message, buffer);
         case 1261:
-            return secondary_to_string_file_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION*) message, buffer);
+            return secondary_to_string_file_IMU_ACCELERATION((secondary_message_IMU_ACCELERATION_conversion*) message, buffer);
         case 1460:
             return secondary_to_string_file_IRTS_FL_0((secondary_message_IRTS_FL_0*) message, buffer);
         case 1461:
@@ -4246,7 +4438,11 @@ void* secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
+                (secondary_message_IMU_ANGULAR_RATE_conversion*) message_conversion,
+                (secondary_message_IMU_ANGULAR_RATE*) message_raw
+            );
+            return message_conversion;
         }
         case 1261: {
             secondary_deserialize_IMU_ACCELERATION(
@@ -4256,7 +4452,11 @@ void* secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            secondary_raw_to_conversion_struct_IMU_ACCELERATION(
+                (secondary_message_IMU_ACCELERATION_conversion*) message_conversion,
+                (secondary_message_IMU_ACCELERATION*) message_raw
+            );
+            return message_conversion;
         }
         case 1460: {
             secondary_deserialize_IRTS_FL_0(
@@ -4490,10 +4690,10 @@ secondary_devices* secondary_devices_new() {
     secondary_devices* devices = (secondary_devices*) malloc(sizeof(secondary_devices));
     (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].id = 1260;
     (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE));
-    (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_conversion = (void*) malloc(sizeof(secondary_message_IMU_ANGULAR_RATE_conversion));
     (*devices)[secondary_INDEX_IMU_ACCELERATION].id = 1261;
     (*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION));
-    (*devices)[secondary_INDEX_IMU_ACCELERATION].message_conversion = NULL;
+    (*devices)[secondary_INDEX_IMU_ACCELERATION].message_conversion = (void*) malloc(sizeof(secondary_message_IMU_ACCELERATION_conversion));
     (*devices)[secondary_INDEX_IRTS_FL_0].id = 1460;
     (*devices)[secondary_INDEX_IRTS_FL_0].message_raw = (void*) malloc(sizeof(secondary_message_IRTS_FL_0));
     (*devices)[secondary_INDEX_IRTS_FL_0].message_conversion = NULL;
@@ -4565,7 +4765,9 @@ secondary_devices* secondary_devices_new() {
 
 void secondary_devices_free(secondary_devices* devices) {
     free((*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw);
+    free((*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_conversion);
     free((*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw);
+    free((*devices)[secondary_INDEX_IMU_ACCELERATION].message_conversion);
     free((*devices)[secondary_INDEX_IRTS_FL_0].message_raw);
     free((*devices)[secondary_INDEX_IRTS_FL_1].message_raw);
     free((*devices)[secondary_INDEX_IRTS_FL_2].message_raw);
@@ -4609,6 +4811,10 @@ void secondary_devices_deserialize_from_id(
                 , timestamp
                 #endif
             );
+            secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
+                (secondary_message_IMU_ANGULAR_RATE_conversion*) &(*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_conversion,
+                (secondary_message_IMU_ANGULAR_RATE*) &(*devices)[secondary_INDEX_IMU_ANGULAR_RATE].message_raw
+            );
             return;
         }
         case 1261: {
@@ -4618,6 +4824,10 @@ void secondary_devices_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            secondary_raw_to_conversion_struct_IMU_ACCELERATION(
+                (secondary_message_IMU_ACCELERATION_conversion*) &(*devices)[secondary_INDEX_IMU_ACCELERATION].message_conversion,
+                (secondary_message_IMU_ACCELERATION*) &(*devices)[secondary_INDEX_IMU_ACCELERATION].message_raw
             );
             return;
         }

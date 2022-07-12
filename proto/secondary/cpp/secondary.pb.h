@@ -2819,11 +2819,11 @@ class LAP_COUNT : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::google::protobuf::uint32 lap_count() const;
   void set_lap_count(::google::protobuf::uint32 value);
 
-  // uint32 timestamp = 2;
-  void clear_timestamp();
-  static const int kTimestampFieldNumber = 2;
-  ::google::protobuf::uint32 timestamp() const;
-  void set_timestamp(::google::protobuf::uint32 value);
+  // uint32 lap_time = 2;
+  void clear_lap_time();
+  static const int kLapTimeFieldNumber = 2;
+  ::google::protobuf::uint32 lap_time() const;
+  void set_lap_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -2836,7 +2836,7 @@ class LAP_COUNT : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 lap_count_;
-  ::google::protobuf::uint32 timestamp_;
+  ::google::protobuf::uint32 lap_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
@@ -5007,18 +5007,18 @@ inline void LAP_COUNT::set_lap_count(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.lap_count)
 }
 
-// uint32 timestamp = 2;
-inline void LAP_COUNT::clear_timestamp() {
-  timestamp_ = 0u;
+// uint32 lap_time = 2;
+inline void LAP_COUNT::clear_lap_time() {
+  lap_time_ = 0u;
 }
-inline ::google::protobuf::uint32 LAP_COUNT::timestamp() const {
-  // @@protoc_insertion_point(field_get:secondary.LAP_COUNT.timestamp)
-  return timestamp_;
+inline ::google::protobuf::uint32 LAP_COUNT::lap_time() const {
+  // @@protoc_insertion_point(field_get:secondary.LAP_COUNT.lap_time)
+  return lap_time_;
 }
-inline void LAP_COUNT::set_timestamp(::google::protobuf::uint32 value) {
+inline void LAP_COUNT::set_lap_time(::google::protobuf::uint32 value) {
   
-  timestamp_ = value;
-  // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.timestamp)
+  lap_time_ = value;
+  // @@protoc_insertion_point(field_set:secondary.LAP_COUNT.lap_time)
 }
 
 // uint64 _inner_timestamp = 3;

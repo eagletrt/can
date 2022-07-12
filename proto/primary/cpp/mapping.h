@@ -363,9 +363,6 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_SET_TLM_STATUS* msg = (primary_message_SET_TLM_STATUS*) (*map)[index].message_raw;
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
             proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
-            proto_msg->set_race_type((primary::RaceType)msg->race_type);
-            proto_msg->set_driver(msg->driver);
-            proto_msg->set_circuit(msg->circuit);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -376,9 +373,6 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_TLM_STATUS* msg = (primary_message_TLM_STATUS*) (*map)[index].message_raw;
             primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
             proto_msg->set_tlm_status((primary::Toggle)msg->tlm_status);
-            proto_msg->set_race_type((primary::RaceType)msg->race_type);
-            proto_msg->set_driver(msg->driver);
-            proto_msg->set_circuit(msg->circuit);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1087,9 +1081,6 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     for(int i = 0; i < pack->set_tlm_status_size(); i++){
         static primary_message_SET_TLM_STATUS instance;
         instance.tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
-        instance.race_type =(primary_RaceType)pack->set_tlm_status(i).race_type();
-        instance.driver =pack->set_tlm_status(i).driver();
-        instance.circuit =pack->set_tlm_status(i).circuit();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->set_tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP
@@ -1098,9 +1089,6 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
     for(int i = 0; i < pack->tlm_status_size(); i++){
         static primary_message_TLM_STATUS instance;
         instance.tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
-        instance.race_type =(primary_RaceType)pack->tlm_status(i).race_type();
-        instance.driver =pack->tlm_status(i).driver();
-        instance.circuit =pack->tlm_status(i).circuit();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->tlm_status(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

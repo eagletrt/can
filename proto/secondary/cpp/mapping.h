@@ -193,8 +193,8 @@ void inline canlib_circular_buffer<T, S, IT>::clear() {
 #endif // CANLIB_CIRCULAR_BUFFER_SIZE
 
 typedef struct {
-    canlib_circular_buffer<secondary_message_IMU_ANGULAR_RATE, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ANGULAR_RATE;
-    canlib_circular_buffer<secondary_message_IMU_ACCELERATION, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ACCELERATION;
+    canlib_circular_buffer<secondary_message_IMU_ANGULAR_RATE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ANGULAR_RATE;
+    canlib_circular_buffer<secondary_message_IMU_ACCELERATION_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ACCELERATION;
     canlib_circular_buffer<secondary_message_IRTS_FL_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_0;
     canlib_circular_buffer<secondary_message_IRTS_FL_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_1;
     canlib_circular_buffer<secondary_message_IRTS_FL_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_2;
@@ -231,7 +231,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
 
     switch(id) {
         case 1260: {
-            secondary_message_IMU_ANGULAR_RATE* msg = (secondary_message_IMU_ANGULAR_RATE*) (*map)[index].message_raw;
+            secondary_message_IMU_ANGULAR_RATE_conversion* msg = (secondary_message_IMU_ANGULAR_RATE_conversion*) (*map)[index].message_conversion;
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
             proto_msg->set_ang_rate_x(msg->ang_rate_x);
             proto_msg->set_ang_rate_y(msg->ang_rate_y);
@@ -243,7 +243,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1261: {
-            secondary_message_IMU_ACCELERATION* msg = (secondary_message_IMU_ACCELERATION*) (*map)[index].message_raw;
+            secondary_message_IMU_ACCELERATION_conversion* msg = (secondary_message_IMU_ACCELERATION_conversion*) (*map)[index].message_conversion;
             secondary::IMU_ACCELERATION* proto_msg = pack->add_imu_acceleration();
             proto_msg->set_accel_x(msg->accel_x);
             proto_msg->set_accel_y(msg->accel_y);
@@ -487,7 +487,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             secondary_message_LAP_COUNT* msg = (secondary_message_LAP_COUNT*) (*map)[index].message_raw;
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
             proto_msg->set_lap_count(msg->lap_count);
-            proto_msg->set_timestamp(msg->timestamp);
+            proto_msg->set_lap_time(msg->lap_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -532,7 +532,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
 
 void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* map) {
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
-        static secondary_message_IMU_ANGULAR_RATE instance;
+        static secondary_message_IMU_ANGULAR_RATE_conversion instance;
         instance.ang_rate_x =pack->imu_angular_rate(i).ang_rate_x();
         instance.ang_rate_y =pack->imu_angular_rate(i).ang_rate_y();
         instance.ang_rate_z =pack->imu_angular_rate(i).ang_rate_z();
@@ -542,7 +542,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IMU_ANGULAR_RATE.push(instance);
     }
     for(int i = 0; i < pack->imu_acceleration_size(); i++){
-        static secondary_message_IMU_ACCELERATION instance;
+        static secondary_message_IMU_ACCELERATION_conversion instance;
         instance.accel_x =pack->imu_acceleration(i).accel_x();
         instance.accel_y =pack->imu_acceleration(i).accel_y();
         instance.accel_z =pack->imu_acceleration(i).accel_z();
@@ -747,7 +747,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
     for(int i = 0; i < pack->lap_count_size(); i++){
         static secondary_message_LAP_COUNT instance;
         instance.lap_count =pack->lap_count(i).lap_count();
-        instance.timestamp =pack->lap_count(i).timestamp();
+        instance.lap_time =pack->lap_count(i).lap_time();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->lap_count(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

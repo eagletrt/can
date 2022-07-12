@@ -1788,9 +1788,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, tlm_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, race_type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, driver_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, circuit_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, _internal_metadata_),
@@ -1798,9 +1795,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, tlm_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, race_type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, driver_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, circuit_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TLM_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::STEER_SYSTEM_STATUS, _internal_metadata_),
@@ -2399,74 +2393,74 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 44, -1, sizeof(::primary::TLM_VERSION)},
   { 52, -1, sizeof(::primary::TIMESTAMP)},
   { 59, -1, sizeof(::primary::SET_TLM_STATUS)},
-  { 69, -1, sizeof(::primary::TLM_STATUS)},
-  { 79, -1, sizeof(::primary::STEER_SYSTEM_STATUS)},
-  { 86, -1, sizeof(::primary::HV_VOLTAGE)},
-  { 96, -1, sizeof(::primary::HV_CURRENT)},
-  { 106, -1, sizeof(::primary::HV_TEMP)},
-  { 115, -1, sizeof(::primary::HV_ERRORS)},
-  { 123, -1, sizeof(::primary::HV_CAN_FORWARD)},
-  { 130, -1, sizeof(::primary::HV_FANS_OVERRIDE)},
-  { 138, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
-  { 145, -1, sizeof(::primary::HV_FANS_OVERRIDE_STATUS)},
-  { 153, -1, sizeof(::primary::HV_FEEDBACKS_STATUS)},
-  { 161, -1, sizeof(::primary::HV_IMD_STATUS)},
-  { 170, -1, sizeof(::primary::TS_STATUS)},
-  { 177, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
-  { 184, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
-  { 191, -1, sizeof(::primary::STEER_STATUS)},
-  { 199, -1, sizeof(::primary::SET_CAR_STATUS)},
-  { 206, -1, sizeof(::primary::SET_PEDALS_RANGE)},
-  { 214, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
-  { 221, -1, sizeof(::primary::CAR_STATUS)},
-  { 230, -1, sizeof(::primary::DAS_ERRORS)},
-  { 237, -1, sizeof(::primary::LV_CURRENT)},
-  { 244, -1, sizeof(::primary::LV_VOLTAGE)},
-  { 254, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
-  { 261, -1, sizeof(::primary::LV_TEMPERATURE)},
-  { 271, -1, sizeof(::primary::COOLING_STATUS)},
-  { 279, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
-  { 286, -1, sizeof(::primary::SET_PUMPS_SPEED)},
-  { 293, -1, sizeof(::primary::SET_INVERTER_CONNECTION_STATUS)},
-  { 300, -1, sizeof(::primary::INVERTER_CONNECTION_STATUS)},
-  { 307, -1, sizeof(::primary::LV_ERRORS)},
-  { 315, -1, sizeof(::primary::SHUTDOWN_STATUS)},
-  { 323, -1, sizeof(::primary::MARKER)},
-  { 329, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
-  { 339, -1, sizeof(::primary::HV_CELLS_TEMP)},
-  { 353, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
-  { 360, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
-  { 367, -1, sizeof(::primary::HANDCART_STATUS)},
-  { 374, -1, sizeof(::primary::SPEED)},
-  { 384, -1, sizeof(::primary::INV_L_REQUEST)},
-  { 398, -1, sizeof(::primary::INV_R_REQUEST)},
-  { 412, -1, sizeof(::primary::INV_L_RESPONSE)},
-  { 426, -1, sizeof(::primary::INV_R_RESPONSE)},
-  { 440, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
-  { 446, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
-  { 452, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
-  { 458, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
-  { 464, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
-  { 470, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
-  { 476, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
-  { 482, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
-  { 488, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
-  { 494, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
-  { 500, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
-  { 506, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
-  { 512, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
-  { 518, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
-  { 524, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
-  { 530, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
-  { 536, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
-  { 542, -1, sizeof(::primary::BRUSA_ST)},
-  { 548, -1, sizeof(::primary::BRUSA_ACT_I)},
-  { 554, -1, sizeof(::primary::BRUSA_ACT_II)},
-  { 560, -1, sizeof(::primary::BRUSA_TEMP)},
-  { 566, -1, sizeof(::primary::BRUSA_ERR)},
-  { 572, -1, sizeof(::primary::BMS_HV_CHIMERA)},
-  { 578, -1, sizeof(::primary::ECU_CHIMERA)},
-  { 584, -1, sizeof(::primary::Pack)},
+  { 66, -1, sizeof(::primary::TLM_STATUS)},
+  { 73, -1, sizeof(::primary::STEER_SYSTEM_STATUS)},
+  { 80, -1, sizeof(::primary::HV_VOLTAGE)},
+  { 90, -1, sizeof(::primary::HV_CURRENT)},
+  { 100, -1, sizeof(::primary::HV_TEMP)},
+  { 109, -1, sizeof(::primary::HV_ERRORS)},
+  { 117, -1, sizeof(::primary::HV_CAN_FORWARD)},
+  { 124, -1, sizeof(::primary::HV_FANS_OVERRIDE)},
+  { 132, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
+  { 139, -1, sizeof(::primary::HV_FANS_OVERRIDE_STATUS)},
+  { 147, -1, sizeof(::primary::HV_FEEDBACKS_STATUS)},
+  { 155, -1, sizeof(::primary::HV_IMD_STATUS)},
+  { 164, -1, sizeof(::primary::TS_STATUS)},
+  { 171, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
+  { 178, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
+  { 185, -1, sizeof(::primary::STEER_STATUS)},
+  { 193, -1, sizeof(::primary::SET_CAR_STATUS)},
+  { 200, -1, sizeof(::primary::SET_PEDALS_RANGE)},
+  { 208, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
+  { 215, -1, sizeof(::primary::CAR_STATUS)},
+  { 224, -1, sizeof(::primary::DAS_ERRORS)},
+  { 231, -1, sizeof(::primary::LV_CURRENT)},
+  { 238, -1, sizeof(::primary::LV_VOLTAGE)},
+  { 248, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
+  { 255, -1, sizeof(::primary::LV_TEMPERATURE)},
+  { 265, -1, sizeof(::primary::COOLING_STATUS)},
+  { 273, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
+  { 280, -1, sizeof(::primary::SET_PUMPS_SPEED)},
+  { 287, -1, sizeof(::primary::SET_INVERTER_CONNECTION_STATUS)},
+  { 294, -1, sizeof(::primary::INVERTER_CONNECTION_STATUS)},
+  { 301, -1, sizeof(::primary::LV_ERRORS)},
+  { 309, -1, sizeof(::primary::SHUTDOWN_STATUS)},
+  { 317, -1, sizeof(::primary::MARKER)},
+  { 323, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
+  { 333, -1, sizeof(::primary::HV_CELLS_TEMP)},
+  { 347, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
+  { 354, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
+  { 361, -1, sizeof(::primary::HANDCART_STATUS)},
+  { 368, -1, sizeof(::primary::SPEED)},
+  { 378, -1, sizeof(::primary::INV_L_REQUEST)},
+  { 392, -1, sizeof(::primary::INV_R_REQUEST)},
+  { 406, -1, sizeof(::primary::INV_L_RESPONSE)},
+  { 420, -1, sizeof(::primary::INV_R_RESPONSE)},
+  { 434, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
+  { 440, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
+  { 446, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
+  { 452, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
+  { 458, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
+  { 464, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
+  { 470, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
+  { 476, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
+  { 482, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
+  { 488, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
+  { 494, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
+  { 500, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
+  { 506, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
+  { 512, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
+  { 518, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
+  { 524, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
+  { 530, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
+  { 536, -1, sizeof(::primary::BRUSA_ST)},
+  { 542, -1, sizeof(::primary::BRUSA_ACT_I)},
+  { 548, -1, sizeof(::primary::BRUSA_ACT_II)},
+  { 554, -1, sizeof(::primary::BRUSA_TEMP)},
+  { 560, -1, sizeof(::primary::BRUSA_ERR)},
+  { 566, -1, sizeof(::primary::BMS_HV_CHIMERA)},
+  { 572, -1, sizeof(::primary::ECU_CHIMERA)},
+  { 578, -1, sizeof(::primary::Pack)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -2586,278 +2580,274 @@ void AddDescriptorsImpl() {
       "ersion\030\001 \001(\r\022\027\n\017cancicd_version\030\002 \001(\r\022\030\n"
       "\020_inner_timestamp\030\003 \001(\004\"8\n\tTIMESTAMP\022\021\n\t"
       "timestamp\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 \001("
-      "\004\"\226\001\n\016SET_TLM_STATUS\022#\n\ntlm_status\030\001 \001(\016"
-      "2\017.primary.Toggle\022$\n\trace_type\030\002 \001(\0162\021.p"
-      "rimary.RaceType\022\016\n\006driver\030\003 \001(\r\022\017\n\007circu"
-      "it\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"\222\001\n\nT"
-      "LM_STATUS\022#\n\ntlm_status\030\001 \001(\0162\017.primary."
-      "Toggle\022$\n\trace_type\030\002 \001(\0162\021.primary.Race"
-      "Type\022\016\n\006driver\030\003 \001(\r\022\017\n\007circuit\030\004 \001(\r\022\030\n"
-      "\020_inner_timestamp\030\005 \001(\004\"A\n\023STEER_SYSTEM_"
-      "STATUS\022\020\n\010soc_temp\030\001 \001(\r\022\030\n\020_inner_times"
-      "tamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAGE\022\024\n\014pack_voltag"
-      "e\030\001 \001(\r\022\023\n\013bus_voltage\030\002 \001(\r\022\030\n\020max_cell"
-      "_voltage\030\003 \001(\r\022\030\n\020min_cell_voltage\030\004 \001(\r"
-      "\022\030\n\020_inner_timestamp\030\005 \001(\004\"c\n\nHV_CURRENT"
-      "\022\017\n\007current\030\001 \001(\r\022\r\n\005power\030\002 \001(\r\022\016\n\006ener"
-      "gy\030\003 \001(\r\022\013\n\003soc\030\004 \001(\r\022\030\n\020_inner_timestam"
-      "p\030\005 \001(\004\"]\n\007HV_TEMP\022\024\n\014average_temp\030\001 \001(\r"
-      "\022\020\n\010max_temp\030\002 \001(\r\022\020\n\010min_temp\030\003 \001(\r\022\030\n\020"
-      "_inner_timestamp\030\004 \001(\004\"G\n\tHV_ERRORS\022\020\n\010w"
-      "arnings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022\030\n\020_inner_"
-      "timestamp\030\003 \001(\004\"T\n\016HV_CAN_FORWARD\022(\n\017can"
-      "_forward_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
-      "inner_timestamp\030\002 \001(\004\"h\n\020HV_FANS_OVERRID"
-      "E\022&\n\rfans_override\030\001 \001(\0162\017.primary.Toggl"
-      "e\022\022\n\nfans_speed\030\002 \001(\r\022\030\n\020_inner_timestam"
-      "p\030\003 \001(\004\"^\n\025HV_CAN_FORWARD_STATUS\022+\n\022can_"
-      "forward_status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
-      "\020_inner_timestamp\030\002 \001(\004\"o\n\027HV_FANS_OVERR"
-      "IDE_STATUS\022&\n\rfans_override\030\001 \001(\0162\017.prim"
-      "ary.Toggle\022\022\n\nfans_speed\030\002 \001(\r\022\030\n\020_inner"
-      "_timestamp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_STATUS\022"
-      "\030\n\020feedbacks_status\030\001 \001(\r\022\032\n\022is_circuitr"
-      "y_error\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\""
-      "v\n\rHV_IMD_STATUS\022\021\n\timd_fault\030\001 \001(\010\022&\n\ni"
-      "md_status\030\002 \001(\0162\022.primary.ImdStatus\022\020\n\010i"
-      "md_info\030\003 \001(\021\022\030\n\020_inner_timestamp\030\004 \001(\004\""
-      "K\n\tTS_STATUS\022$\n\tts_status\030\001 \001(\0162\021.primar"
-      "y.TsStatus\022\030\n\020_inner_timestamp\030\002 \001(\004\"U\n\021"
-      "SET_TS_STATUS_DAS\022&\n\rts_status_set\030\001 \001(\016"
-      "2\017.primary.Toggle\022\030\n\020_inner_timestamp\030\002 "
-      "\001(\004\"Z\n\026SET_TS_STATUS_HANDCART\022&\n\rts_stat"
-      "us_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_"
-      "timestamp\030\002 \001(\004\"w\n\014STEER_STATUS\0222\n\020tract"
-      "ion_control\030\001 \001(\0162\030.primary.TractionCont"
-      "rol\022\031\n\003map\030\002 \001(\0162\014.primary.Map\022\030\n\020_inner"
-      "_timestamp\030\003 \001(\004\"Y\n\016SET_CAR_STATUS\022-\n\016ca"
-      "r_status_set\030\001 \001(\0162\025.primary.SetCarStatu"
-      "s\022\030\n\020_inner_timestamp\030\002 \001(\004\"j\n\020SET_PEDAL"
-      "S_RANGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\035"
-      "\n\005pedal\030\002 \001(\0162\016.primary.Pedal\022\030\n\020_inner_"
-      "timestamp\030\003 \001(\004\"S\n\030SET_STEERING_ANGLE_RA"
-      "NGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\030\n\020_i"
-      "nner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022+\n\ni"
-      "nverter_l\030\001 \001(\0162\027.primary.InverterStatus"
-      "\022+\n\ninverter_r\030\002 \001(\0162\027.primary.InverterS"
-      "tatus\022&\n\ncar_status\030\003 \001(\0162\022.primary.CarS"
-      "tatus\022\030\n\020_inner_timestamp\030\004 \001(\004\"9\n\nDAS_E"
-      "RRORS\022\021\n\tdas_error\030\001 \001(\r\022\030\n\020_inner_times"
-      "tamp\030\002 \001(\004\"7\n\nLV_CURRENT\022\017\n\007current\030\001 \001("
-      "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"r\n\nLV_VOLTAG"
-      "E\022\021\n\tvoltage_1\030\001 \001(\r\022\021\n\tvoltage_2\030\002 \001(\r\022"
-      "\021\n\tvoltage_3\030\003 \001(\r\022\021\n\tvoltage_4\030\004 \001(\r\022\030\n"
-      "\020_inner_timestamp\030\005 \001(\004\"C\n\020LV_TOTAL_VOLT"
-      "AGE\022\025\n\rtotal_voltage\030\001 \001(\r\022\030\n\020_inner_tim"
-      "estamp\030\002 \001(\004\"\226\001\n\016LV_TEMPERATURE\022\030\n\020bp_te"
-      "mperature_1\030\001 \001(\r\022\030\n\020bp_temperature_2\030\002 "
-      "\001(\r\022\032\n\022dcdc12_temperature\030\003 \001(\r\022\032\n\022dcdc2"
-      "4_temperature\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
-      "\005 \001(\004\"X\n\016COOLING_STATUS\022\027\n\017radiators_spe"
-      "ed\030\001 \001(\r\022\023\n\013pumps_speed\030\002 \001(\r\022\030\n\020_inner_"
-      "timestamp\030\003 \001(\004\"G\n\022SET_RADIATOR_SPEED\022\027\n"
-      "\017radiators_speed\030\001 \001(\r\022\030\n\020_inner_timesta"
-      "mp\030\002 \001(\004\"@\n\017SET_PUMPS_SPEED\022\023\n\013pumps_spe"
-      "ed\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"[\n\036SE"
-      "T_INVERTER_CONNECTION_STATUS\022\037\n\006status\030\001"
-      " \001(\0162\017.primary.Toggle\022\030\n\020_inner_timestam"
-      "p\030\002 \001(\004\"W\n\032INVERTER_CONNECTION_STATUS\022\037\n"
-      "\006status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner"
-      "_timestamp\030\002 \001(\004\"G\n\tLV_ERRORS\022\020\n\010warning"
-      "s\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022\030\n\020_inner_timest"
-      "amp\030\003 \001(\004\"J\n\017SHUTDOWN_STATUS\022\r\n\005input\030\001 "
-      "\001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_inner_timestamp\030"
-      "\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inner_timestamp\030\001 \001("
-      "\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n\013start_index\030\001 \001"
-      "(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n\tvoltage_1\030\003 \001(\r"
-      "\022\021\n\tvoltage_2\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
-      "\005 \001(\004\"\256\001\n\rHV_CELLS_TEMP\022\023\n\013start_index\030\001"
-      " \001(\r\022\016\n\006temp_0\030\002 \001(\r\022\016\n\006temp_1\030\003 \001(\r\022\016\n\006"
-      "temp_2\030\004 \001(\r\022\016\n\006temp_3\030\005 \001(\r\022\016\n\006temp_4\030\006"
-      " \001(\r\022\016\n\006temp_5\030\007 \001(\r\022\016\n\006temp_6\030\010 \001(\r\022\030\n\020"
-      "_inner_timestamp\030\t \001(\004\"_\n\030HV_CELL_BALANC"
-      "ING_STATUS\022)\n\020balancing_status\030\001 \001(\0162\017.p"
+      "\004\"O\n\016SET_TLM_STATUS\022#\n\ntlm_status\030\001 \001(\0162"
+      "\017.primary.Toggle\022\030\n\020_inner_timestamp\030\002 \001"
+      "(\004\"K\n\nTLM_STATUS\022#\n\ntlm_status\030\001 \001(\0162\017.p"
       "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
-      "d\n\031SET_CELL_BALANCING_STATUS\022-\n\024set_bala"
-      "ncing_status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
-      "inner_timestamp\030\002 \001(\004\">\n\017HANDCART_STATUS"
-      "\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_inner_timestamp\030"
-      "\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\r\022\021\n\tenc"
-      "oder_l\030\002 \001(\r\022\022\n\ninverter_r\030\003 \001(\r\022\022\n\ninve"
-      "rter_l\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251"
-      "\001\n\rINV_L_REQUEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data"
-      "_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r"
-      "\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data"
-      "_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020_inner_times"
-      "tamp\030\t \001(\004\"\251\001\n\rINV_R_REQUEST\022\016\n\006data_0\030\001"
-      " \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006"
-      "data_3\030\004 \001(\r\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006"
-      " \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020"
-      "_inner_timestamp\030\t \001(\004\"\252\001\n\016INV_L_RESPONS"
-      "E\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006dat"
-      "a_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001("
-      "\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006dat"
-      "a_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\252\001\n\016"
-      "INV_R_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0"
-      "\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016"
-      "\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5"
-      "\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_timesta"
-      "mp\030\t \001(\004\"0\n\024FLASH_CELLBOARD_0_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_0_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_1_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_1_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_3_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_3_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_5_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_5_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_TX\022\030\n\020_inner_ti"
-      "mestamp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_RX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_TX\022\030\n"
-      "\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BRUSA_NL"
-      "G5_CTL\022\030\n\020_inner_timestamp\030\001 \001(\004\"$\n\010BRUS"
-      "A_ST\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013BRUSA_"
-      "ACT_I\022\030\n\020_inner_timestamp\030\001 \001(\004\"(\n\014BRUSA"
-      "_ACT_II\022\030\n\020_inner_timestamp\030\001 \001(\004\"&\n\nBRU"
-      "SA_TEMP\022\030\n\020_inner_timestamp\030\001 \001(\004\"%\n\tBRU"
-      "SA_ERR\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BMS_"
-      "HV_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013"
-      "ECU_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\254\036"
-      "\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032.prim"
-      "ary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_JMP_TO_B"
-      "LT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_BLT\022-\n\r"
-      "STEER_VERSION\030\003 \003(\0132\026.primary.STEER_VERS"
-      "ION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primary.DAS_V"
-      "ERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.primary.HV_"
-      "VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.primary.LV"
-      "_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.primary."
-      "TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022.primary"
-      ".TIMESTAMP\022/\n\016SET_TLM_STATUS\030\t \003(\0132\027.pri"
-      "mary.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\n \003(\0132"
-      "\023.primary.TLM_STATUS\0229\n\023STEER_SYSTEM_STA"
-      "TUS\030\013 \003(\0132\034.primary.STEER_SYSTEM_STATUS\022"
-      "\'\n\nHV_VOLTAGE\030\014 \003(\0132\023.primary.HV_VOLTAGE"
-      "\022\'\n\nHV_CURRENT\030\r \003(\0132\023.primary.HV_CURREN"
-      "T\022!\n\007HV_TEMP\030\016 \003(\0132\020.primary.HV_TEMP\022%\n\t"
-      "HV_ERRORS\030\017 \003(\0132\022.primary.HV_ERRORS\022/\n\016H"
-      "V_CAN_FORWARD\030\020 \003(\0132\027.primary.HV_CAN_FOR"
-      "WARD\0223\n\020HV_FANS_OVERRIDE\030\021 \003(\0132\031.primary"
-      ".HV_FANS_OVERRIDE\022=\n\025HV_CAN_FORWARD_STAT"
-      "US\030\022 \003(\0132\036.primary.HV_CAN_FORWARD_STATUS"
-      "\022A\n\027HV_FANS_OVERRIDE_STATUS\030\023 \003(\0132 .prim"
-      "ary.HV_FANS_OVERRIDE_STATUS\0229\n\023HV_FEEDBA"
-      "CKS_STATUS\030\024 \003(\0132\034.primary.HV_FEEDBACKS_"
-      "STATUS\022-\n\rHV_IMD_STATUS\030\025 \003(\0132\026.primary."
-      "HV_IMD_STATUS\022%\n\tTS_STATUS\030\026 \003(\0132\022.prima"
-      "ry.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\027 \003(\0132"
-      "\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS_ST"
-      "ATUS_HANDCART\030\030 \003(\0132\037.primary.SET_TS_STA"
-      "TUS_HANDCART\022+\n\014STEER_STATUS\030\031 \003(\0132\025.pri"
-      "mary.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\032 \003("
-      "\0132\027.primary.SET_CAR_STATUS\0223\n\020SET_PEDALS"
-      "_RANGE\030\033 \003(\0132\031.primary.SET_PEDALS_RANGE\022"
-      "C\n\030SET_STEERING_ANGLE_RANGE\030\034 \003(\0132!.prim"
-      "ary.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_STAT"
-      "US\030\035 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_ERR"
-      "ORS\030\036 \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_CUR"
-      "RENT\030\037 \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV_VO"
-      "LTAGE\030  \003(\0132\023.primary.LV_VOLTAGE\0223\n\020LV_T"
-      "OTAL_VOLTAGE\030! \003(\0132\031.primary.LV_TOTAL_VO"
-      "LTAGE\022/\n\016LV_TEMPERATURE\030\" \003(\0132\027.primary."
-      "LV_TEMPERATURE\022/\n\016COOLING_STATUS\030# \003(\0132\027"
-      ".primary.COOLING_STATUS\0227\n\022SET_RADIATOR_"
-      "SPEED\030$ \003(\0132\033.primary.SET_RADIATOR_SPEED"
-      "\0221\n\017SET_PUMPS_SPEED\030% \003(\0132\030.primary.SET_"
-      "PUMPS_SPEED\022O\n\036SET_INVERTER_CONNECTION_S"
-      "TATUS\030& \003(\0132\'.primary.SET_INVERTER_CONNE"
-      "CTION_STATUS\022G\n\032INVERTER_CONNECTION_STAT"
-      "US\030\' \003(\0132#.primary.INVERTER_CONNECTION_S"
-      "TATUS\022%\n\tLV_ERRORS\030( \003(\0132\022.primary.LV_ER"
-      "RORS\0221\n\017SHUTDOWN_STATUS\030) \003(\0132\030.primary."
-      "SHUTDOWN_STATUS\022\037\n\006MARKER\030* \003(\0132\017.primar"
-      "y.MARKER\0223\n\020HV_CELLS_VOLTAGE\030+ \003(\0132\031.pri"
-      "mary.HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030,"
-      " \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030HV_CELL_"
-      "BALANCING_STATUS\030- \003(\0132!.primary.HV_CELL"
-      "_BALANCING_STATUS\022E\n\031SET_CELL_BALANCING_"
-      "STATUS\030. \003(\0132\".primary.SET_CELL_BALANCIN"
-      "G_STATUS\0221\n\017HANDCART_STATUS\030/ \003(\0132\030.prim"
-      "ary.HANDCART_STATUS\022\035\n\005SPEED\0300 \003(\0132\016.pri"
-      "mary.SPEED\022-\n\rINV_L_REQUEST\0301 \003(\0132\026.prim"
-      "ary.INV_L_REQUEST\022-\n\rINV_R_REQUEST\0302 \003(\013"
-      "2\026.primary.INV_R_REQUEST\022/\n\016INV_L_RESPON"
-      "SE\0303 \003(\0132\027.primary.INV_L_RESPONSE\022/\n\016INV"
-      "_R_RESPONSE\0304 \003(\0132\027.primary.INV_R_RESPON"
-      "SE\022;\n\024FLASH_CELLBOARD_0_TX\0305 \003(\0132\035.prima"
-      "ry.FLASH_CELLBOARD_0_TX\022;\n\024FLASH_CELLBOA"
-      "RD_0_RX\0306 \003(\0132\035.primary.FLASH_CELLBOARD_"
-      "0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0307 \003(\0132\035.pri"
-      "mary.FLASH_CELLBOARD_1_TX\022;\n\024FLASH_CELLB"
-      "OARD_1_RX\0308 \003(\0132\035.primary.FLASH_CELLBOAR"
-      "D_1_RX\022;\n\024FLASH_CELLBOARD_2_TX\0309 \003(\0132\035.p"
-      "rimary.FLASH_CELLBOARD_2_TX\022;\n\024FLASH_CEL"
-      "LBOARD_2_RX\030: \003(\0132\035.primary.FLASH_CELLBO"
-      "ARD_2_RX\022;\n\024FLASH_CELLBOARD_3_TX\030; \003(\0132\035"
-      ".primary.FLASH_CELLBOARD_3_TX\022;\n\024FLASH_C"
-      "ELLBOARD_3_RX\030< \003(\0132\035.primary.FLASH_CELL"
-      "BOARD_3_RX\022;\n\024FLASH_CELLBOARD_4_TX\030= \003(\013"
-      "2\035.primary.FLASH_CELLBOARD_4_TX\022;\n\024FLASH"
-      "_CELLBOARD_4_RX\030> \003(\0132\035.primary.FLASH_CE"
-      "LLBOARD_4_RX\022;\n\024FLASH_CELLBOARD_5_TX\030\? \003"
-      "(\0132\035.primary.FLASH_CELLBOARD_5_TX\022;\n\024FLA"
-      "SH_CELLBOARD_5_RX\030@ \003(\0132\035.primary.FLASH_"
-      "CELLBOARD_5_RX\0221\n\017FLASH_BMS_HV_TX\030A \003(\0132"
-      "\030.primary.FLASH_BMS_HV_TX\0221\n\017FLASH_BMS_H"
-      "V_RX\030B \003(\0132\030.primary.FLASH_BMS_HV_RX\0221\n\017"
-      "FLASH_BMS_LV_TX\030C \003(\0132\030.primary.FLASH_BM"
-      "S_LV_TX\0221\n\017FLASH_BMS_LV_RX\030D \003(\0132\030.prima"
-      "ry.FLASH_BMS_LV_RX\022/\n\016BRUSA_NLG5_CTL\030E \003"
-      "(\0132\027.primary.BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030"
-      "F \003(\0132\021.primary.BRUSA_ST\022)\n\013BRUSA_ACT_I\030"
-      "G \003(\0132\024.primary.BRUSA_ACT_I\022+\n\014BRUSA_ACT"
-      "_II\030H \003(\0132\025.primary.BRUSA_ACT_II\022\'\n\nBRUS"
-      "A_TEMP\030I \003(\0132\023.primary.BRUSA_TEMP\022%\n\tBRU"
-      "SA_ERR\030J \003(\0132\022.primary.BRUSA_ERR\022/\n\016BMS_"
-      "HV_CHIMERA\030K \003(\0132\027.primary.BMS_HV_CHIMER"
-      "A\022)\n\013ECU_CHIMERA\030L \003(\0132\024.primary.ECU_CHI"
-      "MERA*k\n\010RaceType\022\031\n\025RaceType_ACCELERATIO"
-      "N\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022RaceType_AU"
-      "TOCROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016Inv"
-      "erterStatus\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023I"
-      "nverterStatus_IDLE\020\001\022\025\n\021InverterStatus_O"
-      "N\020\002*\224\001\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022\027\n"
-      "\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS_O"
-      "N\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarStat"
-      "us_DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006To"
-      "ggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017"
-      "TractionControl\022\027\n\023TractionControl_OFF\020\000"
-      "\022 \n\034TractionControl_SLIP_CONTROL\020\001\022$\n Tr"
-      "actionControl_TORQUE_VECTORING\020\002\022\034\n\030Trac"
-      "tionControl_COMPLETE\020\003*Y\n\010TsStatus\022\020\n\014Ts"
-      "Status_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013"
-      "TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003Map"
-      "\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n"
-      "\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005*U\n"
-      "\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022"
-      "SetCarStatus_READY\020\001\022\026\n\022SetCarStatus_DRI"
-      "VE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBoun"
-      "d_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATO"
-      "R\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020Im"
-      "dStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL"
-      "\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033I"
-      "mdStatus_IMD_START_MEASURE\020\003\022\036\n\032ImdStatu"
-      "s_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EA"
-      "RTH_FAULT\020\005b\006proto3"
+      "A\n\023STEER_SYSTEM_STATUS\022\020\n\010soc_temp\030\001 \001(\r"
+      "\022\030\n\020_inner_timestamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAG"
+      "E\022\024\n\014pack_voltage\030\001 \001(\r\022\023\n\013bus_voltage\030\002"
+      " \001(\r\022\030\n\020max_cell_voltage\030\003 \001(\r\022\030\n\020min_ce"
+      "ll_voltage\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001"
+      "(\004\"c\n\nHV_CURRENT\022\017\n\007current\030\001 \001(\r\022\r\n\005pow"
+      "er\030\002 \001(\r\022\016\n\006energy\030\003 \001(\r\022\013\n\003soc\030\004 \001(\r\022\030\n"
+      "\020_inner_timestamp\030\005 \001(\004\"]\n\007HV_TEMP\022\024\n\014av"
+      "erage_temp\030\001 \001(\r\022\020\n\010max_temp\030\002 \001(\r\022\020\n\010mi"
+      "n_temp\030\003 \001(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"G"
+      "\n\tHV_ERRORS\022\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030"
+      "\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"T\n\016HV_CA"
+      "N_FORWARD\022(\n\017can_forward_set\030\001 \001(\0162\017.pri"
+      "mary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"h\n"
+      "\020HV_FANS_OVERRIDE\022&\n\rfans_override\030\001 \001(\016"
+      "2\017.primary.Toggle\022\022\n\nfans_speed\030\002 \001(\r\022\030\n"
+      "\020_inner_timestamp\030\003 \001(\004\"^\n\025HV_CAN_FORWAR"
+      "D_STATUS\022+\n\022can_forward_status\030\001 \001(\0162\017.p"
+      "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
+      "o\n\027HV_FANS_OVERRIDE_STATUS\022&\n\rfans_overr"
+      "ide\030\001 \001(\0162\017.primary.Toggle\022\022\n\nfans_speed"
+      "\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"e\n\023HV_F"
+      "EEDBACKS_STATUS\022\030\n\020feedbacks_status\030\001 \001("
+      "\r\022\032\n\022is_circuitry_error\030\002 \001(\r\022\030\n\020_inner_"
+      "timestamp\030\003 \001(\004\"v\n\rHV_IMD_STATUS\022\021\n\timd_"
+      "fault\030\001 \001(\010\022&\n\nimd_status\030\002 \001(\0162\022.primar"
+      "y.ImdStatus\022\020\n\010imd_info\030\003 \001(\021\022\030\n\020_inner_"
+      "timestamp\030\004 \001(\004\"K\n\tTS_STATUS\022$\n\tts_statu"
+      "s\030\001 \001(\0162\021.primary.TsStatus\022\030\n\020_inner_tim"
+      "estamp\030\002 \001(\004\"U\n\021SET_TS_STATUS_DAS\022&\n\rts_"
+      "status_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_in"
+      "ner_timestamp\030\002 \001(\004\"Z\n\026SET_TS_STATUS_HAN"
+      "DCART\022&\n\rts_status_set\030\001 \001(\0162\017.primary.T"
+      "oggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"w\n\014STEER"
+      "_STATUS\0222\n\020traction_control\030\001 \001(\0162\030.prim"
+      "ary.TractionControl\022\031\n\003map\030\002 \001(\0162\014.prima"
+      "ry.Map\022\030\n\020_inner_timestamp\030\003 \001(\004\"Y\n\016SET_"
+      "CAR_STATUS\022-\n\016car_status_set\030\001 \001(\0162\025.pri"
+      "mary.SetCarStatus\022\030\n\020_inner_timestamp\030\002 "
+      "\001(\004\"j\n\020SET_PEDALS_RANGE\022\035\n\005bound\030\001 \001(\0162\016"
+      ".primary.Bound\022\035\n\005pedal\030\002 \001(\0162\016.primary."
+      "Pedal\022\030\n\020_inner_timestamp\030\003 \001(\004\"S\n\030SET_S"
+      "TEERING_ANGLE_RANGE\022\035\n\005bound\030\001 \001(\0162\016.pri"
+      "mary.Bound\022\030\n\020_inner_timestamp\030\002 \001(\004\"\250\001\n"
+      "\nCAR_STATUS\022+\n\ninverter_l\030\001 \001(\0162\027.primar"
+      "y.InverterStatus\022+\n\ninverter_r\030\002 \001(\0162\027.p"
+      "rimary.InverterStatus\022&\n\ncar_status\030\003 \001("
+      "\0162\022.primary.CarStatus\022\030\n\020_inner_timestam"
+      "p\030\004 \001(\004\"9\n\nDAS_ERRORS\022\021\n\tdas_error\030\001 \001(\r"
+      "\022\030\n\020_inner_timestamp\030\002 \001(\004\"7\n\nLV_CURRENT"
+      "\022\017\n\007current\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 "
+      "\001(\004\"r\n\nLV_VOLTAGE\022\021\n\tvoltage_1\030\001 \001(\r\022\021\n\t"
+      "voltage_2\030\002 \001(\r\022\021\n\tvoltage_3\030\003 \001(\r\022\021\n\tvo"
+      "ltage_4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\""
+      "C\n\020LV_TOTAL_VOLTAGE\022\025\n\rtotal_voltage\030\001 \001"
+      "(\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMP"
+      "ERATURE\022\030\n\020bp_temperature_1\030\001 \001(\r\022\030\n\020bp_"
+      "temperature_2\030\002 \001(\r\022\032\n\022dcdc12_temperatur"
+      "e\030\003 \001(\r\022\032\n\022dcdc24_temperature\030\004 \001(\r\022\030\n\020_"
+      "inner_timestamp\030\005 \001(\004\"X\n\016COOLING_STATUS\022"
+      "\027\n\017radiators_speed\030\001 \001(\r\022\023\n\013pumps_speed\030"
+      "\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"G\n\022SET_R"
+      "ADIATOR_SPEED\022\027\n\017radiators_speed\030\001 \001(\r\022\030"
+      "\n\020_inner_timestamp\030\002 \001(\004\"@\n\017SET_PUMPS_SP"
+      "EED\022\023\n\013pumps_speed\030\001 \001(\r\022\030\n\020_inner_times"
+      "tamp\030\002 \001(\004\"[\n\036SET_INVERTER_CONNECTION_ST"
+      "ATUS\022\037\n\006status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
+      "\020_inner_timestamp\030\002 \001(\004\"W\n\032INVERTER_CONN"
+      "ECTION_STATUS\022\037\n\006status\030\001 \001(\0162\017.primary."
+      "Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"G\n\tLV_E"
+      "RRORS\022\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022"
+      "\030\n\020_inner_timestamp\030\003 \001(\004\"J\n\017SHUTDOWN_ST"
+      "ATUS\022\r\n\005input\030\001 \001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_"
+      "inner_timestamp\030\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inne"
+      "r_timestamp\030\001 \001(\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n"
+      "\013start_index\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n"
+      "\tvoltage_1\030\003 \001(\r\022\021\n\tvoltage_2\030\004 \001(\r\022\030\n\020_"
+      "inner_timestamp\030\005 \001(\004\"\256\001\n\rHV_CELLS_TEMP\022"
+      "\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\r\022\016\n\006"
+      "temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006temp_3\030\005"
+      " \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006temp_5\030\007 \001(\r\022\016\n\006"
+      "temp_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"_"
+      "\n\030HV_CELL_BALANCING_STATUS\022)\n\020balancing_"
+      "status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_"
+      "timestamp\030\002 \001(\004\"d\n\031SET_CELL_BALANCING_ST"
+      "ATUS\022-\n\024set_balancing_status\030\001 \001(\0162\017.pri"
+      "mary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\">\n"
+      "\017HANDCART_STATUS\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_"
+      "inner_timestamp\030\002 \001(\004\"o\n\005SPEED\022\021\n\tencode"
+      "r_r\030\001 \001(\r\022\021\n\tencoder_l\030\002 \001(\r\022\022\n\ninverter"
+      "_r\030\003 \001(\r\022\022\n\ninverter_l\030\004 \001(\r\022\030\n\020_inner_t"
+      "imestamp\030\005 \001(\004\"\251\001\n\rINV_L_REQUEST\022\016\n\006data"
+      "_0\030\001 \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r"
+      "\022\016\n\006data_3\030\004 \001(\r\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data"
+      "_5\030\006 \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r"
+      "\022\030\n\020_inner_timestamp\030\t \001(\004\"\251\001\n\rINV_R_REQ"
+      "UEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006"
+      "data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r\022\016\n\006data_4\030\005"
+      " \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006"
+      "data_7\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\252"
+      "\001\n\016INV_L_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006dat"
+      "a_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001("
+      "\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006dat"
+      "a_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_time"
+      "stamp\030\t \001(\004\"\252\001\n\016INV_R_RESPONSE\022\016\n\006reg_id"
+      "\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016"
+      "\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4"
+      "\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030"
+      "\n\020_inner_timestamp\030\t \001(\004\"0\n\024FLASH_CELLBO"
+      "ARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
+      "ASH_CELLBOARD_0_RX\022\030\n\020_inner_timestamp\030\001"
+      " \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inner_t"
+      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_RX\022\030"
+      "\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBO"
+      "ARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
+      "ASH_CELLBOARD_2_RX\022\030\n\020_inner_timestamp\030\001"
+      " \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inner_t"
+      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_RX\022\030"
+      "\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBO"
+      "ARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
+      "ASH_CELLBOARD_4_RX\022\030\n\020_inner_timestamp\030\001"
+      " \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inner_t"
+      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_RX\022\030"
+      "\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_HV"
+      "_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_B"
+      "MS_HV_RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FL"
+      "ASH_BMS_LV_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\""
+      "+\n\017FLASH_BMS_LV_RX\022\030\n\020_inner_timestamp\030\001"
+      " \001(\004\"*\n\016BRUSA_NLG5_CTL\022\030\n\020_inner_timesta"
+      "mp\030\001 \001(\004\"$\n\010BRUSA_ST\022\030\n\020_inner_timestamp"
+      "\030\001 \001(\004\"\'\n\013BRUSA_ACT_I\022\030\n\020_inner_timestam"
+      "p\030\001 \001(\004\"(\n\014BRUSA_ACT_II\022\030\n\020_inner_timest"
+      "amp\030\001 \001(\004\"&\n\nBRUSA_TEMP\022\030\n\020_inner_timest"
+      "amp\030\001 \001(\004\"%\n\tBRUSA_ERR\022\030\n\020_inner_timesta"
+      "mp\030\001 \001(\004\"*\n\016BMS_HV_CHIMERA\022\030\n\020_inner_tim"
+      "estamp\030\001 \001(\004\"\'\n\013ECU_CHIMERA\022\030\n\020_inner_ti"
+      "mestamp\030\001 \001(\004\"\254\036\n\004Pack\0225\n\021BMS_HV_JMP_TO_"
+      "BLT\030\001 \003(\0132\032.primary.BMS_HV_JMP_TO_BLT\0225\n"
+      "\021BMS_LV_JMP_TO_BLT\030\002 \003(\0132\032.primary.BMS_L"
+      "V_JMP_TO_BLT\022-\n\rSTEER_VERSION\030\003 \003(\0132\026.pr"
+      "imary.STEER_VERSION\022)\n\013DAS_VERSION\030\004 \003(\013"
+      "2\024.primary.DAS_VERSION\022\'\n\nHV_VERSION\030\005 \003"
+      "(\0132\023.primary.HV_VERSION\022\'\n\nLV_VERSION\030\006 "
+      "\003(\0132\023.primary.LV_VERSION\022)\n\013TLM_VERSION\030"
+      "\007 \003(\0132\024.primary.TLM_VERSION\022%\n\tTIMESTAMP"
+      "\030\010 \003(\0132\022.primary.TIMESTAMP\022/\n\016SET_TLM_ST"
+      "ATUS\030\t \003(\0132\027.primary.SET_TLM_STATUS\022\'\n\nT"
+      "LM_STATUS\030\n \003(\0132\023.primary.TLM_STATUS\0229\n\023"
+      "STEER_SYSTEM_STATUS\030\013 \003(\0132\034.primary.STEE"
+      "R_SYSTEM_STATUS\022\'\n\nHV_VOLTAGE\030\014 \003(\0132\023.pr"
+      "imary.HV_VOLTAGE\022\'\n\nHV_CURRENT\030\r \003(\0132\023.p"
+      "rimary.HV_CURRENT\022!\n\007HV_TEMP\030\016 \003(\0132\020.pri"
+      "mary.HV_TEMP\022%\n\tHV_ERRORS\030\017 \003(\0132\022.primar"
+      "y.HV_ERRORS\022/\n\016HV_CAN_FORWARD\030\020 \003(\0132\027.pr"
+      "imary.HV_CAN_FORWARD\0223\n\020HV_FANS_OVERRIDE"
+      "\030\021 \003(\0132\031.primary.HV_FANS_OVERRIDE\022=\n\025HV_"
+      "CAN_FORWARD_STATUS\030\022 \003(\0132\036.primary.HV_CA"
+      "N_FORWARD_STATUS\022A\n\027HV_FANS_OVERRIDE_STA"
+      "TUS\030\023 \003(\0132 .primary.HV_FANS_OVERRIDE_STA"
+      "TUS\0229\n\023HV_FEEDBACKS_STATUS\030\024 \003(\0132\034.prima"
+      "ry.HV_FEEDBACKS_STATUS\022-\n\rHV_IMD_STATUS\030"
+      "\025 \003(\0132\026.primary.HV_IMD_STATUS\022%\n\tTS_STAT"
+      "US\030\026 \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_S"
+      "TATUS_DAS\030\027 \003(\0132\032.primary.SET_TS_STATUS_"
+      "DAS\022\?\n\026SET_TS_STATUS_HANDCART\030\030 \003(\0132\037.pr"
+      "imary.SET_TS_STATUS_HANDCART\022+\n\014STEER_ST"
+      "ATUS\030\031 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET"
+      "_CAR_STATUS\030\032 \003(\0132\027.primary.SET_CAR_STAT"
+      "US\0223\n\020SET_PEDALS_RANGE\030\033 \003(\0132\031.primary.S"
+      "ET_PEDALS_RANGE\022C\n\030SET_STEERING_ANGLE_RA"
+      "NGE\030\034 \003(\0132!.primary.SET_STEERING_ANGLE_R"
+      "ANGE\022\'\n\nCAR_STATUS\030\035 \003(\0132\023.primary.CAR_S"
+      "TATUS\022\'\n\nDAS_ERRORS\030\036 \003(\0132\023.primary.DAS_"
+      "ERRORS\022\'\n\nLV_CURRENT\030\037 \003(\0132\023.primary.LV_"
+      "CURRENT\022\'\n\nLV_VOLTAGE\030  \003(\0132\023.primary.LV"
+      "_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030! \003(\0132\031.pri"
+      "mary.LV_TOTAL_VOLTAGE\022/\n\016LV_TEMPERATURE\030"
+      "\" \003(\0132\027.primary.LV_TEMPERATURE\022/\n\016COOLIN"
+      "G_STATUS\030# \003(\0132\027.primary.COOLING_STATUS\022"
+      "7\n\022SET_RADIATOR_SPEED\030$ \003(\0132\033.primary.SE"
+      "T_RADIATOR_SPEED\0221\n\017SET_PUMPS_SPEED\030% \003("
+      "\0132\030.primary.SET_PUMPS_SPEED\022O\n\036SET_INVER"
+      "TER_CONNECTION_STATUS\030& \003(\0132\'.primary.SE"
+      "T_INVERTER_CONNECTION_STATUS\022G\n\032INVERTER"
+      "_CONNECTION_STATUS\030\' \003(\0132#.primary.INVER"
+      "TER_CONNECTION_STATUS\022%\n\tLV_ERRORS\030( \003(\013"
+      "2\022.primary.LV_ERRORS\0221\n\017SHUTDOWN_STATUS\030"
+      ") \003(\0132\030.primary.SHUTDOWN_STATUS\022\037\n\006MARKE"
+      "R\030* \003(\0132\017.primary.MARKER\0223\n\020HV_CELLS_VOL"
+      "TAGE\030+ \003(\0132\031.primary.HV_CELLS_VOLTAGE\022-\n"
+      "\rHV_CELLS_TEMP\030, \003(\0132\026.primary.HV_CELLS_"
+      "TEMP\022C\n\030HV_CELL_BALANCING_STATUS\030- \003(\0132!"
+      ".primary.HV_CELL_BALANCING_STATUS\022E\n\031SET"
+      "_CELL_BALANCING_STATUS\030. \003(\0132\".primary.S"
+      "ET_CELL_BALANCING_STATUS\0221\n\017HANDCART_STA"
+      "TUS\030/ \003(\0132\030.primary.HANDCART_STATUS\022\035\n\005S"
+      "PEED\0300 \003(\0132\016.primary.SPEED\022-\n\rINV_L_REQU"
+      "EST\0301 \003(\0132\026.primary.INV_L_REQUEST\022-\n\rINV"
+      "_R_REQUEST\0302 \003(\0132\026.primary.INV_R_REQUEST"
+      "\022/\n\016INV_L_RESPONSE\0303 \003(\0132\027.primary.INV_L"
+      "_RESPONSE\022/\n\016INV_R_RESPONSE\0304 \003(\0132\027.prim"
+      "ary.INV_R_RESPONSE\022;\n\024FLASH_CELLBOARD_0_"
+      "TX\0305 \003(\0132\035.primary.FLASH_CELLBOARD_0_TX\022"
+      ";\n\024FLASH_CELLBOARD_0_RX\0306 \003(\0132\035.primary."
+      "FLASH_CELLBOARD_0_RX\022;\n\024FLASH_CELLBOARD_"
+      "1_TX\0307 \003(\0132\035.primary.FLASH_CELLBOARD_1_T"
+      "X\022;\n\024FLASH_CELLBOARD_1_RX\0308 \003(\0132\035.primar"
+      "y.FLASH_CELLBOARD_1_RX\022;\n\024FLASH_CELLBOAR"
+      "D_2_TX\0309 \003(\0132\035.primary.FLASH_CELLBOARD_2"
+      "_TX\022;\n\024FLASH_CELLBOARD_2_RX\030: \003(\0132\035.prim"
+      "ary.FLASH_CELLBOARD_2_RX\022;\n\024FLASH_CELLBO"
+      "ARD_3_TX\030; \003(\0132\035.primary.FLASH_CELLBOARD"
+      "_3_TX\022;\n\024FLASH_CELLBOARD_3_RX\030< \003(\0132\035.pr"
+      "imary.FLASH_CELLBOARD_3_RX\022;\n\024FLASH_CELL"
+      "BOARD_4_TX\030= \003(\0132\035.primary.FLASH_CELLBOA"
+      "RD_4_TX\022;\n\024FLASH_CELLBOARD_4_RX\030> \003(\0132\035."
+      "primary.FLASH_CELLBOARD_4_RX\022;\n\024FLASH_CE"
+      "LLBOARD_5_TX\030\? \003(\0132\035.primary.FLASH_CELLB"
+      "OARD_5_TX\022;\n\024FLASH_CELLBOARD_5_RX\030@ \003(\0132"
+      "\035.primary.FLASH_CELLBOARD_5_RX\0221\n\017FLASH_"
+      "BMS_HV_TX\030A \003(\0132\030.primary.FLASH_BMS_HV_T"
+      "X\0221\n\017FLASH_BMS_HV_RX\030B \003(\0132\030.primary.FLA"
+      "SH_BMS_HV_RX\0221\n\017FLASH_BMS_LV_TX\030C \003(\0132\030."
+      "primary.FLASH_BMS_LV_TX\0221\n\017FLASH_BMS_LV_"
+      "RX\030D \003(\0132\030.primary.FLASH_BMS_LV_RX\022/\n\016BR"
+      "USA_NLG5_CTL\030E \003(\0132\027.primary.BRUSA_NLG5_"
+      "CTL\022#\n\010BRUSA_ST\030F \003(\0132\021.primary.BRUSA_ST"
+      "\022)\n\013BRUSA_ACT_I\030G \003(\0132\024.primary.BRUSA_AC"
+      "T_I\022+\n\014BRUSA_ACT_II\030H \003(\0132\025.primary.BRUS"
+      "A_ACT_II\022\'\n\nBRUSA_TEMP\030I \003(\0132\023.primary.B"
+      "RUSA_TEMP\022%\n\tBRUSA_ERR\030J \003(\0132\022.primary.B"
+      "RUSA_ERR\022/\n\016BMS_HV_CHIMERA\030K \003(\0132\027.prima"
+      "ry.BMS_HV_CHIMERA\022)\n\013ECU_CHIMERA\030L \003(\0132\024"
+      ".primary.ECU_CHIMERA*k\n\010RaceType\022\031\n\025Race"
+      "Type_ACCELERATION\020\000\022\024\n\020RaceType_SKIDPAD\020"
+      "\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022RaceType_EN"
+      "DURANCE\020\003*X\n\016InverterStatus\022\026\n\022InverterS"
+      "tatus_OFF\020\000\022\027\n\023InverterStatus_IDLE\020\001\022\025\n\021"
+      "InverterStatus_ON\020\002*\224\001\n\tCarStatus\022\022\n\016Car"
+      "Status_IDLE\020\000\022\027\n\023CarStatus_PRE_SETUP\020\001\022\023"
+      "\n\017CarStatus_TS_ON\020\002\022\030\n\024CarStatus_POST_SE"
+      "TUP\020\003\022\023\n\017CarStatus_DRIVE\020\004\022\026\n\022CarStatus_"
+      "TEARDOWN\020\005*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nT"
+      "oggle_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023Tract"
+      "ionControl_OFF\020\000\022 \n\034TractionControl_SLIP"
+      "_CONTROL\020\001\022$\n TractionControl_TORQUE_VEC"
+      "TORING\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y"
+      "\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus"
+      "_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatu"
+      "s_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001"
+      "\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022"
+      "\014\n\010Map_D100\020\005*U\n\014SetCarStatus\022\025\n\021SetCarS"
+      "tatus_IDLE\020\000\022\026\n\022SetCarStatus_READY\020\001\022\026\n\022"
+      "SetCarStatus_DRIVE\020\002*-\n\005Bound\022\021\n\rBound_S"
+      "ET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021"
+      "Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n"
+      "\tImdStatus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdS"
+      "tatus_IMD_NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDE"
+      "R_VOLTAGE\020\002\022\037\n\033ImdStatus_IMD_START_MEASU"
+      "RE\020\003\022\036\n\032ImdStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031"
+      "ImdStatus_IMD_EARTH_FAULT\020\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 11379);
+      descriptor, 11235);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "primary.proto", &protobuf_RegisterTypes);
 }
@@ -5271,9 +5261,6 @@ void SET_TLM_STATUS::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SET_TLM_STATUS::kTlmStatusFieldNumber;
-const int SET_TLM_STATUS::kRaceTypeFieldNumber;
-const int SET_TLM_STATUS::kDriverFieldNumber;
-const int SET_TLM_STATUS::kCircuitFieldNumber;
 const int SET_TLM_STATUS::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -5288,16 +5275,16 @@ SET_TLM_STATUS::SET_TLM_STATUS(const SET_TLM_STATUS& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&tlm_status_, &from.tlm_status_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&tlm_status_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
   // @@protoc_insertion_point(copy_constructor:primary.SET_TLM_STATUS)
 }
 
 void SET_TLM_STATUS::SharedCtor() {
-  ::memset(&tlm_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&tlm_status_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
 }
 
 SET_TLM_STATUS::~SET_TLM_STATUS() {
@@ -5328,9 +5315,9 @@ void SET_TLM_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&tlm_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&tlm_status_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
   _internal_metadata_.Clear();
 }
 
@@ -5359,53 +5346,10 @@ bool SET_TLM_STATUS::MergePartialFromCodedStream(
         break;
       }
 
-      // .primary.RaceType race_type = 2;
+      // uint64 _inner_timestamp = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_race_type(static_cast< ::primary::RaceType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 driver = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &driver_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 circuit = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &circuit_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -5448,25 +5392,9 @@ void SET_TLM_STATUS::SerializeWithCachedSizes(
       1, this->tlm_status(), output);
   }
 
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->race_type(), output);
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->driver(), output);
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->circuit(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -5489,25 +5417,9 @@ void SET_TLM_STATUS::SerializeWithCachedSizes(
       1, this->tlm_status(), target);
   }
 
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->race_type(), target);
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->driver(), target);
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->circuit(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -5527,37 +5439,17 @@ size_t SET_TLM_STATUS::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .primary.Toggle tlm_status = 1;
-  if (this->tlm_status() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->tlm_status());
-  }
-
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->race_type());
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->driver());
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->circuit());
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
+  }
+
+  // .primary.Toggle tlm_status = 1;
+  if (this->tlm_status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->tlm_status());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5587,20 +5479,11 @@ void SET_TLM_STATUS::MergeFrom(const SET_TLM_STATUS& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.tlm_status() != 0) {
-    set_tlm_status(from.tlm_status());
-  }
-  if (from.race_type() != 0) {
-    set_race_type(from.race_type());
-  }
-  if (from.driver() != 0) {
-    set_driver(from.driver());
-  }
-  if (from.circuit() != 0) {
-    set_circuit(from.circuit());
-  }
   if (from._inner_timestamp() != 0) {
     set__inner_timestamp(from._inner_timestamp());
+  }
+  if (from.tlm_status() != 0) {
+    set_tlm_status(from.tlm_status());
   }
 }
 
@@ -5628,11 +5511,8 @@ void SET_TLM_STATUS::Swap(SET_TLM_STATUS* other) {
 }
 void SET_TLM_STATUS::InternalSwap(SET_TLM_STATUS* other) {
   using std::swap;
-  swap(tlm_status_, other->tlm_status_);
-  swap(race_type_, other->race_type_);
-  swap(driver_, other->driver_);
-  swap(circuit_, other->circuit_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
+  swap(tlm_status_, other->tlm_status_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -5648,9 +5528,6 @@ void TLM_STATUS::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int TLM_STATUS::kTlmStatusFieldNumber;
-const int TLM_STATUS::kRaceTypeFieldNumber;
-const int TLM_STATUS::kDriverFieldNumber;
-const int TLM_STATUS::kCircuitFieldNumber;
 const int TLM_STATUS::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -5665,16 +5542,16 @@ TLM_STATUS::TLM_STATUS(const TLM_STATUS& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&tlm_status_, &from.tlm_status_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&tlm_status_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
   // @@protoc_insertion_point(copy_constructor:primary.TLM_STATUS)
 }
 
 void TLM_STATUS::SharedCtor() {
-  ::memset(&tlm_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&tlm_status_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
 }
 
 TLM_STATUS::~TLM_STATUS() {
@@ -5705,9 +5582,9 @@ void TLM_STATUS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&tlm_status_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&tlm_status_)) + sizeof(_inner_timestamp_));
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&tlm_status_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(tlm_status_));
   _internal_metadata_.Clear();
 }
 
@@ -5736,53 +5613,10 @@ bool TLM_STATUS::MergePartialFromCodedStream(
         break;
       }
 
-      // .primary.RaceType race_type = 2;
+      // uint64 _inner_timestamp = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_race_type(static_cast< ::primary::RaceType >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 driver = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &driver_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint32 circuit = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &circuit_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -5825,25 +5659,9 @@ void TLM_STATUS::SerializeWithCachedSizes(
       1, this->tlm_status(), output);
   }
 
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->race_type(), output);
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->driver(), output);
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->circuit(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -5866,25 +5684,9 @@ void TLM_STATUS::SerializeWithCachedSizes(
       1, this->tlm_status(), target);
   }
 
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->race_type(), target);
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->driver(), target);
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->circuit(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -5904,37 +5706,17 @@ size_t TLM_STATUS::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .primary.Toggle tlm_status = 1;
-  if (this->tlm_status() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->tlm_status());
-  }
-
-  // .primary.RaceType race_type = 2;
-  if (this->race_type() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->race_type());
-  }
-
-  // uint32 driver = 3;
-  if (this->driver() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->driver());
-  }
-
-  // uint32 circuit = 4;
-  if (this->circuit() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->circuit());
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
+  }
+
+  // .primary.Toggle tlm_status = 1;
+  if (this->tlm_status() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->tlm_status());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5964,20 +5746,11 @@ void TLM_STATUS::MergeFrom(const TLM_STATUS& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.tlm_status() != 0) {
-    set_tlm_status(from.tlm_status());
-  }
-  if (from.race_type() != 0) {
-    set_race_type(from.race_type());
-  }
-  if (from.driver() != 0) {
-    set_driver(from.driver());
-  }
-  if (from.circuit() != 0) {
-    set_circuit(from.circuit());
-  }
   if (from._inner_timestamp() != 0) {
     set__inner_timestamp(from._inner_timestamp());
+  }
+  if (from.tlm_status() != 0) {
+    set_tlm_status(from.tlm_status());
   }
 }
 
@@ -6005,11 +5778,8 @@ void TLM_STATUS::Swap(TLM_STATUS* other) {
 }
 void TLM_STATUS::InternalSwap(TLM_STATUS* other) {
   using std::swap;
-  swap(tlm_status_, other->tlm_status_);
-  swap(race_type_, other->race_type_);
-  swap(driver_, other->driver_);
-  swap(circuit_, other->circuit_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
+  swap(tlm_status_, other->tlm_status_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

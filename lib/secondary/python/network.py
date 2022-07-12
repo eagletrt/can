@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657617256
-CANLIB_BUILD_HASH = 0xc183abd7
+CANLIB_BUILD_TIME = 1657621183
+CANLIB_BUILD_HASH = 0x9001115c
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -85,6 +85,44 @@ class message_IMU_ANGULAR_RATE:
         return message
 
 
+    def convert(self) -> message_IMU_ANGULAR_RATE_conversion:
+        conversion = message_IMU_ANGULAR_RATE_conversion()
+        conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 100.0) - 245
+        conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 100.0) - 245
+        conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 100.0) - 245
+        return conversion
+
+
+class message_IMU_ANGULAR_RATE_conversion:
+    def __init__(
+        self,
+        ang_rate_x = None,
+        ang_rate_y = None,
+        ang_rate_z = None
+    ):
+        self.ang_rate_x = float32(ang_rate_x)
+        self.ang_rate_y = float32(ang_rate_y)
+        self.ang_rate_z = float32(ang_rate_z)
+        self.size = 6
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IMU_ANGULAR_RATE):
+            return False
+        if self.ang_rate_x != other.ang_rate_x:
+            return False
+        if self.ang_rate_y != other.ang_rate_y:
+            return False
+        if self.ang_rate_z != other.ang_rate_z:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IMU_ANGULAR_RATE:
+        raw = message_IMU_ANGULAR_RATE()
+        raw.ang_rate_x = uint16((self.ang_rate_x + 245) * 100.0)
+        raw.ang_rate_y = uint16((self.ang_rate_y + 245) * 100.0)
+        raw.ang_rate_z = uint16((self.ang_rate_z + 245) * 100.0)
+        return raw
+
 class message_IMU_ACCELERATION:
     def __init__(
         self,
@@ -121,6 +159,44 @@ class message_IMU_ACCELERATION:
         message.accel_z = uint16(unpack("<xxxxH", data[0:6])[0])
         return message
 
+
+    def convert(self) -> message_IMU_ACCELERATION_conversion:
+        conversion = message_IMU_ACCELERATION_conversion()
+        conversion.accel_x = ((float32(self.accel_x)) / 100.0) - 8
+        conversion.accel_y = ((float32(self.accel_y)) / 100.0) - 8
+        conversion.accel_z = ((float32(self.accel_z)) / 100.0) - 8
+        return conversion
+
+
+class message_IMU_ACCELERATION_conversion:
+    def __init__(
+        self,
+        accel_x = None,
+        accel_y = None,
+        accel_z = None
+    ):
+        self.accel_x = float32(accel_x)
+        self.accel_y = float32(accel_y)
+        self.accel_z = float32(accel_z)
+        self.size = 6
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IMU_ACCELERATION):
+            return False
+        if self.accel_x != other.accel_x:
+            return False
+        if self.accel_y != other.accel_y:
+            return False
+        if self.accel_z != other.accel_z:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IMU_ACCELERATION:
+        raw = message_IMU_ACCELERATION()
+        raw.accel_x = uint16((self.accel_x + 8) * 100.0)
+        raw.accel_y = uint16((self.accel_y + 8) * 100.0)
+        raw.accel_z = uint16((self.accel_z + 8) * 100.0)
+        return raw
 
 class message_IRTS_FL_0:
     def __init__(
@@ -857,10 +933,10 @@ class message_LAP_COUNT:
     def __init__(
         self,
         lap_count = None,
-        timestamp = None
+        lap_time = None
     ):
         self.lap_count = uint8(lap_count)
-        self.timestamp = uint32(timestamp)
+        self.lap_time = uint32(lap_time)
         self.size = 5
 
     def __eq__(self, other):
@@ -868,20 +944,20 @@ class message_LAP_COUNT:
             return False
         if self.lap_count != other.lap_count:
             return False
-        if self.timestamp != other.timestamp:
+        if self.lap_time != other.lap_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.timestamp, self.lap_count))
+        data.extend(pack("<IB", self.lap_time, self.lap_count))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.timestamp = uint32(unpack("<I", data[0:4])[0])
+        message.lap_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 

@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657617256
-CANLIB_BUILD_HASH = 0xc183abd7
+CANLIB_BUILD_TIME = 1657621183
+CANLIB_BUILD_HASH = 0x9001115c
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -424,8 +424,8 @@ class message_STEER_VERSION:
         cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint8(cancicd_version)
-        self.size = 2
+        self.cancicd_version = uint32(cancicd_version)
+        self.size = 5
         self.interval = 1000
 
     def __eq__(self, other):
@@ -439,14 +439,14 @@ class message_STEER_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack("<B", data[0:1])[0])
-        message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -457,8 +457,8 @@ class message_DAS_VERSION:
         cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint8(cancicd_version)
-        self.size = 2
+        self.cancicd_version = uint32(cancicd_version)
+        self.size = 5
         self.interval = 1000
 
     def __eq__(self, other):
@@ -472,14 +472,14 @@ class message_DAS_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack("<B", data[0:1])[0])
-        message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -490,8 +490,8 @@ class message_HV_VERSION:
         cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint8(cancicd_version)
-        self.size = 2
+        self.cancicd_version = uint32(cancicd_version)
+        self.size = 5
         self.interval = 1000
 
     def __eq__(self, other):
@@ -505,14 +505,14 @@ class message_HV_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack("<B", data[0:1])[0])
-        message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -523,8 +523,8 @@ class message_LV_VERSION:
         cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint8(cancicd_version)
-        self.size = 2
+        self.cancicd_version = uint32(cancicd_version)
+        self.size = 5
         self.interval = 1000
 
     def __eq__(self, other):
@@ -538,14 +538,14 @@ class message_LV_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack("<B", data[0:1])[0])
-        message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -556,8 +556,8 @@ class message_TLM_VERSION:
         cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint8(cancicd_version)
-        self.size = 2
+        self.cancicd_version = uint32(cancicd_version)
+        self.size = 5
         self.interval = 1000
 
     def __eq__(self, other):
@@ -571,14 +571,14 @@ class message_TLM_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BB", self.component_version, self.cancicd_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack("<B", data[0:1])[0])
-        message.cancicd_version = uint8(unpack("<xB", data[0:2])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -613,58 +613,37 @@ class message_TIMESTAMP:
 class message_SET_TLM_STATUS:
     def __init__(
         self,
-        tlm_status = None,
-        race_type = None,
-        driver = None,
-        circuit = None
+        tlm_status = None
     ):
         self.tlm_status = Toggle(tlm_status)
-        self.race_type = RaceType(race_type)
-        self.driver = uint8(driver)
-        self.circuit = uint8(circuit)
-        self.size = 3
+        self.size = 1
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_TLM_STATUS):
             return False
         if self.tlm_status != other.tlm_status:
             return False
-        if self.race_type != other.race_type:
-            return False
-        if self.driver != other.driver:
-            return False
-        if self.circuit != other.circuit:
-            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", self.driver, self.circuit, self.race_type << 6 & 255 | self.tlm_status << 5 & 255))
+        data.extend(pack("<B", self.tlm_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
-        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        message.driver = uint8(unpack("<B", data[0:1])[0])
-        message.circuit = uint8(unpack("<xB", data[0:2])[0])
+        message.tlm_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
 class message_TLM_STATUS:
     def __init__(
         self,
-        tlm_status = None,
-        race_type = None,
-        driver = None,
-        circuit = None
+        tlm_status = None
     ):
         self.tlm_status = Toggle(tlm_status)
-        self.race_type = RaceType(race_type)
-        self.driver = uint8(driver)
-        self.circuit = uint8(circuit)
-        self.size = 3
+        self.size = 1
         self.interval = 1000
 
     def __eq__(self, other):
@@ -672,26 +651,17 @@ class message_TLM_STATUS:
             return False
         if self.tlm_status != other.tlm_status:
             return False
-        if self.race_type != other.race_type:
-            return False
-        if self.driver != other.driver:
-            return False
-        if self.circuit != other.circuit:
-            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", self.driver, self.circuit, self.race_type << 6 & 255 | self.tlm_status << 5 & 255))
+        data.extend(pack("<B", self.tlm_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.tlm_status = Toggle((unpack("<xxB", data[0:3])[0] & 32) >> 5)
-        message.race_type = RaceType((unpack("<xxB", data[0:3])[0] & 192) >> 6)
-        message.driver = uint8(unpack("<B", data[0:1])[0])
-        message.circuit = uint8(unpack("<xB", data[0:2])[0])
+        message.tlm_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 

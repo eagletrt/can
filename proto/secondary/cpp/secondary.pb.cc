@@ -777,7 +777,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::LAP_COUNT, lap_count_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::LAP_COUNT, timestamp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::LAP_COUNT, lap_time_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::LAP_COUNT, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::PEDALS_OUTPUT, _internal_metadata_),
@@ -964,44 +964,44 @@ void AddDescriptorsImpl() {
       "PS_COORDS\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude"
       "\030\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"4\n\tGPS_"
       "SPEED\022\r\n\005speed\030\001 \001(\r\022\030\n\020_inner_timestamp"
-      "\030\002 \001(\004\"K\n\tLAP_COUNT\022\021\n\tlap_count\030\001 \001(\r\022\021"
-      "\n\ttimestamp\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 "
-      "\001(\004\"\\\n\rPEDALS_OUTPUT\022\014\n\004apps\030\001 \001(\r\022\021\n\tbs"
-      "e_front\030\002 \001(\r\022\020\n\010bse_rear\030\003 \001(\r\022\030\n\020_inne"
-      "r_timestamp\030\004 \001(\004\"G\n\016CONTROL_OUTPUT\022\r\n\005r"
-      "ight\030\001 \001(\002\022\014\n\004left\030\002 \001(\002\022\030\n\020_inner_times"
-      "tamp\030\003 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005angle\030\001 "
-      "\001(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225"
-      "\n\020IMU_ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU"
-      "_ANGULAR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132"
-      "\033.secondary.IMU_ACCELERATION\022\'\n\tIRTS_FL_"
-      "0\030\003 \003(\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL"
-      "_1\030\004 \003(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_F"
-      "L_2\030\005 \003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_"
-      "FL_3\030\006 \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS"
-      "_FR_0\030\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRT"
-      "S_FR_1\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIR"
-      "TS_FR_2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tI"
-      "RTS_FR_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\t"
-      "IRTS_RL_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n"
-      "\tIRTS_RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'"
-      "\n\tIRTS_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022"
-      "\'\n\tIRTS_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3"
-      "\022\'\n\tIRTS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_"
-      "0\022\'\n\tIRTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR"
-      "_1\022\'\n\tIRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_R"
-      "R_2\022\'\n\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_"
-      "RR_3\022)\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS"
-      "_COORDS\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.G"
-      "PS_SPEED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary."
-      "LAP_COUNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.secon"
-      "dary.PEDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003"
-      "(\0132\031.secondary.CONTROL_OUTPUT\0221\n\016STEERIN"
-      "G_ANGLE\030\030 \003(\0132\031.secondary.STEERING_ANGLE"
-      "b\006proto3"
+      "\030\002 \001(\004\"J\n\tLAP_COUNT\022\021\n\tlap_count\030\001 \001(\r\022\020"
+      "\n\010lap_time\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001"
+      "(\004\"\\\n\rPEDALS_OUTPUT\022\014\n\004apps\030\001 \001(\r\022\021\n\tbse"
+      "_front\030\002 \001(\r\022\020\n\010bse_rear\030\003 \001(\r\022\030\n\020_inner"
+      "_timestamp\030\004 \001(\004\"G\n\016CONTROL_OUTPUT\022\r\n\005ri"
+      "ght\030\001 \001(\002\022\014\n\004left\030\002 \001(\002\022\030\n\020_inner_timest"
+      "amp\030\003 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005angle\030\001 \001"
+      "(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n"
+      "\020IMU_ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU_"
+      "ANGULAR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033"
+      ".secondary.IMU_ACCELERATION\022\'\n\tIRTS_FL_0"
+      "\030\003 \003(\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL_"
+      "1\030\004 \003(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_FL"
+      "_2\030\005 \003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_F"
+      "L_3\030\006 \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS_"
+      "FR_0\030\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS"
+      "_FR_1\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRT"
+      "S_FR_2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIR"
+      "TS_FR_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tI"
+      "RTS_RL_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\t"
+      "IRTS_RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n"
+      "\tIRTS_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'"
+      "\n\tIRTS_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022"
+      "\'\n\tIRTS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_0"
+      "\022\'\n\tIRTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_"
+      "1\022\'\n\tIRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR"
+      "_2\022\'\n\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_R"
+      "R_3\022)\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS_"
+      "COORDS\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.GP"
+      "S_SPEED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.L"
+      "AP_COUNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.second"
+      "ary.PEDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003("
+      "\0132\031.secondary.CONTROL_OUTPUT\0221\n\016STEERING"
+      "_ANGLE\030\030 \003(\0132\031.secondary.STEERING_ANGLEb"
+      "\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3528);
+      descriptor, 3527);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "secondary.proto", &protobuf_RegisterTypes);
 }
@@ -8229,7 +8229,7 @@ void LAP_COUNT::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int LAP_COUNT::kLapCountFieldNumber;
-const int LAP_COUNT::kTimestampFieldNumber;
+const int LAP_COUNT::kLapTimeFieldNumber;
 const int LAP_COUNT::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -8314,14 +8314,14 @@ bool LAP_COUNT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 timestamp = 2;
+      // uint32 lap_time = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &timestamp_)));
+                 input, &lap_time_)));
         } else {
           goto handle_unusual;
         }
@@ -8373,9 +8373,9 @@ void LAP_COUNT::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->lap_count(), output);
   }
 
-  // uint32 timestamp = 2;
-  if (this->timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->timestamp(), output);
+  // uint32 lap_time = 2;
+  if (this->lap_time() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->lap_time(), output);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8402,9 +8402,9 @@ void LAP_COUNT::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->lap_count(), target);
   }
 
-  // uint32 timestamp = 2;
-  if (this->timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->timestamp(), target);
+  // uint32 lap_time = 2;
+  if (this->lap_time() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->lap_time(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8436,11 +8436,11 @@ size_t LAP_COUNT::ByteSizeLong() const {
         this->lap_count());
   }
 
-  // uint32 timestamp = 2;
-  if (this->timestamp() != 0) {
+  // uint32 lap_time = 2;
+  if (this->lap_time() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->timestamp());
+        this->lap_time());
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8480,8 +8480,8 @@ void LAP_COUNT::MergeFrom(const LAP_COUNT& from) {
   if (from.lap_count() != 0) {
     set_lap_count(from.lap_count());
   }
-  if (from.timestamp() != 0) {
-    set_timestamp(from.timestamp());
+  if (from.lap_time() != 0) {
+    set_lap_time(from.lap_time());
   }
   if (from._inner_timestamp() != 0) {
     set__inner_timestamp(from._inner_timestamp());
@@ -8513,7 +8513,7 @@ void LAP_COUNT::Swap(LAP_COUNT* other) {
 void LAP_COUNT::InternalSwap(LAP_COUNT* other) {
   using std::swap;
   swap(lap_count_, other->lap_count_);
-  swap(timestamp_, other->timestamp_);
+  swap(lap_time_, other->lap_time_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

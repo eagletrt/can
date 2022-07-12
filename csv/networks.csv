@@ -1,6 +1,6 @@
 name,id,network,topic,priority,sending,receiving,interval,contents,description
-IMU_ANGULAR_RATE,IMU_ANGULAR_RATE: 1260,secondary,FIXED_IDS,,IMU,DAS,,"ang_rate_x: uint16, ang_rate_y: uint16, ang_rate_z: uint16","Inertial Measurement Unit x,y,z-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed"
-IMU_ACCELERATION,IMU_ACCELERATION: 1261,secondary,FIXED_IDS,,IMU,DAS,,"accel_x: uint16, accel_y: uint16, accel_z: uint16","Inertial Measurement Unit x,y,z-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed"
+IMU_ANGULAR_RATE,IMU_ANGULAR_RATE: 1260,secondary,FIXED_IDS,,IMU,DAS,,"ang_rate_x: type: float32, range: -245, 245, precision: 0.01, ang_rate_y: type: float32, range: -245, 245, precision: 0.01, ang_rate_z: type: float32, range: -245, 245, precision: 0.01","Inertial Measurement Unit x,y,z-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed"
+IMU_ACCELERATION,IMU_ACCELERATION: 1261,secondary,FIXED_IDS,,IMU,DAS,,"accel_x: type: float32, range: -8, 8, precision: 0.01, accel_y: type: float32, range: -8, 8, precision: 0.01, accel_z: type: float32, range: -8, 8, precision: 0.01","Inertial Measurement Unit x,y,z-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed"
 IRTS_FL_0,IRTS_FL_0: 1460,secondary,FIXED_IDS,,IRTS_FL,DAS,,"channel1: uint16, channel2: uint16, channel3: uint16, channel4: uint16","Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned."
 IRTS_FL_1,IRTS_FL_1: 1461,secondary,FIXED_IDS,,IRTS_FL,DAS,,"channel5: uint16, channel6: uint16, channel7: uint16, channel8: uint16","Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned."
 IRTS_FL_2,IRTS_FL_2: 1462,secondary,FIXED_IDS,,IRTS_FL,DAS,,"channel9: uint16, channel10: uint16, channel11: uint16, channel12: uint16","Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned."
@@ -19,7 +19,7 @@ IRTS_RR_2,IRTS_RR_2: 1474,secondary,FIXED_IDS,,IRTS_RR,DAS,,"channel9: uint16, c
 IRTS_RR_3,IRTS_RR_3: 1475,secondary,FIXED_IDS,,IRTS_RR,DAS,,"channel13: uint16, channel14: uint16, channel15: uint16, channel16: uint16","Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned."
 GPS_COORDS,GPS_COORDS: 1025,secondary,STEER,3,TLM,STEER,,"latitude: float32, longitude: float32",Coordinates received from GPS
 GPS_SPEED,GPS_SPEED: 1057,secondary,STEER,3,TLM,STEER,,speed: uint16,Speed received from GPS
-LAP_COUNT,LAP_COUNT: 1089,secondary,STEER,3,TLM,STEER,,"lap_count: uint8, timestamp: uint32",Lap counter and associated timestamp
+LAP_COUNT,LAP_COUNT: 1089,secondary,STEER,3,TLM,STEER,,"lap_count: uint8, lap_time: uint32",Lap counter and associated timestamp
 PEDALS_OUTPUT,PEDALS_OUTPUT: 769,secondary,STEER,4,DAS,STEER,100,"apps: uint8, bse_front: type: float32, range: 0, 100, force: uint16, bse_rear: type: float32, range: 0, 100, force: uint16","Pedal output, already calibrated"
 CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,STEER,100,"right: float32, left: float32","Control output, N*m"
 STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,100,angle: float32,Steering angle in degrees
@@ -42,14 +42,14 @@ FLASH_CELLBOARD_5_TX,FLASH_CELLBOARD_5_TX: 26,bms,FIXED_IDS,,HANDCART,BMS_HV,,,
 FLASH_CELLBOARD_5_RX,FLASH_CELLBOARD_5_RX: 27,bms,FIXED_IDS,,HANDCART,BMS_HV,,,
 BMS_HV_JMP_TO_BLT,BMS_HV_JMP_TO_BLT: 0,primary,FLASH,7,HANDCART,BMS_HV,,,
 BMS_LV_JMP_TO_BLT,BMS_LV_JMP_TO_BLT: 32,primary,FLASH,7,HANDCART,BMS_LV,,,
-STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
-DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
-HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
-LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
-TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint8",periodic message containing current can definitions version
+STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
 TIMESTAMP,TIMESTAMP: 257,primary,BROADCAST,6,TLM,"STEER, DAS, BMS_HV, BMS_LV",1000,timestamp: uint32,every second unix encoded time and date used by logging devices to sync
-SET_TLM_STATUS,SET_TLM_STATUS: 258,primary,TLM,6,STEER,TLM,,"tlm_status: Toggle, race_type: RaceType, driver: uint8, circuit: uint8","Ask telemetry to turn on/off and send a tuple containing the currenttest, driver, map); only once"
-TLM_STATUS,TLM_STATUS: 259,primary,STEER,6,TLM,STEER,1000,"tlm_status: Toggle, race_type: RaceType, driver: uint8, circuit: uint8",The answer to the steering wheels message that changes the status of the telemetry
+SET_TLM_STATUS,SET_TLM_STATUS: 258,primary,TLM,6,STEER,TLM,,tlm_status: Toggle,"Ask telemetry to turn on/off and send a tuple containing the currenttest, driver, map); only once"
+TLM_STATUS,TLM_STATUS: 259,primary,STEER,6,TLM,STEER,1000,tlm_status: Toggle,The answer to the steering wheels message that changes the status of the telemetry
 STEER_SYSTEM_STATUS,STEER_SYSTEM_STATUS: 1794,primary,TLM,0,STEER,TLM,1000,soc_temp: uint8,System stats of the raspberry pi inside the steering wheel
 HV_VOLTAGE,HV_VOLTAGE: 772,primary,DASnSTEERnCART,4,BMS_HV,"DAS, STEER, HANDCART",10,"pack_voltage: type: float32, range: 0, 460, force: uint16, bus_voltage: type: float32, range: 0, 460, force: uint16, max_cell_voltage: type: float32, range: 0, 5, precision: 0.0001, min_cell_voltage: type: float32, range: 0, 5, precision: 0.0001",Pack stats
 HV_CURRENT,HV_CURRENT: 804,primary,DASnSTEERnCART,4,BMS_HV,"DAS, STEER, HANDCART",10,"current: type: float32, range: -10, 200, force: uint16, power: type: float32, range: 0, 100, force: uint16, energy: type: float32, range: 0, 7000, force: uint16, soc: type: float32, range: 0, 100, force: uint8","Current and power supplied by the pack, energy and state of charge of the pack"
