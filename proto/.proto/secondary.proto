@@ -3,16 +3,16 @@ package secondary;
 
 
 message IMU_ANGULAR_RATE {
-    uint32 ang_rate_x = 1;
-    uint32 ang_rate_y = 2;
-    uint32 ang_rate_z = 3;
+    float ang_rate_x = 1;
+    float ang_rate_y = 2;
+    float ang_rate_z = 3;
     uint64 _inner_timestamp = 4;
 }
 
 message IMU_ACCELERATION {
-    uint32 accel_x = 1;
-    uint32 accel_y = 2;
-    uint32 accel_z = 3;
+    float accel_x = 1;
+    float accel_y = 2;
+    float accel_z = 3;
     uint64 _inner_timestamp = 4;
 }
 
@@ -163,8 +163,8 @@ message LAP_COUNT {
 
 message PEDALS_OUTPUT {
     uint32 apps = 1;
-    uint32 bse_front = 2;
-    uint32 bse_rear = 3;
+    float bse_front = 2;
+    float bse_rear = 3;
     uint64 _inner_timestamp = 4;
 }
 

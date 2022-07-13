@@ -872,7 +872,7 @@
       "topic": "HANDCART",
       "priority": 5,
       "sending": ["BMS_HV"],
-      "receiving": ["HANDCART"],
+      "receiving": ["HANDCART", "TLM"],
       "description": "Cell temperatures",
       "interval": 100,
       "contents": {
@@ -903,11 +903,6 @@
           "force": "uint8"
         },
         "temp_5": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "temp_6": {
           "type": "float32",
           "range": [-20, 80],
           "force": "uint8"

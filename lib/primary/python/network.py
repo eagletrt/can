@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1657621183
-CANLIB_BUILD_HASH = 0x9001115c
+CANLIB_BUILD_TIME = 1657736003
+CANLIB_BUILD_HASH = 0x2c313203
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -2169,8 +2169,7 @@ class message_HV_CELLS_TEMP:
         temp_2 = None,
         temp_3 = None,
         temp_4 = None,
-        temp_5 = None,
-        temp_6 = None
+        temp_5 = None
     ):
         self.start_index = uint8(start_index)
         self.temp_0 = uint8(temp_0)
@@ -2179,8 +2178,7 @@ class message_HV_CELLS_TEMP:
         self.temp_3 = uint8(temp_3)
         self.temp_4 = uint8(temp_4)
         self.temp_5 = uint8(temp_5)
-        self.temp_6 = uint8(temp_6)
-        self.size = 8
+        self.size = 7
         self.interval = 100
 
     def __eq__(self, other):
@@ -2200,13 +2198,11 @@ class message_HV_CELLS_TEMP:
             return False
         if self.temp_5 != other.temp_5:
             return False
-        if self.temp_6 != other.temp_6:
-            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBBBBB", self.start_index, self.temp_0, self.temp_1, self.temp_2, self.temp_3, self.temp_4, self.temp_5, self.temp_6))
+        data.extend(pack("<BBBBBBB", self.start_index, self.temp_0, self.temp_1, self.temp_2, self.temp_3, self.temp_4, self.temp_5))
         return data
 
     @classmethod
@@ -2219,7 +2215,6 @@ class message_HV_CELLS_TEMP:
         message.temp_3 = uint8(unpack("<xxxxB", data[0:5])[0])
         message.temp_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
         message.temp_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
-        message.temp_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 
@@ -2232,7 +2227,6 @@ class message_HV_CELLS_TEMP:
         conversion.temp_3 = ((float32(self.temp_3)) / 2.55) - 20
         conversion.temp_4 = ((float32(self.temp_4)) / 2.55) - 20
         conversion.temp_5 = ((float32(self.temp_5)) / 2.55) - 20
-        conversion.temp_6 = ((float32(self.temp_6)) / 2.55) - 20
         return conversion
 
 
@@ -2245,8 +2239,7 @@ class message_HV_CELLS_TEMP_conversion:
         temp_2 = None,
         temp_3 = None,
         temp_4 = None,
-        temp_5 = None,
-        temp_6 = None
+        temp_5 = None
     ):
         self.start_index = uint8(start_index)
         self.temp_0 = float32(temp_0)
@@ -2255,8 +2248,7 @@ class message_HV_CELLS_TEMP_conversion:
         self.temp_3 = float32(temp_3)
         self.temp_4 = float32(temp_4)
         self.temp_5 = float32(temp_5)
-        self.temp_6 = float32(temp_6)
-        self.size = 8
+        self.size = 7
         self.interval = 100
 
     def __eq__(self, other):
@@ -2276,8 +2268,6 @@ class message_HV_CELLS_TEMP_conversion:
             return False
         if self.temp_5 != other.temp_5:
             return False
-        if self.temp_6 != other.temp_6:
-            return False
         return True
 
     def convert_to_raw(self) -> message_HV_CELLS_TEMP:
@@ -2289,7 +2279,6 @@ class message_HV_CELLS_TEMP_conversion:
         raw.temp_3 = uint8((self.temp_3 + 20) * 2.55)
         raw.temp_4 = uint8((self.temp_4 + 20) * 2.55)
         raw.temp_5 = uint8((self.temp_5 + 20) * 2.55)
-        raw.temp_6 = uint8((self.temp_6 + 20) * 2.55)
         return raw
 
 class message_HV_CELL_BALANCING_STATUS:

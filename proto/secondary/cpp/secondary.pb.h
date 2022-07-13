@@ -242,17 +242,17 @@ class IMU_ANGULAR_RATE : public ::google::protobuf::Message /* @@protoc_insertio
 
   // accessors -------------------------------------------------------
 
-  // uint32 ang_rate_x = 1;
+  // float ang_rate_x = 1;
   void clear_ang_rate_x();
   static const int kAngRateXFieldNumber = 1;
-  ::google::protobuf::uint32 ang_rate_x() const;
-  void set_ang_rate_x(::google::protobuf::uint32 value);
+  float ang_rate_x() const;
+  void set_ang_rate_x(float value);
 
-  // uint32 ang_rate_y = 2;
+  // float ang_rate_y = 2;
   void clear_ang_rate_y();
   static const int kAngRateYFieldNumber = 2;
-  ::google::protobuf::uint32 ang_rate_y() const;
-  void set_ang_rate_y(::google::protobuf::uint32 value);
+  float ang_rate_y() const;
+  void set_ang_rate_y(float value);
 
   // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
@@ -260,20 +260,20 @@ class IMU_ANGULAR_RATE : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 ang_rate_z = 3;
+  // float ang_rate_z = 3;
   void clear_ang_rate_z();
   static const int kAngRateZFieldNumber = 3;
-  ::google::protobuf::uint32 ang_rate_z() const;
-  void set_ang_rate_z(::google::protobuf::uint32 value);
+  float ang_rate_z() const;
+  void set_ang_rate_z(float value);
 
   // @@protoc_insertion_point(class_scope:secondary.IMU_ANGULAR_RATE)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 ang_rate_x_;
-  ::google::protobuf::uint32 ang_rate_y_;
+  float ang_rate_x_;
+  float ang_rate_y_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 ang_rate_z_;
+  float ang_rate_z_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
 };
@@ -366,17 +366,17 @@ class IMU_ACCELERATION : public ::google::protobuf::Message /* @@protoc_insertio
 
   // accessors -------------------------------------------------------
 
-  // uint32 accel_x = 1;
+  // float accel_x = 1;
   void clear_accel_x();
   static const int kAccelXFieldNumber = 1;
-  ::google::protobuf::uint32 accel_x() const;
-  void set_accel_x(::google::protobuf::uint32 value);
+  float accel_x() const;
+  void set_accel_x(float value);
 
-  // uint32 accel_y = 2;
+  // float accel_y = 2;
   void clear_accel_y();
   static const int kAccelYFieldNumber = 2;
-  ::google::protobuf::uint32 accel_y() const;
-  void set_accel_y(::google::protobuf::uint32 value);
+  float accel_y() const;
+  void set_accel_y(float value);
 
   // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
@@ -384,20 +384,20 @@ class IMU_ACCELERATION : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 accel_z = 3;
+  // float accel_z = 3;
   void clear_accel_z();
   static const int kAccelZFieldNumber = 3;
-  ::google::protobuf::uint32 accel_z() const;
-  void set_accel_z(::google::protobuf::uint32 value);
+  float accel_z() const;
+  void set_accel_z(float value);
 
   // @@protoc_insertion_point(class_scope:secondary.IMU_ACCELERATION)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 accel_x_;
-  ::google::protobuf::uint32 accel_y_;
+  float accel_x_;
+  float accel_y_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 accel_z_;
+  float accel_z_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
 };
@@ -2936,11 +2936,11 @@ class PEDALS_OUTPUT : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::uint32 apps() const;
   void set_apps(::google::protobuf::uint32 value);
 
-  // uint32 bse_front = 2;
+  // float bse_front = 2;
   void clear_bse_front();
   static const int kBseFrontFieldNumber = 2;
-  ::google::protobuf::uint32 bse_front() const;
-  void set_bse_front(::google::protobuf::uint32 value);
+  float bse_front() const;
+  void set_bse_front(float value);
 
   // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
@@ -2948,20 +2948,20 @@ class PEDALS_OUTPUT : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 bse_rear = 3;
+  // float bse_rear = 3;
   void clear_bse_rear();
   static const int kBseRearFieldNumber = 3;
-  ::google::protobuf::uint32 bse_rear() const;
-  void set_bse_rear(::google::protobuf::uint32 value);
+  float bse_rear() const;
+  void set_bse_rear(float value);
 
   // @@protoc_insertion_point(class_scope:secondary.PEDALS_OUTPUT)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 apps_;
-  ::google::protobuf::uint32 bse_front_;
+  float bse_front_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 bse_rear_;
+  float bse_rear_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
 };
@@ -3611,43 +3611,43 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 #endif  // __GNUC__
 // IMU_ANGULAR_RATE
 
-// uint32 ang_rate_x = 1;
+// float ang_rate_x = 1;
 inline void IMU_ANGULAR_RATE::clear_ang_rate_x() {
-  ang_rate_x_ = 0u;
+  ang_rate_x_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ANGULAR_RATE::ang_rate_x() const {
+inline float IMU_ANGULAR_RATE::ang_rate_x() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ANGULAR_RATE.ang_rate_x)
   return ang_rate_x_;
 }
-inline void IMU_ANGULAR_RATE::set_ang_rate_x(::google::protobuf::uint32 value) {
+inline void IMU_ANGULAR_RATE::set_ang_rate_x(float value) {
   
   ang_rate_x_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ANGULAR_RATE.ang_rate_x)
 }
 
-// uint32 ang_rate_y = 2;
+// float ang_rate_y = 2;
 inline void IMU_ANGULAR_RATE::clear_ang_rate_y() {
-  ang_rate_y_ = 0u;
+  ang_rate_y_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ANGULAR_RATE::ang_rate_y() const {
+inline float IMU_ANGULAR_RATE::ang_rate_y() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ANGULAR_RATE.ang_rate_y)
   return ang_rate_y_;
 }
-inline void IMU_ANGULAR_RATE::set_ang_rate_y(::google::protobuf::uint32 value) {
+inline void IMU_ANGULAR_RATE::set_ang_rate_y(float value) {
   
   ang_rate_y_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ANGULAR_RATE.ang_rate_y)
 }
 
-// uint32 ang_rate_z = 3;
+// float ang_rate_z = 3;
 inline void IMU_ANGULAR_RATE::clear_ang_rate_z() {
-  ang_rate_z_ = 0u;
+  ang_rate_z_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ANGULAR_RATE::ang_rate_z() const {
+inline float IMU_ANGULAR_RATE::ang_rate_z() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ANGULAR_RATE.ang_rate_z)
   return ang_rate_z_;
 }
-inline void IMU_ANGULAR_RATE::set_ang_rate_z(::google::protobuf::uint32 value) {
+inline void IMU_ANGULAR_RATE::set_ang_rate_z(float value) {
   
   ang_rate_z_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ANGULAR_RATE.ang_rate_z)
@@ -3671,43 +3671,43 @@ inline void IMU_ANGULAR_RATE::set__inner_timestamp(::google::protobuf::uint64 va
 
 // IMU_ACCELERATION
 
-// uint32 accel_x = 1;
+// float accel_x = 1;
 inline void IMU_ACCELERATION::clear_accel_x() {
-  accel_x_ = 0u;
+  accel_x_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ACCELERATION::accel_x() const {
+inline float IMU_ACCELERATION::accel_x() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ACCELERATION.accel_x)
   return accel_x_;
 }
-inline void IMU_ACCELERATION::set_accel_x(::google::protobuf::uint32 value) {
+inline void IMU_ACCELERATION::set_accel_x(float value) {
   
   accel_x_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ACCELERATION.accel_x)
 }
 
-// uint32 accel_y = 2;
+// float accel_y = 2;
 inline void IMU_ACCELERATION::clear_accel_y() {
-  accel_y_ = 0u;
+  accel_y_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ACCELERATION::accel_y() const {
+inline float IMU_ACCELERATION::accel_y() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ACCELERATION.accel_y)
   return accel_y_;
 }
-inline void IMU_ACCELERATION::set_accel_y(::google::protobuf::uint32 value) {
+inline void IMU_ACCELERATION::set_accel_y(float value) {
   
   accel_y_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ACCELERATION.accel_y)
 }
 
-// uint32 accel_z = 3;
+// float accel_z = 3;
 inline void IMU_ACCELERATION::clear_accel_z() {
-  accel_z_ = 0u;
+  accel_z_ = 0;
 }
-inline ::google::protobuf::uint32 IMU_ACCELERATION::accel_z() const {
+inline float IMU_ACCELERATION::accel_z() const {
   // @@protoc_insertion_point(field_get:secondary.IMU_ACCELERATION.accel_z)
   return accel_z_;
 }
-inline void IMU_ACCELERATION::set_accel_z(::google::protobuf::uint32 value) {
+inline void IMU_ACCELERATION::set_accel_z(float value) {
   
   accel_z_ = value;
   // @@protoc_insertion_point(field_set:secondary.IMU_ACCELERATION.accel_z)
@@ -5053,29 +5053,29 @@ inline void PEDALS_OUTPUT::set_apps(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.apps)
 }
 
-// uint32 bse_front = 2;
+// float bse_front = 2;
 inline void PEDALS_OUTPUT::clear_bse_front() {
-  bse_front_ = 0u;
+  bse_front_ = 0;
 }
-inline ::google::protobuf::uint32 PEDALS_OUTPUT::bse_front() const {
+inline float PEDALS_OUTPUT::bse_front() const {
   // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.bse_front)
   return bse_front_;
 }
-inline void PEDALS_OUTPUT::set_bse_front(::google::protobuf::uint32 value) {
+inline void PEDALS_OUTPUT::set_bse_front(float value) {
   
   bse_front_ = value;
   // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_front)
 }
 
-// uint32 bse_rear = 3;
+// float bse_rear = 3;
 inline void PEDALS_OUTPUT::clear_bse_rear() {
-  bse_rear_ = 0u;
+  bse_rear_ = 0;
 }
-inline ::google::protobuf::uint32 PEDALS_OUTPUT::bse_rear() const {
+inline float PEDALS_OUTPUT::bse_rear() const {
   // @@protoc_insertion_point(field_get:secondary.PEDALS_OUTPUT.bse_rear)
   return bse_rear_;
 }
-inline void PEDALS_OUTPUT::set_bse_rear(::google::protobuf::uint32 value) {
+inline void PEDALS_OUTPUT::set_bse_rear(float value) {
   
   bse_rear_ = value;
   // @@protoc_insertion_point(field_set:secondary.PEDALS_OUTPUT.bse_rear)

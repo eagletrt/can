@@ -1933,29 +1933,29 @@ class HV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // uint32 pack_voltage = 1;
+  // float pack_voltage = 1;
   void clear_pack_voltage();
   static const int kPackVoltageFieldNumber = 1;
-  ::google::protobuf::uint32 pack_voltage() const;
-  void set_pack_voltage(::google::protobuf::uint32 value);
+  float pack_voltage() const;
+  void set_pack_voltage(float value);
 
-  // uint32 bus_voltage = 2;
+  // float bus_voltage = 2;
   void clear_bus_voltage();
   static const int kBusVoltageFieldNumber = 2;
-  ::google::protobuf::uint32 bus_voltage() const;
-  void set_bus_voltage(::google::protobuf::uint32 value);
+  float bus_voltage() const;
+  void set_bus_voltage(float value);
 
-  // uint32 max_cell_voltage = 3;
+  // float max_cell_voltage = 3;
   void clear_max_cell_voltage();
   static const int kMaxCellVoltageFieldNumber = 3;
-  ::google::protobuf::uint32 max_cell_voltage() const;
-  void set_max_cell_voltage(::google::protobuf::uint32 value);
+  float max_cell_voltage() const;
+  void set_max_cell_voltage(float value);
 
-  // uint32 min_cell_voltage = 4;
+  // float min_cell_voltage = 4;
   void clear_min_cell_voltage();
   static const int kMinCellVoltageFieldNumber = 4;
-  ::google::protobuf::uint32 min_cell_voltage() const;
-  void set_min_cell_voltage(::google::protobuf::uint32 value);
+  float min_cell_voltage() const;
+  void set_min_cell_voltage(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -1967,10 +1967,10 @@ class HV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 pack_voltage_;
-  ::google::protobuf::uint32 bus_voltage_;
-  ::google::protobuf::uint32 max_cell_voltage_;
-  ::google::protobuf::uint32 min_cell_voltage_;
+  float pack_voltage_;
+  float bus_voltage_;
+  float max_cell_voltage_;
+  float min_cell_voltage_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -2064,29 +2064,29 @@ class HV_CURRENT : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // uint32 current = 1;
+  // float current = 1;
   void clear_current();
   static const int kCurrentFieldNumber = 1;
-  ::google::protobuf::uint32 current() const;
-  void set_current(::google::protobuf::uint32 value);
+  float current() const;
+  void set_current(float value);
 
-  // uint32 power = 2;
+  // float power = 2;
   void clear_power();
   static const int kPowerFieldNumber = 2;
-  ::google::protobuf::uint32 power() const;
-  void set_power(::google::protobuf::uint32 value);
+  float power() const;
+  void set_power(float value);
 
-  // uint32 energy = 3;
+  // float energy = 3;
   void clear_energy();
   static const int kEnergyFieldNumber = 3;
-  ::google::protobuf::uint32 energy() const;
-  void set_energy(::google::protobuf::uint32 value);
+  float energy() const;
+  void set_energy(float value);
 
-  // uint32 soc = 4;
+  // float soc = 4;
   void clear_soc();
   static const int kSocFieldNumber = 4;
-  ::google::protobuf::uint32 soc() const;
-  void set_soc(::google::protobuf::uint32 value);
+  float soc() const;
+  void set_soc(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2098,10 +2098,10 @@ class HV_CURRENT : public ::google::protobuf::Message /* @@protoc_insertion_poin
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 current_;
-  ::google::protobuf::uint32 power_;
-  ::google::protobuf::uint32 energy_;
-  ::google::protobuf::uint32 soc_;
+  float current_;
+  float power_;
+  float energy_;
+  float soc_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -2195,17 +2195,17 @@ class HV_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // uint32 average_temp = 1;
+  // float average_temp = 1;
   void clear_average_temp();
   static const int kAverageTempFieldNumber = 1;
-  ::google::protobuf::uint32 average_temp() const;
-  void set_average_temp(::google::protobuf::uint32 value);
+  float average_temp() const;
+  void set_average_temp(float value);
 
-  // uint32 max_temp = 2;
+  // float max_temp = 2;
   void clear_max_temp();
   static const int kMaxTempFieldNumber = 2;
-  ::google::protobuf::uint32 max_temp() const;
-  void set_max_temp(::google::protobuf::uint32 value);
+  float max_temp() const;
+  void set_max_temp(float value);
 
   // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
@@ -2213,20 +2213,20 @@ class HV_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 min_temp = 3;
+  // float min_temp = 3;
   void clear_min_temp();
   static const int kMinTempFieldNumber = 3;
-  ::google::protobuf::uint32 min_temp() const;
-  void set_min_temp(::google::protobuf::uint32 value);
+  float min_temp() const;
+  void set_min_temp(float value);
 
   // @@protoc_insertion_point(class_scope:primary.HV_TEMP)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 average_temp_;
-  ::google::protobuf::uint32 max_temp_;
+  float average_temp_;
+  float max_temp_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 min_temp_;
+  float min_temp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -2552,11 +2552,11 @@ class HV_FANS_OVERRIDE : public ::google::protobuf::Message /* @@protoc_insertio
   ::primary::Toggle fans_override() const;
   void set_fans_override(::primary::Toggle value);
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   void clear_fans_speed();
   static const int kFansSpeedFieldNumber = 2;
-  ::google::protobuf::uint32 fans_speed() const;
-  void set_fans_speed(::google::protobuf::uint32 value);
+  float fans_speed() const;
+  void set_fans_speed(float value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -2569,7 +2569,7 @@ class HV_FANS_OVERRIDE : public ::google::protobuf::Message /* @@protoc_insertio
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   int fans_override_;
-  ::google::protobuf::uint32 fans_speed_;
+  float fans_speed_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -2779,11 +2779,11 @@ class HV_FANS_OVERRIDE_STATUS : public ::google::protobuf::Message /* @@protoc_i
   ::primary::Toggle fans_override() const;
   void set_fans_override(::primary::Toggle value);
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   void clear_fans_speed();
   static const int kFansSpeedFieldNumber = 2;
-  ::google::protobuf::uint32 fans_speed() const;
-  void set_fans_speed(::google::protobuf::uint32 value);
+  float fans_speed() const;
+  void set_fans_speed(float value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -2796,7 +2796,7 @@ class HV_FANS_OVERRIDE_STATUS : public ::google::protobuf::Message /* @@protoc_i
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   int fans_override_;
-  ::google::protobuf::uint32 fans_speed_;
+  float fans_speed_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -4155,18 +4155,18 @@ class LV_CURRENT : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 current = 1;
+  // float current = 1;
   void clear_current();
   static const int kCurrentFieldNumber = 1;
-  ::google::protobuf::uint32 current() const;
-  void set_current(::google::protobuf::uint32 value);
+  float current() const;
+  void set_current(float value);
 
   // @@protoc_insertion_point(class_scope:primary.LV_CURRENT)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 current_;
+  float current_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -4259,29 +4259,29 @@ class LV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // uint32 voltage_1 = 1;
+  // float voltage_1 = 1;
   void clear_voltage_1();
   static const int kVoltage1FieldNumber = 1;
-  ::google::protobuf::uint32 voltage_1() const;
-  void set_voltage_1(::google::protobuf::uint32 value);
+  float voltage_1() const;
+  void set_voltage_1(float value);
 
-  // uint32 voltage_2 = 2;
+  // float voltage_2 = 2;
   void clear_voltage_2();
   static const int kVoltage2FieldNumber = 2;
-  ::google::protobuf::uint32 voltage_2() const;
-  void set_voltage_2(::google::protobuf::uint32 value);
+  float voltage_2() const;
+  void set_voltage_2(float value);
 
-  // uint32 voltage_3 = 3;
+  // float voltage_3 = 3;
   void clear_voltage_3();
   static const int kVoltage3FieldNumber = 3;
-  ::google::protobuf::uint32 voltage_3() const;
-  void set_voltage_3(::google::protobuf::uint32 value);
+  float voltage_3() const;
+  void set_voltage_3(float value);
 
-  // uint32 voltage_4 = 4;
+  // float voltage_4 = 4;
   void clear_voltage_4();
   static const int kVoltage4FieldNumber = 4;
-  ::google::protobuf::uint32 voltage_4() const;
-  void set_voltage_4(::google::protobuf::uint32 value);
+  float voltage_4() const;
+  void set_voltage_4(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -4293,10 +4293,10 @@ class LV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 voltage_1_;
-  ::google::protobuf::uint32 voltage_2_;
-  ::google::protobuf::uint32 voltage_3_;
-  ::google::protobuf::uint32 voltage_4_;
+  float voltage_1_;
+  float voltage_2_;
+  float voltage_3_;
+  float voltage_4_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -4396,18 +4396,18 @@ class LV_TOTAL_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 total_voltage = 1;
+  // float total_voltage = 1;
   void clear_total_voltage();
   static const int kTotalVoltageFieldNumber = 1;
-  ::google::protobuf::uint32 total_voltage() const;
-  void set_total_voltage(::google::protobuf::uint32 value);
+  float total_voltage() const;
+  void set_total_voltage(float value);
 
   // @@protoc_insertion_point(class_scope:primary.LV_TOTAL_VOLTAGE)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 total_voltage_;
+  float total_voltage_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -4500,29 +4500,29 @@ class LV_TEMPERATURE : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // uint32 bp_temperature_1 = 1;
+  // float bp_temperature_1 = 1;
   void clear_bp_temperature_1();
   static const int kBpTemperature1FieldNumber = 1;
-  ::google::protobuf::uint32 bp_temperature_1() const;
-  void set_bp_temperature_1(::google::protobuf::uint32 value);
+  float bp_temperature_1() const;
+  void set_bp_temperature_1(float value);
 
-  // uint32 bp_temperature_2 = 2;
+  // float bp_temperature_2 = 2;
   void clear_bp_temperature_2();
   static const int kBpTemperature2FieldNumber = 2;
-  ::google::protobuf::uint32 bp_temperature_2() const;
-  void set_bp_temperature_2(::google::protobuf::uint32 value);
+  float bp_temperature_2() const;
+  void set_bp_temperature_2(float value);
 
-  // uint32 dcdc12_temperature = 3;
+  // float dcdc12_temperature = 3;
   void clear_dcdc12_temperature();
   static const int kDcdc12TemperatureFieldNumber = 3;
-  ::google::protobuf::uint32 dcdc12_temperature() const;
-  void set_dcdc12_temperature(::google::protobuf::uint32 value);
+  float dcdc12_temperature() const;
+  void set_dcdc12_temperature(float value);
 
-  // uint32 dcdc24_temperature = 4;
+  // float dcdc24_temperature = 4;
   void clear_dcdc24_temperature();
   static const int kDcdc24TemperatureFieldNumber = 4;
-  ::google::protobuf::uint32 dcdc24_temperature() const;
-  void set_dcdc24_temperature(::google::protobuf::uint32 value);
+  float dcdc24_temperature() const;
+  void set_dcdc24_temperature(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -4534,10 +4534,10 @@ class LV_TEMPERATURE : public ::google::protobuf::Message /* @@protoc_insertion_
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 bp_temperature_1_;
-  ::google::protobuf::uint32 bp_temperature_2_;
-  ::google::protobuf::uint32 dcdc12_temperature_;
-  ::google::protobuf::uint32 dcdc24_temperature_;
+  float bp_temperature_1_;
+  float bp_temperature_2_;
+  float dcdc12_temperature_;
+  float dcdc24_temperature_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -4631,17 +4631,17 @@ class COOLING_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   void clear_radiators_speed();
   static const int kRadiatorsSpeedFieldNumber = 1;
-  ::google::protobuf::uint32 radiators_speed() const;
-  void set_radiators_speed(::google::protobuf::uint32 value);
+  float radiators_speed() const;
+  void set_radiators_speed(float value);
 
-  // uint32 pumps_speed = 2;
+  // float pumps_speed = 2;
   void clear_pumps_speed();
   static const int kPumpsSpeedFieldNumber = 2;
-  ::google::protobuf::uint32 pumps_speed() const;
-  void set_pumps_speed(::google::protobuf::uint32 value);
+  float pumps_speed() const;
+  void set_pumps_speed(float value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -4653,8 +4653,8 @@ class COOLING_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 radiators_speed_;
-  ::google::protobuf::uint32 pumps_speed_;
+  float radiators_speed_;
+  float pumps_speed_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -4754,18 +4754,18 @@ class SET_RADIATOR_SPEED : public ::google::protobuf::Message /* @@protoc_insert
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   void clear_radiators_speed();
   static const int kRadiatorsSpeedFieldNumber = 1;
-  ::google::protobuf::uint32 radiators_speed() const;
-  void set_radiators_speed(::google::protobuf::uint32 value);
+  float radiators_speed() const;
+  void set_radiators_speed(float value);
 
   // @@protoc_insertion_point(class_scope:primary.SET_RADIATOR_SPEED)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 radiators_speed_;
+  float radiators_speed_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -4864,18 +4864,18 @@ class SET_PUMPS_SPEED : public ::google::protobuf::Message /* @@protoc_insertion
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 pumps_speed = 1;
+  // float pumps_speed = 1;
   void clear_pumps_speed();
   static const int kPumpsSpeedFieldNumber = 1;
-  ::google::protobuf::uint32 pumps_speed() const;
-  void set_pumps_speed(::google::protobuf::uint32 value);
+  float pumps_speed() const;
+  void set_pumps_speed(float value);
 
   // @@protoc_insertion_point(class_scope:primary.SET_PUMPS_SPEED)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 pumps_speed_;
+  float pumps_speed_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -5531,23 +5531,23 @@ class HV_CELLS_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage_0 = 2;
+  // float voltage_0 = 2;
   void clear_voltage_0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage_0() const;
-  void set_voltage_0(::google::protobuf::uint32 value);
+  float voltage_0() const;
+  void set_voltage_0(float value);
 
-  // uint32 voltage_1 = 3;
+  // float voltage_1 = 3;
   void clear_voltage_1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage_1() const;
-  void set_voltage_1(::google::protobuf::uint32 value);
+  float voltage_1() const;
+  void set_voltage_1(float value);
 
-  // uint32 voltage_2 = 4;
+  // float voltage_2 = 4;
   void clear_voltage_2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage_2() const;
-  void set_voltage_2(::google::protobuf::uint32 value);
+  float voltage_2() const;
+  void set_voltage_2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -5560,9 +5560,9 @@ class HV_CELLS_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertio
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage_0_;
-  ::google::protobuf::uint32 voltage_1_;
-  ::google::protobuf::uint32 voltage_2_;
+  float voltage_0_;
+  float voltage_1_;
+  float voltage_2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -5662,67 +5662,60 @@ class HV_CELLS_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp_0 = 2;
+  // float temp_0 = 2;
   void clear_temp_0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp_0() const;
-  void set_temp_0(::google::protobuf::uint32 value);
+  float temp_0() const;
+  void set_temp_0(float value);
 
-  // uint32 temp_1 = 3;
+  // float temp_1 = 3;
   void clear_temp_1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp_1() const;
-  void set_temp_1(::google::protobuf::uint32 value);
+  float temp_1() const;
+  void set_temp_1(float value);
 
-  // uint32 temp_2 = 4;
+  // float temp_2 = 4;
   void clear_temp_2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp_2() const;
-  void set_temp_2(::google::protobuf::uint32 value);
+  float temp_2() const;
+  void set_temp_2(float value);
 
-  // uint32 temp_3 = 5;
+  // float temp_3 = 5;
   void clear_temp_3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp_3() const;
-  void set_temp_3(::google::protobuf::uint32 value);
+  float temp_3() const;
+  void set_temp_3(float value);
 
-  // uint32 temp_4 = 6;
+  // float temp_4 = 6;
   void clear_temp_4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp_4() const;
-  void set_temp_4(::google::protobuf::uint32 value);
+  float temp_4() const;
+  void set_temp_4(float value);
 
-  // uint32 temp_5 = 7;
-  void clear_temp_5();
-  static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp_5() const;
-  void set_temp_5(::google::protobuf::uint32 value);
-
-  // uint32 temp_6 = 8;
-  void clear_temp_6();
-  static const int kTemp6FieldNumber = 8;
-  ::google::protobuf::uint32 temp_6() const;
-  void set_temp_6(::google::protobuf::uint32 value);
-
-  // uint64 _inner_timestamp = 9;
+  // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
-  static const int kInnerTimestampFieldNumber = 9;
+  static const int kInnerTimestampFieldNumber = 8;
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
+
+  // float temp_5 = 7;
+  void clear_temp_5();
+  static const int kTemp5FieldNumber = 7;
+  float temp_5() const;
+  void set_temp_5(float value);
 
   // @@protoc_insertion_point(class_scope:primary.HV_CELLS_TEMP)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp_0_;
-  ::google::protobuf::uint32 temp_1_;
-  ::google::protobuf::uint32 temp_2_;
-  ::google::protobuf::uint32 temp_3_;
-  ::google::protobuf::uint32 temp_4_;
-  ::google::protobuf::uint32 temp_5_;
-  ::google::protobuf::uint32 temp_6_;
+  float temp_0_;
+  float temp_1_;
+  float temp_2_;
+  float temp_3_;
+  float temp_4_;
   ::google::protobuf::uint64 _inner_timestamp_;
+  float temp_5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
 };
@@ -6145,29 +6138,29 @@ class SPEED : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // uint32 encoder_r = 1;
+  // float encoder_r = 1;
   void clear_encoder_r();
   static const int kEncoderRFieldNumber = 1;
-  ::google::protobuf::uint32 encoder_r() const;
-  void set_encoder_r(::google::protobuf::uint32 value);
+  float encoder_r() const;
+  void set_encoder_r(float value);
 
-  // uint32 encoder_l = 2;
+  // float encoder_l = 2;
   void clear_encoder_l();
   static const int kEncoderLFieldNumber = 2;
-  ::google::protobuf::uint32 encoder_l() const;
-  void set_encoder_l(::google::protobuf::uint32 value);
+  float encoder_l() const;
+  void set_encoder_l(float value);
 
-  // uint32 inverter_r = 3;
+  // float inverter_r = 3;
   void clear_inverter_r();
   static const int kInverterRFieldNumber = 3;
-  ::google::protobuf::uint32 inverter_r() const;
-  void set_inverter_r(::google::protobuf::uint32 value);
+  float inverter_r() const;
+  void set_inverter_r(float value);
 
-  // uint32 inverter_l = 4;
+  // float inverter_l = 4;
   void clear_inverter_l();
   static const int kInverterLFieldNumber = 4;
-  ::google::protobuf::uint32 inverter_l() const;
-  void set_inverter_l(::google::protobuf::uint32 value);
+  float inverter_l() const;
+  void set_inverter_l(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -6179,10 +6172,10 @@ class SPEED : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::uint32 encoder_r_;
-  ::google::protobuf::uint32 encoder_l_;
-  ::google::protobuf::uint32 inverter_r_;
-  ::google::protobuf::uint32 inverter_l_;
+  float encoder_r_;
+  float encoder_l_;
+  float inverter_r_;
+  float inverter_l_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -10784,57 +10777,57 @@ inline void STEER_SYSTEM_STATUS::set__inner_timestamp(::google::protobuf::uint64
 
 // HV_VOLTAGE
 
-// uint32 pack_voltage = 1;
+// float pack_voltage = 1;
 inline void HV_VOLTAGE::clear_pack_voltage() {
-  pack_voltage_ = 0u;
+  pack_voltage_ = 0;
 }
-inline ::google::protobuf::uint32 HV_VOLTAGE::pack_voltage() const {
+inline float HV_VOLTAGE::pack_voltage() const {
   // @@protoc_insertion_point(field_get:primary.HV_VOLTAGE.pack_voltage)
   return pack_voltage_;
 }
-inline void HV_VOLTAGE::set_pack_voltage(::google::protobuf::uint32 value) {
+inline void HV_VOLTAGE::set_pack_voltage(float value) {
   
   pack_voltage_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_VOLTAGE.pack_voltage)
 }
 
-// uint32 bus_voltage = 2;
+// float bus_voltage = 2;
 inline void HV_VOLTAGE::clear_bus_voltage() {
-  bus_voltage_ = 0u;
+  bus_voltage_ = 0;
 }
-inline ::google::protobuf::uint32 HV_VOLTAGE::bus_voltage() const {
+inline float HV_VOLTAGE::bus_voltage() const {
   // @@protoc_insertion_point(field_get:primary.HV_VOLTAGE.bus_voltage)
   return bus_voltage_;
 }
-inline void HV_VOLTAGE::set_bus_voltage(::google::protobuf::uint32 value) {
+inline void HV_VOLTAGE::set_bus_voltage(float value) {
   
   bus_voltage_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_VOLTAGE.bus_voltage)
 }
 
-// uint32 max_cell_voltage = 3;
+// float max_cell_voltage = 3;
 inline void HV_VOLTAGE::clear_max_cell_voltage() {
-  max_cell_voltage_ = 0u;
+  max_cell_voltage_ = 0;
 }
-inline ::google::protobuf::uint32 HV_VOLTAGE::max_cell_voltage() const {
+inline float HV_VOLTAGE::max_cell_voltage() const {
   // @@protoc_insertion_point(field_get:primary.HV_VOLTAGE.max_cell_voltage)
   return max_cell_voltage_;
 }
-inline void HV_VOLTAGE::set_max_cell_voltage(::google::protobuf::uint32 value) {
+inline void HV_VOLTAGE::set_max_cell_voltage(float value) {
   
   max_cell_voltage_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_VOLTAGE.max_cell_voltage)
 }
 
-// uint32 min_cell_voltage = 4;
+// float min_cell_voltage = 4;
 inline void HV_VOLTAGE::clear_min_cell_voltage() {
-  min_cell_voltage_ = 0u;
+  min_cell_voltage_ = 0;
 }
-inline ::google::protobuf::uint32 HV_VOLTAGE::min_cell_voltage() const {
+inline float HV_VOLTAGE::min_cell_voltage() const {
   // @@protoc_insertion_point(field_get:primary.HV_VOLTAGE.min_cell_voltage)
   return min_cell_voltage_;
 }
-inline void HV_VOLTAGE::set_min_cell_voltage(::google::protobuf::uint32 value) {
+inline void HV_VOLTAGE::set_min_cell_voltage(float value) {
   
   min_cell_voltage_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_VOLTAGE.min_cell_voltage)
@@ -10858,57 +10851,57 @@ inline void HV_VOLTAGE::set__inner_timestamp(::google::protobuf::uint64 value) {
 
 // HV_CURRENT
 
-// uint32 current = 1;
+// float current = 1;
 inline void HV_CURRENT::clear_current() {
-  current_ = 0u;
+  current_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CURRENT::current() const {
+inline float HV_CURRENT::current() const {
   // @@protoc_insertion_point(field_get:primary.HV_CURRENT.current)
   return current_;
 }
-inline void HV_CURRENT::set_current(::google::protobuf::uint32 value) {
+inline void HV_CURRENT::set_current(float value) {
   
   current_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.current)
 }
 
-// uint32 power = 2;
+// float power = 2;
 inline void HV_CURRENT::clear_power() {
-  power_ = 0u;
+  power_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CURRENT::power() const {
+inline float HV_CURRENT::power() const {
   // @@protoc_insertion_point(field_get:primary.HV_CURRENT.power)
   return power_;
 }
-inline void HV_CURRENT::set_power(::google::protobuf::uint32 value) {
+inline void HV_CURRENT::set_power(float value) {
   
   power_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.power)
 }
 
-// uint32 energy = 3;
+// float energy = 3;
 inline void HV_CURRENT::clear_energy() {
-  energy_ = 0u;
+  energy_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CURRENT::energy() const {
+inline float HV_CURRENT::energy() const {
   // @@protoc_insertion_point(field_get:primary.HV_CURRENT.energy)
   return energy_;
 }
-inline void HV_CURRENT::set_energy(::google::protobuf::uint32 value) {
+inline void HV_CURRENT::set_energy(float value) {
   
   energy_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.energy)
 }
 
-// uint32 soc = 4;
+// float soc = 4;
 inline void HV_CURRENT::clear_soc() {
-  soc_ = 0u;
+  soc_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CURRENT::soc() const {
+inline float HV_CURRENT::soc() const {
   // @@protoc_insertion_point(field_get:primary.HV_CURRENT.soc)
   return soc_;
 }
-inline void HV_CURRENT::set_soc(::google::protobuf::uint32 value) {
+inline void HV_CURRENT::set_soc(float value) {
   
   soc_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CURRENT.soc)
@@ -10932,43 +10925,43 @@ inline void HV_CURRENT::set__inner_timestamp(::google::protobuf::uint64 value) {
 
 // HV_TEMP
 
-// uint32 average_temp = 1;
+// float average_temp = 1;
 inline void HV_TEMP::clear_average_temp() {
-  average_temp_ = 0u;
+  average_temp_ = 0;
 }
-inline ::google::protobuf::uint32 HV_TEMP::average_temp() const {
+inline float HV_TEMP::average_temp() const {
   // @@protoc_insertion_point(field_get:primary.HV_TEMP.average_temp)
   return average_temp_;
 }
-inline void HV_TEMP::set_average_temp(::google::protobuf::uint32 value) {
+inline void HV_TEMP::set_average_temp(float value) {
   
   average_temp_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_TEMP.average_temp)
 }
 
-// uint32 max_temp = 2;
+// float max_temp = 2;
 inline void HV_TEMP::clear_max_temp() {
-  max_temp_ = 0u;
+  max_temp_ = 0;
 }
-inline ::google::protobuf::uint32 HV_TEMP::max_temp() const {
+inline float HV_TEMP::max_temp() const {
   // @@protoc_insertion_point(field_get:primary.HV_TEMP.max_temp)
   return max_temp_;
 }
-inline void HV_TEMP::set_max_temp(::google::protobuf::uint32 value) {
+inline void HV_TEMP::set_max_temp(float value) {
   
   max_temp_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_TEMP.max_temp)
 }
 
-// uint32 min_temp = 3;
+// float min_temp = 3;
 inline void HV_TEMP::clear_min_temp() {
-  min_temp_ = 0u;
+  min_temp_ = 0;
 }
-inline ::google::protobuf::uint32 HV_TEMP::min_temp() const {
+inline float HV_TEMP::min_temp() const {
   // @@protoc_insertion_point(field_get:primary.HV_TEMP.min_temp)
   return min_temp_;
 }
-inline void HV_TEMP::set_min_temp(::google::protobuf::uint32 value) {
+inline void HV_TEMP::set_min_temp(float value) {
   
   min_temp_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_TEMP.min_temp)
@@ -11084,15 +11077,15 @@ inline void HV_FANS_OVERRIDE::set_fans_override(::primary::Toggle value) {
   // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE.fans_override)
 }
 
-// uint32 fans_speed = 2;
+// float fans_speed = 2;
 inline void HV_FANS_OVERRIDE::clear_fans_speed() {
-  fans_speed_ = 0u;
+  fans_speed_ = 0;
 }
-inline ::google::protobuf::uint32 HV_FANS_OVERRIDE::fans_speed() const {
+inline float HV_FANS_OVERRIDE::fans_speed() const {
   // @@protoc_insertion_point(field_get:primary.HV_FANS_OVERRIDE.fans_speed)
   return fans_speed_;
 }
-inline void HV_FANS_OVERRIDE::set_fans_speed(::google::protobuf::uint32 value) {
+inline void HV_FANS_OVERRIDE::set_fans_speed(float value) {
   
   fans_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE.fans_speed)
@@ -11162,15 +11155,15 @@ inline void HV_FANS_OVERRIDE_STATUS::set_fans_override(::primary::Toggle value) 
   // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE_STATUS.fans_override)
 }
 
-// uint32 fans_speed = 2;
+// float fans_speed = 2;
 inline void HV_FANS_OVERRIDE_STATUS::clear_fans_speed() {
-  fans_speed_ = 0u;
+  fans_speed_ = 0;
 }
-inline ::google::protobuf::uint32 HV_FANS_OVERRIDE_STATUS::fans_speed() const {
+inline float HV_FANS_OVERRIDE_STATUS::fans_speed() const {
   // @@protoc_insertion_point(field_get:primary.HV_FANS_OVERRIDE_STATUS.fans_speed)
   return fans_speed_;
 }
-inline void HV_FANS_OVERRIDE_STATUS::set_fans_speed(::google::protobuf::uint32 value) {
+inline void HV_FANS_OVERRIDE_STATUS::set_fans_speed(float value) {
   
   fans_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_FANS_OVERRIDE_STATUS.fans_speed)
@@ -11644,15 +11637,15 @@ inline void DAS_ERRORS::set__inner_timestamp(::google::protobuf::uint64 value) {
 
 // LV_CURRENT
 
-// uint32 current = 1;
+// float current = 1;
 inline void LV_CURRENT::clear_current() {
-  current_ = 0u;
+  current_ = 0;
 }
-inline ::google::protobuf::uint32 LV_CURRENT::current() const {
+inline float LV_CURRENT::current() const {
   // @@protoc_insertion_point(field_get:primary.LV_CURRENT.current)
   return current_;
 }
-inline void LV_CURRENT::set_current(::google::protobuf::uint32 value) {
+inline void LV_CURRENT::set_current(float value) {
   
   current_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_CURRENT.current)
@@ -11676,57 +11669,57 @@ inline void LV_CURRENT::set__inner_timestamp(::google::protobuf::uint64 value) {
 
 // LV_VOLTAGE
 
-// uint32 voltage_1 = 1;
+// float voltage_1 = 1;
 inline void LV_VOLTAGE::clear_voltage_1() {
-  voltage_1_ = 0u;
+  voltage_1_ = 0;
 }
-inline ::google::protobuf::uint32 LV_VOLTAGE::voltage_1() const {
+inline float LV_VOLTAGE::voltage_1() const {
   // @@protoc_insertion_point(field_get:primary.LV_VOLTAGE.voltage_1)
   return voltage_1_;
 }
-inline void LV_VOLTAGE::set_voltage_1(::google::protobuf::uint32 value) {
+inline void LV_VOLTAGE::set_voltage_1(float value) {
   
   voltage_1_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_VOLTAGE.voltage_1)
 }
 
-// uint32 voltage_2 = 2;
+// float voltage_2 = 2;
 inline void LV_VOLTAGE::clear_voltage_2() {
-  voltage_2_ = 0u;
+  voltage_2_ = 0;
 }
-inline ::google::protobuf::uint32 LV_VOLTAGE::voltage_2() const {
+inline float LV_VOLTAGE::voltage_2() const {
   // @@protoc_insertion_point(field_get:primary.LV_VOLTAGE.voltage_2)
   return voltage_2_;
 }
-inline void LV_VOLTAGE::set_voltage_2(::google::protobuf::uint32 value) {
+inline void LV_VOLTAGE::set_voltage_2(float value) {
   
   voltage_2_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_VOLTAGE.voltage_2)
 }
 
-// uint32 voltage_3 = 3;
+// float voltage_3 = 3;
 inline void LV_VOLTAGE::clear_voltage_3() {
-  voltage_3_ = 0u;
+  voltage_3_ = 0;
 }
-inline ::google::protobuf::uint32 LV_VOLTAGE::voltage_3() const {
+inline float LV_VOLTAGE::voltage_3() const {
   // @@protoc_insertion_point(field_get:primary.LV_VOLTAGE.voltage_3)
   return voltage_3_;
 }
-inline void LV_VOLTAGE::set_voltage_3(::google::protobuf::uint32 value) {
+inline void LV_VOLTAGE::set_voltage_3(float value) {
   
   voltage_3_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_VOLTAGE.voltage_3)
 }
 
-// uint32 voltage_4 = 4;
+// float voltage_4 = 4;
 inline void LV_VOLTAGE::clear_voltage_4() {
-  voltage_4_ = 0u;
+  voltage_4_ = 0;
 }
-inline ::google::protobuf::uint32 LV_VOLTAGE::voltage_4() const {
+inline float LV_VOLTAGE::voltage_4() const {
   // @@protoc_insertion_point(field_get:primary.LV_VOLTAGE.voltage_4)
   return voltage_4_;
 }
-inline void LV_VOLTAGE::set_voltage_4(::google::protobuf::uint32 value) {
+inline void LV_VOLTAGE::set_voltage_4(float value) {
   
   voltage_4_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_VOLTAGE.voltage_4)
@@ -11750,15 +11743,15 @@ inline void LV_VOLTAGE::set__inner_timestamp(::google::protobuf::uint64 value) {
 
 // LV_TOTAL_VOLTAGE
 
-// uint32 total_voltage = 1;
+// float total_voltage = 1;
 inline void LV_TOTAL_VOLTAGE::clear_total_voltage() {
-  total_voltage_ = 0u;
+  total_voltage_ = 0;
 }
-inline ::google::protobuf::uint32 LV_TOTAL_VOLTAGE::total_voltage() const {
+inline float LV_TOTAL_VOLTAGE::total_voltage() const {
   // @@protoc_insertion_point(field_get:primary.LV_TOTAL_VOLTAGE.total_voltage)
   return total_voltage_;
 }
-inline void LV_TOTAL_VOLTAGE::set_total_voltage(::google::protobuf::uint32 value) {
+inline void LV_TOTAL_VOLTAGE::set_total_voltage(float value) {
   
   total_voltage_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_TOTAL_VOLTAGE.total_voltage)
@@ -11782,57 +11775,57 @@ inline void LV_TOTAL_VOLTAGE::set__inner_timestamp(::google::protobuf::uint64 va
 
 // LV_TEMPERATURE
 
-// uint32 bp_temperature_1 = 1;
+// float bp_temperature_1 = 1;
 inline void LV_TEMPERATURE::clear_bp_temperature_1() {
-  bp_temperature_1_ = 0u;
+  bp_temperature_1_ = 0;
 }
-inline ::google::protobuf::uint32 LV_TEMPERATURE::bp_temperature_1() const {
+inline float LV_TEMPERATURE::bp_temperature_1() const {
   // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.bp_temperature_1)
   return bp_temperature_1_;
 }
-inline void LV_TEMPERATURE::set_bp_temperature_1(::google::protobuf::uint32 value) {
+inline void LV_TEMPERATURE::set_bp_temperature_1(float value) {
   
   bp_temperature_1_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.bp_temperature_1)
 }
 
-// uint32 bp_temperature_2 = 2;
+// float bp_temperature_2 = 2;
 inline void LV_TEMPERATURE::clear_bp_temperature_2() {
-  bp_temperature_2_ = 0u;
+  bp_temperature_2_ = 0;
 }
-inline ::google::protobuf::uint32 LV_TEMPERATURE::bp_temperature_2() const {
+inline float LV_TEMPERATURE::bp_temperature_2() const {
   // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.bp_temperature_2)
   return bp_temperature_2_;
 }
-inline void LV_TEMPERATURE::set_bp_temperature_2(::google::protobuf::uint32 value) {
+inline void LV_TEMPERATURE::set_bp_temperature_2(float value) {
   
   bp_temperature_2_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.bp_temperature_2)
 }
 
-// uint32 dcdc12_temperature = 3;
+// float dcdc12_temperature = 3;
 inline void LV_TEMPERATURE::clear_dcdc12_temperature() {
-  dcdc12_temperature_ = 0u;
+  dcdc12_temperature_ = 0;
 }
-inline ::google::protobuf::uint32 LV_TEMPERATURE::dcdc12_temperature() const {
+inline float LV_TEMPERATURE::dcdc12_temperature() const {
   // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.dcdc12_temperature)
   return dcdc12_temperature_;
 }
-inline void LV_TEMPERATURE::set_dcdc12_temperature(::google::protobuf::uint32 value) {
+inline void LV_TEMPERATURE::set_dcdc12_temperature(float value) {
   
   dcdc12_temperature_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.dcdc12_temperature)
 }
 
-// uint32 dcdc24_temperature = 4;
+// float dcdc24_temperature = 4;
 inline void LV_TEMPERATURE::clear_dcdc24_temperature() {
-  dcdc24_temperature_ = 0u;
+  dcdc24_temperature_ = 0;
 }
-inline ::google::protobuf::uint32 LV_TEMPERATURE::dcdc24_temperature() const {
+inline float LV_TEMPERATURE::dcdc24_temperature() const {
   // @@protoc_insertion_point(field_get:primary.LV_TEMPERATURE.dcdc24_temperature)
   return dcdc24_temperature_;
 }
-inline void LV_TEMPERATURE::set_dcdc24_temperature(::google::protobuf::uint32 value) {
+inline void LV_TEMPERATURE::set_dcdc24_temperature(float value) {
   
   dcdc24_temperature_ = value;
   // @@protoc_insertion_point(field_set:primary.LV_TEMPERATURE.dcdc24_temperature)
@@ -11856,29 +11849,29 @@ inline void LV_TEMPERATURE::set__inner_timestamp(::google::protobuf::uint64 valu
 
 // COOLING_STATUS
 
-// uint32 radiators_speed = 1;
+// float radiators_speed = 1;
 inline void COOLING_STATUS::clear_radiators_speed() {
-  radiators_speed_ = 0u;
+  radiators_speed_ = 0;
 }
-inline ::google::protobuf::uint32 COOLING_STATUS::radiators_speed() const {
+inline float COOLING_STATUS::radiators_speed() const {
   // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.radiators_speed)
   return radiators_speed_;
 }
-inline void COOLING_STATUS::set_radiators_speed(::google::protobuf::uint32 value) {
+inline void COOLING_STATUS::set_radiators_speed(float value) {
   
   radiators_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.radiators_speed)
 }
 
-// uint32 pumps_speed = 2;
+// float pumps_speed = 2;
 inline void COOLING_STATUS::clear_pumps_speed() {
-  pumps_speed_ = 0u;
+  pumps_speed_ = 0;
 }
-inline ::google::protobuf::uint32 COOLING_STATUS::pumps_speed() const {
+inline float COOLING_STATUS::pumps_speed() const {
   // @@protoc_insertion_point(field_get:primary.COOLING_STATUS.pumps_speed)
   return pumps_speed_;
 }
-inline void COOLING_STATUS::set_pumps_speed(::google::protobuf::uint32 value) {
+inline void COOLING_STATUS::set_pumps_speed(float value) {
   
   pumps_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.COOLING_STATUS.pumps_speed)
@@ -11902,15 +11895,15 @@ inline void COOLING_STATUS::set__inner_timestamp(::google::protobuf::uint64 valu
 
 // SET_RADIATOR_SPEED
 
-// uint32 radiators_speed = 1;
+// float radiators_speed = 1;
 inline void SET_RADIATOR_SPEED::clear_radiators_speed() {
-  radiators_speed_ = 0u;
+  radiators_speed_ = 0;
 }
-inline ::google::protobuf::uint32 SET_RADIATOR_SPEED::radiators_speed() const {
+inline float SET_RADIATOR_SPEED::radiators_speed() const {
   // @@protoc_insertion_point(field_get:primary.SET_RADIATOR_SPEED.radiators_speed)
   return radiators_speed_;
 }
-inline void SET_RADIATOR_SPEED::set_radiators_speed(::google::protobuf::uint32 value) {
+inline void SET_RADIATOR_SPEED::set_radiators_speed(float value) {
   
   radiators_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.SET_RADIATOR_SPEED.radiators_speed)
@@ -11934,15 +11927,15 @@ inline void SET_RADIATOR_SPEED::set__inner_timestamp(::google::protobuf::uint64 
 
 // SET_PUMPS_SPEED
 
-// uint32 pumps_speed = 1;
+// float pumps_speed = 1;
 inline void SET_PUMPS_SPEED::clear_pumps_speed() {
-  pumps_speed_ = 0u;
+  pumps_speed_ = 0;
 }
-inline ::google::protobuf::uint32 SET_PUMPS_SPEED::pumps_speed() const {
+inline float SET_PUMPS_SPEED::pumps_speed() const {
   // @@protoc_insertion_point(field_get:primary.SET_PUMPS_SPEED.pumps_speed)
   return pumps_speed_;
 }
-inline void SET_PUMPS_SPEED::set_pumps_speed(::google::protobuf::uint32 value) {
+inline void SET_PUMPS_SPEED::set_pumps_speed(float value) {
   
   pumps_speed_ = value;
   // @@protoc_insertion_point(field_set:primary.SET_PUMPS_SPEED.pumps_speed)
@@ -12154,43 +12147,43 @@ inline void HV_CELLS_VOLTAGE::set_start_index(::google::protobuf::uint32 value) 
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.start_index)
 }
 
-// uint32 voltage_0 = 2;
+// float voltage_0 = 2;
 inline void HV_CELLS_VOLTAGE::clear_voltage_0() {
-  voltage_0_ = 0u;
+  voltage_0_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_VOLTAGE::voltage_0() const {
+inline float HV_CELLS_VOLTAGE::voltage_0() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_VOLTAGE.voltage_0)
   return voltage_0_;
 }
-inline void HV_CELLS_VOLTAGE::set_voltage_0(::google::protobuf::uint32 value) {
+inline void HV_CELLS_VOLTAGE::set_voltage_0(float value) {
   
   voltage_0_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.voltage_0)
 }
 
-// uint32 voltage_1 = 3;
+// float voltage_1 = 3;
 inline void HV_CELLS_VOLTAGE::clear_voltage_1() {
-  voltage_1_ = 0u;
+  voltage_1_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_VOLTAGE::voltage_1() const {
+inline float HV_CELLS_VOLTAGE::voltage_1() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_VOLTAGE.voltage_1)
   return voltage_1_;
 }
-inline void HV_CELLS_VOLTAGE::set_voltage_1(::google::protobuf::uint32 value) {
+inline void HV_CELLS_VOLTAGE::set_voltage_1(float value) {
   
   voltage_1_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.voltage_1)
 }
 
-// uint32 voltage_2 = 4;
+// float voltage_2 = 4;
 inline void HV_CELLS_VOLTAGE::clear_voltage_2() {
-  voltage_2_ = 0u;
+  voltage_2_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_VOLTAGE::voltage_2() const {
+inline float HV_CELLS_VOLTAGE::voltage_2() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_VOLTAGE.voltage_2)
   return voltage_2_;
 }
-inline void HV_CELLS_VOLTAGE::set_voltage_2(::google::protobuf::uint32 value) {
+inline void HV_CELLS_VOLTAGE::set_voltage_2(float value) {
   
   voltage_2_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_VOLTAGE.voltage_2)
@@ -12228,105 +12221,91 @@ inline void HV_CELLS_TEMP::set_start_index(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.start_index)
 }
 
-// uint32 temp_0 = 2;
+// float temp_0 = 2;
 inline void HV_CELLS_TEMP::clear_temp_0() {
-  temp_0_ = 0u;
+  temp_0_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_0() const {
+inline float HV_CELLS_TEMP::temp_0() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_0)
   return temp_0_;
 }
-inline void HV_CELLS_TEMP::set_temp_0(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_0(float value) {
   
   temp_0_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_0)
 }
 
-// uint32 temp_1 = 3;
+// float temp_1 = 3;
 inline void HV_CELLS_TEMP::clear_temp_1() {
-  temp_1_ = 0u;
+  temp_1_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_1() const {
+inline float HV_CELLS_TEMP::temp_1() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_1)
   return temp_1_;
 }
-inline void HV_CELLS_TEMP::set_temp_1(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_1(float value) {
   
   temp_1_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_1)
 }
 
-// uint32 temp_2 = 4;
+// float temp_2 = 4;
 inline void HV_CELLS_TEMP::clear_temp_2() {
-  temp_2_ = 0u;
+  temp_2_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_2() const {
+inline float HV_CELLS_TEMP::temp_2() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_2)
   return temp_2_;
 }
-inline void HV_CELLS_TEMP::set_temp_2(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_2(float value) {
   
   temp_2_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_2)
 }
 
-// uint32 temp_3 = 5;
+// float temp_3 = 5;
 inline void HV_CELLS_TEMP::clear_temp_3() {
-  temp_3_ = 0u;
+  temp_3_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_3() const {
+inline float HV_CELLS_TEMP::temp_3() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_3)
   return temp_3_;
 }
-inline void HV_CELLS_TEMP::set_temp_3(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_3(float value) {
   
   temp_3_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_3)
 }
 
-// uint32 temp_4 = 6;
+// float temp_4 = 6;
 inline void HV_CELLS_TEMP::clear_temp_4() {
-  temp_4_ = 0u;
+  temp_4_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_4() const {
+inline float HV_CELLS_TEMP::temp_4() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_4)
   return temp_4_;
 }
-inline void HV_CELLS_TEMP::set_temp_4(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_4(float value) {
   
   temp_4_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_4)
 }
 
-// uint32 temp_5 = 7;
+// float temp_5 = 7;
 inline void HV_CELLS_TEMP::clear_temp_5() {
-  temp_5_ = 0u;
+  temp_5_ = 0;
 }
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_5() const {
+inline float HV_CELLS_TEMP::temp_5() const {
   // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_5)
   return temp_5_;
 }
-inline void HV_CELLS_TEMP::set_temp_5(::google::protobuf::uint32 value) {
+inline void HV_CELLS_TEMP::set_temp_5(float value) {
   
   temp_5_ = value;
   // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_5)
 }
 
-// uint32 temp_6 = 8;
-inline void HV_CELLS_TEMP::clear_temp_6() {
-  temp_6_ = 0u;
-}
-inline ::google::protobuf::uint32 HV_CELLS_TEMP::temp_6() const {
-  // @@protoc_insertion_point(field_get:primary.HV_CELLS_TEMP.temp_6)
-  return temp_6_;
-}
-inline void HV_CELLS_TEMP::set_temp_6(::google::protobuf::uint32 value) {
-  
-  temp_6_ = value;
-  // @@protoc_insertion_point(field_set:primary.HV_CELLS_TEMP.temp_6)
-}
-
-// uint64 _inner_timestamp = 9;
+// uint64 _inner_timestamp = 8;
 inline void HV_CELLS_TEMP::clear__inner_timestamp() {
   _inner_timestamp_ = GOOGLE_ULONGLONG(0);
 }
@@ -12440,57 +12419,57 @@ inline void HANDCART_STATUS::set__inner_timestamp(::google::protobuf::uint64 val
 
 // SPEED
 
-// uint32 encoder_r = 1;
+// float encoder_r = 1;
 inline void SPEED::clear_encoder_r() {
-  encoder_r_ = 0u;
+  encoder_r_ = 0;
 }
-inline ::google::protobuf::uint32 SPEED::encoder_r() const {
+inline float SPEED::encoder_r() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.encoder_r)
   return encoder_r_;
 }
-inline void SPEED::set_encoder_r(::google::protobuf::uint32 value) {
+inline void SPEED::set_encoder_r(float value) {
   
   encoder_r_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.encoder_r)
 }
 
-// uint32 encoder_l = 2;
+// float encoder_l = 2;
 inline void SPEED::clear_encoder_l() {
-  encoder_l_ = 0u;
+  encoder_l_ = 0;
 }
-inline ::google::protobuf::uint32 SPEED::encoder_l() const {
+inline float SPEED::encoder_l() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.encoder_l)
   return encoder_l_;
 }
-inline void SPEED::set_encoder_l(::google::protobuf::uint32 value) {
+inline void SPEED::set_encoder_l(float value) {
   
   encoder_l_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.encoder_l)
 }
 
-// uint32 inverter_r = 3;
+// float inverter_r = 3;
 inline void SPEED::clear_inverter_r() {
-  inverter_r_ = 0u;
+  inverter_r_ = 0;
 }
-inline ::google::protobuf::uint32 SPEED::inverter_r() const {
+inline float SPEED::inverter_r() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.inverter_r)
   return inverter_r_;
 }
-inline void SPEED::set_inverter_r(::google::protobuf::uint32 value) {
+inline void SPEED::set_inverter_r(float value) {
   
   inverter_r_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.inverter_r)
 }
 
-// uint32 inverter_l = 4;
+// float inverter_l = 4;
 inline void SPEED::clear_inverter_l() {
-  inverter_l_ = 0u;
+  inverter_l_ = 0;
 }
-inline ::google::protobuf::uint32 SPEED::inverter_l() const {
+inline float SPEED::inverter_l() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.inverter_l)
   return inverter_l_;
 }
-inline void SPEED::set_inverter_l(::google::protobuf::uint32 value) {
+inline void SPEED::set_inverter_l(float value) {
   
   inverter_l_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.inverter_l)

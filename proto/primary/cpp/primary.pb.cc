@@ -2068,7 +2068,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_3_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_4_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELLS_TEMP, temp_6_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELLS_TEMP, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::HV_CELL_BALANCING_STATUS, _internal_metadata_),
@@ -2428,39 +2427,39 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 317, -1, sizeof(::primary::MARKER)},
   { 323, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
   { 333, -1, sizeof(::primary::HV_CELLS_TEMP)},
-  { 347, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
-  { 354, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
-  { 361, -1, sizeof(::primary::HANDCART_STATUS)},
-  { 368, -1, sizeof(::primary::SPEED)},
-  { 378, -1, sizeof(::primary::INV_L_REQUEST)},
-  { 392, -1, sizeof(::primary::INV_R_REQUEST)},
-  { 406, -1, sizeof(::primary::INV_L_RESPONSE)},
-  { 420, -1, sizeof(::primary::INV_R_RESPONSE)},
-  { 434, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
-  { 440, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
-  { 446, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
-  { 452, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
-  { 458, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
-  { 464, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
-  { 470, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
-  { 476, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
-  { 482, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
-  { 488, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
-  { 494, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
-  { 500, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
-  { 506, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
-  { 512, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
-  { 518, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
-  { 524, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
-  { 530, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
-  { 536, -1, sizeof(::primary::BRUSA_ST)},
-  { 542, -1, sizeof(::primary::BRUSA_ACT_I)},
-  { 548, -1, sizeof(::primary::BRUSA_ACT_II)},
-  { 554, -1, sizeof(::primary::BRUSA_TEMP)},
-  { 560, -1, sizeof(::primary::BRUSA_ERR)},
-  { 566, -1, sizeof(::primary::BMS_HV_CHIMERA)},
-  { 572, -1, sizeof(::primary::ECU_CHIMERA)},
-  { 578, -1, sizeof(::primary::Pack)},
+  { 346, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
+  { 353, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
+  { 360, -1, sizeof(::primary::HANDCART_STATUS)},
+  { 367, -1, sizeof(::primary::SPEED)},
+  { 377, -1, sizeof(::primary::INV_L_REQUEST)},
+  { 391, -1, sizeof(::primary::INV_R_REQUEST)},
+  { 405, -1, sizeof(::primary::INV_L_RESPONSE)},
+  { 419, -1, sizeof(::primary::INV_R_RESPONSE)},
+  { 433, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
+  { 439, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
+  { 445, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
+  { 451, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
+  { 457, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
+  { 463, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
+  { 469, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
+  { 475, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
+  { 481, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
+  { 487, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
+  { 493, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
+  { 499, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
+  { 505, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
+  { 511, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
+  { 517, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
+  { 523, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
+  { 529, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
+  { 535, -1, sizeof(::primary::BRUSA_ST)},
+  { 541, -1, sizeof(::primary::BRUSA_ACT_I)},
+  { 547, -1, sizeof(::primary::BRUSA_ACT_II)},
+  { 553, -1, sizeof(::primary::BRUSA_TEMP)},
+  { 559, -1, sizeof(::primary::BRUSA_ERR)},
+  { 565, -1, sizeof(::primary::BMS_HV_CHIMERA)},
+  { 571, -1, sizeof(::primary::ECU_CHIMERA)},
+  { 577, -1, sizeof(::primary::Pack)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -2586,26 +2585,26 @@ void AddDescriptorsImpl() {
       "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
       "A\n\023STEER_SYSTEM_STATUS\022\020\n\010soc_temp\030\001 \001(\r"
       "\022\030\n\020_inner_timestamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAG"
-      "E\022\024\n\014pack_voltage\030\001 \001(\r\022\023\n\013bus_voltage\030\002"
-      " \001(\r\022\030\n\020max_cell_voltage\030\003 \001(\r\022\030\n\020min_ce"
-      "ll_voltage\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001"
-      "(\004\"c\n\nHV_CURRENT\022\017\n\007current\030\001 \001(\r\022\r\n\005pow"
-      "er\030\002 \001(\r\022\016\n\006energy\030\003 \001(\r\022\013\n\003soc\030\004 \001(\r\022\030\n"
+      "E\022\024\n\014pack_voltage\030\001 \001(\002\022\023\n\013bus_voltage\030\002"
+      " \001(\002\022\030\n\020max_cell_voltage\030\003 \001(\002\022\030\n\020min_ce"
+      "ll_voltage\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001"
+      "(\004\"c\n\nHV_CURRENT\022\017\n\007current\030\001 \001(\002\022\r\n\005pow"
+      "er\030\002 \001(\002\022\016\n\006energy\030\003 \001(\002\022\013\n\003soc\030\004 \001(\002\022\030\n"
       "\020_inner_timestamp\030\005 \001(\004\"]\n\007HV_TEMP\022\024\n\014av"
-      "erage_temp\030\001 \001(\r\022\020\n\010max_temp\030\002 \001(\r\022\020\n\010mi"
-      "n_temp\030\003 \001(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"G"
+      "erage_temp\030\001 \001(\002\022\020\n\010max_temp\030\002 \001(\002\022\020\n\010mi"
+      "n_temp\030\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\"G"
       "\n\tHV_ERRORS\022\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030"
       "\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"T\n\016HV_CA"
       "N_FORWARD\022(\n\017can_forward_set\030\001 \001(\0162\017.pri"
       "mary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"h\n"
       "\020HV_FANS_OVERRIDE\022&\n\rfans_override\030\001 \001(\016"
-      "2\017.primary.Toggle\022\022\n\nfans_speed\030\002 \001(\r\022\030\n"
+      "2\017.primary.Toggle\022\022\n\nfans_speed\030\002 \001(\002\022\030\n"
       "\020_inner_timestamp\030\003 \001(\004\"^\n\025HV_CAN_FORWAR"
       "D_STATUS\022+\n\022can_forward_status\030\001 \001(\0162\017.p"
       "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
       "o\n\027HV_FANS_OVERRIDE_STATUS\022&\n\rfans_overr"
       "ide\030\001 \001(\0162\017.primary.Toggle\022\022\n\nfans_speed"
-      "\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"e\n\023HV_F"
+      "\030\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"e\n\023HV_F"
       "EEDBACKS_STATUS\022\030\n\020feedbacks_status\030\001 \001("
       "\r\022\032\n\022is_circuitry_error\030\002 \001(\r\022\030\n\020_inner_"
       "timestamp\030\003 \001(\004\"v\n\rHV_IMD_STATUS\022\021\n\timd_"
@@ -2634,21 +2633,21 @@ void AddDescriptorsImpl() {
       "\0162\022.primary.CarStatus\022\030\n\020_inner_timestam"
       "p\030\004 \001(\004\"9\n\nDAS_ERRORS\022\021\n\tdas_error\030\001 \001(\r"
       "\022\030\n\020_inner_timestamp\030\002 \001(\004\"7\n\nLV_CURRENT"
-      "\022\017\n\007current\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 "
-      "\001(\004\"r\n\nLV_VOLTAGE\022\021\n\tvoltage_1\030\001 \001(\r\022\021\n\t"
-      "voltage_2\030\002 \001(\r\022\021\n\tvoltage_3\030\003 \001(\r\022\021\n\tvo"
-      "ltage_4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\""
+      "\022\017\n\007current\030\001 \001(\002\022\030\n\020_inner_timestamp\030\002 "
+      "\001(\004\"r\n\nLV_VOLTAGE\022\021\n\tvoltage_1\030\001 \001(\002\022\021\n\t"
+      "voltage_2\030\002 \001(\002\022\021\n\tvoltage_3\030\003 \001(\002\022\021\n\tvo"
+      "ltage_4\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\""
       "C\n\020LV_TOTAL_VOLTAGE\022\025\n\rtotal_voltage\030\001 \001"
-      "(\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMP"
-      "ERATURE\022\030\n\020bp_temperature_1\030\001 \001(\r\022\030\n\020bp_"
-      "temperature_2\030\002 \001(\r\022\032\n\022dcdc12_temperatur"
-      "e\030\003 \001(\r\022\032\n\022dcdc24_temperature\030\004 \001(\r\022\030\n\020_"
+      "(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMP"
+      "ERATURE\022\030\n\020bp_temperature_1\030\001 \001(\002\022\030\n\020bp_"
+      "temperature_2\030\002 \001(\002\022\032\n\022dcdc12_temperatur"
+      "e\030\003 \001(\002\022\032\n\022dcdc24_temperature\030\004 \001(\002\022\030\n\020_"
       "inner_timestamp\030\005 \001(\004\"X\n\016COOLING_STATUS\022"
-      "\027\n\017radiators_speed\030\001 \001(\r\022\023\n\013pumps_speed\030"
-      "\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"G\n\022SET_R"
-      "ADIATOR_SPEED\022\027\n\017radiators_speed\030\001 \001(\r\022\030"
+      "\027\n\017radiators_speed\030\001 \001(\002\022\023\n\013pumps_speed\030"
+      "\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"G\n\022SET_R"
+      "ADIATOR_SPEED\022\027\n\017radiators_speed\030\001 \001(\002\022\030"
       "\n\020_inner_timestamp\030\002 \001(\004\"@\n\017SET_PUMPS_SP"
-      "EED\022\023\n\013pumps_speed\030\001 \001(\r\022\030\n\020_inner_times"
+      "EED\022\023\n\013pumps_speed\030\001 \001(\002\022\030\n\020_inner_times"
       "tamp\030\002 \001(\004\"[\n\036SET_INVERTER_CONNECTION_ST"
       "ATUS\022\037\n\006status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
       "\020_inner_timestamp\030\002 \001(\004\"W\n\032INVERTER_CONN"
@@ -2659,195 +2658,195 @@ void AddDescriptorsImpl() {
       "ATUS\022\r\n\005input\030\001 \001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_"
       "inner_timestamp\030\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inne"
       "r_timestamp\030\001 \001(\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n"
-      "\013start_index\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\r\022\021\n"
-      "\tvoltage_1\030\003 \001(\r\022\021\n\tvoltage_2\030\004 \001(\r\022\030\n\020_"
-      "inner_timestamp\030\005 \001(\004\"\256\001\n\rHV_CELLS_TEMP\022"
-      "\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\r\022\016\n\006"
-      "temp_1\030\003 \001(\r\022\016\n\006temp_2\030\004 \001(\r\022\016\n\006temp_3\030\005"
-      " \001(\r\022\016\n\006temp_4\030\006 \001(\r\022\016\n\006temp_5\030\007 \001(\r\022\016\n\006"
-      "temp_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"_"
-      "\n\030HV_CELL_BALANCING_STATUS\022)\n\020balancing_"
-      "status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_"
-      "timestamp\030\002 \001(\004\"d\n\031SET_CELL_BALANCING_ST"
-      "ATUS\022-\n\024set_balancing_status\030\001 \001(\0162\017.pri"
-      "mary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\">\n"
-      "\017HANDCART_STATUS\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_"
-      "inner_timestamp\030\002 \001(\004\"o\n\005SPEED\022\021\n\tencode"
-      "r_r\030\001 \001(\r\022\021\n\tencoder_l\030\002 \001(\r\022\022\n\ninverter"
-      "_r\030\003 \001(\r\022\022\n\ninverter_l\030\004 \001(\r\022\030\n\020_inner_t"
-      "imestamp\030\005 \001(\004\"\251\001\n\rINV_L_REQUEST\022\016\n\006data"
-      "_0\030\001 \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r"
-      "\022\016\n\006data_3\030\004 \001(\r\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data"
-      "_5\030\006 \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r"
-      "\022\030\n\020_inner_timestamp\030\t \001(\004\"\251\001\n\rINV_R_REQ"
-      "UEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006"
-      "data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r\022\016\n\006data_4\030\005"
-      " \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006"
-      "data_7\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\252"
-      "\001\n\016INV_L_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006dat"
-      "a_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001("
-      "\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006dat"
-      "a_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_time"
-      "stamp\030\t \001(\004\"\252\001\n\016INV_R_RESPONSE\022\016\n\006reg_id"
-      "\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016"
-      "\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4"
-      "\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030"
-      "\n\020_inner_timestamp\030\t \001(\004\"0\n\024FLASH_CELLBO"
-      "ARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
-      "ASH_CELLBOARD_0_RX\022\030\n\020_inner_timestamp\030\001"
-      " \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inner_t"
-      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_RX\022\030"
-      "\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBO"
-      "ARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
-      "ASH_CELLBOARD_2_RX\022\030\n\020_inner_timestamp\030\001"
-      " \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inner_t"
-      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_RX\022\030"
-      "\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBO"
-      "ARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FL"
-      "ASH_CELLBOARD_4_RX\022\030\n\020_inner_timestamp\030\001"
-      " \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inner_t"
-      "imestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_RX\022\030"
-      "\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_HV"
-      "_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_B"
-      "MS_HV_RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"+\n\017FL"
-      "ASH_BMS_LV_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\""
-      "+\n\017FLASH_BMS_LV_RX\022\030\n\020_inner_timestamp\030\001"
-      " \001(\004\"*\n\016BRUSA_NLG5_CTL\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"$\n\010BRUSA_ST\022\030\n\020_inner_timestamp"
-      "\030\001 \001(\004\"\'\n\013BRUSA_ACT_I\022\030\n\020_inner_timestam"
-      "p\030\001 \001(\004\"(\n\014BRUSA_ACT_II\022\030\n\020_inner_timest"
-      "amp\030\001 \001(\004\"&\n\nBRUSA_TEMP\022\030\n\020_inner_timest"
-      "amp\030\001 \001(\004\"%\n\tBRUSA_ERR\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"*\n\016BMS_HV_CHIMERA\022\030\n\020_inner_tim"
-      "estamp\030\001 \001(\004\"\'\n\013ECU_CHIMERA\022\030\n\020_inner_ti"
-      "mestamp\030\001 \001(\004\"\254\036\n\004Pack\0225\n\021BMS_HV_JMP_TO_"
-      "BLT\030\001 \003(\0132\032.primary.BMS_HV_JMP_TO_BLT\0225\n"
-      "\021BMS_LV_JMP_TO_BLT\030\002 \003(\0132\032.primary.BMS_L"
-      "V_JMP_TO_BLT\022-\n\rSTEER_VERSION\030\003 \003(\0132\026.pr"
-      "imary.STEER_VERSION\022)\n\013DAS_VERSION\030\004 \003(\013"
-      "2\024.primary.DAS_VERSION\022\'\n\nHV_VERSION\030\005 \003"
-      "(\0132\023.primary.HV_VERSION\022\'\n\nLV_VERSION\030\006 "
-      "\003(\0132\023.primary.LV_VERSION\022)\n\013TLM_VERSION\030"
-      "\007 \003(\0132\024.primary.TLM_VERSION\022%\n\tTIMESTAMP"
-      "\030\010 \003(\0132\022.primary.TIMESTAMP\022/\n\016SET_TLM_ST"
-      "ATUS\030\t \003(\0132\027.primary.SET_TLM_STATUS\022\'\n\nT"
-      "LM_STATUS\030\n \003(\0132\023.primary.TLM_STATUS\0229\n\023"
-      "STEER_SYSTEM_STATUS\030\013 \003(\0132\034.primary.STEE"
-      "R_SYSTEM_STATUS\022\'\n\nHV_VOLTAGE\030\014 \003(\0132\023.pr"
-      "imary.HV_VOLTAGE\022\'\n\nHV_CURRENT\030\r \003(\0132\023.p"
-      "rimary.HV_CURRENT\022!\n\007HV_TEMP\030\016 \003(\0132\020.pri"
-      "mary.HV_TEMP\022%\n\tHV_ERRORS\030\017 \003(\0132\022.primar"
-      "y.HV_ERRORS\022/\n\016HV_CAN_FORWARD\030\020 \003(\0132\027.pr"
-      "imary.HV_CAN_FORWARD\0223\n\020HV_FANS_OVERRIDE"
-      "\030\021 \003(\0132\031.primary.HV_FANS_OVERRIDE\022=\n\025HV_"
-      "CAN_FORWARD_STATUS\030\022 \003(\0132\036.primary.HV_CA"
-      "N_FORWARD_STATUS\022A\n\027HV_FANS_OVERRIDE_STA"
-      "TUS\030\023 \003(\0132 .primary.HV_FANS_OVERRIDE_STA"
-      "TUS\0229\n\023HV_FEEDBACKS_STATUS\030\024 \003(\0132\034.prima"
-      "ry.HV_FEEDBACKS_STATUS\022-\n\rHV_IMD_STATUS\030"
-      "\025 \003(\0132\026.primary.HV_IMD_STATUS\022%\n\tTS_STAT"
-      "US\030\026 \003(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_S"
-      "TATUS_DAS\030\027 \003(\0132\032.primary.SET_TS_STATUS_"
-      "DAS\022\?\n\026SET_TS_STATUS_HANDCART\030\030 \003(\0132\037.pr"
-      "imary.SET_TS_STATUS_HANDCART\022+\n\014STEER_ST"
-      "ATUS\030\031 \003(\0132\025.primary.STEER_STATUS\022/\n\016SET"
-      "_CAR_STATUS\030\032 \003(\0132\027.primary.SET_CAR_STAT"
-      "US\0223\n\020SET_PEDALS_RANGE\030\033 \003(\0132\031.primary.S"
-      "ET_PEDALS_RANGE\022C\n\030SET_STEERING_ANGLE_RA"
-      "NGE\030\034 \003(\0132!.primary.SET_STEERING_ANGLE_R"
-      "ANGE\022\'\n\nCAR_STATUS\030\035 \003(\0132\023.primary.CAR_S"
-      "TATUS\022\'\n\nDAS_ERRORS\030\036 \003(\0132\023.primary.DAS_"
-      "ERRORS\022\'\n\nLV_CURRENT\030\037 \003(\0132\023.primary.LV_"
-      "CURRENT\022\'\n\nLV_VOLTAGE\030  \003(\0132\023.primary.LV"
-      "_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030! \003(\0132\031.pri"
-      "mary.LV_TOTAL_VOLTAGE\022/\n\016LV_TEMPERATURE\030"
-      "\" \003(\0132\027.primary.LV_TEMPERATURE\022/\n\016COOLIN"
-      "G_STATUS\030# \003(\0132\027.primary.COOLING_STATUS\022"
-      "7\n\022SET_RADIATOR_SPEED\030$ \003(\0132\033.primary.SE"
-      "T_RADIATOR_SPEED\0221\n\017SET_PUMPS_SPEED\030% \003("
-      "\0132\030.primary.SET_PUMPS_SPEED\022O\n\036SET_INVER"
-      "TER_CONNECTION_STATUS\030& \003(\0132\'.primary.SE"
-      "T_INVERTER_CONNECTION_STATUS\022G\n\032INVERTER"
-      "_CONNECTION_STATUS\030\' \003(\0132#.primary.INVER"
-      "TER_CONNECTION_STATUS\022%\n\tLV_ERRORS\030( \003(\013"
-      "2\022.primary.LV_ERRORS\0221\n\017SHUTDOWN_STATUS\030"
-      ") \003(\0132\030.primary.SHUTDOWN_STATUS\022\037\n\006MARKE"
-      "R\030* \003(\0132\017.primary.MARKER\0223\n\020HV_CELLS_VOL"
-      "TAGE\030+ \003(\0132\031.primary.HV_CELLS_VOLTAGE\022-\n"
-      "\rHV_CELLS_TEMP\030, \003(\0132\026.primary.HV_CELLS_"
-      "TEMP\022C\n\030HV_CELL_BALANCING_STATUS\030- \003(\0132!"
-      ".primary.HV_CELL_BALANCING_STATUS\022E\n\031SET"
-      "_CELL_BALANCING_STATUS\030. \003(\0132\".primary.S"
-      "ET_CELL_BALANCING_STATUS\0221\n\017HANDCART_STA"
-      "TUS\030/ \003(\0132\030.primary.HANDCART_STATUS\022\035\n\005S"
-      "PEED\0300 \003(\0132\016.primary.SPEED\022-\n\rINV_L_REQU"
-      "EST\0301 \003(\0132\026.primary.INV_L_REQUEST\022-\n\rINV"
-      "_R_REQUEST\0302 \003(\0132\026.primary.INV_R_REQUEST"
-      "\022/\n\016INV_L_RESPONSE\0303 \003(\0132\027.primary.INV_L"
-      "_RESPONSE\022/\n\016INV_R_RESPONSE\0304 \003(\0132\027.prim"
-      "ary.INV_R_RESPONSE\022;\n\024FLASH_CELLBOARD_0_"
-      "TX\0305 \003(\0132\035.primary.FLASH_CELLBOARD_0_TX\022"
-      ";\n\024FLASH_CELLBOARD_0_RX\0306 \003(\0132\035.primary."
-      "FLASH_CELLBOARD_0_RX\022;\n\024FLASH_CELLBOARD_"
-      "1_TX\0307 \003(\0132\035.primary.FLASH_CELLBOARD_1_T"
-      "X\022;\n\024FLASH_CELLBOARD_1_RX\0308 \003(\0132\035.primar"
-      "y.FLASH_CELLBOARD_1_RX\022;\n\024FLASH_CELLBOAR"
-      "D_2_TX\0309 \003(\0132\035.primary.FLASH_CELLBOARD_2"
-      "_TX\022;\n\024FLASH_CELLBOARD_2_RX\030: \003(\0132\035.prim"
-      "ary.FLASH_CELLBOARD_2_RX\022;\n\024FLASH_CELLBO"
-      "ARD_3_TX\030; \003(\0132\035.primary.FLASH_CELLBOARD"
-      "_3_TX\022;\n\024FLASH_CELLBOARD_3_RX\030< \003(\0132\035.pr"
-      "imary.FLASH_CELLBOARD_3_RX\022;\n\024FLASH_CELL"
-      "BOARD_4_TX\030= \003(\0132\035.primary.FLASH_CELLBOA"
-      "RD_4_TX\022;\n\024FLASH_CELLBOARD_4_RX\030> \003(\0132\035."
-      "primary.FLASH_CELLBOARD_4_RX\022;\n\024FLASH_CE"
-      "LLBOARD_5_TX\030\? \003(\0132\035.primary.FLASH_CELLB"
-      "OARD_5_TX\022;\n\024FLASH_CELLBOARD_5_RX\030@ \003(\0132"
-      "\035.primary.FLASH_CELLBOARD_5_RX\0221\n\017FLASH_"
-      "BMS_HV_TX\030A \003(\0132\030.primary.FLASH_BMS_HV_T"
-      "X\0221\n\017FLASH_BMS_HV_RX\030B \003(\0132\030.primary.FLA"
-      "SH_BMS_HV_RX\0221\n\017FLASH_BMS_LV_TX\030C \003(\0132\030."
-      "primary.FLASH_BMS_LV_TX\0221\n\017FLASH_BMS_LV_"
-      "RX\030D \003(\0132\030.primary.FLASH_BMS_LV_RX\022/\n\016BR"
-      "USA_NLG5_CTL\030E \003(\0132\027.primary.BRUSA_NLG5_"
-      "CTL\022#\n\010BRUSA_ST\030F \003(\0132\021.primary.BRUSA_ST"
-      "\022)\n\013BRUSA_ACT_I\030G \003(\0132\024.primary.BRUSA_AC"
-      "T_I\022+\n\014BRUSA_ACT_II\030H \003(\0132\025.primary.BRUS"
-      "A_ACT_II\022\'\n\nBRUSA_TEMP\030I \003(\0132\023.primary.B"
-      "RUSA_TEMP\022%\n\tBRUSA_ERR\030J \003(\0132\022.primary.B"
-      "RUSA_ERR\022/\n\016BMS_HV_CHIMERA\030K \003(\0132\027.prima"
-      "ry.BMS_HV_CHIMERA\022)\n\013ECU_CHIMERA\030L \003(\0132\024"
-      ".primary.ECU_CHIMERA*k\n\010RaceType\022\031\n\025Race"
-      "Type_ACCELERATION\020\000\022\024\n\020RaceType_SKIDPAD\020"
-      "\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022RaceType_EN"
-      "DURANCE\020\003*X\n\016InverterStatus\022\026\n\022InverterS"
-      "tatus_OFF\020\000\022\027\n\023InverterStatus_IDLE\020\001\022\025\n\021"
-      "InverterStatus_ON\020\002*\224\001\n\tCarStatus\022\022\n\016Car"
-      "Status_IDLE\020\000\022\027\n\023CarStatus_PRE_SETUP\020\001\022\023"
-      "\n\017CarStatus_TS_ON\020\002\022\030\n\024CarStatus_POST_SE"
-      "TUP\020\003\022\023\n\017CarStatus_DRIVE\020\004\022\026\n\022CarStatus_"
-      "TEARDOWN\020\005*\'\n\006Toggle\022\r\n\tToggle_ON\020\000\022\016\n\nT"
-      "oggle_OFF\020\001*\220\001\n\017TractionControl\022\027\n\023Tract"
-      "ionControl_OFF\020\000\022 \n\034TractionControl_SLIP"
-      "_CONTROL\020\001\022$\n TractionControl_TORQUE_VEC"
-      "TORING\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y"
-      "\n\010TsStatus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus"
-      "_PRECHARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatu"
-      "s_FATAL\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001"
-      "\022\013\n\007Map_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022"
-      "\014\n\010Map_D100\020\005*U\n\014SetCarStatus\022\025\n\021SetCarS"
-      "tatus_IDLE\020\000\022\026\n\022SetCarStatus_READY\020\001\022\026\n\022"
-      "SetCarStatus_DRIVE\020\002*-\n\005Bound\022\021\n\rBound_S"
-      "ET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021"
-      "Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n"
-      "\tImdStatus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdS"
-      "tatus_IMD_NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDE"
-      "R_VOLTAGE\020\002\022\037\n\033ImdStatus_IMD_START_MEASU"
-      "RE\020\003\022\036\n\032ImdStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031"
-      "ImdStatus_IMD_EARTH_FAULT\020\005b\006proto3"
+      "\013start_index\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\002\022\021\n"
+      "\tvoltage_1\030\003 \001(\002\022\021\n\tvoltage_2\030\004 \001(\002\022\030\n\020_"
+      "inner_timestamp\030\005 \001(\004\"\236\001\n\rHV_CELLS_TEMP\022"
+      "\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\002\022\016\n\006"
+      "temp_1\030\003 \001(\002\022\016\n\006temp_2\030\004 \001(\002\022\016\n\006temp_3\030\005"
+      " \001(\002\022\016\n\006temp_4\030\006 \001(\002\022\016\n\006temp_5\030\007 \001(\002\022\030\n\020"
+      "_inner_timestamp\030\010 \001(\004\"_\n\030HV_CELL_BALANC"
+      "ING_STATUS\022)\n\020balancing_status\030\001 \001(\0162\017.p"
+      "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
+      "d\n\031SET_CELL_BALANCING_STATUS\022-\n\024set_bala"
+      "ncing_status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
+      "inner_timestamp\030\002 \001(\004\">\n\017HANDCART_STATUS"
+      "\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_inner_timestamp\030"
+      "\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\002\022\021\n\tenc"
+      "oder_l\030\002 \001(\002\022\022\n\ninverter_r\030\003 \001(\002\022\022\n\ninve"
+      "rter_l\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251"
+      "\001\n\rINV_L_REQUEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data"
+      "_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r"
+      "\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data"
+      "_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020_inner_times"
+      "tamp\030\t \001(\004\"\251\001\n\rINV_R_REQUEST\022\016\n\006data_0\030\001"
+      " \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006"
+      "data_3\030\004 \001(\r\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006"
+      " \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020"
+      "_inner_timestamp\030\t \001(\004\"\252\001\n\016INV_L_RESPONS"
+      "E\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006dat"
+      "a_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001("
+      "\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006dat"
+      "a_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\252\001\n\016"
+      "INV_R_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0"
+      "\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016"
+      "\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5"
+      "\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_timesta"
+      "mp\030\t \001(\004\"0\n\024FLASH_CELLBOARD_0_TX\022\030\n\020_inn"
+      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_0_"
+      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
+      "LLBOARD_1_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
+      "\n\024FLASH_CELLBOARD_1_RX\022\030\n\020_inner_timesta"
+      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_TX\022\030\n\020_inn"
+      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_"
+      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
+      "LLBOARD_3_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
+      "\n\024FLASH_CELLBOARD_3_RX\022\030\n\020_inner_timesta"
+      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_TX\022\030\n\020_inn"
+      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_"
+      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
+      "LLBOARD_5_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
+      "\n\024FLASH_CELLBOARD_5_RX\022\030\n\020_inner_timesta"
+      "mp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_TX\022\030\n\020_inner_ti"
+      "mestamp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_RX\022\030\n\020_inn"
+      "er_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_TX\022\030\n"
+      "\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_"
+      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BRUSA_NL"
+      "G5_CTL\022\030\n\020_inner_timestamp\030\001 \001(\004\"$\n\010BRUS"
+      "A_ST\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013BRUSA_"
+      "ACT_I\022\030\n\020_inner_timestamp\030\001 \001(\004\"(\n\014BRUSA"
+      "_ACT_II\022\030\n\020_inner_timestamp\030\001 \001(\004\"&\n\nBRU"
+      "SA_TEMP\022\030\n\020_inner_timestamp\030\001 \001(\004\"%\n\tBRU"
+      "SA_ERR\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BMS_"
+      "HV_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013"
+      "ECU_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\254\036"
+      "\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032.prim"
+      "ary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_JMP_TO_B"
+      "LT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_BLT\022-\n\r"
+      "STEER_VERSION\030\003 \003(\0132\026.primary.STEER_VERS"
+      "ION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primary.DAS_V"
+      "ERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.primary.HV_"
+      "VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.primary.LV"
+      "_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.primary."
+      "TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022.primary"
+      ".TIMESTAMP\022/\n\016SET_TLM_STATUS\030\t \003(\0132\027.pri"
+      "mary.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\n \003(\0132"
+      "\023.primary.TLM_STATUS\0229\n\023STEER_SYSTEM_STA"
+      "TUS\030\013 \003(\0132\034.primary.STEER_SYSTEM_STATUS\022"
+      "\'\n\nHV_VOLTAGE\030\014 \003(\0132\023.primary.HV_VOLTAGE"
+      "\022\'\n\nHV_CURRENT\030\r \003(\0132\023.primary.HV_CURREN"
+      "T\022!\n\007HV_TEMP\030\016 \003(\0132\020.primary.HV_TEMP\022%\n\t"
+      "HV_ERRORS\030\017 \003(\0132\022.primary.HV_ERRORS\022/\n\016H"
+      "V_CAN_FORWARD\030\020 \003(\0132\027.primary.HV_CAN_FOR"
+      "WARD\0223\n\020HV_FANS_OVERRIDE\030\021 \003(\0132\031.primary"
+      ".HV_FANS_OVERRIDE\022=\n\025HV_CAN_FORWARD_STAT"
+      "US\030\022 \003(\0132\036.primary.HV_CAN_FORWARD_STATUS"
+      "\022A\n\027HV_FANS_OVERRIDE_STATUS\030\023 \003(\0132 .prim"
+      "ary.HV_FANS_OVERRIDE_STATUS\0229\n\023HV_FEEDBA"
+      "CKS_STATUS\030\024 \003(\0132\034.primary.HV_FEEDBACKS_"
+      "STATUS\022-\n\rHV_IMD_STATUS\030\025 \003(\0132\026.primary."
+      "HV_IMD_STATUS\022%\n\tTS_STATUS\030\026 \003(\0132\022.prima"
+      "ry.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\027 \003(\0132"
+      "\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS_ST"
+      "ATUS_HANDCART\030\030 \003(\0132\037.primary.SET_TS_STA"
+      "TUS_HANDCART\022+\n\014STEER_STATUS\030\031 \003(\0132\025.pri"
+      "mary.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\032 \003("
+      "\0132\027.primary.SET_CAR_STATUS\0223\n\020SET_PEDALS"
+      "_RANGE\030\033 \003(\0132\031.primary.SET_PEDALS_RANGE\022"
+      "C\n\030SET_STEERING_ANGLE_RANGE\030\034 \003(\0132!.prim"
+      "ary.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_STAT"
+      "US\030\035 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_ERR"
+      "ORS\030\036 \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_CUR"
+      "RENT\030\037 \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV_VO"
+      "LTAGE\030  \003(\0132\023.primary.LV_VOLTAGE\0223\n\020LV_T"
+      "OTAL_VOLTAGE\030! \003(\0132\031.primary.LV_TOTAL_VO"
+      "LTAGE\022/\n\016LV_TEMPERATURE\030\" \003(\0132\027.primary."
+      "LV_TEMPERATURE\022/\n\016COOLING_STATUS\030# \003(\0132\027"
+      ".primary.COOLING_STATUS\0227\n\022SET_RADIATOR_"
+      "SPEED\030$ \003(\0132\033.primary.SET_RADIATOR_SPEED"
+      "\0221\n\017SET_PUMPS_SPEED\030% \003(\0132\030.primary.SET_"
+      "PUMPS_SPEED\022O\n\036SET_INVERTER_CONNECTION_S"
+      "TATUS\030& \003(\0132\'.primary.SET_INVERTER_CONNE"
+      "CTION_STATUS\022G\n\032INVERTER_CONNECTION_STAT"
+      "US\030\' \003(\0132#.primary.INVERTER_CONNECTION_S"
+      "TATUS\022%\n\tLV_ERRORS\030( \003(\0132\022.primary.LV_ER"
+      "RORS\0221\n\017SHUTDOWN_STATUS\030) \003(\0132\030.primary."
+      "SHUTDOWN_STATUS\022\037\n\006MARKER\030* \003(\0132\017.primar"
+      "y.MARKER\0223\n\020HV_CELLS_VOLTAGE\030+ \003(\0132\031.pri"
+      "mary.HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030,"
+      " \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030HV_CELL_"
+      "BALANCING_STATUS\030- \003(\0132!.primary.HV_CELL"
+      "_BALANCING_STATUS\022E\n\031SET_CELL_BALANCING_"
+      "STATUS\030. \003(\0132\".primary.SET_CELL_BALANCIN"
+      "G_STATUS\0221\n\017HANDCART_STATUS\030/ \003(\0132\030.prim"
+      "ary.HANDCART_STATUS\022\035\n\005SPEED\0300 \003(\0132\016.pri"
+      "mary.SPEED\022-\n\rINV_L_REQUEST\0301 \003(\0132\026.prim"
+      "ary.INV_L_REQUEST\022-\n\rINV_R_REQUEST\0302 \003(\013"
+      "2\026.primary.INV_R_REQUEST\022/\n\016INV_L_RESPON"
+      "SE\0303 \003(\0132\027.primary.INV_L_RESPONSE\022/\n\016INV"
+      "_R_RESPONSE\0304 \003(\0132\027.primary.INV_R_RESPON"
+      "SE\022;\n\024FLASH_CELLBOARD_0_TX\0305 \003(\0132\035.prima"
+      "ry.FLASH_CELLBOARD_0_TX\022;\n\024FLASH_CELLBOA"
+      "RD_0_RX\0306 \003(\0132\035.primary.FLASH_CELLBOARD_"
+      "0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0307 \003(\0132\035.pri"
+      "mary.FLASH_CELLBOARD_1_TX\022;\n\024FLASH_CELLB"
+      "OARD_1_RX\0308 \003(\0132\035.primary.FLASH_CELLBOAR"
+      "D_1_RX\022;\n\024FLASH_CELLBOARD_2_TX\0309 \003(\0132\035.p"
+      "rimary.FLASH_CELLBOARD_2_TX\022;\n\024FLASH_CEL"
+      "LBOARD_2_RX\030: \003(\0132\035.primary.FLASH_CELLBO"
+      "ARD_2_RX\022;\n\024FLASH_CELLBOARD_3_TX\030; \003(\0132\035"
+      ".primary.FLASH_CELLBOARD_3_TX\022;\n\024FLASH_C"
+      "ELLBOARD_3_RX\030< \003(\0132\035.primary.FLASH_CELL"
+      "BOARD_3_RX\022;\n\024FLASH_CELLBOARD_4_TX\030= \003(\013"
+      "2\035.primary.FLASH_CELLBOARD_4_TX\022;\n\024FLASH"
+      "_CELLBOARD_4_RX\030> \003(\0132\035.primary.FLASH_CE"
+      "LLBOARD_4_RX\022;\n\024FLASH_CELLBOARD_5_TX\030\? \003"
+      "(\0132\035.primary.FLASH_CELLBOARD_5_TX\022;\n\024FLA"
+      "SH_CELLBOARD_5_RX\030@ \003(\0132\035.primary.FLASH_"
+      "CELLBOARD_5_RX\0221\n\017FLASH_BMS_HV_TX\030A \003(\0132"
+      "\030.primary.FLASH_BMS_HV_TX\0221\n\017FLASH_BMS_H"
+      "V_RX\030B \003(\0132\030.primary.FLASH_BMS_HV_RX\0221\n\017"
+      "FLASH_BMS_LV_TX\030C \003(\0132\030.primary.FLASH_BM"
+      "S_LV_TX\0221\n\017FLASH_BMS_LV_RX\030D \003(\0132\030.prima"
+      "ry.FLASH_BMS_LV_RX\022/\n\016BRUSA_NLG5_CTL\030E \003"
+      "(\0132\027.primary.BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030"
+      "F \003(\0132\021.primary.BRUSA_ST\022)\n\013BRUSA_ACT_I\030"
+      "G \003(\0132\024.primary.BRUSA_ACT_I\022+\n\014BRUSA_ACT"
+      "_II\030H \003(\0132\025.primary.BRUSA_ACT_II\022\'\n\nBRUS"
+      "A_TEMP\030I \003(\0132\023.primary.BRUSA_TEMP\022%\n\tBRU"
+      "SA_ERR\030J \003(\0132\022.primary.BRUSA_ERR\022/\n\016BMS_"
+      "HV_CHIMERA\030K \003(\0132\027.primary.BMS_HV_CHIMER"
+      "A\022)\n\013ECU_CHIMERA\030L \003(\0132\024.primary.ECU_CHI"
+      "MERA*k\n\010RaceType\022\031\n\025RaceType_ACCELERATIO"
+      "N\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022RaceType_AU"
+      "TOCROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016Inv"
+      "erterStatus\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023I"
+      "nverterStatus_IDLE\020\001\022\025\n\021InverterStatus_O"
+      "N\020\002*\224\001\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022\027\n"
+      "\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS_O"
+      "N\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarStat"
+      "us_DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006To"
+      "ggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017"
+      "TractionControl\022\027\n\023TractionControl_OFF\020\000"
+      "\022 \n\034TractionControl_SLIP_CONTROL\020\001\022$\n Tr"
+      "actionControl_TORQUE_VECTORING\020\002\022\034\n\030Trac"
+      "tionControl_COMPLETE\020\003*Y\n\010TsStatus\022\020\n\014Ts"
+      "Status_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013"
+      "TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003Map"
+      "\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n"
+      "\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005*U\n"
+      "\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022"
+      "SetCarStatus_READY\020\001\022\026\n\022SetCarStatus_DRI"
+      "VE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBoun"
+      "d_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATO"
+      "R\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020Im"
+      "dStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL"
+      "\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033I"
+      "mdStatus_IMD_START_MEASURE\020\003\022\036\n\032ImdStatu"
+      "s_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EA"
+      "RTH_FAULT\020\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 11235);
+      descriptor, 11219);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "primary.proto", &protobuf_RegisterTypes);
 }
@@ -6133,13 +6132,13 @@ bool HV_VOLTAGE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 pack_voltage = 1;
+      // float pack_voltage = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &pack_voltage_)));
         } else {
           goto handle_unusual;
@@ -6147,13 +6146,13 @@ bool HV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 bus_voltage = 2;
+      // float bus_voltage = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &bus_voltage_)));
         } else {
           goto handle_unusual;
@@ -6161,13 +6160,13 @@ bool HV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 max_cell_voltage = 3;
+      // float max_cell_voltage = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &max_cell_voltage_)));
         } else {
           goto handle_unusual;
@@ -6175,13 +6174,13 @@ bool HV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 min_cell_voltage = 4;
+      // float min_cell_voltage = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &min_cell_voltage_)));
         } else {
           goto handle_unusual;
@@ -6229,24 +6228,24 @@ void HV_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 pack_voltage = 1;
+  // float pack_voltage = 1;
   if (this->pack_voltage() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->pack_voltage(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->pack_voltage(), output);
   }
 
-  // uint32 bus_voltage = 2;
+  // float bus_voltage = 2;
   if (this->bus_voltage() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->bus_voltage(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->bus_voltage(), output);
   }
 
-  // uint32 max_cell_voltage = 3;
+  // float max_cell_voltage = 3;
   if (this->max_cell_voltage() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->max_cell_voltage(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->max_cell_voltage(), output);
   }
 
-  // uint32 min_cell_voltage = 4;
+  // float min_cell_voltage = 4;
   if (this->min_cell_voltage() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->min_cell_voltage(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->min_cell_voltage(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6268,24 +6267,24 @@ void HV_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 pack_voltage = 1;
+  // float pack_voltage = 1;
   if (this->pack_voltage() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->pack_voltage(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->pack_voltage(), target);
   }
 
-  // uint32 bus_voltage = 2;
+  // float bus_voltage = 2;
   if (this->bus_voltage() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->bus_voltage(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->bus_voltage(), target);
   }
 
-  // uint32 max_cell_voltage = 3;
+  // float max_cell_voltage = 3;
   if (this->max_cell_voltage() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->max_cell_voltage(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->max_cell_voltage(), target);
   }
 
-  // uint32 min_cell_voltage = 4;
+  // float min_cell_voltage = 4;
   if (this->min_cell_voltage() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->min_cell_voltage(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->min_cell_voltage(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6310,32 +6309,24 @@ size_t HV_VOLTAGE::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 pack_voltage = 1;
+  // float pack_voltage = 1;
   if (this->pack_voltage() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->pack_voltage());
+    total_size += 1 + 4;
   }
 
-  // uint32 bus_voltage = 2;
+  // float bus_voltage = 2;
   if (this->bus_voltage() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->bus_voltage());
+    total_size += 1 + 4;
   }
 
-  // uint32 max_cell_voltage = 3;
+  // float max_cell_voltage = 3;
   if (this->max_cell_voltage() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->max_cell_voltage());
+    total_size += 1 + 4;
   }
 
-  // uint32 min_cell_voltage = 4;
+  // float min_cell_voltage = 4;
   if (this->min_cell_voltage() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->min_cell_voltage());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6506,13 +6497,13 @@ bool HV_CURRENT::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 current = 1;
+      // float current = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &current_)));
         } else {
           goto handle_unusual;
@@ -6520,13 +6511,13 @@ bool HV_CURRENT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 power = 2;
+      // float power = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &power_)));
         } else {
           goto handle_unusual;
@@ -6534,13 +6525,13 @@ bool HV_CURRENT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 energy = 3;
+      // float energy = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &energy_)));
         } else {
           goto handle_unusual;
@@ -6548,13 +6539,13 @@ bool HV_CURRENT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 soc = 4;
+      // float soc = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &soc_)));
         } else {
           goto handle_unusual;
@@ -6602,24 +6593,24 @@ void HV_CURRENT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->current(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->current(), output);
   }
 
-  // uint32 power = 2;
+  // float power = 2;
   if (this->power() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->power(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->power(), output);
   }
 
-  // uint32 energy = 3;
+  // float energy = 3;
   if (this->energy() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->energy(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->energy(), output);
   }
 
-  // uint32 soc = 4;
+  // float soc = 4;
   if (this->soc() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->soc(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->soc(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6641,24 +6632,24 @@ void HV_CURRENT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->current(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->current(), target);
   }
 
-  // uint32 power = 2;
+  // float power = 2;
   if (this->power() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->power(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->power(), target);
   }
 
-  // uint32 energy = 3;
+  // float energy = 3;
   if (this->energy() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->energy(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->energy(), target);
   }
 
-  // uint32 soc = 4;
+  // float soc = 4;
   if (this->soc() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->soc(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->soc(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6683,32 +6674,24 @@ size_t HV_CURRENT::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->current());
+    total_size += 1 + 4;
   }
 
-  // uint32 power = 2;
+  // float power = 2;
   if (this->power() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->power());
+    total_size += 1 + 4;
   }
 
-  // uint32 energy = 3;
+  // float energy = 3;
   if (this->energy() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->energy());
+    total_size += 1 + 4;
   }
 
-  // uint32 soc = 4;
+  // float soc = 4;
   if (this->soc() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->soc());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6878,13 +6861,13 @@ bool HV_TEMP::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 average_temp = 1;
+      // float average_temp = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &average_temp_)));
         } else {
           goto handle_unusual;
@@ -6892,13 +6875,13 @@ bool HV_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 max_temp = 2;
+      // float max_temp = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &max_temp_)));
         } else {
           goto handle_unusual;
@@ -6906,13 +6889,13 @@ bool HV_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 min_temp = 3;
+      // float min_temp = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &min_temp_)));
         } else {
           goto handle_unusual;
@@ -6960,19 +6943,19 @@ void HV_TEMP::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 average_temp = 1;
+  // float average_temp = 1;
   if (this->average_temp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->average_temp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->average_temp(), output);
   }
 
-  // uint32 max_temp = 2;
+  // float max_temp = 2;
   if (this->max_temp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->max_temp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->max_temp(), output);
   }
 
-  // uint32 min_temp = 3;
+  // float min_temp = 3;
   if (this->min_temp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->min_temp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->min_temp(), output);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -6994,19 +6977,19 @@ void HV_TEMP::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 average_temp = 1;
+  // float average_temp = 1;
   if (this->average_temp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->average_temp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->average_temp(), target);
   }
 
-  // uint32 max_temp = 2;
+  // float max_temp = 2;
   if (this->max_temp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->max_temp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->max_temp(), target);
   }
 
-  // uint32 min_temp = 3;
+  // float min_temp = 3;
   if (this->min_temp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->min_temp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->min_temp(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -7031,18 +7014,14 @@ size_t HV_TEMP::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 average_temp = 1;
+  // float average_temp = 1;
   if (this->average_temp() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->average_temp());
+    total_size += 1 + 4;
   }
 
-  // uint32 max_temp = 2;
+  // float max_temp = 2;
   if (this->max_temp() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->max_temp());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 4;
@@ -7052,11 +7031,9 @@ size_t HV_TEMP::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 min_temp = 3;
+  // float min_temp = 3;
   if (this->min_temp() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->min_temp());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -7797,13 +7774,13 @@ bool HV_FANS_OVERRIDE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 fans_speed = 2;
+      // float fans_speed = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &fans_speed_)));
         } else {
           goto handle_unusual;
@@ -7857,9 +7834,9 @@ void HV_FANS_OVERRIDE::SerializeWithCachedSizes(
       1, this->fans_override(), output);
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->fans_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->fans_speed(), output);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -7887,9 +7864,9 @@ void HV_FANS_OVERRIDE::SerializeWithCachedSizes(
       1, this->fans_override(), target);
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->fans_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->fans_speed(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -7920,11 +7897,9 @@ size_t HV_FANS_OVERRIDE::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->fans_override());
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->fans_speed());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8367,13 +8342,13 @@ bool HV_FANS_OVERRIDE_STATUS::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 fans_speed = 2;
+      // float fans_speed = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &fans_speed_)));
         } else {
           goto handle_unusual;
@@ -8427,9 +8402,9 @@ void HV_FANS_OVERRIDE_STATUS::SerializeWithCachedSizes(
       1, this->fans_override(), output);
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->fans_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->fans_speed(), output);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8457,9 +8432,9 @@ void HV_FANS_OVERRIDE_STATUS::SerializeWithCachedSizes(
       1, this->fans_override(), target);
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->fans_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->fans_speed(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8490,11 +8465,9 @@ size_t HV_FANS_OVERRIDE_STATUS::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::EnumSize(this->fans_override());
   }
 
-  // uint32 fans_speed = 2;
+  // float fans_speed = 2;
   if (this->fans_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->fans_speed());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 3;
@@ -11845,13 +11818,13 @@ bool LV_CURRENT::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 current = 1;
+      // float current = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &current_)));
         } else {
           goto handle_unusual;
@@ -11899,9 +11872,9 @@ void LV_CURRENT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->current(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->current(), output);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -11923,9 +11896,9 @@ void LV_CURRENT::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->current(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->current(), target);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -11957,11 +11930,9 @@ size_t LV_CURRENT::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 current = 1;
+  // float current = 1;
   if (this->current() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->current());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -12113,13 +12084,13 @@ bool LV_VOLTAGE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 voltage_1 = 1;
+      // float voltage_1 = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_1_)));
         } else {
           goto handle_unusual;
@@ -12127,13 +12098,13 @@ bool LV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_2 = 2;
+      // float voltage_2 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_2_)));
         } else {
           goto handle_unusual;
@@ -12141,13 +12112,13 @@ bool LV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_3 = 3;
+      // float voltage_3 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_3_)));
         } else {
           goto handle_unusual;
@@ -12155,13 +12126,13 @@ bool LV_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_4 = 4;
+      // float voltage_4 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_4_)));
         } else {
           goto handle_unusual;
@@ -12209,24 +12180,24 @@ void LV_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage_1 = 1;
+  // float voltage_1 = 1;
   if (this->voltage_1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->voltage_1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->voltage_1(), output);
   }
 
-  // uint32 voltage_2 = 2;
+  // float voltage_2 = 2;
   if (this->voltage_2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage_2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage_2(), output);
   }
 
-  // uint32 voltage_3 = 3;
+  // float voltage_3 = 3;
   if (this->voltage_3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage_3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage_3(), output);
   }
 
-  // uint32 voltage_4 = 4;
+  // float voltage_4 = 4;
   if (this->voltage_4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage_4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage_4(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -12248,24 +12219,24 @@ void LV_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 voltage_1 = 1;
+  // float voltage_1 = 1;
   if (this->voltage_1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->voltage_1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->voltage_1(), target);
   }
 
-  // uint32 voltage_2 = 2;
+  // float voltage_2 = 2;
   if (this->voltage_2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage_2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage_2(), target);
   }
 
-  // uint32 voltage_3 = 3;
+  // float voltage_3 = 3;
   if (this->voltage_3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage_3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage_3(), target);
   }
 
-  // uint32 voltage_4 = 4;
+  // float voltage_4 = 4;
   if (this->voltage_4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage_4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage_4(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -12290,32 +12261,24 @@ size_t LV_VOLTAGE::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 voltage_1 = 1;
+  // float voltage_1 = 1;
   if (this->voltage_1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage_2 = 2;
+  // float voltage_2 = 2;
   if (this->voltage_2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_2());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage_3 = 3;
+  // float voltage_3 = 3;
   if (this->voltage_3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_3());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage_4 = 4;
+  // float voltage_4 = 4;
   if (this->voltage_4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -12483,13 +12446,13 @@ bool LV_TOTAL_VOLTAGE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 total_voltage = 1;
+      // float total_voltage = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &total_voltage_)));
         } else {
           goto handle_unusual;
@@ -12537,9 +12500,9 @@ void LV_TOTAL_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 total_voltage = 1;
+  // float total_voltage = 1;
   if (this->total_voltage() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->total_voltage(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->total_voltage(), output);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -12561,9 +12524,9 @@ void LV_TOTAL_VOLTAGE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 total_voltage = 1;
+  // float total_voltage = 1;
   if (this->total_voltage() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->total_voltage(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->total_voltage(), target);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -12595,11 +12558,9 @@ size_t LV_TOTAL_VOLTAGE::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 total_voltage = 1;
+  // float total_voltage = 1;
   if (this->total_voltage() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->total_voltage());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -12751,13 +12712,13 @@ bool LV_TEMPERATURE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 bp_temperature_1 = 1;
+      // float bp_temperature_1 = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &bp_temperature_1_)));
         } else {
           goto handle_unusual;
@@ -12765,13 +12726,13 @@ bool LV_TEMPERATURE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 bp_temperature_2 = 2;
+      // float bp_temperature_2 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &bp_temperature_2_)));
         } else {
           goto handle_unusual;
@@ -12779,13 +12740,13 @@ bool LV_TEMPERATURE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 dcdc12_temperature = 3;
+      // float dcdc12_temperature = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &dcdc12_temperature_)));
         } else {
           goto handle_unusual;
@@ -12793,13 +12754,13 @@ bool LV_TEMPERATURE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 dcdc24_temperature = 4;
+      // float dcdc24_temperature = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &dcdc24_temperature_)));
         } else {
           goto handle_unusual;
@@ -12847,24 +12808,24 @@ void LV_TEMPERATURE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 bp_temperature_1 = 1;
+  // float bp_temperature_1 = 1;
   if (this->bp_temperature_1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->bp_temperature_1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->bp_temperature_1(), output);
   }
 
-  // uint32 bp_temperature_2 = 2;
+  // float bp_temperature_2 = 2;
   if (this->bp_temperature_2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->bp_temperature_2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->bp_temperature_2(), output);
   }
 
-  // uint32 dcdc12_temperature = 3;
+  // float dcdc12_temperature = 3;
   if (this->dcdc12_temperature() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->dcdc12_temperature(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->dcdc12_temperature(), output);
   }
 
-  // uint32 dcdc24_temperature = 4;
+  // float dcdc24_temperature = 4;
   if (this->dcdc24_temperature() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->dcdc24_temperature(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->dcdc24_temperature(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -12886,24 +12847,24 @@ void LV_TEMPERATURE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 bp_temperature_1 = 1;
+  // float bp_temperature_1 = 1;
   if (this->bp_temperature_1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->bp_temperature_1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->bp_temperature_1(), target);
   }
 
-  // uint32 bp_temperature_2 = 2;
+  // float bp_temperature_2 = 2;
   if (this->bp_temperature_2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->bp_temperature_2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->bp_temperature_2(), target);
   }
 
-  // uint32 dcdc12_temperature = 3;
+  // float dcdc12_temperature = 3;
   if (this->dcdc12_temperature() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->dcdc12_temperature(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->dcdc12_temperature(), target);
   }
 
-  // uint32 dcdc24_temperature = 4;
+  // float dcdc24_temperature = 4;
   if (this->dcdc24_temperature() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->dcdc24_temperature(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->dcdc24_temperature(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -12928,32 +12889,24 @@ size_t LV_TEMPERATURE::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 bp_temperature_1 = 1;
+  // float bp_temperature_1 = 1;
   if (this->bp_temperature_1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->bp_temperature_1());
+    total_size += 1 + 4;
   }
 
-  // uint32 bp_temperature_2 = 2;
+  // float bp_temperature_2 = 2;
   if (this->bp_temperature_2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->bp_temperature_2());
+    total_size += 1 + 4;
   }
 
-  // uint32 dcdc12_temperature = 3;
+  // float dcdc12_temperature = 3;
   if (this->dcdc12_temperature() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->dcdc12_temperature());
+    total_size += 1 + 4;
   }
 
-  // uint32 dcdc24_temperature = 4;
+  // float dcdc24_temperature = 4;
   if (this->dcdc24_temperature() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->dcdc24_temperature());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -13122,13 +13075,13 @@ bool COOLING_STATUS::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 radiators_speed = 1;
+      // float radiators_speed = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &radiators_speed_)));
         } else {
           goto handle_unusual;
@@ -13136,13 +13089,13 @@ bool COOLING_STATUS::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 pumps_speed = 2;
+      // float pumps_speed = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &pumps_speed_)));
         } else {
           goto handle_unusual;
@@ -13190,14 +13143,14 @@ void COOLING_STATUS::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->radiators_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->radiators_speed(), output);
   }
 
-  // uint32 pumps_speed = 2;
+  // float pumps_speed = 2;
   if (this->pumps_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->pumps_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->pumps_speed(), output);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -13219,14 +13172,14 @@ void COOLING_STATUS::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->radiators_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->radiators_speed(), target);
   }
 
-  // uint32 pumps_speed = 2;
+  // float pumps_speed = 2;
   if (this->pumps_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->pumps_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->pumps_speed(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -13251,18 +13204,14 @@ size_t COOLING_STATUS::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->radiators_speed());
+    total_size += 1 + 4;
   }
 
-  // uint32 pumps_speed = 2;
+  // float pumps_speed = 2;
   if (this->pumps_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->pumps_speed());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 3;
@@ -13422,13 +13371,13 @@ bool SET_RADIATOR_SPEED::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 radiators_speed = 1;
+      // float radiators_speed = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &radiators_speed_)));
         } else {
           goto handle_unusual;
@@ -13476,9 +13425,9 @@ void SET_RADIATOR_SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->radiators_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->radiators_speed(), output);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -13500,9 +13449,9 @@ void SET_RADIATOR_SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->radiators_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->radiators_speed(), target);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -13534,11 +13483,9 @@ size_t SET_RADIATOR_SPEED::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 radiators_speed = 1;
+  // float radiators_speed = 1;
   if (this->radiators_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->radiators_speed());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -13687,13 +13634,13 @@ bool SET_PUMPS_SPEED::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 pumps_speed = 1;
+      // float pumps_speed = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &pumps_speed_)));
         } else {
           goto handle_unusual;
@@ -13741,9 +13688,9 @@ void SET_PUMPS_SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 pumps_speed = 1;
+  // float pumps_speed = 1;
   if (this->pumps_speed() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->pumps_speed(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->pumps_speed(), output);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -13765,9 +13712,9 @@ void SET_PUMPS_SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 pumps_speed = 1;
+  // float pumps_speed = 1;
   if (this->pumps_speed() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->pumps_speed(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->pumps_speed(), target);
   }
 
   // uint64 _inner_timestamp = 2;
@@ -13799,11 +13746,9 @@ size_t SET_PUMPS_SPEED::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 pumps_speed = 1;
+  // float pumps_speed = 1;
   if (this->pumps_speed() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->pumps_speed());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -15324,13 +15269,13 @@ bool HV_CELLS_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_0 = 2;
+      // float voltage_0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_0_)));
         } else {
           goto handle_unusual;
@@ -15338,13 +15283,13 @@ bool HV_CELLS_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_1 = 3;
+      // float voltage_1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_1_)));
         } else {
           goto handle_unusual;
@@ -15352,13 +15297,13 @@ bool HV_CELLS_VOLTAGE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage_2 = 4;
+      // float voltage_2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage_2_)));
         } else {
           goto handle_unusual;
@@ -15411,19 +15356,19 @@ void HV_CELLS_VOLTAGE::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage_0 = 2;
+  // float voltage_0 = 2;
   if (this->voltage_0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage_0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage_0(), output);
   }
 
-  // uint32 voltage_1 = 3;
+  // float voltage_1 = 3;
   if (this->voltage_1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage_1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage_1(), output);
   }
 
-  // uint32 voltage_2 = 4;
+  // float voltage_2 = 4;
   if (this->voltage_2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage_2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage_2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -15450,19 +15395,19 @@ void HV_CELLS_VOLTAGE::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage_0 = 2;
+  // float voltage_0 = 2;
   if (this->voltage_0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage_0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage_0(), target);
   }
 
-  // uint32 voltage_1 = 3;
+  // float voltage_1 = 3;
   if (this->voltage_1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage_1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage_1(), target);
   }
 
-  // uint32 voltage_2 = 4;
+  // float voltage_2 = 4;
   if (this->voltage_2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage_2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage_2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -15494,25 +15439,19 @@ size_t HV_CELLS_VOLTAGE::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage_0 = 2;
+  // float voltage_0 = 2;
   if (this->voltage_0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage_1 = 3;
+  // float voltage_1 = 3;
   if (this->voltage_1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage_2 = 4;
+  // float voltage_2 = 4;
   if (this->voltage_2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage_2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -15616,7 +15555,6 @@ const int HV_CELLS_TEMP::kTemp2FieldNumber;
 const int HV_CELLS_TEMP::kTemp3FieldNumber;
 const int HV_CELLS_TEMP::kTemp4FieldNumber;
 const int HV_CELLS_TEMP::kTemp5FieldNumber;
-const int HV_CELLS_TEMP::kTemp6FieldNumber;
 const int HV_CELLS_TEMP::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -15632,15 +15570,15 @@ HV_CELLS_TEMP::HV_CELLS_TEMP(const HV_CELLS_TEMP& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&temp_5_) -
+    reinterpret_cast<char*>(&start_index_)) + sizeof(temp_5_));
   // @@protoc_insertion_point(copy_constructor:primary.HV_CELLS_TEMP)
 }
 
 void HV_CELLS_TEMP::SharedCtor() {
   ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&temp_5_) -
+      reinterpret_cast<char*>(&start_index_)) + sizeof(temp_5_));
 }
 
 HV_CELLS_TEMP::~HV_CELLS_TEMP() {
@@ -15672,8 +15610,8 @@ void HV_CELLS_TEMP::Clear() {
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&temp_5_) -
+      reinterpret_cast<char*>(&start_index_)) + sizeof(temp_5_));
   _internal_metadata_.Clear();
 }
 
@@ -15701,13 +15639,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_0 = 2;
+      // float temp_0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_0_)));
         } else {
           goto handle_unusual;
@@ -15715,13 +15653,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_1 = 3;
+      // float temp_1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_1_)));
         } else {
           goto handle_unusual;
@@ -15729,13 +15667,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_2 = 4;
+      // float temp_2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_2_)));
         } else {
           goto handle_unusual;
@@ -15743,13 +15681,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_3 = 5;
+      // float temp_3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_3_)));
         } else {
           goto handle_unusual;
@@ -15757,13 +15695,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_4 = 6;
+      // float temp_4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_4_)));
         } else {
           goto handle_unusual;
@@ -15771,13 +15709,13 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_5 = 7;
+      // float temp_5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp_5_)));
         } else {
           goto handle_unusual;
@@ -15785,24 +15723,10 @@ bool HV_CELLS_TEMP::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp_6 = 8;
+      // uint64 _inner_timestamp = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &temp_6_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 _inner_timestamp = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(72u /* 72 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -15844,44 +15768,39 @@ void HV_CELLS_TEMP::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp_0 = 2;
+  // float temp_0 = 2;
   if (this->temp_0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp_0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp_0(), output);
   }
 
-  // uint32 temp_1 = 3;
+  // float temp_1 = 3;
   if (this->temp_1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp_1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp_1(), output);
   }
 
-  // uint32 temp_2 = 4;
+  // float temp_2 = 4;
   if (this->temp_2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp_2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp_2(), output);
   }
 
-  // uint32 temp_3 = 5;
+  // float temp_3 = 5;
   if (this->temp_3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp_3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp_3(), output);
   }
 
-  // uint32 temp_4 = 6;
+  // float temp_4 = 6;
   if (this->temp_4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp_4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp_4(), output);
   }
 
-  // uint32 temp_5 = 7;
+  // float temp_5 = 7;
   if (this->temp_5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp_5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp_5(), output);
   }
 
-  // uint32 temp_6 = 8;
-  if (this->temp_6() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(8, this->temp_6(), output);
-  }
-
-  // uint64 _inner_timestamp = 9;
+  // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(9, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -15903,44 +15822,39 @@ void HV_CELLS_TEMP::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp_0 = 2;
+  // float temp_0 = 2;
   if (this->temp_0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp_0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp_0(), target);
   }
 
-  // uint32 temp_1 = 3;
+  // float temp_1 = 3;
   if (this->temp_1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp_1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp_1(), target);
   }
 
-  // uint32 temp_2 = 4;
+  // float temp_2 = 4;
   if (this->temp_2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp_2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp_2(), target);
   }
 
-  // uint32 temp_3 = 5;
+  // float temp_3 = 5;
   if (this->temp_3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp_3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp_3(), target);
   }
 
-  // uint32 temp_4 = 6;
+  // float temp_4 = 6;
   if (this->temp_4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp_4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp_4(), target);
   }
 
-  // uint32 temp_5 = 7;
+  // float temp_5 = 7;
   if (this->temp_5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp_5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp_5(), target);
   }
 
-  // uint32 temp_6 = 8;
-  if (this->temp_6() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(8, this->temp_6(), target);
-  }
-
-  // uint64 _inner_timestamp = 9;
+  // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(9, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -15967,60 +15881,41 @@ size_t HV_CELLS_TEMP::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp_0 = 2;
+  // float temp_0 = 2;
   if (this->temp_0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp_1 = 3;
+  // float temp_1 = 3;
   if (this->temp_1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp_2 = 4;
+  // float temp_2 = 4;
   if (this->temp_2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp_3 = 5;
+  // float temp_3 = 5;
   if (this->temp_3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp_4 = 6;
+  // float temp_4 = 6;
   if (this->temp_4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_4());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp_5 = 7;
-  if (this->temp_5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_5());
-  }
-
-  // uint32 temp_6 = 8;
-  if (this->temp_6() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp_6());
-  }
-
-  // uint64 _inner_timestamp = 9;
+  // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
+  }
+
+  // float temp_5 = 7;
+  if (this->temp_5() != 0) {
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -16068,14 +15963,11 @@ void HV_CELLS_TEMP::MergeFrom(const HV_CELLS_TEMP& from) {
   if (from.temp_4() != 0) {
     set_temp_4(from.temp_4());
   }
-  if (from.temp_5() != 0) {
-    set_temp_5(from.temp_5());
-  }
-  if (from.temp_6() != 0) {
-    set_temp_6(from.temp_6());
-  }
   if (from._inner_timestamp() != 0) {
     set__inner_timestamp(from._inner_timestamp());
+  }
+  if (from.temp_5() != 0) {
+    set_temp_5(from.temp_5());
   }
 }
 
@@ -16109,9 +16001,8 @@ void HV_CELLS_TEMP::InternalSwap(HV_CELLS_TEMP* other) {
   swap(temp_2_, other->temp_2_);
   swap(temp_3_, other->temp_3_);
   swap(temp_4_, other->temp_4_);
-  swap(temp_5_, other->temp_5_);
-  swap(temp_6_, other->temp_6_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
+  swap(temp_5_, other->temp_5_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -16997,13 +16888,13 @@ bool SPEED::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 encoder_r = 1;
+      // float encoder_r = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &encoder_r_)));
         } else {
           goto handle_unusual;
@@ -17011,13 +16902,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 encoder_l = 2;
+      // float encoder_l = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &encoder_l_)));
         } else {
           goto handle_unusual;
@@ -17025,13 +16916,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 inverter_r = 3;
+      // float inverter_r = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &inverter_r_)));
         } else {
           goto handle_unusual;
@@ -17039,13 +16930,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 inverter_l = 4;
+      // float inverter_l = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &inverter_l_)));
         } else {
           goto handle_unusual;
@@ -17093,24 +16984,24 @@ void SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->encoder_r(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->encoder_r(), output);
   }
 
-  // uint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->encoder_l(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->encoder_l(), output);
   }
 
-  // uint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->inverter_r(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->inverter_r(), output);
   }
 
-  // uint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->inverter_l(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->inverter_l(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -17132,24 +17023,24 @@ void SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->encoder_r(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->encoder_r(), target);
   }
 
-  // uint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->encoder_l(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->encoder_l(), target);
   }
 
-  // uint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->inverter_r(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->inverter_r(), target);
   }
 
-  // uint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->inverter_l(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->inverter_l(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -17174,32 +17065,24 @@ size_t SPEED::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->encoder_r());
+    total_size += 1 + 4;
   }
 
-  // uint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->encoder_l());
+    total_size += 1 + 4;
   }
 
-  // uint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->inverter_r());
+    total_size += 1 + 4;
   }
 
-  // uint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->inverter_l());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;

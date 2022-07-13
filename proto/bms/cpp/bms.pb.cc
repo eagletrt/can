@@ -1178,48 +1178,48 @@ void AddDescriptorsImpl() {
       " \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms.Bal"
       "ancingStatus\022\030\n\020_inner_timestamp\030\003 \001(\004\"\242"
       "\001\n\027TEMPERATURES_CELLBOARD0\022\023\n\013start_inde"
-      "x\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\r\022\r\n\005temp1\030\003 \001(\r\022\r\n"
-      "\005temp2\030\004 \001(\r\022\r\n\005temp3\030\005 \001(\r\022\r\n\005temp4\030\006 \001"
-      "(\r\022\r\n\005temp5\030\007 \001(\r\022\030\n\020_inner_timestamp\030\010 "
+      "x\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n"
+      "\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001"
+      "(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timestamp\030\010 "
       "\001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD1\022\023\n\013start"
-      "_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\r\022\r\n\005temp1\030\003 \001"
-      "(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n\005temp3\030\005 \001(\r\022\r\n\005temp"
-      "4\030\006 \001(\r\022\r\n\005temp5\030\007 \001(\r\022\030\n\020_inner_timesta"
+      "_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001"
+      "(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp"
+      "4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timesta"
       "mp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD2\022\023\n\013"
-      "start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\r\022\r\n\005temp"
-      "1\030\003 \001(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n\005temp3\030\005 \001(\r\022\r\n"
-      "\005temp4\030\006 \001(\r\022\r\n\005temp5\030\007 \001(\r\022\030\n\020_inner_ti"
+      "start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp"
+      "1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n"
+      "\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_ti"
       "mestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD"
-      "3\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\r\022\r\n"
-      "\005temp1\030\003 \001(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n\005temp3\030\005 \001"
-      "(\r\022\r\n\005temp4\030\006 \001(\r\022\r\n\005temp5\030\007 \001(\r\022\030\n\020_inn"
+      "3\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n"
+      "\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001"
+      "(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inn"
       "er_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELL"
       "BOARD4\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001"
-      "(\r\022\r\n\005temp1\030\003 \001(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n\005temp"
-      "3\030\005 \001(\r\022\r\n\005temp4\030\006 \001(\r\022\r\n\005temp5\030\007 \001(\r\022\030\n"
+      "(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp"
+      "3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n"
       "\020_inner_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES"
       "_CELLBOARD5\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp"
-      "0\030\002 \001(\r\022\r\n\005temp1\030\003 \001(\r\022\r\n\005temp2\030\004 \001(\r\022\r\n"
-      "\005temp3\030\005 \001(\r\022\r\n\005temp4\030\006 \001(\r\022\r\n\005temp5\030\007 \001"
-      "(\r\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
+      "0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n"
+      "\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001"
+      "(\002\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
       "_CELLBOARD0\022\023\n\013start_index\030\001 \001(\r\022\020\n\010volt"
-      "age0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010voltage2"
-      "\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
+      "age0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010voltage2"
+      "\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
       "AGES_CELLBOARD1\022\023\n\013start_index\030\001 \001(\r\022\020\n\010"
-      "voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010volt"
-      "age2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
+      "voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010volt"
+      "age2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
       "VOLTAGES_CELLBOARD2\022\023\n\013start_index\030\001 \001(\r"
-      "\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r\022\020\n\010"
-      "voltage2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004"
+      "\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010"
+      "voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004"
       "\"z\n\023VOLTAGES_CELLBOARD3\022\023\n\013start_index\030\001"
-      " \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003 \001(\r"
-      "\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005"
+      " \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002"
+      "\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005"
       " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\023\n\013start_ind"
-      "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltage1\030\003"
-      " \001(\r\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_timesta"
+      "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003"
+      " \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timesta"
       "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\023\n\013start"
-      "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\r\022\020\n\010voltag"
-      "e1\030\003 \001(\r\022\020\n\010voltage2\030\004 \001(\r\022\030\n\020_inner_tim"
+      "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltag"
+      "e1\030\003 \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_tim"
       "estamp\030\005 \001(\004\"I\n\tBALANCING\022\023\n\013board_index"
       "\030\001 \001(\r\022\r\n\005cells\030\002 \001(\r\022\030\n\020_inner_timestam"
       "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
@@ -3235,13 +3235,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -3249,13 +3249,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -3263,13 +3263,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -3277,13 +3277,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -3291,13 +3291,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -3305,13 +3305,13 @@ bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -3364,34 +3364,34 @@ void TEMPERATURES_CELLBOARD0::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -3418,34 +3418,34 @@ void TEMPERATURES_CELLBOARD0::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -3477,39 +3477,29 @@ size_t TEMPERATURES_CELLBOARD0::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -3519,11 +3509,9 @@ size_t TEMPERATURES_CELLBOARD0::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3716,13 +3704,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -3730,13 +3718,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -3744,13 +3732,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -3758,13 +3746,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -3772,13 +3760,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -3786,13 +3774,13 @@ bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -3845,34 +3833,34 @@ void TEMPERATURES_CELLBOARD1::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -3899,34 +3887,34 @@ void TEMPERATURES_CELLBOARD1::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -3958,39 +3946,29 @@ size_t TEMPERATURES_CELLBOARD1::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4000,11 +3978,9 @@ size_t TEMPERATURES_CELLBOARD1::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4197,13 +4173,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -4211,13 +4187,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -4225,13 +4201,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -4239,13 +4215,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -4253,13 +4229,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -4267,13 +4243,13 @@ bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -4326,34 +4302,34 @@ void TEMPERATURES_CELLBOARD2::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4380,34 +4356,34 @@ void TEMPERATURES_CELLBOARD2::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4439,39 +4415,29 @@ size_t TEMPERATURES_CELLBOARD2::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4481,11 +4447,9 @@ size_t TEMPERATURES_CELLBOARD2::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4678,13 +4642,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -4692,13 +4656,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -4706,13 +4670,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -4720,13 +4684,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -4734,13 +4698,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -4748,13 +4712,13 @@ bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -4807,34 +4771,34 @@ void TEMPERATURES_CELLBOARD3::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4861,34 +4825,34 @@ void TEMPERATURES_CELLBOARD3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4920,39 +4884,29 @@ size_t TEMPERATURES_CELLBOARD3::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -4962,11 +4916,9 @@ size_t TEMPERATURES_CELLBOARD3::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5159,13 +5111,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -5173,13 +5125,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -5187,13 +5139,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -5201,13 +5153,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -5215,13 +5167,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -5229,13 +5181,13 @@ bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -5288,34 +5240,34 @@ void TEMPERATURES_CELLBOARD4::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5342,34 +5294,34 @@ void TEMPERATURES_CELLBOARD4::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5401,39 +5353,29 @@ size_t TEMPERATURES_CELLBOARD4::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5443,11 +5385,9 @@ size_t TEMPERATURES_CELLBOARD4::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -5640,13 +5580,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp0 = 2;
+      // float temp0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp0_)));
         } else {
           goto handle_unusual;
@@ -5654,13 +5594,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp1 = 3;
+      // float temp1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp1_)));
         } else {
           goto handle_unusual;
@@ -5668,13 +5608,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp2 = 4;
+      // float temp2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp2_)));
         } else {
           goto handle_unusual;
@@ -5682,13 +5622,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp3 = 5;
+      // float temp3 = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp3_)));
         } else {
           goto handle_unusual;
@@ -5696,13 +5636,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp4 = 6;
+      // float temp4 = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp4_)));
         } else {
           goto handle_unusual;
@@ -5710,13 +5650,13 @@ bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 temp5 = 7;
+      // float temp5 = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &temp5_)));
         } else {
           goto handle_unusual;
@@ -5769,34 +5709,34 @@ void TEMPERATURES_CELLBOARD5::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->temp0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->temp1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->temp2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->temp3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->temp4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->temp5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5823,34 +5763,34 @@ void TEMPERATURES_CELLBOARD5::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->temp0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->temp1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->temp2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->temp3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->temp4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->temp5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5882,39 +5822,29 @@ size_t TEMPERATURES_CELLBOARD5::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   if (this->temp0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp0());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   if (this->temp1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp1());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   if (this->temp2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp2());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   if (this->temp3() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp3());
+    total_size += 1 + 4;
   }
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   if (this->temp4() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp4());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
@@ -5924,11 +5854,9 @@ size_t TEMPERATURES_CELLBOARD5::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   if (this->temp5() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->temp5());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -6118,13 +6046,13 @@ bool VOLTAGES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -6132,13 +6060,13 @@ bool VOLTAGES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -6146,13 +6074,13 @@ bool VOLTAGES_CELLBOARD0::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -6205,19 +6133,19 @@ void VOLTAGES_CELLBOARD0::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6244,19 +6172,19 @@ void VOLTAGES_CELLBOARD0::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6288,25 +6216,19 @@ size_t VOLTAGES_CELLBOARD0::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6491,13 +6413,13 @@ bool VOLTAGES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -6505,13 +6427,13 @@ bool VOLTAGES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -6519,13 +6441,13 @@ bool VOLTAGES_CELLBOARD1::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -6578,19 +6500,19 @@ void VOLTAGES_CELLBOARD1::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6617,19 +6539,19 @@ void VOLTAGES_CELLBOARD1::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6661,25 +6583,19 @@ size_t VOLTAGES_CELLBOARD1::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6864,13 +6780,13 @@ bool VOLTAGES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -6878,13 +6794,13 @@ bool VOLTAGES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -6892,13 +6808,13 @@ bool VOLTAGES_CELLBOARD2::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -6951,19 +6867,19 @@ void VOLTAGES_CELLBOARD2::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6990,19 +6906,19 @@ void VOLTAGES_CELLBOARD2::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7034,25 +6950,19 @@ size_t VOLTAGES_CELLBOARD2::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7237,13 +7147,13 @@ bool VOLTAGES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -7251,13 +7161,13 @@ bool VOLTAGES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -7265,13 +7175,13 @@ bool VOLTAGES_CELLBOARD3::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -7324,19 +7234,19 @@ void VOLTAGES_CELLBOARD3::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7363,19 +7273,19 @@ void VOLTAGES_CELLBOARD3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7407,25 +7317,19 @@ size_t VOLTAGES_CELLBOARD3::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7610,13 +7514,13 @@ bool VOLTAGES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -7624,13 +7528,13 @@ bool VOLTAGES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -7638,13 +7542,13 @@ bool VOLTAGES_CELLBOARD4::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -7697,19 +7601,19 @@ void VOLTAGES_CELLBOARD4::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7736,19 +7640,19 @@ void VOLTAGES_CELLBOARD4::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7780,25 +7684,19 @@ size_t VOLTAGES_CELLBOARD4::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -7983,13 +7881,13 @@ bool VOLTAGES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage0 = 2;
+      // float voltage0 = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage0_)));
         } else {
           goto handle_unusual;
@@ -7997,13 +7895,13 @@ bool VOLTAGES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage1 = 3;
+      // float voltage1 = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage1_)));
         } else {
           goto handle_unusual;
@@ -8011,13 +7909,13 @@ bool VOLTAGES_CELLBOARD5::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 voltage2 = 4;
+      // float voltage2 = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &voltage2_)));
         } else {
           goto handle_unusual;
@@ -8070,19 +7968,19 @@ void VOLTAGES_CELLBOARD5::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->voltage0(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->voltage1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->voltage2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -8109,19 +8007,19 @@ void VOLTAGES_CELLBOARD5::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->voltage0(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->voltage1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->voltage2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -8153,25 +8051,19 @@ size_t VOLTAGES_CELLBOARD5::ByteSizeLong() const {
         this->start_index());
   }
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   if (this->voltage0() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage0());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   if (this->voltage1() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage1());
+    total_size += 1 + 4;
   }
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   if (this->voltage2() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->voltage2());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;

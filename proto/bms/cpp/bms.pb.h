@@ -1004,35 +1004,35 @@ class TEMPERATURES_CELLBOARD0 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1040,24 +1040,24 @@ class TEMPERATURES_CELLBOARD0 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD0)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1156,35 +1156,35 @@ class TEMPERATURES_CELLBOARD1 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1192,24 +1192,24 @@ class TEMPERATURES_CELLBOARD1 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD1)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1308,35 +1308,35 @@ class TEMPERATURES_CELLBOARD2 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1344,24 +1344,24 @@ class TEMPERATURES_CELLBOARD2 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD2)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1460,35 +1460,35 @@ class TEMPERATURES_CELLBOARD3 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1496,24 +1496,24 @@ class TEMPERATURES_CELLBOARD3 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD3)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1612,35 +1612,35 @@ class TEMPERATURES_CELLBOARD4 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1648,24 +1648,24 @@ class TEMPERATURES_CELLBOARD4 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD4)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1764,35 +1764,35 @@ class TEMPERATURES_CELLBOARD5 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 temp0 = 2;
+  // float temp0 = 2;
   void clear_temp0();
   static const int kTemp0FieldNumber = 2;
-  ::google::protobuf::uint32 temp0() const;
-  void set_temp0(::google::protobuf::uint32 value);
+  float temp0() const;
+  void set_temp0(float value);
 
-  // uint32 temp1 = 3;
+  // float temp1 = 3;
   void clear_temp1();
   static const int kTemp1FieldNumber = 3;
-  ::google::protobuf::uint32 temp1() const;
-  void set_temp1(::google::protobuf::uint32 value);
+  float temp1() const;
+  void set_temp1(float value);
 
-  // uint32 temp2 = 4;
+  // float temp2 = 4;
   void clear_temp2();
   static const int kTemp2FieldNumber = 4;
-  ::google::protobuf::uint32 temp2() const;
-  void set_temp2(::google::protobuf::uint32 value);
+  float temp2() const;
+  void set_temp2(float value);
 
-  // uint32 temp3 = 5;
+  // float temp3 = 5;
   void clear_temp3();
   static const int kTemp3FieldNumber = 5;
-  ::google::protobuf::uint32 temp3() const;
-  void set_temp3(::google::protobuf::uint32 value);
+  float temp3() const;
+  void set_temp3(float value);
 
-  // uint32 temp4 = 6;
+  // float temp4 = 6;
   void clear_temp4();
   static const int kTemp4FieldNumber = 6;
-  ::google::protobuf::uint32 temp4() const;
-  void set_temp4(::google::protobuf::uint32 value);
+  float temp4() const;
+  void set_temp4(float value);
 
   // uint64 _inner_timestamp = 8;
   void clear__inner_timestamp();
@@ -1800,24 +1800,24 @@ class TEMPERATURES_CELLBOARD5 : public ::google::protobuf::Message /* @@protoc_i
   ::google::protobuf::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::google::protobuf::uint64 value);
 
-  // uint32 temp5 = 7;
+  // float temp5 = 7;
   void clear_temp5();
   static const int kTemp5FieldNumber = 7;
-  ::google::protobuf::uint32 temp5() const;
-  void set_temp5(::google::protobuf::uint32 value);
+  float temp5() const;
+  void set_temp5(float value);
 
   // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD5)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 temp0_;
-  ::google::protobuf::uint32 temp1_;
-  ::google::protobuf::uint32 temp2_;
-  ::google::protobuf::uint32 temp3_;
-  ::google::protobuf::uint32 temp4_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
+  float temp4_;
   ::google::protobuf::uint64 _inner_timestamp_;
-  ::google::protobuf::uint32 temp5_;
+  float temp5_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
 };
@@ -1916,23 +1916,23 @@ class VOLTAGES_CELLBOARD0 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -1945,9 +1945,9 @@ class VOLTAGES_CELLBOARD0 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -2047,23 +2047,23 @@ class VOLTAGES_CELLBOARD1 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2076,9 +2076,9 @@ class VOLTAGES_CELLBOARD1 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -2178,23 +2178,23 @@ class VOLTAGES_CELLBOARD2 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2207,9 +2207,9 @@ class VOLTAGES_CELLBOARD2 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -2309,23 +2309,23 @@ class VOLTAGES_CELLBOARD3 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2338,9 +2338,9 @@ class VOLTAGES_CELLBOARD3 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -2440,23 +2440,23 @@ class VOLTAGES_CELLBOARD4 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2469,9 +2469,9 @@ class VOLTAGES_CELLBOARD4 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -2571,23 +2571,23 @@ class VOLTAGES_CELLBOARD5 : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::uint32 start_index() const;
   void set_start_index(::google::protobuf::uint32 value);
 
-  // uint32 voltage0 = 2;
+  // float voltage0 = 2;
   void clear_voltage0();
   static const int kVoltage0FieldNumber = 2;
-  ::google::protobuf::uint32 voltage0() const;
-  void set_voltage0(::google::protobuf::uint32 value);
+  float voltage0() const;
+  void set_voltage0(float value);
 
-  // uint32 voltage1 = 3;
+  // float voltage1 = 3;
   void clear_voltage1();
   static const int kVoltage1FieldNumber = 3;
-  ::google::protobuf::uint32 voltage1() const;
-  void set_voltage1(::google::protobuf::uint32 value);
+  float voltage1() const;
+  void set_voltage1(float value);
 
-  // uint32 voltage2 = 4;
+  // float voltage2 = 4;
   void clear_voltage2();
   static const int kVoltage2FieldNumber = 4;
-  ::google::protobuf::uint32 voltage2() const;
-  void set_voltage2(::google::protobuf::uint32 value);
+  float voltage2() const;
+  void set_voltage2(float value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -2600,9 +2600,9 @@ class VOLTAGES_CELLBOARD5 : public ::google::protobuf::Message /* @@protoc_inser
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 start_index_;
-  ::google::protobuf::uint32 voltage0_;
-  ::google::protobuf::uint32 voltage1_;
-  ::google::protobuf::uint32 voltage2_;
+  float voltage0_;
+  float voltage1_;
+  float voltage2_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_bms_2eproto::TableStruct;
@@ -4883,85 +4883,85 @@ inline void TEMPERATURES_CELLBOARD0::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD0::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp0() const {
+inline float TEMPERATURES_CELLBOARD0::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD0::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp1() const {
+inline float TEMPERATURES_CELLBOARD0::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD0::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp2() const {
+inline float TEMPERATURES_CELLBOARD0::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD0::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp3() const {
+inline float TEMPERATURES_CELLBOARD0::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD0::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp4() const {
+inline float TEMPERATURES_CELLBOARD0::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD0::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD0::temp5() const {
+inline float TEMPERATURES_CELLBOARD0::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD0::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp5)
@@ -4999,85 +4999,85 @@ inline void TEMPERATURES_CELLBOARD1::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD1::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp0() const {
+inline float TEMPERATURES_CELLBOARD1::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD1::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp1() const {
+inline float TEMPERATURES_CELLBOARD1::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD1::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp2() const {
+inline float TEMPERATURES_CELLBOARD1::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD1::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp3() const {
+inline float TEMPERATURES_CELLBOARD1::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD1::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp4() const {
+inline float TEMPERATURES_CELLBOARD1::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD1::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD1::temp5() const {
+inline float TEMPERATURES_CELLBOARD1::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD1::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD1::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp5)
@@ -5115,85 +5115,85 @@ inline void TEMPERATURES_CELLBOARD2::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD2::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp0() const {
+inline float TEMPERATURES_CELLBOARD2::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD2::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp1() const {
+inline float TEMPERATURES_CELLBOARD2::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD2::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp2() const {
+inline float TEMPERATURES_CELLBOARD2::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD2::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp3() const {
+inline float TEMPERATURES_CELLBOARD2::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD2::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp4() const {
+inline float TEMPERATURES_CELLBOARD2::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD2::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD2::temp5() const {
+inline float TEMPERATURES_CELLBOARD2::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD2::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD2::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp5)
@@ -5231,85 +5231,85 @@ inline void TEMPERATURES_CELLBOARD3::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD3::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp0() const {
+inline float TEMPERATURES_CELLBOARD3::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD3::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp1() const {
+inline float TEMPERATURES_CELLBOARD3::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD3::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp2() const {
+inline float TEMPERATURES_CELLBOARD3::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD3::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp3() const {
+inline float TEMPERATURES_CELLBOARD3::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD3::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp4() const {
+inline float TEMPERATURES_CELLBOARD3::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD3::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD3::temp5() const {
+inline float TEMPERATURES_CELLBOARD3::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD3::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD3::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp5)
@@ -5347,85 +5347,85 @@ inline void TEMPERATURES_CELLBOARD4::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD4::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp0() const {
+inline float TEMPERATURES_CELLBOARD4::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD4::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp1() const {
+inline float TEMPERATURES_CELLBOARD4::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD4::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp2() const {
+inline float TEMPERATURES_CELLBOARD4::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD4::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp3() const {
+inline float TEMPERATURES_CELLBOARD4::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD4::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp4() const {
+inline float TEMPERATURES_CELLBOARD4::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD4::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD4::temp5() const {
+inline float TEMPERATURES_CELLBOARD4::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD4::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD4::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp5)
@@ -5463,85 +5463,85 @@ inline void TEMPERATURES_CELLBOARD5::set_start_index(::google::protobuf::uint32 
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.start_index)
 }
 
-// uint32 temp0 = 2;
+// float temp0 = 2;
 inline void TEMPERATURES_CELLBOARD5::clear_temp0() {
-  temp0_ = 0u;
+  temp0_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp0() const {
+inline float TEMPERATURES_CELLBOARD5::temp0() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp0)
   return temp0_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp0(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp0(float value) {
   
   temp0_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp0)
 }
 
-// uint32 temp1 = 3;
+// float temp1 = 3;
 inline void TEMPERATURES_CELLBOARD5::clear_temp1() {
-  temp1_ = 0u;
+  temp1_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp1() const {
+inline float TEMPERATURES_CELLBOARD5::temp1() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp1)
   return temp1_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp1(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp1(float value) {
   
   temp1_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp1)
 }
 
-// uint32 temp2 = 4;
+// float temp2 = 4;
 inline void TEMPERATURES_CELLBOARD5::clear_temp2() {
-  temp2_ = 0u;
+  temp2_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp2() const {
+inline float TEMPERATURES_CELLBOARD5::temp2() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp2)
   return temp2_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp2(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp2(float value) {
   
   temp2_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp2)
 }
 
-// uint32 temp3 = 5;
+// float temp3 = 5;
 inline void TEMPERATURES_CELLBOARD5::clear_temp3() {
-  temp3_ = 0u;
+  temp3_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp3() const {
+inline float TEMPERATURES_CELLBOARD5::temp3() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp3)
   return temp3_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp3(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp3(float value) {
   
   temp3_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp3)
 }
 
-// uint32 temp4 = 6;
+// float temp4 = 6;
 inline void TEMPERATURES_CELLBOARD5::clear_temp4() {
-  temp4_ = 0u;
+  temp4_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp4() const {
+inline float TEMPERATURES_CELLBOARD5::temp4() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp4)
   return temp4_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp4(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp4(float value) {
   
   temp4_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp4)
 }
 
-// uint32 temp5 = 7;
+// float temp5 = 7;
 inline void TEMPERATURES_CELLBOARD5::clear_temp5() {
-  temp5_ = 0u;
+  temp5_ = 0;
 }
-inline ::google::protobuf::uint32 TEMPERATURES_CELLBOARD5::temp5() const {
+inline float TEMPERATURES_CELLBOARD5::temp5() const {
   // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp5)
   return temp5_;
 }
-inline void TEMPERATURES_CELLBOARD5::set_temp5(::google::protobuf::uint32 value) {
+inline void TEMPERATURES_CELLBOARD5::set_temp5(float value) {
   
   temp5_ = value;
   // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp5)
@@ -5579,43 +5579,43 @@ inline void VOLTAGES_CELLBOARD0::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD0::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD0::voltage0() const {
+inline float VOLTAGES_CELLBOARD0::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD0::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD0::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD0::voltage1() const {
+inline float VOLTAGES_CELLBOARD0::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD0::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD0::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD0::voltage2() const {
+inline float VOLTAGES_CELLBOARD0::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD0::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage2)
@@ -5653,43 +5653,43 @@ inline void VOLTAGES_CELLBOARD1::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD1::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD1::voltage0() const {
+inline float VOLTAGES_CELLBOARD1::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD1::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD1::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD1::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD1::voltage1() const {
+inline float VOLTAGES_CELLBOARD1::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD1::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD1::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD1::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD1::voltage2() const {
+inline float VOLTAGES_CELLBOARD1::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD1::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD1::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage2)
@@ -5727,43 +5727,43 @@ inline void VOLTAGES_CELLBOARD2::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD2::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD2::voltage0() const {
+inline float VOLTAGES_CELLBOARD2::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD2::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD2::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD2::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD2::voltage1() const {
+inline float VOLTAGES_CELLBOARD2::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD2::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD2::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD2::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD2::voltage2() const {
+inline float VOLTAGES_CELLBOARD2::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD2::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD2::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage2)
@@ -5801,43 +5801,43 @@ inline void VOLTAGES_CELLBOARD3::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD3::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD3::voltage0() const {
+inline float VOLTAGES_CELLBOARD3::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD3::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD3::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD3::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD3::voltage1() const {
+inline float VOLTAGES_CELLBOARD3::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD3::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD3::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD3::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD3::voltage2() const {
+inline float VOLTAGES_CELLBOARD3::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD3::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD3::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage2)
@@ -5875,43 +5875,43 @@ inline void VOLTAGES_CELLBOARD4::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD4::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD4::voltage0() const {
+inline float VOLTAGES_CELLBOARD4::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD4::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD4::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD4::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD4::voltage1() const {
+inline float VOLTAGES_CELLBOARD4::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD4::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD4::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD4::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD4::voltage2() const {
+inline float VOLTAGES_CELLBOARD4::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD4::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD4::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage2)
@@ -5949,43 +5949,43 @@ inline void VOLTAGES_CELLBOARD5::set_start_index(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.start_index)
 }
 
-// uint32 voltage0 = 2;
+// float voltage0 = 2;
 inline void VOLTAGES_CELLBOARD5::clear_voltage0() {
-  voltage0_ = 0u;
+  voltage0_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD5::voltage0() const {
+inline float VOLTAGES_CELLBOARD5::voltage0() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage0)
   return voltage0_;
 }
-inline void VOLTAGES_CELLBOARD5::set_voltage0(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD5::set_voltage0(float value) {
   
   voltage0_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage0)
 }
 
-// uint32 voltage1 = 3;
+// float voltage1 = 3;
 inline void VOLTAGES_CELLBOARD5::clear_voltage1() {
-  voltage1_ = 0u;
+  voltage1_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD5::voltage1() const {
+inline float VOLTAGES_CELLBOARD5::voltage1() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage1)
   return voltage1_;
 }
-inline void VOLTAGES_CELLBOARD5::set_voltage1(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD5::set_voltage1(float value) {
   
   voltage1_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage1)
 }
 
-// uint32 voltage2 = 4;
+// float voltage2 = 4;
 inline void VOLTAGES_CELLBOARD5::clear_voltage2() {
-  voltage2_ = 0u;
+  voltage2_ = 0;
 }
-inline ::google::protobuf::uint32 VOLTAGES_CELLBOARD5::voltage2() const {
+inline float VOLTAGES_CELLBOARD5::voltage2() const {
   // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage2)
   return voltage2_;
 }
-inline void VOLTAGES_CELLBOARD5::set_voltage2(::google::protobuf::uint32 value) {
+inline void VOLTAGES_CELLBOARD5::set_voltage2(float value) {
   
   voltage2_ = value;
   // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage2)

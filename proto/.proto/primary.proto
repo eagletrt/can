@@ -136,25 +136,25 @@ message STEER_SYSTEM_STATUS {
 }
 
 message HV_VOLTAGE {
-    uint32 pack_voltage = 1;
-    uint32 bus_voltage = 2;
-    uint32 max_cell_voltage = 3;
-    uint32 min_cell_voltage = 4;
+    float pack_voltage = 1;
+    float bus_voltage = 2;
+    float max_cell_voltage = 3;
+    float min_cell_voltage = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message HV_CURRENT {
-    uint32 current = 1;
-    uint32 power = 2;
-    uint32 energy = 3;
-    uint32 soc = 4;
+    float current = 1;
+    float power = 2;
+    float energy = 3;
+    float soc = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message HV_TEMP {
-    uint32 average_temp = 1;
-    uint32 max_temp = 2;
-    uint32 min_temp = 3;
+    float average_temp = 1;
+    float max_temp = 2;
+    float min_temp = 3;
     uint64 _inner_timestamp = 4;
 }
 
@@ -171,7 +171,7 @@ message HV_CAN_FORWARD {
 
 message HV_FANS_OVERRIDE {
     Toggle fans_override = 1;
-    uint32 fans_speed = 2;
+    float fans_speed = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -182,7 +182,7 @@ message HV_CAN_FORWARD_STATUS {
 
 message HV_FANS_OVERRIDE_STATUS {
     Toggle fans_override = 1;
-    uint32 fans_speed = 2;
+    float fans_speed = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -248,44 +248,44 @@ message DAS_ERRORS {
 }
 
 message LV_CURRENT {
-    uint32 current = 1;
+    float current = 1;
     uint64 _inner_timestamp = 2;
 }
 
 message LV_VOLTAGE {
-    uint32 voltage_1 = 1;
-    uint32 voltage_2 = 2;
-    uint32 voltage_3 = 3;
-    uint32 voltage_4 = 4;
+    float voltage_1 = 1;
+    float voltage_2 = 2;
+    float voltage_3 = 3;
+    float voltage_4 = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message LV_TOTAL_VOLTAGE {
-    uint32 total_voltage = 1;
+    float total_voltage = 1;
     uint64 _inner_timestamp = 2;
 }
 
 message LV_TEMPERATURE {
-    uint32 bp_temperature_1 = 1;
-    uint32 bp_temperature_2 = 2;
-    uint32 dcdc12_temperature = 3;
-    uint32 dcdc24_temperature = 4;
+    float bp_temperature_1 = 1;
+    float bp_temperature_2 = 2;
+    float dcdc12_temperature = 3;
+    float dcdc24_temperature = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message COOLING_STATUS {
-    uint32 radiators_speed = 1;
-    uint32 pumps_speed = 2;
+    float radiators_speed = 1;
+    float pumps_speed = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message SET_RADIATOR_SPEED {
-    uint32 radiators_speed = 1;
+    float radiators_speed = 1;
     uint64 _inner_timestamp = 2;
 }
 
 message SET_PUMPS_SPEED {
-    uint32 pumps_speed = 1;
+    float pumps_speed = 1;
     uint64 _inner_timestamp = 2;
 }
 
@@ -317,22 +317,21 @@ message MARKER {
 
 message HV_CELLS_VOLTAGE {
     uint32 start_index = 1;
-    uint32 voltage_0 = 2;
-    uint32 voltage_1 = 3;
-    uint32 voltage_2 = 4;
+    float voltage_0 = 2;
+    float voltage_1 = 3;
+    float voltage_2 = 4;
     uint64 _inner_timestamp = 5;
 }
 
 message HV_CELLS_TEMP {
     uint32 start_index = 1;
-    uint32 temp_0 = 2;
-    uint32 temp_1 = 3;
-    uint32 temp_2 = 4;
-    uint32 temp_3 = 5;
-    uint32 temp_4 = 6;
-    uint32 temp_5 = 7;
-    uint32 temp_6 = 8;
-    uint64 _inner_timestamp = 9;
+    float temp_0 = 2;
+    float temp_1 = 3;
+    float temp_2 = 4;
+    float temp_3 = 5;
+    float temp_4 = 6;
+    float temp_5 = 7;
+    uint64 _inner_timestamp = 8;
 }
 
 message HV_CELL_BALANCING_STATUS {
@@ -351,10 +350,10 @@ message HANDCART_STATUS {
 }
 
 message SPEED {
-    uint32 encoder_r = 1;
-    uint32 encoder_l = 2;
-    uint32 inverter_r = 3;
-    uint32 inverter_l = 4;
+    float encoder_r = 1;
+    float encoder_l = 2;
+    float inverter_r = 3;
+    float inverter_l = 4;
     uint64 _inner_timestamp = 5;
 }
 

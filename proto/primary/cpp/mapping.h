@@ -745,7 +745,6 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             proto_msg->set_temp_3(msg->temp_3);
             proto_msg->set_temp_4(msg->temp_4);
             proto_msg->set_temp_5(msg->temp_5);
-            proto_msg->set_temp_6(msg->temp_6);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1396,7 +1395,6 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.temp_3 =pack->hv_cells_temp(i).temp_3();
         instance.temp_4 =pack->hv_cells_temp(i).temp_4();
         instance.temp_5 =pack->hv_cells_temp(i).temp_5();
-        instance.temp_6 =pack->hv_cells_temp(i).temp_6();
 #ifdef CANLIB_TIMESTAMP
         instance._timestamp = pack->hv_cells_temp(i)._inner_timestamp();
 #endif // CANLIB_TIMESTAMP

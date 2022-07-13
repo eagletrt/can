@@ -911,11 +911,11 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\017secondary.proto\022\tsecondary\"h\n\020IMU_ANGU"
-      "LAR_RATE\022\022\n\nang_rate_x\030\001 \001(\r\022\022\n\nang_rate"
-      "_y\030\002 \001(\r\022\022\n\nang_rate_z\030\003 \001(\r\022\030\n\020_inner_t"
+      "LAR_RATE\022\022\n\nang_rate_x\030\001 \001(\002\022\022\n\nang_rate"
+      "_y\030\002 \001(\002\022\022\n\nang_rate_z\030\003 \001(\002\022\030\n\020_inner_t"
       "imestamp\030\004 \001(\004\"_\n\020IMU_ACCELERATION\022\017\n\007ac"
-      "cel_x\030\001 \001(\r\022\017\n\007accel_y\030\002 \001(\r\022\017\n\007accel_z\030"
-      "\003 \001(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"m\n\tIRTS_"
+      "cel_x\030\001 \001(\002\022\017\n\007accel_y\030\002 \001(\002\022\017\n\007accel_z\030"
+      "\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\"m\n\tIRTS_"
       "FL_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r"
       "\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\030\n\020"
       "_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_FL_1\022\020\n\010c"
@@ -967,7 +967,7 @@ void AddDescriptorsImpl() {
       "\030\002 \001(\004\"J\n\tLAP_COUNT\022\021\n\tlap_count\030\001 \001(\r\022\020"
       "\n\010lap_time\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001"
       "(\004\"\\\n\rPEDALS_OUTPUT\022\014\n\004apps\030\001 \001(\r\022\021\n\tbse"
-      "_front\030\002 \001(\r\022\020\n\010bse_rear\030\003 \001(\r\022\030\n\020_inner"
+      "_front\030\002 \001(\002\022\020\n\010bse_rear\030\003 \001(\002\022\030\n\020_inner"
       "_timestamp\030\004 \001(\004\"G\n\016CONTROL_OUTPUT\022\r\n\005ri"
       "ght\030\001 \001(\002\022\014\n\004left\030\002 \001(\002\022\030\n\020_inner_timest"
       "amp\030\003 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005angle\030\001 \001"
@@ -1097,13 +1097,13 @@ bool IMU_ANGULAR_RATE::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 ang_rate_x = 1;
+      // float ang_rate_x = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &ang_rate_x_)));
         } else {
           goto handle_unusual;
@@ -1111,13 +1111,13 @@ bool IMU_ANGULAR_RATE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 ang_rate_y = 2;
+      // float ang_rate_y = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &ang_rate_y_)));
         } else {
           goto handle_unusual;
@@ -1125,13 +1125,13 @@ bool IMU_ANGULAR_RATE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 ang_rate_z = 3;
+      // float ang_rate_z = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &ang_rate_z_)));
         } else {
           goto handle_unusual;
@@ -1179,19 +1179,19 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 ang_rate_x = 1;
+  // float ang_rate_x = 1;
   if (this->ang_rate_x() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->ang_rate_x(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->ang_rate_x(), output);
   }
 
-  // uint32 ang_rate_y = 2;
+  // float ang_rate_y = 2;
   if (this->ang_rate_y() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->ang_rate_y(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->ang_rate_y(), output);
   }
 
-  // uint32 ang_rate_z = 3;
+  // float ang_rate_z = 3;
   if (this->ang_rate_z() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->ang_rate_z(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->ang_rate_z(), output);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1213,19 +1213,19 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 ang_rate_x = 1;
+  // float ang_rate_x = 1;
   if (this->ang_rate_x() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->ang_rate_x(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->ang_rate_x(), target);
   }
 
-  // uint32 ang_rate_y = 2;
+  // float ang_rate_y = 2;
   if (this->ang_rate_y() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->ang_rate_y(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->ang_rate_y(), target);
   }
 
-  // uint32 ang_rate_z = 3;
+  // float ang_rate_z = 3;
   if (this->ang_rate_z() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->ang_rate_z(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->ang_rate_z(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1250,18 +1250,14 @@ size_t IMU_ANGULAR_RATE::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 ang_rate_x = 1;
+  // float ang_rate_x = 1;
   if (this->ang_rate_x() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->ang_rate_x());
+    total_size += 1 + 4;
   }
 
-  // uint32 ang_rate_y = 2;
+  // float ang_rate_y = 2;
   if (this->ang_rate_y() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->ang_rate_y());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1271,11 +1267,9 @@ size_t IMU_ANGULAR_RATE::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 ang_rate_z = 3;
+  // float ang_rate_z = 3;
   if (this->ang_rate_z() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->ang_rate_z());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1434,13 +1428,13 @@ bool IMU_ACCELERATION::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 accel_x = 1;
+      // float accel_x = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &accel_x_)));
         } else {
           goto handle_unusual;
@@ -1448,13 +1442,13 @@ bool IMU_ACCELERATION::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 accel_y = 2;
+      // float accel_y = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &accel_y_)));
         } else {
           goto handle_unusual;
@@ -1462,13 +1456,13 @@ bool IMU_ACCELERATION::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 accel_z = 3;
+      // float accel_z = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &accel_z_)));
         } else {
           goto handle_unusual;
@@ -1516,19 +1510,19 @@ void IMU_ACCELERATION::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 accel_x = 1;
+  // float accel_x = 1;
   if (this->accel_x() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->accel_x(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->accel_x(), output);
   }
 
-  // uint32 accel_y = 2;
+  // float accel_y = 2;
   if (this->accel_y() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->accel_y(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->accel_y(), output);
   }
 
-  // uint32 accel_z = 3;
+  // float accel_z = 3;
   if (this->accel_z() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->accel_z(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->accel_z(), output);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1550,19 +1544,19 @@ void IMU_ACCELERATION::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 accel_x = 1;
+  // float accel_x = 1;
   if (this->accel_x() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->accel_x(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->accel_x(), target);
   }
 
-  // uint32 accel_y = 2;
+  // float accel_y = 2;
   if (this->accel_y() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->accel_y(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->accel_y(), target);
   }
 
-  // uint32 accel_z = 3;
+  // float accel_z = 3;
   if (this->accel_z() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->accel_z(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->accel_z(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1587,18 +1581,14 @@ size_t IMU_ACCELERATION::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // uint32 accel_x = 1;
+  // float accel_x = 1;
   if (this->accel_x() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->accel_x());
+    total_size += 1 + 4;
   }
 
-  // uint32 accel_y = 2;
+  // float accel_y = 2;
   if (this->accel_y() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->accel_y());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 4;
@@ -1608,11 +1598,9 @@ size_t IMU_ACCELERATION::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 accel_z = 3;
+  // float accel_z = 3;
   if (this->accel_z() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->accel_z());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -8616,13 +8604,13 @@ bool PEDALS_OUTPUT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 bse_front = 2;
+      // float bse_front = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &bse_front_)));
         } else {
           goto handle_unusual;
@@ -8630,13 +8618,13 @@ bool PEDALS_OUTPUT::MergePartialFromCodedStream(
         break;
       }
 
-      // uint32 bse_rear = 3;
+      // float bse_rear = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &bse_rear_)));
         } else {
           goto handle_unusual;
@@ -8689,14 +8677,14 @@ void PEDALS_OUTPUT::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->apps(), output);
   }
 
-  // uint32 bse_front = 2;
+  // float bse_front = 2;
   if (this->bse_front() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->bse_front(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->bse_front(), output);
   }
 
-  // uint32 bse_rear = 3;
+  // float bse_rear = 3;
   if (this->bse_rear() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->bse_rear(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->bse_rear(), output);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -8723,14 +8711,14 @@ void PEDALS_OUTPUT::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->apps(), target);
   }
 
-  // uint32 bse_front = 2;
+  // float bse_front = 2;
   if (this->bse_front() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->bse_front(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->bse_front(), target);
   }
 
-  // uint32 bse_rear = 3;
+  // float bse_rear = 3;
   if (this->bse_rear() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->bse_rear(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->bse_rear(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -8762,11 +8750,9 @@ size_t PEDALS_OUTPUT::ByteSizeLong() const {
         this->apps());
   }
 
-  // uint32 bse_front = 2;
+  // float bse_front = 2;
   if (this->bse_front() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->bse_front());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 4;
@@ -8776,11 +8762,9 @@ size_t PEDALS_OUTPUT::ByteSizeLong() const {
         this->_inner_timestamp());
   }
 
-  // uint32 bse_rear = 3;
+  // float bse_rear = 3;
   if (this->bse_rear() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->bse_rear());
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
