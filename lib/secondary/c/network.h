@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657736003
+#define CANLIB_BUILD_TIME 1657888700
 #define CANLIB_BUILD_HASH 0x2c313203
 #endif // CANLIB_BUILD
 
@@ -1253,6 +1253,36 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 769: return secondary_INDEX_PEDALS_OUTPUT;
         case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
+    }
+    return 24; // invalid
+}
+
+static inline int secondary_id_from_index(int index) {
+    switch (index) {
+        case secondary_INDEX_IMU_ANGULAR_RATE: return 1260;
+        case secondary_INDEX_IMU_ACCELERATION: return 1261;
+        case secondary_INDEX_IRTS_FL_0: return 1460;
+        case secondary_INDEX_IRTS_FL_1: return 1461;
+        case secondary_INDEX_IRTS_FL_2: return 1462;
+        case secondary_INDEX_IRTS_FL_3: return 1463;
+        case secondary_INDEX_IRTS_FR_0: return 1464;
+        case secondary_INDEX_IRTS_FR_1: return 1465;
+        case secondary_INDEX_IRTS_FR_2: return 1466;
+        case secondary_INDEX_IRTS_FR_3: return 1467;
+        case secondary_INDEX_IRTS_RL_0: return 1468;
+        case secondary_INDEX_IRTS_RL_1: return 1469;
+        case secondary_INDEX_IRTS_RL_2: return 1470;
+        case secondary_INDEX_IRTS_RL_3: return 1471;
+        case secondary_INDEX_IRTS_RR_0: return 1472;
+        case secondary_INDEX_IRTS_RR_1: return 1473;
+        case secondary_INDEX_IRTS_RR_2: return 1474;
+        case secondary_INDEX_IRTS_RR_3: return 1475;
+        case secondary_INDEX_GPS_COORDS: return 1025;
+        case secondary_INDEX_GPS_SPEED: return 1057;
+        case secondary_INDEX_LAP_COUNT: return 1089;
+        case secondary_INDEX_PEDALS_OUTPUT: return 769;
+        case secondary_INDEX_CONTROL_OUTPUT: return 801;
+        case secondary_INDEX_STEERING_ANGLE: return 258;
     }
     return 24; // invalid
 }

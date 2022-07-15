@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657736003
+#define CANLIB_BUILD_TIME 1657888700
 #define CANLIB_BUILD_HASH 0x2c313203
 #endif // CANLIB_BUILD
 
@@ -964,6 +964,44 @@ static inline int bms_index_from_id(canlib_message_id id) {
         case 25: return bms_INDEX_FLASH_CELLBOARD_4_RX;
         case 26: return bms_INDEX_FLASH_CELLBOARD_5_TX;
         case 27: return bms_INDEX_FLASH_CELLBOARD_5_RX;
+    }
+    return 32; // invalid
+}
+
+static inline int bms_id_from_index(int index) {
+    switch (index) {
+        case bms_INDEX_BOARD_STATUS_CELLBOARD0: return 1536;
+        case bms_INDEX_BOARD_STATUS_CELLBOARD1: return 1568;
+        case bms_INDEX_BOARD_STATUS_CELLBOARD2: return 1600;
+        case bms_INDEX_BOARD_STATUS_CELLBOARD3: return 1632;
+        case bms_INDEX_BOARD_STATUS_CELLBOARD4: return 1664;
+        case bms_INDEX_BOARD_STATUS_CELLBOARD5: return 1696;
+        case bms_INDEX_TEMPERATURES_CELLBOARD0: return 1281;
+        case bms_INDEX_TEMPERATURES_CELLBOARD1: return 1313;
+        case bms_INDEX_TEMPERATURES_CELLBOARD2: return 1345;
+        case bms_INDEX_TEMPERATURES_CELLBOARD3: return 1377;
+        case bms_INDEX_TEMPERATURES_CELLBOARD4: return 1409;
+        case bms_INDEX_TEMPERATURES_CELLBOARD5: return 1441;
+        case bms_INDEX_VOLTAGES_CELLBOARD0: return 514;
+        case bms_INDEX_VOLTAGES_CELLBOARD1: return 546;
+        case bms_INDEX_VOLTAGES_CELLBOARD2: return 578;
+        case bms_INDEX_VOLTAGES_CELLBOARD3: return 610;
+        case bms_INDEX_VOLTAGES_CELLBOARD4: return 642;
+        case bms_INDEX_VOLTAGES_CELLBOARD5: return 674;
+        case bms_INDEX_BALANCING: return 515;
+        case bms_INDEX_FW_UPDATE: return 10;
+        case bms_INDEX_FLASH_CELLBOARD_0_TX: return 16;
+        case bms_INDEX_FLASH_CELLBOARD_0_RX: return 17;
+        case bms_INDEX_FLASH_CELLBOARD_1_TX: return 18;
+        case bms_INDEX_FLASH_CELLBOARD_1_RX: return 19;
+        case bms_INDEX_FLASH_CELLBOARD_2_TX: return 20;
+        case bms_INDEX_FLASH_CELLBOARD_2_RX: return 21;
+        case bms_INDEX_FLASH_CELLBOARD_3_TX: return 22;
+        case bms_INDEX_FLASH_CELLBOARD_3_RX: return 23;
+        case bms_INDEX_FLASH_CELLBOARD_4_TX: return 24;
+        case bms_INDEX_FLASH_CELLBOARD_4_RX: return 25;
+        case bms_INDEX_FLASH_CELLBOARD_5_TX: return 26;
+        case bms_INDEX_FLASH_CELLBOARD_5_RX: return 27;
     }
     return 32; // invalid
 }

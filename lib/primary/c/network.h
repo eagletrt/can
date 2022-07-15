@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657736003
+#define CANLIB_BUILD_TIME 1657888700
 #define CANLIB_BUILD_HASH 0x2c313203
 #endif // CANLIB_BUILD
 
@@ -3750,6 +3750,88 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 614: return primary_INDEX_BRUSA_ERR;
         case 170: return primary_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_INDEX_ECU_CHIMERA;
+    }
+    return 76; // invalid
+}
+
+static inline int primary_id_from_index(int index) {
+    switch (index) {
+        case primary_INDEX_BMS_HV_JMP_TO_BLT: return 0;
+        case primary_INDEX_BMS_LV_JMP_TO_BLT: return 32;
+        case primary_INDEX_STEER_VERSION: return 1025;
+        case primary_INDEX_DAS_VERSION: return 1057;
+        case primary_INDEX_HV_VERSION: return 1089;
+        case primary_INDEX_LV_VERSION: return 1121;
+        case primary_INDEX_TLM_VERSION: return 1153;
+        case primary_INDEX_TIMESTAMP: return 257;
+        case primary_INDEX_SET_TLM_STATUS: return 258;
+        case primary_INDEX_TLM_STATUS: return 259;
+        case primary_INDEX_STEER_SYSTEM_STATUS: return 1794;
+        case primary_INDEX_HV_VOLTAGE: return 772;
+        case primary_INDEX_HV_CURRENT: return 804;
+        case primary_INDEX_HV_TEMP: return 836;
+        case primary_INDEX_HV_ERRORS: return 4;
+        case primary_INDEX_HV_CAN_FORWARD: return 5;
+        case primary_INDEX_HV_FANS_OVERRIDE: return 37;
+        case primary_INDEX_HV_CAN_FORWARD_STATUS: return 6;
+        case primary_INDEX_HV_FANS_OVERRIDE_STATUS: return 774;
+        case primary_INDEX_HV_FEEDBACKS_STATUS: return 775;
+        case primary_INDEX_HV_IMD_STATUS: return 807;
+        case primary_INDEX_TS_STATUS: return 36;
+        case primary_INDEX_SET_TS_STATUS_DAS: return 69;
+        case primary_INDEX_SET_TS_STATUS_HANDCART: return 101;
+        case primary_INDEX_STEER_STATUS: return 264;
+        case primary_INDEX_SET_CAR_STATUS: return 776;
+        case primary_INDEX_SET_PEDALS_RANGE: return 1032;
+        case primary_INDEX_SET_STEERING_ANGLE_RANGE: return 1064;
+        case primary_INDEX_CAR_STATUS: return 515;
+        case primary_INDEX_DAS_ERRORS: return 3;
+        case primary_INDEX_LV_CURRENT: return 839;
+        case primary_INDEX_LV_VOLTAGE: return 871;
+        case primary_INDEX_LV_TOTAL_VOLTAGE: return 903;
+        case primary_INDEX_LV_TEMPERATURE: return 935;
+        case primary_INDEX_COOLING_STATUS: return 967;
+        case primary_INDEX_SET_RADIATOR_SPEED: return 777;
+        case primary_INDEX_SET_PUMPS_SPEED: return 809;
+        case primary_INDEX_SET_INVERTER_CONNECTION_STATUS: return 265;
+        case primary_INDEX_INVERTER_CONNECTION_STATUS: return 263;
+        case primary_INDEX_LV_ERRORS: return 7;
+        case primary_INDEX_SHUTDOWN_STATUS: return 295;
+        case primary_INDEX_MARKER: return 2;
+        case primary_INDEX_HV_CELLS_VOLTAGE: return 518;
+        case primary_INDEX_HV_CELLS_TEMP: return 550;
+        case primary_INDEX_HV_CELL_BALANCING_STATUS: return 582;
+        case primary_INDEX_SET_CELL_BALANCING_STATUS: return 517;
+        case primary_INDEX_HANDCART_STATUS: return 773;
+        case primary_INDEX_SPEED: return 547;
+        case primary_INDEX_INV_L_REQUEST: return 513;
+        case primary_INDEX_INV_R_REQUEST: return 514;
+        case primary_INDEX_INV_L_RESPONSE: return 385;
+        case primary_INDEX_INV_R_RESPONSE: return 386;
+        case primary_INDEX_FLASH_CELLBOARD_0_TX: return 16;
+        case primary_INDEX_FLASH_CELLBOARD_0_RX: return 17;
+        case primary_INDEX_FLASH_CELLBOARD_1_TX: return 18;
+        case primary_INDEX_FLASH_CELLBOARD_1_RX: return 19;
+        case primary_INDEX_FLASH_CELLBOARD_2_TX: return 20;
+        case primary_INDEX_FLASH_CELLBOARD_2_RX: return 21;
+        case primary_INDEX_FLASH_CELLBOARD_3_TX: return 22;
+        case primary_INDEX_FLASH_CELLBOARD_3_RX: return 23;
+        case primary_INDEX_FLASH_CELLBOARD_4_TX: return 24;
+        case primary_INDEX_FLASH_CELLBOARD_4_RX: return 25;
+        case primary_INDEX_FLASH_CELLBOARD_5_TX: return 26;
+        case primary_INDEX_FLASH_CELLBOARD_5_RX: return 27;
+        case primary_INDEX_FLASH_BMS_HV_TX: return 2017;
+        case primary_INDEX_FLASH_BMS_HV_RX: return 1639;
+        case primary_INDEX_FLASH_BMS_LV_TX: return 2033;
+        case primary_INDEX_FLASH_BMS_LV_RX: return 1655;
+        case primary_INDEX_BRUSA_NLG5_CTL: return 618;
+        case primary_INDEX_BRUSA_ST: return 610;
+        case primary_INDEX_BRUSA_ACT_I: return 611;
+        case primary_INDEX_BRUSA_ACT_II: return 612;
+        case primary_INDEX_BRUSA_TEMP: return 613;
+        case primary_INDEX_BRUSA_ERR: return 614;
+        case primary_INDEX_BMS_HV_CHIMERA: return 170;
+        case primary_INDEX_ECU_CHIMERA: return 85;
     }
     return 76; // invalid
 }
