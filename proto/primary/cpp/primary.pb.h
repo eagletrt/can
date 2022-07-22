@@ -6138,29 +6138,29 @@ class SPEED : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // float encoder_r = 1;
+  // sint32 encoder_r = 1;
   void clear_encoder_r();
   static const int kEncoderRFieldNumber = 1;
-  float encoder_r() const;
-  void set_encoder_r(float value);
+  ::google::protobuf::int32 encoder_r() const;
+  void set_encoder_r(::google::protobuf::int32 value);
 
-  // float encoder_l = 2;
+  // sint32 encoder_l = 2;
   void clear_encoder_l();
   static const int kEncoderLFieldNumber = 2;
-  float encoder_l() const;
-  void set_encoder_l(float value);
+  ::google::protobuf::int32 encoder_l() const;
+  void set_encoder_l(::google::protobuf::int32 value);
 
-  // float inverter_r = 3;
+  // sint32 inverter_r = 3;
   void clear_inverter_r();
   static const int kInverterRFieldNumber = 3;
-  float inverter_r() const;
-  void set_inverter_r(float value);
+  ::google::protobuf::int32 inverter_r() const;
+  void set_inverter_r(::google::protobuf::int32 value);
 
-  // float inverter_l = 4;
+  // sint32 inverter_l = 4;
   void clear_inverter_l();
   static const int kInverterLFieldNumber = 4;
-  float inverter_l() const;
-  void set_inverter_l(float value);
+  ::google::protobuf::int32 inverter_l() const;
+  void set_inverter_l(::google::protobuf::int32 value);
 
   // uint64 _inner_timestamp = 5;
   void clear__inner_timestamp();
@@ -6172,10 +6172,10 @@ class SPEED : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  float encoder_r_;
-  float encoder_l_;
-  float inverter_r_;
-  float inverter_l_;
+  ::google::protobuf::int32 encoder_r_;
+  ::google::protobuf::int32 encoder_l_;
+  ::google::protobuf::int32 inverter_r_;
+  ::google::protobuf::int32 inverter_l_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -12419,57 +12419,57 @@ inline void HANDCART_STATUS::set__inner_timestamp(::google::protobuf::uint64 val
 
 // SPEED
 
-// float encoder_r = 1;
+// sint32 encoder_r = 1;
 inline void SPEED::clear_encoder_r() {
   encoder_r_ = 0;
 }
-inline float SPEED::encoder_r() const {
+inline ::google::protobuf::int32 SPEED::encoder_r() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.encoder_r)
   return encoder_r_;
 }
-inline void SPEED::set_encoder_r(float value) {
+inline void SPEED::set_encoder_r(::google::protobuf::int32 value) {
   
   encoder_r_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.encoder_r)
 }
 
-// float encoder_l = 2;
+// sint32 encoder_l = 2;
 inline void SPEED::clear_encoder_l() {
   encoder_l_ = 0;
 }
-inline float SPEED::encoder_l() const {
+inline ::google::protobuf::int32 SPEED::encoder_l() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.encoder_l)
   return encoder_l_;
 }
-inline void SPEED::set_encoder_l(float value) {
+inline void SPEED::set_encoder_l(::google::protobuf::int32 value) {
   
   encoder_l_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.encoder_l)
 }
 
-// float inverter_r = 3;
+// sint32 inverter_r = 3;
 inline void SPEED::clear_inverter_r() {
   inverter_r_ = 0;
 }
-inline float SPEED::inverter_r() const {
+inline ::google::protobuf::int32 SPEED::inverter_r() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.inverter_r)
   return inverter_r_;
 }
-inline void SPEED::set_inverter_r(float value) {
+inline void SPEED::set_inverter_r(::google::protobuf::int32 value) {
   
   inverter_r_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.inverter_r)
 }
 
-// float inverter_l = 4;
+// sint32 inverter_l = 4;
 inline void SPEED::clear_inverter_l() {
   inverter_l_ = 0;
 }
-inline float SPEED::inverter_l() const {
+inline ::google::protobuf::int32 SPEED::inverter_l() const {
   // @@protoc_insertion_point(field_get:primary.SPEED.inverter_l)
   return inverter_l_;
 }
-inline void SPEED::set_inverter_l(float value) {
+inline void SPEED::set_inverter_l(::google::protobuf::int32 value) {
   
   inverter_l_ = value;
   // @@protoc_insertion_point(field_set:primary.SPEED.inverter_l)

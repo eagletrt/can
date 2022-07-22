@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657888700
-#define CANLIB_BUILD_HASH 0x2c313203
+#define CANLIB_BUILD_TIME 1658507007
+#define CANLIB_BUILD_HASH 0xab95663f
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -1254,7 +1254,7 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
     }
-    return 24; // invalid
+    return -1; // invalid
 }
 
 static inline int secondary_id_from_index(int index) {
@@ -1284,7 +1284,7 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_CONTROL_OUTPUT: return 801;
         case secondary_INDEX_STEERING_ANGLE: return 258;
     }
-    return 24; // invalid
+    return -1; // invalid
 }
 
 int secondary_fields_from_id(canlib_message_id message_id, char *buffer);

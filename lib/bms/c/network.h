@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1657888700
-#define CANLIB_BUILD_HASH 0x2c313203
+#define CANLIB_BUILD_TIME 1658507007
+#define CANLIB_BUILD_HASH 0xab95663f
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -965,7 +965,7 @@ static inline int bms_index_from_id(canlib_message_id id) {
         case 26: return bms_INDEX_FLASH_CELLBOARD_5_TX;
         case 27: return bms_INDEX_FLASH_CELLBOARD_5_RX;
     }
-    return 32; // invalid
+    return -1; // invalid
 }
 
 static inline int bms_id_from_index(int index) {
@@ -1003,7 +1003,7 @@ static inline int bms_id_from_index(int index) {
         case bms_INDEX_FLASH_CELLBOARD_5_TX: return 26;
         case bms_INDEX_FLASH_CELLBOARD_5_RX: return 27;
     }
-    return 32; // invalid
+    return -1; // invalid
 }
 
 int bms_fields_from_id(canlib_message_id message_id, char *buffer);

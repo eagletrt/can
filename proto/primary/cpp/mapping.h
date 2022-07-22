@@ -240,7 +240,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CELL_BALANCING_STATUS;
     canlib_circular_buffer<primary_message_SET_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_CELL_BALANCING_STATUS;
     canlib_circular_buffer<primary_message_HANDCART_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HANDCART_STATUS;
-    canlib_circular_buffer<primary_message_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> SPEED;
+    canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> SPEED;
     canlib_circular_buffer<primary_message_INV_L_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE> INV_L_REQUEST;
     canlib_circular_buffer<primary_message_INV_R_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE> INV_R_REQUEST;
     canlib_circular_buffer<primary_message_INV_L_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE> INV_L_RESPONSE;
@@ -782,7 +782,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 547: {
-            primary_message_SPEED_conversion* msg = (primary_message_SPEED_conversion*) (*map)[index].message_conversion;
+            primary_message_SPEED* msg = (primary_message_SPEED*) (*map)[index].message_raw;
             primary::SPEED* proto_msg = pack->add_speed();
             proto_msg->set_encoder_r(msg->encoder_r);
             proto_msg->set_encoder_l(msg->encoder_l);
@@ -1425,7 +1425,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         map->HANDCART_STATUS.push(instance);
     }
     for(int i = 0; i < pack->speed_size(); i++){
-        static primary_message_SPEED_conversion instance;
+        static primary_message_SPEED instance;
         instance.encoder_r =pack->speed(i).encoder_r();
         instance.encoder_l =pack->speed(i).encoder_l();
         instance.inverter_r =pack->speed(i).inverter_r();
