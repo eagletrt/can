@@ -953,26 +953,10 @@
       "description": "Encoder speed and inverter RPMs",
       "interval": 100,
       "contents": {
-        "encoder_r": {
-          "type": "float32",
-          "range": [-70, 280],
-          "force": "uint8"
-        },
-        "encoder_l": {
-          "type": "float32",
-          "range": [-70, 280],
-          "force": "uint8"
-        },
-        "inverter_r": {
-          "type": "float32",
-          "range": [-70, 280],
-          "force": "uint8"
-        },
-        "inverter_l": {
-          "type": "float32",
-          "range": [-70, 280],
-          "force": "uint8"
-        }
+        "encoder_r": "int16",
+        "encoder_l": "int16",
+        "inverter_r": "int16",
+        "inverter_l": "int16"
       }
     },
     {
