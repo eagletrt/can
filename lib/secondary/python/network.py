@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1658507007
-CANLIB_BUILD_HASH = 0xab95663f
+CANLIB_BUILD_TIME = 1658581249
+CANLIB_BUILD_HASH = 0x3fba1eac
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -972,7 +972,7 @@ class message_PEDALS_OUTPUT:
         self.bse_front = uint16(bse_front)
         self.bse_rear = uint16(bse_rear)
         self.size = 5
-        self.interval = 100
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):
@@ -1018,7 +1018,7 @@ class message_PEDALS_OUTPUT_conversion:
         self.bse_front = float32(bse_front)
         self.bse_rear = float32(bse_rear)
         self.size = 5
-        self.interval = 100
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_PEDALS_OUTPUT):

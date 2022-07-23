@@ -297,7 +297,7 @@
       "name": "PEDALS_OUTPUT",
       "topic": "STEER",
       "priority": 4,
-      "interval": 100,
+      "interval": 10,
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Pedal output, already calibrated",

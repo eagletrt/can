@@ -120,8 +120,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_INTERVAL_WITH_THRESHOLD_GPS_SPEED (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define secondary_INTERVAL_LAP_COUNT -1
 #define secondary_INTERVAL_WITH_THRESHOLD_LAP_COUNT (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define secondary_INTERVAL_PEDALS_OUTPUT 100
-#define secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT (100 + CANLIB_INTERVAL_THRESHOLD)
+#define secondary_INTERVAL_PEDALS_OUTPUT 10
+#define secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT (10 + CANLIB_INTERVAL_THRESHOLD)
 #define secondary_INTERVAL_CONTROL_OUTPUT 100
 #define secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT (100 + CANLIB_INTERVAL_THRESHOLD)
 #define secondary_INTERVAL_STEERING_ANGLE 100
@@ -264,12 +264,6 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
 
 void secondary_watchdog_timeout_100(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
-        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_CONTROL_OUTPUT)
         && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_CONTROL_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT
     ) {
@@ -296,9 +290,12 @@ void secondary_watchdog_timeout_5000(secondary_watchdog *watchdog, canlib_watchd
 }
 
 void secondary_watchdog_timeout_10(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
-    // no messages in this interval
-    CANLIB_UNUSED(watchdog);
-    CANLIB_UNUSED(timestamp);
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT)
+        && timestamp - watchdog->last_reset[secondary_WATCHDOG_INDEX_PEDALS_OUTPUT] > secondary_INTERVAL_WITH_THRESHOLD_PEDALS_OUTPUT
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, secondary_WATCHDOG_INDEX_PEDALS_OUTPUT);
+    }
 }
 
 void secondary_watchdog_timeout_50(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
