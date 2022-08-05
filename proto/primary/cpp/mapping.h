@@ -2,7 +2,8 @@
 #define primary_MAPPING_H
 
 #include <string>
-#include <vector>
+#include <unordered_map>
+#include <functional>
 
 #include "primary.pb.h"
 
@@ -208,6 +209,62 @@ size_t inline canlib_circular_buffer<T, S, IT>::offset() const {
 #define CANLIB_CIRCULAR_BUFFER_SIZE 500
 #endif // CANLIB_CIRCULAR_BUFFER_SIZE
 
+
+#ifndef CANLIB_MAPPING_ADAPTOR
+#define CANLIB_MAPPING_ADAPTOR
+
+union mapping_union{
+    const int* _int;
+    const bool* _bool;
+    const float* _float32;
+    const double* _float64;
+
+    const int8_t* _int8;
+    const int16_t* _int16;
+    const int32_t* _int32;
+    const int64_t* _int64;
+
+    const uint8_t* _uint8;
+    const uint16_t* _uint16;
+    const uint32_t* _uint32;
+    const uint64_t* _uint64;
+
+    const char* _char;
+};
+
+enum mapping_type{
+    mapping_type_int,
+    mapping_type_bool,
+    mapping_type_float32,
+    mapping_type_float64,
+    mapping_type_int8,
+    mapping_type_int16,
+    mapping_type_int32,
+    mapping_type_int64,
+    mapping_type_uint8,
+    mapping_type_uint16,
+    mapping_type_uint32,
+    mapping_type_uint64,
+    mapping_type_char,
+    mapping_type_none
+};
+
+struct mapping_element_t{
+    mapping_union value;
+    mapping_type type;
+};
+
+struct message_element_t{
+  std::unordered_map<std::string, mapping_element_t> field;
+  size_t stride;
+  std::function<size_t()> size;
+  std::function<size_t()> offset;
+};
+
+typedef std::unordered_map<std::string, message_element_t> mapping_adaptor;
+
+#endif // CANLIB_MAPPING_ADAPTOR
+
 typedef struct {
     canlib_circular_buffer<primary_message_BMS_HV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_HV_JMP_TO_BLT;
     canlib_circular_buffer<primary_message_BMS_LV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_LV_JMP_TO_BLT;
@@ -287,10 +344,788 @@ typedef struct {
     canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> ECU_CHIMERA;
 } primary_proto_pack;
 
+void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_adaptor& mapping_map);
 void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
-void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map);
+void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uint64_t resample_us);
 
 #ifdef primary_MAPPING_IMPLEMENTATION
+
+void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_adaptor& mapping_map){
+    mapping_map["BMS_HV_JMP_TO_BLT"].size = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BMS_HV_JMP_TO_BLT);
+    mapping_map["BMS_HV_JMP_TO_BLT"].offset = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BMS_HV_JMP_TO_BLT);
+    mapping_map["BMS_HV_JMP_TO_BLT"].stride = sizeof(primary_message_BMS_HV_JMP_TO_BLT);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BMS_HV_JMP_TO_BLT"].field["_timestamp"].value._uint64 = &pack.BMS_HV_JMP_TO_BLT.start()._timestamp;
+    mapping_map["BMS_HV_JMP_TO_BLT"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BMS_LV_JMP_TO_BLT"].size = std::bind(&canlib_circular_buffer<primary_message_BMS_LV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BMS_LV_JMP_TO_BLT);
+    mapping_map["BMS_LV_JMP_TO_BLT"].offset = std::bind(&canlib_circular_buffer<primary_message_BMS_LV_JMP_TO_BLT, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BMS_LV_JMP_TO_BLT);
+    mapping_map["BMS_LV_JMP_TO_BLT"].stride = sizeof(primary_message_BMS_LV_JMP_TO_BLT);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BMS_LV_JMP_TO_BLT"].field["_timestamp"].value._uint64 = &pack.BMS_LV_JMP_TO_BLT.start()._timestamp;
+    mapping_map["BMS_LV_JMP_TO_BLT"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["STEER_VERSION"].size = std::bind(&canlib_circular_buffer<primary_message_STEER_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEER_VERSION);
+    mapping_map["STEER_VERSION"].offset = std::bind(&canlib_circular_buffer<primary_message_STEER_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEER_VERSION);
+    mapping_map["STEER_VERSION"].stride = sizeof(primary_message_STEER_VERSION);
+    mapping_map["STEER_VERSION"].field["component_version"].value._uint8 = &pack.STEER_VERSION.start().component_version;
+    mapping_map["STEER_VERSION"].field["component_version"].type = mapping_type_uint8;
+    mapping_map["STEER_VERSION"].field["cancicd_version"].value._uint32 = &pack.STEER_VERSION.start().cancicd_version;
+    mapping_map["STEER_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["STEER_VERSION"].field["_timestamp"].value._uint64 = &pack.STEER_VERSION.start()._timestamp;
+    mapping_map["STEER_VERSION"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["DAS_VERSION"].size = std::bind(&canlib_circular_buffer<primary_message_DAS_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.DAS_VERSION);
+    mapping_map["DAS_VERSION"].offset = std::bind(&canlib_circular_buffer<primary_message_DAS_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.DAS_VERSION);
+    mapping_map["DAS_VERSION"].stride = sizeof(primary_message_DAS_VERSION);
+    mapping_map["DAS_VERSION"].field["component_version"].value._uint8 = &pack.DAS_VERSION.start().component_version;
+    mapping_map["DAS_VERSION"].field["component_version"].type = mapping_type_uint8;
+    mapping_map["DAS_VERSION"].field["cancicd_version"].value._uint32 = &pack.DAS_VERSION.start().cancicd_version;
+    mapping_map["DAS_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["DAS_VERSION"].field["_timestamp"].value._uint64 = &pack.DAS_VERSION.start()._timestamp;
+    mapping_map["DAS_VERSION"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_VERSION"].size = std::bind(&canlib_circular_buffer<primary_message_HV_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_VERSION);
+    mapping_map["HV_VERSION"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_VERSION);
+    mapping_map["HV_VERSION"].stride = sizeof(primary_message_HV_VERSION);
+    mapping_map["HV_VERSION"].field["component_version"].value._uint8 = &pack.HV_VERSION.start().component_version;
+    mapping_map["HV_VERSION"].field["component_version"].type = mapping_type_uint8;
+    mapping_map["HV_VERSION"].field["cancicd_version"].value._uint32 = &pack.HV_VERSION.start().cancicd_version;
+    mapping_map["HV_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_VERSION"].field["_timestamp"].value._uint64 = &pack.HV_VERSION.start()._timestamp;
+    mapping_map["HV_VERSION"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_VERSION"].size = std::bind(&canlib_circular_buffer<primary_message_LV_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_VERSION);
+    mapping_map["LV_VERSION"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_VERSION);
+    mapping_map["LV_VERSION"].stride = sizeof(primary_message_LV_VERSION);
+    mapping_map["LV_VERSION"].field["component_version"].value._uint8 = &pack.LV_VERSION.start().component_version;
+    mapping_map["LV_VERSION"].field["component_version"].type = mapping_type_uint8;
+    mapping_map["LV_VERSION"].field["cancicd_version"].value._uint32 = &pack.LV_VERSION.start().cancicd_version;
+    mapping_map["LV_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_VERSION"].field["_timestamp"].value._uint64 = &pack.LV_VERSION.start()._timestamp;
+    mapping_map["LV_VERSION"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["TLM_VERSION"].size = std::bind(&canlib_circular_buffer<primary_message_TLM_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TLM_VERSION);
+    mapping_map["TLM_VERSION"].offset = std::bind(&canlib_circular_buffer<primary_message_TLM_VERSION, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TLM_VERSION);
+    mapping_map["TLM_VERSION"].stride = sizeof(primary_message_TLM_VERSION);
+    mapping_map["TLM_VERSION"].field["component_version"].value._uint8 = &pack.TLM_VERSION.start().component_version;
+    mapping_map["TLM_VERSION"].field["component_version"].type = mapping_type_uint8;
+    mapping_map["TLM_VERSION"].field["cancicd_version"].value._uint32 = &pack.TLM_VERSION.start().cancicd_version;
+    mapping_map["TLM_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["TLM_VERSION"].field["_timestamp"].value._uint64 = &pack.TLM_VERSION.start()._timestamp;
+    mapping_map["TLM_VERSION"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["TIMESTAMP"].size = std::bind(&canlib_circular_buffer<primary_message_TIMESTAMP, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TIMESTAMP);
+    mapping_map["TIMESTAMP"].offset = std::bind(&canlib_circular_buffer<primary_message_TIMESTAMP, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TIMESTAMP);
+    mapping_map["TIMESTAMP"].stride = sizeof(primary_message_TIMESTAMP);
+    mapping_map["TIMESTAMP"].field["timestamp"].value._uint32 = &pack.TIMESTAMP.start().timestamp;
+    mapping_map["TIMESTAMP"].field["timestamp"].type = mapping_type_uint32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["TIMESTAMP"].field["_timestamp"].value._uint64 = &pack.TIMESTAMP.start()._timestamp;
+    mapping_map["TIMESTAMP"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_TLM_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TLM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TLM_STATUS);
+    mapping_map["SET_TLM_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TLM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TLM_STATUS);
+    mapping_map["SET_TLM_STATUS"].stride = sizeof(primary_message_SET_TLM_STATUS);
+    mapping_map["SET_TLM_STATUS"].field["tlm_status"].value._uint16 = (uint16_t*)&pack.SET_TLM_STATUS.start().tlm_status;
+    mapping_map["SET_TLM_STATUS"].field["tlm_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_TLM_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_TLM_STATUS.start()._timestamp;
+    mapping_map["SET_TLM_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["TLM_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_TLM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TLM_STATUS);
+    mapping_map["TLM_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_TLM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TLM_STATUS);
+    mapping_map["TLM_STATUS"].stride = sizeof(primary_message_TLM_STATUS);
+    mapping_map["TLM_STATUS"].field["tlm_status"].value._uint16 = (uint16_t*)&pack.TLM_STATUS.start().tlm_status;
+    mapping_map["TLM_STATUS"].field["tlm_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["TLM_STATUS"].field["_timestamp"].value._uint64 = &pack.TLM_STATUS.start()._timestamp;
+    mapping_map["TLM_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["STEER_SYSTEM_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_STEER_SYSTEM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEER_SYSTEM_STATUS);
+    mapping_map["STEER_SYSTEM_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_STEER_SYSTEM_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEER_SYSTEM_STATUS);
+    mapping_map["STEER_SYSTEM_STATUS"].stride = sizeof(primary_message_STEER_SYSTEM_STATUS);
+    mapping_map["STEER_SYSTEM_STATUS"].field["soc_temp"].value._uint8 = &pack.STEER_SYSTEM_STATUS.start().soc_temp;
+    mapping_map["STEER_SYSTEM_STATUS"].field["soc_temp"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["STEER_SYSTEM_STATUS"].field["_timestamp"].value._uint64 = &pack.STEER_SYSTEM_STATUS.start()._timestamp;
+    mapping_map["STEER_SYSTEM_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_VOLTAGE"].size = std::bind(&canlib_circular_buffer<primary_message_HV_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_VOLTAGE);
+    mapping_map["HV_VOLTAGE"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_VOLTAGE);
+    mapping_map["HV_VOLTAGE"].stride = sizeof(primary_message_HV_VOLTAGE_conversion);
+    mapping_map["HV_VOLTAGE"].field["pack_voltage"].value._float32 = &pack.HV_VOLTAGE.start().pack_voltage;
+    mapping_map["HV_VOLTAGE"].field["pack_voltage"].type = mapping_type_float32;
+    mapping_map["HV_VOLTAGE"].field["bus_voltage"].value._float32 = &pack.HV_VOLTAGE.start().bus_voltage;
+    mapping_map["HV_VOLTAGE"].field["bus_voltage"].type = mapping_type_float32;
+    mapping_map["HV_VOLTAGE"].field["max_cell_voltage"].value._float32 = &pack.HV_VOLTAGE.start().max_cell_voltage;
+    mapping_map["HV_VOLTAGE"].field["max_cell_voltage"].type = mapping_type_float32;
+    mapping_map["HV_VOLTAGE"].field["min_cell_voltage"].value._float32 = &pack.HV_VOLTAGE.start().min_cell_voltage;
+    mapping_map["HV_VOLTAGE"].field["min_cell_voltage"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_VOLTAGE"].field["_timestamp"].value._uint64 = &pack.HV_VOLTAGE.start()._timestamp;
+    mapping_map["HV_VOLTAGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CURRENT"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CURRENT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CURRENT);
+    mapping_map["HV_CURRENT"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CURRENT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CURRENT);
+    mapping_map["HV_CURRENT"].stride = sizeof(primary_message_HV_CURRENT_conversion);
+    mapping_map["HV_CURRENT"].field["current"].value._float32 = &pack.HV_CURRENT.start().current;
+    mapping_map["HV_CURRENT"].field["current"].type = mapping_type_float32;
+    mapping_map["HV_CURRENT"].field["power"].value._float32 = &pack.HV_CURRENT.start().power;
+    mapping_map["HV_CURRENT"].field["power"].type = mapping_type_float32;
+    mapping_map["HV_CURRENT"].field["energy"].value._float32 = &pack.HV_CURRENT.start().energy;
+    mapping_map["HV_CURRENT"].field["energy"].type = mapping_type_float32;
+    mapping_map["HV_CURRENT"].field["soc"].value._float32 = &pack.HV_CURRENT.start().soc;
+    mapping_map["HV_CURRENT"].field["soc"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CURRENT"].field["_timestamp"].value._uint64 = &pack.HV_CURRENT.start()._timestamp;
+    mapping_map["HV_CURRENT"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_TEMP"].size = std::bind(&canlib_circular_buffer<primary_message_HV_TEMP_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_TEMP);
+    mapping_map["HV_TEMP"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_TEMP_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_TEMP);
+    mapping_map["HV_TEMP"].stride = sizeof(primary_message_HV_TEMP_conversion);
+    mapping_map["HV_TEMP"].field["average_temp"].value._float32 = &pack.HV_TEMP.start().average_temp;
+    mapping_map["HV_TEMP"].field["average_temp"].type = mapping_type_float32;
+    mapping_map["HV_TEMP"].field["max_temp"].value._float32 = &pack.HV_TEMP.start().max_temp;
+    mapping_map["HV_TEMP"].field["max_temp"].type = mapping_type_float32;
+    mapping_map["HV_TEMP"].field["min_temp"].value._float32 = &pack.HV_TEMP.start().min_temp;
+    mapping_map["HV_TEMP"].field["min_temp"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_TEMP"].field["_timestamp"].value._uint64 = &pack.HV_TEMP.start()._timestamp;
+    mapping_map["HV_TEMP"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_ERRORS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_ERRORS);
+    mapping_map["HV_ERRORS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_ERRORS);
+    mapping_map["HV_ERRORS"].stride = sizeof(primary_message_HV_ERRORS);
+    mapping_map["HV_ERRORS"].field["warnings"].value._uint16 = (uint16_t*)&pack.HV_ERRORS.start().warnings;
+    mapping_map["HV_ERRORS"].field["warnings"].type = mapping_type_uint16;
+    mapping_map["HV_ERRORS"].field["errors"].value._uint16 = (uint16_t*)&pack.HV_ERRORS.start().errors;
+    mapping_map["HV_ERRORS"].field["errors"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_ERRORS"].field["_timestamp"].value._uint64 = &pack.HV_ERRORS.start()._timestamp;
+    mapping_map["HV_ERRORS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CAN_FORWARD"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CAN_FORWARD, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CAN_FORWARD);
+    mapping_map["HV_CAN_FORWARD"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CAN_FORWARD, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CAN_FORWARD);
+    mapping_map["HV_CAN_FORWARD"].stride = sizeof(primary_message_HV_CAN_FORWARD);
+    mapping_map["HV_CAN_FORWARD"].field["can_forward_set"].value._uint16 = (uint16_t*)&pack.HV_CAN_FORWARD.start().can_forward_set;
+    mapping_map["HV_CAN_FORWARD"].field["can_forward_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CAN_FORWARD"].field["_timestamp"].value._uint64 = &pack.HV_CAN_FORWARD.start()._timestamp;
+    mapping_map["HV_CAN_FORWARD"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_FANS_OVERRIDE"].size = std::bind(&canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_FANS_OVERRIDE);
+    mapping_map["HV_FANS_OVERRIDE"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_FANS_OVERRIDE);
+    mapping_map["HV_FANS_OVERRIDE"].stride = sizeof(primary_message_HV_FANS_OVERRIDE_conversion);
+    mapping_map["HV_FANS_OVERRIDE"].field["fans_override"].value._uint16 = (uint16_t*)&pack.HV_FANS_OVERRIDE.start().fans_override;
+    mapping_map["HV_FANS_OVERRIDE"].field["fans_override"].type = mapping_type_uint16;
+    mapping_map["HV_FANS_OVERRIDE"].field["fans_speed"].value._float32 = &pack.HV_FANS_OVERRIDE.start().fans_speed;
+    mapping_map["HV_FANS_OVERRIDE"].field["fans_speed"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_FANS_OVERRIDE"].field["_timestamp"].value._uint64 = &pack.HV_FANS_OVERRIDE.start()._timestamp;
+    mapping_map["HV_FANS_OVERRIDE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CAN_FORWARD_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CAN_FORWARD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CAN_FORWARD_STATUS);
+    mapping_map["HV_CAN_FORWARD_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CAN_FORWARD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CAN_FORWARD_STATUS);
+    mapping_map["HV_CAN_FORWARD_STATUS"].stride = sizeof(primary_message_HV_CAN_FORWARD_STATUS);
+    mapping_map["HV_CAN_FORWARD_STATUS"].field["can_forward_status"].value._uint16 = (uint16_t*)&pack.HV_CAN_FORWARD_STATUS.start().can_forward_status;
+    mapping_map["HV_CAN_FORWARD_STATUS"].field["can_forward_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CAN_FORWARD_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_CAN_FORWARD_STATUS.start()._timestamp;
+    mapping_map["HV_CAN_FORWARD_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_FANS_OVERRIDE_STATUS);
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_FANS_OVERRIDE_STATUS);
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].stride = sizeof(primary_message_HV_FANS_OVERRIDE_STATUS_conversion);
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["fans_override"].value._uint16 = (uint16_t*)&pack.HV_FANS_OVERRIDE_STATUS.start().fans_override;
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["fans_override"].type = mapping_type_uint16;
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["fans_speed"].value._float32 = &pack.HV_FANS_OVERRIDE_STATUS.start().fans_speed;
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["fans_speed"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_FANS_OVERRIDE_STATUS.start()._timestamp;
+    mapping_map["HV_FANS_OVERRIDE_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_FEEDBACKS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_FEEDBACKS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_FEEDBACKS_STATUS);
+    mapping_map["HV_FEEDBACKS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_FEEDBACKS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_FEEDBACKS_STATUS);
+    mapping_map["HV_FEEDBACKS_STATUS"].stride = sizeof(primary_message_HV_FEEDBACKS_STATUS);
+    mapping_map["HV_FEEDBACKS_STATUS"].field["feedbacks_status"].value._uint16 = (uint16_t*)&pack.HV_FEEDBACKS_STATUS.start().feedbacks_status;
+    mapping_map["HV_FEEDBACKS_STATUS"].field["feedbacks_status"].type = mapping_type_uint16;
+    mapping_map["HV_FEEDBACKS_STATUS"].field["is_circuitry_error"].value._uint16 = (uint16_t*)&pack.HV_FEEDBACKS_STATUS.start().is_circuitry_error;
+    mapping_map["HV_FEEDBACKS_STATUS"].field["is_circuitry_error"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_FEEDBACKS_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_FEEDBACKS_STATUS.start()._timestamp;
+    mapping_map["HV_FEEDBACKS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_IMD_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_IMD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_IMD_STATUS);
+    mapping_map["HV_IMD_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_IMD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_IMD_STATUS);
+    mapping_map["HV_IMD_STATUS"].stride = sizeof(primary_message_HV_IMD_STATUS);
+    mapping_map["HV_IMD_STATUS"].field["imd_fault"].value._bool = &pack.HV_IMD_STATUS.start().imd_fault;
+    mapping_map["HV_IMD_STATUS"].field["imd_fault"].type = mapping_type_bool;
+    mapping_map["HV_IMD_STATUS"].field["imd_status"].value._uint16 = (uint16_t*)&pack.HV_IMD_STATUS.start().imd_status;
+    mapping_map["HV_IMD_STATUS"].field["imd_status"].type = mapping_type_uint16;
+    mapping_map["HV_IMD_STATUS"].field["imd_info"].value._int32 = &pack.HV_IMD_STATUS.start().imd_info;
+    mapping_map["HV_IMD_STATUS"].field["imd_info"].type = mapping_type_int32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_IMD_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_IMD_STATUS.start()._timestamp;
+    mapping_map["HV_IMD_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TS_STATUS);
+    mapping_map["TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TS_STATUS);
+    mapping_map["TS_STATUS"].stride = sizeof(primary_message_TS_STATUS);
+    mapping_map["TS_STATUS"].field["ts_status"].value._uint16 = (uint16_t*)&pack.TS_STATUS.start().ts_status;
+    mapping_map["TS_STATUS"].field["ts_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["TS_STATUS"].field["_timestamp"].value._uint64 = &pack.TS_STATUS.start()._timestamp;
+    mapping_map["TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_DAS);
+    mapping_map["SET_TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_DAS);
+    mapping_map["SET_TS_STATUS"].stride = sizeof(primary_message_SET_TS_STATUS);
+    mapping_map["SET_TS_STATUS"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_DAS.start().ts_status_set;
+    mapping_map["SET_TS_STATUS"].field["ts_status_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_DAS.start()._timestamp;
+    mapping_map["SET_TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_HANDCART);
+    mapping_map["SET_TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_HANDCART);
+    mapping_map["SET_TS_STATUS"].stride = sizeof(primary_message_SET_TS_STATUS);
+    mapping_map["SET_TS_STATUS"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_HANDCART.start().ts_status_set;
+    mapping_map["SET_TS_STATUS"].field["ts_status_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_HANDCART.start()._timestamp;
+    mapping_map["SET_TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["STEER_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEER_STATUS);
+    mapping_map["STEER_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEER_STATUS);
+    mapping_map["STEER_STATUS"].stride = sizeof(primary_message_STEER_STATUS);
+    mapping_map["STEER_STATUS"].field["traction_control"].value._uint16 = (uint16_t*)&pack.STEER_STATUS.start().traction_control;
+    mapping_map["STEER_STATUS"].field["traction_control"].type = mapping_type_uint16;
+    mapping_map["STEER_STATUS"].field["map"].value._uint16 = (uint16_t*)&pack.STEER_STATUS.start().map;
+    mapping_map["STEER_STATUS"].field["map"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["STEER_STATUS"].field["_timestamp"].value._uint64 = &pack.STEER_STATUS.start()._timestamp;
+    mapping_map["STEER_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_CAR_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_CAR_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_CAR_STATUS);
+    mapping_map["SET_CAR_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_CAR_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_CAR_STATUS);
+    mapping_map["SET_CAR_STATUS"].stride = sizeof(primary_message_SET_CAR_STATUS);
+    mapping_map["SET_CAR_STATUS"].field["car_status_set"].value._uint16 = (uint16_t*)&pack.SET_CAR_STATUS.start().car_status_set;
+    mapping_map["SET_CAR_STATUS"].field["car_status_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_CAR_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_CAR_STATUS.start()._timestamp;
+    mapping_map["SET_CAR_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_PEDALS_RANGE"].size = std::bind(&canlib_circular_buffer<primary_message_SET_PEDALS_RANGE, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_PEDALS_RANGE);
+    mapping_map["SET_PEDALS_RANGE"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_PEDALS_RANGE, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_PEDALS_RANGE);
+    mapping_map["SET_PEDALS_RANGE"].stride = sizeof(primary_message_SET_PEDALS_RANGE);
+    mapping_map["SET_PEDALS_RANGE"].field["bound"].value._uint16 = (uint16_t*)&pack.SET_PEDALS_RANGE.start().bound;
+    mapping_map["SET_PEDALS_RANGE"].field["bound"].type = mapping_type_uint16;
+    mapping_map["SET_PEDALS_RANGE"].field["pedal"].value._uint16 = (uint16_t*)&pack.SET_PEDALS_RANGE.start().pedal;
+    mapping_map["SET_PEDALS_RANGE"].field["pedal"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_PEDALS_RANGE"].field["_timestamp"].value._uint64 = &pack.SET_PEDALS_RANGE.start()._timestamp;
+    mapping_map["SET_PEDALS_RANGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_STEERING_ANGLE_RANGE"].size = std::bind(&canlib_circular_buffer<primary_message_SET_STEERING_ANGLE_RANGE, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_STEERING_ANGLE_RANGE);
+    mapping_map["SET_STEERING_ANGLE_RANGE"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_STEERING_ANGLE_RANGE, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_STEERING_ANGLE_RANGE);
+    mapping_map["SET_STEERING_ANGLE_RANGE"].stride = sizeof(primary_message_SET_STEERING_ANGLE_RANGE);
+    mapping_map["SET_STEERING_ANGLE_RANGE"].field["bound"].value._uint16 = (uint16_t*)&pack.SET_STEERING_ANGLE_RANGE.start().bound;
+    mapping_map["SET_STEERING_ANGLE_RANGE"].field["bound"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_STEERING_ANGLE_RANGE"].field["_timestamp"].value._uint64 = &pack.SET_STEERING_ANGLE_RANGE.start()._timestamp;
+    mapping_map["SET_STEERING_ANGLE_RANGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["CAR_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_CAR_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.CAR_STATUS);
+    mapping_map["CAR_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_CAR_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.CAR_STATUS);
+    mapping_map["CAR_STATUS"].stride = sizeof(primary_message_CAR_STATUS);
+    mapping_map["CAR_STATUS"].field["inverter_l"].value._uint16 = (uint16_t*)&pack.CAR_STATUS.start().inverter_l;
+    mapping_map["CAR_STATUS"].field["inverter_l"].type = mapping_type_uint16;
+    mapping_map["CAR_STATUS"].field["inverter_r"].value._uint16 = (uint16_t*)&pack.CAR_STATUS.start().inverter_r;
+    mapping_map["CAR_STATUS"].field["inverter_r"].type = mapping_type_uint16;
+    mapping_map["CAR_STATUS"].field["car_status"].value._uint16 = (uint16_t*)&pack.CAR_STATUS.start().car_status;
+    mapping_map["CAR_STATUS"].field["car_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["CAR_STATUS"].field["_timestamp"].value._uint64 = &pack.CAR_STATUS.start()._timestamp;
+    mapping_map["CAR_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["DAS_ERRORS"].size = std::bind(&canlib_circular_buffer<primary_message_DAS_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.DAS_ERRORS);
+    mapping_map["DAS_ERRORS"].offset = std::bind(&canlib_circular_buffer<primary_message_DAS_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.DAS_ERRORS);
+    mapping_map["DAS_ERRORS"].stride = sizeof(primary_message_DAS_ERRORS);
+    mapping_map["DAS_ERRORS"].field["das_error"].value._uint16 = (uint16_t*)&pack.DAS_ERRORS.start().das_error;
+    mapping_map["DAS_ERRORS"].field["das_error"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["DAS_ERRORS"].field["_timestamp"].value._uint64 = &pack.DAS_ERRORS.start()._timestamp;
+    mapping_map["DAS_ERRORS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_CURRENT"].size = std::bind(&canlib_circular_buffer<primary_message_LV_CURRENT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_CURRENT);
+    mapping_map["LV_CURRENT"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_CURRENT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_CURRENT);
+    mapping_map["LV_CURRENT"].stride = sizeof(primary_message_LV_CURRENT_conversion);
+    mapping_map["LV_CURRENT"].field["current"].value._float32 = &pack.LV_CURRENT.start().current;
+    mapping_map["LV_CURRENT"].field["current"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_CURRENT"].field["_timestamp"].value._uint64 = &pack.LV_CURRENT.start()._timestamp;
+    mapping_map["LV_CURRENT"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_VOLTAGE"].size = std::bind(&canlib_circular_buffer<primary_message_LV_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_VOLTAGE);
+    mapping_map["LV_VOLTAGE"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_VOLTAGE);
+    mapping_map["LV_VOLTAGE"].stride = sizeof(primary_message_LV_VOLTAGE_conversion);
+    mapping_map["LV_VOLTAGE"].field["voltage_1"].value._float32 = &pack.LV_VOLTAGE.start().voltage_1;
+    mapping_map["LV_VOLTAGE"].field["voltage_1"].type = mapping_type_float32;
+    mapping_map["LV_VOLTAGE"].field["voltage_2"].value._float32 = &pack.LV_VOLTAGE.start().voltage_2;
+    mapping_map["LV_VOLTAGE"].field["voltage_2"].type = mapping_type_float32;
+    mapping_map["LV_VOLTAGE"].field["voltage_3"].value._float32 = &pack.LV_VOLTAGE.start().voltage_3;
+    mapping_map["LV_VOLTAGE"].field["voltage_3"].type = mapping_type_float32;
+    mapping_map["LV_VOLTAGE"].field["voltage_4"].value._float32 = &pack.LV_VOLTAGE.start().voltage_4;
+    mapping_map["LV_VOLTAGE"].field["voltage_4"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_VOLTAGE"].field["_timestamp"].value._uint64 = &pack.LV_VOLTAGE.start()._timestamp;
+    mapping_map["LV_VOLTAGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_TOTAL_VOLTAGE"].size = std::bind(&canlib_circular_buffer<primary_message_LV_TOTAL_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_TOTAL_VOLTAGE);
+    mapping_map["LV_TOTAL_VOLTAGE"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_TOTAL_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_TOTAL_VOLTAGE);
+    mapping_map["LV_TOTAL_VOLTAGE"].stride = sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion);
+    mapping_map["LV_TOTAL_VOLTAGE"].field["total_voltage"].value._float32 = &pack.LV_TOTAL_VOLTAGE.start().total_voltage;
+    mapping_map["LV_TOTAL_VOLTAGE"].field["total_voltage"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_TOTAL_VOLTAGE"].field["_timestamp"].value._uint64 = &pack.LV_TOTAL_VOLTAGE.start()._timestamp;
+    mapping_map["LV_TOTAL_VOLTAGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_TEMPERATURE"].size = std::bind(&canlib_circular_buffer<primary_message_LV_TEMPERATURE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_TEMPERATURE);
+    mapping_map["LV_TEMPERATURE"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_TEMPERATURE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_TEMPERATURE);
+    mapping_map["LV_TEMPERATURE"].stride = sizeof(primary_message_LV_TEMPERATURE_conversion);
+    mapping_map["LV_TEMPERATURE"].field["bp_temperature_1"].value._float32 = &pack.LV_TEMPERATURE.start().bp_temperature_1;
+    mapping_map["LV_TEMPERATURE"].field["bp_temperature_1"].type = mapping_type_float32;
+    mapping_map["LV_TEMPERATURE"].field["bp_temperature_2"].value._float32 = &pack.LV_TEMPERATURE.start().bp_temperature_2;
+    mapping_map["LV_TEMPERATURE"].field["bp_temperature_2"].type = mapping_type_float32;
+    mapping_map["LV_TEMPERATURE"].field["dcdc12_temperature"].value._float32 = &pack.LV_TEMPERATURE.start().dcdc12_temperature;
+    mapping_map["LV_TEMPERATURE"].field["dcdc12_temperature"].type = mapping_type_float32;
+    mapping_map["LV_TEMPERATURE"].field["dcdc24_temperature"].value._float32 = &pack.LV_TEMPERATURE.start().dcdc24_temperature;
+    mapping_map["LV_TEMPERATURE"].field["dcdc24_temperature"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_TEMPERATURE"].field["_timestamp"].value._uint64 = &pack.LV_TEMPERATURE.start()._timestamp;
+    mapping_map["LV_TEMPERATURE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["COOLING_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_COOLING_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.COOLING_STATUS);
+    mapping_map["COOLING_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_COOLING_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.COOLING_STATUS);
+    mapping_map["COOLING_STATUS"].stride = sizeof(primary_message_COOLING_STATUS_conversion);
+    mapping_map["COOLING_STATUS"].field["radiators_speed"].value._float32 = &pack.COOLING_STATUS.start().radiators_speed;
+    mapping_map["COOLING_STATUS"].field["radiators_speed"].type = mapping_type_float32;
+    mapping_map["COOLING_STATUS"].field["pumps_speed"].value._float32 = &pack.COOLING_STATUS.start().pumps_speed;
+    mapping_map["COOLING_STATUS"].field["pumps_speed"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["COOLING_STATUS"].field["_timestamp"].value._uint64 = &pack.COOLING_STATUS.start()._timestamp;
+    mapping_map["COOLING_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_RADIATOR_SPEED"].size = std::bind(&canlib_circular_buffer<primary_message_SET_RADIATOR_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_RADIATOR_SPEED);
+    mapping_map["SET_RADIATOR_SPEED"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_RADIATOR_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_RADIATOR_SPEED);
+    mapping_map["SET_RADIATOR_SPEED"].stride = sizeof(primary_message_SET_RADIATOR_SPEED_conversion);
+    mapping_map["SET_RADIATOR_SPEED"].field["radiators_speed"].value._float32 = &pack.SET_RADIATOR_SPEED.start().radiators_speed;
+    mapping_map["SET_RADIATOR_SPEED"].field["radiators_speed"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_RADIATOR_SPEED"].field["_timestamp"].value._uint64 = &pack.SET_RADIATOR_SPEED.start()._timestamp;
+    mapping_map["SET_RADIATOR_SPEED"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_PUMPS_SPEED"].size = std::bind(&canlib_circular_buffer<primary_message_SET_PUMPS_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_PUMPS_SPEED);
+    mapping_map["SET_PUMPS_SPEED"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_PUMPS_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_PUMPS_SPEED);
+    mapping_map["SET_PUMPS_SPEED"].stride = sizeof(primary_message_SET_PUMPS_SPEED_conversion);
+    mapping_map["SET_PUMPS_SPEED"].field["pumps_speed"].value._float32 = &pack.SET_PUMPS_SPEED.start().pumps_speed;
+    mapping_map["SET_PUMPS_SPEED"].field["pumps_speed"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_PUMPS_SPEED"].field["_timestamp"].value._uint64 = &pack.SET_PUMPS_SPEED.start()._timestamp;
+    mapping_map["SET_PUMPS_SPEED"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_INVERTER_CONNECTION_STATUS);
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_INVERTER_CONNECTION_STATUS);
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].stride = sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS);
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].field["status"].value._uint16 = (uint16_t*)&pack.SET_INVERTER_CONNECTION_STATUS.start().status;
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].field["status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_INVERTER_CONNECTION_STATUS.start()._timestamp;
+    mapping_map["SET_INVERTER_CONNECTION_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["INVERTER_CONNECTION_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.INVERTER_CONNECTION_STATUS);
+    mapping_map["INVERTER_CONNECTION_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_INVERTER_CONNECTION_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.INVERTER_CONNECTION_STATUS);
+    mapping_map["INVERTER_CONNECTION_STATUS"].stride = sizeof(primary_message_INVERTER_CONNECTION_STATUS);
+    mapping_map["INVERTER_CONNECTION_STATUS"].field["status"].value._uint16 = (uint16_t*)&pack.INVERTER_CONNECTION_STATUS.start().status;
+    mapping_map["INVERTER_CONNECTION_STATUS"].field["status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["INVERTER_CONNECTION_STATUS"].field["_timestamp"].value._uint64 = &pack.INVERTER_CONNECTION_STATUS.start()._timestamp;
+    mapping_map["INVERTER_CONNECTION_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LV_ERRORS"].size = std::bind(&canlib_circular_buffer<primary_message_LV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LV_ERRORS);
+    mapping_map["LV_ERRORS"].offset = std::bind(&canlib_circular_buffer<primary_message_LV_ERRORS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LV_ERRORS);
+    mapping_map["LV_ERRORS"].stride = sizeof(primary_message_LV_ERRORS);
+    mapping_map["LV_ERRORS"].field["warnings"].value._uint16 = (uint16_t*)&pack.LV_ERRORS.start().warnings;
+    mapping_map["LV_ERRORS"].field["warnings"].type = mapping_type_uint16;
+    mapping_map["LV_ERRORS"].field["errors"].value._uint16 = (uint16_t*)&pack.LV_ERRORS.start().errors;
+    mapping_map["LV_ERRORS"].field["errors"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LV_ERRORS"].field["_timestamp"].value._uint64 = &pack.LV_ERRORS.start()._timestamp;
+    mapping_map["LV_ERRORS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SHUTDOWN_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SHUTDOWN_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SHUTDOWN_STATUS);
+    mapping_map["SHUTDOWN_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SHUTDOWN_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SHUTDOWN_STATUS);
+    mapping_map["SHUTDOWN_STATUS"].stride = sizeof(primary_message_SHUTDOWN_STATUS);
+    mapping_map["SHUTDOWN_STATUS"].field["input"].value._bool = &pack.SHUTDOWN_STATUS.start().input;
+    mapping_map["SHUTDOWN_STATUS"].field["input"].type = mapping_type_bool;
+    mapping_map["SHUTDOWN_STATUS"].field["output"].value._bool = &pack.SHUTDOWN_STATUS.start().output;
+    mapping_map["SHUTDOWN_STATUS"].field["output"].type = mapping_type_bool;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SHUTDOWN_STATUS"].field["_timestamp"].value._uint64 = &pack.SHUTDOWN_STATUS.start()._timestamp;
+    mapping_map["SHUTDOWN_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["MARKER"].size = std::bind(&canlib_circular_buffer<primary_message_MARKER, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.MARKER);
+    mapping_map["MARKER"].offset = std::bind(&canlib_circular_buffer<primary_message_MARKER, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.MARKER);
+    mapping_map["MARKER"].stride = sizeof(primary_message_MARKER);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["MARKER"].field["_timestamp"].value._uint64 = &pack.MARKER.start()._timestamp;
+    mapping_map["MARKER"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CELLS_VOLTAGE"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CELLS_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CELLS_VOLTAGE);
+    mapping_map["HV_CELLS_VOLTAGE"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CELLS_VOLTAGE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CELLS_VOLTAGE);
+    mapping_map["HV_CELLS_VOLTAGE"].stride = sizeof(primary_message_HV_CELLS_VOLTAGE_conversion);
+    mapping_map["HV_CELLS_VOLTAGE"].field["start_index"].value._uint8 = &pack.HV_CELLS_VOLTAGE.start().start_index;
+    mapping_map["HV_CELLS_VOLTAGE"].field["start_index"].type = mapping_type_uint8;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_0"].value._float32 = &pack.HV_CELLS_VOLTAGE.start().voltage_0;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_0"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_1"].value._float32 = &pack.HV_CELLS_VOLTAGE.start().voltage_1;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_1"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_2"].value._float32 = &pack.HV_CELLS_VOLTAGE.start().voltage_2;
+    mapping_map["HV_CELLS_VOLTAGE"].field["voltage_2"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CELLS_VOLTAGE"].field["_timestamp"].value._uint64 = &pack.HV_CELLS_VOLTAGE.start()._timestamp;
+    mapping_map["HV_CELLS_VOLTAGE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CELLS_TEMP"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CELLS_TEMP_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CELLS_TEMP);
+    mapping_map["HV_CELLS_TEMP"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CELLS_TEMP_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CELLS_TEMP);
+    mapping_map["HV_CELLS_TEMP"].stride = sizeof(primary_message_HV_CELLS_TEMP_conversion);
+    mapping_map["HV_CELLS_TEMP"].field["start_index"].value._uint8 = &pack.HV_CELLS_TEMP.start().start_index;
+    mapping_map["HV_CELLS_TEMP"].field["start_index"].type = mapping_type_uint8;
+    mapping_map["HV_CELLS_TEMP"].field["temp_0"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_0;
+    mapping_map["HV_CELLS_TEMP"].field["temp_0"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_TEMP"].field["temp_1"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_1;
+    mapping_map["HV_CELLS_TEMP"].field["temp_1"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_TEMP"].field["temp_2"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_2;
+    mapping_map["HV_CELLS_TEMP"].field["temp_2"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_TEMP"].field["temp_3"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_3;
+    mapping_map["HV_CELLS_TEMP"].field["temp_3"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_TEMP"].field["temp_4"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_4;
+    mapping_map["HV_CELLS_TEMP"].field["temp_4"].type = mapping_type_float32;
+    mapping_map["HV_CELLS_TEMP"].field["temp_5"].value._float32 = &pack.HV_CELLS_TEMP.start().temp_5;
+    mapping_map["HV_CELLS_TEMP"].field["temp_5"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CELLS_TEMP"].field["_timestamp"].value._uint64 = &pack.HV_CELLS_TEMP.start()._timestamp;
+    mapping_map["HV_CELLS_TEMP"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HV_CELL_BALANCING_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HV_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HV_CELL_BALANCING_STATUS);
+    mapping_map["HV_CELL_BALANCING_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HV_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HV_CELL_BALANCING_STATUS);
+    mapping_map["HV_CELL_BALANCING_STATUS"].stride = sizeof(primary_message_HV_CELL_BALANCING_STATUS);
+    mapping_map["HV_CELL_BALANCING_STATUS"].field["balancing_status"].value._uint16 = (uint16_t*)&pack.HV_CELL_BALANCING_STATUS.start().balancing_status;
+    mapping_map["HV_CELL_BALANCING_STATUS"].field["balancing_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HV_CELL_BALANCING_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_CELL_BALANCING_STATUS.start()._timestamp;
+    mapping_map["HV_CELL_BALANCING_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_CELL_BALANCING_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_CELL_BALANCING_STATUS);
+    mapping_map["SET_CELL_BALANCING_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_CELL_BALANCING_STATUS);
+    mapping_map["SET_CELL_BALANCING_STATUS"].stride = sizeof(primary_message_SET_CELL_BALANCING_STATUS);
+    mapping_map["SET_CELL_BALANCING_STATUS"].field["set_balancing_status"].value._uint16 = (uint16_t*)&pack.SET_CELL_BALANCING_STATUS.start().set_balancing_status;
+    mapping_map["SET_CELL_BALANCING_STATUS"].field["set_balancing_status"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_CELL_BALANCING_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_CELL_BALANCING_STATUS.start()._timestamp;
+    mapping_map["SET_CELL_BALANCING_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["HANDCART_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_HANDCART_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.HANDCART_STATUS);
+    mapping_map["HANDCART_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_HANDCART_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.HANDCART_STATUS);
+    mapping_map["HANDCART_STATUS"].stride = sizeof(primary_message_HANDCART_STATUS);
+    mapping_map["HANDCART_STATUS"].field["connected"].value._bool = &pack.HANDCART_STATUS.start().connected;
+    mapping_map["HANDCART_STATUS"].field["connected"].type = mapping_type_bool;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["HANDCART_STATUS"].field["_timestamp"].value._uint64 = &pack.HANDCART_STATUS.start()._timestamp;
+    mapping_map["HANDCART_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SPEED"].size = std::bind(&canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SPEED);
+    mapping_map["SPEED"].offset = std::bind(&canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SPEED);
+    mapping_map["SPEED"].stride = sizeof(primary_message_SPEED);
+    mapping_map["SPEED"].field["encoder_r"].value._int16 = &pack.SPEED.start().encoder_r;
+    mapping_map["SPEED"].field["encoder_r"].type = mapping_type_int16;
+    mapping_map["SPEED"].field["encoder_l"].value._int16 = &pack.SPEED.start().encoder_l;
+    mapping_map["SPEED"].field["encoder_l"].type = mapping_type_int16;
+    mapping_map["SPEED"].field["inverter_r"].value._int16 = &pack.SPEED.start().inverter_r;
+    mapping_map["SPEED"].field["inverter_r"].type = mapping_type_int16;
+    mapping_map["SPEED"].field["inverter_l"].value._int16 = &pack.SPEED.start().inverter_l;
+    mapping_map["SPEED"].field["inverter_l"].type = mapping_type_int16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SPEED"].field["_timestamp"].value._uint64 = &pack.SPEED.start()._timestamp;
+    mapping_map["SPEED"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["INV_L_REQUEST"].size = std::bind(&canlib_circular_buffer<primary_message_INV_L_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.INV_L_REQUEST);
+    mapping_map["INV_L_REQUEST"].offset = std::bind(&canlib_circular_buffer<primary_message_INV_L_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.INV_L_REQUEST);
+    mapping_map["INV_L_REQUEST"].stride = sizeof(primary_message_INV_L_REQUEST);
+    mapping_map["INV_L_REQUEST"].field["data_0"].value._uint8 = &pack.INV_L_REQUEST.start().data_0;
+    mapping_map["INV_L_REQUEST"].field["data_0"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_1"].value._uint8 = &pack.INV_L_REQUEST.start().data_1;
+    mapping_map["INV_L_REQUEST"].field["data_1"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_2"].value._uint8 = &pack.INV_L_REQUEST.start().data_2;
+    mapping_map["INV_L_REQUEST"].field["data_2"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_3"].value._uint8 = &pack.INV_L_REQUEST.start().data_3;
+    mapping_map["INV_L_REQUEST"].field["data_3"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_4"].value._uint8 = &pack.INV_L_REQUEST.start().data_4;
+    mapping_map["INV_L_REQUEST"].field["data_4"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_5"].value._uint8 = &pack.INV_L_REQUEST.start().data_5;
+    mapping_map["INV_L_REQUEST"].field["data_5"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_6"].value._uint8 = &pack.INV_L_REQUEST.start().data_6;
+    mapping_map["INV_L_REQUEST"].field["data_6"].type = mapping_type_uint8;
+    mapping_map["INV_L_REQUEST"].field["data_7"].value._uint8 = &pack.INV_L_REQUEST.start().data_7;
+    mapping_map["INV_L_REQUEST"].field["data_7"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["INV_L_REQUEST"].field["_timestamp"].value._uint64 = &pack.INV_L_REQUEST.start()._timestamp;
+    mapping_map["INV_L_REQUEST"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["INV_R_REQUEST"].size = std::bind(&canlib_circular_buffer<primary_message_INV_R_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.INV_R_REQUEST);
+    mapping_map["INV_R_REQUEST"].offset = std::bind(&canlib_circular_buffer<primary_message_INV_R_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.INV_R_REQUEST);
+    mapping_map["INV_R_REQUEST"].stride = sizeof(primary_message_INV_R_REQUEST);
+    mapping_map["INV_R_REQUEST"].field["data_0"].value._uint8 = &pack.INV_R_REQUEST.start().data_0;
+    mapping_map["INV_R_REQUEST"].field["data_0"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_1"].value._uint8 = &pack.INV_R_REQUEST.start().data_1;
+    mapping_map["INV_R_REQUEST"].field["data_1"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_2"].value._uint8 = &pack.INV_R_REQUEST.start().data_2;
+    mapping_map["INV_R_REQUEST"].field["data_2"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_3"].value._uint8 = &pack.INV_R_REQUEST.start().data_3;
+    mapping_map["INV_R_REQUEST"].field["data_3"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_4"].value._uint8 = &pack.INV_R_REQUEST.start().data_4;
+    mapping_map["INV_R_REQUEST"].field["data_4"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_5"].value._uint8 = &pack.INV_R_REQUEST.start().data_5;
+    mapping_map["INV_R_REQUEST"].field["data_5"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_6"].value._uint8 = &pack.INV_R_REQUEST.start().data_6;
+    mapping_map["INV_R_REQUEST"].field["data_6"].type = mapping_type_uint8;
+    mapping_map["INV_R_REQUEST"].field["data_7"].value._uint8 = &pack.INV_R_REQUEST.start().data_7;
+    mapping_map["INV_R_REQUEST"].field["data_7"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["INV_R_REQUEST"].field["_timestamp"].value._uint64 = &pack.INV_R_REQUEST.start()._timestamp;
+    mapping_map["INV_R_REQUEST"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["INV_L_RESPONSE"].size = std::bind(&canlib_circular_buffer<primary_message_INV_L_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.INV_L_RESPONSE);
+    mapping_map["INV_L_RESPONSE"].offset = std::bind(&canlib_circular_buffer<primary_message_INV_L_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.INV_L_RESPONSE);
+    mapping_map["INV_L_RESPONSE"].stride = sizeof(primary_message_INV_L_RESPONSE);
+    mapping_map["INV_L_RESPONSE"].field["reg_id"].value._uint8 = &pack.INV_L_RESPONSE.start().reg_id;
+    mapping_map["INV_L_RESPONSE"].field["reg_id"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_0"].value._uint8 = &pack.INV_L_RESPONSE.start().data_0;
+    mapping_map["INV_L_RESPONSE"].field["data_0"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_1"].value._uint8 = &pack.INV_L_RESPONSE.start().data_1;
+    mapping_map["INV_L_RESPONSE"].field["data_1"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_2"].value._uint8 = &pack.INV_L_RESPONSE.start().data_2;
+    mapping_map["INV_L_RESPONSE"].field["data_2"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_3"].value._uint8 = &pack.INV_L_RESPONSE.start().data_3;
+    mapping_map["INV_L_RESPONSE"].field["data_3"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_4"].value._uint8 = &pack.INV_L_RESPONSE.start().data_4;
+    mapping_map["INV_L_RESPONSE"].field["data_4"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_5"].value._uint8 = &pack.INV_L_RESPONSE.start().data_5;
+    mapping_map["INV_L_RESPONSE"].field["data_5"].type = mapping_type_uint8;
+    mapping_map["INV_L_RESPONSE"].field["data_6"].value._uint8 = &pack.INV_L_RESPONSE.start().data_6;
+    mapping_map["INV_L_RESPONSE"].field["data_6"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["INV_L_RESPONSE"].field["_timestamp"].value._uint64 = &pack.INV_L_RESPONSE.start()._timestamp;
+    mapping_map["INV_L_RESPONSE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["INV_R_RESPONSE"].size = std::bind(&canlib_circular_buffer<primary_message_INV_R_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.INV_R_RESPONSE);
+    mapping_map["INV_R_RESPONSE"].offset = std::bind(&canlib_circular_buffer<primary_message_INV_R_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.INV_R_RESPONSE);
+    mapping_map["INV_R_RESPONSE"].stride = sizeof(primary_message_INV_R_RESPONSE);
+    mapping_map["INV_R_RESPONSE"].field["reg_id"].value._uint8 = &pack.INV_R_RESPONSE.start().reg_id;
+    mapping_map["INV_R_RESPONSE"].field["reg_id"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_0"].value._uint8 = &pack.INV_R_RESPONSE.start().data_0;
+    mapping_map["INV_R_RESPONSE"].field["data_0"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_1"].value._uint8 = &pack.INV_R_RESPONSE.start().data_1;
+    mapping_map["INV_R_RESPONSE"].field["data_1"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_2"].value._uint8 = &pack.INV_R_RESPONSE.start().data_2;
+    mapping_map["INV_R_RESPONSE"].field["data_2"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_3"].value._uint8 = &pack.INV_R_RESPONSE.start().data_3;
+    mapping_map["INV_R_RESPONSE"].field["data_3"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_4"].value._uint8 = &pack.INV_R_RESPONSE.start().data_4;
+    mapping_map["INV_R_RESPONSE"].field["data_4"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_5"].value._uint8 = &pack.INV_R_RESPONSE.start().data_5;
+    mapping_map["INV_R_RESPONSE"].field["data_5"].type = mapping_type_uint8;
+    mapping_map["INV_R_RESPONSE"].field["data_6"].value._uint8 = &pack.INV_R_RESPONSE.start().data_6;
+    mapping_map["INV_R_RESPONSE"].field["data_6"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["INV_R_RESPONSE"].field["_timestamp"].value._uint64 = &pack.INV_R_RESPONSE.start()._timestamp;
+    mapping_map["INV_R_RESPONSE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_0_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_0_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_0_TX);
+    mapping_map["FLASH_CELLBOARD_0_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_0_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_0_TX);
+    mapping_map["FLASH_CELLBOARD_0_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_0_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_0_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_0_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_0_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_0_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_0_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_0_RX);
+    mapping_map["FLASH_CELLBOARD_0_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_0_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_0_RX);
+    mapping_map["FLASH_CELLBOARD_0_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_0_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_0_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_0_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_0_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_1_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_1_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_1_TX);
+    mapping_map["FLASH_CELLBOARD_1_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_1_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_1_TX);
+    mapping_map["FLASH_CELLBOARD_1_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_1_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_1_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_1_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_1_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_1_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_1_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_1_RX);
+    mapping_map["FLASH_CELLBOARD_1_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_1_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_1_RX);
+    mapping_map["FLASH_CELLBOARD_1_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_1_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_1_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_1_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_1_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_2_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_2_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_2_TX);
+    mapping_map["FLASH_CELLBOARD_2_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_2_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_2_TX);
+    mapping_map["FLASH_CELLBOARD_2_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_2_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_2_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_2_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_2_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_2_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_2_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_2_RX);
+    mapping_map["FLASH_CELLBOARD_2_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_2_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_2_RX);
+    mapping_map["FLASH_CELLBOARD_2_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_2_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_2_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_2_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_2_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_3_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_3_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_3_TX);
+    mapping_map["FLASH_CELLBOARD_3_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_3_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_3_TX);
+    mapping_map["FLASH_CELLBOARD_3_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_3_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_3_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_3_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_3_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_3_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_3_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_3_RX);
+    mapping_map["FLASH_CELLBOARD_3_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_3_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_3_RX);
+    mapping_map["FLASH_CELLBOARD_3_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_3_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_3_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_3_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_3_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_4_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_4_TX);
+    mapping_map["FLASH_CELLBOARD_4_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_4_TX);
+    mapping_map["FLASH_CELLBOARD_4_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_4_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_4_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_4_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_4_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_4_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_4_RX);
+    mapping_map["FLASH_CELLBOARD_4_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_4_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_4_RX);
+    mapping_map["FLASH_CELLBOARD_4_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_4_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_4_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_4_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_4_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_5_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_5_TX);
+    mapping_map["FLASH_CELLBOARD_5_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_5_TX);
+    mapping_map["FLASH_CELLBOARD_5_TX"].stride = sizeof(primary_message_FLASH_CELLBOARD_5_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_5_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_5_TX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_5_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_5_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_CELLBOARD_5_RX);
+    mapping_map["FLASH_CELLBOARD_5_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_CELLBOARD_5_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_CELLBOARD_5_RX);
+    mapping_map["FLASH_CELLBOARD_5_RX"].stride = sizeof(primary_message_FLASH_CELLBOARD_5_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_CELLBOARD_5_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_CELLBOARD_5_RX.start()._timestamp;
+    mapping_map["FLASH_CELLBOARD_5_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_HV_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_HV_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_BMS_HV_TX);
+    mapping_map["FLASH_BMS_HV_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_HV_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_BMS_HV_TX);
+    mapping_map["FLASH_BMS_HV_TX"].stride = sizeof(primary_message_FLASH_BMS_HV_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_HV_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_BMS_HV_TX.start()._timestamp;
+    mapping_map["FLASH_BMS_HV_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_HV_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_HV_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_BMS_HV_RX);
+    mapping_map["FLASH_BMS_HV_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_HV_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_BMS_HV_RX);
+    mapping_map["FLASH_BMS_HV_RX"].stride = sizeof(primary_message_FLASH_BMS_HV_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_HV_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_BMS_HV_RX.start()._timestamp;
+    mapping_map["FLASH_BMS_HV_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_LV_TX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_LV_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_BMS_LV_TX);
+    mapping_map["FLASH_BMS_LV_TX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_LV_TX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_BMS_LV_TX);
+    mapping_map["FLASH_BMS_LV_TX"].stride = sizeof(primary_message_FLASH_BMS_LV_TX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_LV_TX"].field["_timestamp"].value._uint64 = &pack.FLASH_BMS_LV_TX.start()._timestamp;
+    mapping_map["FLASH_BMS_LV_TX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_LV_RX"].size = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_LV_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.FLASH_BMS_LV_RX);
+    mapping_map["FLASH_BMS_LV_RX"].offset = std::bind(&canlib_circular_buffer<primary_message_FLASH_BMS_LV_RX, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.FLASH_BMS_LV_RX);
+    mapping_map["FLASH_BMS_LV_RX"].stride = sizeof(primary_message_FLASH_BMS_LV_RX);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["FLASH_BMS_LV_RX"].field["_timestamp"].value._uint64 = &pack.FLASH_BMS_LV_RX.start()._timestamp;
+    mapping_map["FLASH_BMS_LV_RX"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_NLG5_CTL"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_NLG5_CTL, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_NLG5_CTL);
+    mapping_map["BRUSA_NLG5_CTL"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_NLG5_CTL, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_NLG5_CTL);
+    mapping_map["BRUSA_NLG5_CTL"].stride = sizeof(primary_message_BRUSA_NLG5_CTL);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_NLG5_CTL"].field["_timestamp"].value._uint64 = &pack.BRUSA_NLG5_CTL.start()._timestamp;
+    mapping_map["BRUSA_NLG5_CTL"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ST"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ST, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_ST);
+    mapping_map["BRUSA_ST"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ST, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_ST);
+    mapping_map["BRUSA_ST"].stride = sizeof(primary_message_BRUSA_ST);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ST"].field["_timestamp"].value._uint64 = &pack.BRUSA_ST.start()._timestamp;
+    mapping_map["BRUSA_ST"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ACT_I"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ACT_I, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_ACT_I);
+    mapping_map["BRUSA_ACT_I"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ACT_I, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_ACT_I);
+    mapping_map["BRUSA_ACT_I"].stride = sizeof(primary_message_BRUSA_ACT_I);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ACT_I"].field["_timestamp"].value._uint64 = &pack.BRUSA_ACT_I.start()._timestamp;
+    mapping_map["BRUSA_ACT_I"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ACT_II"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ACT_II, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_ACT_II);
+    mapping_map["BRUSA_ACT_II"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ACT_II, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_ACT_II);
+    mapping_map["BRUSA_ACT_II"].stride = sizeof(primary_message_BRUSA_ACT_II);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ACT_II"].field["_timestamp"].value._uint64 = &pack.BRUSA_ACT_II.start()._timestamp;
+    mapping_map["BRUSA_ACT_II"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_TEMP"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_TEMP, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_TEMP);
+    mapping_map["BRUSA_TEMP"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_TEMP, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_TEMP);
+    mapping_map["BRUSA_TEMP"].stride = sizeof(primary_message_BRUSA_TEMP);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_TEMP"].field["_timestamp"].value._uint64 = &pack.BRUSA_TEMP.start()._timestamp;
+    mapping_map["BRUSA_TEMP"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ERR"].size = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ERR, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BRUSA_ERR);
+    mapping_map["BRUSA_ERR"].offset = std::bind(&canlib_circular_buffer<primary_message_BRUSA_ERR, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BRUSA_ERR);
+    mapping_map["BRUSA_ERR"].stride = sizeof(primary_message_BRUSA_ERR);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BRUSA_ERR"].field["_timestamp"].value._uint64 = &pack.BRUSA_ERR.start()._timestamp;
+    mapping_map["BRUSA_ERR"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["BMS_HV_CHIMERA"].size = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BMS_HV_CHIMERA);
+    mapping_map["BMS_HV_CHIMERA"].offset = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BMS_HV_CHIMERA);
+    mapping_map["BMS_HV_CHIMERA"].stride = sizeof(primary_message_BMS_HV_CHIMERA);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["BMS_HV_CHIMERA"].field["_timestamp"].value._uint64 = &pack.BMS_HV_CHIMERA.start()._timestamp;
+    mapping_map["BMS_HV_CHIMERA"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["ECU_CHIMERA"].size = std::bind(&canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.ECU_CHIMERA);
+    mapping_map["ECU_CHIMERA"].offset = std::bind(&canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.ECU_CHIMERA);
+    mapping_map["ECU_CHIMERA"].stride = sizeof(primary_message_ECU_CHIMERA);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["ECU_CHIMERA"].field["_timestamp"].value._uint64 = &pack.ECU_CHIMERA.start()._timestamp;
+    mapping_map["ECU_CHIMERA"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP 
+}
 
 void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
     int index = primary_index_from_id(id);
@@ -1025,385 +1860,608 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
     }
 }
 
-void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
+void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uint64_t resample_us) {
     for(int i = 0; i < pack->bms_hv_jmp_to_blt_size(); i++){
         static primary_message_BMS_HV_JMP_TO_BLT instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->bms_hv_jmp_to_blt(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BMS_HV_JMP_TO_BLT.push(instance);
     }
     for(int i = 0; i < pack->bms_lv_jmp_to_blt_size(); i++){
         static primary_message_BMS_LV_JMP_TO_BLT instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->bms_lv_jmp_to_blt(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BMS_LV_JMP_TO_BLT.push(instance);
     }
     for(int i = 0; i < pack->steer_version_size(); i++){
         static primary_message_STEER_VERSION instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->steer_version(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.component_version =pack->steer_version(i).component_version();
         instance.cancicd_version =pack->steer_version(i).cancicd_version();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->steer_version(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->STEER_VERSION.push(instance);
     }
     for(int i = 0; i < pack->das_version_size(); i++){
         static primary_message_DAS_VERSION instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->das_version(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.component_version =pack->das_version(i).component_version();
         instance.cancicd_version =pack->das_version(i).cancicd_version();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->das_version(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->DAS_VERSION.push(instance);
     }
     for(int i = 0; i < pack->hv_version_size(); i++){
         static primary_message_HV_VERSION instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_version(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.component_version =pack->hv_version(i).component_version();
         instance.cancicd_version =pack->hv_version(i).cancicd_version();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_version(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_VERSION.push(instance);
     }
     for(int i = 0; i < pack->lv_version_size(); i++){
         static primary_message_LV_VERSION instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lv_version(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.component_version =pack->lv_version(i).component_version();
         instance.cancicd_version =pack->lv_version(i).cancicd_version();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->lv_version(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->LV_VERSION.push(instance);
     }
     for(int i = 0; i < pack->tlm_version_size(); i++){
         static primary_message_TLM_VERSION instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->tlm_version(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.component_version =pack->tlm_version(i).component_version();
         instance.cancicd_version =pack->tlm_version(i).cancicd_version();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->tlm_version(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->TLM_VERSION.push(instance);
     }
     for(int i = 0; i < pack->timestamp_size(); i++){
         static primary_message_TIMESTAMP instance;
-        instance.timestamp =pack->timestamp(i).timestamp();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->timestamp(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.timestamp =pack->timestamp(i).timestamp();
         map->TIMESTAMP.push(instance);
     }
     for(int i = 0; i < pack->set_tlm_status_size(); i++){
         static primary_message_SET_TLM_STATUS instance;
-        instance.tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_tlm_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.tlm_status =(primary_Toggle)pack->set_tlm_status(i).tlm_status();
         map->SET_TLM_STATUS.push(instance);
     }
     for(int i = 0; i < pack->tlm_status_size(); i++){
         static primary_message_TLM_STATUS instance;
-        instance.tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->tlm_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.tlm_status =(primary_Toggle)pack->tlm_status(i).tlm_status();
         map->TLM_STATUS.push(instance);
     }
     for(int i = 0; i < pack->steer_system_status_size(); i++){
         static primary_message_STEER_SYSTEM_STATUS instance;
-        instance.soc_temp =pack->steer_system_status(i).soc_temp();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->steer_system_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.soc_temp =pack->steer_system_status(i).soc_temp();
         map->STEER_SYSTEM_STATUS.push(instance);
     }
     for(int i = 0; i < pack->hv_voltage_size(); i++){
         static primary_message_HV_VOLTAGE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_voltage(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.pack_voltage =pack->hv_voltage(i).pack_voltage();
         instance.bus_voltage =pack->hv_voltage(i).bus_voltage();
         instance.max_cell_voltage =pack->hv_voltage(i).max_cell_voltage();
         instance.min_cell_voltage =pack->hv_voltage(i).min_cell_voltage();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_voltage(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_VOLTAGE.push(instance);
     }
     for(int i = 0; i < pack->hv_current_size(); i++){
         static primary_message_HV_CURRENT_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_current(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.current =pack->hv_current(i).current();
         instance.power =pack->hv_current(i).power();
         instance.energy =pack->hv_current(i).energy();
         instance.soc =pack->hv_current(i).soc();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_current(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_CURRENT.push(instance);
     }
     for(int i = 0; i < pack->hv_temp_size(); i++){
         static primary_message_HV_TEMP_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_temp(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.average_temp =pack->hv_temp(i).average_temp();
         instance.max_temp =pack->hv_temp(i).max_temp();
         instance.min_temp =pack->hv_temp(i).min_temp();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_temp(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_TEMP.push(instance);
     }
     for(int i = 0; i < pack->hv_errors_size(); i++){
         static primary_message_HV_ERRORS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_errors(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.warnings =pack->hv_errors(i).warnings();
         instance.errors =pack->hv_errors(i).errors();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_errors(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_ERRORS.push(instance);
     }
     for(int i = 0; i < pack->hv_can_forward_size(); i++){
         static primary_message_HV_CAN_FORWARD instance;
-        instance.can_forward_set =(primary_Toggle)pack->hv_can_forward(i).can_forward_set();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->hv_can_forward(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.can_forward_set =(primary_Toggle)pack->hv_can_forward(i).can_forward_set();
         map->HV_CAN_FORWARD.push(instance);
     }
     for(int i = 0; i < pack->hv_fans_override_size(); i++){
         static primary_message_HV_FANS_OVERRIDE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_fans_override(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.fans_override =(primary_Toggle)pack->hv_fans_override(i).fans_override();
         instance.fans_speed =pack->hv_fans_override(i).fans_speed();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_fans_override(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_FANS_OVERRIDE.push(instance);
     }
     for(int i = 0; i < pack->hv_can_forward_status_size(); i++){
         static primary_message_HV_CAN_FORWARD_STATUS instance;
-        instance.can_forward_status =(primary_Toggle)pack->hv_can_forward_status(i).can_forward_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->hv_can_forward_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.can_forward_status =(primary_Toggle)pack->hv_can_forward_status(i).can_forward_status();
         map->HV_CAN_FORWARD_STATUS.push(instance);
     }
     for(int i = 0; i < pack->hv_fans_override_status_size(); i++){
         static primary_message_HV_FANS_OVERRIDE_STATUS_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_fans_override_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.fans_override =(primary_Toggle)pack->hv_fans_override_status(i).fans_override();
         instance.fans_speed =pack->hv_fans_override_status(i).fans_speed();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_fans_override_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_FANS_OVERRIDE_STATUS.push(instance);
     }
     for(int i = 0; i < pack->hv_feedbacks_status_size(); i++){
         static primary_message_HV_FEEDBACKS_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_feedbacks_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.feedbacks_status =pack->hv_feedbacks_status(i).feedbacks_status();
         instance.is_circuitry_error =pack->hv_feedbacks_status(i).is_circuitry_error();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_feedbacks_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_FEEDBACKS_STATUS.push(instance);
     }
     for(int i = 0; i < pack->hv_imd_status_size(); i++){
         static primary_message_HV_IMD_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_imd_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.imd_fault =pack->hv_imd_status(i).imd_fault();
         instance.imd_status =(primary_ImdStatus)pack->hv_imd_status(i).imd_status();
         instance.imd_info =pack->hv_imd_status(i).imd_info();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_imd_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_IMD_STATUS.push(instance);
     }
     for(int i = 0; i < pack->ts_status_size(); i++){
         static primary_message_TS_STATUS instance;
-        instance.ts_status =(primary_TsStatus)pack->ts_status(i).ts_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->ts_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.ts_status =(primary_TsStatus)pack->ts_status(i).ts_status();
         map->TS_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_ts_status_das_size(); i++){
         static primary_message_SET_TS_STATUS instance;
-        instance.ts_status_set =(primary_Toggle)pack->set_ts_status_das(i).ts_status_set();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_ts_status_das(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.ts_status_set =(primary_Toggle)pack->set_ts_status_das(i).ts_status_set();
         map->SET_TS_STATUS_DAS.push(instance);
     }
     for(int i = 0; i < pack->set_ts_status_handcart_size(); i++){
         static primary_message_SET_TS_STATUS instance;
-        instance.ts_status_set =(primary_Toggle)pack->set_ts_status_handcart(i).ts_status_set();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_ts_status_handcart(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.ts_status_set =(primary_Toggle)pack->set_ts_status_handcart(i).ts_status_set();
         map->SET_TS_STATUS_HANDCART.push(instance);
     }
     for(int i = 0; i < pack->steer_status_size(); i++){
         static primary_message_STEER_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->steer_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.traction_control =(primary_TractionControl)pack->steer_status(i).traction_control();
         instance.map =(primary_Map)pack->steer_status(i).map();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->steer_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->STEER_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_car_status_size(); i++){
         static primary_message_SET_CAR_STATUS instance;
-        instance.car_status_set =(primary_SetCarStatus)pack->set_car_status(i).car_status_set();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_car_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.car_status_set =(primary_SetCarStatus)pack->set_car_status(i).car_status_set();
         map->SET_CAR_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_pedals_range_size(); i++){
         static primary_message_SET_PEDALS_RANGE instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->set_pedals_range(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.bound =(primary_Bound)pack->set_pedals_range(i).bound();
         instance.pedal =(primary_Pedal)pack->set_pedals_range(i).pedal();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->set_pedals_range(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->SET_PEDALS_RANGE.push(instance);
     }
     for(int i = 0; i < pack->set_steering_angle_range_size(); i++){
         static primary_message_SET_STEERING_ANGLE_RANGE instance;
-        instance.bound =(primary_Bound)pack->set_steering_angle_range(i).bound();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_steering_angle_range(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.bound =(primary_Bound)pack->set_steering_angle_range(i).bound();
         map->SET_STEERING_ANGLE_RANGE.push(instance);
     }
     for(int i = 0; i < pack->car_status_size(); i++){
         static primary_message_CAR_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->car_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.inverter_l =(primary_InverterStatus)pack->car_status(i).inverter_l();
         instance.inverter_r =(primary_InverterStatus)pack->car_status(i).inverter_r();
         instance.car_status =(primary_CarStatus)pack->car_status(i).car_status();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->car_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->CAR_STATUS.push(instance);
     }
     for(int i = 0; i < pack->das_errors_size(); i++){
         static primary_message_DAS_ERRORS instance;
-        instance.das_error =pack->das_errors(i).das_error();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->das_errors(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.das_error =pack->das_errors(i).das_error();
         map->DAS_ERRORS.push(instance);
     }
     for(int i = 0; i < pack->lv_current_size(); i++){
         static primary_message_LV_CURRENT_conversion instance;
-        instance.current =pack->lv_current(i).current();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->lv_current(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.current =pack->lv_current(i).current();
         map->LV_CURRENT.push(instance);
     }
     for(int i = 0; i < pack->lv_voltage_size(); i++){
         static primary_message_LV_VOLTAGE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lv_voltage(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.voltage_1 =pack->lv_voltage(i).voltage_1();
         instance.voltage_2 =pack->lv_voltage(i).voltage_2();
         instance.voltage_3 =pack->lv_voltage(i).voltage_3();
         instance.voltage_4 =pack->lv_voltage(i).voltage_4();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->lv_voltage(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->LV_VOLTAGE.push(instance);
     }
     for(int i = 0; i < pack->lv_total_voltage_size(); i++){
         static primary_message_LV_TOTAL_VOLTAGE_conversion instance;
-        instance.total_voltage =pack->lv_total_voltage(i).total_voltage();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->lv_total_voltage(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.total_voltage =pack->lv_total_voltage(i).total_voltage();
         map->LV_TOTAL_VOLTAGE.push(instance);
     }
     for(int i = 0; i < pack->lv_temperature_size(); i++){
         static primary_message_LV_TEMPERATURE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lv_temperature(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.bp_temperature_1 =pack->lv_temperature(i).bp_temperature_1();
         instance.bp_temperature_2 =pack->lv_temperature(i).bp_temperature_2();
         instance.dcdc12_temperature =pack->lv_temperature(i).dcdc12_temperature();
         instance.dcdc24_temperature =pack->lv_temperature(i).dcdc24_temperature();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->lv_temperature(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->LV_TEMPERATURE.push(instance);
     }
     for(int i = 0; i < pack->cooling_status_size(); i++){
         static primary_message_COOLING_STATUS_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->cooling_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.radiators_speed =pack->cooling_status(i).radiators_speed();
         instance.pumps_speed =pack->cooling_status(i).pumps_speed();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->cooling_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->COOLING_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_radiator_speed_size(); i++){
         static primary_message_SET_RADIATOR_SPEED_conversion instance;
-        instance.radiators_speed =pack->set_radiator_speed(i).radiators_speed();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_radiator_speed(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.radiators_speed =pack->set_radiator_speed(i).radiators_speed();
         map->SET_RADIATOR_SPEED.push(instance);
     }
     for(int i = 0; i < pack->set_pumps_speed_size(); i++){
         static primary_message_SET_PUMPS_SPEED_conversion instance;
-        instance.pumps_speed =pack->set_pumps_speed(i).pumps_speed();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_pumps_speed(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.pumps_speed =pack->set_pumps_speed(i).pumps_speed();
         map->SET_PUMPS_SPEED.push(instance);
     }
     for(int i = 0; i < pack->set_inverter_connection_status_size(); i++){
         static primary_message_SET_INVERTER_CONNECTION_STATUS instance;
-        instance.status =(primary_Toggle)pack->set_inverter_connection_status(i).status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_inverter_connection_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.status =(primary_Toggle)pack->set_inverter_connection_status(i).status();
         map->SET_INVERTER_CONNECTION_STATUS.push(instance);
     }
     for(int i = 0; i < pack->inverter_connection_status_size(); i++){
         static primary_message_INVERTER_CONNECTION_STATUS instance;
-        instance.status =(primary_Toggle)pack->inverter_connection_status(i).status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->inverter_connection_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.status =(primary_Toggle)pack->inverter_connection_status(i).status();
         map->INVERTER_CONNECTION_STATUS.push(instance);
     }
     for(int i = 0; i < pack->lv_errors_size(); i++){
         static primary_message_LV_ERRORS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lv_errors(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.warnings =pack->lv_errors(i).warnings();
         instance.errors =pack->lv_errors(i).errors();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->lv_errors(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->LV_ERRORS.push(instance);
     }
     for(int i = 0; i < pack->shutdown_status_size(); i++){
         static primary_message_SHUTDOWN_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->shutdown_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.input =pack->shutdown_status(i).input();
         instance.output =pack->shutdown_status(i).output();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->shutdown_status(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->SHUTDOWN_STATUS.push(instance);
     }
     for(int i = 0; i < pack->marker_size(); i++){
         static primary_message_MARKER instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->marker(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->MARKER.push(instance);
     }
     for(int i = 0; i < pack->hv_cells_voltage_size(); i++){
         static primary_message_HV_CELLS_VOLTAGE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.start_index =pack->hv_cells_voltage(i).start_index();
         instance.voltage_0 =pack->hv_cells_voltage(i).voltage_0();
         instance.voltage_1 =pack->hv_cells_voltage(i).voltage_1();
         instance.voltage_2 =pack->hv_cells_voltage(i).voltage_2();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_CELLS_VOLTAGE.push(instance);
     }
     for(int i = 0; i < pack->hv_cells_temp_size(); i++){
         static primary_message_HV_CELLS_TEMP_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->hv_cells_temp(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.start_index =pack->hv_cells_temp(i).start_index();
         instance.temp_0 =pack->hv_cells_temp(i).temp_0();
         instance.temp_1 =pack->hv_cells_temp(i).temp_1();
@@ -1411,48 +2469,73 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.temp_3 =pack->hv_cells_temp(i).temp_3();
         instance.temp_4 =pack->hv_cells_temp(i).temp_4();
         instance.temp_5 =pack->hv_cells_temp(i).temp_5();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->hv_cells_temp(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->HV_CELLS_TEMP.push(instance);
     }
     for(int i = 0; i < pack->hv_cell_balancing_status_size(); i++){
         static primary_message_HV_CELL_BALANCING_STATUS instance;
-        instance.balancing_status =(primary_Toggle)pack->hv_cell_balancing_status(i).balancing_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->hv_cell_balancing_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.balancing_status =(primary_Toggle)pack->hv_cell_balancing_status(i).balancing_status();
         map->HV_CELL_BALANCING_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_cell_balancing_status_size(); i++){
         static primary_message_SET_CELL_BALANCING_STATUS instance;
-        instance.set_balancing_status =(primary_Toggle)pack->set_cell_balancing_status(i).set_balancing_status();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_cell_balancing_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.set_balancing_status =(primary_Toggle)pack->set_cell_balancing_status(i).set_balancing_status();
         map->SET_CELL_BALANCING_STATUS.push(instance);
     }
     for(int i = 0; i < pack->handcart_status_size(); i++){
         static primary_message_HANDCART_STATUS instance;
-        instance.connected =pack->handcart_status(i).connected();
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->handcart_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
+        instance.connected =pack->handcart_status(i).connected();
         map->HANDCART_STATUS.push(instance);
     }
     for(int i = 0; i < pack->speed_size(); i++){
         static primary_message_SPEED instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->speed(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.encoder_r =pack->speed(i).encoder_r();
         instance.encoder_l =pack->speed(i).encoder_l();
         instance.inverter_r =pack->speed(i).inverter_r();
         instance.inverter_l =pack->speed(i).inverter_l();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->speed(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->SPEED.push(instance);
     }
     for(int i = 0; i < pack->inv_l_request_size(); i++){
         static primary_message_INV_L_REQUEST instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->inv_l_request(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.data_0 =pack->inv_l_request(i).data_0();
         instance.data_1 =pack->inv_l_request(i).data_1();
         instance.data_2 =pack->inv_l_request(i).data_2();
@@ -1461,13 +2544,18 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.data_5 =pack->inv_l_request(i).data_5();
         instance.data_6 =pack->inv_l_request(i).data_6();
         instance.data_7 =pack->inv_l_request(i).data_7();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->inv_l_request(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->INV_L_REQUEST.push(instance);
     }
     for(int i = 0; i < pack->inv_r_request_size(); i++){
         static primary_message_INV_R_REQUEST instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->inv_r_request(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.data_0 =pack->inv_r_request(i).data_0();
         instance.data_1 =pack->inv_r_request(i).data_1();
         instance.data_2 =pack->inv_r_request(i).data_2();
@@ -1476,13 +2564,18 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.data_5 =pack->inv_r_request(i).data_5();
         instance.data_6 =pack->inv_r_request(i).data_6();
         instance.data_7 =pack->inv_r_request(i).data_7();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->inv_r_request(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->INV_R_REQUEST.push(instance);
     }
     for(int i = 0; i < pack->inv_l_response_size(); i++){
         static primary_message_INV_L_RESPONSE instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->inv_l_response(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.reg_id =pack->inv_l_response(i).reg_id();
         instance.data_0 =pack->inv_l_response(i).data_0();
         instance.data_1 =pack->inv_l_response(i).data_1();
@@ -1491,13 +2584,18 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.data_4 =pack->inv_l_response(i).data_4();
         instance.data_5 =pack->inv_l_response(i).data_5();
         instance.data_6 =pack->inv_l_response(i).data_6();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->inv_l_response(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->INV_L_RESPONSE.push(instance);
     }
     for(int i = 0; i < pack->inv_r_response_size(); i++){
         static primary_message_INV_R_RESPONSE instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->inv_r_response(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
         instance.reg_id =pack->inv_r_response(i).reg_id();
         instance.data_0 =pack->inv_r_response(i).data_0();
         instance.data_1 =pack->inv_r_response(i).data_1();
@@ -1506,176 +2604,293 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map) {
         instance.data_4 =pack->inv_r_response(i).data_4();
         instance.data_5 =pack->inv_r_response(i).data_5();
         instance.data_6 =pack->inv_r_response(i).data_6();
-#ifdef CANLIB_TIMESTAMP
-        instance._timestamp = pack->inv_r_response(i)._inner_timestamp();
-#endif // CANLIB_TIMESTAMP
         map->INV_R_RESPONSE.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_0_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_0_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_0_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_0_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_0_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_0_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_0_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_0_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_1_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_1_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_1_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_1_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_1_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_1_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_1_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_1_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_2_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_2_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_2_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_2_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_2_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_2_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_2_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_2_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_3_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_3_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_3_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_3_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_3_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_3_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_3_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_3_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_4_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_4_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_4_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_4_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_4_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_4_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_4_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_4_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_5_tx_size(); i++){
         static primary_message_FLASH_CELLBOARD_5_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_5_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_5_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_cellboard_5_rx_size(); i++){
         static primary_message_FLASH_CELLBOARD_5_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_CELLBOARD_5_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_bms_hv_tx_size(); i++){
         static primary_message_FLASH_BMS_HV_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_bms_hv_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_BMS_HV_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_bms_hv_rx_size(); i++){
         static primary_message_FLASH_BMS_HV_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_bms_hv_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_BMS_HV_RX.push(instance);
     }
     for(int i = 0; i < pack->flash_bms_lv_tx_size(); i++){
         static primary_message_FLASH_BMS_LV_TX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_bms_lv_tx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_BMS_LV_TX.push(instance);
     }
     for(int i = 0; i < pack->flash_bms_lv_rx_size(); i++){
         static primary_message_FLASH_BMS_LV_RX instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->flash_bms_lv_rx(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->FLASH_BMS_LV_RX.push(instance);
     }
     for(int i = 0; i < pack->brusa_nlg5_ctl_size(); i++){
         static primary_message_BRUSA_NLG5_CTL instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_nlg5_ctl(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_NLG5_CTL.push(instance);
     }
     for(int i = 0; i < pack->brusa_st_size(); i++){
         static primary_message_BRUSA_ST instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_st(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_ST.push(instance);
     }
     for(int i = 0; i < pack->brusa_act_i_size(); i++){
         static primary_message_BRUSA_ACT_I instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_act_i(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_ACT_I.push(instance);
     }
     for(int i = 0; i < pack->brusa_act_ii_size(); i++){
         static primary_message_BRUSA_ACT_II instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_act_ii(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_ACT_II.push(instance);
     }
     for(int i = 0; i < pack->brusa_temp_size(); i++){
         static primary_message_BRUSA_TEMP instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_temp(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_TEMP.push(instance);
     }
     for(int i = 0; i < pack->brusa_err_size(); i++){
         static primary_message_BRUSA_ERR instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->brusa_err(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_ERR.push(instance);
     }
     for(int i = 0; i < pack->bms_hv_chimera_size(); i++){
         static primary_message_BMS_HV_CHIMERA instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->bms_hv_chimera(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->BMS_HV_CHIMERA.push(instance);
     }
     for(int i = 0; i < pack->ecu_chimera_size(); i++){
         static primary_message_ECU_CHIMERA instance;
 #ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
         instance._timestamp = pack->ecu_chimera(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->ECU_CHIMERA.push(instance);
     }
