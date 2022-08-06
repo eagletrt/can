@@ -11,18 +11,21 @@
       "contents": {
         "ang_rate_x": {
           "type": "float32",
-          "range": [-245, 245],
-          "precision": 0.01
+          "range": [0, 245],
+          "precision": 0.01,
+          "signed": true
         },
         "ang_rate_y": {
           "type": "float32",
-          "range": [-245, 245],
-          "precision": 0.01
+          "range": [0, 245],
+          "precision": 0.01,
+          "signed": true
         },
         "ang_rate_z": {
           "type": "float32",
-          "range": [-245, 245],
-          "precision": 0.01
+          "range": [0, 245],
+          "precision": 0.01,
+          "signed": true
         }
       }
     },
@@ -35,18 +38,21 @@
       "contents": {
         "accel_x": {
           "type": "float32",
-          "range": [-8, 8],
-          "precision": 0.01
+          "range": [0, 8],
+          "precision": 0.01,
+          "signed": true
         },
         "accel_y": {
           "type": "float32",
-          "range": [-8, 8],
-          "precision": 0.01
+          "range": [0, 8],
+          "precision": 0.01,
+          "signed": true
         },
         "accel_z": {
           "type": "float32",
-          "range": [-8, 8],
-          "precision": 0.01
+          "range": [0, 8],
+          "precision": 0.01,
+          "signed": true
         }
       }
     },

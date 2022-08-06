@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1659717028
-#define CANLIB_BUILD_HASH 0x3fba1eac
+#define CANLIB_BUILD_TIME 1659773356
+#define CANLIB_BUILD_HASH 0x7109d412
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -390,7 +390,7 @@ typedef primary_uint16 primary_DasErrors;
 #define primary_MAX_STRING_LENGTH_DasErrors 93
 int primary_to_string_DasErrors(primary_DasErrors value, char* buffer);
 
-typedef primary_uint32 primary_InvStatus;
+typedef primary_uint64 primary_InvStatus;
 #define primary_InvStatus_DEFAULT 0
 #define primary_InvStatus_DRIVE_ENABLE 1
 #define primary_InvStatus_NCR0 2
@@ -428,7 +428,7 @@ typedef primary_uint32 primary_InvStatus;
 #define primary_MAX_STRING_LENGTH_InvStatus 208
 int primary_to_string_InvStatus(primary_InvStatus value, char* buffer);
 
-typedef primary_uint32 primary_InvErrors;
+typedef primary_uint64 primary_InvErrors;
 #define primary_InvErrors_DEFAULT 0
 #define primary_InvErrors_BAD_PARAM 1
 #define primary_InvErrors_HW_FAULT 2

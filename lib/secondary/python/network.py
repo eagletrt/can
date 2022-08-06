@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1659717028
-CANLIB_BUILD_HASH = 0x3fba1eac
+CANLIB_BUILD_TIME = 1659773356
+CANLIB_BUILD_HASH = 0x7109d412
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -55,9 +55,9 @@ class message_IMU_ANGULAR_RATE:
         ang_rate_y = None,
         ang_rate_z = None
     ):
-        self.ang_rate_x = uint16(ang_rate_x)
-        self.ang_rate_y = uint16(ang_rate_y)
-        self.ang_rate_z = uint16(ang_rate_z)
+        self.ang_rate_x = int16(ang_rate_x)
+        self.ang_rate_y = int16(ang_rate_y)
+        self.ang_rate_z = int16(ang_rate_z)
         self.size = 6
 
     def __eq__(self, other):
@@ -73,23 +73,23 @@ class message_IMU_ANGULAR_RATE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHH", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
+        data.extend(pack("<hhh", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.ang_rate_x = uint16(unpack("<H", data[0:2])[0])
-        message.ang_rate_y = uint16(unpack("<xxH", data[0:4])[0])
-        message.ang_rate_z = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.ang_rate_x = int16(unpack("<h", data[0:2])[0])
+        message.ang_rate_y = int16(unpack("<xxh", data[0:4])[0])
+        message.ang_rate_z = int16(unpack("<xxxxh", data[0:6])[0])
         return message
 
 
     def convert(self) -> message_IMU_ANGULAR_RATE_conversion:
         conversion = message_IMU_ANGULAR_RATE_conversion()
-        conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 100.0) - 245
-        conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 100.0) - 245
-        conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 100.0) - 245
+        conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 100.0) + 0
+        conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 100.0) + 0
+        conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 100.0) + 0
         return conversion
 
 
@@ -118,9 +118,9 @@ class message_IMU_ANGULAR_RATE_conversion:
 
     def convert_to_raw(self) -> message_IMU_ANGULAR_RATE:
         raw = message_IMU_ANGULAR_RATE()
-        raw.ang_rate_x = uint16((self.ang_rate_x + 245) * 100.0)
-        raw.ang_rate_y = uint16((self.ang_rate_y + 245) * 100.0)
-        raw.ang_rate_z = uint16((self.ang_rate_z + 245) * 100.0)
+        raw.ang_rate_x = int16((self.ang_rate_x + 0) * 100.0)
+        raw.ang_rate_y = int16((self.ang_rate_y + 0) * 100.0)
+        raw.ang_rate_z = int16((self.ang_rate_z + 0) * 100.0)
         return raw
 
 class message_IMU_ACCELERATION:
@@ -130,9 +130,9 @@ class message_IMU_ACCELERATION:
         accel_y = None,
         accel_z = None
     ):
-        self.accel_x = uint16(accel_x)
-        self.accel_y = uint16(accel_y)
-        self.accel_z = uint16(accel_z)
+        self.accel_x = int16(accel_x)
+        self.accel_y = int16(accel_y)
+        self.accel_z = int16(accel_z)
         self.size = 6
 
     def __eq__(self, other):
@@ -148,23 +148,23 @@ class message_IMU_ACCELERATION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHH", self.accel_x, self.accel_y, self.accel_z))
+        data.extend(pack("<hhh", self.accel_x, self.accel_y, self.accel_z))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.accel_x = uint16(unpack("<H", data[0:2])[0])
-        message.accel_y = uint16(unpack("<xxH", data[0:4])[0])
-        message.accel_z = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.accel_x = int16(unpack("<h", data[0:2])[0])
+        message.accel_y = int16(unpack("<xxh", data[0:4])[0])
+        message.accel_z = int16(unpack("<xxxxh", data[0:6])[0])
         return message
 
 
     def convert(self) -> message_IMU_ACCELERATION_conversion:
         conversion = message_IMU_ACCELERATION_conversion()
-        conversion.accel_x = ((float32(self.accel_x)) / 100.0) - 8
-        conversion.accel_y = ((float32(self.accel_y)) / 100.0) - 8
-        conversion.accel_z = ((float32(self.accel_z)) / 100.0) - 8
+        conversion.accel_x = ((float32(self.accel_x)) / 100.0) + 0
+        conversion.accel_y = ((float32(self.accel_y)) / 100.0) + 0
+        conversion.accel_z = ((float32(self.accel_z)) / 100.0) + 0
         return conversion
 
 
@@ -193,9 +193,9 @@ class message_IMU_ACCELERATION_conversion:
 
     def convert_to_raw(self) -> message_IMU_ACCELERATION:
         raw = message_IMU_ACCELERATION()
-        raw.accel_x = uint16((self.accel_x + 8) * 100.0)
-        raw.accel_y = uint16((self.accel_y + 8) * 100.0)
-        raw.accel_z = uint16((self.accel_z + 8) * 100.0)
+        raw.accel_x = int16((self.accel_x + 0) * 100.0)
+        raw.accel_y = int16((self.accel_y + 0) * 100.0)
+        raw.accel_z = int16((self.accel_z + 0) * 100.0)
         return raw
 
 class message_IRTS_FL_0:

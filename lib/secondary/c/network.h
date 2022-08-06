@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1659717028
-#define CANLIB_BUILD_HASH 0x3fba1eac
+#define CANLIB_BUILD_TIME 1659773356
+#define CANLIB_BUILD_HASH 0x7109d412
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -233,9 +233,9 @@ typedef struct {
 
 
 typedef struct CANLIB_PARKING {
-    secondary_uint16 ang_rate_x;
-    secondary_uint16 ang_rate_y;
-    secondary_uint16 ang_rate_z;
+    secondary_int16 ang_rate_x;
+    secondary_int16 ang_rate_y;
+    secondary_int16 ang_rate_z;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -251,9 +251,9 @@ typedef struct CANLIB_PARKING {
 } secondary_message_IMU_ANGULAR_RATE_conversion;
 
 typedef struct CANLIB_PARKING {
-    secondary_uint16 accel_x;
-    secondary_uint16 accel_y;
-    secondary_uint16 accel_z;
+    secondary_int16 accel_x;
+    secondary_int16 accel_y;
+    secondary_int16 accel_z;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -532,9 +532,9 @@ typedef union CANLIB_PARKING {
 
 secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
-    secondary_uint16 ang_rate_x,
-    secondary_uint16 ang_rate_y,
-    secondary_uint16 ang_rate_z
+    secondary_int16 ang_rate_x,
+    secondary_int16 ang_rate_y,
+    secondary_int16 ang_rate_z
 );
 secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     uint8_t* data,
@@ -569,9 +569,9 @@ void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
 
 void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
-    secondary_uint16 ang_rate_x,
-    secondary_uint16 ang_rate_y,
-    secondary_uint16 ang_rate_z
+    secondary_int16 ang_rate_x,
+    secondary_int16 ang_rate_y,
+    secondary_int16 ang_rate_z
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -586,9 +586,9 @@ int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer);
 
 secondary_byte_size secondary_serialize_IMU_ACCELERATION(
     uint8_t* data,
-    secondary_uint16 accel_x,
-    secondary_uint16 accel_y,
-    secondary_uint16 accel_z
+    secondary_int16 accel_x,
+    secondary_int16 accel_y,
+    secondary_int16 accel_z
 );
 secondary_byte_size secondary_serialize_struct_IMU_ACCELERATION(
     uint8_t* data,
@@ -623,9 +623,9 @@ void secondary_conversion_to_raw_IMU_ACCELERATION(
 
 void secondary_raw_to_conversion_IMU_ACCELERATION(
     secondary_message_IMU_ACCELERATION_conversion* conversion,
-    secondary_uint16 accel_x,
-    secondary_uint16 accel_y,
-    secondary_uint16 accel_z
+    secondary_int16 accel_x,
+    secondary_int16 accel_y,
+    secondary_int16 accel_z
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1320,9 +1320,9 @@ void secondary_devices_deserialize_from_id(
 
 secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
-    secondary_uint16 ang_rate_x,
-    secondary_uint16 ang_rate_y,
-    secondary_uint16 ang_rate_z
+    secondary_int16 ang_rate_x,
+    secondary_int16 ang_rate_y,
+    secondary_int16 ang_rate_z
 ) {
     data[0] = ang_rate_x & 255;
     data[1] = (ang_rate_x >> 8) & 255;
@@ -1365,9 +1365,9 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
 
 void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
-    secondary_uint16 ang_rate_x,
-    secondary_uint16 ang_rate_y,
-    secondary_uint16 ang_rate_z
+    secondary_int16 ang_rate_x,
+    secondary_int16 ang_rate_y,
+    secondary_int16 ang_rate_z
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1375,9 +1375,9 @@ void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->ang_rate_x = (((secondary_float32)ang_rate_x) / 100.0) - 245;
-    conversion->ang_rate_y = (((secondary_float32)ang_rate_y) / 100.0) - 245;
-    conversion->ang_rate_z = (((secondary_float32)ang_rate_z) / 100.0) - 245;
+    conversion->ang_rate_x = (((secondary_float32)ang_rate_x) / 100.0) + 0;
+    conversion->ang_rate_y = (((secondary_float32)ang_rate_y) / 100.0) + 0;
+    conversion->ang_rate_z = (((secondary_float32)ang_rate_z) / 100.0) + 0;
 }
 
 void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
@@ -1387,9 +1387,9 @@ void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->ang_rate_x = (((secondary_float32)raw->ang_rate_x) / 100.0) - 245;
-    conversion->ang_rate_y = (((secondary_float32)raw->ang_rate_y) / 100.0) - 245;
-    conversion->ang_rate_z = (((secondary_float32)raw->ang_rate_z) / 100.0) - 245;
+    conversion->ang_rate_x = (((secondary_float32)raw->ang_rate_x) / 100.0) + 0;
+    conversion->ang_rate_y = (((secondary_float32)raw->ang_rate_y) / 100.0) + 0;
+    conversion->ang_rate_z = (((secondary_float32)raw->ang_rate_z) / 100.0) + 0;
 }
 
 void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
@@ -1404,9 +1404,9 @@ void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->ang_rate_x = (secondary_uint16)((ang_rate_x + 245) * 100.0);
-    raw->ang_rate_y = (secondary_uint16)((ang_rate_y + 245) * 100.0);
-    raw->ang_rate_z = (secondary_uint16)((ang_rate_z + 245) * 100.0);
+    raw->ang_rate_x = (secondary_int16)((ang_rate_x + 0) * 100.0);
+    raw->ang_rate_y = (secondary_int16)((ang_rate_y + 0) * 100.0);
+    raw->ang_rate_z = (secondary_int16)((ang_rate_z + 0) * 100.0);
 }
 
 void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
@@ -1416,9 +1416,9 @@ void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->ang_rate_x = (secondary_uint16)((conversion->ang_rate_x + 245) * 100.0);
-    raw->ang_rate_y = (secondary_uint16)((conversion->ang_rate_y + 245) * 100.0);
-    raw->ang_rate_z = (secondary_uint16)((conversion->ang_rate_z + 245) * 100.0);
+    raw->ang_rate_x = (secondary_int16)((conversion->ang_rate_x + 0) * 100.0);
+    raw->ang_rate_y = (secondary_int16)((conversion->ang_rate_y + 0) * 100.0);
+    raw->ang_rate_z = (secondary_int16)((conversion->ang_rate_z + 0) * 100.0);
 }
 
 // ============== STRING ============== //
@@ -1486,9 +1486,9 @@ int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
 
 secondary_byte_size secondary_serialize_IMU_ACCELERATION(
     uint8_t* data,
-    secondary_uint16 accel_x,
-    secondary_uint16 accel_y,
-    secondary_uint16 accel_z
+    secondary_int16 accel_x,
+    secondary_int16 accel_y,
+    secondary_int16 accel_z
 ) {
     data[0] = accel_x & 255;
     data[1] = (accel_x >> 8) & 255;
@@ -1531,9 +1531,9 @@ void secondary_deserialize_IMU_ACCELERATION(
 
 void secondary_raw_to_conversion_IMU_ACCELERATION(
     secondary_message_IMU_ACCELERATION_conversion* conversion,
-    secondary_uint16 accel_x,
-    secondary_uint16 accel_y,
-    secondary_uint16 accel_z
+    secondary_int16 accel_x,
+    secondary_int16 accel_y,
+    secondary_int16 accel_z
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1541,9 +1541,9 @@ void secondary_raw_to_conversion_IMU_ACCELERATION(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->accel_x = (((secondary_float32)accel_x) / 100.0) - 8;
-    conversion->accel_y = (((secondary_float32)accel_y) / 100.0) - 8;
-    conversion->accel_z = (((secondary_float32)accel_z) / 100.0) - 8;
+    conversion->accel_x = (((secondary_float32)accel_x) / 100.0) + 0;
+    conversion->accel_y = (((secondary_float32)accel_y) / 100.0) + 0;
+    conversion->accel_z = (((secondary_float32)accel_z) / 100.0) + 0;
 }
 
 void secondary_raw_to_conversion_struct_IMU_ACCELERATION(
@@ -1553,9 +1553,9 @@ void secondary_raw_to_conversion_struct_IMU_ACCELERATION(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->accel_x = (((secondary_float32)raw->accel_x) / 100.0) - 8;
-    conversion->accel_y = (((secondary_float32)raw->accel_y) / 100.0) - 8;
-    conversion->accel_z = (((secondary_float32)raw->accel_z) / 100.0) - 8;
+    conversion->accel_x = (((secondary_float32)raw->accel_x) / 100.0) + 0;
+    conversion->accel_y = (((secondary_float32)raw->accel_y) / 100.0) + 0;
+    conversion->accel_z = (((secondary_float32)raw->accel_z) / 100.0) + 0;
 }
 
 void secondary_conversion_to_raw_IMU_ACCELERATION(
@@ -1570,9 +1570,9 @@ void secondary_conversion_to_raw_IMU_ACCELERATION(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->accel_x = (secondary_uint16)((accel_x + 8) * 100.0);
-    raw->accel_y = (secondary_uint16)((accel_y + 8) * 100.0);
-    raw->accel_z = (secondary_uint16)((accel_z + 8) * 100.0);
+    raw->accel_x = (secondary_int16)((accel_x + 0) * 100.0);
+    raw->accel_y = (secondary_int16)((accel_y + 0) * 100.0);
+    raw->accel_z = (secondary_int16)((accel_z + 0) * 100.0);
 }
 
 void secondary_conversion_to_raw_struct_IMU_ACCELERATION(
@@ -1582,9 +1582,9 @@ void secondary_conversion_to_raw_struct_IMU_ACCELERATION(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->accel_x = (secondary_uint16)((conversion->accel_x + 8) * 100.0);
-    raw->accel_y = (secondary_uint16)((conversion->accel_y + 8) * 100.0);
-    raw->accel_z = (secondary_uint16)((conversion->accel_z + 8) * 100.0);
+    raw->accel_x = (secondary_int16)((conversion->accel_x + 0) * 100.0);
+    raw->accel_y = (secondary_int16)((conversion->accel_y + 0) * 100.0);
+    raw->accel_z = (secondary_int16)((conversion->accel_z + 0) * 100.0);
 }
 
 // ============== STRING ============== //
