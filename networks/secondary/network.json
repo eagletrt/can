@@ -12,19 +12,19 @@
         "ang_rate_x": {
           "type": "float32",
           "range": [0, 245],
-          "precision": 0.01,
+          "precision": 0.1,
           "signed": true
         },
         "ang_rate_y": {
           "type": "float32",
           "range": [0, 245],
-          "precision": 0.01,
+          "precision": 0.1,
           "signed": true
         },
         "ang_rate_z": {
           "type": "float32",
           "range": [0, 245],
-          "precision": 0.01,
+          "precision": 0.1,
           "signed": true
         }
       }

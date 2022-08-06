@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1659773356
-CANLIB_BUILD_HASH = 0x7109d412
+CANLIB_BUILD_TIME = 1659785284
+CANLIB_BUILD_HASH = 0x4430b959
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -87,9 +87,9 @@ class message_IMU_ANGULAR_RATE:
 
     def convert(self) -> message_IMU_ANGULAR_RATE_conversion:
         conversion = message_IMU_ANGULAR_RATE_conversion()
-        conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 100.0) + 0
-        conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 100.0) + 0
-        conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 100.0) + 0
+        conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 10.0) + 0
+        conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 10.0) + 0
+        conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 10.0) + 0
         return conversion
 
 
@@ -118,9 +118,9 @@ class message_IMU_ANGULAR_RATE_conversion:
 
     def convert_to_raw(self) -> message_IMU_ANGULAR_RATE:
         raw = message_IMU_ANGULAR_RATE()
-        raw.ang_rate_x = int16((self.ang_rate_x + 0) * 100.0)
-        raw.ang_rate_y = int16((self.ang_rate_y + 0) * 100.0)
-        raw.ang_rate_z = int16((self.ang_rate_z + 0) * 100.0)
+        raw.ang_rate_x = int16((self.ang_rate_x + 0) * 10.0)
+        raw.ang_rate_y = int16((self.ang_rate_y + 0) * 10.0)
+        raw.ang_rate_z = int16((self.ang_rate_z + 0) * 10.0)
         return raw
 
 class message_IMU_ACCELERATION:
