@@ -15,7 +15,7 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1659785284
+#define CANLIB_BUILD_TIME 1659808517
 #define CANLIB_BUILD_HASH 0x4430b959
 #endif // CANLIB_BUILD
 
