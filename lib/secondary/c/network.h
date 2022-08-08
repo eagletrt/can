@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1659808517
-#define CANLIB_BUILD_HASH 0x4430b959
+#define CANLIB_BUILD_TIME 1659953817
+#define CANLIB_BUILD_HASH 0x42d0880f
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -1324,12 +1324,12 @@ secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     secondary_int16 ang_rate_y,
     secondary_int16 ang_rate_z
 ) {
-    data[0] = ang_rate_x & 255;
-    data[1] = (ang_rate_x >> 8) & 255;
-    data[2] = ang_rate_y & 255;
-    data[3] = (ang_rate_y >> 8) & 255;
-    data[4] = ang_rate_z & 255;
-    data[5] = (ang_rate_z >> 8) & 255;
+    data[0] = (ang_rate_x >> 8) & 255;
+    data[1] = ang_rate_x & 255;
+    data[2] = (ang_rate_y >> 8) & 255;
+    data[3] = ang_rate_y & 255;
+    data[4] = (ang_rate_z >> 8) & 255;
+    data[5] = ang_rate_z & 255;
     return 6;
 }
 
@@ -1337,12 +1337,12 @@ secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_message_IMU_ANGULAR_RATE* message
 ) {
-    data[0] = message->ang_rate_x & 255;
-    data[1] = (message->ang_rate_x >> 8) & 255;
-    data[2] = message->ang_rate_y & 255;
-    data[3] = (message->ang_rate_y >> 8) & 255;
-    data[4] = message->ang_rate_z & 255;
-    data[5] = (message->ang_rate_z >> 8) & 255;
+    data[0] = (message->ang_rate_x >> 8) & 255;
+    data[1] = message->ang_rate_x & 255;
+    data[2] = (message->ang_rate_y >> 8) & 255;
+    data[3] = message->ang_rate_y & 255;
+    data[4] = (message->ang_rate_z >> 8) & 255;
+    data[5] = message->ang_rate_z & 255;
     return 6;
 }
 
@@ -1358,9 +1358,9 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->ang_rate_x = data[0] | (data[1] << 8);
-    message->ang_rate_y = data[2] | (data[3] << 8);
-    message->ang_rate_z = data[4] | (data[5] << 8);
+    message->ang_rate_x = data[1] | (data[0] << 8);
+    message->ang_rate_y = data[3] | (data[2] << 8);
+    message->ang_rate_z = data[5] | (data[4] << 8);
 }// ============== CONVERSION ============== //
 
 void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
@@ -1490,12 +1490,12 @@ secondary_byte_size secondary_serialize_IMU_ACCELERATION(
     secondary_int16 accel_y,
     secondary_int16 accel_z
 ) {
-    data[0] = accel_x & 255;
-    data[1] = (accel_x >> 8) & 255;
-    data[2] = accel_y & 255;
-    data[3] = (accel_y >> 8) & 255;
-    data[4] = accel_z & 255;
-    data[5] = (accel_z >> 8) & 255;
+    data[0] = (accel_x >> 8) & 255;
+    data[1] = accel_x & 255;
+    data[2] = (accel_y >> 8) & 255;
+    data[3] = accel_y & 255;
+    data[4] = (accel_z >> 8) & 255;
+    data[5] = accel_z & 255;
     return 6;
 }
 
@@ -1503,12 +1503,12 @@ secondary_byte_size secondary_serialize_struct_IMU_ACCELERATION(
     uint8_t* data,
     secondary_message_IMU_ACCELERATION* message
 ) {
-    data[0] = message->accel_x & 255;
-    data[1] = (message->accel_x >> 8) & 255;
-    data[2] = message->accel_y & 255;
-    data[3] = (message->accel_y >> 8) & 255;
-    data[4] = message->accel_z & 255;
-    data[5] = (message->accel_z >> 8) & 255;
+    data[0] = (message->accel_x >> 8) & 255;
+    data[1] = message->accel_x & 255;
+    data[2] = (message->accel_y >> 8) & 255;
+    data[3] = message->accel_y & 255;
+    data[4] = (message->accel_z >> 8) & 255;
+    data[5] = message->accel_z & 255;
     return 6;
 }
 
@@ -1524,9 +1524,9 @@ void secondary_deserialize_IMU_ACCELERATION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->accel_x = data[0] | (data[1] << 8);
-    message->accel_y = data[2] | (data[3] << 8);
-    message->accel_z = data[4] | (data[5] << 8);
+    message->accel_x = data[1] | (data[0] << 8);
+    message->accel_y = data[3] | (data[2] << 8);
+    message->accel_z = data[5] | (data[4] << 8);
 }// ============== CONVERSION ============== //
 
 void secondary_raw_to_conversion_IMU_ACCELERATION(
