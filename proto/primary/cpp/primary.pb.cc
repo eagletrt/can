@@ -2825,7 +2825,7 @@ void AddDescriptorsImpl() {
       "\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS_O"
       "N\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarStat"
       "us_DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006To"
-      "ggle\022\r\n\tToggle_ON\020\000\022\016\n\nToggle_OFF\020\001*\220\001\n\017"
+      "ggle\022\016\n\nToggle_OFF\020\000\022\r\n\tToggle_ON\020\001*\220\001\n\017"
       "TractionControl\022\027\n\023TractionControl_OFF\020\000"
       "\022 \n\034TractionControl_SLIP_CONTROL\020\001\022$\n Tr"
       "actionControl_TORQUE_VECTORING\020\002\022\034\n\030Trac"

@@ -433,14 +433,14 @@ inline bool CarStatus_Parse(
     CarStatus_descriptor(), name, value);
 }
 enum Toggle {
-  Toggle_ON = 0,
-  Toggle_OFF = 1,
+  Toggle_OFF = 0,
+  Toggle_ON = 1,
   Toggle_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Toggle_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Toggle_IsValid(int value);
-const Toggle Toggle_MIN = Toggle_ON;
-const Toggle Toggle_MAX = Toggle_OFF;
+const Toggle Toggle_MIN = Toggle_OFF;
+const Toggle Toggle_MAX = Toggle_ON;
 const int Toggle_ARRAYSIZE = Toggle_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Toggle_descriptor();

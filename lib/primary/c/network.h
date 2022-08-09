@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1659953817
-#define CANLIB_BUILD_HASH 0x42d0880f
+#define CANLIB_BUILD_TIME 1660057290
+#define CANLIB_BUILD_HASH 0x5df706b0
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -548,8 +548,8 @@ typedef enum CANLIB_PARKING {
 int primary_to_string_CarStatus(primary_CarStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
-    primary_Toggle_ON = 0,
-    primary_Toggle_OFF = 1,
+    primary_Toggle_OFF = 0,
+    primary_Toggle_ON = 1,
 } primary_Toggle;
 
 #define primary_MAX_STRING_LENGTH_Toggle 4
@@ -4041,8 +4041,8 @@ int primary_to_string_CarStatus(primary_CarStatus value, char* buffer) {
 
 int primary_to_string_Toggle(primary_Toggle value, char* buffer) {
     switch (value) {
-        case 0: return sprintf(buffer, "ON");
-        case 1: return sprintf(buffer, "OFF");
+        case 0: return sprintf(buffer, "OFF");
+        case 1: return sprintf(buffer, "ON");
     }
     return 0;
 }

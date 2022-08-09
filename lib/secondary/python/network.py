@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1659953817
-CANLIB_BUILD_HASH = 0x42d0880f
+CANLIB_BUILD_TIME = 1660057290
+CANLIB_BUILD_HASH = 0x5df706b0
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
