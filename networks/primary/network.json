@@ -955,19 +955,23 @@
       "contents": {
         "encoder_r": {
           "type": "float32",
-          "force": "uint16"
+          "force": "uint16",
+          "range": [-700, 700]
         },
         "encoder_l": {
             "type": "float32",
-            "force": "uint16"
+            "force": "uint16",
+            "range": [-700, 700]
         },
         "inverter_r": {
             "type": "float32",
-            "force": "uint16"
+            "force": "uint16",
+            "range": [-700, 700]
         },
         "inverter_l": {
             "type": "float32",
-            "force": "uint16"
+            "force": "uint16",
+            "range": [-700, 700]
         }
       }
     },
