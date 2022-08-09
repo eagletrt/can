@@ -169,7 +169,7 @@
     },
     "Toggle": {
       "type": "enum",
-      "items": ["ON", "OFF"]
+      "items": ["OFF", "ON"]
     },
     "TractionControl": {
       "type": "enum",
