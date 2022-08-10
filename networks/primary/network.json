@@ -956,22 +956,22 @@
         "encoder_r": {
           "type": "float32",
           "force": "uint16",
-          "range": [-700, 700]
+          "range": [-200, 200]
         },
         "encoder_l": {
-            "type": "float32",
-            "force": "uint16",
-            "range": [-700, 700]
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
         },
         "inverter_r": {
-            "type": "float32",
-            "force": "uint16",
-            "range": [-700, 700]
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
         },
         "inverter_l": {
-            "type": "float32",
-            "force": "uint16",
-            "range": [-700, 700]
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
         }
       }
     },
