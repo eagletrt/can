@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660057290
-CANLIB_BUILD_HASH = 0x5df706b0
+CANLIB_BUILD_TIME = 1660118816
+CANLIB_BUILD_HASH = 0xf10dad18
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -2372,10 +2372,10 @@ class message_SPEED:
         inverter_r = None,
         inverter_l = None
     ):
-        self.encoder_r = int16(encoder_r)
-        self.encoder_l = int16(encoder_l)
-        self.inverter_r = int16(inverter_r)
-        self.inverter_l = int16(inverter_l)
+        self.encoder_r = uint16(encoder_r)
+        self.encoder_l = uint16(encoder_l)
+        self.inverter_r = uint16(inverter_r)
+        self.inverter_l = uint16(inverter_l)
         self.size = 8
         self.interval = 100
 
@@ -2394,18 +2394,63 @@ class message_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<hhhh", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
+        data.extend(pack("<HHHH", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.encoder_r = int16(unpack("<h", data[0:2])[0])
-        message.encoder_l = int16(unpack("<xxh", data[0:4])[0])
-        message.inverter_r = int16(unpack("<xxxxh", data[0:6])[0])
-        message.inverter_l = int16(unpack("<xxxxxxh", data[0:8])[0])
+        message.encoder_r = uint16(unpack("<H", data[0:2])[0])
+        message.encoder_l = uint16(unpack("<xxH", data[0:4])[0])
+        message.inverter_r = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.inverter_l = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_SPEED_conversion:
+        conversion = message_SPEED_conversion()
+        conversion.encoder_r = ((float32(self.encoder_r)) / 163.8375) - 200
+        conversion.encoder_l = ((float32(self.encoder_l)) / 163.8375) - 200
+        conversion.inverter_r = ((float32(self.inverter_r)) / 163.8375) - 200
+        conversion.inverter_l = ((float32(self.inverter_l)) / 163.8375) - 200
+        return conversion
+
+
+class message_SPEED_conversion:
+    def __init__(
+        self,
+        encoder_r = None,
+        encoder_l = None,
+        inverter_r = None,
+        inverter_l = None
+    ):
+        self.encoder_r = float32(encoder_r)
+        self.encoder_l = float32(encoder_l)
+        self.inverter_r = float32(inverter_r)
+        self.inverter_l = float32(inverter_l)
+        self.size = 8
+        self.interval = 100
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SPEED):
+            return False
+        if self.encoder_r != other.encoder_r:
+            return False
+        if self.encoder_l != other.encoder_l:
+            return False
+        if self.inverter_r != other.inverter_r:
+            return False
+        if self.inverter_l != other.inverter_l:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_SPEED:
+        raw = message_SPEED()
+        raw.encoder_r = uint16((self.encoder_r + 200) * 163.8375)
+        raw.encoder_l = uint16((self.encoder_l + 200) * 163.8375)
+        raw.inverter_r = uint16((self.inverter_r + 200) * 163.8375)
+        raw.inverter_l = uint16((self.inverter_l + 200) * 163.8375)
+        return raw
 
 class message_INV_L_REQUEST:
     def __init__(

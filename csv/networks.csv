@@ -62,7 +62,7 @@ HV_CELLS_TEMP,HV_CELLS_TEMP: 550,primary,HANDCART,5,BMS_HV,"HANDCART, TLM",100,"
 HV_CELL_BALANCING_STATUS,HV_CELL_BALANCING_STATUS: 582,primary,HANDCART,5,BMS_HV,HANDCART,500,balancing_status: Toggle,Cell balancing status
 SET_CELL_BALANCING_STATUS,SET_CELL_BALANCING_STATUS: 517,primary,BMS_HV,5,HANDCART,BMS_HV,,set_balancing_status: Toggle,Set cell balancing status; only once
 HANDCART_STATUS,HANDCART_STATUS: 773,primary,BMS_HV,4,HANDCART,BMS_HV,500,connected: bool,Sends updates on the presence of the handcart
-SPEED,SPEED: 547,primary,STEER,5,DAS,STEER,100,"encoder_r: int16, encoder_l: int16, inverter_r: int16, inverter_l: int16",Encoder speed and inverter RPMs
+SPEED,SPEED: 547,primary,STEER,5,DAS,STEER,100,"encoder_r: type: float32, force: uint16, range: -200, 200, encoder_l: type: float32, force: uint16, range: -200, 200, inverter_r: type: float32, force: uint16, range: -200, 200, inverter_l: type: float32, force: uint16, range: -200, 200",Encoder and inverter speed in rad/sec
 INV_L_REQUEST,INV_L_REQUEST: 513,primary,FIXED_IDS,,DAS,INVERTER_L,10,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
 INV_R_REQUEST,INV_R_REQUEST: 514,primary,FIXED_IDS,,DAS,INVERTER_L,10,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
 INV_L_RESPONSE,INV_L_RESPONSE: 385,primary,FIXED_IDS,,INVERTER_L,DAS,100,"reg_id: uint8, data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8",

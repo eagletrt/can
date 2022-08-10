@@ -313,7 +313,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_CELL_BALANCING_STATUS;
     canlib_circular_buffer<primary_message_SET_CELL_BALANCING_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_CELL_BALANCING_STATUS;
     canlib_circular_buffer<primary_message_HANDCART_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HANDCART_STATUS;
-    canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> SPEED;
+    canlib_circular_buffer<primary_message_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> SPEED;
     canlib_circular_buffer<primary_message_INV_L_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE> INV_L_REQUEST;
     canlib_circular_buffer<primary_message_INV_R_REQUEST, CANLIB_CIRCULAR_BUFFER_SIZE> INV_R_REQUEST;
     canlib_circular_buffer<primary_message_INV_L_RESPONSE, CANLIB_CIRCULAR_BUFFER_SIZE> INV_L_RESPONSE;
@@ -850,17 +850,17 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["HANDCART_STATUS"].field["_timestamp"].value._uint64 = &pack.HANDCART_STATUS.start()._timestamp;
     mapping_map["HANDCART_STATUS"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["SPEED"].size = std::bind(&canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SPEED);
-    mapping_map["SPEED"].offset = std::bind(&canlib_circular_buffer<primary_message_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SPEED);
-    mapping_map["SPEED"].stride = sizeof(primary_message_SPEED);
-    mapping_map["SPEED"].field["encoder_r"].value._int16 = &pack.SPEED.start().encoder_r;
-    mapping_map["SPEED"].field["encoder_r"].type = mapping_type_int16;
-    mapping_map["SPEED"].field["encoder_l"].value._int16 = &pack.SPEED.start().encoder_l;
-    mapping_map["SPEED"].field["encoder_l"].type = mapping_type_int16;
-    mapping_map["SPEED"].field["inverter_r"].value._int16 = &pack.SPEED.start().inverter_r;
-    mapping_map["SPEED"].field["inverter_r"].type = mapping_type_int16;
-    mapping_map["SPEED"].field["inverter_l"].value._int16 = &pack.SPEED.start().inverter_l;
-    mapping_map["SPEED"].field["inverter_l"].type = mapping_type_int16;
+    mapping_map["SPEED"].size = std::bind(&canlib_circular_buffer<primary_message_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SPEED);
+    mapping_map["SPEED"].offset = std::bind(&canlib_circular_buffer<primary_message_SPEED_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SPEED);
+    mapping_map["SPEED"].stride = sizeof(primary_message_SPEED_conversion);
+    mapping_map["SPEED"].field["encoder_r"].value._float32 = &pack.SPEED.start().encoder_r;
+    mapping_map["SPEED"].field["encoder_r"].type = mapping_type_float32;
+    mapping_map["SPEED"].field["encoder_l"].value._float32 = &pack.SPEED.start().encoder_l;
+    mapping_map["SPEED"].field["encoder_l"].type = mapping_type_float32;
+    mapping_map["SPEED"].field["inverter_r"].value._float32 = &pack.SPEED.start().inverter_r;
+    mapping_map["SPEED"].field["inverter_r"].type = mapping_type_float32;
+    mapping_map["SPEED"].field["inverter_l"].value._float32 = &pack.SPEED.start().inverter_l;
+    mapping_map["SPEED"].field["inverter_l"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["SPEED"].field["_timestamp"].value._uint64 = &pack.SPEED.start()._timestamp;
     mapping_map["SPEED"].field["_timestamp"].type = mapping_type_uint64;
@@ -1633,7 +1633,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 547: {
-            primary_message_SPEED* msg = (primary_message_SPEED*) (*map)[index].message_raw;
+            primary_message_SPEED_conversion* msg = (primary_message_SPEED_conversion*) (*map)[index].message_conversion;
             primary::SPEED* proto_msg = pack->add_speed();
             proto_msg->set_encoder_r(msg->encoder_r);
             proto_msg->set_encoder_l(msg->encoder_l);
@@ -2511,7 +2511,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
         map->HANDCART_STATUS.push(instance);
     }
     for(int i = 0; i < pack->speed_size(); i++){
-        static primary_message_SPEED instance;
+        static primary_message_SPEED_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->speed(i)._inner_timestamp();

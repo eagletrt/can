@@ -2671,9 +2671,9 @@ void AddDescriptorsImpl() {
       "ncing_status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
       "inner_timestamp\030\002 \001(\004\">\n\017HANDCART_STATUS"
       "\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_inner_timestamp\030"
-      "\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\021\022\021\n\tenc"
-      "oder_l\030\002 \001(\021\022\022\n\ninverter_r\030\003 \001(\021\022\022\n\ninve"
-      "rter_l\030\004 \001(\021\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251"
+      "\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\002\022\021\n\tenc"
+      "oder_l\030\002 \001(\002\022\022\n\ninverter_r\030\003 \001(\002\022\022\n\ninve"
+      "rter_l\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251"
       "\001\n\rINV_L_REQUEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data"
       "_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r"
       "\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data"
@@ -16888,13 +16888,13 @@ bool SPEED::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // sint32 encoder_r = 1;
+      // float encoder_r = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &encoder_r_)));
         } else {
           goto handle_unusual;
@@ -16902,13 +16902,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // sint32 encoder_l = 2;
+      // float encoder_l = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &encoder_l_)));
         } else {
           goto handle_unusual;
@@ -16916,13 +16916,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // sint32 inverter_r = 3;
+      // float inverter_r = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &inverter_r_)));
         } else {
           goto handle_unusual;
@@ -16930,13 +16930,13 @@ bool SPEED::MergePartialFromCodedStream(
         break;
       }
 
-      // sint32 inverter_l = 4;
+      // float inverter_l = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &inverter_l_)));
         } else {
           goto handle_unusual;
@@ -16984,24 +16984,24 @@ void SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteSInt32(1, this->encoder_r(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->encoder_r(), output);
   }
 
-  // sint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteSInt32(2, this->encoder_l(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->encoder_l(), output);
   }
 
-  // sint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteSInt32(3, this->inverter_r(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->inverter_r(), output);
   }
 
-  // sint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteSInt32(4, this->inverter_l(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->inverter_l(), output);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -17023,24 +17023,24 @@ void SPEED::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(1, this->encoder_r(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->encoder_r(), target);
   }
 
-  // sint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(2, this->encoder_l(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->encoder_l(), target);
   }
 
-  // sint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(3, this->inverter_r(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->inverter_r(), target);
   }
 
-  // sint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(4, this->inverter_l(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->inverter_l(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -17065,32 +17065,24 @@ size_t SPEED::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // sint32 encoder_r = 1;
+  // float encoder_r = 1;
   if (this->encoder_r() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::SInt32Size(
-        this->encoder_r());
+    total_size += 1 + 4;
   }
 
-  // sint32 encoder_l = 2;
+  // float encoder_l = 2;
   if (this->encoder_l() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::SInt32Size(
-        this->encoder_l());
+    total_size += 1 + 4;
   }
 
-  // sint32 inverter_r = 3;
+  // float inverter_r = 3;
   if (this->inverter_r() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::SInt32Size(
-        this->inverter_r());
+    total_size += 1 + 4;
   }
 
-  // sint32 inverter_l = 4;
+  // float inverter_l = 4;
   if (this->inverter_l() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::SInt32Size(
-        this->inverter_l());
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;

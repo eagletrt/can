@@ -350,10 +350,10 @@ message HANDCART_STATUS {
 }
 
 message SPEED {
-    sint32 encoder_r = 1;
-    sint32 encoder_l = 2;
-    sint32 inverter_r = 3;
-    sint32 inverter_l = 4;
+    float encoder_r = 1;
+    float encoder_l = 2;
+    float inverter_r = 3;
+    float inverter_l = 4;
     uint64 _inner_timestamp = 5;
 }
 

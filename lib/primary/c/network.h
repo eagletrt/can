@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660057290
-#define CANLIB_BUILD_HASH 0x5df706b0
+#define CANLIB_BUILD_TIME 1660118816
+#define CANLIB_BUILD_HASH 0xf10dad18
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -1116,14 +1116,24 @@ typedef struct CANLIB_PARKING {
 } primary_message_HANDCART_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_int16 encoder_r;
-    primary_int16 encoder_l;
-    primary_int16 inverter_r;
-    primary_int16 inverter_l;
+    primary_uint16 encoder_r;
+    primary_uint16 encoder_l;
+    primary_uint16 inverter_r;
+    primary_uint16 inverter_l;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_SPEED;
+
+typedef struct CANLIB_PARKING {
+    primary_float32 encoder_r;
+    primary_float32 encoder_l;
+    primary_float32 inverter_r;
+    primary_float32 inverter_l;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SPEED_conversion;
 
 typedef struct CANLIB_PARKING {
     primary_uint8 data_0;
@@ -1443,6 +1453,7 @@ typedef union CANLIB_PARKING {
     primary_message_SET_PUMPS_SPEED_conversion _SET_PUMPS_SPEED;
     primary_message_HV_CELLS_VOLTAGE_conversion _HV_CELLS_VOLTAGE;
     primary_message_HV_CELLS_TEMP_conversion _HV_CELLS_TEMP;
+    primary_message_SPEED_conversion _SPEED;
 } _primary_all_structs_conversion;
 
 typedef union CANLIB_PARKING {
@@ -2957,10 +2968,10 @@ int primary_fields_file_HANDCART_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_SPEED(
     uint8_t* data,
-    primary_int16 encoder_r,
-    primary_int16 encoder_l,
-    primary_int16 inverter_r,
-    primary_int16 inverter_l
+    primary_uint16 encoder_r,
+    primary_uint16 encoder_l,
+    primary_uint16 inverter_r,
+    primary_uint16 inverter_l
 );
 primary_byte_size primary_serialize_struct_SPEED(
     uint8_t* data,
@@ -2973,9 +2984,40 @@ void primary_deserialize_SPEED(
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_SPEED(primary_message_SPEED* message, char* buffer);
+void primary_raw_to_conversion_struct_SPEED(
+    primary_message_SPEED_conversion* conversion,
+    primary_message_SPEED* raw
+);
+
+void primary_conversion_to_raw_struct_SPEED(
+    primary_message_SPEED* raw,
+    primary_message_SPEED_conversion* conversion
+);
+
+void primary_conversion_to_raw_SPEED(
+    primary_message_SPEED* raw,
+    primary_float32 encoder_r,
+    primary_float32 encoder_l,
+    primary_float32 inverter_r,
+    primary_float32 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void primary_raw_to_conversion_SPEED(
+    primary_message_SPEED_conversion* conversion,
+    primary_uint16 encoder_r,
+    primary_uint16 encoder_l,
+    primary_uint16 inverter_r,
+    primary_uint16 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buffer);
 int primary_fields_SPEED(char* buffer);
-int primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer);
+int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE* buffer);
 int primary_fields_file_SPEED(FILE* buffer);
 
 
@@ -9176,10 +9218,10 @@ int primary_fields_file_HANDCART_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_SPEED(
     uint8_t* data,
-    primary_int16 encoder_r,
-    primary_int16 encoder_l,
-    primary_int16 inverter_r,
-    primary_int16 inverter_l
+    primary_uint16 encoder_r,
+    primary_uint16 encoder_l,
+    primary_uint16 inverter_r,
+    primary_uint16 inverter_l
 ) {
     data[0] = encoder_r & 255;
     data[1] = (encoder_r >> 8) & 255;
@@ -9223,20 +9265,83 @@ void primary_deserialize_SPEED(
     message->encoder_l = data[2] | (data[3] << 8);
     message->inverter_r = data[4] | (data[5] << 8);
     message->inverter_l = data[6] | (data[7] << 8);
+}// ============== CONVERSION ============== //
+
+void primary_raw_to_conversion_SPEED(
+    primary_message_SPEED_conversion* conversion,
+    primary_uint16 encoder_r,
+    primary_uint16 encoder_l,
+    primary_uint16 inverter_r,
+    primary_uint16 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->encoder_r = (((primary_float32)encoder_r) / 163.8375) - 200;
+    conversion->encoder_l = (((primary_float32)encoder_l) / 163.8375) - 200;
+    conversion->inverter_r = (((primary_float32)inverter_r) / 163.8375) - 200;
+    conversion->inverter_l = (((primary_float32)inverter_l) / 163.8375) - 200;
+}
+
+void primary_raw_to_conversion_struct_SPEED(
+    primary_message_SPEED_conversion* conversion,
+    primary_message_SPEED* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->encoder_r = (((primary_float32)raw->encoder_r) / 163.8375) - 200;
+    conversion->encoder_l = (((primary_float32)raw->encoder_l) / 163.8375) - 200;
+    conversion->inverter_r = (((primary_float32)raw->inverter_r) / 163.8375) - 200;
+    conversion->inverter_l = (((primary_float32)raw->inverter_l) / 163.8375) - 200;
+}
+
+void primary_conversion_to_raw_SPEED(
+    primary_message_SPEED* raw,
+    primary_float32 encoder_r,
+    primary_float32 encoder_l,
+    primary_float32 inverter_r,
+    primary_float32 inverter_l
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->encoder_r = (primary_uint16)((encoder_r + 200) * 163.8375);
+    raw->encoder_l = (primary_uint16)((encoder_l + 200) * 163.8375);
+    raw->inverter_r = (primary_uint16)((inverter_r + 200) * 163.8375);
+    raw->inverter_l = (primary_uint16)((inverter_l + 200) * 163.8375);
+}
+
+void primary_conversion_to_raw_struct_SPEED(
+    primary_message_SPEED* raw,
+    primary_message_SPEED_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->encoder_r = (primary_uint16)((conversion->encoder_r + 200) * 163.8375);
+    raw->encoder_l = (primary_uint16)((conversion->encoder_l + 200) * 163.8375);
+    raw->inverter_r = (primary_uint16)((conversion->inverter_r + 200) * 163.8375);
+    raw->inverter_l = (primary_uint16)((conversion->inverter_l + 200) * 163.8375);
 }
 
 // ============== STRING ============== //
-
-int primary_to_string_SPEED(primary_message_SPEED* message, char* buffer) {
+int primary_to_string_SPEED(primary_message_SPEED_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -9260,16 +9365,16 @@ int primary_fields_SPEED(char* buffer) {
     );
 }
 
-int primary_to_string_file_SPEED(primary_message_SPEED* message, FILE* buffer) {
+int primary_to_string_file_SPEED(primary_message_SPEED_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16 CANLIB_SEPARATOR 
-        "%" PRIi16,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -11627,7 +11732,7 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
         case 773:
             return primary_to_string_HANDCART_STATUS((primary_message_HANDCART_STATUS*) message, buffer);
         case 547:
-            return primary_to_string_SPEED((primary_message_SPEED*) message, buffer);
+            return primary_to_string_SPEED((primary_message_SPEED_conversion*) message, buffer);
         case 513:
             return primary_to_string_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
         case 514:
@@ -11943,7 +12048,7 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
         case 773:
             return primary_to_string_file_HANDCART_STATUS((primary_message_HANDCART_STATUS*) message, buffer);
         case 547:
-            return primary_to_string_file_SPEED((primary_message_SPEED*) message, buffer);
+            return primary_to_string_file_SPEED((primary_message_SPEED_conversion*) message, buffer);
         case 513:
             return primary_to_string_file_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
         case 514:
@@ -12548,7 +12653,11 @@ void* primary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            primary_raw_to_conversion_struct_SPEED(
+                (primary_message_SPEED_conversion*) message_conversion,
+                (primary_message_SPEED*) message_raw
+            );
+            return message_conversion;
         }
         case 513: {
             primary_deserialize_INV_L_REQUEST(
@@ -12985,7 +13094,7 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_HANDCART_STATUS].message_conversion = NULL;
     (*devices)[primary_INDEX_SPEED].id = 547;
     (*devices)[primary_INDEX_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SPEED));
-    (*devices)[primary_INDEX_SPEED].message_conversion = NULL;
+    (*devices)[primary_INDEX_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SPEED_conversion));
     (*devices)[primary_INDEX_INV_L_REQUEST].id = 513;
     (*devices)[primary_INDEX_INV_L_REQUEST].message_raw = (void*) malloc(sizeof(primary_message_INV_L_REQUEST));
     (*devices)[primary_INDEX_INV_L_REQUEST].message_conversion = NULL;
@@ -13138,6 +13247,7 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].message_raw);
     free((*devices)[primary_INDEX_HANDCART_STATUS].message_raw);
     free((*devices)[primary_INDEX_SPEED].message_raw);
+    free((*devices)[primary_INDEX_SPEED].message_conversion);
     free((*devices)[primary_INDEX_INV_L_REQUEST].message_raw);
     free((*devices)[primary_INDEX_INV_R_REQUEST].message_raw);
     free((*devices)[primary_INDEX_INV_L_RESPONSE].message_raw);
@@ -13711,6 +13821,10 @@ void primary_devices_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            primary_raw_to_conversion_struct_SPEED(
+                (primary_message_SPEED_conversion*) &(*devices)[primary_INDEX_SPEED].message_conversion,
+                (primary_message_SPEED*) &(*devices)[primary_INDEX_SPEED].message_raw
             );
             return;
         }

@@ -950,13 +950,29 @@
       "priority": 5,
       "sending": ["DAS"],
       "receiving": ["STEER"],
-      "description": "Encoder speed and inverter RPMs",
+      "description": "Encoder and inverter speed in rad/sec",
       "interval": 100,
       "contents": {
-        "encoder_r": "int16",
-        "encoder_l": "int16",
-        "inverter_r": "int16",
-        "inverter_l": "int16"
+        "encoder_r": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        },
+        "encoder_l": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        },
+        "inverter_r": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        },
+        "inverter_l": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        }
       }
     },
     {
