@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660118816
-CANLIB_BUILD_HASH = 0xf10dad18
+CANLIB_BUILD_TIME = 1660405863
+CANLIB_BUILD_HASH = 0xcc263974
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -123,14 +123,14 @@ class message_BOARD_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255, self.balancing_status << 7 & 255))
+        data.extend(pack(">BBB", (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255, self.balancing_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.errors = Errors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
-        message.balancing_status = BalancingStatus((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.errors = Errors(int((unpack(">BB", data[0:2])[0] << 8) | (unpack(">BB", data[0:2])[1] << 0)))
+        message.balancing_status = BalancingStatus((unpack(">xxB", data[0:3])[0] & 128) >> 7)
         return message
 
 
@@ -175,19 +175,19 @@ class message_TEMPERATURES:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBBBB", self.start_index, self.temp0, self.temp1, self.temp2, self.temp3, self.temp4, self.temp5))
+        data.extend(pack(">BBBBBBB", self.start_index, self.temp0, self.temp1, self.temp2, self.temp3, self.temp4, self.temp5))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.start_index = uint8(unpack("<B", data[0:1])[0])
-        message.temp0 = uint8(unpack("<xB", data[0:2])[0])
-        message.temp1 = uint8(unpack("<xxB", data[0:3])[0])
-        message.temp2 = uint8(unpack("<xxxB", data[0:4])[0])
-        message.temp3 = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.temp4 = uint8(unpack("<xxxxxB", data[0:6])[0])
-        message.temp5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.start_index = uint8(unpack(">B", data[0:1])[0])
+        message.temp0 = uint8(unpack(">xB", data[0:2])[0])
+        message.temp1 = uint8(unpack(">xxB", data[0:3])[0])
+        message.temp2 = uint8(unpack(">xxxB", data[0:4])[0])
+        message.temp3 = uint8(unpack(">xxxxB", data[0:5])[0])
+        message.temp4 = uint8(unpack(">xxxxxB", data[0:6])[0])
+        message.temp5 = uint8(unpack(">xxxxxxB", data[0:7])[0])
         return message
 
 
@@ -282,16 +282,16 @@ class message_VOLTAGES:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHB", self.voltage0, self.voltage1, self.voltage2, self.start_index))
+        data.extend(pack(">HHHB", self.voltage0, self.voltage1, self.voltage2, self.start_index))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
-        message.voltage0 = uint16(unpack("<H", data[0:2])[0])
-        message.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
-        message.voltage2 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.start_index = uint8(unpack(">xxxxxxB", data[0:7])[0])
+        message.voltage0 = uint16(unpack(">H", data[0:2])[0])
+        message.voltage1 = uint16(unpack(">xxH", data[0:4])[0])
+        message.voltage2 = uint16(unpack(">xxxxH", data[0:6])[0])
         return message
 
 
@@ -360,14 +360,14 @@ class message_BALANCING:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBB", (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
+        data.extend(pack(">BBBB", (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.board_index = uint8(unpack("<xxxB", data[0:4])[0])
-        message.cells = BalancingCells(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.board_index = uint8(unpack(">xxxB", data[0:4])[0])
+        message.cells = BalancingCells(int((unpack(">BBB", data[0:3])[0] << 16) | (unpack(">BBB", data[0:3])[1] << 8) | (unpack(">BBB", data[0:3])[2] << 0)))
         return message
 
 
@@ -388,13 +388,13 @@ class message_FW_UPDATE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.board_index))
+        data.extend(pack(">B", self.board_index))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.board_index = uint8(unpack("<B", data[0:1])[0])
+        message.board_index = uint8(unpack(">B", data[0:1])[0])
         return message
 
 

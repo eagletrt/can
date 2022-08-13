@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660118816
-#define CANLIB_BUILD_HASH 0xf10dad18
+#define CANLIB_BUILD_TIME 1660405864
+#define CANLIB_BUILD_HASH 0xcc263974
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -66,20 +66,17 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
-#ifndef CANLIB_SHARED
-#define CANLIB_SHARED
-
+#ifndef CANLIB_PARKING
 /* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
 #define CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
-#endif
+#endif // defined(__MINGW32__)
+#endif // CANLIB_PARKING
 
 #define PRIf32 "f"
 #define PRIf64 "f"
-
-#endif // CANLIB_SHARED
 
 #ifndef CANLIB_BITMASK_UTILS
 #define CANLIB_BITMASK_UTILS
@@ -196,7 +193,7 @@ typedef struct {
 // ============== SIZES ============== //
 
 
-#define secondary_SIZE_IMU_ANGULAR_RATE 6
+#define secondary_SIZE_IMU_ANGULAR_RATE 8
 #define secondary_SIZE_IMU_ACCELERATION 6
 #define secondary_SIZE_IRTS_FL_0 8
 #define secondary_SIZE_IRTS_FL_1 8
@@ -236,6 +233,7 @@ typedef struct CANLIB_PARKING {
     secondary_int16 ang_rate_x;
     secondary_int16 ang_rate_y;
     secondary_int16 ang_rate_z;
+    secondary_int16 temperature;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -245,6 +243,7 @@ typedef struct CANLIB_PARKING {
     secondary_float32 ang_rate_x;
     secondary_float32 ang_rate_y;
     secondary_float32 ang_rate_z;
+    secondary_int16 temperature;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -534,7 +533,8 @@ secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_int16 ang_rate_x,
     secondary_int16 ang_rate_y,
-    secondary_int16 ang_rate_z
+    secondary_int16 ang_rate_z,
+    secondary_int16 temperature
 );
 secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     uint8_t* data,
@@ -561,7 +561,8 @@ void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE* raw,
     secondary_float32 ang_rate_x,
     secondary_float32 ang_rate_y,
-    secondary_float32 ang_rate_z
+    secondary_float32 ang_rate_z,
+    secondary_int16 temperature
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -571,7 +572,8 @@ void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
     secondary_int16 ang_rate_x,
     secondary_int16 ang_rate_y,
-    secondary_int16 ang_rate_z
+    secondary_int16 ang_rate_z,
+    secondary_int16 temperature
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1322,7 +1324,8 @@ secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     uint8_t* data,
     secondary_int16 ang_rate_x,
     secondary_int16 ang_rate_y,
-    secondary_int16 ang_rate_z
+    secondary_int16 ang_rate_z,
+    secondary_int16 temperature
 ) {
     data[0] = (ang_rate_x >> 8) & 255;
     data[1] = ang_rate_x & 255;
@@ -1330,7 +1333,9 @@ secondary_byte_size secondary_serialize_IMU_ANGULAR_RATE(
     data[3] = ang_rate_y & 255;
     data[4] = (ang_rate_z >> 8) & 255;
     data[5] = ang_rate_z & 255;
-    return 6;
+    data[6] = (temperature >> 8) & 255;
+    data[7] = temperature & 255;
+    return 8;
 }
 
 secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
@@ -1343,7 +1348,9 @@ secondary_byte_size secondary_serialize_struct_IMU_ANGULAR_RATE(
     data[3] = message->ang_rate_y & 255;
     data[4] = (message->ang_rate_z >> 8) & 255;
     data[5] = message->ang_rate_z & 255;
-    return 6;
+    data[6] = (message->temperature >> 8) & 255;
+    data[7] = message->temperature & 255;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1361,13 +1368,15 @@ void secondary_deserialize_IMU_ANGULAR_RATE(
     message->ang_rate_x = data[1] | (data[0] << 8);
     message->ang_rate_y = data[3] | (data[2] << 8);
     message->ang_rate_z = data[5] | (data[4] << 8);
+    message->temperature = data[7] | (data[6] << 8);
 }// ============== CONVERSION ============== //
 
 void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE_conversion* conversion,
     secondary_int16 ang_rate_x,
     secondary_int16 ang_rate_y,
-    secondary_int16 ang_rate_z
+    secondary_int16 ang_rate_z,
+    secondary_int16 temperature
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1378,6 +1387,7 @@ void secondary_raw_to_conversion_IMU_ANGULAR_RATE(
     conversion->ang_rate_x = (((secondary_float32)ang_rate_x) / 10.0) + 0;
     conversion->ang_rate_y = (((secondary_float32)ang_rate_y) / 10.0) + 0;
     conversion->ang_rate_z = (((secondary_float32)ang_rate_z) / 10.0) + 0;
+    conversion->temperature = temperature;
 }
 
 void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
@@ -1390,13 +1400,15 @@ void secondary_raw_to_conversion_struct_IMU_ANGULAR_RATE(
     conversion->ang_rate_x = (((secondary_float32)raw->ang_rate_x) / 10.0) + 0;
     conversion->ang_rate_y = (((secondary_float32)raw->ang_rate_y) / 10.0) + 0;
     conversion->ang_rate_z = (((secondary_float32)raw->ang_rate_z) / 10.0) + 0;
+    conversion->temperature = raw->temperature;
 }
 
 void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
     secondary_message_IMU_ANGULAR_RATE* raw,
     secondary_float32 ang_rate_x,
     secondary_float32 ang_rate_y,
-    secondary_float32 ang_rate_z
+    secondary_float32 ang_rate_z,
+    secondary_int16 temperature
 #ifdef CANLIB_TIMESTAMP
     , secondary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1407,6 +1419,7 @@ void secondary_conversion_to_raw_IMU_ANGULAR_RATE(
     raw->ang_rate_x = (secondary_int16)((ang_rate_x + 0) * 10.0);
     raw->ang_rate_y = (secondary_int16)((ang_rate_y + 0) * 10.0);
     raw->ang_rate_z = (secondary_int16)((ang_rate_z + 0) * 10.0);
+    raw->temperature = temperature;
 }
 
 void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
@@ -1419,6 +1432,7 @@ void secondary_conversion_to_raw_struct_IMU_ANGULAR_RATE(
     raw->ang_rate_x = (secondary_int16)((conversion->ang_rate_x + 0) * 10.0);
     raw->ang_rate_y = (secondary_int16)((conversion->ang_rate_y + 0) * 10.0);
     raw->ang_rate_z = (secondary_int16)((conversion->ang_rate_z + 0) * 10.0);
+    raw->temperature = conversion->temperature;
 }
 
 // ============== STRING ============== //
@@ -1430,13 +1444,15 @@ int secondary_to_string_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE_conv
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIi16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ang_rate_x,
         message->ang_rate_y,
-        message->ang_rate_z
+        message->ang_rate_z,
+        message->temperature
     );
 }
 
@@ -1448,7 +1464,8 @@ int secondary_fields_IMU_ANGULAR_RATE(char* buffer) {
 #endif // CANLIB_TIMESTAMP
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
-        "ang_rate_z"
+        "ang_rate_z" CANLIB_SEPARATOR 
+        "temperature"
     );
 }
 
@@ -1460,13 +1477,15 @@ int secondary_to_string_file_IMU_ANGULAR_RATE(secondary_message_IMU_ANGULAR_RATE
 #endif // CANLIB_TIMESTAMP
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIi16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->ang_rate_x,
         message->ang_rate_y,
-        message->ang_rate_z
+        message->ang_rate_z,
+        message->temperature
     );
 }
 
@@ -1478,7 +1497,8 @@ int secondary_fields_file_IMU_ANGULAR_RATE(FILE* buffer) {
 #endif // CANLIB_TIMESTAMP
         "ang_rate_x" CANLIB_SEPARATOR 
         "ang_rate_y" CANLIB_SEPARATOR 
-        "ang_rate_z"
+        "ang_rate_z" CANLIB_SEPARATOR 
+        "temperature"
     );
 }
 

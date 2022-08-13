@@ -57,74 +57,76 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_LV_VERSION 5
 #define primary_WATCHDOG_INDEX_TLM_VERSION 6
 #define primary_WATCHDOG_INDEX_TIMESTAMP 7
-#define primary_WATCHDOG_INDEX_SET_TLM_STATUS 8
-#define primary_WATCHDOG_INDEX_TLM_STATUS 9
-#define primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS 10
-#define primary_WATCHDOG_INDEX_HV_VOLTAGE 11
-#define primary_WATCHDOG_INDEX_HV_CURRENT 12
-#define primary_WATCHDOG_INDEX_HV_TEMP 13
-#define primary_WATCHDOG_INDEX_HV_ERRORS 14
-#define primary_WATCHDOG_INDEX_HV_CAN_FORWARD 15
-#define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE 16
-#define primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS 17
-#define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS 18
-#define primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS 19
-#define primary_WATCHDOG_INDEX_HV_IMD_STATUS 20
-#define primary_WATCHDOG_INDEX_TS_STATUS 21
-#define primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS 22
-#define primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART 23
-#define primary_WATCHDOG_INDEX_STEER_STATUS 24
-#define primary_WATCHDOG_INDEX_SET_CAR_STATUS 25
-#define primary_WATCHDOG_INDEX_SET_PEDALS_RANGE 26
-#define primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE 27
-#define primary_WATCHDOG_INDEX_CAR_STATUS 28
-#define primary_WATCHDOG_INDEX_DAS_ERRORS 29
-#define primary_WATCHDOG_INDEX_LV_CURRENT 30
-#define primary_WATCHDOG_INDEX_LV_VOLTAGE 31
-#define primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE 32
-#define primary_WATCHDOG_INDEX_LV_TEMPERATURE 33
-#define primary_WATCHDOG_INDEX_COOLING_STATUS 34
-#define primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED 35
-#define primary_WATCHDOG_INDEX_SET_PUMPS_SPEED 36
-#define primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS 37
-#define primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS 38
-#define primary_WATCHDOG_INDEX_LV_ERRORS 39
-#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 40
-#define primary_WATCHDOG_INDEX_MARKER 41
-#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 42
-#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 43
-#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 44
-#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 45
-#define primary_WATCHDOG_INDEX_HANDCART_STATUS 46
-#define primary_WATCHDOG_INDEX_SPEED 47
-#define primary_WATCHDOG_INDEX_INV_L_REQUEST 48
-#define primary_WATCHDOG_INDEX_INV_R_REQUEST 49
-#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 50
-#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 51
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 52
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 53
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 54
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 55
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 56
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 57
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 58
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 59
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 60
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 61
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 62
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 63
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 64
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 65
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 66
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 67
-#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 68
-#define primary_WATCHDOG_INDEX_BRUSA_ST 69
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 70
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 71
-#define primary_WATCHDOG_INDEX_BRUSA_TEMP 72
-#define primary_WATCHDOG_INDEX_BRUSA_ERR 73
-#define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 74
-#define primary_WATCHDOG_INDEX_ECU_CHIMERA 75
+#define primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE 8
+#define primary_WATCHDOG_INDEX_DATA_LOGGER 9
+#define primary_WATCHDOG_INDEX_SET_TLM_STATUS 10
+#define primary_WATCHDOG_INDEX_TLM_STATUS 11
+#define primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS 12
+#define primary_WATCHDOG_INDEX_HV_VOLTAGE 13
+#define primary_WATCHDOG_INDEX_HV_CURRENT 14
+#define primary_WATCHDOG_INDEX_HV_TEMP 15
+#define primary_WATCHDOG_INDEX_HV_ERRORS 16
+#define primary_WATCHDOG_INDEX_HV_CAN_FORWARD 17
+#define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE 18
+#define primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS 19
+#define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS 20
+#define primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS 21
+#define primary_WATCHDOG_INDEX_HV_IMD_STATUS 22
+#define primary_WATCHDOG_INDEX_TS_STATUS 23
+#define primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS 24
+#define primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART 25
+#define primary_WATCHDOG_INDEX_STEER_STATUS 26
+#define primary_WATCHDOG_INDEX_SET_CAR_STATUS 27
+#define primary_WATCHDOG_INDEX_SET_PEDALS_RANGE 28
+#define primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE 29
+#define primary_WATCHDOG_INDEX_CAR_STATUS 30
+#define primary_WATCHDOG_INDEX_DAS_ERRORS 31
+#define primary_WATCHDOG_INDEX_LV_CURRENT 32
+#define primary_WATCHDOG_INDEX_LV_VOLTAGE 33
+#define primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE 34
+#define primary_WATCHDOG_INDEX_LV_TEMPERATURE 35
+#define primary_WATCHDOG_INDEX_COOLING_STATUS 36
+#define primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED 37
+#define primary_WATCHDOG_INDEX_SET_PUMPS_SPEED 38
+#define primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS 39
+#define primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS 40
+#define primary_WATCHDOG_INDEX_LV_ERRORS 41
+#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 42
+#define primary_WATCHDOG_INDEX_MARKER 43
+#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 44
+#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 45
+#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 46
+#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 47
+#define primary_WATCHDOG_INDEX_HANDCART_STATUS 48
+#define primary_WATCHDOG_INDEX_SPEED 49
+#define primary_WATCHDOG_INDEX_INV_L_REQUEST 50
+#define primary_WATCHDOG_INDEX_INV_R_REQUEST 51
+#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 52
+#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 53
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 54
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 55
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 56
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 57
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 58
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 59
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 60
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 61
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 62
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 63
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 64
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 65
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 66
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 67
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 68
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 69
+#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 70
+#define primary_WATCHDOG_INDEX_BRUSA_ST 71
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 72
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 73
+#define primary_WATCHDOG_INDEX_BRUSA_TEMP 74
+#define primary_WATCHDOG_INDEX_BRUSA_ERR 75
+#define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 76
+#define primary_WATCHDOG_INDEX_ECU_CHIMERA 77
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -146,6 +148,10 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_TLM_VERSION (1000 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_TIMESTAMP 1000
 #define primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP (1000 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_AMBIENT_TEMPERATURE 1000
+#define primary_INTERVAL_WITH_THRESHOLD_AMBIENT_TEMPERATURE (1000 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_DATA_LOGGER 1000
+#define primary_INTERVAL_WITH_THRESHOLD_DATA_LOGGER (1000 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_SET_TLM_STATUS -1
 #define primary_INTERVAL_WITH_THRESHOLD_SET_TLM_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_TLM_STATUS 1000
@@ -289,7 +295,7 @@ typedef void (*canlib_watchdog_callback)(int);
 typedef struct {
     uint8_t activated[10];
     uint8_t timeout[10];
-    canlib_watchdog_timestamp last_reset[76];
+    canlib_watchdog_timestamp last_reset[78];
 } primary_watchdog;
 
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
@@ -302,46 +308,48 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 1121: return primary_INTERVAL_LV_VERSION;
         case 1153: return primary_INTERVAL_TLM_VERSION;
         case 257: return primary_INTERVAL_TIMESTAMP;
-        case 258: return primary_INTERVAL_SET_TLM_STATUS;
-        case 259: return primary_INTERVAL_TLM_STATUS;
-        case 1794: return primary_INTERVAL_STEER_SYSTEM_STATUS;
-        case 772: return primary_INTERVAL_HV_VOLTAGE;
-        case 804: return primary_INTERVAL_HV_CURRENT;
-        case 836: return primary_INTERVAL_HV_TEMP;
-        case 4: return primary_INTERVAL_HV_ERRORS;
-        case 5: return primary_INTERVAL_HV_CAN_FORWARD;
-        case 37: return primary_INTERVAL_HV_FANS_OVERRIDE;
-        case 6: return primary_INTERVAL_HV_CAN_FORWARD_STATUS;
-        case 774: return primary_INTERVAL_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_INTERVAL_HV_FEEDBACKS_STATUS;
-        case 807: return primary_INTERVAL_HV_IMD_STATUS;
-        case 36: return primary_INTERVAL_TS_STATUS;
-        case 69: return primary_INTERVAL_SET_TS_STATUS;
-        case 101: return primary_INTERVAL_SET_TS_STATUS;
-        case 264: return primary_INTERVAL_STEER_STATUS;
-        case 776: return primary_INTERVAL_SET_CAR_STATUS;
-        case 1032: return primary_INTERVAL_SET_PEDALS_RANGE;
-        case 1064: return primary_INTERVAL_SET_STEERING_ANGLE_RANGE;
-        case 515: return primary_INTERVAL_CAR_STATUS;
-        case 3: return primary_INTERVAL_DAS_ERRORS;
-        case 839: return primary_INTERVAL_LV_CURRENT;
-        case 871: return primary_INTERVAL_LV_VOLTAGE;
-        case 903: return primary_INTERVAL_LV_TOTAL_VOLTAGE;
-        case 935: return primary_INTERVAL_LV_TEMPERATURE;
-        case 967: return primary_INTERVAL_COOLING_STATUS;
-        case 777: return primary_INTERVAL_SET_RADIATOR_SPEED;
-        case 809: return primary_INTERVAL_SET_PUMPS_SPEED;
-        case 265: return primary_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
-        case 263: return primary_INTERVAL_INVERTER_CONNECTION_STATUS;
-        case 7: return primary_INTERVAL_LV_ERRORS;
-        case 295: return primary_INTERVAL_SHUTDOWN_STATUS;
-        case 2: return primary_INTERVAL_MARKER;
-        case 518: return primary_INTERVAL_HV_CELLS_VOLTAGE;
-        case 550: return primary_INTERVAL_HV_CELLS_TEMP;
-        case 582: return primary_INTERVAL_HV_CELL_BALANCING_STATUS;
-        case 517: return primary_INTERVAL_SET_CELL_BALANCING_STATUS;
-        case 773: return primary_INTERVAL_HANDCART_STATUS;
-        case 547: return primary_INTERVAL_SPEED;
+        case 289: return primary_INTERVAL_AMBIENT_TEMPERATURE;
+        case 1072: return primary_INTERVAL_DATA_LOGGER;
+        case 259: return primary_INTERVAL_SET_TLM_STATUS;
+        case 260: return primary_INTERVAL_TLM_STATUS;
+        case 1795: return primary_INTERVAL_STEER_SYSTEM_STATUS;
+        case 773: return primary_INTERVAL_HV_VOLTAGE;
+        case 805: return primary_INTERVAL_HV_CURRENT;
+        case 837: return primary_INTERVAL_HV_TEMP;
+        case 5: return primary_INTERVAL_HV_ERRORS;
+        case 6: return primary_INTERVAL_HV_CAN_FORWARD;
+        case 38: return primary_INTERVAL_HV_FANS_OVERRIDE;
+        case 7: return primary_INTERVAL_HV_CAN_FORWARD_STATUS;
+        case 775: return primary_INTERVAL_HV_FANS_OVERRIDE_STATUS;
+        case 776: return primary_INTERVAL_HV_FEEDBACKS_STATUS;
+        case 808: return primary_INTERVAL_HV_IMD_STATUS;
+        case 37: return primary_INTERVAL_TS_STATUS;
+        case 70: return primary_INTERVAL_SET_TS_STATUS;
+        case 102: return primary_INTERVAL_SET_TS_STATUS;
+        case 265: return primary_INTERVAL_STEER_STATUS;
+        case 777: return primary_INTERVAL_SET_CAR_STATUS;
+        case 1033: return primary_INTERVAL_SET_PEDALS_RANGE;
+        case 1065: return primary_INTERVAL_SET_STEERING_ANGLE_RANGE;
+        case 516: return primary_INTERVAL_CAR_STATUS;
+        case 4: return primary_INTERVAL_DAS_ERRORS;
+        case 840: return primary_INTERVAL_LV_CURRENT;
+        case 872: return primary_INTERVAL_LV_VOLTAGE;
+        case 904: return primary_INTERVAL_LV_TOTAL_VOLTAGE;
+        case 936: return primary_INTERVAL_LV_TEMPERATURE;
+        case 968: return primary_INTERVAL_COOLING_STATUS;
+        case 778: return primary_INTERVAL_SET_RADIATOR_SPEED;
+        case 810: return primary_INTERVAL_SET_PUMPS_SPEED;
+        case 266: return primary_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
+        case 264: return primary_INTERVAL_INVERTER_CONNECTION_STATUS;
+        case 8: return primary_INTERVAL_LV_ERRORS;
+        case 296: return primary_INTERVAL_SHUTDOWN_STATUS;
+        case 3: return primary_INTERVAL_MARKER;
+        case 519: return primary_INTERVAL_HV_CELLS_VOLTAGE;
+        case 551: return primary_INTERVAL_HV_CELLS_TEMP;
+        case 583: return primary_INTERVAL_HV_CELL_BALANCING_STATUS;
+        case 518: return primary_INTERVAL_SET_CELL_BALANCING_STATUS;
+        case 774: return primary_INTERVAL_HANDCART_STATUS;
+        case 548: return primary_INTERVAL_SPEED;
         case 513: return primary_INTERVAL_INV_L_REQUEST;
         case 514: return primary_INTERVAL_INV_R_REQUEST;
         case 385: return primary_INTERVAL_INV_L_RESPONSE;
@@ -384,46 +392,48 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 1121: return primary_WATCHDOG_INDEX_LV_VERSION;
         case 1153: return primary_WATCHDOG_INDEX_TLM_VERSION;
         case 257: return primary_WATCHDOG_INDEX_TIMESTAMP;
-        case 258: return primary_WATCHDOG_INDEX_SET_TLM_STATUS;
-        case 259: return primary_WATCHDOG_INDEX_TLM_STATUS;
-        case 1794: return primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS;
-        case 772: return primary_WATCHDOG_INDEX_HV_VOLTAGE;
-        case 804: return primary_WATCHDOG_INDEX_HV_CURRENT;
-        case 836: return primary_WATCHDOG_INDEX_HV_TEMP;
-        case 4: return primary_WATCHDOG_INDEX_HV_ERRORS;
-        case 5: return primary_WATCHDOG_INDEX_HV_CAN_FORWARD;
-        case 37: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE;
-        case 6: return primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS;
-        case 774: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS;
-        case 807: return primary_WATCHDOG_INDEX_HV_IMD_STATUS;
-        case 36: return primary_WATCHDOG_INDEX_TS_STATUS;
-        case 69: return primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS;
-        case 101: return primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART;
-        case 264: return primary_WATCHDOG_INDEX_STEER_STATUS;
-        case 776: return primary_WATCHDOG_INDEX_SET_CAR_STATUS;
-        case 1032: return primary_WATCHDOG_INDEX_SET_PEDALS_RANGE;
-        case 1064: return primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE;
-        case 515: return primary_WATCHDOG_INDEX_CAR_STATUS;
-        case 3: return primary_WATCHDOG_INDEX_DAS_ERRORS;
-        case 839: return primary_WATCHDOG_INDEX_LV_CURRENT;
-        case 871: return primary_WATCHDOG_INDEX_LV_VOLTAGE;
-        case 903: return primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE;
-        case 935: return primary_WATCHDOG_INDEX_LV_TEMPERATURE;
-        case 967: return primary_WATCHDOG_INDEX_COOLING_STATUS;
-        case 777: return primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED;
-        case 809: return primary_WATCHDOG_INDEX_SET_PUMPS_SPEED;
-        case 265: return primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS;
-        case 263: return primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS;
-        case 7: return primary_WATCHDOG_INDEX_LV_ERRORS;
-        case 295: return primary_WATCHDOG_INDEX_SHUTDOWN_STATUS;
-        case 2: return primary_WATCHDOG_INDEX_MARKER;
-        case 518: return primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE;
-        case 550: return primary_WATCHDOG_INDEX_HV_CELLS_TEMP;
-        case 582: return primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS;
-        case 517: return primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS;
-        case 773: return primary_WATCHDOG_INDEX_HANDCART_STATUS;
-        case 547: return primary_WATCHDOG_INDEX_SPEED;
+        case 289: return primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE;
+        case 1072: return primary_WATCHDOG_INDEX_DATA_LOGGER;
+        case 259: return primary_WATCHDOG_INDEX_SET_TLM_STATUS;
+        case 260: return primary_WATCHDOG_INDEX_TLM_STATUS;
+        case 1795: return primary_WATCHDOG_INDEX_STEER_SYSTEM_STATUS;
+        case 773: return primary_WATCHDOG_INDEX_HV_VOLTAGE;
+        case 805: return primary_WATCHDOG_INDEX_HV_CURRENT;
+        case 837: return primary_WATCHDOG_INDEX_HV_TEMP;
+        case 5: return primary_WATCHDOG_INDEX_HV_ERRORS;
+        case 6: return primary_WATCHDOG_INDEX_HV_CAN_FORWARD;
+        case 38: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE;
+        case 7: return primary_WATCHDOG_INDEX_HV_CAN_FORWARD_STATUS;
+        case 775: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS;
+        case 776: return primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS;
+        case 808: return primary_WATCHDOG_INDEX_HV_IMD_STATUS;
+        case 37: return primary_WATCHDOG_INDEX_TS_STATUS;
+        case 70: return primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS;
+        case 102: return primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART;
+        case 265: return primary_WATCHDOG_INDEX_STEER_STATUS;
+        case 777: return primary_WATCHDOG_INDEX_SET_CAR_STATUS;
+        case 1033: return primary_WATCHDOG_INDEX_SET_PEDALS_RANGE;
+        case 1065: return primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE;
+        case 516: return primary_WATCHDOG_INDEX_CAR_STATUS;
+        case 4: return primary_WATCHDOG_INDEX_DAS_ERRORS;
+        case 840: return primary_WATCHDOG_INDEX_LV_CURRENT;
+        case 872: return primary_WATCHDOG_INDEX_LV_VOLTAGE;
+        case 904: return primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE;
+        case 936: return primary_WATCHDOG_INDEX_LV_TEMPERATURE;
+        case 968: return primary_WATCHDOG_INDEX_COOLING_STATUS;
+        case 778: return primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED;
+        case 810: return primary_WATCHDOG_INDEX_SET_PUMPS_SPEED;
+        case 266: return primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS;
+        case 264: return primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS;
+        case 8: return primary_WATCHDOG_INDEX_LV_ERRORS;
+        case 296: return primary_WATCHDOG_INDEX_SHUTDOWN_STATUS;
+        case 3: return primary_WATCHDOG_INDEX_MARKER;
+        case 519: return primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE;
+        case 551: return primary_WATCHDOG_INDEX_HV_CELLS_TEMP;
+        case 583: return primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS;
+        case 518: return primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS;
+        case 774: return primary_WATCHDOG_INDEX_HANDCART_STATUS;
+        case 548: return primary_WATCHDOG_INDEX_SPEED;
         case 513: return primary_WATCHDOG_INDEX_INV_L_REQUEST;
         case 514: return primary_WATCHDOG_INDEX_INV_R_REQUEST;
         case 385: return primary_WATCHDOG_INDEX_INV_L_RESPONSE;
@@ -453,7 +463,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 170: return primary_WATCHDOG_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_WATCHDOG_INDEX_ECU_CHIMERA;
     }
-    return 76; // invalid
+    return 78; // invalid
 }
 
 primary_watchdog* primary_watchdog_new();
@@ -488,7 +498,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 76 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 78 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -535,6 +545,18 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TIMESTAMP);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE] > primary_INTERVAL_WITH_THRESHOLD_AMBIENT_TEMPERATURE
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DATA_LOGGER)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DATA_LOGGER] > primary_INTERVAL_WITH_THRESHOLD_DATA_LOGGER
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DATA_LOGGER);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_STATUS)
@@ -835,6 +857,18 @@ void primary_watchdog_timeout_1000(primary_watchdog *watchdog, canlib_watchdog_t
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TIMESTAMP] > primary_INTERVAL_WITH_THRESHOLD_TIMESTAMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TIMESTAMP);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE] > primary_INTERVAL_WITH_THRESHOLD_AMBIENT_TEMPERATURE
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_AMBIENT_TEMPERATURE);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DATA_LOGGER)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_DATA_LOGGER] > primary_INTERVAL_WITH_THRESHOLD_DATA_LOGGER
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_DATA_LOGGER);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TLM_STATUS)

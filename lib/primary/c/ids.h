@@ -35,90 +35,12 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_LV_VERSION 0x461 // dec: 1121 bin: 0b10001100001
 #define primary_ID_TLM_VERSION 0x481 // dec: 1153 bin: 0b10010000001
 #define primary_ID_TIMESTAMP 0x101 // dec: 257 bin: 0b00100000001
-
-/* TOPIC TLM */
-#define primary_TOPIC_MASK_TLM 0b00000011111
-#define primary_TOPIC_FILTER_TLM 0x2 // dec: 2 bin: 0b00000000010
-
-#define primary_ID_SET_TLM_STATUS 0x102 // dec: 258 bin: 0b00100000010
-#define primary_ID_STEER_SYSTEM_STATUS 0x702 // dec: 1794 bin: 0b11100000010
-#define primary_ID_MARKER 0x2 // dec: 2 bin: 0b00000000010
-
-/* TOPIC STEER */
-#define primary_TOPIC_MASK_STEER 0b00000011111
-#define primary_TOPIC_FILTER_STEER 0x3 // dec: 3 bin: 0b00000000011
-
-#define primary_ID_TLM_STATUS 0x103 // dec: 259 bin: 0b00100000011
-#define primary_ID_CAR_STATUS 0x203 // dec: 515 bin: 0b01000000011
-#define primary_ID_DAS_ERRORS 0x3 // dec: 3 bin: 0b00000000011
-#define primary_ID_SPEED 0x223 // dec: 547 bin: 0b01000100011
-
-/* TOPIC DASnSTEERnCART */
-#define primary_TOPIC_MASK_DASnSTEERnCART 0b00000011111
-#define primary_TOPIC_FILTER_DASnSTEERnCART 0x4 // dec: 4 bin: 0b00000000100
-
-#define primary_ID_HV_VOLTAGE 0x304 // dec: 772 bin: 0b01100000100
-#define primary_ID_HV_CURRENT 0x324 // dec: 804 bin: 0b01100100100
-#define primary_ID_HV_TEMP 0x344 // dec: 836 bin: 0b01101000100
-#define primary_ID_HV_ERRORS 0x4 // dec: 4 bin: 0b00000000100
-#define primary_ID_TS_STATUS 0x24 // dec: 36 bin: 0b00000100100
-
-/* TOPIC BMS_HV */
-#define primary_TOPIC_MASK_BMS_HV 0b00000011111
-#define primary_TOPIC_FILTER_BMS_HV 0x5 // dec: 5 bin: 0b00000000101
-
-#define primary_ID_HV_CAN_FORWARD 0x5 // dec: 5 bin: 0b00000000101
-#define primary_ID_HV_FANS_OVERRIDE 0x25 // dec: 37 bin: 0b00000100101
-#define primary_ID_SET_TS_STATUS_DAS 0x45 // dec: 69 bin: 0b00001000101
-#define primary_ID_SET_TS_STATUS_HANDCART 0x65 // dec: 101 bin: 0b00001100101
-#define primary_ID_SET_CELL_BALANCING_STATUS 0x205 // dec: 517 bin: 0b01000000101
-#define primary_ID_HANDCART_STATUS 0x305 // dec: 773 bin: 0b01100000101
-
-/* TOPIC HANDCART */
-#define primary_TOPIC_MASK_HANDCART 0b00000011111
-#define primary_TOPIC_FILTER_HANDCART 0x6 // dec: 6 bin: 0b00000000110
-
-#define primary_ID_HV_CAN_FORWARD_STATUS 0x6 // dec: 6 bin: 0b00000000110
-#define primary_ID_HV_FANS_OVERRIDE_STATUS 0x306 // dec: 774 bin: 0b01100000110
-#define primary_ID_HV_CELLS_VOLTAGE 0x206 // dec: 518 bin: 0b01000000110
-#define primary_ID_HV_CELLS_TEMP 0x226 // dec: 550 bin: 0b01000100110
-#define primary_ID_HV_CELL_BALANCING_STATUS 0x246 // dec: 582 bin: 0b01001000110
-
-/* TOPIC DASnSTEER */
-#define primary_TOPIC_MASK_DASnSTEER 0b00000011111
-#define primary_TOPIC_FILTER_DASnSTEER 0x7 // dec: 7 bin: 0b00000000111
-
-#define primary_ID_HV_FEEDBACKS_STATUS 0x307 // dec: 775 bin: 0b01100000111
-#define primary_ID_HV_IMD_STATUS 0x327 // dec: 807 bin: 0b01100100111
-#define primary_ID_LV_CURRENT 0x347 // dec: 839 bin: 0b01101000111
-#define primary_ID_LV_VOLTAGE 0x367 // dec: 871 bin: 0b01101100111
-#define primary_ID_LV_TOTAL_VOLTAGE 0x387 // dec: 903 bin: 0b01110000111
-#define primary_ID_LV_TEMPERATURE 0x3A7 // dec: 935 bin: 0b01110100111
-#define primary_ID_COOLING_STATUS 0x3C7 // dec: 967 bin: 0b01111000111
-#define primary_ID_INVERTER_CONNECTION_STATUS 0x107 // dec: 263 bin: 0b00100000111
-#define primary_ID_LV_ERRORS 0x7 // dec: 7 bin: 0b00000000111
-#define primary_ID_SHUTDOWN_STATUS 0x127 // dec: 295 bin: 0b00100100111
-
-/* TOPIC DAS */
-#define primary_TOPIC_MASK_DAS 0b00000011111
-#define primary_TOPIC_FILTER_DAS 0x8 // dec: 8 bin: 0b00000001000
-
-#define primary_ID_STEER_STATUS 0x108 // dec: 264 bin: 0b00100001000
-#define primary_ID_SET_CAR_STATUS 0x308 // dec: 776 bin: 0b01100001000
-#define primary_ID_SET_PEDALS_RANGE 0x408 // dec: 1032 bin: 0b10000001000
-#define primary_ID_SET_STEERING_ANGLE_RANGE 0x428 // dec: 1064 bin: 0b10000101000
-
-/* TOPIC LV */
-#define primary_TOPIC_MASK_LV 0b00000011111
-#define primary_TOPIC_FILTER_LV 0x9 // dec: 9 bin: 0b00000001001
-
-#define primary_ID_SET_RADIATOR_SPEED 0x309 // dec: 777 bin: 0b01100001001
-#define primary_ID_SET_PUMPS_SPEED 0x329 // dec: 809 bin: 0b01100101001
-#define primary_ID_SET_INVERTER_CONNECTION_STATUS 0x109 // dec: 265 bin: 0b00100001001
+#define primary_ID_AMBIENT_TEMPERATURE 0x121 // dec: 289 bin: 0b00100100001
 
 /* TOPIC FIXED_IDS */
 #define primary_TOPIC_MASK_FIXED_IDS 0b00000011111
 
+#define primary_ID_DATA_LOGGER 0x430 // dec: 1072 bin: 0b10000110000
 #define primary_ID_INV_L_REQUEST 0x201 // dec: 513 bin: 0b01000000001
 #define primary_ID_INV_R_REQUEST 0x202 // dec: 514 bin: 0b01000000010
 #define primary_ID_INV_L_RESPONSE 0x181 // dec: 385 bin: 0b00110000001
@@ -148,6 +70,86 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_BMS_HV_CHIMERA 0xAA // dec: 170 bin: 0b00010101010
 #define primary_ID_ECU_CHIMERA 0x55 // dec: 85 bin: 0b00001010101
 
+/* TOPIC TLM */
+#define primary_TOPIC_MASK_TLM 0b00000011111
+#define primary_TOPIC_FILTER_TLM 0x3 // dec: 3 bin: 0b00000000011
+
+#define primary_ID_SET_TLM_STATUS 0x103 // dec: 259 bin: 0b00100000011
+#define primary_ID_STEER_SYSTEM_STATUS 0x703 // dec: 1795 bin: 0b11100000011
+#define primary_ID_MARKER 0x3 // dec: 3 bin: 0b00000000011
+
+/* TOPIC STEER */
+#define primary_TOPIC_MASK_STEER 0b00000011111
+#define primary_TOPIC_FILTER_STEER 0x4 // dec: 4 bin: 0b00000000100
+
+#define primary_ID_TLM_STATUS 0x104 // dec: 260 bin: 0b00100000100
+#define primary_ID_CAR_STATUS 0x204 // dec: 516 bin: 0b01000000100
+#define primary_ID_DAS_ERRORS 0x4 // dec: 4 bin: 0b00000000100
+#define primary_ID_SPEED 0x224 // dec: 548 bin: 0b01000100100
+
+/* TOPIC DASnSTEERnCART */
+#define primary_TOPIC_MASK_DASnSTEERnCART 0b00000011111
+#define primary_TOPIC_FILTER_DASnSTEERnCART 0x5 // dec: 5 bin: 0b00000000101
+
+#define primary_ID_HV_VOLTAGE 0x305 // dec: 773 bin: 0b01100000101
+#define primary_ID_HV_CURRENT 0x325 // dec: 805 bin: 0b01100100101
+#define primary_ID_HV_TEMP 0x345 // dec: 837 bin: 0b01101000101
+#define primary_ID_HV_ERRORS 0x5 // dec: 5 bin: 0b00000000101
+#define primary_ID_TS_STATUS 0x25 // dec: 37 bin: 0b00000100101
+
+/* TOPIC BMS_HV */
+#define primary_TOPIC_MASK_BMS_HV 0b00000011111
+#define primary_TOPIC_FILTER_BMS_HV 0x6 // dec: 6 bin: 0b00000000110
+
+#define primary_ID_HV_CAN_FORWARD 0x6 // dec: 6 bin: 0b00000000110
+#define primary_ID_HV_FANS_OVERRIDE 0x26 // dec: 38 bin: 0b00000100110
+#define primary_ID_SET_TS_STATUS_DAS 0x46 // dec: 70 bin: 0b00001000110
+#define primary_ID_SET_TS_STATUS_HANDCART 0x66 // dec: 102 bin: 0b00001100110
+#define primary_ID_SET_CELL_BALANCING_STATUS 0x206 // dec: 518 bin: 0b01000000110
+#define primary_ID_HANDCART_STATUS 0x306 // dec: 774 bin: 0b01100000110
+
+/* TOPIC HANDCART */
+#define primary_TOPIC_MASK_HANDCART 0b00000011111
+#define primary_TOPIC_FILTER_HANDCART 0x7 // dec: 7 bin: 0b00000000111
+
+#define primary_ID_HV_CAN_FORWARD_STATUS 0x7 // dec: 7 bin: 0b00000000111
+#define primary_ID_HV_FANS_OVERRIDE_STATUS 0x307 // dec: 775 bin: 0b01100000111
+#define primary_ID_HV_CELLS_VOLTAGE 0x207 // dec: 519 bin: 0b01000000111
+#define primary_ID_HV_CELLS_TEMP 0x227 // dec: 551 bin: 0b01000100111
+#define primary_ID_HV_CELL_BALANCING_STATUS 0x247 // dec: 583 bin: 0b01001000111
+
+/* TOPIC DASnSTEER */
+#define primary_TOPIC_MASK_DASnSTEER 0b00000011111
+#define primary_TOPIC_FILTER_DASnSTEER 0x8 // dec: 8 bin: 0b00000001000
+
+#define primary_ID_HV_FEEDBACKS_STATUS 0x308 // dec: 776 bin: 0b01100001000
+#define primary_ID_HV_IMD_STATUS 0x328 // dec: 808 bin: 0b01100101000
+#define primary_ID_LV_CURRENT 0x348 // dec: 840 bin: 0b01101001000
+#define primary_ID_LV_VOLTAGE 0x368 // dec: 872 bin: 0b01101101000
+#define primary_ID_LV_TOTAL_VOLTAGE 0x388 // dec: 904 bin: 0b01110001000
+#define primary_ID_LV_TEMPERATURE 0x3A8 // dec: 936 bin: 0b01110101000
+#define primary_ID_COOLING_STATUS 0x3C8 // dec: 968 bin: 0b01111001000
+#define primary_ID_INVERTER_CONNECTION_STATUS 0x108 // dec: 264 bin: 0b00100001000
+#define primary_ID_LV_ERRORS 0x8 // dec: 8 bin: 0b00000001000
+#define primary_ID_SHUTDOWN_STATUS 0x128 // dec: 296 bin: 0b00100101000
+
+/* TOPIC DAS */
+#define primary_TOPIC_MASK_DAS 0b00000011111
+#define primary_TOPIC_FILTER_DAS 0x9 // dec: 9 bin: 0b00000001001
+
+#define primary_ID_STEER_STATUS 0x109 // dec: 265 bin: 0b00100001001
+#define primary_ID_SET_CAR_STATUS 0x309 // dec: 777 bin: 0b01100001001
+#define primary_ID_SET_PEDALS_RANGE 0x409 // dec: 1033 bin: 0b10000001001
+#define primary_ID_SET_STEERING_ANGLE_RANGE 0x429 // dec: 1065 bin: 0b10000101001
+
+/* TOPIC LV */
+#define primary_TOPIC_MASK_LV 0b00000011111
+#define primary_TOPIC_FILTER_LV 0xA // dec: 10 bin: 0b00000001010
+
+#define primary_ID_SET_RADIATOR_SPEED 0x30A // dec: 778 bin: 0b01100001010
+#define primary_ID_SET_PUMPS_SPEED 0x32A // dec: 810 bin: 0b01100101010
+#define primary_ID_SET_INVERTER_CONNECTION_STATUS 0x10A // dec: 266 bin: 0b00100001010
+
 
 #define primary_MAX_MESSAGE_NAME_LENGTH 31
 
@@ -171,6 +173,10 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "TLM_VERSION");;
         case primary_ID_TIMESTAMP:
             return sprintf(buffer, "%s", "TIMESTAMP");;
+        case primary_ID_AMBIENT_TEMPERATURE:
+            return sprintf(buffer, "%s", "AMBIENT_TEMPERATURE");;
+        case primary_ID_DATA_LOGGER:
+            return sprintf(buffer, "%s", "DATA_LOGGER");;
         case primary_ID_SET_TLM_STATUS:
             return sprintf(buffer, "%s", "SET_TLM_STATUS");;
         case primary_ID_TLM_STATUS:
@@ -322,46 +328,48 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 1121: return true; break;
         case 1153: return true; break;
         case 257: return true; break;
-        case 258: return true; break;
+        case 289: return true; break;
+        case 1072: return true; break;
         case 259: return true; break;
-        case 1794: return true; break;
-        case 772: return true; break;
-        case 804: return true; break;
-        case 836: return true; break;
-        case 4: return true; break;
-        case 5: return true; break;
-        case 37: return true; break;
-        case 6: return true; break;
-        case 774: return true; break;
-        case 775: return true; break;
-        case 807: return true; break;
-        case 36: return true; break;
-        case 69: return true; break;
-        case 101: return true; break;
-        case 264: return true; break;
-        case 776: return true; break;
-        case 1032: return true; break;
-        case 1064: return true; break;
-        case 515: return true; break;
-        case 3: return true; break;
-        case 839: return true; break;
-        case 871: return true; break;
-        case 903: return true; break;
-        case 935: return true; break;
-        case 967: return true; break;
-        case 777: return true; break;
-        case 809: return true; break;
-        case 265: return true; break;
-        case 263: return true; break;
-        case 7: return true; break;
-        case 295: return true; break;
-        case 2: return true; break;
-        case 518: return true; break;
-        case 550: return true; break;
-        case 582: return true; break;
-        case 517: return true; break;
+        case 260: return true; break;
+        case 1795: return true; break;
         case 773: return true; break;
-        case 547: return true; break;
+        case 805: return true; break;
+        case 837: return true; break;
+        case 5: return true; break;
+        case 6: return true; break;
+        case 38: return true; break;
+        case 7: return true; break;
+        case 775: return true; break;
+        case 776: return true; break;
+        case 808: return true; break;
+        case 37: return true; break;
+        case 70: return true; break;
+        case 102: return true; break;
+        case 265: return true; break;
+        case 777: return true; break;
+        case 1033: return true; break;
+        case 1065: return true; break;
+        case 516: return true; break;
+        case 4: return true; break;
+        case 840: return true; break;
+        case 872: return true; break;
+        case 904: return true; break;
+        case 936: return true; break;
+        case 968: return true; break;
+        case 778: return true; break;
+        case 810: return true; break;
+        case 266: return true; break;
+        case 264: return true; break;
+        case 8: return true; break;
+        case 296: return true; break;
+        case 3: return true; break;
+        case 519: return true; break;
+        case 551: return true; break;
+        case 583: return true; break;
+        case 518: return true; break;
+        case 774: return true; break;
+        case 548: return true; break;
         case 513: return true; break;
         case 514: return true; break;
         case 385: return true; break;

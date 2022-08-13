@@ -20,6 +20,7 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_primary_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AMBIENT_TEMPERATURE;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BMS_HV_CHIMERA;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BMS_HV_JMP_TO_BLT;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BMS_LV_JMP_TO_BLT;
@@ -33,6 +34,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::int
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_COOLING_STATUS;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DAS_ERRORS;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DAS_VERSION;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DATA_LOGGER;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ECU_CHIMERA;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_BMS_HV_RX;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_primary_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_BMS_HV_TX;
@@ -138,6 +140,16 @@ class TIMESTAMPDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<TIMESTAMP>
       _instance;
 } _TIMESTAMP_default_instance_;
+class AMBIENT_TEMPERATUREDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<AMBIENT_TEMPERATURE>
+      _instance;
+} _AMBIENT_TEMPERATURE_default_instance_;
+class DATA_LOGGERDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DATA_LOGGER>
+      _instance;
+} _DATA_LOGGER_default_instance_;
 class SET_TLM_STATUSDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SET_TLM_STATUS>
@@ -596,6 +608,34 @@ static void InitDefaultsTIMESTAMP() {
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_TIMESTAMP =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTIMESTAMP}, {}};
+
+static void InitDefaultsAMBIENT_TEMPERATURE() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::primary::_AMBIENT_TEMPERATURE_default_instance_;
+    new (ptr) ::primary::AMBIENT_TEMPERATURE();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::primary::AMBIENT_TEMPERATURE::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_AMBIENT_TEMPERATURE =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAMBIENT_TEMPERATURE}, {}};
+
+static void InitDefaultsDATA_LOGGER() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::primary::_DATA_LOGGER_default_instance_;
+    new (ptr) ::primary::DATA_LOGGER();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::primary::DATA_LOGGER::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_DATA_LOGGER =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDATA_LOGGER}, {}};
 
 static void InitDefaultsSET_TLM_STATUS() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1560,8 +1600,8 @@ static void InitDefaultsPack() {
   ::primary::Pack::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<76> scc_info_Pack =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 76, InitDefaultsPack}, {
+::google::protobuf::internal::SCCInfo<78> scc_info_Pack =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 78, InitDefaultsPack}, {
       &protobuf_primary_2eproto::scc_info_BMS_HV_JMP_TO_BLT.base,
       &protobuf_primary_2eproto::scc_info_BMS_LV_JMP_TO_BLT.base,
       &protobuf_primary_2eproto::scc_info_STEER_VERSION.base,
@@ -1570,6 +1610,8 @@ static void InitDefaultsPack() {
       &protobuf_primary_2eproto::scc_info_LV_VERSION.base,
       &protobuf_primary_2eproto::scc_info_TLM_VERSION.base,
       &protobuf_primary_2eproto::scc_info_TIMESTAMP.base,
+      &protobuf_primary_2eproto::scc_info_AMBIENT_TEMPERATURE.base,
+      &protobuf_primary_2eproto::scc_info_DATA_LOGGER.base,
       &protobuf_primary_2eproto::scc_info_SET_TLM_STATUS.base,
       &protobuf_primary_2eproto::scc_info_TLM_STATUS.base,
       &protobuf_primary_2eproto::scc_info_STEER_SYSTEM_STATUS.base,
@@ -1648,6 +1690,8 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_LV_VERSION.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TLM_VERSION.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TIMESTAMP.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AMBIENT_TEMPERATURE.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DATA_LOGGER.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SET_TLM_STATUS.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TLM_STATUS.base);
   ::google::protobuf::internal::InitSCC(&scc_info_STEER_SYSTEM_STATUS.base);
@@ -1719,7 +1763,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Pack.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[77];
+::google::protobuf::Metadata file_level_metadata[79];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[11];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -1782,6 +1826,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TIMESTAMP, timestamp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::TIMESTAMP, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::AMBIENT_TEMPERATURE, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::AMBIENT_TEMPERATURE, temp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::AMBIENT_TEMPERATURE, _inner_timestamp_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::DATA_LOGGER, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::DATA_LOGGER, placeholder1_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::DATA_LOGGER, placeholder2_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::DATA_LOGGER, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::SET_TLM_STATUS, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2313,6 +2372,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, lv_version_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, tlm_version_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, timestamp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, ambient_temperature_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, data_logger_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, set_tlm_status_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, tlm_status_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::primary::Pack, steer_system_status_),
@@ -2391,75 +2452,77 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 36, -1, sizeof(::primary::LV_VERSION)},
   { 44, -1, sizeof(::primary::TLM_VERSION)},
   { 52, -1, sizeof(::primary::TIMESTAMP)},
-  { 59, -1, sizeof(::primary::SET_TLM_STATUS)},
-  { 66, -1, sizeof(::primary::TLM_STATUS)},
-  { 73, -1, sizeof(::primary::STEER_SYSTEM_STATUS)},
-  { 80, -1, sizeof(::primary::HV_VOLTAGE)},
-  { 90, -1, sizeof(::primary::HV_CURRENT)},
-  { 100, -1, sizeof(::primary::HV_TEMP)},
-  { 109, -1, sizeof(::primary::HV_ERRORS)},
-  { 117, -1, sizeof(::primary::HV_CAN_FORWARD)},
-  { 124, -1, sizeof(::primary::HV_FANS_OVERRIDE)},
-  { 132, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
-  { 139, -1, sizeof(::primary::HV_FANS_OVERRIDE_STATUS)},
-  { 147, -1, sizeof(::primary::HV_FEEDBACKS_STATUS)},
-  { 155, -1, sizeof(::primary::HV_IMD_STATUS)},
-  { 164, -1, sizeof(::primary::TS_STATUS)},
-  { 171, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
-  { 178, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
-  { 185, -1, sizeof(::primary::STEER_STATUS)},
-  { 193, -1, sizeof(::primary::SET_CAR_STATUS)},
-  { 200, -1, sizeof(::primary::SET_PEDALS_RANGE)},
-  { 208, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
-  { 215, -1, sizeof(::primary::CAR_STATUS)},
-  { 224, -1, sizeof(::primary::DAS_ERRORS)},
-  { 231, -1, sizeof(::primary::LV_CURRENT)},
-  { 238, -1, sizeof(::primary::LV_VOLTAGE)},
-  { 248, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
-  { 255, -1, sizeof(::primary::LV_TEMPERATURE)},
-  { 265, -1, sizeof(::primary::COOLING_STATUS)},
-  { 273, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
-  { 280, -1, sizeof(::primary::SET_PUMPS_SPEED)},
-  { 287, -1, sizeof(::primary::SET_INVERTER_CONNECTION_STATUS)},
-  { 294, -1, sizeof(::primary::INVERTER_CONNECTION_STATUS)},
-  { 301, -1, sizeof(::primary::LV_ERRORS)},
-  { 309, -1, sizeof(::primary::SHUTDOWN_STATUS)},
-  { 317, -1, sizeof(::primary::MARKER)},
-  { 323, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
-  { 333, -1, sizeof(::primary::HV_CELLS_TEMP)},
-  { 346, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
-  { 353, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
-  { 360, -1, sizeof(::primary::HANDCART_STATUS)},
-  { 367, -1, sizeof(::primary::SPEED)},
-  { 377, -1, sizeof(::primary::INV_L_REQUEST)},
-  { 391, -1, sizeof(::primary::INV_R_REQUEST)},
-  { 405, -1, sizeof(::primary::INV_L_RESPONSE)},
-  { 419, -1, sizeof(::primary::INV_R_RESPONSE)},
-  { 433, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
-  { 439, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
-  { 445, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
-  { 451, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
-  { 457, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
-  { 463, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
-  { 469, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
-  { 475, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
-  { 481, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
-  { 487, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
-  { 493, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
-  { 499, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
-  { 505, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
-  { 511, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
-  { 517, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
-  { 523, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
-  { 529, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
-  { 535, -1, sizeof(::primary::BRUSA_ST)},
-  { 541, -1, sizeof(::primary::BRUSA_ACT_I)},
-  { 547, -1, sizeof(::primary::BRUSA_ACT_II)},
-  { 553, -1, sizeof(::primary::BRUSA_TEMP)},
-  { 559, -1, sizeof(::primary::BRUSA_ERR)},
-  { 565, -1, sizeof(::primary::BMS_HV_CHIMERA)},
-  { 571, -1, sizeof(::primary::ECU_CHIMERA)},
-  { 577, -1, sizeof(::primary::Pack)},
+  { 59, -1, sizeof(::primary::AMBIENT_TEMPERATURE)},
+  { 66, -1, sizeof(::primary::DATA_LOGGER)},
+  { 74, -1, sizeof(::primary::SET_TLM_STATUS)},
+  { 81, -1, sizeof(::primary::TLM_STATUS)},
+  { 88, -1, sizeof(::primary::STEER_SYSTEM_STATUS)},
+  { 95, -1, sizeof(::primary::HV_VOLTAGE)},
+  { 105, -1, sizeof(::primary::HV_CURRENT)},
+  { 115, -1, sizeof(::primary::HV_TEMP)},
+  { 124, -1, sizeof(::primary::HV_ERRORS)},
+  { 132, -1, sizeof(::primary::HV_CAN_FORWARD)},
+  { 139, -1, sizeof(::primary::HV_FANS_OVERRIDE)},
+  { 147, -1, sizeof(::primary::HV_CAN_FORWARD_STATUS)},
+  { 154, -1, sizeof(::primary::HV_FANS_OVERRIDE_STATUS)},
+  { 162, -1, sizeof(::primary::HV_FEEDBACKS_STATUS)},
+  { 170, -1, sizeof(::primary::HV_IMD_STATUS)},
+  { 179, -1, sizeof(::primary::TS_STATUS)},
+  { 186, -1, sizeof(::primary::SET_TS_STATUS_DAS)},
+  { 193, -1, sizeof(::primary::SET_TS_STATUS_HANDCART)},
+  { 200, -1, sizeof(::primary::STEER_STATUS)},
+  { 208, -1, sizeof(::primary::SET_CAR_STATUS)},
+  { 215, -1, sizeof(::primary::SET_PEDALS_RANGE)},
+  { 223, -1, sizeof(::primary::SET_STEERING_ANGLE_RANGE)},
+  { 230, -1, sizeof(::primary::CAR_STATUS)},
+  { 239, -1, sizeof(::primary::DAS_ERRORS)},
+  { 246, -1, sizeof(::primary::LV_CURRENT)},
+  { 253, -1, sizeof(::primary::LV_VOLTAGE)},
+  { 263, -1, sizeof(::primary::LV_TOTAL_VOLTAGE)},
+  { 270, -1, sizeof(::primary::LV_TEMPERATURE)},
+  { 280, -1, sizeof(::primary::COOLING_STATUS)},
+  { 288, -1, sizeof(::primary::SET_RADIATOR_SPEED)},
+  { 295, -1, sizeof(::primary::SET_PUMPS_SPEED)},
+  { 302, -1, sizeof(::primary::SET_INVERTER_CONNECTION_STATUS)},
+  { 309, -1, sizeof(::primary::INVERTER_CONNECTION_STATUS)},
+  { 316, -1, sizeof(::primary::LV_ERRORS)},
+  { 324, -1, sizeof(::primary::SHUTDOWN_STATUS)},
+  { 332, -1, sizeof(::primary::MARKER)},
+  { 338, -1, sizeof(::primary::HV_CELLS_VOLTAGE)},
+  { 348, -1, sizeof(::primary::HV_CELLS_TEMP)},
+  { 361, -1, sizeof(::primary::HV_CELL_BALANCING_STATUS)},
+  { 368, -1, sizeof(::primary::SET_CELL_BALANCING_STATUS)},
+  { 375, -1, sizeof(::primary::HANDCART_STATUS)},
+  { 382, -1, sizeof(::primary::SPEED)},
+  { 392, -1, sizeof(::primary::INV_L_REQUEST)},
+  { 406, -1, sizeof(::primary::INV_R_REQUEST)},
+  { 420, -1, sizeof(::primary::INV_L_RESPONSE)},
+  { 434, -1, sizeof(::primary::INV_R_RESPONSE)},
+  { 448, -1, sizeof(::primary::FLASH_CELLBOARD_0_TX)},
+  { 454, -1, sizeof(::primary::FLASH_CELLBOARD_0_RX)},
+  { 460, -1, sizeof(::primary::FLASH_CELLBOARD_1_TX)},
+  { 466, -1, sizeof(::primary::FLASH_CELLBOARD_1_RX)},
+  { 472, -1, sizeof(::primary::FLASH_CELLBOARD_2_TX)},
+  { 478, -1, sizeof(::primary::FLASH_CELLBOARD_2_RX)},
+  { 484, -1, sizeof(::primary::FLASH_CELLBOARD_3_TX)},
+  { 490, -1, sizeof(::primary::FLASH_CELLBOARD_3_RX)},
+  { 496, -1, sizeof(::primary::FLASH_CELLBOARD_4_TX)},
+  { 502, -1, sizeof(::primary::FLASH_CELLBOARD_4_RX)},
+  { 508, -1, sizeof(::primary::FLASH_CELLBOARD_5_TX)},
+  { 514, -1, sizeof(::primary::FLASH_CELLBOARD_5_RX)},
+  { 520, -1, sizeof(::primary::FLASH_BMS_HV_TX)},
+  { 526, -1, sizeof(::primary::FLASH_BMS_HV_RX)},
+  { 532, -1, sizeof(::primary::FLASH_BMS_LV_TX)},
+  { 538, -1, sizeof(::primary::FLASH_BMS_LV_RX)},
+  { 544, -1, sizeof(::primary::BRUSA_NLG5_CTL)},
+  { 550, -1, sizeof(::primary::BRUSA_ST)},
+  { 556, -1, sizeof(::primary::BRUSA_ACT_I)},
+  { 562, -1, sizeof(::primary::BRUSA_ACT_II)},
+  { 568, -1, sizeof(::primary::BRUSA_TEMP)},
+  { 574, -1, sizeof(::primary::BRUSA_ERR)},
+  { 580, -1, sizeof(::primary::BMS_HV_CHIMERA)},
+  { 586, -1, sizeof(::primary::ECU_CHIMERA)},
+  { 592, -1, sizeof(::primary::Pack)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -2471,6 +2534,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_LV_VERSION_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_TLM_VERSION_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_TIMESTAMP_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_AMBIENT_TEMPERATURE_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_DATA_LOGGER_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_SET_TLM_STATUS_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_TLM_STATUS_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::primary::_STEER_SYSTEM_STATUS_default_instance_),
@@ -2557,7 +2622,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 77);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 79);
 }
 
 void AddDescriptorsImpl() {
@@ -2579,274 +2644,280 @@ void AddDescriptorsImpl() {
       "ersion\030\001 \001(\r\022\027\n\017cancicd_version\030\002 \001(\r\022\030\n"
       "\020_inner_timestamp\030\003 \001(\004\"8\n\tTIMESTAMP\022\021\n\t"
       "timestamp\030\001 \001(\r\022\030\n\020_inner_timestamp\030\002 \001("
-      "\004\"O\n\016SET_TLM_STATUS\022#\n\ntlm_status\030\001 \001(\0162"
-      "\017.primary.Toggle\022\030\n\020_inner_timestamp\030\002 \001"
-      "(\004\"K\n\nTLM_STATUS\022#\n\ntlm_status\030\001 \001(\0162\017.p"
-      "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
-      "A\n\023STEER_SYSTEM_STATUS\022\020\n\010soc_temp\030\001 \001(\r"
-      "\022\030\n\020_inner_timestamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAG"
-      "E\022\024\n\014pack_voltage\030\001 \001(\002\022\023\n\013bus_voltage\030\002"
-      " \001(\002\022\030\n\020max_cell_voltage\030\003 \001(\002\022\030\n\020min_ce"
-      "ll_voltage\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001"
-      "(\004\"c\n\nHV_CURRENT\022\017\n\007current\030\001 \001(\002\022\r\n\005pow"
-      "er\030\002 \001(\002\022\016\n\006energy\030\003 \001(\002\022\013\n\003soc\030\004 \001(\002\022\030\n"
-      "\020_inner_timestamp\030\005 \001(\004\"]\n\007HV_TEMP\022\024\n\014av"
-      "erage_temp\030\001 \001(\002\022\020\n\010max_temp\030\002 \001(\002\022\020\n\010mi"
-      "n_temp\030\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\"G"
-      "\n\tHV_ERRORS\022\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030"
-      "\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"T\n\016HV_CA"
-      "N_FORWARD\022(\n\017can_forward_set\030\001 \001(\0162\017.pri"
-      "mary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"h\n"
-      "\020HV_FANS_OVERRIDE\022&\n\rfans_override\030\001 \001(\016"
-      "2\017.primary.Toggle\022\022\n\nfans_speed\030\002 \001(\002\022\030\n"
-      "\020_inner_timestamp\030\003 \001(\004\"^\n\025HV_CAN_FORWAR"
-      "D_STATUS\022+\n\022can_forward_status\030\001 \001(\0162\017.p"
-      "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
-      "o\n\027HV_FANS_OVERRIDE_STATUS\022&\n\rfans_overr"
-      "ide\030\001 \001(\0162\017.primary.Toggle\022\022\n\nfans_speed"
-      "\030\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"e\n\023HV_F"
-      "EEDBACKS_STATUS\022\030\n\020feedbacks_status\030\001 \001("
-      "\r\022\032\n\022is_circuitry_error\030\002 \001(\r\022\030\n\020_inner_"
-      "timestamp\030\003 \001(\004\"v\n\rHV_IMD_STATUS\022\021\n\timd_"
-      "fault\030\001 \001(\010\022&\n\nimd_status\030\002 \001(\0162\022.primar"
-      "y.ImdStatus\022\020\n\010imd_info\030\003 \001(\021\022\030\n\020_inner_"
-      "timestamp\030\004 \001(\004\"K\n\tTS_STATUS\022$\n\tts_statu"
-      "s\030\001 \001(\0162\021.primary.TsStatus\022\030\n\020_inner_tim"
-      "estamp\030\002 \001(\004\"U\n\021SET_TS_STATUS_DAS\022&\n\rts_"
+      "\004\"=\n\023AMBIENT_TEMPERATURE\022\014\n\004temp\030\001 \001(\021\022\030"
+      "\n\020_inner_timestamp\030\002 \001(\004\"S\n\013DATA_LOGGER\022"
+      "\024\n\014placeholder1\030\001 \001(\r\022\024\n\014placeholder2\030\002 "
+      "\001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004\"O\n\016SET_TLM"
+      "_STATUS\022#\n\ntlm_status\030\001 \001(\0162\017.primary.To"
+      "ggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"K\n\nTLM_ST"
+      "ATUS\022#\n\ntlm_status\030\001 \001(\0162\017.primary.Toggl"
+      "e\022\030\n\020_inner_timestamp\030\002 \001(\004\"A\n\023STEER_SYS"
+      "TEM_STATUS\022\020\n\010soc_temp\030\001 \001(\r\022\030\n\020_inner_t"
+      "imestamp\030\002 \001(\004\"\205\001\n\nHV_VOLTAGE\022\024\n\014pack_vo"
+      "ltage\030\001 \001(\002\022\023\n\013bus_voltage\030\002 \001(\002\022\030\n\020max_"
+      "cell_voltage\030\003 \001(\002\022\030\n\020min_cell_voltage\030\004"
+      " \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"c\n\nHV_CUR"
+      "RENT\022\017\n\007current\030\001 \001(\002\022\r\n\005power\030\002 \001(\002\022\016\n\006"
+      "energy\030\003 \001(\002\022\013\n\003soc\030\004 \001(\002\022\030\n\020_inner_time"
+      "stamp\030\005 \001(\004\"]\n\007HV_TEMP\022\024\n\014average_temp\030\001"
+      " \001(\002\022\020\n\010max_temp\030\002 \001(\002\022\020\n\010min_temp\030\003 \001(\002"
+      "\022\030\n\020_inner_timestamp\030\004 \001(\004\"G\n\tHV_ERRORS\022"
+      "\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022\030\n\020_in"
+      "ner_timestamp\030\003 \001(\004\"T\n\016HV_CAN_FORWARD\022(\n"
+      "\017can_forward_set\030\001 \001(\0162\017.primary.Toggle\022"
+      "\030\n\020_inner_timestamp\030\002 \001(\004\"h\n\020HV_FANS_OVE"
+      "RRIDE\022&\n\rfans_override\030\001 \001(\0162\017.primary.T"
+      "oggle\022\022\n\nfans_speed\030\002 \001(\002\022\030\n\020_inner_time"
+      "stamp\030\003 \001(\004\"^\n\025HV_CAN_FORWARD_STATUS\022+\n\022"
+      "can_forward_status\030\001 \001(\0162\017.primary.Toggl"
+      "e\022\030\n\020_inner_timestamp\030\002 \001(\004\"o\n\027HV_FANS_O"
+      "VERRIDE_STATUS\022&\n\rfans_override\030\001 \001(\0162\017."
+      "primary.Toggle\022\022\n\nfans_speed\030\002 \001(\002\022\030\n\020_i"
+      "nner_timestamp\030\003 \001(\004\"e\n\023HV_FEEDBACKS_STA"
+      "TUS\022\030\n\020feedbacks_status\030\001 \001(\r\022\032\n\022is_circ"
+      "uitry_error\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 "
+      "\001(\004\"v\n\rHV_IMD_STATUS\022\021\n\timd_fault\030\001 \001(\010\022"
+      "&\n\nimd_status\030\002 \001(\0162\022.primary.ImdStatus\022"
+      "\020\n\010imd_info\030\003 \001(\021\022\030\n\020_inner_timestamp\030\004 "
+      "\001(\004\"K\n\tTS_STATUS\022$\n\tts_status\030\001 \001(\0162\021.pr"
+      "imary.TsStatus\022\030\n\020_inner_timestamp\030\002 \001(\004"
+      "\"U\n\021SET_TS_STATUS_DAS\022&\n\rts_status_set\030\001"
+      " \001(\0162\017.primary.Toggle\022\030\n\020_inner_timestam"
+      "p\030\002 \001(\004\"Z\n\026SET_TS_STATUS_HANDCART\022&\n\rts_"
       "status_set\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_in"
-      "ner_timestamp\030\002 \001(\004\"Z\n\026SET_TS_STATUS_HAN"
-      "DCART\022&\n\rts_status_set\030\001 \001(\0162\017.primary.T"
-      "oggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"w\n\014STEER"
-      "_STATUS\0222\n\020traction_control\030\001 \001(\0162\030.prim"
-      "ary.TractionControl\022\031\n\003map\030\002 \001(\0162\014.prima"
-      "ry.Map\022\030\n\020_inner_timestamp\030\003 \001(\004\"Y\n\016SET_"
-      "CAR_STATUS\022-\n\016car_status_set\030\001 \001(\0162\025.pri"
-      "mary.SetCarStatus\022\030\n\020_inner_timestamp\030\002 "
-      "\001(\004\"j\n\020SET_PEDALS_RANGE\022\035\n\005bound\030\001 \001(\0162\016"
-      ".primary.Bound\022\035\n\005pedal\030\002 \001(\0162\016.primary."
-      "Pedal\022\030\n\020_inner_timestamp\030\003 \001(\004\"S\n\030SET_S"
-      "TEERING_ANGLE_RANGE\022\035\n\005bound\030\001 \001(\0162\016.pri"
-      "mary.Bound\022\030\n\020_inner_timestamp\030\002 \001(\004\"\250\001\n"
-      "\nCAR_STATUS\022+\n\ninverter_l\030\001 \001(\0162\027.primar"
-      "y.InverterStatus\022+\n\ninverter_r\030\002 \001(\0162\027.p"
-      "rimary.InverterStatus\022&\n\ncar_status\030\003 \001("
-      "\0162\022.primary.CarStatus\022\030\n\020_inner_timestam"
-      "p\030\004 \001(\004\"9\n\nDAS_ERRORS\022\021\n\tdas_error\030\001 \001(\r"
-      "\022\030\n\020_inner_timestamp\030\002 \001(\004\"7\n\nLV_CURRENT"
-      "\022\017\n\007current\030\001 \001(\002\022\030\n\020_inner_timestamp\030\002 "
-      "\001(\004\"r\n\nLV_VOLTAGE\022\021\n\tvoltage_1\030\001 \001(\002\022\021\n\t"
-      "voltage_2\030\002 \001(\002\022\021\n\tvoltage_3\030\003 \001(\002\022\021\n\tvo"
-      "ltage_4\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\""
-      "C\n\020LV_TOTAL_VOLTAGE\022\025\n\rtotal_voltage\030\001 \001"
-      "(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMP"
-      "ERATURE\022\030\n\020bp_temperature_1\030\001 \001(\002\022\030\n\020bp_"
-      "temperature_2\030\002 \001(\002\022\032\n\022dcdc12_temperatur"
-      "e\030\003 \001(\002\022\032\n\022dcdc24_temperature\030\004 \001(\002\022\030\n\020_"
-      "inner_timestamp\030\005 \001(\004\"X\n\016COOLING_STATUS\022"
-      "\027\n\017radiators_speed\030\001 \001(\002\022\023\n\013pumps_speed\030"
-      "\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"G\n\022SET_R"
-      "ADIATOR_SPEED\022\027\n\017radiators_speed\030\001 \001(\002\022\030"
-      "\n\020_inner_timestamp\030\002 \001(\004\"@\n\017SET_PUMPS_SP"
-      "EED\022\023\n\013pumps_speed\030\001 \001(\002\022\030\n\020_inner_times"
-      "tamp\030\002 \001(\004\"[\n\036SET_INVERTER_CONNECTION_ST"
-      "ATUS\022\037\n\006status\030\001 \001(\0162\017.primary.Toggle\022\030\n"
-      "\020_inner_timestamp\030\002 \001(\004\"W\n\032INVERTER_CONN"
-      "ECTION_STATUS\022\037\n\006status\030\001 \001(\0162\017.primary."
-      "Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\"G\n\tLV_E"
-      "RRORS\022\020\n\010warnings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022"
-      "\030\n\020_inner_timestamp\030\003 \001(\004\"J\n\017SHUTDOWN_ST"
-      "ATUS\022\r\n\005input\030\001 \001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_"
-      "inner_timestamp\030\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inne"
-      "r_timestamp\030\001 \001(\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n"
-      "\013start_index\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\002\022\021\n"
-      "\tvoltage_1\030\003 \001(\002\022\021\n\tvoltage_2\030\004 \001(\002\022\030\n\020_"
-      "inner_timestamp\030\005 \001(\004\"\236\001\n\rHV_CELLS_TEMP\022"
-      "\023\n\013start_index\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\002\022\016\n\006"
-      "temp_1\030\003 \001(\002\022\016\n\006temp_2\030\004 \001(\002\022\016\n\006temp_3\030\005"
-      " \001(\002\022\016\n\006temp_4\030\006 \001(\002\022\016\n\006temp_5\030\007 \001(\002\022\030\n\020"
-      "_inner_timestamp\030\010 \001(\004\"_\n\030HV_CELL_BALANC"
-      "ING_STATUS\022)\n\020balancing_status\030\001 \001(\0162\017.p"
-      "rimary.Toggle\022\030\n\020_inner_timestamp\030\002 \001(\004\""
-      "d\n\031SET_CELL_BALANCING_STATUS\022-\n\024set_bala"
-      "ncing_status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_"
-      "inner_timestamp\030\002 \001(\004\">\n\017HANDCART_STATUS"
-      "\022\021\n\tconnected\030\001 \001(\010\022\030\n\020_inner_timestamp\030"
-      "\002 \001(\004\"o\n\005SPEED\022\021\n\tencoder_r\030\001 \001(\002\022\021\n\tenc"
-      "oder_l\030\002 \001(\002\022\022\n\ninverter_r\030\003 \001(\002\022\022\n\ninve"
-      "rter_l\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251"
-      "\001\n\rINV_L_REQUEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data"
+      "ner_timestamp\030\002 \001(\004\"w\n\014STEER_STATUS\0222\n\020t"
+      "raction_control\030\001 \001(\0162\030.primary.Traction"
+      "Control\022\031\n\003map\030\002 \001(\0162\014.primary.Map\022\030\n\020_i"
+      "nner_timestamp\030\003 \001(\004\"Y\n\016SET_CAR_STATUS\022-"
+      "\n\016car_status_set\030\001 \001(\0162\025.primary.SetCarS"
+      "tatus\022\030\n\020_inner_timestamp\030\002 \001(\004\"j\n\020SET_P"
+      "EDALS_RANGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bou"
+      "nd\022\035\n\005pedal\030\002 \001(\0162\016.primary.Pedal\022\030\n\020_in"
+      "ner_timestamp\030\003 \001(\004\"S\n\030SET_STEERING_ANGL"
+      "E_RANGE\022\035\n\005bound\030\001 \001(\0162\016.primary.Bound\022\030"
+      "\n\020_inner_timestamp\030\002 \001(\004\"\250\001\n\nCAR_STATUS\022"
+      "+\n\ninverter_l\030\001 \001(\0162\027.primary.InverterSt"
+      "atus\022+\n\ninverter_r\030\002 \001(\0162\027.primary.Inver"
+      "terStatus\022&\n\ncar_status\030\003 \001(\0162\022.primary."
+      "CarStatus\022\030\n\020_inner_timestamp\030\004 \001(\004\"9\n\nD"
+      "AS_ERRORS\022\021\n\tdas_error\030\001 \001(\r\022\030\n\020_inner_t"
+      "imestamp\030\002 \001(\004\"7\n\nLV_CURRENT\022\017\n\007current\030"
+      "\001 \001(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"r\n\nLV_VO"
+      "LTAGE\022\021\n\tvoltage_1\030\001 \001(\002\022\021\n\tvoltage_2\030\002 "
+      "\001(\002\022\021\n\tvoltage_3\030\003 \001(\002\022\021\n\tvoltage_4\030\004 \001("
+      "\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"C\n\020LV_TOTAL_"
+      "VOLTAGE\022\025\n\rtotal_voltage\030\001 \001(\002\022\030\n\020_inner"
+      "_timestamp\030\002 \001(\004\"\226\001\n\016LV_TEMPERATURE\022\030\n\020b"
+      "p_temperature_1\030\001 \001(\002\022\030\n\020bp_temperature_"
+      "2\030\002 \001(\002\022\032\n\022dcdc12_temperature\030\003 \001(\002\022\032\n\022d"
+      "cdc24_temperature\030\004 \001(\002\022\030\n\020_inner_timest"
+      "amp\030\005 \001(\004\"X\n\016COOLING_STATUS\022\027\n\017radiators"
+      "_speed\030\001 \001(\002\022\023\n\013pumps_speed\030\002 \001(\002\022\030\n\020_in"
+      "ner_timestamp\030\003 \001(\004\"G\n\022SET_RADIATOR_SPEE"
+      "D\022\027\n\017radiators_speed\030\001 \001(\002\022\030\n\020_inner_tim"
+      "estamp\030\002 \001(\004\"@\n\017SET_PUMPS_SPEED\022\023\n\013pumps"
+      "_speed\030\001 \001(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"["
+      "\n\036SET_INVERTER_CONNECTION_STATUS\022\037\n\006stat"
+      "us\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_time"
+      "stamp\030\002 \001(\004\"W\n\032INVERTER_CONNECTION_STATU"
+      "S\022\037\n\006status\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_i"
+      "nner_timestamp\030\002 \001(\004\"G\n\tLV_ERRORS\022\020\n\010war"
+      "nings\030\001 \001(\r\022\016\n\006errors\030\002 \001(\r\022\030\n\020_inner_ti"
+      "mestamp\030\003 \001(\004\"J\n\017SHUTDOWN_STATUS\022\r\n\005inpu"
+      "t\030\001 \001(\010\022\016\n\006output\030\002 \001(\010\022\030\n\020_inner_timest"
+      "amp\030\003 \001(\004\"\"\n\006MARKER\022\030\n\020_inner_timestamp\030"
+      "\001 \001(\004\"z\n\020HV_CELLS_VOLTAGE\022\023\n\013start_index"
+      "\030\001 \001(\r\022\021\n\tvoltage_0\030\002 \001(\002\022\021\n\tvoltage_1\030\003"
+      " \001(\002\022\021\n\tvoltage_2\030\004 \001(\002\022\030\n\020_inner_timest"
+      "amp\030\005 \001(\004\"\236\001\n\rHV_CELLS_TEMP\022\023\n\013start_ind"
+      "ex\030\001 \001(\r\022\016\n\006temp_0\030\002 \001(\002\022\016\n\006temp_1\030\003 \001(\002"
+      "\022\016\n\006temp_2\030\004 \001(\002\022\016\n\006temp_3\030\005 \001(\002\022\016\n\006temp"
+      "_4\030\006 \001(\002\022\016\n\006temp_5\030\007 \001(\002\022\030\n\020_inner_times"
+      "tamp\030\010 \001(\004\"_\n\030HV_CELL_BALANCING_STATUS\022)"
+      "\n\020balancing_status\030\001 \001(\0162\017.primary.Toggl"
+      "e\022\030\n\020_inner_timestamp\030\002 \001(\004\"d\n\031SET_CELL_"
+      "BALANCING_STATUS\022-\n\024set_balancing_status"
+      "\030\001 \001(\0162\017.primary.Toggle\022\030\n\020_inner_timest"
+      "amp\030\002 \001(\004\">\n\017HANDCART_STATUS\022\021\n\tconnecte"
+      "d\030\001 \001(\010\022\030\n\020_inner_timestamp\030\002 \001(\004\"o\n\005SPE"
+      "ED\022\021\n\tencoder_r\030\001 \001(\002\022\021\n\tencoder_l\030\002 \001(\002"
+      "\022\022\n\ninverter_r\030\003 \001(\002\022\022\n\ninverter_l\030\004 \001(\002"
+      "\022\030\n\020_inner_timestamp\030\005 \001(\004\"\251\001\n\rINV_L_REQ"
+      "UEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006"
+      "data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r\022\016\n\006data_4\030\005"
+      " \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006"
+      "data_7\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\251"
+      "\001\n\rINV_R_REQUEST\022\016\n\006data_0\030\001 \001(\r\022\016\n\006data"
       "_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006data_3\030\004 \001(\r"
       "\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006 \001(\r\022\016\n\006data"
       "_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020_inner_times"
-      "tamp\030\t \001(\004\"\251\001\n\rINV_R_REQUEST\022\016\n\006data_0\030\001"
-      " \001(\r\022\016\n\006data_1\030\002 \001(\r\022\016\n\006data_2\030\003 \001(\r\022\016\n\006"
-      "data_3\030\004 \001(\r\022\016\n\006data_4\030\005 \001(\r\022\016\n\006data_5\030\006"
-      " \001(\r\022\016\n\006data_6\030\007 \001(\r\022\016\n\006data_7\030\010 \001(\r\022\030\n\020"
-      "_inner_timestamp\030\t \001(\004\"\252\001\n\016INV_L_RESPONS"
-      "E\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006dat"
-      "a_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001("
-      "\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006dat"
-      "a_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"\252\001\n\016"
-      "INV_R_RESPONSE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0"
-      "\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016"
-      "\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5"
-      "\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n\020_inner_timesta"
-      "mp\030\t \001(\004\"0\n\024FLASH_CELLBOARD_0_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_0_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_1_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_1_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_3_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_3_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_TX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CE"
-      "LLBOARD_5_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0"
-      "\n\024FLASH_CELLBOARD_5_RX\022\030\n\020_inner_timesta"
-      "mp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_TX\022\030\n\020_inner_ti"
-      "mestamp\030\001 \001(\004\"+\n\017FLASH_BMS_HV_RX\022\030\n\020_inn"
-      "er_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_TX\022\030\n"
-      "\020_inner_timestamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_"
-      "RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BRUSA_NL"
-      "G5_CTL\022\030\n\020_inner_timestamp\030\001 \001(\004\"$\n\010BRUS"
-      "A_ST\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013BRUSA_"
-      "ACT_I\022\030\n\020_inner_timestamp\030\001 \001(\004\"(\n\014BRUSA"
-      "_ACT_II\022\030\n\020_inner_timestamp\030\001 \001(\004\"&\n\nBRU"
-      "SA_TEMP\022\030\n\020_inner_timestamp\030\001 \001(\004\"%\n\tBRU"
-      "SA_ERR\022\030\n\020_inner_timestamp\030\001 \001(\004\"*\n\016BMS_"
-      "HV_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013"
-      "ECU_CHIMERA\022\030\n\020_inner_timestamp\030\001 \001(\004\"\254\036"
-      "\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032.prim"
-      "ary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_JMP_TO_B"
-      "LT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_BLT\022-\n\r"
-      "STEER_VERSION\030\003 \003(\0132\026.primary.STEER_VERS"
-      "ION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primary.DAS_V"
-      "ERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.primary.HV_"
-      "VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.primary.LV"
-      "_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.primary."
-      "TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022.primary"
-      ".TIMESTAMP\022/\n\016SET_TLM_STATUS\030\t \003(\0132\027.pri"
-      "mary.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\n \003(\0132"
-      "\023.primary.TLM_STATUS\0229\n\023STEER_SYSTEM_STA"
-      "TUS\030\013 \003(\0132\034.primary.STEER_SYSTEM_STATUS\022"
-      "\'\n\nHV_VOLTAGE\030\014 \003(\0132\023.primary.HV_VOLTAGE"
-      "\022\'\n\nHV_CURRENT\030\r \003(\0132\023.primary.HV_CURREN"
-      "T\022!\n\007HV_TEMP\030\016 \003(\0132\020.primary.HV_TEMP\022%\n\t"
-      "HV_ERRORS\030\017 \003(\0132\022.primary.HV_ERRORS\022/\n\016H"
-      "V_CAN_FORWARD\030\020 \003(\0132\027.primary.HV_CAN_FOR"
-      "WARD\0223\n\020HV_FANS_OVERRIDE\030\021 \003(\0132\031.primary"
-      ".HV_FANS_OVERRIDE\022=\n\025HV_CAN_FORWARD_STAT"
-      "US\030\022 \003(\0132\036.primary.HV_CAN_FORWARD_STATUS"
-      "\022A\n\027HV_FANS_OVERRIDE_STATUS\030\023 \003(\0132 .prim"
-      "ary.HV_FANS_OVERRIDE_STATUS\0229\n\023HV_FEEDBA"
-      "CKS_STATUS\030\024 \003(\0132\034.primary.HV_FEEDBACKS_"
-      "STATUS\022-\n\rHV_IMD_STATUS\030\025 \003(\0132\026.primary."
-      "HV_IMD_STATUS\022%\n\tTS_STATUS\030\026 \003(\0132\022.prima"
-      "ry.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\027 \003(\0132"
-      "\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS_ST"
-      "ATUS_HANDCART\030\030 \003(\0132\037.primary.SET_TS_STA"
-      "TUS_HANDCART\022+\n\014STEER_STATUS\030\031 \003(\0132\025.pri"
-      "mary.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\032 \003("
-      "\0132\027.primary.SET_CAR_STATUS\0223\n\020SET_PEDALS"
-      "_RANGE\030\033 \003(\0132\031.primary.SET_PEDALS_RANGE\022"
-      "C\n\030SET_STEERING_ANGLE_RANGE\030\034 \003(\0132!.prim"
-      "ary.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_STAT"
-      "US\030\035 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_ERR"
-      "ORS\030\036 \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_CUR"
-      "RENT\030\037 \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV_VO"
-      "LTAGE\030  \003(\0132\023.primary.LV_VOLTAGE\0223\n\020LV_T"
-      "OTAL_VOLTAGE\030! \003(\0132\031.primary.LV_TOTAL_VO"
-      "LTAGE\022/\n\016LV_TEMPERATURE\030\" \003(\0132\027.primary."
-      "LV_TEMPERATURE\022/\n\016COOLING_STATUS\030# \003(\0132\027"
-      ".primary.COOLING_STATUS\0227\n\022SET_RADIATOR_"
-      "SPEED\030$ \003(\0132\033.primary.SET_RADIATOR_SPEED"
-      "\0221\n\017SET_PUMPS_SPEED\030% \003(\0132\030.primary.SET_"
-      "PUMPS_SPEED\022O\n\036SET_INVERTER_CONNECTION_S"
-      "TATUS\030& \003(\0132\'.primary.SET_INVERTER_CONNE"
-      "CTION_STATUS\022G\n\032INVERTER_CONNECTION_STAT"
-      "US\030\' \003(\0132#.primary.INVERTER_CONNECTION_S"
-      "TATUS\022%\n\tLV_ERRORS\030( \003(\0132\022.primary.LV_ER"
-      "RORS\0221\n\017SHUTDOWN_STATUS\030) \003(\0132\030.primary."
-      "SHUTDOWN_STATUS\022\037\n\006MARKER\030* \003(\0132\017.primar"
-      "y.MARKER\0223\n\020HV_CELLS_VOLTAGE\030+ \003(\0132\031.pri"
-      "mary.HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030,"
-      " \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030HV_CELL_"
-      "BALANCING_STATUS\030- \003(\0132!.primary.HV_CELL"
-      "_BALANCING_STATUS\022E\n\031SET_CELL_BALANCING_"
-      "STATUS\030. \003(\0132\".primary.SET_CELL_BALANCIN"
-      "G_STATUS\0221\n\017HANDCART_STATUS\030/ \003(\0132\030.prim"
-      "ary.HANDCART_STATUS\022\035\n\005SPEED\0300 \003(\0132\016.pri"
-      "mary.SPEED\022-\n\rINV_L_REQUEST\0301 \003(\0132\026.prim"
-      "ary.INV_L_REQUEST\022-\n\rINV_R_REQUEST\0302 \003(\013"
-      "2\026.primary.INV_R_REQUEST\022/\n\016INV_L_RESPON"
-      "SE\0303 \003(\0132\027.primary.INV_L_RESPONSE\022/\n\016INV"
-      "_R_RESPONSE\0304 \003(\0132\027.primary.INV_R_RESPON"
-      "SE\022;\n\024FLASH_CELLBOARD_0_TX\0305 \003(\0132\035.prima"
-      "ry.FLASH_CELLBOARD_0_TX\022;\n\024FLASH_CELLBOA"
-      "RD_0_RX\0306 \003(\0132\035.primary.FLASH_CELLBOARD_"
-      "0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0307 \003(\0132\035.pri"
-      "mary.FLASH_CELLBOARD_1_TX\022;\n\024FLASH_CELLB"
-      "OARD_1_RX\0308 \003(\0132\035.primary.FLASH_CELLBOAR"
-      "D_1_RX\022;\n\024FLASH_CELLBOARD_2_TX\0309 \003(\0132\035.p"
-      "rimary.FLASH_CELLBOARD_2_TX\022;\n\024FLASH_CEL"
-      "LBOARD_2_RX\030: \003(\0132\035.primary.FLASH_CELLBO"
-      "ARD_2_RX\022;\n\024FLASH_CELLBOARD_3_TX\030; \003(\0132\035"
-      ".primary.FLASH_CELLBOARD_3_TX\022;\n\024FLASH_C"
-      "ELLBOARD_3_RX\030< \003(\0132\035.primary.FLASH_CELL"
-      "BOARD_3_RX\022;\n\024FLASH_CELLBOARD_4_TX\030= \003(\013"
-      "2\035.primary.FLASH_CELLBOARD_4_TX\022;\n\024FLASH"
-      "_CELLBOARD_4_RX\030> \003(\0132\035.primary.FLASH_CE"
-      "LLBOARD_4_RX\022;\n\024FLASH_CELLBOARD_5_TX\030\? \003"
-      "(\0132\035.primary.FLASH_CELLBOARD_5_TX\022;\n\024FLA"
-      "SH_CELLBOARD_5_RX\030@ \003(\0132\035.primary.FLASH_"
-      "CELLBOARD_5_RX\0221\n\017FLASH_BMS_HV_TX\030A \003(\0132"
-      "\030.primary.FLASH_BMS_HV_TX\0221\n\017FLASH_BMS_H"
-      "V_RX\030B \003(\0132\030.primary.FLASH_BMS_HV_RX\0221\n\017"
-      "FLASH_BMS_LV_TX\030C \003(\0132\030.primary.FLASH_BM"
-      "S_LV_TX\0221\n\017FLASH_BMS_LV_RX\030D \003(\0132\030.prima"
-      "ry.FLASH_BMS_LV_RX\022/\n\016BRUSA_NLG5_CTL\030E \003"
-      "(\0132\027.primary.BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030"
-      "F \003(\0132\021.primary.BRUSA_ST\022)\n\013BRUSA_ACT_I\030"
-      "G \003(\0132\024.primary.BRUSA_ACT_I\022+\n\014BRUSA_ACT"
-      "_II\030H \003(\0132\025.primary.BRUSA_ACT_II\022\'\n\nBRUS"
-      "A_TEMP\030I \003(\0132\023.primary.BRUSA_TEMP\022%\n\tBRU"
-      "SA_ERR\030J \003(\0132\022.primary.BRUSA_ERR\022/\n\016BMS_"
-      "HV_CHIMERA\030K \003(\0132\027.primary.BMS_HV_CHIMER"
-      "A\022)\n\013ECU_CHIMERA\030L \003(\0132\024.primary.ECU_CHI"
-      "MERA*k\n\010RaceType\022\031\n\025RaceType_ACCELERATIO"
-      "N\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022RaceType_AU"
-      "TOCROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016Inv"
-      "erterStatus\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023I"
-      "nverterStatus_IDLE\020\001\022\025\n\021InverterStatus_O"
-      "N\020\002*\224\001\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022\027\n"
-      "\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS_O"
-      "N\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarStat"
-      "us_DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006To"
-      "ggle\022\016\n\nToggle_OFF\020\000\022\r\n\tToggle_ON\020\001*\220\001\n\017"
-      "TractionControl\022\027\n\023TractionControl_OFF\020\000"
-      "\022 \n\034TractionControl_SLIP_CONTROL\020\001\022$\n Tr"
-      "actionControl_TORQUE_VECTORING\020\002\022\034\n\030Trac"
-      "tionControl_COMPLETE\020\003*Y\n\010TsStatus\022\020\n\014Ts"
-      "Status_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013"
-      "TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*R\n\003Map"
-      "\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Map_D40\020\002\022\013\n"
-      "\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map_D100\020\005*U\n"
-      "\014SetCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022"
-      "SetCarStatus_READY\020\001\022\026\n\022SetCarStatus_DRI"
-      "VE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBoun"
-      "d_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATO"
-      "R\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020Im"
-      "dStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL"
-      "\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033I"
-      "mdStatus_IMD_START_MEASURE\020\003\022\036\n\032ImdStatu"
-      "s_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EA"
-      "RTH_FAULT\020\005b\006proto3"
+      "tamp\030\t \001(\004\"\252\001\n\016INV_L_RESPONSE\022\016\n\006reg_id\030"
+      "\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006data_1\030\003 \001(\r\022\016\n"
+      "\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001(\r\022\016\n\006data_4\030"
+      "\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006data_6\030\010 \001(\r\022\030\n"
+      "\020_inner_timestamp\030\t \001(\004\"\252\001\n\016INV_R_RESPON"
+      "SE\022\016\n\006reg_id\030\001 \001(\r\022\016\n\006data_0\030\002 \001(\r\022\016\n\006da"
+      "ta_1\030\003 \001(\r\022\016\n\006data_2\030\004 \001(\r\022\016\n\006data_3\030\005 \001"
+      "(\r\022\016\n\006data_4\030\006 \001(\r\022\016\n\006data_5\030\007 \001(\r\022\016\n\006da"
+      "ta_6\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001(\004\"0\n\024"
+      "FLASH_CELLBOARD_0_TX\022\030\n\020_inner_timestamp"
+      "\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_0_RX\022\030\n\020_inner"
+      "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_TX"
+      "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+      "BOARD_1_RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024"
+      "FLASH_CELLBOARD_2_TX\022\030\n\020_inner_timestamp"
+      "\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_RX\022\030\n\020_inner"
+      "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_TX"
+      "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+      "BOARD_3_RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024"
+      "FLASH_CELLBOARD_4_TX\022\030\n\020_inner_timestamp"
+      "\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_RX\022\030\n\020_inner"
+      "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_TX"
+      "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+      "BOARD_5_RX\022\030\n\020_inner_timestamp\030\001 \001(\004\"+\n\017"
+      "FLASH_BMS_HV_TX\022\030\n\020_inner_timestamp\030\001 \001("
+      "\004\"+\n\017FLASH_BMS_HV_RX\022\030\n\020_inner_timestamp"
+      "\030\001 \001(\004\"+\n\017FLASH_BMS_LV_TX\022\030\n\020_inner_time"
+      "stamp\030\001 \001(\004\"+\n\017FLASH_BMS_LV_RX\022\030\n\020_inner"
+      "_timestamp\030\001 \001(\004\"*\n\016BRUSA_NLG5_CTL\022\030\n\020_i"
+      "nner_timestamp\030\001 \001(\004\"$\n\010BRUSA_ST\022\030\n\020_inn"
+      "er_timestamp\030\001 \001(\004\"\'\n\013BRUSA_ACT_I\022\030\n\020_in"
+      "ner_timestamp\030\001 \001(\004\"(\n\014BRUSA_ACT_II\022\030\n\020_"
+      "inner_timestamp\030\001 \001(\004\"&\n\nBRUSA_TEMP\022\030\n\020_"
+      "inner_timestamp\030\001 \001(\004\"%\n\tBRUSA_ERR\022\030\n\020_i"
+      "nner_timestamp\030\001 \001(\004\"*\n\016BMS_HV_CHIMERA\022\030"
+      "\n\020_inner_timestamp\030\001 \001(\004\"\'\n\013ECU_CHIMERA\022"
+      "\030\n\020_inner_timestamp\030\001 \001(\004\"\222\037\n\004Pack\0225\n\021BM"
+      "S_HV_JMP_TO_BLT\030\001 \003(\0132\032.primary.BMS_HV_J"
+      "MP_TO_BLT\0225\n\021BMS_LV_JMP_TO_BLT\030\002 \003(\0132\032.p"
+      "rimary.BMS_LV_JMP_TO_BLT\022-\n\rSTEER_VERSIO"
+      "N\030\003 \003(\0132\026.primary.STEER_VERSION\022)\n\013DAS_V"
+      "ERSION\030\004 \003(\0132\024.primary.DAS_VERSION\022\'\n\nHV"
+      "_VERSION\030\005 \003(\0132\023.primary.HV_VERSION\022\'\n\nL"
+      "V_VERSION\030\006 \003(\0132\023.primary.LV_VERSION\022)\n\013"
+      "TLM_VERSION\030\007 \003(\0132\024.primary.TLM_VERSION\022"
+      "%\n\tTIMESTAMP\030\010 \003(\0132\022.primary.TIMESTAMP\0229"
+      "\n\023AMBIENT_TEMPERATURE\030\t \003(\0132\034.primary.AM"
+      "BIENT_TEMPERATURE\022)\n\013DATA_LOGGER\030\n \003(\0132\024"
+      ".primary.DATA_LOGGER\022/\n\016SET_TLM_STATUS\030\013"
+      " \003(\0132\027.primary.SET_TLM_STATUS\022\'\n\nTLM_STA"
+      "TUS\030\014 \003(\0132\023.primary.TLM_STATUS\0229\n\023STEER_"
+      "SYSTEM_STATUS\030\r \003(\0132\034.primary.STEER_SYST"
+      "EM_STATUS\022\'\n\nHV_VOLTAGE\030\016 \003(\0132\023.primary."
+      "HV_VOLTAGE\022\'\n\nHV_CURRENT\030\017 \003(\0132\023.primary"
+      ".HV_CURRENT\022!\n\007HV_TEMP\030\020 \003(\0132\020.primary.H"
+      "V_TEMP\022%\n\tHV_ERRORS\030\021 \003(\0132\022.primary.HV_E"
+      "RRORS\022/\n\016HV_CAN_FORWARD\030\022 \003(\0132\027.primary."
+      "HV_CAN_FORWARD\0223\n\020HV_FANS_OVERRIDE\030\023 \003(\013"
+      "2\031.primary.HV_FANS_OVERRIDE\022=\n\025HV_CAN_FO"
+      "RWARD_STATUS\030\024 \003(\0132\036.primary.HV_CAN_FORW"
+      "ARD_STATUS\022A\n\027HV_FANS_OVERRIDE_STATUS\030\025 "
+      "\003(\0132 .primary.HV_FANS_OVERRIDE_STATUS\0229\n"
+      "\023HV_FEEDBACKS_STATUS\030\026 \003(\0132\034.primary.HV_"
+      "FEEDBACKS_STATUS\022-\n\rHV_IMD_STATUS\030\027 \003(\0132"
+      "\026.primary.HV_IMD_STATUS\022%\n\tTS_STATUS\030\030 \003"
+      "(\0132\022.primary.TS_STATUS\0225\n\021SET_TS_STATUS_"
+      "DAS\030\031 \003(\0132\032.primary.SET_TS_STATUS_DAS\022\?\n"
+      "\026SET_TS_STATUS_HANDCART\030\032 \003(\0132\037.primary."
+      "SET_TS_STATUS_HANDCART\022+\n\014STEER_STATUS\030\033"
+      " \003(\0132\025.primary.STEER_STATUS\022/\n\016SET_CAR_S"
+      "TATUS\030\034 \003(\0132\027.primary.SET_CAR_STATUS\0223\n\020"
+      "SET_PEDALS_RANGE\030\035 \003(\0132\031.primary.SET_PED"
+      "ALS_RANGE\022C\n\030SET_STEERING_ANGLE_RANGE\030\036 "
+      "\003(\0132!.primary.SET_STEERING_ANGLE_RANGE\022\'"
+      "\n\nCAR_STATUS\030\037 \003(\0132\023.primary.CAR_STATUS\022"
+      "\'\n\nDAS_ERRORS\030  \003(\0132\023.primary.DAS_ERRORS"
+      "\022\'\n\nLV_CURRENT\030! \003(\0132\023.primary.LV_CURREN"
+      "T\022\'\n\nLV_VOLTAGE\030\" \003(\0132\023.primary.LV_VOLTA"
+      "GE\0223\n\020LV_TOTAL_VOLTAGE\030# \003(\0132\031.primary.L"
+      "V_TOTAL_VOLTAGE\022/\n\016LV_TEMPERATURE\030$ \003(\0132"
+      "\027.primary.LV_TEMPERATURE\022/\n\016COOLING_STAT"
+      "US\030% \003(\0132\027.primary.COOLING_STATUS\0227\n\022SET"
+      "_RADIATOR_SPEED\030& \003(\0132\033.primary.SET_RADI"
+      "ATOR_SPEED\0221\n\017SET_PUMPS_SPEED\030\' \003(\0132\030.pr"
+      "imary.SET_PUMPS_SPEED\022O\n\036SET_INVERTER_CO"
+      "NNECTION_STATUS\030( \003(\0132\'.primary.SET_INVE"
+      "RTER_CONNECTION_STATUS\022G\n\032INVERTER_CONNE"
+      "CTION_STATUS\030) \003(\0132#.primary.INVERTER_CO"
+      "NNECTION_STATUS\022%\n\tLV_ERRORS\030* \003(\0132\022.pri"
+      "mary.LV_ERRORS\0221\n\017SHUTDOWN_STATUS\030+ \003(\0132"
+      "\030.primary.SHUTDOWN_STATUS\022\037\n\006MARKER\030, \003("
+      "\0132\017.primary.MARKER\0223\n\020HV_CELLS_VOLTAGE\030-"
+      " \003(\0132\031.primary.HV_CELLS_VOLTAGE\022-\n\rHV_CE"
+      "LLS_TEMP\030. \003(\0132\026.primary.HV_CELLS_TEMP\022C"
+      "\n\030HV_CELL_BALANCING_STATUS\030/ \003(\0132!.prima"
+      "ry.HV_CELL_BALANCING_STATUS\022E\n\031SET_CELL_"
+      "BALANCING_STATUS\0300 \003(\0132\".primary.SET_CEL"
+      "L_BALANCING_STATUS\0221\n\017HANDCART_STATUS\0301 "
+      "\003(\0132\030.primary.HANDCART_STATUS\022\035\n\005SPEED\0302"
+      " \003(\0132\016.primary.SPEED\022-\n\rINV_L_REQUEST\0303 "
+      "\003(\0132\026.primary.INV_L_REQUEST\022-\n\rINV_R_REQ"
+      "UEST\0304 \003(\0132\026.primary.INV_R_REQUEST\022/\n\016IN"
+      "V_L_RESPONSE\0305 \003(\0132\027.primary.INV_L_RESPO"
+      "NSE\022/\n\016INV_R_RESPONSE\0306 \003(\0132\027.primary.IN"
+      "V_R_RESPONSE\022;\n\024FLASH_CELLBOARD_0_TX\0307 \003"
+      "(\0132\035.primary.FLASH_CELLBOARD_0_TX\022;\n\024FLA"
+      "SH_CELLBOARD_0_RX\0308 \003(\0132\035.primary.FLASH_"
+      "CELLBOARD_0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0309"
+      " \003(\0132\035.primary.FLASH_CELLBOARD_1_TX\022;\n\024F"
+      "LASH_CELLBOARD_1_RX\030: \003(\0132\035.primary.FLAS"
+      "H_CELLBOARD_1_RX\022;\n\024FLASH_CELLBOARD_2_TX"
+      "\030; \003(\0132\035.primary.FLASH_CELLBOARD_2_TX\022;\n"
+      "\024FLASH_CELLBOARD_2_RX\030< \003(\0132\035.primary.FL"
+      "ASH_CELLBOARD_2_RX\022;\n\024FLASH_CELLBOARD_3_"
+      "TX\030= \003(\0132\035.primary.FLASH_CELLBOARD_3_TX\022"
+      ";\n\024FLASH_CELLBOARD_3_RX\030> \003(\0132\035.primary."
+      "FLASH_CELLBOARD_3_RX\022;\n\024FLASH_CELLBOARD_"
+      "4_TX\030\? \003(\0132\035.primary.FLASH_CELLBOARD_4_T"
+      "X\022;\n\024FLASH_CELLBOARD_4_RX\030@ \003(\0132\035.primar"
+      "y.FLASH_CELLBOARD_4_RX\022;\n\024FLASH_CELLBOAR"
+      "D_5_TX\030A \003(\0132\035.primary.FLASH_CELLBOARD_5"
+      "_TX\022;\n\024FLASH_CELLBOARD_5_RX\030B \003(\0132\035.prim"
+      "ary.FLASH_CELLBOARD_5_RX\0221\n\017FLASH_BMS_HV"
+      "_TX\030C \003(\0132\030.primary.FLASH_BMS_HV_TX\0221\n\017F"
+      "LASH_BMS_HV_RX\030D \003(\0132\030.primary.FLASH_BMS"
+      "_HV_RX\0221\n\017FLASH_BMS_LV_TX\030E \003(\0132\030.primar"
+      "y.FLASH_BMS_LV_TX\0221\n\017FLASH_BMS_LV_RX\030F \003"
+      "(\0132\030.primary.FLASH_BMS_LV_RX\022/\n\016BRUSA_NL"
+      "G5_CTL\030G \003(\0132\027.primary.BRUSA_NLG5_CTL\022#\n"
+      "\010BRUSA_ST\030H \003(\0132\021.primary.BRUSA_ST\022)\n\013BR"
+      "USA_ACT_I\030I \003(\0132\024.primary.BRUSA_ACT_I\022+\n"
+      "\014BRUSA_ACT_II\030J \003(\0132\025.primary.BRUSA_ACT_"
+      "II\022\'\n\nBRUSA_TEMP\030K \003(\0132\023.primary.BRUSA_T"
+      "EMP\022%\n\tBRUSA_ERR\030L \003(\0132\022.primary.BRUSA_E"
+      "RR\022/\n\016BMS_HV_CHIMERA\030M \003(\0132\027.primary.BMS"
+      "_HV_CHIMERA\022)\n\013ECU_CHIMERA\030N \003(\0132\024.prima"
+      "ry.ECU_CHIMERA*k\n\010RaceType\022\031\n\025RaceType_A"
+      "CCELERATION\020\000\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022R"
+      "aceType_AUTOCROSS\020\002\022\026\n\022RaceType_ENDURANC"
+      "E\020\003*X\n\016InverterStatus\022\026\n\022InverterStatus_"
+      "OFF\020\000\022\027\n\023InverterStatus_IDLE\020\001\022\025\n\021Invert"
+      "erStatus_ON\020\002*\224\001\n\tCarStatus\022\022\n\016CarStatus"
+      "_IDLE\020\000\022\027\n\023CarStatus_PRE_SETUP\020\001\022\023\n\017CarS"
+      "tatus_TS_ON\020\002\022\030\n\024CarStatus_POST_SETUP\020\003\022"
+      "\023\n\017CarStatus_DRIVE\020\004\022\026\n\022CarStatus_TEARDO"
+      "WN\020\005*\'\n\006Toggle\022\016\n\nToggle_OFF\020\000\022\r\n\tToggle"
+      "_ON\020\001*\220\001\n\017TractionControl\022\027\n\023TractionCon"
+      "trol_OFF\020\000\022 \n\034TractionControl_SLIP_CONTR"
+      "OL\020\001\022$\n TractionControl_TORQUE_VECTORING"
+      "\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y\n\010TsSt"
+      "atus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECH"
+      "ARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATA"
+      "L\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Ma"
+      "p_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map"
+      "_D100\020\005*U\n\014SetCarStatus\022\025\n\021SetCarStatus_"
+      "IDLE\020\000\022\026\n\022SetCarStatus_READY\020\001\022\026\n\022SetCar"
+      "Status_DRIVE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX"
+      "\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_"
+      "ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdSt"
+      "atus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdStatus_"
+      "IMD_NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLT"
+      "AGE\020\002\022\037\n\033ImdStatus_IMD_START_MEASURE\020\003\022\036"
+      "\n\032ImdStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdSta"
+      "tus_IMD_EARTH_FAULT\020\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 11219);
+      descriptor, 11469);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "primary.proto", &protobuf_RegisterTypes);
 }
@@ -5249,6 +5320,572 @@ void TIMESTAMP::InternalSwap(TIMESTAMP* other) {
 }
 
 ::google::protobuf::Metadata TIMESTAMP::GetMetadata() const {
+  protobuf_primary_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_primary_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void AMBIENT_TEMPERATURE::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int AMBIENT_TEMPERATURE::kTempFieldNumber;
+const int AMBIENT_TEMPERATURE::kInnerTimestampFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AMBIENT_TEMPERATURE::AMBIENT_TEMPERATURE()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_primary_2eproto::scc_info_AMBIENT_TEMPERATURE.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:primary.AMBIENT_TEMPERATURE)
+}
+AMBIENT_TEMPERATURE::AMBIENT_TEMPERATURE(const AMBIENT_TEMPERATURE& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&temp_) -
+    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(temp_));
+  // @@protoc_insertion_point(copy_constructor:primary.AMBIENT_TEMPERATURE)
+}
+
+void AMBIENT_TEMPERATURE::SharedCtor() {
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&temp_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(temp_));
+}
+
+AMBIENT_TEMPERATURE::~AMBIENT_TEMPERATURE() {
+  // @@protoc_insertion_point(destructor:primary.AMBIENT_TEMPERATURE)
+  SharedDtor();
+}
+
+void AMBIENT_TEMPERATURE::SharedDtor() {
+}
+
+void AMBIENT_TEMPERATURE::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* AMBIENT_TEMPERATURE::descriptor() {
+  ::protobuf_primary_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_primary_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const AMBIENT_TEMPERATURE& AMBIENT_TEMPERATURE::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_primary_2eproto::scc_info_AMBIENT_TEMPERATURE.base);
+  return *internal_default_instance();
+}
+
+
+void AMBIENT_TEMPERATURE::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.AMBIENT_TEMPERATURE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&temp_) -
+      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(temp_));
+  _internal_metadata_.Clear();
+}
+
+bool AMBIENT_TEMPERATURE::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:primary.AMBIENT_TEMPERATURE)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // sint32 temp = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &temp_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 _inner_timestamp = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &_inner_timestamp_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:primary.AMBIENT_TEMPERATURE)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:primary.AMBIENT_TEMPERATURE)
+  return false;
+#undef DO_
+}
+
+void AMBIENT_TEMPERATURE::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:primary.AMBIENT_TEMPERATURE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // sint32 temp = 1;
+  if (this->temp() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(1, this->temp(), output);
+  }
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_inner_timestamp() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->_inner_timestamp(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:primary.AMBIENT_TEMPERATURE)
+}
+
+::google::protobuf::uint8* AMBIENT_TEMPERATURE::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:primary.AMBIENT_TEMPERATURE)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // sint32 temp = 1;
+  if (this->temp() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(1, this->temp(), target);
+  }
+
+  // uint64 _inner_timestamp = 2;
+  if (this->_inner_timestamp() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->_inner_timestamp(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.AMBIENT_TEMPERATURE)
+  return target;
+}
+
+size_t AMBIENT_TEMPERATURE::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.AMBIENT_TEMPERATURE)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // uint64 _inner_timestamp = 2;
+  if (this->_inner_timestamp() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->_inner_timestamp());
+  }
+
+  // sint32 temp = 1;
+  if (this->temp() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::SInt32Size(
+        this->temp());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AMBIENT_TEMPERATURE::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:primary.AMBIENT_TEMPERATURE)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AMBIENT_TEMPERATURE* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const AMBIENT_TEMPERATURE>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.AMBIENT_TEMPERATURE)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.AMBIENT_TEMPERATURE)
+    MergeFrom(*source);
+  }
+}
+
+void AMBIENT_TEMPERATURE::MergeFrom(const AMBIENT_TEMPERATURE& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.AMBIENT_TEMPERATURE)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._inner_timestamp() != 0) {
+    set__inner_timestamp(from._inner_timestamp());
+  }
+  if (from.temp() != 0) {
+    set_temp(from.temp());
+  }
+}
+
+void AMBIENT_TEMPERATURE::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:primary.AMBIENT_TEMPERATURE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AMBIENT_TEMPERATURE::CopyFrom(const AMBIENT_TEMPERATURE& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.AMBIENT_TEMPERATURE)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AMBIENT_TEMPERATURE::IsInitialized() const {
+  return true;
+}
+
+void AMBIENT_TEMPERATURE::Swap(AMBIENT_TEMPERATURE* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AMBIENT_TEMPERATURE::InternalSwap(AMBIENT_TEMPERATURE* other) {
+  using std::swap;
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+  swap(temp_, other->temp_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata AMBIENT_TEMPERATURE::GetMetadata() const {
+  protobuf_primary_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_primary_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void DATA_LOGGER::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DATA_LOGGER::kPlaceholder1FieldNumber;
+const int DATA_LOGGER::kPlaceholder2FieldNumber;
+const int DATA_LOGGER::kInnerTimestampFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DATA_LOGGER::DATA_LOGGER()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_primary_2eproto::scc_info_DATA_LOGGER.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:primary.DATA_LOGGER)
+}
+DATA_LOGGER::DATA_LOGGER(const DATA_LOGGER& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&placeholder1_, &from.placeholder1_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&placeholder1_)) + sizeof(_inner_timestamp_));
+  // @@protoc_insertion_point(copy_constructor:primary.DATA_LOGGER)
+}
+
+void DATA_LOGGER::SharedCtor() {
+  ::memset(&placeholder1_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&placeholder1_)) + sizeof(_inner_timestamp_));
+}
+
+DATA_LOGGER::~DATA_LOGGER() {
+  // @@protoc_insertion_point(destructor:primary.DATA_LOGGER)
+  SharedDtor();
+}
+
+void DATA_LOGGER::SharedDtor() {
+}
+
+void DATA_LOGGER::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* DATA_LOGGER::descriptor() {
+  ::protobuf_primary_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_primary_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const DATA_LOGGER& DATA_LOGGER::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_primary_2eproto::scc_info_DATA_LOGGER.base);
+  return *internal_default_instance();
+}
+
+
+void DATA_LOGGER::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.DATA_LOGGER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&placeholder1_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&placeholder1_)) + sizeof(_inner_timestamp_));
+  _internal_metadata_.Clear();
+}
+
+bool DATA_LOGGER::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:primary.DATA_LOGGER)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // uint32 placeholder1 = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &placeholder1_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint32 placeholder2 = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &placeholder2_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 _inner_timestamp = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &_inner_timestamp_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:primary.DATA_LOGGER)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:primary.DATA_LOGGER)
+  return false;
+#undef DO_
+}
+
+void DATA_LOGGER::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:primary.DATA_LOGGER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 placeholder1 = 1;
+  if (this->placeholder1() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->placeholder1(), output);
+  }
+
+  // uint32 placeholder2 = 2;
+  if (this->placeholder2() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->placeholder2(), output);
+  }
+
+  // uint64 _inner_timestamp = 3;
+  if (this->_inner_timestamp() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:primary.DATA_LOGGER)
+}
+
+::google::protobuf::uint8* DATA_LOGGER::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:primary.DATA_LOGGER)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 placeholder1 = 1;
+  if (this->placeholder1() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->placeholder1(), target);
+  }
+
+  // uint32 placeholder2 = 2;
+  if (this->placeholder2() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->placeholder2(), target);
+  }
+
+  // uint64 _inner_timestamp = 3;
+  if (this->_inner_timestamp() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.DATA_LOGGER)
+  return target;
+}
+
+size_t DATA_LOGGER::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.DATA_LOGGER)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // uint32 placeholder1 = 1;
+  if (this->placeholder1() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->placeholder1());
+  }
+
+  // uint32 placeholder2 = 2;
+  if (this->placeholder2() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->placeholder2());
+  }
+
+  // uint64 _inner_timestamp = 3;
+  if (this->_inner_timestamp() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt64Size(
+        this->_inner_timestamp());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DATA_LOGGER::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:primary.DATA_LOGGER)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DATA_LOGGER* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const DATA_LOGGER>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.DATA_LOGGER)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.DATA_LOGGER)
+    MergeFrom(*source);
+  }
+}
+
+void DATA_LOGGER::MergeFrom(const DATA_LOGGER& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.DATA_LOGGER)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.placeholder1() != 0) {
+    set_placeholder1(from.placeholder1());
+  }
+  if (from.placeholder2() != 0) {
+    set_placeholder2(from.placeholder2());
+  }
+  if (from._inner_timestamp() != 0) {
+    set__inner_timestamp(from._inner_timestamp());
+  }
+}
+
+void DATA_LOGGER::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:primary.DATA_LOGGER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DATA_LOGGER::CopyFrom(const DATA_LOGGER& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.DATA_LOGGER)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DATA_LOGGER::IsInitialized() const {
+  return true;
+}
+
+void DATA_LOGGER::Swap(DATA_LOGGER* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DATA_LOGGER::InternalSwap(DATA_LOGGER* other) {
+  using std::swap;
+  swap(placeholder1_, other->placeholder1_);
+  swap(placeholder2_, other->placeholder2_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata DATA_LOGGER::GetMetadata() const {
   protobuf_primary_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_primary_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -24607,6 +25244,8 @@ const int Pack::kHVVERSIONFieldNumber;
 const int Pack::kLVVERSIONFieldNumber;
 const int Pack::kTLMVERSIONFieldNumber;
 const int Pack::kTIMESTAMPFieldNumber;
+const int Pack::kAMBIENTTEMPERATUREFieldNumber;
+const int Pack::kDATALOGGERFieldNumber;
 const int Pack::kSETTLMSTATUSFieldNumber;
 const int Pack::kTLMSTATUSFieldNumber;
 const int Pack::kSTEERSYSTEMSTATUSFieldNumber;
@@ -24695,6 +25334,8 @@ Pack::Pack(const Pack& from)
       lv_version_(from.lv_version_),
       tlm_version_(from.tlm_version_),
       timestamp_(from.timestamp_),
+      ambient_temperature_(from.ambient_temperature_),
+      data_logger_(from.data_logger_),
       set_tlm_status_(from.set_tlm_status_),
       tlm_status_(from.tlm_status_),
       steer_system_status_(from.steer_system_status_),
@@ -24806,6 +25447,8 @@ void Pack::Clear() {
   lv_version_.Clear();
   tlm_version_.Clear();
   timestamp_.Clear();
+  ambient_temperature_.Clear();
+  data_logger_.Clear();
   set_tlm_status_.Clear();
   tlm_status_.Clear();
   steer_system_status_.Clear();
@@ -24983,10 +25626,34 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+      // repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
       case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_ambient_temperature()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_data_logger()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_tlm_status()));
         } else {
@@ -24995,10 +25662,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.TLM_STATUS TLM_STATUS = 10;
-      case 10: {
+      // repeated .primary.TLM_STATUS TLM_STATUS = 12;
+      case 12: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_tlm_status()));
         } else {
@@ -25007,10 +25674,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
-      case 11: {
+      // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
+      case 13: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_steer_system_status()));
         } else {
@@ -25019,10 +25686,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
-      case 12: {
+      // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
+      case 14: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_voltage()));
         } else {
@@ -25031,10 +25698,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CURRENT HV_CURRENT = 13;
-      case 13: {
+      // repeated .primary.HV_CURRENT HV_CURRENT = 15;
+      case 15: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_current()));
         } else {
@@ -25043,10 +25710,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_TEMP HV_TEMP = 14;
-      case 14: {
+      // repeated .primary.HV_TEMP HV_TEMP = 16;
+      case 16: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_temp()));
         } else {
@@ -25055,10 +25722,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_ERRORS HV_ERRORS = 15;
-      case 15: {
+      // repeated .primary.HV_ERRORS HV_ERRORS = 17;
+      case 17: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_errors()));
         } else {
@@ -25067,10 +25734,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
-      case 16: {
+      // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
+      case 18: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_can_forward()));
         } else {
@@ -25079,10 +25746,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
-      case 17: {
+      // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
+      case 19: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_fans_override()));
         } else {
@@ -25091,10 +25758,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
-      case 18: {
+      // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
+      case 20: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(162u /* 162 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_can_forward_status()));
         } else {
@@ -25103,10 +25770,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
-      case 19: {
+      // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
+      case 21: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(170u /* 170 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_fans_override_status()));
         } else {
@@ -25115,10 +25782,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
-      case 20: {
+      // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
+      case 22: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(162u /* 162 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(178u /* 178 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_feedbacks_status()));
         } else {
@@ -25127,10 +25794,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
-      case 21: {
+      // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
+      case 23: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(170u /* 170 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(186u /* 186 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_imd_status()));
         } else {
@@ -25139,10 +25806,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.TS_STATUS TS_STATUS = 22;
-      case 22: {
+      // repeated .primary.TS_STATUS TS_STATUS = 24;
+      case 24: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(178u /* 178 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(194u /* 194 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_ts_status()));
         } else {
@@ -25151,10 +25818,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
-      case 23: {
+      // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
+      case 25: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(186u /* 186 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(202u /* 202 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_ts_status_das()));
         } else {
@@ -25163,10 +25830,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
-      case 24: {
+      // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
+      case 26: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(194u /* 194 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(210u /* 210 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_ts_status_handcart()));
         } else {
@@ -25175,10 +25842,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.STEER_STATUS STEER_STATUS = 25;
-      case 25: {
+      // repeated .primary.STEER_STATUS STEER_STATUS = 27;
+      case 27: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(202u /* 202 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(218u /* 218 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_steer_status()));
         } else {
@@ -25187,10 +25854,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
-      case 26: {
+      // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
+      case 28: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(210u /* 210 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(226u /* 226 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_car_status()));
         } else {
@@ -25199,10 +25866,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
-      case 27: {
+      // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
+      case 29: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(218u /* 218 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(234u /* 234 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_pedals_range()));
         } else {
@@ -25211,10 +25878,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
-      case 28: {
+      // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
+      case 30: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(226u /* 226 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(242u /* 242 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_steering_angle_range()));
         } else {
@@ -25223,10 +25890,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.CAR_STATUS CAR_STATUS = 29;
-      case 29: {
+      // repeated .primary.CAR_STATUS CAR_STATUS = 31;
+      case 31: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(234u /* 234 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(250u /* 250 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_car_status()));
         } else {
@@ -25235,10 +25902,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
-      case 30: {
+      // repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
+      case 32: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(242u /* 242 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(2u /* 258 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_das_errors()));
         } else {
@@ -25247,10 +25914,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.LV_CURRENT LV_CURRENT = 31;
-      case 31: {
+      // repeated .primary.LV_CURRENT LV_CURRENT = 33;
+      case 33: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(250u /* 250 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 266 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_lv_current()));
         } else {
@@ -25259,10 +25926,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
-      case 32: {
+      // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
+      case 34: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(2u /* 258 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 274 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_lv_voltage()));
         } else {
@@ -25271,10 +25938,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
-      case 33: {
+      // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
+      case 35: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 266 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 282 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_lv_total_voltage()));
         } else {
@@ -25283,10 +25950,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
-      case 34: {
+      // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
+      case 36: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 274 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 290 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_lv_temperature()));
         } else {
@@ -25295,10 +25962,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
-      case 35: {
+      // repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
+      case 37: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 282 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 298 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_cooling_status()));
         } else {
@@ -25307,10 +25974,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
-      case 36: {
+      // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
+      case 38: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 290 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 306 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_radiator_speed()));
         } else {
@@ -25319,10 +25986,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
-      case 37: {
+      // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
+      case 39: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 298 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 314 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_pumps_speed()));
         } else {
@@ -25331,10 +25998,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
-      case 38: {
+      // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
+      case 40: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 306 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(66u /* 322 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_inverter_connection_status()));
         } else {
@@ -25343,10 +26010,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
-      case 39: {
+      // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
+      case 41: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 314 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 330 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_inverter_connection_status()));
         } else {
@@ -25355,10 +26022,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.LV_ERRORS LV_ERRORS = 40;
-      case 40: {
+      // repeated .primary.LV_ERRORS LV_ERRORS = 42;
+      case 42: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 322 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(82u /* 338 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_lv_errors()));
         } else {
@@ -25367,10 +26034,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
-      case 41: {
+      // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
+      case 43: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 330 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(90u /* 346 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_shutdown_status()));
         } else {
@@ -25379,10 +26046,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.MARKER MARKER = 42;
-      case 42: {
+      // repeated .primary.MARKER MARKER = 44;
+      case 44: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 338 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(98u /* 354 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_marker()));
         } else {
@@ -25391,10 +26058,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
-      case 43: {
+      // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
+      case 45: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 346 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(106u /* 362 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_cells_voltage()));
         } else {
@@ -25403,10 +26070,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
-      case 44: {
+      // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
+      case 46: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(98u /* 354 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(114u /* 370 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_cells_temp()));
         } else {
@@ -25415,10 +26082,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
-      case 45: {
+      // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
+      case 47: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(106u /* 362 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(122u /* 378 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_hv_cell_balancing_status()));
         } else {
@@ -25427,10 +26094,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
-      case 46: {
+      // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
+      case 48: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(114u /* 370 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(130u /* 386 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_set_cell_balancing_status()));
         } else {
@@ -25439,10 +26106,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
-      case 47: {
+      // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
+      case 49: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(122u /* 378 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(138u /* 394 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_handcart_status()));
         } else {
@@ -25451,10 +26118,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.SPEED SPEED = 48;
-      case 48: {
+      // repeated .primary.SPEED SPEED = 50;
+      case 50: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(130u /* 386 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(146u /* 402 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_speed()));
         } else {
@@ -25463,10 +26130,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
-      case 49: {
+      // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
+      case 51: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(138u /* 394 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(154u /* 410 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_inv_l_request()));
         } else {
@@ -25475,10 +26142,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
-      case 50: {
+      // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
+      case 52: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(146u /* 402 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(162u /* 418 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_inv_r_request()));
         } else {
@@ -25487,10 +26154,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
-      case 51: {
+      // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
+      case 53: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(154u /* 410 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(170u /* 426 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_inv_l_response()));
         } else {
@@ -25499,10 +26166,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
-      case 52: {
+      // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
+      case 54: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(162u /* 418 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(178u /* 434 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_inv_r_response()));
         } else {
@@ -25511,10 +26178,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
-      case 53: {
+      // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
+      case 55: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(170u /* 426 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(186u /* 442 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_0_tx()));
         } else {
@@ -25523,10 +26190,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
-      case 54: {
+      // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
+      case 56: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(178u /* 434 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(194u /* 450 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_0_rx()));
         } else {
@@ -25535,10 +26202,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
-      case 55: {
+      // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
+      case 57: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(186u /* 442 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(202u /* 458 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_1_tx()));
         } else {
@@ -25547,10 +26214,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
-      case 56: {
+      // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
+      case 58: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(194u /* 450 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(210u /* 466 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_1_rx()));
         } else {
@@ -25559,10 +26226,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
-      case 57: {
+      // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
+      case 59: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(202u /* 458 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(218u /* 474 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_2_tx()));
         } else {
@@ -25571,10 +26238,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
-      case 58: {
+      // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
+      case 60: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(210u /* 466 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(226u /* 482 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_2_rx()));
         } else {
@@ -25583,10 +26250,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
-      case 59: {
+      // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
+      case 61: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(218u /* 474 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(234u /* 490 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_3_tx()));
         } else {
@@ -25595,10 +26262,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
-      case 60: {
+      // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
+      case 62: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(226u /* 482 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(242u /* 498 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_3_rx()));
         } else {
@@ -25607,10 +26274,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
-      case 61: {
+      // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
+      case 63: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(234u /* 490 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(250u /* 506 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_4_tx()));
         } else {
@@ -25619,10 +26286,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
-      case 62: {
+      // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
+      case 64: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(242u /* 498 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(2u /* 514 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_4_rx()));
         } else {
@@ -25631,10 +26298,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
-      case 63: {
+      // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
+      case 65: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(250u /* 506 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 522 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_5_tx()));
         } else {
@@ -25643,10 +26310,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
-      case 64: {
+      // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
+      case 66: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(2u /* 514 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 530 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_cellboard_5_rx()));
         } else {
@@ -25655,10 +26322,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
-      case 65: {
+      // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
+      case 67: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 522 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 538 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_bms_hv_tx()));
         } else {
@@ -25667,10 +26334,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
-      case 66: {
+      // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
+      case 68: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 530 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 546 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_bms_hv_rx()));
         } else {
@@ -25679,10 +26346,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
-      case 67: {
+      // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
+      case 69: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 538 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 554 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_bms_lv_tx()));
         } else {
@@ -25691,10 +26358,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
-      case 68: {
+      // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
+      case 70: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 546 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 562 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flash_bms_lv_rx()));
         } else {
@@ -25703,10 +26370,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
-      case 69: {
+      // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
+      case 71: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 554 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 570 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_nlg5_ctl()));
         } else {
@@ -25715,10 +26382,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_ST BRUSA_ST = 70;
-      case 70: {
+      // repeated .primary.BRUSA_ST BRUSA_ST = 72;
+      case 72: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 562 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(66u /* 578 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_st()));
         } else {
@@ -25727,10 +26394,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
-      case 71: {
+      // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
+      case 73: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 570 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(74u /* 586 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_act_i()));
         } else {
@@ -25739,10 +26406,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
-      case 72: {
+      // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
+      case 74: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 578 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(82u /* 594 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_act_ii()));
         } else {
@@ -25751,10 +26418,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
-      case 73: {
+      // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
+      case 75: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 586 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(90u /* 602 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_temp()));
         } else {
@@ -25763,10 +26430,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
-      case 74: {
+      // repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
+      case 76: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 594 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(98u /* 610 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_brusa_err()));
         } else {
@@ -25775,10 +26442,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
-      case 75: {
+      // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
+      case 77: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 602 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(106u /* 618 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_bms_hv_chimera()));
         } else {
@@ -25787,10 +26454,10 @@ bool Pack::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
-      case 76: {
+      // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
+      case 78: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(98u /* 610 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(114u /* 626 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_ecu_chimera()));
         } else {
@@ -25897,614 +26564,632 @@ void Pack::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+  // repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->ambient_temperature_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9,
+      this->ambient_temperature(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->data_logger_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      10,
+      this->data_logger(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_tlm_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      9,
+      11,
       this->set_tlm_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.TLM_STATUS TLM_STATUS = 10;
+  // repeated .primary.TLM_STATUS TLM_STATUS = 12;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tlm_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10,
+      12,
       this->tlm_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
+  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->steer_system_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      11,
+      13,
       this->steer_system_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
+  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_voltage_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      12,
+      14,
       this->hv_voltage(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CURRENT HV_CURRENT = 13;
+  // repeated .primary.HV_CURRENT HV_CURRENT = 15;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_current_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      13,
+      15,
       this->hv_current(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_TEMP HV_TEMP = 14;
+  // repeated .primary.HV_TEMP HV_TEMP = 16;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_temp_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14,
+      16,
       this->hv_temp(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_ERRORS HV_ERRORS = 15;
+  // repeated .primary.HV_ERRORS HV_ERRORS = 17;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_errors_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      15,
+      17,
       this->hv_errors(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_can_forward_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16,
+      18,
       this->hv_can_forward(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
+  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_fans_override_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      17,
+      19,
       this->hv_fans_override(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_can_forward_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      18,
+      20,
       this->hv_can_forward_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
+  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_fans_override_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      19,
+      21,
       this->hv_fans_override_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_feedbacks_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      20,
+      22,
       this->hv_feedbacks_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
+  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_imd_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      21,
+      23,
       this->hv_imd_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.TS_STATUS TS_STATUS = 22;
+  // repeated .primary.TS_STATUS TS_STATUS = 24;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ts_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      22,
+      24,
       this->ts_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_ts_status_das_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      23,
+      25,
       this->set_ts_status_das(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_ts_status_handcart_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      24,
+      26,
       this->set_ts_status_handcart(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 25;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 27;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->steer_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      25,
+      27,
       this->steer_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_car_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      26,
+      28,
       this->set_car_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_pedals_range_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      27,
+      29,
       this->set_pedals_range(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_steering_angle_range_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      28,
+      30,
       this->set_steering_angle_range(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 29;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 31;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->car_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      29,
+      31,
       this->car_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->das_errors_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      30,
+      32,
       this->das_errors(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 31;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 33;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_current_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      31,
+      33,
       this->lv_current(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_voltage_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      32,
+      34,
       this->lv_voltage(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_total_voltage_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      33,
+      35,
       this->lv_total_voltage(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_temperature_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      34,
+      36,
       this->lv_temperature(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->cooling_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      35,
+      37,
       this->cooling_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_radiator_speed_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      36,
+      38,
       this->set_radiator_speed(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
+  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_pumps_speed_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      37,
+      39,
       this->set_pumps_speed(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
+  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_inverter_connection_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      38,
+      40,
       this->set_inverter_connection_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
+  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inverter_connection_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      39,
+      41,
       this->inverter_connection_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.LV_ERRORS LV_ERRORS = 40;
+  // repeated .primary.LV_ERRORS LV_ERRORS = 42;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_errors_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      40,
+      42,
       this->lv_errors(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->shutdown_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      41,
+      43,
       this->shutdown_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.MARKER MARKER = 42;
+  // repeated .primary.MARKER MARKER = 44;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->marker_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      42,
+      44,
       this->marker(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cells_voltage_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      43,
+      45,
       this->hv_cells_voltage(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cells_temp_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      44,
+      46,
       this->hv_cells_temp(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cell_balancing_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      45,
+      47,
       this->hv_cell_balancing_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_cell_balancing_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      46,
+      48,
       this->set_cell_balancing_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->handcart_status_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      47,
+      49,
       this->handcart_status(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.SPEED SPEED = 48;
+  // repeated .primary.SPEED SPEED = 50;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->speed_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      48,
+      50,
       this->speed(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_l_request_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      49,
+      51,
       this->inv_l_request(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_r_request_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      50,
+      52,
       this->inv_r_request(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_l_response_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      51,
+      53,
       this->inv_l_response(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_r_response_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      52,
+      54,
       this->inv_r_response(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_0_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      53,
+      55,
       this->flash_cellboard_0_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_0_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      54,
+      56,
       this->flash_cellboard_0_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_1_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      55,
+      57,
       this->flash_cellboard_1_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_1_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      56,
+      58,
       this->flash_cellboard_1_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_2_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      57,
+      59,
       this->flash_cellboard_2_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_2_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      58,
+      60,
       this->flash_cellboard_2_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_3_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      59,
+      61,
       this->flash_cellboard_3_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_3_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      60,
+      62,
       this->flash_cellboard_3_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_4_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      61,
+      63,
       this->flash_cellboard_4_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_4_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      62,
+      64,
       this->flash_cellboard_4_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_5_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      63,
+      65,
       this->flash_cellboard_5_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_5_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      64,
+      66,
       this->flash_cellboard_5_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
+  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_hv_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      65,
+      67,
       this->flash_bms_hv_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
+  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_hv_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      66,
+      68,
       this->flash_bms_hv_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
+  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_lv_tx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      67,
+      69,
       this->flash_bms_lv_tx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
+  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_lv_rx_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      68,
+      70,
       this->flash_bms_lv_rx(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_nlg5_ctl_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      69,
+      71,
       this->brusa_nlg5_ctl(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 70;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 72;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_st_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      70,
+      72,
       this->brusa_st(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_act_i_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      71,
+      73,
       this->brusa_act_i(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_act_ii_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      72,
+      74,
       this->brusa_act_ii(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_temp_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      73,
+      75,
       this->brusa_temp(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_err_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      74,
+      76,
       this->brusa_err(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->bms_hv_chimera_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      75,
+      77,
       this->bms_hv_chimera(static_cast<int>(i)),
       output);
   }
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ecu_chimera_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      76,
+      78,
       this->ecu_chimera(static_cast<int>(i)),
       output);
   }
@@ -26587,548 +27272,564 @@ void Pack::SerializeWithCachedSizes(
         8, this->timestamp(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+  // repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->ambient_temperature_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        9, this->ambient_temperature(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->data_logger_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        10, this->data_logger(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_tlm_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        9, this->set_tlm_status(static_cast<int>(i)), deterministic, target);
+        11, this->set_tlm_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.TLM_STATUS TLM_STATUS = 10;
+  // repeated .primary.TLM_STATUS TLM_STATUS = 12;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->tlm_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        10, this->tlm_status(static_cast<int>(i)), deterministic, target);
+        12, this->tlm_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
+  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->steer_system_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        11, this->steer_system_status(static_cast<int>(i)), deterministic, target);
+        13, this->steer_system_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
+  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_voltage_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        12, this->hv_voltage(static_cast<int>(i)), deterministic, target);
+        14, this->hv_voltage(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CURRENT HV_CURRENT = 13;
+  // repeated .primary.HV_CURRENT HV_CURRENT = 15;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_current_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        13, this->hv_current(static_cast<int>(i)), deterministic, target);
+        15, this->hv_current(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_TEMP HV_TEMP = 14;
+  // repeated .primary.HV_TEMP HV_TEMP = 16;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_temp_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        14, this->hv_temp(static_cast<int>(i)), deterministic, target);
+        16, this->hv_temp(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_ERRORS HV_ERRORS = 15;
+  // repeated .primary.HV_ERRORS HV_ERRORS = 17;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_errors_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        15, this->hv_errors(static_cast<int>(i)), deterministic, target);
+        17, this->hv_errors(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_can_forward_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        16, this->hv_can_forward(static_cast<int>(i)), deterministic, target);
+        18, this->hv_can_forward(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
+  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_fans_override_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        17, this->hv_fans_override(static_cast<int>(i)), deterministic, target);
+        19, this->hv_fans_override(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_can_forward_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        18, this->hv_can_forward_status(static_cast<int>(i)), deterministic, target);
+        20, this->hv_can_forward_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
+  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_fans_override_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        19, this->hv_fans_override_status(static_cast<int>(i)), deterministic, target);
+        21, this->hv_fans_override_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_feedbacks_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        20, this->hv_feedbacks_status(static_cast<int>(i)), deterministic, target);
+        22, this->hv_feedbacks_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
+  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_imd_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        21, this->hv_imd_status(static_cast<int>(i)), deterministic, target);
+        23, this->hv_imd_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.TS_STATUS TS_STATUS = 22;
+  // repeated .primary.TS_STATUS TS_STATUS = 24;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ts_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        22, this->ts_status(static_cast<int>(i)), deterministic, target);
+        24, this->ts_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_ts_status_das_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        23, this->set_ts_status_das(static_cast<int>(i)), deterministic, target);
+        25, this->set_ts_status_das(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_ts_status_handcart_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        24, this->set_ts_status_handcart(static_cast<int>(i)), deterministic, target);
+        26, this->set_ts_status_handcart(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 25;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 27;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->steer_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        25, this->steer_status(static_cast<int>(i)), deterministic, target);
+        27, this->steer_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_car_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        26, this->set_car_status(static_cast<int>(i)), deterministic, target);
+        28, this->set_car_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_pedals_range_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        27, this->set_pedals_range(static_cast<int>(i)), deterministic, target);
+        29, this->set_pedals_range(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_steering_angle_range_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        28, this->set_steering_angle_range(static_cast<int>(i)), deterministic, target);
+        30, this->set_steering_angle_range(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 29;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 31;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->car_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        29, this->car_status(static_cast<int>(i)), deterministic, target);
+        31, this->car_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->das_errors_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        30, this->das_errors(static_cast<int>(i)), deterministic, target);
+        32, this->das_errors(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 31;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 33;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_current_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        31, this->lv_current(static_cast<int>(i)), deterministic, target);
+        33, this->lv_current(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_voltage_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        32, this->lv_voltage(static_cast<int>(i)), deterministic, target);
+        34, this->lv_voltage(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_total_voltage_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        33, this->lv_total_voltage(static_cast<int>(i)), deterministic, target);
+        35, this->lv_total_voltage(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_temperature_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        34, this->lv_temperature(static_cast<int>(i)), deterministic, target);
+        36, this->lv_temperature(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->cooling_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        35, this->cooling_status(static_cast<int>(i)), deterministic, target);
+        37, this->cooling_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_radiator_speed_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        36, this->set_radiator_speed(static_cast<int>(i)), deterministic, target);
+        38, this->set_radiator_speed(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
+  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_pumps_speed_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        37, this->set_pumps_speed(static_cast<int>(i)), deterministic, target);
+        39, this->set_pumps_speed(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
+  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_inverter_connection_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        38, this->set_inverter_connection_status(static_cast<int>(i)), deterministic, target);
+        40, this->set_inverter_connection_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
+  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inverter_connection_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        39, this->inverter_connection_status(static_cast<int>(i)), deterministic, target);
+        41, this->inverter_connection_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.LV_ERRORS LV_ERRORS = 40;
+  // repeated .primary.LV_ERRORS LV_ERRORS = 42;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->lv_errors_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        40, this->lv_errors(static_cast<int>(i)), deterministic, target);
+        42, this->lv_errors(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->shutdown_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        41, this->shutdown_status(static_cast<int>(i)), deterministic, target);
+        43, this->shutdown_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.MARKER MARKER = 42;
+  // repeated .primary.MARKER MARKER = 44;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->marker_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        42, this->marker(static_cast<int>(i)), deterministic, target);
+        44, this->marker(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cells_voltage_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        43, this->hv_cells_voltage(static_cast<int>(i)), deterministic, target);
+        45, this->hv_cells_voltage(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cells_temp_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        44, this->hv_cells_temp(static_cast<int>(i)), deterministic, target);
+        46, this->hv_cells_temp(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->hv_cell_balancing_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        45, this->hv_cell_balancing_status(static_cast<int>(i)), deterministic, target);
+        47, this->hv_cell_balancing_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->set_cell_balancing_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        46, this->set_cell_balancing_status(static_cast<int>(i)), deterministic, target);
+        48, this->set_cell_balancing_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->handcart_status_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        47, this->handcart_status(static_cast<int>(i)), deterministic, target);
+        49, this->handcart_status(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.SPEED SPEED = 48;
+  // repeated .primary.SPEED SPEED = 50;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->speed_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        48, this->speed(static_cast<int>(i)), deterministic, target);
+        50, this->speed(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_l_request_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        49, this->inv_l_request(static_cast<int>(i)), deterministic, target);
+        51, this->inv_l_request(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_r_request_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        50, this->inv_r_request(static_cast<int>(i)), deterministic, target);
+        52, this->inv_r_request(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_l_response_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        51, this->inv_l_response(static_cast<int>(i)), deterministic, target);
+        53, this->inv_l_response(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->inv_r_response_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        52, this->inv_r_response(static_cast<int>(i)), deterministic, target);
+        54, this->inv_r_response(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_0_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        53, this->flash_cellboard_0_tx(static_cast<int>(i)), deterministic, target);
+        55, this->flash_cellboard_0_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_0_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        54, this->flash_cellboard_0_rx(static_cast<int>(i)), deterministic, target);
+        56, this->flash_cellboard_0_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_1_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        55, this->flash_cellboard_1_tx(static_cast<int>(i)), deterministic, target);
+        57, this->flash_cellboard_1_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_1_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        56, this->flash_cellboard_1_rx(static_cast<int>(i)), deterministic, target);
+        58, this->flash_cellboard_1_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_2_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        57, this->flash_cellboard_2_tx(static_cast<int>(i)), deterministic, target);
+        59, this->flash_cellboard_2_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_2_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        58, this->flash_cellboard_2_rx(static_cast<int>(i)), deterministic, target);
+        60, this->flash_cellboard_2_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_3_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        59, this->flash_cellboard_3_tx(static_cast<int>(i)), deterministic, target);
+        61, this->flash_cellboard_3_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_3_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        60, this->flash_cellboard_3_rx(static_cast<int>(i)), deterministic, target);
+        62, this->flash_cellboard_3_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_4_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        61, this->flash_cellboard_4_tx(static_cast<int>(i)), deterministic, target);
+        63, this->flash_cellboard_4_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_4_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        62, this->flash_cellboard_4_rx(static_cast<int>(i)), deterministic, target);
+        64, this->flash_cellboard_4_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_5_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        63, this->flash_cellboard_5_tx(static_cast<int>(i)), deterministic, target);
+        65, this->flash_cellboard_5_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_cellboard_5_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        64, this->flash_cellboard_5_rx(static_cast<int>(i)), deterministic, target);
+        66, this->flash_cellboard_5_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
+  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_hv_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        65, this->flash_bms_hv_tx(static_cast<int>(i)), deterministic, target);
+        67, this->flash_bms_hv_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
+  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_hv_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        66, this->flash_bms_hv_rx(static_cast<int>(i)), deterministic, target);
+        68, this->flash_bms_hv_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
+  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_lv_tx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        67, this->flash_bms_lv_tx(static_cast<int>(i)), deterministic, target);
+        69, this->flash_bms_lv_tx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
+  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flash_bms_lv_rx_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        68, this->flash_bms_lv_rx(static_cast<int>(i)), deterministic, target);
+        70, this->flash_bms_lv_rx(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_nlg5_ctl_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        69, this->brusa_nlg5_ctl(static_cast<int>(i)), deterministic, target);
+        71, this->brusa_nlg5_ctl(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 70;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 72;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_st_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        70, this->brusa_st(static_cast<int>(i)), deterministic, target);
+        72, this->brusa_st(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_act_i_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        71, this->brusa_act_i(static_cast<int>(i)), deterministic, target);
+        73, this->brusa_act_i(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_act_ii_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        72, this->brusa_act_ii(static_cast<int>(i)), deterministic, target);
+        74, this->brusa_act_ii(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_temp_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        73, this->brusa_temp(static_cast<int>(i)), deterministic, target);
+        75, this->brusa_temp(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->brusa_err_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        74, this->brusa_err(static_cast<int>(i)), deterministic, target);
+        76, this->brusa_err(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->bms_hv_chimera_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        75, this->bms_hv_chimera(static_cast<int>(i)), deterministic, target);
+        77, this->bms_hv_chimera(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->ecu_chimera_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        76, this->ecu_chimera(static_cast<int>(i)), deterministic, target);
+        78, this->ecu_chimera(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -27236,7 +27937,29 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+  // repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
+  {
+    unsigned int count = static_cast<unsigned int>(this->ambient_temperature_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->ambient_temperature(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+  {
+    unsigned int count = static_cast<unsigned int>(this->data_logger_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->data_logger(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
   {
     unsigned int count = static_cast<unsigned int>(this->set_tlm_status_size());
     total_size += 1UL * count;
@@ -27247,7 +27970,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.TLM_STATUS TLM_STATUS = 10;
+  // repeated .primary.TLM_STATUS TLM_STATUS = 12;
   {
     unsigned int count = static_cast<unsigned int>(this->tlm_status_size());
     total_size += 1UL * count;
@@ -27258,7 +27981,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
+  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
   {
     unsigned int count = static_cast<unsigned int>(this->steer_system_status_size());
     total_size += 1UL * count;
@@ -27269,7 +27992,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
+  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_voltage_size());
     total_size += 1UL * count;
@@ -27280,7 +28003,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CURRENT HV_CURRENT = 13;
+  // repeated .primary.HV_CURRENT HV_CURRENT = 15;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_current_size());
     total_size += 1UL * count;
@@ -27291,10 +28014,10 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_TEMP HV_TEMP = 14;
+  // repeated .primary.HV_TEMP HV_TEMP = 16;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_temp_size());
-    total_size += 1UL * count;
+    total_size += 2UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -27302,10 +28025,10 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_ERRORS HV_ERRORS = 15;
+  // repeated .primary.HV_ERRORS HV_ERRORS = 17;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_errors_size());
-    total_size += 1UL * count;
+    total_size += 2UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -27313,7 +28036,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_can_forward_size());
     total_size += 2UL * count;
@@ -27324,7 +28047,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
+  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_fans_override_size());
     total_size += 2UL * count;
@@ -27335,7 +28058,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_can_forward_status_size());
     total_size += 2UL * count;
@@ -27346,7 +28069,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
+  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_fans_override_status_size());
     total_size += 2UL * count;
@@ -27357,7 +28080,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_feedbacks_status_size());
     total_size += 2UL * count;
@@ -27368,7 +28091,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
+  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_imd_status_size());
     total_size += 2UL * count;
@@ -27379,7 +28102,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.TS_STATUS TS_STATUS = 22;
+  // repeated .primary.TS_STATUS TS_STATUS = 24;
   {
     unsigned int count = static_cast<unsigned int>(this->ts_status_size());
     total_size += 2UL * count;
@@ -27390,7 +28113,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
   {
     unsigned int count = static_cast<unsigned int>(this->set_ts_status_das_size());
     total_size += 2UL * count;
@@ -27401,7 +28124,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
   {
     unsigned int count = static_cast<unsigned int>(this->set_ts_status_handcart_size());
     total_size += 2UL * count;
@@ -27412,7 +28135,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 25;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 27;
   {
     unsigned int count = static_cast<unsigned int>(this->steer_status_size());
     total_size += 2UL * count;
@@ -27423,7 +28146,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
   {
     unsigned int count = static_cast<unsigned int>(this->set_car_status_size());
     total_size += 2UL * count;
@@ -27434,7 +28157,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
   {
     unsigned int count = static_cast<unsigned int>(this->set_pedals_range_size());
     total_size += 2UL * count;
@@ -27445,7 +28168,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
   {
     unsigned int count = static_cast<unsigned int>(this->set_steering_angle_range_size());
     total_size += 2UL * count;
@@ -27456,7 +28179,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 29;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 31;
   {
     unsigned int count = static_cast<unsigned int>(this->car_status_size());
     total_size += 2UL * count;
@@ -27467,7 +28190,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
   {
     unsigned int count = static_cast<unsigned int>(this->das_errors_size());
     total_size += 2UL * count;
@@ -27478,7 +28201,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 31;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 33;
   {
     unsigned int count = static_cast<unsigned int>(this->lv_current_size());
     total_size += 2UL * count;
@@ -27489,7 +28212,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
   {
     unsigned int count = static_cast<unsigned int>(this->lv_voltage_size());
     total_size += 2UL * count;
@@ -27500,7 +28223,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
   {
     unsigned int count = static_cast<unsigned int>(this->lv_total_voltage_size());
     total_size += 2UL * count;
@@ -27511,7 +28234,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
   {
     unsigned int count = static_cast<unsigned int>(this->lv_temperature_size());
     total_size += 2UL * count;
@@ -27522,7 +28245,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
   {
     unsigned int count = static_cast<unsigned int>(this->cooling_status_size());
     total_size += 2UL * count;
@@ -27533,7 +28256,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
   {
     unsigned int count = static_cast<unsigned int>(this->set_radiator_speed_size());
     total_size += 2UL * count;
@@ -27544,7 +28267,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
+  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
   {
     unsigned int count = static_cast<unsigned int>(this->set_pumps_speed_size());
     total_size += 2UL * count;
@@ -27555,7 +28278,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
+  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
   {
     unsigned int count = static_cast<unsigned int>(this->set_inverter_connection_status_size());
     total_size += 2UL * count;
@@ -27566,7 +28289,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
+  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
   {
     unsigned int count = static_cast<unsigned int>(this->inverter_connection_status_size());
     total_size += 2UL * count;
@@ -27577,7 +28300,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.LV_ERRORS LV_ERRORS = 40;
+  // repeated .primary.LV_ERRORS LV_ERRORS = 42;
   {
     unsigned int count = static_cast<unsigned int>(this->lv_errors_size());
     total_size += 2UL * count;
@@ -27588,7 +28311,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
   {
     unsigned int count = static_cast<unsigned int>(this->shutdown_status_size());
     total_size += 2UL * count;
@@ -27599,7 +28322,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.MARKER MARKER = 42;
+  // repeated .primary.MARKER MARKER = 44;
   {
     unsigned int count = static_cast<unsigned int>(this->marker_size());
     total_size += 2UL * count;
@@ -27610,7 +28333,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_cells_voltage_size());
     total_size += 2UL * count;
@@ -27621,7 +28344,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_cells_temp_size());
     total_size += 2UL * count;
@@ -27632,7 +28355,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
   {
     unsigned int count = static_cast<unsigned int>(this->hv_cell_balancing_status_size());
     total_size += 2UL * count;
@@ -27643,7 +28366,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
   {
     unsigned int count = static_cast<unsigned int>(this->set_cell_balancing_status_size());
     total_size += 2UL * count;
@@ -27654,7 +28377,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
   {
     unsigned int count = static_cast<unsigned int>(this->handcart_status_size());
     total_size += 2UL * count;
@@ -27665,7 +28388,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.SPEED SPEED = 48;
+  // repeated .primary.SPEED SPEED = 50;
   {
     unsigned int count = static_cast<unsigned int>(this->speed_size());
     total_size += 2UL * count;
@@ -27676,7 +28399,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
   {
     unsigned int count = static_cast<unsigned int>(this->inv_l_request_size());
     total_size += 2UL * count;
@@ -27687,7 +28410,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
   {
     unsigned int count = static_cast<unsigned int>(this->inv_r_request_size());
     total_size += 2UL * count;
@@ -27698,7 +28421,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
   {
     unsigned int count = static_cast<unsigned int>(this->inv_l_response_size());
     total_size += 2UL * count;
@@ -27709,7 +28432,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
   {
     unsigned int count = static_cast<unsigned int>(this->inv_r_response_size());
     total_size += 2UL * count;
@@ -27720,7 +28443,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_0_tx_size());
     total_size += 2UL * count;
@@ -27731,7 +28454,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_0_rx_size());
     total_size += 2UL * count;
@@ -27742,7 +28465,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_1_tx_size());
     total_size += 2UL * count;
@@ -27753,7 +28476,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_1_rx_size());
     total_size += 2UL * count;
@@ -27764,7 +28487,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_2_tx_size());
     total_size += 2UL * count;
@@ -27775,7 +28498,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_2_rx_size());
     total_size += 2UL * count;
@@ -27786,7 +28509,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_3_tx_size());
     total_size += 2UL * count;
@@ -27797,7 +28520,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_3_rx_size());
     total_size += 2UL * count;
@@ -27808,7 +28531,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_4_tx_size());
     total_size += 2UL * count;
@@ -27819,7 +28542,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_4_rx_size());
     total_size += 2UL * count;
@@ -27830,7 +28553,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_5_tx_size());
     total_size += 2UL * count;
@@ -27841,7 +28564,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_cellboard_5_rx_size());
     total_size += 2UL * count;
@@ -27852,7 +28575,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
+  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_bms_hv_tx_size());
     total_size += 2UL * count;
@@ -27863,7 +28586,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
+  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_bms_hv_rx_size());
     total_size += 2UL * count;
@@ -27874,7 +28597,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
+  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_bms_lv_tx_size());
     total_size += 2UL * count;
@@ -27885,7 +28608,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
+  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
   {
     unsigned int count = static_cast<unsigned int>(this->flash_bms_lv_rx_size());
     total_size += 2UL * count;
@@ -27896,7 +28619,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_nlg5_ctl_size());
     total_size += 2UL * count;
@@ -27907,7 +28630,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 70;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 72;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_st_size());
     total_size += 2UL * count;
@@ -27918,7 +28641,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_act_i_size());
     total_size += 2UL * count;
@@ -27929,7 +28652,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_act_ii_size());
     total_size += 2UL * count;
@@ -27940,7 +28663,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_temp_size());
     total_size += 2UL * count;
@@ -27951,7 +28674,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
   {
     unsigned int count = static_cast<unsigned int>(this->brusa_err_size());
     total_size += 2UL * count;
@@ -27962,7 +28685,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
   {
     unsigned int count = static_cast<unsigned int>(this->bms_hv_chimera_size());
     total_size += 2UL * count;
@@ -27973,7 +28696,7 @@ size_t Pack::ByteSizeLong() const {
     }
   }
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
   {
     unsigned int count = static_cast<unsigned int>(this->ecu_chimera_size());
     total_size += 2UL * count;
@@ -28019,6 +28742,8 @@ void Pack::MergeFrom(const Pack& from) {
   lv_version_.MergeFrom(from.lv_version_);
   tlm_version_.MergeFrom(from.tlm_version_);
   timestamp_.MergeFrom(from.timestamp_);
+  ambient_temperature_.MergeFrom(from.ambient_temperature_);
+  data_logger_.MergeFrom(from.data_logger_);
   set_tlm_status_.MergeFrom(from.set_tlm_status_);
   tlm_status_.MergeFrom(from.tlm_status_);
   steer_system_status_.MergeFrom(from.steer_system_status_);
@@ -28121,6 +28846,8 @@ void Pack::InternalSwap(Pack* other) {
   CastToBase(&lv_version_)->InternalSwap(CastToBase(&other->lv_version_));
   CastToBase(&tlm_version_)->InternalSwap(CastToBase(&other->tlm_version_));
   CastToBase(&timestamp_)->InternalSwap(CastToBase(&other->timestamp_));
+  CastToBase(&ambient_temperature_)->InternalSwap(CastToBase(&other->ambient_temperature_));
+  CastToBase(&data_logger_)->InternalSwap(CastToBase(&other->data_logger_));
   CastToBase(&set_tlm_status_)->InternalSwap(CastToBase(&other->set_tlm_status_));
   CastToBase(&tlm_status_)->InternalSwap(CastToBase(&other->tlm_status_));
   CastToBase(&steer_system_status_)->InternalSwap(CastToBase(&other->steer_system_status_));
@@ -28225,6 +28952,12 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::primary::TLM_VERSION* Arena::Cre
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::primary::TIMESTAMP* Arena::CreateMaybeMessage< ::primary::TIMESTAMP >(Arena* arena) {
   return Arena::CreateInternal< ::primary::TIMESTAMP >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::primary::AMBIENT_TEMPERATURE* Arena::CreateMaybeMessage< ::primary::AMBIENT_TEMPERATURE >(Arena* arena) {
+  return Arena::CreateInternal< ::primary::AMBIENT_TEMPERATURE >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::primary::DATA_LOGGER* Arena::CreateMaybeMessage< ::primary::DATA_LOGGER >(Arena* arena) {
+  return Arena::CreateInternal< ::primary::DATA_LOGGER >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::primary::SET_TLM_STATUS* Arena::CreateMaybeMessage< ::primary::SET_TLM_STATUS >(Arena* arena) {
   return Arena::CreateInternal< ::primary::SET_TLM_STATUS >(arena);

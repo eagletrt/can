@@ -39,7 +39,7 @@ namespace protobuf_primary_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[77];
+  static const ::google::protobuf::internal::ParseTable schema[79];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -47,6 +47,9 @@ struct TableStruct {
 void AddDescriptors();
 }  // namespace protobuf_primary_2eproto
 namespace primary {
+class AMBIENT_TEMPERATURE;
+class AMBIENT_TEMPERATUREDefaultTypeInternal;
+extern AMBIENT_TEMPERATUREDefaultTypeInternal _AMBIENT_TEMPERATURE_default_instance_;
 class BMS_HV_CHIMERA;
 class BMS_HV_CHIMERADefaultTypeInternal;
 extern BMS_HV_CHIMERADefaultTypeInternal _BMS_HV_CHIMERA_default_instance_;
@@ -86,6 +89,9 @@ extern DAS_ERRORSDefaultTypeInternal _DAS_ERRORS_default_instance_;
 class DAS_VERSION;
 class DAS_VERSIONDefaultTypeInternal;
 extern DAS_VERSIONDefaultTypeInternal _DAS_VERSION_default_instance_;
+class DATA_LOGGER;
+class DATA_LOGGERDefaultTypeInternal;
+extern DATA_LOGGERDefaultTypeInternal _DATA_LOGGER_default_instance_;
 class ECU_CHIMERA;
 class ECU_CHIMERADefaultTypeInternal;
 extern ECU_CHIMERADefaultTypeInternal _ECU_CHIMERA_default_instance_;
@@ -281,6 +287,7 @@ extern TS_STATUSDefaultTypeInternal _TS_STATUS_default_instance_;
 }  // namespace primary
 namespace google {
 namespace protobuf {
+template<> ::primary::AMBIENT_TEMPERATURE* Arena::CreateMaybeMessage<::primary::AMBIENT_TEMPERATURE>(Arena*);
 template<> ::primary::BMS_HV_CHIMERA* Arena::CreateMaybeMessage<::primary::BMS_HV_CHIMERA>(Arena*);
 template<> ::primary::BMS_HV_JMP_TO_BLT* Arena::CreateMaybeMessage<::primary::BMS_HV_JMP_TO_BLT>(Arena*);
 template<> ::primary::BMS_LV_JMP_TO_BLT* Arena::CreateMaybeMessage<::primary::BMS_LV_JMP_TO_BLT>(Arena*);
@@ -294,6 +301,7 @@ template<> ::primary::CAR_STATUS* Arena::CreateMaybeMessage<::primary::CAR_STATU
 template<> ::primary::COOLING_STATUS* Arena::CreateMaybeMessage<::primary::COOLING_STATUS>(Arena*);
 template<> ::primary::DAS_ERRORS* Arena::CreateMaybeMessage<::primary::DAS_ERRORS>(Arena*);
 template<> ::primary::DAS_VERSION* Arena::CreateMaybeMessage<::primary::DAS_VERSION>(Arena*);
+template<> ::primary::DATA_LOGGER* Arena::CreateMaybeMessage<::primary::DATA_LOGGER>(Arena*);
 template<> ::primary::ECU_CHIMERA* Arena::CreateMaybeMessage<::primary::ECU_CHIMERA>(Arena*);
 template<> ::primary::FLASH_BMS_HV_RX* Arena::CreateMaybeMessage<::primary::FLASH_BMS_HV_RX>(Arena*);
 template<> ::primary::FLASH_BMS_HV_TX* Arena::CreateMaybeMessage<::primary::FLASH_BMS_HV_TX>(Arena*);
@@ -1516,6 +1524,233 @@ class TIMESTAMP : public ::google::protobuf::Message /* @@protoc_insertion_point
 };
 // -------------------------------------------------------------------
 
+class AMBIENT_TEMPERATURE : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:primary.AMBIENT_TEMPERATURE) */ {
+ public:
+  AMBIENT_TEMPERATURE();
+  virtual ~AMBIENT_TEMPERATURE();
+
+  AMBIENT_TEMPERATURE(const AMBIENT_TEMPERATURE& from);
+
+  inline AMBIENT_TEMPERATURE& operator=(const AMBIENT_TEMPERATURE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AMBIENT_TEMPERATURE(AMBIENT_TEMPERATURE&& from) noexcept
+    : AMBIENT_TEMPERATURE() {
+    *this = ::std::move(from);
+  }
+
+  inline AMBIENT_TEMPERATURE& operator=(AMBIENT_TEMPERATURE&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AMBIENT_TEMPERATURE& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AMBIENT_TEMPERATURE* internal_default_instance() {
+    return reinterpret_cast<const AMBIENT_TEMPERATURE*>(
+               &_AMBIENT_TEMPERATURE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(AMBIENT_TEMPERATURE* other);
+  friend void swap(AMBIENT_TEMPERATURE& a, AMBIENT_TEMPERATURE& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AMBIENT_TEMPERATURE* New() const final {
+    return CreateMaybeMessage<AMBIENT_TEMPERATURE>(NULL);
+  }
+
+  AMBIENT_TEMPERATURE* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AMBIENT_TEMPERATURE>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AMBIENT_TEMPERATURE& from);
+  void MergeFrom(const AMBIENT_TEMPERATURE& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AMBIENT_TEMPERATURE* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // uint64 _inner_timestamp = 2;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 2;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
+
+  // sint32 temp = 1;
+  void clear_temp();
+  static const int kTempFieldNumber = 1;
+  ::google::protobuf::int32 temp() const;
+  void set_temp(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:primary.AMBIENT_TEMPERATURE)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint64 _inner_timestamp_;
+  ::google::protobuf::int32 temp_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_primary_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class DATA_LOGGER : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:primary.DATA_LOGGER) */ {
+ public:
+  DATA_LOGGER();
+  virtual ~DATA_LOGGER();
+
+  DATA_LOGGER(const DATA_LOGGER& from);
+
+  inline DATA_LOGGER& operator=(const DATA_LOGGER& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DATA_LOGGER(DATA_LOGGER&& from) noexcept
+    : DATA_LOGGER() {
+    *this = ::std::move(from);
+  }
+
+  inline DATA_LOGGER& operator=(DATA_LOGGER&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DATA_LOGGER& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DATA_LOGGER* internal_default_instance() {
+    return reinterpret_cast<const DATA_LOGGER*>(
+               &_DATA_LOGGER_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(DATA_LOGGER* other);
+  friend void swap(DATA_LOGGER& a, DATA_LOGGER& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DATA_LOGGER* New() const final {
+    return CreateMaybeMessage<DATA_LOGGER>(NULL);
+  }
+
+  DATA_LOGGER* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DATA_LOGGER>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DATA_LOGGER& from);
+  void MergeFrom(const DATA_LOGGER& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DATA_LOGGER* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // uint32 placeholder1 = 1;
+  void clear_placeholder1();
+  static const int kPlaceholder1FieldNumber = 1;
+  ::google::protobuf::uint32 placeholder1() const;
+  void set_placeholder1(::google::protobuf::uint32 value);
+
+  // uint32 placeholder2 = 2;
+  void clear_placeholder2();
+  static const int kPlaceholder2FieldNumber = 2;
+  ::google::protobuf::uint32 placeholder2() const;
+  void set_placeholder2(::google::protobuf::uint32 value);
+
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 3;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:primary.DATA_LOGGER)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint32 placeholder1_;
+  ::google::protobuf::uint32 placeholder2_;
+  ::google::protobuf::uint64 _inner_timestamp_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_primary_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class SET_TLM_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:primary.SET_TLM_STATUS) */ {
  public:
   SET_TLM_STATUS();
@@ -1551,7 +1786,7 @@ class SET_TLM_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
                &_SET_TLM_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(SET_TLM_STATUS* other);
   friend void swap(SET_TLM_STATUS& a, SET_TLM_STATUS& b) {
@@ -1661,7 +1896,7 @@ class TLM_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_TLM_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(TLM_STATUS* other);
   friend void swap(TLM_STATUS& a, TLM_STATUS& b) {
@@ -1771,7 +2006,7 @@ class STEER_SYSTEM_STATUS : public ::google::protobuf::Message /* @@protoc_inser
                &_STEER_SYSTEM_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(STEER_SYSTEM_STATUS* other);
   friend void swap(STEER_SYSTEM_STATUS& a, STEER_SYSTEM_STATUS& b) {
@@ -1881,7 +2116,7 @@ class HV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_HV_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(HV_VOLTAGE* other);
   friend void swap(HV_VOLTAGE& a, HV_VOLTAGE& b) {
@@ -2012,7 +2247,7 @@ class HV_CURRENT : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_HV_CURRENT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(HV_CURRENT* other);
   friend void swap(HV_CURRENT& a, HV_CURRENT& b) {
@@ -2143,7 +2378,7 @@ class HV_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_HV_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(HV_TEMP* other);
   friend void swap(HV_TEMP& a, HV_TEMP& b) {
@@ -2267,7 +2502,7 @@ class HV_ERRORS : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_HV_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(HV_ERRORS* other);
   friend void swap(HV_ERRORS& a, HV_ERRORS& b) {
@@ -2384,7 +2619,7 @@ class HV_CAN_FORWARD : public ::google::protobuf::Message /* @@protoc_insertion_
                &_HV_CAN_FORWARD_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(HV_CAN_FORWARD* other);
   friend void swap(HV_CAN_FORWARD& a, HV_CAN_FORWARD& b) {
@@ -2494,7 +2729,7 @@ class HV_FANS_OVERRIDE : public ::google::protobuf::Message /* @@protoc_insertio
                &_HV_FANS_OVERRIDE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(HV_FANS_OVERRIDE* other);
   friend void swap(HV_FANS_OVERRIDE& a, HV_FANS_OVERRIDE& b) {
@@ -2611,7 +2846,7 @@ class HV_CAN_FORWARD_STATUS : public ::google::protobuf::Message /* @@protoc_ins
                &_HV_CAN_FORWARD_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(HV_CAN_FORWARD_STATUS* other);
   friend void swap(HV_CAN_FORWARD_STATUS& a, HV_CAN_FORWARD_STATUS& b) {
@@ -2721,7 +2956,7 @@ class HV_FANS_OVERRIDE_STATUS : public ::google::protobuf::Message /* @@protoc_i
                &_HV_FANS_OVERRIDE_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(HV_FANS_OVERRIDE_STATUS* other);
   friend void swap(HV_FANS_OVERRIDE_STATUS& a, HV_FANS_OVERRIDE_STATUS& b) {
@@ -2838,7 +3073,7 @@ class HV_FEEDBACKS_STATUS : public ::google::protobuf::Message /* @@protoc_inser
                &_HV_FEEDBACKS_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(HV_FEEDBACKS_STATUS* other);
   friend void swap(HV_FEEDBACKS_STATUS& a, HV_FEEDBACKS_STATUS& b) {
@@ -2955,7 +3190,7 @@ class HV_IMD_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_HV_IMD_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(HV_IMD_STATUS* other);
   friend void swap(HV_IMD_STATUS& a, HV_IMD_STATUS& b) {
@@ -3079,7 +3314,7 @@ class TS_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_TS_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   void Swap(TS_STATUS* other);
   friend void swap(TS_STATUS& a, TS_STATUS& b) {
@@ -3189,7 +3424,7 @@ class SET_TS_STATUS_DAS : public ::google::protobuf::Message /* @@protoc_inserti
                &_SET_TS_STATUS_DAS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   void Swap(SET_TS_STATUS_DAS* other);
   friend void swap(SET_TS_STATUS_DAS& a, SET_TS_STATUS_DAS& b) {
@@ -3299,7 +3534,7 @@ class SET_TS_STATUS_HANDCART : public ::google::protobuf::Message /* @@protoc_in
                &_SET_TS_STATUS_HANDCART_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   void Swap(SET_TS_STATUS_HANDCART* other);
   friend void swap(SET_TS_STATUS_HANDCART& a, SET_TS_STATUS_HANDCART& b) {
@@ -3409,7 +3644,7 @@ class STEER_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_STEER_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   void Swap(STEER_STATUS* other);
   friend void swap(STEER_STATUS& a, STEER_STATUS& b) {
@@ -3526,7 +3761,7 @@ class SET_CAR_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
                &_SET_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   void Swap(SET_CAR_STATUS* other);
   friend void swap(SET_CAR_STATUS& a, SET_CAR_STATUS& b) {
@@ -3636,7 +3871,7 @@ class SET_PEDALS_RANGE : public ::google::protobuf::Message /* @@protoc_insertio
                &_SET_PEDALS_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   void Swap(SET_PEDALS_RANGE* other);
   friend void swap(SET_PEDALS_RANGE& a, SET_PEDALS_RANGE& b) {
@@ -3753,7 +3988,7 @@ class SET_STEERING_ANGLE_RANGE : public ::google::protobuf::Message /* @@protoc_
                &_SET_STEERING_ANGLE_RANGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   void Swap(SET_STEERING_ANGLE_RANGE* other);
   friend void swap(SET_STEERING_ANGLE_RANGE& a, SET_STEERING_ANGLE_RANGE& b) {
@@ -3863,7 +4098,7 @@ class CAR_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_CAR_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   void Swap(CAR_STATUS* other);
   friend void swap(CAR_STATUS& a, CAR_STATUS& b) {
@@ -3987,7 +4222,7 @@ class DAS_ERRORS : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_DAS_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   void Swap(DAS_ERRORS* other);
   friend void swap(DAS_ERRORS& a, DAS_ERRORS& b) {
@@ -4097,7 +4332,7 @@ class LV_CURRENT : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_LV_CURRENT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   void Swap(LV_CURRENT* other);
   friend void swap(LV_CURRENT& a, LV_CURRENT& b) {
@@ -4207,7 +4442,7 @@ class LV_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_LV_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   void Swap(LV_VOLTAGE* other);
   friend void swap(LV_VOLTAGE& a, LV_VOLTAGE& b) {
@@ -4338,7 +4573,7 @@ class LV_TOTAL_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertio
                &_LV_TOTAL_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   void Swap(LV_TOTAL_VOLTAGE* other);
   friend void swap(LV_TOTAL_VOLTAGE& a, LV_TOTAL_VOLTAGE& b) {
@@ -4448,7 +4683,7 @@ class LV_TEMPERATURE : public ::google::protobuf::Message /* @@protoc_insertion_
                &_LV_TEMPERATURE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   void Swap(LV_TEMPERATURE* other);
   friend void swap(LV_TEMPERATURE& a, LV_TEMPERATURE& b) {
@@ -4579,7 +4814,7 @@ class COOLING_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_
                &_COOLING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   void Swap(COOLING_STATUS* other);
   friend void swap(COOLING_STATUS& a, COOLING_STATUS& b) {
@@ -4696,7 +4931,7 @@ class SET_RADIATOR_SPEED : public ::google::protobuf::Message /* @@protoc_insert
                &_SET_RADIATOR_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   void Swap(SET_RADIATOR_SPEED* other);
   friend void swap(SET_RADIATOR_SPEED& a, SET_RADIATOR_SPEED& b) {
@@ -4806,7 +5041,7 @@ class SET_PUMPS_SPEED : public ::google::protobuf::Message /* @@protoc_insertion
                &_SET_PUMPS_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   void Swap(SET_PUMPS_SPEED* other);
   friend void swap(SET_PUMPS_SPEED& a, SET_PUMPS_SPEED& b) {
@@ -4916,7 +5151,7 @@ class SET_INVERTER_CONNECTION_STATUS : public ::google::protobuf::Message /* @@p
                &_SET_INVERTER_CONNECTION_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   void Swap(SET_INVERTER_CONNECTION_STATUS* other);
   friend void swap(SET_INVERTER_CONNECTION_STATUS& a, SET_INVERTER_CONNECTION_STATUS& b) {
@@ -5026,7 +5261,7 @@ class INVERTER_CONNECTION_STATUS : public ::google::protobuf::Message /* @@proto
                &_INVERTER_CONNECTION_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   void Swap(INVERTER_CONNECTION_STATUS* other);
   friend void swap(INVERTER_CONNECTION_STATUS& a, INVERTER_CONNECTION_STATUS& b) {
@@ -5136,7 +5371,7 @@ class LV_ERRORS : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LV_ERRORS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   void Swap(LV_ERRORS* other);
   friend void swap(LV_ERRORS& a, LV_ERRORS& b) {
@@ -5253,7 +5488,7 @@ class SHUTDOWN_STATUS : public ::google::protobuf::Message /* @@protoc_insertion
                &_SHUTDOWN_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   void Swap(SHUTDOWN_STATUS* other);
   friend void swap(SHUTDOWN_STATUS& a, SHUTDOWN_STATUS& b) {
@@ -5370,7 +5605,7 @@ class MARKER : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_MARKER_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   void Swap(MARKER* other);
   friend void swap(MARKER& a, MARKER& b) {
@@ -5473,7 +5708,7 @@ class HV_CELLS_VOLTAGE : public ::google::protobuf::Message /* @@protoc_insertio
                &_HV_CELLS_VOLTAGE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   void Swap(HV_CELLS_VOLTAGE* other);
   friend void swap(HV_CELLS_VOLTAGE& a, HV_CELLS_VOLTAGE& b) {
@@ -5604,7 +5839,7 @@ class HV_CELLS_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_HV_CELLS_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   void Swap(HV_CELLS_TEMP* other);
   friend void swap(HV_CELLS_TEMP& a, HV_CELLS_TEMP& b) {
@@ -5756,7 +5991,7 @@ class HV_CELL_BALANCING_STATUS : public ::google::protobuf::Message /* @@protoc_
                &_HV_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   void Swap(HV_CELL_BALANCING_STATUS* other);
   friend void swap(HV_CELL_BALANCING_STATUS& a, HV_CELL_BALANCING_STATUS& b) {
@@ -5866,7 +6101,7 @@ class SET_CELL_BALANCING_STATUS : public ::google::protobuf::Message /* @@protoc
                &_SET_CELL_BALANCING_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   void Swap(SET_CELL_BALANCING_STATUS* other);
   friend void swap(SET_CELL_BALANCING_STATUS& a, SET_CELL_BALANCING_STATUS& b) {
@@ -5976,7 +6211,7 @@ class HANDCART_STATUS : public ::google::protobuf::Message /* @@protoc_insertion
                &_HANDCART_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   void Swap(HANDCART_STATUS* other);
   friend void swap(HANDCART_STATUS& a, HANDCART_STATUS& b) {
@@ -6086,7 +6321,7 @@ class SPEED : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_SPEED_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   void Swap(SPEED* other);
   friend void swap(SPEED& a, SPEED& b) {
@@ -6217,7 +6452,7 @@ class INV_L_REQUEST : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_INV_L_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   void Swap(INV_L_REQUEST* other);
   friend void swap(INV_L_REQUEST& a, INV_L_REQUEST& b) {
@@ -6376,7 +6611,7 @@ class INV_R_REQUEST : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_INV_R_REQUEST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   void Swap(INV_R_REQUEST* other);
   friend void swap(INV_R_REQUEST& a, INV_R_REQUEST& b) {
@@ -6535,7 +6770,7 @@ class INV_L_RESPONSE : public ::google::protobuf::Message /* @@protoc_insertion_
                &_INV_L_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   void Swap(INV_L_RESPONSE* other);
   friend void swap(INV_L_RESPONSE& a, INV_L_RESPONSE& b) {
@@ -6694,7 +6929,7 @@ class INV_R_RESPONSE : public ::google::protobuf::Message /* @@protoc_insertion_
                &_INV_R_RESPONSE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   void Swap(INV_R_RESPONSE* other);
   friend void swap(INV_R_RESPONSE& a, INV_R_RESPONSE& b) {
@@ -6853,7 +7088,7 @@ class FLASH_CELLBOARD_0_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_0_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   void Swap(FLASH_CELLBOARD_0_TX* other);
   friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
@@ -6956,7 +7191,7 @@ class FLASH_CELLBOARD_0_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_0_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   void Swap(FLASH_CELLBOARD_0_RX* other);
   friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
@@ -7059,7 +7294,7 @@ class FLASH_CELLBOARD_1_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_1_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   void Swap(FLASH_CELLBOARD_1_TX* other);
   friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
@@ -7162,7 +7397,7 @@ class FLASH_CELLBOARD_1_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_1_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   void Swap(FLASH_CELLBOARD_1_RX* other);
   friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
@@ -7265,7 +7500,7 @@ class FLASH_CELLBOARD_2_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_2_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   void Swap(FLASH_CELLBOARD_2_TX* other);
   friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
@@ -7368,7 +7603,7 @@ class FLASH_CELLBOARD_2_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_2_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   void Swap(FLASH_CELLBOARD_2_RX* other);
   friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
@@ -7471,7 +7706,7 @@ class FLASH_CELLBOARD_3_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_3_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   void Swap(FLASH_CELLBOARD_3_TX* other);
   friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
@@ -7574,7 +7809,7 @@ class FLASH_CELLBOARD_3_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_3_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   void Swap(FLASH_CELLBOARD_3_RX* other);
   friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
@@ -7677,7 +7912,7 @@ class FLASH_CELLBOARD_4_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_4_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   void Swap(FLASH_CELLBOARD_4_TX* other);
   friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
@@ -7780,7 +8015,7 @@ class FLASH_CELLBOARD_4_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_4_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   void Swap(FLASH_CELLBOARD_4_RX* other);
   friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
@@ -7883,7 +8118,7 @@ class FLASH_CELLBOARD_5_TX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_5_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   void Swap(FLASH_CELLBOARD_5_TX* other);
   friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
@@ -7986,7 +8221,7 @@ class FLASH_CELLBOARD_5_RX : public ::google::protobuf::Message /* @@protoc_inse
                &_FLASH_CELLBOARD_5_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   void Swap(FLASH_CELLBOARD_5_RX* other);
   friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
@@ -8089,7 +8324,7 @@ class FLASH_BMS_HV_TX : public ::google::protobuf::Message /* @@protoc_insertion
                &_FLASH_BMS_HV_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   void Swap(FLASH_BMS_HV_TX* other);
   friend void swap(FLASH_BMS_HV_TX& a, FLASH_BMS_HV_TX& b) {
@@ -8192,7 +8427,7 @@ class FLASH_BMS_HV_RX : public ::google::protobuf::Message /* @@protoc_insertion
                &_FLASH_BMS_HV_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   void Swap(FLASH_BMS_HV_RX* other);
   friend void swap(FLASH_BMS_HV_RX& a, FLASH_BMS_HV_RX& b) {
@@ -8295,7 +8530,7 @@ class FLASH_BMS_LV_TX : public ::google::protobuf::Message /* @@protoc_insertion
                &_FLASH_BMS_LV_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   void Swap(FLASH_BMS_LV_TX* other);
   friend void swap(FLASH_BMS_LV_TX& a, FLASH_BMS_LV_TX& b) {
@@ -8398,7 +8633,7 @@ class FLASH_BMS_LV_RX : public ::google::protobuf::Message /* @@protoc_insertion
                &_FLASH_BMS_LV_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   void Swap(FLASH_BMS_LV_RX* other);
   friend void swap(FLASH_BMS_LV_RX& a, FLASH_BMS_LV_RX& b) {
@@ -8501,7 +8736,7 @@ class BRUSA_NLG5_CTL : public ::google::protobuf::Message /* @@protoc_insertion_
                &_BRUSA_NLG5_CTL_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   void Swap(BRUSA_NLG5_CTL* other);
   friend void swap(BRUSA_NLG5_CTL& a, BRUSA_NLG5_CTL& b) {
@@ -8604,7 +8839,7 @@ class BRUSA_ST : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_BRUSA_ST_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   void Swap(BRUSA_ST* other);
   friend void swap(BRUSA_ST& a, BRUSA_ST& b) {
@@ -8707,7 +8942,7 @@ class BRUSA_ACT_I : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_BRUSA_ACT_I_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   void Swap(BRUSA_ACT_I* other);
   friend void swap(BRUSA_ACT_I& a, BRUSA_ACT_I& b) {
@@ -8810,7 +9045,7 @@ class BRUSA_ACT_II : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_BRUSA_ACT_II_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   void Swap(BRUSA_ACT_II* other);
   friend void swap(BRUSA_ACT_II& a, BRUSA_ACT_II& b) {
@@ -8913,7 +9148,7 @@ class BRUSA_TEMP : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_BRUSA_TEMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   void Swap(BRUSA_TEMP* other);
   friend void swap(BRUSA_TEMP& a, BRUSA_TEMP& b) {
@@ -9016,7 +9251,7 @@ class BRUSA_ERR : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_BRUSA_ERR_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   void Swap(BRUSA_ERR* other);
   friend void swap(BRUSA_ERR& a, BRUSA_ERR& b) {
@@ -9119,7 +9354,7 @@ class BMS_HV_CHIMERA : public ::google::protobuf::Message /* @@protoc_insertion_
                &_BMS_HV_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   void Swap(BMS_HV_CHIMERA* other);
   friend void swap(BMS_HV_CHIMERA& a, BMS_HV_CHIMERA& b) {
@@ -9222,7 +9457,7 @@ class ECU_CHIMERA : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_ECU_CHIMERA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   void Swap(ECU_CHIMERA* other);
   friend void swap(ECU_CHIMERA& a, ECU_CHIMERA& b) {
@@ -9325,7 +9560,7 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   void Swap(Pack* other);
   friend void swap(Pack& a, Pack& b) {
@@ -9473,10 +9708,34 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::TIMESTAMP >&
       timestamp() const;
 
-  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+  // repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
+  int ambient_temperature_size() const;
+  void clear_ambient_temperature();
+  static const int kAMBIENTTEMPERATUREFieldNumber = 9;
+  ::primary::AMBIENT_TEMPERATURE* mutable_ambient_temperature(int index);
+  ::google::protobuf::RepeatedPtrField< ::primary::AMBIENT_TEMPERATURE >*
+      mutable_ambient_temperature();
+  const ::primary::AMBIENT_TEMPERATURE& ambient_temperature(int index) const;
+  ::primary::AMBIENT_TEMPERATURE* add_ambient_temperature();
+  const ::google::protobuf::RepeatedPtrField< ::primary::AMBIENT_TEMPERATURE >&
+      ambient_temperature() const;
+
+  // repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+  int data_logger_size() const;
+  void clear_data_logger();
+  static const int kDATALOGGERFieldNumber = 10;
+  ::primary::DATA_LOGGER* mutable_data_logger(int index);
+  ::google::protobuf::RepeatedPtrField< ::primary::DATA_LOGGER >*
+      mutable_data_logger();
+  const ::primary::DATA_LOGGER& data_logger(int index) const;
+  ::primary::DATA_LOGGER* add_data_logger();
+  const ::google::protobuf::RepeatedPtrField< ::primary::DATA_LOGGER >&
+      data_logger() const;
+
+  // repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
   int set_tlm_status_size() const;
   void clear_set_tlm_status();
-  static const int kSETTLMSTATUSFieldNumber = 9;
+  static const int kSETTLMSTATUSFieldNumber = 11;
   ::primary::SET_TLM_STATUS* mutable_set_tlm_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_TLM_STATUS >*
       mutable_set_tlm_status();
@@ -9485,10 +9744,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_TLM_STATUS >&
       set_tlm_status() const;
 
-  // repeated .primary.TLM_STATUS TLM_STATUS = 10;
+  // repeated .primary.TLM_STATUS TLM_STATUS = 12;
   int tlm_status_size() const;
   void clear_tlm_status();
-  static const int kTLMSTATUSFieldNumber = 10;
+  static const int kTLMSTATUSFieldNumber = 12;
   ::primary::TLM_STATUS* mutable_tlm_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::TLM_STATUS >*
       mutable_tlm_status();
@@ -9497,10 +9756,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::TLM_STATUS >&
       tlm_status() const;
 
-  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
+  // repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
   int steer_system_status_size() const;
   void clear_steer_system_status();
-  static const int kSTEERSYSTEMSTATUSFieldNumber = 11;
+  static const int kSTEERSYSTEMSTATUSFieldNumber = 13;
   ::primary::STEER_SYSTEM_STATUS* mutable_steer_system_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::STEER_SYSTEM_STATUS >*
       mutable_steer_system_status();
@@ -9509,10 +9768,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::STEER_SYSTEM_STATUS >&
       steer_system_status() const;
 
-  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
+  // repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
   int hv_voltage_size() const;
   void clear_hv_voltage();
-  static const int kHVVOLTAGEFieldNumber = 12;
+  static const int kHVVOLTAGEFieldNumber = 14;
   ::primary::HV_VOLTAGE* mutable_hv_voltage(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_VOLTAGE >*
       mutable_hv_voltage();
@@ -9521,10 +9780,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_VOLTAGE >&
       hv_voltage() const;
 
-  // repeated .primary.HV_CURRENT HV_CURRENT = 13;
+  // repeated .primary.HV_CURRENT HV_CURRENT = 15;
   int hv_current_size() const;
   void clear_hv_current();
-  static const int kHVCURRENTFieldNumber = 13;
+  static const int kHVCURRENTFieldNumber = 15;
   ::primary::HV_CURRENT* mutable_hv_current(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CURRENT >*
       mutable_hv_current();
@@ -9533,10 +9792,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CURRENT >&
       hv_current() const;
 
-  // repeated .primary.HV_TEMP HV_TEMP = 14;
+  // repeated .primary.HV_TEMP HV_TEMP = 16;
   int hv_temp_size() const;
   void clear_hv_temp();
-  static const int kHVTEMPFieldNumber = 14;
+  static const int kHVTEMPFieldNumber = 16;
   ::primary::HV_TEMP* mutable_hv_temp(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_TEMP >*
       mutable_hv_temp();
@@ -9545,10 +9804,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_TEMP >&
       hv_temp() const;
 
-  // repeated .primary.HV_ERRORS HV_ERRORS = 15;
+  // repeated .primary.HV_ERRORS HV_ERRORS = 17;
   int hv_errors_size() const;
   void clear_hv_errors();
-  static const int kHVERRORSFieldNumber = 15;
+  static const int kHVERRORSFieldNumber = 17;
   ::primary::HV_ERRORS* mutable_hv_errors(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_ERRORS >*
       mutable_hv_errors();
@@ -9557,10 +9816,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_ERRORS >&
       hv_errors() const;
 
-  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
+  // repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
   int hv_can_forward_size() const;
   void clear_hv_can_forward();
-  static const int kHVCANFORWARDFieldNumber = 16;
+  static const int kHVCANFORWARDFieldNumber = 18;
   ::primary::HV_CAN_FORWARD* mutable_hv_can_forward(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CAN_FORWARD >*
       mutable_hv_can_forward();
@@ -9569,10 +9828,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CAN_FORWARD >&
       hv_can_forward() const;
 
-  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
+  // repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
   int hv_fans_override_size() const;
   void clear_hv_fans_override();
-  static const int kHVFANSOVERRIDEFieldNumber = 17;
+  static const int kHVFANSOVERRIDEFieldNumber = 19;
   ::primary::HV_FANS_OVERRIDE* mutable_hv_fans_override(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE >*
       mutable_hv_fans_override();
@@ -9581,10 +9840,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE >&
       hv_fans_override() const;
 
-  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
+  // repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
   int hv_can_forward_status_size() const;
   void clear_hv_can_forward_status();
-  static const int kHVCANFORWARDSTATUSFieldNumber = 18;
+  static const int kHVCANFORWARDSTATUSFieldNumber = 20;
   ::primary::HV_CAN_FORWARD_STATUS* mutable_hv_can_forward_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >*
       mutable_hv_can_forward_status();
@@ -9593,10 +9852,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CAN_FORWARD_STATUS >&
       hv_can_forward_status() const;
 
-  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
+  // repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
   int hv_fans_override_status_size() const;
   void clear_hv_fans_override_status();
-  static const int kHVFANSOVERRIDESTATUSFieldNumber = 19;
+  static const int kHVFANSOVERRIDESTATUSFieldNumber = 21;
   ::primary::HV_FANS_OVERRIDE_STATUS* mutable_hv_fans_override_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >*
       mutable_hv_fans_override_status();
@@ -9605,10 +9864,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_FANS_OVERRIDE_STATUS >&
       hv_fans_override_status() const;
 
-  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
+  // repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
   int hv_feedbacks_status_size() const;
   void clear_hv_feedbacks_status();
-  static const int kHVFEEDBACKSSTATUSFieldNumber = 20;
+  static const int kHVFEEDBACKSSTATUSFieldNumber = 22;
   ::primary::HV_FEEDBACKS_STATUS* mutable_hv_feedbacks_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >*
       mutable_hv_feedbacks_status();
@@ -9617,10 +9876,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_FEEDBACKS_STATUS >&
       hv_feedbacks_status() const;
 
-  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
+  // repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
   int hv_imd_status_size() const;
   void clear_hv_imd_status();
-  static const int kHVIMDSTATUSFieldNumber = 21;
+  static const int kHVIMDSTATUSFieldNumber = 23;
   ::primary::HV_IMD_STATUS* mutable_hv_imd_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_IMD_STATUS >*
       mutable_hv_imd_status();
@@ -9629,10 +9888,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_IMD_STATUS >&
       hv_imd_status() const;
 
-  // repeated .primary.TS_STATUS TS_STATUS = 22;
+  // repeated .primary.TS_STATUS TS_STATUS = 24;
   int ts_status_size() const;
   void clear_ts_status();
-  static const int kTSSTATUSFieldNumber = 22;
+  static const int kTSSTATUSFieldNumber = 24;
   ::primary::TS_STATUS* mutable_ts_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::TS_STATUS >*
       mutable_ts_status();
@@ -9641,10 +9900,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::TS_STATUS >&
       ts_status() const;
 
-  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
+  // repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
   int set_ts_status_das_size() const;
   void clear_set_ts_status_das();
-  static const int kSETTSSTATUSDASFieldNumber = 23;
+  static const int kSETTSSTATUSDASFieldNumber = 25;
   ::primary::SET_TS_STATUS_DAS* mutable_set_ts_status_das(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS >*
       mutable_set_ts_status_das();
@@ -9653,10 +9912,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_TS_STATUS_DAS >&
       set_ts_status_das() const;
 
-  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
+  // repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
   int set_ts_status_handcart_size() const;
   void clear_set_ts_status_handcart();
-  static const int kSETTSSTATUSHANDCARTFieldNumber = 24;
+  static const int kSETTSSTATUSHANDCARTFieldNumber = 26;
   ::primary::SET_TS_STATUS_HANDCART* mutable_set_ts_status_handcart(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART >*
       mutable_set_ts_status_handcart();
@@ -9665,10 +9924,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_TS_STATUS_HANDCART >&
       set_ts_status_handcart() const;
 
-  // repeated .primary.STEER_STATUS STEER_STATUS = 25;
+  // repeated .primary.STEER_STATUS STEER_STATUS = 27;
   int steer_status_size() const;
   void clear_steer_status();
-  static const int kSTEERSTATUSFieldNumber = 25;
+  static const int kSTEERSTATUSFieldNumber = 27;
   ::primary::STEER_STATUS* mutable_steer_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::STEER_STATUS >*
       mutable_steer_status();
@@ -9677,10 +9936,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::STEER_STATUS >&
       steer_status() const;
 
-  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
+  // repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
   int set_car_status_size() const;
   void clear_set_car_status();
-  static const int kSETCARSTATUSFieldNumber = 26;
+  static const int kSETCARSTATUSFieldNumber = 28;
   ::primary::SET_CAR_STATUS* mutable_set_car_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_CAR_STATUS >*
       mutable_set_car_status();
@@ -9689,10 +9948,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_CAR_STATUS >&
       set_car_status() const;
 
-  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
+  // repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
   int set_pedals_range_size() const;
   void clear_set_pedals_range();
-  static const int kSETPEDALSRANGEFieldNumber = 27;
+  static const int kSETPEDALSRANGEFieldNumber = 29;
   ::primary::SET_PEDALS_RANGE* mutable_set_pedals_range(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_PEDALS_RANGE >*
       mutable_set_pedals_range();
@@ -9701,10 +9960,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_PEDALS_RANGE >&
       set_pedals_range() const;
 
-  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
+  // repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
   int set_steering_angle_range_size() const;
   void clear_set_steering_angle_range();
-  static const int kSETSTEERINGANGLERANGEFieldNumber = 28;
+  static const int kSETSTEERINGANGLERANGEFieldNumber = 30;
   ::primary::SET_STEERING_ANGLE_RANGE* mutable_set_steering_angle_range(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >*
       mutable_set_steering_angle_range();
@@ -9713,10 +9972,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_STEERING_ANGLE_RANGE >&
       set_steering_angle_range() const;
 
-  // repeated .primary.CAR_STATUS CAR_STATUS = 29;
+  // repeated .primary.CAR_STATUS CAR_STATUS = 31;
   int car_status_size() const;
   void clear_car_status();
-  static const int kCARSTATUSFieldNumber = 29;
+  static const int kCARSTATUSFieldNumber = 31;
   ::primary::CAR_STATUS* mutable_car_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::CAR_STATUS >*
       mutable_car_status();
@@ -9725,10 +9984,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::CAR_STATUS >&
       car_status() const;
 
-  // repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
+  // repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
   int das_errors_size() const;
   void clear_das_errors();
-  static const int kDASERRORSFieldNumber = 30;
+  static const int kDASERRORSFieldNumber = 32;
   ::primary::DAS_ERRORS* mutable_das_errors(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::DAS_ERRORS >*
       mutable_das_errors();
@@ -9737,10 +9996,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::DAS_ERRORS >&
       das_errors() const;
 
-  // repeated .primary.LV_CURRENT LV_CURRENT = 31;
+  // repeated .primary.LV_CURRENT LV_CURRENT = 33;
   int lv_current_size() const;
   void clear_lv_current();
-  static const int kLVCURRENTFieldNumber = 31;
+  static const int kLVCURRENTFieldNumber = 33;
   ::primary::LV_CURRENT* mutable_lv_current(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::LV_CURRENT >*
       mutable_lv_current();
@@ -9749,10 +10008,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::LV_CURRENT >&
       lv_current() const;
 
-  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
+  // repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
   int lv_voltage_size() const;
   void clear_lv_voltage();
-  static const int kLVVOLTAGEFieldNumber = 32;
+  static const int kLVVOLTAGEFieldNumber = 34;
   ::primary::LV_VOLTAGE* mutable_lv_voltage(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::LV_VOLTAGE >*
       mutable_lv_voltage();
@@ -9761,10 +10020,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::LV_VOLTAGE >&
       lv_voltage() const;
 
-  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
+  // repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
   int lv_total_voltage_size() const;
   void clear_lv_total_voltage();
-  static const int kLVTOTALVOLTAGEFieldNumber = 33;
+  static const int kLVTOTALVOLTAGEFieldNumber = 35;
   ::primary::LV_TOTAL_VOLTAGE* mutable_lv_total_voltage(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE >*
       mutable_lv_total_voltage();
@@ -9773,10 +10032,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::LV_TOTAL_VOLTAGE >&
       lv_total_voltage() const;
 
-  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
+  // repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
   int lv_temperature_size() const;
   void clear_lv_temperature();
-  static const int kLVTEMPERATUREFieldNumber = 34;
+  static const int kLVTEMPERATUREFieldNumber = 36;
   ::primary::LV_TEMPERATURE* mutable_lv_temperature(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::LV_TEMPERATURE >*
       mutable_lv_temperature();
@@ -9785,10 +10044,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::LV_TEMPERATURE >&
       lv_temperature() const;
 
-  // repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
+  // repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
   int cooling_status_size() const;
   void clear_cooling_status();
-  static const int kCOOLINGSTATUSFieldNumber = 35;
+  static const int kCOOLINGSTATUSFieldNumber = 37;
   ::primary::COOLING_STATUS* mutable_cooling_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::COOLING_STATUS >*
       mutable_cooling_status();
@@ -9797,10 +10056,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::COOLING_STATUS >&
       cooling_status() const;
 
-  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
+  // repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
   int set_radiator_speed_size() const;
   void clear_set_radiator_speed();
-  static const int kSETRADIATORSPEEDFieldNumber = 36;
+  static const int kSETRADIATORSPEEDFieldNumber = 38;
   ::primary::SET_RADIATOR_SPEED* mutable_set_radiator_speed(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >*
       mutable_set_radiator_speed();
@@ -9809,10 +10068,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_RADIATOR_SPEED >&
       set_radiator_speed() const;
 
-  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
+  // repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
   int set_pumps_speed_size() const;
   void clear_set_pumps_speed();
-  static const int kSETPUMPSSPEEDFieldNumber = 37;
+  static const int kSETPUMPSSPEEDFieldNumber = 39;
   ::primary::SET_PUMPS_SPEED* mutable_set_pumps_speed(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_PUMPS_SPEED >*
       mutable_set_pumps_speed();
@@ -9821,10 +10080,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_PUMPS_SPEED >&
       set_pumps_speed() const;
 
-  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
+  // repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
   int set_inverter_connection_status_size() const;
   void clear_set_inverter_connection_status();
-  static const int kSETINVERTERCONNECTIONSTATUSFieldNumber = 38;
+  static const int kSETINVERTERCONNECTIONSTATUSFieldNumber = 40;
   ::primary::SET_INVERTER_CONNECTION_STATUS* mutable_set_inverter_connection_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_INVERTER_CONNECTION_STATUS >*
       mutable_set_inverter_connection_status();
@@ -9833,10 +10092,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_INVERTER_CONNECTION_STATUS >&
       set_inverter_connection_status() const;
 
-  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
+  // repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
   int inverter_connection_status_size() const;
   void clear_inverter_connection_status();
-  static const int kINVERTERCONNECTIONSTATUSFieldNumber = 39;
+  static const int kINVERTERCONNECTIONSTATUSFieldNumber = 41;
   ::primary::INVERTER_CONNECTION_STATUS* mutable_inverter_connection_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::INVERTER_CONNECTION_STATUS >*
       mutable_inverter_connection_status();
@@ -9845,10 +10104,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::INVERTER_CONNECTION_STATUS >&
       inverter_connection_status() const;
 
-  // repeated .primary.LV_ERRORS LV_ERRORS = 40;
+  // repeated .primary.LV_ERRORS LV_ERRORS = 42;
   int lv_errors_size() const;
   void clear_lv_errors();
-  static const int kLVERRORSFieldNumber = 40;
+  static const int kLVERRORSFieldNumber = 42;
   ::primary::LV_ERRORS* mutable_lv_errors(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::LV_ERRORS >*
       mutable_lv_errors();
@@ -9857,10 +10116,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::LV_ERRORS >&
       lv_errors() const;
 
-  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
+  // repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
   int shutdown_status_size() const;
   void clear_shutdown_status();
-  static const int kSHUTDOWNSTATUSFieldNumber = 41;
+  static const int kSHUTDOWNSTATUSFieldNumber = 43;
   ::primary::SHUTDOWN_STATUS* mutable_shutdown_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SHUTDOWN_STATUS >*
       mutable_shutdown_status();
@@ -9869,10 +10128,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SHUTDOWN_STATUS >&
       shutdown_status() const;
 
-  // repeated .primary.MARKER MARKER = 42;
+  // repeated .primary.MARKER MARKER = 44;
   int marker_size() const;
   void clear_marker();
-  static const int kMARKERFieldNumber = 42;
+  static const int kMARKERFieldNumber = 44;
   ::primary::MARKER* mutable_marker(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::MARKER >*
       mutable_marker();
@@ -9881,10 +10140,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::MARKER >&
       marker() const;
 
-  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
+  // repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
   int hv_cells_voltage_size() const;
   void clear_hv_cells_voltage();
-  static const int kHVCELLSVOLTAGEFieldNumber = 43;
+  static const int kHVCELLSVOLTAGEFieldNumber = 45;
   ::primary::HV_CELLS_VOLTAGE* mutable_hv_cells_voltage(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >*
       mutable_hv_cells_voltage();
@@ -9893,10 +10152,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CELLS_VOLTAGE >&
       hv_cells_voltage() const;
 
-  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
+  // repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
   int hv_cells_temp_size() const;
   void clear_hv_cells_temp();
-  static const int kHVCELLSTEMPFieldNumber = 44;
+  static const int kHVCELLSTEMPFieldNumber = 46;
   ::primary::HV_CELLS_TEMP* mutable_hv_cells_temp(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CELLS_TEMP >*
       mutable_hv_cells_temp();
@@ -9905,10 +10164,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CELLS_TEMP >&
       hv_cells_temp() const;
 
-  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
+  // repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
   int hv_cell_balancing_status_size() const;
   void clear_hv_cell_balancing_status();
-  static const int kHVCELLBALANCINGSTATUSFieldNumber = 45;
+  static const int kHVCELLBALANCINGSTATUSFieldNumber = 47;
   ::primary::HV_CELL_BALANCING_STATUS* mutable_hv_cell_balancing_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >*
       mutable_hv_cell_balancing_status();
@@ -9917,10 +10176,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HV_CELL_BALANCING_STATUS >&
       hv_cell_balancing_status() const;
 
-  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
+  // repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
   int set_cell_balancing_status_size() const;
   void clear_set_cell_balancing_status();
-  static const int kSETCELLBALANCINGSTATUSFieldNumber = 46;
+  static const int kSETCELLBALANCINGSTATUSFieldNumber = 48;
   ::primary::SET_CELL_BALANCING_STATUS* mutable_set_cell_balancing_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >*
       mutable_set_cell_balancing_status();
@@ -9929,10 +10188,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SET_CELL_BALANCING_STATUS >&
       set_cell_balancing_status() const;
 
-  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
+  // repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
   int handcart_status_size() const;
   void clear_handcart_status();
-  static const int kHANDCARTSTATUSFieldNumber = 47;
+  static const int kHANDCARTSTATUSFieldNumber = 49;
   ::primary::HANDCART_STATUS* mutable_handcart_status(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::HANDCART_STATUS >*
       mutable_handcart_status();
@@ -9941,10 +10200,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::HANDCART_STATUS >&
       handcart_status() const;
 
-  // repeated .primary.SPEED SPEED = 48;
+  // repeated .primary.SPEED SPEED = 50;
   int speed_size() const;
   void clear_speed();
-  static const int kSPEEDFieldNumber = 48;
+  static const int kSPEEDFieldNumber = 50;
   ::primary::SPEED* mutable_speed(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::SPEED >*
       mutable_speed();
@@ -9953,10 +10212,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::SPEED >&
       speed() const;
 
-  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
+  // repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
   int inv_l_request_size() const;
   void clear_inv_l_request();
-  static const int kINVLREQUESTFieldNumber = 49;
+  static const int kINVLREQUESTFieldNumber = 51;
   ::primary::INV_L_REQUEST* mutable_inv_l_request(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::INV_L_REQUEST >*
       mutable_inv_l_request();
@@ -9965,10 +10224,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::INV_L_REQUEST >&
       inv_l_request() const;
 
-  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
+  // repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
   int inv_r_request_size() const;
   void clear_inv_r_request();
-  static const int kINVRREQUESTFieldNumber = 50;
+  static const int kINVRREQUESTFieldNumber = 52;
   ::primary::INV_R_REQUEST* mutable_inv_r_request(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::INV_R_REQUEST >*
       mutable_inv_r_request();
@@ -9977,10 +10236,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::INV_R_REQUEST >&
       inv_r_request() const;
 
-  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
+  // repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
   int inv_l_response_size() const;
   void clear_inv_l_response();
-  static const int kINVLRESPONSEFieldNumber = 51;
+  static const int kINVLRESPONSEFieldNumber = 53;
   ::primary::INV_L_RESPONSE* mutable_inv_l_response(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::INV_L_RESPONSE >*
       mutable_inv_l_response();
@@ -9989,10 +10248,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::INV_L_RESPONSE >&
       inv_l_response() const;
 
-  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
+  // repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
   int inv_r_response_size() const;
   void clear_inv_r_response();
-  static const int kINVRRESPONSEFieldNumber = 52;
+  static const int kINVRRESPONSEFieldNumber = 54;
   ::primary::INV_R_RESPONSE* mutable_inv_r_response(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::INV_R_RESPONSE >*
       mutable_inv_r_response();
@@ -10001,10 +10260,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::INV_R_RESPONSE >&
       inv_r_response() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
+  // repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
   int flash_cellboard_0_tx_size() const;
   void clear_flash_cellboard_0_tx();
-  static const int kFLASHCELLBOARD0TXFieldNumber = 53;
+  static const int kFLASHCELLBOARD0TXFieldNumber = 55;
   ::primary::FLASH_CELLBOARD_0_TX* mutable_flash_cellboard_0_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX >*
       mutable_flash_cellboard_0_tx();
@@ -10013,10 +10272,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_TX >&
       flash_cellboard_0_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
+  // repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
   int flash_cellboard_0_rx_size() const;
   void clear_flash_cellboard_0_rx();
-  static const int kFLASHCELLBOARD0RXFieldNumber = 54;
+  static const int kFLASHCELLBOARD0RXFieldNumber = 56;
   ::primary::FLASH_CELLBOARD_0_RX* mutable_flash_cellboard_0_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX >*
       mutable_flash_cellboard_0_rx();
@@ -10025,10 +10284,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_0_RX >&
       flash_cellboard_0_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
+  // repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
   int flash_cellboard_1_tx_size() const;
   void clear_flash_cellboard_1_tx();
-  static const int kFLASHCELLBOARD1TXFieldNumber = 55;
+  static const int kFLASHCELLBOARD1TXFieldNumber = 57;
   ::primary::FLASH_CELLBOARD_1_TX* mutable_flash_cellboard_1_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX >*
       mutable_flash_cellboard_1_tx();
@@ -10037,10 +10296,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_TX >&
       flash_cellboard_1_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
+  // repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
   int flash_cellboard_1_rx_size() const;
   void clear_flash_cellboard_1_rx();
-  static const int kFLASHCELLBOARD1RXFieldNumber = 56;
+  static const int kFLASHCELLBOARD1RXFieldNumber = 58;
   ::primary::FLASH_CELLBOARD_1_RX* mutable_flash_cellboard_1_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_RX >*
       mutable_flash_cellboard_1_rx();
@@ -10049,10 +10308,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_1_RX >&
       flash_cellboard_1_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
+  // repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
   int flash_cellboard_2_tx_size() const;
   void clear_flash_cellboard_2_tx();
-  static const int kFLASHCELLBOARD2TXFieldNumber = 57;
+  static const int kFLASHCELLBOARD2TXFieldNumber = 59;
   ::primary::FLASH_CELLBOARD_2_TX* mutable_flash_cellboard_2_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_TX >*
       mutable_flash_cellboard_2_tx();
@@ -10061,10 +10320,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_TX >&
       flash_cellboard_2_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
+  // repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
   int flash_cellboard_2_rx_size() const;
   void clear_flash_cellboard_2_rx();
-  static const int kFLASHCELLBOARD2RXFieldNumber = 58;
+  static const int kFLASHCELLBOARD2RXFieldNumber = 60;
   ::primary::FLASH_CELLBOARD_2_RX* mutable_flash_cellboard_2_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_RX >*
       mutable_flash_cellboard_2_rx();
@@ -10073,10 +10332,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_2_RX >&
       flash_cellboard_2_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
+  // repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
   int flash_cellboard_3_tx_size() const;
   void clear_flash_cellboard_3_tx();
-  static const int kFLASHCELLBOARD3TXFieldNumber = 59;
+  static const int kFLASHCELLBOARD3TXFieldNumber = 61;
   ::primary::FLASH_CELLBOARD_3_TX* mutable_flash_cellboard_3_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_TX >*
       mutable_flash_cellboard_3_tx();
@@ -10085,10 +10344,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_TX >&
       flash_cellboard_3_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
+  // repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
   int flash_cellboard_3_rx_size() const;
   void clear_flash_cellboard_3_rx();
-  static const int kFLASHCELLBOARD3RXFieldNumber = 60;
+  static const int kFLASHCELLBOARD3RXFieldNumber = 62;
   ::primary::FLASH_CELLBOARD_3_RX* mutable_flash_cellboard_3_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_RX >*
       mutable_flash_cellboard_3_rx();
@@ -10097,10 +10356,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_3_RX >&
       flash_cellboard_3_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
+  // repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
   int flash_cellboard_4_tx_size() const;
   void clear_flash_cellboard_4_tx();
-  static const int kFLASHCELLBOARD4TXFieldNumber = 61;
+  static const int kFLASHCELLBOARD4TXFieldNumber = 63;
   ::primary::FLASH_CELLBOARD_4_TX* mutable_flash_cellboard_4_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_TX >*
       mutable_flash_cellboard_4_tx();
@@ -10109,10 +10368,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_TX >&
       flash_cellboard_4_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
+  // repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
   int flash_cellboard_4_rx_size() const;
   void clear_flash_cellboard_4_rx();
-  static const int kFLASHCELLBOARD4RXFieldNumber = 62;
+  static const int kFLASHCELLBOARD4RXFieldNumber = 64;
   ::primary::FLASH_CELLBOARD_4_RX* mutable_flash_cellboard_4_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX >*
       mutable_flash_cellboard_4_rx();
@@ -10121,10 +10380,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_4_RX >&
       flash_cellboard_4_rx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
+  // repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
   int flash_cellboard_5_tx_size() const;
   void clear_flash_cellboard_5_tx();
-  static const int kFLASHCELLBOARD5TXFieldNumber = 63;
+  static const int kFLASHCELLBOARD5TXFieldNumber = 65;
   ::primary::FLASH_CELLBOARD_5_TX* mutable_flash_cellboard_5_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX >*
       mutable_flash_cellboard_5_tx();
@@ -10133,10 +10392,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_TX >&
       flash_cellboard_5_tx() const;
 
-  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
+  // repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
   int flash_cellboard_5_rx_size() const;
   void clear_flash_cellboard_5_rx();
-  static const int kFLASHCELLBOARD5RXFieldNumber = 64;
+  static const int kFLASHCELLBOARD5RXFieldNumber = 66;
   ::primary::FLASH_CELLBOARD_5_RX* mutable_flash_cellboard_5_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX >*
       mutable_flash_cellboard_5_rx();
@@ -10145,10 +10404,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_CELLBOARD_5_RX >&
       flash_cellboard_5_rx() const;
 
-  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
+  // repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
   int flash_bms_hv_tx_size() const;
   void clear_flash_bms_hv_tx();
-  static const int kFLASHBMSHVTXFieldNumber = 65;
+  static const int kFLASHBMSHVTXFieldNumber = 67;
   ::primary::FLASH_BMS_HV_TX* mutable_flash_bms_hv_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_HV_TX >*
       mutable_flash_bms_hv_tx();
@@ -10157,10 +10416,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_HV_TX >&
       flash_bms_hv_tx() const;
 
-  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
+  // repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
   int flash_bms_hv_rx_size() const;
   void clear_flash_bms_hv_rx();
-  static const int kFLASHBMSHVRXFieldNumber = 66;
+  static const int kFLASHBMSHVRXFieldNumber = 68;
   ::primary::FLASH_BMS_HV_RX* mutable_flash_bms_hv_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_HV_RX >*
       mutable_flash_bms_hv_rx();
@@ -10169,10 +10428,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_HV_RX >&
       flash_bms_hv_rx() const;
 
-  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
+  // repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
   int flash_bms_lv_tx_size() const;
   void clear_flash_bms_lv_tx();
-  static const int kFLASHBMSLVTXFieldNumber = 67;
+  static const int kFLASHBMSLVTXFieldNumber = 69;
   ::primary::FLASH_BMS_LV_TX* mutable_flash_bms_lv_tx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_LV_TX >*
       mutable_flash_bms_lv_tx();
@@ -10181,10 +10440,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_LV_TX >&
       flash_bms_lv_tx() const;
 
-  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
+  // repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
   int flash_bms_lv_rx_size() const;
   void clear_flash_bms_lv_rx();
-  static const int kFLASHBMSLVRXFieldNumber = 68;
+  static const int kFLASHBMSLVRXFieldNumber = 70;
   ::primary::FLASH_BMS_LV_RX* mutable_flash_bms_lv_rx(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_LV_RX >*
       mutable_flash_bms_lv_rx();
@@ -10193,10 +10452,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::FLASH_BMS_LV_RX >&
       flash_bms_lv_rx() const;
 
-  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
+  // repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
   int brusa_nlg5_ctl_size() const;
   void clear_brusa_nlg5_ctl();
-  static const int kBRUSANLG5CTLFieldNumber = 69;
+  static const int kBRUSANLG5CTLFieldNumber = 71;
   ::primary::BRUSA_NLG5_CTL* mutable_brusa_nlg5_ctl(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >*
       mutable_brusa_nlg5_ctl();
@@ -10205,10 +10464,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_NLG5_CTL >&
       brusa_nlg5_ctl() const;
 
-  // repeated .primary.BRUSA_ST BRUSA_ST = 70;
+  // repeated .primary.BRUSA_ST BRUSA_ST = 72;
   int brusa_st_size() const;
   void clear_brusa_st();
-  static const int kBRUSASTFieldNumber = 70;
+  static const int kBRUSASTFieldNumber = 72;
   ::primary::BRUSA_ST* mutable_brusa_st(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ST >*
       mutable_brusa_st();
@@ -10217,10 +10476,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ST >&
       brusa_st() const;
 
-  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
+  // repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
   int brusa_act_i_size() const;
   void clear_brusa_act_i();
-  static const int kBRUSAACTIFieldNumber = 71;
+  static const int kBRUSAACTIFieldNumber = 73;
   ::primary::BRUSA_ACT_I* mutable_brusa_act_i(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ACT_I >*
       mutable_brusa_act_i();
@@ -10229,10 +10488,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ACT_I >&
       brusa_act_i() const;
 
-  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
+  // repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
   int brusa_act_ii_size() const;
   void clear_brusa_act_ii();
-  static const int kBRUSAACTIIFieldNumber = 72;
+  static const int kBRUSAACTIIFieldNumber = 74;
   ::primary::BRUSA_ACT_II* mutable_brusa_act_ii(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ACT_II >*
       mutable_brusa_act_ii();
@@ -10241,10 +10500,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ACT_II >&
       brusa_act_ii() const;
 
-  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
+  // repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
   int brusa_temp_size() const;
   void clear_brusa_temp();
-  static const int kBRUSATEMPFieldNumber = 73;
+  static const int kBRUSATEMPFieldNumber = 75;
   ::primary::BRUSA_TEMP* mutable_brusa_temp(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_TEMP >*
       mutable_brusa_temp();
@@ -10253,10 +10512,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_TEMP >&
       brusa_temp() const;
 
-  // repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
+  // repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
   int brusa_err_size() const;
   void clear_brusa_err();
-  static const int kBRUSAERRFieldNumber = 74;
+  static const int kBRUSAERRFieldNumber = 76;
   ::primary::BRUSA_ERR* mutable_brusa_err(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ERR >*
       mutable_brusa_err();
@@ -10265,10 +10524,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BRUSA_ERR >&
       brusa_err() const;
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
+  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
   int bms_hv_chimera_size() const;
   void clear_bms_hv_chimera();
-  static const int kBMSHVCHIMERAFieldNumber = 75;
+  static const int kBMSHVCHIMERAFieldNumber = 77;
   ::primary::BMS_HV_CHIMERA* mutable_bms_hv_chimera(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >*
       mutable_bms_hv_chimera();
@@ -10277,10 +10536,10 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
       bms_hv_chimera() const;
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
+  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
   int ecu_chimera_size() const;
   void clear_ecu_chimera();
-  static const int kECUCHIMERAFieldNumber = 76;
+  static const int kECUCHIMERAFieldNumber = 78;
   ::primary::ECU_CHIMERA* mutable_ecu_chimera(int index);
   ::google::protobuf::RepeatedPtrField< ::primary::ECU_CHIMERA >*
       mutable_ecu_chimera();
@@ -10301,6 +10560,8 @@ class Pack : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::RepeatedPtrField< ::primary::LV_VERSION > lv_version_;
   ::google::protobuf::RepeatedPtrField< ::primary::TLM_VERSION > tlm_version_;
   ::google::protobuf::RepeatedPtrField< ::primary::TIMESTAMP > timestamp_;
+  ::google::protobuf::RepeatedPtrField< ::primary::AMBIENT_TEMPERATURE > ambient_temperature_;
+  ::google::protobuf::RepeatedPtrField< ::primary::DATA_LOGGER > data_logger_;
   ::google::protobuf::RepeatedPtrField< ::primary::SET_TLM_STATUS > set_tlm_status_;
   ::google::protobuf::RepeatedPtrField< ::primary::TLM_STATUS > tlm_status_;
   ::google::protobuf::RepeatedPtrField< ::primary::STEER_SYSTEM_STATUS > steer_system_status_;
@@ -10675,6 +10936,84 @@ inline void TIMESTAMP::set__inner_timestamp(::google::protobuf::uint64 value) {
   
   _inner_timestamp_ = value;
   // @@protoc_insertion_point(field_set:primary.TIMESTAMP._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// AMBIENT_TEMPERATURE
+
+// sint32 temp = 1;
+inline void AMBIENT_TEMPERATURE::clear_temp() {
+  temp_ = 0;
+}
+inline ::google::protobuf::int32 AMBIENT_TEMPERATURE::temp() const {
+  // @@protoc_insertion_point(field_get:primary.AMBIENT_TEMPERATURE.temp)
+  return temp_;
+}
+inline void AMBIENT_TEMPERATURE::set_temp(::google::protobuf::int32 value) {
+  
+  temp_ = value;
+  // @@protoc_insertion_point(field_set:primary.AMBIENT_TEMPERATURE.temp)
+}
+
+// uint64 _inner_timestamp = 2;
+inline void AMBIENT_TEMPERATURE::clear__inner_timestamp() {
+  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 AMBIENT_TEMPERATURE::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.AMBIENT_TEMPERATURE._inner_timestamp)
+  return _inner_timestamp_;
+}
+inline void AMBIENT_TEMPERATURE::set__inner_timestamp(::google::protobuf::uint64 value) {
+  
+  _inner_timestamp_ = value;
+  // @@protoc_insertion_point(field_set:primary.AMBIENT_TEMPERATURE._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// DATA_LOGGER
+
+// uint32 placeholder1 = 1;
+inline void DATA_LOGGER::clear_placeholder1() {
+  placeholder1_ = 0u;
+}
+inline ::google::protobuf::uint32 DATA_LOGGER::placeholder1() const {
+  // @@protoc_insertion_point(field_get:primary.DATA_LOGGER.placeholder1)
+  return placeholder1_;
+}
+inline void DATA_LOGGER::set_placeholder1(::google::protobuf::uint32 value) {
+  
+  placeholder1_ = value;
+  // @@protoc_insertion_point(field_set:primary.DATA_LOGGER.placeholder1)
+}
+
+// uint32 placeholder2 = 2;
+inline void DATA_LOGGER::clear_placeholder2() {
+  placeholder2_ = 0u;
+}
+inline ::google::protobuf::uint32 DATA_LOGGER::placeholder2() const {
+  // @@protoc_insertion_point(field_get:primary.DATA_LOGGER.placeholder2)
+  return placeholder2_;
+}
+inline void DATA_LOGGER::set_placeholder2(::google::protobuf::uint32 value) {
+  
+  placeholder2_ = value;
+  // @@protoc_insertion_point(field_set:primary.DATA_LOGGER.placeholder2)
+}
+
+// uint64 _inner_timestamp = 3;
+inline void DATA_LOGGER::clear__inner_timestamp() {
+  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+}
+inline ::google::protobuf::uint64 DATA_LOGGER::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.DATA_LOGGER._inner_timestamp)
+  return _inner_timestamp_;
+}
+inline void DATA_LOGGER::set__inner_timestamp(::google::protobuf::uint64 value) {
+  
+  _inner_timestamp_ = value;
+  // @@protoc_insertion_point(field_set:primary.DATA_LOGGER._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -13685,7 +14024,67 @@ Pack::timestamp() const {
   return timestamp_;
 }
 
-// repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 9;
+// repeated .primary.AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 9;
+inline int Pack::ambient_temperature_size() const {
+  return ambient_temperature_.size();
+}
+inline void Pack::clear_ambient_temperature() {
+  ambient_temperature_.Clear();
+}
+inline ::primary::AMBIENT_TEMPERATURE* Pack::mutable_ambient_temperature(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.AMBIENT_TEMPERATURE)
+  return ambient_temperature_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::primary::AMBIENT_TEMPERATURE >*
+Pack::mutable_ambient_temperature() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.AMBIENT_TEMPERATURE)
+  return &ambient_temperature_;
+}
+inline const ::primary::AMBIENT_TEMPERATURE& Pack::ambient_temperature(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.AMBIENT_TEMPERATURE)
+  return ambient_temperature_.Get(index);
+}
+inline ::primary::AMBIENT_TEMPERATURE* Pack::add_ambient_temperature() {
+  // @@protoc_insertion_point(field_add:primary.Pack.AMBIENT_TEMPERATURE)
+  return ambient_temperature_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::primary::AMBIENT_TEMPERATURE >&
+Pack::ambient_temperature() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.AMBIENT_TEMPERATURE)
+  return ambient_temperature_;
+}
+
+// repeated .primary.DATA_LOGGER DATA_LOGGER = 10;
+inline int Pack::data_logger_size() const {
+  return data_logger_.size();
+}
+inline void Pack::clear_data_logger() {
+  data_logger_.Clear();
+}
+inline ::primary::DATA_LOGGER* Pack::mutable_data_logger(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.DATA_LOGGER)
+  return data_logger_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::primary::DATA_LOGGER >*
+Pack::mutable_data_logger() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.DATA_LOGGER)
+  return &data_logger_;
+}
+inline const ::primary::DATA_LOGGER& Pack::data_logger(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.DATA_LOGGER)
+  return data_logger_.Get(index);
+}
+inline ::primary::DATA_LOGGER* Pack::add_data_logger() {
+  // @@protoc_insertion_point(field_add:primary.Pack.DATA_LOGGER)
+  return data_logger_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::primary::DATA_LOGGER >&
+Pack::data_logger() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.DATA_LOGGER)
+  return data_logger_;
+}
+
+// repeated .primary.SET_TLM_STATUS SET_TLM_STATUS = 11;
 inline int Pack::set_tlm_status_size() const {
   return set_tlm_status_.size();
 }
@@ -13715,7 +14114,7 @@ Pack::set_tlm_status() const {
   return set_tlm_status_;
 }
 
-// repeated .primary.TLM_STATUS TLM_STATUS = 10;
+// repeated .primary.TLM_STATUS TLM_STATUS = 12;
 inline int Pack::tlm_status_size() const {
   return tlm_status_.size();
 }
@@ -13745,7 +14144,7 @@ Pack::tlm_status() const {
   return tlm_status_;
 }
 
-// repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 11;
+// repeated .primary.STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 13;
 inline int Pack::steer_system_status_size() const {
   return steer_system_status_.size();
 }
@@ -13775,7 +14174,7 @@ Pack::steer_system_status() const {
   return steer_system_status_;
 }
 
-// repeated .primary.HV_VOLTAGE HV_VOLTAGE = 12;
+// repeated .primary.HV_VOLTAGE HV_VOLTAGE = 14;
 inline int Pack::hv_voltage_size() const {
   return hv_voltage_.size();
 }
@@ -13805,7 +14204,7 @@ Pack::hv_voltage() const {
   return hv_voltage_;
 }
 
-// repeated .primary.HV_CURRENT HV_CURRENT = 13;
+// repeated .primary.HV_CURRENT HV_CURRENT = 15;
 inline int Pack::hv_current_size() const {
   return hv_current_.size();
 }
@@ -13835,7 +14234,7 @@ Pack::hv_current() const {
   return hv_current_;
 }
 
-// repeated .primary.HV_TEMP HV_TEMP = 14;
+// repeated .primary.HV_TEMP HV_TEMP = 16;
 inline int Pack::hv_temp_size() const {
   return hv_temp_.size();
 }
@@ -13865,7 +14264,7 @@ Pack::hv_temp() const {
   return hv_temp_;
 }
 
-// repeated .primary.HV_ERRORS HV_ERRORS = 15;
+// repeated .primary.HV_ERRORS HV_ERRORS = 17;
 inline int Pack::hv_errors_size() const {
   return hv_errors_.size();
 }
@@ -13895,7 +14294,7 @@ Pack::hv_errors() const {
   return hv_errors_;
 }
 
-// repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 16;
+// repeated .primary.HV_CAN_FORWARD HV_CAN_FORWARD = 18;
 inline int Pack::hv_can_forward_size() const {
   return hv_can_forward_.size();
 }
@@ -13925,7 +14324,7 @@ Pack::hv_can_forward() const {
   return hv_can_forward_;
 }
 
-// repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 17;
+// repeated .primary.HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 19;
 inline int Pack::hv_fans_override_size() const {
   return hv_fans_override_.size();
 }
@@ -13955,7 +14354,7 @@ Pack::hv_fans_override() const {
   return hv_fans_override_;
 }
 
-// repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 18;
+// repeated .primary.HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 20;
 inline int Pack::hv_can_forward_status_size() const {
   return hv_can_forward_status_.size();
 }
@@ -13985,7 +14384,7 @@ Pack::hv_can_forward_status() const {
   return hv_can_forward_status_;
 }
 
-// repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 19;
+// repeated .primary.HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
 inline int Pack::hv_fans_override_status_size() const {
   return hv_fans_override_status_.size();
 }
@@ -14015,7 +14414,7 @@ Pack::hv_fans_override_status() const {
   return hv_fans_override_status_;
 }
 
-// repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 20;
+// repeated .primary.HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
 inline int Pack::hv_feedbacks_status_size() const {
   return hv_feedbacks_status_.size();
 }
@@ -14045,7 +14444,7 @@ Pack::hv_feedbacks_status() const {
   return hv_feedbacks_status_;
 }
 
-// repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 21;
+// repeated .primary.HV_IMD_STATUS HV_IMD_STATUS = 23;
 inline int Pack::hv_imd_status_size() const {
   return hv_imd_status_.size();
 }
@@ -14075,7 +14474,7 @@ Pack::hv_imd_status() const {
   return hv_imd_status_;
 }
 
-// repeated .primary.TS_STATUS TS_STATUS = 22;
+// repeated .primary.TS_STATUS TS_STATUS = 24;
 inline int Pack::ts_status_size() const {
   return ts_status_.size();
 }
@@ -14105,7 +14504,7 @@ Pack::ts_status() const {
   return ts_status_;
 }
 
-// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 23;
+// repeated .primary.SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
 inline int Pack::set_ts_status_das_size() const {
   return set_ts_status_das_.size();
 }
@@ -14135,7 +14534,7 @@ Pack::set_ts_status_das() const {
   return set_ts_status_das_;
 }
 
-// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 24;
+// repeated .primary.SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
 inline int Pack::set_ts_status_handcart_size() const {
   return set_ts_status_handcart_.size();
 }
@@ -14165,7 +14564,7 @@ Pack::set_ts_status_handcart() const {
   return set_ts_status_handcart_;
 }
 
-// repeated .primary.STEER_STATUS STEER_STATUS = 25;
+// repeated .primary.STEER_STATUS STEER_STATUS = 27;
 inline int Pack::steer_status_size() const {
   return steer_status_.size();
 }
@@ -14195,7 +14594,7 @@ Pack::steer_status() const {
   return steer_status_;
 }
 
-// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 26;
+// repeated .primary.SET_CAR_STATUS SET_CAR_STATUS = 28;
 inline int Pack::set_car_status_size() const {
   return set_car_status_.size();
 }
@@ -14225,7 +14624,7 @@ Pack::set_car_status() const {
   return set_car_status_;
 }
 
-// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 27;
+// repeated .primary.SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
 inline int Pack::set_pedals_range_size() const {
   return set_pedals_range_.size();
 }
@@ -14255,7 +14654,7 @@ Pack::set_pedals_range() const {
   return set_pedals_range_;
 }
 
-// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 28;
+// repeated .primary.SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
 inline int Pack::set_steering_angle_range_size() const {
   return set_steering_angle_range_.size();
 }
@@ -14285,7 +14684,7 @@ Pack::set_steering_angle_range() const {
   return set_steering_angle_range_;
 }
 
-// repeated .primary.CAR_STATUS CAR_STATUS = 29;
+// repeated .primary.CAR_STATUS CAR_STATUS = 31;
 inline int Pack::car_status_size() const {
   return car_status_.size();
 }
@@ -14315,7 +14714,7 @@ Pack::car_status() const {
   return car_status_;
 }
 
-// repeated .primary.DAS_ERRORS DAS_ERRORS = 30;
+// repeated .primary.DAS_ERRORS DAS_ERRORS = 32;
 inline int Pack::das_errors_size() const {
   return das_errors_.size();
 }
@@ -14345,7 +14744,7 @@ Pack::das_errors() const {
   return das_errors_;
 }
 
-// repeated .primary.LV_CURRENT LV_CURRENT = 31;
+// repeated .primary.LV_CURRENT LV_CURRENT = 33;
 inline int Pack::lv_current_size() const {
   return lv_current_.size();
 }
@@ -14375,7 +14774,7 @@ Pack::lv_current() const {
   return lv_current_;
 }
 
-// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 32;
+// repeated .primary.LV_VOLTAGE LV_VOLTAGE = 34;
 inline int Pack::lv_voltage_size() const {
   return lv_voltage_.size();
 }
@@ -14405,7 +14804,7 @@ Pack::lv_voltage() const {
   return lv_voltage_;
 }
 
-// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 33;
+// repeated .primary.LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
 inline int Pack::lv_total_voltage_size() const {
   return lv_total_voltage_.size();
 }
@@ -14435,7 +14834,7 @@ Pack::lv_total_voltage() const {
   return lv_total_voltage_;
 }
 
-// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 34;
+// repeated .primary.LV_TEMPERATURE LV_TEMPERATURE = 36;
 inline int Pack::lv_temperature_size() const {
   return lv_temperature_.size();
 }
@@ -14465,7 +14864,7 @@ Pack::lv_temperature() const {
   return lv_temperature_;
 }
 
-// repeated .primary.COOLING_STATUS COOLING_STATUS = 35;
+// repeated .primary.COOLING_STATUS COOLING_STATUS = 37;
 inline int Pack::cooling_status_size() const {
   return cooling_status_.size();
 }
@@ -14495,7 +14894,7 @@ Pack::cooling_status() const {
   return cooling_status_;
 }
 
-// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 36;
+// repeated .primary.SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
 inline int Pack::set_radiator_speed_size() const {
   return set_radiator_speed_.size();
 }
@@ -14525,7 +14924,7 @@ Pack::set_radiator_speed() const {
   return set_radiator_speed_;
 }
 
-// repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 37;
+// repeated .primary.SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
 inline int Pack::set_pumps_speed_size() const {
   return set_pumps_speed_.size();
 }
@@ -14555,7 +14954,7 @@ Pack::set_pumps_speed() const {
   return set_pumps_speed_;
 }
 
-// repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 38;
+// repeated .primary.SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
 inline int Pack::set_inverter_connection_status_size() const {
   return set_inverter_connection_status_.size();
 }
@@ -14585,7 +14984,7 @@ Pack::set_inverter_connection_status() const {
   return set_inverter_connection_status_;
 }
 
-// repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 39;
+// repeated .primary.INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
 inline int Pack::inverter_connection_status_size() const {
   return inverter_connection_status_.size();
 }
@@ -14615,7 +15014,7 @@ Pack::inverter_connection_status() const {
   return inverter_connection_status_;
 }
 
-// repeated .primary.LV_ERRORS LV_ERRORS = 40;
+// repeated .primary.LV_ERRORS LV_ERRORS = 42;
 inline int Pack::lv_errors_size() const {
   return lv_errors_.size();
 }
@@ -14645,7 +15044,7 @@ Pack::lv_errors() const {
   return lv_errors_;
 }
 
-// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 41;
+// repeated .primary.SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
 inline int Pack::shutdown_status_size() const {
   return shutdown_status_.size();
 }
@@ -14675,7 +15074,7 @@ Pack::shutdown_status() const {
   return shutdown_status_;
 }
 
-// repeated .primary.MARKER MARKER = 42;
+// repeated .primary.MARKER MARKER = 44;
 inline int Pack::marker_size() const {
   return marker_.size();
 }
@@ -14705,7 +15104,7 @@ Pack::marker() const {
   return marker_;
 }
 
-// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 43;
+// repeated .primary.HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
 inline int Pack::hv_cells_voltage_size() const {
   return hv_cells_voltage_.size();
 }
@@ -14735,7 +15134,7 @@ Pack::hv_cells_voltage() const {
   return hv_cells_voltage_;
 }
 
-// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 44;
+// repeated .primary.HV_CELLS_TEMP HV_CELLS_TEMP = 46;
 inline int Pack::hv_cells_temp_size() const {
   return hv_cells_temp_.size();
 }
@@ -14765,7 +15164,7 @@ Pack::hv_cells_temp() const {
   return hv_cells_temp_;
 }
 
-// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 45;
+// repeated .primary.HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
 inline int Pack::hv_cell_balancing_status_size() const {
   return hv_cell_balancing_status_.size();
 }
@@ -14795,7 +15194,7 @@ Pack::hv_cell_balancing_status() const {
   return hv_cell_balancing_status_;
 }
 
-// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 46;
+// repeated .primary.SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
 inline int Pack::set_cell_balancing_status_size() const {
   return set_cell_balancing_status_.size();
 }
@@ -14825,7 +15224,7 @@ Pack::set_cell_balancing_status() const {
   return set_cell_balancing_status_;
 }
 
-// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 47;
+// repeated .primary.HANDCART_STATUS HANDCART_STATUS = 49;
 inline int Pack::handcart_status_size() const {
   return handcart_status_.size();
 }
@@ -14855,7 +15254,7 @@ Pack::handcart_status() const {
   return handcart_status_;
 }
 
-// repeated .primary.SPEED SPEED = 48;
+// repeated .primary.SPEED SPEED = 50;
 inline int Pack::speed_size() const {
   return speed_.size();
 }
@@ -14885,7 +15284,7 @@ Pack::speed() const {
   return speed_;
 }
 
-// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 49;
+// repeated .primary.INV_L_REQUEST INV_L_REQUEST = 51;
 inline int Pack::inv_l_request_size() const {
   return inv_l_request_.size();
 }
@@ -14915,7 +15314,7 @@ Pack::inv_l_request() const {
   return inv_l_request_;
 }
 
-// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 50;
+// repeated .primary.INV_R_REQUEST INV_R_REQUEST = 52;
 inline int Pack::inv_r_request_size() const {
   return inv_r_request_.size();
 }
@@ -14945,7 +15344,7 @@ Pack::inv_r_request() const {
   return inv_r_request_;
 }
 
-// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 51;
+// repeated .primary.INV_L_RESPONSE INV_L_RESPONSE = 53;
 inline int Pack::inv_l_response_size() const {
   return inv_l_response_.size();
 }
@@ -14975,7 +15374,7 @@ Pack::inv_l_response() const {
   return inv_l_response_;
 }
 
-// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 52;
+// repeated .primary.INV_R_RESPONSE INV_R_RESPONSE = 54;
 inline int Pack::inv_r_response_size() const {
   return inv_r_response_.size();
 }
@@ -15005,7 +15404,7 @@ Pack::inv_r_response() const {
   return inv_r_response_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 53;
+// repeated .primary.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
 inline int Pack::flash_cellboard_0_tx_size() const {
   return flash_cellboard_0_tx_.size();
 }
@@ -15035,7 +15434,7 @@ Pack::flash_cellboard_0_tx() const {
   return flash_cellboard_0_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 54;
+// repeated .primary.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
 inline int Pack::flash_cellboard_0_rx_size() const {
   return flash_cellboard_0_rx_.size();
 }
@@ -15065,7 +15464,7 @@ Pack::flash_cellboard_0_rx() const {
   return flash_cellboard_0_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 55;
+// repeated .primary.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
 inline int Pack::flash_cellboard_1_tx_size() const {
   return flash_cellboard_1_tx_.size();
 }
@@ -15095,7 +15494,7 @@ Pack::flash_cellboard_1_tx() const {
   return flash_cellboard_1_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 56;
+// repeated .primary.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
 inline int Pack::flash_cellboard_1_rx_size() const {
   return flash_cellboard_1_rx_.size();
 }
@@ -15125,7 +15524,7 @@ Pack::flash_cellboard_1_rx() const {
   return flash_cellboard_1_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 57;
+// repeated .primary.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
 inline int Pack::flash_cellboard_2_tx_size() const {
   return flash_cellboard_2_tx_.size();
 }
@@ -15155,7 +15554,7 @@ Pack::flash_cellboard_2_tx() const {
   return flash_cellboard_2_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 58;
+// repeated .primary.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
 inline int Pack::flash_cellboard_2_rx_size() const {
   return flash_cellboard_2_rx_.size();
 }
@@ -15185,7 +15584,7 @@ Pack::flash_cellboard_2_rx() const {
   return flash_cellboard_2_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 59;
+// repeated .primary.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
 inline int Pack::flash_cellboard_3_tx_size() const {
   return flash_cellboard_3_tx_.size();
 }
@@ -15215,7 +15614,7 @@ Pack::flash_cellboard_3_tx() const {
   return flash_cellboard_3_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 60;
+// repeated .primary.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
 inline int Pack::flash_cellboard_3_rx_size() const {
   return flash_cellboard_3_rx_.size();
 }
@@ -15245,7 +15644,7 @@ Pack::flash_cellboard_3_rx() const {
   return flash_cellboard_3_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 61;
+// repeated .primary.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
 inline int Pack::flash_cellboard_4_tx_size() const {
   return flash_cellboard_4_tx_.size();
 }
@@ -15275,7 +15674,7 @@ Pack::flash_cellboard_4_tx() const {
   return flash_cellboard_4_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 62;
+// repeated .primary.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
 inline int Pack::flash_cellboard_4_rx_size() const {
   return flash_cellboard_4_rx_.size();
 }
@@ -15305,7 +15704,7 @@ Pack::flash_cellboard_4_rx() const {
   return flash_cellboard_4_rx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 63;
+// repeated .primary.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
 inline int Pack::flash_cellboard_5_tx_size() const {
   return flash_cellboard_5_tx_.size();
 }
@@ -15335,7 +15734,7 @@ Pack::flash_cellboard_5_tx() const {
   return flash_cellboard_5_tx_;
 }
 
-// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 64;
+// repeated .primary.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
 inline int Pack::flash_cellboard_5_rx_size() const {
   return flash_cellboard_5_rx_.size();
 }
@@ -15365,7 +15764,7 @@ Pack::flash_cellboard_5_rx() const {
   return flash_cellboard_5_rx_;
 }
 
-// repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 65;
+// repeated .primary.FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
 inline int Pack::flash_bms_hv_tx_size() const {
   return flash_bms_hv_tx_.size();
 }
@@ -15395,7 +15794,7 @@ Pack::flash_bms_hv_tx() const {
   return flash_bms_hv_tx_;
 }
 
-// repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 66;
+// repeated .primary.FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
 inline int Pack::flash_bms_hv_rx_size() const {
   return flash_bms_hv_rx_.size();
 }
@@ -15425,7 +15824,7 @@ Pack::flash_bms_hv_rx() const {
   return flash_bms_hv_rx_;
 }
 
-// repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 67;
+// repeated .primary.FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
 inline int Pack::flash_bms_lv_tx_size() const {
   return flash_bms_lv_tx_.size();
 }
@@ -15455,7 +15854,7 @@ Pack::flash_bms_lv_tx() const {
   return flash_bms_lv_tx_;
 }
 
-// repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 68;
+// repeated .primary.FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
 inline int Pack::flash_bms_lv_rx_size() const {
   return flash_bms_lv_rx_.size();
 }
@@ -15485,7 +15884,7 @@ Pack::flash_bms_lv_rx() const {
   return flash_bms_lv_rx_;
 }
 
-// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 69;
+// repeated .primary.BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
 inline int Pack::brusa_nlg5_ctl_size() const {
   return brusa_nlg5_ctl_.size();
 }
@@ -15515,7 +15914,7 @@ Pack::brusa_nlg5_ctl() const {
   return brusa_nlg5_ctl_;
 }
 
-// repeated .primary.BRUSA_ST BRUSA_ST = 70;
+// repeated .primary.BRUSA_ST BRUSA_ST = 72;
 inline int Pack::brusa_st_size() const {
   return brusa_st_.size();
 }
@@ -15545,7 +15944,7 @@ Pack::brusa_st() const {
   return brusa_st_;
 }
 
-// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 71;
+// repeated .primary.BRUSA_ACT_I BRUSA_ACT_I = 73;
 inline int Pack::brusa_act_i_size() const {
   return brusa_act_i_.size();
 }
@@ -15575,7 +15974,7 @@ Pack::brusa_act_i() const {
   return brusa_act_i_;
 }
 
-// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 72;
+// repeated .primary.BRUSA_ACT_II BRUSA_ACT_II = 74;
 inline int Pack::brusa_act_ii_size() const {
   return brusa_act_ii_.size();
 }
@@ -15605,7 +16004,7 @@ Pack::brusa_act_ii() const {
   return brusa_act_ii_;
 }
 
-// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 73;
+// repeated .primary.BRUSA_TEMP BRUSA_TEMP = 75;
 inline int Pack::brusa_temp_size() const {
   return brusa_temp_.size();
 }
@@ -15635,7 +16034,7 @@ Pack::brusa_temp() const {
   return brusa_temp_;
 }
 
-// repeated .primary.BRUSA_ERR BRUSA_ERR = 74;
+// repeated .primary.BRUSA_ERR BRUSA_ERR = 76;
 inline int Pack::brusa_err_size() const {
   return brusa_err_.size();
 }
@@ -15665,7 +16064,7 @@ Pack::brusa_err() const {
   return brusa_err_;
 }
 
-// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 75;
+// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
 inline int Pack::bms_hv_chimera_size() const {
   return bms_hv_chimera_.size();
 }
@@ -15695,7 +16094,7 @@ Pack::bms_hv_chimera() const {
   return bms_hv_chimera_;
 }
 
-// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 76;
+// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
 inline int Pack::ecu_chimera_size() const {
   return ecu_chimera_.size();
 }
@@ -15728,6 +16127,10 @@ Pack::ecu_chimera() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

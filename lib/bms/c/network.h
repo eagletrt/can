@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660118816
-#define CANLIB_BUILD_HASH 0xf10dad18
+#define CANLIB_BUILD_TIME 1660405863
+#define CANLIB_BUILD_HASH 0xcc263974
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -66,20 +66,17 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
-#ifndef CANLIB_SHARED
-#define CANLIB_SHARED
-
+#ifndef CANLIB_PARKING
 /* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
 #define CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
-#endif
+#endif // defined(__MINGW32__)
+#endif // CANLIB_PARKING
 
 #define PRIf32 "f"
 #define PRIf64 "f"
-
-#endif // CANLIB_SHARED
 
 #ifndef CANLIB_BITMASK_UTILS
 #define CANLIB_BITMASK_UTILS

@@ -15,8 +15,8 @@ extern "C" {
 #include <stdio.h>
 
 #ifndef CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660118816
-#define CANLIB_BUILD_HASH 0xf10dad18
+#define CANLIB_BUILD_TIME 1660405863
+#define CANLIB_BUILD_HASH 0xcc263974
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -66,20 +66,17 @@ static_assert(sizeof(double) == 8, "canlib: sizeof(double) != 8 BYTES");
 
 #endif // CANLIB_ASSERTS
 
-#ifndef CANLIB_SHARED
-#define CANLIB_SHARED
-
+#ifndef CANLIB_PARKING
 /* We know it's PACKING but PARKING sounds a bit better ;) */
 #if defined(__MINGW32__)
 #define CANLIB_PARKING __attribute__((__gcc_struct__, __packed__)) // , __aligned__(1)))
 #else
 #define CANLIB_PARKING __attribute__((__packed__)) // , __aligned__(1)))
-#endif
+#endif // defined(__MINGW32__)
+#endif // CANLIB_PARKING
 
 #define PRIf32 "f"
 #define PRIf64 "f"
-
-#endif // CANLIB_SHARED
 
 #ifndef CANLIB_BITMASK_UTILS
 #define CANLIB_BITMASK_UTILS
@@ -124,7 +121,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 76
+#define primary_MESSAGE_COUNT 78
 
 // Custom types
 
@@ -176,74 +173,76 @@ typedef struct {
 #define primary_INDEX_LV_VERSION 5
 #define primary_INDEX_TLM_VERSION 6
 #define primary_INDEX_TIMESTAMP 7
-#define primary_INDEX_SET_TLM_STATUS 8
-#define primary_INDEX_TLM_STATUS 9
-#define primary_INDEX_STEER_SYSTEM_STATUS 10
-#define primary_INDEX_HV_VOLTAGE 11
-#define primary_INDEX_HV_CURRENT 12
-#define primary_INDEX_HV_TEMP 13
-#define primary_INDEX_HV_ERRORS 14
-#define primary_INDEX_HV_CAN_FORWARD 15
-#define primary_INDEX_HV_FANS_OVERRIDE 16
-#define primary_INDEX_HV_CAN_FORWARD_STATUS 17
-#define primary_INDEX_HV_FANS_OVERRIDE_STATUS 18
-#define primary_INDEX_HV_FEEDBACKS_STATUS 19
-#define primary_INDEX_HV_IMD_STATUS 20
-#define primary_INDEX_TS_STATUS 21
-#define primary_INDEX_SET_TS_STATUS_DAS 22
-#define primary_INDEX_SET_TS_STATUS_HANDCART 23
-#define primary_INDEX_STEER_STATUS 24
-#define primary_INDEX_SET_CAR_STATUS 25
-#define primary_INDEX_SET_PEDALS_RANGE 26
-#define primary_INDEX_SET_STEERING_ANGLE_RANGE 27
-#define primary_INDEX_CAR_STATUS 28
-#define primary_INDEX_DAS_ERRORS 29
-#define primary_INDEX_LV_CURRENT 30
-#define primary_INDEX_LV_VOLTAGE 31
-#define primary_INDEX_LV_TOTAL_VOLTAGE 32
-#define primary_INDEX_LV_TEMPERATURE 33
-#define primary_INDEX_COOLING_STATUS 34
-#define primary_INDEX_SET_RADIATOR_SPEED 35
-#define primary_INDEX_SET_PUMPS_SPEED 36
-#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 37
-#define primary_INDEX_INVERTER_CONNECTION_STATUS 38
-#define primary_INDEX_LV_ERRORS 39
-#define primary_INDEX_SHUTDOWN_STATUS 40
-#define primary_INDEX_MARKER 41
-#define primary_INDEX_HV_CELLS_VOLTAGE 42
-#define primary_INDEX_HV_CELLS_TEMP 43
-#define primary_INDEX_HV_CELL_BALANCING_STATUS 44
-#define primary_INDEX_SET_CELL_BALANCING_STATUS 45
-#define primary_INDEX_HANDCART_STATUS 46
-#define primary_INDEX_SPEED 47
-#define primary_INDEX_INV_L_REQUEST 48
-#define primary_INDEX_INV_R_REQUEST 49
-#define primary_INDEX_INV_L_RESPONSE 50
-#define primary_INDEX_INV_R_RESPONSE 51
-#define primary_INDEX_FLASH_CELLBOARD_0_TX 52
-#define primary_INDEX_FLASH_CELLBOARD_0_RX 53
-#define primary_INDEX_FLASH_CELLBOARD_1_TX 54
-#define primary_INDEX_FLASH_CELLBOARD_1_RX 55
-#define primary_INDEX_FLASH_CELLBOARD_2_TX 56
-#define primary_INDEX_FLASH_CELLBOARD_2_RX 57
-#define primary_INDEX_FLASH_CELLBOARD_3_TX 58
-#define primary_INDEX_FLASH_CELLBOARD_3_RX 59
-#define primary_INDEX_FLASH_CELLBOARD_4_TX 60
-#define primary_INDEX_FLASH_CELLBOARD_4_RX 61
-#define primary_INDEX_FLASH_CELLBOARD_5_TX 62
-#define primary_INDEX_FLASH_CELLBOARD_5_RX 63
-#define primary_INDEX_FLASH_BMS_HV_TX 64
-#define primary_INDEX_FLASH_BMS_HV_RX 65
-#define primary_INDEX_FLASH_BMS_LV_TX 66
-#define primary_INDEX_FLASH_BMS_LV_RX 67
-#define primary_INDEX_BRUSA_NLG5_CTL 68
-#define primary_INDEX_BRUSA_ST 69
-#define primary_INDEX_BRUSA_ACT_I 70
-#define primary_INDEX_BRUSA_ACT_II 71
-#define primary_INDEX_BRUSA_TEMP 72
-#define primary_INDEX_BRUSA_ERR 73
-#define primary_INDEX_BMS_HV_CHIMERA 74
-#define primary_INDEX_ECU_CHIMERA 75
+#define primary_INDEX_AMBIENT_TEMPERATURE 8
+#define primary_INDEX_DATA_LOGGER 9
+#define primary_INDEX_SET_TLM_STATUS 10
+#define primary_INDEX_TLM_STATUS 11
+#define primary_INDEX_STEER_SYSTEM_STATUS 12
+#define primary_INDEX_HV_VOLTAGE 13
+#define primary_INDEX_HV_CURRENT 14
+#define primary_INDEX_HV_TEMP 15
+#define primary_INDEX_HV_ERRORS 16
+#define primary_INDEX_HV_CAN_FORWARD 17
+#define primary_INDEX_HV_FANS_OVERRIDE 18
+#define primary_INDEX_HV_CAN_FORWARD_STATUS 19
+#define primary_INDEX_HV_FANS_OVERRIDE_STATUS 20
+#define primary_INDEX_HV_FEEDBACKS_STATUS 21
+#define primary_INDEX_HV_IMD_STATUS 22
+#define primary_INDEX_TS_STATUS 23
+#define primary_INDEX_SET_TS_STATUS_DAS 24
+#define primary_INDEX_SET_TS_STATUS_HANDCART 25
+#define primary_INDEX_STEER_STATUS 26
+#define primary_INDEX_SET_CAR_STATUS 27
+#define primary_INDEX_SET_PEDALS_RANGE 28
+#define primary_INDEX_SET_STEERING_ANGLE_RANGE 29
+#define primary_INDEX_CAR_STATUS 30
+#define primary_INDEX_DAS_ERRORS 31
+#define primary_INDEX_LV_CURRENT 32
+#define primary_INDEX_LV_VOLTAGE 33
+#define primary_INDEX_LV_TOTAL_VOLTAGE 34
+#define primary_INDEX_LV_TEMPERATURE 35
+#define primary_INDEX_COOLING_STATUS 36
+#define primary_INDEX_SET_RADIATOR_SPEED 37
+#define primary_INDEX_SET_PUMPS_SPEED 38
+#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 39
+#define primary_INDEX_INVERTER_CONNECTION_STATUS 40
+#define primary_INDEX_LV_ERRORS 41
+#define primary_INDEX_SHUTDOWN_STATUS 42
+#define primary_INDEX_MARKER 43
+#define primary_INDEX_HV_CELLS_VOLTAGE 44
+#define primary_INDEX_HV_CELLS_TEMP 45
+#define primary_INDEX_HV_CELL_BALANCING_STATUS 46
+#define primary_INDEX_SET_CELL_BALANCING_STATUS 47
+#define primary_INDEX_HANDCART_STATUS 48
+#define primary_INDEX_SPEED 49
+#define primary_INDEX_INV_L_REQUEST 50
+#define primary_INDEX_INV_R_REQUEST 51
+#define primary_INDEX_INV_L_RESPONSE 52
+#define primary_INDEX_INV_R_RESPONSE 53
+#define primary_INDEX_FLASH_CELLBOARD_0_TX 54
+#define primary_INDEX_FLASH_CELLBOARD_0_RX 55
+#define primary_INDEX_FLASH_CELLBOARD_1_TX 56
+#define primary_INDEX_FLASH_CELLBOARD_1_RX 57
+#define primary_INDEX_FLASH_CELLBOARD_2_TX 58
+#define primary_INDEX_FLASH_CELLBOARD_2_RX 59
+#define primary_INDEX_FLASH_CELLBOARD_3_TX 60
+#define primary_INDEX_FLASH_CELLBOARD_3_RX 61
+#define primary_INDEX_FLASH_CELLBOARD_4_TX 62
+#define primary_INDEX_FLASH_CELLBOARD_4_RX 63
+#define primary_INDEX_FLASH_CELLBOARD_5_TX 64
+#define primary_INDEX_FLASH_CELLBOARD_5_RX 65
+#define primary_INDEX_FLASH_BMS_HV_TX 66
+#define primary_INDEX_FLASH_BMS_HV_RX 67
+#define primary_INDEX_FLASH_BMS_LV_TX 68
+#define primary_INDEX_FLASH_BMS_LV_RX 69
+#define primary_INDEX_BRUSA_NLG5_CTL 70
+#define primary_INDEX_BRUSA_ST 71
+#define primary_INDEX_BRUSA_ACT_I 72
+#define primary_INDEX_BRUSA_ACT_II 73
+#define primary_INDEX_BRUSA_TEMP 74
+#define primary_INDEX_BRUSA_ERR 75
+#define primary_INDEX_BMS_HV_CHIMERA 76
+#define primary_INDEX_ECU_CHIMERA 77
 
 // ============== SIZES ============== //
 
@@ -256,6 +255,8 @@ typedef struct {
 #define primary_SIZE_LV_VERSION 5
 #define primary_SIZE_TLM_VERSION 5
 #define primary_SIZE_TIMESTAMP 4
+#define primary_SIZE_AMBIENT_TEMPERATURE 2
+#define primary_SIZE_DATA_LOGGER 8
 #define primary_SIZE_SET_TLM_STATUS 1
 #define primary_SIZE_TLM_STATUS 1
 #define primary_SIZE_STEER_SYSTEM_STATUS 1
@@ -688,6 +689,21 @@ typedef struct CANLIB_PARKING {
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_TIMESTAMP;
+
+typedef struct CANLIB_PARKING {
+    primary_int16 temp;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_AMBIENT_TEMPERATURE;
+
+typedef struct CANLIB_PARKING {
+    primary_uint32 placeholder1;
+    primary_uint32 placeholder2;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_DATA_LOGGER;
 
 typedef struct CANLIB_PARKING {
     primary_Toggle tlm_status;
@@ -1369,6 +1385,8 @@ typedef union CANLIB_PARKING {
     primary_message_LV_VERSION _LV_VERSION;
     primary_message_TLM_VERSION _TLM_VERSION;
     primary_message_TIMESTAMP _TIMESTAMP;
+    primary_message_AMBIENT_TEMPERATURE _AMBIENT_TEMPERATURE;
+    primary_message_DATA_LOGGER _DATA_LOGGER;
     primary_message_SET_TLM_STATUS _SET_TLM_STATUS;
     primary_message_TLM_STATUS _TLM_STATUS;
     primary_message_STEER_SYSTEM_STATUS _STEER_SYSTEM_STATUS;
@@ -1651,6 +1669,53 @@ int primary_to_string_TIMESTAMP(primary_message_TIMESTAMP* message, char* buffer
 int primary_fields_TIMESTAMP(char* buffer);
 int primary_to_string_file_TIMESTAMP(primary_message_TIMESTAMP* message, FILE* buffer);
 int primary_fields_file_TIMESTAMP(FILE* buffer);
+
+
+// ============== AMBIENT_TEMPERATURE ============== //
+
+primary_byte_size primary_serialize_AMBIENT_TEMPERATURE(
+    uint8_t* data,
+    primary_int16 temp
+);
+primary_byte_size primary_serialize_struct_AMBIENT_TEMPERATURE(
+    uint8_t* data,
+    primary_message_AMBIENT_TEMPERATURE* message
+);
+void primary_deserialize_AMBIENT_TEMPERATURE(
+    primary_message_AMBIENT_TEMPERATURE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_AMBIENT_TEMPERATURE(primary_message_AMBIENT_TEMPERATURE* message, char* buffer);
+int primary_fields_AMBIENT_TEMPERATURE(char* buffer);
+int primary_to_string_file_AMBIENT_TEMPERATURE(primary_message_AMBIENT_TEMPERATURE* message, FILE* buffer);
+int primary_fields_file_AMBIENT_TEMPERATURE(FILE* buffer);
+
+
+// ============== DATA_LOGGER ============== //
+
+primary_byte_size primary_serialize_DATA_LOGGER(
+    uint8_t* data,
+    primary_uint32 placeholder1,
+    primary_uint32 placeholder2
+);
+primary_byte_size primary_serialize_struct_DATA_LOGGER(
+    uint8_t* data,
+    primary_message_DATA_LOGGER* message
+);
+void primary_deserialize_DATA_LOGGER(
+    primary_message_DATA_LOGGER* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_DATA_LOGGER(primary_message_DATA_LOGGER* message, char* buffer);
+int primary_fields_DATA_LOGGER(char* buffer);
+int primary_to_string_file_DATA_LOGGER(primary_message_DATA_LOGGER* message, FILE* buffer);
+int primary_fields_file_DATA_LOGGER(FILE* buffer);
 
 
 // ============== SET_TLM_STATUS ============== //
@@ -3682,46 +3747,48 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 1121: return primary_INDEX_LV_VERSION;
         case 1153: return primary_INDEX_TLM_VERSION;
         case 257: return primary_INDEX_TIMESTAMP;
-        case 258: return primary_INDEX_SET_TLM_STATUS;
-        case 259: return primary_INDEX_TLM_STATUS;
-        case 1794: return primary_INDEX_STEER_SYSTEM_STATUS;
-        case 772: return primary_INDEX_HV_VOLTAGE;
-        case 804: return primary_INDEX_HV_CURRENT;
-        case 836: return primary_INDEX_HV_TEMP;
-        case 4: return primary_INDEX_HV_ERRORS;
-        case 5: return primary_INDEX_HV_CAN_FORWARD;
-        case 37: return primary_INDEX_HV_FANS_OVERRIDE;
-        case 6: return primary_INDEX_HV_CAN_FORWARD_STATUS;
-        case 774: return primary_INDEX_HV_FANS_OVERRIDE_STATUS;
-        case 775: return primary_INDEX_HV_FEEDBACKS_STATUS;
-        case 807: return primary_INDEX_HV_IMD_STATUS;
-        case 36: return primary_INDEX_TS_STATUS;
-        case 69: return primary_INDEX_SET_TS_STATUS_DAS;
-        case 101: return primary_INDEX_SET_TS_STATUS_HANDCART;
-        case 264: return primary_INDEX_STEER_STATUS;
-        case 776: return primary_INDEX_SET_CAR_STATUS;
-        case 1032: return primary_INDEX_SET_PEDALS_RANGE;
-        case 1064: return primary_INDEX_SET_STEERING_ANGLE_RANGE;
-        case 515: return primary_INDEX_CAR_STATUS;
-        case 3: return primary_INDEX_DAS_ERRORS;
-        case 839: return primary_INDEX_LV_CURRENT;
-        case 871: return primary_INDEX_LV_VOLTAGE;
-        case 903: return primary_INDEX_LV_TOTAL_VOLTAGE;
-        case 935: return primary_INDEX_LV_TEMPERATURE;
-        case 967: return primary_INDEX_COOLING_STATUS;
-        case 777: return primary_INDEX_SET_RADIATOR_SPEED;
-        case 809: return primary_INDEX_SET_PUMPS_SPEED;
-        case 265: return primary_INDEX_SET_INVERTER_CONNECTION_STATUS;
-        case 263: return primary_INDEX_INVERTER_CONNECTION_STATUS;
-        case 7: return primary_INDEX_LV_ERRORS;
-        case 295: return primary_INDEX_SHUTDOWN_STATUS;
-        case 2: return primary_INDEX_MARKER;
-        case 518: return primary_INDEX_HV_CELLS_VOLTAGE;
-        case 550: return primary_INDEX_HV_CELLS_TEMP;
-        case 582: return primary_INDEX_HV_CELL_BALANCING_STATUS;
-        case 517: return primary_INDEX_SET_CELL_BALANCING_STATUS;
-        case 773: return primary_INDEX_HANDCART_STATUS;
-        case 547: return primary_INDEX_SPEED;
+        case 289: return primary_INDEX_AMBIENT_TEMPERATURE;
+        case 1072: return primary_INDEX_DATA_LOGGER;
+        case 259: return primary_INDEX_SET_TLM_STATUS;
+        case 260: return primary_INDEX_TLM_STATUS;
+        case 1795: return primary_INDEX_STEER_SYSTEM_STATUS;
+        case 773: return primary_INDEX_HV_VOLTAGE;
+        case 805: return primary_INDEX_HV_CURRENT;
+        case 837: return primary_INDEX_HV_TEMP;
+        case 5: return primary_INDEX_HV_ERRORS;
+        case 6: return primary_INDEX_HV_CAN_FORWARD;
+        case 38: return primary_INDEX_HV_FANS_OVERRIDE;
+        case 7: return primary_INDEX_HV_CAN_FORWARD_STATUS;
+        case 775: return primary_INDEX_HV_FANS_OVERRIDE_STATUS;
+        case 776: return primary_INDEX_HV_FEEDBACKS_STATUS;
+        case 808: return primary_INDEX_HV_IMD_STATUS;
+        case 37: return primary_INDEX_TS_STATUS;
+        case 70: return primary_INDEX_SET_TS_STATUS_DAS;
+        case 102: return primary_INDEX_SET_TS_STATUS_HANDCART;
+        case 265: return primary_INDEX_STEER_STATUS;
+        case 777: return primary_INDEX_SET_CAR_STATUS;
+        case 1033: return primary_INDEX_SET_PEDALS_RANGE;
+        case 1065: return primary_INDEX_SET_STEERING_ANGLE_RANGE;
+        case 516: return primary_INDEX_CAR_STATUS;
+        case 4: return primary_INDEX_DAS_ERRORS;
+        case 840: return primary_INDEX_LV_CURRENT;
+        case 872: return primary_INDEX_LV_VOLTAGE;
+        case 904: return primary_INDEX_LV_TOTAL_VOLTAGE;
+        case 936: return primary_INDEX_LV_TEMPERATURE;
+        case 968: return primary_INDEX_COOLING_STATUS;
+        case 778: return primary_INDEX_SET_RADIATOR_SPEED;
+        case 810: return primary_INDEX_SET_PUMPS_SPEED;
+        case 266: return primary_INDEX_SET_INVERTER_CONNECTION_STATUS;
+        case 264: return primary_INDEX_INVERTER_CONNECTION_STATUS;
+        case 8: return primary_INDEX_LV_ERRORS;
+        case 296: return primary_INDEX_SHUTDOWN_STATUS;
+        case 3: return primary_INDEX_MARKER;
+        case 519: return primary_INDEX_HV_CELLS_VOLTAGE;
+        case 551: return primary_INDEX_HV_CELLS_TEMP;
+        case 583: return primary_INDEX_HV_CELL_BALANCING_STATUS;
+        case 518: return primary_INDEX_SET_CELL_BALANCING_STATUS;
+        case 774: return primary_INDEX_HANDCART_STATUS;
+        case 548: return primary_INDEX_SPEED;
         case 513: return primary_INDEX_INV_L_REQUEST;
         case 514: return primary_INDEX_INV_R_REQUEST;
         case 385: return primary_INDEX_INV_L_RESPONSE;
@@ -3764,46 +3831,48 @@ static inline int primary_id_from_index(int index) {
         case primary_INDEX_LV_VERSION: return 1121;
         case primary_INDEX_TLM_VERSION: return 1153;
         case primary_INDEX_TIMESTAMP: return 257;
-        case primary_INDEX_SET_TLM_STATUS: return 258;
-        case primary_INDEX_TLM_STATUS: return 259;
-        case primary_INDEX_STEER_SYSTEM_STATUS: return 1794;
-        case primary_INDEX_HV_VOLTAGE: return 772;
-        case primary_INDEX_HV_CURRENT: return 804;
-        case primary_INDEX_HV_TEMP: return 836;
-        case primary_INDEX_HV_ERRORS: return 4;
-        case primary_INDEX_HV_CAN_FORWARD: return 5;
-        case primary_INDEX_HV_FANS_OVERRIDE: return 37;
-        case primary_INDEX_HV_CAN_FORWARD_STATUS: return 6;
-        case primary_INDEX_HV_FANS_OVERRIDE_STATUS: return 774;
-        case primary_INDEX_HV_FEEDBACKS_STATUS: return 775;
-        case primary_INDEX_HV_IMD_STATUS: return 807;
-        case primary_INDEX_TS_STATUS: return 36;
-        case primary_INDEX_SET_TS_STATUS_DAS: return 69;
-        case primary_INDEX_SET_TS_STATUS_HANDCART: return 101;
-        case primary_INDEX_STEER_STATUS: return 264;
-        case primary_INDEX_SET_CAR_STATUS: return 776;
-        case primary_INDEX_SET_PEDALS_RANGE: return 1032;
-        case primary_INDEX_SET_STEERING_ANGLE_RANGE: return 1064;
-        case primary_INDEX_CAR_STATUS: return 515;
-        case primary_INDEX_DAS_ERRORS: return 3;
-        case primary_INDEX_LV_CURRENT: return 839;
-        case primary_INDEX_LV_VOLTAGE: return 871;
-        case primary_INDEX_LV_TOTAL_VOLTAGE: return 903;
-        case primary_INDEX_LV_TEMPERATURE: return 935;
-        case primary_INDEX_COOLING_STATUS: return 967;
-        case primary_INDEX_SET_RADIATOR_SPEED: return 777;
-        case primary_INDEX_SET_PUMPS_SPEED: return 809;
-        case primary_INDEX_SET_INVERTER_CONNECTION_STATUS: return 265;
-        case primary_INDEX_INVERTER_CONNECTION_STATUS: return 263;
-        case primary_INDEX_LV_ERRORS: return 7;
-        case primary_INDEX_SHUTDOWN_STATUS: return 295;
-        case primary_INDEX_MARKER: return 2;
-        case primary_INDEX_HV_CELLS_VOLTAGE: return 518;
-        case primary_INDEX_HV_CELLS_TEMP: return 550;
-        case primary_INDEX_HV_CELL_BALANCING_STATUS: return 582;
-        case primary_INDEX_SET_CELL_BALANCING_STATUS: return 517;
-        case primary_INDEX_HANDCART_STATUS: return 773;
-        case primary_INDEX_SPEED: return 547;
+        case primary_INDEX_AMBIENT_TEMPERATURE: return 289;
+        case primary_INDEX_DATA_LOGGER: return 1072;
+        case primary_INDEX_SET_TLM_STATUS: return 259;
+        case primary_INDEX_TLM_STATUS: return 260;
+        case primary_INDEX_STEER_SYSTEM_STATUS: return 1795;
+        case primary_INDEX_HV_VOLTAGE: return 773;
+        case primary_INDEX_HV_CURRENT: return 805;
+        case primary_INDEX_HV_TEMP: return 837;
+        case primary_INDEX_HV_ERRORS: return 5;
+        case primary_INDEX_HV_CAN_FORWARD: return 6;
+        case primary_INDEX_HV_FANS_OVERRIDE: return 38;
+        case primary_INDEX_HV_CAN_FORWARD_STATUS: return 7;
+        case primary_INDEX_HV_FANS_OVERRIDE_STATUS: return 775;
+        case primary_INDEX_HV_FEEDBACKS_STATUS: return 776;
+        case primary_INDEX_HV_IMD_STATUS: return 808;
+        case primary_INDEX_TS_STATUS: return 37;
+        case primary_INDEX_SET_TS_STATUS_DAS: return 70;
+        case primary_INDEX_SET_TS_STATUS_HANDCART: return 102;
+        case primary_INDEX_STEER_STATUS: return 265;
+        case primary_INDEX_SET_CAR_STATUS: return 777;
+        case primary_INDEX_SET_PEDALS_RANGE: return 1033;
+        case primary_INDEX_SET_STEERING_ANGLE_RANGE: return 1065;
+        case primary_INDEX_CAR_STATUS: return 516;
+        case primary_INDEX_DAS_ERRORS: return 4;
+        case primary_INDEX_LV_CURRENT: return 840;
+        case primary_INDEX_LV_VOLTAGE: return 872;
+        case primary_INDEX_LV_TOTAL_VOLTAGE: return 904;
+        case primary_INDEX_LV_TEMPERATURE: return 936;
+        case primary_INDEX_COOLING_STATUS: return 968;
+        case primary_INDEX_SET_RADIATOR_SPEED: return 778;
+        case primary_INDEX_SET_PUMPS_SPEED: return 810;
+        case primary_INDEX_SET_INVERTER_CONNECTION_STATUS: return 266;
+        case primary_INDEX_INVERTER_CONNECTION_STATUS: return 264;
+        case primary_INDEX_LV_ERRORS: return 8;
+        case primary_INDEX_SHUTDOWN_STATUS: return 296;
+        case primary_INDEX_MARKER: return 3;
+        case primary_INDEX_HV_CELLS_VOLTAGE: return 519;
+        case primary_INDEX_HV_CELLS_TEMP: return 551;
+        case primary_INDEX_HV_CELL_BALANCING_STATUS: return 583;
+        case primary_INDEX_SET_CELL_BALANCING_STATUS: return 518;
+        case primary_INDEX_HANDCART_STATUS: return 774;
+        case primary_INDEX_SPEED: return 548;
         case primary_INDEX_INV_L_REQUEST: return 513;
         case primary_INDEX_INV_R_REQUEST: return 514;
         case primary_INDEX_INV_L_RESPONSE: return 385;
@@ -4861,6 +4930,196 @@ int primary_fields_file_TIMESTAMP(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "timestamp"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_AMBIENT_TEMPERATURE(
+    uint8_t* data,
+    primary_int16 temp
+) {
+    data[0] = temp & 255;
+    data[1] = (temp >> 8) & 255;
+    return 2;
+}
+
+primary_byte_size primary_serialize_struct_AMBIENT_TEMPERATURE(
+    uint8_t* data,
+    primary_message_AMBIENT_TEMPERATURE* message
+) {
+    data[0] = message->temp & 255;
+    data[1] = (message->temp >> 8) & 255;
+    return 2;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_AMBIENT_TEMPERATURE(
+    primary_message_AMBIENT_TEMPERATURE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->temp = data[0] | (data[1] << 8);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_AMBIENT_TEMPERATURE(primary_message_AMBIENT_TEMPERATURE* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIi16,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->temp
+    );
+}
+
+int primary_fields_AMBIENT_TEMPERATURE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "temp"
+    );
+}
+
+int primary_to_string_file_AMBIENT_TEMPERATURE(primary_message_AMBIENT_TEMPERATURE* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIi16,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->temp
+    );
+}
+
+int primary_fields_file_AMBIENT_TEMPERATURE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "temp"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_DATA_LOGGER(
+    uint8_t* data,
+    primary_uint32 placeholder1,
+    primary_uint32 placeholder2
+) {
+    data[0] = placeholder1 & 255;
+    data[1] = (placeholder1 >> 8) & 255;
+    data[2] = (placeholder1 >> 16) & 255;
+    data[3] = (placeholder1 >> 24) & 255;
+    data[4] = placeholder2 & 255;
+    data[5] = (placeholder2 >> 8) & 255;
+    data[6] = (placeholder2 >> 16) & 255;
+    data[7] = (placeholder2 >> 24) & 255;
+    return 8;
+}
+
+primary_byte_size primary_serialize_struct_DATA_LOGGER(
+    uint8_t* data,
+    primary_message_DATA_LOGGER* message
+) {
+    data[0] = message->placeholder1 & 255;
+    data[1] = (message->placeholder1 >> 8) & 255;
+    data[2] = (message->placeholder1 >> 16) & 255;
+    data[3] = (message->placeholder1 >> 24) & 255;
+    data[4] = message->placeholder2 & 255;
+    data[5] = (message->placeholder2 >> 8) & 255;
+    data[6] = (message->placeholder2 >> 16) & 255;
+    data[7] = (message->placeholder2 >> 24) & 255;
+    return 8;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_DATA_LOGGER(
+    primary_message_DATA_LOGGER* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->placeholder1 = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->placeholder2 = data[4] | (data[5] << 8) | (data[6] << 16) | (data[7] << 24);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_DATA_LOGGER(primary_message_DATA_LOGGER* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->placeholder1,
+        message->placeholder2
+    );
+}
+
+int primary_fields_DATA_LOGGER(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "placeholder1" CANLIB_SEPARATOR 
+        "placeholder2"
+    );
+}
+
+int primary_to_string_file_DATA_LOGGER(primary_message_DATA_LOGGER* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->placeholder1,
+        message->placeholder2
+    );
+}
+
+int primary_fields_file_DATA_LOGGER(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "placeholder1" CANLIB_SEPARATOR 
+        "placeholder2"
     );
 }
 
@@ -11495,85 +11754,89 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_TLM_VERSION(buffer);
         case 257:
             return primary_fields_TIMESTAMP(buffer);
-        case 258:
-            return primary_fields_SET_TLM_STATUS(buffer);
+        case 289:
+            return primary_fields_AMBIENT_TEMPERATURE(buffer);
+        case 1072:
+            return primary_fields_DATA_LOGGER(buffer);
         case 259:
+            return primary_fields_SET_TLM_STATUS(buffer);
+        case 260:
             return primary_fields_TLM_STATUS(buffer);
-        case 1794:
+        case 1795:
             return primary_fields_STEER_SYSTEM_STATUS(buffer);
-        case 772:
-            return primary_fields_HV_VOLTAGE(buffer);
-        case 804:
-            return primary_fields_HV_CURRENT(buffer);
-        case 836:
-            return primary_fields_HV_TEMP(buffer);
-        case 4:
-            return primary_fields_HV_ERRORS(buffer);
-        case 5:
-            return primary_fields_HV_CAN_FORWARD(buffer);
-        case 37:
-            return primary_fields_HV_FANS_OVERRIDE(buffer);
-        case 6:
-            return primary_fields_HV_CAN_FORWARD_STATUS(buffer);
-        case 774:
-            return primary_fields_HV_FANS_OVERRIDE_STATUS(buffer);
-        case 775:
-            return primary_fields_HV_FEEDBACKS_STATUS(buffer);
-        case 807:
-            return primary_fields_HV_IMD_STATUS(buffer);
-        case 36:
-            return primary_fields_TS_STATUS(buffer);
-        case 69:
-            return primary_fields_SET_TS_STATUS(buffer);
-        case 101:
-            return primary_fields_SET_TS_STATUS(buffer);
-        case 264:
-            return primary_fields_STEER_STATUS(buffer);
-        case 776:
-            return primary_fields_SET_CAR_STATUS(buffer);
-        case 1032:
-            return primary_fields_SET_PEDALS_RANGE(buffer);
-        case 1064:
-            return primary_fields_SET_STEERING_ANGLE_RANGE(buffer);
-        case 515:
-            return primary_fields_CAR_STATUS(buffer);
-        case 3:
-            return primary_fields_DAS_ERRORS(buffer);
-        case 839:
-            return primary_fields_LV_CURRENT(buffer);
-        case 871:
-            return primary_fields_LV_VOLTAGE(buffer);
-        case 903:
-            return primary_fields_LV_TOTAL_VOLTAGE(buffer);
-        case 935:
-            return primary_fields_LV_TEMPERATURE(buffer);
-        case 967:
-            return primary_fields_COOLING_STATUS(buffer);
-        case 777:
-            return primary_fields_SET_RADIATOR_SPEED(buffer);
-        case 809:
-            return primary_fields_SET_PUMPS_SPEED(buffer);
-        case 265:
-            return primary_fields_SET_INVERTER_CONNECTION_STATUS(buffer);
-        case 263:
-            return primary_fields_INVERTER_CONNECTION_STATUS(buffer);
-        case 7:
-            return primary_fields_LV_ERRORS(buffer);
-        case 295:
-            return primary_fields_SHUTDOWN_STATUS(buffer);
-        case 2:
-            return primary_fields_MARKER(buffer);
-        case 518:
-            return primary_fields_HV_CELLS_VOLTAGE(buffer);
-        case 550:
-            return primary_fields_HV_CELLS_TEMP(buffer);
-        case 582:
-            return primary_fields_HV_CELL_BALANCING_STATUS(buffer);
-        case 517:
-            return primary_fields_SET_CELL_BALANCING_STATUS(buffer);
         case 773:
+            return primary_fields_HV_VOLTAGE(buffer);
+        case 805:
+            return primary_fields_HV_CURRENT(buffer);
+        case 837:
+            return primary_fields_HV_TEMP(buffer);
+        case 5:
+            return primary_fields_HV_ERRORS(buffer);
+        case 6:
+            return primary_fields_HV_CAN_FORWARD(buffer);
+        case 38:
+            return primary_fields_HV_FANS_OVERRIDE(buffer);
+        case 7:
+            return primary_fields_HV_CAN_FORWARD_STATUS(buffer);
+        case 775:
+            return primary_fields_HV_FANS_OVERRIDE_STATUS(buffer);
+        case 776:
+            return primary_fields_HV_FEEDBACKS_STATUS(buffer);
+        case 808:
+            return primary_fields_HV_IMD_STATUS(buffer);
+        case 37:
+            return primary_fields_TS_STATUS(buffer);
+        case 70:
+            return primary_fields_SET_TS_STATUS(buffer);
+        case 102:
+            return primary_fields_SET_TS_STATUS(buffer);
+        case 265:
+            return primary_fields_STEER_STATUS(buffer);
+        case 777:
+            return primary_fields_SET_CAR_STATUS(buffer);
+        case 1033:
+            return primary_fields_SET_PEDALS_RANGE(buffer);
+        case 1065:
+            return primary_fields_SET_STEERING_ANGLE_RANGE(buffer);
+        case 516:
+            return primary_fields_CAR_STATUS(buffer);
+        case 4:
+            return primary_fields_DAS_ERRORS(buffer);
+        case 840:
+            return primary_fields_LV_CURRENT(buffer);
+        case 872:
+            return primary_fields_LV_VOLTAGE(buffer);
+        case 904:
+            return primary_fields_LV_TOTAL_VOLTAGE(buffer);
+        case 936:
+            return primary_fields_LV_TEMPERATURE(buffer);
+        case 968:
+            return primary_fields_COOLING_STATUS(buffer);
+        case 778:
+            return primary_fields_SET_RADIATOR_SPEED(buffer);
+        case 810:
+            return primary_fields_SET_PUMPS_SPEED(buffer);
+        case 266:
+            return primary_fields_SET_INVERTER_CONNECTION_STATUS(buffer);
+        case 264:
+            return primary_fields_INVERTER_CONNECTION_STATUS(buffer);
+        case 8:
+            return primary_fields_LV_ERRORS(buffer);
+        case 296:
+            return primary_fields_SHUTDOWN_STATUS(buffer);
+        case 3:
+            return primary_fields_MARKER(buffer);
+        case 519:
+            return primary_fields_HV_CELLS_VOLTAGE(buffer);
+        case 551:
+            return primary_fields_HV_CELLS_TEMP(buffer);
+        case 583:
+            return primary_fields_HV_CELL_BALANCING_STATUS(buffer);
+        case 518:
+            return primary_fields_SET_CELL_BALANCING_STATUS(buffer);
+        case 774:
             return primary_fields_HANDCART_STATUS(buffer);
-        case 547:
+        case 548:
             return primary_fields_SPEED(buffer);
         case 513:
             return primary_fields_INV_L_REQUEST(buffer);
@@ -11653,85 +11916,89 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_TLM_VERSION((primary_message_TLM_VERSION*) message, buffer);
         case 257:
             return primary_to_string_TIMESTAMP((primary_message_TIMESTAMP*) message, buffer);
-        case 258:
-            return primary_to_string_SET_TLM_STATUS((primary_message_SET_TLM_STATUS*) message, buffer);
+        case 289:
+            return primary_to_string_AMBIENT_TEMPERATURE((primary_message_AMBIENT_TEMPERATURE*) message, buffer);
+        case 1072:
+            return primary_to_string_DATA_LOGGER((primary_message_DATA_LOGGER*) message, buffer);
         case 259:
+            return primary_to_string_SET_TLM_STATUS((primary_message_SET_TLM_STATUS*) message, buffer);
+        case 260:
             return primary_to_string_TLM_STATUS((primary_message_TLM_STATUS*) message, buffer);
-        case 1794:
+        case 1795:
             return primary_to_string_STEER_SYSTEM_STATUS((primary_message_STEER_SYSTEM_STATUS*) message, buffer);
-        case 772:
-            return primary_to_string_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
-        case 804:
-            return primary_to_string_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
-        case 836:
-            return primary_to_string_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
-        case 4:
-            return primary_to_string_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
-        case 5:
-            return primary_to_string_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
-        case 37:
-            return primary_to_string_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
-        case 6:
-            return primary_to_string_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
-        case 774:
-            return primary_to_string_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
-        case 775:
-            return primary_to_string_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
-        case 807:
-            return primary_to_string_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
-        case 36:
-            return primary_to_string_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
-        case 69:
-            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
-        case 101:
-            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
-        case 264:
-            return primary_to_string_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
-        case 776:
-            return primary_to_string_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
-        case 1032:
-            return primary_to_string_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
-        case 1064:
-            return primary_to_string_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
-        case 515:
-            return primary_to_string_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
-        case 3:
-            return primary_to_string_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
-        case 839:
-            return primary_to_string_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
-        case 871:
-            return primary_to_string_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
-        case 903:
-            return primary_to_string_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
-        case 935:
-            return primary_to_string_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
-        case 967:
-            return primary_to_string_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
-        case 777:
-            return primary_to_string_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
-        case 809:
-            return primary_to_string_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
-        case 265:
-            return primary_to_string_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
-        case 263:
-            return primary_to_string_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
-        case 7:
-            return primary_to_string_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
-        case 295:
-            return primary_to_string_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
-        case 2:
-            return primary_to_string_MARKER((primary_message_MARKER*) message, buffer);
-        case 518:
-            return primary_to_string_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
-        case 550:
-            return primary_to_string_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
-        case 582:
-            return primary_to_string_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
-        case 517:
-            return primary_to_string_SET_CELL_BALANCING_STATUS((primary_message_SET_CELL_BALANCING_STATUS*) message, buffer);
         case 773:
+            return primary_to_string_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
+        case 805:
+            return primary_to_string_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
+        case 837:
+            return primary_to_string_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
+        case 5:
+            return primary_to_string_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
+        case 6:
+            return primary_to_string_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
+        case 38:
+            return primary_to_string_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
+        case 7:
+            return primary_to_string_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
+        case 775:
+            return primary_to_string_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
+        case 776:
+            return primary_to_string_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
+        case 808:
+            return primary_to_string_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
+        case 37:
+            return primary_to_string_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
+        case 70:
+            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+        case 102:
+            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+        case 265:
+            return primary_to_string_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
+        case 777:
+            return primary_to_string_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
+        case 1033:
+            return primary_to_string_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
+        case 1065:
+            return primary_to_string_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
+        case 516:
+            return primary_to_string_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
+        case 4:
+            return primary_to_string_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
+        case 840:
+            return primary_to_string_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
+        case 872:
+            return primary_to_string_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
+        case 904:
+            return primary_to_string_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
+        case 936:
+            return primary_to_string_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
+        case 968:
+            return primary_to_string_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
+        case 778:
+            return primary_to_string_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
+        case 810:
+            return primary_to_string_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
+        case 266:
+            return primary_to_string_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 264:
+            return primary_to_string_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 8:
+            return primary_to_string_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
+        case 296:
+            return primary_to_string_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
+        case 3:
+            return primary_to_string_MARKER((primary_message_MARKER*) message, buffer);
+        case 519:
+            return primary_to_string_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
+        case 551:
+            return primary_to_string_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
+        case 583:
+            return primary_to_string_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
+        case 518:
+            return primary_to_string_SET_CELL_BALANCING_STATUS((primary_message_SET_CELL_BALANCING_STATUS*) message, buffer);
+        case 774:
             return primary_to_string_HANDCART_STATUS((primary_message_HANDCART_STATUS*) message, buffer);
-        case 547:
+        case 548:
             return primary_to_string_SPEED((primary_message_SPEED_conversion*) message, buffer);
         case 513:
             return primary_to_string_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
@@ -11811,85 +12078,89 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_TLM_VERSION(buffer);
         case 257:
             return primary_fields_file_TIMESTAMP(buffer);
-        case 258:
-            return primary_fields_file_SET_TLM_STATUS(buffer);
+        case 289:
+            return primary_fields_file_AMBIENT_TEMPERATURE(buffer);
+        case 1072:
+            return primary_fields_file_DATA_LOGGER(buffer);
         case 259:
+            return primary_fields_file_SET_TLM_STATUS(buffer);
+        case 260:
             return primary_fields_file_TLM_STATUS(buffer);
-        case 1794:
+        case 1795:
             return primary_fields_file_STEER_SYSTEM_STATUS(buffer);
-        case 772:
-            return primary_fields_file_HV_VOLTAGE(buffer);
-        case 804:
-            return primary_fields_file_HV_CURRENT(buffer);
-        case 836:
-            return primary_fields_file_HV_TEMP(buffer);
-        case 4:
-            return primary_fields_file_HV_ERRORS(buffer);
-        case 5:
-            return primary_fields_file_HV_CAN_FORWARD(buffer);
-        case 37:
-            return primary_fields_file_HV_FANS_OVERRIDE(buffer);
-        case 6:
-            return primary_fields_file_HV_CAN_FORWARD_STATUS(buffer);
-        case 774:
-            return primary_fields_file_HV_FANS_OVERRIDE_STATUS(buffer);
-        case 775:
-            return primary_fields_file_HV_FEEDBACKS_STATUS(buffer);
-        case 807:
-            return primary_fields_file_HV_IMD_STATUS(buffer);
-        case 36:
-            return primary_fields_file_TS_STATUS(buffer);
-        case 69:
-            return primary_fields_file_SET_TS_STATUS(buffer);
-        case 101:
-            return primary_fields_file_SET_TS_STATUS(buffer);
-        case 264:
-            return primary_fields_file_STEER_STATUS(buffer);
-        case 776:
-            return primary_fields_file_SET_CAR_STATUS(buffer);
-        case 1032:
-            return primary_fields_file_SET_PEDALS_RANGE(buffer);
-        case 1064:
-            return primary_fields_file_SET_STEERING_ANGLE_RANGE(buffer);
-        case 515:
-            return primary_fields_file_CAR_STATUS(buffer);
-        case 3:
-            return primary_fields_file_DAS_ERRORS(buffer);
-        case 839:
-            return primary_fields_file_LV_CURRENT(buffer);
-        case 871:
-            return primary_fields_file_LV_VOLTAGE(buffer);
-        case 903:
-            return primary_fields_file_LV_TOTAL_VOLTAGE(buffer);
-        case 935:
-            return primary_fields_file_LV_TEMPERATURE(buffer);
-        case 967:
-            return primary_fields_file_COOLING_STATUS(buffer);
-        case 777:
-            return primary_fields_file_SET_RADIATOR_SPEED(buffer);
-        case 809:
-            return primary_fields_file_SET_PUMPS_SPEED(buffer);
-        case 265:
-            return primary_fields_file_SET_INVERTER_CONNECTION_STATUS(buffer);
-        case 263:
-            return primary_fields_file_INVERTER_CONNECTION_STATUS(buffer);
-        case 7:
-            return primary_fields_file_LV_ERRORS(buffer);
-        case 295:
-            return primary_fields_file_SHUTDOWN_STATUS(buffer);
-        case 2:
-            return primary_fields_file_MARKER(buffer);
-        case 518:
-            return primary_fields_file_HV_CELLS_VOLTAGE(buffer);
-        case 550:
-            return primary_fields_file_HV_CELLS_TEMP(buffer);
-        case 582:
-            return primary_fields_file_HV_CELL_BALANCING_STATUS(buffer);
-        case 517:
-            return primary_fields_file_SET_CELL_BALANCING_STATUS(buffer);
         case 773:
+            return primary_fields_file_HV_VOLTAGE(buffer);
+        case 805:
+            return primary_fields_file_HV_CURRENT(buffer);
+        case 837:
+            return primary_fields_file_HV_TEMP(buffer);
+        case 5:
+            return primary_fields_file_HV_ERRORS(buffer);
+        case 6:
+            return primary_fields_file_HV_CAN_FORWARD(buffer);
+        case 38:
+            return primary_fields_file_HV_FANS_OVERRIDE(buffer);
+        case 7:
+            return primary_fields_file_HV_CAN_FORWARD_STATUS(buffer);
+        case 775:
+            return primary_fields_file_HV_FANS_OVERRIDE_STATUS(buffer);
+        case 776:
+            return primary_fields_file_HV_FEEDBACKS_STATUS(buffer);
+        case 808:
+            return primary_fields_file_HV_IMD_STATUS(buffer);
+        case 37:
+            return primary_fields_file_TS_STATUS(buffer);
+        case 70:
+            return primary_fields_file_SET_TS_STATUS(buffer);
+        case 102:
+            return primary_fields_file_SET_TS_STATUS(buffer);
+        case 265:
+            return primary_fields_file_STEER_STATUS(buffer);
+        case 777:
+            return primary_fields_file_SET_CAR_STATUS(buffer);
+        case 1033:
+            return primary_fields_file_SET_PEDALS_RANGE(buffer);
+        case 1065:
+            return primary_fields_file_SET_STEERING_ANGLE_RANGE(buffer);
+        case 516:
+            return primary_fields_file_CAR_STATUS(buffer);
+        case 4:
+            return primary_fields_file_DAS_ERRORS(buffer);
+        case 840:
+            return primary_fields_file_LV_CURRENT(buffer);
+        case 872:
+            return primary_fields_file_LV_VOLTAGE(buffer);
+        case 904:
+            return primary_fields_file_LV_TOTAL_VOLTAGE(buffer);
+        case 936:
+            return primary_fields_file_LV_TEMPERATURE(buffer);
+        case 968:
+            return primary_fields_file_COOLING_STATUS(buffer);
+        case 778:
+            return primary_fields_file_SET_RADIATOR_SPEED(buffer);
+        case 810:
+            return primary_fields_file_SET_PUMPS_SPEED(buffer);
+        case 266:
+            return primary_fields_file_SET_INVERTER_CONNECTION_STATUS(buffer);
+        case 264:
+            return primary_fields_file_INVERTER_CONNECTION_STATUS(buffer);
+        case 8:
+            return primary_fields_file_LV_ERRORS(buffer);
+        case 296:
+            return primary_fields_file_SHUTDOWN_STATUS(buffer);
+        case 3:
+            return primary_fields_file_MARKER(buffer);
+        case 519:
+            return primary_fields_file_HV_CELLS_VOLTAGE(buffer);
+        case 551:
+            return primary_fields_file_HV_CELLS_TEMP(buffer);
+        case 583:
+            return primary_fields_file_HV_CELL_BALANCING_STATUS(buffer);
+        case 518:
+            return primary_fields_file_SET_CELL_BALANCING_STATUS(buffer);
+        case 774:
             return primary_fields_file_HANDCART_STATUS(buffer);
-        case 547:
+        case 548:
             return primary_fields_file_SPEED(buffer);
         case 513:
             return primary_fields_file_INV_L_REQUEST(buffer);
@@ -11969,85 +12240,89 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_TLM_VERSION((primary_message_TLM_VERSION*) message, buffer);
         case 257:
             return primary_to_string_file_TIMESTAMP((primary_message_TIMESTAMP*) message, buffer);
-        case 258:
-            return primary_to_string_file_SET_TLM_STATUS((primary_message_SET_TLM_STATUS*) message, buffer);
+        case 289:
+            return primary_to_string_file_AMBIENT_TEMPERATURE((primary_message_AMBIENT_TEMPERATURE*) message, buffer);
+        case 1072:
+            return primary_to_string_file_DATA_LOGGER((primary_message_DATA_LOGGER*) message, buffer);
         case 259:
+            return primary_to_string_file_SET_TLM_STATUS((primary_message_SET_TLM_STATUS*) message, buffer);
+        case 260:
             return primary_to_string_file_TLM_STATUS((primary_message_TLM_STATUS*) message, buffer);
-        case 1794:
+        case 1795:
             return primary_to_string_file_STEER_SYSTEM_STATUS((primary_message_STEER_SYSTEM_STATUS*) message, buffer);
-        case 772:
-            return primary_to_string_file_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
-        case 804:
-            return primary_to_string_file_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
-        case 836:
-            return primary_to_string_file_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
-        case 4:
-            return primary_to_string_file_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
-        case 5:
-            return primary_to_string_file_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
-        case 37:
-            return primary_to_string_file_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
-        case 6:
-            return primary_to_string_file_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
-        case 774:
-            return primary_to_string_file_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
-        case 775:
-            return primary_to_string_file_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
-        case 807:
-            return primary_to_string_file_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
-        case 36:
-            return primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
-        case 69:
-            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
-        case 101:
-            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
-        case 264:
-            return primary_to_string_file_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
-        case 776:
-            return primary_to_string_file_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
-        case 1032:
-            return primary_to_string_file_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
-        case 1064:
-            return primary_to_string_file_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
-        case 515:
-            return primary_to_string_file_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
-        case 3:
-            return primary_to_string_file_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
-        case 839:
-            return primary_to_string_file_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
-        case 871:
-            return primary_to_string_file_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
-        case 903:
-            return primary_to_string_file_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
-        case 935:
-            return primary_to_string_file_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
-        case 967:
-            return primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
-        case 777:
-            return primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
-        case 809:
-            return primary_to_string_file_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
-        case 265:
-            return primary_to_string_file_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
-        case 263:
-            return primary_to_string_file_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
-        case 7:
-            return primary_to_string_file_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
-        case 295:
-            return primary_to_string_file_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
-        case 2:
-            return primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
-        case 518:
-            return primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
-        case 550:
-            return primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
-        case 582:
-            return primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
-        case 517:
-            return primary_to_string_file_SET_CELL_BALANCING_STATUS((primary_message_SET_CELL_BALANCING_STATUS*) message, buffer);
         case 773:
+            return primary_to_string_file_HV_VOLTAGE((primary_message_HV_VOLTAGE_conversion*) message, buffer);
+        case 805:
+            return primary_to_string_file_HV_CURRENT((primary_message_HV_CURRENT_conversion*) message, buffer);
+        case 837:
+            return primary_to_string_file_HV_TEMP((primary_message_HV_TEMP_conversion*) message, buffer);
+        case 5:
+            return primary_to_string_file_HV_ERRORS((primary_message_HV_ERRORS*) message, buffer);
+        case 6:
+            return primary_to_string_file_HV_CAN_FORWARD((primary_message_HV_CAN_FORWARD*) message, buffer);
+        case 38:
+            return primary_to_string_file_HV_FANS_OVERRIDE((primary_message_HV_FANS_OVERRIDE_conversion*) message, buffer);
+        case 7:
+            return primary_to_string_file_HV_CAN_FORWARD_STATUS((primary_message_HV_CAN_FORWARD_STATUS*) message, buffer);
+        case 775:
+            return primary_to_string_file_HV_FANS_OVERRIDE_STATUS((primary_message_HV_FANS_OVERRIDE_STATUS_conversion*) message, buffer);
+        case 776:
+            return primary_to_string_file_HV_FEEDBACKS_STATUS((primary_message_HV_FEEDBACKS_STATUS*) message, buffer);
+        case 808:
+            return primary_to_string_file_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
+        case 37:
+            return primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
+        case 70:
+            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+        case 102:
+            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+        case 265:
+            return primary_to_string_file_STEER_STATUS((primary_message_STEER_STATUS*) message, buffer);
+        case 777:
+            return primary_to_string_file_SET_CAR_STATUS((primary_message_SET_CAR_STATUS*) message, buffer);
+        case 1033:
+            return primary_to_string_file_SET_PEDALS_RANGE((primary_message_SET_PEDALS_RANGE*) message, buffer);
+        case 1065:
+            return primary_to_string_file_SET_STEERING_ANGLE_RANGE((primary_message_SET_STEERING_ANGLE_RANGE*) message, buffer);
+        case 516:
+            return primary_to_string_file_CAR_STATUS((primary_message_CAR_STATUS*) message, buffer);
+        case 4:
+            return primary_to_string_file_DAS_ERRORS((primary_message_DAS_ERRORS*) message, buffer);
+        case 840:
+            return primary_to_string_file_LV_CURRENT((primary_message_LV_CURRENT_conversion*) message, buffer);
+        case 872:
+            return primary_to_string_file_LV_VOLTAGE((primary_message_LV_VOLTAGE_conversion*) message, buffer);
+        case 904:
+            return primary_to_string_file_LV_TOTAL_VOLTAGE((primary_message_LV_TOTAL_VOLTAGE_conversion*) message, buffer);
+        case 936:
+            return primary_to_string_file_LV_TEMPERATURE((primary_message_LV_TEMPERATURE_conversion*) message, buffer);
+        case 968:
+            return primary_to_string_file_COOLING_STATUS((primary_message_COOLING_STATUS_conversion*) message, buffer);
+        case 778:
+            return primary_to_string_file_SET_RADIATOR_SPEED((primary_message_SET_RADIATOR_SPEED_conversion*) message, buffer);
+        case 810:
+            return primary_to_string_file_SET_PUMPS_SPEED((primary_message_SET_PUMPS_SPEED_conversion*) message, buffer);
+        case 266:
+            return primary_to_string_file_SET_INVERTER_CONNECTION_STATUS((primary_message_SET_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 264:
+            return primary_to_string_file_INVERTER_CONNECTION_STATUS((primary_message_INVERTER_CONNECTION_STATUS*) message, buffer);
+        case 8:
+            return primary_to_string_file_LV_ERRORS((primary_message_LV_ERRORS*) message, buffer);
+        case 296:
+            return primary_to_string_file_SHUTDOWN_STATUS((primary_message_SHUTDOWN_STATUS*) message, buffer);
+        case 3:
+            return primary_to_string_file_MARKER((primary_message_MARKER*) message, buffer);
+        case 519:
+            return primary_to_string_file_HV_CELLS_VOLTAGE((primary_message_HV_CELLS_VOLTAGE_conversion*) message, buffer);
+        case 551:
+            return primary_to_string_file_HV_CELLS_TEMP((primary_message_HV_CELLS_TEMP_conversion*) message, buffer);
+        case 583:
+            return primary_to_string_file_HV_CELL_BALANCING_STATUS((primary_message_HV_CELL_BALANCING_STATUS*) message, buffer);
+        case 518:
+            return primary_to_string_file_SET_CELL_BALANCING_STATUS((primary_message_SET_CELL_BALANCING_STATUS*) message, buffer);
+        case 774:
             return primary_to_string_file_HANDCART_STATUS((primary_message_HANDCART_STATUS*) message, buffer);
-        case 547:
+        case 548:
             return primary_to_string_file_SPEED((primary_message_SPEED_conversion*) message, buffer);
         case 513:
             return primary_to_string_file_INV_L_REQUEST((primary_message_INV_L_REQUEST*) message, buffer);
@@ -12199,7 +12474,27 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 258: {
+        case 289: {
+            primary_deserialize_AMBIENT_TEMPERATURE(
+                (primary_message_AMBIENT_TEMPERATURE*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 1072: {
+            primary_deserialize_DATA_LOGGER(
+                (primary_message_DATA_LOGGER*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 259: {
             primary_deserialize_SET_TLM_STATUS(
                 (primary_message_SET_TLM_STATUS*) message_raw,
                 data
@@ -12209,7 +12504,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 259: {
+        case 260: {
             primary_deserialize_TLM_STATUS(
                 (primary_message_TLM_STATUS*) message_raw,
                 data
@@ -12219,7 +12514,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1794: {
+        case 1795: {
             primary_deserialize_STEER_SYSTEM_STATUS(
                 (primary_message_STEER_SYSTEM_STATUS*) message_raw,
                 data
@@ -12229,7 +12524,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 772: {
+        case 773: {
             primary_deserialize_HV_VOLTAGE(
                 (primary_message_HV_VOLTAGE*) message_raw,
                 data
@@ -12243,7 +12538,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 804: {
+        case 805: {
             primary_deserialize_HV_CURRENT(
                 (primary_message_HV_CURRENT*) message_raw,
                 data
@@ -12257,7 +12552,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 836: {
+        case 837: {
             primary_deserialize_HV_TEMP(
                 (primary_message_HV_TEMP*) message_raw,
                 data
@@ -12271,7 +12566,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 4: {
+        case 5: {
             primary_deserialize_HV_ERRORS(
                 (primary_message_HV_ERRORS*) message_raw,
                 data
@@ -12281,7 +12576,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 5: {
+        case 6: {
             primary_deserialize_HV_CAN_FORWARD(
                 (primary_message_HV_CAN_FORWARD*) message_raw,
                 data
@@ -12291,7 +12586,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 37: {
+        case 38: {
             primary_deserialize_HV_FANS_OVERRIDE(
                 (primary_message_HV_FANS_OVERRIDE*) message_raw,
                 data
@@ -12305,7 +12600,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 6: {
+        case 7: {
             primary_deserialize_HV_CAN_FORWARD_STATUS(
                 (primary_message_HV_CAN_FORWARD_STATUS*) message_raw,
                 data
@@ -12315,7 +12610,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 774: {
+        case 775: {
             primary_deserialize_HV_FANS_OVERRIDE_STATUS(
                 (primary_message_HV_FANS_OVERRIDE_STATUS*) message_raw,
                 data
@@ -12329,7 +12624,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 775: {
+        case 776: {
             primary_deserialize_HV_FEEDBACKS_STATUS(
                 (primary_message_HV_FEEDBACKS_STATUS*) message_raw,
                 data
@@ -12339,7 +12634,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 807: {
+        case 808: {
             primary_deserialize_HV_IMD_STATUS(
                 (primary_message_HV_IMD_STATUS*) message_raw,
                 data
@@ -12349,7 +12644,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 36: {
+        case 37: {
             primary_deserialize_TS_STATUS(
                 (primary_message_TS_STATUS*) message_raw,
                 data
@@ -12359,7 +12654,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 69: {
+        case 70: {
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) message_raw,
                 data
@@ -12369,7 +12664,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 101: {
+        case 102: {
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) message_raw,
                 data
@@ -12379,7 +12674,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 264: {
+        case 265: {
             primary_deserialize_STEER_STATUS(
                 (primary_message_STEER_STATUS*) message_raw,
                 data
@@ -12389,7 +12684,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 776: {
+        case 777: {
             primary_deserialize_SET_CAR_STATUS(
                 (primary_message_SET_CAR_STATUS*) message_raw,
                 data
@@ -12399,7 +12694,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1032: {
+        case 1033: {
             primary_deserialize_SET_PEDALS_RANGE(
                 (primary_message_SET_PEDALS_RANGE*) message_raw,
                 data
@@ -12409,7 +12704,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1064: {
+        case 1065: {
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
                 (primary_message_SET_STEERING_ANGLE_RANGE*) message_raw,
                 data
@@ -12419,7 +12714,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 515: {
+        case 516: {
             primary_deserialize_CAR_STATUS(
                 (primary_message_CAR_STATUS*) message_raw,
                 data
@@ -12429,7 +12724,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 3: {
+        case 4: {
             primary_deserialize_DAS_ERRORS(
                 (primary_message_DAS_ERRORS*) message_raw,
                 data
@@ -12439,7 +12734,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 839: {
+        case 840: {
             primary_deserialize_LV_CURRENT(
                 (primary_message_LV_CURRENT*) message_raw,
                 data
@@ -12453,7 +12748,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 871: {
+        case 872: {
             primary_deserialize_LV_VOLTAGE(
                 (primary_message_LV_VOLTAGE*) message_raw,
                 data
@@ -12467,7 +12762,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 903: {
+        case 904: {
             primary_deserialize_LV_TOTAL_VOLTAGE(
                 (primary_message_LV_TOTAL_VOLTAGE*) message_raw,
                 data
@@ -12481,7 +12776,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 935: {
+        case 936: {
             primary_deserialize_LV_TEMPERATURE(
                 (primary_message_LV_TEMPERATURE*) message_raw,
                 data
@@ -12495,7 +12790,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 967: {
+        case 968: {
             primary_deserialize_COOLING_STATUS(
                 (primary_message_COOLING_STATUS*) message_raw,
                 data
@@ -12509,7 +12804,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 777: {
+        case 778: {
             primary_deserialize_SET_RADIATOR_SPEED(
                 (primary_message_SET_RADIATOR_SPEED*) message_raw,
                 data
@@ -12523,7 +12818,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 809: {
+        case 810: {
             primary_deserialize_SET_PUMPS_SPEED(
                 (primary_message_SET_PUMPS_SPEED*) message_raw,
                 data
@@ -12537,7 +12832,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 265: {
+        case 266: {
             primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
                 (primary_message_SET_INVERTER_CONNECTION_STATUS*) message_raw,
                 data
@@ -12547,7 +12842,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 263: {
+        case 264: {
             primary_deserialize_INVERTER_CONNECTION_STATUS(
                 (primary_message_INVERTER_CONNECTION_STATUS*) message_raw,
                 data
@@ -12557,7 +12852,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 7: {
+        case 8: {
             primary_deserialize_LV_ERRORS(
                 (primary_message_LV_ERRORS*) message_raw,
                 data
@@ -12567,7 +12862,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 295: {
+        case 296: {
             primary_deserialize_SHUTDOWN_STATUS(
                 (primary_message_SHUTDOWN_STATUS*) message_raw,
                 data
@@ -12577,7 +12872,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 2: {
+        case 3: {
             primary_deserialize_MARKER(
                 (primary_message_MARKER*) message_raw,
                 data
@@ -12587,7 +12882,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 518: {
+        case 519: {
             primary_deserialize_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE*) message_raw,
                 data
@@ -12601,7 +12896,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 550: {
+        case 551: {
             primary_deserialize_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP*) message_raw,
                 data
@@ -12615,7 +12910,7 @@ void* primary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 582: {
+        case 583: {
             primary_deserialize_HV_CELL_BALANCING_STATUS(
                 (primary_message_HV_CELL_BALANCING_STATUS*) message_raw,
                 data
@@ -12625,7 +12920,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 517: {
+        case 518: {
             primary_deserialize_SET_CELL_BALANCING_STATUS(
                 (primary_message_SET_CELL_BALANCING_STATUS*) message_raw,
                 data
@@ -12635,7 +12930,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 773: {
+        case 774: {
             primary_deserialize_HANDCART_STATUS(
                 (primary_message_HANDCART_STATUS*) message_raw,
                 data
@@ -12645,7 +12940,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 547: {
+        case 548: {
             primary_deserialize_SPEED(
                 (primary_message_SPEED*) message_raw,
                 data
@@ -12969,130 +13264,136 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_TIMESTAMP].id = 257;
     (*devices)[primary_INDEX_TIMESTAMP].message_raw = (void*) malloc(sizeof(primary_message_TIMESTAMP));
     (*devices)[primary_INDEX_TIMESTAMP].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TLM_STATUS].id = 258;
+    (*devices)[primary_INDEX_AMBIENT_TEMPERATURE].id = 289;
+    (*devices)[primary_INDEX_AMBIENT_TEMPERATURE].message_raw = (void*) malloc(sizeof(primary_message_AMBIENT_TEMPERATURE));
+    (*devices)[primary_INDEX_AMBIENT_TEMPERATURE].message_conversion = NULL;
+    (*devices)[primary_INDEX_DATA_LOGGER].id = 1072;
+    (*devices)[primary_INDEX_DATA_LOGGER].message_raw = (void*) malloc(sizeof(primary_message_DATA_LOGGER));
+    (*devices)[primary_INDEX_DATA_LOGGER].message_conversion = NULL;
+    (*devices)[primary_INDEX_SET_TLM_STATUS].id = 259;
     (*devices)[primary_INDEX_SET_TLM_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SET_TLM_STATUS));
     (*devices)[primary_INDEX_SET_TLM_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_TLM_STATUS].id = 259;
+    (*devices)[primary_INDEX_TLM_STATUS].id = 260;
     (*devices)[primary_INDEX_TLM_STATUS].message_raw = (void*) malloc(sizeof(primary_message_TLM_STATUS));
     (*devices)[primary_INDEX_TLM_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_STEER_SYSTEM_STATUS].id = 1794;
+    (*devices)[primary_INDEX_STEER_SYSTEM_STATUS].id = 1795;
     (*devices)[primary_INDEX_STEER_SYSTEM_STATUS].message_raw = (void*) malloc(sizeof(primary_message_STEER_SYSTEM_STATUS));
     (*devices)[primary_INDEX_STEER_SYSTEM_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_VOLTAGE].id = 772;
+    (*devices)[primary_INDEX_HV_VOLTAGE].id = 773;
     (*devices)[primary_INDEX_HV_VOLTAGE].message_raw = (void*) malloc(sizeof(primary_message_HV_VOLTAGE));
     (*devices)[primary_INDEX_HV_VOLTAGE].message_conversion = (void*) malloc(sizeof(primary_message_HV_VOLTAGE_conversion));
-    (*devices)[primary_INDEX_HV_CURRENT].id = 804;
+    (*devices)[primary_INDEX_HV_CURRENT].id = 805;
     (*devices)[primary_INDEX_HV_CURRENT].message_raw = (void*) malloc(sizeof(primary_message_HV_CURRENT));
     (*devices)[primary_INDEX_HV_CURRENT].message_conversion = (void*) malloc(sizeof(primary_message_HV_CURRENT_conversion));
-    (*devices)[primary_INDEX_HV_TEMP].id = 836;
+    (*devices)[primary_INDEX_HV_TEMP].id = 837;
     (*devices)[primary_INDEX_HV_TEMP].message_raw = (void*) malloc(sizeof(primary_message_HV_TEMP));
     (*devices)[primary_INDEX_HV_TEMP].message_conversion = (void*) malloc(sizeof(primary_message_HV_TEMP_conversion));
-    (*devices)[primary_INDEX_HV_ERRORS].id = 4;
+    (*devices)[primary_INDEX_HV_ERRORS].id = 5;
     (*devices)[primary_INDEX_HV_ERRORS].message_raw = (void*) malloc(sizeof(primary_message_HV_ERRORS));
     (*devices)[primary_INDEX_HV_ERRORS].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_CAN_FORWARD].id = 5;
+    (*devices)[primary_INDEX_HV_CAN_FORWARD].id = 6;
     (*devices)[primary_INDEX_HV_CAN_FORWARD].message_raw = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD));
     (*devices)[primary_INDEX_HV_CAN_FORWARD].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_FANS_OVERRIDE].id = 37;
+    (*devices)[primary_INDEX_HV_FANS_OVERRIDE].id = 38;
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE].message_raw = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE));
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE].message_conversion = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_conversion));
-    (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].id = 6;
+    (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].id = 7;
     (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_CAN_FORWARD_STATUS));
     (*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].id = 774;
+    (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].id = 775;
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS));
     (*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion = (void*) malloc(sizeof(primary_message_HV_FANS_OVERRIDE_STATUS_conversion));
-    (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].id = 775;
+    (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].id = 776;
     (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_FEEDBACKS_STATUS));
     (*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_IMD_STATUS].id = 807;
+    (*devices)[primary_INDEX_HV_IMD_STATUS].id = 808;
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_IMD_STATUS));
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_TS_STATUS].id = 36;
+    (*devices)[primary_INDEX_TS_STATUS].id = 37;
     (*devices)[primary_INDEX_TS_STATUS].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS));
     (*devices)[primary_INDEX_TS_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 69;
+    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 70;
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 101;
+    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 102;
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 69;
+    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 70;
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 101;
+    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 102;
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_conversion = NULL;
-    (*devices)[primary_INDEX_STEER_STATUS].id = 264;
+    (*devices)[primary_INDEX_STEER_STATUS].id = 265;
     (*devices)[primary_INDEX_STEER_STATUS].message_raw = (void*) malloc(sizeof(primary_message_STEER_STATUS));
     (*devices)[primary_INDEX_STEER_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_CAR_STATUS].id = 776;
+    (*devices)[primary_INDEX_SET_CAR_STATUS].id = 777;
     (*devices)[primary_INDEX_SET_CAR_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SET_CAR_STATUS));
     (*devices)[primary_INDEX_SET_CAR_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_PEDALS_RANGE].id = 1032;
+    (*devices)[primary_INDEX_SET_PEDALS_RANGE].id = 1033;
     (*devices)[primary_INDEX_SET_PEDALS_RANGE].message_raw = (void*) malloc(sizeof(primary_message_SET_PEDALS_RANGE));
     (*devices)[primary_INDEX_SET_PEDALS_RANGE].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_STEERING_ANGLE_RANGE].id = 1064;
+    (*devices)[primary_INDEX_SET_STEERING_ANGLE_RANGE].id = 1065;
     (*devices)[primary_INDEX_SET_STEERING_ANGLE_RANGE].message_raw = (void*) malloc(sizeof(primary_message_SET_STEERING_ANGLE_RANGE));
     (*devices)[primary_INDEX_SET_STEERING_ANGLE_RANGE].message_conversion = NULL;
-    (*devices)[primary_INDEX_CAR_STATUS].id = 515;
+    (*devices)[primary_INDEX_CAR_STATUS].id = 516;
     (*devices)[primary_INDEX_CAR_STATUS].message_raw = (void*) malloc(sizeof(primary_message_CAR_STATUS));
     (*devices)[primary_INDEX_CAR_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_DAS_ERRORS].id = 3;
+    (*devices)[primary_INDEX_DAS_ERRORS].id = 4;
     (*devices)[primary_INDEX_DAS_ERRORS].message_raw = (void*) malloc(sizeof(primary_message_DAS_ERRORS));
     (*devices)[primary_INDEX_DAS_ERRORS].message_conversion = NULL;
-    (*devices)[primary_INDEX_LV_CURRENT].id = 839;
+    (*devices)[primary_INDEX_LV_CURRENT].id = 840;
     (*devices)[primary_INDEX_LV_CURRENT].message_raw = (void*) malloc(sizeof(primary_message_LV_CURRENT));
     (*devices)[primary_INDEX_LV_CURRENT].message_conversion = (void*) malloc(sizeof(primary_message_LV_CURRENT_conversion));
-    (*devices)[primary_INDEX_LV_VOLTAGE].id = 871;
+    (*devices)[primary_INDEX_LV_VOLTAGE].id = 872;
     (*devices)[primary_INDEX_LV_VOLTAGE].message_raw = (void*) malloc(sizeof(primary_message_LV_VOLTAGE));
     (*devices)[primary_INDEX_LV_VOLTAGE].message_conversion = (void*) malloc(sizeof(primary_message_LV_VOLTAGE_conversion));
-    (*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].id = 903;
+    (*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].id = 904;
     (*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].message_raw = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE));
     (*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].message_conversion = (void*) malloc(sizeof(primary_message_LV_TOTAL_VOLTAGE_conversion));
-    (*devices)[primary_INDEX_LV_TEMPERATURE].id = 935;
+    (*devices)[primary_INDEX_LV_TEMPERATURE].id = 936;
     (*devices)[primary_INDEX_LV_TEMPERATURE].message_raw = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE));
     (*devices)[primary_INDEX_LV_TEMPERATURE].message_conversion = (void*) malloc(sizeof(primary_message_LV_TEMPERATURE_conversion));
-    (*devices)[primary_INDEX_COOLING_STATUS].id = 967;
+    (*devices)[primary_INDEX_COOLING_STATUS].id = 968;
     (*devices)[primary_INDEX_COOLING_STATUS].message_raw = (void*) malloc(sizeof(primary_message_COOLING_STATUS));
     (*devices)[primary_INDEX_COOLING_STATUS].message_conversion = (void*) malloc(sizeof(primary_message_COOLING_STATUS_conversion));
-    (*devices)[primary_INDEX_SET_RADIATOR_SPEED].id = 777;
+    (*devices)[primary_INDEX_SET_RADIATOR_SPEED].id = 778;
     (*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED));
     (*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SET_RADIATOR_SPEED_conversion));
-    (*devices)[primary_INDEX_SET_PUMPS_SPEED].id = 809;
+    (*devices)[primary_INDEX_SET_PUMPS_SPEED].id = 810;
     (*devices)[primary_INDEX_SET_PUMPS_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SET_PUMPS_SPEED));
     (*devices)[primary_INDEX_SET_PUMPS_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SET_PUMPS_SPEED_conversion));
-    (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].id = 265;
+    (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].id = 266;
     (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SET_INVERTER_CONNECTION_STATUS));
     (*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].id = 263;
+    (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].id = 264;
     (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw = (void*) malloc(sizeof(primary_message_INVERTER_CONNECTION_STATUS));
     (*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_LV_ERRORS].id = 7;
+    (*devices)[primary_INDEX_LV_ERRORS].id = 8;
     (*devices)[primary_INDEX_LV_ERRORS].message_raw = (void*) malloc(sizeof(primary_message_LV_ERRORS));
     (*devices)[primary_INDEX_LV_ERRORS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SHUTDOWN_STATUS].id = 295;
+    (*devices)[primary_INDEX_SHUTDOWN_STATUS].id = 296;
     (*devices)[primary_INDEX_SHUTDOWN_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SHUTDOWN_STATUS));
     (*devices)[primary_INDEX_SHUTDOWN_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_MARKER].id = 2;
+    (*devices)[primary_INDEX_MARKER].id = 3;
     (*devices)[primary_INDEX_MARKER].message_raw = (void*) malloc(sizeof(primary_message_MARKER));
     (*devices)[primary_INDEX_MARKER].message_conversion = NULL;
-    (*devices)[primary_INDEX_HV_CELLS_VOLTAGE].id = 518;
+    (*devices)[primary_INDEX_HV_CELLS_VOLTAGE].id = 519;
     (*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_raw = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE));
     (*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_conversion = (void*) malloc(sizeof(primary_message_HV_CELLS_VOLTAGE_conversion));
-    (*devices)[primary_INDEX_HV_CELLS_TEMP].id = 550;
+    (*devices)[primary_INDEX_HV_CELLS_TEMP].id = 551;
     (*devices)[primary_INDEX_HV_CELLS_TEMP].message_raw = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP));
     (*devices)[primary_INDEX_HV_CELLS_TEMP].message_conversion = (void*) malloc(sizeof(primary_message_HV_CELLS_TEMP_conversion));
-    (*devices)[primary_INDEX_HV_CELL_BALANCING_STATUS].id = 582;
+    (*devices)[primary_INDEX_HV_CELL_BALANCING_STATUS].id = 583;
     (*devices)[primary_INDEX_HV_CELL_BALANCING_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_CELL_BALANCING_STATUS));
     (*devices)[primary_INDEX_HV_CELL_BALANCING_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].id = 517;
+    (*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].id = 518;
     (*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].message_raw = (void*) malloc(sizeof(primary_message_SET_CELL_BALANCING_STATUS));
     (*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_HANDCART_STATUS].id = 773;
+    (*devices)[primary_INDEX_HANDCART_STATUS].id = 774;
     (*devices)[primary_INDEX_HANDCART_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HANDCART_STATUS));
     (*devices)[primary_INDEX_HANDCART_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SPEED].id = 547;
+    (*devices)[primary_INDEX_SPEED].id = 548;
     (*devices)[primary_INDEX_SPEED].message_raw = (void*) malloc(sizeof(primary_message_SPEED));
     (*devices)[primary_INDEX_SPEED].message_conversion = (void*) malloc(sizeof(primary_message_SPEED_conversion));
     (*devices)[primary_INDEX_INV_L_REQUEST].id = 513;
@@ -13191,6 +13492,8 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_LV_VERSION].message_raw);
     free((*devices)[primary_INDEX_TLM_VERSION].message_raw);
     free((*devices)[primary_INDEX_TIMESTAMP].message_raw);
+    free((*devices)[primary_INDEX_AMBIENT_TEMPERATURE].message_raw);
+    free((*devices)[primary_INDEX_DATA_LOGGER].message_raw);
     free((*devices)[primary_INDEX_SET_TLM_STATUS].message_raw);
     free((*devices)[primary_INDEX_TLM_STATUS].message_raw);
     free((*devices)[primary_INDEX_STEER_SYSTEM_STATUS].message_raw);
@@ -13368,7 +13671,27 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 258: {
+        case 289: {
+            primary_deserialize_AMBIENT_TEMPERATURE(
+                (primary_message_AMBIENT_TEMPERATURE*) &(*devices)[primary_INDEX_AMBIENT_TEMPERATURE].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 1072: {
+            primary_deserialize_DATA_LOGGER(
+                (primary_message_DATA_LOGGER*) &(*devices)[primary_INDEX_DATA_LOGGER].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 259: {
             primary_deserialize_SET_TLM_STATUS(
                 (primary_message_SET_TLM_STATUS*) &(*devices)[primary_INDEX_SET_TLM_STATUS].message_raw,
                 data
@@ -13378,7 +13701,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 259: {
+        case 260: {
             primary_deserialize_TLM_STATUS(
                 (primary_message_TLM_STATUS*) &(*devices)[primary_INDEX_TLM_STATUS].message_raw,
                 data
@@ -13388,7 +13711,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 1794: {
+        case 1795: {
             primary_deserialize_STEER_SYSTEM_STATUS(
                 (primary_message_STEER_SYSTEM_STATUS*) &(*devices)[primary_INDEX_STEER_SYSTEM_STATUS].message_raw,
                 data
@@ -13398,7 +13721,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 772: {
+        case 773: {
             primary_deserialize_HV_VOLTAGE(
                 (primary_message_HV_VOLTAGE*) &(*devices)[primary_INDEX_HV_VOLTAGE].message_raw,
                 data
@@ -13412,7 +13735,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 804: {
+        case 805: {
             primary_deserialize_HV_CURRENT(
                 (primary_message_HV_CURRENT*) &(*devices)[primary_INDEX_HV_CURRENT].message_raw,
                 data
@@ -13426,7 +13749,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 836: {
+        case 837: {
             primary_deserialize_HV_TEMP(
                 (primary_message_HV_TEMP*) &(*devices)[primary_INDEX_HV_TEMP].message_raw,
                 data
@@ -13440,7 +13763,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 4: {
+        case 5: {
             primary_deserialize_HV_ERRORS(
                 (primary_message_HV_ERRORS*) &(*devices)[primary_INDEX_HV_ERRORS].message_raw,
                 data
@@ -13450,7 +13773,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 5: {
+        case 6: {
             primary_deserialize_HV_CAN_FORWARD(
                 (primary_message_HV_CAN_FORWARD*) &(*devices)[primary_INDEX_HV_CAN_FORWARD].message_raw,
                 data
@@ -13460,7 +13783,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 37: {
+        case 38: {
             primary_deserialize_HV_FANS_OVERRIDE(
                 (primary_message_HV_FANS_OVERRIDE*) &(*devices)[primary_INDEX_HV_FANS_OVERRIDE].message_raw,
                 data
@@ -13474,7 +13797,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 6: {
+        case 7: {
             primary_deserialize_HV_CAN_FORWARD_STATUS(
                 (primary_message_HV_CAN_FORWARD_STATUS*) &(*devices)[primary_INDEX_HV_CAN_FORWARD_STATUS].message_raw,
                 data
@@ -13484,7 +13807,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 774: {
+        case 775: {
             primary_deserialize_HV_FANS_OVERRIDE_STATUS(
                 (primary_message_HV_FANS_OVERRIDE_STATUS*) &(*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_raw,
                 data
@@ -13498,7 +13821,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 775: {
+        case 776: {
             primary_deserialize_HV_FEEDBACKS_STATUS(
                 (primary_message_HV_FEEDBACKS_STATUS*) &(*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw,
                 data
@@ -13508,7 +13831,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 807: {
+        case 808: {
             primary_deserialize_HV_IMD_STATUS(
                 (primary_message_HV_IMD_STATUS*) &(*devices)[primary_INDEX_HV_IMD_STATUS].message_raw,
                 data
@@ -13518,7 +13841,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 36: {
+        case 37: {
             primary_deserialize_TS_STATUS(
                 (primary_message_TS_STATUS*) &(*devices)[primary_INDEX_TS_STATUS].message_raw,
                 data
@@ -13528,7 +13851,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 69: {
+        case 70: {
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) &(*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw,
                 data
@@ -13538,7 +13861,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 101: {
+        case 102: {
             primary_deserialize_SET_TS_STATUS(
                 (primary_message_SET_TS_STATUS*) &(*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw,
                 data
@@ -13548,7 +13871,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 264: {
+        case 265: {
             primary_deserialize_STEER_STATUS(
                 (primary_message_STEER_STATUS*) &(*devices)[primary_INDEX_STEER_STATUS].message_raw,
                 data
@@ -13558,7 +13881,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 776: {
+        case 777: {
             primary_deserialize_SET_CAR_STATUS(
                 (primary_message_SET_CAR_STATUS*) &(*devices)[primary_INDEX_SET_CAR_STATUS].message_raw,
                 data
@@ -13568,7 +13891,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 1032: {
+        case 1033: {
             primary_deserialize_SET_PEDALS_RANGE(
                 (primary_message_SET_PEDALS_RANGE*) &(*devices)[primary_INDEX_SET_PEDALS_RANGE].message_raw,
                 data
@@ -13578,7 +13901,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 1064: {
+        case 1065: {
             primary_deserialize_SET_STEERING_ANGLE_RANGE(
                 (primary_message_SET_STEERING_ANGLE_RANGE*) &(*devices)[primary_INDEX_SET_STEERING_ANGLE_RANGE].message_raw,
                 data
@@ -13588,7 +13911,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 515: {
+        case 516: {
             primary_deserialize_CAR_STATUS(
                 (primary_message_CAR_STATUS*) &(*devices)[primary_INDEX_CAR_STATUS].message_raw,
                 data
@@ -13598,7 +13921,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 3: {
+        case 4: {
             primary_deserialize_DAS_ERRORS(
                 (primary_message_DAS_ERRORS*) &(*devices)[primary_INDEX_DAS_ERRORS].message_raw,
                 data
@@ -13608,7 +13931,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 839: {
+        case 840: {
             primary_deserialize_LV_CURRENT(
                 (primary_message_LV_CURRENT*) &(*devices)[primary_INDEX_LV_CURRENT].message_raw,
                 data
@@ -13622,7 +13945,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 871: {
+        case 872: {
             primary_deserialize_LV_VOLTAGE(
                 (primary_message_LV_VOLTAGE*) &(*devices)[primary_INDEX_LV_VOLTAGE].message_raw,
                 data
@@ -13636,7 +13959,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 903: {
+        case 904: {
             primary_deserialize_LV_TOTAL_VOLTAGE(
                 (primary_message_LV_TOTAL_VOLTAGE*) &(*devices)[primary_INDEX_LV_TOTAL_VOLTAGE].message_raw,
                 data
@@ -13650,7 +13973,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 935: {
+        case 936: {
             primary_deserialize_LV_TEMPERATURE(
                 (primary_message_LV_TEMPERATURE*) &(*devices)[primary_INDEX_LV_TEMPERATURE].message_raw,
                 data
@@ -13664,7 +13987,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 967: {
+        case 968: {
             primary_deserialize_COOLING_STATUS(
                 (primary_message_COOLING_STATUS*) &(*devices)[primary_INDEX_COOLING_STATUS].message_raw,
                 data
@@ -13678,7 +14001,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 777: {
+        case 778: {
             primary_deserialize_SET_RADIATOR_SPEED(
                 (primary_message_SET_RADIATOR_SPEED*) &(*devices)[primary_INDEX_SET_RADIATOR_SPEED].message_raw,
                 data
@@ -13692,7 +14015,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 809: {
+        case 810: {
             primary_deserialize_SET_PUMPS_SPEED(
                 (primary_message_SET_PUMPS_SPEED*) &(*devices)[primary_INDEX_SET_PUMPS_SPEED].message_raw,
                 data
@@ -13706,7 +14029,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 265: {
+        case 266: {
             primary_deserialize_SET_INVERTER_CONNECTION_STATUS(
                 (primary_message_SET_INVERTER_CONNECTION_STATUS*) &(*devices)[primary_INDEX_SET_INVERTER_CONNECTION_STATUS].message_raw,
                 data
@@ -13716,7 +14039,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 263: {
+        case 264: {
             primary_deserialize_INVERTER_CONNECTION_STATUS(
                 (primary_message_INVERTER_CONNECTION_STATUS*) &(*devices)[primary_INDEX_INVERTER_CONNECTION_STATUS].message_raw,
                 data
@@ -13726,7 +14049,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 7: {
+        case 8: {
             primary_deserialize_LV_ERRORS(
                 (primary_message_LV_ERRORS*) &(*devices)[primary_INDEX_LV_ERRORS].message_raw,
                 data
@@ -13736,7 +14059,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 295: {
+        case 296: {
             primary_deserialize_SHUTDOWN_STATUS(
                 (primary_message_SHUTDOWN_STATUS*) &(*devices)[primary_INDEX_SHUTDOWN_STATUS].message_raw,
                 data
@@ -13746,7 +14069,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 2: {
+        case 3: {
             primary_deserialize_MARKER(
                 (primary_message_MARKER*) &(*devices)[primary_INDEX_MARKER].message_raw,
                 data
@@ -13756,7 +14079,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 518: {
+        case 519: {
             primary_deserialize_HV_CELLS_VOLTAGE(
                 (primary_message_HV_CELLS_VOLTAGE*) &(*devices)[primary_INDEX_HV_CELLS_VOLTAGE].message_raw,
                 data
@@ -13770,7 +14093,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 550: {
+        case 551: {
             primary_deserialize_HV_CELLS_TEMP(
                 (primary_message_HV_CELLS_TEMP*) &(*devices)[primary_INDEX_HV_CELLS_TEMP].message_raw,
                 data
@@ -13784,7 +14107,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 582: {
+        case 583: {
             primary_deserialize_HV_CELL_BALANCING_STATUS(
                 (primary_message_HV_CELL_BALANCING_STATUS*) &(*devices)[primary_INDEX_HV_CELL_BALANCING_STATUS].message_raw,
                 data
@@ -13794,7 +14117,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 517: {
+        case 518: {
             primary_deserialize_SET_CELL_BALANCING_STATUS(
                 (primary_message_SET_CELL_BALANCING_STATUS*) &(*devices)[primary_INDEX_SET_CELL_BALANCING_STATUS].message_raw,
                 data
@@ -13804,7 +14127,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 773: {
+        case 774: {
             primary_deserialize_HANDCART_STATUS(
                 (primary_message_HANDCART_STATUS*) &(*devices)[primary_INDEX_HANDCART_STATUS].message_raw,
                 data
@@ -13814,7 +14137,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 547: {
+        case 548: {
             primary_deserialize_SPEED(
                 (primary_message_SPEED*) &(*devices)[primary_INDEX_SPEED].message_raw,
                 data

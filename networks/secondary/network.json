@@ -27,7 +27,8 @@
           "range": [0, 245],
           "precision": 0.1,
           "signed": true
-        }
+        },
+        "temperature": "int16"
       }
     },
     {

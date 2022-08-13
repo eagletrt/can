@@ -586,6 +586,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_x_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, temperature_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, _internal_metadata_),
@@ -835,30 +836,30 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::secondary::IMU_ANGULAR_RATE)},
-  { 9, -1, sizeof(::secondary::IMU_ACCELERATION)},
-  { 18, -1, sizeof(::secondary::IRTS_FL_0)},
-  { 28, -1, sizeof(::secondary::IRTS_FL_1)},
-  { 38, -1, sizeof(::secondary::IRTS_FL_2)},
-  { 48, -1, sizeof(::secondary::IRTS_FL_3)},
-  { 58, -1, sizeof(::secondary::IRTS_FR_0)},
-  { 68, -1, sizeof(::secondary::IRTS_FR_1)},
-  { 78, -1, sizeof(::secondary::IRTS_FR_2)},
-  { 88, -1, sizeof(::secondary::IRTS_FR_3)},
-  { 98, -1, sizeof(::secondary::IRTS_RL_0)},
-  { 108, -1, sizeof(::secondary::IRTS_RL_1)},
-  { 118, -1, sizeof(::secondary::IRTS_RL_2)},
-  { 128, -1, sizeof(::secondary::IRTS_RL_3)},
-  { 138, -1, sizeof(::secondary::IRTS_RR_0)},
-  { 148, -1, sizeof(::secondary::IRTS_RR_1)},
-  { 158, -1, sizeof(::secondary::IRTS_RR_2)},
-  { 168, -1, sizeof(::secondary::IRTS_RR_3)},
-  { 178, -1, sizeof(::secondary::GPS_COORDS)},
-  { 186, -1, sizeof(::secondary::GPS_SPEED)},
-  { 193, -1, sizeof(::secondary::LAP_COUNT)},
-  { 201, -1, sizeof(::secondary::PEDALS_OUTPUT)},
-  { 210, -1, sizeof(::secondary::CONTROL_OUTPUT)},
-  { 218, -1, sizeof(::secondary::STEERING_ANGLE)},
-  { 225, -1, sizeof(::secondary::Pack)},
+  { 10, -1, sizeof(::secondary::IMU_ACCELERATION)},
+  { 19, -1, sizeof(::secondary::IRTS_FL_0)},
+  { 29, -1, sizeof(::secondary::IRTS_FL_1)},
+  { 39, -1, sizeof(::secondary::IRTS_FL_2)},
+  { 49, -1, sizeof(::secondary::IRTS_FL_3)},
+  { 59, -1, sizeof(::secondary::IRTS_FR_0)},
+  { 69, -1, sizeof(::secondary::IRTS_FR_1)},
+  { 79, -1, sizeof(::secondary::IRTS_FR_2)},
+  { 89, -1, sizeof(::secondary::IRTS_FR_3)},
+  { 99, -1, sizeof(::secondary::IRTS_RL_0)},
+  { 109, -1, sizeof(::secondary::IRTS_RL_1)},
+  { 119, -1, sizeof(::secondary::IRTS_RL_2)},
+  { 129, -1, sizeof(::secondary::IRTS_RL_3)},
+  { 139, -1, sizeof(::secondary::IRTS_RR_0)},
+  { 149, -1, sizeof(::secondary::IRTS_RR_1)},
+  { 159, -1, sizeof(::secondary::IRTS_RR_2)},
+  { 169, -1, sizeof(::secondary::IRTS_RR_3)},
+  { 179, -1, sizeof(::secondary::GPS_COORDS)},
+  { 187, -1, sizeof(::secondary::GPS_SPEED)},
+  { 194, -1, sizeof(::secondary::LAP_COUNT)},
+  { 202, -1, sizeof(::secondary::PEDALS_OUTPUT)},
+  { 211, -1, sizeof(::secondary::CONTROL_OUTPUT)},
+  { 219, -1, sizeof(::secondary::STEERING_ANGLE)},
+  { 226, -1, sizeof(::secondary::Pack)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -910,98 +911,98 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\017secondary.proto\022\tsecondary\"h\n\020IMU_ANGU"
+      "\n\017secondary.proto\022\tsecondary\"}\n\020IMU_ANGU"
       "LAR_RATE\022\022\n\nang_rate_x\030\001 \001(\002\022\022\n\nang_rate"
-      "_y\030\002 \001(\002\022\022\n\nang_rate_z\030\003 \001(\002\022\030\n\020_inner_t"
-      "imestamp\030\004 \001(\004\"_\n\020IMU_ACCELERATION\022\017\n\007ac"
-      "cel_x\030\001 \001(\002\022\017\n\007accel_y\030\002 \001(\002\022\017\n\007accel_z\030"
-      "\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\"m\n\tIRTS_"
-      "FL_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r"
-      "\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\030\n\020"
-      "_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_FL_1\022\020\n\010c"
-      "hannel5\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010chann"
-      "el7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner_ti"
-      "mestamp\030\005 \001(\004\"p\n\tIRTS_FL_2\022\020\n\010channel9\030\001"
-      " \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001"
-      "(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_inner_timestam"
-      "p\030\005 \001(\004\"q\n\tIRTS_FL_3\022\021\n\tchannel13\030\001 \001(\r\022"
-      "\021\n\tchannel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n"
-      "\tchannel16\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001"
-      "(\004\"m\n\tIRTS_FR_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010cha"
-      "nnel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel"
-      "4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIRT"
-      "S_FR_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002 \001"
-      "(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022\030"
-      "\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIRTS_FR_2\022\020\n"
-      "\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tch"
-      "annel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_inn"
-      "er_timestamp\030\005 \001(\004\"q\n\tIRTS_FR_3\022\021\n\tchann"
-      "el13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchannel"
-      "15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030\n\020_inner_ti"
-      "mestamp\030\005 \001(\004\"m\n\tIRTS_RL_0\022\020\n\010channel1\030\001"
-      " \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r"
-      "\022\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005"
-      " \001(\004\"m\n\tIRTS_RL_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010c"
-      "hannel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010chann"
-      "el8\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tI"
-      "RTS_RL_2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030"
-      "\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 "
-      "\001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"q\n\tIRTS_RL"
-      "_3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r"
-      "\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030"
-      "\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_RR_0\022\020\n"
-      "\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010cha"
-      "nnel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_"
-      "timestamp\030\005 \001(\004\"m\n\tIRTS_RR_1\022\020\n\010channel5"
-      "\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001"
-      "(\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner_timestamp"
-      "\030\005 \001(\004\"p\n\tIRTS_RR_2\022\020\n\010channel9\030\001 \001(\r\022\021\n"
-      "\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tc"
-      "hannel12\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004"
-      "\"q\n\tIRTS_RR_3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchan"
-      "nel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchanne"
-      "l16\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"K\n\nG"
-      "PS_COORDS\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude"
-      "\030\002 \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"4\n\tGPS_"
-      "SPEED\022\r\n\005speed\030\001 \001(\r\022\030\n\020_inner_timestamp"
-      "\030\002 \001(\004\"J\n\tLAP_COUNT\022\021\n\tlap_count\030\001 \001(\r\022\020"
-      "\n\010lap_time\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001"
-      "(\004\"\\\n\rPEDALS_OUTPUT\022\014\n\004apps\030\001 \001(\r\022\021\n\tbse"
-      "_front\030\002 \001(\002\022\020\n\010bse_rear\030\003 \001(\002\022\030\n\020_inner"
-      "_timestamp\030\004 \001(\004\"G\n\016CONTROL_OUTPUT\022\r\n\005ri"
-      "ght\030\001 \001(\002\022\014\n\004left\030\002 \001(\002\022\030\n\020_inner_timest"
-      "amp\030\003 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005angle\030\001 \001"
-      "(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\230\010\n\004Pack\0225\n"
-      "\020IMU_ANGULAR_RATE\030\001 \003(\0132\033.secondary.IMU_"
-      "ANGULAR_RATE\0225\n\020IMU_ACCELERATION\030\002 \003(\0132\033"
-      ".secondary.IMU_ACCELERATION\022\'\n\tIRTS_FL_0"
-      "\030\003 \003(\0132\024.secondary.IRTS_FL_0\022\'\n\tIRTS_FL_"
-      "1\030\004 \003(\0132\024.secondary.IRTS_FL_1\022\'\n\tIRTS_FL"
-      "_2\030\005 \003(\0132\024.secondary.IRTS_FL_2\022\'\n\tIRTS_F"
-      "L_3\030\006 \003(\0132\024.secondary.IRTS_FL_3\022\'\n\tIRTS_"
-      "FR_0\030\007 \003(\0132\024.secondary.IRTS_FR_0\022\'\n\tIRTS"
-      "_FR_1\030\010 \003(\0132\024.secondary.IRTS_FR_1\022\'\n\tIRT"
-      "S_FR_2\030\t \003(\0132\024.secondary.IRTS_FR_2\022\'\n\tIR"
-      "TS_FR_3\030\n \003(\0132\024.secondary.IRTS_FR_3\022\'\n\tI"
-      "RTS_RL_0\030\013 \003(\0132\024.secondary.IRTS_RL_0\022\'\n\t"
-      "IRTS_RL_1\030\014 \003(\0132\024.secondary.IRTS_RL_1\022\'\n"
-      "\tIRTS_RL_2\030\r \003(\0132\024.secondary.IRTS_RL_2\022\'"
-      "\n\tIRTS_RL_3\030\016 \003(\0132\024.secondary.IRTS_RL_3\022"
-      "\'\n\tIRTS_RR_0\030\017 \003(\0132\024.secondary.IRTS_RR_0"
-      "\022\'\n\tIRTS_RR_1\030\020 \003(\0132\024.secondary.IRTS_RR_"
-      "1\022\'\n\tIRTS_RR_2\030\021 \003(\0132\024.secondary.IRTS_RR"
-      "_2\022\'\n\tIRTS_RR_3\030\022 \003(\0132\024.secondary.IRTS_R"
-      "R_3\022)\n\nGPS_COORDS\030\023 \003(\0132\025.secondary.GPS_"
-      "COORDS\022\'\n\tGPS_SPEED\030\024 \003(\0132\024.secondary.GP"
-      "S_SPEED\022\'\n\tLAP_COUNT\030\025 \003(\0132\024.secondary.L"
-      "AP_COUNT\022/\n\rPEDALS_OUTPUT\030\026 \003(\0132\030.second"
-      "ary.PEDALS_OUTPUT\0221\n\016CONTROL_OUTPUT\030\027 \003("
-      "\0132\031.secondary.CONTROL_OUTPUT\0221\n\016STEERING"
-      "_ANGLE\030\030 \003(\0132\031.secondary.STEERING_ANGLEb"
-      "\006proto3"
+      "_y\030\002 \001(\002\022\022\n\nang_rate_z\030\003 \001(\002\022\023\n\013temperat"
+      "ure\030\004 \001(\021\022\030\n\020_inner_timestamp\030\005 \001(\004\"_\n\020I"
+      "MU_ACCELERATION\022\017\n\007accel_x\030\001 \001(\002\022\017\n\007acce"
+      "l_y\030\002 \001(\002\022\017\n\007accel_z\030\003 \001(\002\022\030\n\020_inner_tim"
+      "estamp\030\004 \001(\004\"m\n\tIRTS_FL_0\022\020\n\010channel1\030\001 "
+      "\001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022"
+      "\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 "
+      "\001(\004\"m\n\tIRTS_FL_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010ch"
+      "annel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channe"
+      "l8\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIR"
+      "TS_FL_2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002"
+      " \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001"
+      "(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"q\n\tIRTS_FL_"
+      "3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022"
+      "\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030\n"
+      "\020_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_FR_0\022\020\n\010"
+      "channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010chan"
+      "nel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_t"
+      "imestamp\030\005 \001(\004\"m\n\tIRTS_FR_1\022\020\n\010channel5\030"
+      "\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001("
+      "\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
+      "\005 \001(\004\"p\n\tIRTS_FR_2\022\020\n\010channel9\030\001 \001(\r\022\021\n\t"
+      "channel10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tch"
+      "annel12\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\""
+      "q\n\tIRTS_FR_3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchann"
+      "el14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel"
+      "16\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIR"
+      "TS_RL_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 "
+      "\001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022"
+      "\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_RL_1\022\020"
+      "\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010ch"
+      "annel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner"
+      "_timestamp\030\005 \001(\004\"p\n\tIRTS_RL_2\022\020\n\010channel"
+      "9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030"
+      "\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_inner_times"
+      "tamp\030\005 \001(\004\"q\n\tIRTS_RL_3\022\021\n\tchannel13\030\001 \001"
+      "(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r"
+      "\022\021\n\tchannel16\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
+      "\005 \001(\004\"m\n\tIRTS_RR_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010"
+      "channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010chan"
+      "nel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\t"
+      "IRTS_RR_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030"
+      "\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001("
+      "\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIRTS_RR_2"
+      "\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n"
+      "\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_"
+      "inner_timestamp\030\005 \001(\004\"q\n\tIRTS_RR_3\022\021\n\tch"
+      "annel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchan"
+      "nel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030\n\020_inner"
+      "_timestamp\030\005 \001(\004\"K\n\nGPS_COORDS\022\020\n\010latitu"
+      "de\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(\002\022\030\n\020_inner_ti"
+      "mestamp\030\003 \001(\004\"4\n\tGPS_SPEED\022\r\n\005speed\030\001 \001("
+      "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"J\n\tLAP_COUNT"
+      "\022\021\n\tlap_count\030\001 \001(\r\022\020\n\010lap_time\030\002 \001(\r\022\030\n"
+      "\020_inner_timestamp\030\003 \001(\004\"\\\n\rPEDALS_OUTPUT"
+      "\022\014\n\004apps\030\001 \001(\r\022\021\n\tbse_front\030\002 \001(\002\022\020\n\010bse"
+      "_rear\030\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\"G\n"
+      "\016CONTROL_OUTPUT\022\r\n\005right\030\001 \001(\002\022\014\n\004left\030\002"
+      " \001(\002\022\030\n\020_inner_timestamp\030\003 \001(\004\"9\n\016STEERI"
+      "NG_ANGLE\022\r\n\005angle\030\001 \001(\002\022\030\n\020_inner_timest"
+      "amp\030\002 \001(\004\"\230\010\n\004Pack\0225\n\020IMU_ANGULAR_RATE\030\001"
+      " \003(\0132\033.secondary.IMU_ANGULAR_RATE\0225\n\020IMU"
+      "_ACCELERATION\030\002 \003(\0132\033.secondary.IMU_ACCE"
+      "LERATION\022\'\n\tIRTS_FL_0\030\003 \003(\0132\024.secondary."
+      "IRTS_FL_0\022\'\n\tIRTS_FL_1\030\004 \003(\0132\024.secondary"
+      ".IRTS_FL_1\022\'\n\tIRTS_FL_2\030\005 \003(\0132\024.secondar"
+      "y.IRTS_FL_2\022\'\n\tIRTS_FL_3\030\006 \003(\0132\024.seconda"
+      "ry.IRTS_FL_3\022\'\n\tIRTS_FR_0\030\007 \003(\0132\024.second"
+      "ary.IRTS_FR_0\022\'\n\tIRTS_FR_1\030\010 \003(\0132\024.secon"
+      "dary.IRTS_FR_1\022\'\n\tIRTS_FR_2\030\t \003(\0132\024.seco"
+      "ndary.IRTS_FR_2\022\'\n\tIRTS_FR_3\030\n \003(\0132\024.sec"
+      "ondary.IRTS_FR_3\022\'\n\tIRTS_RL_0\030\013 \003(\0132\024.se"
+      "condary.IRTS_RL_0\022\'\n\tIRTS_RL_1\030\014 \003(\0132\024.s"
+      "econdary.IRTS_RL_1\022\'\n\tIRTS_RL_2\030\r \003(\0132\024."
+      "secondary.IRTS_RL_2\022\'\n\tIRTS_RL_3\030\016 \003(\0132\024"
+      ".secondary.IRTS_RL_3\022\'\n\tIRTS_RR_0\030\017 \003(\0132"
+      "\024.secondary.IRTS_RR_0\022\'\n\tIRTS_RR_1\030\020 \003(\013"
+      "2\024.secondary.IRTS_RR_1\022\'\n\tIRTS_RR_2\030\021 \003("
+      "\0132\024.secondary.IRTS_RR_2\022\'\n\tIRTS_RR_3\030\022 \003"
+      "(\0132\024.secondary.IRTS_RR_3\022)\n\nGPS_COORDS\030\023"
+      " \003(\0132\025.secondary.GPS_COORDS\022\'\n\tGPS_SPEED"
+      "\030\024 \003(\0132\024.secondary.GPS_SPEED\022\'\n\tLAP_COUN"
+      "T\030\025 \003(\0132\024.secondary.LAP_COUNT\022/\n\rPEDALS_"
+      "OUTPUT\030\026 \003(\0132\030.secondary.PEDALS_OUTPUT\0221"
+      "\n\016CONTROL_OUTPUT\030\027 \003(\0132\031.secondary.CONTR"
+      "OL_OUTPUT\0221\n\016STEERING_ANGLE\030\030 \003(\0132\031.seco"
+      "ndary.STEERING_ANGLEb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3527);
+      descriptor, 3548);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "secondary.proto", &protobuf_RegisterTypes);
 }
@@ -1027,6 +1028,7 @@ void IMU_ANGULAR_RATE::InitAsDefaultInstance() {
 const int IMU_ANGULAR_RATE::kAngRateXFieldNumber;
 const int IMU_ANGULAR_RATE::kAngRateYFieldNumber;
 const int IMU_ANGULAR_RATE::kAngRateZFieldNumber;
+const int IMU_ANGULAR_RATE::kTemperatureFieldNumber;
 const int IMU_ANGULAR_RATE::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1042,15 +1044,15 @@ IMU_ANGULAR_RATE::IMU_ANGULAR_RATE(const IMU_ANGULAR_RATE& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&ang_rate_x_, &from.ang_rate_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ang_rate_z_) -
-    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IMU_ANGULAR_RATE)
 }
 
 void IMU_ANGULAR_RATE::SharedCtor() {
   ::memset(&ang_rate_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ang_rate_z_) -
-      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
 }
 
 IMU_ANGULAR_RATE::~IMU_ANGULAR_RATE() {
@@ -1082,8 +1084,8 @@ void IMU_ANGULAR_RATE::Clear() {
   (void) cached_has_bits;
 
   ::memset(&ang_rate_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ang_rate_z_) -
-      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear();
 }
 
@@ -1139,10 +1141,24 @@ bool IMU_ANGULAR_RATE::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 _inner_timestamp = 4;
+      // sint32 temperature = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &temperature_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 _inner_timestamp = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1194,9 +1210,14 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->ang_rate_z(), output);
   }
 
-  // uint64 _inner_timestamp = 4;
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(4, this->temperature(), output);
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1228,9 +1249,14 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->ang_rate_z(), target);
   }
 
-  // uint64 _inner_timestamp = 4;
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(4, this->temperature(), target);
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1260,16 +1286,23 @@ size_t IMU_ANGULAR_RATE::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // uint64 _inner_timestamp = 4;
+  // float ang_rate_z = 3;
+  if (this->ang_rate_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::SInt32Size(
+        this->temperature());
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
-  }
-
-  // float ang_rate_z = 3;
-  if (this->ang_rate_z() != 0) {
-    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1305,11 +1338,14 @@ void IMU_ANGULAR_RATE::MergeFrom(const IMU_ANGULAR_RATE& from) {
   if (from.ang_rate_y() != 0) {
     set_ang_rate_y(from.ang_rate_y());
   }
-  if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
-  }
   if (from.ang_rate_z() != 0) {
     set_ang_rate_z(from.ang_rate_z());
+  }
+  if (from.temperature() != 0) {
+    set_temperature(from.temperature());
+  }
+  if (from._inner_timestamp() != 0) {
+    set__inner_timestamp(from._inner_timestamp());
   }
 }
 
@@ -1339,8 +1375,9 @@ void IMU_ANGULAR_RATE::InternalSwap(IMU_ANGULAR_RATE* other) {
   using std::swap;
   swap(ang_rate_x_, other->ang_rate_x_);
   swap(ang_rate_y_, other->ang_rate_y_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
   swap(ang_rate_z_, other->ang_rate_z_);
+  swap(temperature_, other->temperature_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
