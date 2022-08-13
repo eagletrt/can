@@ -13,7 +13,7 @@ index 6fe30bb..fed4be8 100644
 @@ -324,7 +325,7 @@ int main(int argc, char **argv)
  	last_tv.tv_sec = 0;
  	last_tv.tv_usec = 0;
- 
+
 -	while ((opt = getopt(argc, argv, "t:HciaSs:lDdxLf:n:r:he8T:?")) != -1) {
 +	while ((opt = getopt(argc, argv, "N:t:HciaSs:lDdxLf:n:r:he8T:?")) != -1) {
  		switch (opt) {
@@ -22,7 +22,7 @@ index 6fe30bb..fed4be8 100644
 @@ -401,6 +402,17 @@ int main(int argc, char **argv)
  			log = 1;
  			break;
- 
+
 +		case 'N':
 +			if (strcmp(optarg, "primary") == 0) {
 +				can_id_type = CL_CAN_ID_PRIMARY;
@@ -44,19 +44,19 @@ index 935270b..3b79334 100644
 @@ -50,8 +50,20 @@
  #include <linux/can/error.h>
  #include <sys/socket.h> /* for sa_family_t */
- 
+
 +#define primary_NETWORK_IMPLEMENTATION
 +#define primary_IDS_IMPLEMENTATION
-+#include "can/lib/primary/c/network.h"
-+#include "can/lib/primary/c/ids.h"
++#include "../lib/primary/c/network.h"
++#include "../lib/primary/c/ids.h"
 +
 +#define secondary_NETWORK_IMPLEMENTATION
 +#define secondary_IDS_IMPLEMENTATION
-+#include "can/lib/secondary/c/network.h"
-+#include "can/lib/secondary/c/ids.h"
++#include "../lib/secondary/c/network.h"
++#include "../lib/secondary/c/ids.h"
 +
  #include "lib.h"
- 
+
 +cl_can_id_type can_id_type = CL_CAN_ID_NONE;
 +
  #define CANID_DELIM '#'
@@ -64,11 +64,11 @@ index 935270b..3b79334 100644
  #define DATA_SEPERATOR '.'
 @@ -361,11 +373,23 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
  	int len = (cf->len > maxdlen)? maxdlen : cf->len;
- 
+
  	/* initialize space for CAN-ID and length information */
 -	memset(buf, ' ', 15);
 +	memset(buf, ' ', CL_LONGCFSZ);
- 
+
  	if (cf->can_id & CAN_ERR_FLAG) {
  		put_eff_id(buf, cf->can_id & (CAN_ERR_MASK|CAN_ERR_FLAG));
  		offset = 10;
@@ -90,7 +90,7 @@ index 935270b..3b79334 100644
 @@ -379,6 +403,10 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
  		}
  	}
- 
+
 +	if (can_id_type == CL_CAN_ID_PRIMARY || can_id_type == CL_CAN_ID_SECONDARY) {
 +		offset = CL_ID;
 +	}
@@ -101,7 +101,7 @@ index 935270b..3b79334 100644
 @@ -412,7 +440,25 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
  	}
  	offset += 5;
- 
+
 -	if (view & CANLIB_VIEW_BINARY) {
 +	if (can_id_type == CL_CAN_ID_PRIMARY && primary_is_message_id(cf->can_id & CAN_SFF_MASK)) {
 +		static void *message_raw = NULL;
@@ -132,9 +132,9 @@ index a4d3ce5..6624e19 100644
 @@ -53,6 +53,21 @@
  #define CL_DATA sizeof(".AA")
  #define CL_BINDATA sizeof(".10101010")
- 
-+#include "can/lib/primary/c/ids.h"
-+#include "can/lib/secondary/c/ids.h"
+
++#include "../lib/primary/c/ids.h"
++#include "../lib/secondary/c/ids.h"
 +
 +#define _MAX(A, B) ((A) > (B) ? (A) : (B))
 +#undef CL_ID
@@ -150,4 +150,4 @@ index a4d3ce5..6624e19 100644
 +
   /* CAN FD ASCII hex short representation with DATA_SEPERATORs */
  #define CL_CFSZ (2*CL_ID + 64*CL_DATA)
- 
+
