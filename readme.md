@@ -42,3 +42,17 @@ The right macro to define is pointed out right at the top of each of these libra
 ## What is generating the library from this repository?
 
 Please refer to the [canlib](https://github.com/eagletrt/canlib) readme.
+
+## Installing and updating canutils
+
+You can download and execute the update scripts using:
+
+```
+wget https://raw.githubusercontent.com/eagletrt/can/master/canutils/canutils_x86_64.bash
+bash canutils_x86_64.bash
+```
+
+```
+wget https://raw.githubusercontent.com/eagletrt/can/master/canutils/canutils_arm.bash
+bash canutils_arm.bash
+```
