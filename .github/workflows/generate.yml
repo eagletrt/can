@@ -12,28 +12,32 @@ jobs:
   library:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
       - uses: actions/setup-python@v3
         name: Set up Python 3.10
         with:
           python-version: "3.10"
-      - uses: actions/checkout@v2
+
       - name: Setup protoc
-        # uses: arduino/setup-protoc@v1.1.2
-        # with:
-        #   version: "3.x"
         run: |
           DEBIAN_FRONTEND=noninteractive
           sudo apt update
           sudo apt install -y libprotobuf-dev protobuf-compiler
+
       - name: Run canlib generator
         run: |
           pip install git+https://github.com/eagletrt/canlib.git#egg=canlib
           canlib generate-all networks ids lib proto csv
           mkdir -p /tmp/workspace
           cp -R networks ids lib proto csv /tmp/workspace
+
       - uses: actions/checkout@v2
         with:
           ref: build
+
       - name: Push generated includes
         run: |
           git config --global user.name 'github-actions[bot]'

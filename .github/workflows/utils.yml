@@ -1,0 +1,58 @@
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - uses: actions/setup-python@v3
+        name: Set up Python 3.10
+        with:
+          python-version: "3.10"
+
+      - name: Setup protoc
+        run: |
+          DEBIAN_FRONTEND=noninteractive
+          sudo apt update
+          sudo apt install -y libprotobuf-dev protobuf-compiler
+
+      - name: Run canlib generator
+        run: |
+          pip install git+https://github.com/eagletrt/canlib.git#egg=canlib
+          canlib generate-all networks ids lib proto csv
+
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+
+      - run: make -C canutils all
+      - run: make -C canutils all-arm
+
+      - name: Retrieve version info
+        id: version
+        run: |
+          can_commit="$(git log -n 1 --pretty=format:"%H")"
+          echo "::set-output name=can_commit::$can_commit"
+          echo "::set-output name=date::$(date +"%Y.%m.%d_%H-%M")"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: ${{ steps.version.outputs.can_commit }}
+          draft: false
+          prerelease: false
+          tag_name: ${{ steps.version.outputs.date }}-${{ steps.version.outputs.can_commit }}
+          files: |
+            canutils/build/eagle_candump_x86_64
+            canutils/build/eagle_cansniffer_x86_64
+            canutils/build/eagle_candump_arm
+            canutils/build/eagle_cansniffer_arm

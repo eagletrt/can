@@ -1,0 +1,118 @@
+diff --git a/cansniffer.c b/cansniffer.c
+index 5aa5e7a..1674488 100644
+--- a/cansniffer.c
++++ b/cansniffer.c
+@@ -68,6 +68,28 @@
+ 
+ #include "terminal.h"
+ 
++#define primary_NETWORK_IMPLEMENTATION
++#define primary_IDS_IMPLEMENTATION
++#include "can/lib/primary/c/network.h"
++#include "can/lib/primary/c/ids.h"
++
++#define secondary_NETWORK_IMPLEMENTATION
++#define secondary_IDS_IMPLEMENTATION
++#include "can/lib/secondary/c/network.h"
++#include "can/lib/secondary/c/ids.h"
++
++typedef enum {
++  CL_CAN_ID_NONE,
++  CL_CAN_ID_PRIMARY,
++  CL_CAN_ID_SECONDARY
++} cl_can_id_type;
++
++cl_can_id_type can_id_type;
++
++#define _MAX(A, B) ((A) > (B) ? (A) : (B))
++#define ID_LENGTH _MAX(primary_MAX_MESSAGE_NAME_LENGTH, secondary_MAX_MESSAGE_NAME_LENGTH)
++#define DATA_LENGTH 64 * sizeof("_AA")
++
+ #define SETFNAME "sniffset."
+ #define SETFDFNAME "sniffset_fd."
+ #define FNAME_MAX_LEN 40
+@@ -223,6 +245,7 @@ void print_usage(char *prg)
+ 	fprintf(stderr, "%s - volatile CAN content visualizer.\n", prg);
+ 	fprintf(stderr, "\nUsage: %s [can-interface]\n", prg);
+ 	fprintf(stderr, "Options:\n");
++	fprintf(stderr, "         -N <net>    (canlib network: (primary/secondary)\n");
+ 	fprintf(stderr, "         -q          (quiet - all IDs deactivated)\n");
+ 	fprintf(stderr, "         -r <name>   (read %sname from file)\n", SETFNAME);
+ 	fprintf(stderr, "         -e          (fix extended frame format output - no auto detect)\n");
+@@ -264,8 +287,19 @@ int main(int argc, char **argv)
+ 	for (i = 0; i < MAX_SLOTS ;i++) /* default: enable all slots */
+ 		do_set(i, ENABLE);
+ 
+-	while ((opt = getopt(argc, argv, "r:t:h:l:f:qeb8Bc?")) != -1) {
++	while ((opt = getopt(argc, argv, "N:r:t:h:l:f:qeb8Bc?")) != -1) {
+ 		switch (opt) {
++		case 'N':
++			if (strcmp(optarg, "primary") == 0) {
++				can_id_type = CL_CAN_ID_PRIMARY;
++			} else if (strcmp(optarg, "secondary") == 0) {
++				can_id_type = CL_CAN_ID_SECONDARY;
++			} else {
++				print_usage(basename(argv[0]));
++				exit(1);
++			}
++			break;
++
+ 		case 'r':
+ 			if (readsettings(optarg) < 0) {
+ 				fprintf(stderr, "Unable to read setting file '%s%s'!\n", SETFNAME, optarg);
+@@ -703,12 +737,8 @@ int handle_timeo(long currcms)
+ 	static unsigned int frame_count;
+ 
+ 	if (clearscreen) {
+-		if (print_eff)
+-			printf("%s%sXX|ms%s-- ID --%sdata ...     < %s %c l=%ld h=%ld t=%ld slots=%d >",
+-			       CLR_SCREEN, CSR_HOME, vdl, vdl, interface, name_sep, loop, hold, timeout, idx);
+-		else
+-			printf("%s%sXX|ms%sID %sdata ...     < %s %c l=%ld h=%ld t=%ld slots=%d >",
+-			       CLR_SCREEN, CSR_HOME, ldl, ldl, interface, name_sep, loop, hold, timeout, idx);
++		printf("%s%sXX|ms%sID%*s%sdata ...     < %s %c l=%ld h=%ld t=%ld slots=%d >",
++						CLR_SCREEN, CSR_HOME, ldl, ID_LENGTH - 2, "", ldl, interface, name_sep, loop, hold, timeout, idx);
+ 
+ 		force_redraw = 1;
+ 		clearscreen = 0;
+@@ -772,14 +802,33 @@ void print_snifline(int slot)
+ 	if (diffsec >= 100)
+ 		diffsec = 99, diffusec = 999999;
+ 
+-	if (cid & CAN_EFF_FLAG)
+-		printf("%02ld%03ld%s%08X%s", diffsec, diffusec/1000, vdl, cid & CAN_EFF_MASK, vdl);
+-	else if (print_eff)
+-		printf("%02ld%03ld%s---- %03X%s", diffsec, diffusec/1000, vdl, cid & CAN_SFF_MASK, vdl);
+-	else
+-		printf("%02ld%03ld%s%03X%s", diffsec, diffusec/1000, ldl, cid & CAN_SFF_MASK, ldl);
++	if (can_id_type == CL_CAN_ID_PRIMARY && primary_is_message_id(cid & CAN_SFF_MASK)) {
++		char buf[primary_MAX_MESSAGE_NAME_LENGTH];
++		primary_message_name_from_id(cid & CAN_SFF_MASK, buf);
++		printf("%02ld%03ld%s%*s%s", diffsec, diffusec/1000, vdl, ID_LENGTH, buf, vdl);
++	} else if (can_id_type == CL_CAN_ID_SECONDARY && secondary_is_message_id(cid & CAN_SFF_MASK)) {
++		char buf[secondary_MAX_MESSAGE_NAME_LENGTH];
++		secondary_message_name_from_id(cid & CAN_SFF_MASK, buf);
++		printf("%02ld%03ld%s%*s%s", diffsec, diffusec/1000, vdl, ID_LENGTH, buf, vdl);
++	} else {
++		printf("%02ld%03ld%s%*X%s", diffsec, diffusec/1000, vdl, ID_LENGTH, cid & CAN_EFF_MASK, vdl);
++	}
+ 
+-	if (binary) {
++	if (can_id_type == CL_CAN_ID_PRIMARY && primary_is_message_id(cid& CAN_SFF_MASK)) {
++		static void *message_raw = NULL;
++		static void *message_conversion = NULL;
++		if (message_raw == NULL) message_raw = malloc(primary_MAX_STRUCT_SIZE_RAW);
++		if (message_conversion == NULL) message_conversion = malloc(primary_MAX_STRUCT_SIZE_CONVERSION);
++		void* actual = primary_deserialize_from_id(cid & CAN_SFF_MASK, sniftab[slot].current.data, message_raw, message_conversion);
++		primary_to_string_file_from_id(cid & CAN_SFF_MASK, actual, stdout);
++	} else if (can_id_type == CL_CAN_ID_SECONDARY && primary_is_message_id(cid& CAN_SFF_MASK)) {
++		static void *message_raw = NULL;
++		static void *message_conversion = NULL;
++		if (message_raw == NULL) message_raw = malloc(secondary_MAX_STRUCT_SIZE_RAW);
++		if (message_conversion == NULL) message_conversion = malloc(secondary_MAX_STRUCT_SIZE_CONVERSION);
++		void* actual = secondary_deserialize_from_id(cid & CAN_SFF_MASK, sniftab[slot].current.data, message_raw, message_conversion);
++		secondary_to_string_file_from_id(cid & CAN_SFF_MASK, actual, stdout);
++	} else if (binary) {
+ 		for (i = 0; i < sniftab[slot].current.len; i++) {
+ 			for (j=7; j >= 0; j--) {
+ 				if ((color) && (sniftab[slot].marker.data[i] & 1<<j) &&

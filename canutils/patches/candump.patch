@@ -1,0 +1,153 @@
+diff --git a/candump.c b/candump.c
+index 6fe30bb..fed4be8 100644
+--- a/candump.c
++++ b/candump.c
+@@ -127,6 +127,7 @@ static void print_usage(char *prg)
+ 	fprintf(stderr, "\nUsage: %s [options] <CAN interface>+\n", prg);
+ 	fprintf(stderr, "  (use CTRL-C to terminate %s)\n\n", prg);
+ 	fprintf(stderr, "Options:\n");
++	fprintf(stderr, "         -N <net>    (canlib network: (primary/secondary)\n");
+ 	fprintf(stderr, "         -t <type>   (timestamp: (a)bsolute/(d)elta/(z)ero/(A)bsolute w date)\n");
+ 	fprintf(stderr, "         -H          (read hardware timestamps instead of system timestamps)\n");
+ 	fprintf(stderr, "         -c          (increment color mode level)\n");
+@@ -324,7 +325,7 @@ int main(int argc, char **argv)
+ 	last_tv.tv_sec = 0;
+ 	last_tv.tv_usec = 0;
+ 
+-	while ((opt = getopt(argc, argv, "t:HciaSs:lDdxLf:n:r:he8T:?")) != -1) {
++	while ((opt = getopt(argc, argv, "N:t:HciaSs:lDdxLf:n:r:he8T:?")) != -1) {
+ 		switch (opt) {
+ 		case 't':
+ 			timestamp = optarg[0];
+@@ -401,6 +402,17 @@ int main(int argc, char **argv)
+ 			log = 1;
+ 			break;
+ 
++		case 'N':
++			if (strcmp(optarg, "primary") == 0) {
++				can_id_type = CL_CAN_ID_PRIMARY;
++			} else if (strcmp(optarg, "secondary") == 0) {
++				can_id_type = CL_CAN_ID_SECONDARY;
++			} else {
++				print_usage(basename(argv[0]));
++				exit(1);
++			}
++			break;
++
+ 		case 'n':
+ 			count = atoi(optarg);
+ 			if (count < 1) {
+diff --git a/lib.c b/lib.c
+index 935270b..3b79334 100644
+--- a/lib.c
++++ b/lib.c
+@@ -50,8 +50,20 @@
+ #include <linux/can/error.h>
+ #include <sys/socket.h> /* for sa_family_t */
+ 
++#define primary_NETWORK_IMPLEMENTATION
++#define primary_IDS_IMPLEMENTATION
++#include "can/lib/primary/c/network.h"
++#include "can/lib/primary/c/ids.h"
++
++#define secondary_NETWORK_IMPLEMENTATION
++#define secondary_IDS_IMPLEMENTATION
++#include "can/lib/secondary/c/network.h"
++#include "can/lib/secondary/c/ids.h"
++
+ #include "lib.h"
+ 
++cl_can_id_type can_id_type = CL_CAN_ID_NONE;
++
+ #define CANID_DELIM '#'
+ #define CC_DLC_DELIM '_'
+ #define DATA_SEPERATOR '.'
+@@ -361,11 +373,23 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
+ 	int len = (cf->len > maxdlen)? maxdlen : cf->len;
+ 
+ 	/* initialize space for CAN-ID and length information */
+-	memset(buf, ' ', 15);
++	memset(buf, ' ', CL_LONGCFSZ);
+ 
+ 	if (cf->can_id & CAN_ERR_FLAG) {
+ 		put_eff_id(buf, cf->can_id & (CAN_ERR_MASK|CAN_ERR_FLAG));
+ 		offset = 10;
++	} else if (can_id_type == CL_CAN_ID_PRIMARY && primary_is_message_id(cf->can_id & CAN_SFF_MASK)) {
++		char id_buffer[CL_ID];
++		primary_message_name_from_id(cf->can_id & CAN_SFF_MASK, id_buffer);
++		int len = sprintf(buf, "%*s", (int) CL_ID, id_buffer);
++		buf[len] = ' ';
++		offset = CL_ID;
++	} else if (can_id_type == CL_CAN_ID_SECONDARY && secondary_is_message_id(cf->can_id & CAN_SFF_MASK)) {
++		char id_buffer[CL_ID];
++		secondary_message_name_from_id(cf->can_id & CAN_SFF_MASK, id_buffer);
++		int len = sprintf(buf, "%*s", (int) CL_ID, id_buffer);
++		buf[len] = ' ';
++		offset = CL_ID;
+ 	} else if (cf->can_id & CAN_EFF_FLAG) {
+ 		put_eff_id(buf, cf->can_id & CAN_EFF_MASK);
+ 		offset = 10;
+@@ -379,6 +403,10 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
+ 		}
+ 	}
+ 
++	if (can_id_type == CL_CAN_ID_PRIMARY || can_id_type == CL_CAN_ID_SECONDARY) {
++		offset = CL_ID;
++	}
++
+ 	/* The len value is sanitized by maxdlen (see above) */
+ 	if (maxdlen == CAN_MAX_DLEN) {
+ 		if (view & CANLIB_VIEW_LEN8_DLC) {
+@@ -412,7 +440,25 @@ void sprint_long_canframe(char *buf , struct canfd_frame *cf, int view, int maxd
+ 	}
+ 	offset += 5;
+ 
+-	if (view & CANLIB_VIEW_BINARY) {
++	if (can_id_type == CL_CAN_ID_PRIMARY && primary_is_message_id(cf->can_id & CAN_SFF_MASK)) {
++		static void *message_raw = NULL;
++		static void *message_conversion = NULL;
++		if (message_raw == NULL) message_raw = malloc(primary_MAX_STRUCT_SIZE_RAW);
++		if (message_conversion == NULL) message_conversion = malloc(primary_MAX_STRUCT_SIZE_CONVERSION);
++		dlen = 0;
++		void* actual = primary_deserialize_from_id(cf->can_id & CAN_SFF_MASK, cf->data, message_raw, message_conversion);
++		offset += 1;
++		offset += primary_to_string_from_id(cf->can_id & CAN_SFF_MASK, actual, buf + offset);
++	} else if (can_id_type == CL_CAN_ID_SECONDARY && secondary_is_message_id(cf->can_id & CAN_SFF_MASK)) {
++		static void *message_raw = NULL;
++		static void *message_conversion = NULL;
++		if (message_raw == NULL) message_raw = malloc(secondary_MAX_STRUCT_SIZE_RAW);
++		if (message_conversion == NULL) message_conversion = malloc(secondary_MAX_STRUCT_SIZE_CONVERSION);
++		dlen = 0;
++		void* actual = secondary_deserialize_from_id(cf->can_id & CAN_SFF_MASK, cf->data, message_raw, message_conversion);
++		offset += 1;
++		offset += secondary_to_string_from_id(cf->can_id & CAN_SFF_MASK, actual, buf + offset);
++	} else if (view & CANLIB_VIEW_BINARY) {
+ 		dlen = 9; /* _10101010 */
+ 		if (view & CANLIB_VIEW_SWAP) {
+ 			for (i = len - 1; i >= 0; i--) {
+diff --git a/lib.h b/lib.h
+index a4d3ce5..6624e19 100644
+--- a/lib.h
++++ b/lib.h
+@@ -53,6 +53,21 @@
+ #define CL_DATA sizeof(".AA")
+ #define CL_BINDATA sizeof(".10101010")
+ 
++#include "can/lib/primary/c/ids.h"
++#include "can/lib/secondary/c/ids.h"
++
++#define _MAX(A, B) ((A) > (B) ? (A) : (B))
++#undef CL_ID
++#define CL_ID _MAX(_MAX(primary_MAX_MESSAGE_NAME_LENGTH, secondary_MAX_MESSAGE_NAME_LENGTH), (sizeof("12345678##1")))
++
++typedef enum {
++  CL_CAN_ID_NONE,
++  CL_CAN_ID_PRIMARY,
++  CL_CAN_ID_SECONDARY
++} cl_can_id_type;
++
++extern cl_can_id_type can_id_type;
++
+  /* CAN FD ASCII hex short representation with DATA_SEPERATORs */
+ #define CL_CFSZ (2*CL_ID + 64*CL_DATA)
+ 
