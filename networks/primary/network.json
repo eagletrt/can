@@ -326,6 +326,30 @@
       }
     },
     {
+      "name": "AMBIENT_TEMPERATURE",
+      "topic": "BROADCAST",
+      "priority": 6,
+      "sending": ["DAS"],
+      "receiving": ["STEER", "TLM", "BMS_HV", "BMS_LV"],
+      "description": "ambient temperature as send from IMU",
+      "interval": 1000,
+      "contents": {
+        "temp": "int16"
+      }
+    },
+    {
+      "name": "DATA_LOGGER",
+      "fixed_id": 1072,
+      "sending": ["DATA_LOGGER"],
+      "receiving": ["STEER", "DAS", "TLM", "BMS_HV", "BMS_LV"],
+      "description": "data logger message",
+      "interval": 1000,
+      "contents": {
+        "placeholder1": "uint32",
+        "placeholder2": "uint32"
+      }
+    },
+    {
       "name": "SET_TLM_STATUS",
       "topic": "TLM",
       "priority": 6,
