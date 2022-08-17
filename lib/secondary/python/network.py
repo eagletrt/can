@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660405864
-CANLIB_BUILD_HASH = 0xcc263974
+CANLIB_BUILD_TIME = 1660760992
+CANLIB_BUILD_HASH = 0x586ab3cd
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -53,14 +53,12 @@ class message_IMU_ANGULAR_RATE:
         self,
         ang_rate_x = None,
         ang_rate_y = None,
-        ang_rate_z = None,
-        temperature = None
+        ang_rate_z = None
     ):
         self.ang_rate_x = int16(ang_rate_x)
         self.ang_rate_y = int16(ang_rate_y)
         self.ang_rate_z = int16(ang_rate_z)
-        self.temperature = int16(temperature)
-        self.size = 8
+        self.size = 6
 
     def __eq__(self, other):
         if not isinstance(other, message_IMU_ANGULAR_RATE):
@@ -71,13 +69,11 @@ class message_IMU_ANGULAR_RATE:
             return False
         if self.ang_rate_z != other.ang_rate_z:
             return False
-        if self.temperature != other.temperature:
-            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<hhhh", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z, self.temperature))
+        data.extend(pack("<hhh", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
         return data
 
     @classmethod
@@ -86,7 +82,6 @@ class message_IMU_ANGULAR_RATE:
         message.ang_rate_x = int16(unpack("<h", data[0:2])[0])
         message.ang_rate_y = int16(unpack("<xxh", data[0:4])[0])
         message.ang_rate_z = int16(unpack("<xxxxh", data[0:6])[0])
-        message.temperature = int16(unpack("<xxxxxxh", data[0:8])[0])
         return message
 
 
@@ -95,7 +90,6 @@ class message_IMU_ANGULAR_RATE:
         conversion.ang_rate_x = ((float32(self.ang_rate_x)) / 10.0) + 0
         conversion.ang_rate_y = ((float32(self.ang_rate_y)) / 10.0) + 0
         conversion.ang_rate_z = ((float32(self.ang_rate_z)) / 10.0) + 0
-        conversion.temperature = self.temperature
         return conversion
 
 
@@ -104,14 +98,12 @@ class message_IMU_ANGULAR_RATE_conversion:
         self,
         ang_rate_x = None,
         ang_rate_y = None,
-        ang_rate_z = None,
-        temperature = None
+        ang_rate_z = None
     ):
         self.ang_rate_x = float32(ang_rate_x)
         self.ang_rate_y = float32(ang_rate_y)
         self.ang_rate_z = float32(ang_rate_z)
-        self.temperature = int16(temperature)
-        self.size = 8
+        self.size = 6
 
     def __eq__(self, other):
         if not isinstance(other, message_IMU_ANGULAR_RATE):
@@ -122,8 +114,6 @@ class message_IMU_ANGULAR_RATE_conversion:
             return False
         if self.ang_rate_z != other.ang_rate_z:
             return False
-        if self.temperature != other.temperature:
-            return False
         return True
 
     def convert_to_raw(self) -> message_IMU_ANGULAR_RATE:
@@ -131,7 +121,6 @@ class message_IMU_ANGULAR_RATE_conversion:
         raw.ang_rate_x = int16((self.ang_rate_x + 0) * 10.0)
         raw.ang_rate_y = int16((self.ang_rate_y + 0) * 10.0)
         raw.ang_rate_z = int16((self.ang_rate_z + 0) * 10.0)
-        raw.temperature = self.temperature
         return raw
 
 class message_IMU_ACCELERATION:
@@ -139,12 +128,14 @@ class message_IMU_ACCELERATION:
         self,
         accel_x = None,
         accel_y = None,
-        accel_z = None
+        accel_z = None,
+        temperature = None
     ):
         self.accel_x = int16(accel_x)
         self.accel_y = int16(accel_y)
         self.accel_z = int16(accel_z)
-        self.size = 6
+        self.temperature = int16(temperature)
+        self.size = 8
 
     def __eq__(self, other):
         if not isinstance(other, message_IMU_ACCELERATION):
@@ -155,11 +146,13 @@ class message_IMU_ACCELERATION:
             return False
         if self.accel_z != other.accel_z:
             return False
+        if self.temperature != other.temperature:
+            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<hhh", self.accel_x, self.accel_y, self.accel_z))
+        data.extend(pack("<hhhh", self.accel_x, self.accel_y, self.accel_z, self.temperature))
         return data
 
     @classmethod
@@ -168,6 +161,7 @@ class message_IMU_ACCELERATION:
         message.accel_x = int16(unpack("<h", data[0:2])[0])
         message.accel_y = int16(unpack("<xxh", data[0:4])[0])
         message.accel_z = int16(unpack("<xxxxh", data[0:6])[0])
+        message.temperature = int16(unpack("<xxxxxxh", data[0:8])[0])
         return message
 
 
@@ -176,6 +170,7 @@ class message_IMU_ACCELERATION:
         conversion.accel_x = ((float32(self.accel_x)) / 100.0) + 0
         conversion.accel_y = ((float32(self.accel_y)) / 100.0) + 0
         conversion.accel_z = ((float32(self.accel_z)) / 100.0) + 0
+        conversion.temperature = self.temperature
         return conversion
 
 
@@ -184,12 +179,14 @@ class message_IMU_ACCELERATION_conversion:
         self,
         accel_x = None,
         accel_y = None,
-        accel_z = None
+        accel_z = None,
+        temperature = None
     ):
         self.accel_x = float32(accel_x)
         self.accel_y = float32(accel_y)
         self.accel_z = float32(accel_z)
-        self.size = 6
+        self.temperature = int16(temperature)
+        self.size = 8
 
     def __eq__(self, other):
         if not isinstance(other, message_IMU_ACCELERATION):
@@ -200,6 +197,8 @@ class message_IMU_ACCELERATION_conversion:
             return False
         if self.accel_z != other.accel_z:
             return False
+        if self.temperature != other.temperature:
+            return False
         return True
 
     def convert_to_raw(self) -> message_IMU_ACCELERATION:
@@ -207,6 +206,7 @@ class message_IMU_ACCELERATION_conversion:
         raw.accel_x = int16((self.accel_x + 0) * 100.0)
         raw.accel_y = int16((self.accel_y + 0) * 100.0)
         raw.accel_z = int16((self.accel_z + 0) * 100.0)
+        raw.temperature = self.temperature
         return raw
 
 class message_IRTS_FL_0:

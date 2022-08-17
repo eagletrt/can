@@ -586,7 +586,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_x_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, ang_rate_z_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, temperature_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ANGULAR_RATE, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, _internal_metadata_),
@@ -596,6 +595,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, accel_x_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, accel_y_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, accel_z_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, temperature_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IMU_ACCELERATION, _inner_timestamp_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::secondary::IRTS_FL_0, _internal_metadata_),
@@ -836,7 +836,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::secondary::IMU_ANGULAR_RATE)},
-  { 10, -1, sizeof(::secondary::IMU_ACCELERATION)},
+  { 9, -1, sizeof(::secondary::IMU_ACCELERATION)},
   { 19, -1, sizeof(::secondary::IRTS_FL_0)},
   { 29, -1, sizeof(::secondary::IRTS_FL_1)},
   { 39, -1, sizeof(::secondary::IRTS_FL_2)},
@@ -911,13 +911,13 @@ void protobuf_RegisterTypes(const ::std::string&) {
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\017secondary.proto\022\tsecondary\"}\n\020IMU_ANGU"
+      "\n\017secondary.proto\022\tsecondary\"h\n\020IMU_ANGU"
       "LAR_RATE\022\022\n\nang_rate_x\030\001 \001(\002\022\022\n\nang_rate"
-      "_y\030\002 \001(\002\022\022\n\nang_rate_z\030\003 \001(\002\022\023\n\013temperat"
-      "ure\030\004 \001(\021\022\030\n\020_inner_timestamp\030\005 \001(\004\"_\n\020I"
-      "MU_ACCELERATION\022\017\n\007accel_x\030\001 \001(\002\022\017\n\007acce"
-      "l_y\030\002 \001(\002\022\017\n\007accel_z\030\003 \001(\002\022\030\n\020_inner_tim"
-      "estamp\030\004 \001(\004\"m\n\tIRTS_FL_0\022\020\n\010channel1\030\001 "
+      "_y\030\002 \001(\002\022\022\n\nang_rate_z\030\003 \001(\002\022\030\n\020_inner_t"
+      "imestamp\030\004 \001(\004\"t\n\020IMU_ACCELERATION\022\017\n\007ac"
+      "cel_x\030\001 \001(\002\022\017\n\007accel_y\030\002 \001(\002\022\017\n\007accel_z\030"
+      "\003 \001(\002\022\023\n\013temperature\030\004 \001(\021\022\030\n\020_inner_tim"
+      "estamp\030\005 \001(\004\"m\n\tIRTS_FL_0\022\020\n\010channel1\030\001 "
       "\001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022"
       "\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 "
       "\001(\004\"m\n\tIRTS_FL_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010ch"
@@ -1028,7 +1028,6 @@ void IMU_ANGULAR_RATE::InitAsDefaultInstance() {
 const int IMU_ANGULAR_RATE::kAngRateXFieldNumber;
 const int IMU_ANGULAR_RATE::kAngRateYFieldNumber;
 const int IMU_ANGULAR_RATE::kAngRateZFieldNumber;
-const int IMU_ANGULAR_RATE::kTemperatureFieldNumber;
 const int IMU_ANGULAR_RATE::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1044,15 +1043,15 @@ IMU_ANGULAR_RATE::IMU_ANGULAR_RATE(const IMU_ANGULAR_RATE& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&ang_rate_x_, &from.ang_rate_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&ang_rate_z_) -
+    reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
   // @@protoc_insertion_point(copy_constructor:secondary.IMU_ANGULAR_RATE)
 }
 
 void IMU_ANGULAR_RATE::SharedCtor() {
   ::memset(&ang_rate_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&ang_rate_z_) -
+      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
 }
 
 IMU_ANGULAR_RATE::~IMU_ANGULAR_RATE() {
@@ -1084,8 +1083,8 @@ void IMU_ANGULAR_RATE::Clear() {
   (void) cached_has_bits;
 
   ::memset(&ang_rate_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&ang_rate_z_) -
+      reinterpret_cast<char*>(&ang_rate_x_)) + sizeof(ang_rate_z_));
   _internal_metadata_.Clear();
 }
 
@@ -1141,24 +1140,10 @@ bool IMU_ANGULAR_RATE::MergePartialFromCodedStream(
         break;
       }
 
-      // sint32 temperature = 4;
+      // uint64 _inner_timestamp = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
-                 input, &temperature_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1210,14 +1195,9 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->ang_rate_z(), output);
   }
 
-  // sint32 temperature = 4;
-  if (this->temperature() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteSInt32(4, this->temperature(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1249,14 +1229,9 @@ void IMU_ANGULAR_RATE::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->ang_rate_z(), target);
   }
 
-  // sint32 temperature = 4;
-  if (this->temperature() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(4, this->temperature(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1286,23 +1261,16 @@ size_t IMU_ANGULAR_RATE::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // float ang_rate_z = 3;
-  if (this->ang_rate_z() != 0) {
-    total_size += 1 + 4;
-  }
-
-  // sint32 temperature = 4;
-  if (this->temperature() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::SInt32Size(
-        this->temperature());
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
+  }
+
+  // float ang_rate_z = 3;
+  if (this->ang_rate_z() != 0) {
+    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1338,14 +1306,11 @@ void IMU_ANGULAR_RATE::MergeFrom(const IMU_ANGULAR_RATE& from) {
   if (from.ang_rate_y() != 0) {
     set_ang_rate_y(from.ang_rate_y());
   }
-  if (from.ang_rate_z() != 0) {
-    set_ang_rate_z(from.ang_rate_z());
-  }
-  if (from.temperature() != 0) {
-    set_temperature(from.temperature());
-  }
   if (from._inner_timestamp() != 0) {
     set__inner_timestamp(from._inner_timestamp());
+  }
+  if (from.ang_rate_z() != 0) {
+    set_ang_rate_z(from.ang_rate_z());
   }
 }
 
@@ -1375,9 +1340,8 @@ void IMU_ANGULAR_RATE::InternalSwap(IMU_ANGULAR_RATE* other) {
   using std::swap;
   swap(ang_rate_x_, other->ang_rate_x_);
   swap(ang_rate_y_, other->ang_rate_y_);
-  swap(ang_rate_z_, other->ang_rate_z_);
-  swap(temperature_, other->temperature_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
+  swap(ang_rate_z_, other->ang_rate_z_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -1395,6 +1359,7 @@ void IMU_ACCELERATION::InitAsDefaultInstance() {
 const int IMU_ACCELERATION::kAccelXFieldNumber;
 const int IMU_ACCELERATION::kAccelYFieldNumber;
 const int IMU_ACCELERATION::kAccelZFieldNumber;
+const int IMU_ACCELERATION::kTemperatureFieldNumber;
 const int IMU_ACCELERATION::kInnerTimestampFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -1410,15 +1375,15 @@ IMU_ACCELERATION::IMU_ACCELERATION(const IMU_ACCELERATION& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&accel_x_, &from.accel_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&accel_z_) -
-    reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&accel_x_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:secondary.IMU_ACCELERATION)
 }
 
 void IMU_ACCELERATION::SharedCtor() {
   ::memset(&accel_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&accel_z_) -
-      reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&accel_x_)) + sizeof(_inner_timestamp_));
 }
 
 IMU_ACCELERATION::~IMU_ACCELERATION() {
@@ -1450,8 +1415,8 @@ void IMU_ACCELERATION::Clear() {
   (void) cached_has_bits;
 
   ::memset(&accel_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&accel_z_) -
-      reinterpret_cast<char*>(&accel_x_)) + sizeof(accel_z_));
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&accel_x_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear();
 }
 
@@ -1507,10 +1472,24 @@ bool IMU_ACCELERATION::MergePartialFromCodedStream(
         break;
       }
 
-      // uint64 _inner_timestamp = 4;
+      // sint32 temperature = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &temperature_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 _inner_timestamp = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -1562,9 +1541,14 @@ void IMU_ACCELERATION::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->accel_z(), output);
   }
 
-  // uint64 _inner_timestamp = 4;
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(4, this->temperature(), output);
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(4, this->_inner_timestamp(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1596,9 +1580,14 @@ void IMU_ACCELERATION::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->accel_z(), target);
   }
 
-  // uint64 _inner_timestamp = 4;
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(4, this->temperature(), target);
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(4, this->_inner_timestamp(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1628,16 +1617,23 @@ size_t IMU_ACCELERATION::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
-  // uint64 _inner_timestamp = 4;
+  // float accel_z = 3;
+  if (this->accel_z() != 0) {
+    total_size += 1 + 4;
+  }
+
+  // sint32 temperature = 4;
+  if (this->temperature() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::SInt32Size(
+        this->temperature());
+  }
+
+  // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
         this->_inner_timestamp());
-  }
-
-  // float accel_z = 3;
-  if (this->accel_z() != 0) {
-    total_size += 1 + 4;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1673,11 +1669,14 @@ void IMU_ACCELERATION::MergeFrom(const IMU_ACCELERATION& from) {
   if (from.accel_y() != 0) {
     set_accel_y(from.accel_y());
   }
-  if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
-  }
   if (from.accel_z() != 0) {
     set_accel_z(from.accel_z());
+  }
+  if (from.temperature() != 0) {
+    set_temperature(from.temperature());
+  }
+  if (from._inner_timestamp() != 0) {
+    set__inner_timestamp(from._inner_timestamp());
   }
 }
 
@@ -1707,8 +1706,9 @@ void IMU_ACCELERATION::InternalSwap(IMU_ACCELERATION* other) {
   using std::swap;
   swap(accel_x_, other->accel_x_);
   swap(accel_y_, other->accel_y_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
   swap(accel_z_, other->accel_z_);
+  swap(temperature_, other->temperature_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

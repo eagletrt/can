@@ -308,8 +308,6 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["IMU_ANGULAR_RATE"].field["ang_rate_y"].type = mapping_type_float32;
     mapping_map["IMU_ANGULAR_RATE"].field["ang_rate_z"].value._float32 = &pack.IMU_ANGULAR_RATE.start().ang_rate_z;
     mapping_map["IMU_ANGULAR_RATE"].field["ang_rate_z"].type = mapping_type_float32;
-    mapping_map["IMU_ANGULAR_RATE"].field["temperature"].value._int16 = &pack.IMU_ANGULAR_RATE.start().temperature;
-    mapping_map["IMU_ANGULAR_RATE"].field["temperature"].type = mapping_type_int16;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IMU_ANGULAR_RATE"].field["_timestamp"].value._uint64 = &pack.IMU_ANGULAR_RATE.start()._timestamp;
     mapping_map["IMU_ANGULAR_RATE"].field["_timestamp"].type = mapping_type_uint64;
@@ -323,6 +321,8 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["IMU_ACCELERATION"].field["accel_y"].type = mapping_type_float32;
     mapping_map["IMU_ACCELERATION"].field["accel_z"].value._float32 = &pack.IMU_ACCELERATION.start().accel_z;
     mapping_map["IMU_ACCELERATION"].field["accel_z"].type = mapping_type_float32;
+    mapping_map["IMU_ACCELERATION"].field["temperature"].value._int16 = &pack.IMU_ACCELERATION.start().temperature;
+    mapping_map["IMU_ACCELERATION"].field["temperature"].type = mapping_type_int16;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IMU_ACCELERATION"].field["_timestamp"].value._uint64 = &pack.IMU_ACCELERATION.start()._timestamp;
     mapping_map["IMU_ACCELERATION"].field["_timestamp"].type = mapping_type_uint64;
@@ -645,7 +645,6 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             proto_msg->set_ang_rate_x(msg->ang_rate_x);
             proto_msg->set_ang_rate_y(msg->ang_rate_y);
             proto_msg->set_ang_rate_z(msg->ang_rate_z);
-            proto_msg->set_temperature(msg->temperature);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -658,6 +657,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             proto_msg->set_accel_x(msg->accel_x);
             proto_msg->set_accel_y(msg->accel_y);
             proto_msg->set_accel_z(msg->accel_z);
+            proto_msg->set_temperature(msg->temperature);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -954,7 +954,6 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         instance.ang_rate_x =pack->imu_angular_rate(i).ang_rate_x();
         instance.ang_rate_y =pack->imu_angular_rate(i).ang_rate_y();
         instance.ang_rate_z =pack->imu_angular_rate(i).ang_rate_z();
-        instance.temperature =pack->imu_angular_rate(i).temperature();
         map->IMU_ANGULAR_RATE.push(instance);
     }
     for(int i = 0; i < pack->imu_acceleration_size(); i++){
@@ -970,6 +969,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         instance.accel_x =pack->imu_acceleration(i).accel_x();
         instance.accel_y =pack->imu_acceleration(i).accel_y();
         instance.accel_z =pack->imu_acceleration(i).accel_z();
+        instance.temperature =pack->imu_acceleration(i).temperature();
         map->IMU_ACCELERATION.push(instance);
     }
     for(int i = 0; i < pack->irts_fl_0_size(); i++){

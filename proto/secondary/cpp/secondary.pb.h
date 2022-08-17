@@ -254,23 +254,17 @@ class IMU_ANGULAR_RATE : public ::google::protobuf::Message /* @@protoc_insertio
   float ang_rate_y() const;
   void set_ang_rate_y(float value);
 
+  // uint64 _inner_timestamp = 4;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 4;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
+
   // float ang_rate_z = 3;
   void clear_ang_rate_z();
   static const int kAngRateZFieldNumber = 3;
   float ang_rate_z() const;
   void set_ang_rate_z(float value);
-
-  // sint32 temperature = 4;
-  void clear_temperature();
-  static const int kTemperatureFieldNumber = 4;
-  ::google::protobuf::int32 temperature() const;
-  void set_temperature(::google::protobuf::int32 value);
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  static const int kInnerTimestampFieldNumber = 5;
-  ::google::protobuf::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::google::protobuf::uint64 value);
 
   // @@protoc_insertion_point(class_scope:secondary.IMU_ANGULAR_RATE)
  private:
@@ -278,9 +272,8 @@ class IMU_ANGULAR_RATE : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   float ang_rate_x_;
   float ang_rate_y_;
-  float ang_rate_z_;
-  ::google::protobuf::int32 temperature_;
   ::google::protobuf::uint64 _inner_timestamp_;
+  float ang_rate_z_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
 };
@@ -385,17 +378,23 @@ class IMU_ACCELERATION : public ::google::protobuf::Message /* @@protoc_insertio
   float accel_y() const;
   void set_accel_y(float value);
 
-  // uint64 _inner_timestamp = 4;
-  void clear__inner_timestamp();
-  static const int kInnerTimestampFieldNumber = 4;
-  ::google::protobuf::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::google::protobuf::uint64 value);
-
   // float accel_z = 3;
   void clear_accel_z();
   static const int kAccelZFieldNumber = 3;
   float accel_z() const;
   void set_accel_z(float value);
+
+  // sint32 temperature = 4;
+  void clear_temperature();
+  static const int kTemperatureFieldNumber = 4;
+  ::google::protobuf::int32 temperature() const;
+  void set_temperature(::google::protobuf::int32 value);
+
+  // uint64 _inner_timestamp = 5;
+  void clear__inner_timestamp();
+  static const int kInnerTimestampFieldNumber = 5;
+  ::google::protobuf::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::google::protobuf::uint64 value);
 
   // @@protoc_insertion_point(class_scope:secondary.IMU_ACCELERATION)
  private:
@@ -403,8 +402,9 @@ class IMU_ACCELERATION : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   float accel_x_;
   float accel_y_;
-  ::google::protobuf::uint64 _inner_timestamp_;
   float accel_z_;
+  ::google::protobuf::int32 temperature_;
+  ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_secondary_2eproto::TableStruct;
 };
@@ -3660,21 +3660,7 @@ inline void IMU_ANGULAR_RATE::set_ang_rate_z(float value) {
   // @@protoc_insertion_point(field_set:secondary.IMU_ANGULAR_RATE.ang_rate_z)
 }
 
-// sint32 temperature = 4;
-inline void IMU_ANGULAR_RATE::clear_temperature() {
-  temperature_ = 0;
-}
-inline ::google::protobuf::int32 IMU_ANGULAR_RATE::temperature() const {
-  // @@protoc_insertion_point(field_get:secondary.IMU_ANGULAR_RATE.temperature)
-  return temperature_;
-}
-inline void IMU_ANGULAR_RATE::set_temperature(::google::protobuf::int32 value) {
-  
-  temperature_ = value;
-  // @@protoc_insertion_point(field_set:secondary.IMU_ANGULAR_RATE.temperature)
-}
-
-// uint64 _inner_timestamp = 5;
+// uint64 _inner_timestamp = 4;
 inline void IMU_ANGULAR_RATE::clear__inner_timestamp() {
   _inner_timestamp_ = GOOGLE_ULONGLONG(0);
 }
@@ -3734,7 +3720,21 @@ inline void IMU_ACCELERATION::set_accel_z(float value) {
   // @@protoc_insertion_point(field_set:secondary.IMU_ACCELERATION.accel_z)
 }
 
-// uint64 _inner_timestamp = 4;
+// sint32 temperature = 4;
+inline void IMU_ACCELERATION::clear_temperature() {
+  temperature_ = 0;
+}
+inline ::google::protobuf::int32 IMU_ACCELERATION::temperature() const {
+  // @@protoc_insertion_point(field_get:secondary.IMU_ACCELERATION.temperature)
+  return temperature_;
+}
+inline void IMU_ACCELERATION::set_temperature(::google::protobuf::int32 value) {
+  
+  temperature_ = value;
+  // @@protoc_insertion_point(field_set:secondary.IMU_ACCELERATION.temperature)
+}
+
+// uint64 _inner_timestamp = 5;
 inline void IMU_ACCELERATION::clear__inner_timestamp() {
   _inner_timestamp_ = GOOGLE_ULONGLONG(0);
 }

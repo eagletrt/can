@@ -6,15 +6,15 @@ message IMU_ANGULAR_RATE {
     float ang_rate_x = 1;
     float ang_rate_y = 2;
     float ang_rate_z = 3;
-    sint32 temperature = 4;
-    uint64 _inner_timestamp = 5;
+    uint64 _inner_timestamp = 4;
 }
 
 message IMU_ACCELERATION {
     float accel_x = 1;
     float accel_y = 2;
     float accel_z = 3;
-    uint64 _inner_timestamp = 4;
+    sint32 temperature = 4;
+    uint64 _inner_timestamp = 5;
 }
 
 message IRTS_FL_0 {
