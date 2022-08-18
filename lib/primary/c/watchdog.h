@@ -228,8 +228,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_SET_CELL_BALANCING_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_HANDCART_STATUS 500
 #define primary_INTERVAL_WITH_THRESHOLD_HANDCART_STATUS (500 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_SPEED 100
-#define primary_INTERVAL_WITH_THRESHOLD_SPEED (100 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_SPEED 10
+#define primary_INTERVAL_WITH_THRESHOLD_SPEED (10 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INV_L_REQUEST 10
 #define primary_INTERVAL_WITH_THRESHOLD_INV_L_REQUEST (10 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INV_R_REQUEST 10
@@ -802,12 +802,6 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_TEMP);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_RESPONSE)
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_L_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_L_RESPONSE
     ) {
@@ -932,6 +926,12 @@ void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_tim
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_LV_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_ERRORS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_REQUEST)

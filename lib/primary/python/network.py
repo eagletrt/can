@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660760992
-CANLIB_BUILD_HASH = 0x586ab3cd
+CANLIB_BUILD_TIME = 1660841515
+CANLIB_BUILD_HASH = 0x1129e998
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -2438,7 +2438,7 @@ class message_SPEED:
         self.inverter_r = uint16(inverter_r)
         self.inverter_l = uint16(inverter_l)
         self.size = 8
-        self.interval = 100
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):
@@ -2490,7 +2490,7 @@ class message_SPEED_conversion:
         self.inverter_r = float32(inverter_r)
         self.inverter_l = float32(inverter_l)
         self.size = 8
-        self.interval = 100
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):
