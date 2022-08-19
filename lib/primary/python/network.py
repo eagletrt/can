@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660841515
-CANLIB_BUILD_HASH = 0x1129e998
+CANLIB_BUILD_TIME = 1660904900
+CANLIB_BUILD_HASH = 0xa11fdb55
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -322,8 +322,9 @@ class Map(IntEnum):
     D20 = 1
     D40 = 2
     D60 = 3
-    D80 = 4
-    D100 = 5
+    D65 = 4
+    D70 = 5
+    D75 = 6
 
     @classmethod
     def _missing_(cls, _):

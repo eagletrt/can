@@ -512,14 +512,15 @@ enum Map {
   Map_D20 = 1,
   Map_D40 = 2,
   Map_D60 = 3,
-  Map_D80 = 4,
-  Map_D100 = 5,
+  Map_D65 = 4,
+  Map_D70 = 5,
+  Map_D75 = 6,
   Map_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
   Map_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
 bool Map_IsValid(int value);
 const Map Map_MIN = Map_R;
-const Map Map_MAX = Map_D100;
+const Map Map_MAX = Map_D75;
 const int Map_ARRAYSIZE = Map_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* Map_descriptor();

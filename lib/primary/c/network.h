@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660841515
-#define CANLIB_BUILD_HASH 0x1129e998
+#define CANLIB_BUILD_TIME 1660904900
+#define CANLIB_BUILD_HASH 0xa11fdb55
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -582,11 +582,12 @@ typedef enum CANLIB_PARKING {
     primary_Map_D20 = 1,
     primary_Map_D40 = 2,
     primary_Map_D60 = 3,
-    primary_Map_D80 = 4,
-    primary_Map_D100 = 5,
+    primary_Map_D65 = 4,
+    primary_Map_D70 = 5,
+    primary_Map_D75 = 6,
 } primary_Map;
 
-#define primary_MAX_STRING_LENGTH_Map 5
+#define primary_MAX_STRING_LENGTH_Map 4
 int primary_to_string_Map(primary_Map value, char* buffer);
 
 typedef enum CANLIB_PARKING {
@@ -4185,8 +4186,9 @@ int primary_to_string_Map(primary_Map value, char* buffer) {
         case 1: return sprintf(buffer, "D20");
         case 2: return sprintf(buffer, "D40");
         case 3: return sprintf(buffer, "D60");
-        case 4: return sprintf(buffer, "D80");
-        case 5: return sprintf(buffer, "D100");
+        case 4: return sprintf(buffer, "D65");
+        case 5: return sprintf(buffer, "D70");
+        case 6: return sprintf(buffer, "D75");
     }
     return 0;
 }

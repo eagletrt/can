@@ -2903,21 +2903,22 @@ void AddDescriptorsImpl() {
       "\020\002\022\034\n\030TractionControl_COMPLETE\020\003*Y\n\010TsSt"
       "atus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECH"
       "ARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATA"
-      "L\020\003*R\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Ma"
-      "p_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D80\020\004\022\014\n\010Map"
-      "_D100\020\005*U\n\014SetCarStatus\022\025\n\021SetCarStatus_"
-      "IDLE\020\000\022\026\n\022SetCarStatus_READY\020\001\022\026\n\022SetCar"
-      "Status_DRIVE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX"
-      "\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_"
-      "ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdSt"
-      "atus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdStatus_"
-      "IMD_NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLT"
-      "AGE\020\002\022\037\n\033ImdStatus_IMD_START_MEASURE\020\003\022\036"
-      "\n\032ImdStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdSta"
-      "tus_IMD_EARTH_FAULT\020\005b\006proto3"
+      "L\020\003*^\n\003Map\022\t\n\005Map_R\020\000\022\013\n\007Map_D20\020\001\022\013\n\007Ma"
+      "p_D40\020\002\022\013\n\007Map_D60\020\003\022\013\n\007Map_D65\020\004\022\013\n\007Map"
+      "_D70\020\005\022\013\n\007Map_D75\020\006*U\n\014SetCarStatus\022\025\n\021S"
+      "etCarStatus_IDLE\020\000\022\026\n\022SetCarStatus_READY"
+      "\020\001\022\026\n\022SetCarStatus_DRIVE\020\002*-\n\005Bound\022\021\n\rB"
+      "ound_SET_MAX\020\000\022\021\n\rBound_SET_MIN\020\001*/\n\005Ped"
+      "al\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013Pedal_BRAKE"
+      "\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus_IMD_SC\020\000\022\030"
+      "\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033ImdStatus_IM"
+      "D_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatus_IMD_START"
+      "_MEASURE\020\003\022\036\n\032ImdStatus_IMD_DEVICE_ERROR"
+      "\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAULT\020\005b\006proto"
+      "3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 11469);
+      descriptor, 11481);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "primary.proto", &protobuf_RegisterTypes);
 }
@@ -3041,6 +3042,7 @@ bool Map_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;

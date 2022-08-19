@@ -181,7 +181,7 @@
     },
     "Map": {
       "type": "enum",
-      "items": ["R", "D20", "D40", "D60", "D80", "D100"]
+      "items": ["R", "D20", "D40", "D60", "D65", "D70", "D75"]
     },
     "SetCarStatus": {
       "type": "enum",
