@@ -179,10 +179,6 @@
       "type": "enum",
       "items": ["OFF", "PRECHARGE", "ON", "FATAL"]
     },
-    "Map": {
-      "type": "enum",
-      "items": ["R", "D20", "D40", "D60", "D80", "D100"]
-    },
     "SetCarStatus": {
       "type": "enum",
       "items": ["IDLE", "READY", "DRIVE"]
@@ -598,7 +594,7 @@
       "interval": 100,
       "contents": {
         "traction_control": "TractionControl",
-        "map": "Map"
+        "map": "int8"
       }
     },
     {
