@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1660904900
-CANLIB_BUILD_HASH = 0xa11fdb55
+CANLIB_BUILD_TIME = 1661017801
+CANLIB_BUILD_HASH = 0xbb5779f9
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -311,20 +311,6 @@ class TsStatus(IntEnum):
     PRECHARGE = 1
     ON = 2
     FATAL = 3
-
-    @classmethod
-    def _missing_(cls, _):
-        return cls(0)
-
-
-class Map(IntEnum):
-    R = 0
-    D20 = 1
-    D40 = 2
-    D60 = 3
-    D65 = 4
-    D70 = 5
-    D75 = 6
 
     @classmethod
     def _missing_(cls, _):
@@ -1355,8 +1341,8 @@ class message_STEER_STATUS:
         map = None
     ):
         self.traction_control = TractionControl(traction_control)
-        self.map = Map(map)
-        self.size = 1
+        self.map = int8(map)
+        self.size = 2
         self.interval = 100
 
     def __eq__(self, other):
@@ -1370,14 +1356,14 @@ class message_STEER_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.map << 5 & 255 | self.traction_control << 3 & 255))
+        data.extend(pack(">bB", self.map, self.traction_control << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.traction_control = TractionControl((unpack(">B", data[0:1])[0] & 24) >> 3)
-        message.map = Map((unpack(">B", data[0:1])[0] & 224) >> 5)
+        message.traction_control = TractionControl((unpack(">xB", data[0:2])[0] & 192) >> 6)
+        message.map = int8(unpack(">b", data[0:1])[0])
         return message
 
 

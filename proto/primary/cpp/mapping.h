@@ -628,8 +628,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["STEER_STATUS"].stride = sizeof(primary_message_STEER_STATUS);
     mapping_map["STEER_STATUS"].field["traction_control"].value._uint16 = (uint16_t*)&pack.STEER_STATUS.start().traction_control;
     mapping_map["STEER_STATUS"].field["traction_control"].type = mapping_type_uint16;
-    mapping_map["STEER_STATUS"].field["map"].value._uint16 = (uint16_t*)&pack.STEER_STATUS.start().map;
-    mapping_map["STEER_STATUS"].field["map"].type = mapping_type_uint16;
+    mapping_map["STEER_STATUS"].field["map"].value._int8 = &pack.STEER_STATUS.start().map;
+    mapping_map["STEER_STATUS"].field["map"].type = mapping_type_int8;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["STEER_STATUS"].field["_timestamp"].value._uint64 = &pack.STEER_STATUS.start()._timestamp;
     mapping_map["STEER_STATUS"].field["_timestamp"].type = mapping_type_uint64;
@@ -1431,7 +1431,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_STEER_STATUS* msg = (primary_message_STEER_STATUS*) (*map)[index].message_raw;
             primary::STEER_STATUS* proto_msg = pack->add_steer_status();
             proto_msg->set_traction_control((primary::TractionControl)msg->traction_control);
-            proto_msg->set_map((primary::Map)msg->map);
+            proto_msg->set_map(msg->map);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -2271,7 +2271,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.traction_control =(primary_TractionControl)pack->steer_status(i).traction_control();
-        instance.map =(primary_Map)pack->steer_status(i).map();
+        instance.map =pack->steer_status(i).map();
         map->STEER_STATUS.push(instance);
     }
     for(int i = 0; i < pack->set_car_status_size(); i++){

@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1660904900
-#define CANLIB_BUILD_HASH 0xa11fdb55
+#define CANLIB_BUILD_TIME 1661017801
+#define CANLIB_BUILD_HASH 0xbb5779f9
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -273,7 +273,7 @@ typedef struct {
 #define primary_SIZE_HV_IMD_STATUS 5
 #define primary_SIZE_TS_STATUS 1
 #define primary_SIZE_SET_TS_STATUS 1
-#define primary_SIZE_STEER_STATUS 1
+#define primary_SIZE_STEER_STATUS 2
 #define primary_SIZE_SET_CAR_STATUS 1
 #define primary_SIZE_SET_PEDALS_RANGE 1
 #define primary_SIZE_SET_STEERING_ANGLE_RANGE 1
@@ -578,19 +578,6 @@ typedef enum CANLIB_PARKING {
 int primary_to_string_TsStatus(primary_TsStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
-    primary_Map_R = 0,
-    primary_Map_D20 = 1,
-    primary_Map_D40 = 2,
-    primary_Map_D60 = 3,
-    primary_Map_D65 = 4,
-    primary_Map_D70 = 5,
-    primary_Map_D75 = 6,
-} primary_Map;
-
-#define primary_MAX_STRING_LENGTH_Map 4
-int primary_to_string_Map(primary_Map value, char* buffer);
-
-typedef enum CANLIB_PARKING {
     primary_SetCarStatus_IDLE = 0,
     primary_SetCarStatus_READY = 1,
     primary_SetCarStatus_DRIVE = 2,
@@ -873,7 +860,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_TractionControl traction_control;
-    primary_Map map;
+    primary_int8 map;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -2229,7 +2216,7 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer);
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_TractionControl traction_control,
-    primary_Map map
+    primary_int8 map
 );
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
@@ -4176,19 +4163,6 @@ int primary_to_string_TsStatus(primary_TsStatus value, char* buffer) {
         case 1: return sprintf(buffer, "PRECHARGE");
         case 2: return sprintf(buffer, "ON");
         case 3: return sprintf(buffer, "FATAL");
-    }
-    return 0;
-}
-
-int primary_to_string_Map(primary_Map value, char* buffer) {
-    switch (value) {
-        case 0: return sprintf(buffer, "R");
-        case 1: return sprintf(buffer, "D20");
-        case 2: return sprintf(buffer, "D40");
-        case 3: return sprintf(buffer, "D60");
-        case 4: return sprintf(buffer, "D65");
-        case 5: return sprintf(buffer, "D70");
-        case 6: return sprintf(buffer, "D75");
     }
     return 0;
 }
@@ -6835,18 +6809,20 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_TractionControl traction_control,
-    primary_Map map
+    primary_int8 map
 ) {
-    data[0] = map << 5 | traction_control << 3;
-    return 1;
+    data[0] = map;
+    data[1] = traction_control << 6;
+    return 2;
 }
 
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
     primary_message_STEER_STATUS* message
 ) {
-    data[0] = message->map << 5 | message->traction_control << 3;
-    return 1;
+    data[0] = message->map;
+    data[1] = message->traction_control << 6;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6861,8 +6837,8 @@ void primary_deserialize_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->map = (primary_Map) ((data[0] & 224) >> 5);
-    message->traction_control = (primary_TractionControl) ((data[0] & 24) >> 3);
+    message->map = data[0];
+    message->traction_control = (primary_TractionControl) ((data[1] & 192) >> 6);
 }
 
 // ============== STRING ============== //
@@ -6874,7 +6850,7 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* 
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIi8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -6901,7 +6877,7 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, F
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIi8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP

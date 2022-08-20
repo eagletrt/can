@@ -507,32 +507,6 @@ inline bool TsStatus_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<TsStatus>(
     TsStatus_descriptor(), name, value);
 }
-enum Map {
-  Map_R = 0,
-  Map_D20 = 1,
-  Map_D40 = 2,
-  Map_D60 = 3,
-  Map_D65 = 4,
-  Map_D70 = 5,
-  Map_D75 = 6,
-  Map_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  Map_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
-};
-bool Map_IsValid(int value);
-const Map Map_MIN = Map_R;
-const Map Map_MAX = Map_D75;
-const int Map_ARRAYSIZE = Map_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* Map_descriptor();
-inline const ::std::string& Map_Name(Map value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    Map_descriptor(), value);
-}
-inline bool Map_Parse(
-    const ::std::string& name, Map* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Map>(
-    Map_descriptor(), name, value);
-}
 enum SetCarStatus {
   SetCarStatus_IDLE = 0,
   SetCarStatus_READY = 1,
@@ -3703,11 +3677,11 @@ class STEER_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::primary::TractionControl traction_control() const;
   void set_traction_control(::primary::TractionControl value);
 
-  // .primary.Map map = 2;
+  // sint32 map = 2;
   void clear_map();
   static const int kMapFieldNumber = 2;
-  ::primary::Map map() const;
-  void set_map(::primary::Map value);
+  ::google::protobuf::int32 map() const;
+  void set_map(::google::protobuf::int32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -3720,7 +3694,7 @@ class STEER_STATUS : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   int traction_control_;
-  int map_;
+  ::google::protobuf::int32 map_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -11743,15 +11717,15 @@ inline void STEER_STATUS::set_traction_control(::primary::TractionControl value)
   // @@protoc_insertion_point(field_set:primary.STEER_STATUS.traction_control)
 }
 
-// .primary.Map map = 2;
+// sint32 map = 2;
 inline void STEER_STATUS::clear_map() {
   map_ = 0;
 }
-inline ::primary::Map STEER_STATUS::map() const {
+inline ::google::protobuf::int32 STEER_STATUS::map() const {
   // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map)
-  return static_cast< ::primary::Map >(map_);
+  return map_;
 }
-inline void STEER_STATUS::set_map(::primary::Map value) {
+inline void STEER_STATUS::set_map(::google::protobuf::int32 value) {
   
   map_ = value;
   // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map)
@@ -16321,11 +16295,6 @@ template <> struct is_proto_enum< ::primary::TsStatus> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::primary::TsStatus>() {
   return ::primary::TsStatus_descriptor();
-}
-template <> struct is_proto_enum< ::primary::Map> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::primary::Map>() {
-  return ::primary::Map_descriptor();
 }
 template <> struct is_proto_enum< ::primary::SetCarStatus> : ::std::true_type {};
 template <>
