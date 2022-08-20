@@ -971,7 +971,7 @@
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Encoder and inverter speed in rad/sec",
-      "interval": 100,
+      "interval": 10,
       "contents": {
         "encoder_r": {
           "type": "float32",
