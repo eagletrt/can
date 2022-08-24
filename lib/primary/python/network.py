@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1661017801
+CANLIB_BUILD_TIME = 1661366465
 CANLIB_BUILD_HASH = 0xbb5779f9
 
 def int8(value: Any) -> Optional[int]:
@@ -426,14 +426,14 @@ class message_STEER_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack(">I", data[0:4])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -459,14 +459,14 @@ class message_DAS_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack(">I", data[0:4])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -492,14 +492,14 @@ class message_HV_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack(">I", data[0:4])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -525,14 +525,14 @@ class message_LV_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack(">I", data[0:4])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -558,14 +558,14 @@ class message_TLM_VERSION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.component_version = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack(">I", data[0:4])[0])
+        message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -587,13 +587,13 @@ class message_TIMESTAMP:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">I", self.timestamp))
+        data.extend(pack("<I", self.timestamp))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.timestamp = uint32(unpack(">I", data[0:4])[0])
+        message.timestamp = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -615,13 +615,13 @@ class message_AMBIENT_TEMPERATURE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">h", self.temp))
+        data.extend(pack("<h", self.temp))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.temp = int16(unpack(">h", data[0:2])[0])
+        message.temp = int16(unpack("<h", data[0:2])[0])
         return message
 
 
@@ -647,14 +647,14 @@ class message_DATA_LOGGER:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">II", self.placeholder1, self.placeholder2))
+        data.extend(pack("<II", self.placeholder1, self.placeholder2))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.placeholder1 = uint32(unpack(">I", data[0:4])[0])
-        message.placeholder2 = uint32(unpack(">xxxxI", data[0:8])[0])
+        message.placeholder1 = uint32(unpack("<I", data[0:4])[0])
+        message.placeholder2 = uint32(unpack("<xxxxI", data[0:8])[0])
         return message
 
 
@@ -675,13 +675,13 @@ class message_SET_TLM_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.tlm_status << 7 & 255))
+        data.extend(pack("<B", self.tlm_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.tlm_status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.tlm_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -703,13 +703,13 @@ class message_TLM_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.tlm_status << 7 & 255))
+        data.extend(pack("<B", self.tlm_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.tlm_status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.tlm_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -731,13 +731,13 @@ class message_STEER_SYSTEM_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.soc_temp))
+        data.extend(pack("<B", self.soc_temp))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.soc_temp = uint8(unpack(">B", data[0:1])[0])
+        message.soc_temp = uint8(unpack("<B", data[0:1])[0])
         return message
 
 
@@ -771,16 +771,16 @@ class message_HV_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.pack_voltage, self.bus_voltage, self.max_cell_voltage, self.min_cell_voltage))
+        data.extend(pack("<HHHH", self.pack_voltage, self.bus_voltage, self.max_cell_voltage, self.min_cell_voltage))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.pack_voltage = uint16(unpack(">H", data[0:2])[0])
-        message.bus_voltage = uint16(unpack(">xxH", data[0:4])[0])
-        message.max_cell_voltage = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.min_cell_voltage = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.pack_voltage = uint16(unpack("<H", data[0:2])[0])
+        message.bus_voltage = uint16(unpack("<xxH", data[0:4])[0])
+        message.max_cell_voltage = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.min_cell_voltage = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -859,16 +859,16 @@ class message_HV_CURRENT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHB", self.current, self.power, self.energy, self.soc))
+        data.extend(pack("<HHHB", self.current, self.power, self.energy, self.soc))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.current = uint16(unpack(">H", data[0:2])[0])
-        message.power = uint16(unpack(">xxH", data[0:4])[0])
-        message.energy = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.soc = uint8(unpack(">xxxxxxB", data[0:7])[0])
+        message.current = uint16(unpack("<H", data[0:2])[0])
+        message.power = uint16(unpack("<xxH", data[0:4])[0])
+        message.energy = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.soc = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
@@ -943,15 +943,15 @@ class message_HV_TEMP:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBB", self.average_temp, self.max_temp, self.min_temp))
+        data.extend(pack("<BBB", self.average_temp, self.max_temp, self.min_temp))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.average_temp = uint8(unpack(">B", data[0:1])[0])
-        message.max_temp = uint8(unpack(">xB", data[0:2])[0])
-        message.min_temp = uint8(unpack(">xxB", data[0:3])[0])
+        message.average_temp = uint8(unpack("<B", data[0:1])[0])
+        message.max_temp = uint8(unpack("<xB", data[0:2])[0])
+        message.min_temp = uint8(unpack("<xxB", data[0:3])[0])
         return message
 
 
@@ -1016,14 +1016,14 @@ class message_HV_ERRORS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBB", (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
+        data.extend(pack("<BBBB", (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.warnings = HvErrors(int((unpack(">BB", data[0:2])[0] << 8) | (unpack(">BB", data[0:2])[1] << 0)))
-        message.errors = HvErrors(int((unpack(">xxBB", data[0:4])[0] << 8) | (unpack(">xxBB", data[0:4])[1] << 0)))
+        message.warnings = HvErrors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
+        message.errors = HvErrors(int((unpack("<xxBB", data[0:4])[0] << 8) | (unpack("<xxBB", data[0:4])[1] << 0)))
         return message
 
 
@@ -1044,13 +1044,13 @@ class message_HV_CAN_FORWARD:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.can_forward_set << 7 & 255))
+        data.extend(pack("<B", self.can_forward_set << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.can_forward_set = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.can_forward_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -1075,14 +1075,14 @@ class message_HV_FANS_OVERRIDE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HB", self.fans_speed, self.fans_override << 7 & 255))
+        data.extend(pack("<HB", self.fans_speed, self.fans_override << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.fans_override = Toggle((unpack(">xxB", data[0:3])[0] & 128) >> 7)
-        message.fans_speed = uint16(unpack(">H", data[0:2])[0])
+        message.fans_override = Toggle((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -1135,13 +1135,13 @@ class message_HV_CAN_FORWARD_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.can_forward_status << 7 & 255))
+        data.extend(pack("<B", self.can_forward_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.can_forward_status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.can_forward_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -1166,14 +1166,14 @@ class message_HV_FANS_OVERRIDE_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HB", self.fans_speed, self.fans_override << 7 & 255))
+        data.extend(pack("<HB", self.fans_speed, self.fans_override << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.fans_override = Toggle((unpack(">xxB", data[0:3])[0] & 128) >> 7)
-        message.fans_speed = uint16(unpack(">H", data[0:2])[0])
+        message.fans_override = Toggle((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.fans_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -1230,14 +1230,14 @@ class message_HV_FEEDBACKS_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBB", (int(self.feedbacks_status) >> 16) & 255, (int(self.feedbacks_status) >> 8) & 255, (int(self.feedbacks_status) >> 0) & 255, (int(self.is_circuitry_error) >> 16) & 255, (int(self.is_circuitry_error) >> 8) & 255, (int(self.is_circuitry_error) >> 0) & 255))
+        data.extend(pack("<BBBBBB", (int(self.feedbacks_status) >> 16) & 255, (int(self.feedbacks_status) >> 8) & 255, (int(self.feedbacks_status) >> 0) & 255, (int(self.is_circuitry_error) >> 16) & 255, (int(self.is_circuitry_error) >> 8) & 255, (int(self.is_circuitry_error) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.feedbacks_status = HvFeedbacks(int((unpack(">BBB", data[0:3])[0] << 16) | (unpack(">BBB", data[0:3])[1] << 8) | (unpack(">BBB", data[0:3])[2] << 0)))
-        message.is_circuitry_error = HvFeedbacks(int((unpack(">xxxBBB", data[0:6])[0] << 16) | (unpack(">xxxBBB", data[0:6])[1] << 8) | (unpack(">xxxBBB", data[0:6])[2] << 0)))
+        message.feedbacks_status = HvFeedbacks(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.is_circuitry_error = HvFeedbacks(int((unpack("<xxxBBB", data[0:6])[0] << 16) | (unpack("<xxxBBB", data[0:6])[1] << 8) | (unpack("<xxxBBB", data[0:6])[2] << 0)))
         return message
 
 
@@ -1266,15 +1266,15 @@ class message_HV_IMD_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">iB", self.imd_info, self.imd_status << 5 & 255 | self.imd_fault << 4 & 255))
+        data.extend(pack("<iB", self.imd_info, self.imd_status << 5 & 255 | self.imd_fault << 4 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.imd_fault = bool((unpack(">xxxxB", data[0:5])[0] & 16) >> 4)
-        message.imd_status = ImdStatus((unpack(">xxxxB", data[0:5])[0] & 224) >> 5)
-        message.imd_info = int32(unpack(">i", data[0:4])[0])
+        message.imd_fault = bool((unpack("<xxxxB", data[0:5])[0] & 16) >> 4)
+        message.imd_status = ImdStatus((unpack("<xxxxB", data[0:5])[0] & 224) >> 5)
+        message.imd_info = int32(unpack("<i", data[0:4])[0])
         return message
 
 
@@ -1296,13 +1296,13 @@ class message_TS_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.ts_status << 6 & 255))
+        data.extend(pack("<B", self.ts_status << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.ts_status = TsStatus((unpack(">B", data[0:1])[0] & 192) >> 6)
+        message.ts_status = TsStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
         return message
 
 
@@ -1324,13 +1324,13 @@ class message_SET_TS_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.ts_status_set << 7 & 255))
+        data.extend(pack("<B", self.ts_status_set << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.ts_status_set = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.ts_status_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -1356,14 +1356,14 @@ class message_STEER_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">bB", self.map, self.traction_control << 6 & 255))
+        data.extend(pack("<bB", self.map, self.traction_control << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.traction_control = TractionControl((unpack(">xB", data[0:2])[0] & 192) >> 6)
-        message.map = int8(unpack(">b", data[0:1])[0])
+        message.traction_control = TractionControl((unpack("<xB", data[0:2])[0] & 192) >> 6)
+        message.map = int8(unpack("<b", data[0:1])[0])
         return message
 
 
@@ -1384,13 +1384,13 @@ class message_SET_CAR_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.car_status_set << 6 & 255))
+        data.extend(pack("<B", self.car_status_set << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.car_status_set = SetCarStatus((unpack(">B", data[0:1])[0] & 192) >> 6)
+        message.car_status_set = SetCarStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
         return message
 
 
@@ -1415,14 +1415,14 @@ class message_SET_PEDALS_RANGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.bound << 7 & 255 | self.pedal << 6 & 255))
+        data.extend(pack("<B", self.bound << 7 & 255 | self.pedal << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.bound = Bound((unpack(">B", data[0:1])[0] & 128) >> 7)
-        message.pedal = Pedal((unpack(">B", data[0:1])[0] & 64) >> 6)
+        message.bound = Bound((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.pedal = Pedal((unpack("<B", data[0:1])[0] & 64) >> 6)
         return message
 
 
@@ -1443,13 +1443,13 @@ class message_SET_STEERING_ANGLE_RANGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.bound << 7 & 255))
+        data.extend(pack("<B", self.bound << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.bound = Bound((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.bound = Bound((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -1479,15 +1479,15 @@ class message_CAR_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.car_status << 5 & 255 | self.inverter_l << 3 & 255 | self.inverter_r << 1 & 255))
+        data.extend(pack("<B", self.car_status << 5 & 255 | self.inverter_l << 3 & 255 | self.inverter_r << 1 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.inverter_l = InverterStatus((unpack(">B", data[0:1])[0] & 24) >> 3)
-        message.inverter_r = InverterStatus((unpack(">B", data[0:1])[0] & 6) >> 1)
-        message.car_status = CarStatus((unpack(">B", data[0:1])[0] & 224) >> 5)
+        message.inverter_l = InverterStatus((unpack("<B", data[0:1])[0] & 24) >> 3)
+        message.inverter_r = InverterStatus((unpack("<B", data[0:1])[0] & 6) >> 1)
+        message.car_status = CarStatus((unpack("<B", data[0:1])[0] & 224) >> 5)
         return message
 
 
@@ -1509,13 +1509,13 @@ class message_DAS_ERRORS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BB", (int(self.das_error) >> 8) & 255, (int(self.das_error) >> 0) & 255))
+        data.extend(pack("<BB", (int(self.das_error) >> 8) & 255, (int(self.das_error) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.das_error = DasErrors(int((unpack(">BB", data[0:2])[0] << 8) | (unpack(">BB", data[0:2])[1] << 0)))
+        message.das_error = DasErrors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
         return message
 
 
@@ -1537,13 +1537,13 @@ class message_LV_CURRENT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">H", self.current))
+        data.extend(pack("<H", self.current))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.current = uint16(unpack(">H", data[0:2])[0])
+        message.current = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -1604,16 +1604,16 @@ class message_LV_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
+        data.extend(pack("<HHHH", self.voltage_1, self.voltage_2, self.voltage_3, self.voltage_4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.voltage_1 = uint16(unpack(">H", data[0:2])[0])
-        message.voltage_2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.voltage_3 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.voltage_4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.voltage_1 = uint16(unpack("<H", data[0:2])[0])
+        message.voltage_2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.voltage_3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.voltage_4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -1680,13 +1680,13 @@ class message_LV_TOTAL_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">I", self.total_voltage))
+        data.extend(pack("<I", self.total_voltage))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.total_voltage = uint32(unpack(">I", data[0:4])[0])
+        message.total_voltage = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -1747,16 +1747,16 @@ class message_LV_TEMPERATURE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.bp_temperature_1, self.bp_temperature_2, self.dcdc12_temperature, self.dcdc24_temperature))
+        data.extend(pack("<HHHH", self.bp_temperature_1, self.bp_temperature_2, self.dcdc12_temperature, self.dcdc24_temperature))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.bp_temperature_1 = uint16(unpack(">H", data[0:2])[0])
-        message.bp_temperature_2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.dcdc12_temperature = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.dcdc24_temperature = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.bp_temperature_1 = uint16(unpack("<H", data[0:2])[0])
+        message.bp_temperature_2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.dcdc12_temperature = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.dcdc24_temperature = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -1827,14 +1827,14 @@ class message_COOLING_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HH", self.radiators_speed, self.pumps_speed))
+        data.extend(pack("<HH", self.radiators_speed, self.pumps_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.radiators_speed = uint16(unpack(">H", data[0:2])[0])
-        message.pumps_speed = uint16(unpack(">xxH", data[0:4])[0])
+        message.radiators_speed = uint16(unpack("<H", data[0:2])[0])
+        message.pumps_speed = uint16(unpack("<xxH", data[0:4])[0])
         return message
 
 
@@ -1888,13 +1888,13 @@ class message_SET_RADIATOR_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">H", self.radiators_speed))
+        data.extend(pack("<H", self.radiators_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.radiators_speed = uint16(unpack(">H", data[0:2])[0])
+        message.radiators_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -1941,13 +1941,13 @@ class message_SET_PUMPS_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">H", self.pumps_speed))
+        data.extend(pack("<H", self.pumps_speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.pumps_speed = uint16(unpack(">H", data[0:2])[0])
+        message.pumps_speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -1994,13 +1994,13 @@ class message_SET_INVERTER_CONNECTION_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.status << 7 & 255))
+        data.extend(pack("<B", self.status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -2022,13 +2022,13 @@ class message_INVERTER_CONNECTION_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.status << 7 & 255))
+        data.extend(pack("<B", self.status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -2054,14 +2054,14 @@ class message_LV_ERRORS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBB", (int(self.warnings) >> 16) & 255, (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 16) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
+        data.extend(pack("<BBBBBB", (int(self.warnings) >> 16) & 255, (int(self.warnings) >> 8) & 255, (int(self.warnings) >> 0) & 255, (int(self.errors) >> 16) & 255, (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.warnings = LvErrors(int((unpack(">BBB", data[0:3])[0] << 16) | (unpack(">BBB", data[0:3])[1] << 8) | (unpack(">BBB", data[0:3])[2] << 0)))
-        message.errors = LvErrors(int((unpack(">xxxBBB", data[0:6])[0] << 16) | (unpack(">xxxBBB", data[0:6])[1] << 8) | (unpack(">xxxBBB", data[0:6])[2] << 0)))
+        message.warnings = LvErrors(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
+        message.errors = LvErrors(int((unpack("<xxxBBB", data[0:6])[0] << 16) | (unpack("<xxxBBB", data[0:6])[1] << 8) | (unpack("<xxxBBB", data[0:6])[2] << 0)))
         return message
 
 
@@ -2087,14 +2087,14 @@ class message_SHUTDOWN_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.input << 7 & 255 | self.output << 6 & 255))
+        data.extend(pack("<B", self.input << 7 & 255 | self.output << 6 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.input = bool((unpack(">B", data[0:1])[0] & 128) >> 7)
-        message.output = bool((unpack(">B", data[0:1])[0] & 64) >> 6)
+        message.input = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
+        message.output = bool((unpack("<B", data[0:1])[0] & 64) >> 6)
         return message
 
 
@@ -2150,16 +2150,16 @@ class message_HV_CELLS_VOLTAGE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHB", self.voltage_0, self.voltage_1, self.voltage_2, self.start_index))
+        data.extend(pack("<HHHB", self.voltage_0, self.voltage_1, self.voltage_2, self.start_index))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.start_index = uint8(unpack(">xxxxxxB", data[0:7])[0])
-        message.voltage_0 = uint16(unpack(">H", data[0:2])[0])
-        message.voltage_1 = uint16(unpack(">xxH", data[0:4])[0])
-        message.voltage_2 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.voltage_0 = uint16(unpack("<H", data[0:2])[0])
+        message.voltage_1 = uint16(unpack("<xxH", data[0:4])[0])
+        message.voltage_2 = uint16(unpack("<xxxxH", data[0:6])[0])
         return message
 
 
@@ -2250,19 +2250,19 @@ class message_HV_CELLS_TEMP:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBBB", self.start_index, self.temp_0, self.temp_1, self.temp_2, self.temp_3, self.temp_4, self.temp_5))
+        data.extend(pack("<BBBBBBB", self.start_index, self.temp_0, self.temp_1, self.temp_2, self.temp_3, self.temp_4, self.temp_5))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.start_index = uint8(unpack(">B", data[0:1])[0])
-        message.temp_0 = uint8(unpack(">xB", data[0:2])[0])
-        message.temp_1 = uint8(unpack(">xxB", data[0:3])[0])
-        message.temp_2 = uint8(unpack(">xxxB", data[0:4])[0])
-        message.temp_3 = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.temp_4 = uint8(unpack(">xxxxxB", data[0:6])[0])
-        message.temp_5 = uint8(unpack(">xxxxxxB", data[0:7])[0])
+        message.start_index = uint8(unpack("<B", data[0:1])[0])
+        message.temp_0 = uint8(unpack("<xB", data[0:2])[0])
+        message.temp_1 = uint8(unpack("<xxB", data[0:3])[0])
+        message.temp_2 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.temp_3 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.temp_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.temp_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
@@ -2347,13 +2347,13 @@ class message_HV_CELL_BALANCING_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.balancing_status << 7 & 255))
+        data.extend(pack("<B", self.balancing_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.balancing_status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -2374,13 +2374,13 @@ class message_SET_CELL_BALANCING_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.set_balancing_status << 7 & 255))
+        data.extend(pack("<B", self.set_balancing_status << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.set_balancing_status = Toggle((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.set_balancing_status = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -2402,13 +2402,13 @@ class message_HANDCART_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">B", self.connected << 7 & 255))
+        data.extend(pack("<B", self.connected << 7 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.connected = bool((unpack(">B", data[0:1])[0] & 128) >> 7)
+        message.connected = bool((unpack("<B", data[0:1])[0] & 128) >> 7)
         return message
 
 
@@ -2442,16 +2442,16 @@ class message_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
+        data.extend(pack("<HHHH", self.encoder_r, self.encoder_l, self.inverter_r, self.inverter_l))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.encoder_r = uint16(unpack(">H", data[0:2])[0])
-        message.encoder_l = uint16(unpack(">xxH", data[0:4])[0])
-        message.inverter_r = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.inverter_l = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.encoder_r = uint16(unpack("<H", data[0:2])[0])
+        message.encoder_l = uint16(unpack("<xxH", data[0:4])[0])
+        message.inverter_r = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.inverter_l = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -2546,20 +2546,20 @@ class message_INV_L_REQUEST:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
+        data.extend(pack("<BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.data_0 = uint8(unpack(">B", data[0:1])[0])
-        message.data_1 = uint8(unpack(">xB", data[0:2])[0])
-        message.data_2 = uint8(unpack(">xxB", data[0:3])[0])
-        message.data_3 = uint8(unpack(">xxxB", data[0:4])[0])
-        message.data_4 = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.data_5 = uint8(unpack(">xxxxxB", data[0:6])[0])
-        message.data_6 = uint8(unpack(">xxxxxxB", data[0:7])[0])
-        message.data_7 = uint8(unpack(">xxxxxxxB", data[0:8])[0])
+        message.data_0 = uint8(unpack("<B", data[0:1])[0])
+        message.data_1 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_2 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_3 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_4 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_5 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_6 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_7 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 
@@ -2609,20 +2609,20 @@ class message_INV_R_REQUEST:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
+        data.extend(pack("<BBBBBBBB", self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6, self.data_7))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.data_0 = uint8(unpack(">B", data[0:1])[0])
-        message.data_1 = uint8(unpack(">xB", data[0:2])[0])
-        message.data_2 = uint8(unpack(">xxB", data[0:3])[0])
-        message.data_3 = uint8(unpack(">xxxB", data[0:4])[0])
-        message.data_4 = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.data_5 = uint8(unpack(">xxxxxB", data[0:6])[0])
-        message.data_6 = uint8(unpack(">xxxxxxB", data[0:7])[0])
-        message.data_7 = uint8(unpack(">xxxxxxxB", data[0:8])[0])
+        message.data_0 = uint8(unpack("<B", data[0:1])[0])
+        message.data_1 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_2 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_3 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_4 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_5 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_6 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_7 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 
@@ -2672,20 +2672,20 @@ class message_INV_L_RESPONSE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBBBB", self.reg_id, self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6))
+        data.extend(pack("<BBBBBBBB", self.reg_id, self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.reg_id = uint8(unpack(">B", data[0:1])[0])
-        message.data_0 = uint8(unpack(">xB", data[0:2])[0])
-        message.data_1 = uint8(unpack(">xxB", data[0:3])[0])
-        message.data_2 = uint8(unpack(">xxxB", data[0:4])[0])
-        message.data_3 = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.data_4 = uint8(unpack(">xxxxxB", data[0:6])[0])
-        message.data_5 = uint8(unpack(">xxxxxxB", data[0:7])[0])
-        message.data_6 = uint8(unpack(">xxxxxxxB", data[0:8])[0])
+        message.reg_id = uint8(unpack("<B", data[0:1])[0])
+        message.data_0 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_1 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_2 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_3 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 
@@ -2735,20 +2735,20 @@ class message_INV_R_RESPONSE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">BBBBBBBB", self.reg_id, self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6))
+        data.extend(pack("<BBBBBBBB", self.reg_id, self.data_0, self.data_1, self.data_2, self.data_3, self.data_4, self.data_5, self.data_6))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.reg_id = uint8(unpack(">B", data[0:1])[0])
-        message.data_0 = uint8(unpack(">xB", data[0:2])[0])
-        message.data_1 = uint8(unpack(">xxB", data[0:3])[0])
-        message.data_2 = uint8(unpack(">xxxB", data[0:4])[0])
-        message.data_3 = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.data_4 = uint8(unpack(">xxxxxB", data[0:6])[0])
-        message.data_5 = uint8(unpack(">xxxxxxB", data[0:7])[0])
-        message.data_6 = uint8(unpack(">xxxxxxxB", data[0:8])[0])
+        message.reg_id = uint8(unpack("<B", data[0:1])[0])
+        message.data_0 = uint8(unpack("<xB", data[0:2])[0])
+        message.data_1 = uint8(unpack("<xxB", data[0:3])[0])
+        message.data_2 = uint8(unpack("<xxxB", data[0:4])[0])
+        message.data_3 = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.data_4 = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.data_5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.data_6 = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
 

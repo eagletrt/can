@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1661017801
+CANLIB_BUILD_TIME = 1661366465
 CANLIB_BUILD_HASH = 0xbb5779f9
 
 def int8(value: Any) -> Optional[int]:
@@ -73,15 +73,15 @@ class message_IMU_ANGULAR_RATE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<hhh", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
+        data.extend(pack(">hhh", self.ang_rate_x, self.ang_rate_y, self.ang_rate_z))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.ang_rate_x = int16(unpack("<h", data[0:2])[0])
-        message.ang_rate_y = int16(unpack("<xxh", data[0:4])[0])
-        message.ang_rate_z = int16(unpack("<xxxxh", data[0:6])[0])
+        message.ang_rate_x = int16(unpack(">h", data[0:2])[0])
+        message.ang_rate_y = int16(unpack(">xxh", data[0:4])[0])
+        message.ang_rate_z = int16(unpack(">xxxxh", data[0:6])[0])
         return message
 
 
@@ -152,16 +152,16 @@ class message_IMU_ACCELERATION:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<hhhh", self.accel_x, self.accel_y, self.accel_z, self.temperature))
+        data.extend(pack(">hhhh", self.accel_x, self.accel_y, self.accel_z, self.temperature))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.accel_x = int16(unpack("<h", data[0:2])[0])
-        message.accel_y = int16(unpack("<xxh", data[0:4])[0])
-        message.accel_z = int16(unpack("<xxxxh", data[0:6])[0])
-        message.temperature = int16(unpack("<xxxxxxh", data[0:8])[0])
+        message.accel_x = int16(unpack(">h", data[0:2])[0])
+        message.accel_y = int16(unpack(">xxh", data[0:4])[0])
+        message.accel_z = int16(unpack(">xxxxh", data[0:6])[0])
+        message.temperature = int16(unpack(">xxxxxxh", data[0:8])[0])
         return message
 
 
@@ -238,16 +238,16 @@ class message_IRTS_FL_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack(">H", data[0:2])[0])
-        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -280,16 +280,16 @@ class message_IRTS_FL_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack(">H", data[0:2])[0])
-        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -322,16 +322,16 @@ class message_IRTS_FL_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack(">H", data[0:2])[0])
-        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -364,16 +364,16 @@ class message_IRTS_FL_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack(">H", data[0:2])[0])
-        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -406,16 +406,16 @@ class message_IRTS_FR_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack(">H", data[0:2])[0])
-        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -448,16 +448,16 @@ class message_IRTS_FR_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack(">H", data[0:2])[0])
-        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -490,16 +490,16 @@ class message_IRTS_FR_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack(">H", data[0:2])[0])
-        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -532,16 +532,16 @@ class message_IRTS_FR_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack(">H", data[0:2])[0])
-        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -574,16 +574,16 @@ class message_IRTS_RL_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack(">H", data[0:2])[0])
-        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -616,16 +616,16 @@ class message_IRTS_RL_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack(">H", data[0:2])[0])
-        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -658,16 +658,16 @@ class message_IRTS_RL_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack(">H", data[0:2])[0])
-        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -700,16 +700,16 @@ class message_IRTS_RL_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack(">H", data[0:2])[0])
-        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -742,16 +742,16 @@ class message_IRTS_RR_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack(">H", data[0:2])[0])
-        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack("<H", data[0:2])[0])
+        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -784,16 +784,16 @@ class message_IRTS_RR_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack(">H", data[0:2])[0])
-        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack("<H", data[0:2])[0])
+        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -826,16 +826,16 @@ class message_IRTS_RR_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack(">H", data[0:2])[0])
-        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack("<H", data[0:2])[0])
+        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -868,16 +868,16 @@ class message_IRTS_RR_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack(">H", data[0:2])[0])
-        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack("<H", data[0:2])[0])
+        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
         return message
 
 
@@ -902,14 +902,14 @@ class message_GPS_COORDS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">ff", self.latitude, self.longitude))
+        data.extend(pack("<ff", self.latitude, self.longitude))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.latitude = float32(unpack(">f", data[0:4])[0])
-        message.longitude = float32(unpack(">xxxxf", data[0:8])[0])
+        message.latitude = float32(unpack("<f", data[0:4])[0])
+        message.longitude = float32(unpack("<xxxxf", data[0:8])[0])
         return message
 
 
@@ -930,13 +930,13 @@ class message_GPS_SPEED:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">H", self.speed))
+        data.extend(pack("<H", self.speed))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.speed = uint16(unpack(">H", data[0:2])[0])
+        message.speed = uint16(unpack("<H", data[0:2])[0])
         return message
 
 
@@ -961,14 +961,14 @@ class message_LAP_COUNT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">IB", self.lap_time, self.lap_count))
+        data.extend(pack("<IB", self.lap_time, self.lap_count))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.lap_count = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.lap_time = uint32(unpack(">I", data[0:4])[0])
+        message.lap_count = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.lap_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -998,15 +998,15 @@ class message_PEDALS_OUTPUT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">HHB", self.bse_front, self.bse_rear, self.apps))
+        data.extend(pack("<HHB", self.bse_front, self.bse_rear, self.apps))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.apps = uint8(unpack(">xxxxB", data[0:5])[0])
-        message.bse_front = uint16(unpack(">H", data[0:2])[0])
-        message.bse_rear = uint16(unpack(">xxH", data[0:4])[0])
+        message.apps = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.bse_front = uint16(unpack("<H", data[0:2])[0])
+        message.bse_rear = uint16(unpack("<xxH", data[0:4])[0])
         return message
 
 
@@ -1071,14 +1071,14 @@ class message_CONTROL_OUTPUT:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">ff", self.right, self.left))
+        data.extend(pack("<ff", self.right, self.left))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.right = float32(unpack(">f", data[0:4])[0])
-        message.left = float32(unpack(">xxxxf", data[0:8])[0])
+        message.right = float32(unpack("<f", data[0:4])[0])
+        message.left = float32(unpack("<xxxxf", data[0:8])[0])
         return message
 
 
@@ -1100,12 +1100,12 @@ class message_STEERING_ANGLE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack(">f", self.angle))
+        data.extend(pack("<f", self.angle))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.angle = float32(unpack(">f", data[0:4])[0])
+        message.angle = float32(unpack("<f", data[0:4])[0])
         return message
 
