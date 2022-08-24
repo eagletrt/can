@@ -1,11 +1,11 @@
-name: Build
+name: Can Utils
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  all:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

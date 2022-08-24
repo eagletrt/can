@@ -46,7 +46,7 @@ jobs:
           cp -r /tmp/workspace/* .
           git add .
           if [[ $(git status --porcelain) ]]; then git commit -am "chore: automatically generated files" && git push; fi
-          
+
       - name: Send telegram message
         uses: appleboy/telegram-action@master
         with:
@@ -54,7 +54,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             CAN was updated.
-            
+
             ${{ github.actor }} created commit: ${{ github.event.commits[0].message }}
-            
+
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
