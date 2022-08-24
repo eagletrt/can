@@ -39,6 +39,7 @@ jobs:
           ref: build
 
       - name: Push generated includes
+        id: commit
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -46,6 +47,7 @@ jobs:
           cp -r /tmp/workspace/* .
           git add .
           if [[ $(git status --porcelain) ]]; then git commit -am "chore: automatically generated files" && git push; fi
+          echo "::set-output name=HASH::$(git rev-parse HEAD)"
 
       - name: Send telegram message
         uses: appleboy/telegram-action@master
@@ -53,8 +55,6 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            CAN was updated.
+            CAN was updated with commit: ${{ github.event.commits[0].message }}
 
-            ${{ github.actor }} created commit: ${{ github.event.commits[0].message }}
-
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            Changes: https://github.com/${{ github.repository }}/commit/${{steps.commit.outputs.HASH }}"
