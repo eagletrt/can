@@ -16,7 +16,7 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1661367626
+#define CANLIB_BUILD_TIME 1661539166
 #define CANLIB_BUILD_HASH 0x6783a9bf
 #endif // CANLIB_BUILD
 
@@ -161,7 +161,9 @@ typedef struct {
     uint16_t id;
     void* message_raw;
     void* message_conversion;
-} bms_devices[bms_MESSAGE_COUNT];
+} bms_devices_t;
+typedef bms_devices_t bms_devices[bms_MESSAGE_COUNT];
+
 
 // ============== INDEXES ============ //
 
