@@ -810,9 +810,10 @@
       "name": "SET_INVERTER_CONNECTION_STATUS",
       "topic": "LV",
       "priority": 6,
+      "interval": 100,
       "sending": ["DAS"],
       "receiving": ["BMS_LV"],
-      "description": "Set inverter status",
+      "description": "Set the status of the inverter inputs RFE and RUN",
       "contents": {
         "status": "Toggle"
       }
