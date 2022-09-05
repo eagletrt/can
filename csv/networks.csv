@@ -39,7 +39,7 @@ GPS_SPEED,GPS_SPEED: 1057,secondary,STEER,3,TLM,STEER,,speed: uint16,Speed recei
 LAP_COUNT,LAP_COUNT: 1089,secondary,STEER,3,TLM,STEER,,"lap_count: uint8, lap_time: uint32",Lap counter and associated timestamp
 PEDALS_OUTPUT,PEDALS_OUTPUT: 769,secondary,STEER,4,DAS,STEER,10,"apps: uint8, bse_front: type: float32, range: 0, 100, force: uint16, bse_rear: type: float32, range: 0, 100, force: uint16","Pedal output, already calibrated"
 CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,STEER,100,"right: float32, left: float32","Control output, N*m"
-STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,100,angle: float32,Steering angle in degrees
+STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,10,angle: float32,Steering angle in degrees
 BMS_HV_JMP_TO_BLT,BMS_HV_JMP_TO_BLT: 0,primary,FLASH,7,HANDCART,BMS_HV,,,
 BMS_LV_JMP_TO_BLT,BMS_LV_JMP_TO_BLT: 32,primary,FLASH,7,HANDCART,BMS_LV,,,
 STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
@@ -78,7 +78,7 @@ LV_TEMPERATURE,LV_TEMPERATURE: 936,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",100,"
 COOLING_STATUS,COOLING_STATUS: 968,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",1000,"radiators_speed: type: float32, range: -1, 1, force: uint16, pumps_speed: type: float32, range: -1, 1, force: uint16","Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit"
 SET_RADIATOR_SPEED,SET_RADIATOR_SPEED: 778,primary,LV,4,STEER,BMS_LV,,"radiators_speed: type: float32, range: -1, 1, force: uint16",Set both radiators speed
 SET_PUMPS_SPEED,SET_PUMPS_SPEED: 810,primary,LV,4,STEER,BMS_LV,,"pumps_speed: type: float32, range: -1, 1, force: uint16",Set both pumps speed
-SET_INVERTER_CONNECTION_STATUS,SET_INVERTER_CONNECTION_STATUS: 266,primary,LV,6,DAS,BMS_LV,,status: Toggle,Set inverter status
+SET_INVERTER_CONNECTION_STATUS,SET_INVERTER_CONNECTION_STATUS: 266,primary,LV,6,DAS,BMS_LV,100,status: Toggle,Set the status of the inverter inputs RFE and RUN
 INVERTER_CONNECTION_STATUS,INVERTER_CONNECTION_STATUS: 264,primary,DASnSTEER,6,BMS_LV,"DAS, STEER",100,status: Toggle,Inverter status
 LV_ERRORS,LV_ERRORS: 8,primary,DASnSTEER,7,BMS_LV,"DAS, STEER, TLM",10,"warnings: LvErrors, errors: LvErrors",LV Battery-related errors
 SHUTDOWN_STATUS,SHUTDOWN_STATUS: 296,primary,DASnSTEER,6,BMS_HV,"DAS, STEER",500,"input: bool, output: bool",Shutdown status
