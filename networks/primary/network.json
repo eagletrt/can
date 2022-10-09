@@ -254,7 +254,6 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -268,7 +267,6 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -282,7 +280,6 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -296,7 +293,6 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -310,7 +306,6 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
