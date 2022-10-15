@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1662390793
-CANLIB_BUILD_HASH = 0x1606c8cf
+CANLIB_BUILD_TIME = 1665819611
+CANLIB_BUILD_HASH = 0x931c9ed0
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -408,10 +408,10 @@ class message_STEER_VERSION:
     def __init__(
         self,
         component_version = None,
-        cancicd_version = None
+        canlib_build_time = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint32(cancicd_version)
+        self.canlib_build_time = uint32(canlib_build_time)
         self.size = 5
         self.interval = 1000
 
@@ -420,20 +420,20 @@ class message_STEER_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.cancicd_version != other.cancicd_version:
+        if self.canlib_build_time != other.canlib_build_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
+        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -441,10 +441,10 @@ class message_DAS_VERSION:
     def __init__(
         self,
         component_version = None,
-        cancicd_version = None
+        canlib_build_time = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint32(cancicd_version)
+        self.canlib_build_time = uint32(canlib_build_time)
         self.size = 5
         self.interval = 1000
 
@@ -453,20 +453,20 @@ class message_DAS_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.cancicd_version != other.cancicd_version:
+        if self.canlib_build_time != other.canlib_build_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
+        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -474,10 +474,10 @@ class message_HV_VERSION:
     def __init__(
         self,
         component_version = None,
-        cancicd_version = None
+        canlib_build_time = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint32(cancicd_version)
+        self.canlib_build_time = uint32(canlib_build_time)
         self.size = 5
         self.interval = 1000
 
@@ -486,20 +486,20 @@ class message_HV_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.cancicd_version != other.cancicd_version:
+        if self.canlib_build_time != other.canlib_build_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
+        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -507,10 +507,10 @@ class message_LV_VERSION:
     def __init__(
         self,
         component_version = None,
-        cancicd_version = None
+        canlib_build_time = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint32(cancicd_version)
+        self.canlib_build_time = uint32(canlib_build_time)
         self.size = 5
         self.interval = 1000
 
@@ -519,20 +519,20 @@ class message_LV_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.cancicd_version != other.cancicd_version:
+        if self.canlib_build_time != other.canlib_build_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
+        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -540,10 +540,10 @@ class message_TLM_VERSION:
     def __init__(
         self,
         component_version = None,
-        cancicd_version = None
+        canlib_build_time = None
     ):
         self.component_version = uint8(component_version)
-        self.cancicd_version = uint32(cancicd_version)
+        self.canlib_build_time = uint32(canlib_build_time)
         self.size = 5
         self.interval = 1000
 
@@ -552,20 +552,20 @@ class message_TLM_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.cancicd_version != other.cancicd_version:
+        if self.canlib_build_time != other.canlib_build_time:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.cancicd_version, self.component_version))
+        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
+        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
         return message
 
 

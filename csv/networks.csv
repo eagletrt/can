@@ -42,11 +42,11 @@ CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,STEER,100,"right: float
 STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,10,angle: float32,Steering angle in degrees
 BMS_HV_JMP_TO_BLT,BMS_HV_JMP_TO_BLT: 0,primary,FLASH,7,HANDCART,BMS_HV,,,
 BMS_LV_JMP_TO_BLT,BMS_LV_JMP_TO_BLT: 32,primary,FLASH,7,HANDCART,BMS_LV,,,
-STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
 TIMESTAMP,TIMESTAMP: 257,primary,BROADCAST,6,TLM,"STEER, DAS, BMS_HV, BMS_LV",1000,timestamp: uint32,every second unix encoded time and date used by logging devices to sync
 AMBIENT_TEMPERATURE,AMBIENT_TEMPERATURE: 289,primary,BROADCAST,6,DAS,"STEER, TLM, BMS_HV, BMS_LV",1000,temp: int16,ambient temperature as send from IMU
 DATA_LOGGER,DATA_LOGGER: 1072,primary,FIXED_IDS,,DATA_LOGGER,"STEER, DAS, TLM, BMS_HV, BMS_LV",1000,"placeholder1: uint32, placeholder2: uint32",data logger message

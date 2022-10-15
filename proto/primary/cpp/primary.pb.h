@@ -897,11 +897,11 @@ class STEER_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::uint32 component_version() const;
   void set_component_version(::google::protobuf::uint32 value);
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  static const int kCancicdVersionFieldNumber = 2;
-  ::google::protobuf::uint32 cancicd_version() const;
-  void set_cancicd_version(::google::protobuf::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  static const int kCanlibBuildTimeFieldNumber = 2;
+  ::google::protobuf::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -914,7 +914,7 @@ class STEER_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 component_version_;
-  ::google::protobuf::uint32 cancicd_version_;
+  ::google::protobuf::uint32 canlib_build_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -1014,11 +1014,11 @@ class DAS_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::uint32 component_version() const;
   void set_component_version(::google::protobuf::uint32 value);
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  static const int kCancicdVersionFieldNumber = 2;
-  ::google::protobuf::uint32 cancicd_version() const;
-  void set_cancicd_version(::google::protobuf::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  static const int kCanlibBuildTimeFieldNumber = 2;
+  ::google::protobuf::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -1031,7 +1031,7 @@ class DAS_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 component_version_;
-  ::google::protobuf::uint32 cancicd_version_;
+  ::google::protobuf::uint32 canlib_build_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -1131,11 +1131,11 @@ class HV_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 component_version() const;
   void set_component_version(::google::protobuf::uint32 value);
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  static const int kCancicdVersionFieldNumber = 2;
-  ::google::protobuf::uint32 cancicd_version() const;
-  void set_cancicd_version(::google::protobuf::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  static const int kCanlibBuildTimeFieldNumber = 2;
+  ::google::protobuf::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -1148,7 +1148,7 @@ class HV_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 component_version_;
-  ::google::protobuf::uint32 cancicd_version_;
+  ::google::protobuf::uint32 canlib_build_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -1248,11 +1248,11 @@ class LV_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::google::protobuf::uint32 component_version() const;
   void set_component_version(::google::protobuf::uint32 value);
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  static const int kCancicdVersionFieldNumber = 2;
-  ::google::protobuf::uint32 cancicd_version() const;
-  void set_cancicd_version(::google::protobuf::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  static const int kCanlibBuildTimeFieldNumber = 2;
+  ::google::protobuf::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -1265,7 +1265,7 @@ class LV_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 component_version_;
-  ::google::protobuf::uint32 cancicd_version_;
+  ::google::protobuf::uint32 canlib_build_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -1365,11 +1365,11 @@ class TLM_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::uint32 component_version() const;
   void set_component_version(::google::protobuf::uint32 value);
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  static const int kCancicdVersionFieldNumber = 2;
-  ::google::protobuf::uint32 cancicd_version() const;
-  void set_cancicd_version(::google::protobuf::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  static const int kCanlibBuildTimeFieldNumber = 2;
+  ::google::protobuf::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::google::protobuf::uint32 value);
 
   // uint64 _inner_timestamp = 3;
   void clear__inner_timestamp();
@@ -1382,7 +1382,7 @@ class TLM_VERSION : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 component_version_;
-  ::google::protobuf::uint32 cancicd_version_;
+  ::google::protobuf::uint32 canlib_build_time_;
   ::google::protobuf::uint64 _inner_timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_primary_2eproto::TableStruct;
@@ -10669,18 +10669,18 @@ inline void STEER_VERSION::set_component_version(::google::protobuf::uint32 valu
   // @@protoc_insertion_point(field_set:primary.STEER_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void STEER_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void STEER_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::google::protobuf::uint32 STEER_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.STEER_VERSION.cancicd_version)
-  return cancicd_version_;
+inline ::google::protobuf::uint32 STEER_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.STEER_VERSION.canlib_build_time)
+  return canlib_build_time_;
 }
-inline void STEER_VERSION::set_cancicd_version(::google::protobuf::uint32 value) {
+inline void STEER_VERSION::set_canlib_build_time(::google::protobuf::uint32 value) {
   
-  cancicd_version_ = value;
-  // @@protoc_insertion_point(field_set:primary.STEER_VERSION.cancicd_version)
+  canlib_build_time_ = value;
+  // @@protoc_insertion_point(field_set:primary.STEER_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -10715,18 +10715,18 @@ inline void DAS_VERSION::set_component_version(::google::protobuf::uint32 value)
   // @@protoc_insertion_point(field_set:primary.DAS_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void DAS_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void DAS_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::google::protobuf::uint32 DAS_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.DAS_VERSION.cancicd_version)
-  return cancicd_version_;
+inline ::google::protobuf::uint32 DAS_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.DAS_VERSION.canlib_build_time)
+  return canlib_build_time_;
 }
-inline void DAS_VERSION::set_cancicd_version(::google::protobuf::uint32 value) {
+inline void DAS_VERSION::set_canlib_build_time(::google::protobuf::uint32 value) {
   
-  cancicd_version_ = value;
-  // @@protoc_insertion_point(field_set:primary.DAS_VERSION.cancicd_version)
+  canlib_build_time_ = value;
+  // @@protoc_insertion_point(field_set:primary.DAS_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -10761,18 +10761,18 @@ inline void HV_VERSION::set_component_version(::google::protobuf::uint32 value) 
   // @@protoc_insertion_point(field_set:primary.HV_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void HV_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void HV_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::google::protobuf::uint32 HV_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.HV_VERSION.cancicd_version)
-  return cancicd_version_;
+inline ::google::protobuf::uint32 HV_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.HV_VERSION.canlib_build_time)
+  return canlib_build_time_;
 }
-inline void HV_VERSION::set_cancicd_version(::google::protobuf::uint32 value) {
+inline void HV_VERSION::set_canlib_build_time(::google::protobuf::uint32 value) {
   
-  cancicd_version_ = value;
-  // @@protoc_insertion_point(field_set:primary.HV_VERSION.cancicd_version)
+  canlib_build_time_ = value;
+  // @@protoc_insertion_point(field_set:primary.HV_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -10807,18 +10807,18 @@ inline void LV_VERSION::set_component_version(::google::protobuf::uint32 value) 
   // @@protoc_insertion_point(field_set:primary.LV_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void LV_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void LV_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::google::protobuf::uint32 LV_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.LV_VERSION.cancicd_version)
-  return cancicd_version_;
+inline ::google::protobuf::uint32 LV_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.LV_VERSION.canlib_build_time)
+  return canlib_build_time_;
 }
-inline void LV_VERSION::set_cancicd_version(::google::protobuf::uint32 value) {
+inline void LV_VERSION::set_canlib_build_time(::google::protobuf::uint32 value) {
   
-  cancicd_version_ = value;
-  // @@protoc_insertion_point(field_set:primary.LV_VERSION.cancicd_version)
+  canlib_build_time_ = value;
+  // @@protoc_insertion_point(field_set:primary.LV_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -10853,18 +10853,18 @@ inline void TLM_VERSION::set_component_version(::google::protobuf::uint32 value)
   // @@protoc_insertion_point(field_set:primary.TLM_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void TLM_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void TLM_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::google::protobuf::uint32 TLM_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.TLM_VERSION.cancicd_version)
-  return cancicd_version_;
+inline ::google::protobuf::uint32 TLM_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.TLM_VERSION.canlib_build_time)
+  return canlib_build_time_;
 }
-inline void TLM_VERSION::set_cancicd_version(::google::protobuf::uint32 value) {
+inline void TLM_VERSION::set_canlib_build_time(::google::protobuf::uint32 value) {
   
-  cancicd_version_ = value;
-  // @@protoc_insertion_point(field_set:primary.TLM_VERSION.cancicd_version)
+  canlib_build_time_ = value;
+  // @@protoc_insertion_point(field_set:primary.TLM_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;

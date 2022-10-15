@@ -372,8 +372,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["STEER_VERSION"].stride = sizeof(primary_message_STEER_VERSION);
     mapping_map["STEER_VERSION"].field["component_version"].value._uint8 = &pack.STEER_VERSION.start().component_version;
     mapping_map["STEER_VERSION"].field["component_version"].type = mapping_type_uint8;
-    mapping_map["STEER_VERSION"].field["cancicd_version"].value._uint32 = &pack.STEER_VERSION.start().cancicd_version;
-    mapping_map["STEER_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+    mapping_map["STEER_VERSION"].field["canlib_build_time"].value._uint32 = &pack.STEER_VERSION.start().canlib_build_time;
+    mapping_map["STEER_VERSION"].field["canlib_build_time"].type = mapping_type_uint32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["STEER_VERSION"].field["_timestamp"].value._uint64 = &pack.STEER_VERSION.start()._timestamp;
     mapping_map["STEER_VERSION"].field["_timestamp"].type = mapping_type_uint64;
@@ -383,8 +383,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["DAS_VERSION"].stride = sizeof(primary_message_DAS_VERSION);
     mapping_map["DAS_VERSION"].field["component_version"].value._uint8 = &pack.DAS_VERSION.start().component_version;
     mapping_map["DAS_VERSION"].field["component_version"].type = mapping_type_uint8;
-    mapping_map["DAS_VERSION"].field["cancicd_version"].value._uint32 = &pack.DAS_VERSION.start().cancicd_version;
-    mapping_map["DAS_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+    mapping_map["DAS_VERSION"].field["canlib_build_time"].value._uint32 = &pack.DAS_VERSION.start().canlib_build_time;
+    mapping_map["DAS_VERSION"].field["canlib_build_time"].type = mapping_type_uint32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["DAS_VERSION"].field["_timestamp"].value._uint64 = &pack.DAS_VERSION.start()._timestamp;
     mapping_map["DAS_VERSION"].field["_timestamp"].type = mapping_type_uint64;
@@ -394,8 +394,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["HV_VERSION"].stride = sizeof(primary_message_HV_VERSION);
     mapping_map["HV_VERSION"].field["component_version"].value._uint8 = &pack.HV_VERSION.start().component_version;
     mapping_map["HV_VERSION"].field["component_version"].type = mapping_type_uint8;
-    mapping_map["HV_VERSION"].field["cancicd_version"].value._uint32 = &pack.HV_VERSION.start().cancicd_version;
-    mapping_map["HV_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+    mapping_map["HV_VERSION"].field["canlib_build_time"].value._uint32 = &pack.HV_VERSION.start().canlib_build_time;
+    mapping_map["HV_VERSION"].field["canlib_build_time"].type = mapping_type_uint32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["HV_VERSION"].field["_timestamp"].value._uint64 = &pack.HV_VERSION.start()._timestamp;
     mapping_map["HV_VERSION"].field["_timestamp"].type = mapping_type_uint64;
@@ -405,8 +405,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["LV_VERSION"].stride = sizeof(primary_message_LV_VERSION);
     mapping_map["LV_VERSION"].field["component_version"].value._uint8 = &pack.LV_VERSION.start().component_version;
     mapping_map["LV_VERSION"].field["component_version"].type = mapping_type_uint8;
-    mapping_map["LV_VERSION"].field["cancicd_version"].value._uint32 = &pack.LV_VERSION.start().cancicd_version;
-    mapping_map["LV_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+    mapping_map["LV_VERSION"].field["canlib_build_time"].value._uint32 = &pack.LV_VERSION.start().canlib_build_time;
+    mapping_map["LV_VERSION"].field["canlib_build_time"].type = mapping_type_uint32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["LV_VERSION"].field["_timestamp"].value._uint64 = &pack.LV_VERSION.start()._timestamp;
     mapping_map["LV_VERSION"].field["_timestamp"].type = mapping_type_uint64;
@@ -416,8 +416,8 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["TLM_VERSION"].stride = sizeof(primary_message_TLM_VERSION);
     mapping_map["TLM_VERSION"].field["component_version"].value._uint8 = &pack.TLM_VERSION.start().component_version;
     mapping_map["TLM_VERSION"].field["component_version"].type = mapping_type_uint8;
-    mapping_map["TLM_VERSION"].field["cancicd_version"].value._uint32 = &pack.TLM_VERSION.start().cancicd_version;
-    mapping_map["TLM_VERSION"].field["cancicd_version"].type = mapping_type_uint32;
+    mapping_map["TLM_VERSION"].field["canlib_build_time"].value._uint32 = &pack.TLM_VERSION.start().canlib_build_time;
+    mapping_map["TLM_VERSION"].field["canlib_build_time"].type = mapping_type_uint32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["TLM_VERSION"].field["_timestamp"].value._uint64 = &pack.TLM_VERSION.start()._timestamp;
     mapping_map["TLM_VERSION"].field["_timestamp"].type = mapping_type_uint64;
@@ -1171,7 +1171,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_STEER_VERSION* msg = (primary_message_STEER_VERSION*) (*map)[index].message_raw;
             primary::STEER_VERSION* proto_msg = pack->add_steer_version();
             proto_msg->set_component_version(msg->component_version);
-            proto_msg->set_cancicd_version(msg->cancicd_version);
+            proto_msg->set_canlib_build_time(msg->canlib_build_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1182,7 +1182,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_DAS_VERSION* msg = (primary_message_DAS_VERSION*) (*map)[index].message_raw;
             primary::DAS_VERSION* proto_msg = pack->add_das_version();
             proto_msg->set_component_version(msg->component_version);
-            proto_msg->set_cancicd_version(msg->cancicd_version);
+            proto_msg->set_canlib_build_time(msg->canlib_build_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1193,7 +1193,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_HV_VERSION* msg = (primary_message_HV_VERSION*) (*map)[index].message_raw;
             primary::HV_VERSION* proto_msg = pack->add_hv_version();
             proto_msg->set_component_version(msg->component_version);
-            proto_msg->set_cancicd_version(msg->cancicd_version);
+            proto_msg->set_canlib_build_time(msg->canlib_build_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1204,7 +1204,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_LV_VERSION* msg = (primary_message_LV_VERSION*) (*map)[index].message_raw;
             primary::LV_VERSION* proto_msg = pack->add_lv_version();
             proto_msg->set_component_version(msg->component_version);
-            proto_msg->set_cancicd_version(msg->cancicd_version);
+            proto_msg->set_canlib_build_time(msg->canlib_build_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1215,7 +1215,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             primary_message_TLM_VERSION* msg = (primary_message_TLM_VERSION*) (*map)[index].message_raw;
             primary::TLM_VERSION* proto_msg = pack->add_tlm_version();
             proto_msg->set_component_version(msg->component_version);
-            proto_msg->set_cancicd_version(msg->cancicd_version);
+            proto_msg->set_canlib_build_time(msg->canlib_build_time);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1939,7 +1939,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.component_version =pack->steer_version(i).component_version();
-        instance.cancicd_version =pack->steer_version(i).cancicd_version();
+        instance.canlib_build_time =pack->steer_version(i).canlib_build_time();
         map->STEER_VERSION.push(instance);
     }
     for(int i = 0; i < pack->das_version_size(); i++){
@@ -1953,7 +1953,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.component_version =pack->das_version(i).component_version();
-        instance.cancicd_version =pack->das_version(i).cancicd_version();
+        instance.canlib_build_time =pack->das_version(i).canlib_build_time();
         map->DAS_VERSION.push(instance);
     }
     for(int i = 0; i < pack->hv_version_size(); i++){
@@ -1967,7 +1967,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.component_version =pack->hv_version(i).component_version();
-        instance.cancicd_version =pack->hv_version(i).cancicd_version();
+        instance.canlib_build_time =pack->hv_version(i).canlib_build_time();
         map->HV_VERSION.push(instance);
     }
     for(int i = 0; i < pack->lv_version_size(); i++){
@@ -1981,7 +1981,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.component_version =pack->lv_version(i).component_version();
-        instance.cancicd_version =pack->lv_version(i).cancicd_version();
+        instance.canlib_build_time =pack->lv_version(i).canlib_build_time();
         map->LV_VERSION.push(instance);
     }
     for(int i = 0; i < pack->tlm_version_size(); i++){
@@ -1995,7 +1995,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.component_version =pack->tlm_version(i).component_version();
-        instance.cancicd_version =pack->tlm_version(i).cancicd_version();
+        instance.canlib_build_time =pack->tlm_version(i).canlib_build_time();
         map->TLM_VERSION.push(instance);
     }
     for(int i = 0; i < pack->timestamp_size(); i++){

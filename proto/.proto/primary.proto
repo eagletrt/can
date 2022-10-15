@@ -78,31 +78,31 @@ message BMS_LV_JMP_TO_BLT {
 
 message STEER_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message DAS_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message HV_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message LV_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message TLM_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 

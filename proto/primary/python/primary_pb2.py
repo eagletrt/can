@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='primary',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\rprimary.proto\x12\x07primary\"-\n\x11\x42MS_HV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"-\n\x11\x42MS_LV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"]\n\rSTEER_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x17\n\x0f\x63\x61ncicd_version\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"[\n\x0b\x44\x41S_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x17\n\x0f\x63\x61ncicd_version\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"Z\n\nHV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x17\n\x0f\x63\x61ncicd_version\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"Z\n\nLV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x17\n\x0f\x63\x61ncicd_version\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"[\n\x0bTLM_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x17\n\x0f\x63\x61ncicd_version\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"8\n\tTIMESTAMP\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"=\n\x13\x41MBIENT_TEMPERATURE\x12\x0c\n\x04temp\x18\x01 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"S\n\x0b\x44\x41TA_LOGGER\x12\x14\n\x0cplaceholder1\x18\x01 \x01(\r\x12\x14\n\x0cplaceholder2\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"O\n\x0eSET_TLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"K\n\nTLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"A\n\x13STEER_SYSTEM_STATUS\x12\x10\n\x08soc_temp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x85\x01\n\nHV_VOLTAGE\x12\x14\n\x0cpack_voltage\x18\x01 \x01(\x02\x12\x13\n\x0b\x62us_voltage\x18\x02 \x01(\x02\x12\x18\n\x10max_cell_voltage\x18\x03 \x01(\x02\x12\x18\n\x10min_cell_voltage\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"c\n\nHV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\r\n\x05power\x18\x02 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x02\x12\x0b\n\x03soc\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"]\n\x07HV_TEMP\x12\x14\n\x0c\x61verage_temp\x18\x01 \x01(\x02\x12\x10\n\x08max_temp\x18\x02 \x01(\x02\x12\x10\n\x08min_temp\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"G\n\tHV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"T\n\x0eHV_CAN_FORWARD\x12(\n\x0f\x63\x61n_forward_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"h\n\x10HV_FANS_OVERRIDE\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"^\n\x15HV_CAN_FORWARD_STATUS\x12+\n\x12\x63\x61n_forward_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x17HV_FANS_OVERRIDE_STATUS\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"e\n\x13HV_FEEDBACKS_STATUS\x12\x18\n\x10\x66\x65\x65\x64\x62\x61\x63ks_status\x18\x01 \x01(\r\x12\x1a\n\x12is_circuitry_error\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"v\n\rHV_IMD_STATUS\x12\x11\n\timd_fault\x18\x01 \x01(\x08\x12&\n\nimd_status\x18\x02 \x01(\x0e\x32\x12.primary.ImdStatus\x12\x10\n\x08imd_info\x18\x03 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"K\n\tTS_STATUS\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"U\n\x11SET_TS_STATUS_DAS\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Z\n\x16SET_TS_STATUS_HANDCART\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"i\n\x0cSTEER_STATUS\x12\x32\n\x10traction_control\x18\x01 \x01(\x0e\x32\x18.primary.TractionControl\x12\x0b\n\x03map\x18\x02 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"Y\n\x0eSET_CAR_STATUS\x12-\n\x0e\x63\x61r_status_set\x18\x01 \x01(\x0e\x32\x15.primary.SetCarStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"j\n\x10SET_PEDALS_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x1d\n\x05pedal\x18\x02 \x01(\x0e\x32\x0e.primary.Pedal\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"S\n\x18SET_STEERING_ANGLE_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\xa8\x01\n\nCAR_STATUS\x12+\n\ninverter_l\x18\x01 \x01(\x0e\x32\x17.primary.InverterStatus\x12+\n\ninverter_r\x18\x02 \x01(\x0e\x32\x17.primary.InverterStatus\x12&\n\ncar_status\x18\x03 \x01(\x0e\x32\x12.primary.CarStatus\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"9\n\nDAS_ERRORS\x12\x11\n\tdas_error\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"7\n\nLV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"r\n\nLV_VOLTAGE\x12\x11\n\tvoltage_1\x18\x01 \x01(\x02\x12\x11\n\tvoltage_2\x18\x02 \x01(\x02\x12\x11\n\tvoltage_3\x18\x03 \x01(\x02\x12\x11\n\tvoltage_4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"C\n\x10LV_TOTAL_VOLTAGE\x12\x15\n\rtotal_voltage\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x96\x01\n\x0eLV_TEMPERATURE\x12\x18\n\x10\x62p_temperature_1\x18\x01 \x01(\x02\x12\x18\n\x10\x62p_temperature_2\x18\x02 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x31\x32_temperature\x18\x03 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x32\x34_temperature\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"X\n\x0e\x43OOLING_STATUS\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x13\n\x0bpumps_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"G\n\x12SET_RADIATOR_SPEED\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"@\n\x0fSET_PUMPS_SPEED\x12\x13\n\x0bpumps_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"[\n\x1eSET_INVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"W\n\x1aINVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"G\n\tLV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"J\n\x0fSHUTDOWN_STATUS\x12\r\n\x05input\x18\x01 \x01(\x08\x12\x0e\n\x06output\x18\x02 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\"\n\x06MARKER\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"z\n\x10HV_CELLS_VOLTAGE\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x11\n\tvoltage_0\x18\x02 \x01(\x02\x12\x11\n\tvoltage_1\x18\x03 \x01(\x02\x12\x11\n\tvoltage_2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\x9e\x01\n\rHV_CELLS_TEMP\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x0e\n\x06temp_0\x18\x02 \x01(\x02\x12\x0e\n\x06temp_1\x18\x03 \x01(\x02\x12\x0e\n\x06temp_2\x18\x04 \x01(\x02\x12\x0e\n\x06temp_3\x18\x05 \x01(\x02\x12\x0e\n\x06temp_4\x18\x06 \x01(\x02\x12\x0e\n\x06temp_5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"_\n\x18HV_CELL_BALANCING_STATUS\x12)\n\x10\x62\x61lancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"d\n\x19SET_CELL_BALANCING_STATUS\x12-\n\x14set_balancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\">\n\x0fHANDCART_STATUS\x12\x11\n\tconnected\x18\x01 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x05SPEED\x12\x11\n\tencoder_r\x18\x01 \x01(\x02\x12\x11\n\tencoder_l\x18\x02 \x01(\x02\x12\x12\n\ninverter_r\x18\x03 \x01(\x02\x12\x12\n\ninverter_l\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\xa9\x01\n\rINV_L_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xa9\x01\n\rINV_R_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_L_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_R_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42RUSA_NLG5_CTL\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"$\n\x08\x42RUSA_ST\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x42RUSA_ACT_I\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"(\n\x0c\x42RUSA_ACT_II\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"&\n\nBRUSA_TEMP\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"%\n\tBRUSA_ERR\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42MS_HV_CHIMERA\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x45\x43U_CHIMERA\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x92\x1f\n\x04Pack\x12\x35\n\x11\x42MS_HV_JMP_TO_BLT\x18\x01 \x03(\x0b\x32\x1a.primary.BMS_HV_JMP_TO_BLT\x12\x35\n\x11\x42MS_LV_JMP_TO_BLT\x18\x02 \x03(\x0b\x32\x1a.primary.BMS_LV_JMP_TO_BLT\x12-\n\rSTEER_VERSION\x18\x03 \x03(\x0b\x32\x16.primary.STEER_VERSION\x12)\n\x0b\x44\x41S_VERSION\x18\x04 \x03(\x0b\x32\x14.primary.DAS_VERSION\x12\'\n\nHV_VERSION\x18\x05 \x03(\x0b\x32\x13.primary.HV_VERSION\x12\'\n\nLV_VERSION\x18\x06 \x03(\x0b\x32\x13.primary.LV_VERSION\x12)\n\x0bTLM_VERSION\x18\x07 \x03(\x0b\x32\x14.primary.TLM_VERSION\x12%\n\tTIMESTAMP\x18\x08 \x03(\x0b\x32\x12.primary.TIMESTAMP\x12\x39\n\x13\x41MBIENT_TEMPERATURE\x18\t \x03(\x0b\x32\x1c.primary.AMBIENT_TEMPERATURE\x12)\n\x0b\x44\x41TA_LOGGER\x18\n \x03(\x0b\x32\x14.primary.DATA_LOGGER\x12/\n\x0eSET_TLM_STATUS\x18\x0b \x03(\x0b\x32\x17.primary.SET_TLM_STATUS\x12\'\n\nTLM_STATUS\x18\x0c \x03(\x0b\x32\x13.primary.TLM_STATUS\x12\x39\n\x13STEER_SYSTEM_STATUS\x18\r \x03(\x0b\x32\x1c.primary.STEER_SYSTEM_STATUS\x12\'\n\nHV_VOLTAGE\x18\x0e \x03(\x0b\x32\x13.primary.HV_VOLTAGE\x12\'\n\nHV_CURRENT\x18\x0f \x03(\x0b\x32\x13.primary.HV_CURRENT\x12!\n\x07HV_TEMP\x18\x10 \x03(\x0b\x32\x10.primary.HV_TEMP\x12%\n\tHV_ERRORS\x18\x11 \x03(\x0b\x32\x12.primary.HV_ERRORS\x12/\n\x0eHV_CAN_FORWARD\x18\x12 \x03(\x0b\x32\x17.primary.HV_CAN_FORWARD\x12\x33\n\x10HV_FANS_OVERRIDE\x18\x13 \x03(\x0b\x32\x19.primary.HV_FANS_OVERRIDE\x12=\n\x15HV_CAN_FORWARD_STATUS\x18\x14 \x03(\x0b\x32\x1e.primary.HV_CAN_FORWARD_STATUS\x12\x41\n\x17HV_FANS_OVERRIDE_STATUS\x18\x15 \x03(\x0b\x32 .primary.HV_FANS_OVERRIDE_STATUS\x12\x39\n\x13HV_FEEDBACKS_STATUS\x18\x16 \x03(\x0b\x32\x1c.primary.HV_FEEDBACKS_STATUS\x12-\n\rHV_IMD_STATUS\x18\x17 \x03(\x0b\x32\x16.primary.HV_IMD_STATUS\x12%\n\tTS_STATUS\x18\x18 \x03(\x0b\x32\x12.primary.TS_STATUS\x12\x35\n\x11SET_TS_STATUS_DAS\x18\x19 \x03(\x0b\x32\x1a.primary.SET_TS_STATUS_DAS\x12?\n\x16SET_TS_STATUS_HANDCART\x18\x1a \x03(\x0b\x32\x1f.primary.SET_TS_STATUS_HANDCART\x12+\n\x0cSTEER_STATUS\x18\x1b \x03(\x0b\x32\x15.primary.STEER_STATUS\x12/\n\x0eSET_CAR_STATUS\x18\x1c \x03(\x0b\x32\x17.primary.SET_CAR_STATUS\x12\x33\n\x10SET_PEDALS_RANGE\x18\x1d \x03(\x0b\x32\x19.primary.SET_PEDALS_RANGE\x12\x43\n\x18SET_STEERING_ANGLE_RANGE\x18\x1e \x03(\x0b\x32!.primary.SET_STEERING_ANGLE_RANGE\x12\'\n\nCAR_STATUS\x18\x1f \x03(\x0b\x32\x13.primary.CAR_STATUS\x12\'\n\nDAS_ERRORS\x18  \x03(\x0b\x32\x13.primary.DAS_ERRORS\x12\'\n\nLV_CURRENT\x18! \x03(\x0b\x32\x13.primary.LV_CURRENT\x12\'\n\nLV_VOLTAGE\x18\" \x03(\x0b\x32\x13.primary.LV_VOLTAGE\x12\x33\n\x10LV_TOTAL_VOLTAGE\x18# \x03(\x0b\x32\x19.primary.LV_TOTAL_VOLTAGE\x12/\n\x0eLV_TEMPERATURE\x18$ \x03(\x0b\x32\x17.primary.LV_TEMPERATURE\x12/\n\x0e\x43OOLING_STATUS\x18% \x03(\x0b\x32\x17.primary.COOLING_STATUS\x12\x37\n\x12SET_RADIATOR_SPEED\x18& \x03(\x0b\x32\x1b.primary.SET_RADIATOR_SPEED\x12\x31\n\x0fSET_PUMPS_SPEED\x18\' \x03(\x0b\x32\x18.primary.SET_PUMPS_SPEED\x12O\n\x1eSET_INVERTER_CONNECTION_STATUS\x18( \x03(\x0b\x32\'.primary.SET_INVERTER_CONNECTION_STATUS\x12G\n\x1aINVERTER_CONNECTION_STATUS\x18) \x03(\x0b\x32#.primary.INVERTER_CONNECTION_STATUS\x12%\n\tLV_ERRORS\x18* \x03(\x0b\x32\x12.primary.LV_ERRORS\x12\x31\n\x0fSHUTDOWN_STATUS\x18+ \x03(\x0b\x32\x18.primary.SHUTDOWN_STATUS\x12\x1f\n\x06MARKER\x18, \x03(\x0b\x32\x0f.primary.MARKER\x12\x33\n\x10HV_CELLS_VOLTAGE\x18- \x03(\x0b\x32\x19.primary.HV_CELLS_VOLTAGE\x12-\n\rHV_CELLS_TEMP\x18. \x03(\x0b\x32\x16.primary.HV_CELLS_TEMP\x12\x43\n\x18HV_CELL_BALANCING_STATUS\x18/ \x03(\x0b\x32!.primary.HV_CELL_BALANCING_STATUS\x12\x45\n\x19SET_CELL_BALANCING_STATUS\x18\x30 \x03(\x0b\x32\".primary.SET_CELL_BALANCING_STATUS\x12\x31\n\x0fHANDCART_STATUS\x18\x31 \x03(\x0b\x32\x18.primary.HANDCART_STATUS\x12\x1d\n\x05SPEED\x18\x32 \x03(\x0b\x32\x0e.primary.SPEED\x12-\n\rINV_L_REQUEST\x18\x33 \x03(\x0b\x32\x16.primary.INV_L_REQUEST\x12-\n\rINV_R_REQUEST\x18\x34 \x03(\x0b\x32\x16.primary.INV_R_REQUEST\x12/\n\x0eINV_L_RESPONSE\x18\x35 \x03(\x0b\x32\x17.primary.INV_L_RESPONSE\x12/\n\x0eINV_R_RESPONSE\x18\x36 \x03(\x0b\x32\x17.primary.INV_R_RESPONSE\x12;\n\x14\x46LASH_CELLBOARD_0_TX\x18\x37 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_TX\x12;\n\x14\x46LASH_CELLBOARD_0_RX\x18\x38 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_RX\x12;\n\x14\x46LASH_CELLBOARD_1_TX\x18\x39 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_TX\x12;\n\x14\x46LASH_CELLBOARD_1_RX\x18: \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_RX\x12;\n\x14\x46LASH_CELLBOARD_2_TX\x18; \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_TX\x12;\n\x14\x46LASH_CELLBOARD_2_RX\x18< \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_RX\x12;\n\x14\x46LASH_CELLBOARD_3_TX\x18= \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_TX\x12;\n\x14\x46LASH_CELLBOARD_3_RX\x18> \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_RX\x12;\n\x14\x46LASH_CELLBOARD_4_TX\x18? \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_TX\x12;\n\x14\x46LASH_CELLBOARD_4_RX\x18@ \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_RX\x12;\n\x14\x46LASH_CELLBOARD_5_TX\x18\x41 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_TX\x12;\n\x14\x46LASH_CELLBOARD_5_RX\x18\x42 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_RX\x12\x31\n\x0f\x46LASH_BMS_HV_TX\x18\x43 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_TX\x12\x31\n\x0f\x46LASH_BMS_HV_RX\x18\x44 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_RX\x12\x31\n\x0f\x46LASH_BMS_LV_TX\x18\x45 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_TX\x12\x31\n\x0f\x46LASH_BMS_LV_RX\x18\x46 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_RX\x12/\n\x0e\x42RUSA_NLG5_CTL\x18G \x03(\x0b\x32\x17.primary.BRUSA_NLG5_CTL\x12#\n\x08\x42RUSA_ST\x18H \x03(\x0b\x32\x11.primary.BRUSA_ST\x12)\n\x0b\x42RUSA_ACT_I\x18I \x03(\x0b\x32\x14.primary.BRUSA_ACT_I\x12+\n\x0c\x42RUSA_ACT_II\x18J \x03(\x0b\x32\x15.primary.BRUSA_ACT_II\x12\'\n\nBRUSA_TEMP\x18K \x03(\x0b\x32\x13.primary.BRUSA_TEMP\x12%\n\tBRUSA_ERR\x18L \x03(\x0b\x32\x12.primary.BRUSA_ERR\x12/\n\x0e\x42MS_HV_CHIMERA\x18M \x03(\x0b\x32\x17.primary.BMS_HV_CHIMERA\x12)\n\x0b\x45\x43U_CHIMERA\x18N \x03(\x0b\x32\x14.primary.ECU_CHIMERA*k\n\x08RaceType\x12\x19\n\x15RaceType_ACCELERATION\x10\x00\x12\x14\n\x10RaceType_SKIDPAD\x10\x01\x12\x16\n\x12RaceType_AUTOCROSS\x10\x02\x12\x16\n\x12RaceType_ENDURANCE\x10\x03*X\n\x0eInverterStatus\x12\x16\n\x12InverterStatus_OFF\x10\x00\x12\x17\n\x13InverterStatus_IDLE\x10\x01\x12\x15\n\x11InverterStatus_ON\x10\x02*\x94\x01\n\tCarStatus\x12\x12\n\x0e\x43\x61rStatus_IDLE\x10\x00\x12\x17\n\x13\x43\x61rStatus_PRE_SETUP\x10\x01\x12\x13\n\x0f\x43\x61rStatus_TS_ON\x10\x02\x12\x18\n\x14\x43\x61rStatus_POST_SETUP\x10\x03\x12\x13\n\x0f\x43\x61rStatus_DRIVE\x10\x04\x12\x16\n\x12\x43\x61rStatus_TEARDOWN\x10\x05*\'\n\x06Toggle\x12\x0e\n\nToggle_OFF\x10\x00\x12\r\n\tToggle_ON\x10\x01*\x90\x01\n\x0fTractionControl\x12\x17\n\x13TractionControl_OFF\x10\x00\x12 \n\x1cTractionControl_SLIP_CONTROL\x10\x01\x12$\n TractionControl_TORQUE_VECTORING\x10\x02\x12\x1c\n\x18TractionControl_COMPLETE\x10\x03*Y\n\x08TsStatus\x12\x10\n\x0cTsStatus_OFF\x10\x00\x12\x16\n\x12TsStatus_PRECHARGE\x10\x01\x12\x0f\n\x0bTsStatus_ON\x10\x02\x12\x12\n\x0eTsStatus_FATAL\x10\x03*U\n\x0cSetCarStatus\x12\x15\n\x11SetCarStatus_IDLE\x10\x00\x12\x16\n\x12SetCarStatus_READY\x10\x01\x12\x16\n\x12SetCarStatus_DRIVE\x10\x02*-\n\x05\x42ound\x12\x11\n\rBound_SET_MAX\x10\x00\x12\x11\n\rBound_SET_MIN\x10\x01*/\n\x05Pedal\x12\x15\n\x11Pedal_ACCELERATOR\x10\x00\x12\x0f\n\x0bPedal_BRAKE\x10\x01*\xbc\x01\n\tImdStatus\x12\x14\n\x10ImdStatus_IMD_SC\x10\x00\x12\x18\n\x14ImdStatus_IMD_NORMAL\x10\x01\x12\x1f\n\x1bImdStatus_IMD_UNDER_VOLTAGE\x10\x02\x12\x1f\n\x1bImdStatus_IMD_START_MEASURE\x10\x03\x12\x1e\n\x1aImdStatus_IMD_DEVICE_ERROR\x10\x04\x12\x1d\n\x19ImdStatus_IMD_EARTH_FAULT\x10\x05\x62\x06proto3')
+  serialized_pb=_b('\n\rprimary.proto\x12\x07primary\"-\n\x11\x42MS_HV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"-\n\x11\x42MS_LV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"_\n\rSTEER_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0b\x44\x41S_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nHV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nLV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0bTLM_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"8\n\tTIMESTAMP\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"=\n\x13\x41MBIENT_TEMPERATURE\x12\x0c\n\x04temp\x18\x01 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"S\n\x0b\x44\x41TA_LOGGER\x12\x14\n\x0cplaceholder1\x18\x01 \x01(\r\x12\x14\n\x0cplaceholder2\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"O\n\x0eSET_TLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"K\n\nTLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"A\n\x13STEER_SYSTEM_STATUS\x12\x10\n\x08soc_temp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x85\x01\n\nHV_VOLTAGE\x12\x14\n\x0cpack_voltage\x18\x01 \x01(\x02\x12\x13\n\x0b\x62us_voltage\x18\x02 \x01(\x02\x12\x18\n\x10max_cell_voltage\x18\x03 \x01(\x02\x12\x18\n\x10min_cell_voltage\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"c\n\nHV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\r\n\x05power\x18\x02 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x02\x12\x0b\n\x03soc\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"]\n\x07HV_TEMP\x12\x14\n\x0c\x61verage_temp\x18\x01 \x01(\x02\x12\x10\n\x08max_temp\x18\x02 \x01(\x02\x12\x10\n\x08min_temp\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"G\n\tHV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"T\n\x0eHV_CAN_FORWARD\x12(\n\x0f\x63\x61n_forward_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"h\n\x10HV_FANS_OVERRIDE\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"^\n\x15HV_CAN_FORWARD_STATUS\x12+\n\x12\x63\x61n_forward_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x17HV_FANS_OVERRIDE_STATUS\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"e\n\x13HV_FEEDBACKS_STATUS\x12\x18\n\x10\x66\x65\x65\x64\x62\x61\x63ks_status\x18\x01 \x01(\r\x12\x1a\n\x12is_circuitry_error\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"v\n\rHV_IMD_STATUS\x12\x11\n\timd_fault\x18\x01 \x01(\x08\x12&\n\nimd_status\x18\x02 \x01(\x0e\x32\x12.primary.ImdStatus\x12\x10\n\x08imd_info\x18\x03 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"K\n\tTS_STATUS\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"U\n\x11SET_TS_STATUS_DAS\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Z\n\x16SET_TS_STATUS_HANDCART\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"i\n\x0cSTEER_STATUS\x12\x32\n\x10traction_control\x18\x01 \x01(\x0e\x32\x18.primary.TractionControl\x12\x0b\n\x03map\x18\x02 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"Y\n\x0eSET_CAR_STATUS\x12-\n\x0e\x63\x61r_status_set\x18\x01 \x01(\x0e\x32\x15.primary.SetCarStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"j\n\x10SET_PEDALS_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x1d\n\x05pedal\x18\x02 \x01(\x0e\x32\x0e.primary.Pedal\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"S\n\x18SET_STEERING_ANGLE_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\xa8\x01\n\nCAR_STATUS\x12+\n\ninverter_l\x18\x01 \x01(\x0e\x32\x17.primary.InverterStatus\x12+\n\ninverter_r\x18\x02 \x01(\x0e\x32\x17.primary.InverterStatus\x12&\n\ncar_status\x18\x03 \x01(\x0e\x32\x12.primary.CarStatus\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"9\n\nDAS_ERRORS\x12\x11\n\tdas_error\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"7\n\nLV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"r\n\nLV_VOLTAGE\x12\x11\n\tvoltage_1\x18\x01 \x01(\x02\x12\x11\n\tvoltage_2\x18\x02 \x01(\x02\x12\x11\n\tvoltage_3\x18\x03 \x01(\x02\x12\x11\n\tvoltage_4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"C\n\x10LV_TOTAL_VOLTAGE\x12\x15\n\rtotal_voltage\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x96\x01\n\x0eLV_TEMPERATURE\x12\x18\n\x10\x62p_temperature_1\x18\x01 \x01(\x02\x12\x18\n\x10\x62p_temperature_2\x18\x02 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x31\x32_temperature\x18\x03 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x32\x34_temperature\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"X\n\x0e\x43OOLING_STATUS\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x13\n\x0bpumps_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"G\n\x12SET_RADIATOR_SPEED\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"@\n\x0fSET_PUMPS_SPEED\x12\x13\n\x0bpumps_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"[\n\x1eSET_INVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"W\n\x1aINVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"G\n\tLV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"J\n\x0fSHUTDOWN_STATUS\x12\r\n\x05input\x18\x01 \x01(\x08\x12\x0e\n\x06output\x18\x02 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\"\n\x06MARKER\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"z\n\x10HV_CELLS_VOLTAGE\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x11\n\tvoltage_0\x18\x02 \x01(\x02\x12\x11\n\tvoltage_1\x18\x03 \x01(\x02\x12\x11\n\tvoltage_2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\x9e\x01\n\rHV_CELLS_TEMP\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x0e\n\x06temp_0\x18\x02 \x01(\x02\x12\x0e\n\x06temp_1\x18\x03 \x01(\x02\x12\x0e\n\x06temp_2\x18\x04 \x01(\x02\x12\x0e\n\x06temp_3\x18\x05 \x01(\x02\x12\x0e\n\x06temp_4\x18\x06 \x01(\x02\x12\x0e\n\x06temp_5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"_\n\x18HV_CELL_BALANCING_STATUS\x12)\n\x10\x62\x61lancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"d\n\x19SET_CELL_BALANCING_STATUS\x12-\n\x14set_balancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\">\n\x0fHANDCART_STATUS\x12\x11\n\tconnected\x18\x01 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x05SPEED\x12\x11\n\tencoder_r\x18\x01 \x01(\x02\x12\x11\n\tencoder_l\x18\x02 \x01(\x02\x12\x12\n\ninverter_r\x18\x03 \x01(\x02\x12\x12\n\ninverter_l\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\xa9\x01\n\rINV_L_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xa9\x01\n\rINV_R_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_L_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_R_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42RUSA_NLG5_CTL\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"$\n\x08\x42RUSA_ST\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x42RUSA_ACT_I\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"(\n\x0c\x42RUSA_ACT_II\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"&\n\nBRUSA_TEMP\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"%\n\tBRUSA_ERR\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42MS_HV_CHIMERA\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x45\x43U_CHIMERA\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x92\x1f\n\x04Pack\x12\x35\n\x11\x42MS_HV_JMP_TO_BLT\x18\x01 \x03(\x0b\x32\x1a.primary.BMS_HV_JMP_TO_BLT\x12\x35\n\x11\x42MS_LV_JMP_TO_BLT\x18\x02 \x03(\x0b\x32\x1a.primary.BMS_LV_JMP_TO_BLT\x12-\n\rSTEER_VERSION\x18\x03 \x03(\x0b\x32\x16.primary.STEER_VERSION\x12)\n\x0b\x44\x41S_VERSION\x18\x04 \x03(\x0b\x32\x14.primary.DAS_VERSION\x12\'\n\nHV_VERSION\x18\x05 \x03(\x0b\x32\x13.primary.HV_VERSION\x12\'\n\nLV_VERSION\x18\x06 \x03(\x0b\x32\x13.primary.LV_VERSION\x12)\n\x0bTLM_VERSION\x18\x07 \x03(\x0b\x32\x14.primary.TLM_VERSION\x12%\n\tTIMESTAMP\x18\x08 \x03(\x0b\x32\x12.primary.TIMESTAMP\x12\x39\n\x13\x41MBIENT_TEMPERATURE\x18\t \x03(\x0b\x32\x1c.primary.AMBIENT_TEMPERATURE\x12)\n\x0b\x44\x41TA_LOGGER\x18\n \x03(\x0b\x32\x14.primary.DATA_LOGGER\x12/\n\x0eSET_TLM_STATUS\x18\x0b \x03(\x0b\x32\x17.primary.SET_TLM_STATUS\x12\'\n\nTLM_STATUS\x18\x0c \x03(\x0b\x32\x13.primary.TLM_STATUS\x12\x39\n\x13STEER_SYSTEM_STATUS\x18\r \x03(\x0b\x32\x1c.primary.STEER_SYSTEM_STATUS\x12\'\n\nHV_VOLTAGE\x18\x0e \x03(\x0b\x32\x13.primary.HV_VOLTAGE\x12\'\n\nHV_CURRENT\x18\x0f \x03(\x0b\x32\x13.primary.HV_CURRENT\x12!\n\x07HV_TEMP\x18\x10 \x03(\x0b\x32\x10.primary.HV_TEMP\x12%\n\tHV_ERRORS\x18\x11 \x03(\x0b\x32\x12.primary.HV_ERRORS\x12/\n\x0eHV_CAN_FORWARD\x18\x12 \x03(\x0b\x32\x17.primary.HV_CAN_FORWARD\x12\x33\n\x10HV_FANS_OVERRIDE\x18\x13 \x03(\x0b\x32\x19.primary.HV_FANS_OVERRIDE\x12=\n\x15HV_CAN_FORWARD_STATUS\x18\x14 \x03(\x0b\x32\x1e.primary.HV_CAN_FORWARD_STATUS\x12\x41\n\x17HV_FANS_OVERRIDE_STATUS\x18\x15 \x03(\x0b\x32 .primary.HV_FANS_OVERRIDE_STATUS\x12\x39\n\x13HV_FEEDBACKS_STATUS\x18\x16 \x03(\x0b\x32\x1c.primary.HV_FEEDBACKS_STATUS\x12-\n\rHV_IMD_STATUS\x18\x17 \x03(\x0b\x32\x16.primary.HV_IMD_STATUS\x12%\n\tTS_STATUS\x18\x18 \x03(\x0b\x32\x12.primary.TS_STATUS\x12\x35\n\x11SET_TS_STATUS_DAS\x18\x19 \x03(\x0b\x32\x1a.primary.SET_TS_STATUS_DAS\x12?\n\x16SET_TS_STATUS_HANDCART\x18\x1a \x03(\x0b\x32\x1f.primary.SET_TS_STATUS_HANDCART\x12+\n\x0cSTEER_STATUS\x18\x1b \x03(\x0b\x32\x15.primary.STEER_STATUS\x12/\n\x0eSET_CAR_STATUS\x18\x1c \x03(\x0b\x32\x17.primary.SET_CAR_STATUS\x12\x33\n\x10SET_PEDALS_RANGE\x18\x1d \x03(\x0b\x32\x19.primary.SET_PEDALS_RANGE\x12\x43\n\x18SET_STEERING_ANGLE_RANGE\x18\x1e \x03(\x0b\x32!.primary.SET_STEERING_ANGLE_RANGE\x12\'\n\nCAR_STATUS\x18\x1f \x03(\x0b\x32\x13.primary.CAR_STATUS\x12\'\n\nDAS_ERRORS\x18  \x03(\x0b\x32\x13.primary.DAS_ERRORS\x12\'\n\nLV_CURRENT\x18! \x03(\x0b\x32\x13.primary.LV_CURRENT\x12\'\n\nLV_VOLTAGE\x18\" \x03(\x0b\x32\x13.primary.LV_VOLTAGE\x12\x33\n\x10LV_TOTAL_VOLTAGE\x18# \x03(\x0b\x32\x19.primary.LV_TOTAL_VOLTAGE\x12/\n\x0eLV_TEMPERATURE\x18$ \x03(\x0b\x32\x17.primary.LV_TEMPERATURE\x12/\n\x0e\x43OOLING_STATUS\x18% \x03(\x0b\x32\x17.primary.COOLING_STATUS\x12\x37\n\x12SET_RADIATOR_SPEED\x18& \x03(\x0b\x32\x1b.primary.SET_RADIATOR_SPEED\x12\x31\n\x0fSET_PUMPS_SPEED\x18\' \x03(\x0b\x32\x18.primary.SET_PUMPS_SPEED\x12O\n\x1eSET_INVERTER_CONNECTION_STATUS\x18( \x03(\x0b\x32\'.primary.SET_INVERTER_CONNECTION_STATUS\x12G\n\x1aINVERTER_CONNECTION_STATUS\x18) \x03(\x0b\x32#.primary.INVERTER_CONNECTION_STATUS\x12%\n\tLV_ERRORS\x18* \x03(\x0b\x32\x12.primary.LV_ERRORS\x12\x31\n\x0fSHUTDOWN_STATUS\x18+ \x03(\x0b\x32\x18.primary.SHUTDOWN_STATUS\x12\x1f\n\x06MARKER\x18, \x03(\x0b\x32\x0f.primary.MARKER\x12\x33\n\x10HV_CELLS_VOLTAGE\x18- \x03(\x0b\x32\x19.primary.HV_CELLS_VOLTAGE\x12-\n\rHV_CELLS_TEMP\x18. \x03(\x0b\x32\x16.primary.HV_CELLS_TEMP\x12\x43\n\x18HV_CELL_BALANCING_STATUS\x18/ \x03(\x0b\x32!.primary.HV_CELL_BALANCING_STATUS\x12\x45\n\x19SET_CELL_BALANCING_STATUS\x18\x30 \x03(\x0b\x32\".primary.SET_CELL_BALANCING_STATUS\x12\x31\n\x0fHANDCART_STATUS\x18\x31 \x03(\x0b\x32\x18.primary.HANDCART_STATUS\x12\x1d\n\x05SPEED\x18\x32 \x03(\x0b\x32\x0e.primary.SPEED\x12-\n\rINV_L_REQUEST\x18\x33 \x03(\x0b\x32\x16.primary.INV_L_REQUEST\x12-\n\rINV_R_REQUEST\x18\x34 \x03(\x0b\x32\x16.primary.INV_R_REQUEST\x12/\n\x0eINV_L_RESPONSE\x18\x35 \x03(\x0b\x32\x17.primary.INV_L_RESPONSE\x12/\n\x0eINV_R_RESPONSE\x18\x36 \x03(\x0b\x32\x17.primary.INV_R_RESPONSE\x12;\n\x14\x46LASH_CELLBOARD_0_TX\x18\x37 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_TX\x12;\n\x14\x46LASH_CELLBOARD_0_RX\x18\x38 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_RX\x12;\n\x14\x46LASH_CELLBOARD_1_TX\x18\x39 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_TX\x12;\n\x14\x46LASH_CELLBOARD_1_RX\x18: \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_RX\x12;\n\x14\x46LASH_CELLBOARD_2_TX\x18; \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_TX\x12;\n\x14\x46LASH_CELLBOARD_2_RX\x18< \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_RX\x12;\n\x14\x46LASH_CELLBOARD_3_TX\x18= \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_TX\x12;\n\x14\x46LASH_CELLBOARD_3_RX\x18> \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_RX\x12;\n\x14\x46LASH_CELLBOARD_4_TX\x18? \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_TX\x12;\n\x14\x46LASH_CELLBOARD_4_RX\x18@ \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_RX\x12;\n\x14\x46LASH_CELLBOARD_5_TX\x18\x41 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_TX\x12;\n\x14\x46LASH_CELLBOARD_5_RX\x18\x42 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_RX\x12\x31\n\x0f\x46LASH_BMS_HV_TX\x18\x43 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_TX\x12\x31\n\x0f\x46LASH_BMS_HV_RX\x18\x44 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_RX\x12\x31\n\x0f\x46LASH_BMS_LV_TX\x18\x45 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_TX\x12\x31\n\x0f\x46LASH_BMS_LV_RX\x18\x46 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_RX\x12/\n\x0e\x42RUSA_NLG5_CTL\x18G \x03(\x0b\x32\x17.primary.BRUSA_NLG5_CTL\x12#\n\x08\x42RUSA_ST\x18H \x03(\x0b\x32\x11.primary.BRUSA_ST\x12)\n\x0b\x42RUSA_ACT_I\x18I \x03(\x0b\x32\x14.primary.BRUSA_ACT_I\x12+\n\x0c\x42RUSA_ACT_II\x18J \x03(\x0b\x32\x15.primary.BRUSA_ACT_II\x12\'\n\nBRUSA_TEMP\x18K \x03(\x0b\x32\x13.primary.BRUSA_TEMP\x12%\n\tBRUSA_ERR\x18L \x03(\x0b\x32\x12.primary.BRUSA_ERR\x12/\n\x0e\x42MS_HV_CHIMERA\x18M \x03(\x0b\x32\x17.primary.BMS_HV_CHIMERA\x12)\n\x0b\x45\x43U_CHIMERA\x18N \x03(\x0b\x32\x14.primary.ECU_CHIMERA*k\n\x08RaceType\x12\x19\n\x15RaceType_ACCELERATION\x10\x00\x12\x14\n\x10RaceType_SKIDPAD\x10\x01\x12\x16\n\x12RaceType_AUTOCROSS\x10\x02\x12\x16\n\x12RaceType_ENDURANCE\x10\x03*X\n\x0eInverterStatus\x12\x16\n\x12InverterStatus_OFF\x10\x00\x12\x17\n\x13InverterStatus_IDLE\x10\x01\x12\x15\n\x11InverterStatus_ON\x10\x02*\x94\x01\n\tCarStatus\x12\x12\n\x0e\x43\x61rStatus_IDLE\x10\x00\x12\x17\n\x13\x43\x61rStatus_PRE_SETUP\x10\x01\x12\x13\n\x0f\x43\x61rStatus_TS_ON\x10\x02\x12\x18\n\x14\x43\x61rStatus_POST_SETUP\x10\x03\x12\x13\n\x0f\x43\x61rStatus_DRIVE\x10\x04\x12\x16\n\x12\x43\x61rStatus_TEARDOWN\x10\x05*\'\n\x06Toggle\x12\x0e\n\nToggle_OFF\x10\x00\x12\r\n\tToggle_ON\x10\x01*\x90\x01\n\x0fTractionControl\x12\x17\n\x13TractionControl_OFF\x10\x00\x12 \n\x1cTractionControl_SLIP_CONTROL\x10\x01\x12$\n TractionControl_TORQUE_VECTORING\x10\x02\x12\x1c\n\x18TractionControl_COMPLETE\x10\x03*Y\n\x08TsStatus\x12\x10\n\x0cTsStatus_OFF\x10\x00\x12\x16\n\x12TsStatus_PRECHARGE\x10\x01\x12\x0f\n\x0bTsStatus_ON\x10\x02\x12\x12\n\x0eTsStatus_FATAL\x10\x03*U\n\x0cSetCarStatus\x12\x15\n\x11SetCarStatus_IDLE\x10\x00\x12\x16\n\x12SetCarStatus_READY\x10\x01\x12\x16\n\x12SetCarStatus_DRIVE\x10\x02*-\n\x05\x42ound\x12\x11\n\rBound_SET_MAX\x10\x00\x12\x11\n\rBound_SET_MIN\x10\x01*/\n\x05Pedal\x12\x15\n\x11Pedal_ACCELERATOR\x10\x00\x12\x0f\n\x0bPedal_BRAKE\x10\x01*\xbc\x01\n\tImdStatus\x12\x14\n\x10ImdStatus_IMD_SC\x10\x00\x12\x18\n\x14ImdStatus_IMD_NORMAL\x10\x01\x12\x1f\n\x1bImdStatus_IMD_UNDER_VOLTAGE\x10\x02\x12\x1f\n\x1bImdStatus_IMD_START_MEASURE\x10\x03\x12\x1e\n\x1aImdStatus_IMD_DEVICE_ERROR\x10\x04\x12\x1d\n\x19ImdStatus_IMD_EARTH_FAULT\x10\x05\x62\x06proto3')
 )
 
 _RACETYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _RACETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10362,
-  serialized_end=10469,
+  serialized_start=10372,
+  serialized_end=10479,
 )
 _sym_db.RegisterEnumDescriptor(_RACETYPE)
 
@@ -75,8 +75,8 @@ _INVERTERSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10471,
-  serialized_end=10559,
+  serialized_start=10481,
+  serialized_end=10569,
 )
 _sym_db.RegisterEnumDescriptor(_INVERTERSTATUS)
 
@@ -114,8 +114,8 @@ _CARSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10562,
-  serialized_end=10710,
+  serialized_start=10572,
+  serialized_end=10720,
 )
 _sym_db.RegisterEnumDescriptor(_CARSTATUS)
 
@@ -137,8 +137,8 @@ _TOGGLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10712,
-  serialized_end=10751,
+  serialized_start=10722,
+  serialized_end=10761,
 )
 _sym_db.RegisterEnumDescriptor(_TOGGLE)
 
@@ -168,8 +168,8 @@ _TRACTIONCONTROL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10754,
-  serialized_end=10898,
+  serialized_start=10764,
+  serialized_end=10908,
 )
 _sym_db.RegisterEnumDescriptor(_TRACTIONCONTROL)
 
@@ -199,8 +199,8 @@ _TSSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10900,
-  serialized_end=10989,
+  serialized_start=10910,
+  serialized_end=10999,
 )
 _sym_db.RegisterEnumDescriptor(_TSSTATUS)
 
@@ -226,8 +226,8 @@ _SETCARSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10991,
-  serialized_end=11076,
+  serialized_start=11001,
+  serialized_end=11086,
 )
 _sym_db.RegisterEnumDescriptor(_SETCARSTATUS)
 
@@ -249,8 +249,8 @@ _BOUND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11078,
-  serialized_end=11123,
+  serialized_start=11088,
+  serialized_end=11133,
 )
 _sym_db.RegisterEnumDescriptor(_BOUND)
 
@@ -272,8 +272,8 @@ _PEDAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11125,
-  serialized_end=11172,
+  serialized_start=11135,
+  serialized_end=11182,
 )
 _sym_db.RegisterEnumDescriptor(_PEDAL)
 
@@ -311,8 +311,8 @@ _IMDSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11175,
-  serialized_end=11363,
+  serialized_start=11185,
+  serialized_end=11373,
 )
 _sym_db.RegisterEnumDescriptor(_IMDSTATUS)
 
@@ -433,7 +433,7 @@ _STEER_VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cancicd_version', full_name='primary.STEER_VERSION.cancicd_version', index=1,
+      name='canlib_build_time', full_name='primary.STEER_VERSION.canlib_build_time', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -459,7 +459,7 @@ _STEER_VERSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=120,
-  serialized_end=213,
+  serialized_end=215,
 )
 
 
@@ -478,7 +478,7 @@ _DAS_VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cancicd_version', full_name='primary.DAS_VERSION.cancicd_version', index=1,
+      name='canlib_build_time', full_name='primary.DAS_VERSION.canlib_build_time', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -503,8 +503,8 @@ _DAS_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=215,
-  serialized_end=306,
+  serialized_start=217,
+  serialized_end=310,
 )
 
 
@@ -523,7 +523,7 @@ _HV_VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cancicd_version', full_name='primary.HV_VERSION.cancicd_version', index=1,
+      name='canlib_build_time', full_name='primary.HV_VERSION.canlib_build_time', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -548,8 +548,8 @@ _HV_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=398,
+  serialized_start=312,
+  serialized_end=404,
 )
 
 
@@ -568,7 +568,7 @@ _LV_VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cancicd_version', full_name='primary.LV_VERSION.cancicd_version', index=1,
+      name='canlib_build_time', full_name='primary.LV_VERSION.canlib_build_time', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -593,8 +593,8 @@ _LV_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=400,
-  serialized_end=490,
+  serialized_start=406,
+  serialized_end=498,
 )
 
 
@@ -613,7 +613,7 @@ _TLM_VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cancicd_version', full_name='primary.TLM_VERSION.cancicd_version', index=1,
+      name='canlib_build_time', full_name='primary.TLM_VERSION.canlib_build_time', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -638,8 +638,8 @@ _TLM_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=492,
-  serialized_end=583,
+  serialized_start=500,
+  serialized_end=593,
 )
 
 
@@ -676,8 +676,8 @@ _TIMESTAMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=585,
-  serialized_end=641,
+  serialized_start=595,
+  serialized_end=651,
 )
 
 
@@ -714,8 +714,8 @@ _AMBIENT_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=704,
+  serialized_start=653,
+  serialized_end=714,
 )
 
 
@@ -759,8 +759,8 @@ _DATA_LOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=706,
-  serialized_end=789,
+  serialized_start=716,
+  serialized_end=799,
 )
 
 
@@ -797,8 +797,8 @@ _SET_TLM_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=791,
-  serialized_end=870,
+  serialized_start=801,
+  serialized_end=880,
 )
 
 
@@ -835,8 +835,8 @@ _TLM_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=872,
-  serialized_end=947,
+  serialized_start=882,
+  serialized_end=957,
 )
 
 
@@ -873,8 +873,8 @@ _STEER_SYSTEM_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=1014,
+  serialized_start=959,
+  serialized_end=1024,
 )
 
 
@@ -932,8 +932,8 @@ _HV_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1150,
+  serialized_start=1027,
+  serialized_end=1160,
 )
 
 
@@ -991,8 +991,8 @@ _HV_CURRENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1152,
-  serialized_end=1251,
+  serialized_start=1162,
+  serialized_end=1261,
 )
 
 
@@ -1043,8 +1043,8 @@ _HV_TEMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1253,
-  serialized_end=1346,
+  serialized_start=1263,
+  serialized_end=1356,
 )
 
 
@@ -1088,8 +1088,8 @@ _HV_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1348,
-  serialized_end=1419,
+  serialized_start=1358,
+  serialized_end=1429,
 )
 
 
@@ -1126,8 +1126,8 @@ _HV_CAN_FORWARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1421,
-  serialized_end=1505,
+  serialized_start=1431,
+  serialized_end=1515,
 )
 
 
@@ -1171,8 +1171,8 @@ _HV_FANS_OVERRIDE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1507,
-  serialized_end=1611,
+  serialized_start=1517,
+  serialized_end=1621,
 )
 
 
@@ -1209,8 +1209,8 @@ _HV_CAN_FORWARD_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1613,
-  serialized_end=1707,
+  serialized_start=1623,
+  serialized_end=1717,
 )
 
 
@@ -1254,8 +1254,8 @@ _HV_FANS_OVERRIDE_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1709,
-  serialized_end=1820,
+  serialized_start=1719,
+  serialized_end=1830,
 )
 
 
@@ -1299,8 +1299,8 @@ _HV_FEEDBACKS_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1822,
-  serialized_end=1923,
+  serialized_start=1832,
+  serialized_end=1933,
 )
 
 
@@ -1351,8 +1351,8 @@ _HV_IMD_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1925,
-  serialized_end=2043,
+  serialized_start=1935,
+  serialized_end=2053,
 )
 
 
@@ -1389,8 +1389,8 @@ _TS_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2045,
-  serialized_end=2120,
+  serialized_start=2055,
+  serialized_end=2130,
 )
 
 
@@ -1427,8 +1427,8 @@ _SET_TS_STATUS_DAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2122,
-  serialized_end=2207,
+  serialized_start=2132,
+  serialized_end=2217,
 )
 
 
@@ -1465,8 +1465,8 @@ _SET_TS_STATUS_HANDCART = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2209,
-  serialized_end=2299,
+  serialized_start=2219,
+  serialized_end=2309,
 )
 
 
@@ -1510,8 +1510,8 @@ _STEER_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2301,
-  serialized_end=2406,
+  serialized_start=2311,
+  serialized_end=2416,
 )
 
 
@@ -1548,8 +1548,8 @@ _SET_CAR_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2408,
-  serialized_end=2497,
+  serialized_start=2418,
+  serialized_end=2507,
 )
 
 
@@ -1593,8 +1593,8 @@ _SET_PEDALS_RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2499,
-  serialized_end=2605,
+  serialized_start=2509,
+  serialized_end=2615,
 )
 
 
@@ -1631,8 +1631,8 @@ _SET_STEERING_ANGLE_RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2607,
-  serialized_end=2690,
+  serialized_start=2617,
+  serialized_end=2700,
 )
 
 
@@ -1683,8 +1683,8 @@ _CAR_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2693,
-  serialized_end=2861,
+  serialized_start=2703,
+  serialized_end=2871,
 )
 
 
@@ -1721,8 +1721,8 @@ _DAS_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2863,
-  serialized_end=2920,
+  serialized_start=2873,
+  serialized_end=2930,
 )
 
 
@@ -1759,8 +1759,8 @@ _LV_CURRENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2922,
-  serialized_end=2977,
+  serialized_start=2932,
+  serialized_end=2987,
 )
 
 
@@ -1818,8 +1818,8 @@ _LV_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2979,
-  serialized_end=3093,
+  serialized_start=2989,
+  serialized_end=3103,
 )
 
 
@@ -1856,8 +1856,8 @@ _LV_TOTAL_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3095,
-  serialized_end=3162,
+  serialized_start=3105,
+  serialized_end=3172,
 )
 
 
@@ -1915,8 +1915,8 @@ _LV_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3165,
-  serialized_end=3315,
+  serialized_start=3175,
+  serialized_end=3325,
 )
 
 
@@ -1960,8 +1960,8 @@ _COOLING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3405,
+  serialized_start=3327,
+  serialized_end=3415,
 )
 
 
@@ -1998,8 +1998,8 @@ _SET_RADIATOR_SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3407,
-  serialized_end=3478,
+  serialized_start=3417,
+  serialized_end=3488,
 )
 
 
@@ -2036,8 +2036,8 @@ _SET_PUMPS_SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3480,
-  serialized_end=3544,
+  serialized_start=3490,
+  serialized_end=3554,
 )
 
 
@@ -2074,8 +2074,8 @@ _SET_INVERTER_CONNECTION_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3546,
-  serialized_end=3637,
+  serialized_start=3556,
+  serialized_end=3647,
 )
 
 
@@ -2112,8 +2112,8 @@ _INVERTER_CONNECTION_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3639,
-  serialized_end=3726,
+  serialized_start=3649,
+  serialized_end=3736,
 )
 
 
@@ -2157,8 +2157,8 @@ _LV_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3728,
-  serialized_end=3799,
+  serialized_start=3738,
+  serialized_end=3809,
 )
 
 
@@ -2202,8 +2202,8 @@ _SHUTDOWN_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3801,
-  serialized_end=3875,
+  serialized_start=3811,
+  serialized_end=3885,
 )
 
 
@@ -2233,8 +2233,8 @@ _MARKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3877,
-  serialized_end=3911,
+  serialized_start=3887,
+  serialized_end=3921,
 )
 
 
@@ -2292,8 +2292,8 @@ _HV_CELLS_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3913,
-  serialized_end=4035,
+  serialized_start=3923,
+  serialized_end=4045,
 )
 
 
@@ -2372,8 +2372,8 @@ _HV_CELLS_TEMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4038,
-  serialized_end=4196,
+  serialized_start=4048,
+  serialized_end=4206,
 )
 
 
@@ -2410,8 +2410,8 @@ _HV_CELL_BALANCING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4198,
-  serialized_end=4293,
+  serialized_start=4208,
+  serialized_end=4303,
 )
 
 
@@ -2448,8 +2448,8 @@ _SET_CELL_BALANCING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4295,
-  serialized_end=4395,
+  serialized_start=4305,
+  serialized_end=4405,
 )
 
 
@@ -2486,8 +2486,8 @@ _HANDCART_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4397,
-  serialized_end=4459,
+  serialized_start=4407,
+  serialized_end=4469,
 )
 
 
@@ -2545,8 +2545,8 @@ _SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4461,
-  serialized_end=4572,
+  serialized_start=4471,
+  serialized_end=4582,
 )
 
 
@@ -2632,8 +2632,8 @@ _INV_L_REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4575,
-  serialized_end=4744,
+  serialized_start=4585,
+  serialized_end=4754,
 )
 
 
@@ -2719,8 +2719,8 @@ _INV_R_REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4747,
-  serialized_end=4916,
+  serialized_start=4757,
+  serialized_end=4926,
 )
 
 
@@ -2806,8 +2806,8 @@ _INV_L_RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4919,
-  serialized_end=5089,
+  serialized_start=4929,
+  serialized_end=5099,
 )
 
 
@@ -2893,8 +2893,8 @@ _INV_R_RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5092,
-  serialized_end=5262,
+  serialized_start=5102,
+  serialized_end=5272,
 )
 
 
@@ -2924,8 +2924,8 @@ _FLASH_CELLBOARD_0_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5264,
-  serialized_end=5312,
+  serialized_start=5274,
+  serialized_end=5322,
 )
 
 
@@ -2955,8 +2955,8 @@ _FLASH_CELLBOARD_0_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5314,
-  serialized_end=5362,
+  serialized_start=5324,
+  serialized_end=5372,
 )
 
 
@@ -2986,8 +2986,8 @@ _FLASH_CELLBOARD_1_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5364,
-  serialized_end=5412,
+  serialized_start=5374,
+  serialized_end=5422,
 )
 
 
@@ -3017,8 +3017,8 @@ _FLASH_CELLBOARD_1_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5414,
-  serialized_end=5462,
+  serialized_start=5424,
+  serialized_end=5472,
 )
 
 
@@ -3048,8 +3048,8 @@ _FLASH_CELLBOARD_2_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5464,
-  serialized_end=5512,
+  serialized_start=5474,
+  serialized_end=5522,
 )
 
 
@@ -3079,8 +3079,8 @@ _FLASH_CELLBOARD_2_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5514,
-  serialized_end=5562,
+  serialized_start=5524,
+  serialized_end=5572,
 )
 
 
@@ -3110,8 +3110,8 @@ _FLASH_CELLBOARD_3_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5564,
-  serialized_end=5612,
+  serialized_start=5574,
+  serialized_end=5622,
 )
 
 
@@ -3141,8 +3141,8 @@ _FLASH_CELLBOARD_3_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5614,
-  serialized_end=5662,
+  serialized_start=5624,
+  serialized_end=5672,
 )
 
 
@@ -3172,8 +3172,8 @@ _FLASH_CELLBOARD_4_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5664,
-  serialized_end=5712,
+  serialized_start=5674,
+  serialized_end=5722,
 )
 
 
@@ -3203,8 +3203,8 @@ _FLASH_CELLBOARD_4_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5714,
-  serialized_end=5762,
+  serialized_start=5724,
+  serialized_end=5772,
 )
 
 
@@ -3234,8 +3234,8 @@ _FLASH_CELLBOARD_5_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5764,
-  serialized_end=5812,
+  serialized_start=5774,
+  serialized_end=5822,
 )
 
 
@@ -3265,8 +3265,8 @@ _FLASH_CELLBOARD_5_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5814,
-  serialized_end=5862,
+  serialized_start=5824,
+  serialized_end=5872,
 )
 
 
@@ -3296,8 +3296,8 @@ _FLASH_BMS_HV_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5864,
-  serialized_end=5907,
+  serialized_start=5874,
+  serialized_end=5917,
 )
 
 
@@ -3327,8 +3327,8 @@ _FLASH_BMS_HV_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5909,
-  serialized_end=5952,
+  serialized_start=5919,
+  serialized_end=5962,
 )
 
 
@@ -3358,8 +3358,8 @@ _FLASH_BMS_LV_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5954,
-  serialized_end=5997,
+  serialized_start=5964,
+  serialized_end=6007,
 )
 
 
@@ -3389,8 +3389,8 @@ _FLASH_BMS_LV_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5999,
-  serialized_end=6042,
+  serialized_start=6009,
+  serialized_end=6052,
 )
 
 
@@ -3420,8 +3420,8 @@ _BRUSA_NLG5_CTL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6044,
-  serialized_end=6086,
+  serialized_start=6054,
+  serialized_end=6096,
 )
 
 
@@ -3451,8 +3451,8 @@ _BRUSA_ST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6088,
-  serialized_end=6124,
+  serialized_start=6098,
+  serialized_end=6134,
 )
 
 
@@ -3482,8 +3482,8 @@ _BRUSA_ACT_I = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6126,
-  serialized_end=6165,
+  serialized_start=6136,
+  serialized_end=6175,
 )
 
 
@@ -3513,8 +3513,8 @@ _BRUSA_ACT_II = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6167,
-  serialized_end=6207,
+  serialized_start=6177,
+  serialized_end=6217,
 )
 
 
@@ -3544,8 +3544,8 @@ _BRUSA_TEMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6209,
-  serialized_end=6247,
+  serialized_start=6219,
+  serialized_end=6257,
 )
 
 
@@ -3575,8 +3575,8 @@ _BRUSA_ERR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6249,
-  serialized_end=6286,
+  serialized_start=6259,
+  serialized_end=6296,
 )
 
 
@@ -3606,8 +3606,8 @@ _BMS_HV_CHIMERA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6288,
-  serialized_end=6330,
+  serialized_start=6298,
+  serialized_end=6340,
 )
 
 
@@ -3637,8 +3637,8 @@ _ECU_CHIMERA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6332,
-  serialized_end=6371,
+  serialized_start=6342,
+  serialized_end=6381,
 )
 
 
@@ -4207,8 +4207,8 @@ _PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6374,
-  serialized_end=10360,
+  serialized_start=6384,
+  serialized_end=10370,
 )
 
 _SET_TLM_STATUS.fields_by_name['tlm_status'].enum_type = _TOGGLE
