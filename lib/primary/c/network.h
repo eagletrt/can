@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1670159479
-#define CANLIB_BUILD_HASH 0x73cedb00
+#define CANLIB_BUILD_TIME 1670159791
+#define CANLIB_BUILD_HASH 0x310dddf5
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -275,7 +275,7 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_SIZE_HV_IMD_STATUS 5
 #define primary_SIZE_TS_STATUS 1
 #define primary_SIZE_SET_TS_STATUS 1
-#define primary_SIZE_STEER_STATUS 2
+#define primary_SIZE_STEER_STATUS 1
 #define primary_SIZE_SET_CAR_STATUS 1
 #define primary_SIZE_SET_PEDALS_RANGE 1
 #define primary_SIZE_SET_STEERING_ANGLE_RANGE 1
@@ -580,6 +580,18 @@ typedef enum CANLIB_PARKING {
 int primary_to_string_TsStatus(primary_TsStatus value, char* buffer);
 
 typedef enum CANLIB_PARKING {
+    primary_Map_R = 0,
+    primary_Map_D20 = 1,
+    primary_Map_D40 = 2,
+    primary_Map_D60 = 3,
+    primary_Map_D80 = 4,
+    primary_Map_D100 = 5,
+} primary_Map;
+
+#define primary_MAX_STRING_LENGTH_Map 5
+int primary_to_string_Map(primary_Map value, char* buffer);
+
+typedef enum CANLIB_PARKING {
     primary_SetCarStatus_IDLE = 0,
     primary_SetCarStatus_READY = 1,
     primary_SetCarStatus_DRIVE = 2,
@@ -636,7 +648,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
-    primary_uint32 canlib_build_time;
+    primary_uint32 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -644,7 +656,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
-    primary_uint32 canlib_build_time;
+    primary_uint32 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -652,7 +664,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
-    primary_uint32 canlib_build_time;
+    primary_uint32 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -660,7 +672,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
-    primary_uint32 canlib_build_time;
+    primary_uint32 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -668,7 +680,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_uint8 component_version;
-    primary_uint32 canlib_build_time;
+    primary_uint32 cancicd_version;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -862,7 +874,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     primary_TractionControl traction_control;
-    primary_int8 map;
+    primary_Map map;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -1524,7 +1536,7 @@ int primary_fields_file_BMS_LV_JMP_TO_BLT(FILE* buffer);
 primary_byte_size primary_serialize_STEER_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 );
 primary_byte_size primary_serialize_struct_STEER_VERSION(
     uint8_t* data,
@@ -1548,7 +1560,7 @@ int primary_fields_file_STEER_VERSION(FILE* buffer);
 primary_byte_size primary_serialize_DAS_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 );
 primary_byte_size primary_serialize_struct_DAS_VERSION(
     uint8_t* data,
@@ -1572,7 +1584,7 @@ int primary_fields_file_DAS_VERSION(FILE* buffer);
 primary_byte_size primary_serialize_HV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 );
 primary_byte_size primary_serialize_struct_HV_VERSION(
     uint8_t* data,
@@ -1596,7 +1608,7 @@ int primary_fields_file_HV_VERSION(FILE* buffer);
 primary_byte_size primary_serialize_LV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 );
 primary_byte_size primary_serialize_struct_LV_VERSION(
     uint8_t* data,
@@ -1620,7 +1632,7 @@ int primary_fields_file_LV_VERSION(FILE* buffer);
 primary_byte_size primary_serialize_TLM_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 );
 primary_byte_size primary_serialize_struct_TLM_VERSION(
     uint8_t* data,
@@ -2218,7 +2230,7 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer);
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_TractionControl traction_control,
-    primary_int8 map
+    primary_Map map
 );
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
@@ -4169,6 +4181,18 @@ int primary_to_string_TsStatus(primary_TsStatus value, char* buffer) {
     return 0;
 }
 
+int primary_to_string_Map(primary_Map value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "R");
+        case 1: return sprintf(buffer, "D20");
+        case 2: return sprintf(buffer, "D40");
+        case 3: return sprintf(buffer, "D60");
+        case 4: return sprintf(buffer, "D80");
+        case 5: return sprintf(buffer, "D100");
+    }
+    return 0;
+}
+
 int primary_to_string_SetCarStatus(primary_SetCarStatus value, char* buffer) {
     switch (value) {
         case 0: return sprintf(buffer, "IDLE");
@@ -4333,12 +4357,12 @@ int primary_fields_file_BMS_LV_JMP_TO_BLT(FILE* buffer) {
 primary_byte_size primary_serialize_STEER_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 ) {
-    data[0] = canlib_build_time & 255;
-    data[1] = (canlib_build_time >> 8) & 255;
-    data[2] = (canlib_build_time >> 16) & 255;
-    data[3] = (canlib_build_time >> 24) & 255;
+    data[0] = cancicd_version & 255;
+    data[1] = (cancicd_version >> 8) & 255;
+    data[2] = (cancicd_version >> 16) & 255;
+    data[3] = (cancicd_version >> 24) & 255;
     data[4] = component_version;
     return 5;
 }
@@ -4347,10 +4371,10 @@ primary_byte_size primary_serialize_struct_STEER_VERSION(
     uint8_t* data,
     primary_message_STEER_VERSION* message
 ) {
-    data[0] = message->canlib_build_time & 255;
-    data[1] = (message->canlib_build_time >> 8) & 255;
-    data[2] = (message->canlib_build_time >> 16) & 255;
-    data[3] = (message->canlib_build_time >> 24) & 255;
+    data[0] = message->cancicd_version & 255;
+    data[1] = (message->cancicd_version >> 8) & 255;
+    data[2] = (message->cancicd_version >> 16) & 255;
+    data[3] = (message->cancicd_version >> 24) & 255;
     data[4] = message->component_version;
     return 5;
 }
@@ -4367,7 +4391,7 @@ void primary_deserialize_STEER_VERSION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->canlib_build_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->cancicd_version = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->component_version = data[4];
 }
 
@@ -4385,7 +4409,7 @@ int primary_to_string_STEER_VERSION(primary_message_STEER_VERSION* message, char
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4396,7 +4420,7 @@ int primary_fields_STEER_VERSION(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4412,7 +4436,7 @@ int primary_to_string_file_STEER_VERSION(primary_message_STEER_VERSION* message,
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4423,7 +4447,7 @@ int primary_fields_file_STEER_VERSION(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4432,12 +4456,12 @@ int primary_fields_file_STEER_VERSION(FILE* buffer) {
 primary_byte_size primary_serialize_DAS_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 ) {
-    data[0] = canlib_build_time & 255;
-    data[1] = (canlib_build_time >> 8) & 255;
-    data[2] = (canlib_build_time >> 16) & 255;
-    data[3] = (canlib_build_time >> 24) & 255;
+    data[0] = cancicd_version & 255;
+    data[1] = (cancicd_version >> 8) & 255;
+    data[2] = (cancicd_version >> 16) & 255;
+    data[3] = (cancicd_version >> 24) & 255;
     data[4] = component_version;
     return 5;
 }
@@ -4446,10 +4470,10 @@ primary_byte_size primary_serialize_struct_DAS_VERSION(
     uint8_t* data,
     primary_message_DAS_VERSION* message
 ) {
-    data[0] = message->canlib_build_time & 255;
-    data[1] = (message->canlib_build_time >> 8) & 255;
-    data[2] = (message->canlib_build_time >> 16) & 255;
-    data[3] = (message->canlib_build_time >> 24) & 255;
+    data[0] = message->cancicd_version & 255;
+    data[1] = (message->cancicd_version >> 8) & 255;
+    data[2] = (message->cancicd_version >> 16) & 255;
+    data[3] = (message->cancicd_version >> 24) & 255;
     data[4] = message->component_version;
     return 5;
 }
@@ -4466,7 +4490,7 @@ void primary_deserialize_DAS_VERSION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->canlib_build_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->cancicd_version = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->component_version = data[4];
 }
 
@@ -4484,7 +4508,7 @@ int primary_to_string_DAS_VERSION(primary_message_DAS_VERSION* message, char* bu
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4495,7 +4519,7 @@ int primary_fields_DAS_VERSION(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4511,7 +4535,7 @@ int primary_to_string_file_DAS_VERSION(primary_message_DAS_VERSION* message, FIL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4522,7 +4546,7 @@ int primary_fields_file_DAS_VERSION(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4531,12 +4555,12 @@ int primary_fields_file_DAS_VERSION(FILE* buffer) {
 primary_byte_size primary_serialize_HV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 ) {
-    data[0] = canlib_build_time & 255;
-    data[1] = (canlib_build_time >> 8) & 255;
-    data[2] = (canlib_build_time >> 16) & 255;
-    data[3] = (canlib_build_time >> 24) & 255;
+    data[0] = cancicd_version & 255;
+    data[1] = (cancicd_version >> 8) & 255;
+    data[2] = (cancicd_version >> 16) & 255;
+    data[3] = (cancicd_version >> 24) & 255;
     data[4] = component_version;
     return 5;
 }
@@ -4545,10 +4569,10 @@ primary_byte_size primary_serialize_struct_HV_VERSION(
     uint8_t* data,
     primary_message_HV_VERSION* message
 ) {
-    data[0] = message->canlib_build_time & 255;
-    data[1] = (message->canlib_build_time >> 8) & 255;
-    data[2] = (message->canlib_build_time >> 16) & 255;
-    data[3] = (message->canlib_build_time >> 24) & 255;
+    data[0] = message->cancicd_version & 255;
+    data[1] = (message->cancicd_version >> 8) & 255;
+    data[2] = (message->cancicd_version >> 16) & 255;
+    data[3] = (message->cancicd_version >> 24) & 255;
     data[4] = message->component_version;
     return 5;
 }
@@ -4565,7 +4589,7 @@ void primary_deserialize_HV_VERSION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->canlib_build_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->cancicd_version = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->component_version = data[4];
 }
 
@@ -4583,7 +4607,7 @@ int primary_to_string_HV_VERSION(primary_message_HV_VERSION* message, char* buff
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4594,7 +4618,7 @@ int primary_fields_HV_VERSION(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4610,7 +4634,7 @@ int primary_to_string_file_HV_VERSION(primary_message_HV_VERSION* message, FILE*
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4621,7 +4645,7 @@ int primary_fields_file_HV_VERSION(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4630,12 +4654,12 @@ int primary_fields_file_HV_VERSION(FILE* buffer) {
 primary_byte_size primary_serialize_LV_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 ) {
-    data[0] = canlib_build_time & 255;
-    data[1] = (canlib_build_time >> 8) & 255;
-    data[2] = (canlib_build_time >> 16) & 255;
-    data[3] = (canlib_build_time >> 24) & 255;
+    data[0] = cancicd_version & 255;
+    data[1] = (cancicd_version >> 8) & 255;
+    data[2] = (cancicd_version >> 16) & 255;
+    data[3] = (cancicd_version >> 24) & 255;
     data[4] = component_version;
     return 5;
 }
@@ -4644,10 +4668,10 @@ primary_byte_size primary_serialize_struct_LV_VERSION(
     uint8_t* data,
     primary_message_LV_VERSION* message
 ) {
-    data[0] = message->canlib_build_time & 255;
-    data[1] = (message->canlib_build_time >> 8) & 255;
-    data[2] = (message->canlib_build_time >> 16) & 255;
-    data[3] = (message->canlib_build_time >> 24) & 255;
+    data[0] = message->cancicd_version & 255;
+    data[1] = (message->cancicd_version >> 8) & 255;
+    data[2] = (message->cancicd_version >> 16) & 255;
+    data[3] = (message->cancicd_version >> 24) & 255;
     data[4] = message->component_version;
     return 5;
 }
@@ -4664,7 +4688,7 @@ void primary_deserialize_LV_VERSION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->canlib_build_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->cancicd_version = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->component_version = data[4];
 }
 
@@ -4682,7 +4706,7 @@ int primary_to_string_LV_VERSION(primary_message_LV_VERSION* message, char* buff
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4693,7 +4717,7 @@ int primary_fields_LV_VERSION(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4709,7 +4733,7 @@ int primary_to_string_file_LV_VERSION(primary_message_LV_VERSION* message, FILE*
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4720,7 +4744,7 @@ int primary_fields_file_LV_VERSION(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4729,12 +4753,12 @@ int primary_fields_file_LV_VERSION(FILE* buffer) {
 primary_byte_size primary_serialize_TLM_VERSION(
     uint8_t* data,
     primary_uint8 component_version,
-    primary_uint32 canlib_build_time
+    primary_uint32 cancicd_version
 ) {
-    data[0] = canlib_build_time & 255;
-    data[1] = (canlib_build_time >> 8) & 255;
-    data[2] = (canlib_build_time >> 16) & 255;
-    data[3] = (canlib_build_time >> 24) & 255;
+    data[0] = cancicd_version & 255;
+    data[1] = (cancicd_version >> 8) & 255;
+    data[2] = (cancicd_version >> 16) & 255;
+    data[3] = (cancicd_version >> 24) & 255;
     data[4] = component_version;
     return 5;
 }
@@ -4743,10 +4767,10 @@ primary_byte_size primary_serialize_struct_TLM_VERSION(
     uint8_t* data,
     primary_message_TLM_VERSION* message
 ) {
-    data[0] = message->canlib_build_time & 255;
-    data[1] = (message->canlib_build_time >> 8) & 255;
-    data[2] = (message->canlib_build_time >> 16) & 255;
-    data[3] = (message->canlib_build_time >> 24) & 255;
+    data[0] = message->cancicd_version & 255;
+    data[1] = (message->cancicd_version >> 8) & 255;
+    data[2] = (message->cancicd_version >> 16) & 255;
+    data[3] = (message->cancicd_version >> 24) & 255;
     data[4] = message->component_version;
     return 5;
 }
@@ -4763,7 +4787,7 @@ void primary_deserialize_TLM_VERSION(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->canlib_build_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->cancicd_version = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
     message->component_version = data[4];
 }
 
@@ -4781,7 +4805,7 @@ int primary_to_string_TLM_VERSION(primary_message_TLM_VERSION* message, char* bu
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4792,7 +4816,7 @@ int primary_fields_TLM_VERSION(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -4808,7 +4832,7 @@ int primary_to_string_file_TLM_VERSION(primary_message_TLM_VERSION* message, FIL
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->component_version,
-        message->canlib_build_time
+        message->cancicd_version
     );
 }
 
@@ -4819,7 +4843,7 @@ int primary_fields_file_TLM_VERSION(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "component_version" CANLIB_SEPARATOR 
-        "canlib_build_time"
+        "cancicd_version"
     );
 }
 
@@ -6811,20 +6835,18 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
     primary_TractionControl traction_control,
-    primary_int8 map
+    primary_Map map
 ) {
-    data[0] = map;
-    data[1] = traction_control << 6;
-    return 2;
+    data[0] = map << 5 | traction_control << 3;
+    return 1;
 }
 
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
     primary_message_STEER_STATUS* message
 ) {
-    data[0] = message->map;
-    data[1] = message->traction_control << 6;
-    return 2;
+    data[0] = message->map << 5 | message->traction_control << 3;
+    return 1;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6839,8 +6861,8 @@ void primary_deserialize_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    message->map = data[0];
-    message->traction_control = (primary_TractionControl) ((data[1] & 192) >> 6);
+    message->map = (primary_Map) ((data[0] & 224) >> 5);
+    message->traction_control = (primary_TractionControl) ((data[0] & 24) >> 3);
 }
 
 // ============== STRING ============== //
@@ -6852,7 +6874,7 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS* message, char* 
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIi8,
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -6879,7 +6901,7 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS* message, F
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIi8,
+        "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP

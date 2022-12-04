@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670159479
-CANLIB_BUILD_HASH = 0x73cedb00
+CANLIB_BUILD_TIME = 1670159791
+CANLIB_BUILD_HASH = 0x310dddf5
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -317,6 +317,19 @@ class TsStatus(IntEnum):
         return cls(0)
 
 
+class Map(IntEnum):
+    R = 0
+    D20 = 1
+    D40 = 2
+    D60 = 3
+    D80 = 4
+    D100 = 5
+
+    @classmethod
+    def _missing_(cls, _):
+        return cls(0)
+
+
 class SetCarStatus(IntEnum):
     IDLE = 0
     READY = 1
@@ -408,10 +421,10 @@ class message_STEER_VERSION:
     def __init__(
         self,
         component_version = None,
-        canlib_build_time = None
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.canlib_build_time = uint32(canlib_build_time)
+        self.cancicd_version = uint32(cancicd_version)
         self.size = 5
         self.interval = 1000
 
@@ -420,20 +433,20 @@ class message_STEER_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.canlib_build_time != other.canlib_build_time:
+        if self.cancicd_version != other.cancicd_version:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -441,10 +454,10 @@ class message_DAS_VERSION:
     def __init__(
         self,
         component_version = None,
-        canlib_build_time = None
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.canlib_build_time = uint32(canlib_build_time)
+        self.cancicd_version = uint32(cancicd_version)
         self.size = 5
         self.interval = 1000
 
@@ -453,20 +466,20 @@ class message_DAS_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.canlib_build_time != other.canlib_build_time:
+        if self.cancicd_version != other.cancicd_version:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -474,10 +487,10 @@ class message_HV_VERSION:
     def __init__(
         self,
         component_version = None,
-        canlib_build_time = None
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.canlib_build_time = uint32(canlib_build_time)
+        self.cancicd_version = uint32(cancicd_version)
         self.size = 5
         self.interval = 1000
 
@@ -486,20 +499,20 @@ class message_HV_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.canlib_build_time != other.canlib_build_time:
+        if self.cancicd_version != other.cancicd_version:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -507,10 +520,10 @@ class message_LV_VERSION:
     def __init__(
         self,
         component_version = None,
-        canlib_build_time = None
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.canlib_build_time = uint32(canlib_build_time)
+        self.cancicd_version = uint32(cancicd_version)
         self.size = 5
         self.interval = 1000
 
@@ -519,20 +532,20 @@ class message_LV_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.canlib_build_time != other.canlib_build_time:
+        if self.cancicd_version != other.cancicd_version:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -540,10 +553,10 @@ class message_TLM_VERSION:
     def __init__(
         self,
         component_version = None,
-        canlib_build_time = None
+        cancicd_version = None
     ):
         self.component_version = uint8(component_version)
-        self.canlib_build_time = uint32(canlib_build_time)
+        self.cancicd_version = uint32(cancicd_version)
         self.size = 5
         self.interval = 1000
 
@@ -552,20 +565,20 @@ class message_TLM_VERSION:
             return False
         if self.component_version != other.component_version:
             return False
-        if self.canlib_build_time != other.canlib_build_time:
+        if self.cancicd_version != other.cancicd_version:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.canlib_build_time, self.component_version))
+        data.extend(pack("<IB", self.cancicd_version, self.component_version))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.component_version = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.canlib_build_time = uint32(unpack("<I", data[0:4])[0])
+        message.cancicd_version = uint32(unpack("<I", data[0:4])[0])
         return message
 
 
@@ -1341,8 +1354,8 @@ class message_STEER_STATUS:
         map = None
     ):
         self.traction_control = TractionControl(traction_control)
-        self.map = int8(map)
-        self.size = 2
+        self.map = Map(map)
+        self.size = 1
         self.interval = 100
 
     def __eq__(self, other):
@@ -1356,14 +1369,14 @@ class message_STEER_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<bB", self.map, self.traction_control << 6 & 255))
+        data.extend(pack("<B", self.map << 5 & 255 | self.traction_control << 3 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.traction_control = TractionControl((unpack("<xB", data[0:2])[0] & 192) >> 6)
-        message.map = int8(unpack("<b", data[0:1])[0])
+        message.traction_control = TractionControl((unpack("<B", data[0:1])[0] & 24) >> 3)
+        message.map = Map((unpack("<B", data[0:1])[0] & 224) >> 5)
         return message
 
 
@@ -1984,7 +1997,6 @@ class message_SET_INVERTER_CONNECTION_STATUS:
     ):
         self.status = Toggle(status)
         self.size = 1
-        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SET_INVERTER_CONNECTION_STATUS):
@@ -2426,7 +2438,7 @@ class message_SPEED:
         self.inverter_r = uint16(inverter_r)
         self.inverter_l = uint16(inverter_l)
         self.size = 8
-        self.interval = 10
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):
@@ -2478,7 +2490,7 @@ class message_SPEED_conversion:
         self.inverter_r = float32(inverter_r)
         self.inverter_l = float32(inverter_l)
         self.size = 8
-        self.interval = 10
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_SPEED):

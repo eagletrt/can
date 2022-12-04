@@ -208,8 +208,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_SET_RADIATOR_SPEED (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_SET_PUMPS_SPEED -1
 #define primary_INTERVAL_WITH_THRESHOLD_SET_PUMPS_SPEED (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_SET_INVERTER_CONNECTION_STATUS 100
-#define primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS (100 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_SET_INVERTER_CONNECTION_STATUS -1
+#define primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INVERTER_CONNECTION_STATUS 100
 #define primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS (100 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_LV_ERRORS 10
@@ -228,8 +228,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_SET_CELL_BALANCING_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_HANDCART_STATUS 500
 #define primary_INTERVAL_WITH_THRESHOLD_HANDCART_STATUS (500 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_SPEED 10
-#define primary_INTERVAL_WITH_THRESHOLD_SPEED (10 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_SPEED 100
+#define primary_INTERVAL_WITH_THRESHOLD_SPEED (100 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INV_L_REQUEST 10
 #define primary_INTERVAL_WITH_THRESHOLD_INV_L_REQUEST (10 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_INV_R_REQUEST 10
@@ -661,12 +661,6 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_COOLING_STATUS);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS)
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS
     ) {
@@ -790,12 +784,6 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_TEMPERATURE);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_SET_INVERTER_CONNECTION_STATUS
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS);
-    }
-    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS)
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS] > primary_INTERVAL_WITH_THRESHOLD_INVERTER_CONNECTION_STATUS
     ) {
@@ -812,6 +800,12 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_HV_CELLS_TEMP] > primary_INTERVAL_WITH_THRESHOLD_HV_CELLS_TEMP
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_CELLS_TEMP);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_RESPONSE)
@@ -938,12 +932,6 @@ void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_tim
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_LV_ERRORS] > primary_INTERVAL_WITH_THRESHOLD_LV_ERRORS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_LV_ERRORS);
-    }
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SPEED] > primary_INTERVAL_WITH_THRESHOLD_SPEED
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SPEED);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_INV_L_REQUEST)

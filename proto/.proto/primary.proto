@@ -43,6 +43,15 @@ enum TsStatus {
     TsStatus_FATAL = 3;
 }
 
+enum Map {
+    Map_R = 0;
+    Map_D20 = 1;
+    Map_D40 = 2;
+    Map_D60 = 3;
+    Map_D80 = 4;
+    Map_D100 = 5;
+}
+
 enum SetCarStatus {
     SetCarStatus_IDLE = 0;
     SetCarStatus_READY = 1;
@@ -78,31 +87,31 @@ message BMS_LV_JMP_TO_BLT {
 
 message STEER_VERSION {
     uint32 component_version = 1;
-    uint32 canlib_build_time = 2;
+    uint32 cancicd_version = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message DAS_VERSION {
     uint32 component_version = 1;
-    uint32 canlib_build_time = 2;
+    uint32 cancicd_version = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message HV_VERSION {
     uint32 component_version = 1;
-    uint32 canlib_build_time = 2;
+    uint32 cancicd_version = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message LV_VERSION {
     uint32 component_version = 1;
-    uint32 canlib_build_time = 2;
+    uint32 cancicd_version = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message TLM_VERSION {
     uint32 component_version = 1;
-    uint32 canlib_build_time = 2;
+    uint32 cancicd_version = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -217,7 +226,7 @@ message SET_TS_STATUS_HANDCART {
 
 message STEER_STATUS {
     TractionControl traction_control = 1;
-    sint32 map = 2;
+    Map map = 2;
     uint64 _inner_timestamp = 3;
 }
 

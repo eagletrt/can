@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670159479
-CANLIB_BUILD_HASH = 0x73cedb00
+CANLIB_BUILD_TIME = 1670159791
+CANLIB_BUILD_HASH = 0x310dddf5
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1089,7 +1089,7 @@ class message_STEERING_ANGLE:
     ):
         self.angle = float32(angle)
         self.size = 4
-        self.interval = 10
+        self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_STEERING_ANGLE):
