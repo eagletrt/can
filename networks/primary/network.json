@@ -591,15 +591,18 @@
       "contents": {
         "map_pw": {
           "type": "int8",
-          "range": [-5, 10]
+          "range": [-5, 10],
+          "force": "int8"
         },
         "map_sc": {
           "type": "int8",
-          "range": [0, 10]
+          "range": [0, 10],
+          "force": "int8"
         },
         "map_tv": {
           "type": "int8",
-          "range": [0, 10]
+          "range": [0, 10],
+          "force": "int8"
         }
       }
     },
