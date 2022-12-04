@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670159791
-CANLIB_BUILD_HASH = 0x310dddf5
+CANLIB_BUILD_TIME = 1670177217
+CANLIB_BUILD_HASH = 0x1112910d
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1052,35 +1052,101 @@ class message_PEDALS_OUTPUT_conversion:
 class message_CONTROL_OUTPUT:
     def __init__(
         self,
-        right = None,
-        left = None
+        estimated_velocity = None,
+        tmax_r = None,
+        tmax_l = None,
+        torque_l = None,
+        torque_r = None
     ):
-        self.right = float32(right)
-        self.left = float32(left)
+        self.estimated_velocity = uint16(estimated_velocity)
+        self.tmax_r = uint8(tmax_r)
+        self.tmax_l = uint8(tmax_l)
+        self.torque_l = uint16(torque_l)
+        self.torque_r = uint16(torque_r)
         self.size = 8
         self.interval = 100
 
     def __eq__(self, other):
         if not isinstance(other, message_CONTROL_OUTPUT):
             return False
-        if self.right != other.right:
+        if self.estimated_velocity != other.estimated_velocity:
             return False
-        if self.left != other.left:
+        if self.tmax_r != other.tmax_r:
+            return False
+        if self.tmax_l != other.tmax_l:
+            return False
+        if self.torque_l != other.torque_l:
+            return False
+        if self.torque_r != other.torque_r:
             return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<ff", self.right, self.left))
+        data.extend(pack("<HHHBB", self.estimated_velocity, self.torque_l, self.torque_r, self.tmax_r, self.tmax_l))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.right = float32(unpack("<f", data[0:4])[0])
-        message.left = float32(unpack("<xxxxf", data[0:8])[0])
+        message.estimated_velocity = uint16(unpack("<H", data[0:2])[0])
+        message.tmax_r = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.tmax_l = uint8(unpack("<xxxxxxxB", data[0:8])[0])
+        message.torque_l = uint16(unpack("<xxH", data[0:4])[0])
+        message.torque_r = uint16(unpack("<xxxxH", data[0:6])[0])
         return message
 
+
+    def convert(self) -> message_CONTROL_OUTPUT_conversion:
+        conversion = message_CONTROL_OUTPUT_conversion()
+        conversion.estimated_velocity = ((float32(self.estimated_velocity)) / 1092.25) - 10
+        conversion.tmax_r = ((float32(self.tmax_r)) / 3.1875) + 0
+        conversion.tmax_l = ((float32(self.tmax_l)) / 3.1875) + 0
+        conversion.torque_l = ((float32(self.torque_l)) / 819.1875) + 0
+        conversion.torque_r = ((float32(self.torque_r)) / 819.1875) + 0
+        return conversion
+
+
+class message_CONTROL_OUTPUT_conversion:
+    def __init__(
+        self,
+        estimated_velocity = None,
+        tmax_r = None,
+        tmax_l = None,
+        torque_l = None,
+        torque_r = None
+    ):
+        self.estimated_velocity = float32(estimated_velocity)
+        self.tmax_r = float32(tmax_r)
+        self.tmax_l = float32(tmax_l)
+        self.torque_l = float32(torque_l)
+        self.torque_r = float32(torque_r)
+        self.size = 8
+        self.interval = 100
+
+    def __eq__(self, other):
+        if not isinstance(other, message_CONTROL_OUTPUT):
+            return False
+        if self.estimated_velocity != other.estimated_velocity:
+            return False
+        if self.tmax_r != other.tmax_r:
+            return False
+        if self.tmax_l != other.tmax_l:
+            return False
+        if self.torque_l != other.torque_l:
+            return False
+        if self.torque_r != other.torque_r:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_CONTROL_OUTPUT:
+        raw = message_CONTROL_OUTPUT()
+        raw.estimated_velocity = uint16((self.estimated_velocity + 10) * 1092.25)
+        raw.tmax_r = uint8((self.tmax_r + 0) * 3.1875)
+        raw.tmax_l = uint8((self.tmax_l + 0) * 3.1875)
+        raw.torque_l = uint16((self.torque_l + 0) * 819.1875)
+        raw.torque_r = uint16((self.torque_r + 0) * 819.1875)
+        return raw
 
 class message_STEERING_ANGLE:
     def __init__(
@@ -1089,7 +1155,7 @@ class message_STEERING_ANGLE:
     ):
         self.angle = float32(angle)
         self.size = 4
-        self.interval = 100
+        self.interval = 10
 
     def __eq__(self, other):
         if not isinstance(other, message_STEERING_ANGLE):

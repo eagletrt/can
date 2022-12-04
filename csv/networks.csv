@@ -18,11 +18,11 @@ FLASH_CELLBOARD_5_TX,FLASH_CELLBOARD_5_TX: 26,bms,FIXED_IDS,,HANDCART,BMS_HV,,,
 FLASH_CELLBOARD_5_RX,FLASH_CELLBOARD_5_RX: 27,bms,FIXED_IDS,,HANDCART,BMS_HV,,,
 BMS_HV_JMP_TO_BLT,BMS_HV_JMP_TO_BLT: 0,primary,FLASH,7,HANDCART,BMS_HV,,,
 BMS_LV_JMP_TO_BLT,BMS_LV_JMP_TO_BLT: 32,primary,FLASH,7,HANDCART,BMS_LV,,,
-STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
-TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, cancicd_version: uint32",periodic message containing current can definitions version
+STEER_VERSION,STEER_VERSION: 1025,primary,BROADCAST,3,STEER,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+DAS_VERSION,DAS_VERSION: 1057,primary,BROADCAST,3,DAS,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+HV_VERSION,HV_VERSION: 1089,primary,BROADCAST,3,BMS_HW,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+LV_VERSION,LV_VERSION: 1121,primary,BROADCAST,3,BMS_LW,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
+TLM_VERSION,TLM_VERSION: 1153,primary,BROADCAST,3,TLM,"DAS, STEER",1000,"component_version: uint8, canlib_build_time: uint32",periodic message containing current can definitions version
 TIMESTAMP,TIMESTAMP: 257,primary,BROADCAST,6,TLM,"STEER, DAS, BMS_HV, BMS_LV",1000,timestamp: uint32,every second unix encoded time and date used by logging devices to sync
 AMBIENT_TEMPERATURE,AMBIENT_TEMPERATURE: 289,primary,BROADCAST,6,DAS,"STEER, TLM, BMS_HV, BMS_LV",1000,temp: int16,ambient temperature as send from IMU
 DATA_LOGGER,DATA_LOGGER: 1072,primary,FIXED_IDS,,DATA_LOGGER,"STEER, DAS, TLM, BMS_HV, BMS_LV",1000,"placeholder1: uint32, placeholder2: uint32",data logger message
@@ -41,7 +41,7 @@ HV_FEEDBACKS_STATUS,HV_FEEDBACKS_STATUS: 776,primary,DASnSTEER,4,BMS_HV,"DAS, ST
 HV_IMD_STATUS,HV_IMD_STATUS: 808,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"imd_fault: bool, imd_status: ImdStatus, imd_info: int32",Status of fans override
 TS_STATUS,TS_STATUS: 37,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,ts_status: TsStatus,BMS status
 SET_TS_STATUS,"SET_TS_STATUS_DAS: 70, SET_TS_STATUS_HANDCART: 102",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,100,ts_status_set: Toggle,Requests a TS status; only once
-STEER_STATUS,STEER_STATUS: 265,primary,DAS,6,STEER,DAS,100,"traction_control: TractionControl, map: Map",Send update of the tuneable values from the steering wheel
+STEER_STATUS,STEER_STATUS: 265,primary,DAS,6,STEER,DAS,100,"map_pw: type: int8, range: -5, 10, force: int8, map_sc: type: int8, range: 0, 10, force: int8, map_tv: type: int8, range: 0, 10, force: int8",Send update of the tuneable values from the steering wheel
 SET_CAR_STATUS,SET_CAR_STATUS: 777,primary,DAS,4,STEER,DAS,,car_status_set: SetCarStatus,Ask to DAS to change car status; only once
 SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1033,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal",Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min
 SET_STEERING_ANGLE_RANGE,SET_STEERING_ANGLE_RANGE: 1065,primary,DAS,3,STEER,DAS,,bound: Bound,Ask to calibrate steering encoder by specifying if the value is max or min
@@ -54,7 +54,7 @@ LV_TEMPERATURE,LV_TEMPERATURE: 936,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",100,"
 COOLING_STATUS,COOLING_STATUS: 968,primary,DASnSTEER,4,BMS_LV,"DAS, STEER",1000,"radiators_speed: type: float32, range: -1, 1, force: uint16, pumps_speed: type: float32, range: -1, 1, force: uint16","Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit"
 SET_RADIATOR_SPEED,SET_RADIATOR_SPEED: 778,primary,LV,4,STEER,BMS_LV,,"radiators_speed: type: float32, range: -1, 1, force: uint16",Set both radiators speed
 SET_PUMPS_SPEED,SET_PUMPS_SPEED: 810,primary,LV,4,STEER,BMS_LV,,"pumps_speed: type: float32, range: -1, 1, force: uint16",Set both pumps speed
-SET_INVERTER_CONNECTION_STATUS,SET_INVERTER_CONNECTION_STATUS: 266,primary,LV,6,DAS,BMS_LV,,status: Toggle,Set inverter status
+SET_INVERTER_CONNECTION_STATUS,SET_INVERTER_CONNECTION_STATUS: 266,primary,LV,6,DAS,BMS_LV,100,status: Toggle,Set the status of the inverter inputs RFE and RUN
 INVERTER_CONNECTION_STATUS,INVERTER_CONNECTION_STATUS: 264,primary,DASnSTEER,6,BMS_LV,"DAS, STEER",100,status: Toggle,Inverter status
 LV_ERRORS,LV_ERRORS: 8,primary,DASnSTEER,7,BMS_LV,"DAS, STEER, TLM",10,"warnings: LvErrors, errors: LvErrors",LV Battery-related errors
 SHUTDOWN_STATUS,SHUTDOWN_STATUS: 296,primary,DASnSTEER,6,BMS_HV,"DAS, STEER",500,"input: bool, output: bool",Shutdown status
@@ -64,7 +64,7 @@ HV_CELLS_TEMP,HV_CELLS_TEMP: 551,primary,HANDCART,5,BMS_HV,"HANDCART, TLM",100,"
 HV_CELL_BALANCING_STATUS,HV_CELL_BALANCING_STATUS: 583,primary,HANDCART,5,BMS_HV,HANDCART,500,balancing_status: Toggle,Cell balancing status
 SET_CELL_BALANCING_STATUS,SET_CELL_BALANCING_STATUS: 518,primary,BMS_HV,5,HANDCART,BMS_HV,,set_balancing_status: Toggle,Set cell balancing status; only once
 HANDCART_STATUS,HANDCART_STATUS: 774,primary,BMS_HV,4,HANDCART,BMS_HV,500,connected: bool,Sends updates on the presence of the handcart
-SPEED,SPEED: 548,primary,STEER,5,DAS,STEER,100,"encoder_r: type: float32, force: uint16, range: -200, 200, encoder_l: type: float32, force: uint16, range: -200, 200, inverter_r: type: float32, force: uint16, range: -200, 200, inverter_l: type: float32, force: uint16, range: -200, 200",Encoder and inverter speed in rad/sec
+SPEED,SPEED: 548,primary,STEER,5,DAS,STEER,10,"encoder_r: type: float32, force: uint16, range: -200, 200, encoder_l: type: float32, force: uint16, range: -200, 200, inverter_r: type: float32, force: uint16, range: -200, 200, inverter_l: type: float32, force: uint16, range: -200, 200",Encoder and inverter speed in rad/sec
 INV_L_REQUEST,INV_L_REQUEST: 513,primary,FIXED_IDS,,DAS,INVERTER_L,10,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
 INV_R_REQUEST,INV_R_REQUEST: 514,primary,FIXED_IDS,,DAS,INVERTER_L,10,"data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8, data_7: uint8",
 INV_L_RESPONSE,INV_L_RESPONSE: 385,primary,FIXED_IDS,,INVERTER_L,DAS,100,"reg_id: uint8, data_0: uint8, data_1: uint8, data_2: uint8, data_3: uint8, data_4: uint8, data_5: uint8, data_6: uint8",
@@ -115,5 +115,5 @@ GPS_COORDS,GPS_COORDS: 1025,secondary,STEER,3,TLM,STEER,,"latitude: float32, lon
 GPS_SPEED,GPS_SPEED: 1057,secondary,STEER,3,TLM,STEER,,speed: uint16,Speed received from GPS
 LAP_COUNT,LAP_COUNT: 1089,secondary,STEER,3,TLM,STEER,,"lap_count: uint8, lap_time: uint32",Lap counter and associated timestamp
 PEDALS_OUTPUT,PEDALS_OUTPUT: 769,secondary,STEER,4,DAS,STEER,10,"apps: uint8, bse_front: type: float32, range: 0, 100, force: uint16, bse_rear: type: float32, range: 0, 100, force: uint16","Pedal output, already calibrated"
-CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,STEER,100,"right: float32, left: float32","Control output, N*m"
-STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,100,angle: float32,Steering angle in degrees
+CONTROL_OUTPUT,CONTROL_OUTPUT: 801,secondary,STEER,4,DAS,"STEER, TLM",100,"estimated_velocity: type: float32, range: -10, 50, force: uint16, tmax_r: type: float32, range: 0, 80, force: uint8, tmax_l: type: float32, range: 0, 80, force: uint8, torque_l: type: float32, range: 0, 80, force: uint16, torque_r: type: float32, range: 0, 80, force: uint16","Control output, N*m"
+STEERING_ANGLE,STEERING_ANGLE: 258,secondary,TELEMETRY,6,DAS,TELEMETRY,10,angle: float32,Steering angle in degrees

@@ -29,27 +29,11 @@ enum Toggle {
     Toggle_ON = 1;
 }
 
-enum TractionControl {
-    TractionControl_OFF = 0;
-    TractionControl_SLIP_CONTROL = 1;
-    TractionControl_TORQUE_VECTORING = 2;
-    TractionControl_COMPLETE = 3;
-}
-
 enum TsStatus {
     TsStatus_OFF = 0;
     TsStatus_PRECHARGE = 1;
     TsStatus_ON = 2;
     TsStatus_FATAL = 3;
-}
-
-enum Map {
-    Map_R = 0;
-    Map_D20 = 1;
-    Map_D40 = 2;
-    Map_D60 = 3;
-    Map_D80 = 4;
-    Map_D100 = 5;
 }
 
 enum SetCarStatus {
@@ -87,31 +71,31 @@ message BMS_LV_JMP_TO_BLT {
 
 message STEER_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message DAS_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message HV_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message LV_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
 message TLM_VERSION {
     uint32 component_version = 1;
-    uint32 cancicd_version = 2;
+    uint32 canlib_build_time = 2;
     uint64 _inner_timestamp = 3;
 }
 
@@ -225,9 +209,10 @@ message SET_TS_STATUS_HANDCART {
 }
 
 message STEER_STATUS {
-    TractionControl traction_control = 1;
-    Map map = 2;
-    uint64 _inner_timestamp = 3;
+    sint32 map_pw = 1;
+    sint32 map_sc = 2;
+    sint32 map_tv = 3;
+    uint64 _inner_timestamp = 4;
 }
 
 message SET_CAR_STATUS {

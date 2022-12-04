@@ -170,9 +170,12 @@ message PEDALS_OUTPUT {
 }
 
 message CONTROL_OUTPUT {
-    float right = 1;
-    float left = 2;
-    uint64 _inner_timestamp = 3;
+    float estimated_velocity = 1;
+    float tmax_r = 2;
+    float tmax_l = 3;
+    float torque_l = 4;
+    float torque_r = 5;
+    uint64 _inner_timestamp = 6;
 }
 
 message STEERING_ANGLE {

@@ -484,33 +484,6 @@ inline bool Toggle_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Toggle>(
     Toggle_descriptor(), name, value);
 }
-enum TractionControl : int {
-  TractionControl_OFF = 0,
-  TractionControl_SLIP_CONTROL = 1,
-  TractionControl_TORQUE_VECTORING = 2,
-  TractionControl_COMPLETE = 3,
-  TractionControl_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  TractionControl_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool TractionControl_IsValid(int value);
-constexpr TractionControl TractionControl_MIN = TractionControl_OFF;
-constexpr TractionControl TractionControl_MAX = TractionControl_COMPLETE;
-constexpr int TractionControl_ARRAYSIZE = TractionControl_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TractionControl_descriptor();
-template<typename T>
-inline const std::string& TractionControl_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, TractionControl>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function TractionControl_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    TractionControl_descriptor(), enum_t_value);
-}
-inline bool TractionControl_Parse(
-    const std::string& name, TractionControl* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TractionControl>(
-    TractionControl_descriptor(), name, value);
-}
 enum TsStatus : int {
   TsStatus_OFF = 0,
   TsStatus_PRECHARGE = 1,
@@ -537,35 +510,6 @@ inline bool TsStatus_Parse(
     const std::string& name, TsStatus* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<TsStatus>(
     TsStatus_descriptor(), name, value);
-}
-enum Map : int {
-  Map_R = 0,
-  Map_D20 = 1,
-  Map_D40 = 2,
-  Map_D60 = 3,
-  Map_D80 = 4,
-  Map_D100 = 5,
-  Map_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  Map_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool Map_IsValid(int value);
-constexpr Map Map_MIN = Map_R;
-constexpr Map Map_MAX = Map_D100;
-constexpr int Map_ARRAYSIZE = Map_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Map_descriptor();
-template<typename T>
-inline const std::string& Map_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Map>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function Map_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Map_descriptor(), enum_t_value);
-}
-inline bool Map_Parse(
-    const std::string& name, Map* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Map>(
-    Map_descriptor(), name, value);
 }
 enum SetCarStatus : int {
   SetCarStatus_IDLE = 0,
@@ -1062,7 +1006,7 @@ class STEER_VERSION PROTOBUF_FINAL :
 
   enum : int {
     kComponentVersionFieldNumber = 1,
-    kCancicdVersionFieldNumber = 2,
+    kCanlibBuildTimeFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
   // uint32 component_version = 1;
@@ -1074,13 +1018,13 @@ class STEER_VERSION PROTOBUF_FINAL :
   void _internal_set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version() const;
-  void set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cancicd_version() const;
-  void _internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_canlib_build_time() const;
+  void _internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -1100,7 +1044,7 @@ class STEER_VERSION PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 component_version_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -1221,7 +1165,7 @@ class DAS_VERSION PROTOBUF_FINAL :
 
   enum : int {
     kComponentVersionFieldNumber = 1,
-    kCancicdVersionFieldNumber = 2,
+    kCanlibBuildTimeFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
   // uint32 component_version = 1;
@@ -1233,13 +1177,13 @@ class DAS_VERSION PROTOBUF_FINAL :
   void _internal_set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version() const;
-  void set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cancicd_version() const;
-  void _internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_canlib_build_time() const;
+  void _internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -1259,7 +1203,7 @@ class DAS_VERSION PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 component_version_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -1380,7 +1324,7 @@ class HV_VERSION PROTOBUF_FINAL :
 
   enum : int {
     kComponentVersionFieldNumber = 1,
-    kCancicdVersionFieldNumber = 2,
+    kCanlibBuildTimeFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
   // uint32 component_version = 1;
@@ -1392,13 +1336,13 @@ class HV_VERSION PROTOBUF_FINAL :
   void _internal_set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version() const;
-  void set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cancicd_version() const;
-  void _internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_canlib_build_time() const;
+  void _internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -1418,7 +1362,7 @@ class HV_VERSION PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 component_version_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -1539,7 +1483,7 @@ class LV_VERSION PROTOBUF_FINAL :
 
   enum : int {
     kComponentVersionFieldNumber = 1,
-    kCancicdVersionFieldNumber = 2,
+    kCanlibBuildTimeFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
   // uint32 component_version = 1;
@@ -1551,13 +1495,13 @@ class LV_VERSION PROTOBUF_FINAL :
   void _internal_set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version() const;
-  void set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cancicd_version() const;
-  void _internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_canlib_build_time() const;
+  void _internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -1577,7 +1521,7 @@ class LV_VERSION PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 component_version_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -1698,7 +1642,7 @@ class TLM_VERSION PROTOBUF_FINAL :
 
   enum : int {
     kComponentVersionFieldNumber = 1,
-    kCancicdVersionFieldNumber = 2,
+    kCanlibBuildTimeFieldNumber = 2,
     kInnerTimestampFieldNumber = 3,
   };
   // uint32 component_version = 1;
@@ -1710,13 +1654,13 @@ class TLM_VERSION PROTOBUF_FINAL :
   void _internal_set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cancicd_version = 2;
-  void clear_cancicd_version();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version() const;
-  void set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 canlib_build_time = 2;
+  void clear_canlib_build_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time() const;
+  void set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cancicd_version() const;
-  void _internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_canlib_build_time() const;
+  void _internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -1736,7 +1680,7 @@ class TLM_VERSION PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 component_version_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cancicd_version_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 canlib_build_time_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -4833,35 +4777,45 @@ class STEER_STATUS PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTractionControlFieldNumber = 1,
-    kMapFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kMapPwFieldNumber = 1,
+    kMapScFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kMapTvFieldNumber = 3,
   };
-  // .primary.TractionControl traction_control = 1;
-  void clear_traction_control();
-  ::primary::TractionControl traction_control() const;
-  void set_traction_control(::primary::TractionControl value);
+  // sint32 map_pw = 1;
+  void clear_map_pw();
+  ::PROTOBUF_NAMESPACE_ID::int32 map_pw() const;
+  void set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::primary::TractionControl _internal_traction_control() const;
-  void _internal_set_traction_control(::primary::TractionControl value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_pw() const;
+  void _internal_set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // .primary.Map map = 2;
-  void clear_map();
-  ::primary::Map map() const;
-  void set_map(::primary::Map value);
+  // sint32 map_sc = 2;
+  void clear_map_sc();
+  ::PROTOBUF_NAMESPACE_ID::int32 map_sc() const;
+  void set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::primary::Map _internal_map() const;
-  void _internal_set_map(::primary::Map value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_sc() const;
+  void _internal_set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // sint32 map_tv = 3;
+  void clear_map_tv();
+  ::PROTOBUF_NAMESPACE_ID::int32 map_tv() const;
+  void set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_tv() const;
+  void _internal_set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.STEER_STATUS)
@@ -4871,9 +4825,10 @@ class STEER_STATUS PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int traction_control_;
-  int map_;
+  ::PROTOBUF_NAMESPACE_ID::int32 map_pw_;
+  ::PROTOBUF_NAMESPACE_ID::int32 map_sc_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::int32 map_tv_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -14487,24 +14442,24 @@ inline void STEER_VERSION::set_component_version(::PROTOBUF_NAMESPACE_ID::uint32
   // @@protoc_insertion_point(field_set:primary.STEER_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void STEER_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void STEER_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 STEER_VERSION::_internal_cancicd_version() const {
-  return cancicd_version_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 STEER_VERSION::_internal_canlib_build_time() const {
+  return canlib_build_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 STEER_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.STEER_VERSION.cancicd_version)
-  return _internal_cancicd_version();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 STEER_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.STEER_VERSION.canlib_build_time)
+  return _internal_canlib_build_time();
 }
-inline void STEER_VERSION::_internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void STEER_VERSION::_internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  cancicd_version_ = value;
+  canlib_build_time_ = value;
 }
-inline void STEER_VERSION::set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_cancicd_version(value);
-  // @@protoc_insertion_point(field_set:primary.STEER_VERSION.cancicd_version)
+inline void STEER_VERSION::set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_canlib_build_time(value);
+  // @@protoc_insertion_point(field_set:primary.STEER_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -14551,24 +14506,24 @@ inline void DAS_VERSION::set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 v
   // @@protoc_insertion_point(field_set:primary.DAS_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void DAS_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void DAS_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DAS_VERSION::_internal_cancicd_version() const {
-  return cancicd_version_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DAS_VERSION::_internal_canlib_build_time() const {
+  return canlib_build_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 DAS_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.DAS_VERSION.cancicd_version)
-  return _internal_cancicd_version();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 DAS_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.DAS_VERSION.canlib_build_time)
+  return _internal_canlib_build_time();
 }
-inline void DAS_VERSION::_internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void DAS_VERSION::_internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  cancicd_version_ = value;
+  canlib_build_time_ = value;
 }
-inline void DAS_VERSION::set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_cancicd_version(value);
-  // @@protoc_insertion_point(field_set:primary.DAS_VERSION.cancicd_version)
+inline void DAS_VERSION::set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_canlib_build_time(value);
+  // @@protoc_insertion_point(field_set:primary.DAS_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -14615,24 +14570,24 @@ inline void HV_VERSION::set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:primary.HV_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void HV_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void HV_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HV_VERSION::_internal_cancicd_version() const {
-  return cancicd_version_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HV_VERSION::_internal_canlib_build_time() const {
+  return canlib_build_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 HV_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.HV_VERSION.cancicd_version)
-  return _internal_cancicd_version();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 HV_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.HV_VERSION.canlib_build_time)
+  return _internal_canlib_build_time();
 }
-inline void HV_VERSION::_internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void HV_VERSION::_internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  cancicd_version_ = value;
+  canlib_build_time_ = value;
 }
-inline void HV_VERSION::set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_cancicd_version(value);
-  // @@protoc_insertion_point(field_set:primary.HV_VERSION.cancicd_version)
+inline void HV_VERSION::set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_canlib_build_time(value);
+  // @@protoc_insertion_point(field_set:primary.HV_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -14679,24 +14634,24 @@ inline void LV_VERSION::set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 va
   // @@protoc_insertion_point(field_set:primary.LV_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void LV_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void LV_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 LV_VERSION::_internal_cancicd_version() const {
-  return cancicd_version_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LV_VERSION::_internal_canlib_build_time() const {
+  return canlib_build_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 LV_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.LV_VERSION.cancicd_version)
-  return _internal_cancicd_version();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LV_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.LV_VERSION.canlib_build_time)
+  return _internal_canlib_build_time();
 }
-inline void LV_VERSION::_internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void LV_VERSION::_internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  cancicd_version_ = value;
+  canlib_build_time_ = value;
 }
-inline void LV_VERSION::set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_cancicd_version(value);
-  // @@protoc_insertion_point(field_set:primary.LV_VERSION.cancicd_version)
+inline void LV_VERSION::set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_canlib_build_time(value);
+  // @@protoc_insertion_point(field_set:primary.LV_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -14743,24 +14698,24 @@ inline void TLM_VERSION::set_component_version(::PROTOBUF_NAMESPACE_ID::uint32 v
   // @@protoc_insertion_point(field_set:primary.TLM_VERSION.component_version)
 }
 
-// uint32 cancicd_version = 2;
-inline void TLM_VERSION::clear_cancicd_version() {
-  cancicd_version_ = 0u;
+// uint32 canlib_build_time = 2;
+inline void TLM_VERSION::clear_canlib_build_time() {
+  canlib_build_time_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TLM_VERSION::_internal_cancicd_version() const {
-  return cancicd_version_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TLM_VERSION::_internal_canlib_build_time() const {
+  return canlib_build_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TLM_VERSION::cancicd_version() const {
-  // @@protoc_insertion_point(field_get:primary.TLM_VERSION.cancicd_version)
-  return _internal_cancicd_version();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TLM_VERSION::canlib_build_time() const {
+  // @@protoc_insertion_point(field_get:primary.TLM_VERSION.canlib_build_time)
+  return _internal_canlib_build_time();
 }
-inline void TLM_VERSION::_internal_set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TLM_VERSION::_internal_set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  cancicd_version_ = value;
+  canlib_build_time_ = value;
 }
-inline void TLM_VERSION::set_cancicd_version(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_cancicd_version(value);
-  // @@protoc_insertion_point(field_set:primary.TLM_VERSION.cancicd_version)
+inline void TLM_VERSION::set_canlib_build_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_canlib_build_time(value);
+  // @@protoc_insertion_point(field_set:primary.TLM_VERSION.canlib_build_time)
 }
 
 // uint64 _inner_timestamp = 3;
@@ -15923,47 +15878,67 @@ inline void SET_TS_STATUS_HANDCART::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID
 
 // STEER_STATUS
 
-// .primary.TractionControl traction_control = 1;
-inline void STEER_STATUS::clear_traction_control() {
-  traction_control_ = 0;
+// sint32 map_pw = 1;
+inline void STEER_STATUS::clear_map_pw() {
+  map_pw_ = 0;
 }
-inline ::primary::TractionControl STEER_STATUS::_internal_traction_control() const {
-  return static_cast< ::primary::TractionControl >(traction_control_);
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_pw() const {
+  return map_pw_;
 }
-inline ::primary::TractionControl STEER_STATUS::traction_control() const {
-  // @@protoc_insertion_point(field_get:primary.STEER_STATUS.traction_control)
-  return _internal_traction_control();
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_pw() const {
+  // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_pw)
+  return _internal_map_pw();
 }
-inline void STEER_STATUS::_internal_set_traction_control(::primary::TractionControl value) {
+inline void STEER_STATUS::_internal_set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
-  traction_control_ = value;
+  map_pw_ = value;
 }
-inline void STEER_STATUS::set_traction_control(::primary::TractionControl value) {
-  _internal_set_traction_control(value);
-  // @@protoc_insertion_point(field_set:primary.STEER_STATUS.traction_control)
+inline void STEER_STATUS::set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_map_pw(value);
+  // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_pw)
 }
 
-// .primary.Map map = 2;
-inline void STEER_STATUS::clear_map() {
-  map_ = 0;
+// sint32 map_sc = 2;
+inline void STEER_STATUS::clear_map_sc() {
+  map_sc_ = 0;
 }
-inline ::primary::Map STEER_STATUS::_internal_map() const {
-  return static_cast< ::primary::Map >(map_);
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_sc() const {
+  return map_sc_;
 }
-inline ::primary::Map STEER_STATUS::map() const {
-  // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map)
-  return _internal_map();
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_sc() const {
+  // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_sc)
+  return _internal_map_sc();
 }
-inline void STEER_STATUS::_internal_set_map(::primary::Map value) {
+inline void STEER_STATUS::_internal_set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
-  map_ = value;
+  map_sc_ = value;
 }
-inline void STEER_STATUS::set_map(::primary::Map value) {
-  _internal_set_map(value);
-  // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map)
+inline void STEER_STATUS::set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_map_sc(value);
+  // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_sc)
 }
 
-// uint64 _inner_timestamp = 3;
+// sint32 map_tv = 3;
+inline void STEER_STATUS::clear_map_tv() {
+  map_tv_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_tv() const {
+  return map_tv_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_tv() const {
+  // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_tv)
+  return _internal_map_tv();
+}
+inline void STEER_STATUS::_internal_set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  map_tv_ = value;
+}
+inline void STEER_STATUS::set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_map_tv(value);
+  // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_tv)
+}
+
+// uint64 _inner_timestamp = 4;
 inline void STEER_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
@@ -21999,20 +21974,10 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::primary::Toggle>() {
   return ::primary::Toggle_descriptor();
 }
-template <> struct is_proto_enum< ::primary::TractionControl> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::primary::TractionControl>() {
-  return ::primary::TractionControl_descriptor();
-}
 template <> struct is_proto_enum< ::primary::TsStatus> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::primary::TsStatus>() {
   return ::primary::TsStatus_descriptor();
-}
-template <> struct is_proto_enum< ::primary::Map> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::primary::Map>() {
-  return ::primary::Map_descriptor();
 }
 template <> struct is_proto_enum< ::primary::SetCarStatus> : ::std::true_type {};
 template <>

@@ -4158,35 +4158,65 @@ class CONTROL_OUTPUT PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRightFieldNumber = 1,
-    kLeftFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kEstimatedVelocityFieldNumber = 1,
+    kTmaxRFieldNumber = 2,
+    kTmaxLFieldNumber = 3,
+    kTorqueLFieldNumber = 4,
+    kInnerTimestampFieldNumber = 6,
+    kTorqueRFieldNumber = 5,
   };
-  // float right = 1;
-  void clear_right();
-  float right() const;
-  void set_right(float value);
+  // float estimated_velocity = 1;
+  void clear_estimated_velocity();
+  float estimated_velocity() const;
+  void set_estimated_velocity(float value);
   private:
-  float _internal_right() const;
-  void _internal_set_right(float value);
+  float _internal_estimated_velocity() const;
+  void _internal_set_estimated_velocity(float value);
   public:
 
-  // float left = 2;
-  void clear_left();
-  float left() const;
-  void set_left(float value);
+  // float tmax_r = 2;
+  void clear_tmax_r();
+  float tmax_r() const;
+  void set_tmax_r(float value);
   private:
-  float _internal_left() const;
-  void _internal_set_left(float value);
+  float _internal_tmax_r() const;
+  void _internal_set_tmax_r(float value);
   public:
 
-  // uint64 _inner_timestamp = 3;
+  // float tmax_l = 3;
+  void clear_tmax_l();
+  float tmax_l() const;
+  void set_tmax_l(float value);
+  private:
+  float _internal_tmax_l() const;
+  void _internal_set_tmax_l(float value);
+  public:
+
+  // float torque_l = 4;
+  void clear_torque_l();
+  float torque_l() const;
+  void set_torque_l(float value);
+  private:
+  float _internal_torque_l() const;
+  void _internal_set_torque_l(float value);
+  public:
+
+  // uint64 _inner_timestamp = 6;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // float torque_r = 5;
+  void clear_torque_r();
+  float torque_r() const;
+  void set_torque_r(float value);
+  private:
+  float _internal_torque_r() const;
+  void _internal_set_torque_r(float value);
   public:
 
   // @@protoc_insertion_point(class_scope:secondary.CONTROL_OUTPUT)
@@ -4196,9 +4226,12 @@ class CONTROL_OUTPUT PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  float right_;
-  float left_;
+  float estimated_velocity_;
+  float tmax_r_;
+  float tmax_l_;
+  float torque_l_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  float torque_r_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
 };
@@ -7075,47 +7108,107 @@ inline void PEDALS_OUTPUT::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 
 
 // CONTROL_OUTPUT
 
-// float right = 1;
-inline void CONTROL_OUTPUT::clear_right() {
-  right_ = 0;
+// float estimated_velocity = 1;
+inline void CONTROL_OUTPUT::clear_estimated_velocity() {
+  estimated_velocity_ = 0;
 }
-inline float CONTROL_OUTPUT::_internal_right() const {
-  return right_;
+inline float CONTROL_OUTPUT::_internal_estimated_velocity() const {
+  return estimated_velocity_;
 }
-inline float CONTROL_OUTPUT::right() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.right)
-  return _internal_right();
+inline float CONTROL_OUTPUT::estimated_velocity() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.estimated_velocity)
+  return _internal_estimated_velocity();
 }
-inline void CONTROL_OUTPUT::_internal_set_right(float value) {
+inline void CONTROL_OUTPUT::_internal_set_estimated_velocity(float value) {
   
-  right_ = value;
+  estimated_velocity_ = value;
 }
-inline void CONTROL_OUTPUT::set_right(float value) {
-  _internal_set_right(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.right)
+inline void CONTROL_OUTPUT::set_estimated_velocity(float value) {
+  _internal_set_estimated_velocity(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.estimated_velocity)
 }
 
-// float left = 2;
-inline void CONTROL_OUTPUT::clear_left() {
-  left_ = 0;
+// float tmax_r = 2;
+inline void CONTROL_OUTPUT::clear_tmax_r() {
+  tmax_r_ = 0;
 }
-inline float CONTROL_OUTPUT::_internal_left() const {
-  return left_;
+inline float CONTROL_OUTPUT::_internal_tmax_r() const {
+  return tmax_r_;
 }
-inline float CONTROL_OUTPUT::left() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.left)
-  return _internal_left();
+inline float CONTROL_OUTPUT::tmax_r() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.tmax_r)
+  return _internal_tmax_r();
 }
-inline void CONTROL_OUTPUT::_internal_set_left(float value) {
+inline void CONTROL_OUTPUT::_internal_set_tmax_r(float value) {
   
-  left_ = value;
+  tmax_r_ = value;
 }
-inline void CONTROL_OUTPUT::set_left(float value) {
-  _internal_set_left(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.left)
+inline void CONTROL_OUTPUT::set_tmax_r(float value) {
+  _internal_set_tmax_r(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.tmax_r)
 }
 
-// uint64 _inner_timestamp = 3;
+// float tmax_l = 3;
+inline void CONTROL_OUTPUT::clear_tmax_l() {
+  tmax_l_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_tmax_l() const {
+  return tmax_l_;
+}
+inline float CONTROL_OUTPUT::tmax_l() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.tmax_l)
+  return _internal_tmax_l();
+}
+inline void CONTROL_OUTPUT::_internal_set_tmax_l(float value) {
+  
+  tmax_l_ = value;
+}
+inline void CONTROL_OUTPUT::set_tmax_l(float value) {
+  _internal_set_tmax_l(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.tmax_l)
+}
+
+// float torque_l = 4;
+inline void CONTROL_OUTPUT::clear_torque_l() {
+  torque_l_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_torque_l() const {
+  return torque_l_;
+}
+inline float CONTROL_OUTPUT::torque_l() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.torque_l)
+  return _internal_torque_l();
+}
+inline void CONTROL_OUTPUT::_internal_set_torque_l(float value) {
+  
+  torque_l_ = value;
+}
+inline void CONTROL_OUTPUT::set_torque_l(float value) {
+  _internal_set_torque_l(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.torque_l)
+}
+
+// float torque_r = 5;
+inline void CONTROL_OUTPUT::clear_torque_r() {
+  torque_r_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_torque_r() const {
+  return torque_r_;
+}
+inline float CONTROL_OUTPUT::torque_r() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.torque_r)
+  return _internal_torque_r();
+}
+inline void CONTROL_OUTPUT::_internal_set_torque_r(float value) {
+  
+  torque_r_ = value;
+}
+inline void CONTROL_OUTPUT::set_torque_r(float value) {
+  _internal_set_torque_r(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.torque_r)
+}
+
+// uint64 _inner_timestamp = 6;
 inline void CONTROL_OUTPUT::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
