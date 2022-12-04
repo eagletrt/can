@@ -330,11 +330,34 @@
       "priority": 4,
       "interval": 100,
       "sending": ["DAS"],
-      "receiving": ["STEER"],
+      "receiving": ["STEER", "TLM"],
       "description": "Control output, N*m",
       "contents": {
-        "right": "float32",
-        "left": "float32"
+        "estimated_velocity": {
+          "type": "float32",
+          "range": [-10, 50],
+          "force": "uint16"
+        },
+        "tmax_r": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint8"
+        },
+        "tmax_l": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint8"
+        },
+        "torque_l": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint16"
+        },
+        "torque_r": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint16"
+        }
       }
     },
     {
