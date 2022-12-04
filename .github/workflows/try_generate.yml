@@ -14,10 +14,6 @@ jobs:
         with:
           submodules: true
 
-      - uses: webfactory/ssh-agent@v0.5.4
-        with:
-          ssh-private-key: ${{ secrets.ACTION_SSH_KEY }}
-
       - uses: actions/setup-python@v3
         name: Set up Python 3.10
         with:
@@ -31,7 +27,7 @@ jobs:
 
       - name: Run canlib generator
         run: |
-          pip install git+ssh://git@github.com/eagletrt/canlib.git#egg=canlib
+          pip install git+https://github.com/eagletrt/canlib.git#egg=canlib
           canlib generate-all networks ids lib proto csv
           mkdir -p /tmp/workspace
           cp -R networks ids lib proto csv /tmp/workspace
