@@ -5,1068 +5,992 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
-
-namespace protobuf_bms_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BALANCING;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_RX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_TX;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FW_UPDATE;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_bms_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5;
-}  // namespace protobuf_bms_2eproto
+#include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BALANCING_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FW_UPDATE_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5_bms_2eproto;
 namespace bms {
 class BOARD_STATUS_CELLBOARD0DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD0>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD0> _instance;
 } _BOARD_STATUS_CELLBOARD0_default_instance_;
 class BOARD_STATUS_CELLBOARD1DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD1>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD1> _instance;
 } _BOARD_STATUS_CELLBOARD1_default_instance_;
 class BOARD_STATUS_CELLBOARD2DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD2>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD2> _instance;
 } _BOARD_STATUS_CELLBOARD2_default_instance_;
 class BOARD_STATUS_CELLBOARD3DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD3>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD3> _instance;
 } _BOARD_STATUS_CELLBOARD3_default_instance_;
 class BOARD_STATUS_CELLBOARD4DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD4>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD4> _instance;
 } _BOARD_STATUS_CELLBOARD4_default_instance_;
 class BOARD_STATUS_CELLBOARD5DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD5>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD5> _instance;
 } _BOARD_STATUS_CELLBOARD5_default_instance_;
 class TEMPERATURES_CELLBOARD0DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD0>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD0> _instance;
 } _TEMPERATURES_CELLBOARD0_default_instance_;
 class TEMPERATURES_CELLBOARD1DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD1>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD1> _instance;
 } _TEMPERATURES_CELLBOARD1_default_instance_;
 class TEMPERATURES_CELLBOARD2DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD2>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD2> _instance;
 } _TEMPERATURES_CELLBOARD2_default_instance_;
 class TEMPERATURES_CELLBOARD3DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD3>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD3> _instance;
 } _TEMPERATURES_CELLBOARD3_default_instance_;
 class TEMPERATURES_CELLBOARD4DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD4>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD4> _instance;
 } _TEMPERATURES_CELLBOARD4_default_instance_;
 class TEMPERATURES_CELLBOARD5DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD5>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD5> _instance;
 } _TEMPERATURES_CELLBOARD5_default_instance_;
 class VOLTAGES_CELLBOARD0DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD0>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD0> _instance;
 } _VOLTAGES_CELLBOARD0_default_instance_;
 class VOLTAGES_CELLBOARD1DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD1>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD1> _instance;
 } _VOLTAGES_CELLBOARD1_default_instance_;
 class VOLTAGES_CELLBOARD2DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD2>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD2> _instance;
 } _VOLTAGES_CELLBOARD2_default_instance_;
 class VOLTAGES_CELLBOARD3DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD3>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD3> _instance;
 } _VOLTAGES_CELLBOARD3_default_instance_;
 class VOLTAGES_CELLBOARD4DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD4>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD4> _instance;
 } _VOLTAGES_CELLBOARD4_default_instance_;
 class VOLTAGES_CELLBOARD5DefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD5>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD5> _instance;
 } _VOLTAGES_CELLBOARD5_default_instance_;
 class BALANCINGDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<BALANCING>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BALANCING> _instance;
 } _BALANCING_default_instance_;
 class FW_UPDATEDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FW_UPDATE>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FW_UPDATE> _instance;
 } _FW_UPDATE_default_instance_;
 class FLASH_CELLBOARD_0_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_0_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_0_TX> _instance;
 } _FLASH_CELLBOARD_0_TX_default_instance_;
 class FLASH_CELLBOARD_0_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_0_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_0_RX> _instance;
 } _FLASH_CELLBOARD_0_RX_default_instance_;
 class FLASH_CELLBOARD_1_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_1_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_1_TX> _instance;
 } _FLASH_CELLBOARD_1_TX_default_instance_;
 class FLASH_CELLBOARD_1_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_1_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_1_RX> _instance;
 } _FLASH_CELLBOARD_1_RX_default_instance_;
 class FLASH_CELLBOARD_2_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_2_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_2_TX> _instance;
 } _FLASH_CELLBOARD_2_TX_default_instance_;
 class FLASH_CELLBOARD_2_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_2_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_2_RX> _instance;
 } _FLASH_CELLBOARD_2_RX_default_instance_;
 class FLASH_CELLBOARD_3_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_3_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_3_TX> _instance;
 } _FLASH_CELLBOARD_3_TX_default_instance_;
 class FLASH_CELLBOARD_3_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_3_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_3_RX> _instance;
 } _FLASH_CELLBOARD_3_RX_default_instance_;
 class FLASH_CELLBOARD_4_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_4_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_4_TX> _instance;
 } _FLASH_CELLBOARD_4_TX_default_instance_;
 class FLASH_CELLBOARD_4_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_4_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_4_RX> _instance;
 } _FLASH_CELLBOARD_4_RX_default_instance_;
 class FLASH_CELLBOARD_5_TXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_5_TX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_5_TX> _instance;
 } _FLASH_CELLBOARD_5_TX_default_instance_;
 class FLASH_CELLBOARD_5_RXDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<FLASH_CELLBOARD_5_RX>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FLASH_CELLBOARD_5_RX> _instance;
 } _FLASH_CELLBOARD_5_RX_default_instance_;
 class PackDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Pack>
-      _instance;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Pack> _instance;
 } _Pack_default_instance_;
 }  // namespace bms
-namespace protobuf_bms_2eproto {
-static void InitDefaultsBOARD_STATUS_CELLBOARD0() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD0();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD0::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD0}, {}};
-
-static void InitDefaultsBOARD_STATUS_CELLBOARD1() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD1();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD1::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD1}, {}};
-
-static void InitDefaultsBOARD_STATUS_CELLBOARD2() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD2();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD2}, {}};
-
-static void InitDefaultsBOARD_STATUS_CELLBOARD3() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD3();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD3}, {}};
-
-static void InitDefaultsBOARD_STATUS_CELLBOARD4() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD4();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD4}, {}};
-
-static void InitDefaultsBOARD_STATUS_CELLBOARD5() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD5();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBOARD_STATUS_CELLBOARD5}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD0() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD0();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD0::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD0}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD1() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD1();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD1::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD1}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD2() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD2();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD2}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD3() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD3();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD3}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD4() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD4();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD4}, {}};
-
-static void InitDefaultsTEMPERATURES_CELLBOARD5() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD5();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTEMPERATURES_CELLBOARD5}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD0() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD0();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD0::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD0}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD1() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD1();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD1::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD1}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD2() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD2();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD2}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD3() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD3();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD3}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD4() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD4();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD4}, {}};
-
-static void InitDefaultsVOLTAGES_CELLBOARD5() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD5();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5 =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsVOLTAGES_CELLBOARD5}, {}};
-
-static void InitDefaultsBALANCING() {
+static void InitDefaultsscc_info_BALANCING_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_BALANCING_default_instance_;
     new (ptr) ::bms::BALANCING();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::BALANCING::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_BALANCING =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBALANCING}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BALANCING_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BALANCING_bms_2eproto}, {}};
 
-static void InitDefaultsFW_UPDATE() {
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FW_UPDATE_default_instance_;
-    new (ptr) ::bms::FW_UPDATE();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD0_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD0();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FW_UPDATE::InitAsDefaultInstance();
+  ::bms::BOARD_STATUS_CELLBOARD0::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FW_UPDATE =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFW_UPDATE}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_0_TX() {
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_0_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_0_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD1_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD1();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_0_TX::InitAsDefaultInstance();
+  ::bms::BOARD_STATUS_CELLBOARD1::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_0_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_0_RX() {
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD2_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD2();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::BOARD_STATUS_CELLBOARD2::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD3_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD3();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::BOARD_STATUS_CELLBOARD3::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD4_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD4();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::BOARD_STATUS_CELLBOARD4::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD5_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS_CELLBOARD5();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::BOARD_STATUS_CELLBOARD5::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_FLASH_CELLBOARD_0_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_0_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_0_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_0_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_0_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_0_RX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_1_TX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_0_TX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_1_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_1_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_FLASH_CELLBOARD_0_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_0_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_1_TX::InitAsDefaultInstance();
+  ::bms::FLASH_CELLBOARD_0_TX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_1_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_0_TX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_1_RX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_1_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_1_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_1_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_1_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_1_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_1_RX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_2_TX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_1_TX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_2_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_2_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_FLASH_CELLBOARD_1_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_1_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_2_TX::InitAsDefaultInstance();
+  ::bms::FLASH_CELLBOARD_1_TX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_2_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_1_TX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_2_RX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_2_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_2_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_2_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_2_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_2_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_2_RX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_3_TX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_2_TX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_3_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_3_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_FLASH_CELLBOARD_2_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_2_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_3_TX::InitAsDefaultInstance();
+  ::bms::FLASH_CELLBOARD_2_TX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_3_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_2_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_2_TX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_3_RX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_3_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_3_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_3_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_3_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_3_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_3_RX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_4_TX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_3_TX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_4_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_4_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_FLASH_CELLBOARD_3_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_3_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_4_TX::InitAsDefaultInstance();
+  ::bms::FLASH_CELLBOARD_3_TX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_4_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_3_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_3_TX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_4_RX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_4_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_4_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_4_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_4_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_4_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_4_RX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_5_TX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_4_TX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_FLASH_CELLBOARD_5_TX_default_instance_;
-    new (ptr) ::bms::FLASH_CELLBOARD_5_TX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    void* ptr = &::bms::_FLASH_CELLBOARD_4_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_4_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::FLASH_CELLBOARD_5_TX::InitAsDefaultInstance();
+  ::bms::FLASH_CELLBOARD_4_TX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_TX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_5_TX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_4_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_4_TX_bms_2eproto}, {}};
 
-static void InitDefaultsFLASH_CELLBOARD_5_RX() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_5_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_FLASH_CELLBOARD_5_RX_default_instance_;
     new (ptr) ::bms::FLASH_CELLBOARD_5_RX();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::FLASH_CELLBOARD_5_RX::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_RX =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFLASH_CELLBOARD_5_RX}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_5_RX_bms_2eproto}, {}};
 
-static void InitDefaultsPack() {
+static void InitDefaultsscc_info_FLASH_CELLBOARD_5_TX_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_FLASH_CELLBOARD_5_TX_default_instance_;
+    new (ptr) ::bms::FLASH_CELLBOARD_5_TX();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::FLASH_CELLBOARD_5_TX::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FLASH_CELLBOARD_5_TX_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_FW_UPDATE_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_FW_UPDATE_default_instance_;
+    new (ptr) ::bms::FW_UPDATE();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::FW_UPDATE::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FW_UPDATE_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_FW_UPDATE_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_Pack_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
     void* ptr = &::bms::_Pack_default_instance_;
     new (ptr) ::bms::Pack();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::bms::Pack::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<32> scc_info_Pack =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 32, InitDefaultsPack}, {
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD0.base,
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD1.base,
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD2.base,
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD3.base,
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD4.base,
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD5.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD0.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD1.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD2.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD3.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD4.base,
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD5.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD0.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD1.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD2.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD3.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD4.base,
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD5.base,
-      &protobuf_bms_2eproto::scc_info_BALANCING.base,
-      &protobuf_bms_2eproto::scc_info_FW_UPDATE.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_RX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_RX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_RX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_RX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_RX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_TX.base,
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_RX.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<32> scc_info_Pack_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 32, 0, InitDefaultsscc_info_Pack_bms_2eproto}, {
+      &scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base,
+      &scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base,
+      &scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base,
+      &scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base,
+      &scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base,
+      &scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base,
+      &scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base,
+      &scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base,
+      &scc_info_BALANCING_bms_2eproto.base,
+      &scc_info_FW_UPDATE_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_1_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_2_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_2_RX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_3_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_3_RX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_4_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_4_RX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto.base,
+      &scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD0.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD1.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD2.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD3.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD4.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BOARD_STATUS_CELLBOARD5.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD0.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD1.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD2.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD3.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD4.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TEMPERATURES_CELLBOARD5.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD0.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD1.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD2.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD3.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD4.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_VOLTAGES_CELLBOARD5.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_BALANCING.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FW_UPDATE.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_0_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_0_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_1_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_1_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_2_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_2_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_3_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_3_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_4_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_4_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_5_TX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_FLASH_CELLBOARD_5_RX.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Pack.base);
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD0_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD0_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD0();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD0::InitAsDefaultInstance();
 }
 
-::google::protobuf::Metadata file_level_metadata[33];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD0_bms_2eproto}, {}};
 
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD1_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD1_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD1();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD1::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD1_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD2_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD2_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD2();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD2::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD2_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD3_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD3_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD3();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD3::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD3_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD4_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD4_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD4();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD4::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD4_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD5_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_TEMPERATURES_CELLBOARD5_default_instance_;
+    new (ptr) ::bms::TEMPERATURES_CELLBOARD5();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::TEMPERATURES_CELLBOARD5::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD5_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD0_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD0_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD0();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD0::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD0_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD1_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD1_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD1();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD1::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD1_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD2_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD2_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD2();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD2::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD2_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD3_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD3_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD3();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD3::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD3_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD4_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD4_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD4();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD4::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD4_bms_2eproto}, {}};
+
+static void InitDefaultsscc_info_VOLTAGES_CELLBOARD5_bms_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::bms::_VOLTAGES_CELLBOARD5_default_instance_;
+    new (ptr) ::bms::VOLTAGES_CELLBOARD5();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::bms::VOLTAGES_CELLBOARD5::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD5_bms_2eproto}, {}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bms_2eproto[33];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_bms_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_bms_2eproto = nullptr;
+
+const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, errors_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, balancing_status_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp4_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp5_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, start_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BALANCING, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BALANCING, board_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BALANCING, cells_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::BALANCING, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, board_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, cells_),
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FW_UPDATE, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FW_UPDATE, board_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FW_UPDATE, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, board_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_0_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_1_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_2_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_3_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_4_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_TX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::FLASH_CELLBOARD_5_RX, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, board_status_cellboard5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, temperatures_cellboard5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard1_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard2_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard3_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard4_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, voltages_cellboard5_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, balancing_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, fw_update_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_rx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_rx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_rx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_rx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_rx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_tx_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard0_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard1_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard2_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard3_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard4_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard5_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard0_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard1_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard2_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard3_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard4_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard5_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard0_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard1_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard2_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard3_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard4_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard5_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, balancing_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, fw_update_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_1_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_2_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_3_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_4_rx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_tx_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_rx_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD0)},
   { 8, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD1)},
   { 16, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD2)},
@@ -1102,213 +1026,223 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 273, -1, sizeof(::bms::Pack)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BOARD_STATUS_CELLBOARD5_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_TEMPERATURES_CELLBOARD5_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_VOLTAGES_CELLBOARD5_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_BALANCING_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FW_UPDATE_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_0_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_0_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_1_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_1_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_2_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_2_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_3_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_3_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_4_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_4_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_5_TX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_FLASH_CELLBOARD_5_RX_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bms::_Pack_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD0_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD1_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD2_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD3_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD4_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD5_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD0_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD1_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD2_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD3_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD4_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD5_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD0_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD1_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD2_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD3_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD4_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD5_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BALANCING_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FW_UPDATE_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_0_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_0_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_1_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_1_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_2_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_2_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_3_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_3_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_4_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_4_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_5_TX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_5_RX_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_Pack_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "bms.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
+const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\tbms.proto\022\003bms\"s\n\027BOARD_STATUS_CELLBOA"
+  "RD0\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030"
+  "\002 \001(\0162\024.bms.BalancingStatus\022\030\n\020_inner_ti"
+  "mestamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD1"
+  "\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001"
+  "(\0162\024.bms.BalancingStatus\022\030\n\020_inner_times"
+  "tamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD2\022\016\n"
+  "\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162"
+  "\024.bms.BalancingStatus\022\030\n\020_inner_timestam"
+  "p\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD3\022\016\n\006er"
+  "rors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.b"
+  "ms.BalancingStatus\022\030\n\020_inner_timestamp\030\003"
+  " \001(\004\"s\n\027BOARD_STATUS_CELLBOARD4\022\016\n\006error"
+  "s\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms."
+  "BalancingStatus\022\030\n\020_inner_timestamp\030\003 \001("
+  "\004\"s\n\027BOARD_STATUS_CELLBOARD5\022\016\n\006errors\030\001"
+  " \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms.Bal"
+  "ancingStatus\022\030\n\020_inner_timestamp\030\003 \001(\004\"\242"
+  "\001\n\027TEMPERATURES_CELLBOARD0\022\023\n\013start_inde"
+  "x\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n"
+  "\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001"
+  "(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timestamp\030\010 "
+  "\001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD1\022\023\n\013start"
+  "_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001"
+  "(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp"
+  "4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timesta"
+  "mp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD2\022\023\n\013"
+  "start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp"
+  "1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n"
+  "\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_ti"
+  "mestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD"
+  "3\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n"
+  "\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001"
+  "(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inn"
+  "er_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELL"
+  "BOARD4\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001"
+  "(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp"
+  "3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n"
+  "\020_inner_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES"
+  "_CELLBOARD5\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp"
+  "0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n"
+  "\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001"
+  "(\002\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
+  "_CELLBOARD0\022\023\n\013start_index\030\001 \001(\r\022\020\n\010volt"
+  "age0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010voltage2"
+  "\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
+  "AGES_CELLBOARD1\022\023\n\013start_index\030\001 \001(\r\022\020\n\010"
+  "voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010volt"
+  "age2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
+  "VOLTAGES_CELLBOARD2\022\023\n\013start_index\030\001 \001(\r"
+  "\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010"
+  "voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004"
+  "\"z\n\023VOLTAGES_CELLBOARD3\022\023\n\013start_index\030\001"
+  " \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002"
+  "\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005"
+  " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\023\n\013start_ind"
+  "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003"
+  " \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timesta"
+  "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\023\n\013start"
+  "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltag"
+  "e1\030\003 \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_tim"
+  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\023\n\013board_index"
+  "\030\001 \001(\r\022\r\n\005cells\030\002 \001(\r\022\030\n\020_inner_timestam"
+  "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
+  "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_0_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_2_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
+  "LBOARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
+  "\024FLASH_CELLBOARD_4_RX\022\030\n\020_inner_timestam"
+  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inne"
+  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_R"
+  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"\266\016\n\004Pack\022=\n\027"
+  "BOARD_STATUS_CELLBOARD0\030\001 \003(\0132\034.bms.BOAR"
+  "D_STATUS_CELLBOARD0\022=\n\027BOARD_STATUS_CELL"
+  "BOARD1\030\002 \003(\0132\034.bms.BOARD_STATUS_CELLBOAR"
+  "D1\022=\n\027BOARD_STATUS_CELLBOARD2\030\003 \003(\0132\034.bm"
+  "s.BOARD_STATUS_CELLBOARD2\022=\n\027BOARD_STATU"
+  "S_CELLBOARD3\030\004 \003(\0132\034.bms.BOARD_STATUS_CE"
+  "LLBOARD3\022=\n\027BOARD_STATUS_CELLBOARD4\030\005 \003("
+  "\0132\034.bms.BOARD_STATUS_CELLBOARD4\022=\n\027BOARD"
+  "_STATUS_CELLBOARD5\030\006 \003(\0132\034.bms.BOARD_STA"
+  "TUS_CELLBOARD5\022=\n\027TEMPERATURES_CELLBOARD"
+  "0\030\007 \003(\0132\034.bms.TEMPERATURES_CELLBOARD0\022=\n"
+  "\027TEMPERATURES_CELLBOARD1\030\010 \003(\0132\034.bms.TEM"
+  "PERATURES_CELLBOARD1\022=\n\027TEMPERATURES_CEL"
+  "LBOARD2\030\t \003(\0132\034.bms.TEMPERATURES_CELLBOA"
+  "RD2\022=\n\027TEMPERATURES_CELLBOARD3\030\n \003(\0132\034.b"
+  "ms.TEMPERATURES_CELLBOARD3\022=\n\027TEMPERATUR"
+  "ES_CELLBOARD4\030\013 \003(\0132\034.bms.TEMPERATURES_C"
+  "ELLBOARD4\022=\n\027TEMPERATURES_CELLBOARD5\030\014 \003"
+  "(\0132\034.bms.TEMPERATURES_CELLBOARD5\0225\n\023VOLT"
+  "AGES_CELLBOARD0\030\r \003(\0132\030.bms.VOLTAGES_CEL"
+  "LBOARD0\0225\n\023VOLTAGES_CELLBOARD1\030\016 \003(\0132\030.b"
+  "ms.VOLTAGES_CELLBOARD1\0225\n\023VOLTAGES_CELLB"
+  "OARD2\030\017 \003(\0132\030.bms.VOLTAGES_CELLBOARD2\0225\n"
+  "\023VOLTAGES_CELLBOARD3\030\020 \003(\0132\030.bms.VOLTAGE"
+  "S_CELLBOARD3\0225\n\023VOLTAGES_CELLBOARD4\030\021 \003("
+  "\0132\030.bms.VOLTAGES_CELLBOARD4\0225\n\023VOLTAGES_"
+  "CELLBOARD5\030\022 \003(\0132\030.bms.VOLTAGES_CELLBOAR"
+  "D5\022!\n\tBALANCING\030\023 \003(\0132\016.bms.BALANCING\022!\n"
+  "\tFW_UPDATE\030\024 \003(\0132\016.bms.FW_UPDATE\0227\n\024FLAS"
+  "H_CELLBOARD_0_TX\030\025 \003(\0132\031.bms.FLASH_CELLB"
+  "OARD_0_TX\0227\n\024FLASH_CELLBOARD_0_RX\030\026 \003(\0132"
+  "\031.bms.FLASH_CELLBOARD_0_RX\0227\n\024FLASH_CELL"
+  "BOARD_1_TX\030\027 \003(\0132\031.bms.FLASH_CELLBOARD_1"
+  "_TX\0227\n\024FLASH_CELLBOARD_1_RX\030\030 \003(\0132\031.bms."
+  "FLASH_CELLBOARD_1_RX\0227\n\024FLASH_CELLBOARD_"
+  "2_TX\030\031 \003(\0132\031.bms.FLASH_CELLBOARD_2_TX\0227\n"
+  "\024FLASH_CELLBOARD_2_RX\030\032 \003(\0132\031.bms.FLASH_"
+  "CELLBOARD_2_RX\0227\n\024FLASH_CELLBOARD_3_TX\030\033"
+  " \003(\0132\031.bms.FLASH_CELLBOARD_3_TX\0227\n\024FLASH"
+  "_CELLBOARD_3_RX\030\034 \003(\0132\031.bms.FLASH_CELLBO"
+  "ARD_3_RX\0227\n\024FLASH_CELLBOARD_4_TX\030\035 \003(\0132\031"
+  ".bms.FLASH_CELLBOARD_4_TX\0227\n\024FLASH_CELLB"
+  "OARD_4_RX\030\036 \003(\0132\031.bms.FLASH_CELLBOARD_4_"
+  "RX\0227\n\024FLASH_CELLBOARD_5_TX\030\037 \003(\0132\031.bms.F"
+  "LASH_CELLBOARD_5_TX\0227\n\024FLASH_CELLBOARD_5"
+  "_RX\030  \003(\0132\031.bms.FLASH_CELLBOARD_5_RX*I\n\017"
+  "BalancingStatus\022\027\n\023BalancingStatus_OFF\020\000"
+  "\022\035\n\031BalancingStatus_DISCHARGE\020\001b\006proto3"
+  ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bms_2eproto_deps[1] = {
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bms_2eproto_sccs[33] = {
+  &scc_info_BALANCING_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_1_TX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_2_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_2_TX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_3_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_3_TX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_4_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_4_TX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto.base,
+  &scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto.base,
+  &scc_info_FW_UPDATE_bms_2eproto.base,
+  &scc_info_Pack_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base,
+  &scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base,
+  &scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base,
+};
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bms_2eproto_once;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bms_2eproto = {
+  false, false, descriptor_table_protodef_bms_2eproto, "bms.proto", 5119,
+  &descriptor_table_bms_2eproto_once, descriptor_table_bms_2eproto_sccs, descriptor_table_bms_2eproto_deps, 33, 0,
+  schemas, file_default_instances, TableStruct_bms_2eproto::offsets,
+  file_level_metadata_bms_2eproto, 33, file_level_enum_descriptors_bms_2eproto, file_level_service_descriptors_bms_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 33);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\tbms.proto\022\003bms\"s\n\027BOARD_STATUS_CELLBOA"
-      "RD0\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030"
-      "\002 \001(\0162\024.bms.BalancingStatus\022\030\n\020_inner_ti"
-      "mestamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD1"
-      "\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001"
-      "(\0162\024.bms.BalancingStatus\022\030\n\020_inner_times"
-      "tamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD2\022\016\n"
-      "\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162"
-      "\024.bms.BalancingStatus\022\030\n\020_inner_timestam"
-      "p\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD3\022\016\n\006er"
-      "rors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.b"
-      "ms.BalancingStatus\022\030\n\020_inner_timestamp\030\003"
-      " \001(\004\"s\n\027BOARD_STATUS_CELLBOARD4\022\016\n\006error"
-      "s\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms."
-      "BalancingStatus\022\030\n\020_inner_timestamp\030\003 \001("
-      "\004\"s\n\027BOARD_STATUS_CELLBOARD5\022\016\n\006errors\030\001"
-      " \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms.Bal"
-      "ancingStatus\022\030\n\020_inner_timestamp\030\003 \001(\004\"\242"
-      "\001\n\027TEMPERATURES_CELLBOARD0\022\023\n\013start_inde"
-      "x\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n"
-      "\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001"
-      "(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timestamp\030\010 "
-      "\001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD1\022\023\n\013start"
-      "_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001"
-      "(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp"
-      "4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timesta"
-      "mp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD2\022\023\n\013"
-      "start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp"
-      "1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n"
-      "\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_ti"
-      "mestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD"
-      "3\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n"
-      "\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001"
-      "(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inn"
-      "er_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELL"
-      "BOARD4\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001"
-      "(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp"
-      "3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n"
-      "\020_inner_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES"
-      "_CELLBOARD5\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp"
-      "0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n"
-      "\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001"
-      "(\002\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
-      "_CELLBOARD0\022\023\n\013start_index\030\001 \001(\r\022\020\n\010volt"
-      "age0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010voltage2"
-      "\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
-      "AGES_CELLBOARD1\022\023\n\013start_index\030\001 \001(\r\022\020\n\010"
-      "voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010volt"
-      "age2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
-      "VOLTAGES_CELLBOARD2\022\023\n\013start_index\030\001 \001(\r"
-      "\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010"
-      "voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004"
-      "\"z\n\023VOLTAGES_CELLBOARD3\022\023\n\013start_index\030\001"
-      " \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002"
-      "\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005"
-      " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\023\n\013start_ind"
-      "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003"
-      " \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timesta"
-      "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\023\n\013start"
-      "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltag"
-      "e1\030\003 \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_tim"
-      "estamp\030\005 \001(\004\"I\n\tBALANCING\022\023\n\013board_index"
-      "\030\001 \001(\r\022\r\n\005cells\030\002 \001(\r\022\030\n\020_inner_timestam"
-      "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
-      "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
-      "LBOARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-      "\024FLASH_CELLBOARD_0_RX\022\030\n\020_inner_timestam"
-      "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inne"
-      "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_R"
-      "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
-      "LBOARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-      "\024FLASH_CELLBOARD_2_RX\022\030\n\020_inner_timestam"
-      "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inne"
-      "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_R"
-      "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
-      "LBOARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-      "\024FLASH_CELLBOARD_4_RX\022\030\n\020_inner_timestam"
-      "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inne"
-      "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_R"
-      "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"\266\016\n\004Pack\022=\n\027"
-      "BOARD_STATUS_CELLBOARD0\030\001 \003(\0132\034.bms.BOAR"
-      "D_STATUS_CELLBOARD0\022=\n\027BOARD_STATUS_CELL"
-      "BOARD1\030\002 \003(\0132\034.bms.BOARD_STATUS_CELLBOAR"
-      "D1\022=\n\027BOARD_STATUS_CELLBOARD2\030\003 \003(\0132\034.bm"
-      "s.BOARD_STATUS_CELLBOARD2\022=\n\027BOARD_STATU"
-      "S_CELLBOARD3\030\004 \003(\0132\034.bms.BOARD_STATUS_CE"
-      "LLBOARD3\022=\n\027BOARD_STATUS_CELLBOARD4\030\005 \003("
-      "\0132\034.bms.BOARD_STATUS_CELLBOARD4\022=\n\027BOARD"
-      "_STATUS_CELLBOARD5\030\006 \003(\0132\034.bms.BOARD_STA"
-      "TUS_CELLBOARD5\022=\n\027TEMPERATURES_CELLBOARD"
-      "0\030\007 \003(\0132\034.bms.TEMPERATURES_CELLBOARD0\022=\n"
-      "\027TEMPERATURES_CELLBOARD1\030\010 \003(\0132\034.bms.TEM"
-      "PERATURES_CELLBOARD1\022=\n\027TEMPERATURES_CEL"
-      "LBOARD2\030\t \003(\0132\034.bms.TEMPERATURES_CELLBOA"
-      "RD2\022=\n\027TEMPERATURES_CELLBOARD3\030\n \003(\0132\034.b"
-      "ms.TEMPERATURES_CELLBOARD3\022=\n\027TEMPERATUR"
-      "ES_CELLBOARD4\030\013 \003(\0132\034.bms.TEMPERATURES_C"
-      "ELLBOARD4\022=\n\027TEMPERATURES_CELLBOARD5\030\014 \003"
-      "(\0132\034.bms.TEMPERATURES_CELLBOARD5\0225\n\023VOLT"
-      "AGES_CELLBOARD0\030\r \003(\0132\030.bms.VOLTAGES_CEL"
-      "LBOARD0\0225\n\023VOLTAGES_CELLBOARD1\030\016 \003(\0132\030.b"
-      "ms.VOLTAGES_CELLBOARD1\0225\n\023VOLTAGES_CELLB"
-      "OARD2\030\017 \003(\0132\030.bms.VOLTAGES_CELLBOARD2\0225\n"
-      "\023VOLTAGES_CELLBOARD3\030\020 \003(\0132\030.bms.VOLTAGE"
-      "S_CELLBOARD3\0225\n\023VOLTAGES_CELLBOARD4\030\021 \003("
-      "\0132\030.bms.VOLTAGES_CELLBOARD4\0225\n\023VOLTAGES_"
-      "CELLBOARD5\030\022 \003(\0132\030.bms.VOLTAGES_CELLBOAR"
-      "D5\022!\n\tBALANCING\030\023 \003(\0132\016.bms.BALANCING\022!\n"
-      "\tFW_UPDATE\030\024 \003(\0132\016.bms.FW_UPDATE\0227\n\024FLAS"
-      "H_CELLBOARD_0_TX\030\025 \003(\0132\031.bms.FLASH_CELLB"
-      "OARD_0_TX\0227\n\024FLASH_CELLBOARD_0_RX\030\026 \003(\0132"
-      "\031.bms.FLASH_CELLBOARD_0_RX\0227\n\024FLASH_CELL"
-      "BOARD_1_TX\030\027 \003(\0132\031.bms.FLASH_CELLBOARD_1"
-      "_TX\0227\n\024FLASH_CELLBOARD_1_RX\030\030 \003(\0132\031.bms."
-      "FLASH_CELLBOARD_1_RX\0227\n\024FLASH_CELLBOARD_"
-      "2_TX\030\031 \003(\0132\031.bms.FLASH_CELLBOARD_2_TX\0227\n"
-      "\024FLASH_CELLBOARD_2_RX\030\032 \003(\0132\031.bms.FLASH_"
-      "CELLBOARD_2_RX\0227\n\024FLASH_CELLBOARD_3_TX\030\033"
-      " \003(\0132\031.bms.FLASH_CELLBOARD_3_TX\0227\n\024FLASH"
-      "_CELLBOARD_3_RX\030\034 \003(\0132\031.bms.FLASH_CELLBO"
-      "ARD_3_RX\0227\n\024FLASH_CELLBOARD_4_TX\030\035 \003(\0132\031"
-      ".bms.FLASH_CELLBOARD_4_TX\0227\n\024FLASH_CELLB"
-      "OARD_4_RX\030\036 \003(\0132\031.bms.FLASH_CELLBOARD_4_"
-      "RX\0227\n\024FLASH_CELLBOARD_5_TX\030\037 \003(\0132\031.bms.F"
-      "LASH_CELLBOARD_5_TX\0227\n\024FLASH_CELLBOARD_5"
-      "_RX\030  \003(\0132\031.bms.FLASH_CELLBOARD_5_RX*I\n\017"
-      "BalancingStatus\022\027\n\023BalancingStatus_OFF\020\000"
-      "\022\035\n\031BalancingStatus_DISCHARGE\020\001b\006proto3"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5119);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "bms.proto", &protobuf_RegisterTypes);
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_bms_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_bms_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_bms_2eproto)), true);
 namespace bms {
-const ::google::protobuf::EnumDescriptor* BalancingStatus_descriptor() {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_bms_2eproto::file_level_enum_descriptors[0];
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BalancingStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_bms_2eproto);
+  return file_level_enum_descriptors_bms_2eproto[0];
 }
 bool BalancingStatus_IsValid(int value) {
   switch (value) {
@@ -1325,23 +1259,19 @@ bool BalancingStatus_IsValid(int value) {
 
 void BOARD_STATUS_CELLBOARD0::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD0::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD0::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD0::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD0::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD0::BOARD_STATUS_CELLBOARD0()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD0.base);
+BOARD_STATUS_CELLBOARD0::BOARD_STATUS_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD0)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD0)
 }
 BOARD_STATUS_CELLBOARD0::BOARD_STATUS_CELLBOARD0(const BOARD_STATUS_CELLBOARD0& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -1357,165 +1287,120 @@ void BOARD_STATUS_CELLBOARD0::SharedCtor() {
 BOARD_STATUS_CELLBOARD0::~BOARD_STATUS_CELLBOARD0() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD0)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD0::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD0::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD0* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD0* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD0::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD0::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD0& BOARD_STATUS_CELLBOARD0::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD0.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD0::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD0::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD0)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD0)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD0)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD0::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD0)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD0::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD0::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD0)
   return target;
@@ -1525,45 +1410,48 @@ size_t BOARD_STATUS_CELLBOARD0::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD0)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD0* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD0>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD0>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD0)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD0)
     MergeFrom(*source);
@@ -1573,22 +1461,22 @@ void BOARD_STATUS_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD0::MergeFrom(const BOARD_STATUS_CELLBOARD0& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD0::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD0)
   if (&from == this) return;
   Clear();
@@ -1606,21 +1494,19 @@ bool BOARD_STATUS_CELLBOARD0::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD0::Swap(BOARD_STATUS_CELLBOARD0* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD0::InternalSwap(BOARD_STATUS_CELLBOARD0* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD0, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD0::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD0, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD0::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD0::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1628,23 +1514,19 @@ void BOARD_STATUS_CELLBOARD0::InternalSwap(BOARD_STATUS_CELLBOARD0* other) {
 
 void BOARD_STATUS_CELLBOARD1::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD1::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD1::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD1::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD1::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD1::BOARD_STATUS_CELLBOARD1()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD1.base);
+BOARD_STATUS_CELLBOARD1::BOARD_STATUS_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD1)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD1)
 }
 BOARD_STATUS_CELLBOARD1::BOARD_STATUS_CELLBOARD1(const BOARD_STATUS_CELLBOARD1& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -1660,165 +1542,120 @@ void BOARD_STATUS_CELLBOARD1::SharedCtor() {
 BOARD_STATUS_CELLBOARD1::~BOARD_STATUS_CELLBOARD1() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD1)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD1::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD1::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD1* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD1* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD1::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD1::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD1& BOARD_STATUS_CELLBOARD1::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD1.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD1::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD1::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD1)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD1)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD1)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD1::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD1)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD1::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD1::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD1)
   return target;
@@ -1828,45 +1665,48 @@ size_t BOARD_STATUS_CELLBOARD1::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD1)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD1* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD1>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD1>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD1)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD1)
     MergeFrom(*source);
@@ -1876,22 +1716,22 @@ void BOARD_STATUS_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD1::MergeFrom(const BOARD_STATUS_CELLBOARD1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD1::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD1)
   if (&from == this) return;
   Clear();
@@ -1909,21 +1749,19 @@ bool BOARD_STATUS_CELLBOARD1::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD1::Swap(BOARD_STATUS_CELLBOARD1* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD1::InternalSwap(BOARD_STATUS_CELLBOARD1* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD1, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD1::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD1, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD1::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD1::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -1931,23 +1769,19 @@ void BOARD_STATUS_CELLBOARD1::InternalSwap(BOARD_STATUS_CELLBOARD1* other) {
 
 void BOARD_STATUS_CELLBOARD2::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD2::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD2::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD2::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD2::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD2::BOARD_STATUS_CELLBOARD2()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD2.base);
+BOARD_STATUS_CELLBOARD2::BOARD_STATUS_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD2)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD2)
 }
 BOARD_STATUS_CELLBOARD2::BOARD_STATUS_CELLBOARD2(const BOARD_STATUS_CELLBOARD2& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -1963,165 +1797,120 @@ void BOARD_STATUS_CELLBOARD2::SharedCtor() {
 BOARD_STATUS_CELLBOARD2::~BOARD_STATUS_CELLBOARD2() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD2)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD2::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD2::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD2* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD2* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD2::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD2::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD2& BOARD_STATUS_CELLBOARD2::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD2.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD2::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD2::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD2)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD2)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD2)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD2::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD2)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD2::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD2::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD2)
   return target;
@@ -2131,45 +1920,48 @@ size_t BOARD_STATUS_CELLBOARD2::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD2)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD2* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD2>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD2>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD2)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD2)
     MergeFrom(*source);
@@ -2179,22 +1971,22 @@ void BOARD_STATUS_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD2::MergeFrom(const BOARD_STATUS_CELLBOARD2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD2::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD2)
   if (&from == this) return;
   Clear();
@@ -2212,21 +2004,19 @@ bool BOARD_STATUS_CELLBOARD2::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD2::Swap(BOARD_STATUS_CELLBOARD2* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD2::InternalSwap(BOARD_STATUS_CELLBOARD2* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD2, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD2::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD2, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD2::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD2::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -2234,23 +2024,19 @@ void BOARD_STATUS_CELLBOARD2::InternalSwap(BOARD_STATUS_CELLBOARD2* other) {
 
 void BOARD_STATUS_CELLBOARD3::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD3::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD3::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD3::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD3::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD3::BOARD_STATUS_CELLBOARD3()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD3.base);
+BOARD_STATUS_CELLBOARD3::BOARD_STATUS_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD3)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD3)
 }
 BOARD_STATUS_CELLBOARD3::BOARD_STATUS_CELLBOARD3(const BOARD_STATUS_CELLBOARD3& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -2266,165 +2052,120 @@ void BOARD_STATUS_CELLBOARD3::SharedCtor() {
 BOARD_STATUS_CELLBOARD3::~BOARD_STATUS_CELLBOARD3() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD3)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD3::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD3::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD3* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD3* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD3::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD3::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD3& BOARD_STATUS_CELLBOARD3::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD3.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD3::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD3::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD3)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD3)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD3)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD3::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD3)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD3::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD3::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD3)
   return target;
@@ -2434,45 +2175,48 @@ size_t BOARD_STATUS_CELLBOARD3::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD3)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD3* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD3>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD3>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD3)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD3)
     MergeFrom(*source);
@@ -2482,22 +2226,22 @@ void BOARD_STATUS_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD3::MergeFrom(const BOARD_STATUS_CELLBOARD3& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD3::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD3)
   if (&from == this) return;
   Clear();
@@ -2515,21 +2259,19 @@ bool BOARD_STATUS_CELLBOARD3::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD3::Swap(BOARD_STATUS_CELLBOARD3* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD3::InternalSwap(BOARD_STATUS_CELLBOARD3* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD3, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD3::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD3, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD3::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD3::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -2537,23 +2279,19 @@ void BOARD_STATUS_CELLBOARD3::InternalSwap(BOARD_STATUS_CELLBOARD3* other) {
 
 void BOARD_STATUS_CELLBOARD4::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD4::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD4::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD4::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD4::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD4::BOARD_STATUS_CELLBOARD4()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD4.base);
+BOARD_STATUS_CELLBOARD4::BOARD_STATUS_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD4)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD4)
 }
 BOARD_STATUS_CELLBOARD4::BOARD_STATUS_CELLBOARD4(const BOARD_STATUS_CELLBOARD4& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -2569,165 +2307,120 @@ void BOARD_STATUS_CELLBOARD4::SharedCtor() {
 BOARD_STATUS_CELLBOARD4::~BOARD_STATUS_CELLBOARD4() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD4)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD4::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD4::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD4* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD4* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD4::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD4::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD4& BOARD_STATUS_CELLBOARD4::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD4.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD4::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD4::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD4)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD4)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD4)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD4::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD4)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD4::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD4::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD4)
   return target;
@@ -2737,45 +2430,48 @@ size_t BOARD_STATUS_CELLBOARD4::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD4)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD4* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD4>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD4>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD4)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD4)
     MergeFrom(*source);
@@ -2785,22 +2481,22 @@ void BOARD_STATUS_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD4::MergeFrom(const BOARD_STATUS_CELLBOARD4& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD4::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD4)
   if (&from == this) return;
   Clear();
@@ -2818,21 +2514,19 @@ bool BOARD_STATUS_CELLBOARD4::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD4::Swap(BOARD_STATUS_CELLBOARD4* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD4::InternalSwap(BOARD_STATUS_CELLBOARD4* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD4, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD4::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD4, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD4::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD4::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -2840,23 +2534,19 @@ void BOARD_STATUS_CELLBOARD4::InternalSwap(BOARD_STATUS_CELLBOARD4* other) {
 
 void BOARD_STATUS_CELLBOARD5::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BOARD_STATUS_CELLBOARD5::kErrorsFieldNumber;
-const int BOARD_STATUS_CELLBOARD5::kBalancingStatusFieldNumber;
-const int BOARD_STATUS_CELLBOARD5::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BOARD_STATUS_CELLBOARD5::_Internal {
+ public:
+};
 
-BOARD_STATUS_CELLBOARD5::BOARD_STATUS_CELLBOARD5()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD5.base);
+BOARD_STATUS_CELLBOARD5::BOARD_STATUS_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BOARD_STATUS_CELLBOARD5)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD5)
 }
 BOARD_STATUS_CELLBOARD5::BOARD_STATUS_CELLBOARD5(const BOARD_STATUS_CELLBOARD5& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&errors_, &from.errors_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
@@ -2872,165 +2562,120 @@ void BOARD_STATUS_CELLBOARD5::SharedCtor() {
 BOARD_STATUS_CELLBOARD5::~BOARD_STATUS_CELLBOARD5() {
   // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD5)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BOARD_STATUS_CELLBOARD5::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BOARD_STATUS_CELLBOARD5::ArenaDtor(void* object) {
+  BOARD_STATUS_CELLBOARD5* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD5* >(object);
+  (void)_this;
+}
+void BOARD_STATUS_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BOARD_STATUS_CELLBOARD5::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BOARD_STATUS_CELLBOARD5::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BOARD_STATUS_CELLBOARD5& BOARD_STATUS_CELLBOARD5::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BOARD_STATUS_CELLBOARD5.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BOARD_STATUS_CELLBOARD5::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&errors_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BOARD_STATUS_CELLBOARD5::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BOARD_STATUS_CELLBOARD5)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BOARD_STATUS_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 errors = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &errors_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // .bms.BalancingStatus balancing_status = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_balancing_status(static_cast< ::bms::BalancingStatus >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BOARD_STATUS_CELLBOARD5)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BOARD_STATUS_CELLBOARD5)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BOARD_STATUS_CELLBOARD5::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BOARD_STATUS_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->errors(), output);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->balancing_status(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BOARD_STATUS_CELLBOARD5)
-}
-
-::google::protobuf::uint8* BOARD_STATUS_CELLBOARD5::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD5::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 errors = 1;
   if (this->errors() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->errors(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->balancing_status(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_balancing_status(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD5)
   return target;
@@ -3040,45 +2685,48 @@ size_t BOARD_STATUS_CELLBOARD5::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD5)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 errors = 1;
   if (this->errors() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->errors());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_errors());
   }
 
   // .bms.BalancingStatus balancing_status = 2;
   if (this->balancing_status() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->balancing_status());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
   const BOARD_STATUS_CELLBOARD5* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BOARD_STATUS_CELLBOARD5>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD5>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD5)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD5)
     MergeFrom(*source);
@@ -3088,22 +2736,22 @@ void BOARD_STATUS_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from)
 void BOARD_STATUS_CELLBOARD5::MergeFrom(const BOARD_STATUS_CELLBOARD5& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.errors() != 0) {
-    set_errors(from.errors());
+    _internal_set_errors(from._internal_errors());
   }
   if (from.balancing_status() != 0) {
-    set_balancing_status(from.balancing_status());
+    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BOARD_STATUS_CELLBOARD5::CopyFrom(const ::google::protobuf::Message& from) {
+void BOARD_STATUS_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD5)
   if (&from == this) return;
   Clear();
@@ -3121,21 +2769,19 @@ bool BOARD_STATUS_CELLBOARD5::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD5::Swap(BOARD_STATUS_CELLBOARD5* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BOARD_STATUS_CELLBOARD5::InternalSwap(BOARD_STATUS_CELLBOARD5* other) {
   using std::swap;
-  swap(errors_, other->errors_);
-  swap(balancing_status_, other->balancing_status_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD5, _inner_timestamp_)
+      + sizeof(BOARD_STATUS_CELLBOARD5::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD5, errors_)>(
+          reinterpret_cast<char*>(&errors_),
+          reinterpret_cast<char*>(&other->errors_));
 }
 
-::google::protobuf::Metadata BOARD_STATUS_CELLBOARD5::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD5::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -3143,28 +2789,19 @@ void BOARD_STATUS_CELLBOARD5::InternalSwap(BOARD_STATUS_CELLBOARD5* other) {
 
 void TEMPERATURES_CELLBOARD0::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD0::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD0::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD0::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD0::TEMPERATURES_CELLBOARD0()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD0.base);
+TEMPERATURES_CELLBOARD0::TEMPERATURES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD0)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD0)
 }
 TEMPERATURES_CELLBOARD0::TEMPERATURES_CELLBOARD0(const TEMPERATURES_CELLBOARD0& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -3180,282 +2817,183 @@ void TEMPERATURES_CELLBOARD0::SharedCtor() {
 TEMPERATURES_CELLBOARD0::~TEMPERATURES_CELLBOARD0() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD0)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD0::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD0::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD0* _this = reinterpret_cast< TEMPERATURES_CELLBOARD0* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD0::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD0::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD0& TEMPERATURES_CELLBOARD0::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD0.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD0::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD0::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD0)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD0)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD0)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD0::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD0)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD0::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD0::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD0)
   return target;
@@ -3465,69 +3003,72 @@ size_t TEMPERATURES_CELLBOARD0::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD0)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD0* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD0>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD0>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD0)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD0)
     MergeFrom(*source);
@@ -3537,37 +3078,37 @@ void TEMPERATURES_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD0::MergeFrom(const TEMPERATURES_CELLBOARD0& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD0::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD0)
   if (&from == this) return;
   Clear();
@@ -3585,26 +3126,19 @@ bool TEMPERATURES_CELLBOARD0::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD0::Swap(TEMPERATURES_CELLBOARD0* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD0::InternalSwap(TEMPERATURES_CELLBOARD0* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD0, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD0::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD0, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD0::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD0::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -3612,28 +3146,19 @@ void TEMPERATURES_CELLBOARD0::InternalSwap(TEMPERATURES_CELLBOARD0* other) {
 
 void TEMPERATURES_CELLBOARD1::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD1::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD1::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD1::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD1::TEMPERATURES_CELLBOARD1()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD1.base);
+TEMPERATURES_CELLBOARD1::TEMPERATURES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD1)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD1)
 }
 TEMPERATURES_CELLBOARD1::TEMPERATURES_CELLBOARD1(const TEMPERATURES_CELLBOARD1& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -3649,282 +3174,183 @@ void TEMPERATURES_CELLBOARD1::SharedCtor() {
 TEMPERATURES_CELLBOARD1::~TEMPERATURES_CELLBOARD1() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD1)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD1::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD1::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD1* _this = reinterpret_cast< TEMPERATURES_CELLBOARD1* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD1::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD1::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD1& TEMPERATURES_CELLBOARD1::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD1.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD1::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD1::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD1)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD1)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD1)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD1::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD1)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD1::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD1::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD1)
   return target;
@@ -3934,69 +3360,72 @@ size_t TEMPERATURES_CELLBOARD1::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD1)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD1* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD1>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD1>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD1)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD1)
     MergeFrom(*source);
@@ -4006,37 +3435,37 @@ void TEMPERATURES_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD1::MergeFrom(const TEMPERATURES_CELLBOARD1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD1::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD1)
   if (&from == this) return;
   Clear();
@@ -4054,26 +3483,19 @@ bool TEMPERATURES_CELLBOARD1::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD1::Swap(TEMPERATURES_CELLBOARD1* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD1::InternalSwap(TEMPERATURES_CELLBOARD1* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD1, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD1::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD1, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD1::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD1::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -4081,28 +3503,19 @@ void TEMPERATURES_CELLBOARD1::InternalSwap(TEMPERATURES_CELLBOARD1* other) {
 
 void TEMPERATURES_CELLBOARD2::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD2::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD2::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD2::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD2::TEMPERATURES_CELLBOARD2()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD2.base);
+TEMPERATURES_CELLBOARD2::TEMPERATURES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD2)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD2)
 }
 TEMPERATURES_CELLBOARD2::TEMPERATURES_CELLBOARD2(const TEMPERATURES_CELLBOARD2& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -4118,282 +3531,183 @@ void TEMPERATURES_CELLBOARD2::SharedCtor() {
 TEMPERATURES_CELLBOARD2::~TEMPERATURES_CELLBOARD2() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD2)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD2::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD2::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD2* _this = reinterpret_cast< TEMPERATURES_CELLBOARD2* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD2::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD2::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD2& TEMPERATURES_CELLBOARD2::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD2.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD2::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD2::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD2)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD2)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD2)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD2::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD2)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD2::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD2::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD2)
   return target;
@@ -4403,69 +3717,72 @@ size_t TEMPERATURES_CELLBOARD2::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD2)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD2* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD2>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD2>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD2)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD2)
     MergeFrom(*source);
@@ -4475,37 +3792,37 @@ void TEMPERATURES_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD2::MergeFrom(const TEMPERATURES_CELLBOARD2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD2::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD2)
   if (&from == this) return;
   Clear();
@@ -4523,26 +3840,19 @@ bool TEMPERATURES_CELLBOARD2::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD2::Swap(TEMPERATURES_CELLBOARD2* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD2::InternalSwap(TEMPERATURES_CELLBOARD2* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD2, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD2::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD2, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD2::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD2::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -4550,28 +3860,19 @@ void TEMPERATURES_CELLBOARD2::InternalSwap(TEMPERATURES_CELLBOARD2* other) {
 
 void TEMPERATURES_CELLBOARD3::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD3::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD3::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD3::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD3::TEMPERATURES_CELLBOARD3()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD3.base);
+TEMPERATURES_CELLBOARD3::TEMPERATURES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD3)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD3)
 }
 TEMPERATURES_CELLBOARD3::TEMPERATURES_CELLBOARD3(const TEMPERATURES_CELLBOARD3& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -4587,282 +3888,183 @@ void TEMPERATURES_CELLBOARD3::SharedCtor() {
 TEMPERATURES_CELLBOARD3::~TEMPERATURES_CELLBOARD3() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD3)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD3::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD3::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD3* _this = reinterpret_cast< TEMPERATURES_CELLBOARD3* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD3::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD3::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD3& TEMPERATURES_CELLBOARD3::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD3.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD3::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD3::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD3)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD3)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD3)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD3::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD3)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD3::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD3::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD3)
   return target;
@@ -4872,69 +4074,72 @@ size_t TEMPERATURES_CELLBOARD3::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD3)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD3* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD3>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD3>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD3)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD3)
     MergeFrom(*source);
@@ -4944,37 +4149,37 @@ void TEMPERATURES_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD3::MergeFrom(const TEMPERATURES_CELLBOARD3& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD3::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD3)
   if (&from == this) return;
   Clear();
@@ -4992,26 +4197,19 @@ bool TEMPERATURES_CELLBOARD3::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD3::Swap(TEMPERATURES_CELLBOARD3* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD3::InternalSwap(TEMPERATURES_CELLBOARD3* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD3, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD3::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD3, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD3::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD3::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -5019,28 +4217,19 @@ void TEMPERATURES_CELLBOARD3::InternalSwap(TEMPERATURES_CELLBOARD3* other) {
 
 void TEMPERATURES_CELLBOARD4::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD4::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD4::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD4::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD4::TEMPERATURES_CELLBOARD4()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD4.base);
+TEMPERATURES_CELLBOARD4::TEMPERATURES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD4)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD4)
 }
 TEMPERATURES_CELLBOARD4::TEMPERATURES_CELLBOARD4(const TEMPERATURES_CELLBOARD4& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -5056,282 +4245,183 @@ void TEMPERATURES_CELLBOARD4::SharedCtor() {
 TEMPERATURES_CELLBOARD4::~TEMPERATURES_CELLBOARD4() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD4)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD4::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD4::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD4* _this = reinterpret_cast< TEMPERATURES_CELLBOARD4* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD4::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD4::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD4& TEMPERATURES_CELLBOARD4::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD4.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD4::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD4::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD4)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD4)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD4)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD4::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD4)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD4::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD4::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD4)
   return target;
@@ -5341,69 +4431,72 @@ size_t TEMPERATURES_CELLBOARD4::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD4)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD4* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD4>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD4>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD4)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD4)
     MergeFrom(*source);
@@ -5413,37 +4506,37 @@ void TEMPERATURES_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD4::MergeFrom(const TEMPERATURES_CELLBOARD4& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD4::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD4)
   if (&from == this) return;
   Clear();
@@ -5461,26 +4554,19 @@ bool TEMPERATURES_CELLBOARD4::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD4::Swap(TEMPERATURES_CELLBOARD4* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD4::InternalSwap(TEMPERATURES_CELLBOARD4* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD4, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD4::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD4, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD4::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD4::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -5488,28 +4574,19 @@ void TEMPERATURES_CELLBOARD4::InternalSwap(TEMPERATURES_CELLBOARD4* other) {
 
 void TEMPERATURES_CELLBOARD5::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TEMPERATURES_CELLBOARD5::kStartIndexFieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp0FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp1FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp2FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp3FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp4FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kTemp5FieldNumber;
-const int TEMPERATURES_CELLBOARD5::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TEMPERATURES_CELLBOARD5::_Internal {
+ public:
+};
 
-TEMPERATURES_CELLBOARD5::TEMPERATURES_CELLBOARD5()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD5.base);
+TEMPERATURES_CELLBOARD5::TEMPERATURES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.TEMPERATURES_CELLBOARD5)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD5)
 }
 TEMPERATURES_CELLBOARD5::TEMPERATURES_CELLBOARD5(const TEMPERATURES_CELLBOARD5& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
@@ -5525,282 +4602,183 @@ void TEMPERATURES_CELLBOARD5::SharedCtor() {
 TEMPERATURES_CELLBOARD5::~TEMPERATURES_CELLBOARD5() {
   // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD5)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TEMPERATURES_CELLBOARD5::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void TEMPERATURES_CELLBOARD5::ArenaDtor(void* object) {
+  TEMPERATURES_CELLBOARD5* _this = reinterpret_cast< TEMPERATURES_CELLBOARD5* >(object);
+  (void)_this;
+}
+void TEMPERATURES_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TEMPERATURES_CELLBOARD5::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* TEMPERATURES_CELLBOARD5::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const TEMPERATURES_CELLBOARD5& TEMPERATURES_CELLBOARD5::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_TEMPERATURES_CELLBOARD5.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void TEMPERATURES_CELLBOARD5::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&temp5_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool TEMPERATURES_CELLBOARD5::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.TEMPERATURES_CELLBOARD5)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* TEMPERATURES_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float temp0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp3 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp3_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp4 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp4_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
+          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float temp5 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &temp5_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
+          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.TEMPERATURES_CELLBOARD5)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.TEMPERATURES_CELLBOARD5)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void TEMPERATURES_CELLBOARD5::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.TEMPERATURES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float temp0 = 2;
-  if (this->temp0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->temp0(), output);
-  }
-
-  // float temp1 = 3;
-  if (this->temp1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->temp1(), output);
-  }
-
-  // float temp2 = 4;
-  if (this->temp2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->temp2(), output);
-  }
-
-  // float temp3 = 5;
-  if (this->temp3() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->temp3(), output);
-  }
-
-  // float temp4 = 6;
-  if (this->temp4() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->temp4(), output);
-  }
-
-  // float temp5 = 7;
-  if (this->temp5() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->temp5(), output);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(8, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.TEMPERATURES_CELLBOARD5)
-}
-
-::google::protobuf::uint8* TEMPERATURES_CELLBOARD5::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD5::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->temp0(), target);
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->temp1(), target);
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->temp2(), target);
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->temp3(), target);
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->temp4(), target);
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->temp5(), target);
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(8, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD5)
   return target;
@@ -5810,69 +4788,72 @@ size_t TEMPERATURES_CELLBOARD5::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD5)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float temp0 = 2;
-  if (this->temp0() != 0) {
+  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp1 = 3;
-  if (this->temp1() != 0) {
+  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp2 = 4;
-  if (this->temp2() != 0) {
+  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp3 = 5;
-  if (this->temp3() != 0) {
+  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float temp4 = 6;
-  if (this->temp4() != 0) {
+  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 8;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // float temp5 = 7;
-  if (this->temp5() != 0) {
+  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
     total_size += 1 + 4;
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
   const TEMPERATURES_CELLBOARD5* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TEMPERATURES_CELLBOARD5>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD5>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD5)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD5)
     MergeFrom(*source);
@@ -5882,37 +4863,37 @@ void TEMPERATURES_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from)
 void TEMPERATURES_CELLBOARD5::MergeFrom(const TEMPERATURES_CELLBOARD5& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.temp0() != 0) {
-    set_temp0(from.temp0());
+  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
+    _internal_set_temp0(from._internal_temp0());
   }
-  if (from.temp1() != 0) {
-    set_temp1(from.temp1());
+  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
+    _internal_set_temp1(from._internal_temp1());
   }
-  if (from.temp2() != 0) {
-    set_temp2(from.temp2());
+  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
+    _internal_set_temp2(from._internal_temp2());
   }
-  if (from.temp3() != 0) {
-    set_temp3(from.temp3());
+  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
+    _internal_set_temp3(from._internal_temp3());
   }
-  if (from.temp4() != 0) {
-    set_temp4(from.temp4());
+  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
+    _internal_set_temp4(from._internal_temp4());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.temp5() != 0) {
-    set_temp5(from.temp5());
+  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
+    _internal_set_temp5(from._internal_temp5());
   }
 }
 
-void TEMPERATURES_CELLBOARD5::CopyFrom(const ::google::protobuf::Message& from) {
+void TEMPERATURES_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD5)
   if (&from == this) return;
   Clear();
@@ -5930,26 +4911,19 @@ bool TEMPERATURES_CELLBOARD5::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD5::Swap(TEMPERATURES_CELLBOARD5* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TEMPERATURES_CELLBOARD5::InternalSwap(TEMPERATURES_CELLBOARD5* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(temp0_, other->temp0_);
-  swap(temp1_, other->temp1_);
-  swap(temp2_, other->temp2_);
-  swap(temp3_, other->temp3_);
-  swap(temp4_, other->temp4_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(temp5_, other->temp5_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD5, temp5_)
+      + sizeof(TEMPERATURES_CELLBOARD5::temp5_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD5, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata TEMPERATURES_CELLBOARD5::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD5::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -5957,25 +4931,19 @@ void TEMPERATURES_CELLBOARD5::InternalSwap(TEMPERATURES_CELLBOARD5* other) {
 
 void VOLTAGES_CELLBOARD0::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD0::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD0::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD0::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD0::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD0::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD0::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD0.base);
+VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD0)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD0)
 }
 VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(const VOLTAGES_CELLBOARD0& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -5991,210 +4959,144 @@ void VOLTAGES_CELLBOARD0::SharedCtor() {
 VOLTAGES_CELLBOARD0::~VOLTAGES_CELLBOARD0() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD0)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD0::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD0::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD0* _this = reinterpret_cast< VOLTAGES_CELLBOARD0* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD0::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD0::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD0& VOLTAGES_CELLBOARD0::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD0.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD0::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD0::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD0)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD0)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD0)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD0::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD0)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD0::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD0::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD0)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD0)
   return target;
@@ -6204,54 +5106,57 @@ size_t VOLTAGES_CELLBOARD0::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD0)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD0* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD0>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD0>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD0)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD0)
     MergeFrom(*source);
@@ -6261,28 +5166,28 @@ void VOLTAGES_CELLBOARD0::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD0::MergeFrom(const VOLTAGES_CELLBOARD0& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD0)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD0::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD0)
   if (&from == this) return;
   Clear();
@@ -6300,23 +5205,19 @@ bool VOLTAGES_CELLBOARD0::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD0::Swap(VOLTAGES_CELLBOARD0* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD0::InternalSwap(VOLTAGES_CELLBOARD0* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD0::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD0::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD0::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -6324,25 +5225,19 @@ void VOLTAGES_CELLBOARD0::InternalSwap(VOLTAGES_CELLBOARD0* other) {
 
 void VOLTAGES_CELLBOARD1::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD1::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD1::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD1::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD1::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD1::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD1::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD1.base);
+VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD1)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD1)
 }
 VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(const VOLTAGES_CELLBOARD1& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -6358,210 +5253,144 @@ void VOLTAGES_CELLBOARD1::SharedCtor() {
 VOLTAGES_CELLBOARD1::~VOLTAGES_CELLBOARD1() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD1)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD1::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD1::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD1* _this = reinterpret_cast< VOLTAGES_CELLBOARD1* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD1::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD1::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD1& VOLTAGES_CELLBOARD1::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD1.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD1::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD1::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD1)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD1)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD1)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD1::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD1)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD1::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD1::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD1)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD1)
   return target;
@@ -6571,54 +5400,57 @@ size_t VOLTAGES_CELLBOARD1::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD1)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD1* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD1>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD1>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD1)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD1)
     MergeFrom(*source);
@@ -6628,28 +5460,28 @@ void VOLTAGES_CELLBOARD1::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD1::MergeFrom(const VOLTAGES_CELLBOARD1& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD1)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD1::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD1)
   if (&from == this) return;
   Clear();
@@ -6667,23 +5499,19 @@ bool VOLTAGES_CELLBOARD1::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD1::Swap(VOLTAGES_CELLBOARD1* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD1::InternalSwap(VOLTAGES_CELLBOARD1* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD1::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD1::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD1::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -6691,25 +5519,19 @@ void VOLTAGES_CELLBOARD1::InternalSwap(VOLTAGES_CELLBOARD1* other) {
 
 void VOLTAGES_CELLBOARD2::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD2::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD2::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD2::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD2::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD2::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD2::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD2.base);
+VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD2)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD2)
 }
 VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(const VOLTAGES_CELLBOARD2& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -6725,210 +5547,144 @@ void VOLTAGES_CELLBOARD2::SharedCtor() {
 VOLTAGES_CELLBOARD2::~VOLTAGES_CELLBOARD2() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD2)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD2::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD2::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD2* _this = reinterpret_cast< VOLTAGES_CELLBOARD2* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD2::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD2::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD2& VOLTAGES_CELLBOARD2::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD2.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD2::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD2::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD2)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD2)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD2)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD2::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD2)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD2::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD2::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD2)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD2)
   return target;
@@ -6938,54 +5694,57 @@ size_t VOLTAGES_CELLBOARD2::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD2)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD2* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD2>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD2>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD2)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD2)
     MergeFrom(*source);
@@ -6995,28 +5754,28 @@ void VOLTAGES_CELLBOARD2::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD2::MergeFrom(const VOLTAGES_CELLBOARD2& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD2)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD2::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD2)
   if (&from == this) return;
   Clear();
@@ -7034,23 +5793,19 @@ bool VOLTAGES_CELLBOARD2::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD2::Swap(VOLTAGES_CELLBOARD2* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD2::InternalSwap(VOLTAGES_CELLBOARD2* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD2::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD2::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD2::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -7058,25 +5813,19 @@ void VOLTAGES_CELLBOARD2::InternalSwap(VOLTAGES_CELLBOARD2* other) {
 
 void VOLTAGES_CELLBOARD3::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD3::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD3::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD3::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD3::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD3::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD3::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD3.base);
+VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD3)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD3)
 }
 VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(const VOLTAGES_CELLBOARD3& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -7092,210 +5841,144 @@ void VOLTAGES_CELLBOARD3::SharedCtor() {
 VOLTAGES_CELLBOARD3::~VOLTAGES_CELLBOARD3() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD3)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD3::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD3::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD3* _this = reinterpret_cast< VOLTAGES_CELLBOARD3* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD3::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD3::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD3& VOLTAGES_CELLBOARD3::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD3.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD3::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD3::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD3)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD3)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD3)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD3::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD3)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD3::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD3::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD3)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD3)
   return target;
@@ -7305,54 +5988,57 @@ size_t VOLTAGES_CELLBOARD3::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD3)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD3* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD3>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD3>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD3)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD3)
     MergeFrom(*source);
@@ -7362,28 +6048,28 @@ void VOLTAGES_CELLBOARD3::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD3::MergeFrom(const VOLTAGES_CELLBOARD3& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD3)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD3::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD3)
   if (&from == this) return;
   Clear();
@@ -7401,23 +6087,19 @@ bool VOLTAGES_CELLBOARD3::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD3::Swap(VOLTAGES_CELLBOARD3* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD3::InternalSwap(VOLTAGES_CELLBOARD3* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD3::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD3::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD3::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -7425,25 +6107,19 @@ void VOLTAGES_CELLBOARD3::InternalSwap(VOLTAGES_CELLBOARD3* other) {
 
 void VOLTAGES_CELLBOARD4::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD4::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD4::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD4::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD4::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD4::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD4::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD4.base);
+VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD4)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD4)
 }
 VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(const VOLTAGES_CELLBOARD4& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -7459,210 +6135,144 @@ void VOLTAGES_CELLBOARD4::SharedCtor() {
 VOLTAGES_CELLBOARD4::~VOLTAGES_CELLBOARD4() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD4)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD4::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD4::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD4* _this = reinterpret_cast< VOLTAGES_CELLBOARD4* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD4::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD4::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD4& VOLTAGES_CELLBOARD4::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD4.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD4::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD4::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD4)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD4)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD4)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD4::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD4)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD4::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD4::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD4)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD4)
   return target;
@@ -7672,54 +6282,57 @@ size_t VOLTAGES_CELLBOARD4::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD4)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD4* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD4>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD4>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD4)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD4)
     MergeFrom(*source);
@@ -7729,28 +6342,28 @@ void VOLTAGES_CELLBOARD4::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD4::MergeFrom(const VOLTAGES_CELLBOARD4& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD4)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD4::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD4)
   if (&from == this) return;
   Clear();
@@ -7768,23 +6381,19 @@ bool VOLTAGES_CELLBOARD4::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD4::Swap(VOLTAGES_CELLBOARD4* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD4::InternalSwap(VOLTAGES_CELLBOARD4* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD4::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD4::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD4::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -7792,25 +6401,19 @@ void VOLTAGES_CELLBOARD4::InternalSwap(VOLTAGES_CELLBOARD4* other) {
 
 void VOLTAGES_CELLBOARD5::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int VOLTAGES_CELLBOARD5::kStartIndexFieldNumber;
-const int VOLTAGES_CELLBOARD5::kVoltage0FieldNumber;
-const int VOLTAGES_CELLBOARD5::kVoltage1FieldNumber;
-const int VOLTAGES_CELLBOARD5::kVoltage2FieldNumber;
-const int VOLTAGES_CELLBOARD5::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class VOLTAGES_CELLBOARD5::_Internal {
+ public:
+};
 
-VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD5.base);
+VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.VOLTAGES_CELLBOARD5)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD5)
 }
 VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(const VOLTAGES_CELLBOARD5& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&start_index_, &from.start_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
@@ -7826,210 +6429,144 @@ void VOLTAGES_CELLBOARD5::SharedCtor() {
 VOLTAGES_CELLBOARD5::~VOLTAGES_CELLBOARD5() {
   // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD5)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VOLTAGES_CELLBOARD5::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void VOLTAGES_CELLBOARD5::ArenaDtor(void* object) {
+  VOLTAGES_CELLBOARD5* _this = reinterpret_cast< VOLTAGES_CELLBOARD5* >(object);
+  (void)_this;
+}
+void VOLTAGES_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VOLTAGES_CELLBOARD5::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* VOLTAGES_CELLBOARD5::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const VOLTAGES_CELLBOARD5& VOLTAGES_CELLBOARD5::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_VOLTAGES_CELLBOARD5.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void VOLTAGES_CELLBOARD5::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&start_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool VOLTAGES_CELLBOARD5::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.VOLTAGES_CELLBOARD5)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* VOLTAGES_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 start_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &start_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // float voltage0 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage0_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage1 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage1_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // float voltage2 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &voltage2_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.VOLTAGES_CELLBOARD5)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.VOLTAGES_CELLBOARD5)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void VOLTAGES_CELLBOARD5::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.VOLTAGES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->start_index(), output);
-  }
-
-  // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->voltage0(), output);
-  }
-
-  // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->voltage1(), output);
-  }
-
-  // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->voltage2(), output);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(5, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.VOLTAGES_CELLBOARD5)
-}
-
-::google::protobuf::uint8* VOLTAGES_CELLBOARD5::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD5::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD5)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->start_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->voltage0(), target);
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->voltage1(), target);
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->voltage2(), target);
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(5, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD5)
   return target;
@@ -8039,54 +6576,57 @@ size_t VOLTAGES_CELLBOARD5::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD5)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 start_index = 1;
   if (this->start_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->start_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_start_index());
   }
 
   // float voltage0 = 2;
-  if (this->voltage0() != 0) {
+  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage1 = 3;
-  if (this->voltage1() != 0) {
+  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
   // float voltage2 = 4;
-  if (this->voltage2() != 0) {
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
   const VOLTAGES_CELLBOARD5* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const VOLTAGES_CELLBOARD5>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD5>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD5)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD5)
     MergeFrom(*source);
@@ -8096,28 +6636,28 @@ void VOLTAGES_CELLBOARD5::MergeFrom(const ::google::protobuf::Message& from) {
 void VOLTAGES_CELLBOARD5::MergeFrom(const VOLTAGES_CELLBOARD5& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD5)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.start_index() != 0) {
-    set_start_index(from.start_index());
+    _internal_set_start_index(from._internal_start_index());
   }
-  if (from.voltage0() != 0) {
-    set_voltage0(from.voltage0());
+  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
+    _internal_set_voltage0(from._internal_voltage0());
   }
-  if (from.voltage1() != 0) {
-    set_voltage1(from.voltage1());
+  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
+    _internal_set_voltage1(from._internal_voltage1());
   }
-  if (from.voltage2() != 0) {
-    set_voltage2(from.voltage2());
+  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
+    _internal_set_voltage2(from._internal_voltage2());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void VOLTAGES_CELLBOARD5::CopyFrom(const ::google::protobuf::Message& from) {
+void VOLTAGES_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD5)
   if (&from == this) return;
   Clear();
@@ -8135,23 +6675,19 @@ bool VOLTAGES_CELLBOARD5::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD5::Swap(VOLTAGES_CELLBOARD5* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void VOLTAGES_CELLBOARD5::InternalSwap(VOLTAGES_CELLBOARD5* other) {
   using std::swap;
-  swap(start_index_, other->start_index_);
-  swap(voltage0_, other->voltage0_);
-  swap(voltage1_, other->voltage1_);
-  swap(voltage2_, other->voltage2_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, _inner_timestamp_)
+      + sizeof(VOLTAGES_CELLBOARD5::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, start_index_)>(
+          reinterpret_cast<char*>(&start_index_),
+          reinterpret_cast<char*>(&other->start_index_));
 }
 
-::google::protobuf::Metadata VOLTAGES_CELLBOARD5::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD5::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -8159,23 +6695,19 @@ void VOLTAGES_CELLBOARD5::InternalSwap(VOLTAGES_CELLBOARD5* other) {
 
 void BALANCING::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int BALANCING::kBoardIndexFieldNumber;
-const int BALANCING::kCellsFieldNumber;
-const int BALANCING::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class BALANCING::_Internal {
+ public:
+};
 
-BALANCING::BALANCING()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_BALANCING.base);
+BALANCING::BALANCING(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.BALANCING)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.BALANCING)
 }
 BALANCING::BALANCING(const BALANCING& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&board_index_, &from.board_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
     reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
@@ -8191,162 +6723,118 @@ void BALANCING::SharedCtor() {
 BALANCING::~BALANCING() {
   // @@protoc_insertion_point(destructor:bms.BALANCING)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void BALANCING::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void BALANCING::ArenaDtor(void* object) {
+  BALANCING* _this = reinterpret_cast< BALANCING* >(object);
+  (void)_this;
+}
+void BALANCING::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void BALANCING::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* BALANCING::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const BALANCING& BALANCING::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_BALANCING.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BALANCING_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void BALANCING::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.BALANCING)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&board_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
       reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool BALANCING::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.BALANCING)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* BALANCING::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 board_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &board_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // uint32 cells = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &cells_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.BALANCING)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.BALANCING)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void BALANCING::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.BALANCING)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 board_index = 1;
-  if (this->board_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->board_index(), output);
-  }
-
-  // uint32 cells = 2;
-  if (this->cells() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->cells(), output);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.BALANCING)
-}
-
-::google::protobuf::uint8* BALANCING::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* BALANCING::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.BALANCING)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 board_index = 1;
   if (this->board_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->board_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_board_index(), target);
   }
 
   // uint32 cells = 2;
   if (this->cells() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->cells(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cells(), target);
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.BALANCING)
   return target;
@@ -8356,46 +6844,49 @@ size_t BALANCING::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.BALANCING)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint32 board_index = 1;
   if (this->board_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->board_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_board_index());
   }
 
   // uint32 cells = 2;
   if (this->cells() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->cells());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_cells());
   }
 
   // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void BALANCING::MergeFrom(const ::google::protobuf::Message& from) {
+void BALANCING::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.BALANCING)
   GOOGLE_DCHECK_NE(&from, this);
   const BALANCING* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const BALANCING>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BALANCING>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BALANCING)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BALANCING)
     MergeFrom(*source);
@@ -8405,22 +6896,22 @@ void BALANCING::MergeFrom(const ::google::protobuf::Message& from) {
 void BALANCING::MergeFrom(const BALANCING& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.BALANCING)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.board_index() != 0) {
-    set_board_index(from.board_index());
+    _internal_set_board_index(from._internal_board_index());
   }
   if (from.cells() != 0) {
-    set_cells(from.cells());
+    _internal_set_cells(from._internal_cells());
   }
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void BALANCING::CopyFrom(const ::google::protobuf::Message& from) {
+void BALANCING::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.BALANCING)
   if (&from == this) return;
   Clear();
@@ -8438,21 +6929,19 @@ bool BALANCING::IsInitialized() const {
   return true;
 }
 
-void BALANCING::Swap(BALANCING* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void BALANCING::InternalSwap(BALANCING* other) {
   using std::swap;
-  swap(board_index_, other->board_index_);
-  swap(cells_, other->cells_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BALANCING, _inner_timestamp_)
+      + sizeof(BALANCING::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(BALANCING, board_index_)>(
+          reinterpret_cast<char*>(&board_index_),
+          reinterpret_cast<char*>(&other->board_index_));
 }
 
-::google::protobuf::Metadata BALANCING::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata BALANCING::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -8460,22 +6949,19 @@ void BALANCING::InternalSwap(BALANCING* other) {
 
 void FW_UPDATE::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FW_UPDATE::kBoardIndexFieldNumber;
-const int FW_UPDATE::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FW_UPDATE::_Internal {
+ public:
+};
 
-FW_UPDATE::FW_UPDATE()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FW_UPDATE.base);
+FW_UPDATE::FW_UPDATE(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FW_UPDATE)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FW_UPDATE)
 }
 FW_UPDATE::FW_UPDATE(const FW_UPDATE& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&board_index_) -
     reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(board_index_));
@@ -8491,138 +6977,105 @@ void FW_UPDATE::SharedCtor() {
 FW_UPDATE::~FW_UPDATE() {
   // @@protoc_insertion_point(destructor:bms.FW_UPDATE)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FW_UPDATE::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FW_UPDATE::ArenaDtor(void* object) {
+  FW_UPDATE* _this = reinterpret_cast< FW_UPDATE* >(object);
+  (void)_this;
+}
+void FW_UPDATE::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FW_UPDATE::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FW_UPDATE::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FW_UPDATE& FW_UPDATE::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FW_UPDATE.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FW_UPDATE_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FW_UPDATE::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FW_UPDATE)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&board_index_) -
       reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(board_index_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FW_UPDATE::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FW_UPDATE)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FW_UPDATE::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint32 board_index = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &board_index_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // uint64 _inner_timestamp = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FW_UPDATE)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FW_UPDATE)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FW_UPDATE::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FW_UPDATE)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 board_index = 1;
-  if (this->board_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->board_index(), output);
-  }
-
-  // uint64 _inner_timestamp = 2;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FW_UPDATE)
-}
-
-::google::protobuf::uint8* FW_UPDATE::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FW_UPDATE::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FW_UPDATE)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint32 board_index = 1;
   if (this->board_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->board_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_board_index(), target);
   }
 
   // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FW_UPDATE)
   return target;
@@ -8632,39 +7085,42 @@ size_t FW_UPDATE::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FW_UPDATE)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 2;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   // uint32 board_index = 1;
   if (this->board_index() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt32Size(
-        this->board_index());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_board_index());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FW_UPDATE::MergeFrom(const ::google::protobuf::Message& from) {
+void FW_UPDATE::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FW_UPDATE)
   GOOGLE_DCHECK_NE(&from, this);
   const FW_UPDATE* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FW_UPDATE>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FW_UPDATE>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FW_UPDATE)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FW_UPDATE)
     MergeFrom(*source);
@@ -8674,19 +7130,19 @@ void FW_UPDATE::MergeFrom(const ::google::protobuf::Message& from) {
 void FW_UPDATE::MergeFrom(const FW_UPDATE& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FW_UPDATE)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
   if (from.board_index() != 0) {
-    set_board_index(from.board_index());
+    _internal_set_board_index(from._internal_board_index());
   }
 }
 
-void FW_UPDATE::CopyFrom(const ::google::protobuf::Message& from) {
+void FW_UPDATE::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FW_UPDATE)
   if (&from == this) return;
   Clear();
@@ -8704,20 +7160,19 @@ bool FW_UPDATE::IsInitialized() const {
   return true;
 }
 
-void FW_UPDATE::Swap(FW_UPDATE* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FW_UPDATE::InternalSwap(FW_UPDATE* other) {
   using std::swap;
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-  swap(board_index_, other->board_index_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(FW_UPDATE, board_index_)
+      + sizeof(FW_UPDATE::board_index_)
+      - PROTOBUF_FIELD_OFFSET(FW_UPDATE, _inner_timestamp_)>(
+          reinterpret_cast<char*>(&_inner_timestamp_),
+          reinterpret_cast<char*>(&other->_inner_timestamp_));
 }
 
-::google::protobuf::Metadata FW_UPDATE::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FW_UPDATE::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -8725,138 +7180,114 @@ void FW_UPDATE::InternalSwap(FW_UPDATE* other) {
 
 void FLASH_CELLBOARD_0_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_0_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_0_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_TX.base);
+FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_0_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_0_TX)
 }
 FLASH_CELLBOARD_0_TX::FLASH_CELLBOARD_0_TX(const FLASH_CELLBOARD_0_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_0_TX)
 }
 
 void FLASH_CELLBOARD_0_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_0_TX::~FLASH_CELLBOARD_0_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_0_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_0_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_0_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_0_TX* _this = reinterpret_cast< FLASH_CELLBOARD_0_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_0_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_0_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_0_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_0_TX& FLASH_CELLBOARD_0_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_0_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_0_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_0_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_0_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_0_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_0_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_0_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_0_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_0_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_0_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_0_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_0_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_0_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_0_TX)
   return target;
@@ -8866,32 +7297,35 @@ size_t FLASH_CELLBOARD_0_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_0_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_0_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_0_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_0_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_0_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_0_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_0_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_0_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_0_TX)
     MergeFrom(*source);
@@ -8901,16 +7335,16 @@ void FLASH_CELLBOARD_0_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_0_TX::MergeFrom(const FLASH_CELLBOARD_0_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_0_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_0_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_0_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_0_TX)
   if (&from == this) return;
   Clear();
@@ -8928,19 +7362,14 @@ bool FLASH_CELLBOARD_0_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_0_TX::Swap(FLASH_CELLBOARD_0_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_0_TX::InternalSwap(FLASH_CELLBOARD_0_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_0_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_0_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -8948,138 +7377,114 @@ void FLASH_CELLBOARD_0_TX::InternalSwap(FLASH_CELLBOARD_0_TX* other) {
 
 void FLASH_CELLBOARD_0_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_0_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_0_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_RX.base);
+FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_0_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_0_RX)
 }
 FLASH_CELLBOARD_0_RX::FLASH_CELLBOARD_0_RX(const FLASH_CELLBOARD_0_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_0_RX)
 }
 
 void FLASH_CELLBOARD_0_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_0_RX::~FLASH_CELLBOARD_0_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_0_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_0_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_0_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_0_RX* _this = reinterpret_cast< FLASH_CELLBOARD_0_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_0_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_0_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_0_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_0_RX& FLASH_CELLBOARD_0_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_0_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_0_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_0_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_0_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_0_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_0_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_0_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_0_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_0_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_0_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_0_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_0_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_0_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_0_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_0_RX)
   return target;
@@ -9089,32 +7494,35 @@ size_t FLASH_CELLBOARD_0_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_0_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_0_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_0_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_0_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_0_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_0_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_0_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_0_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_0_RX)
     MergeFrom(*source);
@@ -9124,16 +7532,16 @@ void FLASH_CELLBOARD_0_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_0_RX::MergeFrom(const FLASH_CELLBOARD_0_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_0_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_0_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_0_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_0_RX)
   if (&from == this) return;
   Clear();
@@ -9151,19 +7559,14 @@ bool FLASH_CELLBOARD_0_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_0_RX::Swap(FLASH_CELLBOARD_0_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_0_RX::InternalSwap(FLASH_CELLBOARD_0_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_0_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_0_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -9171,138 +7574,114 @@ void FLASH_CELLBOARD_0_RX::InternalSwap(FLASH_CELLBOARD_0_RX* other) {
 
 void FLASH_CELLBOARD_1_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_1_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_1_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_TX.base);
+FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_1_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_1_TX)
 }
 FLASH_CELLBOARD_1_TX::FLASH_CELLBOARD_1_TX(const FLASH_CELLBOARD_1_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_1_TX)
 }
 
 void FLASH_CELLBOARD_1_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_1_TX::~FLASH_CELLBOARD_1_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_1_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_1_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_1_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_1_TX* _this = reinterpret_cast< FLASH_CELLBOARD_1_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_1_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_1_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_1_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_1_TX& FLASH_CELLBOARD_1_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_1_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_1_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_1_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_1_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_1_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_1_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_1_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_1_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_1_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_1_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_1_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_1_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_1_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_1_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_1_TX)
   return target;
@@ -9312,32 +7691,35 @@ size_t FLASH_CELLBOARD_1_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_1_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_1_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_1_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_1_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_1_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_1_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_1_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_1_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_1_TX)
     MergeFrom(*source);
@@ -9347,16 +7729,16 @@ void FLASH_CELLBOARD_1_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_1_TX::MergeFrom(const FLASH_CELLBOARD_1_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_1_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_1_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_1_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_1_TX)
   if (&from == this) return;
   Clear();
@@ -9374,19 +7756,14 @@ bool FLASH_CELLBOARD_1_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_1_TX::Swap(FLASH_CELLBOARD_1_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_1_TX::InternalSwap(FLASH_CELLBOARD_1_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_1_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_1_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -9394,138 +7771,114 @@ void FLASH_CELLBOARD_1_TX::InternalSwap(FLASH_CELLBOARD_1_TX* other) {
 
 void FLASH_CELLBOARD_1_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_1_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_1_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_RX.base);
+FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_1_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_1_RX)
 }
 FLASH_CELLBOARD_1_RX::FLASH_CELLBOARD_1_RX(const FLASH_CELLBOARD_1_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_1_RX)
 }
 
 void FLASH_CELLBOARD_1_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_1_RX::~FLASH_CELLBOARD_1_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_1_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_1_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_1_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_1_RX* _this = reinterpret_cast< FLASH_CELLBOARD_1_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_1_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_1_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_1_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_1_RX& FLASH_CELLBOARD_1_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_1_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_1_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_1_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_1_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_1_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_1_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_1_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_1_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_1_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_1_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_1_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_1_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_1_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_1_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_1_RX)
   return target;
@@ -9535,32 +7888,35 @@ size_t FLASH_CELLBOARD_1_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_1_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_1_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_1_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_1_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_1_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_1_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_1_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_1_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_1_RX)
     MergeFrom(*source);
@@ -9570,16 +7926,16 @@ void FLASH_CELLBOARD_1_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_1_RX::MergeFrom(const FLASH_CELLBOARD_1_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_1_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_1_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_1_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_1_RX)
   if (&from == this) return;
   Clear();
@@ -9597,19 +7953,14 @@ bool FLASH_CELLBOARD_1_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_1_RX::Swap(FLASH_CELLBOARD_1_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_1_RX::InternalSwap(FLASH_CELLBOARD_1_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_1_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_1_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -9617,138 +7968,114 @@ void FLASH_CELLBOARD_1_RX::InternalSwap(FLASH_CELLBOARD_1_RX* other) {
 
 void FLASH_CELLBOARD_2_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_2_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_2_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_TX.base);
+FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_2_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_2_TX)
 }
 FLASH_CELLBOARD_2_TX::FLASH_CELLBOARD_2_TX(const FLASH_CELLBOARD_2_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_2_TX)
 }
 
 void FLASH_CELLBOARD_2_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_2_TX::~FLASH_CELLBOARD_2_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_2_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_2_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_2_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_2_TX* _this = reinterpret_cast< FLASH_CELLBOARD_2_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_2_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_2_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_2_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_2_TX& FLASH_CELLBOARD_2_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_2_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_2_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_2_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_2_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_2_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_2_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_2_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_2_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_2_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_2_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_2_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_2_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_2_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_2_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_2_TX)
   return target;
@@ -9758,32 +8085,35 @@ size_t FLASH_CELLBOARD_2_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_2_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_2_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_2_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_2_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_2_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_2_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_2_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_2_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_2_TX)
     MergeFrom(*source);
@@ -9793,16 +8123,16 @@ void FLASH_CELLBOARD_2_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_2_TX::MergeFrom(const FLASH_CELLBOARD_2_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_2_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_2_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_2_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_2_TX)
   if (&from == this) return;
   Clear();
@@ -9820,19 +8150,14 @@ bool FLASH_CELLBOARD_2_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_2_TX::Swap(FLASH_CELLBOARD_2_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_2_TX::InternalSwap(FLASH_CELLBOARD_2_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_2_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_2_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -9840,138 +8165,114 @@ void FLASH_CELLBOARD_2_TX::InternalSwap(FLASH_CELLBOARD_2_TX* other) {
 
 void FLASH_CELLBOARD_2_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_2_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_2_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_RX.base);
+FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_2_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_2_RX)
 }
 FLASH_CELLBOARD_2_RX::FLASH_CELLBOARD_2_RX(const FLASH_CELLBOARD_2_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_2_RX)
 }
 
 void FLASH_CELLBOARD_2_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_2_RX::~FLASH_CELLBOARD_2_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_2_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_2_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_2_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_2_RX* _this = reinterpret_cast< FLASH_CELLBOARD_2_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_2_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_2_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_2_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_2_RX& FLASH_CELLBOARD_2_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_2_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_2_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_2_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_2_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_2_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_2_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_2_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_2_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_2_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_2_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_2_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_2_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_2_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_2_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_2_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_2_RX)
   return target;
@@ -9981,32 +8282,35 @@ size_t FLASH_CELLBOARD_2_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_2_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_2_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_2_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_2_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_2_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_2_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_2_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_2_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_2_RX)
     MergeFrom(*source);
@@ -10016,16 +8320,16 @@ void FLASH_CELLBOARD_2_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_2_RX::MergeFrom(const FLASH_CELLBOARD_2_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_2_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_2_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_2_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_2_RX)
   if (&from == this) return;
   Clear();
@@ -10043,19 +8347,14 @@ bool FLASH_CELLBOARD_2_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_2_RX::Swap(FLASH_CELLBOARD_2_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_2_RX::InternalSwap(FLASH_CELLBOARD_2_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_2_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_2_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -10063,138 +8362,114 @@ void FLASH_CELLBOARD_2_RX::InternalSwap(FLASH_CELLBOARD_2_RX* other) {
 
 void FLASH_CELLBOARD_3_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_3_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_3_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_TX.base);
+FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_3_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_3_TX)
 }
 FLASH_CELLBOARD_3_TX::FLASH_CELLBOARD_3_TX(const FLASH_CELLBOARD_3_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_3_TX)
 }
 
 void FLASH_CELLBOARD_3_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_3_TX::~FLASH_CELLBOARD_3_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_3_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_3_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_3_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_3_TX* _this = reinterpret_cast< FLASH_CELLBOARD_3_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_3_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_3_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_3_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_3_TX& FLASH_CELLBOARD_3_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_3_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_3_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_3_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_3_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_3_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_3_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_3_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_3_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_3_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_3_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_3_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_3_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_3_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_3_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_3_TX)
   return target;
@@ -10204,32 +8479,35 @@ size_t FLASH_CELLBOARD_3_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_3_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_3_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_3_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_3_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_3_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_3_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_3_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_3_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_3_TX)
     MergeFrom(*source);
@@ -10239,16 +8517,16 @@ void FLASH_CELLBOARD_3_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_3_TX::MergeFrom(const FLASH_CELLBOARD_3_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_3_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_3_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_3_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_3_TX)
   if (&from == this) return;
   Clear();
@@ -10266,19 +8544,14 @@ bool FLASH_CELLBOARD_3_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_3_TX::Swap(FLASH_CELLBOARD_3_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_3_TX::InternalSwap(FLASH_CELLBOARD_3_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_3_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_3_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -10286,138 +8559,114 @@ void FLASH_CELLBOARD_3_TX::InternalSwap(FLASH_CELLBOARD_3_TX* other) {
 
 void FLASH_CELLBOARD_3_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_3_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_3_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_RX.base);
+FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_3_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_3_RX)
 }
 FLASH_CELLBOARD_3_RX::FLASH_CELLBOARD_3_RX(const FLASH_CELLBOARD_3_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_3_RX)
 }
 
 void FLASH_CELLBOARD_3_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_3_RX::~FLASH_CELLBOARD_3_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_3_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_3_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_3_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_3_RX* _this = reinterpret_cast< FLASH_CELLBOARD_3_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_3_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_3_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_3_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_3_RX& FLASH_CELLBOARD_3_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_3_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_3_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_3_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_3_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_3_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_3_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_3_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_3_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_3_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_3_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_3_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_3_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_3_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_3_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_3_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_3_RX)
   return target;
@@ -10427,32 +8676,35 @@ size_t FLASH_CELLBOARD_3_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_3_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_3_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_3_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_3_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_3_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_3_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_3_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_3_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_3_RX)
     MergeFrom(*source);
@@ -10462,16 +8714,16 @@ void FLASH_CELLBOARD_3_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_3_RX::MergeFrom(const FLASH_CELLBOARD_3_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_3_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_3_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_3_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_3_RX)
   if (&from == this) return;
   Clear();
@@ -10489,19 +8741,14 @@ bool FLASH_CELLBOARD_3_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_3_RX::Swap(FLASH_CELLBOARD_3_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_3_RX::InternalSwap(FLASH_CELLBOARD_3_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_3_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_3_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -10509,138 +8756,114 @@ void FLASH_CELLBOARD_3_RX::InternalSwap(FLASH_CELLBOARD_3_RX* other) {
 
 void FLASH_CELLBOARD_4_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_4_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_4_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_TX.base);
+FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_4_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_4_TX)
 }
 FLASH_CELLBOARD_4_TX::FLASH_CELLBOARD_4_TX(const FLASH_CELLBOARD_4_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_4_TX)
 }
 
 void FLASH_CELLBOARD_4_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_4_TX::~FLASH_CELLBOARD_4_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_4_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_4_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_4_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_4_TX* _this = reinterpret_cast< FLASH_CELLBOARD_4_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_4_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_4_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_4_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_4_TX& FLASH_CELLBOARD_4_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_4_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_4_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_4_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_4_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_4_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_4_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_4_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_4_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_4_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_4_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_4_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_4_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_4_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_4_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_4_TX)
   return target;
@@ -10650,32 +8873,35 @@ size_t FLASH_CELLBOARD_4_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_4_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_4_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_4_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_4_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_4_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_4_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_4_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_4_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_4_TX)
     MergeFrom(*source);
@@ -10685,16 +8911,16 @@ void FLASH_CELLBOARD_4_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_4_TX::MergeFrom(const FLASH_CELLBOARD_4_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_4_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_4_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_4_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_4_TX)
   if (&from == this) return;
   Clear();
@@ -10712,19 +8938,14 @@ bool FLASH_CELLBOARD_4_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_4_TX::Swap(FLASH_CELLBOARD_4_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_4_TX::InternalSwap(FLASH_CELLBOARD_4_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_4_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_4_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -10732,138 +8953,114 @@ void FLASH_CELLBOARD_4_TX::InternalSwap(FLASH_CELLBOARD_4_TX* other) {
 
 void FLASH_CELLBOARD_4_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_4_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_4_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_RX.base);
+FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_4_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_4_RX)
 }
 FLASH_CELLBOARD_4_RX::FLASH_CELLBOARD_4_RX(const FLASH_CELLBOARD_4_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_4_RX)
 }
 
 void FLASH_CELLBOARD_4_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_4_RX::~FLASH_CELLBOARD_4_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_4_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_4_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_4_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_4_RX* _this = reinterpret_cast< FLASH_CELLBOARD_4_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_4_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_4_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_4_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_4_RX& FLASH_CELLBOARD_4_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_4_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_4_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_4_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_4_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_4_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_4_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_4_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_4_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_4_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_4_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_4_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_4_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_4_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_4_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_4_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_4_RX)
   return target;
@@ -10873,32 +9070,35 @@ size_t FLASH_CELLBOARD_4_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_4_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_4_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_4_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_4_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_4_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_4_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_4_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_4_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_4_RX)
     MergeFrom(*source);
@@ -10908,16 +9108,16 @@ void FLASH_CELLBOARD_4_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_4_RX::MergeFrom(const FLASH_CELLBOARD_4_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_4_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_4_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_4_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_4_RX)
   if (&from == this) return;
   Clear();
@@ -10935,19 +9135,14 @@ bool FLASH_CELLBOARD_4_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_4_RX::Swap(FLASH_CELLBOARD_4_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_4_RX::InternalSwap(FLASH_CELLBOARD_4_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_4_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_4_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -10955,138 +9150,114 @@ void FLASH_CELLBOARD_4_RX::InternalSwap(FLASH_CELLBOARD_4_RX* other) {
 
 void FLASH_CELLBOARD_5_TX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_5_TX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_5_TX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_TX.base);
+FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_5_TX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_5_TX)
 }
 FLASH_CELLBOARD_5_TX::FLASH_CELLBOARD_5_TX(const FLASH_CELLBOARD_5_TX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_5_TX)
 }
 
 void FLASH_CELLBOARD_5_TX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_5_TX::~FLASH_CELLBOARD_5_TX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_5_TX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_5_TX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_5_TX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_5_TX* _this = reinterpret_cast< FLASH_CELLBOARD_5_TX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_5_TX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_5_TX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_5_TX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_5_TX& FLASH_CELLBOARD_5_TX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_TX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_5_TX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_5_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_5_TX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_5_TX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_5_TX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_5_TX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_5_TX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_5_TX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_5_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_5_TX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_5_TX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_5_TX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_5_TX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_5_TX)
   return target;
@@ -11096,32 +9267,35 @@ size_t FLASH_CELLBOARD_5_TX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_5_TX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_5_TX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_5_TX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_5_TX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_5_TX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_5_TX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_5_TX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_5_TX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_5_TX)
     MergeFrom(*source);
@@ -11131,16 +9305,16 @@ void FLASH_CELLBOARD_5_TX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_5_TX::MergeFrom(const FLASH_CELLBOARD_5_TX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_5_TX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_5_TX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_5_TX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_5_TX)
   if (&from == this) return;
   Clear();
@@ -11158,19 +9332,14 @@ bool FLASH_CELLBOARD_5_TX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_5_TX::Swap(FLASH_CELLBOARD_5_TX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_5_TX::InternalSwap(FLASH_CELLBOARD_5_TX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_5_TX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_5_TX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -11178,138 +9347,114 @@ void FLASH_CELLBOARD_5_TX::InternalSwap(FLASH_CELLBOARD_5_TX* other) {
 
 void FLASH_CELLBOARD_5_RX::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int FLASH_CELLBOARD_5_RX::kInnerTimestampFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class FLASH_CELLBOARD_5_RX::_Internal {
+ public:
+};
 
-FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_RX.base);
+FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.FLASH_CELLBOARD_5_RX)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.FLASH_CELLBOARD_5_RX)
 }
 FLASH_CELLBOARD_5_RX::FLASH_CELLBOARD_5_RX(const FLASH_CELLBOARD_5_RX& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _inner_timestamp_ = from._inner_timestamp_;
   // @@protoc_insertion_point(copy_constructor:bms.FLASH_CELLBOARD_5_RX)
 }
 
 void FLASH_CELLBOARD_5_RX::SharedCtor() {
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
 
 FLASH_CELLBOARD_5_RX::~FLASH_CELLBOARD_5_RX() {
   // @@protoc_insertion_point(destructor:bms.FLASH_CELLBOARD_5_RX)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FLASH_CELLBOARD_5_RX::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void FLASH_CELLBOARD_5_RX::ArenaDtor(void* object) {
+  FLASH_CELLBOARD_5_RX* _this = reinterpret_cast< FLASH_CELLBOARD_5_RX* >(object);
+  (void)_this;
+}
+void FLASH_CELLBOARD_5_RX::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void FLASH_CELLBOARD_5_RX::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* FLASH_CELLBOARD_5_RX::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const FLASH_CELLBOARD_5_RX& FLASH_CELLBOARD_5_RX::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_FLASH_CELLBOARD_5_RX.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void FLASH_CELLBOARD_5_RX::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.FLASH_CELLBOARD_5_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = GOOGLE_ULONGLONG(0);
-  _internal_metadata_.Clear();
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool FLASH_CELLBOARD_5_RX::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.FLASH_CELLBOARD_5_RX)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* FLASH_CELLBOARD_5_RX::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // uint64 _inner_timestamp = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &_inner_timestamp_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.FLASH_CELLBOARD_5_RX)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.FLASH_CELLBOARD_5_RX)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void FLASH_CELLBOARD_5_RX::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.FLASH_CELLBOARD_5_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->_inner_timestamp(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.FLASH_CELLBOARD_5_RX)
-}
-
-::google::protobuf::uint8* FLASH_CELLBOARD_5_RX::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* FLASH_CELLBOARD_5_RX::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.FLASH_CELLBOARD_5_RX)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->_inner_timestamp(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.FLASH_CELLBOARD_5_RX)
   return target;
@@ -11319,32 +9464,35 @@ size_t FLASH_CELLBOARD_5_RX::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.FLASH_CELLBOARD_5_RX)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 _inner_timestamp = 1;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->_inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void FLASH_CELLBOARD_5_RX::MergeFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_5_RX::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.FLASH_CELLBOARD_5_RX)
   GOOGLE_DCHECK_NE(&from, this);
   const FLASH_CELLBOARD_5_RX* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const FLASH_CELLBOARD_5_RX>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FLASH_CELLBOARD_5_RX>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.FLASH_CELLBOARD_5_RX)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.FLASH_CELLBOARD_5_RX)
     MergeFrom(*source);
@@ -11354,16 +9502,16 @@ void FLASH_CELLBOARD_5_RX::MergeFrom(const ::google::protobuf::Message& from) {
 void FLASH_CELLBOARD_5_RX::MergeFrom(const FLASH_CELLBOARD_5_RX& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.FLASH_CELLBOARD_5_RX)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._inner_timestamp() != 0) {
-    set__inner_timestamp(from._inner_timestamp());
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
-void FLASH_CELLBOARD_5_RX::CopyFrom(const ::google::protobuf::Message& from) {
+void FLASH_CELLBOARD_5_RX::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.FLASH_CELLBOARD_5_RX)
   if (&from == this) return;
   Clear();
@@ -11381,19 +9529,14 @@ bool FLASH_CELLBOARD_5_RX::IsInitialized() const {
   return true;
 }
 
-void FLASH_CELLBOARD_5_RX::Swap(FLASH_CELLBOARD_5_RX* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void FLASH_CELLBOARD_5_RX::InternalSwap(FLASH_CELLBOARD_5_RX* other) {
   using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_inner_timestamp_, other->_inner_timestamp_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata FLASH_CELLBOARD_5_RX::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata FLASH_CELLBOARD_5_RX::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
@@ -11401,51 +9544,50 @@ void FLASH_CELLBOARD_5_RX::InternalSwap(FLASH_CELLBOARD_5_RX* other) {
 
 void Pack::InitAsDefaultInstance() {
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Pack::kBOARDSTATUSCELLBOARD0FieldNumber;
-const int Pack::kBOARDSTATUSCELLBOARD1FieldNumber;
-const int Pack::kBOARDSTATUSCELLBOARD2FieldNumber;
-const int Pack::kBOARDSTATUSCELLBOARD3FieldNumber;
-const int Pack::kBOARDSTATUSCELLBOARD4FieldNumber;
-const int Pack::kBOARDSTATUSCELLBOARD5FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD0FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD1FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD2FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD3FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD4FieldNumber;
-const int Pack::kTEMPERATURESCELLBOARD5FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD0FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD1FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD2FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD3FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD4FieldNumber;
-const int Pack::kVOLTAGESCELLBOARD5FieldNumber;
-const int Pack::kBALANCINGFieldNumber;
-const int Pack::kFWUPDATEFieldNumber;
-const int Pack::kFLASHCELLBOARD0TXFieldNumber;
-const int Pack::kFLASHCELLBOARD0RXFieldNumber;
-const int Pack::kFLASHCELLBOARD1TXFieldNumber;
-const int Pack::kFLASHCELLBOARD1RXFieldNumber;
-const int Pack::kFLASHCELLBOARD2TXFieldNumber;
-const int Pack::kFLASHCELLBOARD2RXFieldNumber;
-const int Pack::kFLASHCELLBOARD3TXFieldNumber;
-const int Pack::kFLASHCELLBOARD3RXFieldNumber;
-const int Pack::kFLASHCELLBOARD4TXFieldNumber;
-const int Pack::kFLASHCELLBOARD4RXFieldNumber;
-const int Pack::kFLASHCELLBOARD5TXFieldNumber;
-const int Pack::kFLASHCELLBOARD5RXFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Pack::_Internal {
+ public:
+};
 
-Pack::Pack()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_bms_2eproto::scc_info_Pack.base);
+Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  board_status_cellboard0_(arena),
+  board_status_cellboard1_(arena),
+  board_status_cellboard2_(arena),
+  board_status_cellboard3_(arena),
+  board_status_cellboard4_(arena),
+  board_status_cellboard5_(arena),
+  temperatures_cellboard0_(arena),
+  temperatures_cellboard1_(arena),
+  temperatures_cellboard2_(arena),
+  temperatures_cellboard3_(arena),
+  temperatures_cellboard4_(arena),
+  temperatures_cellboard5_(arena),
+  voltages_cellboard0_(arena),
+  voltages_cellboard1_(arena),
+  voltages_cellboard2_(arena),
+  voltages_cellboard3_(arena),
+  voltages_cellboard4_(arena),
+  voltages_cellboard5_(arena),
+  balancing_(arena),
+  fw_update_(arena),
+  flash_cellboard_0_tx_(arena),
+  flash_cellboard_0_rx_(arena),
+  flash_cellboard_1_tx_(arena),
+  flash_cellboard_1_rx_(arena),
+  flash_cellboard_2_tx_(arena),
+  flash_cellboard_2_rx_(arena),
+  flash_cellboard_3_tx_(arena),
+  flash_cellboard_3_rx_(arena),
+  flash_cellboard_4_tx_(arena),
+  flash_cellboard_4_rx_(arena),
+  flash_cellboard_5_tx_(arena),
+  flash_cellboard_5_rx_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:bms.Pack)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:bms.Pack)
 }
 Pack::Pack(const Pack& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       board_status_cellboard0_(from.board_status_cellboard0_),
       board_status_cellboard1_(from.board_status_cellboard1_),
       board_status_cellboard2_(from.board_status_cellboard2_),
@@ -11478,38 +9620,42 @@ Pack::Pack(const Pack& from)
       flash_cellboard_4_rx_(from.flash_cellboard_4_rx_),
       flash_cellboard_5_tx_(from.flash_cellboard_5_tx_),
       flash_cellboard_5_rx_(from.flash_cellboard_5_rx_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:bms.Pack)
 }
 
 void Pack::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Pack_bms_2eproto.base);
 }
 
 Pack::~Pack() {
   // @@protoc_insertion_point(destructor:bms.Pack)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Pack::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Pack::ArenaDtor(void* object) {
+  Pack* _this = reinterpret_cast< Pack* >(object);
+  (void)_this;
+}
+void Pack::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Pack::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Pack::descriptor() {
-  ::protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Pack& Pack::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_bms_2eproto::scc_info_Pack.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Pack_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
 void Pack::Clear() {
 // @@protoc_insertion_point(message_clear_start:bms.Pack)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -11545,990 +9691,688 @@ void Pack::Clear() {
   flash_cellboard_4_rx_.Clear();
   flash_cellboard_5_tx_.Clear();
   flash_cellboard_5_rx_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool Pack::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bms.Pack)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* Pack::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
       // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard0()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard0(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard1()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard1(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard2()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard2(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard3()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard3(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard4()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard4(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_board_status_cellboard5()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard5(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard0()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard0(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard1()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard1(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard2()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard2(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard3()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard3(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-      case 11: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard4()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard4(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-      case 12: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_temperatures_cellboard5()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard5(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-      case 13: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard0()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard0(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-      case 14: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard1()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard1(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-      case 15: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard2()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard2(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-      case 16: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard3()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard3(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-      case 17: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard4()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard4(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-      case 18: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_voltages_cellboard5()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard5(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<146>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.BALANCING BALANCING = 19;
-      case 19: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_balancing()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_balancing(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<154>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FW_UPDATE FW_UPDATE = 20;
-      case 20: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(162u /* 162 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_fw_update()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_fw_update(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-      case 21: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(170u /* 170 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_0_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<170>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-      case 22: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(178u /* 178 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_0_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 178)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-      case 23: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(186u /* 186 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_1_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-      case 24: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(194u /* 194 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_1_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 194)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<194>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-      case 25: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(202u /* 202 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_2_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<202>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-      case 26: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(210u /* 210 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_2_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<210>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-      case 27: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(218u /* 218 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_3_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 27:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 218)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-      case 28: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(226u /* 226 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_3_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 28:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 226)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-      case 29: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(234u /* 234 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_4_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 29:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 234)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-      case 30: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(242u /* 242 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_4_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 30:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 242)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<242>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
-      case 31: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(250u /* 250 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_5_tx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 31:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 250)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_tx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<250>(ptr));
+        } else goto handle_unusual;
+        continue;
       // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
-      case 32: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(2u /* 258 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_flash_cellboard_5_rx()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
+      case 32:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 2)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_rx(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
-        if (tag == 0) {
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
           goto success;
         }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
       }
-    }
-  }
+    }  // switch
+  }  // while
 success:
-  // @@protoc_insertion_point(parse_success:bms.Pack)
-  return true;
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:bms.Pack)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto success;
+#undef CHK_
 }
 
-void Pack::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bms.Pack)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard0_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->board_status_cellboard0(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard1_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->board_status_cellboard1(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard2_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->board_status_cellboard2(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard3_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->board_status_cellboard3(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard4_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->board_status_cellboard4(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard5_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6,
-      this->board_status_cellboard5(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard0_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7,
-      this->temperatures_cellboard0(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard1_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8,
-      this->temperatures_cellboard1(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard2_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      9,
-      this->temperatures_cellboard2(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard3_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10,
-      this->temperatures_cellboard3(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard4_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      11,
-      this->temperatures_cellboard4(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard5_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      12,
-      this->temperatures_cellboard5(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard0_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      13,
-      this->voltages_cellboard0(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard1_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      14,
-      this->voltages_cellboard1(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard2_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      15,
-      this->voltages_cellboard2(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard3_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      16,
-      this->voltages_cellboard3(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard4_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      17,
-      this->voltages_cellboard4(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard5_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      18,
-      this->voltages_cellboard5(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.BALANCING BALANCING = 19;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->balancing_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      19,
-      this->balancing(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FW_UPDATE FW_UPDATE = 20;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->fw_update_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      20,
-      this->fw_update(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_0_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      21,
-      this->flash_cellboard_0_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_0_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      22,
-      this->flash_cellboard_0_rx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_1_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      23,
-      this->flash_cellboard_1_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_1_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      24,
-      this->flash_cellboard_1_rx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_2_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      25,
-      this->flash_cellboard_2_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_2_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      26,
-      this->flash_cellboard_2_rx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_3_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      27,
-      this->flash_cellboard_3_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_3_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      28,
-      this->flash_cellboard_3_rx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_4_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      29,
-      this->flash_cellboard_4_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_4_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      30,
-      this->flash_cellboard_4_rx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_5_tx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      31,
-      this->flash_cellboard_5_tx(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_5_rx_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      32,
-      this->flash_cellboard_5_rx(static_cast<int>(i)),
-      output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bms.Pack)
-}
-
-::google::protobuf::uint8* Pack::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::PROTOBUF_NAMESPACE_ID::uint8* Pack::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:bms.Pack)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard0_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->board_status_cellboard0(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard0_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_board_status_cellboard0(i), target, stream);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard1_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->board_status_cellboard1(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard1_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, this->_internal_board_status_cellboard1(i), target, stream);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard2_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->board_status_cellboard2(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard2_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_board_status_cellboard2(i), target, stream);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard3_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->board_status_cellboard3(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard3_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, this->_internal_board_status_cellboard3(i), target, stream);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard4_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->board_status_cellboard4(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard4_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(5, this->_internal_board_status_cellboard4(i), target, stream);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->board_status_cellboard5_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        6, this->board_status_cellboard5(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_board_status_cellboard5_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(6, this->_internal_board_status_cellboard5(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard0_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        7, this->temperatures_cellboard0(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard0_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, this->_internal_temperatures_cellboard0(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard1_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        8, this->temperatures_cellboard1(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard1_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(8, this->_internal_temperatures_cellboard1(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard2_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        9, this->temperatures_cellboard2(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard2_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(9, this->_internal_temperatures_cellboard2(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard3_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        10, this->temperatures_cellboard3(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard3_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(10, this->_internal_temperatures_cellboard3(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard4_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        11, this->temperatures_cellboard4(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard4_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(11, this->_internal_temperatures_cellboard4(i), target, stream);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->temperatures_cellboard5_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        12, this->temperatures_cellboard5(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard5_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(12, this->_internal_temperatures_cellboard5(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard0_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        13, this->voltages_cellboard0(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard0_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(13, this->_internal_voltages_cellboard0(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard1_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        14, this->voltages_cellboard1(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard1_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(14, this->_internal_voltages_cellboard1(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard2_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        15, this->voltages_cellboard2(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard2_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(15, this->_internal_voltages_cellboard2(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard3_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        16, this->voltages_cellboard3(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard3_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(16, this->_internal_voltages_cellboard3(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard4_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        17, this->voltages_cellboard4(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard4_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(17, this->_internal_voltages_cellboard4(i), target, stream);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->voltages_cellboard5_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        18, this->voltages_cellboard5(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_voltages_cellboard5_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(18, this->_internal_voltages_cellboard5(i), target, stream);
   }
 
   // repeated .bms.BALANCING BALANCING = 19;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->balancing_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        19, this->balancing(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_balancing_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(19, this->_internal_balancing(i), target, stream);
   }
 
   // repeated .bms.FW_UPDATE FW_UPDATE = 20;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->fw_update_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        20, this->fw_update(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_fw_update_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(20, this->_internal_fw_update(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_0_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        21, this->flash_cellboard_0_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_0_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(21, this->_internal_flash_cellboard_0_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_0_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        22, this->flash_cellboard_0_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_0_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(22, this->_internal_flash_cellboard_0_rx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_1_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        23, this->flash_cellboard_1_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_1_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(23, this->_internal_flash_cellboard_1_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_1_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        24, this->flash_cellboard_1_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_1_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(24, this->_internal_flash_cellboard_1_rx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_2_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        25, this->flash_cellboard_2_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_2_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(25, this->_internal_flash_cellboard_2_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_2_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        26, this->flash_cellboard_2_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_2_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(26, this->_internal_flash_cellboard_2_rx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_3_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        27, this->flash_cellboard_3_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_3_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(27, this->_internal_flash_cellboard_3_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_3_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        28, this->flash_cellboard_3_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_3_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(28, this->_internal_flash_cellboard_3_rx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_4_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        29, this->flash_cellboard_4_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_4_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(29, this->_internal_flash_cellboard_4_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_4_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        30, this->flash_cellboard_4_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_4_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(30, this->_internal_flash_cellboard_4_rx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_5_tx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        31, this->flash_cellboard_5_tx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_5_tx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(31, this->_internal_flash_cellboard_5_tx(i), target, stream);
   }
 
   // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->flash_cellboard_5_rx_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        32, this->flash_cellboard_5_rx(static_cast<int>(i)), deterministic, target);
+      n = static_cast<unsigned int>(this->_internal_flash_cellboard_5_rx_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(32, this->_internal_flash_cellboard_5_rx(i), target, stream);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:bms.Pack)
   return target;
@@ -12538,377 +10382,252 @@ size_t Pack::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:bms.Pack)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard0_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard0(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard0_size();
+  for (const auto& msg : this->board_status_cellboard0_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard1_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard1(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard1_size();
+  for (const auto& msg : this->board_status_cellboard1_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard2_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard2(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard2_size();
+  for (const auto& msg : this->board_status_cellboard2_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard3_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard3(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard3_size();
+  for (const auto& msg : this->board_status_cellboard3_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard4_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard4(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard4_size();
+  for (const auto& msg : this->board_status_cellboard4_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-  {
-    unsigned int count = static_cast<unsigned int>(this->board_status_cellboard5_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->board_status_cellboard5(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_board_status_cellboard5_size();
+  for (const auto& msg : this->board_status_cellboard5_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard0_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard0(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard0_size();
+  for (const auto& msg : this->temperatures_cellboard0_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard1_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard1(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard1_size();
+  for (const auto& msg : this->temperatures_cellboard1_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard2_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard2(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard2_size();
+  for (const auto& msg : this->temperatures_cellboard2_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard3_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard3(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard3_size();
+  for (const auto& msg : this->temperatures_cellboard3_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard4_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard4(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard4_size();
+  for (const auto& msg : this->temperatures_cellboard4_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-  {
-    unsigned int count = static_cast<unsigned int>(this->temperatures_cellboard5_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->temperatures_cellboard5(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_temperatures_cellboard5_size();
+  for (const auto& msg : this->temperatures_cellboard5_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard0_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard0(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_voltages_cellboard0_size();
+  for (const auto& msg : this->voltages_cellboard0_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard1_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard1(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_voltages_cellboard1_size();
+  for (const auto& msg : this->voltages_cellboard1_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard2_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard2(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_voltages_cellboard2_size();
+  for (const auto& msg : this->voltages_cellboard2_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard3_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard3(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_voltages_cellboard3_size();
+  for (const auto& msg : this->voltages_cellboard3_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard4_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard4(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_voltages_cellboard4_size();
+  for (const auto& msg : this->voltages_cellboard4_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-  {
-    unsigned int count = static_cast<unsigned int>(this->voltages_cellboard5_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->voltages_cellboard5(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_voltages_cellboard5_size();
+  for (const auto& msg : this->voltages_cellboard5_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.BALANCING BALANCING = 19;
-  {
-    unsigned int count = static_cast<unsigned int>(this->balancing_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->balancing(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_balancing_size();
+  for (const auto& msg : this->balancing_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FW_UPDATE FW_UPDATE = 20;
-  {
-    unsigned int count = static_cast<unsigned int>(this->fw_update_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->fw_update(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_fw_update_size();
+  for (const auto& msg : this->fw_update_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_0_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_0_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_0_tx_size();
+  for (const auto& msg : this->flash_cellboard_0_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_0_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_0_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_0_rx_size();
+  for (const auto& msg : this->flash_cellboard_0_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_1_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_1_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_1_tx_size();
+  for (const auto& msg : this->flash_cellboard_1_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_1_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_1_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_1_rx_size();
+  for (const auto& msg : this->flash_cellboard_1_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_2_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_2_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_2_tx_size();
+  for (const auto& msg : this->flash_cellboard_2_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_2_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_2_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_2_rx_size();
+  for (const auto& msg : this->flash_cellboard_2_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_3_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_3_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_3_tx_size();
+  for (const auto& msg : this->flash_cellboard_3_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_3_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_3_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_3_rx_size();
+  for (const auto& msg : this->flash_cellboard_3_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_4_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_4_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_4_tx_size();
+  for (const auto& msg : this->flash_cellboard_4_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_4_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_4_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_4_rx_size();
+  for (const auto& msg : this->flash_cellboard_4_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_5_tx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_5_tx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_5_tx_size();
+  for (const auto& msg : this->flash_cellboard_5_tx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
-  {
-    unsigned int count = static_cast<unsigned int>(this->flash_cellboard_5_rx_size());
-    total_size += 2UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->flash_cellboard_5_rx(static_cast<int>(i)));
-    }
+  total_size += 2UL * this->_internal_flash_cellboard_5_rx_size();
+  for (const auto& msg : this->flash_cellboard_5_rx_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Pack::MergeFrom(const ::google::protobuf::Message& from) {
+void Pack::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:bms.Pack)
   GOOGLE_DCHECK_NE(&from, this);
   const Pack* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Pack>(
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Pack>(
           &from);
-  if (source == NULL) {
+  if (source == nullptr) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.Pack)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
   // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.Pack)
     MergeFrom(*source);
@@ -12918,8 +10637,8 @@ void Pack::MergeFrom(const ::google::protobuf::Message& from) {
 void Pack::MergeFrom(const Pack& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:bms.Pack)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   board_status_cellboard0_.MergeFrom(from.board_status_cellboard0_);
@@ -12956,7 +10675,7 @@ void Pack::MergeFrom(const Pack& from) {
   flash_cellboard_5_rx_.MergeFrom(from.flash_cellboard_5_rx_);
 }
 
-void Pack::CopyFrom(const ::google::protobuf::Message& from) {
+void Pack::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 // @@protoc_insertion_point(generalized_copy_from_start:bms.Pack)
   if (&from == this) return;
   Clear();
@@ -12974,157 +10693,151 @@ bool Pack::IsInitialized() const {
   return true;
 }
 
-void Pack::Swap(Pack* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Pack::InternalSwap(Pack* other) {
   using std::swap;
-  CastToBase(&board_status_cellboard0_)->InternalSwap(CastToBase(&other->board_status_cellboard0_));
-  CastToBase(&board_status_cellboard1_)->InternalSwap(CastToBase(&other->board_status_cellboard1_));
-  CastToBase(&board_status_cellboard2_)->InternalSwap(CastToBase(&other->board_status_cellboard2_));
-  CastToBase(&board_status_cellboard3_)->InternalSwap(CastToBase(&other->board_status_cellboard3_));
-  CastToBase(&board_status_cellboard4_)->InternalSwap(CastToBase(&other->board_status_cellboard4_));
-  CastToBase(&board_status_cellboard5_)->InternalSwap(CastToBase(&other->board_status_cellboard5_));
-  CastToBase(&temperatures_cellboard0_)->InternalSwap(CastToBase(&other->temperatures_cellboard0_));
-  CastToBase(&temperatures_cellboard1_)->InternalSwap(CastToBase(&other->temperatures_cellboard1_));
-  CastToBase(&temperatures_cellboard2_)->InternalSwap(CastToBase(&other->temperatures_cellboard2_));
-  CastToBase(&temperatures_cellboard3_)->InternalSwap(CastToBase(&other->temperatures_cellboard3_));
-  CastToBase(&temperatures_cellboard4_)->InternalSwap(CastToBase(&other->temperatures_cellboard4_));
-  CastToBase(&temperatures_cellboard5_)->InternalSwap(CastToBase(&other->temperatures_cellboard5_));
-  CastToBase(&voltages_cellboard0_)->InternalSwap(CastToBase(&other->voltages_cellboard0_));
-  CastToBase(&voltages_cellboard1_)->InternalSwap(CastToBase(&other->voltages_cellboard1_));
-  CastToBase(&voltages_cellboard2_)->InternalSwap(CastToBase(&other->voltages_cellboard2_));
-  CastToBase(&voltages_cellboard3_)->InternalSwap(CastToBase(&other->voltages_cellboard3_));
-  CastToBase(&voltages_cellboard4_)->InternalSwap(CastToBase(&other->voltages_cellboard4_));
-  CastToBase(&voltages_cellboard5_)->InternalSwap(CastToBase(&other->voltages_cellboard5_));
-  CastToBase(&balancing_)->InternalSwap(CastToBase(&other->balancing_));
-  CastToBase(&fw_update_)->InternalSwap(CastToBase(&other->fw_update_));
-  CastToBase(&flash_cellboard_0_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_0_tx_));
-  CastToBase(&flash_cellboard_0_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_0_rx_));
-  CastToBase(&flash_cellboard_1_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_1_tx_));
-  CastToBase(&flash_cellboard_1_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_1_rx_));
-  CastToBase(&flash_cellboard_2_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_2_tx_));
-  CastToBase(&flash_cellboard_2_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_2_rx_));
-  CastToBase(&flash_cellboard_3_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_3_tx_));
-  CastToBase(&flash_cellboard_3_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_3_rx_));
-  CastToBase(&flash_cellboard_4_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_4_tx_));
-  CastToBase(&flash_cellboard_4_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_4_rx_));
-  CastToBase(&flash_cellboard_5_tx_)->InternalSwap(CastToBase(&other->flash_cellboard_5_tx_));
-  CastToBase(&flash_cellboard_5_rx_)->InternalSwap(CastToBase(&other->flash_cellboard_5_rx_));
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  board_status_cellboard0_.InternalSwap(&other->board_status_cellboard0_);
+  board_status_cellboard1_.InternalSwap(&other->board_status_cellboard1_);
+  board_status_cellboard2_.InternalSwap(&other->board_status_cellboard2_);
+  board_status_cellboard3_.InternalSwap(&other->board_status_cellboard3_);
+  board_status_cellboard4_.InternalSwap(&other->board_status_cellboard4_);
+  board_status_cellboard5_.InternalSwap(&other->board_status_cellboard5_);
+  temperatures_cellboard0_.InternalSwap(&other->temperatures_cellboard0_);
+  temperatures_cellboard1_.InternalSwap(&other->temperatures_cellboard1_);
+  temperatures_cellboard2_.InternalSwap(&other->temperatures_cellboard2_);
+  temperatures_cellboard3_.InternalSwap(&other->temperatures_cellboard3_);
+  temperatures_cellboard4_.InternalSwap(&other->temperatures_cellboard4_);
+  temperatures_cellboard5_.InternalSwap(&other->temperatures_cellboard5_);
+  voltages_cellboard0_.InternalSwap(&other->voltages_cellboard0_);
+  voltages_cellboard1_.InternalSwap(&other->voltages_cellboard1_);
+  voltages_cellboard2_.InternalSwap(&other->voltages_cellboard2_);
+  voltages_cellboard3_.InternalSwap(&other->voltages_cellboard3_);
+  voltages_cellboard4_.InternalSwap(&other->voltages_cellboard4_);
+  voltages_cellboard5_.InternalSwap(&other->voltages_cellboard5_);
+  balancing_.InternalSwap(&other->balancing_);
+  fw_update_.InternalSwap(&other->fw_update_);
+  flash_cellboard_0_tx_.InternalSwap(&other->flash_cellboard_0_tx_);
+  flash_cellboard_0_rx_.InternalSwap(&other->flash_cellboard_0_rx_);
+  flash_cellboard_1_tx_.InternalSwap(&other->flash_cellboard_1_tx_);
+  flash_cellboard_1_rx_.InternalSwap(&other->flash_cellboard_1_rx_);
+  flash_cellboard_2_tx_.InternalSwap(&other->flash_cellboard_2_tx_);
+  flash_cellboard_2_rx_.InternalSwap(&other->flash_cellboard_2_rx_);
+  flash_cellboard_3_tx_.InternalSwap(&other->flash_cellboard_3_tx_);
+  flash_cellboard_3_rx_.InternalSwap(&other->flash_cellboard_3_rx_);
+  flash_cellboard_4_tx_.InternalSwap(&other->flash_cellboard_4_tx_);
+  flash_cellboard_4_rx_.InternalSwap(&other->flash_cellboard_4_rx_);
+  flash_cellboard_5_tx_.InternalSwap(&other->flash_cellboard_5_tx_);
+  flash_cellboard_5_rx_.InternalSwap(&other->flash_cellboard_5_rx_);
 }
 
-::google::protobuf::Metadata Pack::GetMetadata() const {
-  protobuf_bms_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_bms_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata Pack::GetMetadata() const {
+  return GetMetadataStatic();
 }
 
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace bms
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD0 >(arena);
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD0 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD0 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD1 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD1 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD1 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD2 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD2 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD2 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD3 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD3 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD3 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD4 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD4 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD4 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BOARD_STATUS_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BOARD_STATUS_CELLBOARD5 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD5 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD5 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD0 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD0 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD0 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD1 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD1 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD1 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD2 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD2 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD2 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD3 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD3 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD3 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD4 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD4 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD4 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::TEMPERATURES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::TEMPERATURES_CELLBOARD5 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD5 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD5 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD0 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD0 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD0 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD1 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD1 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD1 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD2 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD2 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD2 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD3 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD3 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD3 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD4 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD4 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD4 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::VOLTAGES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::VOLTAGES_CELLBOARD5 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD5 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD5 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::BALANCING* Arena::CreateMaybeMessage< ::bms::BALANCING >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::BALANCING >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BALANCING* Arena::CreateMaybeMessage< ::bms::BALANCING >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BALANCING >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FW_UPDATE* Arena::CreateMaybeMessage< ::bms::FW_UPDATE >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FW_UPDATE >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FW_UPDATE* Arena::CreateMaybeMessage< ::bms::FW_UPDATE >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FW_UPDATE >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_0_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_0_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_0_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_0_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_0_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_0_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_0_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_0_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_0_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_1_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_1_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_1_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_1_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_1_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_1_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_1_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_1_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_1_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_2_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_2_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_2_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_2_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_2_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_2_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_2_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_2_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_2_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_3_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_3_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_3_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_3_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_3_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_3_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_3_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_3_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_3_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_4_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_4_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_4_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_4_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_4_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_4_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_4_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_4_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_4_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_5_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_TX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_5_TX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_5_TX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_TX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_5_TX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::FLASH_CELLBOARD_5_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_RX >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::FLASH_CELLBOARD_5_RX >(arena);
+template<> PROTOBUF_NOINLINE ::bms::FLASH_CELLBOARD_5_RX* Arena::CreateMaybeMessage< ::bms::FLASH_CELLBOARD_5_RX >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::FLASH_CELLBOARD_5_RX >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::bms::Pack* Arena::CreateMaybeMessage< ::bms::Pack >(Arena* arena) {
-  return Arena::CreateInternal< ::bms::Pack >(arena);
+template<> PROTOBUF_NOINLINE ::bms::Pack* Arena::CreateMaybeMessage< ::bms::Pack >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::Pack >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>
