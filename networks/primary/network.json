@@ -171,17 +171,9 @@
       "type": "enum",
       "items": ["OFF", "ON"]
     },
-    "TractionControl": {
-      "type": "enum",
-      "items": ["OFF", "SLIP_CONTROL", "TORQUE_VECTORING", "COMPLETE"]
-    },
     "TsStatus": {
       "type": "enum",
       "items": ["OFF", "PRECHARGE", "ON", "FATAL"]
-    },
-    "Map": {
-      "type": "enum",
-      "items": ["R", "D20", "D40", "D60", "D80", "D100"]
     },
     "SetCarStatus": {
       "type": "enum",
@@ -258,7 +250,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32"
+        "canlib_build_time": "uint32"
       }
     },
     {
@@ -271,7 +263,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32"
+        "canlib_build_time": "uint32"
       }
     },
     {
@@ -284,7 +276,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32"
+        "canlib_build_time": "uint32"
       }
     },
     {
@@ -297,7 +289,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32"
+        "canlib_build_time": "uint32"
       }
     },
     {
@@ -310,7 +302,7 @@
       "interval": 1000,
       "contents": {
         "component_version": "uint8",
-        "cancicd_version": "uint32"
+        "canlib_build_time": "uint32"
       }
     },
     {
@@ -597,8 +589,21 @@
       "description": "Send update of the tuneable values from the steering wheel",
       "interval": 100,
       "contents": {
-        "traction_control": "TractionControl",
-        "map": "Map"
+        "map_pw": {
+          "type": "int8",
+          "range": [-5, 10],
+          "force": "int8"
+        },
+        "map_sc": {
+          "type": "int8",
+          "range": [0, 10],
+          "force": "int8"
+        },
+        "map_tv": {
+          "type": "int8",
+          "range": [0, 10],
+          "force": "int8"
+        }
       }
     },
     {
@@ -810,9 +815,10 @@
       "name": "SET_INVERTER_CONNECTION_STATUS",
       "topic": "LV",
       "priority": 6,
+      "interval": 100,
       "sending": ["DAS"],
       "receiving": ["BMS_LV"],
-      "description": "Set inverter status",
+      "description": "Set the status of the inverter inputs RFE and RUN",
       "contents": {
         "status": "Toggle"
       }
@@ -975,7 +981,7 @@
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Encoder and inverter speed in rad/sec",
-      "interval": 100,
+      "interval": 10,
       "contents": {
         "encoder_r": {
           "type": "float32",
