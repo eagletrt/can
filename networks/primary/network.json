@@ -171,10 +171,6 @@
       "type": "enum",
       "items": ["OFF", "ON"]
     },
-    "TractionControl": {
-      "type": "enum",
-      "items": ["OFF", "SLIP_CONTROL", "TORQUE_VECTORING", "COMPLETE"]
-    },
     "TsStatus": {
       "type": "enum",
       "items": ["OFF", "PRECHARGE", "ON", "FATAL"]
@@ -593,8 +589,18 @@
       "description": "Send update of the tuneable values from the steering wheel",
       "interval": 100,
       "contents": {
-        "traction_control": "TractionControl",
-        "map": "int8"
+        "map_pw": {
+          "type": "int8",
+          "range": [-5, 10]
+        },
+        "map_sc": {
+          "type": "int8",
+          "range": [0, 10]
+        },
+        "map_tv": {
+          "type": "int8",
+          "range": [0, 10]
+        }
       }
     },
     {
