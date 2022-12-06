@@ -371,6 +371,24 @@
       "contents": {
         "angle": "float32"
       }
+    },
+    {
+      "name": "TPMS",
+      "topic": "STEER",
+      "priority": 7,
+      "sending": ["TELEMETRY"],
+      "receiving": ["STEER"],
+      "description": "Tire Pressure Monitoring System, pressure and temperature of each tire",
+      "contents": {
+        "fl_pressure": "uint8",
+        "fl_temperature": "uint8",
+        "fr_pressure": "uint8",
+        "fr_temperature": "uint8",
+        "rl_pressure": "uint8",
+        "rl_temperature": "uint8",
+        "rr_pressure": "uint8",
+        "rr_temperature": "uint8"
+      }
     }
   ]
 }
