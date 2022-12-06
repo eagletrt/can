@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1670177217
-#define CANLIB_BUILD_HASH 0x1112910d
+#define CANLIB_BUILD_TIME 1670342776
+#define CANLIB_BUILD_HASH 0x68e9c941
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define secondary_MESSAGE_COUNT 24
+#define secondary_MESSAGE_COUNT 25
 
 // Custom types
 
@@ -192,6 +192,7 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_INDEX_PEDALS_OUTPUT 21
 #define secondary_INDEX_CONTROL_OUTPUT 22
 #define secondary_INDEX_STEERING_ANGLE 23
+#define secondary_INDEX_TPMS 24
 
 // ============== SIZES ============== //
 
@@ -220,6 +221,7 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_SIZE_PEDALS_OUTPUT 5
 #define secondary_SIZE_CONTROL_OUTPUT 8
 #define secondary_SIZE_STEERING_ANGLE 4
+#define secondary_SIZE_TPMS 8
 
 // ============== BIT SETS =========== //
 
@@ -500,6 +502,20 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_STEERING_ANGLE;
 
+typedef struct CANLIB_PARKING {
+    secondary_uint8 fl_pressure;
+    secondary_uint8 fl_temperature;
+    secondary_uint8 fr_pressure;
+    secondary_uint8 fr_temperature;
+    secondary_uint8 rl_pressure;
+    secondary_uint8 rl_temperature;
+    secondary_uint8 rr_pressure;
+    secondary_uint8 rr_temperature;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_TPMS;
+
 
 typedef union CANLIB_PARKING {
     secondary_message_IMU_ANGULAR_RATE _IMU_ANGULAR_RATE;
@@ -526,6 +542,7 @@ typedef union CANLIB_PARKING {
     secondary_message_PEDALS_OUTPUT _PEDALS_OUTPUT;
     secondary_message_CONTROL_OUTPUT _CONTROL_OUTPUT;
     secondary_message_STEERING_ANGLE _STEERING_ANGLE;
+    secondary_message_TPMS _TPMS;
 } _secondary_all_structs_raw;
 
 typedef union CANLIB_PARKING {
@@ -1280,6 +1297,36 @@ int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* me
 int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 
 
+// ============== TPMS ============== //
+
+secondary_byte_size secondary_serialize_TPMS(
+    uint8_t* data,
+    secondary_uint8 fl_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_pressure,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_pressure,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_pressure,
+    secondary_uint8 rr_temperature
+);
+secondary_byte_size secondary_serialize_struct_TPMS(
+    uint8_t* data,
+    secondary_message_TPMS* message
+);
+void secondary_deserialize_TPMS(
+    secondary_message_TPMS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_TPMS(secondary_message_TPMS* message, char* buffer);
+int secondary_fields_TPMS(char* buffer);
+int secondary_to_string_file_TPMS(secondary_message_TPMS* message, FILE* buffer);
+int secondary_fields_file_TPMS(FILE* buffer);
+
+
 
 // ============== UTILS ============== //
 
@@ -1309,6 +1356,7 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 769: return secondary_INDEX_PEDALS_OUTPUT;
         case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
+        case 1: return secondary_INDEX_TPMS;
     }
     return -1; // invalid
 }
@@ -1339,6 +1387,7 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_PEDALS_OUTPUT: return 769;
         case secondary_INDEX_CONTROL_OUTPUT: return 801;
         case secondary_INDEX_STEERING_ANGLE: return 258;
+        case secondary_INDEX_TPMS: return 1;
     }
     return -1; // invalid
 }
@@ -4398,6 +4447,159 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
     );
 }
 
+// ============== SERIALIZE ============== //
+
+secondary_byte_size secondary_serialize_TPMS(
+    uint8_t* data,
+    secondary_uint8 fl_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_pressure,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_pressure,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_pressure,
+    secondary_uint8 rr_temperature
+) {
+    data[0] = fl_pressure;
+    data[1] = fl_temperature;
+    data[2] = fr_pressure;
+    data[3] = fr_temperature;
+    data[4] = rl_pressure;
+    data[5] = rl_temperature;
+    data[6] = rr_pressure;
+    data[7] = rr_temperature;
+    return 8;
+}
+
+secondary_byte_size secondary_serialize_struct_TPMS(
+    uint8_t* data,
+    secondary_message_TPMS* message
+) {
+    data[0] = message->fl_pressure;
+    data[1] = message->fl_temperature;
+    data[2] = message->fr_pressure;
+    data[3] = message->fr_temperature;
+    data[4] = message->rl_pressure;
+    data[5] = message->rl_temperature;
+    data[6] = message->rr_pressure;
+    data[7] = message->rr_temperature;
+    return 8;
+}
+
+// ============== DESERIALIZE ============== //
+
+void secondary_deserialize_TPMS(
+    secondary_message_TPMS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->fl_pressure = data[0];
+    message->fl_temperature = data[1];
+    message->fr_pressure = data[2];
+    message->fr_temperature = data[3];
+    message->rl_pressure = data[4];
+    message->rl_temperature = data[5];
+    message->rr_pressure = data[6];
+    message->rr_temperature = data[7];
+}
+
+// ============== STRING ============== //
+
+int secondary_to_string_TPMS(secondary_message_TPMS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->fl_pressure,
+        message->fl_temperature,
+        message->fr_pressure,
+        message->fr_temperature,
+        message->rl_pressure,
+        message->rl_temperature,
+        message->rr_pressure,
+        message->rr_temperature
+    );
+}
+
+int secondary_fields_TPMS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "fl_pressure" CANLIB_SEPARATOR 
+        "fl_temperature" CANLIB_SEPARATOR 
+        "fr_pressure" CANLIB_SEPARATOR 
+        "fr_temperature" CANLIB_SEPARATOR 
+        "rl_pressure" CANLIB_SEPARATOR 
+        "rl_temperature" CANLIB_SEPARATOR 
+        "rr_pressure" CANLIB_SEPARATOR 
+        "rr_temperature"
+    );
+}
+
+int secondary_to_string_file_TPMS(secondary_message_TPMS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->fl_pressure,
+        message->fl_temperature,
+        message->fr_pressure,
+        message->fr_temperature,
+        message->rl_pressure,
+        message->rl_temperature,
+        message->rr_pressure,
+        message->rr_temperature
+    );
+}
+
+int secondary_fields_file_TPMS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "fl_pressure" CANLIB_SEPARATOR 
+        "fl_temperature" CANLIB_SEPARATOR 
+        "fr_pressure" CANLIB_SEPARATOR 
+        "fr_temperature" CANLIB_SEPARATOR 
+        "rl_pressure" CANLIB_SEPARATOR 
+        "rl_temperature" CANLIB_SEPARATOR 
+        "rr_pressure" CANLIB_SEPARATOR 
+        "rr_temperature"
+    );
+}
+
 
 // ============== UTILS ============== //
 
@@ -4451,6 +4653,8 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return secondary_fields_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_STEERING_ANGLE(buffer);
+        case 1:
+            return secondary_fields_TPMS(buffer);
     }
     return 0;
 }
@@ -4505,6 +4709,8 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
             return secondary_to_string_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
+        case 1:
+            return secondary_to_string_TPMS((secondary_message_TPMS*) message, buffer);
     }
     return 0;
 }
@@ -4559,6 +4765,8 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return secondary_fields_file_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_file_STEERING_ANGLE(buffer);
+        case 1:
+            return secondary_fields_file_TPMS(buffer);
     }
     return 0;
 }
@@ -4613,6 +4821,8 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
             return secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
+        case 1:
+            return secondary_to_string_file_TPMS((secondary_message_TPMS*) message, buffer);
     }
     return 0;
 }
@@ -4883,6 +5093,16 @@ void* secondary_deserialize_from_id(
             );
             return message_raw;
         }
+        case 1: {
+            secondary_deserialize_TPMS(
+                (secondary_message_TPMS*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
     }
     return NULL;
 }
@@ -4961,6 +5181,9 @@ secondary_devices* secondary_devices_new() {
     (*devices)[secondary_INDEX_STEERING_ANGLE].id = 258;
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_raw = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_conversion = NULL;
+    (*devices)[secondary_INDEX_TPMS].id = 1;
+    (*devices)[secondary_INDEX_TPMS].message_raw = (void*) malloc(sizeof(secondary_message_TPMS));
+    (*devices)[secondary_INDEX_TPMS].message_conversion = NULL;
     return devices;
 }
 
@@ -4993,6 +5216,7 @@ void secondary_devices_free(secondary_devices* devices) {
     free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw);
     free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion);
     free((*devices)[secondary_INDEX_STEERING_ANGLE].message_raw);
+    free((*devices)[secondary_INDEX_TPMS].message_raw);
     free(devices);
 }
 
@@ -5254,6 +5478,16 @@ void secondary_devices_deserialize_from_id(
         case 258: {
             secondary_deserialize_STEERING_ANGLE(
                 (secondary_message_STEERING_ANGLE*) &(*devices)[secondary_INDEX_STEERING_ANGLE].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 1: {
+            secondary_deserialize_TPMS(
+                (secondary_message_TPMS*) &(*devices)[secondary_INDEX_TPMS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

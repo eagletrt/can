@@ -47,7 +47,7 @@ struct TableStruct_secondary_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[25]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -130,6 +130,9 @@ extern PackDefaultTypeInternal _Pack_default_instance_;
 class STEERING_ANGLE;
 class STEERING_ANGLEDefaultTypeInternal;
 extern STEERING_ANGLEDefaultTypeInternal _STEERING_ANGLE_default_instance_;
+class TPMS;
+class TPMSDefaultTypeInternal;
+extern TPMSDefaultTypeInternal _TPMS_default_instance_;
 }  // namespace secondary
 PROTOBUF_NAMESPACE_OPEN
 template<> ::secondary::CONTROL_OUTPUT* Arena::CreateMaybeMessage<::secondary::CONTROL_OUTPUT>(Arena*);
@@ -157,6 +160,7 @@ template<> ::secondary::LAP_COUNT* Arena::CreateMaybeMessage<::secondary::LAP_CO
 template<> ::secondary::PEDALS_OUTPUT* Arena::CreateMaybeMessage<::secondary::PEDALS_OUTPUT>(Arena*);
 template<> ::secondary::Pack* Arena::CreateMaybeMessage<::secondary::Pack>(Arena*);
 template<> ::secondary::STEERING_ANGLE* Arena::CreateMaybeMessage<::secondary::STEERING_ANGLE>(Arena*);
+template<> ::secondary::TPMS* Arena::CreateMaybeMessage<::secondary::TPMS>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace secondary {
 
@@ -4385,6 +4389,231 @@ class STEERING_ANGLE PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class TPMS PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.TPMS) */ {
+ public:
+  inline TPMS() : TPMS(nullptr) {};
+  virtual ~TPMS();
+
+  TPMS(const TPMS& from);
+  TPMS(TPMS&& from) noexcept
+    : TPMS() {
+    *this = ::std::move(from);
+  }
+
+  inline TPMS& operator=(const TPMS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TPMS& operator=(TPMS&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const TPMS& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TPMS* internal_default_instance() {
+    return reinterpret_cast<const TPMS*>(
+               &_TPMS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(TPMS& a, TPMS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TPMS* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TPMS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TPMS* New() const final {
+    return CreateMaybeMessage<TPMS>(nullptr);
+  }
+
+  TPMS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TPMS>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const TPMS& from);
+  void MergeFrom(const TPMS& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TPMS* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.TPMS";
+  }
+  protected:
+  explicit TPMS(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_secondary_2eproto);
+    return ::descriptor_table_secondary_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFlPressureFieldNumber = 1,
+    kFlTemperatureFieldNumber = 2,
+    kFrPressureFieldNumber = 3,
+    kFrTemperatureFieldNumber = 4,
+    kRlPressureFieldNumber = 5,
+    kRlTemperatureFieldNumber = 6,
+    kRrPressureFieldNumber = 7,
+    kRrTemperatureFieldNumber = 8,
+    kInnerTimestampFieldNumber = 9,
+  };
+  // uint32 fl_pressure = 1;
+  void clear_fl_pressure();
+  ::PROTOBUF_NAMESPACE_ID::uint32 fl_pressure() const;
+  void set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fl_pressure() const;
+  void _internal_set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 fl_temperature = 2;
+  void clear_fl_temperature();
+  ::PROTOBUF_NAMESPACE_ID::uint32 fl_temperature() const;
+  void set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fl_temperature() const;
+  void _internal_set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 fr_pressure = 3;
+  void clear_fr_pressure();
+  ::PROTOBUF_NAMESPACE_ID::uint32 fr_pressure() const;
+  void set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fr_pressure() const;
+  void _internal_set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 fr_temperature = 4;
+  void clear_fr_temperature();
+  ::PROTOBUF_NAMESPACE_ID::uint32 fr_temperature() const;
+  void set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fr_temperature() const;
+  void _internal_set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 rl_pressure = 5;
+  void clear_rl_pressure();
+  ::PROTOBUF_NAMESPACE_ID::uint32 rl_pressure() const;
+  void set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rl_pressure() const;
+  void _internal_set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 rl_temperature = 6;
+  void clear_rl_temperature();
+  ::PROTOBUF_NAMESPACE_ID::uint32 rl_temperature() const;
+  void set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rl_temperature() const;
+  void _internal_set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 rr_pressure = 7;
+  void clear_rr_pressure();
+  ::PROTOBUF_NAMESPACE_ID::uint32 rr_pressure() const;
+  void set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rr_pressure() const;
+  void _internal_set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 rr_temperature = 8;
+  void clear_rr_temperature();
+  ::PROTOBUF_NAMESPACE_ID::uint32 rr_temperature() const;
+  void set_rr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rr_temperature() const;
+  void _internal_set_rr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint64 _inner_timestamp = 9;
+  void clear__inner_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.TPMS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 fl_pressure_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 fl_temperature_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 fr_pressure_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 fr_temperature_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 rl_pressure_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 rl_temperature_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 rr_pressure_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 rr_temperature_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_secondary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.Pack) */ {
  public:
@@ -4427,7 +4656,7 @@ class Pack PROTOBUF_FINAL :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -4522,6 +4751,7 @@ class Pack PROTOBUF_FINAL :
     kPEDALSOUTPUTFieldNumber = 22,
     kCONTROLOUTPUTFieldNumber = 23,
     kSTEERINGANGLEFieldNumber = 24,
+    kTPMSFieldNumber = 25,
   };
   // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
   int imu_angular_rate_size() const;
@@ -4955,6 +5185,24 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >&
       steering_angle() const;
 
+  // repeated .secondary.TPMS TPMS = 25;
+  int tpms_size() const;
+  private:
+  int _internal_tpms_size() const;
+  public:
+  void clear_tpms();
+  ::secondary::TPMS* mutable_tpms(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS >*
+      mutable_tpms();
+  private:
+  const ::secondary::TPMS& _internal_tpms(int index) const;
+  ::secondary::TPMS* _internal_add_tpms();
+  public:
+  const ::secondary::TPMS& tpms(int index) const;
+  ::secondary::TPMS* add_tpms();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS >&
+      tpms() const;
+
   // @@protoc_insertion_point(class_scope:secondary.Pack)
  private:
   class _Internal;
@@ -4986,6 +5234,7 @@ class Pack PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT > pedals_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT > control_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE > steering_angle_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS > tpms_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
 };
@@ -7274,6 +7523,190 @@ inline void STEERING_ANGLE::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64
 
 // -------------------------------------------------------------------
 
+// TPMS
+
+// uint32 fl_pressure = 1;
+inline void TPMS::clear_fl_pressure() {
+  fl_pressure_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fl_pressure() const {
+  return fl_pressure_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fl_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.fl_pressure)
+  return _internal_fl_pressure();
+}
+inline void TPMS::_internal_set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  fl_pressure_ = value;
+}
+inline void TPMS::set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_fl_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.fl_pressure)
+}
+
+// uint32 fl_temperature = 2;
+inline void TPMS::clear_fl_temperature() {
+  fl_temperature_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fl_temperature() const {
+  return fl_temperature_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fl_temperature() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.fl_temperature)
+  return _internal_fl_temperature();
+}
+inline void TPMS::_internal_set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  fl_temperature_ = value;
+}
+inline void TPMS::set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_fl_temperature(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.fl_temperature)
+}
+
+// uint32 fr_pressure = 3;
+inline void TPMS::clear_fr_pressure() {
+  fr_pressure_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fr_pressure() const {
+  return fr_pressure_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fr_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.fr_pressure)
+  return _internal_fr_pressure();
+}
+inline void TPMS::_internal_set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  fr_pressure_ = value;
+}
+inline void TPMS::set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_fr_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.fr_pressure)
+}
+
+// uint32 fr_temperature = 4;
+inline void TPMS::clear_fr_temperature() {
+  fr_temperature_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fr_temperature() const {
+  return fr_temperature_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fr_temperature() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.fr_temperature)
+  return _internal_fr_temperature();
+}
+inline void TPMS::_internal_set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  fr_temperature_ = value;
+}
+inline void TPMS::set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_fr_temperature(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.fr_temperature)
+}
+
+// uint32 rl_pressure = 5;
+inline void TPMS::clear_rl_pressure() {
+  rl_pressure_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rl_pressure() const {
+  return rl_pressure_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rl_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rl_pressure)
+  return _internal_rl_pressure();
+}
+inline void TPMS::_internal_set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  rl_pressure_ = value;
+}
+inline void TPMS::set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_rl_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rl_pressure)
+}
+
+// uint32 rl_temperature = 6;
+inline void TPMS::clear_rl_temperature() {
+  rl_temperature_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rl_temperature() const {
+  return rl_temperature_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rl_temperature() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rl_temperature)
+  return _internal_rl_temperature();
+}
+inline void TPMS::_internal_set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  rl_temperature_ = value;
+}
+inline void TPMS::set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_rl_temperature(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rl_temperature)
+}
+
+// uint32 rr_pressure = 7;
+inline void TPMS::clear_rr_pressure() {
+  rr_pressure_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rr_pressure() const {
+  return rr_pressure_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rr_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rr_pressure)
+  return _internal_rr_pressure();
+}
+inline void TPMS::_internal_set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  rr_pressure_ = value;
+}
+inline void TPMS::set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_rr_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rr_pressure)
+}
+
+// uint32 rr_temperature = 8;
+inline void TPMS::clear_rr_temperature() {
+  rr_temperature_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rr_temperature() const {
+  return rr_temperature_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rr_temperature() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rr_temperature)
+  return _internal_rr_temperature();
+}
+inline void TPMS::_internal_set_rr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  rr_temperature_ = value;
+}
+inline void TPMS::set_rr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_rr_temperature(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rr_temperature)
+}
+
+// uint64 _inner_timestamp = 9;
+inline void TPMS::clear__inner_timestamp() {
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TPMS::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TPMS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void TPMS::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void TPMS::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -8212,9 +8645,50 @@ Pack::steering_angle() const {
   return steering_angle_;
 }
 
+// repeated .secondary.TPMS TPMS = 25;
+inline int Pack::_internal_tpms_size() const {
+  return tpms_.size();
+}
+inline int Pack::tpms_size() const {
+  return _internal_tpms_size();
+}
+inline void Pack::clear_tpms() {
+  tpms_.Clear();
+}
+inline ::secondary::TPMS* Pack::mutable_tpms(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.TPMS)
+  return tpms_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS >*
+Pack::mutable_tpms() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.TPMS)
+  return &tpms_;
+}
+inline const ::secondary::TPMS& Pack::_internal_tpms(int index) const {
+  return tpms_.Get(index);
+}
+inline const ::secondary::TPMS& Pack::tpms(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.TPMS)
+  return _internal_tpms(index);
+}
+inline ::secondary::TPMS* Pack::_internal_add_tpms() {
+  return tpms_.Add();
+}
+inline ::secondary::TPMS* Pack::add_tpms() {
+  // @@protoc_insertion_point(field_add:secondary.Pack.TPMS)
+  return _internal_add_tpms();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS >&
+Pack::tpms() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.TPMS)
+  return tpms_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

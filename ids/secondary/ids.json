@@ -18,6 +18,9 @@
                 },
                 "CONTROL_OUTPUT": {
                     "CONTROL_OUTPUT": 801
+                },
+                "TPMS": {
+                    "TPMS": 1
                 }
             }
         },

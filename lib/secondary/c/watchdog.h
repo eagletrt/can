@@ -73,6 +73,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_WATCHDOG_INDEX_PEDALS_OUTPUT 21
 #define secondary_WATCHDOG_INDEX_CONTROL_OUTPUT 22
 #define secondary_WATCHDOG_INDEX_STEERING_ANGLE 23
+#define secondary_WATCHDOG_INDEX_TPMS 24
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -126,6 +127,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT (100 + CANLIB_INTERVAL_THRESHOLD)
 #define secondary_INTERVAL_STEERING_ANGLE 10
 #define secondary_INTERVAL_WITH_THRESHOLD_STEERING_ANGLE (10 + CANLIB_INTERVAL_THRESHOLD)
+#define secondary_INTERVAL_TPMS -1
+#define secondary_INTERVAL_WITH_THRESHOLD_TPMS (-1 + CANLIB_INTERVAL_THRESHOLD)
 
 
 // Messages with this interval will be ignored by the watchdog as they are not
@@ -133,9 +136,9 @@ typedef void (*canlib_watchdog_callback)(int);
 #define secondary_INTERVAL_ONCE -1
 
 typedef struct {
-    uint8_t activated[3];
-    uint8_t timeout[3];
-    canlib_watchdog_timestamp last_reset[24];
+    uint8_t activated[4];
+    uint8_t timeout[4];
+    canlib_watchdog_timestamp last_reset[25];
 } secondary_watchdog;
 
 static inline int secondary_watchdog_interval_from_id(uint16_t message_id) {
@@ -164,6 +167,7 @@ static inline int secondary_watchdog_interval_from_id(uint16_t message_id) {
         case 769: return secondary_INTERVAL_PEDALS_OUTPUT;
         case 801: return secondary_INTERVAL_CONTROL_OUTPUT;
         case 258: return secondary_INTERVAL_STEERING_ANGLE;
+        case 1: return secondary_INTERVAL_TPMS;
     }
     return -1;
 }
@@ -194,8 +198,9 @@ static inline int secondary_watchdog_index_from_id(canlib_message_id id) {
         case 769: return secondary_WATCHDOG_INDEX_PEDALS_OUTPUT;
         case 801: return secondary_WATCHDOG_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_WATCHDOG_INDEX_STEERING_ANGLE;
+        case 1: return secondary_WATCHDOG_INDEX_TPMS;
     }
-    return 24; // invalid
+    return 25; // invalid
 }
 
 secondary_watchdog* secondary_watchdog_new();
@@ -230,7 +235,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 24 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 25 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

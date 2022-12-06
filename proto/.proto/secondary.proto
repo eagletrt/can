@@ -183,6 +183,18 @@ message STEERING_ANGLE {
     uint64 _inner_timestamp = 2;
 }
 
+message TPMS {
+    uint32 fl_pressure = 1;
+    uint32 fl_temperature = 2;
+    uint32 fr_pressure = 3;
+    uint32 fr_temperature = 4;
+    uint32 rl_pressure = 5;
+    uint32 rl_temperature = 6;
+    uint32 rr_pressure = 7;
+    uint32 rr_temperature = 8;
+    uint64 _inner_timestamp = 9;
+}
+
 
 message Pack {
     repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -209,4 +221,5 @@ message Pack {
     repeated PEDALS_OUTPUT PEDALS_OUTPUT = 22;
     repeated CONTROL_OUTPUT CONTROL_OUTPUT = 23;
     repeated STEERING_ANGLE STEERING_ANGLE = 24;
+    repeated TPMS TPMS = 25;
 }

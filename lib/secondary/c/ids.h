@@ -49,6 +49,7 @@ typedef uint16_t canlib_message_id;
 #define secondary_ID_LAP_COUNT 0x441 // dec: 1089 bin: 0b10001000001
 #define secondary_ID_PEDALS_OUTPUT 0x301 // dec: 769 bin: 0b01100000001
 #define secondary_ID_CONTROL_OUTPUT 0x321 // dec: 801 bin: 0b01100100001
+#define secondary_ID_TPMS 0x1 // dec: 1 bin: 0b00000000001
 
 /* TOPIC TELEMETRY */
 #define secondary_TOPIC_MASK_TELEMETRY 0b00000011111
@@ -111,6 +112,8 @@ static inline int secondary_message_name_from_id(canlib_message_id id, char *buf
             return sprintf(buffer, "%s", "CONTROL_OUTPUT");;
         case secondary_ID_STEERING_ANGLE:
             return sprintf(buffer, "%s", "STEERING_ANGLE");;
+        case secondary_ID_TPMS:
+            return sprintf(buffer, "%s", "TPMS");;
         default:
             return 0; // Unknown message
     }
@@ -142,6 +145,7 @@ static inline bool secondary_is_message_id(canlib_message_id message_id) {
         case 769: return true; break;
         case 801: return true; break;
         case 258: return true; break;
+        case 1: return true; break;
     }
     return false;
 }

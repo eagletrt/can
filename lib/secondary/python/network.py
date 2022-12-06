@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670177217
-CANLIB_BUILD_HASH = 0x1112910d
+CANLIB_BUILD_TIME = 1670342776
+CANLIB_BUILD_HASH = 0x68e9c941
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1173,5 +1173,67 @@ class message_STEERING_ANGLE:
     def deserialize(cls, data: bytearray):
         message = cls()
         message.angle = float32(unpack("<f", data[0:4])[0])
+        return message
+
+
+class message_TPMS:
+    def __init__(
+        self,
+        fl_pressure = None,
+        fl_temperature = None,
+        fr_pressure = None,
+        fr_temperature = None,
+        rl_pressure = None,
+        rl_temperature = None,
+        rr_pressure = None,
+        rr_temperature = None
+    ):
+        self.fl_pressure = uint8(fl_pressure)
+        self.fl_temperature = uint8(fl_temperature)
+        self.fr_pressure = uint8(fr_pressure)
+        self.fr_temperature = uint8(fr_temperature)
+        self.rl_pressure = uint8(rl_pressure)
+        self.rl_temperature = uint8(rl_temperature)
+        self.rr_pressure = uint8(rr_pressure)
+        self.rr_temperature = uint8(rr_temperature)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_TPMS):
+            return False
+        if self.fl_pressure != other.fl_pressure:
+            return False
+        if self.fl_temperature != other.fl_temperature:
+            return False
+        if self.fr_pressure != other.fr_pressure:
+            return False
+        if self.fr_temperature != other.fr_temperature:
+            return False
+        if self.rl_pressure != other.rl_pressure:
+            return False
+        if self.rl_temperature != other.rl_temperature:
+            return False
+        if self.rr_pressure != other.rr_pressure:
+            return False
+        if self.rr_temperature != other.rr_temperature:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<BBBBBBBB", self.fl_pressure, self.fl_temperature, self.fr_pressure, self.fr_temperature, self.rl_pressure, self.rl_temperature, self.rr_pressure, self.rr_temperature))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.fl_pressure = uint8(unpack("<B", data[0:1])[0])
+        message.fl_temperature = uint8(unpack("<xB", data[0:2])[0])
+        message.fr_pressure = uint8(unpack("<xxB", data[0:3])[0])
+        message.fr_temperature = uint8(unpack("<xxxB", data[0:4])[0])
+        message.rl_pressure = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.rl_temperature = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.rr_pressure = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.rr_temperature = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
