@@ -590,19 +590,19 @@
       "interval": 100,
       "contents": {
         "map_pw": {
-          "type": "int8",
-          "range": [-5, 10],
-          "force": "int8"
+          "type": "float32",
+          "range": [-0.5, 1],
+          "precision": 0.1
         },
         "map_sc": {
-          "type": "int8",
-          "range": [0, 10],
-          "force": "int8"
+          "type": "float32",
+          "range": [0, 1],
+          "precision": 0.1
         },
         "map_tv": {
-          "type": "int8",
-          "range": [0, 10],
-          "force": "int8"
+          "type": "float32",
+          "range": [0, 1],
+          "precision": 0.1
         }
       }
     },

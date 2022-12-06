@@ -2499,8 +2499,8 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "r_timestamp\030\002 \001(\004\"Z\n\026SET_TS_STATUS_HANDC"
   "ART\022&\n\rts_status_set\030\001 \001(\0162\017.primary.Tog"
   "gle\022\030\n\020_inner_timestamp\030\002 \001(\004\"X\n\014STEER_S"
-  "TATUS\022\016\n\006map_pw\030\001 \001(\021\022\016\n\006map_sc\030\002 \001(\021\022\016\n"
-  "\006map_tv\030\003 \001(\021\022\030\n\020_inner_timestamp\030\004 \001(\004\""
+  "TATUS\022\016\n\006map_pw\030\001 \001(\002\022\016\n\006map_sc\030\002 \001(\002\022\016\n"
+  "\006map_tv\030\003 \001(\002\022\030\n\020_inner_timestamp\030\004 \001(\004\""
   "Y\n\016SET_CAR_STATUS\022-\n\016car_status_set\030\001 \001("
   "\0162\025.primary.SetCarStatus\022\030\n\020_inner_times"
   "tamp\030\002 \001(\004\"j\n\020SET_PEDALS_RANGE\022\035\n\005bound\030"
@@ -9412,25 +9412,25 @@ const char* STEER_STATUS::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // sint32 map_pw = 1;
+      // float map_pw = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          map_pw_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          map_pw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // sint32 map_sc = 2;
+      // float map_sc = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          map_sc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          map_sc_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // sint32 map_tv = 3;
+      // float map_tv = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          map_tv_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          map_tv_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 4;
@@ -9468,22 +9468,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // sint32 map_pw = 1;
-  if (this->map_pw() != 0) {
+  // float map_pw = 1;
+  if (!(this->map_pw() <= 0 && this->map_pw() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(1, this->_internal_map_pw(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_map_pw(), target);
   }
 
-  // sint32 map_sc = 2;
-  if (this->map_sc() != 0) {
+  // float map_sc = 2;
+  if (!(this->map_sc() <= 0 && this->map_sc() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_map_sc(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_map_sc(), target);
   }
 
-  // sint32 map_tv = 3;
-  if (this->map_tv() != 0) {
+  // float map_tv = 3;
+  if (!(this->map_tv() <= 0 && this->map_tv() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(3, this->_internal_map_tv(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_map_tv(), target);
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9508,18 +9508,14 @@ size_t STEER_STATUS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // sint32 map_pw = 1;
-  if (this->map_pw() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_map_pw());
+  // float map_pw = 1;
+  if (!(this->map_pw() <= 0 && this->map_pw() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // sint32 map_sc = 2;
-  if (this->map_sc() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_map_sc());
+  // float map_sc = 2;
+  if (!(this->map_sc() <= 0 && this->map_sc() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 4;
@@ -9529,11 +9525,9 @@ size_t STEER_STATUS::ByteSizeLong() const {
         this->_internal__inner_timestamp());
   }
 
-  // sint32 map_tv = 3;
-  if (this->map_tv() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
-        this->_internal_map_tv());
+  // float map_tv = 3;
+  if (!(this->map_tv() <= 0 && this->map_tv() >= 0)) {
+    total_size += 1 + 4;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9567,16 +9561,16 @@ void STEER_STATUS::MergeFrom(const STEER_STATUS& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.map_pw() != 0) {
+  if (!(from.map_pw() <= 0 && from.map_pw() >= 0)) {
     _internal_set_map_pw(from._internal_map_pw());
   }
-  if (from.map_sc() != 0) {
+  if (!(from.map_sc() <= 0 && from.map_sc() >= 0)) {
     _internal_set_map_sc(from._internal_map_sc());
   }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (from.map_tv() != 0) {
+  if (!(from.map_tv() <= 0 && from.map_tv() >= 0)) {
     _internal_set_map_tv(from._internal_map_tv());
   }
 }

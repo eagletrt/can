@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1670342776
-#define CANLIB_BUILD_HASH 0x68e9c941
+#define CANLIB_BUILD_TIME 1670347587
+#define CANLIB_BUILD_HASH 0xffd7fb04
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -851,18 +851,18 @@ typedef struct CANLIB_PARKING {
 } primary_message_SET_TS_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_int8 map_pw;
-    primary_int8 map_sc;
-    primary_int8 map_tv;
+    primary_uint8 map_pw;
+    primary_uint8 map_sc;
+    primary_uint8 map_tv;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } primary_message_STEER_STATUS;
 
 typedef struct CANLIB_PARKING {
-    primary_int8 map_pw;
-    primary_int8 map_sc;
-    primary_int8 map_tv;
+    primary_float32 map_pw;
+    primary_float32 map_sc;
+    primary_float32 map_tv;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -2218,9 +2218,9 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer);
 
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_uint8 map_pw,
+    primary_uint8 map_sc,
+    primary_uint8 map_tv
 );
 primary_byte_size primary_serialize_struct_STEER_STATUS(
     uint8_t* data,
@@ -2245,9 +2245,9 @@ void primary_conversion_to_raw_struct_STEER_STATUS(
 
 void primary_conversion_to_raw_STEER_STATUS(
     primary_message_STEER_STATUS* raw,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_float32 map_pw,
+    primary_float32 map_sc,
+    primary_float32 map_tv
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -2255,9 +2255,9 @@ void primary_conversion_to_raw_STEER_STATUS(
 
 void primary_raw_to_conversion_STEER_STATUS(
     primary_message_STEER_STATUS_conversion* conversion,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_uint8 map_pw,
+    primary_uint8 map_sc,
+    primary_uint8 map_tv
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -6831,9 +6831,9 @@ int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
 
 primary_byte_size primary_serialize_STEER_STATUS(
     uint8_t* data,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_uint8 map_pw,
+    primary_uint8 map_sc,
+    primary_uint8 map_tv
 ) {
     data[0] = map_pw;
     data[1] = map_sc;
@@ -6870,9 +6870,9 @@ void primary_deserialize_STEER_STATUS(
 
 void primary_raw_to_conversion_STEER_STATUS(
     primary_message_STEER_STATUS_conversion* conversion,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_uint8 map_pw,
+    primary_uint8 map_sc,
+    primary_uint8 map_tv
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -6880,9 +6880,9 @@ void primary_raw_to_conversion_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->map_pw = (((primary_int8)map_pw) / 17.0) - 5;
-    conversion->map_sc = (((primary_int8)map_sc) / 25.5) + 0;
-    conversion->map_tv = (((primary_int8)map_tv) / 25.5) + 0;
+    conversion->map_pw = (((primary_float32)map_pw) / 10.0) - 0.5;
+    conversion->map_sc = (((primary_float32)map_sc) / 10.0) + 0;
+    conversion->map_tv = (((primary_float32)map_tv) / 10.0) + 0;
 }
 
 void primary_raw_to_conversion_struct_STEER_STATUS(
@@ -6892,16 +6892,16 @@ void primary_raw_to_conversion_struct_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    conversion->map_pw = (((primary_int8)raw->map_pw) / 17.0) - 5;
-    conversion->map_sc = (((primary_int8)raw->map_sc) / 25.5) + 0;
-    conversion->map_tv = (((primary_int8)raw->map_tv) / 25.5) + 0;
+    conversion->map_pw = (((primary_float32)raw->map_pw) / 10.0) - 0.5;
+    conversion->map_sc = (((primary_float32)raw->map_sc) / 10.0) + 0;
+    conversion->map_tv = (((primary_float32)raw->map_tv) / 10.0) + 0;
 }
 
 void primary_conversion_to_raw_STEER_STATUS(
     primary_message_STEER_STATUS* raw,
-    primary_int8 map_pw,
-    primary_int8 map_sc,
-    primary_int8 map_tv
+    primary_float32 map_pw,
+    primary_float32 map_sc,
+    primary_float32 map_tv
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -6909,9 +6909,9 @@ void primary_conversion_to_raw_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->map_pw = (primary_int8)((map_pw + 5) * 17.0);
-    raw->map_sc = (primary_int8)((map_sc + 0) * 25.5);
-    raw->map_tv = (primary_int8)((map_tv + 0) * 25.5);
+    raw->map_pw = (primary_uint8)((map_pw + 0.5) * 10.0);
+    raw->map_sc = (primary_uint8)((map_sc + 0) * 10.0);
+    raw->map_tv = (primary_uint8)((map_tv + 0) * 10.0);
 }
 
 void primary_conversion_to_raw_struct_STEER_STATUS(
@@ -6921,9 +6921,9 @@ void primary_conversion_to_raw_struct_STEER_STATUS(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
-    raw->map_pw = (primary_int8)((conversion->map_pw + 5) * 17.0);
-    raw->map_sc = (primary_int8)((conversion->map_sc + 0) * 25.5);
-    raw->map_tv = (primary_int8)((conversion->map_tv + 0) * 25.5);
+    raw->map_pw = (primary_uint8)((conversion->map_pw + 0.5) * 10.0);
+    raw->map_sc = (primary_uint8)((conversion->map_sc + 0) * 10.0);
+    raw->map_tv = (primary_uint8)((conversion->map_tv + 0) * 10.0);
 }
 
 // ============== STRING ============== //
@@ -6933,9 +6933,9 @@ int primary_to_string_STEER_STATUS(primary_message_STEER_STATUS_conversion* mess
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi8 CANLIB_SEPARATOR 
-        "%" PRIi8 CANLIB_SEPARATOR 
-        "%" PRIi8,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -6963,9 +6963,9 @@ int primary_to_string_file_STEER_STATUS(primary_message_STEER_STATUS_conversion*
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIi8 CANLIB_SEPARATOR 
-        "%" PRIi8 CANLIB_SEPARATOR 
-        "%" PRIi8,
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP

@@ -4782,22 +4782,22 @@ class STEER_STATUS PROTOBUF_FINAL :
     kInnerTimestampFieldNumber = 4,
     kMapTvFieldNumber = 3,
   };
-  // sint32 map_pw = 1;
+  // float map_pw = 1;
   void clear_map_pw();
-  ::PROTOBUF_NAMESPACE_ID::int32 map_pw() const;
-  void set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float map_pw() const;
+  void set_map_pw(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_pw() const;
-  void _internal_set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float _internal_map_pw() const;
+  void _internal_set_map_pw(float value);
   public:
 
-  // sint32 map_sc = 2;
+  // float map_sc = 2;
   void clear_map_sc();
-  ::PROTOBUF_NAMESPACE_ID::int32 map_sc() const;
-  void set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float map_sc() const;
+  void set_map_sc(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_sc() const;
-  void _internal_set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float _internal_map_sc() const;
+  void _internal_set_map_sc(float value);
   public:
 
   // uint64 _inner_timestamp = 4;
@@ -4809,13 +4809,13 @@ class STEER_STATUS PROTOBUF_FINAL :
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // sint32 map_tv = 3;
+  // float map_tv = 3;
   void clear_map_tv();
-  ::PROTOBUF_NAMESPACE_ID::int32 map_tv() const;
-  void set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float map_tv() const;
+  void set_map_tv(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_map_tv() const;
-  void _internal_set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value);
+  float _internal_map_tv() const;
+  void _internal_set_map_tv(float value);
   public:
 
   // @@protoc_insertion_point(class_scope:primary.STEER_STATUS)
@@ -4825,10 +4825,10 @@ class STEER_STATUS PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::int32 map_pw_;
-  ::PROTOBUF_NAMESPACE_ID::int32 map_sc_;
+  float map_pw_;
+  float map_sc_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::int32 map_tv_;
+  float map_tv_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -15878,62 +15878,62 @@ inline void SET_TS_STATUS_HANDCART::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID
 
 // STEER_STATUS
 
-// sint32 map_pw = 1;
+// float map_pw = 1;
 inline void STEER_STATUS::clear_map_pw() {
   map_pw_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_pw() const {
+inline float STEER_STATUS::_internal_map_pw() const {
   return map_pw_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_pw() const {
+inline float STEER_STATUS::map_pw() const {
   // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_pw)
   return _internal_map_pw();
 }
-inline void STEER_STATUS::_internal_set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::_internal_set_map_pw(float value) {
   
   map_pw_ = value;
 }
-inline void STEER_STATUS::set_map_pw(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::set_map_pw(float value) {
   _internal_set_map_pw(value);
   // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_pw)
 }
 
-// sint32 map_sc = 2;
+// float map_sc = 2;
 inline void STEER_STATUS::clear_map_sc() {
   map_sc_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_sc() const {
+inline float STEER_STATUS::_internal_map_sc() const {
   return map_sc_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_sc() const {
+inline float STEER_STATUS::map_sc() const {
   // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_sc)
   return _internal_map_sc();
 }
-inline void STEER_STATUS::_internal_set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::_internal_set_map_sc(float value) {
   
   map_sc_ = value;
 }
-inline void STEER_STATUS::set_map_sc(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::set_map_sc(float value) {
   _internal_set_map_sc(value);
   // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_sc)
 }
 
-// sint32 map_tv = 3;
+// float map_tv = 3;
 inline void STEER_STATUS::clear_map_tv() {
   map_tv_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::_internal_map_tv() const {
+inline float STEER_STATUS::_internal_map_tv() const {
   return map_tv_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 STEER_STATUS::map_tv() const {
+inline float STEER_STATUS::map_tv() const {
   // @@protoc_insertion_point(field_get:primary.STEER_STATUS.map_tv)
   return _internal_map_tv();
 }
-inline void STEER_STATUS::_internal_set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::_internal_set_map_tv(float value) {
   
   map_tv_ = value;
 }
-inline void STEER_STATUS::set_map_tv(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void STEER_STATUS::set_map_tv(float value) {
   _internal_set_map_tv(value);
   // @@protoc_insertion_point(field_set:primary.STEER_STATUS.map_tv)
 }

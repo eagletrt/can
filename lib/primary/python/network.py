@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670342776
-CANLIB_BUILD_HASH = 0x68e9c941
+CANLIB_BUILD_TIME = 1670347587
+CANLIB_BUILD_HASH = 0xffd7fb04
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1330,9 +1330,9 @@ class message_STEER_STATUS:
         map_sc = None,
         map_tv = None
     ):
-        self.map_pw = int8(map_pw)
-        self.map_sc = int8(map_sc)
-        self.map_tv = int8(map_tv)
+        self.map_pw = uint8(map_pw)
+        self.map_sc = uint8(map_sc)
+        self.map_tv = uint8(map_tv)
         self.size = 3
         self.interval = 100
 
@@ -1349,23 +1349,23 @@ class message_STEER_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<bbb", self.map_pw, self.map_sc, self.map_tv))
+        data.extend(pack("<BBB", self.map_pw, self.map_sc, self.map_tv))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.map_pw = int8(unpack("<b", data[0:1])[0])
-        message.map_sc = int8(unpack("<xb", data[0:2])[0])
-        message.map_tv = int8(unpack("<xxb", data[0:3])[0])
+        message.map_pw = uint8(unpack("<B", data[0:1])[0])
+        message.map_sc = uint8(unpack("<xB", data[0:2])[0])
+        message.map_tv = uint8(unpack("<xxB", data[0:3])[0])
         return message
 
 
     def convert(self) -> message_STEER_STATUS_conversion:
         conversion = message_STEER_STATUS_conversion()
-        conversion.map_pw = ((int8(self.map_pw)) / 17.0) - 5
-        conversion.map_sc = ((int8(self.map_sc)) / 25.5) + 0
-        conversion.map_tv = ((int8(self.map_tv)) / 25.5) + 0
+        conversion.map_pw = ((float32(self.map_pw)) / 10.0) - 0.5
+        conversion.map_sc = ((float32(self.map_sc)) / 10.0) + 0
+        conversion.map_tv = ((float32(self.map_tv)) / 10.0) + 0
         return conversion
 
 
@@ -1376,9 +1376,9 @@ class message_STEER_STATUS_conversion:
         map_sc = None,
         map_tv = None
     ):
-        self.map_pw = int8(map_pw)
-        self.map_sc = int8(map_sc)
-        self.map_tv = int8(map_tv)
+        self.map_pw = float32(map_pw)
+        self.map_sc = float32(map_sc)
+        self.map_tv = float32(map_tv)
         self.size = 3
         self.interval = 100
 
@@ -1395,9 +1395,9 @@ class message_STEER_STATUS_conversion:
 
     def convert_to_raw(self) -> message_STEER_STATUS:
         raw = message_STEER_STATUS()
-        raw.map_pw = int8((self.map_pw + 5) * 17.0)
-        raw.map_sc = int8((self.map_sc + 0) * 25.5)
-        raw.map_tv = int8((self.map_tv + 0) * 25.5)
+        raw.map_pw = uint8((self.map_pw + 0.5) * 10.0)
+        raw.map_sc = uint8((self.map_sc + 0) * 10.0)
+        raw.map_tv = uint8((self.map_tv + 0) * 10.0)
         return raw
 
 class message_SET_CAR_STATUS:

@@ -209,9 +209,9 @@ message SET_TS_STATUS_HANDCART {
 }
 
 message STEER_STATUS {
-    sint32 map_pw = 1;
-    sint32 map_sc = 2;
-    sint32 map_tv = 3;
+    float map_pw = 1;
+    float map_sc = 2;
+    float map_tv = 3;
     uint64 _inner_timestamp = 4;
 }
 

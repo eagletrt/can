@@ -41,7 +41,7 @@ HV_FEEDBACKS_STATUS,HV_FEEDBACKS_STATUS: 776,primary,DASnSTEER,4,BMS_HV,"DAS, ST
 HV_IMD_STATUS,HV_IMD_STATUS: 808,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"imd_fault: bool, imd_status: ImdStatus, imd_info: int32",Status of fans override
 TS_STATUS,TS_STATUS: 37,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,ts_status: TsStatus,BMS status
 SET_TS_STATUS,"SET_TS_STATUS_DAS: 70, SET_TS_STATUS_HANDCART: 102",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,100,ts_status_set: Toggle,Requests a TS status; only once
-STEER_STATUS,STEER_STATUS: 265,primary,DAS,6,STEER,DAS,100,"map_pw: type: int8, range: -5, 10, force: int8, map_sc: type: int8, range: 0, 10, force: int8, map_tv: type: int8, range: 0, 10, force: int8",Send update of the tuneable values from the steering wheel
+STEER_STATUS,STEER_STATUS: 265,primary,DAS,6,STEER,DAS,100,"map_pw: type: float32, range: -0.5, 1, precision: 0.1, map_sc: type: float32, range: 0, 1, precision: 0.1, map_tv: type: float32, range: 0, 1, precision: 0.1",Send update of the tuneable values from the steering wheel
 SET_CAR_STATUS,SET_CAR_STATUS: 777,primary,DAS,4,STEER,DAS,,car_status_set: SetCarStatus,Ask to DAS to change car status; only once
 SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1033,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal",Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min
 SET_STEERING_ANGLE_RANGE,SET_STEERING_ANGLE_RANGE: 1065,primary,DAS,3,STEER,DAS,,bound: Bound,Ask to calibrate steering encoder by specifying if the value is max or min

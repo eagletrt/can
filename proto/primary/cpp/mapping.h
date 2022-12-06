@@ -626,12 +626,12 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["STEER_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEER_STATUS);
     mapping_map["STEER_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEER_STATUS);
     mapping_map["STEER_STATUS"].stride = sizeof(primary_message_STEER_STATUS_conversion);
-    mapping_map["STEER_STATUS"].field["map_pw"].value._int8 = &pack.STEER_STATUS.start().map_pw;
-    mapping_map["STEER_STATUS"].field["map_pw"].type = mapping_type_int8;
-    mapping_map["STEER_STATUS"].field["map_sc"].value._int8 = &pack.STEER_STATUS.start().map_sc;
-    mapping_map["STEER_STATUS"].field["map_sc"].type = mapping_type_int8;
-    mapping_map["STEER_STATUS"].field["map_tv"].value._int8 = &pack.STEER_STATUS.start().map_tv;
-    mapping_map["STEER_STATUS"].field["map_tv"].type = mapping_type_int8;
+    mapping_map["STEER_STATUS"].field["map_pw"].value._float32 = &pack.STEER_STATUS.start().map_pw;
+    mapping_map["STEER_STATUS"].field["map_pw"].type = mapping_type_float32;
+    mapping_map["STEER_STATUS"].field["map_sc"].value._float32 = &pack.STEER_STATUS.start().map_sc;
+    mapping_map["STEER_STATUS"].field["map_sc"].type = mapping_type_float32;
+    mapping_map["STEER_STATUS"].field["map_tv"].value._float32 = &pack.STEER_STATUS.start().map_tv;
+    mapping_map["STEER_STATUS"].field["map_tv"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["STEER_STATUS"].field["_timestamp"].value._uint64 = &pack.STEER_STATUS.start()._timestamp;
     mapping_map["STEER_STATUS"].field["_timestamp"].type = mapping_type_uint64;
