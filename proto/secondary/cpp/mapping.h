@@ -268,22 +268,22 @@ typedef std::unordered_map<std::string, message_element_t> mapping_adaptor;
 typedef struct {
     canlib_circular_buffer<secondary_message_IMU_ANGULAR_RATE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ANGULAR_RATE;
     canlib_circular_buffer<secondary_message_IMU_ACCELERATION_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IMU_ACCELERATION;
-    canlib_circular_buffer<secondary_message_IRTS_FL_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_0;
-    canlib_circular_buffer<secondary_message_IRTS_FL_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_1;
-    canlib_circular_buffer<secondary_message_IRTS_FL_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_2;
-    canlib_circular_buffer<secondary_message_IRTS_FL_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_3;
-    canlib_circular_buffer<secondary_message_IRTS_FR_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_0;
-    canlib_circular_buffer<secondary_message_IRTS_FR_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_1;
-    canlib_circular_buffer<secondary_message_IRTS_FR_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_2;
-    canlib_circular_buffer<secondary_message_IRTS_FR_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_3;
-    canlib_circular_buffer<secondary_message_IRTS_RL_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_0;
-    canlib_circular_buffer<secondary_message_IRTS_RL_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_1;
-    canlib_circular_buffer<secondary_message_IRTS_RL_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_2;
-    canlib_circular_buffer<secondary_message_IRTS_RL_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_3;
-    canlib_circular_buffer<secondary_message_IRTS_RR_0, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_0;
-    canlib_circular_buffer<secondary_message_IRTS_RR_1, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_1;
-    canlib_circular_buffer<secondary_message_IRTS_RR_2, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_2;
-    canlib_circular_buffer<secondary_message_IRTS_RR_3, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_3;
+    canlib_circular_buffer<secondary_message_IRTS_FL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_0;
+    canlib_circular_buffer<secondary_message_IRTS_FL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_1;
+    canlib_circular_buffer<secondary_message_IRTS_FL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_2;
+    canlib_circular_buffer<secondary_message_IRTS_FL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FL_3;
+    canlib_circular_buffer<secondary_message_IRTS_FR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_0;
+    canlib_circular_buffer<secondary_message_IRTS_FR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_1;
+    canlib_circular_buffer<secondary_message_IRTS_FR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_2;
+    canlib_circular_buffer<secondary_message_IRTS_FR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_FR_3;
+    canlib_circular_buffer<secondary_message_IRTS_RL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_0;
+    canlib_circular_buffer<secondary_message_IRTS_RL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_1;
+    canlib_circular_buffer<secondary_message_IRTS_RL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_2;
+    canlib_circular_buffer<secondary_message_IRTS_RL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RL_3;
+    canlib_circular_buffer<secondary_message_IRTS_RR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_0;
+    canlib_circular_buffer<secondary_message_IRTS_RR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_1;
+    canlib_circular_buffer<secondary_message_IRTS_RR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_2;
+    canlib_circular_buffer<secondary_message_IRTS_RR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> IRTS_RR_3;
     canlib_circular_buffer<secondary_message_GPS_COORDS, CANLIB_CIRCULAR_BUFFER_SIZE> GPS_COORDS;
     canlib_circular_buffer<secondary_message_GPS_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> GPS_SPEED;
     canlib_circular_buffer<secondary_message_LAP_COUNT, CANLIB_CIRCULAR_BUFFER_SIZE> LAP_COUNT;
@@ -328,242 +328,242 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["IMU_ACCELERATION"].field["_timestamp"].value._uint64 = &pack.IMU_ACCELERATION.start()._timestamp;
     mapping_map["IMU_ACCELERATION"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FL_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_0, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_0);
-    mapping_map["IRTS_FL_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_0, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_0);
-    mapping_map["IRTS_FL_0"].stride = sizeof(secondary_message_IRTS_FL_0);
-    mapping_map["IRTS_FL_0"].field["channel1"].value._uint16 = &pack.IRTS_FL_0.start().channel1;
-    mapping_map["IRTS_FL_0"].field["channel1"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_0"].field["channel2"].value._uint16 = &pack.IRTS_FL_0.start().channel2;
-    mapping_map["IRTS_FL_0"].field["channel2"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_0"].field["channel3"].value._uint16 = &pack.IRTS_FL_0.start().channel3;
-    mapping_map["IRTS_FL_0"].field["channel3"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_0"].field["channel4"].value._uint16 = &pack.IRTS_FL_0.start().channel4;
-    mapping_map["IRTS_FL_0"].field["channel4"].type = mapping_type_uint16;
+    mapping_map["IRTS_FL_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_0);
+    mapping_map["IRTS_FL_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_0);
+    mapping_map["IRTS_FL_0"].stride = sizeof(secondary_message_IRTS_FL_0_conversion);
+    mapping_map["IRTS_FL_0"].field["channel1"].value._float32 = &pack.IRTS_FL_0.start().channel1;
+    mapping_map["IRTS_FL_0"].field["channel1"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_0"].field["channel2"].value._float32 = &pack.IRTS_FL_0.start().channel2;
+    mapping_map["IRTS_FL_0"].field["channel2"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_0"].field["channel3"].value._float32 = &pack.IRTS_FL_0.start().channel3;
+    mapping_map["IRTS_FL_0"].field["channel3"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_0"].field["channel4"].value._float32 = &pack.IRTS_FL_0.start().channel4;
+    mapping_map["IRTS_FL_0"].field["channel4"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FL_0"].field["_timestamp"].value._uint64 = &pack.IRTS_FL_0.start()._timestamp;
     mapping_map["IRTS_FL_0"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FL_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_1, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_1);
-    mapping_map["IRTS_FL_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_1, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_1);
-    mapping_map["IRTS_FL_1"].stride = sizeof(secondary_message_IRTS_FL_1);
-    mapping_map["IRTS_FL_1"].field["channel5"].value._uint16 = &pack.IRTS_FL_1.start().channel5;
-    mapping_map["IRTS_FL_1"].field["channel5"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_1"].field["channel6"].value._uint16 = &pack.IRTS_FL_1.start().channel6;
-    mapping_map["IRTS_FL_1"].field["channel6"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_1"].field["channel7"].value._uint16 = &pack.IRTS_FL_1.start().channel7;
-    mapping_map["IRTS_FL_1"].field["channel7"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_1"].field["channel8"].value._uint16 = &pack.IRTS_FL_1.start().channel8;
-    mapping_map["IRTS_FL_1"].field["channel8"].type = mapping_type_uint16;
+    mapping_map["IRTS_FL_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_1);
+    mapping_map["IRTS_FL_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_1);
+    mapping_map["IRTS_FL_1"].stride = sizeof(secondary_message_IRTS_FL_1_conversion);
+    mapping_map["IRTS_FL_1"].field["channel5"].value._float32 = &pack.IRTS_FL_1.start().channel5;
+    mapping_map["IRTS_FL_1"].field["channel5"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_1"].field["channel6"].value._float32 = &pack.IRTS_FL_1.start().channel6;
+    mapping_map["IRTS_FL_1"].field["channel6"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_1"].field["channel7"].value._float32 = &pack.IRTS_FL_1.start().channel7;
+    mapping_map["IRTS_FL_1"].field["channel7"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_1"].field["channel8"].value._float32 = &pack.IRTS_FL_1.start().channel8;
+    mapping_map["IRTS_FL_1"].field["channel8"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FL_1"].field["_timestamp"].value._uint64 = &pack.IRTS_FL_1.start()._timestamp;
     mapping_map["IRTS_FL_1"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FL_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_2, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_2);
-    mapping_map["IRTS_FL_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_2, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_2);
-    mapping_map["IRTS_FL_2"].stride = sizeof(secondary_message_IRTS_FL_2);
-    mapping_map["IRTS_FL_2"].field["channel9"].value._uint16 = &pack.IRTS_FL_2.start().channel9;
-    mapping_map["IRTS_FL_2"].field["channel9"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_2"].field["channel10"].value._uint16 = &pack.IRTS_FL_2.start().channel10;
-    mapping_map["IRTS_FL_2"].field["channel10"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_2"].field["channel11"].value._uint16 = &pack.IRTS_FL_2.start().channel11;
-    mapping_map["IRTS_FL_2"].field["channel11"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_2"].field["channel12"].value._uint16 = &pack.IRTS_FL_2.start().channel12;
-    mapping_map["IRTS_FL_2"].field["channel12"].type = mapping_type_uint16;
+    mapping_map["IRTS_FL_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_2);
+    mapping_map["IRTS_FL_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_2);
+    mapping_map["IRTS_FL_2"].stride = sizeof(secondary_message_IRTS_FL_2_conversion);
+    mapping_map["IRTS_FL_2"].field["channel9"].value._float32 = &pack.IRTS_FL_2.start().channel9;
+    mapping_map["IRTS_FL_2"].field["channel9"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_2"].field["channel10"].value._float32 = &pack.IRTS_FL_2.start().channel10;
+    mapping_map["IRTS_FL_2"].field["channel10"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_2"].field["channel11"].value._float32 = &pack.IRTS_FL_2.start().channel11;
+    mapping_map["IRTS_FL_2"].field["channel11"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_2"].field["channel12"].value._float32 = &pack.IRTS_FL_2.start().channel12;
+    mapping_map["IRTS_FL_2"].field["channel12"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FL_2"].field["_timestamp"].value._uint64 = &pack.IRTS_FL_2.start()._timestamp;
     mapping_map["IRTS_FL_2"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FL_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_3, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_3);
-    mapping_map["IRTS_FL_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_3, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_3);
-    mapping_map["IRTS_FL_3"].stride = sizeof(secondary_message_IRTS_FL_3);
-    mapping_map["IRTS_FL_3"].field["channel13"].value._uint16 = &pack.IRTS_FL_3.start().channel13;
-    mapping_map["IRTS_FL_3"].field["channel13"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_3"].field["channel14"].value._uint16 = &pack.IRTS_FL_3.start().channel14;
-    mapping_map["IRTS_FL_3"].field["channel14"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_3"].field["channel15"].value._uint16 = &pack.IRTS_FL_3.start().channel15;
-    mapping_map["IRTS_FL_3"].field["channel15"].type = mapping_type_uint16;
-    mapping_map["IRTS_FL_3"].field["channel16"].value._uint16 = &pack.IRTS_FL_3.start().channel16;
-    mapping_map["IRTS_FL_3"].field["channel16"].type = mapping_type_uint16;
+    mapping_map["IRTS_FL_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FL_3);
+    mapping_map["IRTS_FL_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FL_3);
+    mapping_map["IRTS_FL_3"].stride = sizeof(secondary_message_IRTS_FL_3_conversion);
+    mapping_map["IRTS_FL_3"].field["channel13"].value._float32 = &pack.IRTS_FL_3.start().channel13;
+    mapping_map["IRTS_FL_3"].field["channel13"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_3"].field["channel14"].value._float32 = &pack.IRTS_FL_3.start().channel14;
+    mapping_map["IRTS_FL_3"].field["channel14"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_3"].field["channel15"].value._float32 = &pack.IRTS_FL_3.start().channel15;
+    mapping_map["IRTS_FL_3"].field["channel15"].type = mapping_type_float32;
+    mapping_map["IRTS_FL_3"].field["channel16"].value._float32 = &pack.IRTS_FL_3.start().channel16;
+    mapping_map["IRTS_FL_3"].field["channel16"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FL_3"].field["_timestamp"].value._uint64 = &pack.IRTS_FL_3.start()._timestamp;
     mapping_map["IRTS_FL_3"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FR_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_0, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_0);
-    mapping_map["IRTS_FR_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_0, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_0);
-    mapping_map["IRTS_FR_0"].stride = sizeof(secondary_message_IRTS_FR_0);
-    mapping_map["IRTS_FR_0"].field["channel1"].value._uint16 = &pack.IRTS_FR_0.start().channel1;
-    mapping_map["IRTS_FR_0"].field["channel1"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_0"].field["channel2"].value._uint16 = &pack.IRTS_FR_0.start().channel2;
-    mapping_map["IRTS_FR_0"].field["channel2"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_0"].field["channel3"].value._uint16 = &pack.IRTS_FR_0.start().channel3;
-    mapping_map["IRTS_FR_0"].field["channel3"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_0"].field["channel4"].value._uint16 = &pack.IRTS_FR_0.start().channel4;
-    mapping_map["IRTS_FR_0"].field["channel4"].type = mapping_type_uint16;
+    mapping_map["IRTS_FR_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_0);
+    mapping_map["IRTS_FR_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_0);
+    mapping_map["IRTS_FR_0"].stride = sizeof(secondary_message_IRTS_FR_0_conversion);
+    mapping_map["IRTS_FR_0"].field["channel1"].value._float32 = &pack.IRTS_FR_0.start().channel1;
+    mapping_map["IRTS_FR_0"].field["channel1"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_0"].field["channel2"].value._float32 = &pack.IRTS_FR_0.start().channel2;
+    mapping_map["IRTS_FR_0"].field["channel2"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_0"].field["channel3"].value._float32 = &pack.IRTS_FR_0.start().channel3;
+    mapping_map["IRTS_FR_0"].field["channel3"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_0"].field["channel4"].value._float32 = &pack.IRTS_FR_0.start().channel4;
+    mapping_map["IRTS_FR_0"].field["channel4"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FR_0"].field["_timestamp"].value._uint64 = &pack.IRTS_FR_0.start()._timestamp;
     mapping_map["IRTS_FR_0"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FR_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_1, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_1);
-    mapping_map["IRTS_FR_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_1, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_1);
-    mapping_map["IRTS_FR_1"].stride = sizeof(secondary_message_IRTS_FR_1);
-    mapping_map["IRTS_FR_1"].field["channel5"].value._uint16 = &pack.IRTS_FR_1.start().channel5;
-    mapping_map["IRTS_FR_1"].field["channel5"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_1"].field["channel6"].value._uint16 = &pack.IRTS_FR_1.start().channel6;
-    mapping_map["IRTS_FR_1"].field["channel6"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_1"].field["channel7"].value._uint16 = &pack.IRTS_FR_1.start().channel7;
-    mapping_map["IRTS_FR_1"].field["channel7"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_1"].field["channel8"].value._uint16 = &pack.IRTS_FR_1.start().channel8;
-    mapping_map["IRTS_FR_1"].field["channel8"].type = mapping_type_uint16;
+    mapping_map["IRTS_FR_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_1);
+    mapping_map["IRTS_FR_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_1);
+    mapping_map["IRTS_FR_1"].stride = sizeof(secondary_message_IRTS_FR_1_conversion);
+    mapping_map["IRTS_FR_1"].field["channel5"].value._float32 = &pack.IRTS_FR_1.start().channel5;
+    mapping_map["IRTS_FR_1"].field["channel5"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_1"].field["channel6"].value._float32 = &pack.IRTS_FR_1.start().channel6;
+    mapping_map["IRTS_FR_1"].field["channel6"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_1"].field["channel7"].value._float32 = &pack.IRTS_FR_1.start().channel7;
+    mapping_map["IRTS_FR_1"].field["channel7"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_1"].field["channel8"].value._float32 = &pack.IRTS_FR_1.start().channel8;
+    mapping_map["IRTS_FR_1"].field["channel8"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FR_1"].field["_timestamp"].value._uint64 = &pack.IRTS_FR_1.start()._timestamp;
     mapping_map["IRTS_FR_1"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FR_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_2, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_2);
-    mapping_map["IRTS_FR_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_2, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_2);
-    mapping_map["IRTS_FR_2"].stride = sizeof(secondary_message_IRTS_FR_2);
-    mapping_map["IRTS_FR_2"].field["channel9"].value._uint16 = &pack.IRTS_FR_2.start().channel9;
-    mapping_map["IRTS_FR_2"].field["channel9"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_2"].field["channel10"].value._uint16 = &pack.IRTS_FR_2.start().channel10;
-    mapping_map["IRTS_FR_2"].field["channel10"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_2"].field["channel11"].value._uint16 = &pack.IRTS_FR_2.start().channel11;
-    mapping_map["IRTS_FR_2"].field["channel11"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_2"].field["channel12"].value._uint16 = &pack.IRTS_FR_2.start().channel12;
-    mapping_map["IRTS_FR_2"].field["channel12"].type = mapping_type_uint16;
+    mapping_map["IRTS_FR_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_2);
+    mapping_map["IRTS_FR_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_2);
+    mapping_map["IRTS_FR_2"].stride = sizeof(secondary_message_IRTS_FR_2_conversion);
+    mapping_map["IRTS_FR_2"].field["channel9"].value._float32 = &pack.IRTS_FR_2.start().channel9;
+    mapping_map["IRTS_FR_2"].field["channel9"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_2"].field["channel10"].value._float32 = &pack.IRTS_FR_2.start().channel10;
+    mapping_map["IRTS_FR_2"].field["channel10"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_2"].field["channel11"].value._float32 = &pack.IRTS_FR_2.start().channel11;
+    mapping_map["IRTS_FR_2"].field["channel11"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_2"].field["channel12"].value._float32 = &pack.IRTS_FR_2.start().channel12;
+    mapping_map["IRTS_FR_2"].field["channel12"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FR_2"].field["_timestamp"].value._uint64 = &pack.IRTS_FR_2.start()._timestamp;
     mapping_map["IRTS_FR_2"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_FR_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_3, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_3);
-    mapping_map["IRTS_FR_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_3, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_3);
-    mapping_map["IRTS_FR_3"].stride = sizeof(secondary_message_IRTS_FR_3);
-    mapping_map["IRTS_FR_3"].field["channel13"].value._uint16 = &pack.IRTS_FR_3.start().channel13;
-    mapping_map["IRTS_FR_3"].field["channel13"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_3"].field["channel14"].value._uint16 = &pack.IRTS_FR_3.start().channel14;
-    mapping_map["IRTS_FR_3"].field["channel14"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_3"].field["channel15"].value._uint16 = &pack.IRTS_FR_3.start().channel15;
-    mapping_map["IRTS_FR_3"].field["channel15"].type = mapping_type_uint16;
-    mapping_map["IRTS_FR_3"].field["channel16"].value._uint16 = &pack.IRTS_FR_3.start().channel16;
-    mapping_map["IRTS_FR_3"].field["channel16"].type = mapping_type_uint16;
+    mapping_map["IRTS_FR_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_FR_3);
+    mapping_map["IRTS_FR_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_FR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_FR_3);
+    mapping_map["IRTS_FR_3"].stride = sizeof(secondary_message_IRTS_FR_3_conversion);
+    mapping_map["IRTS_FR_3"].field["channel13"].value._float32 = &pack.IRTS_FR_3.start().channel13;
+    mapping_map["IRTS_FR_3"].field["channel13"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_3"].field["channel14"].value._float32 = &pack.IRTS_FR_3.start().channel14;
+    mapping_map["IRTS_FR_3"].field["channel14"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_3"].field["channel15"].value._float32 = &pack.IRTS_FR_3.start().channel15;
+    mapping_map["IRTS_FR_3"].field["channel15"].type = mapping_type_float32;
+    mapping_map["IRTS_FR_3"].field["channel16"].value._float32 = &pack.IRTS_FR_3.start().channel16;
+    mapping_map["IRTS_FR_3"].field["channel16"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_FR_3"].field["_timestamp"].value._uint64 = &pack.IRTS_FR_3.start()._timestamp;
     mapping_map["IRTS_FR_3"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RL_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_0, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_0);
-    mapping_map["IRTS_RL_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_0, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_0);
-    mapping_map["IRTS_RL_0"].stride = sizeof(secondary_message_IRTS_RL_0);
-    mapping_map["IRTS_RL_0"].field["channel1"].value._uint16 = &pack.IRTS_RL_0.start().channel1;
-    mapping_map["IRTS_RL_0"].field["channel1"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_0"].field["channel2"].value._uint16 = &pack.IRTS_RL_0.start().channel2;
-    mapping_map["IRTS_RL_0"].field["channel2"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_0"].field["channel3"].value._uint16 = &pack.IRTS_RL_0.start().channel3;
-    mapping_map["IRTS_RL_0"].field["channel3"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_0"].field["channel4"].value._uint16 = &pack.IRTS_RL_0.start().channel4;
-    mapping_map["IRTS_RL_0"].field["channel4"].type = mapping_type_uint16;
+    mapping_map["IRTS_RL_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_0);
+    mapping_map["IRTS_RL_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_0);
+    mapping_map["IRTS_RL_0"].stride = sizeof(secondary_message_IRTS_RL_0_conversion);
+    mapping_map["IRTS_RL_0"].field["channel1"].value._float32 = &pack.IRTS_RL_0.start().channel1;
+    mapping_map["IRTS_RL_0"].field["channel1"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_0"].field["channel2"].value._float32 = &pack.IRTS_RL_0.start().channel2;
+    mapping_map["IRTS_RL_0"].field["channel2"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_0"].field["channel3"].value._float32 = &pack.IRTS_RL_0.start().channel3;
+    mapping_map["IRTS_RL_0"].field["channel3"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_0"].field["channel4"].value._float32 = &pack.IRTS_RL_0.start().channel4;
+    mapping_map["IRTS_RL_0"].field["channel4"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RL_0"].field["_timestamp"].value._uint64 = &pack.IRTS_RL_0.start()._timestamp;
     mapping_map["IRTS_RL_0"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RL_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_1, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_1);
-    mapping_map["IRTS_RL_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_1, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_1);
-    mapping_map["IRTS_RL_1"].stride = sizeof(secondary_message_IRTS_RL_1);
-    mapping_map["IRTS_RL_1"].field["channel5"].value._uint16 = &pack.IRTS_RL_1.start().channel5;
-    mapping_map["IRTS_RL_1"].field["channel5"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_1"].field["channel6"].value._uint16 = &pack.IRTS_RL_1.start().channel6;
-    mapping_map["IRTS_RL_1"].field["channel6"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_1"].field["channel7"].value._uint16 = &pack.IRTS_RL_1.start().channel7;
-    mapping_map["IRTS_RL_1"].field["channel7"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_1"].field["channel8"].value._uint16 = &pack.IRTS_RL_1.start().channel8;
-    mapping_map["IRTS_RL_1"].field["channel8"].type = mapping_type_uint16;
+    mapping_map["IRTS_RL_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_1);
+    mapping_map["IRTS_RL_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_1);
+    mapping_map["IRTS_RL_1"].stride = sizeof(secondary_message_IRTS_RL_1_conversion);
+    mapping_map["IRTS_RL_1"].field["channel5"].value._float32 = &pack.IRTS_RL_1.start().channel5;
+    mapping_map["IRTS_RL_1"].field["channel5"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_1"].field["channel6"].value._float32 = &pack.IRTS_RL_1.start().channel6;
+    mapping_map["IRTS_RL_1"].field["channel6"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_1"].field["channel7"].value._float32 = &pack.IRTS_RL_1.start().channel7;
+    mapping_map["IRTS_RL_1"].field["channel7"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_1"].field["channel8"].value._float32 = &pack.IRTS_RL_1.start().channel8;
+    mapping_map["IRTS_RL_1"].field["channel8"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RL_1"].field["_timestamp"].value._uint64 = &pack.IRTS_RL_1.start()._timestamp;
     mapping_map["IRTS_RL_1"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RL_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_2, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_2);
-    mapping_map["IRTS_RL_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_2, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_2);
-    mapping_map["IRTS_RL_2"].stride = sizeof(secondary_message_IRTS_RL_2);
-    mapping_map["IRTS_RL_2"].field["channel9"].value._uint16 = &pack.IRTS_RL_2.start().channel9;
-    mapping_map["IRTS_RL_2"].field["channel9"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_2"].field["channel10"].value._uint16 = &pack.IRTS_RL_2.start().channel10;
-    mapping_map["IRTS_RL_2"].field["channel10"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_2"].field["channel11"].value._uint16 = &pack.IRTS_RL_2.start().channel11;
-    mapping_map["IRTS_RL_2"].field["channel11"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_2"].field["channel12"].value._uint16 = &pack.IRTS_RL_2.start().channel12;
-    mapping_map["IRTS_RL_2"].field["channel12"].type = mapping_type_uint16;
+    mapping_map["IRTS_RL_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_2);
+    mapping_map["IRTS_RL_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_2);
+    mapping_map["IRTS_RL_2"].stride = sizeof(secondary_message_IRTS_RL_2_conversion);
+    mapping_map["IRTS_RL_2"].field["channel9"].value._float32 = &pack.IRTS_RL_2.start().channel9;
+    mapping_map["IRTS_RL_2"].field["channel9"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_2"].field["channel10"].value._float32 = &pack.IRTS_RL_2.start().channel10;
+    mapping_map["IRTS_RL_2"].field["channel10"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_2"].field["channel11"].value._float32 = &pack.IRTS_RL_2.start().channel11;
+    mapping_map["IRTS_RL_2"].field["channel11"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_2"].field["channel12"].value._float32 = &pack.IRTS_RL_2.start().channel12;
+    mapping_map["IRTS_RL_2"].field["channel12"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RL_2"].field["_timestamp"].value._uint64 = &pack.IRTS_RL_2.start()._timestamp;
     mapping_map["IRTS_RL_2"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RL_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_3, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_3);
-    mapping_map["IRTS_RL_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_3, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_3);
-    mapping_map["IRTS_RL_3"].stride = sizeof(secondary_message_IRTS_RL_3);
-    mapping_map["IRTS_RL_3"].field["channel13"].value._uint16 = &pack.IRTS_RL_3.start().channel13;
-    mapping_map["IRTS_RL_3"].field["channel13"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_3"].field["channel14"].value._uint16 = &pack.IRTS_RL_3.start().channel14;
-    mapping_map["IRTS_RL_3"].field["channel14"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_3"].field["channel15"].value._uint16 = &pack.IRTS_RL_3.start().channel15;
-    mapping_map["IRTS_RL_3"].field["channel15"].type = mapping_type_uint16;
-    mapping_map["IRTS_RL_3"].field["channel16"].value._uint16 = &pack.IRTS_RL_3.start().channel16;
-    mapping_map["IRTS_RL_3"].field["channel16"].type = mapping_type_uint16;
+    mapping_map["IRTS_RL_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RL_3);
+    mapping_map["IRTS_RL_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RL_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RL_3);
+    mapping_map["IRTS_RL_3"].stride = sizeof(secondary_message_IRTS_RL_3_conversion);
+    mapping_map["IRTS_RL_3"].field["channel13"].value._float32 = &pack.IRTS_RL_3.start().channel13;
+    mapping_map["IRTS_RL_3"].field["channel13"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_3"].field["channel14"].value._float32 = &pack.IRTS_RL_3.start().channel14;
+    mapping_map["IRTS_RL_3"].field["channel14"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_3"].field["channel15"].value._float32 = &pack.IRTS_RL_3.start().channel15;
+    mapping_map["IRTS_RL_3"].field["channel15"].type = mapping_type_float32;
+    mapping_map["IRTS_RL_3"].field["channel16"].value._float32 = &pack.IRTS_RL_3.start().channel16;
+    mapping_map["IRTS_RL_3"].field["channel16"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RL_3"].field["_timestamp"].value._uint64 = &pack.IRTS_RL_3.start()._timestamp;
     mapping_map["IRTS_RL_3"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RR_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_0, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_0);
-    mapping_map["IRTS_RR_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_0, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_0);
-    mapping_map["IRTS_RR_0"].stride = sizeof(secondary_message_IRTS_RR_0);
-    mapping_map["IRTS_RR_0"].field["channel1"].value._uint16 = &pack.IRTS_RR_0.start().channel1;
-    mapping_map["IRTS_RR_0"].field["channel1"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_0"].field["channel2"].value._uint16 = &pack.IRTS_RR_0.start().channel2;
-    mapping_map["IRTS_RR_0"].field["channel2"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_0"].field["channel3"].value._uint16 = &pack.IRTS_RR_0.start().channel3;
-    mapping_map["IRTS_RR_0"].field["channel3"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_0"].field["channel4"].value._uint16 = &pack.IRTS_RR_0.start().channel4;
-    mapping_map["IRTS_RR_0"].field["channel4"].type = mapping_type_uint16;
+    mapping_map["IRTS_RR_0"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_0);
+    mapping_map["IRTS_RR_0"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_0_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_0);
+    mapping_map["IRTS_RR_0"].stride = sizeof(secondary_message_IRTS_RR_0_conversion);
+    mapping_map["IRTS_RR_0"].field["channel1"].value._float32 = &pack.IRTS_RR_0.start().channel1;
+    mapping_map["IRTS_RR_0"].field["channel1"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_0"].field["channel2"].value._float32 = &pack.IRTS_RR_0.start().channel2;
+    mapping_map["IRTS_RR_0"].field["channel2"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_0"].field["channel3"].value._float32 = &pack.IRTS_RR_0.start().channel3;
+    mapping_map["IRTS_RR_0"].field["channel3"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_0"].field["channel4"].value._float32 = &pack.IRTS_RR_0.start().channel4;
+    mapping_map["IRTS_RR_0"].field["channel4"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RR_0"].field["_timestamp"].value._uint64 = &pack.IRTS_RR_0.start()._timestamp;
     mapping_map["IRTS_RR_0"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RR_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_1, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_1);
-    mapping_map["IRTS_RR_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_1, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_1);
-    mapping_map["IRTS_RR_1"].stride = sizeof(secondary_message_IRTS_RR_1);
-    mapping_map["IRTS_RR_1"].field["channel5"].value._uint16 = &pack.IRTS_RR_1.start().channel5;
-    mapping_map["IRTS_RR_1"].field["channel5"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_1"].field["channel6"].value._uint16 = &pack.IRTS_RR_1.start().channel6;
-    mapping_map["IRTS_RR_1"].field["channel6"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_1"].field["channel7"].value._uint16 = &pack.IRTS_RR_1.start().channel7;
-    mapping_map["IRTS_RR_1"].field["channel7"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_1"].field["channel8"].value._uint16 = &pack.IRTS_RR_1.start().channel8;
-    mapping_map["IRTS_RR_1"].field["channel8"].type = mapping_type_uint16;
+    mapping_map["IRTS_RR_1"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_1);
+    mapping_map["IRTS_RR_1"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_1_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_1);
+    mapping_map["IRTS_RR_1"].stride = sizeof(secondary_message_IRTS_RR_1_conversion);
+    mapping_map["IRTS_RR_1"].field["channel5"].value._float32 = &pack.IRTS_RR_1.start().channel5;
+    mapping_map["IRTS_RR_1"].field["channel5"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_1"].field["channel6"].value._float32 = &pack.IRTS_RR_1.start().channel6;
+    mapping_map["IRTS_RR_1"].field["channel6"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_1"].field["channel7"].value._float32 = &pack.IRTS_RR_1.start().channel7;
+    mapping_map["IRTS_RR_1"].field["channel7"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_1"].field["channel8"].value._float32 = &pack.IRTS_RR_1.start().channel8;
+    mapping_map["IRTS_RR_1"].field["channel8"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RR_1"].field["_timestamp"].value._uint64 = &pack.IRTS_RR_1.start()._timestamp;
     mapping_map["IRTS_RR_1"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RR_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_2, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_2);
-    mapping_map["IRTS_RR_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_2, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_2);
-    mapping_map["IRTS_RR_2"].stride = sizeof(secondary_message_IRTS_RR_2);
-    mapping_map["IRTS_RR_2"].field["channel9"].value._uint16 = &pack.IRTS_RR_2.start().channel9;
-    mapping_map["IRTS_RR_2"].field["channel9"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_2"].field["channel10"].value._uint16 = &pack.IRTS_RR_2.start().channel10;
-    mapping_map["IRTS_RR_2"].field["channel10"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_2"].field["channel11"].value._uint16 = &pack.IRTS_RR_2.start().channel11;
-    mapping_map["IRTS_RR_2"].field["channel11"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_2"].field["channel12"].value._uint16 = &pack.IRTS_RR_2.start().channel12;
-    mapping_map["IRTS_RR_2"].field["channel12"].type = mapping_type_uint16;
+    mapping_map["IRTS_RR_2"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_2);
+    mapping_map["IRTS_RR_2"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_2_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_2);
+    mapping_map["IRTS_RR_2"].stride = sizeof(secondary_message_IRTS_RR_2_conversion);
+    mapping_map["IRTS_RR_2"].field["channel9"].value._float32 = &pack.IRTS_RR_2.start().channel9;
+    mapping_map["IRTS_RR_2"].field["channel9"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_2"].field["channel10"].value._float32 = &pack.IRTS_RR_2.start().channel10;
+    mapping_map["IRTS_RR_2"].field["channel10"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_2"].field["channel11"].value._float32 = &pack.IRTS_RR_2.start().channel11;
+    mapping_map["IRTS_RR_2"].field["channel11"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_2"].field["channel12"].value._float32 = &pack.IRTS_RR_2.start().channel12;
+    mapping_map["IRTS_RR_2"].field["channel12"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RR_2"].field["_timestamp"].value._uint64 = &pack.IRTS_RR_2.start()._timestamp;
     mapping_map["IRTS_RR_2"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["IRTS_RR_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_3, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_3);
-    mapping_map["IRTS_RR_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_3, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_3);
-    mapping_map["IRTS_RR_3"].stride = sizeof(secondary_message_IRTS_RR_3);
-    mapping_map["IRTS_RR_3"].field["channel13"].value._uint16 = &pack.IRTS_RR_3.start().channel13;
-    mapping_map["IRTS_RR_3"].field["channel13"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_3"].field["channel14"].value._uint16 = &pack.IRTS_RR_3.start().channel14;
-    mapping_map["IRTS_RR_3"].field["channel14"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_3"].field["channel15"].value._uint16 = &pack.IRTS_RR_3.start().channel15;
-    mapping_map["IRTS_RR_3"].field["channel15"].type = mapping_type_uint16;
-    mapping_map["IRTS_RR_3"].field["channel16"].value._uint16 = &pack.IRTS_RR_3.start().channel16;
-    mapping_map["IRTS_RR_3"].field["channel16"].type = mapping_type_uint16;
+    mapping_map["IRTS_RR_3"].size = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.IRTS_RR_3);
+    mapping_map["IRTS_RR_3"].offset = std::bind(&canlib_circular_buffer<secondary_message_IRTS_RR_3_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.IRTS_RR_3);
+    mapping_map["IRTS_RR_3"].stride = sizeof(secondary_message_IRTS_RR_3_conversion);
+    mapping_map["IRTS_RR_3"].field["channel13"].value._float32 = &pack.IRTS_RR_3.start().channel13;
+    mapping_map["IRTS_RR_3"].field["channel13"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_3"].field["channel14"].value._float32 = &pack.IRTS_RR_3.start().channel14;
+    mapping_map["IRTS_RR_3"].field["channel14"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_3"].field["channel15"].value._float32 = &pack.IRTS_RR_3.start().channel15;
+    mapping_map["IRTS_RR_3"].field["channel15"].type = mapping_type_float32;
+    mapping_map["IRTS_RR_3"].field["channel16"].value._float32 = &pack.IRTS_RR_3.start().channel16;
+    mapping_map["IRTS_RR_3"].field["channel16"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["IRTS_RR_3"].field["_timestamp"].value._uint64 = &pack.IRTS_RR_3.start()._timestamp;
     mapping_map["IRTS_RR_3"].field["_timestamp"].type = mapping_type_uint64;
@@ -695,7 +695,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1460: {
-            secondary_message_IRTS_FL_0* msg = (secondary_message_IRTS_FL_0*) (*map)[index].message_raw;
+            secondary_message_IRTS_FL_0_conversion* msg = (secondary_message_IRTS_FL_0_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FL_0* proto_msg = pack->add_irts_fl_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -708,7 +708,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1461: {
-            secondary_message_IRTS_FL_1* msg = (secondary_message_IRTS_FL_1*) (*map)[index].message_raw;
+            secondary_message_IRTS_FL_1_conversion* msg = (secondary_message_IRTS_FL_1_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FL_1* proto_msg = pack->add_irts_fl_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -721,7 +721,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1462: {
-            secondary_message_IRTS_FL_2* msg = (secondary_message_IRTS_FL_2*) (*map)[index].message_raw;
+            secondary_message_IRTS_FL_2_conversion* msg = (secondary_message_IRTS_FL_2_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FL_2* proto_msg = pack->add_irts_fl_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -734,7 +734,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1463: {
-            secondary_message_IRTS_FL_3* msg = (secondary_message_IRTS_FL_3*) (*map)[index].message_raw;
+            secondary_message_IRTS_FL_3_conversion* msg = (secondary_message_IRTS_FL_3_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FL_3* proto_msg = pack->add_irts_fl_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -747,7 +747,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1464: {
-            secondary_message_IRTS_FR_0* msg = (secondary_message_IRTS_FR_0*) (*map)[index].message_raw;
+            secondary_message_IRTS_FR_0_conversion* msg = (secondary_message_IRTS_FR_0_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FR_0* proto_msg = pack->add_irts_fr_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -760,7 +760,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1465: {
-            secondary_message_IRTS_FR_1* msg = (secondary_message_IRTS_FR_1*) (*map)[index].message_raw;
+            secondary_message_IRTS_FR_1_conversion* msg = (secondary_message_IRTS_FR_1_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FR_1* proto_msg = pack->add_irts_fr_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -773,7 +773,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1466: {
-            secondary_message_IRTS_FR_2* msg = (secondary_message_IRTS_FR_2*) (*map)[index].message_raw;
+            secondary_message_IRTS_FR_2_conversion* msg = (secondary_message_IRTS_FR_2_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FR_2* proto_msg = pack->add_irts_fr_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -786,7 +786,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1467: {
-            secondary_message_IRTS_FR_3* msg = (secondary_message_IRTS_FR_3*) (*map)[index].message_raw;
+            secondary_message_IRTS_FR_3_conversion* msg = (secondary_message_IRTS_FR_3_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_FR_3* proto_msg = pack->add_irts_fr_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -799,7 +799,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1468: {
-            secondary_message_IRTS_RL_0* msg = (secondary_message_IRTS_RL_0*) (*map)[index].message_raw;
+            secondary_message_IRTS_RL_0_conversion* msg = (secondary_message_IRTS_RL_0_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RL_0* proto_msg = pack->add_irts_rl_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -812,7 +812,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1469: {
-            secondary_message_IRTS_RL_1* msg = (secondary_message_IRTS_RL_1*) (*map)[index].message_raw;
+            secondary_message_IRTS_RL_1_conversion* msg = (secondary_message_IRTS_RL_1_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RL_1* proto_msg = pack->add_irts_rl_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -825,7 +825,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1470: {
-            secondary_message_IRTS_RL_2* msg = (secondary_message_IRTS_RL_2*) (*map)[index].message_raw;
+            secondary_message_IRTS_RL_2_conversion* msg = (secondary_message_IRTS_RL_2_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RL_2* proto_msg = pack->add_irts_rl_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -838,7 +838,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1471: {
-            secondary_message_IRTS_RL_3* msg = (secondary_message_IRTS_RL_3*) (*map)[index].message_raw;
+            secondary_message_IRTS_RL_3_conversion* msg = (secondary_message_IRTS_RL_3_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RL_3* proto_msg = pack->add_irts_rl_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -851,7 +851,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1472: {
-            secondary_message_IRTS_RR_0* msg = (secondary_message_IRTS_RR_0*) (*map)[index].message_raw;
+            secondary_message_IRTS_RR_0_conversion* msg = (secondary_message_IRTS_RR_0_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RR_0* proto_msg = pack->add_irts_rr_0();
             proto_msg->set_channel1(msg->channel1);
             proto_msg->set_channel2(msg->channel2);
@@ -864,7 +864,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1473: {
-            secondary_message_IRTS_RR_1* msg = (secondary_message_IRTS_RR_1*) (*map)[index].message_raw;
+            secondary_message_IRTS_RR_1_conversion* msg = (secondary_message_IRTS_RR_1_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RR_1* proto_msg = pack->add_irts_rr_1();
             proto_msg->set_channel5(msg->channel5);
             proto_msg->set_channel6(msg->channel6);
@@ -877,7 +877,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1474: {
-            secondary_message_IRTS_RR_2* msg = (secondary_message_IRTS_RR_2*) (*map)[index].message_raw;
+            secondary_message_IRTS_RR_2_conversion* msg = (secondary_message_IRTS_RR_2_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RR_2* proto_msg = pack->add_irts_rr_2();
             proto_msg->set_channel9(msg->channel9);
             proto_msg->set_channel10(msg->channel10);
@@ -890,7 +890,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
         }
 
         case 1475: {
-            secondary_message_IRTS_RR_3* msg = (secondary_message_IRTS_RR_3*) (*map)[index].message_raw;
+            secondary_message_IRTS_RR_3_conversion* msg = (secondary_message_IRTS_RR_3_conversion*) (*map)[index].message_conversion;
             secondary::IRTS_RR_3* proto_msg = pack->add_irts_rr_3();
             proto_msg->set_channel13(msg->channel13);
             proto_msg->set_channel14(msg->channel14);
@@ -1023,7 +1023,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IMU_ACCELERATION.push(instance);
     }
     for(int i = 0; i < pack->irts_fl_0_size(); i++){
-        static secondary_message_IRTS_FL_0 instance;
+        static secondary_message_IRTS_FL_0_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fl_0(i)._inner_timestamp();
@@ -1039,7 +1039,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FL_0.push(instance);
     }
     for(int i = 0; i < pack->irts_fl_1_size(); i++){
-        static secondary_message_IRTS_FL_1 instance;
+        static secondary_message_IRTS_FL_1_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fl_1(i)._inner_timestamp();
@@ -1055,7 +1055,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FL_1.push(instance);
     }
     for(int i = 0; i < pack->irts_fl_2_size(); i++){
-        static secondary_message_IRTS_FL_2 instance;
+        static secondary_message_IRTS_FL_2_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fl_2(i)._inner_timestamp();
@@ -1071,7 +1071,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FL_2.push(instance);
     }
     for(int i = 0; i < pack->irts_fl_3_size(); i++){
-        static secondary_message_IRTS_FL_3 instance;
+        static secondary_message_IRTS_FL_3_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fl_3(i)._inner_timestamp();
@@ -1087,7 +1087,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FL_3.push(instance);
     }
     for(int i = 0; i < pack->irts_fr_0_size(); i++){
-        static secondary_message_IRTS_FR_0 instance;
+        static secondary_message_IRTS_FR_0_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fr_0(i)._inner_timestamp();
@@ -1103,7 +1103,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FR_0.push(instance);
     }
     for(int i = 0; i < pack->irts_fr_1_size(); i++){
-        static secondary_message_IRTS_FR_1 instance;
+        static secondary_message_IRTS_FR_1_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fr_1(i)._inner_timestamp();
@@ -1119,7 +1119,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FR_1.push(instance);
     }
     for(int i = 0; i < pack->irts_fr_2_size(); i++){
-        static secondary_message_IRTS_FR_2 instance;
+        static secondary_message_IRTS_FR_2_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fr_2(i)._inner_timestamp();
@@ -1135,7 +1135,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FR_2.push(instance);
     }
     for(int i = 0; i < pack->irts_fr_3_size(); i++){
-        static secondary_message_IRTS_FR_3 instance;
+        static secondary_message_IRTS_FR_3_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_fr_3(i)._inner_timestamp();
@@ -1151,7 +1151,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_FR_3.push(instance);
     }
     for(int i = 0; i < pack->irts_rl_0_size(); i++){
-        static secondary_message_IRTS_RL_0 instance;
+        static secondary_message_IRTS_RL_0_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rl_0(i)._inner_timestamp();
@@ -1167,7 +1167,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RL_0.push(instance);
     }
     for(int i = 0; i < pack->irts_rl_1_size(); i++){
-        static secondary_message_IRTS_RL_1 instance;
+        static secondary_message_IRTS_RL_1_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rl_1(i)._inner_timestamp();
@@ -1183,7 +1183,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RL_1.push(instance);
     }
     for(int i = 0; i < pack->irts_rl_2_size(); i++){
-        static secondary_message_IRTS_RL_2 instance;
+        static secondary_message_IRTS_RL_2_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rl_2(i)._inner_timestamp();
@@ -1199,7 +1199,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RL_2.push(instance);
     }
     for(int i = 0; i < pack->irts_rl_3_size(); i++){
-        static secondary_message_IRTS_RL_3 instance;
+        static secondary_message_IRTS_RL_3_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rl_3(i)._inner_timestamp();
@@ -1215,7 +1215,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RL_3.push(instance);
     }
     for(int i = 0; i < pack->irts_rr_0_size(); i++){
-        static secondary_message_IRTS_RR_0 instance;
+        static secondary_message_IRTS_RR_0_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rr_0(i)._inner_timestamp();
@@ -1231,7 +1231,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RR_0.push(instance);
     }
     for(int i = 0; i < pack->irts_rr_1_size(); i++){
-        static secondary_message_IRTS_RR_1 instance;
+        static secondary_message_IRTS_RR_1_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rr_1(i)._inner_timestamp();
@@ -1247,7 +1247,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RR_1.push(instance);
     }
     for(int i = 0; i < pack->irts_rr_2_size(); i++){
-        static secondary_message_IRTS_RR_2 instance;
+        static secondary_message_IRTS_RR_2_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rr_2(i)._inner_timestamp();
@@ -1263,7 +1263,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->IRTS_RR_2.push(instance);
     }
     for(int i = 0; i < pack->irts_rr_3_size(); i++){
-        static secondary_message_IRTS_RR_3 instance;
+        static secondary_message_IRTS_RR_3_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->irts_rr_3(i)._inner_timestamp();

@@ -636,40 +636,40 @@ class IRTS_FL_0 PROTOBUF_FINAL :
     kChannel4FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel1 = 1;
+  // float channel1 = 1;
   void clear_channel1();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1() const;
-  void set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel1() const;
+  void set_channel1(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel1() const;
-  void _internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel1() const;
+  void _internal_set_channel1(float value);
   public:
 
-  // uint32 channel2 = 2;
+  // float channel2 = 2;
   void clear_channel2();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2() const;
-  void set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel2() const;
+  void set_channel2(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel2() const;
-  void _internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel2() const;
+  void _internal_set_channel2(float value);
   public:
 
-  // uint32 channel3 = 3;
+  // float channel3 = 3;
   void clear_channel3();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3() const;
-  void set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel3() const;
+  void set_channel3(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel3() const;
-  void _internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel3() const;
+  void _internal_set_channel3(float value);
   public:
 
-  // uint32 channel4 = 4;
+  // float channel4 = 4;
   void clear_channel4();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4() const;
-  void set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel4() const;
+  void set_channel4(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel4() const;
-  void _internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel4() const;
+  void _internal_set_channel4(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -688,10 +688,10 @@ class IRTS_FL_0 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4_;
+  float channel1_;
+  float channel2_;
+  float channel3_;
+  float channel4_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -817,40 +817,40 @@ class IRTS_FL_1 PROTOBUF_FINAL :
     kChannel8FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel5 = 1;
+  // float channel5 = 1;
   void clear_channel5();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5() const;
-  void set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel5() const;
+  void set_channel5(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel5() const;
-  void _internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel5() const;
+  void _internal_set_channel5(float value);
   public:
 
-  // uint32 channel6 = 2;
+  // float channel6 = 2;
   void clear_channel6();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6() const;
-  void set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel6() const;
+  void set_channel6(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel6() const;
-  void _internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel6() const;
+  void _internal_set_channel6(float value);
   public:
 
-  // uint32 channel7 = 3;
+  // float channel7 = 3;
   void clear_channel7();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7() const;
-  void set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel7() const;
+  void set_channel7(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel7() const;
-  void _internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel7() const;
+  void _internal_set_channel7(float value);
   public:
 
-  // uint32 channel8 = 4;
+  // float channel8 = 4;
   void clear_channel8();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8() const;
-  void set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel8() const;
+  void set_channel8(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel8() const;
-  void _internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel8() const;
+  void _internal_set_channel8(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -869,10 +869,10 @@ class IRTS_FL_1 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8_;
+  float channel5_;
+  float channel6_;
+  float channel7_;
+  float channel8_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -998,40 +998,40 @@ class IRTS_FL_2 PROTOBUF_FINAL :
     kChannel12FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel9 = 1;
+  // float channel9 = 1;
   void clear_channel9();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9() const;
-  void set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel9() const;
+  void set_channel9(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel9() const;
-  void _internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel9() const;
+  void _internal_set_channel9(float value);
   public:
 
-  // uint32 channel10 = 2;
+  // float channel10 = 2;
   void clear_channel10();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10() const;
-  void set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel10() const;
+  void set_channel10(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel10() const;
-  void _internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel10() const;
+  void _internal_set_channel10(float value);
   public:
 
-  // uint32 channel11 = 3;
+  // float channel11 = 3;
   void clear_channel11();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11() const;
-  void set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel11() const;
+  void set_channel11(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel11() const;
-  void _internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel11() const;
+  void _internal_set_channel11(float value);
   public:
 
-  // uint32 channel12 = 4;
+  // float channel12 = 4;
   void clear_channel12();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12() const;
-  void set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel12() const;
+  void set_channel12(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel12() const;
-  void _internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel12() const;
+  void _internal_set_channel12(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1050,10 +1050,10 @@ class IRTS_FL_2 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12_;
+  float channel9_;
+  float channel10_;
+  float channel11_;
+  float channel12_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -1179,40 +1179,40 @@ class IRTS_FL_3 PROTOBUF_FINAL :
     kChannel16FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel13 = 1;
+  // float channel13 = 1;
   void clear_channel13();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13() const;
-  void set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel13() const;
+  void set_channel13(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel13() const;
-  void _internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel13() const;
+  void _internal_set_channel13(float value);
   public:
 
-  // uint32 channel14 = 2;
+  // float channel14 = 2;
   void clear_channel14();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14() const;
-  void set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel14() const;
+  void set_channel14(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel14() const;
-  void _internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel14() const;
+  void _internal_set_channel14(float value);
   public:
 
-  // uint32 channel15 = 3;
+  // float channel15 = 3;
   void clear_channel15();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15() const;
-  void set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel15() const;
+  void set_channel15(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel15() const;
-  void _internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel15() const;
+  void _internal_set_channel15(float value);
   public:
 
-  // uint32 channel16 = 4;
+  // float channel16 = 4;
   void clear_channel16();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16() const;
-  void set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel16() const;
+  void set_channel16(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel16() const;
-  void _internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel16() const;
+  void _internal_set_channel16(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1231,10 +1231,10 @@ class IRTS_FL_3 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16_;
+  float channel13_;
+  float channel14_;
+  float channel15_;
+  float channel16_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -1360,40 +1360,40 @@ class IRTS_FR_0 PROTOBUF_FINAL :
     kChannel4FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel1 = 1;
+  // float channel1 = 1;
   void clear_channel1();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1() const;
-  void set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel1() const;
+  void set_channel1(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel1() const;
-  void _internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel1() const;
+  void _internal_set_channel1(float value);
   public:
 
-  // uint32 channel2 = 2;
+  // float channel2 = 2;
   void clear_channel2();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2() const;
-  void set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel2() const;
+  void set_channel2(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel2() const;
-  void _internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel2() const;
+  void _internal_set_channel2(float value);
   public:
 
-  // uint32 channel3 = 3;
+  // float channel3 = 3;
   void clear_channel3();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3() const;
-  void set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel3() const;
+  void set_channel3(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel3() const;
-  void _internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel3() const;
+  void _internal_set_channel3(float value);
   public:
 
-  // uint32 channel4 = 4;
+  // float channel4 = 4;
   void clear_channel4();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4() const;
-  void set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel4() const;
+  void set_channel4(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel4() const;
-  void _internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel4() const;
+  void _internal_set_channel4(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1412,10 +1412,10 @@ class IRTS_FR_0 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4_;
+  float channel1_;
+  float channel2_;
+  float channel3_;
+  float channel4_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -1541,40 +1541,40 @@ class IRTS_FR_1 PROTOBUF_FINAL :
     kChannel8FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel5 = 1;
+  // float channel5 = 1;
   void clear_channel5();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5() const;
-  void set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel5() const;
+  void set_channel5(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel5() const;
-  void _internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel5() const;
+  void _internal_set_channel5(float value);
   public:
 
-  // uint32 channel6 = 2;
+  // float channel6 = 2;
   void clear_channel6();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6() const;
-  void set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel6() const;
+  void set_channel6(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel6() const;
-  void _internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel6() const;
+  void _internal_set_channel6(float value);
   public:
 
-  // uint32 channel7 = 3;
+  // float channel7 = 3;
   void clear_channel7();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7() const;
-  void set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel7() const;
+  void set_channel7(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel7() const;
-  void _internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel7() const;
+  void _internal_set_channel7(float value);
   public:
 
-  // uint32 channel8 = 4;
+  // float channel8 = 4;
   void clear_channel8();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8() const;
-  void set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel8() const;
+  void set_channel8(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel8() const;
-  void _internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel8() const;
+  void _internal_set_channel8(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1593,10 +1593,10 @@ class IRTS_FR_1 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8_;
+  float channel5_;
+  float channel6_;
+  float channel7_;
+  float channel8_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -1722,40 +1722,40 @@ class IRTS_FR_2 PROTOBUF_FINAL :
     kChannel12FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel9 = 1;
+  // float channel9 = 1;
   void clear_channel9();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9() const;
-  void set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel9() const;
+  void set_channel9(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel9() const;
-  void _internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel9() const;
+  void _internal_set_channel9(float value);
   public:
 
-  // uint32 channel10 = 2;
+  // float channel10 = 2;
   void clear_channel10();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10() const;
-  void set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel10() const;
+  void set_channel10(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel10() const;
-  void _internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel10() const;
+  void _internal_set_channel10(float value);
   public:
 
-  // uint32 channel11 = 3;
+  // float channel11 = 3;
   void clear_channel11();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11() const;
-  void set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel11() const;
+  void set_channel11(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel11() const;
-  void _internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel11() const;
+  void _internal_set_channel11(float value);
   public:
 
-  // uint32 channel12 = 4;
+  // float channel12 = 4;
   void clear_channel12();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12() const;
-  void set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel12() const;
+  void set_channel12(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel12() const;
-  void _internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel12() const;
+  void _internal_set_channel12(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1774,10 +1774,10 @@ class IRTS_FR_2 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12_;
+  float channel9_;
+  float channel10_;
+  float channel11_;
+  float channel12_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -1903,40 +1903,40 @@ class IRTS_FR_3 PROTOBUF_FINAL :
     kChannel16FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel13 = 1;
+  // float channel13 = 1;
   void clear_channel13();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13() const;
-  void set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel13() const;
+  void set_channel13(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel13() const;
-  void _internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel13() const;
+  void _internal_set_channel13(float value);
   public:
 
-  // uint32 channel14 = 2;
+  // float channel14 = 2;
   void clear_channel14();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14() const;
-  void set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel14() const;
+  void set_channel14(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel14() const;
-  void _internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel14() const;
+  void _internal_set_channel14(float value);
   public:
 
-  // uint32 channel15 = 3;
+  // float channel15 = 3;
   void clear_channel15();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15() const;
-  void set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel15() const;
+  void set_channel15(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel15() const;
-  void _internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel15() const;
+  void _internal_set_channel15(float value);
   public:
 
-  // uint32 channel16 = 4;
+  // float channel16 = 4;
   void clear_channel16();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16() const;
-  void set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel16() const;
+  void set_channel16(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel16() const;
-  void _internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel16() const;
+  void _internal_set_channel16(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -1955,10 +1955,10 @@ class IRTS_FR_3 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16_;
+  float channel13_;
+  float channel14_;
+  float channel15_;
+  float channel16_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2084,40 +2084,40 @@ class IRTS_RL_0 PROTOBUF_FINAL :
     kChannel4FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel1 = 1;
+  // float channel1 = 1;
   void clear_channel1();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1() const;
-  void set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel1() const;
+  void set_channel1(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel1() const;
-  void _internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel1() const;
+  void _internal_set_channel1(float value);
   public:
 
-  // uint32 channel2 = 2;
+  // float channel2 = 2;
   void clear_channel2();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2() const;
-  void set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel2() const;
+  void set_channel2(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel2() const;
-  void _internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel2() const;
+  void _internal_set_channel2(float value);
   public:
 
-  // uint32 channel3 = 3;
+  // float channel3 = 3;
   void clear_channel3();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3() const;
-  void set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel3() const;
+  void set_channel3(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel3() const;
-  void _internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel3() const;
+  void _internal_set_channel3(float value);
   public:
 
-  // uint32 channel4 = 4;
+  // float channel4 = 4;
   void clear_channel4();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4() const;
-  void set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel4() const;
+  void set_channel4(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel4() const;
-  void _internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel4() const;
+  void _internal_set_channel4(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -2136,10 +2136,10 @@ class IRTS_RL_0 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4_;
+  float channel1_;
+  float channel2_;
+  float channel3_;
+  float channel4_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2265,40 +2265,40 @@ class IRTS_RL_1 PROTOBUF_FINAL :
     kChannel8FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel5 = 1;
+  // float channel5 = 1;
   void clear_channel5();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5() const;
-  void set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel5() const;
+  void set_channel5(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel5() const;
-  void _internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel5() const;
+  void _internal_set_channel5(float value);
   public:
 
-  // uint32 channel6 = 2;
+  // float channel6 = 2;
   void clear_channel6();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6() const;
-  void set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel6() const;
+  void set_channel6(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel6() const;
-  void _internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel6() const;
+  void _internal_set_channel6(float value);
   public:
 
-  // uint32 channel7 = 3;
+  // float channel7 = 3;
   void clear_channel7();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7() const;
-  void set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel7() const;
+  void set_channel7(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel7() const;
-  void _internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel7() const;
+  void _internal_set_channel7(float value);
   public:
 
-  // uint32 channel8 = 4;
+  // float channel8 = 4;
   void clear_channel8();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8() const;
-  void set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel8() const;
+  void set_channel8(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel8() const;
-  void _internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel8() const;
+  void _internal_set_channel8(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -2317,10 +2317,10 @@ class IRTS_RL_1 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8_;
+  float channel5_;
+  float channel6_;
+  float channel7_;
+  float channel8_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2446,40 +2446,40 @@ class IRTS_RL_2 PROTOBUF_FINAL :
     kChannel12FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel9 = 1;
+  // float channel9 = 1;
   void clear_channel9();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9() const;
-  void set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel9() const;
+  void set_channel9(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel9() const;
-  void _internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel9() const;
+  void _internal_set_channel9(float value);
   public:
 
-  // uint32 channel10 = 2;
+  // float channel10 = 2;
   void clear_channel10();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10() const;
-  void set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel10() const;
+  void set_channel10(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel10() const;
-  void _internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel10() const;
+  void _internal_set_channel10(float value);
   public:
 
-  // uint32 channel11 = 3;
+  // float channel11 = 3;
   void clear_channel11();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11() const;
-  void set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel11() const;
+  void set_channel11(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel11() const;
-  void _internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel11() const;
+  void _internal_set_channel11(float value);
   public:
 
-  // uint32 channel12 = 4;
+  // float channel12 = 4;
   void clear_channel12();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12() const;
-  void set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel12() const;
+  void set_channel12(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel12() const;
-  void _internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel12() const;
+  void _internal_set_channel12(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -2498,10 +2498,10 @@ class IRTS_RL_2 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12_;
+  float channel9_;
+  float channel10_;
+  float channel11_;
+  float channel12_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2627,40 +2627,40 @@ class IRTS_RL_3 PROTOBUF_FINAL :
     kChannel16FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel13 = 1;
+  // float channel13 = 1;
   void clear_channel13();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13() const;
-  void set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel13() const;
+  void set_channel13(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel13() const;
-  void _internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel13() const;
+  void _internal_set_channel13(float value);
   public:
 
-  // uint32 channel14 = 2;
+  // float channel14 = 2;
   void clear_channel14();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14() const;
-  void set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel14() const;
+  void set_channel14(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel14() const;
-  void _internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel14() const;
+  void _internal_set_channel14(float value);
   public:
 
-  // uint32 channel15 = 3;
+  // float channel15 = 3;
   void clear_channel15();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15() const;
-  void set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel15() const;
+  void set_channel15(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel15() const;
-  void _internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel15() const;
+  void _internal_set_channel15(float value);
   public:
 
-  // uint32 channel16 = 4;
+  // float channel16 = 4;
   void clear_channel16();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16() const;
-  void set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel16() const;
+  void set_channel16(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel16() const;
-  void _internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel16() const;
+  void _internal_set_channel16(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -2679,10 +2679,10 @@ class IRTS_RL_3 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16_;
+  float channel13_;
+  float channel14_;
+  float channel15_;
+  float channel16_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2808,40 +2808,40 @@ class IRTS_RR_0 PROTOBUF_FINAL :
     kChannel4FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel1 = 1;
+  // float channel1 = 1;
   void clear_channel1();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1() const;
-  void set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel1() const;
+  void set_channel1(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel1() const;
-  void _internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel1() const;
+  void _internal_set_channel1(float value);
   public:
 
-  // uint32 channel2 = 2;
+  // float channel2 = 2;
   void clear_channel2();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2() const;
-  void set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel2() const;
+  void set_channel2(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel2() const;
-  void _internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel2() const;
+  void _internal_set_channel2(float value);
   public:
 
-  // uint32 channel3 = 3;
+  // float channel3 = 3;
   void clear_channel3();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3() const;
-  void set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel3() const;
+  void set_channel3(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel3() const;
-  void _internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel3() const;
+  void _internal_set_channel3(float value);
   public:
 
-  // uint32 channel4 = 4;
+  // float channel4 = 4;
   void clear_channel4();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4() const;
-  void set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel4() const;
+  void set_channel4(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel4() const;
-  void _internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel4() const;
+  void _internal_set_channel4(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -2860,10 +2860,10 @@ class IRTS_RR_0 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel1_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel2_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel3_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel4_;
+  float channel1_;
+  float channel2_;
+  float channel3_;
+  float channel4_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -2989,40 +2989,40 @@ class IRTS_RR_1 PROTOBUF_FINAL :
     kChannel8FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel5 = 1;
+  // float channel5 = 1;
   void clear_channel5();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5() const;
-  void set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel5() const;
+  void set_channel5(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel5() const;
-  void _internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel5() const;
+  void _internal_set_channel5(float value);
   public:
 
-  // uint32 channel6 = 2;
+  // float channel6 = 2;
   void clear_channel6();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6() const;
-  void set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel6() const;
+  void set_channel6(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel6() const;
-  void _internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel6() const;
+  void _internal_set_channel6(float value);
   public:
 
-  // uint32 channel7 = 3;
+  // float channel7 = 3;
   void clear_channel7();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7() const;
-  void set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel7() const;
+  void set_channel7(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel7() const;
-  void _internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel7() const;
+  void _internal_set_channel7(float value);
   public:
 
-  // uint32 channel8 = 4;
+  // float channel8 = 4;
   void clear_channel8();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8() const;
-  void set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel8() const;
+  void set_channel8(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel8() const;
-  void _internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel8() const;
+  void _internal_set_channel8(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -3041,10 +3041,10 @@ class IRTS_RR_1 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel5_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel6_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel7_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel8_;
+  float channel5_;
+  float channel6_;
+  float channel7_;
+  float channel8_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -3170,40 +3170,40 @@ class IRTS_RR_2 PROTOBUF_FINAL :
     kChannel12FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel9 = 1;
+  // float channel9 = 1;
   void clear_channel9();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9() const;
-  void set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel9() const;
+  void set_channel9(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel9() const;
-  void _internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel9() const;
+  void _internal_set_channel9(float value);
   public:
 
-  // uint32 channel10 = 2;
+  // float channel10 = 2;
   void clear_channel10();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10() const;
-  void set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel10() const;
+  void set_channel10(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel10() const;
-  void _internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel10() const;
+  void _internal_set_channel10(float value);
   public:
 
-  // uint32 channel11 = 3;
+  // float channel11 = 3;
   void clear_channel11();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11() const;
-  void set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel11() const;
+  void set_channel11(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel11() const;
-  void _internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel11() const;
+  void _internal_set_channel11(float value);
   public:
 
-  // uint32 channel12 = 4;
+  // float channel12 = 4;
   void clear_channel12();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12() const;
-  void set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel12() const;
+  void set_channel12(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel12() const;
-  void _internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel12() const;
+  void _internal_set_channel12(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -3222,10 +3222,10 @@ class IRTS_RR_2 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel9_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel10_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel11_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel12_;
+  float channel9_;
+  float channel10_;
+  float channel11_;
+  float channel12_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -3351,40 +3351,40 @@ class IRTS_RR_3 PROTOBUF_FINAL :
     kChannel16FieldNumber = 4,
     kInnerTimestampFieldNumber = 5,
   };
-  // uint32 channel13 = 1;
+  // float channel13 = 1;
   void clear_channel13();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13() const;
-  void set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel13() const;
+  void set_channel13(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel13() const;
-  void _internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel13() const;
+  void _internal_set_channel13(float value);
   public:
 
-  // uint32 channel14 = 2;
+  // float channel14 = 2;
   void clear_channel14();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14() const;
-  void set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel14() const;
+  void set_channel14(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel14() const;
-  void _internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel14() const;
+  void _internal_set_channel14(float value);
   public:
 
-  // uint32 channel15 = 3;
+  // float channel15 = 3;
   void clear_channel15();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15() const;
-  void set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel15() const;
+  void set_channel15(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel15() const;
-  void _internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel15() const;
+  void _internal_set_channel15(float value);
   public:
 
-  // uint32 channel16 = 4;
+  // float channel16 = 4;
   void clear_channel16();
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16() const;
-  void set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float channel16() const;
+  void set_channel16(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_channel16() const;
-  void _internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_channel16() const;
+  void _internal_set_channel16(float value);
   public:
 
   // uint64 _inner_timestamp = 5;
@@ -3403,10 +3403,10 @@ class IRTS_RR_3 PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel13_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel14_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel15_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 channel16_;
+  float channel13_;
+  float channel14_;
+  float channel15_;
+  float channel16_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -5437,82 +5437,82 @@ inline void IMU_ACCELERATION::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint
 
 // IRTS_FL_0
 
-// uint32 channel1 = 1;
+// float channel1 = 1;
 inline void IRTS_FL_0::clear_channel1() {
-  channel1_ = 0u;
+  channel1_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::_internal_channel1() const {
+inline float IRTS_FL_0::_internal_channel1() const {
   return channel1_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::channel1() const {
+inline float IRTS_FL_0::channel1() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_0.channel1)
   return _internal_channel1();
 }
-inline void IRTS_FL_0::_internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::_internal_set_channel1(float value) {
   
   channel1_ = value;
 }
-inline void IRTS_FL_0::set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::set_channel1(float value) {
   _internal_set_channel1(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_0.channel1)
 }
 
-// uint32 channel2 = 2;
+// float channel2 = 2;
 inline void IRTS_FL_0::clear_channel2() {
-  channel2_ = 0u;
+  channel2_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::_internal_channel2() const {
+inline float IRTS_FL_0::_internal_channel2() const {
   return channel2_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::channel2() const {
+inline float IRTS_FL_0::channel2() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_0.channel2)
   return _internal_channel2();
 }
-inline void IRTS_FL_0::_internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::_internal_set_channel2(float value) {
   
   channel2_ = value;
 }
-inline void IRTS_FL_0::set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::set_channel2(float value) {
   _internal_set_channel2(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_0.channel2)
 }
 
-// uint32 channel3 = 3;
+// float channel3 = 3;
 inline void IRTS_FL_0::clear_channel3() {
-  channel3_ = 0u;
+  channel3_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::_internal_channel3() const {
+inline float IRTS_FL_0::_internal_channel3() const {
   return channel3_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::channel3() const {
+inline float IRTS_FL_0::channel3() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_0.channel3)
   return _internal_channel3();
 }
-inline void IRTS_FL_0::_internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::_internal_set_channel3(float value) {
   
   channel3_ = value;
 }
-inline void IRTS_FL_0::set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::set_channel3(float value) {
   _internal_set_channel3(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_0.channel3)
 }
 
-// uint32 channel4 = 4;
+// float channel4 = 4;
 inline void IRTS_FL_0::clear_channel4() {
-  channel4_ = 0u;
+  channel4_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::_internal_channel4() const {
+inline float IRTS_FL_0::_internal_channel4() const {
   return channel4_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_0::channel4() const {
+inline float IRTS_FL_0::channel4() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_0.channel4)
   return _internal_channel4();
 }
-inline void IRTS_FL_0::_internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::_internal_set_channel4(float value) {
   
   channel4_ = value;
 }
-inline void IRTS_FL_0::set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_0::set_channel4(float value) {
   _internal_set_channel4(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_0.channel4)
 }
@@ -5541,82 +5541,82 @@ inline void IRTS_FL_0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FL_1
 
-// uint32 channel5 = 1;
+// float channel5 = 1;
 inline void IRTS_FL_1::clear_channel5() {
-  channel5_ = 0u;
+  channel5_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::_internal_channel5() const {
+inline float IRTS_FL_1::_internal_channel5() const {
   return channel5_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::channel5() const {
+inline float IRTS_FL_1::channel5() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_1.channel5)
   return _internal_channel5();
 }
-inline void IRTS_FL_1::_internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::_internal_set_channel5(float value) {
   
   channel5_ = value;
 }
-inline void IRTS_FL_1::set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::set_channel5(float value) {
   _internal_set_channel5(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_1.channel5)
 }
 
-// uint32 channel6 = 2;
+// float channel6 = 2;
 inline void IRTS_FL_1::clear_channel6() {
-  channel6_ = 0u;
+  channel6_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::_internal_channel6() const {
+inline float IRTS_FL_1::_internal_channel6() const {
   return channel6_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::channel6() const {
+inline float IRTS_FL_1::channel6() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_1.channel6)
   return _internal_channel6();
 }
-inline void IRTS_FL_1::_internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::_internal_set_channel6(float value) {
   
   channel6_ = value;
 }
-inline void IRTS_FL_1::set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::set_channel6(float value) {
   _internal_set_channel6(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_1.channel6)
 }
 
-// uint32 channel7 = 3;
+// float channel7 = 3;
 inline void IRTS_FL_1::clear_channel7() {
-  channel7_ = 0u;
+  channel7_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::_internal_channel7() const {
+inline float IRTS_FL_1::_internal_channel7() const {
   return channel7_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::channel7() const {
+inline float IRTS_FL_1::channel7() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_1.channel7)
   return _internal_channel7();
 }
-inline void IRTS_FL_1::_internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::_internal_set_channel7(float value) {
   
   channel7_ = value;
 }
-inline void IRTS_FL_1::set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::set_channel7(float value) {
   _internal_set_channel7(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_1.channel7)
 }
 
-// uint32 channel8 = 4;
+// float channel8 = 4;
 inline void IRTS_FL_1::clear_channel8() {
-  channel8_ = 0u;
+  channel8_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::_internal_channel8() const {
+inline float IRTS_FL_1::_internal_channel8() const {
   return channel8_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_1::channel8() const {
+inline float IRTS_FL_1::channel8() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_1.channel8)
   return _internal_channel8();
 }
-inline void IRTS_FL_1::_internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::_internal_set_channel8(float value) {
   
   channel8_ = value;
 }
-inline void IRTS_FL_1::set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_1::set_channel8(float value) {
   _internal_set_channel8(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_1.channel8)
 }
@@ -5645,82 +5645,82 @@ inline void IRTS_FL_1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FL_2
 
-// uint32 channel9 = 1;
+// float channel9 = 1;
 inline void IRTS_FL_2::clear_channel9() {
-  channel9_ = 0u;
+  channel9_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::_internal_channel9() const {
+inline float IRTS_FL_2::_internal_channel9() const {
   return channel9_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::channel9() const {
+inline float IRTS_FL_2::channel9() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_2.channel9)
   return _internal_channel9();
 }
-inline void IRTS_FL_2::_internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::_internal_set_channel9(float value) {
   
   channel9_ = value;
 }
-inline void IRTS_FL_2::set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::set_channel9(float value) {
   _internal_set_channel9(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_2.channel9)
 }
 
-// uint32 channel10 = 2;
+// float channel10 = 2;
 inline void IRTS_FL_2::clear_channel10() {
-  channel10_ = 0u;
+  channel10_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::_internal_channel10() const {
+inline float IRTS_FL_2::_internal_channel10() const {
   return channel10_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::channel10() const {
+inline float IRTS_FL_2::channel10() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_2.channel10)
   return _internal_channel10();
 }
-inline void IRTS_FL_2::_internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::_internal_set_channel10(float value) {
   
   channel10_ = value;
 }
-inline void IRTS_FL_2::set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::set_channel10(float value) {
   _internal_set_channel10(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_2.channel10)
 }
 
-// uint32 channel11 = 3;
+// float channel11 = 3;
 inline void IRTS_FL_2::clear_channel11() {
-  channel11_ = 0u;
+  channel11_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::_internal_channel11() const {
+inline float IRTS_FL_2::_internal_channel11() const {
   return channel11_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::channel11() const {
+inline float IRTS_FL_2::channel11() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_2.channel11)
   return _internal_channel11();
 }
-inline void IRTS_FL_2::_internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::_internal_set_channel11(float value) {
   
   channel11_ = value;
 }
-inline void IRTS_FL_2::set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::set_channel11(float value) {
   _internal_set_channel11(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_2.channel11)
 }
 
-// uint32 channel12 = 4;
+// float channel12 = 4;
 inline void IRTS_FL_2::clear_channel12() {
-  channel12_ = 0u;
+  channel12_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::_internal_channel12() const {
+inline float IRTS_FL_2::_internal_channel12() const {
   return channel12_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_2::channel12() const {
+inline float IRTS_FL_2::channel12() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_2.channel12)
   return _internal_channel12();
 }
-inline void IRTS_FL_2::_internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::_internal_set_channel12(float value) {
   
   channel12_ = value;
 }
-inline void IRTS_FL_2::set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_2::set_channel12(float value) {
   _internal_set_channel12(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_2.channel12)
 }
@@ -5749,82 +5749,82 @@ inline void IRTS_FL_2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FL_3
 
-// uint32 channel13 = 1;
+// float channel13 = 1;
 inline void IRTS_FL_3::clear_channel13() {
-  channel13_ = 0u;
+  channel13_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::_internal_channel13() const {
+inline float IRTS_FL_3::_internal_channel13() const {
   return channel13_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::channel13() const {
+inline float IRTS_FL_3::channel13() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_3.channel13)
   return _internal_channel13();
 }
-inline void IRTS_FL_3::_internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::_internal_set_channel13(float value) {
   
   channel13_ = value;
 }
-inline void IRTS_FL_3::set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::set_channel13(float value) {
   _internal_set_channel13(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_3.channel13)
 }
 
-// uint32 channel14 = 2;
+// float channel14 = 2;
 inline void IRTS_FL_3::clear_channel14() {
-  channel14_ = 0u;
+  channel14_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::_internal_channel14() const {
+inline float IRTS_FL_3::_internal_channel14() const {
   return channel14_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::channel14() const {
+inline float IRTS_FL_3::channel14() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_3.channel14)
   return _internal_channel14();
 }
-inline void IRTS_FL_3::_internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::_internal_set_channel14(float value) {
   
   channel14_ = value;
 }
-inline void IRTS_FL_3::set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::set_channel14(float value) {
   _internal_set_channel14(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_3.channel14)
 }
 
-// uint32 channel15 = 3;
+// float channel15 = 3;
 inline void IRTS_FL_3::clear_channel15() {
-  channel15_ = 0u;
+  channel15_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::_internal_channel15() const {
+inline float IRTS_FL_3::_internal_channel15() const {
   return channel15_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::channel15() const {
+inline float IRTS_FL_3::channel15() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_3.channel15)
   return _internal_channel15();
 }
-inline void IRTS_FL_3::_internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::_internal_set_channel15(float value) {
   
   channel15_ = value;
 }
-inline void IRTS_FL_3::set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::set_channel15(float value) {
   _internal_set_channel15(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_3.channel15)
 }
 
-// uint32 channel16 = 4;
+// float channel16 = 4;
 inline void IRTS_FL_3::clear_channel16() {
-  channel16_ = 0u;
+  channel16_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::_internal_channel16() const {
+inline float IRTS_FL_3::_internal_channel16() const {
   return channel16_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FL_3::channel16() const {
+inline float IRTS_FL_3::channel16() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FL_3.channel16)
   return _internal_channel16();
 }
-inline void IRTS_FL_3::_internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::_internal_set_channel16(float value) {
   
   channel16_ = value;
 }
-inline void IRTS_FL_3::set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FL_3::set_channel16(float value) {
   _internal_set_channel16(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FL_3.channel16)
 }
@@ -5853,82 +5853,82 @@ inline void IRTS_FL_3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FR_0
 
-// uint32 channel1 = 1;
+// float channel1 = 1;
 inline void IRTS_FR_0::clear_channel1() {
-  channel1_ = 0u;
+  channel1_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::_internal_channel1() const {
+inline float IRTS_FR_0::_internal_channel1() const {
   return channel1_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::channel1() const {
+inline float IRTS_FR_0::channel1() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_0.channel1)
   return _internal_channel1();
 }
-inline void IRTS_FR_0::_internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::_internal_set_channel1(float value) {
   
   channel1_ = value;
 }
-inline void IRTS_FR_0::set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::set_channel1(float value) {
   _internal_set_channel1(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_0.channel1)
 }
 
-// uint32 channel2 = 2;
+// float channel2 = 2;
 inline void IRTS_FR_0::clear_channel2() {
-  channel2_ = 0u;
+  channel2_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::_internal_channel2() const {
+inline float IRTS_FR_0::_internal_channel2() const {
   return channel2_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::channel2() const {
+inline float IRTS_FR_0::channel2() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_0.channel2)
   return _internal_channel2();
 }
-inline void IRTS_FR_0::_internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::_internal_set_channel2(float value) {
   
   channel2_ = value;
 }
-inline void IRTS_FR_0::set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::set_channel2(float value) {
   _internal_set_channel2(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_0.channel2)
 }
 
-// uint32 channel3 = 3;
+// float channel3 = 3;
 inline void IRTS_FR_0::clear_channel3() {
-  channel3_ = 0u;
+  channel3_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::_internal_channel3() const {
+inline float IRTS_FR_0::_internal_channel3() const {
   return channel3_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::channel3() const {
+inline float IRTS_FR_0::channel3() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_0.channel3)
   return _internal_channel3();
 }
-inline void IRTS_FR_0::_internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::_internal_set_channel3(float value) {
   
   channel3_ = value;
 }
-inline void IRTS_FR_0::set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::set_channel3(float value) {
   _internal_set_channel3(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_0.channel3)
 }
 
-// uint32 channel4 = 4;
+// float channel4 = 4;
 inline void IRTS_FR_0::clear_channel4() {
-  channel4_ = 0u;
+  channel4_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::_internal_channel4() const {
+inline float IRTS_FR_0::_internal_channel4() const {
   return channel4_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_0::channel4() const {
+inline float IRTS_FR_0::channel4() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_0.channel4)
   return _internal_channel4();
 }
-inline void IRTS_FR_0::_internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::_internal_set_channel4(float value) {
   
   channel4_ = value;
 }
-inline void IRTS_FR_0::set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_0::set_channel4(float value) {
   _internal_set_channel4(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_0.channel4)
 }
@@ -5957,82 +5957,82 @@ inline void IRTS_FR_0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FR_1
 
-// uint32 channel5 = 1;
+// float channel5 = 1;
 inline void IRTS_FR_1::clear_channel5() {
-  channel5_ = 0u;
+  channel5_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::_internal_channel5() const {
+inline float IRTS_FR_1::_internal_channel5() const {
   return channel5_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::channel5() const {
+inline float IRTS_FR_1::channel5() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_1.channel5)
   return _internal_channel5();
 }
-inline void IRTS_FR_1::_internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::_internal_set_channel5(float value) {
   
   channel5_ = value;
 }
-inline void IRTS_FR_1::set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::set_channel5(float value) {
   _internal_set_channel5(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_1.channel5)
 }
 
-// uint32 channel6 = 2;
+// float channel6 = 2;
 inline void IRTS_FR_1::clear_channel6() {
-  channel6_ = 0u;
+  channel6_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::_internal_channel6() const {
+inline float IRTS_FR_1::_internal_channel6() const {
   return channel6_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::channel6() const {
+inline float IRTS_FR_1::channel6() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_1.channel6)
   return _internal_channel6();
 }
-inline void IRTS_FR_1::_internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::_internal_set_channel6(float value) {
   
   channel6_ = value;
 }
-inline void IRTS_FR_1::set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::set_channel6(float value) {
   _internal_set_channel6(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_1.channel6)
 }
 
-// uint32 channel7 = 3;
+// float channel7 = 3;
 inline void IRTS_FR_1::clear_channel7() {
-  channel7_ = 0u;
+  channel7_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::_internal_channel7() const {
+inline float IRTS_FR_1::_internal_channel7() const {
   return channel7_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::channel7() const {
+inline float IRTS_FR_1::channel7() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_1.channel7)
   return _internal_channel7();
 }
-inline void IRTS_FR_1::_internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::_internal_set_channel7(float value) {
   
   channel7_ = value;
 }
-inline void IRTS_FR_1::set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::set_channel7(float value) {
   _internal_set_channel7(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_1.channel7)
 }
 
-// uint32 channel8 = 4;
+// float channel8 = 4;
 inline void IRTS_FR_1::clear_channel8() {
-  channel8_ = 0u;
+  channel8_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::_internal_channel8() const {
+inline float IRTS_FR_1::_internal_channel8() const {
   return channel8_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_1::channel8() const {
+inline float IRTS_FR_1::channel8() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_1.channel8)
   return _internal_channel8();
 }
-inline void IRTS_FR_1::_internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::_internal_set_channel8(float value) {
   
   channel8_ = value;
 }
-inline void IRTS_FR_1::set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_1::set_channel8(float value) {
   _internal_set_channel8(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_1.channel8)
 }
@@ -6061,82 +6061,82 @@ inline void IRTS_FR_1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FR_2
 
-// uint32 channel9 = 1;
+// float channel9 = 1;
 inline void IRTS_FR_2::clear_channel9() {
-  channel9_ = 0u;
+  channel9_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::_internal_channel9() const {
+inline float IRTS_FR_2::_internal_channel9() const {
   return channel9_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::channel9() const {
+inline float IRTS_FR_2::channel9() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_2.channel9)
   return _internal_channel9();
 }
-inline void IRTS_FR_2::_internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::_internal_set_channel9(float value) {
   
   channel9_ = value;
 }
-inline void IRTS_FR_2::set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::set_channel9(float value) {
   _internal_set_channel9(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_2.channel9)
 }
 
-// uint32 channel10 = 2;
+// float channel10 = 2;
 inline void IRTS_FR_2::clear_channel10() {
-  channel10_ = 0u;
+  channel10_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::_internal_channel10() const {
+inline float IRTS_FR_2::_internal_channel10() const {
   return channel10_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::channel10() const {
+inline float IRTS_FR_2::channel10() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_2.channel10)
   return _internal_channel10();
 }
-inline void IRTS_FR_2::_internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::_internal_set_channel10(float value) {
   
   channel10_ = value;
 }
-inline void IRTS_FR_2::set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::set_channel10(float value) {
   _internal_set_channel10(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_2.channel10)
 }
 
-// uint32 channel11 = 3;
+// float channel11 = 3;
 inline void IRTS_FR_2::clear_channel11() {
-  channel11_ = 0u;
+  channel11_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::_internal_channel11() const {
+inline float IRTS_FR_2::_internal_channel11() const {
   return channel11_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::channel11() const {
+inline float IRTS_FR_2::channel11() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_2.channel11)
   return _internal_channel11();
 }
-inline void IRTS_FR_2::_internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::_internal_set_channel11(float value) {
   
   channel11_ = value;
 }
-inline void IRTS_FR_2::set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::set_channel11(float value) {
   _internal_set_channel11(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_2.channel11)
 }
 
-// uint32 channel12 = 4;
+// float channel12 = 4;
 inline void IRTS_FR_2::clear_channel12() {
-  channel12_ = 0u;
+  channel12_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::_internal_channel12() const {
+inline float IRTS_FR_2::_internal_channel12() const {
   return channel12_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_2::channel12() const {
+inline float IRTS_FR_2::channel12() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_2.channel12)
   return _internal_channel12();
 }
-inline void IRTS_FR_2::_internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::_internal_set_channel12(float value) {
   
   channel12_ = value;
 }
-inline void IRTS_FR_2::set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_2::set_channel12(float value) {
   _internal_set_channel12(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_2.channel12)
 }
@@ -6165,82 +6165,82 @@ inline void IRTS_FR_2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_FR_3
 
-// uint32 channel13 = 1;
+// float channel13 = 1;
 inline void IRTS_FR_3::clear_channel13() {
-  channel13_ = 0u;
+  channel13_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::_internal_channel13() const {
+inline float IRTS_FR_3::_internal_channel13() const {
   return channel13_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::channel13() const {
+inline float IRTS_FR_3::channel13() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_3.channel13)
   return _internal_channel13();
 }
-inline void IRTS_FR_3::_internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::_internal_set_channel13(float value) {
   
   channel13_ = value;
 }
-inline void IRTS_FR_3::set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::set_channel13(float value) {
   _internal_set_channel13(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_3.channel13)
 }
 
-// uint32 channel14 = 2;
+// float channel14 = 2;
 inline void IRTS_FR_3::clear_channel14() {
-  channel14_ = 0u;
+  channel14_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::_internal_channel14() const {
+inline float IRTS_FR_3::_internal_channel14() const {
   return channel14_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::channel14() const {
+inline float IRTS_FR_3::channel14() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_3.channel14)
   return _internal_channel14();
 }
-inline void IRTS_FR_3::_internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::_internal_set_channel14(float value) {
   
   channel14_ = value;
 }
-inline void IRTS_FR_3::set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::set_channel14(float value) {
   _internal_set_channel14(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_3.channel14)
 }
 
-// uint32 channel15 = 3;
+// float channel15 = 3;
 inline void IRTS_FR_3::clear_channel15() {
-  channel15_ = 0u;
+  channel15_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::_internal_channel15() const {
+inline float IRTS_FR_3::_internal_channel15() const {
   return channel15_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::channel15() const {
+inline float IRTS_FR_3::channel15() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_3.channel15)
   return _internal_channel15();
 }
-inline void IRTS_FR_3::_internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::_internal_set_channel15(float value) {
   
   channel15_ = value;
 }
-inline void IRTS_FR_3::set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::set_channel15(float value) {
   _internal_set_channel15(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_3.channel15)
 }
 
-// uint32 channel16 = 4;
+// float channel16 = 4;
 inline void IRTS_FR_3::clear_channel16() {
-  channel16_ = 0u;
+  channel16_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::_internal_channel16() const {
+inline float IRTS_FR_3::_internal_channel16() const {
   return channel16_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_FR_3::channel16() const {
+inline float IRTS_FR_3::channel16() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_FR_3.channel16)
   return _internal_channel16();
 }
-inline void IRTS_FR_3::_internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::_internal_set_channel16(float value) {
   
   channel16_ = value;
 }
-inline void IRTS_FR_3::set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_FR_3::set_channel16(float value) {
   _internal_set_channel16(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_FR_3.channel16)
 }
@@ -6269,82 +6269,82 @@ inline void IRTS_FR_3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RL_0
 
-// uint32 channel1 = 1;
+// float channel1 = 1;
 inline void IRTS_RL_0::clear_channel1() {
-  channel1_ = 0u;
+  channel1_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::_internal_channel1() const {
+inline float IRTS_RL_0::_internal_channel1() const {
   return channel1_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::channel1() const {
+inline float IRTS_RL_0::channel1() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_0.channel1)
   return _internal_channel1();
 }
-inline void IRTS_RL_0::_internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::_internal_set_channel1(float value) {
   
   channel1_ = value;
 }
-inline void IRTS_RL_0::set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::set_channel1(float value) {
   _internal_set_channel1(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_0.channel1)
 }
 
-// uint32 channel2 = 2;
+// float channel2 = 2;
 inline void IRTS_RL_0::clear_channel2() {
-  channel2_ = 0u;
+  channel2_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::_internal_channel2() const {
+inline float IRTS_RL_0::_internal_channel2() const {
   return channel2_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::channel2() const {
+inline float IRTS_RL_0::channel2() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_0.channel2)
   return _internal_channel2();
 }
-inline void IRTS_RL_0::_internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::_internal_set_channel2(float value) {
   
   channel2_ = value;
 }
-inline void IRTS_RL_0::set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::set_channel2(float value) {
   _internal_set_channel2(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_0.channel2)
 }
 
-// uint32 channel3 = 3;
+// float channel3 = 3;
 inline void IRTS_RL_0::clear_channel3() {
-  channel3_ = 0u;
+  channel3_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::_internal_channel3() const {
+inline float IRTS_RL_0::_internal_channel3() const {
   return channel3_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::channel3() const {
+inline float IRTS_RL_0::channel3() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_0.channel3)
   return _internal_channel3();
 }
-inline void IRTS_RL_0::_internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::_internal_set_channel3(float value) {
   
   channel3_ = value;
 }
-inline void IRTS_RL_0::set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::set_channel3(float value) {
   _internal_set_channel3(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_0.channel3)
 }
 
-// uint32 channel4 = 4;
+// float channel4 = 4;
 inline void IRTS_RL_0::clear_channel4() {
-  channel4_ = 0u;
+  channel4_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::_internal_channel4() const {
+inline float IRTS_RL_0::_internal_channel4() const {
   return channel4_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_0::channel4() const {
+inline float IRTS_RL_0::channel4() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_0.channel4)
   return _internal_channel4();
 }
-inline void IRTS_RL_0::_internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::_internal_set_channel4(float value) {
   
   channel4_ = value;
 }
-inline void IRTS_RL_0::set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_0::set_channel4(float value) {
   _internal_set_channel4(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_0.channel4)
 }
@@ -6373,82 +6373,82 @@ inline void IRTS_RL_0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RL_1
 
-// uint32 channel5 = 1;
+// float channel5 = 1;
 inline void IRTS_RL_1::clear_channel5() {
-  channel5_ = 0u;
+  channel5_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::_internal_channel5() const {
+inline float IRTS_RL_1::_internal_channel5() const {
   return channel5_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::channel5() const {
+inline float IRTS_RL_1::channel5() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_1.channel5)
   return _internal_channel5();
 }
-inline void IRTS_RL_1::_internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::_internal_set_channel5(float value) {
   
   channel5_ = value;
 }
-inline void IRTS_RL_1::set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::set_channel5(float value) {
   _internal_set_channel5(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_1.channel5)
 }
 
-// uint32 channel6 = 2;
+// float channel6 = 2;
 inline void IRTS_RL_1::clear_channel6() {
-  channel6_ = 0u;
+  channel6_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::_internal_channel6() const {
+inline float IRTS_RL_1::_internal_channel6() const {
   return channel6_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::channel6() const {
+inline float IRTS_RL_1::channel6() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_1.channel6)
   return _internal_channel6();
 }
-inline void IRTS_RL_1::_internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::_internal_set_channel6(float value) {
   
   channel6_ = value;
 }
-inline void IRTS_RL_1::set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::set_channel6(float value) {
   _internal_set_channel6(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_1.channel6)
 }
 
-// uint32 channel7 = 3;
+// float channel7 = 3;
 inline void IRTS_RL_1::clear_channel7() {
-  channel7_ = 0u;
+  channel7_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::_internal_channel7() const {
+inline float IRTS_RL_1::_internal_channel7() const {
   return channel7_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::channel7() const {
+inline float IRTS_RL_1::channel7() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_1.channel7)
   return _internal_channel7();
 }
-inline void IRTS_RL_1::_internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::_internal_set_channel7(float value) {
   
   channel7_ = value;
 }
-inline void IRTS_RL_1::set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::set_channel7(float value) {
   _internal_set_channel7(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_1.channel7)
 }
 
-// uint32 channel8 = 4;
+// float channel8 = 4;
 inline void IRTS_RL_1::clear_channel8() {
-  channel8_ = 0u;
+  channel8_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::_internal_channel8() const {
+inline float IRTS_RL_1::_internal_channel8() const {
   return channel8_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_1::channel8() const {
+inline float IRTS_RL_1::channel8() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_1.channel8)
   return _internal_channel8();
 }
-inline void IRTS_RL_1::_internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::_internal_set_channel8(float value) {
   
   channel8_ = value;
 }
-inline void IRTS_RL_1::set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_1::set_channel8(float value) {
   _internal_set_channel8(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_1.channel8)
 }
@@ -6477,82 +6477,82 @@ inline void IRTS_RL_1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RL_2
 
-// uint32 channel9 = 1;
+// float channel9 = 1;
 inline void IRTS_RL_2::clear_channel9() {
-  channel9_ = 0u;
+  channel9_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::_internal_channel9() const {
+inline float IRTS_RL_2::_internal_channel9() const {
   return channel9_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::channel9() const {
+inline float IRTS_RL_2::channel9() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_2.channel9)
   return _internal_channel9();
 }
-inline void IRTS_RL_2::_internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::_internal_set_channel9(float value) {
   
   channel9_ = value;
 }
-inline void IRTS_RL_2::set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::set_channel9(float value) {
   _internal_set_channel9(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_2.channel9)
 }
 
-// uint32 channel10 = 2;
+// float channel10 = 2;
 inline void IRTS_RL_2::clear_channel10() {
-  channel10_ = 0u;
+  channel10_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::_internal_channel10() const {
+inline float IRTS_RL_2::_internal_channel10() const {
   return channel10_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::channel10() const {
+inline float IRTS_RL_2::channel10() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_2.channel10)
   return _internal_channel10();
 }
-inline void IRTS_RL_2::_internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::_internal_set_channel10(float value) {
   
   channel10_ = value;
 }
-inline void IRTS_RL_2::set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::set_channel10(float value) {
   _internal_set_channel10(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_2.channel10)
 }
 
-// uint32 channel11 = 3;
+// float channel11 = 3;
 inline void IRTS_RL_2::clear_channel11() {
-  channel11_ = 0u;
+  channel11_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::_internal_channel11() const {
+inline float IRTS_RL_2::_internal_channel11() const {
   return channel11_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::channel11() const {
+inline float IRTS_RL_2::channel11() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_2.channel11)
   return _internal_channel11();
 }
-inline void IRTS_RL_2::_internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::_internal_set_channel11(float value) {
   
   channel11_ = value;
 }
-inline void IRTS_RL_2::set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::set_channel11(float value) {
   _internal_set_channel11(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_2.channel11)
 }
 
-// uint32 channel12 = 4;
+// float channel12 = 4;
 inline void IRTS_RL_2::clear_channel12() {
-  channel12_ = 0u;
+  channel12_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::_internal_channel12() const {
+inline float IRTS_RL_2::_internal_channel12() const {
   return channel12_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_2::channel12() const {
+inline float IRTS_RL_2::channel12() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_2.channel12)
   return _internal_channel12();
 }
-inline void IRTS_RL_2::_internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::_internal_set_channel12(float value) {
   
   channel12_ = value;
 }
-inline void IRTS_RL_2::set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_2::set_channel12(float value) {
   _internal_set_channel12(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_2.channel12)
 }
@@ -6581,82 +6581,82 @@ inline void IRTS_RL_2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RL_3
 
-// uint32 channel13 = 1;
+// float channel13 = 1;
 inline void IRTS_RL_3::clear_channel13() {
-  channel13_ = 0u;
+  channel13_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::_internal_channel13() const {
+inline float IRTS_RL_3::_internal_channel13() const {
   return channel13_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::channel13() const {
+inline float IRTS_RL_3::channel13() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_3.channel13)
   return _internal_channel13();
 }
-inline void IRTS_RL_3::_internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::_internal_set_channel13(float value) {
   
   channel13_ = value;
 }
-inline void IRTS_RL_3::set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::set_channel13(float value) {
   _internal_set_channel13(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_3.channel13)
 }
 
-// uint32 channel14 = 2;
+// float channel14 = 2;
 inline void IRTS_RL_3::clear_channel14() {
-  channel14_ = 0u;
+  channel14_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::_internal_channel14() const {
+inline float IRTS_RL_3::_internal_channel14() const {
   return channel14_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::channel14() const {
+inline float IRTS_RL_3::channel14() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_3.channel14)
   return _internal_channel14();
 }
-inline void IRTS_RL_3::_internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::_internal_set_channel14(float value) {
   
   channel14_ = value;
 }
-inline void IRTS_RL_3::set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::set_channel14(float value) {
   _internal_set_channel14(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_3.channel14)
 }
 
-// uint32 channel15 = 3;
+// float channel15 = 3;
 inline void IRTS_RL_3::clear_channel15() {
-  channel15_ = 0u;
+  channel15_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::_internal_channel15() const {
+inline float IRTS_RL_3::_internal_channel15() const {
   return channel15_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::channel15() const {
+inline float IRTS_RL_3::channel15() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_3.channel15)
   return _internal_channel15();
 }
-inline void IRTS_RL_3::_internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::_internal_set_channel15(float value) {
   
   channel15_ = value;
 }
-inline void IRTS_RL_3::set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::set_channel15(float value) {
   _internal_set_channel15(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_3.channel15)
 }
 
-// uint32 channel16 = 4;
+// float channel16 = 4;
 inline void IRTS_RL_3::clear_channel16() {
-  channel16_ = 0u;
+  channel16_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::_internal_channel16() const {
+inline float IRTS_RL_3::_internal_channel16() const {
   return channel16_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RL_3::channel16() const {
+inline float IRTS_RL_3::channel16() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RL_3.channel16)
   return _internal_channel16();
 }
-inline void IRTS_RL_3::_internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::_internal_set_channel16(float value) {
   
   channel16_ = value;
 }
-inline void IRTS_RL_3::set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RL_3::set_channel16(float value) {
   _internal_set_channel16(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RL_3.channel16)
 }
@@ -6685,82 +6685,82 @@ inline void IRTS_RL_3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RR_0
 
-// uint32 channel1 = 1;
+// float channel1 = 1;
 inline void IRTS_RR_0::clear_channel1() {
-  channel1_ = 0u;
+  channel1_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::_internal_channel1() const {
+inline float IRTS_RR_0::_internal_channel1() const {
   return channel1_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::channel1() const {
+inline float IRTS_RR_0::channel1() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_0.channel1)
   return _internal_channel1();
 }
-inline void IRTS_RR_0::_internal_set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::_internal_set_channel1(float value) {
   
   channel1_ = value;
 }
-inline void IRTS_RR_0::set_channel1(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::set_channel1(float value) {
   _internal_set_channel1(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_0.channel1)
 }
 
-// uint32 channel2 = 2;
+// float channel2 = 2;
 inline void IRTS_RR_0::clear_channel2() {
-  channel2_ = 0u;
+  channel2_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::_internal_channel2() const {
+inline float IRTS_RR_0::_internal_channel2() const {
   return channel2_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::channel2() const {
+inline float IRTS_RR_0::channel2() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_0.channel2)
   return _internal_channel2();
 }
-inline void IRTS_RR_0::_internal_set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::_internal_set_channel2(float value) {
   
   channel2_ = value;
 }
-inline void IRTS_RR_0::set_channel2(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::set_channel2(float value) {
   _internal_set_channel2(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_0.channel2)
 }
 
-// uint32 channel3 = 3;
+// float channel3 = 3;
 inline void IRTS_RR_0::clear_channel3() {
-  channel3_ = 0u;
+  channel3_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::_internal_channel3() const {
+inline float IRTS_RR_0::_internal_channel3() const {
   return channel3_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::channel3() const {
+inline float IRTS_RR_0::channel3() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_0.channel3)
   return _internal_channel3();
 }
-inline void IRTS_RR_0::_internal_set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::_internal_set_channel3(float value) {
   
   channel3_ = value;
 }
-inline void IRTS_RR_0::set_channel3(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::set_channel3(float value) {
   _internal_set_channel3(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_0.channel3)
 }
 
-// uint32 channel4 = 4;
+// float channel4 = 4;
 inline void IRTS_RR_0::clear_channel4() {
-  channel4_ = 0u;
+  channel4_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::_internal_channel4() const {
+inline float IRTS_RR_0::_internal_channel4() const {
   return channel4_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_0::channel4() const {
+inline float IRTS_RR_0::channel4() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_0.channel4)
   return _internal_channel4();
 }
-inline void IRTS_RR_0::_internal_set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::_internal_set_channel4(float value) {
   
   channel4_ = value;
 }
-inline void IRTS_RR_0::set_channel4(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_0::set_channel4(float value) {
   _internal_set_channel4(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_0.channel4)
 }
@@ -6789,82 +6789,82 @@ inline void IRTS_RR_0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RR_1
 
-// uint32 channel5 = 1;
+// float channel5 = 1;
 inline void IRTS_RR_1::clear_channel5() {
-  channel5_ = 0u;
+  channel5_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::_internal_channel5() const {
+inline float IRTS_RR_1::_internal_channel5() const {
   return channel5_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::channel5() const {
+inline float IRTS_RR_1::channel5() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_1.channel5)
   return _internal_channel5();
 }
-inline void IRTS_RR_1::_internal_set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::_internal_set_channel5(float value) {
   
   channel5_ = value;
 }
-inline void IRTS_RR_1::set_channel5(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::set_channel5(float value) {
   _internal_set_channel5(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_1.channel5)
 }
 
-// uint32 channel6 = 2;
+// float channel6 = 2;
 inline void IRTS_RR_1::clear_channel6() {
-  channel6_ = 0u;
+  channel6_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::_internal_channel6() const {
+inline float IRTS_RR_1::_internal_channel6() const {
   return channel6_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::channel6() const {
+inline float IRTS_RR_1::channel6() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_1.channel6)
   return _internal_channel6();
 }
-inline void IRTS_RR_1::_internal_set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::_internal_set_channel6(float value) {
   
   channel6_ = value;
 }
-inline void IRTS_RR_1::set_channel6(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::set_channel6(float value) {
   _internal_set_channel6(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_1.channel6)
 }
 
-// uint32 channel7 = 3;
+// float channel7 = 3;
 inline void IRTS_RR_1::clear_channel7() {
-  channel7_ = 0u;
+  channel7_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::_internal_channel7() const {
+inline float IRTS_RR_1::_internal_channel7() const {
   return channel7_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::channel7() const {
+inline float IRTS_RR_1::channel7() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_1.channel7)
   return _internal_channel7();
 }
-inline void IRTS_RR_1::_internal_set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::_internal_set_channel7(float value) {
   
   channel7_ = value;
 }
-inline void IRTS_RR_1::set_channel7(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::set_channel7(float value) {
   _internal_set_channel7(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_1.channel7)
 }
 
-// uint32 channel8 = 4;
+// float channel8 = 4;
 inline void IRTS_RR_1::clear_channel8() {
-  channel8_ = 0u;
+  channel8_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::_internal_channel8() const {
+inline float IRTS_RR_1::_internal_channel8() const {
   return channel8_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_1::channel8() const {
+inline float IRTS_RR_1::channel8() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_1.channel8)
   return _internal_channel8();
 }
-inline void IRTS_RR_1::_internal_set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::_internal_set_channel8(float value) {
   
   channel8_ = value;
 }
-inline void IRTS_RR_1::set_channel8(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_1::set_channel8(float value) {
   _internal_set_channel8(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_1.channel8)
 }
@@ -6893,82 +6893,82 @@ inline void IRTS_RR_1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RR_2
 
-// uint32 channel9 = 1;
+// float channel9 = 1;
 inline void IRTS_RR_2::clear_channel9() {
-  channel9_ = 0u;
+  channel9_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::_internal_channel9() const {
+inline float IRTS_RR_2::_internal_channel9() const {
   return channel9_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::channel9() const {
+inline float IRTS_RR_2::channel9() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_2.channel9)
   return _internal_channel9();
 }
-inline void IRTS_RR_2::_internal_set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::_internal_set_channel9(float value) {
   
   channel9_ = value;
 }
-inline void IRTS_RR_2::set_channel9(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::set_channel9(float value) {
   _internal_set_channel9(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_2.channel9)
 }
 
-// uint32 channel10 = 2;
+// float channel10 = 2;
 inline void IRTS_RR_2::clear_channel10() {
-  channel10_ = 0u;
+  channel10_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::_internal_channel10() const {
+inline float IRTS_RR_2::_internal_channel10() const {
   return channel10_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::channel10() const {
+inline float IRTS_RR_2::channel10() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_2.channel10)
   return _internal_channel10();
 }
-inline void IRTS_RR_2::_internal_set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::_internal_set_channel10(float value) {
   
   channel10_ = value;
 }
-inline void IRTS_RR_2::set_channel10(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::set_channel10(float value) {
   _internal_set_channel10(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_2.channel10)
 }
 
-// uint32 channel11 = 3;
+// float channel11 = 3;
 inline void IRTS_RR_2::clear_channel11() {
-  channel11_ = 0u;
+  channel11_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::_internal_channel11() const {
+inline float IRTS_RR_2::_internal_channel11() const {
   return channel11_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::channel11() const {
+inline float IRTS_RR_2::channel11() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_2.channel11)
   return _internal_channel11();
 }
-inline void IRTS_RR_2::_internal_set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::_internal_set_channel11(float value) {
   
   channel11_ = value;
 }
-inline void IRTS_RR_2::set_channel11(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::set_channel11(float value) {
   _internal_set_channel11(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_2.channel11)
 }
 
-// uint32 channel12 = 4;
+// float channel12 = 4;
 inline void IRTS_RR_2::clear_channel12() {
-  channel12_ = 0u;
+  channel12_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::_internal_channel12() const {
+inline float IRTS_RR_2::_internal_channel12() const {
   return channel12_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_2::channel12() const {
+inline float IRTS_RR_2::channel12() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_2.channel12)
   return _internal_channel12();
 }
-inline void IRTS_RR_2::_internal_set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::_internal_set_channel12(float value) {
   
   channel12_ = value;
 }
-inline void IRTS_RR_2::set_channel12(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_2::set_channel12(float value) {
   _internal_set_channel12(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_2.channel12)
 }
@@ -6997,82 +6997,82 @@ inline void IRTS_RR_2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // IRTS_RR_3
 
-// uint32 channel13 = 1;
+// float channel13 = 1;
 inline void IRTS_RR_3::clear_channel13() {
-  channel13_ = 0u;
+  channel13_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::_internal_channel13() const {
+inline float IRTS_RR_3::_internal_channel13() const {
   return channel13_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::channel13() const {
+inline float IRTS_RR_3::channel13() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_3.channel13)
   return _internal_channel13();
 }
-inline void IRTS_RR_3::_internal_set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::_internal_set_channel13(float value) {
   
   channel13_ = value;
 }
-inline void IRTS_RR_3::set_channel13(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::set_channel13(float value) {
   _internal_set_channel13(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_3.channel13)
 }
 
-// uint32 channel14 = 2;
+// float channel14 = 2;
 inline void IRTS_RR_3::clear_channel14() {
-  channel14_ = 0u;
+  channel14_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::_internal_channel14() const {
+inline float IRTS_RR_3::_internal_channel14() const {
   return channel14_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::channel14() const {
+inline float IRTS_RR_3::channel14() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_3.channel14)
   return _internal_channel14();
 }
-inline void IRTS_RR_3::_internal_set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::_internal_set_channel14(float value) {
   
   channel14_ = value;
 }
-inline void IRTS_RR_3::set_channel14(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::set_channel14(float value) {
   _internal_set_channel14(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_3.channel14)
 }
 
-// uint32 channel15 = 3;
+// float channel15 = 3;
 inline void IRTS_RR_3::clear_channel15() {
-  channel15_ = 0u;
+  channel15_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::_internal_channel15() const {
+inline float IRTS_RR_3::_internal_channel15() const {
   return channel15_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::channel15() const {
+inline float IRTS_RR_3::channel15() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_3.channel15)
   return _internal_channel15();
 }
-inline void IRTS_RR_3::_internal_set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::_internal_set_channel15(float value) {
   
   channel15_ = value;
 }
-inline void IRTS_RR_3::set_channel15(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::set_channel15(float value) {
   _internal_set_channel15(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_3.channel15)
 }
 
-// uint32 channel16 = 4;
+// float channel16 = 4;
 inline void IRTS_RR_3::clear_channel16() {
-  channel16_ = 0u;
+  channel16_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::_internal_channel16() const {
+inline float IRTS_RR_3::_internal_channel16() const {
   return channel16_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 IRTS_RR_3::channel16() const {
+inline float IRTS_RR_3::channel16() const {
   // @@protoc_insertion_point(field_get:secondary.IRTS_RR_3.channel16)
   return _internal_channel16();
 }
-inline void IRTS_RR_3::_internal_set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::_internal_set_channel16(float value) {
   
   channel16_ = value;
 }
-inline void IRTS_RR_3::set_channel16(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void IRTS_RR_3::set_channel16(float value) {
   _internal_set_channel16(value);
   // @@protoc_insertion_point(field_set:secondary.IRTS_RR_3.channel16)
 }

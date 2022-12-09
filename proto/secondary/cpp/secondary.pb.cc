@@ -879,50 +879,50 @@ const char descriptor_table_protodef_secondary_2eproto[] PROTOBUF_SECTION_VARIAB
   "cel_x\030\001 \001(\002\022\017\n\007accel_y\030\002 \001(\002\022\017\n\007accel_z\030"
   "\003 \001(\002\022\023\n\013temperature\030\004 \001(\021\022\030\n\020_inner_tim"
   "estamp\030\005 \001(\004\"m\n\tIRTS_FL_0\022\020\n\010channel1\030\001 "
-  "\001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022"
-  "\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 "
-  "\001(\004\"m\n\tIRTS_FL_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010ch"
-  "annel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channe"
-  "l8\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIR"
-  "TS_FL_2\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002"
-  " \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001"
-  "(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"q\n\tIRTS_FL_"
-  "3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022"
-  "\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030\n"
+  "\001(\002\022\020\n\010channel2\030\002 \001(\002\022\020\n\010channel3\030\003 \001(\002\022"
+  "\020\n\010channel4\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 "
+  "\001(\004\"m\n\tIRTS_FL_1\022\020\n\010channel5\030\001 \001(\002\022\020\n\010ch"
+  "annel6\030\002 \001(\002\022\020\n\010channel7\030\003 \001(\002\022\020\n\010channe"
+  "l8\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIR"
+  "TS_FL_2\022\020\n\010channel9\030\001 \001(\002\022\021\n\tchannel10\030\002"
+  " \001(\002\022\021\n\tchannel11\030\003 \001(\002\022\021\n\tchannel12\030\004 \001"
+  "(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"q\n\tIRTS_FL_"
+  "3\022\021\n\tchannel13\030\001 \001(\002\022\021\n\tchannel14\030\002 \001(\002\022"
+  "\021\n\tchannel15\030\003 \001(\002\022\021\n\tchannel16\030\004 \001(\002\022\030\n"
   "\020_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_FR_0\022\020\n\010"
-  "channel1\030\001 \001(\r\022\020\n\010channel2\030\002 \001(\r\022\020\n\010chan"
-  "nel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022\030\n\020_inner_t"
+  "channel1\030\001 \001(\002\022\020\n\010channel2\030\002 \001(\002\022\020\n\010chan"
+  "nel3\030\003 \001(\002\022\020\n\010channel4\030\004 \001(\002\022\030\n\020_inner_t"
   "imestamp\030\005 \001(\004\"m\n\tIRTS_FR_1\022\020\n\010channel5\030"
-  "\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010channel7\030\003 \001("
-  "\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
-  "\005 \001(\004\"p\n\tIRTS_FR_2\022\020\n\010channel9\030\001 \001(\r\022\021\n\t"
-  "channel10\030\002 \001(\r\022\021\n\tchannel11\030\003 \001(\r\022\021\n\tch"
-  "annel12\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\""
-  "q\n\tIRTS_FR_3\022\021\n\tchannel13\030\001 \001(\r\022\021\n\tchann"
-  "el14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r\022\021\n\tchannel"
-  "16\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIR"
-  "TS_RL_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010channel2\030\002 "
-  "\001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010channel4\030\004 \001(\r\022"
+  "\001 \001(\002\022\020\n\010channel6\030\002 \001(\002\022\020\n\010channel7\030\003 \001("
+  "\002\022\020\n\010channel8\030\004 \001(\002\022\030\n\020_inner_timestamp\030"
+  "\005 \001(\004\"p\n\tIRTS_FR_2\022\020\n\010channel9\030\001 \001(\002\022\021\n\t"
+  "channel10\030\002 \001(\002\022\021\n\tchannel11\030\003 \001(\002\022\021\n\tch"
+  "annel12\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\""
+  "q\n\tIRTS_FR_3\022\021\n\tchannel13\030\001 \001(\002\022\021\n\tchann"
+  "el14\030\002 \001(\002\022\021\n\tchannel15\030\003 \001(\002\022\021\n\tchannel"
+  "16\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIR"
+  "TS_RL_0\022\020\n\010channel1\030\001 \001(\002\022\020\n\010channel2\030\002 "
+  "\001(\002\022\020\n\010channel3\030\003 \001(\002\022\020\n\010channel4\030\004 \001(\002\022"
   "\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\tIRTS_RL_1\022\020"
-  "\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030\002 \001(\r\022\020\n\010ch"
-  "annel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001(\r\022\030\n\020_inner"
+  "\n\010channel5\030\001 \001(\002\022\020\n\010channel6\030\002 \001(\002\022\020\n\010ch"
+  "annel7\030\003 \001(\002\022\020\n\010channel8\030\004 \001(\002\022\030\n\020_inner"
   "_timestamp\030\005 \001(\004\"p\n\tIRTS_RL_2\022\020\n\010channel"
-  "9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n\tchannel11\030"
-  "\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_inner_times"
+  "9\030\001 \001(\002\022\021\n\tchannel10\030\002 \001(\002\022\021\n\tchannel11\030"
+  "\003 \001(\002\022\021\n\tchannel12\030\004 \001(\002\022\030\n\020_inner_times"
   "tamp\030\005 \001(\004\"q\n\tIRTS_RL_3\022\021\n\tchannel13\030\001 \001"
-  "(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchannel15\030\003 \001(\r"
-  "\022\021\n\tchannel16\030\004 \001(\r\022\030\n\020_inner_timestamp\030"
-  "\005 \001(\004\"m\n\tIRTS_RR_0\022\020\n\010channel1\030\001 \001(\r\022\020\n\010"
-  "channel2\030\002 \001(\r\022\020\n\010channel3\030\003 \001(\r\022\020\n\010chan"
-  "nel4\030\004 \001(\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\t"
-  "IRTS_RR_1\022\020\n\010channel5\030\001 \001(\r\022\020\n\010channel6\030"
-  "\002 \001(\r\022\020\n\010channel7\030\003 \001(\r\022\020\n\010channel8\030\004 \001("
-  "\r\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIRTS_RR_2"
-  "\022\020\n\010channel9\030\001 \001(\r\022\021\n\tchannel10\030\002 \001(\r\022\021\n"
-  "\tchannel11\030\003 \001(\r\022\021\n\tchannel12\030\004 \001(\r\022\030\n\020_"
+  "(\002\022\021\n\tchannel14\030\002 \001(\002\022\021\n\tchannel15\030\003 \001(\002"
+  "\022\021\n\tchannel16\030\004 \001(\002\022\030\n\020_inner_timestamp\030"
+  "\005 \001(\004\"m\n\tIRTS_RR_0\022\020\n\010channel1\030\001 \001(\002\022\020\n\010"
+  "channel2\030\002 \001(\002\022\020\n\010channel3\030\003 \001(\002\022\020\n\010chan"
+  "nel4\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"m\n\t"
+  "IRTS_RR_1\022\020\n\010channel5\030\001 \001(\002\022\020\n\010channel6\030"
+  "\002 \001(\002\022\020\n\010channel7\030\003 \001(\002\022\020\n\010channel8\030\004 \001("
+  "\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"p\n\tIRTS_RR_2"
+  "\022\020\n\010channel9\030\001 \001(\002\022\021\n\tchannel10\030\002 \001(\002\022\021\n"
+  "\tchannel11\030\003 \001(\002\022\021\n\tchannel12\030\004 \001(\002\022\030\n\020_"
   "inner_timestamp\030\005 \001(\004\"q\n\tIRTS_RR_3\022\021\n\tch"
-  "annel13\030\001 \001(\r\022\021\n\tchannel14\030\002 \001(\r\022\021\n\tchan"
-  "nel15\030\003 \001(\r\022\021\n\tchannel16\030\004 \001(\r\022\030\n\020_inner"
+  "annel13\030\001 \001(\002\022\021\n\tchannel14\030\002 \001(\002\022\021\n\tchan"
+  "nel15\030\003 \001(\002\022\021\n\tchannel16\030\004 \001(\002\022\030\n\020_inner"
   "_timestamp\030\005 \001(\004\"K\n\nGPS_COORDS\022\020\n\010latitu"
   "de\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(\002\022\030\n\020_inner_ti"
   "mestamp\030\003 \001(\004\"4\n\tGPS_SPEED\022\r\n\005speed\030\001 \001("
@@ -1651,32 +1651,32 @@ const char* IRTS_FL_0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel1 = 1;
+      // float channel1 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel2 = 2;
+      // float channel2 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel3 = 3;
+      // float channel3 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel4 = 4;
+      // float channel4 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -1714,28 +1714,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel1(), target);
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel2(), target);
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel3(), target);
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel4(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -1760,32 +1760,24 @@ size_t IRTS_FL_0::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel1());
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel2());
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel3());
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel4());
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -1826,16 +1818,16 @@ void IRTS_FL_0::MergeFrom(const IRTS_FL_0& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel1() != 0) {
+  if (!(from.channel1() <= 0 && from.channel1() >= 0)) {
     _internal_set_channel1(from._internal_channel1());
   }
-  if (from.channel2() != 0) {
+  if (!(from.channel2() <= 0 && from.channel2() >= 0)) {
     _internal_set_channel2(from._internal_channel2());
   }
-  if (from.channel3() != 0) {
+  if (!(from.channel3() <= 0 && from.channel3() >= 0)) {
     _internal_set_channel3(from._internal_channel3());
   }
-  if (from.channel4() != 0) {
+  if (!(from.channel4() <= 0 && from.channel4() >= 0)) {
     _internal_set_channel4(from._internal_channel4());
   }
   if (from._inner_timestamp() != 0) {
@@ -1951,32 +1943,32 @@ const char* IRTS_FL_1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel5 = 1;
+      // float channel5 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel6 = 2;
+      // float channel6 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel7 = 3;
+      // float channel7 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel8 = 4;
+      // float channel8 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -2014,28 +2006,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel5(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel5(), target);
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel6(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel6(), target);
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel7(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel7(), target);
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel8(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2060,32 +2052,24 @@ size_t IRTS_FL_1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel5());
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel6());
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel7());
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel8());
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2126,16 +2110,16 @@ void IRTS_FL_1::MergeFrom(const IRTS_FL_1& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel5() != 0) {
+  if (!(from.channel5() <= 0 && from.channel5() >= 0)) {
     _internal_set_channel5(from._internal_channel5());
   }
-  if (from.channel6() != 0) {
+  if (!(from.channel6() <= 0 && from.channel6() >= 0)) {
     _internal_set_channel6(from._internal_channel6());
   }
-  if (from.channel7() != 0) {
+  if (!(from.channel7() <= 0 && from.channel7() >= 0)) {
     _internal_set_channel7(from._internal_channel7());
   }
-  if (from.channel8() != 0) {
+  if (!(from.channel8() <= 0 && from.channel8() >= 0)) {
     _internal_set_channel8(from._internal_channel8());
   }
   if (from._inner_timestamp() != 0) {
@@ -2251,32 +2235,32 @@ const char* IRTS_FL_2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel9 = 1;
+      // float channel9 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel10 = 2;
+      // float channel10 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel11 = 3;
+      // float channel11 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel12 = 4;
+      // float channel12 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -2314,28 +2298,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel9(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel9(), target);
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel10(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel10(), target);
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel11(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel11(), target);
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel12(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2360,32 +2344,24 @@ size_t IRTS_FL_2::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel9());
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel10());
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel11());
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel12());
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2426,16 +2402,16 @@ void IRTS_FL_2::MergeFrom(const IRTS_FL_2& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel9() != 0) {
+  if (!(from.channel9() <= 0 && from.channel9() >= 0)) {
     _internal_set_channel9(from._internal_channel9());
   }
-  if (from.channel10() != 0) {
+  if (!(from.channel10() <= 0 && from.channel10() >= 0)) {
     _internal_set_channel10(from._internal_channel10());
   }
-  if (from.channel11() != 0) {
+  if (!(from.channel11() <= 0 && from.channel11() >= 0)) {
     _internal_set_channel11(from._internal_channel11());
   }
-  if (from.channel12() != 0) {
+  if (!(from.channel12() <= 0 && from.channel12() >= 0)) {
     _internal_set_channel12(from._internal_channel12());
   }
   if (from._inner_timestamp() != 0) {
@@ -2551,32 +2527,32 @@ const char* IRTS_FL_3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel13 = 1;
+      // float channel13 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel14 = 2;
+      // float channel14 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel15 = 3;
+      // float channel15 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel16 = 4;
+      // float channel16 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -2614,28 +2590,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel13(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel13(), target);
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel14(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel14(), target);
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel15(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel15(), target);
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel16(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2660,32 +2636,24 @@ size_t IRTS_FL_3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel13());
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel14());
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel15());
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel16());
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2726,16 +2694,16 @@ void IRTS_FL_3::MergeFrom(const IRTS_FL_3& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel13() != 0) {
+  if (!(from.channel13() <= 0 && from.channel13() >= 0)) {
     _internal_set_channel13(from._internal_channel13());
   }
-  if (from.channel14() != 0) {
+  if (!(from.channel14() <= 0 && from.channel14() >= 0)) {
     _internal_set_channel14(from._internal_channel14());
   }
-  if (from.channel15() != 0) {
+  if (!(from.channel15() <= 0 && from.channel15() >= 0)) {
     _internal_set_channel15(from._internal_channel15());
   }
-  if (from.channel16() != 0) {
+  if (!(from.channel16() <= 0 && from.channel16() >= 0)) {
     _internal_set_channel16(from._internal_channel16());
   }
   if (from._inner_timestamp() != 0) {
@@ -2851,32 +2819,32 @@ const char* IRTS_FR_0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel1 = 1;
+      // float channel1 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel2 = 2;
+      // float channel2 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel3 = 3;
+      // float channel3 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel4 = 4;
+      // float channel4 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -2914,28 +2882,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel1(), target);
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel2(), target);
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel3(), target);
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel4(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -2960,32 +2928,24 @@ size_t IRTS_FR_0::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel1());
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel2());
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel3());
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel4());
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3026,16 +2986,16 @@ void IRTS_FR_0::MergeFrom(const IRTS_FR_0& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel1() != 0) {
+  if (!(from.channel1() <= 0 && from.channel1() >= 0)) {
     _internal_set_channel1(from._internal_channel1());
   }
-  if (from.channel2() != 0) {
+  if (!(from.channel2() <= 0 && from.channel2() >= 0)) {
     _internal_set_channel2(from._internal_channel2());
   }
-  if (from.channel3() != 0) {
+  if (!(from.channel3() <= 0 && from.channel3() >= 0)) {
     _internal_set_channel3(from._internal_channel3());
   }
-  if (from.channel4() != 0) {
+  if (!(from.channel4() <= 0 && from.channel4() >= 0)) {
     _internal_set_channel4(from._internal_channel4());
   }
   if (from._inner_timestamp() != 0) {
@@ -3151,32 +3111,32 @@ const char* IRTS_FR_1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel5 = 1;
+      // float channel5 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel6 = 2;
+      // float channel6 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel7 = 3;
+      // float channel7 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel8 = 4;
+      // float channel8 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -3214,28 +3174,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel5(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel5(), target);
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel6(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel6(), target);
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel7(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel7(), target);
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel8(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3260,32 +3220,24 @@ size_t IRTS_FR_1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel5());
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel6());
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel7());
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel8());
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3326,16 +3278,16 @@ void IRTS_FR_1::MergeFrom(const IRTS_FR_1& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel5() != 0) {
+  if (!(from.channel5() <= 0 && from.channel5() >= 0)) {
     _internal_set_channel5(from._internal_channel5());
   }
-  if (from.channel6() != 0) {
+  if (!(from.channel6() <= 0 && from.channel6() >= 0)) {
     _internal_set_channel6(from._internal_channel6());
   }
-  if (from.channel7() != 0) {
+  if (!(from.channel7() <= 0 && from.channel7() >= 0)) {
     _internal_set_channel7(from._internal_channel7());
   }
-  if (from.channel8() != 0) {
+  if (!(from.channel8() <= 0 && from.channel8() >= 0)) {
     _internal_set_channel8(from._internal_channel8());
   }
   if (from._inner_timestamp() != 0) {
@@ -3451,32 +3403,32 @@ const char* IRTS_FR_2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel9 = 1;
+      // float channel9 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel10 = 2;
+      // float channel10 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel11 = 3;
+      // float channel11 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel12 = 4;
+      // float channel12 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -3514,28 +3466,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel9(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel9(), target);
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel10(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel10(), target);
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel11(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel11(), target);
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel12(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3560,32 +3512,24 @@ size_t IRTS_FR_2::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel9());
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel10());
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel11());
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel12());
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3626,16 +3570,16 @@ void IRTS_FR_2::MergeFrom(const IRTS_FR_2& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel9() != 0) {
+  if (!(from.channel9() <= 0 && from.channel9() >= 0)) {
     _internal_set_channel9(from._internal_channel9());
   }
-  if (from.channel10() != 0) {
+  if (!(from.channel10() <= 0 && from.channel10() >= 0)) {
     _internal_set_channel10(from._internal_channel10());
   }
-  if (from.channel11() != 0) {
+  if (!(from.channel11() <= 0 && from.channel11() >= 0)) {
     _internal_set_channel11(from._internal_channel11());
   }
-  if (from.channel12() != 0) {
+  if (!(from.channel12() <= 0 && from.channel12() >= 0)) {
     _internal_set_channel12(from._internal_channel12());
   }
   if (from._inner_timestamp() != 0) {
@@ -3751,32 +3695,32 @@ const char* IRTS_FR_3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel13 = 1;
+      // float channel13 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel14 = 2;
+      // float channel14 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel15 = 3;
+      // float channel15 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel16 = 4;
+      // float channel16 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -3814,28 +3758,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel13(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel13(), target);
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel14(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel14(), target);
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel15(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel15(), target);
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel16(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3860,32 +3804,24 @@ size_t IRTS_FR_3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel13());
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel14());
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel15());
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel16());
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -3926,16 +3862,16 @@ void IRTS_FR_3::MergeFrom(const IRTS_FR_3& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel13() != 0) {
+  if (!(from.channel13() <= 0 && from.channel13() >= 0)) {
     _internal_set_channel13(from._internal_channel13());
   }
-  if (from.channel14() != 0) {
+  if (!(from.channel14() <= 0 && from.channel14() >= 0)) {
     _internal_set_channel14(from._internal_channel14());
   }
-  if (from.channel15() != 0) {
+  if (!(from.channel15() <= 0 && from.channel15() >= 0)) {
     _internal_set_channel15(from._internal_channel15());
   }
-  if (from.channel16() != 0) {
+  if (!(from.channel16() <= 0 && from.channel16() >= 0)) {
     _internal_set_channel16(from._internal_channel16());
   }
   if (from._inner_timestamp() != 0) {
@@ -4051,32 +3987,32 @@ const char* IRTS_RL_0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel1 = 1;
+      // float channel1 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel2 = 2;
+      // float channel2 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel3 = 3;
+      // float channel3 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel4 = 4;
+      // float channel4 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -4114,28 +4050,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel1(), target);
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel2(), target);
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel3(), target);
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel4(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4160,32 +4096,24 @@ size_t IRTS_RL_0::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel1());
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel2());
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel3());
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel4());
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4226,16 +4154,16 @@ void IRTS_RL_0::MergeFrom(const IRTS_RL_0& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel1() != 0) {
+  if (!(from.channel1() <= 0 && from.channel1() >= 0)) {
     _internal_set_channel1(from._internal_channel1());
   }
-  if (from.channel2() != 0) {
+  if (!(from.channel2() <= 0 && from.channel2() >= 0)) {
     _internal_set_channel2(from._internal_channel2());
   }
-  if (from.channel3() != 0) {
+  if (!(from.channel3() <= 0 && from.channel3() >= 0)) {
     _internal_set_channel3(from._internal_channel3());
   }
-  if (from.channel4() != 0) {
+  if (!(from.channel4() <= 0 && from.channel4() >= 0)) {
     _internal_set_channel4(from._internal_channel4());
   }
   if (from._inner_timestamp() != 0) {
@@ -4351,32 +4279,32 @@ const char* IRTS_RL_1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel5 = 1;
+      // float channel5 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel6 = 2;
+      // float channel6 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel7 = 3;
+      // float channel7 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel8 = 4;
+      // float channel8 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -4414,28 +4342,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel5(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel5(), target);
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel6(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel6(), target);
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel7(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel7(), target);
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel8(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4460,32 +4388,24 @@ size_t IRTS_RL_1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel5());
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel6());
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel7());
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel8());
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4526,16 +4446,16 @@ void IRTS_RL_1::MergeFrom(const IRTS_RL_1& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel5() != 0) {
+  if (!(from.channel5() <= 0 && from.channel5() >= 0)) {
     _internal_set_channel5(from._internal_channel5());
   }
-  if (from.channel6() != 0) {
+  if (!(from.channel6() <= 0 && from.channel6() >= 0)) {
     _internal_set_channel6(from._internal_channel6());
   }
-  if (from.channel7() != 0) {
+  if (!(from.channel7() <= 0 && from.channel7() >= 0)) {
     _internal_set_channel7(from._internal_channel7());
   }
-  if (from.channel8() != 0) {
+  if (!(from.channel8() <= 0 && from.channel8() >= 0)) {
     _internal_set_channel8(from._internal_channel8());
   }
   if (from._inner_timestamp() != 0) {
@@ -4651,32 +4571,32 @@ const char* IRTS_RL_2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel9 = 1;
+      // float channel9 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel10 = 2;
+      // float channel10 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel11 = 3;
+      // float channel11 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel12 = 4;
+      // float channel12 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -4714,28 +4634,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel9(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel9(), target);
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel10(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel10(), target);
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel11(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel11(), target);
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel12(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4760,32 +4680,24 @@ size_t IRTS_RL_2::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel9());
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel10());
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel11());
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel12());
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -4826,16 +4738,16 @@ void IRTS_RL_2::MergeFrom(const IRTS_RL_2& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel9() != 0) {
+  if (!(from.channel9() <= 0 && from.channel9() >= 0)) {
     _internal_set_channel9(from._internal_channel9());
   }
-  if (from.channel10() != 0) {
+  if (!(from.channel10() <= 0 && from.channel10() >= 0)) {
     _internal_set_channel10(from._internal_channel10());
   }
-  if (from.channel11() != 0) {
+  if (!(from.channel11() <= 0 && from.channel11() >= 0)) {
     _internal_set_channel11(from._internal_channel11());
   }
-  if (from.channel12() != 0) {
+  if (!(from.channel12() <= 0 && from.channel12() >= 0)) {
     _internal_set_channel12(from._internal_channel12());
   }
   if (from._inner_timestamp() != 0) {
@@ -4951,32 +4863,32 @@ const char* IRTS_RL_3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel13 = 1;
+      // float channel13 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel14 = 2;
+      // float channel14 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel15 = 3;
+      // float channel15 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel16 = 4;
+      // float channel16 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -5014,28 +4926,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel13(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel13(), target);
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel14(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel14(), target);
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel15(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel15(), target);
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel16(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5060,32 +4972,24 @@ size_t IRTS_RL_3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel13());
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel14());
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel15());
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel16());
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5126,16 +5030,16 @@ void IRTS_RL_3::MergeFrom(const IRTS_RL_3& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel13() != 0) {
+  if (!(from.channel13() <= 0 && from.channel13() >= 0)) {
     _internal_set_channel13(from._internal_channel13());
   }
-  if (from.channel14() != 0) {
+  if (!(from.channel14() <= 0 && from.channel14() >= 0)) {
     _internal_set_channel14(from._internal_channel14());
   }
-  if (from.channel15() != 0) {
+  if (!(from.channel15() <= 0 && from.channel15() >= 0)) {
     _internal_set_channel15(from._internal_channel15());
   }
-  if (from.channel16() != 0) {
+  if (!(from.channel16() <= 0 && from.channel16() >= 0)) {
     _internal_set_channel16(from._internal_channel16());
   }
   if (from._inner_timestamp() != 0) {
@@ -5251,32 +5155,32 @@ const char* IRTS_RR_0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel1 = 1;
+      // float channel1 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel2 = 2;
+      // float channel2 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel3 = 3;
+      // float channel3 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel4 = 4;
+      // float channel4 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -5314,28 +5218,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel1(), target);
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel2(), target);
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel3(), target);
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel4(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel4(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5360,32 +5264,24 @@ size_t IRTS_RR_0::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel1 = 1;
-  if (this->channel1() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel1());
+  // float channel1 = 1;
+  if (!(this->channel1() <= 0 && this->channel1() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel2 = 2;
-  if (this->channel2() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel2());
+  // float channel2 = 2;
+  if (!(this->channel2() <= 0 && this->channel2() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel3 = 3;
-  if (this->channel3() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel3());
+  // float channel3 = 3;
+  if (!(this->channel3() <= 0 && this->channel3() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel4 = 4;
-  if (this->channel4() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel4());
+  // float channel4 = 4;
+  if (!(this->channel4() <= 0 && this->channel4() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5426,16 +5322,16 @@ void IRTS_RR_0::MergeFrom(const IRTS_RR_0& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel1() != 0) {
+  if (!(from.channel1() <= 0 && from.channel1() >= 0)) {
     _internal_set_channel1(from._internal_channel1());
   }
-  if (from.channel2() != 0) {
+  if (!(from.channel2() <= 0 && from.channel2() >= 0)) {
     _internal_set_channel2(from._internal_channel2());
   }
-  if (from.channel3() != 0) {
+  if (!(from.channel3() <= 0 && from.channel3() >= 0)) {
     _internal_set_channel3(from._internal_channel3());
   }
-  if (from.channel4() != 0) {
+  if (!(from.channel4() <= 0 && from.channel4() >= 0)) {
     _internal_set_channel4(from._internal_channel4());
   }
   if (from._inner_timestamp() != 0) {
@@ -5551,32 +5447,32 @@ const char* IRTS_RR_1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel5 = 1;
+      // float channel5 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel6 = 2;
+      // float channel6 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel6_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel7 = 3;
+      // float channel7 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel7_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel8 = 4;
+      // float channel8 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel8_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -5614,28 +5510,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel5(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel5(), target);
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel6(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel6(), target);
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel7(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel7(), target);
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel8(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel8(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5660,32 +5556,24 @@ size_t IRTS_RR_1::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel5 = 1;
-  if (this->channel5() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel5());
+  // float channel5 = 1;
+  if (!(this->channel5() <= 0 && this->channel5() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel6 = 2;
-  if (this->channel6() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel6());
+  // float channel6 = 2;
+  if (!(this->channel6() <= 0 && this->channel6() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel7 = 3;
-  if (this->channel7() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel7());
+  // float channel7 = 3;
+  if (!(this->channel7() <= 0 && this->channel7() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel8 = 4;
-  if (this->channel8() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel8());
+  // float channel8 = 4;
+  if (!(this->channel8() <= 0 && this->channel8() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5726,16 +5614,16 @@ void IRTS_RR_1::MergeFrom(const IRTS_RR_1& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel5() != 0) {
+  if (!(from.channel5() <= 0 && from.channel5() >= 0)) {
     _internal_set_channel5(from._internal_channel5());
   }
-  if (from.channel6() != 0) {
+  if (!(from.channel6() <= 0 && from.channel6() >= 0)) {
     _internal_set_channel6(from._internal_channel6());
   }
-  if (from.channel7() != 0) {
+  if (!(from.channel7() <= 0 && from.channel7() >= 0)) {
     _internal_set_channel7(from._internal_channel7());
   }
-  if (from.channel8() != 0) {
+  if (!(from.channel8() <= 0 && from.channel8() >= 0)) {
     _internal_set_channel8(from._internal_channel8());
   }
   if (from._inner_timestamp() != 0) {
@@ -5851,32 +5739,32 @@ const char* IRTS_RR_2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel9 = 1;
+      // float channel9 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel9_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel10 = 2;
+      // float channel10 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel11 = 3;
+      // float channel11 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel11_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel12 = 4;
+      // float channel12 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel12_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -5914,28 +5802,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel9(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel9(), target);
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel10(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel10(), target);
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel11(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel11(), target);
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel12(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel12(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -5960,32 +5848,24 @@ size_t IRTS_RR_2::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel9 = 1;
-  if (this->channel9() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel9());
+  // float channel9 = 1;
+  if (!(this->channel9() <= 0 && this->channel9() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel10 = 2;
-  if (this->channel10() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel10());
+  // float channel10 = 2;
+  if (!(this->channel10() <= 0 && this->channel10() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel11 = 3;
-  if (this->channel11() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel11());
+  // float channel11 = 3;
+  if (!(this->channel11() <= 0 && this->channel11() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel12 = 4;
-  if (this->channel12() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel12());
+  // float channel12 = 4;
+  if (!(this->channel12() <= 0 && this->channel12() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6026,16 +5906,16 @@ void IRTS_RR_2::MergeFrom(const IRTS_RR_2& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel9() != 0) {
+  if (!(from.channel9() <= 0 && from.channel9() >= 0)) {
     _internal_set_channel9(from._internal_channel9());
   }
-  if (from.channel10() != 0) {
+  if (!(from.channel10() <= 0 && from.channel10() >= 0)) {
     _internal_set_channel10(from._internal_channel10());
   }
-  if (from.channel11() != 0) {
+  if (!(from.channel11() <= 0 && from.channel11() >= 0)) {
     _internal_set_channel11(from._internal_channel11());
   }
-  if (from.channel12() != 0) {
+  if (!(from.channel12() <= 0 && from.channel12() >= 0)) {
     _internal_set_channel12(from._internal_channel12());
   }
   if (from._inner_timestamp() != 0) {
@@ -6151,32 +6031,32 @@ const char* IRTS_RR_3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 channel13 = 1;
+      // float channel13 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          channel13_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel14 = 2;
+      // float channel14 = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          channel14_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel15 = 3;
+      // float channel15 = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          channel15_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 channel16 = 4;
+      // float channel16 = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          channel16_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
       // uint64 _inner_timestamp = 5;
@@ -6214,28 +6094,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_channel13(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_channel13(), target);
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_channel14(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_channel14(), target);
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_channel15(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_channel15(), target);
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_channel16(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_channel16(), target);
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6260,32 +6140,24 @@ size_t IRTS_RR_3::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 channel13 = 1;
-  if (this->channel13() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel13());
+  // float channel13 = 1;
+  if (!(this->channel13() <= 0 && this->channel13() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel14 = 2;
-  if (this->channel14() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel14());
+  // float channel14 = 2;
+  if (!(this->channel14() <= 0 && this->channel14() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel15 = 3;
-  if (this->channel15() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel15());
+  // float channel15 = 3;
+  if (!(this->channel15() <= 0 && this->channel15() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 channel16 = 4;
-  if (this->channel16() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_channel16());
+  // float channel16 = 4;
+  if (!(this->channel16() <= 0 && this->channel16() >= 0)) {
+    total_size += 1 + 4;
   }
 
   // uint64 _inner_timestamp = 5;
@@ -6326,16 +6198,16 @@ void IRTS_RR_3::MergeFrom(const IRTS_RR_3& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.channel13() != 0) {
+  if (!(from.channel13() <= 0 && from.channel13() >= 0)) {
     _internal_set_channel13(from._internal_channel13());
   }
-  if (from.channel14() != 0) {
+  if (!(from.channel14() <= 0 && from.channel14() >= 0)) {
     _internal_set_channel14(from._internal_channel14());
   }
-  if (from.channel15() != 0) {
+  if (!(from.channel15() <= 0 && from.channel15() >= 0)) {
     _internal_set_channel15(from._internal_channel15());
   }
-  if (from.channel16() != 0) {
+  if (!(from.channel16() <= 0 && from.channel16() >= 0)) {
     _internal_set_channel16(from._internal_channel16());
   }
   if (from._inner_timestamp() != 0) {

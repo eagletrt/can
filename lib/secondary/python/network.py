@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670347587
-CANLIB_BUILD_HASH = 0xffd7fb04
+CANLIB_BUILD_TIME = 1670601859
+CANLIB_BUILD_HASH = 0x5956942f
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -238,18 +238,62 @@ class message_IRTS_FL_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack("<H", data[0:2])[0])
-        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack(">H", data[0:2])[0])
+        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FL_0_conversion:
+        conversion = message_IRTS_FL_0_conversion()
+        conversion.channel1 = ((float32(self.channel1)) / 10.0) - 100
+        conversion.channel2 = ((float32(self.channel2)) / 10.0) - 100
+        conversion.channel3 = ((float32(self.channel3)) / 10.0) - 100
+        conversion.channel4 = ((float32(self.channel4)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FL_0_conversion:
+    def __init__(
+        self,
+        channel1 = None,
+        channel2 = None,
+        channel3 = None,
+        channel4 = None
+    ):
+        self.channel1 = float32(channel1)
+        self.channel2 = float32(channel2)
+        self.channel3 = float32(channel3)
+        self.channel4 = float32(channel4)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FL_0):
+            return False
+        if self.channel1 != other.channel1:
+            return False
+        if self.channel2 != other.channel2:
+            return False
+        if self.channel3 != other.channel3:
+            return False
+        if self.channel4 != other.channel4:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FL_0:
+        raw = message_IRTS_FL_0()
+        raw.channel1 = uint16((self.channel1 + 100) * 10.0)
+        raw.channel2 = uint16((self.channel2 + 100) * 10.0)
+        raw.channel3 = uint16((self.channel3 + 100) * 10.0)
+        raw.channel4 = uint16((self.channel4 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FL_1:
     def __init__(
@@ -280,18 +324,62 @@ class message_IRTS_FL_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack("<H", data[0:2])[0])
-        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack(">H", data[0:2])[0])
+        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FL_1_conversion:
+        conversion = message_IRTS_FL_1_conversion()
+        conversion.channel5 = ((float32(self.channel5)) / 10.0) - 100
+        conversion.channel6 = ((float32(self.channel6)) / 10.0) - 100
+        conversion.channel7 = ((float32(self.channel7)) / 10.0) - 100
+        conversion.channel8 = ((float32(self.channel8)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FL_1_conversion:
+    def __init__(
+        self,
+        channel5 = None,
+        channel6 = None,
+        channel7 = None,
+        channel8 = None
+    ):
+        self.channel5 = float32(channel5)
+        self.channel6 = float32(channel6)
+        self.channel7 = float32(channel7)
+        self.channel8 = float32(channel8)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FL_1):
+            return False
+        if self.channel5 != other.channel5:
+            return False
+        if self.channel6 != other.channel6:
+            return False
+        if self.channel7 != other.channel7:
+            return False
+        if self.channel8 != other.channel8:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FL_1:
+        raw = message_IRTS_FL_1()
+        raw.channel5 = uint16((self.channel5 + 100) * 10.0)
+        raw.channel6 = uint16((self.channel6 + 100) * 10.0)
+        raw.channel7 = uint16((self.channel7 + 100) * 10.0)
+        raw.channel8 = uint16((self.channel8 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FL_2:
     def __init__(
@@ -322,18 +410,62 @@ class message_IRTS_FL_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack("<H", data[0:2])[0])
-        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack(">H", data[0:2])[0])
+        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FL_2_conversion:
+        conversion = message_IRTS_FL_2_conversion()
+        conversion.channel9 = ((float32(self.channel9)) / 10.0) - 100
+        conversion.channel10 = ((float32(self.channel10)) / 10.0) - 100
+        conversion.channel11 = ((float32(self.channel11)) / 10.0) - 100
+        conversion.channel12 = ((float32(self.channel12)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FL_2_conversion:
+    def __init__(
+        self,
+        channel9 = None,
+        channel10 = None,
+        channel11 = None,
+        channel12 = None
+    ):
+        self.channel9 = float32(channel9)
+        self.channel10 = float32(channel10)
+        self.channel11 = float32(channel11)
+        self.channel12 = float32(channel12)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FL_2):
+            return False
+        if self.channel9 != other.channel9:
+            return False
+        if self.channel10 != other.channel10:
+            return False
+        if self.channel11 != other.channel11:
+            return False
+        if self.channel12 != other.channel12:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FL_2:
+        raw = message_IRTS_FL_2()
+        raw.channel9 = uint16((self.channel9 + 100) * 10.0)
+        raw.channel10 = uint16((self.channel10 + 100) * 10.0)
+        raw.channel11 = uint16((self.channel11 + 100) * 10.0)
+        raw.channel12 = uint16((self.channel12 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FL_3:
     def __init__(
@@ -364,18 +496,62 @@ class message_IRTS_FL_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack("<H", data[0:2])[0])
-        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack(">H", data[0:2])[0])
+        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FL_3_conversion:
+        conversion = message_IRTS_FL_3_conversion()
+        conversion.channel13 = ((float32(self.channel13)) / 10.0) - 100
+        conversion.channel14 = ((float32(self.channel14)) / 10.0) - 100
+        conversion.channel15 = ((float32(self.channel15)) / 10.0) - 100
+        conversion.channel16 = ((float32(self.channel16)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FL_3_conversion:
+    def __init__(
+        self,
+        channel13 = None,
+        channel14 = None,
+        channel15 = None,
+        channel16 = None
+    ):
+        self.channel13 = float32(channel13)
+        self.channel14 = float32(channel14)
+        self.channel15 = float32(channel15)
+        self.channel16 = float32(channel16)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FL_3):
+            return False
+        if self.channel13 != other.channel13:
+            return False
+        if self.channel14 != other.channel14:
+            return False
+        if self.channel15 != other.channel15:
+            return False
+        if self.channel16 != other.channel16:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FL_3:
+        raw = message_IRTS_FL_3()
+        raw.channel13 = uint16((self.channel13 + 100) * 10.0)
+        raw.channel14 = uint16((self.channel14 + 100) * 10.0)
+        raw.channel15 = uint16((self.channel15 + 100) * 10.0)
+        raw.channel16 = uint16((self.channel16 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FR_0:
     def __init__(
@@ -406,18 +582,62 @@ class message_IRTS_FR_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack("<H", data[0:2])[0])
-        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack(">H", data[0:2])[0])
+        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FR_0_conversion:
+        conversion = message_IRTS_FR_0_conversion()
+        conversion.channel1 = ((float32(self.channel1)) / 10.0) - 100
+        conversion.channel2 = ((float32(self.channel2)) / 10.0) - 100
+        conversion.channel3 = ((float32(self.channel3)) / 10.0) - 100
+        conversion.channel4 = ((float32(self.channel4)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FR_0_conversion:
+    def __init__(
+        self,
+        channel1 = None,
+        channel2 = None,
+        channel3 = None,
+        channel4 = None
+    ):
+        self.channel1 = float32(channel1)
+        self.channel2 = float32(channel2)
+        self.channel3 = float32(channel3)
+        self.channel4 = float32(channel4)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FR_0):
+            return False
+        if self.channel1 != other.channel1:
+            return False
+        if self.channel2 != other.channel2:
+            return False
+        if self.channel3 != other.channel3:
+            return False
+        if self.channel4 != other.channel4:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FR_0:
+        raw = message_IRTS_FR_0()
+        raw.channel1 = uint16((self.channel1 + 100) * 10.0)
+        raw.channel2 = uint16((self.channel2 + 100) * 10.0)
+        raw.channel3 = uint16((self.channel3 + 100) * 10.0)
+        raw.channel4 = uint16((self.channel4 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FR_1:
     def __init__(
@@ -448,18 +668,62 @@ class message_IRTS_FR_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack("<H", data[0:2])[0])
-        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack(">H", data[0:2])[0])
+        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FR_1_conversion:
+        conversion = message_IRTS_FR_1_conversion()
+        conversion.channel5 = ((float32(self.channel5)) / 10.0) - 100
+        conversion.channel6 = ((float32(self.channel6)) / 10.0) - 100
+        conversion.channel7 = ((float32(self.channel7)) / 10.0) - 100
+        conversion.channel8 = ((float32(self.channel8)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FR_1_conversion:
+    def __init__(
+        self,
+        channel5 = None,
+        channel6 = None,
+        channel7 = None,
+        channel8 = None
+    ):
+        self.channel5 = float32(channel5)
+        self.channel6 = float32(channel6)
+        self.channel7 = float32(channel7)
+        self.channel8 = float32(channel8)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FR_1):
+            return False
+        if self.channel5 != other.channel5:
+            return False
+        if self.channel6 != other.channel6:
+            return False
+        if self.channel7 != other.channel7:
+            return False
+        if self.channel8 != other.channel8:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FR_1:
+        raw = message_IRTS_FR_1()
+        raw.channel5 = uint16((self.channel5 + 100) * 10.0)
+        raw.channel6 = uint16((self.channel6 + 100) * 10.0)
+        raw.channel7 = uint16((self.channel7 + 100) * 10.0)
+        raw.channel8 = uint16((self.channel8 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FR_2:
     def __init__(
@@ -490,18 +754,62 @@ class message_IRTS_FR_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack("<H", data[0:2])[0])
-        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack(">H", data[0:2])[0])
+        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FR_2_conversion:
+        conversion = message_IRTS_FR_2_conversion()
+        conversion.channel9 = ((float32(self.channel9)) / 10.0) - 100
+        conversion.channel10 = ((float32(self.channel10)) / 10.0) - 100
+        conversion.channel11 = ((float32(self.channel11)) / 10.0) - 100
+        conversion.channel12 = ((float32(self.channel12)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FR_2_conversion:
+    def __init__(
+        self,
+        channel9 = None,
+        channel10 = None,
+        channel11 = None,
+        channel12 = None
+    ):
+        self.channel9 = float32(channel9)
+        self.channel10 = float32(channel10)
+        self.channel11 = float32(channel11)
+        self.channel12 = float32(channel12)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FR_2):
+            return False
+        if self.channel9 != other.channel9:
+            return False
+        if self.channel10 != other.channel10:
+            return False
+        if self.channel11 != other.channel11:
+            return False
+        if self.channel12 != other.channel12:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FR_2:
+        raw = message_IRTS_FR_2()
+        raw.channel9 = uint16((self.channel9 + 100) * 10.0)
+        raw.channel10 = uint16((self.channel10 + 100) * 10.0)
+        raw.channel11 = uint16((self.channel11 + 100) * 10.0)
+        raw.channel12 = uint16((self.channel12 + 100) * 10.0)
+        return raw
 
 class message_IRTS_FR_3:
     def __init__(
@@ -532,18 +840,62 @@ class message_IRTS_FR_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack("<H", data[0:2])[0])
-        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack(">H", data[0:2])[0])
+        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_FR_3_conversion:
+        conversion = message_IRTS_FR_3_conversion()
+        conversion.channel13 = ((float32(self.channel13)) / 10.0) - 100
+        conversion.channel14 = ((float32(self.channel14)) / 10.0) - 100
+        conversion.channel15 = ((float32(self.channel15)) / 10.0) - 100
+        conversion.channel16 = ((float32(self.channel16)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_FR_3_conversion:
+    def __init__(
+        self,
+        channel13 = None,
+        channel14 = None,
+        channel15 = None,
+        channel16 = None
+    ):
+        self.channel13 = float32(channel13)
+        self.channel14 = float32(channel14)
+        self.channel15 = float32(channel15)
+        self.channel16 = float32(channel16)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_FR_3):
+            return False
+        if self.channel13 != other.channel13:
+            return False
+        if self.channel14 != other.channel14:
+            return False
+        if self.channel15 != other.channel15:
+            return False
+        if self.channel16 != other.channel16:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_FR_3:
+        raw = message_IRTS_FR_3()
+        raw.channel13 = uint16((self.channel13 + 100) * 10.0)
+        raw.channel14 = uint16((self.channel14 + 100) * 10.0)
+        raw.channel15 = uint16((self.channel15 + 100) * 10.0)
+        raw.channel16 = uint16((self.channel16 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RL_0:
     def __init__(
@@ -574,18 +926,62 @@ class message_IRTS_RL_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack("<H", data[0:2])[0])
-        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack(">H", data[0:2])[0])
+        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RL_0_conversion:
+        conversion = message_IRTS_RL_0_conversion()
+        conversion.channel1 = ((float32(self.channel1)) / 10.0) - 100
+        conversion.channel2 = ((float32(self.channel2)) / 10.0) - 100
+        conversion.channel3 = ((float32(self.channel3)) / 10.0) - 100
+        conversion.channel4 = ((float32(self.channel4)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RL_0_conversion:
+    def __init__(
+        self,
+        channel1 = None,
+        channel2 = None,
+        channel3 = None,
+        channel4 = None
+    ):
+        self.channel1 = float32(channel1)
+        self.channel2 = float32(channel2)
+        self.channel3 = float32(channel3)
+        self.channel4 = float32(channel4)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RL_0):
+            return False
+        if self.channel1 != other.channel1:
+            return False
+        if self.channel2 != other.channel2:
+            return False
+        if self.channel3 != other.channel3:
+            return False
+        if self.channel4 != other.channel4:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RL_0:
+        raw = message_IRTS_RL_0()
+        raw.channel1 = uint16((self.channel1 + 100) * 10.0)
+        raw.channel2 = uint16((self.channel2 + 100) * 10.0)
+        raw.channel3 = uint16((self.channel3 + 100) * 10.0)
+        raw.channel4 = uint16((self.channel4 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RL_1:
     def __init__(
@@ -616,18 +1012,62 @@ class message_IRTS_RL_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack("<H", data[0:2])[0])
-        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack(">H", data[0:2])[0])
+        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RL_1_conversion:
+        conversion = message_IRTS_RL_1_conversion()
+        conversion.channel5 = ((float32(self.channel5)) / 10.0) - 100
+        conversion.channel6 = ((float32(self.channel6)) / 10.0) - 100
+        conversion.channel7 = ((float32(self.channel7)) / 10.0) - 100
+        conversion.channel8 = ((float32(self.channel8)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RL_1_conversion:
+    def __init__(
+        self,
+        channel5 = None,
+        channel6 = None,
+        channel7 = None,
+        channel8 = None
+    ):
+        self.channel5 = float32(channel5)
+        self.channel6 = float32(channel6)
+        self.channel7 = float32(channel7)
+        self.channel8 = float32(channel8)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RL_1):
+            return False
+        if self.channel5 != other.channel5:
+            return False
+        if self.channel6 != other.channel6:
+            return False
+        if self.channel7 != other.channel7:
+            return False
+        if self.channel8 != other.channel8:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RL_1:
+        raw = message_IRTS_RL_1()
+        raw.channel5 = uint16((self.channel5 + 100) * 10.0)
+        raw.channel6 = uint16((self.channel6 + 100) * 10.0)
+        raw.channel7 = uint16((self.channel7 + 100) * 10.0)
+        raw.channel8 = uint16((self.channel8 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RL_2:
     def __init__(
@@ -658,18 +1098,62 @@ class message_IRTS_RL_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack("<H", data[0:2])[0])
-        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack(">H", data[0:2])[0])
+        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RL_2_conversion:
+        conversion = message_IRTS_RL_2_conversion()
+        conversion.channel9 = ((float32(self.channel9)) / 10.0) - 100
+        conversion.channel10 = ((float32(self.channel10)) / 10.0) - 100
+        conversion.channel11 = ((float32(self.channel11)) / 10.0) - 100
+        conversion.channel12 = ((float32(self.channel12)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RL_2_conversion:
+    def __init__(
+        self,
+        channel9 = None,
+        channel10 = None,
+        channel11 = None,
+        channel12 = None
+    ):
+        self.channel9 = float32(channel9)
+        self.channel10 = float32(channel10)
+        self.channel11 = float32(channel11)
+        self.channel12 = float32(channel12)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RL_2):
+            return False
+        if self.channel9 != other.channel9:
+            return False
+        if self.channel10 != other.channel10:
+            return False
+        if self.channel11 != other.channel11:
+            return False
+        if self.channel12 != other.channel12:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RL_2:
+        raw = message_IRTS_RL_2()
+        raw.channel9 = uint16((self.channel9 + 100) * 10.0)
+        raw.channel10 = uint16((self.channel10 + 100) * 10.0)
+        raw.channel11 = uint16((self.channel11 + 100) * 10.0)
+        raw.channel12 = uint16((self.channel12 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RL_3:
     def __init__(
@@ -700,18 +1184,62 @@ class message_IRTS_RL_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack("<H", data[0:2])[0])
-        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack(">H", data[0:2])[0])
+        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RL_3_conversion:
+        conversion = message_IRTS_RL_3_conversion()
+        conversion.channel13 = ((float32(self.channel13)) / 10.0) - 100
+        conversion.channel14 = ((float32(self.channel14)) / 10.0) - 100
+        conversion.channel15 = ((float32(self.channel15)) / 10.0) - 100
+        conversion.channel16 = ((float32(self.channel16)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RL_3_conversion:
+    def __init__(
+        self,
+        channel13 = None,
+        channel14 = None,
+        channel15 = None,
+        channel16 = None
+    ):
+        self.channel13 = float32(channel13)
+        self.channel14 = float32(channel14)
+        self.channel15 = float32(channel15)
+        self.channel16 = float32(channel16)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RL_3):
+            return False
+        if self.channel13 != other.channel13:
+            return False
+        if self.channel14 != other.channel14:
+            return False
+        if self.channel15 != other.channel15:
+            return False
+        if self.channel16 != other.channel16:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RL_3:
+        raw = message_IRTS_RL_3()
+        raw.channel13 = uint16((self.channel13 + 100) * 10.0)
+        raw.channel14 = uint16((self.channel14 + 100) * 10.0)
+        raw.channel15 = uint16((self.channel15 + 100) * 10.0)
+        raw.channel16 = uint16((self.channel16 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RR_0:
     def __init__(
@@ -742,18 +1270,62 @@ class message_IRTS_RR_0:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
+        data.extend(pack(">HHHH", self.channel1, self.channel2, self.channel3, self.channel4))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel1 = uint16(unpack("<H", data[0:2])[0])
-        message.channel2 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel3 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel4 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel1 = uint16(unpack(">H", data[0:2])[0])
+        message.channel2 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel3 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel4 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RR_0_conversion:
+        conversion = message_IRTS_RR_0_conversion()
+        conversion.channel1 = ((float32(self.channel1)) / 10.0) - 100
+        conversion.channel2 = ((float32(self.channel2)) / 10.0) - 100
+        conversion.channel3 = ((float32(self.channel3)) / 10.0) - 100
+        conversion.channel4 = ((float32(self.channel4)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RR_0_conversion:
+    def __init__(
+        self,
+        channel1 = None,
+        channel2 = None,
+        channel3 = None,
+        channel4 = None
+    ):
+        self.channel1 = float32(channel1)
+        self.channel2 = float32(channel2)
+        self.channel3 = float32(channel3)
+        self.channel4 = float32(channel4)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RR_0):
+            return False
+        if self.channel1 != other.channel1:
+            return False
+        if self.channel2 != other.channel2:
+            return False
+        if self.channel3 != other.channel3:
+            return False
+        if self.channel4 != other.channel4:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RR_0:
+        raw = message_IRTS_RR_0()
+        raw.channel1 = uint16((self.channel1 + 100) * 10.0)
+        raw.channel2 = uint16((self.channel2 + 100) * 10.0)
+        raw.channel3 = uint16((self.channel3 + 100) * 10.0)
+        raw.channel4 = uint16((self.channel4 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RR_1:
     def __init__(
@@ -784,18 +1356,62 @@ class message_IRTS_RR_1:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
+        data.extend(pack(">HHHH", self.channel5, self.channel6, self.channel7, self.channel8))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel5 = uint16(unpack("<H", data[0:2])[0])
-        message.channel6 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel7 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel8 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel5 = uint16(unpack(">H", data[0:2])[0])
+        message.channel6 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel7 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel8 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RR_1_conversion:
+        conversion = message_IRTS_RR_1_conversion()
+        conversion.channel5 = ((float32(self.channel5)) / 10.0) - 100
+        conversion.channel6 = ((float32(self.channel6)) / 10.0) - 100
+        conversion.channel7 = ((float32(self.channel7)) / 10.0) - 100
+        conversion.channel8 = ((float32(self.channel8)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RR_1_conversion:
+    def __init__(
+        self,
+        channel5 = None,
+        channel6 = None,
+        channel7 = None,
+        channel8 = None
+    ):
+        self.channel5 = float32(channel5)
+        self.channel6 = float32(channel6)
+        self.channel7 = float32(channel7)
+        self.channel8 = float32(channel8)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RR_1):
+            return False
+        if self.channel5 != other.channel5:
+            return False
+        if self.channel6 != other.channel6:
+            return False
+        if self.channel7 != other.channel7:
+            return False
+        if self.channel8 != other.channel8:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RR_1:
+        raw = message_IRTS_RR_1()
+        raw.channel5 = uint16((self.channel5 + 100) * 10.0)
+        raw.channel6 = uint16((self.channel6 + 100) * 10.0)
+        raw.channel7 = uint16((self.channel7 + 100) * 10.0)
+        raw.channel8 = uint16((self.channel8 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RR_2:
     def __init__(
@@ -826,18 +1442,62 @@ class message_IRTS_RR_2:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
+        data.extend(pack(">HHHH", self.channel9, self.channel10, self.channel11, self.channel12))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel9 = uint16(unpack("<H", data[0:2])[0])
-        message.channel10 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel11 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel12 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel9 = uint16(unpack(">H", data[0:2])[0])
+        message.channel10 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel11 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel12 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RR_2_conversion:
+        conversion = message_IRTS_RR_2_conversion()
+        conversion.channel9 = ((float32(self.channel9)) / 10.0) - 100
+        conversion.channel10 = ((float32(self.channel10)) / 10.0) - 100
+        conversion.channel11 = ((float32(self.channel11)) / 10.0) - 100
+        conversion.channel12 = ((float32(self.channel12)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RR_2_conversion:
+    def __init__(
+        self,
+        channel9 = None,
+        channel10 = None,
+        channel11 = None,
+        channel12 = None
+    ):
+        self.channel9 = float32(channel9)
+        self.channel10 = float32(channel10)
+        self.channel11 = float32(channel11)
+        self.channel12 = float32(channel12)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RR_2):
+            return False
+        if self.channel9 != other.channel9:
+            return False
+        if self.channel10 != other.channel10:
+            return False
+        if self.channel11 != other.channel11:
+            return False
+        if self.channel12 != other.channel12:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RR_2:
+        raw = message_IRTS_RR_2()
+        raw.channel9 = uint16((self.channel9 + 100) * 10.0)
+        raw.channel10 = uint16((self.channel10 + 100) * 10.0)
+        raw.channel11 = uint16((self.channel11 + 100) * 10.0)
+        raw.channel12 = uint16((self.channel12 + 100) * 10.0)
+        return raw
 
 class message_IRTS_RR_3:
     def __init__(
@@ -868,18 +1528,62 @@ class message_IRTS_RR_3:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
+        data.extend(pack(">HHHH", self.channel13, self.channel14, self.channel15, self.channel16))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
-        message.channel13 = uint16(unpack("<H", data[0:2])[0])
-        message.channel14 = uint16(unpack("<xxH", data[0:4])[0])
-        message.channel15 = uint16(unpack("<xxxxH", data[0:6])[0])
-        message.channel16 = uint16(unpack("<xxxxxxH", data[0:8])[0])
+        message.channel13 = uint16(unpack(">H", data[0:2])[0])
+        message.channel14 = uint16(unpack(">xxH", data[0:4])[0])
+        message.channel15 = uint16(unpack(">xxxxH", data[0:6])[0])
+        message.channel16 = uint16(unpack(">xxxxxxH", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_IRTS_RR_3_conversion:
+        conversion = message_IRTS_RR_3_conversion()
+        conversion.channel13 = ((float32(self.channel13)) / 10.0) - 100
+        conversion.channel14 = ((float32(self.channel14)) / 10.0) - 100
+        conversion.channel15 = ((float32(self.channel15)) / 10.0) - 100
+        conversion.channel16 = ((float32(self.channel16)) / 10.0) - 100
+        return conversion
+
+
+class message_IRTS_RR_3_conversion:
+    def __init__(
+        self,
+        channel13 = None,
+        channel14 = None,
+        channel15 = None,
+        channel16 = None
+    ):
+        self.channel13 = float32(channel13)
+        self.channel14 = float32(channel14)
+        self.channel15 = float32(channel15)
+        self.channel16 = float32(channel16)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_IRTS_RR_3):
+            return False
+        if self.channel13 != other.channel13:
+            return False
+        if self.channel14 != other.channel14:
+            return False
+        if self.channel15 != other.channel15:
+            return False
+        if self.channel16 != other.channel16:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_IRTS_RR_3:
+        raw = message_IRTS_RR_3()
+        raw.channel13 = uint16((self.channel13 + 100) * 10.0)
+        raw.channel14 = uint16((self.channel14 + 100) * 10.0)
+        raw.channel15 = uint16((self.channel15 + 100) * 10.0)
+        raw.channel16 = uint16((self.channel16 + 100) * 10.0)
+        return raw
 
 class message_GPS_COORDS:
     def __init__(
