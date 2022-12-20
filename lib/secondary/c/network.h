@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1670601859
-#define CANLIB_BUILD_HASH 0x5956942f
+#define CANLIB_BUILD_TIME 1671558667
+#define CANLIB_BUILD_HASH 0xfa21b89e
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -664,17 +664,31 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     secondary_uint8 fl_pressure;
-    secondary_uint8 fl_temperature;
     secondary_uint8 fr_pressure;
-    secondary_uint8 fr_temperature;
     secondary_uint8 rl_pressure;
-    secondary_uint8 rl_temperature;
     secondary_uint8 rr_pressure;
+    secondary_uint8 fl_temperature;
+    secondary_uint8 fr_temperature;
+    secondary_uint8 rl_temperature;
     secondary_uint8 rr_temperature;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_TPMS;
+
+typedef struct CANLIB_PARKING {
+    secondary_float32 fl_pressure;
+    secondary_float32 fr_pressure;
+    secondary_float32 rl_pressure;
+    secondary_float32 rr_pressure;
+    secondary_uint8 fl_temperature;
+    secondary_uint8 fr_temperature;
+    secondary_uint8 rl_temperature;
+    secondary_uint8 rr_temperature;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_TPMS_conversion;
 
 
 typedef union CANLIB_PARKING {
@@ -726,6 +740,7 @@ typedef union CANLIB_PARKING {
     secondary_message_IRTS_RR_3_conversion _IRTS_RR_3;
     secondary_message_PEDALS_OUTPUT_conversion _PEDALS_OUTPUT;
     secondary_message_CONTROL_OUTPUT_conversion _CONTROL_OUTPUT;
+    secondary_message_TPMS_conversion _TPMS;
 } _secondary_all_structs_conversion;
 
 typedef union CANLIB_PARKING {
@@ -1974,12 +1989,12 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
 secondary_byte_size secondary_serialize_TPMS(
     uint8_t* data,
     secondary_uint8 fl_pressure,
-    secondary_uint8 fl_temperature,
     secondary_uint8 fr_pressure,
-    secondary_uint8 fr_temperature,
     secondary_uint8 rl_pressure,
-    secondary_uint8 rl_temperature,
     secondary_uint8 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
     secondary_uint8 rr_temperature
 );
 secondary_byte_size secondary_serialize_struct_TPMS(
@@ -1993,9 +2008,48 @@ void secondary_deserialize_TPMS(
     , secondary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int secondary_to_string_TPMS(secondary_message_TPMS* message, char* buffer);
+void secondary_raw_to_conversion_struct_TPMS(
+    secondary_message_TPMS_conversion* conversion,
+    secondary_message_TPMS* raw
+);
+
+void secondary_conversion_to_raw_struct_TPMS(
+    secondary_message_TPMS* raw,
+    secondary_message_TPMS_conversion* conversion
+);
+
+void secondary_conversion_to_raw_TPMS(
+    secondary_message_TPMS* raw,
+    secondary_float32 fl_pressure,
+    secondary_float32 fr_pressure,
+    secondary_float32 rl_pressure,
+    secondary_float32 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_temperature
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void secondary_raw_to_conversion_TPMS(
+    secondary_message_TPMS_conversion* conversion,
+    secondary_uint8 fl_pressure,
+    secondary_uint8 fr_pressure,
+    secondary_uint8 rl_pressure,
+    secondary_uint8 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_temperature
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_TPMS(secondary_message_TPMS_conversion* message, char* buffer);
 int secondary_fields_TPMS(char* buffer);
-int secondary_to_string_file_TPMS(secondary_message_TPMS* message, FILE* buffer);
+int secondary_to_string_file_TPMS(secondary_message_TPMS_conversion* message, FILE* buffer);
 int secondary_fields_file_TPMS(FILE* buffer);
 
 
@@ -2028,7 +2082,7 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 769: return secondary_INDEX_PEDALS_OUTPUT;
         case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
-        case 1: return secondary_INDEX_TPMS;
+        case 513: return secondary_INDEX_TPMS;
     }
     return -1; // invalid
 }
@@ -2059,7 +2113,7 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_PEDALS_OUTPUT: return 769;
         case secondary_INDEX_CONTROL_OUTPUT: return 801;
         case secondary_INDEX_STEERING_ANGLE: return 258;
-        case secondary_INDEX_TPMS: return 1;
+        case secondary_INDEX_TPMS: return 513;
     }
     return -1; // invalid
 }
@@ -6132,21 +6186,21 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
 secondary_byte_size secondary_serialize_TPMS(
     uint8_t* data,
     secondary_uint8 fl_pressure,
-    secondary_uint8 fl_temperature,
     secondary_uint8 fr_pressure,
-    secondary_uint8 fr_temperature,
     secondary_uint8 rl_pressure,
-    secondary_uint8 rl_temperature,
     secondary_uint8 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
     secondary_uint8 rr_temperature
 ) {
     data[0] = fl_pressure;
-    data[1] = fl_temperature;
-    data[2] = fr_pressure;
-    data[3] = fr_temperature;
-    data[4] = rl_pressure;
-    data[5] = rl_temperature;
-    data[6] = rr_pressure;
+    data[1] = fr_pressure;
+    data[2] = rl_pressure;
+    data[3] = rr_pressure;
+    data[4] = fl_temperature;
+    data[5] = fr_temperature;
+    data[6] = rl_temperature;
     data[7] = rr_temperature;
     return 8;
 }
@@ -6156,12 +6210,12 @@ secondary_byte_size secondary_serialize_struct_TPMS(
     secondary_message_TPMS* message
 ) {
     data[0] = message->fl_pressure;
-    data[1] = message->fl_temperature;
-    data[2] = message->fr_pressure;
-    data[3] = message->fr_temperature;
-    data[4] = message->rl_pressure;
-    data[5] = message->rl_temperature;
-    data[6] = message->rr_pressure;
+    data[1] = message->fr_pressure;
+    data[2] = message->rl_pressure;
+    data[3] = message->rr_pressure;
+    data[4] = message->fl_temperature;
+    data[5] = message->fr_temperature;
+    data[6] = message->rl_temperature;
     data[7] = message->rr_temperature;
     return 8;
 }
@@ -6179,27 +6233,114 @@ void secondary_deserialize_TPMS(
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     message->fl_pressure = data[0];
-    message->fl_temperature = data[1];
-    message->fr_pressure = data[2];
-    message->fr_temperature = data[3];
-    message->rl_pressure = data[4];
-    message->rl_temperature = data[5];
-    message->rr_pressure = data[6];
+    message->fr_pressure = data[1];
+    message->rl_pressure = data[2];
+    message->rr_pressure = data[3];
+    message->fl_temperature = data[4];
+    message->fr_temperature = data[5];
+    message->rl_temperature = data[6];
     message->rr_temperature = data[7];
+}// ============== CONVERSION ============== //
+
+void secondary_raw_to_conversion_TPMS(
+    secondary_message_TPMS_conversion* conversion,
+    secondary_uint8 fl_pressure,
+    secondary_uint8 fr_pressure,
+    secondary_uint8 rl_pressure,
+    secondary_uint8 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_temperature
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->fl_pressure = (((secondary_float32)fl_pressure) / 10.0) + 0;
+    conversion->fr_pressure = (((secondary_float32)fr_pressure) / 10.0) + 0;
+    conversion->rl_pressure = (((secondary_float32)rl_pressure) / 10.0) + 0;
+    conversion->rr_pressure = (((secondary_float32)rr_pressure) / 10.0) + 0;
+    conversion->fl_temperature = fl_temperature;
+    conversion->fr_temperature = fr_temperature;
+    conversion->rl_temperature = rl_temperature;
+    conversion->rr_temperature = rr_temperature;
+}
+
+void secondary_raw_to_conversion_struct_TPMS(
+    secondary_message_TPMS_conversion* conversion,
+    secondary_message_TPMS* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->fl_pressure = (((secondary_float32)raw->fl_pressure) / 10.0) + 0;
+    conversion->fr_pressure = (((secondary_float32)raw->fr_pressure) / 10.0) + 0;
+    conversion->rl_pressure = (((secondary_float32)raw->rl_pressure) / 10.0) + 0;
+    conversion->rr_pressure = (((secondary_float32)raw->rr_pressure) / 10.0) + 0;
+    conversion->fl_temperature = raw->fl_temperature;
+    conversion->fr_temperature = raw->fr_temperature;
+    conversion->rl_temperature = raw->rl_temperature;
+    conversion->rr_temperature = raw->rr_temperature;
+}
+
+void secondary_conversion_to_raw_TPMS(
+    secondary_message_TPMS* raw,
+    secondary_float32 fl_pressure,
+    secondary_float32 fr_pressure,
+    secondary_float32 rl_pressure,
+    secondary_float32 rr_pressure,
+    secondary_uint8 fl_temperature,
+    secondary_uint8 fr_temperature,
+    secondary_uint8 rl_temperature,
+    secondary_uint8 rr_temperature
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->fl_pressure = (secondary_uint8)((fl_pressure + 0) * 10.0);
+    raw->fr_pressure = (secondary_uint8)((fr_pressure + 0) * 10.0);
+    raw->rl_pressure = (secondary_uint8)((rl_pressure + 0) * 10.0);
+    raw->rr_pressure = (secondary_uint8)((rr_pressure + 0) * 10.0);
+    raw->fl_temperature = fl_temperature;
+    raw->fr_temperature = fr_temperature;
+    raw->rl_temperature = rl_temperature;
+    raw->rr_temperature = rr_temperature;
+}
+
+void secondary_conversion_to_raw_struct_TPMS(
+    secondary_message_TPMS* raw,
+    secondary_message_TPMS_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->fl_pressure = (secondary_uint8)((conversion->fl_pressure + 0) * 10.0);
+    raw->fr_pressure = (secondary_uint8)((conversion->fr_pressure + 0) * 10.0);
+    raw->rl_pressure = (secondary_uint8)((conversion->rl_pressure + 0) * 10.0);
+    raw->rr_pressure = (secondary_uint8)((conversion->rr_pressure + 0) * 10.0);
+    raw->fl_temperature = conversion->fl_temperature;
+    raw->fr_temperature = conversion->fr_temperature;
+    raw->rl_temperature = conversion->rl_temperature;
+    raw->rr_temperature = conversion->rr_temperature;
 }
 
 // ============== STRING ============== //
-
-int secondary_to_string_TPMS(secondary_message_TPMS* message, char* buffer) {
+int secondary_to_string_TPMS(secondary_message_TPMS_conversion* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -6208,12 +6349,12 @@ int secondary_to_string_TPMS(secondary_message_TPMS* message, char* buffer) {
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->fl_pressure,
-        message->fl_temperature,
         message->fr_pressure,
-        message->fr_temperature,
         message->rl_pressure,
-        message->rl_temperature,
         message->rr_pressure,
+        message->fl_temperature,
+        message->fr_temperature,
+        message->rl_temperature,
         message->rr_temperature
     );
 }
@@ -6225,26 +6366,26 @@ int secondary_fields_TPMS(char* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "fl_pressure" CANLIB_SEPARATOR 
-        "fl_temperature" CANLIB_SEPARATOR 
         "fr_pressure" CANLIB_SEPARATOR 
-        "fr_temperature" CANLIB_SEPARATOR 
         "rl_pressure" CANLIB_SEPARATOR 
-        "rl_temperature" CANLIB_SEPARATOR 
         "rr_pressure" CANLIB_SEPARATOR 
+        "fl_temperature" CANLIB_SEPARATOR 
+        "fr_temperature" CANLIB_SEPARATOR 
+        "rl_temperature" CANLIB_SEPARATOR 
         "rr_temperature"
     );
 }
 
-int secondary_to_string_file_TPMS(secondary_message_TPMS* message, FILE* buffer) {
+int secondary_to_string_file_TPMS(secondary_message_TPMS_conversion* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8 CANLIB_SEPARATOR 
@@ -6253,12 +6394,12 @@ int secondary_to_string_file_TPMS(secondary_message_TPMS* message, FILE* buffer)
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
         message->fl_pressure,
-        message->fl_temperature,
         message->fr_pressure,
-        message->fr_temperature,
         message->rl_pressure,
-        message->rl_temperature,
         message->rr_pressure,
+        message->fl_temperature,
+        message->fr_temperature,
+        message->rl_temperature,
         message->rr_temperature
     );
 }
@@ -6270,12 +6411,12 @@ int secondary_fields_file_TPMS(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "fl_pressure" CANLIB_SEPARATOR 
-        "fl_temperature" CANLIB_SEPARATOR 
         "fr_pressure" CANLIB_SEPARATOR 
-        "fr_temperature" CANLIB_SEPARATOR 
         "rl_pressure" CANLIB_SEPARATOR 
-        "rl_temperature" CANLIB_SEPARATOR 
         "rr_pressure" CANLIB_SEPARATOR 
+        "fl_temperature" CANLIB_SEPARATOR 
+        "fr_temperature" CANLIB_SEPARATOR 
+        "rl_temperature" CANLIB_SEPARATOR 
         "rr_temperature"
     );
 }
@@ -6333,7 +6474,7 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return secondary_fields_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_STEERING_ANGLE(buffer);
-        case 1:
+        case 513:
             return secondary_fields_TPMS(buffer);
     }
     return 0;
@@ -6389,8 +6530,8 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
             return secondary_to_string_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
-        case 1:
-            return secondary_to_string_TPMS((secondary_message_TPMS*) message, buffer);
+        case 513:
+            return secondary_to_string_TPMS((secondary_message_TPMS_conversion*) message, buffer);
     }
     return 0;
 }
@@ -6445,7 +6586,7 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return secondary_fields_file_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_file_STEERING_ANGLE(buffer);
-        case 1:
+        case 513:
             return secondary_fields_file_TPMS(buffer);
     }
     return 0;
@@ -6501,8 +6642,8 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
             return secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
-        case 1:
-            return secondary_to_string_file_TPMS((secondary_message_TPMS*) message, buffer);
+        case 513:
+            return secondary_to_string_file_TPMS((secondary_message_TPMS_conversion*) message, buffer);
     }
     return 0;
 }
@@ -6837,7 +6978,7 @@ void* secondary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1: {
+        case 513: {
             secondary_deserialize_TPMS(
                 (secondary_message_TPMS*) message_raw,
                 data
@@ -6845,7 +6986,11 @@ void* secondary_deserialize_from_id(
                 , timestamp
                 #endif
             );
-            return message_raw;
+            secondary_raw_to_conversion_struct_TPMS(
+                (secondary_message_TPMS_conversion*) message_conversion,
+                (secondary_message_TPMS*) message_raw
+            );
+            return message_conversion;
         }
     }
     return NULL;
@@ -6925,9 +7070,9 @@ secondary_devices* secondary_devices_new() {
     (*devices)[secondary_INDEX_STEERING_ANGLE].id = 258;
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_raw = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_conversion = NULL;
-    (*devices)[secondary_INDEX_TPMS].id = 1;
+    (*devices)[secondary_INDEX_TPMS].id = 513;
     (*devices)[secondary_INDEX_TPMS].message_raw = (void*) malloc(sizeof(secondary_message_TPMS));
-    (*devices)[secondary_INDEX_TPMS].message_conversion = NULL;
+    (*devices)[secondary_INDEX_TPMS].message_conversion = (void*) malloc(sizeof(secondary_message_TPMS_conversion));
     return devices;
 }
 
@@ -6977,6 +7122,7 @@ void secondary_devices_free(secondary_devices* devices) {
     free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion);
     free((*devices)[secondary_INDEX_STEERING_ANGLE].message_raw);
     free((*devices)[secondary_INDEX_TPMS].message_raw);
+    free((*devices)[secondary_INDEX_TPMS].message_conversion);
     free(devices);
 }
 
@@ -7309,13 +7455,17 @@ void secondary_devices_deserialize_from_id(
             );
             return;
         }
-        case 1: {
+        case 513: {
             secondary_deserialize_TPMS(
                 (secondary_message_TPMS*) &(*devices)[secondary_INDEX_TPMS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            secondary_raw_to_conversion_struct_TPMS(
+                (secondary_message_TPMS_conversion*) &(*devices)[secondary_INDEX_TPMS].message_conversion,
+                (secondary_message_TPMS*) &(*devices)[secondary_INDEX_TPMS].message_raw
             );
             return;
         }

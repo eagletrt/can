@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1670601859
-CANLIB_BUILD_HASH = 0x5956942f
+CANLIB_BUILD_TIME = 1671558667
+CANLIB_BUILD_HASH = 0xfa21b89e
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1884,21 +1884,21 @@ class message_TPMS:
     def __init__(
         self,
         fl_pressure = None,
-        fl_temperature = None,
         fr_pressure = None,
-        fr_temperature = None,
         rl_pressure = None,
-        rl_temperature = None,
         rr_pressure = None,
+        fl_temperature = None,
+        fr_temperature = None,
+        rl_temperature = None,
         rr_temperature = None
     ):
         self.fl_pressure = uint8(fl_pressure)
-        self.fl_temperature = uint8(fl_temperature)
         self.fr_pressure = uint8(fr_pressure)
-        self.fr_temperature = uint8(fr_temperature)
         self.rl_pressure = uint8(rl_pressure)
-        self.rl_temperature = uint8(rl_temperature)
         self.rr_pressure = uint8(rr_pressure)
+        self.fl_temperature = uint8(fl_temperature)
+        self.fr_temperature = uint8(fr_temperature)
+        self.rl_temperature = uint8(rl_temperature)
         self.rr_temperature = uint8(rr_temperature)
         self.size = 8
 
@@ -1907,17 +1907,17 @@ class message_TPMS:
             return False
         if self.fl_pressure != other.fl_pressure:
             return False
-        if self.fl_temperature != other.fl_temperature:
-            return False
         if self.fr_pressure != other.fr_pressure:
-            return False
-        if self.fr_temperature != other.fr_temperature:
             return False
         if self.rl_pressure != other.rl_pressure:
             return False
-        if self.rl_temperature != other.rl_temperature:
-            return False
         if self.rr_pressure != other.rr_pressure:
+            return False
+        if self.fl_temperature != other.fl_temperature:
+            return False
+        if self.fr_temperature != other.fr_temperature:
+            return False
+        if self.rl_temperature != other.rl_temperature:
             return False
         if self.rr_temperature != other.rr_temperature:
             return False
@@ -1925,19 +1925,87 @@ class message_TPMS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBBBBB", self.fl_pressure, self.fl_temperature, self.fr_pressure, self.fr_temperature, self.rl_pressure, self.rl_temperature, self.rr_pressure, self.rr_temperature))
+        data.extend(pack("<BBBBBBBB", self.fl_pressure, self.fr_pressure, self.rl_pressure, self.rr_pressure, self.fl_temperature, self.fr_temperature, self.rl_temperature, self.rr_temperature))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.fl_pressure = uint8(unpack("<B", data[0:1])[0])
-        message.fl_temperature = uint8(unpack("<xB", data[0:2])[0])
-        message.fr_pressure = uint8(unpack("<xxB", data[0:3])[0])
-        message.fr_temperature = uint8(unpack("<xxxB", data[0:4])[0])
-        message.rl_pressure = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.rl_temperature = uint8(unpack("<xxxxxB", data[0:6])[0])
-        message.rr_pressure = uint8(unpack("<xxxxxxB", data[0:7])[0])
+        message.fr_pressure = uint8(unpack("<xB", data[0:2])[0])
+        message.rl_pressure = uint8(unpack("<xxB", data[0:3])[0])
+        message.rr_pressure = uint8(unpack("<xxxB", data[0:4])[0])
+        message.fl_temperature = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.fr_temperature = uint8(unpack("<xxxxxB", data[0:6])[0])
+        message.rl_temperature = uint8(unpack("<xxxxxxB", data[0:7])[0])
         message.rr_temperature = uint8(unpack("<xxxxxxxB", data[0:8])[0])
         return message
 
+
+    def convert(self) -> message_TPMS_conversion:
+        conversion = message_TPMS_conversion()
+        conversion.fl_pressure = ((float32(self.fl_pressure)) / 10.0) + 0
+        conversion.fr_pressure = ((float32(self.fr_pressure)) / 10.0) + 0
+        conversion.rl_pressure = ((float32(self.rl_pressure)) / 10.0) + 0
+        conversion.rr_pressure = ((float32(self.rr_pressure)) / 10.0) + 0
+        conversion.fl_temperature = self.fl_temperature
+        conversion.fr_temperature = self.fr_temperature
+        conversion.rl_temperature = self.rl_temperature
+        conversion.rr_temperature = self.rr_temperature
+        return conversion
+
+
+class message_TPMS_conversion:
+    def __init__(
+        self,
+        fl_pressure = None,
+        fr_pressure = None,
+        rl_pressure = None,
+        rr_pressure = None,
+        fl_temperature = None,
+        fr_temperature = None,
+        rl_temperature = None,
+        rr_temperature = None
+    ):
+        self.fl_pressure = float32(fl_pressure)
+        self.fr_pressure = float32(fr_pressure)
+        self.rl_pressure = float32(rl_pressure)
+        self.rr_pressure = float32(rr_pressure)
+        self.fl_temperature = uint8(fl_temperature)
+        self.fr_temperature = uint8(fr_temperature)
+        self.rl_temperature = uint8(rl_temperature)
+        self.rr_temperature = uint8(rr_temperature)
+        self.size = 8
+
+    def __eq__(self, other):
+        if not isinstance(other, message_TPMS):
+            return False
+        if self.fl_pressure != other.fl_pressure:
+            return False
+        if self.fr_pressure != other.fr_pressure:
+            return False
+        if self.rl_pressure != other.rl_pressure:
+            return False
+        if self.rr_pressure != other.rr_pressure:
+            return False
+        if self.fl_temperature != other.fl_temperature:
+            return False
+        if self.fr_temperature != other.fr_temperature:
+            return False
+        if self.rl_temperature != other.rl_temperature:
+            return False
+        if self.rr_temperature != other.rr_temperature:
+            return False
+        return True
+
+    def convert_to_raw(self) -> message_TPMS:
+        raw = message_TPMS()
+        raw.fl_pressure = uint8((self.fl_pressure + 0) * 10.0)
+        raw.fr_pressure = uint8((self.fr_pressure + 0) * 10.0)
+        raw.rl_pressure = uint8((self.rl_pressure + 0) * 10.0)
+        raw.rr_pressure = uint8((self.rr_pressure + 0) * 10.0)
+        raw.fl_temperature = self.fl_temperature
+        raw.fr_temperature = self.fr_temperature
+        raw.rl_temperature = self.rl_temperature
+        raw.rr_temperature = self.rr_temperature
+        return raw

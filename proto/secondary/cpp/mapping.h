@@ -290,7 +290,7 @@ typedef struct {
     canlib_circular_buffer<secondary_message_PEDALS_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> PEDALS_OUTPUT;
     canlib_circular_buffer<secondary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_OUTPUT;
     canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE> STEERING_ANGLE;
-    canlib_circular_buffer<secondary_message_TPMS, CANLIB_CIRCULAR_BUFFER_SIZE> TPMS;
+    canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> TPMS;
 } secondary_proto_pack;
 
 void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mapping_adaptor& mapping_map);
@@ -638,23 +638,23 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["STEERING_ANGLE"].field["_timestamp"].value._uint64 = &pack.STEERING_ANGLE.start()._timestamp;
     mapping_map["STEERING_ANGLE"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["TPMS"].size = std::bind(&canlib_circular_buffer<secondary_message_TPMS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TPMS);
-    mapping_map["TPMS"].offset = std::bind(&canlib_circular_buffer<secondary_message_TPMS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TPMS);
-    mapping_map["TPMS"].stride = sizeof(secondary_message_TPMS);
-    mapping_map["TPMS"].field["fl_pressure"].value._uint8 = &pack.TPMS.start().fl_pressure;
-    mapping_map["TPMS"].field["fl_pressure"].type = mapping_type_uint8;
+    mapping_map["TPMS"].size = std::bind(&canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TPMS);
+    mapping_map["TPMS"].offset = std::bind(&canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TPMS);
+    mapping_map["TPMS"].stride = sizeof(secondary_message_TPMS_conversion);
+    mapping_map["TPMS"].field["fl_pressure"].value._float32 = &pack.TPMS.start().fl_pressure;
+    mapping_map["TPMS"].field["fl_pressure"].type = mapping_type_float32;
+    mapping_map["TPMS"].field["fr_pressure"].value._float32 = &pack.TPMS.start().fr_pressure;
+    mapping_map["TPMS"].field["fr_pressure"].type = mapping_type_float32;
+    mapping_map["TPMS"].field["rl_pressure"].value._float32 = &pack.TPMS.start().rl_pressure;
+    mapping_map["TPMS"].field["rl_pressure"].type = mapping_type_float32;
+    mapping_map["TPMS"].field["rr_pressure"].value._float32 = &pack.TPMS.start().rr_pressure;
+    mapping_map["TPMS"].field["rr_pressure"].type = mapping_type_float32;
     mapping_map["TPMS"].field["fl_temperature"].value._uint8 = &pack.TPMS.start().fl_temperature;
     mapping_map["TPMS"].field["fl_temperature"].type = mapping_type_uint8;
-    mapping_map["TPMS"].field["fr_pressure"].value._uint8 = &pack.TPMS.start().fr_pressure;
-    mapping_map["TPMS"].field["fr_pressure"].type = mapping_type_uint8;
     mapping_map["TPMS"].field["fr_temperature"].value._uint8 = &pack.TPMS.start().fr_temperature;
     mapping_map["TPMS"].field["fr_temperature"].type = mapping_type_uint8;
-    mapping_map["TPMS"].field["rl_pressure"].value._uint8 = &pack.TPMS.start().rl_pressure;
-    mapping_map["TPMS"].field["rl_pressure"].type = mapping_type_uint8;
     mapping_map["TPMS"].field["rl_temperature"].value._uint8 = &pack.TPMS.start().rl_temperature;
     mapping_map["TPMS"].field["rl_temperature"].type = mapping_type_uint8;
-    mapping_map["TPMS"].field["rr_pressure"].value._uint8 = &pack.TPMS.start().rr_pressure;
-    mapping_map["TPMS"].field["rr_pressure"].type = mapping_type_uint8;
     mapping_map["TPMS"].field["rr_temperature"].value._uint8 = &pack.TPMS.start().rr_temperature;
     mapping_map["TPMS"].field["rr_temperature"].type = mapping_type_uint8;
 #ifdef CANLIB_TIMESTAMP
@@ -970,16 +970,16 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             break;
         }
 
-        case 1: {
-            secondary_message_TPMS* msg = (secondary_message_TPMS*) (*map)[index].message_raw;
+        case 513: {
+            secondary_message_TPMS_conversion* msg = (secondary_message_TPMS_conversion*) (*map)[index].message_conversion;
             secondary::TPMS* proto_msg = pack->add_tpms();
             proto_msg->set_fl_pressure(msg->fl_pressure);
-            proto_msg->set_fl_temperature(msg->fl_temperature);
             proto_msg->set_fr_pressure(msg->fr_pressure);
-            proto_msg->set_fr_temperature(msg->fr_temperature);
             proto_msg->set_rl_pressure(msg->rl_pressure);
-            proto_msg->set_rl_temperature(msg->rl_temperature);
             proto_msg->set_rr_pressure(msg->rr_pressure);
+            proto_msg->set_fl_temperature(msg->fl_temperature);
+            proto_msg->set_fr_temperature(msg->fr_temperature);
+            proto_msg->set_rl_temperature(msg->rl_temperature);
             proto_msg->set_rr_temperature(msg->rr_temperature);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1365,7 +1365,7 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         map->STEERING_ANGLE.push(instance);
     }
     for(int i = 0; i < pack->tpms_size(); i++){
-        static secondary_message_TPMS instance;
+        static secondary_message_TPMS_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->tpms(i)._inner_timestamp();
@@ -1375,12 +1375,12 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         instance.fl_pressure =pack->tpms(i).fl_pressure();
-        instance.fl_temperature =pack->tpms(i).fl_temperature();
         instance.fr_pressure =pack->tpms(i).fr_pressure();
-        instance.fr_temperature =pack->tpms(i).fr_temperature();
         instance.rl_pressure =pack->tpms(i).rl_pressure();
-        instance.rl_temperature =pack->tpms(i).rl_temperature();
         instance.rr_pressure =pack->tpms(i).rr_pressure();
+        instance.fl_temperature =pack->tpms(i).fl_temperature();
+        instance.fr_temperature =pack->tpms(i).fr_temperature();
+        instance.rl_temperature =pack->tpms(i).rl_temperature();
         instance.rr_temperature =pack->tpms(i).rr_temperature();
         map->TPMS.push(instance);
     }

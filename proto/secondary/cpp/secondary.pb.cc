@@ -774,12 +774,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_secondary_2eproto::offsets[] P
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fl_pressure_),
-  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fl_temperature_),
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fr_pressure_),
-  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fr_temperature_),
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, rl_pressure_),
-  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, rl_temperature_),
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, rr_pressure_),
+  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fl_temperature_),
+  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, fr_temperature_),
+  PROTOBUF_FIELD_OFFSET(::secondary::TPMS, rl_temperature_),
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, rr_temperature_),
   PROTOBUF_FIELD_OFFSET(::secondary::TPMS, _inner_timestamp_),
   ~0u,  // no _has_bits_
@@ -936,10 +936,10 @@ const char descriptor_table_protodef_secondary_2eproto[] PROTOBUF_SECTION_VARIAB
   "torque_l\030\004 \001(\002\022\020\n\010torque_r\030\005 \001(\002\022\030\n\020_inn"
   "er_timestamp\030\006 \001(\004\"9\n\016STEERING_ANGLE\022\r\n\005"
   "angle\030\001 \001(\002\022\030\n\020_inner_timestamp\030\002 \001(\004\"\324\001"
-  "\n\004TPMS\022\023\n\013fl_pressure\030\001 \001(\r\022\026\n\016fl_temper"
-  "ature\030\002 \001(\r\022\023\n\013fr_pressure\030\003 \001(\r\022\026\n\016fr_t"
-  "emperature\030\004 \001(\r\022\023\n\013rl_pressure\030\005 \001(\r\022\026\n"
-  "\016rl_temperature\030\006 \001(\r\022\023\n\013rr_pressure\030\007 \001"
+  "\n\004TPMS\022\023\n\013fl_pressure\030\001 \001(\002\022\023\n\013fr_pressu"
+  "re\030\002 \001(\002\022\023\n\013rl_pressure\030\003 \001(\002\022\023\n\013rr_pres"
+  "sure\030\004 \001(\002\022\026\n\016fl_temperature\030\005 \001(\r\022\026\n\016fr"
+  "_temperature\030\006 \001(\r\022\026\n\016rl_temperature\030\007 \001"
   "(\r\022\026\n\016rr_temperature\030\010 \001(\r\022\030\n\020_inner_tim"
   "estamp\030\t \001(\004\"\267\010\n\004Pack\0225\n\020IMU_ANGULAR_RAT"
   "E\030\001 \003(\0132\033.secondary.IMU_ANGULAR_RATE\0225\n\020"
@@ -7873,52 +7873,52 @@ const char* TPMS::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 fl_pressure = 1;
+      // float fl_pressure = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          fl_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          fl_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // uint32 fl_temperature = 2;
+      // float fr_pressure = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          fr_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float rl_pressure = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          rl_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float rr_pressure = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          rr_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // uint32 fl_temperature = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           fl_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 fr_pressure = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          fr_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 fr_temperature = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // uint32 fr_temperature = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           fr_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 rl_pressure = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          rl_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 rl_temperature = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          rl_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 rr_pressure = 7;
+      // uint32 rl_temperature = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          rr_pressure_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          rl_temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7964,46 +7964,46 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 fl_pressure = 1;
-  if (this->fl_pressure() != 0) {
+  // float fl_pressure = 1;
+  if (!(this->fl_pressure() <= 0 && this->fl_pressure() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_fl_pressure(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_fl_pressure(), target);
   }
 
-  // uint32 fl_temperature = 2;
+  // float fr_pressure = 2;
+  if (!(this->fr_pressure() <= 0 && this->fr_pressure() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_fr_pressure(), target);
+  }
+
+  // float rl_pressure = 3;
+  if (!(this->rl_pressure() <= 0 && this->rl_pressure() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_rl_pressure(), target);
+  }
+
+  // float rr_pressure = 4;
+  if (!(this->rr_pressure() <= 0 && this->rr_pressure() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_rr_pressure(), target);
+  }
+
+  // uint32 fl_temperature = 5;
   if (this->fl_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fl_temperature(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_fl_temperature(), target);
   }
 
-  // uint32 fr_pressure = 3;
-  if (this->fr_pressure() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_fr_pressure(), target);
-  }
-
-  // uint32 fr_temperature = 4;
+  // uint32 fr_temperature = 6;
   if (this->fr_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_fr_temperature(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_fr_temperature(), target);
   }
 
-  // uint32 rl_pressure = 5;
-  if (this->rl_pressure() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_rl_pressure(), target);
-  }
-
-  // uint32 rl_temperature = 6;
+  // uint32 rl_temperature = 7;
   if (this->rl_temperature() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_rl_temperature(), target);
-  }
-
-  // uint32 rr_pressure = 7;
-  if (this->rr_pressure() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_rr_pressure(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_rl_temperature(), target);
   }
 
   // uint32 rr_temperature = 8;
@@ -8034,53 +8034,45 @@ size_t TPMS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 fl_pressure = 1;
-  if (this->fl_pressure() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_fl_pressure());
+  // float fl_pressure = 1;
+  if (!(this->fl_pressure() <= 0 && this->fl_pressure() >= 0)) {
+    total_size += 1 + 4;
   }
 
-  // uint32 fl_temperature = 2;
+  // float fr_pressure = 2;
+  if (!(this->fr_pressure() <= 0 && this->fr_pressure() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float rl_pressure = 3;
+  if (!(this->rl_pressure() <= 0 && this->rl_pressure() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float rr_pressure = 4;
+  if (!(this->rr_pressure() <= 0 && this->rr_pressure() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // uint32 fl_temperature = 5;
   if (this->fl_temperature() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_fl_temperature());
   }
 
-  // uint32 fr_pressure = 3;
-  if (this->fr_pressure() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_fr_pressure());
-  }
-
-  // uint32 fr_temperature = 4;
+  // uint32 fr_temperature = 6;
   if (this->fr_temperature() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_fr_temperature());
   }
 
-  // uint32 rl_pressure = 5;
-  if (this->rl_pressure() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_rl_pressure());
-  }
-
-  // uint32 rl_temperature = 6;
+  // uint32 rl_temperature = 7;
   if (this->rl_temperature() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_rl_temperature());
-  }
-
-  // uint32 rr_pressure = 7;
-  if (this->rr_pressure() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_rr_pressure());
   }
 
   // uint32 rr_temperature = 8;
@@ -8128,26 +8120,26 @@ void TPMS::MergeFrom(const TPMS& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.fl_pressure() != 0) {
+  if (!(from.fl_pressure() <= 0 && from.fl_pressure() >= 0)) {
     _internal_set_fl_pressure(from._internal_fl_pressure());
+  }
+  if (!(from.fr_pressure() <= 0 && from.fr_pressure() >= 0)) {
+    _internal_set_fr_pressure(from._internal_fr_pressure());
+  }
+  if (!(from.rl_pressure() <= 0 && from.rl_pressure() >= 0)) {
+    _internal_set_rl_pressure(from._internal_rl_pressure());
+  }
+  if (!(from.rr_pressure() <= 0 && from.rr_pressure() >= 0)) {
+    _internal_set_rr_pressure(from._internal_rr_pressure());
   }
   if (from.fl_temperature() != 0) {
     _internal_set_fl_temperature(from._internal_fl_temperature());
   }
-  if (from.fr_pressure() != 0) {
-    _internal_set_fr_pressure(from._internal_fr_pressure());
-  }
   if (from.fr_temperature() != 0) {
     _internal_set_fr_temperature(from._internal_fr_temperature());
   }
-  if (from.rl_pressure() != 0) {
-    _internal_set_rl_pressure(from._internal_rl_pressure());
-  }
   if (from.rl_temperature() != 0) {
     _internal_set_rl_temperature(from._internal_rl_temperature());
-  }
-  if (from.rr_pressure() != 0) {
-    _internal_set_rr_pressure(from._internal_rr_pressure());
   }
   if (from.rr_temperature() != 0) {
     _internal_set_rr_temperature(from._internal_rr_temperature());

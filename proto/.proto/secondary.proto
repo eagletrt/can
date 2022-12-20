@@ -184,13 +184,13 @@ message STEERING_ANGLE {
 }
 
 message TPMS {
-    uint32 fl_pressure = 1;
-    uint32 fl_temperature = 2;
-    uint32 fr_pressure = 3;
-    uint32 fr_temperature = 4;
-    uint32 rl_pressure = 5;
-    uint32 rl_temperature = 6;
-    uint32 rr_pressure = 7;
+    float fl_pressure = 1;
+    float fr_pressure = 2;
+    float rl_pressure = 3;
+    float rr_pressure = 4;
+    uint32 fl_temperature = 5;
+    uint32 fr_temperature = 6;
+    uint32 rl_temperature = 7;
     uint32 rr_temperature = 8;
     uint64 _inner_timestamp = 9;
 }

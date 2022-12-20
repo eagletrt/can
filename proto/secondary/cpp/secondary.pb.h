@@ -4503,25 +4503,52 @@ class TPMS PROTOBUF_FINAL :
 
   enum : int {
     kFlPressureFieldNumber = 1,
-    kFlTemperatureFieldNumber = 2,
-    kFrPressureFieldNumber = 3,
-    kFrTemperatureFieldNumber = 4,
-    kRlPressureFieldNumber = 5,
-    kRlTemperatureFieldNumber = 6,
-    kRrPressureFieldNumber = 7,
+    kFrPressureFieldNumber = 2,
+    kRlPressureFieldNumber = 3,
+    kRrPressureFieldNumber = 4,
+    kFlTemperatureFieldNumber = 5,
+    kFrTemperatureFieldNumber = 6,
+    kRlTemperatureFieldNumber = 7,
     kRrTemperatureFieldNumber = 8,
     kInnerTimestampFieldNumber = 9,
   };
-  // uint32 fl_pressure = 1;
+  // float fl_pressure = 1;
   void clear_fl_pressure();
-  ::PROTOBUF_NAMESPACE_ID::uint32 fl_pressure() const;
-  void set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float fl_pressure() const;
+  void set_fl_pressure(float value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fl_pressure() const;
-  void _internal_set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  float _internal_fl_pressure() const;
+  void _internal_set_fl_pressure(float value);
   public:
 
-  // uint32 fl_temperature = 2;
+  // float fr_pressure = 2;
+  void clear_fr_pressure();
+  float fr_pressure() const;
+  void set_fr_pressure(float value);
+  private:
+  float _internal_fr_pressure() const;
+  void _internal_set_fr_pressure(float value);
+  public:
+
+  // float rl_pressure = 3;
+  void clear_rl_pressure();
+  float rl_pressure() const;
+  void set_rl_pressure(float value);
+  private:
+  float _internal_rl_pressure() const;
+  void _internal_set_rl_pressure(float value);
+  public:
+
+  // float rr_pressure = 4;
+  void clear_rr_pressure();
+  float rr_pressure() const;
+  void set_rr_pressure(float value);
+  private:
+  float _internal_rr_pressure() const;
+  void _internal_set_rr_pressure(float value);
+  public:
+
+  // uint32 fl_temperature = 5;
   void clear_fl_temperature();
   ::PROTOBUF_NAMESPACE_ID::uint32 fl_temperature() const;
   void set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -4530,16 +4557,7 @@ class TPMS PROTOBUF_FINAL :
   void _internal_set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 fr_pressure = 3;
-  void clear_fr_pressure();
-  ::PROTOBUF_NAMESPACE_ID::uint32 fr_pressure() const;
-  void set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_fr_pressure() const;
-  void _internal_set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 fr_temperature = 4;
+  // uint32 fr_temperature = 6;
   void clear_fr_temperature();
   ::PROTOBUF_NAMESPACE_ID::uint32 fr_temperature() const;
   void set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -4548,31 +4566,13 @@ class TPMS PROTOBUF_FINAL :
   void _internal_set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 rl_pressure = 5;
-  void clear_rl_pressure();
-  ::PROTOBUF_NAMESPACE_ID::uint32 rl_pressure() const;
-  void set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rl_pressure() const;
-  void _internal_set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 rl_temperature = 6;
+  // uint32 rl_temperature = 7;
   void clear_rl_temperature();
   ::PROTOBUF_NAMESPACE_ID::uint32 rl_temperature() const;
   void set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rl_temperature() const;
   void _internal_set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint32 rr_pressure = 7;
-  void clear_rr_pressure();
-  ::PROTOBUF_NAMESPACE_ID::uint32 rr_pressure() const;
-  void set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_rr_pressure() const;
-  void _internal_set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // uint32 rr_temperature = 8;
@@ -4600,13 +4600,13 @@ class TPMS PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 fl_pressure_;
+  float fl_pressure_;
+  float fr_pressure_;
+  float rl_pressure_;
+  float rr_pressure_;
   ::PROTOBUF_NAMESPACE_ID::uint32 fl_temperature_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 fr_pressure_;
   ::PROTOBUF_NAMESPACE_ID::uint32 fr_temperature_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 rl_pressure_;
   ::PROTOBUF_NAMESPACE_ID::uint32 rl_temperature_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 rr_pressure_;
   ::PROTOBUF_NAMESPACE_ID::uint32 rr_temperature_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7525,27 +7525,87 @@ inline void STEERING_ANGLE::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64
 
 // TPMS
 
-// uint32 fl_pressure = 1;
+// float fl_pressure = 1;
 inline void TPMS::clear_fl_pressure() {
-  fl_pressure_ = 0u;
+  fl_pressure_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fl_pressure() const {
+inline float TPMS::_internal_fl_pressure() const {
   return fl_pressure_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fl_pressure() const {
+inline float TPMS::fl_pressure() const {
   // @@protoc_insertion_point(field_get:secondary.TPMS.fl_pressure)
   return _internal_fl_pressure();
 }
-inline void TPMS::_internal_set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TPMS::_internal_set_fl_pressure(float value) {
   
   fl_pressure_ = value;
 }
-inline void TPMS::set_fl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TPMS::set_fl_pressure(float value) {
   _internal_set_fl_pressure(value);
   // @@protoc_insertion_point(field_set:secondary.TPMS.fl_pressure)
 }
 
-// uint32 fl_temperature = 2;
+// float fr_pressure = 2;
+inline void TPMS::clear_fr_pressure() {
+  fr_pressure_ = 0;
+}
+inline float TPMS::_internal_fr_pressure() const {
+  return fr_pressure_;
+}
+inline float TPMS::fr_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.fr_pressure)
+  return _internal_fr_pressure();
+}
+inline void TPMS::_internal_set_fr_pressure(float value) {
+  
+  fr_pressure_ = value;
+}
+inline void TPMS::set_fr_pressure(float value) {
+  _internal_set_fr_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.fr_pressure)
+}
+
+// float rl_pressure = 3;
+inline void TPMS::clear_rl_pressure() {
+  rl_pressure_ = 0;
+}
+inline float TPMS::_internal_rl_pressure() const {
+  return rl_pressure_;
+}
+inline float TPMS::rl_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rl_pressure)
+  return _internal_rl_pressure();
+}
+inline void TPMS::_internal_set_rl_pressure(float value) {
+  
+  rl_pressure_ = value;
+}
+inline void TPMS::set_rl_pressure(float value) {
+  _internal_set_rl_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rl_pressure)
+}
+
+// float rr_pressure = 4;
+inline void TPMS::clear_rr_pressure() {
+  rr_pressure_ = 0;
+}
+inline float TPMS::_internal_rr_pressure() const {
+  return rr_pressure_;
+}
+inline float TPMS::rr_pressure() const {
+  // @@protoc_insertion_point(field_get:secondary.TPMS.rr_pressure)
+  return _internal_rr_pressure();
+}
+inline void TPMS::_internal_set_rr_pressure(float value) {
+  
+  rr_pressure_ = value;
+}
+inline void TPMS::set_rr_pressure(float value) {
+  _internal_set_rr_pressure(value);
+  // @@protoc_insertion_point(field_set:secondary.TPMS.rr_pressure)
+}
+
+// uint32 fl_temperature = 5;
 inline void TPMS::clear_fl_temperature() {
   fl_temperature_ = 0u;
 }
@@ -7565,27 +7625,7 @@ inline void TPMS::set_fl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:secondary.TPMS.fl_temperature)
 }
 
-// uint32 fr_pressure = 3;
-inline void TPMS::clear_fr_pressure() {
-  fr_pressure_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_fr_pressure() const {
-  return fr_pressure_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::fr_pressure() const {
-  // @@protoc_insertion_point(field_get:secondary.TPMS.fr_pressure)
-  return _internal_fr_pressure();
-}
-inline void TPMS::_internal_set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  fr_pressure_ = value;
-}
-inline void TPMS::set_fr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_fr_pressure(value);
-  // @@protoc_insertion_point(field_set:secondary.TPMS.fr_pressure)
-}
-
-// uint32 fr_temperature = 4;
+// uint32 fr_temperature = 6;
 inline void TPMS::clear_fr_temperature() {
   fr_temperature_ = 0u;
 }
@@ -7605,27 +7645,7 @@ inline void TPMS::set_fr_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:secondary.TPMS.fr_temperature)
 }
 
-// uint32 rl_pressure = 5;
-inline void TPMS::clear_rl_pressure() {
-  rl_pressure_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rl_pressure() const {
-  return rl_pressure_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rl_pressure() const {
-  // @@protoc_insertion_point(field_get:secondary.TPMS.rl_pressure)
-  return _internal_rl_pressure();
-}
-inline void TPMS::_internal_set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  rl_pressure_ = value;
-}
-inline void TPMS::set_rl_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_rl_pressure(value);
-  // @@protoc_insertion_point(field_set:secondary.TPMS.rl_pressure)
-}
-
-// uint32 rl_temperature = 6;
+// uint32 rl_temperature = 7;
 inline void TPMS::clear_rl_temperature() {
   rl_temperature_ = 0u;
 }
@@ -7643,26 +7663,6 @@ inline void TPMS::_internal_set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 v
 inline void TPMS::set_rl_temperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_rl_temperature(value);
   // @@protoc_insertion_point(field_set:secondary.TPMS.rl_temperature)
-}
-
-// uint32 rr_pressure = 7;
-inline void TPMS::clear_rr_pressure() {
-  rr_pressure_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::_internal_rr_pressure() const {
-  return rr_pressure_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TPMS::rr_pressure() const {
-  // @@protoc_insertion_point(field_get:secondary.TPMS.rr_pressure)
-  return _internal_rr_pressure();
-}
-inline void TPMS::_internal_set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  rr_pressure_ = value;
-}
-inline void TPMS::set_rr_pressure(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_rr_pressure(value);
-  // @@protoc_insertion_point(field_set:secondary.TPMS.rr_pressure)
 }
 
 // uint32 rr_temperature = 8;
