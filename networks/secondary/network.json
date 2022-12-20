@@ -647,18 +647,34 @@
     {
       "name": "TPMS",
       "topic": "STEER",
-      "priority": 7,
+      "priority": 5,
       "sending": ["TELEMETRY"],
       "receiving": ["STEER"],
       "description": "Tire Pressure Monitoring System, pressure and temperature of each tire",
       "contents": {
-        "fl_pressure": "uint8",
+        "fl_pressure": {
+          "type": "float32",
+          "range": [0, 3],
+          "precision": 0.1
+        },
+        "fr_pressure": {
+          "type": "float32",
+          "range": [0, 3],
+          "precision": 0.1
+        },
+        "rl_pressure": {
+          "type": "float32",
+          "range": [0, 3],
+          "precision": 0.1
+        },
+        "rr_pressure": {
+          "type": "float32",
+          "range": [0, 3],
+          "precision": 0.1
+        },
         "fl_temperature": "uint8",
-        "fr_pressure": "uint8",
         "fr_temperature": "uint8",
-        "rl_pressure": "uint8",
         "rl_temperature": "uint8",
-        "rr_pressure": "uint8",
         "rr_temperature": "uint8"
       }
     }
