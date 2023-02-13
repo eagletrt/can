@@ -1,5 +1,5 @@
-#ifndef primary_MAPPING_H
-#define primary_MAPPING_H
+#ifndef primary_PROTO_INTERFACE_H
+#define primary_PROTO_INTERFACE_H
 
 #include <string>
 #include <unordered_map>
@@ -210,8 +210,8 @@ size_t inline canlib_circular_buffer<T, S, IT>::offset() const {
 #endif // CANLIB_CIRCULAR_BUFFER_SIZE
 
 
-#ifndef CANLIB_MAPPING_ADAPTOR
-#define CANLIB_MAPPING_ADAPTOR
+#ifndef CANLIB_PROTO_INTERFACE_TYPES
+#define CANLIB_PROTO_INTERFACE_TYPES
 
 /**
 *  Use network_<> to get all the values from the protobuffer.
@@ -227,27 +227,27 @@ typedef canlib_circular_buffer<std::string, CANLIB_CIRCULAR_BUFFER_SIZE> string_
 
 // structure contains all the messages with a enum value associated
 // the type is unified to uint64_t
-typedef std::unordered_map<field_name, uint64_buffer> message_enums;
+typedef std::unordered_map<field_name,    uint64_buffer> message_enums;
 typedef std::unordered_map<messages_name, message_enums> network_enums;
 
 // structure contains all the messages with a signal associated
 // the type is unified to double
-typedef std::unordered_map<field_name, double_buffer> message_signals;
+typedef std::unordered_map<field_name,    double_buffer>   message_signals;
 typedef std::unordered_map<messages_name, message_signals> network_signals;
 
 // structure contains all the messages with a string associated
 // the type is unified to string
-typedef std::unordered_map<field_name, string_buffer> message_strings;
+typedef std::unordered_map<field_name,    string_buffer>   message_strings;
 typedef std::unordered_map<messages_name, message_strings> network_strings;
 
-#endif // CANLIB_MAPPING_ADAPTOR
+#endif // CANLIB_PROTO_INTERFACE_TYPES
 
-void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
-void primary_proto_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
+void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
+void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
 
 #ifdef primary_PROTO_INTERAFCE_IMPLEMENTATION
 
-void primary_proto_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
+void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
   char buffer[1024];
     for(int i = 0; i < pack->bms_hv_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
@@ -1162,7 +1162,7 @@ void primary_proto_deserialize(primary::Pack* pack, network_enums* net_enums, ne
     }
 }
 
-void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
+void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
     int index = primary_index_from_id(id);
 
     if (index == -1) return;
@@ -1843,4 +1843,4 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
 
 #endif // primary_PROTO_INTERAFCE_IMPLEMENTATION
 
-#endif // primary_MAPPING_H
+#endif // primary_PROTO_INTERFACE_H
