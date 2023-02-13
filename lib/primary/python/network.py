@@ -4,7 +4,7 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1671558667
+CANLIB_BUILD_TIME = 1676301514
 CANLIB_BUILD_HASH = 0xfa21b89e
 
 def int8(value: Any) -> Optional[int]:
