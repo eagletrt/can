@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1676322070
-#define CANLIB_BUILD_HASH 0xfa21b89e
+#define CANLIB_BUILD_TIME 1678808551
+#define CANLIB_BUILD_HASH 0xb40caf16
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define secondary_MESSAGE_COUNT 25
+#define secondary_MESSAGE_COUNT 26
 
 // Custom types
 
@@ -193,6 +193,7 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_INDEX_CONTROL_OUTPUT 22
 #define secondary_INDEX_STEERING_ANGLE 23
 #define secondary_INDEX_TPMS 24
+#define secondary_INDEX_LC_STATUS 25
 
 // ============== SIZES ============== //
 
@@ -222,6 +223,7 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_SIZE_CONTROL_OUTPUT 8
 #define secondary_SIZE_STEERING_ANGLE 4
 #define secondary_SIZE_TPMS 8
+#define secondary_SIZE_LC_STATUS 5
 
 // ============== BIT SETS =========== //
 
@@ -690,6 +692,14 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } secondary_message_TPMS_conversion;
 
+typedef struct CANLIB_PARKING {
+    secondary_uint32 last_time;
+    secondary_uint8 lap_number;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_LC_STATUS;
+
 
 typedef union CANLIB_PARKING {
     secondary_message_IMU_ANGULAR_RATE _IMU_ANGULAR_RATE;
@@ -717,6 +727,7 @@ typedef union CANLIB_PARKING {
     secondary_message_CONTROL_OUTPUT _CONTROL_OUTPUT;
     secondary_message_STEERING_ANGLE _STEERING_ANGLE;
     secondary_message_TPMS _TPMS;
+    secondary_message_LC_STATUS _LC_STATUS;
 } _secondary_all_structs_raw;
 
 typedef union CANLIB_PARKING {
@@ -2053,6 +2064,30 @@ int secondary_to_string_file_TPMS(secondary_message_TPMS_conversion* message, FI
 int secondary_fields_file_TPMS(FILE* buffer);
 
 
+// ============== LC_STATUS ============== //
+
+secondary_byte_size secondary_serialize_LC_STATUS(
+    uint8_t* data,
+    secondary_uint32 last_time,
+    secondary_uint8 lap_number
+);
+secondary_byte_size secondary_serialize_struct_LC_STATUS(
+    uint8_t* data,
+    secondary_message_LC_STATUS* message
+);
+void secondary_deserialize_LC_STATUS(
+    secondary_message_LC_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_LC_STATUS(secondary_message_LC_STATUS* message, char* buffer);
+int secondary_fields_LC_STATUS(char* buffer);
+int secondary_to_string_file_LC_STATUS(secondary_message_LC_STATUS* message, FILE* buffer);
+int secondary_fields_file_LC_STATUS(FILE* buffer);
+
+
 
 // ============== UTILS ============== //
 
@@ -2083,6 +2118,7 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
         case 513: return secondary_INDEX_TPMS;
+        case 771: return secondary_INDEX_LC_STATUS;
     }
     return -1; // invalid
 }
@@ -2114,6 +2150,7 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_CONTROL_OUTPUT: return 801;
         case secondary_INDEX_STEERING_ANGLE: return 258;
         case secondary_INDEX_TPMS: return 513;
+        case secondary_INDEX_LC_STATUS: return 771;
     }
     return -1; // invalid
 }
@@ -6421,6 +6458,105 @@ int secondary_fields_file_TPMS(FILE* buffer) {
     );
 }
 
+// ============== SERIALIZE ============== //
+
+secondary_byte_size secondary_serialize_LC_STATUS(
+    uint8_t* data,
+    secondary_uint32 last_time,
+    secondary_uint8 lap_number
+) {
+    data[0] = last_time & 255;
+    data[1] = (last_time >> 8) & 255;
+    data[2] = (last_time >> 16) & 255;
+    data[3] = (last_time >> 24) & 255;
+    data[4] = lap_number;
+    return 5;
+}
+
+secondary_byte_size secondary_serialize_struct_LC_STATUS(
+    uint8_t* data,
+    secondary_message_LC_STATUS* message
+) {
+    data[0] = message->last_time & 255;
+    data[1] = (message->last_time >> 8) & 255;
+    data[2] = (message->last_time >> 16) & 255;
+    data[3] = (message->last_time >> 24) & 255;
+    data[4] = message->lap_number;
+    return 5;
+}
+
+// ============== DESERIALIZE ============== //
+
+void secondary_deserialize_LC_STATUS(
+    secondary_message_LC_STATUS* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->last_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
+    message->lap_number = data[4];
+}
+
+// ============== STRING ============== //
+
+int secondary_to_string_LC_STATUS(secondary_message_LC_STATUS* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->last_time,
+        message->lap_number
+    );
+}
+
+int secondary_fields_LC_STATUS(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "last_time" CANLIB_SEPARATOR 
+        "lap_number"
+    );
+}
+
+int secondary_to_string_file_LC_STATUS(secondary_message_LC_STATUS* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu32 CANLIB_SEPARATOR 
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->last_time,
+        message->lap_number
+    );
+}
+
+int secondary_fields_file_LC_STATUS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "last_time" CANLIB_SEPARATOR 
+        "lap_number"
+    );
+}
+
 
 // ============== UTILS ============== //
 
@@ -6476,6 +6612,8 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return secondary_fields_STEERING_ANGLE(buffer);
         case 513:
             return secondary_fields_TPMS(buffer);
+        case 771:
+            return secondary_fields_LC_STATUS(buffer);
     }
     return 0;
 }
@@ -6532,6 +6670,8 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
             return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
         case 513:
             return secondary_to_string_TPMS((secondary_message_TPMS_conversion*) message, buffer);
+        case 771:
+            return secondary_to_string_LC_STATUS((secondary_message_LC_STATUS*) message, buffer);
     }
     return 0;
 }
@@ -6588,6 +6728,8 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return secondary_fields_file_STEERING_ANGLE(buffer);
         case 513:
             return secondary_fields_file_TPMS(buffer);
+        case 771:
+            return secondary_fields_file_LC_STATUS(buffer);
     }
     return 0;
 }
@@ -6644,6 +6786,8 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
             return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
         case 513:
             return secondary_to_string_file_TPMS((secondary_message_TPMS_conversion*) message, buffer);
+        case 771:
+            return secondary_to_string_file_LC_STATUS((secondary_message_LC_STATUS*) message, buffer);
     }
     return 0;
 }
@@ -6992,6 +7136,16 @@ void* secondary_deserialize_from_id(
             );
             return message_conversion;
         }
+        case 771: {
+            secondary_deserialize_LC_STATUS(
+                (secondary_message_LC_STATUS*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
     }
     return NULL;
 }
@@ -7073,6 +7227,9 @@ secondary_devices* secondary_devices_new() {
     (*devices)[secondary_INDEX_TPMS].id = 513;
     (*devices)[secondary_INDEX_TPMS].message_raw = (void*) malloc(sizeof(secondary_message_TPMS));
     (*devices)[secondary_INDEX_TPMS].message_conversion = (void*) malloc(sizeof(secondary_message_TPMS_conversion));
+    (*devices)[secondary_INDEX_LC_STATUS].id = 771;
+    (*devices)[secondary_INDEX_LC_STATUS].message_raw = (void*) malloc(sizeof(secondary_message_LC_STATUS));
+    (*devices)[secondary_INDEX_LC_STATUS].message_conversion = NULL;
     return devices;
 }
 
@@ -7123,6 +7280,7 @@ void secondary_devices_free(secondary_devices* devices) {
     free((*devices)[secondary_INDEX_STEERING_ANGLE].message_raw);
     free((*devices)[secondary_INDEX_TPMS].message_raw);
     free((*devices)[secondary_INDEX_TPMS].message_conversion);
+    free((*devices)[secondary_INDEX_LC_STATUS].message_raw);
     free(devices);
 }
 
@@ -7466,6 +7624,16 @@ void secondary_devices_deserialize_from_id(
             secondary_raw_to_conversion_struct_TPMS(
                 (secondary_message_TPMS_conversion*) &(*devices)[secondary_INDEX_TPMS].message_conversion,
                 (secondary_message_TPMS*) &(*devices)[secondary_INDEX_TPMS].message_raw
+            );
+            return;
+        }
+        case 771: {
+            secondary_deserialize_LC_STATUS(
+                (secondary_message_LC_STATUS*) &(*devices)[secondary_INDEX_LC_STATUS].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
             );
             return;
         }

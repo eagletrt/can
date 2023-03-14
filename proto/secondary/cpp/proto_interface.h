@@ -567,6 +567,17 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["TPMS"]["rl_temperature"].push(pack->tpms(i).rl_temperature());
         (*net_signals)["TPMS"]["rr_temperature"].push(pack->tpms(i).rr_temperature());
     }
+    for(int i = 0; i < pack->lc_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lc_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lc_status(i)._inner_timestamp();
+        (*net_signals)["LC_STATUS"]["_timestamp"].push(pack->lc_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+        (*net_signals)["LC_STATUS"]["last_time"].push(pack->lc_status(i).last_time());
+        (*net_signals)["LC_STATUS"]["lap_number"].push(pack->lc_status(i).lap_number());
+    }
 }
 
 void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, secondary_devices* map) {
@@ -863,6 +874,16 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             proto_msg->set_fr_temperature(msg->fr_temperature);
             proto_msg->set_rl_temperature(msg->rl_temperature);
             proto_msg->set_rr_temperature(msg->rr_temperature);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+        case 771: {
+            secondary_message_LC_STATUS* msg = (secondary_message_LC_STATUS*)(&(*map)[index].message_raw);
+            secondary::LC_STATUS* proto_msg = pack->add_lc_status();
+            proto_msg->set_last_time(msg->last_time);
+            proto_msg->set_lap_number(msg->lap_number);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP

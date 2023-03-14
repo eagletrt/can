@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1676322070
-#define CANLIB_BUILD_HASH 0xfa21b89e
+#define CANLIB_BUILD_TIME 1678808551
+#define CANLIB_BUILD_HASH 0xb40caf16
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 78
+#define primary_MESSAGE_COUNT 79
 
 // Custom types
 
@@ -246,6 +246,7 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_INDEX_BRUSA_ERR 75
 #define primary_INDEX_BMS_HV_CHIMERA 76
 #define primary_INDEX_ECU_CHIMERA 77
+#define primary_INDEX_LC_RESET 78
 
 // ============== SIZES ============== //
 
@@ -327,6 +328,7 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_SIZE_BRUSA_ERR 0
 #define primary_SIZE_BMS_HV_CHIMERA 0
 #define primary_SIZE_ECU_CHIMERA 0
+#define primary_SIZE_LC_RESET 0
 
 // ============== BIT SETS =========== //
 
@@ -1366,6 +1368,13 @@ typedef struct CANLIB_PARKING {
 #endif // CANLIB_TIMESTAMP
 } primary_message_ECU_CHIMERA;
 
+typedef struct CANLIB_PARKING {
+    primary_uint8 _placeholder; // C++ doesn't like empty structs
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_LC_RESET;
+
 
 typedef union CANLIB_PARKING {
     primary_message_BMS_HV_JMP_TO_BLT _BMS_HV_JMP_TO_BLT;
@@ -1445,6 +1454,7 @@ typedef union CANLIB_PARKING {
     primary_message_BRUSA_ERR _BRUSA_ERR;
     primary_message_BMS_HV_CHIMERA _BMS_HV_CHIMERA;
     primary_message_ECU_CHIMERA _ECU_CHIMERA;
+    primary_message_LC_RESET _LC_RESET;
 } _primary_all_structs_raw;
 
 typedef union CANLIB_PARKING {
@@ -3756,6 +3766,28 @@ int primary_to_string_file_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, FIL
 int primary_fields_file_ECU_CHIMERA(FILE* buffer);
 
 
+// ============== LC_RESET ============== //
+
+primary_byte_size primary_serialize_LC_RESET(
+    uint8_t* data
+);
+primary_byte_size primary_serialize_struct_LC_RESET(
+    uint8_t* data,
+    primary_message_LC_RESET* message
+);
+void primary_deserialize_LC_RESET(
+    primary_message_LC_RESET* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_LC_RESET(primary_message_LC_RESET* message, char* buffer);
+int primary_fields_LC_RESET(char* buffer);
+int primary_to_string_file_LC_RESET(primary_message_LC_RESET* message, FILE* buffer);
+int primary_fields_file_LC_RESET(FILE* buffer);
+
+
 
 // ============== UTILS ============== //
 
@@ -3839,6 +3871,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 614: return primary_INDEX_BRUSA_ERR;
         case 170: return primary_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_INDEX_ECU_CHIMERA;
+        case 523: return primary_INDEX_LC_RESET;
     }
     return -1; // invalid
 }
@@ -3923,6 +3956,7 @@ static inline int primary_id_from_index(int index) {
         case primary_INDEX_BRUSA_ERR: return 614;
         case primary_INDEX_BMS_HV_CHIMERA: return 170;
         case primary_INDEX_ECU_CHIMERA: return 85;
+        case primary_INDEX_LC_RESET: return 523;
     }
     return -1; // invalid
 }
@@ -11802,6 +11836,67 @@ int primary_fields_file_ECU_CHIMERA(FILE* buffer) {
     return 0;
 }
 
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_LC_RESET(
+    uint8_t* data
+) {
+    CANLIB_UNUSED(data);
+    return 0;
+}
+
+primary_byte_size primary_serialize_struct_LC_RESET(
+    uint8_t* data,
+    primary_message_LC_RESET* message
+) {
+    CANLIB_UNUSED(data);
+    CANLIB_UNUSED(message);
+    return 0;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_LC_RESET(
+    primary_message_LC_RESET* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(data);
+#ifdef CANLIB_TIMESTAMP
+    CANLIB_UNUSED(_timestamp);
+#endif // CANLIB_TIMESTAMP
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_LC_RESET(primary_message_LC_RESET* message, char* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_LC_RESET(char* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_to_string_file_LC_RESET(primary_message_LC_RESET* message, FILE* buffer) {
+    CANLIB_UNUSED(message);
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
+int primary_fields_file_LC_RESET(FILE* buffer) {
+    CANLIB_UNUSED(buffer);
+    return 0;
+}
+
 
 // ============== UTILS ============== //
 
@@ -11963,6 +12058,8 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_BMS_HV_CHIMERA(buffer);
         case 85:
             return primary_fields_ECU_CHIMERA(buffer);
+        case 523:
+            return primary_fields_LC_RESET(buffer);
     }
     return 0;
 }
@@ -12125,6 +12222,8 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
         case 85:
             return primary_to_string_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
+        case 523:
+            return primary_to_string_LC_RESET((primary_message_LC_RESET*) message, buffer);
     }
     return 0;
 }
@@ -12287,6 +12386,8 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_BMS_HV_CHIMERA(buffer);
         case 85:
             return primary_fields_file_ECU_CHIMERA(buffer);
+        case 523:
+            return primary_fields_file_LC_RESET(buffer);
     }
     return 0;
 }
@@ -12449,6 +12550,8 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
         case 85:
             return primary_to_string_file_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
+        case 523:
+            return primary_to_string_file_LC_RESET((primary_message_LC_RESET*) message, buffer);
     }
     return 0;
 }
@@ -13307,6 +13410,16 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
+        case 523: {
+            primary_deserialize_LC_RESET(
+                (primary_message_LC_RESET*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
     }
     return NULL;
 }
@@ -13553,6 +13666,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_ECU_CHIMERA].id = 85;
     (*devices)[primary_INDEX_ECU_CHIMERA].message_raw = (void*) malloc(sizeof(primary_message_ECU_CHIMERA));
     (*devices)[primary_INDEX_ECU_CHIMERA].message_conversion = NULL;
+    (*devices)[primary_INDEX_LC_RESET].id = 523;
+    (*devices)[primary_INDEX_LC_RESET].message_raw = (void*) malloc(sizeof(primary_message_LC_RESET));
+    (*devices)[primary_INDEX_LC_RESET].message_conversion = NULL;
     return devices;
 }
 
@@ -13653,6 +13769,7 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_BRUSA_ERR].message_raw);
     free((*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw);
     free((*devices)[primary_INDEX_ECU_CHIMERA].message_raw);
+    free((*devices)[primary_INDEX_LC_RESET].message_raw);
     free(devices);
 }
 
@@ -14502,6 +14619,16 @@ void primary_devices_deserialize_from_id(
         case 85: {
             primary_deserialize_ECU_CHIMERA(
                 (primary_message_ECU_CHIMERA*) &(*devices)[primary_INDEX_ECU_CHIMERA].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 523: {
+            primary_deserialize_LC_RESET(
+                (primary_message_LC_RESET*) &(*devices)[primary_INDEX_LC_RESET].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

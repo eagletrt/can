@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1676322070
-CANLIB_BUILD_HASH = 0xfa21b89e
+CANLIB_BUILD_TIME = 1678808551
+CANLIB_BUILD_HASH = 0xb40caf16
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -3300,6 +3300,28 @@ class message_ECU_CHIMERA:
 
     def __eq__(self, other):
         if not isinstance(other, message_ECU_CHIMERA):
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend()
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        return message
+
+
+class message_LC_RESET:
+    def __init__(
+        self
+    ):
+        self.size = 0
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LC_RESET):
             return False
         return True
 

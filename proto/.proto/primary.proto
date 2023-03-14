@@ -497,6 +497,10 @@ message ECU_CHIMERA {
     uint64 _inner_timestamp = 1;
 }
 
+message LC_RESET {
+    uint64 _inner_timestamp = 1;
+}
+
 
 message Pack {
     repeated BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
@@ -577,4 +581,5 @@ message Pack {
     repeated BRUSA_ERR BRUSA_ERR = 76;
     repeated BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
     repeated ECU_CHIMERA ECU_CHIMERA = 78;
+    repeated LC_RESET LC_RESET = 79;
 }

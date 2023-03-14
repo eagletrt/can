@@ -32,6 +32,14 @@
                 }
             }
         },
+        "LAPCOUNTER": {
+            "id": 3,
+            "messages": {
+                "LC_STATUS": {
+                    "LC_STATUS": 771
+                }
+            }
+        },
         "FIXED_IDS": {
             "messages": {
                 "IMU_ANGULAR_RATE": {

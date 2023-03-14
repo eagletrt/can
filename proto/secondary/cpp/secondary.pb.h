@@ -47,7 +47,7 @@ struct TableStruct_secondary_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[26]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[27]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -121,6 +121,9 @@ extern IRTS_RR_3DefaultTypeInternal _IRTS_RR_3_default_instance_;
 class LAP_COUNT;
 class LAP_COUNTDefaultTypeInternal;
 extern LAP_COUNTDefaultTypeInternal _LAP_COUNT_default_instance_;
+class LC_STATUS;
+class LC_STATUSDefaultTypeInternal;
+extern LC_STATUSDefaultTypeInternal _LC_STATUS_default_instance_;
 class PEDALS_OUTPUT;
 class PEDALS_OUTPUTDefaultTypeInternal;
 extern PEDALS_OUTPUTDefaultTypeInternal _PEDALS_OUTPUT_default_instance_;
@@ -157,6 +160,7 @@ template<> ::secondary::IRTS_RR_1* Arena::CreateMaybeMessage<::secondary::IRTS_R
 template<> ::secondary::IRTS_RR_2* Arena::CreateMaybeMessage<::secondary::IRTS_RR_2>(Arena*);
 template<> ::secondary::IRTS_RR_3* Arena::CreateMaybeMessage<::secondary::IRTS_RR_3>(Arena*);
 template<> ::secondary::LAP_COUNT* Arena::CreateMaybeMessage<::secondary::LAP_COUNT>(Arena*);
+template<> ::secondary::LC_STATUS* Arena::CreateMaybeMessage<::secondary::LC_STATUS>(Arena*);
 template<> ::secondary::PEDALS_OUTPUT* Arena::CreateMaybeMessage<::secondary::PEDALS_OUTPUT>(Arena*);
 template<> ::secondary::Pack* Arena::CreateMaybeMessage<::secondary::Pack>(Arena*);
 template<> ::secondary::STEERING_ANGLE* Arena::CreateMaybeMessage<::secondary::STEERING_ANGLE>(Arena*);
@@ -4614,6 +4618,165 @@ class TPMS PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class LC_STATUS PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.LC_STATUS) */ {
+ public:
+  inline LC_STATUS() : LC_STATUS(nullptr) {};
+  virtual ~LC_STATUS();
+
+  LC_STATUS(const LC_STATUS& from);
+  LC_STATUS(LC_STATUS&& from) noexcept
+    : LC_STATUS() {
+    *this = ::std::move(from);
+  }
+
+  inline LC_STATUS& operator=(const LC_STATUS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LC_STATUS& operator=(LC_STATUS&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LC_STATUS& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LC_STATUS* internal_default_instance() {
+    return reinterpret_cast<const LC_STATUS*>(
+               &_LC_STATUS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(LC_STATUS& a, LC_STATUS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LC_STATUS* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LC_STATUS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LC_STATUS* New() const final {
+    return CreateMaybeMessage<LC_STATUS>(nullptr);
+  }
+
+  LC_STATUS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LC_STATUS>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LC_STATUS& from);
+  void MergeFrom(const LC_STATUS& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LC_STATUS* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.LC_STATUS";
+  }
+  protected:
+  explicit LC_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_secondary_2eproto);
+    return ::descriptor_table_secondary_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLastTimeFieldNumber = 1,
+    kLapNumberFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
+  };
+  // uint32 last_time = 1;
+  void clear_last_time();
+  ::PROTOBUF_NAMESPACE_ID::uint32 last_time() const;
+  void set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_last_time() const;
+  void _internal_set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 lap_number = 2;
+  void clear_lap_number();
+  ::PROTOBUF_NAMESPACE_ID::uint32 lap_number() const;
+  void set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_lap_number() const;
+  void _internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.LC_STATUS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 last_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 lap_number_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_secondary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.Pack) */ {
  public:
@@ -4656,7 +4819,7 @@ class Pack PROTOBUF_FINAL :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -4752,6 +4915,7 @@ class Pack PROTOBUF_FINAL :
     kCONTROLOUTPUTFieldNumber = 23,
     kSTEERINGANGLEFieldNumber = 24,
     kTPMSFieldNumber = 25,
+    kLCSTATUSFieldNumber = 26,
   };
   // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
   int imu_angular_rate_size() const;
@@ -5203,6 +5367,24 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS >&
       tpms() const;
 
+  // repeated .secondary.LC_STATUS LC_STATUS = 26;
+  int lc_status_size() const;
+  private:
+  int _internal_lc_status_size() const;
+  public:
+  void clear_lc_status();
+  ::secondary::LC_STATUS* mutable_lc_status(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS >*
+      mutable_lc_status();
+  private:
+  const ::secondary::LC_STATUS& _internal_lc_status(int index) const;
+  ::secondary::LC_STATUS* _internal_add_lc_status();
+  public:
+  const ::secondary::LC_STATUS& lc_status(int index) const;
+  ::secondary::LC_STATUS* add_lc_status();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS >&
+      lc_status() const;
+
   // @@protoc_insertion_point(class_scope:secondary.Pack)
  private:
   class _Internal;
@@ -5235,6 +5417,7 @@ class Pack PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT > control_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE > steering_angle_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS > tpms_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS > lc_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
 };
@@ -7707,6 +7890,70 @@ inline void TPMS::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // -------------------------------------------------------------------
 
+// LC_STATUS
+
+// uint32 last_time = 1;
+inline void LC_STATUS::clear_last_time() {
+  last_time_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::_internal_last_time() const {
+  return last_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::last_time() const {
+  // @@protoc_insertion_point(field_get:secondary.LC_STATUS.last_time)
+  return _internal_last_time();
+}
+inline void LC_STATUS::_internal_set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  last_time_ = value;
+}
+inline void LC_STATUS::set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_last_time(value);
+  // @@protoc_insertion_point(field_set:secondary.LC_STATUS.last_time)
+}
+
+// uint32 lap_number = 2;
+inline void LC_STATUS::clear_lap_number() {
+  lap_number_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::_internal_lap_number() const {
+  return lap_number_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::lap_number() const {
+  // @@protoc_insertion_point(field_get:secondary.LC_STATUS.lap_number)
+  return _internal_lap_number();
+}
+inline void LC_STATUS::_internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  lap_number_ = value;
+}
+inline void LC_STATUS::set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_lap_number(value);
+  // @@protoc_insertion_point(field_set:secondary.LC_STATUS.lap_number)
+}
+
+// uint64 _inner_timestamp = 3;
+inline void LC_STATUS::clear__inner_timestamp() {
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LC_STATUS::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LC_STATUS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.LC_STATUS._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void LC_STATUS::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void LC_STATUS::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.LC_STATUS._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .secondary.IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -8684,9 +8931,50 @@ Pack::tpms() const {
   return tpms_;
 }
 
+// repeated .secondary.LC_STATUS LC_STATUS = 26;
+inline int Pack::_internal_lc_status_size() const {
+  return lc_status_.size();
+}
+inline int Pack::lc_status_size() const {
+  return _internal_lc_status_size();
+}
+inline void Pack::clear_lc_status() {
+  lc_status_.Clear();
+}
+inline ::secondary::LC_STATUS* Pack::mutable_lc_status(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.LC_STATUS)
+  return lc_status_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS >*
+Pack::mutable_lc_status() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.LC_STATUS)
+  return &lc_status_;
+}
+inline const ::secondary::LC_STATUS& Pack::_internal_lc_status(int index) const {
+  return lc_status_.Get(index);
+}
+inline const ::secondary::LC_STATUS& Pack::lc_status(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.LC_STATUS)
+  return _internal_lc_status(index);
+}
+inline ::secondary::LC_STATUS* Pack::_internal_add_lc_status() {
+  return lc_status_.Add();
+}
+inline ::secondary::LC_STATUS* Pack::add_lc_status() {
+  // @@protoc_insertion_point(field_add:secondary.Pack.LC_STATUS)
+  return _internal_add_lc_status();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS >&
+Pack::lc_status() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.LC_STATUS)
+  return lc_status_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

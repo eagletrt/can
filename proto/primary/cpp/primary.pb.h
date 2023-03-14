@@ -48,7 +48,7 @@ struct TableStruct_primary_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[79]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[80]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -212,6 +212,9 @@ extern INV_R_REQUESTDefaultTypeInternal _INV_R_REQUEST_default_instance_;
 class INV_R_RESPONSE;
 class INV_R_RESPONSEDefaultTypeInternal;
 extern INV_R_RESPONSEDefaultTypeInternal _INV_R_RESPONSE_default_instance_;
+class LC_RESET;
+class LC_RESETDefaultTypeInternal;
+extern LC_RESETDefaultTypeInternal _LC_RESET_default_instance_;
 class LV_CURRENT;
 class LV_CURRENTDefaultTypeInternal;
 extern LV_CURRENTDefaultTypeInternal _LV_CURRENT_default_instance_;
@@ -347,6 +350,7 @@ template<> ::primary::INV_L_REQUEST* Arena::CreateMaybeMessage<::primary::INV_L_
 template<> ::primary::INV_L_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_L_RESPONSE>(Arena*);
 template<> ::primary::INV_R_REQUEST* Arena::CreateMaybeMessage<::primary::INV_R_REQUEST>(Arena*);
 template<> ::primary::INV_R_RESPONSE* Arena::CreateMaybeMessage<::primary::INV_R_RESPONSE>(Arena*);
+template<> ::primary::LC_RESET* Arena::CreateMaybeMessage<::primary::LC_RESET>(Arena*);
 template<> ::primary::LV_CURRENT* Arena::CreateMaybeMessage<::primary::LV_CURRENT>(Arena*);
 template<> ::primary::LV_ERRORS* Arena::CreateMaybeMessage<::primary::LV_ERRORS>(Arena*);
 template<> ::primary::LV_TEMPERATURE* Arena::CreateMaybeMessage<::primary::LV_TEMPERATURE>(Arena*);
@@ -12679,6 +12683,143 @@ class ECU_CHIMERA PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class LC_RESET PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.LC_RESET) */ {
+ public:
+  inline LC_RESET() : LC_RESET(nullptr) {};
+  virtual ~LC_RESET();
+
+  LC_RESET(const LC_RESET& from);
+  LC_RESET(LC_RESET&& from) noexcept
+    : LC_RESET() {
+    *this = ::std::move(from);
+  }
+
+  inline LC_RESET& operator=(const LC_RESET& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline LC_RESET& operator=(LC_RESET&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const LC_RESET& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LC_RESET* internal_default_instance() {
+    return reinterpret_cast<const LC_RESET*>(
+               &_LC_RESET_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    78;
+
+  friend void swap(LC_RESET& a, LC_RESET& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(LC_RESET* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(LC_RESET* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LC_RESET* New() const final {
+    return CreateMaybeMessage<LC_RESET>(nullptr);
+  }
+
+  LC_RESET* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<LC_RESET>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const LC_RESET& from);
+  void MergeFrom(const LC_RESET& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LC_RESET* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "primary.LC_RESET";
+  }
+  protected:
+  explicit LC_RESET(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_primary_2eproto);
+    return ::descriptor_table_primary_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInnerTimestampFieldNumber = 1,
+  };
+  // uint64 _inner_timestamp = 1;
+  void clear__inner_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.LC_RESET)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_primary_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Pack PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.Pack) */ {
  public:
@@ -12721,7 +12862,7 @@ class Pack PROTOBUF_FINAL :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    79;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -12870,6 +13011,7 @@ class Pack PROTOBUF_FINAL :
     kBRUSAERRFieldNumber = 76,
     kBMSHVCHIMERAFieldNumber = 77,
     kECUCHIMERAFieldNumber = 78,
+    kLCRESETFieldNumber = 79,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -14275,6 +14417,24 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >&
       ecu_chimera() const;
 
+  // repeated .primary.LC_RESET LC_RESET = 79;
+  int lc_reset_size() const;
+  private:
+  int _internal_lc_reset_size() const;
+  public:
+  void clear_lc_reset();
+  ::primary::LC_RESET* mutable_lc_reset(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET >*
+      mutable_lc_reset();
+  private:
+  const ::primary::LC_RESET& _internal_lc_reset(int index) const;
+  ::primary::LC_RESET* _internal_add_lc_reset();
+  public:
+  const ::primary::LC_RESET& lc_reset(int index) const;
+  ::primary::LC_RESET* add_lc_reset();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET >&
+      lc_reset() const;
+
   // @@protoc_insertion_point(class_scope:primary.Pack)
  private:
   class _Internal;
@@ -14360,6 +14520,7 @@ class Pack PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR > brusa_err_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA > bms_hv_chimera_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA > ecu_chimera_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET > lc_reset_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -18744,6 +18905,30 @@ inline void ECU_CHIMERA::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 va
 
 // -------------------------------------------------------------------
 
+// LC_RESET
+
+// uint64 _inner_timestamp = 1;
+inline void LC_RESET::clear__inner_timestamp() {
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LC_RESET::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 LC_RESET::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.LC_RESET._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void LC_RESET::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void LC_RESET::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:primary.LC_RESET._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
 // Pack
 
 // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
@@ -21788,9 +21973,50 @@ Pack::ecu_chimera() const {
   return ecu_chimera_;
 }
 
+// repeated .primary.LC_RESET LC_RESET = 79;
+inline int Pack::_internal_lc_reset_size() const {
+  return lc_reset_.size();
+}
+inline int Pack::lc_reset_size() const {
+  return _internal_lc_reset_size();
+}
+inline void Pack::clear_lc_reset() {
+  lc_reset_.Clear();
+}
+inline ::primary::LC_RESET* Pack::mutable_lc_reset(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.LC_RESET)
+  return lc_reset_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET >*
+Pack::mutable_lc_reset() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.LC_RESET)
+  return &lc_reset_;
+}
+inline const ::primary::LC_RESET& Pack::_internal_lc_reset(int index) const {
+  return lc_reset_.Get(index);
+}
+inline const ::primary::LC_RESET& Pack::lc_reset(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.LC_RESET)
+  return _internal_lc_reset(index);
+}
+inline ::primary::LC_RESET* Pack::_internal_add_lc_reset() {
+  return lc_reset_.Add();
+}
+inline ::primary::LC_RESET* Pack::add_lc_reset() {
+  // @@protoc_insertion_point(field_add:primary.Pack.LC_RESET)
+  return _internal_add_lc_reset();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET >&
+Pack::lc_reset() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.LC_RESET)
+  return lc_reset_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -150,6 +150,12 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_SET_PUMPS_SPEED 0x32A // dec: 810 bin: 0b01100101010
 #define primary_ID_SET_INVERTER_CONNECTION_STATUS 0x10A // dec: 266 bin: 0b00100001010
 
+/* TOPIC LAPCOUNTER */
+#define primary_TOPIC_MASK_LAPCOUNTER 0b00000011111
+#define primary_TOPIC_FILTER_LAPCOUNTER 0xB // dec: 11 bin: 0b00000001011
+
+#define primary_ID_LC_RESET 0x20B // dec: 523 bin: 0b01000001011
+
 
 #define primary_MAX_MESSAGE_NAME_LENGTH 31
 
@@ -313,6 +319,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "BMS_HV_CHIMERA");;
         case primary_ID_ECU_CHIMERA:
             return sprintf(buffer, "%s", "ECU_CHIMERA");;
+        case primary_ID_LC_RESET:
+            return sprintf(buffer, "%s", "LC_RESET");;
         default:
             return 0; // Unknown message
     }
@@ -398,6 +406,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 614: return true; break;
         case 170: return true; break;
         case 85: return true; break;
+        case 523: return true; break;
     }
     return false;
 }

@@ -57,6 +57,12 @@ typedef uint16_t canlib_message_id;
 
 #define secondary_ID_STEERING_ANGLE 0x102 // dec: 258 bin: 0b00100000010
 
+/* TOPIC LAPCOUNTER */
+#define secondary_TOPIC_MASK_LAPCOUNTER 0b00000011111
+#define secondary_TOPIC_FILTER_LAPCOUNTER 0x3 // dec: 3 bin: 0b00000000011
+
+#define secondary_ID_LC_STATUS 0x303 // dec: 771 bin: 0b01100000011
+
 
 #define secondary_MAX_MESSAGE_NAME_LENGTH 17
 
@@ -114,6 +120,8 @@ static inline int secondary_message_name_from_id(canlib_message_id id, char *buf
             return sprintf(buffer, "%s", "STEERING_ANGLE");;
         case secondary_ID_TPMS:
             return sprintf(buffer, "%s", "TPMS");;
+        case secondary_ID_LC_STATUS:
+            return sprintf(buffer, "%s", "LC_STATUS");;
         default:
             return 0; // Unknown message
     }
@@ -146,6 +154,7 @@ static inline bool secondary_is_message_id(canlib_message_id message_id) {
         case 801: return true; break;
         case 258: return true; break;
         case 513: return true; break;
+        case 771: return true; break;
     }
     return false;
 }

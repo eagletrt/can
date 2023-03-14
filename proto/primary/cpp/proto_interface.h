@@ -1160,6 +1160,15 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 #endif // CANLIB_TIMESTAMP
 
     }
+    for(int i = 0; i < pack->lc_reset_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lc_reset(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lc_reset(i)._inner_timestamp();
+        (*net_signals)["LC_RESET"]["_timestamp"].push(pack->lc_reset(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+    }
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
@@ -1834,6 +1843,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 85: {
             primary_message_ECU_CHIMERA* msg = (primary_message_ECU_CHIMERA*)(&(*map)[index].message_raw);
             primary::ECU_CHIMERA* proto_msg = pack->add_ecu_chimera();
+            break;
+        }
+        case 523: {
+            primary_message_LC_RESET* msg = (primary_message_LC_RESET*)(&(*map)[index].message_raw);
+            primary::LC_RESET* proto_msg = pack->add_lc_reset();
             break;
         }
     }

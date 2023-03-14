@@ -66,6 +66,7 @@ extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::interna
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_INV_L_RESPONSE_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_INV_R_REQUEST_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_INV_R_RESPONSE_primary_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LC_RESET_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LV_CURRENT_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LV_ERRORS_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LV_TEMPERATURE_primary_2eproto;
@@ -405,6 +406,10 @@ class ECU_CHIMERADefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ECU_CHIMERA> _instance;
 } _ECU_CHIMERA_default_instance_;
+class LC_RESETDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LC_RESET> _instance;
+} _LC_RESET_default_instance_;
 class PackDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Pack> _instance;
@@ -1138,6 +1143,20 @@ static void InitDefaultsscc_info_INV_R_RESPONSE_primary_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_INV_R_RESPONSE_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_INV_R_RESPONSE_primary_2eproto}, {}};
 
+static void InitDefaultsscc_info_LC_RESET_primary_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::primary::_LC_RESET_default_instance_;
+    new (ptr) ::primary::LC_RESET();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::primary::LC_RESET::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_LC_RESET_primary_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_LC_RESET_primary_2eproto}, {}};
+
 static void InitDefaultsscc_info_LV_CURRENT_primary_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -1247,8 +1266,8 @@ static void InitDefaultsscc_info_Pack_primary_2eproto() {
   ::primary::Pack::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<78> scc_info_Pack_primary_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 78, 0, InitDefaultsscc_info_Pack_primary_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<79> scc_info_Pack_primary_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 79, 0, InitDefaultsscc_info_Pack_primary_2eproto}, {
       &scc_info_BMS_HV_JMP_TO_BLT_primary_2eproto.base,
       &scc_info_BMS_LV_JMP_TO_BLT_primary_2eproto.base,
       &scc_info_STEER_VERSION_primary_2eproto.base,
@@ -1326,7 +1345,8 @@ static void InitDefaultsscc_info_Pack_primary_2eproto() {
       &scc_info_BRUSA_TEMP_primary_2eproto.base,
       &scc_info_BRUSA_ERR_primary_2eproto.base,
       &scc_info_BMS_HV_CHIMERA_primary_2eproto.base,
-      &scc_info_ECU_CHIMERA_primary_2eproto.base,}};
+      &scc_info_ECU_CHIMERA_primary_2eproto.base,
+      &scc_info_LC_RESET_primary_2eproto.base,}};
 
 static void InitDefaultsscc_info_SET_CAR_STATUS_primary_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1594,7 +1614,7 @@ static void InitDefaultsscc_info_TS_STATUS_primary_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TS_STATUS_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TS_STATUS_primary_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_primary_2eproto[79];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_primary_2eproto[80];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_primary_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_primary_2eproto = nullptr;
 
@@ -2193,6 +2213,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_primary_2eproto::offsets[] PRO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::primary::ECU_CHIMERA, _inner_timestamp_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::primary::LC_RESET, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::primary::LC_RESET, _inner_timestamp_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -2275,6 +2301,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_primary_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_err_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, bms_hv_chimera_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, ecu_chimera_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, lc_reset_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::primary::BMS_HV_JMP_TO_BLT)},
@@ -2355,7 +2382,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 575, -1, sizeof(::primary::BRUSA_ERR)},
   { 581, -1, sizeof(::primary::BMS_HV_CHIMERA)},
   { 587, -1, sizeof(::primary::ECU_CHIMERA)},
-  { 593, -1, sizeof(::primary::Pack)},
+  { 593, -1, sizeof(::primary::LC_RESET)},
+  { 599, -1, sizeof(::primary::Pack)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -2437,6 +2465,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BRUSA_ERR_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BMS_HV_CHIMERA_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_ECU_CHIMERA_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_LC_RESET_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_Pack_default_instance_),
 };
 
@@ -2600,132 +2629,134 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\"%\n\tBRUSA_ERR\022\030\n\020_inner_timestamp\030\001 \001(\004\""
   "*\n\016BMS_HV_CHIMERA\022\030\n\020_inner_timestamp\030\001 "
   "\001(\004\"\'\n\013ECU_CHIMERA\022\030\n\020_inner_timestamp\030\001"
-  " \001(\004\"\222\037\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\013"
-  "2\032.primary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_J"
-  "MP_TO_BLT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_"
-  "BLT\022-\n\rSTEER_VERSION\030\003 \003(\0132\026.primary.STE"
-  "ER_VERSION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primar"
-  "y.DAS_VERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.prim"
-  "ary.HV_VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.pri"
-  "mary.LV_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.p"
-  "rimary.TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022."
-  "primary.TIMESTAMP\0229\n\023AMBIENT_TEMPERATURE"
-  "\030\t \003(\0132\034.primary.AMBIENT_TEMPERATURE\022)\n\013"
-  "DATA_LOGGER\030\n \003(\0132\024.primary.DATA_LOGGER\022"
-  "/\n\016SET_TLM_STATUS\030\013 \003(\0132\027.primary.SET_TL"
-  "M_STATUS\022\'\n\nTLM_STATUS\030\014 \003(\0132\023.primary.T"
-  "LM_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\r \003(\0132\034"
-  ".primary.STEER_SYSTEM_STATUS\022\'\n\nHV_VOLTA"
-  "GE\030\016 \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV_CURR"
-  "ENT\030\017 \003(\0132\023.primary.HV_CURRENT\022!\n\007HV_TEM"
-  "P\030\020 \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERRORS\030\021"
-  " \003(\0132\022.primary.HV_ERRORS\022/\n\016HV_CAN_FORWA"
-  "RD\030\022 \003(\0132\027.primary.HV_CAN_FORWARD\0223\n\020HV_"
-  "FANS_OVERRIDE\030\023 \003(\0132\031.primary.HV_FANS_OV"
-  "ERRIDE\022=\n\025HV_CAN_FORWARD_STATUS\030\024 \003(\0132\036."
-  "primary.HV_CAN_FORWARD_STATUS\022A\n\027HV_FANS"
-  "_OVERRIDE_STATUS\030\025 \003(\0132 .primary.HV_FANS"
-  "_OVERRIDE_STATUS\0229\n\023HV_FEEDBACKS_STATUS\030"
-  "\026 \003(\0132\034.primary.HV_FEEDBACKS_STATUS\022-\n\rH"
-  "V_IMD_STATUS\030\027 \003(\0132\026.primary.HV_IMD_STAT"
-  "US\022%\n\tTS_STATUS\030\030 \003(\0132\022.primary.TS_STATU"
-  "S\0225\n\021SET_TS_STATUS_DAS\030\031 \003(\0132\032.primary.S"
-  "ET_TS_STATUS_DAS\022\?\n\026SET_TS_STATUS_HANDCA"
-  "RT\030\032 \003(\0132\037.primary.SET_TS_STATUS_HANDCAR"
-  "T\022+\n\014STEER_STATUS\030\033 \003(\0132\025.primary.STEER_"
-  "STATUS\022/\n\016SET_CAR_STATUS\030\034 \003(\0132\027.primary"
-  ".SET_CAR_STATUS\0223\n\020SET_PEDALS_RANGE\030\035 \003("
-  "\0132\031.primary.SET_PEDALS_RANGE\022C\n\030SET_STEE"
-  "RING_ANGLE_RANGE\030\036 \003(\0132!.primary.SET_STE"
-  "ERING_ANGLE_RANGE\022\'\n\nCAR_STATUS\030\037 \003(\0132\023."
-  "primary.CAR_STATUS\022\'\n\nDAS_ERRORS\030  \003(\0132\023"
-  ".primary.DAS_ERRORS\022\'\n\nLV_CURRENT\030! \003(\0132"
-  "\023.primary.LV_CURRENT\022\'\n\nLV_VOLTAGE\030\" \003(\013"
-  "2\023.primary.LV_VOLTAGE\0223\n\020LV_TOTAL_VOLTAG"
-  "E\030# \003(\0132\031.primary.LV_TOTAL_VOLTAGE\022/\n\016LV"
-  "_TEMPERATURE\030$ \003(\0132\027.primary.LV_TEMPERAT"
-  "URE\022/\n\016COOLING_STATUS\030% \003(\0132\027.primary.CO"
-  "OLING_STATUS\0227\n\022SET_RADIATOR_SPEED\030& \003(\013"
-  "2\033.primary.SET_RADIATOR_SPEED\0221\n\017SET_PUM"
-  "PS_SPEED\030\' \003(\0132\030.primary.SET_PUMPS_SPEED"
-  "\022O\n\036SET_INVERTER_CONNECTION_STATUS\030( \003(\013"
-  "2\'.primary.SET_INVERTER_CONNECTION_STATU"
-  "S\022G\n\032INVERTER_CONNECTION_STATUS\030) \003(\0132#."
-  "primary.INVERTER_CONNECTION_STATUS\022%\n\tLV"
-  "_ERRORS\030* \003(\0132\022.primary.LV_ERRORS\0221\n\017SHU"
-  "TDOWN_STATUS\030+ \003(\0132\030.primary.SHUTDOWN_ST"
-  "ATUS\022\037\n\006MARKER\030, \003(\0132\017.primary.MARKER\0223\n"
-  "\020HV_CELLS_VOLTAGE\030- \003(\0132\031.primary.HV_CEL"
-  "LS_VOLTAGE\022-\n\rHV_CELLS_TEMP\030. \003(\0132\026.prim"
-  "ary.HV_CELLS_TEMP\022C\n\030HV_CELL_BALANCING_S"
-  "TATUS\030/ \003(\0132!.primary.HV_CELL_BALANCING_"
-  "STATUS\022E\n\031SET_CELL_BALANCING_STATUS\0300 \003("
-  "\0132\".primary.SET_CELL_BALANCING_STATUS\0221\n"
-  "\017HANDCART_STATUS\0301 \003(\0132\030.primary.HANDCAR"
-  "T_STATUS\022\035\n\005SPEED\0302 \003(\0132\016.primary.SPEED\022"
-  "-\n\rINV_L_REQUEST\0303 \003(\0132\026.primary.INV_L_R"
-  "EQUEST\022-\n\rINV_R_REQUEST\0304 \003(\0132\026.primary."
-  "INV_R_REQUEST\022/\n\016INV_L_RESPONSE\0305 \003(\0132\027."
-  "primary.INV_L_RESPONSE\022/\n\016INV_R_RESPONSE"
-  "\0306 \003(\0132\027.primary.INV_R_RESPONSE\022;\n\024FLASH"
-  "_CELLBOARD_0_TX\0307 \003(\0132\035.primary.FLASH_CE"
-  "LLBOARD_0_TX\022;\n\024FLASH_CELLBOARD_0_RX\0308 \003"
-  "(\0132\035.primary.FLASH_CELLBOARD_0_RX\022;\n\024FLA"
-  "SH_CELLBOARD_1_TX\0309 \003(\0132\035.primary.FLASH_"
-  "CELLBOARD_1_TX\022;\n\024FLASH_CELLBOARD_1_RX\030:"
-  " \003(\0132\035.primary.FLASH_CELLBOARD_1_RX\022;\n\024F"
-  "LASH_CELLBOARD_2_TX\030; \003(\0132\035.primary.FLAS"
-  "H_CELLBOARD_2_TX\022;\n\024FLASH_CELLBOARD_2_RX"
-  "\030< \003(\0132\035.primary.FLASH_CELLBOARD_2_RX\022;\n"
-  "\024FLASH_CELLBOARD_3_TX\030= \003(\0132\035.primary.FL"
-  "ASH_CELLBOARD_3_TX\022;\n\024FLASH_CELLBOARD_3_"
-  "RX\030> \003(\0132\035.primary.FLASH_CELLBOARD_3_RX\022"
-  ";\n\024FLASH_CELLBOARD_4_TX\030\? \003(\0132\035.primary."
-  "FLASH_CELLBOARD_4_TX\022;\n\024FLASH_CELLBOARD_"
-  "4_RX\030@ \003(\0132\035.primary.FLASH_CELLBOARD_4_R"
-  "X\022;\n\024FLASH_CELLBOARD_5_TX\030A \003(\0132\035.primar"
-  "y.FLASH_CELLBOARD_5_TX\022;\n\024FLASH_CELLBOAR"
-  "D_5_RX\030B \003(\0132\035.primary.FLASH_CELLBOARD_5"
-  "_RX\0221\n\017FLASH_BMS_HV_TX\030C \003(\0132\030.primary.F"
-  "LASH_BMS_HV_TX\0221\n\017FLASH_BMS_HV_RX\030D \003(\0132"
-  "\030.primary.FLASH_BMS_HV_RX\0221\n\017FLASH_BMS_L"
-  "V_TX\030E \003(\0132\030.primary.FLASH_BMS_LV_TX\0221\n\017"
-  "FLASH_BMS_LV_RX\030F \003(\0132\030.primary.FLASH_BM"
-  "S_LV_RX\022/\n\016BRUSA_NLG5_CTL\030G \003(\0132\027.primar"
-  "y.BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030H \003(\0132\021.pri"
-  "mary.BRUSA_ST\022)\n\013BRUSA_ACT_I\030I \003(\0132\024.pri"
-  "mary.BRUSA_ACT_I\022+\n\014BRUSA_ACT_II\030J \003(\0132\025"
-  ".primary.BRUSA_ACT_II\022\'\n\nBRUSA_TEMP\030K \003("
-  "\0132\023.primary.BRUSA_TEMP\022%\n\tBRUSA_ERR\030L \003("
-  "\0132\022.primary.BRUSA_ERR\022/\n\016BMS_HV_CHIMERA\030"
-  "M \003(\0132\027.primary.BMS_HV_CHIMERA\022)\n\013ECU_CH"
-  "IMERA\030N \003(\0132\024.primary.ECU_CHIMERA*k\n\010Rac"
-  "eType\022\031\n\025RaceType_ACCELERATION\020\000\022\024\n\020Race"
-  "Type_SKIDPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026"
-  "\n\022RaceType_ENDURANCE\020\003*X\n\016InverterStatus"
-  "\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023InverterStat"
-  "us_IDLE\020\001\022\025\n\021InverterStatus_ON\020\002*\224\001\n\tCar"
-  "Status\022\022\n\016CarStatus_IDLE\020\000\022\027\n\023CarStatus_"
-  "PRE_SETUP\020\001\022\023\n\017CarStatus_TS_ON\020\002\022\030\n\024CarS"
-  "tatus_POST_SETUP\020\003\022\023\n\017CarStatus_DRIVE\020\004\022"
-  "\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006Toggle\022\016\n\nTog"
-  "gle_OFF\020\000\022\r\n\tToggle_ON\020\001*Y\n\010TsStatus\022\020\n\014"
-  "TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017"
-  "\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*U\n\014S"
-  "etCarStatus\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022Se"
-  "tCarStatus_READY\020\001\022\026\n\022SetCarStatus_DRIVE"
-  "\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_"
-  "SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020"
-  "\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020ImdS"
-  "tatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001"
-  "\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033Imd"
-  "Status_IMD_START_MEASURE\020\003\022\036\n\032ImdStatus_"
-  "IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EART"
-  "H_FAULT\020\005b\006proto3"
+  " \001(\004\"$\n\010LC_RESET\022\030\n\020_inner_timestamp\030\001 \001"
+  "(\004\"\267\037\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032"
+  ".primary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_JMP"
+  "_TO_BLT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_BL"
+  "T\022-\n\rSTEER_VERSION\030\003 \003(\0132\026.primary.STEER"
+  "_VERSION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primary."
+  "DAS_VERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.primar"
+  "y.HV_VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.prima"
+  "ry.LV_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.pri"
+  "mary.TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022.pr"
+  "imary.TIMESTAMP\0229\n\023AMBIENT_TEMPERATURE\030\t"
+  " \003(\0132\034.primary.AMBIENT_TEMPERATURE\022)\n\013DA"
+  "TA_LOGGER\030\n \003(\0132\024.primary.DATA_LOGGER\022/\n"
+  "\016SET_TLM_STATUS\030\013 \003(\0132\027.primary.SET_TLM_"
+  "STATUS\022\'\n\nTLM_STATUS\030\014 \003(\0132\023.primary.TLM"
+  "_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\r \003(\0132\034.p"
+  "rimary.STEER_SYSTEM_STATUS\022\'\n\nHV_VOLTAGE"
+  "\030\016 \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV_CURREN"
+  "T\030\017 \003(\0132\023.primary.HV_CURRENT\022!\n\007HV_TEMP\030"
+  "\020 \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERRORS\030\021 \003"
+  "(\0132\022.primary.HV_ERRORS\022/\n\016HV_CAN_FORWARD"
+  "\030\022 \003(\0132\027.primary.HV_CAN_FORWARD\0223\n\020HV_FA"
+  "NS_OVERRIDE\030\023 \003(\0132\031.primary.HV_FANS_OVER"
+  "RIDE\022=\n\025HV_CAN_FORWARD_STATUS\030\024 \003(\0132\036.pr"
+  "imary.HV_CAN_FORWARD_STATUS\022A\n\027HV_FANS_O"
+  "VERRIDE_STATUS\030\025 \003(\0132 .primary.HV_FANS_O"
+  "VERRIDE_STATUS\0229\n\023HV_FEEDBACKS_STATUS\030\026 "
+  "\003(\0132\034.primary.HV_FEEDBACKS_STATUS\022-\n\rHV_"
+  "IMD_STATUS\030\027 \003(\0132\026.primary.HV_IMD_STATUS"
+  "\022%\n\tTS_STATUS\030\030 \003(\0132\022.primary.TS_STATUS\022"
+  "5\n\021SET_TS_STATUS_DAS\030\031 \003(\0132\032.primary.SET"
+  "_TS_STATUS_DAS\022\?\n\026SET_TS_STATUS_HANDCART"
+  "\030\032 \003(\0132\037.primary.SET_TS_STATUS_HANDCART\022"
+  "+\n\014STEER_STATUS\030\033 \003(\0132\025.primary.STEER_ST"
+  "ATUS\022/\n\016SET_CAR_STATUS\030\034 \003(\0132\027.primary.S"
+  "ET_CAR_STATUS\0223\n\020SET_PEDALS_RANGE\030\035 \003(\0132"
+  "\031.primary.SET_PEDALS_RANGE\022C\n\030SET_STEERI"
+  "NG_ANGLE_RANGE\030\036 \003(\0132!.primary.SET_STEER"
+  "ING_ANGLE_RANGE\022\'\n\nCAR_STATUS\030\037 \003(\0132\023.pr"
+  "imary.CAR_STATUS\022\'\n\nDAS_ERRORS\030  \003(\0132\023.p"
+  "rimary.DAS_ERRORS\022\'\n\nLV_CURRENT\030! \003(\0132\023."
+  "primary.LV_CURRENT\022\'\n\nLV_VOLTAGE\030\" \003(\0132\023"
+  ".primary.LV_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030"
+  "# \003(\0132\031.primary.LV_TOTAL_VOLTAGE\022/\n\016LV_T"
+  "EMPERATURE\030$ \003(\0132\027.primary.LV_TEMPERATUR"
+  "E\022/\n\016COOLING_STATUS\030% \003(\0132\027.primary.COOL"
+  "ING_STATUS\0227\n\022SET_RADIATOR_SPEED\030& \003(\0132\033"
+  ".primary.SET_RADIATOR_SPEED\0221\n\017SET_PUMPS"
+  "_SPEED\030\' \003(\0132\030.primary.SET_PUMPS_SPEED\022O"
+  "\n\036SET_INVERTER_CONNECTION_STATUS\030( \003(\0132\'"
+  ".primary.SET_INVERTER_CONNECTION_STATUS\022"
+  "G\n\032INVERTER_CONNECTION_STATUS\030) \003(\0132#.pr"
+  "imary.INVERTER_CONNECTION_STATUS\022%\n\tLV_E"
+  "RRORS\030* \003(\0132\022.primary.LV_ERRORS\0221\n\017SHUTD"
+  "OWN_STATUS\030+ \003(\0132\030.primary.SHUTDOWN_STAT"
+  "US\022\037\n\006MARKER\030, \003(\0132\017.primary.MARKER\0223\n\020H"
+  "V_CELLS_VOLTAGE\030- \003(\0132\031.primary.HV_CELLS"
+  "_VOLTAGE\022-\n\rHV_CELLS_TEMP\030. \003(\0132\026.primar"
+  "y.HV_CELLS_TEMP\022C\n\030HV_CELL_BALANCING_STA"
+  "TUS\030/ \003(\0132!.primary.HV_CELL_BALANCING_ST"
+  "ATUS\022E\n\031SET_CELL_BALANCING_STATUS\0300 \003(\0132"
+  "\".primary.SET_CELL_BALANCING_STATUS\0221\n\017H"
+  "ANDCART_STATUS\0301 \003(\0132\030.primary.HANDCART_"
+  "STATUS\022\035\n\005SPEED\0302 \003(\0132\016.primary.SPEED\022-\n"
+  "\rINV_L_REQUEST\0303 \003(\0132\026.primary.INV_L_REQ"
+  "UEST\022-\n\rINV_R_REQUEST\0304 \003(\0132\026.primary.IN"
+  "V_R_REQUEST\022/\n\016INV_L_RESPONSE\0305 \003(\0132\027.pr"
+  "imary.INV_L_RESPONSE\022/\n\016INV_R_RESPONSE\0306"
+  " \003(\0132\027.primary.INV_R_RESPONSE\022;\n\024FLASH_C"
+  "ELLBOARD_0_TX\0307 \003(\0132\035.primary.FLASH_CELL"
+  "BOARD_0_TX\022;\n\024FLASH_CELLBOARD_0_RX\0308 \003(\013"
+  "2\035.primary.FLASH_CELLBOARD_0_RX\022;\n\024FLASH"
+  "_CELLBOARD_1_TX\0309 \003(\0132\035.primary.FLASH_CE"
+  "LLBOARD_1_TX\022;\n\024FLASH_CELLBOARD_1_RX\030: \003"
+  "(\0132\035.primary.FLASH_CELLBOARD_1_RX\022;\n\024FLA"
+  "SH_CELLBOARD_2_TX\030; \003(\0132\035.primary.FLASH_"
+  "CELLBOARD_2_TX\022;\n\024FLASH_CELLBOARD_2_RX\030<"
+  " \003(\0132\035.primary.FLASH_CELLBOARD_2_RX\022;\n\024F"
+  "LASH_CELLBOARD_3_TX\030= \003(\0132\035.primary.FLAS"
+  "H_CELLBOARD_3_TX\022;\n\024FLASH_CELLBOARD_3_RX"
+  "\030> \003(\0132\035.primary.FLASH_CELLBOARD_3_RX\022;\n"
+  "\024FLASH_CELLBOARD_4_TX\030\? \003(\0132\035.primary.FL"
+  "ASH_CELLBOARD_4_TX\022;\n\024FLASH_CELLBOARD_4_"
+  "RX\030@ \003(\0132\035.primary.FLASH_CELLBOARD_4_RX\022"
+  ";\n\024FLASH_CELLBOARD_5_TX\030A \003(\0132\035.primary."
+  "FLASH_CELLBOARD_5_TX\022;\n\024FLASH_CELLBOARD_"
+  "5_RX\030B \003(\0132\035.primary.FLASH_CELLBOARD_5_R"
+  "X\0221\n\017FLASH_BMS_HV_TX\030C \003(\0132\030.primary.FLA"
+  "SH_BMS_HV_TX\0221\n\017FLASH_BMS_HV_RX\030D \003(\0132\030."
+  "primary.FLASH_BMS_HV_RX\0221\n\017FLASH_BMS_LV_"
+  "TX\030E \003(\0132\030.primary.FLASH_BMS_LV_TX\0221\n\017FL"
+  "ASH_BMS_LV_RX\030F \003(\0132\030.primary.FLASH_BMS_"
+  "LV_RX\022/\n\016BRUSA_NLG5_CTL\030G \003(\0132\027.primary."
+  "BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030H \003(\0132\021.prima"
+  "ry.BRUSA_ST\022)\n\013BRUSA_ACT_I\030I \003(\0132\024.prima"
+  "ry.BRUSA_ACT_I\022+\n\014BRUSA_ACT_II\030J \003(\0132\025.p"
+  "rimary.BRUSA_ACT_II\022\'\n\nBRUSA_TEMP\030K \003(\0132"
+  "\023.primary.BRUSA_TEMP\022%\n\tBRUSA_ERR\030L \003(\0132"
+  "\022.primary.BRUSA_ERR\022/\n\016BMS_HV_CHIMERA\030M "
+  "\003(\0132\027.primary.BMS_HV_CHIMERA\022)\n\013ECU_CHIM"
+  "ERA\030N \003(\0132\024.primary.ECU_CHIMERA\022#\n\010LC_RE"
+  "SET\030O \003(\0132\021.primary.LC_RESET*k\n\010RaceType"
+  "\022\031\n\025RaceType_ACCELERATION\020\000\022\024\n\020RaceType_"
+  "SKIDPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022Rac"
+  "eType_ENDURANCE\020\003*X\n\016InverterStatus\022\026\n\022I"
+  "nverterStatus_OFF\020\000\022\027\n\023InverterStatus_ID"
+  "LE\020\001\022\025\n\021InverterStatus_ON\020\002*\224\001\n\tCarStatu"
+  "s\022\022\n\016CarStatus_IDLE\020\000\022\027\n\023CarStatus_PRE_S"
+  "ETUP\020\001\022\023\n\017CarStatus_TS_ON\020\002\022\030\n\024CarStatus"
+  "_POST_SETUP\020\003\022\023\n\017CarStatus_DRIVE\020\004\022\026\n\022Ca"
+  "rStatus_TEARDOWN\020\005*\'\n\006Toggle\022\016\n\nToggle_O"
+  "FF\020\000\022\r\n\tToggle_ON\020\001*Y\n\010TsStatus\022\020\n\014TsSta"
+  "tus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013TsS"
+  "tatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*U\n\014SetCar"
+  "Status\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022SetCarS"
+  "tatus_READY\020\001\022\026\n\022SetCarStatus_DRIVE\020\002*-\n"
+  "\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_M"
+  "IN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013"
+  "Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus"
+  "_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033I"
+  "mdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatu"
+  "s_IMD_START_MEASURE\020\003\022\036\n\032ImdStatus_IMD_D"
+  "EVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAU"
+  "LT\020\005b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_primary_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_primary_2eproto_sccs[79] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_primary_2eproto_sccs[80] = {
   &scc_info_AMBIENT_TEMPERATURE_primary_2eproto.base,
   &scc_info_BMS_HV_CHIMERA_primary_2eproto.base,
   &scc_info_BMS_HV_JMP_TO_BLT_primary_2eproto.base,
@@ -2778,6 +2809,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pri
   &scc_info_INV_L_RESPONSE_primary_2eproto.base,
   &scc_info_INV_R_REQUEST_primary_2eproto.base,
   &scc_info_INV_R_RESPONSE_primary_2eproto.base,
+  &scc_info_LC_RESET_primary_2eproto.base,
   &scc_info_LV_CURRENT_primary_2eproto.base,
   &scc_info_LV_ERRORS_primary_2eproto.base,
   &scc_info_LV_TEMPERATURE_primary_2eproto.base,
@@ -2808,10 +2840,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pri
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_primary_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_primary_2eproto = {
-  false, false, descriptor_table_protodef_primary_2eproto, "primary.proto", 11217,
-  &descriptor_table_primary_2eproto_once, descriptor_table_primary_2eproto_sccs, descriptor_table_primary_2eproto_deps, 79, 0,
+  false, false, descriptor_table_protodef_primary_2eproto, "primary.proto", 11292,
+  &descriptor_table_primary_2eproto_once, descriptor_table_primary_2eproto_sccs, descriptor_table_primary_2eproto_deps, 80, 0,
   schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
-  file_level_metadata_primary_2eproto, 79, file_level_enum_descriptors_primary_2eproto, file_level_service_descriptors_primary_2eproto,
+  file_level_metadata_primary_2eproto, 80, file_level_enum_descriptors_primary_2eproto, file_level_service_descriptors_primary_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -21689,6 +21721,203 @@ void ECU_CHIMERA::InternalSwap(ECU_CHIMERA* other) {
 
 // ===================================================================
 
+void LC_RESET::InitAsDefaultInstance() {
+}
+class LC_RESET::_Internal {
+ public:
+};
+
+LC_RESET::LC_RESET(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:primary.LC_RESET)
+}
+LC_RESET::LC_RESET(const LC_RESET& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _inner_timestamp_ = from._inner_timestamp_;
+  // @@protoc_insertion_point(copy_constructor:primary.LC_RESET)
+}
+
+void LC_RESET::SharedCtor() {
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+
+LC_RESET::~LC_RESET() {
+  // @@protoc_insertion_point(destructor:primary.LC_RESET)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void LC_RESET::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void LC_RESET::ArenaDtor(void* object) {
+  LC_RESET* _this = reinterpret_cast< LC_RESET* >(object);
+  (void)_this;
+}
+void LC_RESET::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void LC_RESET::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const LC_RESET& LC_RESET::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_LC_RESET_primary_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void LC_RESET::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.LC_RESET)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* LC_RESET::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 _inner_timestamp = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* LC_RESET::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:primary.LC_RESET)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_inner_timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:primary.LC_RESET)
+  return target;
+}
+
+size_t LC_RESET::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.LC_RESET)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 _inner_timestamp = 1;
+  if (this->_inner_timestamp() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void LC_RESET::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:primary.LC_RESET)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LC_RESET* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LC_RESET>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.LC_RESET)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.LC_RESET)
+    MergeFrom(*source);
+  }
+}
+
+void LC_RESET::MergeFrom(const LC_RESET& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.LC_RESET)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+}
+
+void LC_RESET::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:primary.LC_RESET)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LC_RESET::CopyFrom(const LC_RESET& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.LC_RESET)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LC_RESET::IsInitialized() const {
+  return true;
+}
+
+void LC_RESET::InternalSwap(LC_RESET* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(_inner_timestamp_, other->_inner_timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata LC_RESET::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void Pack::InitAsDefaultInstance() {
 }
 class Pack::_Internal {
@@ -21774,7 +22003,8 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   brusa_temp_(arena),
   brusa_err_(arena),
   bms_hv_chimera_(arena),
-  ecu_chimera_(arena) {
+  ecu_chimera_(arena),
+  lc_reset_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:primary.Pack)
@@ -21858,7 +22088,8 @@ Pack::Pack(const Pack& from)
       brusa_temp_(from.brusa_temp_),
       brusa_err_(from.brusa_err_),
       bms_hv_chimera_(from.bms_hv_chimera_),
-      ecu_chimera_(from.ecu_chimera_) {
+      ecu_chimera_(from.ecu_chimera_),
+      lc_reset_(from.lc_reset_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:primary.Pack)
 }
@@ -21976,6 +22207,7 @@ void Pack::Clear() {
   brusa_err_.Clear();
   bms_hv_chimera_.Clear();
   ecu_chimera_.Clear();
+  lc_reset_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -22923,6 +23155,18 @@ const char* Pack::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<626>(ptr));
         } else goto handle_unusual;
         continue;
+      // repeated .primary.LC_RESET LC_RESET = 79;
+      case 79:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_lc_reset(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<634>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -23575,6 +23819,14 @@ failure:
       InternalWriteMessage(78, this->_internal_ecu_chimera(i), target, stream);
   }
 
+  // repeated .primary.LC_RESET LC_RESET = 79;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_lc_reset_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(79, this->_internal_lc_reset(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -24137,6 +24389,13 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // repeated .primary.LC_RESET LC_RESET = 79;
+  total_size += 2UL * this->_internal_lc_reset_size();
+  for (const auto& msg : this->lc_reset_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -24246,6 +24505,7 @@ void Pack::MergeFrom(const Pack& from) {
   brusa_err_.MergeFrom(from.brusa_err_);
   bms_hv_chimera_.MergeFrom(from.bms_hv_chimera_);
   ecu_chimera_.MergeFrom(from.ecu_chimera_);
+  lc_reset_.MergeFrom(from.lc_reset_);
 }
 
 void Pack::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -24347,6 +24607,7 @@ void Pack::InternalSwap(Pack* other) {
   brusa_err_.InternalSwap(&other->brusa_err_);
   bms_hv_chimera_.InternalSwap(&other->bms_hv_chimera_);
   ecu_chimera_.InternalSwap(&other->ecu_chimera_);
+  lc_reset_.InternalSwap(&other->lc_reset_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Pack::GetMetadata() const {
@@ -24590,6 +24851,9 @@ template<> PROTOBUF_NOINLINE ::primary::BMS_HV_CHIMERA* Arena::CreateMaybeMessag
 }
 template<> PROTOBUF_NOINLINE ::primary::ECU_CHIMERA* Arena::CreateMaybeMessage< ::primary::ECU_CHIMERA >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::ECU_CHIMERA >(arena);
+}
+template<> PROTOBUF_NOINLINE ::primary::LC_RESET* Arena::CreateMaybeMessage< ::primary::LC_RESET >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::LC_RESET >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::Pack* Arena::CreateMaybeMessage< ::primary::Pack >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::Pack >(arena);

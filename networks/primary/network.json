@@ -1240,6 +1240,14 @@
       "sending": ["ECU_CHIMERA"],
       "receiving": ["BMS_HV_CHIMERA"],
       "contents": {}
+    },
+    {
+      "name": "LC_RESET",
+      "topic": "LAPCOUNTER",
+      "priority": 5,
+      "sending": ["STEER"],
+      "receiving": ["TLM"],
+      "contents": {}
     }
   ]
 }

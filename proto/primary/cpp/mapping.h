@@ -344,6 +344,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_BRUSA_ERR, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ERR;
     canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_HV_CHIMERA;
     canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> ECU_CHIMERA;
+    canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE> LC_RESET;
 } primary_proto_pack;
 
 void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_adaptor& mapping_map);
@@ -1148,6 +1149,13 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
 #ifdef CANLIB_TIMESTAMP
     mapping_map["ECU_CHIMERA"].field["_timestamp"].value._uint64 = &pack.ECU_CHIMERA.start()._timestamp;
     mapping_map["ECU_CHIMERA"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LC_RESET"].size = std::bind(&canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LC_RESET);
+    mapping_map["LC_RESET"].offset = std::bind(&canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LC_RESET);
+    mapping_map["LC_RESET"].stride = sizeof(primary_message_LC_RESET);
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LC_RESET"].field["_timestamp"].value._uint64 = &pack.LC_RESET.start()._timestamp;
+    mapping_map["LC_RESET"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP 
 }
 
@@ -1900,6 +1908,12 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         case 85: {
             primary_message_ECU_CHIMERA* msg = (primary_message_ECU_CHIMERA*) (*map)[index].message_raw;
             primary::ECU_CHIMERA* proto_msg = pack->add_ecu_chimera();
+            break;
+        }
+
+        case 523: {
+            primary_message_LC_RESET* msg = (primary_message_LC_RESET*) (*map)[index].message_raw;
+            primary::LC_RESET* proto_msg = pack->add_lc_reset();
             break;
         }
 
@@ -2967,6 +2981,18 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
         map->ECU_CHIMERA.push(instance);
+    }
+    for(int i = 0; i < pack->lc_reset_size(); i++){
+        static primary_message_LC_RESET instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lc_reset(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
+        map->LC_RESET.push(instance);
     }
 }
 

@@ -195,6 +195,12 @@ message TPMS {
     uint64 _inner_timestamp = 9;
 }
 
+message LC_STATUS {
+    uint32 last_time = 1;
+    uint32 lap_number = 2;
+    uint64 _inner_timestamp = 3;
+}
+
 
 message Pack {
     repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
@@ -222,4 +228,5 @@ message Pack {
     repeated CONTROL_OUTPUT CONTROL_OUTPUT = 23;
     repeated STEERING_ANGLE STEERING_ANGLE = 24;
     repeated TPMS TPMS = 25;
+    repeated LC_STATUS LC_STATUS = 26;
 }

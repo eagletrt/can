@@ -127,6 +127,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_BRUSA_ERR 75
 #define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 76
 #define primary_WATCHDOG_INDEX_ECU_CHIMERA 77
+#define primary_WATCHDOG_INDEX_LC_RESET 78
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -286,6 +287,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_BMS_HV_CHIMERA (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_ECU_CHIMERA -1
 #define primary_INTERVAL_WITH_THRESHOLD_ECU_CHIMERA (-1 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_LC_RESET -1
+#define primary_INTERVAL_WITH_THRESHOLD_LC_RESET (-1 + CANLIB_INTERVAL_THRESHOLD)
 
 
 // Messages with this interval will be ignored by the watchdog as they are not
@@ -295,7 +298,7 @@ typedef void (*canlib_watchdog_callback)(int);
 typedef struct {
     uint8_t activated[10];
     uint8_t timeout[10];
-    canlib_watchdog_timestamp last_reset[78];
+    canlib_watchdog_timestamp last_reset[79];
 } primary_watchdog;
 
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
@@ -378,6 +381,7 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 614: return primary_INTERVAL_BRUSA_ERR;
         case 170: return primary_INTERVAL_BMS_HV_CHIMERA;
         case 85: return primary_INTERVAL_ECU_CHIMERA;
+        case 523: return primary_INTERVAL_LC_RESET;
     }
     return -1;
 }
@@ -462,8 +466,9 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 614: return primary_WATCHDOG_INDEX_BRUSA_ERR;
         case 170: return primary_WATCHDOG_INDEX_BMS_HV_CHIMERA;
         case 85: return primary_WATCHDOG_INDEX_ECU_CHIMERA;
+        case 523: return primary_WATCHDOG_INDEX_LC_RESET;
     }
-    return 78; // invalid
+    return 79; // invalid
 }
 
 primary_watchdog* primary_watchdog_new();
@@ -498,7 +503,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 78 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 79 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

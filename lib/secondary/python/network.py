@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1676322070
-CANLIB_BUILD_HASH = 0xfa21b89e
+CANLIB_BUILD_TIME = 1678808551
+CANLIB_BUILD_HASH = 0xb40caf16
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -2009,3 +2009,35 @@ class message_TPMS_conversion:
         raw.rl_temperature = self.rl_temperature
         raw.rr_temperature = self.rr_temperature
         return raw
+
+class message_LC_STATUS:
+    def __init__(
+        self,
+        last_time = None,
+        lap_number = None
+    ):
+        self.last_time = uint32(last_time)
+        self.lap_number = uint8(lap_number)
+        self.size = 5
+
+    def __eq__(self, other):
+        if not isinstance(other, message_LC_STATUS):
+            return False
+        if self.last_time != other.last_time:
+            return False
+        if self.lap_number != other.lap_number:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<IB", self.last_time, self.lap_number))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.last_time = uint32(unpack("<I", data[0:4])[0])
+        message.lap_number = uint8(unpack("<xxxxB", data[0:5])[0])
+        return message
+

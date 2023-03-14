@@ -291,6 +291,7 @@ typedef struct {
     canlib_circular_buffer<secondary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_OUTPUT;
     canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE> STEERING_ANGLE;
     canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> TPMS;
+    canlib_circular_buffer<secondary_message_LC_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> LC_STATUS;
 } secondary_proto_pack;
 
 void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mapping_adaptor& mapping_map);
@@ -660,6 +661,17 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
 #ifdef CANLIB_TIMESTAMP
     mapping_map["TPMS"].field["_timestamp"].value._uint64 = &pack.TPMS.start()._timestamp;
     mapping_map["TPMS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["LC_STATUS"].size = std::bind(&canlib_circular_buffer<secondary_message_LC_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LC_STATUS);
+    mapping_map["LC_STATUS"].offset = std::bind(&canlib_circular_buffer<secondary_message_LC_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LC_STATUS);
+    mapping_map["LC_STATUS"].stride = sizeof(secondary_message_LC_STATUS);
+    mapping_map["LC_STATUS"].field["last_time"].value._uint32 = &pack.LC_STATUS.start().last_time;
+    mapping_map["LC_STATUS"].field["last_time"].type = mapping_type_uint32;
+    mapping_map["LC_STATUS"].field["lap_number"].value._uint8 = &pack.LC_STATUS.start().lap_number;
+    mapping_map["LC_STATUS"].field["lap_number"].type = mapping_type_uint8;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["LC_STATUS"].field["_timestamp"].value._uint64 = &pack.LC_STATUS.start()._timestamp;
+    mapping_map["LC_STATUS"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP 
 }
 
@@ -981,6 +993,17 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             proto_msg->set_fr_temperature(msg->fr_temperature);
             proto_msg->set_rl_temperature(msg->rl_temperature);
             proto_msg->set_rr_temperature(msg->rr_temperature);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 771: {
+            secondary_message_LC_STATUS* msg = (secondary_message_LC_STATUS*) (*map)[index].message_raw;
+            secondary::LC_STATUS* proto_msg = pack->add_lc_status();
+            proto_msg->set_last_time(msg->last_time);
+            proto_msg->set_lap_number(msg->lap_number);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -1383,6 +1406,20 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         instance.rl_temperature =pack->tpms(i).rl_temperature();
         instance.rr_temperature =pack->tpms(i).rr_temperature();
         map->TPMS.push(instance);
+    }
+    for(int i = 0; i < pack->lc_status_size(); i++){
+        static secondary_message_LC_STATUS instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->lc_status(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
+        instance.last_time =pack->lc_status(i).last_time();
+        instance.lap_number =pack->lc_status(i).lap_number();
+        map->LC_STATUS.push(instance);
     }
 }
 

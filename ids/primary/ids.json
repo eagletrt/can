@@ -196,6 +196,14 @@
                 }
             }
         },
+        "LAPCOUNTER": {
+            "id": 11,
+            "messages": {
+                "LC_RESET": {
+                    "LC_RESET": 523
+                }
+            }
+        },
         "FIXED_IDS": {
             "messages": {
                 "DATA_LOGGER": {
