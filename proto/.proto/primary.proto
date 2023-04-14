@@ -489,12 +489,13 @@ message BRUSA_ERR {
     uint64 _inner_timestamp = 1;
 }
 
-message BMS_HV_CHIMERA {
-    uint64 _inner_timestamp = 1;
-}
-
-message ECU_CHIMERA {
-    uint64 _inner_timestamp = 1;
+message CONTROL_OUTPUT {
+    float estimated_velocity = 1;
+    float tmax_r = 2;
+    float tmax_l = 3;
+    float torque_l = 4;
+    float torque_r = 5;
+    uint64 _inner_timestamp = 6;
 }
 
 message LC_RESET {
@@ -579,7 +580,6 @@ message Pack {
     repeated BRUSA_ACT_II BRUSA_ACT_II = 74;
     repeated BRUSA_TEMP BRUSA_TEMP = 75;
     repeated BRUSA_ERR BRUSA_ERR = 76;
-    repeated BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
-    repeated ECU_CHIMERA ECU_CHIMERA = 78;
-    repeated LC_RESET LC_RESET = 79;
+    repeated CONTROL_OUTPUT CONTROL_OUTPUT = 77;
+    repeated LC_RESET LC_RESET = 78;
 }

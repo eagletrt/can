@@ -125,9 +125,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_BRUSA_ACT_II 73
 #define primary_WATCHDOG_INDEX_BRUSA_TEMP 74
 #define primary_WATCHDOG_INDEX_BRUSA_ERR 75
-#define primary_WATCHDOG_INDEX_BMS_HV_CHIMERA 76
-#define primary_WATCHDOG_INDEX_ECU_CHIMERA 77
-#define primary_WATCHDOG_INDEX_LC_RESET 78
+#define primary_WATCHDOG_INDEX_CONTROL_OUTPUT 76
+#define primary_WATCHDOG_INDEX_LC_RESET 77
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -283,10 +282,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_BRUSA_TEMP (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_BRUSA_ERR -1
 #define primary_INTERVAL_WITH_THRESHOLD_BRUSA_ERR (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_BMS_HV_CHIMERA -1
-#define primary_INTERVAL_WITH_THRESHOLD_BMS_HV_CHIMERA (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_ECU_CHIMERA -1
-#define primary_INTERVAL_WITH_THRESHOLD_ECU_CHIMERA (-1 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_CONTROL_OUTPUT 100
+#define primary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT (100 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_LC_RESET -1
 #define primary_INTERVAL_WITH_THRESHOLD_LC_RESET (-1 + CANLIB_INTERVAL_THRESHOLD)
 
@@ -298,7 +295,7 @@ typedef void (*canlib_watchdog_callback)(int);
 typedef struct {
     uint8_t activated[10];
     uint8_t timeout[10];
-    canlib_watchdog_timestamp last_reset[79];
+    canlib_watchdog_timestamp last_reset[78];
 } primary_watchdog;
 
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
@@ -379,8 +376,7 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 612: return primary_INTERVAL_BRUSA_ACT_II;
         case 613: return primary_INTERVAL_BRUSA_TEMP;
         case 614: return primary_INTERVAL_BRUSA_ERR;
-        case 170: return primary_INTERVAL_BMS_HV_CHIMERA;
-        case 85: return primary_INTERVAL_ECU_CHIMERA;
+        case 1284: return primary_INTERVAL_CONTROL_OUTPUT;
         case 523: return primary_INTERVAL_LC_RESET;
     }
     return -1;
@@ -464,11 +460,10 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 612: return primary_WATCHDOG_INDEX_BRUSA_ACT_II;
         case 613: return primary_WATCHDOG_INDEX_BRUSA_TEMP;
         case 614: return primary_WATCHDOG_INDEX_BRUSA_ERR;
-        case 170: return primary_WATCHDOG_INDEX_BMS_HV_CHIMERA;
-        case 85: return primary_WATCHDOG_INDEX_ECU_CHIMERA;
+        case 1284: return primary_WATCHDOG_INDEX_CONTROL_OUTPUT;
         case 523: return primary_WATCHDOG_INDEX_LC_RESET;
     }
-    return 79; // invalid
+    return 78; // invalid
 }
 
 primary_watchdog* primary_watchdog_new();
@@ -503,7 +498,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 79 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 78 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -743,6 +738,12 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_RESPONSE);
     }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_CONTROL_OUTPUT)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CONTROL_OUTPUT] > primary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_CONTROL_OUTPUT);
+    }
 }
 
 void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
@@ -829,6 +830,12 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_INV_R_RESPONSE] > primary_INTERVAL_WITH_THRESHOLD_INV_R_RESPONSE
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_INV_R_RESPONSE);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_CONTROL_OUTPUT)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_CONTROL_OUTPUT] > primary_INTERVAL_WITH_THRESHOLD_CONTROL_OUTPUT
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_CONTROL_OUTPUT);
     }
 }
 

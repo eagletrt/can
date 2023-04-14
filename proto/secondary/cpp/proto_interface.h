@@ -526,20 +526,6 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["PEDALS_OUTPUT"]["bse_front"].push(pack->pedals_output(i).bse_front());
         (*net_signals)["PEDALS_OUTPUT"]["bse_rear"].push(pack->pedals_output(i).bse_rear());
     }
-    for(int i = 0; i < pack->control_output_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->control_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->control_output(i)._inner_timestamp();
-        (*net_signals)["CONTROL_OUTPUT"]["_timestamp"].push(pack->control_output(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-        (*net_signals)["CONTROL_OUTPUT"]["estimated_velocity"].push(pack->control_output(i).estimated_velocity());
-        (*net_signals)["CONTROL_OUTPUT"]["tmax_r"].push(pack->control_output(i).tmax_r());
-        (*net_signals)["CONTROL_OUTPUT"]["tmax_l"].push(pack->control_output(i).tmax_l());
-        (*net_signals)["CONTROL_OUTPUT"]["torque_l"].push(pack->control_output(i).torque_l());
-        (*net_signals)["CONTROL_OUTPUT"]["torque_r"].push(pack->control_output(i).torque_r());
-    }
     for(int i = 0; i < pack->steering_angle_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -549,6 +535,18 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 #endif // CANLIB_TIMESTAMP
 
         (*net_signals)["STEERING_ANGLE"]["angle"].push(pack->steering_angle(i).angle());
+    }
+    for(int i = 0; i < pack->control_state_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->control_state(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->control_state(i)._inner_timestamp();
+        (*net_signals)["CONTROL_STATE"]["_timestamp"].push(pack->control_state(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+        (*net_signals)["CONTROL_STATE"]["map_pw"].push(pack->control_state(i).map_pw());
+        (*net_signals)["CONTROL_STATE"]["map_sc"].push(pack->control_state(i).map_sc());
+        (*net_signals)["CONTROL_STATE"]["map_tv"].push(pack->control_state(i).map_tv());
     }
     for(int i = 0; i < pack->tpms_size(); i++){
 #ifdef CANLIB_TIMESTAMP
@@ -841,23 +839,21 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
 #endif // CANLIB_TIMESTAMP
             break;
         }
-        case 801: {
-            secondary_message_CONTROL_OUTPUT_conversion* msg = (secondary_message_CONTROL_OUTPUT_conversion*)(&(*map)[index].message_conversion);
-            secondary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
-            proto_msg->set_estimated_velocity(msg->estimated_velocity);
-            proto_msg->set_tmax_r(msg->tmax_r);
-            proto_msg->set_tmax_l(msg->tmax_l);
-            proto_msg->set_torque_l(msg->torque_l);
-            proto_msg->set_torque_r(msg->torque_r);
+        case 258: {
+            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*)(&(*map)[index].message_raw);
+            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
+            proto_msg->set_angle(msg->angle);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
-        case 258: {
-            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*)(&(*map)[index].message_raw);
-            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
-            proto_msg->set_angle(msg->angle);
+        case 259: {
+            secondary_message_CONTROL_STATE_conversion* msg = (secondary_message_CONTROL_STATE_conversion*)(&(*map)[index].message_conversion);
+            secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
+            proto_msg->set_map_pw(msg->map_pw);
+            proto_msg->set_map_sc(msg->map_sc);
+            proto_msg->set_map_tv(msg->map_tv);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -879,7 +875,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
 #endif // CANLIB_TIMESTAMP
             break;
         }
-        case 771: {
+        case 772: {
             secondary_message_LC_STATUS* msg = (secondary_message_LC_STATUS*)(&(*map)[index].message_raw);
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
             proto_msg->set_last_time(msg->last_time);

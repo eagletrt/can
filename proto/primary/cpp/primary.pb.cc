@@ -15,7 +15,6 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AMBIENT_TEMPERATURE_primary_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BMS_HV_CHIMERA_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BMS_HV_JMP_TO_BLT_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BMS_LV_JMP_TO_BLT_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BRUSA_ACT_I_primary_2eproto;
@@ -25,11 +24,11 @@ extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::interna
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BRUSA_ST_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BRUSA_TEMP_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CAR_STATUS_primary_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CONTROL_OUTPUT_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_COOLING_STATUS_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DAS_ERRORS_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DAS_VERSION_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DATA_LOGGER_primary_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ECU_CHIMERA_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_BMS_HV_RX_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_BMS_HV_TX_primary_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_primary_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_BMS_LV_RX_primary_2eproto;
@@ -398,14 +397,10 @@ class BRUSA_ERRDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BRUSA_ERR> _instance;
 } _BRUSA_ERR_default_instance_;
-class BMS_HV_CHIMERADefaultTypeInternal {
+class CONTROL_OUTPUTDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BMS_HV_CHIMERA> _instance;
-} _BMS_HV_CHIMERA_default_instance_;
-class ECU_CHIMERADefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ECU_CHIMERA> _instance;
-} _ECU_CHIMERA_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CONTROL_OUTPUT> _instance;
+} _CONTROL_OUTPUT_default_instance_;
 class LC_RESETDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<LC_RESET> _instance;
@@ -428,20 +423,6 @@ static void InitDefaultsscc_info_AMBIENT_TEMPERATURE_primary_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AMBIENT_TEMPERATURE_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_AMBIENT_TEMPERATURE_primary_2eproto}, {}};
-
-static void InitDefaultsscc_info_BMS_HV_CHIMERA_primary_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::primary::_BMS_HV_CHIMERA_default_instance_;
-    new (ptr) ::primary::BMS_HV_CHIMERA();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::primary::BMS_HV_CHIMERA::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BMS_HV_CHIMERA_primary_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BMS_HV_CHIMERA_primary_2eproto}, {}};
 
 static void InitDefaultsscc_info_BMS_HV_JMP_TO_BLT_primary_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -569,6 +550,20 @@ static void InitDefaultsscc_info_CAR_STATUS_primary_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CAR_STATUS_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CAR_STATUS_primary_2eproto}, {}};
 
+static void InitDefaultsscc_info_CONTROL_OUTPUT_primary_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::primary::_CONTROL_OUTPUT_default_instance_;
+    new (ptr) ::primary::CONTROL_OUTPUT();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::primary::CONTROL_OUTPUT::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CONTROL_OUTPUT_primary_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CONTROL_OUTPUT_primary_2eproto}, {}};
+
 static void InitDefaultsscc_info_COOLING_STATUS_primary_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -624,20 +619,6 @@ static void InitDefaultsscc_info_DATA_LOGGER_primary_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_DATA_LOGGER_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_DATA_LOGGER_primary_2eproto}, {}};
-
-static void InitDefaultsscc_info_ECU_CHIMERA_primary_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::primary::_ECU_CHIMERA_default_instance_;
-    new (ptr) ::primary::ECU_CHIMERA();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::primary::ECU_CHIMERA::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ECU_CHIMERA_primary_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_ECU_CHIMERA_primary_2eproto}, {}};
 
 static void InitDefaultsscc_info_FLASH_BMS_HV_RX_primary_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1266,8 +1247,8 @@ static void InitDefaultsscc_info_Pack_primary_2eproto() {
   ::primary::Pack::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<79> scc_info_Pack_primary_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 79, 0, InitDefaultsscc_info_Pack_primary_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<78> scc_info_Pack_primary_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 78, 0, InitDefaultsscc_info_Pack_primary_2eproto}, {
       &scc_info_BMS_HV_JMP_TO_BLT_primary_2eproto.base,
       &scc_info_BMS_LV_JMP_TO_BLT_primary_2eproto.base,
       &scc_info_STEER_VERSION_primary_2eproto.base,
@@ -1344,8 +1325,7 @@ static void InitDefaultsscc_info_Pack_primary_2eproto() {
       &scc_info_BRUSA_ACT_II_primary_2eproto.base,
       &scc_info_BRUSA_TEMP_primary_2eproto.base,
       &scc_info_BRUSA_ERR_primary_2eproto.base,
-      &scc_info_BMS_HV_CHIMERA_primary_2eproto.base,
-      &scc_info_ECU_CHIMERA_primary_2eproto.base,
+      &scc_info_CONTROL_OUTPUT_primary_2eproto.base,
       &scc_info_LC_RESET_primary_2eproto.base,}};
 
 static void InitDefaultsscc_info_SET_CAR_STATUS_primary_2eproto() {
@@ -1614,7 +1594,7 @@ static void InitDefaultsscc_info_TS_STATUS_primary_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TS_STATUS_primary_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TS_STATUS_primary_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_primary_2eproto[80];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_primary_2eproto[79];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_primary_2eproto[9];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_primary_2eproto = nullptr;
 
@@ -2201,17 +2181,16 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_primary_2eproto::offsets[] PRO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::primary::BRUSA_ERR, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::primary::BMS_HV_CHIMERA, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::primary::BMS_HV_CHIMERA, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::primary::ECU_CHIMERA, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::primary::ECU_CHIMERA, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, estimated_velocity_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, tmax_r_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, tmax_l_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, torque_l_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, torque_r_),
+  PROTOBUF_FIELD_OFFSET(::primary::CONTROL_OUTPUT, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::primary::LC_RESET, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2299,8 +2278,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_primary_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_act_ii_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_temp_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, brusa_err_),
-  PROTOBUF_FIELD_OFFSET(::primary::Pack, bms_hv_chimera_),
-  PROTOBUF_FIELD_OFFSET(::primary::Pack, ecu_chimera_),
+  PROTOBUF_FIELD_OFFSET(::primary::Pack, control_output_),
   PROTOBUF_FIELD_OFFSET(::primary::Pack, lc_reset_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -2380,10 +2358,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 563, -1, sizeof(::primary::BRUSA_ACT_II)},
   { 569, -1, sizeof(::primary::BRUSA_TEMP)},
   { 575, -1, sizeof(::primary::BRUSA_ERR)},
-  { 581, -1, sizeof(::primary::BMS_HV_CHIMERA)},
-  { 587, -1, sizeof(::primary::ECU_CHIMERA)},
-  { 593, -1, sizeof(::primary::LC_RESET)},
-  { 599, -1, sizeof(::primary::Pack)},
+  { 581, -1, sizeof(::primary::CONTROL_OUTPUT)},
+  { 592, -1, sizeof(::primary::LC_RESET)},
+  { 598, -1, sizeof(::primary::Pack)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -2463,8 +2440,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BRUSA_ACT_II_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BRUSA_TEMP_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BRUSA_ERR_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_BMS_HV_CHIMERA_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_ECU_CHIMERA_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_CONTROL_OUTPUT_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_LC_RESET_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::primary::_Pack_default_instance_),
 };
@@ -2627,138 +2603,137 @@ const char descriptor_table_protodef_primary_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\n\014BRUSA_ACT_II\022\030\n\020_inner_timestamp\030\001 \001(\004"
   "\"&\n\nBRUSA_TEMP\022\030\n\020_inner_timestamp\030\001 \001(\004"
   "\"%\n\tBRUSA_ERR\022\030\n\020_inner_timestamp\030\001 \001(\004\""
-  "*\n\016BMS_HV_CHIMERA\022\030\n\020_inner_timestamp\030\001 "
-  "\001(\004\"\'\n\013ECU_CHIMERA\022\030\n\020_inner_timestamp\030\001"
-  " \001(\004\"$\n\010LC_RESET\022\030\n\020_inner_timestamp\030\001 \001"
-  "(\004\"\267\037\n\004Pack\0225\n\021BMS_HV_JMP_TO_BLT\030\001 \003(\0132\032"
-  ".primary.BMS_HV_JMP_TO_BLT\0225\n\021BMS_LV_JMP"
-  "_TO_BLT\030\002 \003(\0132\032.primary.BMS_LV_JMP_TO_BL"
-  "T\022-\n\rSTEER_VERSION\030\003 \003(\0132\026.primary.STEER"
-  "_VERSION\022)\n\013DAS_VERSION\030\004 \003(\0132\024.primary."
-  "DAS_VERSION\022\'\n\nHV_VERSION\030\005 \003(\0132\023.primar"
-  "y.HV_VERSION\022\'\n\nLV_VERSION\030\006 \003(\0132\023.prima"
-  "ry.LV_VERSION\022)\n\013TLM_VERSION\030\007 \003(\0132\024.pri"
-  "mary.TLM_VERSION\022%\n\tTIMESTAMP\030\010 \003(\0132\022.pr"
-  "imary.TIMESTAMP\0229\n\023AMBIENT_TEMPERATURE\030\t"
-  " \003(\0132\034.primary.AMBIENT_TEMPERATURE\022)\n\013DA"
-  "TA_LOGGER\030\n \003(\0132\024.primary.DATA_LOGGER\022/\n"
-  "\016SET_TLM_STATUS\030\013 \003(\0132\027.primary.SET_TLM_"
-  "STATUS\022\'\n\nTLM_STATUS\030\014 \003(\0132\023.primary.TLM"
-  "_STATUS\0229\n\023STEER_SYSTEM_STATUS\030\r \003(\0132\034.p"
-  "rimary.STEER_SYSTEM_STATUS\022\'\n\nHV_VOLTAGE"
-  "\030\016 \003(\0132\023.primary.HV_VOLTAGE\022\'\n\nHV_CURREN"
-  "T\030\017 \003(\0132\023.primary.HV_CURRENT\022!\n\007HV_TEMP\030"
-  "\020 \003(\0132\020.primary.HV_TEMP\022%\n\tHV_ERRORS\030\021 \003"
-  "(\0132\022.primary.HV_ERRORS\022/\n\016HV_CAN_FORWARD"
-  "\030\022 \003(\0132\027.primary.HV_CAN_FORWARD\0223\n\020HV_FA"
-  "NS_OVERRIDE\030\023 \003(\0132\031.primary.HV_FANS_OVER"
-  "RIDE\022=\n\025HV_CAN_FORWARD_STATUS\030\024 \003(\0132\036.pr"
-  "imary.HV_CAN_FORWARD_STATUS\022A\n\027HV_FANS_O"
-  "VERRIDE_STATUS\030\025 \003(\0132 .primary.HV_FANS_O"
-  "VERRIDE_STATUS\0229\n\023HV_FEEDBACKS_STATUS\030\026 "
-  "\003(\0132\034.primary.HV_FEEDBACKS_STATUS\022-\n\rHV_"
-  "IMD_STATUS\030\027 \003(\0132\026.primary.HV_IMD_STATUS"
-  "\022%\n\tTS_STATUS\030\030 \003(\0132\022.primary.TS_STATUS\022"
-  "5\n\021SET_TS_STATUS_DAS\030\031 \003(\0132\032.primary.SET"
-  "_TS_STATUS_DAS\022\?\n\026SET_TS_STATUS_HANDCART"
-  "\030\032 \003(\0132\037.primary.SET_TS_STATUS_HANDCART\022"
-  "+\n\014STEER_STATUS\030\033 \003(\0132\025.primary.STEER_ST"
-  "ATUS\022/\n\016SET_CAR_STATUS\030\034 \003(\0132\027.primary.S"
-  "ET_CAR_STATUS\0223\n\020SET_PEDALS_RANGE\030\035 \003(\0132"
-  "\031.primary.SET_PEDALS_RANGE\022C\n\030SET_STEERI"
-  "NG_ANGLE_RANGE\030\036 \003(\0132!.primary.SET_STEER"
-  "ING_ANGLE_RANGE\022\'\n\nCAR_STATUS\030\037 \003(\0132\023.pr"
-  "imary.CAR_STATUS\022\'\n\nDAS_ERRORS\030  \003(\0132\023.p"
-  "rimary.DAS_ERRORS\022\'\n\nLV_CURRENT\030! \003(\0132\023."
-  "primary.LV_CURRENT\022\'\n\nLV_VOLTAGE\030\" \003(\0132\023"
-  ".primary.LV_VOLTAGE\0223\n\020LV_TOTAL_VOLTAGE\030"
-  "# \003(\0132\031.primary.LV_TOTAL_VOLTAGE\022/\n\016LV_T"
-  "EMPERATURE\030$ \003(\0132\027.primary.LV_TEMPERATUR"
-  "E\022/\n\016COOLING_STATUS\030% \003(\0132\027.primary.COOL"
-  "ING_STATUS\0227\n\022SET_RADIATOR_SPEED\030& \003(\0132\033"
-  ".primary.SET_RADIATOR_SPEED\0221\n\017SET_PUMPS"
-  "_SPEED\030\' \003(\0132\030.primary.SET_PUMPS_SPEED\022O"
-  "\n\036SET_INVERTER_CONNECTION_STATUS\030( \003(\0132\'"
-  ".primary.SET_INVERTER_CONNECTION_STATUS\022"
-  "G\n\032INVERTER_CONNECTION_STATUS\030) \003(\0132#.pr"
-  "imary.INVERTER_CONNECTION_STATUS\022%\n\tLV_E"
-  "RRORS\030* \003(\0132\022.primary.LV_ERRORS\0221\n\017SHUTD"
-  "OWN_STATUS\030+ \003(\0132\030.primary.SHUTDOWN_STAT"
-  "US\022\037\n\006MARKER\030, \003(\0132\017.primary.MARKER\0223\n\020H"
-  "V_CELLS_VOLTAGE\030- \003(\0132\031.primary.HV_CELLS"
-  "_VOLTAGE\022-\n\rHV_CELLS_TEMP\030. \003(\0132\026.primar"
-  "y.HV_CELLS_TEMP\022C\n\030HV_CELL_BALANCING_STA"
-  "TUS\030/ \003(\0132!.primary.HV_CELL_BALANCING_ST"
-  "ATUS\022E\n\031SET_CELL_BALANCING_STATUS\0300 \003(\0132"
-  "\".primary.SET_CELL_BALANCING_STATUS\0221\n\017H"
-  "ANDCART_STATUS\0301 \003(\0132\030.primary.HANDCART_"
-  "STATUS\022\035\n\005SPEED\0302 \003(\0132\016.primary.SPEED\022-\n"
-  "\rINV_L_REQUEST\0303 \003(\0132\026.primary.INV_L_REQ"
-  "UEST\022-\n\rINV_R_REQUEST\0304 \003(\0132\026.primary.IN"
-  "V_R_REQUEST\022/\n\016INV_L_RESPONSE\0305 \003(\0132\027.pr"
-  "imary.INV_L_RESPONSE\022/\n\016INV_R_RESPONSE\0306"
-  " \003(\0132\027.primary.INV_R_RESPONSE\022;\n\024FLASH_C"
-  "ELLBOARD_0_TX\0307 \003(\0132\035.primary.FLASH_CELL"
-  "BOARD_0_TX\022;\n\024FLASH_CELLBOARD_0_RX\0308 \003(\013"
-  "2\035.primary.FLASH_CELLBOARD_0_RX\022;\n\024FLASH"
-  "_CELLBOARD_1_TX\0309 \003(\0132\035.primary.FLASH_CE"
-  "LLBOARD_1_TX\022;\n\024FLASH_CELLBOARD_1_RX\030: \003"
-  "(\0132\035.primary.FLASH_CELLBOARD_1_RX\022;\n\024FLA"
-  "SH_CELLBOARD_2_TX\030; \003(\0132\035.primary.FLASH_"
-  "CELLBOARD_2_TX\022;\n\024FLASH_CELLBOARD_2_RX\030<"
-  " \003(\0132\035.primary.FLASH_CELLBOARD_2_RX\022;\n\024F"
-  "LASH_CELLBOARD_3_TX\030= \003(\0132\035.primary.FLAS"
-  "H_CELLBOARD_3_TX\022;\n\024FLASH_CELLBOARD_3_RX"
-  "\030> \003(\0132\035.primary.FLASH_CELLBOARD_3_RX\022;\n"
-  "\024FLASH_CELLBOARD_4_TX\030\? \003(\0132\035.primary.FL"
-  "ASH_CELLBOARD_4_TX\022;\n\024FLASH_CELLBOARD_4_"
-  "RX\030@ \003(\0132\035.primary.FLASH_CELLBOARD_4_RX\022"
-  ";\n\024FLASH_CELLBOARD_5_TX\030A \003(\0132\035.primary."
-  "FLASH_CELLBOARD_5_TX\022;\n\024FLASH_CELLBOARD_"
-  "5_RX\030B \003(\0132\035.primary.FLASH_CELLBOARD_5_R"
-  "X\0221\n\017FLASH_BMS_HV_TX\030C \003(\0132\030.primary.FLA"
-  "SH_BMS_HV_TX\0221\n\017FLASH_BMS_HV_RX\030D \003(\0132\030."
-  "primary.FLASH_BMS_HV_RX\0221\n\017FLASH_BMS_LV_"
-  "TX\030E \003(\0132\030.primary.FLASH_BMS_LV_TX\0221\n\017FL"
-  "ASH_BMS_LV_RX\030F \003(\0132\030.primary.FLASH_BMS_"
-  "LV_RX\022/\n\016BRUSA_NLG5_CTL\030G \003(\0132\027.primary."
-  "BRUSA_NLG5_CTL\022#\n\010BRUSA_ST\030H \003(\0132\021.prima"
-  "ry.BRUSA_ST\022)\n\013BRUSA_ACT_I\030I \003(\0132\024.prima"
-  "ry.BRUSA_ACT_I\022+\n\014BRUSA_ACT_II\030J \003(\0132\025.p"
-  "rimary.BRUSA_ACT_II\022\'\n\nBRUSA_TEMP\030K \003(\0132"
-  "\023.primary.BRUSA_TEMP\022%\n\tBRUSA_ERR\030L \003(\0132"
-  "\022.primary.BRUSA_ERR\022/\n\016BMS_HV_CHIMERA\030M "
-  "\003(\0132\027.primary.BMS_HV_CHIMERA\022)\n\013ECU_CHIM"
-  "ERA\030N \003(\0132\024.primary.ECU_CHIMERA\022#\n\010LC_RE"
-  "SET\030O \003(\0132\021.primary.LC_RESET*k\n\010RaceType"
-  "\022\031\n\025RaceType_ACCELERATION\020\000\022\024\n\020RaceType_"
-  "SKIDPAD\020\001\022\026\n\022RaceType_AUTOCROSS\020\002\022\026\n\022Rac"
-  "eType_ENDURANCE\020\003*X\n\016InverterStatus\022\026\n\022I"
-  "nverterStatus_OFF\020\000\022\027\n\023InverterStatus_ID"
-  "LE\020\001\022\025\n\021InverterStatus_ON\020\002*\224\001\n\tCarStatu"
-  "s\022\022\n\016CarStatus_IDLE\020\000\022\027\n\023CarStatus_PRE_S"
-  "ETUP\020\001\022\023\n\017CarStatus_TS_ON\020\002\022\030\n\024CarStatus"
-  "_POST_SETUP\020\003\022\023\n\017CarStatus_DRIVE\020\004\022\026\n\022Ca"
-  "rStatus_TEARDOWN\020\005*\'\n\006Toggle\022\016\n\nToggle_O"
-  "FF\020\000\022\r\n\tToggle_ON\020\001*Y\n\010TsStatus\022\020\n\014TsSta"
-  "tus_OFF\020\000\022\026\n\022TsStatus_PRECHARGE\020\001\022\017\n\013TsS"
-  "tatus_ON\020\002\022\022\n\016TsStatus_FATAL\020\003*U\n\014SetCar"
-  "Status\022\025\n\021SetCarStatus_IDLE\020\000\022\026\n\022SetCarS"
-  "tatus_READY\020\001\022\026\n\022SetCarStatus_DRIVE\020\002*-\n"
-  "\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021\n\rBound_SET_M"
-  "IN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCELERATOR\020\000\022\017\n\013"
-  "Pedal_BRAKE\020\001*\274\001\n\tImdStatus\022\024\n\020ImdStatus"
-  "_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_NORMAL\020\001\022\037\n\033I"
-  "mdStatus_IMD_UNDER_VOLTAGE\020\002\022\037\n\033ImdStatu"
-  "s_IMD_START_MEASURE\020\003\022\036\n\032ImdStatus_IMD_D"
-  "EVICE_ERROR\020\004\022\035\n\031ImdStatus_IMD_EARTH_FAU"
-  "LT\020\005b\006proto3"
+  "\212\001\n\016CONTROL_OUTPUT\022\032\n\022estimated_velocity"
+  "\030\001 \001(\002\022\016\n\006tmax_r\030\002 \001(\002\022\016\n\006tmax_l\030\003 \001(\002\022\020"
+  "\n\010torque_l\030\004 \001(\002\022\020\n\010torque_r\030\005 \001(\002\022\030\n\020_i"
+  "nner_timestamp\030\006 \001(\004\"$\n\010LC_RESET\022\030\n\020_inn"
+  "er_timestamp\030\001 \001(\004\"\214\037\n\004Pack\0225\n\021BMS_HV_JM"
+  "P_TO_BLT\030\001 \003(\0132\032.primary.BMS_HV_JMP_TO_B"
+  "LT\0225\n\021BMS_LV_JMP_TO_BLT\030\002 \003(\0132\032.primary."
+  "BMS_LV_JMP_TO_BLT\022-\n\rSTEER_VERSION\030\003 \003(\013"
+  "2\026.primary.STEER_VERSION\022)\n\013DAS_VERSION\030"
+  "\004 \003(\0132\024.primary.DAS_VERSION\022\'\n\nHV_VERSIO"
+  "N\030\005 \003(\0132\023.primary.HV_VERSION\022\'\n\nLV_VERSI"
+  "ON\030\006 \003(\0132\023.primary.LV_VERSION\022)\n\013TLM_VER"
+  "SION\030\007 \003(\0132\024.primary.TLM_VERSION\022%\n\tTIME"
+  "STAMP\030\010 \003(\0132\022.primary.TIMESTAMP\0229\n\023AMBIE"
+  "NT_TEMPERATURE\030\t \003(\0132\034.primary.AMBIENT_T"
+  "EMPERATURE\022)\n\013DATA_LOGGER\030\n \003(\0132\024.primar"
+  "y.DATA_LOGGER\022/\n\016SET_TLM_STATUS\030\013 \003(\0132\027."
+  "primary.SET_TLM_STATUS\022\'\n\nTLM_STATUS\030\014 \003"
+  "(\0132\023.primary.TLM_STATUS\0229\n\023STEER_SYSTEM_"
+  "STATUS\030\r \003(\0132\034.primary.STEER_SYSTEM_STAT"
+  "US\022\'\n\nHV_VOLTAGE\030\016 \003(\0132\023.primary.HV_VOLT"
+  "AGE\022\'\n\nHV_CURRENT\030\017 \003(\0132\023.primary.HV_CUR"
+  "RENT\022!\n\007HV_TEMP\030\020 \003(\0132\020.primary.HV_TEMP\022"
+  "%\n\tHV_ERRORS\030\021 \003(\0132\022.primary.HV_ERRORS\022/"
+  "\n\016HV_CAN_FORWARD\030\022 \003(\0132\027.primary.HV_CAN_"
+  "FORWARD\0223\n\020HV_FANS_OVERRIDE\030\023 \003(\0132\031.prim"
+  "ary.HV_FANS_OVERRIDE\022=\n\025HV_CAN_FORWARD_S"
+  "TATUS\030\024 \003(\0132\036.primary.HV_CAN_FORWARD_STA"
+  "TUS\022A\n\027HV_FANS_OVERRIDE_STATUS\030\025 \003(\0132 .p"
+  "rimary.HV_FANS_OVERRIDE_STATUS\0229\n\023HV_FEE"
+  "DBACKS_STATUS\030\026 \003(\0132\034.primary.HV_FEEDBAC"
+  "KS_STATUS\022-\n\rHV_IMD_STATUS\030\027 \003(\0132\026.prima"
+  "ry.HV_IMD_STATUS\022%\n\tTS_STATUS\030\030 \003(\0132\022.pr"
+  "imary.TS_STATUS\0225\n\021SET_TS_STATUS_DAS\030\031 \003"
+  "(\0132\032.primary.SET_TS_STATUS_DAS\022\?\n\026SET_TS"
+  "_STATUS_HANDCART\030\032 \003(\0132\037.primary.SET_TS_"
+  "STATUS_HANDCART\022+\n\014STEER_STATUS\030\033 \003(\0132\025."
+  "primary.STEER_STATUS\022/\n\016SET_CAR_STATUS\030\034"
+  " \003(\0132\027.primary.SET_CAR_STATUS\0223\n\020SET_PED"
+  "ALS_RANGE\030\035 \003(\0132\031.primary.SET_PEDALS_RAN"
+  "GE\022C\n\030SET_STEERING_ANGLE_RANGE\030\036 \003(\0132!.p"
+  "rimary.SET_STEERING_ANGLE_RANGE\022\'\n\nCAR_S"
+  "TATUS\030\037 \003(\0132\023.primary.CAR_STATUS\022\'\n\nDAS_"
+  "ERRORS\030  \003(\0132\023.primary.DAS_ERRORS\022\'\n\nLV_"
+  "CURRENT\030! \003(\0132\023.primary.LV_CURRENT\022\'\n\nLV"
+  "_VOLTAGE\030\" \003(\0132\023.primary.LV_VOLTAGE\0223\n\020L"
+  "V_TOTAL_VOLTAGE\030# \003(\0132\031.primary.LV_TOTAL"
+  "_VOLTAGE\022/\n\016LV_TEMPERATURE\030$ \003(\0132\027.prima"
+  "ry.LV_TEMPERATURE\022/\n\016COOLING_STATUS\030% \003("
+  "\0132\027.primary.COOLING_STATUS\0227\n\022SET_RADIAT"
+  "OR_SPEED\030& \003(\0132\033.primary.SET_RADIATOR_SP"
+  "EED\0221\n\017SET_PUMPS_SPEED\030\' \003(\0132\030.primary.S"
+  "ET_PUMPS_SPEED\022O\n\036SET_INVERTER_CONNECTIO"
+  "N_STATUS\030( \003(\0132\'.primary.SET_INVERTER_CO"
+  "NNECTION_STATUS\022G\n\032INVERTER_CONNECTION_S"
+  "TATUS\030) \003(\0132#.primary.INVERTER_CONNECTIO"
+  "N_STATUS\022%\n\tLV_ERRORS\030* \003(\0132\022.primary.LV"
+  "_ERRORS\0221\n\017SHUTDOWN_STATUS\030+ \003(\0132\030.prima"
+  "ry.SHUTDOWN_STATUS\022\037\n\006MARKER\030, \003(\0132\017.pri"
+  "mary.MARKER\0223\n\020HV_CELLS_VOLTAGE\030- \003(\0132\031."
+  "primary.HV_CELLS_VOLTAGE\022-\n\rHV_CELLS_TEM"
+  "P\030. \003(\0132\026.primary.HV_CELLS_TEMP\022C\n\030HV_CE"
+  "LL_BALANCING_STATUS\030/ \003(\0132!.primary.HV_C"
+  "ELL_BALANCING_STATUS\022E\n\031SET_CELL_BALANCI"
+  "NG_STATUS\0300 \003(\0132\".primary.SET_CELL_BALAN"
+  "CING_STATUS\0221\n\017HANDCART_STATUS\0301 \003(\0132\030.p"
+  "rimary.HANDCART_STATUS\022\035\n\005SPEED\0302 \003(\0132\016."
+  "primary.SPEED\022-\n\rINV_L_REQUEST\0303 \003(\0132\026.p"
+  "rimary.INV_L_REQUEST\022-\n\rINV_R_REQUEST\0304 "
+  "\003(\0132\026.primary.INV_R_REQUEST\022/\n\016INV_L_RES"
+  "PONSE\0305 \003(\0132\027.primary.INV_L_RESPONSE\022/\n\016"
+  "INV_R_RESPONSE\0306 \003(\0132\027.primary.INV_R_RES"
+  "PONSE\022;\n\024FLASH_CELLBOARD_0_TX\0307 \003(\0132\035.pr"
+  "imary.FLASH_CELLBOARD_0_TX\022;\n\024FLASH_CELL"
+  "BOARD_0_RX\0308 \003(\0132\035.primary.FLASH_CELLBOA"
+  "RD_0_RX\022;\n\024FLASH_CELLBOARD_1_TX\0309 \003(\0132\035."
+  "primary.FLASH_CELLBOARD_1_TX\022;\n\024FLASH_CE"
+  "LLBOARD_1_RX\030: \003(\0132\035.primary.FLASH_CELLB"
+  "OARD_1_RX\022;\n\024FLASH_CELLBOARD_2_TX\030; \003(\0132"
+  "\035.primary.FLASH_CELLBOARD_2_TX\022;\n\024FLASH_"
+  "CELLBOARD_2_RX\030< \003(\0132\035.primary.FLASH_CEL"
+  "LBOARD_2_RX\022;\n\024FLASH_CELLBOARD_3_TX\030= \003("
+  "\0132\035.primary.FLASH_CELLBOARD_3_TX\022;\n\024FLAS"
+  "H_CELLBOARD_3_RX\030> \003(\0132\035.primary.FLASH_C"
+  "ELLBOARD_3_RX\022;\n\024FLASH_CELLBOARD_4_TX\030\? "
+  "\003(\0132\035.primary.FLASH_CELLBOARD_4_TX\022;\n\024FL"
+  "ASH_CELLBOARD_4_RX\030@ \003(\0132\035.primary.FLASH"
+  "_CELLBOARD_4_RX\022;\n\024FLASH_CELLBOARD_5_TX\030"
+  "A \003(\0132\035.primary.FLASH_CELLBOARD_5_TX\022;\n\024"
+  "FLASH_CELLBOARD_5_RX\030B \003(\0132\035.primary.FLA"
+  "SH_CELLBOARD_5_RX\0221\n\017FLASH_BMS_HV_TX\030C \003"
+  "(\0132\030.primary.FLASH_BMS_HV_TX\0221\n\017FLASH_BM"
+  "S_HV_RX\030D \003(\0132\030.primary.FLASH_BMS_HV_RX\022"
+  "1\n\017FLASH_BMS_LV_TX\030E \003(\0132\030.primary.FLASH"
+  "_BMS_LV_TX\0221\n\017FLASH_BMS_LV_RX\030F \003(\0132\030.pr"
+  "imary.FLASH_BMS_LV_RX\022/\n\016BRUSA_NLG5_CTL\030"
+  "G \003(\0132\027.primary.BRUSA_NLG5_CTL\022#\n\010BRUSA_"
+  "ST\030H \003(\0132\021.primary.BRUSA_ST\022)\n\013BRUSA_ACT"
+  "_I\030I \003(\0132\024.primary.BRUSA_ACT_I\022+\n\014BRUSA_"
+  "ACT_II\030J \003(\0132\025.primary.BRUSA_ACT_II\022\'\n\nB"
+  "RUSA_TEMP\030K \003(\0132\023.primary.BRUSA_TEMP\022%\n\t"
+  "BRUSA_ERR\030L \003(\0132\022.primary.BRUSA_ERR\022/\n\016C"
+  "ONTROL_OUTPUT\030M \003(\0132\027.primary.CONTROL_OU"
+  "TPUT\022#\n\010LC_RESET\030N \003(\0132\021.primary.LC_RESE"
+  "T*k\n\010RaceType\022\031\n\025RaceType_ACCELERATION\020\000"
+  "\022\024\n\020RaceType_SKIDPAD\020\001\022\026\n\022RaceType_AUTOC"
+  "ROSS\020\002\022\026\n\022RaceType_ENDURANCE\020\003*X\n\016Invert"
+  "erStatus\022\026\n\022InverterStatus_OFF\020\000\022\027\n\023Inve"
+  "rterStatus_IDLE\020\001\022\025\n\021InverterStatus_ON\020\002"
+  "*\224\001\n\tCarStatus\022\022\n\016CarStatus_IDLE\020\000\022\027\n\023Ca"
+  "rStatus_PRE_SETUP\020\001\022\023\n\017CarStatus_TS_ON\020\002"
+  "\022\030\n\024CarStatus_POST_SETUP\020\003\022\023\n\017CarStatus_"
+  "DRIVE\020\004\022\026\n\022CarStatus_TEARDOWN\020\005*\'\n\006Toggl"
+  "e\022\016\n\nToggle_OFF\020\000\022\r\n\tToggle_ON\020\001*Y\n\010TsSt"
+  "atus\022\020\n\014TsStatus_OFF\020\000\022\026\n\022TsStatus_PRECH"
+  "ARGE\020\001\022\017\n\013TsStatus_ON\020\002\022\022\n\016TsStatus_FATA"
+  "L\020\003*U\n\014SetCarStatus\022\025\n\021SetCarStatus_IDLE"
+  "\020\000\022\026\n\022SetCarStatus_READY\020\001\022\026\n\022SetCarStat"
+  "us_DRIVE\020\002*-\n\005Bound\022\021\n\rBound_SET_MAX\020\000\022\021"
+  "\n\rBound_SET_MIN\020\001*/\n\005Pedal\022\025\n\021Pedal_ACCE"
+  "LERATOR\020\000\022\017\n\013Pedal_BRAKE\020\001*\274\001\n\tImdStatus"
+  "\022\024\n\020ImdStatus_IMD_SC\020\000\022\030\n\024ImdStatus_IMD_"
+  "NORMAL\020\001\022\037\n\033ImdStatus_IMD_UNDER_VOLTAGE\020"
+  "\002\022\037\n\033ImdStatus_IMD_START_MEASURE\020\003\022\036\n\032Im"
+  "dStatus_IMD_DEVICE_ERROR\020\004\022\035\n\031ImdStatus_"
+  "IMD_EARTH_FAULT\020\005b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_primary_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_primary_2eproto_sccs[80] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_primary_2eproto_sccs[79] = {
   &scc_info_AMBIENT_TEMPERATURE_primary_2eproto.base,
-  &scc_info_BMS_HV_CHIMERA_primary_2eproto.base,
   &scc_info_BMS_HV_JMP_TO_BLT_primary_2eproto.base,
   &scc_info_BMS_LV_JMP_TO_BLT_primary_2eproto.base,
   &scc_info_BRUSA_ACT_I_primary_2eproto.base,
@@ -2768,11 +2743,11 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pri
   &scc_info_BRUSA_ST_primary_2eproto.base,
   &scc_info_BRUSA_TEMP_primary_2eproto.base,
   &scc_info_CAR_STATUS_primary_2eproto.base,
+  &scc_info_CONTROL_OUTPUT_primary_2eproto.base,
   &scc_info_COOLING_STATUS_primary_2eproto.base,
   &scc_info_DAS_ERRORS_primary_2eproto.base,
   &scc_info_DAS_VERSION_primary_2eproto.base,
   &scc_info_DATA_LOGGER_primary_2eproto.base,
-  &scc_info_ECU_CHIMERA_primary_2eproto.base,
   &scc_info_FLASH_BMS_HV_RX_primary_2eproto.base,
   &scc_info_FLASH_BMS_HV_TX_primary_2eproto.base,
   &scc_info_FLASH_BMS_LV_RX_primary_2eproto.base,
@@ -2840,10 +2815,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pri
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_primary_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_primary_2eproto = {
-  false, false, descriptor_table_protodef_primary_2eproto, "primary.proto", 11292,
-  &descriptor_table_primary_2eproto_once, descriptor_table_primary_2eproto_sccs, descriptor_table_primary_2eproto_deps, 80, 0,
+  false, false, descriptor_table_protodef_primary_2eproto, "primary.proto", 11305,
+  &descriptor_table_primary_2eproto_once, descriptor_table_primary_2eproto_sccs, descriptor_table_primary_2eproto_deps, 79, 0,
   schemas, file_default_instances, TableStruct_primary_2eproto::offsets,
-  file_level_metadata_primary_2eproto, 80, file_level_enum_descriptors_primary_2eproto, file_level_service_descriptors_primary_2eproto,
+  file_level_metadata_primary_2eproto, 79, file_level_enum_descriptors_primary_2eproto, file_level_service_descriptors_primary_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -21327,65 +21302,71 @@ void BRUSA_ERR::InternalSwap(BRUSA_ERR* other) {
 
 // ===================================================================
 
-void BMS_HV_CHIMERA::InitAsDefaultInstance() {
+void CONTROL_OUTPUT::InitAsDefaultInstance() {
 }
-class BMS_HV_CHIMERA::_Internal {
+class CONTROL_OUTPUT::_Internal {
  public:
 };
 
-BMS_HV_CHIMERA::BMS_HV_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+CONTROL_OUTPUT::CONTROL_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:primary.BMS_HV_CHIMERA)
+  // @@protoc_insertion_point(arena_constructor:primary.CONTROL_OUTPUT)
 }
-BMS_HV_CHIMERA::BMS_HV_CHIMERA(const BMS_HV_CHIMERA& from)
+CONTROL_OUTPUT::CONTROL_OUTPUT(const CONTROL_OUTPUT& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _inner_timestamp_ = from._inner_timestamp_;
-  // @@protoc_insertion_point(copy_constructor:primary.BMS_HV_CHIMERA)
+  ::memcpy(&estimated_velocity_, &from.estimated_velocity_,
+    static_cast<size_t>(reinterpret_cast<char*>(&torque_r_) -
+    reinterpret_cast<char*>(&estimated_velocity_)) + sizeof(torque_r_));
+  // @@protoc_insertion_point(copy_constructor:primary.CONTROL_OUTPUT)
 }
 
-void BMS_HV_CHIMERA::SharedCtor() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+void CONTROL_OUTPUT::SharedCtor() {
+  ::memset(&estimated_velocity_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&torque_r_) -
+      reinterpret_cast<char*>(&estimated_velocity_)) + sizeof(torque_r_));
 }
 
-BMS_HV_CHIMERA::~BMS_HV_CHIMERA() {
-  // @@protoc_insertion_point(destructor:primary.BMS_HV_CHIMERA)
+CONTROL_OUTPUT::~CONTROL_OUTPUT() {
+  // @@protoc_insertion_point(destructor:primary.CONTROL_OUTPUT)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void BMS_HV_CHIMERA::SharedDtor() {
+void CONTROL_OUTPUT::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void BMS_HV_CHIMERA::ArenaDtor(void* object) {
-  BMS_HV_CHIMERA* _this = reinterpret_cast< BMS_HV_CHIMERA* >(object);
+void CONTROL_OUTPUT::ArenaDtor(void* object) {
+  CONTROL_OUTPUT* _this = reinterpret_cast< CONTROL_OUTPUT* >(object);
   (void)_this;
 }
-void BMS_HV_CHIMERA::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void CONTROL_OUTPUT::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void BMS_HV_CHIMERA::SetCachedSize(int size) const {
+void CONTROL_OUTPUT::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BMS_HV_CHIMERA& BMS_HV_CHIMERA::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BMS_HV_CHIMERA_primary_2eproto.base);
+const CONTROL_OUTPUT& CONTROL_OUTPUT::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CONTROL_OUTPUT_primary_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void BMS_HV_CHIMERA::Clear() {
-// @@protoc_insertion_point(message_clear_start:primary.BMS_HV_CHIMERA)
+void CONTROL_OUTPUT::Clear() {
+// @@protoc_insertion_point(message_clear_start:primary.CONTROL_OUTPUT)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+  ::memset(&estimated_velocity_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&torque_r_) -
+      reinterpret_cast<char*>(&estimated_velocity_)) + sizeof(torque_r_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BMS_HV_CHIMERA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* CONTROL_OUTPUT::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -21393,9 +21374,44 @@ const char* BMS_HV_CHIMERA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 _inner_timestamp = 1;
+      // float estimated_velocity = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          estimated_velocity_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float tmax_r = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          tmax_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float tmax_l = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+          tmax_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float torque_l = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+          torque_l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float torque_r = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+          torque_r_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // uint64 _inner_timestamp = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -21422,39 +21438,94 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* BMS_HV_CHIMERA::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* CONTROL_OUTPUT::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:primary.BMS_HV_CHIMERA)
+  // @@protoc_insertion_point(serialize_to_array_start:primary.CONTROL_OUTPUT)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 _inner_timestamp = 1;
+  // float estimated_velocity = 1;
+  if (!(this->estimated_velocity() <= 0 && this->estimated_velocity() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_estimated_velocity(), target);
+  }
+
+  // float tmax_r = 2;
+  if (!(this->tmax_r() <= 0 && this->tmax_r() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_tmax_r(), target);
+  }
+
+  // float tmax_l = 3;
+  if (!(this->tmax_l() <= 0 && this->tmax_l() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_tmax_l(), target);
+  }
+
+  // float torque_l = 4;
+  if (!(this->torque_l() <= 0 && this->torque_l() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_torque_l(), target);
+  }
+
+  // float torque_r = 5;
+  if (!(this->torque_r() <= 0 && this->torque_r() >= 0)) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_torque_r(), target);
+  }
+
+  // uint64 _inner_timestamp = 6;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:primary.BMS_HV_CHIMERA)
+  // @@protoc_insertion_point(serialize_to_array_end:primary.CONTROL_OUTPUT)
   return target;
 }
 
-size_t BMS_HV_CHIMERA::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:primary.BMS_HV_CHIMERA)
+size_t CONTROL_OUTPUT::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:primary.CONTROL_OUTPUT)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 _inner_timestamp = 1;
+  // float estimated_velocity = 1;
+  if (!(this->estimated_velocity() <= 0 && this->estimated_velocity() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float tmax_r = 2;
+  if (!(this->tmax_r() <= 0 && this->tmax_r() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float tmax_l = 3;
+  if (!(this->tmax_l() <= 0 && this->tmax_l() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float torque_l = 4;
+  if (!(this->torque_l() <= 0 && this->torque_l() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // uint64 _inner_timestamp = 6;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal__inner_timestamp());
+  }
+
+  // float torque_r = 5;
+  if (!(this->torque_r() <= 0 && this->torque_r() >= 0)) {
+    total_size += 1 + 4;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -21466,255 +21537,78 @@ size_t BMS_HV_CHIMERA::ByteSizeLong() const {
   return total_size;
 }
 
-void BMS_HV_CHIMERA::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:primary.BMS_HV_CHIMERA)
+void CONTROL_OUTPUT::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:primary.CONTROL_OUTPUT)
   GOOGLE_DCHECK_NE(&from, this);
-  const BMS_HV_CHIMERA* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BMS_HV_CHIMERA>(
+  const CONTROL_OUTPUT* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CONTROL_OUTPUT>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.BMS_HV_CHIMERA)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.CONTROL_OUTPUT)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.BMS_HV_CHIMERA)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.CONTROL_OUTPUT)
     MergeFrom(*source);
   }
 }
 
-void BMS_HV_CHIMERA::MergeFrom(const BMS_HV_CHIMERA& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:primary.BMS_HV_CHIMERA)
+void CONTROL_OUTPUT::MergeFrom(const CONTROL_OUTPUT& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:primary.CONTROL_OUTPUT)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!(from.estimated_velocity() <= 0 && from.estimated_velocity() >= 0)) {
+    _internal_set_estimated_velocity(from._internal_estimated_velocity());
+  }
+  if (!(from.tmax_r() <= 0 && from.tmax_r() >= 0)) {
+    _internal_set_tmax_r(from._internal_tmax_r());
+  }
+  if (!(from.tmax_l() <= 0 && from.tmax_l() >= 0)) {
+    _internal_set_tmax_l(from._internal_tmax_l());
+  }
+  if (!(from.torque_l() <= 0 && from.torque_l() >= 0)) {
+    _internal_set_torque_l(from._internal_torque_l());
+  }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
+  if (!(from.torque_r() <= 0 && from.torque_r() >= 0)) {
+    _internal_set_torque_r(from._internal_torque_r());
+  }
 }
 
-void BMS_HV_CHIMERA::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:primary.BMS_HV_CHIMERA)
+void CONTROL_OUTPUT::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:primary.CONTROL_OUTPUT)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void BMS_HV_CHIMERA::CopyFrom(const BMS_HV_CHIMERA& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:primary.BMS_HV_CHIMERA)
+void CONTROL_OUTPUT::CopyFrom(const CONTROL_OUTPUT& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:primary.CONTROL_OUTPUT)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool BMS_HV_CHIMERA::IsInitialized() const {
+bool CONTROL_OUTPUT::IsInitialized() const {
   return true;
 }
 
-void BMS_HV_CHIMERA::InternalSwap(BMS_HV_CHIMERA* other) {
+void CONTROL_OUTPUT::InternalSwap(CONTROL_OUTPUT* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CONTROL_OUTPUT, torque_r_)
+      + sizeof(CONTROL_OUTPUT::torque_r_)
+      - PROTOBUF_FIELD_OFFSET(CONTROL_OUTPUT, estimated_velocity_)>(
+          reinterpret_cast<char*>(&estimated_velocity_),
+          reinterpret_cast<char*>(&other->estimated_velocity_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata BMS_HV_CHIMERA::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void ECU_CHIMERA::InitAsDefaultInstance() {
-}
-class ECU_CHIMERA::_Internal {
- public:
-};
-
-ECU_CHIMERA::ECU_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:primary.ECU_CHIMERA)
-}
-ECU_CHIMERA::ECU_CHIMERA(const ECU_CHIMERA& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _inner_timestamp_ = from._inner_timestamp_;
-  // @@protoc_insertion_point(copy_constructor:primary.ECU_CHIMERA)
-}
-
-void ECU_CHIMERA::SharedCtor() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-
-ECU_CHIMERA::~ECU_CHIMERA() {
-  // @@protoc_insertion_point(destructor:primary.ECU_CHIMERA)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void ECU_CHIMERA::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void ECU_CHIMERA::ArenaDtor(void* object) {
-  ECU_CHIMERA* _this = reinterpret_cast< ECU_CHIMERA* >(object);
-  (void)_this;
-}
-void ECU_CHIMERA::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void ECU_CHIMERA::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ECU_CHIMERA& ECU_CHIMERA::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_ECU_CHIMERA_primary_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void ECU_CHIMERA::Clear() {
-// @@protoc_insertion_point(message_clear_start:primary.ECU_CHIMERA)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* ECU_CHIMERA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint64 _inner_timestamp = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* ECU_CHIMERA::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:primary.ECU_CHIMERA)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:primary.ECU_CHIMERA)
-  return target;
-}
-
-size_t ECU_CHIMERA::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:primary.ECU_CHIMERA)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint64 _inner_timestamp = 1;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void ECU_CHIMERA::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:primary.ECU_CHIMERA)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ECU_CHIMERA* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ECU_CHIMERA>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:primary.ECU_CHIMERA)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:primary.ECU_CHIMERA)
-    MergeFrom(*source);
-  }
-}
-
-void ECU_CHIMERA::MergeFrom(const ECU_CHIMERA& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:primary.ECU_CHIMERA)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void ECU_CHIMERA::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:primary.ECU_CHIMERA)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ECU_CHIMERA::CopyFrom(const ECU_CHIMERA& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:primary.ECU_CHIMERA)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ECU_CHIMERA::IsInitialized() const {
-  return true;
-}
-
-void ECU_CHIMERA::InternalSwap(ECU_CHIMERA* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_inner_timestamp_, other->_inner_timestamp_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata ECU_CHIMERA::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CONTROL_OUTPUT::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -22002,8 +21896,7 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   brusa_act_ii_(arena),
   brusa_temp_(arena),
   brusa_err_(arena),
-  bms_hv_chimera_(arena),
-  ecu_chimera_(arena),
+  control_output_(arena),
   lc_reset_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
@@ -22087,8 +21980,7 @@ Pack::Pack(const Pack& from)
       brusa_act_ii_(from.brusa_act_ii_),
       brusa_temp_(from.brusa_temp_),
       brusa_err_(from.brusa_err_),
-      bms_hv_chimera_(from.bms_hv_chimera_),
-      ecu_chimera_(from.ecu_chimera_),
+      control_output_(from.control_output_),
       lc_reset_(from.lc_reset_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:primary.Pack)
@@ -22205,8 +22097,7 @@ void Pack::Clear() {
   brusa_act_ii_.Clear();
   brusa_temp_.Clear();
   brusa_err_.Clear();
-  bms_hv_chimera_.Clear();
-  ecu_chimera_.Clear();
+  control_output_.Clear();
   lc_reset_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -23131,40 +23022,28 @@ const char* Pack::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<610>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
+      // repeated .primary.CONTROL_OUTPUT CONTROL_OUTPUT = 77;
       case 77:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           ptr -= 2;
           do {
             ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_bms_hv_chimera(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_control_output(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<618>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
+      // repeated .primary.LC_RESET LC_RESET = 78;
       case 78:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_ecu_chimera(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<626>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .primary.LC_RESET LC_RESET = 79;
-      case 79:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_lc_reset(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<634>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<626>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -23803,28 +23682,20 @@ failure:
       InternalWriteMessage(76, this->_internal_brusa_err(i), target, stream);
   }
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
+  // repeated .primary.CONTROL_OUTPUT CONTROL_OUTPUT = 77;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_bms_hv_chimera_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_control_output_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(77, this->_internal_bms_hv_chimera(i), target, stream);
+      InternalWriteMessage(77, this->_internal_control_output(i), target, stream);
   }
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_ecu_chimera_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(78, this->_internal_ecu_chimera(i), target, stream);
-  }
-
-  // repeated .primary.LC_RESET LC_RESET = 79;
+  // repeated .primary.LC_RESET LC_RESET = 78;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_lc_reset_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(79, this->_internal_lc_reset(i), target, stream);
+      InternalWriteMessage(78, this->_internal_lc_reset(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -24375,21 +24246,14 @@ size_t Pack::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
-  total_size += 2UL * this->_internal_bms_hv_chimera_size();
-  for (const auto& msg : this->bms_hv_chimera_) {
+  // repeated .primary.CONTROL_OUTPUT CONTROL_OUTPUT = 77;
+  total_size += 2UL * this->_internal_control_output_size();
+  for (const auto& msg : this->control_output_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
-  total_size += 2UL * this->_internal_ecu_chimera_size();
-  for (const auto& msg : this->ecu_chimera_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .primary.LC_RESET LC_RESET = 79;
+  // repeated .primary.LC_RESET LC_RESET = 78;
   total_size += 2UL * this->_internal_lc_reset_size();
   for (const auto& msg : this->lc_reset_) {
     total_size +=
@@ -24503,8 +24367,7 @@ void Pack::MergeFrom(const Pack& from) {
   brusa_act_ii_.MergeFrom(from.brusa_act_ii_);
   brusa_temp_.MergeFrom(from.brusa_temp_);
   brusa_err_.MergeFrom(from.brusa_err_);
-  bms_hv_chimera_.MergeFrom(from.bms_hv_chimera_);
-  ecu_chimera_.MergeFrom(from.ecu_chimera_);
+  control_output_.MergeFrom(from.control_output_);
   lc_reset_.MergeFrom(from.lc_reset_);
 }
 
@@ -24605,8 +24468,7 @@ void Pack::InternalSwap(Pack* other) {
   brusa_act_ii_.InternalSwap(&other->brusa_act_ii_);
   brusa_temp_.InternalSwap(&other->brusa_temp_);
   brusa_err_.InternalSwap(&other->brusa_err_);
-  bms_hv_chimera_.InternalSwap(&other->bms_hv_chimera_);
-  ecu_chimera_.InternalSwap(&other->ecu_chimera_);
+  control_output_.InternalSwap(&other->control_output_);
   lc_reset_.InternalSwap(&other->lc_reset_);
 }
 
@@ -24846,11 +24708,8 @@ template<> PROTOBUF_NOINLINE ::primary::BRUSA_TEMP* Arena::CreateMaybeMessage< :
 template<> PROTOBUF_NOINLINE ::primary::BRUSA_ERR* Arena::CreateMaybeMessage< ::primary::BRUSA_ERR >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::BRUSA_ERR >(arena);
 }
-template<> PROTOBUF_NOINLINE ::primary::BMS_HV_CHIMERA* Arena::CreateMaybeMessage< ::primary::BMS_HV_CHIMERA >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::primary::BMS_HV_CHIMERA >(arena);
-}
-template<> PROTOBUF_NOINLINE ::primary::ECU_CHIMERA* Arena::CreateMaybeMessage< ::primary::ECU_CHIMERA >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::primary::ECU_CHIMERA >(arena);
+template<> PROTOBUF_NOINLINE ::primary::CONTROL_OUTPUT* Arena::CreateMaybeMessage< ::primary::CONTROL_OUTPUT >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::primary::CONTROL_OUTPUT >(arena);
 }
 template<> PROTOBUF_NOINLINE ::primary::LC_RESET* Arena::CreateMaybeMessage< ::primary::LC_RESET >(Arena* arena) {
   return Arena::CreateMessageInternal< ::primary::LC_RESET >(arena);

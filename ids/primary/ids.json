@@ -66,6 +66,9 @@
                 },
                 "SPEED": {
                     "SPEED": 548
+                },
+                "CONTROL_OUTPUT": {
+                    "CONTROL_OUTPUT": 1284
                 }
             }
         },
@@ -286,12 +289,6 @@
                 },
                 "BRUSA_ERR": {
                     "BRUSA_ERR": 614
-                },
-                "BMS_HV_CHIMERA": {
-                    "BMS_HV_CHIMERA": 170
-                },
-                "ECU_CHIMERA": {
-                    "ECU_CHIMERA": 85
                 }
             }
         }

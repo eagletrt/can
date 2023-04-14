@@ -169,18 +169,16 @@ message PEDALS_OUTPUT {
     uint64 _inner_timestamp = 4;
 }
 
-message CONTROL_OUTPUT {
-    float estimated_velocity = 1;
-    float tmax_r = 2;
-    float tmax_l = 3;
-    float torque_l = 4;
-    float torque_r = 5;
-    uint64 _inner_timestamp = 6;
-}
-
 message STEERING_ANGLE {
     float angle = 1;
     uint64 _inner_timestamp = 2;
+}
+
+message CONTROL_STATE {
+    float map_pw = 1;
+    float map_sc = 2;
+    float map_tv = 3;
+    uint64 _inner_timestamp = 4;
 }
 
 message TPMS {
@@ -225,8 +223,8 @@ message Pack {
     repeated GPS_SPEED GPS_SPEED = 20;
     repeated LAP_COUNT LAP_COUNT = 21;
     repeated PEDALS_OUTPUT PEDALS_OUTPUT = 22;
-    repeated CONTROL_OUTPUT CONTROL_OUTPUT = 23;
-    repeated STEERING_ANGLE STEERING_ANGLE = 24;
+    repeated STEERING_ANGLE STEERING_ANGLE = 23;
+    repeated CONTROL_STATE CONTROL_STATE = 24;
     repeated TPMS TPMS = 25;
     repeated LC_STATUS LC_STATUS = 26;
 }

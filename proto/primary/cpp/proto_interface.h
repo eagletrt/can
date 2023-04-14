@@ -1142,23 +1142,19 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 #endif // CANLIB_TIMESTAMP
 
     }
-    for(int i = 0; i < pack->bms_hv_chimera_size(); i++){
+    for(int i = 0; i < pack->control_output_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->bms_hv_chimera(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->bms_hv_chimera(i)._inner_timestamp();
-        (*net_signals)["BMS_HV_CHIMERA"]["_timestamp"].push(pack->bms_hv_chimera(i)._inner_timestamp());
+        if(pack->control_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->control_output(i)._inner_timestamp();
+        (*net_signals)["CONTROL_OUTPUT"]["_timestamp"].push(pack->control_output(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-    }
-    for(int i = 0; i < pack->ecu_chimera_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->ecu_chimera(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_chimera(i)._inner_timestamp();
-        (*net_signals)["ECU_CHIMERA"]["_timestamp"].push(pack->ecu_chimera(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
+        (*net_signals)["CONTROL_OUTPUT"]["estimated_velocity"].push(pack->control_output(i).estimated_velocity());
+        (*net_signals)["CONTROL_OUTPUT"]["tmax_r"].push(pack->control_output(i).tmax_r());
+        (*net_signals)["CONTROL_OUTPUT"]["tmax_l"].push(pack->control_output(i).tmax_l());
+        (*net_signals)["CONTROL_OUTPUT"]["torque_l"].push(pack->control_output(i).torque_l());
+        (*net_signals)["CONTROL_OUTPUT"]["torque_r"].push(pack->control_output(i).torque_r());
     }
     for(int i = 0; i < pack->lc_reset_size(); i++){
 #ifdef CANLIB_TIMESTAMP
@@ -1835,14 +1831,17 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary::BRUSA_ERR* proto_msg = pack->add_brusa_err();
             break;
         }
-        case 170: {
-            primary_message_BMS_HV_CHIMERA* msg = (primary_message_BMS_HV_CHIMERA*)(&(*map)[index].message_raw);
-            primary::BMS_HV_CHIMERA* proto_msg = pack->add_bms_hv_chimera();
-            break;
-        }
-        case 85: {
-            primary_message_ECU_CHIMERA* msg = (primary_message_ECU_CHIMERA*)(&(*map)[index].message_raw);
-            primary::ECU_CHIMERA* proto_msg = pack->add_ecu_chimera();
+        case 1284: {
+            primary_message_CONTROL_OUTPUT_conversion* msg = (primary_message_CONTROL_OUTPUT_conversion*)(&(*map)[index].message_conversion);
+            primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
+            proto_msg->set_estimated_velocity(msg->estimated_velocity);
+            proto_msg->set_tmax_r(msg->tmax_r);
+            proto_msg->set_tmax_l(msg->tmax_l);
+            proto_msg->set_torque_l(msg->torque_l);
+            proto_msg->set_torque_r(msg->torque_r);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
             break;
         }
         case 523: {

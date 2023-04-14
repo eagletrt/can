@@ -288,8 +288,8 @@ typedef struct {
     canlib_circular_buffer<secondary_message_GPS_SPEED, CANLIB_CIRCULAR_BUFFER_SIZE> GPS_SPEED;
     canlib_circular_buffer<secondary_message_LAP_COUNT, CANLIB_CIRCULAR_BUFFER_SIZE> LAP_COUNT;
     canlib_circular_buffer<secondary_message_PEDALS_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> PEDALS_OUTPUT;
-    canlib_circular_buffer<secondary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_OUTPUT;
     canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE> STEERING_ANGLE;
+    canlib_circular_buffer<secondary_message_CONTROL_STATE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_STATE;
     canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> TPMS;
     canlib_circular_buffer<secondary_message_LC_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> LC_STATUS;
 } secondary_proto_pack;
@@ -613,23 +613,6 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["PEDALS_OUTPUT"].field["_timestamp"].value._uint64 = &pack.PEDALS_OUTPUT.start()._timestamp;
     mapping_map["PEDALS_OUTPUT"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["CONTROL_OUTPUT"].size = std::bind(&canlib_circular_buffer<secondary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.CONTROL_OUTPUT);
-    mapping_map["CONTROL_OUTPUT"].offset = std::bind(&canlib_circular_buffer<secondary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.CONTROL_OUTPUT);
-    mapping_map["CONTROL_OUTPUT"].stride = sizeof(secondary_message_CONTROL_OUTPUT_conversion);
-    mapping_map["CONTROL_OUTPUT"].field["estimated_velocity"].value._float32 = &pack.CONTROL_OUTPUT.start().estimated_velocity;
-    mapping_map["CONTROL_OUTPUT"].field["estimated_velocity"].type = mapping_type_float32;
-    mapping_map["CONTROL_OUTPUT"].field["tmax_r"].value._float32 = &pack.CONTROL_OUTPUT.start().tmax_r;
-    mapping_map["CONTROL_OUTPUT"].field["tmax_r"].type = mapping_type_float32;
-    mapping_map["CONTROL_OUTPUT"].field["tmax_l"].value._float32 = &pack.CONTROL_OUTPUT.start().tmax_l;
-    mapping_map["CONTROL_OUTPUT"].field["tmax_l"].type = mapping_type_float32;
-    mapping_map["CONTROL_OUTPUT"].field["torque_l"].value._float32 = &pack.CONTROL_OUTPUT.start().torque_l;
-    mapping_map["CONTROL_OUTPUT"].field["torque_l"].type = mapping_type_float32;
-    mapping_map["CONTROL_OUTPUT"].field["torque_r"].value._float32 = &pack.CONTROL_OUTPUT.start().torque_r;
-    mapping_map["CONTROL_OUTPUT"].field["torque_r"].type = mapping_type_float32;
-#ifdef CANLIB_TIMESTAMP
-    mapping_map["CONTROL_OUTPUT"].field["_timestamp"].value._uint64 = &pack.CONTROL_OUTPUT.start()._timestamp;
-    mapping_map["CONTROL_OUTPUT"].field["_timestamp"].type = mapping_type_uint64;
-#endif // CANLIB_TIMESTAMP
     mapping_map["STEERING_ANGLE"].size = std::bind(&canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEERING_ANGLE);
     mapping_map["STEERING_ANGLE"].offset = std::bind(&canlib_circular_buffer<secondary_message_STEERING_ANGLE, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEERING_ANGLE);
     mapping_map["STEERING_ANGLE"].stride = sizeof(secondary_message_STEERING_ANGLE);
@@ -638,6 +621,19 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
 #ifdef CANLIB_TIMESTAMP
     mapping_map["STEERING_ANGLE"].field["_timestamp"].value._uint64 = &pack.STEERING_ANGLE.start()._timestamp;
     mapping_map["STEERING_ANGLE"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["CONTROL_STATE"].size = std::bind(&canlib_circular_buffer<secondary_message_CONTROL_STATE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.CONTROL_STATE);
+    mapping_map["CONTROL_STATE"].offset = std::bind(&canlib_circular_buffer<secondary_message_CONTROL_STATE_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.CONTROL_STATE);
+    mapping_map["CONTROL_STATE"].stride = sizeof(secondary_message_CONTROL_STATE_conversion);
+    mapping_map["CONTROL_STATE"].field["map_pw"].value._float32 = &pack.CONTROL_STATE.start().map_pw;
+    mapping_map["CONTROL_STATE"].field["map_pw"].type = mapping_type_float32;
+    mapping_map["CONTROL_STATE"].field["map_sc"].value._float32 = &pack.CONTROL_STATE.start().map_sc;
+    mapping_map["CONTROL_STATE"].field["map_sc"].type = mapping_type_float32;
+    mapping_map["CONTROL_STATE"].field["map_tv"].value._float32 = &pack.CONTROL_STATE.start().map_tv;
+    mapping_map["CONTROL_STATE"].field["map_tv"].type = mapping_type_float32;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["CONTROL_STATE"].field["_timestamp"].value._uint64 = &pack.CONTROL_STATE.start()._timestamp;
+    mapping_map["CONTROL_STATE"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
     mapping_map["TPMS"].size = std::bind(&canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TPMS);
     mapping_map["TPMS"].offset = std::bind(&canlib_circular_buffer<secondary_message_TPMS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TPMS);
@@ -958,24 +954,22 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             break;
         }
 
-        case 801: {
-            secondary_message_CONTROL_OUTPUT_conversion* msg = (secondary_message_CONTROL_OUTPUT_conversion*) (*map)[index].message_conversion;
-            secondary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
-            proto_msg->set_estimated_velocity(msg->estimated_velocity);
-            proto_msg->set_tmax_r(msg->tmax_r);
-            proto_msg->set_tmax_l(msg->tmax_l);
-            proto_msg->set_torque_l(msg->torque_l);
-            proto_msg->set_torque_r(msg->torque_r);
+        case 258: {
+            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].message_raw;
+            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
+            proto_msg->set_angle(msg->angle);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
             break;
         }
 
-        case 258: {
-            secondary_message_STEERING_ANGLE* msg = (secondary_message_STEERING_ANGLE*) (*map)[index].message_raw;
-            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
-            proto_msg->set_angle(msg->angle);
+        case 259: {
+            secondary_message_CONTROL_STATE_conversion* msg = (secondary_message_CONTROL_STATE_conversion*) (*map)[index].message_conversion;
+            secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
+            proto_msg->set_map_pw(msg->map_pw);
+            proto_msg->set_map_sc(msg->map_sc);
+            proto_msg->set_map_tv(msg->map_tv);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
 #endif // CANLIB_TIMESTAMP
@@ -999,7 +993,7 @@ void secondary_proto_serialize_from_id(canlib_message_id id, secondary::Pack* pa
             break;
         }
 
-        case 771: {
+        case 772: {
             secondary_message_LC_STATUS* msg = (secondary_message_LC_STATUS*) (*map)[index].message_raw;
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
             proto_msg->set_last_time(msg->last_time);
@@ -1357,23 +1351,6 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
         instance.bse_rear =pack->pedals_output(i).bse_rear();
         map->PEDALS_OUTPUT.push(instance);
     }
-    for(int i = 0; i < pack->control_output_size(); i++){
-        static secondary_message_CONTROL_OUTPUT_conversion instance;
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        instance._timestamp = pack->control_output(i)._inner_timestamp();
-        if(instance._timestamp - last_timestamp < resample_us)
-            continue;
-        else
-            last_timestamp = instance._timestamp;
-#endif // CANLIB_TIMESTAMP
-        instance.estimated_velocity =pack->control_output(i).estimated_velocity();
-        instance.tmax_r =pack->control_output(i).tmax_r();
-        instance.tmax_l =pack->control_output(i).tmax_l();
-        instance.torque_l =pack->control_output(i).torque_l();
-        instance.torque_r =pack->control_output(i).torque_r();
-        map->CONTROL_OUTPUT.push(instance);
-    }
     for(int i = 0; i < pack->steering_angle_size(); i++){
         static secondary_message_STEERING_ANGLE instance;
 #ifdef CANLIB_TIMESTAMP
@@ -1386,6 +1363,21 @@ void secondary_proto_deserialize(secondary::Pack* pack, secondary_proto_pack* ma
 #endif // CANLIB_TIMESTAMP
         instance.angle =pack->steering_angle(i).angle();
         map->STEERING_ANGLE.push(instance);
+    }
+    for(int i = 0; i < pack->control_state_size(); i++){
+        static secondary_message_CONTROL_STATE_conversion instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->control_state(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
+        instance.map_pw =pack->control_state(i).map_pw();
+        instance.map_sc =pack->control_state(i).map_sc();
+        instance.map_tv =pack->control_state(i).map_tv();
+        map->CONTROL_STATE.push(instance);
     }
     for(int i = 0; i < pack->tpms_size(); i++){
         static secondary_message_TPMS_conversion instance;

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0fsecondary.proto\x12\tsecondary\"h\n\x10IMU_ANGULAR_RATE\x12\x12\n\nang_rate_x\x18\x01 \x01(\x02\x12\x12\n\nang_rate_y\x18\x02 \x01(\x02\x12\x12\n\nang_rate_z\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"t\n\x10IMU_ACCELERATION\x12\x0f\n\x07\x61\x63\x63\x65l_x\x18\x01 \x01(\x02\x12\x0f\n\x07\x61\x63\x63\x65l_y\x18\x02 \x01(\x02\x12\x0f\n\x07\x61\x63\x63\x65l_z\x18\x03 \x01(\x02\x12\x13\n\x0btemperature\x18\x04 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FL_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FL_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_FL_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_FL_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FR_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FR_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_FR_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_FR_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RL_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RL_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_RL_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_RL_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RR_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RR_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_RR_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_RR_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"K\n\nGPS_COORDS\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"4\n\tGPS_SPEED\x12\r\n\x05speed\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"J\n\tLAP_COUNT\x12\x11\n\tlap_count\x18\x01 \x01(\r\x12\x10\n\x08lap_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\rPEDALS_OUTPUT\x12\x0c\n\x04\x61pps\x18\x01 \x01(\r\x12\x11\n\tbse_front\x18\x02 \x01(\x02\x12\x10\n\x08\x62se_rear\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"\x8a\x01\n\x0e\x43ONTROL_OUTPUT\x12\x1a\n\x12\x65stimated_velocity\x18\x01 \x01(\x02\x12\x0e\n\x06tmax_r\x18\x02 \x01(\x02\x12\x0e\n\x06tmax_l\x18\x03 \x01(\x02\x12\x10\n\x08torque_l\x18\x04 \x01(\x02\x12\x10\n\x08torque_r\x18\x05 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x06 \x01(\x04\"9\n\x0eSTEERING_ANGLE\x12\r\n\x05\x61ngle\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\xd4\x01\n\x04TPMS\x12\x13\n\x0b\x66l_pressure\x18\x01 \x01(\x02\x12\x13\n\x0b\x66r_pressure\x18\x02 \x01(\x02\x12\x13\n\x0brl_pressure\x18\x03 \x01(\x02\x12\x13\n\x0brr_pressure\x18\x04 \x01(\x02\x12\x16\n\x0e\x66l_temperature\x18\x05 \x01(\r\x12\x16\n\x0e\x66r_temperature\x18\x06 \x01(\r\x12\x16\n\x0erl_temperature\x18\x07 \x01(\r\x12\x16\n\x0err_temperature\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"L\n\tLC_STATUS\x12\x11\n\tlast_time\x18\x01 \x01(\r\x12\x12\n\nlap_number\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\xe0\x08\n\x04Pack\x12\x35\n\x10IMU_ANGULAR_RATE\x18\x01 \x03(\x0b\x32\x1b.secondary.IMU_ANGULAR_RATE\x12\x35\n\x10IMU_ACCELERATION\x18\x02 \x03(\x0b\x32\x1b.secondary.IMU_ACCELERATION\x12\'\n\tIRTS_FL_0\x18\x03 \x03(\x0b\x32\x14.secondary.IRTS_FL_0\x12\'\n\tIRTS_FL_1\x18\x04 \x03(\x0b\x32\x14.secondary.IRTS_FL_1\x12\'\n\tIRTS_FL_2\x18\x05 \x03(\x0b\x32\x14.secondary.IRTS_FL_2\x12\'\n\tIRTS_FL_3\x18\x06 \x03(\x0b\x32\x14.secondary.IRTS_FL_3\x12\'\n\tIRTS_FR_0\x18\x07 \x03(\x0b\x32\x14.secondary.IRTS_FR_0\x12\'\n\tIRTS_FR_1\x18\x08 \x03(\x0b\x32\x14.secondary.IRTS_FR_1\x12\'\n\tIRTS_FR_2\x18\t \x03(\x0b\x32\x14.secondary.IRTS_FR_2\x12\'\n\tIRTS_FR_3\x18\n \x03(\x0b\x32\x14.secondary.IRTS_FR_3\x12\'\n\tIRTS_RL_0\x18\x0b \x03(\x0b\x32\x14.secondary.IRTS_RL_0\x12\'\n\tIRTS_RL_1\x18\x0c \x03(\x0b\x32\x14.secondary.IRTS_RL_1\x12\'\n\tIRTS_RL_2\x18\r \x03(\x0b\x32\x14.secondary.IRTS_RL_2\x12\'\n\tIRTS_RL_3\x18\x0e \x03(\x0b\x32\x14.secondary.IRTS_RL_3\x12\'\n\tIRTS_RR_0\x18\x0f \x03(\x0b\x32\x14.secondary.IRTS_RR_0\x12\'\n\tIRTS_RR_1\x18\x10 \x03(\x0b\x32\x14.secondary.IRTS_RR_1\x12\'\n\tIRTS_RR_2\x18\x11 \x03(\x0b\x32\x14.secondary.IRTS_RR_2\x12\'\n\tIRTS_RR_3\x18\x12 \x03(\x0b\x32\x14.secondary.IRTS_RR_3\x12)\n\nGPS_COORDS\x18\x13 \x03(\x0b\x32\x15.secondary.GPS_COORDS\x12\'\n\tGPS_SPEED\x18\x14 \x03(\x0b\x32\x14.secondary.GPS_SPEED\x12\'\n\tLAP_COUNT\x18\x15 \x03(\x0b\x32\x14.secondary.LAP_COUNT\x12/\n\rPEDALS_OUTPUT\x18\x16 \x03(\x0b\x32\x18.secondary.PEDALS_OUTPUT\x12\x31\n\x0e\x43ONTROL_OUTPUT\x18\x17 \x03(\x0b\x32\x19.secondary.CONTROL_OUTPUT\x12\x31\n\x0eSTEERING_ANGLE\x18\x18 \x03(\x0b\x32\x19.secondary.STEERING_ANGLE\x12\x1d\n\x04TPMS\x18\x19 \x03(\x0b\x32\x0f.secondary.TPMS\x12\'\n\tLC_STATUS\x18\x1a \x03(\x0b\x32\x14.secondary.LC_STATUSb\x06proto3'
+  serialized_pb=b'\n\x0fsecondary.proto\x12\tsecondary\"h\n\x10IMU_ANGULAR_RATE\x12\x12\n\nang_rate_x\x18\x01 \x01(\x02\x12\x12\n\nang_rate_y\x18\x02 \x01(\x02\x12\x12\n\nang_rate_z\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"t\n\x10IMU_ACCELERATION\x12\x0f\n\x07\x61\x63\x63\x65l_x\x18\x01 \x01(\x02\x12\x0f\n\x07\x61\x63\x63\x65l_y\x18\x02 \x01(\x02\x12\x0f\n\x07\x61\x63\x63\x65l_z\x18\x03 \x01(\x02\x12\x13\n\x0btemperature\x18\x04 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FL_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FL_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_FL_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_FL_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FR_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_FR_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_FR_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_FR_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RL_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RL_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_RL_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_RL_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RR_0\x12\x10\n\x08\x63hannel1\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel2\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel3\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"m\n\tIRTS_RR_1\x12\x10\n\x08\x63hannel5\x18\x01 \x01(\x02\x12\x10\n\x08\x63hannel6\x18\x02 \x01(\x02\x12\x10\n\x08\x63hannel7\x18\x03 \x01(\x02\x12\x10\n\x08\x63hannel8\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"p\n\tIRTS_RR_2\x12\x10\n\x08\x63hannel9\x18\x01 \x01(\x02\x12\x11\n\tchannel10\x18\x02 \x01(\x02\x12\x11\n\tchannel11\x18\x03 \x01(\x02\x12\x11\n\tchannel12\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"q\n\tIRTS_RR_3\x12\x11\n\tchannel13\x18\x01 \x01(\x02\x12\x11\n\tchannel14\x18\x02 \x01(\x02\x12\x11\n\tchannel15\x18\x03 \x01(\x02\x12\x11\n\tchannel16\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"K\n\nGPS_COORDS\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"4\n\tGPS_SPEED\x12\r\n\x05speed\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"J\n\tLAP_COUNT\x12\x11\n\tlap_count\x18\x01 \x01(\r\x12\x10\n\x08lap_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\rPEDALS_OUTPUT\x12\x0c\n\x04\x61pps\x18\x01 \x01(\r\x12\x11\n\tbse_front\x18\x02 \x01(\x02\x12\x10\n\x08\x62se_rear\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"9\n\x0eSTEERING_ANGLE\x12\r\n\x05\x61ngle\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Y\n\rCONTROL_STATE\x12\x0e\n\x06map_pw\x18\x01 \x01(\x02\x12\x0e\n\x06map_sc\x18\x02 \x01(\x02\x12\x0e\n\x06map_tv\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"\xd4\x01\n\x04TPMS\x12\x13\n\x0b\x66l_pressure\x18\x01 \x01(\x02\x12\x13\n\x0b\x66r_pressure\x18\x02 \x01(\x02\x12\x13\n\x0brl_pressure\x18\x03 \x01(\x02\x12\x13\n\x0brr_pressure\x18\x04 \x01(\x02\x12\x16\n\x0e\x66l_temperature\x18\x05 \x01(\r\x12\x16\n\x0e\x66r_temperature\x18\x06 \x01(\r\x12\x16\n\x0erl_temperature\x18\x07 \x01(\r\x12\x16\n\x0err_temperature\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"L\n\tLC_STATUS\x12\x11\n\tlast_time\x18\x01 \x01(\r\x12\x12\n\nlap_number\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\xde\x08\n\x04Pack\x12\x35\n\x10IMU_ANGULAR_RATE\x18\x01 \x03(\x0b\x32\x1b.secondary.IMU_ANGULAR_RATE\x12\x35\n\x10IMU_ACCELERATION\x18\x02 \x03(\x0b\x32\x1b.secondary.IMU_ACCELERATION\x12\'\n\tIRTS_FL_0\x18\x03 \x03(\x0b\x32\x14.secondary.IRTS_FL_0\x12\'\n\tIRTS_FL_1\x18\x04 \x03(\x0b\x32\x14.secondary.IRTS_FL_1\x12\'\n\tIRTS_FL_2\x18\x05 \x03(\x0b\x32\x14.secondary.IRTS_FL_2\x12\'\n\tIRTS_FL_3\x18\x06 \x03(\x0b\x32\x14.secondary.IRTS_FL_3\x12\'\n\tIRTS_FR_0\x18\x07 \x03(\x0b\x32\x14.secondary.IRTS_FR_0\x12\'\n\tIRTS_FR_1\x18\x08 \x03(\x0b\x32\x14.secondary.IRTS_FR_1\x12\'\n\tIRTS_FR_2\x18\t \x03(\x0b\x32\x14.secondary.IRTS_FR_2\x12\'\n\tIRTS_FR_3\x18\n \x03(\x0b\x32\x14.secondary.IRTS_FR_3\x12\'\n\tIRTS_RL_0\x18\x0b \x03(\x0b\x32\x14.secondary.IRTS_RL_0\x12\'\n\tIRTS_RL_1\x18\x0c \x03(\x0b\x32\x14.secondary.IRTS_RL_1\x12\'\n\tIRTS_RL_2\x18\r \x03(\x0b\x32\x14.secondary.IRTS_RL_2\x12\'\n\tIRTS_RL_3\x18\x0e \x03(\x0b\x32\x14.secondary.IRTS_RL_3\x12\'\n\tIRTS_RR_0\x18\x0f \x03(\x0b\x32\x14.secondary.IRTS_RR_0\x12\'\n\tIRTS_RR_1\x18\x10 \x03(\x0b\x32\x14.secondary.IRTS_RR_1\x12\'\n\tIRTS_RR_2\x18\x11 \x03(\x0b\x32\x14.secondary.IRTS_RR_2\x12\'\n\tIRTS_RR_3\x18\x12 \x03(\x0b\x32\x14.secondary.IRTS_RR_3\x12)\n\nGPS_COORDS\x18\x13 \x03(\x0b\x32\x15.secondary.GPS_COORDS\x12\'\n\tGPS_SPEED\x18\x14 \x03(\x0b\x32\x14.secondary.GPS_SPEED\x12\'\n\tLAP_COUNT\x18\x15 \x03(\x0b\x32\x14.secondary.LAP_COUNT\x12/\n\rPEDALS_OUTPUT\x18\x16 \x03(\x0b\x32\x18.secondary.PEDALS_OUTPUT\x12\x31\n\x0eSTEERING_ANGLE\x18\x17 \x03(\x0b\x32\x19.secondary.STEERING_ANGLE\x12/\n\rCONTROL_STATE\x18\x18 \x03(\x0b\x32\x18.secondary.CONTROL_STATE\x12\x1d\n\x04TPMS\x18\x19 \x03(\x0b\x32\x0f.secondary.TPMS\x12\'\n\tLC_STATUS\x18\x1a \x03(\x0b\x32\x14.secondary.LC_STATUSb\x06proto3'
 )
 
 
@@ -1282,73 +1282,6 @@ _PEDALS_OUTPUT = _descriptor.Descriptor(
 )
 
 
-_CONTROL_OUTPUT = _descriptor.Descriptor(
-  name='CONTROL_OUTPUT',
-  full_name='secondary.CONTROL_OUTPUT',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='estimated_velocity', full_name='secondary.CONTROL_OUTPUT.estimated_velocity', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tmax_r', full_name='secondary.CONTROL_OUTPUT.tmax_r', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tmax_l', full_name='secondary.CONTROL_OUTPUT.tmax_l', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='torque_l', full_name='secondary.CONTROL_OUTPUT.torque_l', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='torque_r', full_name='secondary.CONTROL_OUTPUT.torque_r', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='secondary.CONTROL_OUTPUT._inner_timestamp', index=5,
-      number=6, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2360,
-  serialized_end=2498,
-)
-
-
 _STEERING_ANGLE = _descriptor.Descriptor(
   name='STEERING_ANGLE',
   full_name='secondary.STEERING_ANGLE',
@@ -1383,8 +1316,61 @@ _STEERING_ANGLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2500,
-  serialized_end=2557,
+  serialized_start=2359,
+  serialized_end=2416,
+)
+
+
+_CONTROL_STATE = _descriptor.Descriptor(
+  name='CONTROL_STATE',
+  full_name='secondary.CONTROL_STATE',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='map_pw', full_name='secondary.CONTROL_STATE.map_pw', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='map_sc', full_name='secondary.CONTROL_STATE.map_sc', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='map_tv', full_name='secondary.CONTROL_STATE.map_tv', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='secondary.CONTROL_STATE._inner_timestamp', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2418,
+  serialized_end=2507,
 )
 
 
@@ -1471,8 +1457,8 @@ _TPMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2560,
-  serialized_end=2772,
+  serialized_start=2510,
+  serialized_end=2722,
 )
 
 
@@ -1517,8 +1503,8 @@ _LC_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2774,
-  serialized_end=2850,
+  serialized_start=2724,
+  serialized_end=2800,
 )
 
 
@@ -1685,14 +1671,14 @@ _PACK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='CONTROL_OUTPUT', full_name='secondary.Pack.CONTROL_OUTPUT', index=22,
+      name='STEERING_ANGLE', full_name='secondary.Pack.STEERING_ANGLE', index=22,
       number=23, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='STEERING_ANGLE', full_name='secondary.Pack.STEERING_ANGLE', index=23,
+      name='CONTROL_STATE', full_name='secondary.Pack.CONTROL_STATE', index=23,
       number=24, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1724,8 +1710,8 @@ _PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2853,
-  serialized_end=3973,
+  serialized_start=2803,
+  serialized_end=3921,
 )
 
 _PACK.fields_by_name['IMU_ANGULAR_RATE'].message_type = _IMU_ANGULAR_RATE
@@ -1750,8 +1736,8 @@ _PACK.fields_by_name['GPS_COORDS'].message_type = _GPS_COORDS
 _PACK.fields_by_name['GPS_SPEED'].message_type = _GPS_SPEED
 _PACK.fields_by_name['LAP_COUNT'].message_type = _LAP_COUNT
 _PACK.fields_by_name['PEDALS_OUTPUT'].message_type = _PEDALS_OUTPUT
-_PACK.fields_by_name['CONTROL_OUTPUT'].message_type = _CONTROL_OUTPUT
 _PACK.fields_by_name['STEERING_ANGLE'].message_type = _STEERING_ANGLE
+_PACK.fields_by_name['CONTROL_STATE'].message_type = _CONTROL_STATE
 _PACK.fields_by_name['TPMS'].message_type = _TPMS
 _PACK.fields_by_name['LC_STATUS'].message_type = _LC_STATUS
 DESCRIPTOR.message_types_by_name['IMU_ANGULAR_RATE'] = _IMU_ANGULAR_RATE
@@ -1776,8 +1762,8 @@ DESCRIPTOR.message_types_by_name['GPS_COORDS'] = _GPS_COORDS
 DESCRIPTOR.message_types_by_name['GPS_SPEED'] = _GPS_SPEED
 DESCRIPTOR.message_types_by_name['LAP_COUNT'] = _LAP_COUNT
 DESCRIPTOR.message_types_by_name['PEDALS_OUTPUT'] = _PEDALS_OUTPUT
-DESCRIPTOR.message_types_by_name['CONTROL_OUTPUT'] = _CONTROL_OUTPUT
 DESCRIPTOR.message_types_by_name['STEERING_ANGLE'] = _STEERING_ANGLE
+DESCRIPTOR.message_types_by_name['CONTROL_STATE'] = _CONTROL_STATE
 DESCRIPTOR.message_types_by_name['TPMS'] = _TPMS
 DESCRIPTOR.message_types_by_name['LC_STATUS'] = _LC_STATUS
 DESCRIPTOR.message_types_by_name['Pack'] = _PACK
@@ -1937,19 +1923,19 @@ PEDALS_OUTPUT = _reflection.GeneratedProtocolMessageType('PEDALS_OUTPUT', (_mess
   })
 _sym_db.RegisterMessage(PEDALS_OUTPUT)
 
-CONTROL_OUTPUT = _reflection.GeneratedProtocolMessageType('CONTROL_OUTPUT', (_message.Message,), {
-  'DESCRIPTOR' : _CONTROL_OUTPUT,
-  '__module__' : 'secondary_pb2'
-  # @@protoc_insertion_point(class_scope:secondary.CONTROL_OUTPUT)
-  })
-_sym_db.RegisterMessage(CONTROL_OUTPUT)
-
 STEERING_ANGLE = _reflection.GeneratedProtocolMessageType('STEERING_ANGLE', (_message.Message,), {
   'DESCRIPTOR' : _STEERING_ANGLE,
   '__module__' : 'secondary_pb2'
   # @@protoc_insertion_point(class_scope:secondary.STEERING_ANGLE)
   })
 _sym_db.RegisterMessage(STEERING_ANGLE)
+
+CONTROL_STATE = _reflection.GeneratedProtocolMessageType('CONTROL_STATE', (_message.Message,), {
+  'DESCRIPTOR' : _CONTROL_STATE,
+  '__module__' : 'secondary_pb2'
+  # @@protoc_insertion_point(class_scope:secondary.CONTROL_STATE)
+  })
+_sym_db.RegisterMessage(CONTROL_STATE)
 
 TPMS = _reflection.GeneratedProtocolMessageType('TPMS', (_message.Message,), {
   'DESCRIPTOR' : _TPMS,

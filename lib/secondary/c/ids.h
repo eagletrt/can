@@ -48,7 +48,6 @@ typedef uint16_t canlib_message_id;
 #define secondary_ID_GPS_SPEED 0x421 // dec: 1057 bin: 0b10000100001
 #define secondary_ID_LAP_COUNT 0x441 // dec: 1089 bin: 0b10001000001
 #define secondary_ID_PEDALS_OUTPUT 0x301 // dec: 769 bin: 0b01100000001
-#define secondary_ID_CONTROL_OUTPUT 0x321 // dec: 801 bin: 0b01100100001
 #define secondary_ID_TPMS 0x201 // dec: 513 bin: 0b01000000001
 
 /* TOPIC TELEMETRY */
@@ -57,11 +56,17 @@ typedef uint16_t canlib_message_id;
 
 #define secondary_ID_STEERING_ANGLE 0x102 // dec: 258 bin: 0b00100000010
 
+/* TOPIC DAS */
+#define secondary_TOPIC_MASK_DAS 0b00000011111
+#define secondary_TOPIC_FILTER_DAS 0x3 // dec: 3 bin: 0b00000000011
+
+#define secondary_ID_CONTROL_STATE 0x103 // dec: 259 bin: 0b00100000011
+
 /* TOPIC LAPCOUNTER */
 #define secondary_TOPIC_MASK_LAPCOUNTER 0b00000011111
-#define secondary_TOPIC_FILTER_LAPCOUNTER 0x3 // dec: 3 bin: 0b00000000011
+#define secondary_TOPIC_FILTER_LAPCOUNTER 0x4 // dec: 4 bin: 0b00000000100
 
-#define secondary_ID_LC_STATUS 0x303 // dec: 771 bin: 0b01100000011
+#define secondary_ID_LC_STATUS 0x304 // dec: 772 bin: 0b01100000100
 
 
 #define secondary_MAX_MESSAGE_NAME_LENGTH 17
@@ -114,10 +119,10 @@ static inline int secondary_message_name_from_id(canlib_message_id id, char *buf
             return sprintf(buffer, "%s", "LAP_COUNT");;
         case secondary_ID_PEDALS_OUTPUT:
             return sprintf(buffer, "%s", "PEDALS_OUTPUT");;
-        case secondary_ID_CONTROL_OUTPUT:
-            return sprintf(buffer, "%s", "CONTROL_OUTPUT");;
         case secondary_ID_STEERING_ANGLE:
             return sprintf(buffer, "%s", "STEERING_ANGLE");;
+        case secondary_ID_CONTROL_STATE:
+            return sprintf(buffer, "%s", "CONTROL_STATE");;
         case secondary_ID_TPMS:
             return sprintf(buffer, "%s", "TPMS");;
         case secondary_ID_LC_STATUS:
@@ -151,10 +156,10 @@ static inline bool secondary_is_message_id(canlib_message_id message_id) {
         case 1057: return true; break;
         case 1089: return true; break;
         case 769: return true; break;
-        case 801: return true; break;
         case 258: return true; break;
+        case 259: return true; break;
         case 513: return true; break;
-        case 771: return true; break;
+        case 772: return true; break;
     }
     return false;
 }

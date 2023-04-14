@@ -55,9 +55,9 @@ struct TableStruct_secondary_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_secondary_2eproto;
 namespace secondary {
-class CONTROL_OUTPUT;
-class CONTROL_OUTPUTDefaultTypeInternal;
-extern CONTROL_OUTPUTDefaultTypeInternal _CONTROL_OUTPUT_default_instance_;
+class CONTROL_STATE;
+class CONTROL_STATEDefaultTypeInternal;
+extern CONTROL_STATEDefaultTypeInternal _CONTROL_STATE_default_instance_;
 class GPS_COORDS;
 class GPS_COORDSDefaultTypeInternal;
 extern GPS_COORDSDefaultTypeInternal _GPS_COORDS_default_instance_;
@@ -138,7 +138,7 @@ class TPMSDefaultTypeInternal;
 extern TPMSDefaultTypeInternal _TPMS_default_instance_;
 }  // namespace secondary
 PROTOBUF_NAMESPACE_OPEN
-template<> ::secondary::CONTROL_OUTPUT* Arena::CreateMaybeMessage<::secondary::CONTROL_OUTPUT>(Arena*);
+template<> ::secondary::CONTROL_STATE* Arena::CreateMaybeMessage<::secondary::CONTROL_STATE>(Arena*);
 template<> ::secondary::GPS_COORDS* Arena::CreateMaybeMessage<::secondary::GPS_COORDS>(Arena*);
 template<> ::secondary::GPS_SPEED* Arena::CreateMaybeMessage<::secondary::GPS_SPEED>(Arena*);
 template<> ::secondary::IMU_ACCELERATION* Arena::CreateMaybeMessage<::secondary::IMU_ACCELERATION>(Arena*);
@@ -4053,198 +4053,6 @@ class PEDALS_OUTPUT PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class CONTROL_OUTPUT PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.CONTROL_OUTPUT) */ {
- public:
-  inline CONTROL_OUTPUT() : CONTROL_OUTPUT(nullptr) {};
-  virtual ~CONTROL_OUTPUT();
-
-  CONTROL_OUTPUT(const CONTROL_OUTPUT& from);
-  CONTROL_OUTPUT(CONTROL_OUTPUT&& from) noexcept
-    : CONTROL_OUTPUT() {
-    *this = ::std::move(from);
-  }
-
-  inline CONTROL_OUTPUT& operator=(const CONTROL_OUTPUT& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CONTROL_OUTPUT& operator=(CONTROL_OUTPUT&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const CONTROL_OUTPUT& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const CONTROL_OUTPUT* internal_default_instance() {
-    return reinterpret_cast<const CONTROL_OUTPUT*>(
-               &_CONTROL_OUTPUT_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    22;
-
-  friend void swap(CONTROL_OUTPUT& a, CONTROL_OUTPUT& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CONTROL_OUTPUT* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CONTROL_OUTPUT* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline CONTROL_OUTPUT* New() const final {
-    return CreateMaybeMessage<CONTROL_OUTPUT>(nullptr);
-  }
-
-  CONTROL_OUTPUT* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<CONTROL_OUTPUT>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const CONTROL_OUTPUT& from);
-  void MergeFrom(const CONTROL_OUTPUT& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CONTROL_OUTPUT* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "secondary.CONTROL_OUTPUT";
-  }
-  protected:
-  explicit CONTROL_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_secondary_2eproto);
-    return ::descriptor_table_secondary_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kEstimatedVelocityFieldNumber = 1,
-    kTmaxRFieldNumber = 2,
-    kTmaxLFieldNumber = 3,
-    kTorqueLFieldNumber = 4,
-    kInnerTimestampFieldNumber = 6,
-    kTorqueRFieldNumber = 5,
-  };
-  // float estimated_velocity = 1;
-  void clear_estimated_velocity();
-  float estimated_velocity() const;
-  void set_estimated_velocity(float value);
-  private:
-  float _internal_estimated_velocity() const;
-  void _internal_set_estimated_velocity(float value);
-  public:
-
-  // float tmax_r = 2;
-  void clear_tmax_r();
-  float tmax_r() const;
-  void set_tmax_r(float value);
-  private:
-  float _internal_tmax_r() const;
-  void _internal_set_tmax_r(float value);
-  public:
-
-  // float tmax_l = 3;
-  void clear_tmax_l();
-  float tmax_l() const;
-  void set_tmax_l(float value);
-  private:
-  float _internal_tmax_l() const;
-  void _internal_set_tmax_l(float value);
-  public:
-
-  // float torque_l = 4;
-  void clear_torque_l();
-  float torque_l() const;
-  void set_torque_l(float value);
-  private:
-  float _internal_torque_l() const;
-  void _internal_set_torque_l(float value);
-  public:
-
-  // uint64 _inner_timestamp = 6;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float torque_r = 5;
-  void clear_torque_r();
-  float torque_r() const;
-  void set_torque_r(float value);
-  private:
-  float _internal_torque_r() const;
-  void _internal_set_torque_r(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:secondary.CONTROL_OUTPUT)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  float estimated_velocity_;
-  float tmax_r_;
-  float tmax_l_;
-  float torque_l_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float torque_r_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_secondary_2eproto;
-};
-// -------------------------------------------------------------------
-
 class STEERING_ANGLE PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.STEERING_ANGLE) */ {
  public:
@@ -4287,7 +4095,7 @@ class STEERING_ANGLE PROTOBUF_FINAL :
                &_STEERING_ANGLE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   friend void swap(STEERING_ANGLE& a, STEERING_ANGLE& b) {
     a.Swap(&b);
@@ -4388,6 +4196,176 @@ class STEERING_ANGLE PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   float angle_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_secondary_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CONTROL_STATE PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:secondary.CONTROL_STATE) */ {
+ public:
+  inline CONTROL_STATE() : CONTROL_STATE(nullptr) {};
+  virtual ~CONTROL_STATE();
+
+  CONTROL_STATE(const CONTROL_STATE& from);
+  CONTROL_STATE(CONTROL_STATE&& from) noexcept
+    : CONTROL_STATE() {
+    *this = ::std::move(from);
+  }
+
+  inline CONTROL_STATE& operator=(const CONTROL_STATE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CONTROL_STATE& operator=(CONTROL_STATE&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CONTROL_STATE& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CONTROL_STATE* internal_default_instance() {
+    return reinterpret_cast<const CONTROL_STATE*>(
+               &_CONTROL_STATE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(CONTROL_STATE& a, CONTROL_STATE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CONTROL_STATE* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CONTROL_STATE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CONTROL_STATE* New() const final {
+    return CreateMaybeMessage<CONTROL_STATE>(nullptr);
+  }
+
+  CONTROL_STATE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CONTROL_STATE>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CONTROL_STATE& from);
+  void MergeFrom(const CONTROL_STATE& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CONTROL_STATE* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "secondary.CONTROL_STATE";
+  }
+  protected:
+  explicit CONTROL_STATE(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_secondary_2eproto);
+    return ::descriptor_table_secondary_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMapPwFieldNumber = 1,
+    kMapScFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kMapTvFieldNumber = 3,
+  };
+  // float map_pw = 1;
+  void clear_map_pw();
+  float map_pw() const;
+  void set_map_pw(float value);
+  private:
+  float _internal_map_pw() const;
+  void _internal_set_map_pw(float value);
+  public:
+
+  // float map_sc = 2;
+  void clear_map_sc();
+  float map_sc() const;
+  void set_map_sc(float value);
+  private:
+  float _internal_map_sc() const;
+  void _internal_set_map_sc(float value);
+  public:
+
+  // uint64 _inner_timestamp = 4;
+  void clear__inner_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // float map_tv = 3;
+  void clear_map_tv();
+  float map_tv() const;
+  void set_map_tv(float value);
+  private:
+  float _internal_map_tv() const;
+  void _internal_set_map_tv(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:secondary.CONTROL_STATE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  float map_pw_;
+  float map_sc_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  float map_tv_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
 };
@@ -4912,8 +4890,8 @@ class Pack PROTOBUF_FINAL :
     kGPSSPEEDFieldNumber = 20,
     kLAPCOUNTFieldNumber = 21,
     kPEDALSOUTPUTFieldNumber = 22,
-    kCONTROLOUTPUTFieldNumber = 23,
-    kSTEERINGANGLEFieldNumber = 24,
+    kSTEERINGANGLEFieldNumber = 23,
+    kCONTROLSTATEFieldNumber = 24,
     kTPMSFieldNumber = 25,
     kLCSTATUSFieldNumber = 26,
   };
@@ -5313,25 +5291,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT >&
       pedals_output() const;
 
-  // repeated .secondary.CONTROL_OUTPUT CONTROL_OUTPUT = 23;
-  int control_output_size() const;
-  private:
-  int _internal_control_output_size() const;
-  public:
-  void clear_control_output();
-  ::secondary::CONTROL_OUTPUT* mutable_control_output(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >*
-      mutable_control_output();
-  private:
-  const ::secondary::CONTROL_OUTPUT& _internal_control_output(int index) const;
-  ::secondary::CONTROL_OUTPUT* _internal_add_control_output();
-  public:
-  const ::secondary::CONTROL_OUTPUT& control_output(int index) const;
-  ::secondary::CONTROL_OUTPUT* add_control_output();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >&
-      control_output() const;
-
-  // repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 24;
+  // repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 23;
   int steering_angle_size() const;
   private:
   int _internal_steering_angle_size() const;
@@ -5348,6 +5308,24 @@ class Pack PROTOBUF_FINAL :
   ::secondary::STEERING_ANGLE* add_steering_angle();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE >&
       steering_angle() const;
+
+  // repeated .secondary.CONTROL_STATE CONTROL_STATE = 24;
+  int control_state_size() const;
+  private:
+  int _internal_control_state_size() const;
+  public:
+  void clear_control_state();
+  ::secondary::CONTROL_STATE* mutable_control_state(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_STATE >*
+      mutable_control_state();
+  private:
+  const ::secondary::CONTROL_STATE& _internal_control_state(int index) const;
+  ::secondary::CONTROL_STATE* _internal_add_control_state();
+  public:
+  const ::secondary::CONTROL_STATE& control_state(int index) const;
+  ::secondary::CONTROL_STATE* add_control_state();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_STATE >&
+      control_state() const;
 
   // repeated .secondary.TPMS TPMS = 25;
   int tpms_size() const;
@@ -5414,8 +5392,8 @@ class Pack PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::GPS_SPEED > gps_speed_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LAP_COUNT > lap_count_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::PEDALS_OUTPUT > pedals_output_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT > control_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_ANGLE > steering_angle_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_STATE > control_state_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::TPMS > tpms_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::LC_STATUS > lc_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7538,130 +7516,6 @@ inline void PEDALS_OUTPUT::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 
 
 // -------------------------------------------------------------------
 
-// CONTROL_OUTPUT
-
-// float estimated_velocity = 1;
-inline void CONTROL_OUTPUT::clear_estimated_velocity() {
-  estimated_velocity_ = 0;
-}
-inline float CONTROL_OUTPUT::_internal_estimated_velocity() const {
-  return estimated_velocity_;
-}
-inline float CONTROL_OUTPUT::estimated_velocity() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.estimated_velocity)
-  return _internal_estimated_velocity();
-}
-inline void CONTROL_OUTPUT::_internal_set_estimated_velocity(float value) {
-  
-  estimated_velocity_ = value;
-}
-inline void CONTROL_OUTPUT::set_estimated_velocity(float value) {
-  _internal_set_estimated_velocity(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.estimated_velocity)
-}
-
-// float tmax_r = 2;
-inline void CONTROL_OUTPUT::clear_tmax_r() {
-  tmax_r_ = 0;
-}
-inline float CONTROL_OUTPUT::_internal_tmax_r() const {
-  return tmax_r_;
-}
-inline float CONTROL_OUTPUT::tmax_r() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.tmax_r)
-  return _internal_tmax_r();
-}
-inline void CONTROL_OUTPUT::_internal_set_tmax_r(float value) {
-  
-  tmax_r_ = value;
-}
-inline void CONTROL_OUTPUT::set_tmax_r(float value) {
-  _internal_set_tmax_r(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.tmax_r)
-}
-
-// float tmax_l = 3;
-inline void CONTROL_OUTPUT::clear_tmax_l() {
-  tmax_l_ = 0;
-}
-inline float CONTROL_OUTPUT::_internal_tmax_l() const {
-  return tmax_l_;
-}
-inline float CONTROL_OUTPUT::tmax_l() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.tmax_l)
-  return _internal_tmax_l();
-}
-inline void CONTROL_OUTPUT::_internal_set_tmax_l(float value) {
-  
-  tmax_l_ = value;
-}
-inline void CONTROL_OUTPUT::set_tmax_l(float value) {
-  _internal_set_tmax_l(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.tmax_l)
-}
-
-// float torque_l = 4;
-inline void CONTROL_OUTPUT::clear_torque_l() {
-  torque_l_ = 0;
-}
-inline float CONTROL_OUTPUT::_internal_torque_l() const {
-  return torque_l_;
-}
-inline float CONTROL_OUTPUT::torque_l() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.torque_l)
-  return _internal_torque_l();
-}
-inline void CONTROL_OUTPUT::_internal_set_torque_l(float value) {
-  
-  torque_l_ = value;
-}
-inline void CONTROL_OUTPUT::set_torque_l(float value) {
-  _internal_set_torque_l(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.torque_l)
-}
-
-// float torque_r = 5;
-inline void CONTROL_OUTPUT::clear_torque_r() {
-  torque_r_ = 0;
-}
-inline float CONTROL_OUTPUT::_internal_torque_r() const {
-  return torque_r_;
-}
-inline float CONTROL_OUTPUT::torque_r() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT.torque_r)
-  return _internal_torque_r();
-}
-inline void CONTROL_OUTPUT::_internal_set_torque_r(float value) {
-  
-  torque_r_ = value;
-}
-inline void CONTROL_OUTPUT::set_torque_r(float value) {
-  _internal_set_torque_r(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT.torque_r)
-}
-
-// uint64 _inner_timestamp = 6;
-inline void CONTROL_OUTPUT::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_OUTPUT::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_OUTPUT::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:secondary.CONTROL_OUTPUT._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void CONTROL_OUTPUT::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void CONTROL_OUTPUT::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:secondary.CONTROL_OUTPUT._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
 // STEERING_ANGLE
 
 // float angle = 1;
@@ -7702,6 +7556,90 @@ inline void STEERING_ANGLE::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_
 inline void STEERING_ANGLE::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set__inner_timestamp(value);
   // @@protoc_insertion_point(field_set:secondary.STEERING_ANGLE._inner_timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// CONTROL_STATE
+
+// float map_pw = 1;
+inline void CONTROL_STATE::clear_map_pw() {
+  map_pw_ = 0;
+}
+inline float CONTROL_STATE::_internal_map_pw() const {
+  return map_pw_;
+}
+inline float CONTROL_STATE::map_pw() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_STATE.map_pw)
+  return _internal_map_pw();
+}
+inline void CONTROL_STATE::_internal_set_map_pw(float value) {
+  
+  map_pw_ = value;
+}
+inline void CONTROL_STATE::set_map_pw(float value) {
+  _internal_set_map_pw(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_STATE.map_pw)
+}
+
+// float map_sc = 2;
+inline void CONTROL_STATE::clear_map_sc() {
+  map_sc_ = 0;
+}
+inline float CONTROL_STATE::_internal_map_sc() const {
+  return map_sc_;
+}
+inline float CONTROL_STATE::map_sc() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_STATE.map_sc)
+  return _internal_map_sc();
+}
+inline void CONTROL_STATE::_internal_set_map_sc(float value) {
+  
+  map_sc_ = value;
+}
+inline void CONTROL_STATE::set_map_sc(float value) {
+  _internal_set_map_sc(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_STATE.map_sc)
+}
+
+// float map_tv = 3;
+inline void CONTROL_STATE::clear_map_tv() {
+  map_tv_ = 0;
+}
+inline float CONTROL_STATE::_internal_map_tv() const {
+  return map_tv_;
+}
+inline float CONTROL_STATE::map_tv() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_STATE.map_tv)
+  return _internal_map_tv();
+}
+inline void CONTROL_STATE::_internal_set_map_tv(float value) {
+  
+  map_tv_ = value;
+}
+inline void CONTROL_STATE::set_map_tv(float value) {
+  _internal_set_map_tv(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_STATE.map_tv)
+}
+
+// uint64 _inner_timestamp = 4;
+inline void CONTROL_STATE::clear__inner_timestamp() {
+  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_STATE::_internal__inner_timestamp() const {
+  return _inner_timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_STATE::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:secondary.CONTROL_STATE._inner_timestamp)
+  return _internal__inner_timestamp();
+}
+inline void CONTROL_STATE::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  _inner_timestamp_ = value;
+}
+inline void CONTROL_STATE::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set__inner_timestamp(value);
+  // @@protoc_insertion_point(field_set:secondary.CONTROL_STATE._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -8814,46 +8752,7 @@ Pack::pedals_output() const {
   return pedals_output_;
 }
 
-// repeated .secondary.CONTROL_OUTPUT CONTROL_OUTPUT = 23;
-inline int Pack::_internal_control_output_size() const {
-  return control_output_.size();
-}
-inline int Pack::control_output_size() const {
-  return _internal_control_output_size();
-}
-inline void Pack::clear_control_output() {
-  control_output_.Clear();
-}
-inline ::secondary::CONTROL_OUTPUT* Pack::mutable_control_output(int index) {
-  // @@protoc_insertion_point(field_mutable:secondary.Pack.CONTROL_OUTPUT)
-  return control_output_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >*
-Pack::mutable_control_output() {
-  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.CONTROL_OUTPUT)
-  return &control_output_;
-}
-inline const ::secondary::CONTROL_OUTPUT& Pack::_internal_control_output(int index) const {
-  return control_output_.Get(index);
-}
-inline const ::secondary::CONTROL_OUTPUT& Pack::control_output(int index) const {
-  // @@protoc_insertion_point(field_get:secondary.Pack.CONTROL_OUTPUT)
-  return _internal_control_output(index);
-}
-inline ::secondary::CONTROL_OUTPUT* Pack::_internal_add_control_output() {
-  return control_output_.Add();
-}
-inline ::secondary::CONTROL_OUTPUT* Pack::add_control_output() {
-  // @@protoc_insertion_point(field_add:secondary.Pack.CONTROL_OUTPUT)
-  return _internal_add_control_output();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_OUTPUT >&
-Pack::control_output() const {
-  // @@protoc_insertion_point(field_list:secondary.Pack.CONTROL_OUTPUT)
-  return control_output_;
-}
-
-// repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 24;
+// repeated .secondary.STEERING_ANGLE STEERING_ANGLE = 23;
 inline int Pack::_internal_steering_angle_size() const {
   return steering_angle_.size();
 }
@@ -8890,6 +8789,45 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::STEERING_AN
 Pack::steering_angle() const {
   // @@protoc_insertion_point(field_list:secondary.Pack.STEERING_ANGLE)
   return steering_angle_;
+}
+
+// repeated .secondary.CONTROL_STATE CONTROL_STATE = 24;
+inline int Pack::_internal_control_state_size() const {
+  return control_state_.size();
+}
+inline int Pack::control_state_size() const {
+  return _internal_control_state_size();
+}
+inline void Pack::clear_control_state() {
+  control_state_.Clear();
+}
+inline ::secondary::CONTROL_STATE* Pack::mutable_control_state(int index) {
+  // @@protoc_insertion_point(field_mutable:secondary.Pack.CONTROL_STATE)
+  return control_state_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_STATE >*
+Pack::mutable_control_state() {
+  // @@protoc_insertion_point(field_mutable_list:secondary.Pack.CONTROL_STATE)
+  return &control_state_;
+}
+inline const ::secondary::CONTROL_STATE& Pack::_internal_control_state(int index) const {
+  return control_state_.Get(index);
+}
+inline const ::secondary::CONTROL_STATE& Pack::control_state(int index) const {
+  // @@protoc_insertion_point(field_get:secondary.Pack.CONTROL_STATE)
+  return _internal_control_state(index);
+}
+inline ::secondary::CONTROL_STATE* Pack::_internal_add_control_state() {
+  return control_state_.Add();
+}
+inline ::secondary::CONTROL_STATE* Pack::add_control_state() {
+  // @@protoc_insertion_point(field_add:secondary.Pack.CONTROL_STATE)
+  return _internal_add_control_state();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::secondary::CONTROL_STATE >&
+Pack::control_state() const {
+  // @@protoc_insertion_point(field_list:secondary.Pack.CONTROL_STATE)
+  return control_state_;
 }
 
 // repeated .secondary.TPMS TPMS = 25;

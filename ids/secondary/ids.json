@@ -16,9 +16,6 @@
                 "PEDALS_OUTPUT": {
                     "PEDALS_OUTPUT": 769
                 },
-                "CONTROL_OUTPUT": {
-                    "CONTROL_OUTPUT": 801
-                },
                 "TPMS": {
                     "TPMS": 513
                 }
@@ -32,11 +29,19 @@
                 }
             }
         },
-        "LAPCOUNTER": {
+        "DAS": {
             "id": 3,
             "messages": {
+                "CONTROL_STATE": {
+                    "CONTROL_STATE": 259
+                }
+            }
+        },
+        "LAPCOUNTER": {
+            "id": 4,
+            "messages": {
                 "LC_STATUS": {
-                    "LC_STATUS": 771
+                    "LC_STATUS": 772
                 }
             }
         },

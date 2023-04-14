@@ -67,8 +67,6 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_BRUSA_ACT_II 0x264 // dec: 612 bin: 0b01001100100
 #define primary_ID_BRUSA_TEMP 0x265 // dec: 613 bin: 0b01001100101
 #define primary_ID_BRUSA_ERR 0x266 // dec: 614 bin: 0b01001100110
-#define primary_ID_BMS_HV_CHIMERA 0xAA // dec: 170 bin: 0b00010101010
-#define primary_ID_ECU_CHIMERA 0x55 // dec: 85 bin: 0b00001010101
 
 /* TOPIC TLM */
 #define primary_TOPIC_MASK_TLM 0b00000011111
@@ -86,6 +84,7 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_CAR_STATUS 0x204 // dec: 516 bin: 0b01000000100
 #define primary_ID_DAS_ERRORS 0x4 // dec: 4 bin: 0b00000000100
 #define primary_ID_SPEED 0x224 // dec: 548 bin: 0b01000100100
+#define primary_ID_CONTROL_OUTPUT 0x504 // dec: 1284 bin: 0b10100000100
 
 /* TOPIC DASnSTEERnCART */
 #define primary_TOPIC_MASK_DASnSTEERnCART 0b00000011111
@@ -315,10 +314,8 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "BRUSA_TEMP");;
         case primary_ID_BRUSA_ERR:
             return sprintf(buffer, "%s", "BRUSA_ERR");;
-        case primary_ID_BMS_HV_CHIMERA:
-            return sprintf(buffer, "%s", "BMS_HV_CHIMERA");;
-        case primary_ID_ECU_CHIMERA:
-            return sprintf(buffer, "%s", "ECU_CHIMERA");;
+        case primary_ID_CONTROL_OUTPUT:
+            return sprintf(buffer, "%s", "CONTROL_OUTPUT");;
         case primary_ID_LC_RESET:
             return sprintf(buffer, "%s", "LC_RESET");;
         default:
@@ -404,8 +401,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 612: return true; break;
         case 613: return true; break;
         case 614: return true; break;
-        case 170: return true; break;
-        case 85: return true; break;
+        case 1284: return true; break;
         case 523: return true; break;
     }
     return false;

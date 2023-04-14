@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1678808551
-#define CANLIB_BUILD_HASH 0xb40caf16
+#define CANLIB_BUILD_TIME 1681490869
+#define CANLIB_BUILD_HASH 0x05b7806a
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 79
+#define primary_MESSAGE_COUNT 78
 
 // Custom types
 
@@ -244,9 +244,8 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_INDEX_BRUSA_ACT_II 73
 #define primary_INDEX_BRUSA_TEMP 74
 #define primary_INDEX_BRUSA_ERR 75
-#define primary_INDEX_BMS_HV_CHIMERA 76
-#define primary_INDEX_ECU_CHIMERA 77
-#define primary_INDEX_LC_RESET 78
+#define primary_INDEX_CONTROL_OUTPUT 76
+#define primary_INDEX_LC_RESET 77
 
 // ============== SIZES ============== //
 
@@ -326,8 +325,7 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_SIZE_BRUSA_ACT_II 0
 #define primary_SIZE_BRUSA_TEMP 0
 #define primary_SIZE_BRUSA_ERR 0
-#define primary_SIZE_BMS_HV_CHIMERA 0
-#define primary_SIZE_ECU_CHIMERA 0
+#define primary_SIZE_CONTROL_OUTPUT 8
 #define primary_SIZE_LC_RESET 0
 
 // ============== BIT SETS =========== //
@@ -1355,18 +1353,26 @@ typedef struct CANLIB_PARKING {
 } primary_message_BRUSA_ERR;
 
 typedef struct CANLIB_PARKING {
-    primary_uint8 _placeholder; // C++ doesn't like empty structs
+    primary_uint16 estimated_velocity;
+    primary_uint8 tmax_r;
+    primary_uint8 tmax_l;
+    primary_uint16 torque_l;
+    primary_uint16 torque_r;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_BMS_HV_CHIMERA;
+} primary_message_CONTROL_OUTPUT;
 
 typedef struct CANLIB_PARKING {
-    primary_uint8 _placeholder; // C++ doesn't like empty structs
+    primary_float32 estimated_velocity;
+    primary_float32 tmax_r;
+    primary_float32 tmax_l;
+    primary_float32 torque_l;
+    primary_float32 torque_r;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_ECU_CHIMERA;
+} primary_message_CONTROL_OUTPUT_conversion;
 
 typedef struct CANLIB_PARKING {
     primary_uint8 _placeholder; // C++ doesn't like empty structs
@@ -1452,8 +1458,7 @@ typedef union CANLIB_PARKING {
     primary_message_BRUSA_ACT_II _BRUSA_ACT_II;
     primary_message_BRUSA_TEMP _BRUSA_TEMP;
     primary_message_BRUSA_ERR _BRUSA_ERR;
-    primary_message_BMS_HV_CHIMERA _BMS_HV_CHIMERA;
-    primary_message_ECU_CHIMERA _ECU_CHIMERA;
+    primary_message_CONTROL_OUTPUT _CONTROL_OUTPUT;
     primary_message_LC_RESET _LC_RESET;
 } _primary_all_structs_raw;
 
@@ -1474,6 +1479,7 @@ typedef union CANLIB_PARKING {
     primary_message_HV_CELLS_VOLTAGE_conversion _HV_CELLS_VOLTAGE;
     primary_message_HV_CELLS_TEMP_conversion _HV_CELLS_TEMP;
     primary_message_SPEED_conversion _SPEED;
+    primary_message_CONTROL_OUTPUT_conversion _CONTROL_OUTPUT;
 } _primary_all_structs_conversion;
 
 typedef union CANLIB_PARKING {
@@ -3722,48 +3728,64 @@ int primary_to_string_file_BRUSA_ERR(primary_message_BRUSA_ERR* message, FILE* b
 int primary_fields_file_BRUSA_ERR(FILE* buffer);
 
 
-// ============== BMS_HV_CHIMERA ============== //
+// ============== CONTROL_OUTPUT ============== //
 
-primary_byte_size primary_serialize_BMS_HV_CHIMERA(
-    uint8_t* data
-);
-primary_byte_size primary_serialize_struct_BMS_HV_CHIMERA(
+primary_byte_size primary_serialize_CONTROL_OUTPUT(
     uint8_t* data,
-    primary_message_BMS_HV_CHIMERA* message
+    primary_uint16 estimated_velocity,
+    primary_uint8 tmax_r,
+    primary_uint8 tmax_l,
+    primary_uint16 torque_l,
+    primary_uint16 torque_r
 );
-void primary_deserialize_BMS_HV_CHIMERA(
-    primary_message_BMS_HV_CHIMERA* message,
+primary_byte_size primary_serialize_struct_CONTROL_OUTPUT(
+    uint8_t* data,
+    primary_message_CONTROL_OUTPUT* message
+);
+void primary_deserialize_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, char* buffer);
-int primary_fields_BMS_HV_CHIMERA(char* buffer);
-int primary_to_string_file_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, FILE* buffer);
-int primary_fields_file_BMS_HV_CHIMERA(FILE* buffer);
-
-
-// ============== ECU_CHIMERA ============== //
-
-primary_byte_size primary_serialize_ECU_CHIMERA(
-    uint8_t* data
+void primary_raw_to_conversion_struct_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT_conversion* conversion,
+    primary_message_CONTROL_OUTPUT* raw
 );
-primary_byte_size primary_serialize_struct_ECU_CHIMERA(
-    uint8_t* data,
-    primary_message_ECU_CHIMERA* message
+
+void primary_conversion_to_raw_struct_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* raw,
+    primary_message_CONTROL_OUTPUT_conversion* conversion
 );
-void primary_deserialize_ECU_CHIMERA(
-    primary_message_ECU_CHIMERA* message,
-    uint8_t* data
+
+void primary_conversion_to_raw_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* raw,
+    primary_float32 estimated_velocity,
+    primary_float32 tmax_r,
+    primary_float32 tmax_l,
+    primary_float32 torque_l,
+    primary_float32 torque_r
 #ifdef CANLIB_TIMESTAMP
-    , primary_uint64 timestamp
+    , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, char* buffer);
-int primary_fields_ECU_CHIMERA(char* buffer);
-int primary_to_string_file_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, FILE* buffer);
-int primary_fields_file_ECU_CHIMERA(FILE* buffer);
+
+void primary_raw_to_conversion_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT_conversion* conversion,
+    primary_uint16 estimated_velocity,
+    primary_uint8 tmax_r,
+    primary_uint8 tmax_l,
+    primary_uint16 torque_l,
+    primary_uint16 torque_r
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_CONTROL_OUTPUT(primary_message_CONTROL_OUTPUT_conversion* message, char* buffer);
+int primary_fields_CONTROL_OUTPUT(char* buffer);
+int primary_to_string_file_CONTROL_OUTPUT(primary_message_CONTROL_OUTPUT_conversion* message, FILE* buffer);
+int primary_fields_file_CONTROL_OUTPUT(FILE* buffer);
 
 
 // ============== LC_RESET ============== //
@@ -3869,8 +3891,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 612: return primary_INDEX_BRUSA_ACT_II;
         case 613: return primary_INDEX_BRUSA_TEMP;
         case 614: return primary_INDEX_BRUSA_ERR;
-        case 170: return primary_INDEX_BMS_HV_CHIMERA;
-        case 85: return primary_INDEX_ECU_CHIMERA;
+        case 1284: return primary_INDEX_CONTROL_OUTPUT;
         case 523: return primary_INDEX_LC_RESET;
     }
     return -1; // invalid
@@ -3954,8 +3975,7 @@ static inline int primary_id_from_index(int index) {
         case primary_INDEX_BRUSA_ACT_II: return 612;
         case primary_INDEX_BRUSA_TEMP: return 613;
         case primary_INDEX_BRUSA_ERR: return 614;
-        case primary_INDEX_BMS_HV_CHIMERA: return 170;
-        case primary_INDEX_ECU_CHIMERA: return 85;
+        case primary_INDEX_CONTROL_OUTPUT: return 1284;
         case primary_INDEX_LC_RESET: return 523;
     }
     return -1; // invalid
@@ -11716,124 +11736,200 @@ int primary_fields_file_BRUSA_ERR(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_BMS_HV_CHIMERA(
-    uint8_t* data
+primary_byte_size primary_serialize_CONTROL_OUTPUT(
+    uint8_t* data,
+    primary_uint16 estimated_velocity,
+    primary_uint8 tmax_r,
+    primary_uint8 tmax_l,
+    primary_uint16 torque_l,
+    primary_uint16 torque_r
 ) {
-    CANLIB_UNUSED(data);
-    return 0;
+    data[0] = estimated_velocity & 255;
+    data[1] = (estimated_velocity >> 8) & 255;
+    data[2] = torque_l & 255;
+    data[3] = (torque_l >> 8) & 255;
+    data[4] = torque_r & 255;
+    data[5] = (torque_r >> 8) & 255;
+    data[6] = tmax_r;
+    data[7] = tmax_l;
+    return 8;
 }
 
-primary_byte_size primary_serialize_struct_BMS_HV_CHIMERA(
+primary_byte_size primary_serialize_struct_CONTROL_OUTPUT(
     uint8_t* data,
-    primary_message_BMS_HV_CHIMERA* message
+    primary_message_CONTROL_OUTPUT* message
 ) {
-    CANLIB_UNUSED(data);
-    CANLIB_UNUSED(message);
-    return 0;
+    data[0] = message->estimated_velocity & 255;
+    data[1] = (message->estimated_velocity >> 8) & 255;
+    data[2] = message->torque_l & 255;
+    data[3] = (message->torque_l >> 8) & 255;
+    data[4] = message->torque_r & 255;
+    data[5] = (message->torque_r >> 8) & 255;
+    data[6] = message->tmax_r;
+    data[7] = message->tmax_l;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
 
-void primary_deserialize_BMS_HV_CHIMERA(
-    primary_message_BMS_HV_CHIMERA* message,
+void primary_deserialize_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
 ) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(data);
-#ifdef CANLIB_TIMESTAMP
-    CANLIB_UNUSED(_timestamp);
-#endif // CANLIB_TIMESTAMP
 #ifdef CANLIB_TIMESTAMP
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
-}
+    message->estimated_velocity = data[0] | (data[1] << 8);
+    message->torque_l = data[2] | (data[3] << 8);
+    message->torque_r = data[4] | (data[5] << 8);
+    message->tmax_r = data[6];
+    message->tmax_l = data[7];
+}// ============== CONVERSION ============== //
 
-// ============== STRING ============== //
-
-int primary_to_string_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, char* buffer) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(buffer);
-    return 0;
-}
-
-int primary_fields_BMS_HV_CHIMERA(char* buffer) {
-    CANLIB_UNUSED(buffer);
-    return 0;
-}
-
-int primary_to_string_file_BMS_HV_CHIMERA(primary_message_BMS_HV_CHIMERA* message, FILE* buffer) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(buffer);
-    return 0;
-}
-
-int primary_fields_file_BMS_HV_CHIMERA(FILE* buffer) {
-    CANLIB_UNUSED(buffer);
-    return 0;
-}
-
-// ============== SERIALIZE ============== //
-
-primary_byte_size primary_serialize_ECU_CHIMERA(
-    uint8_t* data
-) {
-    CANLIB_UNUSED(data);
-    return 0;
-}
-
-primary_byte_size primary_serialize_struct_ECU_CHIMERA(
-    uint8_t* data,
-    primary_message_ECU_CHIMERA* message
-) {
-    CANLIB_UNUSED(data);
-    CANLIB_UNUSED(message);
-    return 0;
-}
-
-// ============== DESERIALIZE ============== //
-
-void primary_deserialize_ECU_CHIMERA(
-    primary_message_ECU_CHIMERA* message,
-    uint8_t* data
+void primary_raw_to_conversion_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT_conversion* conversion,
+    primary_uint16 estimated_velocity,
+    primary_uint8 tmax_r,
+    primary_uint8 tmax_l,
+    primary_uint16 torque_l,
+    primary_uint16 torque_r
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
-) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(data);
+){
 #ifdef CANLIB_TIMESTAMP
-    CANLIB_UNUSED(_timestamp);
+    conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->estimated_velocity = (((primary_float32)estimated_velocity) / 1092.25) - 10;
+    conversion->tmax_r = (((primary_float32)tmax_r) / 3.1875) + 0;
+    conversion->tmax_l = (((primary_float32)tmax_l) / 3.1875) + 0;
+    conversion->torque_l = (((primary_float32)torque_l) / 819.1875) + 0;
+    conversion->torque_r = (((primary_float32)torque_r) / 819.1875) + 0;
+}
+
+void primary_raw_to_conversion_struct_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT_conversion* conversion,
+    primary_message_CONTROL_OUTPUT* raw
+){
 #ifdef CANLIB_TIMESTAMP
-    message->_timestamp = _timestamp;
+    conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->estimated_velocity = (((primary_float32)raw->estimated_velocity) / 1092.25) - 10;
+    conversion->tmax_r = (((primary_float32)raw->tmax_r) / 3.1875) + 0;
+    conversion->tmax_l = (((primary_float32)raw->tmax_l) / 3.1875) + 0;
+    conversion->torque_l = (((primary_float32)raw->torque_l) / 819.1875) + 0;
+    conversion->torque_r = (((primary_float32)raw->torque_r) / 819.1875) + 0;
+}
+
+void primary_conversion_to_raw_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* raw,
+    primary_float32 estimated_velocity,
+    primary_float32 tmax_r,
+    primary_float32 tmax_l,
+    primary_float32 torque_l,
+    primary_float32 torque_r
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->estimated_velocity = (primary_uint16)((estimated_velocity + 10) * 1092.25);
+    raw->tmax_r = (primary_uint8)((tmax_r + 0) * 3.1875);
+    raw->tmax_l = (primary_uint8)((tmax_l + 0) * 3.1875);
+    raw->torque_l = (primary_uint16)((torque_l + 0) * 819.1875);
+    raw->torque_r = (primary_uint16)((torque_r + 0) * 819.1875);
+}
+
+void primary_conversion_to_raw_struct_CONTROL_OUTPUT(
+    primary_message_CONTROL_OUTPUT* raw,
+    primary_message_CONTROL_OUTPUT_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->estimated_velocity = (primary_uint16)((conversion->estimated_velocity + 10) * 1092.25);
+    raw->tmax_r = (primary_uint8)((conversion->tmax_r + 0) * 3.1875);
+    raw->tmax_l = (primary_uint8)((conversion->tmax_l + 0) * 3.1875);
+    raw->torque_l = (primary_uint16)((conversion->torque_l + 0) * 819.1875);
+    raw->torque_r = (primary_uint16)((conversion->torque_r + 0) * 819.1875);
 }
 
 // ============== STRING ============== //
-
-int primary_to_string_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, char* buffer) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(buffer);
-    return 0;
+int primary_to_string_CONTROL_OUTPUT(primary_message_CONTROL_OUTPUT_conversion* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->estimated_velocity,
+        message->tmax_r,
+        message->tmax_l,
+        message->torque_l,
+        message->torque_r
+    );
 }
 
-int primary_fields_ECU_CHIMERA(char* buffer) {
-    CANLIB_UNUSED(buffer);
-    return 0;
+int primary_fields_CONTROL_OUTPUT(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "estimated_velocity" CANLIB_SEPARATOR 
+        "tmax_r" CANLIB_SEPARATOR 
+        "tmax_l" CANLIB_SEPARATOR 
+        "torque_l" CANLIB_SEPARATOR 
+        "torque_r"
+    );
 }
 
-int primary_to_string_file_ECU_CHIMERA(primary_message_ECU_CHIMERA* message, FILE* buffer) {
-    CANLIB_UNUSED(message);
-    CANLIB_UNUSED(buffer);
-    return 0;
+int primary_to_string_file_CONTROL_OUTPUT(primary_message_CONTROL_OUTPUT_conversion* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->estimated_velocity,
+        message->tmax_r,
+        message->tmax_l,
+        message->torque_l,
+        message->torque_r
+    );
 }
 
-int primary_fields_file_ECU_CHIMERA(FILE* buffer) {
-    CANLIB_UNUSED(buffer);
-    return 0;
+int primary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "estimated_velocity" CANLIB_SEPARATOR 
+        "tmax_r" CANLIB_SEPARATOR 
+        "tmax_l" CANLIB_SEPARATOR 
+        "torque_l" CANLIB_SEPARATOR 
+        "torque_r"
+    );
 }
 
 // ============== SERIALIZE ============== //
@@ -12054,10 +12150,8 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_BRUSA_TEMP(buffer);
         case 614:
             return primary_fields_BRUSA_ERR(buffer);
-        case 170:
-            return primary_fields_BMS_HV_CHIMERA(buffer);
-        case 85:
-            return primary_fields_ECU_CHIMERA(buffer);
+        case 1284:
+            return primary_fields_CONTROL_OUTPUT(buffer);
         case 523:
             return primary_fields_LC_RESET(buffer);
     }
@@ -12218,10 +12312,8 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
         case 614:
             return primary_to_string_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
-        case 170:
-            return primary_to_string_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
-        case 85:
-            return primary_to_string_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
+        case 1284:
+            return primary_to_string_CONTROL_OUTPUT((primary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 523:
             return primary_to_string_LC_RESET((primary_message_LC_RESET*) message, buffer);
     }
@@ -12382,10 +12474,8 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_BRUSA_TEMP(buffer);
         case 614:
             return primary_fields_file_BRUSA_ERR(buffer);
-        case 170:
-            return primary_fields_file_BMS_HV_CHIMERA(buffer);
-        case 85:
-            return primary_fields_file_ECU_CHIMERA(buffer);
+        case 1284:
+            return primary_fields_file_CONTROL_OUTPUT(buffer);
         case 523:
             return primary_fields_file_LC_RESET(buffer);
     }
@@ -12546,10 +12636,8 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
         case 614:
             return primary_to_string_file_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
-        case 170:
-            return primary_to_string_file_BMS_HV_CHIMERA((primary_message_BMS_HV_CHIMERA*) message, buffer);
-        case 85:
-            return primary_to_string_file_ECU_CHIMERA((primary_message_ECU_CHIMERA*) message, buffer);
+        case 1284:
+            return primary_to_string_file_CONTROL_OUTPUT((primary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 523:
             return primary_to_string_file_LC_RESET((primary_message_LC_RESET*) message, buffer);
     }
@@ -13390,25 +13478,19 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 170: {
-            primary_deserialize_BMS_HV_CHIMERA(
-                (primary_message_BMS_HV_CHIMERA*) message_raw,
+        case 1284: {
+            primary_deserialize_CONTROL_OUTPUT(
+                (primary_message_CONTROL_OUTPUT*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return message_raw;
-        }
-        case 85: {
-            primary_deserialize_ECU_CHIMERA(
-                (primary_message_ECU_CHIMERA*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
+            primary_raw_to_conversion_struct_CONTROL_OUTPUT(
+                (primary_message_CONTROL_OUTPUT_conversion*) message_conversion,
+                (primary_message_CONTROL_OUTPUT*) message_raw
             );
-            return message_raw;
+            return message_conversion;
         }
         case 523: {
             primary_deserialize_LC_RESET(
@@ -13660,12 +13742,9 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_BRUSA_ERR].id = 614;
     (*devices)[primary_INDEX_BRUSA_ERR].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ERR));
     (*devices)[primary_INDEX_BRUSA_ERR].message_conversion = NULL;
-    (*devices)[primary_INDEX_BMS_HV_CHIMERA].id = 170;
-    (*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw = (void*) malloc(sizeof(primary_message_BMS_HV_CHIMERA));
-    (*devices)[primary_INDEX_BMS_HV_CHIMERA].message_conversion = NULL;
-    (*devices)[primary_INDEX_ECU_CHIMERA].id = 85;
-    (*devices)[primary_INDEX_ECU_CHIMERA].message_raw = (void*) malloc(sizeof(primary_message_ECU_CHIMERA));
-    (*devices)[primary_INDEX_ECU_CHIMERA].message_conversion = NULL;
+    (*devices)[primary_INDEX_CONTROL_OUTPUT].id = 1284;
+    (*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw = (void*) malloc(sizeof(primary_message_CONTROL_OUTPUT));
+    (*devices)[primary_INDEX_CONTROL_OUTPUT].message_conversion = (void*) malloc(sizeof(primary_message_CONTROL_OUTPUT_conversion));
     (*devices)[primary_INDEX_LC_RESET].id = 523;
     (*devices)[primary_INDEX_LC_RESET].message_raw = (void*) malloc(sizeof(primary_message_LC_RESET));
     (*devices)[primary_INDEX_LC_RESET].message_conversion = NULL;
@@ -13767,8 +13846,8 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_BRUSA_ACT_II].message_raw);
     free((*devices)[primary_INDEX_BRUSA_TEMP].message_raw);
     free((*devices)[primary_INDEX_BRUSA_ERR].message_raw);
-    free((*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw);
-    free((*devices)[primary_INDEX_ECU_CHIMERA].message_raw);
+    free((*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw);
+    free((*devices)[primary_INDEX_CONTROL_OUTPUT].message_conversion);
     free((*devices)[primary_INDEX_LC_RESET].message_raw);
     free(devices);
 }
@@ -14606,23 +14685,17 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 170: {
-            primary_deserialize_BMS_HV_CHIMERA(
-                (primary_message_BMS_HV_CHIMERA*) &(*devices)[primary_INDEX_BMS_HV_CHIMERA].message_raw,
+        case 1284: {
+            primary_deserialize_CONTROL_OUTPUT(
+                (primary_message_CONTROL_OUTPUT*) &(*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
-            return;
-        }
-        case 85: {
-            primary_deserialize_ECU_CHIMERA(
-                (primary_message_ECU_CHIMERA*) &(*devices)[primary_INDEX_ECU_CHIMERA].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
+            primary_raw_to_conversion_struct_CONTROL_OUTPUT(
+                (primary_message_CONTROL_OUTPUT_conversion*) &(*devices)[primary_INDEX_CONTROL_OUTPUT].message_conversion,
+                (primary_message_CONTROL_OUTPUT*) &(*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw
             );
             return;
         }

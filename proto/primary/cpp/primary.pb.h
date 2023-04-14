@@ -48,7 +48,7 @@ struct TableStruct_primary_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[80]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[79]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,9 +59,6 @@ namespace primary {
 class AMBIENT_TEMPERATURE;
 class AMBIENT_TEMPERATUREDefaultTypeInternal;
 extern AMBIENT_TEMPERATUREDefaultTypeInternal _AMBIENT_TEMPERATURE_default_instance_;
-class BMS_HV_CHIMERA;
-class BMS_HV_CHIMERADefaultTypeInternal;
-extern BMS_HV_CHIMERADefaultTypeInternal _BMS_HV_CHIMERA_default_instance_;
 class BMS_HV_JMP_TO_BLT;
 class BMS_HV_JMP_TO_BLTDefaultTypeInternal;
 extern BMS_HV_JMP_TO_BLTDefaultTypeInternal _BMS_HV_JMP_TO_BLT_default_instance_;
@@ -89,6 +86,9 @@ extern BRUSA_TEMPDefaultTypeInternal _BRUSA_TEMP_default_instance_;
 class CAR_STATUS;
 class CAR_STATUSDefaultTypeInternal;
 extern CAR_STATUSDefaultTypeInternal _CAR_STATUS_default_instance_;
+class CONTROL_OUTPUT;
+class CONTROL_OUTPUTDefaultTypeInternal;
+extern CONTROL_OUTPUTDefaultTypeInternal _CONTROL_OUTPUT_default_instance_;
 class COOLING_STATUS;
 class COOLING_STATUSDefaultTypeInternal;
 extern COOLING_STATUSDefaultTypeInternal _COOLING_STATUS_default_instance_;
@@ -101,9 +101,6 @@ extern DAS_VERSIONDefaultTypeInternal _DAS_VERSION_default_instance_;
 class DATA_LOGGER;
 class DATA_LOGGERDefaultTypeInternal;
 extern DATA_LOGGERDefaultTypeInternal _DATA_LOGGER_default_instance_;
-class ECU_CHIMERA;
-class ECU_CHIMERADefaultTypeInternal;
-extern ECU_CHIMERADefaultTypeInternal _ECU_CHIMERA_default_instance_;
 class FLASH_BMS_HV_RX;
 class FLASH_BMS_HV_RXDefaultTypeInternal;
 extern FLASH_BMS_HV_RXDefaultTypeInternal _FLASH_BMS_HV_RX_default_instance_;
@@ -299,7 +296,6 @@ extern TS_STATUSDefaultTypeInternal _TS_STATUS_default_instance_;
 }  // namespace primary
 PROTOBUF_NAMESPACE_OPEN
 template<> ::primary::AMBIENT_TEMPERATURE* Arena::CreateMaybeMessage<::primary::AMBIENT_TEMPERATURE>(Arena*);
-template<> ::primary::BMS_HV_CHIMERA* Arena::CreateMaybeMessage<::primary::BMS_HV_CHIMERA>(Arena*);
 template<> ::primary::BMS_HV_JMP_TO_BLT* Arena::CreateMaybeMessage<::primary::BMS_HV_JMP_TO_BLT>(Arena*);
 template<> ::primary::BMS_LV_JMP_TO_BLT* Arena::CreateMaybeMessage<::primary::BMS_LV_JMP_TO_BLT>(Arena*);
 template<> ::primary::BRUSA_ACT_I* Arena::CreateMaybeMessage<::primary::BRUSA_ACT_I>(Arena*);
@@ -309,11 +305,11 @@ template<> ::primary::BRUSA_NLG5_CTL* Arena::CreateMaybeMessage<::primary::BRUSA
 template<> ::primary::BRUSA_ST* Arena::CreateMaybeMessage<::primary::BRUSA_ST>(Arena*);
 template<> ::primary::BRUSA_TEMP* Arena::CreateMaybeMessage<::primary::BRUSA_TEMP>(Arena*);
 template<> ::primary::CAR_STATUS* Arena::CreateMaybeMessage<::primary::CAR_STATUS>(Arena*);
+template<> ::primary::CONTROL_OUTPUT* Arena::CreateMaybeMessage<::primary::CONTROL_OUTPUT>(Arena*);
 template<> ::primary::COOLING_STATUS* Arena::CreateMaybeMessage<::primary::COOLING_STATUS>(Arena*);
 template<> ::primary::DAS_ERRORS* Arena::CreateMaybeMessage<::primary::DAS_ERRORS>(Arena*);
 template<> ::primary::DAS_VERSION* Arena::CreateMaybeMessage<::primary::DAS_VERSION>(Arena*);
 template<> ::primary::DATA_LOGGER* Arena::CreateMaybeMessage<::primary::DATA_LOGGER>(Arena*);
-template<> ::primary::ECU_CHIMERA* Arena::CreateMaybeMessage<::primary::ECU_CHIMERA>(Arena*);
 template<> ::primary::FLASH_BMS_HV_RX* Arena::CreateMaybeMessage<::primary::FLASH_BMS_HV_RX>(Arena*);
 template<> ::primary::FLASH_BMS_HV_TX* Arena::CreateMaybeMessage<::primary::FLASH_BMS_HV_TX>(Arena*);
 template<> ::primary::FLASH_BMS_LV_RX* Arena::CreateMaybeMessage<::primary::FLASH_BMS_LV_RX>(Arena*);
@@ -12409,23 +12405,23 @@ class BRUSA_ERR PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class BMS_HV_CHIMERA PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.BMS_HV_CHIMERA) */ {
+class CONTROL_OUTPUT PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.CONTROL_OUTPUT) */ {
  public:
-  inline BMS_HV_CHIMERA() : BMS_HV_CHIMERA(nullptr) {};
-  virtual ~BMS_HV_CHIMERA();
+  inline CONTROL_OUTPUT() : CONTROL_OUTPUT(nullptr) {};
+  virtual ~CONTROL_OUTPUT();
 
-  BMS_HV_CHIMERA(const BMS_HV_CHIMERA& from);
-  BMS_HV_CHIMERA(BMS_HV_CHIMERA&& from) noexcept
-    : BMS_HV_CHIMERA() {
+  CONTROL_OUTPUT(const CONTROL_OUTPUT& from);
+  CONTROL_OUTPUT(CONTROL_OUTPUT&& from) noexcept
+    : CONTROL_OUTPUT() {
     *this = ::std::move(from);
   }
 
-  inline BMS_HV_CHIMERA& operator=(const BMS_HV_CHIMERA& from) {
+  inline CONTROL_OUTPUT& operator=(const CONTROL_OUTPUT& from) {
     CopyFrom(from);
     return *this;
   }
-  inline BMS_HV_CHIMERA& operator=(BMS_HV_CHIMERA&& from) noexcept {
+  inline CONTROL_OUTPUT& operator=(CONTROL_OUTPUT&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -12443,20 +12439,20 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const BMS_HV_CHIMERA& default_instance();
+  static const CONTROL_OUTPUT& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BMS_HV_CHIMERA* internal_default_instance() {
-    return reinterpret_cast<const BMS_HV_CHIMERA*>(
-               &_BMS_HV_CHIMERA_default_instance_);
+  static inline const CONTROL_OUTPUT* internal_default_instance() {
+    return reinterpret_cast<const CONTROL_OUTPUT*>(
+               &_CONTROL_OUTPUT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     76;
 
-  friend void swap(BMS_HV_CHIMERA& a, BMS_HV_CHIMERA& b) {
+  friend void swap(CONTROL_OUTPUT& a, CONTROL_OUTPUT& b) {
     a.Swap(&b);
   }
-  inline void Swap(BMS_HV_CHIMERA* other) {
+  inline void Swap(CONTROL_OUTPUT* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -12464,7 +12460,7 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(BMS_HV_CHIMERA* other) {
+  void UnsafeArenaSwap(CONTROL_OUTPUT* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -12472,17 +12468,17 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline BMS_HV_CHIMERA* New() const final {
-    return CreateMaybeMessage<BMS_HV_CHIMERA>(nullptr);
+  inline CONTROL_OUTPUT* New() const final {
+    return CreateMaybeMessage<CONTROL_OUTPUT>(nullptr);
   }
 
-  BMS_HV_CHIMERA* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BMS_HV_CHIMERA>(arena);
+  CONTROL_OUTPUT* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CONTROL_OUTPUT>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BMS_HV_CHIMERA& from);
-  void MergeFrom(const BMS_HV_CHIMERA& from);
+  void CopyFrom(const CONTROL_OUTPUT& from);
+  void MergeFrom(const CONTROL_OUTPUT& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -12496,13 +12492,13 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BMS_HV_CHIMERA* other);
+  void InternalSwap(CONTROL_OUTPUT* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "primary.BMS_HV_CHIMERA";
+    return "primary.CONTROL_OUTPUT";
   }
   protected:
-  explicit BMS_HV_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit CONTROL_OUTPUT(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -12522,9 +12518,50 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInnerTimestampFieldNumber = 1,
+    kEstimatedVelocityFieldNumber = 1,
+    kTmaxRFieldNumber = 2,
+    kTmaxLFieldNumber = 3,
+    kTorqueLFieldNumber = 4,
+    kInnerTimestampFieldNumber = 6,
+    kTorqueRFieldNumber = 5,
   };
-  // uint64 _inner_timestamp = 1;
+  // float estimated_velocity = 1;
+  void clear_estimated_velocity();
+  float estimated_velocity() const;
+  void set_estimated_velocity(float value);
+  private:
+  float _internal_estimated_velocity() const;
+  void _internal_set_estimated_velocity(float value);
+  public:
+
+  // float tmax_r = 2;
+  void clear_tmax_r();
+  float tmax_r() const;
+  void set_tmax_r(float value);
+  private:
+  float _internal_tmax_r() const;
+  void _internal_set_tmax_r(float value);
+  public:
+
+  // float tmax_l = 3;
+  void clear_tmax_l();
+  float tmax_l() const;
+  void set_tmax_l(float value);
+  private:
+  float _internal_tmax_l() const;
+  void _internal_set_tmax_l(float value);
+  public:
+
+  // float torque_l = 4;
+  void clear_torque_l();
+  float torque_l() const;
+  void set_torque_l(float value);
+  private:
+  float _internal_torque_l() const;
+  void _internal_set_torque_l(float value);
+  public:
+
+  // uint64 _inner_timestamp = 6;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -12533,151 +12570,28 @@ class BMS_HV_CHIMERA PROTOBUF_FINAL :
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:primary.BMS_HV_CHIMERA)
+  // float torque_r = 5;
+  void clear_torque_r();
+  float torque_r() const;
+  void set_torque_r(float value);
+  private:
+  float _internal_torque_r() const;
+  void _internal_set_torque_r(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:primary.CONTROL_OUTPUT)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  float estimated_velocity_;
+  float tmax_r_;
+  float tmax_l_;
+  float torque_l_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_primary_2eproto;
-};
-// -------------------------------------------------------------------
-
-class ECU_CHIMERA PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:primary.ECU_CHIMERA) */ {
- public:
-  inline ECU_CHIMERA() : ECU_CHIMERA(nullptr) {};
-  virtual ~ECU_CHIMERA();
-
-  ECU_CHIMERA(const ECU_CHIMERA& from);
-  ECU_CHIMERA(ECU_CHIMERA&& from) noexcept
-    : ECU_CHIMERA() {
-    *this = ::std::move(from);
-  }
-
-  inline ECU_CHIMERA& operator=(const ECU_CHIMERA& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ECU_CHIMERA& operator=(ECU_CHIMERA&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const ECU_CHIMERA& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ECU_CHIMERA* internal_default_instance() {
-    return reinterpret_cast<const ECU_CHIMERA*>(
-               &_ECU_CHIMERA_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    77;
-
-  friend void swap(ECU_CHIMERA& a, ECU_CHIMERA& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(ECU_CHIMERA* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ECU_CHIMERA* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ECU_CHIMERA* New() const final {
-    return CreateMaybeMessage<ECU_CHIMERA>(nullptr);
-  }
-
-  ECU_CHIMERA* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<ECU_CHIMERA>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const ECU_CHIMERA& from);
-  void MergeFrom(const ECU_CHIMERA& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ECU_CHIMERA* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "primary.ECU_CHIMERA";
-  }
-  protected:
-  explicit ECU_CHIMERA(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_primary_2eproto);
-    return ::descriptor_table_primary_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kInnerTimestampFieldNumber = 1,
-  };
-  // uint64 _inner_timestamp = 1;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:primary.ECU_CHIMERA)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  float torque_r_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
 };
@@ -12725,7 +12639,7 @@ class LC_RESET PROTOBUF_FINAL :
                &_LC_RESET_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    77;
 
   friend void swap(LC_RESET& a, LC_RESET& b) {
     a.Swap(&b);
@@ -12862,7 +12776,7 @@ class Pack PROTOBUF_FINAL :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    78;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -13009,9 +12923,8 @@ class Pack PROTOBUF_FINAL :
     kBRUSAACTIIFieldNumber = 74,
     kBRUSATEMPFieldNumber = 75,
     kBRUSAERRFieldNumber = 76,
-    kBMSHVCHIMERAFieldNumber = 77,
-    kECUCHIMERAFieldNumber = 78,
-    kLCRESETFieldNumber = 79,
+    kCONTROLOUTPUTFieldNumber = 77,
+    kLCRESETFieldNumber = 78,
   };
   // repeated .primary.BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 1;
   int bms_hv_jmp_to_blt_size() const;
@@ -14381,43 +14294,25 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR >&
       brusa_err() const;
 
-  // repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
-  int bms_hv_chimera_size() const;
+  // repeated .primary.CONTROL_OUTPUT CONTROL_OUTPUT = 77;
+  int control_output_size() const;
   private:
-  int _internal_bms_hv_chimera_size() const;
+  int _internal_control_output_size() const;
   public:
-  void clear_bms_hv_chimera();
-  ::primary::BMS_HV_CHIMERA* mutable_bms_hv_chimera(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >*
-      mutable_bms_hv_chimera();
+  void clear_control_output();
+  ::primary::CONTROL_OUTPUT* mutable_control_output(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CONTROL_OUTPUT >*
+      mutable_control_output();
   private:
-  const ::primary::BMS_HV_CHIMERA& _internal_bms_hv_chimera(int index) const;
-  ::primary::BMS_HV_CHIMERA* _internal_add_bms_hv_chimera();
+  const ::primary::CONTROL_OUTPUT& _internal_control_output(int index) const;
+  ::primary::CONTROL_OUTPUT* _internal_add_control_output();
   public:
-  const ::primary::BMS_HV_CHIMERA& bms_hv_chimera(int index) const;
-  ::primary::BMS_HV_CHIMERA* add_bms_hv_chimera();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
-      bms_hv_chimera() const;
+  const ::primary::CONTROL_OUTPUT& control_output(int index) const;
+  ::primary::CONTROL_OUTPUT* add_control_output();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CONTROL_OUTPUT >&
+      control_output() const;
 
-  // repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
-  int ecu_chimera_size() const;
-  private:
-  int _internal_ecu_chimera_size() const;
-  public:
-  void clear_ecu_chimera();
-  ::primary::ECU_CHIMERA* mutable_ecu_chimera(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >*
-      mutable_ecu_chimera();
-  private:
-  const ::primary::ECU_CHIMERA& _internal_ecu_chimera(int index) const;
-  ::primary::ECU_CHIMERA* _internal_add_ecu_chimera();
-  public:
-  const ::primary::ECU_CHIMERA& ecu_chimera(int index) const;
-  ::primary::ECU_CHIMERA* add_ecu_chimera();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >&
-      ecu_chimera() const;
-
-  // repeated .primary.LC_RESET LC_RESET = 79;
+  // repeated .primary.LC_RESET LC_RESET = 78;
   int lc_reset_size() const;
   private:
   int _internal_lc_reset_size() const;
@@ -14518,8 +14413,7 @@ class Pack PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ACT_II > brusa_act_ii_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_TEMP > brusa_temp_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BRUSA_ERR > brusa_err_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA > bms_hv_chimera_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA > ecu_chimera_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CONTROL_OUTPUT > control_output_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::LC_RESET > lc_reset_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_primary_2eproto;
@@ -18857,50 +18751,126 @@ inline void BRUSA_ERR::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // -------------------------------------------------------------------
 
-// BMS_HV_CHIMERA
+// CONTROL_OUTPUT
 
-// uint64 _inner_timestamp = 1;
-inline void BMS_HV_CHIMERA::clear__inner_timestamp() {
+// float estimated_velocity = 1;
+inline void CONTROL_OUTPUT::clear_estimated_velocity() {
+  estimated_velocity_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_estimated_velocity() const {
+  return estimated_velocity_;
+}
+inline float CONTROL_OUTPUT::estimated_velocity() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT.estimated_velocity)
+  return _internal_estimated_velocity();
+}
+inline void CONTROL_OUTPUT::_internal_set_estimated_velocity(float value) {
+  
+  estimated_velocity_ = value;
+}
+inline void CONTROL_OUTPUT::set_estimated_velocity(float value) {
+  _internal_set_estimated_velocity(value);
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT.estimated_velocity)
+}
+
+// float tmax_r = 2;
+inline void CONTROL_OUTPUT::clear_tmax_r() {
+  tmax_r_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_tmax_r() const {
+  return tmax_r_;
+}
+inline float CONTROL_OUTPUT::tmax_r() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT.tmax_r)
+  return _internal_tmax_r();
+}
+inline void CONTROL_OUTPUT::_internal_set_tmax_r(float value) {
+  
+  tmax_r_ = value;
+}
+inline void CONTROL_OUTPUT::set_tmax_r(float value) {
+  _internal_set_tmax_r(value);
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT.tmax_r)
+}
+
+// float tmax_l = 3;
+inline void CONTROL_OUTPUT::clear_tmax_l() {
+  tmax_l_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_tmax_l() const {
+  return tmax_l_;
+}
+inline float CONTROL_OUTPUT::tmax_l() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT.tmax_l)
+  return _internal_tmax_l();
+}
+inline void CONTROL_OUTPUT::_internal_set_tmax_l(float value) {
+  
+  tmax_l_ = value;
+}
+inline void CONTROL_OUTPUT::set_tmax_l(float value) {
+  _internal_set_tmax_l(value);
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT.tmax_l)
+}
+
+// float torque_l = 4;
+inline void CONTROL_OUTPUT::clear_torque_l() {
+  torque_l_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_torque_l() const {
+  return torque_l_;
+}
+inline float CONTROL_OUTPUT::torque_l() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT.torque_l)
+  return _internal_torque_l();
+}
+inline void CONTROL_OUTPUT::_internal_set_torque_l(float value) {
+  
+  torque_l_ = value;
+}
+inline void CONTROL_OUTPUT::set_torque_l(float value) {
+  _internal_set_torque_l(value);
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT.torque_l)
+}
+
+// float torque_r = 5;
+inline void CONTROL_OUTPUT::clear_torque_r() {
+  torque_r_ = 0;
+}
+inline float CONTROL_OUTPUT::_internal_torque_r() const {
+  return torque_r_;
+}
+inline float CONTROL_OUTPUT::torque_r() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT.torque_r)
+  return _internal_torque_r();
+}
+inline void CONTROL_OUTPUT::_internal_set_torque_r(float value) {
+  
+  torque_r_ = value;
+}
+inline void CONTROL_OUTPUT::set_torque_r(float value) {
+  _internal_set_torque_r(value);
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT.torque_r)
+}
+
+// uint64 _inner_timestamp = 6;
+inline void CONTROL_OUTPUT::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BMS_HV_CHIMERA::_internal__inner_timestamp() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_OUTPUT::_internal__inner_timestamp() const {
   return _inner_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BMS_HV_CHIMERA::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.BMS_HV_CHIMERA._inner_timestamp)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CONTROL_OUTPUT::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:primary.CONTROL_OUTPUT._inner_timestamp)
   return _internal__inner_timestamp();
 }
-inline void BMS_HV_CHIMERA::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CONTROL_OUTPUT::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   _inner_timestamp_ = value;
 }
-inline void BMS_HV_CHIMERA::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CONTROL_OUTPUT::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.BMS_HV_CHIMERA._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// ECU_CHIMERA
-
-// uint64 _inner_timestamp = 1;
-inline void ECU_CHIMERA::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ECU_CHIMERA::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ECU_CHIMERA::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:primary.ECU_CHIMERA._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void ECU_CHIMERA::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void ECU_CHIMERA::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:primary.ECU_CHIMERA._inner_timestamp)
+  // @@protoc_insertion_point(field_set:primary.CONTROL_OUTPUT._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -21895,85 +21865,46 @@ Pack::brusa_err() const {
   return brusa_err_;
 }
 
-// repeated .primary.BMS_HV_CHIMERA BMS_HV_CHIMERA = 77;
-inline int Pack::_internal_bms_hv_chimera_size() const {
-  return bms_hv_chimera_.size();
+// repeated .primary.CONTROL_OUTPUT CONTROL_OUTPUT = 77;
+inline int Pack::_internal_control_output_size() const {
+  return control_output_.size();
 }
-inline int Pack::bms_hv_chimera_size() const {
-  return _internal_bms_hv_chimera_size();
+inline int Pack::control_output_size() const {
+  return _internal_control_output_size();
 }
-inline void Pack::clear_bms_hv_chimera() {
-  bms_hv_chimera_.Clear();
+inline void Pack::clear_control_output() {
+  control_output_.Clear();
 }
-inline ::primary::BMS_HV_CHIMERA* Pack::mutable_bms_hv_chimera(int index) {
-  // @@protoc_insertion_point(field_mutable:primary.Pack.BMS_HV_CHIMERA)
-  return bms_hv_chimera_.Mutable(index);
+inline ::primary::CONTROL_OUTPUT* Pack::mutable_control_output(int index) {
+  // @@protoc_insertion_point(field_mutable:primary.Pack.CONTROL_OUTPUT)
+  return control_output_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >*
-Pack::mutable_bms_hv_chimera() {
-  // @@protoc_insertion_point(field_mutable_list:primary.Pack.BMS_HV_CHIMERA)
-  return &bms_hv_chimera_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CONTROL_OUTPUT >*
+Pack::mutable_control_output() {
+  // @@protoc_insertion_point(field_mutable_list:primary.Pack.CONTROL_OUTPUT)
+  return &control_output_;
 }
-inline const ::primary::BMS_HV_CHIMERA& Pack::_internal_bms_hv_chimera(int index) const {
-  return bms_hv_chimera_.Get(index);
+inline const ::primary::CONTROL_OUTPUT& Pack::_internal_control_output(int index) const {
+  return control_output_.Get(index);
 }
-inline const ::primary::BMS_HV_CHIMERA& Pack::bms_hv_chimera(int index) const {
-  // @@protoc_insertion_point(field_get:primary.Pack.BMS_HV_CHIMERA)
-  return _internal_bms_hv_chimera(index);
+inline const ::primary::CONTROL_OUTPUT& Pack::control_output(int index) const {
+  // @@protoc_insertion_point(field_get:primary.Pack.CONTROL_OUTPUT)
+  return _internal_control_output(index);
 }
-inline ::primary::BMS_HV_CHIMERA* Pack::_internal_add_bms_hv_chimera() {
-  return bms_hv_chimera_.Add();
+inline ::primary::CONTROL_OUTPUT* Pack::_internal_add_control_output() {
+  return control_output_.Add();
 }
-inline ::primary::BMS_HV_CHIMERA* Pack::add_bms_hv_chimera() {
-  // @@protoc_insertion_point(field_add:primary.Pack.BMS_HV_CHIMERA)
-  return _internal_add_bms_hv_chimera();
+inline ::primary::CONTROL_OUTPUT* Pack::add_control_output() {
+  // @@protoc_insertion_point(field_add:primary.Pack.CONTROL_OUTPUT)
+  return _internal_add_control_output();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::BMS_HV_CHIMERA >&
-Pack::bms_hv_chimera() const {
-  // @@protoc_insertion_point(field_list:primary.Pack.BMS_HV_CHIMERA)
-  return bms_hv_chimera_;
-}
-
-// repeated .primary.ECU_CHIMERA ECU_CHIMERA = 78;
-inline int Pack::_internal_ecu_chimera_size() const {
-  return ecu_chimera_.size();
-}
-inline int Pack::ecu_chimera_size() const {
-  return _internal_ecu_chimera_size();
-}
-inline void Pack::clear_ecu_chimera() {
-  ecu_chimera_.Clear();
-}
-inline ::primary::ECU_CHIMERA* Pack::mutable_ecu_chimera(int index) {
-  // @@protoc_insertion_point(field_mutable:primary.Pack.ECU_CHIMERA)
-  return ecu_chimera_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >*
-Pack::mutable_ecu_chimera() {
-  // @@protoc_insertion_point(field_mutable_list:primary.Pack.ECU_CHIMERA)
-  return &ecu_chimera_;
-}
-inline const ::primary::ECU_CHIMERA& Pack::_internal_ecu_chimera(int index) const {
-  return ecu_chimera_.Get(index);
-}
-inline const ::primary::ECU_CHIMERA& Pack::ecu_chimera(int index) const {
-  // @@protoc_insertion_point(field_get:primary.Pack.ECU_CHIMERA)
-  return _internal_ecu_chimera(index);
-}
-inline ::primary::ECU_CHIMERA* Pack::_internal_add_ecu_chimera() {
-  return ecu_chimera_.Add();
-}
-inline ::primary::ECU_CHIMERA* Pack::add_ecu_chimera() {
-  // @@protoc_insertion_point(field_add:primary.Pack.ECU_CHIMERA)
-  return _internal_add_ecu_chimera();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::ECU_CHIMERA >&
-Pack::ecu_chimera() const {
-  // @@protoc_insertion_point(field_list:primary.Pack.ECU_CHIMERA)
-  return ecu_chimera_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::primary::CONTROL_OUTPUT >&
+Pack::control_output() const {
+  // @@protoc_insertion_point(field_list:primary.Pack.CONTROL_OUTPUT)
+  return control_output_;
 }
 
-// repeated .primary.LC_RESET LC_RESET = 79;
+// repeated .primary.LC_RESET LC_RESET = 78;
 inline int Pack::_internal_lc_reset_size() const {
   return lc_reset_.size();
 }
@@ -22015,8 +21946,6 @@ Pack::lc_reset() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

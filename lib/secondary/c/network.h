@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1678808551
-#define CANLIB_BUILD_HASH 0xb40caf16
+#define CANLIB_BUILD_TIME 1681490869
+#define CANLIB_BUILD_HASH 0x05b7806a
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -190,8 +190,8 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_INDEX_GPS_SPEED 19
 #define secondary_INDEX_LAP_COUNT 20
 #define secondary_INDEX_PEDALS_OUTPUT 21
-#define secondary_INDEX_CONTROL_OUTPUT 22
-#define secondary_INDEX_STEERING_ANGLE 23
+#define secondary_INDEX_STEERING_ANGLE 22
+#define secondary_INDEX_CONTROL_STATE 23
 #define secondary_INDEX_TPMS 24
 #define secondary_INDEX_LC_STATUS 25
 
@@ -220,8 +220,8 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_SIZE_GPS_SPEED 2
 #define secondary_SIZE_LAP_COUNT 5
 #define secondary_SIZE_PEDALS_OUTPUT 5
-#define secondary_SIZE_CONTROL_OUTPUT 8
 #define secondary_SIZE_STEERING_ANGLE 4
+#define secondary_SIZE_CONTROL_STATE 3
 #define secondary_SIZE_TPMS 8
 #define secondary_SIZE_LC_STATUS 5
 
@@ -636,33 +636,29 @@ typedef struct CANLIB_PARKING {
 } secondary_message_PEDALS_OUTPUT_conversion;
 
 typedef struct CANLIB_PARKING {
-    secondary_uint16 estimated_velocity;
-    secondary_uint8 tmax_r;
-    secondary_uint8 tmax_l;
-    secondary_uint16 torque_l;
-    secondary_uint16 torque_r;
-#ifdef CANLIB_TIMESTAMP
-    secondary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} secondary_message_CONTROL_OUTPUT;
-
-typedef struct CANLIB_PARKING {
-    secondary_float32 estimated_velocity;
-    secondary_float32 tmax_r;
-    secondary_float32 tmax_l;
-    secondary_float32 torque_l;
-    secondary_float32 torque_r;
-#ifdef CANLIB_TIMESTAMP
-    secondary_uint64 _timestamp;
-#endif // CANLIB_TIMESTAMP
-} secondary_message_CONTROL_OUTPUT_conversion;
-
-typedef struct CANLIB_PARKING {
     secondary_float32 angle;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } secondary_message_STEERING_ANGLE;
+
+typedef struct CANLIB_PARKING {
+    secondary_uint8 map_pw;
+    secondary_uint8 map_sc;
+    secondary_uint8 map_tv;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_CONTROL_STATE;
+
+typedef struct CANLIB_PARKING {
+    secondary_float32 map_pw;
+    secondary_float32 map_sc;
+    secondary_float32 map_tv;
+#ifdef CANLIB_TIMESTAMP
+    secondary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} secondary_message_CONTROL_STATE_conversion;
 
 typedef struct CANLIB_PARKING {
     secondary_uint8 fl_pressure;
@@ -724,8 +720,8 @@ typedef union CANLIB_PARKING {
     secondary_message_GPS_SPEED _GPS_SPEED;
     secondary_message_LAP_COUNT _LAP_COUNT;
     secondary_message_PEDALS_OUTPUT _PEDALS_OUTPUT;
-    secondary_message_CONTROL_OUTPUT _CONTROL_OUTPUT;
     secondary_message_STEERING_ANGLE _STEERING_ANGLE;
+    secondary_message_CONTROL_STATE _CONTROL_STATE;
     secondary_message_TPMS _TPMS;
     secondary_message_LC_STATUS _LC_STATUS;
 } _secondary_all_structs_raw;
@@ -750,7 +746,7 @@ typedef union CANLIB_PARKING {
     secondary_message_IRTS_RR_2_conversion _IRTS_RR_2;
     secondary_message_IRTS_RR_3_conversion _IRTS_RR_3;
     secondary_message_PEDALS_OUTPUT_conversion _PEDALS_OUTPUT;
-    secondary_message_CONTROL_OUTPUT_conversion _CONTROL_OUTPUT;
+    secondary_message_CONTROL_STATE_conversion _CONTROL_STATE;
     secondary_message_TPMS_conversion _TPMS;
 } _secondary_all_structs_conversion;
 
@@ -1912,66 +1908,6 @@ int secondary_to_string_file_PEDALS_OUTPUT(secondary_message_PEDALS_OUTPUT_conve
 int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer);
 
 
-// ============== CONTROL_OUTPUT ============== //
-
-secondary_byte_size secondary_serialize_CONTROL_OUTPUT(
-    uint8_t* data,
-    secondary_uint16 estimated_velocity,
-    secondary_uint8 tmax_r,
-    secondary_uint8 tmax_l,
-    secondary_uint16 torque_l,
-    secondary_uint16 torque_r
-);
-secondary_byte_size secondary_serialize_struct_CONTROL_OUTPUT(
-    uint8_t* data,
-    secondary_message_CONTROL_OUTPUT* message
-);
-void secondary_deserialize_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 timestamp
-#endif // CANLIB_TIMESTAMP
-);
-void secondary_raw_to_conversion_struct_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT_conversion* conversion,
-    secondary_message_CONTROL_OUTPUT* raw
-);
-
-void secondary_conversion_to_raw_struct_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* raw,
-    secondary_message_CONTROL_OUTPUT_conversion* conversion
-);
-
-void secondary_conversion_to_raw_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* raw,
-    secondary_float32 estimated_velocity,
-    secondary_float32 tmax_r,
-    secondary_float32 tmax_l,
-    secondary_float32 torque_l,
-    secondary_float32 torque_r
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-);
-
-void secondary_raw_to_conversion_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT_conversion* conversion,
-    secondary_uint16 estimated_velocity,
-    secondary_uint8 tmax_r,
-    secondary_uint8 tmax_l,
-    secondary_uint16 torque_l,
-    secondary_uint16 torque_r
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-);
-int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT_conversion* message, char* buffer);
-int secondary_fields_CONTROL_OUTPUT(char* buffer);
-int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT_conversion* message, FILE* buffer);
-int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer);
-
-
 // ============== STEERING_ANGLE ============== //
 
 secondary_byte_size secondary_serialize_STEERING_ANGLE(
@@ -1993,6 +1929,60 @@ int secondary_to_string_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message
 int secondary_fields_STEERING_ANGLE(char* buffer);
 int secondary_to_string_file_STEERING_ANGLE(secondary_message_STEERING_ANGLE* message, FILE* buffer);
 int secondary_fields_file_STEERING_ANGLE(FILE* buffer);
+
+
+// ============== CONTROL_STATE ============== //
+
+secondary_byte_size secondary_serialize_CONTROL_STATE(
+    uint8_t* data,
+    secondary_uint8 map_pw,
+    secondary_uint8 map_sc,
+    secondary_uint8 map_tv
+);
+secondary_byte_size secondary_serialize_struct_CONTROL_STATE(
+    uint8_t* data,
+    secondary_message_CONTROL_STATE* message
+);
+void secondary_deserialize_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+void secondary_raw_to_conversion_struct_CONTROL_STATE(
+    secondary_message_CONTROL_STATE_conversion* conversion,
+    secondary_message_CONTROL_STATE* raw
+);
+
+void secondary_conversion_to_raw_struct_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* raw,
+    secondary_message_CONTROL_STATE_conversion* conversion
+);
+
+void secondary_conversion_to_raw_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* raw,
+    secondary_float32 map_pw,
+    secondary_float32 map_sc,
+    secondary_float32 map_tv
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+
+void secondary_raw_to_conversion_CONTROL_STATE(
+    secondary_message_CONTROL_STATE_conversion* conversion,
+    secondary_uint8 map_pw,
+    secondary_uint8 map_sc,
+    secondary_uint8 map_tv
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int secondary_to_string_CONTROL_STATE(secondary_message_CONTROL_STATE_conversion* message, char* buffer);
+int secondary_fields_CONTROL_STATE(char* buffer);
+int secondary_to_string_file_CONTROL_STATE(secondary_message_CONTROL_STATE_conversion* message, FILE* buffer);
+int secondary_fields_file_CONTROL_STATE(FILE* buffer);
 
 
 // ============== TPMS ============== //
@@ -2115,10 +2105,10 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 1057: return secondary_INDEX_GPS_SPEED;
         case 1089: return secondary_INDEX_LAP_COUNT;
         case 769: return secondary_INDEX_PEDALS_OUTPUT;
-        case 801: return secondary_INDEX_CONTROL_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
+        case 259: return secondary_INDEX_CONTROL_STATE;
         case 513: return secondary_INDEX_TPMS;
-        case 771: return secondary_INDEX_LC_STATUS;
+        case 772: return secondary_INDEX_LC_STATUS;
     }
     return -1; // invalid
 }
@@ -2147,10 +2137,10 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_GPS_SPEED: return 1057;
         case secondary_INDEX_LAP_COUNT: return 1089;
         case secondary_INDEX_PEDALS_OUTPUT: return 769;
-        case secondary_INDEX_CONTROL_OUTPUT: return 801;
         case secondary_INDEX_STEERING_ANGLE: return 258;
+        case secondary_INDEX_CONTROL_STATE: return 259;
         case secondary_INDEX_TPMS: return 513;
-        case secondary_INDEX_LC_STATUS: return 771;
+        case secondary_INDEX_LC_STATUS: return 772;
     }
     return -1; // invalid
 }
@@ -5933,204 +5923,6 @@ int secondary_fields_file_PEDALS_OUTPUT(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-secondary_byte_size secondary_serialize_CONTROL_OUTPUT(
-    uint8_t* data,
-    secondary_uint16 estimated_velocity,
-    secondary_uint8 tmax_r,
-    secondary_uint8 tmax_l,
-    secondary_uint16 torque_l,
-    secondary_uint16 torque_r
-) {
-    data[0] = estimated_velocity & 255;
-    data[1] = (estimated_velocity >> 8) & 255;
-    data[2] = torque_l & 255;
-    data[3] = (torque_l >> 8) & 255;
-    data[4] = torque_r & 255;
-    data[5] = (torque_r >> 8) & 255;
-    data[6] = tmax_r;
-    data[7] = tmax_l;
-    return 8;
-}
-
-secondary_byte_size secondary_serialize_struct_CONTROL_OUTPUT(
-    uint8_t* data,
-    secondary_message_CONTROL_OUTPUT* message
-) {
-    data[0] = message->estimated_velocity & 255;
-    data[1] = (message->estimated_velocity >> 8) & 255;
-    data[2] = message->torque_l & 255;
-    data[3] = (message->torque_l >> 8) & 255;
-    data[4] = message->torque_r & 255;
-    data[5] = (message->torque_r >> 8) & 255;
-    data[6] = message->tmax_r;
-    data[7] = message->tmax_l;
-    return 8;
-}
-
-// ============== DESERIALIZE ============== //
-
-void secondary_deserialize_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* message,
-    uint8_t* data
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-) {
-#ifdef CANLIB_TIMESTAMP
-    message->_timestamp = _timestamp;
-#endif // CANLIB_TIMESTAMP
-    message->estimated_velocity = data[0] | (data[1] << 8);
-    message->torque_l = data[2] | (data[3] << 8);
-    message->torque_r = data[4] | (data[5] << 8);
-    message->tmax_r = data[6];
-    message->tmax_l = data[7];
-}// ============== CONVERSION ============== //
-
-void secondary_raw_to_conversion_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT_conversion* conversion,
-    secondary_uint16 estimated_velocity,
-    secondary_uint8 tmax_r,
-    secondary_uint8 tmax_l,
-    secondary_uint16 torque_l,
-    secondary_uint16 torque_r
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-){
-#ifdef CANLIB_TIMESTAMP
-    conversion->_timestamp = _timestamp;
-#endif // CANLIB_TIMESTAMP
-    conversion->estimated_velocity = (((secondary_float32)estimated_velocity) / 1092.25) - 10;
-    conversion->tmax_r = (((secondary_float32)tmax_r) / 3.1875) + 0;
-    conversion->tmax_l = (((secondary_float32)tmax_l) / 3.1875) + 0;
-    conversion->torque_l = (((secondary_float32)torque_l) / 819.1875) + 0;
-    conversion->torque_r = (((secondary_float32)torque_r) / 819.1875) + 0;
-}
-
-void secondary_raw_to_conversion_struct_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT_conversion* conversion,
-    secondary_message_CONTROL_OUTPUT* raw
-){
-#ifdef CANLIB_TIMESTAMP
-    conversion->_timestamp = raw->_timestamp;
-#endif // CANLIB_TIMESTAMP
-    conversion->estimated_velocity = (((secondary_float32)raw->estimated_velocity) / 1092.25) - 10;
-    conversion->tmax_r = (((secondary_float32)raw->tmax_r) / 3.1875) + 0;
-    conversion->tmax_l = (((secondary_float32)raw->tmax_l) / 3.1875) + 0;
-    conversion->torque_l = (((secondary_float32)raw->torque_l) / 819.1875) + 0;
-    conversion->torque_r = (((secondary_float32)raw->torque_r) / 819.1875) + 0;
-}
-
-void secondary_conversion_to_raw_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* raw,
-    secondary_float32 estimated_velocity,
-    secondary_float32 tmax_r,
-    secondary_float32 tmax_l,
-    secondary_float32 torque_l,
-    secondary_float32 torque_r
-#ifdef CANLIB_TIMESTAMP
-    , secondary_uint64 _timestamp
-#endif // CANLIB_TIMESTAMP
-){
-#ifdef CANLIB_TIMESTAMP
-    raw->_timestamp = _timestamp;
-#endif // CANLIB_TIMESTAMP
-    raw->estimated_velocity = (secondary_uint16)((estimated_velocity + 10) * 1092.25);
-    raw->tmax_r = (secondary_uint8)((tmax_r + 0) * 3.1875);
-    raw->tmax_l = (secondary_uint8)((tmax_l + 0) * 3.1875);
-    raw->torque_l = (secondary_uint16)((torque_l + 0) * 819.1875);
-    raw->torque_r = (secondary_uint16)((torque_r + 0) * 819.1875);
-}
-
-void secondary_conversion_to_raw_struct_CONTROL_OUTPUT(
-    secondary_message_CONTROL_OUTPUT* raw,
-    secondary_message_CONTROL_OUTPUT_conversion* conversion
-){
-#ifdef CANLIB_TIMESTAMP
-    raw->_timestamp = conversion->_timestamp;
-#endif // CANLIB_TIMESTAMP
-    raw->estimated_velocity = (secondary_uint16)((conversion->estimated_velocity + 10) * 1092.25);
-    raw->tmax_r = (secondary_uint8)((conversion->tmax_r + 0) * 3.1875);
-    raw->tmax_l = (secondary_uint8)((conversion->tmax_l + 0) * 3.1875);
-    raw->torque_l = (secondary_uint16)((conversion->torque_l + 0) * 819.1875);
-    raw->torque_r = (secondary_uint16)((conversion->torque_r + 0) * 819.1875);
-}
-
-// ============== STRING ============== //
-int secondary_to_string_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT_conversion* message, char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "%" PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->estimated_velocity,
-        message->tmax_r,
-        message->tmax_l,
-        message->torque_l,
-        message->torque_r
-    );
-}
-
-int secondary_fields_CONTROL_OUTPUT(char* buffer) {
-    return sprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "estimated_velocity" CANLIB_SEPARATOR 
-        "tmax_r" CANLIB_SEPARATOR 
-        "tmax_l" CANLIB_SEPARATOR 
-        "torque_l" CANLIB_SEPARATOR 
-        "torque_r"
-    );
-}
-
-int secondary_to_string_file_CONTROL_OUTPUT(secondary_message_CONTROL_OUTPUT_conversion* message, FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "%" PRIu64 CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32,
-#ifdef CANLIB_TIMESTAMP
-        message->_timestamp,
-#endif // CANLIB_TIMESTAMP
-        message->estimated_velocity,
-        message->tmax_r,
-        message->tmax_l,
-        message->torque_l,
-        message->torque_r
-    );
-}
-
-int secondary_fields_file_CONTROL_OUTPUT(FILE* buffer) {
-    return fprintf(
-        buffer,
-#ifdef CANLIB_TIMESTAMP
-        "_timestamp" CANLIB_SEPARATOR
-#endif // CANLIB_TIMESTAMP
-        "estimated_velocity" CANLIB_SEPARATOR 
-        "tmax_r" CANLIB_SEPARATOR 
-        "tmax_l" CANLIB_SEPARATOR 
-        "torque_l" CANLIB_SEPARATOR 
-        "torque_r"
-    );
-}
-
-// ============== SERIALIZE ============== //
-
 secondary_byte_size secondary_serialize_STEERING_ANGLE(
     uint8_t* data,
     secondary_float32 angle
@@ -6215,6 +6007,166 @@ int secondary_fields_file_STEERING_ANGLE(FILE* buffer) {
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "angle"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+secondary_byte_size secondary_serialize_CONTROL_STATE(
+    uint8_t* data,
+    secondary_uint8 map_pw,
+    secondary_uint8 map_sc,
+    secondary_uint8 map_tv
+) {
+    data[0] = map_pw;
+    data[1] = map_sc;
+    data[2] = map_tv;
+    return 3;
+}
+
+secondary_byte_size secondary_serialize_struct_CONTROL_STATE(
+    uint8_t* data,
+    secondary_message_CONTROL_STATE* message
+) {
+    data[0] = message->map_pw;
+    data[1] = message->map_sc;
+    data[2] = message->map_tv;
+    return 3;
+}
+
+// ============== DESERIALIZE ============== //
+
+void secondary_deserialize_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->map_pw = data[0];
+    message->map_sc = data[1];
+    message->map_tv = data[2];
+}// ============== CONVERSION ============== //
+
+void secondary_raw_to_conversion_CONTROL_STATE(
+    secondary_message_CONTROL_STATE_conversion* conversion,
+    secondary_uint8 map_pw,
+    secondary_uint8 map_sc,
+    secondary_uint8 map_tv
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->map_pw = (((secondary_float32)map_pw) / 10.0) - 0.5;
+    conversion->map_sc = (((secondary_float32)map_sc) / 10.0) + 0;
+    conversion->map_tv = (((secondary_float32)map_tv) / 10.0) + 0;
+}
+
+void secondary_raw_to_conversion_struct_CONTROL_STATE(
+    secondary_message_CONTROL_STATE_conversion* conversion,
+    secondary_message_CONTROL_STATE* raw
+){
+#ifdef CANLIB_TIMESTAMP
+    conversion->_timestamp = raw->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    conversion->map_pw = (((secondary_float32)raw->map_pw) / 10.0) - 0.5;
+    conversion->map_sc = (((secondary_float32)raw->map_sc) / 10.0) + 0;
+    conversion->map_tv = (((secondary_float32)raw->map_tv) / 10.0) + 0;
+}
+
+void secondary_conversion_to_raw_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* raw,
+    secondary_float32 map_pw,
+    secondary_float32 map_sc,
+    secondary_float32 map_tv
+#ifdef CANLIB_TIMESTAMP
+    , secondary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->map_pw = (secondary_uint8)((map_pw + 0.5) * 10.0);
+    raw->map_sc = (secondary_uint8)((map_sc + 0) * 10.0);
+    raw->map_tv = (secondary_uint8)((map_tv + 0) * 10.0);
+}
+
+void secondary_conversion_to_raw_struct_CONTROL_STATE(
+    secondary_message_CONTROL_STATE* raw,
+    secondary_message_CONTROL_STATE_conversion* conversion
+){
+#ifdef CANLIB_TIMESTAMP
+    raw->_timestamp = conversion->_timestamp;
+#endif // CANLIB_TIMESTAMP
+    raw->map_pw = (secondary_uint8)((conversion->map_pw + 0.5) * 10.0);
+    raw->map_sc = (secondary_uint8)((conversion->map_sc + 0) * 10.0);
+    raw->map_tv = (secondary_uint8)((conversion->map_tv + 0) * 10.0);
+}
+
+// ============== STRING ============== //
+int secondary_to_string_CONTROL_STATE(secondary_message_CONTROL_STATE_conversion* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->map_pw,
+        message->map_sc,
+        message->map_tv
+    );
+}
+
+int secondary_fields_CONTROL_STATE(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "map_pw" CANLIB_SEPARATOR 
+        "map_sc" CANLIB_SEPARATOR 
+        "map_tv"
+    );
+}
+
+int secondary_to_string_file_CONTROL_STATE(secondary_message_CONTROL_STATE_conversion* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIf32,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->map_pw,
+        message->map_sc,
+        message->map_tv
+    );
+}
+
+int secondary_fields_file_CONTROL_STATE(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "map_pw" CANLIB_SEPARATOR 
+        "map_sc" CANLIB_SEPARATOR 
+        "map_tv"
     );
 }
 
@@ -6606,13 +6558,13 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return secondary_fields_LAP_COUNT(buffer);
         case 769:
             return secondary_fields_PEDALS_OUTPUT(buffer);
-        case 801:
-            return secondary_fields_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_STEERING_ANGLE(buffer);
+        case 259:
+            return secondary_fields_CONTROL_STATE(buffer);
         case 513:
             return secondary_fields_TPMS(buffer);
-        case 771:
+        case 772:
             return secondary_fields_LC_STATUS(buffer);
     }
     return 0;
@@ -6664,13 +6616,13 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
             return secondary_to_string_LAP_COUNT((secondary_message_LAP_COUNT*) message, buffer);
         case 769:
             return secondary_to_string_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
-        case 801:
-            return secondary_to_string_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
+        case 259:
+            return secondary_to_string_CONTROL_STATE((secondary_message_CONTROL_STATE_conversion*) message, buffer);
         case 513:
             return secondary_to_string_TPMS((secondary_message_TPMS_conversion*) message, buffer);
-        case 771:
+        case 772:
             return secondary_to_string_LC_STATUS((secondary_message_LC_STATUS*) message, buffer);
     }
     return 0;
@@ -6722,13 +6674,13 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return secondary_fields_file_LAP_COUNT(buffer);
         case 769:
             return secondary_fields_file_PEDALS_OUTPUT(buffer);
-        case 801:
-            return secondary_fields_file_CONTROL_OUTPUT(buffer);
         case 258:
             return secondary_fields_file_STEERING_ANGLE(buffer);
+        case 259:
+            return secondary_fields_file_CONTROL_STATE(buffer);
         case 513:
             return secondary_fields_file_TPMS(buffer);
-        case 771:
+        case 772:
             return secondary_fields_file_LC_STATUS(buffer);
     }
     return 0;
@@ -6780,13 +6732,13 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
             return secondary_to_string_file_LAP_COUNT((secondary_message_LAP_COUNT*) message, buffer);
         case 769:
             return secondary_to_string_file_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
-        case 801:
-            return secondary_to_string_file_CONTROL_OUTPUT((secondary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
+        case 259:
+            return secondary_to_string_file_CONTROL_STATE((secondary_message_CONTROL_STATE_conversion*) message, buffer);
         case 513:
             return secondary_to_string_file_TPMS((secondary_message_TPMS_conversion*) message, buffer);
-        case 771:
+        case 772:
             return secondary_to_string_file_LC_STATUS((secondary_message_LC_STATUS*) message, buffer);
     }
     return 0;
@@ -7098,20 +7050,6 @@ void* secondary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 801: {
-            secondary_deserialize_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            secondary_raw_to_conversion_struct_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT_conversion*) message_conversion,
-                (secondary_message_CONTROL_OUTPUT*) message_raw
-            );
-            return message_conversion;
-        }
         case 258: {
             secondary_deserialize_STEERING_ANGLE(
                 (secondary_message_STEERING_ANGLE*) message_raw,
@@ -7121,6 +7059,20 @@ void* secondary_deserialize_from_id(
                 #endif
             );
             return message_raw;
+        }
+        case 259: {
+            secondary_deserialize_CONTROL_STATE(
+                (secondary_message_CONTROL_STATE*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            secondary_raw_to_conversion_struct_CONTROL_STATE(
+                (secondary_message_CONTROL_STATE_conversion*) message_conversion,
+                (secondary_message_CONTROL_STATE*) message_raw
+            );
+            return message_conversion;
         }
         case 513: {
             secondary_deserialize_TPMS(
@@ -7136,7 +7088,7 @@ void* secondary_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 771: {
+        case 772: {
             secondary_deserialize_LC_STATUS(
                 (secondary_message_LC_STATUS*) message_raw,
                 data
@@ -7218,16 +7170,16 @@ secondary_devices* secondary_devices_new() {
     (*devices)[secondary_INDEX_PEDALS_OUTPUT].id = 769;
     (*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT));
     (*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion = (void*) malloc(sizeof(secondary_message_PEDALS_OUTPUT_conversion));
-    (*devices)[secondary_INDEX_CONTROL_OUTPUT].id = 801;
-    (*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT));
-    (*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion = (void*) malloc(sizeof(secondary_message_CONTROL_OUTPUT_conversion));
     (*devices)[secondary_INDEX_STEERING_ANGLE].id = 258;
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_raw = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_conversion = NULL;
+    (*devices)[secondary_INDEX_CONTROL_STATE].id = 259;
+    (*devices)[secondary_INDEX_CONTROL_STATE].message_raw = (void*) malloc(sizeof(secondary_message_CONTROL_STATE));
+    (*devices)[secondary_INDEX_CONTROL_STATE].message_conversion = (void*) malloc(sizeof(secondary_message_CONTROL_STATE_conversion));
     (*devices)[secondary_INDEX_TPMS].id = 513;
     (*devices)[secondary_INDEX_TPMS].message_raw = (void*) malloc(sizeof(secondary_message_TPMS));
     (*devices)[secondary_INDEX_TPMS].message_conversion = (void*) malloc(sizeof(secondary_message_TPMS_conversion));
-    (*devices)[secondary_INDEX_LC_STATUS].id = 771;
+    (*devices)[secondary_INDEX_LC_STATUS].id = 772;
     (*devices)[secondary_INDEX_LC_STATUS].message_raw = (void*) malloc(sizeof(secondary_message_LC_STATUS));
     (*devices)[secondary_INDEX_LC_STATUS].message_conversion = NULL;
     return devices;
@@ -7275,9 +7227,9 @@ void secondary_devices_free(secondary_devices* devices) {
     free((*devices)[secondary_INDEX_LAP_COUNT].message_raw);
     free((*devices)[secondary_INDEX_PEDALS_OUTPUT].message_raw);
     free((*devices)[secondary_INDEX_PEDALS_OUTPUT].message_conversion);
-    free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw);
-    free((*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion);
     free((*devices)[secondary_INDEX_STEERING_ANGLE].message_raw);
+    free((*devices)[secondary_INDEX_CONTROL_STATE].message_raw);
+    free((*devices)[secondary_INDEX_CONTROL_STATE].message_conversion);
     free((*devices)[secondary_INDEX_TPMS].message_raw);
     free((*devices)[secondary_INDEX_TPMS].message_conversion);
     free((*devices)[secondary_INDEX_LC_STATUS].message_raw);
@@ -7589,20 +7541,6 @@ void secondary_devices_deserialize_from_id(
             );
             return;
         }
-        case 801: {
-            secondary_deserialize_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT*) &(*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            secondary_raw_to_conversion_struct_CONTROL_OUTPUT(
-                (secondary_message_CONTROL_OUTPUT_conversion*) &(*devices)[secondary_INDEX_CONTROL_OUTPUT].message_conversion,
-                (secondary_message_CONTROL_OUTPUT*) &(*devices)[secondary_INDEX_CONTROL_OUTPUT].message_raw
-            );
-            return;
-        }
         case 258: {
             secondary_deserialize_STEERING_ANGLE(
                 (secondary_message_STEERING_ANGLE*) &(*devices)[secondary_INDEX_STEERING_ANGLE].message_raw,
@@ -7610,6 +7548,20 @@ void secondary_devices_deserialize_from_id(
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
+            );
+            return;
+        }
+        case 259: {
+            secondary_deserialize_CONTROL_STATE(
+                (secondary_message_CONTROL_STATE*) &(*devices)[secondary_INDEX_CONTROL_STATE].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            secondary_raw_to_conversion_struct_CONTROL_STATE(
+                (secondary_message_CONTROL_STATE_conversion*) &(*devices)[secondary_INDEX_CONTROL_STATE].message_conversion,
+                (secondary_message_CONTROL_STATE*) &(*devices)[secondary_INDEX_CONTROL_STATE].message_raw
             );
             return;
         }
@@ -7627,7 +7579,7 @@ void secondary_devices_deserialize_from_id(
             );
             return;
         }
-        case 771: {
+        case 772: {
             secondary_deserialize_LC_STATUS(
                 (secondary_message_LC_STATUS*) &(*devices)[secondary_INDEX_LC_STATUS].message_raw,
                 data

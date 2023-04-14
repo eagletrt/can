@@ -342,8 +342,7 @@ typedef struct {
     canlib_circular_buffer<primary_message_BRUSA_ACT_II, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ACT_II;
     canlib_circular_buffer<primary_message_BRUSA_TEMP, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_TEMP;
     canlib_circular_buffer<primary_message_BRUSA_ERR, CANLIB_CIRCULAR_BUFFER_SIZE> BRUSA_ERR;
-    canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> BMS_HV_CHIMERA;
-    canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE> ECU_CHIMERA;
+    canlib_circular_buffer<primary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> CONTROL_OUTPUT;
     canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE> LC_RESET;
 } primary_proto_pack;
 
@@ -1136,19 +1135,22 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["BRUSA_ERR"].field["_timestamp"].value._uint64 = &pack.BRUSA_ERR.start()._timestamp;
     mapping_map["BRUSA_ERR"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["BMS_HV_CHIMERA"].size = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.BMS_HV_CHIMERA);
-    mapping_map["BMS_HV_CHIMERA"].offset = std::bind(&canlib_circular_buffer<primary_message_BMS_HV_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.BMS_HV_CHIMERA);
-    mapping_map["BMS_HV_CHIMERA"].stride = sizeof(primary_message_BMS_HV_CHIMERA);
+    mapping_map["CONTROL_OUTPUT"].size = std::bind(&canlib_circular_buffer<primary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.CONTROL_OUTPUT);
+    mapping_map["CONTROL_OUTPUT"].offset = std::bind(&canlib_circular_buffer<primary_message_CONTROL_OUTPUT_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.CONTROL_OUTPUT);
+    mapping_map["CONTROL_OUTPUT"].stride = sizeof(primary_message_CONTROL_OUTPUT_conversion);
+    mapping_map["CONTROL_OUTPUT"].field["estimated_velocity"].value._float32 = &pack.CONTROL_OUTPUT.start().estimated_velocity;
+    mapping_map["CONTROL_OUTPUT"].field["estimated_velocity"].type = mapping_type_float32;
+    mapping_map["CONTROL_OUTPUT"].field["tmax_r"].value._float32 = &pack.CONTROL_OUTPUT.start().tmax_r;
+    mapping_map["CONTROL_OUTPUT"].field["tmax_r"].type = mapping_type_float32;
+    mapping_map["CONTROL_OUTPUT"].field["tmax_l"].value._float32 = &pack.CONTROL_OUTPUT.start().tmax_l;
+    mapping_map["CONTROL_OUTPUT"].field["tmax_l"].type = mapping_type_float32;
+    mapping_map["CONTROL_OUTPUT"].field["torque_l"].value._float32 = &pack.CONTROL_OUTPUT.start().torque_l;
+    mapping_map["CONTROL_OUTPUT"].field["torque_l"].type = mapping_type_float32;
+    mapping_map["CONTROL_OUTPUT"].field["torque_r"].value._float32 = &pack.CONTROL_OUTPUT.start().torque_r;
+    mapping_map["CONTROL_OUTPUT"].field["torque_r"].type = mapping_type_float32;
 #ifdef CANLIB_TIMESTAMP
-    mapping_map["BMS_HV_CHIMERA"].field["_timestamp"].value._uint64 = &pack.BMS_HV_CHIMERA.start()._timestamp;
-    mapping_map["BMS_HV_CHIMERA"].field["_timestamp"].type = mapping_type_uint64;
-#endif // CANLIB_TIMESTAMP
-    mapping_map["ECU_CHIMERA"].size = std::bind(&canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.ECU_CHIMERA);
-    mapping_map["ECU_CHIMERA"].offset = std::bind(&canlib_circular_buffer<primary_message_ECU_CHIMERA, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.ECU_CHIMERA);
-    mapping_map["ECU_CHIMERA"].stride = sizeof(primary_message_ECU_CHIMERA);
-#ifdef CANLIB_TIMESTAMP
-    mapping_map["ECU_CHIMERA"].field["_timestamp"].value._uint64 = &pack.ECU_CHIMERA.start()._timestamp;
-    mapping_map["ECU_CHIMERA"].field["_timestamp"].type = mapping_type_uint64;
+    mapping_map["CONTROL_OUTPUT"].field["_timestamp"].value._uint64 = &pack.CONTROL_OUTPUT.start()._timestamp;
+    mapping_map["CONTROL_OUTPUT"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
     mapping_map["LC_RESET"].size = std::bind(&canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.LC_RESET);
     mapping_map["LC_RESET"].offset = std::bind(&canlib_circular_buffer<primary_message_LC_RESET, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.LC_RESET);
@@ -1899,15 +1901,17 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
             break;
         }
 
-        case 170: {
-            primary_message_BMS_HV_CHIMERA* msg = (primary_message_BMS_HV_CHIMERA*) (*map)[index].message_raw;
-            primary::BMS_HV_CHIMERA* proto_msg = pack->add_bms_hv_chimera();
-            break;
-        }
-
-        case 85: {
-            primary_message_ECU_CHIMERA* msg = (primary_message_ECU_CHIMERA*) (*map)[index].message_raw;
-            primary::ECU_CHIMERA* proto_msg = pack->add_ecu_chimera();
+        case 1284: {
+            primary_message_CONTROL_OUTPUT_conversion* msg = (primary_message_CONTROL_OUTPUT_conversion*) (*map)[index].message_conversion;
+            primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
+            proto_msg->set_estimated_velocity(msg->estimated_velocity);
+            proto_msg->set_tmax_r(msg->tmax_r);
+            proto_msg->set_tmax_l(msg->tmax_l);
+            proto_msg->set_torque_l(msg->torque_l);
+            proto_msg->set_torque_r(msg->torque_r);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
             break;
         }
 
@@ -2958,29 +2962,22 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
 #endif // CANLIB_TIMESTAMP
         map->BRUSA_ERR.push(instance);
     }
-    for(int i = 0; i < pack->bms_hv_chimera_size(); i++){
-        static primary_message_BMS_HV_CHIMERA instance;
+    for(int i = 0; i < pack->control_output_size(); i++){
+        static primary_message_CONTROL_OUTPUT_conversion instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        instance._timestamp = pack->bms_hv_chimera(i)._inner_timestamp();
+        instance._timestamp = pack->control_output(i)._inner_timestamp();
         if(instance._timestamp - last_timestamp < resample_us)
             continue;
         else
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
-        map->BMS_HV_CHIMERA.push(instance);
-    }
-    for(int i = 0; i < pack->ecu_chimera_size(); i++){
-        static primary_message_ECU_CHIMERA instance;
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        instance._timestamp = pack->ecu_chimera(i)._inner_timestamp();
-        if(instance._timestamp - last_timestamp < resample_us)
-            continue;
-        else
-            last_timestamp = instance._timestamp;
-#endif // CANLIB_TIMESTAMP
-        map->ECU_CHIMERA.push(instance);
+        instance.estimated_velocity =pack->control_output(i).estimated_velocity();
+        instance.tmax_r =pack->control_output(i).tmax_r();
+        instance.tmax_l =pack->control_output(i).tmax_l();
+        instance.torque_l =pack->control_output(i).torque_l();
+        instance.torque_r =pack->control_output(i).torque_r();
+        map->CONTROL_OUTPUT.push(instance);
     }
     for(int i = 0; i < pack->lc_reset_size(); i++){
         static primary_message_LC_RESET instance;
