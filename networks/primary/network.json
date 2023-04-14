@@ -1228,18 +1228,40 @@
       "contents": {}
     },
     {
-      "name": "BMS_HV_CHIMERA",
-      "fixed_id": 170,
-      "sending": ["BMS_HV_CHIMERA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "ECU_CHIMERA",
-      "fixed_id": 85,
-      "sending": ["ECU_CHIMERA"],
-      "receiving": ["BMS_HV_CHIMERA"],
-      "contents": {}
+      "name": "CONTROL_OUTPUT",
+      "topic": "STEER",
+      "priority": 2,
+      "interval": 100,
+      "sending": ["DAS"],
+      "receiving": ["STEER", "TLM"],
+      "description": "Control output, N*m",
+      "contents": {
+        "estimated_velocity": {
+          "type": "float32",
+          "range": [-10, 50],
+          "force": "uint16"
+        },
+        "tmax_r": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint8"
+        },
+        "tmax_l": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint8"
+        },
+        "torque_l": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint16"
+        },
+        "torque_r": {
+          "type": "float32",
+          "range": [0, 80],
+          "force": "uint16"
+        }
+      }
     },
     {
       "name": "LC_RESET",
