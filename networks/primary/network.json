@@ -1230,7 +1230,7 @@
     {
       "name": "CONTROL_OUTPUT",
       "topic": "STEER",
-      "priority": 2,
+      "priority": 6,
       "interval": 100,
       "sending": ["DAS"],
       "receiving": ["STEER", "TLM"],
