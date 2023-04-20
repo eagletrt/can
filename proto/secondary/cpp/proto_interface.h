@@ -848,7 +848,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
 #endif // CANLIB_TIMESTAMP
             break;
         }
-        case 259: {
+        case 1283: {
             secondary_message_CONTROL_STATE_conversion* msg = (secondary_message_CONTROL_STATE_conversion*)(&(*map)[index].message_conversion);
             secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
             proto_msg->set_map_pw(msg->map_pw);

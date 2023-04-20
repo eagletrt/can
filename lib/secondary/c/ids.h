@@ -60,7 +60,7 @@ typedef uint16_t canlib_message_id;
 #define secondary_TOPIC_MASK_DAS 0b00000011111
 #define secondary_TOPIC_FILTER_DAS 0x3 // dec: 3 bin: 0b00000000011
 
-#define secondary_ID_CONTROL_STATE 0x103 // dec: 259 bin: 0b00100000011
+#define secondary_ID_CONTROL_STATE 0x503 // dec: 1283 bin: 0b10100000011
 
 /* TOPIC LAPCOUNTER */
 #define secondary_TOPIC_MASK_LAPCOUNTER 0b00000011111
@@ -157,7 +157,7 @@ static inline bool secondary_is_message_id(canlib_message_id message_id) {
         case 1089: return true; break;
         case 769: return true; break;
         case 258: return true; break;
-        case 259: return true; break;
+        case 1283: return true; break;
         case 513: return true; break;
         case 772: return true; break;
     }

@@ -611,7 +611,7 @@
     {
       "name": "CONTROL_STATE",
       "topic": "DAS",
-      "priority": 6,
+      "priority": 2,
       "sending": ["CONTROL"],
       "receiving": ["DAS"],
       "description": "Send status of traction control",

@@ -84,7 +84,7 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_CAR_STATUS 0x204 // dec: 516 bin: 0b01000000100
 #define primary_ID_DAS_ERRORS 0x4 // dec: 4 bin: 0b00000000100
 #define primary_ID_SPEED 0x224 // dec: 548 bin: 0b01000100100
-#define primary_ID_CONTROL_OUTPUT 0x504 // dec: 1284 bin: 0b10100000100
+#define primary_ID_CONTROL_OUTPUT 0x124 // dec: 292 bin: 0b00100100100
 
 /* TOPIC DASnSTEERnCART */
 #define primary_TOPIC_MASK_DASnSTEERnCART 0b00000011111
@@ -401,7 +401,7 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 612: return true; break;
         case 613: return true; break;
         case 614: return true; break;
-        case 1284: return true; break;
+        case 292: return true; break;
         case 523: return true; break;
     }
     return false;

@@ -1831,7 +1831,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary::BRUSA_ERR* proto_msg = pack->add_brusa_err();
             break;
         }
-        case 1284: {
+        case 292: {
             primary_message_CONTROL_OUTPUT_conversion* msg = (primary_message_CONTROL_OUTPUT_conversion*)(&(*map)[index].message_conversion);
             primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
             proto_msg->set_estimated_velocity(msg->estimated_velocity);

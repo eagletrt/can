@@ -376,7 +376,7 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 612: return primary_INTERVAL_BRUSA_ACT_II;
         case 613: return primary_INTERVAL_BRUSA_TEMP;
         case 614: return primary_INTERVAL_BRUSA_ERR;
-        case 1284: return primary_INTERVAL_CONTROL_OUTPUT;
+        case 292: return primary_INTERVAL_CONTROL_OUTPUT;
         case 523: return primary_INTERVAL_LC_RESET;
     }
     return -1;
@@ -460,7 +460,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 612: return primary_WATCHDOG_INDEX_BRUSA_ACT_II;
         case 613: return primary_WATCHDOG_INDEX_BRUSA_TEMP;
         case 614: return primary_WATCHDOG_INDEX_BRUSA_ERR;
-        case 1284: return primary_WATCHDOG_INDEX_CONTROL_OUTPUT;
+        case 292: return primary_WATCHDOG_INDEX_CONTROL_OUTPUT;
         case 523: return primary_WATCHDOG_INDEX_LC_RESET;
     }
     return 78; // invalid

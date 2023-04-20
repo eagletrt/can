@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1681490869
-#define CANLIB_BUILD_HASH 0x05b7806a
+#define CANLIB_BUILD_TIME 1681984242
+#define CANLIB_BUILD_HASH 0xe7f1a90d
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -2106,7 +2106,7 @@ static inline int secondary_index_from_id(canlib_message_id id) {
         case 1089: return secondary_INDEX_LAP_COUNT;
         case 769: return secondary_INDEX_PEDALS_OUTPUT;
         case 258: return secondary_INDEX_STEERING_ANGLE;
-        case 259: return secondary_INDEX_CONTROL_STATE;
+        case 1283: return secondary_INDEX_CONTROL_STATE;
         case 513: return secondary_INDEX_TPMS;
         case 772: return secondary_INDEX_LC_STATUS;
     }
@@ -2138,7 +2138,7 @@ static inline int secondary_id_from_index(int index) {
         case secondary_INDEX_LAP_COUNT: return 1089;
         case secondary_INDEX_PEDALS_OUTPUT: return 769;
         case secondary_INDEX_STEERING_ANGLE: return 258;
-        case secondary_INDEX_CONTROL_STATE: return 259;
+        case secondary_INDEX_CONTROL_STATE: return 1283;
         case secondary_INDEX_TPMS: return 513;
         case secondary_INDEX_LC_STATUS: return 772;
     }
@@ -6560,7 +6560,7 @@ int secondary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return secondary_fields_PEDALS_OUTPUT(buffer);
         case 258:
             return secondary_fields_STEERING_ANGLE(buffer);
-        case 259:
+        case 1283:
             return secondary_fields_CONTROL_STATE(buffer);
         case 513:
             return secondary_fields_TPMS(buffer);
@@ -6618,7 +6618,7 @@ int secondary_to_string_from_id(canlib_message_id message_id, void* message, cha
             return secondary_to_string_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
-        case 259:
+        case 1283:
             return secondary_to_string_CONTROL_STATE((secondary_message_CONTROL_STATE_conversion*) message, buffer);
         case 513:
             return secondary_to_string_TPMS((secondary_message_TPMS_conversion*) message, buffer);
@@ -6676,7 +6676,7 @@ int secondary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return secondary_fields_file_PEDALS_OUTPUT(buffer);
         case 258:
             return secondary_fields_file_STEERING_ANGLE(buffer);
-        case 259:
+        case 1283:
             return secondary_fields_file_CONTROL_STATE(buffer);
         case 513:
             return secondary_fields_file_TPMS(buffer);
@@ -6734,7 +6734,7 @@ int secondary_to_string_file_from_id(canlib_message_id message_id, void* message
             return secondary_to_string_file_PEDALS_OUTPUT((secondary_message_PEDALS_OUTPUT_conversion*) message, buffer);
         case 258:
             return secondary_to_string_file_STEERING_ANGLE((secondary_message_STEERING_ANGLE*) message, buffer);
-        case 259:
+        case 1283:
             return secondary_to_string_file_CONTROL_STATE((secondary_message_CONTROL_STATE_conversion*) message, buffer);
         case 513:
             return secondary_to_string_file_TPMS((secondary_message_TPMS_conversion*) message, buffer);
@@ -7060,7 +7060,7 @@ void* secondary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 259: {
+        case 1283: {
             secondary_deserialize_CONTROL_STATE(
                 (secondary_message_CONTROL_STATE*) message_raw,
                 data
@@ -7173,7 +7173,7 @@ secondary_devices* secondary_devices_new() {
     (*devices)[secondary_INDEX_STEERING_ANGLE].id = 258;
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_raw = (void*) malloc(sizeof(secondary_message_STEERING_ANGLE));
     (*devices)[secondary_INDEX_STEERING_ANGLE].message_conversion = NULL;
-    (*devices)[secondary_INDEX_CONTROL_STATE].id = 259;
+    (*devices)[secondary_INDEX_CONTROL_STATE].id = 1283;
     (*devices)[secondary_INDEX_CONTROL_STATE].message_raw = (void*) malloc(sizeof(secondary_message_CONTROL_STATE));
     (*devices)[secondary_INDEX_CONTROL_STATE].message_conversion = (void*) malloc(sizeof(secondary_message_CONTROL_STATE_conversion));
     (*devices)[secondary_INDEX_TPMS].id = 513;
@@ -7551,7 +7551,7 @@ void secondary_devices_deserialize_from_id(
             );
             return;
         }
-        case 259: {
+        case 1283: {
             secondary_deserialize_CONTROL_STATE(
                 (secondary_message_CONTROL_STATE*) &(*devices)[secondary_INDEX_CONTROL_STATE].message_raw,
                 data

@@ -169,7 +169,7 @@ static inline int secondary_watchdog_interval_from_id(uint16_t message_id) {
         case 1089: return secondary_INTERVAL_LAP_COUNT;
         case 769: return secondary_INTERVAL_PEDALS_OUTPUT;
         case 258: return secondary_INTERVAL_STEERING_ANGLE;
-        case 259: return secondary_INTERVAL_CONTROL_STATE;
+        case 1283: return secondary_INTERVAL_CONTROL_STATE;
         case 513: return secondary_INTERVAL_TPMS;
         case 772: return secondary_INTERVAL_LC_STATUS;
     }
@@ -201,7 +201,7 @@ static inline int secondary_watchdog_index_from_id(canlib_message_id id) {
         case 1089: return secondary_WATCHDOG_INDEX_LAP_COUNT;
         case 769: return secondary_WATCHDOG_INDEX_PEDALS_OUTPUT;
         case 258: return secondary_WATCHDOG_INDEX_STEERING_ANGLE;
-        case 259: return secondary_WATCHDOG_INDEX_CONTROL_STATE;
+        case 1283: return secondary_WATCHDOG_INDEX_CONTROL_STATE;
         case 513: return secondary_WATCHDOG_INDEX_TPMS;
         case 772: return secondary_WATCHDOG_INDEX_LC_STATUS;
     }

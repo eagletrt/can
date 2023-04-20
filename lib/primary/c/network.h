@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1681490869
-#define CANLIB_BUILD_HASH 0x05b7806a
+#define CANLIB_BUILD_TIME 1681984242
+#define CANLIB_BUILD_HASH 0xe7f1a90d
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -3891,7 +3891,7 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 612: return primary_INDEX_BRUSA_ACT_II;
         case 613: return primary_INDEX_BRUSA_TEMP;
         case 614: return primary_INDEX_BRUSA_ERR;
-        case 1284: return primary_INDEX_CONTROL_OUTPUT;
+        case 292: return primary_INDEX_CONTROL_OUTPUT;
         case 523: return primary_INDEX_LC_RESET;
     }
     return -1; // invalid
@@ -3975,7 +3975,7 @@ static inline int primary_id_from_index(int index) {
         case primary_INDEX_BRUSA_ACT_II: return 612;
         case primary_INDEX_BRUSA_TEMP: return 613;
         case primary_INDEX_BRUSA_ERR: return 614;
-        case primary_INDEX_CONTROL_OUTPUT: return 1284;
+        case primary_INDEX_CONTROL_OUTPUT: return 292;
         case primary_INDEX_LC_RESET: return 523;
     }
     return -1; // invalid
@@ -12150,7 +12150,7 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
             return primary_fields_BRUSA_TEMP(buffer);
         case 614:
             return primary_fields_BRUSA_ERR(buffer);
-        case 1284:
+        case 292:
             return primary_fields_CONTROL_OUTPUT(buffer);
         case 523:
             return primary_fields_LC_RESET(buffer);
@@ -12312,7 +12312,7 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
             return primary_to_string_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
         case 614:
             return primary_to_string_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
-        case 1284:
+        case 292:
             return primary_to_string_CONTROL_OUTPUT((primary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 523:
             return primary_to_string_LC_RESET((primary_message_LC_RESET*) message, buffer);
@@ -12474,7 +12474,7 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
             return primary_fields_file_BRUSA_TEMP(buffer);
         case 614:
             return primary_fields_file_BRUSA_ERR(buffer);
-        case 1284:
+        case 292:
             return primary_fields_file_CONTROL_OUTPUT(buffer);
         case 523:
             return primary_fields_file_LC_RESET(buffer);
@@ -12636,7 +12636,7 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
             return primary_to_string_file_BRUSA_TEMP((primary_message_BRUSA_TEMP*) message, buffer);
         case 614:
             return primary_to_string_file_BRUSA_ERR((primary_message_BRUSA_ERR*) message, buffer);
-        case 1284:
+        case 292:
             return primary_to_string_file_CONTROL_OUTPUT((primary_message_CONTROL_OUTPUT_conversion*) message, buffer);
         case 523:
             return primary_to_string_file_LC_RESET((primary_message_LC_RESET*) message, buffer);
@@ -13478,7 +13478,7 @@ void* primary_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1284: {
+        case 292: {
             primary_deserialize_CONTROL_OUTPUT(
                 (primary_message_CONTROL_OUTPUT*) message_raw,
                 data
@@ -13742,7 +13742,7 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_BRUSA_ERR].id = 614;
     (*devices)[primary_INDEX_BRUSA_ERR].message_raw = (void*) malloc(sizeof(primary_message_BRUSA_ERR));
     (*devices)[primary_INDEX_BRUSA_ERR].message_conversion = NULL;
-    (*devices)[primary_INDEX_CONTROL_OUTPUT].id = 1284;
+    (*devices)[primary_INDEX_CONTROL_OUTPUT].id = 292;
     (*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw = (void*) malloc(sizeof(primary_message_CONTROL_OUTPUT));
     (*devices)[primary_INDEX_CONTROL_OUTPUT].message_conversion = (void*) malloc(sizeof(primary_message_CONTROL_OUTPUT_conversion));
     (*devices)[primary_INDEX_LC_RESET].id = 523;
@@ -14685,7 +14685,7 @@ void primary_devices_deserialize_from_id(
             );
             return;
         }
-        case 1284: {
+        case 292: {
             primary_deserialize_CONTROL_OUTPUT(
                 (primary_message_CONTROL_OUTPUT*) &(*devices)[primary_INDEX_CONTROL_OUTPUT].message_raw,
                 data
