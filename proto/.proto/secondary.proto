@@ -195,7 +195,7 @@ message TPMS {
 
 message LC_STATUS {
     uint32 last_time = 1;
-    uint32 lap_number = 2;
+    sint32 lap_number = 2;
     uint64 _inner_timestamp = 3;
 }
 

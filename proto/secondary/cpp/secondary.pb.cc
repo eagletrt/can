@@ -970,7 +970,7 @@ const char descriptor_table_protodef_secondary_2eproto[] PROTOBUF_SECTION_VARIAB
   "re\030\006 \001(\r\022\026\n\016rl_temperature\030\007 \001(\r\022\026\n\016rr_t"
   "emperature\030\010 \001(\r\022\030\n\020_inner_timestamp\030\t \001"
   "(\004\"L\n\tLC_STATUS\022\021\n\tlast_time\030\001 \001(\r\022\022\n\nla"
-  "p_number\030\002 \001(\r\022\030\n\020_inner_timestamp\030\003 \001(\004"
+  "p_number\030\002 \001(\021\022\030\n\020_inner_timestamp\030\003 \001(\004"
   "\"\336\010\n\004Pack\0225\n\020IMU_ANGULAR_RATE\030\001 \003(\0132\033.se"
   "condary.IMU_ANGULAR_RATE\0225\n\020IMU_ACCELERA"
   "TION\030\002 \003(\0132\033.secondary.IMU_ACCELERATION\022"
@@ -8254,10 +8254,10 @@ const char* LC_STATUS::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 lap_number = 2;
+      // sint32 lap_number = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          lap_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          lap_number_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8302,10 +8302,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_last_time(), target);
   }
 
-  // uint32 lap_number = 2;
+  // sint32 lap_number = 2;
   if (this->lap_number() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_lap_number(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(2, this->_internal_lap_number(), target);
   }
 
   // uint64 _inner_timestamp = 3;
@@ -8337,10 +8337,10 @@ size_t LC_STATUS::ByteSizeLong() const {
         this->_internal_last_time());
   }
 
-  // uint32 lap_number = 2;
+  // sint32 lap_number = 2;
   if (this->lap_number() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
         this->_internal_lap_number());
   }
 

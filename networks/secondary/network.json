@@ -677,7 +677,7 @@
       "description": "Session laps status, lap_number is -1 in case of OUT lap",
       "contents": {
         "last_time": "uint32",
-        "lap_number": "uint8"
+        "lap_number": "int16"
       }
     }
   ]

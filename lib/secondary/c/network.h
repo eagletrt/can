@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1681984242
-#define CANLIB_BUILD_HASH 0xe7f1a90d
+#define CANLIB_BUILD_TIME 1683020426
+#define CANLIB_BUILD_HASH 0xc02897e3
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -223,7 +223,7 @@ typedef secondary_devices_t secondary_devices[secondary_MESSAGE_COUNT];
 #define secondary_SIZE_STEERING_ANGLE 4
 #define secondary_SIZE_CONTROL_STATE 3
 #define secondary_SIZE_TPMS 8
-#define secondary_SIZE_LC_STATUS 5
+#define secondary_SIZE_LC_STATUS 6
 
 // ============== BIT SETS =========== //
 
@@ -690,7 +690,7 @@ typedef struct CANLIB_PARKING {
 
 typedef struct CANLIB_PARKING {
     secondary_uint32 last_time;
-    secondary_uint8 lap_number;
+    secondary_int16 lap_number;
 #ifdef CANLIB_TIMESTAMP
     secondary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
@@ -2059,7 +2059,7 @@ int secondary_fields_file_TPMS(FILE* buffer);
 secondary_byte_size secondary_serialize_LC_STATUS(
     uint8_t* data,
     secondary_uint32 last_time,
-    secondary_uint8 lap_number
+    secondary_int16 lap_number
 );
 secondary_byte_size secondary_serialize_struct_LC_STATUS(
     uint8_t* data,
@@ -6415,14 +6415,15 @@ int secondary_fields_file_TPMS(FILE* buffer) {
 secondary_byte_size secondary_serialize_LC_STATUS(
     uint8_t* data,
     secondary_uint32 last_time,
-    secondary_uint8 lap_number
+    secondary_int16 lap_number
 ) {
     data[0] = last_time & 255;
     data[1] = (last_time >> 8) & 255;
     data[2] = (last_time >> 16) & 255;
     data[3] = (last_time >> 24) & 255;
-    data[4] = lap_number;
-    return 5;
+    data[4] = lap_number & 255;
+    data[5] = (lap_number >> 8) & 255;
+    return 6;
 }
 
 secondary_byte_size secondary_serialize_struct_LC_STATUS(
@@ -6433,8 +6434,9 @@ secondary_byte_size secondary_serialize_struct_LC_STATUS(
     data[1] = (message->last_time >> 8) & 255;
     data[2] = (message->last_time >> 16) & 255;
     data[3] = (message->last_time >> 24) & 255;
-    data[4] = message->lap_number;
-    return 5;
+    data[4] = message->lap_number & 255;
+    data[5] = (message->lap_number >> 8) & 255;
+    return 6;
 }
 
 // ============== DESERIALIZE ============== //
@@ -6450,7 +6452,7 @@ void secondary_deserialize_LC_STATUS(
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     message->last_time = data[0] | (data[1] << 8) | (data[2] << 16) | (data[3] << 24);
-    message->lap_number = data[4];
+    message->lap_number = data[4] | (data[5] << 8);
 }
 
 // ============== STRING ============== //
@@ -6462,7 +6464,7 @@ int secondary_to_string_LC_STATUS(secondary_message_LC_STATUS* message, char* bu
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIi16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
@@ -6489,7 +6491,7 @@ int secondary_to_string_file_LC_STATUS(secondary_message_LC_STATUS* message, FIL
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu32 CANLIB_SEPARATOR 
-        "%" PRIu8,
+        "%" PRIi16,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP

@@ -4722,13 +4722,13 @@ class LC_STATUS PROTOBUF_FINAL :
   void _internal_set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 lap_number = 2;
+  // sint32 lap_number = 2;
   void clear_lap_number();
-  ::PROTOBUF_NAMESPACE_ID::uint32 lap_number() const;
-  void set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 lap_number() const;
+  void set_lap_number(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_lap_number() const;
-  void _internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_lap_number() const;
+  void _internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // uint64 _inner_timestamp = 3;
@@ -4748,7 +4748,7 @@ class LC_STATUS PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::uint32 last_time_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 lap_number_;
+  ::PROTOBUF_NAMESPACE_ID::int32 lap_number_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_secondary_2eproto;
@@ -7850,22 +7850,22 @@ inline void LC_STATUS::set_last_time(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:secondary.LC_STATUS.last_time)
 }
 
-// uint32 lap_number = 2;
+// sint32 lap_number = 2;
 inline void LC_STATUS::clear_lap_number() {
-  lap_number_ = 0u;
+  lap_number_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::_internal_lap_number() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 LC_STATUS::_internal_lap_number() const {
   return lap_number_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 LC_STATUS::lap_number() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 LC_STATUS::lap_number() const {
   // @@protoc_insertion_point(field_get:secondary.LC_STATUS.lap_number)
   return _internal_lap_number();
 }
-inline void LC_STATUS::_internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void LC_STATUS::_internal_set_lap_number(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   lap_number_ = value;
 }
-inline void LC_STATUS::set_lap_number(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void LC_STATUS::set_lap_number(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_lap_number(value);
   // @@protoc_insertion_point(field_set:secondary.LC_STATUS.lap_number)
 }

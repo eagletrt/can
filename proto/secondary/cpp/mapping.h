@@ -663,8 +663,8 @@ void secondary_mapping_adaptor_construct(const secondary_proto_pack& pack, mappi
     mapping_map["LC_STATUS"].stride = sizeof(secondary_message_LC_STATUS);
     mapping_map["LC_STATUS"].field["last_time"].value._uint32 = &pack.LC_STATUS.start().last_time;
     mapping_map["LC_STATUS"].field["last_time"].type = mapping_type_uint32;
-    mapping_map["LC_STATUS"].field["lap_number"].value._uint8 = &pack.LC_STATUS.start().lap_number;
-    mapping_map["LC_STATUS"].field["lap_number"].type = mapping_type_uint8;
+    mapping_map["LC_STATUS"].field["lap_number"].value._int16 = &pack.LC_STATUS.start().lap_number;
+    mapping_map["LC_STATUS"].field["lap_number"].type = mapping_type_int16;
 #ifdef CANLIB_TIMESTAMP
     mapping_map["LC_STATUS"].field["_timestamp"].value._uint64 = &pack.LC_STATUS.start()._timestamp;
     mapping_map["LC_STATUS"].field["_timestamp"].type = mapping_type_uint64;

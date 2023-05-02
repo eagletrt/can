@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1681984242
-CANLIB_BUILD_HASH = 0xe7f1a90d
+CANLIB_BUILD_TIME = 1683020426
+CANLIB_BUILD_HASH = 0xc02897e3
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1995,8 +1995,8 @@ class message_LC_STATUS:
         lap_number = None
     ):
         self.last_time = uint32(last_time)
-        self.lap_number = uint8(lap_number)
-        self.size = 5
+        self.lap_number = int16(lap_number)
+        self.size = 6
 
     def __eq__(self, other):
         if not isinstance(other, message_LC_STATUS):
@@ -2009,13 +2009,13 @@ class message_LC_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<IB", self.last_time, self.lap_number))
+        data.extend(pack("<Ih", self.last_time, self.lap_number))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
         message.last_time = uint32(unpack("<I", data[0:4])[0])
-        message.lap_number = uint8(unpack("<xxxxB", data[0:5])[0])
+        message.lap_number = int16(unpack("<xxxxh", data[0:6])[0])
         return message
 
