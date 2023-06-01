@@ -1,4 +1,4 @@
-name: Generate
+name: Generate cantools
 
 on:
   workflow_dispatch:

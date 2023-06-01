@@ -1,4 +1,4 @@
-name: Generate
+name: Generate canlib
 
 on:
   workflow_dispatch:
