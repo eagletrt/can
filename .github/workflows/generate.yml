@@ -35,6 +35,13 @@ jobs:
           mkdir -p /tmp/workspace
           cp -R networks ids lib proto csv /tmp/workspace
 
+      - name: Run cantools generator
+        run: |
+          pip install git+https://github.com/eagletrt/cantools.git
+          cantools generate_c_source --infolder networks -o .
+          mkdir -p /tmp/workspace-evo
+          cp -R networks lib proto /tmp/workspace-evo
+
       - uses: actions/checkout@v2
         with:
           ref: build
@@ -47,6 +54,22 @@ jobs:
           git rm -r --ignore-unmatch */*
           rm -rf *
           cp -r /tmp/workspace/* .
+          git add .
+          if [[ $(git status --porcelain) ]]; then git commit -am "chore: automatically generated files" && git push; fi
+          echo "::set-output name=HASH::$(git rev-parse HEAD)"
+        
+      - uses: actions/checkout@v2
+        with:
+          ref: build-evo
+
+      - name: Push generated includes
+        id: commit
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git rm -r --ignore-unmatch */*
+          rm -rf *
+          cp -r /tmp/workspace-evo/* .
           git add .
           if [[ $(git status --porcelain) ]]; then git commit -am "chore: automatically generated files" && git push; fi
           echo "::set-output name=HASH::$(git rev-parse HEAD)"
