@@ -22,19 +22,6 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Setup protoc
-        run: |
-          DEBIAN_FRONTEND=noninteractive
-          sudo apt update
-          sudo apt install -y libprotobuf-dev protobuf-compiler
-
-      - name: Run canlib generator
-        run: |
-          pip install git+https://github.com/eagletrt/canlib.git#egg=canlib
-          canlib generate-all networks ids lib proto csv
-          mkdir -p /tmp/workspace
-          cp -R networks ids lib proto csv /tmp/workspace
-
       - name: Run cantools generator
         run: |
           pip install git+https://github.com/eagletrt/cantools.git
@@ -42,22 +29,6 @@ jobs:
           mkdir -p /tmp/workspace-evo
           cp -R networks lib proto /tmp/workspace-evo
 
-      - uses: actions/checkout@v2
-        with:
-          ref: build
-
-      - name: Push generated includes
-        id: commit
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git rm -r --ignore-unmatch */*
-          rm -rf *
-          cp -r /tmp/workspace/* .
-          git add .
-          if [[ $(git status --porcelain) ]]; then git commit -am "chore: automatically generated files" && git push; fi
-          echo "::set-output name=HASH::$(git rev-parse HEAD)"
-        
       - uses: actions/checkout@v2
         with:
           ref: build-evo
@@ -80,7 +51,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            CAN was updated! 🚀
+            CAN was updated using cantools generator (branch build-evo)! 🔥
 
             ${{ github.actor }} created commit: ${{ github.event.commits[0].message }}
 
