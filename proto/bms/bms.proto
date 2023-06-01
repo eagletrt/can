@@ -1,0 +1,124 @@
+syntax = "proto3";
+package bms;
+
+
+enum bms_board_status_balancing_status {
+	bms_board_status_balancing_status_OFF = 0;
+	bms_board_status_balancing_status_DISCHARGE = 1;
+}
+
+
+message BOARD_STATUS{
+	bool errors_CAN_COMM = 1;
+	bool errors_LTC_COMM = 2;
+	bool errors_TEMP_COMM_0 = 3;
+	bool errors_TEMP_COMM_1 = 4;
+	bool errors_TEMP_COMM_2 = 5;
+	bool errors_TEMP_COMM_3 = 6;
+	bool errors_TEMP_COMM_4 = 7;
+	bool errors_TEMP_COMM_5 = 8;
+	bool errors_OPEN_WIRE = 9;
+	bms_board_status_balancing_status balancing_status = 10;
+	uint64 _inner_timestamp = 11;
+}
+message TEMPERATURES{
+	uint32 start_index = 1;
+	double temp0 = 2;
+	double temp1 = 3;
+	double temp2 = 4;
+	double temp3 = 5;
+	double temp4 = 6;
+	double temp5 = 7;
+	uint64 _inner_timestamp = 8;
+}
+message VOLTAGES{
+	uint32 start_index = 1;
+	double voltage0 = 2;
+	double voltage1 = 3;
+	double voltage2 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message BALANCING{
+	uint32 board_index = 1;
+	bool cells_CELL0 = 2;
+	bool cells_CELL1 = 3;
+	bool cells_CELL2 = 4;
+	bool cells_CELL3 = 5;
+	bool cells_CELL4 = 6;
+	bool cells_CELL5 = 7;
+	bool cells_CELL6 = 8;
+	bool cells_CELL7 = 9;
+	bool cells_CELL8 = 10;
+	bool cells_CELL9 = 11;
+	bool cells_CELL10 = 12;
+	bool cells_CELL11 = 13;
+	bool cells_CELL12 = 14;
+	bool cells_CELL13 = 15;
+	bool cells_CELL14 = 16;
+	bool cells_CELL15 = 17;
+	bool cells_CELL16 = 18;
+	bool cells_CELL17 = 19;
+	uint64 _inner_timestamp = 20;
+}
+message FW_UPDATE{
+	uint32 board_index = 1;
+	uint64 _inner_timestamp = 2;
+}
+message FLASH_CELLBOARD_0_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_0_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_1_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_1_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_2_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_2_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_3_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_3_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_4_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_4_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_5_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_5_RX{
+	uint64 _inner_timestamp = 1;
+}
+
+
+message Pack{
+	repeated BOARD_STATUS BOARD_STATUS = 1;
+	repeated TEMPERATURES TEMPERATURES = 2;
+	repeated VOLTAGES VOLTAGES = 3;
+	repeated BALANCING BALANCING = 4;
+	repeated FW_UPDATE FW_UPDATE = 5;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
+}
+
