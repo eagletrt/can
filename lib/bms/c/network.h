@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1685652638
-#define CANLIB_BUILD_HASH 0xa0572ff2
+#define CANLIB_BUILD_TIME 1685743992
+#define CANLIB_BUILD_HASH 0x67bed551
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define bms_MESSAGE_COUNT 32
+#define bms_MESSAGE_COUNT 17
 
 // Custom types
 
@@ -168,47 +168,32 @@ typedef bms_devices_t bms_devices[bms_MESSAGE_COUNT];
 // ============== INDEXES ============ //
 
 
-#define bms_INDEX_BOARD_STATUS_CELLBOARD0 0
-#define bms_INDEX_BOARD_STATUS_CELLBOARD1 1
-#define bms_INDEX_BOARD_STATUS_CELLBOARD2 2
-#define bms_INDEX_BOARD_STATUS_CELLBOARD3 3
-#define bms_INDEX_BOARD_STATUS_CELLBOARD4 4
-#define bms_INDEX_BOARD_STATUS_CELLBOARD5 5
-#define bms_INDEX_TEMPERATURES_CELLBOARD0 6
-#define bms_INDEX_TEMPERATURES_CELLBOARD1 7
-#define bms_INDEX_TEMPERATURES_CELLBOARD2 8
-#define bms_INDEX_TEMPERATURES_CELLBOARD3 9
-#define bms_INDEX_TEMPERATURES_CELLBOARD4 10
-#define bms_INDEX_TEMPERATURES_CELLBOARD5 11
-#define bms_INDEX_VOLTAGES_CELLBOARD0 12
-#define bms_INDEX_VOLTAGES_CELLBOARD1 13
-#define bms_INDEX_VOLTAGES_CELLBOARD2 14
-#define bms_INDEX_VOLTAGES_CELLBOARD3 15
-#define bms_INDEX_VOLTAGES_CELLBOARD4 16
-#define bms_INDEX_VOLTAGES_CELLBOARD5 17
-#define bms_INDEX_BALANCING 18
-#define bms_INDEX_FW_UPDATE 19
-#define bms_INDEX_FLASH_CELLBOARD_0_TX 20
-#define bms_INDEX_FLASH_CELLBOARD_0_RX 21
-#define bms_INDEX_FLASH_CELLBOARD_1_TX 22
-#define bms_INDEX_FLASH_CELLBOARD_1_RX 23
-#define bms_INDEX_FLASH_CELLBOARD_2_TX 24
-#define bms_INDEX_FLASH_CELLBOARD_2_RX 25
-#define bms_INDEX_FLASH_CELLBOARD_3_TX 26
-#define bms_INDEX_FLASH_CELLBOARD_3_RX 27
-#define bms_INDEX_FLASH_CELLBOARD_4_TX 28
-#define bms_INDEX_FLASH_CELLBOARD_4_RX 29
-#define bms_INDEX_FLASH_CELLBOARD_5_TX 30
-#define bms_INDEX_FLASH_CELLBOARD_5_RX 31
+#define bms_INDEX_BOARD_STATUS 0
+#define bms_INDEX_TEMPERATURES 1
+#define bms_INDEX_VOLTAGES 2
+#define bms_INDEX_BALANCING 3
+#define bms_INDEX_FW_UPDATE 4
+#define bms_INDEX_FLASH_CELLBOARD_0_TX 5
+#define bms_INDEX_FLASH_CELLBOARD_0_RX 6
+#define bms_INDEX_FLASH_CELLBOARD_1_TX 7
+#define bms_INDEX_FLASH_CELLBOARD_1_RX 8
+#define bms_INDEX_FLASH_CELLBOARD_2_TX 9
+#define bms_INDEX_FLASH_CELLBOARD_2_RX 10
+#define bms_INDEX_FLASH_CELLBOARD_3_TX 11
+#define bms_INDEX_FLASH_CELLBOARD_3_RX 12
+#define bms_INDEX_FLASH_CELLBOARD_4_TX 13
+#define bms_INDEX_FLASH_CELLBOARD_4_RX 14
+#define bms_INDEX_FLASH_CELLBOARD_5_TX 15
+#define bms_INDEX_FLASH_CELLBOARD_5_RX 16
 
 // ============== SIZES ============== //
 
 
 #define bms_SIZE_BOARD_STATUS 3
-#define bms_SIZE_TEMPERATURES 7
-#define bms_SIZE_VOLTAGES 7
-#define bms_SIZE_BALANCING 4
-#define bms_SIZE_FW_UPDATE 1
+#define bms_SIZE_TEMPERATURES 6
+#define bms_SIZE_VOLTAGES 8
+#define bms_SIZE_BALANCING 5
+#define bms_SIZE_FW_UPDATE 2
 #define bms_SIZE_FLASH_CELLBOARD_0_TX 0
 #define bms_SIZE_FLASH_CELLBOARD_0_RX 0
 #define bms_SIZE_FLASH_CELLBOARD_1_TX 0
@@ -269,6 +254,18 @@ int bms_to_string_BalancingCells(bms_BalancingCells value, char* buffer);
 
 
 typedef enum CANLIB_PARKING {
+    bms_Cellboard_CELLBOARD_0 = 0,
+    bms_Cellboard_CELLBOARD_1 = 1,
+    bms_Cellboard_CELLBOARD_2 = 2,
+    bms_Cellboard_CELLBOARD_3 = 3,
+    bms_Cellboard_CELLBOARD_4 = 4,
+    bms_Cellboard_CELLBOARD_5 = 5,
+} bms_Cellboard;
+
+#define bms_MAX_STRING_LENGTH_Cellboard 12
+int bms_to_string_Cellboard(bms_Cellboard value, char* buffer);
+
+typedef enum CANLIB_PARKING {
     bms_BalancingStatus_OFF = 0,
     bms_BalancingStatus_DISCHARGE = 1,
 } bms_BalancingStatus;
@@ -281,6 +278,7 @@ int bms_to_string_BalancingStatus(bms_BalancingStatus value, char* buffer);
 
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_Errors errors;
     bms_BalancingStatus balancing_status;
 #ifdef CANLIB_TIMESTAMP
@@ -289,32 +287,31 @@ typedef struct CANLIB_PARKING {
 } bms_message_BOARD_STATUS;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 start_index;
     bms_uint8 temp0;
     bms_uint8 temp1;
     bms_uint8 temp2;
     bms_uint8 temp3;
-    bms_uint8 temp4;
-    bms_uint8 temp5;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 start_index;
     bms_float32 temp0;
     bms_float32 temp1;
     bms_float32 temp2;
     bms_float32 temp3;
-    bms_float32 temp4;
-    bms_float32 temp5;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
 } bms_message_TEMPERATURES_conversion;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 start_index;
     bms_uint16 voltage0;
     bms_uint16 voltage1;
@@ -325,6 +322,7 @@ typedef struct CANLIB_PARKING {
 } bms_message_VOLTAGES;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 start_index;
     bms_float32 voltage0;
     bms_float32 voltage1;
@@ -335,6 +333,7 @@ typedef struct CANLIB_PARKING {
 } bms_message_VOLTAGES_conversion;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 board_index;
     bms_BalancingCells cells;
 #ifdef CANLIB_TIMESTAMP
@@ -343,6 +342,7 @@ typedef struct CANLIB_PARKING {
 } bms_message_BALANCING;
 
 typedef struct CANLIB_PARKING {
+    bms_Cellboard cellboard_id;
     bms_uint8 board_index;
 #ifdef CANLIB_TIMESTAMP
     bms_uint64 _timestamp;
@@ -473,6 +473,7 @@ typedef union CANLIB_PARKING {
 
 bms_byte_size bms_serialize_BOARD_STATUS(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_Errors errors,
     bms_BalancingStatus balancing_status
 );
@@ -497,13 +498,12 @@ int bms_fields_file_BOARD_STATUS(FILE* buffer);
 
 bms_byte_size bms_serialize_TEMPERATURES(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint8 temp0,
     bms_uint8 temp1,
     bms_uint8 temp2,
-    bms_uint8 temp3,
-    bms_uint8 temp4,
-    bms_uint8 temp5
+    bms_uint8 temp3
 );
 bms_byte_size bms_serialize_struct_TEMPERATURES(
     uint8_t* data,
@@ -528,13 +528,12 @@ void bms_conversion_to_raw_struct_TEMPERATURES(
 
 void bms_conversion_to_raw_TEMPERATURES(
     bms_message_TEMPERATURES* raw,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_float32 temp0,
     bms_float32 temp1,
     bms_float32 temp2,
-    bms_float32 temp3,
-    bms_float32 temp4,
-    bms_float32 temp5
+    bms_float32 temp3
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -542,13 +541,12 @@ void bms_conversion_to_raw_TEMPERATURES(
 
 void bms_raw_to_conversion_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint8 temp0,
     bms_uint8 temp1,
     bms_uint8 temp2,
-    bms_uint8 temp3,
-    bms_uint8 temp4,
-    bms_uint8 temp5
+    bms_uint8 temp3
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -563,6 +561,7 @@ int bms_fields_file_TEMPERATURES(FILE* buffer);
 
 bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
@@ -591,6 +590,7 @@ void bms_conversion_to_raw_struct_VOLTAGES(
 
 void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES* raw,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_float32 voltage0,
     bms_float32 voltage1,
@@ -602,6 +602,7 @@ void bms_conversion_to_raw_VOLTAGES(
 
 void bms_raw_to_conversion_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
@@ -620,6 +621,7 @@ int bms_fields_file_VOLTAGES(FILE* buffer);
 
 bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 board_index,
     bms_BalancingCells cells
 );
@@ -644,6 +646,7 @@ int bms_fields_file_BALANCING(FILE* buffer);
 
 bms_byte_size bms_serialize_FW_UPDATE(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 board_index
 );
 bms_byte_size bms_serialize_struct_FW_UPDATE(
@@ -932,24 +935,9 @@ int bms_fields_file_FLASH_CELLBOARD_5_RX(FILE* buffer);
 
 static inline int bms_index_from_id(canlib_message_id id) {
     switch (id) {
-        case 1536: return bms_INDEX_BOARD_STATUS_CELLBOARD0;
-        case 1568: return bms_INDEX_BOARD_STATUS_CELLBOARD1;
-        case 1600: return bms_INDEX_BOARD_STATUS_CELLBOARD2;
-        case 1632: return bms_INDEX_BOARD_STATUS_CELLBOARD3;
-        case 1664: return bms_INDEX_BOARD_STATUS_CELLBOARD4;
-        case 1696: return bms_INDEX_BOARD_STATUS_CELLBOARD5;
-        case 1281: return bms_INDEX_TEMPERATURES_CELLBOARD0;
-        case 1313: return bms_INDEX_TEMPERATURES_CELLBOARD1;
-        case 1345: return bms_INDEX_TEMPERATURES_CELLBOARD2;
-        case 1377: return bms_INDEX_TEMPERATURES_CELLBOARD3;
-        case 1409: return bms_INDEX_TEMPERATURES_CELLBOARD4;
-        case 1441: return bms_INDEX_TEMPERATURES_CELLBOARD5;
-        case 514: return bms_INDEX_VOLTAGES_CELLBOARD0;
-        case 546: return bms_INDEX_VOLTAGES_CELLBOARD1;
-        case 578: return bms_INDEX_VOLTAGES_CELLBOARD2;
-        case 610: return bms_INDEX_VOLTAGES_CELLBOARD3;
-        case 642: return bms_INDEX_VOLTAGES_CELLBOARD4;
-        case 674: return bms_INDEX_VOLTAGES_CELLBOARD5;
+        case 1536: return bms_INDEX_BOARD_STATUS;
+        case 1281: return bms_INDEX_TEMPERATURES;
+        case 514: return bms_INDEX_VOLTAGES;
         case 515: return bms_INDEX_BALANCING;
         case 10: return bms_INDEX_FW_UPDATE;
         case 16: return bms_INDEX_FLASH_CELLBOARD_0_TX;
@@ -970,24 +958,9 @@ static inline int bms_index_from_id(canlib_message_id id) {
 
 static inline int bms_id_from_index(int index) {
     switch (index) {
-        case bms_INDEX_BOARD_STATUS_CELLBOARD0: return 1536;
-        case bms_INDEX_BOARD_STATUS_CELLBOARD1: return 1568;
-        case bms_INDEX_BOARD_STATUS_CELLBOARD2: return 1600;
-        case bms_INDEX_BOARD_STATUS_CELLBOARD3: return 1632;
-        case bms_INDEX_BOARD_STATUS_CELLBOARD4: return 1664;
-        case bms_INDEX_BOARD_STATUS_CELLBOARD5: return 1696;
-        case bms_INDEX_TEMPERATURES_CELLBOARD0: return 1281;
-        case bms_INDEX_TEMPERATURES_CELLBOARD1: return 1313;
-        case bms_INDEX_TEMPERATURES_CELLBOARD2: return 1345;
-        case bms_INDEX_TEMPERATURES_CELLBOARD3: return 1377;
-        case bms_INDEX_TEMPERATURES_CELLBOARD4: return 1409;
-        case bms_INDEX_TEMPERATURES_CELLBOARD5: return 1441;
-        case bms_INDEX_VOLTAGES_CELLBOARD0: return 514;
-        case bms_INDEX_VOLTAGES_CELLBOARD1: return 546;
-        case bms_INDEX_VOLTAGES_CELLBOARD2: return 578;
-        case bms_INDEX_VOLTAGES_CELLBOARD3: return 610;
-        case bms_INDEX_VOLTAGES_CELLBOARD4: return 642;
-        case bms_INDEX_VOLTAGES_CELLBOARD5: return 674;
+        case bms_INDEX_BOARD_STATUS: return 1536;
+        case bms_INDEX_TEMPERATURES: return 1281;
+        case bms_INDEX_VOLTAGES: return 514;
         case bms_INDEX_BALANCING: return 515;
         case bms_INDEX_FW_UPDATE: return 10;
         case bms_INDEX_FLASH_CELLBOARD_0_TX: return 16;
@@ -1074,6 +1047,18 @@ int bms_to_string_BalancingCells(bms_BalancingCells value, char* buffer) {
 
 
 
+int bms_to_string_Cellboard(bms_Cellboard value, char* buffer) {
+    switch (value) {
+        case 0: return sprintf(buffer, "CELLBOARD_0");
+        case 1: return sprintf(buffer, "CELLBOARD_1");
+        case 2: return sprintf(buffer, "CELLBOARD_2");
+        case 3: return sprintf(buffer, "CELLBOARD_3");
+        case 4: return sprintf(buffer, "CELLBOARD_4");
+        case 5: return sprintf(buffer, "CELLBOARD_5");
+    }
+    return 0;
+}
+
 int bms_to_string_BalancingStatus(bms_BalancingStatus value, char* buffer) {
     switch (value) {
         case 0: return sprintf(buffer, "OFF");
@@ -1086,12 +1071,13 @@ int bms_to_string_BalancingStatus(bms_BalancingStatus value, char* buffer) {
 
 bms_byte_size bms_serialize_BOARD_STATUS(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_Errors errors,
     bms_BalancingStatus balancing_status
 ) {
     data[0] = errors & 255;
     data[1] = (errors >> 8) & 255;
-    data[2] = balancing_status << 7;
+    data[2] = cellboard_id << 5 | balancing_status << 4;
     return 3;
 }
 
@@ -1101,7 +1087,7 @@ bms_byte_size bms_serialize_struct_BOARD_STATUS(
 ) {
     data[0] = message->errors & 255;
     data[1] = (message->errors >> 8) & 255;
-    data[2] = message->balancing_status << 7;
+    data[2] = message->cellboard_id << 5 | message->balancing_status << 4;
     return 3;
 }
 
@@ -1118,7 +1104,8 @@ void bms_deserialize_BOARD_STATUS(
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     message->errors = data[0] | (data[1] << 8);
-    message->balancing_status = (bms_BalancingStatus) ((data[2] & 128) >> 7);
+    message->cellboard_id = (bms_Cellboard) ((data[2] & 224) >> 5);
+    message->balancing_status = (bms_BalancingStatus) ((data[2] & 16) >> 4);
 }
 
 // ============== STRING ============== //
@@ -1129,11 +1116,13 @@ int bms_to_string_BOARD_STATUS(bms_message_BOARD_STATUS* message, char* buffer) 
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->errors,
         message->balancing_status
     );
@@ -1145,6 +1134,7 @@ int bms_fields_BOARD_STATUS(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
     );
@@ -1156,11 +1146,13 @@ int bms_to_string_file_BOARD_STATUS(bms_message_BOARD_STATUS* message, FILE* buf
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu16 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->errors,
         message->balancing_status
     );
@@ -1172,6 +1164,7 @@ int bms_fields_file_BOARD_STATUS(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "errors" CANLIB_SEPARATOR 
         "balancing_status"
     );
@@ -1181,22 +1174,20 @@ int bms_fields_file_BOARD_STATUS(FILE* buffer) {
 
 bms_byte_size bms_serialize_TEMPERATURES(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint8 temp0,
     bms_uint8 temp1,
     bms_uint8 temp2,
-    bms_uint8 temp3,
-    bms_uint8 temp4,
-    bms_uint8 temp5
+    bms_uint8 temp3
 ) {
     data[0] = start_index;
     data[1] = temp0;
     data[2] = temp1;
     data[3] = temp2;
     data[4] = temp3;
-    data[5] = temp4;
-    data[6] = temp5;
-    return 7;
+    data[5] = cellboard_id << 5;
+    return 6;
 }
 
 bms_byte_size bms_serialize_struct_TEMPERATURES(
@@ -1208,9 +1199,8 @@ bms_byte_size bms_serialize_struct_TEMPERATURES(
     data[2] = message->temp1;
     data[3] = message->temp2;
     data[4] = message->temp3;
-    data[5] = message->temp4;
-    data[6] = message->temp5;
-    return 7;
+    data[5] = message->cellboard_id << 5;
+    return 6;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1230,19 +1220,17 @@ void bms_deserialize_TEMPERATURES(
     message->temp1 = data[2];
     message->temp2 = data[3];
     message->temp3 = data[4];
-    message->temp4 = data[5];
-    message->temp5 = data[6];
+    message->cellboard_id = (bms_Cellboard) ((data[5] & 224) >> 5);
 }// ============== CONVERSION ============== //
 
 void bms_raw_to_conversion_TEMPERATURES(
     bms_message_TEMPERATURES_conversion* conversion,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint8 temp0,
     bms_uint8 temp1,
     bms_uint8 temp2,
-    bms_uint8 temp3,
-    bms_uint8 temp4,
-    bms_uint8 temp5
+    bms_uint8 temp3
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1250,13 +1238,12 @@ void bms_raw_to_conversion_TEMPERATURES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->cellboard_id = cellboard_id;
     conversion->start_index = start_index;
     conversion->temp0 = (((bms_float32)temp0) / 2.55) - 20;
     conversion->temp1 = (((bms_float32)temp1) / 2.55) - 20;
     conversion->temp2 = (((bms_float32)temp2) / 2.55) - 20;
     conversion->temp3 = (((bms_float32)temp3) / 2.55) - 20;
-    conversion->temp4 = (((bms_float32)temp4) / 2.55) - 20;
-    conversion->temp5 = (((bms_float32)temp5) / 2.55) - 20;
 }
 
 void bms_raw_to_conversion_struct_TEMPERATURES(
@@ -1266,24 +1253,22 @@ void bms_raw_to_conversion_struct_TEMPERATURES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->cellboard_id = raw->cellboard_id;
     conversion->start_index = raw->start_index;
     conversion->temp0 = (((bms_float32)raw->temp0) / 2.55) - 20;
     conversion->temp1 = (((bms_float32)raw->temp1) / 2.55) - 20;
     conversion->temp2 = (((bms_float32)raw->temp2) / 2.55) - 20;
     conversion->temp3 = (((bms_float32)raw->temp3) / 2.55) - 20;
-    conversion->temp4 = (((bms_float32)raw->temp4) / 2.55) - 20;
-    conversion->temp5 = (((bms_float32)raw->temp5) / 2.55) - 20;
 }
 
 void bms_conversion_to_raw_TEMPERATURES(
     bms_message_TEMPERATURES* raw,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_float32 temp0,
     bms_float32 temp1,
     bms_float32 temp2,
-    bms_float32 temp3,
-    bms_float32 temp4,
-    bms_float32 temp5
+    bms_float32 temp3
 #ifdef CANLIB_TIMESTAMP
     , bms_uint64 _timestamp
 #endif // CANLIB_TIMESTAMP
@@ -1291,13 +1276,12 @@ void bms_conversion_to_raw_TEMPERATURES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->cellboard_id = cellboard_id;
     raw->start_index = start_index;
     raw->temp0 = (bms_uint8)((temp0 + 20) * 2.55);
     raw->temp1 = (bms_uint8)((temp1 + 20) * 2.55);
     raw->temp2 = (bms_uint8)((temp2 + 20) * 2.55);
     raw->temp3 = (bms_uint8)((temp3 + 20) * 2.55);
-    raw->temp4 = (bms_uint8)((temp4 + 20) * 2.55);
-    raw->temp5 = (bms_uint8)((temp5 + 20) * 2.55);
 }
 
 void bms_conversion_to_raw_struct_TEMPERATURES(
@@ -1307,13 +1291,12 @@ void bms_conversion_to_raw_struct_TEMPERATURES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->cellboard_id = conversion->cellboard_id;
     raw->start_index = conversion->start_index;
     raw->temp0 = (bms_uint8)((conversion->temp0 + 20) * 2.55);
     raw->temp1 = (bms_uint8)((conversion->temp1 + 20) * 2.55);
     raw->temp2 = (bms_uint8)((conversion->temp2 + 20) * 2.55);
     raw->temp3 = (bms_uint8)((conversion->temp3 + 20) * 2.55);
-    raw->temp4 = (bms_uint8)((conversion->temp4 + 20) * 2.55);
-    raw->temp5 = (bms_uint8)((conversion->temp5 + 20) * 2.55);
 }
 
 // ============== STRING ============== //
@@ -1324,8 +1307,7 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1333,13 +1315,12 @@ int bms_to_string_TEMPERATURES(bms_message_TEMPERATURES_conversion* message, cha
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->start_index,
         message->temp0,
         message->temp1,
         message->temp2,
-        message->temp3,
-        message->temp4,
-        message->temp5
+        message->temp3
     );
 }
 
@@ -1349,13 +1330,12 @@ int bms_fields_TEMPERATURES(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "start_index" CANLIB_SEPARATOR 
         "temp0" CANLIB_SEPARATOR 
         "temp1" CANLIB_SEPARATOR 
         "temp2" CANLIB_SEPARATOR 
-        "temp3" CANLIB_SEPARATOR 
-        "temp4" CANLIB_SEPARATOR 
-        "temp5"
+        "temp3"
     );
 }
 
@@ -1366,8 +1346,7 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
-        "%" PRIf32 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
@@ -1375,13 +1354,12 @@ int bms_to_string_file_TEMPERATURES(bms_message_TEMPERATURES_conversion* message
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->start_index,
         message->temp0,
         message->temp1,
         message->temp2,
-        message->temp3,
-        message->temp4,
-        message->temp5
+        message->temp3
     );
 }
 
@@ -1391,13 +1369,12 @@ int bms_fields_file_TEMPERATURES(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "start_index" CANLIB_SEPARATOR 
         "temp0" CANLIB_SEPARATOR 
         "temp1" CANLIB_SEPARATOR 
         "temp2" CANLIB_SEPARATOR 
-        "temp3" CANLIB_SEPARATOR 
-        "temp4" CANLIB_SEPARATOR 
-        "temp5"
+        "temp3"
     );
 }
 
@@ -1405,6 +1382,7 @@ int bms_fields_file_TEMPERATURES(FILE* buffer) {
 
 bms_byte_size bms_serialize_VOLTAGES(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
@@ -1417,7 +1395,8 @@ bms_byte_size bms_serialize_VOLTAGES(
     data[4] = voltage2 & 255;
     data[5] = (voltage2 >> 8) & 255;
     data[6] = start_index;
-    return 7;
+    data[7] = cellboard_id << 5;
+    return 8;
 }
 
 bms_byte_size bms_serialize_struct_VOLTAGES(
@@ -1431,7 +1410,8 @@ bms_byte_size bms_serialize_struct_VOLTAGES(
     data[4] = message->voltage2 & 255;
     data[5] = (message->voltage2 >> 8) & 255;
     data[6] = message->start_index;
-    return 7;
+    data[7] = message->cellboard_id << 5;
+    return 8;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1450,10 +1430,12 @@ void bms_deserialize_VOLTAGES(
     message->voltage1 = data[2] | (data[3] << 8);
     message->voltage2 = data[4] | (data[5] << 8);
     message->start_index = data[6];
+    message->cellboard_id = (bms_Cellboard) ((data[7] & 224) >> 5);
 }// ============== CONVERSION ============== //
 
 void bms_raw_to_conversion_VOLTAGES(
     bms_message_VOLTAGES_conversion* conversion,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_uint16 voltage0,
     bms_uint16 voltage1,
@@ -1465,6 +1447,7 @@ void bms_raw_to_conversion_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->cellboard_id = cellboard_id;
     conversion->start_index = start_index;
     conversion->voltage0 = (((bms_float32)voltage0) / 10000.0) + 0;
     conversion->voltage1 = (((bms_float32)voltage1) / 10000.0) + 0;
@@ -1478,6 +1461,7 @@ void bms_raw_to_conversion_struct_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     conversion->_timestamp = raw->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    conversion->cellboard_id = raw->cellboard_id;
     conversion->start_index = raw->start_index;
     conversion->voltage0 = (((bms_float32)raw->voltage0) / 10000.0) + 0;
     conversion->voltage1 = (((bms_float32)raw->voltage1) / 10000.0) + 0;
@@ -1486,6 +1470,7 @@ void bms_raw_to_conversion_struct_VOLTAGES(
 
 void bms_conversion_to_raw_VOLTAGES(
     bms_message_VOLTAGES* raw,
+    bms_Cellboard cellboard_id,
     bms_uint8 start_index,
     bms_float32 voltage0,
     bms_float32 voltage1,
@@ -1497,6 +1482,7 @@ void bms_conversion_to_raw_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->cellboard_id = cellboard_id;
     raw->start_index = start_index;
     raw->voltage0 = (bms_uint16)((voltage0 + 0) * 10000.0);
     raw->voltage1 = (bms_uint16)((voltage1 + 0) * 10000.0);
@@ -1510,6 +1496,7 @@ void bms_conversion_to_raw_struct_VOLTAGES(
 #ifdef CANLIB_TIMESTAMP
     raw->_timestamp = conversion->_timestamp;
 #endif // CANLIB_TIMESTAMP
+    raw->cellboard_id = conversion->cellboard_id;
     raw->start_index = conversion->start_index;
     raw->voltage0 = (bms_uint16)((conversion->voltage0 + 0) * 10000.0);
     raw->voltage1 = (bms_uint16)((conversion->voltage1 + 0) * 10000.0);
@@ -1524,12 +1511,14 @@ int bms_to_string_VOLTAGES(bms_message_VOLTAGES_conversion* message, char* buffe
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->start_index,
         message->voltage0,
         message->voltage1,
@@ -1543,6 +1532,7 @@ int bms_fields_VOLTAGES(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "start_index" CANLIB_SEPARATOR 
         "voltage0" CANLIB_SEPARATOR 
         "voltage1" CANLIB_SEPARATOR 
@@ -1557,12 +1547,14 @@ int bms_to_string_file_VOLTAGES(bms_message_VOLTAGES_conversion* message, FILE* 
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32 CANLIB_SEPARATOR 
         "%" PRIf32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->start_index,
         message->voltage0,
         message->voltage1,
@@ -1576,6 +1568,7 @@ int bms_fields_file_VOLTAGES(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "start_index" CANLIB_SEPARATOR 
         "voltage0" CANLIB_SEPARATOR 
         "voltage1" CANLIB_SEPARATOR 
@@ -1587,6 +1580,7 @@ int bms_fields_file_VOLTAGES(FILE* buffer) {
 
 bms_byte_size bms_serialize_BALANCING(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 board_index,
     bms_BalancingCells cells
 ) {
@@ -1594,7 +1588,8 @@ bms_byte_size bms_serialize_BALANCING(
     data[1] = (cells >> 8) & 255;
     data[2] = (cells >> 16) & 255;
     data[3] = board_index;
-    return 4;
+    data[4] = cellboard_id << 5;
+    return 5;
 }
 
 bms_byte_size bms_serialize_struct_BALANCING(
@@ -1605,7 +1600,8 @@ bms_byte_size bms_serialize_struct_BALANCING(
     data[1] = (message->cells >> 8) & 255;
     data[2] = (message->cells >> 16) & 255;
     data[3] = message->board_index;
-    return 4;
+    data[4] = message->cellboard_id << 5;
+    return 5;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1622,6 +1618,7 @@ void bms_deserialize_BALANCING(
 #endif // CANLIB_TIMESTAMP
     message->cells = data[0] | (data[1] << 8) | (data[2] << 16);
     message->board_index = data[3];
+    message->cellboard_id = (bms_Cellboard) ((data[4] & 224) >> 5);
 }
 
 // ============== STRING ============== //
@@ -1633,10 +1630,12 @@ int bms_to_string_BALANCING(bms_message_BALANCING* message, char* buffer) {
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->board_index,
         message->cells
     );
@@ -1648,6 +1647,7 @@ int bms_fields_BALANCING(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "board_index" CANLIB_SEPARATOR 
         "cells"
     );
@@ -1660,10 +1660,12 @@ int bms_to_string_file_BALANCING(bms_message_BALANCING* message, FILE* buffer) {
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
         "%" PRIu8 CANLIB_SEPARATOR 
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu32,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->board_index,
         message->cells
     );
@@ -1675,6 +1677,7 @@ int bms_fields_file_BALANCING(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "board_index" CANLIB_SEPARATOR 
         "cells"
     );
@@ -1684,10 +1687,12 @@ int bms_fields_file_BALANCING(FILE* buffer) {
 
 bms_byte_size bms_serialize_FW_UPDATE(
     uint8_t* data,
+    bms_Cellboard cellboard_id,
     bms_uint8 board_index
 ) {
     data[0] = board_index;
-    return 1;
+    data[1] = cellboard_id << 5;
+    return 2;
 }
 
 bms_byte_size bms_serialize_struct_FW_UPDATE(
@@ -1695,7 +1700,8 @@ bms_byte_size bms_serialize_struct_FW_UPDATE(
     bms_message_FW_UPDATE* message
 ) {
     data[0] = message->board_index;
-    return 1;
+    data[1] = message->cellboard_id << 5;
+    return 2;
 }
 
 // ============== DESERIALIZE ============== //
@@ -1711,6 +1717,7 @@ void bms_deserialize_FW_UPDATE(
     message->_timestamp = _timestamp;
 #endif // CANLIB_TIMESTAMP
     message->board_index = data[0];
+    message->cellboard_id = (bms_Cellboard) ((data[1] & 224) >> 5);
 }
 
 // ============== STRING ============== //
@@ -1721,10 +1728,12 @@ int bms_to_string_FW_UPDATE(bms_message_FW_UPDATE* message, char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->board_index
     );
 }
@@ -1735,6 +1744,7 @@ int bms_fields_FW_UPDATE(char* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "board_index"
     );
 }
@@ -1745,10 +1755,12 @@ int bms_to_string_file_FW_UPDATE(bms_message_FW_UPDATE* message, FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "%" PRIu64 CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "%" PRIu8 CANLIB_SEPARATOR 
         "%" PRIu8,
 #ifdef CANLIB_TIMESTAMP
         message->_timestamp,
 #endif // CANLIB_TIMESTAMP
+        message->cellboard_id,
         message->board_index
     );
 }
@@ -1759,6 +1771,7 @@ int bms_fields_file_FW_UPDATE(FILE* buffer) {
 #ifdef CANLIB_TIMESTAMP
         "_timestamp" CANLIB_SEPARATOR
 #endif // CANLIB_TIMESTAMP
+        "cellboard_id" CANLIB_SEPARATOR 
         "board_index"
     );
 }
@@ -2502,39 +2515,9 @@ int bms_fields_from_id(canlib_message_id message_id, char* buffer) {
     switch (message_id) {
         case 1536:
             return bms_fields_BOARD_STATUS(buffer);
-        case 1568:
-            return bms_fields_BOARD_STATUS(buffer);
-        case 1600:
-            return bms_fields_BOARD_STATUS(buffer);
-        case 1632:
-            return bms_fields_BOARD_STATUS(buffer);
-        case 1664:
-            return bms_fields_BOARD_STATUS(buffer);
-        case 1696:
-            return bms_fields_BOARD_STATUS(buffer);
         case 1281:
             return bms_fields_TEMPERATURES(buffer);
-        case 1313:
-            return bms_fields_TEMPERATURES(buffer);
-        case 1345:
-            return bms_fields_TEMPERATURES(buffer);
-        case 1377:
-            return bms_fields_TEMPERATURES(buffer);
-        case 1409:
-            return bms_fields_TEMPERATURES(buffer);
-        case 1441:
-            return bms_fields_TEMPERATURES(buffer);
         case 514:
-            return bms_fields_VOLTAGES(buffer);
-        case 546:
-            return bms_fields_VOLTAGES(buffer);
-        case 578:
-            return bms_fields_VOLTAGES(buffer);
-        case 610:
-            return bms_fields_VOLTAGES(buffer);
-        case 642:
-            return bms_fields_VOLTAGES(buffer);
-        case 674:
             return bms_fields_VOLTAGES(buffer);
         case 515:
             return bms_fields_BALANCING(buffer);
@@ -2572,39 +2555,9 @@ int bms_to_string_from_id(canlib_message_id message_id, void* message, char* buf
     switch (message_id) {
         case 1536:
             return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1568:
-            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1600:
-            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1632:
-            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1664:
-            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1696:
-            return bms_to_string_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1281:
             return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1313:
-            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1345:
-            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1377:
-            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1409:
-            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1441:
-            return bms_to_string_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 514:
-            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 546:
-            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 578:
-            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 610:
-            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 642:
-            return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 674:
             return bms_to_string_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 515:
             return bms_to_string_BALANCING((bms_message_BALANCING*) message, buffer);
@@ -2642,39 +2595,9 @@ int bms_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
     switch (message_id) {
         case 1536:
             return bms_fields_file_BOARD_STATUS(buffer);
-        case 1568:
-            return bms_fields_file_BOARD_STATUS(buffer);
-        case 1600:
-            return bms_fields_file_BOARD_STATUS(buffer);
-        case 1632:
-            return bms_fields_file_BOARD_STATUS(buffer);
-        case 1664:
-            return bms_fields_file_BOARD_STATUS(buffer);
-        case 1696:
-            return bms_fields_file_BOARD_STATUS(buffer);
         case 1281:
             return bms_fields_file_TEMPERATURES(buffer);
-        case 1313:
-            return bms_fields_file_TEMPERATURES(buffer);
-        case 1345:
-            return bms_fields_file_TEMPERATURES(buffer);
-        case 1377:
-            return bms_fields_file_TEMPERATURES(buffer);
-        case 1409:
-            return bms_fields_file_TEMPERATURES(buffer);
-        case 1441:
-            return bms_fields_file_TEMPERATURES(buffer);
         case 514:
-            return bms_fields_file_VOLTAGES(buffer);
-        case 546:
-            return bms_fields_file_VOLTAGES(buffer);
-        case 578:
-            return bms_fields_file_VOLTAGES(buffer);
-        case 610:
-            return bms_fields_file_VOLTAGES(buffer);
-        case 642:
-            return bms_fields_file_VOLTAGES(buffer);
-        case 674:
             return bms_fields_file_VOLTAGES(buffer);
         case 515:
             return bms_fields_file_BALANCING(buffer);
@@ -2712,39 +2635,9 @@ int bms_to_string_file_from_id(canlib_message_id message_id, void* message, FILE
     switch (message_id) {
         case 1536:
             return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1568:
-            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1600:
-            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1632:
-            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1664:
-            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
-        case 1696:
-            return bms_to_string_file_BOARD_STATUS((bms_message_BOARD_STATUS*) message, buffer);
         case 1281:
             return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1313:
-            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1345:
-            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1377:
-            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1409:
-            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
-        case 1441:
-            return bms_to_string_file_TEMPERATURES((bms_message_TEMPERATURES_conversion*) message, buffer);
         case 514:
-            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 546:
-            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 578:
-            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 610:
-            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 642:
-            return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
-        case 674:
             return bms_to_string_file_VOLTAGES((bms_message_VOLTAGES_conversion*) message, buffer);
         case 515:
             return bms_to_string_file_BALANCING((bms_message_BALANCING*) message, buffer);
@@ -2798,56 +2691,6 @@ void* bms_deserialize_from_id(
             );
             return message_raw;
         }
-        case 1568: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return message_raw;
-        }
-        case 1600: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return message_raw;
-        }
-        case 1632: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return message_raw;
-        }
-        case 1664: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return message_raw;
-        }
-        case 1696: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return message_raw;
-        }
         case 1281: {
             bms_deserialize_TEMPERATURES(
                 (bms_message_TEMPERATURES*) message_raw,
@@ -2862,147 +2705,7 @@ void* bms_deserialize_from_id(
             );
             return message_conversion;
         }
-        case 1313: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) message_conversion,
-                (bms_message_TEMPERATURES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 1345: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) message_conversion,
-                (bms_message_TEMPERATURES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 1377: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) message_conversion,
-                (bms_message_TEMPERATURES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 1409: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) message_conversion,
-                (bms_message_TEMPERATURES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 1441: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) message_conversion,
-                (bms_message_TEMPERATURES*) message_raw
-            );
-            return message_conversion;
-        }
         case 514: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) message_conversion,
-                (bms_message_VOLTAGES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 546: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) message_conversion,
-                (bms_message_VOLTAGES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 578: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) message_conversion,
-                (bms_message_VOLTAGES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 610: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) message_conversion,
-                (bms_message_VOLTAGES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 642: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) message_conversion,
-                (bms_message_VOLTAGES*) message_raw
-            );
-            return message_conversion;
-        }
-        case 674: {
             bms_deserialize_VOLTAGES(
                 (bms_message_VOLTAGES*) message_raw,
                 data
@@ -3162,330 +2865,15 @@ void* bms_deserialize_from_id(
 
 bms_devices* bms_devices_new() {
     bms_devices* devices = (bms_devices*) malloc(sizeof(bms_devices));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].id = 1536;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].id = 1568;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].id = 1600;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].id = 1632;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].id = 1664;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_conversion = NULL;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].id = 1696;
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
-    (*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_conversion = NULL;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].id = 1281;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].id = 1313;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].id = 1345;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].id = 1377;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].id = 1409;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].id = 1441;
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
-    (*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].id = 514;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].id = 546;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].id = 578;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].id = 610;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].id = 642;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].id = 674;
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
-    (*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
+    (*devices)[bms_INDEX_BOARD_STATUS].id = 1536;
+    (*devices)[bms_INDEX_BOARD_STATUS].message_raw = (void*) malloc(sizeof(bms_message_BOARD_STATUS));
+    (*devices)[bms_INDEX_BOARD_STATUS].message_conversion = NULL;
+    (*devices)[bms_INDEX_TEMPERATURES].id = 1281;
+    (*devices)[bms_INDEX_TEMPERATURES].message_raw = (void*) malloc(sizeof(bms_message_TEMPERATURES));
+    (*devices)[bms_INDEX_TEMPERATURES].message_conversion = (void*) malloc(sizeof(bms_message_TEMPERATURES_conversion));
+    (*devices)[bms_INDEX_VOLTAGES].id = 514;
+    (*devices)[bms_INDEX_VOLTAGES].message_raw = (void*) malloc(sizeof(bms_message_VOLTAGES));
+    (*devices)[bms_INDEX_VOLTAGES].message_conversion = (void*) malloc(sizeof(bms_message_VOLTAGES_conversion));
     (*devices)[bms_INDEX_BALANCING].id = 515;
     (*devices)[bms_INDEX_BALANCING].message_raw = (void*) malloc(sizeof(bms_message_BALANCING));
     (*devices)[bms_INDEX_BALANCING].message_conversion = NULL;
@@ -3532,186 +2920,11 @@ bms_devices* bms_devices_new() {
 }
 
 void bms_devices_free(bms_devices* devices) {
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw);
-    free((*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion);
+    free((*devices)[bms_INDEX_BOARD_STATUS].message_raw);
+    free((*devices)[bms_INDEX_TEMPERATURES].message_raw);
+    free((*devices)[bms_INDEX_TEMPERATURES].message_conversion);
+    free((*devices)[bms_INDEX_VOLTAGES].message_raw);
+    free((*devices)[bms_INDEX_VOLTAGES].message_conversion);
     free((*devices)[bms_INDEX_BALANCING].message_raw);
     free((*devices)[bms_INDEX_FW_UPDATE].message_raw);
     free((*devices)[bms_INDEX_FLASH_CELLBOARD_0_TX].message_raw);
@@ -3740,57 +2953,7 @@ void bms_devices_deserialize_from_id(
     switch (message_id) {
         case 1536: {
             bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD0].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return;
-        }
-        case 1568: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD1].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return;
-        }
-        case 1600: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD2].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return;
-        }
-        case 1632: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD3].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return;
-        }
-        case 1664: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD4].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            return;
-        }
-        case 1696: {
-            bms_deserialize_BOARD_STATUS(
-                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS_CELLBOARD5].message_raw,
+                (bms_message_BOARD_STATUS*) &(*devices)[bms_INDEX_BOARD_STATUS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -3800,169 +2963,29 @@ void bms_devices_deserialize_from_id(
         }
         case 1281: {
             bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw,
+                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD0].message_raw
-            );
-            return;
-        }
-        case 1313: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD1].message_raw
-            );
-            return;
-        }
-        case 1345: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD2].message_raw
-            );
-            return;
-        }
-        case 1377: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD3].message_raw
-            );
-            return;
-        }
-        case 1409: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD4].message_raw
-            );
-            return;
-        }
-        case 1441: {
-            bms_deserialize_TEMPERATURES(
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_TEMPERATURES(
-                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_conversion,
-                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES_CELLBOARD5].message_raw
+                (bms_message_TEMPERATURES_conversion*) &(*devices)[bms_INDEX_TEMPERATURES].message_conversion,
+                (bms_message_TEMPERATURES*) &(*devices)[bms_INDEX_TEMPERATURES].message_raw
             );
             return;
         }
         case 514: {
             bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw,
+                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
                 #endif
             );
             bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD0].message_raw
-            );
-            return;
-        }
-        case 546: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD1].message_raw
-            );
-            return;
-        }
-        case 578: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD2].message_raw
-            );
-            return;
-        }
-        case 610: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD3].message_raw
-            );
-            return;
-        }
-        case 642: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD4].message_raw
-            );
-            return;
-        }
-        case 674: {
-            bms_deserialize_VOLTAGES(
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw,
-                data
-                #ifdef CANLIB_TIMESTAMP
-                , timestamp
-                #endif
-            );
-            bms_raw_to_conversion_struct_VOLTAGES(
-                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_conversion,
-                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES_CELLBOARD5].message_raw
+                (bms_message_VOLTAGES_conversion*) &(*devices)[bms_INDEX_VOLTAGES].message_conversion,
+                (bms_message_VOLTAGES*) &(*devices)[bms_INDEX_VOLTAGES].message_raw
             );
             return;
         }

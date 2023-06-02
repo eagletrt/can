@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1685652638
-CANLIB_BUILD_HASH = 0xa0572ff2
+CANLIB_BUILD_TIME = 1685743992
+CANLIB_BUILD_HASH = 0x67bed551
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -91,6 +91,19 @@ class BalancingCells(IntFlag):
 # Enums
 
 
+class Cellboard(IntEnum):
+    CELLBOARD_0 = 0
+    CELLBOARD_1 = 1
+    CELLBOARD_2 = 2
+    CELLBOARD_3 = 3
+    CELLBOARD_4 = 4
+    CELLBOARD_5 = 5
+
+    @classmethod
+    def _missing_(cls, _):
+        return cls(0)
+
+
 class BalancingStatus(IntEnum):
     OFF = 0
     DISCHARGE = 1
@@ -105,15 +118,19 @@ class BalancingStatus(IntEnum):
 class message_BOARD_STATUS:
     def __init__(
         self,
+        cellboard_id = None,
         errors = None,
         balancing_status = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.errors = Errors(errors)
         self.balancing_status = BalancingStatus(balancing_status)
         self.size = 3
 
     def __eq__(self, other):
         if not isinstance(other, message_BOARD_STATUS):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.errors != other.errors:
             return False
@@ -123,39 +140,40 @@ class message_BOARD_STATUS:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBB", (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255, self.balancing_status << 7 & 255))
+        data.extend(pack("<BBB", (int(self.errors) >> 8) & 255, (int(self.errors) >> 0) & 255, self.cellboard_id << 5 & 255 | self.balancing_status << 4 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.cellboard_id = Cellboard((unpack("<xxB", data[0:3])[0] & 224) >> 5)
         message.errors = Errors(int((unpack("<BB", data[0:2])[0] << 8) | (unpack("<BB", data[0:2])[1] << 0)))
-        message.balancing_status = BalancingStatus((unpack("<xxB", data[0:3])[0] & 128) >> 7)
+        message.balancing_status = BalancingStatus((unpack("<xxB", data[0:3])[0] & 16) >> 4)
         return message
 
 
 class message_TEMPERATURES:
     def __init__(
         self,
+        cellboard_id = None,
         start_index = None,
         temp0 = None,
         temp1 = None,
         temp2 = None,
-        temp3 = None,
-        temp4 = None,
-        temp5 = None
+        temp3 = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.start_index = uint8(start_index)
         self.temp0 = uint8(temp0)
         self.temp1 = uint8(temp1)
         self.temp2 = uint8(temp2)
         self.temp3 = uint8(temp3)
-        self.temp4 = uint8(temp4)
-        self.temp5 = uint8(temp5)
-        self.size = 7
+        self.size = 6
 
     def __eq__(self, other):
         if not isinstance(other, message_TEMPERATURES):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.start_index != other.start_index:
             return False
@@ -167,64 +185,58 @@ class message_TEMPERATURES:
             return False
         if self.temp3 != other.temp3:
             return False
-        if self.temp4 != other.temp4:
-            return False
-        if self.temp5 != other.temp5:
-            return False
         return True
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBBBBB", self.start_index, self.temp0, self.temp1, self.temp2, self.temp3, self.temp4, self.temp5))
+        data.extend(pack("<BBBBBB", self.start_index, self.temp0, self.temp1, self.temp2, self.temp3, self.cellboard_id << 5 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.cellboard_id = Cellboard((unpack("<xxxxxB", data[0:6])[0] & 224) >> 5)
         message.start_index = uint8(unpack("<B", data[0:1])[0])
         message.temp0 = uint8(unpack("<xB", data[0:2])[0])
         message.temp1 = uint8(unpack("<xxB", data[0:3])[0])
         message.temp2 = uint8(unpack("<xxxB", data[0:4])[0])
         message.temp3 = uint8(unpack("<xxxxB", data[0:5])[0])
-        message.temp4 = uint8(unpack("<xxxxxB", data[0:6])[0])
-        message.temp5 = uint8(unpack("<xxxxxxB", data[0:7])[0])
         return message
 
 
     def convert(self) -> message_TEMPERATURES_conversion:
         conversion = message_TEMPERATURES_conversion()
+        conversion.cellboard_id = self.cellboard_id
         conversion.start_index = self.start_index
         conversion.temp0 = ((float32(self.temp0)) / 2.55) - 20
         conversion.temp1 = ((float32(self.temp1)) / 2.55) - 20
         conversion.temp2 = ((float32(self.temp2)) / 2.55) - 20
         conversion.temp3 = ((float32(self.temp3)) / 2.55) - 20
-        conversion.temp4 = ((float32(self.temp4)) / 2.55) - 20
-        conversion.temp5 = ((float32(self.temp5)) / 2.55) - 20
         return conversion
 
 
 class message_TEMPERATURES_conversion:
     def __init__(
         self,
+        cellboard_id = None,
         start_index = None,
         temp0 = None,
         temp1 = None,
         temp2 = None,
-        temp3 = None,
-        temp4 = None,
-        temp5 = None
+        temp3 = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.start_index = uint8(start_index)
         self.temp0 = float32(temp0)
         self.temp1 = float32(temp1)
         self.temp2 = float32(temp2)
         self.temp3 = float32(temp3)
-        self.temp4 = float32(temp4)
-        self.temp5 = float32(temp5)
-        self.size = 7
+        self.size = 6
 
     def __eq__(self, other):
         if not isinstance(other, message_TEMPERATURES):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.start_index != other.start_index:
             return False
@@ -236,39 +248,38 @@ class message_TEMPERATURES_conversion:
             return False
         if self.temp3 != other.temp3:
             return False
-        if self.temp4 != other.temp4:
-            return False
-        if self.temp5 != other.temp5:
-            return False
         return True
 
     def convert_to_raw(self) -> message_TEMPERATURES:
         raw = message_TEMPERATURES()
+        raw.cellboard_id = self.cellboard_id
         raw.start_index = self.start_index
         raw.temp0 = uint8((self.temp0 + 20) * 2.55)
         raw.temp1 = uint8((self.temp1 + 20) * 2.55)
         raw.temp2 = uint8((self.temp2 + 20) * 2.55)
         raw.temp3 = uint8((self.temp3 + 20) * 2.55)
-        raw.temp4 = uint8((self.temp4 + 20) * 2.55)
-        raw.temp5 = uint8((self.temp5 + 20) * 2.55)
         return raw
 
 class message_VOLTAGES:
     def __init__(
         self,
+        cellboard_id = None,
         start_index = None,
         voltage0 = None,
         voltage1 = None,
         voltage2 = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.start_index = uint8(start_index)
         self.voltage0 = uint16(voltage0)
         self.voltage1 = uint16(voltage1)
         self.voltage2 = uint16(voltage2)
-        self.size = 7
+        self.size = 8
 
     def __eq__(self, other):
         if not isinstance(other, message_VOLTAGES):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.start_index != other.start_index:
             return False
@@ -282,12 +293,13 @@ class message_VOLTAGES:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<HHHB", self.voltage0, self.voltage1, self.voltage2, self.start_index))
+        data.extend(pack("<HHHBB", self.voltage0, self.voltage1, self.voltage2, self.start_index, self.cellboard_id << 5 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.cellboard_id = Cellboard((unpack("<xxxxxxxB", data[0:8])[0] & 224) >> 5)
         message.start_index = uint8(unpack("<xxxxxxB", data[0:7])[0])
         message.voltage0 = uint16(unpack("<H", data[0:2])[0])
         message.voltage1 = uint16(unpack("<xxH", data[0:4])[0])
@@ -297,6 +309,7 @@ class message_VOLTAGES:
 
     def convert(self) -> message_VOLTAGES_conversion:
         conversion = message_VOLTAGES_conversion()
+        conversion.cellboard_id = self.cellboard_id
         conversion.start_index = self.start_index
         conversion.voltage0 = ((float32(self.voltage0)) / 10000.0) + 0
         conversion.voltage1 = ((float32(self.voltage1)) / 10000.0) + 0
@@ -307,19 +320,23 @@ class message_VOLTAGES:
 class message_VOLTAGES_conversion:
     def __init__(
         self,
+        cellboard_id = None,
         start_index = None,
         voltage0 = None,
         voltage1 = None,
         voltage2 = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.start_index = uint8(start_index)
         self.voltage0 = float32(voltage0)
         self.voltage1 = float32(voltage1)
         self.voltage2 = float32(voltage2)
-        self.size = 7
+        self.size = 8
 
     def __eq__(self, other):
         if not isinstance(other, message_VOLTAGES):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.start_index != other.start_index:
             return False
@@ -333,6 +350,7 @@ class message_VOLTAGES_conversion:
 
     def convert_to_raw(self) -> message_VOLTAGES:
         raw = message_VOLTAGES()
+        raw.cellboard_id = self.cellboard_id
         raw.start_index = self.start_index
         raw.voltage0 = uint16((self.voltage0 + 0) * 10000.0)
         raw.voltage1 = uint16((self.voltage1 + 0) * 10000.0)
@@ -342,15 +360,19 @@ class message_VOLTAGES_conversion:
 class message_BALANCING:
     def __init__(
         self,
+        cellboard_id = None,
         board_index = None,
         cells = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.board_index = uint8(board_index)
         self.cells = BalancingCells(cells)
-        self.size = 4
+        self.size = 5
 
     def __eq__(self, other):
         if not isinstance(other, message_BALANCING):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.board_index != other.board_index:
             return False
@@ -360,12 +382,13 @@ class message_BALANCING:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<BBBB", (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index))
+        data.extend(pack("<BBBBB", (int(self.cells) >> 16) & 255, (int(self.cells) >> 8) & 255, (int(self.cells) >> 0) & 255, self.board_index, self.cellboard_id << 5 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.cellboard_id = Cellboard((unpack("<xxxxB", data[0:5])[0] & 224) >> 5)
         message.board_index = uint8(unpack("<xxxB", data[0:4])[0])
         message.cells = BalancingCells(int((unpack("<BBB", data[0:3])[0] << 16) | (unpack("<BBB", data[0:3])[1] << 8) | (unpack("<BBB", data[0:3])[2] << 0)))
         return message
@@ -374,13 +397,17 @@ class message_BALANCING:
 class message_FW_UPDATE:
     def __init__(
         self,
+        cellboard_id = None,
         board_index = None
     ):
+        self.cellboard_id = Cellboard(cellboard_id)
         self.board_index = uint8(board_index)
-        self.size = 1
+        self.size = 2
 
     def __eq__(self, other):
         if not isinstance(other, message_FW_UPDATE):
+            return False
+        if self.cellboard_id != other.cellboard_id:
             return False
         if self.board_index != other.board_index:
             return False
@@ -388,12 +415,13 @@ class message_FW_UPDATE:
 
     def serialize(self) -> bytearray:
         data = bytearray()
-        data.extend(pack("<B", self.board_index))
+        data.extend(pack("<BB", self.board_index, self.cellboard_id << 5 & 255))
         return data
 
     @classmethod
     def deserialize(cls, data: bytearray):
         message = cls()
+        message.cellboard_id = Cellboard((unpack("<xB", data[0:2])[0] & 224) >> 5)
         message.board_index = uint8(unpack("<B", data[0:1])[0])
         return message
 

@@ -49,38 +49,23 @@ typedef void (*canlib_watchdog_callback)(int);
 #endif // CANLIB_UNUSED
 
 
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD0 0
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD1 1
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD2 2
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD3 3
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD4 4
-#define bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD5 5
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD0 6
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD1 7
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD2 8
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD3 9
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD4 10
-#define bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD5 11
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD0 12
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD1 13
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD2 14
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD3 15
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD4 16
-#define bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD5 17
-#define bms_WATCHDOG_INDEX_BALANCING 18
-#define bms_WATCHDOG_INDEX_FW_UPDATE 19
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 20
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 21
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 22
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 23
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 24
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 25
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 26
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 27
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 28
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 29
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 30
-#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 31
+#define bms_WATCHDOG_INDEX_BOARD_STATUS 0
+#define bms_WATCHDOG_INDEX_TEMPERATURES 1
+#define bms_WATCHDOG_INDEX_VOLTAGES 2
+#define bms_WATCHDOG_INDEX_BALANCING 3
+#define bms_WATCHDOG_INDEX_FW_UPDATE 4
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 5
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 6
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 7
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 8
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 9
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 10
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 11
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 12
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 13
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 14
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 15
+#define bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 16
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -127,31 +112,16 @@ typedef void (*canlib_watchdog_callback)(int);
 #define bms_INTERVAL_ONCE -1
 
 typedef struct {
-    uint8_t activated[4];
-    uint8_t timeout[4];
-    canlib_watchdog_timestamp last_reset[32];
+    uint8_t activated[3];
+    uint8_t timeout[3];
+    canlib_watchdog_timestamp last_reset[17];
 } bms_watchdog;
 
 static inline int bms_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
         case 1536: return bms_INTERVAL_BOARD_STATUS;
-        case 1568: return bms_INTERVAL_BOARD_STATUS;
-        case 1600: return bms_INTERVAL_BOARD_STATUS;
-        case 1632: return bms_INTERVAL_BOARD_STATUS;
-        case 1664: return bms_INTERVAL_BOARD_STATUS;
-        case 1696: return bms_INTERVAL_BOARD_STATUS;
         case 1281: return bms_INTERVAL_TEMPERATURES;
-        case 1313: return bms_INTERVAL_TEMPERATURES;
-        case 1345: return bms_INTERVAL_TEMPERATURES;
-        case 1377: return bms_INTERVAL_TEMPERATURES;
-        case 1409: return bms_INTERVAL_TEMPERATURES;
-        case 1441: return bms_INTERVAL_TEMPERATURES;
         case 514: return bms_INTERVAL_VOLTAGES;
-        case 546: return bms_INTERVAL_VOLTAGES;
-        case 578: return bms_INTERVAL_VOLTAGES;
-        case 610: return bms_INTERVAL_VOLTAGES;
-        case 642: return bms_INTERVAL_VOLTAGES;
-        case 674: return bms_INTERVAL_VOLTAGES;
         case 515: return bms_INTERVAL_BALANCING;
         case 10: return bms_INTERVAL_FW_UPDATE;
         case 16: return bms_INTERVAL_FLASH_CELLBOARD_0_TX;
@@ -172,24 +142,9 @@ static inline int bms_watchdog_interval_from_id(uint16_t message_id) {
 
 static inline int bms_watchdog_index_from_id(canlib_message_id id) {
     switch (id) {
-        case 1536: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD0;
-        case 1568: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD1;
-        case 1600: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD2;
-        case 1632: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD3;
-        case 1664: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD4;
-        case 1696: return bms_WATCHDOG_INDEX_BOARD_STATUS_CELLBOARD5;
-        case 1281: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD0;
-        case 1313: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD1;
-        case 1345: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD2;
-        case 1377: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD3;
-        case 1409: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD4;
-        case 1441: return bms_WATCHDOG_INDEX_TEMPERATURES_CELLBOARD5;
-        case 514: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD0;
-        case 546: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD1;
-        case 578: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD2;
-        case 610: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD3;
-        case 642: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD4;
-        case 674: return bms_WATCHDOG_INDEX_VOLTAGES_CELLBOARD5;
+        case 1536: return bms_WATCHDOG_INDEX_BOARD_STATUS;
+        case 1281: return bms_WATCHDOG_INDEX_TEMPERATURES;
+        case 514: return bms_WATCHDOG_INDEX_VOLTAGES;
         case 515: return bms_WATCHDOG_INDEX_BALANCING;
         case 10: return bms_WATCHDOG_INDEX_FW_UPDATE;
         case 16: return bms_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX;
@@ -205,7 +160,7 @@ static inline int bms_watchdog_index_from_id(canlib_message_id id) {
         case 26: return bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX;
         case 27: return bms_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX;
     }
-    return 32; // invalid
+    return 17; // invalid
 }
 
 bms_watchdog* bms_watchdog_new();
@@ -240,7 +195,7 @@ void bms_watchdog_free(bms_watchdog *watchdog) {
 
 void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = bms_watchdog_index_from_id(id);
-    if (index < 32 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 17 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

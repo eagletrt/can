@@ -5,12 +5,7 @@
             "id": 0,
             "messages": {
                 "BOARD_STATUS": {
-                    "BOARD_STATUS_CELLBOARD0": 1536,
-                    "BOARD_STATUS_CELLBOARD1": 1568,
-                    "BOARD_STATUS_CELLBOARD2": 1600,
-                    "BOARD_STATUS_CELLBOARD3": 1632,
-                    "BOARD_STATUS_CELLBOARD4": 1664,
-                    "BOARD_STATUS_CELLBOARD5": 1696
+                    "BOARD_STATUS": 1536
                 }
             }
         },
@@ -18,12 +13,7 @@
             "id": 1,
             "messages": {
                 "TEMPERATURES": {
-                    "TEMPERATURES_CELLBOARD0": 1281,
-                    "TEMPERATURES_CELLBOARD1": 1313,
-                    "TEMPERATURES_CELLBOARD2": 1345,
-                    "TEMPERATURES_CELLBOARD3": 1377,
-                    "TEMPERATURES_CELLBOARD4": 1409,
-                    "TEMPERATURES_CELLBOARD5": 1441
+                    "TEMPERATURES": 1281
                 }
             }
         },
@@ -31,12 +21,7 @@
             "id": 2,
             "messages": {
                 "VOLTAGES": {
-                    "VOLTAGES_CELLBOARD0": 514,
-                    "VOLTAGES_CELLBOARD1": 546,
-                    "VOLTAGES_CELLBOARD2": 578,
-                    "VOLTAGES_CELLBOARD3": 610,
-                    "VOLTAGES_CELLBOARD4": 642,
-                    "VOLTAGES_CELLBOARD5": 674
+                    "VOLTAGES": 514
                 }
             }
         },

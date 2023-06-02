@@ -20,9 +20,55 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tbms.proto\x12\x03\x62ms\"s\n\x17\x42OARD_STATUS_CELLBOARD0\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"s\n\x17\x42OARD_STATUS_CELLBOARD1\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"s\n\x17\x42OARD_STATUS_CELLBOARD2\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"s\n\x17\x42OARD_STATUS_CELLBOARD3\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"s\n\x17\x42OARD_STATUS_CELLBOARD4\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"s\n\x17\x42OARD_STATUS_CELLBOARD5\x12\x0e\n\x06\x65rrors\x18\x01 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x02 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD0\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD1\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD2\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD3\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD4\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"\xa2\x01\n\x17TEMPERATURES_CELLBOARD5\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\r\n\x05temp0\x18\x02 \x01(\x02\x12\r\n\x05temp1\x18\x03 \x01(\x02\x12\r\n\x05temp2\x18\x04 \x01(\x02\x12\r\n\x05temp3\x18\x05 \x01(\x02\x12\r\n\x05temp4\x18\x06 \x01(\x02\x12\r\n\x05temp5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD0\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD1\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD2\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD3\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD4\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"z\n\x13VOLTAGES_CELLBOARD5\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x10\n\x08voltage0\x18\x02 \x01(\x02\x12\x10\n\x08voltage1\x18\x03 \x01(\x02\x12\x10\n\x08voltage2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"I\n\tBALANCING\x12\x13\n\x0b\x62oard_index\x18\x01 \x01(\r\x12\r\n\x05\x63\x65lls\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\":\n\tFW_UPDATE\x12\x13\n\x0b\x62oard_index\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\xb6\x0e\n\x04Pack\x12=\n\x17\x42OARD_STATUS_CELLBOARD0\x18\x01 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD0\x12=\n\x17\x42OARD_STATUS_CELLBOARD1\x18\x02 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD1\x12=\n\x17\x42OARD_STATUS_CELLBOARD2\x18\x03 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD2\x12=\n\x17\x42OARD_STATUS_CELLBOARD3\x18\x04 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD3\x12=\n\x17\x42OARD_STATUS_CELLBOARD4\x18\x05 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD4\x12=\n\x17\x42OARD_STATUS_CELLBOARD5\x18\x06 \x03(\x0b\x32\x1c.bms.BOARD_STATUS_CELLBOARD5\x12=\n\x17TEMPERATURES_CELLBOARD0\x18\x07 \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD0\x12=\n\x17TEMPERATURES_CELLBOARD1\x18\x08 \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD1\x12=\n\x17TEMPERATURES_CELLBOARD2\x18\t \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD2\x12=\n\x17TEMPERATURES_CELLBOARD3\x18\n \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD3\x12=\n\x17TEMPERATURES_CELLBOARD4\x18\x0b \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD4\x12=\n\x17TEMPERATURES_CELLBOARD5\x18\x0c \x03(\x0b\x32\x1c.bms.TEMPERATURES_CELLBOARD5\x12\x35\n\x13VOLTAGES_CELLBOARD0\x18\r \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD0\x12\x35\n\x13VOLTAGES_CELLBOARD1\x18\x0e \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD1\x12\x35\n\x13VOLTAGES_CELLBOARD2\x18\x0f \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD2\x12\x35\n\x13VOLTAGES_CELLBOARD3\x18\x10 \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD3\x12\x35\n\x13VOLTAGES_CELLBOARD4\x18\x11 \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD4\x12\x35\n\x13VOLTAGES_CELLBOARD5\x18\x12 \x03(\x0b\x32\x18.bms.VOLTAGES_CELLBOARD5\x12!\n\tBALANCING\x18\x13 \x03(\x0b\x32\x0e.bms.BALANCING\x12!\n\tFW_UPDATE\x18\x14 \x03(\x0b\x32\x0e.bms.FW_UPDATE\x12\x37\n\x14\x46LASH_CELLBOARD_0_TX\x18\x15 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_0_TX\x12\x37\n\x14\x46LASH_CELLBOARD_0_RX\x18\x16 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_0_RX\x12\x37\n\x14\x46LASH_CELLBOARD_1_TX\x18\x17 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_1_TX\x12\x37\n\x14\x46LASH_CELLBOARD_1_RX\x18\x18 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_1_RX\x12\x37\n\x14\x46LASH_CELLBOARD_2_TX\x18\x19 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_2_TX\x12\x37\n\x14\x46LASH_CELLBOARD_2_RX\x18\x1a \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_2_RX\x12\x37\n\x14\x46LASH_CELLBOARD_3_TX\x18\x1b \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_3_TX\x12\x37\n\x14\x46LASH_CELLBOARD_3_RX\x18\x1c \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_3_RX\x12\x37\n\x14\x46LASH_CELLBOARD_4_TX\x18\x1d \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_4_TX\x12\x37\n\x14\x46LASH_CELLBOARD_4_RX\x18\x1e \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_4_RX\x12\x37\n\x14\x46LASH_CELLBOARD_5_TX\x18\x1f \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_5_TX\x12\x37\n\x14\x46LASH_CELLBOARD_5_RX\x18  \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_5_RX*I\n\x0f\x42\x61lancingStatus\x12\x17\n\x13\x42\x61lancingStatus_OFF\x10\x00\x12\x1d\n\x19\x42\x61lancingStatus_DISCHARGE\x10\x01\x62\x06proto3'
+  serialized_pb=b'\n\tbms.proto\x12\x03\x62ms\"\x8e\x01\n\x0c\x42OARD_STATUS\x12$\n\x0c\x63\x65llboard_id\x18\x01 \x01(\x0e\x32\x0e.bms.Cellboard\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12.\n\x10\x62\x61lancing_status\x18\x03 \x01(\x0e\x32\x14.bms.BalancingStatus\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"\x9f\x01\n\x0cTEMPERATURES\x12$\n\x0c\x63\x65llboard_id\x18\x01 \x01(\x0e\x32\x0e.bms.Cellboard\x12\x13\n\x0bstart_index\x18\x02 \x01(\r\x12\r\n\x05temp0\x18\x03 \x01(\x02\x12\r\n\x05temp1\x18\x04 \x01(\x02\x12\r\n\x05temp2\x18\x05 \x01(\x02\x12\r\n\x05temp3\x18\x06 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x07 \x01(\x04\"\x95\x01\n\x08VOLTAGES\x12$\n\x0c\x63\x65llboard_id\x18\x01 \x01(\x0e\x32\x0e.bms.Cellboard\x12\x13\n\x0bstart_index\x18\x02 \x01(\r\x12\x10\n\x08voltage0\x18\x03 \x01(\x02\x12\x10\n\x08voltage1\x18\x04 \x01(\x02\x12\x10\n\x08voltage2\x18\x05 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x06 \x01(\x04\"o\n\tBALANCING\x12$\n\x0c\x63\x65llboard_id\x18\x01 \x01(\x0e\x32\x0e.bms.Cellboard\x12\x13\n\x0b\x62oard_index\x18\x02 \x01(\r\x12\r\n\x05\x63\x65lls\x18\x03 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"`\n\tFW_UPDATE\x12$\n\x0c\x63\x65llboard_id\x18\x01 \x01(\x0e\x32\x0e.bms.Cellboard\x12\x13\n\x0b\x62oard_index\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\xeb\x06\n\x04Pack\x12\'\n\x0c\x42OARD_STATUS\x18\x01 \x03(\x0b\x32\x11.bms.BOARD_STATUS\x12\'\n\x0cTEMPERATURES\x18\x02 \x03(\x0b\x32\x11.bms.TEMPERATURES\x12\x1f\n\x08VOLTAGES\x18\x03 \x03(\x0b\x32\r.bms.VOLTAGES\x12!\n\tBALANCING\x18\x04 \x03(\x0b\x32\x0e.bms.BALANCING\x12!\n\tFW_UPDATE\x18\x05 \x03(\x0b\x32\x0e.bms.FW_UPDATE\x12\x37\n\x14\x46LASH_CELLBOARD_0_TX\x18\x06 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_0_TX\x12\x37\n\x14\x46LASH_CELLBOARD_0_RX\x18\x07 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_0_RX\x12\x37\n\x14\x46LASH_CELLBOARD_1_TX\x18\x08 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_1_TX\x12\x37\n\x14\x46LASH_CELLBOARD_1_RX\x18\t \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_1_RX\x12\x37\n\x14\x46LASH_CELLBOARD_2_TX\x18\n \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_2_TX\x12\x37\n\x14\x46LASH_CELLBOARD_2_RX\x18\x0b \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_2_RX\x12\x37\n\x14\x46LASH_CELLBOARD_3_TX\x18\x0c \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_3_TX\x12\x37\n\x14\x46LASH_CELLBOARD_3_RX\x18\r \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_3_RX\x12\x37\n\x14\x46LASH_CELLBOARD_4_TX\x18\x0e \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_4_TX\x12\x37\n\x14\x46LASH_CELLBOARD_4_RX\x18\x0f \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_4_RX\x12\x37\n\x14\x46LASH_CELLBOARD_5_TX\x18\x10 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_5_TX\x12\x37\n\x14\x46LASH_CELLBOARD_5_RX\x18\x11 \x03(\x0b\x32\x19.bms.FLASH_CELLBOARD_5_RX*\xad\x01\n\tCellboard\x12\x19\n\x15\x43\x65llboard_CELLBOARD_0\x10\x00\x12\x19\n\x15\x43\x65llboard_CELLBOARD_1\x10\x01\x12\x19\n\x15\x43\x65llboard_CELLBOARD_2\x10\x02\x12\x19\n\x15\x43\x65llboard_CELLBOARD_3\x10\x03\x12\x19\n\x15\x43\x65llboard_CELLBOARD_4\x10\x04\x12\x19\n\x15\x43\x65llboard_CELLBOARD_5\x10\x05*I\n\x0f\x42\x61lancingStatus\x12\x17\n\x13\x42\x61lancingStatus_OFF\x10\x00\x12\x1d\n\x19\x42\x61lancingStatus_DISCHARGE\x10\x01\x62\x06proto3'
 )
 
+_CELLBOARD = _descriptor.EnumDescriptor(
+  name='Cellboard',
+  full_name='bms.Cellboard',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_0', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_1', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_2', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_3', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_4', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='Cellboard_CELLBOARD_5', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2167,
+  serialized_end=2340,
+)
+_sym_db.RegisterEnumDescriptor(_CELLBOARD)
+
+Cellboard = enum_type_wrapper.EnumTypeWrapper(_CELLBOARD)
 _BALANCINGSTATUS = _descriptor.EnumDescriptor(
   name='BalancingStatus',
   full_name='bms.BalancingStatus',
@@ -43,42 +89,55 @@ _BALANCINGSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5038,
-  serialized_end=5111,
+  serialized_start=2342,
+  serialized_end=2415,
 )
 _sym_db.RegisterEnumDescriptor(_BALANCINGSTATUS)
 
 BalancingStatus = enum_type_wrapper.EnumTypeWrapper(_BALANCINGSTATUS)
+Cellboard_CELLBOARD_0 = 0
+Cellboard_CELLBOARD_1 = 1
+Cellboard_CELLBOARD_2 = 2
+Cellboard_CELLBOARD_3 = 3
+Cellboard_CELLBOARD_4 = 4
+Cellboard_CELLBOARD_5 = 5
 BalancingStatus_OFF = 0
 BalancingStatus_DISCHARGE = 1
 
 
 
-_BOARD_STATUS_CELLBOARD0 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD0',
-  full_name='bms.BOARD_STATUS_CELLBOARD0',
+_BOARD_STATUS = _descriptor.Descriptor(
+  name='BOARD_STATUS',
+  full_name='bms.BOARD_STATUS',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD0.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='cellboard_id', full_name='bms.BOARD_STATUS.cellboard_id', index=0,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD0.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
+      name='errors', full_name='bms.BOARD_STATUS.errors', index=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD0._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
+      name='balancing_status', full_name='bms.BOARD_STATUS.balancing_status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='bms.BOARD_STATUS._inner_timestamp', index=3,
+      number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -95,301 +154,64 @@ _BOARD_STATUS_CELLBOARD0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18,
-  serialized_end=133,
+  serialized_start=19,
+  serialized_end=161,
 )
 
 
-_BOARD_STATUS_CELLBOARD1 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD1',
-  full_name='bms.BOARD_STATUS_CELLBOARD1',
+_TEMPERATURES = _descriptor.Descriptor(
+  name='TEMPERATURES',
+  full_name='bms.TEMPERATURES',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD1.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='cellboard_id', full_name='bms.TEMPERATURES.cellboard_id', index=0,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD1.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
+      name='start_index', full_name='bms.TEMPERATURES.start_index', index=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD1._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=135,
-  serialized_end=250,
-)
-
-
-_BOARD_STATUS_CELLBOARD2 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD2',
-  full_name='bms.BOARD_STATUS_CELLBOARD2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD2.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD2.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD2._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=252,
-  serialized_end=367,
-)
-
-
-_BOARD_STATUS_CELLBOARD3 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD3',
-  full_name='bms.BOARD_STATUS_CELLBOARD3',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD3.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD3.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD3._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=369,
-  serialized_end=484,
-)
-
-
-_BOARD_STATUS_CELLBOARD4 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD4',
-  full_name='bms.BOARD_STATUS_CELLBOARD4',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD4.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD4.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD4._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=486,
-  serialized_end=601,
-)
-
-
-_BOARD_STATUS_CELLBOARD5 = _descriptor.Descriptor(
-  name='BOARD_STATUS_CELLBOARD5',
-  full_name='bms.BOARD_STATUS_CELLBOARD5',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='errors', full_name='bms.BOARD_STATUS_CELLBOARD5.errors', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='balancing_status', full_name='bms.BOARD_STATUS_CELLBOARD5.balancing_status', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BOARD_STATUS_CELLBOARD5._inner_timestamp', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=603,
-  serialized_end=718,
-)
-
-
-_TEMPERATURES_CELLBOARD0 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD0',
-  full_name='bms.TEMPERATURES_CELLBOARD0',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD0.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD0.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD0.temp1', index=2,
+      name='temp0', full_name='bms.TEMPERATURES.temp0', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD0.temp2', index=3,
+      name='temp1', full_name='bms.TEMPERATURES.temp1', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD0.temp3', index=4,
+      name='temp2', full_name='bms.TEMPERATURES.temp2', index=4,
       number=5, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD0.temp4', index=5,
+      name='temp3', full_name='bms.TEMPERATURES.temp3', index=5,
       number=6, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD0.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD0._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
+      name='_inner_timestamp', full_name='bms.TEMPERATURES._inner_timestamp', index=6,
+      number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -406,71 +228,57 @@ _TEMPERATURES_CELLBOARD0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=883,
+  serialized_start=164,
+  serialized_end=323,
 )
 
 
-_TEMPERATURES_CELLBOARD1 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD1',
-  full_name='bms.TEMPERATURES_CELLBOARD1',
+_VOLTAGES = _descriptor.Descriptor(
+  name='VOLTAGES',
+  full_name='bms.VOLTAGES',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD1.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='cellboard_id', full_name='bms.VOLTAGES.cellboard_id', index=0,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD1.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      name='start_index', full_name='bms.VOLTAGES.start_index', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD1.temp1', index=2,
+      name='voltage0', full_name='bms.VOLTAGES.voltage0', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD1.temp2', index=3,
+      name='voltage1', full_name='bms.VOLTAGES.voltage1', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD1.temp3', index=4,
+      name='voltage2', full_name='bms.VOLTAGES.voltage2', index=4,
       number=5, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD1.temp4', index=5,
-      number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD1.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD1._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
+      name='_inner_timestamp', full_name='bms.VOLTAGES._inner_timestamp', index=5,
+      number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -487,692 +295,8 @@ _TEMPERATURES_CELLBOARD1 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=886,
-  serialized_end=1048,
-)
-
-
-_TEMPERATURES_CELLBOARD2 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD2',
-  full_name='bms.TEMPERATURES_CELLBOARD2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD2.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD2.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD2.temp1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD2.temp2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD2.temp3', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD2.temp4', index=5,
-      number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD2.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD2._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1051,
-  serialized_end=1213,
-)
-
-
-_TEMPERATURES_CELLBOARD3 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD3',
-  full_name='bms.TEMPERATURES_CELLBOARD3',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD3.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD3.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD3.temp1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD3.temp2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD3.temp3', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD3.temp4', index=5,
-      number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD3.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD3._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1216,
-  serialized_end=1378,
-)
-
-
-_TEMPERATURES_CELLBOARD4 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD4',
-  full_name='bms.TEMPERATURES_CELLBOARD4',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD4.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD4.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD4.temp1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD4.temp2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD4.temp3', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD4.temp4', index=5,
-      number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD4.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD4._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1381,
-  serialized_end=1543,
-)
-
-
-_TEMPERATURES_CELLBOARD5 = _descriptor.Descriptor(
-  name='TEMPERATURES_CELLBOARD5',
-  full_name='bms.TEMPERATURES_CELLBOARD5',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.TEMPERATURES_CELLBOARD5.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp0', full_name='bms.TEMPERATURES_CELLBOARD5.temp0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp1', full_name='bms.TEMPERATURES_CELLBOARD5.temp1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp2', full_name='bms.TEMPERATURES_CELLBOARD5.temp2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp3', full_name='bms.TEMPERATURES_CELLBOARD5.temp3', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp4', full_name='bms.TEMPERATURES_CELLBOARD5.temp4', index=5,
-      number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='temp5', full_name='bms.TEMPERATURES_CELLBOARD5.temp5', index=6,
-      number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.TEMPERATURES_CELLBOARD5._inner_timestamp', index=7,
-      number=8, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1546,
-  serialized_end=1708,
-)
-
-
-_VOLTAGES_CELLBOARD0 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD0',
-  full_name='bms.VOLTAGES_CELLBOARD0',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD0.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD0.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD0.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD0.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD0._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1710,
-  serialized_end=1832,
-)
-
-
-_VOLTAGES_CELLBOARD1 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD1',
-  full_name='bms.VOLTAGES_CELLBOARD1',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD1.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD1.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD1.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD1.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD1._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1834,
-  serialized_end=1956,
-)
-
-
-_VOLTAGES_CELLBOARD2 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD2',
-  full_name='bms.VOLTAGES_CELLBOARD2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD2.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD2.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD2.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD2.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD2._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1958,
-  serialized_end=2080,
-)
-
-
-_VOLTAGES_CELLBOARD3 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD3',
-  full_name='bms.VOLTAGES_CELLBOARD3',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD3.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD3.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD3.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD3.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD3._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2082,
-  serialized_end=2204,
-)
-
-
-_VOLTAGES_CELLBOARD4 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD4',
-  full_name='bms.VOLTAGES_CELLBOARD4',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD4.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD4.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD4.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD4.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD4._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2206,
-  serialized_end=2328,
-)
-
-
-_VOLTAGES_CELLBOARD5 = _descriptor.Descriptor(
-  name='VOLTAGES_CELLBOARD5',
-  full_name='bms.VOLTAGES_CELLBOARD5',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_index', full_name='bms.VOLTAGES_CELLBOARD5.start_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage0', full_name='bms.VOLTAGES_CELLBOARD5.voltage0', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage1', full_name='bms.VOLTAGES_CELLBOARD5.voltage1', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='voltage2', full_name='bms.VOLTAGES_CELLBOARD5.voltage2', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.VOLTAGES_CELLBOARD5._inner_timestamp', index=4,
-      number=5, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2330,
-  serialized_end=2452,
+  serialized_start=326,
+  serialized_end=475,
 )
 
 
@@ -1185,21 +309,74 @@ _BALANCING = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='board_index', full_name='bms.BALANCING.board_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
+      name='cellboard_id', full_name='bms.BALANCING.cellboard_id', index=0,
+      number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cells', full_name='bms.BALANCING.cells', index=1,
+      name='board_index', full_name='bms.BALANCING.board_index', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.BALANCING._inner_timestamp', index=2,
+      name='cells', full_name='bms.BALANCING.cells', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='bms.BALANCING._inner_timestamp', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=477,
+  serialized_end=588,
+)
+
+
+_FW_UPDATE = _descriptor.Descriptor(
+  name='FW_UPDATE',
+  full_name='bms.FW_UPDATE',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cellboard_id', full_name='bms.FW_UPDATE.cellboard_id', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='board_index', full_name='bms.FW_UPDATE.board_index', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='bms.FW_UPDATE._inner_timestamp', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1217,47 +394,8 @@ _BALANCING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2454,
-  serialized_end=2527,
-)
-
-
-_FW_UPDATE = _descriptor.Descriptor(
-  name='FW_UPDATE',
-  full_name='bms.FW_UPDATE',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='board_index', full_name='bms.FW_UPDATE.board_index', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='bms.FW_UPDATE._inner_timestamp', index=1,
-      number=2, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2529,
-  serialized_end=2587,
+  serialized_start=590,
+  serialized_end=686,
 )
 
 
@@ -1288,8 +426,8 @@ _FLASH_CELLBOARD_0_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2589,
-  serialized_end=2637,
+  serialized_start=688,
+  serialized_end=736,
 )
 
 
@@ -1320,8 +458,8 @@ _FLASH_CELLBOARD_0_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2639,
-  serialized_end=2687,
+  serialized_start=738,
+  serialized_end=786,
 )
 
 
@@ -1352,8 +490,8 @@ _FLASH_CELLBOARD_1_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2689,
-  serialized_end=2737,
+  serialized_start=788,
+  serialized_end=836,
 )
 
 
@@ -1384,8 +522,8 @@ _FLASH_CELLBOARD_1_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2739,
-  serialized_end=2787,
+  serialized_start=838,
+  serialized_end=886,
 )
 
 
@@ -1416,8 +554,8 @@ _FLASH_CELLBOARD_2_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2789,
-  serialized_end=2837,
+  serialized_start=888,
+  serialized_end=936,
 )
 
 
@@ -1448,8 +586,8 @@ _FLASH_CELLBOARD_2_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2839,
-  serialized_end=2887,
+  serialized_start=938,
+  serialized_end=986,
 )
 
 
@@ -1480,8 +618,8 @@ _FLASH_CELLBOARD_3_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2889,
-  serialized_end=2937,
+  serialized_start=988,
+  serialized_end=1036,
 )
 
 
@@ -1512,8 +650,8 @@ _FLASH_CELLBOARD_3_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2939,
-  serialized_end=2987,
+  serialized_start=1038,
+  serialized_end=1086,
 )
 
 
@@ -1544,8 +682,8 @@ _FLASH_CELLBOARD_4_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2989,
-  serialized_end=3037,
+  serialized_start=1088,
+  serialized_end=1136,
 )
 
 
@@ -1576,8 +714,8 @@ _FLASH_CELLBOARD_4_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3039,
-  serialized_end=3087,
+  serialized_start=1138,
+  serialized_end=1186,
 )
 
 
@@ -1608,8 +746,8 @@ _FLASH_CELLBOARD_5_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3089,
-  serialized_end=3137,
+  serialized_start=1188,
+  serialized_end=1236,
 )
 
 
@@ -1640,8 +778,8 @@ _FLASH_CELLBOARD_5_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3139,
-  serialized_end=3187,
+  serialized_start=1238,
+  serialized_end=1286,
 )
 
 
@@ -1654,225 +792,120 @@ _PACK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD0', full_name='bms.Pack.BOARD_STATUS_CELLBOARD0', index=0,
+      name='BOARD_STATUS', full_name='bms.Pack.BOARD_STATUS', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD1', full_name='bms.Pack.BOARD_STATUS_CELLBOARD1', index=1,
+      name='TEMPERATURES', full_name='bms.Pack.TEMPERATURES', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD2', full_name='bms.Pack.BOARD_STATUS_CELLBOARD2', index=2,
+      name='VOLTAGES', full_name='bms.Pack.VOLTAGES', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD3', full_name='bms.Pack.BOARD_STATUS_CELLBOARD3', index=3,
+      name='BALANCING', full_name='bms.Pack.BALANCING', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD4', full_name='bms.Pack.BOARD_STATUS_CELLBOARD4', index=4,
+      name='FW_UPDATE', full_name='bms.Pack.FW_UPDATE', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BOARD_STATUS_CELLBOARD5', full_name='bms.Pack.BOARD_STATUS_CELLBOARD5', index=5,
+      name='FLASH_CELLBOARD_0_TX', full_name='bms.Pack.FLASH_CELLBOARD_0_TX', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD0', full_name='bms.Pack.TEMPERATURES_CELLBOARD0', index=6,
+      name='FLASH_CELLBOARD_0_RX', full_name='bms.Pack.FLASH_CELLBOARD_0_RX', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD1', full_name='bms.Pack.TEMPERATURES_CELLBOARD1', index=7,
+      name='FLASH_CELLBOARD_1_TX', full_name='bms.Pack.FLASH_CELLBOARD_1_TX', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD2', full_name='bms.Pack.TEMPERATURES_CELLBOARD2', index=8,
+      name='FLASH_CELLBOARD_1_RX', full_name='bms.Pack.FLASH_CELLBOARD_1_RX', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD3', full_name='bms.Pack.TEMPERATURES_CELLBOARD3', index=9,
+      name='FLASH_CELLBOARD_2_TX', full_name='bms.Pack.FLASH_CELLBOARD_2_TX', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD4', full_name='bms.Pack.TEMPERATURES_CELLBOARD4', index=10,
+      name='FLASH_CELLBOARD_2_RX', full_name='bms.Pack.FLASH_CELLBOARD_2_RX', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TEMPERATURES_CELLBOARD5', full_name='bms.Pack.TEMPERATURES_CELLBOARD5', index=11,
+      name='FLASH_CELLBOARD_3_TX', full_name='bms.Pack.FLASH_CELLBOARD_3_TX', index=11,
       number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD0', full_name='bms.Pack.VOLTAGES_CELLBOARD0', index=12,
+      name='FLASH_CELLBOARD_3_RX', full_name='bms.Pack.FLASH_CELLBOARD_3_RX', index=12,
       number=13, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD1', full_name='bms.Pack.VOLTAGES_CELLBOARD1', index=13,
+      name='FLASH_CELLBOARD_4_TX', full_name='bms.Pack.FLASH_CELLBOARD_4_TX', index=13,
       number=14, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD2', full_name='bms.Pack.VOLTAGES_CELLBOARD2', index=14,
+      name='FLASH_CELLBOARD_4_RX', full_name='bms.Pack.FLASH_CELLBOARD_4_RX', index=14,
       number=15, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD3', full_name='bms.Pack.VOLTAGES_CELLBOARD3', index=15,
+      name='FLASH_CELLBOARD_5_TX', full_name='bms.Pack.FLASH_CELLBOARD_5_TX', index=15,
       number=16, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD4', full_name='bms.Pack.VOLTAGES_CELLBOARD4', index=16,
+      name='FLASH_CELLBOARD_5_RX', full_name='bms.Pack.FLASH_CELLBOARD_5_RX', index=16,
       number=17, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='VOLTAGES_CELLBOARD5', full_name='bms.Pack.VOLTAGES_CELLBOARD5', index=17,
-      number=18, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='BALANCING', full_name='bms.Pack.BALANCING', index=18,
-      number=19, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FW_UPDATE', full_name='bms.Pack.FW_UPDATE', index=19,
-      number=20, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_0_TX', full_name='bms.Pack.FLASH_CELLBOARD_0_TX', index=20,
-      number=21, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_0_RX', full_name='bms.Pack.FLASH_CELLBOARD_0_RX', index=21,
-      number=22, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_1_TX', full_name='bms.Pack.FLASH_CELLBOARD_1_TX', index=22,
-      number=23, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_1_RX', full_name='bms.Pack.FLASH_CELLBOARD_1_RX', index=23,
-      number=24, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_2_TX', full_name='bms.Pack.FLASH_CELLBOARD_2_TX', index=24,
-      number=25, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_2_RX', full_name='bms.Pack.FLASH_CELLBOARD_2_RX', index=25,
-      number=26, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_3_TX', full_name='bms.Pack.FLASH_CELLBOARD_3_TX', index=26,
-      number=27, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_3_RX', full_name='bms.Pack.FLASH_CELLBOARD_3_RX', index=27,
-      number=28, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_4_TX', full_name='bms.Pack.FLASH_CELLBOARD_4_TX', index=28,
-      number=29, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_4_RX', full_name='bms.Pack.FLASH_CELLBOARD_4_RX', index=29,
-      number=30, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_5_TX', full_name='bms.Pack.FLASH_CELLBOARD_5_TX', index=30,
-      number=31, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_5_RX', full_name='bms.Pack.FLASH_CELLBOARD_5_RX', index=31,
-      number=32, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1889,34 +922,19 @@ _PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3190,
-  serialized_end=5036,
+  serialized_start=1289,
+  serialized_end=2164,
 )
 
-_BOARD_STATUS_CELLBOARD0.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_BOARD_STATUS_CELLBOARD1.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_BOARD_STATUS_CELLBOARD2.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_BOARD_STATUS_CELLBOARD3.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_BOARD_STATUS_CELLBOARD4.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_BOARD_STATUS_CELLBOARD5.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD0'].message_type = _BOARD_STATUS_CELLBOARD0
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD1'].message_type = _BOARD_STATUS_CELLBOARD1
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD2'].message_type = _BOARD_STATUS_CELLBOARD2
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD3'].message_type = _BOARD_STATUS_CELLBOARD3
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD4'].message_type = _BOARD_STATUS_CELLBOARD4
-_PACK.fields_by_name['BOARD_STATUS_CELLBOARD5'].message_type = _BOARD_STATUS_CELLBOARD5
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD0'].message_type = _TEMPERATURES_CELLBOARD0
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD1'].message_type = _TEMPERATURES_CELLBOARD1
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD2'].message_type = _TEMPERATURES_CELLBOARD2
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD3'].message_type = _TEMPERATURES_CELLBOARD3
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD4'].message_type = _TEMPERATURES_CELLBOARD4
-_PACK.fields_by_name['TEMPERATURES_CELLBOARD5'].message_type = _TEMPERATURES_CELLBOARD5
-_PACK.fields_by_name['VOLTAGES_CELLBOARD0'].message_type = _VOLTAGES_CELLBOARD0
-_PACK.fields_by_name['VOLTAGES_CELLBOARD1'].message_type = _VOLTAGES_CELLBOARD1
-_PACK.fields_by_name['VOLTAGES_CELLBOARD2'].message_type = _VOLTAGES_CELLBOARD2
-_PACK.fields_by_name['VOLTAGES_CELLBOARD3'].message_type = _VOLTAGES_CELLBOARD3
-_PACK.fields_by_name['VOLTAGES_CELLBOARD4'].message_type = _VOLTAGES_CELLBOARD4
-_PACK.fields_by_name['VOLTAGES_CELLBOARD5'].message_type = _VOLTAGES_CELLBOARD5
+_BOARD_STATUS.fields_by_name['cellboard_id'].enum_type = _CELLBOARD
+_BOARD_STATUS.fields_by_name['balancing_status'].enum_type = _BALANCINGSTATUS
+_TEMPERATURES.fields_by_name['cellboard_id'].enum_type = _CELLBOARD
+_VOLTAGES.fields_by_name['cellboard_id'].enum_type = _CELLBOARD
+_BALANCING.fields_by_name['cellboard_id'].enum_type = _CELLBOARD
+_FW_UPDATE.fields_by_name['cellboard_id'].enum_type = _CELLBOARD
+_PACK.fields_by_name['BOARD_STATUS'].message_type = _BOARD_STATUS
+_PACK.fields_by_name['TEMPERATURES'].message_type = _TEMPERATURES
+_PACK.fields_by_name['VOLTAGES'].message_type = _VOLTAGES
 _PACK.fields_by_name['BALANCING'].message_type = _BALANCING
 _PACK.fields_by_name['FW_UPDATE'].message_type = _FW_UPDATE
 _PACK.fields_by_name['FLASH_CELLBOARD_0_TX'].message_type = _FLASH_CELLBOARD_0_TX
@@ -1931,24 +949,9 @@ _PACK.fields_by_name['FLASH_CELLBOARD_4_TX'].message_type = _FLASH_CELLBOARD_4_T
 _PACK.fields_by_name['FLASH_CELLBOARD_4_RX'].message_type = _FLASH_CELLBOARD_4_RX
 _PACK.fields_by_name['FLASH_CELLBOARD_5_TX'].message_type = _FLASH_CELLBOARD_5_TX
 _PACK.fields_by_name['FLASH_CELLBOARD_5_RX'].message_type = _FLASH_CELLBOARD_5_RX
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD0'] = _BOARD_STATUS_CELLBOARD0
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD1'] = _BOARD_STATUS_CELLBOARD1
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD2'] = _BOARD_STATUS_CELLBOARD2
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD3'] = _BOARD_STATUS_CELLBOARD3
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD4'] = _BOARD_STATUS_CELLBOARD4
-DESCRIPTOR.message_types_by_name['BOARD_STATUS_CELLBOARD5'] = _BOARD_STATUS_CELLBOARD5
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD0'] = _TEMPERATURES_CELLBOARD0
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD1'] = _TEMPERATURES_CELLBOARD1
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD2'] = _TEMPERATURES_CELLBOARD2
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD3'] = _TEMPERATURES_CELLBOARD3
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD4'] = _TEMPERATURES_CELLBOARD4
-DESCRIPTOR.message_types_by_name['TEMPERATURES_CELLBOARD5'] = _TEMPERATURES_CELLBOARD5
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD0'] = _VOLTAGES_CELLBOARD0
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD1'] = _VOLTAGES_CELLBOARD1
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD2'] = _VOLTAGES_CELLBOARD2
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD3'] = _VOLTAGES_CELLBOARD3
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD4'] = _VOLTAGES_CELLBOARD4
-DESCRIPTOR.message_types_by_name['VOLTAGES_CELLBOARD5'] = _VOLTAGES_CELLBOARD5
+DESCRIPTOR.message_types_by_name['BOARD_STATUS'] = _BOARD_STATUS
+DESCRIPTOR.message_types_by_name['TEMPERATURES'] = _TEMPERATURES
+DESCRIPTOR.message_types_by_name['VOLTAGES'] = _VOLTAGES
 DESCRIPTOR.message_types_by_name['BALANCING'] = _BALANCING
 DESCRIPTOR.message_types_by_name['FW_UPDATE'] = _FW_UPDATE
 DESCRIPTOR.message_types_by_name['FLASH_CELLBOARD_0_TX'] = _FLASH_CELLBOARD_0_TX
@@ -1964,134 +967,30 @@ DESCRIPTOR.message_types_by_name['FLASH_CELLBOARD_4_RX'] = _FLASH_CELLBOARD_4_RX
 DESCRIPTOR.message_types_by_name['FLASH_CELLBOARD_5_TX'] = _FLASH_CELLBOARD_5_TX
 DESCRIPTOR.message_types_by_name['FLASH_CELLBOARD_5_RX'] = _FLASH_CELLBOARD_5_RX
 DESCRIPTOR.message_types_by_name['Pack'] = _PACK
+DESCRIPTOR.enum_types_by_name['Cellboard'] = _CELLBOARD
 DESCRIPTOR.enum_types_by_name['BalancingStatus'] = _BALANCINGSTATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-BOARD_STATUS_CELLBOARD0 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD0', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD0,
+BOARD_STATUS = _reflection.GeneratedProtocolMessageType('BOARD_STATUS', (_message.Message,), {
+  'DESCRIPTOR' : _BOARD_STATUS,
   '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD0)
+  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS)
   })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD0)
+_sym_db.RegisterMessage(BOARD_STATUS)
 
-BOARD_STATUS_CELLBOARD1 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD1', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD1,
+TEMPERATURES = _reflection.GeneratedProtocolMessageType('TEMPERATURES', (_message.Message,), {
+  'DESCRIPTOR' : _TEMPERATURES,
   '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD1)
+  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES)
   })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD1)
+_sym_db.RegisterMessage(TEMPERATURES)
 
-BOARD_STATUS_CELLBOARD2 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD2', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD2,
+VOLTAGES = _reflection.GeneratedProtocolMessageType('VOLTAGES', (_message.Message,), {
+  'DESCRIPTOR' : _VOLTAGES,
   '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD2)
+  # @@protoc_insertion_point(class_scope:bms.VOLTAGES)
   })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD2)
-
-BOARD_STATUS_CELLBOARD3 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD3', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD3,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD3)
-  })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD3)
-
-BOARD_STATUS_CELLBOARD4 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD4', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD4,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD4)
-  })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD4)
-
-BOARD_STATUS_CELLBOARD5 = _reflection.GeneratedProtocolMessageType('BOARD_STATUS_CELLBOARD5', (_message.Message,), {
-  'DESCRIPTOR' : _BOARD_STATUS_CELLBOARD5,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD5)
-  })
-_sym_db.RegisterMessage(BOARD_STATUS_CELLBOARD5)
-
-TEMPERATURES_CELLBOARD0 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD0', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD0,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD0)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD0)
-
-TEMPERATURES_CELLBOARD1 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD1', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD1,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD1)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD1)
-
-TEMPERATURES_CELLBOARD2 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD2', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD2,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD2)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD2)
-
-TEMPERATURES_CELLBOARD3 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD3', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD3,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD3)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD3)
-
-TEMPERATURES_CELLBOARD4 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD4', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD4,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD4)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD4)
-
-TEMPERATURES_CELLBOARD5 = _reflection.GeneratedProtocolMessageType('TEMPERATURES_CELLBOARD5', (_message.Message,), {
-  'DESCRIPTOR' : _TEMPERATURES_CELLBOARD5,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD5)
-  })
-_sym_db.RegisterMessage(TEMPERATURES_CELLBOARD5)
-
-VOLTAGES_CELLBOARD0 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD0', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD0,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD0)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD0)
-
-VOLTAGES_CELLBOARD1 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD1', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD1,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD1)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD1)
-
-VOLTAGES_CELLBOARD2 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD2', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD2,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD2)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD2)
-
-VOLTAGES_CELLBOARD3 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD3', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD3,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD3)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD3)
-
-VOLTAGES_CELLBOARD4 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD4', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD4,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD4)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD4)
-
-VOLTAGES_CELLBOARD5 = _reflection.GeneratedProtocolMessageType('VOLTAGES_CELLBOARD5', (_message.Message,), {
-  'DESCRIPTOR' : _VOLTAGES_CELLBOARD5,
-  '__module__' : 'bms_pb2'
-  # @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD5)
-  })
-_sym_db.RegisterMessage(VOLTAGES_CELLBOARD5)
+_sym_db.RegisterMessage(VOLTAGES)
 
 BALANCING = _reflection.GeneratedProtocolMessageType('BALANCING', (_message.Message,), {
   'DESCRIPTOR' : _BALANCING,

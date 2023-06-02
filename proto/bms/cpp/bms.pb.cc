@@ -15,12 +15,7 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BALANCING_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_bms_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto;
@@ -34,91 +29,21 @@ extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::S
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FW_UPDATE_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4_bms_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_bms_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_bms_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_bms_2eproto;
 namespace bms {
-class BOARD_STATUS_CELLBOARD0DefaultTypeInternal {
+class BOARD_STATUSDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD0> _instance;
-} _BOARD_STATUS_CELLBOARD0_default_instance_;
-class BOARD_STATUS_CELLBOARD1DefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS> _instance;
+} _BOARD_STATUS_default_instance_;
+class TEMPERATURESDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD1> _instance;
-} _BOARD_STATUS_CELLBOARD1_default_instance_;
-class BOARD_STATUS_CELLBOARD2DefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES> _instance;
+} _TEMPERATURES_default_instance_;
+class VOLTAGESDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD2> _instance;
-} _BOARD_STATUS_CELLBOARD2_default_instance_;
-class BOARD_STATUS_CELLBOARD3DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD3> _instance;
-} _BOARD_STATUS_CELLBOARD3_default_instance_;
-class BOARD_STATUS_CELLBOARD4DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD4> _instance;
-} _BOARD_STATUS_CELLBOARD4_default_instance_;
-class BOARD_STATUS_CELLBOARD5DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BOARD_STATUS_CELLBOARD5> _instance;
-} _BOARD_STATUS_CELLBOARD5_default_instance_;
-class TEMPERATURES_CELLBOARD0DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD0> _instance;
-} _TEMPERATURES_CELLBOARD0_default_instance_;
-class TEMPERATURES_CELLBOARD1DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD1> _instance;
-} _TEMPERATURES_CELLBOARD1_default_instance_;
-class TEMPERATURES_CELLBOARD2DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD2> _instance;
-} _TEMPERATURES_CELLBOARD2_default_instance_;
-class TEMPERATURES_CELLBOARD3DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD3> _instance;
-} _TEMPERATURES_CELLBOARD3_default_instance_;
-class TEMPERATURES_CELLBOARD4DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD4> _instance;
-} _TEMPERATURES_CELLBOARD4_default_instance_;
-class TEMPERATURES_CELLBOARD5DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TEMPERATURES_CELLBOARD5> _instance;
-} _TEMPERATURES_CELLBOARD5_default_instance_;
-class VOLTAGES_CELLBOARD0DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD0> _instance;
-} _VOLTAGES_CELLBOARD0_default_instance_;
-class VOLTAGES_CELLBOARD1DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD1> _instance;
-} _VOLTAGES_CELLBOARD1_default_instance_;
-class VOLTAGES_CELLBOARD2DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD2> _instance;
-} _VOLTAGES_CELLBOARD2_default_instance_;
-class VOLTAGES_CELLBOARD3DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD3> _instance;
-} _VOLTAGES_CELLBOARD3_default_instance_;
-class VOLTAGES_CELLBOARD4DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD4> _instance;
-} _VOLTAGES_CELLBOARD4_default_instance_;
-class VOLTAGES_CELLBOARD5DefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES_CELLBOARD5> _instance;
-} _VOLTAGES_CELLBOARD5_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VOLTAGES> _instance;
+} _VOLTAGES_default_instance_;
 class BALANCINGDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BALANCING> _instance;
@@ -194,89 +119,19 @@ static void InitDefaultsscc_info_BALANCING_bms_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BALANCING_bms_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BALANCING_bms_2eproto}, {}};
 
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto() {
+static void InitDefaultsscc_info_BOARD_STATUS_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD0();
+    void* ptr = &::bms::_BOARD_STATUS_default_instance_;
+    new (ptr) ::bms::BOARD_STATUS();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::BOARD_STATUS_CELLBOARD0::InitAsDefaultInstance();
+  ::bms::BOARD_STATUS::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD1();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD1::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD2();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD3();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD4();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_BOARD_STATUS_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::BOARD_STATUS_CELLBOARD5();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::BOARD_STATUS_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BOARD_STATUS_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_BOARD_STATUS_bms_2eproto}, {}};
 
 static void InitDefaultsscc_info_FLASH_CELLBOARD_0_RX_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -471,26 +326,11 @@ static void InitDefaultsscc_info_Pack_bms_2eproto() {
   ::bms::Pack::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<32> scc_info_Pack_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 32, 0, InitDefaultsscc_info_Pack_bms_2eproto}, {
-      &scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base,
-      &scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base,
-      &scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base,
-      &scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base,
-      &scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base,
-      &scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base,
-      &scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base,
-      &scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base,
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<17> scc_info_Pack_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 17, 0, InitDefaultsscc_info_Pack_bms_2eproto}, {
+      &scc_info_BOARD_STATUS_bms_2eproto.base,
+      &scc_info_TEMPERATURES_bms_2eproto.base,
+      &scc_info_VOLTAGES_bms_2eproto.base,
       &scc_info_BALANCING_bms_2eproto.base,
       &scc_info_FW_UPDATE_bms_2eproto.base,
       &scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto.base,
@@ -506,370 +346,77 @@ static void InitDefaultsscc_info_Pack_bms_2eproto() {
       &scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto.base,
       &scc_info_FLASH_CELLBOARD_5_RX_bms_2eproto.base,}};
 
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD0_bms_2eproto() {
+static void InitDefaultsscc_info_TEMPERATURES_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD0();
+    void* ptr = &::bms::_TEMPERATURES_default_instance_;
+    new (ptr) ::bms::TEMPERATURES();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::TEMPERATURES_CELLBOARD0::InitAsDefaultInstance();
+  ::bms::TEMPERATURES::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD0_bms_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_bms_2eproto}, {}};
 
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD1_bms_2eproto() {
+static void InitDefaultsscc_info_VOLTAGES_bms_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD1();
+    void* ptr = &::bms::_VOLTAGES_default_instance_;
+    new (ptr) ::bms::VOLTAGES();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::bms::TEMPERATURES_CELLBOARD1::InitAsDefaultInstance();
+  ::bms::VOLTAGES::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD1_bms_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_bms_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_bms_2eproto}, {}};
 
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD2_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD2();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD2_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD3_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD3();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD3_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD4_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD4();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD4_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_TEMPERATURES_CELLBOARD5_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_TEMPERATURES_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::TEMPERATURES_CELLBOARD5();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::TEMPERATURES_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_TEMPERATURES_CELLBOARD5_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD0_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD0_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD0();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD0::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD0_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD0_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD1_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD1_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD1();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD1::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD1_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD1_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD2_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD2_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD2();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD2::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD2_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD2_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD3_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD3_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD3();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD3::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD3_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD3_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD4_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD4_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD4();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD4::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD4_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD4_bms_2eproto}, {}};
-
-static void InitDefaultsscc_info_VOLTAGES_CELLBOARD5_bms_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::bms::_VOLTAGES_CELLBOARD5_default_instance_;
-    new (ptr) ::bms::VOLTAGES_CELLBOARD5();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bms::VOLTAGES_CELLBOARD5::InitAsDefaultInstance();
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VOLTAGES_CELLBOARD5_bms_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VOLTAGES_CELLBOARD5_bms_2eproto}, {}};
-
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bms_2eproto[33];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_bms_2eproto[1];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_bms_2eproto[18];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_bms_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_bms_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bms_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD0, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS, cellboard_id_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS, errors_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS, balancing_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD1, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, cellboard_id_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, temp0_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, temp1_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, temp2_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, temp3_),
+  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES, _inner_timestamp_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD2, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD3, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD4, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, errors_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, balancing_status_),
-  PROTOBUF_FIELD_OFFSET(::bms::BOARD_STATUS_CELLBOARD5, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD0, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD1, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD2, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD3, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD4, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp0_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp1_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp2_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp3_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp4_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, temp5_),
-  PROTOBUF_FIELD_OFFSET(::bms::TEMPERATURES_CELLBOARD5, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD0, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD1, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD2, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD3, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD4, _inner_timestamp_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, start_index_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage0_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage1_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, voltage2_),
-  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES_CELLBOARD5, _inner_timestamp_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, cellboard_id_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, start_index_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, voltage0_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, voltage1_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, voltage2_),
+  PROTOBUF_FIELD_OFFSET(::bms::VOLTAGES, _inner_timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bms::BALANCING, cellboard_id_),
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, board_index_),
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, cells_),
   PROTOBUF_FIELD_OFFSET(::bms::BALANCING, _inner_timestamp_),
@@ -878,6 +425,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bms_2eproto::offsets[] PROTOBU
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, cellboard_id_),
   PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, board_index_),
   PROTOBUF_FIELD_OFFSET(::bms::FW_UPDATE, _inner_timestamp_),
   ~0u,  // no _has_bits_
@@ -957,24 +505,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bms_2eproto::offsets[] PROTOBU
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard0_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard1_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard2_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard3_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard4_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_cellboard5_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard0_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard1_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard2_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard3_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard4_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_cellboard5_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard0_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard1_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard2_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard3_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard4_),
-  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_cellboard5_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, board_status_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, temperatures_),
+  PROTOBUF_FIELD_OFFSET(::bms::Pack, voltages_),
   PROTOBUF_FIELD_OFFSET(::bms::Pack, balancing_),
   PROTOBUF_FIELD_OFFSET(::bms::Pack, fw_update_),
   PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_0_tx_),
@@ -991,60 +524,30 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_bms_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::bms::Pack, flash_cellboard_5_rx_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD0)},
-  { 8, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD1)},
-  { 16, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD2)},
-  { 24, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD3)},
-  { 32, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD4)},
-  { 40, -1, sizeof(::bms::BOARD_STATUS_CELLBOARD5)},
-  { 48, -1, sizeof(::bms::TEMPERATURES_CELLBOARD0)},
-  { 61, -1, sizeof(::bms::TEMPERATURES_CELLBOARD1)},
-  { 74, -1, sizeof(::bms::TEMPERATURES_CELLBOARD2)},
-  { 87, -1, sizeof(::bms::TEMPERATURES_CELLBOARD3)},
-  { 100, -1, sizeof(::bms::TEMPERATURES_CELLBOARD4)},
-  { 113, -1, sizeof(::bms::TEMPERATURES_CELLBOARD5)},
-  { 126, -1, sizeof(::bms::VOLTAGES_CELLBOARD0)},
-  { 136, -1, sizeof(::bms::VOLTAGES_CELLBOARD1)},
-  { 146, -1, sizeof(::bms::VOLTAGES_CELLBOARD2)},
-  { 156, -1, sizeof(::bms::VOLTAGES_CELLBOARD3)},
-  { 166, -1, sizeof(::bms::VOLTAGES_CELLBOARD4)},
-  { 176, -1, sizeof(::bms::VOLTAGES_CELLBOARD5)},
-  { 186, -1, sizeof(::bms::BALANCING)},
-  { 194, -1, sizeof(::bms::FW_UPDATE)},
-  { 201, -1, sizeof(::bms::FLASH_CELLBOARD_0_TX)},
-  { 207, -1, sizeof(::bms::FLASH_CELLBOARD_0_RX)},
-  { 213, -1, sizeof(::bms::FLASH_CELLBOARD_1_TX)},
-  { 219, -1, sizeof(::bms::FLASH_CELLBOARD_1_RX)},
-  { 225, -1, sizeof(::bms::FLASH_CELLBOARD_2_TX)},
-  { 231, -1, sizeof(::bms::FLASH_CELLBOARD_2_RX)},
-  { 237, -1, sizeof(::bms::FLASH_CELLBOARD_3_TX)},
-  { 243, -1, sizeof(::bms::FLASH_CELLBOARD_3_RX)},
-  { 249, -1, sizeof(::bms::FLASH_CELLBOARD_4_TX)},
-  { 255, -1, sizeof(::bms::FLASH_CELLBOARD_4_RX)},
-  { 261, -1, sizeof(::bms::FLASH_CELLBOARD_5_TX)},
-  { 267, -1, sizeof(::bms::FLASH_CELLBOARD_5_RX)},
-  { 273, -1, sizeof(::bms::Pack)},
+  { 0, -1, sizeof(::bms::BOARD_STATUS)},
+  { 9, -1, sizeof(::bms::TEMPERATURES)},
+  { 21, -1, sizeof(::bms::VOLTAGES)},
+  { 32, -1, sizeof(::bms::BALANCING)},
+  { 41, -1, sizeof(::bms::FW_UPDATE)},
+  { 49, -1, sizeof(::bms::FLASH_CELLBOARD_0_TX)},
+  { 55, -1, sizeof(::bms::FLASH_CELLBOARD_0_RX)},
+  { 61, -1, sizeof(::bms::FLASH_CELLBOARD_1_TX)},
+  { 67, -1, sizeof(::bms::FLASH_CELLBOARD_1_RX)},
+  { 73, -1, sizeof(::bms::FLASH_CELLBOARD_2_TX)},
+  { 79, -1, sizeof(::bms::FLASH_CELLBOARD_2_RX)},
+  { 85, -1, sizeof(::bms::FLASH_CELLBOARD_3_TX)},
+  { 91, -1, sizeof(::bms::FLASH_CELLBOARD_3_RX)},
+  { 97, -1, sizeof(::bms::FLASH_CELLBOARD_4_TX)},
+  { 103, -1, sizeof(::bms::FLASH_CELLBOARD_4_RX)},
+  { 109, -1, sizeof(::bms::FLASH_CELLBOARD_5_TX)},
+  { 115, -1, sizeof(::bms::FLASH_CELLBOARD_5_RX)},
+  { 121, -1, sizeof(::bms::Pack)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_CELLBOARD5_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_CELLBOARD5_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD0_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD1_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD2_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD3_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD4_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_CELLBOARD5_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BOARD_STATUS_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_TEMPERATURES_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_VOLTAGES_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_BALANCING_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FW_UPDATE_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::bms::_FLASH_CELLBOARD_0_TX_default_instance_),
@@ -1063,145 +566,73 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_bms_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\tbms.proto\022\003bms\"s\n\027BOARD_STATUS_CELLBOA"
-  "RD0\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030"
-  "\002 \001(\0162\024.bms.BalancingStatus\022\030\n\020_inner_ti"
-  "mestamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD1"
-  "\022\016\n\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001"
-  "(\0162\024.bms.BalancingStatus\022\030\n\020_inner_times"
-  "tamp\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD2\022\016\n"
-  "\006errors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162"
-  "\024.bms.BalancingStatus\022\030\n\020_inner_timestam"
-  "p\030\003 \001(\004\"s\n\027BOARD_STATUS_CELLBOARD3\022\016\n\006er"
-  "rors\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.b"
-  "ms.BalancingStatus\022\030\n\020_inner_timestamp\030\003"
-  " \001(\004\"s\n\027BOARD_STATUS_CELLBOARD4\022\016\n\006error"
-  "s\030\001 \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms."
-  "BalancingStatus\022\030\n\020_inner_timestamp\030\003 \001("
-  "\004\"s\n\027BOARD_STATUS_CELLBOARD5\022\016\n\006errors\030\001"
-  " \001(\r\022.\n\020balancing_status\030\002 \001(\0162\024.bms.Bal"
-  "ancingStatus\022\030\n\020_inner_timestamp\030\003 \001(\004\"\242"
-  "\001\n\027TEMPERATURES_CELLBOARD0\022\023\n\013start_inde"
-  "x\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n"
-  "\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001"
-  "(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timestamp\030\010 "
-  "\001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD1\022\023\n\013start"
-  "_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp1\030\003 \001"
-  "(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n\005temp"
-  "4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_timesta"
-  "mp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD2\022\023\n\013"
-  "start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n\005temp"
-  "1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001(\002\022\r\n"
-  "\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inner_ti"
-  "mestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELLBOARD"
-  "3\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001(\002\022\r\n"
-  "\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp3\030\005 \001"
-  "(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n\020_inn"
-  "er_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES_CELL"
-  "BOARD4\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp0\030\002 \001"
-  "(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n\005temp"
-  "3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001(\002\022\030\n"
-  "\020_inner_timestamp\030\010 \001(\004\"\242\001\n\027TEMPERATURES"
-  "_CELLBOARD5\022\023\n\013start_index\030\001 \001(\r\022\r\n\005temp"
-  "0\030\002 \001(\002\022\r\n\005temp1\030\003 \001(\002\022\r\n\005temp2\030\004 \001(\002\022\r\n"
-  "\005temp3\030\005 \001(\002\022\r\n\005temp4\030\006 \001(\002\022\r\n\005temp5\030\007 \001"
-  "(\002\022\030\n\020_inner_timestamp\030\010 \001(\004\"z\n\023VOLTAGES"
-  "_CELLBOARD0\022\023\n\013start_index\030\001 \001(\r\022\020\n\010volt"
-  "age0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010voltage2"
-  "\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023VOLT"
-  "AGES_CELLBOARD1\022\023\n\013start_index\030\001 \001(\r\022\020\n\010"
-  "voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010volt"
-  "age2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004\"z\n\023"
-  "VOLTAGES_CELLBOARD2\022\023\n\013start_index\030\001 \001(\r"
-  "\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002\022\020\n\010"
-  "voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005 \001(\004"
-  "\"z\n\023VOLTAGES_CELLBOARD3\022\023\n\013start_index\030\001"
-  " \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003 \001(\002"
-  "\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timestamp\030\005"
-  " \001(\004\"z\n\023VOLTAGES_CELLBOARD4\022\023\n\013start_ind"
-  "ex\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltage1\030\003"
-  " \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_timesta"
-  "mp\030\005 \001(\004\"z\n\023VOLTAGES_CELLBOARD5\022\023\n\013start"
-  "_index\030\001 \001(\r\022\020\n\010voltage0\030\002 \001(\002\022\020\n\010voltag"
-  "e1\030\003 \001(\002\022\020\n\010voltage2\030\004 \001(\002\022\030\n\020_inner_tim"
-  "estamp\030\005 \001(\004\"I\n\tBALANCING\022\023\n\013board_index"
-  "\030\001 \001(\r\022\r\n\005cells\030\002 \001(\r\022\030\n\020_inner_timestam"
-  "p\030\003 \001(\004\":\n\tFW_UPDATE\022\023\n\013board_index\030\001 \001("
-  "\r\022\030\n\020_inner_timestamp\030\002 \001(\004\"0\n\024FLASH_CEL"
-  "LBOARD_0_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-  "\024FLASH_CELLBOARD_0_RX\022\030\n\020_inner_timestam"
-  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_TX\022\030\n\020_inne"
-  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_1_R"
-  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
-  "LBOARD_2_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-  "\024FLASH_CELLBOARD_2_RX\022\030\n\020_inner_timestam"
-  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_TX\022\030\n\020_inne"
-  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_3_R"
-  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CEL"
-  "LBOARD_4_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n"
-  "\024FLASH_CELLBOARD_4_RX\022\030\n\020_inner_timestam"
-  "p\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_TX\022\030\n\020_inne"
-  "r_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_5_R"
-  "X\022\030\n\020_inner_timestamp\030\001 \001(\004\"\266\016\n\004Pack\022=\n\027"
-  "BOARD_STATUS_CELLBOARD0\030\001 \003(\0132\034.bms.BOAR"
-  "D_STATUS_CELLBOARD0\022=\n\027BOARD_STATUS_CELL"
-  "BOARD1\030\002 \003(\0132\034.bms.BOARD_STATUS_CELLBOAR"
-  "D1\022=\n\027BOARD_STATUS_CELLBOARD2\030\003 \003(\0132\034.bm"
-  "s.BOARD_STATUS_CELLBOARD2\022=\n\027BOARD_STATU"
-  "S_CELLBOARD3\030\004 \003(\0132\034.bms.BOARD_STATUS_CE"
-  "LLBOARD3\022=\n\027BOARD_STATUS_CELLBOARD4\030\005 \003("
-  "\0132\034.bms.BOARD_STATUS_CELLBOARD4\022=\n\027BOARD"
-  "_STATUS_CELLBOARD5\030\006 \003(\0132\034.bms.BOARD_STA"
-  "TUS_CELLBOARD5\022=\n\027TEMPERATURES_CELLBOARD"
-  "0\030\007 \003(\0132\034.bms.TEMPERATURES_CELLBOARD0\022=\n"
-  "\027TEMPERATURES_CELLBOARD1\030\010 \003(\0132\034.bms.TEM"
-  "PERATURES_CELLBOARD1\022=\n\027TEMPERATURES_CEL"
-  "LBOARD2\030\t \003(\0132\034.bms.TEMPERATURES_CELLBOA"
-  "RD2\022=\n\027TEMPERATURES_CELLBOARD3\030\n \003(\0132\034.b"
-  "ms.TEMPERATURES_CELLBOARD3\022=\n\027TEMPERATUR"
-  "ES_CELLBOARD4\030\013 \003(\0132\034.bms.TEMPERATURES_C"
-  "ELLBOARD4\022=\n\027TEMPERATURES_CELLBOARD5\030\014 \003"
-  "(\0132\034.bms.TEMPERATURES_CELLBOARD5\0225\n\023VOLT"
-  "AGES_CELLBOARD0\030\r \003(\0132\030.bms.VOLTAGES_CEL"
-  "LBOARD0\0225\n\023VOLTAGES_CELLBOARD1\030\016 \003(\0132\030.b"
-  "ms.VOLTAGES_CELLBOARD1\0225\n\023VOLTAGES_CELLB"
-  "OARD2\030\017 \003(\0132\030.bms.VOLTAGES_CELLBOARD2\0225\n"
-  "\023VOLTAGES_CELLBOARD3\030\020 \003(\0132\030.bms.VOLTAGE"
-  "S_CELLBOARD3\0225\n\023VOLTAGES_CELLBOARD4\030\021 \003("
-  "\0132\030.bms.VOLTAGES_CELLBOARD4\0225\n\023VOLTAGES_"
-  "CELLBOARD5\030\022 \003(\0132\030.bms.VOLTAGES_CELLBOAR"
-  "D5\022!\n\tBALANCING\030\023 \003(\0132\016.bms.BALANCING\022!\n"
-  "\tFW_UPDATE\030\024 \003(\0132\016.bms.FW_UPDATE\0227\n\024FLAS"
-  "H_CELLBOARD_0_TX\030\025 \003(\0132\031.bms.FLASH_CELLB"
-  "OARD_0_TX\0227\n\024FLASH_CELLBOARD_0_RX\030\026 \003(\0132"
-  "\031.bms.FLASH_CELLBOARD_0_RX\0227\n\024FLASH_CELL"
-  "BOARD_1_TX\030\027 \003(\0132\031.bms.FLASH_CELLBOARD_1"
-  "_TX\0227\n\024FLASH_CELLBOARD_1_RX\030\030 \003(\0132\031.bms."
-  "FLASH_CELLBOARD_1_RX\0227\n\024FLASH_CELLBOARD_"
-  "2_TX\030\031 \003(\0132\031.bms.FLASH_CELLBOARD_2_TX\0227\n"
-  "\024FLASH_CELLBOARD_2_RX\030\032 \003(\0132\031.bms.FLASH_"
-  "CELLBOARD_2_RX\0227\n\024FLASH_CELLBOARD_3_TX\030\033"
-  " \003(\0132\031.bms.FLASH_CELLBOARD_3_TX\0227\n\024FLASH"
-  "_CELLBOARD_3_RX\030\034 \003(\0132\031.bms.FLASH_CELLBO"
-  "ARD_3_RX\0227\n\024FLASH_CELLBOARD_4_TX\030\035 \003(\0132\031"
-  ".bms.FLASH_CELLBOARD_4_TX\0227\n\024FLASH_CELLB"
-  "OARD_4_RX\030\036 \003(\0132\031.bms.FLASH_CELLBOARD_4_"
-  "RX\0227\n\024FLASH_CELLBOARD_5_TX\030\037 \003(\0132\031.bms.F"
-  "LASH_CELLBOARD_5_TX\0227\n\024FLASH_CELLBOARD_5"
-  "_RX\030  \003(\0132\031.bms.FLASH_CELLBOARD_5_RX*I\n\017"
-  "BalancingStatus\022\027\n\023BalancingStatus_OFF\020\000"
-  "\022\035\n\031BalancingStatus_DISCHARGE\020\001b\006proto3"
+  "\n\tbms.proto\022\003bms\"\216\001\n\014BOARD_STATUS\022$\n\014cel"
+  "lboard_id\030\001 \001(\0162\016.bms.Cellboard\022\016\n\006error"
+  "s\030\002 \001(\r\022.\n\020balancing_status\030\003 \001(\0162\024.bms."
+  "BalancingStatus\022\030\n\020_inner_timestamp\030\004 \001("
+  "\004\"\237\001\n\014TEMPERATURES\022$\n\014cellboard_id\030\001 \001(\016"
+  "2\016.bms.Cellboard\022\023\n\013start_index\030\002 \001(\r\022\r\n"
+  "\005temp0\030\003 \001(\002\022\r\n\005temp1\030\004 \001(\002\022\r\n\005temp2\030\005 \001"
+  "(\002\022\r\n\005temp3\030\006 \001(\002\022\030\n\020_inner_timestamp\030\007 "
+  "\001(\004\"\225\001\n\010VOLTAGES\022$\n\014cellboard_id\030\001 \001(\0162\016"
+  ".bms.Cellboard\022\023\n\013start_index\030\002 \001(\r\022\020\n\010v"
+  "oltage0\030\003 \001(\002\022\020\n\010voltage1\030\004 \001(\002\022\020\n\010volta"
+  "ge2\030\005 \001(\002\022\030\n\020_inner_timestamp\030\006 \001(\004\"o\n\tB"
+  "ALANCING\022$\n\014cellboard_id\030\001 \001(\0162\016.bms.Cel"
+  "lboard\022\023\n\013board_index\030\002 \001(\r\022\r\n\005cells\030\003 \001"
+  "(\r\022\030\n\020_inner_timestamp\030\004 \001(\004\"`\n\tFW_UPDAT"
+  "E\022$\n\014cellboard_id\030\001 \001(\0162\016.bms.Cellboard\022"
+  "\023\n\013board_index\030\002 \001(\r\022\030\n\020_inner_timestamp"
+  "\030\003 \001(\004\"0\n\024FLASH_CELLBOARD_0_TX\022\030\n\020_inner"
+  "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_0_RX"
+  "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+  "BOARD_1_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024"
+  "FLASH_CELLBOARD_1_RX\022\030\n\020_inner_timestamp"
+  "\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_TX\022\030\n\020_inner"
+  "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_2_RX"
+  "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+  "BOARD_3_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024"
+  "FLASH_CELLBOARD_3_RX\022\030\n\020_inner_timestamp"
+  "\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_TX\022\030\n\020_inner"
+  "_timestamp\030\001 \001(\004\"0\n\024FLASH_CELLBOARD_4_RX"
+  "\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024FLASH_CELL"
+  "BOARD_5_TX\022\030\n\020_inner_timestamp\030\001 \001(\004\"0\n\024"
+  "FLASH_CELLBOARD_5_RX\022\030\n\020_inner_timestamp"
+  "\030\001 \001(\004\"\353\006\n\004Pack\022\'\n\014BOARD_STATUS\030\001 \003(\0132\021."
+  "bms.BOARD_STATUS\022\'\n\014TEMPERATURES\030\002 \003(\0132\021"
+  ".bms.TEMPERATURES\022\037\n\010VOLTAGES\030\003 \003(\0132\r.bm"
+  "s.VOLTAGES\022!\n\tBALANCING\030\004 \003(\0132\016.bms.BALA"
+  "NCING\022!\n\tFW_UPDATE\030\005 \003(\0132\016.bms.FW_UPDATE"
+  "\0227\n\024FLASH_CELLBOARD_0_TX\030\006 \003(\0132\031.bms.FLA"
+  "SH_CELLBOARD_0_TX\0227\n\024FLASH_CELLBOARD_0_R"
+  "X\030\007 \003(\0132\031.bms.FLASH_CELLBOARD_0_RX\0227\n\024FL"
+  "ASH_CELLBOARD_1_TX\030\010 \003(\0132\031.bms.FLASH_CEL"
+  "LBOARD_1_TX\0227\n\024FLASH_CELLBOARD_1_RX\030\t \003("
+  "\0132\031.bms.FLASH_CELLBOARD_1_RX\0227\n\024FLASH_CE"
+  "LLBOARD_2_TX\030\n \003(\0132\031.bms.FLASH_CELLBOARD"
+  "_2_TX\0227\n\024FLASH_CELLBOARD_2_RX\030\013 \003(\0132\031.bm"
+  "s.FLASH_CELLBOARD_2_RX\0227\n\024FLASH_CELLBOAR"
+  "D_3_TX\030\014 \003(\0132\031.bms.FLASH_CELLBOARD_3_TX\022"
+  "7\n\024FLASH_CELLBOARD_3_RX\030\r \003(\0132\031.bms.FLAS"
+  "H_CELLBOARD_3_RX\0227\n\024FLASH_CELLBOARD_4_TX"
+  "\030\016 \003(\0132\031.bms.FLASH_CELLBOARD_4_TX\0227\n\024FLA"
+  "SH_CELLBOARD_4_RX\030\017 \003(\0132\031.bms.FLASH_CELL"
+  "BOARD_4_RX\0227\n\024FLASH_CELLBOARD_5_TX\030\020 \003(\013"
+  "2\031.bms.FLASH_CELLBOARD_5_TX\0227\n\024FLASH_CEL"
+  "LBOARD_5_RX\030\021 \003(\0132\031.bms.FLASH_CELLBOARD_"
+  "5_RX*\255\001\n\tCellboard\022\031\n\025Cellboard_CELLBOAR"
+  "D_0\020\000\022\031\n\025Cellboard_CELLBOARD_1\020\001\022\031\n\025Cell"
+  "board_CELLBOARD_2\020\002\022\031\n\025Cellboard_CELLBOA"
+  "RD_3\020\003\022\031\n\025Cellboard_CELLBOARD_4\020\004\022\031\n\025Cel"
+  "lboard_CELLBOARD_5\020\005*I\n\017BalancingStatus\022"
+  "\027\n\023BalancingStatus_OFF\020\000\022\035\n\031BalancingSta"
+  "tus_DISCHARGE\020\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_bms_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bms_2eproto_sccs[33] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bms_2eproto_sccs[18] = {
   &scc_info_BALANCING_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base,
-  &scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base,
+  &scc_info_BOARD_STATUS_bms_2eproto.base,
   &scc_info_FLASH_CELLBOARD_0_RX_bms_2eproto.base,
   &scc_info_FLASH_CELLBOARD_0_TX_bms_2eproto.base,
   &scc_info_FLASH_CELLBOARD_1_RX_bms_2eproto.base,
@@ -1216,33 +647,41 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_bms
   &scc_info_FLASH_CELLBOARD_5_TX_bms_2eproto.base,
   &scc_info_FW_UPDATE_bms_2eproto.base,
   &scc_info_Pack_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base,
-  &scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base,
-  &scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base,
+  &scc_info_TEMPERATURES_bms_2eproto.base,
+  &scc_info_VOLTAGES_bms_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_bms_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_bms_2eproto = {
-  false, false, descriptor_table_protodef_bms_2eproto, "bms.proto", 5119,
-  &descriptor_table_bms_2eproto_once, descriptor_table_bms_2eproto_sccs, descriptor_table_bms_2eproto_deps, 33, 0,
+  false, false, descriptor_table_protodef_bms_2eproto, "bms.proto", 2423,
+  &descriptor_table_bms_2eproto_once, descriptor_table_bms_2eproto_sccs, descriptor_table_bms_2eproto_deps, 18, 0,
   schemas, file_default_instances, TableStruct_bms_2eproto::offsets,
-  file_level_metadata_bms_2eproto, 33, file_level_enum_descriptors_bms_2eproto, file_level_service_descriptors_bms_2eproto,
+  file_level_metadata_bms_2eproto, 18, file_level_enum_descriptors_bms_2eproto, file_level_service_descriptors_bms_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_bms_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_bms_2eproto)), true);
 namespace bms {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BalancingStatus_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cellboard_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_bms_2eproto);
   return file_level_enum_descriptors_bms_2eproto[0];
+}
+bool Cellboard_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BalancingStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_bms_2eproto);
+  return file_level_enum_descriptors_bms_2eproto[1];
 }
 bool BalancingStatus_IsValid(int value) {
   switch (value) {
@@ -1257,71 +696,71 @@ bool BalancingStatus_IsValid(int value) {
 
 // ===================================================================
 
-void BOARD_STATUS_CELLBOARD0::InitAsDefaultInstance() {
+void BOARD_STATUS::InitAsDefaultInstance() {
 }
-class BOARD_STATUS_CELLBOARD0::_Internal {
+class BOARD_STATUS::_Internal {
  public:
 };
 
-BOARD_STATUS_CELLBOARD0::BOARD_STATUS_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+BOARD_STATUS::BOARD_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD0)
+  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS)
 }
-BOARD_STATUS_CELLBOARD0::BOARD_STATUS_CELLBOARD0(const BOARD_STATUS_CELLBOARD0& from)
+BOARD_STATUS::BOARD_STATUS(const BOARD_STATUS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD0)
+  ::memcpy(&cellboard_id_, &from.cellboard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&balancing_status_) -
+    reinterpret_cast<char*>(&cellboard_id_)) + sizeof(balancing_status_));
+  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS)
 }
 
-void BOARD_STATUS_CELLBOARD0::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
+void BOARD_STATUS::SharedCtor() {
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&balancing_status_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(balancing_status_));
 }
 
-BOARD_STATUS_CELLBOARD0::~BOARD_STATUS_CELLBOARD0() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD0)
+BOARD_STATUS::~BOARD_STATUS() {
+  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void BOARD_STATUS_CELLBOARD0::SharedDtor() {
+void BOARD_STATUS::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void BOARD_STATUS_CELLBOARD0::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD0* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD0* >(object);
+void BOARD_STATUS::ArenaDtor(void* object) {
+  BOARD_STATUS* _this = reinterpret_cast< BOARD_STATUS* >(object);
   (void)_this;
 }
-void BOARD_STATUS_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void BOARD_STATUS::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void BOARD_STATUS_CELLBOARD0::SetCachedSize(int size) const {
+void BOARD_STATUS::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BOARD_STATUS_CELLBOARD0& BOARD_STATUS_CELLBOARD0::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD0_bms_2eproto.base);
+const BOARD_STATUS& BOARD_STATUS::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void BOARD_STATUS_CELLBOARD0::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD0)
+void BOARD_STATUS::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&balancing_status_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(balancing_status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BOARD_STATUS_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* BOARD_STATUS::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -1329,24 +768,32 @@ const char* BOARD_STATUS_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 errors = 1;
+      // .bms.Cellboard cellboard_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_cellboard_id(static_cast<::bms::Cellboard>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint32 errors = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .bms.BalancingStatus balancing_status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // .bms.BalancingStatus balancing_status = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // uint64 _inner_timestamp = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -1373,65 +820,78 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD0::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD0)
+  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_cellboard_id(), target);
   }
 
-  // .bms.BalancingStatus balancing_status = 2;
+  // uint32 errors = 2;
+  if (this->errors() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_errors(), target);
+  }
+
+  // .bms.BalancingStatus balancing_status = 3;
   if (this->balancing_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
+      3, this->_internal_balancing_status(), target);
   }
 
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD0)
+  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS)
   return target;
 }
 
-size_t BOARD_STATUS_CELLBOARD0::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD0)
+size_t BOARD_STATUS::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 errors = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cellboard_id());
+  }
+
+  // uint32 errors = 2;
   if (this->errors() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_errors());
   }
 
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal__inner_timestamp());
+  }
+
+  // .bms.BalancingStatus balancing_status = 3;
+  if (this->balancing_status() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1443,140 +903,143 @@ size_t BOARD_STATUS_CELLBOARD0::ByteSizeLong() const {
   return total_size;
 }
 
-void BOARD_STATUS_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD0)
+void BOARD_STATUS::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS)
   GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD0* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD0>(
+  const BOARD_STATUS* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS)
     MergeFrom(*source);
   }
 }
 
-void BOARD_STATUS_CELLBOARD0::MergeFrom(const BOARD_STATUS_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD0)
+void BOARD_STATUS::MergeFrom(const BOARD_STATUS& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.cellboard_id() != 0) {
+    _internal_set_cellboard_id(from._internal_cellboard_id());
+  }
   if (from.errors() != 0) {
     _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
   }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
+  if (from.balancing_status() != 0) {
+    _internal_set_balancing_status(from._internal_balancing_status());
+  }
 }
 
-void BOARD_STATUS_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD0)
+void BOARD_STATUS::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void BOARD_STATUS_CELLBOARD0::CopyFrom(const BOARD_STATUS_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD0)
+void BOARD_STATUS::CopyFrom(const BOARD_STATUS& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool BOARD_STATUS_CELLBOARD0::IsInitialized() const {
+bool BOARD_STATUS::IsInitialized() const {
   return true;
 }
 
-void BOARD_STATUS_CELLBOARD0::InternalSwap(BOARD_STATUS_CELLBOARD0* other) {
+void BOARD_STATUS::InternalSwap(BOARD_STATUS* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD0, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD0::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD0, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
+      PROTOBUF_FIELD_OFFSET(BOARD_STATUS, balancing_status_)
+      + sizeof(BOARD_STATUS::balancing_status_)
+      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS, cellboard_id_)>(
+          reinterpret_cast<char*>(&cellboard_id_),
+          reinterpret_cast<char*>(&other->cellboard_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD0::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void BOARD_STATUS_CELLBOARD1::InitAsDefaultInstance() {
+void TEMPERATURES::InitAsDefaultInstance() {
 }
-class BOARD_STATUS_CELLBOARD1::_Internal {
+class TEMPERATURES::_Internal {
  public:
 };
 
-BOARD_STATUS_CELLBOARD1::BOARD_STATUS_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+TEMPERATURES::TEMPERATURES(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD1)
+  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES)
 }
-BOARD_STATUS_CELLBOARD1::BOARD_STATUS_CELLBOARD1(const BOARD_STATUS_CELLBOARD1& from)
+TEMPERATURES::TEMPERATURES(const TEMPERATURES& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
+  ::memcpy(&cellboard_id_, &from.cellboard_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD1)
+    reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
+  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES)
 }
 
-void BOARD_STATUS_CELLBOARD1::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
+void TEMPERATURES::SharedCtor() {
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
 }
 
-BOARD_STATUS_CELLBOARD1::~BOARD_STATUS_CELLBOARD1() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD1)
+TEMPERATURES::~TEMPERATURES() {
+  // @@protoc_insertion_point(destructor:bms.TEMPERATURES)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void BOARD_STATUS_CELLBOARD1::SharedDtor() {
+void TEMPERATURES::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void BOARD_STATUS_CELLBOARD1::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD1* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD1* >(object);
+void TEMPERATURES::ArenaDtor(void* object) {
+  TEMPERATURES* _this = reinterpret_cast< TEMPERATURES* >(object);
   (void)_this;
 }
-void BOARD_STATUS_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void TEMPERATURES::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void BOARD_STATUS_CELLBOARD1::SetCachedSize(int size) const {
+void TEMPERATURES::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const BOARD_STATUS_CELLBOARD1& BOARD_STATUS_CELLBOARD1::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD1_bms_2eproto.base);
+const TEMPERATURES& TEMPERATURES::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void BOARD_STATUS_CELLBOARD1::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD1)
+void TEMPERATURES::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&errors_, 0, static_cast<size_t>(
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BOARD_STATUS_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* TEMPERATURES::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -1584,1333 +1047,52 @@ const char* BOARD_STATUS_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 errors = 1;
+      // .bms.Cellboard cellboard_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .bms.BalancingStatus balancing_status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
+          _internal_set_cellboard_id(static_cast<::bms::Cellboard>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD1::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD1)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD1)
-  return target;
-}
-
-size_t BOARD_STATUS_CELLBOARD1::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD1)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_errors());
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void BOARD_STATUS_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD1)
-    MergeFrom(*source);
-  }
-}
-
-void BOARD_STATUS_CELLBOARD1::MergeFrom(const BOARD_STATUS_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.errors() != 0) {
-    _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void BOARD_STATUS_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void BOARD_STATUS_CELLBOARD1::CopyFrom(const BOARD_STATUS_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BOARD_STATUS_CELLBOARD1::IsInitialized() const {
-  return true;
-}
-
-void BOARD_STATUS_CELLBOARD1::InternalSwap(BOARD_STATUS_CELLBOARD1* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD1, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD1::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD1, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD1::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void BOARD_STATUS_CELLBOARD2::InitAsDefaultInstance() {
-}
-class BOARD_STATUS_CELLBOARD2::_Internal {
- public:
-};
-
-BOARD_STATUS_CELLBOARD2::BOARD_STATUS_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD2)
-}
-BOARD_STATUS_CELLBOARD2::BOARD_STATUS_CELLBOARD2(const BOARD_STATUS_CELLBOARD2& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD2)
-}
-
-void BOARD_STATUS_CELLBOARD2::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-}
-
-BOARD_STATUS_CELLBOARD2::~BOARD_STATUS_CELLBOARD2() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD2)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void BOARD_STATUS_CELLBOARD2::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void BOARD_STATUS_CELLBOARD2::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD2* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD2* >(object);
-  (void)_this;
-}
-void BOARD_STATUS_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void BOARD_STATUS_CELLBOARD2::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const BOARD_STATUS_CELLBOARD2& BOARD_STATUS_CELLBOARD2::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD2_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void BOARD_STATUS_CELLBOARD2::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BOARD_STATUS_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 errors = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .bms.BalancingStatus balancing_status = 2;
+      // uint32 start_index = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD2::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD2)
-  return target;
-}
-
-size_t BOARD_STATUS_CELLBOARD2::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD2)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_errors());
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void BOARD_STATUS_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD2* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD2>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD2)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD2)
-    MergeFrom(*source);
-  }
-}
-
-void BOARD_STATUS_CELLBOARD2::MergeFrom(const BOARD_STATUS_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.errors() != 0) {
-    _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void BOARD_STATUS_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void BOARD_STATUS_CELLBOARD2::CopyFrom(const BOARD_STATUS_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BOARD_STATUS_CELLBOARD2::IsInitialized() const {
-  return true;
-}
-
-void BOARD_STATUS_CELLBOARD2::InternalSwap(BOARD_STATUS_CELLBOARD2* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD2, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD2::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD2, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD2::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void BOARD_STATUS_CELLBOARD3::InitAsDefaultInstance() {
-}
-class BOARD_STATUS_CELLBOARD3::_Internal {
- public:
-};
-
-BOARD_STATUS_CELLBOARD3::BOARD_STATUS_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD3)
-}
-BOARD_STATUS_CELLBOARD3::BOARD_STATUS_CELLBOARD3(const BOARD_STATUS_CELLBOARD3& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD3)
-}
-
-void BOARD_STATUS_CELLBOARD3::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-}
-
-BOARD_STATUS_CELLBOARD3::~BOARD_STATUS_CELLBOARD3() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD3)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void BOARD_STATUS_CELLBOARD3::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void BOARD_STATUS_CELLBOARD3::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD3* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD3* >(object);
-  (void)_this;
-}
-void BOARD_STATUS_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void BOARD_STATUS_CELLBOARD3::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const BOARD_STATUS_CELLBOARD3& BOARD_STATUS_CELLBOARD3::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD3_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void BOARD_STATUS_CELLBOARD3::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BOARD_STATUS_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 errors = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .bms.BalancingStatus balancing_status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD3::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD3)
-  return target;
-}
-
-size_t BOARD_STATUS_CELLBOARD3::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD3)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_errors());
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void BOARD_STATUS_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD3* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD3>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD3)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD3)
-    MergeFrom(*source);
-  }
-}
-
-void BOARD_STATUS_CELLBOARD3::MergeFrom(const BOARD_STATUS_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.errors() != 0) {
-    _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void BOARD_STATUS_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void BOARD_STATUS_CELLBOARD3::CopyFrom(const BOARD_STATUS_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BOARD_STATUS_CELLBOARD3::IsInitialized() const {
-  return true;
-}
-
-void BOARD_STATUS_CELLBOARD3::InternalSwap(BOARD_STATUS_CELLBOARD3* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD3, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD3::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD3, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD3::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void BOARD_STATUS_CELLBOARD4::InitAsDefaultInstance() {
-}
-class BOARD_STATUS_CELLBOARD4::_Internal {
- public:
-};
-
-BOARD_STATUS_CELLBOARD4::BOARD_STATUS_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD4)
-}
-BOARD_STATUS_CELLBOARD4::BOARD_STATUS_CELLBOARD4(const BOARD_STATUS_CELLBOARD4& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD4)
-}
-
-void BOARD_STATUS_CELLBOARD4::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-}
-
-BOARD_STATUS_CELLBOARD4::~BOARD_STATUS_CELLBOARD4() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD4)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void BOARD_STATUS_CELLBOARD4::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void BOARD_STATUS_CELLBOARD4::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD4* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD4* >(object);
-  (void)_this;
-}
-void BOARD_STATUS_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void BOARD_STATUS_CELLBOARD4::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const BOARD_STATUS_CELLBOARD4& BOARD_STATUS_CELLBOARD4::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD4_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void BOARD_STATUS_CELLBOARD4::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BOARD_STATUS_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 errors = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .bms.BalancingStatus balancing_status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD4::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD4)
-  return target;
-}
-
-size_t BOARD_STATUS_CELLBOARD4::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD4)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_errors());
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void BOARD_STATUS_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD4* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD4>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD4)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD4)
-    MergeFrom(*source);
-  }
-}
-
-void BOARD_STATUS_CELLBOARD4::MergeFrom(const BOARD_STATUS_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.errors() != 0) {
-    _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void BOARD_STATUS_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void BOARD_STATUS_CELLBOARD4::CopyFrom(const BOARD_STATUS_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BOARD_STATUS_CELLBOARD4::IsInitialized() const {
-  return true;
-}
-
-void BOARD_STATUS_CELLBOARD4::InternalSwap(BOARD_STATUS_CELLBOARD4* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD4, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD4::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD4, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD4::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void BOARD_STATUS_CELLBOARD5::InitAsDefaultInstance() {
-}
-class BOARD_STATUS_CELLBOARD5::_Internal {
- public:
-};
-
-BOARD_STATUS_CELLBOARD5::BOARD_STATUS_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.BOARD_STATUS_CELLBOARD5)
-}
-BOARD_STATUS_CELLBOARD5::BOARD_STATUS_CELLBOARD5(const BOARD_STATUS_CELLBOARD5& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&errors_, &from.errors_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.BOARD_STATUS_CELLBOARD5)
-}
-
-void BOARD_STATUS_CELLBOARD5::SharedCtor() {
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-}
-
-BOARD_STATUS_CELLBOARD5::~BOARD_STATUS_CELLBOARD5() {
-  // @@protoc_insertion_point(destructor:bms.BOARD_STATUS_CELLBOARD5)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void BOARD_STATUS_CELLBOARD5::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void BOARD_STATUS_CELLBOARD5::ArenaDtor(void* object) {
-  BOARD_STATUS_CELLBOARD5* _this = reinterpret_cast< BOARD_STATUS_CELLBOARD5* >(object);
-  (void)_this;
-}
-void BOARD_STATUS_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void BOARD_STATUS_CELLBOARD5::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const BOARD_STATUS_CELLBOARD5& BOARD_STATUS_CELLBOARD5::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_BOARD_STATUS_CELLBOARD5_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void BOARD_STATUS_CELLBOARD5::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.BOARD_STATUS_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&errors_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&errors_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BOARD_STATUS_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 errors = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          errors_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .bms.BalancingStatus balancing_status = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_balancing_status(static_cast<::bms::BalancingStatus>(val));
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* BOARD_STATUS_CELLBOARD5::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.BOARD_STATUS_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_errors(), target);
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_balancing_status(), target);
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.BOARD_STATUS_CELLBOARD5)
-  return target;
-}
-
-size_t BOARD_STATUS_CELLBOARD5::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.BOARD_STATUS_CELLBOARD5)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 errors = 1;
-  if (this->errors() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_errors());
-  }
-
-  // .bms.BalancingStatus balancing_status = 2;
-  if (this->balancing_status() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_balancing_status());
-  }
-
-  // uint64 _inner_timestamp = 3;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void BOARD_STATUS_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.BOARD_STATUS_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  const BOARD_STATUS_CELLBOARD5* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BOARD_STATUS_CELLBOARD5>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.BOARD_STATUS_CELLBOARD5)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.BOARD_STATUS_CELLBOARD5)
-    MergeFrom(*source);
-  }
-}
-
-void BOARD_STATUS_CELLBOARD5::MergeFrom(const BOARD_STATUS_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.BOARD_STATUS_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.errors() != 0) {
-    _internal_set_errors(from._internal_errors());
-  }
-  if (from.balancing_status() != 0) {
-    _internal_set_balancing_status(from._internal_balancing_status());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void BOARD_STATUS_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.BOARD_STATUS_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void BOARD_STATUS_CELLBOARD5::CopyFrom(const BOARD_STATUS_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.BOARD_STATUS_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BOARD_STATUS_CELLBOARD5::IsInitialized() const {
-  return true;
-}
-
-void BOARD_STATUS_CELLBOARD5::InternalSwap(BOARD_STATUS_CELLBOARD5* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD5, _inner_timestamp_)
-      + sizeof(BOARD_STATUS_CELLBOARD5::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BOARD_STATUS_CELLBOARD5, errors_)>(
-          reinterpret_cast<char*>(&errors_),
-          reinterpret_cast<char*>(&other->errors_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BOARD_STATUS_CELLBOARD5::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void TEMPERATURES_CELLBOARD0::InitAsDefaultInstance() {
-}
-class TEMPERATURES_CELLBOARD0::_Internal {
- public:
-};
-
-TEMPERATURES_CELLBOARD0::TEMPERATURES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD0)
-}
-TEMPERATURES_CELLBOARD0::TEMPERATURES_CELLBOARD0(const TEMPERATURES_CELLBOARD0& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD0)
-}
-
-void TEMPERATURES_CELLBOARD0::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-}
-
-TEMPERATURES_CELLBOARD0::~TEMPERATURES_CELLBOARD0() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD0)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void TEMPERATURES_CELLBOARD0::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void TEMPERATURES_CELLBOARD0::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD0* _this = reinterpret_cast< TEMPERATURES_CELLBOARD0* >(object);
-  (void)_this;
-}
-void TEMPERATURES_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TEMPERATURES_CELLBOARD0::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const TEMPERATURES_CELLBOARD0& TEMPERATURES_CELLBOARD0::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD0_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void TEMPERATURES_CELLBOARD0::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD0)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TEMPERATURES_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+      // float temp0 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
           temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
+      // float temp1 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
           temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
+      // float temp2 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
           temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
+      // float temp3 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
           temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp4 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
+      // uint64 _inner_timestamp = 7;
       case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -2937,118 +1119,109 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD0::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD0)
+  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 start_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_cellboard_id(), target);
+  }
+
+  // uint32 start_index = 2;
   if (this->start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_start_index(), target);
   }
 
-  // float temp0 = 2;
+  // float temp0 = 3;
   if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp0(), target);
   }
 
-  // float temp1 = 3;
+  // float temp1 = 4;
   if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp1(), target);
   }
 
-  // float temp2 = 4;
+  // float temp2 = 5;
   if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp2(), target);
   }
 
-  // float temp3 = 5;
+  // float temp3 = 6;
   if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp3(), target);
   }
 
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
+  // uint64 _inner_timestamp = 7;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD0)
+  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES)
   return target;
 }
 
-size_t TEMPERATURES_CELLBOARD0::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD0)
+size_t TEMPERATURES::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 start_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cellboard_id());
+  }
+
+  // uint32 start_index = 2;
   if (this->start_index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_start_index());
   }
 
-  // float temp0 = 2;
+  // float temp0 = 3;
   if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float temp1 = 3;
+  // float temp1 = 4;
   if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float temp2 = 4;
+  // float temp2 = 5;
   if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float temp3 = 5;
+  // float temp3 = 6;
   if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
+  // uint64 _inner_timestamp = 7;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3060,28 +1233,31 @@ size_t TEMPERATURES_CELLBOARD0::ByteSizeLong() const {
   return total_size;
 }
 
-void TEMPERATURES_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD0)
+void TEMPERATURES::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES)
   GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD0* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD0>(
+  const TEMPERATURES* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES)
     MergeFrom(*source);
   }
 }
 
-void TEMPERATURES_CELLBOARD0::MergeFrom(const TEMPERATURES_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD0)
+void TEMPERATURES::MergeFrom(const TEMPERATURES& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.cellboard_id() != 0) {
+    _internal_set_cellboard_id(from._internal_cellboard_id());
+  }
   if (from.start_index() != 0) {
     _internal_set_start_index(from._internal_start_index());
   }
@@ -3097,118 +1273,112 @@ void TEMPERATURES_CELLBOARD0::MergeFrom(const TEMPERATURES_CELLBOARD0& from) {
   if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
     _internal_set_temp3(from._internal_temp3());
   }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
 }
 
-void TEMPERATURES_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD0)
+void TEMPERATURES::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void TEMPERATURES_CELLBOARD0::CopyFrom(const TEMPERATURES_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD0)
+void TEMPERATURES::CopyFrom(const TEMPERATURES& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool TEMPERATURES_CELLBOARD0::IsInitialized() const {
+bool TEMPERATURES::IsInitialized() const {
   return true;
 }
 
-void TEMPERATURES_CELLBOARD0::InternalSwap(TEMPERATURES_CELLBOARD0* other) {
+void TEMPERATURES::InternalSwap(TEMPERATURES* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD0, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD0::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD0, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
+      PROTOBUF_FIELD_OFFSET(TEMPERATURES, _inner_timestamp_)
+      + sizeof(TEMPERATURES::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(TEMPERATURES, cellboard_id_)>(
+          reinterpret_cast<char*>(&cellboard_id_),
+          reinterpret_cast<char*>(&other->cellboard_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD0::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void TEMPERATURES_CELLBOARD1::InitAsDefaultInstance() {
+void VOLTAGES::InitAsDefaultInstance() {
 }
-class TEMPERATURES_CELLBOARD1::_Internal {
+class VOLTAGES::_Internal {
  public:
 };
 
-TEMPERATURES_CELLBOARD1::TEMPERATURES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+VOLTAGES::VOLTAGES(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD1)
+  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES)
 }
-TEMPERATURES_CELLBOARD1::TEMPERATURES_CELLBOARD1(const TEMPERATURES_CELLBOARD1& from)
+VOLTAGES::VOLTAGES(const VOLTAGES& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD1)
+  ::memcpy(&cellboard_id_, &from.cellboard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&voltage2_) -
+    reinterpret_cast<char*>(&cellboard_id_)) + sizeof(voltage2_));
+  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES)
 }
 
-void TEMPERATURES_CELLBOARD1::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
+void VOLTAGES::SharedCtor() {
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&voltage2_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(voltage2_));
 }
 
-TEMPERATURES_CELLBOARD1::~TEMPERATURES_CELLBOARD1() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD1)
+VOLTAGES::~VOLTAGES() {
+  // @@protoc_insertion_point(destructor:bms.VOLTAGES)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void TEMPERATURES_CELLBOARD1::SharedDtor() {
+void VOLTAGES::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void TEMPERATURES_CELLBOARD1::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD1* _this = reinterpret_cast< TEMPERATURES_CELLBOARD1* >(object);
+void VOLTAGES::ArenaDtor(void* object) {
+  VOLTAGES* _this = reinterpret_cast< VOLTAGES* >(object);
   (void)_this;
 }
-void TEMPERATURES_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void VOLTAGES::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void TEMPERATURES_CELLBOARD1::SetCachedSize(int size) const {
+void VOLTAGES::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const TEMPERATURES_CELLBOARD1& TEMPERATURES_CELLBOARD1::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD1_bms_2eproto.base);
+const VOLTAGES& VOLTAGES::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_bms_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void TEMPERATURES_CELLBOARD1::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD1)
+void VOLTAGES::Clear() {
+// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&voltage2_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(voltage2_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TEMPERATURES_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VOLTAGES::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -3216,58 +1386,45 @@ const char* TEMPERATURES_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 start_index = 1;
+      // .bms.Cellboard cellboard_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_cellboard_id(static_cast<::bms::Cellboard>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint32 start_index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp1 = 3;
+      // float voltage0 = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp2 = 4;
+      // float voltage1 = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp3 = 5;
+      // float voltage2 = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else goto handle_unusual;
         continue;
-      // float temp4 = 6;
+      // uint64 _inner_timestamp = 6;
       case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3294,1849 +1451,98 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD1::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD1)
+  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 start_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_cellboard_id(), target);
+  }
+
+  // uint32 start_index = 2;
   if (this->start_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_start_index(), target);
   }
 
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD1)
-  return target;
-}
-
-size_t TEMPERATURES_CELLBOARD1::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD1)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TEMPERATURES_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD1)
-    MergeFrom(*source);
-  }
-}
-
-void TEMPERATURES_CELLBOARD1::MergeFrom(const TEMPERATURES_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
-    _internal_set_temp0(from._internal_temp0());
-  }
-  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
-    _internal_set_temp1(from._internal_temp1());
-  }
-  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
-    _internal_set_temp2(from._internal_temp2());
-  }
-  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
-    _internal_set_temp3(from._internal_temp3());
-  }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
-}
-
-void TEMPERATURES_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TEMPERATURES_CELLBOARD1::CopyFrom(const TEMPERATURES_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD1)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TEMPERATURES_CELLBOARD1::IsInitialized() const {
-  return true;
-}
-
-void TEMPERATURES_CELLBOARD1::InternalSwap(TEMPERATURES_CELLBOARD1* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD1, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD1::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD1, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD1::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void TEMPERATURES_CELLBOARD2::InitAsDefaultInstance() {
-}
-class TEMPERATURES_CELLBOARD2::_Internal {
- public:
-};
-
-TEMPERATURES_CELLBOARD2::TEMPERATURES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD2)
-}
-TEMPERATURES_CELLBOARD2::TEMPERATURES_CELLBOARD2(const TEMPERATURES_CELLBOARD2& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD2)
-}
-
-void TEMPERATURES_CELLBOARD2::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-}
-
-TEMPERATURES_CELLBOARD2::~TEMPERATURES_CELLBOARD2() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD2)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void TEMPERATURES_CELLBOARD2::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void TEMPERATURES_CELLBOARD2::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD2* _this = reinterpret_cast< TEMPERATURES_CELLBOARD2* >(object);
-  (void)_this;
-}
-void TEMPERATURES_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TEMPERATURES_CELLBOARD2::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const TEMPERATURES_CELLBOARD2& TEMPERATURES_CELLBOARD2::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD2_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void TEMPERATURES_CELLBOARD2::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TEMPERATURES_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp4 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD2::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD2)
-  return target;
-}
-
-size_t TEMPERATURES_CELLBOARD2::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD2)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TEMPERATURES_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD2* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD2>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD2)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD2)
-    MergeFrom(*source);
-  }
-}
-
-void TEMPERATURES_CELLBOARD2::MergeFrom(const TEMPERATURES_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
-    _internal_set_temp0(from._internal_temp0());
-  }
-  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
-    _internal_set_temp1(from._internal_temp1());
-  }
-  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
-    _internal_set_temp2(from._internal_temp2());
-  }
-  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
-    _internal_set_temp3(from._internal_temp3());
-  }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
-}
-
-void TEMPERATURES_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TEMPERATURES_CELLBOARD2::CopyFrom(const TEMPERATURES_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TEMPERATURES_CELLBOARD2::IsInitialized() const {
-  return true;
-}
-
-void TEMPERATURES_CELLBOARD2::InternalSwap(TEMPERATURES_CELLBOARD2* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD2, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD2::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD2, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD2::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void TEMPERATURES_CELLBOARD3::InitAsDefaultInstance() {
-}
-class TEMPERATURES_CELLBOARD3::_Internal {
- public:
-};
-
-TEMPERATURES_CELLBOARD3::TEMPERATURES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD3)
-}
-TEMPERATURES_CELLBOARD3::TEMPERATURES_CELLBOARD3(const TEMPERATURES_CELLBOARD3& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD3)
-}
-
-void TEMPERATURES_CELLBOARD3::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-}
-
-TEMPERATURES_CELLBOARD3::~TEMPERATURES_CELLBOARD3() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD3)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void TEMPERATURES_CELLBOARD3::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void TEMPERATURES_CELLBOARD3::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD3* _this = reinterpret_cast< TEMPERATURES_CELLBOARD3* >(object);
-  (void)_this;
-}
-void TEMPERATURES_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TEMPERATURES_CELLBOARD3::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const TEMPERATURES_CELLBOARD3& TEMPERATURES_CELLBOARD3::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD3_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void TEMPERATURES_CELLBOARD3::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TEMPERATURES_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp4 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD3::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD3)
-  return target;
-}
-
-size_t TEMPERATURES_CELLBOARD3::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD3)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TEMPERATURES_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD3* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD3>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD3)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD3)
-    MergeFrom(*source);
-  }
-}
-
-void TEMPERATURES_CELLBOARD3::MergeFrom(const TEMPERATURES_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
-    _internal_set_temp0(from._internal_temp0());
-  }
-  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
-    _internal_set_temp1(from._internal_temp1());
-  }
-  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
-    _internal_set_temp2(from._internal_temp2());
-  }
-  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
-    _internal_set_temp3(from._internal_temp3());
-  }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
-}
-
-void TEMPERATURES_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TEMPERATURES_CELLBOARD3::CopyFrom(const TEMPERATURES_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TEMPERATURES_CELLBOARD3::IsInitialized() const {
-  return true;
-}
-
-void TEMPERATURES_CELLBOARD3::InternalSwap(TEMPERATURES_CELLBOARD3* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD3, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD3::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD3, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD3::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void TEMPERATURES_CELLBOARD4::InitAsDefaultInstance() {
-}
-class TEMPERATURES_CELLBOARD4::_Internal {
- public:
-};
-
-TEMPERATURES_CELLBOARD4::TEMPERATURES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD4)
-}
-TEMPERATURES_CELLBOARD4::TEMPERATURES_CELLBOARD4(const TEMPERATURES_CELLBOARD4& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD4)
-}
-
-void TEMPERATURES_CELLBOARD4::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-}
-
-TEMPERATURES_CELLBOARD4::~TEMPERATURES_CELLBOARD4() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD4)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void TEMPERATURES_CELLBOARD4::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void TEMPERATURES_CELLBOARD4::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD4* _this = reinterpret_cast< TEMPERATURES_CELLBOARD4* >(object);
-  (void)_this;
-}
-void TEMPERATURES_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TEMPERATURES_CELLBOARD4::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const TEMPERATURES_CELLBOARD4& TEMPERATURES_CELLBOARD4::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD4_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void TEMPERATURES_CELLBOARD4::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TEMPERATURES_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp4 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD4::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD4)
-  return target;
-}
-
-size_t TEMPERATURES_CELLBOARD4::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD4)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TEMPERATURES_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD4* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD4>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD4)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD4)
-    MergeFrom(*source);
-  }
-}
-
-void TEMPERATURES_CELLBOARD4::MergeFrom(const TEMPERATURES_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
-    _internal_set_temp0(from._internal_temp0());
-  }
-  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
-    _internal_set_temp1(from._internal_temp1());
-  }
-  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
-    _internal_set_temp2(from._internal_temp2());
-  }
-  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
-    _internal_set_temp3(from._internal_temp3());
-  }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
-}
-
-void TEMPERATURES_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TEMPERATURES_CELLBOARD4::CopyFrom(const TEMPERATURES_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TEMPERATURES_CELLBOARD4::IsInitialized() const {
-  return true;
-}
-
-void TEMPERATURES_CELLBOARD4::InternalSwap(TEMPERATURES_CELLBOARD4* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD4, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD4::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD4, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD4::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void TEMPERATURES_CELLBOARD5::InitAsDefaultInstance() {
-}
-class TEMPERATURES_CELLBOARD5::_Internal {
- public:
-};
-
-TEMPERATURES_CELLBOARD5::TEMPERATURES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.TEMPERATURES_CELLBOARD5)
-}
-TEMPERATURES_CELLBOARD5::TEMPERATURES_CELLBOARD5(const TEMPERATURES_CELLBOARD5& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&temp5_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  // @@protoc_insertion_point(copy_constructor:bms.TEMPERATURES_CELLBOARD5)
-}
-
-void TEMPERATURES_CELLBOARD5::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-}
-
-TEMPERATURES_CELLBOARD5::~TEMPERATURES_CELLBOARD5() {
-  // @@protoc_insertion_point(destructor:bms.TEMPERATURES_CELLBOARD5)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void TEMPERATURES_CELLBOARD5::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void TEMPERATURES_CELLBOARD5::ArenaDtor(void* object) {
-  TEMPERATURES_CELLBOARD5* _this = reinterpret_cast< TEMPERATURES_CELLBOARD5* >(object);
-  (void)_this;
-}
-void TEMPERATURES_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TEMPERATURES_CELLBOARD5::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const TEMPERATURES_CELLBOARD5& TEMPERATURES_CELLBOARD5::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TEMPERATURES_CELLBOARD5_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void TEMPERATURES_CELLBOARD5::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.TEMPERATURES_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&temp5_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(temp5_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TEMPERATURES_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float temp0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          temp0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          temp1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          temp2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 45)) {
-          temp3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp4 = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 53)) {
-          temp4_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float temp5 = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 61)) {
-          temp5_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* TEMPERATURES_CELLBOARD5::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.TEMPERATURES_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_temp0(), target);
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_temp1(), target);
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_temp2(), target);
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_temp3(), target);
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_temp4(), target);
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_temp5(), target);
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.TEMPERATURES_CELLBOARD5)
-  return target;
-}
-
-size_t TEMPERATURES_CELLBOARD5::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.TEMPERATURES_CELLBOARD5)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float temp0 = 2;
-  if (!(this->temp0() <= 0 && this->temp0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp1 = 3;
-  if (!(this->temp1() <= 0 && this->temp1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp2 = 4;
-  if (!(this->temp2() <= 0 && this->temp2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp3 = 5;
-  if (!(this->temp3() <= 0 && this->temp3() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float temp4 = 6;
-  if (!(this->temp4() <= 0 && this->temp4() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 8;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  // float temp5 = 7;
-  if (!(this->temp5() <= 0 && this->temp5() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TEMPERATURES_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.TEMPERATURES_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TEMPERATURES_CELLBOARD5* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TEMPERATURES_CELLBOARD5>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.TEMPERATURES_CELLBOARD5)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.TEMPERATURES_CELLBOARD5)
-    MergeFrom(*source);
-  }
-}
-
-void TEMPERATURES_CELLBOARD5::MergeFrom(const TEMPERATURES_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.TEMPERATURES_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.temp0() <= 0 && from.temp0() >= 0)) {
-    _internal_set_temp0(from._internal_temp0());
-  }
-  if (!(from.temp1() <= 0 && from.temp1() >= 0)) {
-    _internal_set_temp1(from._internal_temp1());
-  }
-  if (!(from.temp2() <= 0 && from.temp2() >= 0)) {
-    _internal_set_temp2(from._internal_temp2());
-  }
-  if (!(from.temp3() <= 0 && from.temp3() >= 0)) {
-    _internal_set_temp3(from._internal_temp3());
-  }
-  if (!(from.temp4() <= 0 && from.temp4() >= 0)) {
-    _internal_set_temp4(from._internal_temp4());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-  if (!(from.temp5() <= 0 && from.temp5() >= 0)) {
-    _internal_set_temp5(from._internal_temp5());
-  }
-}
-
-void TEMPERATURES_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.TEMPERATURES_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void TEMPERATURES_CELLBOARD5::CopyFrom(const TEMPERATURES_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.TEMPERATURES_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TEMPERATURES_CELLBOARD5::IsInitialized() const {
-  return true;
-}
-
-void TEMPERATURES_CELLBOARD5::InternalSwap(TEMPERATURES_CELLBOARD5* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD5, temp5_)
-      + sizeof(TEMPERATURES_CELLBOARD5::temp5_)
-      - PROTOBUF_FIELD_OFFSET(TEMPERATURES_CELLBOARD5, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TEMPERATURES_CELLBOARD5::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD0::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD0::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD0)
-}
-VOLTAGES_CELLBOARD0::VOLTAGES_CELLBOARD0(const VOLTAGES_CELLBOARD0& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD0)
-}
-
-void VOLTAGES_CELLBOARD0::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD0::~VOLTAGES_CELLBOARD0() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD0)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD0::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD0::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD0* _this = reinterpret_cast< VOLTAGES_CELLBOARD0* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD0::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD0::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD0& VOLTAGES_CELLBOARD0::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD0_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD0::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD0)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD0::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD0::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD0)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
+  // float voltage0 = 3;
   if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage0(), target);
   }
 
-  // float voltage1 = 3;
+  // float voltage1 = 4;
   if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage1(), target);
   }
 
-  // float voltage2 = 4;
+  // float voltage2 = 5;
   if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_voltage2(), target);
   }
 
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 6;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD0)
+  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES)
   return target;
 }
 
-size_t VOLTAGES_CELLBOARD0::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD0)
+size_t VOLTAGES::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 start_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cellboard_id());
+  }
+
+  // uint32 start_index = 2;
   if (this->start_index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_start_index());
   }
 
-  // float voltage0 = 2;
+  // float voltage0 = 3;
   if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float voltage1 = 3;
+  // float voltage1 = 4;
   if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
     total_size += 1 + 4;
   }
 
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 6;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal__inner_timestamp());
+  }
+
+  // float voltage2 = 5;
+  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
+    total_size += 1 + 4;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5148,28 +1554,31 @@ size_t VOLTAGES_CELLBOARD0::ByteSizeLong() const {
   return total_size;
 }
 
-void VOLTAGES_CELLBOARD0::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD0)
+void VOLTAGES::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES)
   GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD0* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD0>(
+  const VOLTAGES* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD0)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES)
     MergeFrom(*source);
   }
 }
 
-void VOLTAGES_CELLBOARD0::MergeFrom(const VOLTAGES_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD0)
+void VOLTAGES::MergeFrom(const VOLTAGES& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.cellboard_id() != 0) {
+    _internal_set_cellboard_id(from._internal_cellboard_id());
+  }
   if (from.start_index() != 0) {
     _internal_set_start_index(from._internal_start_index());
   }
@@ -5179,1514 +1588,44 @@ void VOLTAGES_CELLBOARD0::MergeFrom(const VOLTAGES_CELLBOARD0& from) {
   if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
     _internal_set_voltage1(from._internal_voltage1());
   }
-  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
-    _internal_set_voltage2(from._internal_voltage2());
-  }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void VOLTAGES_CELLBOARD0::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD0)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VOLTAGES_CELLBOARD0::CopyFrom(const VOLTAGES_CELLBOARD0& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD0)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VOLTAGES_CELLBOARD0::IsInitialized() const {
-  return true;
-}
-
-void VOLTAGES_CELLBOARD0::InternalSwap(VOLTAGES_CELLBOARD0* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD0::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD0, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD0::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD1::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD1::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD1)
-}
-VOLTAGES_CELLBOARD1::VOLTAGES_CELLBOARD1(const VOLTAGES_CELLBOARD1& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD1)
-}
-
-void VOLTAGES_CELLBOARD1::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD1::~VOLTAGES_CELLBOARD1() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD1)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD1::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD1::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD1* _this = reinterpret_cast< VOLTAGES_CELLBOARD1* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD1::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD1::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD1& VOLTAGES_CELLBOARD1::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD1_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD1::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD1)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD1::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD1::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD1)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD1)
-  return target;
-}
-
-size_t VOLTAGES_CELLBOARD1::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD1)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VOLTAGES_CELLBOARD1::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD1* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD1>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD1)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD1)
-    MergeFrom(*source);
-  }
-}
-
-void VOLTAGES_CELLBOARD1::MergeFrom(const VOLTAGES_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD1)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
-    _internal_set_voltage0(from._internal_voltage0());
-  }
-  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
-    _internal_set_voltage1(from._internal_voltage1());
   }
   if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
     _internal_set_voltage2(from._internal_voltage2());
   }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
 }
 
-void VOLTAGES_CELLBOARD1::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD1)
+void VOLTAGES::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void VOLTAGES_CELLBOARD1::CopyFrom(const VOLTAGES_CELLBOARD1& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD1)
+void VOLTAGES::CopyFrom(const VOLTAGES& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool VOLTAGES_CELLBOARD1::IsInitialized() const {
+bool VOLTAGES::IsInitialized() const {
   return true;
 }
 
-void VOLTAGES_CELLBOARD1::InternalSwap(VOLTAGES_CELLBOARD1* other) {
+void VOLTAGES::InternalSwap(VOLTAGES* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD1::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD1, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
+      PROTOBUF_FIELD_OFFSET(VOLTAGES, voltage2_)
+      + sizeof(VOLTAGES::voltage2_)
+      - PROTOBUF_FIELD_OFFSET(VOLTAGES, cellboard_id_)>(
+          reinterpret_cast<char*>(&cellboard_id_),
+          reinterpret_cast<char*>(&other->cellboard_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD1::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD2::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD2::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD2)
-}
-VOLTAGES_CELLBOARD2::VOLTAGES_CELLBOARD2(const VOLTAGES_CELLBOARD2& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD2)
-}
-
-void VOLTAGES_CELLBOARD2::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD2::~VOLTAGES_CELLBOARD2() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD2)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD2::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD2::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD2* _this = reinterpret_cast< VOLTAGES_CELLBOARD2* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD2::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD2::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD2& VOLTAGES_CELLBOARD2::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD2_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD2::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD2::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD2::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD2)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD2)
-  return target;
-}
-
-size_t VOLTAGES_CELLBOARD2::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD2)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VOLTAGES_CELLBOARD2::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD2* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD2>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD2)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD2)
-    MergeFrom(*source);
-  }
-}
-
-void VOLTAGES_CELLBOARD2::MergeFrom(const VOLTAGES_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD2)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
-    _internal_set_voltage0(from._internal_voltage0());
-  }
-  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
-    _internal_set_voltage1(from._internal_voltage1());
-  }
-  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
-    _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void VOLTAGES_CELLBOARD2::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VOLTAGES_CELLBOARD2::CopyFrom(const VOLTAGES_CELLBOARD2& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD2)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VOLTAGES_CELLBOARD2::IsInitialized() const {
-  return true;
-}
-
-void VOLTAGES_CELLBOARD2::InternalSwap(VOLTAGES_CELLBOARD2* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD2::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD2, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD2::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD3::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD3::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD3)
-}
-VOLTAGES_CELLBOARD3::VOLTAGES_CELLBOARD3(const VOLTAGES_CELLBOARD3& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD3)
-}
-
-void VOLTAGES_CELLBOARD3::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD3::~VOLTAGES_CELLBOARD3() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD3)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD3::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD3::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD3* _this = reinterpret_cast< VOLTAGES_CELLBOARD3* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD3::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD3& VOLTAGES_CELLBOARD3::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD3_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD3::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD3::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD3)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD3)
-  return target;
-}
-
-size_t VOLTAGES_CELLBOARD3::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD3)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VOLTAGES_CELLBOARD3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD3* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD3>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD3)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD3)
-    MergeFrom(*source);
-  }
-}
-
-void VOLTAGES_CELLBOARD3::MergeFrom(const VOLTAGES_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD3)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
-    _internal_set_voltage0(from._internal_voltage0());
-  }
-  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
-    _internal_set_voltage1(from._internal_voltage1());
-  }
-  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
-    _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void VOLTAGES_CELLBOARD3::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VOLTAGES_CELLBOARD3::CopyFrom(const VOLTAGES_CELLBOARD3& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD3)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VOLTAGES_CELLBOARD3::IsInitialized() const {
-  return true;
-}
-
-void VOLTAGES_CELLBOARD3::InternalSwap(VOLTAGES_CELLBOARD3* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD3::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD3, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD3::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD4::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD4::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD4)
-}
-VOLTAGES_CELLBOARD4::VOLTAGES_CELLBOARD4(const VOLTAGES_CELLBOARD4& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD4)
-}
-
-void VOLTAGES_CELLBOARD4::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD4::~VOLTAGES_CELLBOARD4() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD4)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD4::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD4::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD4* _this = reinterpret_cast< VOLTAGES_CELLBOARD4* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD4::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD4::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD4& VOLTAGES_CELLBOARD4::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD4_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD4::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD4::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD4::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD4)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD4)
-  return target;
-}
-
-size_t VOLTAGES_CELLBOARD4::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD4)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VOLTAGES_CELLBOARD4::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD4* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD4>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD4)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD4)
-    MergeFrom(*source);
-  }
-}
-
-void VOLTAGES_CELLBOARD4::MergeFrom(const VOLTAGES_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD4)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
-    _internal_set_voltage0(from._internal_voltage0());
-  }
-  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
-    _internal_set_voltage1(from._internal_voltage1());
-  }
-  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
-    _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void VOLTAGES_CELLBOARD4::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VOLTAGES_CELLBOARD4::CopyFrom(const VOLTAGES_CELLBOARD4& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD4)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VOLTAGES_CELLBOARD4::IsInitialized() const {
-  return true;
-}
-
-void VOLTAGES_CELLBOARD4::InternalSwap(VOLTAGES_CELLBOARD4* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD4::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD4, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD4::GetMetadata() const {
-  return GetMetadataStatic();
-}
-
-
-// ===================================================================
-
-void VOLTAGES_CELLBOARD5::InitAsDefaultInstance() {
-}
-class VOLTAGES_CELLBOARD5::_Internal {
- public:
-};
-
-VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
-  SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:bms.VOLTAGES_CELLBOARD5)
-}
-VOLTAGES_CELLBOARD5::VOLTAGES_CELLBOARD5(const VOLTAGES_CELLBOARD5& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&start_index_, &from.start_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  // @@protoc_insertion_point(copy_constructor:bms.VOLTAGES_CELLBOARD5)
-}
-
-void VOLTAGES_CELLBOARD5::SharedCtor() {
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-}
-
-VOLTAGES_CELLBOARD5::~VOLTAGES_CELLBOARD5() {
-  // @@protoc_insertion_point(destructor:bms.VOLTAGES_CELLBOARD5)
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-void VOLTAGES_CELLBOARD5::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
-}
-
-void VOLTAGES_CELLBOARD5::ArenaDtor(void* object) {
-  VOLTAGES_CELLBOARD5* _this = reinterpret_cast< VOLTAGES_CELLBOARD5* >(object);
-  (void)_this;
-}
-void VOLTAGES_CELLBOARD5::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void VOLTAGES_CELLBOARD5::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const VOLTAGES_CELLBOARD5& VOLTAGES_CELLBOARD5::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VOLTAGES_CELLBOARD5_bms_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void VOLTAGES_CELLBOARD5::Clear() {
-// @@protoc_insertion_point(message_clear_start:bms.VOLTAGES_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&start_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&start_index_)) + sizeof(_inner_timestamp_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* VOLTAGES_CELLBOARD5::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
-    switch (tag >> 3) {
-      // uint32 start_index = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          start_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // float voltage0 = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
-          voltage0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage1 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          voltage1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // float voltage2 = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 37)) {
-          voltage2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // uint64 _inner_timestamp = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* VOLTAGES_CELLBOARD5::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:bms.VOLTAGES_CELLBOARD5)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_start_index(), target);
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->_internal_voltage0(), target);
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_voltage1(), target);
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_voltage2(), target);
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal__inner_timestamp(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bms.VOLTAGES_CELLBOARD5)
-  return target;
-}
-
-size_t VOLTAGES_CELLBOARD5::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bms.VOLTAGES_CELLBOARD5)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // uint32 start_index = 1;
-  if (this->start_index() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_start_index());
-  }
-
-  // float voltage0 = 2;
-  if (!(this->voltage0() <= 0 && this->voltage0() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage1 = 3;
-  if (!(this->voltage1() <= 0 && this->voltage1() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // float voltage2 = 4;
-  if (!(this->voltage2() <= 0 && this->voltage2() >= 0)) {
-    total_size += 1 + 4;
-  }
-
-  // uint64 _inner_timestamp = 5;
-  if (this->_inner_timestamp() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void VOLTAGES_CELLBOARD5::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bms.VOLTAGES_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  const VOLTAGES_CELLBOARD5* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VOLTAGES_CELLBOARD5>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bms.VOLTAGES_CELLBOARD5)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bms.VOLTAGES_CELLBOARD5)
-    MergeFrom(*source);
-  }
-}
-
-void VOLTAGES_CELLBOARD5::MergeFrom(const VOLTAGES_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bms.VOLTAGES_CELLBOARD5)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.start_index() != 0) {
-    _internal_set_start_index(from._internal_start_index());
-  }
-  if (!(from.voltage0() <= 0 && from.voltage0() >= 0)) {
-    _internal_set_voltage0(from._internal_voltage0());
-  }
-  if (!(from.voltage1() <= 0 && from.voltage1() >= 0)) {
-    _internal_set_voltage1(from._internal_voltage1());
-  }
-  if (!(from.voltage2() <= 0 && from.voltage2() >= 0)) {
-    _internal_set_voltage2(from._internal_voltage2());
-  }
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
-  }
-}
-
-void VOLTAGES_CELLBOARD5::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bms.VOLTAGES_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void VOLTAGES_CELLBOARD5::CopyFrom(const VOLTAGES_CELLBOARD5& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bms.VOLTAGES_CELLBOARD5)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool VOLTAGES_CELLBOARD5::IsInitialized() const {
-  return true;
-}
-
-void VOLTAGES_CELLBOARD5::InternalSwap(VOLTAGES_CELLBOARD5* other) {
-  using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, _inner_timestamp_)
-      + sizeof(VOLTAGES_CELLBOARD5::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(VOLTAGES_CELLBOARD5, start_index_)>(
-          reinterpret_cast<char*>(&start_index_),
-          reinterpret_cast<char*>(&other->start_index_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES_CELLBOARD5::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata VOLTAGES::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6708,16 +1647,16 @@ BALANCING::BALANCING(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 BALANCING::BALANCING(const BALANCING& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&board_index_, &from.board_index_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
-    reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
+  ::memcpy(&cellboard_id_, &from.cellboard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&cells_) -
+    reinterpret_cast<char*>(&cellboard_id_)) + sizeof(cells_));
   // @@protoc_insertion_point(copy_constructor:bms.BALANCING)
 }
 
 void BALANCING::SharedCtor() {
-  ::memset(&board_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cells_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(cells_));
 }
 
 BALANCING::~BALANCING() {
@@ -6751,9 +1690,9 @@ void BALANCING::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&board_index_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_inner_timestamp_) -
-      reinterpret_cast<char*>(&board_index_)) + sizeof(_inner_timestamp_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cells_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(cells_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6765,23 +1704,31 @@ const char* BALANCING::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 board_index = 1;
+      // .bms.Cellboard cellboard_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_cellboard_id(static_cast<::bms::Cellboard>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint32 board_index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 cells = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint32 cells = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           cells_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 _inner_timestamp = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // uint64 _inner_timestamp = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -6814,22 +1761,29 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 board_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_cellboard_id(), target);
+  }
+
+  // uint32 board_index = 2;
   if (this->board_index() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_board_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_board_index(), target);
   }
 
-  // uint32 cells = 2;
+  // uint32 cells = 3;
   if (this->cells() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_cells(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_cells(), target);
   }
 
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6848,25 +1802,31 @@ size_t BALANCING::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 board_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cellboard_id());
+  }
+
+  // uint32 board_index = 2;
   if (this->board_index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_board_index());
   }
 
-  // uint32 cells = 2;
-  if (this->cells() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_cells());
-  }
-
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   if (this->_inner_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal__inner_timestamp());
+  }
+
+  // uint32 cells = 3;
+  if (this->cells() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_cells());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6900,14 +1860,17 @@ void BALANCING::MergeFrom(const BALANCING& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.cellboard_id() != 0) {
+    _internal_set_cellboard_id(from._internal_cellboard_id());
+  }
   if (from.board_index() != 0) {
     _internal_set_board_index(from._internal_board_index());
   }
-  if (from.cells() != 0) {
-    _internal_set_cells(from._internal_cells());
-  }
   if (from._inner_timestamp() != 0) {
     _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  }
+  if (from.cells() != 0) {
+    _internal_set_cells(from._internal_cells());
   }
 }
 
@@ -6933,11 +1896,11 @@ void BALANCING::InternalSwap(BALANCING* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BALANCING, _inner_timestamp_)
-      + sizeof(BALANCING::_inner_timestamp_)
-      - PROTOBUF_FIELD_OFFSET(BALANCING, board_index_)>(
-          reinterpret_cast<char*>(&board_index_),
-          reinterpret_cast<char*>(&other->board_index_));
+      PROTOBUF_FIELD_OFFSET(BALANCING, cells_)
+      + sizeof(BALANCING::cells_)
+      - PROTOBUF_FIELD_OFFSET(BALANCING, cellboard_id_)>(
+          reinterpret_cast<char*>(&cellboard_id_),
+          reinterpret_cast<char*>(&other->cellboard_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BALANCING::GetMetadata() const {
@@ -6962,16 +1925,16 @@ FW_UPDATE::FW_UPDATE(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 FW_UPDATE::FW_UPDATE(const FW_UPDATE& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_inner_timestamp_, &from._inner_timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&board_index_) -
-    reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(board_index_));
+  ::memcpy(&cellboard_id_, &from.cellboard_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_inner_timestamp_) -
+    reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
   // @@protoc_insertion_point(copy_constructor:bms.FW_UPDATE)
 }
 
 void FW_UPDATE::SharedCtor() {
-  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&board_index_) -
-      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(board_index_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
 }
 
 FW_UPDATE::~FW_UPDATE() {
@@ -7005,9 +1968,9 @@ void FW_UPDATE::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_inner_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&board_index_) -
-      reinterpret_cast<char*>(&_inner_timestamp_)) + sizeof(board_index_));
+  ::memset(&cellboard_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_inner_timestamp_) -
+      reinterpret_cast<char*>(&cellboard_id_)) + sizeof(_inner_timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7019,16 +1982,24 @@ const char* FW_UPDATE::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 board_index = 1;
+      // .bms.Cellboard cellboard_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_cellboard_id(static_cast<::bms::Cellboard>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint32 board_index = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           board_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 _inner_timestamp = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint64 _inner_timestamp = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _inner_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -7061,16 +2032,23 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 board_index = 1;
-  if (this->board_index() != 0) {
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_board_index(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_cellboard_id(), target);
   }
 
-  // uint64 _inner_timestamp = 2;
+  // uint32 board_index = 2;
+  if (this->board_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_board_index(), target);
+  }
+
+  // uint64 _inner_timestamp = 3;
   if (this->_inner_timestamp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal__inner_timestamp(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal__inner_timestamp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7089,18 +2067,24 @@ size_t FW_UPDATE::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 _inner_timestamp = 2;
-  if (this->_inner_timestamp() != 0) {
+  // .bms.Cellboard cellboard_id = 1;
+  if (this->cellboard_id() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal__inner_timestamp());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_cellboard_id());
   }
 
-  // uint32 board_index = 1;
+  // uint32 board_index = 2;
   if (this->board_index() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
         this->_internal_board_index());
+  }
+
+  // uint64 _inner_timestamp = 3;
+  if (this->_inner_timestamp() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal__inner_timestamp());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7134,11 +2118,14 @@ void FW_UPDATE::MergeFrom(const FW_UPDATE& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._inner_timestamp() != 0) {
-    _internal_set__inner_timestamp(from._internal__inner_timestamp());
+  if (from.cellboard_id() != 0) {
+    _internal_set_cellboard_id(from._internal_cellboard_id());
   }
   if (from.board_index() != 0) {
     _internal_set_board_index(from._internal_board_index());
+  }
+  if (from._inner_timestamp() != 0) {
+    _internal_set__inner_timestamp(from._internal__inner_timestamp());
   }
 }
 
@@ -7164,11 +2151,11 @@ void FW_UPDATE::InternalSwap(FW_UPDATE* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(FW_UPDATE, board_index_)
-      + sizeof(FW_UPDATE::board_index_)
-      - PROTOBUF_FIELD_OFFSET(FW_UPDATE, _inner_timestamp_)>(
-          reinterpret_cast<char*>(&_inner_timestamp_),
-          reinterpret_cast<char*>(&other->_inner_timestamp_));
+      PROTOBUF_FIELD_OFFSET(FW_UPDATE, _inner_timestamp_)
+      + sizeof(FW_UPDATE::_inner_timestamp_)
+      - PROTOBUF_FIELD_OFFSET(FW_UPDATE, cellboard_id_)>(
+          reinterpret_cast<char*>(&cellboard_id_),
+          reinterpret_cast<char*>(&other->cellboard_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FW_UPDATE::GetMetadata() const {
@@ -9550,24 +4537,9 @@ class Pack::_Internal {
 
 Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  board_status_cellboard0_(arena),
-  board_status_cellboard1_(arena),
-  board_status_cellboard2_(arena),
-  board_status_cellboard3_(arena),
-  board_status_cellboard4_(arena),
-  board_status_cellboard5_(arena),
-  temperatures_cellboard0_(arena),
-  temperatures_cellboard1_(arena),
-  temperatures_cellboard2_(arena),
-  temperatures_cellboard3_(arena),
-  temperatures_cellboard4_(arena),
-  temperatures_cellboard5_(arena),
-  voltages_cellboard0_(arena),
-  voltages_cellboard1_(arena),
-  voltages_cellboard2_(arena),
-  voltages_cellboard3_(arena),
-  voltages_cellboard4_(arena),
-  voltages_cellboard5_(arena),
+  board_status_(arena),
+  temperatures_(arena),
+  voltages_(arena),
   balancing_(arena),
   fw_update_(arena),
   flash_cellboard_0_tx_(arena),
@@ -9588,24 +4560,9 @@ Pack::Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 }
 Pack::Pack(const Pack& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      board_status_cellboard0_(from.board_status_cellboard0_),
-      board_status_cellboard1_(from.board_status_cellboard1_),
-      board_status_cellboard2_(from.board_status_cellboard2_),
-      board_status_cellboard3_(from.board_status_cellboard3_),
-      board_status_cellboard4_(from.board_status_cellboard4_),
-      board_status_cellboard5_(from.board_status_cellboard5_),
-      temperatures_cellboard0_(from.temperatures_cellboard0_),
-      temperatures_cellboard1_(from.temperatures_cellboard1_),
-      temperatures_cellboard2_(from.temperatures_cellboard2_),
-      temperatures_cellboard3_(from.temperatures_cellboard3_),
-      temperatures_cellboard4_(from.temperatures_cellboard4_),
-      temperatures_cellboard5_(from.temperatures_cellboard5_),
-      voltages_cellboard0_(from.voltages_cellboard0_),
-      voltages_cellboard1_(from.voltages_cellboard1_),
-      voltages_cellboard2_(from.voltages_cellboard2_),
-      voltages_cellboard3_(from.voltages_cellboard3_),
-      voltages_cellboard4_(from.voltages_cellboard4_),
-      voltages_cellboard5_(from.voltages_cellboard5_),
+      board_status_(from.board_status_),
+      temperatures_(from.temperatures_),
+      voltages_(from.voltages_),
       balancing_(from.balancing_),
       fw_update_(from.fw_update_),
       flash_cellboard_0_tx_(from.flash_cellboard_0_tx_),
@@ -9659,24 +4616,9 @@ void Pack::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  board_status_cellboard0_.Clear();
-  board_status_cellboard1_.Clear();
-  board_status_cellboard2_.Clear();
-  board_status_cellboard3_.Clear();
-  board_status_cellboard4_.Clear();
-  board_status_cellboard5_.Clear();
-  temperatures_cellboard0_.Clear();
-  temperatures_cellboard1_.Clear();
-  temperatures_cellboard2_.Clear();
-  temperatures_cellboard3_.Clear();
-  temperatures_cellboard4_.Clear();
-  temperatures_cellboard5_.Clear();
-  voltages_cellboard0_.Clear();
-  voltages_cellboard1_.Clear();
-  voltages_cellboard2_.Clear();
-  voltages_cellboard3_.Clear();
-  voltages_cellboard4_.Clear();
-  voltages_cellboard5_.Clear();
+  board_status_.Clear();
+  temperatures_.Clear();
+  voltages_.Clear();
   balancing_.Clear();
   fw_update_.Clear();
   flash_cellboard_0_tx_.Clear();
@@ -9702,388 +4644,208 @@ const char* Pack::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
+      // repeated .bms.BOARD_STATUS BOARD_STATUS = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard0(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_board_status(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
+      // repeated .bms.TEMPERATURES TEMPERATURES = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard1(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_temperatures(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
+      // repeated .bms.VOLTAGES VOLTAGES = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard2(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_voltages(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
+      // repeated .bms.BALANCING BALANCING = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard3(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_balancing(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
+      // repeated .bms.FW_UPDATE FW_UPDATE = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard4(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_fw_update(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
+      // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_board_status_cellboard5(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
+      // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard0(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
+      // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard1(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
+      // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard2(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
+      // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard3(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
+      // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 90)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard4(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
+      // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_temperatures_cellboard5(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
+      // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard0(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
+      // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard1(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
+      // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard2(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
+      // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard3(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard4(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 146)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_voltages_cellboard5(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<146>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.BALANCING BALANCING = 19;
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 154)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_balancing(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<154>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FW_UPDATE FW_UPDATE = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 162)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_fw_update(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<162>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 170)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_tx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<170>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 178)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_0_rx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<178>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 186)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_tx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<186>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 194)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_1_rx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<194>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 202)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_tx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<202>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 210)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_2_rx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<210>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-      case 27:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 218)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_tx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<218>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 226)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_3_rx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<226>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-      case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 234)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_tx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<234>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 242)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            ptr = ctx->ParseMessage(_internal_add_flash_cellboard_4_rx(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<242>(ptr));
-        } else goto handle_unusual;
-        continue;
-      // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 250)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_tx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<250>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<130>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 2)) {
+      // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 138)) {
           ptr -= 2;
           do {
             ptr += 2;
             ptr = ctx->ParseMessage(_internal_add_flash_cellboard_5_rx(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<258>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<138>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -10114,260 +4876,140 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
+  // repeated .bms.BOARD_STATUS BOARD_STATUS = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard0_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_board_status_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, this->_internal_board_status_cellboard0(i), target, stream);
+      InternalWriteMessage(1, this->_internal_board_status(i), target, stream);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
+  // repeated .bms.TEMPERATURES TEMPERATURES = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard1_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_temperatures_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_board_status_cellboard1(i), target, stream);
+      InternalWriteMessage(2, this->_internal_temperatures(i), target, stream);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
+  // repeated .bms.VOLTAGES VOLTAGES = 3;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard2_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->_internal_voltages_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, this->_internal_board_status_cellboard2(i), target, stream);
+      InternalWriteMessage(3, this->_internal_voltages(i), target, stream);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard3_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, this->_internal_board_status_cellboard3(i), target, stream);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard4_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, this->_internal_board_status_cellboard4(i), target, stream);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_board_status_cellboard5_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, this->_internal_board_status_cellboard5(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard0_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, this->_internal_temperatures_cellboard0(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard1_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(8, this->_internal_temperatures_cellboard1(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard2_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(9, this->_internal_temperatures_cellboard2(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard3_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(10, this->_internal_temperatures_cellboard3(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard4_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(11, this->_internal_temperatures_cellboard4(i), target, stream);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_temperatures_cellboard5_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(12, this->_internal_temperatures_cellboard5(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard0_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(13, this->_internal_voltages_cellboard0(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard1_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(14, this->_internal_voltages_cellboard1(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard2_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(15, this->_internal_voltages_cellboard2(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard3_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(16, this->_internal_voltages_cellboard3(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard4_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(17, this->_internal_voltages_cellboard4(i), target, stream);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_voltages_cellboard5_size()); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(18, this->_internal_voltages_cellboard5(i), target, stream);
-  }
-
-  // repeated .bms.BALANCING BALANCING = 19;
+  // repeated .bms.BALANCING BALANCING = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_balancing_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(19, this->_internal_balancing(i), target, stream);
+      InternalWriteMessage(4, this->_internal_balancing(i), target, stream);
   }
 
-  // repeated .bms.FW_UPDATE FW_UPDATE = 20;
+  // repeated .bms.FW_UPDATE FW_UPDATE = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_fw_update_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(20, this->_internal_fw_update(i), target, stream);
+      InternalWriteMessage(5, this->_internal_fw_update(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_0_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(21, this->_internal_flash_cellboard_0_tx(i), target, stream);
+      InternalWriteMessage(6, this->_internal_flash_cellboard_0_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_0_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(22, this->_internal_flash_cellboard_0_rx(i), target, stream);
+      InternalWriteMessage(7, this->_internal_flash_cellboard_0_rx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_1_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(23, this->_internal_flash_cellboard_1_tx(i), target, stream);
+      InternalWriteMessage(8, this->_internal_flash_cellboard_1_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_1_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(24, this->_internal_flash_cellboard_1_rx(i), target, stream);
+      InternalWriteMessage(9, this->_internal_flash_cellboard_1_rx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_2_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(25, this->_internal_flash_cellboard_2_tx(i), target, stream);
+      InternalWriteMessage(10, this->_internal_flash_cellboard_2_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_2_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(26, this->_internal_flash_cellboard_2_rx(i), target, stream);
+      InternalWriteMessage(11, this->_internal_flash_cellboard_2_rx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_3_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(27, this->_internal_flash_cellboard_3_tx(i), target, stream);
+      InternalWriteMessage(12, this->_internal_flash_cellboard_3_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_3_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(28, this->_internal_flash_cellboard_3_rx(i), target, stream);
+      InternalWriteMessage(13, this->_internal_flash_cellboard_3_rx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_4_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(29, this->_internal_flash_cellboard_4_tx(i), target, stream);
+      InternalWriteMessage(14, this->_internal_flash_cellboard_4_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_4_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(30, this->_internal_flash_cellboard_4_rx(i), target, stream);
+      InternalWriteMessage(15, this->_internal_flash_cellboard_4_rx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_5_tx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(31, this->_internal_flash_cellboard_5_tx(i), target, stream);
+      InternalWriteMessage(16, this->_internal_flash_cellboard_5_tx(i), target, stream);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_flash_cellboard_5_rx_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(32, this->_internal_flash_cellboard_5_rx(i), target, stream);
+      InternalWriteMessage(17, this->_internal_flash_cellboard_5_rx(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10386,224 +5028,119 @@ size_t Pack::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-  total_size += 1UL * this->_internal_board_status_cellboard0_size();
-  for (const auto& msg : this->board_status_cellboard0_) {
+  // repeated .bms.BOARD_STATUS BOARD_STATUS = 1;
+  total_size += 1UL * this->_internal_board_status_size();
+  for (const auto& msg : this->board_status_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-  total_size += 1UL * this->_internal_board_status_cellboard1_size();
-  for (const auto& msg : this->board_status_cellboard1_) {
+  // repeated .bms.TEMPERATURES TEMPERATURES = 2;
+  total_size += 1UL * this->_internal_temperatures_size();
+  for (const auto& msg : this->temperatures_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-  total_size += 1UL * this->_internal_board_status_cellboard2_size();
-  for (const auto& msg : this->board_status_cellboard2_) {
+  // repeated .bms.VOLTAGES VOLTAGES = 3;
+  total_size += 1UL * this->_internal_voltages_size();
+  for (const auto& msg : this->voltages_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-  total_size += 1UL * this->_internal_board_status_cellboard3_size();
-  for (const auto& msg : this->board_status_cellboard3_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-  total_size += 1UL * this->_internal_board_status_cellboard4_size();
-  for (const auto& msg : this->board_status_cellboard4_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-  total_size += 1UL * this->_internal_board_status_cellboard5_size();
-  for (const auto& msg : this->board_status_cellboard5_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-  total_size += 1UL * this->_internal_temperatures_cellboard0_size();
-  for (const auto& msg : this->temperatures_cellboard0_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-  total_size += 1UL * this->_internal_temperatures_cellboard1_size();
-  for (const auto& msg : this->temperatures_cellboard1_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-  total_size += 1UL * this->_internal_temperatures_cellboard2_size();
-  for (const auto& msg : this->temperatures_cellboard2_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-  total_size += 1UL * this->_internal_temperatures_cellboard3_size();
-  for (const auto& msg : this->temperatures_cellboard3_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-  total_size += 1UL * this->_internal_temperatures_cellboard4_size();
-  for (const auto& msg : this->temperatures_cellboard4_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-  total_size += 1UL * this->_internal_temperatures_cellboard5_size();
-  for (const auto& msg : this->temperatures_cellboard5_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-  total_size += 1UL * this->_internal_voltages_cellboard0_size();
-  for (const auto& msg : this->voltages_cellboard0_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-  total_size += 1UL * this->_internal_voltages_cellboard1_size();
-  for (const auto& msg : this->voltages_cellboard1_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-  total_size += 1UL * this->_internal_voltages_cellboard2_size();
-  for (const auto& msg : this->voltages_cellboard2_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-  total_size += 2UL * this->_internal_voltages_cellboard3_size();
-  for (const auto& msg : this->voltages_cellboard3_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-  total_size += 2UL * this->_internal_voltages_cellboard4_size();
-  for (const auto& msg : this->voltages_cellboard4_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-  total_size += 2UL * this->_internal_voltages_cellboard5_size();
-  for (const auto& msg : this->voltages_cellboard5_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // repeated .bms.BALANCING BALANCING = 19;
-  total_size += 2UL * this->_internal_balancing_size();
+  // repeated .bms.BALANCING BALANCING = 4;
+  total_size += 1UL * this->_internal_balancing_size();
   for (const auto& msg : this->balancing_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FW_UPDATE FW_UPDATE = 20;
-  total_size += 2UL * this->_internal_fw_update_size();
+  // repeated .bms.FW_UPDATE FW_UPDATE = 5;
+  total_size += 1UL * this->_internal_fw_update_size();
   for (const auto& msg : this->fw_update_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-  total_size += 2UL * this->_internal_flash_cellboard_0_tx_size();
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
+  total_size += 1UL * this->_internal_flash_cellboard_0_tx_size();
   for (const auto& msg : this->flash_cellboard_0_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-  total_size += 2UL * this->_internal_flash_cellboard_0_rx_size();
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
+  total_size += 1UL * this->_internal_flash_cellboard_0_rx_size();
   for (const auto& msg : this->flash_cellboard_0_rx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-  total_size += 2UL * this->_internal_flash_cellboard_1_tx_size();
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
+  total_size += 1UL * this->_internal_flash_cellboard_1_tx_size();
   for (const auto& msg : this->flash_cellboard_1_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-  total_size += 2UL * this->_internal_flash_cellboard_1_rx_size();
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
+  total_size += 1UL * this->_internal_flash_cellboard_1_rx_size();
   for (const auto& msg : this->flash_cellboard_1_rx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-  total_size += 2UL * this->_internal_flash_cellboard_2_tx_size();
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
+  total_size += 1UL * this->_internal_flash_cellboard_2_tx_size();
   for (const auto& msg : this->flash_cellboard_2_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-  total_size += 2UL * this->_internal_flash_cellboard_2_rx_size();
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
+  total_size += 1UL * this->_internal_flash_cellboard_2_rx_size();
   for (const auto& msg : this->flash_cellboard_2_rx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-  total_size += 2UL * this->_internal_flash_cellboard_3_tx_size();
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
+  total_size += 1UL * this->_internal_flash_cellboard_3_tx_size();
   for (const auto& msg : this->flash_cellboard_3_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-  total_size += 2UL * this->_internal_flash_cellboard_3_rx_size();
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
+  total_size += 1UL * this->_internal_flash_cellboard_3_rx_size();
   for (const auto& msg : this->flash_cellboard_3_rx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-  total_size += 2UL * this->_internal_flash_cellboard_4_tx_size();
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
+  total_size += 1UL * this->_internal_flash_cellboard_4_tx_size();
   for (const auto& msg : this->flash_cellboard_4_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-  total_size += 2UL * this->_internal_flash_cellboard_4_rx_size();
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
+  total_size += 1UL * this->_internal_flash_cellboard_4_rx_size();
   for (const auto& msg : this->flash_cellboard_4_rx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
   total_size += 2UL * this->_internal_flash_cellboard_5_tx_size();
   for (const auto& msg : this->flash_cellboard_5_tx_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
   total_size += 2UL * this->_internal_flash_cellboard_5_rx_size();
   for (const auto& msg : this->flash_cellboard_5_rx_) {
     total_size +=
@@ -10641,24 +5178,9 @@ void Pack::MergeFrom(const Pack& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  board_status_cellboard0_.MergeFrom(from.board_status_cellboard0_);
-  board_status_cellboard1_.MergeFrom(from.board_status_cellboard1_);
-  board_status_cellboard2_.MergeFrom(from.board_status_cellboard2_);
-  board_status_cellboard3_.MergeFrom(from.board_status_cellboard3_);
-  board_status_cellboard4_.MergeFrom(from.board_status_cellboard4_);
-  board_status_cellboard5_.MergeFrom(from.board_status_cellboard5_);
-  temperatures_cellboard0_.MergeFrom(from.temperatures_cellboard0_);
-  temperatures_cellboard1_.MergeFrom(from.temperatures_cellboard1_);
-  temperatures_cellboard2_.MergeFrom(from.temperatures_cellboard2_);
-  temperatures_cellboard3_.MergeFrom(from.temperatures_cellboard3_);
-  temperatures_cellboard4_.MergeFrom(from.temperatures_cellboard4_);
-  temperatures_cellboard5_.MergeFrom(from.temperatures_cellboard5_);
-  voltages_cellboard0_.MergeFrom(from.voltages_cellboard0_);
-  voltages_cellboard1_.MergeFrom(from.voltages_cellboard1_);
-  voltages_cellboard2_.MergeFrom(from.voltages_cellboard2_);
-  voltages_cellboard3_.MergeFrom(from.voltages_cellboard3_);
-  voltages_cellboard4_.MergeFrom(from.voltages_cellboard4_);
-  voltages_cellboard5_.MergeFrom(from.voltages_cellboard5_);
+  board_status_.MergeFrom(from.board_status_);
+  temperatures_.MergeFrom(from.temperatures_);
+  voltages_.MergeFrom(from.voltages_);
   balancing_.MergeFrom(from.balancing_);
   fw_update_.MergeFrom(from.fw_update_);
   flash_cellboard_0_tx_.MergeFrom(from.flash_cellboard_0_tx_);
@@ -10696,24 +5218,9 @@ bool Pack::IsInitialized() const {
 void Pack::InternalSwap(Pack* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  board_status_cellboard0_.InternalSwap(&other->board_status_cellboard0_);
-  board_status_cellboard1_.InternalSwap(&other->board_status_cellboard1_);
-  board_status_cellboard2_.InternalSwap(&other->board_status_cellboard2_);
-  board_status_cellboard3_.InternalSwap(&other->board_status_cellboard3_);
-  board_status_cellboard4_.InternalSwap(&other->board_status_cellboard4_);
-  board_status_cellboard5_.InternalSwap(&other->board_status_cellboard5_);
-  temperatures_cellboard0_.InternalSwap(&other->temperatures_cellboard0_);
-  temperatures_cellboard1_.InternalSwap(&other->temperatures_cellboard1_);
-  temperatures_cellboard2_.InternalSwap(&other->temperatures_cellboard2_);
-  temperatures_cellboard3_.InternalSwap(&other->temperatures_cellboard3_);
-  temperatures_cellboard4_.InternalSwap(&other->temperatures_cellboard4_);
-  temperatures_cellboard5_.InternalSwap(&other->temperatures_cellboard5_);
-  voltages_cellboard0_.InternalSwap(&other->voltages_cellboard0_);
-  voltages_cellboard1_.InternalSwap(&other->voltages_cellboard1_);
-  voltages_cellboard2_.InternalSwap(&other->voltages_cellboard2_);
-  voltages_cellboard3_.InternalSwap(&other->voltages_cellboard3_);
-  voltages_cellboard4_.InternalSwap(&other->voltages_cellboard4_);
-  voltages_cellboard5_.InternalSwap(&other->voltages_cellboard5_);
+  board_status_.InternalSwap(&other->board_status_);
+  temperatures_.InternalSwap(&other->temperatures_);
+  voltages_.InternalSwap(&other->voltages_);
   balancing_.InternalSwap(&other->balancing_);
   fw_update_.InternalSwap(&other->fw_update_);
   flash_cellboard_0_tx_.InternalSwap(&other->flash_cellboard_0_tx_);
@@ -10738,59 +5245,14 @@ void Pack::InternalSwap(Pack* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace bms
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD0 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD1 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES* Arena::CreateMaybeMessage< ::bms::TEMPERATURES >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::TEMPERATURES >(arena);
 }
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD2 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD3 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD4 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::BOARD_STATUS_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::BOARD_STATUS_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::BOARD_STATUS_CELLBOARD5 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD0 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD1 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD2 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD3 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD4 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::TEMPERATURES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::TEMPERATURES_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::TEMPERATURES_CELLBOARD5 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD0* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD0 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD0 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD1* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD1 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD1 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD2* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD2 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD3* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD3 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD3 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD4* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD4 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD4 >(arena);
-}
-template<> PROTOBUF_NOINLINE ::bms::VOLTAGES_CELLBOARD5* Arena::CreateMaybeMessage< ::bms::VOLTAGES_CELLBOARD5 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::bms::VOLTAGES_CELLBOARD5 >(arena);
+template<> PROTOBUF_NOINLINE ::bms::VOLTAGES* Arena::CreateMaybeMessage< ::bms::VOLTAGES >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::bms::VOLTAGES >(arena);
 }
 template<> PROTOBUF_NOINLINE ::bms::BALANCING* Arena::CreateMaybeMessage< ::bms::BALANCING >(Arena* arena) {
   return Arena::CreateMessageInternal< ::bms::BALANCING >(arena);

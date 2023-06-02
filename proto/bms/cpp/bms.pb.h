@@ -48,7 +48,7 @@ struct TableStruct_bms_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[33]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,24 +59,9 @@ namespace bms {
 class BALANCING;
 class BALANCINGDefaultTypeInternal;
 extern BALANCINGDefaultTypeInternal _BALANCING_default_instance_;
-class BOARD_STATUS_CELLBOARD0;
-class BOARD_STATUS_CELLBOARD0DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD0DefaultTypeInternal _BOARD_STATUS_CELLBOARD0_default_instance_;
-class BOARD_STATUS_CELLBOARD1;
-class BOARD_STATUS_CELLBOARD1DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD1DefaultTypeInternal _BOARD_STATUS_CELLBOARD1_default_instance_;
-class BOARD_STATUS_CELLBOARD2;
-class BOARD_STATUS_CELLBOARD2DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD2DefaultTypeInternal _BOARD_STATUS_CELLBOARD2_default_instance_;
-class BOARD_STATUS_CELLBOARD3;
-class BOARD_STATUS_CELLBOARD3DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD3DefaultTypeInternal _BOARD_STATUS_CELLBOARD3_default_instance_;
-class BOARD_STATUS_CELLBOARD4;
-class BOARD_STATUS_CELLBOARD4DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD4DefaultTypeInternal _BOARD_STATUS_CELLBOARD4_default_instance_;
-class BOARD_STATUS_CELLBOARD5;
-class BOARD_STATUS_CELLBOARD5DefaultTypeInternal;
-extern BOARD_STATUS_CELLBOARD5DefaultTypeInternal _BOARD_STATUS_CELLBOARD5_default_instance_;
+class BOARD_STATUS;
+class BOARD_STATUSDefaultTypeInternal;
+extern BOARD_STATUSDefaultTypeInternal _BOARD_STATUS_default_instance_;
 class FLASH_CELLBOARD_0_RX;
 class FLASH_CELLBOARD_0_RXDefaultTypeInternal;
 extern FLASH_CELLBOARD_0_RXDefaultTypeInternal _FLASH_CELLBOARD_0_RX_default_instance_;
@@ -119,51 +104,16 @@ extern FW_UPDATEDefaultTypeInternal _FW_UPDATE_default_instance_;
 class Pack;
 class PackDefaultTypeInternal;
 extern PackDefaultTypeInternal _Pack_default_instance_;
-class TEMPERATURES_CELLBOARD0;
-class TEMPERATURES_CELLBOARD0DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD0DefaultTypeInternal _TEMPERATURES_CELLBOARD0_default_instance_;
-class TEMPERATURES_CELLBOARD1;
-class TEMPERATURES_CELLBOARD1DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD1DefaultTypeInternal _TEMPERATURES_CELLBOARD1_default_instance_;
-class TEMPERATURES_CELLBOARD2;
-class TEMPERATURES_CELLBOARD2DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD2DefaultTypeInternal _TEMPERATURES_CELLBOARD2_default_instance_;
-class TEMPERATURES_CELLBOARD3;
-class TEMPERATURES_CELLBOARD3DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD3DefaultTypeInternal _TEMPERATURES_CELLBOARD3_default_instance_;
-class TEMPERATURES_CELLBOARD4;
-class TEMPERATURES_CELLBOARD4DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD4DefaultTypeInternal _TEMPERATURES_CELLBOARD4_default_instance_;
-class TEMPERATURES_CELLBOARD5;
-class TEMPERATURES_CELLBOARD5DefaultTypeInternal;
-extern TEMPERATURES_CELLBOARD5DefaultTypeInternal _TEMPERATURES_CELLBOARD5_default_instance_;
-class VOLTAGES_CELLBOARD0;
-class VOLTAGES_CELLBOARD0DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD0DefaultTypeInternal _VOLTAGES_CELLBOARD0_default_instance_;
-class VOLTAGES_CELLBOARD1;
-class VOLTAGES_CELLBOARD1DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD1DefaultTypeInternal _VOLTAGES_CELLBOARD1_default_instance_;
-class VOLTAGES_CELLBOARD2;
-class VOLTAGES_CELLBOARD2DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD2DefaultTypeInternal _VOLTAGES_CELLBOARD2_default_instance_;
-class VOLTAGES_CELLBOARD3;
-class VOLTAGES_CELLBOARD3DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD3DefaultTypeInternal _VOLTAGES_CELLBOARD3_default_instance_;
-class VOLTAGES_CELLBOARD4;
-class VOLTAGES_CELLBOARD4DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD4DefaultTypeInternal _VOLTAGES_CELLBOARD4_default_instance_;
-class VOLTAGES_CELLBOARD5;
-class VOLTAGES_CELLBOARD5DefaultTypeInternal;
-extern VOLTAGES_CELLBOARD5DefaultTypeInternal _VOLTAGES_CELLBOARD5_default_instance_;
+class TEMPERATURES;
+class TEMPERATURESDefaultTypeInternal;
+extern TEMPERATURESDefaultTypeInternal _TEMPERATURES_default_instance_;
+class VOLTAGES;
+class VOLTAGESDefaultTypeInternal;
+extern VOLTAGESDefaultTypeInternal _VOLTAGES_default_instance_;
 }  // namespace bms
 PROTOBUF_NAMESPACE_OPEN
 template<> ::bms::BALANCING* Arena::CreateMaybeMessage<::bms::BALANCING>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD0* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD0>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD1* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD1>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD2* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD2>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD3* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD3>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD4* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD4>(Arena*);
-template<> ::bms::BOARD_STATUS_CELLBOARD5* Arena::CreateMaybeMessage<::bms::BOARD_STATUS_CELLBOARD5>(Arena*);
+template<> ::bms::BOARD_STATUS* Arena::CreateMaybeMessage<::bms::BOARD_STATUS>(Arena*);
 template<> ::bms::FLASH_CELLBOARD_0_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_0_RX>(Arena*);
 template<> ::bms::FLASH_CELLBOARD_0_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_0_TX>(Arena*);
 template<> ::bms::FLASH_CELLBOARD_1_RX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_1_RX>(Arena*);
@@ -178,21 +128,40 @@ template<> ::bms::FLASH_CELLBOARD_5_RX* Arena::CreateMaybeMessage<::bms::FLASH_C
 template<> ::bms::FLASH_CELLBOARD_5_TX* Arena::CreateMaybeMessage<::bms::FLASH_CELLBOARD_5_TX>(Arena*);
 template<> ::bms::FW_UPDATE* Arena::CreateMaybeMessage<::bms::FW_UPDATE>(Arena*);
 template<> ::bms::Pack* Arena::CreateMaybeMessage<::bms::Pack>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD0* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD0>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD1* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD1>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD2* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD2>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD3* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD3>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD4* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD4>(Arena*);
-template<> ::bms::TEMPERATURES_CELLBOARD5* Arena::CreateMaybeMessage<::bms::TEMPERATURES_CELLBOARD5>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD0* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD0>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD1* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD1>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD2* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD2>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD3* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD3>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD4* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD4>(Arena*);
-template<> ::bms::VOLTAGES_CELLBOARD5* Arena::CreateMaybeMessage<::bms::VOLTAGES_CELLBOARD5>(Arena*);
+template<> ::bms::TEMPERATURES* Arena::CreateMaybeMessage<::bms::TEMPERATURES>(Arena*);
+template<> ::bms::VOLTAGES* Arena::CreateMaybeMessage<::bms::VOLTAGES>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace bms {
 
+enum Cellboard : int {
+  Cellboard_CELLBOARD_0 = 0,
+  Cellboard_CELLBOARD_1 = 1,
+  Cellboard_CELLBOARD_2 = 2,
+  Cellboard_CELLBOARD_3 = 3,
+  Cellboard_CELLBOARD_4 = 4,
+  Cellboard_CELLBOARD_5 = 5,
+  Cellboard_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  Cellboard_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool Cellboard_IsValid(int value);
+constexpr Cellboard Cellboard_MIN = Cellboard_CELLBOARD_0;
+constexpr Cellboard Cellboard_MAX = Cellboard_CELLBOARD_5;
+constexpr int Cellboard_ARRAYSIZE = Cellboard_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Cellboard_descriptor();
+template<typename T>
+inline const std::string& Cellboard_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, Cellboard>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function Cellboard_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    Cellboard_descriptor(), enum_t_value);
+}
+inline bool Cellboard_Parse(
+    const std::string& name, Cellboard* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Cellboard>(
+    Cellboard_descriptor(), name, value);
+}
 enum BalancingStatus : int {
   BalancingStatus_OFF = 0,
   BalancingStatus_DISCHARGE = 1,
@@ -220,23 +189,23 @@ inline bool BalancingStatus_Parse(
 }
 // ===================================================================
 
-class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD0) */ {
+class BOARD_STATUS PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS) */ {
  public:
-  inline BOARD_STATUS_CELLBOARD0() : BOARD_STATUS_CELLBOARD0(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD0();
+  inline BOARD_STATUS() : BOARD_STATUS(nullptr) {};
+  virtual ~BOARD_STATUS();
 
-  BOARD_STATUS_CELLBOARD0(const BOARD_STATUS_CELLBOARD0& from);
-  BOARD_STATUS_CELLBOARD0(BOARD_STATUS_CELLBOARD0&& from) noexcept
-    : BOARD_STATUS_CELLBOARD0() {
+  BOARD_STATUS(const BOARD_STATUS& from);
+  BOARD_STATUS(BOARD_STATUS&& from) noexcept
+    : BOARD_STATUS() {
     *this = ::std::move(from);
   }
 
-  inline BOARD_STATUS_CELLBOARD0& operator=(const BOARD_STATUS_CELLBOARD0& from) {
+  inline BOARD_STATUS& operator=(const BOARD_STATUS& from) {
     CopyFrom(from);
     return *this;
   }
-  inline BOARD_STATUS_CELLBOARD0& operator=(BOARD_STATUS_CELLBOARD0&& from) noexcept {
+  inline BOARD_STATUS& operator=(BOARD_STATUS&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -254,20 +223,20 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const BOARD_STATUS_CELLBOARD0& default_instance();
+  static const BOARD_STATUS& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD0* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD0*>(
-               &_BOARD_STATUS_CELLBOARD0_default_instance_);
+  static inline const BOARD_STATUS* internal_default_instance() {
+    return reinterpret_cast<const BOARD_STATUS*>(
+               &_BOARD_STATUS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(BOARD_STATUS_CELLBOARD0& a, BOARD_STATUS_CELLBOARD0& b) {
+  friend void swap(BOARD_STATUS& a, BOARD_STATUS& b) {
     a.Swap(&b);
   }
-  inline void Swap(BOARD_STATUS_CELLBOARD0* other) {
+  inline void Swap(BOARD_STATUS* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -275,7 +244,7 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD0* other) {
+  void UnsafeArenaSwap(BOARD_STATUS* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -283,17 +252,17 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline BOARD_STATUS_CELLBOARD0* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD0>(nullptr);
+  inline BOARD_STATUS* New() const final {
+    return CreateMaybeMessage<BOARD_STATUS>(nullptr);
   }
 
-  BOARD_STATUS_CELLBOARD0* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD0>(arena);
+  BOARD_STATUS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<BOARD_STATUS>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD0& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD0& from);
+  void CopyFrom(const BOARD_STATUS& from);
+  void MergeFrom(const BOARD_STATUS& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -307,13 +276,13 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD0* other);
+  void InternalSwap(BOARD_STATUS* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD0";
+    return "bms.BOARD_STATUS";
   }
   protected:
-  explicit BOARD_STATUS_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit BOARD_STATUS(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -333,11 +302,21 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kCellboardIdFieldNumber = 1,
+    kErrorsFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kBalancingStatusFieldNumber = 3,
   };
-  // uint32 errors = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  void clear_cellboard_id();
+  ::bms::Cellboard cellboard_id() const;
+  void set_cellboard_id(::bms::Cellboard value);
+  private:
+  ::bms::Cellboard _internal_cellboard_id() const;
+  void _internal_set_cellboard_id(::bms::Cellboard value);
+  public:
+
+  // uint32 errors = 2;
   void clear_errors();
   ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
   void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -346,16 +325,7 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
-  private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -364,38 +334,48 @@ class BOARD_STATUS_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD0)
+  // .bms.BalancingStatus balancing_status = 3;
+  void clear_balancing_status();
+  ::bms::BalancingStatus balancing_status() const;
+  void set_balancing_status(::bms::BalancingStatus value);
+  private:
+  ::bms::BalancingStatus _internal_balancing_status() const;
+  void _internal_set_balancing_status(::bms::BalancingStatus value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  int cellboard_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  int balancing_status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
 // -------------------------------------------------------------------
 
-class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD1) */ {
+class TEMPERATURES PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES) */ {
  public:
-  inline BOARD_STATUS_CELLBOARD1() : BOARD_STATUS_CELLBOARD1(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD1();
+  inline TEMPERATURES() : TEMPERATURES(nullptr) {};
+  virtual ~TEMPERATURES();
 
-  BOARD_STATUS_CELLBOARD1(const BOARD_STATUS_CELLBOARD1& from);
-  BOARD_STATUS_CELLBOARD1(BOARD_STATUS_CELLBOARD1&& from) noexcept
-    : BOARD_STATUS_CELLBOARD1() {
+  TEMPERATURES(const TEMPERATURES& from);
+  TEMPERATURES(TEMPERATURES&& from) noexcept
+    : TEMPERATURES() {
     *this = ::std::move(from);
   }
 
-  inline BOARD_STATUS_CELLBOARD1& operator=(const BOARD_STATUS_CELLBOARD1& from) {
+  inline TEMPERATURES& operator=(const TEMPERATURES& from) {
     CopyFrom(from);
     return *this;
   }
-  inline BOARD_STATUS_CELLBOARD1& operator=(BOARD_STATUS_CELLBOARD1&& from) noexcept {
+  inline TEMPERATURES& operator=(TEMPERATURES&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -413,20 +393,20 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const BOARD_STATUS_CELLBOARD1& default_instance();
+  static const TEMPERATURES& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD1* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD1*>(
-               &_BOARD_STATUS_CELLBOARD1_default_instance_);
+  static inline const TEMPERATURES* internal_default_instance() {
+    return reinterpret_cast<const TEMPERATURES*>(
+               &_TEMPERATURES_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(BOARD_STATUS_CELLBOARD1& a, BOARD_STATUS_CELLBOARD1& b) {
+  friend void swap(TEMPERATURES& a, TEMPERATURES& b) {
     a.Swap(&b);
   }
-  inline void Swap(BOARD_STATUS_CELLBOARD1* other) {
+  inline void Swap(TEMPERATURES* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -434,7 +414,7 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD1* other) {
+  void UnsafeArenaSwap(TEMPERATURES* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -442,17 +422,17 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline BOARD_STATUS_CELLBOARD1* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD1>(nullptr);
+  inline TEMPERATURES* New() const final {
+    return CreateMaybeMessage<TEMPERATURES>(nullptr);
   }
 
-  BOARD_STATUS_CELLBOARD1* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD1>(arena);
+  TEMPERATURES* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TEMPERATURES>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD1& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD1& from);
+  void CopyFrom(const TEMPERATURES& from);
+  void MergeFrom(const TEMPERATURES& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -466,13 +446,13 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD1* other);
+  void InternalSwap(TEMPERATURES* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD1";
+    return "bms.TEMPERATURES";
   }
   protected:
-  explicit BOARD_STATUS_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit TEMPERATURES(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -492,29 +472,69 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kCellboardIdFieldNumber = 1,
+    kStartIndexFieldNumber = 2,
+    kTemp0FieldNumber = 3,
+    kTemp1FieldNumber = 4,
+    kTemp2FieldNumber = 5,
+    kTemp3FieldNumber = 6,
+    kInnerTimestampFieldNumber = 7,
   };
-  // uint32 errors = 1;
-  void clear_errors();
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
-  void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // .bms.Cellboard cellboard_id = 1;
+  void clear_cellboard_id();
+  ::bms::Cellboard cellboard_id() const;
+  void set_cellboard_id(::bms::Cellboard value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_errors() const;
-  void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::bms::Cellboard _internal_cellboard_id() const;
+  void _internal_set_cellboard_id(::bms::Cellboard value);
   public:
 
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
+  // uint32 start_index = 2;
+  void clear_start_index();
+  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
+  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
+  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 _inner_timestamp = 3;
+  // float temp0 = 3;
+  void clear_temp0();
+  float temp0() const;
+  void set_temp0(float value);
+  private:
+  float _internal_temp0() const;
+  void _internal_set_temp0(float value);
+  public:
+
+  // float temp1 = 4;
+  void clear_temp1();
+  float temp1() const;
+  void set_temp1(float value);
+  private:
+  float _internal_temp1() const;
+  void _internal_set_temp1(float value);
+  public:
+
+  // float temp2 = 5;
+  void clear_temp2();
+  float temp2() const;
+  void set_temp2(float value);
+  private:
+  float _internal_temp2() const;
+  void _internal_set_temp2(float value);
+  public:
+
+  // float temp3 = 6;
+  void clear_temp3();
+  float temp3() const;
+  void set_temp3(float value);
+  private:
+  float _internal_temp3() const;
+  void _internal_set_temp3(float value);
+  public:
+
+  // uint64 _inner_timestamp = 7;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -523,38 +543,42 @@ class BOARD_STATUS_CELLBOARD1 PROTOBUF_FINAL :
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD1)
+  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
+  int cellboard_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
+  float temp0_;
+  float temp1_;
+  float temp2_;
+  float temp3_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
 // -------------------------------------------------------------------
 
-class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD2) */ {
+class VOLTAGES PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES) */ {
  public:
-  inline BOARD_STATUS_CELLBOARD2() : BOARD_STATUS_CELLBOARD2(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD2();
+  inline VOLTAGES() : VOLTAGES(nullptr) {};
+  virtual ~VOLTAGES();
 
-  BOARD_STATUS_CELLBOARD2(const BOARD_STATUS_CELLBOARD2& from);
-  BOARD_STATUS_CELLBOARD2(BOARD_STATUS_CELLBOARD2&& from) noexcept
-    : BOARD_STATUS_CELLBOARD2() {
+  VOLTAGES(const VOLTAGES& from);
+  VOLTAGES(VOLTAGES&& from) noexcept
+    : VOLTAGES() {
     *this = ::std::move(from);
   }
 
-  inline BOARD_STATUS_CELLBOARD2& operator=(const BOARD_STATUS_CELLBOARD2& from) {
+  inline VOLTAGES& operator=(const VOLTAGES& from) {
     CopyFrom(from);
     return *this;
   }
-  inline BOARD_STATUS_CELLBOARD2& operator=(BOARD_STATUS_CELLBOARD2&& from) noexcept {
+  inline VOLTAGES& operator=(VOLTAGES&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -572,20 +596,20 @@ class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const BOARD_STATUS_CELLBOARD2& default_instance();
+  static const VOLTAGES& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD2* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD2*>(
-               &_BOARD_STATUS_CELLBOARD2_default_instance_);
+  static inline const VOLTAGES* internal_default_instance() {
+    return reinterpret_cast<const VOLTAGES*>(
+               &_VOLTAGES_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(BOARD_STATUS_CELLBOARD2& a, BOARD_STATUS_CELLBOARD2& b) {
+  friend void swap(VOLTAGES& a, VOLTAGES& b) {
     a.Swap(&b);
   }
-  inline void Swap(BOARD_STATUS_CELLBOARD2* other) {
+  inline void Swap(VOLTAGES* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -593,7 +617,7 @@ class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD2* other) {
+  void UnsafeArenaSwap(VOLTAGES* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -601,17 +625,17 @@ class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline BOARD_STATUS_CELLBOARD2* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD2>(nullptr);
+  inline VOLTAGES* New() const final {
+    return CreateMaybeMessage<VOLTAGES>(nullptr);
   }
 
-  BOARD_STATUS_CELLBOARD2* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD2>(arena);
+  VOLTAGES* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<VOLTAGES>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD2& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD2& from);
+  void CopyFrom(const VOLTAGES& from);
+  void MergeFrom(const VOLTAGES& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -625,13 +649,13 @@ class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD2* other);
+  void InternalSwap(VOLTAGES* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD2";
+    return "bms.VOLTAGES";
   }
   protected:
-  explicit BOARD_STATUS_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit VOLTAGES(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -651,652 +675,23 @@ class BOARD_STATUS_CELLBOARD2 PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kCellboardIdFieldNumber = 1,
+    kStartIndexFieldNumber = 2,
+    kVoltage0FieldNumber = 3,
+    kVoltage1FieldNumber = 4,
+    kInnerTimestampFieldNumber = 6,
+    kVoltage2FieldNumber = 5,
   };
-  // uint32 errors = 1;
-  void clear_errors();
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
-  void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // .bms.Cellboard cellboard_id = 1;
+  void clear_cellboard_id();
+  ::bms::Cellboard cellboard_id() const;
+  void set_cellboard_id(::bms::Cellboard value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_errors() const;
-  void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::bms::Cellboard _internal_cellboard_id() const;
+  void _internal_set_cellboard_id(::bms::Cellboard value);
   public:
 
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
-  private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD2)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class BOARD_STATUS_CELLBOARD3 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD3) */ {
- public:
-  inline BOARD_STATUS_CELLBOARD3() : BOARD_STATUS_CELLBOARD3(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD3();
-
-  BOARD_STATUS_CELLBOARD3(const BOARD_STATUS_CELLBOARD3& from);
-  BOARD_STATUS_CELLBOARD3(BOARD_STATUS_CELLBOARD3&& from) noexcept
-    : BOARD_STATUS_CELLBOARD3() {
-    *this = ::std::move(from);
-  }
-
-  inline BOARD_STATUS_CELLBOARD3& operator=(const BOARD_STATUS_CELLBOARD3& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BOARD_STATUS_CELLBOARD3& operator=(BOARD_STATUS_CELLBOARD3&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const BOARD_STATUS_CELLBOARD3& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD3* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD3*>(
-               &_BOARD_STATUS_CELLBOARD3_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(BOARD_STATUS_CELLBOARD3& a, BOARD_STATUS_CELLBOARD3& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(BOARD_STATUS_CELLBOARD3* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD3* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline BOARD_STATUS_CELLBOARD3* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD3>(nullptr);
-  }
-
-  BOARD_STATUS_CELLBOARD3* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD3>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD3& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD3& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD3* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD3";
-  }
-  protected:
-  explicit BOARD_STATUS_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
-  };
-  // uint32 errors = 1;
-  void clear_errors();
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
-  void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_errors() const;
-  void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
-  private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD3)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class BOARD_STATUS_CELLBOARD4 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD4) */ {
- public:
-  inline BOARD_STATUS_CELLBOARD4() : BOARD_STATUS_CELLBOARD4(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD4();
-
-  BOARD_STATUS_CELLBOARD4(const BOARD_STATUS_CELLBOARD4& from);
-  BOARD_STATUS_CELLBOARD4(BOARD_STATUS_CELLBOARD4&& from) noexcept
-    : BOARD_STATUS_CELLBOARD4() {
-    *this = ::std::move(from);
-  }
-
-  inline BOARD_STATUS_CELLBOARD4& operator=(const BOARD_STATUS_CELLBOARD4& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BOARD_STATUS_CELLBOARD4& operator=(BOARD_STATUS_CELLBOARD4&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const BOARD_STATUS_CELLBOARD4& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD4* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD4*>(
-               &_BOARD_STATUS_CELLBOARD4_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  friend void swap(BOARD_STATUS_CELLBOARD4& a, BOARD_STATUS_CELLBOARD4& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(BOARD_STATUS_CELLBOARD4* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD4* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline BOARD_STATUS_CELLBOARD4* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD4>(nullptr);
-  }
-
-  BOARD_STATUS_CELLBOARD4* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD4>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD4& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD4& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD4* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD4";
-  }
-  protected:
-  explicit BOARD_STATUS_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
-  };
-  // uint32 errors = 1;
-  void clear_errors();
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
-  void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_errors() const;
-  void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
-  private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD4)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class BOARD_STATUS_CELLBOARD5 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.BOARD_STATUS_CELLBOARD5) */ {
- public:
-  inline BOARD_STATUS_CELLBOARD5() : BOARD_STATUS_CELLBOARD5(nullptr) {};
-  virtual ~BOARD_STATUS_CELLBOARD5();
-
-  BOARD_STATUS_CELLBOARD5(const BOARD_STATUS_CELLBOARD5& from);
-  BOARD_STATUS_CELLBOARD5(BOARD_STATUS_CELLBOARD5&& from) noexcept
-    : BOARD_STATUS_CELLBOARD5() {
-    *this = ::std::move(from);
-  }
-
-  inline BOARD_STATUS_CELLBOARD5& operator=(const BOARD_STATUS_CELLBOARD5& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BOARD_STATUS_CELLBOARD5& operator=(BOARD_STATUS_CELLBOARD5&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const BOARD_STATUS_CELLBOARD5& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BOARD_STATUS_CELLBOARD5* internal_default_instance() {
-    return reinterpret_cast<const BOARD_STATUS_CELLBOARD5*>(
-               &_BOARD_STATUS_CELLBOARD5_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(BOARD_STATUS_CELLBOARD5& a, BOARD_STATUS_CELLBOARD5& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(BOARD_STATUS_CELLBOARD5* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BOARD_STATUS_CELLBOARD5* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline BOARD_STATUS_CELLBOARD5* New() const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD5>(nullptr);
-  }
-
-  BOARD_STATUS_CELLBOARD5* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<BOARD_STATUS_CELLBOARD5>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const BOARD_STATUS_CELLBOARD5& from);
-  void MergeFrom(const BOARD_STATUS_CELLBOARD5& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(BOARD_STATUS_CELLBOARD5* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.BOARD_STATUS_CELLBOARD5";
-  }
-  protected:
-  explicit BOARD_STATUS_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kErrorsFieldNumber = 1,
-    kBalancingStatusFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
-  };
-  // uint32 errors = 1;
-  void clear_errors();
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors() const;
-  void set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_errors() const;
-  void _internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // .bms.BalancingStatus balancing_status = 2;
-  void clear_balancing_status();
-  ::bms::BalancingStatus balancing_status() const;
-  void set_balancing_status(::bms::BalancingStatus value);
-  private:
-  ::bms::BalancingStatus _internal_balancing_status() const;
-  void _internal_set_balancing_status(::bms::BalancingStatus value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.BOARD_STATUS_CELLBOARD5)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 errors_;
-  int balancing_status_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD0 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD0) */ {
- public:
-  inline TEMPERATURES_CELLBOARD0() : TEMPERATURES_CELLBOARD0(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD0();
-
-  TEMPERATURES_CELLBOARD0(const TEMPERATURES_CELLBOARD0& from);
-  TEMPERATURES_CELLBOARD0(TEMPERATURES_CELLBOARD0&& from) noexcept
-    : TEMPERATURES_CELLBOARD0() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD0& operator=(const TEMPERATURES_CELLBOARD0& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD0& operator=(TEMPERATURES_CELLBOARD0&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD0& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD0* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD0*>(
-               &_TEMPERATURES_CELLBOARD0_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(TEMPERATURES_CELLBOARD0& a, TEMPERATURES_CELLBOARD0& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD0* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD0* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD0* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD0>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD0* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD0>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD0& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD0& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD0* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD0";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
+  // uint32 start_index = 2;
   void clear_start_index();
   ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
   void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -1305,1288 +700,7 @@ class TEMPERATURES_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD0)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD1 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD1) */ {
- public:
-  inline TEMPERATURES_CELLBOARD1() : TEMPERATURES_CELLBOARD1(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD1();
-
-  TEMPERATURES_CELLBOARD1(const TEMPERATURES_CELLBOARD1& from);
-  TEMPERATURES_CELLBOARD1(TEMPERATURES_CELLBOARD1&& from) noexcept
-    : TEMPERATURES_CELLBOARD1() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD1& operator=(const TEMPERATURES_CELLBOARD1& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD1& operator=(TEMPERATURES_CELLBOARD1&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD1& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD1* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD1*>(
-               &_TEMPERATURES_CELLBOARD1_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    7;
-
-  friend void swap(TEMPERATURES_CELLBOARD1& a, TEMPERATURES_CELLBOARD1& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD1* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD1* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD1* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD1>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD1* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD1>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD1& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD1& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD1* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD1";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD1)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD2 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD2) */ {
- public:
-  inline TEMPERATURES_CELLBOARD2() : TEMPERATURES_CELLBOARD2(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD2();
-
-  TEMPERATURES_CELLBOARD2(const TEMPERATURES_CELLBOARD2& from);
-  TEMPERATURES_CELLBOARD2(TEMPERATURES_CELLBOARD2&& from) noexcept
-    : TEMPERATURES_CELLBOARD2() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD2& operator=(const TEMPERATURES_CELLBOARD2& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD2& operator=(TEMPERATURES_CELLBOARD2&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD2& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD2* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD2*>(
-               &_TEMPERATURES_CELLBOARD2_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  friend void swap(TEMPERATURES_CELLBOARD2& a, TEMPERATURES_CELLBOARD2& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD2* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD2* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD2* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD2>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD2* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD2>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD2& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD2& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD2* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD2";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD2)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD3 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD3) */ {
- public:
-  inline TEMPERATURES_CELLBOARD3() : TEMPERATURES_CELLBOARD3(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD3();
-
-  TEMPERATURES_CELLBOARD3(const TEMPERATURES_CELLBOARD3& from);
-  TEMPERATURES_CELLBOARD3(TEMPERATURES_CELLBOARD3&& from) noexcept
-    : TEMPERATURES_CELLBOARD3() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD3& operator=(const TEMPERATURES_CELLBOARD3& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD3& operator=(TEMPERATURES_CELLBOARD3&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD3& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD3* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD3*>(
-               &_TEMPERATURES_CELLBOARD3_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  friend void swap(TEMPERATURES_CELLBOARD3& a, TEMPERATURES_CELLBOARD3& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD3* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD3* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD3* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD3>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD3* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD3>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD3& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD3& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD3* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD3";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD3)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD4 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD4) */ {
- public:
-  inline TEMPERATURES_CELLBOARD4() : TEMPERATURES_CELLBOARD4(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD4();
-
-  TEMPERATURES_CELLBOARD4(const TEMPERATURES_CELLBOARD4& from);
-  TEMPERATURES_CELLBOARD4(TEMPERATURES_CELLBOARD4&& from) noexcept
-    : TEMPERATURES_CELLBOARD4() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD4& operator=(const TEMPERATURES_CELLBOARD4& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD4& operator=(TEMPERATURES_CELLBOARD4&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD4& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD4* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD4*>(
-               &_TEMPERATURES_CELLBOARD4_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  friend void swap(TEMPERATURES_CELLBOARD4& a, TEMPERATURES_CELLBOARD4& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD4* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD4* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD4* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD4>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD4* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD4>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD4& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD4& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD4* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD4";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD4)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class TEMPERATURES_CELLBOARD5 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.TEMPERATURES_CELLBOARD5) */ {
- public:
-  inline TEMPERATURES_CELLBOARD5() : TEMPERATURES_CELLBOARD5(nullptr) {};
-  virtual ~TEMPERATURES_CELLBOARD5();
-
-  TEMPERATURES_CELLBOARD5(const TEMPERATURES_CELLBOARD5& from);
-  TEMPERATURES_CELLBOARD5(TEMPERATURES_CELLBOARD5&& from) noexcept
-    : TEMPERATURES_CELLBOARD5() {
-    *this = ::std::move(from);
-  }
-
-  inline TEMPERATURES_CELLBOARD5& operator=(const TEMPERATURES_CELLBOARD5& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline TEMPERATURES_CELLBOARD5& operator=(TEMPERATURES_CELLBOARD5&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const TEMPERATURES_CELLBOARD5& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TEMPERATURES_CELLBOARD5* internal_default_instance() {
-    return reinterpret_cast<const TEMPERATURES_CELLBOARD5*>(
-               &_TEMPERATURES_CELLBOARD5_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    11;
-
-  friend void swap(TEMPERATURES_CELLBOARD5& a, TEMPERATURES_CELLBOARD5& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(TEMPERATURES_CELLBOARD5* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(TEMPERATURES_CELLBOARD5* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TEMPERATURES_CELLBOARD5* New() const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD5>(nullptr);
-  }
-
-  TEMPERATURES_CELLBOARD5* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<TEMPERATURES_CELLBOARD5>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const TEMPERATURES_CELLBOARD5& from);
-  void MergeFrom(const TEMPERATURES_CELLBOARD5& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TEMPERATURES_CELLBOARD5* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.TEMPERATURES_CELLBOARD5";
-  }
-  protected:
-  explicit TEMPERATURES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kTemp0FieldNumber = 2,
-    kTemp1FieldNumber = 3,
-    kTemp2FieldNumber = 4,
-    kTemp3FieldNumber = 5,
-    kTemp4FieldNumber = 6,
-    kInnerTimestampFieldNumber = 8,
-    kTemp5FieldNumber = 7,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float temp0 = 2;
-  void clear_temp0();
-  float temp0() const;
-  void set_temp0(float value);
-  private:
-  float _internal_temp0() const;
-  void _internal_set_temp0(float value);
-  public:
-
-  // float temp1 = 3;
-  void clear_temp1();
-  float temp1() const;
-  void set_temp1(float value);
-  private:
-  float _internal_temp1() const;
-  void _internal_set_temp1(float value);
-  public:
-
-  // float temp2 = 4;
-  void clear_temp2();
-  float temp2() const;
-  void set_temp2(float value);
-  private:
-  float _internal_temp2() const;
-  void _internal_set_temp2(float value);
-  public:
-
-  // float temp3 = 5;
-  void clear_temp3();
-  float temp3() const;
-  void set_temp3(float value);
-  private:
-  float _internal_temp3() const;
-  void _internal_set_temp3(float value);
-  public:
-
-  // float temp4 = 6;
-  void clear_temp4();
-  float temp4() const;
-  void set_temp4(float value);
-  private:
-  float _internal_temp4() const;
-  void _internal_set_temp4(float value);
-  public:
-
-  // uint64 _inner_timestamp = 8;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // float temp5 = 7;
-  void clear_temp5();
-  float temp5() const;
-  void set_temp5(float value);
-  private:
-  float _internal_temp5() const;
-  void _internal_set_temp5(float value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.TEMPERATURES_CELLBOARD5)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float temp0_;
-  float temp1_;
-  float temp2_;
-  float temp3_;
-  float temp4_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  float temp5_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD0 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD0) */ {
- public:
-  inline VOLTAGES_CELLBOARD0() : VOLTAGES_CELLBOARD0(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD0();
-
-  VOLTAGES_CELLBOARD0(const VOLTAGES_CELLBOARD0& from);
-  VOLTAGES_CELLBOARD0(VOLTAGES_CELLBOARD0&& from) noexcept
-    : VOLTAGES_CELLBOARD0() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD0& operator=(const VOLTAGES_CELLBOARD0& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD0& operator=(VOLTAGES_CELLBOARD0&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD0& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD0* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD0*>(
-               &_VOLTAGES_CELLBOARD0_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    12;
-
-  friend void swap(VOLTAGES_CELLBOARD0& a, VOLTAGES_CELLBOARD0& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD0* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD0* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD0* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD0>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD0* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD0>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD0& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD0& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD0* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD0";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD0(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
+  // float voltage0 = 3;
   void clear_voltage0();
   float voltage0() const;
   void set_voltage0(float value);
@@ -2595,7 +709,7 @@ class VOLTAGES_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set_voltage0(float value);
   public:
 
-  // float voltage1 = 3;
+  // float voltage1 = 4;
   void clear_voltage1();
   float voltage1() const;
   void set_voltage1(float value);
@@ -2604,16 +718,7 @@ class VOLTAGES_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set_voltage1(float value);
   public:
 
-  // float voltage2 = 4;
-  void clear_voltage2();
-  float voltage2() const;
-  void set_voltage2(float value);
-  private:
-  float _internal_voltage2() const;
-  void _internal_set_voltage2(float value);
-  public:
-
-  // uint64 _inner_timestamp = 5;
+  // uint64 _inner_timestamp = 6;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2622,170 +727,7 @@ class VOLTAGES_CELLBOARD0 PROTOBUF_FINAL :
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD0)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float voltage0_;
-  float voltage1_;
-  float voltage2_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD1 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD1) */ {
- public:
-  inline VOLTAGES_CELLBOARD1() : VOLTAGES_CELLBOARD1(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD1();
-
-  VOLTAGES_CELLBOARD1(const VOLTAGES_CELLBOARD1& from);
-  VOLTAGES_CELLBOARD1(VOLTAGES_CELLBOARD1&& from) noexcept
-    : VOLTAGES_CELLBOARD1() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD1& operator=(const VOLTAGES_CELLBOARD1& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD1& operator=(VOLTAGES_CELLBOARD1&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD1& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD1* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD1*>(
-               &_VOLTAGES_CELLBOARD1_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    13;
-
-  friend void swap(VOLTAGES_CELLBOARD1& a, VOLTAGES_CELLBOARD1& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD1* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD1* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD1* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD1>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD1* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD1>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD1& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD1& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD1* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD1";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD1(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
-  void clear_voltage0();
-  float voltage0() const;
-  void set_voltage0(float value);
-  private:
-  float _internal_voltage0() const;
-  void _internal_set_voltage0(float value);
-  public:
-
-  // float voltage1 = 3;
-  void clear_voltage1();
-  float voltage1() const;
-  void set_voltage1(float value);
-  private:
-  float _internal_voltage1() const;
-  void _internal_set_voltage1(float value);
-  public:
-
-  // float voltage2 = 4;
+  // float voltage2 = 5;
   void clear_voltage2();
   float voltage2() const;
   void set_voltage2(float value);
@@ -2794,751 +736,19 @@ class VOLTAGES_CELLBOARD1 PROTOBUF_FINAL :
   void _internal_set_voltage2(float value);
   public:
 
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD1)
+  // @@protoc_insertion_point(class_scope:bms.VOLTAGES)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  int cellboard_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
   float voltage0_;
   float voltage1_;
-  float voltage2_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD2 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD2) */ {
- public:
-  inline VOLTAGES_CELLBOARD2() : VOLTAGES_CELLBOARD2(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD2();
-
-  VOLTAGES_CELLBOARD2(const VOLTAGES_CELLBOARD2& from);
-  VOLTAGES_CELLBOARD2(VOLTAGES_CELLBOARD2&& from) noexcept
-    : VOLTAGES_CELLBOARD2() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD2& operator=(const VOLTAGES_CELLBOARD2& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD2& operator=(VOLTAGES_CELLBOARD2&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD2& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD2* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD2*>(
-               &_VOLTAGES_CELLBOARD2_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(VOLTAGES_CELLBOARD2& a, VOLTAGES_CELLBOARD2& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD2* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD2* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD2* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD2>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD2* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD2>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD2& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD2& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD2* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD2";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD2(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
-  void clear_voltage0();
-  float voltage0() const;
-  void set_voltage0(float value);
-  private:
-  float _internal_voltage0() const;
-  void _internal_set_voltage0(float value);
-  public:
-
-  // float voltage1 = 3;
-  void clear_voltage1();
-  float voltage1() const;
-  void set_voltage1(float value);
-  private:
-  float _internal_voltage1() const;
-  void _internal_set_voltage1(float value);
-  public:
-
-  // float voltage2 = 4;
-  void clear_voltage2();
-  float voltage2() const;
-  void set_voltage2(float value);
-  private:
-  float _internal_voltage2() const;
-  void _internal_set_voltage2(float value);
-  public:
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD2)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float voltage0_;
-  float voltage1_;
   float voltage2_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD3 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD3) */ {
- public:
-  inline VOLTAGES_CELLBOARD3() : VOLTAGES_CELLBOARD3(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD3();
-
-  VOLTAGES_CELLBOARD3(const VOLTAGES_CELLBOARD3& from);
-  VOLTAGES_CELLBOARD3(VOLTAGES_CELLBOARD3&& from) noexcept
-    : VOLTAGES_CELLBOARD3() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD3& operator=(const VOLTAGES_CELLBOARD3& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD3& operator=(VOLTAGES_CELLBOARD3&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD3& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD3* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD3*>(
-               &_VOLTAGES_CELLBOARD3_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  friend void swap(VOLTAGES_CELLBOARD3& a, VOLTAGES_CELLBOARD3& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD3* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD3* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD3* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD3>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD3* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD3>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD3& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD3& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD3* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD3";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD3(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
-  void clear_voltage0();
-  float voltage0() const;
-  void set_voltage0(float value);
-  private:
-  float _internal_voltage0() const;
-  void _internal_set_voltage0(float value);
-  public:
-
-  // float voltage1 = 3;
-  void clear_voltage1();
-  float voltage1() const;
-  void set_voltage1(float value);
-  private:
-  float _internal_voltage1() const;
-  void _internal_set_voltage1(float value);
-  public:
-
-  // float voltage2 = 4;
-  void clear_voltage2();
-  float voltage2() const;
-  void set_voltage2(float value);
-  private:
-  float _internal_voltage2() const;
-  void _internal_set_voltage2(float value);
-  public:
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD3)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float voltage0_;
-  float voltage1_;
-  float voltage2_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD4 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD4) */ {
- public:
-  inline VOLTAGES_CELLBOARD4() : VOLTAGES_CELLBOARD4(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD4();
-
-  VOLTAGES_CELLBOARD4(const VOLTAGES_CELLBOARD4& from);
-  VOLTAGES_CELLBOARD4(VOLTAGES_CELLBOARD4&& from) noexcept
-    : VOLTAGES_CELLBOARD4() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD4& operator=(const VOLTAGES_CELLBOARD4& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD4& operator=(VOLTAGES_CELLBOARD4&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD4& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD4* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD4*>(
-               &_VOLTAGES_CELLBOARD4_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    16;
-
-  friend void swap(VOLTAGES_CELLBOARD4& a, VOLTAGES_CELLBOARD4& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD4* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD4* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD4* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD4>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD4* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD4>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD4& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD4& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD4* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD4";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD4(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
-  void clear_voltage0();
-  float voltage0() const;
-  void set_voltage0(float value);
-  private:
-  float _internal_voltage0() const;
-  void _internal_set_voltage0(float value);
-  public:
-
-  // float voltage1 = 3;
-  void clear_voltage1();
-  float voltage1() const;
-  void set_voltage1(float value);
-  private:
-  float _internal_voltage1() const;
-  void _internal_set_voltage1(float value);
-  public:
-
-  // float voltage2 = 4;
-  void clear_voltage2();
-  float voltage2() const;
-  void set_voltage2(float value);
-  private:
-  float _internal_voltage2() const;
-  void _internal_set_voltage2(float value);
-  public:
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD4)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float voltage0_;
-  float voltage1_;
-  float voltage2_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_bms_2eproto;
-};
-// -------------------------------------------------------------------
-
-class VOLTAGES_CELLBOARD5 PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:bms.VOLTAGES_CELLBOARD5) */ {
- public:
-  inline VOLTAGES_CELLBOARD5() : VOLTAGES_CELLBOARD5(nullptr) {};
-  virtual ~VOLTAGES_CELLBOARD5();
-
-  VOLTAGES_CELLBOARD5(const VOLTAGES_CELLBOARD5& from);
-  VOLTAGES_CELLBOARD5(VOLTAGES_CELLBOARD5&& from) noexcept
-    : VOLTAGES_CELLBOARD5() {
-    *this = ::std::move(from);
-  }
-
-  inline VOLTAGES_CELLBOARD5& operator=(const VOLTAGES_CELLBOARD5& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline VOLTAGES_CELLBOARD5& operator=(VOLTAGES_CELLBOARD5&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const VOLTAGES_CELLBOARD5& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VOLTAGES_CELLBOARD5* internal_default_instance() {
-    return reinterpret_cast<const VOLTAGES_CELLBOARD5*>(
-               &_VOLTAGES_CELLBOARD5_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    17;
-
-  friend void swap(VOLTAGES_CELLBOARD5& a, VOLTAGES_CELLBOARD5& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(VOLTAGES_CELLBOARD5* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(VOLTAGES_CELLBOARD5* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline VOLTAGES_CELLBOARD5* New() const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD5>(nullptr);
-  }
-
-  VOLTAGES_CELLBOARD5* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VOLTAGES_CELLBOARD5>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VOLTAGES_CELLBOARD5& from);
-  void MergeFrom(const VOLTAGES_CELLBOARD5& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(VOLTAGES_CELLBOARD5* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "bms.VOLTAGES_CELLBOARD5";
-  }
-  protected:
-  explicit VOLTAGES_CELLBOARD5(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_bms_2eproto);
-    return ::descriptor_table_bms_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStartIndexFieldNumber = 1,
-    kVoltage0FieldNumber = 2,
-    kVoltage1FieldNumber = 3,
-    kVoltage2FieldNumber = 4,
-    kInnerTimestampFieldNumber = 5,
-  };
-  // uint32 start_index = 1;
-  void clear_start_index();
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index() const;
-  void set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_start_index() const;
-  void _internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // float voltage0 = 2;
-  void clear_voltage0();
-  float voltage0() const;
-  void set_voltage0(float value);
-  private:
-  float _internal_voltage0() const;
-  void _internal_set_voltage0(float value);
-  public:
-
-  // float voltage1 = 3;
-  void clear_voltage1();
-  float voltage1() const;
-  void set_voltage1(float value);
-  private:
-  float _internal_voltage1() const;
-  void _internal_set_voltage1(float value);
-  public:
-
-  // float voltage2 = 4;
-  void clear_voltage2();
-  float voltage2() const;
-  void set_voltage2(float value);
-  private:
-  float _internal_voltage2() const;
-  void _internal_set_voltage2(float value);
-  public:
-
-  // uint64 _inner_timestamp = 5;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:bms.VOLTAGES_CELLBOARD5)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 start_index_;
-  float voltage0_;
-  float voltage1_;
-  float voltage2_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
@@ -3586,7 +796,7 @@ class BALANCING PROTOBUF_FINAL :
                &_BALANCING_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    3;
 
   friend void swap(BALANCING& a, BALANCING& b) {
     a.Swap(&b);
@@ -3657,11 +867,21 @@ class BALANCING PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBoardIndexFieldNumber = 1,
-    kCellsFieldNumber = 2,
-    kInnerTimestampFieldNumber = 3,
+    kCellboardIdFieldNumber = 1,
+    kBoardIndexFieldNumber = 2,
+    kInnerTimestampFieldNumber = 4,
+    kCellsFieldNumber = 3,
   };
-  // uint32 board_index = 1;
+  // .bms.Cellboard cellboard_id = 1;
+  void clear_cellboard_id();
+  ::bms::Cellboard cellboard_id() const;
+  void set_cellboard_id(::bms::Cellboard value);
+  private:
+  ::bms::Cellboard _internal_cellboard_id() const;
+  void _internal_set_cellboard_id(::bms::Cellboard value);
+  public:
+
+  // uint32 board_index = 2;
   void clear_board_index();
   ::PROTOBUF_NAMESPACE_ID::uint32 board_index() const;
   void set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3670,22 +890,22 @@ class BALANCING PROTOBUF_FINAL :
   void _internal_set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint32 cells = 2;
-  void clear_cells();
-  ::PROTOBUF_NAMESPACE_ID::uint32 cells() const;
-  void set_cells(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cells() const;
-  void _internal_set_cells(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // uint64 _inner_timestamp = 3;
+  // uint64 _inner_timestamp = 4;
   void clear__inner_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
   void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
   void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint32 cells = 3;
+  void clear_cells();
+  ::PROTOBUF_NAMESPACE_ID::uint32 cells() const;
+  void set_cells(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_cells() const;
+  void _internal_set_cells(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:bms.BALANCING)
@@ -3695,9 +915,10 @@ class BALANCING PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  int cellboard_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 board_index_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 cells_;
   ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 cells_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
@@ -3745,7 +966,7 @@ class FW_UPDATE PROTOBUF_FINAL :
                &_FW_UPDATE_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    4;
 
   friend void swap(FW_UPDATE& a, FW_UPDATE& b) {
     a.Swap(&b);
@@ -3816,25 +1037,35 @@ class FW_UPDATE PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInnerTimestampFieldNumber = 2,
-    kBoardIndexFieldNumber = 1,
+    kCellboardIdFieldNumber = 1,
+    kBoardIndexFieldNumber = 2,
+    kInnerTimestampFieldNumber = 3,
   };
-  // uint64 _inner_timestamp = 2;
-  void clear__inner_timestamp();
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
-  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // .bms.Cellboard cellboard_id = 1;
+  void clear_cellboard_id();
+  ::bms::Cellboard cellboard_id() const;
+  void set_cellboard_id(::bms::Cellboard value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
-  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::bms::Cellboard _internal_cellboard_id() const;
+  void _internal_set_cellboard_id(::bms::Cellboard value);
   public:
 
-  // uint32 board_index = 1;
+  // uint32 board_index = 2;
   void clear_board_index();
   ::PROTOBUF_NAMESPACE_ID::uint32 board_index() const;
   void set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
   ::PROTOBUF_NAMESPACE_ID::uint32 _internal_board_index() const;
   void _internal_set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint64 _inner_timestamp = 3;
+  void clear__inner_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp() const;
+  void set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal__inner_timestamp() const;
+  void _internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:bms.FW_UPDATE)
@@ -3844,8 +1075,9 @@ class FW_UPDATE PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
+  int cellboard_id_;
   ::PROTOBUF_NAMESPACE_ID::uint32 board_index_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 _inner_timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_bms_2eproto;
 };
@@ -3893,7 +1125,7 @@ class FLASH_CELLBOARD_0_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_0_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    5;
 
   friend void swap(FLASH_CELLBOARD_0_TX& a, FLASH_CELLBOARD_0_TX& b) {
     a.Swap(&b);
@@ -4030,7 +1262,7 @@ class FLASH_CELLBOARD_0_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_0_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    6;
 
   friend void swap(FLASH_CELLBOARD_0_RX& a, FLASH_CELLBOARD_0_RX& b) {
     a.Swap(&b);
@@ -4167,7 +1399,7 @@ class FLASH_CELLBOARD_1_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_1_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    7;
 
   friend void swap(FLASH_CELLBOARD_1_TX& a, FLASH_CELLBOARD_1_TX& b) {
     a.Swap(&b);
@@ -4304,7 +1536,7 @@ class FLASH_CELLBOARD_1_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_1_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    8;
 
   friend void swap(FLASH_CELLBOARD_1_RX& a, FLASH_CELLBOARD_1_RX& b) {
     a.Swap(&b);
@@ -4441,7 +1673,7 @@ class FLASH_CELLBOARD_2_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_2_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    9;
 
   friend void swap(FLASH_CELLBOARD_2_TX& a, FLASH_CELLBOARD_2_TX& b) {
     a.Swap(&b);
@@ -4578,7 +1810,7 @@ class FLASH_CELLBOARD_2_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_2_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    10;
 
   friend void swap(FLASH_CELLBOARD_2_RX& a, FLASH_CELLBOARD_2_RX& b) {
     a.Swap(&b);
@@ -4715,7 +1947,7 @@ class FLASH_CELLBOARD_3_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_3_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    11;
 
   friend void swap(FLASH_CELLBOARD_3_TX& a, FLASH_CELLBOARD_3_TX& b) {
     a.Swap(&b);
@@ -4852,7 +2084,7 @@ class FLASH_CELLBOARD_3_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_3_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    12;
 
   friend void swap(FLASH_CELLBOARD_3_RX& a, FLASH_CELLBOARD_3_RX& b) {
     a.Swap(&b);
@@ -4989,7 +2221,7 @@ class FLASH_CELLBOARD_4_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_4_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    13;
 
   friend void swap(FLASH_CELLBOARD_4_TX& a, FLASH_CELLBOARD_4_TX& b) {
     a.Swap(&b);
@@ -5126,7 +2358,7 @@ class FLASH_CELLBOARD_4_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_4_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    14;
 
   friend void swap(FLASH_CELLBOARD_4_RX& a, FLASH_CELLBOARD_4_RX& b) {
     a.Swap(&b);
@@ -5263,7 +2495,7 @@ class FLASH_CELLBOARD_5_TX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_5_TX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    15;
 
   friend void swap(FLASH_CELLBOARD_5_TX& a, FLASH_CELLBOARD_5_TX& b) {
     a.Swap(&b);
@@ -5400,7 +2632,7 @@ class FLASH_CELLBOARD_5_RX PROTOBUF_FINAL :
                &_FLASH_CELLBOARD_5_RX_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    16;
 
   friend void swap(FLASH_CELLBOARD_5_RX& a, FLASH_CELLBOARD_5_RX& b) {
     a.Swap(&b);
@@ -5537,7 +2769,7 @@ class Pack PROTOBUF_FINAL :
                &_Pack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    17;
 
   friend void swap(Pack& a, Pack& b) {
     a.Swap(&b);
@@ -5608,364 +2840,79 @@ class Pack PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBOARDSTATUSCELLBOARD0FieldNumber = 1,
-    kBOARDSTATUSCELLBOARD1FieldNumber = 2,
-    kBOARDSTATUSCELLBOARD2FieldNumber = 3,
-    kBOARDSTATUSCELLBOARD3FieldNumber = 4,
-    kBOARDSTATUSCELLBOARD4FieldNumber = 5,
-    kBOARDSTATUSCELLBOARD5FieldNumber = 6,
-    kTEMPERATURESCELLBOARD0FieldNumber = 7,
-    kTEMPERATURESCELLBOARD1FieldNumber = 8,
-    kTEMPERATURESCELLBOARD2FieldNumber = 9,
-    kTEMPERATURESCELLBOARD3FieldNumber = 10,
-    kTEMPERATURESCELLBOARD4FieldNumber = 11,
-    kTEMPERATURESCELLBOARD5FieldNumber = 12,
-    kVOLTAGESCELLBOARD0FieldNumber = 13,
-    kVOLTAGESCELLBOARD1FieldNumber = 14,
-    kVOLTAGESCELLBOARD2FieldNumber = 15,
-    kVOLTAGESCELLBOARD3FieldNumber = 16,
-    kVOLTAGESCELLBOARD4FieldNumber = 17,
-    kVOLTAGESCELLBOARD5FieldNumber = 18,
-    kBALANCINGFieldNumber = 19,
-    kFWUPDATEFieldNumber = 20,
-    kFLASHCELLBOARD0TXFieldNumber = 21,
-    kFLASHCELLBOARD0RXFieldNumber = 22,
-    kFLASHCELLBOARD1TXFieldNumber = 23,
-    kFLASHCELLBOARD1RXFieldNumber = 24,
-    kFLASHCELLBOARD2TXFieldNumber = 25,
-    kFLASHCELLBOARD2RXFieldNumber = 26,
-    kFLASHCELLBOARD3TXFieldNumber = 27,
-    kFLASHCELLBOARD3RXFieldNumber = 28,
-    kFLASHCELLBOARD4TXFieldNumber = 29,
-    kFLASHCELLBOARD4RXFieldNumber = 30,
-    kFLASHCELLBOARD5TXFieldNumber = 31,
-    kFLASHCELLBOARD5RXFieldNumber = 32,
+    kBOARDSTATUSFieldNumber = 1,
+    kTEMPERATURESFieldNumber = 2,
+    kVOLTAGESFieldNumber = 3,
+    kBALANCINGFieldNumber = 4,
+    kFWUPDATEFieldNumber = 5,
+    kFLASHCELLBOARD0TXFieldNumber = 6,
+    kFLASHCELLBOARD0RXFieldNumber = 7,
+    kFLASHCELLBOARD1TXFieldNumber = 8,
+    kFLASHCELLBOARD1RXFieldNumber = 9,
+    kFLASHCELLBOARD2TXFieldNumber = 10,
+    kFLASHCELLBOARD2RXFieldNumber = 11,
+    kFLASHCELLBOARD3TXFieldNumber = 12,
+    kFLASHCELLBOARD3RXFieldNumber = 13,
+    kFLASHCELLBOARD4TXFieldNumber = 14,
+    kFLASHCELLBOARD4RXFieldNumber = 15,
+    kFLASHCELLBOARD5TXFieldNumber = 16,
+    kFLASHCELLBOARD5RXFieldNumber = 17,
   };
-  // repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-  int board_status_cellboard0_size() const;
+  // repeated .bms.BOARD_STATUS BOARD_STATUS = 1;
+  int board_status_size() const;
   private:
-  int _internal_board_status_cellboard0_size() const;
+  int _internal_board_status_size() const;
   public:
-  void clear_board_status_cellboard0();
-  ::bms::BOARD_STATUS_CELLBOARD0* mutable_board_status_cellboard0(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD0 >*
-      mutable_board_status_cellboard0();
+  void clear_board_status();
+  ::bms::BOARD_STATUS* mutable_board_status(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS >*
+      mutable_board_status();
   private:
-  const ::bms::BOARD_STATUS_CELLBOARD0& _internal_board_status_cellboard0(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD0* _internal_add_board_status_cellboard0();
+  const ::bms::BOARD_STATUS& _internal_board_status(int index) const;
+  ::bms::BOARD_STATUS* _internal_add_board_status();
   public:
-  const ::bms::BOARD_STATUS_CELLBOARD0& board_status_cellboard0(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD0* add_board_status_cellboard0();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD0 >&
-      board_status_cellboard0() const;
+  const ::bms::BOARD_STATUS& board_status(int index) const;
+  ::bms::BOARD_STATUS* add_board_status();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS >&
+      board_status() const;
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-  int board_status_cellboard1_size() const;
+  // repeated .bms.TEMPERATURES TEMPERATURES = 2;
+  int temperatures_size() const;
   private:
-  int _internal_board_status_cellboard1_size() const;
+  int _internal_temperatures_size() const;
   public:
-  void clear_board_status_cellboard1();
-  ::bms::BOARD_STATUS_CELLBOARD1* mutable_board_status_cellboard1(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD1 >*
-      mutable_board_status_cellboard1();
+  void clear_temperatures();
+  ::bms::TEMPERATURES* mutable_temperatures(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES >*
+      mutable_temperatures();
   private:
-  const ::bms::BOARD_STATUS_CELLBOARD1& _internal_board_status_cellboard1(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD1* _internal_add_board_status_cellboard1();
+  const ::bms::TEMPERATURES& _internal_temperatures(int index) const;
+  ::bms::TEMPERATURES* _internal_add_temperatures();
   public:
-  const ::bms::BOARD_STATUS_CELLBOARD1& board_status_cellboard1(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD1* add_board_status_cellboard1();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD1 >&
-      board_status_cellboard1() const;
+  const ::bms::TEMPERATURES& temperatures(int index) const;
+  ::bms::TEMPERATURES* add_temperatures();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES >&
+      temperatures() const;
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-  int board_status_cellboard2_size() const;
+  // repeated .bms.VOLTAGES VOLTAGES = 3;
+  int voltages_size() const;
   private:
-  int _internal_board_status_cellboard2_size() const;
+  int _internal_voltages_size() const;
   public:
-  void clear_board_status_cellboard2();
-  ::bms::BOARD_STATUS_CELLBOARD2* mutable_board_status_cellboard2(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD2 >*
-      mutable_board_status_cellboard2();
+  void clear_voltages();
+  ::bms::VOLTAGES* mutable_voltages(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES >*
+      mutable_voltages();
   private:
-  const ::bms::BOARD_STATUS_CELLBOARD2& _internal_board_status_cellboard2(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD2* _internal_add_board_status_cellboard2();
+  const ::bms::VOLTAGES& _internal_voltages(int index) const;
+  ::bms::VOLTAGES* _internal_add_voltages();
   public:
-  const ::bms::BOARD_STATUS_CELLBOARD2& board_status_cellboard2(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD2* add_board_status_cellboard2();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD2 >&
-      board_status_cellboard2() const;
+  const ::bms::VOLTAGES& voltages(int index) const;
+  ::bms::VOLTAGES* add_voltages();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES >&
+      voltages() const;
 
-  // repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-  int board_status_cellboard3_size() const;
-  private:
-  int _internal_board_status_cellboard3_size() const;
-  public:
-  void clear_board_status_cellboard3();
-  ::bms::BOARD_STATUS_CELLBOARD3* mutable_board_status_cellboard3(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD3 >*
-      mutable_board_status_cellboard3();
-  private:
-  const ::bms::BOARD_STATUS_CELLBOARD3& _internal_board_status_cellboard3(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD3* _internal_add_board_status_cellboard3();
-  public:
-  const ::bms::BOARD_STATUS_CELLBOARD3& board_status_cellboard3(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD3* add_board_status_cellboard3();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD3 >&
-      board_status_cellboard3() const;
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-  int board_status_cellboard4_size() const;
-  private:
-  int _internal_board_status_cellboard4_size() const;
-  public:
-  void clear_board_status_cellboard4();
-  ::bms::BOARD_STATUS_CELLBOARD4* mutable_board_status_cellboard4(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD4 >*
-      mutable_board_status_cellboard4();
-  private:
-  const ::bms::BOARD_STATUS_CELLBOARD4& _internal_board_status_cellboard4(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD4* _internal_add_board_status_cellboard4();
-  public:
-  const ::bms::BOARD_STATUS_CELLBOARD4& board_status_cellboard4(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD4* add_board_status_cellboard4();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD4 >&
-      board_status_cellboard4() const;
-
-  // repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-  int board_status_cellboard5_size() const;
-  private:
-  int _internal_board_status_cellboard5_size() const;
-  public:
-  void clear_board_status_cellboard5();
-  ::bms::BOARD_STATUS_CELLBOARD5* mutable_board_status_cellboard5(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD5 >*
-      mutable_board_status_cellboard5();
-  private:
-  const ::bms::BOARD_STATUS_CELLBOARD5& _internal_board_status_cellboard5(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD5* _internal_add_board_status_cellboard5();
-  public:
-  const ::bms::BOARD_STATUS_CELLBOARD5& board_status_cellboard5(int index) const;
-  ::bms::BOARD_STATUS_CELLBOARD5* add_board_status_cellboard5();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD5 >&
-      board_status_cellboard5() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-  int temperatures_cellboard0_size() const;
-  private:
-  int _internal_temperatures_cellboard0_size() const;
-  public:
-  void clear_temperatures_cellboard0();
-  ::bms::TEMPERATURES_CELLBOARD0* mutable_temperatures_cellboard0(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD0 >*
-      mutable_temperatures_cellboard0();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD0& _internal_temperatures_cellboard0(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD0* _internal_add_temperatures_cellboard0();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD0& temperatures_cellboard0(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD0* add_temperatures_cellboard0();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD0 >&
-      temperatures_cellboard0() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-  int temperatures_cellboard1_size() const;
-  private:
-  int _internal_temperatures_cellboard1_size() const;
-  public:
-  void clear_temperatures_cellboard1();
-  ::bms::TEMPERATURES_CELLBOARD1* mutable_temperatures_cellboard1(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD1 >*
-      mutable_temperatures_cellboard1();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD1& _internal_temperatures_cellboard1(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD1* _internal_add_temperatures_cellboard1();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD1& temperatures_cellboard1(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD1* add_temperatures_cellboard1();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD1 >&
-      temperatures_cellboard1() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-  int temperatures_cellboard2_size() const;
-  private:
-  int _internal_temperatures_cellboard2_size() const;
-  public:
-  void clear_temperatures_cellboard2();
-  ::bms::TEMPERATURES_CELLBOARD2* mutable_temperatures_cellboard2(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD2 >*
-      mutable_temperatures_cellboard2();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD2& _internal_temperatures_cellboard2(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD2* _internal_add_temperatures_cellboard2();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD2& temperatures_cellboard2(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD2* add_temperatures_cellboard2();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD2 >&
-      temperatures_cellboard2() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-  int temperatures_cellboard3_size() const;
-  private:
-  int _internal_temperatures_cellboard3_size() const;
-  public:
-  void clear_temperatures_cellboard3();
-  ::bms::TEMPERATURES_CELLBOARD3* mutable_temperatures_cellboard3(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD3 >*
-      mutable_temperatures_cellboard3();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD3& _internal_temperatures_cellboard3(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD3* _internal_add_temperatures_cellboard3();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD3& temperatures_cellboard3(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD3* add_temperatures_cellboard3();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD3 >&
-      temperatures_cellboard3() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-  int temperatures_cellboard4_size() const;
-  private:
-  int _internal_temperatures_cellboard4_size() const;
-  public:
-  void clear_temperatures_cellboard4();
-  ::bms::TEMPERATURES_CELLBOARD4* mutable_temperatures_cellboard4(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD4 >*
-      mutable_temperatures_cellboard4();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD4& _internal_temperatures_cellboard4(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD4* _internal_add_temperatures_cellboard4();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD4& temperatures_cellboard4(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD4* add_temperatures_cellboard4();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD4 >&
-      temperatures_cellboard4() const;
-
-  // repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-  int temperatures_cellboard5_size() const;
-  private:
-  int _internal_temperatures_cellboard5_size() const;
-  public:
-  void clear_temperatures_cellboard5();
-  ::bms::TEMPERATURES_CELLBOARD5* mutable_temperatures_cellboard5(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD5 >*
-      mutable_temperatures_cellboard5();
-  private:
-  const ::bms::TEMPERATURES_CELLBOARD5& _internal_temperatures_cellboard5(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD5* _internal_add_temperatures_cellboard5();
-  public:
-  const ::bms::TEMPERATURES_CELLBOARD5& temperatures_cellboard5(int index) const;
-  ::bms::TEMPERATURES_CELLBOARD5* add_temperatures_cellboard5();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD5 >&
-      temperatures_cellboard5() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-  int voltages_cellboard0_size() const;
-  private:
-  int _internal_voltages_cellboard0_size() const;
-  public:
-  void clear_voltages_cellboard0();
-  ::bms::VOLTAGES_CELLBOARD0* mutable_voltages_cellboard0(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD0 >*
-      mutable_voltages_cellboard0();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD0& _internal_voltages_cellboard0(int index) const;
-  ::bms::VOLTAGES_CELLBOARD0* _internal_add_voltages_cellboard0();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD0& voltages_cellboard0(int index) const;
-  ::bms::VOLTAGES_CELLBOARD0* add_voltages_cellboard0();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD0 >&
-      voltages_cellboard0() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-  int voltages_cellboard1_size() const;
-  private:
-  int _internal_voltages_cellboard1_size() const;
-  public:
-  void clear_voltages_cellboard1();
-  ::bms::VOLTAGES_CELLBOARD1* mutable_voltages_cellboard1(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD1 >*
-      mutable_voltages_cellboard1();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD1& _internal_voltages_cellboard1(int index) const;
-  ::bms::VOLTAGES_CELLBOARD1* _internal_add_voltages_cellboard1();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD1& voltages_cellboard1(int index) const;
-  ::bms::VOLTAGES_CELLBOARD1* add_voltages_cellboard1();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD1 >&
-      voltages_cellboard1() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-  int voltages_cellboard2_size() const;
-  private:
-  int _internal_voltages_cellboard2_size() const;
-  public:
-  void clear_voltages_cellboard2();
-  ::bms::VOLTAGES_CELLBOARD2* mutable_voltages_cellboard2(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD2 >*
-      mutable_voltages_cellboard2();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD2& _internal_voltages_cellboard2(int index) const;
-  ::bms::VOLTAGES_CELLBOARD2* _internal_add_voltages_cellboard2();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD2& voltages_cellboard2(int index) const;
-  ::bms::VOLTAGES_CELLBOARD2* add_voltages_cellboard2();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD2 >&
-      voltages_cellboard2() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-  int voltages_cellboard3_size() const;
-  private:
-  int _internal_voltages_cellboard3_size() const;
-  public:
-  void clear_voltages_cellboard3();
-  ::bms::VOLTAGES_CELLBOARD3* mutable_voltages_cellboard3(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD3 >*
-      mutable_voltages_cellboard3();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD3& _internal_voltages_cellboard3(int index) const;
-  ::bms::VOLTAGES_CELLBOARD3* _internal_add_voltages_cellboard3();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD3& voltages_cellboard3(int index) const;
-  ::bms::VOLTAGES_CELLBOARD3* add_voltages_cellboard3();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD3 >&
-      voltages_cellboard3() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-  int voltages_cellboard4_size() const;
-  private:
-  int _internal_voltages_cellboard4_size() const;
-  public:
-  void clear_voltages_cellboard4();
-  ::bms::VOLTAGES_CELLBOARD4* mutable_voltages_cellboard4(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD4 >*
-      mutable_voltages_cellboard4();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD4& _internal_voltages_cellboard4(int index) const;
-  ::bms::VOLTAGES_CELLBOARD4* _internal_add_voltages_cellboard4();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD4& voltages_cellboard4(int index) const;
-  ::bms::VOLTAGES_CELLBOARD4* add_voltages_cellboard4();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD4 >&
-      voltages_cellboard4() const;
-
-  // repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-  int voltages_cellboard5_size() const;
-  private:
-  int _internal_voltages_cellboard5_size() const;
-  public:
-  void clear_voltages_cellboard5();
-  ::bms::VOLTAGES_CELLBOARD5* mutable_voltages_cellboard5(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 >*
-      mutable_voltages_cellboard5();
-  private:
-  const ::bms::VOLTAGES_CELLBOARD5& _internal_voltages_cellboard5(int index) const;
-  ::bms::VOLTAGES_CELLBOARD5* _internal_add_voltages_cellboard5();
-  public:
-  const ::bms::VOLTAGES_CELLBOARD5& voltages_cellboard5(int index) const;
-  ::bms::VOLTAGES_CELLBOARD5* add_voltages_cellboard5();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 >&
-      voltages_cellboard5() const;
-
-  // repeated .bms.BALANCING BALANCING = 19;
+  // repeated .bms.BALANCING BALANCING = 4;
   int balancing_size() const;
   private:
   int _internal_balancing_size() const;
@@ -5983,7 +2930,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BALANCING >&
       balancing() const;
 
-  // repeated .bms.FW_UPDATE FW_UPDATE = 20;
+  // repeated .bms.FW_UPDATE FW_UPDATE = 5;
   int fw_update_size() const;
   private:
   int _internal_fw_update_size() const;
@@ -6001,7 +2948,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FW_UPDATE >&
       fw_update() const;
 
-  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+  // repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
   int flash_cellboard_0_tx_size() const;
   private:
   int _internal_flash_cellboard_0_tx_size() const;
@@ -6019,7 +2966,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX >&
       flash_cellboard_0_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+  // repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
   int flash_cellboard_0_rx_size() const;
   private:
   int _internal_flash_cellboard_0_rx_size() const;
@@ -6037,7 +2984,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_RX >&
       flash_cellboard_0_rx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+  // repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
   int flash_cellboard_1_tx_size() const;
   private:
   int _internal_flash_cellboard_1_tx_size() const;
@@ -6055,7 +3002,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_TX >&
       flash_cellboard_1_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+  // repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
   int flash_cellboard_1_rx_size() const;
   private:
   int _internal_flash_cellboard_1_rx_size() const;
@@ -6073,7 +3020,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_1_RX >&
       flash_cellboard_1_rx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+  // repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
   int flash_cellboard_2_tx_size() const;
   private:
   int _internal_flash_cellboard_2_tx_size() const;
@@ -6091,7 +3038,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_TX >&
       flash_cellboard_2_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+  // repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
   int flash_cellboard_2_rx_size() const;
   private:
   int _internal_flash_cellboard_2_rx_size() const;
@@ -6109,7 +3056,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_2_RX >&
       flash_cellboard_2_rx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+  // repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
   int flash_cellboard_3_tx_size() const;
   private:
   int _internal_flash_cellboard_3_tx_size() const;
@@ -6127,7 +3074,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_TX >&
       flash_cellboard_3_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+  // repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
   int flash_cellboard_3_rx_size() const;
   private:
   int _internal_flash_cellboard_3_rx_size() const;
@@ -6145,7 +3092,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_3_RX >&
       flash_cellboard_3_rx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+  // repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
   int flash_cellboard_4_tx_size() const;
   private:
   int _internal_flash_cellboard_4_tx_size() const;
@@ -6163,7 +3110,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_TX >&
       flash_cellboard_4_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+  // repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
   int flash_cellboard_4_rx_size() const;
   private:
   int _internal_flash_cellboard_4_rx_size() const;
@@ -6181,7 +3128,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_4_RX >&
       flash_cellboard_4_rx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+  // repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
   int flash_cellboard_5_tx_size() const;
   private:
   int _internal_flash_cellboard_5_tx_size() const;
@@ -6199,7 +3146,7 @@ class Pack PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_5_TX >&
       flash_cellboard_5_tx() const;
 
-  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+  // repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
   int flash_cellboard_5_rx_size() const;
   private:
   int _internal_flash_cellboard_5_rx_size() const;
@@ -6224,24 +3171,9 @@ class Pack PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD0 > board_status_cellboard0_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD1 > board_status_cellboard1_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD2 > board_status_cellboard2_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD3 > board_status_cellboard3_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD4 > board_status_cellboard4_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD5 > board_status_cellboard5_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD0 > temperatures_cellboard0_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD1 > temperatures_cellboard1_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD2 > temperatures_cellboard2_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD3 > temperatures_cellboard3_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD4 > temperatures_cellboard4_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD5 > temperatures_cellboard5_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD0 > voltages_cellboard0_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD1 > voltages_cellboard1_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD2 > voltages_cellboard2_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD3 > voltages_cellboard3_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD4 > voltages_cellboard4_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 > voltages_cellboard5_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS > board_status_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES > temperatures_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES > voltages_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BALANCING > balancing_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FW_UPDATE > fw_update_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::FLASH_CELLBOARD_0_TX > flash_cellboard_0_tx_;
@@ -6268,2001 +3200,381 @@ class Pack PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// BOARD_STATUS_CELLBOARD0
+// BOARD_STATUS
 
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD0::clear_errors() {
+// .bms.Cellboard cellboard_id = 1;
+inline void BOARD_STATUS::clear_cellboard_id() {
+  cellboard_id_ = 0;
+}
+inline ::bms::Cellboard BOARD_STATUS::_internal_cellboard_id() const {
+  return static_cast< ::bms::Cellboard >(cellboard_id_);
+}
+inline ::bms::Cellboard BOARD_STATUS::cellboard_id() const {
+  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS.cellboard_id)
+  return _internal_cellboard_id();
+}
+inline void BOARD_STATUS::_internal_set_cellboard_id(::bms::Cellboard value) {
+  
+  cellboard_id_ = value;
+}
+inline void BOARD_STATUS::set_cellboard_id(::bms::Cellboard value) {
+  _internal_set_cellboard_id(value);
+  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS.cellboard_id)
+}
+
+// uint32 errors = 2;
+inline void BOARD_STATUS::clear_errors() {
   errors_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD0::_internal_errors() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS::_internal_errors() const {
   return errors_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD0::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD0.errors)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS::errors() const {
+  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS.errors)
   return _internal_errors();
 }
-inline void BOARD_STATUS_CELLBOARD0::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void BOARD_STATUS::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   errors_ = value;
 }
-inline void BOARD_STATUS_CELLBOARD0::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void BOARD_STATUS::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD0.errors)
+  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS.errors)
 }
 
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD0::clear_balancing_status() {
+// .bms.BalancingStatus balancing_status = 3;
+inline void BOARD_STATUS::clear_balancing_status() {
   balancing_status_ = 0;
 }
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD0::_internal_balancing_status() const {
+inline ::bms::BalancingStatus BOARD_STATUS::_internal_balancing_status() const {
   return static_cast< ::bms::BalancingStatus >(balancing_status_);
 }
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD0::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD0.balancing_status)
+inline ::bms::BalancingStatus BOARD_STATUS::balancing_status() const {
+  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS.balancing_status)
   return _internal_balancing_status();
 }
-inline void BOARD_STATUS_CELLBOARD0::_internal_set_balancing_status(::bms::BalancingStatus value) {
+inline void BOARD_STATUS::_internal_set_balancing_status(::bms::BalancingStatus value) {
   
   balancing_status_ = value;
 }
-inline void BOARD_STATUS_CELLBOARD0::set_balancing_status(::bms::BalancingStatus value) {
+inline void BOARD_STATUS::set_balancing_status(::bms::BalancingStatus value) {
   _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD0.balancing_status)
+  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS.balancing_status)
 }
 
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD0::clear__inner_timestamp() {
+// uint64 _inner_timestamp = 4;
+inline void BOARD_STATUS::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD0::_internal__inner_timestamp() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS::_internal__inner_timestamp() const {
   return _inner_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD0::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD0._inner_timestamp)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS._inner_timestamp)
   return _internal__inner_timestamp();
 }
-inline void BOARD_STATUS_CELLBOARD0::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void BOARD_STATUS::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   _inner_timestamp_ = value;
 }
-inline void BOARD_STATUS_CELLBOARD0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void BOARD_STATUS::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD0._inner_timestamp)
+  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
 
-// BOARD_STATUS_CELLBOARD1
+// TEMPERATURES
 
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD1::clear_errors() {
-  errors_ = 0u;
+// .bms.Cellboard cellboard_id = 1;
+inline void TEMPERATURES::clear_cellboard_id() {
+  cellboard_id_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD1::_internal_errors() const {
-  return errors_;
+inline ::bms::Cellboard TEMPERATURES::_internal_cellboard_id() const {
+  return static_cast< ::bms::Cellboard >(cellboard_id_);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD1::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD1.errors)
-  return _internal_errors();
+inline ::bms::Cellboard TEMPERATURES::cellboard_id() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.cellboard_id)
+  return _internal_cellboard_id();
 }
-inline void BOARD_STATUS_CELLBOARD1::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TEMPERATURES::_internal_set_cellboard_id(::bms::Cellboard value) {
   
-  errors_ = value;
+  cellboard_id_ = value;
 }
-inline void BOARD_STATUS_CELLBOARD1::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD1.errors)
-}
-
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD1::clear_balancing_status() {
-  balancing_status_ = 0;
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD1::_internal_balancing_status() const {
-  return static_cast< ::bms::BalancingStatus >(balancing_status_);
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD1::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD1.balancing_status)
-  return _internal_balancing_status();
-}
-inline void BOARD_STATUS_CELLBOARD1::_internal_set_balancing_status(::bms::BalancingStatus value) {
-  
-  balancing_status_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD1::set_balancing_status(::bms::BalancingStatus value) {
-  _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD1.balancing_status)
+inline void TEMPERATURES::set_cellboard_id(::bms::Cellboard value) {
+  _internal_set_cellboard_id(value);
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.cellboard_id)
 }
 
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD1::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD1::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD1::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD1._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void BOARD_STATUS_CELLBOARD1::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD1._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// BOARD_STATUS_CELLBOARD2
-
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD2::clear_errors() {
-  errors_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD2::_internal_errors() const {
-  return errors_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD2::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD2.errors)
-  return _internal_errors();
-}
-inline void BOARD_STATUS_CELLBOARD2::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  errors_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD2::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD2.errors)
-}
-
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD2::clear_balancing_status() {
-  balancing_status_ = 0;
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD2::_internal_balancing_status() const {
-  return static_cast< ::bms::BalancingStatus >(balancing_status_);
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD2::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD2.balancing_status)
-  return _internal_balancing_status();
-}
-inline void BOARD_STATUS_CELLBOARD2::_internal_set_balancing_status(::bms::BalancingStatus value) {
-  
-  balancing_status_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD2::set_balancing_status(::bms::BalancingStatus value) {
-  _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD2.balancing_status)
-}
-
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD2::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD2::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD2::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD2._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void BOARD_STATUS_CELLBOARD2::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD2._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// BOARD_STATUS_CELLBOARD3
-
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD3::clear_errors() {
-  errors_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD3::_internal_errors() const {
-  return errors_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD3::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD3.errors)
-  return _internal_errors();
-}
-inline void BOARD_STATUS_CELLBOARD3::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  errors_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD3::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD3.errors)
-}
-
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD3::clear_balancing_status() {
-  balancing_status_ = 0;
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD3::_internal_balancing_status() const {
-  return static_cast< ::bms::BalancingStatus >(balancing_status_);
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD3::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD3.balancing_status)
-  return _internal_balancing_status();
-}
-inline void BOARD_STATUS_CELLBOARD3::_internal_set_balancing_status(::bms::BalancingStatus value) {
-  
-  balancing_status_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD3::set_balancing_status(::bms::BalancingStatus value) {
-  _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD3.balancing_status)
-}
-
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD3::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD3::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD3::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD3._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void BOARD_STATUS_CELLBOARD3::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD3._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// BOARD_STATUS_CELLBOARD4
-
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD4::clear_errors() {
-  errors_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD4::_internal_errors() const {
-  return errors_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD4::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD4.errors)
-  return _internal_errors();
-}
-inline void BOARD_STATUS_CELLBOARD4::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  errors_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD4::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD4.errors)
-}
-
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD4::clear_balancing_status() {
-  balancing_status_ = 0;
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD4::_internal_balancing_status() const {
-  return static_cast< ::bms::BalancingStatus >(balancing_status_);
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD4::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD4.balancing_status)
-  return _internal_balancing_status();
-}
-inline void BOARD_STATUS_CELLBOARD4::_internal_set_balancing_status(::bms::BalancingStatus value) {
-  
-  balancing_status_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD4::set_balancing_status(::bms::BalancingStatus value) {
-  _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD4.balancing_status)
-}
-
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD4::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD4::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD4::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD4._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void BOARD_STATUS_CELLBOARD4::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD4::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD4._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// BOARD_STATUS_CELLBOARD5
-
-// uint32 errors = 1;
-inline void BOARD_STATUS_CELLBOARD5::clear_errors() {
-  errors_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD5::_internal_errors() const {
-  return errors_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 BOARD_STATUS_CELLBOARD5::errors() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD5.errors)
-  return _internal_errors();
-}
-inline void BOARD_STATUS_CELLBOARD5::_internal_set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  errors_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD5::set_errors(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_errors(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD5.errors)
-}
-
-// .bms.BalancingStatus balancing_status = 2;
-inline void BOARD_STATUS_CELLBOARD5::clear_balancing_status() {
-  balancing_status_ = 0;
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD5::_internal_balancing_status() const {
-  return static_cast< ::bms::BalancingStatus >(balancing_status_);
-}
-inline ::bms::BalancingStatus BOARD_STATUS_CELLBOARD5::balancing_status() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD5.balancing_status)
-  return _internal_balancing_status();
-}
-inline void BOARD_STATUS_CELLBOARD5::_internal_set_balancing_status(::bms::BalancingStatus value) {
-  
-  balancing_status_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD5::set_balancing_status(::bms::BalancingStatus value) {
-  _internal_set_balancing_status(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD5.balancing_status)
-}
-
-// uint64 _inner_timestamp = 3;
-inline void BOARD_STATUS_CELLBOARD5::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD5::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 BOARD_STATUS_CELLBOARD5::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.BOARD_STATUS_CELLBOARD5._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void BOARD_STATUS_CELLBOARD5::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void BOARD_STATUS_CELLBOARD5::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.BOARD_STATUS_CELLBOARD5._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// TEMPERATURES_CELLBOARD0
-
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD0::clear_start_index() {
+// uint32 start_index = 2;
+inline void TEMPERATURES::clear_start_index() {
   start_index_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD0::_internal_start_index() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES::_internal_start_index() const {
   return start_index_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD0::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.start_index)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES::start_index() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.start_index)
   return _internal_start_index();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TEMPERATURES::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   start_index_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void TEMPERATURES::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.start_index)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.start_index)
 }
 
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD0::clear_temp0() {
+// float temp0 = 3;
+inline void TEMPERATURES::clear_temp0() {
   temp0_ = 0;
 }
-inline float TEMPERATURES_CELLBOARD0::_internal_temp0() const {
+inline float TEMPERATURES::_internal_temp0() const {
   return temp0_;
 }
-inline float TEMPERATURES_CELLBOARD0::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp0)
+inline float TEMPERATURES::temp0() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.temp0)
   return _internal_temp0();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp0(float value) {
+inline void TEMPERATURES::_internal_set_temp0(float value) {
   
   temp0_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp0(float value) {
+inline void TEMPERATURES::set_temp0(float value) {
   _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp0)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.temp0)
 }
 
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD0::clear_temp1() {
+// float temp1 = 4;
+inline void TEMPERATURES::clear_temp1() {
   temp1_ = 0;
 }
-inline float TEMPERATURES_CELLBOARD0::_internal_temp1() const {
+inline float TEMPERATURES::_internal_temp1() const {
   return temp1_;
 }
-inline float TEMPERATURES_CELLBOARD0::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp1)
+inline float TEMPERATURES::temp1() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.temp1)
   return _internal_temp1();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp1(float value) {
+inline void TEMPERATURES::_internal_set_temp1(float value) {
   
   temp1_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp1(float value) {
+inline void TEMPERATURES::set_temp1(float value) {
   _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp1)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.temp1)
 }
 
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD0::clear_temp2() {
+// float temp2 = 5;
+inline void TEMPERATURES::clear_temp2() {
   temp2_ = 0;
 }
-inline float TEMPERATURES_CELLBOARD0::_internal_temp2() const {
+inline float TEMPERATURES::_internal_temp2() const {
   return temp2_;
 }
-inline float TEMPERATURES_CELLBOARD0::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp2)
+inline float TEMPERATURES::temp2() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.temp2)
   return _internal_temp2();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp2(float value) {
+inline void TEMPERATURES::_internal_set_temp2(float value) {
   
   temp2_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp2(float value) {
+inline void TEMPERATURES::set_temp2(float value) {
   _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp2)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.temp2)
 }
 
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD0::clear_temp3() {
+// float temp3 = 6;
+inline void TEMPERATURES::clear_temp3() {
   temp3_ = 0;
 }
-inline float TEMPERATURES_CELLBOARD0::_internal_temp3() const {
+inline float TEMPERATURES::_internal_temp3() const {
   return temp3_;
 }
-inline float TEMPERATURES_CELLBOARD0::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp3)
+inline float TEMPERATURES::temp3() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES.temp3)
   return _internal_temp3();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp3(float value) {
+inline void TEMPERATURES::_internal_set_temp3(float value) {
   
   temp3_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set_temp3(float value) {
+inline void TEMPERATURES::set_temp3(float value) {
   _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp3)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES.temp3)
 }
 
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD0::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD0::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD0::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD0::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD0::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD0::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD0::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD0::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD0::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD0::clear__inner_timestamp() {
+// uint64 _inner_timestamp = 7;
+inline void TEMPERATURES::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD0::_internal__inner_timestamp() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES::_internal__inner_timestamp() const {
   return _inner_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD0::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD0._inner_timestamp)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.TEMPERATURES._inner_timestamp)
   return _internal__inner_timestamp();
 }
-inline void TEMPERATURES_CELLBOARD0::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void TEMPERATURES::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   _inner_timestamp_ = value;
 }
-inline void TEMPERATURES_CELLBOARD0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void TEMPERATURES::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD0._inner_timestamp)
+  // @@protoc_insertion_point(field_set:bms.TEMPERATURES._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
 
-// TEMPERATURES_CELLBOARD1
+// VOLTAGES
 
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD1::clear_start_index() {
+// .bms.Cellboard cellboard_id = 1;
+inline void VOLTAGES::clear_cellboard_id() {
+  cellboard_id_ = 0;
+}
+inline ::bms::Cellboard VOLTAGES::_internal_cellboard_id() const {
+  return static_cast< ::bms::Cellboard >(cellboard_id_);
+}
+inline ::bms::Cellboard VOLTAGES::cellboard_id() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES.cellboard_id)
+  return _internal_cellboard_id();
+}
+inline void VOLTAGES::_internal_set_cellboard_id(::bms::Cellboard value) {
+  
+  cellboard_id_ = value;
+}
+inline void VOLTAGES::set_cellboard_id(::bms::Cellboard value) {
+  _internal_set_cellboard_id(value);
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES.cellboard_id)
+}
+
+// uint32 start_index = 2;
+inline void VOLTAGES::clear_start_index() {
   start_index_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD1::_internal_start_index() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES::_internal_start_index() const {
   return start_index_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD1::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.start_index)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES::start_index() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES.start_index)
   return _internal_start_index();
 }
-inline void TEMPERATURES_CELLBOARD1::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void VOLTAGES::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   start_index_ = value;
 }
-inline void TEMPERATURES_CELLBOARD1::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void VOLTAGES::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.start_index)
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES.start_index)
 }
 
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD1::clear_temp0() {
-  temp0_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp0() const {
-  return temp0_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp0)
-  return _internal_temp0();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp0(float value) {
-  
-  temp0_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp0(float value) {
-  _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp0)
-}
-
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD1::clear_temp1() {
-  temp1_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp1() const {
-  return temp1_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp1)
-  return _internal_temp1();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp1(float value) {
-  
-  temp1_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp1(float value) {
-  _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp1)
-}
-
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD1::clear_temp2() {
-  temp2_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp2() const {
-  return temp2_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp2)
-  return _internal_temp2();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp2(float value) {
-  
-  temp2_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp2(float value) {
-  _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp2)
-}
-
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD1::clear_temp3() {
-  temp3_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp3() const {
-  return temp3_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp3)
-  return _internal_temp3();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp3(float value) {
-  
-  temp3_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp3(float value) {
-  _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp3)
-}
-
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD1::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD1::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD1::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD1::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD1::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD1::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD1::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD1._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void TEMPERATURES_CELLBOARD1::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void TEMPERATURES_CELLBOARD1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD1._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// TEMPERATURES_CELLBOARD2
-
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD2::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD2::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD2::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.start_index)
-  return _internal_start_index();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.start_index)
-}
-
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD2::clear_temp0() {
-  temp0_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp0() const {
-  return temp0_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp0)
-  return _internal_temp0();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp0(float value) {
-  
-  temp0_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp0(float value) {
-  _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp0)
-}
-
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD2::clear_temp1() {
-  temp1_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp1() const {
-  return temp1_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp1)
-  return _internal_temp1();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp1(float value) {
-  
-  temp1_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp1(float value) {
-  _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp1)
-}
-
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD2::clear_temp2() {
-  temp2_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp2() const {
-  return temp2_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp2)
-  return _internal_temp2();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp2(float value) {
-  
-  temp2_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp2(float value) {
-  _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp2)
-}
-
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD2::clear_temp3() {
-  temp3_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp3() const {
-  return temp3_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp3)
-  return _internal_temp3();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp3(float value) {
-  
-  temp3_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp3(float value) {
-  _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp3)
-}
-
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD2::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD2::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD2::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD2::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD2::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD2::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD2::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD2._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void TEMPERATURES_CELLBOARD2::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void TEMPERATURES_CELLBOARD2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD2._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// TEMPERATURES_CELLBOARD3
-
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD3::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD3::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD3::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.start_index)
-  return _internal_start_index();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.start_index)
-}
-
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD3::clear_temp0() {
-  temp0_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp0() const {
-  return temp0_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp0)
-  return _internal_temp0();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp0(float value) {
-  
-  temp0_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp0(float value) {
-  _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp0)
-}
-
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD3::clear_temp1() {
-  temp1_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp1() const {
-  return temp1_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp1)
-  return _internal_temp1();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp1(float value) {
-  
-  temp1_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp1(float value) {
-  _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp1)
-}
-
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD3::clear_temp2() {
-  temp2_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp2() const {
-  return temp2_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp2)
-  return _internal_temp2();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp2(float value) {
-  
-  temp2_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp2(float value) {
-  _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp2)
-}
-
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD3::clear_temp3() {
-  temp3_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp3() const {
-  return temp3_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp3)
-  return _internal_temp3();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp3(float value) {
-  
-  temp3_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp3(float value) {
-  _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp3)
-}
-
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD3::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD3::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD3::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD3::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD3::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD3::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD3::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD3._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void TEMPERATURES_CELLBOARD3::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void TEMPERATURES_CELLBOARD3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD3._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// TEMPERATURES_CELLBOARD4
-
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD4::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD4::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD4::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.start_index)
-  return _internal_start_index();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.start_index)
-}
-
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD4::clear_temp0() {
-  temp0_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp0() const {
-  return temp0_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp0)
-  return _internal_temp0();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp0(float value) {
-  
-  temp0_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp0(float value) {
-  _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp0)
-}
-
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD4::clear_temp1() {
-  temp1_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp1() const {
-  return temp1_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp1)
-  return _internal_temp1();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp1(float value) {
-  
-  temp1_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp1(float value) {
-  _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp1)
-}
-
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD4::clear_temp2() {
-  temp2_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp2() const {
-  return temp2_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp2)
-  return _internal_temp2();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp2(float value) {
-  
-  temp2_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp2(float value) {
-  _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp2)
-}
-
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD4::clear_temp3() {
-  temp3_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp3() const {
-  return temp3_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp3)
-  return _internal_temp3();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp3(float value) {
-  
-  temp3_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp3(float value) {
-  _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp3)
-}
-
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD4::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD4::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD4::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD4::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD4::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD4::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD4::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD4._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void TEMPERATURES_CELLBOARD4::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void TEMPERATURES_CELLBOARD4::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD4._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// TEMPERATURES_CELLBOARD5
-
-// uint32 start_index = 1;
-inline void TEMPERATURES_CELLBOARD5::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD5::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 TEMPERATURES_CELLBOARD5::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.start_index)
-  return _internal_start_index();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.start_index)
-}
-
-// float temp0 = 2;
-inline void TEMPERATURES_CELLBOARD5::clear_temp0() {
-  temp0_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp0() const {
-  return temp0_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp0() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp0)
-  return _internal_temp0();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp0(float value) {
-  
-  temp0_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp0(float value) {
-  _internal_set_temp0(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp0)
-}
-
-// float temp1 = 3;
-inline void TEMPERATURES_CELLBOARD5::clear_temp1() {
-  temp1_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp1() const {
-  return temp1_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp1() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp1)
-  return _internal_temp1();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp1(float value) {
-  
-  temp1_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp1(float value) {
-  _internal_set_temp1(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp1)
-}
-
-// float temp2 = 4;
-inline void TEMPERATURES_CELLBOARD5::clear_temp2() {
-  temp2_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp2() const {
-  return temp2_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp2() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp2)
-  return _internal_temp2();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp2(float value) {
-  
-  temp2_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp2(float value) {
-  _internal_set_temp2(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp2)
-}
-
-// float temp3 = 5;
-inline void TEMPERATURES_CELLBOARD5::clear_temp3() {
-  temp3_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp3() const {
-  return temp3_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp3() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp3)
-  return _internal_temp3();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp3(float value) {
-  
-  temp3_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp3(float value) {
-  _internal_set_temp3(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp3)
-}
-
-// float temp4 = 6;
-inline void TEMPERATURES_CELLBOARD5::clear_temp4() {
-  temp4_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp4() const {
-  return temp4_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp4() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp4)
-  return _internal_temp4();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp4(float value) {
-  
-  temp4_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp4(float value) {
-  _internal_set_temp4(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp4)
-}
-
-// float temp5 = 7;
-inline void TEMPERATURES_CELLBOARD5::clear_temp5() {
-  temp5_ = 0;
-}
-inline float TEMPERATURES_CELLBOARD5::_internal_temp5() const {
-  return temp5_;
-}
-inline float TEMPERATURES_CELLBOARD5::temp5() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5.temp5)
-  return _internal_temp5();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set_temp5(float value) {
-  
-  temp5_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set_temp5(float value) {
-  _internal_set_temp5(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5.temp5)
-}
-
-// uint64 _inner_timestamp = 8;
-inline void TEMPERATURES_CELLBOARD5::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD5::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 TEMPERATURES_CELLBOARD5::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.TEMPERATURES_CELLBOARD5._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void TEMPERATURES_CELLBOARD5::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void TEMPERATURES_CELLBOARD5::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.TEMPERATURES_CELLBOARD5._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD0
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD0::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD0::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD0::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD0::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD0::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD0::clear_voltage0() {
+// float voltage0 = 3;
+inline void VOLTAGES::clear_voltage0() {
   voltage0_ = 0;
 }
-inline float VOLTAGES_CELLBOARD0::_internal_voltage0() const {
+inline float VOLTAGES::_internal_voltage0() const {
   return voltage0_;
 }
-inline float VOLTAGES_CELLBOARD0::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage0)
+inline float VOLTAGES::voltage0() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES.voltage0)
   return _internal_voltage0();
 }
-inline void VOLTAGES_CELLBOARD0::_internal_set_voltage0(float value) {
+inline void VOLTAGES::_internal_set_voltage0(float value) {
   
   voltage0_ = value;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage0(float value) {
+inline void VOLTAGES::set_voltage0(float value) {
   _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage0)
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES.voltage0)
 }
 
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD0::clear_voltage1() {
+// float voltage1 = 4;
+inline void VOLTAGES::clear_voltage1() {
   voltage1_ = 0;
 }
-inline float VOLTAGES_CELLBOARD0::_internal_voltage1() const {
+inline float VOLTAGES::_internal_voltage1() const {
   return voltage1_;
 }
-inline float VOLTAGES_CELLBOARD0::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage1)
+inline float VOLTAGES::voltage1() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES.voltage1)
   return _internal_voltage1();
 }
-inline void VOLTAGES_CELLBOARD0::_internal_set_voltage1(float value) {
+inline void VOLTAGES::_internal_set_voltage1(float value) {
   
   voltage1_ = value;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage1(float value) {
+inline void VOLTAGES::set_voltage1(float value) {
   _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage1)
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES.voltage1)
 }
 
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD0::clear_voltage2() {
+// float voltage2 = 5;
+inline void VOLTAGES::clear_voltage2() {
   voltage2_ = 0;
 }
-inline float VOLTAGES_CELLBOARD0::_internal_voltage2() const {
+inline float VOLTAGES::_internal_voltage2() const {
   return voltage2_;
 }
-inline float VOLTAGES_CELLBOARD0::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0.voltage2)
+inline float VOLTAGES::voltage2() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES.voltage2)
   return _internal_voltage2();
 }
-inline void VOLTAGES_CELLBOARD0::_internal_set_voltage2(float value) {
+inline void VOLTAGES::_internal_set_voltage2(float value) {
   
   voltage2_ = value;
 }
-inline void VOLTAGES_CELLBOARD0::set_voltage2(float value) {
+inline void VOLTAGES::set_voltage2(float value) {
   _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0.voltage2)
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES.voltage2)
 }
 
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD0::clear__inner_timestamp() {
+// uint64 _inner_timestamp = 6;
+inline void VOLTAGES::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD0::_internal__inner_timestamp() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES::_internal__inner_timestamp() const {
   return _inner_timestamp_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD0::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD0._inner_timestamp)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES::_inner_timestamp() const {
+  // @@protoc_insertion_point(field_get:bms.VOLTAGES._inner_timestamp)
   return _internal__inner_timestamp();
 }
-inline void VOLTAGES_CELLBOARD0::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void VOLTAGES::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   _inner_timestamp_ = value;
 }
-inline void VOLTAGES_CELLBOARD0::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void VOLTAGES::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD0._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD1
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD1::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD1::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD1::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD1::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD1::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD1::clear_voltage0() {
-  voltage0_ = 0;
-}
-inline float VOLTAGES_CELLBOARD1::_internal_voltage0() const {
-  return voltage0_;
-}
-inline float VOLTAGES_CELLBOARD1::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage0)
-  return _internal_voltage0();
-}
-inline void VOLTAGES_CELLBOARD1::_internal_set_voltage0(float value) {
-  
-  voltage0_ = value;
-}
-inline void VOLTAGES_CELLBOARD1::set_voltage0(float value) {
-  _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage0)
-}
-
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD1::clear_voltage1() {
-  voltage1_ = 0;
-}
-inline float VOLTAGES_CELLBOARD1::_internal_voltage1() const {
-  return voltage1_;
-}
-inline float VOLTAGES_CELLBOARD1::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage1)
-  return _internal_voltage1();
-}
-inline void VOLTAGES_CELLBOARD1::_internal_set_voltage1(float value) {
-  
-  voltage1_ = value;
-}
-inline void VOLTAGES_CELLBOARD1::set_voltage1(float value) {
-  _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage1)
-}
-
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD1::clear_voltage2() {
-  voltage2_ = 0;
-}
-inline float VOLTAGES_CELLBOARD1::_internal_voltage2() const {
-  return voltage2_;
-}
-inline float VOLTAGES_CELLBOARD1::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1.voltage2)
-  return _internal_voltage2();
-}
-inline void VOLTAGES_CELLBOARD1::_internal_set_voltage2(float value) {
-  
-  voltage2_ = value;
-}
-inline void VOLTAGES_CELLBOARD1::set_voltage2(float value) {
-  _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1.voltage2)
-}
-
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD1::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD1::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD1::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD1._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void VOLTAGES_CELLBOARD1::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void VOLTAGES_CELLBOARD1::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD1._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD2
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD2::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD2::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD2::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD2::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD2::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD2::clear_voltage0() {
-  voltage0_ = 0;
-}
-inline float VOLTAGES_CELLBOARD2::_internal_voltage0() const {
-  return voltage0_;
-}
-inline float VOLTAGES_CELLBOARD2::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage0)
-  return _internal_voltage0();
-}
-inline void VOLTAGES_CELLBOARD2::_internal_set_voltage0(float value) {
-  
-  voltage0_ = value;
-}
-inline void VOLTAGES_CELLBOARD2::set_voltage0(float value) {
-  _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage0)
-}
-
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD2::clear_voltage1() {
-  voltage1_ = 0;
-}
-inline float VOLTAGES_CELLBOARD2::_internal_voltage1() const {
-  return voltage1_;
-}
-inline float VOLTAGES_CELLBOARD2::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage1)
-  return _internal_voltage1();
-}
-inline void VOLTAGES_CELLBOARD2::_internal_set_voltage1(float value) {
-  
-  voltage1_ = value;
-}
-inline void VOLTAGES_CELLBOARD2::set_voltage1(float value) {
-  _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage1)
-}
-
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD2::clear_voltage2() {
-  voltage2_ = 0;
-}
-inline float VOLTAGES_CELLBOARD2::_internal_voltage2() const {
-  return voltage2_;
-}
-inline float VOLTAGES_CELLBOARD2::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2.voltage2)
-  return _internal_voltage2();
-}
-inline void VOLTAGES_CELLBOARD2::_internal_set_voltage2(float value) {
-  
-  voltage2_ = value;
-}
-inline void VOLTAGES_CELLBOARD2::set_voltage2(float value) {
-  _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2.voltage2)
-}
-
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD2::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD2::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD2::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD2._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void VOLTAGES_CELLBOARD2::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void VOLTAGES_CELLBOARD2::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD2._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD3
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD3::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD3::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD3::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD3::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD3::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD3::clear_voltage0() {
-  voltage0_ = 0;
-}
-inline float VOLTAGES_CELLBOARD3::_internal_voltage0() const {
-  return voltage0_;
-}
-inline float VOLTAGES_CELLBOARD3::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage0)
-  return _internal_voltage0();
-}
-inline void VOLTAGES_CELLBOARD3::_internal_set_voltage0(float value) {
-  
-  voltage0_ = value;
-}
-inline void VOLTAGES_CELLBOARD3::set_voltage0(float value) {
-  _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage0)
-}
-
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD3::clear_voltage1() {
-  voltage1_ = 0;
-}
-inline float VOLTAGES_CELLBOARD3::_internal_voltage1() const {
-  return voltage1_;
-}
-inline float VOLTAGES_CELLBOARD3::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage1)
-  return _internal_voltage1();
-}
-inline void VOLTAGES_CELLBOARD3::_internal_set_voltage1(float value) {
-  
-  voltage1_ = value;
-}
-inline void VOLTAGES_CELLBOARD3::set_voltage1(float value) {
-  _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage1)
-}
-
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD3::clear_voltage2() {
-  voltage2_ = 0;
-}
-inline float VOLTAGES_CELLBOARD3::_internal_voltage2() const {
-  return voltage2_;
-}
-inline float VOLTAGES_CELLBOARD3::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3.voltage2)
-  return _internal_voltage2();
-}
-inline void VOLTAGES_CELLBOARD3::_internal_set_voltage2(float value) {
-  
-  voltage2_ = value;
-}
-inline void VOLTAGES_CELLBOARD3::set_voltage2(float value) {
-  _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3.voltage2)
-}
-
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD3::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD3::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD3::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD3._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void VOLTAGES_CELLBOARD3::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void VOLTAGES_CELLBOARD3::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD3._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD4
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD4::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD4::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD4::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD4::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD4::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD4::clear_voltage0() {
-  voltage0_ = 0;
-}
-inline float VOLTAGES_CELLBOARD4::_internal_voltage0() const {
-  return voltage0_;
-}
-inline float VOLTAGES_CELLBOARD4::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage0)
-  return _internal_voltage0();
-}
-inline void VOLTAGES_CELLBOARD4::_internal_set_voltage0(float value) {
-  
-  voltage0_ = value;
-}
-inline void VOLTAGES_CELLBOARD4::set_voltage0(float value) {
-  _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage0)
-}
-
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD4::clear_voltage1() {
-  voltage1_ = 0;
-}
-inline float VOLTAGES_CELLBOARD4::_internal_voltage1() const {
-  return voltage1_;
-}
-inline float VOLTAGES_CELLBOARD4::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage1)
-  return _internal_voltage1();
-}
-inline void VOLTAGES_CELLBOARD4::_internal_set_voltage1(float value) {
-  
-  voltage1_ = value;
-}
-inline void VOLTAGES_CELLBOARD4::set_voltage1(float value) {
-  _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage1)
-}
-
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD4::clear_voltage2() {
-  voltage2_ = 0;
-}
-inline float VOLTAGES_CELLBOARD4::_internal_voltage2() const {
-  return voltage2_;
-}
-inline float VOLTAGES_CELLBOARD4::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4.voltage2)
-  return _internal_voltage2();
-}
-inline void VOLTAGES_CELLBOARD4::_internal_set_voltage2(float value) {
-  
-  voltage2_ = value;
-}
-inline void VOLTAGES_CELLBOARD4::set_voltage2(float value) {
-  _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4.voltage2)
-}
-
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD4::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD4::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD4::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD4._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void VOLTAGES_CELLBOARD4::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void VOLTAGES_CELLBOARD4::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD4._inner_timestamp)
-}
-
-// -------------------------------------------------------------------
-
-// VOLTAGES_CELLBOARD5
-
-// uint32 start_index = 1;
-inline void VOLTAGES_CELLBOARD5::clear_start_index() {
-  start_index_ = 0u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD5::_internal_start_index() const {
-  return start_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 VOLTAGES_CELLBOARD5::start_index() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.start_index)
-  return _internal_start_index();
-}
-inline void VOLTAGES_CELLBOARD5::_internal_set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  
-  start_index_ = value;
-}
-inline void VOLTAGES_CELLBOARD5::set_start_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_start_index(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.start_index)
-}
-
-// float voltage0 = 2;
-inline void VOLTAGES_CELLBOARD5::clear_voltage0() {
-  voltage0_ = 0;
-}
-inline float VOLTAGES_CELLBOARD5::_internal_voltage0() const {
-  return voltage0_;
-}
-inline float VOLTAGES_CELLBOARD5::voltage0() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage0)
-  return _internal_voltage0();
-}
-inline void VOLTAGES_CELLBOARD5::_internal_set_voltage0(float value) {
-  
-  voltage0_ = value;
-}
-inline void VOLTAGES_CELLBOARD5::set_voltage0(float value) {
-  _internal_set_voltage0(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage0)
-}
-
-// float voltage1 = 3;
-inline void VOLTAGES_CELLBOARD5::clear_voltage1() {
-  voltage1_ = 0;
-}
-inline float VOLTAGES_CELLBOARD5::_internal_voltage1() const {
-  return voltage1_;
-}
-inline float VOLTAGES_CELLBOARD5::voltage1() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage1)
-  return _internal_voltage1();
-}
-inline void VOLTAGES_CELLBOARD5::_internal_set_voltage1(float value) {
-  
-  voltage1_ = value;
-}
-inline void VOLTAGES_CELLBOARD5::set_voltage1(float value) {
-  _internal_set_voltage1(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage1)
-}
-
-// float voltage2 = 4;
-inline void VOLTAGES_CELLBOARD5::clear_voltage2() {
-  voltage2_ = 0;
-}
-inline float VOLTAGES_CELLBOARD5::_internal_voltage2() const {
-  return voltage2_;
-}
-inline float VOLTAGES_CELLBOARD5::voltage2() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5.voltage2)
-  return _internal_voltage2();
-}
-inline void VOLTAGES_CELLBOARD5::_internal_set_voltage2(float value) {
-  
-  voltage2_ = value;
-}
-inline void VOLTAGES_CELLBOARD5::set_voltage2(float value) {
-  _internal_set_voltage2(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5.voltage2)
-}
-
-// uint64 _inner_timestamp = 5;
-inline void VOLTAGES_CELLBOARD5::clear__inner_timestamp() {
-  _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD5::_internal__inner_timestamp() const {
-  return _inner_timestamp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 VOLTAGES_CELLBOARD5::_inner_timestamp() const {
-  // @@protoc_insertion_point(field_get:bms.VOLTAGES_CELLBOARD5._inner_timestamp)
-  return _internal__inner_timestamp();
-}
-inline void VOLTAGES_CELLBOARD5::_internal_set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  _inner_timestamp_ = value;
-}
-inline void VOLTAGES_CELLBOARD5::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set__inner_timestamp(value);
-  // @@protoc_insertion_point(field_set:bms.VOLTAGES_CELLBOARD5._inner_timestamp)
+  // @@protoc_insertion_point(field_set:bms.VOLTAGES._inner_timestamp)
 }
 
 // -------------------------------------------------------------------
 
 // BALANCING
 
-// uint32 board_index = 1;
+// .bms.Cellboard cellboard_id = 1;
+inline void BALANCING::clear_cellboard_id() {
+  cellboard_id_ = 0;
+}
+inline ::bms::Cellboard BALANCING::_internal_cellboard_id() const {
+  return static_cast< ::bms::Cellboard >(cellboard_id_);
+}
+inline ::bms::Cellboard BALANCING::cellboard_id() const {
+  // @@protoc_insertion_point(field_get:bms.BALANCING.cellboard_id)
+  return _internal_cellboard_id();
+}
+inline void BALANCING::_internal_set_cellboard_id(::bms::Cellboard value) {
+  
+  cellboard_id_ = value;
+}
+inline void BALANCING::set_cellboard_id(::bms::Cellboard value) {
+  _internal_set_cellboard_id(value);
+  // @@protoc_insertion_point(field_set:bms.BALANCING.cellboard_id)
+}
+
+// uint32 board_index = 2;
 inline void BALANCING::clear_board_index() {
   board_index_ = 0u;
 }
@@ -8282,7 +3594,7 @@ inline void BALANCING::set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:bms.BALANCING.board_index)
 }
 
-// uint32 cells = 2;
+// uint32 cells = 3;
 inline void BALANCING::clear_cells() {
   cells_ = 0u;
 }
@@ -8302,7 +3614,7 @@ inline void BALANCING::set_cells(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:bms.BALANCING.cells)
 }
 
-// uint64 _inner_timestamp = 3;
+// uint64 _inner_timestamp = 4;
 inline void BALANCING::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
@@ -8326,7 +3638,27 @@ inline void BALANCING::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 valu
 
 // FW_UPDATE
 
-// uint32 board_index = 1;
+// .bms.Cellboard cellboard_id = 1;
+inline void FW_UPDATE::clear_cellboard_id() {
+  cellboard_id_ = 0;
+}
+inline ::bms::Cellboard FW_UPDATE::_internal_cellboard_id() const {
+  return static_cast< ::bms::Cellboard >(cellboard_id_);
+}
+inline ::bms::Cellboard FW_UPDATE::cellboard_id() const {
+  // @@protoc_insertion_point(field_get:bms.FW_UPDATE.cellboard_id)
+  return _internal_cellboard_id();
+}
+inline void FW_UPDATE::_internal_set_cellboard_id(::bms::Cellboard value) {
+  
+  cellboard_id_ = value;
+}
+inline void FW_UPDATE::set_cellboard_id(::bms::Cellboard value) {
+  _internal_set_cellboard_id(value);
+  // @@protoc_insertion_point(field_set:bms.FW_UPDATE.cellboard_id)
+}
+
+// uint32 board_index = 2;
 inline void FW_UPDATE::clear_board_index() {
   board_index_ = 0u;
 }
@@ -8346,7 +3678,7 @@ inline void FW_UPDATE::set_board_index(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:bms.FW_UPDATE.board_index)
 }
 
-// uint64 _inner_timestamp = 2;
+// uint64 _inner_timestamp = 3;
 inline void FW_UPDATE::clear__inner_timestamp() {
   _inner_timestamp_ = PROTOBUF_ULONGLONG(0);
 }
@@ -8658,709 +3990,124 @@ inline void FLASH_CELLBOARD_5_RX::set__inner_timestamp(::PROTOBUF_NAMESPACE_ID::
 
 // Pack
 
-// repeated .bms.BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-inline int Pack::_internal_board_status_cellboard0_size() const {
-  return board_status_cellboard0_.size();
+// repeated .bms.BOARD_STATUS BOARD_STATUS = 1;
+inline int Pack::_internal_board_status_size() const {
+  return board_status_.size();
 }
-inline int Pack::board_status_cellboard0_size() const {
-  return _internal_board_status_cellboard0_size();
+inline int Pack::board_status_size() const {
+  return _internal_board_status_size();
 }
-inline void Pack::clear_board_status_cellboard0() {
-  board_status_cellboard0_.Clear();
+inline void Pack::clear_board_status() {
+  board_status_.Clear();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD0* Pack::mutable_board_status_cellboard0(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD0)
-  return board_status_cellboard0_.Mutable(index);
+inline ::bms::BOARD_STATUS* Pack::mutable_board_status(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS)
+  return board_status_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD0 >*
-Pack::mutable_board_status_cellboard0() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD0)
-  return &board_status_cellboard0_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS >*
+Pack::mutable_board_status() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS)
+  return &board_status_;
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD0& Pack::_internal_board_status_cellboard0(int index) const {
-  return board_status_cellboard0_.Get(index);
+inline const ::bms::BOARD_STATUS& Pack::_internal_board_status(int index) const {
+  return board_status_.Get(index);
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD0& Pack::board_status_cellboard0(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD0)
-  return _internal_board_status_cellboard0(index);
+inline const ::bms::BOARD_STATUS& Pack::board_status(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS)
+  return _internal_board_status(index);
 }
-inline ::bms::BOARD_STATUS_CELLBOARD0* Pack::_internal_add_board_status_cellboard0() {
-  return board_status_cellboard0_.Add();
+inline ::bms::BOARD_STATUS* Pack::_internal_add_board_status() {
+  return board_status_.Add();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD0* Pack::add_board_status_cellboard0() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD0)
-  return _internal_add_board_status_cellboard0();
+inline ::bms::BOARD_STATUS* Pack::add_board_status() {
+  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS)
+  return _internal_add_board_status();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD0 >&
-Pack::board_status_cellboard0() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD0)
-  return board_status_cellboard0_;
-}
-
-// repeated .bms.BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-inline int Pack::_internal_board_status_cellboard1_size() const {
-  return board_status_cellboard1_.size();
-}
-inline int Pack::board_status_cellboard1_size() const {
-  return _internal_board_status_cellboard1_size();
-}
-inline void Pack::clear_board_status_cellboard1() {
-  board_status_cellboard1_.Clear();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD1* Pack::mutable_board_status_cellboard1(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD1)
-  return board_status_cellboard1_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD1 >*
-Pack::mutable_board_status_cellboard1() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD1)
-  return &board_status_cellboard1_;
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD1& Pack::_internal_board_status_cellboard1(int index) const {
-  return board_status_cellboard1_.Get(index);
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD1& Pack::board_status_cellboard1(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD1)
-  return _internal_board_status_cellboard1(index);
-}
-inline ::bms::BOARD_STATUS_CELLBOARD1* Pack::_internal_add_board_status_cellboard1() {
-  return board_status_cellboard1_.Add();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD1* Pack::add_board_status_cellboard1() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD1)
-  return _internal_add_board_status_cellboard1();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD1 >&
-Pack::board_status_cellboard1() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD1)
-  return board_status_cellboard1_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS >&
+Pack::board_status() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS)
+  return board_status_;
 }
 
-// repeated .bms.BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-inline int Pack::_internal_board_status_cellboard2_size() const {
-  return board_status_cellboard2_.size();
+// repeated .bms.TEMPERATURES TEMPERATURES = 2;
+inline int Pack::_internal_temperatures_size() const {
+  return temperatures_.size();
 }
-inline int Pack::board_status_cellboard2_size() const {
-  return _internal_board_status_cellboard2_size();
+inline int Pack::temperatures_size() const {
+  return _internal_temperatures_size();
 }
-inline void Pack::clear_board_status_cellboard2() {
-  board_status_cellboard2_.Clear();
+inline void Pack::clear_temperatures() {
+  temperatures_.Clear();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD2* Pack::mutable_board_status_cellboard2(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD2)
-  return board_status_cellboard2_.Mutable(index);
+inline ::bms::TEMPERATURES* Pack::mutable_temperatures(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES)
+  return temperatures_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD2 >*
-Pack::mutable_board_status_cellboard2() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD2)
-  return &board_status_cellboard2_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES >*
+Pack::mutable_temperatures() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES)
+  return &temperatures_;
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD2& Pack::_internal_board_status_cellboard2(int index) const {
-  return board_status_cellboard2_.Get(index);
+inline const ::bms::TEMPERATURES& Pack::_internal_temperatures(int index) const {
+  return temperatures_.Get(index);
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD2& Pack::board_status_cellboard2(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD2)
-  return _internal_board_status_cellboard2(index);
+inline const ::bms::TEMPERATURES& Pack::temperatures(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES)
+  return _internal_temperatures(index);
 }
-inline ::bms::BOARD_STATUS_CELLBOARD2* Pack::_internal_add_board_status_cellboard2() {
-  return board_status_cellboard2_.Add();
+inline ::bms::TEMPERATURES* Pack::_internal_add_temperatures() {
+  return temperatures_.Add();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD2* Pack::add_board_status_cellboard2() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD2)
-  return _internal_add_board_status_cellboard2();
+inline ::bms::TEMPERATURES* Pack::add_temperatures() {
+  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES)
+  return _internal_add_temperatures();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD2 >&
-Pack::board_status_cellboard2() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD2)
-  return board_status_cellboard2_;
-}
-
-// repeated .bms.BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-inline int Pack::_internal_board_status_cellboard3_size() const {
-  return board_status_cellboard3_.size();
-}
-inline int Pack::board_status_cellboard3_size() const {
-  return _internal_board_status_cellboard3_size();
-}
-inline void Pack::clear_board_status_cellboard3() {
-  board_status_cellboard3_.Clear();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD3* Pack::mutable_board_status_cellboard3(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD3)
-  return board_status_cellboard3_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD3 >*
-Pack::mutable_board_status_cellboard3() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD3)
-  return &board_status_cellboard3_;
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD3& Pack::_internal_board_status_cellboard3(int index) const {
-  return board_status_cellboard3_.Get(index);
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD3& Pack::board_status_cellboard3(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD3)
-  return _internal_board_status_cellboard3(index);
-}
-inline ::bms::BOARD_STATUS_CELLBOARD3* Pack::_internal_add_board_status_cellboard3() {
-  return board_status_cellboard3_.Add();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD3* Pack::add_board_status_cellboard3() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD3)
-  return _internal_add_board_status_cellboard3();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD3 >&
-Pack::board_status_cellboard3() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD3)
-  return board_status_cellboard3_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES >&
+Pack::temperatures() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES)
+  return temperatures_;
 }
 
-// repeated .bms.BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-inline int Pack::_internal_board_status_cellboard4_size() const {
-  return board_status_cellboard4_.size();
+// repeated .bms.VOLTAGES VOLTAGES = 3;
+inline int Pack::_internal_voltages_size() const {
+  return voltages_.size();
 }
-inline int Pack::board_status_cellboard4_size() const {
-  return _internal_board_status_cellboard4_size();
+inline int Pack::voltages_size() const {
+  return _internal_voltages_size();
 }
-inline void Pack::clear_board_status_cellboard4() {
-  board_status_cellboard4_.Clear();
+inline void Pack::clear_voltages() {
+  voltages_.Clear();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD4* Pack::mutable_board_status_cellboard4(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD4)
-  return board_status_cellboard4_.Mutable(index);
+inline ::bms::VOLTAGES* Pack::mutable_voltages(int index) {
+  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES)
+  return voltages_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD4 >*
-Pack::mutable_board_status_cellboard4() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD4)
-  return &board_status_cellboard4_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES >*
+Pack::mutable_voltages() {
+  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES)
+  return &voltages_;
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD4& Pack::_internal_board_status_cellboard4(int index) const {
-  return board_status_cellboard4_.Get(index);
+inline const ::bms::VOLTAGES& Pack::_internal_voltages(int index) const {
+  return voltages_.Get(index);
 }
-inline const ::bms::BOARD_STATUS_CELLBOARD4& Pack::board_status_cellboard4(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD4)
-  return _internal_board_status_cellboard4(index);
+inline const ::bms::VOLTAGES& Pack::voltages(int index) const {
+  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES)
+  return _internal_voltages(index);
 }
-inline ::bms::BOARD_STATUS_CELLBOARD4* Pack::_internal_add_board_status_cellboard4() {
-  return board_status_cellboard4_.Add();
+inline ::bms::VOLTAGES* Pack::_internal_add_voltages() {
+  return voltages_.Add();
 }
-inline ::bms::BOARD_STATUS_CELLBOARD4* Pack::add_board_status_cellboard4() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD4)
-  return _internal_add_board_status_cellboard4();
+inline ::bms::VOLTAGES* Pack::add_voltages() {
+  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES)
+  return _internal_add_voltages();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD4 >&
-Pack::board_status_cellboard4() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD4)
-  return board_status_cellboard4_;
-}
-
-// repeated .bms.BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-inline int Pack::_internal_board_status_cellboard5_size() const {
-  return board_status_cellboard5_.size();
-}
-inline int Pack::board_status_cellboard5_size() const {
-  return _internal_board_status_cellboard5_size();
-}
-inline void Pack::clear_board_status_cellboard5() {
-  board_status_cellboard5_.Clear();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD5* Pack::mutable_board_status_cellboard5(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.BOARD_STATUS_CELLBOARD5)
-  return board_status_cellboard5_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD5 >*
-Pack::mutable_board_status_cellboard5() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.BOARD_STATUS_CELLBOARD5)
-  return &board_status_cellboard5_;
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD5& Pack::_internal_board_status_cellboard5(int index) const {
-  return board_status_cellboard5_.Get(index);
-}
-inline const ::bms::BOARD_STATUS_CELLBOARD5& Pack::board_status_cellboard5(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.BOARD_STATUS_CELLBOARD5)
-  return _internal_board_status_cellboard5(index);
-}
-inline ::bms::BOARD_STATUS_CELLBOARD5* Pack::_internal_add_board_status_cellboard5() {
-  return board_status_cellboard5_.Add();
-}
-inline ::bms::BOARD_STATUS_CELLBOARD5* Pack::add_board_status_cellboard5() {
-  // @@protoc_insertion_point(field_add:bms.Pack.BOARD_STATUS_CELLBOARD5)
-  return _internal_add_board_status_cellboard5();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::BOARD_STATUS_CELLBOARD5 >&
-Pack::board_status_cellboard5() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.BOARD_STATUS_CELLBOARD5)
-  return board_status_cellboard5_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES >&
+Pack::voltages() const {
+  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES)
+  return voltages_;
 }
 
-// repeated .bms.TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-inline int Pack::_internal_temperatures_cellboard0_size() const {
-  return temperatures_cellboard0_.size();
-}
-inline int Pack::temperatures_cellboard0_size() const {
-  return _internal_temperatures_cellboard0_size();
-}
-inline void Pack::clear_temperatures_cellboard0() {
-  temperatures_cellboard0_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD0* Pack::mutable_temperatures_cellboard0(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD0)
-  return temperatures_cellboard0_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD0 >*
-Pack::mutable_temperatures_cellboard0() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD0)
-  return &temperatures_cellboard0_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD0& Pack::_internal_temperatures_cellboard0(int index) const {
-  return temperatures_cellboard0_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD0& Pack::temperatures_cellboard0(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD0)
-  return _internal_temperatures_cellboard0(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD0* Pack::_internal_add_temperatures_cellboard0() {
-  return temperatures_cellboard0_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD0* Pack::add_temperatures_cellboard0() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD0)
-  return _internal_add_temperatures_cellboard0();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD0 >&
-Pack::temperatures_cellboard0() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD0)
-  return temperatures_cellboard0_;
-}
-
-// repeated .bms.TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-inline int Pack::_internal_temperatures_cellboard1_size() const {
-  return temperatures_cellboard1_.size();
-}
-inline int Pack::temperatures_cellboard1_size() const {
-  return _internal_temperatures_cellboard1_size();
-}
-inline void Pack::clear_temperatures_cellboard1() {
-  temperatures_cellboard1_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD1* Pack::mutable_temperatures_cellboard1(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD1)
-  return temperatures_cellboard1_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD1 >*
-Pack::mutable_temperatures_cellboard1() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD1)
-  return &temperatures_cellboard1_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD1& Pack::_internal_temperatures_cellboard1(int index) const {
-  return temperatures_cellboard1_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD1& Pack::temperatures_cellboard1(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD1)
-  return _internal_temperatures_cellboard1(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD1* Pack::_internal_add_temperatures_cellboard1() {
-  return temperatures_cellboard1_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD1* Pack::add_temperatures_cellboard1() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD1)
-  return _internal_add_temperatures_cellboard1();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD1 >&
-Pack::temperatures_cellboard1() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD1)
-  return temperatures_cellboard1_;
-}
-
-// repeated .bms.TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-inline int Pack::_internal_temperatures_cellboard2_size() const {
-  return temperatures_cellboard2_.size();
-}
-inline int Pack::temperatures_cellboard2_size() const {
-  return _internal_temperatures_cellboard2_size();
-}
-inline void Pack::clear_temperatures_cellboard2() {
-  temperatures_cellboard2_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD2* Pack::mutable_temperatures_cellboard2(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD2)
-  return temperatures_cellboard2_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD2 >*
-Pack::mutable_temperatures_cellboard2() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD2)
-  return &temperatures_cellboard2_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD2& Pack::_internal_temperatures_cellboard2(int index) const {
-  return temperatures_cellboard2_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD2& Pack::temperatures_cellboard2(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD2)
-  return _internal_temperatures_cellboard2(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD2* Pack::_internal_add_temperatures_cellboard2() {
-  return temperatures_cellboard2_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD2* Pack::add_temperatures_cellboard2() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD2)
-  return _internal_add_temperatures_cellboard2();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD2 >&
-Pack::temperatures_cellboard2() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD2)
-  return temperatures_cellboard2_;
-}
-
-// repeated .bms.TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-inline int Pack::_internal_temperatures_cellboard3_size() const {
-  return temperatures_cellboard3_.size();
-}
-inline int Pack::temperatures_cellboard3_size() const {
-  return _internal_temperatures_cellboard3_size();
-}
-inline void Pack::clear_temperatures_cellboard3() {
-  temperatures_cellboard3_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD3* Pack::mutable_temperatures_cellboard3(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD3)
-  return temperatures_cellboard3_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD3 >*
-Pack::mutable_temperatures_cellboard3() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD3)
-  return &temperatures_cellboard3_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD3& Pack::_internal_temperatures_cellboard3(int index) const {
-  return temperatures_cellboard3_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD3& Pack::temperatures_cellboard3(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD3)
-  return _internal_temperatures_cellboard3(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD3* Pack::_internal_add_temperatures_cellboard3() {
-  return temperatures_cellboard3_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD3* Pack::add_temperatures_cellboard3() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD3)
-  return _internal_add_temperatures_cellboard3();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD3 >&
-Pack::temperatures_cellboard3() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD3)
-  return temperatures_cellboard3_;
-}
-
-// repeated .bms.TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-inline int Pack::_internal_temperatures_cellboard4_size() const {
-  return temperatures_cellboard4_.size();
-}
-inline int Pack::temperatures_cellboard4_size() const {
-  return _internal_temperatures_cellboard4_size();
-}
-inline void Pack::clear_temperatures_cellboard4() {
-  temperatures_cellboard4_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD4* Pack::mutable_temperatures_cellboard4(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD4)
-  return temperatures_cellboard4_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD4 >*
-Pack::mutable_temperatures_cellboard4() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD4)
-  return &temperatures_cellboard4_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD4& Pack::_internal_temperatures_cellboard4(int index) const {
-  return temperatures_cellboard4_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD4& Pack::temperatures_cellboard4(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD4)
-  return _internal_temperatures_cellboard4(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD4* Pack::_internal_add_temperatures_cellboard4() {
-  return temperatures_cellboard4_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD4* Pack::add_temperatures_cellboard4() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD4)
-  return _internal_add_temperatures_cellboard4();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD4 >&
-Pack::temperatures_cellboard4() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD4)
-  return temperatures_cellboard4_;
-}
-
-// repeated .bms.TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-inline int Pack::_internal_temperatures_cellboard5_size() const {
-  return temperatures_cellboard5_.size();
-}
-inline int Pack::temperatures_cellboard5_size() const {
-  return _internal_temperatures_cellboard5_size();
-}
-inline void Pack::clear_temperatures_cellboard5() {
-  temperatures_cellboard5_.Clear();
-}
-inline ::bms::TEMPERATURES_CELLBOARD5* Pack::mutable_temperatures_cellboard5(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.TEMPERATURES_CELLBOARD5)
-  return temperatures_cellboard5_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD5 >*
-Pack::mutable_temperatures_cellboard5() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.TEMPERATURES_CELLBOARD5)
-  return &temperatures_cellboard5_;
-}
-inline const ::bms::TEMPERATURES_CELLBOARD5& Pack::_internal_temperatures_cellboard5(int index) const {
-  return temperatures_cellboard5_.Get(index);
-}
-inline const ::bms::TEMPERATURES_CELLBOARD5& Pack::temperatures_cellboard5(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.TEMPERATURES_CELLBOARD5)
-  return _internal_temperatures_cellboard5(index);
-}
-inline ::bms::TEMPERATURES_CELLBOARD5* Pack::_internal_add_temperatures_cellboard5() {
-  return temperatures_cellboard5_.Add();
-}
-inline ::bms::TEMPERATURES_CELLBOARD5* Pack::add_temperatures_cellboard5() {
-  // @@protoc_insertion_point(field_add:bms.Pack.TEMPERATURES_CELLBOARD5)
-  return _internal_add_temperatures_cellboard5();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::TEMPERATURES_CELLBOARD5 >&
-Pack::temperatures_cellboard5() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.TEMPERATURES_CELLBOARD5)
-  return temperatures_cellboard5_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-inline int Pack::_internal_voltages_cellboard0_size() const {
-  return voltages_cellboard0_.size();
-}
-inline int Pack::voltages_cellboard0_size() const {
-  return _internal_voltages_cellboard0_size();
-}
-inline void Pack::clear_voltages_cellboard0() {
-  voltages_cellboard0_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD0* Pack::mutable_voltages_cellboard0(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD0)
-  return voltages_cellboard0_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD0 >*
-Pack::mutable_voltages_cellboard0() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD0)
-  return &voltages_cellboard0_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD0& Pack::_internal_voltages_cellboard0(int index) const {
-  return voltages_cellboard0_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD0& Pack::voltages_cellboard0(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD0)
-  return _internal_voltages_cellboard0(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD0* Pack::_internal_add_voltages_cellboard0() {
-  return voltages_cellboard0_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD0* Pack::add_voltages_cellboard0() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD0)
-  return _internal_add_voltages_cellboard0();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD0 >&
-Pack::voltages_cellboard0() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD0)
-  return voltages_cellboard0_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-inline int Pack::_internal_voltages_cellboard1_size() const {
-  return voltages_cellboard1_.size();
-}
-inline int Pack::voltages_cellboard1_size() const {
-  return _internal_voltages_cellboard1_size();
-}
-inline void Pack::clear_voltages_cellboard1() {
-  voltages_cellboard1_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD1* Pack::mutable_voltages_cellboard1(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD1)
-  return voltages_cellboard1_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD1 >*
-Pack::mutable_voltages_cellboard1() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD1)
-  return &voltages_cellboard1_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD1& Pack::_internal_voltages_cellboard1(int index) const {
-  return voltages_cellboard1_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD1& Pack::voltages_cellboard1(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD1)
-  return _internal_voltages_cellboard1(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD1* Pack::_internal_add_voltages_cellboard1() {
-  return voltages_cellboard1_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD1* Pack::add_voltages_cellboard1() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD1)
-  return _internal_add_voltages_cellboard1();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD1 >&
-Pack::voltages_cellboard1() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD1)
-  return voltages_cellboard1_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-inline int Pack::_internal_voltages_cellboard2_size() const {
-  return voltages_cellboard2_.size();
-}
-inline int Pack::voltages_cellboard2_size() const {
-  return _internal_voltages_cellboard2_size();
-}
-inline void Pack::clear_voltages_cellboard2() {
-  voltages_cellboard2_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD2* Pack::mutable_voltages_cellboard2(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD2)
-  return voltages_cellboard2_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD2 >*
-Pack::mutable_voltages_cellboard2() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD2)
-  return &voltages_cellboard2_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD2& Pack::_internal_voltages_cellboard2(int index) const {
-  return voltages_cellboard2_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD2& Pack::voltages_cellboard2(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD2)
-  return _internal_voltages_cellboard2(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD2* Pack::_internal_add_voltages_cellboard2() {
-  return voltages_cellboard2_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD2* Pack::add_voltages_cellboard2() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD2)
-  return _internal_add_voltages_cellboard2();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD2 >&
-Pack::voltages_cellboard2() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD2)
-  return voltages_cellboard2_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-inline int Pack::_internal_voltages_cellboard3_size() const {
-  return voltages_cellboard3_.size();
-}
-inline int Pack::voltages_cellboard3_size() const {
-  return _internal_voltages_cellboard3_size();
-}
-inline void Pack::clear_voltages_cellboard3() {
-  voltages_cellboard3_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD3* Pack::mutable_voltages_cellboard3(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD3)
-  return voltages_cellboard3_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD3 >*
-Pack::mutable_voltages_cellboard3() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD3)
-  return &voltages_cellboard3_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD3& Pack::_internal_voltages_cellboard3(int index) const {
-  return voltages_cellboard3_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD3& Pack::voltages_cellboard3(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD3)
-  return _internal_voltages_cellboard3(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD3* Pack::_internal_add_voltages_cellboard3() {
-  return voltages_cellboard3_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD3* Pack::add_voltages_cellboard3() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD3)
-  return _internal_add_voltages_cellboard3();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD3 >&
-Pack::voltages_cellboard3() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD3)
-  return voltages_cellboard3_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-inline int Pack::_internal_voltages_cellboard4_size() const {
-  return voltages_cellboard4_.size();
-}
-inline int Pack::voltages_cellboard4_size() const {
-  return _internal_voltages_cellboard4_size();
-}
-inline void Pack::clear_voltages_cellboard4() {
-  voltages_cellboard4_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD4* Pack::mutable_voltages_cellboard4(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD4)
-  return voltages_cellboard4_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD4 >*
-Pack::mutable_voltages_cellboard4() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD4)
-  return &voltages_cellboard4_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD4& Pack::_internal_voltages_cellboard4(int index) const {
-  return voltages_cellboard4_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD4& Pack::voltages_cellboard4(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD4)
-  return _internal_voltages_cellboard4(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD4* Pack::_internal_add_voltages_cellboard4() {
-  return voltages_cellboard4_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD4* Pack::add_voltages_cellboard4() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD4)
-  return _internal_add_voltages_cellboard4();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD4 >&
-Pack::voltages_cellboard4() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD4)
-  return voltages_cellboard4_;
-}
-
-// repeated .bms.VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-inline int Pack::_internal_voltages_cellboard5_size() const {
-  return voltages_cellboard5_.size();
-}
-inline int Pack::voltages_cellboard5_size() const {
-  return _internal_voltages_cellboard5_size();
-}
-inline void Pack::clear_voltages_cellboard5() {
-  voltages_cellboard5_.Clear();
-}
-inline ::bms::VOLTAGES_CELLBOARD5* Pack::mutable_voltages_cellboard5(int index) {
-  // @@protoc_insertion_point(field_mutable:bms.Pack.VOLTAGES_CELLBOARD5)
-  return voltages_cellboard5_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 >*
-Pack::mutable_voltages_cellboard5() {
-  // @@protoc_insertion_point(field_mutable_list:bms.Pack.VOLTAGES_CELLBOARD5)
-  return &voltages_cellboard5_;
-}
-inline const ::bms::VOLTAGES_CELLBOARD5& Pack::_internal_voltages_cellboard5(int index) const {
-  return voltages_cellboard5_.Get(index);
-}
-inline const ::bms::VOLTAGES_CELLBOARD5& Pack::voltages_cellboard5(int index) const {
-  // @@protoc_insertion_point(field_get:bms.Pack.VOLTAGES_CELLBOARD5)
-  return _internal_voltages_cellboard5(index);
-}
-inline ::bms::VOLTAGES_CELLBOARD5* Pack::_internal_add_voltages_cellboard5() {
-  return voltages_cellboard5_.Add();
-}
-inline ::bms::VOLTAGES_CELLBOARD5* Pack::add_voltages_cellboard5() {
-  // @@protoc_insertion_point(field_add:bms.Pack.VOLTAGES_CELLBOARD5)
-  return _internal_add_voltages_cellboard5();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::bms::VOLTAGES_CELLBOARD5 >&
-Pack::voltages_cellboard5() const {
-  // @@protoc_insertion_point(field_list:bms.Pack.VOLTAGES_CELLBOARD5)
-  return voltages_cellboard5_;
-}
-
-// repeated .bms.BALANCING BALANCING = 19;
+// repeated .bms.BALANCING BALANCING = 4;
 inline int Pack::_internal_balancing_size() const {
   return balancing_.size();
 }
@@ -9399,7 +4146,7 @@ Pack::balancing() const {
   return balancing_;
 }
 
-// repeated .bms.FW_UPDATE FW_UPDATE = 20;
+// repeated .bms.FW_UPDATE FW_UPDATE = 5;
 inline int Pack::_internal_fw_update_size() const {
   return fw_update_.size();
 }
@@ -9438,7 +4185,7 @@ Pack::fw_update() const {
   return fw_update_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
+// repeated .bms.FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
 inline int Pack::_internal_flash_cellboard_0_tx_size() const {
   return flash_cellboard_0_tx_.size();
 }
@@ -9477,7 +4224,7 @@ Pack::flash_cellboard_0_tx() const {
   return flash_cellboard_0_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
+// repeated .bms.FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
 inline int Pack::_internal_flash_cellboard_0_rx_size() const {
   return flash_cellboard_0_rx_.size();
 }
@@ -9516,7 +4263,7 @@ Pack::flash_cellboard_0_rx() const {
   return flash_cellboard_0_rx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
+// repeated .bms.FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
 inline int Pack::_internal_flash_cellboard_1_tx_size() const {
   return flash_cellboard_1_tx_.size();
 }
@@ -9555,7 +4302,7 @@ Pack::flash_cellboard_1_tx() const {
   return flash_cellboard_1_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
+// repeated .bms.FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
 inline int Pack::_internal_flash_cellboard_1_rx_size() const {
   return flash_cellboard_1_rx_.size();
 }
@@ -9594,7 +4341,7 @@ Pack::flash_cellboard_1_rx() const {
   return flash_cellboard_1_rx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
+// repeated .bms.FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
 inline int Pack::_internal_flash_cellboard_2_tx_size() const {
   return flash_cellboard_2_tx_.size();
 }
@@ -9633,7 +4380,7 @@ Pack::flash_cellboard_2_tx() const {
   return flash_cellboard_2_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
+// repeated .bms.FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
 inline int Pack::_internal_flash_cellboard_2_rx_size() const {
   return flash_cellboard_2_rx_.size();
 }
@@ -9672,7 +4419,7 @@ Pack::flash_cellboard_2_rx() const {
   return flash_cellboard_2_rx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
+// repeated .bms.FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
 inline int Pack::_internal_flash_cellboard_3_tx_size() const {
   return flash_cellboard_3_tx_.size();
 }
@@ -9711,7 +4458,7 @@ Pack::flash_cellboard_3_tx() const {
   return flash_cellboard_3_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
+// repeated .bms.FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
 inline int Pack::_internal_flash_cellboard_3_rx_size() const {
   return flash_cellboard_3_rx_.size();
 }
@@ -9750,7 +4497,7 @@ Pack::flash_cellboard_3_rx() const {
   return flash_cellboard_3_rx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
+// repeated .bms.FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
 inline int Pack::_internal_flash_cellboard_4_tx_size() const {
   return flash_cellboard_4_tx_.size();
 }
@@ -9789,7 +4536,7 @@ Pack::flash_cellboard_4_tx() const {
   return flash_cellboard_4_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
+// repeated .bms.FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
 inline int Pack::_internal_flash_cellboard_4_rx_size() const {
   return flash_cellboard_4_rx_.size();
 }
@@ -9828,7 +4575,7 @@ Pack::flash_cellboard_4_rx() const {
   return flash_cellboard_4_rx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
+// repeated .bms.FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
 inline int Pack::_internal_flash_cellboard_5_tx_size() const {
   return flash_cellboard_5_tx_.size();
 }
@@ -9867,7 +4614,7 @@ Pack::flash_cellboard_5_tx() const {
   return flash_cellboard_5_tx_;
 }
 
-// repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+// repeated .bms.FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
 inline int Pack::_internal_flash_cellboard_5_rx_size() const {
   return flash_cellboard_5_rx_.size();
 }
@@ -9943,36 +4690,6 @@ Pack::flash_cellboard_5_rx() const {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -9980,6 +4697,11 @@ Pack::flash_cellboard_5_rx() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::bms::Cellboard> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::bms::Cellboard>() {
+  return ::bms::Cellboard_descriptor();
+}
 template <> struct is_proto_enum< ::bms::BalancingStatus> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::bms::BalancingStatus>() {

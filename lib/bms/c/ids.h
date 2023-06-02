@@ -22,34 +22,19 @@ typedef uint16_t canlib_message_id;
 #define bms_TOPIC_MASK_STATUS 0b00000011111
 #define bms_TOPIC_FILTER_STATUS 0x0 // dec: 0 bin: 0b00000000000
 
-#define bms_ID_BOARD_STATUS_CELLBOARD0 0x600 // dec: 1536 bin: 0b11000000000
-#define bms_ID_BOARD_STATUS_CELLBOARD1 0x620 // dec: 1568 bin: 0b11000100000
-#define bms_ID_BOARD_STATUS_CELLBOARD2 0x640 // dec: 1600 bin: 0b11001000000
-#define bms_ID_BOARD_STATUS_CELLBOARD3 0x660 // dec: 1632 bin: 0b11001100000
-#define bms_ID_BOARD_STATUS_CELLBOARD4 0x680 // dec: 1664 bin: 0b11010000000
-#define bms_ID_BOARD_STATUS_CELLBOARD5 0x6A0 // dec: 1696 bin: 0b11010100000
+#define bms_ID_BOARD_STATUS 0x600 // dec: 1536 bin: 0b11000000000
 
 /* TOPIC TEMPERATURE_INFO */
 #define bms_TOPIC_MASK_TEMPERATURE_INFO 0b00000011111
 #define bms_TOPIC_FILTER_TEMPERATURE_INFO 0x1 // dec: 1 bin: 0b00000000001
 
-#define bms_ID_TEMPERATURES_CELLBOARD0 0x501 // dec: 1281 bin: 0b10100000001
-#define bms_ID_TEMPERATURES_CELLBOARD1 0x521 // dec: 1313 bin: 0b10100100001
-#define bms_ID_TEMPERATURES_CELLBOARD2 0x541 // dec: 1345 bin: 0b10101000001
-#define bms_ID_TEMPERATURES_CELLBOARD3 0x561 // dec: 1377 bin: 0b10101100001
-#define bms_ID_TEMPERATURES_CELLBOARD4 0x581 // dec: 1409 bin: 0b10110000001
-#define bms_ID_TEMPERATURES_CELLBOARD5 0x5A1 // dec: 1441 bin: 0b10110100001
+#define bms_ID_TEMPERATURES 0x501 // dec: 1281 bin: 0b10100000001
 
 /* TOPIC VOLTAGE_INFO */
 #define bms_TOPIC_MASK_VOLTAGE_INFO 0b00000011111
 #define bms_TOPIC_FILTER_VOLTAGE_INFO 0x2 // dec: 2 bin: 0b00000000010
 
-#define bms_ID_VOLTAGES_CELLBOARD0 0x202 // dec: 514 bin: 0b01000000010
-#define bms_ID_VOLTAGES_CELLBOARD1 0x222 // dec: 546 bin: 0b01000100010
-#define bms_ID_VOLTAGES_CELLBOARD2 0x242 // dec: 578 bin: 0b01001000010
-#define bms_ID_VOLTAGES_CELLBOARD3 0x262 // dec: 610 bin: 0b01001100010
-#define bms_ID_VOLTAGES_CELLBOARD4 0x282 // dec: 642 bin: 0b01010000010
-#define bms_ID_VOLTAGES_CELLBOARD5 0x2A2 // dec: 674 bin: 0b01010100010
+#define bms_ID_VOLTAGES 0x202 // dec: 514 bin: 0b01000000010
 
 /* TOPIC BALANCING */
 #define bms_TOPIC_MASK_BALANCING 0b00000011111
@@ -75,48 +60,18 @@ typedef uint16_t canlib_message_id;
 #define bms_ID_FLASH_CELLBOARD_5_RX 0x1B // dec: 27 bin: 0b00000011011
 
 
-#define bms_MAX_MESSAGE_NAME_LENGTH 24
+#define bms_MAX_MESSAGE_NAME_LENGTH 21
 
 // ============== UTILS ============== //
 
 static inline int bms_message_name_from_id(canlib_message_id id, char *buffer) {
     switch (id) {
-        case bms_ID_BOARD_STATUS_CELLBOARD0:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD0");;
-        case bms_ID_BOARD_STATUS_CELLBOARD1:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD1");;
-        case bms_ID_BOARD_STATUS_CELLBOARD2:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD2");;
-        case bms_ID_BOARD_STATUS_CELLBOARD3:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD3");;
-        case bms_ID_BOARD_STATUS_CELLBOARD4:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD4");;
-        case bms_ID_BOARD_STATUS_CELLBOARD5:
-            return sprintf(buffer, "%s", "BOARD_STATUS_CELLBOARD5");;
-        case bms_ID_TEMPERATURES_CELLBOARD0:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD0");;
-        case bms_ID_TEMPERATURES_CELLBOARD1:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD1");;
-        case bms_ID_TEMPERATURES_CELLBOARD2:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD2");;
-        case bms_ID_TEMPERATURES_CELLBOARD3:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD3");;
-        case bms_ID_TEMPERATURES_CELLBOARD4:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD4");;
-        case bms_ID_TEMPERATURES_CELLBOARD5:
-            return sprintf(buffer, "%s", "TEMPERATURES_CELLBOARD5");;
-        case bms_ID_VOLTAGES_CELLBOARD0:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD0");;
-        case bms_ID_VOLTAGES_CELLBOARD1:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD1");;
-        case bms_ID_VOLTAGES_CELLBOARD2:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD2");;
-        case bms_ID_VOLTAGES_CELLBOARD3:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD3");;
-        case bms_ID_VOLTAGES_CELLBOARD4:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD4");;
-        case bms_ID_VOLTAGES_CELLBOARD5:
-            return sprintf(buffer, "%s", "VOLTAGES_CELLBOARD5");;
+        case bms_ID_BOARD_STATUS:
+            return sprintf(buffer, "%s", "BOARD_STATUS");;
+        case bms_ID_TEMPERATURES:
+            return sprintf(buffer, "%s", "TEMPERATURES");;
+        case bms_ID_VOLTAGES:
+            return sprintf(buffer, "%s", "VOLTAGES");;
         case bms_ID_BALANCING:
             return sprintf(buffer, "%s", "BALANCING");;
         case bms_ID_FW_UPDATE:
@@ -153,23 +108,8 @@ static inline int bms_message_name_from_id(canlib_message_id id, char *buffer) {
 static inline bool bms_is_message_id(canlib_message_id message_id) {
     switch (message_id) {
         case 1536: return true; break;
-        case 1568: return true; break;
-        case 1600: return true; break;
-        case 1632: return true; break;
-        case 1664: return true; break;
-        case 1696: return true; break;
         case 1281: return true; break;
-        case 1313: return true; break;
-        case 1345: return true; break;
-        case 1377: return true; break;
-        case 1409: return true; break;
-        case 1441: return true; break;
         case 514: return true; break;
-        case 546: return true; break;
-        case 578: return true; break;
-        case 610: return true; break;
-        case 642: return true; break;
-        case 674: return true; break;
         case 515: return true; break;
         case 10: return true; break;
         case 16: return true; break;
