@@ -14,7 +14,7 @@ message IMU_ACCELERATION{
 	double accel_x = 1;
 	double accel_y = 2;
 	double accel_z = 3;
-	uint32 temperature = 4;
+	int32 temperature = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_0{
@@ -130,8 +130,8 @@ message IRTS_RR_3{
 	uint64 _inner_timestamp = 5;
 }
 message GPS_COORDS{
-	uint64 latitude = 1;
-	uint64 longitude = 2;
+	uint32 latitude = 1;
+	uint32 longitude = 2;
 	uint64 _inner_timestamp = 3;
 }
 message GPS_SPEED{
@@ -140,7 +140,7 @@ message GPS_SPEED{
 }
 message LAP_COUNT{
 	uint32 lap_count = 1;
-	uint64 lap_time = 2;
+	uint32 lap_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message PEDALS_OUTPUT{
@@ -150,7 +150,7 @@ message PEDALS_OUTPUT{
 	uint64 _inner_timestamp = 4;
 }
 message STEERING_ANGLE{
-	uint64 angle = 1;
+	uint32 angle = 1;
 	uint64 _inner_timestamp = 2;
 }
 message CONTROL_STATE{
@@ -171,8 +171,8 @@ message TPMS{
 	uint64 _inner_timestamp = 9;
 }
 message LC_STATUS{
-	uint64 last_time = 1;
-	uint32 lap_number = 2;
+	uint32 last_time = 1;
+	int32 lap_number = 2;
 	uint64 _inner_timestamp = 3;
 }
 
