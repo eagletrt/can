@@ -2,237 +2,110 @@ syntax = "proto3";
 package bms;
 
 
-enum bms_board_status_cellboard0_balancing_status {
-	bms_board_status_cellboard0_balancing_status_OFF = 0;
-	bms_board_status_cellboard0_balancing_status_DISCHARGE = 1;
+enum bms_board_status_cellboard_id {
+	bms_board_status_cellboard_id_CELLBOARD_0 = 0;
+	bms_board_status_cellboard_id_CELLBOARD_1 = 1;
+	bms_board_status_cellboard_id_CELLBOARD_2 = 2;
+	bms_board_status_cellboard_id_CELLBOARD_3 = 3;
+	bms_board_status_cellboard_id_CELLBOARD_4 = 4;
+	bms_board_status_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_board_status_cellboard1_balancing_status {
-	bms_board_status_cellboard1_balancing_status_OFF = 0;
-	bms_board_status_cellboard1_balancing_status_DISCHARGE = 1;
+enum bms_board_status_balancing_status {
+	bms_board_status_balancing_status_OFF = 0;
+	bms_board_status_balancing_status_DISCHARGE = 1;
 }
-enum bms_board_status_cellboard2_balancing_status {
-	bms_board_status_cellboard2_balancing_status_OFF = 0;
-	bms_board_status_cellboard2_balancing_status_DISCHARGE = 1;
+enum bms_temperatures_cellboard_id {
+	bms_temperatures_cellboard_id_CELLBOARD_0 = 0;
+	bms_temperatures_cellboard_id_CELLBOARD_1 = 1;
+	bms_temperatures_cellboard_id_CELLBOARD_2 = 2;
+	bms_temperatures_cellboard_id_CELLBOARD_3 = 3;
+	bms_temperatures_cellboard_id_CELLBOARD_4 = 4;
+	bms_temperatures_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_board_status_cellboard3_balancing_status {
-	bms_board_status_cellboard3_balancing_status_OFF = 0;
-	bms_board_status_cellboard3_balancing_status_DISCHARGE = 1;
+enum bms_voltages_cellboard_id {
+	bms_voltages_cellboard_id_CELLBOARD_0 = 0;
+	bms_voltages_cellboard_id_CELLBOARD_1 = 1;
+	bms_voltages_cellboard_id_CELLBOARD_2 = 2;
+	bms_voltages_cellboard_id_CELLBOARD_3 = 3;
+	bms_voltages_cellboard_id_CELLBOARD_4 = 4;
+	bms_voltages_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_board_status_cellboard4_balancing_status {
-	bms_board_status_cellboard4_balancing_status_OFF = 0;
-	bms_board_status_cellboard4_balancing_status_DISCHARGE = 1;
+enum bms_balancing_cellboard_id {
+	bms_balancing_cellboard_id_CELLBOARD_0 = 0;
+	bms_balancing_cellboard_id_CELLBOARD_1 = 1;
+	bms_balancing_cellboard_id_CELLBOARD_2 = 2;
+	bms_balancing_cellboard_id_CELLBOARD_3 = 3;
+	bms_balancing_cellboard_id_CELLBOARD_4 = 4;
+	bms_balancing_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_board_status_cellboard5_balancing_status {
-	bms_board_status_cellboard5_balancing_status_OFF = 0;
-	bms_board_status_cellboard5_balancing_status_DISCHARGE = 1;
+enum bms_fw_update_cellboard_id {
+	bms_fw_update_cellboard_id_CELLBOARD_0 = 0;
+	bms_fw_update_cellboard_id_CELLBOARD_1 = 1;
+	bms_fw_update_cellboard_id_CELLBOARD_2 = 2;
+	bms_fw_update_cellboard_id_CELLBOARD_3 = 3;
+	bms_fw_update_cellboard_id_CELLBOARD_4 = 4;
+	bms_fw_update_cellboard_id_CELLBOARD_5 = 5;
 }
 
 
-message BOARD_STATUS_CELLBOARD0{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard0_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
+message BOARD_STATUS{
+	bms_board_status_cellboard_id cellboard_id = 1;
+	bool errors_CAN_COMM = 2;
+	bool errors_LTC_COMM = 3;
+	bool errors_TEMP_COMM_0 = 4;
+	bool errors_TEMP_COMM_1 = 5;
+	bool errors_TEMP_COMM_2 = 6;
+	bool errors_TEMP_COMM_3 = 7;
+	bool errors_TEMP_COMM_4 = 8;
+	bool errors_TEMP_COMM_5 = 9;
+	bool errors_OPEN_WIRE = 10;
+	bms_board_status_balancing_status balancing_status = 11;
+	uint64 _inner_timestamp = 12;
 }
-message BOARD_STATUS_CELLBOARD1{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard1_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
+message TEMPERATURES{
+	bms_temperatures_cellboard_id cellboard_id = 1;
+	uint32 start_index = 2;
+	double temp0 = 3;
+	double temp1 = 4;
+	double temp2 = 5;
+	double temp3 = 6;
+	uint64 _inner_timestamp = 7;
 }
-message BOARD_STATUS_CELLBOARD2{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard2_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
-}
-message BOARD_STATUS_CELLBOARD3{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard3_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
-}
-message BOARD_STATUS_CELLBOARD4{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard4_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
-}
-message BOARD_STATUS_CELLBOARD5{
-	bool errors_CAN_COMM = 1;
-	bool errors_LTC_COMM = 2;
-	bool errors_TEMP_COMM_0 = 3;
-	bool errors_TEMP_COMM_1 = 4;
-	bool errors_TEMP_COMM_2 = 5;
-	bool errors_TEMP_COMM_3 = 6;
-	bool errors_TEMP_COMM_4 = 7;
-	bool errors_TEMP_COMM_5 = 8;
-	bool errors_OPEN_WIRE = 9;
-	bms_board_status_cellboard5_balancing_status balancing_status = 10;
-	uint64 _inner_timestamp = 11;
-}
-message TEMPERATURES_CELLBOARD0{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message TEMPERATURES_CELLBOARD1{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message TEMPERATURES_CELLBOARD2{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message TEMPERATURES_CELLBOARD3{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message TEMPERATURES_CELLBOARD4{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message TEMPERATURES_CELLBOARD5{
-	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
-	double temp3 = 5;
-	double temp4 = 6;
-	double temp5 = 7;
-	uint64 _inner_timestamp = 8;
-}
-message VOLTAGES_CELLBOARD0{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message VOLTAGES_CELLBOARD1{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message VOLTAGES_CELLBOARD2{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message VOLTAGES_CELLBOARD3{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message VOLTAGES_CELLBOARD4{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message VOLTAGES_CELLBOARD5{
-	uint32 start_index = 1;
-	double voltage0 = 2;
-	double voltage1 = 3;
-	double voltage2 = 4;
-	uint64 _inner_timestamp = 5;
+message VOLTAGES{
+	bms_voltages_cellboard_id cellboard_id = 1;
+	uint32 start_index = 2;
+	double voltage0 = 3;
+	double voltage1 = 4;
+	double voltage2 = 5;
+	uint64 _inner_timestamp = 6;
 }
 message BALANCING{
-	uint32 board_index = 1;
-	bool cells_CELL0 = 2;
-	bool cells_CELL1 = 3;
-	bool cells_CELL2 = 4;
-	bool cells_CELL3 = 5;
-	bool cells_CELL4 = 6;
-	bool cells_CELL5 = 7;
-	bool cells_CELL6 = 8;
-	bool cells_CELL7 = 9;
-	bool cells_CELL8 = 10;
-	bool cells_CELL9 = 11;
-	bool cells_CELL10 = 12;
-	bool cells_CELL11 = 13;
-	bool cells_CELL12 = 14;
-	bool cells_CELL13 = 15;
-	bool cells_CELL14 = 16;
-	bool cells_CELL15 = 17;
-	bool cells_CELL16 = 18;
-	bool cells_CELL17 = 19;
-	uint64 _inner_timestamp = 20;
+	bms_balancing_cellboard_id cellboard_id = 1;
+	uint32 board_index = 2;
+	bool cells_CELL0 = 3;
+	bool cells_CELL1 = 4;
+	bool cells_CELL2 = 5;
+	bool cells_CELL3 = 6;
+	bool cells_CELL4 = 7;
+	bool cells_CELL5 = 8;
+	bool cells_CELL6 = 9;
+	bool cells_CELL7 = 10;
+	bool cells_CELL8 = 11;
+	bool cells_CELL9 = 12;
+	bool cells_CELL10 = 13;
+	bool cells_CELL11 = 14;
+	bool cells_CELL12 = 15;
+	bool cells_CELL13 = 16;
+	bool cells_CELL14 = 17;
+	bool cells_CELL15 = 18;
+	bool cells_CELL16 = 19;
+	bool cells_CELL17 = 20;
+	uint64 _inner_timestamp = 21;
 }
 message FW_UPDATE{
-	uint32 board_index = 1;
-	uint64 _inner_timestamp = 2;
+	bms_fw_update_cellboard_id cellboard_id = 1;
+	uint32 board_index = 2;
+	uint64 _inner_timestamp = 3;
 }
 message FLASH_CELLBOARD_0_TX{
 	uint64 _inner_timestamp = 1;
@@ -273,37 +146,22 @@ message FLASH_CELLBOARD_5_RX{
 
 
 message Pack{
-	repeated BOARD_STATUS_CELLBOARD0 BOARD_STATUS_CELLBOARD0 = 1;
-	repeated BOARD_STATUS_CELLBOARD1 BOARD_STATUS_CELLBOARD1 = 2;
-	repeated BOARD_STATUS_CELLBOARD2 BOARD_STATUS_CELLBOARD2 = 3;
-	repeated BOARD_STATUS_CELLBOARD3 BOARD_STATUS_CELLBOARD3 = 4;
-	repeated BOARD_STATUS_CELLBOARD4 BOARD_STATUS_CELLBOARD4 = 5;
-	repeated BOARD_STATUS_CELLBOARD5 BOARD_STATUS_CELLBOARD5 = 6;
-	repeated TEMPERATURES_CELLBOARD0 TEMPERATURES_CELLBOARD0 = 7;
-	repeated TEMPERATURES_CELLBOARD1 TEMPERATURES_CELLBOARD1 = 8;
-	repeated TEMPERATURES_CELLBOARD2 TEMPERATURES_CELLBOARD2 = 9;
-	repeated TEMPERATURES_CELLBOARD3 TEMPERATURES_CELLBOARD3 = 10;
-	repeated TEMPERATURES_CELLBOARD4 TEMPERATURES_CELLBOARD4 = 11;
-	repeated TEMPERATURES_CELLBOARD5 TEMPERATURES_CELLBOARD5 = 12;
-	repeated VOLTAGES_CELLBOARD0 VOLTAGES_CELLBOARD0 = 13;
-	repeated VOLTAGES_CELLBOARD1 VOLTAGES_CELLBOARD1 = 14;
-	repeated VOLTAGES_CELLBOARD2 VOLTAGES_CELLBOARD2 = 15;
-	repeated VOLTAGES_CELLBOARD3 VOLTAGES_CELLBOARD3 = 16;
-	repeated VOLTAGES_CELLBOARD4 VOLTAGES_CELLBOARD4 = 17;
-	repeated VOLTAGES_CELLBOARD5 VOLTAGES_CELLBOARD5 = 18;
-	repeated BALANCING BALANCING = 19;
-	repeated FW_UPDATE FW_UPDATE = 20;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 21;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 22;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 23;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 24;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 25;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 26;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 27;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 28;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 29;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 30;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 31;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 32;
+	repeated BOARD_STATUS BOARD_STATUS = 1;
+	repeated TEMPERATURES TEMPERATURES = 2;
+	repeated VOLTAGES VOLTAGES = 3;
+	repeated BALANCING BALANCING = 4;
+	repeated FW_UPDATE FW_UPDATE = 5;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
 }
 

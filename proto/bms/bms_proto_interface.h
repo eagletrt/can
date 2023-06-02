@@ -251,339 +251,66 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
     char buffer[1024];
     
-    for(int i = 0; i < pack->board_status_cellboard0_size(); i++){
+    for(int i = 0; i < pack->board_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard0(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard0(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD0"]["_timestamp"].push(pack->board_status_cellboard0(i)._inner_timestamp());
+        if(pack->board_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->board_status(i)._inner_timestamp();
+        (*net_signals)["BOARD_STATUS"]["_timestamp"].push(pack->board_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_can_comm"].push(pack->board_status_cellboard0(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_ltc_comm"].push(pack->board_status_cellboard0(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_0"].push(pack->board_status_cellboard0(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_1"].push(pack->board_status_cellboard0(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_2"].push(pack->board_status_cellboard0(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_3"].push(pack->board_status_cellboard0(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_4"].push(pack->board_status_cellboard0(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_temp_comm_5"].push(pack->board_status_cellboard0(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD0"]["errors_open_wire"].push(pack->board_status_cellboard0(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD0"]["balancing_status"].push(pack->board_status_cellboard0(i).balancing_status());
-		bms_board_status_cellboard0_balancing_status_enum_to_string((bms_board_status_cellboard0_balancing_status)pack->board_status_cellboard0(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD0"]["balancing_status"].push(buffer);
+		(*net_enums)["BOARD_STATUS"]["cellboard_id"].push(pack->board_status(i).cellboard_id());
+		bms_board_status_cellboard_id_enum_to_string((bms_board_status_cellboard_id)pack->board_status(i).cellboard_id(), buffer);
+		(*net_strings)["BOARD_STATUS"]["cellboard_id"].push(buffer);
+		(*net_signals)["BOARD_STATUS"]["errors_can_comm"].push(pack->board_status(i).errors_can_comm());
+		(*net_signals)["BOARD_STATUS"]["errors_ltc_comm"].push(pack->board_status(i).errors_ltc_comm());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_0"].push(pack->board_status(i).errors_temp_comm_0());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_1"].push(pack->board_status(i).errors_temp_comm_1());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_2"].push(pack->board_status(i).errors_temp_comm_2());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_3"].push(pack->board_status(i).errors_temp_comm_3());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_4"].push(pack->board_status(i).errors_temp_comm_4());
+		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_5"].push(pack->board_status(i).errors_temp_comm_5());
+		(*net_signals)["BOARD_STATUS"]["errors_open_wire"].push(pack->board_status(i).errors_open_wire());
+		(*net_enums)["BOARD_STATUS"]["balancing_status"].push(pack->board_status(i).balancing_status());
+		bms_board_status_balancing_status_enum_to_string((bms_board_status_balancing_status)pack->board_status(i).balancing_status(), buffer);
+		(*net_strings)["BOARD_STATUS"]["balancing_status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->board_status_cellboard1_size(); i++){
+    for(int i = 0; i < pack->temperatures_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard1(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD1"]["_timestamp"].push(pack->board_status_cellboard1(i)._inner_timestamp());
+        if(pack->temperatures(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->temperatures(i)._inner_timestamp();
+        (*net_signals)["TEMPERATURES"]["_timestamp"].push(pack->temperatures(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_can_comm"].push(pack->board_status_cellboard1(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_ltc_comm"].push(pack->board_status_cellboard1(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_0"].push(pack->board_status_cellboard1(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_1"].push(pack->board_status_cellboard1(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_2"].push(pack->board_status_cellboard1(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_3"].push(pack->board_status_cellboard1(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_4"].push(pack->board_status_cellboard1(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_temp_comm_5"].push(pack->board_status_cellboard1(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD1"]["errors_open_wire"].push(pack->board_status_cellboard1(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD1"]["balancing_status"].push(pack->board_status_cellboard1(i).balancing_status());
-		bms_board_status_cellboard1_balancing_status_enum_to_string((bms_board_status_cellboard1_balancing_status)pack->board_status_cellboard1(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD1"]["balancing_status"].push(buffer);
+		(*net_enums)["TEMPERATURES"]["cellboard_id"].push(pack->temperatures(i).cellboard_id());
+		bms_temperatures_cellboard_id_enum_to_string((bms_temperatures_cellboard_id)pack->temperatures(i).cellboard_id(), buffer);
+		(*net_strings)["TEMPERATURES"]["cellboard_id"].push(buffer);
+		(*net_signals)["TEMPERATURES"]["start_index"].push(pack->temperatures(i).start_index());
+		(*net_signals)["TEMPERATURES"]["temp0"].push(pack->temperatures(i).temp0());
+		(*net_signals)["TEMPERATURES"]["temp1"].push(pack->temperatures(i).temp1());
+		(*net_signals)["TEMPERATURES"]["temp2"].push(pack->temperatures(i).temp2());
+		(*net_signals)["TEMPERATURES"]["temp3"].push(pack->temperatures(i).temp3());
 
     }
 
-    for(int i = 0; i < pack->board_status_cellboard2_size(); i++){
+    for(int i = 0; i < pack->voltages_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard2(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD2"]["_timestamp"].push(pack->board_status_cellboard2(i)._inner_timestamp());
+        if(pack->voltages(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->voltages(i)._inner_timestamp();
+        (*net_signals)["VOLTAGES"]["_timestamp"].push(pack->voltages(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_can_comm"].push(pack->board_status_cellboard2(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_ltc_comm"].push(pack->board_status_cellboard2(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_0"].push(pack->board_status_cellboard2(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_1"].push(pack->board_status_cellboard2(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_2"].push(pack->board_status_cellboard2(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_3"].push(pack->board_status_cellboard2(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_4"].push(pack->board_status_cellboard2(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_temp_comm_5"].push(pack->board_status_cellboard2(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD2"]["errors_open_wire"].push(pack->board_status_cellboard2(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD2"]["balancing_status"].push(pack->board_status_cellboard2(i).balancing_status());
-		bms_board_status_cellboard2_balancing_status_enum_to_string((bms_board_status_cellboard2_balancing_status)pack->board_status_cellboard2(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD2"]["balancing_status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->board_status_cellboard3_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard3(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD3"]["_timestamp"].push(pack->board_status_cellboard3(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_can_comm"].push(pack->board_status_cellboard3(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_ltc_comm"].push(pack->board_status_cellboard3(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_0"].push(pack->board_status_cellboard3(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_1"].push(pack->board_status_cellboard3(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_2"].push(pack->board_status_cellboard3(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_3"].push(pack->board_status_cellboard3(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_4"].push(pack->board_status_cellboard3(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_temp_comm_5"].push(pack->board_status_cellboard3(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD3"]["errors_open_wire"].push(pack->board_status_cellboard3(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD3"]["balancing_status"].push(pack->board_status_cellboard3(i).balancing_status());
-		bms_board_status_cellboard3_balancing_status_enum_to_string((bms_board_status_cellboard3_balancing_status)pack->board_status_cellboard3(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD3"]["balancing_status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->board_status_cellboard4_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard4(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD4"]["_timestamp"].push(pack->board_status_cellboard4(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_can_comm"].push(pack->board_status_cellboard4(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_ltc_comm"].push(pack->board_status_cellboard4(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_0"].push(pack->board_status_cellboard4(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_1"].push(pack->board_status_cellboard4(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_2"].push(pack->board_status_cellboard4(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_3"].push(pack->board_status_cellboard4(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_4"].push(pack->board_status_cellboard4(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_temp_comm_5"].push(pack->board_status_cellboard4(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD4"]["errors_open_wire"].push(pack->board_status_cellboard4(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD4"]["balancing_status"].push(pack->board_status_cellboard4(i).balancing_status());
-		bms_board_status_cellboard4_balancing_status_enum_to_string((bms_board_status_cellboard4_balancing_status)pack->board_status_cellboard4(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD4"]["balancing_status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->board_status_cellboard5_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->board_status_cellboard5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->board_status_cellboard5(i)._inner_timestamp();
-        (*net_signals)["BOARD_STATUS_CELLBOARD5"]["_timestamp"].push(pack->board_status_cellboard5(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_can_comm"].push(pack->board_status_cellboard5(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_ltc_comm"].push(pack->board_status_cellboard5(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_0"].push(pack->board_status_cellboard5(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_1"].push(pack->board_status_cellboard5(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_2"].push(pack->board_status_cellboard5(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_3"].push(pack->board_status_cellboard5(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_4"].push(pack->board_status_cellboard5(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_temp_comm_5"].push(pack->board_status_cellboard5(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS_CELLBOARD5"]["errors_open_wire"].push(pack->board_status_cellboard5(i).errors_open_wire());
-		(*net_enums)["BOARD_STATUS_CELLBOARD5"]["balancing_status"].push(pack->board_status_cellboard5(i).balancing_status());
-		bms_board_status_cellboard5_balancing_status_enum_to_string((bms_board_status_cellboard5_balancing_status)pack->board_status_cellboard5(i).balancing_status(), buffer);
-		(*net_strings)["BOARD_STATUS_CELLBOARD5"]["balancing_status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard0_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard0(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard0(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD0"]["_timestamp"].push(pack->temperatures_cellboard0(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["start_index"].push(pack->temperatures_cellboard0(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp0"].push(pack->temperatures_cellboard0(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp1"].push(pack->temperatures_cellboard0(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp2"].push(pack->temperatures_cellboard0(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp3"].push(pack->temperatures_cellboard0(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp4"].push(pack->temperatures_cellboard0(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD0"]["temp5"].push(pack->temperatures_cellboard0(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard1_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard1(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD1"]["_timestamp"].push(pack->temperatures_cellboard1(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["start_index"].push(pack->temperatures_cellboard1(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp0"].push(pack->temperatures_cellboard1(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp1"].push(pack->temperatures_cellboard1(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp2"].push(pack->temperatures_cellboard1(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp3"].push(pack->temperatures_cellboard1(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp4"].push(pack->temperatures_cellboard1(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD1"]["temp5"].push(pack->temperatures_cellboard1(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard2_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard2(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD2"]["_timestamp"].push(pack->temperatures_cellboard2(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["start_index"].push(pack->temperatures_cellboard2(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp0"].push(pack->temperatures_cellboard2(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp1"].push(pack->temperatures_cellboard2(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp2"].push(pack->temperatures_cellboard2(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp3"].push(pack->temperatures_cellboard2(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp4"].push(pack->temperatures_cellboard2(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD2"]["temp5"].push(pack->temperatures_cellboard2(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard3_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard3(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD3"]["_timestamp"].push(pack->temperatures_cellboard3(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["start_index"].push(pack->temperatures_cellboard3(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp0"].push(pack->temperatures_cellboard3(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp1"].push(pack->temperatures_cellboard3(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp2"].push(pack->temperatures_cellboard3(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp3"].push(pack->temperatures_cellboard3(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp4"].push(pack->temperatures_cellboard3(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD3"]["temp5"].push(pack->temperatures_cellboard3(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard4_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard4(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD4"]["_timestamp"].push(pack->temperatures_cellboard4(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["start_index"].push(pack->temperatures_cellboard4(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp0"].push(pack->temperatures_cellboard4(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp1"].push(pack->temperatures_cellboard4(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp2"].push(pack->temperatures_cellboard4(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp3"].push(pack->temperatures_cellboard4(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp4"].push(pack->temperatures_cellboard4(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD4"]["temp5"].push(pack->temperatures_cellboard4(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->temperatures_cellboard5_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->temperatures_cellboard5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->temperatures_cellboard5(i)._inner_timestamp();
-        (*net_signals)["TEMPERATURES_CELLBOARD5"]["_timestamp"].push(pack->temperatures_cellboard5(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["start_index"].push(pack->temperatures_cellboard5(i).start_index());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp0"].push(pack->temperatures_cellboard5(i).temp0());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp1"].push(pack->temperatures_cellboard5(i).temp1());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp2"].push(pack->temperatures_cellboard5(i).temp2());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp3"].push(pack->temperatures_cellboard5(i).temp3());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp4"].push(pack->temperatures_cellboard5(i).temp4());
-		(*net_signals)["TEMPERATURES_CELLBOARD5"]["temp5"].push(pack->temperatures_cellboard5(i).temp5());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard0_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard0(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard0(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD0"]["_timestamp"].push(pack->voltages_cellboard0(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD0"]["start_index"].push(pack->voltages_cellboard0(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD0"]["voltage0"].push(pack->voltages_cellboard0(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD0"]["voltage1"].push(pack->voltages_cellboard0(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD0"]["voltage2"].push(pack->voltages_cellboard0(i).voltage2());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard1_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard1(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD1"]["_timestamp"].push(pack->voltages_cellboard1(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD1"]["start_index"].push(pack->voltages_cellboard1(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD1"]["voltage0"].push(pack->voltages_cellboard1(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD1"]["voltage1"].push(pack->voltages_cellboard1(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD1"]["voltage2"].push(pack->voltages_cellboard1(i).voltage2());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard2_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard2(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD2"]["_timestamp"].push(pack->voltages_cellboard2(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD2"]["start_index"].push(pack->voltages_cellboard2(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD2"]["voltage0"].push(pack->voltages_cellboard2(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD2"]["voltage1"].push(pack->voltages_cellboard2(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD2"]["voltage2"].push(pack->voltages_cellboard2(i).voltage2());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard3_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard3(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD3"]["_timestamp"].push(pack->voltages_cellboard3(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD3"]["start_index"].push(pack->voltages_cellboard3(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD3"]["voltage0"].push(pack->voltages_cellboard3(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD3"]["voltage1"].push(pack->voltages_cellboard3(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD3"]["voltage2"].push(pack->voltages_cellboard3(i).voltage2());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard4_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard4(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD4"]["_timestamp"].push(pack->voltages_cellboard4(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD4"]["start_index"].push(pack->voltages_cellboard4(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD4"]["voltage0"].push(pack->voltages_cellboard4(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD4"]["voltage1"].push(pack->voltages_cellboard4(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD4"]["voltage2"].push(pack->voltages_cellboard4(i).voltage2());
-
-    }
-
-    for(int i = 0; i < pack->voltages_cellboard5_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->voltages_cellboard5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->voltages_cellboard5(i)._inner_timestamp();
-        (*net_signals)["VOLTAGES_CELLBOARD5"]["_timestamp"].push(pack->voltages_cellboard5(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["VOLTAGES_CELLBOARD5"]["start_index"].push(pack->voltages_cellboard5(i).start_index());
-		(*net_signals)["VOLTAGES_CELLBOARD5"]["voltage0"].push(pack->voltages_cellboard5(i).voltage0());
-		(*net_signals)["VOLTAGES_CELLBOARD5"]["voltage1"].push(pack->voltages_cellboard5(i).voltage1());
-		(*net_signals)["VOLTAGES_CELLBOARD5"]["voltage2"].push(pack->voltages_cellboard5(i).voltage2());
+		(*net_enums)["VOLTAGES"]["cellboard_id"].push(pack->voltages(i).cellboard_id());
+		bms_voltages_cellboard_id_enum_to_string((bms_voltages_cellboard_id)pack->voltages(i).cellboard_id(), buffer);
+		(*net_strings)["VOLTAGES"]["cellboard_id"].push(buffer);
+		(*net_signals)["VOLTAGES"]["start_index"].push(pack->voltages(i).start_index());
+		(*net_signals)["VOLTAGES"]["voltage0"].push(pack->voltages(i).voltage0());
+		(*net_signals)["VOLTAGES"]["voltage1"].push(pack->voltages(i).voltage1());
+		(*net_signals)["VOLTAGES"]["voltage2"].push(pack->voltages(i).voltage2());
 
     }
 
@@ -595,6 +322,9 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
         (*net_signals)["BALANCING"]["_timestamp"].push(pack->balancing(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["BALANCING"]["cellboard_id"].push(pack->balancing(i).cellboard_id());
+		bms_balancing_cellboard_id_enum_to_string((bms_balancing_cellboard_id)pack->balancing(i).cellboard_id(), buffer);
+		(*net_strings)["BALANCING"]["cellboard_id"].push(buffer);
 		(*net_signals)["BALANCING"]["board_index"].push(pack->balancing(i).board_index());
 		(*net_signals)["BALANCING"]["cells_cell0"].push(pack->balancing(i).cells_cell0());
 		(*net_signals)["BALANCING"]["cells_cell1"].push(pack->balancing(i).cells_cell1());
@@ -625,6 +355,9 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
         (*net_signals)["FW_UPDATE"]["_timestamp"].push(pack->fw_update(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["FW_UPDATE"]["cellboard_id"].push(pack->fw_update(i).cellboard_id());
+		bms_fw_update_cellboard_id_enum_to_string((bms_fw_update_cellboard_id)pack->fw_update(i).cellboard_id(), buffer);
+		(*net_strings)["FW_UPDATE"]["cellboard_id"].push(buffer);
 		(*net_signals)["FW_UPDATE"]["board_index"].push(pack->fw_update(i).board_index());
 
     }
@@ -770,9 +503,10 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 
     switch(id) {
         
-        case 1539: {
-            bms_board_status_cellboard0_t* msg = (bms_board_status_cellboard0_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD0* proto_msg = pack->add_board_status_cellboard0();
+        case 1538: {
+            bms_board_status_t* msg = (bms_board_status_t*)((*map)[index].message_raw);
+            bms::BOARD_STATUS* proto_msg = pack->add_board_status();
+			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
 			proto_msg->set_errors_can_comm(msg->errors_can_comm);
 			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
 			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
@@ -782,7 +516,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
 			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
 			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard0_balancing_status)msg->balancing_status);
+			proto_msg->set_balancing_status((bms::bms_board_status_balancing_status)msg->balancing_status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -790,116 +524,15 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1571: {
-            bms_board_status_cellboard1_t* msg = (bms_board_status_cellboard1_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD1* proto_msg = pack->add_board_status_cellboard1();
-			proto_msg->set_errors_can_comm(msg->errors_can_comm);
-			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
-			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
-			proto_msg->set_errors_temp_comm_1(msg->errors_temp_comm_1);
-			proto_msg->set_errors_temp_comm_2(msg->errors_temp_comm_2);
-			proto_msg->set_errors_temp_comm_3(msg->errors_temp_comm_3);
-			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
-			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard1_balancing_status)msg->balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1603: {
-            bms_board_status_cellboard2_t* msg = (bms_board_status_cellboard2_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD2* proto_msg = pack->add_board_status_cellboard2();
-			proto_msg->set_errors_can_comm(msg->errors_can_comm);
-			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
-			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
-			proto_msg->set_errors_temp_comm_1(msg->errors_temp_comm_1);
-			proto_msg->set_errors_temp_comm_2(msg->errors_temp_comm_2);
-			proto_msg->set_errors_temp_comm_3(msg->errors_temp_comm_3);
-			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
-			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard2_balancing_status)msg->balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1635: {
-            bms_board_status_cellboard3_t* msg = (bms_board_status_cellboard3_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD3* proto_msg = pack->add_board_status_cellboard3();
-			proto_msg->set_errors_can_comm(msg->errors_can_comm);
-			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
-			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
-			proto_msg->set_errors_temp_comm_1(msg->errors_temp_comm_1);
-			proto_msg->set_errors_temp_comm_2(msg->errors_temp_comm_2);
-			proto_msg->set_errors_temp_comm_3(msg->errors_temp_comm_3);
-			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
-			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard3_balancing_status)msg->balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1667: {
-            bms_board_status_cellboard4_t* msg = (bms_board_status_cellboard4_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD4* proto_msg = pack->add_board_status_cellboard4();
-			proto_msg->set_errors_can_comm(msg->errors_can_comm);
-			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
-			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
-			proto_msg->set_errors_temp_comm_1(msg->errors_temp_comm_1);
-			proto_msg->set_errors_temp_comm_2(msg->errors_temp_comm_2);
-			proto_msg->set_errors_temp_comm_3(msg->errors_temp_comm_3);
-			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
-			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard4_balancing_status)msg->balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1699: {
-            bms_board_status_cellboard5_t* msg = (bms_board_status_cellboard5_t*)((*map)[index].message_raw);
-            bms::BOARD_STATUS_CELLBOARD5* proto_msg = pack->add_board_status_cellboard5();
-			proto_msg->set_errors_can_comm(msg->errors_can_comm);
-			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
-			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
-			proto_msg->set_errors_temp_comm_1(msg->errors_temp_comm_1);
-			proto_msg->set_errors_temp_comm_2(msg->errors_temp_comm_2);
-			proto_msg->set_errors_temp_comm_3(msg->errors_temp_comm_3);
-			proto_msg->set_errors_temp_comm_4(msg->errors_temp_comm_4);
-			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
-			proto_msg->set_balancing_status((bms::bms_board_status_cellboard5_balancing_status)msg->balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1280: {
-            bms_temperatures_cellboard0_converted_t* msg = (bms_temperatures_cellboard0_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD0* proto_msg = pack->add_temperatures_cellboard0();
+        case 1281: {
+            bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)((*map)[index].message_conversion);
+            bms::TEMPERATURES* proto_msg = pack->add_temperatures();
+			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_temp0(msg->temp0);
 			proto_msg->set_temp1(msg->temp1);
 			proto_msg->set_temp2(msg->temp2);
 			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -907,94 +540,10 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1312: {
-            bms_temperatures_cellboard1_converted_t* msg = (bms_temperatures_cellboard1_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD1* proto_msg = pack->add_temperatures_cellboard1();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp0(msg->temp0);
-			proto_msg->set_temp1(msg->temp1);
-			proto_msg->set_temp2(msg->temp2);
-			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1344: {
-            bms_temperatures_cellboard2_converted_t* msg = (bms_temperatures_cellboard2_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD2* proto_msg = pack->add_temperatures_cellboard2();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp0(msg->temp0);
-			proto_msg->set_temp1(msg->temp1);
-			proto_msg->set_temp2(msg->temp2);
-			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1376: {
-            bms_temperatures_cellboard3_converted_t* msg = (bms_temperatures_cellboard3_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD3* proto_msg = pack->add_temperatures_cellboard3();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp0(msg->temp0);
-			proto_msg->set_temp1(msg->temp1);
-			proto_msg->set_temp2(msg->temp2);
-			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1408: {
-            bms_temperatures_cellboard4_converted_t* msg = (bms_temperatures_cellboard4_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD4* proto_msg = pack->add_temperatures_cellboard4();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp0(msg->temp0);
-			proto_msg->set_temp1(msg->temp1);
-			proto_msg->set_temp2(msg->temp2);
-			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1440: {
-            bms_temperatures_cellboard5_converted_t* msg = (bms_temperatures_cellboard5_converted_t*)((*map)[index].message_conversion);
-            bms::TEMPERATURES_CELLBOARD5* proto_msg = pack->add_temperatures_cellboard5();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp0(msg->temp0);
-			proto_msg->set_temp1(msg->temp1);
-			proto_msg->set_temp2(msg->temp2);
-			proto_msg->set_temp3(msg->temp3);
-			proto_msg->set_temp4(msg->temp4);
-			proto_msg->set_temp5(msg->temp5);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 513: {
-            bms_voltages_cellboard0_converted_t* msg = (bms_voltages_cellboard0_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD0* proto_msg = pack->add_voltages_cellboard0();
+        case 512: {
+            bms_voltages_converted_t* msg = (bms_voltages_converted_t*)((*map)[index].message_conversion);
+            bms::VOLTAGES* proto_msg = pack->add_voltages();
+			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_voltage0(msg->voltage0);
 			proto_msg->set_voltage1(msg->voltage1);
@@ -1006,79 +555,10 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 545: {
-            bms_voltages_cellboard1_converted_t* msg = (bms_voltages_cellboard1_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD1* proto_msg = pack->add_voltages_cellboard1();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage0(msg->voltage0);
-			proto_msg->set_voltage1(msg->voltage1);
-			proto_msg->set_voltage2(msg->voltage2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 577: {
-            bms_voltages_cellboard2_converted_t* msg = (bms_voltages_cellboard2_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD2* proto_msg = pack->add_voltages_cellboard2();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage0(msg->voltage0);
-			proto_msg->set_voltage1(msg->voltage1);
-			proto_msg->set_voltage2(msg->voltage2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 609: {
-            bms_voltages_cellboard3_converted_t* msg = (bms_voltages_cellboard3_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD3* proto_msg = pack->add_voltages_cellboard3();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage0(msg->voltage0);
-			proto_msg->set_voltage1(msg->voltage1);
-			proto_msg->set_voltage2(msg->voltage2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 641: {
-            bms_voltages_cellboard4_converted_t* msg = (bms_voltages_cellboard4_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD4* proto_msg = pack->add_voltages_cellboard4();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage0(msg->voltage0);
-			proto_msg->set_voltage1(msg->voltage1);
-			proto_msg->set_voltage2(msg->voltage2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 673: {
-            bms_voltages_cellboard5_converted_t* msg = (bms_voltages_cellboard5_converted_t*)((*map)[index].message_conversion);
-            bms::VOLTAGES_CELLBOARD5* proto_msg = pack->add_voltages_cellboard5();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage0(msg->voltage0);
-			proto_msg->set_voltage1(msg->voltage1);
-			proto_msg->set_voltage2(msg->voltage2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 514: {
+        case 515: {
             bms_balancing_t* msg = (bms_balancing_t*)((*map)[index].message_raw);
             bms::BALANCING* proto_msg = pack->add_balancing();
+			proto_msg->set_cellboard_id((bms::bms_balancing_cellboard_id)msg->cellboard_id);
 			proto_msg->set_board_index(msg->board_index);
 			proto_msg->set_cells_cell0(msg->cells_cell0);
 			proto_msg->set_cells_cell1(msg->cells_cell1);
@@ -1108,6 +588,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         case 10: {
             bms_fw_update_t* msg = (bms_fw_update_t*)((*map)[index].message_raw);
             bms::FW_UPDATE* proto_msg = pack->add_fw_update();
+			proto_msg->set_cellboard_id((bms::bms_fw_update_cellboard_id)msg->cellboard_id);
 			proto_msg->set_board_index(msg->board_index);
 
 #ifdef CANLIB_TIMESTAMP
