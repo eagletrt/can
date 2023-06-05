@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rprimary.proto\x12\x07primary\"-\n\x11\x42MS_HV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"-\n\x11\x42MS_LV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"_\n\rSTEER_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0b\x44\x41S_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nHV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nLV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0bTLM_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"8\n\tTIMESTAMP\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"=\n\x13\x41MBIENT_TEMPERATURE\x12\x0c\n\x04temp\x18\x01 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"S\n\x0b\x44\x41TA_LOGGER\x12\x14\n\x0cplaceholder1\x18\x01 \x01(\r\x12\x14\n\x0cplaceholder2\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"O\n\x0eSET_TLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"K\n\nTLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"A\n\x13STEER_SYSTEM_STATUS\x12\x10\n\x08soc_temp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x85\x01\n\nHV_VOLTAGE\x12\x14\n\x0cpack_voltage\x18\x01 \x01(\x02\x12\x13\n\x0b\x62us_voltage\x18\x02 \x01(\x02\x12\x18\n\x10max_cell_voltage\x18\x03 \x01(\x02\x12\x18\n\x10min_cell_voltage\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"c\n\nHV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\r\n\x05power\x18\x02 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x02\x12\x0b\n\x03soc\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"]\n\x07HV_TEMP\x12\x14\n\x0c\x61verage_temp\x18\x01 \x01(\x02\x12\x10\n\x08max_temp\x18\x02 \x01(\x02\x12\x10\n\x08min_temp\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"G\n\tHV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"T\n\x0eHV_CAN_FORWARD\x12(\n\x0f\x63\x61n_forward_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"h\n\x10HV_FANS_OVERRIDE\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"^\n\x15HV_CAN_FORWARD_STATUS\x12+\n\x12\x63\x61n_forward_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x17HV_FANS_OVERRIDE_STATUS\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"e\n\x13HV_FEEDBACKS_STATUS\x12\x18\n\x10\x66\x65\x65\x64\x62\x61\x63ks_status\x18\x01 \x01(\r\x12\x1a\n\x12is_circuitry_error\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"v\n\rHV_IMD_STATUS\x12\x11\n\timd_fault\x18\x01 \x01(\x08\x12&\n\nimd_status\x18\x02 \x01(\x0e\x32\x12.primary.ImdStatus\x12\x10\n\x08imd_info\x18\x03 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"K\n\tTS_STATUS\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"U\n\x11SET_TS_STATUS_DAS\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Z\n\x16SET_TS_STATUS_HANDCART\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"X\n\x0cSTEER_STATUS\x12\x0e\n\x06map_pw\x18\x01 \x01(\x02\x12\x0e\n\x06map_sc\x18\x02 \x01(\x02\x12\x0e\n\x06map_tv\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"Y\n\x0eSET_CAR_STATUS\x12-\n\x0e\x63\x61r_status_set\x18\x01 \x01(\x0e\x32\x15.primary.SetCarStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"j\n\x10SET_PEDALS_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x1d\n\x05pedal\x18\x02 \x01(\x0e\x32\x0e.primary.Pedal\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"S\n\x18SET_STEERING_ANGLE_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\xa8\x01\n\nCAR_STATUS\x12+\n\ninverter_l\x18\x01 \x01(\x0e\x32\x17.primary.InverterStatus\x12+\n\ninverter_r\x18\x02 \x01(\x0e\x32\x17.primary.InverterStatus\x12&\n\ncar_status\x18\x03 \x01(\x0e\x32\x12.primary.CarStatus\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"9\n\nDAS_ERRORS\x12\x11\n\tdas_error\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"7\n\nLV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"r\n\nLV_VOLTAGE\x12\x11\n\tvoltage_1\x18\x01 \x01(\x02\x12\x11\n\tvoltage_2\x18\x02 \x01(\x02\x12\x11\n\tvoltage_3\x18\x03 \x01(\x02\x12\x11\n\tvoltage_4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"C\n\x10LV_TOTAL_VOLTAGE\x12\x15\n\rtotal_voltage\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x96\x01\n\x0eLV_TEMPERATURE\x12\x18\n\x10\x62p_temperature_1\x18\x01 \x01(\x02\x12\x18\n\x10\x62p_temperature_2\x18\x02 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x31\x32_temperature\x18\x03 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x32\x34_temperature\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"X\n\x0e\x43OOLING_STATUS\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x13\n\x0bpumps_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"G\n\x12SET_RADIATOR_SPEED\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"@\n\x0fSET_PUMPS_SPEED\x12\x13\n\x0bpumps_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"[\n\x1eSET_INVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"W\n\x1aINVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"G\n\tLV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"J\n\x0fSHUTDOWN_STATUS\x12\r\n\x05input\x18\x01 \x01(\x08\x12\x0e\n\x06output\x18\x02 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\"\n\x06MARKER\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"z\n\x10HV_CELLS_VOLTAGE\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x11\n\tvoltage_0\x18\x02 \x01(\x02\x12\x11\n\tvoltage_1\x18\x03 \x01(\x02\x12\x11\n\tvoltage_2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\x9e\x01\n\rHV_CELLS_TEMP\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x0e\n\x06temp_0\x18\x02 \x01(\x02\x12\x0e\n\x06temp_1\x18\x03 \x01(\x02\x12\x0e\n\x06temp_2\x18\x04 \x01(\x02\x12\x0e\n\x06temp_3\x18\x05 \x01(\x02\x12\x0e\n\x06temp_4\x18\x06 \x01(\x02\x12\x0e\n\x06temp_5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"_\n\x18HV_CELL_BALANCING_STATUS\x12)\n\x10\x62\x61lancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"d\n\x19SET_CELL_BALANCING_STATUS\x12-\n\x14set_balancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\">\n\x0fHANDCART_STATUS\x12\x11\n\tconnected\x18\x01 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x05SPEED\x12\x11\n\tencoder_r\x18\x01 \x01(\x02\x12\x11\n\tencoder_l\x18\x02 \x01(\x02\x12\x12\n\ninverter_r\x18\x03 \x01(\x02\x12\x12\n\ninverter_l\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\xa9\x01\n\rINV_L_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xa9\x01\n\rINV_R_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_L_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_R_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42RUSA_NLG5_CTL\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"$\n\x08\x42RUSA_ST\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x42RUSA_ACT_I\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"(\n\x0c\x42RUSA_ACT_II\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"&\n\nBRUSA_TEMP\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"%\n\tBRUSA_ERR\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x8a\x01\n\x0e\x43ONTROL_OUTPUT\x12\x1a\n\x12\x65stimated_velocity\x18\x01 \x01(\x02\x12\x0e\n\x06tmax_r\x18\x02 \x01(\x02\x12\x0e\n\x06tmax_l\x18\x03 \x01(\x02\x12\x10\n\x08torque_l\x18\x04 \x01(\x02\x12\x10\n\x08torque_r\x18\x05 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x06 \x01(\x04\"$\n\x08LC_RESET\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x8c\x1f\n\x04Pack\x12\x35\n\x11\x42MS_HV_JMP_TO_BLT\x18\x01 \x03(\x0b\x32\x1a.primary.BMS_HV_JMP_TO_BLT\x12\x35\n\x11\x42MS_LV_JMP_TO_BLT\x18\x02 \x03(\x0b\x32\x1a.primary.BMS_LV_JMP_TO_BLT\x12-\n\rSTEER_VERSION\x18\x03 \x03(\x0b\x32\x16.primary.STEER_VERSION\x12)\n\x0b\x44\x41S_VERSION\x18\x04 \x03(\x0b\x32\x14.primary.DAS_VERSION\x12\'\n\nHV_VERSION\x18\x05 \x03(\x0b\x32\x13.primary.HV_VERSION\x12\'\n\nLV_VERSION\x18\x06 \x03(\x0b\x32\x13.primary.LV_VERSION\x12)\n\x0bTLM_VERSION\x18\x07 \x03(\x0b\x32\x14.primary.TLM_VERSION\x12%\n\tTIMESTAMP\x18\x08 \x03(\x0b\x32\x12.primary.TIMESTAMP\x12\x39\n\x13\x41MBIENT_TEMPERATURE\x18\t \x03(\x0b\x32\x1c.primary.AMBIENT_TEMPERATURE\x12)\n\x0b\x44\x41TA_LOGGER\x18\n \x03(\x0b\x32\x14.primary.DATA_LOGGER\x12/\n\x0eSET_TLM_STATUS\x18\x0b \x03(\x0b\x32\x17.primary.SET_TLM_STATUS\x12\'\n\nTLM_STATUS\x18\x0c \x03(\x0b\x32\x13.primary.TLM_STATUS\x12\x39\n\x13STEER_SYSTEM_STATUS\x18\r \x03(\x0b\x32\x1c.primary.STEER_SYSTEM_STATUS\x12\'\n\nHV_VOLTAGE\x18\x0e \x03(\x0b\x32\x13.primary.HV_VOLTAGE\x12\'\n\nHV_CURRENT\x18\x0f \x03(\x0b\x32\x13.primary.HV_CURRENT\x12!\n\x07HV_TEMP\x18\x10 \x03(\x0b\x32\x10.primary.HV_TEMP\x12%\n\tHV_ERRORS\x18\x11 \x03(\x0b\x32\x12.primary.HV_ERRORS\x12/\n\x0eHV_CAN_FORWARD\x18\x12 \x03(\x0b\x32\x17.primary.HV_CAN_FORWARD\x12\x33\n\x10HV_FANS_OVERRIDE\x18\x13 \x03(\x0b\x32\x19.primary.HV_FANS_OVERRIDE\x12=\n\x15HV_CAN_FORWARD_STATUS\x18\x14 \x03(\x0b\x32\x1e.primary.HV_CAN_FORWARD_STATUS\x12\x41\n\x17HV_FANS_OVERRIDE_STATUS\x18\x15 \x03(\x0b\x32 .primary.HV_FANS_OVERRIDE_STATUS\x12\x39\n\x13HV_FEEDBACKS_STATUS\x18\x16 \x03(\x0b\x32\x1c.primary.HV_FEEDBACKS_STATUS\x12-\n\rHV_IMD_STATUS\x18\x17 \x03(\x0b\x32\x16.primary.HV_IMD_STATUS\x12%\n\tTS_STATUS\x18\x18 \x03(\x0b\x32\x12.primary.TS_STATUS\x12\x35\n\x11SET_TS_STATUS_DAS\x18\x19 \x03(\x0b\x32\x1a.primary.SET_TS_STATUS_DAS\x12?\n\x16SET_TS_STATUS_HANDCART\x18\x1a \x03(\x0b\x32\x1f.primary.SET_TS_STATUS_HANDCART\x12+\n\x0cSTEER_STATUS\x18\x1b \x03(\x0b\x32\x15.primary.STEER_STATUS\x12/\n\x0eSET_CAR_STATUS\x18\x1c \x03(\x0b\x32\x17.primary.SET_CAR_STATUS\x12\x33\n\x10SET_PEDALS_RANGE\x18\x1d \x03(\x0b\x32\x19.primary.SET_PEDALS_RANGE\x12\x43\n\x18SET_STEERING_ANGLE_RANGE\x18\x1e \x03(\x0b\x32!.primary.SET_STEERING_ANGLE_RANGE\x12\'\n\nCAR_STATUS\x18\x1f \x03(\x0b\x32\x13.primary.CAR_STATUS\x12\'\n\nDAS_ERRORS\x18  \x03(\x0b\x32\x13.primary.DAS_ERRORS\x12\'\n\nLV_CURRENT\x18! \x03(\x0b\x32\x13.primary.LV_CURRENT\x12\'\n\nLV_VOLTAGE\x18\" \x03(\x0b\x32\x13.primary.LV_VOLTAGE\x12\x33\n\x10LV_TOTAL_VOLTAGE\x18# \x03(\x0b\x32\x19.primary.LV_TOTAL_VOLTAGE\x12/\n\x0eLV_TEMPERATURE\x18$ \x03(\x0b\x32\x17.primary.LV_TEMPERATURE\x12/\n\x0e\x43OOLING_STATUS\x18% \x03(\x0b\x32\x17.primary.COOLING_STATUS\x12\x37\n\x12SET_RADIATOR_SPEED\x18& \x03(\x0b\x32\x1b.primary.SET_RADIATOR_SPEED\x12\x31\n\x0fSET_PUMPS_SPEED\x18\' \x03(\x0b\x32\x18.primary.SET_PUMPS_SPEED\x12O\n\x1eSET_INVERTER_CONNECTION_STATUS\x18( \x03(\x0b\x32\'.primary.SET_INVERTER_CONNECTION_STATUS\x12G\n\x1aINVERTER_CONNECTION_STATUS\x18) \x03(\x0b\x32#.primary.INVERTER_CONNECTION_STATUS\x12%\n\tLV_ERRORS\x18* \x03(\x0b\x32\x12.primary.LV_ERRORS\x12\x31\n\x0fSHUTDOWN_STATUS\x18+ \x03(\x0b\x32\x18.primary.SHUTDOWN_STATUS\x12\x1f\n\x06MARKER\x18, \x03(\x0b\x32\x0f.primary.MARKER\x12\x33\n\x10HV_CELLS_VOLTAGE\x18- \x03(\x0b\x32\x19.primary.HV_CELLS_VOLTAGE\x12-\n\rHV_CELLS_TEMP\x18. \x03(\x0b\x32\x16.primary.HV_CELLS_TEMP\x12\x43\n\x18HV_CELL_BALANCING_STATUS\x18/ \x03(\x0b\x32!.primary.HV_CELL_BALANCING_STATUS\x12\x45\n\x19SET_CELL_BALANCING_STATUS\x18\x30 \x03(\x0b\x32\".primary.SET_CELL_BALANCING_STATUS\x12\x31\n\x0fHANDCART_STATUS\x18\x31 \x03(\x0b\x32\x18.primary.HANDCART_STATUS\x12\x1d\n\x05SPEED\x18\x32 \x03(\x0b\x32\x0e.primary.SPEED\x12-\n\rINV_L_REQUEST\x18\x33 \x03(\x0b\x32\x16.primary.INV_L_REQUEST\x12-\n\rINV_R_REQUEST\x18\x34 \x03(\x0b\x32\x16.primary.INV_R_REQUEST\x12/\n\x0eINV_L_RESPONSE\x18\x35 \x03(\x0b\x32\x17.primary.INV_L_RESPONSE\x12/\n\x0eINV_R_RESPONSE\x18\x36 \x03(\x0b\x32\x17.primary.INV_R_RESPONSE\x12;\n\x14\x46LASH_CELLBOARD_0_TX\x18\x37 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_TX\x12;\n\x14\x46LASH_CELLBOARD_0_RX\x18\x38 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_RX\x12;\n\x14\x46LASH_CELLBOARD_1_TX\x18\x39 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_TX\x12;\n\x14\x46LASH_CELLBOARD_1_RX\x18: \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_RX\x12;\n\x14\x46LASH_CELLBOARD_2_TX\x18; \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_TX\x12;\n\x14\x46LASH_CELLBOARD_2_RX\x18< \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_RX\x12;\n\x14\x46LASH_CELLBOARD_3_TX\x18= \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_TX\x12;\n\x14\x46LASH_CELLBOARD_3_RX\x18> \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_RX\x12;\n\x14\x46LASH_CELLBOARD_4_TX\x18? \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_TX\x12;\n\x14\x46LASH_CELLBOARD_4_RX\x18@ \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_RX\x12;\n\x14\x46LASH_CELLBOARD_5_TX\x18\x41 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_TX\x12;\n\x14\x46LASH_CELLBOARD_5_RX\x18\x42 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_RX\x12\x31\n\x0f\x46LASH_BMS_HV_TX\x18\x43 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_TX\x12\x31\n\x0f\x46LASH_BMS_HV_RX\x18\x44 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_RX\x12\x31\n\x0f\x46LASH_BMS_LV_TX\x18\x45 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_TX\x12\x31\n\x0f\x46LASH_BMS_LV_RX\x18\x46 \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_RX\x12/\n\x0e\x42RUSA_NLG5_CTL\x18G \x03(\x0b\x32\x17.primary.BRUSA_NLG5_CTL\x12#\n\x08\x42RUSA_ST\x18H \x03(\x0b\x32\x11.primary.BRUSA_ST\x12)\n\x0b\x42RUSA_ACT_I\x18I \x03(\x0b\x32\x14.primary.BRUSA_ACT_I\x12+\n\x0c\x42RUSA_ACT_II\x18J \x03(\x0b\x32\x15.primary.BRUSA_ACT_II\x12\'\n\nBRUSA_TEMP\x18K \x03(\x0b\x32\x13.primary.BRUSA_TEMP\x12%\n\tBRUSA_ERR\x18L \x03(\x0b\x32\x12.primary.BRUSA_ERR\x12/\n\x0e\x43ONTROL_OUTPUT\x18M \x03(\x0b\x32\x17.primary.CONTROL_OUTPUT\x12#\n\x08LC_RESET\x18N \x03(\x0b\x32\x11.primary.LC_RESET*k\n\x08RaceType\x12\x19\n\x15RaceType_ACCELERATION\x10\x00\x12\x14\n\x10RaceType_SKIDPAD\x10\x01\x12\x16\n\x12RaceType_AUTOCROSS\x10\x02\x12\x16\n\x12RaceType_ENDURANCE\x10\x03*X\n\x0eInverterStatus\x12\x16\n\x12InverterStatus_OFF\x10\x00\x12\x17\n\x13InverterStatus_IDLE\x10\x01\x12\x15\n\x11InverterStatus_ON\x10\x02*\x94\x01\n\tCarStatus\x12\x12\n\x0e\x43\x61rStatus_IDLE\x10\x00\x12\x17\n\x13\x43\x61rStatus_PRE_SETUP\x10\x01\x12\x13\n\x0f\x43\x61rStatus_TS_ON\x10\x02\x12\x18\n\x14\x43\x61rStatus_POST_SETUP\x10\x03\x12\x13\n\x0f\x43\x61rStatus_DRIVE\x10\x04\x12\x16\n\x12\x43\x61rStatus_TEARDOWN\x10\x05*\'\n\x06Toggle\x12\x0e\n\nToggle_OFF\x10\x00\x12\r\n\tToggle_ON\x10\x01*Y\n\x08TsStatus\x12\x10\n\x0cTsStatus_OFF\x10\x00\x12\x16\n\x12TsStatus_PRECHARGE\x10\x01\x12\x0f\n\x0bTsStatus_ON\x10\x02\x12\x12\n\x0eTsStatus_FATAL\x10\x03*U\n\x0cSetCarStatus\x12\x15\n\x11SetCarStatus_IDLE\x10\x00\x12\x16\n\x12SetCarStatus_READY\x10\x01\x12\x16\n\x12SetCarStatus_DRIVE\x10\x02*-\n\x05\x42ound\x12\x11\n\rBound_SET_MAX\x10\x00\x12\x11\n\rBound_SET_MIN\x10\x01*/\n\x05Pedal\x12\x15\n\x11Pedal_ACCELERATOR\x10\x00\x12\x0f\n\x0bPedal_BRAKE\x10\x01*\xbc\x01\n\tImdStatus\x12\x14\n\x10ImdStatus_IMD_SC\x10\x00\x12\x18\n\x14ImdStatus_IMD_NORMAL\x10\x01\x12\x1f\n\x1bImdStatus_IMD_UNDER_VOLTAGE\x10\x02\x12\x1f\n\x1bImdStatus_IMD_START_MEASURE\x10\x03\x12\x1e\n\x1aImdStatus_IMD_DEVICE_ERROR\x10\x04\x12\x1d\n\x19ImdStatus_IMD_EARTH_FAULT\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\rprimary.proto\x12\x07primary\"-\n\x11\x42MS_HV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"-\n\x11\x42MS_LV_JMP_TO_BLT\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"_\n\rSTEER_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0b\x44\x41S_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nHV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\\\n\nLV_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"]\n\x0bTLM_VERSION\x12\x19\n\x11\x63omponent_version\x18\x01 \x01(\r\x12\x19\n\x11\x63\x61nlib_build_time\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"8\n\tTIMESTAMP\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"=\n\x13\x41MBIENT_TEMPERATURE\x12\x0c\n\x04temp\x18\x01 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"S\n\x0b\x44\x41TA_LOGGER\x12\x14\n\x0cplaceholder1\x18\x01 \x01(\r\x12\x14\n\x0cplaceholder2\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"O\n\x0eSET_TLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"K\n\nTLM_STATUS\x12#\n\ntlm_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"A\n\x13STEER_SYSTEM_STATUS\x12\x10\n\x08soc_temp\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x85\x01\n\nHV_VOLTAGE\x12\x14\n\x0cpack_voltage\x18\x01 \x01(\x02\x12\x13\n\x0b\x62us_voltage\x18\x02 \x01(\x02\x12\x18\n\x10max_cell_voltage\x18\x03 \x01(\x02\x12\x18\n\x10min_cell_voltage\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"c\n\nHV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\r\n\x05power\x18\x02 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x03 \x01(\x02\x12\x0b\n\x03soc\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"]\n\x07HV_TEMP\x12\x14\n\x0c\x61verage_temp\x18\x01 \x01(\x02\x12\x10\n\x08max_temp\x18\x02 \x01(\x02\x12\x10\n\x08min_temp\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"G\n\tHV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"T\n\x0eHV_CAN_FORWARD\x12(\n\x0f\x63\x61n_forward_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"h\n\x10HV_FANS_OVERRIDE\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"^\n\x15HV_CAN_FORWARD_STATUS\x12+\n\x12\x63\x61n_forward_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x17HV_FANS_OVERRIDE_STATUS\x12&\n\rfans_override\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x12\n\nfans_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"e\n\x13HV_FEEDBACKS_STATUS\x12\x18\n\x10\x66\x65\x65\x64\x62\x61\x63ks_status\x18\x01 \x01(\r\x12\x1a\n\x12is_circuitry_error\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"v\n\rHV_IMD_STATUS\x12\x11\n\timd_fault\x18\x01 \x01(\x08\x12&\n\nimd_status\x18\x02 \x01(\x0e\x32\x12.primary.ImdStatus\x12\x10\n\x08imd_info\x18\x03 \x01(\x11\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"O\n\rTS_STATUS_DAS\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Q\n\x0fTS_STATUS_STEER\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"T\n\x12TS_STATUS_HANDCART\x12$\n\tts_status\x18\x01 \x01(\x0e\x32\x11.primary.TsStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"U\n\x11SET_TS_STATUS_DAS\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"Z\n\x16SET_TS_STATUS_HANDCART\x12&\n\rts_status_set\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"X\n\x0cSTEER_STATUS\x12\x0e\n\x06map_pw\x18\x01 \x01(\x02\x12\x0e\n\x06map_sc\x18\x02 \x01(\x02\x12\x0e\n\x06map_tv\x18\x03 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"Y\n\x0eSET_CAR_STATUS\x12-\n\x0e\x63\x61r_status_set\x18\x01 \x01(\x0e\x32\x15.primary.SetCarStatus\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"j\n\x10SET_PEDALS_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x1d\n\x05pedal\x18\x02 \x01(\x0e\x32\x0e.primary.Pedal\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"S\n\x18SET_STEERING_ANGLE_RANGE\x12\x1d\n\x05\x62ound\x18\x01 \x01(\x0e\x32\x0e.primary.Bound\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\xa8\x01\n\nCAR_STATUS\x12+\n\ninverter_l\x18\x01 \x01(\x0e\x32\x17.primary.InverterStatus\x12+\n\ninverter_r\x18\x02 \x01(\x0e\x32\x17.primary.InverterStatus\x12&\n\ncar_status\x18\x03 \x01(\x0e\x32\x12.primary.CarStatus\x12\x18\n\x10_inner_timestamp\x18\x04 \x01(\x04\"9\n\nDAS_ERRORS\x12\x11\n\tdas_error\x18\x01 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"7\n\nLV_CURRENT\x12\x0f\n\x07\x63urrent\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"r\n\nLV_VOLTAGE\x12\x11\n\tvoltage_1\x18\x01 \x01(\x02\x12\x11\n\tvoltage_2\x18\x02 \x01(\x02\x12\x11\n\tvoltage_3\x18\x03 \x01(\x02\x12\x11\n\tvoltage_4\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"C\n\x10LV_TOTAL_VOLTAGE\x12\x15\n\rtotal_voltage\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"\x96\x01\n\x0eLV_TEMPERATURE\x12\x18\n\x10\x62p_temperature_1\x18\x01 \x01(\x02\x12\x18\n\x10\x62p_temperature_2\x18\x02 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x31\x32_temperature\x18\x03 \x01(\x02\x12\x1a\n\x12\x64\x63\x64\x63\x32\x34_temperature\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"X\n\x0e\x43OOLING_STATUS\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x13\n\x0bpumps_speed\x18\x02 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"G\n\x12SET_RADIATOR_SPEED\x12\x17\n\x0fradiators_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"@\n\x0fSET_PUMPS_SPEED\x12\x13\n\x0bpumps_speed\x18\x01 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"[\n\x1eSET_INVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"W\n\x1aINVERTER_CONNECTION_STATUS\x12\x1f\n\x06status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"G\n\tLV_ERRORS\x12\x10\n\x08warnings\x18\x01 \x01(\r\x12\x0e\n\x06\x65rrors\x18\x02 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"J\n\x0fSHUTDOWN_STATUS\x12\r\n\x05input\x18\x01 \x01(\x08\x12\x0e\n\x06output\x18\x02 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x03 \x01(\x04\"\"\n\x06MARKER\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"z\n\x10HV_CELLS_VOLTAGE\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x11\n\tvoltage_0\x18\x02 \x01(\x02\x12\x11\n\tvoltage_1\x18\x03 \x01(\x02\x12\x11\n\tvoltage_2\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\x9e\x01\n\rHV_CELLS_TEMP\x12\x13\n\x0bstart_index\x18\x01 \x01(\r\x12\x0e\n\x06temp_0\x18\x02 \x01(\x02\x12\x0e\n\x06temp_1\x18\x03 \x01(\x02\x12\x0e\n\x06temp_2\x18\x04 \x01(\x02\x12\x0e\n\x06temp_3\x18\x05 \x01(\x02\x12\x0e\n\x06temp_4\x18\x06 \x01(\x02\x12\x0e\n\x06temp_5\x18\x07 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x08 \x01(\x04\"_\n\x18HV_CELL_BALANCING_STATUS\x12)\n\x10\x62\x61lancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"d\n\x19SET_CELL_BALANCING_STATUS\x12-\n\x14set_balancing_status\x18\x01 \x01(\x0e\x32\x0f.primary.Toggle\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\">\n\x0fHANDCART_STATUS\x12\x11\n\tconnected\x18\x01 \x01(\x08\x12\x18\n\x10_inner_timestamp\x18\x02 \x01(\x04\"o\n\x05SPEED\x12\x11\n\tencoder_r\x18\x01 \x01(\x02\x12\x11\n\tencoder_l\x18\x02 \x01(\x02\x12\x12\n\ninverter_r\x18\x03 \x01(\x02\x12\x12\n\ninverter_l\x18\x04 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x05 \x01(\x04\"\xa9\x01\n\rINV_L_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xa9\x01\n\rINV_R_REQUEST\x12\x0e\n\x06\x64\x61ta_0\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_7\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_L_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"\xaa\x01\n\x0eINV_R_RESPONSE\x12\x0e\n\x06reg_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64\x61ta_0\x18\x02 \x01(\r\x12\x0e\n\x06\x64\x61ta_1\x18\x03 \x01(\r\x12\x0e\n\x06\x64\x61ta_2\x18\x04 \x01(\r\x12\x0e\n\x06\x64\x61ta_3\x18\x05 \x01(\r\x12\x0e\n\x06\x64\x61ta_4\x18\x06 \x01(\r\x12\x0e\n\x06\x64\x61ta_5\x18\x07 \x01(\r\x12\x0e\n\x06\x64\x61ta_6\x18\x08 \x01(\r\x12\x18\n\x10_inner_timestamp\x18\t \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_0_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_1_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_2_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_3_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_4_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"0\n\x14\x46LASH_CELLBOARD_5_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_HV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_TX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"+\n\x0f\x46LASH_BMS_LV_RX\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"*\n\x0e\x42RUSA_NLG5_CTL\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"$\n\x08\x42RUSA_ST\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\'\n\x0b\x42RUSA_ACT_I\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"(\n\x0c\x42RUSA_ACT_II\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"&\n\nBRUSA_TEMP\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"%\n\tBRUSA_ERR\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x8a\x01\n\x0e\x43ONTROL_OUTPUT\x12\x1a\n\x12\x65stimated_velocity\x18\x01 \x01(\x02\x12\x0e\n\x06tmax_r\x18\x02 \x01(\x02\x12\x0e\n\x06tmax_l\x18\x03 \x01(\x02\x12\x10\n\x08torque_l\x18\x04 \x01(\x02\x12\x10\n\x08torque_r\x18\x05 \x01(\x02\x12\x18\n\x10_inner_timestamp\x18\x06 \x01(\x04\"$\n\x08LC_RESET\x12\x18\n\x10_inner_timestamp\x18\x01 \x01(\x04\"\x80 \n\x04Pack\x12\x35\n\x11\x42MS_HV_JMP_TO_BLT\x18\x01 \x03(\x0b\x32\x1a.primary.BMS_HV_JMP_TO_BLT\x12\x35\n\x11\x42MS_LV_JMP_TO_BLT\x18\x02 \x03(\x0b\x32\x1a.primary.BMS_LV_JMP_TO_BLT\x12-\n\rSTEER_VERSION\x18\x03 \x03(\x0b\x32\x16.primary.STEER_VERSION\x12)\n\x0b\x44\x41S_VERSION\x18\x04 \x03(\x0b\x32\x14.primary.DAS_VERSION\x12\'\n\nHV_VERSION\x18\x05 \x03(\x0b\x32\x13.primary.HV_VERSION\x12\'\n\nLV_VERSION\x18\x06 \x03(\x0b\x32\x13.primary.LV_VERSION\x12)\n\x0bTLM_VERSION\x18\x07 \x03(\x0b\x32\x14.primary.TLM_VERSION\x12%\n\tTIMESTAMP\x18\x08 \x03(\x0b\x32\x12.primary.TIMESTAMP\x12\x39\n\x13\x41MBIENT_TEMPERATURE\x18\t \x03(\x0b\x32\x1c.primary.AMBIENT_TEMPERATURE\x12)\n\x0b\x44\x41TA_LOGGER\x18\n \x03(\x0b\x32\x14.primary.DATA_LOGGER\x12/\n\x0eSET_TLM_STATUS\x18\x0b \x03(\x0b\x32\x17.primary.SET_TLM_STATUS\x12\'\n\nTLM_STATUS\x18\x0c \x03(\x0b\x32\x13.primary.TLM_STATUS\x12\x39\n\x13STEER_SYSTEM_STATUS\x18\r \x03(\x0b\x32\x1c.primary.STEER_SYSTEM_STATUS\x12\'\n\nHV_VOLTAGE\x18\x0e \x03(\x0b\x32\x13.primary.HV_VOLTAGE\x12\'\n\nHV_CURRENT\x18\x0f \x03(\x0b\x32\x13.primary.HV_CURRENT\x12!\n\x07HV_TEMP\x18\x10 \x03(\x0b\x32\x10.primary.HV_TEMP\x12%\n\tHV_ERRORS\x18\x11 \x03(\x0b\x32\x12.primary.HV_ERRORS\x12/\n\x0eHV_CAN_FORWARD\x18\x12 \x03(\x0b\x32\x17.primary.HV_CAN_FORWARD\x12\x33\n\x10HV_FANS_OVERRIDE\x18\x13 \x03(\x0b\x32\x19.primary.HV_FANS_OVERRIDE\x12=\n\x15HV_CAN_FORWARD_STATUS\x18\x14 \x03(\x0b\x32\x1e.primary.HV_CAN_FORWARD_STATUS\x12\x41\n\x17HV_FANS_OVERRIDE_STATUS\x18\x15 \x03(\x0b\x32 .primary.HV_FANS_OVERRIDE_STATUS\x12\x39\n\x13HV_FEEDBACKS_STATUS\x18\x16 \x03(\x0b\x32\x1c.primary.HV_FEEDBACKS_STATUS\x12-\n\rHV_IMD_STATUS\x18\x17 \x03(\x0b\x32\x16.primary.HV_IMD_STATUS\x12-\n\rTS_STATUS_DAS\x18\x18 \x03(\x0b\x32\x16.primary.TS_STATUS_DAS\x12\x31\n\x0fTS_STATUS_STEER\x18\x19 \x03(\x0b\x32\x18.primary.TS_STATUS_STEER\x12\x37\n\x12TS_STATUS_HANDCART\x18\x1a \x03(\x0b\x32\x1b.primary.TS_STATUS_HANDCART\x12\x35\n\x11SET_TS_STATUS_DAS\x18\x1b \x03(\x0b\x32\x1a.primary.SET_TS_STATUS_DAS\x12?\n\x16SET_TS_STATUS_HANDCART\x18\x1c \x03(\x0b\x32\x1f.primary.SET_TS_STATUS_HANDCART\x12+\n\x0cSTEER_STATUS\x18\x1d \x03(\x0b\x32\x15.primary.STEER_STATUS\x12/\n\x0eSET_CAR_STATUS\x18\x1e \x03(\x0b\x32\x17.primary.SET_CAR_STATUS\x12\x33\n\x10SET_PEDALS_RANGE\x18\x1f \x03(\x0b\x32\x19.primary.SET_PEDALS_RANGE\x12\x43\n\x18SET_STEERING_ANGLE_RANGE\x18  \x03(\x0b\x32!.primary.SET_STEERING_ANGLE_RANGE\x12\'\n\nCAR_STATUS\x18! \x03(\x0b\x32\x13.primary.CAR_STATUS\x12\'\n\nDAS_ERRORS\x18\" \x03(\x0b\x32\x13.primary.DAS_ERRORS\x12\'\n\nLV_CURRENT\x18# \x03(\x0b\x32\x13.primary.LV_CURRENT\x12\'\n\nLV_VOLTAGE\x18$ \x03(\x0b\x32\x13.primary.LV_VOLTAGE\x12\x33\n\x10LV_TOTAL_VOLTAGE\x18% \x03(\x0b\x32\x19.primary.LV_TOTAL_VOLTAGE\x12/\n\x0eLV_TEMPERATURE\x18& \x03(\x0b\x32\x17.primary.LV_TEMPERATURE\x12/\n\x0e\x43OOLING_STATUS\x18\' \x03(\x0b\x32\x17.primary.COOLING_STATUS\x12\x37\n\x12SET_RADIATOR_SPEED\x18( \x03(\x0b\x32\x1b.primary.SET_RADIATOR_SPEED\x12\x31\n\x0fSET_PUMPS_SPEED\x18) \x03(\x0b\x32\x18.primary.SET_PUMPS_SPEED\x12O\n\x1eSET_INVERTER_CONNECTION_STATUS\x18* \x03(\x0b\x32\'.primary.SET_INVERTER_CONNECTION_STATUS\x12G\n\x1aINVERTER_CONNECTION_STATUS\x18+ \x03(\x0b\x32#.primary.INVERTER_CONNECTION_STATUS\x12%\n\tLV_ERRORS\x18, \x03(\x0b\x32\x12.primary.LV_ERRORS\x12\x31\n\x0fSHUTDOWN_STATUS\x18- \x03(\x0b\x32\x18.primary.SHUTDOWN_STATUS\x12\x1f\n\x06MARKER\x18. \x03(\x0b\x32\x0f.primary.MARKER\x12\x33\n\x10HV_CELLS_VOLTAGE\x18/ \x03(\x0b\x32\x19.primary.HV_CELLS_VOLTAGE\x12-\n\rHV_CELLS_TEMP\x18\x30 \x03(\x0b\x32\x16.primary.HV_CELLS_TEMP\x12\x43\n\x18HV_CELL_BALANCING_STATUS\x18\x31 \x03(\x0b\x32!.primary.HV_CELL_BALANCING_STATUS\x12\x45\n\x19SET_CELL_BALANCING_STATUS\x18\x32 \x03(\x0b\x32\".primary.SET_CELL_BALANCING_STATUS\x12\x31\n\x0fHANDCART_STATUS\x18\x33 \x03(\x0b\x32\x18.primary.HANDCART_STATUS\x12\x1d\n\x05SPEED\x18\x34 \x03(\x0b\x32\x0e.primary.SPEED\x12-\n\rINV_L_REQUEST\x18\x35 \x03(\x0b\x32\x16.primary.INV_L_REQUEST\x12-\n\rINV_R_REQUEST\x18\x36 \x03(\x0b\x32\x16.primary.INV_R_REQUEST\x12/\n\x0eINV_L_RESPONSE\x18\x37 \x03(\x0b\x32\x17.primary.INV_L_RESPONSE\x12/\n\x0eINV_R_RESPONSE\x18\x38 \x03(\x0b\x32\x17.primary.INV_R_RESPONSE\x12;\n\x14\x46LASH_CELLBOARD_0_TX\x18\x39 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_TX\x12;\n\x14\x46LASH_CELLBOARD_0_RX\x18: \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_0_RX\x12;\n\x14\x46LASH_CELLBOARD_1_TX\x18; \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_TX\x12;\n\x14\x46LASH_CELLBOARD_1_RX\x18< \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_1_RX\x12;\n\x14\x46LASH_CELLBOARD_2_TX\x18= \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_TX\x12;\n\x14\x46LASH_CELLBOARD_2_RX\x18> \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_2_RX\x12;\n\x14\x46LASH_CELLBOARD_3_TX\x18? \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_TX\x12;\n\x14\x46LASH_CELLBOARD_3_RX\x18@ \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_3_RX\x12;\n\x14\x46LASH_CELLBOARD_4_TX\x18\x41 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_TX\x12;\n\x14\x46LASH_CELLBOARD_4_RX\x18\x42 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_4_RX\x12;\n\x14\x46LASH_CELLBOARD_5_TX\x18\x43 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_TX\x12;\n\x14\x46LASH_CELLBOARD_5_RX\x18\x44 \x03(\x0b\x32\x1d.primary.FLASH_CELLBOARD_5_RX\x12\x31\n\x0f\x46LASH_BMS_HV_TX\x18\x45 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_TX\x12\x31\n\x0f\x46LASH_BMS_HV_RX\x18\x46 \x03(\x0b\x32\x18.primary.FLASH_BMS_HV_RX\x12\x31\n\x0f\x46LASH_BMS_LV_TX\x18G \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_TX\x12\x31\n\x0f\x46LASH_BMS_LV_RX\x18H \x03(\x0b\x32\x18.primary.FLASH_BMS_LV_RX\x12/\n\x0e\x42RUSA_NLG5_CTL\x18I \x03(\x0b\x32\x17.primary.BRUSA_NLG5_CTL\x12#\n\x08\x42RUSA_ST\x18J \x03(\x0b\x32\x11.primary.BRUSA_ST\x12)\n\x0b\x42RUSA_ACT_I\x18K \x03(\x0b\x32\x14.primary.BRUSA_ACT_I\x12+\n\x0c\x42RUSA_ACT_II\x18L \x03(\x0b\x32\x15.primary.BRUSA_ACT_II\x12\'\n\nBRUSA_TEMP\x18M \x03(\x0b\x32\x13.primary.BRUSA_TEMP\x12%\n\tBRUSA_ERR\x18N \x03(\x0b\x32\x12.primary.BRUSA_ERR\x12/\n\x0e\x43ONTROL_OUTPUT\x18O \x03(\x0b\x32\x17.primary.CONTROL_OUTPUT\x12#\n\x08LC_RESET\x18P \x03(\x0b\x32\x11.primary.LC_RESET*k\n\x08RaceType\x12\x19\n\x15RaceType_ACCELERATION\x10\x00\x12\x14\n\x10RaceType_SKIDPAD\x10\x01\x12\x16\n\x12RaceType_AUTOCROSS\x10\x02\x12\x16\n\x12RaceType_ENDURANCE\x10\x03*X\n\x0eInverterStatus\x12\x16\n\x12InverterStatus_OFF\x10\x00\x12\x17\n\x13InverterStatus_IDLE\x10\x01\x12\x15\n\x11InverterStatus_ON\x10\x02*\x94\x01\n\tCarStatus\x12\x12\n\x0e\x43\x61rStatus_IDLE\x10\x00\x12\x17\n\x13\x43\x61rStatus_PRE_SETUP\x10\x01\x12\x13\n\x0f\x43\x61rStatus_TS_ON\x10\x02\x12\x18\n\x14\x43\x61rStatus_POST_SETUP\x10\x03\x12\x13\n\x0f\x43\x61rStatus_DRIVE\x10\x04\x12\x16\n\x12\x43\x61rStatus_TEARDOWN\x10\x05*\'\n\x06Toggle\x12\x0e\n\nToggle_OFF\x10\x00\x12\r\n\tToggle_ON\x10\x01*Y\n\x08TsStatus\x12\x10\n\x0cTsStatus_OFF\x10\x00\x12\x16\n\x12TsStatus_PRECHARGE\x10\x01\x12\x0f\n\x0bTsStatus_ON\x10\x02\x12\x12\n\x0eTsStatus_FATAL\x10\x03*U\n\x0cSetCarStatus\x12\x15\n\x11SetCarStatus_IDLE\x10\x00\x12\x16\n\x12SetCarStatus_READY\x10\x01\x12\x16\n\x12SetCarStatus_DRIVE\x10\x02*-\n\x05\x42ound\x12\x11\n\rBound_SET_MAX\x10\x00\x12\x11\n\rBound_SET_MIN\x10\x01*/\n\x05Pedal\x12\x15\n\x11Pedal_ACCELERATOR\x10\x00\x12\x0f\n\x0bPedal_BRAKE\x10\x01*\xbc\x01\n\tImdStatus\x12\x14\n\x10ImdStatus_IMD_SC\x10\x00\x12\x18\n\x14ImdStatus_IMD_NORMAL\x10\x01\x12\x1f\n\x1bImdStatus_IMD_UNDER_VOLTAGE\x10\x02\x12\x1f\n\x1bImdStatus_IMD_START_MEASURE\x10\x03\x12\x1e\n\x1aImdStatus_IMD_DEVICE_ERROR\x10\x04\x12\x1d\n\x19ImdStatus_IMD_EARTH_FAULT\x10\x05\x62\x06proto3'
 )
 
 _RACETYPE = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _RACETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10443,
-  serialized_end=10550,
+  serialized_start=10732,
+  serialized_end=10839,
 )
 _sym_db.RegisterEnumDescriptor(_RACETYPE)
 
@@ -84,8 +84,8 @@ _INVERTERSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10552,
-  serialized_end=10640,
+  serialized_start=10841,
+  serialized_end=10929,
 )
 _sym_db.RegisterEnumDescriptor(_INVERTERSTATUS)
 
@@ -130,8 +130,8 @@ _CARSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10643,
-  serialized_end=10791,
+  serialized_start=10932,
+  serialized_end=11080,
 )
 _sym_db.RegisterEnumDescriptor(_CARSTATUS)
 
@@ -156,8 +156,8 @@ _TOGGLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10793,
-  serialized_end=10832,
+  serialized_start=11082,
+  serialized_end=11121,
 )
 _sym_db.RegisterEnumDescriptor(_TOGGLE)
 
@@ -192,8 +192,8 @@ _TSSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10834,
-  serialized_end=10923,
+  serialized_start=11123,
+  serialized_end=11212,
 )
 _sym_db.RegisterEnumDescriptor(_TSSTATUS)
 
@@ -223,8 +223,8 @@ _SETCARSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10925,
-  serialized_end=11010,
+  serialized_start=11214,
+  serialized_end=11299,
 )
 _sym_db.RegisterEnumDescriptor(_SETCARSTATUS)
 
@@ -249,8 +249,8 @@ _BOUND = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11012,
-  serialized_end=11057,
+  serialized_start=11301,
+  serialized_end=11346,
 )
 _sym_db.RegisterEnumDescriptor(_BOUND)
 
@@ -275,8 +275,8 @@ _PEDAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11059,
-  serialized_end=11106,
+  serialized_start=11348,
+  serialized_end=11395,
 )
 _sym_db.RegisterEnumDescriptor(_PEDAL)
 
@@ -321,8 +321,8 @@ _IMDSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=11109,
-  serialized_end=11297,
+  serialized_start=11398,
+  serialized_end=11586,
 )
 _sym_db.RegisterEnumDescriptor(_IMDSTATUS)
 
@@ -1385,23 +1385,23 @@ _HV_IMD_STATUS = _descriptor.Descriptor(
 )
 
 
-_TS_STATUS = _descriptor.Descriptor(
-  name='TS_STATUS',
-  full_name='primary.TS_STATUS',
+_TS_STATUS_DAS = _descriptor.Descriptor(
+  name='TS_STATUS_DAS',
+  full_name='primary.TS_STATUS_DAS',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ts_status', full_name='primary.TS_STATUS.ts_status', index=0,
+      name='ts_status', full_name='primary.TS_STATUS_DAS.ts_status', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='_inner_timestamp', full_name='primary.TS_STATUS._inner_timestamp', index=1,
+      name='_inner_timestamp', full_name='primary.TS_STATUS_DAS._inner_timestamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1420,7 +1420,85 @@ _TS_STATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2055,
-  serialized_end=2130,
+  serialized_end=2134,
+)
+
+
+_TS_STATUS_STEER = _descriptor.Descriptor(
+  name='TS_STATUS_STEER',
+  full_name='primary.TS_STATUS_STEER',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ts_status', full_name='primary.TS_STATUS_STEER.ts_status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='primary.TS_STATUS_STEER._inner_timestamp', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2136,
+  serialized_end=2217,
+)
+
+
+_TS_STATUS_HANDCART = _descriptor.Descriptor(
+  name='TS_STATUS_HANDCART',
+  full_name='primary.TS_STATUS_HANDCART',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ts_status', full_name='primary.TS_STATUS_HANDCART.ts_status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='_inner_timestamp', full_name='primary.TS_STATUS_HANDCART._inner_timestamp', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2219,
+  serialized_end=2303,
 )
 
 
@@ -1458,8 +1536,8 @@ _SET_TS_STATUS_DAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2132,
-  serialized_end=2217,
+  serialized_start=2305,
+  serialized_end=2390,
 )
 
 
@@ -1497,8 +1575,8 @@ _SET_TS_STATUS_HANDCART = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=2309,
+  serialized_start=2392,
+  serialized_end=2482,
 )
 
 
@@ -1550,8 +1628,8 @@ _STEER_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2311,
-  serialized_end=2399,
+  serialized_start=2484,
+  serialized_end=2572,
 )
 
 
@@ -1589,8 +1667,8 @@ _SET_CAR_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2401,
-  serialized_end=2490,
+  serialized_start=2574,
+  serialized_end=2663,
 )
 
 
@@ -1635,8 +1713,8 @@ _SET_PEDALS_RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2492,
-  serialized_end=2598,
+  serialized_start=2665,
+  serialized_end=2771,
 )
 
 
@@ -1674,8 +1752,8 @@ _SET_STEERING_ANGLE_RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2600,
-  serialized_end=2683,
+  serialized_start=2773,
+  serialized_end=2856,
 )
 
 
@@ -1727,8 +1805,8 @@ _CAR_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2686,
-  serialized_end=2854,
+  serialized_start=2859,
+  serialized_end=3027,
 )
 
 
@@ -1766,8 +1844,8 @@ _DAS_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2856,
-  serialized_end=2913,
+  serialized_start=3029,
+  serialized_end=3086,
 )
 
 
@@ -1805,8 +1883,8 @@ _LV_CURRENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2915,
-  serialized_end=2970,
+  serialized_start=3088,
+  serialized_end=3143,
 )
 
 
@@ -1865,8 +1943,8 @@ _LV_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2972,
-  serialized_end=3086,
+  serialized_start=3145,
+  serialized_end=3259,
 )
 
 
@@ -1904,8 +1982,8 @@ _LV_TOTAL_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3088,
-  serialized_end=3155,
+  serialized_start=3261,
+  serialized_end=3328,
 )
 
 
@@ -1964,8 +2042,8 @@ _LV_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3158,
-  serialized_end=3308,
+  serialized_start=3331,
+  serialized_end=3481,
 )
 
 
@@ -2010,8 +2088,8 @@ _COOLING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3310,
-  serialized_end=3398,
+  serialized_start=3483,
+  serialized_end=3571,
 )
 
 
@@ -2049,8 +2127,8 @@ _SET_RADIATOR_SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3400,
-  serialized_end=3471,
+  serialized_start=3573,
+  serialized_end=3644,
 )
 
 
@@ -2088,8 +2166,8 @@ _SET_PUMPS_SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3473,
-  serialized_end=3537,
+  serialized_start=3646,
+  serialized_end=3710,
 )
 
 
@@ -2127,8 +2205,8 @@ _SET_INVERTER_CONNECTION_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3539,
-  serialized_end=3630,
+  serialized_start=3712,
+  serialized_end=3803,
 )
 
 
@@ -2166,8 +2244,8 @@ _INVERTER_CONNECTION_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3632,
-  serialized_end=3719,
+  serialized_start=3805,
+  serialized_end=3892,
 )
 
 
@@ -2212,8 +2290,8 @@ _LV_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3721,
-  serialized_end=3792,
+  serialized_start=3894,
+  serialized_end=3965,
 )
 
 
@@ -2258,8 +2336,8 @@ _SHUTDOWN_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3794,
-  serialized_end=3868,
+  serialized_start=3967,
+  serialized_end=4041,
 )
 
 
@@ -2290,8 +2368,8 @@ _MARKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3870,
-  serialized_end=3904,
+  serialized_start=4043,
+  serialized_end=4077,
 )
 
 
@@ -2350,8 +2428,8 @@ _HV_CELLS_VOLTAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3906,
-  serialized_end=4028,
+  serialized_start=4079,
+  serialized_end=4201,
 )
 
 
@@ -2431,8 +2509,8 @@ _HV_CELLS_TEMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4031,
-  serialized_end=4189,
+  serialized_start=4204,
+  serialized_end=4362,
 )
 
 
@@ -2470,8 +2548,8 @@ _HV_CELL_BALANCING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4191,
-  serialized_end=4286,
+  serialized_start=4364,
+  serialized_end=4459,
 )
 
 
@@ -2509,8 +2587,8 @@ _SET_CELL_BALANCING_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4288,
-  serialized_end=4388,
+  serialized_start=4461,
+  serialized_end=4561,
 )
 
 
@@ -2548,8 +2626,8 @@ _HANDCART_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4390,
-  serialized_end=4452,
+  serialized_start=4563,
+  serialized_end=4625,
 )
 
 
@@ -2608,8 +2686,8 @@ _SPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4454,
-  serialized_end=4565,
+  serialized_start=4627,
+  serialized_end=4738,
 )
 
 
@@ -2696,8 +2774,8 @@ _INV_L_REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4568,
-  serialized_end=4737,
+  serialized_start=4741,
+  serialized_end=4910,
 )
 
 
@@ -2784,8 +2862,8 @@ _INV_R_REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4740,
-  serialized_end=4909,
+  serialized_start=4913,
+  serialized_end=5082,
 )
 
 
@@ -2872,8 +2950,8 @@ _INV_L_RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4912,
-  serialized_end=5082,
+  serialized_start=5085,
+  serialized_end=5255,
 )
 
 
@@ -2960,8 +3038,8 @@ _INV_R_RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5085,
-  serialized_end=5255,
+  serialized_start=5258,
+  serialized_end=5428,
 )
 
 
@@ -2992,8 +3070,8 @@ _FLASH_CELLBOARD_0_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5257,
-  serialized_end=5305,
+  serialized_start=5430,
+  serialized_end=5478,
 )
 
 
@@ -3024,8 +3102,8 @@ _FLASH_CELLBOARD_0_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5307,
-  serialized_end=5355,
+  serialized_start=5480,
+  serialized_end=5528,
 )
 
 
@@ -3056,8 +3134,8 @@ _FLASH_CELLBOARD_1_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5357,
-  serialized_end=5405,
+  serialized_start=5530,
+  serialized_end=5578,
 )
 
 
@@ -3088,8 +3166,8 @@ _FLASH_CELLBOARD_1_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5407,
-  serialized_end=5455,
+  serialized_start=5580,
+  serialized_end=5628,
 )
 
 
@@ -3120,8 +3198,8 @@ _FLASH_CELLBOARD_2_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5457,
-  serialized_end=5505,
+  serialized_start=5630,
+  serialized_end=5678,
 )
 
 
@@ -3152,8 +3230,8 @@ _FLASH_CELLBOARD_2_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5507,
-  serialized_end=5555,
+  serialized_start=5680,
+  serialized_end=5728,
 )
 
 
@@ -3184,8 +3262,8 @@ _FLASH_CELLBOARD_3_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5557,
-  serialized_end=5605,
+  serialized_start=5730,
+  serialized_end=5778,
 )
 
 
@@ -3216,8 +3294,8 @@ _FLASH_CELLBOARD_3_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5607,
-  serialized_end=5655,
+  serialized_start=5780,
+  serialized_end=5828,
 )
 
 
@@ -3248,8 +3326,8 @@ _FLASH_CELLBOARD_4_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5657,
-  serialized_end=5705,
+  serialized_start=5830,
+  serialized_end=5878,
 )
 
 
@@ -3280,8 +3358,8 @@ _FLASH_CELLBOARD_4_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5707,
-  serialized_end=5755,
+  serialized_start=5880,
+  serialized_end=5928,
 )
 
 
@@ -3312,8 +3390,8 @@ _FLASH_CELLBOARD_5_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5757,
-  serialized_end=5805,
+  serialized_start=5930,
+  serialized_end=5978,
 )
 
 
@@ -3344,8 +3422,8 @@ _FLASH_CELLBOARD_5_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5807,
-  serialized_end=5855,
+  serialized_start=5980,
+  serialized_end=6028,
 )
 
 
@@ -3376,8 +3454,8 @@ _FLASH_BMS_HV_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5857,
-  serialized_end=5900,
+  serialized_start=6030,
+  serialized_end=6073,
 )
 
 
@@ -3408,8 +3486,8 @@ _FLASH_BMS_HV_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5902,
-  serialized_end=5945,
+  serialized_start=6075,
+  serialized_end=6118,
 )
 
 
@@ -3440,8 +3518,8 @@ _FLASH_BMS_LV_TX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5947,
-  serialized_end=5990,
+  serialized_start=6120,
+  serialized_end=6163,
 )
 
 
@@ -3472,8 +3550,8 @@ _FLASH_BMS_LV_RX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5992,
-  serialized_end=6035,
+  serialized_start=6165,
+  serialized_end=6208,
 )
 
 
@@ -3504,8 +3582,8 @@ _BRUSA_NLG5_CTL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6037,
-  serialized_end=6079,
+  serialized_start=6210,
+  serialized_end=6252,
 )
 
 
@@ -3536,8 +3614,8 @@ _BRUSA_ST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6081,
-  serialized_end=6117,
+  serialized_start=6254,
+  serialized_end=6290,
 )
 
 
@@ -3568,8 +3646,8 @@ _BRUSA_ACT_I = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6119,
-  serialized_end=6158,
+  serialized_start=6292,
+  serialized_end=6331,
 )
 
 
@@ -3600,8 +3678,8 @@ _BRUSA_ACT_II = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6160,
-  serialized_end=6200,
+  serialized_start=6333,
+  serialized_end=6373,
 )
 
 
@@ -3632,8 +3710,8 @@ _BRUSA_TEMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6202,
-  serialized_end=6240,
+  serialized_start=6375,
+  serialized_end=6413,
 )
 
 
@@ -3664,8 +3742,8 @@ _BRUSA_ERR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6242,
-  serialized_end=6279,
+  serialized_start=6415,
+  serialized_end=6452,
 )
 
 
@@ -3731,8 +3809,8 @@ _CONTROL_OUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6282,
-  serialized_end=6420,
+  serialized_start=6455,
+  serialized_end=6593,
 )
 
 
@@ -3763,8 +3841,8 @@ _LC_RESET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6422,
-  serialized_end=6458,
+  serialized_start=6595,
+  serialized_end=6631,
 )
 
 
@@ -3938,386 +4016,400 @@ _PACK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='TS_STATUS', full_name='primary.Pack.TS_STATUS', index=23,
+      name='TS_STATUS_DAS', full_name='primary.Pack.TS_STATUS_DAS', index=23,
       number=24, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_TS_STATUS_DAS', full_name='primary.Pack.SET_TS_STATUS_DAS', index=24,
+      name='TS_STATUS_STEER', full_name='primary.Pack.TS_STATUS_STEER', index=24,
       number=25, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_TS_STATUS_HANDCART', full_name='primary.Pack.SET_TS_STATUS_HANDCART', index=25,
+      name='TS_STATUS_HANDCART', full_name='primary.Pack.TS_STATUS_HANDCART', index=25,
       number=26, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='STEER_STATUS', full_name='primary.Pack.STEER_STATUS', index=26,
+      name='SET_TS_STATUS_DAS', full_name='primary.Pack.SET_TS_STATUS_DAS', index=26,
       number=27, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_CAR_STATUS', full_name='primary.Pack.SET_CAR_STATUS', index=27,
+      name='SET_TS_STATUS_HANDCART', full_name='primary.Pack.SET_TS_STATUS_HANDCART', index=27,
       number=28, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_PEDALS_RANGE', full_name='primary.Pack.SET_PEDALS_RANGE', index=28,
+      name='STEER_STATUS', full_name='primary.Pack.STEER_STATUS', index=28,
       number=29, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_STEERING_ANGLE_RANGE', full_name='primary.Pack.SET_STEERING_ANGLE_RANGE', index=29,
+      name='SET_CAR_STATUS', full_name='primary.Pack.SET_CAR_STATUS', index=29,
       number=30, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='CAR_STATUS', full_name='primary.Pack.CAR_STATUS', index=30,
+      name='SET_PEDALS_RANGE', full_name='primary.Pack.SET_PEDALS_RANGE', index=30,
       number=31, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='DAS_ERRORS', full_name='primary.Pack.DAS_ERRORS', index=31,
+      name='SET_STEERING_ANGLE_RANGE', full_name='primary.Pack.SET_STEERING_ANGLE_RANGE', index=31,
       number=32, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LV_CURRENT', full_name='primary.Pack.LV_CURRENT', index=32,
+      name='CAR_STATUS', full_name='primary.Pack.CAR_STATUS', index=32,
       number=33, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LV_VOLTAGE', full_name='primary.Pack.LV_VOLTAGE', index=33,
+      name='DAS_ERRORS', full_name='primary.Pack.DAS_ERRORS', index=33,
       number=34, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LV_TOTAL_VOLTAGE', full_name='primary.Pack.LV_TOTAL_VOLTAGE', index=34,
+      name='LV_CURRENT', full_name='primary.Pack.LV_CURRENT', index=34,
       number=35, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LV_TEMPERATURE', full_name='primary.Pack.LV_TEMPERATURE', index=35,
+      name='LV_VOLTAGE', full_name='primary.Pack.LV_VOLTAGE', index=35,
       number=36, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='COOLING_STATUS', full_name='primary.Pack.COOLING_STATUS', index=36,
+      name='LV_TOTAL_VOLTAGE', full_name='primary.Pack.LV_TOTAL_VOLTAGE', index=36,
       number=37, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_RADIATOR_SPEED', full_name='primary.Pack.SET_RADIATOR_SPEED', index=37,
+      name='LV_TEMPERATURE', full_name='primary.Pack.LV_TEMPERATURE', index=37,
       number=38, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_PUMPS_SPEED', full_name='primary.Pack.SET_PUMPS_SPEED', index=38,
+      name='COOLING_STATUS', full_name='primary.Pack.COOLING_STATUS', index=38,
       number=39, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_INVERTER_CONNECTION_STATUS', full_name='primary.Pack.SET_INVERTER_CONNECTION_STATUS', index=39,
+      name='SET_RADIATOR_SPEED', full_name='primary.Pack.SET_RADIATOR_SPEED', index=39,
       number=40, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='INVERTER_CONNECTION_STATUS', full_name='primary.Pack.INVERTER_CONNECTION_STATUS', index=40,
+      name='SET_PUMPS_SPEED', full_name='primary.Pack.SET_PUMPS_SPEED', index=40,
       number=41, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LV_ERRORS', full_name='primary.Pack.LV_ERRORS', index=41,
+      name='SET_INVERTER_CONNECTION_STATUS', full_name='primary.Pack.SET_INVERTER_CONNECTION_STATUS', index=41,
       number=42, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SHUTDOWN_STATUS', full_name='primary.Pack.SHUTDOWN_STATUS', index=42,
+      name='INVERTER_CONNECTION_STATUS', full_name='primary.Pack.INVERTER_CONNECTION_STATUS', index=42,
       number=43, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='MARKER', full_name='primary.Pack.MARKER', index=43,
+      name='LV_ERRORS', full_name='primary.Pack.LV_ERRORS', index=43,
       number=44, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='HV_CELLS_VOLTAGE', full_name='primary.Pack.HV_CELLS_VOLTAGE', index=44,
+      name='SHUTDOWN_STATUS', full_name='primary.Pack.SHUTDOWN_STATUS', index=44,
       number=45, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='HV_CELLS_TEMP', full_name='primary.Pack.HV_CELLS_TEMP', index=45,
+      name='MARKER', full_name='primary.Pack.MARKER', index=45,
       number=46, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='HV_CELL_BALANCING_STATUS', full_name='primary.Pack.HV_CELL_BALANCING_STATUS', index=46,
+      name='HV_CELLS_VOLTAGE', full_name='primary.Pack.HV_CELLS_VOLTAGE', index=46,
       number=47, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SET_CELL_BALANCING_STATUS', full_name='primary.Pack.SET_CELL_BALANCING_STATUS', index=47,
+      name='HV_CELLS_TEMP', full_name='primary.Pack.HV_CELLS_TEMP', index=47,
       number=48, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='HANDCART_STATUS', full_name='primary.Pack.HANDCART_STATUS', index=48,
+      name='HV_CELL_BALANCING_STATUS', full_name='primary.Pack.HV_CELL_BALANCING_STATUS', index=48,
       number=49, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='SPEED', full_name='primary.Pack.SPEED', index=49,
+      name='SET_CELL_BALANCING_STATUS', full_name='primary.Pack.SET_CELL_BALANCING_STATUS', index=49,
       number=50, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='INV_L_REQUEST', full_name='primary.Pack.INV_L_REQUEST', index=50,
+      name='HANDCART_STATUS', full_name='primary.Pack.HANDCART_STATUS', index=50,
       number=51, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='INV_R_REQUEST', full_name='primary.Pack.INV_R_REQUEST', index=51,
+      name='SPEED', full_name='primary.Pack.SPEED', index=51,
       number=52, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='INV_L_RESPONSE', full_name='primary.Pack.INV_L_RESPONSE', index=52,
+      name='INV_L_REQUEST', full_name='primary.Pack.INV_L_REQUEST', index=52,
       number=53, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='INV_R_RESPONSE', full_name='primary.Pack.INV_R_RESPONSE', index=53,
+      name='INV_R_REQUEST', full_name='primary.Pack.INV_R_REQUEST', index=53,
       number=54, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_0_TX', full_name='primary.Pack.FLASH_CELLBOARD_0_TX', index=54,
+      name='INV_L_RESPONSE', full_name='primary.Pack.INV_L_RESPONSE', index=54,
       number=55, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_0_RX', full_name='primary.Pack.FLASH_CELLBOARD_0_RX', index=55,
+      name='INV_R_RESPONSE', full_name='primary.Pack.INV_R_RESPONSE', index=55,
       number=56, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_1_TX', full_name='primary.Pack.FLASH_CELLBOARD_1_TX', index=56,
+      name='FLASH_CELLBOARD_0_TX', full_name='primary.Pack.FLASH_CELLBOARD_0_TX', index=56,
       number=57, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_1_RX', full_name='primary.Pack.FLASH_CELLBOARD_1_RX', index=57,
+      name='FLASH_CELLBOARD_0_RX', full_name='primary.Pack.FLASH_CELLBOARD_0_RX', index=57,
       number=58, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_2_TX', full_name='primary.Pack.FLASH_CELLBOARD_2_TX', index=58,
+      name='FLASH_CELLBOARD_1_TX', full_name='primary.Pack.FLASH_CELLBOARD_1_TX', index=58,
       number=59, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_2_RX', full_name='primary.Pack.FLASH_CELLBOARD_2_RX', index=59,
+      name='FLASH_CELLBOARD_1_RX', full_name='primary.Pack.FLASH_CELLBOARD_1_RX', index=59,
       number=60, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_3_TX', full_name='primary.Pack.FLASH_CELLBOARD_3_TX', index=60,
+      name='FLASH_CELLBOARD_2_TX', full_name='primary.Pack.FLASH_CELLBOARD_2_TX', index=60,
       number=61, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_3_RX', full_name='primary.Pack.FLASH_CELLBOARD_3_RX', index=61,
+      name='FLASH_CELLBOARD_2_RX', full_name='primary.Pack.FLASH_CELLBOARD_2_RX', index=61,
       number=62, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_4_TX', full_name='primary.Pack.FLASH_CELLBOARD_4_TX', index=62,
+      name='FLASH_CELLBOARD_3_TX', full_name='primary.Pack.FLASH_CELLBOARD_3_TX', index=62,
       number=63, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_4_RX', full_name='primary.Pack.FLASH_CELLBOARD_4_RX', index=63,
+      name='FLASH_CELLBOARD_3_RX', full_name='primary.Pack.FLASH_CELLBOARD_3_RX', index=63,
       number=64, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_5_TX', full_name='primary.Pack.FLASH_CELLBOARD_5_TX', index=64,
+      name='FLASH_CELLBOARD_4_TX', full_name='primary.Pack.FLASH_CELLBOARD_4_TX', index=64,
       number=65, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_CELLBOARD_5_RX', full_name='primary.Pack.FLASH_CELLBOARD_5_RX', index=65,
+      name='FLASH_CELLBOARD_4_RX', full_name='primary.Pack.FLASH_CELLBOARD_4_RX', index=65,
       number=66, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_BMS_HV_TX', full_name='primary.Pack.FLASH_BMS_HV_TX', index=66,
+      name='FLASH_CELLBOARD_5_TX', full_name='primary.Pack.FLASH_CELLBOARD_5_TX', index=66,
       number=67, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_BMS_HV_RX', full_name='primary.Pack.FLASH_BMS_HV_RX', index=67,
+      name='FLASH_CELLBOARD_5_RX', full_name='primary.Pack.FLASH_CELLBOARD_5_RX', index=67,
       number=68, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_BMS_LV_TX', full_name='primary.Pack.FLASH_BMS_LV_TX', index=68,
+      name='FLASH_BMS_HV_TX', full_name='primary.Pack.FLASH_BMS_HV_TX', index=68,
       number=69, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='FLASH_BMS_LV_RX', full_name='primary.Pack.FLASH_BMS_LV_RX', index=69,
+      name='FLASH_BMS_HV_RX', full_name='primary.Pack.FLASH_BMS_HV_RX', index=69,
       number=70, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_NLG5_CTL', full_name='primary.Pack.BRUSA_NLG5_CTL', index=70,
+      name='FLASH_BMS_LV_TX', full_name='primary.Pack.FLASH_BMS_LV_TX', index=70,
       number=71, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_ST', full_name='primary.Pack.BRUSA_ST', index=71,
+      name='FLASH_BMS_LV_RX', full_name='primary.Pack.FLASH_BMS_LV_RX', index=71,
       number=72, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_ACT_I', full_name='primary.Pack.BRUSA_ACT_I', index=72,
+      name='BRUSA_NLG5_CTL', full_name='primary.Pack.BRUSA_NLG5_CTL', index=72,
       number=73, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_ACT_II', full_name='primary.Pack.BRUSA_ACT_II', index=73,
+      name='BRUSA_ST', full_name='primary.Pack.BRUSA_ST', index=73,
       number=74, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_TEMP', full_name='primary.Pack.BRUSA_TEMP', index=74,
+      name='BRUSA_ACT_I', full_name='primary.Pack.BRUSA_ACT_I', index=74,
       number=75, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='BRUSA_ERR', full_name='primary.Pack.BRUSA_ERR', index=75,
+      name='BRUSA_ACT_II', full_name='primary.Pack.BRUSA_ACT_II', index=75,
       number=76, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='CONTROL_OUTPUT', full_name='primary.Pack.CONTROL_OUTPUT', index=76,
+      name='BRUSA_TEMP', full_name='primary.Pack.BRUSA_TEMP', index=76,
       number=77, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='LC_RESET', full_name='primary.Pack.LC_RESET', index=77,
+      name='BRUSA_ERR', full_name='primary.Pack.BRUSA_ERR', index=77,
       number=78, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='CONTROL_OUTPUT', full_name='primary.Pack.CONTROL_OUTPUT', index=78,
+      number=79, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='LC_RESET', full_name='primary.Pack.LC_RESET', index=79,
+      number=80, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -4334,8 +4426,8 @@ _PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6461,
-  serialized_end=10441,
+  serialized_start=6634,
+  serialized_end=10730,
 )
 
 _SET_TLM_STATUS.fields_by_name['tlm_status'].enum_type = _TOGGLE
@@ -4345,7 +4437,9 @@ _HV_FANS_OVERRIDE.fields_by_name['fans_override'].enum_type = _TOGGLE
 _HV_CAN_FORWARD_STATUS.fields_by_name['can_forward_status'].enum_type = _TOGGLE
 _HV_FANS_OVERRIDE_STATUS.fields_by_name['fans_override'].enum_type = _TOGGLE
 _HV_IMD_STATUS.fields_by_name['imd_status'].enum_type = _IMDSTATUS
-_TS_STATUS.fields_by_name['ts_status'].enum_type = _TSSTATUS
+_TS_STATUS_DAS.fields_by_name['ts_status'].enum_type = _TSSTATUS
+_TS_STATUS_STEER.fields_by_name['ts_status'].enum_type = _TSSTATUS
+_TS_STATUS_HANDCART.fields_by_name['ts_status'].enum_type = _TSSTATUS
 _SET_TS_STATUS_DAS.fields_by_name['ts_status_set'].enum_type = _TOGGLE
 _SET_TS_STATUS_HANDCART.fields_by_name['ts_status_set'].enum_type = _TOGGLE
 _SET_CAR_STATUS.fields_by_name['car_status_set'].enum_type = _SETCARSTATUS
@@ -4382,7 +4476,9 @@ _PACK.fields_by_name['HV_CAN_FORWARD_STATUS'].message_type = _HV_CAN_FORWARD_STA
 _PACK.fields_by_name['HV_FANS_OVERRIDE_STATUS'].message_type = _HV_FANS_OVERRIDE_STATUS
 _PACK.fields_by_name['HV_FEEDBACKS_STATUS'].message_type = _HV_FEEDBACKS_STATUS
 _PACK.fields_by_name['HV_IMD_STATUS'].message_type = _HV_IMD_STATUS
-_PACK.fields_by_name['TS_STATUS'].message_type = _TS_STATUS
+_PACK.fields_by_name['TS_STATUS_DAS'].message_type = _TS_STATUS_DAS
+_PACK.fields_by_name['TS_STATUS_STEER'].message_type = _TS_STATUS_STEER
+_PACK.fields_by_name['TS_STATUS_HANDCART'].message_type = _TS_STATUS_HANDCART
 _PACK.fields_by_name['SET_TS_STATUS_DAS'].message_type = _SET_TS_STATUS_DAS
 _PACK.fields_by_name['SET_TS_STATUS_HANDCART'].message_type = _SET_TS_STATUS_HANDCART
 _PACK.fields_by_name['STEER_STATUS'].message_type = _STEER_STATUS
@@ -4460,7 +4556,9 @@ DESCRIPTOR.message_types_by_name['HV_CAN_FORWARD_STATUS'] = _HV_CAN_FORWARD_STAT
 DESCRIPTOR.message_types_by_name['HV_FANS_OVERRIDE_STATUS'] = _HV_FANS_OVERRIDE_STATUS
 DESCRIPTOR.message_types_by_name['HV_FEEDBACKS_STATUS'] = _HV_FEEDBACKS_STATUS
 DESCRIPTOR.message_types_by_name['HV_IMD_STATUS'] = _HV_IMD_STATUS
-DESCRIPTOR.message_types_by_name['TS_STATUS'] = _TS_STATUS
+DESCRIPTOR.message_types_by_name['TS_STATUS_DAS'] = _TS_STATUS_DAS
+DESCRIPTOR.message_types_by_name['TS_STATUS_STEER'] = _TS_STATUS_STEER
+DESCRIPTOR.message_types_by_name['TS_STATUS_HANDCART'] = _TS_STATUS_HANDCART
 DESCRIPTOR.message_types_by_name['SET_TS_STATUS_DAS'] = _SET_TS_STATUS_DAS
 DESCRIPTOR.message_types_by_name['SET_TS_STATUS_HANDCART'] = _SET_TS_STATUS_HANDCART
 DESCRIPTOR.message_types_by_name['STEER_STATUS'] = _STEER_STATUS
@@ -4688,12 +4786,26 @@ HV_IMD_STATUS = _reflection.GeneratedProtocolMessageType('HV_IMD_STATUS', (_mess
   })
 _sym_db.RegisterMessage(HV_IMD_STATUS)
 
-TS_STATUS = _reflection.GeneratedProtocolMessageType('TS_STATUS', (_message.Message,), {
-  'DESCRIPTOR' : _TS_STATUS,
+TS_STATUS_DAS = _reflection.GeneratedProtocolMessageType('TS_STATUS_DAS', (_message.Message,), {
+  'DESCRIPTOR' : _TS_STATUS_DAS,
   '__module__' : 'primary_pb2'
-  # @@protoc_insertion_point(class_scope:primary.TS_STATUS)
+  # @@protoc_insertion_point(class_scope:primary.TS_STATUS_DAS)
   })
-_sym_db.RegisterMessage(TS_STATUS)
+_sym_db.RegisterMessage(TS_STATUS_DAS)
+
+TS_STATUS_STEER = _reflection.GeneratedProtocolMessageType('TS_STATUS_STEER', (_message.Message,), {
+  'DESCRIPTOR' : _TS_STATUS_STEER,
+  '__module__' : 'primary_pb2'
+  # @@protoc_insertion_point(class_scope:primary.TS_STATUS_STEER)
+  })
+_sym_db.RegisterMessage(TS_STATUS_STEER)
+
+TS_STATUS_HANDCART = _reflection.GeneratedProtocolMessageType('TS_STATUS_HANDCART', (_message.Message,), {
+  'DESCRIPTOR' : _TS_STATUS_HANDCART,
+  '__module__' : 'primary_pb2'
+  # @@protoc_insertion_point(class_scope:primary.TS_STATUS_HANDCART)
+  })
+_sym_db.RegisterMessage(TS_STATUS_HANDCART)
 
 SET_TS_STATUS_DAS = _reflection.GeneratedProtocolMessageType('SET_TS_STATUS_DAS', (_message.Message,), {
   'DESCRIPTOR' : _SET_TS_STATUS_DAS,

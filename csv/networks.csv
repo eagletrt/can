@@ -48,8 +48,11 @@ HV_CAN_FORWARD_STATUS,HV_CAN_FORWARD_STATUS: 7,primary,HANDCART,7,BMS_HV,HANDCAR
 HV_FANS_OVERRIDE_STATUS,HV_FANS_OVERRIDE_STATUS: 775,primary,HANDCART,4,BMS_HV,HANDCART,,"fans_override: Toggle, fans_speed: type: float32, range: 0, 1, force: uint16",Status of fans override
 HV_FEEDBACKS_STATUS,HV_FEEDBACKS_STATUS: 776,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"feedbacks_status: HvFeedbacks, is_circuitry_error: HvFeedbacks",Errors on the feedbacks checks
 HV_IMD_STATUS,HV_IMD_STATUS: 808,primary,DASnSTEER,4,BMS_HV,"DAS, STEER",,"imd_fault: bool, imd_status: ImdStatus, imd_info: int32",Status of fans override
-TS_STATUS,TS_STATUS: 37,primary,DASnSTEERnCART,7,BMS_HV,"DAS, STEER, HANDCART",10,ts_status: TsStatus,BMS status
-SET_TS_STATUS,"SET_TS_STATUS_DAS: 70, SET_TS_STATUS_HANDCART: 102",primary,BMS_HV,7,"DAS, HANDCART",BMS_HV,100,ts_status_set: Toggle,Requests a TS status; only once
+TS_STATUS_DAS,TS_STATUS_DAS: 37,primary,DASnSTEERnCART,7,BMS_HV,DAS,10,ts_status: TsStatus,BMS status
+TS_STATUS_STEER,TS_STATUS_STEER: 69,primary,DASnSTEERnCART,7,BMS_HV,DAS,10,ts_status: TsStatus,BMS status
+TS_STATUS_HANDCART,TS_STATUS_HANDCART: 101,primary,DASnSTEERnCART,7,HANDCART,DAS,10,ts_status: TsStatus,BMS status
+SET_TS_STATUS_DAS,SET_TS_STATUS_DAS: 70,primary,BMS_HV,7,DAS,BMS_HV,100,ts_status_set: Toggle,Requests a TS status; only once
+SET_TS_STATUS_HANDCART,SET_TS_STATUS_HANDCART: 102,primary,BMS_HV,7,DAS,BMS_HV,100,ts_status_set: Toggle,Requests a TS status; only once
 STEER_STATUS,STEER_STATUS: 265,primary,DAS,6,STEER,DAS,100,"map_pw: type: float32, range: -0.5, 1, precision: 0.1, map_sc: type: float32, range: 0, 1, precision: 0.1, map_tv: type: float32, range: 0, 1, precision: 0.1",Send update of the tuneable values from the steering wheel
 SET_CAR_STATUS,SET_CAR_STATUS: 777,primary,DAS,4,STEER,DAS,,car_status_set: SetCarStatus,Ask to DAS to change car status; only once
 SET_PEDALS_RANGE,SET_PEDALS_RANGE: 1033,primary,DAS,3,STEER,DAS,,"bound: Bound, pedal: Pedal",Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min

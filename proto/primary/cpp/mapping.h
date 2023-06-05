@@ -289,9 +289,11 @@ typedef struct {
     canlib_circular_buffer<primary_message_HV_FANS_OVERRIDE_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FANS_OVERRIDE_STATUS;
     canlib_circular_buffer<primary_message_HV_FEEDBACKS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_FEEDBACKS_STATUS;
     canlib_circular_buffer<primary_message_HV_IMD_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> HV_IMD_STATUS;
-    canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS;
-    canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_DAS;
-    canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_HANDCART;
+    canlib_circular_buffer<primary_message_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS_DAS;
+    canlib_circular_buffer<primary_message_TS_STATUS_STEER, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS_STEER;
+    canlib_circular_buffer<primary_message_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE> TS_STATUS_HANDCART;
+    canlib_circular_buffer<primary_message_SET_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_DAS;
+    canlib_circular_buffer<primary_message_SET_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE> SET_TS_STATUS_HANDCART;
     canlib_circular_buffer<primary_message_STEER_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE> STEER_STATUS;
     canlib_circular_buffer<primary_message_SET_CAR_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE> SET_CAR_STATUS;
     canlib_circular_buffer<primary_message_SET_PEDALS_RANGE, CANLIB_CIRCULAR_BUFFER_SIZE> SET_PEDALS_RANGE;
@@ -596,32 +598,50 @@ void primary_mapping_adaptor_construct(const primary_proto_pack& pack, mapping_a
     mapping_map["HV_IMD_STATUS"].field["_timestamp"].value._uint64 = &pack.HV_IMD_STATUS.start()._timestamp;
     mapping_map["HV_IMD_STATUS"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TS_STATUS);
-    mapping_map["TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TS_STATUS);
-    mapping_map["TS_STATUS"].stride = sizeof(primary_message_TS_STATUS);
-    mapping_map["TS_STATUS"].field["ts_status"].value._uint16 = (uint16_t*)&pack.TS_STATUS.start().ts_status;
-    mapping_map["TS_STATUS"].field["ts_status"].type = mapping_type_uint16;
+    mapping_map["TS_STATUS_DAS"].size = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TS_STATUS_DAS);
+    mapping_map["TS_STATUS_DAS"].offset = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TS_STATUS_DAS);
+    mapping_map["TS_STATUS_DAS"].stride = sizeof(primary_message_TS_STATUS_DAS);
+    mapping_map["TS_STATUS_DAS"].field["ts_status"].value._uint16 = (uint16_t*)&pack.TS_STATUS_DAS.start().ts_status;
+    mapping_map["TS_STATUS_DAS"].field["ts_status"].type = mapping_type_uint16;
 #ifdef CANLIB_TIMESTAMP
-    mapping_map["TS_STATUS"].field["_timestamp"].value._uint64 = &pack.TS_STATUS.start()._timestamp;
-    mapping_map["TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+    mapping_map["TS_STATUS_DAS"].field["_timestamp"].value._uint64 = &pack.TS_STATUS_DAS.start()._timestamp;
+    mapping_map["TS_STATUS_DAS"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["SET_TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_DAS);
-    mapping_map["SET_TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_DAS);
-    mapping_map["SET_TS_STATUS"].stride = sizeof(primary_message_SET_TS_STATUS);
-    mapping_map["SET_TS_STATUS"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_DAS.start().ts_status_set;
-    mapping_map["SET_TS_STATUS"].field["ts_status_set"].type = mapping_type_uint16;
+    mapping_map["TS_STATUS_STEER"].size = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_STEER, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TS_STATUS_STEER);
+    mapping_map["TS_STATUS_STEER"].offset = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_STEER, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TS_STATUS_STEER);
+    mapping_map["TS_STATUS_STEER"].stride = sizeof(primary_message_TS_STATUS_STEER);
+    mapping_map["TS_STATUS_STEER"].field["ts_status"].value._uint16 = (uint16_t*)&pack.TS_STATUS_STEER.start().ts_status;
+    mapping_map["TS_STATUS_STEER"].field["ts_status"].type = mapping_type_uint16;
 #ifdef CANLIB_TIMESTAMP
-    mapping_map["SET_TS_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_DAS.start()._timestamp;
-    mapping_map["SET_TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+    mapping_map["TS_STATUS_STEER"].field["_timestamp"].value._uint64 = &pack.TS_STATUS_STEER.start()._timestamp;
+    mapping_map["TS_STATUS_STEER"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
-    mapping_map["SET_TS_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_HANDCART);
-    mapping_map["SET_TS_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_HANDCART);
-    mapping_map["SET_TS_STATUS"].stride = sizeof(primary_message_SET_TS_STATUS);
-    mapping_map["SET_TS_STATUS"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_HANDCART.start().ts_status_set;
-    mapping_map["SET_TS_STATUS"].field["ts_status_set"].type = mapping_type_uint16;
+    mapping_map["TS_STATUS_HANDCART"].size = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.TS_STATUS_HANDCART);
+    mapping_map["TS_STATUS_HANDCART"].offset = std::bind(&canlib_circular_buffer<primary_message_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.TS_STATUS_HANDCART);
+    mapping_map["TS_STATUS_HANDCART"].stride = sizeof(primary_message_TS_STATUS_HANDCART);
+    mapping_map["TS_STATUS_HANDCART"].field["ts_status"].value._uint16 = (uint16_t*)&pack.TS_STATUS_HANDCART.start().ts_status;
+    mapping_map["TS_STATUS_HANDCART"].field["ts_status"].type = mapping_type_uint16;
 #ifdef CANLIB_TIMESTAMP
-    mapping_map["SET_TS_STATUS"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_HANDCART.start()._timestamp;
-    mapping_map["SET_TS_STATUS"].field["_timestamp"].type = mapping_type_uint64;
+    mapping_map["TS_STATUS_HANDCART"].field["_timestamp"].value._uint64 = &pack.TS_STATUS_HANDCART.start()._timestamp;
+    mapping_map["TS_STATUS_HANDCART"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS_DAS"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_DAS);
+    mapping_map["SET_TS_STATUS_DAS"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS_DAS, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_DAS);
+    mapping_map["SET_TS_STATUS_DAS"].stride = sizeof(primary_message_SET_TS_STATUS_DAS);
+    mapping_map["SET_TS_STATUS_DAS"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_DAS.start().ts_status_set;
+    mapping_map["SET_TS_STATUS_DAS"].field["ts_status_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS_DAS"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_DAS.start()._timestamp;
+    mapping_map["SET_TS_STATUS_DAS"].field["_timestamp"].type = mapping_type_uint64;
+#endif // CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS_HANDCART"].size = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.SET_TS_STATUS_HANDCART);
+    mapping_map["SET_TS_STATUS_HANDCART"].offset = std::bind(&canlib_circular_buffer<primary_message_SET_TS_STATUS_HANDCART, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.SET_TS_STATUS_HANDCART);
+    mapping_map["SET_TS_STATUS_HANDCART"].stride = sizeof(primary_message_SET_TS_STATUS_HANDCART);
+    mapping_map["SET_TS_STATUS_HANDCART"].field["ts_status_set"].value._uint16 = (uint16_t*)&pack.SET_TS_STATUS_HANDCART.start().ts_status_set;
+    mapping_map["SET_TS_STATUS_HANDCART"].field["ts_status_set"].type = mapping_type_uint16;
+#ifdef CANLIB_TIMESTAMP
+    mapping_map["SET_TS_STATUS_HANDCART"].field["_timestamp"].value._uint64 = &pack.SET_TS_STATUS_HANDCART.start()._timestamp;
+    mapping_map["SET_TS_STATUS_HANDCART"].field["_timestamp"].type = mapping_type_uint64;
 #endif // CANLIB_TIMESTAMP
     mapping_map["STEER_STATUS"].size = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::size, &pack.STEER_STATUS);
     mapping_map["STEER_STATUS"].offset = std::bind(&canlib_circular_buffer<primary_message_STEER_STATUS_conversion, CANLIB_CIRCULAR_BUFFER_SIZE>::offset, &pack.STEER_STATUS);
@@ -1410,8 +1430,28 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 37: {
-            primary_message_TS_STATUS* msg = (primary_message_TS_STATUS*) (*map)[index].message_raw;
-            primary::TS_STATUS* proto_msg = pack->add_ts_status();
+            primary_message_TS_STATUS_DAS* msg = (primary_message_TS_STATUS_DAS*) (*map)[index].message_raw;
+            primary::TS_STATUS_DAS* proto_msg = pack->add_ts_status_das();
+            proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 69: {
+            primary_message_TS_STATUS_STEER* msg = (primary_message_TS_STATUS_STEER*) (*map)[index].message_raw;
+            primary::TS_STATUS_STEER* proto_msg = pack->add_ts_status_steer();
+            proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 101: {
+            primary_message_TS_STATUS_HANDCART* msg = (primary_message_TS_STATUS_HANDCART*) (*map)[index].message_raw;
+            primary::TS_STATUS_HANDCART* proto_msg = pack->add_ts_status_handcart();
             proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1420,7 +1460,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 70: {
-            primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*) (*map)[index].message_raw;
+            primary_message_SET_TS_STATUS_DAS* msg = (primary_message_SET_TS_STATUS_DAS*) (*map)[index].message_raw;
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP
@@ -1430,7 +1470,7 @@ void primary_proto_serialize_from_id(canlib_message_id id, primary::Pack* pack, 
         }
 
         case 102: {
-            primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*) (*map)[index].message_raw;
+            primary_message_SET_TS_STATUS_HANDCART* msg = (primary_message_SET_TS_STATUS_HANDCART*) (*map)[index].message_raw;
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP
@@ -2242,21 +2282,47 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
         instance.imd_info =pack->hv_imd_status(i).imd_info();
         map->HV_IMD_STATUS.push(instance);
     }
-    for(int i = 0; i < pack->ts_status_size(); i++){
-        static primary_message_TS_STATUS instance;
+    for(int i = 0; i < pack->ts_status_das_size(); i++){
+        static primary_message_TS_STATUS_DAS instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        instance._timestamp = pack->ts_status(i)._inner_timestamp();
+        instance._timestamp = pack->ts_status_das(i)._inner_timestamp();
         if(instance._timestamp - last_timestamp < resample_us)
             continue;
         else
             last_timestamp = instance._timestamp;
 #endif // CANLIB_TIMESTAMP
-        instance.ts_status =(primary_TsStatus)pack->ts_status(i).ts_status();
-        map->TS_STATUS.push(instance);
+        instance.ts_status =(primary_TsStatus)pack->ts_status_das(i).ts_status();
+        map->TS_STATUS_DAS.push(instance);
+    }
+    for(int i = 0; i < pack->ts_status_steer_size(); i++){
+        static primary_message_TS_STATUS_STEER instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->ts_status_steer(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
+        instance.ts_status =(primary_TsStatus)pack->ts_status_steer(i).ts_status();
+        map->TS_STATUS_STEER.push(instance);
+    }
+    for(int i = 0; i < pack->ts_status_handcart_size(); i++){
+        static primary_message_TS_STATUS_HANDCART instance;
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        instance._timestamp = pack->ts_status_handcart(i)._inner_timestamp();
+        if(instance._timestamp - last_timestamp < resample_us)
+            continue;
+        else
+            last_timestamp = instance._timestamp;
+#endif // CANLIB_TIMESTAMP
+        instance.ts_status =(primary_TsStatus)pack->ts_status_handcart(i).ts_status();
+        map->TS_STATUS_HANDCART.push(instance);
     }
     for(int i = 0; i < pack->set_ts_status_das_size(); i++){
-        static primary_message_SET_TS_STATUS instance;
+        static primary_message_SET_TS_STATUS_DAS instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_ts_status_das(i)._inner_timestamp();
@@ -2269,7 +2335,7 @@ void primary_proto_deserialize(primary::Pack* pack, primary_proto_pack* map, uin
         map->SET_TS_STATUS_DAS.push(instance);
     }
     for(int i = 0; i < pack->set_ts_status_handcart_size(); i++){
-        static primary_message_SET_TS_STATUS instance;
+        static primary_message_SET_TS_STATUS_HANDCART instance;
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         instance._timestamp = pack->set_ts_status_handcart(i)._inner_timestamp();

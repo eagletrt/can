@@ -94,7 +94,9 @@ typedef uint16_t canlib_message_id;
 #define primary_ID_HV_CURRENT 0x325 // dec: 805 bin: 0b01100100101
 #define primary_ID_HV_TEMP 0x345 // dec: 837 bin: 0b01101000101
 #define primary_ID_HV_ERRORS 0x5 // dec: 5 bin: 0b00000000101
-#define primary_ID_TS_STATUS 0x25 // dec: 37 bin: 0b00000100101
+#define primary_ID_TS_STATUS_DAS 0x25 // dec: 37 bin: 0b00000100101
+#define primary_ID_TS_STATUS_STEER 0x45 // dec: 69 bin: 0b00001000101
+#define primary_ID_TS_STATUS_HANDCART 0x65 // dec: 101 bin: 0b00001100101
 
 /* TOPIC BMS_HV */
 #define primary_TOPIC_MASK_BMS_HV 0b00000011111
@@ -208,8 +210,12 @@ static inline int primary_message_name_from_id(canlib_message_id id, char *buffe
             return sprintf(buffer, "%s", "HV_FEEDBACKS_STATUS");;
         case primary_ID_HV_IMD_STATUS:
             return sprintf(buffer, "%s", "HV_IMD_STATUS");;
-        case primary_ID_TS_STATUS:
-            return sprintf(buffer, "%s", "TS_STATUS");;
+        case primary_ID_TS_STATUS_DAS:
+            return sprintf(buffer, "%s", "TS_STATUS_DAS");;
+        case primary_ID_TS_STATUS_STEER:
+            return sprintf(buffer, "%s", "TS_STATUS_STEER");;
+        case primary_ID_TS_STATUS_HANDCART:
+            return sprintf(buffer, "%s", "TS_STATUS_HANDCART");;
         case primary_ID_SET_TS_STATUS_DAS:
             return sprintf(buffer, "%s", "SET_TS_STATUS_DAS");;
         case primary_ID_SET_TS_STATUS_HANDCART:
@@ -349,6 +355,8 @@ static inline bool primary_is_message_id(canlib_message_id message_id) {
         case 776: return true; break;
         case 808: return true; break;
         case 37: return true; break;
+        case 69: return true; break;
+        case 101: return true; break;
         case 70: return true; break;
         case 102: return true; break;
         case 265: return true; break;

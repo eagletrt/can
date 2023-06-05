@@ -4,8 +4,8 @@ from struct import pack, unpack
 from typing import Any, Optional
 from builtins import bool as Bool
 
-CANLIB_BUILD_TIME = 1685743992
-CANLIB_BUILD_HASH = 0x67bed551
+CANLIB_BUILD_TIME = 1685998146
+CANLIB_BUILD_HASH = 0x414e6c6d
 
 def int8(value: Any) -> Optional[int]:
     return int(value) if value is not None else None
@@ -1267,7 +1267,7 @@ class message_HV_IMD_STATUS:
         return message
 
 
-class message_TS_STATUS:
+class message_TS_STATUS_DAS:
     def __init__(
         self,
         ts_status = None
@@ -1277,7 +1277,7 @@ class message_TS_STATUS:
         self.interval = 10
 
     def __eq__(self, other):
-        if not isinstance(other, message_TS_STATUS):
+        if not isinstance(other, message_TS_STATUS_DAS):
             return False
         if self.ts_status != other.ts_status:
             return False
@@ -1295,7 +1295,63 @@ class message_TS_STATUS:
         return message
 
 
-class message_SET_TS_STATUS:
+class message_TS_STATUS_STEER:
+    def __init__(
+        self,
+        ts_status = None
+    ):
+        self.ts_status = TsStatus(ts_status)
+        self.size = 1
+        self.interval = 10
+
+    def __eq__(self, other):
+        if not isinstance(other, message_TS_STATUS_STEER):
+            return False
+        if self.ts_status != other.ts_status:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.ts_status << 6 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.ts_status = TsStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
+        return message
+
+
+class message_TS_STATUS_HANDCART:
+    def __init__(
+        self,
+        ts_status = None
+    ):
+        self.ts_status = TsStatus(ts_status)
+        self.size = 1
+        self.interval = 10
+
+    def __eq__(self, other):
+        if not isinstance(other, message_TS_STATUS_HANDCART):
+            return False
+        if self.ts_status != other.ts_status:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.ts_status << 6 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.ts_status = TsStatus((unpack("<B", data[0:1])[0] & 192) >> 6)
+        return message
+
+
+class message_SET_TS_STATUS_DAS:
     def __init__(
         self,
         ts_status_set = None
@@ -1305,7 +1361,35 @@ class message_SET_TS_STATUS:
         self.interval = 100
 
     def __eq__(self, other):
-        if not isinstance(other, message_SET_TS_STATUS):
+        if not isinstance(other, message_SET_TS_STATUS_DAS):
+            return False
+        if self.ts_status_set != other.ts_status_set:
+            return False
+        return True
+
+    def serialize(self) -> bytearray:
+        data = bytearray()
+        data.extend(pack("<B", self.ts_status_set << 7 & 255))
+        return data
+
+    @classmethod
+    def deserialize(cls, data: bytearray):
+        message = cls()
+        message.ts_status_set = Toggle((unpack("<B", data[0:1])[0] & 128) >> 7)
+        return message
+
+
+class message_SET_TS_STATUS_HANDCART:
+    def __init__(
+        self,
+        ts_status_set = None
+    ):
+        self.ts_status_set = Toggle(ts_status_set)
+        self.size = 1
+        self.interval = 100
+
+    def __eq__(self, other):
+        if not isinstance(other, message_SET_TS_STATUS_HANDCART):
             return False
         if self.ts_status_set != other.ts_status_set:
             return False

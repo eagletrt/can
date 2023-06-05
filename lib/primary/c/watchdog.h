@@ -72,61 +72,63 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS 20
 #define primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS 21
 #define primary_WATCHDOG_INDEX_HV_IMD_STATUS 22
-#define primary_WATCHDOG_INDEX_TS_STATUS 23
-#define primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS 24
-#define primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART 25
-#define primary_WATCHDOG_INDEX_STEER_STATUS 26
-#define primary_WATCHDOG_INDEX_SET_CAR_STATUS 27
-#define primary_WATCHDOG_INDEX_SET_PEDALS_RANGE 28
-#define primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE 29
-#define primary_WATCHDOG_INDEX_CAR_STATUS 30
-#define primary_WATCHDOG_INDEX_DAS_ERRORS 31
-#define primary_WATCHDOG_INDEX_LV_CURRENT 32
-#define primary_WATCHDOG_INDEX_LV_VOLTAGE 33
-#define primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE 34
-#define primary_WATCHDOG_INDEX_LV_TEMPERATURE 35
-#define primary_WATCHDOG_INDEX_COOLING_STATUS 36
-#define primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED 37
-#define primary_WATCHDOG_INDEX_SET_PUMPS_SPEED 38
-#define primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS 39
-#define primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS 40
-#define primary_WATCHDOG_INDEX_LV_ERRORS 41
-#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 42
-#define primary_WATCHDOG_INDEX_MARKER 43
-#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 44
-#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 45
-#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 46
-#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 47
-#define primary_WATCHDOG_INDEX_HANDCART_STATUS 48
-#define primary_WATCHDOG_INDEX_SPEED 49
-#define primary_WATCHDOG_INDEX_INV_L_REQUEST 50
-#define primary_WATCHDOG_INDEX_INV_R_REQUEST 51
-#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 52
-#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 53
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 54
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 55
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 56
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 57
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 58
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 59
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 60
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 61
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 62
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 63
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 64
-#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 65
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 66
-#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 67
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 68
-#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 69
-#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 70
-#define primary_WATCHDOG_INDEX_BRUSA_ST 71
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 72
-#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 73
-#define primary_WATCHDOG_INDEX_BRUSA_TEMP 74
-#define primary_WATCHDOG_INDEX_BRUSA_ERR 75
-#define primary_WATCHDOG_INDEX_CONTROL_OUTPUT 76
-#define primary_WATCHDOG_INDEX_LC_RESET 77
+#define primary_WATCHDOG_INDEX_TS_STATUS_DAS 23
+#define primary_WATCHDOG_INDEX_TS_STATUS_STEER 24
+#define primary_WATCHDOG_INDEX_TS_STATUS_HANDCART 25
+#define primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS 26
+#define primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART 27
+#define primary_WATCHDOG_INDEX_STEER_STATUS 28
+#define primary_WATCHDOG_INDEX_SET_CAR_STATUS 29
+#define primary_WATCHDOG_INDEX_SET_PEDALS_RANGE 30
+#define primary_WATCHDOG_INDEX_SET_STEERING_ANGLE_RANGE 31
+#define primary_WATCHDOG_INDEX_CAR_STATUS 32
+#define primary_WATCHDOG_INDEX_DAS_ERRORS 33
+#define primary_WATCHDOG_INDEX_LV_CURRENT 34
+#define primary_WATCHDOG_INDEX_LV_VOLTAGE 35
+#define primary_WATCHDOG_INDEX_LV_TOTAL_VOLTAGE 36
+#define primary_WATCHDOG_INDEX_LV_TEMPERATURE 37
+#define primary_WATCHDOG_INDEX_COOLING_STATUS 38
+#define primary_WATCHDOG_INDEX_SET_RADIATOR_SPEED 39
+#define primary_WATCHDOG_INDEX_SET_PUMPS_SPEED 40
+#define primary_WATCHDOG_INDEX_SET_INVERTER_CONNECTION_STATUS 41
+#define primary_WATCHDOG_INDEX_INVERTER_CONNECTION_STATUS 42
+#define primary_WATCHDOG_INDEX_LV_ERRORS 43
+#define primary_WATCHDOG_INDEX_SHUTDOWN_STATUS 44
+#define primary_WATCHDOG_INDEX_MARKER 45
+#define primary_WATCHDOG_INDEX_HV_CELLS_VOLTAGE 46
+#define primary_WATCHDOG_INDEX_HV_CELLS_TEMP 47
+#define primary_WATCHDOG_INDEX_HV_CELL_BALANCING_STATUS 48
+#define primary_WATCHDOG_INDEX_SET_CELL_BALANCING_STATUS 49
+#define primary_WATCHDOG_INDEX_HANDCART_STATUS 50
+#define primary_WATCHDOG_INDEX_SPEED 51
+#define primary_WATCHDOG_INDEX_INV_L_REQUEST 52
+#define primary_WATCHDOG_INDEX_INV_R_REQUEST 53
+#define primary_WATCHDOG_INDEX_INV_L_RESPONSE 54
+#define primary_WATCHDOG_INDEX_INV_R_RESPONSE 55
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_TX 56
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_0_RX 57
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_TX 58
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_1_RX 59
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_TX 60
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_2_RX 61
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_TX 62
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_3_RX 63
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_TX 64
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_4_RX 65
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_TX 66
+#define primary_WATCHDOG_INDEX_FLASH_CELLBOARD_5_RX 67
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_TX 68
+#define primary_WATCHDOG_INDEX_FLASH_BMS_HV_RX 69
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_TX 70
+#define primary_WATCHDOG_INDEX_FLASH_BMS_LV_RX 71
+#define primary_WATCHDOG_INDEX_BRUSA_NLG5_CTL 72
+#define primary_WATCHDOG_INDEX_BRUSA_ST 73
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_I 74
+#define primary_WATCHDOG_INDEX_BRUSA_ACT_II 75
+#define primary_WATCHDOG_INDEX_BRUSA_TEMP 76
+#define primary_WATCHDOG_INDEX_BRUSA_ERR 77
+#define primary_WATCHDOG_INDEX_CONTROL_OUTPUT 78
+#define primary_WATCHDOG_INDEX_LC_RESET 79
 
 #ifndef CANLIB_INTERVAL_THRESHOLD
 #define CANLIB_INTERVAL_THRESHOLD 500
@@ -178,10 +180,16 @@ typedef void (*canlib_watchdog_callback)(int);
 #define primary_INTERVAL_WITH_THRESHOLD_HV_FEEDBACKS_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_HV_IMD_STATUS -1
 #define primary_INTERVAL_WITH_THRESHOLD_HV_IMD_STATUS (-1 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_TS_STATUS 10
-#define primary_INTERVAL_WITH_THRESHOLD_TS_STATUS (10 + CANLIB_INTERVAL_THRESHOLD)
-#define primary_INTERVAL_SET_TS_STATUS 100
-#define primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS (100 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_TS_STATUS_DAS 10
+#define primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_DAS (10 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_TS_STATUS_STEER 10
+#define primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_STEER (10 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_TS_STATUS_HANDCART 10
+#define primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_HANDCART (10 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_SET_TS_STATUS_DAS 100
+#define primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_DAS (100 + CANLIB_INTERVAL_THRESHOLD)
+#define primary_INTERVAL_SET_TS_STATUS_HANDCART 100
+#define primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_HANDCART (100 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_STEER_STATUS 100
 #define primary_INTERVAL_WITH_THRESHOLD_STEER_STATUS (100 + CANLIB_INTERVAL_THRESHOLD)
 #define primary_INTERVAL_SET_CAR_STATUS -1
@@ -295,7 +303,7 @@ typedef void (*canlib_watchdog_callback)(int);
 typedef struct {
     uint8_t activated[10];
     uint8_t timeout[10];
-    canlib_watchdog_timestamp last_reset[78];
+    canlib_watchdog_timestamp last_reset[80];
 } primary_watchdog;
 
 static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
@@ -323,9 +331,11 @@ static inline int primary_watchdog_interval_from_id(uint16_t message_id) {
         case 775: return primary_INTERVAL_HV_FANS_OVERRIDE_STATUS;
         case 776: return primary_INTERVAL_HV_FEEDBACKS_STATUS;
         case 808: return primary_INTERVAL_HV_IMD_STATUS;
-        case 37: return primary_INTERVAL_TS_STATUS;
-        case 70: return primary_INTERVAL_SET_TS_STATUS;
-        case 102: return primary_INTERVAL_SET_TS_STATUS;
+        case 37: return primary_INTERVAL_TS_STATUS_DAS;
+        case 69: return primary_INTERVAL_TS_STATUS_STEER;
+        case 101: return primary_INTERVAL_TS_STATUS_HANDCART;
+        case 70: return primary_INTERVAL_SET_TS_STATUS_DAS;
+        case 102: return primary_INTERVAL_SET_TS_STATUS_HANDCART;
         case 265: return primary_INTERVAL_STEER_STATUS;
         case 777: return primary_INTERVAL_SET_CAR_STATUS;
         case 1033: return primary_INTERVAL_SET_PEDALS_RANGE;
@@ -407,7 +417,9 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 775: return primary_WATCHDOG_INDEX_HV_FANS_OVERRIDE_STATUS;
         case 776: return primary_WATCHDOG_INDEX_HV_FEEDBACKS_STATUS;
         case 808: return primary_WATCHDOG_INDEX_HV_IMD_STATUS;
-        case 37: return primary_WATCHDOG_INDEX_TS_STATUS;
+        case 37: return primary_WATCHDOG_INDEX_TS_STATUS_DAS;
+        case 69: return primary_WATCHDOG_INDEX_TS_STATUS_STEER;
+        case 101: return primary_WATCHDOG_INDEX_TS_STATUS_HANDCART;
         case 70: return primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS;
         case 102: return primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART;
         case 265: return primary_WATCHDOG_INDEX_STEER_STATUS;
@@ -463,7 +475,7 @@ static inline int primary_watchdog_index_from_id(canlib_message_id id) {
         case 292: return primary_WATCHDOG_INDEX_CONTROL_OUTPUT;
         case 523: return primary_WATCHDOG_INDEX_LC_RESET;
     }
-    return 78; // invalid
+    return 80; // invalid
 }
 
 primary_watchdog* primary_watchdog_new();
@@ -498,7 +510,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 78 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 80 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -595,20 +607,32 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_ERRORS);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_DAS)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_DAS
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_DAS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_STEER)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_STEER] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_STEER
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_STEER);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_HANDCART)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_HANDCART
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_HANDCART);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_DAS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_HANDCART
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART);
     }
@@ -755,13 +779,13 @@ void primary_watchdog_timeout_100(primary_watchdog *watchdog, canlib_watchdog_ti
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_DAS
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_TS_STATUS_DAS);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_SET_TS_STATUS_HANDCART
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_SET_TS_STATUS_HANDCART);
     }
@@ -934,10 +958,22 @@ void primary_watchdog_timeout_10(primary_watchdog *watchdog, canlib_watchdog_tim
         CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_HV_ERRORS);
     }
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS)
-        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_DAS)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_DAS] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_DAS
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_DAS);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_STEER)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_STEER] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_STEER
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_STEER);
+    }
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_TS_STATUS_HANDCART)
+        && timestamp - watchdog->last_reset[primary_WATCHDOG_INDEX_TS_STATUS_HANDCART] > primary_INTERVAL_WITH_THRESHOLD_TS_STATUS_HANDCART
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, primary_WATCHDOG_INDEX_TS_STATUS_HANDCART);
     }
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, primary_WATCHDOG_INDEX_DAS_ERRORS)

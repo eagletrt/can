@@ -16,8 +16,8 @@ extern "C" {
 
 #ifndef CANLIB_BUILD
 #define CANLIB_BUILD
-#define CANLIB_BUILD_TIME 1685743992
-#define CANLIB_BUILD_HASH 0x67bed551
+#define CANLIB_BUILD_TIME 1685998146
+#define CANLIB_BUILD_HASH 0x414e6c6d
 #endif // CANLIB_BUILD
 
 #ifndef CANLIB_ASSERTS
@@ -122,7 +122,7 @@ typedef uint16_t canlib_message_id;
 
 // Info
 
-#define primary_MESSAGE_COUNT 78
+#define primary_MESSAGE_COUNT 80
 
 // Custom types
 
@@ -191,61 +191,63 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_INDEX_HV_FANS_OVERRIDE_STATUS 20
 #define primary_INDEX_HV_FEEDBACKS_STATUS 21
 #define primary_INDEX_HV_IMD_STATUS 22
-#define primary_INDEX_TS_STATUS 23
-#define primary_INDEX_SET_TS_STATUS_DAS 24
-#define primary_INDEX_SET_TS_STATUS_HANDCART 25
-#define primary_INDEX_STEER_STATUS 26
-#define primary_INDEX_SET_CAR_STATUS 27
-#define primary_INDEX_SET_PEDALS_RANGE 28
-#define primary_INDEX_SET_STEERING_ANGLE_RANGE 29
-#define primary_INDEX_CAR_STATUS 30
-#define primary_INDEX_DAS_ERRORS 31
-#define primary_INDEX_LV_CURRENT 32
-#define primary_INDEX_LV_VOLTAGE 33
-#define primary_INDEX_LV_TOTAL_VOLTAGE 34
-#define primary_INDEX_LV_TEMPERATURE 35
-#define primary_INDEX_COOLING_STATUS 36
-#define primary_INDEX_SET_RADIATOR_SPEED 37
-#define primary_INDEX_SET_PUMPS_SPEED 38
-#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 39
-#define primary_INDEX_INVERTER_CONNECTION_STATUS 40
-#define primary_INDEX_LV_ERRORS 41
-#define primary_INDEX_SHUTDOWN_STATUS 42
-#define primary_INDEX_MARKER 43
-#define primary_INDEX_HV_CELLS_VOLTAGE 44
-#define primary_INDEX_HV_CELLS_TEMP 45
-#define primary_INDEX_HV_CELL_BALANCING_STATUS 46
-#define primary_INDEX_SET_CELL_BALANCING_STATUS 47
-#define primary_INDEX_HANDCART_STATUS 48
-#define primary_INDEX_SPEED 49
-#define primary_INDEX_INV_L_REQUEST 50
-#define primary_INDEX_INV_R_REQUEST 51
-#define primary_INDEX_INV_L_RESPONSE 52
-#define primary_INDEX_INV_R_RESPONSE 53
-#define primary_INDEX_FLASH_CELLBOARD_0_TX 54
-#define primary_INDEX_FLASH_CELLBOARD_0_RX 55
-#define primary_INDEX_FLASH_CELLBOARD_1_TX 56
-#define primary_INDEX_FLASH_CELLBOARD_1_RX 57
-#define primary_INDEX_FLASH_CELLBOARD_2_TX 58
-#define primary_INDEX_FLASH_CELLBOARD_2_RX 59
-#define primary_INDEX_FLASH_CELLBOARD_3_TX 60
-#define primary_INDEX_FLASH_CELLBOARD_3_RX 61
-#define primary_INDEX_FLASH_CELLBOARD_4_TX 62
-#define primary_INDEX_FLASH_CELLBOARD_4_RX 63
-#define primary_INDEX_FLASH_CELLBOARD_5_TX 64
-#define primary_INDEX_FLASH_CELLBOARD_5_RX 65
-#define primary_INDEX_FLASH_BMS_HV_TX 66
-#define primary_INDEX_FLASH_BMS_HV_RX 67
-#define primary_INDEX_FLASH_BMS_LV_TX 68
-#define primary_INDEX_FLASH_BMS_LV_RX 69
-#define primary_INDEX_BRUSA_NLG5_CTL 70
-#define primary_INDEX_BRUSA_ST 71
-#define primary_INDEX_BRUSA_ACT_I 72
-#define primary_INDEX_BRUSA_ACT_II 73
-#define primary_INDEX_BRUSA_TEMP 74
-#define primary_INDEX_BRUSA_ERR 75
-#define primary_INDEX_CONTROL_OUTPUT 76
-#define primary_INDEX_LC_RESET 77
+#define primary_INDEX_TS_STATUS_DAS 23
+#define primary_INDEX_TS_STATUS_STEER 24
+#define primary_INDEX_TS_STATUS_HANDCART 25
+#define primary_INDEX_SET_TS_STATUS_DAS 26
+#define primary_INDEX_SET_TS_STATUS_HANDCART 27
+#define primary_INDEX_STEER_STATUS 28
+#define primary_INDEX_SET_CAR_STATUS 29
+#define primary_INDEX_SET_PEDALS_RANGE 30
+#define primary_INDEX_SET_STEERING_ANGLE_RANGE 31
+#define primary_INDEX_CAR_STATUS 32
+#define primary_INDEX_DAS_ERRORS 33
+#define primary_INDEX_LV_CURRENT 34
+#define primary_INDEX_LV_VOLTAGE 35
+#define primary_INDEX_LV_TOTAL_VOLTAGE 36
+#define primary_INDEX_LV_TEMPERATURE 37
+#define primary_INDEX_COOLING_STATUS 38
+#define primary_INDEX_SET_RADIATOR_SPEED 39
+#define primary_INDEX_SET_PUMPS_SPEED 40
+#define primary_INDEX_SET_INVERTER_CONNECTION_STATUS 41
+#define primary_INDEX_INVERTER_CONNECTION_STATUS 42
+#define primary_INDEX_LV_ERRORS 43
+#define primary_INDEX_SHUTDOWN_STATUS 44
+#define primary_INDEX_MARKER 45
+#define primary_INDEX_HV_CELLS_VOLTAGE 46
+#define primary_INDEX_HV_CELLS_TEMP 47
+#define primary_INDEX_HV_CELL_BALANCING_STATUS 48
+#define primary_INDEX_SET_CELL_BALANCING_STATUS 49
+#define primary_INDEX_HANDCART_STATUS 50
+#define primary_INDEX_SPEED 51
+#define primary_INDEX_INV_L_REQUEST 52
+#define primary_INDEX_INV_R_REQUEST 53
+#define primary_INDEX_INV_L_RESPONSE 54
+#define primary_INDEX_INV_R_RESPONSE 55
+#define primary_INDEX_FLASH_CELLBOARD_0_TX 56
+#define primary_INDEX_FLASH_CELLBOARD_0_RX 57
+#define primary_INDEX_FLASH_CELLBOARD_1_TX 58
+#define primary_INDEX_FLASH_CELLBOARD_1_RX 59
+#define primary_INDEX_FLASH_CELLBOARD_2_TX 60
+#define primary_INDEX_FLASH_CELLBOARD_2_RX 61
+#define primary_INDEX_FLASH_CELLBOARD_3_TX 62
+#define primary_INDEX_FLASH_CELLBOARD_3_RX 63
+#define primary_INDEX_FLASH_CELLBOARD_4_TX 64
+#define primary_INDEX_FLASH_CELLBOARD_4_RX 65
+#define primary_INDEX_FLASH_CELLBOARD_5_TX 66
+#define primary_INDEX_FLASH_CELLBOARD_5_RX 67
+#define primary_INDEX_FLASH_BMS_HV_TX 68
+#define primary_INDEX_FLASH_BMS_HV_RX 69
+#define primary_INDEX_FLASH_BMS_LV_TX 70
+#define primary_INDEX_FLASH_BMS_LV_RX 71
+#define primary_INDEX_BRUSA_NLG5_CTL 72
+#define primary_INDEX_BRUSA_ST 73
+#define primary_INDEX_BRUSA_ACT_I 74
+#define primary_INDEX_BRUSA_ACT_II 75
+#define primary_INDEX_BRUSA_TEMP 76
+#define primary_INDEX_BRUSA_ERR 77
+#define primary_INDEX_CONTROL_OUTPUT 78
+#define primary_INDEX_LC_RESET 79
 
 // ============== SIZES ============== //
 
@@ -273,8 +275,11 @@ typedef primary_devices_t primary_devices[primary_MESSAGE_COUNT];
 #define primary_SIZE_HV_FANS_OVERRIDE_STATUS 3
 #define primary_SIZE_HV_FEEDBACKS_STATUS 6
 #define primary_SIZE_HV_IMD_STATUS 5
-#define primary_SIZE_TS_STATUS 1
-#define primary_SIZE_SET_TS_STATUS 1
+#define primary_SIZE_TS_STATUS_DAS 1
+#define primary_SIZE_TS_STATUS_STEER 1
+#define primary_SIZE_TS_STATUS_HANDCART 1
+#define primary_SIZE_SET_TS_STATUS_DAS 1
+#define primary_SIZE_SET_TS_STATUS_HANDCART 1
 #define primary_SIZE_STEER_STATUS 3
 #define primary_SIZE_SET_CAR_STATUS 1
 #define primary_SIZE_SET_PEDALS_RANGE 1
@@ -841,14 +846,35 @@ typedef struct CANLIB_PARKING {
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_TS_STATUS;
+} primary_message_TS_STATUS_DAS;
+
+typedef struct CANLIB_PARKING {
+    primary_TsStatus ts_status;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_TS_STATUS_STEER;
+
+typedef struct CANLIB_PARKING {
+    primary_TsStatus ts_status;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_TS_STATUS_HANDCART;
 
 typedef struct CANLIB_PARKING {
     primary_Toggle ts_status_set;
 #ifdef CANLIB_TIMESTAMP
     primary_uint64 _timestamp;
 #endif // CANLIB_TIMESTAMP
-} primary_message_SET_TS_STATUS;
+} primary_message_SET_TS_STATUS_DAS;
+
+typedef struct CANLIB_PARKING {
+    primary_Toggle ts_status_set;
+#ifdef CANLIB_TIMESTAMP
+    primary_uint64 _timestamp;
+#endif // CANLIB_TIMESTAMP
+} primary_message_SET_TS_STATUS_HANDCART;
 
 typedef struct CANLIB_PARKING {
     primary_uint8 map_pw;
@@ -1406,8 +1432,11 @@ typedef union CANLIB_PARKING {
     primary_message_HV_FANS_OVERRIDE_STATUS _HV_FANS_OVERRIDE_STATUS;
     primary_message_HV_FEEDBACKS_STATUS _HV_FEEDBACKS_STATUS;
     primary_message_HV_IMD_STATUS _HV_IMD_STATUS;
-    primary_message_TS_STATUS _TS_STATUS;
-    primary_message_SET_TS_STATUS _SET_TS_STATUS;
+    primary_message_TS_STATUS_DAS _TS_STATUS_DAS;
+    primary_message_TS_STATUS_STEER _TS_STATUS_STEER;
+    primary_message_TS_STATUS_HANDCART _TS_STATUS_HANDCART;
+    primary_message_SET_TS_STATUS_DAS _SET_TS_STATUS_DAS;
+    primary_message_SET_TS_STATUS_HANDCART _SET_TS_STATUS_HANDCART;
     primary_message_STEER_STATUS _STEER_STATUS;
     primary_message_SET_CAR_STATUS _SET_CAR_STATUS;
     primary_message_SET_PEDALS_RANGE _SET_PEDALS_RANGE;
@@ -2184,50 +2213,119 @@ int primary_to_string_file_HV_IMD_STATUS(primary_message_HV_IMD_STATUS* message,
 int primary_fields_file_HV_IMD_STATUS(FILE* buffer);
 
 
-// ============== TS_STATUS ============== //
+// ============== TS_STATUS_DAS ============== //
 
-primary_byte_size primary_serialize_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS_DAS(
     uint8_t* data,
     primary_TsStatus ts_status
 );
-primary_byte_size primary_serialize_struct_TS_STATUS(
+primary_byte_size primary_serialize_struct_TS_STATUS_DAS(
     uint8_t* data,
-    primary_message_TS_STATUS* message
+    primary_message_TS_STATUS_DAS* message
 );
-void primary_deserialize_TS_STATUS(
-    primary_message_TS_STATUS* message,
+void primary_deserialize_TS_STATUS_DAS(
+    primary_message_TS_STATUS_DAS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer);
-int primary_fields_TS_STATUS(char* buffer);
-int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer);
-int primary_fields_file_TS_STATUS(FILE* buffer);
+int primary_to_string_TS_STATUS_DAS(primary_message_TS_STATUS_DAS* message, char* buffer);
+int primary_fields_TS_STATUS_DAS(char* buffer);
+int primary_to_string_file_TS_STATUS_DAS(primary_message_TS_STATUS_DAS* message, FILE* buffer);
+int primary_fields_file_TS_STATUS_DAS(FILE* buffer);
 
 
-// ============== SET_TS_STATUS ============== //
+// ============== TS_STATUS_STEER ============== //
 
-primary_byte_size primary_serialize_SET_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS_STEER(
+    uint8_t* data,
+    primary_TsStatus ts_status
+);
+primary_byte_size primary_serialize_struct_TS_STATUS_STEER(
+    uint8_t* data,
+    primary_message_TS_STATUS_STEER* message
+);
+void primary_deserialize_TS_STATUS_STEER(
+    primary_message_TS_STATUS_STEER* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_TS_STATUS_STEER(primary_message_TS_STATUS_STEER* message, char* buffer);
+int primary_fields_TS_STATUS_STEER(char* buffer);
+int primary_to_string_file_TS_STATUS_STEER(primary_message_TS_STATUS_STEER* message, FILE* buffer);
+int primary_fields_file_TS_STATUS_STEER(FILE* buffer);
+
+
+// ============== TS_STATUS_HANDCART ============== //
+
+primary_byte_size primary_serialize_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_TsStatus ts_status
+);
+primary_byte_size primary_serialize_struct_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_message_TS_STATUS_HANDCART* message
+);
+void primary_deserialize_TS_STATUS_HANDCART(
+    primary_message_TS_STATUS_HANDCART* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_TS_STATUS_HANDCART(primary_message_TS_STATUS_HANDCART* message, char* buffer);
+int primary_fields_TS_STATUS_HANDCART(char* buffer);
+int primary_to_string_file_TS_STATUS_HANDCART(primary_message_TS_STATUS_HANDCART* message, FILE* buffer);
+int primary_fields_file_TS_STATUS_HANDCART(FILE* buffer);
+
+
+// ============== SET_TS_STATUS_DAS ============== //
+
+primary_byte_size primary_serialize_SET_TS_STATUS_DAS(
     uint8_t* data,
     primary_Toggle ts_status_set
 );
-primary_byte_size primary_serialize_struct_SET_TS_STATUS(
+primary_byte_size primary_serialize_struct_SET_TS_STATUS_DAS(
     uint8_t* data,
-    primary_message_SET_TS_STATUS* message
+    primary_message_SET_TS_STATUS_DAS* message
 );
-void primary_deserialize_SET_TS_STATUS(
-    primary_message_SET_TS_STATUS* message,
+void primary_deserialize_SET_TS_STATUS_DAS(
+    primary_message_SET_TS_STATUS_DAS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 timestamp
 #endif // CANLIB_TIMESTAMP
 );
-int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char* buffer);
-int primary_fields_SET_TS_STATUS(char* buffer);
-int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer);
-int primary_fields_file_SET_TS_STATUS(FILE* buffer);
+int primary_to_string_SET_TS_STATUS_DAS(primary_message_SET_TS_STATUS_DAS* message, char* buffer);
+int primary_fields_SET_TS_STATUS_DAS(char* buffer);
+int primary_to_string_file_SET_TS_STATUS_DAS(primary_message_SET_TS_STATUS_DAS* message, FILE* buffer);
+int primary_fields_file_SET_TS_STATUS_DAS(FILE* buffer);
+
+
+// ============== SET_TS_STATUS_HANDCART ============== //
+
+primary_byte_size primary_serialize_SET_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_Toggle ts_status_set
+);
+primary_byte_size primary_serialize_struct_SET_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_message_SET_TS_STATUS_HANDCART* message
+);
+void primary_deserialize_SET_TS_STATUS_HANDCART(
+    primary_message_SET_TS_STATUS_HANDCART* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 timestamp
+#endif // CANLIB_TIMESTAMP
+);
+int primary_to_string_SET_TS_STATUS_HANDCART(primary_message_SET_TS_STATUS_HANDCART* message, char* buffer);
+int primary_fields_SET_TS_STATUS_HANDCART(char* buffer);
+int primary_to_string_file_SET_TS_STATUS_HANDCART(primary_message_SET_TS_STATUS_HANDCART* message, FILE* buffer);
+int primary_fields_file_SET_TS_STATUS_HANDCART(FILE* buffer);
 
 
 // ============== STEER_STATUS ============== //
@@ -3838,7 +3936,9 @@ static inline int primary_index_from_id(canlib_message_id id) {
         case 775: return primary_INDEX_HV_FANS_OVERRIDE_STATUS;
         case 776: return primary_INDEX_HV_FEEDBACKS_STATUS;
         case 808: return primary_INDEX_HV_IMD_STATUS;
-        case 37: return primary_INDEX_TS_STATUS;
+        case 37: return primary_INDEX_TS_STATUS_DAS;
+        case 69: return primary_INDEX_TS_STATUS_STEER;
+        case 101: return primary_INDEX_TS_STATUS_HANDCART;
         case 70: return primary_INDEX_SET_TS_STATUS_DAS;
         case 102: return primary_INDEX_SET_TS_STATUS_HANDCART;
         case 265: return primary_INDEX_STEER_STATUS;
@@ -3922,7 +4022,9 @@ static inline int primary_id_from_index(int index) {
         case primary_INDEX_HV_FANS_OVERRIDE_STATUS: return 775;
         case primary_INDEX_HV_FEEDBACKS_STATUS: return 776;
         case primary_INDEX_HV_IMD_STATUS: return 808;
-        case primary_INDEX_TS_STATUS: return 37;
+        case primary_INDEX_TS_STATUS_DAS: return 37;
+        case primary_INDEX_TS_STATUS_STEER: return 69;
+        case primary_INDEX_TS_STATUS_HANDCART: return 101;
         case primary_INDEX_SET_TS_STATUS_DAS: return 70;
         case primary_INDEX_SET_TS_STATUS_HANDCART: return 102;
         case primary_INDEX_STEER_STATUS: return 265;
@@ -6717,7 +6819,7 @@ int primary_fields_file_HV_IMD_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS_DAS(
     uint8_t* data,
     primary_TsStatus ts_status
 ) {
@@ -6725,9 +6827,9 @@ primary_byte_size primary_serialize_TS_STATUS(
     return 1;
 }
 
-primary_byte_size primary_serialize_struct_TS_STATUS(
+primary_byte_size primary_serialize_struct_TS_STATUS_DAS(
     uint8_t* data,
-    primary_message_TS_STATUS* message
+    primary_message_TS_STATUS_DAS* message
 ) {
     data[0] = message->ts_status << 6;
     return 1;
@@ -6735,8 +6837,8 @@ primary_byte_size primary_serialize_struct_TS_STATUS(
 
 // ============== DESERIALIZE ============== //
 
-void primary_deserialize_TS_STATUS(
-    primary_message_TS_STATUS* message,
+void primary_deserialize_TS_STATUS_DAS(
+    primary_message_TS_STATUS_DAS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -6750,7 +6852,7 @@ void primary_deserialize_TS_STATUS(
 
 // ============== STRING ============== //
 
-int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer) {
+int primary_to_string_TS_STATUS_DAS(primary_message_TS_STATUS_DAS* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6764,7 +6866,7 @@ int primary_to_string_TS_STATUS(primary_message_TS_STATUS* message, char* buffer
     );
 }
 
-int primary_fields_TS_STATUS(char* buffer) {
+int primary_fields_TS_STATUS_DAS(char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6774,7 +6876,7 @@ int primary_fields_TS_STATUS(char* buffer) {
     );
 }
 
-int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* buffer) {
+int primary_to_string_file_TS_STATUS_DAS(primary_message_TS_STATUS_DAS* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6788,7 +6890,7 @@ int primary_to_string_file_TS_STATUS(primary_message_TS_STATUS* message, FILE* b
     );
 }
 
-int primary_fields_file_TS_STATUS(FILE* buffer) {
+int primary_fields_file_TS_STATUS_DAS(FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6800,7 +6902,173 @@ int primary_fields_file_TS_STATUS(FILE* buffer) {
 
 // ============== SERIALIZE ============== //
 
-primary_byte_size primary_serialize_SET_TS_STATUS(
+primary_byte_size primary_serialize_TS_STATUS_STEER(
+    uint8_t* data,
+    primary_TsStatus ts_status
+) {
+    data[0] = ts_status << 6;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_TS_STATUS_STEER(
+    uint8_t* data,
+    primary_message_TS_STATUS_STEER* message
+) {
+    data[0] = message->ts_status << 6;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_TS_STATUS_STEER(
+    primary_message_TS_STATUS_STEER* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->ts_status = (primary_TsStatus) ((data[0] & 192) >> 6);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_TS_STATUS_STEER(primary_message_TS_STATUS_STEER* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status
+    );
+}
+
+int primary_fields_TS_STATUS_STEER(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status"
+    );
+}
+
+int primary_to_string_file_TS_STATUS_STEER(primary_message_TS_STATUS_STEER* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status
+    );
+}
+
+int primary_fields_file_TS_STATUS_STEER(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_TsStatus ts_status
+) {
+    data[0] = ts_status << 6;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_message_TS_STATUS_HANDCART* message
+) {
+    data[0] = message->ts_status << 6;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_TS_STATUS_HANDCART(
+    primary_message_TS_STATUS_HANDCART* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->ts_status = (primary_TsStatus) ((data[0] & 192) >> 6);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_TS_STATUS_HANDCART(primary_message_TS_STATUS_HANDCART* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status
+    );
+}
+
+int primary_fields_TS_STATUS_HANDCART(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status"
+    );
+}
+
+int primary_to_string_file_TS_STATUS_HANDCART(primary_message_TS_STATUS_HANDCART* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status
+    );
+}
+
+int primary_fields_file_TS_STATUS_HANDCART(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_SET_TS_STATUS_DAS(
     uint8_t* data,
     primary_Toggle ts_status_set
 ) {
@@ -6808,9 +7076,9 @@ primary_byte_size primary_serialize_SET_TS_STATUS(
     return 1;
 }
 
-primary_byte_size primary_serialize_struct_SET_TS_STATUS(
+primary_byte_size primary_serialize_struct_SET_TS_STATUS_DAS(
     uint8_t* data,
-    primary_message_SET_TS_STATUS* message
+    primary_message_SET_TS_STATUS_DAS* message
 ) {
     data[0] = message->ts_status_set << 7;
     return 1;
@@ -6818,8 +7086,8 @@ primary_byte_size primary_serialize_struct_SET_TS_STATUS(
 
 // ============== DESERIALIZE ============== //
 
-void primary_deserialize_SET_TS_STATUS(
-    primary_message_SET_TS_STATUS* message,
+void primary_deserialize_SET_TS_STATUS_DAS(
+    primary_message_SET_TS_STATUS_DAS* message,
     uint8_t* data
 #ifdef CANLIB_TIMESTAMP
     , primary_uint64 _timestamp
@@ -6833,7 +7101,7 @@ void primary_deserialize_SET_TS_STATUS(
 
 // ============== STRING ============== //
 
-int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char* buffer) {
+int primary_to_string_SET_TS_STATUS_DAS(primary_message_SET_TS_STATUS_DAS* message, char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6847,7 +7115,7 @@ int primary_to_string_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, char
     );
 }
 
-int primary_fields_SET_TS_STATUS(char* buffer) {
+int primary_fields_SET_TS_STATUS_DAS(char* buffer) {
     return sprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6857,7 +7125,7 @@ int primary_fields_SET_TS_STATUS(char* buffer) {
     );
 }
 
-int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message, FILE* buffer) {
+int primary_to_string_file_SET_TS_STATUS_DAS(primary_message_SET_TS_STATUS_DAS* message, FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -6871,7 +7139,90 @@ int primary_to_string_file_SET_TS_STATUS(primary_message_SET_TS_STATUS* message,
     );
 }
 
-int primary_fields_file_SET_TS_STATUS(FILE* buffer) {
+int primary_fields_file_SET_TS_STATUS_DAS(FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status_set"
+    );
+}
+
+// ============== SERIALIZE ============== //
+
+primary_byte_size primary_serialize_SET_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_Toggle ts_status_set
+) {
+    data[0] = ts_status_set << 7;
+    return 1;
+}
+
+primary_byte_size primary_serialize_struct_SET_TS_STATUS_HANDCART(
+    uint8_t* data,
+    primary_message_SET_TS_STATUS_HANDCART* message
+) {
+    data[0] = message->ts_status_set << 7;
+    return 1;
+}
+
+// ============== DESERIALIZE ============== //
+
+void primary_deserialize_SET_TS_STATUS_HANDCART(
+    primary_message_SET_TS_STATUS_HANDCART* message,
+    uint8_t* data
+#ifdef CANLIB_TIMESTAMP
+    , primary_uint64 _timestamp
+#endif // CANLIB_TIMESTAMP
+) {
+#ifdef CANLIB_TIMESTAMP
+    message->_timestamp = _timestamp;
+#endif // CANLIB_TIMESTAMP
+    message->ts_status_set = (primary_Toggle) ((data[0] & 128) >> 7);
+}
+
+// ============== STRING ============== //
+
+int primary_to_string_SET_TS_STATUS_HANDCART(primary_message_SET_TS_STATUS_HANDCART* message, char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status_set
+    );
+}
+
+int primary_fields_SET_TS_STATUS_HANDCART(char* buffer) {
+    return sprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "_timestamp" CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "ts_status_set"
+    );
+}
+
+int primary_to_string_file_SET_TS_STATUS_HANDCART(primary_message_SET_TS_STATUS_HANDCART* message, FILE* buffer) {
+    return fprintf(
+        buffer,
+#ifdef CANLIB_TIMESTAMP
+        "%" PRIu64 CANLIB_SEPARATOR
+#endif // CANLIB_TIMESTAMP
+        "%" PRIu8,
+#ifdef CANLIB_TIMESTAMP
+        message->_timestamp,
+#endif // CANLIB_TIMESTAMP
+        message->ts_status_set
+    );
+}
+
+int primary_fields_file_SET_TS_STATUS_HANDCART(FILE* buffer) {
     return fprintf(
         buffer,
 #ifdef CANLIB_TIMESTAMP
@@ -12045,11 +12396,15 @@ int primary_fields_from_id(canlib_message_id message_id, char* buffer) {
         case 808:
             return primary_fields_HV_IMD_STATUS(buffer);
         case 37:
-            return primary_fields_TS_STATUS(buffer);
+            return primary_fields_TS_STATUS_DAS(buffer);
+        case 69:
+            return primary_fields_TS_STATUS_STEER(buffer);
+        case 101:
+            return primary_fields_TS_STATUS_HANDCART(buffer);
         case 70:
-            return primary_fields_SET_TS_STATUS(buffer);
+            return primary_fields_SET_TS_STATUS_DAS(buffer);
         case 102:
-            return primary_fields_SET_TS_STATUS(buffer);
+            return primary_fields_SET_TS_STATUS_HANDCART(buffer);
         case 265:
             return primary_fields_STEER_STATUS(buffer);
         case 777:
@@ -12207,11 +12562,15 @@ int primary_to_string_from_id(canlib_message_id message_id, void* message, char*
         case 808:
             return primary_to_string_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
         case 37:
-            return primary_to_string_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
+            return primary_to_string_TS_STATUS_DAS((primary_message_TS_STATUS_DAS*) message, buffer);
+        case 69:
+            return primary_to_string_TS_STATUS_STEER((primary_message_TS_STATUS_STEER*) message, buffer);
+        case 101:
+            return primary_to_string_TS_STATUS_HANDCART((primary_message_TS_STATUS_HANDCART*) message, buffer);
         case 70:
-            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+            return primary_to_string_SET_TS_STATUS_DAS((primary_message_SET_TS_STATUS_DAS*) message, buffer);
         case 102:
-            return primary_to_string_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+            return primary_to_string_SET_TS_STATUS_HANDCART((primary_message_SET_TS_STATUS_HANDCART*) message, buffer);
         case 265:
             return primary_to_string_STEER_STATUS((primary_message_STEER_STATUS_conversion*) message, buffer);
         case 777:
@@ -12369,11 +12728,15 @@ int primary_fields_file_from_id(canlib_message_id message_id, FILE *buffer) {
         case 808:
             return primary_fields_file_HV_IMD_STATUS(buffer);
         case 37:
-            return primary_fields_file_TS_STATUS(buffer);
+            return primary_fields_file_TS_STATUS_DAS(buffer);
+        case 69:
+            return primary_fields_file_TS_STATUS_STEER(buffer);
+        case 101:
+            return primary_fields_file_TS_STATUS_HANDCART(buffer);
         case 70:
-            return primary_fields_file_SET_TS_STATUS(buffer);
+            return primary_fields_file_SET_TS_STATUS_DAS(buffer);
         case 102:
-            return primary_fields_file_SET_TS_STATUS(buffer);
+            return primary_fields_file_SET_TS_STATUS_HANDCART(buffer);
         case 265:
             return primary_fields_file_STEER_STATUS(buffer);
         case 777:
@@ -12531,11 +12894,15 @@ int primary_to_string_file_from_id(canlib_message_id message_id, void* message, 
         case 808:
             return primary_to_string_file_HV_IMD_STATUS((primary_message_HV_IMD_STATUS*) message, buffer);
         case 37:
-            return primary_to_string_file_TS_STATUS((primary_message_TS_STATUS*) message, buffer);
+            return primary_to_string_file_TS_STATUS_DAS((primary_message_TS_STATUS_DAS*) message, buffer);
+        case 69:
+            return primary_to_string_file_TS_STATUS_STEER((primary_message_TS_STATUS_STEER*) message, buffer);
+        case 101:
+            return primary_to_string_file_TS_STATUS_HANDCART((primary_message_TS_STATUS_HANDCART*) message, buffer);
         case 70:
-            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+            return primary_to_string_file_SET_TS_STATUS_DAS((primary_message_SET_TS_STATUS_DAS*) message, buffer);
         case 102:
-            return primary_to_string_file_SET_TS_STATUS((primary_message_SET_TS_STATUS*) message, buffer);
+            return primary_to_string_file_SET_TS_STATUS_HANDCART((primary_message_SET_TS_STATUS_HANDCART*) message, buffer);
         case 265:
             return primary_to_string_file_STEER_STATUS((primary_message_STEER_STATUS_conversion*) message, buffer);
         case 777:
@@ -12905,8 +13272,28 @@ void* primary_deserialize_from_id(
             return message_raw;
         }
         case 37: {
-            primary_deserialize_TS_STATUS(
-                (primary_message_TS_STATUS*) message_raw,
+            primary_deserialize_TS_STATUS_DAS(
+                (primary_message_TS_STATUS_DAS*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 69: {
+            primary_deserialize_TS_STATUS_STEER(
+                (primary_message_TS_STATUS_STEER*) message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return message_raw;
+        }
+        case 101: {
+            primary_deserialize_TS_STATUS_HANDCART(
+                (primary_message_TS_STATUS_HANDCART*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -12915,8 +13302,8 @@ void* primary_deserialize_from_id(
             return message_raw;
         }
         case 70: {
-            primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) message_raw,
+            primary_deserialize_SET_TS_STATUS_DAS(
+                (primary_message_SET_TS_STATUS_DAS*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -12925,8 +13312,8 @@ void* primary_deserialize_from_id(
             return message_raw;
         }
         case 102: {
-            primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) message_raw,
+            primary_deserialize_SET_TS_STATUS_HANDCART(
+                (primary_message_SET_TS_STATUS_HANDCART*) message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -13577,20 +13964,20 @@ primary_devices* primary_devices_new() {
     (*devices)[primary_INDEX_HV_IMD_STATUS].id = 808;
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_raw = (void*) malloc(sizeof(primary_message_HV_IMD_STATUS));
     (*devices)[primary_INDEX_HV_IMD_STATUS].message_conversion = NULL;
-    (*devices)[primary_INDEX_TS_STATUS].id = 37;
-    (*devices)[primary_INDEX_TS_STATUS].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS));
-    (*devices)[primary_INDEX_TS_STATUS].message_conversion = NULL;
+    (*devices)[primary_INDEX_TS_STATUS_DAS].id = 37;
+    (*devices)[primary_INDEX_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS_DAS));
+    (*devices)[primary_INDEX_TS_STATUS_DAS].message_conversion = NULL;
+    (*devices)[primary_INDEX_TS_STATUS_STEER].id = 69;
+    (*devices)[primary_INDEX_TS_STATUS_STEER].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS_STEER));
+    (*devices)[primary_INDEX_TS_STATUS_STEER].message_conversion = NULL;
+    (*devices)[primary_INDEX_TS_STATUS_HANDCART].id = 101;
+    (*devices)[primary_INDEX_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_TS_STATUS_HANDCART));
+    (*devices)[primary_INDEX_TS_STATUS_HANDCART].message_conversion = NULL;
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 70;
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
+    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS_DAS));
     (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_conversion = NULL;
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 102;
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].id = 70;
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
-    (*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_conversion = NULL;
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].id = 102;
-    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS));
+    (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw = (void*) malloc(sizeof(primary_message_SET_TS_STATUS_HANDCART));
     (*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_conversion = NULL;
     (*devices)[primary_INDEX_STEER_STATUS].id = 265;
     (*devices)[primary_INDEX_STEER_STATUS].message_raw = (void*) malloc(sizeof(primary_message_STEER_STATUS));
@@ -13780,9 +14167,9 @@ void primary_devices_free(primary_devices* devices) {
     free((*devices)[primary_INDEX_HV_FANS_OVERRIDE_STATUS].message_conversion);
     free((*devices)[primary_INDEX_HV_FEEDBACKS_STATUS].message_raw);
     free((*devices)[primary_INDEX_HV_IMD_STATUS].message_raw);
-    free((*devices)[primary_INDEX_TS_STATUS].message_raw);
-    free((*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw);
-    free((*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw);
+    free((*devices)[primary_INDEX_TS_STATUS_DAS].message_raw);
+    free((*devices)[primary_INDEX_TS_STATUS_STEER].message_raw);
+    free((*devices)[primary_INDEX_TS_STATUS_HANDCART].message_raw);
     free((*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw);
     free((*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw);
     free((*devices)[primary_INDEX_STEER_STATUS].message_raw);
@@ -14112,8 +14499,28 @@ void primary_devices_deserialize_from_id(
             return;
         }
         case 37: {
-            primary_deserialize_TS_STATUS(
-                (primary_message_TS_STATUS*) &(*devices)[primary_INDEX_TS_STATUS].message_raw,
+            primary_deserialize_TS_STATUS_DAS(
+                (primary_message_TS_STATUS_DAS*) &(*devices)[primary_INDEX_TS_STATUS_DAS].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 69: {
+            primary_deserialize_TS_STATUS_STEER(
+                (primary_message_TS_STATUS_STEER*) &(*devices)[primary_INDEX_TS_STATUS_STEER].message_raw,
+                data
+                #ifdef CANLIB_TIMESTAMP
+                , timestamp
+                #endif
+            );
+            return;
+        }
+        case 101: {
+            primary_deserialize_TS_STATUS_HANDCART(
+                (primary_message_TS_STATUS_HANDCART*) &(*devices)[primary_INDEX_TS_STATUS_HANDCART].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -14122,8 +14529,8 @@ void primary_devices_deserialize_from_id(
             return;
         }
         case 70: {
-            primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) &(*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw,
+            primary_deserialize_SET_TS_STATUS_DAS(
+                (primary_message_SET_TS_STATUS_DAS*) &(*devices)[primary_INDEX_SET_TS_STATUS_DAS].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp
@@ -14132,8 +14539,8 @@ void primary_devices_deserialize_from_id(
             return;
         }
         case 102: {
-            primary_deserialize_SET_TS_STATUS(
-                (primary_message_SET_TS_STATUS*) &(*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw,
+            primary_deserialize_SET_TS_STATUS_HANDCART(
+                (primary_message_SET_TS_STATUS_HANDCART*) &(*devices)[primary_INDEX_SET_TS_STATUS_HANDCART].message_raw,
                 data
                 #ifdef CANLIB_TIMESTAMP
                 , timestamp

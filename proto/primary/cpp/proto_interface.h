@@ -530,17 +530,43 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         memset(buffer, 0, 1024);
         (*net_signals)["HV_IMD_STATUS"]["imd_info"].push(pack->hv_imd_status(i).imd_info());
     }
-    for(int i = 0; i < pack->ts_status_size(); i++){
+    for(int i = 0; i < pack->ts_status_das_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ts_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ts_status(i)._inner_timestamp();
-        (*net_signals)["TS_STATUS"]["_timestamp"].push(pack->ts_status(i)._inner_timestamp());
+        if(pack->ts_status_das(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ts_status_das(i)._inner_timestamp();
+        (*net_signals)["TS_STATUS_DAS"]["_timestamp"].push(pack->ts_status_das(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-        (*net_enums)["TS_STATUS"]["ts_status"].push(pack->ts_status(i).ts_status());
-        primary_to_string_TsStatus((primary_TsStatus)pack->ts_status(i).ts_status(), buffer);
-        (*net_strings)["TS_STATUS"]["ts_status"].push(buffer);
+        (*net_enums)["TS_STATUS_DAS"]["ts_status"].push(pack->ts_status_das(i).ts_status());
+        primary_to_string_TsStatus((primary_TsStatus)pack->ts_status_das(i).ts_status(), buffer);
+        (*net_strings)["TS_STATUS_DAS"]["ts_status"].push(buffer);
+        memset(buffer, 0, 1024);
+    }
+    for(int i = 0; i < pack->ts_status_steer_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ts_status_steer(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ts_status_steer(i)._inner_timestamp();
+        (*net_signals)["TS_STATUS_STEER"]["_timestamp"].push(pack->ts_status_steer(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+        (*net_enums)["TS_STATUS_STEER"]["ts_status"].push(pack->ts_status_steer(i).ts_status());
+        primary_to_string_TsStatus((primary_TsStatus)pack->ts_status_steer(i).ts_status(), buffer);
+        (*net_strings)["TS_STATUS_STEER"]["ts_status"].push(buffer);
+        memset(buffer, 0, 1024);
+    }
+    for(int i = 0; i < pack->ts_status_handcart_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ts_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ts_status_handcart(i)._inner_timestamp();
+        (*net_signals)["TS_STATUS_HANDCART"]["_timestamp"].push(pack->ts_status_handcart(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+        (*net_enums)["TS_STATUS_HANDCART"]["ts_status"].push(pack->ts_status_handcart(i).ts_status());
+        primary_to_string_TsStatus((primary_TsStatus)pack->ts_status_handcart(i).ts_status(), buffer);
+        (*net_strings)["TS_STATUS_HANDCART"]["ts_status"].push(buffer);
         memset(buffer, 0, 1024);
     }
     for(int i = 0; i < pack->set_ts_status_das_size(); i++){
@@ -1393,8 +1419,26 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
         case 37: {
-            primary_message_TS_STATUS* msg = (primary_message_TS_STATUS*)(&(*map)[index].message_raw);
-            primary::TS_STATUS* proto_msg = pack->add_ts_status();
+            primary_message_TS_STATUS_DAS* msg = (primary_message_TS_STATUS_DAS*)(&(*map)[index].message_raw);
+            primary::TS_STATUS_DAS* proto_msg = pack->add_ts_status_das();
+            proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+        case 69: {
+            primary_message_TS_STATUS_STEER* msg = (primary_message_TS_STATUS_STEER*)(&(*map)[index].message_raw);
+            primary::TS_STATUS_STEER* proto_msg = pack->add_ts_status_steer();
+            proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+        case 101: {
+            primary_message_TS_STATUS_HANDCART* msg = (primary_message_TS_STATUS_HANDCART*)(&(*map)[index].message_raw);
+            primary::TS_STATUS_HANDCART* proto_msg = pack->add_ts_status_handcart();
             proto_msg->set_ts_status((primary::TsStatus)msg->ts_status);
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1402,7 +1446,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
         case 70: {
-            primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*)(&(*map)[index].message_raw);
+            primary_message_SET_TS_STATUS_DAS* msg = (primary_message_SET_TS_STATUS_DAS*)(&(*map)[index].message_raw);
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP
@@ -1411,7 +1455,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
         case 102: {
-            primary_message_SET_TS_STATUS* msg = (primary_message_SET_TS_STATUS*)(&(*map)[index].message_raw);
+            primary_message_SET_TS_STATUS_HANDCART* msg = (primary_message_SET_TS_STATUS_HANDCART*)(&(*map)[index].message_raw);
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
             proto_msg->set_ts_status_set((primary::Toggle)msg->ts_status_set);
 #ifdef CANLIB_TIMESTAMP

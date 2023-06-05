@@ -557,11 +557,11 @@
       }
     },
     {
-      "name": "TS_STATUS",
+      "name": "TS_STATUS_DAS",
       "topic": "DASnSTEERnCART",
       "priority": 7,
       "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
+      "receiving": ["DAS"],
       "description": "BMS status",
       "interval": 10,
       "contents": {
@@ -569,10 +569,46 @@
       }
     },
     {
-      "name": "SET_TS_STATUS",
+      "name": "TS_STATUS_STEER",
+      "topic": "DASnSTEERnCART",
+      "priority": 7,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS"],
+      "description": "BMS status",
+      "interval": 10,
+      "contents": {
+        "ts_status": "TsStatus"
+      }
+    },
+    {
+      "name": "TS_STATUS_HANDCART",
+      "topic": "DASnSTEERnCART",
+      "priority": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["DAS"],
+      "description": "BMS status",
+      "interval": 10,
+      "contents": {
+        "ts_status": "TsStatus"
+      }
+    },
+    {
+      "name": "SET_TS_STATUS_DAS",
       "topic": "BMS_HV",
       "priority": 7,
-      "sending": ["DAS", "HANDCART"],
+      "sending": ["DAS"],
+      "receiving": ["BMS_HV"],
+      "description": "Requests a TS status; only once",
+      "interval": 100,
+      "contents": {
+        "ts_status_set": "Toggle"
+      }
+    },
+    {
+      "name": "SET_TS_STATUS_HANDCART",
+      "topic": "BMS_HV",
+      "priority": 7,
+      "sending": ["DAS"],
       "receiving": ["BMS_HV"],
       "description": "Requests a TS status; only once",
       "interval": 100,

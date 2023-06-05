@@ -87,8 +87,14 @@
                 "HV_ERRORS": {
                     "HV_ERRORS": 5
                 },
-                "TS_STATUS": {
-                    "TS_STATUS": 37
+                "TS_STATUS_DAS": {
+                    "TS_STATUS_DAS": 37
+                },
+                "TS_STATUS_STEER": {
+                    "TS_STATUS_STEER": 69
+                },
+                "TS_STATUS_HANDCART": {
+                    "TS_STATUS_HANDCART": 101
                 }
             }
         },
@@ -101,8 +107,10 @@
                 "HV_FANS_OVERRIDE": {
                     "HV_FANS_OVERRIDE": 38
                 },
-                "SET_TS_STATUS": {
-                    "SET_TS_STATUS_DAS": 70,
+                "SET_TS_STATUS_DAS": {
+                    "SET_TS_STATUS_DAS": 70
+                },
+                "SET_TS_STATUS_HANDCART": {
                     "SET_TS_STATUS_HANDCART": 102
                 },
                 "SET_CELL_BALANCING_STATUS": {
