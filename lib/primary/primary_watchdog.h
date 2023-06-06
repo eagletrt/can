@@ -19,9 +19,7 @@ extern "C" {
 #define primary_INTERVAL_HV_CURRENT 10
 #define primary_INTERVAL_HV_TEMP 100
 #define primary_INTERVAL_HV_ERRORS 10
-#define primary_INTERVAL_TS_STATUS_DAS 10
-#define primary_INTERVAL_TS_STATUS_STEER 10
-#define primary_INTERVAL_TS_STATUS_HANDCART 10
+#define primary_INTERVAL_TS_STATUS 10
 #define primary_INTERVAL_SET_TS_STATUS_DAS 100
 #define primary_INTERVAL_SET_TS_STATUS_HANDCART 100
 #define primary_INTERVAL_STEER_STATUS 100

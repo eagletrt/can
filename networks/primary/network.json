@@ -557,35 +557,11 @@
       }
     },
     {
-      "name": "TS_STATUS_DAS",
+      "name": "TS_STATUS",
       "topic": "DASnSTEERnCART",
       "priority": 7,
       "sending": ["BMS_HV"],
-      "receiving": ["DAS"],
-      "description": "BMS status",
-      "interval": 10,
-      "contents": {
-        "ts_status": "TsStatus"
-      }
-    },
-    {
-      "name": "TS_STATUS_STEER",
-      "topic": "DASnSTEERnCART",
-      "priority": 7,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS"],
-      "description": "BMS status",
-      "interval": 10,
-      "contents": {
-        "ts_status": "TsStatus"
-      }
-    },
-    {
-      "name": "TS_STATUS_HANDCART",
-      "topic": "DASnSTEERnCART",
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["DAS"],
+      "receiving": ["DAS", "STEER", "HANDCART"],
       "description": "BMS status",
       "interval": 10,
       "contents": {

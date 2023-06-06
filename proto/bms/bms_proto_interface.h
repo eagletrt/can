@@ -524,7 +524,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1283: {
+        case 1281: {
             bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)((*map)[index].message_conversion);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
@@ -540,7 +540,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 514: {
+        case 515: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)((*map)[index].message_conversion);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -555,7 +555,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 513: {
+        case 514: {
             bms_balancing_t* msg = (bms_balancing_t*)((*map)[index].message_raw);
             bms::BALANCING* proto_msg = pack->add_balancing();
 			proto_msg->set_cellboard_id((bms::bms_balancing_cellboard_id)msg->cellboard_id);

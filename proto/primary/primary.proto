@@ -34,23 +34,11 @@ enum primary_hv_imd_status_imd_status {
 	primary_hv_imd_status_imd_status_IMD_DEVICE_ERROR = 4;
 	primary_hv_imd_status_imd_status_IMD_EARTH_FAULT = 5;
 }
-enum primary_ts_status_das_ts_status {
-	primary_ts_status_das_ts_status_OFF = 0;
-	primary_ts_status_das_ts_status_PRECHARGE = 1;
-	primary_ts_status_das_ts_status_ON = 2;
-	primary_ts_status_das_ts_status_FATAL = 3;
-}
-enum primary_ts_status_steer_ts_status {
-	primary_ts_status_steer_ts_status_OFF = 0;
-	primary_ts_status_steer_ts_status_PRECHARGE = 1;
-	primary_ts_status_steer_ts_status_ON = 2;
-	primary_ts_status_steer_ts_status_FATAL = 3;
-}
-enum primary_ts_status_handcart_ts_status {
-	primary_ts_status_handcart_ts_status_OFF = 0;
-	primary_ts_status_handcart_ts_status_PRECHARGE = 1;
-	primary_ts_status_handcart_ts_status_ON = 2;
-	primary_ts_status_handcart_ts_status_FATAL = 3;
+enum primary_ts_status_ts_status {
+	primary_ts_status_ts_status_OFF = 0;
+	primary_ts_status_ts_status_PRECHARGE = 1;
+	primary_ts_status_ts_status_ON = 2;
+	primary_ts_status_ts_status_FATAL = 3;
 }
 enum primary_set_ts_status_das_ts_status_set {
 	primary_set_ts_status_das_ts_status_set_OFF = 0;
@@ -285,16 +273,8 @@ message HV_IMD_STATUS{
 	int32 imd_info = 3;
 	uint64 _inner_timestamp = 4;
 }
-message TS_STATUS_DAS{
-	primary_ts_status_das_ts_status ts_status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message TS_STATUS_STEER{
-	primary_ts_status_steer_ts_status ts_status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message TS_STATUS_HANDCART{
-	primary_ts_status_handcart_ts_status ts_status = 1;
+message TS_STATUS{
+	primary_ts_status_ts_status ts_status = 1;
 	uint64 _inner_timestamp = 2;
 }
 message SET_TS_STATUS_DAS{
@@ -623,62 +603,60 @@ message Pack{
 	repeated HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 21;
 	repeated HV_FEEDBACKS_STATUS HV_FEEDBACKS_STATUS = 22;
 	repeated HV_IMD_STATUS HV_IMD_STATUS = 23;
-	repeated TS_STATUS_DAS TS_STATUS_DAS = 24;
-	repeated TS_STATUS_STEER TS_STATUS_STEER = 25;
-	repeated TS_STATUS_HANDCART TS_STATUS_HANDCART = 26;
-	repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 27;
-	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 28;
-	repeated STEER_STATUS STEER_STATUS = 29;
-	repeated SET_CAR_STATUS SET_CAR_STATUS = 30;
-	repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 31;
-	repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 32;
-	repeated CAR_STATUS CAR_STATUS = 33;
-	repeated DAS_ERRORS DAS_ERRORS = 34;
-	repeated LV_CURRENT LV_CURRENT = 35;
-	repeated LV_VOLTAGE LV_VOLTAGE = 36;
-	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 37;
-	repeated LV_TEMPERATURE LV_TEMPERATURE = 38;
-	repeated COOLING_STATUS COOLING_STATUS = 39;
-	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 40;
-	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 41;
-	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 42;
-	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 43;
-	repeated LV_ERRORS LV_ERRORS = 44;
-	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 45;
-	repeated MARKER MARKER = 46;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 47;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 48;
-	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 49;
-	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 50;
-	repeated HANDCART_STATUS HANDCART_STATUS = 51;
-	repeated SPEED SPEED = 52;
-	repeated INV_L_REQUEST INV_L_REQUEST = 53;
-	repeated INV_R_REQUEST INV_R_REQUEST = 54;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 55;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 56;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 57;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 58;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 59;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 60;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 61;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 62;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 63;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 64;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 65;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 66;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 67;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 68;
-	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 69;
-	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 70;
-	repeated FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 71;
-	repeated FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 72;
-	repeated BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 73;
-	repeated BRUSA_ST BRUSA_ST = 74;
-	repeated BRUSA_ACT_I BRUSA_ACT_I = 75;
-	repeated BRUSA_ACT_II BRUSA_ACT_II = 76;
-	repeated BRUSA_TEMP BRUSA_TEMP = 77;
-	repeated BRUSA_ERR BRUSA_ERR = 78;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 79;
-	repeated LC_RESET LC_RESET = 80;
+	repeated TS_STATUS TS_STATUS = 24;
+	repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 25;
+	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 26;
+	repeated STEER_STATUS STEER_STATUS = 27;
+	repeated SET_CAR_STATUS SET_CAR_STATUS = 28;
+	repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 29;
+	repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
+	repeated CAR_STATUS CAR_STATUS = 31;
+	repeated DAS_ERRORS DAS_ERRORS = 32;
+	repeated LV_CURRENT LV_CURRENT = 33;
+	repeated LV_VOLTAGE LV_VOLTAGE = 34;
+	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
+	repeated LV_TEMPERATURE LV_TEMPERATURE = 36;
+	repeated COOLING_STATUS COOLING_STATUS = 37;
+	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
+	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
+	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
+	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
+	repeated LV_ERRORS LV_ERRORS = 42;
+	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
+	repeated MARKER MARKER = 44;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 46;
+	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
+	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
+	repeated HANDCART_STATUS HANDCART_STATUS = 49;
+	repeated SPEED SPEED = 50;
+	repeated INV_L_REQUEST INV_L_REQUEST = 51;
+	repeated INV_R_REQUEST INV_R_REQUEST = 52;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 53;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 54;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
+	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
+	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
+	repeated FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
+	repeated FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
+	repeated BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
+	repeated BRUSA_ST BRUSA_ST = 72;
+	repeated BRUSA_ACT_I BRUSA_ACT_I = 73;
+	repeated BRUSA_ACT_II BRUSA_ACT_II = 74;
+	repeated BRUSA_TEMP BRUSA_TEMP = 75;
+	repeated BRUSA_ERR BRUSA_ERR = 76;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 77;
+	repeated LC_RESET LC_RESET = 78;
 }
 
