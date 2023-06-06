@@ -27,7 +27,7 @@ jobs:
           pip install git+https://github.com/eagletrt/cantools.git
           cantools generate_c_source --use-float --generate-dbc --infolder networks -o .
           mkdir -p /tmp/workspace-evo
-          cp -R networks lib proto /tmp/workspace-evo
+          cp -R networks lib proto dbc /tmp/workspace-evo
 
       - uses: actions/checkout@v2
         with:
