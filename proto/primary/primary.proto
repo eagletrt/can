@@ -287,8 +287,8 @@ message SET_TS_STATUS_HANDCART{
 }
 message STEER_STATUS{
 	double map_pw = 1;
-	bool map_sc = 2;
-	bool map_tv = 3;
+	double map_sc = 2;
+	double map_tv = 3;
 	uint64 _inner_timestamp = 4;
 }
 message SET_CAR_STATUS{
@@ -334,7 +334,7 @@ message LV_VOLTAGE{
 	uint64 _inner_timestamp = 5;
 }
 message LV_TOTAL_VOLTAGE{
-	double total_voltage = 1;
+	float total_voltage = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_TEMPERATURE{

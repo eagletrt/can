@@ -155,15 +155,15 @@ message STEERING_ANGLE{
 }
 message CONTROL_STATE{
 	double map_pw = 1;
-	bool map_sc = 2;
-	bool map_tv = 3;
+	double map_sc = 2;
+	double map_tv = 3;
 	uint64 _inner_timestamp = 4;
 }
 message TPMS{
-	bool fl_pressure = 1;
-	bool fr_pressure = 2;
-	bool rl_pressure = 3;
-	bool rr_pressure = 4;
+	double fl_pressure = 1;
+	double fr_pressure = 2;
+	double rl_pressure = 3;
+	double rr_pressure = 4;
 	uint32 fl_temperature = 5;
 	uint32 fr_temperature = 6;
 	uint32 rl_temperature = 7;
