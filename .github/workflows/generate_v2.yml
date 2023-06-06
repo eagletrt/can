@@ -25,7 +25,7 @@ jobs:
       - name: Run cantools generator
         run: |
           pip install git+https://github.com/eagletrt/cantools.git
-          cantools generate_c_source --infolder networks -o .
+          cantools generate_c_source --use-float --generate-dbc --infolder networks -o .
           mkdir -p /tmp/workspace-evo
           cp -R networks lib proto /tmp/workspace-evo
 
