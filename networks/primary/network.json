@@ -608,7 +608,7 @@
       "name": "SET_TS_STATUS_HANDCART",
       "topic": "BMS_HV",
       "priority": 7,
-      "sending": ["DAS"],
+      "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "description": "Requests a TS status; only once",
       "interval": 100,
