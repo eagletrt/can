@@ -145,8 +145,8 @@ message LAP_COUNT{
 }
 message PEDALS_OUTPUT{
 	uint32 apps = 1;
-	float bse_front = 2;
-	float bse_rear = 3;
+	double bse_front = 2;
+	double bse_rear = 3;
 	uint64 _inner_timestamp = 4;
 }
 message STEERING_ANGLE{
@@ -155,15 +155,15 @@ message STEERING_ANGLE{
 }
 message CONTROL_STATE{
 	double map_pw = 1;
-	uint32 map_sc = 2;
-	uint32 map_tv = 3;
+	bool map_sc = 2;
+	bool map_tv = 3;
 	uint64 _inner_timestamp = 4;
 }
 message TPMS{
-	uint32 fl_pressure = 1;
-	uint32 fr_pressure = 2;
-	uint32 rl_pressure = 3;
-	uint32 rr_pressure = 4;
+	bool fl_pressure = 1;
+	bool fr_pressure = 2;
+	bool rl_pressure = 3;
+	bool rr_pressure = 4;
 	uint32 fl_temperature = 5;
 	uint32 fr_temperature = 6;
 	uint32 rl_temperature = 7;

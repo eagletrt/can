@@ -158,16 +158,16 @@ message STEER_SYSTEM_STATUS{
 	uint64 _inner_timestamp = 2;
 }
 message HV_VOLTAGE{
-	float pack_voltage = 1;
-	float bus_voltage = 2;
+	double pack_voltage = 1;
+	double bus_voltage = 2;
 	double max_cell_voltage = 3;
 	double min_cell_voltage = 4;
 	uint64 _inner_timestamp = 5;
 }
 message HV_CURRENT{
-	float current = 1;
-	float power = 2;
-	float energy = 3;
+	double current = 1;
+	double power = 2;
+	double energy = 3;
 	double soc = 4;
 	uint64 _inner_timestamp = 5;
 }
@@ -214,7 +214,7 @@ message HV_CAN_FORWARD{
 }
 message HV_FANS_OVERRIDE{
 	primary_hv_fans_override_fans_override fans_override = 1;
-	float fans_speed = 2;
+	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message HV_CAN_FORWARD_STATUS{
@@ -223,7 +223,7 @@ message HV_CAN_FORWARD_STATUS{
 }
 message HV_FANS_OVERRIDE_STATUS{
 	primary_hv_fans_override_status_fans_override fans_override = 1;
-	float fans_speed = 2;
+	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACKS_STATUS{
@@ -287,8 +287,8 @@ message SET_TS_STATUS_HANDCART{
 }
 message STEER_STATUS{
 	double map_pw = 1;
-	uint32 map_sc = 2;
-	uint32 map_tv = 3;
+	bool map_sc = 2;
+	bool map_tv = 3;
 	uint64 _inner_timestamp = 4;
 }
 message SET_CAR_STATUS{
@@ -323,7 +323,7 @@ message DAS_ERRORS{
 	uint64 _inner_timestamp = 10;
 }
 message LV_CURRENT{
-	float current = 1;
+	double current = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_VOLTAGE{
@@ -338,23 +338,23 @@ message LV_TOTAL_VOLTAGE{
 	uint64 _inner_timestamp = 2;
 }
 message LV_TEMPERATURE{
-	float bp_temperature_1 = 1;
-	float bp_temperature_2 = 2;
-	float dcdc12_temperature = 3;
-	float dcdc24_temperature = 4;
+	double bp_temperature_1 = 1;
+	double bp_temperature_2 = 2;
+	double dcdc12_temperature = 3;
+	double dcdc24_temperature = 4;
 	uint64 _inner_timestamp = 5;
 }
 message COOLING_STATUS{
-	float radiators_speed = 1;
-	float pumps_speed = 2;
+	double radiators_speed = 1;
+	double pumps_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message SET_RADIATOR_SPEED{
-	float radiators_speed = 1;
+	double radiators_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message SET_PUMPS_SPEED{
-	float pumps_speed = 1;
+	double pumps_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message SET_INVERTER_CONNECTION_STATUS{
@@ -450,10 +450,10 @@ message HANDCART_STATUS{
 	uint64 _inner_timestamp = 2;
 }
 message SPEED{
-	float encoder_r = 1;
-	float encoder_l = 2;
-	float inverter_r = 3;
-	float inverter_l = 4;
+	double encoder_r = 1;
+	double encoder_l = 2;
+	double inverter_r = 3;
+	double inverter_l = 4;
 	uint64 _inner_timestamp = 5;
 }
 message INV_L_REQUEST{
@@ -567,11 +567,11 @@ message BRUSA_ERR{
 	uint64 _inner_timestamp = 1;
 }
 message CONTROL_OUTPUT{
-	float estimated_velocity = 1;
+	double estimated_velocity = 1;
 	double tmax_r = 2;
 	double tmax_l = 3;
-	float torque_l = 4;
-	float torque_r = 5;
+	double torque_l = 4;
+	double torque_r = 5;
 	uint64 _inner_timestamp = 6;
 }
 message LC_RESET{
