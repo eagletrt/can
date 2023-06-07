@@ -36,7 +36,7 @@ BS_:
 BU_: Vector__XXX
 
 
-BO_ 514 INV_R_SEND: 5 Vector__XXX
+BO_ 514 INV_L_SEND: 5 Vector__XXX
  SG_ ReduceLosses m90 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DC_1Q3P m90 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DC_1QMV m90 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -287,7 +287,7 @@ BO_ 514 INV_R_SEND: 5 Vector__XXX
  SG_ Motor_F_N m5 : 8|16@1+ (0.1,0) [0|6553.5] "Hz" Vector__XXX
  SG_ Send_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 386 INV_R_RCV: 6 Vector__XXX
+BO_ 386 INV_L_RCV: 6 Vector__XXX
  SG_ HndWhl82 m82 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Warn_Ballast m143 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ HndWhl64 m64 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
