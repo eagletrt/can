@@ -693,9 +693,6 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["it_rg_monitor"].push(pack->inv_l_rcv(i).it_rg_monitor());
 		(*net_signals)["INV_L_RCV"]["motor_pole"].push(pack->inv_l_rcv(i).motor_pole());
 		(*net_signals)["INV_L_RCV"]["ain_in_1_cutoff"].push(pack->inv_l_rcv(i).ain_in_1_cutoff());
-		(*net_enums)["INV_L_RCV"]["activecontrolmode"].push(pack->inv_l_rcv(i).activecontrolmode());
-		inverters_inv_l_rcv_activecontrolmode_enum_to_string((inverters_inv_l_rcv_activecontrolmode)pack->inv_l_rcv(i).activecontrolmode(), buffer);
-		(*net_strings)["INV_L_RCV"]["activecontrolmode"].push(buffer);
 		(*net_signals)["INV_L_RCV"]["km_rsvd_0"].push(pack->inv_l_rcv(i).km_rsvd_0());
 		(*net_signals)["INV_L_RCV"]["ena82"].push(pack->inv_l_rcv(i).ena82());
 		(*net_signals)["INV_L_RCV"]["ain_in_2_cutoff"].push(pack->inv_l_rcv(i).ain_in_2_cutoff());
@@ -936,9 +933,6 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_RCV"]["cs_ain_2_mode"].push(pack->inv_l_rcv(i).cs_ain_2_mode());
 		inverters_inv_l_rcv_cs_ain_2_mode_enum_to_string((inverters_inv_l_rcv_cs_ain_2_mode)pack->inv_l_rcv(i).cs_ain_2_mode(), buffer);
 		(*net_strings)["INV_L_RCV"]["cs_ain_2_mode"].push(buffer);
-		(*net_enums)["INV_L_RCV"]["ctrlsubmode"].push(pack->inv_l_rcv(i).ctrlsubmode());
-		inverters_inv_l_rcv_ctrlsubmode_enum_to_string((inverters_inv_l_rcv_ctrlsubmode)pack->inv_l_rcv(i).ctrlsubmode(), buffer);
-		(*net_strings)["INV_L_RCV"]["ctrlsubmode"].push(buffer);
 		(*net_signals)["INV_L_RCV"]["km_allow_sync"].push(pack->inv_l_rcv(i).km_allow_sync());
 		(*net_signals)["INV_L_RCV"]["ni82"].push(pack->inv_l_rcv(i).ni82());
 		(*net_signals)["INV_L_RCV"]["ain_in_2_filter"].push(pack->inv_l_rcv(i).ain_in_2_filter());
@@ -998,9 +992,6 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_RCV"]["cs_cmd_type"].push(pack->inv_l_rcv(i).cs_cmd_type());
 		inverters_inv_l_rcv_cs_cmd_type_enum_to_string((inverters_inv_l_rcv_cs_cmd_type)pack->inv_l_rcv(i).cs_cmd_type(), buffer);
 		(*net_strings)["INV_L_RCV"]["cs_cmd_type"].push(buffer);
-		(*net_enums)["INV_L_RCV"]["currentmode"].push(pack->inv_l_rcv(i).currentmode());
-		inverters_inv_l_rcv_currentmode_enum_to_string((inverters_inv_l_rcv_currentmode)pack->inv_l_rcv(i).currentmode(), buffer);
-		(*net_strings)["INV_L_RCV"]["currentmode"].push(buffer);
 		(*net_signals)["INV_L_RCV"]["km_rsvd_12"].push(pack->inv_l_rcv(i).km_rsvd_12());
 		(*net_signals)["INV_L_RCV"]["cal82"].push(pack->inv_l_rcv(i).cal82());
 		(*net_signals)["INV_L_RCV"]["ecode_bit12__15m_plus99"].push(pack->inv_l_rcv(i).ecode_bit12__15m_plus99());
@@ -2052,7 +2043,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 
     switch(id) {
         
-        case 514: {
+        case 513: {
             inverters_inv_l_send_converted_t* msg = (inverters_inv_l_send_converted_t*)((*map)[index].message_conversion);
             inverters::INV_L_SEND* proto_msg = pack->add_inv_l_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_l_send_send_mux)msg->send_mux);
@@ -2311,7 +2302,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
             break;
         }
 
-        case 386: {
+        case 385: {
             inverters_inv_l_rcv_converted_t* msg = (inverters_inv_l_rcv_converted_t*)((*map)[index].message_conversion);
             inverters::INV_L_RCV* proto_msg = pack->add_inv_l_rcv();
 			proto_msg->set_rcv_mux((inverters::inverters_inv_l_rcv_rcv_mux)msg->rcv_mux);
@@ -2420,7 +2411,6 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_it_rg_monitor(msg->it_rg_monitor);
 			proto_msg->set_motor_pole(msg->motor_pole);
 			proto_msg->set_ain_in_1_cutoff(msg->ain_in_1_cutoff);
-			proto_msg->set_activecontrolmode((inverters::inverters_inv_l_rcv_activecontrolmode)msg->activecontrolmode);
 			proto_msg->set_km_rsvd_0(msg->km_rsvd_0);
 			proto_msg->set_ena82(msg->ena82);
 			proto_msg->set_ain_in_2_cutoff(msg->ain_in_2_cutoff);
@@ -2635,7 +2625,6 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_err_overvoltage(msg->err_overvoltage);
 			proto_msg->set_out1(msg->out1);
 			proto_msg->set_cs_ain_2_mode((inverters::inverters_inv_l_rcv_cs_ain_2_mode)msg->cs_ain_2_mode);
-			proto_msg->set_ctrlsubmode((inverters::inverters_inv_l_rcv_ctrlsubmode)msg->ctrlsubmode);
 			proto_msg->set_km_allow_sync(msg->km_allow_sync);
 			proto_msg->set_ni82(msg->ni82);
 			proto_msg->set_ain_in_2_filter(msg->ain_in_2_filter);
@@ -2681,7 +2670,6 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_cal64(msg->cal64);
 			proto_msg->set_out3(msg->out3);
 			proto_msg->set_cs_cmd_type((inverters::inverters_inv_l_rcv_cs_cmd_type)msg->cs_cmd_type);
-			proto_msg->set_currentmode((inverters::inverters_inv_l_rcv_currentmode)msg->currentmode);
 			proto_msg->set_km_rsvd_12(msg->km_rsvd_12);
 			proto_msg->set_cal82(msg->cal82);
 			proto_msg->set_ecode_bit12__15m_plus99(msg->ecode_bit12__15m_plus99);
