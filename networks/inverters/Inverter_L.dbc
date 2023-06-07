@@ -14,7 +14,7 @@ BS_:
 BU_: Vector__XXX
 
 
-BO_ 514 INV_R_SEND: 5 Vector__XXX
+BO_ 514 INV_L_SEND: 5 Vector__XXX
 SG_ Send_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 SG_ Motor_F_N m5 : 8|16@1+ (0.1,0) [0|6553.5] "Hz" Vector__XXX
 SG_ T_dc__Start m7 : 8|16@1+ (1,0) [0|65535] "ms" Vector__XXX
@@ -266,7 +266,7 @@ SG_ Brake_Delay m241 : 8|16@1+ (1,0) [0|65535] "ms" Vector__XXX
 SG_ Axis m248 : 15|32@0+ (1,0) [0|0] "" Vector__XXX
 
 
-BO_ 386 INV_R_RCV: 6 Vector__XXX
+BO_ 386 INV_L_RCV: 6 Vector__XXX
 SG_ Rcv_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 SG_ N_Actual m48 : 8|16@1- (0.1098666341,0) [-3600|3599.9999995547] "Num" Vector__XXX
 SG_ M_R_Acc m53 : 32|16@1+ (1,0) [0|4000] "ms" Vector__XXX
