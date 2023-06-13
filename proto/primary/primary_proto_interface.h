@@ -762,30 +762,32 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->lv_current_size(); i++){
+    for(int i = 0; i < pack->lv_currents_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_current(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_current(i)._inner_timestamp();
-        (*net_signals)["LV_CURRENT"]["_timestamp"].push(pack->lv_current(i)._inner_timestamp());
+        if(pack->lv_currents(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_currents(i)._inner_timestamp();
+        (*net_signals)["LV_CURRENTS"]["_timestamp"].push(pack->lv_currents(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_CURRENT"]["current"].push(pack->lv_current(i).current());
+		(*net_signals)["LV_CURRENTS"]["current_as_battery"].push(pack->lv_currents(i).current_as_battery());
+		(*net_signals)["LV_CURRENTS"]["current_lv_battery"].push(pack->lv_currents(i).current_lv_battery());
+		(*net_signals)["LV_CURRENTS"]["current_charger"].push(pack->lv_currents(i).current_charger());
 
     }
 
-    for(int i = 0; i < pack->lv_voltage_size(); i++){
+    for(int i = 0; i < pack->lv_cells_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_voltage(i)._inner_timestamp();
-        (*net_signals)["LV_VOLTAGE"]["_timestamp"].push(pack->lv_voltage(i)._inner_timestamp());
+        if(pack->lv_cells_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_VOLTAGE"]["_timestamp"].push(pack->lv_cells_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_VOLTAGE"]["voltage_1"].push(pack->lv_voltage(i).voltage_1());
-		(*net_signals)["LV_VOLTAGE"]["voltage_2"].push(pack->lv_voltage(i).voltage_2());
-		(*net_signals)["LV_VOLTAGE"]["voltage_3"].push(pack->lv_voltage(i).voltage_3());
-		(*net_signals)["LV_VOLTAGE"]["voltage_4"].push(pack->lv_voltage(i).voltage_4());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["start_index"].push(pack->lv_cells_voltage(i).start_index());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_0"].push(pack->lv_cells_voltage(i).voltage_0());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_1"].push(pack->lv_cells_voltage(i).voltage_1());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_2"].push(pack->lv_cells_voltage(i).voltage_2());
 
     }
 
@@ -801,18 +803,18 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->lv_temperature_size(); i++){
+    for(int i = 0; i < pack->lv_cells_temp_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_temperature(i)._inner_timestamp();
-        (*net_signals)["LV_TEMPERATURE"]["_timestamp"].push(pack->lv_temperature(i)._inner_timestamp());
+        if(pack->lv_cells_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_temp(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_TEMP"]["_timestamp"].push(pack->lv_cells_temp(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_TEMPERATURE"]["bp_temperature_1"].push(pack->lv_temperature(i).bp_temperature_1());
-		(*net_signals)["LV_TEMPERATURE"]["bp_temperature_2"].push(pack->lv_temperature(i).bp_temperature_2());
-		(*net_signals)["LV_TEMPERATURE"]["dcdc12_temperature"].push(pack->lv_temperature(i).dcdc12_temperature());
-		(*net_signals)["LV_TEMPERATURE"]["dcdc24_temperature"].push(pack->lv_temperature(i).dcdc24_temperature());
+		(*net_signals)["LV_CELLS_TEMP"]["start_index"].push(pack->lv_cells_temp(i).start_index());
+		(*net_signals)["LV_CELLS_TEMP"]["temp0"].push(pack->lv_cells_temp(i).temp0());
+		(*net_signals)["LV_CELLS_TEMP"]["temp1"].push(pack->lv_cells_temp(i).temp1());
+		(*net_signals)["LV_CELLS_TEMP"]["temp2"].push(pack->lv_cells_temp(i).temp2());
 
     }
 
@@ -891,48 +893,70 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
 		(*net_signals)["LV_ERRORS"]["warnings_cell_undervoltage"].push(pack->lv_errors(i).warnings_cell_undervoltage());
 		(*net_signals)["LV_ERRORS"]["warnings_cell_overvoltage"].push(pack->lv_errors(i).warnings_cell_overvoltage());
-		(*net_signals)["LV_ERRORS"]["warnings_open_wire"].push(pack->lv_errors(i).warnings_open_wire());
+		(*net_signals)["LV_ERRORS"]["warnings_battery_open_wire"].push(pack->lv_errors(i).warnings_battery_open_wire());
 		(*net_signals)["LV_ERRORS"]["warnings_can"].push(pack->lv_errors(i).warnings_can());
 		(*net_signals)["LV_ERRORS"]["warnings_spi"].push(pack->lv_errors(i).warnings_spi());
 		(*net_signals)["LV_ERRORS"]["warnings_over_current"].push(pack->lv_errors(i).warnings_over_current());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc12_under_temperature"].push(pack->lv_errors(i).warnings_dcdc12_under_temperature());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc12_over_temperature"].push(pack->lv_errors(i).warnings_dcdc12_over_temperature());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc24_under_temperature"].push(pack->lv_errors(i).warnings_dcdc24_under_temperature());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc24_over_temperature"].push(pack->lv_errors(i).warnings_dcdc24_over_temperature());
 		(*net_signals)["LV_ERRORS"]["warnings_cell_under_temperature"].push(pack->lv_errors(i).warnings_cell_under_temperature());
 		(*net_signals)["LV_ERRORS"]["warnings_cell_over_temperature"].push(pack->lv_errors(i).warnings_cell_over_temperature());
 		(*net_signals)["LV_ERRORS"]["warnings_relay"].push(pack->lv_errors(i).warnings_relay());
-		(*net_signals)["LV_ERRORS"]["warnings_ltc6810"].push(pack->lv_errors(i).warnings_ltc6810());
+		(*net_signals)["LV_ERRORS"]["warnings_bms_monitor"].push(pack->lv_errors(i).warnings_bms_monitor());
 		(*net_signals)["LV_ERRORS"]["warnings_voltages_not_ready"].push(pack->lv_errors(i).warnings_voltages_not_ready());
 		(*net_signals)["LV_ERRORS"]["warnings_mcp23017"].push(pack->lv_errors(i).warnings_mcp23017());
 		(*net_signals)["LV_ERRORS"]["warnings_radiator"].push(pack->lv_errors(i).warnings_radiator());
 		(*net_signals)["LV_ERRORS"]["warnings_fan"].push(pack->lv_errors(i).warnings_fan());
 		(*net_signals)["LV_ERRORS"]["warnings_pump"].push(pack->lv_errors(i).warnings_pump());
 		(*net_signals)["LV_ERRORS"]["warnings_adc_init"].push(pack->lv_errors(i).warnings_adc_init());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc12"].push(pack->lv_errors(i).warnings_dcdc12());
-		(*net_signals)["LV_ERRORS"]["warnings_dcdc24"].push(pack->lv_errors(i).warnings_dcdc24());
+		(*net_signals)["LV_ERRORS"]["warnings_mux"].push(pack->lv_errors(i).warnings_mux());
 		(*net_signals)["LV_ERRORS"]["errors_cell_undervoltage"].push(pack->lv_errors(i).errors_cell_undervoltage());
 		(*net_signals)["LV_ERRORS"]["errors_cell_overvoltage"].push(pack->lv_errors(i).errors_cell_overvoltage());
-		(*net_signals)["LV_ERRORS"]["errors_open_wire"].push(pack->lv_errors(i).errors_open_wire());
+		(*net_signals)["LV_ERRORS"]["errors_battery_open_wire"].push(pack->lv_errors(i).errors_battery_open_wire());
 		(*net_signals)["LV_ERRORS"]["errors_can"].push(pack->lv_errors(i).errors_can());
 		(*net_signals)["LV_ERRORS"]["errors_spi"].push(pack->lv_errors(i).errors_spi());
 		(*net_signals)["LV_ERRORS"]["errors_over_current"].push(pack->lv_errors(i).errors_over_current());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc12_under_temperature"].push(pack->lv_errors(i).errors_dcdc12_under_temperature());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc12_over_temperature"].push(pack->lv_errors(i).errors_dcdc12_over_temperature());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc24_under_temperature"].push(pack->lv_errors(i).errors_dcdc24_under_temperature());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc24_over_temperature"].push(pack->lv_errors(i).errors_dcdc24_over_temperature());
 		(*net_signals)["LV_ERRORS"]["errors_cell_under_temperature"].push(pack->lv_errors(i).errors_cell_under_temperature());
 		(*net_signals)["LV_ERRORS"]["errors_cell_over_temperature"].push(pack->lv_errors(i).errors_cell_over_temperature());
 		(*net_signals)["LV_ERRORS"]["errors_relay"].push(pack->lv_errors(i).errors_relay());
-		(*net_signals)["LV_ERRORS"]["errors_ltc6810"].push(pack->lv_errors(i).errors_ltc6810());
+		(*net_signals)["LV_ERRORS"]["errors_bms_monitor"].push(pack->lv_errors(i).errors_bms_monitor());
 		(*net_signals)["LV_ERRORS"]["errors_voltages_not_ready"].push(pack->lv_errors(i).errors_voltages_not_ready());
 		(*net_signals)["LV_ERRORS"]["errors_mcp23017"].push(pack->lv_errors(i).errors_mcp23017());
 		(*net_signals)["LV_ERRORS"]["errors_radiator"].push(pack->lv_errors(i).errors_radiator());
 		(*net_signals)["LV_ERRORS"]["errors_fan"].push(pack->lv_errors(i).errors_fan());
 		(*net_signals)["LV_ERRORS"]["errors_pump"].push(pack->lv_errors(i).errors_pump());
 		(*net_signals)["LV_ERRORS"]["errors_adc_init"].push(pack->lv_errors(i).errors_adc_init());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc12"].push(pack->lv_errors(i).errors_dcdc12());
-		(*net_signals)["LV_ERRORS"]["errors_dcdc24"].push(pack->lv_errors(i).errors_dcdc24());
+		(*net_signals)["LV_ERRORS"]["errors_mux"].push(pack->lv_errors(i).errors_mux());
+
+    }
+
+    for(int i = 0; i < pack->lv_feedbacks_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lv_feedbacks(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedbacks(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACKS"]["_timestamp"].push(pack->lv_feedbacks(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_bspd_fb"].push(pack->lv_feedbacks(i).feedbacks_bspd_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_imd_fb"].push(pack->lv_feedbacks(i).feedbacks_imd_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_lvms_fb"].push(pack->lv_feedbacks(i).feedbacks_lvms_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_res_fb"].push(pack->lv_feedbacks(i).feedbacks_res_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_lv_encl"].push(pack->lv_feedbacks(i).feedbacks_lv_encl());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_hv_encl_1_fb"].push(pack->lv_feedbacks(i).feedbacks_hv_encl_1_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_hv_encl_2_fb"].push(pack->lv_feedbacks(i).feedbacks_hv_encl_2_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_back_plate_fb"].push(pack->lv_feedbacks(i).feedbacks_back_plate_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_hvd_fb"].push(pack->lv_feedbacks(i).feedbacks_hvd_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_ams_fb"].push(pack->lv_feedbacks(i).feedbacks_ams_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_asms_fb"].push(pack->lv_feedbacks(i).feedbacks_asms_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_interlock_fb"].push(pack->lv_feedbacks(i).feedbacks_interlock_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_inverters_fb"].push(pack->lv_feedbacks(i).feedbacks_inverters_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_pcbs_fb"].push(pack->lv_feedbacks(i).feedbacks_pcbs_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_pumps_fb"].push(pack->lv_feedbacks(i).feedbacks_pumps_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_shutdown_fb"].push(pack->lv_feedbacks(i).feedbacks_shutdown_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_radiators_fb"].push(pack->lv_feedbacks(i).feedbacks_radiators_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_fan_fb"].push(pack->lv_feedbacks(i).feedbacks_fan_fb());
+		(*net_signals)["LV_FEEDBACKS"]["feedbacks_as_actuation_fb"].push(pack->lv_feedbacks(i).feedbacks_as_actuation_fb());
+		(*net_signals)["LV_FEEDBACKS"]["sd_start"].push(pack->lv_feedbacks(i).sd_start());
+		(*net_signals)["LV_FEEDBACKS"]["sd_end"].push(pack->lv_feedbacks(i).sd_end());
 
     }
 
@@ -1402,7 +1426,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 
     switch(id) {
         
-        case 5: {
+        case 3: {
             primary_bms_hv_jmp_to_blt_t* msg = (primary_bms_hv_jmp_to_blt_t*)((*map)[index].message_raw);
             primary::BMS_HV_JMP_TO_BLT* proto_msg = pack->add_bms_hv_jmp_to_blt();
 
@@ -1412,7 +1436,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 37: {
+        case 35: {
             primary_bms_lv_jmp_to_blt_t* msg = (primary_bms_lv_jmp_to_blt_t*)((*map)[index].message_raw);
             primary::BMS_LV_JMP_TO_BLT* proto_msg = pack->add_bms_lv_jmp_to_blt();
 
@@ -1422,7 +1446,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1024: {
+        case 1029: {
             primary_steer_version_t* msg = (primary_steer_version_t*)((*map)[index].message_raw);
             primary::STEER_VERSION* proto_msg = pack->add_steer_version();
 			proto_msg->set_component_version(msg->component_version);
@@ -1434,7 +1458,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1056: {
+        case 1061: {
             primary_das_version_t* msg = (primary_das_version_t*)((*map)[index].message_raw);
             primary::DAS_VERSION* proto_msg = pack->add_das_version();
 			proto_msg->set_component_version(msg->component_version);
@@ -1446,7 +1470,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1088: {
+        case 1093: {
             primary_hv_version_t* msg = (primary_hv_version_t*)((*map)[index].message_raw);
             primary::HV_VERSION* proto_msg = pack->add_hv_version();
 			proto_msg->set_component_version(msg->component_version);
@@ -1458,7 +1482,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1120: {
+        case 1125: {
             primary_lv_version_t* msg = (primary_lv_version_t*)((*map)[index].message_raw);
             primary::LV_VERSION* proto_msg = pack->add_lv_version();
 			proto_msg->set_component_version(msg->component_version);
@@ -1470,7 +1494,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1152: {
+        case 1157: {
             primary_tlm_version_t* msg = (primary_tlm_version_t*)((*map)[index].message_raw);
             primary::TLM_VERSION* proto_msg = pack->add_tlm_version();
 			proto_msg->set_component_version(msg->component_version);
@@ -1482,7 +1506,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 256: {
+        case 261: {
             primary_timestamp_t* msg = (primary_timestamp_t*)((*map)[index].message_raw);
             primary::TIMESTAMP* proto_msg = pack->add_timestamp();
 			proto_msg->set_timestamp(msg->timestamp);
@@ -1493,7 +1517,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 288: {
+        case 293: {
             primary_ambient_temperature_t* msg = (primary_ambient_temperature_t*)((*map)[index].message_raw);
             primary::AMBIENT_TEMPERATURE* proto_msg = pack->add_ambient_temperature();
 			proto_msg->set_temp(msg->temp);
@@ -1516,7 +1540,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 263: {
+        case 256: {
             primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)((*map)[index].message_raw);
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_set_tlm_status_tlm_status)msg->tlm_status);
@@ -1527,7 +1551,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 264: {
+        case 262: {
             primary_tlm_status_t* msg = (primary_tlm_status_t*)((*map)[index].message_raw);
             primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_tlm_status_tlm_status)msg->tlm_status);
@@ -1538,7 +1562,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1799: {
+        case 1792: {
             primary_steer_system_status_t* msg = (primary_steer_system_status_t*)((*map)[index].message_raw);
             primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
 			proto_msg->set_soc_temp(msg->soc_temp);
@@ -1549,7 +1573,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 778: {
+        case 775: {
             primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)((*map)[index].message_conversion);
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
 			proto_msg->set_pack_voltage(msg->pack_voltage);
@@ -1563,7 +1587,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 810: {
+        case 807: {
             primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)((*map)[index].message_conversion);
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
 			proto_msg->set_current(msg->current);
@@ -1577,7 +1601,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 842: {
+        case 839: {
             primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)((*map)[index].message_conversion);
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
 			proto_msg->set_average_temp(msg->average_temp);
@@ -1590,7 +1614,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 10: {
+        case 7: {
             primary_hv_errors_t* msg = (primary_hv_errors_t*)((*map)[index].message_raw);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
 			proto_msg->set_warnings_cell_low_voltage(msg->warnings_cell_low_voltage);
@@ -1628,7 +1652,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 9: {
+        case 1: {
             primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)((*map)[index].message_raw);
             primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
 			proto_msg->set_can_forward_set((primary::primary_hv_can_forward_can_forward_set)msg->can_forward_set);
@@ -1639,7 +1663,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 41: {
+        case 33: {
             primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)((*map)[index].message_conversion);
             primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_fans_override)msg->fans_override);
@@ -1674,7 +1698,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 769: {
+        case 778: {
             primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)((*map)[index].message_raw);
             primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
 			proto_msg->set_feedbacks_status_feedback_tsal_green_fault(msg->feedbacks_status_feedback_tsal_green_fault);
@@ -1722,7 +1746,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 801: {
+        case 810: {
             primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)((*map)[index].message_raw);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
@@ -1735,7 +1759,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 42: {
+        case 39: {
             primary_ts_status_t* msg = (primary_ts_status_t*)((*map)[index].message_raw);
             primary::TS_STATUS* proto_msg = pack->add_ts_status();
 			proto_msg->set_ts_status((primary::primary_ts_status_ts_status)msg->ts_status);
@@ -1746,7 +1770,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 73: {
+        case 65: {
             primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_das_ts_status_set)msg->ts_status_set);
@@ -1757,7 +1781,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 105: {
+        case 97: {
             primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_handcart_ts_status_set)msg->ts_status_set);
@@ -1815,7 +1839,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 520: {
+        case 518: {
             primary_car_status_t* msg = (primary_car_status_t*)((*map)[index].message_raw);
             primary::CAR_STATUS* proto_msg = pack->add_car_status();
 			proto_msg->set_inverter_l((primary::primary_car_status_inverter_l)msg->inverter_l);
@@ -1828,7 +1852,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 8: {
+        case 6: {
             primary_das_errors_t* msg = (primary_das_errors_t*)((*map)[index].message_raw);
             primary::DAS_ERRORS* proto_msg = pack->add_das_errors();
 			proto_msg->set_das_error_pedal_adc(msg->das_error_pedal_adc);
@@ -1847,10 +1871,12 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 833: {
-            primary_lv_current_converted_t* msg = (primary_lv_current_converted_t*)((*map)[index].message_conversion);
-            primary::LV_CURRENT* proto_msg = pack->add_lv_current();
-			proto_msg->set_current(msg->current);
+        case 842: {
+            primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)((*map)[index].message_conversion);
+            primary::LV_CURRENTS* proto_msg = pack->add_lv_currents();
+			proto_msg->set_current_as_battery(msg->current_as_battery);
+			proto_msg->set_current_lv_battery(msg->current_lv_battery);
+			proto_msg->set_current_charger(msg->current_charger);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1858,13 +1884,13 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 865: {
-            primary_lv_voltage_converted_t* msg = (primary_lv_voltage_converted_t*)((*map)[index].message_conversion);
-            primary::LV_VOLTAGE* proto_msg = pack->add_lv_voltage();
+        case 874: {
+            primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)((*map)[index].message_conversion);
+            primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_voltage_0(msg->voltage_0);
 			proto_msg->set_voltage_1(msg->voltage_1);
 			proto_msg->set_voltage_2(msg->voltage_2);
-			proto_msg->set_voltage_3(msg->voltage_3);
-			proto_msg->set_voltage_4(msg->voltage_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1872,7 +1898,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 897: {
+        case 906: {
             primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)((*map)[index].message_conversion);
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
 			proto_msg->set_total_voltage(msg->total_voltage);
@@ -1883,13 +1909,13 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 929: {
-            primary_lv_temperature_converted_t* msg = (primary_lv_temperature_converted_t*)((*map)[index].message_conversion);
-            primary::LV_TEMPERATURE* proto_msg = pack->add_lv_temperature();
-			proto_msg->set_bp_temperature_1(msg->bp_temperature_1);
-			proto_msg->set_bp_temperature_2(msg->bp_temperature_2);
-			proto_msg->set_dcdc12_temperature(msg->dcdc12_temperature);
-			proto_msg->set_dcdc24_temperature(msg->dcdc24_temperature);
+        case 938: {
+            primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)((*map)[index].message_conversion);
+            primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_temp0(msg->temp0);
+			proto_msg->set_temp1(msg->temp1);
+			proto_msg->set_temp2(msg->temp2);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1897,7 +1923,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 961: {
+        case 970: {
             primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)((*map)[index].message_conversion);
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -1909,7 +1935,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 771: {
+        case 777: {
             primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -1920,7 +1946,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 803: {
+        case 809: {
             primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
@@ -1931,7 +1957,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 259: {
+        case 265: {
             primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
 			proto_msg->set_status((primary::primary_set_inverter_connection_status_status)msg->status);
@@ -1942,7 +1968,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 257: {
+        case 266: {
             primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
 			proto_msg->set_status((primary::primary_inverter_connection_status_status)msg->status);
@@ -1953,53 +1979,43 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1: {
+        case 522: {
             primary_lv_errors_t* msg = (primary_lv_errors_t*)((*map)[index].message_raw);
             primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
 			proto_msg->set_warnings_cell_undervoltage(msg->warnings_cell_undervoltage);
 			proto_msg->set_warnings_cell_overvoltage(msg->warnings_cell_overvoltage);
-			proto_msg->set_warnings_open_wire(msg->warnings_open_wire);
+			proto_msg->set_warnings_battery_open_wire(msg->warnings_battery_open_wire);
 			proto_msg->set_warnings_can(msg->warnings_can);
 			proto_msg->set_warnings_spi(msg->warnings_spi);
 			proto_msg->set_warnings_over_current(msg->warnings_over_current);
-			proto_msg->set_warnings_dcdc12_under_temperature(msg->warnings_dcdc12_under_temperature);
-			proto_msg->set_warnings_dcdc12_over_temperature(msg->warnings_dcdc12_over_temperature);
-			proto_msg->set_warnings_dcdc24_under_temperature(msg->warnings_dcdc24_under_temperature);
-			proto_msg->set_warnings_dcdc24_over_temperature(msg->warnings_dcdc24_over_temperature);
 			proto_msg->set_warnings_cell_under_temperature(msg->warnings_cell_under_temperature);
 			proto_msg->set_warnings_cell_over_temperature(msg->warnings_cell_over_temperature);
 			proto_msg->set_warnings_relay(msg->warnings_relay);
-			proto_msg->set_warnings_ltc6810(msg->warnings_ltc6810);
+			proto_msg->set_warnings_bms_monitor(msg->warnings_bms_monitor);
 			proto_msg->set_warnings_voltages_not_ready(msg->warnings_voltages_not_ready);
 			proto_msg->set_warnings_mcp23017(msg->warnings_mcp23017);
 			proto_msg->set_warnings_radiator(msg->warnings_radiator);
 			proto_msg->set_warnings_fan(msg->warnings_fan);
 			proto_msg->set_warnings_pump(msg->warnings_pump);
 			proto_msg->set_warnings_adc_init(msg->warnings_adc_init);
-			proto_msg->set_warnings_dcdc12(msg->warnings_dcdc12);
-			proto_msg->set_warnings_dcdc24(msg->warnings_dcdc24);
+			proto_msg->set_warnings_mux(msg->warnings_mux);
 			proto_msg->set_errors_cell_undervoltage(msg->errors_cell_undervoltage);
 			proto_msg->set_errors_cell_overvoltage(msg->errors_cell_overvoltage);
-			proto_msg->set_errors_open_wire(msg->errors_open_wire);
+			proto_msg->set_errors_battery_open_wire(msg->errors_battery_open_wire);
 			proto_msg->set_errors_can(msg->errors_can);
 			proto_msg->set_errors_spi(msg->errors_spi);
 			proto_msg->set_errors_over_current(msg->errors_over_current);
-			proto_msg->set_errors_dcdc12_under_temperature(msg->errors_dcdc12_under_temperature);
-			proto_msg->set_errors_dcdc12_over_temperature(msg->errors_dcdc12_over_temperature);
-			proto_msg->set_errors_dcdc24_under_temperature(msg->errors_dcdc24_under_temperature);
-			proto_msg->set_errors_dcdc24_over_temperature(msg->errors_dcdc24_over_temperature);
 			proto_msg->set_errors_cell_under_temperature(msg->errors_cell_under_temperature);
 			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
 			proto_msg->set_errors_relay(msg->errors_relay);
-			proto_msg->set_errors_ltc6810(msg->errors_ltc6810);
+			proto_msg->set_errors_bms_monitor(msg->errors_bms_monitor);
 			proto_msg->set_errors_voltages_not_ready(msg->errors_voltages_not_ready);
 			proto_msg->set_errors_mcp23017(msg->errors_mcp23017);
 			proto_msg->set_errors_radiator(msg->errors_radiator);
 			proto_msg->set_errors_fan(msg->errors_fan);
 			proto_msg->set_errors_pump(msg->errors_pump);
 			proto_msg->set_errors_adc_init(msg->errors_adc_init);
-			proto_msg->set_errors_dcdc12(msg->errors_dcdc12);
-			proto_msg->set_errors_dcdc24(msg->errors_dcdc24);
+			proto_msg->set_errors_mux(msg->errors_mux);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2007,7 +2023,38 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 289: {
+        case 298: {
+            primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)((*map)[index].message_conversion);
+            primary::LV_FEEDBACKS* proto_msg = pack->add_lv_feedbacks();
+			proto_msg->set_feedbacks_bspd_fb(msg->feedbacks_bspd_fb);
+			proto_msg->set_feedbacks_imd_fb(msg->feedbacks_imd_fb);
+			proto_msg->set_feedbacks_lvms_fb(msg->feedbacks_lvms_fb);
+			proto_msg->set_feedbacks_res_fb(msg->feedbacks_res_fb);
+			proto_msg->set_feedbacks_lv_encl(msg->feedbacks_lv_encl);
+			proto_msg->set_feedbacks_hv_encl_1_fb(msg->feedbacks_hv_encl_1_fb);
+			proto_msg->set_feedbacks_hv_encl_2_fb(msg->feedbacks_hv_encl_2_fb);
+			proto_msg->set_feedbacks_back_plate_fb(msg->feedbacks_back_plate_fb);
+			proto_msg->set_feedbacks_hvd_fb(msg->feedbacks_hvd_fb);
+			proto_msg->set_feedbacks_ams_fb(msg->feedbacks_ams_fb);
+			proto_msg->set_feedbacks_asms_fb(msg->feedbacks_asms_fb);
+			proto_msg->set_feedbacks_interlock_fb(msg->feedbacks_interlock_fb);
+			proto_msg->set_feedbacks_inverters_fb(msg->feedbacks_inverters_fb);
+			proto_msg->set_feedbacks_pcbs_fb(msg->feedbacks_pcbs_fb);
+			proto_msg->set_feedbacks_pumps_fb(msg->feedbacks_pumps_fb);
+			proto_msg->set_feedbacks_shutdown_fb(msg->feedbacks_shutdown_fb);
+			proto_msg->set_feedbacks_radiators_fb(msg->feedbacks_radiators_fb);
+			proto_msg->set_feedbacks_fan_fb(msg->feedbacks_fan_fb);
+			proto_msg->set_feedbacks_as_actuation_fb(msg->feedbacks_as_actuation_fb);
+			proto_msg->set_sd_start(msg->sd_start);
+			proto_msg->set_sd_end(msg->sd_end);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 330: {
             primary_shutdown_status_t* msg = (primary_shutdown_status_t*)((*map)[index].message_raw);
             primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
 			proto_msg->set_input(msg->input);
@@ -2019,7 +2066,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 7: {
+        case 0: {
             primary_marker_t* msg = (primary_marker_t*)((*map)[index].message_raw);
             primary::MARKER* proto_msg = pack->add_marker();
 
@@ -2071,7 +2118,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 521: {
+        case 545: {
             primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)((*map)[index].message_raw);
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
 			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
@@ -2082,7 +2129,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 777: {
+        case 769: {
             primary_handcart_status_t* msg = (primary_handcart_status_t*)((*map)[index].message_raw);
             primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
 			proto_msg->set_connected(msg->connected);
@@ -2093,7 +2140,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 552: {
+        case 550: {
             primary_speed_converted_t* msg = (primary_speed_converted_t*)((*map)[index].message_conversion);
             primary::SPEED* proto_msg = pack->add_speed();
 			proto_msg->set_encoder_r(msg->encoder_r);
@@ -2399,7 +2446,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 296: {
+        case 294: {
             primary_control_output_converted_t* msg = (primary_control_output_converted_t*)((*map)[index].message_conversion);
             primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
 			proto_msg->set_estimated_velocity(msg->estimated_velocity);
@@ -2414,7 +2461,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 518: {
+        case 520: {
             primary_lc_reset_t* msg = (primary_lc_reset_t*)((*map)[index].message_raw);
             primary::LC_RESET* proto_msg = pack->add_lc_reset();
 

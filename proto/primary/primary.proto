@@ -322,26 +322,28 @@ message DAS_ERRORS{
 	bool das_error_FSM = 9;
 	uint64 _inner_timestamp = 10;
 }
-message LV_CURRENT{
-	double current = 1;
-	uint64 _inner_timestamp = 2;
+message LV_CURRENTS{
+	double current_as_battery = 1;
+	double current_lv_battery = 2;
+	double current_charger = 3;
+	uint64 _inner_timestamp = 4;
 }
-message LV_VOLTAGE{
-	double voltage_1 = 1;
-	double voltage_2 = 2;
-	double voltage_3 = 3;
-	double voltage_4 = 4;
+message LV_CELLS_VOLTAGE{
+	uint32 start_index = 1;
+	double voltage_0 = 2;
+	double voltage_1 = 3;
+	double voltage_2 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message LV_TOTAL_VOLTAGE{
 	float total_voltage = 1;
 	uint64 _inner_timestamp = 2;
 }
-message LV_TEMPERATURE{
-	double bp_temperature_1 = 1;
-	double bp_temperature_2 = 2;
-	double dcdc12_temperature = 3;
-	double dcdc24_temperature = 4;
+message LV_CELLS_TEMP{
+	uint32 start_index = 1;
+	double temp0 = 2;
+	double temp1 = 3;
+	double temp2 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message COOLING_STATUS{
@@ -368,49 +370,63 @@ message INVERTER_CONNECTION_STATUS{
 message LV_ERRORS{
 	bool warnings_CELL_UNDERVOLTAGE = 1;
 	bool warnings_CELL_OVERVOLTAGE = 2;
-	bool warnings_OPEN_WIRE = 3;
+	bool warnings_BATTERY_OPEN_WIRE = 3;
 	bool warnings_CAN = 4;
 	bool warnings_SPI = 5;
 	bool warnings_OVER_CURRENT = 6;
-	bool warnings_DCDC12_UNDER_TEMPERATURE = 7;
-	bool warnings_DCDC12_OVER_TEMPERATURE = 8;
-	bool warnings_DCDC24_UNDER_TEMPERATURE = 9;
-	bool warnings_DCDC24_OVER_TEMPERATURE = 10;
-	bool warnings_CELL_UNDER_TEMPERATURE = 11;
-	bool warnings_CELL_OVER_TEMPERATURE = 12;
-	bool warnings_RELAY = 13;
-	bool warnings_LTC6810 = 14;
-	bool warnings_VOLTAGES_NOT_READY = 15;
-	bool warnings_MCP23017 = 16;
-	bool warnings_RADIATOR = 17;
-	bool warnings_FAN = 18;
-	bool warnings_PUMP = 19;
-	bool warnings_ADC_INIT = 20;
-	bool warnings_DCDC12 = 21;
-	bool warnings_DCDC24 = 22;
-	bool errors_CELL_UNDERVOLTAGE = 23;
-	bool errors_CELL_OVERVOLTAGE = 24;
-	bool errors_OPEN_WIRE = 25;
-	bool errors_CAN = 26;
-	bool errors_SPI = 27;
-	bool errors_OVER_CURRENT = 28;
-	bool errors_DCDC12_UNDER_TEMPERATURE = 29;
-	bool errors_DCDC12_OVER_TEMPERATURE = 30;
-	bool errors_DCDC24_UNDER_TEMPERATURE = 31;
-	bool errors_DCDC24_OVER_TEMPERATURE = 32;
-	bool errors_CELL_UNDER_TEMPERATURE = 33;
-	bool errors_CELL_OVER_TEMPERATURE = 34;
-	bool errors_RELAY = 35;
-	bool errors_LTC6810 = 36;
-	bool errors_VOLTAGES_NOT_READY = 37;
-	bool errors_MCP23017 = 38;
-	bool errors_RADIATOR = 39;
-	bool errors_FAN = 40;
-	bool errors_PUMP = 41;
-	bool errors_ADC_INIT = 42;
-	bool errors_DCDC12 = 43;
-	bool errors_DCDC24 = 44;
-	uint64 _inner_timestamp = 45;
+	bool warnings_CELL_UNDER_TEMPERATURE = 7;
+	bool warnings_CELL_OVER_TEMPERATURE = 8;
+	bool warnings_RELAY = 9;
+	bool warnings_BMS_MONITOR = 10;
+	bool warnings_VOLTAGES_NOT_READY = 11;
+	bool warnings_MCP23017 = 12;
+	bool warnings_RADIATOR = 13;
+	bool warnings_FAN = 14;
+	bool warnings_PUMP = 15;
+	bool warnings_ADC_INIT = 16;
+	bool warnings_MUX = 17;
+	bool errors_CELL_UNDERVOLTAGE = 18;
+	bool errors_CELL_OVERVOLTAGE = 19;
+	bool errors_BATTERY_OPEN_WIRE = 20;
+	bool errors_CAN = 21;
+	bool errors_SPI = 22;
+	bool errors_OVER_CURRENT = 23;
+	bool errors_CELL_UNDER_TEMPERATURE = 24;
+	bool errors_CELL_OVER_TEMPERATURE = 25;
+	bool errors_RELAY = 26;
+	bool errors_BMS_MONITOR = 27;
+	bool errors_VOLTAGES_NOT_READY = 28;
+	bool errors_MCP23017 = 29;
+	bool errors_RADIATOR = 30;
+	bool errors_FAN = 31;
+	bool errors_PUMP = 32;
+	bool errors_ADC_INIT = 33;
+	bool errors_MUX = 34;
+	uint64 _inner_timestamp = 35;
+}
+message LV_FEEDBACKS{
+	bool feedbacks_BSPD_FB = 1;
+	bool feedbacks_IMD_FB = 2;
+	bool feedbacks_LVMS_FB = 3;
+	bool feedbacks_RES_FB = 4;
+	bool feedbacks_LV_ENCL = 5;
+	bool feedbacks_HV_ENCL_1_FB = 6;
+	bool feedbacks_HV_ENCL_2_FB = 7;
+	bool feedbacks_BACK_PLATE_FB = 8;
+	bool feedbacks_HVD_FB = 9;
+	bool feedbacks_AMS_FB = 10;
+	bool feedbacks_ASMS_FB = 11;
+	bool feedbacks_INTERLOCK_FB = 12;
+	bool feedbacks_INVERTERS_FB = 13;
+	bool feedbacks_PCBS_FB = 14;
+	bool feedbacks_PUMPS_FB = 15;
+	bool feedbacks_SHUTDOWN_FB = 16;
+	bool feedbacks_RADIATORS_FB = 17;
+	bool feedbacks_FAN_FB = 18;
+	bool feedbacks_AS_ACTUATION_FB = 19;
+	double sd_start = 20;
+	double sd_end = 21;
+	uint64 _inner_timestamp = 22;
 }
 message SHUTDOWN_STATUS{
 	bool input = 1;
@@ -612,51 +628,52 @@ message Pack{
 	repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 30;
 	repeated CAR_STATUS CAR_STATUS = 31;
 	repeated DAS_ERRORS DAS_ERRORS = 32;
-	repeated LV_CURRENT LV_CURRENT = 33;
-	repeated LV_VOLTAGE LV_VOLTAGE = 34;
+	repeated LV_CURRENTS LV_CURRENTS = 33;
+	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 34;
 	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 35;
-	repeated LV_TEMPERATURE LV_TEMPERATURE = 36;
+	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 36;
 	repeated COOLING_STATUS COOLING_STATUS = 37;
 	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 38;
 	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 39;
 	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 40;
 	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 41;
 	repeated LV_ERRORS LV_ERRORS = 42;
-	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 43;
-	repeated MARKER MARKER = 44;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 45;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 46;
-	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 47;
-	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 48;
-	repeated HANDCART_STATUS HANDCART_STATUS = 49;
-	repeated SPEED SPEED = 50;
-	repeated INV_L_REQUEST INV_L_REQUEST = 51;
-	repeated INV_R_REQUEST INV_R_REQUEST = 52;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 53;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 54;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 55;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 56;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 57;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 58;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 59;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 60;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 61;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 62;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 63;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 64;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 65;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 66;
-	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 67;
-	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 68;
-	repeated FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 69;
-	repeated FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 70;
-	repeated BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 71;
-	repeated BRUSA_ST BRUSA_ST = 72;
-	repeated BRUSA_ACT_I BRUSA_ACT_I = 73;
-	repeated BRUSA_ACT_II BRUSA_ACT_II = 74;
-	repeated BRUSA_TEMP BRUSA_TEMP = 75;
-	repeated BRUSA_ERR BRUSA_ERR = 76;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 77;
-	repeated LC_RESET LC_RESET = 78;
+	repeated LV_FEEDBACKS LV_FEEDBACKS = 43;
+	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 44;
+	repeated MARKER MARKER = 45;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 46;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 47;
+	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 48;
+	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 49;
+	repeated HANDCART_STATUS HANDCART_STATUS = 50;
+	repeated SPEED SPEED = 51;
+	repeated INV_L_REQUEST INV_L_REQUEST = 52;
+	repeated INV_R_REQUEST INV_R_REQUEST = 53;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 54;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 55;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 56;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 57;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 58;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 59;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 60;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 61;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 62;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 63;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 64;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 65;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 66;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 67;
+	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 68;
+	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 69;
+	repeated FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 70;
+	repeated FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 71;
+	repeated BRUSA_NLG5_CTL BRUSA_NLG5_CTL = 72;
+	repeated BRUSA_ST BRUSA_ST = 73;
+	repeated BRUSA_ACT_I BRUSA_ACT_I = 74;
+	repeated BRUSA_ACT_II BRUSA_ACT_II = 75;
+	repeated BRUSA_TEMP BRUSA_TEMP = 76;
+	repeated BRUSA_ERR BRUSA_ERR = 77;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 78;
+	repeated LC_RESET LC_RESET = 79;
 }
 
