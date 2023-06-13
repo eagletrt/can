@@ -246,7 +246,7 @@
     {
       "name": "BMS_HV_JMP_TO_BLT",
       "topic": "FLASH",
-      "priority": 7,
+      "fixed_id": 0,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
@@ -254,7 +254,7 @@
     {
       "name": "BMS_LV_JMP_TO_BLT",
       "topic": "FLASH",
-      "priority": 7,
+      "fixed_id": 32,
       "sending": ["HANDCART"],
       "receiving": ["BMS_LV"],
       "contents": {}
