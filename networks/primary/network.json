@@ -118,6 +118,7 @@
       ]
     },
     "InvErrors": {
+        
       "type": "bitset",
       "items": [
         "BAD_PARAM",
@@ -173,6 +174,10 @@
         "G_OFF",
         "BRK1"
       ]
+    },
+    "HandcartStatus": {
+      "type": "enum",
+      "items": ["CHECK", "IDLE", "PRECHARGE", "READY", "CHARGE", "CHARGE_DONE", "BALANCING", "ERROR"]
     },
     "RaceType": {
       "type": "enum",
@@ -1017,18 +1022,6 @@
       }
     },
     {
-      "name": "HANDCART_STATUS",
-      "topic": "BMS_HV",
-      "priority": 4,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Sends updates on the presence of the handcart",
-      "interval": 500,
-      "contents": {
-        "connected": "bool"
-      }
-    },
-    {
       "name": "SPEED",
       "topic": "STEER",
       "priority": 5,
@@ -1240,48 +1233,6 @@
       "contents": {}
     },
     {
-      "name": "BRUSA_NLG5_CTL",
-      "fixed_id": 618,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ST",
-      "fixed_id": 610,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ACT_I",
-      "fixed_id": 611,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ACT_II",
-      "fixed_id": 612,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_TEMP",
-      "fixed_id": 613,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ERR",
-      "fixed_id": 614,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
       "name": "CONTROL_OUTPUT",
       "topic": "STEER",
       "priority": 6,
@@ -1324,6 +1275,84 @@
       "sending": ["STEER"],
       "receiving": ["TLM"],
       "contents": {}
+    },
+    {
+      "name": "HANDCART_STATUS",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Sends updates on the presence of the handcart",
+      "interval": 500,
+      "contents": {
+        "connected": "bool"
+      }
+    },
+    {
+      "name": "HANDCART_SETTINGS",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Setting from handcart to CAN",
+      "interval": 500,
+      "contents": {
+        "target_voltage": {
+          "type": "float32",
+          "range": [300, 454],
+          "force": "uint8"
+        },
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint8"
+        },
+        "acc_charge_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "grid_max_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "status": "HandcartStatus"
+      }
+    },
+    {
+      "name": "HANDCART_SETTINGS_SET",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["TLM"],
+      "receiving": ["HANDCART"],
+      "description": "Setting from telemetry to handcart",
+      "interval": 500,
+      "contents": {
+        "target_voltage": {
+          "type": "float32",
+          "range": [300, 454],
+          "force": "uint8"
+        },
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint8"
+        },
+        "acc_charge_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "grid_max_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "status": "HandcartStatus"
+      }
     }
   ]
 }
