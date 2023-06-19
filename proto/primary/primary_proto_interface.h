@@ -251,6 +251,178 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
     char buffer[1024];
     
+    for(int i = 0; i < pack->nlg5_diag_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_diag_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_diag_tx(i)._inner_timestamp();
+        (*net_signals)["NLG5_DIAG_TX"]["_timestamp"].push(pack->nlg5_diag_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_DIAG_TX"]["lad_d_paramrp"].push(pack->nlg5_diag_tx(i).lad_d_paramrp());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_diag_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_diag_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_diag_rx(i)._inner_timestamp();
+        (*net_signals)["NLG5_DIAG_RX"]["_timestamp"].push(pack->nlg5_diag_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_DIAG_RX"]["lad_d_paramrq"].push(pack->nlg5_diag_rx(i).lad_d_paramrq());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_err_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_err(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_err(i)._inner_timestamp();
+        (*net_signals)["NLG5_ERR"]["_timestamp"].push(pack->nlg5_err(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_ERR"]["nlg5_e_oov"].push(pack->nlg5_err(i).nlg5_e_oov());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_mov_ii"].push(pack->nlg5_err(i).nlg5_e_mov_ii());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_mov_i"].push(pack->nlg5_err(i).nlg5_e_mov_i());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_sc"].push(pack->nlg5_err(i).nlg5_e_sc());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_p_om"].push(pack->nlg5_err(i).nlg5_e_p_om());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_p_mv"].push(pack->nlg5_err(i).nlg5_e_p_mv());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_of"].push(pack->nlg5_err(i).nlg5_e_of());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_mf"].push(pack->nlg5_err(i).nlg5_e_mf());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_b_p"].push(pack->nlg5_err(i).nlg5_e_b_p());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_c"].push(pack->nlg5_err(i).nlg5_e_t_c());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_pow"].push(pack->nlg5_err(i).nlg5_e_t_pow());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_dio"].push(pack->nlg5_err(i).nlg5_e_t_dio());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_tr"].push(pack->nlg5_err(i).nlg5_e_t_tr());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_ext1"].push(pack->nlg5_err(i).nlg5_e_t_ext1());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_ext2"].push(pack->nlg5_err(i).nlg5_e_t_ext2());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_t_ext3"].push(pack->nlg5_err(i).nlg5_e_t_ext3());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_f_crc"].push(pack->nlg5_err(i).nlg5_e_f_crc());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_nv_crc"].push(pack->nlg5_err(i).nlg5_e_nv_crc());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_es_crc"].push(pack->nlg5_err(i).nlg5_e_es_crc());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_ep_crc"].push(pack->nlg5_err(i).nlg5_e_ep_crc());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_wdt"].push(pack->nlg5_err(i).nlg5_e_wdt());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_init"].push(pack->nlg5_err(i).nlg5_e_init());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_c_to"].push(pack->nlg5_err(i).nlg5_e_c_to());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_c_off"].push(pack->nlg5_err(i).nlg5_e_c_off());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_c_tx"].push(pack->nlg5_err(i).nlg5_e_c_tx());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_c_rx"].push(pack->nlg5_err(i).nlg5_e_c_rx());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_sdt_bt"].push(pack->nlg5_err(i).nlg5_e_sdt_bt());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_sdt_bv"].push(pack->nlg5_err(i).nlg5_e_sdt_bv());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_sdt_ah"].push(pack->nlg5_err(i).nlg5_e_sdt_ah());
+		(*net_signals)["NLG5_ERR"]["nlg5_e_sdt_ct"].push(pack->nlg5_err(i).nlg5_e_sdt_ct());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_pl_mv"].push(pack->nlg5_err(i).nlg5_w_pl_mv());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_pl_bv"].push(pack->nlg5_err(i).nlg5_w_pl_bv());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_pl_it"].push(pack->nlg5_err(i).nlg5_w_pl_it());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_c_vor"].push(pack->nlg5_err(i).nlg5_w_c_vor());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_cm_na"].push(pack->nlg5_err(i).nlg5_w_cm_na());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_od"].push(pack->nlg5_err(i).nlg5_w_od());
+		(*net_signals)["NLG5_ERR"]["nlg5_w_sc_m"].push(pack->nlg5_err(i).nlg5_w_sc_m());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_temp_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_temp(i)._inner_timestamp();
+        (*net_signals)["NLG5_TEMP"]["_timestamp"].push(pack->nlg5_temp(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_TEMP"]["nlg5_p_tmp"].push(pack->nlg5_temp(i).nlg5_p_tmp());
+		(*net_signals)["NLG5_TEMP"]["nlg5_tmp_ext1"].push(pack->nlg5_temp(i).nlg5_tmp_ext1());
+		(*net_signals)["NLG5_TEMP"]["nlg5_temp_ext2"].push(pack->nlg5_temp(i).nlg5_temp_ext2());
+		(*net_signals)["NLG5_TEMP"]["nlg5_tmp_ext3"].push(pack->nlg5_temp(i).nlg5_tmp_ext3());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_act_ii_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_act_ii(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_act_ii(i)._inner_timestamp();
+        (*net_signals)["NLG5_ACT_II"]["_timestamp"].push(pack->nlg5_act_ii(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_ACT_II"]["nlg5_s_mc_m_cp"].push(pack->nlg5_act_ii(i).nlg5_s_mc_m_cp());
+		(*net_signals)["NLG5_ACT_II"]["nlg5_s_mc_m_pi"].push(pack->nlg5_act_ii(i).nlg5_s_mc_m_pi());
+		(*net_signals)["NLG5_ACT_II"]["nlg5_abv"].push(pack->nlg5_act_ii(i).nlg5_abv());
+		(*net_signals)["NLG5_ACT_II"]["nlg5_ahc_ext"].push(pack->nlg5_act_ii(i).nlg5_ahc_ext());
+		(*net_signals)["NLG5_ACT_II"]["nlg5_oc_bo"].push(pack->nlg5_act_ii(i).nlg5_oc_bo());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_act_i_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_act_i(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_act_i(i)._inner_timestamp();
+        (*net_signals)["NLG5_ACT_I"]["_timestamp"].push(pack->nlg5_act_i(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_ACT_I"]["nlg5_mc_act"].push(pack->nlg5_act_i(i).nlg5_mc_act());
+		(*net_signals)["NLG5_ACT_I"]["nlg5_mv_act"].push(pack->nlg5_act_i(i).nlg5_mv_act());
+		(*net_signals)["NLG5_ACT_I"]["nlg5_ov_act"].push(pack->nlg5_act_i(i).nlg5_ov_act());
+		(*net_signals)["NLG5_ACT_I"]["nlg5_oc_act"].push(pack->nlg5_act_i(i).nlg5_oc_act());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_st_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_st(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_st(i)._inner_timestamp();
+        (*net_signals)["NLG5_ST"]["_timestamp"].push(pack->nlg5_st(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_ST"]["nlg5_s_he"].push(pack->nlg5_st(i).nlg5_s_he());
+		(*net_signals)["NLG5_ST"]["nlg5_s_err"].push(pack->nlg5_st(i).nlg5_s_err());
+		(*net_signals)["NLG5_ST"]["nlg5_s_war"].push(pack->nlg5_st(i).nlg5_s_war());
+		(*net_signals)["NLG5_ST"]["nlg5_s_fan"].push(pack->nlg5_st(i).nlg5_s_fan());
+		(*net_signals)["NLG5_ST"]["nlg5_s_eum"].push(pack->nlg5_st(i).nlg5_s_eum());
+		(*net_signals)["NLG5_ST"]["nlg5_s_um_i"].push(pack->nlg5_st(i).nlg5_s_um_i());
+		(*net_signals)["NLG5_ST"]["nlg5_s_um_ii"].push(pack->nlg5_st(i).nlg5_s_um_ii());
+		(*net_signals)["NLG5_ST"]["nlg5_s_cp_dt"].push(pack->nlg5_st(i).nlg5_s_cp_dt());
+		(*net_signals)["NLG5_ST"]["nlg5_s_bpd_i"].push(pack->nlg5_st(i).nlg5_s_bpd_i());
+		(*net_signals)["NLG5_ST"]["nlg5_s_bpd_ii"].push(pack->nlg5_st(i).nlg5_s_bpd_ii());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_ov"].push(pack->nlg5_st(i).nlg5_s_l_ov());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_oc"].push(pack->nlg5_st(i).nlg5_s_l_oc());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_mc"].push(pack->nlg5_st(i).nlg5_s_l_mc());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_pi"].push(pack->nlg5_st(i).nlg5_s_l_pi());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_cp"].push(pack->nlg5_st(i).nlg5_s_l_cp());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_pmax"].push(pack->nlg5_st(i).nlg5_s_l_pmax());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_mc_max"].push(pack->nlg5_st(i).nlg5_s_l_mc_max());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_oc_max"].push(pack->nlg5_st(i).nlg5_s_l_oc_max());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_mo_max"].push(pack->nlg5_st(i).nlg5_s_l_mo_max());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_t_cprim"].push(pack->nlg5_st(i).nlg5_s_l_t_cprim());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_t_pow"].push(pack->nlg5_st(i).nlg5_s_l_t_pow());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_t_dio"].push(pack->nlg5_st(i).nlg5_s_l_t_dio());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_t_tr"].push(pack->nlg5_st(i).nlg5_s_l_t_tr());
+		(*net_signals)["NLG5_ST"]["nlg5_s_l_t_batt"].push(pack->nlg5_st(i).nlg5_s_l_t_batt());
+		(*net_signals)["NLG5_ST"]["nlg5_s_aac"].push(pack->nlg5_st(i).nlg5_s_aac());
+
+    }
+
+    for(int i = 0; i < pack->nlg5_ctl_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->nlg5_ctl(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->nlg5_ctl(i)._inner_timestamp();
+        (*net_signals)["NLG5_CTL"]["_timestamp"].push(pack->nlg5_ctl(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["NLG5_CTL"]["nlg5_c_c_en"].push(pack->nlg5_ctl(i).nlg5_c_c_en());
+		(*net_signals)["NLG5_CTL"]["nlg5_c_c_el"].push(pack->nlg5_ctl(i).nlg5_c_c_el());
+		(*net_signals)["NLG5_CTL"]["nlg5_c_cp_v"].push(pack->nlg5_ctl(i).nlg5_c_cp_v());
+		(*net_signals)["NLG5_CTL"]["nlg5_c_mr"].push(pack->nlg5_ctl(i).nlg5_c_mr());
+		(*net_signals)["NLG5_CTL"]["nlg5_mc_max"].push(pack->nlg5_ctl(i).nlg5_mc_max());
+		(*net_signals)["NLG5_CTL"]["nlg5_ov_com"].push(pack->nlg5_ctl(i).nlg5_ov_com());
+		(*net_signals)["NLG5_CTL"]["nlg5_oc_com"].push(pack->nlg5_ctl(i).nlg5_oc_com());
+
+    }
+
     for(int i = 0; i < pack->bms_hv_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1045,18 +1217,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->handcart_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->handcart_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->handcart_status(i)._inner_timestamp();
-        (*net_signals)["HANDCART_STATUS"]["_timestamp"].push(pack->handcart_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HANDCART_STATUS"]["connected"].push(pack->handcart_status(i).connected());
-
-    }
-
     for(int i = 0; i < pack->speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1324,72 +1484,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->brusa_nlg5_ctl_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_nlg5_ctl(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_nlg5_ctl(i)._inner_timestamp();
-        (*net_signals)["BRUSA_NLG5_CTL"]["_timestamp"].push(pack->brusa_nlg5_ctl(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->brusa_st_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_st(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_st(i)._inner_timestamp();
-        (*net_signals)["BRUSA_ST"]["_timestamp"].push(pack->brusa_st(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->brusa_act_i_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_act_i(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_act_i(i)._inner_timestamp();
-        (*net_signals)["BRUSA_ACT_I"]["_timestamp"].push(pack->brusa_act_i(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->brusa_act_ii_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_act_ii(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_act_ii(i)._inner_timestamp();
-        (*net_signals)["BRUSA_ACT_II"]["_timestamp"].push(pack->brusa_act_ii(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->brusa_temp_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_temp(i)._inner_timestamp();
-        (*net_signals)["BRUSA_TEMP"]["_timestamp"].push(pack->brusa_temp(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->brusa_err_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->brusa_err(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->brusa_err(i)._inner_timestamp();
-        (*net_signals)["BRUSA_ERR"]["_timestamp"].push(pack->brusa_err(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
     for(int i = 0; i < pack->control_output_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1417,6 +1511,60 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->handcart_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->handcart_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_status(i)._inner_timestamp();
+        (*net_signals)["HANDCART_STATUS"]["_timestamp"].push(pack->handcart_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HANDCART_STATUS"]["connected"].push(pack->handcart_status(i).connected());
+
+    }
+
+    for(int i = 0; i < pack->handcart_settings_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->handcart_settings(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_settings(i)._inner_timestamp();
+        (*net_signals)["HANDCART_SETTINGS"]["_timestamp"].push(pack->handcart_settings(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HANDCART_SETTINGS"]["target_voltage"].push(pack->handcart_settings(i).target_voltage());
+		(*net_enums)["HANDCART_SETTINGS"]["fans_override"].push(pack->handcart_settings(i).fans_override());
+		primary_handcart_settings_fans_override_enum_to_string((primary_handcart_settings_fans_override)pack->handcart_settings(i).fans_override(), buffer);
+		(*net_strings)["HANDCART_SETTINGS"]["fans_override"].push(buffer);
+		(*net_signals)["HANDCART_SETTINGS"]["fans_speed"].push(pack->handcart_settings(i).fans_speed());
+		(*net_signals)["HANDCART_SETTINGS"]["acc_charge_current"].push(pack->handcart_settings(i).acc_charge_current());
+		(*net_signals)["HANDCART_SETTINGS"]["grid_max_current"].push(pack->handcart_settings(i).grid_max_current());
+		(*net_enums)["HANDCART_SETTINGS"]["status"].push(pack->handcart_settings(i).status());
+		primary_handcart_settings_status_enum_to_string((primary_handcart_settings_status)pack->handcart_settings(i).status(), buffer);
+		(*net_strings)["HANDCART_SETTINGS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->handcart_settings_set_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->handcart_settings_set(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_settings_set(i)._inner_timestamp();
+        (*net_signals)["HANDCART_SETTINGS_SET"]["_timestamp"].push(pack->handcart_settings_set(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HANDCART_SETTINGS_SET"]["target_voltage"].push(pack->handcart_settings_set(i).target_voltage());
+		(*net_enums)["HANDCART_SETTINGS_SET"]["fans_override"].push(pack->handcart_settings_set(i).fans_override());
+		primary_handcart_settings_set_fans_override_enum_to_string((primary_handcart_settings_set_fans_override)pack->handcart_settings_set(i).fans_override(), buffer);
+		(*net_strings)["HANDCART_SETTINGS_SET"]["fans_override"].push(buffer);
+		(*net_signals)["HANDCART_SETTINGS_SET"]["fans_speed"].push(pack->handcart_settings_set(i).fans_speed());
+		(*net_signals)["HANDCART_SETTINGS_SET"]["acc_charge_current"].push(pack->handcart_settings_set(i).acc_charge_current());
+		(*net_signals)["HANDCART_SETTINGS_SET"]["grid_max_current"].push(pack->handcart_settings_set(i).grid_max_current());
+		(*net_enums)["HANDCART_SETTINGS_SET"]["status"].push(pack->handcart_settings_set(i).status());
+		primary_handcart_settings_set_status_enum_to_string((primary_handcart_settings_set_status)pack->handcart_settings_set(i).status(), buffer);
+		(*net_strings)["HANDCART_SETTINGS_SET"]["status"].push(buffer);
+
+    }
+
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
@@ -1426,6 +1574,170 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 
     switch(id) {
         
+        case 1818: {
+            primary_nlg5_diag_tx_t* msg = (primary_nlg5_diag_tx_t*)((*map)[index].message_raw);
+            primary::NLG5_DIAG_TX* proto_msg = pack->add_nlg5_diag_tx();
+			proto_msg->set_lad_d_paramrp(msg->lad_d_paramrp);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1816: {
+            primary_nlg5_diag_rx_t* msg = (primary_nlg5_diag_rx_t*)((*map)[index].message_raw);
+            primary::NLG5_DIAG_RX* proto_msg = pack->add_nlg5_diag_rx();
+			proto_msg->set_lad_d_paramrq(msg->lad_d_paramrq);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1556: {
+            primary_nlg5_err_t* msg = (primary_nlg5_err_t*)((*map)[index].message_raw);
+            primary::NLG5_ERR* proto_msg = pack->add_nlg5_err();
+			proto_msg->set_nlg5_e_oov(msg->nlg5_e_oov);
+			proto_msg->set_nlg5_e_mov_ii(msg->nlg5_e_mov_ii);
+			proto_msg->set_nlg5_e_mov_i(msg->nlg5_e_mov_i);
+			proto_msg->set_nlg5_e_sc(msg->nlg5_e_sc);
+			proto_msg->set_nlg5_e_p_om(msg->nlg5_e_p_om);
+			proto_msg->set_nlg5_e_p_mv(msg->nlg5_e_p_mv);
+			proto_msg->set_nlg5_e_of(msg->nlg5_e_of);
+			proto_msg->set_nlg5_e_mf(msg->nlg5_e_mf);
+			proto_msg->set_nlg5_e_b_p(msg->nlg5_e_b_p);
+			proto_msg->set_nlg5_e_t_c(msg->nlg5_e_t_c);
+			proto_msg->set_nlg5_e_t_pow(msg->nlg5_e_t_pow);
+			proto_msg->set_nlg5_e_t_dio(msg->nlg5_e_t_dio);
+			proto_msg->set_nlg5_e_t_tr(msg->nlg5_e_t_tr);
+			proto_msg->set_nlg5_e_t_ext1(msg->nlg5_e_t_ext1);
+			proto_msg->set_nlg5_e_t_ext2(msg->nlg5_e_t_ext2);
+			proto_msg->set_nlg5_e_t_ext3(msg->nlg5_e_t_ext3);
+			proto_msg->set_nlg5_e_f_crc(msg->nlg5_e_f_crc);
+			proto_msg->set_nlg5_e_nv_crc(msg->nlg5_e_nv_crc);
+			proto_msg->set_nlg5_e_es_crc(msg->nlg5_e_es_crc);
+			proto_msg->set_nlg5_e_ep_crc(msg->nlg5_e_ep_crc);
+			proto_msg->set_nlg5_e_wdt(msg->nlg5_e_wdt);
+			proto_msg->set_nlg5_e_init(msg->nlg5_e_init);
+			proto_msg->set_nlg5_e_c_to(msg->nlg5_e_c_to);
+			proto_msg->set_nlg5_e_c_off(msg->nlg5_e_c_off);
+			proto_msg->set_nlg5_e_c_tx(msg->nlg5_e_c_tx);
+			proto_msg->set_nlg5_e_c_rx(msg->nlg5_e_c_rx);
+			proto_msg->set_nlg5_e_sdt_bt(msg->nlg5_e_sdt_bt);
+			proto_msg->set_nlg5_e_sdt_bv(msg->nlg5_e_sdt_bv);
+			proto_msg->set_nlg5_e_sdt_ah(msg->nlg5_e_sdt_ah);
+			proto_msg->set_nlg5_e_sdt_ct(msg->nlg5_e_sdt_ct);
+			proto_msg->set_nlg5_w_pl_mv(msg->nlg5_w_pl_mv);
+			proto_msg->set_nlg5_w_pl_bv(msg->nlg5_w_pl_bv);
+			proto_msg->set_nlg5_w_pl_it(msg->nlg5_w_pl_it);
+			proto_msg->set_nlg5_w_c_vor(msg->nlg5_w_c_vor);
+			proto_msg->set_nlg5_w_cm_na(msg->nlg5_w_cm_na);
+			proto_msg->set_nlg5_w_od(msg->nlg5_w_od);
+			proto_msg->set_nlg5_w_sc_m(msg->nlg5_w_sc_m);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1555: {
+            primary_nlg5_temp_converted_t* msg = (primary_nlg5_temp_converted_t*)((*map)[index].message_conversion);
+            primary::NLG5_TEMP* proto_msg = pack->add_nlg5_temp();
+			proto_msg->set_nlg5_p_tmp(msg->nlg5_p_tmp);
+			proto_msg->set_nlg5_tmp_ext1(msg->nlg5_tmp_ext1);
+			proto_msg->set_nlg5_temp_ext2(msg->nlg5_temp_ext2);
+			proto_msg->set_nlg5_tmp_ext3(msg->nlg5_tmp_ext3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1554: {
+            primary_nlg5_act_ii_converted_t* msg = (primary_nlg5_act_ii_converted_t*)((*map)[index].message_conversion);
+            primary::NLG5_ACT_II* proto_msg = pack->add_nlg5_act_ii();
+			proto_msg->set_nlg5_s_mc_m_cp(msg->nlg5_s_mc_m_cp);
+			proto_msg->set_nlg5_s_mc_m_pi(msg->nlg5_s_mc_m_pi);
+			proto_msg->set_nlg5_abv(msg->nlg5_abv);
+			proto_msg->set_nlg5_ahc_ext(msg->nlg5_ahc_ext);
+			proto_msg->set_nlg5_oc_bo(msg->nlg5_oc_bo);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1553: {
+            primary_nlg5_act_i_converted_t* msg = (primary_nlg5_act_i_converted_t*)((*map)[index].message_conversion);
+            primary::NLG5_ACT_I* proto_msg = pack->add_nlg5_act_i();
+			proto_msg->set_nlg5_mc_act(msg->nlg5_mc_act);
+			proto_msg->set_nlg5_mv_act(msg->nlg5_mv_act);
+			proto_msg->set_nlg5_ov_act(msg->nlg5_ov_act);
+			proto_msg->set_nlg5_oc_act(msg->nlg5_oc_act);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1552: {
+            primary_nlg5_st_t* msg = (primary_nlg5_st_t*)((*map)[index].message_raw);
+            primary::NLG5_ST* proto_msg = pack->add_nlg5_st();
+			proto_msg->set_nlg5_s_he(msg->nlg5_s_he);
+			proto_msg->set_nlg5_s_err(msg->nlg5_s_err);
+			proto_msg->set_nlg5_s_war(msg->nlg5_s_war);
+			proto_msg->set_nlg5_s_fan(msg->nlg5_s_fan);
+			proto_msg->set_nlg5_s_eum(msg->nlg5_s_eum);
+			proto_msg->set_nlg5_s_um_i(msg->nlg5_s_um_i);
+			proto_msg->set_nlg5_s_um_ii(msg->nlg5_s_um_ii);
+			proto_msg->set_nlg5_s_cp_dt(msg->nlg5_s_cp_dt);
+			proto_msg->set_nlg5_s_bpd_i(msg->nlg5_s_bpd_i);
+			proto_msg->set_nlg5_s_bpd_ii(msg->nlg5_s_bpd_ii);
+			proto_msg->set_nlg5_s_l_ov(msg->nlg5_s_l_ov);
+			proto_msg->set_nlg5_s_l_oc(msg->nlg5_s_l_oc);
+			proto_msg->set_nlg5_s_l_mc(msg->nlg5_s_l_mc);
+			proto_msg->set_nlg5_s_l_pi(msg->nlg5_s_l_pi);
+			proto_msg->set_nlg5_s_l_cp(msg->nlg5_s_l_cp);
+			proto_msg->set_nlg5_s_l_pmax(msg->nlg5_s_l_pmax);
+			proto_msg->set_nlg5_s_l_mc_max(msg->nlg5_s_l_mc_max);
+			proto_msg->set_nlg5_s_l_oc_max(msg->nlg5_s_l_oc_max);
+			proto_msg->set_nlg5_s_l_mo_max(msg->nlg5_s_l_mo_max);
+			proto_msg->set_nlg5_s_l_t_cprim(msg->nlg5_s_l_t_cprim);
+			proto_msg->set_nlg5_s_l_t_pow(msg->nlg5_s_l_t_pow);
+			proto_msg->set_nlg5_s_l_t_dio(msg->nlg5_s_l_t_dio);
+			proto_msg->set_nlg5_s_l_t_tr(msg->nlg5_s_l_t_tr);
+			proto_msg->set_nlg5_s_l_t_batt(msg->nlg5_s_l_t_batt);
+			proto_msg->set_nlg5_s_aac(msg->nlg5_s_aac);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1560: {
+            primary_nlg5_ctl_converted_t* msg = (primary_nlg5_ctl_converted_t*)((*map)[index].message_conversion);
+            primary::NLG5_CTL* proto_msg = pack->add_nlg5_ctl();
+			proto_msg->set_nlg5_c_c_en(msg->nlg5_c_c_en);
+			proto_msg->set_nlg5_c_c_el(msg->nlg5_c_c_el);
+			proto_msg->set_nlg5_c_cp_v(msg->nlg5_c_cp_v);
+			proto_msg->set_nlg5_c_mr(msg->nlg5_c_mr);
+			proto_msg->set_nlg5_mc_max(msg->nlg5_mc_max);
+			proto_msg->set_nlg5_ov_com(msg->nlg5_ov_com);
+			proto_msg->set_nlg5_oc_com(msg->nlg5_oc_com);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 0: {
             primary_bms_hv_jmp_to_blt_t* msg = (primary_bms_hv_jmp_to_blt_t*)((*map)[index].message_raw);
             primary::BMS_HV_JMP_TO_BLT* proto_msg = pack->add_bms_hv_jmp_to_blt();
@@ -1540,7 +1852,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 261: {
+        case 264: {
             primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)((*map)[index].message_raw);
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_set_tlm_status_tlm_status)msg->tlm_status);
@@ -1562,7 +1874,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1797: {
+        case 1800: {
             primary_steer_system_status_t* msg = (primary_steer_system_status_t*)((*map)[index].message_raw);
             primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
 			proto_msg->set_soc_temp(msg->soc_temp);
@@ -1573,7 +1885,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 771: {
+        case 770: {
             primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)((*map)[index].message_conversion);
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
 			proto_msg->set_pack_voltage(msg->pack_voltage);
@@ -1587,7 +1899,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 803: {
+        case 802: {
             primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)((*map)[index].message_conversion);
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
 			proto_msg->set_current(msg->current);
@@ -1601,7 +1913,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 835: {
+        case 834: {
             primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)((*map)[index].message_conversion);
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
 			proto_msg->set_average_temp(msg->average_temp);
@@ -1614,7 +1926,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 3: {
+        case 2: {
             primary_hv_errors_t* msg = (primary_hv_errors_t*)((*map)[index].message_raw);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
 			proto_msg->set_warnings_cell_low_voltage(msg->warnings_cell_low_voltage);
@@ -1652,7 +1964,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 9: {
+        case 7: {
             primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)((*map)[index].message_raw);
             primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
 			proto_msg->set_can_forward_set((primary::primary_hv_can_forward_can_forward_set)msg->can_forward_set);
@@ -1663,7 +1975,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 41: {
+        case 39: {
             primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)((*map)[index].message_conversion);
             primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_fans_override)msg->fans_override);
@@ -1675,7 +1987,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 7: {
+        case 1: {
             primary_hv_can_forward_status_t* msg = (primary_hv_can_forward_status_t*)((*map)[index].message_raw);
             primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
 			proto_msg->set_can_forward_status((primary::primary_hv_can_forward_status_can_forward_status)msg->can_forward_status);
@@ -1686,7 +1998,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 775: {
+        case 769: {
             primary_hv_fans_override_status_converted_t* msg = (primary_hv_fans_override_status_converted_t*)((*map)[index].message_conversion);
             primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_status_fans_override)msg->fans_override);
@@ -1698,7 +2010,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 769: {
+        case 777: {
             primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)((*map)[index].message_raw);
             primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
 			proto_msg->set_feedbacks_status_feedback_tsal_green_fault(msg->feedbacks_status_feedback_tsal_green_fault);
@@ -1746,7 +2058,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 801: {
+        case 809: {
             primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)((*map)[index].message_raw);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
@@ -1759,7 +2071,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 35: {
+        case 34: {
             primary_ts_status_t* msg = (primary_ts_status_t*)((*map)[index].message_raw);
             primary::TS_STATUS* proto_msg = pack->add_ts_status();
 			proto_msg->set_ts_status((primary::primary_ts_status_ts_status)msg->ts_status);
@@ -1770,7 +2082,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 73: {
+        case 71: {
             primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_das_ts_status_set)msg->ts_status_set);
@@ -1781,7 +2093,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 105: {
+        case 103: {
             primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_handcart_ts_status_set)msg->ts_status_set);
@@ -1792,7 +2104,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 264: {
+        case 261: {
             primary_steer_status_converted_t* msg = (primary_steer_status_converted_t*)((*map)[index].message_conversion);
             primary::STEER_STATUS* proto_msg = pack->add_steer_status();
 			proto_msg->set_map_pw(msg->map_pw);
@@ -1805,7 +2117,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 776: {
+        case 773: {
             primary_set_car_status_t* msg = (primary_set_car_status_t*)((*map)[index].message_raw);
             primary::SET_CAR_STATUS* proto_msg = pack->add_set_car_status();
 			proto_msg->set_car_status_set((primary::primary_set_car_status_car_status_set)msg->car_status_set);
@@ -1816,7 +2128,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1032: {
+        case 1029: {
             primary_set_pedals_range_t* msg = (primary_set_pedals_range_t*)((*map)[index].message_raw);
             primary::SET_PEDALS_RANGE* proto_msg = pack->add_set_pedals_range();
 			proto_msg->set_bound((primary::primary_set_pedals_range_bound)msg->bound);
@@ -1828,7 +2140,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1064: {
+        case 1061: {
             primary_set_steering_angle_range_t* msg = (primary_set_steering_angle_range_t*)((*map)[index].message_raw);
             primary::SET_STEERING_ANGLE_RANGE* proto_msg = pack->add_set_steering_angle_range();
 			proto_msg->set_bound((primary::primary_set_steering_angle_range_bound)msg->bound);
@@ -1871,7 +2183,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 833: {
+        case 841: {
             primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)((*map)[index].message_conversion);
             primary::LV_CURRENTS* proto_msg = pack->add_lv_currents();
 			proto_msg->set_current_as_battery(msg->current_as_battery);
@@ -1884,7 +2196,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 865: {
+        case 873: {
             primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)((*map)[index].message_conversion);
             primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
@@ -1898,7 +2210,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 897: {
+        case 905: {
             primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)((*map)[index].message_conversion);
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
 			proto_msg->set_total_voltage(msg->total_voltage);
@@ -1909,7 +2221,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 929: {
+        case 937: {
             primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)((*map)[index].message_conversion);
             primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
@@ -1923,7 +2235,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 961: {
+        case 969: {
             primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)((*map)[index].message_conversion);
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -1935,7 +2247,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 774: {
+        case 771: {
             primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -1946,7 +2258,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 806: {
+        case 803: {
             primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
@@ -1957,7 +2269,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 262: {
+        case 259: {
             primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
 			proto_msg->set_status((primary::primary_set_inverter_connection_status_status)msg->status);
@@ -1968,7 +2280,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 257: {
+        case 265: {
             primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
 			proto_msg->set_status((primary::primary_inverter_connection_status_status)msg->status);
@@ -1979,7 +2291,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 545: {
+        case 521: {
             primary_lv_errors_t* msg = (primary_lv_errors_t*)((*map)[index].message_raw);
             primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
 			proto_msg->set_warnings_cell_undervoltage(msg->warnings_cell_undervoltage);
@@ -2023,7 +2335,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 289: {
+        case 297: {
             primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)((*map)[index].message_conversion);
             primary::LV_FEEDBACKS* proto_msg = pack->add_lv_feedbacks();
 			proto_msg->set_feedbacks_bspd_fb(msg->feedbacks_bspd_fb);
@@ -2054,7 +2366,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 321: {
+        case 329: {
             primary_shutdown_status_t* msg = (primary_shutdown_status_t*)((*map)[index].message_raw);
             primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
 			proto_msg->set_input(msg->input);
@@ -2066,7 +2378,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 5: {
+        case 8: {
             primary_marker_t* msg = (primary_marker_t*)((*map)[index].message_raw);
             primary::MARKER* proto_msg = pack->add_marker();
 
@@ -2076,7 +2388,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 519: {
+        case 545: {
             primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)((*map)[index].message_conversion);
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
@@ -2090,7 +2402,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 551: {
+        case 577: {
             primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)((*map)[index].message_conversion);
             primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
@@ -2107,7 +2419,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 583: {
+        case 609: {
             primary_hv_cell_balancing_status_t* msg = (primary_hv_cell_balancing_status_t*)((*map)[index].message_raw);
             primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
 			proto_msg->set_balancing_status((primary::primary_hv_cell_balancing_status_balancing_status)msg->balancing_status);
@@ -2118,21 +2430,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 521: {
+        case 519: {
             primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)((*map)[index].message_raw);
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
 			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 777: {
-            primary_handcart_status_t* msg = (primary_handcart_status_t*)((*map)[index].message_raw);
-            primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
-			proto_msg->set_connected(msg->connected);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2386,66 +2687,6 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 618: {
-            primary_brusa_nlg5_ctl_t* msg = (primary_brusa_nlg5_ctl_t*)((*map)[index].message_raw);
-            primary::BRUSA_NLG5_CTL* proto_msg = pack->add_brusa_nlg5_ctl();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 610: {
-            primary_brusa_st_t* msg = (primary_brusa_st_t*)((*map)[index].message_raw);
-            primary::BRUSA_ST* proto_msg = pack->add_brusa_st();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 611: {
-            primary_brusa_act_i_t* msg = (primary_brusa_act_i_t*)((*map)[index].message_raw);
-            primary::BRUSA_ACT_I* proto_msg = pack->add_brusa_act_i();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 612: {
-            primary_brusa_act_ii_t* msg = (primary_brusa_act_ii_t*)((*map)[index].message_raw);
-            primary::BRUSA_ACT_II* proto_msg = pack->add_brusa_act_ii();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 613: {
-            primary_brusa_temp_t* msg = (primary_brusa_temp_t*)((*map)[index].message_raw);
-            primary::BRUSA_TEMP* proto_msg = pack->add_brusa_temp();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 614: {
-            primary_brusa_err_t* msg = (primary_brusa_err_t*)((*map)[index].message_raw);
-            primary::BRUSA_ERR* proto_msg = pack->add_brusa_err();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
         case 288: {
             primary_control_output_converted_t* msg = (primary_control_output_converted_t*)((*map)[index].message_conversion);
             primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
@@ -2461,9 +2702,52 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 546: {
+        case 518: {
             primary_lc_reset_t* msg = (primary_lc_reset_t*)((*map)[index].message_raw);
             primary::LC_RESET* proto_msg = pack->add_lc_reset();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 775: {
+            primary_handcart_status_t* msg = (primary_handcart_status_t*)((*map)[index].message_raw);
+            primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
+			proto_msg->set_connected(msg->connected);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 807: {
+            primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)((*map)[index].message_conversion);
+            primary::HANDCART_SETTINGS* proto_msg = pack->add_handcart_settings();
+			proto_msg->set_target_voltage(msg->target_voltage);
+			proto_msg->set_fans_override((primary::primary_handcart_settings_fans_override)msg->fans_override);
+			proto_msg->set_fans_speed(msg->fans_speed);
+			proto_msg->set_acc_charge_current(msg->acc_charge_current);
+			proto_msg->set_grid_max_current(msg->grid_max_current);
+			proto_msg->set_status((primary::primary_handcart_settings_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 839: {
+            primary_handcart_settings_set_converted_t* msg = (primary_handcart_settings_set_converted_t*)((*map)[index].message_conversion);
+            primary::HANDCART_SETTINGS_SET* proto_msg = pack->add_handcart_settings_set();
+			proto_msg->set_target_voltage(msg->target_voltage);
+			proto_msg->set_fans_override((primary::primary_handcart_settings_set_fans_override)msg->fans_override);
+			proto_msg->set_fans_speed(msg->fans_speed);
+			proto_msg->set_acc_charge_current(msg->acc_charge_current);
+			proto_msg->set_grid_max_current(msg->grid_max_current);
+			proto_msg->set_status((primary::primary_handcart_settings_set_status)msg->status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

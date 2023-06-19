@@ -393,7 +393,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Ecode_Bit13__18m_plus99 m99 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Tol82 m82 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_rsvd_13 m81 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ OUT4 m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_4_on m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DUP__Bit12__Boat_Pedal m220 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MO_sc2_reso m164 : 20|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ Ecode_Bit12__15m_plus148 m148 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -401,7 +401,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Cal82 m82 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_rsvd_12 m81 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_CMD_Type m54 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ OUT3 m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_3_on m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MotorType m90 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ Test m27 : 20|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ DUP__Bit11__DCBus_Volts m220 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -427,7 +427,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Ecode_Bit9__FAIL_I99 m99 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ _N082 m82 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_HANDWHEEL m81 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ OUT2 m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_2_on m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_IPeak m143 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Hxinv m90 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DUP__Bit8__CAN_EXTENDED_0 m220 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -442,7 +442,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ NI82 m82 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_ALLOW_SYNC m81 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_Ain_2_Mode m54 : 16|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ OUT1 m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_1_on m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_OverVoltage m143 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ I1_Adc_Ena m90 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ brk1155 m155 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -498,7 +498,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Ecode_Bit3__Free99 m99 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Lim_minus82 m82 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_CAL_OFF m81 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ IN1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ IN_Active_1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_BusTimeout m143 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CoastStop m90 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Rdy155 m155 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -510,7 +510,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Lim_plus82 m82 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_FRG_OFF m81 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_Ain_2_Format m54 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ IN2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ IN_Active_2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_RFE_Fault m143 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ FB_Special m90 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Out_2 m155 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -521,7 +521,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Ecode_Bit1__HW1_State99 m99 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ NcR082 m82 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_SPEED_0 m81 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ LMT2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LMT_Active_2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_PowerFault m143 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Ballast_Ext m90 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ SubVersion_Nr m254 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -737,7 +737,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
  SG_ Ain_in_2_raw m214 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
  SG_ Ain_in_1_raw m213 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
- SG_ LMT1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LMT_Active_1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_BadParas m143 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Status_BitMap m64 : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ DC_BUS_comp m90 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1111,7 +1111,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Ecode_Bit13__18m_plus99 m99 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Tol82 m82 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_rsvd_13 m81 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ OUT4 m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_4_on m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DUP__Bit12__Boat_Pedal m220 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MO_sc2_reso m164 : 20|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ Ecode_Bit12__15m_plus148 m148 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1119,7 +1119,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Cal82 m82 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_rsvd_12 m81 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_CMD_Type m54 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ OUT3 m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_3_on m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ MotorType m90 : 20|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ Test m27 : 20|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ DUP__Bit11__DCBus_Volts m220 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1145,7 +1145,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Ecode_Bit9__FAIL_I99 m99 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ _N082 m82 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_HANDWHEEL m81 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ OUT2 m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_2_on m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_IPeak m143 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Hxinv m90 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ DUP__Bit8__CAN_EXTENDED_0 m220 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1160,7 +1160,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ NI82 m82 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_ALLOW_SYNC m81 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_Ain_2_Mode m54 : 16|3@1+ (1,0) [0|7] "" Vector__XXX
- SG_ OUT1 m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ D_OUT_1_on m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_OverVoltage m143 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ I1_Adc_Ena m90 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ brk1155 m155 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1216,7 +1216,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Ecode_Bit3__Free99 m99 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Lim_minus82 m82 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_CAL_OFF m81 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ IN1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ IN_Active_1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_BusTimeout m143 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CoastStop m90 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Rdy155 m155 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1228,7 +1228,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Lim_plus82 m82 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_FRG_OFF m81 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ CS_Ain_2_Format m54 : 10|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ IN2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ IN_Active_2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_RFE_Fault m143 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ FB_Special m90 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Out_2 m155 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1239,7 +1239,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Ecode_Bit1__HW1_State99 m99 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ NcR082 m82 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_SPEED_0 m81 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ LMT2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LMT_Active_2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_PowerFault m143 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Ballast_Ext m90 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ SubVersion_Nr m254 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
@@ -1455,7 +1455,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
  SG_ Ain_in_2_raw m214 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
  SG_ Ain_in_1_raw m213 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
- SG_ LMT1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LMT_Active_1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_BadParas m143 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Status_BitMap m64 : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ DC_BUS_comp m90 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -1811,7 +1811,7 @@ CM_ SG_ 385 Ecode_Bit13__18m_plus148 "Ecode - Bit 13 - 18V plus Voltage error";
 CM_ SG_ 385 Ecode_Bit13__18m_plus99 "Ecode - Bit 13 - 18V plus Voltage error";
 CM_ SG_ 385 Tol82 "Position within tolerance window";
 CM_ SG_ 385 KM_rsvd_13 "Kern Mode State Bit - rsvd_13";
-CM_ SG_ 385 OUT4 "Digital output Dout 4 on";
+CM_ SG_ 385 D_OUT_4_on "Digital output Dout 4 on";
 CM_ SG_ 385 DUP__Bit12__Boat_Pedal "Command (Acc Pedal) must be at 0 to enable inverter";
 CM_ SG_ 385 MO_sc2_reso "Motor Options -";
 CM_ SG_ 385 Ecode_Bit12__15m_plus148 "Ecode - Bit 12 - 15V plus Voltage error";
@@ -1819,7 +1819,7 @@ CM_ SG_ 385 Ecode_Bit12__15m_plus99 "Ecode - Bit 12 - 15V plus Voltage error";
 CM_ SG_ 385 Cal82 "Calibration move completed (position calibrated)";
 CM_ SG_ 385 KM_rsvd_12 "Kern Mode State Bit - rsvd_12";
 CM_ SG_ 385 CS_CMD_Type "Command Source Mask - Bitmask Coding of Command Type";
-CM_ SG_ 385 OUT3 "Digital output Dout 3 on";
+CM_ SG_ 385 D_OUT_3_on "Digital output Dout 3 on";
 CM_ SG_ 385 MotorType "Motor Type define";
 CM_ SG_ 385 Test "Firmware Test Number";
 CM_ SG_ 385 DUP__Bit11__DCBus_Volts "DCBus Value as V for output Communication";
@@ -1844,7 +1844,7 @@ CM_ SG_ 385 Ecode_Bit9__FAIL_I148 "Ecode - Bit 9 - I Error detected";
 CM_ SG_ 385 Ecode_Bit9__FAIL_I99 "Ecode - Bit 9 - I Error detected";
 CM_ SG_ 385 _N082 "Acutal speed less than 0.1% (standstill)";
 CM_ SG_ 385 KM_HANDWHEEL "Kern Mode State Bit -";
-CM_ SG_ 385 OUT2 "Digital output Dout 2 on";
+CM_ SG_ 385 D_OUT_2_on "Digital output Dout 2 on";
 CM_ SG_ 385 Err_IPeak "Overcurrent or strongly oscillating current detected";
 CM_ SG_ 385 Hxinv "Inverted order of Hall sensors";
 CM_ SG_ 385 DUP__Bit8__CAN_EXTENDED_0 "CAN PDOs extension";
@@ -1859,7 +1859,7 @@ CM_ SG_ 385 Ain_in_2_Filter "Analog Input Signal 2 - Filter Value Setting";
 CM_ SG_ 385 NI82 "Speed control possible";
 CM_ SG_ 385 KM_ALLOW_SYNC "Kern Mode State Bit - Allow Sync";
 CM_ SG_ 385 CS_Ain_2_Mode "Command Source Mask - Analog 2 Mode Bits";
-CM_ SG_ 385 OUT1 "Digital output Dout 1 on";
+CM_ SG_ 385 D_OUT_1_on "Digital output Dout 1 on";
 CM_ SG_ 385 Err_OverVoltage "Overvoltage > 1.8 x UN reached";
 CM_ SG_ 385 I1_Adc_Ena "Current Measurement I1 Enable";
 CM_ SG_ 385 brk1155 "Output Signal - break 1";
@@ -1913,7 +1913,7 @@ CM_ SG_ 385 Ecode_Bit3__Free148 "Ecode - Bit 3 - Free (NOT INUSE)";
 CM_ SG_ 385 Ecode_Bit3__Free99 "Ecode - Bit 3 - Free (NOT INUSE)";
 CM_ SG_ 385 Lim_minus82 "Limit switch minus assigned";
 CM_ SG_ 385 KM_CAL_OFF "Kern Mode State Bit -";
-CM_ SG_ 385 IN1 "Digital input Din 1 active";
+CM_ SG_ 385 IN_Active_1 "Digital input Din 1 active";
 CM_ SG_ 385 Err_BusTimeout "CAN TimeOut time exceeded";
 CM_ SG_ 385 CoastStop "Coast Stop Activation";
 CM_ SG_ 385 Rdy155 "Output Signal - Rdy";
@@ -1925,23 +1925,21 @@ CM_ SG_ 385 Ecode_Bit2__HW0_State99 "Ecode - Bit 2 - HW 0 Coding State";
 CM_ SG_ 385 Lim_plus82 "Limit switch plus assigned";
 CM_ SG_ 385 KM_FRG_OFF "Kern Mode State Bit -";
 CM_ SG_ 385 CS_Ain_2_Format "Command Source Mask - Analog 2 Format Bits";
-CM_ SG_ 385 IN2 "Digital input Din 2 active";
+CM_ SG_ 385 IN_Active_2 "Digital input Din 2 active";
 CM_ SG_ 385 Err_RFE_Fault "Safety circuit faulty (only active with RUN)";
 CM_ SG_ 385 FB_Special "Feedback Speciality";
 CM_ SG_ 385 Out_2 "Output Signal - Out 2";
-CM_ SG_ 385 Lmt_2 "Input Signal - Limit 2";
 CM_ SG_ 385 CMC__Bit1__Idc_Limit_Ena "Enable the Limitiation Calculation depending on the DC Current limits";
 CM_ SG_ 385 DC_I_SensEna_Set "DC current Sensor (if present) Activated";
 CM_ SG_ 385 Ecode_Bit1__HW1_State148 "Ecode - Bit 1 - HW 1 Coding State";
 CM_ SG_ 385 Ecode_Bit1__HW1_State99 "Ecode - Bit 1 - HW 1 Coding State";
 CM_ SG_ 385 NcR082 "Speed command value = 0 (drive stopped)";
 CM_ SG_ 385 KM_SPEED_0 "Kern Mode State Bit -";
-CM_ SG_ 385 LMT2 "Digital input limit 2 active";
+CM_ SG_ 385 LMT_Active_2 "Digital input limit 2 active";
 CM_ SG_ 385 Err_PowerFault "Hardware error";
 CM_ SG_ 385 Ballast_Ext "Ballast-R extern";
 CM_ SG_ 385 SubVersion_Nr "Firmware Subversion Number";
 CM_ SG_ 385 Out_1 "Output Signal - Out 1";
-CM_ SG_ 385 Lmt_1 "Input Signal - Limit 1";
 CM_ SG_ 385 M_cmd_ramp "Digital numerical Iq-Current Command - internal ramped";
 CM_ SG_ 385 Vdc_Bus "DC-Bus Voltage";
 CM_ SG_ 385 Pos_Ref_Start "Start Park Cycle";
@@ -2152,7 +2150,7 @@ CM_ SG_ 385 N_setdig "Digital numerical Speed Command - input";
 CM_ SG_ 385 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
 CM_ SG_ 385 Ain_in_2_raw "Analog Input Signal 2 - Raw";
 CM_ SG_ 385 Ain_in_1_raw "Analog Input Signal 1 - Raw";
-CM_ SG_ 385 LMT1 "Digital input limit 1 active";
+CM_ SG_ 385 LMT_Active_1 "Digital input limit 1 active";
 CM_ SG_ 385 Err_BadParas "Damaged parameter";
 CM_ SG_ 385 Status_BitMap "Status Bit Map";
 CM_ SG_ 385 DC_BUS_comp "Analoge Zwischenkreismessung geht in Uout ein";
@@ -2504,7 +2502,7 @@ CM_ SG_ 386 Ecode_Bit13__18m_plus148 "Ecode - Bit 13 - 18V plus Voltage error";
 CM_ SG_ 386 Ecode_Bit13__18m_plus99 "Ecode - Bit 13 - 18V plus Voltage error";
 CM_ SG_ 386 Tol82 "Position within tolerance window";
 CM_ SG_ 386 KM_rsvd_13 "Kern Mode State Bit - rsvd_13";
-CM_ SG_ 386 OUT4 "Digital output Dout 4 on";
+CM_ SG_ 386 D_OUT_4_on "Digital output Dout 4 on";
 CM_ SG_ 386 DUP__Bit12__Boat_Pedal "Command (Acc Pedal) must be at 0 to enable inverter";
 CM_ SG_ 386 MO_sc2_reso "Motor Options -";
 CM_ SG_ 386 Ecode_Bit12__15m_plus148 "Ecode - Bit 12 - 15V plus Voltage error";
@@ -2512,7 +2510,7 @@ CM_ SG_ 386 Ecode_Bit12__15m_plus99 "Ecode - Bit 12 - 15V plus Voltage error";
 CM_ SG_ 386 Cal82 "Calibration move completed (position calibrated)";
 CM_ SG_ 386 KM_rsvd_12 "Kern Mode State Bit - rsvd_12";
 CM_ SG_ 386 CS_CMD_Type "Command Source Mask - Bitmask Coding of Command Type";
-CM_ SG_ 386 OUT3 "Digital output Dout 3 on";
+CM_ SG_ 386 D_OUT_3_on "Digital output Dout 3 on";
 CM_ SG_ 386 MotorType "Motor Type define";
 CM_ SG_ 386 Test "Firmware Test Number";
 CM_ SG_ 386 DUP__Bit11__DCBus_Volts "DCBus Value as V for output Communication";
@@ -2537,7 +2535,7 @@ CM_ SG_ 386 Ecode_Bit9__FAIL_I148 "Ecode - Bit 9 - I Error detected";
 CM_ SG_ 386 Ecode_Bit9__FAIL_I99 "Ecode - Bit 9 - I Error detected";
 CM_ SG_ 386 _N082 "Acutal speed less than 0.1% (standstill)";
 CM_ SG_ 386 KM_HANDWHEEL "Kern Mode State Bit -";
-CM_ SG_ 386 OUT2 "Digital output Dout 2 on";
+CM_ SG_ 386 D_OUT_2_on "Digital output Dout 2 on";
 CM_ SG_ 386 Err_IPeak "Overcurrent or strongly oscillating current detected";
 CM_ SG_ 386 Hxinv "Inverted order of Hall sensors";
 CM_ SG_ 386 DUP__Bit8__CAN_EXTENDED_0 "CAN PDOs extension";
@@ -2552,7 +2550,7 @@ CM_ SG_ 386 Ain_in_2_Filter "Analog Input Signal 2 - Filter Value Setting";
 CM_ SG_ 386 NI82 "Speed control possible";
 CM_ SG_ 386 KM_ALLOW_SYNC "Kern Mode State Bit - Allow Sync";
 CM_ SG_ 386 CS_Ain_2_Mode "Command Source Mask - Analog 2 Mode Bits";
-CM_ SG_ 386 OUT1 "Digital output Dout 1 on";
+CM_ SG_ 386 D_OUT_1_on "Digital output Dout 1 on";
 CM_ SG_ 386 Err_OverVoltage "Overvoltage > 1.8 x UN reached";
 CM_ SG_ 386 I1_Adc_Ena "Current Measurement I1 Enable";
 CM_ SG_ 386 brk1155 "Output Signal - break 1";
@@ -2606,7 +2604,7 @@ CM_ SG_ 386 Ecode_Bit3__Free148 "Ecode - Bit 3 - Free (NOT INUSE)";
 CM_ SG_ 386 Ecode_Bit3__Free99 "Ecode - Bit 3 - Free (NOT INUSE)";
 CM_ SG_ 386 Lim_minus82 "Limit switch minus assigned";
 CM_ SG_ 386 KM_CAL_OFF "Kern Mode State Bit -";
-CM_ SG_ 386 IN1 "Digital input Din 1 active";
+CM_ SG_ 386 IN_Active_1 "Digital input Din 1 active";
 CM_ SG_ 386 Err_BusTimeout "CAN TimeOut time exceeded";
 CM_ SG_ 386 CoastStop "Coast Stop Activation";
 CM_ SG_ 386 Rdy155 "Output Signal - Rdy";
@@ -2618,7 +2616,7 @@ CM_ SG_ 386 Ecode_Bit2__HW0_State99 "Ecode - Bit 2 - HW 0 Coding State";
 CM_ SG_ 386 Lim_plus82 "Limit switch plus assigned";
 CM_ SG_ 386 KM_FRG_OFF "Kern Mode State Bit -";
 CM_ SG_ 386 CS_Ain_2_Format "Command Source Mask - Analog 2 Format Bits";
-CM_ SG_ 386 IN2 "Digital input Din 2 active";
+CM_ SG_ 386 IN_Active_2 "Digital input Din 2 active";
 CM_ SG_ 386 Err_RFE_Fault "Safety circuit faulty (only active with RUN)";
 CM_ SG_ 386 FB_Special "Feedback Speciality";
 CM_ SG_ 386 Out_2 "Output Signal - Out 2";
@@ -2629,7 +2627,7 @@ CM_ SG_ 386 Ecode_Bit1__HW1_State148 "Ecode - Bit 1 - HW 1 Coding State";
 CM_ SG_ 386 Ecode_Bit1__HW1_State99 "Ecode - Bit 1 - HW 1 Coding State";
 CM_ SG_ 386 NcR082 "Speed command value = 0 (drive stopped)";
 CM_ SG_ 386 KM_SPEED_0 "Kern Mode State Bit -";
-CM_ SG_ 386 LMT2 "Digital input limit 2 active";
+CM_ SG_ 386 LMT_Active_2 "Digital input limit 2 active";
 CM_ SG_ 386 Err_PowerFault "Hardware error";
 CM_ SG_ 386 Ballast_Ext "Ballast-R extern";
 CM_ SG_ 386 SubVersion_Nr "Firmware Subversion Number";
@@ -2845,7 +2843,7 @@ CM_ SG_ 386 N_setdig "Digital numerical Speed Command - input";
 CM_ SG_ 386 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
 CM_ SG_ 386 Ain_in_2_raw "Analog Input Signal 2 - Raw";
 CM_ SG_ 386 Ain_in_1_raw "Analog Input Signal 1 - Raw";
-CM_ SG_ 386 LMT1 "Digital input limit 1 active";
+CM_ SG_ 386 LMT_Active_1 "Digital input limit 1 active";
 CM_ SG_ 386 Err_BadParas "Damaged parameter";
 CM_ SG_ 386 Status_BitMap "Status Bit Map";
 CM_ SG_ 386 DC_BUS_comp "Analoge Zwischenkreismessung geht in Uout ein";

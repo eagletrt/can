@@ -602,7 +602,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["dc_bus_comp"].push(pack->inv_l_rcv(i).dc_bus_comp());
 		(*net_signals)["INV_L_RCV"]["status_bitmap"].push(pack->inv_l_rcv(i).status_bitmap());
 		(*net_signals)["INV_L_RCV"]["err_badparas"].push(pack->inv_l_rcv(i).err_badparas());
-		(*net_signals)["INV_L_RCV"]["lmt1"].push(pack->inv_l_rcv(i).lmt1());
+		(*net_signals)["INV_L_RCV"]["lmt_active_1"].push(pack->inv_l_rcv(i).lmt_active_1());
 		(*net_signals)["INV_L_RCV"]["ain_in_1_raw"].push(pack->inv_l_rcv(i).ain_in_1_raw());
 		(*net_signals)["INV_L_RCV"]["ain_in_2_raw"].push(pack->inv_l_rcv(i).ain_in_2_raw());
 		(*net_signals)["INV_L_RCV"]["nmax100perc"].push(pack->inv_l_rcv(i).nmax100perc());
@@ -830,7 +830,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["subversion_nr"].push(pack->inv_l_rcv(i).subversion_nr());
 		(*net_signals)["INV_L_RCV"]["ballast_ext"].push(pack->inv_l_rcv(i).ballast_ext());
 		(*net_signals)["INV_L_RCV"]["err_powerfault"].push(pack->inv_l_rcv(i).err_powerfault());
-		(*net_signals)["INV_L_RCV"]["lmt2"].push(pack->inv_l_rcv(i).lmt2());
+		(*net_signals)["INV_L_RCV"]["lmt_active_2"].push(pack->inv_l_rcv(i).lmt_active_2());
 		(*net_signals)["INV_L_RCV"]["km_speed_0"].push(pack->inv_l_rcv(i).km_speed_0());
 		(*net_signals)["INV_L_RCV"]["ncr082"].push(pack->inv_l_rcv(i).ncr082());
 		(*net_signals)["INV_L_RCV"]["ecode_bit1__hw1_state99"].push(pack->inv_l_rcv(i).ecode_bit1__hw1_state99());
@@ -841,7 +841,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["out_2"].push(pack->inv_l_rcv(i).out_2());
 		(*net_signals)["INV_L_RCV"]["fb_special"].push(pack->inv_l_rcv(i).fb_special());
 		(*net_signals)["INV_L_RCV"]["err_rfe_fault"].push(pack->inv_l_rcv(i).err_rfe_fault());
-		(*net_signals)["INV_L_RCV"]["in2"].push(pack->inv_l_rcv(i).in2());
+		(*net_signals)["INV_L_RCV"]["in_active_2"].push(pack->inv_l_rcv(i).in_active_2());
 		(*net_signals)["INV_L_RCV"]["cs_ain_2_format"].push(pack->inv_l_rcv(i).cs_ain_2_format());
 		(*net_signals)["INV_L_RCV"]["km_frg_off"].push(pack->inv_l_rcv(i).km_frg_off());
 		(*net_signals)["INV_L_RCV"]["lim_plus82"].push(pack->inv_l_rcv(i).lim_plus82());
@@ -853,7 +853,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["rdy155"].push(pack->inv_l_rcv(i).rdy155());
 		(*net_signals)["INV_L_RCV"]["coaststop"].push(pack->inv_l_rcv(i).coaststop());
 		(*net_signals)["INV_L_RCV"]["err_bustimeout"].push(pack->inv_l_rcv(i).err_bustimeout());
-		(*net_signals)["INV_L_RCV"]["in1"].push(pack->inv_l_rcv(i).in1());
+		(*net_signals)["INV_L_RCV"]["in_active_1"].push(pack->inv_l_rcv(i).in_active_1());
 		(*net_signals)["INV_L_RCV"]["km_cal_off"].push(pack->inv_l_rcv(i).km_cal_off());
 		(*net_signals)["INV_L_RCV"]["lim_minus82"].push(pack->inv_l_rcv(i).lim_minus82());
 		(*net_signals)["INV_L_RCV"]["ecode_bit3__free99"].push(pack->inv_l_rcv(i).ecode_bit3__free99());
@@ -921,7 +921,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["brk1155"].push(pack->inv_l_rcv(i).brk1155());
 		(*net_signals)["INV_L_RCV"]["i1_adc_ena"].push(pack->inv_l_rcv(i).i1_adc_ena());
 		(*net_signals)["INV_L_RCV"]["err_overvoltage"].push(pack->inv_l_rcv(i).err_overvoltage());
-		(*net_signals)["INV_L_RCV"]["out1"].push(pack->inv_l_rcv(i).out1());
+		(*net_signals)["INV_L_RCV"]["d_out_1_on"].push(pack->inv_l_rcv(i).d_out_1_on());
 		(*net_enums)["INV_L_RCV"]["cs_ain_2_mode"].push(pack->inv_l_rcv(i).cs_ain_2_mode());
 		inverters_inv_l_rcv_cs_ain_2_mode_enum_to_string((inverters_inv_l_rcv_cs_ain_2_mode)pack->inv_l_rcv(i).cs_ain_2_mode(), buffer);
 		(*net_strings)["INV_L_RCV"]["cs_ain_2_mode"].push(buffer);
@@ -948,7 +948,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_L_RCV"]["dup__bit8__can_extended_0"].push(pack->inv_l_rcv(i).dup__bit8__can_extended_0());
 		(*net_signals)["INV_L_RCV"]["hxinv"].push(pack->inv_l_rcv(i).hxinv());
 		(*net_signals)["INV_L_RCV"]["err_ipeak"].push(pack->inv_l_rcv(i).err_ipeak());
-		(*net_signals)["INV_L_RCV"]["out2"].push(pack->inv_l_rcv(i).out2());
+		(*net_signals)["INV_L_RCV"]["d_out_2_on"].push(pack->inv_l_rcv(i).d_out_2_on());
 		(*net_signals)["INV_L_RCV"]["km_handwheel"].push(pack->inv_l_rcv(i).km_handwheel());
 		(*net_signals)["INV_L_RCV"]["_n082"].push(pack->inv_l_rcv(i)._n082());
 		(*net_signals)["INV_L_RCV"]["ecode_bit9__fail_i99"].push(pack->inv_l_rcv(i).ecode_bit9__fail_i99());
@@ -976,7 +976,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_RCV"]["motortype"].push(pack->inv_l_rcv(i).motortype());
 		inverters_inv_l_rcv_motortype_enum_to_string((inverters_inv_l_rcv_motortype)pack->inv_l_rcv(i).motortype(), buffer);
 		(*net_strings)["INV_L_RCV"]["motortype"].push(buffer);
-		(*net_signals)["INV_L_RCV"]["out3"].push(pack->inv_l_rcv(i).out3());
+		(*net_signals)["INV_L_RCV"]["d_out_3_on"].push(pack->inv_l_rcv(i).d_out_3_on());
 		(*net_enums)["INV_L_RCV"]["cs_cmd_type"].push(pack->inv_l_rcv(i).cs_cmd_type());
 		inverters_inv_l_rcv_cs_cmd_type_enum_to_string((inverters_inv_l_rcv_cs_cmd_type)pack->inv_l_rcv(i).cs_cmd_type(), buffer);
 		(*net_strings)["INV_L_RCV"]["cs_cmd_type"].push(buffer);
@@ -988,7 +988,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		inverters_inv_l_rcv_mo_sc2_reso_enum_to_string((inverters_inv_l_rcv_mo_sc2_reso)pack->inv_l_rcv(i).mo_sc2_reso(), buffer);
 		(*net_strings)["INV_L_RCV"]["mo_sc2_reso"].push(buffer);
 		(*net_signals)["INV_L_RCV"]["dup__bit12__boat_pedal"].push(pack->inv_l_rcv(i).dup__bit12__boat_pedal());
-		(*net_signals)["INV_L_RCV"]["out4"].push(pack->inv_l_rcv(i).out4());
+		(*net_signals)["INV_L_RCV"]["d_out_4_on"].push(pack->inv_l_rcv(i).d_out_4_on());
 		(*net_signals)["INV_L_RCV"]["km_rsvd_13"].push(pack->inv_l_rcv(i).km_rsvd_13());
 		(*net_signals)["INV_L_RCV"]["tol82"].push(pack->inv_l_rcv(i).tol82());
 		(*net_signals)["INV_L_RCV"]["ecode_bit13__18m_plus99"].push(pack->inv_l_rcv(i).ecode_bit13__18m_plus99());
@@ -1458,7 +1458,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["dc_bus_comp"].push(pack->inv_r_rcv(i).dc_bus_comp());
 		(*net_signals)["INV_R_RCV"]["status_bitmap"].push(pack->inv_r_rcv(i).status_bitmap());
 		(*net_signals)["INV_R_RCV"]["err_badparas"].push(pack->inv_r_rcv(i).err_badparas());
-		(*net_signals)["INV_R_RCV"]["lmt1"].push(pack->inv_r_rcv(i).lmt1());
+		(*net_signals)["INV_R_RCV"]["lmt_active_1"].push(pack->inv_r_rcv(i).lmt_active_1());
 		(*net_signals)["INV_R_RCV"]["ain_in_1_raw"].push(pack->inv_r_rcv(i).ain_in_1_raw());
 		(*net_signals)["INV_R_RCV"]["ain_in_2_raw"].push(pack->inv_r_rcv(i).ain_in_2_raw());
 		(*net_signals)["INV_R_RCV"]["nmax100perc"].push(pack->inv_r_rcv(i).nmax100perc());
@@ -1686,7 +1686,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["subversion_nr"].push(pack->inv_r_rcv(i).subversion_nr());
 		(*net_signals)["INV_R_RCV"]["ballast_ext"].push(pack->inv_r_rcv(i).ballast_ext());
 		(*net_signals)["INV_R_RCV"]["err_powerfault"].push(pack->inv_r_rcv(i).err_powerfault());
-		(*net_signals)["INV_R_RCV"]["lmt2"].push(pack->inv_r_rcv(i).lmt2());
+		(*net_signals)["INV_R_RCV"]["lmt_active_2"].push(pack->inv_r_rcv(i).lmt_active_2());
 		(*net_signals)["INV_R_RCV"]["km_speed_0"].push(pack->inv_r_rcv(i).km_speed_0());
 		(*net_signals)["INV_R_RCV"]["ncr082"].push(pack->inv_r_rcv(i).ncr082());
 		(*net_signals)["INV_R_RCV"]["ecode_bit1__hw1_state99"].push(pack->inv_r_rcv(i).ecode_bit1__hw1_state99());
@@ -1697,7 +1697,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["out_2"].push(pack->inv_r_rcv(i).out_2());
 		(*net_signals)["INV_R_RCV"]["fb_special"].push(pack->inv_r_rcv(i).fb_special());
 		(*net_signals)["INV_R_RCV"]["err_rfe_fault"].push(pack->inv_r_rcv(i).err_rfe_fault());
-		(*net_signals)["INV_R_RCV"]["in2"].push(pack->inv_r_rcv(i).in2());
+		(*net_signals)["INV_R_RCV"]["in_active_2"].push(pack->inv_r_rcv(i).in_active_2());
 		(*net_signals)["INV_R_RCV"]["cs_ain_2_format"].push(pack->inv_r_rcv(i).cs_ain_2_format());
 		(*net_signals)["INV_R_RCV"]["km_frg_off"].push(pack->inv_r_rcv(i).km_frg_off());
 		(*net_signals)["INV_R_RCV"]["lim_plus82"].push(pack->inv_r_rcv(i).lim_plus82());
@@ -1709,7 +1709,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["rdy155"].push(pack->inv_r_rcv(i).rdy155());
 		(*net_signals)["INV_R_RCV"]["coaststop"].push(pack->inv_r_rcv(i).coaststop());
 		(*net_signals)["INV_R_RCV"]["err_bustimeout"].push(pack->inv_r_rcv(i).err_bustimeout());
-		(*net_signals)["INV_R_RCV"]["in1"].push(pack->inv_r_rcv(i).in1());
+		(*net_signals)["INV_R_RCV"]["in_active_1"].push(pack->inv_r_rcv(i).in_active_1());
 		(*net_signals)["INV_R_RCV"]["km_cal_off"].push(pack->inv_r_rcv(i).km_cal_off());
 		(*net_signals)["INV_R_RCV"]["lim_minus82"].push(pack->inv_r_rcv(i).lim_minus82());
 		(*net_signals)["INV_R_RCV"]["ecode_bit3__free99"].push(pack->inv_r_rcv(i).ecode_bit3__free99());
@@ -1777,7 +1777,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["brk1155"].push(pack->inv_r_rcv(i).brk1155());
 		(*net_signals)["INV_R_RCV"]["i1_adc_ena"].push(pack->inv_r_rcv(i).i1_adc_ena());
 		(*net_signals)["INV_R_RCV"]["err_overvoltage"].push(pack->inv_r_rcv(i).err_overvoltage());
-		(*net_signals)["INV_R_RCV"]["out1"].push(pack->inv_r_rcv(i).out1());
+		(*net_signals)["INV_R_RCV"]["d_out_1_on"].push(pack->inv_r_rcv(i).d_out_1_on());
 		(*net_enums)["INV_R_RCV"]["cs_ain_2_mode"].push(pack->inv_r_rcv(i).cs_ain_2_mode());
 		inverters_inv_r_rcv_cs_ain_2_mode_enum_to_string((inverters_inv_r_rcv_cs_ain_2_mode)pack->inv_r_rcv(i).cs_ain_2_mode(), buffer);
 		(*net_strings)["INV_R_RCV"]["cs_ain_2_mode"].push(buffer);
@@ -1804,7 +1804,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_signals)["INV_R_RCV"]["dup__bit8__can_extended_0"].push(pack->inv_r_rcv(i).dup__bit8__can_extended_0());
 		(*net_signals)["INV_R_RCV"]["hxinv"].push(pack->inv_r_rcv(i).hxinv());
 		(*net_signals)["INV_R_RCV"]["err_ipeak"].push(pack->inv_r_rcv(i).err_ipeak());
-		(*net_signals)["INV_R_RCV"]["out2"].push(pack->inv_r_rcv(i).out2());
+		(*net_signals)["INV_R_RCV"]["d_out_2_on"].push(pack->inv_r_rcv(i).d_out_2_on());
 		(*net_signals)["INV_R_RCV"]["km_handwheel"].push(pack->inv_r_rcv(i).km_handwheel());
 		(*net_signals)["INV_R_RCV"]["_n082"].push(pack->inv_r_rcv(i)._n082());
 		(*net_signals)["INV_R_RCV"]["ecode_bit9__fail_i99"].push(pack->inv_r_rcv(i).ecode_bit9__fail_i99());
@@ -1832,7 +1832,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_R_RCV"]["motortype"].push(pack->inv_r_rcv(i).motortype());
 		inverters_inv_r_rcv_motortype_enum_to_string((inverters_inv_r_rcv_motortype)pack->inv_r_rcv(i).motortype(), buffer);
 		(*net_strings)["INV_R_RCV"]["motortype"].push(buffer);
-		(*net_signals)["INV_R_RCV"]["out3"].push(pack->inv_r_rcv(i).out3());
+		(*net_signals)["INV_R_RCV"]["d_out_3_on"].push(pack->inv_r_rcv(i).d_out_3_on());
 		(*net_enums)["INV_R_RCV"]["cs_cmd_type"].push(pack->inv_r_rcv(i).cs_cmd_type());
 		inverters_inv_r_rcv_cs_cmd_type_enum_to_string((inverters_inv_r_rcv_cs_cmd_type)pack->inv_r_rcv(i).cs_cmd_type(), buffer);
 		(*net_strings)["INV_R_RCV"]["cs_cmd_type"].push(buffer);
@@ -1844,7 +1844,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		inverters_inv_r_rcv_mo_sc2_reso_enum_to_string((inverters_inv_r_rcv_mo_sc2_reso)pack->inv_r_rcv(i).mo_sc2_reso(), buffer);
 		(*net_strings)["INV_R_RCV"]["mo_sc2_reso"].push(buffer);
 		(*net_signals)["INV_R_RCV"]["dup__bit12__boat_pedal"].push(pack->inv_r_rcv(i).dup__bit12__boat_pedal());
-		(*net_signals)["INV_R_RCV"]["out4"].push(pack->inv_r_rcv(i).out4());
+		(*net_signals)["INV_R_RCV"]["d_out_4_on"].push(pack->inv_r_rcv(i).d_out_4_on());
 		(*net_signals)["INV_R_RCV"]["km_rsvd_13"].push(pack->inv_r_rcv(i).km_rsvd_13());
 		(*net_signals)["INV_R_RCV"]["tol82"].push(pack->inv_r_rcv(i).tol82());
 		(*net_signals)["INV_R_RCV"]["ecode_bit13__18m_plus99"].push(pack->inv_r_rcv(i).ecode_bit13__18m_plus99());
@@ -2249,7 +2249,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dc_bus_comp(msg->dc_bus_comp);
 			proto_msg->set_status_bitmap(msg->status_bitmap);
 			proto_msg->set_err_badparas(msg->err_badparas);
-			proto_msg->set_lmt1(msg->lmt1);
+			proto_msg->set_lmt_active_1(msg->lmt_active_1);
 			proto_msg->set_ain_in_1_raw(msg->ain_in_1_raw);
 			proto_msg->set_ain_in_2_raw(msg->ain_in_2_raw);
 			proto_msg->set_nmax100perc(msg->nmax100perc);
@@ -2465,7 +2465,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_subversion_nr(msg->subversion_nr);
 			proto_msg->set_ballast_ext(msg->ballast_ext);
 			proto_msg->set_err_powerfault(msg->err_powerfault);
-			proto_msg->set_lmt2(msg->lmt2);
+			proto_msg->set_lmt_active_2(msg->lmt_active_2);
 			proto_msg->set_km_speed_0(msg->km_speed_0);
 			proto_msg->set_ncr082(msg->ncr082);
 			proto_msg->set_ecode_bit1__hw1_state99(msg->ecode_bit1__hw1_state99);
@@ -2476,7 +2476,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_out_2(msg->out_2);
 			proto_msg->set_fb_special(msg->fb_special);
 			proto_msg->set_err_rfe_fault(msg->err_rfe_fault);
-			proto_msg->set_in2(msg->in2);
+			proto_msg->set_in_active_2(msg->in_active_2);
 			proto_msg->set_cs_ain_2_format(msg->cs_ain_2_format);
 			proto_msg->set_km_frg_off(msg->km_frg_off);
 			proto_msg->set_lim_plus82(msg->lim_plus82);
@@ -2488,7 +2488,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_rdy155(msg->rdy155);
 			proto_msg->set_coaststop(msg->coaststop);
 			proto_msg->set_err_bustimeout(msg->err_bustimeout);
-			proto_msg->set_in1(msg->in1);
+			proto_msg->set_in_active_1(msg->in_active_1);
 			proto_msg->set_km_cal_off(msg->km_cal_off);
 			proto_msg->set_lim_minus82(msg->lim_minus82);
 			proto_msg->set_ecode_bit3__free99(msg->ecode_bit3__free99);
@@ -2544,7 +2544,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_brk1155(msg->brk1155);
 			proto_msg->set_i1_adc_ena(msg->i1_adc_ena);
 			proto_msg->set_err_overvoltage(msg->err_overvoltage);
-			proto_msg->set_out1(msg->out1);
+			proto_msg->set_d_out_1_on(msg->d_out_1_on);
 			proto_msg->set_cs_ain_2_mode((inverters::inverters_inv_l_rcv_cs_ain_2_mode)msg->cs_ain_2_mode);
 			proto_msg->set_km_allow_sync(msg->km_allow_sync);
 			proto_msg->set_ni82(msg->ni82);
@@ -2559,7 +2559,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dup__bit8__can_extended_0(msg->dup__bit8__can_extended_0);
 			proto_msg->set_hxinv(msg->hxinv);
 			proto_msg->set_err_ipeak(msg->err_ipeak);
-			proto_msg->set_out2(msg->out2);
+			proto_msg->set_d_out_2_on(msg->d_out_2_on);
 			proto_msg->set_km_handwheel(msg->km_handwheel);
 			proto_msg->set__n082(msg->_n082);
 			proto_msg->set_ecode_bit9__fail_i99(msg->ecode_bit9__fail_i99);
@@ -2585,7 +2585,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dup__bit11__dcbus_volts(msg->dup__bit11__dcbus_volts);
 			proto_msg->set_test(msg->test);
 			proto_msg->set_motortype((inverters::inverters_inv_l_rcv_motortype)msg->motortype);
-			proto_msg->set_out3(msg->out3);
+			proto_msg->set_d_out_3_on(msg->d_out_3_on);
 			proto_msg->set_cs_cmd_type((inverters::inverters_inv_l_rcv_cs_cmd_type)msg->cs_cmd_type);
 			proto_msg->set_km_rsvd_12(msg->km_rsvd_12);
 			proto_msg->set_cal82(msg->cal82);
@@ -2593,7 +2593,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_ecode_bit12__15m_plus148(msg->ecode_bit12__15m_plus148);
 			proto_msg->set_mo_sc2_reso((inverters::inverters_inv_l_rcv_mo_sc2_reso)msg->mo_sc2_reso);
 			proto_msg->set_dup__bit12__boat_pedal(msg->dup__bit12__boat_pedal);
-			proto_msg->set_out4(msg->out4);
+			proto_msg->set_d_out_4_on(msg->d_out_4_on);
 			proto_msg->set_km_rsvd_13(msg->km_rsvd_13);
 			proto_msg->set_tol82(msg->tol82);
 			proto_msg->set_ecode_bit13__18m_plus99(msg->ecode_bit13__18m_plus99);
@@ -2983,7 +2983,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dc_bus_comp(msg->dc_bus_comp);
 			proto_msg->set_status_bitmap(msg->status_bitmap);
 			proto_msg->set_err_badparas(msg->err_badparas);
-			proto_msg->set_lmt1(msg->lmt1);
+			proto_msg->set_lmt_active_1(msg->lmt_active_1);
 			proto_msg->set_ain_in_1_raw(msg->ain_in_1_raw);
 			proto_msg->set_ain_in_2_raw(msg->ain_in_2_raw);
 			proto_msg->set_nmax100perc(msg->nmax100perc);
@@ -3199,7 +3199,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_subversion_nr(msg->subversion_nr);
 			proto_msg->set_ballast_ext(msg->ballast_ext);
 			proto_msg->set_err_powerfault(msg->err_powerfault);
-			proto_msg->set_lmt2(msg->lmt2);
+			proto_msg->set_lmt_active_2(msg->lmt_active_2);
 			proto_msg->set_km_speed_0(msg->km_speed_0);
 			proto_msg->set_ncr082(msg->ncr082);
 			proto_msg->set_ecode_bit1__hw1_state99(msg->ecode_bit1__hw1_state99);
@@ -3210,7 +3210,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_out_2(msg->out_2);
 			proto_msg->set_fb_special(msg->fb_special);
 			proto_msg->set_err_rfe_fault(msg->err_rfe_fault);
-			proto_msg->set_in2(msg->in2);
+			proto_msg->set_in_active_2(msg->in_active_2);
 			proto_msg->set_cs_ain_2_format(msg->cs_ain_2_format);
 			proto_msg->set_km_frg_off(msg->km_frg_off);
 			proto_msg->set_lim_plus82(msg->lim_plus82);
@@ -3222,7 +3222,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_rdy155(msg->rdy155);
 			proto_msg->set_coaststop(msg->coaststop);
 			proto_msg->set_err_bustimeout(msg->err_bustimeout);
-			proto_msg->set_in1(msg->in1);
+			proto_msg->set_in_active_1(msg->in_active_1);
 			proto_msg->set_km_cal_off(msg->km_cal_off);
 			proto_msg->set_lim_minus82(msg->lim_minus82);
 			proto_msg->set_ecode_bit3__free99(msg->ecode_bit3__free99);
@@ -3278,7 +3278,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_brk1155(msg->brk1155);
 			proto_msg->set_i1_adc_ena(msg->i1_adc_ena);
 			proto_msg->set_err_overvoltage(msg->err_overvoltage);
-			proto_msg->set_out1(msg->out1);
+			proto_msg->set_d_out_1_on(msg->d_out_1_on);
 			proto_msg->set_cs_ain_2_mode((inverters::inverters_inv_r_rcv_cs_ain_2_mode)msg->cs_ain_2_mode);
 			proto_msg->set_km_allow_sync(msg->km_allow_sync);
 			proto_msg->set_ni82(msg->ni82);
@@ -3293,7 +3293,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dup__bit8__can_extended_0(msg->dup__bit8__can_extended_0);
 			proto_msg->set_hxinv(msg->hxinv);
 			proto_msg->set_err_ipeak(msg->err_ipeak);
-			proto_msg->set_out2(msg->out2);
+			proto_msg->set_d_out_2_on(msg->d_out_2_on);
 			proto_msg->set_km_handwheel(msg->km_handwheel);
 			proto_msg->set__n082(msg->_n082);
 			proto_msg->set_ecode_bit9__fail_i99(msg->ecode_bit9__fail_i99);
@@ -3319,7 +3319,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_dup__bit11__dcbus_volts(msg->dup__bit11__dcbus_volts);
 			proto_msg->set_test(msg->test);
 			proto_msg->set_motortype((inverters::inverters_inv_r_rcv_motortype)msg->motortype);
-			proto_msg->set_out3(msg->out3);
+			proto_msg->set_d_out_3_on(msg->d_out_3_on);
 			proto_msg->set_cs_cmd_type((inverters::inverters_inv_r_rcv_cs_cmd_type)msg->cs_cmd_type);
 			proto_msg->set_km_rsvd_12(msg->km_rsvd_12);
 			proto_msg->set_cal82(msg->cal82);
@@ -3327,7 +3327,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_ecode_bit12__15m_plus148(msg->ecode_bit12__15m_plus148);
 			proto_msg->set_mo_sc2_reso((inverters::inverters_inv_r_rcv_mo_sc2_reso)msg->mo_sc2_reso);
 			proto_msg->set_dup__bit12__boat_pedal(msg->dup__bit12__boat_pedal);
-			proto_msg->set_out4(msg->out4);
+			proto_msg->set_d_out_4_on(msg->d_out_4_on);
 			proto_msg->set_km_rsvd_13(msg->km_rsvd_13);
 			proto_msg->set_tol82(msg->tol82);
 			proto_msg->set_ecode_bit13__18m_plus99(msg->ecode_bit13__18m_plus99);
