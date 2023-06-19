@@ -336,18 +336,18 @@ SG_ Warn_Vout_Sat m143 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ Warn_IPeak m143 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ Warn_RaceAway m143 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ Warn_Ballast m143 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ LMT1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ LMT2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IN2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IN1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LMT_Active_1 m216 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ LMT_Active_2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ IN_Active_2 m216 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ IN_Active_1 m216 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ FRGRUN m216 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ RFE216 m216 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ OUT1 m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ OUT2 m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ D_OUT_1_on m216 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ D_OUT_2_on m216 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ BTBRdy m216 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ GO216 m216 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ OUT3 m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ OUT4 m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ D_OUT_3_on m216 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+SG_ D_OUT_4_on m216 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ GOFF m216 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ BRK1216 m216 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ Ain_in_1_raw m213 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
@@ -1080,18 +1080,18 @@ CM_ SG_ 385 Warn_IPeak "Overcurrent 200 %";
 CM_ SG_ 385 Warn_RaceAway "Resolution range of the speed measurement exceeded";
 CM_ SG_ 385 Warn_Ballast "Ballast circuit > 87 % overloaded";
 CM_ SG_ 385 IO_Bitmap "Digital Input-Output Bitmap";
-CM_ SG_ 385 LMT1 "Digital input limit 1 active";
-CM_ SG_ 385 LMT2 "Digital input limit 2 active";
-CM_ SG_ 385 IN2 "Digital input Din 2 active";
-CM_ SG_ 385 IN1 "Digital input Din 1 active";
+CM_ SG_ 385 LMT_Active_1 "Digital input limit 1 active";
+CM_ SG_ 385 LMT_Active_2 "Digital input limit 2 active";
+CM_ SG_ 385 IN_Active_2 "Digital input Din 2 active";
+CM_ SG_ 385 IN_Active_1 "Digital input Din 1 active";
 CM_ SG_ 385 FRGRUN "Hardware enable active";
 CM_ SG_ 385 RFE216 "Rotating Field Enable";
-CM_ SG_ 385 OUT1 "Digital output Dout 1 on";
-CM_ SG_ 385 OUT2 "Digital output Dout 2 on";
+CM_ SG_ 385 D_OUT_1_on "Digital output Dout 1 on";
+CM_ SG_ 385 D_OUT_2_on "Digital output Dout 2 on";
 CM_ SG_ 385 BTBRdy "Hardware relay, output BTB (Rdy) on";
 CM_ SG_ 385 GO216 "Internal enable GO active";
-CM_ SG_ 385 OUT3 "Digital output Dout 3 on";
-CM_ SG_ 385 OUT4 "Digital output Dout 4 on";
+CM_ SG_ 385 D_OUT_3_on "Digital output Dout 3 on";
+CM_ SG_ 385 D_OUT_4_on "Digital output Dout 4 on";
 CM_ SG_ 385 BRK1216 "Excited Brake";
 CM_ SG_ 385 Ain_in_1_raw "Analog Input Signal 1 - Raw";
 CM_ SG_ 385 Ain_in_1_scaled213 "Analog Input Signal 1 - Scaled";
@@ -1466,8 +1466,8 @@ CM_ SG_ 385 Vdc_Bus "DC-Bus Voltage";
 CM_ SG_ 385 M_cmd_ramp "Digital numerical Iq-Current Command - internal ramped";
 CM_ SG_ 385 free "free";
 CM_ SG_ 385 LogicInBlock_BitMap "LogicInBlock BitMap";
-CM_ SG_ 385 Lmt_1 "Input Signal - Limit 1";
-CM_ SG_ 385 Lmt_2 "Input Signal - Limit 2";
+CM_ SG_ 385 LMT_in_1 "Input Signal - Limit 1";
+CM_ SG_ 385 LMT_in_2 "Input Signal - Limit 2";
 CM_ SG_ 385 In_2 "Input Signal - Input 2";
 CM_ SG_ 385 In_1 "Input Signal - Input 1";
 CM_ SG_ 385 Run152 "Input Signal - Run (FRG)";
