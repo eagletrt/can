@@ -262,15 +262,15 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 		(*net_enums)["BOARD_STATUS"]["cellboard_id"].push(pack->board_status(i).cellboard_id());
 		bms_board_status_cellboard_id_enum_to_string((bms_board_status_cellboard_id)pack->board_status(i).cellboard_id(), buffer);
 		(*net_strings)["BOARD_STATUS"]["cellboard_id"].push(buffer);
-		(*net_signals)["BOARD_STATUS"]["errors_can_comm"].push(pack->board_status(i).errors_can_comm());
-		(*net_signals)["BOARD_STATUS"]["errors_ltc_comm"].push(pack->board_status(i).errors_ltc_comm());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_0"].push(pack->board_status(i).errors_temp_comm_0());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_1"].push(pack->board_status(i).errors_temp_comm_1());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_2"].push(pack->board_status(i).errors_temp_comm_2());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_3"].push(pack->board_status(i).errors_temp_comm_3());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_4"].push(pack->board_status(i).errors_temp_comm_4());
-		(*net_signals)["BOARD_STATUS"]["errors_temp_comm_5"].push(pack->board_status(i).errors_temp_comm_5());
-		(*net_signals)["BOARD_STATUS"]["errors_open_wire"].push(pack->board_status(i).errors_open_wire());
+		(*net_enums)["BOARD_STATUS"]["errors_can_comm"].push(pack->board_status(i).errors_can_comm());
+		(*net_enums)["BOARD_STATUS"]["errors_ltc_comm"].push(pack->board_status(i).errors_ltc_comm());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_0"].push(pack->board_status(i).errors_temp_comm_0());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_1"].push(pack->board_status(i).errors_temp_comm_1());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_2"].push(pack->board_status(i).errors_temp_comm_2());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_3"].push(pack->board_status(i).errors_temp_comm_3());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_4"].push(pack->board_status(i).errors_temp_comm_4());
+		(*net_enums)["BOARD_STATUS"]["errors_temp_comm_5"].push(pack->board_status(i).errors_temp_comm_5());
+		(*net_enums)["BOARD_STATUS"]["errors_open_wire"].push(pack->board_status(i).errors_open_wire());
 		(*net_enums)["BOARD_STATUS"]["balancing_status"].push(pack->board_status(i).balancing_status());
 		bms_board_status_balancing_status_enum_to_string((bms_board_status_balancing_status)pack->board_status(i).balancing_status(), buffer);
 		(*net_strings)["BOARD_STATUS"]["balancing_status"].push(buffer);
@@ -326,24 +326,24 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 		bms_balancing_cellboard_id_enum_to_string((bms_balancing_cellboard_id)pack->balancing(i).cellboard_id(), buffer);
 		(*net_strings)["BALANCING"]["cellboard_id"].push(buffer);
 		(*net_signals)["BALANCING"]["board_index"].push(pack->balancing(i).board_index());
-		(*net_signals)["BALANCING"]["cells_cell0"].push(pack->balancing(i).cells_cell0());
-		(*net_signals)["BALANCING"]["cells_cell1"].push(pack->balancing(i).cells_cell1());
-		(*net_signals)["BALANCING"]["cells_cell2"].push(pack->balancing(i).cells_cell2());
-		(*net_signals)["BALANCING"]["cells_cell3"].push(pack->balancing(i).cells_cell3());
-		(*net_signals)["BALANCING"]["cells_cell4"].push(pack->balancing(i).cells_cell4());
-		(*net_signals)["BALANCING"]["cells_cell5"].push(pack->balancing(i).cells_cell5());
-		(*net_signals)["BALANCING"]["cells_cell6"].push(pack->balancing(i).cells_cell6());
-		(*net_signals)["BALANCING"]["cells_cell7"].push(pack->balancing(i).cells_cell7());
-		(*net_signals)["BALANCING"]["cells_cell8"].push(pack->balancing(i).cells_cell8());
-		(*net_signals)["BALANCING"]["cells_cell9"].push(pack->balancing(i).cells_cell9());
-		(*net_signals)["BALANCING"]["cells_cell10"].push(pack->balancing(i).cells_cell10());
-		(*net_signals)["BALANCING"]["cells_cell11"].push(pack->balancing(i).cells_cell11());
-		(*net_signals)["BALANCING"]["cells_cell12"].push(pack->balancing(i).cells_cell12());
-		(*net_signals)["BALANCING"]["cells_cell13"].push(pack->balancing(i).cells_cell13());
-		(*net_signals)["BALANCING"]["cells_cell14"].push(pack->balancing(i).cells_cell14());
-		(*net_signals)["BALANCING"]["cells_cell15"].push(pack->balancing(i).cells_cell15());
-		(*net_signals)["BALANCING"]["cells_cell16"].push(pack->balancing(i).cells_cell16());
-		(*net_signals)["BALANCING"]["cells_cell17"].push(pack->balancing(i).cells_cell17());
+		(*net_enums)["BALANCING"]["cells_cell0"].push(pack->balancing(i).cells_cell0());
+		(*net_enums)["BALANCING"]["cells_cell1"].push(pack->balancing(i).cells_cell1());
+		(*net_enums)["BALANCING"]["cells_cell2"].push(pack->balancing(i).cells_cell2());
+		(*net_enums)["BALANCING"]["cells_cell3"].push(pack->balancing(i).cells_cell3());
+		(*net_enums)["BALANCING"]["cells_cell4"].push(pack->balancing(i).cells_cell4());
+		(*net_enums)["BALANCING"]["cells_cell5"].push(pack->balancing(i).cells_cell5());
+		(*net_enums)["BALANCING"]["cells_cell6"].push(pack->balancing(i).cells_cell6());
+		(*net_enums)["BALANCING"]["cells_cell7"].push(pack->balancing(i).cells_cell7());
+		(*net_enums)["BALANCING"]["cells_cell8"].push(pack->balancing(i).cells_cell8());
+		(*net_enums)["BALANCING"]["cells_cell9"].push(pack->balancing(i).cells_cell9());
+		(*net_enums)["BALANCING"]["cells_cell10"].push(pack->balancing(i).cells_cell10());
+		(*net_enums)["BALANCING"]["cells_cell11"].push(pack->balancing(i).cells_cell11());
+		(*net_enums)["BALANCING"]["cells_cell12"].push(pack->balancing(i).cells_cell12());
+		(*net_enums)["BALANCING"]["cells_cell13"].push(pack->balancing(i).cells_cell13());
+		(*net_enums)["BALANCING"]["cells_cell14"].push(pack->balancing(i).cells_cell14());
+		(*net_enums)["BALANCING"]["cells_cell15"].push(pack->balancing(i).cells_cell15());
+		(*net_enums)["BALANCING"]["cells_cell16"].push(pack->balancing(i).cells_cell16());
+		(*net_enums)["BALANCING"]["cells_cell17"].push(pack->balancing(i).cells_cell17());
 
     }
 
@@ -540,7 +540,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 514: {
+        case 515: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)((*map)[index].message_conversion);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -555,7 +555,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 515: {
+        case 514: {
             bms_balancing_t* msg = (bms_balancing_t*)((*map)[index].message_raw);
             bms::BALANCING* proto_msg = pack->add_balancing();
 			proto_msg->set_cellboard_id((bms::bms_balancing_cellboard_id)msg->cellboard_id);
