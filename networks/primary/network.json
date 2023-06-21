@@ -66,6 +66,17 @@
         "AS_ACTUATION_FB"
       ]
     },
+    "LvHealthSignals": {
+      "type": "bitset",
+      "items": [
+        "LVMS_OUT",
+        "RELAY_OUT",
+        "BATTERY_VOLTAGE_OUT",
+        "CHARGER_CURRENT",
+        "BATTERY_CURRENT",
+        "SIGN_BATTERY_CURRENT"
+      ]
+    },
     "DasErrors": {
       "type": "bitset",
       "items": [
@@ -118,7 +129,6 @@
       ]
     },
     "InvErrors": {
-        
       "type": "bitset",
       "items": [
         "BAD_PARAM",
@@ -177,7 +187,16 @@
     },
     "HandcartStatus": {
       "type": "enum",
-      "items": ["CHECK", "IDLE", "PRECHARGE", "READY", "CHARGE", "CHARGE_DONE", "BALANCING", "ERROR"]
+      "items": [
+        "CHECK",
+        "IDLE",
+        "PRECHARGE",
+        "READY",
+        "CHARGE",
+        "CHARGE_DONE",
+        "BALANCING",
+        "ERROR"
+      ]
     },
     "RaceType": {
       "type": "enum",
@@ -1020,6 +1039,18 @@
       }
     },
     {
+      "name": "LV_HEALTH_SIGNALS",
+      "topic": "DASnSTEER",
+      "priority": 6,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER", "TLM"],
+      "description": "LV Battery health signals",
+      "interval": 300,
+      "contents": {
+        "health_signals": "LvHealthSignals"
+      }
+    },
+    {
       "name": "LV_FEEDBACKS",
       "topic": "DASnSTEER",
       "priority": 6,
@@ -1052,6 +1083,27 @@
       "contents": {
         "input": "bool",
         "output": "bool"
+      }
+    },
+    {
+      "name": "LV_CAN_FLASH_REQ",
+      "topic": "TLM",
+      "priority": 0,
+      "sending": ["TLM"],
+      "receiving": ["BMS_LV"],
+      "description": "Request to flash the LV BMS via CAN",
+      "contents": {}
+    },
+    {
+      "name": "LV_CAN_FLASH_ACK",
+      "topic": "TLM",
+      "priority": 0,
+      "interval": 50,
+      "sending": ["BMS_LV"],
+      "receiving": ["TLM"],
+      "description": "Acknowledge to flash the LV BMS via CAN",
+      "contents": {
+        "response": "Toggle"
       }
     },
     {

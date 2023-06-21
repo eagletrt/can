@@ -91,6 +91,10 @@ enum primary_inverter_connection_status_status {
 	primary_inverter_connection_status_status_OFF = 0;
 	primary_inverter_connection_status_status_ON = 1;
 }
+enum primary_lv_can_flash_ack_response {
+	primary_lv_can_flash_ack_response_OFF = 0;
+	primary_lv_can_flash_ack_response_ON = 1;
+}
 enum primary_hv_cell_balancing_status_balancing_status {
 	primary_hv_cell_balancing_status_balancing_status_OFF = 0;
 	primary_hv_cell_balancing_status_balancing_status_ON = 1;
@@ -597,6 +601,15 @@ message LV_ERRORS{
 	bool errors_MUX = 34;
 	uint64 _inner_timestamp = 35;
 }
+message LV_HEALTH_SIGNALS{
+	bool health_signals_LVMS_OUT = 1;
+	bool health_signals_RELAY_OUT = 2;
+	bool health_signals_BATTERY_VOLTAGE_OUT = 3;
+	bool health_signals_CHARGER_CURRENT = 4;
+	bool health_signals_BATTERY_CURRENT = 5;
+	bool health_signals_SIGN_BATTERY_CURRENT = 6;
+	uint64 _inner_timestamp = 7;
+}
 message LV_FEEDBACKS{
 	bool feedbacks_BSPD_FB = 1;
 	bool feedbacks_IMD_FB = 2;
@@ -625,6 +638,13 @@ message SHUTDOWN_STATUS{
 	bool input = 1;
 	bool output = 2;
 	uint64 _inner_timestamp = 3;
+}
+message LV_CAN_FLASH_REQ{
+	uint64 _inner_timestamp = 1;
+}
+message LV_CAN_FLASH_ACK{
+	primary_lv_can_flash_ack_response response = 1;
+	uint64 _inner_timestamp = 2;
 }
 message MARKER{
 	uint64 _inner_timestamp = 1;
@@ -810,22 +830,25 @@ message Pack{
 	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 67;
 	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 68;
 	repeated LV_ERRORS LV_ERRORS = 69;
-	repeated LV_FEEDBACKS LV_FEEDBACKS = 70;
-	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 71;
-	repeated MARKER MARKER = 72;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 73;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 74;
-	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 75;
-	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 76;
-	repeated SPEED SPEED = 77;
-	repeated INV_L_REQUEST INV_L_REQUEST = 78;
-	repeated INV_R_REQUEST INV_R_REQUEST = 79;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 80;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 81;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 82;
-	repeated LC_RESET LC_RESET = 83;
-	repeated HANDCART_STATUS HANDCART_STATUS = 84;
-	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 85;
-	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 86;
+	repeated LV_HEALTH_SIGNALS LV_HEALTH_SIGNALS = 70;
+	repeated LV_FEEDBACKS LV_FEEDBACKS = 71;
+	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 72;
+	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 73;
+	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 74;
+	repeated MARKER MARKER = 75;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 76;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 77;
+	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 78;
+	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 79;
+	repeated SPEED SPEED = 80;
+	repeated INV_L_REQUEST INV_L_REQUEST = 81;
+	repeated INV_R_REQUEST INV_R_REQUEST = 82;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 83;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 84;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 85;
+	repeated LC_RESET LC_RESET = 86;
+	repeated HANDCART_STATUS HANDCART_STATUS = 87;
+	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 88;
+	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 89;
 }
 
