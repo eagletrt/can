@@ -263,6 +263,13 @@
       "contents": {}
     },
     {
+      "name": "STEERING_JMP_TO_BLT",
+      "fixed_id": 33,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
       "name": "STEER_VERSION",
       "topic": "BROADCAST",
       "priority": 3,
@@ -1230,6 +1237,20 @@
       "fixed_id": 1655,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_TX",
+      "fixed_id": 2034,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_RX",
+      "fixed_id": 1656,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
       "contents": {}
     },
     {
