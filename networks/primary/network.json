@@ -256,15 +256,153 @@
       "contents": {}
     },
     {
+      "name": "FLASH_BMS_HV_TX",
+      "fixed_id": 1,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_HV_RX",
+      "fixed_id": 2,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "HV_CAN_FORWARD",
+      "fixed_id": 3,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Enable/disable can forwarding to internal bms network",
+      "contents": {
+        "can_forward_set": "Toggle"
+      }
+    },
+    {
+      "name": "FLASH_CELLBOARD_0_TX",
+      "fixed_id": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_0_RX",
+      "fixed_id": 5,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+
+    {
+      "name": "FLASH_CELLBOARD_1_TX",
+      "fixed_id": 6,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_1_RX",
+      "fixed_id": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+
+    {
+      "name": "FLASH_CELLBOARD_2_TX",
+      "fixed_id": 8,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_2_RX",
+      "fixed_id": 9,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_3_TX",
+      "fixed_id": 10,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_3_RX",
+      "fixed_id": 11,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_4_TX",
+      "fixed_id": 12,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_4_RX",
+      "fixed_id": 13,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_5_TX",
+      "fixed_id": 14,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_5_RX",
+      "fixed_id": 15,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
       "name": "BMS_LV_JMP_TO_BLT",
-      "fixed_id": 32,
+      "fixed_id": 16,
       "sending": ["HANDCART"],
       "receiving": ["BMS_LV"],
       "contents": {}
     },
     {
+      "name": "FLASH_BMS_LV_TX",
+      "fixed_id": 17,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_LV_RX",
+      "fixed_id": 18,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
       "name": "STEERING_JMP_TO_BLT",
-      "fixed_id": 33,
+      "fixed_id": 19,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_TX",
+      "fixed_id": 20,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_RX",
+      "fixed_id": 21,
       "sending": ["HANDCART"],
       "receiving": ["STEER"],
       "contents": {}
@@ -504,17 +642,6 @@
       "contents": {
         "warnings": "HvErrors",
         "errors": "HvErrors"
-      }
-    },
-    {
-      "name": "HV_CAN_FORWARD",
-      "topic": "BMS_HV",
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Enable/disable can forwarding to internal bms network",
-      "contents": {
-        "can_forward_set": "Toggle"
       }
     },
     {
@@ -1126,132 +1253,6 @@
         "data_5": "uint8",
         "data_6": "uint8"
       }
-    },
-    {
-      "name": "FLASH_CELLBOARD_0_TX",
-      "fixed_id": 16,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_0_RX",
-      "fixed_id": 17,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_1_TX",
-      "fixed_id": 18,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_1_RX",
-      "fixed_id": 19,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_2_TX",
-      "fixed_id": 20,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_2_RX",
-      "fixed_id": 21,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_TX",
-      "fixed_id": 22,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_RX",
-      "fixed_id": 23,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_TX",
-      "fixed_id": 24,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_RX",
-      "fixed_id": 25,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_TX",
-      "fixed_id": 26,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_RX",
-      "fixed_id": 27,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_TX",
-      "fixed_id": 2017,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_RX",
-      "fixed_id": 1639,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_TX",
-      "fixed_id": 2033,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_RX",
-      "fixed_id": 1655,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_STEERING_TX",
-      "fixed_id": 2034,
-      "sending": ["HANDCART"],
-      "receiving": ["STEER"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_STEERING_RX",
-      "fixed_id": 1656,
-      "sending": ["HANDCART"],
-      "receiving": ["STEER"],
-      "contents": {}
     },
     {
       "name": "CONTROL_OUTPUT",
