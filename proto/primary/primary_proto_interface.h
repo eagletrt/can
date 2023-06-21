@@ -434,6 +434,171 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->flash_bms_hv_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_bms_hv_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_bms_hv_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_BMS_HV_TX"]["_timestamp"].push(pack->flash_bms_hv_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_bms_hv_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_bms_hv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_bms_hv_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_BMS_HV_RX"]["_timestamp"].push(pack->flash_bms_hv_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->hv_can_forward_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_can_forward(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_can_forward(i)._inner_timestamp();
+        (*net_signals)["HV_CAN_FORWARD"]["_timestamp"].push(pack->hv_can_forward(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_0_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_0_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_0_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_0_TX"]["_timestamp"].push(pack->flash_cellboard_0_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_0_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_0_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_0_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_0_RX"]["_timestamp"].push(pack->flash_cellboard_0_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_1_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_1_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_1_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_1_TX"]["_timestamp"].push(pack->flash_cellboard_1_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_1_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_1_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_1_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_1_RX"]["_timestamp"].push(pack->flash_cellboard_1_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_2_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_2_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_2_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_2_TX"]["_timestamp"].push(pack->flash_cellboard_2_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_2_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_2_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_2_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_2_RX"]["_timestamp"].push(pack->flash_cellboard_2_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_3_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_3_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_3_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_3_TX"]["_timestamp"].push(pack->flash_cellboard_3_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_3_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_3_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_3_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_3_RX"]["_timestamp"].push(pack->flash_cellboard_3_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_4_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_4_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_4_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_4_TX"]["_timestamp"].push(pack->flash_cellboard_4_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_4_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_4_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_4_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_4_RX"]["_timestamp"].push(pack->flash_cellboard_4_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_5_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_5_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_5_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_5_TX"]["_timestamp"].push(pack->flash_cellboard_5_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_cellboard_5_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_cellboard_5_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_CELLBOARD_5_RX"]["_timestamp"].push(pack->flash_cellboard_5_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
     for(int i = 0; i < pack->bms_lv_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -445,12 +610,56 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->flash_bms_lv_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_bms_lv_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_bms_lv_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_BMS_LV_TX"]["_timestamp"].push(pack->flash_bms_lv_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_bms_lv_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_bms_lv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_bms_lv_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_BMS_LV_RX"]["_timestamp"].push(pack->flash_bms_lv_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
     for(int i = 0; i < pack->steering_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
         if(pack->steering_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
         else last_timestamp = pack->steering_jmp_to_blt(i)._inner_timestamp();
         (*net_signals)["STEERING_JMP_TO_BLT"]["_timestamp"].push(pack->steering_jmp_to_blt(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_steering_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_steering_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_steering_tx(i)._inner_timestamp();
+        (*net_signals)["FLASH_STEERING_TX"]["_timestamp"].push(pack->flash_steering_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->flash_steering_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->flash_steering_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->flash_steering_rx(i)._inner_timestamp();
+        (*net_signals)["FLASH_STEERING_RX"]["_timestamp"].push(pack->flash_steering_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -1319,138 +1528,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_0_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_0_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_0_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_0_TX"]["_timestamp"].push(pack->flash_cellboard_0_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_0_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_0_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_0_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_0_RX"]["_timestamp"].push(pack->flash_cellboard_0_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_1_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_1_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_1_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_1_TX"]["_timestamp"].push(pack->flash_cellboard_1_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_1_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_1_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_1_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_1_RX"]["_timestamp"].push(pack->flash_cellboard_1_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_2_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_2_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_2_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_2_TX"]["_timestamp"].push(pack->flash_cellboard_2_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_2_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_2_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_2_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_2_RX"]["_timestamp"].push(pack->flash_cellboard_2_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_3_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_3_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_3_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_3_TX"]["_timestamp"].push(pack->flash_cellboard_3_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_3_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_3_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_3_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_3_RX"]["_timestamp"].push(pack->flash_cellboard_3_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_4_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_4_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_4_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_4_TX"]["_timestamp"].push(pack->flash_cellboard_4_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_4_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_4_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_4_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_4_RX"]["_timestamp"].push(pack->flash_cellboard_4_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_5_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_5_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_5_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_5_TX"]["_timestamp"].push(pack->flash_cellboard_5_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_5_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_5_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_5_RX"]["_timestamp"].push(pack->flash_cellboard_5_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
     for(int i = 0; i < pack->flash_bms_hv_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1468,50 +1545,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         if(pack->flash_bms_hv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
         else last_timestamp = pack->flash_bms_hv_rx(i)._inner_timestamp();
         (*net_signals)["FLASH_BMS_HV_RX"]["_timestamp"].push(pack->flash_bms_hv_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_bms_lv_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_lv_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_lv_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_LV_TX"]["_timestamp"].push(pack->flash_bms_lv_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_bms_lv_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_lv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_lv_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_LV_RX"]["_timestamp"].push(pack->flash_bms_lv_rx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_steering_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_steering_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_steering_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_STEERING_TX"]["_timestamp"].push(pack->flash_steering_tx(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-
-    }
-
-    for(int i = 0; i < pack->flash_steering_rx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_steering_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_steering_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_STEERING_RX"]["_timestamp"].push(pack->flash_steering_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -1781,7 +1814,157 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 32: {
+        case 1: {
+            primary_flash_bms_hv_tx_t* msg = (primary_flash_bms_hv_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_BMS_HV_TX* proto_msg = pack->add_flash_bms_hv_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 2: {
+            primary_flash_bms_hv_rx_t* msg = (primary_flash_bms_hv_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_BMS_HV_RX* proto_msg = pack->add_flash_bms_hv_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 3: {
+            primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)((*map)[index].message_raw);
+            primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 4: {
+            primary_flash_cellboard_0_tx_t* msg = (primary_flash_cellboard_0_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 5: {
+            primary_flash_cellboard_0_rx_t* msg = (primary_flash_cellboard_0_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 6: {
+            primary_flash_cellboard_1_tx_t* msg = (primary_flash_cellboard_1_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 7: {
+            primary_flash_cellboard_1_rx_t* msg = (primary_flash_cellboard_1_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 8: {
+            primary_flash_cellboard_2_tx_t* msg = (primary_flash_cellboard_2_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 9: {
+            primary_flash_cellboard_2_rx_t* msg = (primary_flash_cellboard_2_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 10: {
+            primary_flash_cellboard_3_tx_t* msg = (primary_flash_cellboard_3_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 11: {
+            primary_flash_cellboard_3_rx_t* msg = (primary_flash_cellboard_3_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 12: {
+            primary_flash_cellboard_4_tx_t* msg = (primary_flash_cellboard_4_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 13: {
+            primary_flash_cellboard_4_rx_t* msg = (primary_flash_cellboard_4_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 14: {
+            primary_flash_cellboard_5_tx_t* msg = (primary_flash_cellboard_5_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 15: {
+            primary_flash_cellboard_5_rx_t* msg = (primary_flash_cellboard_5_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 16: {
             primary_bms_lv_jmp_to_blt_t* msg = (primary_bms_lv_jmp_to_blt_t*)((*map)[index].message_raw);
             primary::BMS_LV_JMP_TO_BLT* proto_msg = pack->add_bms_lv_jmp_to_blt();
 
@@ -1791,9 +1974,49 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 33: {
+        case 17: {
+            primary_flash_bms_lv_tx_t* msg = (primary_flash_bms_lv_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_BMS_LV_TX* proto_msg = pack->add_flash_bms_lv_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 18: {
+            primary_flash_bms_lv_rx_t* msg = (primary_flash_bms_lv_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_BMS_LV_RX* proto_msg = pack->add_flash_bms_lv_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 19: {
             primary_steering_jmp_to_blt_t* msg = (primary_steering_jmp_to_blt_t*)((*map)[index].message_raw);
             primary::STEERING_JMP_TO_BLT* proto_msg = pack->add_steering_jmp_to_blt();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 20: {
+            primary_flash_steering_tx_t* msg = (primary_flash_steering_tx_t*)((*map)[index].message_raw);
+            primary::FLASH_STEERING_TX* proto_msg = pack->add_flash_steering_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 21: {
+            primary_flash_steering_rx_t* msg = (primary_flash_steering_rx_t*)((*map)[index].message_raw);
+            primary::FLASH_STEERING_RX* proto_msg = pack->add_flash_steering_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1895,7 +2118,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 263: {
+        case 258: {
             primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)((*map)[index].message_raw);
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_set_tlm_status_tlm_status)msg->tlm_status);
@@ -1906,7 +2129,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 258: {
+        case 263: {
             primary_tlm_status_t* msg = (primary_tlm_status_t*)((*map)[index].message_raw);
             primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_tlm_status_tlm_status)msg->tlm_status);
@@ -1917,7 +2140,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1799: {
+        case 1794: {
             primary_steer_system_status_t* msg = (primary_steer_system_status_t*)((*map)[index].message_raw);
             primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
 			proto_msg->set_soc_temp(msg->soc_temp);
@@ -1928,7 +2151,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 769: {
+        case 773: {
             primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)((*map)[index].message_conversion);
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
 			proto_msg->set_pack_voltage(msg->pack_voltage);
@@ -1942,7 +2165,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 801: {
+        case 805: {
             primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)((*map)[index].message_conversion);
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
 			proto_msg->set_current(msg->current);
@@ -1956,7 +2179,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 833: {
+        case 837: {
             primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)((*map)[index].message_conversion);
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
 			proto_msg->set_average_temp(msg->average_temp);
@@ -1969,7 +2192,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1: {
+        case 37: {
             primary_hv_errors_t* msg = (primary_hv_errors_t*)((*map)[index].message_raw);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
 			proto_msg->set_warnings_cell_low_voltage(msg->warnings_cell_low_voltage);
@@ -2007,7 +2230,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 5: {
+        case 41: {
             primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)((*map)[index].message_raw);
             primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
 			proto_msg->set_can_forward_set((primary::primary_hv_can_forward_can_forward_set)msg->can_forward_set);
@@ -2018,7 +2241,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 37: {
+        case 73: {
             primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)((*map)[index].message_conversion);
             primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_fans_override)msg->fans_override);
@@ -2030,7 +2253,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 64: {
+        case 38: {
             primary_hv_can_forward_status_t* msg = (primary_hv_can_forward_status_t*)((*map)[index].message_raw);
             primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
 			proto_msg->set_can_forward_status((primary::primary_hv_can_forward_status_can_forward_status)msg->can_forward_status);
@@ -2041,7 +2264,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 768: {
+        case 774: {
             primary_hv_fans_override_status_converted_t* msg = (primary_hv_fans_override_status_converted_t*)((*map)[index].message_conversion);
             primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_status_fans_override)msg->fans_override);
@@ -2053,7 +2276,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 777: {
+        case 771: {
             primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)((*map)[index].message_raw);
             primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
 			proto_msg->set_feedbacks_status_feedback_tsal_green_fault(msg->feedbacks_status_feedback_tsal_green_fault);
@@ -2101,7 +2324,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 809: {
+        case 803: {
             primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)((*map)[index].message_raw);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
@@ -2114,7 +2337,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 65: {
+        case 69: {
             primary_ts_status_t* msg = (primary_ts_status_t*)((*map)[index].message_raw);
             primary::TS_STATUS* proto_msg = pack->add_ts_status();
 			proto_msg->set_ts_status((primary::primary_ts_status_ts_status)msg->ts_status);
@@ -2125,7 +2348,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 69: {
+        case 105: {
             primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_das_ts_status_set)msg->ts_status_set);
@@ -2136,7 +2359,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 101: {
+        case 137: {
             primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)((*map)[index].message_raw);
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_handcart_ts_status_set)msg->ts_status_set);
@@ -2147,7 +2370,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 264: {
+        case 256: {
             primary_steer_status_converted_t* msg = (primary_steer_status_converted_t*)((*map)[index].message_conversion);
             primary::STEER_STATUS* proto_msg = pack->add_steer_status();
 			proto_msg->set_map_pw(msg->map_pw);
@@ -2160,7 +2383,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 776: {
+        case 768: {
             primary_set_car_status_t* msg = (primary_set_car_status_t*)((*map)[index].message_raw);
             primary::SET_CAR_STATUS* proto_msg = pack->add_set_car_status();
 			proto_msg->set_car_status_set((primary::primary_set_car_status_car_status_set)msg->car_status_set);
@@ -2171,7 +2394,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1032: {
+        case 1024: {
             primary_set_pedals_range_t* msg = (primary_set_pedals_range_t*)((*map)[index].message_raw);
             primary::SET_PEDALS_RANGE* proto_msg = pack->add_set_pedals_range();
 			proto_msg->set_bound((primary::primary_set_pedals_range_bound)msg->bound);
@@ -2183,7 +2406,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1064: {
+        case 1056: {
             primary_set_steering_angle_range_t* msg = (primary_set_steering_angle_range_t*)((*map)[index].message_raw);
             primary::SET_STEERING_ANGLE_RANGE* proto_msg = pack->add_set_steering_angle_range();
 			proto_msg->set_bound((primary::primary_set_steering_angle_range_bound)msg->bound);
@@ -2194,7 +2417,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 546: {
+        case 519: {
             primary_car_status_t* msg = (primary_car_status_t*)((*map)[index].message_raw);
             primary::CAR_STATUS* proto_msg = pack->add_car_status();
 			proto_msg->set_inverter_l((primary::primary_car_status_inverter_l)msg->inverter_l);
@@ -2207,7 +2430,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 2: {
+        case 39: {
             primary_das_errors_t* msg = (primary_das_errors_t*)((*map)[index].message_raw);
             primary::DAS_ERRORS* proto_msg = pack->add_das_errors();
 			proto_msg->set_das_error_pedal_adc(msg->das_error_pedal_adc);
@@ -2226,7 +2449,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 841: {
+        case 835: {
             primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)((*map)[index].message_conversion);
             primary::LV_CURRENTS* proto_msg = pack->add_lv_currents();
 			proto_msg->set_current_as_battery(msg->current_as_battery);
@@ -2239,7 +2462,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 873: {
+        case 867: {
             primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)((*map)[index].message_conversion);
             primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
@@ -2253,7 +2476,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 905: {
+        case 899: {
             primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)((*map)[index].message_conversion);
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
 			proto_msg->set_total_voltage(msg->total_voltage);
@@ -2264,7 +2487,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 937: {
+        case 931: {
             primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)((*map)[index].message_conversion);
             primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
@@ -2278,7 +2501,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 969: {
+        case 963: {
             primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)((*map)[index].message_conversion);
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -2290,7 +2513,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 771: {
+        case 776: {
             primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
@@ -2301,7 +2524,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 803: {
+        case 808: {
             primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)((*map)[index].message_conversion);
             primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
@@ -2312,7 +2535,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 259: {
+        case 264: {
             primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
 			proto_msg->set_status((primary::primary_set_inverter_connection_status_status)msg->status);
@@ -2323,7 +2546,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 265: {
+        case 259: {
             primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)((*map)[index].message_raw);
             primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
 			proto_msg->set_status((primary::primary_inverter_connection_status_status)msg->status);
@@ -2334,7 +2557,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 521: {
+        case 515: {
             primary_lv_errors_t* msg = (primary_lv_errors_t*)((*map)[index].message_raw);
             primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
 			proto_msg->set_warnings_cell_undervoltage(msg->warnings_cell_undervoltage);
@@ -2378,7 +2601,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 297: {
+        case 291: {
             primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)((*map)[index].message_conversion);
             primary::LV_FEEDBACKS* proto_msg = pack->add_lv_feedbacks();
 			proto_msg->set_feedbacks_bspd_fb(msg->feedbacks_bspd_fb);
@@ -2409,7 +2632,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 329: {
+        case 323: {
             primary_shutdown_status_t* msg = (primary_shutdown_status_t*)((*map)[index].message_raw);
             primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
 			proto_msg->set_input(msg->input);
@@ -2421,7 +2644,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 7: {
+        case 34: {
             primary_marker_t* msg = (primary_marker_t*)((*map)[index].message_raw);
             primary::MARKER* proto_msg = pack->add_marker();
 
@@ -2431,7 +2654,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 512: {
+        case 518: {
             primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)((*map)[index].message_conversion);
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
@@ -2445,7 +2668,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 544: {
+        case 550: {
             primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)((*map)[index].message_conversion);
             primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
@@ -2462,7 +2685,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 576: {
+        case 582: {
             primary_hv_cell_balancing_status_t* msg = (primary_hv_cell_balancing_status_t*)((*map)[index].message_raw);
             primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
 			proto_msg->set_balancing_status((primary::primary_hv_cell_balancing_status_balancing_status)msg->balancing_status);
@@ -2473,7 +2696,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 517: {
+        case 521: {
             primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)((*map)[index].message_raw);
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
 			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
@@ -2484,7 +2707,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 578: {
+        case 551: {
             primary_speed_converted_t* msg = (primary_speed_converted_t*)((*map)[index].message_conversion);
             primary::SPEED* proto_msg = pack->add_speed();
 			proto_msg->set_encoder_r(msg->encoder_r);
@@ -2570,126 +2793,6 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 16: {
-            primary_flash_cellboard_0_tx_t* msg = (primary_flash_cellboard_0_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 17: {
-            primary_flash_cellboard_0_rx_t* msg = (primary_flash_cellboard_0_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 18: {
-            primary_flash_cellboard_1_tx_t* msg = (primary_flash_cellboard_1_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 19: {
-            primary_flash_cellboard_1_rx_t* msg = (primary_flash_cellboard_1_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 20: {
-            primary_flash_cellboard_2_tx_t* msg = (primary_flash_cellboard_2_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 21: {
-            primary_flash_cellboard_2_rx_t* msg = (primary_flash_cellboard_2_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 22: {
-            primary_flash_cellboard_3_tx_t* msg = (primary_flash_cellboard_3_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 23: {
-            primary_flash_cellboard_3_rx_t* msg = (primary_flash_cellboard_3_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 24: {
-            primary_flash_cellboard_4_tx_t* msg = (primary_flash_cellboard_4_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 25: {
-            primary_flash_cellboard_4_rx_t* msg = (primary_flash_cellboard_4_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 26: {
-            primary_flash_cellboard_5_tx_t* msg = (primary_flash_cellboard_5_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 27: {
-            primary_flash_cellboard_5_rx_t* msg = (primary_flash_cellboard_5_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
         case 2017: {
             primary_flash_bms_hv_tx_t* msg = (primary_flash_bms_hv_tx_t*)((*map)[index].message_raw);
             primary::FLASH_BMS_HV_TX* proto_msg = pack->add_flash_bms_hv_tx();
@@ -2710,47 +2813,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 2033: {
-            primary_flash_bms_lv_tx_t* msg = (primary_flash_bms_lv_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_BMS_LV_TX* proto_msg = pack->add_flash_bms_lv_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1655: {
-            primary_flash_bms_lv_rx_t* msg = (primary_flash_bms_lv_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_BMS_LV_RX* proto_msg = pack->add_flash_bms_lv_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 2034: {
-            primary_flash_steering_tx_t* msg = (primary_flash_steering_tx_t*)((*map)[index].message_raw);
-            primary::FLASH_STEERING_TX* proto_msg = pack->add_flash_steering_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1656: {
-            primary_flash_steering_rx_t* msg = (primary_flash_steering_rx_t*)((*map)[index].message_raw);
-            primary::FLASH_STEERING_RX* proto_msg = pack->add_flash_steering_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 290: {
+        case 295: {
             primary_control_output_converted_t* msg = (primary_control_output_converted_t*)((*map)[index].message_conversion);
             primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
 			proto_msg->set_estimated_velocity(msg->estimated_velocity);
@@ -2765,7 +2828,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 518: {
+        case 545: {
             primary_lc_reset_t* msg = (primary_lc_reset_t*)((*map)[index].message_raw);
             primary::LC_RESET* proto_msg = pack->add_lc_reset();
 
@@ -2775,7 +2838,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 773: {
+        case 777: {
             primary_handcart_status_t* msg = (primary_handcart_status_t*)((*map)[index].message_raw);
             primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
 			proto_msg->set_connected(msg->connected);
@@ -2786,7 +2849,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 805: {
+        case 809: {
             primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)((*map)[index].message_conversion);
             primary::HANDCART_SETTINGS* proto_msg = pack->add_handcart_settings();
 			proto_msg->set_target_voltage(msg->target_voltage);
@@ -2802,7 +2865,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 837: {
+        case 841: {
             primary_handcart_settings_set_converted_t* msg = (primary_handcart_settings_set_converted_t*)((*map)[index].message_conversion);
             primary::HANDCART_SETTINGS_SET* proto_msg = pack->add_handcart_settings_set();
 			proto_msg->set_target_voltage(msg->target_voltage);

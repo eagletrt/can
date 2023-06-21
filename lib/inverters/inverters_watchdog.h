@@ -1,12 +1,14 @@
-#ifndef primary_WATCHDOG_H
-#define primary_WATCHDOG_H
+#ifndef inverters_WATCHDOG_H
+#define inverters_WATCHDOG_H
+
+#include <inttypes.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-static int primary_watchdog_interval_from_id(uint16_t message_id) {
+static int inverters_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
 
     }
@@ -18,4 +20,4 @@ static int primary_watchdog_interval_from_id(uint16_t message_id) {
 }
 #endif
 
-#endif // primary_NETWORK_H
+#endif // inverters_NETWORK_H

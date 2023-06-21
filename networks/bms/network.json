@@ -142,8 +142,8 @@
       }
     },
     {
-      "name": "FW_UPDATE",
-      "fixed_id": 10,
+      "name": "JMP_TO_BLT",
+      "fixed_id": 0,
       "sending": ["MAINBOARD"],
       "receiving": ["CELLBOARD"],
       "description": "Starts firmware update",
@@ -154,84 +154,84 @@
     },
     {
       "name": "FLASH_CELLBOARD_0_TX",
-      "fixed_id": 16,
+      "fixed_id": 4,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_0_RX",
-      "fixed_id": 17,
+      "fixed_id": 5,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_1_TX",
-      "fixed_id": 18,
+      "fixed_id": 6,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_1_RX",
-      "fixed_id": 19,
+      "fixed_id": 7,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_2_TX",
-      "fixed_id": 20,
+      "fixed_id": 8,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_2_RX",
-      "fixed_id": 21,
+      "fixed_id": 9,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_3_TX",
-      "fixed_id": 22,
+      "fixed_id": 10,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_3_RX",
-      "fixed_id": 23,
+      "fixed_id": 11,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_4_TX",
-      "fixed_id": 24,
+      "fixed_id": 12,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_4_RX",
-      "fixed_id": 25,
+      "fixed_id": 13,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_5_TX",
-      "fixed_id": 26,
+      "fixed_id": 14,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
       "name": "FLASH_CELLBOARD_5_RX",
-      "fixed_id": 27,
+      "fixed_id": 15,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}

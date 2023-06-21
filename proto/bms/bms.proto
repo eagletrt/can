@@ -38,13 +38,13 @@ enum bms_balancing_cellboard_id {
 	bms_balancing_cellboard_id_CELLBOARD_4 = 4;
 	bms_balancing_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_fw_update_cellboard_id {
-	bms_fw_update_cellboard_id_CELLBOARD_0 = 0;
-	bms_fw_update_cellboard_id_CELLBOARD_1 = 1;
-	bms_fw_update_cellboard_id_CELLBOARD_2 = 2;
-	bms_fw_update_cellboard_id_CELLBOARD_3 = 3;
-	bms_fw_update_cellboard_id_CELLBOARD_4 = 4;
-	bms_fw_update_cellboard_id_CELLBOARD_5 = 5;
+enum bms_jmp_to_blt_cellboard_id {
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_0 = 0;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_1 = 1;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_2 = 2;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_3 = 3;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_4 = 4;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_5 = 5;
 }
 
 
@@ -102,8 +102,8 @@ message BALANCING{
 	bool cells_CELL17 = 20;
 	uint64 _inner_timestamp = 21;
 }
-message FW_UPDATE{
-	bms_fw_update_cellboard_id cellboard_id = 1;
+message JMP_TO_BLT{
+	bms_jmp_to_blt_cellboard_id cellboard_id = 1;
 	uint32 board_index = 2;
 	uint64 _inner_timestamp = 3;
 }
@@ -150,7 +150,7 @@ message Pack{
 	repeated TEMPERATURES TEMPERATURES = 2;
 	repeated VOLTAGES VOLTAGES = 3;
 	repeated BALANCING BALANCING = 4;
-	repeated FW_UPDATE FW_UPDATE = 5;
+	repeated JMP_TO_BLT JMP_TO_BLT = 5;
 	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
 	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
 	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
