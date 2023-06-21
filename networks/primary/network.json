@@ -1255,20 +1255,6 @@
       }
     },
     {
-      "name": "FLASH_BMS_HV_TX",
-      "fixed_id": 2017,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_RX",
-      "fixed_id": 1639,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
       "name": "CONTROL_OUTPUT",
       "topic": "STEER",
       "priority": 6,

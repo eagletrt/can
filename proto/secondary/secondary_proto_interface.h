@@ -890,7 +890,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1027: {
+        case 1026: {
             secondary_gps_coords_t* msg = (secondary_gps_coords_t*)((*map)[index].message_raw);
             secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
 			proto_msg->set_latitude(msg->latitude);
@@ -902,7 +902,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1059: {
+        case 1058: {
             secondary_gps_speed_t* msg = (secondary_gps_speed_t*)((*map)[index].message_raw);
             secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
 			proto_msg->set_speed(msg->speed);
@@ -913,7 +913,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1091: {
+        case 1090: {
             secondary_lap_count_t* msg = (secondary_lap_count_t*)((*map)[index].message_raw);
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
 			proto_msg->set_lap_count(msg->lap_count);
@@ -925,7 +925,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 771: {
+        case 770: {
             secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)((*map)[index].message_conversion);
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
 			proto_msg->set_apps(msg->apps);
@@ -962,7 +962,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 515: {
+        case 514: {
             secondary_tpms_converted_t* msg = (secondary_tpms_converted_t*)((*map)[index].message_conversion);
             secondary::TPMS* proto_msg = pack->add_tpms();
 			proto_msg->set_fl_pressure(msg->fl_pressure);
@@ -980,7 +980,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 770: {
+        case 771: {
             secondary_lc_status_t* msg = (secondary_lc_status_t*)((*map)[index].message_raw);
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
 			proto_msg->set_last_time(msg->last_time);

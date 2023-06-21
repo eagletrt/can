@@ -705,12 +705,6 @@ message INV_R_RESPONSE{
 	uint32 data_6 = 8;
 	uint64 _inner_timestamp = 9;
 }
-message FLASH_BMS_HV_TX{
-	uint64 _inner_timestamp = 1;
-}
-message FLASH_BMS_HV_RX{
-	uint64 _inner_timestamp = 1;
-}
 message CONTROL_OUTPUT{
 	double estimated_velocity = 1;
 	double tmax_r = 2;
@@ -828,12 +822,10 @@ message Pack{
 	repeated INV_R_REQUEST INV_R_REQUEST = 79;
 	repeated INV_L_RESPONSE INV_L_RESPONSE = 80;
 	repeated INV_R_RESPONSE INV_R_RESPONSE = 81;
-	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 82;
-	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 83;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 84;
-	repeated LC_RESET LC_RESET = 85;
-	repeated HANDCART_STATUS HANDCART_STATUS = 86;
-	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 87;
-	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 88;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 82;
+	repeated LC_RESET LC_RESET = 83;
+	repeated HANDCART_STATUS HANDCART_STATUS = 84;
+	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 85;
+	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 86;
 }
 
