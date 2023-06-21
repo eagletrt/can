@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: TLM IRTS_FR DAS DAS IRTS_RR IRTS_FR DAS DAS IRTS_RR IRTS_FR DAS DAS IRTS_RR IRTS_FL DAS DAS IRTS_RR IRTS_FL DAS DAS IRTS_RL IRTS_FL DAS DAS TLM IRTS_RL IRTS_FL STEER STEER DAS DAS IMU TELEMETRY DAS IRTS_RL DAS DAS CONTROL IMU IRTS_RL DAS STEER DAS TLM STEER DAS STEER TLM TELEMETRY IRTS_FR STEER DAS
+BU_: TLM IRTS_FR DAS DAS IRTS_RR IRTS_FR DAS DAS IRTS_RR IRTS_FR DAS DAS IRTS_RR IRTS_FL DAS DAS IRTS_RR IRTS_FL DAS DAS IRTS_RL IRTS_FL DAS DAS TLM STEER IRTS_FL IRTS_RL DAS STEER IRTS_RL DAS IMU TELEMETRY DAS DAS DAS IMU DAS STEER TELEMETRY TLM IRTS_RL STEER STEER CONTROL DAS DAS TLM IRTS_FR STEER DAS
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -159,7 +159,7 @@ BO_ 769 PEDALS_OUTPUT: 5 Vector__XXX
  SG_ bse_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ apps : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 258 STEERING_ANGLE: 4 Vector__XXX
+BO_ 256 STEERING_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1283 CONTROL_STATE: 3 Vector__XXX
@@ -177,7 +177,7 @@ BO_ 513 TPMS: 8 Vector__XXX
  SG_ fr_pressure : 8|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
  SG_ fl_pressure : 0|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
 
-BO_ 768 LC_STATUS: 6 Vector__XXX
+BO_ 770 LC_STATUS: 6 Vector__XXX
  SG_ lap_number : 32|16@1- (1,-32768) [-32768|32767] "" Vector__XXX
  SG_ last_time : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
@@ -206,14 +206,14 @@ CM_ BO_ 1025 "Coordinates received from GPS";
 CM_ BO_ 1057 "Speed received from GPS";
 CM_ BO_ 1089 "Lap counter and associated timestamp";
 CM_ BO_ 769 "Pedal output, already calibrated";
-CM_ BO_ 258 "Steering angle in degrees";
+CM_ BO_ 256 "Steering angle in degrees";
 CM_ BO_ 1283 "Send status of traction control";
 CM_ BO_ 513 "Tire Pressure Monitoring System, pressure and temperature of each tire";
-CM_ BO_ 768 "Session laps status, lap_number is -1 in case of OUT lap";
+CM_ BO_ 770 "Session laps status, lap_number is -1 in case of OUT lap";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 769 10;
-BA_ "GenMsgCycleTime" BO_ 258 10;
+BA_ "GenMsgCycleTime" BO_ 256 10;
 BA_ "GenMsgCycleTime" BO_ 1283 100;
 
 

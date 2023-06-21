@@ -938,7 +938,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 258: {
+        case 256: {
             secondary_steering_angle_t* msg = (secondary_steering_angle_t*)((*map)[index].message_raw);
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
@@ -980,7 +980,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 768: {
+        case 770: {
             secondary_lc_status_t* msg = (secondary_lc_status_t*)((*map)[index].message_raw);
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
 			proto_msg->set_last_time(msg->last_time);

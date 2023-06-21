@@ -1107,7 +1107,7 @@
       "receiving": ["TLM"],
       "description": "Acknowledge to flash the LV BMS via CAN",
       "contents": {
-        "response": "Toggle"
+        "response": "CanFlashStatus"
       }
     },
     {

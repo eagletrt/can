@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HANDCART HANDCART HANDCART BMS_HV STEER DAS DAS HANDCART BMS_HV BMS_HV HANDCART BMS_HV STEER STEER HANDCART BMS_HV BMS_HV TLM BMS_HV STEER STEER HANDCART HANDCART TLM DAS BMS_LV BMS_LV TLM BMS_HV STEER DAS BMS_HV TLM STEER DAS BMS_HV DAS BMS_LV STEER TLM STEER STEER HANDCART DAS STEER BMS_HV BMS_LV HANDCART TLM STEER STEER STEER TLM DAS STEER DAS BMS_LV DAS STEER STEER HANDCART STEER TLM DAS DAS STEER BMS_HV BMS_LV DAS DAS BMS_HV BMS_LV BMS_LV HANDCART TLM STEER DAS DAS DAS BMS_LV BMS_HV STEER BMS_LV STEER BMS_LV DATA_LOGGER STEER BMS_LV STEER BMS_LV DAS STEER TLM STEER BMS_LV TLM DAS STEER STEER BMS_LV DAS STEER STEER TLM DAS BMS_HV BMS_LV BMS_HV HANDCART STEER HANDCART HANDCART HANDCART BMS_HV BMS_HV BMS_LV BMS_HV DAS DAS BMS_HV BMS_LV STEER HANDCART DAS HANDCART HANDCART DAS STEER INVERTER_L HANDCART HANDCART TLM DAS BMS_HV BMS_HV INVERTER_L BMS_HV BMS_HV BMS_HV INVERTER_L HANDCART DAS HANDCART HANDCART INVERTER_L BMS_HV BMS_HV DAS HANDCART HANDCART DAS BMS_HV STEER DAS TLM TLM HANDCART BMS_HV STEER BMS_HV DAS TLM HANDCART STEER HANDCART HANDCART HANDCART HANDCART BMS_HV BMS_HV STEER BMS_HV HANDCART BMS_HV BMS_HV HANDCART HANDCART BMS_HV BMS_HV HANDCART TLM BMS_HV STEER DAS DAS BMS_HV STEER BMS_LW DAS DAS STEER DAS DAS STEER BMS_HW HANDCART STEER STEER DAS DAS STEER HANDCART DAS BMS_HV
+BU_: HANDCART DAS BMS_HV HANDCART BMS_HV HANDCART HANDCART STEER BMS_HV BMS_HV HANDCART DAS DAS HANDCART STEER HANDCART DAS BMS_HV BMS_HV DAS TLM STEER TLM STEER BMS_LV BMS_LV TLM STEER DAS BMS_HV DAS BMS_HV TLM STEER STEER DAS DAS STEER BMS_HV BMS_LV STEER TLM HANDCART STEER STEER TLM DAS HANDCART DAS BMS_LV STEER STEER STEER TLM DAS TLM STEER STEER STEER DAS DAS DAS BMS_LV HANDCART BMS_LV BMS_HV STEER STEER STEER BMS_HV BMS_LV DAS DAS BMS_HV BMS_LV BMS_LV HANDCART TLM STEER BMS_LV DAS DAS DAS TLM STEER BMS_LV BMS_LV TLM DATA_LOGGER STEER STEER STEER BMS_LV DAS STEER STEER BMS_LV TLM STEER BMS_HV BMS_HV DAS HANDCART BMS_LV BMS_HV HANDCART STEER BMS_HV DAS BMS_HV DAS STEER HANDCART BMS_LV STEER BMS_HV HANDCART DAS DAS HANDCART STEER BMS_LV DAS INVERTER_L TLM DAS HANDCART BMS_HV HANDCART INVERTER_L BMS_HV BMS_HV STEER BMS_LV INVERTER_L HANDCART BMS_HV DAS BMS_HV INVERTER_L BMS_HV BMS_HV BMS_HV DAS HANDCART HANDCART DAS BMS_HV HANDCART STEER BMS_HV TLM HANDCART HANDCART STEER BMS_HV DAS TLM HANDCART STEER HANDCART TLM HANDCART BMS_HV BMS_HV BMS_HV HANDCART HANDCART HANDCART HANDCART HANDCART BMS_HV STEER TLM BMS_HV DAS BMS_HV HANDCART BMS_HV HANDCART BMS_HV BMS_HV HANDCART STEER STEER STEER DAS DAS HANDCART STEER BMS_LW DAS STEER BMS_HV DAS DAS BMS_HW STEER DAS BMS_HV HANDCART STEER HANDCART DAS
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -181,63 +181,63 @@ BO_ 20 FLASH_STEERING_TX: 0 Vector__XXX
 
 BO_ 21 FLASH_STEERING_RX: 0 Vector__XXX
 
-BO_ 1033 STEER_VERSION: 5 Vector__XXX
+BO_ 1030 STEER_VERSION: 5 Vector__XXX
  SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1065 DAS_VERSION: 5 Vector__XXX
+BO_ 1062 DAS_VERSION: 5 Vector__XXX
  SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1097 HV_VERSION: 5 Vector__XXX
+BO_ 1094 HV_VERSION: 5 Vector__XXX
  SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1129 LV_VERSION: 5 Vector__XXX
+BO_ 1126 LV_VERSION: 5 Vector__XXX
  SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1161 TLM_VERSION: 5 Vector__XXX
+BO_ 1158 TLM_VERSION: 5 Vector__XXX
  SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 265 TIMESTAMP: 4 Vector__XXX
+BO_ 262 TIMESTAMP: 4 Vector__XXX
  SG_ timestamp : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 297 AMBIENT_TEMPERATURE: 2 Vector__XXX
+BO_ 294 AMBIENT_TEMPERATURE: 2 Vector__XXX
  SG_ temp : 0|16@1- (1,-32768) [-32768|32767] "" Vector__XXX
 
 BO_ 1072 DATA_LOGGER: 8 Vector__XXX
  SG_ placeholder2 : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ placeholder1 : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 263 SET_TLM_STATUS: 1 Vector__XXX
+BO_ 258 SET_TLM_STATUS: 1 Vector__XXX
  SG_ tlm_status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 256 TLM_STATUS: 1 Vector__XXX
+BO_ 259 TLM_STATUS: 1 Vector__XXX
  SG_ tlm_status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1799 STEER_SYSTEM_STATUS: 1 Vector__XXX
+BO_ 1794 STEER_SYSTEM_STATUS: 1 Vector__XXX
  SG_ soc_temp : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 769 HV_VOLTAGE: 8 Vector__XXX
+BO_ 775 HV_VOLTAGE: 8 Vector__XXX
  SG_ min_cell_voltage : 48|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ max_cell_voltage : 32|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ bus_voltage : 16|16@1+ (0.007019150072480354,0) [0|460] "" Vector__XXX
  SG_ pack_voltage : 0|16@1+ (0.007019150072480354,0) [0|460] "" Vector__XXX
 
-BO_ 801 HV_CURRENT: 7 Vector__XXX
+BO_ 807 HV_CURRENT: 7 Vector__XXX
  SG_ soc : 48|8@1+ (0.39215686274509803,0) [0|100] "" Vector__XXX
  SG_ energy : 32|16@1+ (0.10681315327687495,0) [0|7000] "" Vector__XXX
  SG_ power : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ current : 0|16@1+ (0.0032043945983062485,-10) [-10|200] "" Vector__XXX
 
-BO_ 833 HV_TEMP: 3 Vector__XXX
+BO_ 839 HV_TEMP: 3 Vector__XXX
  SG_ min_temp : 16|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ max_temp : 8|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ average_temp : 0|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
 
-BO_ 33 HV_ERRORS: 4 Vector__XXX
+BO_ 39 HV_ERRORS: 4 Vector__XXX
  SG_ errors_EEPROM_WRITE : 27|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_EEPROM_COMM : 26|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_FEEDBACK_CIRCUITRY : 25|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -267,18 +267,18 @@ BO_ 33 HV_ERRORS: 4 Vector__XXX
  SG_ warnings_CELL_UNDER_VOLTAGE : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ warnings_CELL_LOW_VOLTAGE : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 40 HV_FANS_OVERRIDE: 3 Vector__XXX
+BO_ 33 HV_FANS_OVERRIDE: 3 Vector__XXX
  SG_ fans_speed : 1|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
  SG_ fans_override : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 35 HV_CAN_FORWARD_STATUS: 1 Vector__XXX
+BO_ 41 HV_CAN_FORWARD_STATUS: 1 Vector__XXX
  SG_ can_forward_status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 771 HV_FANS_OVERRIDE_STATUS: 3 Vector__XXX
+BO_ 777 HV_FANS_OVERRIDE_STATUS: 3 Vector__XXX
  SG_ fans_speed : 1|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
  SG_ fans_override : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 770 HV_FEEDBACKS_STATUS: 5 Vector__XXX
+BO_ 772 HV_FEEDBACKS_STATUS: 5 Vector__XXX
  SG_ is_circuitry_error_FEEDBACK_SD_END : 37|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ is_circuitry_error_FEEDBACK_IMD_FAULT : 36|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ is_circuitry_error_FEEDBACK_RELAY_SD : 35|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -318,41 +318,41 @@ BO_ 770 HV_FEEDBACKS_STATUS: 5 Vector__XXX
  SG_ feedbacks_status_FEEDBACK_IMD_LATCHED : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ feedbacks_status_FEEDBACK_TSAL_GREEN_FAULT : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 802 HV_IMD_STATUS: 5 Vector__XXX
+BO_ 804 HV_IMD_STATUS: 5 Vector__XXX
  SG_ imd_info : 4|32@1- (1,-2147483648) [-2147483648|2147483647] "" Vector__XXX
  SG_ imd_status : 1|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ imd_fault : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 65 TS_STATUS: 1 Vector__XXX
+BO_ 71 TS_STATUS: 1 Vector__XXX
  SG_ ts_status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 72 SET_TS_STATUS_DAS: 1 Vector__XXX
+BO_ 65 SET_TS_STATUS_DAS: 1 Vector__XXX
  SG_ ts_status_set : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 104 SET_TS_STATUS_HANDCART: 1 Vector__XXX
+BO_ 97 SET_TS_STATUS_HANDCART: 1 Vector__XXX
  SG_ ts_status_set : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 260 STEER_STATUS: 3 Vector__XXX
+BO_ 264 STEER_STATUS: 3 Vector__XXX
  SG_ map_tv : 16|8@1+ (0.06666666666666667,0) [0|1] "" Vector__XXX
  SG_ map_sc : 8|8@1+ (0.06666666666666667,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.1,-0.5) [-0.5|1] "" Vector__XXX
 
-BO_ 772 SET_CAR_STATUS: 1 Vector__XXX
+BO_ 776 SET_CAR_STATUS: 1 Vector__XXX
  SG_ car_status_set : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 1028 SET_PEDALS_RANGE: 1 Vector__XXX
+BO_ 1032 SET_PEDALS_RANGE: 1 Vector__XXX
  SG_ pedal : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ bound : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1060 SET_STEERING_ANGLE_RANGE: 1 Vector__XXX
+BO_ 1064 SET_STEERING_ANGLE_RANGE: 1 Vector__XXX
  SG_ bound : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 512 CAR_STATUS: 1 Vector__XXX
+BO_ 515 CAR_STATUS: 1 Vector__XXX
  SG_ car_status : 4|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ inverter_r : 2|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ inverter_l : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 32 DAS_ERRORS: 2 Vector__XXX
+BO_ 35 DAS_ERRORS: 2 Vector__XXX
  SG_ das_error_FSM : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ das_error_STEER_TOUT : 7|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ das_error_INVR_TOUT : 6|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -363,43 +363,43 @@ BO_ 32 DAS_ERRORS: 2 Vector__XXX
  SG_ das_error_PEDAL_IMPLAUSIBILITY : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ das_error_PEDAL_ADC : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 834 LV_CURRENTS: 6 Vector__XXX
+BO_ 836 LV_CURRENTS: 6 Vector__XXX
  SG_ current_charger : 32|16@1+ (0.0009155413138017853,-30) [-30|30] "" Vector__XXX
  SG_ current_lv_battery : 16|16@1+ (0.0009155413138017853,-10) [-10|50] "" Vector__XXX
  SG_ current_as_battery : 0|16@1+ (0.0009155413138017853,-10) [-10|50] "" Vector__XXX
 
-BO_ 866 LV_CELLS_VOLTAGE: 7 Vector__XXX
+BO_ 868 LV_CELLS_VOLTAGE: 7 Vector__XXX
  SG_ voltage_2 : 40|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_1 : 24|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_0 : 8|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 898 LV_TOTAL_VOLTAGE: 4 Vector__XXX
+BO_ 900 LV_TOTAL_VOLTAGE: 4 Vector__XXX
  SG_ total_voltage : 0|32@1+ (9.918250725748923e-05,0) [0|26] "" Vector__XXX
 
-BO_ 930 LV_CELLS_TEMP: 7 Vector__XXX
+BO_ 932 LV_CELLS_TEMP: 7 Vector__XXX
  SG_ temp2 : 40|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ temp1 : 24|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ temp0 : 8|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 962 COOLING_STATUS: 4 Vector__XXX
+BO_ 964 COOLING_STATUS: 4 Vector__XXX
  SG_ pumps_speed : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ radiators_speed : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 774 SET_RADIATOR_SPEED: 2 Vector__XXX
+BO_ 768 SET_RADIATOR_SPEED: 2 Vector__XXX
  SG_ radiators_speed : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 806 SET_PUMPS_SPEED: 2 Vector__XXX
+BO_ 800 SET_PUMPS_SPEED: 2 Vector__XXX
  SG_ pumps_speed : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 262 SET_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
+BO_ 256 SET_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 258 INVERTER_CONNECTION_STATUS: 1 Vector__XXX
+BO_ 260 INVERTER_CONNECTION_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 546 LV_ERRORS: 5 Vector__XXX
+BO_ 516 LV_ERRORS: 5 Vector__XXX
  SG_ errors_MUX : 33|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_ADC_INIT : 32|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_PUMP : 31|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -435,7 +435,7 @@ BO_ 546 LV_ERRORS: 5 Vector__XXX
  SG_ warnings_CELL_OVERVOLTAGE : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ warnings_CELL_UNDERVOLTAGE : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 290 LV_HEALTH_SIGNALS: 1 Vector__XXX
+BO_ 292 LV_HEALTH_SIGNALS: 1 Vector__XXX
  SG_ health_signals_SIGN_BATTERY_CURRENT : 5|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ health_signals_BATTERY_CURRENT : 4|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ health_signals_CHARGER_CURRENT : 3|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -443,7 +443,7 @@ BO_ 290 LV_HEALTH_SIGNALS: 1 Vector__XXX
  SG_ health_signals_RELAY_OUT : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ health_signals_LVMS_OUT : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 322 LV_FEEDBACKS: 7 Vector__XXX
+BO_ 324 LV_FEEDBACKS: 7 Vector__XXX
  SG_ sd_end : 35|16@1+ (0.005862237420615535,0) [0|12] "" Vector__XXX
  SG_ sd_start : 19|16@1+ (0.005862237420615535,0) [0|12] "" Vector__XXX
  SG_ feedbacks_AS_ACTUATION_FB : 18|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -466,24 +466,24 @@ BO_ 322 LV_FEEDBACKS: 7 Vector__XXX
  SG_ feedbacks_IMD_FB : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ feedbacks_BSPD_FB : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 354 SHUTDOWN_STATUS: 1 Vector__XXX
+BO_ 356 SHUTDOWN_STATUS: 1 Vector__XXX
  SG_ output : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ input : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1831 LV_CAN_FLASH_REQ: 0 Vector__XXX
+BO_ 1826 LV_CAN_FLASH_REQ: 0 Vector__XXX
 
-BO_ 1863 LV_CAN_FLASH_ACK: 1 Vector__XXX
- SG_ response : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 1858 LV_CAN_FLASH_ACK: 1 Vector__XXX
+ SG_ response : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 39 MARKER: 0 Vector__XXX
+BO_ 34 MARKER: 0 Vector__XXX
 
-BO_ 515 HV_CELLS_VOLTAGE: 7 Vector__XXX
+BO_ 521 HV_CELLS_VOLTAGE: 7 Vector__XXX
  SG_ voltage_2 : 40|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_1 : 24|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_0 : 8|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 547 HV_CELLS_TEMP: 7 Vector__XXX
+BO_ 553 HV_CELLS_TEMP: 7 Vector__XXX
  SG_ temp_5 : 48|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp_4 : 40|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp_3 : 32|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
@@ -492,13 +492,13 @@ BO_ 547 HV_CELLS_TEMP: 7 Vector__XXX
  SG_ temp_0 : 8|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 579 HV_CELL_BALANCING_STATUS: 1 Vector__XXX
+BO_ 585 HV_CELL_BALANCING_STATUS: 1 Vector__XXX
  SG_ balancing_status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 520 SET_CELL_BALANCING_STATUS: 1 Vector__XXX
+BO_ 545 SET_CELL_BALANCING_STATUS: 1 Vector__XXX
  SG_ set_balancing_status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 544 SPEED: 8 Vector__XXX
+BO_ 547 SPEED: 8 Vector__XXX
  SG_ inverter_l : 48|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
  SG_ inverter_r : 32|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
  SG_ encoder_l : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
@@ -544,7 +544,7 @@ BO_ 386 INV_R_RESPONSE: 8 Vector__XXX
  SG_ data_0 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ reg_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 288 CONTROL_OUTPUT: 8 Vector__XXX
+BO_ 291 CONTROL_OUTPUT: 8 Vector__XXX
  SG_ torque_r : 48|16@1+ (0.0012207217517357137,0) [0|80] "" Vector__XXX
  SG_ torque_l : 32|16@1+ (0.0012207217517357137,0) [0|80] "" Vector__XXX
  SG_ tmax_l : 24|8@1+ (0.3137254901960784,0) [0|80] "" Vector__XXX
@@ -553,10 +553,10 @@ BO_ 288 CONTROL_OUTPUT: 8 Vector__XXX
 
 BO_ 517 LC_RESET: 0 Vector__XXX
 
-BO_ 776 HANDCART_STATUS: 1 Vector__XXX
+BO_ 769 HANDCART_STATUS: 1 Vector__XXX
  SG_ connected : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 808 HANDCART_SETTINGS: 5 Vector__XXX
+BO_ 801 HANDCART_SETTINGS: 5 Vector__XXX
  SG_ status : 33|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ grid_max_current : 25|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
  SG_ acc_charge_current : 17|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
@@ -564,7 +564,7 @@ BO_ 808 HANDCART_SETTINGS: 5 Vector__XXX
  SG_ fans_override : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ target_voltage : 0|8@1+ (0.6039215686274509,300) [300|454] "" Vector__XXX
 
-BO_ 840 HANDCART_SETTINGS_SET: 5 Vector__XXX
+BO_ 833 HANDCART_SETTINGS_SET: 5 Vector__XXX
  SG_ status : 33|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ grid_max_current : 25|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
  SG_ acc_charge_current : 17|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
@@ -684,65 +684,65 @@ CM_ BO_ 18 "";
 CM_ BO_ 19 "";
 CM_ BO_ 20 "";
 CM_ BO_ 21 "";
-CM_ BO_ 1033 "periodic message containing current can definitions version";
-CM_ BO_ 1065 "periodic message containing current can definitions version";
-CM_ BO_ 1097 "periodic message containing current can definitions version";
-CM_ BO_ 1129 "periodic message containing current can definitions version";
-CM_ BO_ 1161 "periodic message containing current can definitions version";
-CM_ BO_ 265 "every second unix encoded time and date used by logging devices to sync";
-CM_ BO_ 297 "ambient temperature as send from IMU";
+CM_ BO_ 1030 "periodic message containing current can definitions version";
+CM_ BO_ 1062 "periodic message containing current can definitions version";
+CM_ BO_ 1094 "periodic message containing current can definitions version";
+CM_ BO_ 1126 "periodic message containing current can definitions version";
+CM_ BO_ 1158 "periodic message containing current can definitions version";
+CM_ BO_ 262 "every second unix encoded time and date used by logging devices to sync";
+CM_ BO_ 294 "ambient temperature as send from IMU";
 CM_ BO_ 1072 "data logger message";
-CM_ BO_ 263 "Ask telemetry to turn on/off and send a tuple containing the current{test, driver, map); only once";
-CM_ BO_ 256 "The answer to the steering wheel's message that changes the status of the telemetry";
-CM_ BO_ 1799 "System stats of the raspberry pi inside the steering wheel";
-CM_ BO_ 769 "Pack stats";
-CM_ BO_ 801 "Current and power supplied by the pack, energy and state of charge of the pack";
-CM_ BO_ 833 "Cell temperatures";
-CM_ BO_ 33 "Battery-related errors";
-CM_ BO_ 40 "override fans speed";
-CM_ BO_ 35 "Status of can forwarding to internal bms network";
-CM_ BO_ 771 "Status of fans override";
-CM_ BO_ 770 "Errors on the feedbacks checks";
-CM_ BO_ 802 "Status of fans override";
-CM_ BO_ 65 "BMS status";
-CM_ BO_ 72 "Requests a TS status; only once";
-CM_ BO_ 104 "Requests a TS status; only once";
-CM_ BO_ 260 "Send update of the tuneable values from the steering wheel";
-CM_ BO_ 772 "Ask to DAS to change car status; only once";
-CM_ BO_ 1028 "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min";
-CM_ BO_ 1060 "Ask to calibrate steering encoder by specifying if the value is max or min";
-CM_ BO_ 512 "Car status, all states managed by the DAS will be send (car status, inverters status)";
-CM_ BO_ 32 "DAS errors messages";
-CM_ BO_ 834 "Currents of AS Battery system, LV Battery and Charger";
-CM_ BO_ 866 "LV Voltages for each cell";
-CM_ BO_ 898 "Voltage of LV battery pack";
-CM_ BO_ 930 "Temperature Â°C for each cell";
-CM_ BO_ 962 "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit";
-CM_ BO_ 774 "Set both radiators speed";
-CM_ BO_ 806 "Set both pumps speed";
-CM_ BO_ 262 "Set the status of the inverter inputs RFE and RUN";
-CM_ BO_ 258 "Inverter status";
-CM_ BO_ 546 "LV Battery-related errors";
-CM_ BO_ 290 "LV Battery health signals";
-CM_ BO_ 322 "LV Battery-related errors";
-CM_ BO_ 354 "Shutdown status";
-CM_ BO_ 1831 "Request to flash the LV BMS via CAN";
-CM_ BO_ 1863 "Acknowledge to flash the LV BMS via CAN";
-CM_ BO_ 39 "Send a marker to telemetry";
-CM_ BO_ 515 "Voltages for each cell";
-CM_ BO_ 547 "Cell temperatures";
-CM_ BO_ 579 "Cell balancing status";
-CM_ BO_ 520 "Set cell balancing status; only once";
-CM_ BO_ 544 "Encoder and inverter speed in rad/sec";
+CM_ BO_ 258 "Ask telemetry to turn on/off and send a tuple containing the current{test, driver, map); only once";
+CM_ BO_ 259 "The answer to the steering wheel's message that changes the status of the telemetry";
+CM_ BO_ 1794 "System stats of the raspberry pi inside the steering wheel";
+CM_ BO_ 775 "Pack stats";
+CM_ BO_ 807 "Current and power supplied by the pack, energy and state of charge of the pack";
+CM_ BO_ 839 "Cell temperatures";
+CM_ BO_ 39 "Battery-related errors";
+CM_ BO_ 33 "override fans speed";
+CM_ BO_ 41 "Status of can forwarding to internal bms network";
+CM_ BO_ 777 "Status of fans override";
+CM_ BO_ 772 "Errors on the feedbacks checks";
+CM_ BO_ 804 "Status of fans override";
+CM_ BO_ 71 "BMS status";
+CM_ BO_ 65 "Requests a TS status; only once";
+CM_ BO_ 97 "Requests a TS status; only once";
+CM_ BO_ 264 "Send update of the tuneable values from the steering wheel";
+CM_ BO_ 776 "Ask to DAS to change car status; only once";
+CM_ BO_ 1032 "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min";
+CM_ BO_ 1064 "Ask to calibrate steering encoder by specifying if the value is max or min";
+CM_ BO_ 515 "Car status, all states managed by the DAS will be send (car status, inverters status)";
+CM_ BO_ 35 "DAS errors messages";
+CM_ BO_ 836 "Currents of AS Battery system, LV Battery and Charger";
+CM_ BO_ 868 "LV Voltages for each cell";
+CM_ BO_ 900 "Voltage of LV battery pack";
+CM_ BO_ 932 "Temperature Â°C for each cell";
+CM_ BO_ 964 "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit";
+CM_ BO_ 768 "Set both radiators speed";
+CM_ BO_ 800 "Set both pumps speed";
+CM_ BO_ 256 "Set the status of the inverter inputs RFE and RUN";
+CM_ BO_ 260 "Inverter status";
+CM_ BO_ 516 "LV Battery-related errors";
+CM_ BO_ 292 "LV Battery health signals";
+CM_ BO_ 324 "LV Battery-related errors";
+CM_ BO_ 356 "Shutdown status";
+CM_ BO_ 1826 "Request to flash the LV BMS via CAN";
+CM_ BO_ 1858 "Acknowledge to flash the LV BMS via CAN";
+CM_ BO_ 34 "Send a marker to telemetry";
+CM_ BO_ 521 "Voltages for each cell";
+CM_ BO_ 553 "Cell temperatures";
+CM_ BO_ 585 "Cell balancing status";
+CM_ BO_ 545 "Set cell balancing status; only once";
+CM_ BO_ 547 "Encoder and inverter speed in rad/sec";
 CM_ BO_ 513 "";
 CM_ BO_ 514 "";
 CM_ BO_ 385 "";
 CM_ BO_ 386 "";
-CM_ BO_ 288 "Control output, N*m";
+CM_ BO_ 291 "Control output, N*m";
 CM_ BO_ 517 "";
-CM_ BO_ 776 "Sends updates on the presence of the handcart";
-CM_ BO_ 808 "Setting from handcart to CAN";
-CM_ BO_ 840 "Setting from telemetry to handcart";
+CM_ BO_ 769 "Sends updates on the presence of the handcart";
+CM_ BO_ 801 "Setting from handcart to CAN";
+CM_ BO_ 833 "Setting from telemetry to handcart";
 BA_DEF_  "Bus Speed" STRING ;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
 BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
@@ -760,76 +760,76 @@ BA_DEF_DEF_  "NmStationAddress" 0;
 BA_DEF_DEF_  "DBName" "";
 BA_DEF_DEF_  "BusType" "CAN";
 BA_ "DBName" "CANTemplate";
-BA_ "GenMsgCycleTime" BO_ 1033 1000;
-BA_ "GenMsgCycleTime" BO_ 1065 1000;
-BA_ "GenMsgCycleTime" BO_ 1097 1000;
-BA_ "GenMsgCycleTime" BO_ 1129 1000;
-BA_ "GenMsgCycleTime" BO_ 1161 1000;
-BA_ "GenMsgCycleTime" BO_ 265 1000;
-BA_ "GenMsgCycleTime" BO_ 297 1000;
+BA_ "GenMsgCycleTime" BO_ 1030 1000;
+BA_ "GenMsgCycleTime" BO_ 1062 1000;
+BA_ "GenMsgCycleTime" BO_ 1094 1000;
+BA_ "GenMsgCycleTime" BO_ 1126 1000;
+BA_ "GenMsgCycleTime" BO_ 1158 1000;
+BA_ "GenMsgCycleTime" BO_ 262 1000;
+BA_ "GenMsgCycleTime" BO_ 294 1000;
 BA_ "GenMsgCycleTime" BO_ 1072 1000;
-BA_ "GenMsgCycleTime" BO_ 256 1000;
-BA_ "GenMsgCycleTime" BO_ 1799 1000;
-BA_ "GenMsgCycleTime" BO_ 769 10;
-BA_ "GenMsgCycleTime" BO_ 801 10;
-BA_ "GenMsgCycleTime" BO_ 833 100;
-BA_ "GenMsgCycleTime" BO_ 33 10;
-BA_ "GenMsgCycleTime" BO_ 65 10;
-BA_ "GenMsgCycleTime" BO_ 72 100;
-BA_ "GenMsgCycleTime" BO_ 104 100;
-BA_ "GenMsgCycleTime" BO_ 260 100;
-BA_ "GenMsgCycleTime" BO_ 512 100;
-BA_ "GenMsgCycleTime" BO_ 32 10;
-BA_ "GenMsgCycleTime" BO_ 834 500;
-BA_ "GenMsgCycleTime" BO_ 866 100;
-BA_ "GenMsgCycleTime" BO_ 898 100;
-BA_ "GenMsgCycleTime" BO_ 930 100;
-BA_ "GenMsgCycleTime" BO_ 962 1000;
-BA_ "GenMsgCycleTime" BO_ 262 100;
-BA_ "GenMsgCycleTime" BO_ 258 100;
-BA_ "GenMsgCycleTime" BO_ 546 10;
-BA_ "GenMsgCycleTime" BO_ 290 300;
-BA_ "GenMsgCycleTime" BO_ 322 10;
-BA_ "GenMsgCycleTime" BO_ 354 500;
-BA_ "GenMsgCycleTime" BO_ 1863 50;
+BA_ "GenMsgCycleTime" BO_ 259 1000;
+BA_ "GenMsgCycleTime" BO_ 1794 1000;
+BA_ "GenMsgCycleTime" BO_ 775 10;
+BA_ "GenMsgCycleTime" BO_ 807 10;
+BA_ "GenMsgCycleTime" BO_ 839 100;
+BA_ "GenMsgCycleTime" BO_ 39 10;
+BA_ "GenMsgCycleTime" BO_ 71 10;
+BA_ "GenMsgCycleTime" BO_ 65 100;
+BA_ "GenMsgCycleTime" BO_ 97 100;
+BA_ "GenMsgCycleTime" BO_ 264 100;
 BA_ "GenMsgCycleTime" BO_ 515 100;
-BA_ "GenMsgCycleTime" BO_ 547 100;
-BA_ "GenMsgCycleTime" BO_ 579 500;
-BA_ "GenMsgCycleTime" BO_ 544 10;
+BA_ "GenMsgCycleTime" BO_ 35 10;
+BA_ "GenMsgCycleTime" BO_ 836 500;
+BA_ "GenMsgCycleTime" BO_ 868 100;
+BA_ "GenMsgCycleTime" BO_ 900 100;
+BA_ "GenMsgCycleTime" BO_ 932 100;
+BA_ "GenMsgCycleTime" BO_ 964 1000;
+BA_ "GenMsgCycleTime" BO_ 256 100;
+BA_ "GenMsgCycleTime" BO_ 260 100;
+BA_ "GenMsgCycleTime" BO_ 516 10;
+BA_ "GenMsgCycleTime" BO_ 292 300;
+BA_ "GenMsgCycleTime" BO_ 324 10;
+BA_ "GenMsgCycleTime" BO_ 356 500;
+BA_ "GenMsgCycleTime" BO_ 1858 50;
+BA_ "GenMsgCycleTime" BO_ 521 100;
+BA_ "GenMsgCycleTime" BO_ 553 100;
+BA_ "GenMsgCycleTime" BO_ 585 500;
+BA_ "GenMsgCycleTime" BO_ 547 10;
 BA_ "GenMsgCycleTime" BO_ 513 10;
 BA_ "GenMsgCycleTime" BO_ 514 10;
 BA_ "GenMsgCycleTime" BO_ 385 100;
 BA_ "GenMsgCycleTime" BO_ 386 100;
-BA_ "GenMsgCycleTime" BO_ 288 100;
-BA_ "GenMsgCycleTime" BO_ 776 500;
-BA_ "GenMsgCycleTime" BO_ 808 500;
-BA_ "GenMsgCycleTime" BO_ 840 500;
+BA_ "GenMsgCycleTime" BO_ 291 100;
+BA_ "GenMsgCycleTime" BO_ 769 500;
+BA_ "GenMsgCycleTime" BO_ 801 500;
+BA_ "GenMsgCycleTime" BO_ 833 500;
 VAL_ 3 can_forward_set 0 "OFF" 1 "ON" ;
-VAL_ 263 tlm_status 0 "OFF" 1 "ON" ;
-VAL_ 256 tlm_status 0 "OFF" 1 "ON" ;
-VAL_ 40 fans_override 0 "OFF" 1 "ON" ;
-VAL_ 35 can_forward_status 0 "OFF" 1 "ON" ;
-VAL_ 771 fans_override 0 "OFF" 1 "ON" ;
-VAL_ 802 imd_status 0 "IMD_SC" 1 "IMD_NORMAL" 2 "IMD_UNDER_VOLTAGE" 3 "IMD_START_MEASURE" 4 "IMD_DEVICE_ERROR" 5 "IMD_EARTH_FAULT" ;
-VAL_ 65 ts_status 0 "OFF" 1 "PRECHARGE" 2 "ON" 3 "FATAL" ;
-VAL_ 72 ts_status_set 0 "OFF" 1 "ON" ;
-VAL_ 104 ts_status_set 0 "OFF" 1 "ON" ;
-VAL_ 772 car_status_set 0 "IDLE" 1 "READY" 2 "DRIVE" ;
-VAL_ 1028 pedal 0 "ACCELERATOR" 1 "BRAKE" ;
-VAL_ 1028 bound 0 "SET_MAX" 1 "SET_MIN" ;
-VAL_ 1060 bound 0 "SET_MAX" 1 "SET_MIN" ;
-VAL_ 512 car_status 0 "IDLE" 1 "PRE_SETUP" 2 "TS_ON" 3 "POST_SETUP" 4 "DRIVE" 5 "TEARDOWN" ;
-VAL_ 512 inverter_r 0 "OFF" 1 "IDLE" 2 "ON" ;
-VAL_ 512 inverter_l 0 "OFF" 1 "IDLE" 2 "ON" ;
-VAL_ 262 status 0 "OFF" 1 "ON" ;
-VAL_ 258 status 0 "OFF" 1 "ON" ;
-VAL_ 1863 response 0 "OFF" 1 "ON" ;
-VAL_ 579 balancing_status 0 "OFF" 1 "ON" ;
-VAL_ 520 set_balancing_status 0 "OFF" 1 "ON" ;
-VAL_ 808 status 0 "CHECK" 1 "IDLE" 2 "PRECHARGE" 3 "READY" 4 "CHARGE" 5 "CHARGE_DONE" 6 "BALANCING" 7 "ERROR" ;
-VAL_ 808 fans_override 0 "OFF" 1 "ON" ;
-VAL_ 840 status 0 "CHECK" 1 "IDLE" 2 "PRECHARGE" 3 "READY" 4 "CHARGE" 5 "CHARGE_DONE" 6 "BALANCING" 7 "ERROR" ;
-VAL_ 840 fans_override 0 "OFF" 1 "ON" ;
+VAL_ 258 tlm_status 0 "OFF" 1 "ON" ;
+VAL_ 259 tlm_status 0 "OFF" 1 "ON" ;
+VAL_ 33 fans_override 0 "OFF" 1 "ON" ;
+VAL_ 41 can_forward_status 0 "OFF" 1 "ON" ;
+VAL_ 777 fans_override 0 "OFF" 1 "ON" ;
+VAL_ 804 imd_status 0 "IMD_SC" 1 "IMD_NORMAL" 2 "IMD_UNDER_VOLTAGE" 3 "IMD_START_MEASURE" 4 "IMD_DEVICE_ERROR" 5 "IMD_EARTH_FAULT" ;
+VAL_ 71 ts_status 0 "OFF" 1 "PRECHARGE" 2 "ON" 3 "FATAL" ;
+VAL_ 65 ts_status_set 0 "OFF" 1 "ON" ;
+VAL_ 97 ts_status_set 0 "OFF" 1 "ON" ;
+VAL_ 776 car_status_set 0 "IDLE" 1 "READY" 2 "DRIVE" ;
+VAL_ 1032 pedal 0 "ACCELERATOR" 1 "BRAKE" ;
+VAL_ 1032 bound 0 "SET_MAX" 1 "SET_MIN" ;
+VAL_ 1064 bound 0 "SET_MAX" 1 "SET_MIN" ;
+VAL_ 515 car_status 0 "IDLE" 1 "PRE_SETUP" 2 "TS_ON" 3 "POST_SETUP" 4 "DRIVE" 5 "TEARDOWN" ;
+VAL_ 515 inverter_r 0 "OFF" 1 "IDLE" 2 "ON" ;
+VAL_ 515 inverter_l 0 "OFF" 1 "IDLE" 2 "ON" ;
+VAL_ 256 status 0 "OFF" 1 "ON" ;
+VAL_ 260 status 0 "OFF" 1 "ON" ;
+VAL_ 1858 response 0 "NO_FLASH" 1 "FLASH" 2 "PREPARING_TO_FLASH" ;
+VAL_ 585 balancing_status 0 "OFF" 1 "ON" ;
+VAL_ 545 set_balancing_status 0 "OFF" 1 "ON" ;
+VAL_ 801 status 0 "CHECK" 1 "IDLE" 2 "PRECHARGE" 3 "READY" 4 "CHARGE" 5 "CHARGE_DONE" 6 "BALANCING" 7 "ERROR" ;
+VAL_ 801 fans_override 0 "OFF" 1 "ON" ;
+VAL_ 833 status 0 "CHECK" 1 "IDLE" 2 "PRECHARGE" 3 "READY" 4 "CHARGE" 5 "CHARGE_DONE" 6 "BALANCING" 7 "ERROR" ;
+VAL_ 833 fans_override 0 "OFF" 1 "ON" ;
 
 
 

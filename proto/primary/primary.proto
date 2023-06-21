@@ -92,8 +92,9 @@ enum primary_inverter_connection_status_status {
 	primary_inverter_connection_status_status_ON = 1;
 }
 enum primary_lv_can_flash_ack_response {
-	primary_lv_can_flash_ack_response_OFF = 0;
-	primary_lv_can_flash_ack_response_ON = 1;
+	primary_lv_can_flash_ack_response_NO_FLASH = 0;
+	primary_lv_can_flash_ack_response_FLASH = 1;
+	primary_lv_can_flash_ack_response_PREPARING_TO_FLASH = 2;
 }
 enum primary_hv_cell_balancing_status_balancing_status {
 	primary_hv_cell_balancing_status_balancing_status_OFF = 0;

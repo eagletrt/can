@@ -14,7 +14,7 @@ extern "C" {
 static int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
        case 769: return SECONDARY_INTERVAL_PEDALS_OUTPUT;
-       case 258: return SECONDARY_INTERVAL_STEERING_ANGLE;
+       case 256: return SECONDARY_INTERVAL_STEERING_ANGLE;
        case 1283: return SECONDARY_INTERVAL_CONTROL_STATE;
 
     }
