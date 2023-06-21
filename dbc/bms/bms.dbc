@@ -49,7 +49,7 @@ BO_ 1536 BOARD_STATUS: 2 Vector__XXX
  SG_ errors_CAN_COMM : 3|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1282 TEMPERATURES: 6 Vector__XXX
+BO_ 1283 TEMPERATURES: 6 Vector__XXX
  SG_ temp3 : 35|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp2 : 27|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp1 : 19|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
@@ -57,7 +57,7 @@ BO_ 1282 TEMPERATURES: 6 Vector__XXX
  SG_ start_index : 3|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 515 VOLTAGES: 8 Vector__XXX
+BO_ 514 VOLTAGES: 8 Vector__XXX
  SG_ voltage2 : 43|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage1 : 27|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage0 : 11|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
@@ -118,8 +118,8 @@ BO_ 15 FLASH_CELLBOARD_5_RX: 0 Vector__XXX
 
 
 CM_ BO_ 1536 "Cellboard's status";
-CM_ BO_ 1282 "Cells' temperatures";
-CM_ BO_ 515 "Cells' voltages";
+CM_ BO_ 1283 "Cells' temperatures";
+CM_ BO_ 514 "Cells' voltages";
 CM_ BO_ 513 "Set discharging status for cells";
 CM_ BO_ 0 "Starts firmware update";
 CM_ BO_ 4 "";
@@ -139,8 +139,8 @@ BA_DEF_DEF_  "GenMsgCycleTime" 0;
 
 VAL_ 1536 balancing_status 0 "OFF" 1 "DISCHARGE" ;
 VAL_ 1536 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
-VAL_ 1282 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
-VAL_ 515 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
+VAL_ 1283 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
+VAL_ 514 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 513 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 0 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 

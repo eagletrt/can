@@ -274,7 +274,10 @@
       "fixed_id": 3,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
-      "contents": {}
+      "description": "Enable/disable can forwarding to internal bms network",
+      "contents": {
+        "can_forward_set": "Toggle"
+      }
     },
     {
       "name": "FLASH_CELLBOARD_0_TX",
@@ -639,17 +642,6 @@
       "contents": {
         "warnings": "HvErrors",
         "errors": "HvErrors"
-      }
-    },
-    {
-      "name": "HV_CAN_FORWARD",
-      "topic": "BMS_HV",
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Enable/disable can forwarding to internal bms network",
-      "contents": {
-        "can_forward_set": "Toggle"
       }
     },
     {
