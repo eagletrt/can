@@ -6,6 +6,12 @@ extern "C" {
 #endif
 
 
+static int primary_watchdog_interval_from_id(uint16_t message_id) {
+    switch (message_id) {
+
+    }
+    return -1;
+}
 
 
 #ifdef __cplusplus
