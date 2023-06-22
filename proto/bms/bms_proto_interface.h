@@ -314,17 +314,33 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 
     }
 
-    for(int i = 0; i < pack->balancing_size(); i++){
+    for(int i = 0; i < pack->set_balancing_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->balancing(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->balancing(i)._inner_timestamp();
-        (*net_signals)["BALANCING"]["_timestamp"].push(pack->balancing(i)._inner_timestamp());
+        if(pack->set_balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->set_balancing_status(i)._inner_timestamp();
+        (*net_signals)["SET_BALANCING_STATUS"]["_timestamp"].push(pack->set_balancing_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["BALANCING"]["board_index"].push(pack->balancing(i).board_index());
-		(*net_signals)["BALANCING"]["threshold"].push(pack->balancing(i).threshold());
-		(*net_signals)["BALANCING"]["target"].push(pack->balancing(i).target());
+		(*net_signals)["SET_BALANCING_STATUS"]["threshold"].push(pack->set_balancing_status(i).threshold());
+		(*net_signals)["SET_BALANCING_STATUS"]["target"].push(pack->set_balancing_status(i).target());
+		(*net_enums)["SET_BALANCING_STATUS"]["balancing_status"].push(pack->set_balancing_status(i).balancing_status());
+		bms_set_balancing_status_balancing_status_enum_to_string((bms_set_balancing_status_balancing_status)pack->set_balancing_status(i).balancing_status(), buffer);
+		(*net_strings)["SET_BALANCING_STATUS"]["balancing_status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->balancing_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->balancing_status(i)._inner_timestamp();
+        (*net_signals)["BALANCING_STATUS"]["_timestamp"].push(pack->balancing_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["BALANCING_STATUS"]["balancing_status"].push(pack->balancing_status(i).balancing_status());
+		bms_balancing_status_balancing_status_enum_to_string((bms_balancing_status_balancing_status)pack->balancing_status(i).balancing_status(), buffer);
+		(*net_strings)["BALANCING_STATUS"]["balancing_status"].push(buffer);
 
     }
 
@@ -484,7 +500,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 
     switch(id) {
         
-        case 1538: {
+        case 1536: {
             bms_board_status_t* msg = (bms_board_status_t*)((*map)[index].message_raw);
             bms::BOARD_STATUS* proto_msg = pack->add_board_status();
 			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
@@ -505,7 +521,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1283: {
+        case 1282: {
             bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)((*map)[index].message_conversion);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
@@ -521,7 +537,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 513: {
+        case 516: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)((*map)[index].message_conversion);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -536,12 +552,23 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 512: {
-            bms_balancing_t* msg = (bms_balancing_t*)((*map)[index].message_raw);
-            bms::BALANCING* proto_msg = pack->add_balancing();
-			proto_msg->set_board_index(msg->board_index);
+        case 513: {
+            bms_set_balancing_status_t* msg = (bms_set_balancing_status_t*)((*map)[index].message_raw);
+            bms::SET_BALANCING_STATUS* proto_msg = pack->add_set_balancing_status();
 			proto_msg->set_threshold(msg->threshold);
 			proto_msg->set_target(msg->target);
+			proto_msg->set_balancing_status((bms::bms_set_balancing_status_balancing_status)msg->balancing_status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 515: {
+            bms_balancing_status_t* msg = (bms_balancing_status_t*)((*map)[index].message_raw);
+            bms::BALANCING_STATUS* proto_msg = pack->add_balancing_status();
+			proto_msg->set_balancing_status((bms::bms_balancing_status_balancing_status)msg->balancing_status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

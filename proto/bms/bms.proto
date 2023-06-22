@@ -30,6 +30,14 @@ enum bms_voltages_cellboard_id {
 	bms_voltages_cellboard_id_CELLBOARD_4 = 4;
 	bms_voltages_cellboard_id_CELLBOARD_5 = 5;
 }
+enum bms_set_balancing_status_balancing_status {
+	bms_set_balancing_status_balancing_status_OFF = 0;
+	bms_set_balancing_status_balancing_status_DISCHARGE = 1;
+}
+enum bms_balancing_status_balancing_status {
+	bms_balancing_status_balancing_status_OFF = 0;
+	bms_balancing_status_balancing_status_DISCHARGE = 1;
+}
 enum bms_jmp_to_blt_cellboard_id {
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_0 = 0;
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_1 = 1;
@@ -71,11 +79,15 @@ message VOLTAGES{
 	double voltage2 = 5;
 	uint64 _inner_timestamp = 6;
 }
-message BALANCING{
-	uint32 board_index = 1;
-	uint32 threshold = 2;
-	uint32 target = 3;
+message SET_BALANCING_STATUS{
+	uint32 threshold = 1;
+	uint32 target = 2;
+	bms_set_balancing_status_balancing_status balancing_status = 3;
 	uint64 _inner_timestamp = 4;
+}
+message BALANCING_STATUS{
+	bms_balancing_status_balancing_status balancing_status = 1;
+	uint64 _inner_timestamp = 2;
 }
 message JMP_TO_BLT{
 	bms_jmp_to_blt_cellboard_id cellboard_id = 1;
@@ -124,19 +136,20 @@ message Pack{
 	repeated BOARD_STATUS BOARD_STATUS = 1;
 	repeated TEMPERATURES TEMPERATURES = 2;
 	repeated VOLTAGES VOLTAGES = 3;
-	repeated BALANCING BALANCING = 4;
-	repeated JMP_TO_BLT JMP_TO_BLT = 5;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
+	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 4;
+	repeated BALANCING_STATUS BALANCING_STATUS = 5;
+	repeated JMP_TO_BLT JMP_TO_BLT = 6;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 7;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 8;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 9;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 10;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 11;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 12;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 13;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 14;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 15;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 16;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 17;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 18;
 }
 
