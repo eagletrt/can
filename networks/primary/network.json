@@ -410,22 +410,43 @@
       "contents": {}
     },
     {
+        "name": "ECU_JMP_TO_BLT",
+        "fixed_id": 19,
+        "sending": ["HANDCART"],
+        "receiving": ["DAS"],
+        "contents": {}
+    },
+    {
+        "name": "FLASH_ECU_TX",
+        "fixed_id": 20,
+        "sending": ["HANDCART"],
+        "receiving": ["DAS"],
+        "contents": {}
+    },
+    {
+        "name": "FLASH_ECU_RX",
+        "fixed_id": 21,
+        "sending": ["HANDCART"],
+        "receiving": ["DAS"],
+        "contents": {}
+    },
+    {
       "name": "STEERING_JMP_TO_BLT",
-      "fixed_id": 19,
+      "fixed_id": 22,
       "sending": ["HANDCART"],
       "receiving": ["STEER"],
       "contents": {}
     },
     {
       "name": "FLASH_STEERING_TX",
-      "fixed_id": 20,
+      "fixed_id": 23,
       "sending": ["HANDCART"],
       "receiving": ["STEER"],
       "contents": {}
     },
     {
       "name": "FLASH_STEERING_RX",
-      "fixed_id": 21,
+      "fixed_id": 24,
       "sending": ["HANDCART"],
       "receiving": ["STEER"],
       "contents": {}

@@ -136,9 +136,9 @@
       "receiving": ["CELLBOARD"],
       "description": "Set discharging status for cells",
       "contents": {
-        "cellboard_id": "Cellboard",
         "board_index": "uint8",
-        "cells": "BalancingCells"
+        "threshold": "unit16",
+        "target": "uint16"
       }
     },
     {
