@@ -130,7 +130,7 @@
     },
     {
         "name": "SET_BALANCING_STATUS",
-        "topic": "SET_BALANCING_STATUS",
+        "topic": "BALANCING",
         "priority": 5,
         "sending": ["MAINBOARD"],
         "receiving": ["CELLBOARD"],
@@ -139,17 +139,6 @@
             "threshold": "uint16",
             "target": "uint16",
             "balancing_status": "BalancingStatus"
-        }
-    },
-    {
-        "name": "BALANCING_STATUS",
-        "topic": "BALANCING_STATUS",
-        "priority": 5,
-        "sending": ["CELLBOARD"],
-        "receiving": ["MAINBOARD"],
-        "description": "Discharging status",
-        "contents": {
-            "balancing_status": "BalancingStatus"          
         }
     },
     {
