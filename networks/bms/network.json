@@ -129,17 +129,17 @@
       }
     },
     {
-      "name": "BALANCING",
-      "topic": "BALANCING",
-      "priority": 5,
-      "sending": ["MAINBOARD"],
-      "receiving": ["CELLBOARD"],
-      "description": "Set discharging status for cells",
-      "contents": {
-        "board_index": "uint8",
-        "threshold": "unit16",
-        "target": "uint16"
-      }
+        "name": "BALANCING",
+        "topic": "BALANCING",
+        "priority": 5,
+        "sending": ["MAINBOARD"],
+        "receiving": ["CELLBOARD"],
+        "description": "Set discharging status for cells",
+        "contents": {
+          "board_index": "uint8",
+          "threshold": "uint16",
+          "target": "uint16"
+        }
     },
     {
       "name": "JMP_TO_BLT",

@@ -30,14 +30,6 @@ enum bms_voltages_cellboard_id {
 	bms_voltages_cellboard_id_CELLBOARD_4 = 4;
 	bms_voltages_cellboard_id_CELLBOARD_5 = 5;
 }
-enum bms_balancing_cellboard_id {
-	bms_balancing_cellboard_id_CELLBOARD_0 = 0;
-	bms_balancing_cellboard_id_CELLBOARD_1 = 1;
-	bms_balancing_cellboard_id_CELLBOARD_2 = 2;
-	bms_balancing_cellboard_id_CELLBOARD_3 = 3;
-	bms_balancing_cellboard_id_CELLBOARD_4 = 4;
-	bms_balancing_cellboard_id_CELLBOARD_5 = 5;
-}
 enum bms_jmp_to_blt_cellboard_id {
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_0 = 0;
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_1 = 1;
@@ -80,27 +72,10 @@ message VOLTAGES{
 	uint64 _inner_timestamp = 6;
 }
 message BALANCING{
-	bms_balancing_cellboard_id cellboard_id = 1;
-	uint32 board_index = 2;
-	bool cells_CELL0 = 3;
-	bool cells_CELL1 = 4;
-	bool cells_CELL2 = 5;
-	bool cells_CELL3 = 6;
-	bool cells_CELL4 = 7;
-	bool cells_CELL5 = 8;
-	bool cells_CELL6 = 9;
-	bool cells_CELL7 = 10;
-	bool cells_CELL8 = 11;
-	bool cells_CELL9 = 12;
-	bool cells_CELL10 = 13;
-	bool cells_CELL11 = 14;
-	bool cells_CELL12 = 15;
-	bool cells_CELL13 = 16;
-	bool cells_CELL14 = 17;
-	bool cells_CELL15 = 18;
-	bool cells_CELL16 = 19;
-	bool cells_CELL17 = 20;
-	uint64 _inner_timestamp = 21;
+	uint32 board_index = 1;
+	uint32 threshold = 2;
+	uint32 target = 3;
+	uint64 _inner_timestamp = 4;
 }
 message JMP_TO_BLT{
 	bms_jmp_to_blt_cellboard_id cellboard_id = 1;

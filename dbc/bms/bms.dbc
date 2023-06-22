@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HANDCART CELLBOARD HANDCART BMS_HV BMS_HV HANDCART HANDCART BMS_HV BMS_HV HANDCART HANDCART BMS_HV MAINBOARD BMS_HV HANDCART HANDCART BMS_HV CELLBOARD HANDCART MAINBOARD BMS_HV CELLBOARD HANDCART MAINBOARD BMS_HV MAINBOARD HANDCART BMS_HV MAINBOARD CELLBOARD CELLBOARD HANDCART BMS_HV BMS_HV
+BU_: HANDCART BMS_HV HANDCART BMS_HV HANDCART BMS_HV HANDCART BMS_HV BMS_HV HANDCART HANDCART BMS_HV CELLBOARD HANDCART MAINBOARD BMS_HV CELLBOARD HANDCART MAINBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV HANDCART BMS_HV
 
 
 BO_ 1538 BOARD_STATUS: 2 Vector__XXX
@@ -64,27 +64,10 @@ BO_ 513 VOLTAGES: 8 Vector__XXX
  SG_ start_index : 3|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 512 BALANCING: 4 Vector__XXX
- SG_ cells_CELL17 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL16 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL15 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL14 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL13 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL12 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL11 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL10 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL9 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL8 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL7 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL6 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL5 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL4 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL3 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL2 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL1 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ cells_CELL0 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ board_index : 3|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+BO_ 512 BALANCING: 5 Vector__XXX
+ SG_ target : 24|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ threshold : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ board_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 0 JMP_TO_BLT: 2 Vector__XXX
  SG_ board_index : 3|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -141,7 +124,6 @@ VAL_ 1538 balancing_status 0 "OFF" 1 "DISCHARGE" ;
 VAL_ 1538 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 1283 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 513 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
-VAL_ 512 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 0 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 
 

@@ -322,28 +322,9 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
         (*net_signals)["BALANCING"]["_timestamp"].push(pack->balancing(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["BALANCING"]["cellboard_id"].push(pack->balancing(i).cellboard_id());
-		bms_balancing_cellboard_id_enum_to_string((bms_balancing_cellboard_id)pack->balancing(i).cellboard_id(), buffer);
-		(*net_strings)["BALANCING"]["cellboard_id"].push(buffer);
 		(*net_signals)["BALANCING"]["board_index"].push(pack->balancing(i).board_index());
-		(*net_enums)["BALANCING"]["cells_cell0"].push(pack->balancing(i).cells_cell0());
-		(*net_enums)["BALANCING"]["cells_cell1"].push(pack->balancing(i).cells_cell1());
-		(*net_enums)["BALANCING"]["cells_cell2"].push(pack->balancing(i).cells_cell2());
-		(*net_enums)["BALANCING"]["cells_cell3"].push(pack->balancing(i).cells_cell3());
-		(*net_enums)["BALANCING"]["cells_cell4"].push(pack->balancing(i).cells_cell4());
-		(*net_enums)["BALANCING"]["cells_cell5"].push(pack->balancing(i).cells_cell5());
-		(*net_enums)["BALANCING"]["cells_cell6"].push(pack->balancing(i).cells_cell6());
-		(*net_enums)["BALANCING"]["cells_cell7"].push(pack->balancing(i).cells_cell7());
-		(*net_enums)["BALANCING"]["cells_cell8"].push(pack->balancing(i).cells_cell8());
-		(*net_enums)["BALANCING"]["cells_cell9"].push(pack->balancing(i).cells_cell9());
-		(*net_enums)["BALANCING"]["cells_cell10"].push(pack->balancing(i).cells_cell10());
-		(*net_enums)["BALANCING"]["cells_cell11"].push(pack->balancing(i).cells_cell11());
-		(*net_enums)["BALANCING"]["cells_cell12"].push(pack->balancing(i).cells_cell12());
-		(*net_enums)["BALANCING"]["cells_cell13"].push(pack->balancing(i).cells_cell13());
-		(*net_enums)["BALANCING"]["cells_cell14"].push(pack->balancing(i).cells_cell14());
-		(*net_enums)["BALANCING"]["cells_cell15"].push(pack->balancing(i).cells_cell15());
-		(*net_enums)["BALANCING"]["cells_cell16"].push(pack->balancing(i).cells_cell16());
-		(*net_enums)["BALANCING"]["cells_cell17"].push(pack->balancing(i).cells_cell17());
+		(*net_signals)["BALANCING"]["threshold"].push(pack->balancing(i).threshold());
+		(*net_signals)["BALANCING"]["target"].push(pack->balancing(i).target());
 
     }
 
@@ -558,26 +539,9 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         case 512: {
             bms_balancing_t* msg = (bms_balancing_t*)((*map)[index].message_raw);
             bms::BALANCING* proto_msg = pack->add_balancing();
-			proto_msg->set_cellboard_id((bms::bms_balancing_cellboard_id)msg->cellboard_id);
 			proto_msg->set_board_index(msg->board_index);
-			proto_msg->set_cells_cell0(msg->cells_cell0);
-			proto_msg->set_cells_cell1(msg->cells_cell1);
-			proto_msg->set_cells_cell2(msg->cells_cell2);
-			proto_msg->set_cells_cell3(msg->cells_cell3);
-			proto_msg->set_cells_cell4(msg->cells_cell4);
-			proto_msg->set_cells_cell5(msg->cells_cell5);
-			proto_msg->set_cells_cell6(msg->cells_cell6);
-			proto_msg->set_cells_cell7(msg->cells_cell7);
-			proto_msg->set_cells_cell8(msg->cells_cell8);
-			proto_msg->set_cells_cell9(msg->cells_cell9);
-			proto_msg->set_cells_cell10(msg->cells_cell10);
-			proto_msg->set_cells_cell11(msg->cells_cell11);
-			proto_msg->set_cells_cell12(msg->cells_cell12);
-			proto_msg->set_cells_cell13(msg->cells_cell13);
-			proto_msg->set_cells_cell14(msg->cells_cell14);
-			proto_msg->set_cells_cell15(msg->cells_cell15);
-			proto_msg->set_cells_cell16(msg->cells_cell16);
-			proto_msg->set_cells_cell17(msg->cells_cell17);
+			proto_msg->set_threshold(msg->threshold);
+			proto_msg->set_target(msg->target);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
