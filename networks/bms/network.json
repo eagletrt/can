@@ -129,16 +129,27 @@
       }
     },
     {
-        "name": "BALANCING",
-        "topic": "BALANCING",
+        "name": "SET_BALANCING_STATUS",
+        "topic": "SET_BALANCING_STATUS",
         "priority": 5,
         "sending": ["MAINBOARD"],
         "receiving": ["CELLBOARD"],
-        "description": "Set discharging status for cells",
+        "description": "Set balancing status for cells",
         "contents": {
-          "board_index": "uint8",
-          "threshold": "uint16",
-          "target": "uint16"
+            "threshold": "uint16",
+            "target": "uint16",
+            "balancing_status": "BalancingStatus"
+        }
+    },
+    {
+        "name": "BALANCING_STATUS",
+        "topic": "BALANCING_STATUS",
+        "priority": 5,
+        "sending": ["CELLBOARD"],
+        "receiving": ["MAINBOARD"],
+        "description": "Discharging status",
+        "contents": {
+            "balancing_status": "BalancingStatus"          
         }
     },
     {
