@@ -54,26 +54,26 @@ extern "C" {
 
 static int primary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1033: return PRIMARY_INTERVAL_STEER_VERSION;
-       case 1065: return PRIMARY_INTERVAL_DAS_VERSION;
-       case 1097: return PRIMARY_INTERVAL_HV_VERSION;
-       case 1129: return PRIMARY_INTERVAL_LV_VERSION;
-       case 1161: return PRIMARY_INTERVAL_TLM_VERSION;
-       case 265: return PRIMARY_INTERVAL_TIMESTAMP;
-       case 297: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
+       case 1029: return PRIMARY_INTERVAL_STEER_VERSION;
+       case 1061: return PRIMARY_INTERVAL_DAS_VERSION;
+       case 1093: return PRIMARY_INTERVAL_HV_VERSION;
+       case 1125: return PRIMARY_INTERVAL_LV_VERSION;
+       case 1157: return PRIMARY_INTERVAL_TLM_VERSION;
+       case 261: return PRIMARY_INTERVAL_TIMESTAMP;
+       case 293: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INTERVAL_DATA_LOGGER;
-       case 258: return PRIMARY_INTERVAL_TLM_STATUS;
-       case 1799: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
-       case 768: return PRIMARY_INTERVAL_HV_VOLTAGE;
-       case 800: return PRIMARY_INTERVAL_HV_CURRENT;
-       case 832: return PRIMARY_INTERVAL_HV_TEMP;
-       case 32: return PRIMARY_INTERVAL_HV_ERRORS;
-       case 64: return PRIMARY_INTERVAL_TS_STATUS;
-       case 65: return PRIMARY_INTERVAL_SET_TS_STATUS_DAS;
-       case 97: return PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART;
-       case 261: return PRIMARY_INTERVAL_STEER_STATUS;
-       case 546: return PRIMARY_INTERVAL_CAR_STATUS;
-       case 34: return PRIMARY_INTERVAL_DAS_ERRORS;
+       case 257: return PRIMARY_INTERVAL_TLM_STATUS;
+       case 1798: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
+       case 770: return PRIMARY_INTERVAL_HV_VOLTAGE;
+       case 802: return PRIMARY_INTERVAL_HV_CURRENT;
+       case 834: return PRIMARY_INTERVAL_HV_TEMP;
+       case 34: return PRIMARY_INTERVAL_HV_ERRORS;
+       case 66: return PRIMARY_INTERVAL_TS_STATUS;
+       case 71: return PRIMARY_INTERVAL_SET_TS_STATUS_DAS;
+       case 103: return PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART;
+       case 256: return PRIMARY_INTERVAL_STEER_STATUS;
+       case 545: return PRIMARY_INTERVAL_CAR_STATUS;
+       case 33: return PRIMARY_INTERVAL_DAS_ERRORS;
        case 840: return PRIMARY_INTERVAL_LV_CURRENTS;
        case 872: return PRIMARY_INTERVAL_LV_CELLS_VOLTAGE;
        case 904: return PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE;
@@ -85,19 +85,19 @@ static int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 296: return PRIMARY_INTERVAL_LV_HEALTH_SIGNALS;
        case 328: return PRIMARY_INTERVAL_LV_FEEDBACKS;
        case 360: return PRIMARY_INTERVAL_SHUTDOWN_STATUS;
-       case 1863: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
-       case 518: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
-       case 550: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
-       case 582: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
-       case 578: return PRIMARY_INTERVAL_SPEED;
+       case 1862: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
+       case 521: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
+       case 553: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
+       case 585: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
+       case 577: return PRIMARY_INTERVAL_SPEED;
        case 513: return PRIMARY_INTERVAL_INV_L_REQUEST;
        case 514: return PRIMARY_INTERVAL_INV_R_REQUEST;
        case 385: return PRIMARY_INTERVAL_INV_L_RESPONSE;
        case 386: return PRIMARY_INTERVAL_INV_R_RESPONSE;
-       case 290: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
-       case 769: return PRIMARY_INTERVAL_HANDCART_STATUS;
-       case 801: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
-       case 833: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
+       case 289: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
+       case 775: return PRIMARY_INTERVAL_HANDCART_STATUS;
+       case 807: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
+       case 839: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
 
     }
     return -1;
