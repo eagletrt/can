@@ -137,7 +137,7 @@
         "description": "Set discharging status for cells",
         "contents": {
           "board_index": "uint8",
-          "threshold": "unit16",
+          "threshold": "uint16",
           "target": "uint16"
         }
     },
