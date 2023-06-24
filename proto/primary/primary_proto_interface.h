@@ -243,7 +243,7 @@ typedef std::unordered_map<messages_name, message_strings> network_strings;
 
 #endif // CANLIB_PROTO_INTERFACE_TYPES
 
-void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map);
+void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device);
 void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
 
 #ifdef primary_PROTO_INTERAFCE_IMPLEMENTATION
@@ -1675,7 +1675,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
 }
 
-void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, primary_devices* map) {
+void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device) {
     int index = primary_index_from_id(id);
 
     if (index == -1) return;
@@ -1683,7 +1683,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
     switch(id) {
         
         case 1818: {
-            primary_nlg5_diag_tx_t* msg = (primary_nlg5_diag_tx_t*)((*map)[index].message_raw);
+            primary_nlg5_diag_tx_t* msg = (primary_nlg5_diag_tx_t*)(device->message);
             primary::NLG5_DIAG_TX* proto_msg = pack->add_nlg5_diag_tx();
 			proto_msg->set_lad_d_paramrp(msg->lad_d_paramrp);
 
@@ -1694,7 +1694,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1816: {
-            primary_nlg5_diag_rx_t* msg = (primary_nlg5_diag_rx_t*)((*map)[index].message_raw);
+            primary_nlg5_diag_rx_t* msg = (primary_nlg5_diag_rx_t*)(device->message);
             primary::NLG5_DIAG_RX* proto_msg = pack->add_nlg5_diag_rx();
 			proto_msg->set_lad_d_paramrq(msg->lad_d_paramrq);
 
@@ -1705,7 +1705,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1556: {
-            primary_nlg5_err_t* msg = (primary_nlg5_err_t*)((*map)[index].message_raw);
+            primary_nlg5_err_t* msg = (primary_nlg5_err_t*)(device->message);
             primary::NLG5_ERR* proto_msg = pack->add_nlg5_err();
 			proto_msg->set_nlg5_e_oov(msg->nlg5_e_oov);
 			proto_msg->set_nlg5_e_mov_ii(msg->nlg5_e_mov_ii);
@@ -1752,7 +1752,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1555: {
-            primary_nlg5_temp_converted_t* msg = (primary_nlg5_temp_converted_t*)((*map)[index].message_conversion);
+            primary_nlg5_temp_converted_t* msg = (primary_nlg5_temp_converted_t*)(device->message);
             primary::NLG5_TEMP* proto_msg = pack->add_nlg5_temp();
 			proto_msg->set_nlg5_p_tmp(msg->nlg5_p_tmp);
 			proto_msg->set_nlg5_tmp_ext1(msg->nlg5_tmp_ext1);
@@ -1766,7 +1766,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1554: {
-            primary_nlg5_act_ii_converted_t* msg = (primary_nlg5_act_ii_converted_t*)((*map)[index].message_conversion);
+            primary_nlg5_act_ii_converted_t* msg = (primary_nlg5_act_ii_converted_t*)(device->message);
             primary::NLG5_ACT_II* proto_msg = pack->add_nlg5_act_ii();
 			proto_msg->set_nlg5_s_mc_m_cp(msg->nlg5_s_mc_m_cp);
 			proto_msg->set_nlg5_s_mc_m_pi(msg->nlg5_s_mc_m_pi);
@@ -1781,7 +1781,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1553: {
-            primary_nlg5_act_i_converted_t* msg = (primary_nlg5_act_i_converted_t*)((*map)[index].message_conversion);
+            primary_nlg5_act_i_converted_t* msg = (primary_nlg5_act_i_converted_t*)(device->message);
             primary::NLG5_ACT_I* proto_msg = pack->add_nlg5_act_i();
 			proto_msg->set_nlg5_mc_act(msg->nlg5_mc_act);
 			proto_msg->set_nlg5_mv_act(msg->nlg5_mv_act);
@@ -1795,7 +1795,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1552: {
-            primary_nlg5_st_t* msg = (primary_nlg5_st_t*)((*map)[index].message_raw);
+            primary_nlg5_st_t* msg = (primary_nlg5_st_t*)(device->message);
             primary::NLG5_ST* proto_msg = pack->add_nlg5_st();
 			proto_msg->set_nlg5_s_he(msg->nlg5_s_he);
 			proto_msg->set_nlg5_s_err(msg->nlg5_s_err);
@@ -1830,7 +1830,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1560: {
-            primary_nlg5_ctl_converted_t* msg = (primary_nlg5_ctl_converted_t*)((*map)[index].message_conversion);
+            primary_nlg5_ctl_converted_t* msg = (primary_nlg5_ctl_converted_t*)(device->message);
             primary::NLG5_CTL* proto_msg = pack->add_nlg5_ctl();
 			proto_msg->set_nlg5_c_c_en(msg->nlg5_c_c_en);
 			proto_msg->set_nlg5_c_c_el(msg->nlg5_c_c_el);
@@ -1847,7 +1847,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 0: {
-            primary_bms_hv_jmp_to_blt_t* msg = (primary_bms_hv_jmp_to_blt_t*)((*map)[index].message_raw);
+            primary_bms_hv_jmp_to_blt_t* msg = (primary_bms_hv_jmp_to_blt_t*)(device->message);
             primary::BMS_HV_JMP_TO_BLT* proto_msg = pack->add_bms_hv_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1857,7 +1857,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1: {
-            primary_flash_bms_hv_tx_t* msg = (primary_flash_bms_hv_tx_t*)((*map)[index].message_raw);
+            primary_flash_bms_hv_tx_t* msg = (primary_flash_bms_hv_tx_t*)(device->message);
             primary::FLASH_BMS_HV_TX* proto_msg = pack->add_flash_bms_hv_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1867,7 +1867,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 2: {
-            primary_flash_bms_hv_rx_t* msg = (primary_flash_bms_hv_rx_t*)((*map)[index].message_raw);
+            primary_flash_bms_hv_rx_t* msg = (primary_flash_bms_hv_rx_t*)(device->message);
             primary::FLASH_BMS_HV_RX* proto_msg = pack->add_flash_bms_hv_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1877,7 +1877,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 3: {
-            primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)((*map)[index].message_raw);
+            primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)(device->message);
             primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
 			proto_msg->set_can_forward_set((primary::primary_hv_can_forward_can_forward_set)msg->can_forward_set);
 
@@ -1888,7 +1888,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 4: {
-            primary_flash_cellboard_0_tx_t* msg = (primary_flash_cellboard_0_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_0_tx_t* msg = (primary_flash_cellboard_0_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1898,7 +1898,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 5: {
-            primary_flash_cellboard_0_rx_t* msg = (primary_flash_cellboard_0_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_0_rx_t* msg = (primary_flash_cellboard_0_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1908,7 +1908,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 6: {
-            primary_flash_cellboard_1_tx_t* msg = (primary_flash_cellboard_1_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_1_tx_t* msg = (primary_flash_cellboard_1_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1918,7 +1918,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 7: {
-            primary_flash_cellboard_1_rx_t* msg = (primary_flash_cellboard_1_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_1_rx_t* msg = (primary_flash_cellboard_1_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1928,7 +1928,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 8: {
-            primary_flash_cellboard_2_tx_t* msg = (primary_flash_cellboard_2_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_2_tx_t* msg = (primary_flash_cellboard_2_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1938,7 +1938,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 9: {
-            primary_flash_cellboard_2_rx_t* msg = (primary_flash_cellboard_2_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_2_rx_t* msg = (primary_flash_cellboard_2_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1948,7 +1948,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 10: {
-            primary_flash_cellboard_3_tx_t* msg = (primary_flash_cellboard_3_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_3_tx_t* msg = (primary_flash_cellboard_3_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1958,7 +1958,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 11: {
-            primary_flash_cellboard_3_rx_t* msg = (primary_flash_cellboard_3_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_3_rx_t* msg = (primary_flash_cellboard_3_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1968,7 +1968,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 12: {
-            primary_flash_cellboard_4_tx_t* msg = (primary_flash_cellboard_4_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_4_tx_t* msg = (primary_flash_cellboard_4_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1978,7 +1978,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 13: {
-            primary_flash_cellboard_4_rx_t* msg = (primary_flash_cellboard_4_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_4_rx_t* msg = (primary_flash_cellboard_4_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1988,7 +1988,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 14: {
-            primary_flash_cellboard_5_tx_t* msg = (primary_flash_cellboard_5_tx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_5_tx_t* msg = (primary_flash_cellboard_5_tx_t*)(device->message);
             primary::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -1998,7 +1998,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 15: {
-            primary_flash_cellboard_5_rx_t* msg = (primary_flash_cellboard_5_rx_t*)((*map)[index].message_raw);
+            primary_flash_cellboard_5_rx_t* msg = (primary_flash_cellboard_5_rx_t*)(device->message);
             primary::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2008,7 +2008,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 16: {
-            primary_bms_lv_jmp_to_blt_t* msg = (primary_bms_lv_jmp_to_blt_t*)((*map)[index].message_raw);
+            primary_bms_lv_jmp_to_blt_t* msg = (primary_bms_lv_jmp_to_blt_t*)(device->message);
             primary::BMS_LV_JMP_TO_BLT* proto_msg = pack->add_bms_lv_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2018,7 +2018,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 17: {
-            primary_flash_bms_lv_tx_t* msg = (primary_flash_bms_lv_tx_t*)((*map)[index].message_raw);
+            primary_flash_bms_lv_tx_t* msg = (primary_flash_bms_lv_tx_t*)(device->message);
             primary::FLASH_BMS_LV_TX* proto_msg = pack->add_flash_bms_lv_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2028,7 +2028,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 18: {
-            primary_flash_bms_lv_rx_t* msg = (primary_flash_bms_lv_rx_t*)((*map)[index].message_raw);
+            primary_flash_bms_lv_rx_t* msg = (primary_flash_bms_lv_rx_t*)(device->message);
             primary::FLASH_BMS_LV_RX* proto_msg = pack->add_flash_bms_lv_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2038,7 +2038,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 19: {
-            primary_ecu_jmp_to_blt_t* msg = (primary_ecu_jmp_to_blt_t*)((*map)[index].message_raw);
+            primary_ecu_jmp_to_blt_t* msg = (primary_ecu_jmp_to_blt_t*)(device->message);
             primary::ECU_JMP_TO_BLT* proto_msg = pack->add_ecu_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2048,7 +2048,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 20: {
-            primary_flash_ecu_tx_t* msg = (primary_flash_ecu_tx_t*)((*map)[index].message_raw);
+            primary_flash_ecu_tx_t* msg = (primary_flash_ecu_tx_t*)(device->message);
             primary::FLASH_ECU_TX* proto_msg = pack->add_flash_ecu_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2058,7 +2058,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 21: {
-            primary_flash_ecu_rx_t* msg = (primary_flash_ecu_rx_t*)((*map)[index].message_raw);
+            primary_flash_ecu_rx_t* msg = (primary_flash_ecu_rx_t*)(device->message);
             primary::FLASH_ECU_RX* proto_msg = pack->add_flash_ecu_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2068,7 +2068,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 22: {
-            primary_steering_jmp_to_blt_t* msg = (primary_steering_jmp_to_blt_t*)((*map)[index].message_raw);
+            primary_steering_jmp_to_blt_t* msg = (primary_steering_jmp_to_blt_t*)(device->message);
             primary::STEERING_JMP_TO_BLT* proto_msg = pack->add_steering_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2078,7 +2078,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 23: {
-            primary_flash_steering_tx_t* msg = (primary_flash_steering_tx_t*)((*map)[index].message_raw);
+            primary_flash_steering_tx_t* msg = (primary_flash_steering_tx_t*)(device->message);
             primary::FLASH_STEERING_TX* proto_msg = pack->add_flash_steering_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2088,7 +2088,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 24: {
-            primary_flash_steering_rx_t* msg = (primary_flash_steering_rx_t*)((*map)[index].message_raw);
+            primary_flash_steering_rx_t* msg = (primary_flash_steering_rx_t*)(device->message);
             primary::FLASH_STEERING_RX* proto_msg = pack->add_flash_steering_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2097,8 +2097,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1029: {
-            primary_steer_version_t* msg = (primary_steer_version_t*)((*map)[index].message_raw);
+        case 1033: {
+            primary_steer_version_t* msg = (primary_steer_version_t*)(device->message);
             primary::STEER_VERSION* proto_msg = pack->add_steer_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
@@ -2109,8 +2109,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1061: {
-            primary_das_version_t* msg = (primary_das_version_t*)((*map)[index].message_raw);
+        case 1065: {
+            primary_das_version_t* msg = (primary_das_version_t*)(device->message);
             primary::DAS_VERSION* proto_msg = pack->add_das_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
@@ -2121,8 +2121,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1093: {
-            primary_hv_version_t* msg = (primary_hv_version_t*)((*map)[index].message_raw);
+        case 1097: {
+            primary_hv_version_t* msg = (primary_hv_version_t*)(device->message);
             primary::HV_VERSION* proto_msg = pack->add_hv_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
@@ -2133,8 +2133,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1125: {
-            primary_lv_version_t* msg = (primary_lv_version_t*)((*map)[index].message_raw);
+        case 1129: {
+            primary_lv_version_t* msg = (primary_lv_version_t*)(device->message);
             primary::LV_VERSION* proto_msg = pack->add_lv_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
@@ -2145,8 +2145,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1157: {
-            primary_tlm_version_t* msg = (primary_tlm_version_t*)((*map)[index].message_raw);
+        case 1161: {
+            primary_tlm_version_t* msg = (primary_tlm_version_t*)(device->message);
             primary::TLM_VERSION* proto_msg = pack->add_tlm_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
@@ -2157,8 +2157,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 261: {
-            primary_timestamp_t* msg = (primary_timestamp_t*)((*map)[index].message_raw);
+        case 265: {
+            primary_timestamp_t* msg = (primary_timestamp_t*)(device->message);
             primary::TIMESTAMP* proto_msg = pack->add_timestamp();
 			proto_msg->set_timestamp(msg->timestamp);
 
@@ -2168,8 +2168,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 293: {
-            primary_ambient_temperature_t* msg = (primary_ambient_temperature_t*)((*map)[index].message_raw);
+        case 297: {
+            primary_ambient_temperature_t* msg = (primary_ambient_temperature_t*)(device->message);
             primary::AMBIENT_TEMPERATURE* proto_msg = pack->add_ambient_temperature();
 			proto_msg->set_temp(msg->temp);
 
@@ -2180,7 +2180,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1072: {
-            primary_data_logger_t* msg = (primary_data_logger_t*)((*map)[index].message_raw);
+            primary_data_logger_t* msg = (primary_data_logger_t*)(device->message);
             primary::DATA_LOGGER* proto_msg = pack->add_data_logger();
 			proto_msg->set_placeholder1(msg->placeholder1);
 			proto_msg->set_placeholder2(msg->placeholder2);
@@ -2191,8 +2191,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 262: {
-            primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)((*map)[index].message_raw);
+        case 258: {
+            primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)(device->message);
             primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_set_tlm_status_tlm_status)msg->tlm_status);
 
@@ -2202,8 +2202,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 257: {
-            primary_tlm_status_t* msg = (primary_tlm_status_t*)((*map)[index].message_raw);
+        case 259: {
+            primary_tlm_status_t* msg = (primary_tlm_status_t*)(device->message);
             primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
 			proto_msg->set_tlm_status((primary::primary_tlm_status_tlm_status)msg->tlm_status);
 
@@ -2213,8 +2213,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1798: {
-            primary_steer_system_status_t* msg = (primary_steer_system_status_t*)((*map)[index].message_raw);
+        case 1794: {
+            primary_steer_system_status_t* msg = (primary_steer_system_status_t*)(device->message);
             primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
 			proto_msg->set_soc_temp(msg->soc_temp);
 
@@ -2224,8 +2224,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 770: {
-            primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)((*map)[index].message_conversion);
+        case 772: {
+            primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)(device->message);
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
 			proto_msg->set_pack_voltage(msg->pack_voltage);
 			proto_msg->set_bus_voltage(msg->bus_voltage);
@@ -2238,8 +2238,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 802: {
-            primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)((*map)[index].message_conversion);
+        case 804: {
+            primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)(device->message);
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
 			proto_msg->set_current(msg->current);
 			proto_msg->set_power(msg->power);
@@ -2252,8 +2252,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 834: {
-            primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)((*map)[index].message_conversion);
+        case 836: {
+            primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)(device->message);
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
 			proto_msg->set_average_temp(msg->average_temp);
 			proto_msg->set_max_temp(msg->max_temp);
@@ -2265,8 +2265,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 34: {
-            primary_hv_errors_t* msg = (primary_hv_errors_t*)((*map)[index].message_raw);
+        case 36: {
+            primary_hv_errors_t* msg = (primary_hv_errors_t*)(device->message);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
 			proto_msg->set_warnings_cell_low_voltage(msg->warnings_cell_low_voltage);
 			proto_msg->set_warnings_cell_under_voltage(msg->warnings_cell_under_voltage);
@@ -2303,8 +2303,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 39: {
-            primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)((*map)[index].message_conversion);
+        case 37: {
+            primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)(device->message);
             primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_fans_override)msg->fans_override);
 			proto_msg->set_fans_speed(msg->fans_speed);
@@ -2315,8 +2315,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 41: {
-            primary_hv_can_forward_status_t* msg = (primary_hv_can_forward_status_t*)((*map)[index].message_raw);
+        case 38: {
+            primary_hv_can_forward_status_t* msg = (primary_hv_can_forward_status_t*)(device->message);
             primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
 			proto_msg->set_can_forward_status((primary::primary_hv_can_forward_status_can_forward_status)msg->can_forward_status);
 
@@ -2326,8 +2326,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 777: {
-            primary_hv_fans_override_status_converted_t* msg = (primary_hv_fans_override_status_converted_t*)((*map)[index].message_conversion);
+        case 774: {
+            primary_hv_fans_override_status_converted_t* msg = (primary_hv_fans_override_status_converted_t*)(device->message);
             primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
 			proto_msg->set_fans_override((primary::primary_hv_fans_override_status_fans_override)msg->fans_override);
 			proto_msg->set_fans_speed(msg->fans_speed);
@@ -2338,8 +2338,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 776: {
-            primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)((*map)[index].message_raw);
+        case 775: {
+            primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)(device->message);
             primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
 			proto_msg->set_feedbacks_status_feedback_tsal_green_fault(msg->feedbacks_status_feedback_tsal_green_fault);
 			proto_msg->set_feedbacks_status_feedback_imd_latched(msg->feedbacks_status_feedback_imd_latched);
@@ -2386,8 +2386,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 808: {
-            primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)((*map)[index].message_raw);
+        case 807: {
+            primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)(device->message);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
 			proto_msg->set_imd_status((primary::primary_hv_imd_status_imd_status)msg->imd_status);
@@ -2399,8 +2399,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 66: {
-            primary_ts_status_t* msg = (primary_ts_status_t*)((*map)[index].message_raw);
+        case 68: {
+            primary_ts_status_t* msg = (primary_ts_status_t*)(device->message);
             primary::TS_STATUS* proto_msg = pack->add_ts_status();
 			proto_msg->set_ts_status((primary::primary_ts_status_ts_status)msg->ts_status);
 
@@ -2410,8 +2410,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 71: {
-            primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)((*map)[index].message_raw);
+        case 69: {
+            primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)(device->message);
             primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_das_ts_status_set)msg->ts_status_set);
 
@@ -2421,8 +2421,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 103: {
-            primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)((*map)[index].message_raw);
+        case 101: {
+            primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)(device->message);
             primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
 			proto_msg->set_ts_status_set((primary::primary_set_ts_status_handcart_ts_status_set)msg->ts_status_set);
 
@@ -2433,7 +2433,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 256: {
-            primary_steer_status_converted_t* msg = (primary_steer_status_converted_t*)((*map)[index].message_conversion);
+            primary_steer_status_converted_t* msg = (primary_steer_status_converted_t*)(device->message);
             primary::STEER_STATUS* proto_msg = pack->add_steer_status();
 			proto_msg->set_map_pw(msg->map_pw);
 			proto_msg->set_map_sc(msg->map_sc);
@@ -2446,7 +2446,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 768: {
-            primary_set_car_status_t* msg = (primary_set_car_status_t*)((*map)[index].message_raw);
+            primary_set_car_status_t* msg = (primary_set_car_status_t*)(device->message);
             primary::SET_CAR_STATUS* proto_msg = pack->add_set_car_status();
 			proto_msg->set_car_status_set((primary::primary_set_car_status_car_status_set)msg->car_status_set);
 
@@ -2457,7 +2457,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1024: {
-            primary_set_pedals_range_t* msg = (primary_set_pedals_range_t*)((*map)[index].message_raw);
+            primary_set_pedals_range_t* msg = (primary_set_pedals_range_t*)(device->message);
             primary::SET_PEDALS_RANGE* proto_msg = pack->add_set_pedals_range();
 			proto_msg->set_bound((primary::primary_set_pedals_range_bound)msg->bound);
 			proto_msg->set_pedal((primary::primary_set_pedals_range_pedal)msg->pedal);
@@ -2469,7 +2469,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1056: {
-            primary_set_steering_angle_range_t* msg = (primary_set_steering_angle_range_t*)((*map)[index].message_raw);
+            primary_set_steering_angle_range_t* msg = (primary_set_steering_angle_range_t*)(device->message);
             primary::SET_STEERING_ANGLE_RANGE* proto_msg = pack->add_set_steering_angle_range();
 			proto_msg->set_bound((primary::primary_set_steering_angle_range_bound)msg->bound);
 
@@ -2479,8 +2479,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 545: {
-            primary_car_status_t* msg = (primary_car_status_t*)((*map)[index].message_raw);
+        case 515: {
+            primary_car_status_t* msg = (primary_car_status_t*)(device->message);
             primary::CAR_STATUS* proto_msg = pack->add_car_status();
 			proto_msg->set_inverter_l((primary::primary_car_status_inverter_l)msg->inverter_l);
 			proto_msg->set_inverter_r((primary::primary_car_status_inverter_r)msg->inverter_r);
@@ -2492,8 +2492,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 33: {
-            primary_das_errors_t* msg = (primary_das_errors_t*)((*map)[index].message_raw);
+        case 35: {
+            primary_das_errors_t* msg = (primary_das_errors_t*)(device->message);
             primary::DAS_ERRORS* proto_msg = pack->add_das_errors();
 			proto_msg->set_das_error_pedal_adc(msg->das_error_pedal_adc);
 			proto_msg->set_das_error_pedal_implausibility(msg->das_error_pedal_implausibility);
@@ -2511,8 +2511,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 840: {
-            primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)((*map)[index].message_conversion);
+        case 839: {
+            primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)(device->message);
             primary::LV_CURRENTS* proto_msg = pack->add_lv_currents();
 			proto_msg->set_current_as_battery(msg->current_as_battery);
 			proto_msg->set_current_lv_battery(msg->current_lv_battery);
@@ -2524,8 +2524,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 872: {
-            primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)((*map)[index].message_conversion);
+        case 871: {
+            primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)(device->message);
             primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_voltage_0(msg->voltage_0);
@@ -2538,8 +2538,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 904: {
-            primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)((*map)[index].message_conversion);
+        case 903: {
+            primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)(device->message);
             primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
 			proto_msg->set_total_voltage(msg->total_voltage);
 
@@ -2549,8 +2549,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 936: {
-            primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)((*map)[index].message_conversion);
+        case 935: {
+            primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)(device->message);
             primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_temp0(msg->temp0);
@@ -2563,8 +2563,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 968: {
-            primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)((*map)[index].message_conversion);
+        case 967: {
+            primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)(device->message);
             primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
 			proto_msg->set_pumps_speed(msg->pumps_speed);
@@ -2575,8 +2575,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 772: {
-            primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)((*map)[index].message_conversion);
+        case 776: {
+            primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)(device->message);
             primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
 			proto_msg->set_radiators_speed(msg->radiators_speed);
 
@@ -2586,8 +2586,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 804: {
-            primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)((*map)[index].message_conversion);
+        case 808: {
+            primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)(device->message);
             primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
 
@@ -2597,8 +2597,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 260: {
-            primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)((*map)[index].message_raw);
+        case 264: {
+            primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)(device->message);
             primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
 			proto_msg->set_status((primary::primary_set_inverter_connection_status_status)msg->status);
 
@@ -2608,8 +2608,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 264: {
-            primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)((*map)[index].message_raw);
+        case 263: {
+            primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)(device->message);
             primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
 			proto_msg->set_status((primary::primary_inverter_connection_status_status)msg->status);
 
@@ -2619,8 +2619,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 520: {
-            primary_lv_errors_t* msg = (primary_lv_errors_t*)((*map)[index].message_raw);
+        case 519: {
+            primary_lv_errors_t* msg = (primary_lv_errors_t*)(device->message);
             primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
 			proto_msg->set_warnings_cell_undervoltage(msg->warnings_cell_undervoltage);
 			proto_msg->set_warnings_cell_overvoltage(msg->warnings_cell_overvoltage);
@@ -2663,8 +2663,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 296: {
-            primary_lv_health_signals_t* msg = (primary_lv_health_signals_t*)((*map)[index].message_raw);
+        case 295: {
+            primary_lv_health_signals_t* msg = (primary_lv_health_signals_t*)(device->message);
             primary::LV_HEALTH_SIGNALS* proto_msg = pack->add_lv_health_signals();
 			proto_msg->set_health_signals_lvms_out(msg->health_signals_lvms_out);
 			proto_msg->set_health_signals_relay_out(msg->health_signals_relay_out);
@@ -2679,8 +2679,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 328: {
-            primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)((*map)[index].message_conversion);
+        case 327: {
+            primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)(device->message);
             primary::LV_FEEDBACKS* proto_msg = pack->add_lv_feedbacks();
 			proto_msg->set_feedbacks_bspd_fb(msg->feedbacks_bspd_fb);
 			proto_msg->set_feedbacks_imd_fb(msg->feedbacks_imd_fb);
@@ -2710,8 +2710,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 360: {
-            primary_shutdown_status_t* msg = (primary_shutdown_status_t*)((*map)[index].message_raw);
+        case 359: {
+            primary_shutdown_status_t* msg = (primary_shutdown_status_t*)(device->message);
             primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
 			proto_msg->set_input(msg->input);
 			proto_msg->set_output(msg->output);
@@ -2722,8 +2722,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1830: {
-            primary_lv_can_flash_req_t* msg = (primary_lv_can_flash_req_t*)((*map)[index].message_raw);
+        case 1826: {
+            primary_lv_can_flash_req_t* msg = (primary_lv_can_flash_req_t*)(device->message);
             primary::LV_CAN_FLASH_REQ* proto_msg = pack->add_lv_can_flash_req();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2732,8 +2732,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1862: {
-            primary_lv_can_flash_ack_t* msg = (primary_lv_can_flash_ack_t*)((*map)[index].message_raw);
+        case 1858: {
+            primary_lv_can_flash_ack_t* msg = (primary_lv_can_flash_ack_t*)(device->message);
             primary::LV_CAN_FLASH_ACK* proto_msg = pack->add_lv_can_flash_ack();
 			proto_msg->set_response((primary::primary_lv_can_flash_ack_response)msg->response);
 
@@ -2743,8 +2743,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 38: {
-            primary_marker_t* msg = (primary_marker_t*)((*map)[index].message_raw);
+        case 34: {
+            primary_marker_t* msg = (primary_marker_t*)(device->message);
             primary::MARKER* proto_msg = pack->add_marker();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2753,8 +2753,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 521: {
-            primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)((*map)[index].message_conversion);
+        case 518: {
+            primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)(device->message);
             primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_voltage_0(msg->voltage_0);
@@ -2767,8 +2767,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 553: {
-            primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)((*map)[index].message_conversion);
+        case 550: {
+            primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)(device->message);
             primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
 			proto_msg->set_start_index(msg->start_index);
 			proto_msg->set_temp_0(msg->temp_0);
@@ -2784,8 +2784,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 585: {
-            primary_hv_cell_balancing_status_t* msg = (primary_hv_cell_balancing_status_t*)((*map)[index].message_raw);
+        case 582: {
+            primary_hv_cell_balancing_status_t* msg = (primary_hv_cell_balancing_status_t*)(device->message);
             primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
 			proto_msg->set_balancing_status((primary::primary_hv_cell_balancing_status_balancing_status)msg->balancing_status);
 
@@ -2795,8 +2795,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 519: {
-            primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)((*map)[index].message_raw);
+        case 517: {
+            primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)(device->message);
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
 			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
 
@@ -2806,8 +2806,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 577: {
-            primary_speed_converted_t* msg = (primary_speed_converted_t*)((*map)[index].message_conversion);
+        case 547: {
+            primary_speed_converted_t* msg = (primary_speed_converted_t*)(device->message);
             primary::SPEED* proto_msg = pack->add_speed();
 			proto_msg->set_encoder_r(msg->encoder_r);
 			proto_msg->set_encoder_l(msg->encoder_l);
@@ -2821,7 +2821,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 513: {
-            primary_inv_l_request_t* msg = (primary_inv_l_request_t*)((*map)[index].message_raw);
+            primary_inv_l_request_t* msg = (primary_inv_l_request_t*)(device->message);
             primary::INV_L_REQUEST* proto_msg = pack->add_inv_l_request();
 			proto_msg->set_data_0(msg->data_0);
 			proto_msg->set_data_1(msg->data_1);
@@ -2839,7 +2839,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 514: {
-            primary_inv_r_request_t* msg = (primary_inv_r_request_t*)((*map)[index].message_raw);
+            primary_inv_r_request_t* msg = (primary_inv_r_request_t*)(device->message);
             primary::INV_R_REQUEST* proto_msg = pack->add_inv_r_request();
 			proto_msg->set_data_0(msg->data_0);
 			proto_msg->set_data_1(msg->data_1);
@@ -2857,7 +2857,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 385: {
-            primary_inv_l_response_t* msg = (primary_inv_l_response_t*)((*map)[index].message_raw);
+            primary_inv_l_response_t* msg = (primary_inv_l_response_t*)(device->message);
             primary::INV_L_RESPONSE* proto_msg = pack->add_inv_l_response();
 			proto_msg->set_reg_id(msg->reg_id);
 			proto_msg->set_data_0(msg->data_0);
@@ -2875,7 +2875,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 386: {
-            primary_inv_r_response_t* msg = (primary_inv_r_response_t*)((*map)[index].message_raw);
+            primary_inv_r_response_t* msg = (primary_inv_r_response_t*)(device->message);
             primary::INV_R_RESPONSE* proto_msg = pack->add_inv_r_response();
 			proto_msg->set_reg_id(msg->reg_id);
 			proto_msg->set_data_0(msg->data_0);
@@ -2892,8 +2892,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 289: {
-            primary_control_output_converted_t* msg = (primary_control_output_converted_t*)((*map)[index].message_conversion);
+        case 291: {
+            primary_control_output_converted_t* msg = (primary_control_output_converted_t*)(device->message);
             primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
 			proto_msg->set_estimated_velocity(msg->estimated_velocity);
 			proto_msg->set_tmax_r(msg->tmax_r);
@@ -2907,8 +2907,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 515: {
-            primary_lc_reset_t* msg = (primary_lc_reset_t*)((*map)[index].message_raw);
+        case 545: {
+            primary_lc_reset_t* msg = (primary_lc_reset_t*)(device->message);
             primary::LC_RESET* proto_msg = pack->add_lc_reset();
 
 #ifdef CANLIB_TIMESTAMP
@@ -2917,8 +2917,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 775: {
-            primary_handcart_status_t* msg = (primary_handcart_status_t*)((*map)[index].message_raw);
+        case 773: {
+            primary_handcart_status_t* msg = (primary_handcart_status_t*)(device->message);
             primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
 			proto_msg->set_connected(msg->connected);
 
@@ -2928,8 +2928,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 807: {
-            primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)((*map)[index].message_conversion);
+        case 805: {
+            primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)(device->message);
             primary::HANDCART_SETTINGS* proto_msg = pack->add_handcart_settings();
 			proto_msg->set_target_voltage(msg->target_voltage);
 			proto_msg->set_fans_override((primary::primary_handcart_settings_fans_override)msg->fans_override);
@@ -2944,8 +2944,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 839: {
-            primary_handcart_settings_set_converted_t* msg = (primary_handcart_settings_set_converted_t*)((*map)[index].message_conversion);
+        case 837: {
+            primary_handcart_settings_set_converted_t* msg = (primary_handcart_settings_set_converted_t*)(device->message);
             primary::HANDCART_SETTINGS_SET* proto_msg = pack->add_handcart_settings_set();
 			proto_msg->set_target_voltage(msg->target_voltage);
 			proto_msg->set_fans_override((primary::primary_handcart_settings_set_fans_override)msg->fans_override);

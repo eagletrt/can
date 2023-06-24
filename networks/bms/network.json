@@ -129,17 +129,17 @@
       }
     },
     {
-        "name": "SET_BALANCING_STATUS",
-        "topic": "BALANCING",
-        "priority": 5,
-        "sending": ["MAINBOARD"],
-        "receiving": ["CELLBOARD"],
-        "description": "Set balancing status for cells",
-        "contents": {
-            "threshold": "uint16",
-            "target": "uint16",
-            "balancing_status": "BalancingStatus"
-        }
+      "name": "SET_BALANCING_STATUS",
+      "topic": "BALANCING",
+      "priority": 5,
+      "sending": ["MAINBOARD"],
+      "receiving": ["CELLBOARD"],
+      "description": "Set balancing status for cells",
+      "contents": {
+        "threshold": "uint16",
+        "target": "uint16",
+        "balancing_status": "BalancingStatus"
+      }
     },
     {
       "name": "JMP_TO_BLT",

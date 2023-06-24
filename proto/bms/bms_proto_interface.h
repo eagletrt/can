@@ -243,7 +243,7 @@ typedef std::unordered_map<messages_name, message_strings> network_strings;
 
 #endif // CANLIB_PROTO_INTERFACE_TYPES
 
-void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map);
+void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack, device_t* device);
 void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
 
 #ifdef bms_PROTO_INTERAFCE_IMPLEMENTATION
@@ -479,15 +479,15 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 
 }
 
-void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack, bms_devices* map) {
+void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack, device_t* device) {
     int index = bms_index_from_id(id);
 
     if (index == -1) return;
 
     switch(id) {
         
-        case 1537: {
-            bms_board_status_t* msg = (bms_board_status_t*)((*map)[index].message_raw);
+        case 1538: {
+            bms_board_status_t* msg = (bms_board_status_t*)(device->message);
             bms::BOARD_STATUS* proto_msg = pack->add_board_status();
 			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
 			proto_msg->set_errors_can_comm(msg->errors_can_comm);
@@ -507,8 +507,8 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1283: {
-            bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)((*map)[index].message_conversion);
+        case 1281: {
+            bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)(device->message);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
 			proto_msg->set_start_index(msg->start_index);
@@ -523,8 +523,8 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 512: {
-            bms_voltages_converted_t* msg = (bms_voltages_converted_t*)((*map)[index].message_conversion);
+        case 515: {
+            bms_voltages_converted_t* msg = (bms_voltages_converted_t*)(device->message);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
 			proto_msg->set_start_index(msg->start_index);
@@ -538,8 +538,8 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 514: {
-            bms_set_balancing_status_t* msg = (bms_set_balancing_status_t*)((*map)[index].message_raw);
+        case 512: {
+            bms_set_balancing_status_t* msg = (bms_set_balancing_status_t*)(device->message);
             bms::SET_BALANCING_STATUS* proto_msg = pack->add_set_balancing_status();
 			proto_msg->set_threshold(msg->threshold);
 			proto_msg->set_target(msg->target);
@@ -552,7 +552,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 0: {
-            bms_jmp_to_blt_t* msg = (bms_jmp_to_blt_t*)((*map)[index].message_raw);
+            bms_jmp_to_blt_t* msg = (bms_jmp_to_blt_t*)(device->message);
             bms::JMP_TO_BLT* proto_msg = pack->add_jmp_to_blt();
 			proto_msg->set_cellboard_id((bms::bms_jmp_to_blt_cellboard_id)msg->cellboard_id);
 			proto_msg->set_board_index(msg->board_index);
@@ -564,7 +564,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 4: {
-            bms_flash_cellboard_0_tx_t* msg = (bms_flash_cellboard_0_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_0_tx_t* msg = (bms_flash_cellboard_0_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -574,7 +574,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 5: {
-            bms_flash_cellboard_0_rx_t* msg = (bms_flash_cellboard_0_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_0_rx_t* msg = (bms_flash_cellboard_0_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -584,7 +584,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 6: {
-            bms_flash_cellboard_1_tx_t* msg = (bms_flash_cellboard_1_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_1_tx_t* msg = (bms_flash_cellboard_1_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -594,7 +594,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 7: {
-            bms_flash_cellboard_1_rx_t* msg = (bms_flash_cellboard_1_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_1_rx_t* msg = (bms_flash_cellboard_1_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -604,7 +604,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 8: {
-            bms_flash_cellboard_2_tx_t* msg = (bms_flash_cellboard_2_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_2_tx_t* msg = (bms_flash_cellboard_2_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -614,7 +614,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 9: {
-            bms_flash_cellboard_2_rx_t* msg = (bms_flash_cellboard_2_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_2_rx_t* msg = (bms_flash_cellboard_2_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -624,7 +624,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 10: {
-            bms_flash_cellboard_3_tx_t* msg = (bms_flash_cellboard_3_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_3_tx_t* msg = (bms_flash_cellboard_3_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -634,7 +634,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 11: {
-            bms_flash_cellboard_3_rx_t* msg = (bms_flash_cellboard_3_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_3_rx_t* msg = (bms_flash_cellboard_3_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -644,7 +644,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 12: {
-            bms_flash_cellboard_4_tx_t* msg = (bms_flash_cellboard_4_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_4_tx_t* msg = (bms_flash_cellboard_4_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -654,7 +654,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 13: {
-            bms_flash_cellboard_4_rx_t* msg = (bms_flash_cellboard_4_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_4_rx_t* msg = (bms_flash_cellboard_4_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -664,7 +664,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 14: {
-            bms_flash_cellboard_5_tx_t* msg = (bms_flash_cellboard_5_tx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_5_tx_t* msg = (bms_flash_cellboard_5_tx_t*)(device->message);
             bms::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
 
 #ifdef CANLIB_TIMESTAMP
@@ -674,7 +674,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 15: {
-            bms_flash_cellboard_5_rx_t* msg = (bms_flash_cellboard_5_rx_t*)((*map)[index].message_raw);
+            bms_flash_cellboard_5_rx_t* msg = (bms_flash_cellboard_5_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
 
 #ifdef CANLIB_TIMESTAMP

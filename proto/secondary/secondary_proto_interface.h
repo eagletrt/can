@@ -243,7 +243,7 @@ typedef std::unordered_map<messages_name, message_strings> network_strings;
 
 #endif // CANLIB_PROTO_INTERFACE_TYPES
 
-void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, secondary_devices* map);
+void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, device_t* device);
 void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
 
 #ifdef secondary_PROTO_INTERAFCE_IMPLEMENTATION
@@ -632,7 +632,7 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
 }
 
-void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, secondary_devices* map) {
+void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, device_t* device) {
     int index = secondary_index_from_id(id);
 
     if (index == -1) return;
@@ -640,7 +640,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
     switch(id) {
         
         case 1260: {
-            secondary_imu_angular_rate_converted_t* msg = (secondary_imu_angular_rate_converted_t*)((*map)[index].message_conversion);
+            secondary_imu_angular_rate_converted_t* msg = (secondary_imu_angular_rate_converted_t*)(device->message);
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
 			proto_msg->set_ang_rate_x(msg->ang_rate_x);
 			proto_msg->set_ang_rate_y(msg->ang_rate_y);
@@ -653,7 +653,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1261: {
-            secondary_imu_acceleration_converted_t* msg = (secondary_imu_acceleration_converted_t*)((*map)[index].message_conversion);
+            secondary_imu_acceleration_converted_t* msg = (secondary_imu_acceleration_converted_t*)(device->message);
             secondary::IMU_ACCELERATION* proto_msg = pack->add_imu_acceleration();
 			proto_msg->set_accel_x(msg->accel_x);
 			proto_msg->set_accel_y(msg->accel_y);
@@ -667,7 +667,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1460: {
-            secondary_irts_fl_0_converted_t* msg = (secondary_irts_fl_0_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fl_0_converted_t* msg = (secondary_irts_fl_0_converted_t*)(device->message);
             secondary::IRTS_FL_0* proto_msg = pack->add_irts_fl_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -681,7 +681,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1461: {
-            secondary_irts_fl_1_converted_t* msg = (secondary_irts_fl_1_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fl_1_converted_t* msg = (secondary_irts_fl_1_converted_t*)(device->message);
             secondary::IRTS_FL_1* proto_msg = pack->add_irts_fl_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -695,7 +695,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1462: {
-            secondary_irts_fl_2_converted_t* msg = (secondary_irts_fl_2_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fl_2_converted_t* msg = (secondary_irts_fl_2_converted_t*)(device->message);
             secondary::IRTS_FL_2* proto_msg = pack->add_irts_fl_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -709,7 +709,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1463: {
-            secondary_irts_fl_3_converted_t* msg = (secondary_irts_fl_3_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fl_3_converted_t* msg = (secondary_irts_fl_3_converted_t*)(device->message);
             secondary::IRTS_FL_3* proto_msg = pack->add_irts_fl_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -723,7 +723,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1464: {
-            secondary_irts_fr_0_converted_t* msg = (secondary_irts_fr_0_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fr_0_converted_t* msg = (secondary_irts_fr_0_converted_t*)(device->message);
             secondary::IRTS_FR_0* proto_msg = pack->add_irts_fr_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -737,7 +737,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1465: {
-            secondary_irts_fr_1_converted_t* msg = (secondary_irts_fr_1_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fr_1_converted_t* msg = (secondary_irts_fr_1_converted_t*)(device->message);
             secondary::IRTS_FR_1* proto_msg = pack->add_irts_fr_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -751,7 +751,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1466: {
-            secondary_irts_fr_2_converted_t* msg = (secondary_irts_fr_2_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fr_2_converted_t* msg = (secondary_irts_fr_2_converted_t*)(device->message);
             secondary::IRTS_FR_2* proto_msg = pack->add_irts_fr_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -765,7 +765,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1467: {
-            secondary_irts_fr_3_converted_t* msg = (secondary_irts_fr_3_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_fr_3_converted_t* msg = (secondary_irts_fr_3_converted_t*)(device->message);
             secondary::IRTS_FR_3* proto_msg = pack->add_irts_fr_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -779,7 +779,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1468: {
-            secondary_irts_rl_0_converted_t* msg = (secondary_irts_rl_0_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rl_0_converted_t* msg = (secondary_irts_rl_0_converted_t*)(device->message);
             secondary::IRTS_RL_0* proto_msg = pack->add_irts_rl_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -793,7 +793,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1469: {
-            secondary_irts_rl_1_converted_t* msg = (secondary_irts_rl_1_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rl_1_converted_t* msg = (secondary_irts_rl_1_converted_t*)(device->message);
             secondary::IRTS_RL_1* proto_msg = pack->add_irts_rl_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -807,7 +807,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1470: {
-            secondary_irts_rl_2_converted_t* msg = (secondary_irts_rl_2_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rl_2_converted_t* msg = (secondary_irts_rl_2_converted_t*)(device->message);
             secondary::IRTS_RL_2* proto_msg = pack->add_irts_rl_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -821,7 +821,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1471: {
-            secondary_irts_rl_3_converted_t* msg = (secondary_irts_rl_3_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rl_3_converted_t* msg = (secondary_irts_rl_3_converted_t*)(device->message);
             secondary::IRTS_RL_3* proto_msg = pack->add_irts_rl_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -835,7 +835,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1472: {
-            secondary_irts_rr_0_converted_t* msg = (secondary_irts_rr_0_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rr_0_converted_t* msg = (secondary_irts_rr_0_converted_t*)(device->message);
             secondary::IRTS_RR_0* proto_msg = pack->add_irts_rr_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -849,7 +849,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1473: {
-            secondary_irts_rr_1_converted_t* msg = (secondary_irts_rr_1_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rr_1_converted_t* msg = (secondary_irts_rr_1_converted_t*)(device->message);
             secondary::IRTS_RR_1* proto_msg = pack->add_irts_rr_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -863,7 +863,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1474: {
-            secondary_irts_rr_2_converted_t* msg = (secondary_irts_rr_2_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rr_2_converted_t* msg = (secondary_irts_rr_2_converted_t*)(device->message);
             secondary::IRTS_RR_2* proto_msg = pack->add_irts_rr_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -877,7 +877,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1475: {
-            secondary_irts_rr_3_converted_t* msg = (secondary_irts_rr_3_converted_t*)((*map)[index].message_conversion);
+            secondary_irts_rr_3_converted_t* msg = (secondary_irts_rr_3_converted_t*)(device->message);
             secondary::IRTS_RR_3* proto_msg = pack->add_irts_rr_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -890,8 +890,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1026: {
-            secondary_gps_coords_t* msg = (secondary_gps_coords_t*)((*map)[index].message_raw);
+        case 1025: {
+            secondary_gps_coords_t* msg = (secondary_gps_coords_t*)(device->message);
             secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
 			proto_msg->set_latitude(msg->latitude);
 			proto_msg->set_longitude(msg->longitude);
@@ -902,8 +902,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1058: {
-            secondary_gps_speed_t* msg = (secondary_gps_speed_t*)((*map)[index].message_raw);
+        case 1057: {
+            secondary_gps_speed_t* msg = (secondary_gps_speed_t*)(device->message);
             secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
 			proto_msg->set_speed(msg->speed);
 
@@ -913,8 +913,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1090: {
-            secondary_lap_count_t* msg = (secondary_lap_count_t*)((*map)[index].message_raw);
+        case 1089: {
+            secondary_lap_count_t* msg = (secondary_lap_count_t*)(device->message);
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
 			proto_msg->set_lap_count(msg->lap_count);
 			proto_msg->set_lap_time(msg->lap_time);
@@ -925,8 +925,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 770: {
-            secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)((*map)[index].message_conversion);
+        case 769: {
+            secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)(device->message);
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
 			proto_msg->set_apps(msg->apps);
 			proto_msg->set_bse_front(msg->bse_front);
@@ -938,8 +938,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 259: {
-            secondary_steering_angle_t* msg = (secondary_steering_angle_t*)((*map)[index].message_raw);
+        case 256: {
+            secondary_steering_angle_t* msg = (secondary_steering_angle_t*)(device->message);
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
 
@@ -949,8 +949,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1281: {
-            secondary_control_state_converted_t* msg = (secondary_control_state_converted_t*)((*map)[index].message_conversion);
+        case 1283: {
+            secondary_control_state_converted_t* msg = (secondary_control_state_converted_t*)(device->message);
             secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
 			proto_msg->set_map_pw(msg->map_pw);
 			proto_msg->set_map_sc(msg->map_sc);
@@ -962,8 +962,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 514: {
-            secondary_tpms_converted_t* msg = (secondary_tpms_converted_t*)((*map)[index].message_conversion);
+        case 513: {
+            secondary_tpms_converted_t* msg = (secondary_tpms_converted_t*)(device->message);
             secondary::TPMS* proto_msg = pack->add_tpms();
 			proto_msg->set_fl_pressure(msg->fl_pressure);
 			proto_msg->set_fr_pressure(msg->fr_pressure);
@@ -980,8 +980,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 768: {
-            secondary_lc_status_t* msg = (secondary_lc_status_t*)((*map)[index].message_raw);
+        case 770: {
+            secondary_lc_status_t* msg = (secondary_lc_status_t*)(device->message);
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
 			proto_msg->set_last_time(msg->last_time);
 			proto_msg->set_lap_number(msg->lap_number);

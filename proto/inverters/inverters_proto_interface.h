@@ -243,7 +243,7 @@ typedef std::unordered_map<messages_name, message_strings> network_strings;
 
 #endif // CANLIB_PROTO_INTERFACE_TYPES
 
-void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters::Pack* pack, inverters_devices* map);
+void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters::Pack* pack, device_t* device);
 void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us);
 
 #ifdef inverters_PROTO_INTERAFCE_IMPLEMENTATION
@@ -1965,7 +1965,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 
 }
 
-void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters::Pack* pack, inverters_devices* map) {
+void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters::Pack* pack, device_t* device) {
     int index = inverters_index_from_id(id);
 
     if (index == -1) return;
@@ -1973,7 +1973,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
     switch(id) {
         
         case 514: {
-            inverters_inv_r_send_converted_t* msg = (inverters_inv_r_send_converted_t*)((*map)[index].message_conversion);
+            inverters_inv_r_send_converted_t* msg = (inverters_inv_r_send_converted_t*)(device->message);
             inverters::INV_R_SEND* proto_msg = pack->add_inv_r_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_r_send_send_mux)msg->send_mux);
 			proto_msg->set_motor_f_n(msg->motor_f_n);
@@ -2232,7 +2232,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
         }
 
         case 386: {
-            inverters_inv_r_rcv_converted_t* msg = (inverters_inv_r_rcv_converted_t*)((*map)[index].message_conversion);
+            inverters_inv_r_rcv_converted_t* msg = (inverters_inv_r_rcv_converted_t*)(device->message);
             inverters::INV_R_RCV* proto_msg = pack->add_inv_r_rcv();
 			proto_msg->set_rcv_mux((inverters::inverters_inv_r_rcv_rcv_mux)msg->rcv_mux);
 			proto_msg->set_n_actual(msg->n_actual);
@@ -2707,7 +2707,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
         }
 
         case 513: {
-            inverters_inv_l_send_converted_t* msg = (inverters_inv_l_send_converted_t*)((*map)[index].message_conversion);
+            inverters_inv_l_send_converted_t* msg = (inverters_inv_l_send_converted_t*)(device->message);
             inverters::INV_L_SEND* proto_msg = pack->add_inv_l_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_l_send_send_mux)msg->send_mux);
 			proto_msg->set_motor_f_n(msg->motor_f_n);
@@ -2966,7 +2966,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
         }
 
         case 385: {
-            inverters_inv_l_rcv_converted_t* msg = (inverters_inv_l_rcv_converted_t*)((*map)[index].message_conversion);
+            inverters_inv_l_rcv_converted_t* msg = (inverters_inv_l_rcv_converted_t*)(device->message);
             inverters::INV_L_RCV* proto_msg = pack->add_inv_l_rcv();
 			proto_msg->set_rcv_mux((inverters::inverters_inv_l_rcv_rcv_mux)msg->rcv_mux);
 			proto_msg->set_n_actual(msg->n_actual);
