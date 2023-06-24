@@ -188,6 +188,7 @@
     "HandcartStatus": {
       "type": "enum",
       "items": [
+        "NONE",
         "CHECK",
         "IDLE",
         "PRECHARGE",

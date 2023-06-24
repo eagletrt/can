@@ -109,28 +109,30 @@ enum primary_handcart_settings_fans_override {
 	primary_handcart_settings_fans_override_ON = 1;
 }
 enum primary_handcart_settings_status {
-	primary_handcart_settings_status_CHECK = 0;
-	primary_handcart_settings_status_IDLE = 1;
-	primary_handcart_settings_status_PRECHARGE = 2;
-	primary_handcart_settings_status_READY = 3;
-	primary_handcart_settings_status_CHARGE = 4;
-	primary_handcart_settings_status_CHARGE_DONE = 5;
-	primary_handcart_settings_status_BALANCING = 6;
-	primary_handcart_settings_status_ERROR = 7;
+	primary_handcart_settings_status_NONE = 0;
+	primary_handcart_settings_status_CHECK = 1;
+	primary_handcart_settings_status_IDLE = 2;
+	primary_handcart_settings_status_PRECHARGE = 3;
+	primary_handcart_settings_status_READY = 4;
+	primary_handcart_settings_status_CHARGE = 5;
+	primary_handcart_settings_status_CHARGE_DONE = 6;
+	primary_handcart_settings_status_BALANCING = 7;
+	primary_handcart_settings_status_ERROR = 8;
 }
 enum primary_handcart_settings_set_fans_override {
 	primary_handcart_settings_set_fans_override_OFF = 0;
 	primary_handcart_settings_set_fans_override_ON = 1;
 }
 enum primary_handcart_settings_set_status {
-	primary_handcart_settings_set_status_CHECK = 0;
-	primary_handcart_settings_set_status_IDLE = 1;
-	primary_handcart_settings_set_status_PRECHARGE = 2;
-	primary_handcart_settings_set_status_READY = 3;
-	primary_handcart_settings_set_status_CHARGE = 4;
-	primary_handcart_settings_set_status_CHARGE_DONE = 5;
-	primary_handcart_settings_set_status_BALANCING = 6;
-	primary_handcart_settings_set_status_ERROR = 7;
+	primary_handcart_settings_set_status_NONE = 0;
+	primary_handcart_settings_set_status_CHECK = 1;
+	primary_handcart_settings_set_status_IDLE = 2;
+	primary_handcart_settings_set_status_PRECHARGE = 3;
+	primary_handcart_settings_set_status_READY = 4;
+	primary_handcart_settings_set_status_CHARGE = 5;
+	primary_handcart_settings_set_status_CHARGE_DONE = 6;
+	primary_handcart_settings_set_status_BALANCING = 7;
+	primary_handcart_settings_set_status_ERROR = 8;
 }
 
 
