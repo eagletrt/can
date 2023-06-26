@@ -1457,7 +1457,7 @@
     {
       "name": "SET_PTT_STATUS",
       "topic": "DASnSTEER",
-      "priority": 4,
+      "priority": 5,
       "sending": ["STEER"],
       "receiving": ["DAS"],
       "description": "PTT activation/deactivation status set",
@@ -1468,7 +1468,7 @@
     {
       "name": "PTT_STATUS",
       "topic": "DASnSTEER",
-      "priority": 4,
+      "priority": 5,
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "PTT activation/deactivation status",
