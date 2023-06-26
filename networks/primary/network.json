@@ -1453,6 +1453,28 @@
         },
         "status": "HandcartStatus"
       }
+    },
+    {
+      "name": "SET_PTT_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["STEER"],
+      "receiving": ["DAS"],
+      "description": "PTT activation/deactivation status set",
+      "contents": {
+        "status": "Toggle"
+      }
+    },
+    {
+      "name": "PTT_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 4,
+      "sending": ["DAS"],
+      "receiving": ["STEER"],
+      "description": "PTT activation/deactivation status",
+      "contents": {
+        "status": "Toggle"
+      }
     }
   ]
 }
