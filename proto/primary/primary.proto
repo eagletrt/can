@@ -134,6 +134,14 @@ enum primary_handcart_settings_set_status {
 	primary_handcart_settings_set_status_BALANCING = 7;
 	primary_handcart_settings_set_status_ERROR = 8;
 }
+enum primary_set_ptt_status_status {
+	primary_set_ptt_status_status_OFF = 0;
+	primary_set_ptt_status_status_ON = 1;
+}
+enum primary_ptt_status_status {
+	primary_ptt_status_status_OFF = 0;
+	primary_ptt_status_status_ON = 1;
+}
 
 
 message NLG5_DIAG_TX{
@@ -770,6 +778,14 @@ message HANDCART_SETTINGS_SET{
 	primary_handcart_settings_set_status status = 6;
 	uint64 _inner_timestamp = 7;
 }
+message SET_PTT_STATUS{
+	primary_set_ptt_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
+message PTT_STATUS{
+	primary_ptt_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
 
 
 message Pack{
@@ -865,5 +881,7 @@ message Pack{
 	repeated HANDCART_STATUS HANDCART_STATUS = 90;
 	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 91;
 	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 92;
+	repeated SET_PTT_STATUS SET_PTT_STATUS = 93;
+	repeated PTT_STATUS PTT_STATUS = 94;
 }
 
