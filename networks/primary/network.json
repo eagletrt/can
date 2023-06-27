@@ -231,9 +231,9 @@
       "type": "enum",
       "items": ["SET_MAX", "SET_MIN"]
     },
-    "Sensor": {
+    "Pedals": {
       "type": "enum",
-      "items": ["STEERING_ANGLE", "ACCELERATOR", "BRAKE"]
+      "items": ["ACCELERATOR", "BRAKE"]
     },
     "ImdStatus": {
       "type": "enum",
@@ -821,8 +821,8 @@
     },
     {
       "name": "SET_CAR_STATUS",
+      "fixed_id": 80,
       "topic": "DAS",
-      "priority": 4,
       "sending": ["STEER"],
       "receiving": ["DAS"],
       "description": "Ask to DAS to change car status; only once",
@@ -831,33 +831,33 @@
       }
     },
     {
-      "name": "SET_SENSOR_CALIBRATION",
+      "name": "SET_PEDALS_CALIBRATION",
       "topic": "DAS",
       "priority": 3,
       "sending": ["STEER"],
       "receiving": ["DAS"],
-      "description": "Ask to calibrate sensor by specifying if the value is max or min",
+      "description": "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min",
       "contents": {
-        "sensor": "Sensor",
+        "sensor": "Pedals",
         "bound": "Bound"
       }
     },
     {
-      "name": "SENSOR_CALIBRATION_ACK",
+      "name": "PEDALS_CALIBRATION_ACK",
       "topic": "STEER",
       "priority": 3,
       "sending": ["DAS"],
       "receiving": ["STEER"],
-      "description": "Acknowledge the calibration of a sensor",
+      "description": "Acknowledge the calibration of a pedals",
       "contents": {
-        "sensor": "Sensor",
+        "sensor": "Pedals",
         "bound": "Bound"
       }
     },
     {
       "name": "CAR_STATUS",
+      "fixed_id": 81,
       "topic": "STEER",
-      "priority": 5,
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Car status, all states managed by the DAS will be send (car status, inverters status)",
