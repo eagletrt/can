@@ -53,17 +53,17 @@ enum primary_set_car_status_car_status_set {
 	primary_set_car_status_car_status_set_READY = 1;
 	primary_set_car_status_car_status_set_DRIVE = 2;
 }
-enum primary_set_pedals_calibration_sensor {
-	primary_set_pedals_calibration_sensor_ACCELERATOR = 0;
-	primary_set_pedals_calibration_sensor_BRAKE = 1;
+enum primary_set_pedals_calibration_pedals {
+	primary_set_pedals_calibration_pedals_ACCELERATOR = 0;
+	primary_set_pedals_calibration_pedals_BRAKE = 1;
 }
 enum primary_set_pedals_calibration_bound {
 	primary_set_pedals_calibration_bound_SET_MAX = 0;
 	primary_set_pedals_calibration_bound_SET_MIN = 1;
 }
-enum primary_pedals_calibration_ack_sensor {
-	primary_pedals_calibration_ack_sensor_ACCELERATOR = 0;
-	primary_pedals_calibration_ack_sensor_BRAKE = 1;
+enum primary_pedals_calibration_ack_pedals {
+	primary_pedals_calibration_ack_pedals_ACCELERATOR = 0;
+	primary_pedals_calibration_ack_pedals_BRAKE = 1;
 }
 enum primary_pedals_calibration_ack_bound {
 	primary_pedals_calibration_ack_bound_SET_MAX = 0;
@@ -517,12 +517,12 @@ message SET_CAR_STATUS{
 	uint64 _inner_timestamp = 2;
 }
 message SET_PEDALS_CALIBRATION{
-	primary_set_pedals_calibration_sensor sensor = 1;
+	primary_set_pedals_calibration_pedals pedals = 1;
 	primary_set_pedals_calibration_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
 message PEDALS_CALIBRATION_ACK{
-	primary_pedals_calibration_ack_sensor sensor = 1;
+	primary_pedals_calibration_ack_pedals pedals = 1;
 	primary_pedals_calibration_ack_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
@@ -563,9 +563,9 @@ message LV_TOTAL_VOLTAGE{
 }
 message LV_CELLS_TEMP{
 	uint32 start_index = 1;
-	double temp0 = 2;
-	double temp1 = 3;
-	double temp2 = 4;
+	double temp_0 = 2;
+	double temp_1 = 3;
+	double temp_2 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message COOLING_STATUS{

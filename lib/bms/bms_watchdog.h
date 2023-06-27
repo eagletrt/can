@@ -94,10 +94,10 @@ static int bms_watchdog_interval_from_id(uint16_t message_id) {
 
 static int bms_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1539: return BMS_INDEX_BOARD_STATUS;
+       case 1536: return BMS_INDEX_BOARD_STATUS;
        case 1282: return BMS_INDEX_TEMPERATURES;
-       case 512: return BMS_INDEX_VOLTAGES;
-       case 513: return BMS_INDEX_SET_BALANCING_STATUS;
+       case 513: return BMS_INDEX_VOLTAGES;
+       case 515: return BMS_INDEX_SET_BALANCING_STATUS;
        case 0: return BMS_INDEX_JMP_TO_BLT;
        case 4: return BMS_INDEX_FLASH_CELLBOARD_0_TX;
        case 5: return BMS_INDEX_FLASH_CELLBOARD_0_RX;
