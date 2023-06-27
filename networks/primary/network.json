@@ -66,6 +66,17 @@
         "AS_ACTUATION_FB"
       ]
     },
+    "LvHealthSignals": {
+      "type": "bitset",
+      "items": [
+        "LVMS_OUT",
+        "RELAY_OUT",
+        "BATTERY_VOLTAGE_OUT",
+        "CHARGER_CURRENT",
+        "BATTERY_CURRENT",
+        "SIGN_BATTERY_CURRENT"
+      ]
+    },
     "DasErrors": {
       "type": "bitset",
       "items": [
@@ -174,6 +185,24 @@
         "BRK1"
       ]
     },
+    "HandcartStatus": {
+      "type": "enum",
+      "items": [
+        "NONE",
+        "CHECK",
+        "IDLE",
+        "PRECHARGE",
+        "READY",
+        "CHARGE",
+        "CHARGE_DONE",
+        "BALANCING",
+        "ERROR"
+      ]
+    },
+    "CanFlashStatus": {
+      "type": "enum",
+      "items": ["NO_FLASH", "FLASH", "PREPARING_TO_FLASH"]
+    },
     "RaceType": {
       "type": "enum",
       "items": ["ACCELERATION", "SKIDPAD", "AUTOCROSS", "ENDURANCE"]
@@ -202,7 +231,7 @@
       "type": "enum",
       "items": ["SET_MAX", "SET_MIN"]
     },
-    "Pedal": {
+    "Pedals": {
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
     },
@@ -245,18 +274,182 @@
   "messages": [
     {
       "name": "BMS_HV_JMP_TO_BLT",
-      "topic": "FLASH",
       "fixed_id": 0,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
     },
     {
+      "name": "FLASH_BMS_HV_TX",
+      "fixed_id": 1,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_HV_RX",
+      "fixed_id": 2,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "HV_CAN_FORWARD",
+      "fixed_id": 3,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Enable/disable can forwarding to internal bms network",
+      "contents": {
+        "can_forward_set": "Toggle"
+      }
+    },
+    {
+      "name": "FLASH_CELLBOARD_0_TX",
+      "fixed_id": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_0_RX",
+      "fixed_id": 5,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+
+    {
+      "name": "FLASH_CELLBOARD_1_TX",
+      "fixed_id": 6,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_1_RX",
+      "fixed_id": 7,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+
+    {
+      "name": "FLASH_CELLBOARD_2_TX",
+      "fixed_id": 8,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_2_RX",
+      "fixed_id": 9,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_3_TX",
+      "fixed_id": 10,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_3_RX",
+      "fixed_id": 11,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_4_TX",
+      "fixed_id": 12,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_4_RX",
+      "fixed_id": 13,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_5_TX",
+      "fixed_id": 14,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_CELLBOARD_5_RX",
+      "fixed_id": 15,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
       "name": "BMS_LV_JMP_TO_BLT",
-      "topic": "FLASH",
-      "fixed_id": 32,
+      "fixed_id": 16,
       "sending": ["HANDCART"],
       "receiving": ["BMS_LV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_LV_TX",
+      "fixed_id": 17,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_BMS_LV_RX",
+      "fixed_id": 18,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "contents": {}
+    },
+    {
+      "name": "ECU_JMP_TO_BLT",
+      "fixed_id": 19,
+      "sending": ["HANDCART"],
+      "receiving": ["DAS"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_ECU_TX",
+      "fixed_id": 20,
+      "sending": ["HANDCART"],
+      "receiving": ["DAS"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_ECU_RX",
+      "fixed_id": 21,
+      "sending": ["HANDCART"],
+      "receiving": ["DAS"],
+      "contents": {}
+    },
+    {
+      "name": "STEERING_JMP_TO_BLT",
+      "fixed_id": 22,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_TX",
+      "fixed_id": 23,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
+      "contents": {}
+    },
+    {
+      "name": "FLASH_STEERING_RX",
+      "fixed_id": 24,
+      "sending": ["HANDCART"],
+      "receiving": ["STEER"],
       "contents": {}
     },
     {
@@ -497,17 +690,6 @@
       }
     },
     {
-      "name": "HV_CAN_FORWARD",
-      "topic": "BMS_HV",
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Enable/disable can forwarding to internal bms network",
-      "contents": {
-        "can_forward_set": "Toggle"
-      }
-    },
-    {
       "name": "HV_FANS_OVERRIDE",
       "topic": "BMS_HV",
       "priority": 7,
@@ -577,7 +759,7 @@
     },
     {
       "name": "TS_STATUS",
-      "topic": "DASnSTEERnCART",
+      "fixed_id": 84,
       "priority": 7,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
@@ -589,7 +771,7 @@
     },
     {
       "name": "SET_TS_STATUS_DAS",
-      "topic": "BMS_HV",
+      "fixed_id": 82,
       "priority": 7,
       "sending": ["DAS"],
       "receiving": ["BMS_HV"],
@@ -601,7 +783,7 @@
     },
     {
       "name": "SET_TS_STATUS_HANDCART",
-      "topic": "BMS_HV",
+      "fixed_id": 83,
       "priority": 7,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
@@ -639,8 +821,7 @@
     },
     {
       "name": "SET_CAR_STATUS",
-      "topic": "DAS",
-      "priority": 4,
+      "fixed_id": 80,
       "sending": ["STEER"],
       "receiving": ["DAS"],
       "description": "Ask to DAS to change car status; only once",
@@ -649,32 +830,32 @@
       }
     },
     {
-      "name": "SET_PEDALS_RANGE",
+      "name": "SET_PEDALS_CALIBRATION",
       "topic": "DAS",
       "priority": 3,
       "sending": ["STEER"],
       "receiving": ["DAS"],
       "description": "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min",
       "contents": {
-        "bound": "Bound",
-        "pedal": "Pedal"
+        "pedals": "Pedals",
+        "bound": "Bound"
       }
     },
     {
-      "name": "SET_STEERING_ANGLE_RANGE",
-      "topic": "DAS",
+      "name": "PEDALS_CALIBRATION_ACK",
+      "topic": "STEER",
       "priority": 3,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Ask to calibrate steering encoder by specifying if the value is max or min",
+      "sending": ["DAS"],
+      "receiving": ["STEER"],
+      "description": "Acknowledge the calibration of a pedals",
       "contents": {
+        "pedals": "Pedals",
         "bound": "Bound"
       }
     },
     {
       "name": "CAR_STATUS",
-      "topic": "STEER",
-      "priority": 5,
+      "fixed_id": 81,
       "sending": ["DAS"],
       "receiving": ["STEER"],
       "description": "Car status, all states managed by the DAS will be send (car status, inverters status)",
@@ -777,17 +958,17 @@
       "interval": 100,
       "contents": {
         "start_index": "uint8",
-        "temp0": {
+        "temp_0": {
           "type": "float32",
           "range": [-20, 80],
           "precision": 0.01
         },
-        "temp1": {
+        "temp_1": {
           "type": "float32",
           "range": [-20, 80],
           "precision": 0.01
         },
-        "temp2": {
+        "temp_2": {
           "type": "float32",
           "range": [-20, 80],
           "precision": 0.01
@@ -883,6 +1064,18 @@
       }
     },
     {
+      "name": "LV_HEALTH_SIGNALS",
+      "topic": "DASnSTEER",
+      "priority": 6,
+      "sending": ["BMS_LV"],
+      "receiving": ["DAS", "STEER", "TLM"],
+      "description": "LV Battery health signals",
+      "interval": 300,
+      "contents": {
+        "health_signals": "LvHealthSignals"
+      }
+    },
+    {
       "name": "LV_FEEDBACKS",
       "topic": "DASnSTEER",
       "priority": 6,
@@ -915,6 +1108,27 @@
       "contents": {
         "input": "bool",
         "output": "bool"
+      }
+    },
+    {
+      "name": "LV_CAN_FLASH_REQ",
+      "topic": "TLM",
+      "priority": 0,
+      "sending": ["TLM"],
+      "receiving": ["BMS_LV"],
+      "description": "Request to flash the LV BMS via CAN",
+      "contents": {}
+    },
+    {
+      "name": "LV_CAN_FLASH_ACK",
+      "topic": "TLM",
+      "priority": 0,
+      "interval": 50,
+      "sending": ["BMS_LV"],
+      "receiving": ["TLM"],
+      "description": "Acknowledge to flash the LV BMS via CAN",
+      "contents": {
+        "response": "CanFlashStatus"
       }
     },
     {
@@ -982,16 +1196,6 @@
           "type": "float32",
           "range": [-20, 80],
           "force": "uint8"
-        },
-        "temp_4": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "temp_5": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
         }
       }
     },
@@ -1016,18 +1220,6 @@
       "description": "Set cell balancing status; only once",
       "contents": {
         "set_balancing_status": "Toggle"
-      }
-    },
-    {
-      "name": "HANDCART_STATUS",
-      "topic": "BMS_HV",
-      "priority": 4,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Sends updates on the presence of the handcart",
-      "interval": 500,
-      "contents": {
-        "connected": "bool"
       }
     },
     {
@@ -1130,160 +1322,6 @@
       }
     },
     {
-      "name": "FLASH_CELLBOARD_0_TX",
-      "fixed_id": 16,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_0_RX",
-      "fixed_id": 17,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_1_TX",
-      "fixed_id": 18,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_1_RX",
-      "fixed_id": 19,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_2_TX",
-      "fixed_id": 20,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_2_RX",
-      "fixed_id": 21,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_TX",
-      "fixed_id": 22,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_RX",
-      "fixed_id": 23,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_TX",
-      "fixed_id": 24,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_RX",
-      "fixed_id": 25,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_TX",
-      "fixed_id": 26,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_RX",
-      "fixed_id": 27,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_TX",
-      "fixed_id": 2017,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_RX",
-      "fixed_id": 1639,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_TX",
-      "fixed_id": 2033,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_RX",
-      "fixed_id": 1655,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_NLG5_CTL",
-      "fixed_id": 618,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ST",
-      "fixed_id": 610,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ACT_I",
-      "fixed_id": 611,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ACT_II",
-      "fixed_id": 612,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_TEMP",
-      "fixed_id": 613,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
-      "name": "BRUSA_ERR",
-      "fixed_id": 614,
-      "sending": ["BRUSA"],
-      "receiving": ["HANDCART"],
-      "contents": {}
-    },
-    {
       "name": "CONTROL_OUTPUT",
       "topic": "STEER",
       "priority": 6,
@@ -1326,6 +1364,106 @@
       "sending": ["STEER"],
       "receiving": ["TLM"],
       "contents": {}
+    },
+    {
+      "name": "HANDCART_STATUS",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Sends updates on the presence of the handcart",
+      "interval": 500,
+      "contents": {
+        "connected": "bool"
+      }
+    },
+    {
+      "name": "HANDCART_SETTINGS",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["HANDCART"],
+      "receiving": ["BMS_HV"],
+      "description": "Setting from handcart to CAN",
+      "interval": 500,
+      "contents": {
+        "target_voltage": {
+          "type": "float32",
+          "range": [300, 454],
+          "force": "uint8"
+        },
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint8"
+        },
+        "acc_charge_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "grid_max_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "status": "HandcartStatus"
+      }
+    },
+    {
+      "name": "HANDCART_SETTINGS_SET",
+      "topic": "BMS_HV",
+      "priority": 4,
+      "sending": ["TLM"],
+      "receiving": ["HANDCART"],
+      "description": "Setting from telemetry to handcart",
+      "interval": 500,
+      "contents": {
+        "target_voltage": {
+          "type": "float32",
+          "range": [300, 454],
+          "force": "uint8"
+        },
+        "fans_override": "Toggle",
+        "fans_speed": {
+          "type": "float32",
+          "range": [0, 1],
+          "force": "uint8"
+        },
+        "acc_charge_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "grid_max_current": {
+          "type": "float32",
+          "range": [1, 16],
+          "force": "uint8"
+        },
+        "status": "HandcartStatus"
+      }
+    },
+    {
+      "name": "SET_PTT_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 5,
+      "sending": ["STEER"],
+      "receiving": ["DAS"],
+      "description": "PTT activation/deactivation status set",
+      "contents": {
+        "status": "Toggle"
+      }
+    },
+    {
+      "name": "PTT_STATUS",
+      "topic": "DASnSTEER",
+      "priority": 5,
+      "sending": ["DAS"],
+      "receiving": ["STEER"],
+      "description": "PTT activation/deactivation status",
+      "contents": {
+        "status": "Toggle"
+      }
     }
   ]
 }

@@ -14,18 +14,21 @@
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
+          "optimize": false,
           "signed": true
         },
         "ang_rate_y": {
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
+          "optimize": false,
           "signed": true
         },
         "ang_rate_z": {
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
+          "optimize": false,
           "signed": true
         }
       }
@@ -42,18 +45,21 @@
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
+          "optimize": false,
           "signed": true
         },
         "accel_y": {
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
+          "optimize": false,
           "signed": true
         },
         "accel_z": {
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
+          "optimize": false,
           "signed": true
         },
         "temperature": "int16"
