@@ -231,9 +231,9 @@
       "type": "enum",
       "items": ["SET_MAX", "SET_MIN"]
     },
-    "Pedal": {
+    "Sensor": {
       "type": "enum",
-      "items": ["ACCELERATOR", "BRAKE"]
+      "items": ["STEERING_ANGLE", "ACCELERATOR", "BRAKE"]
     },
     "ImdStatus": {
       "type": "enum",
@@ -831,25 +831,26 @@
       }
     },
     {
-      "name": "SET_PEDALS_RANGE",
+      "name": "SET_SENSOR_CALIBRATION",
       "topic": "DAS",
       "priority": 3,
       "sending": ["STEER"],
       "receiving": ["DAS"],
-      "description": "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min",
+      "description": "Ask to calibrate sensor by specifying if the value is max or min",
       "contents": {
-        "bound": "Bound",
-        "pedal": "Pedal"
+        "sensor": "Sensor",
+        "bound": "Bound"
       }
     },
     {
-      "name": "SET_STEERING_ANGLE_RANGE",
-      "topic": "DAS",
+      "name": "SENSOR_CALIBRATION_ACK",
+      "topic": "STEER",
       "priority": 3,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Ask to calibrate steering encoder by specifying if the value is max or min",
+      "sending": ["DAS"],
+      "receiving": ["STEER"],
+      "description": "Acknowledge the calibration of a sensor",
       "contents": {
+        "sensor": "Sensor",
         "bound": "Bound"
       }
     },
