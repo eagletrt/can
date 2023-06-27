@@ -53,17 +53,23 @@ enum primary_set_car_status_car_status_set {
 	primary_set_car_status_car_status_set_READY = 1;
 	primary_set_car_status_car_status_set_DRIVE = 2;
 }
-enum primary_set_pedals_range_bound {
-	primary_set_pedals_range_bound_SET_MAX = 0;
-	primary_set_pedals_range_bound_SET_MIN = 1;
+enum primary_set_sensor_calibration_sensor {
+	primary_set_sensor_calibration_sensor_STEERING_ANGLE = 0;
+	primary_set_sensor_calibration_sensor_ACCELERATOR = 1;
+	primary_set_sensor_calibration_sensor_BRAKE = 2;
 }
-enum primary_set_pedals_range_pedal {
-	primary_set_pedals_range_pedal_ACCELERATOR = 0;
-	primary_set_pedals_range_pedal_BRAKE = 1;
+enum primary_set_sensor_calibration_bound {
+	primary_set_sensor_calibration_bound_SET_MAX = 0;
+	primary_set_sensor_calibration_bound_SET_MIN = 1;
 }
-enum primary_set_steering_angle_range_bound {
-	primary_set_steering_angle_range_bound_SET_MAX = 0;
-	primary_set_steering_angle_range_bound_SET_MIN = 1;
+enum primary_sensor_calibration_ack_sensor {
+	primary_sensor_calibration_ack_sensor_STEERING_ANGLE = 0;
+	primary_sensor_calibration_ack_sensor_ACCELERATOR = 1;
+	primary_sensor_calibration_ack_sensor_BRAKE = 2;
+}
+enum primary_sensor_calibration_ack_bound {
+	primary_sensor_calibration_ack_bound_SET_MAX = 0;
+	primary_sensor_calibration_ack_bound_SET_MIN = 1;
 }
 enum primary_car_status_inverter_l {
 	primary_car_status_inverter_l_OFF = 0;
@@ -512,14 +518,15 @@ message SET_CAR_STATUS{
 	primary_set_car_status_car_status_set car_status_set = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_PEDALS_RANGE{
-	primary_set_pedals_range_bound bound = 1;
-	primary_set_pedals_range_pedal pedal = 2;
+message SET_SENSOR_CALIBRATION{
+	primary_set_sensor_calibration_sensor sensor = 1;
+	primary_set_sensor_calibration_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
-message SET_STEERING_ANGLE_RANGE{
-	primary_set_steering_angle_range_bound bound = 1;
-	uint64 _inner_timestamp = 2;
+message SENSOR_CALIBRATION_ACK{
+	primary_sensor_calibration_ack_sensor sensor = 1;
+	primary_sensor_calibration_ack_bound bound = 2;
+	uint64 _inner_timestamp = 3;
 }
 message CAR_STATUS{
 	primary_car_status_inverter_l inverter_l = 1;
@@ -847,8 +854,8 @@ message Pack{
 	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 56;
 	repeated STEER_STATUS STEER_STATUS = 57;
 	repeated SET_CAR_STATUS SET_CAR_STATUS = 58;
-	repeated SET_PEDALS_RANGE SET_PEDALS_RANGE = 59;
-	repeated SET_STEERING_ANGLE_RANGE SET_STEERING_ANGLE_RANGE = 60;
+	repeated SET_SENSOR_CALIBRATION SET_SENSOR_CALIBRATION = 59;
+	repeated SENSOR_CALIBRATION_ACK SENSOR_CALIBRATION_ACK = 60;
 	repeated CAR_STATUS CAR_STATUS = 61;
 	repeated DAS_ERRORS DAS_ERRORS = 62;
 	repeated LV_CURRENTS LV_CURRENTS = 63;
