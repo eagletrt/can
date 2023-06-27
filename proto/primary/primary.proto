@@ -53,23 +53,21 @@ enum primary_set_car_status_car_status_set {
 	primary_set_car_status_car_status_set_READY = 1;
 	primary_set_car_status_car_status_set_DRIVE = 2;
 }
-enum primary_set_sensor_calibration_sensor {
-	primary_set_sensor_calibration_sensor_STEERING_ANGLE = 0;
-	primary_set_sensor_calibration_sensor_ACCELERATOR = 1;
-	primary_set_sensor_calibration_sensor_BRAKE = 2;
+enum primary_set_pedals_calibration_sensor {
+	primary_set_pedals_calibration_sensor_ACCELERATOR = 0;
+	primary_set_pedals_calibration_sensor_BRAKE = 1;
 }
-enum primary_set_sensor_calibration_bound {
-	primary_set_sensor_calibration_bound_SET_MAX = 0;
-	primary_set_sensor_calibration_bound_SET_MIN = 1;
+enum primary_set_pedals_calibration_bound {
+	primary_set_pedals_calibration_bound_SET_MAX = 0;
+	primary_set_pedals_calibration_bound_SET_MIN = 1;
 }
-enum primary_sensor_calibration_ack_sensor {
-	primary_sensor_calibration_ack_sensor_STEERING_ANGLE = 0;
-	primary_sensor_calibration_ack_sensor_ACCELERATOR = 1;
-	primary_sensor_calibration_ack_sensor_BRAKE = 2;
+enum primary_pedals_calibration_ack_sensor {
+	primary_pedals_calibration_ack_sensor_ACCELERATOR = 0;
+	primary_pedals_calibration_ack_sensor_BRAKE = 1;
 }
-enum primary_sensor_calibration_ack_bound {
-	primary_sensor_calibration_ack_bound_SET_MAX = 0;
-	primary_sensor_calibration_ack_bound_SET_MIN = 1;
+enum primary_pedals_calibration_ack_bound {
+	primary_pedals_calibration_ack_bound_SET_MAX = 0;
+	primary_pedals_calibration_ack_bound_SET_MIN = 1;
 }
 enum primary_car_status_inverter_l {
 	primary_car_status_inverter_l_OFF = 0;
@@ -518,14 +516,14 @@ message SET_CAR_STATUS{
 	primary_set_car_status_car_status_set car_status_set = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_SENSOR_CALIBRATION{
-	primary_set_sensor_calibration_sensor sensor = 1;
-	primary_set_sensor_calibration_bound bound = 2;
+message SET_PEDALS_CALIBRATION{
+	primary_set_pedals_calibration_sensor sensor = 1;
+	primary_set_pedals_calibration_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
-message SENSOR_CALIBRATION_ACK{
-	primary_sensor_calibration_ack_sensor sensor = 1;
-	primary_sensor_calibration_ack_bound bound = 2;
+message PEDALS_CALIBRATION_ACK{
+	primary_pedals_calibration_ack_sensor sensor = 1;
+	primary_pedals_calibration_ack_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
 message CAR_STATUS{
@@ -689,9 +687,7 @@ message HV_CELLS_TEMP{
 	double temp_1 = 3;
 	double temp_2 = 4;
 	double temp_3 = 5;
-	double temp_4 = 6;
-	double temp_5 = 7;
-	uint64 _inner_timestamp = 8;
+	uint64 _inner_timestamp = 6;
 }
 message HV_CELL_BALANCING_STATUS{
 	primary_hv_cell_balancing_status_balancing_status balancing_status = 1;
@@ -854,8 +850,8 @@ message Pack{
 	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 56;
 	repeated STEER_STATUS STEER_STATUS = 57;
 	repeated SET_CAR_STATUS SET_CAR_STATUS = 58;
-	repeated SET_SENSOR_CALIBRATION SET_SENSOR_CALIBRATION = 59;
-	repeated SENSOR_CALIBRATION_ACK SENSOR_CALIBRATION_ACK = 60;
+	repeated SET_PEDALS_CALIBRATION SET_PEDALS_CALIBRATION = 59;
+	repeated PEDALS_CALIBRATION_ACK PEDALS_CALIBRATION_ACK = 60;
 	repeated CAR_STATUS CAR_STATUS = 61;
 	repeated DAS_ERRORS DAS_ERRORS = 62;
 	repeated LV_CURRENTS LV_CURRENTS = 63;
