@@ -637,7 +637,8 @@ message LV_HEALTH_SIGNALS{
 	bool health_signals_CHARGER_CURRENT = 4;
 	bool health_signals_BATTERY_CURRENT = 5;
 	bool health_signals_SIGN_BATTERY_CURRENT = 6;
-	uint64 _inner_timestamp = 7;
+	uint32 health_code = 7;
+	uint64 _inner_timestamp = 8;
 }
 message LV_FEEDBACKS{
 	bool feedbacks_BSPD_FB = 1;

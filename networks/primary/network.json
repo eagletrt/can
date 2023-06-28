@@ -1074,7 +1074,8 @@
       "description": "LV Battery health signals",
       "interval": 300,
       "contents": {
-        "health_signals": "LvHealthSignals"
+        "health_signals": "LvHealthSignals",
+        "health_code": "uint8"
       }
     },
     {
