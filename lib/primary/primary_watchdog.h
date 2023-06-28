@@ -208,50 +208,50 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
 
 static int primary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1027: return PRIMARY_INTERVAL_STEER_VERSION;
-       case 1059: return PRIMARY_INTERVAL_DAS_VERSION;
-       case 1091: return PRIMARY_INTERVAL_HV_VERSION;
-       case 1123: return PRIMARY_INTERVAL_LV_VERSION;
-       case 1155: return PRIMARY_INTERVAL_TLM_VERSION;
-       case 259: return PRIMARY_INTERVAL_TIMESTAMP;
-       case 291: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
+       case 1025: return PRIMARY_INTERVAL_STEER_VERSION;
+       case 1057: return PRIMARY_INTERVAL_DAS_VERSION;
+       case 1089: return PRIMARY_INTERVAL_HV_VERSION;
+       case 1121: return PRIMARY_INTERVAL_LV_VERSION;
+       case 1153: return PRIMARY_INTERVAL_TLM_VERSION;
+       case 257: return PRIMARY_INTERVAL_TIMESTAMP;
+       case 289: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INTERVAL_DATA_LOGGER;
-       case 264: return PRIMARY_INTERVAL_TLM_STATUS;
-       case 1793: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
-       case 772: return PRIMARY_INTERVAL_HV_VOLTAGE;
-       case 804: return PRIMARY_INTERVAL_HV_CURRENT;
-       case 836: return PRIMARY_INTERVAL_HV_TEMP;
-       case 36: return PRIMARY_INTERVAL_HV_ERRORS;
+       case 265: return PRIMARY_INTERVAL_TLM_STATUS;
+       case 1799: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
+       case 774: return PRIMARY_INTERVAL_HV_VOLTAGE;
+       case 806: return PRIMARY_INTERVAL_HV_CURRENT;
+       case 838: return PRIMARY_INTERVAL_HV_TEMP;
+       case 38: return PRIMARY_INTERVAL_HV_ERRORS;
        case 84: return PRIMARY_INTERVAL_TS_STATUS;
        case 82: return PRIMARY_INTERVAL_SET_TS_STATUS_DAS;
        case 83: return PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART;
-       case 256: return PRIMARY_INTERVAL_STEER_STATUS;
+       case 264: return PRIMARY_INTERVAL_STEER_STATUS;
        case 81: return PRIMARY_INTERVAL_CAR_STATUS;
-       case 40: return PRIMARY_INTERVAL_DAS_ERRORS;
-       case 837: return PRIMARY_INTERVAL_LV_CURRENTS;
-       case 869: return PRIMARY_INTERVAL_LV_CELLS_VOLTAGE;
-       case 901: return PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE;
-       case 933: return PRIMARY_INTERVAL_LV_CELLS_TEMP;
-       case 965: return PRIMARY_INTERVAL_COOLING_STATUS;
-       case 263: return PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
-       case 261: return PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS;
-       case 517: return PRIMARY_INTERVAL_LV_ERRORS;
-       case 293: return PRIMARY_INTERVAL_LV_HEALTH_SIGNALS;
-       case 325: return PRIMARY_INTERVAL_LV_FEEDBACKS;
-       case 357: return PRIMARY_INTERVAL_SHUTDOWN_STATUS;
-       case 1857: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
-       case 521: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
-       case 553: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
-       case 585: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
-       case 520: return PRIMARY_INTERVAL_SPEED;
+       case 41: return PRIMARY_INTERVAL_DAS_ERRORS;
+       case 835: return PRIMARY_INTERVAL_LV_CURRENTS;
+       case 867: return PRIMARY_INTERVAL_LV_CELLS_VOLTAGE;
+       case 899: return PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE;
+       case 931: return PRIMARY_INTERVAL_LV_CELLS_TEMP;
+       case 963: return PRIMARY_INTERVAL_COOLING_STATUS;
+       case 260: return PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
+       case 259: return PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS;
+       case 515: return PRIMARY_INTERVAL_LV_ERRORS;
+       case 291: return PRIMARY_INTERVAL_LV_HEALTH_SIGNALS;
+       case 323: return PRIMARY_INTERVAL_LV_FEEDBACKS;
+       case 355: return PRIMARY_INTERVAL_SHUTDOWN_STATUS;
+       case 1863: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
+       case 512: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
+       case 544: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
+       case 576: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
+       case 521: return PRIMARY_INTERVAL_SPEED;
        case 513: return PRIMARY_INTERVAL_INV_L_REQUEST;
        case 514: return PRIMARY_INTERVAL_INV_R_REQUEST;
        case 385: return PRIMARY_INTERVAL_INV_L_RESPONSE;
        case 386: return PRIMARY_INTERVAL_INV_R_RESPONSE;
-       case 296: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
-       case 774: return PRIMARY_INTERVAL_HANDCART_STATUS;
-       case 806: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
-       case 838: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
+       case 297: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
+       case 770: return PRIMARY_INTERVAL_HANDCART_STATUS;
+       case 802: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
+       case 834: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
 
     }
     return -1;
@@ -292,67 +292,67 @@ static int primary_watchdog_index_from_id(uint16_t message_id) {
        case 22: return PRIMARY_INDEX_STEERING_JMP_TO_BLT;
        case 23: return PRIMARY_INDEX_FLASH_STEERING_TX;
        case 24: return PRIMARY_INDEX_FLASH_STEERING_RX;
-       case 1027: return PRIMARY_INDEX_STEER_VERSION;
-       case 1059: return PRIMARY_INDEX_DAS_VERSION;
-       case 1091: return PRIMARY_INDEX_HV_VERSION;
-       case 1123: return PRIMARY_INDEX_LV_VERSION;
-       case 1155: return PRIMARY_INDEX_TLM_VERSION;
-       case 259: return PRIMARY_INDEX_TIMESTAMP;
-       case 291: return PRIMARY_INDEX_AMBIENT_TEMPERATURE;
+       case 1025: return PRIMARY_INDEX_STEER_VERSION;
+       case 1057: return PRIMARY_INDEX_DAS_VERSION;
+       case 1089: return PRIMARY_INDEX_HV_VERSION;
+       case 1121: return PRIMARY_INDEX_LV_VERSION;
+       case 1153: return PRIMARY_INDEX_TLM_VERSION;
+       case 257: return PRIMARY_INDEX_TIMESTAMP;
+       case 289: return PRIMARY_INDEX_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INDEX_DATA_LOGGER;
-       case 257: return PRIMARY_INDEX_SET_TLM_STATUS;
-       case 264: return PRIMARY_INDEX_TLM_STATUS;
-       case 1793: return PRIMARY_INDEX_STEER_SYSTEM_STATUS;
-       case 772: return PRIMARY_INDEX_HV_VOLTAGE;
-       case 804: return PRIMARY_INDEX_HV_CURRENT;
-       case 836: return PRIMARY_INDEX_HV_TEMP;
-       case 36: return PRIMARY_INDEX_HV_ERRORS;
-       case 38: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
-       case 41: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
-       case 777: return PRIMARY_INDEX_HV_FANS_OVERRIDE_STATUS;
-       case 773: return PRIMARY_INDEX_HV_FEEDBACKS_STATUS;
-       case 805: return PRIMARY_INDEX_HV_IMD_STATUS;
+       case 263: return PRIMARY_INDEX_SET_TLM_STATUS;
+       case 265: return PRIMARY_INDEX_TLM_STATUS;
+       case 1799: return PRIMARY_INDEX_STEER_SYSTEM_STATUS;
+       case 774: return PRIMARY_INDEX_HV_VOLTAGE;
+       case 806: return PRIMARY_INDEX_HV_CURRENT;
+       case 838: return PRIMARY_INDEX_HV_TEMP;
+       case 38: return PRIMARY_INDEX_HV_ERRORS;
+       case 34: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
+       case 32: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
+       case 768: return PRIMARY_INDEX_HV_FANS_OVERRIDE_STATUS;
+       case 771: return PRIMARY_INDEX_HV_FEEDBACKS_STATUS;
+       case 803: return PRIMARY_INDEX_HV_IMD_STATUS;
        case 84: return PRIMARY_INDEX_TS_STATUS;
        case 82: return PRIMARY_INDEX_SET_TS_STATUS_DAS;
        case 83: return PRIMARY_INDEX_SET_TS_STATUS_HANDCART;
-       case 256: return PRIMARY_INDEX_STEER_STATUS;
+       case 264: return PRIMARY_INDEX_STEER_STATUS;
        case 80: return PRIMARY_INDEX_SET_CAR_STATUS;
-       case 1024: return PRIMARY_INDEX_SET_PEDALS_CALIBRATION;
-       case 1032: return PRIMARY_INDEX_PEDALS_CALIBRATION_ACK;
+       case 1032: return PRIMARY_INDEX_SET_PEDALS_CALIBRATION;
+       case 1033: return PRIMARY_INDEX_PEDALS_CALIBRATION_ACK;
        case 81: return PRIMARY_INDEX_CAR_STATUS;
-       case 40: return PRIMARY_INDEX_DAS_ERRORS;
-       case 837: return PRIMARY_INDEX_LV_CURRENTS;
-       case 869: return PRIMARY_INDEX_LV_CELLS_VOLTAGE;
-       case 901: return PRIMARY_INDEX_LV_TOTAL_VOLTAGE;
-       case 933: return PRIMARY_INDEX_LV_CELLS_TEMP;
-       case 965: return PRIMARY_INDEX_COOLING_STATUS;
-       case 775: return PRIMARY_INDEX_SET_RADIATOR_SPEED;
-       case 807: return PRIMARY_INDEX_SET_PUMPS_SPEED;
-       case 263: return PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS;
-       case 261: return PRIMARY_INDEX_INVERTER_CONNECTION_STATUS;
-       case 517: return PRIMARY_INDEX_LV_ERRORS;
-       case 293: return PRIMARY_INDEX_LV_HEALTH_SIGNALS;
-       case 325: return PRIMARY_INDEX_LV_FEEDBACKS;
-       case 357: return PRIMARY_INDEX_SHUTDOWN_STATUS;
-       case 1825: return PRIMARY_INDEX_LV_CAN_FLASH_REQ;
-       case 1857: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
-       case 33: return PRIMARY_INDEX_MARKER;
-       case 521: return PRIMARY_INDEX_HV_CELLS_VOLTAGE;
-       case 553: return PRIMARY_INDEX_HV_CELLS_TEMP;
-       case 585: return PRIMARY_INDEX_HV_CELL_BALANCING_STATUS;
-       case 518: return PRIMARY_INDEX_SET_CELL_BALANCING_STATUS;
-       case 520: return PRIMARY_INDEX_SPEED;
+       case 41: return PRIMARY_INDEX_DAS_ERRORS;
+       case 835: return PRIMARY_INDEX_LV_CURRENTS;
+       case 867: return PRIMARY_INDEX_LV_CELLS_VOLTAGE;
+       case 899: return PRIMARY_INDEX_LV_TOTAL_VOLTAGE;
+       case 931: return PRIMARY_INDEX_LV_CELLS_TEMP;
+       case 963: return PRIMARY_INDEX_COOLING_STATUS;
+       case 772: return PRIMARY_INDEX_SET_RADIATOR_SPEED;
+       case 804: return PRIMARY_INDEX_SET_PUMPS_SPEED;
+       case 260: return PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS;
+       case 259: return PRIMARY_INDEX_INVERTER_CONNECTION_STATUS;
+       case 515: return PRIMARY_INDEX_LV_ERRORS;
+       case 291: return PRIMARY_INDEX_LV_HEALTH_SIGNALS;
+       case 323: return PRIMARY_INDEX_LV_FEEDBACKS;
+       case 355: return PRIMARY_INDEX_SHUTDOWN_STATUS;
+       case 1831: return PRIMARY_INDEX_LV_CAN_FLASH_REQ;
+       case 1863: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
+       case 39: return PRIMARY_INDEX_MARKER;
+       case 512: return PRIMARY_INDEX_HV_CELLS_VOLTAGE;
+       case 544: return PRIMARY_INDEX_HV_CELLS_TEMP;
+       case 576: return PRIMARY_INDEX_HV_CELL_BALANCING_STATUS;
+       case 546: return PRIMARY_INDEX_SET_CELL_BALANCING_STATUS;
+       case 521: return PRIMARY_INDEX_SPEED;
        case 513: return PRIMARY_INDEX_INV_L_REQUEST;
        case 514: return PRIMARY_INDEX_INV_R_REQUEST;
        case 385: return PRIMARY_INDEX_INV_L_RESPONSE;
        case 386: return PRIMARY_INDEX_INV_R_RESPONSE;
-       case 296: return PRIMARY_INDEX_CONTROL_OUTPUT;
-       case 546: return PRIMARY_INDEX_LC_RESET;
-       case 774: return PRIMARY_INDEX_HANDCART_STATUS;
-       case 806: return PRIMARY_INDEX_HANDCART_SETTINGS;
-       case 838: return PRIMARY_INDEX_HANDCART_SETTINGS_SET;
-       case 549: return PRIMARY_INDEX_SET_PTT_STATUS;
-       case 581: return PRIMARY_INDEX_PTT_STATUS;
+       case 297: return PRIMARY_INDEX_CONTROL_OUTPUT;
+       case 517: return PRIMARY_INDEX_LC_RESET;
+       case 770: return PRIMARY_INDEX_HANDCART_STATUS;
+       case 802: return PRIMARY_INDEX_HANDCART_SETTINGS;
+       case 834: return PRIMARY_INDEX_HANDCART_SETTINGS_SET;
+       case 547: return PRIMARY_INDEX_SET_PTT_STATUS;
+       case 579: return PRIMARY_INDEX_PTT_STATUS;
 
     }
     return -1;
@@ -390,308 +390,308 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_STEER_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_VERSION] > PRIMARY_INTERVAL_STEER_VERSION + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_VERSION] > PRIMARY_INTERVAL_STEER_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_STEER_VERSION);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DAS_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DAS_VERSION] > PRIMARY_INTERVAL_DAS_VERSION + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DAS_VERSION] > PRIMARY_INTERVAL_DAS_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DAS_VERSION);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VERSION] > PRIMARY_INTERVAL_HV_VERSION + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VERSION] > PRIMARY_INTERVAL_HV_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_VERSION);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_VERSION] > PRIMARY_INTERVAL_LV_VERSION + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_VERSION] > PRIMARY_INTERVAL_LV_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_VERSION);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TLM_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_VERSION] > PRIMARY_INTERVAL_TLM_VERSION + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_VERSION] > PRIMARY_INTERVAL_TLM_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_VERSION);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TIMESTAMP)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TIMESTAMP] > PRIMARY_INTERVAL_TIMESTAMP + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TIMESTAMP] > PRIMARY_INTERVAL_TIMESTAMP * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TIMESTAMP);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_AMBIENT_TEMPERATURE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_AMBIENT_TEMPERATURE] > PRIMARY_INTERVAL_AMBIENT_TEMPERATURE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_AMBIENT_TEMPERATURE] > PRIMARY_INTERVAL_AMBIENT_TEMPERATURE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_AMBIENT_TEMPERATURE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DATA_LOGGER)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DATA_LOGGER] > PRIMARY_INTERVAL_DATA_LOGGER + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DATA_LOGGER] > PRIMARY_INTERVAL_DATA_LOGGER * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DATA_LOGGER);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TLM_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_STATUS] > PRIMARY_INTERVAL_TLM_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_STATUS] > PRIMARY_INTERVAL_TLM_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_STEER_SYSTEM_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_SYSTEM_STATUS] > PRIMARY_INTERVAL_STEER_SYSTEM_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_SYSTEM_STATUS] > PRIMARY_INTERVAL_STEER_SYSTEM_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_STEER_SYSTEM_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_VOLTAGE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VOLTAGE] > PRIMARY_INTERVAL_HV_VOLTAGE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VOLTAGE] > PRIMARY_INTERVAL_HV_VOLTAGE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_VOLTAGE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CURRENT)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CURRENT] > PRIMARY_INTERVAL_HV_CURRENT + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CURRENT] > PRIMARY_INTERVAL_HV_CURRENT * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CURRENT);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_TEMP)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_TEMP] > PRIMARY_INTERVAL_HV_TEMP + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_TEMP] > PRIMARY_INTERVAL_HV_TEMP * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_TEMP);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_ERRORS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_ERRORS] > PRIMARY_INTERVAL_HV_ERRORS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_ERRORS] > PRIMARY_INTERVAL_HV_ERRORS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_ERRORS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TS_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TS_STATUS] > PRIMARY_INTERVAL_TS_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TS_STATUS] > PRIMARY_INTERVAL_TS_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TS_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_SET_TS_STATUS_DAS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_TS_STATUS_DAS] > PRIMARY_INTERVAL_SET_TS_STATUS_DAS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_TS_STATUS_DAS] > PRIMARY_INTERVAL_SET_TS_STATUS_DAS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_SET_TS_STATUS_DAS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_SET_TS_STATUS_HANDCART)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_TS_STATUS_HANDCART] > PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_TS_STATUS_HANDCART] > PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_SET_TS_STATUS_HANDCART);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_STEER_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_STATUS] > PRIMARY_INTERVAL_STEER_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_STEER_STATUS] > PRIMARY_INTERVAL_STEER_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_STEER_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CAR_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CAR_STATUS] > PRIMARY_INTERVAL_CAR_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CAR_STATUS] > PRIMARY_INTERVAL_CAR_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CAR_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DAS_ERRORS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DAS_ERRORS] > PRIMARY_INTERVAL_DAS_ERRORS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DAS_ERRORS] > PRIMARY_INTERVAL_DAS_ERRORS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DAS_ERRORS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_CURRENTS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CURRENTS] > PRIMARY_INTERVAL_LV_CURRENTS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CURRENTS] > PRIMARY_INTERVAL_LV_CURRENTS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_CURRENTS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_CELLS_VOLTAGE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CELLS_VOLTAGE] > PRIMARY_INTERVAL_LV_CELLS_VOLTAGE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CELLS_VOLTAGE] > PRIMARY_INTERVAL_LV_CELLS_VOLTAGE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_CELLS_VOLTAGE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_TOTAL_VOLTAGE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_TOTAL_VOLTAGE] > PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_TOTAL_VOLTAGE] > PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_TOTAL_VOLTAGE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_CELLS_TEMP)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CELLS_TEMP] > PRIMARY_INTERVAL_LV_CELLS_TEMP + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CELLS_TEMP] > PRIMARY_INTERVAL_LV_CELLS_TEMP * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_CELLS_TEMP);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_COOLING_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_COOLING_STATUS] > PRIMARY_INTERVAL_COOLING_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_COOLING_STATUS] > PRIMARY_INTERVAL_COOLING_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_COOLING_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS] > PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS] > PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_INVERTER_CONNECTION_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INVERTER_CONNECTION_STATUS] > PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INVERTER_CONNECTION_STATUS] > PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_INVERTER_CONNECTION_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_ERRORS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_ERRORS] > PRIMARY_INTERVAL_LV_ERRORS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_ERRORS] > PRIMARY_INTERVAL_LV_ERRORS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_ERRORS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_HEALTH_SIGNALS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_HEALTH_SIGNALS] > PRIMARY_INTERVAL_LV_HEALTH_SIGNALS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_HEALTH_SIGNALS] > PRIMARY_INTERVAL_LV_HEALTH_SIGNALS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_HEALTH_SIGNALS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_FEEDBACKS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_FEEDBACKS] > PRIMARY_INTERVAL_LV_FEEDBACKS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_FEEDBACKS] > PRIMARY_INTERVAL_LV_FEEDBACKS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_FEEDBACKS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_SHUTDOWN_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SHUTDOWN_STATUS] > PRIMARY_INTERVAL_SHUTDOWN_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SHUTDOWN_STATUS] > PRIMARY_INTERVAL_SHUTDOWN_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_SHUTDOWN_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_CAN_FLASH_ACK)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CAN_FLASH_ACK] > PRIMARY_INTERVAL_LV_CAN_FLASH_ACK + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_CAN_FLASH_ACK] > PRIMARY_INTERVAL_LV_CAN_FLASH_ACK * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_CAN_FLASH_ACK);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLS_VOLTAGE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_VOLTAGE] > PRIMARY_INTERVAL_HV_CELLS_VOLTAGE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_VOLTAGE] > PRIMARY_INTERVAL_HV_CELLS_VOLTAGE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLS_VOLTAGE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLS_TEMP)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_TEMP] > PRIMARY_INTERVAL_HV_CELLS_TEMP + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_TEMP] > PRIMARY_INTERVAL_HV_CELLS_TEMP * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLS_TEMP);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELL_BALANCING_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELL_BALANCING_STATUS] > PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELL_BALANCING_STATUS] > PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELL_BALANCING_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SPEED] > PRIMARY_INTERVAL_SPEED + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_SPEED] > PRIMARY_INTERVAL_SPEED * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_SPEED);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_INV_L_REQUEST)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_L_REQUEST] > PRIMARY_INTERVAL_INV_L_REQUEST + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_L_REQUEST] > PRIMARY_INTERVAL_INV_L_REQUEST * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_INV_L_REQUEST);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_INV_R_REQUEST)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_R_REQUEST] > PRIMARY_INTERVAL_INV_R_REQUEST + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_R_REQUEST] > PRIMARY_INTERVAL_INV_R_REQUEST * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_INV_R_REQUEST);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_INV_L_RESPONSE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_L_RESPONSE] > PRIMARY_INTERVAL_INV_L_RESPONSE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_L_RESPONSE] > PRIMARY_INTERVAL_INV_L_RESPONSE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_INV_L_RESPONSE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_INV_R_RESPONSE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_R_RESPONSE] > PRIMARY_INTERVAL_INV_R_RESPONSE + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_INV_R_RESPONSE] > PRIMARY_INTERVAL_INV_R_RESPONSE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_INV_R_RESPONSE);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CONTROL_OUTPUT)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CONTROL_OUTPUT] > PRIMARY_INTERVAL_CONTROL_OUTPUT + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CONTROL_OUTPUT] > PRIMARY_INTERVAL_CONTROL_OUTPUT * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CONTROL_OUTPUT);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HANDCART_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_STATUS] > PRIMARY_INTERVAL_HANDCART_STATUS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_STATUS] > PRIMARY_INTERVAL_HANDCART_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HANDCART_STATUS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HANDCART_SETTINGS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SETTINGS] > PRIMARY_INTERVAL_HANDCART_SETTINGS + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SETTINGS] > PRIMARY_INTERVAL_HANDCART_SETTINGS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HANDCART_SETTINGS);
     }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HANDCART_SETTINGS_SET)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SETTINGS_SET] > PRIMARY_INTERVAL_HANDCART_SETTINGS_SET + CANLIB_INTERVAL_THRESHOLD
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SETTINGS_SET] > PRIMARY_INTERVAL_HANDCART_SETTINGS_SET * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HANDCART_SETTINGS_SET);
     }

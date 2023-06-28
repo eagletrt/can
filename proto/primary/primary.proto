@@ -80,12 +80,19 @@ enum primary_car_status_inverter_r {
 	primary_car_status_inverter_r_ON = 2;
 }
 enum primary_car_status_car_status {
-	primary_car_status_car_status_IDLE = 0;
-	primary_car_status_car_status_PRE_SETUP = 1;
-	primary_car_status_car_status_TS_ON = 2;
-	primary_car_status_car_status_POST_SETUP = 3;
-	primary_car_status_car_status_DRIVE = 4;
-	primary_car_status_car_status_TEARDOWN = 5;
+	primary_car_status_car_status_INIT = 0;
+	primary_car_status_car_status_ENABLE_INV_UPDATES = 1;
+	primary_car_status_car_status_CHECK_INV_SETTINGS = 2;
+	primary_car_status_car_status_IDLE = 3;
+	primary_car_status_car_status_START_TS_PRECHARGE = 4;
+	primary_car_status_car_status_WAIT_TS_PRECHARGE = 5;
+	primary_car_status_car_status_WAIT_DRIVER = 6;
+	primary_car_status_car_status_ENABLE_INV_DRIVE = 7;
+	primary_car_status_car_status_DRIVE = 8;
+	primary_car_status_car_status_DISABLE_INV_DRIVE = 9;
+	primary_car_status_car_status_START_TS_DISCHARGE = 10;
+	primary_car_status_car_status_WAIT_TS_DISCHARGE = 11;
+	primary_car_status_car_status_FATAL_ERROR = 12;
 }
 enum primary_set_inverter_connection_status_status {
 	primary_set_inverter_connection_status_status_OFF = 0;
