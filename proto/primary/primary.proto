@@ -53,21 +53,21 @@ enum primary_set_car_status_car_status_set {
 	primary_set_car_status_car_status_set_READY = 1;
 	primary_set_car_status_car_status_set_DRIVE = 2;
 }
-enum primary_set_pedals_calibration_pedals {
-	primary_set_pedals_calibration_pedals_ACCELERATOR = 0;
-	primary_set_pedals_calibration_pedals_BRAKE = 1;
+enum primary_set_pedal_calibration_pedal {
+	primary_set_pedal_calibration_pedal_ACCELERATOR = 0;
+	primary_set_pedal_calibration_pedal_BRAKE = 1;
 }
-enum primary_set_pedals_calibration_bound {
-	primary_set_pedals_calibration_bound_SET_MAX = 0;
-	primary_set_pedals_calibration_bound_SET_MIN = 1;
+enum primary_set_pedal_calibration_bound {
+	primary_set_pedal_calibration_bound_SET_MAX = 0;
+	primary_set_pedal_calibration_bound_SET_MIN = 1;
 }
-enum primary_pedals_calibration_ack_pedals {
-	primary_pedals_calibration_ack_pedals_ACCELERATOR = 0;
-	primary_pedals_calibration_ack_pedals_BRAKE = 1;
+enum primary_pedal_calibration_ack_pedal {
+	primary_pedal_calibration_ack_pedal_ACCELERATOR = 0;
+	primary_pedal_calibration_ack_pedal_BRAKE = 1;
 }
-enum primary_pedals_calibration_ack_bound {
-	primary_pedals_calibration_ack_bound_SET_MAX = 0;
-	primary_pedals_calibration_ack_bound_SET_MIN = 1;
+enum primary_pedal_calibration_ack_bound {
+	primary_pedal_calibration_ack_bound_SET_MAX = 0;
+	primary_pedal_calibration_ack_bound_SET_MIN = 1;
 }
 enum primary_car_status_inverter_l {
 	primary_car_status_inverter_l_OFF = 0;
@@ -421,26 +421,28 @@ message HV_ERRORS{
 	bool warnings_CELLBOARD_COMM = 9;
 	bool warnings_CELLBOARD_INTERNAL = 10;
 	bool warnings_CONNECTOR_DISCONNECTED = 11;
-	bool warnings_FEEDBACK = 12;
-	bool warnings_FEEDBACK_CIRCUITRY = 13;
-	bool warnings_EEPROM_COMM = 14;
-	bool warnings_EEPROM_WRITE = 15;
-	bool errors_CELL_LOW_VOLTAGE = 16;
-	bool errors_CELL_UNDER_VOLTAGE = 17;
-	bool errors_CELL_OVER_VOLTAGE = 18;
-	bool errors_CELL_HIGH_TEMPERATURE = 19;
-	bool errors_CELL_OVER_TEMPERATURE = 20;
-	bool errors_OVER_CURRENT = 21;
-	bool errors_CAN = 22;
-	bool errors_INT_VOLTAGE_MISMATCH = 23;
-	bool errors_CELLBOARD_COMM = 24;
-	bool errors_CELLBOARD_INTERNAL = 25;
-	bool errors_CONNECTOR_DISCONNECTED = 26;
-	bool errors_FEEDBACK = 27;
-	bool errors_FEEDBACK_CIRCUITRY = 28;
-	bool errors_EEPROM_COMM = 29;
-	bool errors_EEPROM_WRITE = 30;
-	uint64 _inner_timestamp = 31;
+	bool warnings_FANS_DISCONNECTED = 12;
+	bool warnings_FEEDBACK = 13;
+	bool warnings_FEEDBACK_CIRCUITRY = 14;
+	bool warnings_EEPROM_COMM = 15;
+	bool warnings_EEPROM_WRITE = 16;
+	bool errors_CELL_LOW_VOLTAGE = 17;
+	bool errors_CELL_UNDER_VOLTAGE = 18;
+	bool errors_CELL_OVER_VOLTAGE = 19;
+	bool errors_CELL_HIGH_TEMPERATURE = 20;
+	bool errors_CELL_OVER_TEMPERATURE = 21;
+	bool errors_OVER_CURRENT = 22;
+	bool errors_CAN = 23;
+	bool errors_INT_VOLTAGE_MISMATCH = 24;
+	bool errors_CELLBOARD_COMM = 25;
+	bool errors_CELLBOARD_INTERNAL = 26;
+	bool errors_CONNECTOR_DISCONNECTED = 27;
+	bool errors_FANS_DISCONNECTED = 28;
+	bool errors_FEEDBACK = 29;
+	bool errors_FEEDBACK_CIRCUITRY = 30;
+	bool errors_EEPROM_COMM = 31;
+	bool errors_EEPROM_WRITE = 32;
+	uint64 _inner_timestamp = 33;
 }
 message HV_FANS_OVERRIDE{
 	primary_hv_fans_override_fans_override fans_override = 1;
@@ -527,14 +529,14 @@ message SET_CAR_STATUS{
 	primary_set_car_status_car_status_set car_status_set = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_PEDALS_CALIBRATION{
-	primary_set_pedals_calibration_pedals pedals = 1;
-	primary_set_pedals_calibration_bound bound = 2;
+message SET_PEDAL_CALIBRATION{
+	primary_set_pedal_calibration_pedal pedal = 1;
+	primary_set_pedal_calibration_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
-message PEDALS_CALIBRATION_ACK{
-	primary_pedals_calibration_ack_pedals pedals = 1;
-	primary_pedals_calibration_ack_bound bound = 2;
+message PEDAL_CALIBRATION_ACK{
+	primary_pedal_calibration_ack_pedal pedal = 1;
+	primary_pedal_calibration_ack_bound bound = 2;
 	uint64 _inner_timestamp = 3;
 }
 message CAR_STATUS{
@@ -862,8 +864,8 @@ message Pack{
 	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 56;
 	repeated STEER_STATUS STEER_STATUS = 57;
 	repeated SET_CAR_STATUS SET_CAR_STATUS = 58;
-	repeated SET_PEDALS_CALIBRATION SET_PEDALS_CALIBRATION = 59;
-	repeated PEDALS_CALIBRATION_ACK PEDALS_CALIBRATION_ACK = 60;
+	repeated SET_PEDAL_CALIBRATION SET_PEDAL_CALIBRATION = 59;
+	repeated PEDAL_CALIBRATION_ACK PEDAL_CALIBRATION_ACK = 60;
 	repeated CAR_STATUS CAR_STATUS = 61;
 	repeated DAS_ERRORS DAS_ERRORS = 62;
 	repeated LV_CURRENTS LV_CURRENTS = 63;

@@ -938,7 +938,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 259: {
+        case 256: {
             secondary_steering_angle_t* msg = (secondary_steering_angle_t*)(device->message);
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
@@ -949,7 +949,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1280: {
+        case 1283: {
             secondary_control_state_converted_t* msg = (secondary_control_state_converted_t*)(device->message);
             secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
 			proto_msg->set_map_pw(msg->map_pw);

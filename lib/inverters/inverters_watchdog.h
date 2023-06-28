@@ -52,10 +52,10 @@ typedef void (*canlib_watchdog_callback)(int);
 
 
 
-#define INVERTERS_INDEX_INV_L_SEND 0
-#define INVERTERS_INDEX_INV_L_RCV 1
-#define INVERTERS_INDEX_INV_R_SEND 2
-#define INVERTERS_INDEX_INV_R_RCV 3
+#define INVERTERS_INDEX_INV_R_SEND 0
+#define INVERTERS_INDEX_INV_R_RCV 1
+#define INVERTERS_INDEX_INV_L_SEND 2
+#define INVERTERS_INDEX_INV_L_RCV 3
 
 
 
@@ -81,10 +81,10 @@ static int inverters_watchdog_interval_from_id(uint16_t message_id) {
 
 static int inverters_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 513: return INVERTERS_INDEX_INV_L_SEND;
-       case 385: return INVERTERS_INDEX_INV_L_RCV;
        case 314: return INVERTERS_INDEX_INV_R_SEND;
        case 386: return INVERTERS_INDEX_INV_R_RCV;
+       case 513: return INVERTERS_INDEX_INV_L_SEND;
+       case 385: return INVERTERS_INDEX_INV_L_RCV;
 
     }
     return -1;

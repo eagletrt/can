@@ -15,6 +15,7 @@
         "CELLBOARD_COMM",
         "CELLBOARD_INTERNAL",
         "CONNECTOR_DISCONNECTED",
+        "FANS_DISCONNECTED",
         "FEEDBACK",
         "FEEDBACK_CIRCUITRY",
         "EEPROM_COMM",
@@ -232,7 +233,7 @@
       "type": "enum",
       "items": ["SET_MAX", "SET_MIN"]
     },
-    "Pedals": {
+    "Pedal": {
       "type": "enum",
       "items": ["ACCELERATOR", "BRAKE"]
     },
@@ -456,8 +457,7 @@
     },
     {
       "name": "STEER_VERSION",
-      "topic": "BROADCAST",
-      "priority": 3,
+      "fixed_id": 700,
       "sending": ["STEER"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
@@ -469,8 +469,7 @@
     },
     {
       "name": "DAS_VERSION",
-      "topic": "BROADCAST",
-      "priority": 3,
+      "fixed_id": 701,
       "sending": ["DAS"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
@@ -482,8 +481,7 @@
     },
     {
       "name": "HV_VERSION",
-      "topic": "BROADCAST",
-      "priority": 3,
+      "fixed_id": 702,
       "sending": ["BMS_HW"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
@@ -495,8 +493,7 @@
     },
     {
       "name": "LV_VERSION",
-      "topic": "BROADCAST",
-      "priority": 3,
+      "fixed_id": 703,
       "sending": ["BMS_LW"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
@@ -508,8 +505,7 @@
     },
     {
       "name": "TLM_VERSION",
-      "topic": "BROADCAST",
-      "priority": 3,
+      "fixed_id": 704,
       "sending": ["TLM"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
@@ -832,26 +828,26 @@
       }
     },
     {
-      "name": "SET_PEDALS_CALIBRATION",
+      "name": "SET_PEDAL_CALIBRATION",
       "topic": "DAS",
       "priority": 3,
       "sending": ["STEER"],
       "receiving": ["DAS"],
-      "description": "Ask to calibrate pedals by specifying which pedal to calibrate and if the value is max or min",
+      "description": "Ask to calibrate pedals by specifying which pedal and if the value is the max or min",
       "contents": {
-        "pedals": "Pedals",
+        "pedal": "Pedal",
         "bound": "Bound"
       }
     },
     {
-      "name": "PEDALS_CALIBRATION_ACK",
+      "name": "PEDAL_CALIBRATION_ACK",
       "topic": "STEER",
       "priority": 3,
       "sending": ["DAS"],
       "receiving": ["STEER"],
-      "description": "Acknowledge the calibration of a pedals",
+      "description": "Acknowledge the calibration of a pedal",
       "contents": {
-        "pedals": "Pedals",
+        "pedal": "Pedal",
         "bound": "Bound"
       }
     },
