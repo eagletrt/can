@@ -15,6 +15,7 @@
         "CELLBOARD_COMM",
         "CELLBOARD_INTERNAL",
         "CONNECTOR_DISCONNECTED",
+        "FANS_DISCONNECTED",
         "FEEDBACK",
         "FEEDBACK_CIRCUITRY",
         "EEPROM_COMM",
