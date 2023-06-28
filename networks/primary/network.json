@@ -214,7 +214,7 @@
     },
     "CarStatus": {
       "type": "enum",
-      "items": ["IDLE", "PRE_SETUP", "TS_ON", "POST_SETUP", "DRIVE", "TEARDOWN"]
+      "items": ["INIT", "ENABLE_INV_UPDATES", "CHECK_INV_SETTINGS", "IDLE", "START_TS_PRECHARGE", "WAIT_TS_PRECHARGE", "WAIT_DRIVER", "ENABLE_INV_DRIVE", "DRIVE", "DISABLE_INV_DRIVE", "START_TS_DISCHARGE", "WAIT_TS_DISCHARGE", "FATAL_ERROR"]
     },
     "Toggle": {
       "type": "enum",
