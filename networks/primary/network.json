@@ -14,6 +14,7 @@
         "INT_VOLTAGE_MISMATCH",
         "CELLBOARD_COMM",
         "CELLBOARD_INTERNAL",
+        "CONNECTOR_DISCONNECTED",
         "FEEDBACK",
         "FEEDBACK_CIRCUITRY",
         "EEPROM_COMM",
@@ -249,10 +250,10 @@
     "HvFeedbacks": {
       "type": "bitset",
       "items": [
-        "FEEDBACK_TSAL_GREEN_FAULT",
-        "FEEDBACK_IMD_LATCHED",
+        "FEEDBACK_IMPLAUSIBILITY_DETECTED",
+        "FEEDBACK_IMD_COCKPIT",
         "FEEDBACK_TSAL_GREEN_FAULT_LATCHED",
-        "FEEDBACK_BMS_LATCHED",
+        "FEEDBACK_BMS_COCKPIT",
         "FEEDBACK_EXT_LATCHED",
         "FEEDBACK_TSAL_GREEN",
         "FEEDBACK_TS_OVER_60V_STATUS",
@@ -262,12 +263,13 @@
         "FEEDBACK_AIRN_GATE",
         "FEEDBACK_PRECHARGE_STATUS",
         "FEEDBACK_TSP_OVER_60V_STATUS",
-        "FEEDBACK_CHECK_MUX",
-        "FEEDBACK_SD_IN",
-        "FEEDBACK_SD_OUT",
-        "FEEDBACK_RELAY_SD",
         "FEEDBACK_IMD_FAULT",
-        "FEEDBACK_SD_END"
+        "FEEDBACK_CHECK_MUX",
+        "FEEDBACK_SD_END",
+        "FEEDBACK_SD_OUT",
+        "FEEDBACK_SD_IN",
+        "FEEDBACK_SD_BMS",
+        "FEEDBACK_SD_IMD"
       ]
     }
   },
