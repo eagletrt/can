@@ -457,7 +457,6 @@
     },
     {
       "name": "STEER_VERSION",
-      "topic": "BROADCAST",
       "fixed_id": 700,
       "sending": ["STEER"],
       "receiving": ["DAS", "STEER"],
@@ -470,7 +469,6 @@
     },
     {
       "name": "DAS_VERSION",
-      "topic": "BROADCAST",
       "fixed_id": 701,
       "sending": ["DAS"],
       "receiving": ["DAS", "STEER"],
@@ -483,7 +481,6 @@
     },
     {
       "name": "HV_VERSION",
-      "topic": "BROADCAST",
       "fixed_id": 702,
       "sending": ["BMS_HW"],
       "receiving": ["DAS", "STEER"],
@@ -496,7 +493,6 @@
     },
     {
       "name": "LV_VERSION",
-      "topic": "BROADCAST",
       "fixed_id": 703,
       "sending": ["BMS_LW"],
       "receiving": ["DAS", "STEER"],
@@ -509,7 +505,6 @@
     },
     {
       "name": "TLM_VERSION",
-      "topic": "BROADCAST",
       "fixed_id": 704,
       "sending": ["TLM"],
       "receiving": ["DAS", "STEER"],
