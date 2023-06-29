@@ -70,6 +70,31 @@
       }
     },
     {
+      "name": "TEMPERATURES_INFO",
+      "topic": "TEMPERATURE_INFO",
+      "priority": 5,
+      "sending": ["CELLBOARD"],
+      "receiving": ["MAINBOARD"],
+      "description": "Cellboard temperature precalculated values",
+      "contents": {
+        "min_temp": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "max_temp": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "avg_temp": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        }
+      }
+    },
+    {
       "name": "TEMPERATURES",
       "topic": "TEMPERATURE_INFO",
       "priority": 2,
@@ -98,6 +123,31 @@
           "type": "float32",
           "range": [-20, 80],
           "force": "uint8"
+        }
+      }
+    },
+    {
+      "name": "VOLTAGES_INFO",
+      "topic": "VOLTAGE_INFO",
+      "priority": 5,
+      "sending": ["CELLBOARD"],
+      "receiving": ["MAINBOARD"],
+      "description": "Cellboard voltages precalculated values",
+      "contents": {
+        "min_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "max_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
+        },
+        "avg_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "precision": 0.0001
         }
       }
     },
