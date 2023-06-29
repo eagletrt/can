@@ -58,6 +58,12 @@ message BOARD_STATUS{
 	bms_board_status_balancing_status balancing_status = 11;
 	uint64 _inner_timestamp = 12;
 }
+message TEMPERATURES_INFO{
+	double min_temp = 1;
+	double max_temp = 2;
+	double avg_temp = 3;
+	uint64 _inner_timestamp = 4;
+}
 message TEMPERATURES{
 	bms_temperatures_cellboard_id cellboard_id = 1;
 	uint32 start_index = 2;
@@ -66,6 +72,12 @@ message TEMPERATURES{
 	double temp2 = 5;
 	double temp3 = 6;
 	uint64 _inner_timestamp = 7;
+}
+message VOLTAGES_INFO{
+	double min_voltage = 1;
+	double max_voltage = 2;
+	double avg_voltage = 3;
+	uint64 _inner_timestamp = 4;
 }
 message VOLTAGES{
 	bms_voltages_cellboard_id cellboard_id = 1;
@@ -126,21 +138,23 @@ message FLASH_CELLBOARD_5_RX{
 
 message Pack{
 	repeated BOARD_STATUS BOARD_STATUS = 1;
-	repeated TEMPERATURES TEMPERATURES = 2;
-	repeated VOLTAGES VOLTAGES = 3;
-	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 4;
-	repeated JMP_TO_BLT JMP_TO_BLT = 5;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 6;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 7;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 8;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 9;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 10;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 11;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 12;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 13;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 14;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 15;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 16;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 17;
+	repeated TEMPERATURES_INFO TEMPERATURES_INFO = 2;
+	repeated TEMPERATURES TEMPERATURES = 3;
+	repeated VOLTAGES_INFO VOLTAGES_INFO = 4;
+	repeated VOLTAGES VOLTAGES = 5;
+	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 6;
+	repeated JMP_TO_BLT JMP_TO_BLT = 7;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 8;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 9;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 10;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 11;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 12;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 13;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 14;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 15;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 16;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 17;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 18;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 19;
 }
 
