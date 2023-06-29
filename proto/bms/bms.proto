@@ -14,6 +14,14 @@ enum bms_board_status_balancing_status {
 	bms_board_status_balancing_status_OFF = 0;
 	bms_board_status_balancing_status_DISCHARGE = 1;
 }
+enum bms_temperatures_info_cellboard_id {
+	bms_temperatures_info_cellboard_id_CELLBOARD_0 = 0;
+	bms_temperatures_info_cellboard_id_CELLBOARD_1 = 1;
+	bms_temperatures_info_cellboard_id_CELLBOARD_2 = 2;
+	bms_temperatures_info_cellboard_id_CELLBOARD_3 = 3;
+	bms_temperatures_info_cellboard_id_CELLBOARD_4 = 4;
+	bms_temperatures_info_cellboard_id_CELLBOARD_5 = 5;
+}
 enum bms_temperatures_cellboard_id {
 	bms_temperatures_cellboard_id_CELLBOARD_0 = 0;
 	bms_temperatures_cellboard_id_CELLBOARD_1 = 1;
@@ -21,6 +29,14 @@ enum bms_temperatures_cellboard_id {
 	bms_temperatures_cellboard_id_CELLBOARD_3 = 3;
 	bms_temperatures_cellboard_id_CELLBOARD_4 = 4;
 	bms_temperatures_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_voltages_info_cellboard_id {
+	bms_voltages_info_cellboard_id_CELLBOARD_0 = 0;
+	bms_voltages_info_cellboard_id_CELLBOARD_1 = 1;
+	bms_voltages_info_cellboard_id_CELLBOARD_2 = 2;
+	bms_voltages_info_cellboard_id_CELLBOARD_3 = 3;
+	bms_voltages_info_cellboard_id_CELLBOARD_4 = 4;
+	bms_voltages_info_cellboard_id_CELLBOARD_5 = 5;
 }
 enum bms_voltages_cellboard_id {
 	bms_voltages_cellboard_id_CELLBOARD_0 = 0;
@@ -59,10 +75,11 @@ message BOARD_STATUS{
 	uint64 _inner_timestamp = 12;
 }
 message TEMPERATURES_INFO{
-	double min_temp = 1;
-	double max_temp = 2;
-	double avg_temp = 3;
-	uint64 _inner_timestamp = 4;
+	bms_temperatures_info_cellboard_id cellboard_id = 1;
+	double min_temp = 2;
+	double max_temp = 3;
+	double avg_temp = 4;
+	uint64 _inner_timestamp = 5;
 }
 message TEMPERATURES{
 	bms_temperatures_cellboard_id cellboard_id = 1;
@@ -74,10 +91,11 @@ message TEMPERATURES{
 	uint64 _inner_timestamp = 7;
 }
 message VOLTAGES_INFO{
-	double min_voltage = 1;
-	double max_voltage = 2;
-	double avg_voltage = 3;
-	uint64 _inner_timestamp = 4;
+	bms_voltages_info_cellboard_id cellboard_id = 1;
+	double min_voltage = 2;
+	double max_voltage = 3;
+	double avg_voltage = 4;
+	uint64 _inner_timestamp = 5;
 }
 message VOLTAGES{
 	bms_voltages_cellboard_id cellboard_id = 1;
