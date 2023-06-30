@@ -80,18 +80,18 @@
         "cellboard_id": "Cellboard",
         "min_temp": {
           "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
+          "range": [-20, 80],
+          "force": "uint16"
         },
         "max_temp": {
           "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
+          "range": [-20, 80],
+          "force": "uint16"
         },
         "avg_temp": {
           "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
+          "range": [-20, 80],
+          "force": "uint16"
         }
       }
     },
