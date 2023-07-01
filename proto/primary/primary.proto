@@ -107,6 +107,14 @@ enum primary_lv_can_flash_ack_response {
 	primary_lv_can_flash_ack_response_FLASH = 1;
 	primary_lv_can_flash_ack_response_PREPARING_TO_FLASH = 2;
 }
+enum primary_hv_cell_balancing_status_cellboard_id {
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_0 = 0;
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_1 = 1;
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_2 = 2;
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_3 = 3;
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_4 = 4;
+	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_5 = 5;
+}
 enum primary_hv_cell_balancing_status_balancing_status {
 	primary_hv_cell_balancing_status_balancing_status_OFF = 0;
 	primary_hv_cell_balancing_status_balancing_status_ON = 1;
@@ -704,8 +712,36 @@ message HV_CELLS_TEMP{
 	uint64 _inner_timestamp = 6;
 }
 message HV_CELL_BALANCING_STATUS{
-	primary_hv_cell_balancing_status_balancing_status balancing_status = 1;
-	uint64 _inner_timestamp = 2;
+	primary_hv_cell_balancing_status_cellboard_id cellboard_id = 1;
+	primary_hv_cell_balancing_status_balancing_status balancing_status = 2;
+	bool errors_CAN_COMM = 3;
+	bool errors_LTC_COMM = 4;
+	bool errors_TEMP_COMM_0 = 5;
+	bool errors_TEMP_COMM_1 = 6;
+	bool errors_TEMP_COMM_2 = 7;
+	bool errors_TEMP_COMM_3 = 8;
+	bool errors_TEMP_COMM_4 = 9;
+	bool errors_TEMP_COMM_5 = 10;
+	bool errors_OPEN_WIRE = 11;
+	bool balancing_cells_CELL0 = 12;
+	bool balancing_cells_CELL1 = 13;
+	bool balancing_cells_CELL2 = 14;
+	bool balancing_cells_CELL3 = 15;
+	bool balancing_cells_CELL4 = 16;
+	bool balancing_cells_CELL5 = 17;
+	bool balancing_cells_CELL6 = 18;
+	bool balancing_cells_CELL7 = 19;
+	bool balancing_cells_CELL8 = 20;
+	bool balancing_cells_CELL9 = 21;
+	bool balancing_cells_CELL10 = 22;
+	bool balancing_cells_CELL11 = 23;
+	bool balancing_cells_CELL12 = 24;
+	bool balancing_cells_CELL13 = 25;
+	bool balancing_cells_CELL14 = 26;
+	bool balancing_cells_CELL15 = 27;
+	bool balancing_cells_CELL16 = 28;
+	bool balancing_cells_CELL17 = 29;
+	uint64 _inner_timestamp = 30;
 }
 message SET_CELL_BALANCING_STATUS{
 	primary_set_cell_balancing_status_set_balancing_status set_balancing_status = 1;

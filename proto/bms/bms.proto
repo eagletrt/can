@@ -72,7 +72,25 @@ message BOARD_STATUS{
 	bool errors_TEMP_COMM_5 = 9;
 	bool errors_OPEN_WIRE = 10;
 	bms_board_status_balancing_status balancing_status = 11;
-	uint64 _inner_timestamp = 12;
+	bool balancing_cells_CELL0 = 12;
+	bool balancing_cells_CELL1 = 13;
+	bool balancing_cells_CELL2 = 14;
+	bool balancing_cells_CELL3 = 15;
+	bool balancing_cells_CELL4 = 16;
+	bool balancing_cells_CELL5 = 17;
+	bool balancing_cells_CELL6 = 18;
+	bool balancing_cells_CELL7 = 19;
+	bool balancing_cells_CELL8 = 20;
+	bool balancing_cells_CELL9 = 21;
+	bool balancing_cells_CELL10 = 22;
+	bool balancing_cells_CELL11 = 23;
+	bool balancing_cells_CELL12 = 24;
+	bool balancing_cells_CELL13 = 25;
+	bool balancing_cells_CELL14 = 26;
+	bool balancing_cells_CELL15 = 27;
+	bool balancing_cells_CELL16 = 28;
+	bool balancing_cells_CELL17 = 29;
+	uint64 _inner_timestamp = 30;
 }
 message TEMPERATURES_INFO{
 	bms_temperatures_info_cellboard_id cellboard_id = 1;

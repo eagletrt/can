@@ -274,6 +274,24 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 		(*net_enums)["BOARD_STATUS"]["balancing_status"].push(pack->board_status(i).balancing_status());
 		bms_board_status_balancing_status_enum_to_string((bms_board_status_balancing_status)pack->board_status(i).balancing_status(), buffer);
 		(*net_strings)["BOARD_STATUS"]["balancing_status"].push(buffer);
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell0"].push(pack->board_status(i).balancing_cells_cell0());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell1"].push(pack->board_status(i).balancing_cells_cell1());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell2"].push(pack->board_status(i).balancing_cells_cell2());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell3"].push(pack->board_status(i).balancing_cells_cell3());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell4"].push(pack->board_status(i).balancing_cells_cell4());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell5"].push(pack->board_status(i).balancing_cells_cell5());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell6"].push(pack->board_status(i).balancing_cells_cell6());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell7"].push(pack->board_status(i).balancing_cells_cell7());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell8"].push(pack->board_status(i).balancing_cells_cell8());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell9"].push(pack->board_status(i).balancing_cells_cell9());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell10"].push(pack->board_status(i).balancing_cells_cell10());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell11"].push(pack->board_status(i).balancing_cells_cell11());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell12"].push(pack->board_status(i).balancing_cells_cell12());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell13"].push(pack->board_status(i).balancing_cells_cell13());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell14"].push(pack->board_status(i).balancing_cells_cell14());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell15"].push(pack->board_status(i).balancing_cells_cell15());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell16"].push(pack->board_status(i).balancing_cells_cell16());
+		(*net_enums)["BOARD_STATUS"]["balancing_cells_cell17"].push(pack->board_status(i).balancing_cells_cell17());
 
     }
 
@@ -520,7 +538,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 
     switch(id) {
         
-        case 1539: {
+        case 1536: {
             bms_board_status_t* msg = (bms_board_status_t*)(device->message);
             bms::BOARD_STATUS* proto_msg = pack->add_board_status();
 			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
@@ -534,6 +552,24 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 			proto_msg->set_errors_temp_comm_5(msg->errors_temp_comm_5);
 			proto_msg->set_errors_open_wire(msg->errors_open_wire);
 			proto_msg->set_balancing_status((bms::bms_board_status_balancing_status)msg->balancing_status);
+			proto_msg->set_balancing_cells_cell0(msg->balancing_cells_cell0);
+			proto_msg->set_balancing_cells_cell1(msg->balancing_cells_cell1);
+			proto_msg->set_balancing_cells_cell2(msg->balancing_cells_cell2);
+			proto_msg->set_balancing_cells_cell3(msg->balancing_cells_cell3);
+			proto_msg->set_balancing_cells_cell4(msg->balancing_cells_cell4);
+			proto_msg->set_balancing_cells_cell5(msg->balancing_cells_cell5);
+			proto_msg->set_balancing_cells_cell6(msg->balancing_cells_cell6);
+			proto_msg->set_balancing_cells_cell7(msg->balancing_cells_cell7);
+			proto_msg->set_balancing_cells_cell8(msg->balancing_cells_cell8);
+			proto_msg->set_balancing_cells_cell9(msg->balancing_cells_cell9);
+			proto_msg->set_balancing_cells_cell10(msg->balancing_cells_cell10);
+			proto_msg->set_balancing_cells_cell11(msg->balancing_cells_cell11);
+			proto_msg->set_balancing_cells_cell12(msg->balancing_cells_cell12);
+			proto_msg->set_balancing_cells_cell13(msg->balancing_cells_cell13);
+			proto_msg->set_balancing_cells_cell14(msg->balancing_cells_cell14);
+			proto_msg->set_balancing_cells_cell15(msg->balancing_cells_cell15);
+			proto_msg->set_balancing_cells_cell16(msg->balancing_cells_cell16);
+			proto_msg->set_balancing_cells_cell17(msg->balancing_cells_cell17);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -541,7 +577,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 514: {
+        case 515: {
             bms_temperatures_info_converted_t* msg = (bms_temperatures_info_converted_t*)(device->message);
             bms::TEMPERATURES_INFO* proto_msg = pack->add_temperatures_info();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_info_cellboard_id)msg->cellboard_id);
@@ -555,7 +591,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1282: {
+        case 1283: {
             bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)(device->message);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
@@ -571,7 +607,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 513: {
+        case 514: {
             bms_voltages_info_converted_t* msg = (bms_voltages_info_converted_t*)(device->message);
             bms::VOLTAGES_INFO* proto_msg = pack->add_voltages_info();
 			proto_msg->set_cellboard_id((bms::bms_voltages_info_cellboard_id)msg->cellboard_id);
@@ -585,7 +621,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 545: {
+        case 546: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)(device->message);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -600,7 +636,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 512: {
+        case 513: {
             bms_set_balancing_status_t* msg = (bms_set_balancing_status_t*)(device->message);
             bms::SET_BALANCING_STATUS* proto_msg = pack->add_set_balancing_status();
 			proto_msg->set_threshold(msg->threshold);
