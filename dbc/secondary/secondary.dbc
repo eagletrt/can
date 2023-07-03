@@ -159,7 +159,7 @@ BO_ 770 PEDALS_OUTPUT: 5 Vector__XXX
  SG_ bse_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ apps : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 259 STEERING_ANGLE: 4 Vector__XXX
+BO_ 257 STEERING_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
 BO_ 1280 CONTROL_STATE: 3 Vector__XXX
@@ -177,7 +177,7 @@ BO_ 514 TPMS: 8 Vector__XXX
  SG_ fr_pressure : 8|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
  SG_ fl_pressure : 0|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
 
-BO_ 769 LC_STATUS: 6 Vector__XXX
+BO_ 771 LC_STATUS: 6 Vector__XXX
  SG_ lap_number : 32|16@1- (1,-32768) [-32768|32767] "" Vector__XXX
  SG_ last_time : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
@@ -206,14 +206,14 @@ CM_ BO_ 1026 "Coordinates received from GPS";
 CM_ BO_ 1058 "Speed received from GPS";
 CM_ BO_ 1090 "Lap counter and associated timestamp";
 CM_ BO_ 770 "Pedal output, already calibrated";
-CM_ BO_ 259 "Steering angle in degrees";
+CM_ BO_ 257 "Steering angle in degrees";
 CM_ BO_ 1280 "Send status of traction control";
 CM_ BO_ 514 "Tire Pressure Monitoring System, pressure and temperature of each tire";
-CM_ BO_ 769 "Session laps status, lap_number is -1 in case of OUT lap";
+CM_ BO_ 771 "Session laps status, lap_number is -1 in case of OUT lap";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 770 10;
-BA_ "GenMsgCycleTime" BO_ 259 10;
+BA_ "GenMsgCycleTime" BO_ 257 10;
 BA_ "GenMsgCycleTime" BO_ 1280 100;
 
 

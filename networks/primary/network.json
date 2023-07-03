@@ -957,7 +957,8 @@
     },
     {
       "name": "ECU_FEEDBACKS",
-      "fixed_id": 80,
+      "topic": "TLM",
+      "priority": 4,
       "sending": ["DAS"],
       "receiving": ["TLM"],
       "description": "Send feedbacks status",
