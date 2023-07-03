@@ -659,14 +659,14 @@ message LV_HEALTH_SIGNALS{
 }
 message LV_FEEDBACKS{
 	bool feedbacks_BSPD_FB = 1;
-	bool feedbacks_IMD_FB = 2;
+	bool feedbacks_HVD_FB = 2;
 	bool feedbacks_LVMS_FB = 3;
 	bool feedbacks_RES_FB = 4;
 	bool feedbacks_LV_ENCL = 5;
-	bool feedbacks_HV_ENCL_1_FB = 6;
+	bool feedbacks_INVC_LID_FB = 6;
 	bool feedbacks_HV_ENCL_2_FB = 7;
 	bool feedbacks_BACK_PLATE_FB = 8;
-	bool feedbacks_HVD_FB = 9;
+	bool feedbacks_INVC_INTERLOCK_FB = 9;
 	bool feedbacks_AMS_FB = 10;
 	bool feedbacks_ASMS_FB = 11;
 	bool feedbacks_INTERLOCK_FB = 12;

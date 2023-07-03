@@ -48,14 +48,14 @@
       "type": "bitset",
       "items": [
         "BSPD_FB",
-        "IMD_FB",
+        "HVD_FB",
         "LVMS_FB",
         "RES_FB",
         "LV_ENCL",
-        "HV_ENCL_1_FB",
+        "INVC_LID_FB",
         "HV_ENCL_2_FB",
         "BACK_PLATE_FB",
-        "HVD_FB",
+        "INVC_INTERLOCK_FB",
         "AMS_FB",
         "ASMS_FB",
         "INTERLOCK_FB",
@@ -931,7 +931,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Currents of AS Battery system, LV Battery and Charger",
-      "interval": 500,
+      "interval": 300,
       "contents": {
         "current_as_battery": {
           "type": "float32",
@@ -958,7 +958,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "LV Voltages for each cell",
-      "interval": 100,
+      "interval": 200,
       "contents": {
         "start_index": "uint8",
         "voltage_0": {
@@ -985,7 +985,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Voltage of LV battery pack",
-      "interval": 100,
+      "interval": 200,
       "contents": {
         "total_voltage": {
           "type": "float32",
@@ -1001,7 +1001,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Temperature °C for each cell",
-      "interval": 100,
+      "interval": 200,
       "contents": {
         "start_index": "uint8",
         "temp_0": {
@@ -1088,7 +1088,7 @@
       "name": "INVERTER_CONNECTION_STATUS",
       "topic": "DASnSTEER",
       "priority": 6,
-      "interval": 100,
+      "interval": 300,
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER"],
       "description": "Inverter status",
@@ -1103,7 +1103,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER", "TLM"],
       "description": "LV Battery-related errors",
-      "interval": 10,
+      "interval": 300,
       "contents": {
         "warnings": "LvErrors",
         "errors": "LvErrors"
@@ -1129,7 +1129,7 @@
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "STEER", "TLM"],
       "description": "LV Battery-related errors",
-      "interval": 10,
+      "interval": 300,
       "contents": {
         "feedbacks": "LvFeedbacks",
         "sd_start": {
