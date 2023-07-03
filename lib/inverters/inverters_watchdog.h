@@ -89,7 +89,7 @@ static int inverters_watchdog_index_from_id(uint16_t message_id) {
     }
     return -1;
 }
-#ifdef primary_WATCHDOG_IMPLEMENTATION
+#ifdef inverters_WATCHDOG_IMPLEMENTATION
 
 inverters_watchdog* inverters_watchdog_new() {
     inverters_watchdog *watchdog = (inverters_watchdog*)malloc(sizeof(inverters_watchdog));
@@ -121,7 +121,7 @@ void inverters_watchdog_reset_all(inverters_watchdog *watchdog, canlib_watchdog_
 void inverters_watchdog_timeout(inverters_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
 
 }
-#endif // primary_WATCHDOG_IMPLEMENTATION
+#endif // inverters_WATCHDOG_IMPLEMENTATION
 
 
 

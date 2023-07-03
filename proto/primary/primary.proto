@@ -94,6 +94,11 @@ enum primary_car_status_car_status {
 	primary_car_status_car_status_WAIT_TS_DISCHARGE = 11;
 	primary_car_status_car_status_FATAL_ERROR = 12;
 }
+enum primary_lv_status_status {
+	primary_lv_status_status_INIT = 0;
+	primary_lv_status_status_RUN = 1;
+	primary_lv_status_status_ERROR = 2;
+}
 enum primary_set_inverter_connection_status_status {
 	primary_set_inverter_connection_status_status_OFF = 0;
 	primary_set_inverter_connection_status_status_ON = 1;
@@ -565,6 +570,21 @@ message DAS_ERRORS{
 	bool das_error_FSM = 9;
 	uint64 _inner_timestamp = 10;
 }
+message ECU_FEEDBACKS{
+	bool ecu_feedbacks_SD_COCK_FB = 1;
+	bool ecu_feedbacks_SD_FB1 = 2;
+	bool ecu_feedbacks_SD_BOTS_FB = 3;
+	bool ecu_feedbacks_SD_INTERIAL_FB = 4;
+	bool ecu_feedbacks_SD_FB3 = 5;
+	bool ecu_feedbacks_SD_IN = 6;
+	bool ecu_feedbacks_SD_OUR = 7;
+	bool ecu_feedbacks_SD_CTRL_PIN = 8;
+	uint64 _inner_timestamp = 9;
+}
+message LV_STATUS{
+	primary_lv_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
 message LV_CURRENTS{
 	double current_as_battery = 1;
 	double current_lv_battery = 2;
@@ -904,37 +924,39 @@ message Pack{
 	repeated PEDAL_CALIBRATION_ACK PEDAL_CALIBRATION_ACK = 60;
 	repeated CAR_STATUS CAR_STATUS = 61;
 	repeated DAS_ERRORS DAS_ERRORS = 62;
-	repeated LV_CURRENTS LV_CURRENTS = 63;
-	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 64;
-	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 65;
-	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 66;
-	repeated COOLING_STATUS COOLING_STATUS = 67;
-	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 68;
-	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 69;
-	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 70;
-	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 71;
-	repeated LV_ERRORS LV_ERRORS = 72;
-	repeated LV_HEALTH_SIGNALS LV_HEALTH_SIGNALS = 73;
-	repeated LV_FEEDBACKS LV_FEEDBACKS = 74;
-	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 75;
-	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 76;
-	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 77;
-	repeated MARKER MARKER = 78;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 79;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 80;
-	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 81;
-	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 82;
-	repeated SPEED SPEED = 83;
-	repeated INV_L_REQUEST INV_L_REQUEST = 84;
-	repeated INV_R_REQUEST INV_R_REQUEST = 85;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 86;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 87;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 88;
-	repeated LC_RESET LC_RESET = 89;
-	repeated HANDCART_STATUS HANDCART_STATUS = 90;
-	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 91;
-	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 92;
-	repeated SET_PTT_STATUS SET_PTT_STATUS = 93;
-	repeated PTT_STATUS PTT_STATUS = 94;
+	repeated ECU_FEEDBACKS ECU_FEEDBACKS = 63;
+	repeated LV_STATUS LV_STATUS = 64;
+	repeated LV_CURRENTS LV_CURRENTS = 65;
+	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 66;
+	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 67;
+	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 68;
+	repeated COOLING_STATUS COOLING_STATUS = 69;
+	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 70;
+	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 71;
+	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 72;
+	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 73;
+	repeated LV_ERRORS LV_ERRORS = 74;
+	repeated LV_HEALTH_SIGNALS LV_HEALTH_SIGNALS = 75;
+	repeated LV_FEEDBACKS LV_FEEDBACKS = 76;
+	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 77;
+	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 78;
+	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 79;
+	repeated MARKER MARKER = 80;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 81;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 82;
+	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 83;
+	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 84;
+	repeated SPEED SPEED = 85;
+	repeated INV_L_REQUEST INV_L_REQUEST = 86;
+	repeated INV_R_REQUEST INV_R_REQUEST = 87;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 88;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 89;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 90;
+	repeated LC_RESET LC_RESET = 91;
+	repeated HANDCART_STATUS HANDCART_STATUS = 92;
+	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 93;
+	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 94;
+	repeated SET_PTT_STATUS SET_PTT_STATUS = 95;
+	repeated PTT_STATUS PTT_STATUS = 96;
 }
 

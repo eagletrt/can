@@ -96,12 +96,12 @@ static int bms_watchdog_interval_from_id(uint16_t message_id) {
 
 static int bms_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1536: return BMS_INDEX_BOARD_STATUS;
-       case 513: return BMS_INDEX_TEMPERATURES_INFO;
-       case 1281: return BMS_INDEX_TEMPERATURES;
-       case 514: return BMS_INDEX_VOLTAGES_INFO;
-       case 546: return BMS_INDEX_VOLTAGES;
-       case 515: return BMS_INDEX_SET_BALANCING_STATUS;
+       case 1537: return BMS_INDEX_BOARD_STATUS;
+       case 515: return BMS_INDEX_TEMPERATURES_INFO;
+       case 1283: return BMS_INDEX_TEMPERATURES;
+       case 512: return BMS_INDEX_VOLTAGES_INFO;
+       case 544: return BMS_INDEX_VOLTAGES;
+       case 514: return BMS_INDEX_SET_BALANCING_STATUS;
        case 0: return BMS_INDEX_JMP_TO_BLT;
        case 4: return BMS_INDEX_FLASH_CELLBOARD_0_TX;
        case 5: return BMS_INDEX_FLASH_CELLBOARD_0_RX;
@@ -119,7 +119,7 @@ static int bms_watchdog_index_from_id(uint16_t message_id) {
     }
     return -1;
 }
-#ifdef primary_WATCHDOG_IMPLEMENTATION
+#ifdef bms_WATCHDOG_IMPLEMENTATION
 
 bms_watchdog* bms_watchdog_new() {
     bms_watchdog *watchdog = (bms_watchdog*)malloc(sizeof(bms_watchdog));
@@ -151,7 +151,7 @@ void bms_watchdog_reset_all(bms_watchdog *watchdog, canlib_watchdog_timestamp ti
 void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
 
 }
-#endif // primary_WATCHDOG_IMPLEMENTATION
+#endif // bms_WATCHDOG_IMPLEMENTATION
 
 
 
