@@ -967,6 +967,7 @@
     },
     {
       "name": "LV_STATUS",
+      "topic": "TLM",
       "sending": ["BMS_LV"],
       "receiving": ["DAS", "TLM"],
       "description": "BMS LV internal state",
