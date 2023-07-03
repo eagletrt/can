@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: DAS IRTS_RR TLM DAS DAS STEER IRTS_FR IRTS_RR STEER DAS DAS TELEMETRY IRTS_FR IRTS_RL DAS DAS DAS CONTROL IRTS_FR TELEMETRY DAS IRTS_FR DAS IRTS_RL IRTS_FL IRTS_FL STEER DAS DAS DAS DAS STEER DAS TLM IRTS_FL STEER DAS IMU TLM IMU STEER DAS IRTS_FL DAS TLM DAS IRTS_RR DAS DAS IRTS_RL IRTS_RR IRTS_RL
+BU_: STEER TLM DAS STEER IRTS_FR TLM DAS DAS IRTS_FR IRTS_RR DAS DAS IRTS_FR IRTS_RR DAS DAS IRTS_FL IRTS_FL IRTS_RR DAS DAS DAS IRTS_RR DAS DAS IRTS_FL DAS DAS IRTS_RL IMU DAS IMU CONTROL IRTS_RL TELEMETRY DAS STEER IRTS_FL DAS TELEMETRY DAS IRTS_RL STEER DAS DAS STEER DAS IRTS_RL STEER IRTS_FR TLM TLM
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -143,31 +143,31 @@ BO_ 1475 IRTS_RR_3: 8 Vector__XXX
  SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
-BO_ 1024 GPS_COORDS: 8 Vector__XXX
+BO_ 1026 GPS_COORDS: 8 Vector__XXX
  SG_ longitude : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ latitude : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 1056 GPS_SPEED: 2 Vector__XXX
+BO_ 1058 GPS_SPEED: 2 Vector__XXX
  SG_ speed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1088 LAP_COUNT: 5 Vector__XXX
+BO_ 1090 LAP_COUNT: 5 Vector__XXX
  SG_ lap_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ lap_count : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 768 PEDALS_OUTPUT: 5 Vector__XXX
+BO_ 770 PEDALS_OUTPUT: 5 Vector__XXX
  SG_ bse_rear : 24|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ bse_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ apps : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 257 STEERING_ANGLE: 4 Vector__XXX
+BO_ 259 STEERING_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 1283 CONTROL_STATE: 3 Vector__XXX
+BO_ 1281 CONTROL_STATE: 3 Vector__XXX
  SG_ map_tv : 16|8@1+ (0.06666666666666667,0) [0|1] "" Vector__XXX
  SG_ map_sc : 8|8@1+ (0.06666666666666667,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.1,-0.5) [-0.5|1] "" Vector__XXX
 
-BO_ 512 TPMS: 8 Vector__XXX
+BO_ 514 TPMS: 8 Vector__XXX
  SG_ rr_temperature : 56|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ rl_temperature : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ fr_temperature : 40|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -177,7 +177,7 @@ BO_ 512 TPMS: 8 Vector__XXX
  SG_ fr_pressure : 8|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
  SG_ fl_pressure : 0|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
 
-BO_ 770 LC_STATUS: 6 Vector__XXX
+BO_ 768 LC_STATUS: 6 Vector__XXX
  SG_ lap_number : 32|16@1- (1,-32768) [-32768|32767] "" Vector__XXX
  SG_ last_time : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
@@ -202,19 +202,19 @@ CM_ BO_ 1472 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 thro
 CM_ BO_ 1473 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1474 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1475 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1024 "Coordinates received from GPS";
-CM_ BO_ 1056 "Speed received from GPS";
-CM_ BO_ 1088 "Lap counter and associated timestamp";
-CM_ BO_ 768 "Pedal output, already calibrated";
-CM_ BO_ 257 "Steering angle in degrees";
-CM_ BO_ 1283 "Send status of traction control";
-CM_ BO_ 512 "Tire Pressure Monitoring System, pressure and temperature of each tire";
-CM_ BO_ 770 "Session laps status, lap_number is -1 in case of OUT lap";
+CM_ BO_ 1026 "Coordinates received from GPS";
+CM_ BO_ 1058 "Speed received from GPS";
+CM_ BO_ 1090 "Lap counter and associated timestamp";
+CM_ BO_ 770 "Pedal output, already calibrated";
+CM_ BO_ 259 "Steering angle in degrees";
+CM_ BO_ 1281 "Send status of traction control";
+CM_ BO_ 514 "Tire Pressure Monitoring System, pressure and temperature of each tire";
+CM_ BO_ 768 "Session laps status, lap_number is -1 in case of OUT lap";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
-BA_ "GenMsgCycleTime" BO_ 768 10;
-BA_ "GenMsgCycleTime" BO_ 257 10;
-BA_ "GenMsgCycleTime" BO_ 1283 100;
+BA_ "GenMsgCycleTime" BO_ 770 10;
+BA_ "GenMsgCycleTime" BO_ 259 10;
+BA_ "GenMsgCycleTime" BO_ 1281 100;
 
 
 

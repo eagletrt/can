@@ -538,7 +538,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 
     switch(id) {
         
-        case 1536: {
+        case 1538: {
             bms_board_status_t* msg = (bms_board_status_t*)(device->message);
             bms::BOARD_STATUS* proto_msg = pack->add_board_status();
 			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
@@ -577,7 +577,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 515: {
+        case 512: {
             bms_temperatures_info_converted_t* msg = (bms_temperatures_info_converted_t*)(device->message);
             bms::TEMPERATURES_INFO* proto_msg = pack->add_temperatures_info();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_info_cellboard_id)msg->cellboard_id);
@@ -591,7 +591,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1283: {
+        case 1280: {
             bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)(device->message);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);
@@ -607,7 +607,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 514: {
+        case 513: {
             bms_voltages_info_converted_t* msg = (bms_voltages_info_converted_t*)(device->message);
             bms::VOLTAGES_INFO* proto_msg = pack->add_voltages_info();
 			proto_msg->set_cellboard_id((bms::bms_voltages_info_cellboard_id)msg->cellboard_id);
@@ -621,7 +621,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 546: {
+        case 545: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)(device->message);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -636,7 +636,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 513: {
+        case 515: {
             bms_set_balancing_status_t* msg = (bms_set_balancing_status_t*)(device->message);
             bms::SET_BALANCING_STATUS* proto_msg = pack->add_set_balancing_status();
 			proto_msg->set_threshold(msg->threshold);

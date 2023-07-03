@@ -2251,7 +2251,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
             break;
         }
 
-        case 314: {
+        case 514: {
             inverters_inv_r_send_converted_t* msg = (inverters_inv_r_send_converted_t*)(device->message);
             inverters::INV_R_SEND* proto_msg = pack->add_inv_r_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_r_send_send_mux)msg->send_mux);
