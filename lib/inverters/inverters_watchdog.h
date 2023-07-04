@@ -2,6 +2,8 @@
 #define inverters_WATCHDOG_H
 
 #include <inttypes.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -65,63 +67,12 @@ typedef struct {
     canlib_watchdog_timestamp last_reset[4];
 } inverters_watchdog;
 
-
-inverters_watchdog* inverters_watchdog_new();
+int inverters_watchdog_interval_from_id(uint16_t message_id);
+int inverters_watchdog_index_from_id(uint16_t message_id);
 void inverters_watchdog_free(inverters_watchdog *watchdog);
 void inverters_watchdog_reset(inverters_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
 void inverters_watchdog_reset_all(inverters_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 void inverters_watchdog_timeout(inverters_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-
-static int inverters_watchdog_interval_from_id(uint16_t message_id) {
-    switch (message_id) {
-
-    }
-    return -1;
-}
-
-static int inverters_watchdog_index_from_id(uint16_t message_id) {
-    switch (message_id) {
-       case 513: return INVERTERS_INDEX_INV_L_SEND;
-       case 385: return INVERTERS_INDEX_INV_L_RCV;
-       case 514: return INVERTERS_INDEX_INV_R_SEND;
-       case 386: return INVERTERS_INDEX_INV_R_RCV;
-
-    }
-    return -1;
-}
-#ifdef inverters_WATCHDOG_IMPLEMENTATION
-
-inverters_watchdog* inverters_watchdog_new() {
-    inverters_watchdog *watchdog = (inverters_watchdog*)malloc(sizeof(inverters_watchdog));
-    if (watchdog == NULL) {
-        return NULL;
-    }
-    memset(watchdog->activated, 0, sizeof(watchdog->activated));
-    memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
-    memset(watchdog->last_reset, 0, sizeof(watchdog->last_reset));
-    return watchdog;
-}
-
-void inverters_watchdog_free(inverters_watchdog *watchdog) {
-    free(watchdog);
-}
-
-void inverters_watchdog_reset(inverters_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
-    int index = inverters_watchdog_index_from_id(id);
-    if (index < 4 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
-        CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
-        watchdog->last_reset[index] = timestamp;
-    }
-}
-
-void inverters_watchdog_reset_all(inverters_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
-    memset(watchdog->timeout, 0, sizeof(watchdog->timeout));
-    memset(watchdog->last_reset, timestamp, sizeof(watchdog->last_reset));
-}
-void inverters_watchdog_timeout(inverters_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
-
-}
-#endif // inverters_WATCHDOG_IMPLEMENTATION
 
 
 
