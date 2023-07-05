@@ -35,10 +35,13 @@ enum primary_hv_imd_status_imd_status {
 	primary_hv_imd_status_imd_status_IMD_EARTH_FAULT = 5;
 }
 enum primary_ts_status_ts_status {
-	primary_ts_status_ts_status_OFF = 0;
-	primary_ts_status_ts_status_PRECHARGE = 1;
-	primary_ts_status_ts_status_ON = 2;
-	primary_ts_status_ts_status_FATAL = 3;
+	primary_ts_status_ts_status_INIT = 0;
+	primary_ts_status_ts_status_IDLE = 1;
+	primary_ts_status_ts_status_AIRN_CLOSE = 2;
+	primary_ts_status_ts_status_PRECHARGE = 3;
+	primary_ts_status_ts_status_AIRP_CLOSE = 4;
+	primary_ts_status_ts_status_TS_ON = 5;
+	primary_ts_status_ts_status_FATAL_ERROR = 6;
 }
 enum primary_set_ts_status_das_ts_status_set {
 	primary_set_ts_status_das_ts_status_set_OFF = 0;
@@ -575,9 +578,9 @@ message ECU_FEEDBACKS{
 	bool ecu_feedbacks_SD_FB1 = 2;
 	bool ecu_feedbacks_SD_BOTS_FB = 3;
 	bool ecu_feedbacks_SD_INTERIAL_FB = 4;
-	bool ecu_feedbacks_SD_FB3 = 5;
+	bool ecu_feedbacks_SD_FB4 = 5;
 	bool ecu_feedbacks_SD_IN = 6;
-	bool ecu_feedbacks_SD_OUR = 7;
+	bool ecu_feedbacks_SD_OUT = 7;
 	bool ecu_feedbacks_SD_CTRL_PIN = 8;
 	uint64 _inner_timestamp = 9;
 }

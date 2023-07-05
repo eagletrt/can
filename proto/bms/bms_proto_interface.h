@@ -538,7 +538,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
 
     switch(id) {
         
-        case 1539: {
+        case 1537: {
             bms_board_status_t* msg = (bms_board_status_t*)(device->message);
             bms::BOARD_STATUS* proto_msg = pack->add_board_status();
 			proto_msg->set_cellboard_id((bms::bms_board_status_cellboard_id)msg->cellboard_id);
@@ -577,7 +577,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 513: {
+        case 515: {
             bms_temperatures_info_converted_t* msg = (bms_temperatures_info_converted_t*)(device->message);
             bms::TEMPERATURES_INFO* proto_msg = pack->add_temperatures_info();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_info_cellboard_id)msg->cellboard_id);
@@ -591,7 +591,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1281: {
+        case 1283: {
             bms_temperatures_converted_t* msg = (bms_temperatures_converted_t*)(device->message);
             bms::TEMPERATURES* proto_msg = pack->add_temperatures();
 			proto_msg->set_cellboard_id((bms::bms_temperatures_cellboard_id)msg->cellboard_id);

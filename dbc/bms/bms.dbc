@@ -36,7 +36,7 @@ BS_:
 BU_: MAINBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV HANDCART BMS_HV MAINBOARD HANDCART CELLBOARD BMS_HV HANDCART BMS_HV HANDCART BMS_HV HANDCART BMS_HV BMS_HV HANDCART HANDCART BMS_HV CELLBOARD CELLBOARD HANDCART MAINBOARD BMS_HV CELLBOARD MAINBOARD HANDCART
 
 
-BO_ 1539 BOARD_STATUS: 4 Vector__XXX
+BO_ 1537 BOARD_STATUS: 4 Vector__XXX
  SG_ balancing_cells_CELL17 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ balancing_cells_CELL16 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ balancing_cells_CELL15 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -67,13 +67,13 @@ BO_ 1539 BOARD_STATUS: 4 Vector__XXX
  SG_ errors_CAN_COMM : 3|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 513 TEMPERATURES_INFO: 7 Vector__XXX
+BO_ 515 TEMPERATURES_INFO: 7 Vector__XXX
  SG_ avg_temp : 35|16@1+ (0.0015259021896696422,-20) [-20|80] "" Vector__XXX
  SG_ max_temp : 19|16@1+ (0.0015259021896696422,-20) [-20|80] "" Vector__XXX
  SG_ min_temp : 3|16@1+ (0.0015259021896696422,-20) [-20|80] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1281 TEMPERATURES: 6 Vector__XXX
+BO_ 1283 TEMPERATURES: 6 Vector__XXX
  SG_ temp3 : 35|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp2 : 27|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp1 : 19|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
@@ -130,9 +130,9 @@ BO_ 15 FLASH_CELLBOARD_5_RX: 0 Vector__XXX
 
 
 
-CM_ BO_ 1539 "Cellboard's status";
-CM_ BO_ 513 "Cellboard temperature precalculated values";
-CM_ BO_ 1281 "Cells' temperatures";
+CM_ BO_ 1537 "Cellboard's status";
+CM_ BO_ 515 "Cellboard temperature precalculated values";
+CM_ BO_ 1283 "Cells' temperatures";
 CM_ BO_ 514 "Cellboard voltages precalculated values";
 CM_ BO_ 546 "Cells' voltages";
 CM_ BO_ 512 "Set balancing status for cells";
@@ -152,10 +152,10 @@ CM_ BO_ 15 "";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 
-VAL_ 1539 balancing_status 0 "OFF" 1 "DISCHARGE" ;
-VAL_ 1539 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
-VAL_ 513 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
-VAL_ 1281 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
+VAL_ 1537 balancing_status 0 "OFF" 1 "DISCHARGE" ;
+VAL_ 1537 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
+VAL_ 515 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
+VAL_ 1283 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 514 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 546 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 512 balancing_status 0 "OFF" 1 "DISCHARGE" ;

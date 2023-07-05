@@ -100,9 +100,9 @@
         "SD_FB1",
         "SD_BOTS_FB",
         "SD_INTERIAL_FB",
-        "SD_FB3",
+        "SD_FB4",
         "SD_IN",
-        "SD_OUR",
+        "SD_OUT",
         "SD_CTRL_PIN"
       ]
     },
@@ -254,7 +254,15 @@
     },
     "TsStatus": {
       "type": "enum",
-      "items": ["OFF", "PRECHARGE", "ON", "FATAL"]
+      "items": [
+        "INIT",
+        "IDLE",
+        "AIRN_CLOSE",
+        "PRECHARGE",
+        "AIRP_CLOSE",
+        "TS_ON",
+        "FATAL_ERROR"
+      ]
     },
     "SetCarStatus": {
       "type": "enum",
@@ -962,6 +970,7 @@
       "sending": ["DAS"],
       "receiving": ["TLM"],
       "description": "Send feedbacks status",
+      "interval": 300,
       "contents": {
         "ecu_feedbacks": "ECUFeedbacks"
       }

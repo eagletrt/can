@@ -3,9 +3,9 @@
 
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 770: return SECONDARY_INTERVAL_PEDALS_OUTPUT;
-       case 256: return SECONDARY_INTERVAL_STEERING_ANGLE;
-       case 1281: return SECONDARY_INTERVAL_CONTROL_STATE;
+       case 769: return SECONDARY_INTERVAL_PEDALS_OUTPUT;
+       case 258: return SECONDARY_INTERVAL_STEERING_ANGLE;
+       case 1280: return SECONDARY_INTERVAL_CONTROL_STATE;
 
     }
     return -1;
@@ -31,13 +31,13 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1473: return SECONDARY_INDEX_IRTS_RR_1;
        case 1474: return SECONDARY_INDEX_IRTS_RR_2;
        case 1475: return SECONDARY_INDEX_IRTS_RR_3;
-       case 1026: return SECONDARY_INDEX_GPS_COORDS;
-       case 1058: return SECONDARY_INDEX_GPS_SPEED;
-       case 1090: return SECONDARY_INDEX_LAP_COUNT;
-       case 770: return SECONDARY_INDEX_PEDALS_OUTPUT;
-       case 256: return SECONDARY_INDEX_STEERING_ANGLE;
-       case 1281: return SECONDARY_INDEX_CONTROL_STATE;
-       case 514: return SECONDARY_INDEX_TPMS;
+       case 1025: return SECONDARY_INDEX_GPS_COORDS;
+       case 1057: return SECONDARY_INDEX_GPS_SPEED;
+       case 1089: return SECONDARY_INDEX_LAP_COUNT;
+       case 769: return SECONDARY_INDEX_PEDALS_OUTPUT;
+       case 258: return SECONDARY_INDEX_STEERING_ANGLE;
+       case 1280: return SECONDARY_INDEX_CONTROL_STATE;
+       case 513: return SECONDARY_INDEX_TPMS;
        case 771: return SECONDARY_INDEX_LC_STATUS;
 
     }
