@@ -611,7 +611,11 @@
       "receiving": ["TELEMETRY"],
       "description": "Steering angle in degrees",
       "contents": {
-        "angle": "float32"
+        "angle": {
+          "type": "float32",
+          "range": [-360, 360],
+          "force": "uint32"
+        }
       }
     },
     {
