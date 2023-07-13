@@ -150,7 +150,7 @@ message PEDALS_OUTPUT{
 	uint64 _inner_timestamp = 4;
 }
 message STEERING_ANGLE{
-	uint32 angle = 1;
+	float angle = 1;
 	uint64 _inner_timestamp = 2;
 }
 message CONTROL_STATE{
