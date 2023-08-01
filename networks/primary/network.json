@@ -603,18 +603,6 @@
       }
     },
     {
-      "name": "TIMESTAMP",
-      "topic": "BROADCAST",
-      "priority": 6,
-      "sending": ["TLM"],
-      "receiving": ["STEER", "DAS", "BMS_HV", "BMS_LV"],
-      "description": "every second unix encoded time and date used by logging devices to sync",
-      "interval": 1000,
-      "contents": {
-        "timestamp": "uint32"
-      }
-    },
-    {
       "name": "AMBIENT_TEMPERATURE",
       "topic": "BROADCAST",
       "priority": 6,

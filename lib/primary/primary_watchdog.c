@@ -8,47 +8,46 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 702: return PRIMARY_INTERVAL_HV_VERSION;
        case 703: return PRIMARY_INTERVAL_LV_VERSION;
        case 704: return PRIMARY_INTERVAL_TLM_VERSION;
-       case 264: return PRIMARY_INTERVAL_TIMESTAMP;
-       case 296: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
+       case 262: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INTERVAL_DATA_LOGGER;
-       case 260: return PRIMARY_INTERVAL_TLM_STATUS;
-       case 1801: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
-       case 775: return PRIMARY_INTERVAL_HV_VOLTAGE;
-       case 807: return PRIMARY_INTERVAL_HV_CURRENT;
-       case 839: return PRIMARY_INTERVAL_HV_TEMP;
-       case 39: return PRIMARY_INTERVAL_HV_ERRORS;
+       case 259: return PRIMARY_INTERVAL_TLM_STATUS;
+       case 1800: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
+       case 769: return PRIMARY_INTERVAL_HV_VOLTAGE;
+       case 801: return PRIMARY_INTERVAL_HV_CURRENT;
+       case 833: return PRIMARY_INTERVAL_HV_TEMP;
+       case 33: return PRIMARY_INTERVAL_HV_ERRORS;
        case 84: return PRIMARY_INTERVAL_TS_STATUS;
        case 82: return PRIMARY_INTERVAL_SET_TS_STATUS_DAS;
        case 83: return PRIMARY_INTERVAL_SET_TS_STATUS_HANDCART;
-       case 259: return PRIMARY_INTERVAL_STEER_STATUS;
+       case 261: return PRIMARY_INTERVAL_STEER_STATUS;
        case 81: return PRIMARY_INTERVAL_CAR_STATUS;
-       case 36: return PRIMARY_INTERVAL_DAS_ERRORS;
-       case 777: return PRIMARY_INTERVAL_ECU_FEEDBACKS;
-       case 809: return PRIMARY_INTERVAL_LV_STATUS;
-       case 834: return PRIMARY_INTERVAL_LV_CURRENTS;
-       case 866: return PRIMARY_INTERVAL_LV_CELLS_VOLTAGE;
-       case 898: return PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE;
-       case 930: return PRIMARY_INTERVAL_LV_CELLS_TEMP;
-       case 962: return PRIMARY_INTERVAL_COOLING_STATUS;
-       case 262: return PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
-       case 258: return PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS;
-       case 546: return PRIMARY_INTERVAL_LV_ERRORS;
-       case 290: return PRIMARY_INTERVAL_LV_HEALTH_SIGNALS;
-       case 322: return PRIMARY_INTERVAL_LV_FEEDBACKS;
-       case 354: return PRIMARY_INTERVAL_SHUTDOWN_STATUS;
-       case 1865: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
-       case 517: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
-       case 549: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
-       case 581: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
-       case 516: return PRIMARY_INTERVAL_SPEED;
+       case 35: return PRIMARY_INTERVAL_DAS_ERRORS;
+       case 776: return PRIMARY_INTERVAL_ECU_FEEDBACKS;
+       case 808: return PRIMARY_INTERVAL_LV_STATUS;
+       case 832: return PRIMARY_INTERVAL_LV_CURRENTS;
+       case 864: return PRIMARY_INTERVAL_LV_CELLS_VOLTAGE;
+       case 896: return PRIMARY_INTERVAL_LV_TOTAL_VOLTAGE;
+       case 928: return PRIMARY_INTERVAL_LV_CELLS_TEMP;
+       case 960: return PRIMARY_INTERVAL_COOLING_STATUS;
+       case 260: return PRIMARY_INTERVAL_SET_INVERTER_CONNECTION_STATUS;
+       case 256: return PRIMARY_INTERVAL_INVERTER_CONNECTION_STATUS;
+       case 512: return PRIMARY_INTERVAL_LV_ERRORS;
+       case 288: return PRIMARY_INTERVAL_LV_HEALTH_SIGNALS;
+       case 320: return PRIMARY_INTERVAL_LV_FEEDBACKS;
+       case 352: return PRIMARY_INTERVAL_SHUTDOWN_STATUS;
+       case 1864: return PRIMARY_INTERVAL_LV_CAN_FLASH_ACK;
+       case 519: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE;
+       case 551: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
+       case 583: return PRIMARY_INTERVAL_HV_CELL_BALANCING_STATUS;
+       case 515: return PRIMARY_INTERVAL_SPEED;
        case 513: return PRIMARY_INTERVAL_INV_L_REQUEST;
        case 514: return PRIMARY_INTERVAL_INV_R_REQUEST;
        case 385: return PRIMARY_INTERVAL_INV_L_RESPONSE;
        case 386: return PRIMARY_INTERVAL_INV_R_RESPONSE;
-       case 292: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
-       case 769: return PRIMARY_INTERVAL_HANDCART_STATUS;
-       case 801: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
-       case 833: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
+       case 291: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
+       case 777: return PRIMARY_INTERVAL_HANDCART_STATUS;
+       case 809: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
+       case 841: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
 
     }
     return -1;
@@ -94,64 +93,63 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 702: return PRIMARY_INDEX_HV_VERSION;
        case 703: return PRIMARY_INDEX_LV_VERSION;
        case 704: return PRIMARY_INDEX_TLM_VERSION;
-       case 264: return PRIMARY_INDEX_TIMESTAMP;
-       case 296: return PRIMARY_INDEX_AMBIENT_TEMPERATURE;
+       case 262: return PRIMARY_INDEX_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INDEX_DATA_LOGGER;
-       case 265: return PRIMARY_INDEX_SET_TLM_STATUS;
-       case 260: return PRIMARY_INDEX_TLM_STATUS;
-       case 1801: return PRIMARY_INDEX_STEER_SYSTEM_STATUS;
-       case 775: return PRIMARY_INDEX_HV_VOLTAGE;
-       case 807: return PRIMARY_INDEX_HV_CURRENT;
-       case 839: return PRIMARY_INDEX_HV_TEMP;
-       case 39: return PRIMARY_INDEX_HV_ERRORS;
-       case 33: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
-       case 37: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
-       case 773: return PRIMARY_INDEX_HV_FANS_OVERRIDE_STATUS;
-       case 770: return PRIMARY_INDEX_HV_FEEDBACKS_STATUS;
-       case 802: return PRIMARY_INDEX_HV_IMD_STATUS;
+       case 264: return PRIMARY_INDEX_SET_TLM_STATUS;
+       case 259: return PRIMARY_INDEX_TLM_STATUS;
+       case 1800: return PRIMARY_INDEX_STEER_SYSTEM_STATUS;
+       case 769: return PRIMARY_INDEX_HV_VOLTAGE;
+       case 801: return PRIMARY_INDEX_HV_CURRENT;
+       case 833: return PRIMARY_INDEX_HV_TEMP;
+       case 33: return PRIMARY_INDEX_HV_ERRORS;
+       case 41: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
+       case 39: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
+       case 775: return PRIMARY_INDEX_HV_FANS_OVERRIDE_STATUS;
+       case 768: return PRIMARY_INDEX_HV_FEEDBACKS_STATUS;
+       case 800: return PRIMARY_INDEX_HV_IMD_STATUS;
        case 84: return PRIMARY_INDEX_TS_STATUS;
        case 82: return PRIMARY_INDEX_SET_TS_STATUS_DAS;
        case 83: return PRIMARY_INDEX_SET_TS_STATUS_HANDCART;
-       case 259: return PRIMARY_INDEX_STEER_STATUS;
+       case 261: return PRIMARY_INDEX_STEER_STATUS;
        case 80: return PRIMARY_INDEX_SET_CAR_STATUS;
-       case 1027: return PRIMARY_INDEX_SET_PEDAL_CALIBRATION;
-       case 1028: return PRIMARY_INDEX_PEDAL_CALIBRATION_ACK;
+       case 1029: return PRIMARY_INDEX_SET_PEDAL_CALIBRATION;
+       case 1027: return PRIMARY_INDEX_PEDAL_CALIBRATION_ACK;
        case 81: return PRIMARY_INDEX_CAR_STATUS;
-       case 36: return PRIMARY_INDEX_DAS_ERRORS;
-       case 777: return PRIMARY_INDEX_ECU_FEEDBACKS;
-       case 809: return PRIMARY_INDEX_LV_STATUS;
-       case 834: return PRIMARY_INDEX_LV_CURRENTS;
-       case 866: return PRIMARY_INDEX_LV_CELLS_VOLTAGE;
-       case 898: return PRIMARY_INDEX_LV_TOTAL_VOLTAGE;
-       case 930: return PRIMARY_INDEX_LV_CELLS_TEMP;
-       case 962: return PRIMARY_INDEX_COOLING_STATUS;
-       case 774: return PRIMARY_INDEX_SET_RADIATOR_SPEED;
-       case 806: return PRIMARY_INDEX_SET_PUMPS_SPEED;
-       case 262: return PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS;
-       case 258: return PRIMARY_INDEX_INVERTER_CONNECTION_STATUS;
-       case 546: return PRIMARY_INDEX_LV_ERRORS;
-       case 290: return PRIMARY_INDEX_LV_HEALTH_SIGNALS;
-       case 322: return PRIMARY_INDEX_LV_FEEDBACKS;
-       case 354: return PRIMARY_INDEX_SHUTDOWN_STATUS;
-       case 1833: return PRIMARY_INDEX_LV_CAN_FLASH_REQ;
-       case 1865: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
-       case 41: return PRIMARY_INDEX_MARKER;
-       case 517: return PRIMARY_INDEX_HV_CELLS_VOLTAGE;
-       case 549: return PRIMARY_INDEX_HV_CELLS_TEMP;
-       case 581: return PRIMARY_INDEX_HV_CELL_BALANCING_STATUS;
-       case 545: return PRIMARY_INDEX_SET_CELL_BALANCING_STATUS;
-       case 516: return PRIMARY_INDEX_SPEED;
+       case 35: return PRIMARY_INDEX_DAS_ERRORS;
+       case 776: return PRIMARY_INDEX_ECU_FEEDBACKS;
+       case 808: return PRIMARY_INDEX_LV_STATUS;
+       case 832: return PRIMARY_INDEX_LV_CURRENTS;
+       case 864: return PRIMARY_INDEX_LV_CELLS_VOLTAGE;
+       case 896: return PRIMARY_INDEX_LV_TOTAL_VOLTAGE;
+       case 928: return PRIMARY_INDEX_LV_CELLS_TEMP;
+       case 960: return PRIMARY_INDEX_COOLING_STATUS;
+       case 772: return PRIMARY_INDEX_SET_RADIATOR_SPEED;
+       case 804: return PRIMARY_INDEX_SET_PUMPS_SPEED;
+       case 260: return PRIMARY_INDEX_SET_INVERTER_CONNECTION_STATUS;
+       case 256: return PRIMARY_INDEX_INVERTER_CONNECTION_STATUS;
+       case 512: return PRIMARY_INDEX_LV_ERRORS;
+       case 288: return PRIMARY_INDEX_LV_HEALTH_SIGNALS;
+       case 320: return PRIMARY_INDEX_LV_FEEDBACKS;
+       case 352: return PRIMARY_INDEX_SHUTDOWN_STATUS;
+       case 1832: return PRIMARY_INDEX_LV_CAN_FLASH_REQ;
+       case 1864: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
+       case 40: return PRIMARY_INDEX_MARKER;
+       case 519: return PRIMARY_INDEX_HV_CELLS_VOLTAGE;
+       case 551: return PRIMARY_INDEX_HV_CELLS_TEMP;
+       case 583: return PRIMARY_INDEX_HV_CELL_BALANCING_STATUS;
+       case 521: return PRIMARY_INDEX_SET_CELL_BALANCING_STATUS;
+       case 515: return PRIMARY_INDEX_SPEED;
        case 513: return PRIMARY_INDEX_INV_L_REQUEST;
        case 514: return PRIMARY_INDEX_INV_R_REQUEST;
        case 385: return PRIMARY_INDEX_INV_L_RESPONSE;
        case 386: return PRIMARY_INDEX_INV_R_RESPONSE;
-       case 292: return PRIMARY_INDEX_CONTROL_OUTPUT;
-       case 512: return PRIMARY_INDEX_LC_RESET;
-       case 769: return PRIMARY_INDEX_HANDCART_STATUS;
-       case 801: return PRIMARY_INDEX_HANDCART_SETTINGS;
-       case 833: return PRIMARY_INDEX_HANDCART_SETTINGS_SET;
-       case 578: return PRIMARY_INDEX_SET_PTT_STATUS;
-       case 610: return PRIMARY_INDEX_PTT_STATUS;
+       case 291: return PRIMARY_INDEX_CONTROL_OUTPUT;
+       case 546: return PRIMARY_INDEX_LC_RESET;
+       case 777: return PRIMARY_INDEX_HANDCART_STATUS;
+       case 809: return PRIMARY_INDEX_HANDCART_SETTINGS;
+       case 841: return PRIMARY_INDEX_HANDCART_SETTINGS_SET;
+       case 544: return PRIMARY_INDEX_SET_PTT_STATUS;
+       case 576: return PRIMARY_INDEX_PTT_STATUS;
 
     }
     return -1;
@@ -163,7 +161,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 96 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 95 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -208,13 +206,6 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_VERSION] > PRIMARY_INTERVAL_TLM_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TIMESTAMP)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TIMESTAMP] > PRIMARY_INTERVAL_TIMESTAMP * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TIMESTAMP);
     }
 
     if (

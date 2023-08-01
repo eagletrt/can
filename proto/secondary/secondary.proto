@@ -138,11 +138,6 @@ message GPS_SPEED{
 	uint32 speed = 1;
 	uint64 _inner_timestamp = 2;
 }
-message LAP_COUNT{
-	uint32 lap_count = 1;
-	uint32 lap_time = 2;
-	uint64 _inner_timestamp = 3;
-}
 message PEDALS_OUTPUT{
 	uint32 apps = 1;
 	double bse_front = 2;
@@ -170,10 +165,20 @@ message TPMS{
 	uint32 rr_temperature = 8;
 	uint64 _inner_timestamp = 9;
 }
-message LC_STATUS{
-	uint32 last_time = 1;
-	int32 lap_number = 2;
+message LAP_COUNT{
+	uint32 lap_count = 1;
+	double lap_time = 2;
 	uint64 _inner_timestamp = 3;
+}
+message LC_STATUS{
+	uint32 lap_number = 1;
+	double best_time = 2;
+	double last_time = 3;
+	uint64 _inner_timestamp = 4;
+}
+message TIMESTAMP{
+	uint64 timestamp = 1;
+	uint64 _inner_timestamp = 2;
 }
 
 
@@ -198,11 +203,12 @@ message Pack{
 	repeated IRTS_RR_3 IRTS_RR_3 = 18;
 	repeated GPS_COORDS GPS_COORDS = 19;
 	repeated GPS_SPEED GPS_SPEED = 20;
-	repeated LAP_COUNT LAP_COUNT = 21;
-	repeated PEDALS_OUTPUT PEDALS_OUTPUT = 22;
-	repeated STEERING_ANGLE STEERING_ANGLE = 23;
-	repeated CONTROL_STATE CONTROL_STATE = 24;
-	repeated TPMS TPMS = 25;
+	repeated PEDALS_OUTPUT PEDALS_OUTPUT = 21;
+	repeated STEERING_ANGLE STEERING_ANGLE = 22;
+	repeated CONTROL_STATE CONTROL_STATE = 23;
+	repeated TPMS TPMS = 24;
+	repeated LAP_COUNT LAP_COUNT = 25;
 	repeated LC_STATUS LC_STATUS = 26;
+	repeated TIMESTAMP TIMESTAMP = 27;
 }
 

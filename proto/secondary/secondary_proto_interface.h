@@ -66,6 +66,7 @@ class canlib_circular_buffer {
   const T& start() const;
   T inline first() const;
   T inline last() const;
+  T& operator[](IT index);
   const T& operator[](IT index) const;
   IT inline size() const;
   IT inline available() const;
@@ -165,6 +166,12 @@ T inline canlib_circular_buffer<T, S, IT>::last() const {
 template <typename T, size_t S, typename IT>
 const T& canlib_circular_buffer<T, S, IT>::start() const {
   return buffer[1];
+}
+
+template <typename T, size_t S, typename IT>
+T& canlib_circular_buffer<T, S, IT>::operator[](IT index) {
+  if (index >= count) return *tail;
+  return *(buffer + ((head - buffer + index) % capacity));
 }
 
 template <typename T, size_t S, typename IT>
@@ -545,19 +552,6 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->lap_count_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->lap_count(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lap_count(i)._inner_timestamp();
-        (*net_signals)["LAP_COUNT"]["_timestamp"].push(pack->lap_count(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["LAP_COUNT"]["lap_count"].push(pack->lap_count(i).lap_count());
-		(*net_signals)["LAP_COUNT"]["lap_time"].push(pack->lap_count(i).lap_time());
-
-    }
-
     for(int i = 0; i < pack->pedals_output_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -617,6 +611,19 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->lap_count_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lap_count(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lap_count(i)._inner_timestamp();
+        (*net_signals)["LAP_COUNT"]["_timestamp"].push(pack->lap_count(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LAP_COUNT"]["lap_count"].push(pack->lap_count(i).lap_count());
+		(*net_signals)["LAP_COUNT"]["lap_time"].push(pack->lap_count(i).lap_time());
+
+    }
+
     for(int i = 0; i < pack->lc_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -625,8 +632,21 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LC_STATUS"]["_timestamp"].push(pack->lc_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LC_STATUS"]["last_time"].push(pack->lc_status(i).last_time());
 		(*net_signals)["LC_STATUS"]["lap_number"].push(pack->lc_status(i).lap_number());
+		(*net_signals)["LC_STATUS"]["best_time"].push(pack->lc_status(i).best_time());
+		(*net_signals)["LC_STATUS"]["last_time"].push(pack->lc_status(i).last_time());
+
+    }
+
+    for(int i = 0; i < pack->timestamp_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->timestamp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->timestamp(i)._inner_timestamp();
+        (*net_signals)["TIMESTAMP"]["_timestamp"].push(pack->timestamp(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["TIMESTAMP"]["timestamp"].push(pack->timestamp(i).timestamp());
 
     }
 
@@ -913,18 +933,6 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1089: {
-            secondary_lap_count_t* msg = (secondary_lap_count_t*)(device->message);
-            secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
-			proto_msg->set_lap_count(msg->lap_count);
-			proto_msg->set_lap_time(msg->lap_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
         case 769: {
             secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)(device->message);
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
@@ -938,7 +946,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 256: {
+        case 258: {
             secondary_steering_angle_converted_t* msg = (secondary_steering_angle_converted_t*)(device->message);
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
@@ -980,11 +988,35 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 770: {
-            secondary_lc_status_t* msg = (secondary_lc_status_t*)(device->message);
+        case 1089: {
+            secondary_lap_count_converted_t* msg = (secondary_lap_count_converted_t*)(device->message);
+            secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
+			proto_msg->set_lap_count(msg->lap_count);
+			proto_msg->set_lap_time(msg->lap_time);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 768: {
+            secondary_lc_status_converted_t* msg = (secondary_lc_status_converted_t*)(device->message);
             secondary::LC_STATUS* proto_msg = pack->add_lc_status();
-			proto_msg->set_last_time(msg->last_time);
 			proto_msg->set_lap_number(msg->lap_number);
+			proto_msg->set_best_time(msg->best_time);
+			proto_msg->set_last_time(msg->last_time);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 260: {
+            secondary_timestamp_t* msg = (secondary_timestamp_t*)(device->message);
+            secondary::TIMESTAMP* proto_msg = pack->add_timestamp();
+			proto_msg->set_timestamp(msg->timestamp);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

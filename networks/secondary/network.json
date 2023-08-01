@@ -569,18 +569,6 @@
       }
     },
     {
-      "name": "LAP_COUNT",
-      "topic": "STEER",
-      "priority": 3,
-      "sending": ["TLM"],
-      "receiving": ["STEER"],
-      "description": "Lap counter and associated timestamp",
-      "contents": {
-        "lap_count": "uint8",
-        "lap_time": "uint32"
-      }
-    },
-    {
       "name": "PEDALS_OUTPUT",
       "topic": "STEER",
       "priority": 4,
@@ -679,15 +667,52 @@
       }
     },
     {
+      "name": "LAP_COUNT",
+      "topic": "STEER",
+      "priority": 3,
+      "sending": ["TLM"],
+      "receiving": ["STEER"],
+      "description": "On new lap",
+      "contents": {
+        "lap_count": "uint16",
+        "lap_time": {
+          "type": "float32",
+          "range": [0, 1000],
+          "force": "uint16"
+        }
+      }
+    },
+    {
       "name": "LC_STATUS",
       "topic": "LAPCOUNTER",
       "priority": 4,
       "sending": ["STEER"],
       "receiving": ["TLM"],
-      "description": "Session laps status, lap_number is -1 in case of OUT lap",
+      "description": "Session laps status",
       "contents": {
-        "last_time": "uint32",
-        "lap_number": "int16"
+        "lap_number": "uint16",
+        "best_time": {
+          "type": "float32",
+          "range": [0, 1000],
+          "force": "uint16"
+        },
+        "last_time": {
+          "type": "float32",
+          "range": [0, 1000],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "TIMESTAMP",
+      "topic": "BROADCAST",
+      "priority": 6,
+      "sending": ["TLM"],
+      "receiving": ["STEER", "DAS", "BMS_HV", "BMS_LV"],
+      "description": "every second unix encoded time and date used by logging devices to sync",
+      "interval": 500,
+      "contents": {
+        "timestamp": "uint64"
       }
     }
   ]

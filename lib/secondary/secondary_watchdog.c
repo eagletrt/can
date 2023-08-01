@@ -4,8 +4,9 @@
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
        case 769: return SECONDARY_INTERVAL_PEDALS_OUTPUT;
-       case 256: return SECONDARY_INTERVAL_STEERING_ANGLE;
+       case 258: return SECONDARY_INTERVAL_STEERING_ANGLE;
        case 1283: return SECONDARY_INTERVAL_CONTROL_STATE;
+       case 260: return SECONDARY_INTERVAL_TIMESTAMP;
 
     }
     return -1;
@@ -33,12 +34,13 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1475: return SECONDARY_INDEX_IRTS_RR_3;
        case 1025: return SECONDARY_INDEX_GPS_COORDS;
        case 1057: return SECONDARY_INDEX_GPS_SPEED;
-       case 1089: return SECONDARY_INDEX_LAP_COUNT;
        case 769: return SECONDARY_INDEX_PEDALS_OUTPUT;
-       case 256: return SECONDARY_INDEX_STEERING_ANGLE;
+       case 258: return SECONDARY_INDEX_STEERING_ANGLE;
        case 1283: return SECONDARY_INDEX_CONTROL_STATE;
        case 513: return SECONDARY_INDEX_TPMS;
-       case 770: return SECONDARY_INDEX_LC_STATUS;
+       case 1089: return SECONDARY_INDEX_LAP_COUNT;
+       case 768: return SECONDARY_INDEX_LC_STATUS;
+       case 260: return SECONDARY_INDEX_TIMESTAMP;
 
     }
     return -1;
@@ -50,7 +52,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 26 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 27 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -81,6 +83,13 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[SECONDARY_INDEX_CONTROL_STATE] > SECONDARY_INTERVAL_CONTROL_STATE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_CONTROL_STATE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_TIMESTAMP)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_TIMESTAMP] > SECONDARY_INTERVAL_TIMESTAMP * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_TIMESTAMP);
     }
 
 }

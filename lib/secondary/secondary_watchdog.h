@@ -55,6 +55,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INTERVAL_PEDALS_OUTPUT 10
 #define SECONDARY_INTERVAL_STEERING_ANGLE 10
 #define SECONDARY_INTERVAL_CONTROL_STATE 100
+#define SECONDARY_INTERVAL_TIMESTAMP 500
 
 
 #define SECONDARY_INDEX_IMU_ANGULAR_RATE 0
@@ -77,19 +78,20 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INDEX_IRTS_RR_3 17
 #define SECONDARY_INDEX_GPS_COORDS 18
 #define SECONDARY_INDEX_GPS_SPEED 19
-#define SECONDARY_INDEX_LAP_COUNT 20
-#define SECONDARY_INDEX_PEDALS_OUTPUT 21
-#define SECONDARY_INDEX_STEERING_ANGLE 22
-#define SECONDARY_INDEX_CONTROL_STATE 23
-#define SECONDARY_INDEX_TPMS 24
+#define SECONDARY_INDEX_PEDALS_OUTPUT 20
+#define SECONDARY_INDEX_STEERING_ANGLE 21
+#define SECONDARY_INDEX_CONTROL_STATE 22
+#define SECONDARY_INDEX_TPMS 23
+#define SECONDARY_INDEX_LAP_COUNT 24
 #define SECONDARY_INDEX_LC_STATUS 25
+#define SECONDARY_INDEX_TIMESTAMP 26
 
 
 
 typedef struct {
     uint8_t activated[4];
     uint8_t timeout[4];
-    canlib_watchdog_timestamp last_reset[26];
+    canlib_watchdog_timestamp last_reset[27];
 } secondary_watchdog;
 
 int secondary_watchdog_interval_from_id(uint16_t message_id);
