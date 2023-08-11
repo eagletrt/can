@@ -650,10 +650,10 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ SNr m98 : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ DeviceType m103 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ Firmware m27 : 8|12@1+ (1,0) [0|4095] "" Vector__XXX
- SG_ N_Actual_Filt m168 : 8|16@1- (0.1098666341,0) [-3600.1098661888|3599.9999995547] "rpm" Vector__XXX
+ SG_ N_Actual_Filt m168 : 8|16@1- (0.1,0) [3276.8|3276.7] "rpm" Vector__XXX
  SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
  SG_ N_R_Dec m237 : 8|16@1+ (1,0) [0|30000] "ms" Vector__XXX
- SG_ N_Actual m48 : 8|16@1- (0.1098666341,0) [-3600|3599.9999995547] "Num" Vector__XXX
+ SG_ N_Actual m48 : 8|16@1- (0.1,0) [-3276.8|3276.7] "Num" Vector__XXX
  SG_ Rcv_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 514 INV_R_SEND: 5 Vector__XXX
@@ -1270,10 +1270,10 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ SNr m98 : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ DeviceType m103 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ Firmware m27 : 8|12@1+ (1,0) [0|4095] "" Vector__XXX
- SG_ N_Actual_Filt m168 : 8|16@1- (0.1098666341,0) [-3600.1098661888|3599.9999995547] "rpm" Vector__XXX
+ SG_ N_Actual_Filt m168 : 8|16@1- (0.1,0) [3276.8|3276.7] "rpm" Vector__XXX
  SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
  SG_ N_R_Dec m237 : 8|16@1+ (1,0) [0|30000] "ms" Vector__XXX
- SG_ N_Actual m48 : 8|16@1- (0.1098666341,0) [-3600|3599.9999995547] "Num" Vector__XXX
+ SG_ N_Actual m48 : 8|16@1- (0.1,0) [-3276.8|3276.7] "Num" Vector__XXX
  SG_ Rcv_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 
