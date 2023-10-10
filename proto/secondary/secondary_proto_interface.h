@@ -910,7 +910,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1025: {
+        case 1027: {
             secondary_gps_coords_t* msg = (secondary_gps_coords_t*)(device->message);
             secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
 			proto_msg->set_latitude(msg->latitude);
@@ -922,7 +922,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1057: {
+        case 1059: {
             secondary_gps_speed_t* msg = (secondary_gps_speed_t*)(device->message);
             secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
 			proto_msg->set_speed(msg->speed);
@@ -933,7 +933,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 769: {
+        case 771: {
             secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)(device->message);
             secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
 			proto_msg->set_apps(msg->apps);
@@ -946,7 +946,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 256: {
+        case 260: {
             secondary_steering_angle_converted_t* msg = (secondary_steering_angle_converted_t*)(device->message);
             secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
@@ -957,7 +957,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1284: {
+        case 1281: {
             secondary_control_state_converted_t* msg = (secondary_control_state_converted_t*)(device->message);
             secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
 			proto_msg->set_map_pw(msg->map_pw);
@@ -970,7 +970,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 513: {
+        case 515: {
             secondary_tpms_converted_t* msg = (secondary_tpms_converted_t*)(device->message);
             secondary::TPMS* proto_msg = pack->add_tpms();
 			proto_msg->set_fl_pressure(msg->fl_pressure);
@@ -988,7 +988,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1089: {
+        case 1091: {
             secondary_lap_count_converted_t* msg = (secondary_lap_count_converted_t*)(device->message);
             secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
 			proto_msg->set_lap_count(msg->lap_count);
@@ -1013,7 +1013,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 259: {
+        case 256: {
             secondary_timestamp_t* msg = (secondary_timestamp_t*)(device->message);
             secondary::TIMESTAMP* proto_msg = pack->add_timestamp();
 			proto_msg->set_timestamp(msg->timestamp);
