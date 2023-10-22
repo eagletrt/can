@@ -288,6 +288,20 @@
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
       "contents": {}
+    },
+    {
+        "name": "CELLBOARD_VERSION",
+        "topic": "VERSION",
+        "priority": 6,
+        "sending": ["CELLBOARD"],
+        "receiving": ["MAINBOARD"],
+        "description": "Periodic message containing current can definition version",
+        "interval": 1000,
+        "contents": {
+            "cellboard_id": "Cellboard",
+            "component_build_hash": "uint32",
+            "canlib_build_time": "uint32"
+        }
     }
   ]
 }
