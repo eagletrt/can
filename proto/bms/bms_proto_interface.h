@@ -536,6 +536,22 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 
     }
 
+    for(int i = 0; i < pack->cellboard_version_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->cellboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cellboard_version(i)._inner_timestamp();
+        (*net_signals)["CELLBOARD_VERSION"]["_timestamp"].push(pack->cellboard_version(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["CELLBOARD_VERSION"]["cellboard_id"].push(pack->cellboard_version(i).cellboard_id());
+		bms_cellboard_version_cellboard_id_enum_to_string((bms_cellboard_version_cellboard_id)pack->cellboard_version(i).cellboard_id(), buffer);
+		(*net_strings)["CELLBOARD_VERSION"]["cellboard_id"].push(buffer);
+		(*net_signals)["CELLBOARD_VERSION"]["component_build_hash"].push(pack->cellboard_version(i).component_build_hash());
+		(*net_signals)["CELLBOARD_VERSION"]["canlib_build_time"].push(pack->cellboard_version(i).canlib_build_time());
+
+    }
+
 }
 
 void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack, device_t* device) {
@@ -614,7 +630,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 515: {
+        case 516: {
             bms_voltages_info_converted_t* msg = (bms_voltages_info_converted_t*)(device->message);
             bms::VOLTAGES_INFO* proto_msg = pack->add_voltages_info();
 			proto_msg->set_cellboard_id((bms::bms_voltages_info_cellboard_id)msg->cellboard_id);
@@ -628,7 +644,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 547: {
+        case 548: {
             bms_voltages_converted_t* msg = (bms_voltages_converted_t*)(device->message);
             bms::VOLTAGES* proto_msg = pack->add_voltages();
 			proto_msg->set_cellboard_id((bms::bms_voltages_cellboard_id)msg->cellboard_id);
@@ -781,6 +797,19 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         case 15: {
             bms_flash_cellboard_5_rx_t* msg = (bms_flash_cellboard_5_rx_t*)(device->message);
             bms::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 259: {
+            bms_cellboard_version_t* msg = (bms_cellboard_version_t*)(device->message);
+            bms::CELLBOARD_VERSION* proto_msg = pack->add_cellboard_version();
+			proto_msg->set_cellboard_id((bms::bms_cellboard_version_cellboard_id)msg->cellboard_id);
+			proto_msg->set_component_build_hash(msg->component_build_hash);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

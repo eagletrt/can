@@ -52,6 +52,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define CANLIB_INTERVAL_THRESHOLD 500
 #endif // CANLIB_INTERVAL_THRESHOLD
 
+#define BMS_INTERVAL_CELLBOARD_VERSION 1000
 
 
 #define BMS_INDEX_BOARD_STATUS 0
@@ -73,13 +74,14 @@ typedef void (*canlib_watchdog_callback)(int);
 #define BMS_INDEX_FLASH_CELLBOARD_4_RX 16
 #define BMS_INDEX_FLASH_CELLBOARD_5_TX 17
 #define BMS_INDEX_FLASH_CELLBOARD_5_RX 18
+#define BMS_INDEX_CELLBOARD_VERSION 19
 
 
 
 typedef struct {
     uint8_t activated[3];
     uint8_t timeout[3];
-    canlib_watchdog_timestamp last_reset[19];
+    canlib_watchdog_timestamp last_reset[20];
 } bms_watchdog;
 
 int bms_watchdog_interval_from_id(uint16_t message_id);

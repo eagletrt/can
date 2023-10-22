@@ -734,16 +734,16 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->hv_version_size(); i++){
+    for(int i = 0; i < pack->mainboard_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_version(i)._inner_timestamp();
-        (*net_signals)["HV_VERSION"]["_timestamp"].push(pack->hv_version(i)._inner_timestamp());
+        if(pack->mainboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->mainboard_version(i)._inner_timestamp();
+        (*net_signals)["MAINBOARD_VERSION"]["_timestamp"].push(pack->mainboard_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_VERSION"]["component_version"].push(pack->hv_version(i).component_version());
-		(*net_signals)["HV_VERSION"]["canlib_build_time"].push(pack->hv_version(i).canlib_build_time());
+		(*net_signals)["MAINBOARD_VERSION"]["component_version"].push(pack->mainboard_version(i).component_version());
+		(*net_signals)["MAINBOARD_VERSION"]["canlib_build_time"].push(pack->mainboard_version(i).canlib_build_time());
 
     }
 
@@ -770,6 +770,22 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
 		(*net_signals)["TLM_VERSION"]["component_version"].push(pack->tlm_version(i).component_version());
 		(*net_signals)["TLM_VERSION"]["canlib_build_time"].push(pack->tlm_version(i).canlib_build_time());
+
+    }
+
+    for(int i = 0; i < pack->cellboard_version_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->cellboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cellboard_version(i)._inner_timestamp();
+        (*net_signals)["CELLBOARD_VERSION"]["_timestamp"].push(pack->cellboard_version(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["CELLBOARD_VERSION"]["cellboard_id"].push(pack->cellboard_version(i).cellboard_id());
+		primary_cellboard_version_cellboard_id_enum_to_string((primary_cellboard_version_cellboard_id)pack->cellboard_version(i).cellboard_id(), buffer);
+		(*net_strings)["CELLBOARD_VERSION"]["cellboard_id"].push(buffer);
+		(*net_signals)["CELLBOARD_VERSION"]["component_version"].push(pack->cellboard_version(i).component_version());
+		(*net_signals)["CELLBOARD_VERSION"]["canlib_build_time"].push(pack->cellboard_version(i).canlib_build_time());
 
     }
 
@@ -969,54 +985,127 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->hv_feedbacks_status_size(); i++){
+    for(int i = 0; i < pack->hv_feedback_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_feedbacks_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_feedbacks_status(i)._inner_timestamp();
-        (*net_signals)["HV_FEEDBACKS_STATUS"]["_timestamp"].push(pack->hv_feedbacks_status(i)._inner_timestamp());
+        if(pack->hv_feedback_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_feedback_status(i)._inner_timestamp();
+        (*net_signals)["HV_FEEDBACK_STATUS"]["_timestamp"].push(pack->hv_feedback_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_implausibility_detected"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_implausibility_detected());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_imd_cockpit"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_imd_cockpit());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_tsal_green_fault_latched"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_tsal_green_fault_latched());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_bms_cockpit"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_bms_cockpit());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_ext_latched"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_ext_latched());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_tsal_green"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_tsal_green());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_ts_over_60v_status"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_ts_over_60v_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_airn_status"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_airn_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_airp_status"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_airp_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_airp_gate"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_airp_gate());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_airn_gate"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_airn_gate());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_precharge_status"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_precharge_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_tsp_over_60v_status"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_tsp_over_60v_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_imd_fault"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_imd_fault());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_check_mux"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_check_mux());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_sd_end"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_sd_end());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_sd_out"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_sd_out());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_sd_in"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_sd_in());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_sd_bms"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_sd_bms());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["feedbacks_status_feedback_sd_imd"].push(pack->hv_feedbacks_status(i).feedbacks_status_feedback_sd_imd());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_implausibility_detected"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_implausibility_detected());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_imd_cockpit"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_imd_cockpit());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_tsal_green_fault_latched"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_tsal_green_fault_latched());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_bms_cockpit"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_bms_cockpit());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_ext_latched"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_ext_latched());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_tsal_green"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_tsal_green());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_ts_over_60v_status"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_ts_over_60v_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_airn_status"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_airn_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_airp_status"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_airp_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_airp_gate"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_airp_gate());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_airn_gate"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_airn_gate());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_precharge_status"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_precharge_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_tsp_over_60v_status"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_tsp_over_60v_status());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_imd_fault"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_imd_fault());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_check_mux"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_check_mux());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_sd_end"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_sd_end());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_sd_out"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_sd_out());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_sd_in"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_sd_in());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_sd_bms"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_sd_bms());
-		(*net_enums)["HV_FEEDBACKS_STATUS"]["is_circuitry_error_feedback_sd_imd"].push(pack->hv_feedbacks_status(i).is_circuitry_error_feedback_sd_imd());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_implausibility_detected"].push(pack->hv_feedback_status(i).feedback_implausibility_detected());
+		primary_hv_feedback_status_feedback_implausibility_detected_enum_to_string((primary_hv_feedback_status_feedback_implausibility_detected)pack->hv_feedback_status(i).feedback_implausibility_detected(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_implausibility_detected"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_imd_cockpit"].push(pack->hv_feedback_status(i).feedback_imd_cockpit());
+		primary_hv_feedback_status_feedback_imd_cockpit_enum_to_string((primary_hv_feedback_status_feedback_imd_cockpit)pack->hv_feedback_status(i).feedback_imd_cockpit(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_imd_cockpit"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsal_green_fault_latched"].push(pack->hv_feedback_status(i).feedback_tsal_green_fault_latched());
+		primary_hv_feedback_status_feedback_tsal_green_fault_latched_enum_to_string((primary_hv_feedback_status_feedback_tsal_green_fault_latched)pack->hv_feedback_status(i).feedback_tsal_green_fault_latched(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsal_green_fault_latched"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_bms_cockpit"].push(pack->hv_feedback_status(i).feedback_bms_cockpit());
+		primary_hv_feedback_status_feedback_bms_cockpit_enum_to_string((primary_hv_feedback_status_feedback_bms_cockpit)pack->hv_feedback_status(i).feedback_bms_cockpit(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_bms_cockpit"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_ext_latched"].push(pack->hv_feedback_status(i).feedback_ext_latched());
+		primary_hv_feedback_status_feedback_ext_latched_enum_to_string((primary_hv_feedback_status_feedback_ext_latched)pack->hv_feedback_status(i).feedback_ext_latched(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_ext_latched"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsal_green"].push(pack->hv_feedback_status(i).feedback_tsal_green());
+		primary_hv_feedback_status_feedback_tsal_green_enum_to_string((primary_hv_feedback_status_feedback_tsal_green)pack->hv_feedback_status(i).feedback_tsal_green(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsal_green"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_ts_over_60v_status"].push(pack->hv_feedback_status(i).feedback_ts_over_60v_status());
+		primary_hv_feedback_status_feedback_ts_over_60v_status_enum_to_string((primary_hv_feedback_status_feedback_ts_over_60v_status)pack->hv_feedback_status(i).feedback_ts_over_60v_status(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_ts_over_60v_status"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airn_status"].push(pack->hv_feedback_status(i).feedback_airn_status());
+		primary_hv_feedback_status_feedback_airn_status_enum_to_string((primary_hv_feedback_status_feedback_airn_status)pack->hv_feedback_status(i).feedback_airn_status(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airn_status"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airp_status"].push(pack->hv_feedback_status(i).feedback_airp_status());
+		primary_hv_feedback_status_feedback_airp_status_enum_to_string((primary_hv_feedback_status_feedback_airp_status)pack->hv_feedback_status(i).feedback_airp_status(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airp_status"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airp_gate"].push(pack->hv_feedback_status(i).feedback_airp_gate());
+		primary_hv_feedback_status_feedback_airp_gate_enum_to_string((primary_hv_feedback_status_feedback_airp_gate)pack->hv_feedback_status(i).feedback_airp_gate(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airp_gate"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airn_gate"].push(pack->hv_feedback_status(i).feedback_airn_gate());
+		primary_hv_feedback_status_feedback_airn_gate_enum_to_string((primary_hv_feedback_status_feedback_airn_gate)pack->hv_feedback_status(i).feedback_airn_gate(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airn_gate"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_precharge_status"].push(pack->hv_feedback_status(i).feedback_precharge_status());
+		primary_hv_feedback_status_feedback_precharge_status_enum_to_string((primary_hv_feedback_status_feedback_precharge_status)pack->hv_feedback_status(i).feedback_precharge_status(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_precharge_status"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsp_over_60v_status"].push(pack->hv_feedback_status(i).feedback_tsp_over_60v_status());
+		primary_hv_feedback_status_feedback_tsp_over_60v_status_enum_to_string((primary_hv_feedback_status_feedback_tsp_over_60v_status)pack->hv_feedback_status(i).feedback_tsp_over_60v_status(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsp_over_60v_status"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_imd_fault"].push(pack->hv_feedback_status(i).feedback_imd_fault());
+		primary_hv_feedback_status_feedback_imd_fault_enum_to_string((primary_hv_feedback_status_feedback_imd_fault)pack->hv_feedback_status(i).feedback_imd_fault(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_imd_fault"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_check_mux"].push(pack->hv_feedback_status(i).feedback_check_mux());
+		primary_hv_feedback_status_feedback_check_mux_enum_to_string((primary_hv_feedback_status_feedback_check_mux)pack->hv_feedback_status(i).feedback_check_mux(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_check_mux"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_end"].push(pack->hv_feedback_status(i).feedback_sd_end());
+		primary_hv_feedback_status_feedback_sd_end_enum_to_string((primary_hv_feedback_status_feedback_sd_end)pack->hv_feedback_status(i).feedback_sd_end(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_end"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_out"].push(pack->hv_feedback_status(i).feedback_sd_out());
+		primary_hv_feedback_status_feedback_sd_out_enum_to_string((primary_hv_feedback_status_feedback_sd_out)pack->hv_feedback_status(i).feedback_sd_out(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_out"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_in"].push(pack->hv_feedback_status(i).feedback_sd_in());
+		primary_hv_feedback_status_feedback_sd_in_enum_to_string((primary_hv_feedback_status_feedback_sd_in)pack->hv_feedback_status(i).feedback_sd_in(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_in"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_bms"].push(pack->hv_feedback_status(i).feedback_sd_bms());
+		primary_hv_feedback_status_feedback_sd_bms_enum_to_string((primary_hv_feedback_status_feedback_sd_bms)pack->hv_feedback_status(i).feedback_sd_bms(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_bms"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_imd"].push(pack->hv_feedback_status(i).feedback_sd_imd());
+		primary_hv_feedback_status_feedback_sd_imd_enum_to_string((primary_hv_feedback_status_feedback_sd_imd)pack->hv_feedback_status(i).feedback_sd_imd(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_imd"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->hv_feedback_ts_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_feedback_ts_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_feedback_ts_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_ts_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_ts_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).feedback_ts_over_60v_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airn_status"].push(pack->hv_feedback_ts_voltage(i).feedback_airn_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airp_status"].push(pack->hv_feedback_ts_voltage(i).feedback_airp_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airp_gate"].push(pack->hv_feedback_ts_voltage(i).feedback_airp_gate());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airn_gate"].push(pack->hv_feedback_ts_voltage(i).feedback_airn_gate());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_precharge_status"].push(pack->hv_feedback_ts_voltage(i).feedback_precharge_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_tsp_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).feedback_tsp_over_60v_status());
+
+    }
+
+    for(int i = 0; i < pack->hv_feedback_misc_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_feedback_misc_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_feedback_misc_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_misc_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_implausibility_detected"].push(pack->hv_feedback_misc_voltage(i).feedback_implausibility_detected());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_imd_cockpit"].push(pack->hv_feedback_misc_voltage(i).feedback_imd_cockpit());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_tsal_green_fault_latched"].push(pack->hv_feedback_misc_voltage(i).feedback_tsal_green_fault_latched());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_bms_cockpit"].push(pack->hv_feedback_misc_voltage(i).feedback_bms_cockpit());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_ext_latched"].push(pack->hv_feedback_misc_voltage(i).feedback_ext_latched());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_tsal_green"].push(pack->hv_feedback_misc_voltage(i).feedback_tsal_green());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["imd_fault"].push(pack->hv_feedback_misc_voltage(i).imd_fault());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_check_mux"].push(pack->hv_feedback_misc_voltage(i).feedback_check_mux());
+
+    }
+
+    for(int i = 0; i < pack->hv_feedback_sd_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_feedback_sd_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_feedback_sd_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_sd_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_end"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_end());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_out"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_out());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_in"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_in());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_bms"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_bms());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_imd"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_imd());
 
     }
 
@@ -1032,7 +1121,10 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["HV_IMD_STATUS"]["imd_status"].push(pack->hv_imd_status(i).imd_status());
 		primary_hv_imd_status_imd_status_enum_to_string((primary_hv_imd_status_imd_status)pack->hv_imd_status(i).imd_status(), buffer);
 		(*net_strings)["HV_IMD_STATUS"]["imd_status"].push(buffer);
-		(*net_signals)["HV_IMD_STATUS"]["imd_info"].push(pack->hv_imd_status(i).imd_info());
+		(*net_signals)["HV_IMD_STATUS"]["imd_details"].push(pack->hv_imd_status(i).imd_details());
+		(*net_signals)["HV_IMD_STATUS"]["imd_duty_cycle"].push(pack->hv_imd_status(i).imd_duty_cycle());
+		(*net_signals)["HV_IMD_STATUS"]["imd_freq"].push(pack->hv_imd_status(i).imd_freq());
+		(*net_signals)["HV_IMD_STATUS"]["imd_period"].push(pack->hv_imd_status(i).imd_period());
 
     }
 
@@ -2216,8 +2308,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 702: {
-            primary_hv_version_t* msg = (primary_hv_version_t*)(device->message);
-            primary::HV_VERSION* proto_msg = pack->add_hv_version();
+            primary_mainboard_version_t* msg = (primary_mainboard_version_t*)(device->message);
+            primary::MAINBOARD_VERSION* proto_msg = pack->add_mainboard_version();
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
@@ -2242,6 +2334,19 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 704: {
             primary_tlm_version_t* msg = (primary_tlm_version_t*)(device->message);
             primary::TLM_VERSION* proto_msg = pack->add_tlm_version();
+			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 705: {
+            primary_cellboard_version_t* msg = (primary_cellboard_version_t*)(device->message);
+            primary::CELLBOARD_VERSION* proto_msg = pack->add_cellboard_version();
+			proto_msg->set_cellboard_id((primary::primary_cellboard_version_cellboard_id)msg->cellboard_id);
 			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
@@ -2426,48 +2531,78 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 771: {
-            primary_hv_feedbacks_status_t* msg = (primary_hv_feedbacks_status_t*)(device->message);
-            primary::HV_FEEDBACKS_STATUS* proto_msg = pack->add_hv_feedbacks_status();
-			proto_msg->set_feedbacks_status_feedback_implausibility_detected(msg->feedbacks_status_feedback_implausibility_detected);
-			proto_msg->set_feedbacks_status_feedback_imd_cockpit(msg->feedbacks_status_feedback_imd_cockpit);
-			proto_msg->set_feedbacks_status_feedback_tsal_green_fault_latched(msg->feedbacks_status_feedback_tsal_green_fault_latched);
-			proto_msg->set_feedbacks_status_feedback_bms_cockpit(msg->feedbacks_status_feedback_bms_cockpit);
-			proto_msg->set_feedbacks_status_feedback_ext_latched(msg->feedbacks_status_feedback_ext_latched);
-			proto_msg->set_feedbacks_status_feedback_tsal_green(msg->feedbacks_status_feedback_tsal_green);
-			proto_msg->set_feedbacks_status_feedback_ts_over_60v_status(msg->feedbacks_status_feedback_ts_over_60v_status);
-			proto_msg->set_feedbacks_status_feedback_airn_status(msg->feedbacks_status_feedback_airn_status);
-			proto_msg->set_feedbacks_status_feedback_airp_status(msg->feedbacks_status_feedback_airp_status);
-			proto_msg->set_feedbacks_status_feedback_airp_gate(msg->feedbacks_status_feedback_airp_gate);
-			proto_msg->set_feedbacks_status_feedback_airn_gate(msg->feedbacks_status_feedback_airn_gate);
-			proto_msg->set_feedbacks_status_feedback_precharge_status(msg->feedbacks_status_feedback_precharge_status);
-			proto_msg->set_feedbacks_status_feedback_tsp_over_60v_status(msg->feedbacks_status_feedback_tsp_over_60v_status);
-			proto_msg->set_feedbacks_status_feedback_imd_fault(msg->feedbacks_status_feedback_imd_fault);
-			proto_msg->set_feedbacks_status_feedback_check_mux(msg->feedbacks_status_feedback_check_mux);
-			proto_msg->set_feedbacks_status_feedback_sd_end(msg->feedbacks_status_feedback_sd_end);
-			proto_msg->set_feedbacks_status_feedback_sd_out(msg->feedbacks_status_feedback_sd_out);
-			proto_msg->set_feedbacks_status_feedback_sd_in(msg->feedbacks_status_feedback_sd_in);
-			proto_msg->set_feedbacks_status_feedback_sd_bms(msg->feedbacks_status_feedback_sd_bms);
-			proto_msg->set_feedbacks_status_feedback_sd_imd(msg->feedbacks_status_feedback_sd_imd);
-			proto_msg->set_is_circuitry_error_feedback_implausibility_detected(msg->is_circuitry_error_feedback_implausibility_detected);
-			proto_msg->set_is_circuitry_error_feedback_imd_cockpit(msg->is_circuitry_error_feedback_imd_cockpit);
-			proto_msg->set_is_circuitry_error_feedback_tsal_green_fault_latched(msg->is_circuitry_error_feedback_tsal_green_fault_latched);
-			proto_msg->set_is_circuitry_error_feedback_bms_cockpit(msg->is_circuitry_error_feedback_bms_cockpit);
-			proto_msg->set_is_circuitry_error_feedback_ext_latched(msg->is_circuitry_error_feedback_ext_latched);
-			proto_msg->set_is_circuitry_error_feedback_tsal_green(msg->is_circuitry_error_feedback_tsal_green);
-			proto_msg->set_is_circuitry_error_feedback_ts_over_60v_status(msg->is_circuitry_error_feedback_ts_over_60v_status);
-			proto_msg->set_is_circuitry_error_feedback_airn_status(msg->is_circuitry_error_feedback_airn_status);
-			proto_msg->set_is_circuitry_error_feedback_airp_status(msg->is_circuitry_error_feedback_airp_status);
-			proto_msg->set_is_circuitry_error_feedback_airp_gate(msg->is_circuitry_error_feedback_airp_gate);
-			proto_msg->set_is_circuitry_error_feedback_airn_gate(msg->is_circuitry_error_feedback_airn_gate);
-			proto_msg->set_is_circuitry_error_feedback_precharge_status(msg->is_circuitry_error_feedback_precharge_status);
-			proto_msg->set_is_circuitry_error_feedback_tsp_over_60v_status(msg->is_circuitry_error_feedback_tsp_over_60v_status);
-			proto_msg->set_is_circuitry_error_feedback_imd_fault(msg->is_circuitry_error_feedback_imd_fault);
-			proto_msg->set_is_circuitry_error_feedback_check_mux(msg->is_circuitry_error_feedback_check_mux);
-			proto_msg->set_is_circuitry_error_feedback_sd_end(msg->is_circuitry_error_feedback_sd_end);
-			proto_msg->set_is_circuitry_error_feedback_sd_out(msg->is_circuitry_error_feedback_sd_out);
-			proto_msg->set_is_circuitry_error_feedback_sd_in(msg->is_circuitry_error_feedback_sd_in);
-			proto_msg->set_is_circuitry_error_feedback_sd_bms(msg->is_circuitry_error_feedback_sd_bms);
-			proto_msg->set_is_circuitry_error_feedback_sd_imd(msg->is_circuitry_error_feedback_sd_imd);
+            primary_hv_feedback_status_t* msg = (primary_hv_feedback_status_t*)(device->message);
+            primary::HV_FEEDBACK_STATUS* proto_msg = pack->add_hv_feedback_status();
+			proto_msg->set_feedback_implausibility_detected((primary::primary_hv_feedback_status_feedback_implausibility_detected)msg->feedback_implausibility_detected);
+			proto_msg->set_feedback_imd_cockpit((primary::primary_hv_feedback_status_feedback_imd_cockpit)msg->feedback_imd_cockpit);
+			proto_msg->set_feedback_tsal_green_fault_latched((primary::primary_hv_feedback_status_feedback_tsal_green_fault_latched)msg->feedback_tsal_green_fault_latched);
+			proto_msg->set_feedback_bms_cockpit((primary::primary_hv_feedback_status_feedback_bms_cockpit)msg->feedback_bms_cockpit);
+			proto_msg->set_feedback_ext_latched((primary::primary_hv_feedback_status_feedback_ext_latched)msg->feedback_ext_latched);
+			proto_msg->set_feedback_tsal_green((primary::primary_hv_feedback_status_feedback_tsal_green)msg->feedback_tsal_green);
+			proto_msg->set_feedback_ts_over_60v_status((primary::primary_hv_feedback_status_feedback_ts_over_60v_status)msg->feedback_ts_over_60v_status);
+			proto_msg->set_feedback_airn_status((primary::primary_hv_feedback_status_feedback_airn_status)msg->feedback_airn_status);
+			proto_msg->set_feedback_airp_status((primary::primary_hv_feedback_status_feedback_airp_status)msg->feedback_airp_status);
+			proto_msg->set_feedback_airp_gate((primary::primary_hv_feedback_status_feedback_airp_gate)msg->feedback_airp_gate);
+			proto_msg->set_feedback_airn_gate((primary::primary_hv_feedback_status_feedback_airn_gate)msg->feedback_airn_gate);
+			proto_msg->set_feedback_precharge_status((primary::primary_hv_feedback_status_feedback_precharge_status)msg->feedback_precharge_status);
+			proto_msg->set_feedback_tsp_over_60v_status((primary::primary_hv_feedback_status_feedback_tsp_over_60v_status)msg->feedback_tsp_over_60v_status);
+			proto_msg->set_feedback_imd_fault((primary::primary_hv_feedback_status_feedback_imd_fault)msg->feedback_imd_fault);
+			proto_msg->set_feedback_check_mux((primary::primary_hv_feedback_status_feedback_check_mux)msg->feedback_check_mux);
+			proto_msg->set_feedback_sd_end((primary::primary_hv_feedback_status_feedback_sd_end)msg->feedback_sd_end);
+			proto_msg->set_feedback_sd_out((primary::primary_hv_feedback_status_feedback_sd_out)msg->feedback_sd_out);
+			proto_msg->set_feedback_sd_in((primary::primary_hv_feedback_status_feedback_sd_in)msg->feedback_sd_in);
+			proto_msg->set_feedback_sd_bms((primary::primary_hv_feedback_status_feedback_sd_bms)msg->feedback_sd_bms);
+			proto_msg->set_feedback_sd_imd((primary::primary_hv_feedback_status_feedback_sd_imd)msg->feedback_sd_imd);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 516: {
+            primary_hv_feedback_ts_voltage_converted_t* msg = (primary_hv_feedback_ts_voltage_converted_t*)(device->message);
+            primary::HV_FEEDBACK_TS_VOLTAGE* proto_msg = pack->add_hv_feedback_ts_voltage();
+			proto_msg->set_feedback_ts_over_60v_status(msg->feedback_ts_over_60v_status);
+			proto_msg->set_feedback_airn_status(msg->feedback_airn_status);
+			proto_msg->set_feedback_airp_status(msg->feedback_airp_status);
+			proto_msg->set_feedback_airp_gate(msg->feedback_airp_gate);
+			proto_msg->set_feedback_airn_gate(msg->feedback_airn_gate);
+			proto_msg->set_feedback_precharge_status(msg->feedback_precharge_status);
+			proto_msg->set_feedback_tsp_over_60v_status(msg->feedback_tsp_over_60v_status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 548: {
+            primary_hv_feedback_misc_voltage_converted_t* msg = (primary_hv_feedback_misc_voltage_converted_t*)(device->message);
+            primary::HV_FEEDBACK_MISC_VOLTAGE* proto_msg = pack->add_hv_feedback_misc_voltage();
+			proto_msg->set_feedback_implausibility_detected(msg->feedback_implausibility_detected);
+			proto_msg->set_feedback_imd_cockpit(msg->feedback_imd_cockpit);
+			proto_msg->set_feedback_tsal_green_fault_latched(msg->feedback_tsal_green_fault_latched);
+			proto_msg->set_feedback_bms_cockpit(msg->feedback_bms_cockpit);
+			proto_msg->set_feedback_ext_latched(msg->feedback_ext_latched);
+			proto_msg->set_feedback_tsal_green(msg->feedback_tsal_green);
+			proto_msg->set_imd_fault(msg->imd_fault);
+			proto_msg->set_feedback_check_mux(msg->feedback_check_mux);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 580: {
+            primary_hv_feedback_sd_voltage_converted_t* msg = (primary_hv_feedback_sd_voltage_converted_t*)(device->message);
+            primary::HV_FEEDBACK_SD_VOLTAGE* proto_msg = pack->add_hv_feedback_sd_voltage();
+			proto_msg->set_feedback_sd_end(msg->feedback_sd_end);
+			proto_msg->set_feedback_sd_out(msg->feedback_sd_out);
+			proto_msg->set_feedback_sd_in(msg->feedback_sd_in);
+			proto_msg->set_feedback_sd_bms(msg->feedback_sd_bms);
+			proto_msg->set_feedback_sd_imd(msg->feedback_sd_imd);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2480,7 +2615,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
 			proto_msg->set_imd_status((primary::primary_hv_imd_status_imd_status)msg->imd_status);
-			proto_msg->set_imd_info(msg->imd_info);
+			proto_msg->set_imd_details(msg->imd_details);
+			proto_msg->set_imd_duty_cycle(msg->imd_duty_cycle);
+			proto_msg->set_imd_freq(msg->imd_freq);
+			proto_msg->set_imd_period(msg->imd_period);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

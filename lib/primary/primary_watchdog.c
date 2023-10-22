@@ -5,9 +5,10 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
        case 700: return PRIMARY_INTERVAL_STEER_VERSION;
        case 701: return PRIMARY_INTERVAL_DAS_VERSION;
-       case 702: return PRIMARY_INTERVAL_HV_VERSION;
+       case 702: return PRIMARY_INTERVAL_MAINBOARD_VERSION;
        case 703: return PRIMARY_INTERVAL_LV_VERSION;
        case 704: return PRIMARY_INTERVAL_TLM_VERSION;
+       case 705: return PRIMARY_INTERVAL_CELLBOARD_VERSION;
        case 257: return PRIMARY_INTERVAL_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INTERVAL_DATA_LOGGER;
        case 264: return PRIMARY_INTERVAL_TLM_STATUS;
@@ -90,9 +91,10 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 24: return PRIMARY_INDEX_FLASH_STEERING_RX;
        case 700: return PRIMARY_INDEX_STEER_VERSION;
        case 701: return PRIMARY_INDEX_DAS_VERSION;
-       case 702: return PRIMARY_INDEX_HV_VERSION;
+       case 702: return PRIMARY_INDEX_MAINBOARD_VERSION;
        case 703: return PRIMARY_INDEX_LV_VERSION;
        case 704: return PRIMARY_INDEX_TLM_VERSION;
+       case 705: return PRIMARY_INDEX_CELLBOARD_VERSION;
        case 257: return PRIMARY_INDEX_AMBIENT_TEMPERATURE;
        case 1072: return PRIMARY_INDEX_DATA_LOGGER;
        case 265: return PRIMARY_INDEX_SET_TLM_STATUS;
@@ -105,7 +107,10 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 32: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
        case 37: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
        case 773: return PRIMARY_INDEX_HV_FANS_OVERRIDE_STATUS;
-       case 771: return PRIMARY_INDEX_HV_FEEDBACKS_STATUS;
+       case 771: return PRIMARY_INDEX_HV_FEEDBACK_STATUS;
+       case 516: return PRIMARY_INDEX_HV_FEEDBACK_TS_VOLTAGE;
+       case 548: return PRIMARY_INDEX_HV_FEEDBACK_MISC_VOLTAGE;
+       case 580: return PRIMARY_INDEX_HV_FEEDBACK_SD_VOLTAGE;
        case 803: return PRIMARY_INDEX_HV_IMD_STATUS;
        case 84: return PRIMARY_INDEX_TS_STATUS;
        case 82: return PRIMARY_INDEX_SET_TS_STATUS_DAS;
@@ -161,7 +166,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 95 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 99 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -188,10 +193,10 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VERSION] > PRIMARY_INTERVAL_HV_VERSION * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_MAINBOARD_VERSION)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_MAINBOARD_VERSION] > PRIMARY_INTERVAL_MAINBOARD_VERSION * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_VERSION);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_MAINBOARD_VERSION);
     }
 
     if (
@@ -206,6 +211,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_VERSION] > PRIMARY_INTERVAL_TLM_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_VERSION);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CELLBOARD_VERSION)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CELLBOARD_VERSION] > PRIMARY_INTERVAL_CELLBOARD_VERSION * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CELLBOARD_VERSION);
     }
 
     if (

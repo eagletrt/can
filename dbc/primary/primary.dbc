@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: BMS_LV BMS_HV STEER STEER DATA_LOGGER DAS BMS_HV BMS_LV DAS STEER STEER STEER DAS HANDCART DAS HANDCART INVERTER_L BMS_HV DAS BMS_HV STEER HANDCART DAS BMS_LV BMS_HV HANDCART BMS_HV HANDCART HANDCART TLM BMS_HV STEER TLM DAS HANDCART STEER BMS_HV DAS HANDCART TLM BMS_HV STEER BMS_HV BMS_HV STEER BMS_LW TLM DAS STEER TLM STEER BMS_HV BMS_LV DAS BMS_LV BMS_HW TLM STEER STEER DAS DAS DAS DAS BMS_HV STEER BMS_HV TLM DAS STEER STEER DAS STEER BMS_LV HANDCART TLM HANDCART HANDCART STEER DAS STEER STEER BMS_HV DAS STEER DAS BMS_LV DAS STEER HANDCART HANDCART DAS DAS STEER HANDCART BMS_LV HANDCART TLM BMS_HV DAS HANDCART BMS_LV BMS_HV TLM DAS STEER DAS STEER BMS_HV BMS_LV BMS_HV HANDCART STEER HANDCART BMS_LV BMS_HV DAS BMS_HV TLM BMS_LV HANDCART BMS_LV STEER HANDCART DAS BMS_HV DAS STEER DAS BMS_LV STEER HANDCART DAS DAS BMS_HV BMS_HV STEER BMS_HV TLM HANDCART HANDCART BMS_LV HANDCART TLM BMS_HV STEER HANDCART BMS_LV DAS BMS_HV DAS TLM HANDCART HANDCART BMS_HV STEER TLM HANDCART STEER HANDCART BMS_HV BMS_HV STEER TLM HANDCART TLM HANDCART BMS_HV BMS_HV STEER BMS_HV DAS HANDCART STEER HANDCART DAS STEER DAS DAS HANDCART HANDCART HANDCART STEER INVERTER_L BMS_HV BMS_HV DAS DAS BMS_LV DAS STEER INVERTER_L HANDCART STEER DAS INVERTER_L BMS_HV HANDCART DAS STEER BMS_HV BMS_HV STEER HANDCART DAS DAS BMS_HV STEER BMS_LV HANDCART HANDCART STEER TLM DAS DAS
+BU_: DAS STEER INVERTER_L BMS_HV DAS INVERTER_L STEER HANDCART DAS DAS DAS INVERTER_L HANDCART BMS_HV BMS_HV DAS STEER STEER STEER DAS DAS HANDCART BMS_HV HANDCART BMS_HV DAS STEER HANDCART BMS_LV DAS HANDCART HANDCART BMS_HV BMS_HV BMS_HV STEER TLM HANDCART DAS HANDCART BMS_HV BMS_HV BMS_HV BMS_HV HANDCART HANDCART HANDCART BMS_HV BMS_HV HANDCART HANDCART TLM BMS_HV BMS_HV STEER STEER BMS_HV TLM HANDCART DAS BMS_LV HANDCART BMS_LV STEER TLM DAS STEER BMS_HV DAS HANDCART BMS_HV STEER TLM DAS STEER BMS_HV DAS HANDCART BMS_LV STEER TLM DAS STEER BMS_HV DAS HANDCART HANDCART BMS_LV STEER TLM DAS STEER BMS_HV DAS TLM BMS_LV STEER STEER STEER DAS TLM BMS_LV TLM BMS_LV STEER DAS BMS_LV BMS_LV BMS_HV STEER TLM BMS_LV DAS STEER STEER STEER DATA_LOGGER DAS BMS_LV BMS_LV BMS_HV STEER TLM DAS STEER BMS_LV DAS STEER STEER DAS DAS HANDCART BMS_LV DAS BMS_HW STEER STEER DAS DAS BMS_LV TLM STEER STEER DAS DAS BMS_LV BMS_LW TLM STEER DAS DAS BMS_LV BMS_HW HANDCART BMS_HV TLM STEER DAS DAS STEER DAS DAS STEER STEER STEER DAS DAS DAS DAS HANDCART STEER STEER STEER STEER DAS HANDCART HANDCART BMS_HV DAS TLM HANDCART HANDCART HANDCART STEER BMS_HV BMS_HV DAS HANDCART BMS_HV HANDCART STEER BMS_HV BMS_HV BMS_HV BMS_HV DAS HANDCART HANDCART HANDCART STEER TLM BMS_HV BMS_HV BMS_HV STEER HANDCART HANDCART HANDCART TLM HANDCART BMS_HV HANDCART BMS_HV STEER HANDCART BMS_HV DAS DAS BMS_HV DAS BMS_HV HANDCART INVERTER_L BMS_HV STEER HANDCART
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -187,25 +187,30 @@ BO_ 23 FLASH_STEERING_TX: 0 Vector__XXX
 
 BO_ 24 FLASH_STEERING_RX: 0 Vector__XXX
 
-BO_ 700 STEER_VERSION: 5 Vector__XXX
- SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 700 STEER_VERSION: 8 Vector__XXX
+ SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 701 DAS_VERSION: 5 Vector__XXX
- SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 701 DAS_VERSION: 8 Vector__XXX
+ SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 702 HV_VERSION: 5 Vector__XXX
- SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 702 MAINBOARD_VERSION: 8 Vector__XXX
+ SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 703 LV_VERSION: 5 Vector__XXX
- SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 703 LV_VERSION: 8 Vector__XXX
+ SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
 
-BO_ 704 TLM_VERSION: 5 Vector__XXX
- SG_ canlib_build_time : 8|32@1+ (1,0) [0|4294967295] "" Vector__XXX
- SG_ component_version : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 704 TLM_VERSION: 8 Vector__XXX
+ SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 705 CELLBOARD_VERSION: 9 Vector__XXX
+ SG_ canlib_build_time : 35|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ component_version : 3|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
 BO_ 257 AMBIENT_TEMPERATURE: 2 Vector__XXX
  SG_ temp : 0|16@1- (1,-32768) [-32768|32767] "" Vector__XXX
@@ -285,50 +290,59 @@ BO_ 773 HV_FANS_OVERRIDE_STATUS: 3 Vector__XXX
  SG_ fans_speed : 1|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
  SG_ fans_override : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 771 HV_FEEDBACKS_STATUS: 5 Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_SD_IMD : 39|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_SD_BMS : 38|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_SD_IN : 37|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_SD_OUT : 36|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_SD_END : 35|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_CHECK_MUX : 34|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_IMD_FAULT : 33|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_TSP_OVER_60V_STATUS : 32|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_PRECHARGE_STATUS : 31|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_AIRN_GATE : 30|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_AIRP_GATE : 29|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_AIRP_STATUS : 28|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_AIRN_STATUS : 27|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_TS_OVER_60V_STATUS : 26|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_TSAL_GREEN : 25|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_EXT_LATCHED : 24|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_BMS_COCKPIT : 23|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_TSAL_GREEN_FAULT_LATCHED : 22|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_IMD_COCKPIT : 21|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ is_circuitry_error_FEEDBACK_IMPLAUSIBILITY_DETECTED : 20|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_SD_IMD : 19|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_SD_BMS : 18|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_SD_IN : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_SD_OUT : 16|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_SD_END : 15|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_CHECK_MUX : 14|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_IMD_FAULT : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_TSP_OVER_60V_STATUS : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_PRECHARGE_STATUS : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_AIRN_GATE : 10|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_AIRP_GATE : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_AIRP_STATUS : 8|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_AIRN_STATUS : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_TS_OVER_60V_STATUS : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_TSAL_GREEN : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_EXT_LATCHED : 4|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_BMS_COCKPIT : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_TSAL_GREEN_FAULT_LATCHED : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_IMD_COCKPIT : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_status_FEEDBACK_IMPLAUSIBILITY_DETECTED : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 771 HV_FEEDBACK_STATUS: 5 Vector__XXX
+ SG_ feedback_sd_imd : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_bms : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_in : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_out : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_end : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_check_mux : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_imd_fault : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsp_over_60v_status : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_precharge_status : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airn_gate : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airp_gate : 18|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airp_status : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airn_status : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_ts_over_60v_status : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsal_green : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_ext_latched : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_bms_cockpit : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsal_green_fault_latched : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_imd_cockpit : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_implausibility_detected : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 803 HV_IMD_STATUS: 5 Vector__XXX
- SG_ imd_info : 4|32@1- (1,-2147483648) [-2147483648|2147483647] "" Vector__XXX
+BO_ 516 HV_FEEDBACK_TS_VOLTAGE: 7 Vector__XXX
+ SG_ feedback_tsp_over_60v_status : 48|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_precharge_status : 40|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_airn_gate : 32|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_airp_gate : 24|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_airp_status : 16|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_airn_status : 8|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_ts_over_60v_status : 0|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+
+BO_ 548 HV_FEEDBACK_MISC_VOLTAGE: 8 Vector__XXX
+ SG_ feedback_check_mux : 56|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ imd_fault : 48|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_tsal_green : 40|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_ext_latched : 32|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_bms_cockpit : 24|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_tsal_green_fault_latched : 16|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_imd_cockpit : 8|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_implausibility_detected : 0|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+
+BO_ 580 HV_FEEDBACK_SD_VOLTAGE: 5 Vector__XXX
+ SG_ feedback_sd_imd : 32|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_sd_bms : 24|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_sd_in : 16|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_sd_out : 8|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+ SG_ feedback_sd_end : 0|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
+
+BO_ 803 HV_IMD_STATUS: 6 Vector__XXX
+ SG_ imd_period : 35|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ imd_freq : 27|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ imd_duty_cycle : 20|7@1+ (1,0) [0|100] "" Vector__XXX
+ SG_ imd_details : 4|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ imd_status : 1|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ imd_fault : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
@@ -748,6 +762,7 @@ CM_ BO_ 701 "periodic message containing current can definitions version";
 CM_ BO_ 702 "periodic message containing current can definitions version";
 CM_ BO_ 703 "periodic message containing current can definitions version";
 CM_ BO_ 704 "periodic message containing current can definitions version";
+CM_ BO_ 705 "periodic message containing current can definitions version";
 CM_ BO_ 257 "ambient temperature as send from IMU";
 CM_ BO_ 1072 "data logger message";
 CM_ BO_ 265 "Ask telemetry to turn on/off and send a tuple containing the current{test, driver, map); only once";
@@ -760,8 +775,11 @@ CM_ BO_ 36 "Battery-related errors";
 CM_ BO_ 32 "override fans speed";
 CM_ BO_ 37 "Status of can forwarding to internal bms network";
 CM_ BO_ 773 "Status of fans override";
-CM_ BO_ 771 "Errors on the feedbacks checks";
-CM_ BO_ 803 "Status of fans override";
+CM_ BO_ 771 "Status of the feedbacks";
+CM_ BO_ 516 "Voltage of the feedbacks";
+CM_ BO_ 548 "Voltage of the feedbacks";
+CM_ BO_ 580 "Voltage of the feedbacks";
+CM_ BO_ 803 "Status of the IMD";
 CM_ BO_ 84 "BMS status";
 CM_ BO_ 82 "Requests a TS status; only once";
 CM_ BO_ 83 "Requests a TS status; only once";
@@ -827,6 +845,7 @@ BA_ "GenMsgCycleTime" BO_ 701 1000;
 BA_ "GenMsgCycleTime" BO_ 702 1000;
 BA_ "GenMsgCycleTime" BO_ 703 1000;
 BA_ "GenMsgCycleTime" BO_ 704 1000;
+BA_ "GenMsgCycleTime" BO_ 705 1000;
 BA_ "GenMsgCycleTime" BO_ 257 1000;
 BA_ "GenMsgCycleTime" BO_ 1072 1000;
 BA_ "GenMsgCycleTime" BO_ 264 1000;
@@ -868,11 +887,32 @@ BA_ "GenMsgCycleTime" BO_ 768 500;
 BA_ "GenMsgCycleTime" BO_ 800 500;
 BA_ "GenMsgCycleTime" BO_ 832 500;
 VAL_ 3 can_forward_set 0 "OFF" 1 "ON" ;
+VAL_ 705 cellboard_id 0 "CELLBOARD_0" 1 "CELLBOARD_1" 2 "CELLBOARD_2" 3 "CELLBOARD_3" 4 "CELLBOARD_4" 5 "CELLBOARD_5" ;
 VAL_ 265 tlm_status 0 "OFF" 1 "ON" ;
 VAL_ 264 tlm_status 0 "OFF" 1 "ON" ;
 VAL_ 32 fans_override 0 "OFF" 1 "ON" ;
 VAL_ 37 can_forward_status 0 "OFF" 1 "ON" ;
 VAL_ 773 fans_override 0 "OFF" 1 "ON" ;
+VAL_ 771 feedback_sd_imd 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_sd_bms 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_sd_in 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_sd_out 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_sd_end 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_check_mux 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_imd_fault 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_tsp_over_60v_status 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_precharge_status 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_airn_gate 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_airp_gate 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_airp_status 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_airn_status 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_ts_over_60v_status 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_tsal_green 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_ext_latched 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_bms_cockpit 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_tsal_green_fault_latched 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_imd_cockpit 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
+VAL_ 771 feedback_implausibility_detected 0 "FEEDBACK_STATE_LOW" 1 "FEEDBACK_STATE_ERROR" 2 "FEEDBACK_STATE_HIGH" ;
 VAL_ 803 imd_status 0 "IMD_SC" 1 "IMD_NORMAL" 2 "IMD_UNDER_VOLTAGE" 3 "IMD_START_MEASURE" 4 "IMD_DEVICE_ERROR" 5 "IMD_EARTH_FAULT" ;
 VAL_ 84 ts_status 0 "INIT" 1 "IDLE" 2 "AIRN_CLOSE" 3 "PRECHARGE" 4 "AIRP_CLOSE" 5 "TS_ON" 6 "FATAL_ERROR" ;
 VAL_ 82 ts_status_set 0 "OFF" 1 "ON" ;

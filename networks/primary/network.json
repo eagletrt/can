@@ -287,29 +287,12 @@
         "IMD_EARTH_FAULT"
       ]
     },
-    "HvFeedbacks": {
-      "type": "bitset",
-      "items": [
-        "FEEDBACK_IMPLAUSIBILITY_DETECTED",
-        "FEEDBACK_IMD_COCKPIT",
-        "FEEDBACK_TSAL_GREEN_FAULT_LATCHED",
-        "FEEDBACK_BMS_COCKPIT",
-        "FEEDBACK_EXT_LATCHED",
-        "FEEDBACK_TSAL_GREEN",
-        "FEEDBACK_TS_OVER_60V_STATUS",
-        "FEEDBACK_AIRN_STATUS",
-        "FEEDBACK_AIRP_STATUS",
-        "FEEDBACK_AIRP_GATE",
-        "FEEDBACK_AIRN_GATE",
-        "FEEDBACK_PRECHARGE_STATUS",
-        "FEEDBACK_TSP_OVER_60V_STATUS",
-        "FEEDBACK_IMD_FAULT",
-        "FEEDBACK_CHECK_MUX",
-        "FEEDBACK_SD_END",
-        "FEEDBACK_SD_OUT",
-        "FEEDBACK_SD_IN",
-        "FEEDBACK_SD_BMS",
-        "FEEDBACK_SD_IMD"
+    "HvFeedbackStatus": {
+      "type": "enum",
+      "items":[
+        "FEEDBACK_STATE_LOW",
+        "FEEDBACK_STATE_ERROR",
+        "FEEDBACK_STATE_HIGH"
       ]
     },
     "HvBalancingCells": {
@@ -550,7 +533,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint8",
+        "component_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -562,19 +545,19 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint8",
+        "component_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
     {
-      "name": "HV_VERSION",
+      "name": "MAINBOARD_VERSION",
       "fixed_id": 702,
       "sending": ["BMS_HW"],
       "receiving": ["DAS", "STEER"],
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint8",
+        "component_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -586,7 +569,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint8",
+        "component_version": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -598,8 +581,21 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint8",
+        "component_version": "uint32",
         "canlib_build_time": "uint32"
+      }
+    },
+    {
+      "name": "CELLBOARD_VERSION",
+      "fixed_id": 705,
+      "sending": ["BMS_HW"],
+      "receiving": ["DAS", "STEER"],
+      "description": "periodic message containing current can definitions version",
+      "interval": 1000,
+      "contents": {
+          "cellboard_id": "Cellboard",
+          "component_version": "uint32",
+          "canlib_build_time": "uint32"
       }
     },
     {
@@ -806,15 +802,163 @@
       }
     },
     {
-      "name": "HV_FEEDBACKS_STATUS",
+      "name": "HV_FEEDBACK_STATUS",
       "topic": "DASnSTEER",
       "priority": 4,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Errors on the feedbacks checks",
+      "description": "Status of the feedbacks",
       "contents": {
-        "feedbacks_status": "HvFeedbacks",
-        "is_circuitry_error": "HvFeedbacks"
+        "feedback_implausibility_detected": "HvFeedbackStatus",
+        "feedback_imd_cockpit": "HvFeedbackStatus",
+        "feedback_tsal_green_fault_latched": "HvFeedbackStatus",
+        "feedback_bms_cockpit": "HvFeedbackStatus",
+        "feedback_ext_latched": "HvFeedbackStatus",
+        "feedback_tsal_green": "HvFeedbackStatus",
+        "feedback_ts_over_60v_status": "HvFeedbackStatus",
+        "feedback_airn_status": "HvFeedbackStatus",
+        "feedback_airp_status": "HvFeedbackStatus",
+        "feedback_airp_gate": "HvFeedbackStatus",
+        "feedback_airn_gate": "HvFeedbackStatus",
+        "feedback_precharge_status": "HvFeedbackStatus",
+        "feedback_tsp_over_60v_status": "HvFeedbackStatus",
+        "feedback_imd_fault": "HvFeedbackStatus",
+        "feedback_check_mux": "HvFeedbackStatus",
+        "feedback_sd_end": "HvFeedbackStatus",
+        "feedback_sd_out": "HvFeedbackStatus",
+        "feedback_sd_in": "HvFeedbackStatus",
+        "feedback_sd_bms": "HvFeedbackStatus",
+        "feedback_sd_imd": "HvFeedbackStatus"
+      }
+    },
+    {
+      "name": "HV_FEEDBACK_TS_VOLTAGE",
+      "topic": "DASnSTEERnCART",
+      "priority": 5,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Voltage of the feedbacks",
+      "contents": {
+        "feedback_ts_over_60v_status": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_airn_status": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_airp_status": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_airp_gate": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_airn_gate": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_precharge_status": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_tsp_over_60v_status": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        }
+      }
+    },
+    {
+      "name": "HV_FEEDBACK_MISC_VOLTAGE",
+      "topic": "DASnSTEERnCART",
+      "priority": 5,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Voltage of the feedbacks",
+      "contents": {
+        "feedback_implausibility_detected": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_imd_cockpit": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_tsal_green_fault_latched": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_bms_cockpit": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_ext_latched": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_tsal_green": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "imd_fault": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_check_mux": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        }
+      }
+    },
+    {
+      "name": "HV_FEEDBACK_SD_VOLTAGE",
+      "topic": "DASnSTEERnCART",
+      "priority": 5,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER"],
+      "description": "Voltage of the feedbacks",
+      "contents": {
+        "feedback_sd_end": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_sd_out": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_sd_in": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_sd_bms": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        },
+        "feedback_sd_imd": {
+          "type": "float32",
+          "range": [0, 3.3],
+          "force": "uint8"
+        }
       }
     },
     {
@@ -823,11 +967,17 @@
       "priority": 4,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER"],
-      "description": "Status of fans override",
+      "description": "Status of the IMD",
       "contents": {
         "imd_fault": "bool",
         "imd_status": "ImdStatus",
-        "imd_info": "int32"
+        "imd_details": "uint16",
+        "imd_duty_cycle": {
+          "type": "uint8",
+          "range": [0, 100]
+        },
+        "imd_freq": "uint8",
+        "imd_period": "uint8"
       }
     },
     {

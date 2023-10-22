@@ -58,6 +58,14 @@ enum bms_jmp_to_blt_cellboard_id {
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_4 = 4;
 	bms_jmp_to_blt_cellboard_id_CELLBOARD_5 = 5;
 }
+enum bms_cellboard_version_cellboard_id {
+	bms_cellboard_version_cellboard_id_CELLBOARD_0 = 0;
+	bms_cellboard_version_cellboard_id_CELLBOARD_1 = 1;
+	bms_cellboard_version_cellboard_id_CELLBOARD_2 = 2;
+	bms_cellboard_version_cellboard_id_CELLBOARD_3 = 3;
+	bms_cellboard_version_cellboard_id_CELLBOARD_4 = 4;
+	bms_cellboard_version_cellboard_id_CELLBOARD_5 = 5;
+}
 
 
 message BOARD_STATUS{
@@ -170,6 +178,12 @@ message FLASH_CELLBOARD_5_TX{
 message FLASH_CELLBOARD_5_RX{
 	uint64 _inner_timestamp = 1;
 }
+message CELLBOARD_VERSION{
+	bms_cellboard_version_cellboard_id cellboard_id = 1;
+	uint32 component_build_hash = 2;
+	uint32 canlib_build_time = 3;
+	uint64 _inner_timestamp = 4;
+}
 
 
 message Pack{
@@ -192,5 +206,6 @@ message Pack{
 	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 17;
 	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 18;
 	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 19;
+	repeated CELLBOARD_VERSION CELLBOARD_VERSION = 20;
 }
 
