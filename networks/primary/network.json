@@ -533,7 +533,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint32",
+        "component_build_time": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -545,7 +545,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint32",
+        "component_build_time": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -557,7 +557,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint32",
+        "component_build_time": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -569,7 +569,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint32",
+        "component_build_time": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -581,7 +581,7 @@
       "description": "periodic message containing current can definitions version",
       "interval": 1000,
       "contents": {
-        "component_version": "uint32",
+        "component_build_time": "uint32",
         "canlib_build_time": "uint32"
       }
     },
@@ -594,7 +594,7 @@
       "interval": 1000,
       "contents": {
           "cellboard_id": "Cellboard",
-          "component_version": "uint32",
+          "component_build_time": "uint32",
           "canlib_build_time": "uint32"
       }
     },
@@ -1028,17 +1028,20 @@
         "map_pw": {
           "type": "float32",
           "range": [-0.5, 1],
-          "precision": 0.01
+          "precision": 0.01,
+          "optimize": false
         },
         "map_sc": {
           "type": "float32",
           "range": [0, 1],
-          "precision": 0.1
+          "precision": 0.01,
+          "optimize": false
         },
         "map_tv": {
           "type": "float32",
           "range": [0, 1],
-          "precision": 0.1
+          "precision": 0.01,
+          "optimize": false
         }
       }
     },

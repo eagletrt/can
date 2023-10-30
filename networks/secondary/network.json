@@ -618,17 +618,20 @@
         "map_pw": {
           "type": "float32",
           "range": [-0.5, 1],
-          "precision": 0.1
+          "precision": 0.01,
+          "optimize": false
         },
         "map_sc": {
           "type": "float32",
           "range": [0, 1],
-          "precision": 0.1
+          "precision": 0.01,
+          "optimize": false
         },
         "map_tv": {
           "type": "float32",
           "range": [0, 1],
-          "precision": 0.1
+          "precision": 0.01,
+          "optimize": false
         }
       }
     },

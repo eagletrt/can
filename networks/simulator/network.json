@@ -1,0 +1,204 @@
+{
+    "version": 1.0,
+    "types": {},
+    "messages": [
+      {
+        "name": "ANGULAR_RATE",
+        "fixed_id": 1260,
+        "sending": ["IMU"],
+        "receiving": ["DAS"],
+        "endianness": "bigAss",
+        "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
+        "contents": {
+          "x": {
+            "type": "float32",
+            "range": [0, 245],
+            "precision": 0.1,
+            "optimize": false,
+            "signed": true
+          },
+          "y": {
+            "type": "float32",
+            "range": [0, 245],
+            "precision": 0.1,
+            "optimize": false,
+            "signed": true
+          },
+          "z": {
+            "type": "float32",
+            "range": [0, 245],
+            "precision": 0.1,
+            "optimize": false,
+            "signed": true
+          }
+        }
+      },
+      {
+        "name": "ACCELERATION",
+        "fixed_id": 1261,
+        "sending": ["IMU"],
+        "receiving": ["DAS"],
+        "endianness": "bigAss",
+        "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
+        "contents": {
+          "x": {
+            "type": "float32",
+            "range": [0, 8],
+            "precision": 0.01,
+            "optimize": false,
+            "signed": true
+          },
+          "y": {
+            "type": "float32",
+            "range": [0, 8],
+            "precision": 0.01,
+            "optimize": false,
+            "signed": true
+          },
+          "z": {
+            "type": "float32",
+            "range": [0, 8],
+            "precision": 0.01,
+            "optimize": false,
+            "signed": true
+          },
+          "temperature": "int16"
+        }
+      },
+      {
+        "name": "PEDALS",
+        "topic": "STEER",
+        "priority": 4,
+        "interval": 10,
+        "sending": ["DAS"],
+        "receiving": ["STEER"],
+        "description": "Pedal output, already calibrated",
+        "contents": {
+          "throttle": "uint8",
+          "brake_front": {
+            "type": "float32",
+            "range": [0, 100],
+            "force": "uint16"
+          },
+          "brake_rear": {
+            "type": "float32",
+            "range": [0, 100],
+            "force": "uint16"
+          }
+        }
+      },
+      {
+        "name": "STEERING_ANGLE",
+        "topic": "TELEMETRY",
+        "priority": 6,
+        "interval": 10,
+        "sending": ["DAS"],
+        "receiving": ["TELEMETRY"],
+        "description": "Steering angle in degrees",
+        "contents": {
+          "angle": {
+            "type": "float32",
+            "range": [-360, 360],
+            "force": "uint32"
+          }
+        }
+      },
+      {
+        "name": "CONTROL_STATE",
+        "topic": "DAS",
+        "priority": 2,
+        "sending": ["CONTROL"],
+        "receiving": ["DAS"],
+        "description": "Send status of traction control",
+        "interval": 100,
+        "contents": {
+          "map_pw": {
+            "type": "float32",
+            "range": [-0.5, 1],
+            "precision": 0.01,
+            "optimize": false
+          },
+          "map_sc": {
+            "type": "float32",
+            "range": [0, 1],
+            "precision": 0.01,
+            "optimize": false
+          },
+          "map_tv": {
+            "type": "float32",
+            "range": [0, 1],
+            "precision": 0.01,
+            "optimize": false
+          }
+        }
+      },
+      {
+        "name": "CONTROL_OUTPUT",
+        "topic": "STEER",
+        "priority": 6,
+        "interval": 100,
+        "sending": ["DAS"],
+        "receiving": ["STEER", "TLM"],
+        "description": "Control output, N*m",
+        "contents": {
+          "estimated_velocity": {
+            "type": "float32",
+            "range": [-10, 50],
+            "force": "uint16"
+          },
+          "tmax_r": {
+            "type": "float32",
+            "range": [0, 80],
+            "force": "uint8"
+          },
+          "tmax_l": {
+            "type": "float32",
+            "range": [0, 80],
+            "force": "uint8"
+          },
+          "torque_l": {
+            "type": "float32",
+            "range": [0, 80],
+            "force": "uint16"
+          },
+          "torque_r": {
+            "type": "float32",
+            "range": [0, 80],
+            "force": "uint16"
+          }
+        }
+      },
+      {
+        "name": "SPEED",
+        "topic": "STEER",
+        "priority": 5,
+        "sending": ["DAS"],
+        "receiving": ["STEER"],
+        "description": "Encoder and inverter speed in rad/s",
+        "interval": 10,
+        "contents": {
+          "fl": {
+            "type": "float32",
+            "force": "uint16",
+            "range": [-200, 200]
+          },
+          "fr": {
+            "type": "float32",
+            "force": "uint16",
+            "range": [-200, 200]
+          },
+          "rl": {
+            "type": "float32",
+            "force": "uint16",
+            "range": [-200, 200]
+          },
+          "rr": {
+            "type": "float32",
+            "force": "uint16",
+            "range": [-200, 200]
+          }
+        }
+      }
+    ]
+  }
+  
