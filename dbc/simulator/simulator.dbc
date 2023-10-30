@@ -1,0 +1,96 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CONTROL TLM DAS IMU DAS DAS DAS STEER DAS STEER DAS TELEMETRY DAS STEER IMU
+
+
+BO_ 1260 ANGULAR_RATE: 6 Vector__XXX
+ SG_ z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ y : 23|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ x : 7|16@0- (0.1,0) [0|245] "" Vector__XXX
+
+BO_ 1261 ACCELERATION: 8 Vector__XXX
+ SG_ temperature : 55|16@0- (1,-32768) [-32768|32767] "" Vector__XXX
+ SG_ z : 39|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ y : 23|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
+
+BO_ 769 PEDALS: 5 Vector__XXX
+ SG_ brake_rear : 24|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ brake_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ throttle : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 258 STEERING_ANGLE: 4 Vector__XXX
+ SG_ angle : 0|32@1+ (1.676380634698174e-07,-360) [-360|360] "" Vector__XXX
+
+BO_ 1280 CONTROL_STATE: 3 Vector__XXX
+ SG_ map_tv : 16|8@1+ (0.01,0) [0|1] "" Vector__XXX
+ SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
+ SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
+
+BO_ 257 CONTROL_OUTPUT: 8 Vector__XXX
+ SG_ torque_r : 48|16@1+ (0.0012207217517357137,0) [0|80] "" Vector__XXX
+ SG_ torque_l : 32|16@1+ (0.0012207217517357137,0) [0|80] "" Vector__XXX
+ SG_ tmax_l : 24|8@1+ (0.3137254901960784,0) [0|80] "" Vector__XXX
+ SG_ tmax_r : 16|8@1+ (0.3137254901960784,0) [0|80] "" Vector__XXX
+ SG_ estimated_velocity : 0|16@1+ (0.0009155413138017853,-10) [-10|50] "" Vector__XXX
+
+BO_ 513 SPEED: 8 Vector__XXX
+ SG_ rr : 48|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ rl : 32|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ fr : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ fl : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+
+
+
+
+CM_ BO_ 1260 "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed";
+CM_ BO_ 1261 "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed";
+CM_ BO_ 769 "Pedal output, already calibrated";
+CM_ BO_ 258 "Steering angle in degrees";
+CM_ BO_ 1280 "Send status of traction control";
+CM_ BO_ 257 "Control output, N*m";
+CM_ BO_ 513 "Encoder and inverter speed in rad/s";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 769 10;
+BA_ "GenMsgCycleTime" BO_ 258 10;
+BA_ "GenMsgCycleTime" BO_ 1280 100;
+BA_ "GenMsgCycleTime" BO_ 257 100;
+BA_ "GenMsgCycleTime" BO_ 513 10;
+
+
+
+

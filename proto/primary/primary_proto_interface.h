@@ -716,7 +716,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["STEER_VERSION"]["_timestamp"].push(pack->steer_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["STEER_VERSION"]["component_version"].push(pack->steer_version(i).component_version());
+		(*net_signals)["STEER_VERSION"]["component_build_time"].push(pack->steer_version(i).component_build_time());
 		(*net_signals)["STEER_VERSION"]["canlib_build_time"].push(pack->steer_version(i).canlib_build_time());
 
     }
@@ -729,7 +729,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["DAS_VERSION"]["_timestamp"].push(pack->das_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DAS_VERSION"]["component_version"].push(pack->das_version(i).component_version());
+		(*net_signals)["DAS_VERSION"]["component_build_time"].push(pack->das_version(i).component_build_time());
 		(*net_signals)["DAS_VERSION"]["canlib_build_time"].push(pack->das_version(i).canlib_build_time());
 
     }
@@ -742,7 +742,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["MAINBOARD_VERSION"]["_timestamp"].push(pack->mainboard_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["MAINBOARD_VERSION"]["component_version"].push(pack->mainboard_version(i).component_version());
+		(*net_signals)["MAINBOARD_VERSION"]["component_build_time"].push(pack->mainboard_version(i).component_build_time());
 		(*net_signals)["MAINBOARD_VERSION"]["canlib_build_time"].push(pack->mainboard_version(i).canlib_build_time());
 
     }
@@ -755,7 +755,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_VERSION"]["_timestamp"].push(pack->lv_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_VERSION"]["component_version"].push(pack->lv_version(i).component_version());
+		(*net_signals)["LV_VERSION"]["component_build_time"].push(pack->lv_version(i).component_build_time());
 		(*net_signals)["LV_VERSION"]["canlib_build_time"].push(pack->lv_version(i).canlib_build_time());
 
     }
@@ -768,7 +768,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["TLM_VERSION"]["_timestamp"].push(pack->tlm_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["TLM_VERSION"]["component_version"].push(pack->tlm_version(i).component_version());
+		(*net_signals)["TLM_VERSION"]["component_build_time"].push(pack->tlm_version(i).component_build_time());
 		(*net_signals)["TLM_VERSION"]["canlib_build_time"].push(pack->tlm_version(i).canlib_build_time());
 
     }
@@ -784,7 +784,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["CELLBOARD_VERSION"]["cellboard_id"].push(pack->cellboard_version(i).cellboard_id());
 		primary_cellboard_version_cellboard_id_enum_to_string((primary_cellboard_version_cellboard_id)pack->cellboard_version(i).cellboard_id(), buffer);
 		(*net_strings)["CELLBOARD_VERSION"]["cellboard_id"].push(buffer);
-		(*net_signals)["CELLBOARD_VERSION"]["component_version"].push(pack->cellboard_version(i).component_version());
+		(*net_signals)["CELLBOARD_VERSION"]["component_build_time"].push(pack->cellboard_version(i).component_build_time());
 		(*net_signals)["CELLBOARD_VERSION"]["canlib_build_time"].push(pack->cellboard_version(i).canlib_build_time());
 
     }
@@ -2286,7 +2286,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 700: {
             primary_steer_version_t* msg = (primary_steer_version_t*)(device->message);
             primary::STEER_VERSION* proto_msg = pack->add_steer_version();
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2298,7 +2298,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 701: {
             primary_das_version_t* msg = (primary_das_version_t*)(device->message);
             primary::DAS_VERSION* proto_msg = pack->add_das_version();
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2310,7 +2310,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 702: {
             primary_mainboard_version_t* msg = (primary_mainboard_version_t*)(device->message);
             primary::MAINBOARD_VERSION* proto_msg = pack->add_mainboard_version();
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2322,7 +2322,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 703: {
             primary_lv_version_t* msg = (primary_lv_version_t*)(device->message);
             primary::LV_VERSION* proto_msg = pack->add_lv_version();
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2334,7 +2334,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 704: {
             primary_tlm_version_t* msg = (primary_tlm_version_t*)(device->message);
             primary::TLM_VERSION* proto_msg = pack->add_tlm_version();
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2347,7 +2347,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_cellboard_version_t* msg = (primary_cellboard_version_t*)(device->message);
             primary::CELLBOARD_VERSION* proto_msg = pack->add_cellboard_version();
 			proto_msg->set_cellboard_id((primary::primary_cellboard_version_cellboard_id)msg->cellboard_id);
-			proto_msg->set_component_version(msg->component_version);
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP

@@ -1,0 +1,62 @@
+syntax = "proto3";
+package simulator;
+
+
+
+
+message ANGULAR_RATE{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	uint64 _inner_timestamp = 4;
+}
+message ACCELERATION{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	int32 temperature = 4;
+	uint64 _inner_timestamp = 5;
+}
+message PEDALS{
+	uint32 throttle = 1;
+	double brake_front = 2;
+	double brake_rear = 3;
+	uint64 _inner_timestamp = 4;
+}
+message STEERING_ANGLE{
+	float angle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message CONTROL_STATE{
+	double map_pw = 1;
+	double map_sc = 2;
+	double map_tv = 3;
+	uint64 _inner_timestamp = 4;
+}
+message CONTROL_OUTPUT{
+	double estimated_velocity = 1;
+	double tmax_r = 2;
+	double tmax_l = 3;
+	double torque_l = 4;
+	double torque_r = 5;
+	uint64 _inner_timestamp = 6;
+}
+message SPEED{
+	double fl = 1;
+	double fr = 2;
+	double rl = 3;
+	double rr = 4;
+	uint64 _inner_timestamp = 5;
+}
+
+
+message Pack{
+	repeated ANGULAR_RATE ANGULAR_RATE = 1;
+	repeated ACCELERATION ACCELERATION = 2;
+	repeated PEDALS PEDALS = 3;
+	repeated STEERING_ANGLE STEERING_ANGLE = 4;
+	repeated CONTROL_STATE CONTROL_STATE = 5;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 6;
+	repeated SPEED SPEED = 7;
+}
+

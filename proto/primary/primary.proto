@@ -464,33 +464,33 @@ message FLASH_STEERING_RX{
 	uint64 _inner_timestamp = 1;
 }
 message STEER_VERSION{
-	uint32 component_version = 1;
+	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message DAS_VERSION{
-	uint32 component_version = 1;
+	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message MAINBOARD_VERSION{
-	uint32 component_version = 1;
+	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LV_VERSION{
-	uint32 component_version = 1;
+	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message TLM_VERSION{
-	uint32 component_version = 1;
+	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
 message CELLBOARD_VERSION{
 	primary_cellboard_version_cellboard_id cellboard_id = 1;
-	uint32 component_version = 2;
+	uint32 component_build_time = 2;
 	uint32 canlib_build_time = 3;
 	uint64 _inner_timestamp = 4;
 }
