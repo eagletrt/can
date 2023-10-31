@@ -36,21 +36,21 @@ BS_:
 BU_: CONTROL TLM DAS IMU DAS DAS DAS STEER DAS STEER DAS TELEMETRY DAS STEER IMU
 
 
-BO_ 1260 ANGULAR_RATE: 6 Vector__XXX
- SG_ z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
- SG_ y : 23|16@0- (0.1,0) [0|245] "" Vector__XXX
- SG_ x : 7|16@0- (0.1,0) [0|245] "" Vector__XXX
+BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
+ SG_ ang_rate_z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ ang_rate_y : 23|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ ang_rate_x : 7|16@0- (0.1,0) [0|245] "" Vector__XXX
 
-BO_ 1261 ACCELERATION: 8 Vector__XXX
+BO_ 1261 IMU_ACCELERATION: 8 Vector__XXX
  SG_ temperature : 55|16@0- (1,-32768) [-32768|32767] "" Vector__XXX
- SG_ z : 39|16@0- (0.01,0) [0|8] "" Vector__XXX
- SG_ y : 23|16@0- (0.01,0) [0|8] "" Vector__XXX
- SG_ x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ accel_z : 39|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ accel_y : 23|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ accel_x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
 
-BO_ 769 PEDALS: 5 Vector__XXX
- SG_ brake_rear : 24|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ brake_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ throttle : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 769 PEDALS_OUTPUT: 5 Vector__XXX
+ SG_ bse_rear : 24|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ bse_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ apps : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 258 STEERING_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (1.676380634698174e-07,-360) [-360|360] "" Vector__XXX
@@ -68,10 +68,10 @@ BO_ 257 CONTROL_OUTPUT: 8 Vector__XXX
  SG_ estimated_velocity : 0|16@1+ (0.0009155413138017853,-10) [-10|50] "" Vector__XXX
 
 BO_ 513 SPEED: 8 Vector__XXX
- SG_ rr : 48|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
- SG_ rl : 32|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
- SG_ fr : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
- SG_ fl : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ inverter_r : 48|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ inverter_l : 32|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ encoder_r : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ encoder_l : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
 
 
 

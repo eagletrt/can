@@ -258,46 +258,46 @@ void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums*
 void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
     char buffer[1024];
     
-    for(int i = 0; i < pack->angular_rate_size(); i++){
+    for(int i = 0; i < pack->imu_angular_rate_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->angular_rate(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->angular_rate(i)._inner_timestamp();
-        (*net_signals)["ANGULAR_RATE"]["_timestamp"].push(pack->angular_rate(i)._inner_timestamp());
+        if(pack->imu_angular_rate(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->imu_angular_rate(i)._inner_timestamp();
+        (*net_signals)["IMU_ANGULAR_RATE"]["_timestamp"].push(pack->imu_angular_rate(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ANGULAR_RATE"]["x"].push(pack->angular_rate(i).x());
-		(*net_signals)["ANGULAR_RATE"]["y"].push(pack->angular_rate(i).y());
-		(*net_signals)["ANGULAR_RATE"]["z"].push(pack->angular_rate(i).z());
+		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_x"].push(pack->imu_angular_rate(i).ang_rate_x());
+		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_y"].push(pack->imu_angular_rate(i).ang_rate_y());
+		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_z"].push(pack->imu_angular_rate(i).ang_rate_z());
 
     }
 
-    for(int i = 0; i < pack->acceleration_size(); i++){
+    for(int i = 0; i < pack->imu_acceleration_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->acceleration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->acceleration(i)._inner_timestamp();
-        (*net_signals)["ACCELERATION"]["_timestamp"].push(pack->acceleration(i)._inner_timestamp());
+        if(pack->imu_acceleration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->imu_acceleration(i)._inner_timestamp();
+        (*net_signals)["IMU_ACCELERATION"]["_timestamp"].push(pack->imu_acceleration(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ACCELERATION"]["x"].push(pack->acceleration(i).x());
-		(*net_signals)["ACCELERATION"]["y"].push(pack->acceleration(i).y());
-		(*net_signals)["ACCELERATION"]["z"].push(pack->acceleration(i).z());
-		(*net_signals)["ACCELERATION"]["temperature"].push(pack->acceleration(i).temperature());
+		(*net_signals)["IMU_ACCELERATION"]["accel_x"].push(pack->imu_acceleration(i).accel_x());
+		(*net_signals)["IMU_ACCELERATION"]["accel_y"].push(pack->imu_acceleration(i).accel_y());
+		(*net_signals)["IMU_ACCELERATION"]["accel_z"].push(pack->imu_acceleration(i).accel_z());
+		(*net_signals)["IMU_ACCELERATION"]["temperature"].push(pack->imu_acceleration(i).temperature());
 
     }
 
-    for(int i = 0; i < pack->pedals_size(); i++){
+    for(int i = 0; i < pack->pedals_output_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->pedals(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->pedals(i)._inner_timestamp();
-        (*net_signals)["PEDALS"]["_timestamp"].push(pack->pedals(i)._inner_timestamp());
+        if(pack->pedals_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->pedals_output(i)._inner_timestamp();
+        (*net_signals)["PEDALS_OUTPUT"]["_timestamp"].push(pack->pedals_output(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["PEDALS"]["throttle"].push(pack->pedals(i).throttle());
-		(*net_signals)["PEDALS"]["brake_front"].push(pack->pedals(i).brake_front());
-		(*net_signals)["PEDALS"]["brake_rear"].push(pack->pedals(i).brake_rear());
+		(*net_signals)["PEDALS_OUTPUT"]["apps"].push(pack->pedals_output(i).apps());
+		(*net_signals)["PEDALS_OUTPUT"]["bse_front"].push(pack->pedals_output(i).bse_front());
+		(*net_signals)["PEDALS_OUTPUT"]["bse_rear"].push(pack->pedals_output(i).bse_rear());
 
     }
 
@@ -351,10 +351,10 @@ void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums*
         (*net_signals)["SPEED"]["_timestamp"].push(pack->speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["SPEED"]["fl"].push(pack->speed(i).fl());
-		(*net_signals)["SPEED"]["fr"].push(pack->speed(i).fr());
-		(*net_signals)["SPEED"]["rl"].push(pack->speed(i).rl());
-		(*net_signals)["SPEED"]["rr"].push(pack->speed(i).rr());
+		(*net_signals)["SPEED"]["encoder_l"].push(pack->speed(i).encoder_l());
+		(*net_signals)["SPEED"]["encoder_r"].push(pack->speed(i).encoder_r());
+		(*net_signals)["SPEED"]["inverter_l"].push(pack->speed(i).inverter_l());
+		(*net_signals)["SPEED"]["inverter_r"].push(pack->speed(i).inverter_r());
 
     }
 
@@ -368,11 +368,11 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
     switch(id) {
         
         case 1260: {
-            simulator_angular_rate_converted_t* msg = (simulator_angular_rate_converted_t*)(device->message);
-            simulator::ANGULAR_RATE* proto_msg = pack->add_angular_rate();
-			proto_msg->set_x(msg->x);
-			proto_msg->set_y(msg->y);
-			proto_msg->set_z(msg->z);
+            simulator_imu_angular_rate_converted_t* msg = (simulator_imu_angular_rate_converted_t*)(device->message);
+            simulator::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
+			proto_msg->set_ang_rate_x(msg->ang_rate_x);
+			proto_msg->set_ang_rate_y(msg->ang_rate_y);
+			proto_msg->set_ang_rate_z(msg->ang_rate_z);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -381,11 +381,11 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
         }
 
         case 1261: {
-            simulator_acceleration_converted_t* msg = (simulator_acceleration_converted_t*)(device->message);
-            simulator::ACCELERATION* proto_msg = pack->add_acceleration();
-			proto_msg->set_x(msg->x);
-			proto_msg->set_y(msg->y);
-			proto_msg->set_z(msg->z);
+            simulator_imu_acceleration_converted_t* msg = (simulator_imu_acceleration_converted_t*)(device->message);
+            simulator::IMU_ACCELERATION* proto_msg = pack->add_imu_acceleration();
+			proto_msg->set_accel_x(msg->accel_x);
+			proto_msg->set_accel_y(msg->accel_y);
+			proto_msg->set_accel_z(msg->accel_z);
 			proto_msg->set_temperature(msg->temperature);
 
 #ifdef CANLIB_TIMESTAMP
@@ -395,11 +395,11 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
         }
 
         case 769: {
-            simulator_pedals_converted_t* msg = (simulator_pedals_converted_t*)(device->message);
-            simulator::PEDALS* proto_msg = pack->add_pedals();
-			proto_msg->set_throttle(msg->throttle);
-			proto_msg->set_brake_front(msg->brake_front);
-			proto_msg->set_brake_rear(msg->brake_rear);
+            simulator_pedals_output_converted_t* msg = (simulator_pedals_output_converted_t*)(device->message);
+            simulator::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
+			proto_msg->set_apps(msg->apps);
+			proto_msg->set_bse_front(msg->bse_front);
+			proto_msg->set_bse_rear(msg->bse_rear);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -449,10 +449,10 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
         case 513: {
             simulator_speed_converted_t* msg = (simulator_speed_converted_t*)(device->message);
             simulator::SPEED* proto_msg = pack->add_speed();
-			proto_msg->set_fl(msg->fl);
-			proto_msg->set_fr(msg->fr);
-			proto_msg->set_rl(msg->rl);
-			proto_msg->set_rr(msg->rr);
+			proto_msg->set_encoder_l(msg->encoder_l);
+			proto_msg->set_encoder_r(msg->encoder_r);
+			proto_msg->set_inverter_l(msg->inverter_l);
+			proto_msg->set_inverter_r(msg->inverter_r);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
