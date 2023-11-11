@@ -16,10 +16,10 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
        case 1260: return SECONDARY_INDEX_IMU_ANGULAR_RATE;
        case 1261: return SECONDARY_INDEX_IMU_ACCELERATION;
-       case 1460: return SECONDARY_INDEX_IRTS_FL_0;
-       case 1461: return SECONDARY_INDEX_IRTS_FL_1;
-       case 1462: return SECONDARY_INDEX_IRTS_FL_2;
-       case 1463: return SECONDARY_INDEX_IRTS_FL_3;
+       case 1456: return SECONDARY_INDEX_IRTS_FL_0;
+       case 1457: return SECONDARY_INDEX_IRTS_FL_1;
+       case 1458: return SECONDARY_INDEX_IRTS_FL_2;
+       case 1459: return SECONDARY_INDEX_IRTS_FL_3;
        case 1464: return SECONDARY_INDEX_IRTS_FR_0;
        case 1465: return SECONDARY_INDEX_IRTS_FR_1;
        case 1466: return SECONDARY_INDEX_IRTS_FR_2;

@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: DAS STEER IRTS_FR STEER DAS TLM IRTS_FR STEER DAS TELEMETRY IRTS_FR DAS DAS CONTROL IRTS_FR TELEMETRY DAS DAS IRTS_RL STEER DAS DAS IRTS_RL STEER IMU TLM IMU DAS TLM IRTS_RL IRTS_RL STEER DAS DAS TLM IRTS_FL DAS DAS BMS_LV IRTS_RR IRTS_FL BMS_HV DAS DAS DAS IRTS_RR DAS IRTS_RR IRTS_FL DAS DAS STEER DAS DAS TLM IRTS_RR IRTS_FL
+BU_: STEER IRTS_FR TLM DAS STEER IRTS_FR IRTS_FL DAS DAS STEER IRTS_RL DAS DAS DAS DAS IRTS_FL TELEMETRY IRTS_RL CONTROL DAS DAS DAS IMU IRTS_RL TELEMETRY DAS STEER IRTS_RL TLM DAS STEER IRTS_RR STEER DAS DAS IRTS_FL TLM IRTS_RR DAS TLM DAS IRTS_FL STEER IRTS_RR DAS DAS DAS IMU IRTS_FR BMS_HV IRTS_RR DAS BMS_LV DAS IRTS_FR TLM DAS
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -47,25 +47,25 @@ BO_ 1261 IMU_ACCELERATION: 8 Vector__XXX
  SG_ accel_y : 23|16@0- (0.01,0) [0|8] "" Vector__XXX
  SG_ accel_x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
 
-BO_ 1460 IRTS_FL_0: 8 Vector__XXX
+BO_ 1456 IRTS_FL_0: 8 Vector__XXX
  SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
-BO_ 1461 IRTS_FL_1: 8 Vector__XXX
+BO_ 1457 IRTS_FL_1: 8 Vector__XXX
  SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
-BO_ 1462 IRTS_FL_2: 8 Vector__XXX
+BO_ 1458 IRTS_FL_2: 8 Vector__XXX
  SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
-BO_ 1463 IRTS_FL_3: 8 Vector__XXX
+BO_ 1459 IRTS_FL_3: 8 Vector__XXX
  SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
  SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
@@ -164,14 +164,14 @@ BO_ 1281 CONTROL_STATE: 3 Vector__XXX
  SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
 
 BO_ 515 TPMS: 8 Vector__XXX
- SG_ rr_temperature : 56|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rl_temperature : 48|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ fr_temperature : 40|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ fl_temperature : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rr_pressure : 24|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
- SG_ rl_pressure : 16|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
- SG_ fr_pressure : 8|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
- SG_ fl_pressure : 0|8@1+ (0.0967741935483871,0) [0|3] "" Vector__XXX
+ SG_ rr_temperature : 56|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rl_temperature : 48|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fr_temperature : 40|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fl_temperature : 32|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rr_pressure : 24|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rl_pressure : 16|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fr_pressure : 8|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fl_pressure : 0|8@1+ (1.0,0) [0|255] "" Vector__XXX
 
 BO_ 1091 LAP_COUNT: 4 Vector__XXX
  SG_ lap_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
@@ -190,10 +190,10 @@ BO_ 256 TIMESTAMP: 8 Vector__XXX
 
 CM_ BO_ 1260 "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed";
 CM_ BO_ 1261 "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed";
-CM_ BO_ 1460 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1461 "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1462 "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1463 "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1456 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1457 "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1458 "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1459 "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1464 "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1465 "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1466 "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";

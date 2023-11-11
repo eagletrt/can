@@ -686,7 +686,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1460: {
+        case 1456: {
             secondary_irts_fl_0_converted_t* msg = (secondary_irts_fl_0_converted_t*)(device->message);
             secondary::IRTS_FL_0* proto_msg = pack->add_irts_fl_0();
 			proto_msg->set_channel1(msg->channel1);
@@ -700,7 +700,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1461: {
+        case 1457: {
             secondary_irts_fl_1_converted_t* msg = (secondary_irts_fl_1_converted_t*)(device->message);
             secondary::IRTS_FL_1* proto_msg = pack->add_irts_fl_1();
 			proto_msg->set_channel5(msg->channel5);
@@ -714,7 +714,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1462: {
+        case 1458: {
             secondary_irts_fl_2_converted_t* msg = (secondary_irts_fl_2_converted_t*)(device->message);
             secondary::IRTS_FL_2* proto_msg = pack->add_irts_fl_2();
 			proto_msg->set_channel9(msg->channel9);
@@ -728,7 +728,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1463: {
+        case 1459: {
             secondary_irts_fl_3_converted_t* msg = (secondary_irts_fl_3_converted_t*)(device->message);
             secondary::IRTS_FL_3* proto_msg = pack->add_irts_fl_3();
 			proto_msg->set_channel13(msg->channel13);
@@ -971,7 +971,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 515: {
-            secondary_tpms_converted_t* msg = (secondary_tpms_converted_t*)(device->message);
+            secondary_tpms_t* msg = (secondary_tpms_t*)(device->message);
             secondary::TPMS* proto_msg = pack->add_tpms();
 			proto_msg->set_fl_pressure(msg->fl_pressure);
 			proto_msg->set_fr_pressure(msg->fr_pressure);

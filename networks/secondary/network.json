@@ -67,7 +67,7 @@
     },
     {
       "name": "IRTS_FL_0",
-      "fixed_id": 1460,
+      "fixed_id": 1456,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -97,7 +97,7 @@
     },
     {
       "name": "IRTS_FL_1",
-      "fixed_id": 1461,
+      "fixed_id": 1457,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -127,7 +127,7 @@
     },
     {
       "name": "IRTS_FL_2",
-      "fixed_id": 1462,
+      "fixed_id": 1458,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -157,7 +157,7 @@
     },
     {
       "name": "IRTS_FL_3",
-      "fixed_id": 1463,
+      "fixed_id": 1459,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -645,28 +645,44 @@
       "contents": {
         "fl_pressure": {
           "type": "float32",
-          "range": [0, 3],
-          "precision": 0.1
+          "range": [0, 255],
+          "precision": 1
         },
         "fr_pressure": {
           "type": "float32",
-          "range": [0, 3],
-          "precision": 0.1
+          "range": [0, 255],
+          "precision": 1
         },
         "rl_pressure": {
           "type": "float32",
-          "range": [0, 3],
-          "precision": 0.1
+          "range": [0, 255],
+          "precision": 1
         },
         "rr_pressure": {
           "type": "float32",
-          "range": [0, 3],
-          "precision": 0.1
+          "range": [0, 255],
+          "precision": 1
         },
-        "fl_temperature": "uint8",
-        "fr_temperature": "uint8",
-        "rl_temperature": "uint8",
-        "rr_temperature": "uint8"
+        "fl_temperature": {
+          "type": "float32",
+          "range": [0, 255],
+          "precision": 1
+        },
+        "fr_temperature": {
+          "type": "float32",
+          "range": [0, 255],
+          "precision": 1
+        },
+        "rl_temperature": {
+          "type": "float32",
+          "range": [0, 255],
+          "precision": 1
+        },
+        "rr_temperature": {
+          "type": "float32",
+          "range": [0, 255],
+          "precision": 1
+        }
       }
     },
     {
