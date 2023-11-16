@@ -76,22 +76,30 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -106,22 +114,30 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -136,22 +152,30 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -166,22 +190,30 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -196,22 +228,30 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -226,22 +266,30 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -256,22 +304,30 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -286,22 +342,30 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -316,22 +380,30 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -346,22 +418,30 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -376,22 +456,30 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -406,22 +494,30 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -436,22 +532,30 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -466,22 +570,30 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -496,22 +608,30 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -526,22 +646,30 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "force": "uint16",
+          "optimize": false
         }
       }
     },
@@ -577,7 +705,11 @@
       "receiving": ["STEER"],
       "description": "Pedal output, already calibrated",
       "contents": {
-        "apps": "uint8",
+        "apps": {
+          "type": "float32",
+          "range": [0, 100],
+          "force": "uint16"
+        },
         "bse_front": {
           "type": "float32",
           "range": [0, 100],
@@ -601,7 +733,7 @@
       "contents": {
         "angle": {
           "type": "float32",
-          "range": [-360, 360],
+          "range": [-180, 180],
           "force": "uint32"
         }
       }
@@ -732,6 +864,48 @@
       "interval": 500,
       "contents": {
         "timestamp": "uint64"
+      }
+    },
+    {
+      "name": "REAR_AMMO_POS",
+      "topic": "TELEMETRY",
+      "priority": 3,
+      "sending": ["ACQUISINATOR"],
+      "receiving": ["TLM"],
+      "description": "Position of the rear ammos",
+      "interval": 10,
+      "contents": {
+        "rl": {
+          "type": "float32",
+          "range": [0, 50],
+          "force": "uint32"
+        },
+        "rr": {
+          "type": "float32",
+          "range": [0, 50],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "FRONT_AMMO_POS",
+      "topic": "TELEMETRY",
+      "priority": 3,
+      "sending": ["ACQUISINATOR"],
+      "receiving": ["TLM"],
+      "description": "Position of the front ammos",
+      "interval": 10,
+      "contents": {
+        "fl": {
+          "type": "float32",
+          "range": [0, 50],
+          "force": "uint32"
+        },
+        "fr": {
+          "type": "float32",
+          "range": [0, 50],
+          "force": "uint32"
+        }
       }
     }
   ]

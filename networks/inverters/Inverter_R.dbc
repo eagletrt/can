@@ -39,6 +39,12 @@ SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
 SG_ Active190 m190 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ def_END_1 m190 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
+SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
+SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
 
 
 
@@ -174,6 +180,12 @@ SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
 SG_ M_cmd_ramp m58 : 8|16@1- (1,0) [-32767|32767] "Num" Vector__XXX
 SG_ free m58 : 24|16@1- (1,0) [-32768|32767] "Num" Vector__XXX
+SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
+SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
 
 CM_ SG_ 514 Motor_F_N "Nominal Motor Frequency";
 CM_ SG_ 514 T_dc__Start "Time For DC Pre-Charge-Magnitising - Start";
