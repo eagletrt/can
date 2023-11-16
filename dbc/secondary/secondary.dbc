@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: STEER IRTS_FR TLM DAS STEER IRTS_FR IRTS_FL DAS DAS STEER IRTS_RL DAS DAS DAS DAS IRTS_FL TELEMETRY IRTS_RL CONTROL DAS DAS DAS IMU IRTS_RL TELEMETRY DAS STEER IRTS_RL TLM DAS STEER IRTS_RR STEER DAS DAS IRTS_FL TLM IRTS_RR DAS TLM DAS IRTS_FL STEER IRTS_RR DAS DAS DAS IMU IRTS_FR BMS_HV IRTS_RR DAS BMS_LV DAS IRTS_FR TLM DAS
+BU_: STEER IRTS_RR DAS DAS DAS IRTS_FR BMS_HV IRTS_RR DAS BMS_LV DAS IRTS_FR ACQUISINATOR TLM DAS IRTS_FL TLM STEER IRTS_FR ACQUISINATOR TLM DAS DAS TLM STEER IRTS_FR IRTS_FL DAS DAS STEER DAS IRTS_RL IMU DAS DAS DAS TELEMETRY IRTS_RL CONTROL DAS DAS IMU IRTS_RL TELEMETRY DAS STEER IRTS_RL TLM DAS STEER IRTS_RR STEER DAS DAS IRTS_FL TLM IRTS_RR DAS TLM DAS IRTS_FL
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -48,100 +48,100 @@ BO_ 1261 IMU_ACCELERATION: 8 Vector__XXX
  SG_ accel_x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
 
 BO_ 1456 IRTS_FL_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1457 IRTS_FL_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1458 IRTS_FL_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1459 IRTS_FL_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1464 IRTS_FR_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1465 IRTS_FR_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1466 IRTS_FR_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1467 IRTS_FR_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1468 IRTS_RL_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1469 IRTS_RL_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1470 IRTS_RL_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1471 IRTS_RL_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1472 IRTS_RR_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1473 IRTS_RR_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1474 IRTS_RR_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1475 IRTS_RR_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
 
 BO_ 1027 GPS_COORDS: 8 Vector__XXX
  SG_ longitude : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
@@ -150,13 +150,13 @@ BO_ 1027 GPS_COORDS: 8 Vector__XXX
 BO_ 1059 GPS_SPEED: 2 Vector__XXX
  SG_ speed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 771 PEDALS_OUTPUT: 5 Vector__XXX
- SG_ bse_rear : 24|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ bse_front : 8|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ apps : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 771 PEDALS_OUTPUT: 6 Vector__XXX
+ SG_ bse_rear : 32|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ bse_front : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ apps : 0|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
 
 BO_ 260 STEERING_ANGLE: 4 Vector__XXX
- SG_ angle : 0|32@1+ (1.676380634698174e-07,-360) [-360|360] "" Vector__XXX
+ SG_ angle : 0|32@1+ (8.38190317349087e-08,-180) [-180|180] "" Vector__XXX
 
 BO_ 1281 CONTROL_STATE: 3 Vector__XXX
  SG_ map_tv : 16|8@1+ (0.01,0) [0|1] "" Vector__XXX
@@ -184,6 +184,14 @@ BO_ 770 LC_STATUS: 6 Vector__XXX
 
 BO_ 256 TIMESTAMP: 8 Vector__XXX
  SG_ timestamp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 1028 REAR_AMMO_POS: 8 Vector__XXX
+ SG_ rr : 32|32@1+ (1.1641532185403987e-08,0) [0|50] "" Vector__XXX
+ SG_ rl : 0|32@1+ (1.1641532185403987e-08,0) [0|50] "" Vector__XXX
+
+BO_ 1060 FRONT_AMMO_POS: 8 Vector__XXX
+ SG_ fr : 32|32@1+ (1.1641532185403987e-08,0) [0|50] "" Vector__XXX
+ SG_ fl : 0|32@1+ (1.1641532185403987e-08,0) [0|50] "" Vector__XXX
 
 
 
@@ -215,12 +223,16 @@ CM_ BO_ 515 "Tire Pressure Monitoring System, pressure and temperature of each t
 CM_ BO_ 1091 "On new lap";
 CM_ BO_ 770 "Session laps status";
 CM_ BO_ 256 "every second unix encoded time and date used by logging devices to sync";
+CM_ BO_ 1028 "Position of the rear ammos";
+CM_ BO_ 1060 "Position of the front ammos";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 771 10;
 BA_ "GenMsgCycleTime" BO_ 260 10;
 BA_ "GenMsgCycleTime" BO_ 1281 100;
 BA_ "GenMsgCycleTime" BO_ 256 500;
+BA_ "GenMsgCycleTime" BO_ 1028 10;
+BA_ "GenMsgCycleTime" BO_ 1060 10;
 
 
 

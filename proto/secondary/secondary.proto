@@ -18,115 +18,115 @@ message IMU_ACCELERATION{
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_0{
-	double channel1 = 1;
-	double channel2 = 2;
-	double channel3 = 3;
-	double channel4 = 4;
+	uint32 channel1 = 1;
+	uint32 channel2 = 2;
+	uint32 channel3 = 3;
+	uint32 channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_1{
-	double channel5 = 1;
-	double channel6 = 2;
-	double channel7 = 3;
-	double channel8 = 4;
+	uint32 channel5 = 1;
+	uint32 channel6 = 2;
+	uint32 channel7 = 3;
+	uint32 channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_2{
-	double channel9 = 1;
-	double channel10 = 2;
-	double channel11 = 3;
-	double channel12 = 4;
+	uint32 channel9 = 1;
+	uint32 channel10 = 2;
+	uint32 channel11 = 3;
+	uint32 channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_3{
-	double channel13 = 1;
-	double channel14 = 2;
-	double channel15 = 3;
-	double channel16 = 4;
+	uint32 channel13 = 1;
+	uint32 channel14 = 2;
+	uint32 channel15 = 3;
+	uint32 channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_0{
-	double channel1 = 1;
-	double channel2 = 2;
-	double channel3 = 3;
-	double channel4 = 4;
+	uint32 channel1 = 1;
+	uint32 channel2 = 2;
+	uint32 channel3 = 3;
+	uint32 channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_1{
-	double channel5 = 1;
-	double channel6 = 2;
-	double channel7 = 3;
-	double channel8 = 4;
+	uint32 channel5 = 1;
+	uint32 channel6 = 2;
+	uint32 channel7 = 3;
+	uint32 channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_2{
-	double channel9 = 1;
-	double channel10 = 2;
-	double channel11 = 3;
-	double channel12 = 4;
+	uint32 channel9 = 1;
+	uint32 channel10 = 2;
+	uint32 channel11 = 3;
+	uint32 channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_3{
-	double channel13 = 1;
-	double channel14 = 2;
-	double channel15 = 3;
-	double channel16 = 4;
+	uint32 channel13 = 1;
+	uint32 channel14 = 2;
+	uint32 channel15 = 3;
+	uint32 channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_0{
-	double channel1 = 1;
-	double channel2 = 2;
-	double channel3 = 3;
-	double channel4 = 4;
+	uint32 channel1 = 1;
+	uint32 channel2 = 2;
+	uint32 channel3 = 3;
+	uint32 channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_1{
-	double channel5 = 1;
-	double channel6 = 2;
-	double channel7 = 3;
-	double channel8 = 4;
+	uint32 channel5 = 1;
+	uint32 channel6 = 2;
+	uint32 channel7 = 3;
+	uint32 channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_2{
-	double channel9 = 1;
-	double channel10 = 2;
-	double channel11 = 3;
-	double channel12 = 4;
+	uint32 channel9 = 1;
+	uint32 channel10 = 2;
+	uint32 channel11 = 3;
+	uint32 channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_3{
-	double channel13 = 1;
-	double channel14 = 2;
-	double channel15 = 3;
-	double channel16 = 4;
+	uint32 channel13 = 1;
+	uint32 channel14 = 2;
+	uint32 channel15 = 3;
+	uint32 channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_0{
-	double channel1 = 1;
-	double channel2 = 2;
-	double channel3 = 3;
-	double channel4 = 4;
+	uint32 channel1 = 1;
+	uint32 channel2 = 2;
+	uint32 channel3 = 3;
+	uint32 channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_1{
-	double channel5 = 1;
-	double channel6 = 2;
-	double channel7 = 3;
-	double channel8 = 4;
+	uint32 channel5 = 1;
+	uint32 channel6 = 2;
+	uint32 channel7 = 3;
+	uint32 channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_2{
-	double channel9 = 1;
-	double channel10 = 2;
-	double channel11 = 3;
-	double channel12 = 4;
+	uint32 channel9 = 1;
+	uint32 channel10 = 2;
+	uint32 channel11 = 3;
+	uint32 channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_3{
-	double channel13 = 1;
-	double channel14 = 2;
-	double channel15 = 3;
-	double channel16 = 4;
+	uint32 channel13 = 1;
+	uint32 channel14 = 2;
+	uint32 channel15 = 3;
+	uint32 channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message GPS_COORDS{
@@ -139,7 +139,7 @@ message GPS_SPEED{
 	uint64 _inner_timestamp = 2;
 }
 message PEDALS_OUTPUT{
-	uint32 apps = 1;
+	double apps = 1;
 	double bse_front = 2;
 	double bse_rear = 3;
 	uint64 _inner_timestamp = 4;
@@ -180,6 +180,16 @@ message TIMESTAMP{
 	uint64 timestamp = 1;
 	uint64 _inner_timestamp = 2;
 }
+message REAR_AMMO_POS{
+	float rl = 1;
+	float rr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message FRONT_AMMO_POS{
+	float fl = 1;
+	float fr = 2;
+	uint64 _inner_timestamp = 3;
+}
 
 
 message Pack{
@@ -210,5 +220,7 @@ message Pack{
 	repeated LAP_COUNT LAP_COUNT = 25;
 	repeated LC_STATUS LC_STATUS = 26;
 	repeated TIMESTAMP TIMESTAMP = 27;
+	repeated REAR_AMMO_POS REAR_AMMO_POS = 28;
+	repeated FRONT_AMMO_POS FRONT_AMMO_POS = 29;
 }
 

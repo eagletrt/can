@@ -280,6 +280,11 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_R_SEND"]["def_end_1"].push(pack->inv_r_send(i).def_end_1());
 		inverters_inv_r_send_def_end_1_enum_to_string((inverters_inv_r_send_def_end_1)pack->inv_r_send(i).def_end_1(), buffer);
 		(*net_strings)["INV_R_SEND"]["def_end_1"].push(buffer);
+		(*net_signals)["INV_R_SEND"]["i_max_pk"].push(pack->inv_r_send(i).i_max_pk());
+		(*net_signals)["INV_R_SEND"]["i_con_eff"].push(pack->inv_r_send(i).i_con_eff());
+		(*net_signals)["INV_R_SEND"]["i_device"].push(pack->inv_r_send(i).i_device());
+		(*net_signals)["INV_R_SEND"]["n_r_lim"].push(pack->inv_r_send(i).n_r_lim());
+		(*net_signals)["INV_R_SEND"]["nmax100perc"].push(pack->inv_r_send(i).nmax100perc());
 		(*net_enums)["INV_R_SEND"]["km_speed_0"].push(pack->inv_r_send(i).km_speed_0());
 		(*net_enums)["INV_R_SEND"]["km_frg_off"].push(pack->inv_r_send(i).km_frg_off());
 		(*net_enums)["INV_R_SEND"]["km_cal_off"].push(pack->inv_r_send(i).km_cal_off());
@@ -304,6 +309,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_R_SEND"]["active190"].push(pack->inv_r_send(i).active190());
 		inverters_inv_r_send_active190_enum_to_string((inverters_inv_r_send_active190)pack->inv_r_send(i).active190(), buffer);
 		(*net_strings)["INV_R_SEND"]["active190"].push(buffer);
+		(*net_signals)["INV_R_SEND"]["m_r_rcp"].push(pack->inv_r_send(i).m_r_rcp());
 
     }
 
@@ -337,6 +343,11 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		inverters_inv_r_rcv_def_din_1_enum_to_string((inverters_inv_r_rcv_def_din_1)pack->inv_r_rcv(i).def_din_1(), buffer);
 		(*net_strings)["INV_R_RCV"]["def_din_1"].push(buffer);
 		(*net_signals)["INV_R_RCV"]["m_cmd_ramp"].push(pack->inv_r_rcv(i).m_cmd_ramp());
+		(*net_signals)["INV_R_RCV"]["i_max_pk"].push(pack->inv_r_rcv(i).i_max_pk());
+		(*net_signals)["INV_R_RCV"]["i_con_eff"].push(pack->inv_r_rcv(i).i_con_eff());
+		(*net_signals)["INV_R_RCV"]["i_device"].push(pack->inv_r_rcv(i).i_device());
+		(*net_signals)["INV_R_RCV"]["n_r_lim"].push(pack->inv_r_rcv(i).n_r_lim());
+		(*net_signals)["INV_R_RCV"]["nmax100perc"].push(pack->inv_r_rcv(i).nmax100perc());
 		(*net_enums)["INV_R_RCV"]["ncr064"].push(pack->inv_r_rcv(i).ncr064());
 		(*net_enums)["INV_R_RCV"]["err_powerfault"].push(pack->inv_r_rcv(i).err_powerfault());
 		(*net_enums)["INV_R_RCV"]["lmt_active_2"].push(pack->inv_r_rcv(i).lmt_active_2());
@@ -418,6 +429,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_R_RCV"]["warn_warning_0"].push(pack->inv_r_rcv(i).warn_warning_0());
 		(*net_enums)["INV_R_RCV"]["signmag82"].push(pack->inv_r_rcv(i).signmag82());
 		(*net_signals)["INV_R_RCV"]["free"].push(pack->inv_r_rcv(i).free());
+		(*net_signals)["INV_R_RCV"]["m_r_rcp"].push(pack->inv_r_rcv(i).m_r_rcp());
 		(*net_enums)["INV_R_RCV"]["nclip64"].push(pack->inv_r_rcv(i).nclip64());
 		(*net_enums)["INV_R_RCV"]["warn_illegal_status"].push(pack->inv_r_rcv(i).warn_illegal_status());
 		(*net_enums)["INV_R_RCV"]["nclip82"].push(pack->inv_r_rcv(i).nclip82());
@@ -481,6 +493,11 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_SEND"]["def_end_1"].push(pack->inv_l_send(i).def_end_1());
 		inverters_inv_l_send_def_end_1_enum_to_string((inverters_inv_l_send_def_end_1)pack->inv_l_send(i).def_end_1(), buffer);
 		(*net_strings)["INV_L_SEND"]["def_end_1"].push(buffer);
+		(*net_signals)["INV_L_SEND"]["i_max_pk"].push(pack->inv_l_send(i).i_max_pk());
+		(*net_signals)["INV_L_SEND"]["i_con_eff"].push(pack->inv_l_send(i).i_con_eff());
+		(*net_signals)["INV_L_SEND"]["i_device"].push(pack->inv_l_send(i).i_device());
+		(*net_signals)["INV_L_SEND"]["n_r_lim"].push(pack->inv_l_send(i).n_r_lim());
+		(*net_signals)["INV_L_SEND"]["nmax100perc"].push(pack->inv_l_send(i).nmax100perc());
 		(*net_enums)["INV_L_SEND"]["km_speed_0"].push(pack->inv_l_send(i).km_speed_0());
 		(*net_enums)["INV_L_SEND"]["km_frg_off"].push(pack->inv_l_send(i).km_frg_off());
 		(*net_enums)["INV_L_SEND"]["km_cal_off"].push(pack->inv_l_send(i).km_cal_off());
@@ -505,6 +522,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_SEND"]["active190"].push(pack->inv_l_send(i).active190());
 		inverters_inv_l_send_active190_enum_to_string((inverters_inv_l_send_active190)pack->inv_l_send(i).active190(), buffer);
 		(*net_strings)["INV_L_SEND"]["active190"].push(buffer);
+		(*net_signals)["INV_L_SEND"]["m_r_rcp"].push(pack->inv_l_send(i).m_r_rcp());
 
     }
 
@@ -538,6 +556,11 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		inverters_inv_l_rcv_def_din_1_enum_to_string((inverters_inv_l_rcv_def_din_1)pack->inv_l_rcv(i).def_din_1(), buffer);
 		(*net_strings)["INV_L_RCV"]["def_din_1"].push(buffer);
 		(*net_signals)["INV_L_RCV"]["m_cmd_ramp"].push(pack->inv_l_rcv(i).m_cmd_ramp());
+		(*net_signals)["INV_L_RCV"]["i_max_pk"].push(pack->inv_l_rcv(i).i_max_pk());
+		(*net_signals)["INV_L_RCV"]["i_con_eff"].push(pack->inv_l_rcv(i).i_con_eff());
+		(*net_signals)["INV_L_RCV"]["i_device"].push(pack->inv_l_rcv(i).i_device());
+		(*net_signals)["INV_L_RCV"]["n_r_lim"].push(pack->inv_l_rcv(i).n_r_lim());
+		(*net_signals)["INV_L_RCV"]["nmax100perc"].push(pack->inv_l_rcv(i).nmax100perc());
 		(*net_enums)["INV_L_RCV"]["ncr064"].push(pack->inv_l_rcv(i).ncr064());
 		(*net_enums)["INV_L_RCV"]["err_powerfault"].push(pack->inv_l_rcv(i).err_powerfault());
 		(*net_enums)["INV_L_RCV"]["lmt_active_2"].push(pack->inv_l_rcv(i).lmt_active_2());
@@ -619,6 +642,7 @@ void inverters_proto_interface_deserialize(inverters::Pack* pack, network_enums*
 		(*net_enums)["INV_L_RCV"]["warn_warning_0"].push(pack->inv_l_rcv(i).warn_warning_0());
 		(*net_enums)["INV_L_RCV"]["signmag82"].push(pack->inv_l_rcv(i).signmag82());
 		(*net_signals)["INV_L_RCV"]["free"].push(pack->inv_l_rcv(i).free());
+		(*net_signals)["INV_L_RCV"]["m_r_rcp"].push(pack->inv_l_rcv(i).m_r_rcp());
 		(*net_enums)["INV_L_RCV"]["nclip64"].push(pack->inv_l_rcv(i).nclip64());
 		(*net_enums)["INV_L_RCV"]["warn_illegal_status"].push(pack->inv_l_rcv(i).warn_illegal_status());
 		(*net_enums)["INV_L_RCV"]["nclip82"].push(pack->inv_l_rcv(i).nclip82());
@@ -670,7 +694,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
     switch(id) {
         
         case 514: {
-            inverters_inv_r_send_t* msg = (inverters_inv_r_send_t*)(device->message);
+            inverters_inv_r_send_converted_t* msg = (inverters_inv_r_send_converted_t*)(device->message);
             inverters::INV_R_SEND* proto_msg = pack->add_inv_r_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_r_send_send_mux)msg->send_mux);
 			proto_msg->set_read_id((inverters::inverters_inv_r_send_read_id)msg->read_id);
@@ -678,6 +702,11 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_m_setdig__iq(msg->m_setdig__iq);
 			proto_msg->set_def_din_1((inverters::inverters_inv_r_send_def_din_1)msg->def_din_1);
 			proto_msg->set_def_end_1((inverters::inverters_inv_r_send_def_end_1)msg->def_end_1);
+			proto_msg->set_i_max_pk(msg->i_max_pk);
+			proto_msg->set_i_con_eff(msg->i_con_eff);
+			proto_msg->set_i_device(msg->i_device);
+			proto_msg->set_n_r_lim(msg->n_r_lim);
+			proto_msg->set_nmax100perc(msg->nmax100perc);
 			proto_msg->set_km_speed_0(msg->km_speed_0);
 			proto_msg->set_km_frg_off(msg->km_frg_off);
 			proto_msg->set_km_cal_off(msg->km_cal_off);
@@ -696,6 +725,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_km_debug_test(msg->km_debug_test);
 			proto_msg->set_active192((inverters::inverters_inv_r_send_active192)msg->active192);
 			proto_msg->set_active190((inverters::inverters_inv_r_send_active190)msg->active190);
+			proto_msg->set_m_r_rcp(msg->m_r_rcp);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -722,6 +752,11 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_ena82(msg->ena82);
 			proto_msg->set_def_din_1((inverters::inverters_inv_r_rcv_def_din_1)msg->def_din_1);
 			proto_msg->set_m_cmd_ramp(msg->m_cmd_ramp);
+			proto_msg->set_i_max_pk(msg->i_max_pk);
+			proto_msg->set_i_con_eff(msg->i_con_eff);
+			proto_msg->set_i_device(msg->i_device);
+			proto_msg->set_n_r_lim(msg->n_r_lim);
+			proto_msg->set_nmax100perc(msg->nmax100perc);
 			proto_msg->set_ncr064(msg->ncr064);
 			proto_msg->set_err_powerfault(msg->err_powerfault);
 			proto_msg->set_lmt_active_2(msg->lmt_active_2);
@@ -799,6 +834,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_warn_warning_0(msg->warn_warning_0);
 			proto_msg->set_signmag82(msg->signmag82);
 			proto_msg->set_free(msg->free);
+			proto_msg->set_m_r_rcp(msg->m_r_rcp);
 			proto_msg->set_nclip64(msg->nclip64);
 			proto_msg->set_warn_illegal_status(msg->warn_illegal_status);
 			proto_msg->set_nclip82(msg->nclip82);
@@ -845,7 +881,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
         }
 
         case 513: {
-            inverters_inv_l_send_t* msg = (inverters_inv_l_send_t*)(device->message);
+            inverters_inv_l_send_converted_t* msg = (inverters_inv_l_send_converted_t*)(device->message);
             inverters::INV_L_SEND* proto_msg = pack->add_inv_l_send();
 			proto_msg->set_send_mux((inverters::inverters_inv_l_send_send_mux)msg->send_mux);
 			proto_msg->set_read_id((inverters::inverters_inv_l_send_read_id)msg->read_id);
@@ -853,6 +889,11 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_m_setdig__iq(msg->m_setdig__iq);
 			proto_msg->set_def_din_1((inverters::inverters_inv_l_send_def_din_1)msg->def_din_1);
 			proto_msg->set_def_end_1((inverters::inverters_inv_l_send_def_end_1)msg->def_end_1);
+			proto_msg->set_i_max_pk(msg->i_max_pk);
+			proto_msg->set_i_con_eff(msg->i_con_eff);
+			proto_msg->set_i_device(msg->i_device);
+			proto_msg->set_n_r_lim(msg->n_r_lim);
+			proto_msg->set_nmax100perc(msg->nmax100perc);
 			proto_msg->set_km_speed_0(msg->km_speed_0);
 			proto_msg->set_km_frg_off(msg->km_frg_off);
 			proto_msg->set_km_cal_off(msg->km_cal_off);
@@ -871,6 +912,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_km_debug_test(msg->km_debug_test);
 			proto_msg->set_active192((inverters::inverters_inv_l_send_active192)msg->active192);
 			proto_msg->set_active190((inverters::inverters_inv_l_send_active190)msg->active190);
+			proto_msg->set_m_r_rcp(msg->m_r_rcp);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -897,6 +939,11 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_ena82(msg->ena82);
 			proto_msg->set_def_din_1((inverters::inverters_inv_l_rcv_def_din_1)msg->def_din_1);
 			proto_msg->set_m_cmd_ramp(msg->m_cmd_ramp);
+			proto_msg->set_i_max_pk(msg->i_max_pk);
+			proto_msg->set_i_con_eff(msg->i_con_eff);
+			proto_msg->set_i_device(msg->i_device);
+			proto_msg->set_n_r_lim(msg->n_r_lim);
+			proto_msg->set_nmax100perc(msg->nmax100perc);
 			proto_msg->set_ncr064(msg->ncr064);
 			proto_msg->set_err_powerfault(msg->err_powerfault);
 			proto_msg->set_lmt_active_2(msg->lmt_active_2);
@@ -974,6 +1021,7 @@ void inverters_proto_interface_serialize_from_id(canlib_message_id id, inverters
 			proto_msg->set_warn_warning_0(msg->warn_warning_0);
 			proto_msg->set_signmag82(msg->signmag82);
 			proto_msg->set_free(msg->free);
+			proto_msg->set_m_r_rcp(msg->m_r_rcp);
 			proto_msg->set_nclip64(msg->nclip64);
 			proto_msg->set_warn_illegal_status(msg->warn_illegal_status);
 			proto_msg->set_nclip82(msg->nclip82);

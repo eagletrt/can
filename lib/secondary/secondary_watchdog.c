@@ -7,6 +7,8 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
        case 260: return SECONDARY_INTERVAL_STEERING_ANGLE;
        case 1281: return SECONDARY_INTERVAL_CONTROL_STATE;
        case 256: return SECONDARY_INTERVAL_TIMESTAMP;
+       case 1028: return SECONDARY_INTERVAL_REAR_AMMO_POS;
+       case 1060: return SECONDARY_INTERVAL_FRONT_AMMO_POS;
 
     }
     return -1;
@@ -41,6 +43,8 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1091: return SECONDARY_INDEX_LAP_COUNT;
        case 770: return SECONDARY_INDEX_LC_STATUS;
        case 256: return SECONDARY_INDEX_TIMESTAMP;
+       case 1028: return SECONDARY_INDEX_REAR_AMMO_POS;
+       case 1060: return SECONDARY_INDEX_FRONT_AMMO_POS;
 
     }
     return -1;
@@ -52,7 +56,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 27 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 29 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -90,6 +94,20 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[SECONDARY_INDEX_TIMESTAMP] > SECONDARY_INTERVAL_TIMESTAMP * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_TIMESTAMP);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_REAR_AMMO_POS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_REAR_AMMO_POS] > SECONDARY_INTERVAL_REAR_AMMO_POS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_REAR_AMMO_POS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_FRONT_AMMO_POS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_FRONT_AMMO_POS] > SECONDARY_INTERVAL_FRONT_AMMO_POS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_FRONT_AMMO_POS);
     }
 
 }

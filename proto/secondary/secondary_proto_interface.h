@@ -650,6 +650,32 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->rear_ammo_pos_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->rear_ammo_pos(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->rear_ammo_pos(i)._inner_timestamp();
+        (*net_signals)["REAR_AMMO_POS"]["_timestamp"].push(pack->rear_ammo_pos(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["REAR_AMMO_POS"]["rl"].push(pack->rear_ammo_pos(i).rl());
+		(*net_signals)["REAR_AMMO_POS"]["rr"].push(pack->rear_ammo_pos(i).rr());
+
+    }
+
+    for(int i = 0; i < pack->front_ammo_pos_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->front_ammo_pos(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->front_ammo_pos(i)._inner_timestamp();
+        (*net_signals)["FRONT_AMMO_POS"]["_timestamp"].push(pack->front_ammo_pos(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["FRONT_AMMO_POS"]["fl"].push(pack->front_ammo_pos(i).fl());
+		(*net_signals)["FRONT_AMMO_POS"]["fr"].push(pack->front_ammo_pos(i).fr());
+
+    }
+
 }
 
 void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, device_t* device) {
@@ -687,7 +713,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1456: {
-            secondary_irts_fl_0_converted_t* msg = (secondary_irts_fl_0_converted_t*)(device->message);
+            secondary_irts_fl_0_t* msg = (secondary_irts_fl_0_t*)(device->message);
             secondary::IRTS_FL_0* proto_msg = pack->add_irts_fl_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -701,7 +727,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1457: {
-            secondary_irts_fl_1_converted_t* msg = (secondary_irts_fl_1_converted_t*)(device->message);
+            secondary_irts_fl_1_t* msg = (secondary_irts_fl_1_t*)(device->message);
             secondary::IRTS_FL_1* proto_msg = pack->add_irts_fl_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -715,7 +741,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1458: {
-            secondary_irts_fl_2_converted_t* msg = (secondary_irts_fl_2_converted_t*)(device->message);
+            secondary_irts_fl_2_t* msg = (secondary_irts_fl_2_t*)(device->message);
             secondary::IRTS_FL_2* proto_msg = pack->add_irts_fl_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -729,7 +755,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1459: {
-            secondary_irts_fl_3_converted_t* msg = (secondary_irts_fl_3_converted_t*)(device->message);
+            secondary_irts_fl_3_t* msg = (secondary_irts_fl_3_t*)(device->message);
             secondary::IRTS_FL_3* proto_msg = pack->add_irts_fl_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -743,7 +769,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1464: {
-            secondary_irts_fr_0_converted_t* msg = (secondary_irts_fr_0_converted_t*)(device->message);
+            secondary_irts_fr_0_t* msg = (secondary_irts_fr_0_t*)(device->message);
             secondary::IRTS_FR_0* proto_msg = pack->add_irts_fr_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -757,7 +783,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1465: {
-            secondary_irts_fr_1_converted_t* msg = (secondary_irts_fr_1_converted_t*)(device->message);
+            secondary_irts_fr_1_t* msg = (secondary_irts_fr_1_t*)(device->message);
             secondary::IRTS_FR_1* proto_msg = pack->add_irts_fr_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -771,7 +797,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1466: {
-            secondary_irts_fr_2_converted_t* msg = (secondary_irts_fr_2_converted_t*)(device->message);
+            secondary_irts_fr_2_t* msg = (secondary_irts_fr_2_t*)(device->message);
             secondary::IRTS_FR_2* proto_msg = pack->add_irts_fr_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -785,7 +811,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1467: {
-            secondary_irts_fr_3_converted_t* msg = (secondary_irts_fr_3_converted_t*)(device->message);
+            secondary_irts_fr_3_t* msg = (secondary_irts_fr_3_t*)(device->message);
             secondary::IRTS_FR_3* proto_msg = pack->add_irts_fr_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -799,7 +825,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1468: {
-            secondary_irts_rl_0_converted_t* msg = (secondary_irts_rl_0_converted_t*)(device->message);
+            secondary_irts_rl_0_t* msg = (secondary_irts_rl_0_t*)(device->message);
             secondary::IRTS_RL_0* proto_msg = pack->add_irts_rl_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -813,7 +839,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1469: {
-            secondary_irts_rl_1_converted_t* msg = (secondary_irts_rl_1_converted_t*)(device->message);
+            secondary_irts_rl_1_t* msg = (secondary_irts_rl_1_t*)(device->message);
             secondary::IRTS_RL_1* proto_msg = pack->add_irts_rl_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -827,7 +853,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1470: {
-            secondary_irts_rl_2_converted_t* msg = (secondary_irts_rl_2_converted_t*)(device->message);
+            secondary_irts_rl_2_t* msg = (secondary_irts_rl_2_t*)(device->message);
             secondary::IRTS_RL_2* proto_msg = pack->add_irts_rl_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -841,7 +867,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1471: {
-            secondary_irts_rl_3_converted_t* msg = (secondary_irts_rl_3_converted_t*)(device->message);
+            secondary_irts_rl_3_t* msg = (secondary_irts_rl_3_t*)(device->message);
             secondary::IRTS_RL_3* proto_msg = pack->add_irts_rl_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -855,7 +881,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1472: {
-            secondary_irts_rr_0_converted_t* msg = (secondary_irts_rr_0_converted_t*)(device->message);
+            secondary_irts_rr_0_t* msg = (secondary_irts_rr_0_t*)(device->message);
             secondary::IRTS_RR_0* proto_msg = pack->add_irts_rr_0();
 			proto_msg->set_channel1(msg->channel1);
 			proto_msg->set_channel2(msg->channel2);
@@ -869,7 +895,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1473: {
-            secondary_irts_rr_1_converted_t* msg = (secondary_irts_rr_1_converted_t*)(device->message);
+            secondary_irts_rr_1_t* msg = (secondary_irts_rr_1_t*)(device->message);
             secondary::IRTS_RR_1* proto_msg = pack->add_irts_rr_1();
 			proto_msg->set_channel5(msg->channel5);
 			proto_msg->set_channel6(msg->channel6);
@@ -883,7 +909,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1474: {
-            secondary_irts_rr_2_converted_t* msg = (secondary_irts_rr_2_converted_t*)(device->message);
+            secondary_irts_rr_2_t* msg = (secondary_irts_rr_2_t*)(device->message);
             secondary::IRTS_RR_2* proto_msg = pack->add_irts_rr_2();
 			proto_msg->set_channel9(msg->channel9);
 			proto_msg->set_channel10(msg->channel10);
@@ -897,7 +923,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1475: {
-            secondary_irts_rr_3_converted_t* msg = (secondary_irts_rr_3_converted_t*)(device->message);
+            secondary_irts_rr_3_t* msg = (secondary_irts_rr_3_t*)(device->message);
             secondary::IRTS_RR_3* proto_msg = pack->add_irts_rr_3();
 			proto_msg->set_channel13(msg->channel13);
 			proto_msg->set_channel14(msg->channel14);
@@ -1017,6 +1043,30 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             secondary_timestamp_t* msg = (secondary_timestamp_t*)(device->message);
             secondary::TIMESTAMP* proto_msg = pack->add_timestamp();
 			proto_msg->set_timestamp(msg->timestamp);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1028: {
+            secondary_rear_ammo_pos_converted_t* msg = (secondary_rear_ammo_pos_converted_t*)(device->message);
+            secondary::REAR_AMMO_POS* proto_msg = pack->add_rear_ammo_pos();
+			proto_msg->set_rl(msg->rl);
+			proto_msg->set_rr(msg->rr);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1060: {
+            secondary_front_ammo_pos_converted_t* msg = (secondary_front_ammo_pos_converted_t*)(device->message);
+            secondary::FRONT_AMMO_POS* proto_msg = pack->add_front_ammo_pos();
+			proto_msg->set_fl(msg->fl);
+			proto_msg->set_fr(msg->fr);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

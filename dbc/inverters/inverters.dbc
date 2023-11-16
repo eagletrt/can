@@ -37,6 +37,7 @@ BU_: Vector__XXX
 
 
 BO_ 514 INV_R_SEND: 5 Vector__XXX
+ SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
  SG_ Active190 m190 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_DEBUG_TEST m81 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -55,6 +56,11 @@ BO_ 514 INV_R_SEND: 5 Vector__XXX
  SG_ KM_CAL_OFF m81 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_FRG_OFF m81 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_SPEED_0 m81 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
+ SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+ SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+ SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
  SG_ def_END_1 m190 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ M_setdig__Iq m144 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
@@ -101,6 +107,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Nclip82 m82 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Warn_Illegal_Status m143 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Nclip64 m64 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
  SG_ free m58 : 24|16@1- (1,0) [-32768|32767] "Num" Vector__XXX
  SG_ SignMag82 m82 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Warn_Warning_0 m143 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -178,6 +185,11 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ LMT_Active_2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_PowerFault m143 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ NcR064 m64 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
+ SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+ SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+ SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
  SG_ M_cmd_ramp m58 : 8|16@1- (1,0) [-32767|32767] "Num" Vector__XXX
  SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ Ena82 m82 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -196,6 +208,7 @@ BO_ 386 INV_R_RCV: 6 Vector__XXX
  SG_ Rcv_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 513 INV_L_SEND: 5 Vector__XXX
+ SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
  SG_ Active190 m190 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_DEBUG_TEST m81 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -214,6 +227,11 @@ BO_ 513 INV_L_SEND: 5 Vector__XXX
  SG_ KM_CAL_OFF m81 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_FRG_OFF m81 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ KM_SPEED_0 m81 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
+ SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+ SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+ SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
  SG_ def_END_1 m190 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ M_setdig__Iq m144 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
@@ -260,6 +278,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ Nclip82 m82 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Warn_Illegal_Status m143 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Nclip64 m64 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
  SG_ free m58 : 24|16@1- (1,0) [-32768|32767] "Num" Vector__XXX
  SG_ SignMag82 m82 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Warn_Warning_0 m143 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -337,6 +356,11 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
  SG_ LMT_Active_2 m216 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Err_PowerFault m143 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ NcR064 m64 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
+ SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
+ SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
+ SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
+ SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
  SG_ M_cmd_ramp m58 : 8|16@1- (1,0) [-32767|32767] "Num" Vector__XXX
  SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ Ena82 m82 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -357,6 +381,7 @@ BO_ 385 INV_L_RCV: 6 Vector__XXX
 
 
 
+CM_ SG_ 514 M_R_Rcp "Torque Ramp Rcp Time [0..4000 ms]";
 CM_ SG_ 514 KM_DEBUG_TEST "Kern Mode State Bit -";
 CM_ SG_ 514 KM_PSEUDO_ENABLE "Kern Mode State Bit -";
 CM_ SG_ 514 KM_rsvd_13 "Kern Mode State Bit - rsvd_13";
@@ -372,6 +397,11 @@ CM_ SG_ 514 KM_TX_TOG_STAT "Kern Mode State Bit -";
 CM_ SG_ 514 KM_CAL_OFF "Kern Mode State Bit -";
 CM_ SG_ 514 KM_FRG_OFF "Kern Mode State Bit -";
 CM_ SG_ 514 KM_SPEED_0 "Kern Mode State Bit -";
+CM_ SG_ 514 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
+CM_ SG_ 514 N_R_Lim "Emergency Stopping Ramp Time [0..1000 ms]";
+CM_ SG_ 514 I_device "Set device define for continuous current";
+CM_ SG_ 514 I_con_eff "Continuous Device Current (Arms) settings via percentage entry - Percentage as 13 Bit entry format (16383 is equal 100perc)";
+CM_ SG_ 514 I_max_pk "Max. Device Current (A) settings via percentage entry - Percentage as 13 Bit entry format (16383 equal 100perc)";
 CM_ SG_ 514 def_END_1 "Definition - Function attribution of the Digital Input - END 1 (Limit 1)";
 CM_ SG_ 514 def_DIN_1 "Definition - Function attribution of the Digital Input - DIN 1";
 CM_ SG_ 514 M_setdig__Iq "Digital numerical Iq-Current Command - input";
@@ -415,6 +445,7 @@ CM_ SG_ 386 Nclip_minus64 "Additional switchable negative speed limiting possibl
 CM_ SG_ 386 Nclip82 "General speed limiting (if = 90 %) possible";
 CM_ SG_ 386 Warn_Illegal_Status "RUN signal disturbed, EMI";
 CM_ SG_ 386 Nclip64 "General speed limiting (if = 90 %) possible";
+CM_ SG_ 386 M_R_Rcp "Torque Ramp Rcp Time [0..4000 ms]";
 CM_ SG_ 386 free "free";
 CM_ SG_ 386 SignMag82 "Speed internally inverted";
 CM_ SG_ 386 Warn_Warning_0 "No device identification";
@@ -489,6 +520,11 @@ CM_ SG_ 386 KM_SPEED_0 "Kern Mode State Bit -";
 CM_ SG_ 386 LMT_Active_2 "Digital input limit 2 active";
 CM_ SG_ 386 Err_PowerFault "Hardware error";
 CM_ SG_ 386 NcR064 "Speed command value = 0 (drive stopped)";
+CM_ SG_ 386 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
+CM_ SG_ 386 N_R_Lim "Emergency Stopping Ramp Time [0..1000 ms]";
+CM_ SG_ 386 I_device "Set device define for continuous current";
+CM_ SG_ 386 I_con_eff "Continuous Device Current (Arms) settings via percentage entry - Percentage as 13 Bit entry format (16383 is equal 100perc)";
+CM_ SG_ 386 I_max_pk "Max. Device Current (A) settings via percentage entry - Percentage as 13 Bit entry format (16383 equal 100perc)";
 CM_ SG_ 386 M_cmd_ramp "Digital numerical Iq-Current Command - internal ramped";
 CM_ SG_ 386 def_DIN_1 "Definition - Function attribution of the Digital Input - DIN 1";
 CM_ SG_ 386 Ena82 "Enable drive";
@@ -505,6 +541,7 @@ CM_ SG_ 386 Err_BadParas "Damaged parameter";
 CM_ SG_ 386 Ena64 "Enable drive";
 CM_ SG_ 386 N_Actual_Filt "Actual Motor Roations Speed Filtered";
 CM_ SG_ 386 Rcv_Mux "Actual Motor Roations Speed";
+CM_ SG_ 513 M_R_Rcp "Torque Ramp Rcp Time [0..4000 ms]";
 CM_ SG_ 513 KM_DEBUG_TEST "Kern Mode State Bit -";
 CM_ SG_ 513 KM_PSEUDO_ENABLE "Kern Mode State Bit -";
 CM_ SG_ 513 KM_rsvd_13 "Kern Mode State Bit - rsvd_13";
@@ -520,6 +557,11 @@ CM_ SG_ 513 KM_TX_TOG_STAT "Kern Mode State Bit -";
 CM_ SG_ 513 KM_CAL_OFF "Kern Mode State Bit -";
 CM_ SG_ 513 KM_FRG_OFF "Kern Mode State Bit -";
 CM_ SG_ 513 KM_SPEED_0 "Kern Mode State Bit -";
+CM_ SG_ 513 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
+CM_ SG_ 513 N_R_Lim "Emergency Stopping Ramp Time [0..1000 ms]";
+CM_ SG_ 513 I_device "Set device define for continuous current";
+CM_ SG_ 513 I_con_eff "Continuous Device Current (Arms) settings via percentage entry - Percentage as 13 Bit entry format (16383 is equal 100perc)";
+CM_ SG_ 513 I_max_pk "Max. Device Current (A) settings via percentage entry - Percentage as 13 Bit entry format (16383 equal 100perc)";
 CM_ SG_ 513 def_END_1 "Definition - Function attribution of the Digital Input - END 1 (Limit 1)";
 CM_ SG_ 513 def_DIN_1 "Definition - Function attribution of the Digital Input - DIN 1";
 CM_ SG_ 513 M_setdig__Iq "Digital numerical Iq-Current Command - input";
@@ -563,6 +605,7 @@ CM_ SG_ 385 Nclip_minus64 "Additional switchable negative speed limiting possibl
 CM_ SG_ 385 Nclip82 "General speed limiting (if = 90 %) possible";
 CM_ SG_ 385 Warn_Illegal_Status "RUN signal disturbed, EMI";
 CM_ SG_ 385 Nclip64 "General speed limiting (if = 90 %) possible";
+CM_ SG_ 385 M_R_Rcp "Torque Ramp Rcp Time [0..4000 ms]";
 CM_ SG_ 385 free "free";
 CM_ SG_ 385 SignMag82 "Speed internally inverted";
 CM_ SG_ 385 Warn_Warning_0 "No device identification";
@@ -637,6 +680,11 @@ CM_ SG_ 385 KM_SPEED_0 "Kern Mode State Bit -";
 CM_ SG_ 385 LMT_Active_2 "Digital input limit 2 active";
 CM_ SG_ 385 Err_PowerFault "Hardware error";
 CM_ SG_ 385 NcR064 "Speed command value = 0 (drive stopped)";
+CM_ SG_ 385 Nmax100perc "Maximum Speed Value for Resolution of 16Bit";
+CM_ SG_ 385 N_R_Lim "Emergency Stopping Ramp Time [0..1000 ms]";
+CM_ SG_ 385 I_device "Set device define for continuous current";
+CM_ SG_ 385 I_con_eff "Continuous Device Current (Arms) settings via percentage entry - Percentage as 13 Bit entry format (16383 is equal 100perc)";
+CM_ SG_ 385 I_max_pk "Max. Device Current (A) settings via percentage entry - Percentage as 13 Bit entry format (16383 equal 100perc)";
 CM_ SG_ 385 M_cmd_ramp "Digital numerical Iq-Current Command - internal ramped";
 CM_ SG_ 385 def_DIN_1 "Definition - Function attribution of the Digital Input - DIN 1";
 CM_ SG_ 385 Ena82 "Enable drive";
