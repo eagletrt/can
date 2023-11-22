@@ -18,115 +18,115 @@ message IMU_ACCELERATION{
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_0{
-	uint32 channel1 = 1;
-	uint32 channel2 = 2;
-	uint32 channel3 = 3;
-	uint32 channel4 = 4;
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_1{
-	uint32 channel5 = 1;
-	uint32 channel6 = 2;
-	uint32 channel7 = 3;
-	uint32 channel8 = 4;
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_2{
-	uint32 channel9 = 1;
-	uint32 channel10 = 2;
-	uint32 channel11 = 3;
-	uint32 channel12 = 4;
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_3{
-	uint32 channel13 = 1;
-	uint32 channel14 = 2;
-	uint32 channel15 = 3;
-	uint32 channel16 = 4;
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_0{
-	uint32 channel1 = 1;
-	uint32 channel2 = 2;
-	uint32 channel3 = 3;
-	uint32 channel4 = 4;
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_1{
-	uint32 channel5 = 1;
-	uint32 channel6 = 2;
-	uint32 channel7 = 3;
-	uint32 channel8 = 4;
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_2{
-	uint32 channel9 = 1;
-	uint32 channel10 = 2;
-	uint32 channel11 = 3;
-	uint32 channel12 = 4;
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FR_3{
-	uint32 channel13 = 1;
-	uint32 channel14 = 2;
-	uint32 channel15 = 3;
-	uint32 channel16 = 4;
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_0{
-	uint32 channel1 = 1;
-	uint32 channel2 = 2;
-	uint32 channel3 = 3;
-	uint32 channel4 = 4;
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_1{
-	uint32 channel5 = 1;
-	uint32 channel6 = 2;
-	uint32 channel7 = 3;
-	uint32 channel8 = 4;
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_2{
-	uint32 channel9 = 1;
-	uint32 channel10 = 2;
-	uint32 channel11 = 3;
-	uint32 channel12 = 4;
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RL_3{
-	uint32 channel13 = 1;
-	uint32 channel14 = 2;
-	uint32 channel15 = 3;
-	uint32 channel16 = 4;
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_0{
-	uint32 channel1 = 1;
-	uint32 channel2 = 2;
-	uint32 channel3 = 3;
-	uint32 channel4 = 4;
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_1{
-	uint32 channel5 = 1;
-	uint32 channel6 = 2;
-	uint32 channel7 = 3;
-	uint32 channel8 = 4;
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_2{
-	uint32 channel9 = 1;
-	uint32 channel10 = 2;
-	uint32 channel11 = 3;
-	uint32 channel12 = 4;
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_RR_3{
-	uint32 channel13 = 1;
-	uint32 channel14 = 2;
-	uint32 channel15 = 3;
-	uint32 channel16 = 4;
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message GPS_COORDS{

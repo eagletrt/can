@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: STEER IRTS_RR DAS DAS DAS IRTS_FR BMS_HV IRTS_RR DAS BMS_LV DAS IRTS_FR ACQUISINATOR TLM DAS IRTS_FL TLM STEER IRTS_FR ACQUISINATOR TLM DAS DAS TLM STEER IRTS_FR IRTS_FL DAS DAS STEER DAS IRTS_RL IMU DAS DAS DAS TELEMETRY IRTS_RL CONTROL DAS DAS IMU IRTS_RL TELEMETRY DAS STEER IRTS_RL TLM DAS STEER IRTS_RR STEER DAS DAS IRTS_FL TLM IRTS_RR DAS TLM DAS IRTS_FL
+BU_: STEER IRTS_RL IMU DAS DAS IMU TELEMETRY IRTS_RL CONTROL DAS IRTS_FL DAS IRTS_RL TELEMETRY DAS DAS STEER IRTS_RL TLM DAS DAS IRTS_FL STEER IRTS_RR DAS STEER DAS IRTS_FL TLM IRTS_RR DAS TLM DAS DAS IRTS_FL STEER IRTS_RR DAS DAS DAS IRTS_FR BMS_HV IRTS_RR DAS BMS_LV DAS IRTS_FR ACQUISINATOR TLM DAS TLM STEER IRTS_FR ACQUISINATOR TLM DAS TLM STEER IRTS_FR DAS DAS
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -48,100 +48,100 @@ BO_ 1261 IMU_ACCELERATION: 8 Vector__XXX
  SG_ accel_x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
 
 BO_ 1456 IRTS_FL_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1457 IRTS_FL_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1458 IRTS_FL_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1459 IRTS_FL_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1464 IRTS_FR_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1465 IRTS_FR_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1466 IRTS_FR_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1467 IRTS_FR_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1468 IRTS_RL_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1469 IRTS_RL_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1470 IRTS_RL_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1471 IRTS_RL_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1472 IRTS_RR_0: 8 Vector__XXX
- SG_ channel4 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel3 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel2 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel1 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1473 IRTS_RR_1: 8 Vector__XXX
- SG_ channel8 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel7 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel6 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel5 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1474 IRTS_RR_2: 8 Vector__XXX
- SG_ channel12 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel11 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel10 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel9 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1475 IRTS_RR_3: 8 Vector__XXX
- SG_ channel16 : 55|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel15 : 39|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel14 : 23|16@0+ (1,-100) [-100|0] "" Vector__XXX
- SG_ channel13 : 7|16@0+ (1,-100) [-100|0] "" Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.09775171065493646,-100) [-100|0] "" Vector__XXX
 
 BO_ 1027 GPS_COORDS: 8 Vector__XXX
  SG_ longitude : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
