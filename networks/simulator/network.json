@@ -12,24 +12,24 @@
         "contents": {
           "ang_rate_x": {
             "type": "float32",
-            "range": [0, 245],
+            "range": [-245, 245],
             "precision": 0.1,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           },
           "ang_rate_y": {
             "type": "float32",
-            "range": [0, 245],
+            "range": [-245, 245],
             "precision": 0.1,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           },
           "ang_rate_z": {
             "type": "float32",
-            "range": [0, 245],
+            "range": [-245, 245],
             "precision": 0.1,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           }
         }
       },
@@ -43,24 +43,24 @@
         "contents": {
           "accel_x": {
             "type": "float32",
-            "range": [0, 8],
+            "range": [-8, 8],
             "precision": 0.01,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           },
           "accel_y": {
             "type": "float32",
-            "range": [0, 8],
+            "range": [-8, 8],
             "precision": 0.01,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           },
           "accel_z": {
             "type": "float32",
-            "range": [0, 8],
+            "range": [-8, 8],
             "precision": 0.01,
-            "optimize": false,
-            "signed": true
+            "optimize": true,
+            "force": "uint16"
           },
           "temperature": "int16"
         }
@@ -74,7 +74,11 @@
         "receiving": ["STEER"],
         "description": "Pedal output, already calibrated",
         "contents": {
-          "apps": "uint8",
+          "apps": {
+            "type": "float32",
+            "range": [0, 100],
+            "force": "uint16"
+          },
           "bse_front": {
             "type": "float32",
             "range": [0, 100],
@@ -180,22 +184,22 @@
           "encoder_l": {
             "type": "float32",
             "force": "uint16",
-            "range": [-200, 200]
+            "range": [-20, 200]
           },
           "encoder_r": {
             "type": "float32",
             "force": "uint16",
-            "range": [-200, 200]
+            "range": [-20, 200]
           },
           "inverter_l": {
             "type": "float32",
             "force": "uint16",
-            "range": [-200, 200]
+            "range": [-20, 200]
           },
           "inverter_r": {
             "type": "float32",
             "force": "uint16",
-            "range": [-200, 200]
+            "range": [-20, 200]
           }
         }
       }
