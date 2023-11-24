@@ -843,6 +843,37 @@
           "force": "uint32"
         }
       }
+    },
+    {
+      "name": "DEBUG_SIGNAL",
+      "topic": "BROADCAST",
+      "priority": 3,
+      "sending": ["TLM"],
+      "receiving": ["TLM"],
+      "description": "Debug signals",
+      "interval": 10,
+      "contents": {
+        "field_1": {
+          "type": "float32",
+          "range": [-1, 1],
+          "force": "uint16"
+        },
+        "field_2": {
+          "type": "float32",
+          "range": [-1, 1],
+          "force": "uint16"
+        },
+        "field_3": {
+          "type": "float32",
+          "range": [-1, 1],
+          "force": "uint16"
+        },
+        "field_4": {
+          "type": "float32",
+          "range": [-1, 1],
+          "force": "uint16"
+        }
+      }
     }
   ]
 }
