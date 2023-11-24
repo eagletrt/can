@@ -76,22 +76,26 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -106,22 +110,26 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -136,22 +144,26 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -166,22 +178,26 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -196,22 +212,26 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -226,22 +246,26 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -256,22 +280,26 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -286,22 +314,26 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -316,22 +348,26 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -346,22 +382,26 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -376,22 +416,26 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -406,22 +450,26 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -436,22 +484,26 @@
         "channel1": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel2": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel3": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel4": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -466,22 +518,26 @@
         "channel5": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel6": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel7": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel8": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -496,22 +552,26 @@
         "channel9": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel10": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel11": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel12": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
@@ -526,22 +586,26 @@
         "channel13": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel14": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel15": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         },
         "channel16": {
           "type": "float32",
           "range": [-100, 0],
-          "precision": 0.1
+          "precision": 0.1,
+          "optimize": false
         }
       }
     },
