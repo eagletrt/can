@@ -57,6 +57,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SIMULATOR_INTERVAL_CONTROL_STATE 100
 #define SIMULATOR_INTERVAL_CONTROL_OUTPUT 100
 #define SIMULATOR_INTERVAL_SPEED 10
+#define SIMULATOR_INTERVAL_DEBUG_SIGNAL 10
 
 
 #define SIMULATOR_INDEX_IMU_ANGULAR_RATE 0
@@ -66,13 +67,14 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SIMULATOR_INDEX_CONTROL_STATE 4
 #define SIMULATOR_INDEX_CONTROL_OUTPUT 5
 #define SIMULATOR_INDEX_SPEED 6
+#define SIMULATOR_INDEX_DEBUG_SIGNAL 7
 
 
 
 typedef struct {
     uint8_t activated[1];
     uint8_t timeout[1];
-    canlib_watchdog_timestamp last_reset[7];
+    canlib_watchdog_timestamp last_reset[8];
 } simulator_watchdog;
 
 int simulator_watchdog_interval_from_id(uint16_t message_id);

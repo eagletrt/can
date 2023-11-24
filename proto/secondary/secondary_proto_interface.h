@@ -676,6 +676,21 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->debug_signal_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL"]["_timestamp"].push(pack->debug_signal(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["DEBUG_SIGNAL"]["field_1"].push(pack->debug_signal(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL"]["field_2"].push(pack->debug_signal(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL"]["field_3"].push(pack->debug_signal(i).field_3());
+		(*net_signals)["DEBUG_SIGNAL"]["field_4"].push(pack->debug_signal(i).field_4());
+
+    }
+
 }
 
 void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, device_t* device) {
@@ -1067,6 +1082,20 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             secondary::FRONT_AMMO_POS* proto_msg = pack->add_front_ammo_pos();
 			proto_msg->set_fl(msg->fl);
 			proto_msg->set_fr(msg->fr);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1024: {
+            secondary_debug_signal_converted_t* msg = (secondary_debug_signal_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL* proto_msg = pack->add_debug_signal();
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+			proto_msg->set_field_4(msg->field_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

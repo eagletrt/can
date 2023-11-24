@@ -48,6 +48,13 @@ message SPEED{
 	double inverter_r = 4;
 	uint64 _inner_timestamp = 5;
 }
+message DEBUG_SIGNAL{
+	double field_1 = 1;
+	double field_2 = 2;
+	double field_3 = 3;
+	double field_4 = 4;
+	uint64 _inner_timestamp = 5;
+}
 
 
 message Pack{
@@ -58,5 +65,6 @@ message Pack{
 	repeated CONTROL_STATE CONTROL_STATE = 5;
 	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 6;
 	repeated SPEED SPEED = 7;
+	repeated DEBUG_SIGNAL DEBUG_SIGNAL = 8;
 }
 

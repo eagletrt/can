@@ -358,6 +358,21 @@ void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->debug_signal_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL"]["_timestamp"].push(pack->debug_signal(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["DEBUG_SIGNAL"]["field_1"].push(pack->debug_signal(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL"]["field_2"].push(pack->debug_signal(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL"]["field_3"].push(pack->debug_signal(i).field_3());
+		(*net_signals)["DEBUG_SIGNAL"]["field_4"].push(pack->debug_signal(i).field_4());
+
+    }
+
 }
 
 void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator::Pack* pack, device_t* device) {
@@ -394,7 +409,7 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             break;
         }
 
-        case 769: {
+        case 770: {
             simulator_pedals_output_converted_t* msg = (simulator_pedals_output_converted_t*)(device->message);
             simulator::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
 			proto_msg->set_apps(msg->apps);
@@ -407,7 +422,7 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             break;
         }
 
-        case 258: {
+        case 259: {
             simulator_steering_angle_converted_t* msg = (simulator_steering_angle_converted_t*)(device->message);
             simulator::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
 			proto_msg->set_angle(msg->angle);
@@ -418,7 +433,7 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             break;
         }
 
-        case 1280: {
+        case 1281: {
             simulator_control_state_converted_t* msg = (simulator_control_state_converted_t*)(device->message);
             simulator::CONTROL_STATE* proto_msg = pack->add_control_state();
 			proto_msg->set_map_pw(msg->map_pw);
@@ -431,7 +446,7 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             break;
         }
 
-        case 257: {
+        case 258: {
             simulator_control_output_converted_t* msg = (simulator_control_output_converted_t*)(device->message);
             simulator::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
 			proto_msg->set_estimated_velocity(msg->estimated_velocity);
@@ -446,13 +461,27 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             break;
         }
 
-        case 513: {
+        case 514: {
             simulator_speed_converted_t* msg = (simulator_speed_converted_t*)(device->message);
             simulator::SPEED* proto_msg = pack->add_speed();
 			proto_msg->set_encoder_l(msg->encoder_l);
 			proto_msg->set_encoder_r(msg->encoder_r);
 			proto_msg->set_inverter_l(msg->inverter_l);
 			proto_msg->set_inverter_r(msg->inverter_r);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1024: {
+            simulator_debug_signal_converted_t* msg = (simulator_debug_signal_converted_t*)(device->message);
+            simulator::DEBUG_SIGNAL* proto_msg = pack->add_debug_signal();
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+			proto_msg->set_field_4(msg->field_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
