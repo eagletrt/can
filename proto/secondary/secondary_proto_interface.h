@@ -691,18 +691,18 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->cooling temp_size(); i++){
+    for(int i = 0; i < pack->cooling_temp_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->cooling temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->cooling temp(i)._inner_timestamp();
-        (*net_signals)["COOLING TEMP"]["_timestamp"].push(pack->cooling temp(i)._inner_timestamp());
+        if(pack->cooling_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cooling_temp(i)._inner_timestamp();
+        (*net_signals)["COOLING_TEMP"]["_timestamp"].push(pack->cooling_temp(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["COOLING TEMP"]["top_left"].push(pack->cooling temp(i).top_left());
-		(*net_signals)["COOLING TEMP"]["bottom_left"].push(pack->cooling temp(i).bottom_left());
-		(*net_signals)["COOLING TEMP"]["top_right"].push(pack->cooling temp(i).top_right());
-		(*net_signals)["COOLING TEMP"]["bottom_right"].push(pack->cooling temp(i).bottom_right());
+		(*net_signals)["COOLING_TEMP"]["top_left"].push(pack->cooling_temp(i).top_left());
+		(*net_signals)["COOLING_TEMP"]["bottom_left"].push(pack->cooling_temp(i).bottom_left());
+		(*net_signals)["COOLING_TEMP"]["top_right"].push(pack->cooling_temp(i).top_right());
+		(*net_signals)["COOLING_TEMP"]["bottom_right"].push(pack->cooling_temp(i).bottom_right());
 
     }
 
@@ -1119,8 +1119,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1092: {
-            secondary_cooling temp_converted_t* msg = (secondary_cooling temp_converted_t*)(device->message);
-            secondary::COOLING TEMP* proto_msg = pack->add_cooling temp();
+            secondary_cooling_temp_converted_t* msg = (secondary_cooling_temp_converted_t*)(device->message);
+            secondary::COOLING_TEMP* proto_msg = pack->add_cooling_temp();
 			proto_msg->set_top_left(msg->top_left);
 			proto_msg->set_bottom_left(msg->bottom_left);
 			proto_msg->set_top_right(msg->top_right);

@@ -197,7 +197,7 @@ message DEBUG_SIGNAL{
 	double field_4 = 4;
 	uint64 _inner_timestamp = 5;
 }
-message COOLING TEMP{
+message COOLING_TEMP{
 	double top_left = 1;
 	double bottom_left = 2;
 	double top_right = 3;
@@ -237,6 +237,6 @@ message Pack{
 	repeated REAR_AMMO_POS REAR_AMMO_POS = 28;
 	repeated FRONT_AMMO_POS FRONT_AMMO_POS = 29;
 	repeated DEBUG_SIGNAL DEBUG_SIGNAL = 30;
-	repeated COOLING TEMP COOLING TEMP = 31;
+	repeated COOLING_TEMP COOLING_TEMP = 31;
 }
 

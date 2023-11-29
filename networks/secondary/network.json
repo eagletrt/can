@@ -876,7 +876,7 @@
       }
     },
     {
-      "name": "COOLING TEMP",
+      "name": "COOLING_TEMP",
       "topic": "TELEMETRY",
       "priority": 3,
       "sending": ["ACQUISINATOR"],

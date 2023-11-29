@@ -10,7 +10,7 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
        case 1028: return SECONDARY_INTERVAL_REAR_AMMO_POS;
        case 1060: return SECONDARY_INTERVAL_FRONT_AMMO_POS;
        case 1024: return SECONDARY_INTERVAL_DEBUG_SIGNAL;
-       case 1092: return SECONDARY_INTERVAL_COOLING TEMP;
+       case 1092: return SECONDARY_INTERVAL_COOLING_TEMP;
 
     }
     return -1;
@@ -48,7 +48,7 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1028: return SECONDARY_INDEX_REAR_AMMO_POS;
        case 1060: return SECONDARY_INDEX_FRONT_AMMO_POS;
        case 1024: return SECONDARY_INDEX_DEBUG_SIGNAL;
-       case 1092: return SECONDARY_INDEX_COOLING TEMP;
+       case 1092: return SECONDARY_INDEX_COOLING_TEMP;
 
     }
     return -1;
@@ -122,10 +122,10 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_COOLING TEMP)
-        && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING TEMP] > SECONDARY_INTERVAL_COOLING TEMP * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_COOLING_TEMP)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING_TEMP] > SECONDARY_INTERVAL_COOLING_TEMP * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING TEMP);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING_TEMP);
     }
 
 }
