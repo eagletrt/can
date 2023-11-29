@@ -299,7 +299,7 @@
         "interval": 1000,
         "contents": {
             "cellboard_id": "Cellboard",
-            "component_build_hash": "uint32",
+            "component_version": "uint16",
             "canlib_build_time": "uint32"
         }
     }

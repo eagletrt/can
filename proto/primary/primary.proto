@@ -490,7 +490,7 @@ message TLM_VERSION{
 }
 message CELLBOARD_VERSION{
 	primary_cellboard_version_cellboard_id cellboard_id = 1;
-	uint32 component_build_time = 2;
+	uint32 component_version = 2;
 	uint32 canlib_build_time = 3;
 	uint64 _inner_timestamp = 4;
 }
