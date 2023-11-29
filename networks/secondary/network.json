@@ -874,6 +874,37 @@
           "force": "uint16"
         }
       }
+    },
+    {
+      "name": "COOLING_TEMP",
+      "topic": "TELEMETRY",
+      "priority": 3,
+      "sending": ["ACQUISINATOR"],
+      "receiving": ["TLM"],
+      "description": "Cooling temperature",
+      "interval": 500,
+      "contents": {
+        "top_left": {
+          "type": "float16",
+          "range": [-10, 110],
+          "force": "uint16"
+        },
+        "bottom_left": {
+          "type": "float16",
+          "range": [-10, 110],
+          "force": "uint16"
+        },
+        "top_right": {
+          "type": "float16",
+          "range": [-10, 110],
+          "force": "uint16"
+        },
+        "bottom_right": {
+          "type": "float16",
+          "range": [-10, 110],
+          "force": "uint16"
+        }
+      }  
     }
   ]
 }
