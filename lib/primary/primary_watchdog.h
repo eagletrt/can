@@ -98,6 +98,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define PRIMARY_INTERVAL_HANDCART_STATUS 500
 #define PRIMARY_INTERVAL_HANDCART_SETTINGS 500
 #define PRIMARY_INTERVAL_HANDCART_SETTINGS_SET 500
+#define PRIMARY_INTERVAL_REGEN_MANUAL_COMMAND 100
 
 
 #define PRIMARY_INDEX_NLG5_DIAG_TX 0
@@ -199,13 +200,14 @@ typedef void (*canlib_watchdog_callback)(int);
 #define PRIMARY_INDEX_HANDCART_SETTINGS_SET 96
 #define PRIMARY_INDEX_SET_PTT_STATUS 97
 #define PRIMARY_INDEX_PTT_STATUS 98
+#define PRIMARY_INDEX_REGEN_MANUAL_COMMAND 99
 
 
 
 typedef struct {
     uint8_t activated[13];
     uint8_t timeout[13];
-    canlib_watchdog_timestamp last_reset[99];
+    canlib_watchdog_timestamp last_reset[100];
 } primary_watchdog;
 
 int primary_watchdog_interval_from_id(uint16_t message_id);

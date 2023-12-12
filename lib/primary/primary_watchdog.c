@@ -49,6 +49,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 768: return PRIMARY_INTERVAL_HANDCART_STATUS;
        case 800: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
        case 832: return PRIMARY_INTERVAL_HANDCART_SETTINGS_SET;
+       case 1027: return PRIMARY_INTERVAL_REGEN_MANUAL_COMMAND;
 
     }
     return -1;
@@ -155,6 +156,7 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 832: return PRIMARY_INDEX_HANDCART_SETTINGS_SET;
        case 547: return PRIMARY_INDEX_SET_PTT_STATUS;
        case 579: return PRIMARY_INDEX_PTT_STATUS;
+       case 1027: return PRIMARY_INDEX_REGEN_MANUAL_COMMAND;
 
     }
     return -1;
@@ -166,7 +168,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 99 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 100 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -498,6 +500,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SETTINGS_SET] > PRIMARY_INTERVAL_HANDCART_SETTINGS_SET * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HANDCART_SETTINGS_SET);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_REGEN_MANUAL_COMMAND)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_REGEN_MANUAL_COMMAND] > PRIMARY_INTERVAL_REGEN_MANUAL_COMMAND * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_REGEN_MANUAL_COMMAND);
     }
 
 }

@@ -813,12 +813,12 @@
       "contents": {
         "rl": {
           "type": "float32",
-          "range": [0, 50],
+          "range": [-20, 50],
           "force": "uint32"
         },
         "rr": {
           "type": "float32",
-          "range": [0, 50],
+          "range": [-20, 50],
           "force": "uint32"
         }
       }
@@ -834,12 +834,12 @@
       "contents": {
         "fl": {
           "type": "float32",
-          "range": [0, 50],
+          "range": [-20, 50],
           "force": "uint32"
         },
         "fr": {
           "type": "float32",
-          "range": [0, 50],
+          "range": [-20, 50],
           "force": "uint32"
         }
       }

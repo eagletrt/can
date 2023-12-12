@@ -1859,6 +1859,21 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->regen_manual_command_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->regen_manual_command(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->regen_manual_command(i)._inner_timestamp();
+        (*net_signals)["REGEN_MANUAL_COMMAND"]["_timestamp"].push(pack->regen_manual_command(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["REGEN_MANUAL_COMMAND"]["status"].push(pack->regen_manual_command(i).status());
+		primary_regen_manual_command_status_enum_to_string((primary_regen_manual_command_status)pack->regen_manual_command(i).status(), buffer);
+		(*net_strings)["REGEN_MANUAL_COMMAND"]["status"].push(buffer);
+		(*net_signals)["REGEN_MANUAL_COMMAND"]["target"].push(pack->regen_manual_command(i).target());
+
+    }
+
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device) {
@@ -3259,6 +3274,18 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_ptt_status_t* msg = (primary_ptt_status_t*)(device->message);
             primary::PTT_STATUS* proto_msg = pack->add_ptt_status();
 			proto_msg->set_status((primary::primary_ptt_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1027: {
+            primary_regen_manual_command_converted_t* msg = (primary_regen_manual_command_converted_t*)(device->message);
+            primary::REGEN_MANUAL_COMMAND* proto_msg = pack->add_regen_manual_command();
+			proto_msg->set_status((primary::primary_regen_manual_command_status)msg->status);
+			proto_msg->set_target(msg->target);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
