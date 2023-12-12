@@ -14,8 +14,9 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 264: return PRIMARY_INTERVAL_TLM_STATUS;
        case 1801: return PRIMARY_INTERVAL_STEER_SYSTEM_STATUS;
        case 772: return PRIMARY_INTERVAL_HV_VOLTAGE;
-       case 804: return PRIMARY_INTERVAL_HV_CURRENT;
-       case 836: return PRIMARY_INTERVAL_HV_TEMP;
+       case 804: return PRIMARY_INTERVAL_HV_CELL_VOLTAGE;
+       case 836: return PRIMARY_INTERVAL_HV_CURRENT;
+       case 868: return PRIMARY_INTERVAL_HV_TEMP;
        case 36: return PRIMARY_INTERVAL_HV_ERRORS;
        case 84: return PRIMARY_INTERVAL_TS_STATUS;
        case 82: return PRIMARY_INTERVAL_SET_TS_STATUS_DAS;
@@ -102,8 +103,9 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 264: return PRIMARY_INDEX_TLM_STATUS;
        case 1801: return PRIMARY_INDEX_STEER_SYSTEM_STATUS;
        case 772: return PRIMARY_INDEX_HV_VOLTAGE;
-       case 804: return PRIMARY_INDEX_HV_CURRENT;
-       case 836: return PRIMARY_INDEX_HV_TEMP;
+       case 804: return PRIMARY_INDEX_HV_CELL_VOLTAGE;
+       case 836: return PRIMARY_INDEX_HV_CURRENT;
+       case 868: return PRIMARY_INDEX_HV_TEMP;
        case 36: return PRIMARY_INDEX_HV_ERRORS;
        case 32: return PRIMARY_INDEX_HV_FANS_OVERRIDE;
        case 37: return PRIMARY_INDEX_HV_CAN_FORWARD_STATUS;
@@ -168,7 +170,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 100 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 101 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -255,6 +257,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_VOLTAGE] > PRIMARY_INTERVAL_HV_VOLTAGE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_VOLTAGE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELL_VOLTAGE)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELL_VOLTAGE] > PRIMARY_INTERVAL_HV_CELL_VOLTAGE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELL_VOLTAGE);
     }
 
     if (

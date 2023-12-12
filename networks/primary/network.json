@@ -663,28 +663,47 @@
       "priority": 4,
       "sending": ["BMS_HV"],
       "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Pack stats",
+      "description": "Internal pack measured voltages in V",
       "interval": 10,
       "contents": {
         "pack_voltage": {
           "type": "float32",
-          "range": [0, 460],
-          "force": "uint16"
+          "range": [0, 460]
         },
         "bus_voltage": {
           "type": "float32",
-          "range": [0, 460],
-          "force": "uint16"
-        },
+          "range": [0, 460]
+        }
+      }
+    },
+    {
+      "name": "HV_CELL_VOLTAGE",
+      "topic": "DASnSTEERnCART",
+      "priority": 4,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER", "HANDCART"],
+      "description": "Cell pack voltage statistics in V",
+      "interval": 10,
+      "contents": {
         "max_cell_voltage": {
           "type": "float32",
           "range": [0, 5],
-          "precision": 0.0001
+          "force": "uint16"
         },
         "min_cell_voltage": {
           "type": "float32",
           "range": [0, 5],
-          "precision": 0.0001
+          "force": "uint16"
+        },
+        "sum_cell_voltage": {
+          "type": "float32",
+          "range": [0, 460],
+          "force": "uint16"
+        },
+        "avg_cell_voltage": {
+          "type": "float32",
+          "range": [0, 5],
+          "force": "uint16"
         }
       }
     },
@@ -1471,9 +1490,13 @@
       "priority": 5,
       "sending": ["HANDCART"],
       "receiving": ["BMS_HV"],
-      "description": "Set cell balancing status; only once",
+      "description": "Set cell balancing status and threshold in mV; only once",
       "contents": {
-        "set_balancing_status": "Toggle"
+        "set_balancing_status": "Toggle",
+        "balancing_threshold": {
+          "type": "uint16",
+          "range": [5, 200]
+        }
       }
     },
     {

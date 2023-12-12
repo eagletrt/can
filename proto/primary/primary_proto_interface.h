@@ -864,8 +864,21 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
 		(*net_signals)["HV_VOLTAGE"]["pack_voltage"].push(pack->hv_voltage(i).pack_voltage());
 		(*net_signals)["HV_VOLTAGE"]["bus_voltage"].push(pack->hv_voltage(i).bus_voltage());
-		(*net_signals)["HV_VOLTAGE"]["max_cell_voltage"].push(pack->hv_voltage(i).max_cell_voltage());
-		(*net_signals)["HV_VOLTAGE"]["min_cell_voltage"].push(pack->hv_voltage(i).min_cell_voltage());
+
+    }
+
+    for(int i = 0; i < pack->hv_cell_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cell_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cell_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_CELL_VOLTAGE"]["_timestamp"].push(pack->hv_cell_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_CELL_VOLTAGE"]["max_cell_voltage"].push(pack->hv_cell_voltage(i).max_cell_voltage());
+		(*net_signals)["HV_CELL_VOLTAGE"]["min_cell_voltage"].push(pack->hv_cell_voltage(i).min_cell_voltage());
+		(*net_signals)["HV_CELL_VOLTAGE"]["sum_cell_voltage"].push(pack->hv_cell_voltage(i).sum_cell_voltage());
+		(*net_signals)["HV_CELL_VOLTAGE"]["avg_cell_voltage"].push(pack->hv_cell_voltage(i).avg_cell_voltage());
 
     }
 
@@ -1656,6 +1669,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["SET_CELL_BALANCING_STATUS"]["set_balancing_status"].push(pack->set_cell_balancing_status(i).set_balancing_status());
 		primary_set_cell_balancing_status_set_balancing_status_enum_to_string((primary_set_cell_balancing_status_set_balancing_status)pack->set_cell_balancing_status(i).set_balancing_status(), buffer);
 		(*net_strings)["SET_CELL_BALANCING_STATUS"]["set_balancing_status"].push(buffer);
+		(*net_signals)["SET_CELL_BALANCING_STATUS"]["balancing_threshold"].push(pack->set_cell_balancing_status(i).balancing_threshold());
 
     }
 
@@ -2432,8 +2446,6 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
 			proto_msg->set_pack_voltage(msg->pack_voltage);
 			proto_msg->set_bus_voltage(msg->bus_voltage);
-			proto_msg->set_max_cell_voltage(msg->max_cell_voltage);
-			proto_msg->set_min_cell_voltage(msg->min_cell_voltage);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2442,6 +2454,20 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 804: {
+            primary_hv_cell_voltage_converted_t* msg = (primary_hv_cell_voltage_converted_t*)(device->message);
+            primary::HV_CELL_VOLTAGE* proto_msg = pack->add_hv_cell_voltage();
+			proto_msg->set_max_cell_voltage(msg->max_cell_voltage);
+			proto_msg->set_min_cell_voltage(msg->min_cell_voltage);
+			proto_msg->set_sum_cell_voltage(msg->sum_cell_voltage);
+			proto_msg->set_avg_cell_voltage(msg->avg_cell_voltage);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 836: {
             primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)(device->message);
             primary::HV_CURRENT* proto_msg = pack->add_hv_current();
 			proto_msg->set_current(msg->current);
@@ -2455,7 +2481,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 836: {
+        case 868: {
             primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)(device->message);
             primary::HV_TEMP* proto_msg = pack->add_hv_temp();
 			proto_msg->set_average_temp(msg->average_temp);
@@ -3098,6 +3124,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)(device->message);
             primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
 			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
+			proto_msg->set_balancing_threshold(msg->balancing_threshold);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
