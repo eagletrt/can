@@ -1718,6 +1718,23 @@
       "contents": {
         "status": "Toggle"
       }
+    },
+    {
+      "name": "REGEN_MANUAL_COMMAND",
+      "topic": "DASnSTEER",
+      "priority": 3,
+      "interval": 100,
+      "sending": ["STEER"],
+      "receiving": ["DAS"],
+      "description": "Command for manual regen activation",
+      "contents": {
+        "status": "Toggle",
+        "target": {
+          "type": "float32",
+          "range": [0, 100],
+          "precision": 0.01
+        }
+      }
     }
   ]
 }
