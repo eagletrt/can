@@ -1,0 +1,994 @@
+#ifndef PRIMARY_UTILS_C_H
+
+#define PRIMARY_UTILS_C_H
+
+#include <cstddef>
+#include "primary_network.h"
+
+/* START */
+#define primary_nlg5_diag_tx_string "PRIMARY_NLG5_DIAG_TX"
+
+#define primary_nlg5_diag_tx_lad_d_paramrp_string "PRIMARY_NLG5_DIAG_TX_LAD_D_PARAMRP"
+/* END */
+
+/* START */
+#define primary_nlg5_diag_rx_string "PRIMARY_NLG5_DIAG_RX"
+
+#define primary_nlg5_diag_rx_lad_d_paramrq_string "PRIMARY_NLG5_DIAG_RX_LAD_D_PARAMRQ"
+/* END */
+
+/* START */
+#define primary_nlg5_err_string "PRIMARY_NLG5_ERR"
+
+#define primary_nlg5_err_nlg5_e_oov_string "PRIMARY_NLG5_ERR_NLG5_E_OOV"
+#define primary_nlg5_err_nlg5_e_mov_ii_string "PRIMARY_NLG5_ERR_NLG5_E_MOV_II"
+#define primary_nlg5_err_nlg5_e_mov_i_string "PRIMARY_NLG5_ERR_NLG5_E_MOV_I"
+#define primary_nlg5_err_nlg5_e_sc_string "PRIMARY_NLG5_ERR_NLG5_E_SC"
+#define primary_nlg5_err_nlg5_e_p_om_string "PRIMARY_NLG5_ERR_NLG5_E_P_OM"
+#define primary_nlg5_err_nlg5_e_p_mv_string "PRIMARY_NLG5_ERR_NLG5_E_P_MV"
+#define primary_nlg5_err_nlg5_e_of_string "PRIMARY_NLG5_ERR_NLG5_E_OF"
+#define primary_nlg5_err_nlg5_e_mf_string "PRIMARY_NLG5_ERR_NLG5_E_MF"
+#define primary_nlg5_err_nlg5_e_b_p_string "PRIMARY_NLG5_ERR_NLG5_E_B_P"
+#define primary_nlg5_err_nlg5_e_t_c_string "PRIMARY_NLG5_ERR_NLG5_E_T_C"
+#define primary_nlg5_err_nlg5_e_t_pow_string "PRIMARY_NLG5_ERR_NLG5_E_T_POW"
+#define primary_nlg5_err_nlg5_e_t_dio_string "PRIMARY_NLG5_ERR_NLG5_E_T_DIO"
+#define primary_nlg5_err_nlg5_e_t_tr_string "PRIMARY_NLG5_ERR_NLG5_E_T_TR"
+#define primary_nlg5_err_nlg5_e_t_ext1_string "PRIMARY_NLG5_ERR_NLG5_E_T_EXT1"
+#define primary_nlg5_err_nlg5_e_t_ext2_string "PRIMARY_NLG5_ERR_NLG5_E_T_EXT2"
+#define primary_nlg5_err_nlg5_e_t_ext3_string "PRIMARY_NLG5_ERR_NLG5_E_T_EXT3"
+#define primary_nlg5_err_nlg5_e_f_crc_string "PRIMARY_NLG5_ERR_NLG5_E_F_CRC"
+#define primary_nlg5_err_nlg5_e_nv_crc_string "PRIMARY_NLG5_ERR_NLG5_E_NV_CRC"
+#define primary_nlg5_err_nlg5_e_es_crc_string "PRIMARY_NLG5_ERR_NLG5_E_ES_CRC"
+#define primary_nlg5_err_nlg5_e_ep_crc_string "PRIMARY_NLG5_ERR_NLG5_E_EP_CRC"
+#define primary_nlg5_err_nlg5_e_wdt_string "PRIMARY_NLG5_ERR_NLG5_E_WDT"
+#define primary_nlg5_err_nlg5_e_init_string "PRIMARY_NLG5_ERR_NLG5_E_INIT"
+#define primary_nlg5_err_nlg5_e_c_to_string "PRIMARY_NLG5_ERR_NLG5_E_C_TO"
+#define primary_nlg5_err_nlg5_e_c_off_string "PRIMARY_NLG5_ERR_NLG5_E_C_OFF"
+#define primary_nlg5_err_nlg5_e_c_tx_string "PRIMARY_NLG5_ERR_NLG5_E_C_TX"
+#define primary_nlg5_err_nlg5_e_c_rx_string "PRIMARY_NLG5_ERR_NLG5_E_C_RX"
+#define primary_nlg5_err_nlg5_e_sdt_bt_string "PRIMARY_NLG5_ERR_NLG5_E_SDT_BT"
+#define primary_nlg5_err_nlg5_e_sdt_bv_string "PRIMARY_NLG5_ERR_NLG5_E_SDT_BV"
+#define primary_nlg5_err_nlg5_e_sdt_ah_string "PRIMARY_NLG5_ERR_NLG5_E_SDT_AH"
+#define primary_nlg5_err_nlg5_e_sdt_ct_string "PRIMARY_NLG5_ERR_NLG5_E_SDT_CT"
+#define primary_nlg5_err_nlg5_w_pl_mv_string "PRIMARY_NLG5_ERR_NLG5_W_PL_MV"
+#define primary_nlg5_err_nlg5_w_pl_bv_string "PRIMARY_NLG5_ERR_NLG5_W_PL_BV"
+#define primary_nlg5_err_nlg5_w_pl_it_string "PRIMARY_NLG5_ERR_NLG5_W_PL_IT"
+#define primary_nlg5_err_nlg5_w_c_vor_string "PRIMARY_NLG5_ERR_NLG5_W_C_VOR"
+#define primary_nlg5_err_nlg5_w_cm_na_string "PRIMARY_NLG5_ERR_NLG5_W_CM_NA"
+#define primary_nlg5_err_nlg5_w_od_string "PRIMARY_NLG5_ERR_NLG5_W_OD"
+#define primary_nlg5_err_nlg5_w_sc_m_string "PRIMARY_NLG5_ERR_NLG5_W_SC_M"
+/* END */
+
+/* START */
+#define primary_nlg5_temp_string "PRIMARY_NLG5_TEMP"
+
+#define primary_nlg5_temp_nlg5_p_tmp_string "PRIMARY_NLG5_TEMP_NLG5_P_TMP"
+#define primary_nlg5_temp_nlg5_tmp_ext1_string "PRIMARY_NLG5_TEMP_NLG5_TMP_EXT1"
+#define primary_nlg5_temp_nlg5_temp_ext2_string "PRIMARY_NLG5_TEMP_NLG5_TEMP_EXT2"
+#define primary_nlg5_temp_nlg5_tmp_ext3_string "PRIMARY_NLG5_TEMP_NLG5_TMP_EXT3"
+/* END */
+
+/* START */
+#define primary_nlg5_act_ii_string "PRIMARY_NLG5_ACT_II"
+
+#define primary_nlg5_act_ii_nlg5_s_mc_m_cp_string "PRIMARY_NLG5_ACT_II_NLG5_S_MC_M_CP"
+#define primary_nlg5_act_ii_nlg5_s_mc_m_pi_string "PRIMARY_NLG5_ACT_II_NLG5_S_MC_M_PI"
+#define primary_nlg5_act_ii_nlg5_abv_string "PRIMARY_NLG5_ACT_II_NLG5_ABV"
+#define primary_nlg5_act_ii_nlg5_ahc_ext_string "PRIMARY_NLG5_ACT_II_NLG5_AHC_EXT"
+#define primary_nlg5_act_ii_nlg5_oc_bo_string "PRIMARY_NLG5_ACT_II_NLG5_OC_BO"
+/* END */
+
+/* START */
+#define primary_nlg5_act_i_string "PRIMARY_NLG5_ACT_I"
+
+#define primary_nlg5_act_i_nlg5_mc_act_string "PRIMARY_NLG5_ACT_I_NLG5_MC_ACT"
+#define primary_nlg5_act_i_nlg5_mv_act_string "PRIMARY_NLG5_ACT_I_NLG5_MV_ACT"
+#define primary_nlg5_act_i_nlg5_ov_act_string "PRIMARY_NLG5_ACT_I_NLG5_OV_ACT"
+#define primary_nlg5_act_i_nlg5_oc_act_string "PRIMARY_NLG5_ACT_I_NLG5_OC_ACT"
+/* END */
+
+/* START */
+#define primary_nlg5_st_string "PRIMARY_NLG5_ST"
+
+#define primary_nlg5_st_nlg5_s_he_string "PRIMARY_NLG5_ST_NLG5_S_HE"
+#define primary_nlg5_st_nlg5_s_err_string "PRIMARY_NLG5_ST_NLG5_S_ERR"
+#define primary_nlg5_st_nlg5_s_war_string "PRIMARY_NLG5_ST_NLG5_S_WAR"
+#define primary_nlg5_st_nlg5_s_fan_string "PRIMARY_NLG5_ST_NLG5_S_FAN"
+#define primary_nlg5_st_nlg5_s_eum_string "PRIMARY_NLG5_ST_NLG5_S_EUM"
+#define primary_nlg5_st_nlg5_s_um_i_string "PRIMARY_NLG5_ST_NLG5_S_UM_I"
+#define primary_nlg5_st_nlg5_s_um_ii_string "PRIMARY_NLG5_ST_NLG5_S_UM_II"
+#define primary_nlg5_st_nlg5_s_cp_dt_string "PRIMARY_NLG5_ST_NLG5_S_CP_DT"
+#define primary_nlg5_st_nlg5_s_bpd_i_string "PRIMARY_NLG5_ST_NLG5_S_BPD_I"
+#define primary_nlg5_st_nlg5_s_bpd_ii_string "PRIMARY_NLG5_ST_NLG5_S_BPD_II"
+#define primary_nlg5_st_nlg5_s_l_ov_string "PRIMARY_NLG5_ST_NLG5_S_L_OV"
+#define primary_nlg5_st_nlg5_s_l_oc_string "PRIMARY_NLG5_ST_NLG5_S_L_OC"
+#define primary_nlg5_st_nlg5_s_l_mc_string "PRIMARY_NLG5_ST_NLG5_S_L_MC"
+#define primary_nlg5_st_nlg5_s_l_pi_string "PRIMARY_NLG5_ST_NLG5_S_L_PI"
+#define primary_nlg5_st_nlg5_s_l_cp_string "PRIMARY_NLG5_ST_NLG5_S_L_CP"
+#define primary_nlg5_st_nlg5_s_l_pmax_string "PRIMARY_NLG5_ST_NLG5_S_L_PMAX"
+#define primary_nlg5_st_nlg5_s_l_mc_max_string "PRIMARY_NLG5_ST_NLG5_S_L_MC_MAX"
+#define primary_nlg5_st_nlg5_s_l_oc_max_string "PRIMARY_NLG5_ST_NLG5_S_L_OC_MAX"
+#define primary_nlg5_st_nlg5_s_l_mo_max_string "PRIMARY_NLG5_ST_NLG5_S_L_MO_MAX"
+#define primary_nlg5_st_nlg5_s_l_t_cprim_string "PRIMARY_NLG5_ST_NLG5_S_L_T_CPRIM"
+#define primary_nlg5_st_nlg5_s_l_t_pow_string "PRIMARY_NLG5_ST_NLG5_S_L_T_POW"
+#define primary_nlg5_st_nlg5_s_l_t_dio_string "PRIMARY_NLG5_ST_NLG5_S_L_T_DIO"
+#define primary_nlg5_st_nlg5_s_l_t_tr_string "PRIMARY_NLG5_ST_NLG5_S_L_T_TR"
+#define primary_nlg5_st_nlg5_s_l_t_batt_string "PRIMARY_NLG5_ST_NLG5_S_L_T_BATT"
+#define primary_nlg5_st_nlg5_s_aac_string "PRIMARY_NLG5_ST_NLG5_S_AAC"
+/* END */
+
+/* START */
+#define primary_nlg5_ctl_string "PRIMARY_NLG5_CTL"
+
+#define primary_nlg5_ctl_nlg5_c_c_en_string "PRIMARY_NLG5_CTL_NLG5_C_C_EN"
+#define primary_nlg5_ctl_nlg5_c_c_el_string "PRIMARY_NLG5_CTL_NLG5_C_C_EL"
+#define primary_nlg5_ctl_nlg5_c_cp_v_string "PRIMARY_NLG5_CTL_NLG5_C_CP_V"
+#define primary_nlg5_ctl_nlg5_c_mr_string "PRIMARY_NLG5_CTL_NLG5_C_MR"
+#define primary_nlg5_ctl_nlg5_mc_max_string "PRIMARY_NLG5_CTL_NLG5_MC_MAX"
+#define primary_nlg5_ctl_nlg5_ov_com_string "PRIMARY_NLG5_CTL_NLG5_OV_COM"
+#define primary_nlg5_ctl_nlg5_oc_com_string "PRIMARY_NLG5_CTL_NLG5_OC_COM"
+/* END */
+
+/* START */
+#define primary_bms_hv_jmp_to_blt_string "PRIMARY_BMS_HV_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define primary_flash_bms_hv_tx_string "PRIMARY_FLASH_BMS_HV_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_bms_hv_rx_string "PRIMARY_FLASH_BMS_HV_RX"
+
+/* END */
+
+/* START */
+#define primary_hv_can_forward_string "PRIMARY_HV_CAN_FORWARD"
+
+#define primary_hv_can_forward_can_forward_set_string "PRIMARY_HV_CAN_FORWARD_CAN_FORWARD_SET"
+/* END */
+
+/* START */
+#define primary_flash_cellboard_0_tx_string "PRIMARY_FLASH_CELLBOARD_0_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_0_rx_string "PRIMARY_FLASH_CELLBOARD_0_RX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_1_tx_string "PRIMARY_FLASH_CELLBOARD_1_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_1_rx_string "PRIMARY_FLASH_CELLBOARD_1_RX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_2_tx_string "PRIMARY_FLASH_CELLBOARD_2_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_2_rx_string "PRIMARY_FLASH_CELLBOARD_2_RX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_3_tx_string "PRIMARY_FLASH_CELLBOARD_3_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_3_rx_string "PRIMARY_FLASH_CELLBOARD_3_RX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_4_tx_string "PRIMARY_FLASH_CELLBOARD_4_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_4_rx_string "PRIMARY_FLASH_CELLBOARD_4_RX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_5_tx_string "PRIMARY_FLASH_CELLBOARD_5_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_cellboard_5_rx_string "PRIMARY_FLASH_CELLBOARD_5_RX"
+
+/* END */
+
+/* START */
+#define primary_bms_lv_jmp_to_blt_string "PRIMARY_BMS_LV_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define primary_flash_bms_lv_tx_string "PRIMARY_FLASH_BMS_LV_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_bms_lv_rx_string "PRIMARY_FLASH_BMS_LV_RX"
+
+/* END */
+
+/* START */
+#define primary_ecu_jmp_to_blt_string "PRIMARY_ECU_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define primary_flash_ecu_tx_string "PRIMARY_FLASH_ECU_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_ecu_rx_string "PRIMARY_FLASH_ECU_RX"
+
+/* END */
+
+/* START */
+#define primary_steering_jmp_to_blt_string "PRIMARY_STEERING_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define primary_flash_steering_tx_string "PRIMARY_FLASH_STEERING_TX"
+
+/* END */
+
+/* START */
+#define primary_flash_steering_rx_string "PRIMARY_FLASH_STEERING_RX"
+
+/* END */
+
+/* START */
+#define primary_steer_version_string "PRIMARY_STEER_VERSION"
+
+#define primary_steer_version_component_build_time_string "PRIMARY_STEER_VERSION_COMPONENT_BUILD_TIME"
+#define primary_steer_version_canlib_build_time_string "PRIMARY_STEER_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_das_version_string "PRIMARY_DAS_VERSION"
+
+#define primary_das_version_component_build_time_string "PRIMARY_DAS_VERSION_COMPONENT_BUILD_TIME"
+#define primary_das_version_canlib_build_time_string "PRIMARY_DAS_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_mainboard_version_string "PRIMARY_MAINBOARD_VERSION"
+
+#define primary_mainboard_version_component_build_time_string "PRIMARY_MAINBOARD_VERSION_COMPONENT_BUILD_TIME"
+#define primary_mainboard_version_canlib_build_time_string "PRIMARY_MAINBOARD_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_lv_version_string "PRIMARY_LV_VERSION"
+
+#define primary_lv_version_component_build_time_string "PRIMARY_LV_VERSION_COMPONENT_BUILD_TIME"
+#define primary_lv_version_canlib_build_time_string "PRIMARY_LV_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_tlm_version_string "PRIMARY_TLM_VERSION"
+
+#define primary_tlm_version_component_build_time_string "PRIMARY_TLM_VERSION_COMPONENT_BUILD_TIME"
+#define primary_tlm_version_canlib_build_time_string "PRIMARY_TLM_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_cellboard_version_string "PRIMARY_CELLBOARD_VERSION"
+
+#define primary_cellboard_version_cellboard_id_string "PRIMARY_CELLBOARD_VERSION_CELLBOARD_ID"
+#define primary_cellboard_version_component_version_string "PRIMARY_CELLBOARD_VERSION_COMPONENT_VERSION"
+#define primary_cellboard_version_canlib_build_time_string "PRIMARY_CELLBOARD_VERSION_CANLIB_BUILD_TIME"
+/* END */
+
+/* START */
+#define primary_ambient_temperature_string "PRIMARY_AMBIENT_TEMPERATURE"
+
+#define primary_ambient_temperature_temp_string "PRIMARY_AMBIENT_TEMPERATURE_TEMP"
+/* END */
+
+/* START */
+#define primary_data_logger_string "PRIMARY_DATA_LOGGER"
+
+#define primary_data_logger_placeholder1_string "PRIMARY_DATA_LOGGER_PLACEHOLDER1"
+#define primary_data_logger_placeholder2_string "PRIMARY_DATA_LOGGER_PLACEHOLDER2"
+/* END */
+
+/* START */
+#define primary_set_tlm_status_string "PRIMARY_SET_TLM_STATUS"
+
+#define primary_set_tlm_status_tlm_status_string "PRIMARY_SET_TLM_STATUS_TLM_STATUS"
+/* END */
+
+/* START */
+#define primary_tlm_status_string "PRIMARY_TLM_STATUS"
+
+#define primary_tlm_status_tlm_status_string "PRIMARY_TLM_STATUS_TLM_STATUS"
+/* END */
+
+/* START */
+#define primary_steer_system_status_string "PRIMARY_STEER_SYSTEM_STATUS"
+
+#define primary_steer_system_status_soc_temp_string "PRIMARY_STEER_SYSTEM_STATUS_SOC_TEMP"
+/* END */
+
+/* START */
+#define primary_hv_voltage_string "PRIMARY_HV_VOLTAGE"
+
+#define primary_hv_voltage_pack_voltage_string "PRIMARY_HV_VOLTAGE_PACK_VOLTAGE"
+#define primary_hv_voltage_bus_voltage_string "PRIMARY_HV_VOLTAGE_BUS_VOLTAGE"
+/* END */
+
+/* START */
+#define primary_hv_cell_voltage_string "PRIMARY_HV_CELL_VOLTAGE"
+
+#define primary_hv_cell_voltage_max_cell_voltage_string "PRIMARY_HV_CELL_VOLTAGE_MAX_CELL_VOLTAGE"
+#define primary_hv_cell_voltage_min_cell_voltage_string "PRIMARY_HV_CELL_VOLTAGE_MIN_CELL_VOLTAGE"
+#define primary_hv_cell_voltage_sum_cell_voltage_string "PRIMARY_HV_CELL_VOLTAGE_SUM_CELL_VOLTAGE"
+#define primary_hv_cell_voltage_avg_cell_voltage_string "PRIMARY_HV_CELL_VOLTAGE_AVG_CELL_VOLTAGE"
+/* END */
+
+/* START */
+#define primary_hv_current_string "PRIMARY_HV_CURRENT"
+
+#define primary_hv_current_current_string "PRIMARY_HV_CURRENT_CURRENT"
+#define primary_hv_current_power_string "PRIMARY_HV_CURRENT_POWER"
+#define primary_hv_current_energy_string "PRIMARY_HV_CURRENT_ENERGY"
+#define primary_hv_current_soc_string "PRIMARY_HV_CURRENT_SOC"
+/* END */
+
+/* START */
+#define primary_hv_temp_string "PRIMARY_HV_TEMP"
+
+#define primary_hv_temp_average_temp_string "PRIMARY_HV_TEMP_AVERAGE_TEMP"
+#define primary_hv_temp_max_temp_string "PRIMARY_HV_TEMP_MAX_TEMP"
+#define primary_hv_temp_min_temp_string "PRIMARY_HV_TEMP_MIN_TEMP"
+/* END */
+
+/* START */
+#define primary_hv_errors_string "PRIMARY_HV_ERRORS"
+
+#define primary_hv_errors_warnings_cell_low_voltage_string "PRIMARY_HV_ERRORS_WARNINGS_CELL_LOW_VOLTAGE"
+#define primary_hv_errors_warnings_cell_under_voltage_string "PRIMARY_HV_ERRORS_WARNINGS_CELL_UNDER_VOLTAGE"
+#define primary_hv_errors_warnings_cell_over_voltage_string "PRIMARY_HV_ERRORS_WARNINGS_CELL_OVER_VOLTAGE"
+#define primary_hv_errors_warnings_cell_high_temperature_string "PRIMARY_HV_ERRORS_WARNINGS_CELL_HIGH_TEMPERATURE"
+#define primary_hv_errors_warnings_cell_over_temperature_string "PRIMARY_HV_ERRORS_WARNINGS_CELL_OVER_TEMPERATURE"
+#define primary_hv_errors_warnings_over_current_string "PRIMARY_HV_ERRORS_WARNINGS_OVER_CURRENT"
+#define primary_hv_errors_warnings_can_string "PRIMARY_HV_ERRORS_WARNINGS_CAN"
+#define primary_hv_errors_warnings_int_voltage_mismatch_string "PRIMARY_HV_ERRORS_WARNINGS_INT_VOLTAGE_MISMATCH"
+#define primary_hv_errors_warnings_cellboard_comm_string "PRIMARY_HV_ERRORS_WARNINGS_CELLBOARD_COMM"
+#define primary_hv_errors_warnings_cellboard_internal_string "PRIMARY_HV_ERRORS_WARNINGS_CELLBOARD_INTERNAL"
+#define primary_hv_errors_warnings_connector_disconnected_string "PRIMARY_HV_ERRORS_WARNINGS_CONNECTOR_DISCONNECTED"
+#define primary_hv_errors_warnings_fans_disconnected_string "PRIMARY_HV_ERRORS_WARNINGS_FANS_DISCONNECTED"
+#define primary_hv_errors_warnings_feedback_string "PRIMARY_HV_ERRORS_WARNINGS_FEEDBACK"
+#define primary_hv_errors_warnings_feedback_circuitry_string "PRIMARY_HV_ERRORS_WARNINGS_FEEDBACK_CIRCUITRY"
+#define primary_hv_errors_warnings_eeprom_comm_string "PRIMARY_HV_ERRORS_WARNINGS_EEPROM_COMM"
+#define primary_hv_errors_warnings_eeprom_write_string "PRIMARY_HV_ERRORS_WARNINGS_EEPROM_WRITE"
+#define primary_hv_errors_errors_cell_low_voltage_string "PRIMARY_HV_ERRORS_ERRORS_CELL_LOW_VOLTAGE"
+#define primary_hv_errors_errors_cell_under_voltage_string "PRIMARY_HV_ERRORS_ERRORS_CELL_UNDER_VOLTAGE"
+#define primary_hv_errors_errors_cell_over_voltage_string "PRIMARY_HV_ERRORS_ERRORS_CELL_OVER_VOLTAGE"
+#define primary_hv_errors_errors_cell_high_temperature_string "PRIMARY_HV_ERRORS_ERRORS_CELL_HIGH_TEMPERATURE"
+#define primary_hv_errors_errors_cell_over_temperature_string "PRIMARY_HV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE"
+#define primary_hv_errors_errors_over_current_string "PRIMARY_HV_ERRORS_ERRORS_OVER_CURRENT"
+#define primary_hv_errors_errors_can_string "PRIMARY_HV_ERRORS_ERRORS_CAN"
+#define primary_hv_errors_errors_int_voltage_mismatch_string "PRIMARY_HV_ERRORS_ERRORS_INT_VOLTAGE_MISMATCH"
+#define primary_hv_errors_errors_cellboard_comm_string "PRIMARY_HV_ERRORS_ERRORS_CELLBOARD_COMM"
+#define primary_hv_errors_errors_cellboard_internal_string "PRIMARY_HV_ERRORS_ERRORS_CELLBOARD_INTERNAL"
+#define primary_hv_errors_errors_connector_disconnected_string "PRIMARY_HV_ERRORS_ERRORS_CONNECTOR_DISCONNECTED"
+#define primary_hv_errors_errors_fans_disconnected_string "PRIMARY_HV_ERRORS_ERRORS_FANS_DISCONNECTED"
+#define primary_hv_errors_errors_feedback_string "PRIMARY_HV_ERRORS_ERRORS_FEEDBACK"
+#define primary_hv_errors_errors_feedback_circuitry_string "PRIMARY_HV_ERRORS_ERRORS_FEEDBACK_CIRCUITRY"
+#define primary_hv_errors_errors_eeprom_comm_string "PRIMARY_HV_ERRORS_ERRORS_EEPROM_COMM"
+#define primary_hv_errors_errors_eeprom_write_string "PRIMARY_HV_ERRORS_ERRORS_EEPROM_WRITE"
+/* END */
+
+/* START */
+#define primary_hv_fans_override_string "PRIMARY_HV_FANS_OVERRIDE"
+
+#define primary_hv_fans_override_fans_override_string "PRIMARY_HV_FANS_OVERRIDE_FANS_OVERRIDE"
+#define primary_hv_fans_override_fans_speed_string "PRIMARY_HV_FANS_OVERRIDE_FANS_SPEED"
+/* END */
+
+/* START */
+#define primary_hv_can_forward_status_string "PRIMARY_HV_CAN_FORWARD_STATUS"
+
+#define primary_hv_can_forward_status_can_forward_status_string "PRIMARY_HV_CAN_FORWARD_STATUS_CAN_FORWARD_STATUS"
+/* END */
+
+/* START */
+#define primary_hv_fans_override_status_string "PRIMARY_HV_FANS_OVERRIDE_STATUS"
+
+#define primary_hv_fans_override_status_fans_override_string "PRIMARY_HV_FANS_OVERRIDE_STATUS_FANS_OVERRIDE"
+#define primary_hv_fans_override_status_fans_speed_string "PRIMARY_HV_FANS_OVERRIDE_STATUS_FANS_SPEED"
+/* END */
+
+/* START */
+#define primary_hv_feedback_status_string "PRIMARY_HV_FEEDBACK_STATUS"
+
+#define primary_hv_feedback_status_feedback_implausibility_detected_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_IMPLAUSIBILITY_DETECTED"
+#define primary_hv_feedback_status_feedback_imd_cockpit_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_IMD_COCKPIT"
+#define primary_hv_feedback_status_feedback_tsal_green_fault_latched_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN_FAULT_LATCHED"
+#define primary_hv_feedback_status_feedback_bms_cockpit_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_BMS_COCKPIT"
+#define primary_hv_feedback_status_feedback_ext_latched_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_EXT_LATCHED"
+#define primary_hv_feedback_status_feedback_tsal_green_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN"
+#define primary_hv_feedback_status_feedback_ts_over_60v_status_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_TS_OVER_60V_STATUS"
+#define primary_hv_feedback_status_feedback_airn_status_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_AIRN_STATUS"
+#define primary_hv_feedback_status_feedback_airp_status_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_AIRP_STATUS"
+#define primary_hv_feedback_status_feedback_airp_gate_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_AIRP_GATE"
+#define primary_hv_feedback_status_feedback_airn_gate_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_AIRN_GATE"
+#define primary_hv_feedback_status_feedback_precharge_status_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_PRECHARGE_STATUS"
+#define primary_hv_feedback_status_feedback_tsp_over_60v_status_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_TSP_OVER_60V_STATUS"
+#define primary_hv_feedback_status_feedback_imd_fault_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_IMD_FAULT"
+#define primary_hv_feedback_status_feedback_check_mux_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_CHECK_MUX"
+#define primary_hv_feedback_status_feedback_sd_end_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_SD_END"
+#define primary_hv_feedback_status_feedback_sd_out_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_SD_OUT"
+#define primary_hv_feedback_status_feedback_sd_in_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_SD_IN"
+#define primary_hv_feedback_status_feedback_sd_bms_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_SD_BMS"
+#define primary_hv_feedback_status_feedback_sd_imd_string "PRIMARY_HV_FEEDBACK_STATUS_FEEDBACK_SD_IMD"
+/* END */
+
+/* START */
+#define primary_hv_feedback_ts_voltage_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE"
+
+#define primary_hv_feedback_ts_voltage_feedback_ts_over_60v_status_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_TS_OVER_60V_STATUS"
+#define primary_hv_feedback_ts_voltage_feedback_airn_status_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_AIRN_STATUS"
+#define primary_hv_feedback_ts_voltage_feedback_airp_status_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_AIRP_STATUS"
+#define primary_hv_feedback_ts_voltage_feedback_airp_gate_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_AIRP_GATE"
+#define primary_hv_feedback_ts_voltage_feedback_airn_gate_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_AIRN_GATE"
+#define primary_hv_feedback_ts_voltage_feedback_precharge_status_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_PRECHARGE_STATUS"
+#define primary_hv_feedback_ts_voltage_feedback_tsp_over_60v_status_string "PRIMARY_HV_FEEDBACK_TS_VOLTAGE_FEEDBACK_TSP_OVER_60V_STATUS"
+/* END */
+
+/* START */
+#define primary_hv_feedback_misc_voltage_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE"
+
+#define primary_hv_feedback_misc_voltage_feedback_implausibility_detected_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_IMPLAUSIBILITY_DETECTED"
+#define primary_hv_feedback_misc_voltage_feedback_imd_cockpit_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_IMD_COCKPIT"
+#define primary_hv_feedback_misc_voltage_feedback_tsal_green_fault_latched_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_TSAL_GREEN_FAULT_LATCHED"
+#define primary_hv_feedback_misc_voltage_feedback_bms_cockpit_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_BMS_COCKPIT"
+#define primary_hv_feedback_misc_voltage_feedback_ext_latched_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_EXT_LATCHED"
+#define primary_hv_feedback_misc_voltage_feedback_tsal_green_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_TSAL_GREEN"
+#define primary_hv_feedback_misc_voltage_imd_fault_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_IMD_FAULT"
+#define primary_hv_feedback_misc_voltage_feedback_check_mux_string "PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_FEEDBACK_CHECK_MUX"
+/* END */
+
+/* START */
+#define primary_hv_feedback_sd_voltage_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE"
+
+#define primary_hv_feedback_sd_voltage_feedback_sd_end_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE_FEEDBACK_SD_END"
+#define primary_hv_feedback_sd_voltage_feedback_sd_out_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE_FEEDBACK_SD_OUT"
+#define primary_hv_feedback_sd_voltage_feedback_sd_in_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE_FEEDBACK_SD_IN"
+#define primary_hv_feedback_sd_voltage_feedback_sd_bms_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE_FEEDBACK_SD_BMS"
+#define primary_hv_feedback_sd_voltage_feedback_sd_imd_string "PRIMARY_HV_FEEDBACK_SD_VOLTAGE_FEEDBACK_SD_IMD"
+/* END */
+
+/* START */
+#define primary_hv_imd_status_string "PRIMARY_HV_IMD_STATUS"
+
+#define primary_hv_imd_status_imd_fault_string "PRIMARY_HV_IMD_STATUS_IMD_FAULT"
+#define primary_hv_imd_status_imd_status_string "PRIMARY_HV_IMD_STATUS_IMD_STATUS"
+#define primary_hv_imd_status_imd_details_string "PRIMARY_HV_IMD_STATUS_IMD_DETAILS"
+#define primary_hv_imd_status_imd_duty_cycle_string "PRIMARY_HV_IMD_STATUS_IMD_DUTY_CYCLE"
+#define primary_hv_imd_status_imd_freq_string "PRIMARY_HV_IMD_STATUS_IMD_FREQ"
+#define primary_hv_imd_status_imd_period_string "PRIMARY_HV_IMD_STATUS_IMD_PERIOD"
+/* END */
+
+/* START */
+#define primary_ts_status_string "PRIMARY_TS_STATUS"
+
+#define primary_ts_status_ts_status_string "PRIMARY_TS_STATUS_TS_STATUS"
+/* END */
+
+/* START */
+#define primary_set_ts_status_das_string "PRIMARY_SET_TS_STATUS_DAS"
+
+#define primary_set_ts_status_das_ts_status_set_string "PRIMARY_SET_TS_STATUS_DAS_TS_STATUS_SET"
+/* END */
+
+/* START */
+#define primary_set_ts_status_handcart_string "PRIMARY_SET_TS_STATUS_HANDCART"
+
+#define primary_set_ts_status_handcart_ts_status_set_string "PRIMARY_SET_TS_STATUS_HANDCART_TS_STATUS_SET"
+/* END */
+
+/* START */
+#define primary_steer_status_string "PRIMARY_STEER_STATUS"
+
+#define primary_steer_status_map_pw_string "PRIMARY_STEER_STATUS_MAP_PW"
+#define primary_steer_status_map_sc_string "PRIMARY_STEER_STATUS_MAP_SC"
+#define primary_steer_status_map_tv_string "PRIMARY_STEER_STATUS_MAP_TV"
+/* END */
+
+/* START */
+#define primary_set_car_status_string "PRIMARY_SET_CAR_STATUS"
+
+#define primary_set_car_status_car_status_set_string "PRIMARY_SET_CAR_STATUS_CAR_STATUS_SET"
+/* END */
+
+/* START */
+#define primary_set_pedal_calibration_string "PRIMARY_SET_PEDAL_CALIBRATION"
+
+#define primary_set_pedal_calibration_pedal_string "PRIMARY_SET_PEDAL_CALIBRATION_PEDAL"
+#define primary_set_pedal_calibration_bound_string "PRIMARY_SET_PEDAL_CALIBRATION_BOUND"
+/* END */
+
+/* START */
+#define primary_pedal_calibration_ack_string "PRIMARY_PEDAL_CALIBRATION_ACK"
+
+#define primary_pedal_calibration_ack_pedal_string "PRIMARY_PEDAL_CALIBRATION_ACK_PEDAL"
+#define primary_pedal_calibration_ack_bound_string "PRIMARY_PEDAL_CALIBRATION_ACK_BOUND"
+/* END */
+
+/* START */
+#define primary_car_status_string "PRIMARY_CAR_STATUS"
+
+#define primary_car_status_inverter_l_string "PRIMARY_CAR_STATUS_INVERTER_L"
+#define primary_car_status_inverter_r_string "PRIMARY_CAR_STATUS_INVERTER_R"
+#define primary_car_status_car_status_string "PRIMARY_CAR_STATUS_CAR_STATUS"
+/* END */
+
+/* START */
+#define primary_das_errors_string "PRIMARY_DAS_ERRORS"
+
+#define primary_das_errors_das_error_pedal_adc_string "PRIMARY_DAS_ERRORS_DAS_ERROR_PEDAL_ADC"
+#define primary_das_errors_das_error_pedal_implausibility_string "PRIMARY_DAS_ERRORS_DAS_ERROR_PEDAL_IMPLAUSIBILITY"
+#define primary_das_errors_das_error_imu_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_IMU_TOUT"
+#define primary_das_errors_das_error_irts_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_IRTS_TOUT"
+#define primary_das_errors_das_error_ts_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_TS_TOUT"
+#define primary_das_errors_das_error_invl_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_INVL_TOUT"
+#define primary_das_errors_das_error_invr_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_INVR_TOUT"
+#define primary_das_errors_das_error_steer_tout_string "PRIMARY_DAS_ERRORS_DAS_ERROR_STEER_TOUT"
+#define primary_das_errors_das_error_fsm_string "PRIMARY_DAS_ERRORS_DAS_ERROR_FSM"
+/* END */
+
+/* START */
+#define primary_ecu_feedbacks_string "PRIMARY_ECU_FEEDBACKS"
+
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_cock_fb_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_COCK_FB"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_fb1_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_FB1"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_bots_fb_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_BOTS_FB"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_interial_fb_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_INTERIAL_FB"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_fb4_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_FB4"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_in_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_IN"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_out_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_OUT"
+#define primary_ecu_feedbacks_ecu_feedbacks_sd_ctrl_pin_string "PRIMARY_ECU_FEEDBACKS_ECU_FEEDBACKS_SD_CTRL_PIN"
+/* END */
+
+/* START */
+#define primary_lv_status_string "PRIMARY_LV_STATUS"
+
+#define primary_lv_status_status_string "PRIMARY_LV_STATUS_STATUS"
+/* END */
+
+/* START */
+#define primary_lv_currents_string "PRIMARY_LV_CURRENTS"
+
+#define primary_lv_currents_current_as_battery_string "PRIMARY_LV_CURRENTS_CURRENT_AS_BATTERY"
+#define primary_lv_currents_current_lv_battery_string "PRIMARY_LV_CURRENTS_CURRENT_LV_BATTERY"
+#define primary_lv_currents_current_charger_string "PRIMARY_LV_CURRENTS_CURRENT_CHARGER"
+/* END */
+
+/* START */
+#define primary_lv_cells_voltage_string "PRIMARY_LV_CELLS_VOLTAGE"
+
+#define primary_lv_cells_voltage_start_index_string "PRIMARY_LV_CELLS_VOLTAGE_START_INDEX"
+#define primary_lv_cells_voltage_voltage_0_string "PRIMARY_LV_CELLS_VOLTAGE_VOLTAGE_0"
+#define primary_lv_cells_voltage_voltage_1_string "PRIMARY_LV_CELLS_VOLTAGE_VOLTAGE_1"
+#define primary_lv_cells_voltage_voltage_2_string "PRIMARY_LV_CELLS_VOLTAGE_VOLTAGE_2"
+/* END */
+
+/* START */
+#define primary_lv_total_voltage_string "PRIMARY_LV_TOTAL_VOLTAGE"
+
+#define primary_lv_total_voltage_total_voltage_string "PRIMARY_LV_TOTAL_VOLTAGE_TOTAL_VOLTAGE"
+/* END */
+
+/* START */
+#define primary_lv_cells_temp_string "PRIMARY_LV_CELLS_TEMP"
+
+#define primary_lv_cells_temp_start_index_string "PRIMARY_LV_CELLS_TEMP_START_INDEX"
+#define primary_lv_cells_temp_temp_0_string "PRIMARY_LV_CELLS_TEMP_TEMP_0"
+#define primary_lv_cells_temp_temp_1_string "PRIMARY_LV_CELLS_TEMP_TEMP_1"
+#define primary_lv_cells_temp_temp_2_string "PRIMARY_LV_CELLS_TEMP_TEMP_2"
+/* END */
+
+/* START */
+#define primary_cooling_status_string "PRIMARY_COOLING_STATUS"
+
+#define primary_cooling_status_radiators_speed_string "PRIMARY_COOLING_STATUS_RADIATORS_SPEED"
+#define primary_cooling_status_pumps_speed_string "PRIMARY_COOLING_STATUS_PUMPS_SPEED"
+/* END */
+
+/* START */
+#define primary_set_radiator_speed_string "PRIMARY_SET_RADIATOR_SPEED"
+
+#define primary_set_radiator_speed_radiators_speed_string "PRIMARY_SET_RADIATOR_SPEED_RADIATORS_SPEED"
+/* END */
+
+/* START */
+#define primary_set_pumps_speed_string "PRIMARY_SET_PUMPS_SPEED"
+
+#define primary_set_pumps_speed_pumps_speed_string "PRIMARY_SET_PUMPS_SPEED_PUMPS_SPEED"
+/* END */
+
+/* START */
+#define primary_set_inverter_connection_status_string "PRIMARY_SET_INVERTER_CONNECTION_STATUS"
+
+#define primary_set_inverter_connection_status_status_string "PRIMARY_SET_INVERTER_CONNECTION_STATUS_STATUS"
+/* END */
+
+/* START */
+#define primary_inverter_connection_status_string "PRIMARY_INVERTER_CONNECTION_STATUS"
+
+#define primary_inverter_connection_status_status_string "PRIMARY_INVERTER_CONNECTION_STATUS_STATUS"
+/* END */
+
+/* START */
+#define primary_lv_errors_string "PRIMARY_LV_ERRORS"
+
+#define primary_lv_errors_warnings_cell_undervoltage_string "PRIMARY_LV_ERRORS_WARNINGS_CELL_UNDERVOLTAGE"
+#define primary_lv_errors_warnings_cell_overvoltage_string "PRIMARY_LV_ERRORS_WARNINGS_CELL_OVERVOLTAGE"
+#define primary_lv_errors_warnings_battery_open_wire_string "PRIMARY_LV_ERRORS_WARNINGS_BATTERY_OPEN_WIRE"
+#define primary_lv_errors_warnings_can_string "PRIMARY_LV_ERRORS_WARNINGS_CAN"
+#define primary_lv_errors_warnings_spi_string "PRIMARY_LV_ERRORS_WARNINGS_SPI"
+#define primary_lv_errors_warnings_over_current_string "PRIMARY_LV_ERRORS_WARNINGS_OVER_CURRENT"
+#define primary_lv_errors_warnings_cell_under_temperature_string "PRIMARY_LV_ERRORS_WARNINGS_CELL_UNDER_TEMPERATURE"
+#define primary_lv_errors_warnings_cell_over_temperature_string "PRIMARY_LV_ERRORS_WARNINGS_CELL_OVER_TEMPERATURE"
+#define primary_lv_errors_warnings_relay_string "PRIMARY_LV_ERRORS_WARNINGS_RELAY"
+#define primary_lv_errors_warnings_bms_monitor_string "PRIMARY_LV_ERRORS_WARNINGS_BMS_MONITOR"
+#define primary_lv_errors_warnings_voltages_not_ready_string "PRIMARY_LV_ERRORS_WARNINGS_VOLTAGES_NOT_READY"
+#define primary_lv_errors_warnings_mcp23017_string "PRIMARY_LV_ERRORS_WARNINGS_MCP23017"
+#define primary_lv_errors_warnings_radiator_string "PRIMARY_LV_ERRORS_WARNINGS_RADIATOR"
+#define primary_lv_errors_warnings_fan_string "PRIMARY_LV_ERRORS_WARNINGS_FAN"
+#define primary_lv_errors_warnings_pump_string "PRIMARY_LV_ERRORS_WARNINGS_PUMP"
+#define primary_lv_errors_warnings_adc_init_string "PRIMARY_LV_ERRORS_WARNINGS_ADC_INIT"
+#define primary_lv_errors_warnings_mux_string "PRIMARY_LV_ERRORS_WARNINGS_MUX"
+#define primary_lv_errors_errors_cell_undervoltage_string "PRIMARY_LV_ERRORS_ERRORS_CELL_UNDERVOLTAGE"
+#define primary_lv_errors_errors_cell_overvoltage_string "PRIMARY_LV_ERRORS_ERRORS_CELL_OVERVOLTAGE"
+#define primary_lv_errors_errors_battery_open_wire_string "PRIMARY_LV_ERRORS_ERRORS_BATTERY_OPEN_WIRE"
+#define primary_lv_errors_errors_can_string "PRIMARY_LV_ERRORS_ERRORS_CAN"
+#define primary_lv_errors_errors_spi_string "PRIMARY_LV_ERRORS_ERRORS_SPI"
+#define primary_lv_errors_errors_over_current_string "PRIMARY_LV_ERRORS_ERRORS_OVER_CURRENT"
+#define primary_lv_errors_errors_cell_under_temperature_string "PRIMARY_LV_ERRORS_ERRORS_CELL_UNDER_TEMPERATURE"
+#define primary_lv_errors_errors_cell_over_temperature_string "PRIMARY_LV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE"
+#define primary_lv_errors_errors_relay_string "PRIMARY_LV_ERRORS_ERRORS_RELAY"
+#define primary_lv_errors_errors_bms_monitor_string "PRIMARY_LV_ERRORS_ERRORS_BMS_MONITOR"
+#define primary_lv_errors_errors_voltages_not_ready_string "PRIMARY_LV_ERRORS_ERRORS_VOLTAGES_NOT_READY"
+#define primary_lv_errors_errors_mcp23017_string "PRIMARY_LV_ERRORS_ERRORS_MCP23017"
+#define primary_lv_errors_errors_radiator_string "PRIMARY_LV_ERRORS_ERRORS_RADIATOR"
+#define primary_lv_errors_errors_fan_string "PRIMARY_LV_ERRORS_ERRORS_FAN"
+#define primary_lv_errors_errors_pump_string "PRIMARY_LV_ERRORS_ERRORS_PUMP"
+#define primary_lv_errors_errors_adc_init_string "PRIMARY_LV_ERRORS_ERRORS_ADC_INIT"
+#define primary_lv_errors_errors_mux_string "PRIMARY_LV_ERRORS_ERRORS_MUX"
+/* END */
+
+/* START */
+#define primary_lv_health_signals_string "PRIMARY_LV_HEALTH_SIGNALS"
+
+#define primary_lv_health_signals_health_signals_lvms_out_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_LVMS_OUT"
+#define primary_lv_health_signals_health_signals_relay_out_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_RELAY_OUT"
+#define primary_lv_health_signals_health_signals_battery_voltage_out_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_BATTERY_VOLTAGE_OUT"
+#define primary_lv_health_signals_health_signals_charger_current_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_CHARGER_CURRENT"
+#define primary_lv_health_signals_health_signals_battery_current_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_BATTERY_CURRENT"
+#define primary_lv_health_signals_health_signals_sign_battery_current_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_SIGNALS_SIGN_BATTERY_CURRENT"
+#define primary_lv_health_signals_health_code_string "PRIMARY_LV_HEALTH_SIGNALS_HEALTH_CODE"
+/* END */
+
+/* START */
+#define primary_lv_feedbacks_string "PRIMARY_LV_FEEDBACKS"
+
+#define primary_lv_feedbacks_feedbacks_bspd_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_BSPD_FB"
+#define primary_lv_feedbacks_feedbacks_hvd_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_HVD_FB"
+#define primary_lv_feedbacks_feedbacks_lvms_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_LVMS_FB"
+#define primary_lv_feedbacks_feedbacks_res_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_RES_FB"
+#define primary_lv_feedbacks_feedbacks_lv_encl_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_LV_ENCL"
+#define primary_lv_feedbacks_feedbacks_invc_lid_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_INVC_LID_FB"
+#define primary_lv_feedbacks_feedbacks_hv_encl_2_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_HV_ENCL_2_FB"
+#define primary_lv_feedbacks_feedbacks_back_plate_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_BACK_PLATE_FB"
+#define primary_lv_feedbacks_feedbacks_invc_interlock_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_INVC_INTERLOCK_FB"
+#define primary_lv_feedbacks_feedbacks_ams_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_AMS_FB"
+#define primary_lv_feedbacks_feedbacks_asms_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_ASMS_FB"
+#define primary_lv_feedbacks_feedbacks_interlock_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_INTERLOCK_FB"
+#define primary_lv_feedbacks_feedbacks_inverters_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_INVERTERS_FB"
+#define primary_lv_feedbacks_feedbacks_pcbs_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_PCBS_FB"
+#define primary_lv_feedbacks_feedbacks_pumps_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_PUMPS_FB"
+#define primary_lv_feedbacks_feedbacks_shutdown_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_SHUTDOWN_FB"
+#define primary_lv_feedbacks_feedbacks_radiators_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_RADIATORS_FB"
+#define primary_lv_feedbacks_feedbacks_fan_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_FAN_FB"
+#define primary_lv_feedbacks_feedbacks_as_actuation_fb_string "PRIMARY_LV_FEEDBACKS_FEEDBACKS_AS_ACTUATION_FB"
+#define primary_lv_feedbacks_sd_start_string "PRIMARY_LV_FEEDBACKS_SD_START"
+#define primary_lv_feedbacks_sd_end_string "PRIMARY_LV_FEEDBACKS_SD_END"
+/* END */
+
+/* START */
+#define primary_shutdown_status_string "PRIMARY_SHUTDOWN_STATUS"
+
+#define primary_shutdown_status_input_string "PRIMARY_SHUTDOWN_STATUS_INPUT"
+#define primary_shutdown_status_output_string "PRIMARY_SHUTDOWN_STATUS_OUTPUT"
+/* END */
+
+/* START */
+#define primary_lv_can_flash_req_string "PRIMARY_LV_CAN_FLASH_REQ"
+
+/* END */
+
+/* START */
+#define primary_lv_can_flash_ack_string "PRIMARY_LV_CAN_FLASH_ACK"
+
+#define primary_lv_can_flash_ack_response_string "PRIMARY_LV_CAN_FLASH_ACK_RESPONSE"
+/* END */
+
+/* START */
+#define primary_marker_string "PRIMARY_MARKER"
+
+/* END */
+
+/* START */
+#define primary_hv_cells_voltage_string "PRIMARY_HV_CELLS_VOLTAGE"
+
+#define primary_hv_cells_voltage_start_index_string "PRIMARY_HV_CELLS_VOLTAGE_START_INDEX"
+#define primary_hv_cells_voltage_voltage_0_string "PRIMARY_HV_CELLS_VOLTAGE_VOLTAGE_0"
+#define primary_hv_cells_voltage_voltage_1_string "PRIMARY_HV_CELLS_VOLTAGE_VOLTAGE_1"
+#define primary_hv_cells_voltage_voltage_2_string "PRIMARY_HV_CELLS_VOLTAGE_VOLTAGE_2"
+/* END */
+
+/* START */
+#define primary_hv_cells_temp_string "PRIMARY_HV_CELLS_TEMP"
+
+#define primary_hv_cells_temp_start_index_string "PRIMARY_HV_CELLS_TEMP_START_INDEX"
+#define primary_hv_cells_temp_temp_0_string "PRIMARY_HV_CELLS_TEMP_TEMP_0"
+#define primary_hv_cells_temp_temp_1_string "PRIMARY_HV_CELLS_TEMP_TEMP_1"
+#define primary_hv_cells_temp_temp_2_string "PRIMARY_HV_CELLS_TEMP_TEMP_2"
+#define primary_hv_cells_temp_temp_3_string "PRIMARY_HV_CELLS_TEMP_TEMP_3"
+/* END */
+
+/* START */
+#define primary_hv_cell_balancing_status_string "PRIMARY_HV_CELL_BALANCING_STATUS"
+
+#define primary_hv_cell_balancing_status_cellboard_id_string "PRIMARY_HV_CELL_BALANCING_STATUS_CELLBOARD_ID"
+#define primary_hv_cell_balancing_status_balancing_status_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_STATUS"
+#define primary_hv_cell_balancing_status_errors_can_comm_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_CAN_COMM"
+#define primary_hv_cell_balancing_status_errors_ltc_comm_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_LTC_COMM"
+#define primary_hv_cell_balancing_status_errors_temp_comm_0_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_0"
+#define primary_hv_cell_balancing_status_errors_temp_comm_1_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_1"
+#define primary_hv_cell_balancing_status_errors_temp_comm_2_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_2"
+#define primary_hv_cell_balancing_status_errors_temp_comm_3_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_3"
+#define primary_hv_cell_balancing_status_errors_temp_comm_4_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_4"
+#define primary_hv_cell_balancing_status_errors_temp_comm_5_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_TEMP_COMM_5"
+#define primary_hv_cell_balancing_status_errors_open_wire_string "PRIMARY_HV_CELL_BALANCING_STATUS_ERRORS_OPEN_WIRE"
+#define primary_hv_cell_balancing_status_balancing_cells_cell0_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL0"
+#define primary_hv_cell_balancing_status_balancing_cells_cell1_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL1"
+#define primary_hv_cell_balancing_status_balancing_cells_cell2_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL2"
+#define primary_hv_cell_balancing_status_balancing_cells_cell3_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL3"
+#define primary_hv_cell_balancing_status_balancing_cells_cell4_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL4"
+#define primary_hv_cell_balancing_status_balancing_cells_cell5_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL5"
+#define primary_hv_cell_balancing_status_balancing_cells_cell6_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL6"
+#define primary_hv_cell_balancing_status_balancing_cells_cell7_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL7"
+#define primary_hv_cell_balancing_status_balancing_cells_cell8_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL8"
+#define primary_hv_cell_balancing_status_balancing_cells_cell9_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL9"
+#define primary_hv_cell_balancing_status_balancing_cells_cell10_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL10"
+#define primary_hv_cell_balancing_status_balancing_cells_cell11_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL11"
+#define primary_hv_cell_balancing_status_balancing_cells_cell12_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL12"
+#define primary_hv_cell_balancing_status_balancing_cells_cell13_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL13"
+#define primary_hv_cell_balancing_status_balancing_cells_cell14_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL14"
+#define primary_hv_cell_balancing_status_balancing_cells_cell15_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL15"
+#define primary_hv_cell_balancing_status_balancing_cells_cell16_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL16"
+#define primary_hv_cell_balancing_status_balancing_cells_cell17_string "PRIMARY_HV_CELL_BALANCING_STATUS_BALANCING_CELLS_CELL17"
+/* END */
+
+/* START */
+#define primary_set_cell_balancing_status_string "PRIMARY_SET_CELL_BALANCING_STATUS"
+
+#define primary_set_cell_balancing_status_set_balancing_status_string "PRIMARY_SET_CELL_BALANCING_STATUS_SET_BALANCING_STATUS"
+#define primary_set_cell_balancing_status_balancing_threshold_string "PRIMARY_SET_CELL_BALANCING_STATUS_BALANCING_THRESHOLD"
+/* END */
+
+/* START */
+#define primary_speed_string "PRIMARY_SPEED"
+
+#define primary_speed_encoder_r_string "PRIMARY_SPEED_ENCODER_R"
+#define primary_speed_encoder_l_string "PRIMARY_SPEED_ENCODER_L"
+#define primary_speed_inverter_r_string "PRIMARY_SPEED_INVERTER_R"
+#define primary_speed_inverter_l_string "PRIMARY_SPEED_INVERTER_L"
+/* END */
+
+/* START */
+#define primary_inv_l_request_string "PRIMARY_INV_L_REQUEST"
+
+#define primary_inv_l_request_data_0_string "PRIMARY_INV_L_REQUEST_DATA_0"
+#define primary_inv_l_request_data_1_string "PRIMARY_INV_L_REQUEST_DATA_1"
+#define primary_inv_l_request_data_2_string "PRIMARY_INV_L_REQUEST_DATA_2"
+#define primary_inv_l_request_data_3_string "PRIMARY_INV_L_REQUEST_DATA_3"
+#define primary_inv_l_request_data_4_string "PRIMARY_INV_L_REQUEST_DATA_4"
+#define primary_inv_l_request_data_5_string "PRIMARY_INV_L_REQUEST_DATA_5"
+#define primary_inv_l_request_data_6_string "PRIMARY_INV_L_REQUEST_DATA_6"
+#define primary_inv_l_request_data_7_string "PRIMARY_INV_L_REQUEST_DATA_7"
+/* END */
+
+/* START */
+#define primary_inv_r_request_string "PRIMARY_INV_R_REQUEST"
+
+#define primary_inv_r_request_data_0_string "PRIMARY_INV_R_REQUEST_DATA_0"
+#define primary_inv_r_request_data_1_string "PRIMARY_INV_R_REQUEST_DATA_1"
+#define primary_inv_r_request_data_2_string "PRIMARY_INV_R_REQUEST_DATA_2"
+#define primary_inv_r_request_data_3_string "PRIMARY_INV_R_REQUEST_DATA_3"
+#define primary_inv_r_request_data_4_string "PRIMARY_INV_R_REQUEST_DATA_4"
+#define primary_inv_r_request_data_5_string "PRIMARY_INV_R_REQUEST_DATA_5"
+#define primary_inv_r_request_data_6_string "PRIMARY_INV_R_REQUEST_DATA_6"
+#define primary_inv_r_request_data_7_string "PRIMARY_INV_R_REQUEST_DATA_7"
+/* END */
+
+/* START */
+#define primary_inv_l_response_string "PRIMARY_INV_L_RESPONSE"
+
+#define primary_inv_l_response_reg_id_string "PRIMARY_INV_L_RESPONSE_REG_ID"
+#define primary_inv_l_response_data_0_string "PRIMARY_INV_L_RESPONSE_DATA_0"
+#define primary_inv_l_response_data_1_string "PRIMARY_INV_L_RESPONSE_DATA_1"
+#define primary_inv_l_response_data_2_string "PRIMARY_INV_L_RESPONSE_DATA_2"
+#define primary_inv_l_response_data_3_string "PRIMARY_INV_L_RESPONSE_DATA_3"
+#define primary_inv_l_response_data_4_string "PRIMARY_INV_L_RESPONSE_DATA_4"
+#define primary_inv_l_response_data_5_string "PRIMARY_INV_L_RESPONSE_DATA_5"
+#define primary_inv_l_response_data_6_string "PRIMARY_INV_L_RESPONSE_DATA_6"
+/* END */
+
+/* START */
+#define primary_inv_r_response_string "PRIMARY_INV_R_RESPONSE"
+
+#define primary_inv_r_response_reg_id_string "PRIMARY_INV_R_RESPONSE_REG_ID"
+#define primary_inv_r_response_data_0_string "PRIMARY_INV_R_RESPONSE_DATA_0"
+#define primary_inv_r_response_data_1_string "PRIMARY_INV_R_RESPONSE_DATA_1"
+#define primary_inv_r_response_data_2_string "PRIMARY_INV_R_RESPONSE_DATA_2"
+#define primary_inv_r_response_data_3_string "PRIMARY_INV_R_RESPONSE_DATA_3"
+#define primary_inv_r_response_data_4_string "PRIMARY_INV_R_RESPONSE_DATA_4"
+#define primary_inv_r_response_data_5_string "PRIMARY_INV_R_RESPONSE_DATA_5"
+#define primary_inv_r_response_data_6_string "PRIMARY_INV_R_RESPONSE_DATA_6"
+/* END */
+
+/* START */
+#define primary_control_output_string "PRIMARY_CONTROL_OUTPUT"
+
+#define primary_control_output_estimated_velocity_string "PRIMARY_CONTROL_OUTPUT_ESTIMATED_VELOCITY"
+#define primary_control_output_tmax_r_string "PRIMARY_CONTROL_OUTPUT_TMAX_R"
+#define primary_control_output_tmax_l_string "PRIMARY_CONTROL_OUTPUT_TMAX_L"
+#define primary_control_output_torque_l_string "PRIMARY_CONTROL_OUTPUT_TORQUE_L"
+#define primary_control_output_torque_r_string "PRIMARY_CONTROL_OUTPUT_TORQUE_R"
+/* END */
+
+/* START */
+#define primary_lc_reset_string "PRIMARY_LC_RESET"
+
+/* END */
+
+/* START */
+#define primary_handcart_status_string "PRIMARY_HANDCART_STATUS"
+
+#define primary_handcart_status_connected_string "PRIMARY_HANDCART_STATUS_CONNECTED"
+/* END */
+
+/* START */
+#define primary_handcart_settings_string "PRIMARY_HANDCART_SETTINGS"
+
+#define primary_handcart_settings_target_voltage_string "PRIMARY_HANDCART_SETTINGS_TARGET_VOLTAGE"
+#define primary_handcart_settings_fans_override_string "PRIMARY_HANDCART_SETTINGS_FANS_OVERRIDE"
+#define primary_handcart_settings_fans_speed_string "PRIMARY_HANDCART_SETTINGS_FANS_SPEED"
+#define primary_handcart_settings_acc_charge_current_string "PRIMARY_HANDCART_SETTINGS_ACC_CHARGE_CURRENT"
+#define primary_handcart_settings_grid_max_current_string "PRIMARY_HANDCART_SETTINGS_GRID_MAX_CURRENT"
+#define primary_handcart_settings_status_string "PRIMARY_HANDCART_SETTINGS_STATUS"
+/* END */
+
+/* START */
+#define primary_handcart_settings_set_string "PRIMARY_HANDCART_SETTINGS_SET"
+
+#define primary_handcart_settings_set_target_voltage_string "PRIMARY_HANDCART_SETTINGS_SET_TARGET_VOLTAGE"
+#define primary_handcart_settings_set_fans_override_string "PRIMARY_HANDCART_SETTINGS_SET_FANS_OVERRIDE"
+#define primary_handcart_settings_set_fans_speed_string "PRIMARY_HANDCART_SETTINGS_SET_FANS_SPEED"
+#define primary_handcart_settings_set_acc_charge_current_string "PRIMARY_HANDCART_SETTINGS_SET_ACC_CHARGE_CURRENT"
+#define primary_handcart_settings_set_grid_max_current_string "PRIMARY_HANDCART_SETTINGS_SET_GRID_MAX_CURRENT"
+#define primary_handcart_settings_set_status_string "PRIMARY_HANDCART_SETTINGS_SET_STATUS"
+/* END */
+
+/* START */
+#define primary_set_ptt_status_string "PRIMARY_SET_PTT_STATUS"
+
+#define primary_set_ptt_status_status_string "PRIMARY_SET_PTT_STATUS_STATUS"
+/* END */
+
+/* START */
+#define primary_ptt_status_string "PRIMARY_PTT_STATUS"
+
+#define primary_ptt_status_status_string "PRIMARY_PTT_STATUS_STATUS"
+/* END */
+
+/* START */
+#define primary_regen_manual_command_string "PRIMARY_REGEN_MANUAL_COMMAND"
+
+#define primary_regen_manual_command_status_string "PRIMARY_REGEN_MANUAL_COMMAND_STATUS"
+#define primary_regen_manual_command_target_string "PRIMARY_REGEN_MANUAL_COMMAND_TARGET"
+/* END */
+
+enum primary_types_id{
+	e_int16_t = -7,
+	e_float,
+	e_uint64_t,
+	e_uint16_t,
+	e_uint32_t,
+	e_double,
+	e_uint8_t,
+
+	e_primary_hv_fans_override_fans_override,
+	e_primary_cellboard_version_cellboard_id,
+	e_primary_ptt_status_status,
+	e_primary_hv_feedback_status_feedback_bms_cockpit,
+	e_primary_car_status_inverter_l,
+	e_primary_hv_fans_override_status_fans_override,
+	e_primary_car_status_car_status,
+	e_primary_hv_feedback_status_feedback_airn_status,
+	e_primary_handcart_settings_fans_override,
+	e_primary_pedal_calibration_ack_pedal,
+	e_primary_regen_manual_command_status,
+	e_primary_hv_feedback_status_feedback_imd_cockpit,
+	e_primary_tlm_status_tlm_status,
+	e_primary_hv_feedback_status_feedback_airn_gate,
+	e_primary_hv_feedback_status_feedback_ext_latched,
+	e_primary_set_cell_balancing_status_set_balancing_status,
+	e_primary_hv_feedback_status_feedback_tsal_green_fault_latched,
+	e_primary_set_ts_status_das_ts_status_set,
+	e_primary_set_car_status_car_status_set,
+	e_primary_hv_can_forward_status_can_forward_status,
+	e_primary_handcart_settings_set_fans_override,
+	e_primary_inverter_connection_status_status,
+	e_primary_hv_feedback_status_feedback_implausibility_detected,
+	e_primary_hv_feedback_status_feedback_tsp_over_60v_status,
+	e_primary_set_pedal_calibration_pedal,
+	e_primary_hv_feedback_status_feedback_sd_bms,
+	e_primary_hv_feedback_status_feedback_check_mux,
+	e_primary_hv_feedback_status_feedback_sd_out,
+	e_primary_hv_feedback_status_feedback_airp_status,
+	e_primary_hv_feedback_status_feedback_imd_fault,
+	e_primary_hv_feedback_status_feedback_ts_over_60v_status,
+	e_primary_set_inverter_connection_status_status,
+	e_primary_hv_feedback_status_feedback_sd_end,
+	e_primary_hv_feedback_status_feedback_tsal_green,
+	e_primary_handcart_settings_set_status,
+	e_primary_set_ts_status_handcart_ts_status_set,
+	e_primary_hv_imd_status_imd_status,
+	e_primary_lv_can_flash_ack_response,
+	e_primary_set_tlm_status_tlm_status,
+	e_primary_ts_status_ts_status,
+	e_primary_set_pedal_calibration_bound,
+	e_primary_hv_feedback_status_feedback_sd_in,
+	e_primary_hv_feedback_status_feedback_precharge_status,
+	e_primary_set_ptt_status_status,
+	e_primary_hv_feedback_status_feedback_sd_imd,
+	e_primary_car_status_inverter_r,
+	e_primary_hv_cell_balancing_status_balancing_status,
+	e_primary_hv_cell_balancing_status_cellboard_id,
+	e_primary_handcart_settings_status,
+	e_primary_hv_feedback_status_feedback_airp_gate,
+	e_primary_lv_status_status,
+	e_primary_pedal_calibration_ack_bound,
+	e_primary_hv_can_forward_can_forward_set
+};
+int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
+int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
+int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t size);
+
+
+#endif
