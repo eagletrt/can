@@ -54,10 +54,10 @@ typedef void (*canlib_watchdog_callback)(int);
 
 
 
-#define INVERTERS_INDEX_INV_L_SEND 0
-#define INVERTERS_INDEX_INV_L_RCV 1
-#define INVERTERS_INDEX_INV_R_SEND 2
-#define INVERTERS_INDEX_INV_R_RCV 3
+#define INVERTERS_INDEX_INV_R_SEND 0
+#define INVERTERS_INDEX_INV_R_RCV 1
+#define INVERTERS_INDEX_INV_L_SEND 2
+#define INVERTERS_INDEX_INV_L_RCV 3
 
 
 

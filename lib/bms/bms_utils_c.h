@@ -2,7 +2,7 @@
 
 #define BMS_UTILS_C_H
 
-#include <cstddef>
+#include <stddef.h>
 #include "bms_network.h"
 
 /* START */
@@ -162,24 +162,26 @@
 /* END */
 
 enum bms_types_id{
-	e_uint16_t = -4,
-	e_uint32_t,
-	e_double,
-	e_uint8_t,
+	e_bms_uint32_t = -4,
+	e_bms_uint8_t,
+	e_bms_uint16_t,
+	e_bms_float,
 
 	e_bms_temperatures_info_cellboard_id,
-	e_bms_temperatures_cellboard_id,
+	e_bms_cellboard_version_cellboard_id,
 	e_bms_voltages_cellboard_id,
+	e_bms_jmp_to_blt_cellboard_id,
 	e_bms_board_status_cellboard_id,
 	e_bms_board_status_balancing_status,
-	e_bms_jmp_to_blt_cellboard_id,
+	e_bms_temperatures_cellboard_id,
 	e_bms_set_balancing_status_balancing_status,
-	e_bms_voltages_info_cellboard_id,
-	e_bms_cellboard_version_cellboard_id
+	e_bms_voltages_info_cellboard_id
 };
 int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
 int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
-int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t size);
+int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int bms_n_fields_from_id(int id);
+int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size);
 
 
 #endif

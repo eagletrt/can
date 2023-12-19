@@ -2,7 +2,7 @@
 
 #define SIMULATOR_UTILS_C_H
 
-#include <cstddef>
+#include <stddef.h>
 #include "simulator_network.h"
 
 /* START */
@@ -73,15 +73,16 @@
 /* END */
 
 enum simulator_types_id{
-	e_int16_t = -3,
-	e_double,
-	e_float,
+	e_simulator_int16_t = -2,
+	e_simulator_float,
 
 	
 };
 int simulator_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
 int simulator_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
-int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t size);
+int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int simulator_n_fields_from_id(int id);
+int simulator_fields_types_from_id(int id, int* fields_types, int fields_types_size);
 
 
 #endif

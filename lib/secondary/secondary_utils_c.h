@@ -2,7 +2,7 @@
 
 #define SECONDARY_UTILS_C_H
 
-#include <cstddef>
+#include <stddef.h>
 #include "secondary_network.h"
 
 /* START */
@@ -268,19 +268,20 @@
 /* END */
 
 enum secondary_types_id{
-	e_int16_t = -7,
-	e_float,
-	e_uint64_t,
-	e_uint16_t,
-	e_double,
-	e_uint32_t,
-	e_uint8_t,
+	e_secondary_float = -6,
+	e_secondary_int16_t,
+	e_secondary_uint64_t,
+	e_secondary_uint32_t,
+	e_secondary_uint8_t,
+	e_secondary_uint16_t,
 
 	
 };
 int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
 int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
-int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t size);
+int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int secondary_n_fields_from_id(int id);
+int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_size);
 
 
 #endif
