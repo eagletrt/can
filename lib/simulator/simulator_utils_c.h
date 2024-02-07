@@ -73,8 +73,8 @@
 /* END */
 
 enum simulator_types_id{
-	e_simulator_int16_t = -2,
-	e_simulator_float,
+	e_simulator_float = -2,
+	e_simulator_int16_t,
 
 	
 };
