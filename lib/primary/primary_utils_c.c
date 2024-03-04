@@ -254,6 +254,46 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[31], string_size, primary_hv_errors_errors_eeprom_write_string);
 
 		return 0;
+	case 260:
+		if(36 > fields_size) return 1;
+		snprintf(v[0], string_size, primary_hv_debug_signals_debug_signals_feedback_implausibility_detected_string);
+		snprintf(v[1], string_size, primary_hv_debug_signals_debug_signals_feedback_imd_cockpit_string);
+		snprintf(v[2], string_size, primary_hv_debug_signals_debug_signals_feedback_tsal_green_fault_latched_string);
+		snprintf(v[3], string_size, primary_hv_debug_signals_debug_signals_feedback_bms_cockpit_string);
+		snprintf(v[4], string_size, primary_hv_debug_signals_debug_signals_feedback_ext_latched_string);
+		snprintf(v[5], string_size, primary_hv_debug_signals_debug_signals_feedback_tsal_green_string);
+		snprintf(v[6], string_size, primary_hv_debug_signals_debug_signals_feedback_ts_over_60v_status_string);
+		snprintf(v[7], string_size, primary_hv_debug_signals_debug_signals_feedback_airn_status_string);
+		snprintf(v[8], string_size, primary_hv_debug_signals_debug_signals_feedback_airp_status_string);
+		snprintf(v[9], string_size, primary_hv_debug_signals_debug_signals_feedback_airp_gate_string);
+		snprintf(v[10], string_size, primary_hv_debug_signals_debug_signals_feedback_airn_gate_string);
+		snprintf(v[11], string_size, primary_hv_debug_signals_debug_signals_feedback_precharge_status_string);
+		snprintf(v[12], string_size, primary_hv_debug_signals_debug_signals_feedback_tsp_over_60v_status_string);
+		snprintf(v[13], string_size, primary_hv_debug_signals_debug_signals_feedback_imd_fault_string);
+		snprintf(v[14], string_size, primary_hv_debug_signals_debug_signals_feedback_check_mux_string);
+		snprintf(v[15], string_size, primary_hv_debug_signals_debug_signals_feedback_sd_end_string);
+		snprintf(v[16], string_size, primary_hv_debug_signals_debug_signals_feedback_sd_out_string);
+		snprintf(v[17], string_size, primary_hv_debug_signals_debug_signals_feedback_sd_in_string);
+		snprintf(v[18], string_size, primary_hv_debug_signals_debug_signals_feedback_sd_bms_string);
+		snprintf(v[19], string_size, primary_hv_debug_signals_debug_signals_feedback_sd_imd_string);
+		snprintf(v[20], string_size, primary_hv_debug_signals_debug_signals_error_cell_low_voltage_string);
+		snprintf(v[21], string_size, primary_hv_debug_signals_debug_signals_error_cell_under_voltage_string);
+		snprintf(v[22], string_size, primary_hv_debug_signals_debug_signals_error_cell_over_voltage_string);
+		snprintf(v[23], string_size, primary_hv_debug_signals_debug_signals_error_cell_high_temperature_string);
+		snprintf(v[24], string_size, primary_hv_debug_signals_debug_signals_error_cell_over_temperature_string);
+		snprintf(v[25], string_size, primary_hv_debug_signals_debug_signals_error_over_current_string);
+		snprintf(v[26], string_size, primary_hv_debug_signals_debug_signals_error_can_string);
+		snprintf(v[27], string_size, primary_hv_debug_signals_debug_signals_error_int_voltage_mismatch_string);
+		snprintf(v[28], string_size, primary_hv_debug_signals_debug_signals_error_cellboard_comm_string);
+		snprintf(v[29], string_size, primary_hv_debug_signals_debug_signals_error_cellboard_internal_string);
+		snprintf(v[30], string_size, primary_hv_debug_signals_debug_signals_error_connector_disconnected_string);
+		snprintf(v[31], string_size, primary_hv_debug_signals_debug_signals_error_fans_disconnected_string);
+		snprintf(v[32], string_size, primary_hv_debug_signals_debug_signals_error_feedback_string);
+		snprintf(v[33], string_size, primary_hv_debug_signals_debug_signals_error_feedback_circuitry_string);
+		snprintf(v[34], string_size, primary_hv_debug_signals_debug_signals_error_eeprom_comm_string);
+		snprintf(v[35], string_size, primary_hv_debug_signals_debug_signals_error_eeprom_write_string);
+
+		return 0;
 	case 32:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, primary_hv_fans_override_fans_override_string);
@@ -1961,6 +2001,160 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HV_ERRORS_BYTE_SIZE;
 		return primary_hv_errors_pack(data, &tmp, PRIMARY_HV_ERRORS_BYTE_SIZE);
 	}
+	case 260:
+	{
+		primary_hv_debug_signals_t tmp;
+		primary_hv_debug_signals_converted_t tmp_converted;
+		uint8_t r_debug_signals_feedback_implausibility_detected;
+		uint8_t r_debug_signals_feedback_imd_cockpit;
+		uint8_t r_debug_signals_feedback_tsal_green_fault_latched;
+		uint8_t r_debug_signals_feedback_bms_cockpit;
+		uint8_t r_debug_signals_feedback_ext_latched;
+		uint8_t r_debug_signals_feedback_tsal_green;
+		uint8_t r_debug_signals_feedback_ts_over_60v_status;
+		uint8_t r_debug_signals_feedback_airn_status;
+		uint8_t r_debug_signals_feedback_airp_status;
+		uint8_t r_debug_signals_feedback_airp_gate;
+		uint8_t r_debug_signals_feedback_airn_gate;
+		uint8_t r_debug_signals_feedback_precharge_status;
+		uint8_t r_debug_signals_feedback_tsp_over_60v_status;
+		uint8_t r_debug_signals_feedback_imd_fault;
+		uint8_t r_debug_signals_feedback_check_mux;
+		uint8_t r_debug_signals_feedback_sd_end;
+		uint8_t r_debug_signals_feedback_sd_out;
+		uint8_t r_debug_signals_feedback_sd_in;
+		uint8_t r_debug_signals_feedback_sd_bms;
+		uint8_t r_debug_signals_feedback_sd_imd;
+		uint8_t r_debug_signals_error_cell_low_voltage;
+		uint8_t r_debug_signals_error_cell_under_voltage;
+		uint8_t r_debug_signals_error_cell_over_voltage;
+		uint8_t r_debug_signals_error_cell_high_temperature;
+		uint8_t r_debug_signals_error_cell_over_temperature;
+		uint8_t r_debug_signals_error_over_current;
+		uint8_t r_debug_signals_error_can;
+		uint8_t r_debug_signals_error_int_voltage_mismatch;
+		uint8_t r_debug_signals_error_cellboard_comm;
+		uint8_t r_debug_signals_error_cellboard_internal;
+		uint8_t r_debug_signals_error_connector_disconnected;
+		uint8_t r_debug_signals_error_fans_disconnected;
+		uint8_t r_debug_signals_error_feedback;
+		uint8_t r_debug_signals_error_feedback_circuitry;
+		uint8_t r_debug_signals_error_eeprom_comm;
+		uint8_t r_debug_signals_error_eeprom_write;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_debug_signals_feedback_implausibility_detected,
+			&r_debug_signals_feedback_imd_cockpit,
+			&r_debug_signals_feedback_tsal_green_fault_latched,
+			&r_debug_signals_feedback_bms_cockpit,
+			&r_debug_signals_feedback_ext_latched,
+			&r_debug_signals_feedback_tsal_green,
+			&r_debug_signals_feedback_ts_over_60v_status,
+			&r_debug_signals_feedback_airn_status,
+			&r_debug_signals_feedback_airp_status,
+			&r_debug_signals_feedback_airp_gate,
+			&r_debug_signals_feedback_airn_gate,
+			&r_debug_signals_feedback_precharge_status,
+			&r_debug_signals_feedback_tsp_over_60v_status,
+			&r_debug_signals_feedback_imd_fault,
+			&r_debug_signals_feedback_check_mux,
+			&r_debug_signals_feedback_sd_end,
+			&r_debug_signals_feedback_sd_out,
+			&r_debug_signals_feedback_sd_in,
+			&r_debug_signals_feedback_sd_bms,
+			&r_debug_signals_feedback_sd_imd,
+			&r_debug_signals_error_cell_low_voltage,
+			&r_debug_signals_error_cell_under_voltage,
+			&r_debug_signals_error_cell_over_voltage,
+			&r_debug_signals_error_cell_high_temperature,
+			&r_debug_signals_error_cell_over_temperature,
+			&r_debug_signals_error_over_current,
+			&r_debug_signals_error_can,
+			&r_debug_signals_error_int_voltage_mismatch,
+			&r_debug_signals_error_cellboard_comm,
+			&r_debug_signals_error_cellboard_internal,
+			&r_debug_signals_error_connector_disconnected,
+			&r_debug_signals_error_fans_disconnected,
+			&r_debug_signals_error_feedback,
+			&r_debug_signals_error_feedback_circuitry,
+			&r_debug_signals_error_eeprom_comm,
+			&r_debug_signals_error_eeprom_write);
+		tmp_converted.debug_signals_feedback_implausibility_detected = (uint8_t)r_debug_signals_feedback_implausibility_detected;
+		tmp_converted.debug_signals_feedback_imd_cockpit = (uint8_t)r_debug_signals_feedback_imd_cockpit;
+		tmp_converted.debug_signals_feedback_tsal_green_fault_latched = (uint8_t)r_debug_signals_feedback_tsal_green_fault_latched;
+		tmp_converted.debug_signals_feedback_bms_cockpit = (uint8_t)r_debug_signals_feedback_bms_cockpit;
+		tmp_converted.debug_signals_feedback_ext_latched = (uint8_t)r_debug_signals_feedback_ext_latched;
+		tmp_converted.debug_signals_feedback_tsal_green = (uint8_t)r_debug_signals_feedback_tsal_green;
+		tmp_converted.debug_signals_feedback_ts_over_60v_status = (uint8_t)r_debug_signals_feedback_ts_over_60v_status;
+		tmp_converted.debug_signals_feedback_airn_status = (uint8_t)r_debug_signals_feedback_airn_status;
+		tmp_converted.debug_signals_feedback_airp_status = (uint8_t)r_debug_signals_feedback_airp_status;
+		tmp_converted.debug_signals_feedback_airp_gate = (uint8_t)r_debug_signals_feedback_airp_gate;
+		tmp_converted.debug_signals_feedback_airn_gate = (uint8_t)r_debug_signals_feedback_airn_gate;
+		tmp_converted.debug_signals_feedback_precharge_status = (uint8_t)r_debug_signals_feedback_precharge_status;
+		tmp_converted.debug_signals_feedback_tsp_over_60v_status = (uint8_t)r_debug_signals_feedback_tsp_over_60v_status;
+		tmp_converted.debug_signals_feedback_imd_fault = (uint8_t)r_debug_signals_feedback_imd_fault;
+		tmp_converted.debug_signals_feedback_check_mux = (uint8_t)r_debug_signals_feedback_check_mux;
+		tmp_converted.debug_signals_feedback_sd_end = (uint8_t)r_debug_signals_feedback_sd_end;
+		tmp_converted.debug_signals_feedback_sd_out = (uint8_t)r_debug_signals_feedback_sd_out;
+		tmp_converted.debug_signals_feedback_sd_in = (uint8_t)r_debug_signals_feedback_sd_in;
+		tmp_converted.debug_signals_feedback_sd_bms = (uint8_t)r_debug_signals_feedback_sd_bms;
+		tmp_converted.debug_signals_feedback_sd_imd = (uint8_t)r_debug_signals_feedback_sd_imd;
+		tmp_converted.debug_signals_error_cell_low_voltage = (uint8_t)r_debug_signals_error_cell_low_voltage;
+		tmp_converted.debug_signals_error_cell_under_voltage = (uint8_t)r_debug_signals_error_cell_under_voltage;
+		tmp_converted.debug_signals_error_cell_over_voltage = (uint8_t)r_debug_signals_error_cell_over_voltage;
+		tmp_converted.debug_signals_error_cell_high_temperature = (uint8_t)r_debug_signals_error_cell_high_temperature;
+		tmp_converted.debug_signals_error_cell_over_temperature = (uint8_t)r_debug_signals_error_cell_over_temperature;
+		tmp_converted.debug_signals_error_over_current = (uint8_t)r_debug_signals_error_over_current;
+		tmp_converted.debug_signals_error_can = (uint8_t)r_debug_signals_error_can;
+		tmp_converted.debug_signals_error_int_voltage_mismatch = (uint8_t)r_debug_signals_error_int_voltage_mismatch;
+		tmp_converted.debug_signals_error_cellboard_comm = (uint8_t)r_debug_signals_error_cellboard_comm;
+		tmp_converted.debug_signals_error_cellboard_internal = (uint8_t)r_debug_signals_error_cellboard_internal;
+		tmp_converted.debug_signals_error_connector_disconnected = (uint8_t)r_debug_signals_error_connector_disconnected;
+		tmp_converted.debug_signals_error_fans_disconnected = (uint8_t)r_debug_signals_error_fans_disconnected;
+		tmp_converted.debug_signals_error_feedback = (uint8_t)r_debug_signals_error_feedback;
+		tmp_converted.debug_signals_error_feedback_circuitry = (uint8_t)r_debug_signals_error_feedback_circuitry;
+		tmp_converted.debug_signals_error_eeprom_comm = (uint8_t)r_debug_signals_error_eeprom_comm;
+		tmp_converted.debug_signals_error_eeprom_write = (uint8_t)r_debug_signals_error_eeprom_write;
+
+		primary_hv_debug_signals_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_DEBUG_SIGNALS_BYTE_SIZE;
+		return primary_hv_debug_signals_pack(data, &tmp, PRIMARY_HV_DEBUG_SIGNALS_BYTE_SIZE);
+	}
 	case 32:
 	{
 		primary_hv_fans_override_t tmp;
@@ -3564,6 +3758,7 @@ int primary_n_fields_from_id(int id)
 		case 836: return 4;
 		case 868: return 3;
 		case 36: return 32;
+		case 260: return 36;
 		case 32: return 2;
 		case 37: return 1;
 		case 773: return 2;
@@ -3847,6 +4042,45 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[30] = e_primary_uint8_t;
 		fields_types[31] = e_primary_uint8_t;
 		return 32;
+	case 260:
+		if(fields_types_size < 36) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		fields_types[8] = e_primary_uint8_t;
+		fields_types[9] = e_primary_uint8_t;
+		fields_types[10] = e_primary_uint8_t;
+		fields_types[11] = e_primary_uint8_t;
+		fields_types[12] = e_primary_uint8_t;
+		fields_types[13] = e_primary_uint8_t;
+		fields_types[14] = e_primary_uint8_t;
+		fields_types[15] = e_primary_uint8_t;
+		fields_types[16] = e_primary_uint8_t;
+		fields_types[17] = e_primary_uint8_t;
+		fields_types[18] = e_primary_uint8_t;
+		fields_types[19] = e_primary_uint8_t;
+		fields_types[20] = e_primary_uint8_t;
+		fields_types[21] = e_primary_uint8_t;
+		fields_types[22] = e_primary_uint8_t;
+		fields_types[23] = e_primary_uint8_t;
+		fields_types[24] = e_primary_uint8_t;
+		fields_types[25] = e_primary_uint8_t;
+		fields_types[26] = e_primary_uint8_t;
+		fields_types[27] = e_primary_uint8_t;
+		fields_types[28] = e_primary_uint8_t;
+		fields_types[29] = e_primary_uint8_t;
+		fields_types[30] = e_primary_uint8_t;
+		fields_types[31] = e_primary_uint8_t;
+		fields_types[32] = e_primary_uint8_t;
+		fields_types[33] = e_primary_uint8_t;
+		fields_types[34] = e_primary_uint8_t;
+		fields_types[35] = e_primary_uint8_t;
+		return 36;
 	case 32:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_hv_fans_override_fans_override;

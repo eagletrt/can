@@ -954,6 +954,53 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->hv_debug_signals_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_debug_signals(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_debug_signals(i)._inner_timestamp();
+        (*net_signals)["HV_DEBUG_SIGNALS"]["_timestamp"].push(pack->hv_debug_signals(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_implausibility_detected"].push(pack->hv_debug_signals(i).debug_signals_feedback_implausibility_detected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_imd_cockpit"].push(pack->hv_debug_signals(i).debug_signals_feedback_imd_cockpit());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsal_green_fault_latched"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsal_green_fault_latched());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_bms_cockpit"].push(pack->hv_debug_signals(i).debug_signals_feedback_bms_cockpit());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_ext_latched"].push(pack->hv_debug_signals(i).debug_signals_feedback_ext_latched());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsal_green"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsal_green());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_ts_over_60v_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_ts_over_60v_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airn_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_airn_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airp_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_airp_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airp_gate"].push(pack->hv_debug_signals(i).debug_signals_feedback_airp_gate());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airn_gate"].push(pack->hv_debug_signals(i).debug_signals_feedback_airn_gate());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_precharge_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_precharge_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsp_over_60v_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsp_over_60v_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_imd_fault"].push(pack->hv_debug_signals(i).debug_signals_feedback_imd_fault());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_check_mux"].push(pack->hv_debug_signals(i).debug_signals_feedback_check_mux());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_end"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_end());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_out"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_out());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_in"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_in());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_bms"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_bms());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_imd"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_imd());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_low_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_low_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_under_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_under_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_over_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_over_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_high_temperature"].push(pack->hv_debug_signals(i).debug_signals_error_cell_high_temperature());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_over_temperature"].push(pack->hv_debug_signals(i).debug_signals_error_cell_over_temperature());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_over_current"].push(pack->hv_debug_signals(i).debug_signals_error_over_current());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_can"].push(pack->hv_debug_signals(i).debug_signals_error_can());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_int_voltage_mismatch"].push(pack->hv_debug_signals(i).debug_signals_error_int_voltage_mismatch());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cellboard_comm"].push(pack->hv_debug_signals(i).debug_signals_error_cellboard_comm());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cellboard_internal"].push(pack->hv_debug_signals(i).debug_signals_error_cellboard_internal());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_connector_disconnected"].push(pack->hv_debug_signals(i).debug_signals_error_connector_disconnected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_fans_disconnected"].push(pack->hv_debug_signals(i).debug_signals_error_fans_disconnected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_feedback"].push(pack->hv_debug_signals(i).debug_signals_error_feedback());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_feedback_circuitry"].push(pack->hv_debug_signals(i).debug_signals_error_feedback_circuitry());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_eeprom_comm"].push(pack->hv_debug_signals(i).debug_signals_error_eeprom_comm());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_eeprom_write"].push(pack->hv_debug_signals(i).debug_signals_error_eeprom_write());
+
+    }
+
     for(int i = 0; i < pack->hv_fans_override_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -2529,6 +2576,52 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_errors_feedback_circuitry(msg->errors_feedback_circuitry);
 			proto_msg->set_errors_eeprom_comm(msg->errors_eeprom_comm);
 			proto_msg->set_errors_eeprom_write(msg->errors_eeprom_write);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 260: {
+            primary_hv_debug_signals_t* msg = (primary_hv_debug_signals_t*)(device->message);
+            primary::HV_DEBUG_SIGNALS* proto_msg = pack->add_hv_debug_signals();
+			proto_msg->set_debug_signals_feedback_implausibility_detected(msg->debug_signals_feedback_implausibility_detected);
+			proto_msg->set_debug_signals_feedback_imd_cockpit(msg->debug_signals_feedback_imd_cockpit);
+			proto_msg->set_debug_signals_feedback_tsal_green_fault_latched(msg->debug_signals_feedback_tsal_green_fault_latched);
+			proto_msg->set_debug_signals_feedback_bms_cockpit(msg->debug_signals_feedback_bms_cockpit);
+			proto_msg->set_debug_signals_feedback_ext_latched(msg->debug_signals_feedback_ext_latched);
+			proto_msg->set_debug_signals_feedback_tsal_green(msg->debug_signals_feedback_tsal_green);
+			proto_msg->set_debug_signals_feedback_ts_over_60v_status(msg->debug_signals_feedback_ts_over_60v_status);
+			proto_msg->set_debug_signals_feedback_airn_status(msg->debug_signals_feedback_airn_status);
+			proto_msg->set_debug_signals_feedback_airp_status(msg->debug_signals_feedback_airp_status);
+			proto_msg->set_debug_signals_feedback_airp_gate(msg->debug_signals_feedback_airp_gate);
+			proto_msg->set_debug_signals_feedback_airn_gate(msg->debug_signals_feedback_airn_gate);
+			proto_msg->set_debug_signals_feedback_precharge_status(msg->debug_signals_feedback_precharge_status);
+			proto_msg->set_debug_signals_feedback_tsp_over_60v_status(msg->debug_signals_feedback_tsp_over_60v_status);
+			proto_msg->set_debug_signals_feedback_imd_fault(msg->debug_signals_feedback_imd_fault);
+			proto_msg->set_debug_signals_feedback_check_mux(msg->debug_signals_feedback_check_mux);
+			proto_msg->set_debug_signals_feedback_sd_end(msg->debug_signals_feedback_sd_end);
+			proto_msg->set_debug_signals_feedback_sd_out(msg->debug_signals_feedback_sd_out);
+			proto_msg->set_debug_signals_feedback_sd_in(msg->debug_signals_feedback_sd_in);
+			proto_msg->set_debug_signals_feedback_sd_bms(msg->debug_signals_feedback_sd_bms);
+			proto_msg->set_debug_signals_feedback_sd_imd(msg->debug_signals_feedback_sd_imd);
+			proto_msg->set_debug_signals_error_cell_low_voltage(msg->debug_signals_error_cell_low_voltage);
+			proto_msg->set_debug_signals_error_cell_under_voltage(msg->debug_signals_error_cell_under_voltage);
+			proto_msg->set_debug_signals_error_cell_over_voltage(msg->debug_signals_error_cell_over_voltage);
+			proto_msg->set_debug_signals_error_cell_high_temperature(msg->debug_signals_error_cell_high_temperature);
+			proto_msg->set_debug_signals_error_cell_over_temperature(msg->debug_signals_error_cell_over_temperature);
+			proto_msg->set_debug_signals_error_over_current(msg->debug_signals_error_over_current);
+			proto_msg->set_debug_signals_error_can(msg->debug_signals_error_can);
+			proto_msg->set_debug_signals_error_int_voltage_mismatch(msg->debug_signals_error_int_voltage_mismatch);
+			proto_msg->set_debug_signals_error_cellboard_comm(msg->debug_signals_error_cellboard_comm);
+			proto_msg->set_debug_signals_error_cellboard_internal(msg->debug_signals_error_cellboard_internal);
+			proto_msg->set_debug_signals_error_connector_disconnected(msg->debug_signals_error_connector_disconnected);
+			proto_msg->set_debug_signals_error_fans_disconnected(msg->debug_signals_error_fans_disconnected);
+			proto_msg->set_debug_signals_error_feedback(msg->debug_signals_error_feedback);
+			proto_msg->set_debug_signals_error_feedback_circuitry(msg->debug_signals_error_feedback_circuitry);
+			proto_msg->set_debug_signals_error_eeprom_comm(msg->debug_signals_error_eeprom_comm);
+			proto_msg->set_debug_signals_error_eeprom_write(msg->debug_signals_error_eeprom_write);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
