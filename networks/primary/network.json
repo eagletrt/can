@@ -332,6 +332,47 @@
         "OPEN_WIRE"
       ]
     },
+    "HvDebugSignals": {
+      "type": "bitset",
+      "items": [
+        "FEEDBACK_IMPLAUSIBILITY_DETECTED",
+        "FEEDBACK_IMD_COCKPIT",
+        "FEEDBACK_TSAL_GREEN_FAULT_LATCHED",
+        "FEEDBACK_BMS_COCKPIT",
+        "FEEDBACK_EXT_LATCHED",
+        "FEEDBACK_TSAL_GREEN",
+        "FEEDBACK_TS_OVER_60V_STATUS",
+        "FEEDBACK_AIRN_STATUS",
+        "FEEDBACK_AIRP_STATUS",
+        "FEEDBACK_AIRP_GATE",
+        "FEEDBACK_AIRN_GATE",
+        "FEEDBACK_PRECHARGE_STATUS",
+        "FEEDBACK_TSP_OVER_60V_STATUS",
+        "FEEDBACK_IMD_FAULT",
+        "FEEDBACK_CHECK_MUX",
+        "FEEDBACK_SD_END",
+        "FEEDBACK_SD_OUT",
+        "FEEDBACK_SD_IN",
+        "FEEDBACK_SD_BMS",
+        "FEEDBACK_SD_IMD",
+        "ERROR_CELL_LOW_VOLTAGE",
+        "ERROR_CELL_UNDER_VOLTAGE",
+        "ERROR_CELL_OVER_VOLTAGE",
+        "ERROR_CELL_HIGH_TEMPERATURE",
+        "ERROR_CELL_OVER_TEMPERATURE",
+        "ERROR_OVER_CURRENT",
+        "ERROR_CAN",
+        "ERROR_INT_VOLTAGE_MISMATCH",
+        "ERROR_CELLBOARD_COMM",
+        "ERROR_CELLBOARD_INTERNAL",
+        "ERROR_CONNECTOR_DISCONNECTED",
+        "ERROR_FANS_DISCONNECTED",
+        "ERROR_FEEDBACK",
+        "ERROR_FEEDBACK_CIRCUITRY",
+        "ERROR_EEPROM_COMM",
+        "ERROR_EEPROM_WRITE"
+      ]
+    },
     "Cellboard": {
       "type": "enum",
       "items": [
@@ -775,6 +816,18 @@
       "contents": {
         "warnings": "HvErrors",
         "errors": "HvErrors"
+      }
+    },
+    {
+      "name": "HV_DEBUG_SIGNALS",
+      "topic": "DASnSTEERnCART",
+      "priority": 6,
+      "sending": ["BMS_HV"],
+      "receiving": ["DAS", "STEER", "HANDCART"],
+      "description": "Bms Hv debug signals. It sends the error/feedback that sent the bms to safe mode (fatal error or idle)",
+      "interval": 200,
+      "contents": {
+        "debug_signals": "HvDebugSignals"
       }
     },
     {
