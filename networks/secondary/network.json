@@ -845,6 +845,22 @@
       }
     },
     {
+      "name": "ROD_ELONGATION",
+      "topic": "TELEMETRY",
+      "priority": 3,
+      "sending": ["ACQUISINATOR"],
+      "receiving": ["TLM"],
+      "description": "Message for the arm deformation",
+      "interval": 10,
+      "contents": {
+        "deformation": {
+          "type": "float32",
+          "range": [-3.0, 3.0],
+          "force": "uint32"
+        }
+      }
+    },
+    {
       "name": "DEBUG_SIGNAL",
       "topic": "BROADCAST",
       "priority": 3,

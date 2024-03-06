@@ -383,6 +383,14 @@
         "CELLBOARD_4",
         "CELLBOARD_5"
       ]
+    },
+    "ControlsState": {
+      "type": "bitset",
+      "items": [
+        "SLIP",
+        "TORQUE_VECTORING",
+        "REGEN"
+      ]
     }
   },
   "messages": [
@@ -1161,7 +1169,8 @@
       "contents": {
         "inverter_l": "InverterStatus",
         "inverter_r": "InverterStatus",
-        "car_status": "CarStatus"
+        "car_status": "CarStatus",
+        "controls": "ControlsState"
       }
     },
     {
