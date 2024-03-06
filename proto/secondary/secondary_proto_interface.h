@@ -676,6 +676,18 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->rod_elongation_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->rod_elongation(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->rod_elongation(i)._inner_timestamp();
+        (*net_signals)["ROD_ELONGATION"]["_timestamp"].push(pack->rod_elongation(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ROD_ELONGATION"]["deformation"].push(pack->rod_elongation(i).deformation());
+
+    }
+
     for(int i = 0; i < pack->debug_signal_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1104,6 +1116,17 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
+        case 1092: {
+            secondary_rod_elongation_converted_t* msg = (secondary_rod_elongation_converted_t*)(device->message);
+            secondary::ROD_ELONGATION* proto_msg = pack->add_rod_elongation();
+			proto_msg->set_deformation(msg->deformation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 1024: {
             secondary_debug_signal_converted_t* msg = (secondary_debug_signal_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL* proto_msg = pack->add_debug_signal();
@@ -1118,7 +1141,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1092: {
+        case 1124: {
             secondary_cooling_temp_converted_t* msg = (secondary_cooling_temp_converted_t*)(device->message);
             secondary::COOLING_TEMP* proto_msg = pack->add_cooling_temp();
 			proto_msg->set_top_left(msg->top_left);

@@ -250,6 +250,12 @@
 /* END */
 
 /* START */
+#define secondary_rod_elongation_string "SECONDARY_ROD_ELONGATION"
+
+#define secondary_rod_elongation_deformation_string "SECONDARY_ROD_ELONGATION_DEFORMATION"
+/* END */
+
+/* START */
 #define secondary_debug_signal_string "SECONDARY_DEBUG_SIGNAL"
 
 #define secondary_debug_signal_field_1_string "SECONDARY_DEBUG_SIGNAL_FIELD_1"
@@ -269,11 +275,11 @@
 
 enum secondary_types_id{
 	e_secondary_uint16_t = -6,
-	e_secondary_uint64_t,
-	e_secondary_uint8_t,
-	e_secondary_int16_t,
 	e_secondary_float,
 	e_secondary_uint32_t,
+	e_secondary_int16_t,
+	e_secondary_uint64_t,
+	e_secondary_uint8_t,
 
 	
 };

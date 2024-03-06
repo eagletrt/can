@@ -1309,6 +1309,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["CAR_STATUS"]["car_status"].push(pack->car_status(i).car_status());
 		primary_car_status_car_status_enum_to_string((primary_car_status_car_status)pack->car_status(i).car_status(), buffer);
 		(*net_strings)["CAR_STATUS"]["car_status"].push(buffer);
+		(*net_enums)["CAR_STATUS"]["controls_slip"].push(pack->car_status(i).controls_slip());
+		(*net_enums)["CAR_STATUS"]["controls_torque_vectoring"].push(pack->car_status(i).controls_torque_vectoring());
+		(*net_enums)["CAR_STATUS"]["controls_regen"].push(pack->car_status(i).controls_regen());
 
     }
 
@@ -2847,6 +2850,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_inverter_l((primary::primary_car_status_inverter_l)msg->inverter_l);
 			proto_msg->set_inverter_r((primary::primary_car_status_inverter_r)msg->inverter_r);
 			proto_msg->set_car_status((primary::primary_car_status_car_status)msg->car_status);
+			proto_msg->set_controls_slip(msg->controls_slip);
+			proto_msg->set_controls_torque_vectoring(msg->controls_torque_vectoring);
+			proto_msg->set_controls_regen(msg->controls_regen);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

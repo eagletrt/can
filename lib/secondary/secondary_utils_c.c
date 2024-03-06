@@ -220,6 +220,11 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[1], string_size, secondary_front_ammo_pos_fr_string);
 
 		return 0;
+	case 1092:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, secondary_rod_elongation_deformation_string);
+
+		return 0;
 	case 1024:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_debug_signal_field_1_string);
@@ -228,7 +233,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, secondary_debug_signal_field_4_string);
 
 		return 0;
-	case 1092:
+	case 1124:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_cooling_temp_top_left_string);
 		snprintf(v[1], string_size, secondary_cooling_temp_bottom_left_string);
@@ -938,6 +943,20 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_FRONT_AMMO_POS_BYTE_SIZE;
 		return secondary_front_ammo_pos_pack(data, &tmp, SECONDARY_FRONT_AMMO_POS_BYTE_SIZE);
 	}
+	case 1092:
+	{
+		secondary_rod_elongation_t tmp;
+		secondary_rod_elongation_converted_t tmp_converted;
+		float r_deformation;
+
+		sscanf(s, "%f,"       ,
+			&r_deformation);
+		tmp_converted.deformation = (float)r_deformation;
+
+		secondary_rod_elongation_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_ROD_ELONGATION_BYTE_SIZE;
+		return secondary_rod_elongation_pack(data, &tmp, SECONDARY_ROD_ELONGATION_BYTE_SIZE);
+	}
 	case 1024:
 	{
 		secondary_debug_signal_t tmp;
@@ -964,7 +983,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_DEBUG_SIGNAL_BYTE_SIZE;
 		return secondary_debug_signal_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_BYTE_SIZE);
 	}
-	case 1092:
+	case 1124:
 	{
 		secondary_cooling_temp_t tmp;
 		secondary_cooling_temp_converted_t tmp_converted;
@@ -1027,8 +1046,9 @@ int secondary_n_fields_from_id(int id)
 		case 256: return 1;
 		case 1028: return 2;
 		case 1060: return 2;
+		case 1092: return 1;
 		case 1024: return 4;
-		case 1092: return 4;
+		case 1124: return 4;
     }
     return 0;
 }
@@ -1222,6 +1242,10 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		return 2;
+	case 1092:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_secondary_float;
+		return 1;
 	case 1024:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
@@ -1229,7 +1253,7 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1092:
+	case 1124:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;

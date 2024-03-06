@@ -417,10 +417,13 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 81:
-		if(3 > fields_size) return 1;
+		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, primary_car_status_inverter_l_string);
 		snprintf(v[1], string_size, primary_car_status_inverter_r_string);
 		snprintf(v[2], string_size, primary_car_status_car_status_string);
+		snprintf(v[3], string_size, primary_car_status_controls_slip_string);
+		snprintf(v[4], string_size, primary_car_status_controls_torque_vectoring_string);
+		snprintf(v[5], string_size, primary_car_status_controls_regen_string);
 
 		return 0;
 	case 40:
@@ -2560,16 +2563,28 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_inverter_l;
 		uint8_t r_inverter_r;
 		uint8_t r_car_status;
+		uint8_t r_controls_slip;
+		uint8_t r_controls_torque_vectoring;
+		uint8_t r_controls_regen;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
 			&r_inverter_l,
 			&r_inverter_r,
-			&r_car_status);
+			&r_car_status,
+			&r_controls_slip,
+			&r_controls_torque_vectoring,
+			&r_controls_regen);
 		tmp_converted.inverter_l = (primary_car_status_inverter_l)r_inverter_l;
 		tmp_converted.inverter_r = (primary_car_status_inverter_r)r_inverter_r;
 		tmp_converted.car_status = (primary_car_status_car_status)r_car_status;
+		tmp_converted.controls_slip = (uint8_t)r_controls_slip;
+		tmp_converted.controls_torque_vectoring = (uint8_t)r_controls_torque_vectoring;
+		tmp_converted.controls_regen = (uint8_t)r_controls_regen;
 
 		primary_car_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_CAR_STATUS_BYTE_SIZE;
@@ -3774,7 +3789,7 @@ int primary_n_fields_from_id(int id)
 		case 80: return 1;
 		case 1026: return 2;
 		case 1032: return 2;
-		case 81: return 3;
+		case 81: return 6;
 		case 40: return 9;
 		case 777: return 8;
 		case 809: return 1;
@@ -4189,11 +4204,14 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[1] = e_primary_pedal_calibration_ack_bound;
 		return 2;
 	case 81:
-		if(fields_types_size < 3) return 0;
+		if(fields_types_size < 6) return 0;
 		fields_types[0] = e_primary_car_status_inverter_l;
 		fields_types[1] = e_primary_car_status_inverter_r;
 		fields_types[2] = e_primary_car_status_car_status;
-		return 3;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		return 6;
 	case 40:
 		if(fields_types_size < 9) return 0;
 		fields_types[0] = e_primary_uint8_t;

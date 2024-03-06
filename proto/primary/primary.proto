@@ -729,7 +729,10 @@ message CAR_STATUS{
 	primary_car_status_inverter_l inverter_l = 1;
 	primary_car_status_inverter_r inverter_r = 2;
 	primary_car_status_car_status car_status = 3;
-	uint64 _inner_timestamp = 4;
+	bool controls_SLIP = 4;
+	bool controls_TORQUE_VECTORING = 5;
+	bool controls_REGEN = 6;
+	uint64 _inner_timestamp = 7;
 }
 message DAS_ERRORS{
 	bool das_error_PEDAL_ADC = 1;

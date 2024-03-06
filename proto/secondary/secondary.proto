@@ -190,6 +190,10 @@ message FRONT_AMMO_POS{
 	float fr = 2;
 	uint64 _inner_timestamp = 3;
 }
+message ROD_ELONGATION{
+	float deformation = 1;
+	uint64 _inner_timestamp = 2;
+}
 message DEBUG_SIGNAL{
 	double field_1 = 1;
 	double field_2 = 2;
@@ -236,7 +240,8 @@ message Pack{
 	repeated TIMESTAMP TIMESTAMP = 27;
 	repeated REAR_AMMO_POS REAR_AMMO_POS = 28;
 	repeated FRONT_AMMO_POS FRONT_AMMO_POS = 29;
-	repeated DEBUG_SIGNAL DEBUG_SIGNAL = 30;
-	repeated COOLING_TEMP COOLING_TEMP = 31;
+	repeated ROD_ELONGATION ROD_ELONGATION = 30;
+	repeated DEBUG_SIGNAL DEBUG_SIGNAL = 31;
+	repeated COOLING_TEMP COOLING_TEMP = 32;
 }
 
