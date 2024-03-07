@@ -922,7 +922,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1472: {
+        case 1200: {
             secondary_irts_rr_0_converted_t* msg = (secondary_irts_rr_0_converted_t*)(device->message);
             secondary::IRTS_RR_0* proto_msg = pack->add_irts_rr_0();
 			proto_msg->set_channel1(msg->channel1);
@@ -936,7 +936,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1473: {
+        case 1201: {
             secondary_irts_rr_1_converted_t* msg = (secondary_irts_rr_1_converted_t*)(device->message);
             secondary::IRTS_RR_1* proto_msg = pack->add_irts_rr_1();
 			proto_msg->set_channel5(msg->channel5);
@@ -950,7 +950,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1474: {
+        case 1202: {
             secondary_irts_rr_2_converted_t* msg = (secondary_irts_rr_2_converted_t*)(device->message);
             secondary::IRTS_RR_2* proto_msg = pack->add_irts_rr_2();
 			proto_msg->set_channel9(msg->channel9);
@@ -964,7 +964,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1475: {
+        case 1203: {
             secondary_irts_rr_3_converted_t* msg = (secondary_irts_rr_3_converted_t*)(device->message);
             secondary::IRTS_RR_3* proto_msg = pack->add_irts_rr_3();
 			proto_msg->set_channel13(msg->channel13);

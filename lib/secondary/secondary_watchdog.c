@@ -33,10 +33,10 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1469: return SECONDARY_INDEX_IRTS_RL_1;
        case 1470: return SECONDARY_INDEX_IRTS_RL_2;
        case 1471: return SECONDARY_INDEX_IRTS_RL_3;
-       case 1472: return SECONDARY_INDEX_IRTS_RR_0;
-       case 1473: return SECONDARY_INDEX_IRTS_RR_1;
-       case 1474: return SECONDARY_INDEX_IRTS_RR_2;
-       case 1475: return SECONDARY_INDEX_IRTS_RR_3;
+       case 1200: return SECONDARY_INDEX_IRTS_RR_0;
+       case 1201: return SECONDARY_INDEX_IRTS_RR_1;
+       case 1202: return SECONDARY_INDEX_IRTS_RR_2;
+       case 1203: return SECONDARY_INDEX_IRTS_RR_3;
        case 1027: return SECONDARY_INDEX_GPS_COORDS;
        case 1059: return SECONDARY_INDEX_GPS_SPEED;
        case 771: return SECONDARY_INDEX_PEDALS_OUTPUT;

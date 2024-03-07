@@ -116,7 +116,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, secondary_irts_rl_3_channel16_string);
 
 		return 0;
-	case 1472:
+	case 1200:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_irts_rr_0_channel1_string);
 		snprintf(v[1], string_size, secondary_irts_rr_0_channel2_string);
@@ -124,7 +124,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, secondary_irts_rr_0_channel4_string);
 
 		return 0;
-	case 1473:
+	case 1201:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_irts_rr_1_channel5_string);
 		snprintf(v[1], string_size, secondary_irts_rr_1_channel6_string);
@@ -132,7 +132,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, secondary_irts_rr_1_channel8_string);
 
 		return 0;
-	case 1474:
+	case 1202:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_irts_rr_2_channel9_string);
 		snprintf(v[1], string_size, secondary_irts_rr_2_channel10_string);
@@ -140,7 +140,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, secondary_irts_rr_2_channel12_string);
 
 		return 0;
-	case 1475:
+	case 1203:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, secondary_irts_rr_3_channel13_string);
 		snprintf(v[1], string_size, secondary_irts_rr_3_channel14_string);
@@ -617,7 +617,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_IRTS_RL_3_BYTE_SIZE;
 		return secondary_irts_rl_3_pack(data, &tmp, SECONDARY_IRTS_RL_3_BYTE_SIZE);
 	}
-	case 1472:
+	case 1200:
 	{
 		secondary_irts_rr_0_t tmp;
 		secondary_irts_rr_0_converted_t tmp_converted;
@@ -643,7 +643,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_IRTS_RR_0_BYTE_SIZE;
 		return secondary_irts_rr_0_pack(data, &tmp, SECONDARY_IRTS_RR_0_BYTE_SIZE);
 	}
-	case 1473:
+	case 1201:
 	{
 		secondary_irts_rr_1_t tmp;
 		secondary_irts_rr_1_converted_t tmp_converted;
@@ -669,7 +669,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_IRTS_RR_1_BYTE_SIZE;
 		return secondary_irts_rr_1_pack(data, &tmp, SECONDARY_IRTS_RR_1_BYTE_SIZE);
 	}
-	case 1474:
+	case 1202:
 	{
 		secondary_irts_rr_2_t tmp;
 		secondary_irts_rr_2_converted_t tmp_converted;
@@ -695,7 +695,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_IRTS_RR_2_BYTE_SIZE;
 		return secondary_irts_rr_2_pack(data, &tmp, SECONDARY_IRTS_RR_2_BYTE_SIZE);
 	}
-	case 1475:
+	case 1203:
 	{
 		secondary_irts_rr_3_t tmp;
 		secondary_irts_rr_3_converted_t tmp_converted;
@@ -1031,10 +1031,10 @@ int secondary_n_fields_from_id(int id)
 		case 1469: return 4;
 		case 1470: return 4;
 		case 1471: return 4;
-		case 1472: return 4;
-		case 1473: return 4;
-		case 1474: return 4;
-		case 1475: return 4;
+		case 1200: return 4;
+		case 1201: return 4;
+		case 1202: return 4;
+		case 1203: return 4;
 		case 1027: return 2;
 		case 1059: return 1;
 		case 771: return 3;
@@ -1153,28 +1153,28 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1472:
+	case 1200:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1473:
+	case 1201:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1474:
+	case 1202:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1475:
+	case 1203:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;

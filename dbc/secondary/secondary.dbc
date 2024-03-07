@@ -119,25 +119,25 @@ BO_ 1471 IRTS_RL_3: 8 Vector__XXX
  SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel13 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
 
-BO_ 1472 IRTS_RR_0: 8 Vector__XXX
+BO_ 1200 IRTS_RR_0: 8 Vector__XXX
  SG_ channel4 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel3 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel2 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel1 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
 
-BO_ 1473 IRTS_RR_1: 8 Vector__XXX
+BO_ 1201 IRTS_RR_1: 8 Vector__XXX
  SG_ channel8 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel7 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel6 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel5 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
 
-BO_ 1474 IRTS_RR_2: 8 Vector__XXX
+BO_ 1202 IRTS_RR_2: 8 Vector__XXX
  SG_ channel12 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel11 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel10 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel9 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
 
-BO_ 1475 IRTS_RR_3: 8 Vector__XXX
+BO_ 1203 IRTS_RR_3: 8 Vector__XXX
  SG_ channel16 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel15 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
  SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
@@ -225,10 +225,10 @@ CM_ BO_ 1468 "Rear Left wheel InfraRed Temperature Sensor data, channels 1 throu
 CM_ BO_ 1469 "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1470 "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1471 "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1472 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1473 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1474 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1475 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1200 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1201 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1202 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1203 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1027 "Coordinates received from GPS";
 CM_ BO_ 1059 "Speed received from GPS";
 CM_ BO_ 771 "Pedal output, already calibrated";
