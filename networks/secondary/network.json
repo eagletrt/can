@@ -475,7 +475,7 @@
     },
     {
       "name": "IRTS_RR_0",
-      "fixed_id": 1472,
+      "fixed_id": 1200,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -509,7 +509,7 @@
     },
     {
       "name": "IRTS_RR_1",
-      "fixed_id": 1473,
+      "fixed_id": 1201,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -543,7 +543,7 @@
     },
     {
       "name": "IRTS_RR_2",
-      "fixed_id": 1474,
+      "fixed_id": 1202,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
@@ -577,7 +577,7 @@
     },
     {
       "name": "IRTS_RR_3",
-      "fixed_id": 1475,
+      "fixed_id": 1203,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
       "receiving": ["DAS"],
