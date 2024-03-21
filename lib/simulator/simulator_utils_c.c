@@ -7,61 +7,61 @@ int simulator_fields_string_from_id(int id, char **v, size_t fields_size, size_t
     {
 	case 1260:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_imu_angular_rate_ang_rate_x_string);
-		snprintf(v[1], string_size, simulator_imu_angular_rate_ang_rate_y_string);
-		snprintf(v[2], string_size, simulator_imu_angular_rate_ang_rate_z_string);
+		snprintf(v[0], string_size, IMU_ANGULAR_RATE_ANG_RATE_X);
+		snprintf(v[1], string_size, IMU_ANGULAR_RATE_ANG_RATE_Y);
+		snprintf(v[2], string_size, IMU_ANGULAR_RATE_ANG_RATE_Z);
 
 		return 0;
 	case 1261:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_imu_acceleration_accel_x_string);
-		snprintf(v[1], string_size, simulator_imu_acceleration_accel_y_string);
-		snprintf(v[2], string_size, simulator_imu_acceleration_accel_z_string);
-		snprintf(v[3], string_size, simulator_imu_acceleration_temperature_string);
+		snprintf(v[0], string_size, IMU_ACCELERATION_ACCEL_X);
+		snprintf(v[1], string_size, IMU_ACCELERATION_ACCEL_Y);
+		snprintf(v[2], string_size, IMU_ACCELERATION_ACCEL_Z);
+		snprintf(v[3], string_size, IMU_ACCELERATION_TEMPERATURE);
 
 		return 0;
 	case 770:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_pedals_output_apps_string);
-		snprintf(v[1], string_size, simulator_pedals_output_bse_front_string);
-		snprintf(v[2], string_size, simulator_pedals_output_bse_rear_string);
+		snprintf(v[0], string_size, PEDALS_OUTPUT_APPS);
+		snprintf(v[1], string_size, PEDALS_OUTPUT_BSE_FRONT);
+		snprintf(v[2], string_size, PEDALS_OUTPUT_BSE_REAR);
 
 		return 0;
 	case 259:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_steering_angle_angle_string);
+		snprintf(v[0], string_size, STEERING_ANGLE_ANGLE);
 
 		return 0;
 	case 1281:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_control_state_map_pw_string);
-		snprintf(v[1], string_size, simulator_control_state_map_sc_string);
-		snprintf(v[2], string_size, simulator_control_state_map_tv_string);
+		snprintf(v[0], string_size, CONTROL_STATE_MAP_PW);
+		snprintf(v[1], string_size, CONTROL_STATE_MAP_SC);
+		snprintf(v[2], string_size, CONTROL_STATE_MAP_TV);
 
 		return 0;
 	case 258:
 		if(5 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_control_output_estimated_velocity_string);
-		snprintf(v[1], string_size, simulator_control_output_tmax_r_string);
-		snprintf(v[2], string_size, simulator_control_output_tmax_l_string);
-		snprintf(v[3], string_size, simulator_control_output_torque_l_string);
-		snprintf(v[4], string_size, simulator_control_output_torque_r_string);
+		snprintf(v[0], string_size, CONTROL_OUTPUT_ESTIMATED_VELOCITY);
+		snprintf(v[1], string_size, CONTROL_OUTPUT_TMAX_R);
+		snprintf(v[2], string_size, CONTROL_OUTPUT_TMAX_L);
+		snprintf(v[3], string_size, CONTROL_OUTPUT_TORQUE_L);
+		snprintf(v[4], string_size, CONTROL_OUTPUT_TORQUE_R);
 
 		return 0;
 	case 514:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_speed_encoder_l_string);
-		snprintf(v[1], string_size, simulator_speed_encoder_r_string);
-		snprintf(v[2], string_size, simulator_speed_inverter_l_string);
-		snprintf(v[3], string_size, simulator_speed_inverter_r_string);
+		snprintf(v[0], string_size, SPEED_ENCODER_L);
+		snprintf(v[1], string_size, SPEED_ENCODER_R);
+		snprintf(v[2], string_size, SPEED_INVERTER_L);
+		snprintf(v[3], string_size, SPEED_INVERTER_R);
 
 		return 0;
 	case 1024:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, simulator_debug_signal_field_1_string);
-		snprintf(v[1], string_size, simulator_debug_signal_field_2_string);
-		snprintf(v[2], string_size, simulator_debug_signal_field_3_string);
-		snprintf(v[3], string_size, simulator_debug_signal_field_4_string);
+		snprintf(v[0], string_size, DEBUG_SIGNAL_FIELD_1);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_FIELD_2);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_FIELD_3);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_FIELD_4);
 
 		return 0;
 
@@ -345,4 +345,8 @@ int simulator_fields_types_from_id(int id, int* fields_types, int fields_types_s
 
     }
     return 0;
+}
+int simulator_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+{
+	return 0;
 }

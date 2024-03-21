@@ -7,90 +7,90 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
     {
 	case 1537:
 		if(29 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_board_status_cellboard_id_string);
-		snprintf(v[1], string_size, bms_board_status_errors_can_comm_string);
-		snprintf(v[2], string_size, bms_board_status_errors_ltc_comm_string);
-		snprintf(v[3], string_size, bms_board_status_errors_temp_comm_0_string);
-		snprintf(v[4], string_size, bms_board_status_errors_temp_comm_1_string);
-		snprintf(v[5], string_size, bms_board_status_errors_temp_comm_2_string);
-		snprintf(v[6], string_size, bms_board_status_errors_temp_comm_3_string);
-		snprintf(v[7], string_size, bms_board_status_errors_temp_comm_4_string);
-		snprintf(v[8], string_size, bms_board_status_errors_temp_comm_5_string);
-		snprintf(v[9], string_size, bms_board_status_errors_open_wire_string);
-		snprintf(v[10], string_size, bms_board_status_balancing_status_string);
-		snprintf(v[11], string_size, bms_board_status_balancing_cells_cell0_string);
-		snprintf(v[12], string_size, bms_board_status_balancing_cells_cell1_string);
-		snprintf(v[13], string_size, bms_board_status_balancing_cells_cell2_string);
-		snprintf(v[14], string_size, bms_board_status_balancing_cells_cell3_string);
-		snprintf(v[15], string_size, bms_board_status_balancing_cells_cell4_string);
-		snprintf(v[16], string_size, bms_board_status_balancing_cells_cell5_string);
-		snprintf(v[17], string_size, bms_board_status_balancing_cells_cell6_string);
-		snprintf(v[18], string_size, bms_board_status_balancing_cells_cell7_string);
-		snprintf(v[19], string_size, bms_board_status_balancing_cells_cell8_string);
-		snprintf(v[20], string_size, bms_board_status_balancing_cells_cell9_string);
-		snprintf(v[21], string_size, bms_board_status_balancing_cells_cell10_string);
-		snprintf(v[22], string_size, bms_board_status_balancing_cells_cell11_string);
-		snprintf(v[23], string_size, bms_board_status_balancing_cells_cell12_string);
-		snprintf(v[24], string_size, bms_board_status_balancing_cells_cell13_string);
-		snprintf(v[25], string_size, bms_board_status_balancing_cells_cell14_string);
-		snprintf(v[26], string_size, bms_board_status_balancing_cells_cell15_string);
-		snprintf(v[27], string_size, bms_board_status_balancing_cells_cell16_string);
-		snprintf(v[28], string_size, bms_board_status_balancing_cells_cell17_string);
+		snprintf(v[0], string_size, BOARD_STATUS_CELLBOARD_ID);
+		snprintf(v[1], string_size, BOARD_STATUS_ERRORS_CAN_COMM);
+		snprintf(v[2], string_size, BOARD_STATUS_ERRORS_LTC_COMM);
+		snprintf(v[3], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_0);
+		snprintf(v[4], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_1);
+		snprintf(v[5], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_2);
+		snprintf(v[6], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_3);
+		snprintf(v[7], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_4);
+		snprintf(v[8], string_size, BOARD_STATUS_ERRORS_TEMP_COMM_5);
+		snprintf(v[9], string_size, BOARD_STATUS_ERRORS_OPEN_WIRE);
+		snprintf(v[10], string_size, BOARD_STATUS_BALANCING_STATUS);
+		snprintf(v[11], string_size, BOARD_STATUS_BALANCING_CELLS_CELL0);
+		snprintf(v[12], string_size, BOARD_STATUS_BALANCING_CELLS_CELL1);
+		snprintf(v[13], string_size, BOARD_STATUS_BALANCING_CELLS_CELL2);
+		snprintf(v[14], string_size, BOARD_STATUS_BALANCING_CELLS_CELL3);
+		snprintf(v[15], string_size, BOARD_STATUS_BALANCING_CELLS_CELL4);
+		snprintf(v[16], string_size, BOARD_STATUS_BALANCING_CELLS_CELL5);
+		snprintf(v[17], string_size, BOARD_STATUS_BALANCING_CELLS_CELL6);
+		snprintf(v[18], string_size, BOARD_STATUS_BALANCING_CELLS_CELL7);
+		snprintf(v[19], string_size, BOARD_STATUS_BALANCING_CELLS_CELL8);
+		snprintf(v[20], string_size, BOARD_STATUS_BALANCING_CELLS_CELL9);
+		snprintf(v[21], string_size, BOARD_STATUS_BALANCING_CELLS_CELL10);
+		snprintf(v[22], string_size, BOARD_STATUS_BALANCING_CELLS_CELL11);
+		snprintf(v[23], string_size, BOARD_STATUS_BALANCING_CELLS_CELL12);
+		snprintf(v[24], string_size, BOARD_STATUS_BALANCING_CELLS_CELL13);
+		snprintf(v[25], string_size, BOARD_STATUS_BALANCING_CELLS_CELL14);
+		snprintf(v[26], string_size, BOARD_STATUS_BALANCING_CELLS_CELL15);
+		snprintf(v[27], string_size, BOARD_STATUS_BALANCING_CELLS_CELL16);
+		snprintf(v[28], string_size, BOARD_STATUS_BALANCING_CELLS_CELL17);
 
 		return 0;
 	case 514:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_temperatures_info_cellboard_id_string);
-		snprintf(v[1], string_size, bms_temperatures_info_min_temp_string);
-		snprintf(v[2], string_size, bms_temperatures_info_max_temp_string);
-		snprintf(v[3], string_size, bms_temperatures_info_avg_temp_string);
+		snprintf(v[0], string_size, TEMPERATURES_INFO_CELLBOARD_ID);
+		snprintf(v[1], string_size, TEMPERATURES_INFO_MIN_TEMP);
+		snprintf(v[2], string_size, TEMPERATURES_INFO_MAX_TEMP);
+		snprintf(v[3], string_size, TEMPERATURES_INFO_AVG_TEMP);
 
 		return 0;
 	case 1282:
 		if(6 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_temperatures_cellboard_id_string);
-		snprintf(v[1], string_size, bms_temperatures_start_index_string);
-		snprintf(v[2], string_size, bms_temperatures_temp0_string);
-		snprintf(v[3], string_size, bms_temperatures_temp1_string);
-		snprintf(v[4], string_size, bms_temperatures_temp2_string);
-		snprintf(v[5], string_size, bms_temperatures_temp3_string);
+		snprintf(v[0], string_size, TEMPERATURES_CELLBOARD_ID);
+		snprintf(v[1], string_size, TEMPERATURES_START_INDEX);
+		snprintf(v[2], string_size, TEMPERATURES_TEMP0);
+		snprintf(v[3], string_size, TEMPERATURES_TEMP1);
+		snprintf(v[4], string_size, TEMPERATURES_TEMP2);
+		snprintf(v[5], string_size, TEMPERATURES_TEMP3);
 
 		return 0;
 	case 516:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_voltages_info_cellboard_id_string);
-		snprintf(v[1], string_size, bms_voltages_info_min_voltage_string);
-		snprintf(v[2], string_size, bms_voltages_info_max_voltage_string);
-		snprintf(v[3], string_size, bms_voltages_info_avg_voltage_string);
+		snprintf(v[0], string_size, VOLTAGES_INFO_CELLBOARD_ID);
+		snprintf(v[1], string_size, VOLTAGES_INFO_MIN_VOLTAGE);
+		snprintf(v[2], string_size, VOLTAGES_INFO_MAX_VOLTAGE);
+		snprintf(v[3], string_size, VOLTAGES_INFO_AVG_VOLTAGE);
 
 		return 0;
 	case 548:
 		if(5 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_voltages_cellboard_id_string);
-		snprintf(v[1], string_size, bms_voltages_start_index_string);
-		snprintf(v[2], string_size, bms_voltages_voltage0_string);
-		snprintf(v[3], string_size, bms_voltages_voltage1_string);
-		snprintf(v[4], string_size, bms_voltages_voltage2_string);
+		snprintf(v[0], string_size, VOLTAGES_CELLBOARD_ID);
+		snprintf(v[1], string_size, VOLTAGES_START_INDEX);
+		snprintf(v[2], string_size, VOLTAGES_VOLTAGE0);
+		snprintf(v[3], string_size, VOLTAGES_VOLTAGE1);
+		snprintf(v[4], string_size, VOLTAGES_VOLTAGE2);
 
 		return 0;
 	case 512:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_set_balancing_status_threshold_string);
-		snprintf(v[1], string_size, bms_set_balancing_status_target_string);
-		snprintf(v[2], string_size, bms_set_balancing_status_balancing_status_string);
+		snprintf(v[0], string_size, SET_BALANCING_STATUS_THRESHOLD);
+		snprintf(v[1], string_size, SET_BALANCING_STATUS_TARGET);
+		snprintf(v[2], string_size, SET_BALANCING_STATUS_BALANCING_STATUS);
 
 		return 0;
 	case 0:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_jmp_to_blt_cellboard_id_string);
-		snprintf(v[1], string_size, bms_jmp_to_blt_board_index_string);
+		snprintf(v[0], string_size, JMP_TO_BLT_CELLBOARD_ID);
+		snprintf(v[1], string_size, JMP_TO_BLT_BOARD_INDEX);
 
 		return 0;
 	case 259:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, bms_cellboard_version_cellboard_id_string);
-		snprintf(v[1], string_size, bms_cellboard_version_component_version_string);
-		snprintf(v[2], string_size, bms_cellboard_version_canlib_build_time_string);
+		snprintf(v[0], string_size, CELLBOARD_VERSION_CELLBOARD_ID);
+		snprintf(v[1], string_size, CELLBOARD_VERSION_COMPONENT_VERSION);
+		snprintf(v[2], string_size, CELLBOARD_VERSION_CANLIB_BUILD_TIME);
 
 		return 0;
 
@@ -613,4 +613,114 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 
     }
     return 0;
+}
+int bms_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+{
+	if(!strcmp(msg_name, "BOARD_STATUS"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "balancing_status"))
+		{
+			sprintf(v[0], "OFF");
+			sprintf(v[1], "DISCHARGE");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "TEMPERATURES_INFO"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "TEMPERATURES"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "VOLTAGES_INFO"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "VOLTAGES"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "SET_BALANCING_STATUS"))
+	{
+		if(!strcmp(sgn_name, "balancing_status"))
+		{
+			sprintf(v[0], "OFF");
+			sprintf(v[1], "DISCHARGE");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "JMP_TO_BLT"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "CELLBOARD_VERSION"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "CELLBOARD_0");
+			sprintf(v[1], "CELLBOARD_1");
+			sprintf(v[2], "CELLBOARD_2");
+			sprintf(v[3], "CELLBOARD_3");
+			sprintf(v[4], "CELLBOARD_4");
+			sprintf(v[5], "CELLBOARD_5");
+			return 6;
+		}
+	}
+	return 0;
 }

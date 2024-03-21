@@ -7,304 +7,304 @@ int hv_current_fields_string_from_id(int id, char **v, size_t fields_size, size_
     {
 	case 1320:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_wh_ivt_id_result_wh_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_wh_ivt_result_wh_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_wh_ivt_result_wh_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_wh_ivt_result_wh_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_wh_ivt_result_wh_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_wh_ivt_msgcount_result_wh_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_wh_ivt_result_wh_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_WH_IVT_ID_RESULT_WH);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_WH_IVT_RESULT_WH_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_WH_IVT_RESULT_WH_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_WH_IVT_RESULT_WH_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_WH_IVT_RESULT_WH_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_WH_IVT_MSGCOUNT_RESULT_WH);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_WH_IVT_RESULT_WH);
 
 		return 0;
 	case 1319:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_as_ivt_id_result_as_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_as_ivt_result_as_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_as_ivt_result_as_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_as_ivt_result_as_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_as_ivt_result_as_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_as_ivt_msgcount_result_as_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_as_ivt_result_as_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_AS_IVT_ID_RESULT_AS);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_AS_IVT_RESULT_AS_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_AS_IVT_RESULT_AS_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_AS_IVT_RESULT_AS_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_AS_IVT_RESULT_AS_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_AS_IVT_MSGCOUNT_RESULT_AS);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_AS_IVT_RESULT_AS);
 
 		return 0;
 	case 1318:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_w_ivt_id_result_w_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_w_ivt_result_w_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_w_ivt_result_w_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_w_ivt_result_w_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_w_ivt_result_w_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_w_ivt_msgcount_result_w_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_w_ivt_result_w_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_W_IVT_ID_RESULT_W);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_W_IVT_RESULT_W_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_W_IVT_RESULT_W_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_W_IVT_RESULT_W_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_W_IVT_RESULT_W_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_W_IVT_MSGCOUNT_RESULT_W);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_W_IVT_RESULT_W);
 
 		return 0;
 	case 1297:
 		if(100 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_response_ivt_id_response_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_response__b1_trigger_spare_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_response__ff_wrong_command_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_response__bf_restart_alive_cmd_id_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_response__80_resp_measerror_item_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_response__81_resp_systemerror_item_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_response__82_resp_alllogdata_item_string);
-		snprintf(v[7], string_size, hv_current_ivt_msg_response__83_resp_logdata_item_string);
-		snprintf(v[8], string_size, hv_current_ivt_msg_response__90_resp_can_id_val_i_string);
-		snprintf(v[9], string_size, hv_current_ivt_msg_response__91_resp_can_id_val_u1_string);
-		snprintf(v[10], string_size, hv_current_ivt_msg_response__92_resp_can_id_val_u2_string);
-		snprintf(v[11], string_size, hv_current_ivt_msg_response__93_resp_can_id_val_u3_string);
-		snprintf(v[12], string_size, hv_current_ivt_msg_response__94_resp_can_id_val_t_string);
-		snprintf(v[13], string_size, hv_current_ivt_msg_response__95_resp_can_id_val_w_string);
-		snprintf(v[14], string_size, hv_current_ivt_msg_response__96_resp_can_id_val_as_string);
-		snprintf(v[15], string_size, hv_current_ivt_msg_response__97_resp_can_id_val_wh_string);
-		snprintf(v[16], string_size, hv_current_ivt_msg_response__9d_resp_can_id_val_command_string);
-		snprintf(v[17], string_size, hv_current_ivt_msg_response__9f_resp_can_id_val_response_string);
-		snprintf(v[18], string_size, hv_current_ivt_msg_response__a0_resp_sign_i_string);
-		snprintf(v[19], string_size, hv_current_ivt_msg_response__a1_resp_sign_u1_string);
-		snprintf(v[20], string_size, hv_current_ivt_msg_response__a2_resp_sign_u2_string);
-		snprintf(v[21], string_size, hv_current_ivt_msg_response__a3_resp_sign_u3_string);
-		snprintf(v[22], string_size, hv_current_ivt_msg_response__a4_resp_sign_t_string);
-		snprintf(v[23], string_size, hv_current_ivt_msg_response__a5_resp_sign_w_string);
-		snprintf(v[24], string_size, hv_current_ivt_msg_response__a6_resp_sign_as_string);
-		snprintf(v[25], string_size, hv_current_ivt_msg_response__a7_resp_sign_wh_string);
-		snprintf(v[26], string_size, hv_current_ivt_msg_response__b0_resp_reset_item_string);
-		snprintf(v[27], string_size, hv_current_ivt_msg_response__b2_resp_store_dummy_string);
-		snprintf(v[28], string_size, hv_current_ivt_msg_response__b3_resp_oc_test_time_string);
-		snprintf(v[29], string_size, hv_current_ivt_msg_response__b5_resp_oc_pos_set_threshold_string);
-		snprintf(v[30], string_size, hv_current_ivt_msg_response__b6_resp_oc_neg_set_threshold_string);
-		snprintf(v[31], string_size, hv_current_ivt_msg_response__b9_resp_device_type_string);
-		snprintf(v[32], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_major_hw_string);
-		snprintf(v[33], string_size, hv_current_ivt_msg_response__bb_resp_serien_nr_string);
-		snprintf(v[34], string_size, hv_current_ivt_msg_response__bc_resp_art_n_string);
-		snprintf(v[35], string_size, hv_current_ivt_msg_response__a0_resp_endianess_i_string);
-		snprintf(v[36], string_size, hv_current_ivt_msg_response__a1_resp_endianess_u1_string);
-		snprintf(v[37], string_size, hv_current_ivt_msg_response__a2_resp_endianess_u2_string);
-		snprintf(v[38], string_size, hv_current_ivt_msg_response__a3_resp_endianess_u3_string);
-		snprintf(v[39], string_size, hv_current_ivt_msg_response__a4_resp_endianess_t_string);
-		snprintf(v[40], string_size, hv_current_ivt_msg_response__a5_resp_endianess_w_string);
-		snprintf(v[41], string_size, hv_current_ivt_msg_response__a6_resp_endianess_as_string);
-		snprintf(v[42], string_size, hv_current_ivt_msg_response__a7_resp_endianess_wh_string);
-		snprintf(v[43], string_size, hv_current_ivt_msg_response__a0_resp_triggermode_i_string);
-		snprintf(v[44], string_size, hv_current_ivt_msg_response__a1_resp_triggermode_u1_string);
-		snprintf(v[45], string_size, hv_current_ivt_msg_response__a2_resp_triggermode_u2_string);
-		snprintf(v[46], string_size, hv_current_ivt_msg_response__a3_resp_triggermode_u3_string);
-		snprintf(v[47], string_size, hv_current_ivt_msg_response__a4_resp_triggermode_t_string);
-		snprintf(v[48], string_size, hv_current_ivt_msg_response__a5_resp_triggermode_w_string);
-		snprintf(v[49], string_size, hv_current_ivt_msg_response__a6_resp_triggermode_as_string);
-		snprintf(v[50], string_size, hv_current_ivt_msg_response__a7_resp_triggermode_wh_string);
-		snprintf(v[51], string_size, hv_current_ivt_msg_response__b4_resp_actual_mode_string);
-		snprintf(v[52], string_size, hv_current_ivt_msg_response__b1_07_trigger_wh_string);
-		snprintf(v[53], string_size, hv_current_ivt_msg_response__b2_resp_store_device_sn_string);
-		snprintf(v[54], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_minor_string);
-		snprintf(v[55], string_size, hv_current_ivt_msg_response__b9_resp_device_current_string);
-		snprintf(v[56], string_size, hv_current_ivt_msg_response__80_resp_measerror_count_mask_string);
-		snprintf(v[57], string_size, hv_current_ivt_msg_response__81_resp_systemerror_count_mask_string);
-		snprintf(v[58], string_size, hv_current_ivt_msg_response__82_resp_alllogdata_counter_string);
-		snprintf(v[59], string_size, hv_current_ivt_msg_response__83_resp_logdata_counter_string);
-		snprintf(v[60], string_size, hv_current_ivt_msg_response__a0_resp_cycletime_i_string);
-		snprintf(v[61], string_size, hv_current_ivt_msg_response__a1_resp_cycletime_u1_string);
-		snprintf(v[62], string_size, hv_current_ivt_msg_response__a2_resp_cycletime_u2_string);
-		snprintf(v[63], string_size, hv_current_ivt_msg_response__a3_resp_cycletime_u3_string);
-		snprintf(v[64], string_size, hv_current_ivt_msg_response__a4_resp_cycletime_t_string);
-		snprintf(v[65], string_size, hv_current_ivt_msg_response__a5_resp_cycletime_w_string);
-		snprintf(v[66], string_size, hv_current_ivt_msg_response__a6_resp_cycletime_as_string);
-		snprintf(v[67], string_size, hv_current_ivt_msg_response__a7_resp_cycletime_wh_string);
-		snprintf(v[68], string_size, hv_current_ivt_msg_response__b1_06_trigger_as_string);
-		snprintf(v[69], string_size, hv_current_ivt_msg_response__b1_05_trigger_w_string);
-		snprintf(v[70], string_size, hv_current_ivt_msg_response__b1_04_trigger_t_string);
-		snprintf(v[71], string_size, hv_current_ivt_msg_response__b1_03_trigger_u3_string);
-		snprintf(v[72], string_size, hv_current_ivt_msg_response__b1_02_trigger_u2_string);
-		snprintf(v[73], string_size, hv_current_ivt_msg_response__b1_01_trigger_u1_string);
-		snprintf(v[74], string_size, hv_current_ivt_msg_response__b1_00_trigger_i_string);
-		snprintf(v[75], string_size, hv_current_ivt_msg_response__b4_resp_startup_mode_string);
-		snprintf(v[76], string_size, hv_current_ivt_msg_response__bf_restart_alive_sn_string);
-		snprintf(v[77], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_revision_string);
-		snprintf(v[78], string_size, hv_current_ivt_msg_response__90_resp_can_id_sn_i_string);
-		snprintf(v[79], string_size, hv_current_ivt_msg_response__91_resp_can_id_sn_u1_string);
-		snprintf(v[80], string_size, hv_current_ivt_msg_response__92_resp_can_id_sn_u2_string);
-		snprintf(v[81], string_size, hv_current_ivt_msg_response__93_resp_can_id_sn_u3_string);
-		snprintf(v[82], string_size, hv_current_ivt_msg_response__94_resp_can_id_sn_t_string);
-		snprintf(v[83], string_size, hv_current_ivt_msg_response__95_resp_can_id_sn_w_string);
-		snprintf(v[84], string_size, hv_current_ivt_msg_response__96_resp_can_id_sn_as_string);
-		snprintf(v[85], string_size, hv_current_ivt_msg_response__97_resp_can_id_sn_wh_string);
-		snprintf(v[86], string_size, hv_current_ivt_msg_response__9d_resp_can_id_sn_command_string);
-		snprintf(v[87], string_size, hv_current_ivt_msg_response__9f_resp_can_id_sn_response_string);
-		snprintf(v[88], string_size, hv_current_ivt_msg_response__b0_resp_reset_device_sn_string);
-		snprintf(v[89], string_size, hv_current_ivt_msg_response__b4_resp_code_level_string);
-		snprintf(v[90], string_size, hv_current_ivt_msg_response__b5_resp_oc_pos_reset_threshold_string);
-		snprintf(v[91], string_size, hv_current_ivt_msg_response__b6_resp_oc_neg_reset_threshold_string);
-		snprintf(v[92], string_size, hv_current_ivt_msg_response__b9_resp_device_voltage_chan_string);
-		snprintf(v[93], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_vear_string);
-		snprintf(v[94], string_size, hv_current_ivt_msg_response__b9_resp_device_toi_string);
-		snprintf(v[95], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_month_string);
-		snprintf(v[96], string_size, hv_current_ivt_msg_response__b9_resp_device_com_string);
-		snprintf(v[97], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_day_string);
-		snprintf(v[98], string_size, hv_current_ivt_msg_response__b9_resp_device_v_supply_string);
-		snprintf(v[99], string_size, hv_current_ivt_msg_response__ba_resp_sw_ver_internal_string);
+		snprintf(v[0], string_size, IVT_MSG_RESPONSE_IVT_ID_RESPONSE);
+		snprintf(v[1], string_size, IVT_MSG_RESPONSE__B1_TRIGGER_SPARE);
+		snprintf(v[2], string_size, IVT_MSG_RESPONSE__FF_WRONG_COMMAND);
+		snprintf(v[3], string_size, IVT_MSG_RESPONSE__BF_RESTART_ALIVE_CMD_ID);
+		snprintf(v[4], string_size, IVT_MSG_RESPONSE__80_RESP_MEASERROR_ITEM);
+		snprintf(v[5], string_size, IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_ITEM);
+		snprintf(v[6], string_size, IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_ITEM);
+		snprintf(v[7], string_size, IVT_MSG_RESPONSE__83_RESP_LOGDATA_ITEM);
+		snprintf(v[8], string_size, IVT_MSG_RESPONSE__90_RESP_CAN_ID_VAL_I);
+		snprintf(v[9], string_size, IVT_MSG_RESPONSE__91_RESP_CAN_ID_VAL_U1);
+		snprintf(v[10], string_size, IVT_MSG_RESPONSE__92_RESP_CAN_ID_VAL_U2);
+		snprintf(v[11], string_size, IVT_MSG_RESPONSE__93_RESP_CAN_ID_VAL_U3);
+		snprintf(v[12], string_size, IVT_MSG_RESPONSE__94_RESP_CAN_ID_VAL_T);
+		snprintf(v[13], string_size, IVT_MSG_RESPONSE__95_RESP_CAN_ID_VAL_W);
+		snprintf(v[14], string_size, IVT_MSG_RESPONSE__96_RESP_CAN_ID_VAL_AS);
+		snprintf(v[15], string_size, IVT_MSG_RESPONSE__97_RESP_CAN_ID_VAL_WH);
+		snprintf(v[16], string_size, IVT_MSG_RESPONSE__9D_RESP_CAN_ID_VAL_COMMAND);
+		snprintf(v[17], string_size, IVT_MSG_RESPONSE__9F_RESP_CAN_ID_VAL_RESPONSE);
+		snprintf(v[18], string_size, IVT_MSG_RESPONSE__A0_RESP_SIGN_I);
+		snprintf(v[19], string_size, IVT_MSG_RESPONSE__A1_RESP_SIGN_U1);
+		snprintf(v[20], string_size, IVT_MSG_RESPONSE__A2_RESP_SIGN_U2);
+		snprintf(v[21], string_size, IVT_MSG_RESPONSE__A3_RESP_SIGN_U3);
+		snprintf(v[22], string_size, IVT_MSG_RESPONSE__A4_RESP_SIGN_T);
+		snprintf(v[23], string_size, IVT_MSG_RESPONSE__A5_RESP_SIGN_W);
+		snprintf(v[24], string_size, IVT_MSG_RESPONSE__A6_RESP_SIGN_AS);
+		snprintf(v[25], string_size, IVT_MSG_RESPONSE__A7_RESP_SIGN_WH);
+		snprintf(v[26], string_size, IVT_MSG_RESPONSE__B0_RESP_RESET_ITEM);
+		snprintf(v[27], string_size, IVT_MSG_RESPONSE__B2_RESP_STORE_DUMMY);
+		snprintf(v[28], string_size, IVT_MSG_RESPONSE__B3_RESP_OC_TEST_TIME);
+		snprintf(v[29], string_size, IVT_MSG_RESPONSE__B5_RESP_OC_POS_SET_THRESHOLD);
+		snprintf(v[30], string_size, IVT_MSG_RESPONSE__B6_RESP_OC_NEG_SET_THRESHOLD);
+		snprintf(v[31], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_TYPE);
+		snprintf(v[32], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_MAJOR_HW);
+		snprintf(v[33], string_size, IVT_MSG_RESPONSE__BB_RESP_SERIEN_NR);
+		snprintf(v[34], string_size, IVT_MSG_RESPONSE__BC_RESP_ART_N);
+		snprintf(v[35], string_size, IVT_MSG_RESPONSE__A0_RESP_ENDIANESS_I);
+		snprintf(v[36], string_size, IVT_MSG_RESPONSE__A1_RESP_ENDIANESS_U1);
+		snprintf(v[37], string_size, IVT_MSG_RESPONSE__A2_RESP_ENDIANESS_U2);
+		snprintf(v[38], string_size, IVT_MSG_RESPONSE__A3_RESP_ENDIANESS_U3);
+		snprintf(v[39], string_size, IVT_MSG_RESPONSE__A4_RESP_ENDIANESS_T);
+		snprintf(v[40], string_size, IVT_MSG_RESPONSE__A5_RESP_ENDIANESS_W);
+		snprintf(v[41], string_size, IVT_MSG_RESPONSE__A6_RESP_ENDIANESS_AS);
+		snprintf(v[42], string_size, IVT_MSG_RESPONSE__A7_RESP_ENDIANESS_WH);
+		snprintf(v[43], string_size, IVT_MSG_RESPONSE__A0_RESP_TRIGGERMODE_I);
+		snprintf(v[44], string_size, IVT_MSG_RESPONSE__A1_RESP_TRIGGERMODE_U1);
+		snprintf(v[45], string_size, IVT_MSG_RESPONSE__A2_RESP_TRIGGERMODE_U2);
+		snprintf(v[46], string_size, IVT_MSG_RESPONSE__A3_RESP_TRIGGERMODE_U3);
+		snprintf(v[47], string_size, IVT_MSG_RESPONSE__A4_RESP_TRIGGERMODE_T);
+		snprintf(v[48], string_size, IVT_MSG_RESPONSE__A5_RESP_TRIGGERMODE_W);
+		snprintf(v[49], string_size, IVT_MSG_RESPONSE__A6_RESP_TRIGGERMODE_AS);
+		snprintf(v[50], string_size, IVT_MSG_RESPONSE__A7_RESP_TRIGGERMODE_WH);
+		snprintf(v[51], string_size, IVT_MSG_RESPONSE__B4_RESP_ACTUAL_MODE);
+		snprintf(v[52], string_size, IVT_MSG_RESPONSE__B1_07_TRIGGER_WH);
+		snprintf(v[53], string_size, IVT_MSG_RESPONSE__B2_RESP_STORE_DEVICE_SN);
+		snprintf(v[54], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_MINOR);
+		snprintf(v[55], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_CURRENT);
+		snprintf(v[56], string_size, IVT_MSG_RESPONSE__80_RESP_MEASERROR_COUNT_MASK);
+		snprintf(v[57], string_size, IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_COUNT_MASK);
+		snprintf(v[58], string_size, IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_COUNTER);
+		snprintf(v[59], string_size, IVT_MSG_RESPONSE__83_RESP_LOGDATA_COUNTER);
+		snprintf(v[60], string_size, IVT_MSG_RESPONSE__A0_RESP_CYCLETIME_I);
+		snprintf(v[61], string_size, IVT_MSG_RESPONSE__A1_RESP_CYCLETIME_U1);
+		snprintf(v[62], string_size, IVT_MSG_RESPONSE__A2_RESP_CYCLETIME_U2);
+		snprintf(v[63], string_size, IVT_MSG_RESPONSE__A3_RESP_CYCLETIME_U3);
+		snprintf(v[64], string_size, IVT_MSG_RESPONSE__A4_RESP_CYCLETIME_T);
+		snprintf(v[65], string_size, IVT_MSG_RESPONSE__A5_RESP_CYCLETIME_W);
+		snprintf(v[66], string_size, IVT_MSG_RESPONSE__A6_RESP_CYCLETIME_AS);
+		snprintf(v[67], string_size, IVT_MSG_RESPONSE__A7_RESP_CYCLETIME_WH);
+		snprintf(v[68], string_size, IVT_MSG_RESPONSE__B1_06_TRIGGER_AS);
+		snprintf(v[69], string_size, IVT_MSG_RESPONSE__B1_05_TRIGGER_W);
+		snprintf(v[70], string_size, IVT_MSG_RESPONSE__B1_04_TRIGGER_T);
+		snprintf(v[71], string_size, IVT_MSG_RESPONSE__B1_03_TRIGGER_U3);
+		snprintf(v[72], string_size, IVT_MSG_RESPONSE__B1_02_TRIGGER_U2);
+		snprintf(v[73], string_size, IVT_MSG_RESPONSE__B1_01_TRIGGER_U1);
+		snprintf(v[74], string_size, IVT_MSG_RESPONSE__B1_00_TRIGGER_I);
+		snprintf(v[75], string_size, IVT_MSG_RESPONSE__B4_RESP_STARTUP_MODE);
+		snprintf(v[76], string_size, IVT_MSG_RESPONSE__BF_RESTART_ALIVE_SN);
+		snprintf(v[77], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_REVISION);
+		snprintf(v[78], string_size, IVT_MSG_RESPONSE__90_RESP_CAN_ID_SN_I);
+		snprintf(v[79], string_size, IVT_MSG_RESPONSE__91_RESP_CAN_ID_SN_U1);
+		snprintf(v[80], string_size, IVT_MSG_RESPONSE__92_RESP_CAN_ID_SN_U2);
+		snprintf(v[81], string_size, IVT_MSG_RESPONSE__93_RESP_CAN_ID_SN_U3);
+		snprintf(v[82], string_size, IVT_MSG_RESPONSE__94_RESP_CAN_ID_SN_T);
+		snprintf(v[83], string_size, IVT_MSG_RESPONSE__95_RESP_CAN_ID_SN_W);
+		snprintf(v[84], string_size, IVT_MSG_RESPONSE__96_RESP_CAN_ID_SN_AS);
+		snprintf(v[85], string_size, IVT_MSG_RESPONSE__97_RESP_CAN_ID_SN_WH);
+		snprintf(v[86], string_size, IVT_MSG_RESPONSE__9D_RESP_CAN_ID_SN_COMMAND);
+		snprintf(v[87], string_size, IVT_MSG_RESPONSE__9F_RESP_CAN_ID_SN_RESPONSE);
+		snprintf(v[88], string_size, IVT_MSG_RESPONSE__B0_RESP_RESET_DEVICE_SN);
+		snprintf(v[89], string_size, IVT_MSG_RESPONSE__B4_RESP_CODE_LEVEL);
+		snprintf(v[90], string_size, IVT_MSG_RESPONSE__B5_RESP_OC_POS_RESET_THRESHOLD);
+		snprintf(v[91], string_size, IVT_MSG_RESPONSE__B6_RESP_OC_NEG_RESET_THRESHOLD);
+		snprintf(v[92], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_VOLTAGE_CHAN);
+		snprintf(v[93], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_VEAR);
+		snprintf(v[94], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_TOI);
+		snprintf(v[95], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_MONTH);
+		snprintf(v[96], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_COM);
+		snprintf(v[97], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_DAY);
+		snprintf(v[98], string_size, IVT_MSG_RESPONSE__B9_RESP_DEVICE_V_SUPPLY);
+		snprintf(v[99], string_size, IVT_MSG_RESPONSE__BA_RESP_SW_VER_INTERNAL);
 
 		return 0;
 	case 1317:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_t_ivt_id_result_t_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_t_ivt_result_t_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_t_ivt_result_t_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_t_ivt_result_t_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_t_ivt_result_t_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_t_ivt_msgcount_result_t_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_t_ivt_result_t_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_T_IVT_ID_RESULT_T);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_T_IVT_RESULT_T_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_T_IVT_RESULT_T_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_T_IVT_RESULT_T_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_T_IVT_RESULT_T_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_T_IVT_MSGCOUNT_RESULT_T);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_T_IVT_RESULT_T);
 
 		return 0;
 	case 1316:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_u3_ivt_id_result_u3_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_u3_ivt_result_u3_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_u3_ivt_result_u3_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_u3_ivt_result_u3_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_u3_ivt_result_u3_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_u3_ivt_msgcount_result_u3_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_u3_ivt_result_u3_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_U3_IVT_ID_RESULT_U3);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_U3_IVT_RESULT_U3_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_U3_IVT_RESULT_U3_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_U3_IVT_RESULT_U3_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_U3_IVT_RESULT_U3_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_U3_IVT_MSGCOUNT_RESULT_U3);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_U3_IVT_RESULT_U3);
 
 		return 0;
 	case 1315:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_u2_ivt_id_result_u2_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_u2_ivt_result_u2_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_u2_ivt_result_u2_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_u2_ivt_result_u2_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_u2_ivt_result_u2_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_u2_ivt_msgcount_result_u2_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_u2_ivt_result_u2_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_U2_IVT_ID_RESULT_U2);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_U2_IVT_RESULT_U2_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_U2_IVT_RESULT_U2_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_U2_IVT_RESULT_U2_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_U2_IVT_RESULT_U2_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_U2_IVT_MSGCOUNT_RESULT_U2);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_U2_IVT_RESULT_U2);
 
 		return 0;
 	case 1314:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_u1_ivt_id_result_u1_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_u1_ivt_result_u1_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_u1_ivt_result_u1_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_u1_ivt_result_u1_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_u1_ivt_result_u1_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_u1_ivt_msgcount_result_u1_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_u1_ivt_result_u1_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_U1_IVT_ID_RESULT_U1);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_U1_IVT_RESULT_U1_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_U1_IVT_RESULT_U1_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_U1_IVT_RESULT_U1_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_U1_IVT_RESULT_U1_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_U1_IVT_MSGCOUNT_RESULT_U1);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_U1_IVT_RESULT_U1);
 
 		return 0;
 	case 1313:
 		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_result_i_ivt_id_result_i_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_result_i_ivt_result_i_system_error_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_result_i_ivt_result_i_measurement_error_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_result_i_ivt_result_i_channel_error_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_result_i_ivt_result_i_ocs_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_result_i_ivt_msgcount_result_i_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_result_i_ivt_result_i_string);
+		snprintf(v[0], string_size, IVT_MSG_RESULT_I_IVT_ID_RESULT_I);
+		snprintf(v[1], string_size, IVT_MSG_RESULT_I_IVT_RESULT_I_SYSTEM_ERROR);
+		snprintf(v[2], string_size, IVT_MSG_RESULT_I_IVT_RESULT_I_MEASUREMENT_ERROR);
+		snprintf(v[3], string_size, IVT_MSG_RESULT_I_IVT_RESULT_I_CHANNEL_ERROR);
+		snprintf(v[4], string_size, IVT_MSG_RESULT_I_IVT_RESULT_I_OCS);
+		snprintf(v[5], string_size, IVT_MSG_RESULT_I_IVT_MSGCOUNT_RESULT_I);
+		snprintf(v[6], string_size, IVT_MSG_RESULT_I_IVT_RESULT_I);
 
 		return 0;
 	case 1041:
 		if(106 > fields_size) return 1;
-		snprintf(v[0], string_size, hv_current_ivt_msg_cmd_ivt_id_cmd_string);
-		snprintf(v[1], string_size, hv_current_ivt_msg_cmd__31_trigger_spare_string);
-		snprintf(v[2], string_size, hv_current_ivt_msg_cmd__10_set_can_id_val_i_string);
-		snprintf(v[3], string_size, hv_current_ivt_msg_cmd__11_set_can_id_val_u1_string);
-		snprintf(v[4], string_size, hv_current_ivt_msg_cmd__12_set_can_id_val_u2_string);
-		snprintf(v[5], string_size, hv_current_ivt_msg_cmd__13_set_can_id_val_u3_string);
-		snprintf(v[6], string_size, hv_current_ivt_msg_cmd__14_set_can_id_val_t_string);
-		snprintf(v[7], string_size, hv_current_ivt_msg_cmd__15_set_can_id_val_w_string);
-		snprintf(v[8], string_size, hv_current_ivt_msg_cmd__16_set_can_id_val_as_string);
-		snprintf(v[9], string_size, hv_current_ivt_msg_cmd__17_set_can_id_val_wh_string);
-		snprintf(v[10], string_size, hv_current_ivt_msg_cmd__1d_set_can_id_val_command_string);
-		snprintf(v[11], string_size, hv_current_ivt_msg_cmd__1f_set_can_id_val_response_string);
-		snprintf(v[12], string_size, hv_current_ivt_msg_cmd__20_conf_sign_i_string);
-		snprintf(v[13], string_size, hv_current_ivt_msg_cmd__21_conf_sign_u1_string);
-		snprintf(v[14], string_size, hv_current_ivt_msg_cmd__22_conf_sign_u2_string);
-		snprintf(v[15], string_size, hv_current_ivt_msg_cmd__23_conf_sign_u3_string);
-		snprintf(v[16], string_size, hv_current_ivt_msg_cmd__24_conf_sign_t_string);
-		snprintf(v[17], string_size, hv_current_ivt_msg_cmd__25_conf_sign_w_string);
-		snprintf(v[18], string_size, hv_current_ivt_msg_cmd__26_conf_sign_as_string);
-		snprintf(v[19], string_size, hv_current_ivt_msg_cmd__27_conf_sign_wh_string);
-		snprintf(v[20], string_size, hv_current_ivt_msg_cmd__30_reset_item_string);
-		snprintf(v[21], string_size, hv_current_ivt_msg_cmd__32_store_dummy_string);
-		snprintf(v[22], string_size, hv_current_ivt_msg_cmd__33_oc_test_time_string);
-		snprintf(v[23], string_size, hv_current_ivt_msg_cmd__35_oc_pos_set_threshold_string);
-		snprintf(v[24], string_size, hv_current_ivt_msg_cmd__36_oc_neg_set_threshold_string);
-		snprintf(v[25], string_size, hv_current_ivt_msg_cmd__3a_restart_to_bitrate_string);
-		snprintf(v[26], string_size, hv_current_ivt_msg_cmd__3d_restart_default_dummy_string);
-		snprintf(v[27], string_size, hv_current_ivt_msg_cmd__3f_restart_dummy_string);
-		snprintf(v[28], string_size, hv_current_ivt_msg_cmd__40_get_measerror_item_string);
-		snprintf(v[29], string_size, hv_current_ivt_msg_cmd__41_get_systemerror_item_string);
-		snprintf(v[30], string_size, hv_current_ivt_msg_cmd__42_get_alllogdata_item_string);
-		snprintf(v[31], string_size, hv_current_ivt_msg_cmd__43_get_logdata_item_string);
-		snprintf(v[32], string_size, hv_current_ivt_msg_cmd__60_get_result_dummy_i_string);
-		snprintf(v[33], string_size, hv_current_ivt_msg_cmd__61_get_result_dummy_u1_string);
-		snprintf(v[34], string_size, hv_current_ivt_msg_cmd__62_get_result_dummy_u2_string);
-		snprintf(v[35], string_size, hv_current_ivt_msg_cmd__63_get_result_dummy_u3_string);
-		snprintf(v[36], string_size, hv_current_ivt_msg_cmd__64_get_result_dummy_t_string);
-		snprintf(v[37], string_size, hv_current_ivt_msg_cmd__65_get_result_dummy_w_string);
-		snprintf(v[38], string_size, hv_current_ivt_msg_cmd__66_get_result_dummy_as_string);
-		snprintf(v[39], string_size, hv_current_ivt_msg_cmd__67_get_result_dummy_wh_string);
-		snprintf(v[40], string_size, hv_current_ivt_msg_cmd__73_get_oc_test_dummy_string);
-		snprintf(v[41], string_size, hv_current_ivt_msg_cmd__74_get_mode_dummy_string);
-		snprintf(v[42], string_size, hv_current_ivt_msg_cmd__75_get_oc_pos_dummy_string);
-		snprintf(v[43], string_size, hv_current_ivt_msg_cmd__76_get_oc_neg_dummy_string);
-		snprintf(v[44], string_size, hv_current_ivt_msg_cmd__79_get_device_id_dummy_string);
-		snprintf(v[45], string_size, hv_current_ivt_msg_cmd__7a_get_sw_version_dummy_string);
-		snprintf(v[46], string_size, hv_current_ivt_msg_cmd__7b_get_serien_nr_dummy_string);
-		snprintf(v[47], string_size, hv_current_ivt_msg_cmd__7c_get_art_nr_dummy_string);
-		snprintf(v[48], string_size, hv_current_ivt_msg_cmd__20_conf_endianess_i_string);
-		snprintf(v[49], string_size, hv_current_ivt_msg_cmd__21_conf_endianess_u1_string);
-		snprintf(v[50], string_size, hv_current_ivt_msg_cmd__22_conf_endianess_u2_string);
-		snprintf(v[51], string_size, hv_current_ivt_msg_cmd__23_conf_endianess_u3_string);
-		snprintf(v[52], string_size, hv_current_ivt_msg_cmd__24_conf_endianess_t_string);
-		snprintf(v[53], string_size, hv_current_ivt_msg_cmd__25_conf_endianess_w_string);
-		snprintf(v[54], string_size, hv_current_ivt_msg_cmd__26_conf_endianess_as_string);
-		snprintf(v[55], string_size, hv_current_ivt_msg_cmd__27_conf_endianess_wh_string);
-		snprintf(v[56], string_size, hv_current_ivt_msg_cmd__20_conf_triggermode_i_string);
-		snprintf(v[57], string_size, hv_current_ivt_msg_cmd__21_conf_triggermode_u1_string);
-		snprintf(v[58], string_size, hv_current_ivt_msg_cmd__22_conf_triggermode_u2_string);
-		snprintf(v[59], string_size, hv_current_ivt_msg_cmd__23_conf_triggermode_u3_string);
-		snprintf(v[60], string_size, hv_current_ivt_msg_cmd__24_conf_triggermode_t_string);
-		snprintf(v[61], string_size, hv_current_ivt_msg_cmd__25_conf_triggermode_w_string);
-		snprintf(v[62], string_size, hv_current_ivt_msg_cmd__26_conf_triggermode_as_string);
-		snprintf(v[63], string_size, hv_current_ivt_msg_cmd__27_conf_triggermode_wh_string);
-		snprintf(v[64], string_size, hv_current_ivt_msg_cmd__34_actual_mode_string);
-		snprintf(v[65], string_size, hv_current_ivt_msg_cmd__31_07_trigger_wh_string);
-		snprintf(v[66], string_size, hv_current_ivt_msg_cmd__20_conf_cycletime_i_string);
-		snprintf(v[67], string_size, hv_current_ivt_msg_cmd__21_conf_cycletime_u1_string);
-		snprintf(v[68], string_size, hv_current_ivt_msg_cmd__22_conf_cycletime_u2_string);
-		snprintf(v[69], string_size, hv_current_ivt_msg_cmd__23_conf_cycletime_u3_string);
-		snprintf(v[70], string_size, hv_current_ivt_msg_cmd__24_conf_cycletime_t_string);
-		snprintf(v[71], string_size, hv_current_ivt_msg_cmd__25_conf_cycletime_w_string);
-		snprintf(v[72], string_size, hv_current_ivt_msg_cmd__26_conf_cycletime_as_string);
-		snprintf(v[73], string_size, hv_current_ivt_msg_cmd__27_conf_cycletime_wh_string);
-		snprintf(v[74], string_size, hv_current_ivt_msg_cmd__31_06_trigger_as_string);
-		snprintf(v[75], string_size, hv_current_ivt_msg_cmd__31_05_trigger_w_string);
-		snprintf(v[76], string_size, hv_current_ivt_msg_cmd__31_04_trigger_t_string);
-		snprintf(v[77], string_size, hv_current_ivt_msg_cmd__31_03_trigger_u3_string);
-		snprintf(v[78], string_size, hv_current_ivt_msg_cmd__31_02_trigger_u2_string);
-		snprintf(v[79], string_size, hv_current_ivt_msg_cmd__31_01_trigger_u1_string);
-		snprintf(v[80], string_size, hv_current_ivt_msg_cmd__31_00_trigger_i_string);
-		snprintf(v[81], string_size, hv_current_ivt_msg_cmd__34_startup_mode_string);
-		snprintf(v[82], string_size, hv_current_ivt_msg_cmd__10_set_can_id_sn_i_string);
-		snprintf(v[83], string_size, hv_current_ivt_msg_cmd__11_set_can_id_sn_u1_string);
-		snprintf(v[84], string_size, hv_current_ivt_msg_cmd__12_set_can_id_sn_u2_string);
-		snprintf(v[85], string_size, hv_current_ivt_msg_cmd__13_set_can_id_sn_u3_string);
-		snprintf(v[86], string_size, hv_current_ivt_msg_cmd__14_set_can_id_sn_t_string);
-		snprintf(v[87], string_size, hv_current_ivt_msg_cmd__15_set_can_id_sn_w_string);
-		snprintf(v[88], string_size, hv_current_ivt_msg_cmd__16_set_can_id_sn_as_string);
-		snprintf(v[89], string_size, hv_current_ivt_msg_cmd__17_set_can_id_sn_wh_string);
-		snprintf(v[90], string_size, hv_current_ivt_msg_cmd__1d_set_can_id_sn_command_string);
-		snprintf(v[91], string_size, hv_current_ivt_msg_cmd__1f_set_can_id_sn_response_string);
-		snprintf(v[92], string_size, hv_current_ivt_msg_cmd__30_reset_device_sn_string);
-		snprintf(v[93], string_size, hv_current_ivt_msg_cmd__34_code_level_string);
-		snprintf(v[94], string_size, hv_current_ivt_msg_cmd__35_oc_pos_reset_threshold_string);
-		snprintf(v[95], string_size, hv_current_ivt_msg_cmd__36_oc_neg_reset_threshold_string);
-		snprintf(v[96], string_size, hv_current_ivt_msg_cmd__50_get_can_id_sn_i_string);
-		snprintf(v[97], string_size, hv_current_ivt_msg_cmd__51_get_can_id_sn_u1_string);
-		snprintf(v[98], string_size, hv_current_ivt_msg_cmd__52_get_can_id_sn_u2_string);
-		snprintf(v[99], string_size, hv_current_ivt_msg_cmd__53_get_can_id_sn_u3_string);
-		snprintf(v[100], string_size, hv_current_ivt_msg_cmd__54_get_can_id_sn_t_string);
-		snprintf(v[101], string_size, hv_current_ivt_msg_cmd__55_get_can_id_sn_w_string);
-		snprintf(v[102], string_size, hv_current_ivt_msg_cmd__56_get_can_id_sn_as_string);
-		snprintf(v[103], string_size, hv_current_ivt_msg_cmd__57_get_can_id_sn_wh_string);
-		snprintf(v[104], string_size, hv_current_ivt_msg_cmd__5d_get_can_id_sn_command_string);
-		snprintf(v[105], string_size, hv_current_ivt_msg_cmd__5f_get_can_id_sn_response_string);
+		snprintf(v[0], string_size, IVT_MSG_CMD_IVT_ID_CMD);
+		snprintf(v[1], string_size, IVT_MSG_CMD__31_TRIGGER_SPARE);
+		snprintf(v[2], string_size, IVT_MSG_CMD__10_SET_CAN_ID_VAL_I);
+		snprintf(v[3], string_size, IVT_MSG_CMD__11_SET_CAN_ID_VAL_U1);
+		snprintf(v[4], string_size, IVT_MSG_CMD__12_SET_CAN_ID_VAL_U2);
+		snprintf(v[5], string_size, IVT_MSG_CMD__13_SET_CAN_ID_VAL_U3);
+		snprintf(v[6], string_size, IVT_MSG_CMD__14_SET_CAN_ID_VAL_T);
+		snprintf(v[7], string_size, IVT_MSG_CMD__15_SET_CAN_ID_VAL_W);
+		snprintf(v[8], string_size, IVT_MSG_CMD__16_SET_CAN_ID_VAL_AS);
+		snprintf(v[9], string_size, IVT_MSG_CMD__17_SET_CAN_ID_VAL_WH);
+		snprintf(v[10], string_size, IVT_MSG_CMD__1D_SET_CAN_ID_VAL_COMMAND);
+		snprintf(v[11], string_size, IVT_MSG_CMD__1F_SET_CAN_ID_VAL_RESPONSE);
+		snprintf(v[12], string_size, IVT_MSG_CMD__20_CONF_SIGN_I);
+		snprintf(v[13], string_size, IVT_MSG_CMD__21_CONF_SIGN_U1);
+		snprintf(v[14], string_size, IVT_MSG_CMD__22_CONF_SIGN_U2);
+		snprintf(v[15], string_size, IVT_MSG_CMD__23_CONF_SIGN_U3);
+		snprintf(v[16], string_size, IVT_MSG_CMD__24_CONF_SIGN_T);
+		snprintf(v[17], string_size, IVT_MSG_CMD__25_CONF_SIGN_W);
+		snprintf(v[18], string_size, IVT_MSG_CMD__26_CONF_SIGN_AS);
+		snprintf(v[19], string_size, IVT_MSG_CMD__27_CONF_SIGN_WH);
+		snprintf(v[20], string_size, IVT_MSG_CMD__30_RESET_ITEM);
+		snprintf(v[21], string_size, IVT_MSG_CMD__32_STORE_DUMMY);
+		snprintf(v[22], string_size, IVT_MSG_CMD__33_OC_TEST_TIME);
+		snprintf(v[23], string_size, IVT_MSG_CMD__35_OC_POS_SET_THRESHOLD);
+		snprintf(v[24], string_size, IVT_MSG_CMD__36_OC_NEG_SET_THRESHOLD);
+		snprintf(v[25], string_size, IVT_MSG_CMD__3A_RESTART_TO_BITRATE);
+		snprintf(v[26], string_size, IVT_MSG_CMD__3D_RESTART_DEFAULT_DUMMY);
+		snprintf(v[27], string_size, IVT_MSG_CMD__3F_RESTART_DUMMY);
+		snprintf(v[28], string_size, IVT_MSG_CMD__40_GET_MEASERROR_ITEM);
+		snprintf(v[29], string_size, IVT_MSG_CMD__41_GET_SYSTEMERROR_ITEM);
+		snprintf(v[30], string_size, IVT_MSG_CMD__42_GET_ALLLOGDATA_ITEM);
+		snprintf(v[31], string_size, IVT_MSG_CMD__43_GET_LOGDATA_ITEM);
+		snprintf(v[32], string_size, IVT_MSG_CMD__60_GET_RESULT_DUMMY_I);
+		snprintf(v[33], string_size, IVT_MSG_CMD__61_GET_RESULT_DUMMY_U1);
+		snprintf(v[34], string_size, IVT_MSG_CMD__62_GET_RESULT_DUMMY_U2);
+		snprintf(v[35], string_size, IVT_MSG_CMD__63_GET_RESULT_DUMMY_U3);
+		snprintf(v[36], string_size, IVT_MSG_CMD__64_GET_RESULT_DUMMY_T);
+		snprintf(v[37], string_size, IVT_MSG_CMD__65_GET_RESULT_DUMMY_W);
+		snprintf(v[38], string_size, IVT_MSG_CMD__66_GET_RESULT_DUMMY_AS);
+		snprintf(v[39], string_size, IVT_MSG_CMD__67_GET_RESULT_DUMMY_WH);
+		snprintf(v[40], string_size, IVT_MSG_CMD__73_GET_OC_TEST_DUMMY);
+		snprintf(v[41], string_size, IVT_MSG_CMD__74_GET_MODE_DUMMY);
+		snprintf(v[42], string_size, IVT_MSG_CMD__75_GET_OC_POS_DUMMY);
+		snprintf(v[43], string_size, IVT_MSG_CMD__76_GET_OC_NEG_DUMMY);
+		snprintf(v[44], string_size, IVT_MSG_CMD__79_GET_DEVICE_ID_DUMMY);
+		snprintf(v[45], string_size, IVT_MSG_CMD__7A_GET_SW_VERSION_DUMMY);
+		snprintf(v[46], string_size, IVT_MSG_CMD__7B_GET_SERIEN_NR_DUMMY);
+		snprintf(v[47], string_size, IVT_MSG_CMD__7C_GET_ART_NR_DUMMY);
+		snprintf(v[48], string_size, IVT_MSG_CMD__20_CONF_ENDIANESS_I);
+		snprintf(v[49], string_size, IVT_MSG_CMD__21_CONF_ENDIANESS_U1);
+		snprintf(v[50], string_size, IVT_MSG_CMD__22_CONF_ENDIANESS_U2);
+		snprintf(v[51], string_size, IVT_MSG_CMD__23_CONF_ENDIANESS_U3);
+		snprintf(v[52], string_size, IVT_MSG_CMD__24_CONF_ENDIANESS_T);
+		snprintf(v[53], string_size, IVT_MSG_CMD__25_CONF_ENDIANESS_W);
+		snprintf(v[54], string_size, IVT_MSG_CMD__26_CONF_ENDIANESS_AS);
+		snprintf(v[55], string_size, IVT_MSG_CMD__27_CONF_ENDIANESS_WH);
+		snprintf(v[56], string_size, IVT_MSG_CMD__20_CONF_TRIGGERMODE_I);
+		snprintf(v[57], string_size, IVT_MSG_CMD__21_CONF_TRIGGERMODE_U1);
+		snprintf(v[58], string_size, IVT_MSG_CMD__22_CONF_TRIGGERMODE_U2);
+		snprintf(v[59], string_size, IVT_MSG_CMD__23_CONF_TRIGGERMODE_U3);
+		snprintf(v[60], string_size, IVT_MSG_CMD__24_CONF_TRIGGERMODE_T);
+		snprintf(v[61], string_size, IVT_MSG_CMD__25_CONF_TRIGGERMODE_W);
+		snprintf(v[62], string_size, IVT_MSG_CMD__26_CONF_TRIGGERMODE_AS);
+		snprintf(v[63], string_size, IVT_MSG_CMD__27_CONF_TRIGGERMODE_WH);
+		snprintf(v[64], string_size, IVT_MSG_CMD__34_ACTUAL_MODE);
+		snprintf(v[65], string_size, IVT_MSG_CMD__31_07_TRIGGER_WH);
+		snprintf(v[66], string_size, IVT_MSG_CMD__20_CONF_CYCLETIME_I);
+		snprintf(v[67], string_size, IVT_MSG_CMD__21_CONF_CYCLETIME_U1);
+		snprintf(v[68], string_size, IVT_MSG_CMD__22_CONF_CYCLETIME_U2);
+		snprintf(v[69], string_size, IVT_MSG_CMD__23_CONF_CYCLETIME_U3);
+		snprintf(v[70], string_size, IVT_MSG_CMD__24_CONF_CYCLETIME_T);
+		snprintf(v[71], string_size, IVT_MSG_CMD__25_CONF_CYCLETIME_W);
+		snprintf(v[72], string_size, IVT_MSG_CMD__26_CONF_CYCLETIME_AS);
+		snprintf(v[73], string_size, IVT_MSG_CMD__27_CONF_CYCLETIME_WH);
+		snprintf(v[74], string_size, IVT_MSG_CMD__31_06_TRIGGER_AS);
+		snprintf(v[75], string_size, IVT_MSG_CMD__31_05_TRIGGER_W);
+		snprintf(v[76], string_size, IVT_MSG_CMD__31_04_TRIGGER_T);
+		snprintf(v[77], string_size, IVT_MSG_CMD__31_03_TRIGGER_U3);
+		snprintf(v[78], string_size, IVT_MSG_CMD__31_02_TRIGGER_U2);
+		snprintf(v[79], string_size, IVT_MSG_CMD__31_01_TRIGGER_U1);
+		snprintf(v[80], string_size, IVT_MSG_CMD__31_00_TRIGGER_I);
+		snprintf(v[81], string_size, IVT_MSG_CMD__34_STARTUP_MODE);
+		snprintf(v[82], string_size, IVT_MSG_CMD__10_SET_CAN_ID_SN_I);
+		snprintf(v[83], string_size, IVT_MSG_CMD__11_SET_CAN_ID_SN_U1);
+		snprintf(v[84], string_size, IVT_MSG_CMD__12_SET_CAN_ID_SN_U2);
+		snprintf(v[85], string_size, IVT_MSG_CMD__13_SET_CAN_ID_SN_U3);
+		snprintf(v[86], string_size, IVT_MSG_CMD__14_SET_CAN_ID_SN_T);
+		snprintf(v[87], string_size, IVT_MSG_CMD__15_SET_CAN_ID_SN_W);
+		snprintf(v[88], string_size, IVT_MSG_CMD__16_SET_CAN_ID_SN_AS);
+		snprintf(v[89], string_size, IVT_MSG_CMD__17_SET_CAN_ID_SN_WH);
+		snprintf(v[90], string_size, IVT_MSG_CMD__1D_SET_CAN_ID_SN_COMMAND);
+		snprintf(v[91], string_size, IVT_MSG_CMD__1F_SET_CAN_ID_SN_RESPONSE);
+		snprintf(v[92], string_size, IVT_MSG_CMD__30_RESET_DEVICE_SN);
+		snprintf(v[93], string_size, IVT_MSG_CMD__34_CODE_LEVEL);
+		snprintf(v[94], string_size, IVT_MSG_CMD__35_OC_POS_RESET_THRESHOLD);
+		snprintf(v[95], string_size, IVT_MSG_CMD__36_OC_NEG_RESET_THRESHOLD);
+		snprintf(v[96], string_size, IVT_MSG_CMD__50_GET_CAN_ID_SN_I);
+		snprintf(v[97], string_size, IVT_MSG_CMD__51_GET_CAN_ID_SN_U1);
+		snprintf(v[98], string_size, IVT_MSG_CMD__52_GET_CAN_ID_SN_U2);
+		snprintf(v[99], string_size, IVT_MSG_CMD__53_GET_CAN_ID_SN_U3);
+		snprintf(v[100], string_size, IVT_MSG_CMD__54_GET_CAN_ID_SN_T);
+		snprintf(v[101], string_size, IVT_MSG_CMD__55_GET_CAN_ID_SN_W);
+		snprintf(v[102], string_size, IVT_MSG_CMD__56_GET_CAN_ID_SN_AS);
+		snprintf(v[103], string_size, IVT_MSG_CMD__57_GET_CAN_ID_SN_WH);
+		snprintf(v[104], string_size, IVT_MSG_CMD__5D_GET_CAN_ID_SN_COMMAND);
+		snprintf(v[105], string_size, IVT_MSG_CMD__5F_GET_CAN_ID_SN_RESPONSE);
 
 		return 0;
 
@@ -2465,4 +2465,712 @@ int hv_current_fields_types_from_id(int id, int* fields_types, int fields_types_
 
     }
     return 0;
+}
+int hv_current_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+{
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_WH"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_wh"))
+		{
+			sprintf(v[0], "Vt_Result_Wh");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_AS"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_as"))
+		{
+			sprintf(v[0], "Vt_Result_As");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_W"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_w"))
+		{
+			sprintf(v[0], "Vt_Result_W");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESPONSE"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_response"))
+		{
+			sprintf(v[0], "Resp_Cmd_Wrong_Command");
+			sprintf(v[1], "Resp_Get_Set_ALIVE");
+			sprintf(v[2], "Resp_Get_Set_ArtNr");
+			sprintf(v[3], "Resp_Get_Set_Serialnumber");
+			sprintf(v[4], "Resp_Get_Set_SW_VERSION");
+			sprintf(v[5], "Resp_Get_Set_DEVICE_ID");
+			sprintf(v[6], "Resp_Get_Set_THRESHOLD_NEG");
+			sprintf(v[7], "Resp_Get_Set_THRESHOLD_POS");
+			sprintf(v[8], "Resp_Get_Set_MODE");
+			sprintf(v[9], "Resp_Get_Set_OC_TEST_TIME");
+			sprintf(v[10], "Resp_Get_Set_STORE");
+			sprintf(v[11], "Resp_Get_Set_TRIGGER");
+			sprintf(v[12], "Resp_Get_Set_Reset_Error_Logdata");
+			sprintf(v[13], "Resp_Config_Result_Wh");
+			sprintf(v[14], "Resp_Config_Result_As");
+			sprintf(v[15], "Resp_Config_Result_W");
+			sprintf(v[16], "Resp_Config_Result_T");
+			sprintf(v[17], "Resp_Config_Result_U3");
+			sprintf(v[18], "Resp_Config_Result_U2");
+			sprintf(v[19], "Resp_Config_Result_U1");
+			sprintf(v[20], "Resp_Config_Result_I");
+			sprintf(v[21], "Resp_CAN_ID_Response");
+			sprintf(v[22], "Resp_CAN_ID_Command");
+			sprintf(v[23], "Resp_CAN_ID_Res_Wh");
+			sprintf(v[24], "Resp_CAN_ID_Res_As");
+			sprintf(v[25], "Resp_CAN_ID_Res_W");
+			sprintf(v[26], "Resp_CAN_ID_Res_I");
+			sprintf(v[27], "Resp_CAN_ID_Res_T");
+			sprintf(v[28], "Resp_CAN_ID_Res_U3");
+			sprintf(v[29], "Resp_CAN_ID_Res_U2");
+			sprintf(v[30], "Resp_CAN_ID_Res_U1");
+			sprintf(v[31], "Resp_Error_Log_Logdata_Since_Res");
+			sprintf(v[32], "Resp_Error_Log_Overall_Logdata");
+			sprintf(v[33], "Resp_Error_Log_System_Error");
+			sprintf(v[34], "Resp_Error_Log_Measurement_Error");
+			return 35;
+		}
+		if(!strcmp(sgn_name, "_80_resp_measerror_item"))
+		{
+			sprintf(v[0], "Resp_error_calibration_data");
+			sprintf(v[1], "Resp_error_ntc_I_OpenCirc");
+			sprintf(v[2], "Resp_error_ntc_h_OpenCirc");
+			sprintf(v[3], "Resp_error_meas_U3_OpenCirc");
+			sprintf(v[4], "Resp_error_meas_U2_OpenCirc");
+			sprintf(v[5], "Resp_error_meas_U1_OpenCirc");
+			sprintf(v[6], "Resp_error_meas_I1_OpenCirc");
+			sprintf(v[7], "Resp__error_therm_EMF_correction");
+			sprintf(v[8], "Resp_error_cur_meas_implausible");
+			sprintf(v[9], "Resp_error_Vref");
+			sprintf(v[10], "Resp_error_Underflow_ADC_ch_2");
+			sprintf(v[11], "Resp_error_Overflow_ADC_ch_2");
+			sprintf(v[12], "Resp_error_Underflow_ADC_ch_1");
+			sprintf(v[13], "Reso_error_Overflow_ADC_ch_1");
+			sprintf(v[14], "Resp_error_ADC_interrupt");
+			sprintf(v[15], "Resonse_all_meas_errors");
+			return 16;
+		}
+		if(!strcmp(sgn_name, "_81_resp_systemerror_item"))
+		{
+			sprintf(v[0], "Resp_error_Reset_EMC");
+			sprintf(v[1], "Resp_error_Reset_Watchdog");
+			sprintf(v[2], "Resp_error_Reset_illegal_opcode");
+			sprintf(v[3], "Resp_error_ADC_Clock");
+			sprintf(v[4], "Resp_error_eeprom_rw");
+			sprintf(v[5], "Resp_error_Overcurrent_detection");
+			sprintf(v[6], "Resp_error_Configuration");
+			sprintf(v[7], "Resp_error_System_Init");
+			sprintf(v[8], "Resp_error_System_Clock");
+			sprintf(v[9], "Resp_error_Power_failure");
+			sprintf(v[10], "Resp_error_Undertemp");
+			sprintf(v[11], "Resp_error_Overtemp");
+			sprintf(v[12], "Resp_error_CAN_bus_transmit_Data");
+			sprintf(v[13], "Resp_error_CAN_bus_receive_Data");
+			sprintf(v[14], "Resp_error_Parameter_CRC");
+			sprintf(v[15], "Resp_error_code_CRC");
+			sprintf(v[16], "Resonse_all_SystemErrors");
+			return 17;
+		}
+		if(!strcmp(sgn_name, "_82_resp_alllogdata_item"))
+		{
+			sprintf(v[0], "Resp_temp_minimum");
+			sprintf(v[1], "Resp_temp_maxmimum");
+			sprintf(v[2], "Resp_U3_minimum");
+			sprintf(v[3], "Resp_U3_maximum");
+			sprintf(v[4], "Resp_U2_minimum");
+			sprintf(v[5], "Resp_U2_maxmimum");
+			sprintf(v[6], "Resp_U1_minimum");
+			sprintf(v[7], "Resp_U1_maximum");
+			sprintf(v[8], "Resp_current_minimum");
+			sprintf(v[9], "Resp_current_maximum");
+			sprintf(v[10], "Resp_oc_negative_activated");
+			sprintf(v[11], "Resp_oc_positive_activated");
+			sprintf(v[12], "Resp_run_temp_out_spec_limits");
+			sprintf(v[13], "Resp_run_temp_in_spec_limits");
+			sprintf(v[14], "Resp_run_volt_3_out_spec_limits");
+			sprintf(v[15], "Resp_run_volt_3_in_spec_limits");
+			sprintf(v[16], "Resp_run_volt_2_out_spec_limits");
+			sprintf(v[17], "Resp_run_volt_2_in_spec_limits");
+			sprintf(v[18], "Resp_run_volt_1_out_spec_limits");
+			sprintf(v[19], "Resp_run_volt_1_in_spec_limits");
+			sprintf(v[20], "Resp_run_cur_out_spec_limits");
+			sprintf(v[21], "Resp_run_cur_in_spec_limits");
+			sprintf(v[22], "Resp_run_overall");
+			sprintf(v[23], "Resp_energy_counter_discharging");
+			sprintf(v[24], "Resp_energy_counter_charging");
+			sprintf(v[25], "Resp_energy_counter_overall");
+			sprintf(v[26], "Resp_Ah_counter_discharging");
+			sprintf(v[27], "Resp_Ah_counter_charging");
+			sprintf(v[28], "Resp_Ah_counter_overall");
+			sprintf(v[29], "Response_on_Overall_Logdata");
+			return 30;
+		}
+		if(!strcmp(sgn_name, "_83_resp_logdata_item"))
+		{
+			sprintf(v[0], "Resp_temp_minimum");
+			sprintf(v[1], "Resp_temp_maxmimum");
+			sprintf(v[2], "Resp_U3_minimum");
+			sprintf(v[3], "Resp_U3_maximum");
+			sprintf(v[4], "Resp_U2_minimum");
+			sprintf(v[5], "Resp_U2_maxmimum");
+			sprintf(v[6], "Resp_U1_minimum");
+			sprintf(v[7], "Resp_U1_maximum");
+			sprintf(v[8], "Resp_current_minimum");
+			sprintf(v[9], "Resp_current_maximum");
+			sprintf(v[10], "Resp_oc_negative_activated");
+			sprintf(v[11], "Resp_oc_positive_activated");
+			sprintf(v[12], "Resp_run_temp_out_spec_limits");
+			sprintf(v[13], "Resp_run_temp_in_spec_limits");
+			sprintf(v[14], "Resp_run_volt_3_out_spec_limits");
+			sprintf(v[15], "Resp_run_volt_3_in_spec_limits");
+			sprintf(v[16], "Resp_run_volt_2_out_spec_limits");
+			sprintf(v[17], "Resp_run_volt_2_in_spec_limits");
+			sprintf(v[18], "Resp_run_volt_1_out_spec_limits");
+			sprintf(v[19], "Resp_run_volt_1_in_spec_limits");
+			sprintf(v[20], "Resp_run_cur_out_spec_limits");
+			sprintf(v[21], "Resp_run_cur_in_spec_limits");
+			sprintf(v[22], "Resp_run_overall");
+			sprintf(v[23], "Resp_energy_counter_discharging");
+			sprintf(v[24], "Resp_energy_counter_charging");
+			sprintf(v[25], "Resp_energy_counter_overall");
+			sprintf(v[26], "Resp_Ah_counter_discharging");
+			sprintf(v[27], "Resp_Ah_counter_charging");
+			sprintf(v[28], "Resp_Ah_counter_overall");
+			sprintf(v[29], "Response_all_Logdata_SinceReset");
+			return 30;
+		}
+		if(!strcmp(sgn_name, "_b0_resp_reset_item"))
+		{
+			sprintf(v[0], "Reset_temp_minimum");
+			sprintf(v[1], "Reset_temp_maximum");
+			sprintf(v[2], "Reset_U3_minimum");
+			sprintf(v[3], "Reset_U3_maximum");
+			sprintf(v[4], "Reset_U2_minimum");
+			sprintf(v[5], "Reset_U2_maximum");
+			sprintf(v[6], "Reset_U1_minimum");
+			sprintf(v[7], "Reset_U1_maximum");
+			sprintf(v[8], "Reset_Current_minimum");
+			sprintf(v[9], "Reset_Current_maximum");
+			sprintf(v[10], "Reset_Run_overcur_neg_activated");
+			sprintf(v[11], "Reset_Run_overcur_pos_activated");
+			sprintf(v[12], "Reset_Run_temp_out_spec_limits");
+			sprintf(v[13], "Reset_Run_temp_in_spec_limits");
+			sprintf(v[14], "Reset_Run_volt_3_out_spec_limits");
+			sprintf(v[15], "Reset_Run_volt_3_in_spec_limits");
+			sprintf(v[16], "Reset_Run_volt_2_out_spec_limits");
+			sprintf(v[17], "Reset_Run_volt_2_in_spec_limits");
+			sprintf(v[18], "Reset_Run_volt_1_out_spec_limits");
+			sprintf(v[19], "Reset_Run_volt_1_in_spec_limits");
+			sprintf(v[20], "Reset_Run_cur_out_spec_limits");
+			sprintf(v[21], "Reset_Run_cur_in_spec_limits");
+			sprintf(v[22], "Reset_Runtime_overall");
+			sprintf(v[23], "Reset_Energy_counter_discharging");
+			sprintf(v[24], "Reset_Energy_counter_charging");
+			sprintf(v[25], "Reset_Energy_counter_overall");
+			sprintf(v[26], "Reset_Ah_counter_discharging");
+			sprintf(v[27], "Reset_Ah_counter_charging");
+			sprintf(v[28], "Reset_Ah_counter_overall");
+			sprintf(v[29], "Reset_all_Logdata_Since_Reset");
+			sprintf(v[30], "Reset_Reset_EMC");
+			sprintf(v[31], "Reset_Reset_Watchdog");
+			sprintf(v[32], "Reset_illegal_opcode");
+			sprintf(v[33], "Reset_ADC_Clock");
+			sprintf(v[34], "Reset_eeprom_rw");
+			sprintf(v[35], "Reset_overcurrent_detection");
+			sprintf(v[36], "Reset_configuration");
+			sprintf(v[37], "Reset_system_init");
+			sprintf(v[38], "Reset_system_clock");
+			sprintf(v[39], "Reset_power_failure");
+			sprintf(v[40], "Reset_undertemp");
+			sprintf(v[41], "Reset_overtemp");
+			sprintf(v[42], "Reset_CAN_bus_transmit_Data");
+			sprintf(v[43], "Reset_CAN_bus_receive_Data");
+			sprintf(v[44], "Reset_Parameter_CRC");
+			sprintf(v[45], "Reset_Code_CRC");
+			sprintf(v[46], "Reset_all_System_errors");
+			sprintf(v[47], "Reset_calibration_data_");
+			sprintf(v[48], "Reset_ntc_I_OpenCircuit");
+			sprintf(v[49], "Reset_ntc_h_OpenCircuit");
+			sprintf(v[50], "Reset_voltage_measU3_OpenCircuit");
+			sprintf(v[51], "Reset_voltage_measU2_OpenCircuit");
+			sprintf(v[52], "Reset_voltage_measU1_OpenCircuit");
+			sprintf(v[53], "Reset_current_measI1_OpenCircuit");
+			sprintf(v[54], "Reset_thermal_EMF_correction");
+			sprintf(v[55], "Reset_error_current_implausible");
+			sprintf(v[56], "Reset_error_Vref");
+			sprintf(v[57], "Reset_error_Underflow_ADC_ch2");
+			sprintf(v[58], "Reset_error_Overflow_ADC_ch2");
+			sprintf(v[59], "Reset_error_Underflow_ADC_ch1");
+			sprintf(v[60], "Reset_error_Overflow_ADC_ch1");
+			sprintf(v[61], "Reset_error_ADC_interrupt");
+			sprintf(v[62], "Reset_all_measurement_errors");
+			return 63;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_type"))
+		{
+			sprintf(v[0], "IVT_S");
+			sprintf(v[1], "IVT_Mod");
+			return 2;
+		}
+		if(!strcmp(sgn_name, "_a0_resp_triggermode_i"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a1_resp_triggermode_u1"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a2_resp_triggermode_u2"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a3_resp_triggermode_u3"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a4_resp_triggermode_t"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a5_resp_triggermode_w"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a6_resp_triggermode_as"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_a7_resp_triggermode_wh"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_b4_resp_actual_mode"))
+		{
+			sprintf(v[0], "RUN");
+			sprintf(v[1], "STOP");
+			return 2;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_current"))
+		{
+			sprintf(v[0], "2500_A");
+			sprintf(v[1], "1000_A");
+			sprintf(v[2], "500_A");
+			sprintf(v[3], "300_A");
+			sprintf(v[4], "100_A");
+			return 5;
+		}
+		if(!strcmp(sgn_name, "_b4_resp_startup_mode"))
+		{
+			sprintf(v[0], "Run");
+			sprintf(v[1], "Stop");
+			return 2;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_voltage_chan"))
+		{
+			sprintf(v[0], "3_Channels");
+			sprintf(v[1], "0_Channels");
+			return 2;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_toi"))
+		{
+			sprintf(v[0], "I");
+			return 1;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_com"))
+		{
+			sprintf(v[0], "CAN_2___not_terminated");
+			sprintf(v[1], "CAN_1___terminated");
+			sprintf(v[2], "none");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_b9_resp_device_v_supply"))
+		{
+			sprintf(v[0], "12__24_V_nominal_supply_voltage");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_T"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_t"))
+		{
+			sprintf(v[0], "Vt_Result_T");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_U3"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_u3"))
+		{
+			sprintf(v[0], "Vt_Result_U3");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_U2"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_u2"))
+		{
+			sprintf(v[0], "Vt_Result_U2");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_U1"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_u1"))
+		{
+			sprintf(v[0], "Vt_Result_U1");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_RESULT_I"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_result_i"))
+		{
+			sprintf(v[0], "Vt_Result_I");
+			return 1;
+		}
+	}
+	if(!strcmp(msg_name, "IVT_MSG_CMD"))
+	{
+		if(!strcmp(sgn_name, "ivt_id_cmd"))
+		{
+			sprintf(v[0], "Get_cmd_and_info_ArtNr");
+			sprintf(v[1], "Get_cmd_and_info_SN");
+			sprintf(v[2], "Get_cmd_and_info_SW_Version");
+			sprintf(v[3], "Get_cmd_and_info_DEVICE_ID");
+			sprintf(v[4], "Get_cmd_and_info_THRESHOLD_NEG");
+			sprintf(v[5], "Get_cmd_and_info_THRESHOLD_POS");
+			sprintf(v[6], "Get_cmd_and_info_MODE");
+			sprintf(v[7], "Get_cmd_and_info_OC_TEST_TIME");
+			sprintf(v[8], "Get_Config_Res_Wh");
+			sprintf(v[9], "Get_Config_Res_As");
+			sprintf(v[10], "Get_Config_Res_W");
+			sprintf(v[11], "Get_Config_Res_T");
+			sprintf(v[12], "Get_Config_Res_U3");
+			sprintf(v[13], "Get_Config_Res_U2");
+			sprintf(v[14], "Get_Config_Res_U1");
+			sprintf(v[15], "Get_Config_Res_I");
+			sprintf(v[16], "Get_CAN_ID_Response");
+			sprintf(v[17], "Get_CAN_ID_Command");
+			sprintf(v[18], "Get_CAN_ID_Res_Wh");
+			sprintf(v[19], "Get_CAN_ID_Res_As");
+			sprintf(v[20], "Get_CAN_ID_Res_W");
+			sprintf(v[21], "Get_CAN_ID_Res_T");
+			sprintf(v[22], "Get_CAN_ID_Res_U3");
+			sprintf(v[23], "Get_CAN_ID_Res_U2");
+			sprintf(v[24], "Get_CAN_ID_Res_U1");
+			sprintf(v[25], "Get_CAN_ID_Res_I");
+			sprintf(v[26], "Get_Logdata_Since_Reset");
+			sprintf(v[27], "Get_Overall_Logdata");
+			sprintf(v[28], "Get_System_Errors");
+			sprintf(v[29], "Get_Measurement_Errors");
+			sprintf(v[30], "Set_RESTART");
+			sprintf(v[31], "Set_RESTART_to_default");
+			sprintf(v[32], "RESTART_to_Bitrate");
+			sprintf(v[33], "Set_THRESHOLD_neg");
+			sprintf(v[34], "Set_THRESHOLD_pos");
+			sprintf(v[35], "Set_MODE_Result_I");
+			sprintf(v[36], "Set_CAN_ID_Result_I");
+			sprintf(v[37], "Set_MODE");
+			sprintf(v[38], "START_OC_TEST");
+			sprintf(v[39], "STORE");
+			sprintf(v[40], "TRIGGER");
+			sprintf(v[41], "Reset_Err_Log");
+			sprintf(v[42], "Set_MODE_Result_Wh");
+			sprintf(v[43], "Set_MODE_Result_As");
+			sprintf(v[44], "Set_MODE_Result_W");
+			sprintf(v[45], "Set_CAN_ID_Result_Wh");
+			sprintf(v[46], "Set_CAN_ID_Result_As");
+			sprintf(v[47], "Set_CAN_ID_Result_W");
+			sprintf(v[48], "Set_CAN_ID_Result_T");
+			sprintf(v[49], "Set_MODE_Result_U3");
+			sprintf(v[50], "Set_CAN_ID_Response");
+			sprintf(v[51], "Set_CAN_ID_Cmd");
+			sprintf(v[52], "Set_CAN_ID_Result_U3");
+			sprintf(v[53], "Set_CAN_ID_Result_U2");
+			sprintf(v[54], "Set_MODE_Result_T");
+			sprintf(v[55], "Set_MODE_Result_U2");
+			sprintf(v[56], "Set_MODE_Result_U1");
+			sprintf(v[57], "Set_CAN_ID_Result_U1");
+			return 58;
+		}
+		if(!strcmp(sgn_name, "_30_reset_item"))
+		{
+			sprintf(v[0], "Reset_temp_minimum");
+			sprintf(v[1], "Reset_temp_maximum");
+			sprintf(v[2], "Reset_U3_minimum");
+			sprintf(v[3], "Reset_U3_maximum");
+			sprintf(v[4], "Reset_U2_minimum");
+			sprintf(v[5], "Reset_U2_maximum");
+			sprintf(v[6], "Reset_U1_minimum");
+			sprintf(v[7], "Reset_U1_maximum");
+			sprintf(v[8], "Reset_Current_minimum");
+			sprintf(v[9], "Reset_Current_maximum");
+			sprintf(v[10], "Reset_Run_overcur_neg_activated");
+			sprintf(v[11], "Reset_Run_overcur_pos_activated");
+			sprintf(v[12], "Reset_Run_temp_out_spec_limits");
+			sprintf(v[13], "Reset_Run_temp_in_spec_limits");
+			sprintf(v[14], "Reset_Run_volt_3_out_spec_limits");
+			sprintf(v[15], "Reset_Run_volt_3_in_spec_limits");
+			sprintf(v[16], "Reset_Run_volt_2_out_spec_limits");
+			sprintf(v[17], "Reset_Run_volt_2_in_spec_limits");
+			sprintf(v[18], "Reset_Run_volt_1_out_spec_limits");
+			sprintf(v[19], "Reset_Run_volt_1_in_spec_limits");
+			sprintf(v[20], "Reset_Run_cur_out_spec_limits");
+			sprintf(v[21], "Reset_Run_cur_in_spec_limits");
+			sprintf(v[22], "Reset_Runtime_overall");
+			sprintf(v[23], "Reset_Energy_counter_discharging");
+			sprintf(v[24], "Reset_Energy_counter_charging");
+			sprintf(v[25], "Reset_Energy_counter_overall");
+			sprintf(v[26], "Reset_Ah_counter_discharging");
+			sprintf(v[27], "Reset_Ah_counter_charging");
+			sprintf(v[28], "Reset_Ah_counter_overall");
+			sprintf(v[29], "Reset_all_Logdata_Since_Reset");
+			sprintf(v[30], "Reset_Reset_EMC");
+			sprintf(v[31], "Reset_Reset_Watchdog");
+			sprintf(v[32], "Reset_illegal_opcode");
+			sprintf(v[33], "Reset_ADC_Clock");
+			sprintf(v[34], "Reset_eeprom_rw");
+			sprintf(v[35], "Reset_overcurrent_detection");
+			sprintf(v[36], "Reset_configuration");
+			sprintf(v[37], "Reset_system_init");
+			sprintf(v[38], "Reset_system_clock");
+			sprintf(v[39], "Reset_power_failure");
+			sprintf(v[40], "Reset_undertemp");
+			sprintf(v[41], "Reset_overtemp");
+			sprintf(v[42], "Reset_CAN_bus_transmit_Data");
+			sprintf(v[43], "Reset_CAN_bus_receive_Data");
+			sprintf(v[44], "Reset_Parameter_CRC");
+			sprintf(v[45], "Reset_Code_CRC");
+			sprintf(v[46], "Reset_all_System_errors");
+			sprintf(v[47], "Reset_calibration_data_");
+			sprintf(v[48], "Reset_ntc_I_OpenCircuit");
+			sprintf(v[49], "Reset_ntc_h_OpenCircuit");
+			sprintf(v[50], "Reset_voltage_measU3_OpenCircuit");
+			sprintf(v[51], "Reset_voltage_measU2_OpenCircuit");
+			sprintf(v[52], "Reset_voltage_measU1_OpenCircuit");
+			sprintf(v[53], "Reset_current_measI1_OpenCircuit");
+			sprintf(v[54], "Reset_thermal_EMF_correction");
+			sprintf(v[55], "Reset_error_current_implausible");
+			sprintf(v[56], "Reset_error_Vref");
+			sprintf(v[57], "Reset_error_Underflow_ADC_ch2");
+			sprintf(v[58], "Reset_error_Overflow_ADC_ch2");
+			sprintf(v[59], "Reset_error_Underflow_ADC_ch1");
+			sprintf(v[60], "Reset_error_Overflow_ADC_ch1");
+			sprintf(v[61], "Reset_error_ADC_interrupt");
+			sprintf(v[62], "Reset_all_measurement_errors");
+			return 63;
+		}
+		if(!strcmp(sgn_name, "_3a_restart_to_bitrate"))
+		{
+			sprintf(v[0], "250k");
+			sprintf(v[1], "500k");
+			sprintf(v[2], "1000k");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_40_get_measerror_item"))
+		{
+			sprintf(v[0], "Get_error_calibration_data");
+			sprintf(v[1], "Get_error_ntc_I_OpenCirc");
+			sprintf(v[2], "Get_error_ntc_h_OpenCirc");
+			sprintf(v[3], "Get_error_volt_meas_U3_OpenCirc");
+			sprintf(v[4], "Get_error_volt_meas_U2_OpenCirc");
+			sprintf(v[5], "Get_error_volt_meas_U1_OpenCirc");
+			sprintf(v[6], "Get_error_cur_meas_I1_OpenCirc");
+			sprintf(v[7], "Get_error_thermal_EMF_correction");
+			sprintf(v[8], "Get_error_cur_meas_implausible");
+			sprintf(v[9], "Get_error_Vref");
+			sprintf(v[10], "Get_error_Underflow_ADC_ch_2");
+			sprintf(v[11], "Get_error_Overflow_ADC_ch_2");
+			sprintf(v[12], "Get_error_Underflow_ADC_ch_1");
+			sprintf(v[13], "Get_error_Overflow_ADC_ch_1");
+			sprintf(v[14], "Get_error_ADC_interrupt");
+			sprintf(v[15], "Get_all_meas_Errors");
+			return 16;
+		}
+		if(!strcmp(sgn_name, "_41_get_systemerror_item"))
+		{
+			sprintf(v[0], "Get_error_reset_EMC");
+			sprintf(v[1], "Get_error_reset_Watchdog");
+			sprintf(v[2], "Get_error_reset_illegal_opcode");
+			sprintf(v[3], "Get_error_ADC_clock");
+			sprintf(v[4], "Get_error_eeprom_rw");
+			sprintf(v[5], "Get_error_overcurrent_detection");
+			sprintf(v[6], "Get_error_configuration");
+			sprintf(v[7], "Get_error_system_init");
+			sprintf(v[8], "Get_error_system_clock");
+			sprintf(v[9], "Get_error_power_failure");
+			sprintf(v[10], "Get_error_undertemp");
+			sprintf(v[11], "Get_error_overtemp");
+			sprintf(v[12], "Get_error_CAN_bus_transmit_Data");
+			sprintf(v[13], "Get_error_CAN__bus_receive_Data");
+			sprintf(v[14], "Get_error_Code_Parameter_CRC");
+			sprintf(v[15], "Get_error_Code_CRC");
+			sprintf(v[16], "Get_all_System_errors");
+			return 17;
+		}
+		if(!strcmp(sgn_name, "_42_get_alllogdata_item"))
+		{
+			sprintf(v[0], "Get_Temperature_minimum");
+			sprintf(v[1], "Get_Temperature_maximum");
+			sprintf(v[2], "Get_U3_minimum");
+			sprintf(v[3], "Get_U3_maxmimum_");
+			sprintf(v[4], "Get_U2_minimum");
+			sprintf(v[5], "Get_U2_maximum");
+			sprintf(v[6], "Get_U1_minimum");
+			sprintf(v[7], "Get_U1_maxmimum");
+			sprintf(v[8], "Get_current_minimum");
+			sprintf(v[9], "Get_current_maximum");
+			sprintf(v[10], "Get_run_overcur_neg_activated");
+			sprintf(v[11], "Get_run_overcur_pos_activated");
+			sprintf(v[12], "Get_run_temp_out_spec_limits");
+			sprintf(v[13], "Get_run_temp_in_spec_limits");
+			sprintf(v[14], "Get_run_volt3_out_spec_limits");
+			sprintf(v[15], "Get_run_volt3_in_spec_limits");
+			sprintf(v[16], "Get_run_volt2_out_spec_limits");
+			sprintf(v[17], "Get_run_volt2_in_spec_limits");
+			sprintf(v[18], "Get_run_volt1_out_spec_limits");
+			sprintf(v[19], "Get_run_volt1_in_spec_limits");
+			sprintf(v[20], "Get_run_cur_out_spec_limits");
+			sprintf(v[21], "Get_Run_cur_in_spec_limits");
+			sprintf(v[22], "Get_Runtime_overall");
+			sprintf(v[23], "Get_Energy_counter_discharging");
+			sprintf(v[24], "Get_Energy_counter_charging");
+			sprintf(v[25], "Get_Energy_counter_overall");
+			sprintf(v[26], "Get_Ah_counter_discharging");
+			sprintf(v[27], "Get_Ah_counter_charging");
+			sprintf(v[28], "Get_Ah_counter_overall");
+			sprintf(v[29], "Get_Overall_Logdata");
+			return 30;
+		}
+		if(!strcmp(sgn_name, "_43_get_logdata_item"))
+		{
+			sprintf(v[0], "Get_Temperature_minimum");
+			sprintf(v[1], "Get_Temperature_maximum");
+			sprintf(v[2], "Get_U3_minimum");
+			sprintf(v[3], "Get_U3_maxmimum_");
+			sprintf(v[4], "Get_U2_minimum");
+			sprintf(v[5], "Get_U2_maximum");
+			sprintf(v[6], "Get_U1_minimum");
+			sprintf(v[7], "Get_U1_maxmimum");
+			sprintf(v[8], "Get_current_minimum");
+			sprintf(v[9], "Get_current_maximum");
+			sprintf(v[10], "Get_run_overcur_neg_activated");
+			sprintf(v[11], "Get_run_overcur_pos_activated");
+			sprintf(v[12], "Get_run_temp_out_spec_limits");
+			sprintf(v[13], "Get_run_temp_in_spec_limits");
+			sprintf(v[14], "Get_run_volt3_out_spec_limits");
+			sprintf(v[15], "Get_run_volt3_in_spec_limits");
+			sprintf(v[16], "Get_run_volt2_out_spec_limits");
+			sprintf(v[17], "Get_run_volt2_in_spec_limits");
+			sprintf(v[18], "Get_run_volt1_out_spec_limits");
+			sprintf(v[19], "Get_run_volt1_in_spec_limits");
+			sprintf(v[20], "Get_run_cur_out_spec_limits");
+			sprintf(v[21], "Get_Run_cur_in_spec_limits");
+			sprintf(v[22], "Get_Runtime_overall");
+			sprintf(v[23], "Get_Energy_counter_discharging");
+			sprintf(v[24], "Get_Energy_counter_charging");
+			sprintf(v[25], "Get_Energy_counter_overall");
+			sprintf(v[26], "Get_Ah_counter_discharging");
+			sprintf(v[27], "Get_Ah_counter_charging");
+			sprintf(v[28], "Get_Ah_counter_overall");
+			sprintf(v[29], "Get_Overall_Logdata");
+			return 30;
+		}
+		if(!strcmp(sgn_name, "_20_conf_triggermode_i"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_21_conf_triggermode_u1"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_22_conf_triggermode_u2"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_23_conf_triggermode_u3"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_24_conf_triggermode_t"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_25_conf_triggermode_w"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_26_conf_triggermode_as"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_27_conf_triggermode_wh"))
+		{
+			sprintf(v[0], "CYCLIC");
+			sprintf(v[1], "TRIGGERED");
+			sprintf(v[2], "DISABLED");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "_34_actual_mode"))
+		{
+			sprintf(v[0], "START");
+			sprintf(v[1], "STOP");
+			return 2;
+		}
+		if(!strcmp(sgn_name, "_34_startup_mode"))
+		{
+			sprintf(v[0], "START");
+			sprintf(v[1], "STOP");
+			return 2;
+		}
+	}
+	return 0;
 }

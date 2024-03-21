@@ -7,238 +7,238 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
     {
 	case 1260:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_imu_angular_rate_ang_rate_x_string);
-		snprintf(v[1], string_size, secondary_imu_angular_rate_ang_rate_y_string);
-		snprintf(v[2], string_size, secondary_imu_angular_rate_ang_rate_z_string);
+		snprintf(v[0], string_size, IMU_ANGULAR_RATE_ANG_RATE_X);
+		snprintf(v[1], string_size, IMU_ANGULAR_RATE_ANG_RATE_Y);
+		snprintf(v[2], string_size, IMU_ANGULAR_RATE_ANG_RATE_Z);
 
 		return 0;
 	case 1261:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_imu_acceleration_accel_x_string);
-		snprintf(v[1], string_size, secondary_imu_acceleration_accel_y_string);
-		snprintf(v[2], string_size, secondary_imu_acceleration_accel_z_string);
-		snprintf(v[3], string_size, secondary_imu_acceleration_temperature_string);
+		snprintf(v[0], string_size, IMU_ACCELERATION_ACCEL_X);
+		snprintf(v[1], string_size, IMU_ACCELERATION_ACCEL_Y);
+		snprintf(v[2], string_size, IMU_ACCELERATION_ACCEL_Z);
+		snprintf(v[3], string_size, IMU_ACCELERATION_TEMPERATURE);
 
 		return 0;
 	case 1456:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fl_0_channel1_string);
-		snprintf(v[1], string_size, secondary_irts_fl_0_channel2_string);
-		snprintf(v[2], string_size, secondary_irts_fl_0_channel3_string);
-		snprintf(v[3], string_size, secondary_irts_fl_0_channel4_string);
+		snprintf(v[0], string_size, IRTS_FL_0_CHANNEL1);
+		snprintf(v[1], string_size, IRTS_FL_0_CHANNEL2);
+		snprintf(v[2], string_size, IRTS_FL_0_CHANNEL3);
+		snprintf(v[3], string_size, IRTS_FL_0_CHANNEL4);
 
 		return 0;
 	case 1457:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fl_1_channel5_string);
-		snprintf(v[1], string_size, secondary_irts_fl_1_channel6_string);
-		snprintf(v[2], string_size, secondary_irts_fl_1_channel7_string);
-		snprintf(v[3], string_size, secondary_irts_fl_1_channel8_string);
+		snprintf(v[0], string_size, IRTS_FL_1_CHANNEL5);
+		snprintf(v[1], string_size, IRTS_FL_1_CHANNEL6);
+		snprintf(v[2], string_size, IRTS_FL_1_CHANNEL7);
+		snprintf(v[3], string_size, IRTS_FL_1_CHANNEL8);
 
 		return 0;
 	case 1458:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fl_2_channel9_string);
-		snprintf(v[1], string_size, secondary_irts_fl_2_channel10_string);
-		snprintf(v[2], string_size, secondary_irts_fl_2_channel11_string);
-		snprintf(v[3], string_size, secondary_irts_fl_2_channel12_string);
+		snprintf(v[0], string_size, IRTS_FL_2_CHANNEL9);
+		snprintf(v[1], string_size, IRTS_FL_2_CHANNEL10);
+		snprintf(v[2], string_size, IRTS_FL_2_CHANNEL11);
+		snprintf(v[3], string_size, IRTS_FL_2_CHANNEL12);
 
 		return 0;
 	case 1459:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fl_3_channel13_string);
-		snprintf(v[1], string_size, secondary_irts_fl_3_channel14_string);
-		snprintf(v[2], string_size, secondary_irts_fl_3_channel15_string);
-		snprintf(v[3], string_size, secondary_irts_fl_3_channel16_string);
+		snprintf(v[0], string_size, IRTS_FL_3_CHANNEL13);
+		snprintf(v[1], string_size, IRTS_FL_3_CHANNEL14);
+		snprintf(v[2], string_size, IRTS_FL_3_CHANNEL15);
+		snprintf(v[3], string_size, IRTS_FL_3_CHANNEL16);
 
 		return 0;
 	case 1464:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fr_0_channel1_string);
-		snprintf(v[1], string_size, secondary_irts_fr_0_channel2_string);
-		snprintf(v[2], string_size, secondary_irts_fr_0_channel3_string);
-		snprintf(v[3], string_size, secondary_irts_fr_0_channel4_string);
+		snprintf(v[0], string_size, IRTS_FR_0_CHANNEL1);
+		snprintf(v[1], string_size, IRTS_FR_0_CHANNEL2);
+		snprintf(v[2], string_size, IRTS_FR_0_CHANNEL3);
+		snprintf(v[3], string_size, IRTS_FR_0_CHANNEL4);
 
 		return 0;
 	case 1465:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fr_1_channel5_string);
-		snprintf(v[1], string_size, secondary_irts_fr_1_channel6_string);
-		snprintf(v[2], string_size, secondary_irts_fr_1_channel7_string);
-		snprintf(v[3], string_size, secondary_irts_fr_1_channel8_string);
+		snprintf(v[0], string_size, IRTS_FR_1_CHANNEL5);
+		snprintf(v[1], string_size, IRTS_FR_1_CHANNEL6);
+		snprintf(v[2], string_size, IRTS_FR_1_CHANNEL7);
+		snprintf(v[3], string_size, IRTS_FR_1_CHANNEL8);
 
 		return 0;
 	case 1466:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fr_2_channel9_string);
-		snprintf(v[1], string_size, secondary_irts_fr_2_channel10_string);
-		snprintf(v[2], string_size, secondary_irts_fr_2_channel11_string);
-		snprintf(v[3], string_size, secondary_irts_fr_2_channel12_string);
+		snprintf(v[0], string_size, IRTS_FR_2_CHANNEL9);
+		snprintf(v[1], string_size, IRTS_FR_2_CHANNEL10);
+		snprintf(v[2], string_size, IRTS_FR_2_CHANNEL11);
+		snprintf(v[3], string_size, IRTS_FR_2_CHANNEL12);
 
 		return 0;
 	case 1467:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_fr_3_channel13_string);
-		snprintf(v[1], string_size, secondary_irts_fr_3_channel14_string);
-		snprintf(v[2], string_size, secondary_irts_fr_3_channel15_string);
-		snprintf(v[3], string_size, secondary_irts_fr_3_channel16_string);
+		snprintf(v[0], string_size, IRTS_FR_3_CHANNEL13);
+		snprintf(v[1], string_size, IRTS_FR_3_CHANNEL14);
+		snprintf(v[2], string_size, IRTS_FR_3_CHANNEL15);
+		snprintf(v[3], string_size, IRTS_FR_3_CHANNEL16);
 
 		return 0;
 	case 1468:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rl_0_channel1_string);
-		snprintf(v[1], string_size, secondary_irts_rl_0_channel2_string);
-		snprintf(v[2], string_size, secondary_irts_rl_0_channel3_string);
-		snprintf(v[3], string_size, secondary_irts_rl_0_channel4_string);
+		snprintf(v[0], string_size, IRTS_RL_0_CHANNEL1);
+		snprintf(v[1], string_size, IRTS_RL_0_CHANNEL2);
+		snprintf(v[2], string_size, IRTS_RL_0_CHANNEL3);
+		snprintf(v[3], string_size, IRTS_RL_0_CHANNEL4);
 
 		return 0;
 	case 1469:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rl_1_channel5_string);
-		snprintf(v[1], string_size, secondary_irts_rl_1_channel6_string);
-		snprintf(v[2], string_size, secondary_irts_rl_1_channel7_string);
-		snprintf(v[3], string_size, secondary_irts_rl_1_channel8_string);
+		snprintf(v[0], string_size, IRTS_RL_1_CHANNEL5);
+		snprintf(v[1], string_size, IRTS_RL_1_CHANNEL6);
+		snprintf(v[2], string_size, IRTS_RL_1_CHANNEL7);
+		snprintf(v[3], string_size, IRTS_RL_1_CHANNEL8);
 
 		return 0;
 	case 1470:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rl_2_channel9_string);
-		snprintf(v[1], string_size, secondary_irts_rl_2_channel10_string);
-		snprintf(v[2], string_size, secondary_irts_rl_2_channel11_string);
-		snprintf(v[3], string_size, secondary_irts_rl_2_channel12_string);
+		snprintf(v[0], string_size, IRTS_RL_2_CHANNEL9);
+		snprintf(v[1], string_size, IRTS_RL_2_CHANNEL10);
+		snprintf(v[2], string_size, IRTS_RL_2_CHANNEL11);
+		snprintf(v[3], string_size, IRTS_RL_2_CHANNEL12);
 
 		return 0;
 	case 1471:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rl_3_channel13_string);
-		snprintf(v[1], string_size, secondary_irts_rl_3_channel14_string);
-		snprintf(v[2], string_size, secondary_irts_rl_3_channel15_string);
-		snprintf(v[3], string_size, secondary_irts_rl_3_channel16_string);
+		snprintf(v[0], string_size, IRTS_RL_3_CHANNEL13);
+		snprintf(v[1], string_size, IRTS_RL_3_CHANNEL14);
+		snprintf(v[2], string_size, IRTS_RL_3_CHANNEL15);
+		snprintf(v[3], string_size, IRTS_RL_3_CHANNEL16);
 
 		return 0;
 	case 1200:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rr_0_channel1_string);
-		snprintf(v[1], string_size, secondary_irts_rr_0_channel2_string);
-		snprintf(v[2], string_size, secondary_irts_rr_0_channel3_string);
-		snprintf(v[3], string_size, secondary_irts_rr_0_channel4_string);
+		snprintf(v[0], string_size, IRTS_RR_0_CHANNEL1);
+		snprintf(v[1], string_size, IRTS_RR_0_CHANNEL2);
+		snprintf(v[2], string_size, IRTS_RR_0_CHANNEL3);
+		snprintf(v[3], string_size, IRTS_RR_0_CHANNEL4);
 
 		return 0;
 	case 1201:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rr_1_channel5_string);
-		snprintf(v[1], string_size, secondary_irts_rr_1_channel6_string);
-		snprintf(v[2], string_size, secondary_irts_rr_1_channel7_string);
-		snprintf(v[3], string_size, secondary_irts_rr_1_channel8_string);
+		snprintf(v[0], string_size, IRTS_RR_1_CHANNEL5);
+		snprintf(v[1], string_size, IRTS_RR_1_CHANNEL6);
+		snprintf(v[2], string_size, IRTS_RR_1_CHANNEL7);
+		snprintf(v[3], string_size, IRTS_RR_1_CHANNEL8);
 
 		return 0;
 	case 1202:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rr_2_channel9_string);
-		snprintf(v[1], string_size, secondary_irts_rr_2_channel10_string);
-		snprintf(v[2], string_size, secondary_irts_rr_2_channel11_string);
-		snprintf(v[3], string_size, secondary_irts_rr_2_channel12_string);
+		snprintf(v[0], string_size, IRTS_RR_2_CHANNEL9);
+		snprintf(v[1], string_size, IRTS_RR_2_CHANNEL10);
+		snprintf(v[2], string_size, IRTS_RR_2_CHANNEL11);
+		snprintf(v[3], string_size, IRTS_RR_2_CHANNEL12);
 
 		return 0;
 	case 1203:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_irts_rr_3_channel13_string);
-		snprintf(v[1], string_size, secondary_irts_rr_3_channel14_string);
-		snprintf(v[2], string_size, secondary_irts_rr_3_channel15_string);
-		snprintf(v[3], string_size, secondary_irts_rr_3_channel16_string);
+		snprintf(v[0], string_size, IRTS_RR_3_CHANNEL13);
+		snprintf(v[1], string_size, IRTS_RR_3_CHANNEL14);
+		snprintf(v[2], string_size, IRTS_RR_3_CHANNEL15);
+		snprintf(v[3], string_size, IRTS_RR_3_CHANNEL16);
 
 		return 0;
 	case 1027:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_gps_coords_latitude_string);
-		snprintf(v[1], string_size, secondary_gps_coords_longitude_string);
+		snprintf(v[0], string_size, GPS_COORDS_LATITUDE);
+		snprintf(v[1], string_size, GPS_COORDS_LONGITUDE);
 
 		return 0;
 	case 1059:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_gps_speed_speed_string);
+		snprintf(v[0], string_size, GPS_SPEED_SPEED);
 
 		return 0;
 	case 771:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_pedals_output_apps_string);
-		snprintf(v[1], string_size, secondary_pedals_output_bse_front_string);
-		snprintf(v[2], string_size, secondary_pedals_output_bse_rear_string);
+		snprintf(v[0], string_size, PEDALS_OUTPUT_APPS);
+		snprintf(v[1], string_size, PEDALS_OUTPUT_BSE_FRONT);
+		snprintf(v[2], string_size, PEDALS_OUTPUT_BSE_REAR);
 
 		return 0;
 	case 260:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_steering_angle_angle_string);
+		snprintf(v[0], string_size, STEERING_ANGLE_ANGLE);
 
 		return 0;
 	case 1281:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_control_state_map_pw_string);
-		snprintf(v[1], string_size, secondary_control_state_map_sc_string);
-		snprintf(v[2], string_size, secondary_control_state_map_tv_string);
+		snprintf(v[0], string_size, CONTROL_STATE_MAP_PW);
+		snprintf(v[1], string_size, CONTROL_STATE_MAP_SC);
+		snprintf(v[2], string_size, CONTROL_STATE_MAP_TV);
 
 		return 0;
 	case 515:
 		if(8 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_tpms_fl_pressure_string);
-		snprintf(v[1], string_size, secondary_tpms_fr_pressure_string);
-		snprintf(v[2], string_size, secondary_tpms_rl_pressure_string);
-		snprintf(v[3], string_size, secondary_tpms_rr_pressure_string);
-		snprintf(v[4], string_size, secondary_tpms_fl_temperature_string);
-		snprintf(v[5], string_size, secondary_tpms_fr_temperature_string);
-		snprintf(v[6], string_size, secondary_tpms_rl_temperature_string);
-		snprintf(v[7], string_size, secondary_tpms_rr_temperature_string);
+		snprintf(v[0], string_size, TPMS_FL_PRESSURE);
+		snprintf(v[1], string_size, TPMS_FR_PRESSURE);
+		snprintf(v[2], string_size, TPMS_RL_PRESSURE);
+		snprintf(v[3], string_size, TPMS_RR_PRESSURE);
+		snprintf(v[4], string_size, TPMS_FL_TEMPERATURE);
+		snprintf(v[5], string_size, TPMS_FR_TEMPERATURE);
+		snprintf(v[6], string_size, TPMS_RL_TEMPERATURE);
+		snprintf(v[7], string_size, TPMS_RR_TEMPERATURE);
 
 		return 0;
 	case 1091:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_lap_count_lap_count_string);
-		snprintf(v[1], string_size, secondary_lap_count_lap_time_string);
+		snprintf(v[0], string_size, LAP_COUNT_LAP_COUNT);
+		snprintf(v[1], string_size, LAP_COUNT_LAP_TIME);
 
 		return 0;
 	case 770:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_lc_status_lap_number_string);
-		snprintf(v[1], string_size, secondary_lc_status_best_time_string);
-		snprintf(v[2], string_size, secondary_lc_status_last_time_string);
+		snprintf(v[0], string_size, LC_STATUS_LAP_NUMBER);
+		snprintf(v[1], string_size, LC_STATUS_BEST_TIME);
+		snprintf(v[2], string_size, LC_STATUS_LAST_TIME);
 
 		return 0;
 	case 256:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_timestamp_timestamp_string);
+		snprintf(v[0], string_size, TIMESTAMP_TIMESTAMP);
 
 		return 0;
 	case 1028:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_rear_ammo_pos_rl_string);
-		snprintf(v[1], string_size, secondary_rear_ammo_pos_rr_string);
+		snprintf(v[0], string_size, REAR_AMMO_POS_RL);
+		snprintf(v[1], string_size, REAR_AMMO_POS_RR);
 
 		return 0;
 	case 1060:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_front_ammo_pos_fl_string);
-		snprintf(v[1], string_size, secondary_front_ammo_pos_fr_string);
+		snprintf(v[0], string_size, FRONT_AMMO_POS_FL);
+		snprintf(v[1], string_size, FRONT_AMMO_POS_FR);
 
 		return 0;
 	case 1092:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_rod_elongation_deformation_string);
+		snprintf(v[0], string_size, ROD_ELONGATION_DEFORMATION);
 
 		return 0;
 	case 1024:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_debug_signal_field_1_string);
-		snprintf(v[1], string_size, secondary_debug_signal_field_2_string);
-		snprintf(v[2], string_size, secondary_debug_signal_field_3_string);
-		snprintf(v[3], string_size, secondary_debug_signal_field_4_string);
+		snprintf(v[0], string_size, DEBUG_SIGNAL_FIELD_1);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_FIELD_2);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_FIELD_3);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_FIELD_4);
 
 		return 0;
 	case 1124:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, secondary_cooling_temp_top_left_string);
-		snprintf(v[1], string_size, secondary_cooling_temp_bottom_left_string);
-		snprintf(v[2], string_size, secondary_cooling_temp_top_right_string);
-		snprintf(v[3], string_size, secondary_cooling_temp_bottom_right_string);
+		snprintf(v[0], string_size, COOLING_TEMP_TOP_LEFT);
+		snprintf(v[1], string_size, COOLING_TEMP_BOTTOM_LEFT);
+		snprintf(v[2], string_size, COOLING_TEMP_TOP_RIGHT);
+		snprintf(v[3], string_size, COOLING_TEMP_BOTTOM_RIGHT);
 
 		return 0;
 
@@ -1263,4 +1263,8 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 
     }
     return 0;
+}
+int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+{
+	return 0;
 }

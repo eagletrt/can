@@ -1,293 +1,366 @@
-#ifndef SECONDARY_UTILS_C_H
+#ifndef secondary_UTILS_H
+#define secondary_UTILS_H
 
-#define SECONDARY_UTILS_C_H
-
+#include <inttypes.h>
+#include <string.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stddef.h>
-#include "secondary_network.h"
+#include "primary_network.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /* START */
-#define secondary_imu_angular_rate_string "SECONDARY_IMU_ANGULAR_RATE"
+#define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
-#define secondary_imu_angular_rate_ang_rate_x_string "SECONDARY_IMU_ANGULAR_RATE_ANG_RATE_X"
-#define secondary_imu_angular_rate_ang_rate_y_string "SECONDARY_IMU_ANGULAR_RATE_ANG_RATE_Y"
-#define secondary_imu_angular_rate_ang_rate_z_string "SECONDARY_IMU_ANGULAR_RATE_ANG_RATE_Z"
+#define IMU_ANGULAR_RATE_ANG_RATE_X "imu_angular_rate_ang_rate_x"
+#define IMU_ANGULAR_RATE_ANG_RATE_Y "imu_angular_rate_ang_rate_y"
+#define IMU_ANGULAR_RATE_ANG_RATE_Z "imu_angular_rate_ang_rate_z"
 /* END */
 
 /* START */
-#define secondary_imu_acceleration_string "SECONDARY_IMU_ACCELERATION"
+#define IMU_ACCELERATION "IMU_ACCELERATION"
 
-#define secondary_imu_acceleration_accel_x_string "SECONDARY_IMU_ACCELERATION_ACCEL_X"
-#define secondary_imu_acceleration_accel_y_string "SECONDARY_IMU_ACCELERATION_ACCEL_Y"
-#define secondary_imu_acceleration_accel_z_string "SECONDARY_IMU_ACCELERATION_ACCEL_Z"
-#define secondary_imu_acceleration_temperature_string "SECONDARY_IMU_ACCELERATION_TEMPERATURE"
+#define IMU_ACCELERATION_ACCEL_X "imu_acceleration_accel_x"
+#define IMU_ACCELERATION_ACCEL_Y "imu_acceleration_accel_y"
+#define IMU_ACCELERATION_ACCEL_Z "imu_acceleration_accel_z"
+#define IMU_ACCELERATION_TEMPERATURE "imu_acceleration_temperature"
 /* END */
 
 /* START */
-#define secondary_irts_fl_0_string "SECONDARY_IRTS_FL_0"
+#define IRTS_FL_0 "IRTS_FL_0"
 
-#define secondary_irts_fl_0_channel1_string "SECONDARY_IRTS_FL_0_CHANNEL1"
-#define secondary_irts_fl_0_channel2_string "SECONDARY_IRTS_FL_0_CHANNEL2"
-#define secondary_irts_fl_0_channel3_string "SECONDARY_IRTS_FL_0_CHANNEL3"
-#define secondary_irts_fl_0_channel4_string "SECONDARY_IRTS_FL_0_CHANNEL4"
+#define IRTS_FL_0_CHANNEL1 "irts_fl_0_channel1"
+#define IRTS_FL_0_CHANNEL2 "irts_fl_0_channel2"
+#define IRTS_FL_0_CHANNEL3 "irts_fl_0_channel3"
+#define IRTS_FL_0_CHANNEL4 "irts_fl_0_channel4"
 /* END */
 
 /* START */
-#define secondary_irts_fl_1_string "SECONDARY_IRTS_FL_1"
+#define IRTS_FL_1 "IRTS_FL_1"
 
-#define secondary_irts_fl_1_channel5_string "SECONDARY_IRTS_FL_1_CHANNEL5"
-#define secondary_irts_fl_1_channel6_string "SECONDARY_IRTS_FL_1_CHANNEL6"
-#define secondary_irts_fl_1_channel7_string "SECONDARY_IRTS_FL_1_CHANNEL7"
-#define secondary_irts_fl_1_channel8_string "SECONDARY_IRTS_FL_1_CHANNEL8"
+#define IRTS_FL_1_CHANNEL5 "irts_fl_1_channel5"
+#define IRTS_FL_1_CHANNEL6 "irts_fl_1_channel6"
+#define IRTS_FL_1_CHANNEL7 "irts_fl_1_channel7"
+#define IRTS_FL_1_CHANNEL8 "irts_fl_1_channel8"
 /* END */
 
 /* START */
-#define secondary_irts_fl_2_string "SECONDARY_IRTS_FL_2"
+#define IRTS_FL_2 "IRTS_FL_2"
 
-#define secondary_irts_fl_2_channel9_string "SECONDARY_IRTS_FL_2_CHANNEL9"
-#define secondary_irts_fl_2_channel10_string "SECONDARY_IRTS_FL_2_CHANNEL10"
-#define secondary_irts_fl_2_channel11_string "SECONDARY_IRTS_FL_2_CHANNEL11"
-#define secondary_irts_fl_2_channel12_string "SECONDARY_IRTS_FL_2_CHANNEL12"
+#define IRTS_FL_2_CHANNEL9 "irts_fl_2_channel9"
+#define IRTS_FL_2_CHANNEL10 "irts_fl_2_channel10"
+#define IRTS_FL_2_CHANNEL11 "irts_fl_2_channel11"
+#define IRTS_FL_2_CHANNEL12 "irts_fl_2_channel12"
 /* END */
 
 /* START */
-#define secondary_irts_fl_3_string "SECONDARY_IRTS_FL_3"
+#define IRTS_FL_3 "IRTS_FL_3"
 
-#define secondary_irts_fl_3_channel13_string "SECONDARY_IRTS_FL_3_CHANNEL13"
-#define secondary_irts_fl_3_channel14_string "SECONDARY_IRTS_FL_3_CHANNEL14"
-#define secondary_irts_fl_3_channel15_string "SECONDARY_IRTS_FL_3_CHANNEL15"
-#define secondary_irts_fl_3_channel16_string "SECONDARY_IRTS_FL_3_CHANNEL16"
+#define IRTS_FL_3_CHANNEL13 "irts_fl_3_channel13"
+#define IRTS_FL_3_CHANNEL14 "irts_fl_3_channel14"
+#define IRTS_FL_3_CHANNEL15 "irts_fl_3_channel15"
+#define IRTS_FL_3_CHANNEL16 "irts_fl_3_channel16"
 /* END */
 
 /* START */
-#define secondary_irts_fr_0_string "SECONDARY_IRTS_FR_0"
+#define IRTS_FR_0 "IRTS_FR_0"
 
-#define secondary_irts_fr_0_channel1_string "SECONDARY_IRTS_FR_0_CHANNEL1"
-#define secondary_irts_fr_0_channel2_string "SECONDARY_IRTS_FR_0_CHANNEL2"
-#define secondary_irts_fr_0_channel3_string "SECONDARY_IRTS_FR_0_CHANNEL3"
-#define secondary_irts_fr_0_channel4_string "SECONDARY_IRTS_FR_0_CHANNEL4"
+#define IRTS_FR_0_CHANNEL1 "irts_fr_0_channel1"
+#define IRTS_FR_0_CHANNEL2 "irts_fr_0_channel2"
+#define IRTS_FR_0_CHANNEL3 "irts_fr_0_channel3"
+#define IRTS_FR_0_CHANNEL4 "irts_fr_0_channel4"
 /* END */
 
 /* START */
-#define secondary_irts_fr_1_string "SECONDARY_IRTS_FR_1"
+#define IRTS_FR_1 "IRTS_FR_1"
 
-#define secondary_irts_fr_1_channel5_string "SECONDARY_IRTS_FR_1_CHANNEL5"
-#define secondary_irts_fr_1_channel6_string "SECONDARY_IRTS_FR_1_CHANNEL6"
-#define secondary_irts_fr_1_channel7_string "SECONDARY_IRTS_FR_1_CHANNEL7"
-#define secondary_irts_fr_1_channel8_string "SECONDARY_IRTS_FR_1_CHANNEL8"
+#define IRTS_FR_1_CHANNEL5 "irts_fr_1_channel5"
+#define IRTS_FR_1_CHANNEL6 "irts_fr_1_channel6"
+#define IRTS_FR_1_CHANNEL7 "irts_fr_1_channel7"
+#define IRTS_FR_1_CHANNEL8 "irts_fr_1_channel8"
 /* END */
 
 /* START */
-#define secondary_irts_fr_2_string "SECONDARY_IRTS_FR_2"
+#define IRTS_FR_2 "IRTS_FR_2"
 
-#define secondary_irts_fr_2_channel9_string "SECONDARY_IRTS_FR_2_CHANNEL9"
-#define secondary_irts_fr_2_channel10_string "SECONDARY_IRTS_FR_2_CHANNEL10"
-#define secondary_irts_fr_2_channel11_string "SECONDARY_IRTS_FR_2_CHANNEL11"
-#define secondary_irts_fr_2_channel12_string "SECONDARY_IRTS_FR_2_CHANNEL12"
+#define IRTS_FR_2_CHANNEL9 "irts_fr_2_channel9"
+#define IRTS_FR_2_CHANNEL10 "irts_fr_2_channel10"
+#define IRTS_FR_2_CHANNEL11 "irts_fr_2_channel11"
+#define IRTS_FR_2_CHANNEL12 "irts_fr_2_channel12"
 /* END */
 
 /* START */
-#define secondary_irts_fr_3_string "SECONDARY_IRTS_FR_3"
+#define IRTS_FR_3 "IRTS_FR_3"
 
-#define secondary_irts_fr_3_channel13_string "SECONDARY_IRTS_FR_3_CHANNEL13"
-#define secondary_irts_fr_3_channel14_string "SECONDARY_IRTS_FR_3_CHANNEL14"
-#define secondary_irts_fr_3_channel15_string "SECONDARY_IRTS_FR_3_CHANNEL15"
-#define secondary_irts_fr_3_channel16_string "SECONDARY_IRTS_FR_3_CHANNEL16"
+#define IRTS_FR_3_CHANNEL13 "irts_fr_3_channel13"
+#define IRTS_FR_3_CHANNEL14 "irts_fr_3_channel14"
+#define IRTS_FR_3_CHANNEL15 "irts_fr_3_channel15"
+#define IRTS_FR_3_CHANNEL16 "irts_fr_3_channel16"
 /* END */
 
 /* START */
-#define secondary_irts_rl_0_string "SECONDARY_IRTS_RL_0"
+#define IRTS_RL_0 "IRTS_RL_0"
 
-#define secondary_irts_rl_0_channel1_string "SECONDARY_IRTS_RL_0_CHANNEL1"
-#define secondary_irts_rl_0_channel2_string "SECONDARY_IRTS_RL_0_CHANNEL2"
-#define secondary_irts_rl_0_channel3_string "SECONDARY_IRTS_RL_0_CHANNEL3"
-#define secondary_irts_rl_0_channel4_string "SECONDARY_IRTS_RL_0_CHANNEL4"
+#define IRTS_RL_0_CHANNEL1 "irts_rl_0_channel1"
+#define IRTS_RL_0_CHANNEL2 "irts_rl_0_channel2"
+#define IRTS_RL_0_CHANNEL3 "irts_rl_0_channel3"
+#define IRTS_RL_0_CHANNEL4 "irts_rl_0_channel4"
 /* END */
 
 /* START */
-#define secondary_irts_rl_1_string "SECONDARY_IRTS_RL_1"
+#define IRTS_RL_1 "IRTS_RL_1"
 
-#define secondary_irts_rl_1_channel5_string "SECONDARY_IRTS_RL_1_CHANNEL5"
-#define secondary_irts_rl_1_channel6_string "SECONDARY_IRTS_RL_1_CHANNEL6"
-#define secondary_irts_rl_1_channel7_string "SECONDARY_IRTS_RL_1_CHANNEL7"
-#define secondary_irts_rl_1_channel8_string "SECONDARY_IRTS_RL_1_CHANNEL8"
+#define IRTS_RL_1_CHANNEL5 "irts_rl_1_channel5"
+#define IRTS_RL_1_CHANNEL6 "irts_rl_1_channel6"
+#define IRTS_RL_1_CHANNEL7 "irts_rl_1_channel7"
+#define IRTS_RL_1_CHANNEL8 "irts_rl_1_channel8"
 /* END */
 
 /* START */
-#define secondary_irts_rl_2_string "SECONDARY_IRTS_RL_2"
+#define IRTS_RL_2 "IRTS_RL_2"
 
-#define secondary_irts_rl_2_channel9_string "SECONDARY_IRTS_RL_2_CHANNEL9"
-#define secondary_irts_rl_2_channel10_string "SECONDARY_IRTS_RL_2_CHANNEL10"
-#define secondary_irts_rl_2_channel11_string "SECONDARY_IRTS_RL_2_CHANNEL11"
-#define secondary_irts_rl_2_channel12_string "SECONDARY_IRTS_RL_2_CHANNEL12"
+#define IRTS_RL_2_CHANNEL9 "irts_rl_2_channel9"
+#define IRTS_RL_2_CHANNEL10 "irts_rl_2_channel10"
+#define IRTS_RL_2_CHANNEL11 "irts_rl_2_channel11"
+#define IRTS_RL_2_CHANNEL12 "irts_rl_2_channel12"
 /* END */
 
 /* START */
-#define secondary_irts_rl_3_string "SECONDARY_IRTS_RL_3"
+#define IRTS_RL_3 "IRTS_RL_3"
 
-#define secondary_irts_rl_3_channel13_string "SECONDARY_IRTS_RL_3_CHANNEL13"
-#define secondary_irts_rl_3_channel14_string "SECONDARY_IRTS_RL_3_CHANNEL14"
-#define secondary_irts_rl_3_channel15_string "SECONDARY_IRTS_RL_3_CHANNEL15"
-#define secondary_irts_rl_3_channel16_string "SECONDARY_IRTS_RL_3_CHANNEL16"
+#define IRTS_RL_3_CHANNEL13 "irts_rl_3_channel13"
+#define IRTS_RL_3_CHANNEL14 "irts_rl_3_channel14"
+#define IRTS_RL_3_CHANNEL15 "irts_rl_3_channel15"
+#define IRTS_RL_3_CHANNEL16 "irts_rl_3_channel16"
 /* END */
 
 /* START */
-#define secondary_irts_rr_0_string "SECONDARY_IRTS_RR_0"
+#define IRTS_RR_0 "IRTS_RR_0"
 
-#define secondary_irts_rr_0_channel1_string "SECONDARY_IRTS_RR_0_CHANNEL1"
-#define secondary_irts_rr_0_channel2_string "SECONDARY_IRTS_RR_0_CHANNEL2"
-#define secondary_irts_rr_0_channel3_string "SECONDARY_IRTS_RR_0_CHANNEL3"
-#define secondary_irts_rr_0_channel4_string "SECONDARY_IRTS_RR_0_CHANNEL4"
+#define IRTS_RR_0_CHANNEL1 "irts_rr_0_channel1"
+#define IRTS_RR_0_CHANNEL2 "irts_rr_0_channel2"
+#define IRTS_RR_0_CHANNEL3 "irts_rr_0_channel3"
+#define IRTS_RR_0_CHANNEL4 "irts_rr_0_channel4"
 /* END */
 
 /* START */
-#define secondary_irts_rr_1_string "SECONDARY_IRTS_RR_1"
+#define IRTS_RR_1 "IRTS_RR_1"
 
-#define secondary_irts_rr_1_channel5_string "SECONDARY_IRTS_RR_1_CHANNEL5"
-#define secondary_irts_rr_1_channel6_string "SECONDARY_IRTS_RR_1_CHANNEL6"
-#define secondary_irts_rr_1_channel7_string "SECONDARY_IRTS_RR_1_CHANNEL7"
-#define secondary_irts_rr_1_channel8_string "SECONDARY_IRTS_RR_1_CHANNEL8"
+#define IRTS_RR_1_CHANNEL5 "irts_rr_1_channel5"
+#define IRTS_RR_1_CHANNEL6 "irts_rr_1_channel6"
+#define IRTS_RR_1_CHANNEL7 "irts_rr_1_channel7"
+#define IRTS_RR_1_CHANNEL8 "irts_rr_1_channel8"
 /* END */
 
 /* START */
-#define secondary_irts_rr_2_string "SECONDARY_IRTS_RR_2"
+#define IRTS_RR_2 "IRTS_RR_2"
 
-#define secondary_irts_rr_2_channel9_string "SECONDARY_IRTS_RR_2_CHANNEL9"
-#define secondary_irts_rr_2_channel10_string "SECONDARY_IRTS_RR_2_CHANNEL10"
-#define secondary_irts_rr_2_channel11_string "SECONDARY_IRTS_RR_2_CHANNEL11"
-#define secondary_irts_rr_2_channel12_string "SECONDARY_IRTS_RR_2_CHANNEL12"
+#define IRTS_RR_2_CHANNEL9 "irts_rr_2_channel9"
+#define IRTS_RR_2_CHANNEL10 "irts_rr_2_channel10"
+#define IRTS_RR_2_CHANNEL11 "irts_rr_2_channel11"
+#define IRTS_RR_2_CHANNEL12 "irts_rr_2_channel12"
 /* END */
 
 /* START */
-#define secondary_irts_rr_3_string "SECONDARY_IRTS_RR_3"
+#define IRTS_RR_3 "IRTS_RR_3"
 
-#define secondary_irts_rr_3_channel13_string "SECONDARY_IRTS_RR_3_CHANNEL13"
-#define secondary_irts_rr_3_channel14_string "SECONDARY_IRTS_RR_3_CHANNEL14"
-#define secondary_irts_rr_3_channel15_string "SECONDARY_IRTS_RR_3_CHANNEL15"
-#define secondary_irts_rr_3_channel16_string "SECONDARY_IRTS_RR_3_CHANNEL16"
+#define IRTS_RR_3_CHANNEL13 "irts_rr_3_channel13"
+#define IRTS_RR_3_CHANNEL14 "irts_rr_3_channel14"
+#define IRTS_RR_3_CHANNEL15 "irts_rr_3_channel15"
+#define IRTS_RR_3_CHANNEL16 "irts_rr_3_channel16"
 /* END */
 
 /* START */
-#define secondary_gps_coords_string "SECONDARY_GPS_COORDS"
+#define GPS_COORDS "GPS_COORDS"
 
-#define secondary_gps_coords_latitude_string "SECONDARY_GPS_COORDS_LATITUDE"
-#define secondary_gps_coords_longitude_string "SECONDARY_GPS_COORDS_LONGITUDE"
+#define GPS_COORDS_LATITUDE "gps_coords_latitude"
+#define GPS_COORDS_LONGITUDE "gps_coords_longitude"
 /* END */
 
 /* START */
-#define secondary_gps_speed_string "SECONDARY_GPS_SPEED"
+#define GPS_SPEED "GPS_SPEED"
 
-#define secondary_gps_speed_speed_string "SECONDARY_GPS_SPEED_SPEED"
+#define GPS_SPEED_SPEED "gps_speed_speed"
 /* END */
 
 /* START */
-#define secondary_pedals_output_string "SECONDARY_PEDALS_OUTPUT"
+#define PEDALS_OUTPUT "PEDALS_OUTPUT"
 
-#define secondary_pedals_output_apps_string "SECONDARY_PEDALS_OUTPUT_APPS"
-#define secondary_pedals_output_bse_front_string "SECONDARY_PEDALS_OUTPUT_BSE_FRONT"
-#define secondary_pedals_output_bse_rear_string "SECONDARY_PEDALS_OUTPUT_BSE_REAR"
+#define PEDALS_OUTPUT_APPS "pedals_output_apps"
+#define PEDALS_OUTPUT_BSE_FRONT "pedals_output_bse_front"
+#define PEDALS_OUTPUT_BSE_REAR "pedals_output_bse_rear"
 /* END */
 
 /* START */
-#define secondary_steering_angle_string "SECONDARY_STEERING_ANGLE"
+#define STEERING_ANGLE "STEERING_ANGLE"
 
-#define secondary_steering_angle_angle_string "SECONDARY_STEERING_ANGLE_ANGLE"
+#define STEERING_ANGLE_ANGLE "steering_angle_angle"
 /* END */
 
 /* START */
-#define secondary_control_state_string "SECONDARY_CONTROL_STATE"
+#define CONTROL_STATE "CONTROL_STATE"
 
-#define secondary_control_state_map_pw_string "SECONDARY_CONTROL_STATE_MAP_PW"
-#define secondary_control_state_map_sc_string "SECONDARY_CONTROL_STATE_MAP_SC"
-#define secondary_control_state_map_tv_string "SECONDARY_CONTROL_STATE_MAP_TV"
+#define CONTROL_STATE_MAP_PW "control_state_map_pw"
+#define CONTROL_STATE_MAP_SC "control_state_map_sc"
+#define CONTROL_STATE_MAP_TV "control_state_map_tv"
 /* END */
 
 /* START */
-#define secondary_tpms_string "SECONDARY_TPMS"
+#define TPMS "TPMS"
 
-#define secondary_tpms_fl_pressure_string "SECONDARY_TPMS_FL_PRESSURE"
-#define secondary_tpms_fr_pressure_string "SECONDARY_TPMS_FR_PRESSURE"
-#define secondary_tpms_rl_pressure_string "SECONDARY_TPMS_RL_PRESSURE"
-#define secondary_tpms_rr_pressure_string "SECONDARY_TPMS_RR_PRESSURE"
-#define secondary_tpms_fl_temperature_string "SECONDARY_TPMS_FL_TEMPERATURE"
-#define secondary_tpms_fr_temperature_string "SECONDARY_TPMS_FR_TEMPERATURE"
-#define secondary_tpms_rl_temperature_string "SECONDARY_TPMS_RL_TEMPERATURE"
-#define secondary_tpms_rr_temperature_string "SECONDARY_TPMS_RR_TEMPERATURE"
+#define TPMS_FL_PRESSURE "tpms_fl_pressure"
+#define TPMS_FR_PRESSURE "tpms_fr_pressure"
+#define TPMS_RL_PRESSURE "tpms_rl_pressure"
+#define TPMS_RR_PRESSURE "tpms_rr_pressure"
+#define TPMS_FL_TEMPERATURE "tpms_fl_temperature"
+#define TPMS_FR_TEMPERATURE "tpms_fr_temperature"
+#define TPMS_RL_TEMPERATURE "tpms_rl_temperature"
+#define TPMS_RR_TEMPERATURE "tpms_rr_temperature"
 /* END */
 
 /* START */
-#define secondary_lap_count_string "SECONDARY_LAP_COUNT"
+#define LAP_COUNT "LAP_COUNT"
 
-#define secondary_lap_count_lap_count_string "SECONDARY_LAP_COUNT_LAP_COUNT"
-#define secondary_lap_count_lap_time_string "SECONDARY_LAP_COUNT_LAP_TIME"
+#define LAP_COUNT_LAP_COUNT "lap_count_lap_count"
+#define LAP_COUNT_LAP_TIME "lap_count_lap_time"
 /* END */
 
 /* START */
-#define secondary_lc_status_string "SECONDARY_LC_STATUS"
+#define LC_STATUS "LC_STATUS"
 
-#define secondary_lc_status_lap_number_string "SECONDARY_LC_STATUS_LAP_NUMBER"
-#define secondary_lc_status_best_time_string "SECONDARY_LC_STATUS_BEST_TIME"
-#define secondary_lc_status_last_time_string "SECONDARY_LC_STATUS_LAST_TIME"
+#define LC_STATUS_LAP_NUMBER "lc_status_lap_number"
+#define LC_STATUS_BEST_TIME "lc_status_best_time"
+#define LC_STATUS_LAST_TIME "lc_status_last_time"
 /* END */
 
 /* START */
-#define secondary_timestamp_string "SECONDARY_TIMESTAMP"
+#define TIMESTAMP "TIMESTAMP"
 
-#define secondary_timestamp_timestamp_string "SECONDARY_TIMESTAMP_TIMESTAMP"
+#define TIMESTAMP_TIMESTAMP "timestamp_timestamp"
 /* END */
 
 /* START */
-#define secondary_rear_ammo_pos_string "SECONDARY_REAR_AMMO_POS"
+#define REAR_AMMO_POS "REAR_AMMO_POS"
 
-#define secondary_rear_ammo_pos_rl_string "SECONDARY_REAR_AMMO_POS_RL"
-#define secondary_rear_ammo_pos_rr_string "SECONDARY_REAR_AMMO_POS_RR"
+#define REAR_AMMO_POS_RL "rear_ammo_pos_rl"
+#define REAR_AMMO_POS_RR "rear_ammo_pos_rr"
 /* END */
 
 /* START */
-#define secondary_front_ammo_pos_string "SECONDARY_FRONT_AMMO_POS"
+#define FRONT_AMMO_POS "FRONT_AMMO_POS"
 
-#define secondary_front_ammo_pos_fl_string "SECONDARY_FRONT_AMMO_POS_FL"
-#define secondary_front_ammo_pos_fr_string "SECONDARY_FRONT_AMMO_POS_FR"
+#define FRONT_AMMO_POS_FL "front_ammo_pos_fl"
+#define FRONT_AMMO_POS_FR "front_ammo_pos_fr"
 /* END */
 
 /* START */
-#define secondary_rod_elongation_string "SECONDARY_ROD_ELONGATION"
+#define ROD_ELONGATION "ROD_ELONGATION"
 
-#define secondary_rod_elongation_deformation_string "SECONDARY_ROD_ELONGATION_DEFORMATION"
+#define ROD_ELONGATION_DEFORMATION "rod_elongation_deformation"
 /* END */
 
 /* START */
-#define secondary_debug_signal_string "SECONDARY_DEBUG_SIGNAL"
+#define DEBUG_SIGNAL "DEBUG_SIGNAL"
 
-#define secondary_debug_signal_field_1_string "SECONDARY_DEBUG_SIGNAL_FIELD_1"
-#define secondary_debug_signal_field_2_string "SECONDARY_DEBUG_SIGNAL_FIELD_2"
-#define secondary_debug_signal_field_3_string "SECONDARY_DEBUG_SIGNAL_FIELD_3"
-#define secondary_debug_signal_field_4_string "SECONDARY_DEBUG_SIGNAL_FIELD_4"
+#define DEBUG_SIGNAL_FIELD_1 "debug_signal_field_1"
+#define DEBUG_SIGNAL_FIELD_2 "debug_signal_field_2"
+#define DEBUG_SIGNAL_FIELD_3 "debug_signal_field_3"
+#define DEBUG_SIGNAL_FIELD_4 "debug_signal_field_4"
 /* END */
 
 /* START */
-#define secondary_cooling_temp_string "SECONDARY_COOLING_TEMP"
+#define COOLING_TEMP "COOLING_TEMP"
 
-#define secondary_cooling_temp_top_left_string "SECONDARY_COOLING_TEMP_TOP_LEFT"
-#define secondary_cooling_temp_bottom_left_string "SECONDARY_COOLING_TEMP_BOTTOM_LEFT"
-#define secondary_cooling_temp_top_right_string "SECONDARY_COOLING_TEMP_TOP_RIGHT"
-#define secondary_cooling_temp_bottom_right_string "SECONDARY_COOLING_TEMP_BOTTOM_RIGHT"
+#define COOLING_TEMP_TOP_LEFT "cooling_temp_top_left"
+#define COOLING_TEMP_BOTTOM_LEFT "cooling_temp_bottom_left"
+#define COOLING_TEMP_TOP_RIGHT "cooling_temp_top_right"
+#define COOLING_TEMP_BOTTOM_RIGHT "cooling_temp_bottom_right"
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
-	e_secondary_uint32_t,
+	e_secondary_uint8_t = -6,
 	e_secondary_uint64_t,
-	e_secondary_uint8_t,
-	e_secondary_int16_t,
+	e_secondary_uint32_t,
 	e_secondary_float,
+	e_secondary_uint16_t,
+	e_secondary_int16_t,
 
 	
 };
+
+/**
+ * @brief get the name of the signals in the message
+ * 
+ * @param[in] id message id
+ * @param[out] v array of strings containing the name of the signals
+ * @param[in] fields_size maximum size of v
+ * @param[in] string_size maximum size of v[i]
+ * 
+ * @return 0 if ok 1 otherwise
+*/
 int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
+
+/**
+ * @brief get the fields of an enum given the id of the enum (get the id from fields_types_from_id)
+ * 
+ * @param[in] enum_id the id of the enum, you can get it from fields_types_from_id
+ * @param[out] v array of strings containing the enum fields
+ * @param[in] fields_size maximum size of v
+ * @param[in] string_size maximum size of v[i]
+ * 
+ * @return 0 if ok 1 otherwise
+*/
 int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
+
+/**
+ * @brief serialize to a data pointer from a message id
+ * 
+ * @param[in] id message id
+ * @param[in] s string containing the data to serialize (comma separated)
+ * @param[out] data pointer to the serialized data
+ * @param[out] size size of the message
+ * 
+ * @return Size of packed data, or negative error code.
+*/
 int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+
+/**
+ * @brief get the number of signals in the message
+ * 
+ * @param[in] id the id of the message
+ * 
+ * @return return the number of the signals
+*/
 int secondary_n_fields_from_id(int id);
+
+/**
+ * @brief get the types of the signals in the message
+ * 
+ * @param[in] id the id of the message
+ * @param[out] fields_types fields_types[i] contains the type id of the signal i (must be already allocated)
+ * @param[in] fields_types_size max size of fields_types
+ * 
+ * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
+*/
 int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_size);
 
+/**
+ * @brief get the fields of an enum given the name of the message and the name of the signal
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * @param[out] v array of strings containing the enum fields
+ * 
+ * @return the number of fields or 0 if the signal is not an enum
+*/
+int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
+
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

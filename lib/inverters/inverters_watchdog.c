@@ -10,10 +10,10 @@ int inverters_watchdog_interval_from_id(uint16_t message_id) {
 
 int inverters_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 513: return INVERTERS_INDEX_INV_L_SEND;
-       case 385: return INVERTERS_INDEX_INV_L_RCV;
        case 514: return INVERTERS_INDEX_INV_R_SEND;
        case 386: return INVERTERS_INDEX_INV_R_RCV;
+       case 513: return INVERTERS_INDEX_INV_L_SEND;
+       case 385: return INVERTERS_INDEX_INV_L_RCV;
 
     }
     return -1;
