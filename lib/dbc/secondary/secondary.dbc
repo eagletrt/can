@@ -1,0 +1,260 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: DAS DAS TELEMETRY IRTS_RL STEER DAS TLM IRTS_RR STEER IMU DAS DAS STEER IMU DAS IRTS_RR TLM IRTS_FL DAS DAS TLM IRTS_FL DAS IRTS_RR STEER IRTS_FL DAS DAS DAS IRTS_FL DAS IRTS_RR BMS_HV IRTS_FR DAS DAS BMS_LV IRTS_FR DAS TLM ACQUISINATOR IRTS_FR DAS STEER TLM IRTS_FR DAS TLM ACQUISINATOR IRTS_RL DAS STEER TLM IRTS_RL ACQUISINATOR DAS DAS TLM IRTS_RL STEER TLM DAS TLM TELEMETRY ACQUISINATOR CONTROL TLM
+
+
+BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
+ SG_ ang_rate_z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ ang_rate_y : 23|16@0- (0.1,0) [0|245] "" Vector__XXX
+ SG_ ang_rate_x : 7|16@0- (0.1,0) [0|245] "" Vector__XXX
+
+BO_ 1261 IMU_ACCELERATION: 8 Vector__XXX
+ SG_ temperature : 55|16@0- (1,-32768) [-32768|32767] "" Vector__XXX
+ SG_ accel_z : 39|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ accel_y : 23|16@0- (0.01,0) [0|8] "" Vector__XXX
+ SG_ accel_x : 7|16@0- (0.01,0) [0|8] "" Vector__XXX
+
+BO_ 1456 IRTS_FL_0: 8 Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1457 IRTS_FL_1: 8 Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1458 IRTS_FL_2: 8 Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1459 IRTS_FL_3: 8 Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1464 IRTS_FR_0: 8 Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1465 IRTS_FR_1: 8 Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1466 IRTS_FR_2: 8 Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1467 IRTS_FR_3: 8 Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1468 IRTS_RL_0: 8 Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1469 IRTS_RL_1: 8 Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1470 IRTS_RL_2: 8 Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1471 IRTS_RL_3: 8 Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1200 IRTS_RR_0: 8 Vector__XXX
+ SG_ channel4 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel3 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel2 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel1 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1201 IRTS_RR_1: 8 Vector__XXX
+ SG_ channel8 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel7 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel6 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel5 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1202 IRTS_RR_2: 8 Vector__XXX
+ SG_ channel12 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel11 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel10 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel9 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1203 IRTS_RR_3: 8 Vector__XXX
+ SG_ channel16 : 55|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel15 : 39|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel14 : 23|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+ SG_ channel13 : 7|16@0+ (0.1,-100) [-100|0] "" Vector__XXX
+
+BO_ 1027 GPS_COORDS: 8 Vector__XXX
+ SG_ longitude : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ latitude : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1035 GPS_SPEED: 2 Vector__XXX
+ SG_ speed : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 771 PEDALS_OUTPUT: 6 Vector__XXX
+ SG_ bse_rear : 32|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ bse_front : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+ SG_ apps : 0|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
+
+BO_ 260 STEERING_ANGLE: 4 Vector__XXX
+ SG_ angle : 0|32@1+ (8.38190317349087e-08,-180) [-180|180] "" Vector__XXX
+
+BO_ 1281 CONTROL_STATE: 3 Vector__XXX
+ SG_ map_tv : 16|8@1+ (0.01,0) [0|1] "" Vector__XXX
+ SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
+ SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
+
+BO_ 515 TPMS: 8 Vector__XXX
+ SG_ rr_temperature : 56|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rl_temperature : 48|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fr_temperature : 40|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fl_temperature : 32|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rr_pressure : 24|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ rl_pressure : 16|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fr_pressure : 8|8@1+ (1.0,0) [0|255] "" Vector__XXX
+ SG_ fl_pressure : 0|8@1+ (1.0,0) [0|255] "" Vector__XXX
+
+BO_ 1043 LAP_COUNT: 4 Vector__XXX
+ SG_ lap_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
+ SG_ lap_count : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 770 LC_STATUS: 6 Vector__XXX
+ SG_ last_time : 32|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
+ SG_ best_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
+ SG_ lap_number : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 256 TIMESTAMP: 8 Vector__XXX
+ SG_ timestamp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
+
+BO_ 1028 REAR_AMMO_POS: 8 Vector__XXX
+ SG_ rr : 32|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
+ SG_ rl : 0|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
+
+BO_ 1036 FRONT_AMMO_POS: 8 Vector__XXX
+ SG_ fr : 32|32@1+ (1.629814505956558e-08,-20) [-20|50] "" Vector__XXX
+ SG_ fl : 0|32@1+ (1.629814505956558e-08,-20) [-20|50] "" Vector__XXX
+
+BO_ 1044 ROD_ELONGATION: 4 Vector__XXX
+ SG_ deformation : 0|32@1+ (1.3969838622484784e-09,-3.0) [-3.0|3.0] "" Vector__XXX
+
+BO_ 1024 DEBUG_SIGNAL: 8 Vector__XXX
+ SG_ field_4 : 48|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+
+BO_ 1052 COOLING_TEMP: 8 Vector__XXX
+ SG_ bottom_right : 48|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
+ SG_ top_right : 32|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
+ SG_ bottom_left : 16|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
+ SG_ top_left : 0|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
+
+
+
+
+CM_ BO_ 1260 "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed";
+CM_ BO_ 1261 "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed";
+CM_ BO_ 1456 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1457 "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1458 "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1459 "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1464 "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1465 "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1466 "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1467 "Front Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1468 "Rear Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1469 "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1470 "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1471 "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1200 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1201 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1202 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1203 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1027 "Coordinates received from GPS";
+CM_ BO_ 1035 "Speed received from GPS";
+CM_ BO_ 771 "Pedal output, already calibrated";
+CM_ BO_ 260 "Steering angle in degrees";
+CM_ BO_ 1281 "Send status of traction control";
+CM_ BO_ 515 "Tire Pressure Monitoring System, pressure and temperature of each tire";
+CM_ BO_ 1043 "On new lap";
+CM_ BO_ 770 "Session laps status";
+CM_ BO_ 256 "every second unix encoded time and date used by logging devices to sync";
+CM_ BO_ 1028 "Position of the rear ammos";
+CM_ BO_ 1036 "Position of the front ammos";
+CM_ BO_ 1044 "Message for the arm deformation";
+CM_ BO_ 1024 "Debug signals";
+CM_ BO_ 1052 "Cooling temperature";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 771 10;
+BA_ "GenMsgCycleTime" BO_ 260 10;
+BA_ "GenMsgCycleTime" BO_ 1281 100;
+BA_ "GenMsgCycleTime" BO_ 256 500;
+BA_ "GenMsgCycleTime" BO_ 1028 10;
+BA_ "GenMsgCycleTime" BO_ 1036 10;
+BA_ "GenMsgCycleTime" BO_ 1044 10;
+BA_ "GenMsgCycleTime" BO_ 1024 10;
+BA_ "GenMsgCycleTime" BO_ 1052 500;
+
+
+
+

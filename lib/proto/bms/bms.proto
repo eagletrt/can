@@ -1,0 +1,211 @@
+syntax = "proto3";
+package bms;
+
+
+enum bms_board_status_cellboard_id {
+	bms_board_status_cellboard_id_CELLBOARD_0 = 0;
+	bms_board_status_cellboard_id_CELLBOARD_1 = 1;
+	bms_board_status_cellboard_id_CELLBOARD_2 = 2;
+	bms_board_status_cellboard_id_CELLBOARD_3 = 3;
+	bms_board_status_cellboard_id_CELLBOARD_4 = 4;
+	bms_board_status_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_board_status_balancing_status {
+	bms_board_status_balancing_status_OFF = 0;
+	bms_board_status_balancing_status_DISCHARGE = 1;
+}
+enum bms_temperatures_info_cellboard_id {
+	bms_temperatures_info_cellboard_id_CELLBOARD_0 = 0;
+	bms_temperatures_info_cellboard_id_CELLBOARD_1 = 1;
+	bms_temperatures_info_cellboard_id_CELLBOARD_2 = 2;
+	bms_temperatures_info_cellboard_id_CELLBOARD_3 = 3;
+	bms_temperatures_info_cellboard_id_CELLBOARD_4 = 4;
+	bms_temperatures_info_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_temperatures_cellboard_id {
+	bms_temperatures_cellboard_id_CELLBOARD_0 = 0;
+	bms_temperatures_cellboard_id_CELLBOARD_1 = 1;
+	bms_temperatures_cellboard_id_CELLBOARD_2 = 2;
+	bms_temperatures_cellboard_id_CELLBOARD_3 = 3;
+	bms_temperatures_cellboard_id_CELLBOARD_4 = 4;
+	bms_temperatures_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_voltages_info_cellboard_id {
+	bms_voltages_info_cellboard_id_CELLBOARD_0 = 0;
+	bms_voltages_info_cellboard_id_CELLBOARD_1 = 1;
+	bms_voltages_info_cellboard_id_CELLBOARD_2 = 2;
+	bms_voltages_info_cellboard_id_CELLBOARD_3 = 3;
+	bms_voltages_info_cellboard_id_CELLBOARD_4 = 4;
+	bms_voltages_info_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_voltages_cellboard_id {
+	bms_voltages_cellboard_id_CELLBOARD_0 = 0;
+	bms_voltages_cellboard_id_CELLBOARD_1 = 1;
+	bms_voltages_cellboard_id_CELLBOARD_2 = 2;
+	bms_voltages_cellboard_id_CELLBOARD_3 = 3;
+	bms_voltages_cellboard_id_CELLBOARD_4 = 4;
+	bms_voltages_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_set_balancing_status_balancing_status {
+	bms_set_balancing_status_balancing_status_OFF = 0;
+	bms_set_balancing_status_balancing_status_DISCHARGE = 1;
+}
+enum bms_jmp_to_blt_cellboard_id {
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_0 = 0;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_1 = 1;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_2 = 2;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_3 = 3;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_4 = 4;
+	bms_jmp_to_blt_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_cellboard_version_cellboard_id {
+	bms_cellboard_version_cellboard_id_CELLBOARD_0 = 0;
+	bms_cellboard_version_cellboard_id_CELLBOARD_1 = 1;
+	bms_cellboard_version_cellboard_id_CELLBOARD_2 = 2;
+	bms_cellboard_version_cellboard_id_CELLBOARD_3 = 3;
+	bms_cellboard_version_cellboard_id_CELLBOARD_4 = 4;
+	bms_cellboard_version_cellboard_id_CELLBOARD_5 = 5;
+}
+
+
+message BOARD_STATUS{
+	bms_board_status_cellboard_id cellboard_id = 1;
+	bool errors_CAN_COMM = 2;
+	bool errors_LTC_COMM = 3;
+	bool errors_TEMP_COMM_0 = 4;
+	bool errors_TEMP_COMM_1 = 5;
+	bool errors_TEMP_COMM_2 = 6;
+	bool errors_TEMP_COMM_3 = 7;
+	bool errors_TEMP_COMM_4 = 8;
+	bool errors_TEMP_COMM_5 = 9;
+	bool errors_OPEN_WIRE = 10;
+	bms_board_status_balancing_status balancing_status = 11;
+	bool balancing_cells_CELL0 = 12;
+	bool balancing_cells_CELL1 = 13;
+	bool balancing_cells_CELL2 = 14;
+	bool balancing_cells_CELL3 = 15;
+	bool balancing_cells_CELL4 = 16;
+	bool balancing_cells_CELL5 = 17;
+	bool balancing_cells_CELL6 = 18;
+	bool balancing_cells_CELL7 = 19;
+	bool balancing_cells_CELL8 = 20;
+	bool balancing_cells_CELL9 = 21;
+	bool balancing_cells_CELL10 = 22;
+	bool balancing_cells_CELL11 = 23;
+	bool balancing_cells_CELL12 = 24;
+	bool balancing_cells_CELL13 = 25;
+	bool balancing_cells_CELL14 = 26;
+	bool balancing_cells_CELL15 = 27;
+	bool balancing_cells_CELL16 = 28;
+	bool balancing_cells_CELL17 = 29;
+	uint64 _inner_timestamp = 30;
+}
+message TEMPERATURES_INFO{
+	bms_temperatures_info_cellboard_id cellboard_id = 1;
+	double min_temp = 2;
+	double max_temp = 3;
+	double avg_temp = 4;
+	uint64 _inner_timestamp = 5;
+}
+message TEMPERATURES{
+	bms_temperatures_cellboard_id cellboard_id = 1;
+	uint32 start_index = 2;
+	double temp0 = 3;
+	double temp1 = 4;
+	double temp2 = 5;
+	double temp3 = 6;
+	uint64 _inner_timestamp = 7;
+}
+message VOLTAGES_INFO{
+	bms_voltages_info_cellboard_id cellboard_id = 1;
+	double min_voltage = 2;
+	double max_voltage = 3;
+	double avg_voltage = 4;
+	uint64 _inner_timestamp = 5;
+}
+message VOLTAGES{
+	bms_voltages_cellboard_id cellboard_id = 1;
+	uint32 start_index = 2;
+	double voltage0 = 3;
+	double voltage1 = 4;
+	double voltage2 = 5;
+	uint64 _inner_timestamp = 6;
+}
+message SET_BALANCING_STATUS{
+	uint32 threshold = 1;
+	uint32 target = 2;
+	bms_set_balancing_status_balancing_status balancing_status = 3;
+	uint64 _inner_timestamp = 4;
+}
+message JMP_TO_BLT{
+	bms_jmp_to_blt_cellboard_id cellboard_id = 1;
+	uint32 board_index = 2;
+	uint64 _inner_timestamp = 3;
+}
+message FLASH_CELLBOARD_0_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_0_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_1_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_1_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_2_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_2_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_3_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_3_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_4_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_4_RX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_5_TX{
+	uint64 _inner_timestamp = 1;
+}
+message FLASH_CELLBOARD_5_RX{
+	uint64 _inner_timestamp = 1;
+}
+message CELLBOARD_VERSION{
+	bms_cellboard_version_cellboard_id cellboard_id = 1;
+	uint32 component_version = 2;
+	uint32 canlib_build_time = 3;
+	uint64 _inner_timestamp = 4;
+}
+
+
+message Pack{
+	repeated BOARD_STATUS BOARD_STATUS = 1;
+	repeated TEMPERATURES_INFO TEMPERATURES_INFO = 2;
+	repeated TEMPERATURES TEMPERATURES = 3;
+	repeated VOLTAGES_INFO VOLTAGES_INFO = 4;
+	repeated VOLTAGES VOLTAGES = 5;
+	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 6;
+	repeated JMP_TO_BLT JMP_TO_BLT = 7;
+	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 8;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 9;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 10;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 11;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 12;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 13;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 14;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 15;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 16;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 17;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 18;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 19;
+	repeated CELLBOARD_VERSION CELLBOARD_VERSION = 20;
+}
+
