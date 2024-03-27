@@ -1,7 +1,26 @@
 {
     "version": 2.0,
     "types": {
-
+        "HvFeedbackStatus": {
+            "type": "enum",
+            "items":["feedback_state_low", "feedback_state_error", "feedback_state_high"]
+        },
+        "HvFeedbacks": {
+            "type": "bitset",
+            "items": ["implausibility_detected", "imd_cockpit", "tsal_green_fault_latched", "bms_cockpit", "ext_latched", "tsal_green", "ts_over_60v_status", "airn_status", "airp_status", "airp_gate", "airn_gate", "precharge_status", "tsp_over_60v_status", "imd_fault", "check_mux", "sd_end", "sd_out", "sd_in", "sd_bms", "sd_imd"]
+        },
+        "HvErrors": {
+            "type": "bitset",
+            "items": ["cell_low_voltage", "cell_under_voltage", "cell_over_voltage", "cell_high_temperature", "cell_over_temperature", "over_current", "can", "int_voltage_mismatch", "cellboard_comm", "cellboard_internal", "connector_disconnected", "fans_disconnected", "feedback", "feedback_circuitry", "eeprom_comm", "eeprom_write"]
+        },
+        "HvStatus": {
+            "type": "enum",
+            "items": ["init", "idle", "airn_close", "precharge", "airp_close", "ts_on", "fatal_error"]
+        },
+        "LvStatus": {
+            "type": "enum",
+            "items": ["init", "idle", "tson", "run", "flashing", "error"]
+        }
     },
     "messages": [
         {
@@ -174,36 +193,36 @@
         },
         {
             "name": "STEERING_WHEEL_VERSION",
-            "priority": 1,
+            "fixed_id": 700,
             "interval": 1000, 
             "sending": ["STEERING_WHEEL"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Steering wheel version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "ECU_VERSION",
-            "priority": 1,
+            "fixed_id": 701,
             "interval": 1000, 
             "sending": ["ECU"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Ecu version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "LV_VERSION",
-            "priority": 1,
-            "interval": 1000, 
+            "fixed_id": 703,
+            "interval": 1000,
             "sending": ["LV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
@@ -211,120 +230,373 @@
         {
             "name": "TLM_VERSION",
             "priority": 1,
-            "interval": 1000, 
+            "fixed_id": 704, 
             "sending": ["TLM"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_MAINBOARD_VERSION",
-            "priority": 1,
+            "fixed_id": 702,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv mainboard version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_0_VERSION",
-            "priority": 1,
+            "fixed_id": 705,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 0 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_1_VERSION",
-            "priority": 1,
+            "fixed_id": 706,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 1 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_2_VERSION",
-            "priority": 1,
+            "fixed_id": 707,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 2 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_3_VERSION",
-            "priority": 1,
+            "fixed_id": 708,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 3 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_4_VERSION",
-            "priority": 1,
+            "fixed_id": 709,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 4 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
         {
             "name": "HV_CELLBOARD_5_VERSION",
-            "priority": 1,
+            "fixed_id": 710,
             "interval": 1000, 
             "sending": ["HV"],
             "receiving": ["TLM", "STEERING_WHEEL"],
             "description": "Hv cellboard numero 5 version: build-time timestamp and canlib build-time timestamp",
-            "content": {
+            "contents": {
                 "component_build_time": "uint32_t",
                 "canlib_build_time": "uint32_t"
             }
         },
-
-
+        {
+            "name": "HV_ERRORS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": ["BMS_HV"],
+            "receiving": ["TLM", "ECU", "STEERING_WHEEL", "HANDCART"],
+            "contents": {
+                "errors": "HvErrors"
+            }
+        },
+        {
+            "name": "HV_DEBUG_SIGNALS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": ["BMS_HV"],
+            "receiving": ["TLM", "ECU", "STEERING_WHEEL", "HANDCART"],
+            "contents": {
+                "feedbacks": "HvFeedbacks",
+                "errors": "HvErrors"
+            }
+        },
+        {
+            "name": "HV_FANS_STATUS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": ["BMS_HV"],
+            "receiving": ["TLM", "ECU", "STEERING_WHEEL", "HANDCART"],
+            "contents": {
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [0, 1],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_SET_FANS_STATUS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": ["BMS_HV"],
+            "receiving": ["TLM", "ECU", "STEERING_WHEEL", "HANDCART"],
+            "contents": {
+                "fans_override": "TODO",
+                "fans_speed": "TODO"
+            } 
+        },
+        {
+            "name": "HV_FEEDBACK_STATUS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": ["BMS_HV"],
+            "receiving": ["TLM", "ECU", "STEERING_WHEEL", "HANDCART"],
+            "contents": {
+                "status": "HvFeedbacks"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_TS_VOLTAGE",
+            "contents": {
+                "ts_over_60v_status": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "airn_status": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "airp_status": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "airp_gate": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "airn_gate": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "precharge_status": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                },
+                "tsp_over_60v_status": {
+                  "type": "float32",
+                  "range": [0, 3.3],
+                  "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_MISC_VOLTAGE",
+            "contents": {
+                "implausibility_detected": "float32",
+                "imd_cockpit": "float32",
+                "tsal_green_fault_latched": "float32",
+                "bms_cockpit": "float32",
+                "ext_latched": "float32",
+                "tsal_green": "float32",
+                "imd_fault": "float32",
+                "check_mux": "float32"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_SD_VOLTAGE",
+            "contents": {
+                "sd_end": "float32",
+                "sd_out": "float32",
+                "sd_in": "float32",
+                "sd_bms": "float32",
+                "sd_imd": "float32"
+            }
+        },
+        {
+            "name": "HV_IMD_STATUS",
+            "contents": {
+                "imd_fault": "float32",
+                "imd_status": "float32",
+                "imd_details": "float32",
+                "imd_duty_cycle": "float32",
+                "imd_freq": "float32",
+                "imd_period": "float32"
+            }
+        },
         {
             "name": "HV_STATUS",
             "priority": 7,
             "sending": ["HV"],
             "receiving": ["DAS", "STEER", "HANDCART"],
-            "description": "BMS status",
+            "description": "Bms hv status",
             "interval": 10,
             "contents": {
-              "ts_status": "TsStatus"
+              "status": "HvStatus"
             }
         },
         {
-            "name": "HV_DEBUG_SIGNALS",
+            "name": "HV_SET_STATUS_ECU",
             "contents": {
-                "debug_signals": "debug_signals"
+                "hv_status_set": "HvStatus"
             }
         },
         {
-            
+            "name": "HV_SET_STATUS_HANDCART",
+            "contents": {
+                "hv_status_set": "HvStatus"
+            }
+        },
+        {
+            "name": "HV_BALANCING_STATUS",
+            "contents": {
+                "cellboard_id": "Cellboard",
+                "balancing_status": "Toggle",
+                "errors": "HvCellsErrors",
+                "balancing_cells": "HvBalancingCells"
+            }
+        },
+        {
+            "name": "HV_SET_BALANCING_STATUS",
+            "contents": {
+                "set_balancing_status": "Toggle",
+                "balancing_threshold": {
+                  "type": "uint16",
+                  "range": [5, 200]
+                }
+            }
+        },
+        {
+            "name": "LV_STATUS",
+            "contents": {
+                "status": "LvStatus"
+            }
+        },
+        {
+            "name": "LV_RADIATOR_SPEED",
+            "contents": {
+                "radiator_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_PUMPS_SPEED",
+            "contents": {
+                "pumps_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_SET_RADIATOR_SPEED",
+            "contents": {
+                "radiator_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_SET_PUMPS_SPEED",
+            "contents": {
+                "pumps_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_ERRORS",
+            "contents": {
+                "errors": "LvErrors",
+                "health_signals": "LvHealthSignals"
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_TS_VOLTAGE",
+            "contents": {
+                "bspd", 
+                "imd", 
+                "hvd", 
+                "ams"
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_SD_VOLTAGE",
+            "contents": {
+                "sd_end", 
+                "lvms", 
+                "interlock", 
+                "sd_start"      
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_ECLOSURE_VOLTAGE",
+            "contents": {
+                "lv_encl", 
+                "hv_encl_1", 
+                "hv_encl_2", 
+                "backplate"
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_GPIO_EXTENDER",
+            "contents": {
+                "inverters", 
+                "pcbs", 
+                "pumps", 
+                "radiators", 
+                "shutdown", 
+                "hv_fans", 
+                "autonomous_system_actuation"
+            }
+        },
+        {
+            "name": "LV_CAN_FLASH_REQ",
+            "contents": {
+
+            }
+        },
+        {
+            "name": "LV_CAN_FLASH_ACK",
+            "contents": {
+                "response"
+            }
+        },
+        {
+            "name": "LV_INVERTER_CONNECTION_STATUS",
+            "contents": {
+                "status"
+            }
+        },
+        {
+            "name": "LV_SET_INVERTER_CONNECTION_STATUS",
+            "contents": {
+                "status"
+            }
         }
+
+
     ]
 }
