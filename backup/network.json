@@ -77,73 +77,7 @@
                 "flashing",
                 "error"
             ]
-        },
-        "LvFeedbackGPIOExtender": {
-            "type": "bitset",
-            "items": [
-                "inverters",
-                "pcbs",
-                "pumps",
-                "radiators",
-                "shutdown",
-                "hv_fans",
-                "autonomous_system_actuation"
-            ]
-        },
-        "EcuStatus": {
-            "type": "enum",
-            "items": [
-              "INIT",
-              "ENABLE_INV_UPDATES",
-              "CHECK_INV_SETTINGS",
-              "IDLE",
-              "START_TS_PRECHARGE",
-              "WAIT_TS_PRECHARGE",
-              "WAIT_DRIVER",
-              "ENABLE_INV_DRIVE",
-              "DRIVE",
-              "DISABLE_INV_DRIVE",
-              "START_TS_DISCHARGE",
-              "WAIT_TS_DISCHARGE",
-              "FATAL_ERROR"
-            ]
-          },
-          "InvStatus" : {
-            "type": "enum",
-            "items": [
-              "DISABLED",
-              "RFE_ON",
-              "FRG_ON",
-              "ENABLED"
-            ]
-          },
-        "EcuErrors": {
-            "type": "bitset",
-            "items": [
-              "PEDAL_ADC",
-              "PEDAL_IMPLAUSIBILITY",
-              "IMU_TOUT",
-              "IRTS_TOUT",
-              "TS_TOUT",
-              "INVL_TOUT",
-              "INVR_TOUT",
-              "STEER_TOUT",
-              "FSM"
-            ]
-          },
-          "EcuFeedbacks": {
-            "type": "bitset",
-            "items": [
-              "SD_COCK_FB",
-              "SD_FB1",
-              "SD_BOTS_FB",
-              "SD_INTERIAL_FB",
-              "SD_FB4",
-              "SD_IN",
-              "SD_OUT",
-              "SD_CTRL_PIN"
-            ]
-          }
+        }
     },
     "messages": [
         {
@@ -597,9 +531,9 @@
         {
             "name": "HV_ERRORS",
             "priority": 0,
-            "interval": 20,
+            "interval": 50,
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
                 "ECU",
@@ -614,7 +548,7 @@
             "priority": 1,
             "interval": 500,
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
                 "ECU",
@@ -630,7 +564,7 @@
             "priority": 3,
             "interval": 200,
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
                 "ECU",
@@ -653,50 +587,45 @@
             "priority": 2,
             "interval": 200,
             "sending": [
+                "BMS_HV"
+            ],
+            "receiving": [
                 "ECU",
                 "HANDCART"
             ],
-            "receiving": [
-                "HV"
-            ],
             "contents": {
-              "fans_override": "Toggle",
-              "fans_speed": {
-                "type": "float32",
-                "range": [0, 1],
-                "force": "uint16"
-              }
+                "fans_override": "TODO",
+                "fans_speed": "TODO"
             }
         },
         {
             "name": "HV_FEEDBACK_STATUS",
             "priority": 1,
-            "interval": 50,
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
-                "fans_override": "Toggle",
-                "fans_speed": {
-                  "type": "float32",
-                  "range": [0, 1],
-                  "force": "uint16"
-                }
-              }
+                "status": "HvFeedbacks"
+            }
         },
         {
             "name": "HV_FEEDBACK_TS_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -760,13 +689,15 @@
         },
         {
             "name": "HV_FEEDBACK_MISC_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -782,13 +713,15 @@
         },
         {
             "name": "HV_FEEDBACK_SD_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -801,13 +734,15 @@
         },
         {
             "name": "HV_IMD_STATUS",
-            "priority": 1,
-            "interval": 20,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -821,28 +756,33 @@
         },
         {
             "name": "HV_STATUS",
-            "priority": 1,
-            "interval": 20,
+            "priority": 7,
             "sending": [
                 "HV"
             ],
             "receiving": [
-                "ECU",
+                "DAS",
+                "STEER",
                 "HANDCART"
             ],
             "description": "Bms hv status",
+            "interval": 10,
             "contents": {
                 "status": "HvStatus"
             }
         },
         {
             "name": "HV_SET_STATUS_ECU",
-            "priority": 0,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "ECU"
+                "BMS_HV"
             ],
             "receiving": [
-                "HV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "hv_status_set": "HvStatus"
@@ -850,12 +790,16 @@
         },
         {
             "name": "HV_SET_STATUS_HANDCART",
-            "priority": 0,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HANDCART"
+                "BMS_HV"
             ],
             "receiving": [
-                "HV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "hv_status_set": "HvStatus"
@@ -863,13 +807,15 @@
         },
         {
             "name": "HV_BALANCING_STATUS",
-            "priority": 3,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -881,13 +827,16 @@
         },
         {
             "name": "HV_SET_BALANCING_STATUS",
-            "priority": 2,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "ECU",
-                "HANDCART"
+                "BMS_HV"
             ],
             "receiving": [
-                "HV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "set_balancing_status": "Toggle",
@@ -902,13 +851,16 @@
         },
         {
             "name": "LV_STATUS",
-            "priority": 1,
-            "interval": 20,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "status": "LvStatus"
@@ -916,13 +868,15 @@
         },
         {
             "name": "LV_RADIATOR_SPEED",
-            "priority": 3,
-            "interval": 200,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "HV"
+                "BMS_HV"
             ],
             "receiving": [
+                "TLM",
                 "ECU",
+                "STEERING_WHEEL",
                 "HANDCART"
             ],
             "contents": {
@@ -931,24 +885,33 @@
         },
         {
             "name": "LV_PUMPS_SPEED",
-            "priority": 3,
-            "interval": 200,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
-            "receiving": [],
+            "receiving": [
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
+            ],
             "contents": {
                 "pumps_speed": "float32"
             }
         },
         {
             "name": "LV_SET_RADIATOR_SPEED",
-            "priority": 2,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "STEERING_WHEEL"
+                "BMS_HV"
             ],
             "receiving": [
-                "LV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "radiator_speed": "float32"
@@ -956,12 +919,16 @@
         },
         {
             "name": "LV_SET_PUMPS_SPEED",
-            "priority": 2,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "STEERING_WHEEL"
+                "BMS_HV"
             ],
             "receiving": [
-                "LV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "pumps_speed": "float32"
@@ -969,13 +936,16 @@
         },
         {
             "name": "LV_ERRORS",
-            "priority": 1,
-            "interval": 20,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "errors": "LvErrors",
@@ -984,13 +954,16 @@
         },
         {
             "name": "LV_FEEDBACK_TS_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "bspd": {
@@ -1029,13 +1002,16 @@
         },
         {
             "name": "LV_FEEDBACK_SD_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "sd_end": {
@@ -1074,13 +1050,16 @@
         },
         {
             "name": "LV_FEEDBACK_ECLOSURE_VOLTAGE",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "lv_encl": {
@@ -1119,48 +1098,69 @@
         },
         {
             "name": "LV_FEEDBACK_GPIO_EXTENDER",
-            "priority": 1,
-            "interval": 50,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
-                "feedback": "LvFeedbackGPIOExtender"
+                "inverters": "Toggle",
+                "pcbs": "Toggle",
+                "pumps": "Toggle",
+                "radiators": "Toggle",
+                "shutdown": "Toggle",
+                "hv_fans": "Toggle",
+                "autonomous_system_actuation": "Toggle"
             }
         },
         {
             "name": "LV_CAN_FLASH_REQ",
-            "priority": 0,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "TLM",
-                "STEERING_WHEEL"
+                "BMS_HV"
             ],
             "receiving": [
-                "LV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {}
         },
         {
             "name": "LV_CAN_FLASH_ACK",
-            "priority": 0,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
-            "receiving": [],
+            "receiving": [
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
+            ],
             "contents": {}
         },
         {
             "name": "LV_INVERTER_CONNECTION_STATUS",
-            "priority": 1,
-            "interval": 20,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "LV"
+                "BMS_HV"
             ],
             "receiving": [
-                "ECU"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "status": "Toggle"
@@ -1168,12 +1168,16 @@
         },
         {
             "name": "LV_SET_INVERTER_CONNECTION_STATUS",
-            "priority": 0,
+            "priority": "TODO",
+            "interval": "TODO",
             "sending": [
-                "ECU"
+                "BMS_HV"
             ],
             "receiving": [
-                "LV"
+                "TLM",
+                "ECU",
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "contents": {
                 "status": "Toggle"
@@ -1181,370 +1185,55 @@
         },
         {
             "name": "TLM_STATUS",
-            "priority": 3,
-            "interval": 200,
-            "sending": [
-                "TLM"
-            ],
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": [],
             "receiving": [],
             "contents": {
-                "status": "Toggle"
+                "status": "TODO"
             }
         },
         {
             "name": "TLM_SET_STATUS",
-            "priority": 2,
-            "sending": [
-                "STEERING_WHEEL"
-            ],
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": [],
             "receiving": [],
             "contents": {
-                "status": "Toggle"
+                "status": "TODO"
             }
         },
         {
             "name": "TLM_UNIX_TIMESTAMP",
-            "priority": 3,
-            "interval": 1000,
-            "sending": [
-                "TLM"
-            ],
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": [],
             "receiving": [],
             "contents": {
-                "timestamp": "uint32"
+                "timestamp": "TODO"
             }
         },
         {
             "name": "TLM_LAP_TIME",
-            "priority": 3,
-            "sending": [
-                "TLM"
-            ],
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": [],
             "receiving": [],
             "contents": {
-                "lap_count": "uint16",
-                "lap_time": {
-                  "type": "float32",
-                  "range": [0, 1000],
-                  "force": "uint16"
-                }
+                "lap_count": "TODO",
+                "lap_time": "TODO"
             }
         },
         {
-            "name": "TLM_LAPS_STATS",
-            "priority": 3,
-            "interval": 1000,
-            "sending": [
-                "TLM"
-            ],
+            "name": "TLM_LAPSSS_ATSTS",
+            "priority": "TODO",
+            "interval": "TODO",
+            "sending": [],
             "receiving": [],
             "contents": {
-                "lap_number": "uint16",
-                "best_time": {
-                  "type": "float32",
-                  "range": [0, 1000],
-                  "force": "uint16"
-                },
-                "last_time": {
-                  "type": "float32",
-                  "range": [0, 1000],
-                  "force": "uint16"
-                }
+                "lap_number": "Toggle",
+                "lap_time": "Toggle"
             }
-        },
-        {
-            "name": "HANDCART_STATUS",
-            "priority": 1,
-            "interval": 20,
-            "sending": [
-                "HANDCART"
-            ],
-            "receiving": [],
-            "contents": {
-                "connected": "Toggle"
-            }
-        },
-        {
-            "name": "HANDCART_SETTINGS",
-            "priority": 3,
-            "interval": 200,
-            "sending": [
-                "HANDCART"
-            ],
-            "receiving": [
-            ],
-            "contents": {
-                "target_voltage": {
-                    "type": "float32",
-                    "range": [300, 454],
-                    "force": "uint8"
-                  },
-                  "fans_override": "Toggle",
-                  "fans_speed": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "force": "uint8"
-                  },
-                  "acc_charge_current": {
-                    "type": "float32",
-                    "range": [1, 16],
-                    "force": "uint8"
-                  },
-                  "grid_max_current": {
-                    "type": "float32",
-                    "range": [1, 16],
-                    "force": "uint8"
-                  },
-                  "status": "HandcartStatus"
-            }
-        },
-        {
-            "name": "HANDCART_SET_SETTINGS",
-            "priority": 2,
-            "sending": [
-                "TLM"
-            ],
-            "receiving": [
-                "HANDCART"
-            ],
-            "contents": {
-                "target_voltage": {
-                    "type": "float32",
-                    "range": [300, 454],
-                    "force": "uint8"
-                  },
-                  "fans_override": "Toggle",
-                  "fans_speed": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "force": "uint8"
-                  },
-                  "acc_charge_current": {
-                    "type": "float32",
-                    "range": [1, 16],
-                    "force": "uint8"
-                  },
-                  "grid_max_current": {
-                    "type": "float32",
-                    "range": [1, 16],
-                    "force": "uint8"
-                  },
-                  "status": "HandcartStatus"
-            }
-        },
-        {
-            "name": "ECU_STATUS",
-            "priority": 1,
-            "interval": 20,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "contents": {
-                "status": "EcuStatus"
-            }
-        },
-        {
-            "name": "ECU_SET_STATUS",
-            "priority": 0,
-            "sending": [
-                "STEERING_WHEEL"
-            ],
-            "receiving": [
-                "ECU"
-            ],
-            "contents": {
-                "status": "EcuStatus"
-            }
-        },
-        {
-            "name": "ECU_INVERTER_STATUS",
-            "priority": 2,
-            "interval": 50,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "contents": {
-                "inverter_l": "InvStatus",
-                "inverter_r": "InvStatus"
-            }
-        },
-        {
-            "name": "ECU_CONTROL_STATUS",
-            "priority": 1,
-            "interval": 50,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "contents": {
-                "control_state_TODO": "uint16"
-            }
-        },
-        {
-            "name": "ECU_ERRORS",
-            "priority": 1,
-            "interval": 20,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "contents": {
-                "error": "EcuErrors"
-            }
-        },
-        {
-            "name": "ECU_FEEDBACKS",
-            "priority": 1,
-            "interval": 50,
-            "sending": ["ECU"],
-            "receiving": [],
-            "contents": {
-                "feedbacks": "EcuFeedbacks"
-            }
-        },
-        {
-            "name": "ECU_POWER_MAPS",
-            "priority": 1,
-            "interval": 200,
-            "sending": ["ECU"],
-            "receiving": [],
-            "contents": {
-                "map_pw": {
-                    "type": "float32",
-                    "range": [-0.5, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  },
-                  "map_sc": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  },
-                  "map_tv": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  }
-            }
-        },
-        {
-            "name": "ECU_SET_POWER_MAPS",
-            "priority": 0,
-            "interval": 200,
-            "sending": ["STEERING_WHEEL"],
-            "receiving": ["ECU"],
-            "contents": {
-                "map_pw": {
-                    "type": "float32",
-                    "range": [-0.5, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  },
-                  "map_sc": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  },
-                  "map_tv": {
-                    "type": "float32",
-                    "range": [0, 1],
-                    "precision": 0.01,
-                    "optimize": false
-                  }
-            }
-        },
-        {
-            "name": "ECU_PTT_STATUS",
-            "priority": 3,
-            "interval": 200,
-            "sending": ["ECU"],
-            "receiving": [],
-            "contents": {
-                "status": "Toggle"
-            }
-        },
-        {
-            "name": "ECU_SET_PTT_STATUS",
-            "priority": 2,
-            "interval": 200,
-            "sending": ["STEERING_WHEEL"],
-            "receiving": ["ECU"],
-            "contents": {
-                "status": "Toggle"
-            }
-        },
-        {
-            "name": "INV_L_REQUEST",
-            "fixed_id": 513,
-            "sending": ["ECU"],
-            "receiving": ["INVERTER_L"],
-            "interval": 10,
-            "contents": {
-              "data_0": "uint8",
-              "data_1": "uint8",
-              "data_2": "uint8",
-              "data_3": "uint8",
-              "data_4": "uint8",
-              "data_5": "uint8",
-              "data_6": "uint8",
-              "data_7": "uint8"
-            }
-          },
-          {
-            "name": "INV_R_REQUEST",
-            "fixed_id": 514,
-            "sending": ["ECU"],
-            "receiving": ["INVERTER_L"],
-            "interval": 10,
-            "contents": {
-              "data_0": "uint8",
-              "data_1": "uint8",
-              "data_2": "uint8",
-              "data_3": "uint8",
-              "data_4": "uint8",
-              "data_5": "uint8",
-              "data_6": "uint8",
-              "data_7": "uint8"
-            }
-          },
-          {
-            "name": "INV_L_RESPONSE",
-            "fixed_id": 385,
-            "sending": ["INVERTER_L"],
-            "receiving": ["ECU"],
-            "interval": 100,
-            "contents": {
-              "reg_id": "uint8",
-              "data_0": "uint8",
-              "data_1": "uint8",
-              "data_2": "uint8",
-              "data_3": "uint8",
-              "data_4": "uint8",
-              "data_5": "uint8",
-              "data_6": "uint8"
-            }
-          },
-          {
-            "name": "INV_R_RESPONSE",
-            "fixed_id": 386,
-            "sending": ["INVERTER_L"],
-            "receiving": ["ECU"],
-            "interval": 100,
-            "contents": {
-              "reg_id": "uint8",
-              "data_0": "uint8",
-              "data_1": "uint8",
-              "data_2": "uint8",
-              "data_3": "uint8",
-              "data_4": "uint8",
-              "data_5": "uint8",
-              "data_6": "uint8"
-            }
-          }
+        }
     ]
 }

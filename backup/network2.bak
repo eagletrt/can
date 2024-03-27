@@ -356,8 +356,8 @@
             ],
             "description": "Steering wheel version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -373,8 +373,8 @@
             ],
             "description": "Ecu version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -390,8 +390,8 @@
             ],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -406,8 +406,8 @@
             ],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -423,8 +423,8 @@
             ],
             "description": "Hv mainboard version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -440,8 +440,8 @@
             ],
             "description": "Hv cellboard numero 0 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -457,8 +457,8 @@
             ],
             "description": "Hv cellboard numero 1 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -474,8 +474,8 @@
             ],
             "description": "Hv cellboard numero 2 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -491,8 +491,8 @@
             ],
             "description": "Hv cellboard numero 3 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -508,8 +508,8 @@
             ],
             "description": "Hv cellboard numero 4 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
@@ -525,8 +525,8 @@
             ],
             "description": "Hv cellboard numero 5 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32_t",
-                "canlib_build_time": "uint32_t"
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
             }
         },
         {
