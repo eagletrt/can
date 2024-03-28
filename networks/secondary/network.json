@@ -983,18 +983,6 @@
       }
     },
     {
-      "name": "CONTROL_OUTPUT_TODO",
-      "topic": "HYDRA",
-      "priority": 3,
-      "sending": [
-        "TLM"
-      ],
-      "receiving": [],
-      "description": "TODO",
-      "interval": 100,
-      "contents": {}
-    },
-    {
       "name": "TPMS_PRESSURE",
       "topic": "HYDRA",
       "priority": 3,

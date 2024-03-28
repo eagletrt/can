@@ -1627,6 +1627,103 @@
             }
         },
         {
+            "name": "CONTROL_OUTPUT",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "description": "Torques and signals calculated by the controls algorithms",
+            "interval": 20,
+            "contents": {
+                "estimated_velocity": {
+                    "type": "float32",
+                    "range": [
+                        -10,
+                        35
+                    ],
+                    "force": "uint16"
+                },
+                "torque_max_r": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint8"
+                },
+                "torque_max_l": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint8"
+                },
+                "torque_l": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint16"
+                },
+                "torque_r": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "CONTROL_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "description": "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)",
+            "interval": 20,
+            "contents": {
+                "map_pw": {
+                    "type": "float32",
+                    "range": [
+                        -0.5,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_sc": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_tv": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                }
+            }
+        },
+        {
             "name": "INV_R_REQUEST",
             "fixed_id": 514,
             "sending": [
