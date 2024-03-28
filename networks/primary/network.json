@@ -239,6 +239,14 @@
                 "sd_ctrl_pin"
             ]
         },
+        "EcuControlErrors": {
+            "type": "bitset",
+            "items": [
+                "forced_off",
+                "wrong_maps",
+                "control_watchdog"
+            ]
+        },
         "Toggle": {
             "type": "enum",
             "items": [
@@ -1468,7 +1476,8 @@
             ],
             "receiving": [],
             "contents": {
-                "control_state_TODO": "uint16"
+                "control_enabled": "bool",
+                "control_errors": "EcuControlErrors"
             }
         },
         {
