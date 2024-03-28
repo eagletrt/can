@@ -535,10 +535,7 @@
             "sending": [
                 "ECU"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Ecu version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -552,10 +549,7 @@
             "sending": [
                 "LV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -568,9 +562,7 @@
             "sending": [
                 "TLM"
             ],
-            "receiving": [
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -584,10 +576,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv mainboard version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -601,10 +590,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 0 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -618,10 +604,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 1 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -635,10 +618,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 2 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -652,10 +632,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 3 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -669,10 +646,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 4 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
@@ -686,10 +660,7 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "TLM",
-                "STEERING_WHEEL"
-            ],
+            "receiving": [],
             "description": "Hv cellboard number 5 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "component_build_time": "uint32",
