@@ -5,28 +5,39 @@
     {
       "name": "IMU_ANGULAR_RATE",
       "fixed_id": 1260,
-      "sending": ["IMU"],
+      "sending": [
+        "IMU"
+      ],
       "receiving": [],
       "endianness": "bigAss",
       "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
       "contents": {
         "x": {
           "type": "float32",
-          "range": [0, 245],
+          "range": [
+            0,
+            245
+          ],
           "precision": 0.1,
           "optimize": false,
           "signed": true
         },
         "y": {
           "type": "float32",
-          "range": [0, 245],
+          "range": [
+            0,
+            245
+          ],
           "precision": 0.1,
           "optimize": false,
           "signed": true
         },
         "z": {
           "type": "float32",
-          "range": [0, 245],
+          "range": [
+            0,
+            245
+          ],
           "precision": 0.1,
           "optimize": false,
           "signed": true
@@ -36,28 +47,39 @@
     {
       "name": "IMU_ACCELERATION",
       "fixed_id": 1261,
-      "sending": ["IMU"],
+      "sending": [
+        "IMU"
+      ],
       "receiving": [],
       "endianness": "bigAss",
       "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
       "contents": {
         "x": {
           "type": "float32",
-          "range": [0, 8],
+          "range": [
+            0,
+            8
+          ],
           "precision": 0.01,
           "optimize": false,
           "signed": true
         },
         "y": {
           "type": "float32",
-          "range": [0, 8],
+          "range": [
+            0,
+            8
+          ],
           "precision": 0.01,
           "optimize": false,
           "signed": true
         },
         "z": {
           "type": "float32",
-          "range": [0, 8],
+          "range": [
+            0,
+            8
+          ],
           "precision": 0.01,
           "optimize": false,
           "signed": true
@@ -68,32 +90,46 @@
     {
       "name": "IRTS_FL_0",
       "fixed_id": 1456,
-      "sending": ["IRTS_FL"],
+      "sending": [
+        "IRTS_FL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel2": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel3": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel4": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -102,32 +138,46 @@
     {
       "name": "IRTS_FL_1",
       "fixed_id": 1457,
-      "sending": ["IRTS_FL"],
+      "sending": [
+        "IRTS_FL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel6": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel7": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel8": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -136,32 +186,46 @@
     {
       "name": "IRTS_FL_2",
       "fixed_id": 1458,
-      "sending": ["IRTS_FL"],
+      "sending": [
+        "IRTS_FL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel10": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel11": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel12": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -170,32 +234,46 @@
     {
       "name": "IRTS_FL_3",
       "fixed_id": 1459,
-      "sending": ["IRTS_FL"],
+      "sending": [
+        "IRTS_FL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel14": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel15": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel16": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -204,32 +282,46 @@
     {
       "name": "IRTS_FR_0",
       "fixed_id": 1464,
-      "sending": ["IRTS_FR"],
+      "sending": [
+        "IRTS_FR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel2": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel3": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel4": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -238,32 +330,46 @@
     {
       "name": "IRTS_FR_1",
       "fixed_id": 1465,
-      "sending": ["IRTS_FR"],
+      "sending": [
+        "IRTS_FR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel6": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel7": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel8": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -272,32 +378,46 @@
     {
       "name": "IRTS_FR_2",
       "fixed_id": 1466,
-      "sending": ["IRTS_FR"],
+      "sending": [
+        "IRTS_FR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel10": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel11": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel12": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -306,32 +426,46 @@
     {
       "name": "IRTS_FR_3",
       "fixed_id": 1467,
-      "sending": ["IRTS_FR"],
+      "sending": [
+        "IRTS_FR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel14": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel15": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel16": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -340,32 +474,46 @@
     {
       "name": "IRTS_RL_0",
       "fixed_id": 1468,
-      "sending": ["IRTS_RL"],
+      "sending": [
+        "IRTS_RL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel2": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel3": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel4": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -374,32 +522,46 @@
     {
       "name": "IRTS_RL_1",
       "fixed_id": 1469,
-      "sending": ["IRTS_RL"],
+      "sending": [
+        "IRTS_RL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel6": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel7": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel8": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -408,32 +570,46 @@
     {
       "name": "IRTS_RL_2",
       "fixed_id": 1470,
-      "sending": ["IRTS_RL"],
+      "sending": [
+        "IRTS_RL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel10": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel11": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel12": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -442,32 +618,46 @@
     {
       "name": "IRTS_RL_3",
       "fixed_id": 1471,
-      "sending": ["IRTS_RL"],
+      "sending": [
+        "IRTS_RL"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel14": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel15": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel16": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -476,32 +666,46 @@
     {
       "name": "IRTS_RR_0",
       "fixed_id": 1200,
-      "sending": ["IRTS_RR"],
+      "sending": [
+        "IRTS_RR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel2": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel3": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel4": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -510,32 +714,46 @@
     {
       "name": "IRTS_RR_1",
       "fixed_id": 1201,
-      "sending": ["IRTS_RR"],
+      "sending": [
+        "IRTS_RR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel6": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel7": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel8": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -544,32 +762,46 @@
     {
       "name": "IRTS_RR_2",
       "fixed_id": 1202,
-      "sending": ["IRTS_RR"],
+      "sending": [
+        "IRTS_RR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel10": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel11": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel12": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -578,32 +810,46 @@
     {
       "name": "IRTS_RR_3",
       "fixed_id": 1203,
-      "sending": ["IRTS_RR"],
+      "sending": [
+        "IRTS_RR"
+      ],
       "endianness": "bigAss",
       "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel14": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel15": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         },
         "channel16": {
           "type": "float32",
-          "range": [-100, 0],
+          "range": [
+            -100,
+            0
+          ],
           "precision": 0.1,
           "optimize": false
         }
@@ -613,7 +859,9 @@
       "name": "GPS_COORDS",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "Coordinates received from GPS",
       "contents": {
@@ -625,7 +873,9 @@
       "name": "GPS_SPEED",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "Speed received from GPS",
       "contents": {
@@ -636,7 +886,9 @@
       "name": "SPEED",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["ECU"],
+      "sending": [
+        "ECU"
+      ],
       "receiving": [],
       "description": "Encoder and inverter speed in rad/sec",
       "interval": 10,
@@ -644,12 +896,18 @@
         "fr": {
           "type": "float32",
           "force": "uint16",
-          "range": [-200, 200]
+          "range": [
+            -200,
+            200
+          ]
         },
         "fl": {
           "type": "float32",
           "force": "uint16",
-          "range": [-200, 200]
+          "range": [
+            -200,
+            200
+          ]
         }
       }
     },
@@ -658,13 +916,18 @@
       "topic": "HYDRA",
       "priority": 3,
       "interval": 10,
-      "sending": ["ECU"],
+      "sending": [
+        "ECU"
+      ],
       "receiving": [],
       "description": "Pedal Throttle , already calibrated",
       "contents": {
         "apps": {
           "type": "float32",
-          "range": [0, 1],
+          "range": [
+            0,
+            1
+          ],
           "force": "uint16"
         }
       }
@@ -674,18 +937,26 @@
       "topic": "HYDRA",
       "priority": 3,
       "interval": 10,
-      "sending": ["ECU"],
+      "sending": [
+        "ECU"
+      ],
       "receiving": [],
       "description": "Pedal brakes pressures in bar, already calibrated",
       "contents": {
         "front": {
           "type": "float32",
-          "range": [0, 100],
+          "range": [
+            0,
+            100
+          ],
           "force": "uint16"
         },
         "rear": {
           "type": "float32",
-          "range": [0, 100],
+          "range": [
+            0,
+            100
+          ],
           "force": "uint16"
         }
       }
@@ -695,13 +966,18 @@
       "topic": "HYDRA",
       "priority": 3,
       "interval": 10,
-      "sending": ["ECU"],
+      "sending": [
+        "ECU"
+      ],
       "receiving": [],
       "description": "Steering angle in degrees",
       "contents": {
         "angle": {
           "type": "float32",
-          "range": [-180, 180],
+          "range": [
+            -180,
+            180
+          ],
           "force": "uint32"
         }
       }
@@ -710,39 +986,54 @@
       "name": "CONTROL_OUTPUT_TODO",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "TODO",
       "interval": 100,
-      "contents": {
-      }
+      "contents": {}
     },
     {
       "name": "TPMS_PRESSURE",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "Tire Pressure Monitoring System, pressure of each tire",
       "contents": {
         "fl_pressure": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "fr_pressure": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "rl_pressure": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "rr_pressure": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         }
       }
@@ -751,28 +1042,42 @@
       "name": "TPMS_TEMPERATURE",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "Tire Pressure Monitoring System, temperature of each tire",
       "contents": {
         "fl_temperature": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "fr_temperature": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "rl_temperature": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         },
         "rr_temperature": {
           "type": "float32",
-          "range": [0, 255],
+          "range": [
+            0,
+            255
+          ],
           "precision": 1
         }
       }
@@ -782,84 +1087,104 @@
       "topic": "HYDRA",
       "priority": 3,
       "interval": 1000,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "contents": {
-          "timestamp": "uint32"
+        "timestamp": "uint32"
       }
-  },
-  {
+    },
+    {
       "name": "TLM_LAP_TIME",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "contents": {
-          "lap_count": "uint16",
-          "lap_time": {
-              "type": "float32",
-              "range": [
-                  0,
-                  1000
-              ],
-              "force": "uint16"
-          }
+        "lap_count": "uint16",
+        "lap_time": {
+          "type": "float32",
+          "range": [
+            0,
+            1000
+          ],
+          "force": "uint16"
+        }
       }
-  },
-  {
+    },
+    {
       "name": "TLM_LAPS_STATS",
       "topic": "HYDRA",
       "priority": 3,
       "interval": 1000,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "contents": {
-          "lap_number": "uint16",
-          "best_time": {
-              "type": "float32",
-              "range": [
-                  0,
-                  1000
-              ],
-              "force": "uint16"
-          },
-          "last_time": {
-              "type": "float32",
-              "range": [
-                  0,
-                  1000
-              ],
-              "force": "uint16"
-          }
+        "lap_number": "uint16",
+        "best_time": {
+          "type": "float32",
+          "range": [
+            0,
+            1000
+          ],
+          "force": "uint16"
+        },
+        "last_time": {
+          "type": "float32",
+          "range": [
+            0,
+            1000
+          ],
+          "force": "uint16"
+        }
       }
-  },
+    },
     {
       "name": "AMMO_COMPRESSION",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["ACQUISINATOR"],
+      "sending": [
+        "ACQUISINATOR"
+      ],
       "receiving": [],
       "description": "Position of the ammos",
       "interval": 10,
       "contents": {
         "rl": {
           "type": "float32",
-          "range": [-50, 20],
+          "range": [
+            -50,
+            20
+          ],
           "force": "uint32"
         },
         "rr": {
           "type": "float32",
-          "range": [-50, 20],
+          "range": [
+            -50,
+            20
+          ],
           "force": "uint32"
         },
         "fl": {
           "type": "float32",
-          "range": [-20, 50],
+          "range": [
+            -20,
+            50
+          ],
           "force": "uint32"
         },
         "fr": {
           "type": "float32",
-          "range": [-20, 50],
+          "range": [
+            -20,
+            50
+          ],
           "force": "uint32"
         }
       }
@@ -868,7 +1193,9 @@
       "name": "LINK_DEFORMATION_FL",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["ACQUISINATOR"],
+      "sending": [
+        "ACQUISINATOR"
+      ],
       "receiving": [],
       "description": "Message for the arm deformation",
       "interval": 10,
@@ -876,7 +1203,10 @@
         "rod_id": "uint8",
         "deformation": {
           "type": "float32",
-          "range": [-3.0, 3.0],
+          "range": [
+            -3.0,
+            3.0
+          ],
           "force": "uint32"
         }
       }
@@ -885,29 +1215,43 @@
       "name": "DEBUG_SIGNAL_2",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["TLM"],
+      "sending": [
+        "TLM"
+      ],
       "receiving": [],
       "description": "Debug signals",
       "interval": 10,
       "contents": {
         "field_1": {
           "type": "float32",
-          "range": [-1, 1],
+          "range": [
+            -1,
+            1
+          ],
           "force": "uint16"
         },
         "field_2": {
           "type": "float32",
-          "range": [-1, 1],
+          "range": [
+            -1,
+            1
+          ],
           "force": "uint16"
         },
         "field_3": {
           "type": "float32",
-          "range": [-1, 1],
+          "range": [
+            -1,
+            1
+          ],
           "force": "uint16"
         },
         "field_4": {
           "type": "float32",
-          "range": [-1, 1],
+          "range": [
+            -1,
+            1
+          ],
           "force": "uint16"
         }
       }
@@ -916,32 +1260,46 @@
       "name": "COOLING_TEMP",
       "topic": "HYDRA",
       "priority": 3,
-      "sending": ["ACQUISINATOR"],
+      "sending": [
+        "ACQUISINATOR"
+      ],
       "receiving": [],
       "description": "Cooling temperature",
       "interval": 500,
       "contents": {
         "top_left": {
           "type": "float16",
-          "range": [-10, 110],
+          "range": [
+            -10,
+            110
+          ],
           "force": "uint16"
         },
         "bottom_left": {
           "type": "float16",
-          "range": [-10, 110],
+          "range": [
+            -10,
+            110
+          ],
           "force": "uint16"
         },
         "top_right": {
           "type": "float16",
-          "range": [-10, 110],
+          "range": [
+            -10,
+            110
+          ],
           "force": "uint16"
         },
         "bottom_right": {
           "type": "float16",
-          "range": [-10, 110],
+          "range": [
+            -10,
+            110
+          ],
           "force": "uint16"
         }
-      }  
+      }
     }
   ]
 }
