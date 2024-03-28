@@ -922,7 +922,7 @@
       "receiving": [],
       "description": "Pedal Throttle , already calibrated",
       "contents": {
-        "apps": {
+        "throttle": {
           "type": "float32",
           "range": [
             0,
@@ -1004,7 +1004,7 @@
       "receiving": [],
       "description": "Tire Pressure Monitoring System, pressure of each tire",
       "contents": {
-        "fl_pressure": {
+        "fl": {
           "type": "float32",
           "range": [
             0,
@@ -1012,7 +1012,7 @@
           ],
           "precision": 1
         },
-        "fr_pressure": {
+        "fr": {
           "type": "float32",
           "range": [
             0,
@@ -1020,7 +1020,7 @@
           ],
           "precision": 1
         },
-        "rl_pressure": {
+        "rl": {
           "type": "float32",
           "range": [
             0,
@@ -1028,7 +1028,7 @@
           ],
           "precision": 1
         },
-        "rr_pressure": {
+        "rr": {
           "type": "float32",
           "range": [
             0,
@@ -1048,7 +1048,7 @@
       "receiving": [],
       "description": "Tire Pressure Monitoring System, temperature of each tire",
       "contents": {
-        "fl_temperature": {
+        "fl": {
           "type": "float32",
           "range": [
             0,
@@ -1056,7 +1056,7 @@
           ],
           "precision": 1
         },
-        "fr_temperature": {
+        "fr": {
           "type": "float32",
           "range": [
             0,
@@ -1064,7 +1064,7 @@
           ],
           "precision": 1
         },
-        "rl_temperature": {
+        "rl": {
           "type": "float32",
           "range": [
             0,
@@ -1072,7 +1072,7 @@
           ],
           "precision": 1
         },
-        "rr_temperature": {
+        "rr": {
           "type": "float32",
           "range": [
             0,
@@ -1092,7 +1092,7 @@
       ],
       "receiving": [],
       "contents": {
-        "timestamp": "uint32"
+        "timestamp": "uint64"
       }
     },
     {
