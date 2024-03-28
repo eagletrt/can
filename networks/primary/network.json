@@ -1462,8 +1462,8 @@
             ],
             "receiving": [],
             "contents": {
-                "inverter_l": "InvStatus",
-                "inverter_r": "InvStatus"
+                "rl": "InvStatus",
+                "rr": "InvStatus"
             }
         },
         {
@@ -1656,7 +1656,7 @@
                     ],
                     "force": "uint16"
                 },
-                "torque_max_r": {
+                "torque_max_l": {
                     "type": "float32",
                     "range": [
                         0,
@@ -1664,7 +1664,7 @@
                     ],
                     "force": "uint8"
                 },
-                "torque_max_l": {
+                "torque_max_r": {
                     "type": "float32",
                     "range": [
                         0,

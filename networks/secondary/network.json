@@ -893,7 +893,7 @@
       "description": "Encoder and inverter speed in rad/sec",
       "interval": 10,
       "contents": {
-        "fr": {
+        "fl": {
           "type": "float32",
           "force": "uint16",
           "range": [
@@ -901,7 +901,7 @@
             200
           ]
         },
-        "fl": {
+        "fr": {
           "type": "float32",
           "force": "uint16",
           "range": [
