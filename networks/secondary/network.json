@@ -6,25 +6,25 @@
       "name": "IMU_ANGULAR_RATE",
       "fixed_id": 1260,
       "sending": ["IMU"],
-      "receiving": ["DAS"],
+      "receiving": [],
       "endianness": "bigAss",
       "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
       "contents": {
-        "ang_rate_x": {
+        "x": {
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
           "optimize": false,
           "signed": true
         },
-        "ang_rate_y": {
+        "y": {
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
           "optimize": false,
           "signed": true
         },
-        "ang_rate_z": {
+        "z": {
           "type": "float32",
           "range": [0, 245],
           "precision": 0.1,
@@ -37,32 +37,32 @@
       "name": "IMU_ACCELERATION",
       "fixed_id": 1261,
       "sending": ["IMU"],
-      "receiving": ["DAS"],
+      "receiving": [],
       "endianness": "bigAss",
       "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
       "contents": {
-        "accel_x": {
+        "x": {
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
           "optimize": false,
           "signed": true
         },
-        "accel_y": {
+        "y": {
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
           "optimize": false,
           "signed": true
         },
-        "accel_z": {
+        "z": {
           "type": "float32",
           "range": [0, 8],
           "precision": 0.01,
           "optimize": false,
           "signed": true
         },
-        "temperature": "int16"
+        "imu_temperature": "int16"
       }
     },
     {
@@ -70,7 +70,7 @@
       "fixed_id": 1456,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
@@ -104,7 +104,7 @@
       "fixed_id": 1457,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
@@ -138,7 +138,7 @@
       "fixed_id": 1458,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
@@ -172,7 +172,7 @@
       "fixed_id": 1459,
       "sending": ["IRTS_FL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
@@ -206,7 +206,7 @@
       "fixed_id": 1464,
       "sending": ["IRTS_FR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
@@ -240,7 +240,7 @@
       "fixed_id": 1465,
       "sending": ["IRTS_FR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
@@ -274,7 +274,7 @@
       "fixed_id": 1466,
       "sending": ["IRTS_FR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
@@ -308,7 +308,7 @@
       "fixed_id": 1467,
       "sending": ["IRTS_FR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Front Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
@@ -342,7 +342,7 @@
       "fixed_id": 1468,
       "sending": ["IRTS_RL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
@@ -376,7 +376,7 @@
       "fixed_id": 1469,
       "sending": ["IRTS_RL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
@@ -410,7 +410,7 @@
       "fixed_id": 1470,
       "sending": ["IRTS_RL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
@@ -444,7 +444,7 @@
       "fixed_id": 1471,
       "sending": ["IRTS_RL"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
@@ -478,7 +478,7 @@
       "fixed_id": 1200,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel1": {
@@ -512,7 +512,7 @@
       "fixed_id": 1201,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel5": {
@@ -546,7 +546,7 @@
       "fixed_id": 1202,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel9": {
@@ -580,7 +580,7 @@
       "fixed_id": 1203,
       "sending": ["IRTS_RR"],
       "endianness": "bigAss",
-      "receiving": ["DAS"],
+      "receiving": [],
       "description": "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.",
       "contents": {
         "channel13": {
@@ -611,10 +611,10 @@
     },
     {
       "name": "GPS_COORDS",
-      "topic": "STEER",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["TLM"],
-      "receiving": ["STEER"],
+      "receiving": [],
       "description": "Coordinates received from GPS",
       "contents": {
         "latitude": "float32",
@@ -623,35 +623,67 @@
     },
     {
       "name": "GPS_SPEED",
-      "topic": "STEER",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["TLM"],
-      "receiving": ["STEER"],
+      "receiving": [],
       "description": "Speed received from GPS",
       "contents": {
         "speed": "uint16"
       }
     },
     {
-      "name": "PEDALS_OUTPUT",
-      "topic": "STEER",
-      "priority": 4,
+      "name": "SPEED",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": ["ECU"],
+      "receiving": [],
+      "description": "Encoder and inverter speed in rad/sec",
       "interval": 10,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "Pedal output, already calibrated",
+      "contents": {
+        "fr": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        },
+        "fl": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [-200, 200]
+        }
+      }
+    },
+    {
+      "name": "PEDAL_THROTTLE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 10,
+      "sending": ["ECU"],
+      "receiving": [],
+      "description": "Pedal Throttle , already calibrated",
       "contents": {
         "apps": {
           "type": "float32",
-          "range": [0, 100],
+          "range": [0, 1],
           "force": "uint16"
-        },
-        "bse_front": {
+        }
+      }
+    },
+    {
+      "name": "PEDAL_BRAKES_PRESSURE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 10,
+      "sending": ["ECU"],
+      "receiving": [],
+      "description": "Pedal brakes pressures in bar, already calibrated",
+      "contents": {
+        "front": {
           "type": "float32",
           "range": [0, 100],
           "force": "uint16"
         },
-        "bse_rear": {
+        "rear": {
           "type": "float32",
           "range": [0, 100],
           "force": "uint16"
@@ -659,12 +691,12 @@
       }
     },
     {
-      "name": "STEERING_ANGLE",
-      "topic": "TELEMETRY",
-      "priority": 6,
+      "name": "STEER_ANGLE",
+      "topic": "HYDRA",
+      "priority": 3,
       "interval": 10,
-      "sending": ["DAS"],
-      "receiving": ["TELEMETRY"],
+      "sending": ["ECU"],
+      "receiving": [],
       "description": "Steering angle in degrees",
       "contents": {
         "angle": {
@@ -675,41 +707,23 @@
       }
     },
     {
-      "name": "CONTROL_STATE",
-      "topic": "DAS",
-      "priority": 2,
-      "sending": ["CONTROL"],
-      "receiving": ["DAS"],
-      "description": "Send status of traction control",
+      "name": "CONTROL_OUTPUT_TODO",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": ["TLM"],
+      "receiving": [],
+      "description": "TODO",
       "interval": 100,
       "contents": {
-        "map_pw": {
-          "type": "float32",
-          "range": [-0.5, 1],
-          "precision": 0.01,
-          "optimize": false
-        },
-        "map_sc": {
-          "type": "float32",
-          "range": [0, 1],
-          "precision": 0.01,
-          "optimize": false
-        },
-        "map_tv": {
-          "type": "float32",
-          "range": [0, 1],
-          "precision": 0.01,
-          "optimize": false
-        }
       }
     },
     {
-      "name": "TPMS",
-      "topic": "STEER",
-      "priority": 5,
-      "sending": ["TELEMETRY"],
-      "receiving": ["STEER"],
-      "description": "Tire Pressure Monitoring System, pressure and temperature of each tire",
+      "name": "TPMS_PRESSURE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": ["TLM"],
+      "receiving": [],
+      "description": "Tire Pressure Monitoring System, pressure of each tire",
       "contents": {
         "fl_pressure": {
           "type": "float32",
@@ -730,7 +744,17 @@
           "type": "float32",
           "range": [0, 255],
           "precision": 1
-        },
+        }
+      }
+    },
+    {
+      "name": "TPMS_TEMPERATURE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": ["TLM"],
+      "receiving": [],
+      "description": "Tire Pressure Monitoring System, temperature of each tire",
+      "contents": {
         "fl_temperature": {
           "type": "float32",
           "range": [0, 255],
@@ -754,61 +778,68 @@
       }
     },
     {
-      "name": "LAP_COUNT",
-      "topic": "STEER",
+      "name": "TLM_UNIX_TIMESTAMP",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 1000,
+      "sending": ["TLM"],
+      "receiving": [],
+      "contents": {
+          "timestamp": "uint32"
+      }
+  },
+  {
+      "name": "TLM_LAP_TIME",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["TLM"],
-      "receiving": ["STEER"],
-      "description": "On new lap",
+      "receiving": [],
       "contents": {
-        "lap_count": "uint16",
-        "lap_time": {
-          "type": "float32",
-          "range": [0, 1000],
-          "force": "uint16"
-        }
+          "lap_count": "uint16",
+          "lap_time": {
+              "type": "float32",
+              "range": [
+                  0,
+                  1000
+              ],
+              "force": "uint16"
+          }
       }
-    },
-    {
-      "name": "LC_STATUS",
-      "topic": "LAPCOUNTER",
-      "priority": 4,
-      "sending": ["STEER"],
-      "receiving": ["TLM"],
-      "description": "Session laps status",
-      "contents": {
-        "lap_number": "uint16",
-        "best_time": {
-          "type": "float32",
-          "range": [0, 1000],
-          "force": "uint16"
-        },
-        "last_time": {
-          "type": "float32",
-          "range": [0, 1000],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "TIMESTAMP",
-      "topic": "BROADCAST",
-      "priority": 6,
+  },
+  {
+      "name": "TLM_LAPS_STATS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 1000,
       "sending": ["TLM"],
-      "receiving": ["STEER", "DAS", "BMS_HV", "BMS_LV"],
-      "description": "every second unix encoded time and date used by logging devices to sync",
-      "interval": 500,
+      "receiving": [],
       "contents": {
-        "timestamp": "uint64"
+          "lap_number": "uint16",
+          "best_time": {
+              "type": "float32",
+              "range": [
+                  0,
+                  1000
+              ],
+              "force": "uint16"
+          },
+          "last_time": {
+              "type": "float32",
+              "range": [
+                  0,
+                  1000
+              ],
+              "force": "uint16"
+          }
       }
-    },
+  },
     {
-      "name": "REAR_AMMO_POS",
-      "topic": "TELEMETRY",
+      "name": "AMMO_COMPRESSION",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["ACQUISINATOR"],
-      "receiving": ["TLM"],
-      "description": "Position of the rear ammos",
+      "receiving": [],
+      "description": "Position of the ammos",
       "interval": 10,
       "contents": {
         "rl": {
@@ -820,18 +851,7 @@
           "type": "float32",
           "range": [-50, 20],
           "force": "uint32"
-        }
-      }
-    },
-    {
-      "name": "FRONT_AMMO_POS",
-      "topic": "TELEMETRY",
-      "priority": 3,
-      "sending": ["ACQUISINATOR"],
-      "receiving": ["TLM"],
-      "description": "Position of the front ammos",
-      "interval": 10,
-      "contents": {
+        },
         "fl": {
           "type": "float32",
           "range": [-20, 50],
@@ -845,14 +865,15 @@
       }
     },
     {
-      "name": "ROD_ELONGATION",
-      "topic": "TELEMETRY",
+      "name": "LINK_DEFORMATION_FL",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["ACQUISINATOR"],
-      "receiving": ["TLM"],
+      "receiving": [],
       "description": "Message for the arm deformation",
       "interval": 10,
       "contents": {
+        "rod_id": "uint8",
         "deformation": {
           "type": "float32",
           "range": [-3.0, 3.0],
@@ -861,11 +882,11 @@
       }
     },
     {
-      "name": "DEBUG_SIGNAL",
-      "topic": "BROADCAST",
+      "name": "DEBUG_SIGNAL_2",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["TLM"],
-      "receiving": ["TLM"],
+      "receiving": [],
       "description": "Debug signals",
       "interval": 10,
       "contents": {
@@ -893,10 +914,10 @@
     },
     {
       "name": "COOLING_TEMP",
-      "topic": "TELEMETRY",
+      "topic": "HYDRA",
       "priority": 3,
       "sending": ["ACQUISINATOR"],
-      "receiving": ["TLM"],
+      "receiving": [],
       "description": "Cooling temperature",
       "interval": 500,
       "contents": {

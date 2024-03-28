@@ -1,51 +1,35 @@
-'''
+# Message definition standard for E-Agle TRT CAN bus
 
-TODO: generatore invertire le priorita', abbassare priorita' INV_R_REQUEST e INV_L_RESPONSE
+This is the complete list of all the devices in the car: `HV, LV, ECU, STEERING_WHEEL, TLM, ACQUISINATOR, HANDCART, INVERTER_L, INVERTER_R, IMU, IRTS_FL, IRTS_FR, IRTS_RR, IRTS_RL, ANY`. 
 
-GESTIONE PRIORITA'
-0: messaggi critici e set stati della macchina
-1: stati della macchina
-2: set non critici
-3: non critici
+`STEERING_WHEEL` and `TLM` are considered always receiving all messages and so they are omitted in the `receving` field of the message definitions.
 
-Interval:
-10      (100 Hz)    - SENSORI
-20      (50 Hz)     - Stati
-50      (20 Hz)     - Currents / Temps / Feedback
-200     (5 Hz)      - COOLING status, stati non critici in generale
-1000    (1 Hz)      - VERSIONI ecc...
+Each device in the car must have a version message and related messages for openblt and a message related to the status of the internal fms. The name of the message must be formed like this: `DEVICE_[SET_]CONTENT`, e.g. `HV_SET_BALANCING_STATUS`. As for the sensors, they must be divided by logical sector. The percentages range from 0 to 1, and not from 0 to 100. The units of measurement are specified in the message field type if necessary and then reported in the csv.
 
-Categories:
+```
+Concept:
+DEVICE_QUANTITY_OTHERS
+DEVICE_QUANTITY_SPECIFICATIONS
+```
 
-- HV, hv
-- LV, lv
-- ECU, ecu & controls
-- TLM, telemetry
-- STEERING_WHEEL, steering wheel
-- HANDCART, handcart
-- sensors
+For primary networks these are the rules to follow:
 
-Each device in the car must have a version message and related messages for openblt and a message related to the status of the internal fms. The name of the message must be formed like this: DEVICE_[SET_]CONTENT, e.g. HV_SET_BALANCING_STATUS.
+### Priorities assignment
+- 0: critical messages and car states setting
+- 1: car states
+- 2: non critical settings
+- 3: non critical messages and info
 
-As for the sensors, they must be divided by logical sector. The percentages range from 0 to 1, and not from 0 to 100.
+### Intervals assignment:
+- 10      (100 Hz): sensors
+- 20      (50 Hz) : states
+- 50      (20 Hz) : currents / temps / feedbacks
+- 200     (5 Hz)  : cooling status, non critical states in general
+- 1000    (1 Hz)  : versions
 
-The units of measurement are specified in the message field type if necessary and then reported in the csv.
-#####
-# Concept:
-# DEVICE_QUANTITY_OTHERS
-# DEVICE_QUANTITY_SPECIFICATIONS
-#####
+Here is the first version of the message definitions.
 
-Devices:
-HV, LV, ECU, STEERING_WHEEL, TLM, ACQUISINATORE
-
-Tuttavia TLM e STEERING_WHEEL ascoltano sempre tutto
-
-HV, LV, ECU, ACQUISINATORE, HANDCART, INVERTER_L, INVERTER_R
-
-'''
-
-
+```python
 # ++++++++++++++++++++++++++++
 # OPENBLT
 # ++++++++++++++++++++++++++++
@@ -203,19 +187,24 @@ HV_CELLS_VOLTAGE_STATS, content = ['max', 'min', 'delta', 'avg']
 HV_CELLS_TEMP, content = ['start_index', 'temp_0', 'temp_1', 'temp_2', 'temp_3']
 HV_CELLS_TEMP_STATS, content = ['max', 'min', 'avg']
 
-SPEED, content = ["fl", "fr"]
-STEER_ANGLE, content = ['angle']
-COOLING_TEMP, content = ['top_left', 'bottom_left', 'top_right', 'bottom_right']
-AMMO_COMPRESSION, content = ['fl', 'fr', 'rl', 'rr']
-TPMS_PRESSURE, content = ['fl', 'fr', 'rl', 'rr']
-TPMS_TEMPERATURE, content = ['fl', 'fr', 'rl', 'rr']
-GPS_COORDS, content = ['latitude', 'longitude']
-GPS_SPEED, content = ['speed']
-IMU_ANGULAR_RATE, content = ['x', 'y', 'z']
-IMU_ACCELERATION, content = ['x', 'y', 'z', 'imu_temperature']
+
+# SECONDARY
+SPEED, content = ["fl", "fr"] # OK
+STEER_ANGLE, content = ['angle'] # OK
+COOLING_TEMP, content = ['top_left', 'bottom_left', 'top_right', 'bottom_right'] # OK
+AMMO_COMPRESSION, content = ['fl', 'fr', 'rl', 'rr'] # OK
+TPMS_PRESSURE, content = ['fl', 'fr', 'rl', 'rr'] # OK
+TPMS_TEMPERATURE, content = ['fl', 'fr', 'rl', 'rr'] # OK
+GPS_COORDS, content = ['latitude', 'longitude'] # OK
+GPS_SPEED, content = ['speed'] # OK
+IMU_ANGULAR_RATE, content = ['x', 'y', 'z'] # OK
+IMU_ACCELERATION, content = ['x', 'y', 'z', 'imu_temperature'] # OK
+
+PEDAL_THROTTLE, content = ['percentage'] # OK
+PEDAL_BRAKES_PRESSURE, content = ['front', 'rear'] # OK
 
 ## rod_id è un enum con i valori che sono i nomi che usano in DMT per definire i braccetti
-LINK_DEFORMATION_FL, content = ['rod_id', 'deformation']
+LINK_DEFORMATION_FL, content = ['rod_id', 'deformation'] # OK
 
 CONTROL_OUTPUT, content = ['u_bar', 'tmax_rr', 'tmax_rl', 'torque_rl', 'torque_rr'] # questo sistematelo come vuoi
 
@@ -236,8 +225,7 @@ IRTS_RR_1, content = ['channel_5', 'channel_6', 'channel_7', 'channel_8']
 IRTS_RR_2, content = ['channel_9', 'channel_10', 'channel_11', 'channel_12']
 IRTS_RR_3, content = ['channel_13', 'channel_14', 'channel_15', 'channel_16']
 
-PEDAL_THROTTLE, content = ['percentage'] # al posto di PEDALS_OUTPUT (?)
-PEDAL_BRAKES_PRESSURE, content = ['front', 'rear']
 
 DEBUG_SIGNAL, content = ['field_1', 'field_2', 'field_3', 'field_4'] # su ogni rete del can, primary, secondary e bms
+```
 

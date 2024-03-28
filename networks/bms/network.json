@@ -59,7 +59,7 @@
     {
       "name": "BOARD_STATUS",
       "topic": "STATUS",
-      "priority": 1,
+      "priority": 2,
       "sending": ["CELLBOARD"],
       "receiving": ["MAINBOARD"],
       "description": "Cellboard's status",
@@ -73,7 +73,7 @@
     {
       "name": "TEMPERATURES_INFO",
       "topic": "TEMPERATURE_INFO",
-      "priority": 5,
+      "priority": 1,
       "sending": ["CELLBOARD"],
       "receiving": ["MAINBOARD"],
       "description": "Cellboard temperature precalculated values",
@@ -99,7 +99,7 @@
     {
       "name": "TEMPERATURES",
       "topic": "TEMPERATURE_INFO",
-      "priority": 2,
+      "priority": 3,
       "sending": ["CELLBOARD"],
       "receiving": ["MAINBOARD"],
       "description": "Cells' temperatures",
@@ -131,7 +131,7 @@
     {
       "name": "VOLTAGES_INFO",
       "topic": "VOLTAGE_INFO",
-      "priority": 5,
+      "priority": 1,
       "sending": ["CELLBOARD"],
       "receiving": ["MAINBOARD"],
       "description": "Cellboard voltages precalculated values",
@@ -157,7 +157,7 @@
     {
       "name": "VOLTAGES",
       "topic": "VOLTAGE_INFO",
-      "priority": 5,
+      "priority": 3,
       "sending": ["CELLBOARD"],
       "receiving": ["MAINBOARD"],
       "description": "Cells' voltages",
@@ -184,7 +184,7 @@
     {
       "name": "SET_BALANCING_STATUS",
       "topic": "BALANCING",
-      "priority": 5,
+      "priority": 0,
       "sending": ["MAINBOARD"],
       "receiving": ["CELLBOARD"],
       "description": "Set balancing status for cells",
@@ -292,7 +292,7 @@
     {
         "name": "CELLBOARD_VERSION",
         "topic": "VERSION",
-        "priority": 6,
+        "priority": 3,
         "sending": ["CELLBOARD"],
         "receiving": ["MAINBOARD"],
         "description": "Periodic message containing current can definition version",
