@@ -12,96 +12,96 @@
         "LvErrors": {
             "type": "bitset",
             "items": [
-                "CELL_UNDERVOLTAGE",
-                "CELL_OVERVOLTAGE",
-                "BATTERY_OPEN_WIRE",
-                "CAN",
-                "SPI",
-                "OVER_CURRENT",
-                "CELL_UNDER_TEMPERATURE",
-                "CELL_OVER_TEMPERATURE",
-                "RELAY",
-                "BMS_MONITOR",
-                "VOLTAGES_NOT_READY",
-                "MCP23017",
-                "RADIATOR",
-                "FAN",
-                "PUMP",
-                "ADC_INIT",
-                "MUX"
+                "cell_undervoltage",
+                "cell_overvoltage",
+                "battery_open_wire",
+                "can",
+                "spi",
+                "over_current",
+                "cell_under_temperature",
+                "cell_over_temperature",
+                "relay",
+                "bms_monitor",
+                "voltages_not_ready",
+                "mcp23017",
+                "radiator",
+                "fan",
+                "pump",
+                "adc_init",
+                "mux"
             ]
         },
         "LvHealthSignals": {
             "type": "bitset",
             "items": [
-                "LVMS_OUT",
-                "RELAY_OUT",
-                "BATTERY_VOLTAGE_OUT",
-                "CHARGER_CURRENT",
-                "BATTERY_CURRENT",
-                "SIGN_BATTERY_CURRENT"
+                "lvms_out",
+                "relay_out",
+                "battery_voltage_out",
+                "charger_current",
+                "battery_current",
+                "sign_battery_current"
             ]
         },
         "HandcartStatus": {
             "type": "enum",
             "items": [
-                "NONE",
-                "CHECK",
-                "IDLE",
-                "PRECHARGE",
-                "READY",
-                "CHARGE",
-                "CHARGE_DONE",
-                "BALANCING",
-                "ERROR"
+                "none",
+                "check",
+                "idle",
+                "precharge",
+                "ready",
+                "charge",
+                "charge_done",
+                "balancing",
+                "error"
             ]
         },
         "HvCellsErrors": {
             "type": "bitset",
             "items": [
-                "CAN_COMM",
-                "LTC_COMM",
-                "TEMP_COMM_0",
-                "TEMP_COMM_1",
-                "TEMP_COMM_2",
-                "TEMP_COMM_3",
-                "TEMP_COMM_4",
-                "TEMP_COMM_5",
-                "OPEN_WIRE"
+                "can_comm",
+                "ltc_comm",
+                "temp_comm_0",
+                "temp_comm_1",
+                "temp_comm_2",
+                "temp_comm_3",
+                "temp_comm_4",
+                "temp_comm_5",
+                "open_wire"
             ]
         },
         "HvCellboardId": {
             "type": "enum",
             "items": [
-                "CELLBOARD_0",
-                "CELLBOARD_1",
-                "CELLBOARD_2",
-                "CELLBOARD_3",
-                "CELLBOARD_4",
-                "CELLBOARD_5"
+                "cellboard_0",
+                "cellboard_1",
+                "cellboard_2",
+                "cellboard_3",
+                "cellboard_4",
+                "cellboard_5"
             ]
         },
         "HvBalancingCells": {
             "type": "bitset",
             "items": [
-                "CELL0",
-                "CELL1",
-                "CELL2",
-                "CELL3",
-                "CELL4",
-                "CELL5",
-                "CELL6",
-                "CELL7",
-                "CELL8",
-                "CELL9",
-                "CELL10",
-                "CELL11",
-                "CELL12",
-                "CELL13",
-                "CELL14",
-                "CELL15",
-                "CELL16",
-                "CELL17"
+                "cell0",
+                "cell1",
+                "cell2",
+                "cell3",
+                "cell4",
+                "cell5",
+                "cell6",
+                "cell7",
+                "cell8",
+                "cell9",
+                "cell10",
+                "cell11",
+                "cell12",
+                "cell13",
+                "cell14",
+                "cell15",
+                "cell16",
+                "cell17"
             ]
         },
         "HvFeedbacks": {
@@ -188,62 +188,62 @@
         "EcuStatus": {
             "type": "enum",
             "items": [
-                "INIT",
-                "ENABLE_INV_UPDATES",
-                "CHECK_INV_SETTINGS",
-                "IDLE",
-                "START_TS_PRECHARGE",
-                "WAIT_TS_PRECHARGE",
-                "WAIT_DRIVER",
-                "ENABLE_INV_DRIVE",
-                "DRIVE",
-                "DISABLE_INV_DRIVE",
-                "START_TS_DISCHARGE",
-                "WAIT_TS_DISCHARGE",
-                "FATAL_ERROR"
+                "init",
+                "enable_inv_updates",
+                "check_inv_settings",
+                "idle",
+                "start_ts_precharge",
+                "wait_ts_precharge",
+                "wait_driver",
+                "enable_inv_drive",
+                "drive",
+                "disable_inv_drive",
+                "start_ts_discharge",
+                "wait_ts_discharge",
+                "fatal_error"
             ]
         },
         "InvStatus": {
             "type": "enum",
             "items": [
-                "DISABLED",
-                "RFE_ON",
-                "FRG_ON",
-                "ENABLED"
+                "disabled",
+                "rfe_on",
+                "frg_on",
+                "enabled"
             ]
         },
         "EcuErrors": {
             "type": "bitset",
             "items": [
-                "PEDAL_ADC",
-                "PEDAL_IMPLAUSIBILITY",
-                "IMU_TOUT",
-                "IRTS_TOUT",
-                "TS_TOUT",
-                "INVL_TOUT",
-                "INVR_TOUT",
-                "STEER_TOUT",
-                "FSM"
+                "pedal_adc",
+                "pedal_implausibility",
+                "imu_tout",
+                "irts_tout",
+                "ts_tout",
+                "invl_tout",
+                "invr_tout",
+                "steer_tout",
+                "fsm"
             ]
         },
         "EcuFeedbacks": {
             "type": "bitset",
             "items": [
-                "SD_COCK_FB",
-                "SD_FB1",
-                "SD_BOTS_FB",
-                "SD_INTERIAL_FB",
-                "SD_FB4",
-                "SD_IN",
-                "SD_OUT",
-                "SD_CTRL_PIN"
+                "sd_cock_fb",
+                "sd_fb1",
+                "sd_bots_fb",
+                "sd_interial_fb",
+                "sd_fb4",
+                "sd_in",
+                "sd_out",
+                "sd_ctrl_pin"
             ]
         },
         "Toggle": {
             "type": "enum",
             "items": [
-                "OFF",
-                "ON"
+                "off",
+                "on"
             ]
         }
     },
@@ -2210,29 +2210,43 @@
             "topic": "HYDRA",
             "priority": 3,
             "interval": 20,
-            "sending": ["ANY"],
+            "sending": [
+                "ANY"
+            ],
             "receiving": [],
             "contents": {
                 "field_1": {
                     "type": "float32",
-                    "range": [-1, 1],
+                    "range": [
+                        -1,
+                        1
+                    ],
                     "force": "uint16"
-                  },
-                  "field_2": {
+                },
+                "field_2": {
                     "type": "float32",
-                    "range": [-1, 1],
+                    "range": [
+                        -1,
+                        1
+                    ],
                     "force": "uint16"
-                  },
-                  "field_3": {
+                },
+                "field_3": {
                     "type": "float32",
-                    "range": [-1, 1],
+                    "range": [
+                        -1,
+                        1
+                    ],
                     "force": "uint16"
-                  },
-                  "field_4": {
+                },
+                "field_4": {
                     "type": "float32",
-                    "range": [-1, 1],
+                    "range": [
+                        -1,
+                        1
+                    ],
                     "force": "uint16"
-                  }
+                }
             }
         }
     ]
