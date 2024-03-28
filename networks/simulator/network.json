@@ -1,333 +1,333 @@
 {
-    "version": 1.0,
-    "types": {},
-    "messages": [
-        {
-            "name": "IMU_ANGULAR_RATE",
-            "fixed_id": 1260,
-            "sending": [
-                "IMU"
-            ],
-            "receiving": [],
-            "endianness": "bigAss",
-            "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
-            "contents": {
-                "x": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        245
-                    ],
-                    "precision": 0.1,
-                    "optimize": false,
-                    "signed": true
-                },
-                "y": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        245
-                    ],
-                    "precision": 0.1,
-                    "optimize": false,
-                    "signed": true
-                },
-                "z": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        245
-                    ],
-                    "precision": 0.1,
-                    "optimize": false,
-                    "signed": true
-                }
-            }
+  "version": 1.0,
+  "types": {},
+  "messages": [
+    {
+      "name": "IMU_ANGULAR_RATE",
+      "fixed_id": 1260,
+      "sending": [
+        "IMU"
+      ],
+      "receiving": [],
+      "endianness": "bigAss",
+      "description": "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed",
+      "contents": {
+        "x": {
+          "type": "float32",
+          "range": [
+            0,
+            245
+          ],
+          "precision": 0.1,
+          "optimize": false,
+          "signed": true
         },
-        {
-            "name": "IMU_ACCELERATION",
-            "fixed_id": 1261,
-            "sending": [
-                "IMU"
-            ],
-            "receiving": [],
-            "endianness": "bigAss",
-            "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
-            "contents": {
-                "x": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        8
-                    ],
-                    "precision": 0.01,
-                    "optimize": false,
-                    "signed": true
-                },
-                "y": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        8
-                    ],
-                    "precision": 0.01,
-                    "optimize": false,
-                    "signed": true
-                },
-                "z": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        8
-                    ],
-                    "precision": 0.01,
-                    "optimize": false,
-                    "signed": true
-                },
-                "imu_temperature": "int16"
-            }
+        "y": {
+          "type": "float32",
+          "range": [
+            0,
+            245
+          ],
+          "precision": 0.1,
+          "optimize": false,
+          "signed": true
         },
-        {
-            "name": "PEDAL_THROTTLE",
-            "topic": "HYDRA",
-            "priority": 3,
-            "interval": 10,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "description": "Pedal Throttle , already calibrated",
-            "contents": {
-                "throttle": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "force": "uint16"
-                }
-            }
-        },
-        {
-            "name": "PEDAL_BRAKES_PRESSURE",
-            "topic": "HYDRA",
-            "priority": 3,
-            "interval": 10,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "description": "Pedal brakes pressures in bar, already calibrated",
-            "contents": {
-                "front": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint16"
-                },
-                "rear": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint16"
-                }
-            }
-        },
-        {
-            "name": "STEER_ANGLE",
-            "topic": "HYDRA",
-            "priority": 3,
-            "interval": 10,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "description": "Steering angle in degrees",
-            "contents": {
-                "angle": {
-                    "type": "float32",
-                    "range": [
-                        -180,
-                        180
-                    ],
-                    "force": "uint32"
-                }
-            }
-        },
-        {
-            "name": "CONTROL_OUTPUT",
-            "topic": "HYDRA",
-            "priority": 1,
-            "sending": [
-                "TLM"
-            ],
-            "receiving": [
-                "ECU"
-            ],
-            "description": "Torques and signals calculated by the controls algorithms",
-            "interval": 20,
-            "contents": {
-                "estimated_velocity": {
-                    "type": "float32",
-                    "range": [
-                        -10,
-                        35
-                    ],
-                    "force": "uint16"
-                },
-                "torque_max_r": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint8"
-                },
-                "torque_max_l": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint8"
-                },
-                "torque_l": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint16"
-                },
-                "torque_r": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        100
-                    ],
-                    "force": "uint16"
-                }
-            }
-        },
-        {
-            "name": "CONTROL_STATUS",
-            "topic": "HYDRA",
-            "priority": 1,
-            "sending": [
-                "TLM"
-            ],
-            "receiving": [
-                "ECU"
-            ],
-            "description": "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)",
-            "interval": 20,
-            "contents": {
-                "map_pw": {
-                    "type": "float32",
-                    "range": [
-                        -0.5,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                },
-                "map_sc": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                },
-                "map_tv": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                }
-            }
-        },
-        {
-            "name": "SPEED",
-            "topic": "HYDRA",
-            "priority": 3,
-            "sending": [
-                "ECU"
-            ],
-            "receiving": [],
-            "description": "Encoder and inverter speed in rad/sec",
-            "interval": 10,
-            "contents": {
-                "fr": {
-                    "type": "float32",
-                    "force": "uint16",
-                    "range": [
-                        -200,
-                        200
-                    ]
-                },
-                "fl": {
-                    "type": "float32",
-                    "force": "uint16",
-                    "range": [
-                        -200,
-                        200
-                    ]
-                }
-            }
-        },
-        {
-            "name": "DEBUG_SIGNAL_2",
-            "topic": "HYDRA",
-            "priority": 3,
-            "sending": [
-                "TLM"
-            ],
-            "receiving": [],
-            "description": "Debug signals",
-            "interval": 10,
-            "contents": {
-                "field_1": {
-                    "type": "float32",
-                    "range": [
-                        -1,
-                        1
-                    ],
-                    "force": "uint16"
-                },
-                "field_2": {
-                    "type": "float32",
-                    "range": [
-                        -1,
-                        1
-                    ],
-                    "force": "uint16"
-                },
-                "field_3": {
-                    "type": "float32",
-                    "range": [
-                        -1,
-                        1
-                    ],
-                    "force": "uint16"
-                },
-                "field_4": {
-                    "type": "float32",
-                    "range": [
-                        -1,
-                        1
-                    ],
-                    "force": "uint16"
-                }
-            }
+        "z": {
+          "type": "float32",
+          "range": [
+            0,
+            245
+          ],
+          "precision": 0.1,
+          "optimize": false,
+          "signed": true
         }
-    ]
+      }
+    },
+    {
+      "name": "IMU_ACCELERATION",
+      "fixed_id": 1261,
+      "sending": [
+        "IMU"
+      ],
+      "receiving": [],
+      "endianness": "bigAss",
+      "description": "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed",
+      "contents": {
+        "x": {
+          "type": "float32",
+          "range": [
+            0,
+            8
+          ],
+          "precision": 0.01,
+          "optimize": false,
+          "signed": true
+        },
+        "y": {
+          "type": "float32",
+          "range": [
+            0,
+            8
+          ],
+          "precision": 0.01,
+          "optimize": false,
+          "signed": true
+        },
+        "z": {
+          "type": "float32",
+          "range": [
+            0,
+            8
+          ],
+          "precision": 0.01,
+          "optimize": false,
+          "signed": true
+        },
+        "imu_temperature": "int16"
+      }
+    },
+    {
+      "name": "PEDAL_THROTTLE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 10,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Pedal Throttle , already calibrated",
+      "contents": {
+        "throttle": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "PEDAL_BRAKES_PRESSURE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 10,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Pedal brakes pressures in bar, already calibrated",
+      "contents": {
+        "front": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint16"
+        },
+        "rear": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "STEER_ANGLE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 10,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Steering angle in degrees",
+      "contents": {
+        "angle": {
+          "type": "float32",
+          "range": [
+            -180,
+            180
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "CONTROL_OUTPUT",
+      "topic": "HYDRA",
+      "priority": 1,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ECU"
+      ],
+      "description": "Torques and signals calculated by the controls algorithms",
+      "interval": 20,
+      "contents": {
+        "estimated_velocity": {
+          "type": "float32",
+          "range": [
+            -10,
+            35
+          ],
+          "force": "uint16"
+        },
+        "torque_max_l": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint8"
+        },
+        "torque_max_r": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint8"
+        },
+        "torque_l": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint16"
+        },
+        "torque_r": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "CONTROL_STATUS",
+      "topic": "HYDRA",
+      "priority": 1,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ECU"
+      ],
+      "description": "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)",
+      "interval": 20,
+      "contents": {
+        "map_pw": {
+          "type": "float32",
+          "range": [
+            -0.5,
+            1
+          ],
+          "precision": 0.01,
+          "optimize": false
+        },
+        "map_sc": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "precision": 0.01,
+          "optimize": false
+        },
+        "map_tv": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "precision": 0.01,
+          "optimize": false
+        }
+      }
+    },
+    {
+      "name": "SPEED",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Encoder and inverter speed in rad/sec",
+      "interval": 10,
+      "contents": {
+        "fl": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        },
+        "fr": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        }
+      }
+    },
+    {
+      "name": "DEBUG_SIGNAL_2",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Debug signals",
+      "interval": 10,
+      "contents": {
+        "field_1": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_2": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_3": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_4": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        }
+      }
+    }
+  ]
 }
