@@ -5,7 +5,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 {
 	switch(id)
     {
-	case 1537:
+	case 1025:
 		if(29 > fields_size) return 1;
 		snprintf(v[0], string_size, BOARD_STATUS_CELLBOARD_ID);
 		snprintf(v[1], string_size, BOARD_STATUS_ERRORS_CAN_COMM);
@@ -46,7 +46,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[3], string_size, TEMPERATURES_INFO_AVG_TEMP);
 
 		return 0;
-	case 1282:
+	case 1538:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, TEMPERATURES_CELLBOARD_ID);
 		snprintf(v[1], string_size, TEMPERATURES_START_INDEX);
@@ -64,7 +64,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[3], string_size, VOLTAGES_INFO_AVG_VOLTAGE);
 
 		return 0;
-	case 548:
+	case 1540:
 		if(5 > fields_size) return 1;
 		snprintf(v[0], string_size, VOLTAGES_CELLBOARD_ID);
 		snprintf(v[1], string_size, VOLTAGES_START_INDEX);
@@ -73,7 +73,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[4], string_size, VOLTAGES_VOLTAGE2);
 
 		return 0;
-	case 512:
+	case 16:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, SET_BALANCING_STATUS_THRESHOLD);
 		snprintf(v[1], string_size, SET_BALANCING_STATUS_TARGET);
@@ -86,7 +86,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[1], string_size, JMP_TO_BLT_BOARD_INDEX);
 
 		return 0;
-	case 259:
+	case 1539:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, CELLBOARD_VERSION_CELLBOARD_ID);
 		snprintf(v[1], string_size, CELLBOARD_VERSION_COMPONENT_VERSION);
@@ -191,7 +191,7 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 {
     switch(id)
     {
-	case 1537:
+	case 1025:
 	{
 		bms_board_status_t tmp;
 		bms_board_status_converted_t tmp_converted;
@@ -343,7 +343,7 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_TEMPERATURES_INFO_BYTE_SIZE;
 		return bms_temperatures_info_pack(data, &tmp, BMS_TEMPERATURES_INFO_BYTE_SIZE);
 	}
-	case 1282:
+	case 1538:
 	{
 		bms_temperatures_t tmp;
 		bms_temperatures_converted_t tmp_converted;
@@ -403,7 +403,7 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_VOLTAGES_INFO_BYTE_SIZE;
 		return bms_voltages_info_pack(data, &tmp, BMS_VOLTAGES_INFO_BYTE_SIZE);
 	}
-	case 548:
+	case 1540:
 	{
 		bms_voltages_t tmp;
 		bms_voltages_converted_t tmp_converted;
@@ -433,7 +433,7 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_VOLTAGES_BYTE_SIZE;
 		return bms_voltages_pack(data, &tmp, BMS_VOLTAGES_BYTE_SIZE);
 	}
-	case 512:
+	case 16:
 	{
 		bms_set_balancing_status_t tmp;
 		bms_set_balancing_status_converted_t tmp_converted;
@@ -473,7 +473,7 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_JMP_TO_BLT_BYTE_SIZE;
 		return bms_jmp_to_blt_pack(data, &tmp, BMS_JMP_TO_BLT_BYTE_SIZE);
 	}
-	case 259:
+	case 1539:
 	{
 		bms_cellboard_version_t tmp;
 		bms_cellboard_version_converted_t tmp_converted;
@@ -503,12 +503,12 @@ int bms_n_fields_from_id(int id)
 {
 	switch(id)
     {
-		case 1537: return 29;
+		case 1025: return 29;
 		case 514: return 4;
-		case 1282: return 6;
+		case 1538: return 6;
 		case 516: return 4;
-		case 548: return 5;
-		case 512: return 3;
+		case 1540: return 5;
+		case 16: return 3;
 		case 0: return 2;
 		case 4: return 0;
 		case 5: return 0;
@@ -522,7 +522,7 @@ int bms_n_fields_from_id(int id)
 		case 13: return 0;
 		case 14: return 0;
 		case 15: return 0;
-		case 259: return 3;
+		case 1539: return 3;
     }
     return 0;
 }
@@ -530,7 +530,7 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 {
     switch(id)
     {
-	case 1537:
+	case 1025:
 		if(fields_types_size < 29) return 0;
 		fields_types[0] = e_bms_board_status_cellboard_id;
 		fields_types[1] = e_bms_uint8_t;
@@ -569,7 +569,7 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[2] = e_bms_float;
 		fields_types[3] = e_bms_float;
 		return 4;
-	case 1282:
+	case 1538:
 		if(fields_types_size < 6) return 0;
 		fields_types[0] = e_bms_temperatures_cellboard_id;
 		fields_types[1] = e_bms_uint8_t;
@@ -585,7 +585,7 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[2] = e_bms_float;
 		fields_types[3] = e_bms_float;
 		return 4;
-	case 548:
+	case 1540:
 		if(fields_types_size < 5) return 0;
 		fields_types[0] = e_bms_voltages_cellboard_id;
 		fields_types[1] = e_bms_uint8_t;
@@ -593,7 +593,7 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[3] = e_bms_float;
 		fields_types[4] = e_bms_float;
 		return 5;
-	case 512:
+	case 16:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_bms_uint16_t;
 		fields_types[1] = e_bms_uint16_t;
@@ -604,7 +604,7 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[0] = e_bms_jmp_to_blt_cellboard_id;
 		fields_types[1] = e_bms_uint8_t;
 		return 2;
-	case 259:
+	case 1539:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_bms_cellboard_version_cellboard_id;
 		fields_types[1] = e_bms_uint16_t;

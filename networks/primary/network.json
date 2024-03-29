@@ -1,1825 +1,2330 @@
 {
-  "version": 1.3,
-  "types": {
-    "HvErrors": {
-      "type": "bitset",
-      "items": [
-        "CELL_LOW_VOLTAGE",
-        "CELL_UNDER_VOLTAGE",
-        "CELL_OVER_VOLTAGE",
-        "CELL_HIGH_TEMPERATURE",
-        "CELL_OVER_TEMPERATURE",
-        "OVER_CURRENT",
-        "CAN",
-        "INT_VOLTAGE_MISMATCH",
-        "CELLBOARD_COMM",
-        "CELLBOARD_INTERNAL",
-        "CONNECTOR_DISCONNECTED",
-        "FANS_DISCONNECTED",
-        "FEEDBACK",
-        "FEEDBACK_CIRCUITRY",
-        "EEPROM_COMM",
-        "EEPROM_WRITE"
-      ]
-    },
-    "LvErrors": {
-      "type": "bitset",
-      "items": [
-        "CELL_UNDERVOLTAGE",
-        "CELL_OVERVOLTAGE",
-        "BATTERY_OPEN_WIRE",
-        "CAN",
-        "SPI",
-        "OVER_CURRENT",
-        "CELL_UNDER_TEMPERATURE",
-        "CELL_OVER_TEMPERATURE",
-        "RELAY",
-        "BMS_MONITOR",
-        "VOLTAGES_NOT_READY",
-        "MCP23017",
-        "RADIATOR",
-        "FAN",
-        "PUMP",
-        "ADC_INIT",
-        "MUX"
-      ]
-    },
-    "LvFeedbacks": {
-      "type": "bitset",
-      "items": [
-        "BSPD_FB",
-        "HVD_FB",
-        "LVMS_FB",
-        "RES_FB",
-        "LV_ENCL",
-        "INVC_LID_FB",
-        "HV_ENCL_2_FB",
-        "BACK_PLATE_FB",
-        "INVC_INTERLOCK_FB",
-        "AMS_FB",
-        "ASMS_FB",
-        "INTERLOCK_FB",
-        "INVERTERS_FB",
-        "PCBS_FB",
-        "PUMPS_FB",
-        "SHUTDOWN_FB",
-        "RADIATORS_FB",
-        "FAN_FB",
-        "AS_ACTUATION_FB"
-      ]
-    },
-    "LvHealthSignals": {
-      "type": "bitset",
-      "items": [
-        "LVMS_OUT",
-        "RELAY_OUT",
-        "BATTERY_VOLTAGE_OUT",
-        "CHARGER_CURRENT",
-        "BATTERY_CURRENT",
-        "SIGN_BATTERY_CURRENT"
-      ]
-    },
-    "DasErrors": {
-      "type": "bitset",
-      "items": [
-        "PEDAL_ADC",
-        "PEDAL_IMPLAUSIBILITY",
-        "IMU_TOUT",
-        "IRTS_TOUT",
-        "TS_TOUT",
-        "INVL_TOUT",
-        "INVR_TOUT",
-        "STEER_TOUT",
-        "FSM"
-      ]
-    },
-    "ECUFeedbacks": {
-      "type": "bitset",
-      "items": [
-        "SD_COCK_FB",
-        "SD_FB1",
-        "SD_BOTS_FB",
-        "SD_INTERIAL_FB",
-        "SD_FB4",
-        "SD_IN",
-        "SD_OUT",
-        "SD_CTRL_PIN"
-      ]
-    },
-    "InvStatus": {
-      "type": "bitset",
-      "items": [
-        "DRIVE_ENABLE",
-        "NCR0",
-        "LIMP",
-        "LIMM",
-        "DRIVE_OK",
-        "ICNS",
-        "T_NLIM",
-        "P_N",
-        "N_I",
-        "N0",
-        "RSW",
-        "CAL0",
-        "CAL",
-        "TOL",
-        "DRIVE_READY",
-        "BRK",
-        "SIGN_MAG",
-        "NCLIP",
-        "NCLIPP",
-        "NCLIPM",
-        "IRD_DIG",
-        "IUSE_RCHD",
-        "IRD_N",
-        "IRD_TI",
-        "IRD_TIR",
-        "HZ10",
-        "IRD_TM",
-        "IRD_ANA",
-        "IWCNS",
-        "RFE_PULSE",
-        "MD",
-        "HND_WHL"
-      ]
-    },
-    "InvErrors": {
-      "type": "bitset",
-      "items": [
-        "BAD_PARAM",
-        "HW_FAULT",
-        "SAFETY_FAULT",
-        "CAN_TIMEOUT",
-        "ENCODER_ERR",
-        "NO_POWER_VOLTAGE",
-        "HI_MOTOR_TEMP",
-        "HI_DEVICE_TEMP",
-        "OVERVOLTAGE",
-        "OVERCURRENT",
-        "RACEAWAY",
-        "USER_ERR",
-        "UNKNOWN_ERR_12",
-        "UNKNOWN_ERR_13",
-        "CURRENT_ERR",
-        "BALLAST_OVERLOAD",
-        "DEVICE_ID_ERR",
-        "RUN_SIG_FAULT",
-        "UNKNOWN_ERR_19",
-        "UNKNOWN_ERR_20",
-        "POWERVOLTAGE_WARN",
-        "HI_MOTOR_TEMP_WARN",
-        "HI_DEVICE_TEMP_WARN",
-        "VOUT_LIMIT_WARN",
-        "OVERCURRENT_WARN",
-        "RACEAWAY_WARN",
-        "UNKNOWN_ERR_27",
-        "UNKNOWN_ERR_28",
-        "UNKNOWN_ERR_29",
-        "UNKNOWN_ERR_30",
-        "BALLAST_OVERLOAD_WARN"
-      ]
-    },
-    "Inv_IOInfo": {
-      "type": "bitset",
-      "items": [
-        "LMT1",
-        "LMT2",
-        "IN2",
-        "IN1",
-        "FRG",
-        "RFE",
-        "UNK6",
-        "UNK7",
-        "OUT1",
-        "OUT2",
-        "BTB",
-        "GO",
-        "OUT3",
-        "OUT4",
-        "G_OFF",
-        "BRK1"
-      ]
-    },
-    "HandcartStatus": {
-      "type": "enum",
-      "items": [
-        "NONE",
-        "CHECK",
-        "IDLE",
-        "PRECHARGE",
-        "READY",
-        "CHARGE",
-        "CHARGE_DONE",
-        "BALANCING",
-        "ERROR"
-      ]
-    },
-    "CanFlashStatus": {
-      "type": "enum",
-      "items": ["NO_FLASH", "FLASH", "PREPARING_TO_FLASH"]
-    },
-    "RaceType": {
-      "type": "enum",
-      "items": ["ACCELERATION", "SKIDPAD", "AUTOCROSS", "ENDURANCE"]
-    },
-    "InverterStatus": {
-      "type": "enum",
-      "items": ["OFF", "IDLE", "ON"]
-    },
-    "CarStatus": {
-      "type": "enum",
-      "items": [
-        "INIT",
-        "ENABLE_INV_UPDATES",
-        "CHECK_INV_SETTINGS",
-        "IDLE",
-        "START_TS_PRECHARGE",
-        "WAIT_TS_PRECHARGE",
-        "WAIT_DRIVER",
-        "ENABLE_INV_DRIVE",
-        "DRIVE",
-        "DISABLE_INV_DRIVE",
-        "START_TS_DISCHARGE",
-        "WAIT_TS_DISCHARGE",
-        "FATAL_ERROR"
-      ]
-    },
-    "BMSLVStatus": {
-      "type": "enum",
-      "items": ["INIT", "RUN", "ERROR"]
-    },
-    "Toggle": {
-      "type": "enum",
-      "items": ["OFF", "ON"]
-    },
-    "TsStatus": {
-      "type": "enum",
-      "items": [
-        "INIT",
-        "IDLE",
-        "AIRN_CLOSE",
-        "PRECHARGE",
-        "AIRP_CLOSE",
-        "TS_ON",
-        "FATAL_ERROR"
-      ]
-    },
-    "SetCarStatus": {
-      "type": "enum",
-      "items": ["IDLE", "READY", "DRIVE"]
-    },
-    "Bound": {
-      "type": "enum",
-      "items": ["SET_MAX", "SET_MIN"]
-    },
-    "Pedal": {
-      "type": "enum",
-      "items": ["ACCELERATOR", "BRAKE"]
-    },
-    "ImdStatus": {
-      "type": "enum",
-      "items": [
-        "IMD_SC",
-        "IMD_NORMAL",
-        "IMD_UNDER_VOLTAGE",
-        "IMD_START_MEASURE",
-        "IMD_DEVICE_ERROR",
-        "IMD_EARTH_FAULT"
-      ]
-    },
-    "HvFeedbackStatus": {
-      "type": "enum",
-      "items":[
-        "FEEDBACK_STATE_LOW",
-        "FEEDBACK_STATE_ERROR",
-        "FEEDBACK_STATE_HIGH"
-      ]
-    },
-    "HvBalancingCells": {
-      "type": "bitset",
-      "items": [
-        "CELL0",
-        "CELL1",
-        "CELL2",
-        "CELL3",
-        "CELL4",
-        "CELL5",
-        "CELL6",
-        "CELL7",
-        "CELL8",
-        "CELL9",
-        "CELL10",
-        "CELL11",
-        "CELL12",
-        "CELL13",
-        "CELL14",
-        "CELL15",
-        "CELL16",
-        "CELL17"
-      ]
-    },
-    "HvCellsErrors": {
-      "type": "bitset",
-      "items": [
-        "CAN_COMM",
-        "LTC_COMM",
-        "TEMP_COMM_0",
-        "TEMP_COMM_1",
-        "TEMP_COMM_2",
-        "TEMP_COMM_3",
-        "TEMP_COMM_4",
-        "TEMP_COMM_5",
-        "OPEN_WIRE"
-      ]
-    },
-    "HvDebugSignals": {
-      "type": "bitset",
-      "items": [
-        "FEEDBACK_IMPLAUSIBILITY_DETECTED",
-        "FEEDBACK_IMD_COCKPIT",
-        "FEEDBACK_TSAL_GREEN_FAULT_LATCHED",
-        "FEEDBACK_BMS_COCKPIT",
-        "FEEDBACK_EXT_LATCHED",
-        "FEEDBACK_TSAL_GREEN",
-        "FEEDBACK_TS_OVER_60V_STATUS",
-        "FEEDBACK_AIRN_STATUS",
-        "FEEDBACK_AIRP_STATUS",
-        "FEEDBACK_AIRP_GATE",
-        "FEEDBACK_AIRN_GATE",
-        "FEEDBACK_PRECHARGE_STATUS",
-        "FEEDBACK_TSP_OVER_60V_STATUS",
-        "FEEDBACK_IMD_FAULT",
-        "FEEDBACK_CHECK_MUX",
-        "FEEDBACK_SD_END",
-        "FEEDBACK_SD_OUT",
-        "FEEDBACK_SD_IN",
-        "FEEDBACK_SD_BMS",
-        "FEEDBACK_SD_IMD",
-        "ERROR_CELL_LOW_VOLTAGE",
-        "ERROR_CELL_UNDER_VOLTAGE",
-        "ERROR_CELL_OVER_VOLTAGE",
-        "ERROR_CELL_HIGH_TEMPERATURE",
-        "ERROR_CELL_OVER_TEMPERATURE",
-        "ERROR_OVER_CURRENT",
-        "ERROR_CAN",
-        "ERROR_INT_VOLTAGE_MISMATCH",
-        "ERROR_CELLBOARD_COMM",
-        "ERROR_CELLBOARD_INTERNAL",
-        "ERROR_CONNECTOR_DISCONNECTED",
-        "ERROR_FANS_DISCONNECTED",
-        "ERROR_FEEDBACK",
-        "ERROR_FEEDBACK_CIRCUITRY",
-        "ERROR_EEPROM_COMM",
-        "ERROR_EEPROM_WRITE"
-      ]
-    },
-    "Cellboard": {
-      "type": "enum",
-      "items": [
-        "CELLBOARD_0",
-        "CELLBOARD_1",
-        "CELLBOARD_2",
-        "CELLBOARD_3",
-        "CELLBOARD_4",
-        "CELLBOARD_5"
-      ]
-    },
-    "ControlsState": {
-      "type": "bitset",
-      "items": [
-        "SLIP",
-        "TORQUE_VECTORING",
-        "REGEN"
-      ]
-    }
-  },
-  "messages": [
-    {
-      "name": "BMS_HV_JMP_TO_BLT",
-      "fixed_id": 0,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_TX",
-      "fixed_id": 1,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_HV_RX",
-      "fixed_id": 2,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "HV_CAN_FORWARD",
-      "fixed_id": 3,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Enable/disable can forwarding to internal bms network",
-      "contents": {
-        "can_forward_set": "Toggle"
-      }
-    },
-    {
-      "name": "FLASH_CELLBOARD_0_TX",
-      "fixed_id": 4,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_0_RX",
-      "fixed_id": 5,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-
-    {
-      "name": "FLASH_CELLBOARD_1_TX",
-      "fixed_id": 6,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_1_RX",
-      "fixed_id": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-
-    {
-      "name": "FLASH_CELLBOARD_2_TX",
-      "fixed_id": 8,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_2_RX",
-      "fixed_id": 9,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_TX",
-      "fixed_id": 10,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_3_RX",
-      "fixed_id": 11,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_TX",
-      "fixed_id": 12,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_4_RX",
-      "fixed_id": 13,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_TX",
-      "fixed_id": 14,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_CELLBOARD_5_RX",
-      "fixed_id": 15,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "BMS_LV_JMP_TO_BLT",
-      "fixed_id": 16,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_LV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_TX",
-      "fixed_id": 17,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_BMS_LV_RX",
-      "fixed_id": 18,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "contents": {}
-    },
-    {
-      "name": "ECU_JMP_TO_BLT",
-      "fixed_id": 19,
-      "sending": ["HANDCART"],
-      "receiving": ["DAS"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_ECU_TX",
-      "fixed_id": 20,
-      "sending": ["HANDCART"],
-      "receiving": ["DAS"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_ECU_RX",
-      "fixed_id": 21,
-      "sending": ["HANDCART"],
-      "receiving": ["DAS"],
-      "contents": {}
-    },
-    {
-      "name": "STEERING_JMP_TO_BLT",
-      "fixed_id": 22,
-      "sending": ["HANDCART"],
-      "receiving": ["STEER"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_STEERING_TX",
-      "fixed_id": 23,
-      "sending": ["HANDCART"],
-      "receiving": ["STEER"],
-      "contents": {}
-    },
-    {
-      "name": "FLASH_STEERING_RX",
-      "fixed_id": 24,
-      "sending": ["HANDCART"],
-      "receiving": ["STEER"],
-      "contents": {}
-    },
-    {
-      "name": "STEER_VERSION",
-      "fixed_id": 700,
-      "sending": ["STEER"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-        "component_build_time": "uint32",
-        "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "DAS_VERSION",
-      "fixed_id": 701,
-      "sending": ["DAS"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-        "component_build_time": "uint32",
-        "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "MAINBOARD_VERSION",
-      "fixed_id": 702,
-      "sending": ["BMS_HW"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-        "component_build_time": "uint32",
-        "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "LV_VERSION",
-      "fixed_id": 703,
-      "sending": ["BMS_LW"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-        "component_build_time": "uint32",
-        "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "TLM_VERSION",
-      "fixed_id": 704,
-      "sending": ["TLM"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-        "component_build_time": "uint32",
-        "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "CELLBOARD_VERSION",
-      "fixed_id": 705,
-      "sending": ["BMS_HW"],
-      "receiving": ["DAS", "STEER"],
-      "description": "periodic message containing current can definitions version",
-      "interval": 1000,
-      "contents": {
-          "cellboard_id": "Cellboard",
-          "component_version": "uint16",
-          "canlib_build_time": "uint32"
-      }
-    },
-    {
-      "name": "AMBIENT_TEMPERATURE",
-      "topic": "BROADCAST",
-      "priority": 6,
-      "sending": ["DAS"],
-      "receiving": ["STEER", "TLM", "BMS_HV", "BMS_LV"],
-      "description": "ambient temperature as send from IMU",
-      "interval": 1000,
-      "contents": {
-        "temp": "int16"
-      }
-    },
-    {
-      "name": "DATA_LOGGER",
-      "fixed_id": 1072,
-      "sending": ["DATA_LOGGER"],
-      "receiving": ["STEER", "DAS", "TLM", "BMS_HV", "BMS_LV"],
-      "description": "data logger message",
-      "interval": 1000,
-      "contents": {
-        "placeholder1": "uint32",
-        "placeholder2": "uint32"
-      }
-    },
-    {
-      "name": "SET_TLM_STATUS",
-      "topic": "TLM",
-      "priority": 6,
-      "sending": ["STEER"],
-      "receiving": ["TLM"],
-      "description": "Ask telemetry to turn on/off and send a tuple containing the current{test, driver, map); only once",
-      "contents": {
-        "tlm_status": "Toggle"
-      }
-    },
-    {
-      "name": "TLM_STATUS",
-      "topic": "STEER",
-      "priority": 6,
-      "sending": ["TLM"],
-      "receiving": ["STEER"],
-      "description": "The answer to the steering wheel's message that changes the status of the telemetry",
-      "interval": 1000,
-      "contents": {
-        "tlm_status": "Toggle"
-      }
-    },
-    {
-      "name": "STEER_SYSTEM_STATUS",
-      "topic": "TLM",
-      "priority": 0,
-      "sending": ["STEER"],
-      "receiving": ["TLM"],
-      "description": "System stats of the raspberry pi inside the steering wheel",
-      "interval": 1000,
-      "contents": {
-        "soc_temp": "uint8"
-      }
-    },
-    {
-      "name": "HV_VOLTAGE",
-      "topic": "DASnSTEERnCART",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Internal pack measured voltages in V",
-      "interval": 10,
-      "contents": {
-        "pack_voltage": {
-          "type": "float32",
-          "range": [0, 460]
+    "version": 2.0,
+    "types": {
+        "HvFeedbackStatus": {
+            "type": "enum",
+            "items": [
+                "feedback_state_low",
+                "feedback_state_error",
+                "feedback_state_high"
+            ]
         },
-        "bus_voltage": {
-          "type": "float32",
-          "range": [0, 460]
+        "LvErrors": {
+            "type": "bitset",
+            "items": [
+                "cell_undervoltage",
+                "cell_overvoltage",
+                "battery_open_wire",
+                "can",
+                "spi",
+                "over_current",
+                "cell_under_temperature",
+                "cell_over_temperature",
+                "relay",
+                "bms_monitor",
+                "voltages_not_ready",
+                "mcp23017",
+                "radiator",
+                "fan",
+                "pump",
+                "adc_init",
+                "mux"
+            ]
+        },
+        "LvHealthSignals": {
+            "type": "bitset",
+            "items": [
+                "lvms_out",
+                "relay_out",
+                "battery_voltage_out",
+                "charger_current",
+                "battery_current",
+                "sign_battery_current"
+            ]
+        },
+        "HandcartStatus": {
+            "type": "enum",
+            "items": [
+                "none",
+                "check",
+                "idle",
+                "precharge",
+                "ready",
+                "charge",
+                "charge_done",
+                "balancing",
+                "error"
+            ]
+        },
+        "HvCellsErrors": {
+            "type": "bitset",
+            "items": [
+                "can_comm",
+                "ltc_comm",
+                "temp_comm_0",
+                "temp_comm_1",
+                "temp_comm_2",
+                "temp_comm_3",
+                "temp_comm_4",
+                "temp_comm_5",
+                "open_wire"
+            ]
+        },
+        "HvCellboardId": {
+            "type": "enum",
+            "items": [
+                "cellboard_0",
+                "cellboard_1",
+                "cellboard_2",
+                "cellboard_3",
+                "cellboard_4",
+                "cellboard_5"
+            ]
+        },
+        "HvBalancingCells": {
+            "type": "bitset",
+            "items": [
+                "cell0",
+                "cell1",
+                "cell2",
+                "cell3",
+                "cell4",
+                "cell5",
+                "cell6",
+                "cell7",
+                "cell8",
+                "cell9",
+                "cell10",
+                "cell11",
+                "cell12",
+                "cell13",
+                "cell14",
+                "cell15",
+                "cell16",
+                "cell17"
+            ]
+        },
+        "HvFeedbacks": {
+            "type": "bitset",
+            "items": [
+                "implausibility_detected",
+                "imd_cockpit",
+                "tsal_green_fault_latched",
+                "bms_cockpit",
+                "ext_latched",
+                "tsal_green",
+                "ts_over_60v_status",
+                "airn_status",
+                "airp_status",
+                "airp_gate",
+                "airn_gate",
+                "precharge_status",
+                "tsp_over_60v_status",
+                "imd_fault",
+                "check_mux",
+                "sd_end",
+                "sd_out",
+                "sd_in",
+                "sd_bms",
+                "sd_imd"
+            ]
+        },
+        "HvErrors": {
+            "type": "bitset",
+            "items": [
+                "cell_low_voltage",
+                "cell_under_voltage",
+                "cell_over_voltage",
+                "cell_high_temperature",
+                "cell_over_temperature",
+                "over_current",
+                "can",
+                "int_voltage_mismatch",
+                "cellboard_comm",
+                "cellboard_internal",
+                "connector_disconnected",
+                "fans_disconnected",
+                "feedback",
+                "feedback_circuitry",
+                "eeprom_comm",
+                "eeprom_write"
+            ]
+        },
+        "HvStatus": {
+            "type": "enum",
+            "items": [
+                "init",
+                "idle",
+                "airn_close",
+                "precharge",
+                "airp_close",
+                "ts_on",
+                "fatal_error"
+            ]
+        },
+        "LvStatus": {
+            "type": "enum",
+            "items": [
+                "init",
+                "idle",
+                "tson",
+                "run",
+                "flashing",
+                "error"
+            ]
+        },
+        "LvFeedbackGPIOExtender": {
+            "type": "bitset",
+            "items": [
+                "inverters",
+                "pcbs",
+                "pumps",
+                "radiators",
+                "shutdown",
+                "hv_fans",
+                "autonomous_system_actuation"
+            ]
+        },
+        "EcuStatus": {
+            "type": "enum",
+            "items": [
+                "init",
+                "enable_inv_updates",
+                "check_inv_settings",
+                "idle",
+                "start_ts_precharge",
+                "wait_ts_precharge",
+                "wait_driver",
+                "enable_inv_drive",
+                "drive",
+                "disable_inv_drive",
+                "start_ts_discharge",
+                "wait_ts_discharge",
+                "fatal_error"
+            ]
+        },
+        "InvStatus": {
+            "type": "enum",
+            "items": [
+                "disabled",
+                "rfe_on",
+                "frg_on",
+                "enabled"
+            ]
+        },
+        "EcuErrors": {
+            "type": "bitset",
+            "items": [
+                "pedal_adc",
+                "pedal_implausibility",
+                "imu_tout",
+                "irts_tout",
+                "ts_tout",
+                "invl_tout",
+                "invr_tout",
+                "steer_tout",
+                "fsm"
+            ]
+        },
+        "EcuFeedbacks": {
+            "type": "bitset",
+            "items": [
+                "sd_cock_fb",
+                "sd_fb1",
+                "sd_bots_fb",
+                "sd_interial_fb",
+                "sd_fb4",
+                "sd_in",
+                "sd_out",
+                "sd_ctrl_pin"
+            ]
+        },
+        "EcuControlErrors": {
+            "type": "bitset",
+            "items": [
+                "forced_off",
+                "wrong_maps",
+                "control_watchdog"
+            ]
+        },
+        "Toggle": {
+            "type": "enum",
+            "items": [
+                "off",
+                "on"
+            ]
         }
-      }
     },
-    {
-      "name": "HV_CELL_VOLTAGE",
-      "topic": "DASnSTEERnCART",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Cell pack voltage statistics in V",
-      "interval": 10,
-      "contents": {
-        "max_cell_voltage": {
-          "type": "float32",
-          "range": [0, 5],
-          "force": "uint16"
+    "messages": [
+        {
+            "name": "HV_JMP_TO_BLT",
+            "fixed_id": 0,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
         },
-        "min_cell_voltage": {
-          "type": "float32",
-          "range": [0, 5],
-          "force": "uint16"
+        {
+            "name": "HV_FLASH_MAINBOARD_TX",
+            "fixed_id": 1,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
         },
-        "sum_cell_voltage": {
-          "type": "float32",
-          "range": [0, 460],
-          "force": "uint16"
+        {
+            "name": "HV_FLASH_MAINBOARD_RX",
+            "fixed_id": 2,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
         },
-        "avg_cell_voltage": {
-          "type": "float32",
-          "range": [0, 5],
-          "force": "uint16"
+        {
+            "name": "HV_FLASH_CELLBOARD_0_TX",
+            "fixed_id": 3,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_0_RX",
+            "fixed_id": 4,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_1_TX",
+            "fixed_id": 5,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_1_RX",
+            "fixed_id": 6,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_2_TX",
+            "fixed_id": 7,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_2_RX",
+            "fixed_id": 8,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_3_TX",
+            "fixed_id": 9,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_3_RX",
+            "fixed_id": 10,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_4_TX",
+            "fixed_id": 11,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_4_RX",
+            "fixed_id": 12,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_5_TX",
+            "fixed_id": 13,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "HV_FLASH_CELLBOARD_5_RX",
+            "fixed_id": 14,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "LV_JMP_TO_BLT",
+            "fixed_id": 15,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "LV_FLASH_BMS_TX",
+            "fixed_id": 16,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "LV_FLASH_BMS_RX",
+            "fixed_id": 17,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "ECU_JMP_TO_BLT",
+            "fixed_id": 18,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "ECU_FLASH_TX",
+            "fixed_id": 19,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "ECU_FLASH_RX",
+            "fixed_id": 20,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "STEERING_WHEEL_JMP_TO_BLT",
+            "fixed_id": 21,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "STEERING_WHEEL"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "STEERING_WHEEL_FLASH_TX",
+            "fixed_id": 22,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "STEERING_WHEEL"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "STEERING_WHEEL_FLASH_RX",
+            "fixed_id": 23,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "STEERING_WHEEL"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "STEERING_WHEEL_VERSION",
+            "fixed_id": 700,
+            "interval": 1000,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "TLM"
+            ],
+            "description": "Steering wheel version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "ECU_VERSION",
+            "fixed_id": 701,
+            "interval": 1000,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "description": "Ecu version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "LV_VERSION",
+            "fixed_id": 703,
+            "interval": 1000,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "TLM_VERSION",
+            "fixed_id": 704,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [],
+            "description": "Telemetry version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_MAINBOARD_VERSION",
+            "fixed_id": 702,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv mainboard version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_0_VERSION",
+            "fixed_id": 705,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 0 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_1_VERSION",
+            "fixed_id": 706,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 1 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_2_VERSION",
+            "fixed_id": 707,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 2 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_3_VERSION",
+            "fixed_id": 708,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 3 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_4_VERSION",
+            "fixed_id": 709,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 4 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_CELLBOARD_5_VERSION",
+            "fixed_id": 710,
+            "interval": 1000,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Hv cellboard number 5 version: build-time timestamp and canlib build-time timestamp",
+            "contents": {
+                "component_build_time": "uint32",
+                "canlib_build_time": "uint32"
+            }
+        },
+        {
+            "name": "HV_ERRORS",
+            "topic": "HYDRA",
+            "priority": 0,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "errors": "HvErrors"
+            }
+        },
+        {
+            "name": "HV_DEBUG_SIGNALS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 500,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "feedbacks": "HvFeedbacks",
+                "errors": "HvErrors"
+            }
+        },
+        {
+            "name": "HV_FANS_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_SET_FANS_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 200,
+            "sending": [
+                "ECU",
+                "HANDCART"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_TS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "ts_over_60v_status": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "airn_status": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "airp_status": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "airp_gate": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "airn_gate": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "precharge_status": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "tsp_over_60v_status": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_MISC_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "implausibility_detected": "float32",
+                "imd_cockpit": "float32",
+                "tsal_green_fault_latched": "float32",
+                "bms_cockpit": "float32",
+                "ext_latched": "float32",
+                "tsal_green": "float32",
+                "imd_fault": "float32",
+                "check_mux": "float32"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_SD_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "sd_end": "float32",
+                "sd_out": "float32",
+                "sd_in": "float32",
+                "sd_bms": "float32",
+                "sd_imd": "float32"
+            }
+        },
+        {
+            "name": "HV_IMD_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "imd_fault": "float32",
+                "imd_status": "float32",
+                "imd_details": "float32",
+                "imd_duty_cycle": "float32",
+                "imd_freq": "float32",
+                "imd_period": "float32"
+            }
+        },
+        {
+            "name": "HV_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Bms hv status",
+            "contents": {
+                "status": "HvStatus"
+            }
+        },
+        {
+            "name": "HV_SET_STATUS_ECU",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {
+                "hv_status_set": "HvStatus"
+            }
+        },
+        {
+            "name": "HV_SET_STATUS_HANDCART",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {
+                "hv_status_set": "HvStatus"
+            }
+        },
+        {
+            "name": "HV_BALANCING_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "cellboard_id": "HvCellboardId",
+                "balancing_status": "Toggle",
+                "errors": "HvCellsErrors",
+                "balancing_cells": "HvBalancingCells"
+            }
+        },
+        {
+            "name": "HV_SET_BALANCING_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "ECU",
+                "HANDCART"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "contents": {
+                "set_balancing_status": "Toggle",
+                "balancing_threshold": {
+                    "type": "uint16",
+                    "range": [
+                        5,
+                        200
+                    ]
+                }
+            }
+        },
+        {
+            "name": "LV_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "status": "LvStatus"
+            }
+        },
+        {
+            "name": "LV_RADIATOR_SPEED",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "contents": {
+                "radiator_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_PUMPS_SPEED",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "pumps_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_SET_RADIATOR_SPEED",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {
+                "radiator_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_SET_PUMPS_SPEED",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {
+                "pumps_speed": "float32"
+            }
+        },
+        {
+            "name": "LV_ERRORS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "errors": "LvErrors",
+                "health_signals": "LvHealthSignals"
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_TS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "bspd": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "imd": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "hvd": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "ams": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_SD_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "sd_end": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "lvms": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "interlock": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "sd_start": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_ECLOSURE_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "lv_encl": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "hv_encl_1": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "hv_encl_2": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "backplate": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "LV_FEEDBACK_GPIO_EXTENDER",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "feedback": "LvFeedbackGPIOExtender"
+            }
+        },
+        {
+            "name": "LV_CAN_FLASH_REQ",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "TLM",
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "LV_CAN_FLASH_ACK",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {}
+        },
+        {
+            "name": "LV_INVERTER_CONNECTION_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "LV_SET_INVERTER_CONNECTION_STATUS",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "TLM_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "TLM_SET_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "HANDCART_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [],
+            "contents": {
+                "connected": "Toggle"
+            }
+        },
+        {
+            "name": "HANDCART_SETTINGS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [],
+            "contents": {
+                "target_voltage": {
+                    "type": "float32",
+                    "range": [
+                        300,
+                        454
+                    ],
+                    "force": "uint8"
+                },
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint8"
+                },
+                "acc_charge_current": {
+                    "type": "float32",
+                    "range": [
+                        1,
+                        16
+                    ],
+                    "force": "uint8"
+                },
+                "grid_max_current": {
+                    "type": "float32",
+                    "range": [
+                        1,
+                        16
+                    ],
+                    "force": "uint8"
+                },
+                "status": "HandcartStatus"
+            }
+        },
+        {
+            "name": "HANDCART_SET_SETTINGS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "contents": {
+                "target_voltage": {
+                    "type": "float32",
+                    "range": [
+                        300,
+                        454
+                    ],
+                    "force": "uint8"
+                },
+                "fans_override": "Toggle",
+                "fans_speed": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint8"
+                },
+                "acc_charge_current": {
+                    "type": "float32",
+                    "range": [
+                        1,
+                        16
+                    ],
+                    "force": "uint8"
+                },
+                "grid_max_current": {
+                    "type": "float32",
+                    "range": [
+                        1,
+                        16
+                    ],
+                    "force": "uint8"
+                },
+                "status": "HandcartStatus"
+            }
+        },
+        {
+            "name": "ECU_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "EcuStatus"
+            }
+        },
+        {
+            "name": "ECU_SET_STATUS",
+            "topic": "HYDRA",
+            "priority": 0,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "status": "EcuStatus"
+            }
+        },
+        {
+            "name": "ECU_INVERTER_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 50,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "rl": "InvStatus",
+                "rr": "InvStatus"
+            }
+        },
+        {
+            "name": "ECU_CONTROL_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "control_enabled": "bool",
+                "control_errors": "EcuControlErrors"
+            }
+        },
+        {
+            "name": "ECU_ERRORS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "error": "EcuErrors"
+            }
+        },
+        {
+            "name": "ECU_FEEDBACKS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "feedbacks": "EcuFeedbacks"
+            }
+        },
+        {
+            "name": "ECU_POWER_MAPS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 200,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "map_pw": {
+                    "type": "float32",
+                    "range": [
+                        -0.5,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_sc": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_tv": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                }
+            }
+        },
+        {
+            "name": "ECU_SET_POWER_MAPS",
+            "topic": "HYDRA",
+            "priority": 0,
+            "interval": 200,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "map_pw": {
+                    "type": "float32",
+                    "range": [
+                        -0.5,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_sc": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_tv": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                }
+            }
+        },
+        {
+            "name": "ECU_PTT_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "ECU_SET_PTT_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 200,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "INV_L_REQUEST",
+            "fixed_id": 513,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [
+                "INVERTER_L"
+            ],
+            "interval": 10,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CONTROL_OUTPUT",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "description": "Torques and signals calculated by the controls algorithms",
+            "interval": 20,
+            "contents": {
+                "estimated_velocity": {
+                    "type": "float32",
+                    "range": [
+                        -10,
+                        35
+                    ],
+                    "force": "uint16"
+                },
+                "torque_max_l": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint8"
+                },
+                "torque_max_r": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint8"
+                },
+                "torque_l": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint16"
+                },
+                "torque_r": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "CONTROL_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "description": "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)",
+            "interval": 20,
+            "contents": {
+                "map_pw": {
+                    "type": "float32",
+                    "range": [
+                        -0.5,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_sc": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                },
+                "map_tv": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "precision": 0.01,
+                    "optimize": false
+                }
+            }
+        },
+        {
+            "name": "INV_R_REQUEST",
+            "fixed_id": 514,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [
+                "INVERTER_L"
+            ],
+            "interval": 10,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "INV_L_RESPONSE",
+            "fixed_id": 385,
+            "sending": [
+                "INVERTER_L"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "interval": 100,
+            "contents": {
+                "reg_id": "uint8",
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8"
+            }
+        },
+        {
+            "name": "INV_R_RESPONSE",
+            "fixed_id": 386,
+            "sending": [
+                "INVERTER_L"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "interval": 100,
+            "contents": {
+                "reg_id": "uint8",
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8"
+            }
+        },
+        {
+            "name": "LV_CURRENT_BATTERY",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "lv_current": {
+                    "type": "float32",
+                    "range": [
+                        -10,
+                        50
+                    ]
+                }
+            }
+        },
+        {
+            "name": "LV_CURRENT_CHARGER",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "charger_current": {
+                    "type": "float32",
+                    "range": [
+                        -10,
+                        50
+                    ]
+                }
+            }
+        },
+        {
+            "name": "LV_TOTAL_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "total": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        26
+                    ],
+                    "precision": 0.0001
+                }
+            }
+        },
+        {
+            "name": "LV_CELLS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "start_index": "uint8",
+                "voltage_0": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                },
+                "voltage_1": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                },
+                "voltage_2": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                }
+            }
+        },
+        {
+            "name": "LV_CELLS_VOLTAGE_STATS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "max": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                },
+                "min": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                },
+                "delta": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                },
+                "avg": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "LV_CELLS_TEMP",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "start_index": "uint8",
+                "temp_0": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "temp_1": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "temp_2": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                }
+            }
+        },
+        {
+            "name": "LV_CELLS_TEMP_STATS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "max": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "min": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "avg": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                }
+            }
+        },
+        {
+            "name": "HV_CURRENT",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "current": {
+                    "type": "float32",
+                    "range": [
+                        -200,
+                        200
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_POWER",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "power": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_ENERGY",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "energy": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        7000
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_SOC",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "soc": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        100
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "HV_TOTAL_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "pack": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        460
+                    ]
+                },
+                "sum_cell": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        460
+                    ]
+                },
+                "bus": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        460
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "start_index": "uint8",
+                "voltage_0": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                },
+                "voltage_1": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                },
+                "voltage_2": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0001
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_VOLTAGE_STATS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "max": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                },
+                "min": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                },
+                "sum": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        460
+                    ],
+                    "force": "uint16"
+                },
+                "avg": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_TEMP",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "start_index": "uint8",
+                "temp_0": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "force": "uint8"
+                },
+                "temp_1": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "force": "uint8"
+                },
+                "temp_2": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "force": "uint8"
+                },
+                "temp_3": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_TEMP_STATS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "max": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "min": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                },
+                "avg": {
+                    "type": "float32",
+                    "range": [
+                        -20,
+                        80
+                    ],
+                    "precision": 0.01
+                }
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_1",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 20,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "field_1": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_2": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_3": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_4": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
         }
-      }
-    },
-    {
-      "name": "HV_CURRENT",
-      "topic": "DASnSTEERnCART",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Current and power supplied by the pack, energy and state of charge of the pack",
-      "interval": 10,
-      "contents": {
-        "current": {
-          "type": "float32",
-          "range": [-200, 200],
-          "force": "uint16"
-        },
-        "power": {
-          "type": "float32",
-          "range": [0, 100],
-          "force": "uint16"
-        },
-        "energy": {
-          "type": "float32",
-          "range": [0, 7000],
-          "force": "uint16"
-        },
-        "soc": {
-          "type": "float32",
-          "range": [0, 100],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_TEMP",
-      "topic": "DASnSTEERnCART",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Cell temperatures",
-      "interval": 100,
-      "contents": {
-        "average_temp": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "max_temp": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "min_temp": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_ERRORS",
-      "topic": "DASnSTEERnCART",
-      "priority": 7,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Battery-related errors",
-      "interval": 10,
-      "contents": {
-        "warnings": "HvErrors",
-        "errors": "HvErrors"
-      }
-    },
-    {
-      "name": "HV_DEBUG_SIGNALS",
-      "topic": "DASnSTEERnCART",
-      "priority": 6,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "Bms Hv debug signals. It sends the error/feedback that sent the bms to safe mode (fatal error or idle)",
-      "interval": 200,
-      "contents": {
-        "debug_signals": "HvDebugSignals"
-      }
-    },
-    {
-      "name": "HV_FANS_OVERRIDE",
-      "topic": "BMS_HV",
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "override fans speed",
-      "contents": {
-        "fans_override": "Toggle",
-        "fans_speed": {
-          "type": "float32",
-          "range": [0, 1],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "HV_CAN_FORWARD_STATUS",
-      "topic": "HANDCART",
-      "priority": 7,
-      "sending": ["BMS_HV"],
-      "receiving": ["HANDCART"],
-      "description": "Status of can forwarding to internal bms network",
-      "contents": {
-        "can_forward_status": "Toggle"
-      }
-    },
-    {
-      "name": "HV_FANS_OVERRIDE_STATUS",
-      "topic": "HANDCART",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["HANDCART"],
-      "description": "Status of fans override",
-      "contents": {
-        "fans_override": "Toggle",
-        "fans_speed": {
-          "type": "float32",
-          "range": [0, 1],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "HV_FEEDBACK_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Status of the feedbacks",
-      "contents": {
-        "feedback_implausibility_detected": "HvFeedbackStatus",
-        "feedback_imd_cockpit": "HvFeedbackStatus",
-        "feedback_tsal_green_fault_latched": "HvFeedbackStatus",
-        "feedback_bms_cockpit": "HvFeedbackStatus",
-        "feedback_ext_latched": "HvFeedbackStatus",
-        "feedback_tsal_green": "HvFeedbackStatus",
-        "feedback_ts_over_60v_status": "HvFeedbackStatus",
-        "feedback_airn_status": "HvFeedbackStatus",
-        "feedback_airp_status": "HvFeedbackStatus",
-        "feedback_airp_gate": "HvFeedbackStatus",
-        "feedback_airn_gate": "HvFeedbackStatus",
-        "feedback_precharge_status": "HvFeedbackStatus",
-        "feedback_tsp_over_60v_status": "HvFeedbackStatus",
-        "feedback_imd_fault": "HvFeedbackStatus",
-        "feedback_check_mux": "HvFeedbackStatus",
-        "feedback_sd_end": "HvFeedbackStatus",
-        "feedback_sd_out": "HvFeedbackStatus",
-        "feedback_sd_in": "HvFeedbackStatus",
-        "feedback_sd_bms": "HvFeedbackStatus",
-        "feedback_sd_imd": "HvFeedbackStatus"
-      }
-    },
-    {
-      "name": "HV_FEEDBACK_TS_VOLTAGE",
-      "topic": "DASnSTEERnCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Voltage of the feedbacks",
-      "contents": {
-        "feedback_ts_over_60v_status": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_airn_status": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_airp_status": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_airp_gate": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_airn_gate": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_precharge_status": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_tsp_over_60v_status": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_FEEDBACK_MISC_VOLTAGE",
-      "topic": "DASnSTEERnCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Voltage of the feedbacks",
-      "contents": {
-        "feedback_implausibility_detected": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_imd_cockpit": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_tsal_green_fault_latched": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_bms_cockpit": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_ext_latched": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_tsal_green": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "imd_fault": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_check_mux": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_FEEDBACK_SD_VOLTAGE",
-      "topic": "DASnSTEERnCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Voltage of the feedbacks",
-      "contents": {
-        "feedback_sd_end": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_sd_out": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_sd_in": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_sd_bms": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        },
-        "feedback_sd_imd": {
-          "type": "float32",
-          "range": [0, 3.3],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_IMD_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Status of the IMD",
-      "contents": {
-        "imd_fault": "bool",
-        "imd_status": "ImdStatus",
-        "imd_details": "uint16",
-        "imd_duty_cycle": {
-          "type": "uint8",
-          "range": [0, 100]
-        },
-        "imd_freq": "uint8",
-        "imd_period": "uint8"
-      }
-    },
-    {
-      "name": "TS_STATUS",
-      "fixed_id": 84,
-      "priority": 7,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER", "HANDCART"],
-      "description": "BMS status",
-      "interval": 10,
-      "contents": {
-        "ts_status": "TsStatus"
-      }
-    },
-    {
-      "name": "SET_TS_STATUS_DAS",
-      "fixed_id": 82,
-      "priority": 7,
-      "sending": ["DAS"],
-      "receiving": ["BMS_HV"],
-      "description": "Requests a TS status; only once",
-      "interval": 100,
-      "contents": {
-        "ts_status_set": "Toggle"
-      }
-    },
-    {
-      "name": "SET_TS_STATUS_HANDCART",
-      "fixed_id": 83,
-      "priority": 7,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Requests a TS status; only once",
-      "interval": 100,
-      "contents": {
-        "ts_status_set": "Toggle"
-      }
-    },
-    {
-      "name": "STEER_STATUS",
-      "topic": "DAS",
-      "priority": 6,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Send update of the tuneable values from the steering wheel",
-      "interval": 100,
-      "contents": {
-        "map_pw": {
-          "type": "float32",
-          "range": [-0.5, 1],
-          "precision": 0.01,
-          "optimize": false
-        },
-        "map_sc": {
-          "type": "float32",
-          "range": [0, 1],
-          "precision": 0.01,
-          "optimize": false
-        },
-        "map_tv": {
-          "type": "float32",
-          "range": [0, 1],
-          "precision": 0.01,
-          "optimize": false
-        }
-      }
-    },
-    {
-      "name": "SET_CAR_STATUS",
-      "fixed_id": 80,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Ask to DAS to change car status; only once",
-      "contents": {
-        "car_status_set": "SetCarStatus"
-      }
-    },
-    {
-      "name": "SET_PEDAL_CALIBRATION",
-      "topic": "DAS",
-      "priority": 3,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Ask to calibrate pedals by specifying which pedal and if the value is the max or min",
-      "contents": {
-        "pedal": "Pedal",
-        "bound": "Bound"
-      }
-    },
-    {
-      "name": "PEDAL_CALIBRATION_ACK",
-      "topic": "STEER",
-      "priority": 3,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "Acknowledge the calibration of a pedal",
-      "contents": {
-        "pedal": "Pedal",
-        "bound": "Bound"
-      }
-    },
-    {
-      "name": "CAR_STATUS",
-      "fixed_id": 81,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "Car status, all states managed by the DAS will be send (car status, inverters status)",
-      "interval": 100,
-      "contents": {
-        "inverter_l": "InverterStatus",
-        "inverter_r": "InverterStatus",
-        "car_status": "CarStatus",
-        "controls": "ControlsState"
-      }
-    },
-    {
-      "name": "DAS_ERRORS",
-      "topic": "STEER",
-      "priority": 7,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "DAS errors messages",
-      "interval": 10,
-      "contents": {
-        "das_error": "DasErrors"
-      }
-    },
-    {
-      "name": "ECU_FEEDBACKS",
-      "topic": "TLM",
-      "priority": 4,
-      "sending": ["DAS"],
-      "receiving": ["TLM"],
-      "description": "Send feedbacks status",
-      "interval": 300,
-      "contents": {
-        "ecu_feedbacks": "ECUFeedbacks"
-      }
-    },
-    {
-      "name": "LV_STATUS",
-      "topic": "TLM",
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "TLM"],
-      "description": "BMS LV internal state",
-      "priority": 4,
-      "interval": 200,
-      "contents": {
-        "status": "BMSLVStatus"
-      }
-    },
-    {
-      "name": "LV_CURRENTS",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Currents of AS Battery system, LV Battery and Charger",
-      "interval": 300,
-      "contents": {
-        "current_as_battery": {
-          "type": "float32",
-          "range": [-10, 50],
-          "force": "uint16"
-        },
-        "current_lv_battery": {
-          "type": "float32",
-          "range": [-10, 50],
-          "force": "uint16"
-        },
-        "current_charger": {
-          "type": "float32",
-          "range": [-30, 30],
-          "force": "uint16"
-        }
-      }
-    },
-
-    {
-      "name": "LV_CELLS_VOLTAGE",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "LV Voltages for each cell",
-      "interval": 200,
-      "contents": {
-        "start_index": "uint8",
-        "voltage_0": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        },
-        "voltage_1": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        },
-        "voltage_2": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        }
-      }
-    },
-    {
-      "name": "LV_TOTAL_VOLTAGE",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Voltage of LV battery pack",
-      "interval": 200,
-      "contents": {
-        "total_voltage": {
-          "type": "float32",
-          "range": [0, 26],
-          "precision": 0.0001
-        }
-      }
-    },
-    {
-      "name": "LV_CELLS_TEMP",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Temperature °C for each cell",
-      "interval": 200,
-      "contents": {
-        "start_index": "uint8",
-        "temp_0": {
-          "type": "float32",
-          "range": [-20, 80],
-          "precision": 0.01
-        },
-        "temp_1": {
-          "type": "float32",
-          "range": [-20, 80],
-          "precision": 0.01
-        },
-        "temp_2": {
-          "type": "float32",
-          "range": [-20, 80],
-          "precision": 0.01
-        }
-      }
-    },
-    {
-      "name": "COOLING_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 4,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Percentage value from 0% to 100% of radiator fans and pumps speed, 8bit",
-      "interval": 1000,
-      "contents": {
-        "radiators_speed": {
-          "type": "float32",
-          "range": [-1, 1],
-          "force": "uint16"
-        },
-        "pumps_speed": {
-          "type": "float32",
-          "range": [-1, 1],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "SET_RADIATOR_SPEED",
-      "topic": "LV",
-      "priority": 4,
-      "sending": ["STEER"],
-      "receiving": ["BMS_LV"],
-      "description": "Set both radiators speed",
-      "contents": {
-        "radiators_speed": {
-          "type": "float32",
-          "range": [-1, 1],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "SET_PUMPS_SPEED",
-      "topic": "LV",
-      "priority": 4,
-      "sending": ["STEER"],
-      "receiving": ["BMS_LV"],
-      "description": "Set both pumps speed",
-      "contents": {
-        "pumps_speed": {
-          "type": "float32",
-          "range": [-1, 1],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "SET_INVERTER_CONNECTION_STATUS",
-      "topic": "LV",
-      "priority": 6,
-      "interval": 100,
-      "sending": ["DAS"],
-      "receiving": ["BMS_LV"],
-      "description": "Set the status of the inverter inputs RFE and RUN",
-      "contents": {
-        "status": "Toggle"
-      }
-    },
-    {
-      "name": "INVERTER_CONNECTION_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 6,
-      "interval": 300,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Inverter status",
-      "contents": {
-        "status": "Toggle"
-      }
-    },
-    {
-      "name": "LV_ERRORS",
-      "topic": "DASnSTEER",
-      "priority": 5,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER", "TLM"],
-      "description": "LV Battery-related errors",
-      "interval": 300,
-      "contents": {
-        "warnings": "LvErrors",
-        "errors": "LvErrors"
-      }
-    },
-    {
-      "name": "LV_HEALTH_SIGNALS",
-      "topic": "DASnSTEER",
-      "priority": 6,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER", "TLM"],
-      "description": "LV Battery health signals",
-      "interval": 300,
-      "contents": {
-        "health_signals": "LvHealthSignals",
-        "health_code": "uint8"
-      }
-    },
-    {
-      "name": "LV_FEEDBACKS",
-      "topic": "DASnSTEER",
-      "priority": 6,
-      "sending": ["BMS_LV"],
-      "receiving": ["DAS", "STEER", "TLM"],
-      "description": "LV Battery-related errors",
-      "interval": 300,
-      "contents": {
-        "feedbacks": "LvFeedbacks",
-        "sd_start": {
-          "type": "float32",
-          "range": [0, 12],
-          "precision": 0.01
-        },
-        "sd_end": {
-          "type": "float32",
-          "range": [0, 12],
-          "precision": 0.01
-        }
-      }
-    },
-    {
-      "name": "SHUTDOWN_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 6,
-      "interval": 500,
-      "sending": ["BMS_HV"],
-      "receiving": ["DAS", "STEER"],
-      "description": "Shutdown status",
-      "contents": {
-        "input": "bool",
-        "output": "bool"
-      }
-    },
-    {
-      "name": "LV_CAN_FLASH_REQ",
-      "topic": "TLM",
-      "priority": 0,
-      "sending": ["TLM"],
-      "receiving": ["BMS_LV"],
-      "description": "Request to flash the LV BMS via CAN",
-      "contents": {}
-    },
-    {
-      "name": "LV_CAN_FLASH_ACK",
-      "topic": "TLM",
-      "priority": 0,
-      "interval": 50,
-      "sending": ["BMS_LV"],
-      "receiving": ["TLM"],
-      "description": "Acknowledge to flash the LV BMS via CAN",
-      "contents": {
-        "response": "CanFlashStatus"
-      }
-    },
-    {
-      "name": "MARKER",
-      "topic": "TLM",
-      "priority": 7,
-      "sending": ["STEER"],
-      "receiving": ["TLM"],
-      "description": "Send a marker to telemetry",
-      "contents": {}
-    },
-    {
-      "name": "HV_CELLS_VOLTAGE",
-      "topic": "HANDCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["HANDCART"],
-      "description": "Voltages for each cell",
-      "interval": 100,
-      "contents": {
-        "start_index": "uint8",
-        "voltage_0": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        },
-        "voltage_1": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        },
-        "voltage_2": {
-          "type": "float32",
-          "range": [0, 5],
-          "precision": 0.0001
-        }
-      }
-    },
-    {
-      "name": "HV_CELLS_TEMP",
-      "topic": "HANDCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["HANDCART", "TLM"],
-      "description": "Cell temperatures",
-      "interval": 100,
-      "contents": {
-        "start_index": "uint8",
-        "temp_0": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "temp_1": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "temp_2": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        },
-        "temp_3": {
-          "type": "float32",
-          "range": [-20, 80],
-          "force": "uint8"
-        }
-      }
-    },
-    {
-      "name": "HV_CELL_BALANCING_STATUS",
-      "topic": "HANDCART",
-      "priority": 5,
-      "sending": ["BMS_HV"],
-      "receiving": ["HANDCART"],
-      "description": "Cell balancing status",
-      "interval": 500,
-      "contents": {
-        "cellboard_id": "Cellboard",
-        "balancing_status": "Toggle",
-        "errors": "HvCellsErrors",
-        "balancing_cells": "HvBalancingCells"
-      }
-    },
-    {
-      "name": "SET_CELL_BALANCING_STATUS",
-      "topic": "BMS_HV",
-      "priority": 5,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Set cell balancing status and threshold in mV; only once",
-      "contents": {
-        "set_balancing_status": "Toggle",
-        "balancing_threshold": {
-          "type": "uint16",
-          "range": [5, 200]
-        }
-      }
-    },
-    {
-      "name": "SPEED",
-      "topic": "STEER",
-      "priority": 5,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "Encoder and inverter speed in rad/sec",
-      "interval": 10,
-      "contents": {
-        "encoder_r": {
-          "type": "float32",
-          "force": "uint16",
-          "range": [-200, 200]
-        },
-        "encoder_l": {
-          "type": "float32",
-          "force": "uint16",
-          "range": [-200, 200]
-        },
-        "inverter_r": {
-          "type": "float32",
-          "force": "uint16",
-          "range": [-200, 200]
-        },
-        "inverter_l": {
-          "type": "float32",
-          "force": "uint16",
-          "range": [-200, 200]
-        }
-      }
-    },
-    {
-      "name": "INV_L_REQUEST",
-      "fixed_id": 513,
-      "sending": ["DAS"],
-      "receiving": ["INVERTER_L"],
-      "interval": 10,
-      "contents": {
-        "data_0": "uint8",
-        "data_1": "uint8",
-        "data_2": "uint8",
-        "data_3": "uint8",
-        "data_4": "uint8",
-        "data_5": "uint8",
-        "data_6": "uint8",
-        "data_7": "uint8"
-      }
-    },
-    {
-      "name": "INV_R_REQUEST",
-      "fixed_id": 514,
-      "sending": ["DAS"],
-      "receiving": ["INVERTER_L"],
-      "interval": 10,
-      "contents": {
-        "data_0": "uint8",
-        "data_1": "uint8",
-        "data_2": "uint8",
-        "data_3": "uint8",
-        "data_4": "uint8",
-        "data_5": "uint8",
-        "data_6": "uint8",
-        "data_7": "uint8"
-      }
-    },
-    {
-      "name": "INV_L_RESPONSE",
-      "fixed_id": 385,
-      "sending": ["INVERTER_L"],
-      "receiving": ["DAS"],
-      "interval": 100,
-      "contents": {
-        "reg_id": "uint8",
-        "data_0": "uint8",
-        "data_1": "uint8",
-        "data_2": "uint8",
-        "data_3": "uint8",
-        "data_4": "uint8",
-        "data_5": "uint8",
-        "data_6": "uint8"
-      }
-    },
-    {
-      "name": "INV_R_RESPONSE",
-      "fixed_id": 386,
-      "sending": ["INVERTER_L"],
-      "receiving": ["DAS"],
-      "interval": 100,
-      "contents": {
-        "reg_id": "uint8",
-        "data_0": "uint8",
-        "data_1": "uint8",
-        "data_2": "uint8",
-        "data_3": "uint8",
-        "data_4": "uint8",
-        "data_5": "uint8",
-        "data_6": "uint8"
-      }
-    },
-    {
-      "name": "CONTROL_OUTPUT",
-      "topic": "STEER",
-      "priority": 6,
-      "interval": 100,
-      "sending": ["DAS"],
-      "receiving": ["STEER", "TLM"],
-      "description": "Control output, N*m",
-      "contents": {
-        "estimated_velocity": {
-          "type": "float32",
-          "range": [-10, 50],
-          "force": "uint16"
-        },
-        "tmax_r": {
-          "type": "float32",
-          "range": [0, 80],
-          "force": "uint8"
-        },
-        "tmax_l": {
-          "type": "float32",
-          "range": [0, 80],
-          "force": "uint8"
-        },
-        "torque_l": {
-          "type": "float32",
-          "range": [0, 80],
-          "force": "uint16"
-        },
-        "torque_r": {
-          "type": "float32",
-          "range": [0, 80],
-          "force": "uint16"
-        }
-      }
-    },
-    {
-      "name": "LC_RESET",
-      "topic": "LAPCOUNTER",
-      "priority": 5,
-      "sending": ["STEER"],
-      "receiving": ["TLM"],
-      "contents": {}
-    },
-    {
-      "name": "HANDCART_STATUS",
-      "topic": "BMS_HV",
-      "priority": 4,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Sends updates on the presence of the handcart",
-      "interval": 500,
-      "contents": {
-        "connected": "bool"
-      }
-    },
-    {
-      "name": "HANDCART_SETTINGS",
-      "topic": "BMS_HV",
-      "priority": 4,
-      "sending": ["HANDCART"],
-      "receiving": ["BMS_HV"],
-      "description": "Setting from handcart to CAN",
-      "interval": 500,
-      "contents": {
-        "target_voltage": {
-          "type": "float32",
-          "range": [300, 454],
-          "force": "uint8"
-        },
-        "fans_override": "Toggle",
-        "fans_speed": {
-          "type": "float32",
-          "range": [0, 1],
-          "force": "uint8"
-        },
-        "acc_charge_current": {
-          "type": "float32",
-          "range": [1, 16],
-          "force": "uint8"
-        },
-        "grid_max_current": {
-          "type": "float32",
-          "range": [1, 16],
-          "force": "uint8"
-        },
-        "status": "HandcartStatus"
-      }
-    },
-    {
-      "name": "HANDCART_SETTINGS_SET",
-      "topic": "BMS_HV",
-      "priority": 4,
-      "sending": ["TLM"],
-      "receiving": ["HANDCART"],
-      "description": "Setting from telemetry to handcart",
-      "interval": 500,
-      "contents": {
-        "target_voltage": {
-          "type": "float32",
-          "range": [300, 454],
-          "force": "uint8"
-        },
-        "fans_override": "Toggle",
-        "fans_speed": {
-          "type": "float32",
-          "range": [0, 1],
-          "force": "uint8"
-        },
-        "acc_charge_current": {
-          "type": "float32",
-          "range": [1, 16],
-          "force": "uint8"
-        },
-        "grid_max_current": {
-          "type": "float32",
-          "range": [1, 16],
-          "force": "uint8"
-        },
-        "status": "HandcartStatus"
-      }
-    },
-    {
-      "name": "SET_PTT_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 5,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "PTT activation/deactivation status set",
-      "contents": {
-        "status": "Toggle"
-      }
-    },
-    {
-      "name": "PTT_STATUS",
-      "topic": "DASnSTEER",
-      "priority": 5,
-      "sending": ["DAS"],
-      "receiving": ["STEER"],
-      "description": "PTT activation/deactivation status",
-      "contents": {
-        "status": "Toggle"
-      }
-    },
-    {
-      "name": "REGEN_MANUAL_COMMAND",
-      "topic": "DASnSTEER",
-      "priority": 3,
-      "interval": 100,
-      "sending": ["STEER"],
-      "receiving": ["DAS"],
-      "description": "Command for manual regen activation",
-      "contents": {
-        "status": "Toggle",
-        "target": {
-          "type": "float32",
-          "range": [0, 100],
-          "precision": 0.01
-        }
-      }
-    }
-  ]
+    ]
 }

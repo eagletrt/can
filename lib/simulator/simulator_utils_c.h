@@ -15,68 +15,71 @@ extern "C" {
 /* START */
 #define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
-#define IMU_ANGULAR_RATE_ANG_RATE_X "imu_angular_rate_ang_rate_x"
-#define IMU_ANGULAR_RATE_ANG_RATE_Y "imu_angular_rate_ang_rate_y"
-#define IMU_ANGULAR_RATE_ANG_RATE_Z "imu_angular_rate_ang_rate_z"
+#define IMU_ANGULAR_RATE_X "imu_angular_rate_x"
+#define IMU_ANGULAR_RATE_Y "imu_angular_rate_y"
+#define IMU_ANGULAR_RATE_Z "imu_angular_rate_z"
 /* END */
 
 /* START */
 #define IMU_ACCELERATION "IMU_ACCELERATION"
 
-#define IMU_ACCELERATION_ACCEL_X "imu_acceleration_accel_x"
-#define IMU_ACCELERATION_ACCEL_Y "imu_acceleration_accel_y"
-#define IMU_ACCELERATION_ACCEL_Z "imu_acceleration_accel_z"
-#define IMU_ACCELERATION_TEMPERATURE "imu_acceleration_temperature"
+#define IMU_ACCELERATION_X "imu_acceleration_x"
+#define IMU_ACCELERATION_Y "imu_acceleration_y"
+#define IMU_ACCELERATION_Z "imu_acceleration_z"
+#define IMU_ACCELERATION_IMU_TEMPERATURE "imu_acceleration_imu_temperature"
 /* END */
 
 /* START */
-#define PEDALS_OUTPUT "PEDALS_OUTPUT"
+#define PEDAL_THROTTLE "PEDAL_THROTTLE"
 
-#define PEDALS_OUTPUT_APPS "pedals_output_apps"
-#define PEDALS_OUTPUT_BSE_FRONT "pedals_output_bse_front"
-#define PEDALS_OUTPUT_BSE_REAR "pedals_output_bse_rear"
+#define PEDAL_THROTTLE_THROTTLE "pedal_throttle_throttle"
 /* END */
 
 /* START */
-#define STEERING_ANGLE "STEERING_ANGLE"
+#define PEDAL_BRAKES_PRESSURE "PEDAL_BRAKES_PRESSURE"
 
-#define STEERING_ANGLE_ANGLE "steering_angle_angle"
+#define PEDAL_BRAKES_PRESSURE_FRONT "pedal_brakes_pressure_front"
+#define PEDAL_BRAKES_PRESSURE_REAR "pedal_brakes_pressure_rear"
 /* END */
 
 /* START */
-#define CONTROL_STATE "CONTROL_STATE"
+#define STEER_ANGLE "STEER_ANGLE"
 
-#define CONTROL_STATE_MAP_PW "control_state_map_pw"
-#define CONTROL_STATE_MAP_SC "control_state_map_sc"
-#define CONTROL_STATE_MAP_TV "control_state_map_tv"
+#define STEER_ANGLE_ANGLE "steer_angle_angle"
 /* END */
 
 /* START */
 #define CONTROL_OUTPUT "CONTROL_OUTPUT"
 
 #define CONTROL_OUTPUT_ESTIMATED_VELOCITY "control_output_estimated_velocity"
-#define CONTROL_OUTPUT_TMAX_R "control_output_tmax_r"
-#define CONTROL_OUTPUT_TMAX_L "control_output_tmax_l"
+#define CONTROL_OUTPUT_TORQUE_MAX_L "control_output_torque_max_l"
+#define CONTROL_OUTPUT_TORQUE_MAX_R "control_output_torque_max_r"
 #define CONTROL_OUTPUT_TORQUE_L "control_output_torque_l"
 #define CONTROL_OUTPUT_TORQUE_R "control_output_torque_r"
 /* END */
 
 /* START */
-#define SPEED "SPEED"
+#define CONTROL_STATUS "CONTROL_STATUS"
 
-#define SPEED_ENCODER_L "speed_encoder_l"
-#define SPEED_ENCODER_R "speed_encoder_r"
-#define SPEED_INVERTER_L "speed_inverter_l"
-#define SPEED_INVERTER_R "speed_inverter_r"
+#define CONTROL_STATUS_MAP_PW "control_status_map_pw"
+#define CONTROL_STATUS_MAP_SC "control_status_map_sc"
+#define CONTROL_STATUS_MAP_TV "control_status_map_tv"
 /* END */
 
 /* START */
-#define DEBUG_SIGNAL "DEBUG_SIGNAL"
+#define SPEED "SPEED"
 
-#define DEBUG_SIGNAL_FIELD_1 "debug_signal_field_1"
-#define DEBUG_SIGNAL_FIELD_2 "debug_signal_field_2"
-#define DEBUG_SIGNAL_FIELD_3 "debug_signal_field_3"
-#define DEBUG_SIGNAL_FIELD_4 "debug_signal_field_4"
+#define SPEED_FL "speed_fl"
+#define SPEED_FR "speed_fr"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
+
+#define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
+#define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
+#define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
+#define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
 /* END */
 
 enum simulator_types_id{

@@ -3,7 +3,7 @@
 
 int bms_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 259: return BMS_INTERVAL_CELLBOARD_VERSION;
+       case 1539: return BMS_INTERVAL_CELLBOARD_VERSION;
 
     }
     return -1;
@@ -11,12 +11,12 @@ int bms_watchdog_interval_from_id(uint16_t message_id) {
 
 int bms_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1537: return BMS_INDEX_BOARD_STATUS;
+       case 1025: return BMS_INDEX_BOARD_STATUS;
        case 514: return BMS_INDEX_TEMPERATURES_INFO;
-       case 1282: return BMS_INDEX_TEMPERATURES;
+       case 1538: return BMS_INDEX_TEMPERATURES;
        case 516: return BMS_INDEX_VOLTAGES_INFO;
-       case 548: return BMS_INDEX_VOLTAGES;
-       case 512: return BMS_INDEX_SET_BALANCING_STATUS;
+       case 1540: return BMS_INDEX_VOLTAGES;
+       case 16: return BMS_INDEX_SET_BALANCING_STATUS;
        case 0: return BMS_INDEX_JMP_TO_BLT;
        case 4: return BMS_INDEX_FLASH_CELLBOARD_0_TX;
        case 5: return BMS_INDEX_FLASH_CELLBOARD_0_RX;
@@ -30,7 +30,7 @@ int bms_watchdog_index_from_id(uint16_t message_id) {
        case 13: return BMS_INDEX_FLASH_CELLBOARD_4_RX;
        case 14: return BMS_INDEX_FLASH_CELLBOARD_5_TX;
        case 15: return BMS_INDEX_FLASH_CELLBOARD_5_RX;
-       case 259: return BMS_INDEX_CELLBOARD_VERSION;
+       case 1539: return BMS_INDEX_CELLBOARD_VERSION;
 
     }
     return -1;

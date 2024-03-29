@@ -2,284 +2,168 @@ syntax = "proto3";
 package primary;
 
 
-enum primary_hv_can_forward_can_forward_set {
-	primary_hv_can_forward_can_forward_set_OFF = 0;
-	primary_hv_can_forward_can_forward_set_ON = 1;
+enum primary_hv_fans_status_fans_override {
+	primary_hv_fans_status_fans_override_off = 0;
+	primary_hv_fans_status_fans_override_on = 1;
 }
-enum primary_cellboard_version_cellboard_id {
-	primary_cellboard_version_cellboard_id_CELLBOARD_0 = 0;
-	primary_cellboard_version_cellboard_id_CELLBOARD_1 = 1;
-	primary_cellboard_version_cellboard_id_CELLBOARD_2 = 2;
-	primary_cellboard_version_cellboard_id_CELLBOARD_3 = 3;
-	primary_cellboard_version_cellboard_id_CELLBOARD_4 = 4;
-	primary_cellboard_version_cellboard_id_CELLBOARD_5 = 5;
+enum primary_hv_set_fans_status_handcart_fans_override {
+	primary_hv_set_fans_status_handcart_fans_override_off = 0;
+	primary_hv_set_fans_status_handcart_fans_override_on = 1;
 }
-enum primary_set_tlm_status_tlm_status {
-	primary_set_tlm_status_tlm_status_OFF = 0;
-	primary_set_tlm_status_tlm_status_ON = 1;
+enum primary_hv_feedback_status_fans_override {
+	primary_hv_feedback_status_fans_override_off = 0;
+	primary_hv_feedback_status_fans_override_on = 1;
 }
-enum primary_tlm_status_tlm_status {
-	primary_tlm_status_tlm_status_OFF = 0;
-	primary_tlm_status_tlm_status_ON = 1;
+enum primary_hv_status_status {
+	primary_hv_status_status_init = 0;
+	primary_hv_status_status_idle = 1;
+	primary_hv_status_status_airn_close = 2;
+	primary_hv_status_status_precharge = 3;
+	primary_hv_status_status_airp_close = 4;
+	primary_hv_status_status_ts_on = 5;
+	primary_hv_status_status_fatal_error = 6;
 }
-enum primary_hv_fans_override_fans_override {
-	primary_hv_fans_override_fans_override_OFF = 0;
-	primary_hv_fans_override_fans_override_ON = 1;
+enum primary_hv_set_status_ecu_hv_status_set {
+	primary_hv_set_status_ecu_hv_status_set_init = 0;
+	primary_hv_set_status_ecu_hv_status_set_idle = 1;
+	primary_hv_set_status_ecu_hv_status_set_airn_close = 2;
+	primary_hv_set_status_ecu_hv_status_set_precharge = 3;
+	primary_hv_set_status_ecu_hv_status_set_airp_close = 4;
+	primary_hv_set_status_ecu_hv_status_set_ts_on = 5;
+	primary_hv_set_status_ecu_hv_status_set_fatal_error = 6;
 }
-enum primary_hv_can_forward_status_can_forward_status {
-	primary_hv_can_forward_status_can_forward_status_OFF = 0;
-	primary_hv_can_forward_status_can_forward_status_ON = 1;
+enum primary_hv_set_status_handcart_hv_status_set {
+	primary_hv_set_status_handcart_hv_status_set_init = 0;
+	primary_hv_set_status_handcart_hv_status_set_idle = 1;
+	primary_hv_set_status_handcart_hv_status_set_airn_close = 2;
+	primary_hv_set_status_handcart_hv_status_set_precharge = 3;
+	primary_hv_set_status_handcart_hv_status_set_airp_close = 4;
+	primary_hv_set_status_handcart_hv_status_set_ts_on = 5;
+	primary_hv_set_status_handcart_hv_status_set_fatal_error = 6;
 }
-enum primary_hv_fans_override_status_fans_override {
-	primary_hv_fans_override_status_fans_override_OFF = 0;
-	primary_hv_fans_override_status_fans_override_ON = 1;
+enum primary_hv_balancing_status_cellboard_id {
+	primary_hv_balancing_status_cellboard_id_cellboard_0 = 0;
+	primary_hv_balancing_status_cellboard_id_cellboard_1 = 1;
+	primary_hv_balancing_status_cellboard_id_cellboard_2 = 2;
+	primary_hv_balancing_status_cellboard_id_cellboard_3 = 3;
+	primary_hv_balancing_status_cellboard_id_cellboard_4 = 4;
+	primary_hv_balancing_status_cellboard_id_cellboard_5 = 5;
 }
-enum primary_hv_feedback_status_feedback_implausibility_detected {
-	primary_hv_feedback_status_feedback_implausibility_detected_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_implausibility_detected_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_implausibility_detected_FEEDBACK_STATE_HIGH = 2;
+enum primary_hv_balancing_status_balancing_status {
+	primary_hv_balancing_status_balancing_status_off = 0;
+	primary_hv_balancing_status_balancing_status_on = 1;
 }
-enum primary_hv_feedback_status_feedback_imd_cockpit {
-	primary_hv_feedback_status_feedback_imd_cockpit_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_imd_cockpit_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_imd_cockpit_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_tsal_green_fault_latched {
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_bms_cockpit {
-	primary_hv_feedback_status_feedback_bms_cockpit_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_bms_cockpit_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_bms_cockpit_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_ext_latched {
-	primary_hv_feedback_status_feedback_ext_latched_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_ext_latched_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_ext_latched_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_tsal_green {
-	primary_hv_feedback_status_feedback_tsal_green_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_tsal_green_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_tsal_green_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_ts_over_60v_status {
-	primary_hv_feedback_status_feedback_ts_over_60v_status_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_ts_over_60v_status_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_ts_over_60v_status_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_airn_status {
-	primary_hv_feedback_status_feedback_airn_status_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_airn_status_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_airn_status_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_airp_status {
-	primary_hv_feedback_status_feedback_airp_status_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_airp_status_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_airp_status_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_airp_gate {
-	primary_hv_feedback_status_feedback_airp_gate_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_airp_gate_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_airp_gate_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_airn_gate {
-	primary_hv_feedback_status_feedback_airn_gate_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_airn_gate_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_airn_gate_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_precharge_status {
-	primary_hv_feedback_status_feedback_precharge_status_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_precharge_status_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_precharge_status_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_tsp_over_60v_status {
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_imd_fault {
-	primary_hv_feedback_status_feedback_imd_fault_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_imd_fault_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_imd_fault_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_check_mux {
-	primary_hv_feedback_status_feedback_check_mux_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_check_mux_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_check_mux_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_end {
-	primary_hv_feedback_status_feedback_sd_end_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_sd_end_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_sd_end_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_out {
-	primary_hv_feedback_status_feedback_sd_out_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_sd_out_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_sd_out_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_in {
-	primary_hv_feedback_status_feedback_sd_in_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_sd_in_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_sd_in_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_bms {
-	primary_hv_feedback_status_feedback_sd_bms_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_sd_bms_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_sd_bms_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_imd {
-	primary_hv_feedback_status_feedback_sd_imd_FEEDBACK_STATE_LOW = 0;
-	primary_hv_feedback_status_feedback_sd_imd_FEEDBACK_STATE_ERROR = 1;
-	primary_hv_feedback_status_feedback_sd_imd_FEEDBACK_STATE_HIGH = 2;
-}
-enum primary_hv_imd_status_imd_status {
-	primary_hv_imd_status_imd_status_IMD_SC = 0;
-	primary_hv_imd_status_imd_status_IMD_NORMAL = 1;
-	primary_hv_imd_status_imd_status_IMD_UNDER_VOLTAGE = 2;
-	primary_hv_imd_status_imd_status_IMD_START_MEASURE = 3;
-	primary_hv_imd_status_imd_status_IMD_DEVICE_ERROR = 4;
-	primary_hv_imd_status_imd_status_IMD_EARTH_FAULT = 5;
-}
-enum primary_ts_status_ts_status {
-	primary_ts_status_ts_status_INIT = 0;
-	primary_ts_status_ts_status_IDLE = 1;
-	primary_ts_status_ts_status_AIRN_CLOSE = 2;
-	primary_ts_status_ts_status_PRECHARGE = 3;
-	primary_ts_status_ts_status_AIRP_CLOSE = 4;
-	primary_ts_status_ts_status_TS_ON = 5;
-	primary_ts_status_ts_status_FATAL_ERROR = 6;
-}
-enum primary_set_ts_status_das_ts_status_set {
-	primary_set_ts_status_das_ts_status_set_OFF = 0;
-	primary_set_ts_status_das_ts_status_set_ON = 1;
-}
-enum primary_set_ts_status_handcart_ts_status_set {
-	primary_set_ts_status_handcart_ts_status_set_OFF = 0;
-	primary_set_ts_status_handcart_ts_status_set_ON = 1;
-}
-enum primary_set_car_status_car_status_set {
-	primary_set_car_status_car_status_set_IDLE = 0;
-	primary_set_car_status_car_status_set_READY = 1;
-	primary_set_car_status_car_status_set_DRIVE = 2;
-}
-enum primary_set_pedal_calibration_pedal {
-	primary_set_pedal_calibration_pedal_ACCELERATOR = 0;
-	primary_set_pedal_calibration_pedal_BRAKE = 1;
-}
-enum primary_set_pedal_calibration_bound {
-	primary_set_pedal_calibration_bound_SET_MAX = 0;
-	primary_set_pedal_calibration_bound_SET_MIN = 1;
-}
-enum primary_pedal_calibration_ack_pedal {
-	primary_pedal_calibration_ack_pedal_ACCELERATOR = 0;
-	primary_pedal_calibration_ack_pedal_BRAKE = 1;
-}
-enum primary_pedal_calibration_ack_bound {
-	primary_pedal_calibration_ack_bound_SET_MAX = 0;
-	primary_pedal_calibration_ack_bound_SET_MIN = 1;
-}
-enum primary_car_status_inverter_l {
-	primary_car_status_inverter_l_OFF = 0;
-	primary_car_status_inverter_l_IDLE = 1;
-	primary_car_status_inverter_l_ON = 2;
-}
-enum primary_car_status_inverter_r {
-	primary_car_status_inverter_r_OFF = 0;
-	primary_car_status_inverter_r_IDLE = 1;
-	primary_car_status_inverter_r_ON = 2;
-}
-enum primary_car_status_car_status {
-	primary_car_status_car_status_INIT = 0;
-	primary_car_status_car_status_ENABLE_INV_UPDATES = 1;
-	primary_car_status_car_status_CHECK_INV_SETTINGS = 2;
-	primary_car_status_car_status_IDLE = 3;
-	primary_car_status_car_status_START_TS_PRECHARGE = 4;
-	primary_car_status_car_status_WAIT_TS_PRECHARGE = 5;
-	primary_car_status_car_status_WAIT_DRIVER = 6;
-	primary_car_status_car_status_ENABLE_INV_DRIVE = 7;
-	primary_car_status_car_status_DRIVE = 8;
-	primary_car_status_car_status_DISABLE_INV_DRIVE = 9;
-	primary_car_status_car_status_START_TS_DISCHARGE = 10;
-	primary_car_status_car_status_WAIT_TS_DISCHARGE = 11;
-	primary_car_status_car_status_FATAL_ERROR = 12;
+enum primary_hv_set_balancing_status_handcart_set_balancing_status {
+	primary_hv_set_balancing_status_handcart_set_balancing_status_off = 0;
+	primary_hv_set_balancing_status_handcart_set_balancing_status_on = 1;
 }
 enum primary_lv_status_status {
-	primary_lv_status_status_INIT = 0;
-	primary_lv_status_status_RUN = 1;
-	primary_lv_status_status_ERROR = 2;
+	primary_lv_status_status_init = 0;
+	primary_lv_status_status_idle = 1;
+	primary_lv_status_status_tson = 2;
+	primary_lv_status_status_run = 3;
+	primary_lv_status_status_flashing = 4;
+	primary_lv_status_status_error = 5;
 }
-enum primary_set_inverter_connection_status_status {
-	primary_set_inverter_connection_status_status_OFF = 0;
-	primary_set_inverter_connection_status_status_ON = 1;
+enum primary_lv_inverter_connection_status_status {
+	primary_lv_inverter_connection_status_status_off = 0;
+	primary_lv_inverter_connection_status_status_on = 1;
 }
-enum primary_inverter_connection_status_status {
-	primary_inverter_connection_status_status_OFF = 0;
-	primary_inverter_connection_status_status_ON = 1;
+enum primary_lv_set_inverter_connection_status_status {
+	primary_lv_set_inverter_connection_status_status_off = 0;
+	primary_lv_set_inverter_connection_status_status_on = 1;
 }
-enum primary_lv_can_flash_ack_response {
-	primary_lv_can_flash_ack_response_NO_FLASH = 0;
-	primary_lv_can_flash_ack_response_FLASH = 1;
-	primary_lv_can_flash_ack_response_PREPARING_TO_FLASH = 2;
+enum primary_tlm_status_status {
+	primary_tlm_status_status_off = 0;
+	primary_tlm_status_status_on = 1;
 }
-enum primary_hv_cell_balancing_status_cellboard_id {
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_0 = 0;
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_1 = 1;
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_2 = 2;
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_3 = 3;
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_4 = 4;
-	primary_hv_cell_balancing_status_cellboard_id_CELLBOARD_5 = 5;
+enum primary_tlm_set_status_status {
+	primary_tlm_set_status_status_off = 0;
+	primary_tlm_set_status_status_on = 1;
 }
-enum primary_hv_cell_balancing_status_balancing_status {
-	primary_hv_cell_balancing_status_balancing_status_OFF = 0;
-	primary_hv_cell_balancing_status_balancing_status_ON = 1;
-}
-enum primary_set_cell_balancing_status_set_balancing_status {
-	primary_set_cell_balancing_status_set_balancing_status_OFF = 0;
-	primary_set_cell_balancing_status_set_balancing_status_ON = 1;
+enum primary_handcart_status_connected {
+	primary_handcart_status_connected_off = 0;
+	primary_handcart_status_connected_on = 1;
 }
 enum primary_handcart_settings_fans_override {
-	primary_handcart_settings_fans_override_OFF = 0;
-	primary_handcart_settings_fans_override_ON = 1;
+	primary_handcart_settings_fans_override_off = 0;
+	primary_handcart_settings_fans_override_on = 1;
 }
 enum primary_handcart_settings_status {
-	primary_handcart_settings_status_NONE = 0;
-	primary_handcart_settings_status_CHECK = 1;
-	primary_handcart_settings_status_IDLE = 2;
-	primary_handcart_settings_status_PRECHARGE = 3;
-	primary_handcart_settings_status_READY = 4;
-	primary_handcart_settings_status_CHARGE = 5;
-	primary_handcart_settings_status_CHARGE_DONE = 6;
-	primary_handcart_settings_status_BALANCING = 7;
-	primary_handcart_settings_status_ERROR = 8;
+	primary_handcart_settings_status_none = 0;
+	primary_handcart_settings_status_check = 1;
+	primary_handcart_settings_status_idle = 2;
+	primary_handcart_settings_status_precharge = 3;
+	primary_handcart_settings_status_ready = 4;
+	primary_handcart_settings_status_charge = 5;
+	primary_handcart_settings_status_charge_done = 6;
+	primary_handcart_settings_status_balancing = 7;
+	primary_handcart_settings_status_error = 8;
 }
-enum primary_handcart_settings_set_fans_override {
-	primary_handcart_settings_set_fans_override_OFF = 0;
-	primary_handcart_settings_set_fans_override_ON = 1;
+enum primary_handcart_set_settings_fans_override {
+	primary_handcart_set_settings_fans_override_off = 0;
+	primary_handcart_set_settings_fans_override_on = 1;
 }
-enum primary_handcart_settings_set_status {
-	primary_handcart_settings_set_status_NONE = 0;
-	primary_handcart_settings_set_status_CHECK = 1;
-	primary_handcart_settings_set_status_IDLE = 2;
-	primary_handcart_settings_set_status_PRECHARGE = 3;
-	primary_handcart_settings_set_status_READY = 4;
-	primary_handcart_settings_set_status_CHARGE = 5;
-	primary_handcart_settings_set_status_CHARGE_DONE = 6;
-	primary_handcart_settings_set_status_BALANCING = 7;
-	primary_handcart_settings_set_status_ERROR = 8;
+enum primary_handcart_set_settings_status {
+	primary_handcart_set_settings_status_none = 0;
+	primary_handcart_set_settings_status_check = 1;
+	primary_handcart_set_settings_status_idle = 2;
+	primary_handcart_set_settings_status_precharge = 3;
+	primary_handcart_set_settings_status_ready = 4;
+	primary_handcart_set_settings_status_charge = 5;
+	primary_handcart_set_settings_status_charge_done = 6;
+	primary_handcart_set_settings_status_balancing = 7;
+	primary_handcart_set_settings_status_error = 8;
 }
-enum primary_set_ptt_status_status {
-	primary_set_ptt_status_status_OFF = 0;
-	primary_set_ptt_status_status_ON = 1;
+enum primary_ecu_status_status {
+	primary_ecu_status_status_init = 0;
+	primary_ecu_status_status_enable_inv_updates = 1;
+	primary_ecu_status_status_check_inv_settings = 2;
+	primary_ecu_status_status_idle = 3;
+	primary_ecu_status_status_start_ts_precharge = 4;
+	primary_ecu_status_status_wait_ts_precharge = 5;
+	primary_ecu_status_status_wait_driver = 6;
+	primary_ecu_status_status_enable_inv_drive = 7;
+	primary_ecu_status_status_drive = 8;
+	primary_ecu_status_status_disable_inv_drive = 9;
+	primary_ecu_status_status_start_ts_discharge = 10;
+	primary_ecu_status_status_wait_ts_discharge = 11;
+	primary_ecu_status_status_fatal_error = 12;
 }
-enum primary_ptt_status_status {
-	primary_ptt_status_status_OFF = 0;
-	primary_ptt_status_status_ON = 1;
+enum primary_ecu_set_status_status {
+	primary_ecu_set_status_status_init = 0;
+	primary_ecu_set_status_status_enable_inv_updates = 1;
+	primary_ecu_set_status_status_check_inv_settings = 2;
+	primary_ecu_set_status_status_idle = 3;
+	primary_ecu_set_status_status_start_ts_precharge = 4;
+	primary_ecu_set_status_status_wait_ts_precharge = 5;
+	primary_ecu_set_status_status_wait_driver = 6;
+	primary_ecu_set_status_status_enable_inv_drive = 7;
+	primary_ecu_set_status_status_drive = 8;
+	primary_ecu_set_status_status_disable_inv_drive = 9;
+	primary_ecu_set_status_status_start_ts_discharge = 10;
+	primary_ecu_set_status_status_wait_ts_discharge = 11;
+	primary_ecu_set_status_status_fatal_error = 12;
 }
-enum primary_regen_manual_command_status {
-	primary_regen_manual_command_status_OFF = 0;
-	primary_regen_manual_command_status_ON = 1;
+enum primary_ecu_inverter_status_rl {
+	primary_ecu_inverter_status_rl_disabled = 0;
+	primary_ecu_inverter_status_rl_rfe_on = 1;
+	primary_ecu_inverter_status_rl_frg_on = 2;
+	primary_ecu_inverter_status_rl_enabled = 3;
+}
+enum primary_ecu_inverter_status_rr {
+	primary_ecu_inverter_status_rr_disabled = 0;
+	primary_ecu_inverter_status_rr_rfe_on = 1;
+	primary_ecu_inverter_status_rr_frg_on = 2;
+	primary_ecu_inverter_status_rr_enabled = 3;
+}
+enum primary_ecu_ptt_status_status {
+	primary_ecu_ptt_status_status_off = 0;
+	primary_ecu_ptt_status_status_on = 1;
+}
+enum primary_ecu_set_ptt_status_status {
+	primary_ecu_set_ptt_status_status_off = 0;
+	primary_ecu_set_ptt_status_status_on = 1;
 }
 
 
@@ -391,93 +275,84 @@ message NLG5_CTL{
 	double NLG5_OC_COM = 7;
 	uint64 _inner_timestamp = 8;
 }
-message BMS_HV_JMP_TO_BLT{
+message HV_JMP_TO_BLT{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_BMS_HV_TX{
+message HV_FLASH_MAINBOARD_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_BMS_HV_RX{
+message HV_FLASH_MAINBOARD_RX{
 	uint64 _inner_timestamp = 1;
 }
-message HV_CAN_FORWARD{
-	primary_hv_can_forward_can_forward_set can_forward_set = 1;
-	uint64 _inner_timestamp = 2;
-}
-message FLASH_CELLBOARD_0_TX{
+message HV_FLASH_CELLBOARD_0_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_0_RX{
+message HV_FLASH_CELLBOARD_0_RX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_1_TX{
+message HV_FLASH_CELLBOARD_1_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_1_RX{
+message HV_FLASH_CELLBOARD_1_RX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_2_TX{
+message HV_FLASH_CELLBOARD_2_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_2_RX{
+message HV_FLASH_CELLBOARD_2_RX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_3_TX{
+message HV_FLASH_CELLBOARD_3_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_3_RX{
+message HV_FLASH_CELLBOARD_3_RX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_4_TX{
+message HV_FLASH_CELLBOARD_4_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_4_RX{
+message HV_FLASH_CELLBOARD_4_RX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_5_TX{
+message HV_FLASH_CELLBOARD_5_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_CELLBOARD_5_RX{
+message HV_FLASH_CELLBOARD_5_RX{
 	uint64 _inner_timestamp = 1;
 }
-message BMS_LV_JMP_TO_BLT{
+message LV_JMP_TO_BLT{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_BMS_LV_TX{
+message LV_FLASH_BMS_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_BMS_LV_RX{
+message LV_FLASH_BMS_RX{
 	uint64 _inner_timestamp = 1;
 }
 message ECU_JMP_TO_BLT{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_ECU_TX{
+message ECU_FLASH_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_ECU_RX{
+message ECU_FLASH_RX{
 	uint64 _inner_timestamp = 1;
 }
-message STEERING_JMP_TO_BLT{
+message STEERING_WHEEL_JMP_TO_BLT{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_STEERING_TX{
+message STEERING_WHEEL_FLASH_TX{
 	uint64 _inner_timestamp = 1;
 }
-message FLASH_STEERING_RX{
+message STEERING_WHEEL_FLASH_RX{
 	uint64 _inner_timestamp = 1;
 }
-message STEER_VERSION{
+message STEERING_WHEEL_VERSION{
 	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
-message DAS_VERSION{
-	uint32 component_build_time = 1;
-	uint32 canlib_build_time = 2;
-	uint64 _inner_timestamp = 3;
-}
-message MAINBOARD_VERSION{
+message ECU_VERSION{
 	uint32 component_build_time = 1;
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
@@ -492,464 +367,384 @@ message TLM_VERSION{
 	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
-message CELLBOARD_VERSION{
-	primary_cellboard_version_cellboard_id cellboard_id = 1;
-	uint32 component_version = 2;
-	uint32 canlib_build_time = 3;
-	uint64 _inner_timestamp = 4;
-}
-message AMBIENT_TEMPERATURE{
-	int32 temp = 1;
-	uint64 _inner_timestamp = 2;
-}
-message DATA_LOGGER{
-	uint32 placeholder1 = 1;
-	uint32 placeholder2 = 2;
+message HV_MAINBOARD_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
-message SET_TLM_STATUS{
-	primary_set_tlm_status_tlm_status tlm_status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message TLM_STATUS{
-	primary_tlm_status_tlm_status tlm_status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message STEER_SYSTEM_STATUS{
-	uint32 soc_temp = 1;
-	uint64 _inner_timestamp = 2;
-}
-message HV_VOLTAGE{
-	double pack_voltage = 1;
-	double bus_voltage = 2;
+message HV_CELLBOARD_0_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
 	uint64 _inner_timestamp = 3;
 }
-message HV_CELL_VOLTAGE{
-	double max_cell_voltage = 1;
-	double min_cell_voltage = 2;
-	double sum_cell_voltage = 3;
-	double avg_cell_voltage = 4;
-	uint64 _inner_timestamp = 5;
+message HV_CELLBOARD_1_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
 }
-message HV_CURRENT{
-	double current = 1;
-	double power = 2;
-	double energy = 3;
-	double soc = 4;
-	uint64 _inner_timestamp = 5;
+message HV_CELLBOARD_2_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
 }
-message HV_TEMP{
-	double average_temp = 1;
-	double max_temp = 2;
-	double min_temp = 3;
-	uint64 _inner_timestamp = 4;
+message HV_CELLBOARD_3_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
+}
+message HV_CELLBOARD_4_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
+}
+message HV_CELLBOARD_5_VERSION{
+	uint32 component_build_time = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_ERRORS{
-	bool warnings_CELL_LOW_VOLTAGE = 1;
-	bool warnings_CELL_UNDER_VOLTAGE = 2;
-	bool warnings_CELL_OVER_VOLTAGE = 3;
-	bool warnings_CELL_HIGH_TEMPERATURE = 4;
-	bool warnings_CELL_OVER_TEMPERATURE = 5;
-	bool warnings_OVER_CURRENT = 6;
-	bool warnings_CAN = 7;
-	bool warnings_INT_VOLTAGE_MISMATCH = 8;
-	bool warnings_CELLBOARD_COMM = 9;
-	bool warnings_CELLBOARD_INTERNAL = 10;
-	bool warnings_CONNECTOR_DISCONNECTED = 11;
-	bool warnings_FANS_DISCONNECTED = 12;
-	bool warnings_FEEDBACK = 13;
-	bool warnings_FEEDBACK_CIRCUITRY = 14;
-	bool warnings_EEPROM_COMM = 15;
-	bool warnings_EEPROM_WRITE = 16;
-	bool errors_CELL_LOW_VOLTAGE = 17;
-	bool errors_CELL_UNDER_VOLTAGE = 18;
-	bool errors_CELL_OVER_VOLTAGE = 19;
-	bool errors_CELL_HIGH_TEMPERATURE = 20;
-	bool errors_CELL_OVER_TEMPERATURE = 21;
-	bool errors_OVER_CURRENT = 22;
-	bool errors_CAN = 23;
-	bool errors_INT_VOLTAGE_MISMATCH = 24;
-	bool errors_CELLBOARD_COMM = 25;
-	bool errors_CELLBOARD_INTERNAL = 26;
-	bool errors_CONNECTOR_DISCONNECTED = 27;
-	bool errors_FANS_DISCONNECTED = 28;
-	bool errors_FEEDBACK = 29;
-	bool errors_FEEDBACK_CIRCUITRY = 30;
-	bool errors_EEPROM_COMM = 31;
-	bool errors_EEPROM_WRITE = 32;
-	uint64 _inner_timestamp = 33;
+	bool errors_cell_low_voltage = 1;
+	bool errors_cell_under_voltage = 2;
+	bool errors_cell_over_voltage = 3;
+	bool errors_cell_high_temperature = 4;
+	bool errors_cell_over_temperature = 5;
+	bool errors_over_current = 6;
+	bool errors_can = 7;
+	bool errors_int_voltage_mismatch = 8;
+	bool errors_cellboard_comm = 9;
+	bool errors_cellboard_internal = 10;
+	bool errors_connector_disconnected = 11;
+	bool errors_fans_disconnected = 12;
+	bool errors_feedback = 13;
+	bool errors_feedback_circuitry = 14;
+	bool errors_eeprom_comm = 15;
+	bool errors_eeprom_write = 16;
+	uint64 _inner_timestamp = 17;
 }
 message HV_DEBUG_SIGNALS{
-	bool debug_signals_FEEDBACK_IMPLAUSIBILITY_DETECTED = 1;
-	bool debug_signals_FEEDBACK_IMD_COCKPIT = 2;
-	bool debug_signals_FEEDBACK_TSAL_GREEN_FAULT_LATCHED = 3;
-	bool debug_signals_FEEDBACK_BMS_COCKPIT = 4;
-	bool debug_signals_FEEDBACK_EXT_LATCHED = 5;
-	bool debug_signals_FEEDBACK_TSAL_GREEN = 6;
-	bool debug_signals_FEEDBACK_TS_OVER_60V_STATUS = 7;
-	bool debug_signals_FEEDBACK_AIRN_STATUS = 8;
-	bool debug_signals_FEEDBACK_AIRP_STATUS = 9;
-	bool debug_signals_FEEDBACK_AIRP_GATE = 10;
-	bool debug_signals_FEEDBACK_AIRN_GATE = 11;
-	bool debug_signals_FEEDBACK_PRECHARGE_STATUS = 12;
-	bool debug_signals_FEEDBACK_TSP_OVER_60V_STATUS = 13;
-	bool debug_signals_FEEDBACK_IMD_FAULT = 14;
-	bool debug_signals_FEEDBACK_CHECK_MUX = 15;
-	bool debug_signals_FEEDBACK_SD_END = 16;
-	bool debug_signals_FEEDBACK_SD_OUT = 17;
-	bool debug_signals_FEEDBACK_SD_IN = 18;
-	bool debug_signals_FEEDBACK_SD_BMS = 19;
-	bool debug_signals_FEEDBACK_SD_IMD = 20;
-	bool debug_signals_ERROR_CELL_LOW_VOLTAGE = 21;
-	bool debug_signals_ERROR_CELL_UNDER_VOLTAGE = 22;
-	bool debug_signals_ERROR_CELL_OVER_VOLTAGE = 23;
-	bool debug_signals_ERROR_CELL_HIGH_TEMPERATURE = 24;
-	bool debug_signals_ERROR_CELL_OVER_TEMPERATURE = 25;
-	bool debug_signals_ERROR_OVER_CURRENT = 26;
-	bool debug_signals_ERROR_CAN = 27;
-	bool debug_signals_ERROR_INT_VOLTAGE_MISMATCH = 28;
-	bool debug_signals_ERROR_CELLBOARD_COMM = 29;
-	bool debug_signals_ERROR_CELLBOARD_INTERNAL = 30;
-	bool debug_signals_ERROR_CONNECTOR_DISCONNECTED = 31;
-	bool debug_signals_ERROR_FANS_DISCONNECTED = 32;
-	bool debug_signals_ERROR_FEEDBACK = 33;
-	bool debug_signals_ERROR_FEEDBACK_CIRCUITRY = 34;
-	bool debug_signals_ERROR_EEPROM_COMM = 35;
-	bool debug_signals_ERROR_EEPROM_WRITE = 36;
+	bool feedbacks_implausibility_detected = 1;
+	bool feedbacks_imd_cockpit = 2;
+	bool feedbacks_tsal_green_fault_latched = 3;
+	bool feedbacks_bms_cockpit = 4;
+	bool feedbacks_ext_latched = 5;
+	bool feedbacks_tsal_green = 6;
+	bool feedbacks_ts_over_60v_status = 7;
+	bool feedbacks_airn_status = 8;
+	bool feedbacks_airp_status = 9;
+	bool feedbacks_airp_gate = 10;
+	bool feedbacks_airn_gate = 11;
+	bool feedbacks_precharge_status = 12;
+	bool feedbacks_tsp_over_60v_status = 13;
+	bool feedbacks_imd_fault = 14;
+	bool feedbacks_check_mux = 15;
+	bool feedbacks_sd_end = 16;
+	bool feedbacks_sd_out = 17;
+	bool feedbacks_sd_in = 18;
+	bool feedbacks_sd_bms = 19;
+	bool feedbacks_sd_imd = 20;
+	bool errors_cell_low_voltage = 21;
+	bool errors_cell_under_voltage = 22;
+	bool errors_cell_over_voltage = 23;
+	bool errors_cell_high_temperature = 24;
+	bool errors_cell_over_temperature = 25;
+	bool errors_over_current = 26;
+	bool errors_can = 27;
+	bool errors_int_voltage_mismatch = 28;
+	bool errors_cellboard_comm = 29;
+	bool errors_cellboard_internal = 30;
+	bool errors_connector_disconnected = 31;
+	bool errors_fans_disconnected = 32;
+	bool errors_feedback = 33;
+	bool errors_feedback_circuitry = 34;
+	bool errors_eeprom_comm = 35;
+	bool errors_eeprom_write = 36;
 	uint64 _inner_timestamp = 37;
 }
-message HV_FANS_OVERRIDE{
-	primary_hv_fans_override_fans_override fans_override = 1;
+message HV_FANS_STATUS{
+	primary_hv_fans_status_fans_override fans_override = 1;
 	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
-message HV_CAN_FORWARD_STATUS{
-	primary_hv_can_forward_status_can_forward_status can_forward_status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message HV_FANS_OVERRIDE_STATUS{
-	primary_hv_fans_override_status_fans_override fans_override = 1;
+message HV_SET_FANS_STATUS_HANDCART{
+	primary_hv_set_fans_status_handcart_fans_override fans_override = 1;
 	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACK_STATUS{
-	primary_hv_feedback_status_feedback_implausibility_detected feedback_implausibility_detected = 1;
-	primary_hv_feedback_status_feedback_imd_cockpit feedback_imd_cockpit = 2;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched feedback_tsal_green_fault_latched = 3;
-	primary_hv_feedback_status_feedback_bms_cockpit feedback_bms_cockpit = 4;
-	primary_hv_feedback_status_feedback_ext_latched feedback_ext_latched = 5;
-	primary_hv_feedback_status_feedback_tsal_green feedback_tsal_green = 6;
-	primary_hv_feedback_status_feedback_ts_over_60v_status feedback_ts_over_60v_status = 7;
-	primary_hv_feedback_status_feedback_airn_status feedback_airn_status = 8;
-	primary_hv_feedback_status_feedback_airp_status feedback_airp_status = 9;
-	primary_hv_feedback_status_feedback_airp_gate feedback_airp_gate = 10;
-	primary_hv_feedback_status_feedback_airn_gate feedback_airn_gate = 11;
-	primary_hv_feedback_status_feedback_precharge_status feedback_precharge_status = 12;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status feedback_tsp_over_60v_status = 13;
-	primary_hv_feedback_status_feedback_imd_fault feedback_imd_fault = 14;
-	primary_hv_feedback_status_feedback_check_mux feedback_check_mux = 15;
-	primary_hv_feedback_status_feedback_sd_end feedback_sd_end = 16;
-	primary_hv_feedback_status_feedback_sd_out feedback_sd_out = 17;
-	primary_hv_feedback_status_feedback_sd_in feedback_sd_in = 18;
-	primary_hv_feedback_status_feedback_sd_bms feedback_sd_bms = 19;
-	primary_hv_feedback_status_feedback_sd_imd feedback_sd_imd = 20;
-	uint64 _inner_timestamp = 21;
+	primary_hv_feedback_status_fans_override fans_override = 1;
+	double fans_speed = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACK_TS_VOLTAGE{
-	double feedback_ts_over_60v_status = 1;
-	double feedback_airn_status = 2;
-	double feedback_airp_status = 3;
-	double feedback_airp_gate = 4;
-	double feedback_airn_gate = 5;
-	double feedback_precharge_status = 6;
-	double feedback_tsp_over_60v_status = 7;
+	double ts_over_60v_status = 1;
+	double airn_status = 2;
+	double airp_status = 3;
+	double airp_gate = 4;
+	double airn_gate = 5;
+	double precharge_status = 6;
+	double tsp_over_60v_status = 7;
 	uint64 _inner_timestamp = 8;
 }
 message HV_FEEDBACK_MISC_VOLTAGE{
-	double feedback_implausibility_detected = 1;
-	double feedback_imd_cockpit = 2;
-	double feedback_tsal_green_fault_latched = 3;
-	double feedback_bms_cockpit = 4;
-	double feedback_ext_latched = 5;
-	double feedback_tsal_green = 6;
-	double imd_fault = 7;
-	double feedback_check_mux = 8;
+	uint32 implausibility_detected = 1;
+	uint32 imd_cockpit = 2;
+	uint32 tsal_green_fault_latched = 3;
+	uint32 bms_cockpit = 4;
+	uint32 ext_latched = 5;
+	uint32 tsal_green = 6;
+	uint32 imd_fault = 7;
+	uint32 check_mux = 8;
 	uint64 _inner_timestamp = 9;
 }
 message HV_FEEDBACK_SD_VOLTAGE{
-	double feedback_sd_end = 1;
-	double feedback_sd_out = 2;
-	double feedback_sd_in = 3;
-	double feedback_sd_bms = 4;
-	double feedback_sd_imd = 5;
+	uint32 sd_end = 1;
+	uint32 sd_out = 2;
+	uint32 sd_in = 3;
+	uint32 sd_bms = 4;
+	uint32 sd_imd = 5;
 	uint64 _inner_timestamp = 6;
 }
 message HV_IMD_STATUS{
-	bool imd_fault = 1;
-	primary_hv_imd_status_imd_status imd_status = 2;
+	uint32 imd_fault = 1;
+	uint32 imd_status = 2;
 	uint32 imd_details = 3;
 	uint32 imd_duty_cycle = 4;
 	uint32 imd_freq = 5;
 	uint32 imd_period = 6;
 	uint64 _inner_timestamp = 7;
 }
-message TS_STATUS{
-	primary_ts_status_ts_status ts_status = 1;
+message HV_STATUS{
+	primary_hv_status_status status = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_TS_STATUS_DAS{
-	primary_set_ts_status_das_ts_status_set ts_status_set = 1;
+message HV_SET_STATUS_ECU{
+	primary_hv_set_status_ecu_hv_status_set hv_status_set = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_TS_STATUS_HANDCART{
-	primary_set_ts_status_handcart_ts_status_set ts_status_set = 1;
+message HV_SET_STATUS_HANDCART{
+	primary_hv_set_status_handcart_hv_status_set hv_status_set = 1;
 	uint64 _inner_timestamp = 2;
 }
-message STEER_STATUS{
-	double map_pw = 1;
-	double map_sc = 2;
-	double map_tv = 3;
-	uint64 _inner_timestamp = 4;
+message HV_BALANCING_STATUS{
+	primary_hv_balancing_status_cellboard_id cellboard_id = 1;
+	primary_hv_balancing_status_balancing_status balancing_status = 2;
+	bool errors_can_comm = 3;
+	bool errors_ltc_comm = 4;
+	bool errors_temp_comm_0 = 5;
+	bool errors_temp_comm_1 = 6;
+	bool errors_temp_comm_2 = 7;
+	bool errors_temp_comm_3 = 8;
+	bool errors_temp_comm_4 = 9;
+	bool errors_temp_comm_5 = 10;
+	bool errors_open_wire = 11;
+	bool balancing_cells_cell0 = 12;
+	bool balancing_cells_cell1 = 13;
+	bool balancing_cells_cell2 = 14;
+	bool balancing_cells_cell3 = 15;
+	bool balancing_cells_cell4 = 16;
+	bool balancing_cells_cell5 = 17;
+	bool balancing_cells_cell6 = 18;
+	bool balancing_cells_cell7 = 19;
+	bool balancing_cells_cell8 = 20;
+	bool balancing_cells_cell9 = 21;
+	bool balancing_cells_cell10 = 22;
+	bool balancing_cells_cell11 = 23;
+	bool balancing_cells_cell12 = 24;
+	bool balancing_cells_cell13 = 25;
+	bool balancing_cells_cell14 = 26;
+	bool balancing_cells_cell15 = 27;
+	bool balancing_cells_cell16 = 28;
+	bool balancing_cells_cell17 = 29;
+	uint64 _inner_timestamp = 30;
 }
-message SET_CAR_STATUS{
-	primary_set_car_status_car_status_set car_status_set = 1;
-	uint64 _inner_timestamp = 2;
-}
-message SET_PEDAL_CALIBRATION{
-	primary_set_pedal_calibration_pedal pedal = 1;
-	primary_set_pedal_calibration_bound bound = 2;
+message HV_SET_BALANCING_STATUS_HANDCART{
+	primary_hv_set_balancing_status_handcart_set_balancing_status set_balancing_status = 1;
+	uint32 balancing_threshold = 2;
 	uint64 _inner_timestamp = 3;
-}
-message PEDAL_CALIBRATION_ACK{
-	primary_pedal_calibration_ack_pedal pedal = 1;
-	primary_pedal_calibration_ack_bound bound = 2;
-	uint64 _inner_timestamp = 3;
-}
-message CAR_STATUS{
-	primary_car_status_inverter_l inverter_l = 1;
-	primary_car_status_inverter_r inverter_r = 2;
-	primary_car_status_car_status car_status = 3;
-	bool controls_SLIP = 4;
-	bool controls_TORQUE_VECTORING = 5;
-	bool controls_REGEN = 6;
-	uint64 _inner_timestamp = 7;
-}
-message DAS_ERRORS{
-	bool das_error_PEDAL_ADC = 1;
-	bool das_error_PEDAL_IMPLAUSIBILITY = 2;
-	bool das_error_IMU_TOUT = 3;
-	bool das_error_IRTS_TOUT = 4;
-	bool das_error_TS_TOUT = 5;
-	bool das_error_INVL_TOUT = 6;
-	bool das_error_INVR_TOUT = 7;
-	bool das_error_STEER_TOUT = 8;
-	bool das_error_FSM = 9;
-	uint64 _inner_timestamp = 10;
-}
-message ECU_FEEDBACKS{
-	bool ecu_feedbacks_SD_COCK_FB = 1;
-	bool ecu_feedbacks_SD_FB1 = 2;
-	bool ecu_feedbacks_SD_BOTS_FB = 3;
-	bool ecu_feedbacks_SD_INTERIAL_FB = 4;
-	bool ecu_feedbacks_SD_FB4 = 5;
-	bool ecu_feedbacks_SD_IN = 6;
-	bool ecu_feedbacks_SD_OUT = 7;
-	bool ecu_feedbacks_SD_CTRL_PIN = 8;
-	uint64 _inner_timestamp = 9;
 }
 message LV_STATUS{
 	primary_lv_status_status status = 1;
 	uint64 _inner_timestamp = 2;
 }
-message LV_CURRENTS{
-	double current_as_battery = 1;
-	double current_lv_battery = 2;
-	double current_charger = 3;
-	uint64 _inner_timestamp = 4;
-}
-message LV_CELLS_VOLTAGE{
-	uint32 start_index = 1;
-	double voltage_0 = 2;
-	double voltage_1 = 3;
-	double voltage_2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message LV_TOTAL_VOLTAGE{
-	float total_voltage = 1;
+message LV_RADIATOR_SPEED{
+	uint32 radiator_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
-message LV_CELLS_TEMP{
-	uint32 start_index = 1;
-	double temp_0 = 2;
-	double temp_1 = 3;
-	double temp_2 = 4;
-	uint64 _inner_timestamp = 5;
-}
-message COOLING_STATUS{
-	double radiators_speed = 1;
-	double pumps_speed = 2;
-	uint64 _inner_timestamp = 3;
-}
-message SET_RADIATOR_SPEED{
-	double radiators_speed = 1;
+message LV_PUMPS_SPEED{
+	uint32 pumps_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_PUMPS_SPEED{
-	double pumps_speed = 1;
+message LV_SET_RADIATOR_SPEED{
+	uint32 radiator_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
-message SET_INVERTER_CONNECTION_STATUS{
-	primary_set_inverter_connection_status_status status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message INVERTER_CONNECTION_STATUS{
-	primary_inverter_connection_status_status status = 1;
+message LV_SET_PUMPS_SPEED{
+	uint32 pumps_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_ERRORS{
-	bool warnings_CELL_UNDERVOLTAGE = 1;
-	bool warnings_CELL_OVERVOLTAGE = 2;
-	bool warnings_BATTERY_OPEN_WIRE = 3;
-	bool warnings_CAN = 4;
-	bool warnings_SPI = 5;
-	bool warnings_OVER_CURRENT = 6;
-	bool warnings_CELL_UNDER_TEMPERATURE = 7;
-	bool warnings_CELL_OVER_TEMPERATURE = 8;
-	bool warnings_RELAY = 9;
-	bool warnings_BMS_MONITOR = 10;
-	bool warnings_VOLTAGES_NOT_READY = 11;
-	bool warnings_MCP23017 = 12;
-	bool warnings_RADIATOR = 13;
-	bool warnings_FAN = 14;
-	bool warnings_PUMP = 15;
-	bool warnings_ADC_INIT = 16;
-	bool warnings_MUX = 17;
-	bool errors_CELL_UNDERVOLTAGE = 18;
-	bool errors_CELL_OVERVOLTAGE = 19;
-	bool errors_BATTERY_OPEN_WIRE = 20;
-	bool errors_CAN = 21;
-	bool errors_SPI = 22;
-	bool errors_OVER_CURRENT = 23;
-	bool errors_CELL_UNDER_TEMPERATURE = 24;
-	bool errors_CELL_OVER_TEMPERATURE = 25;
-	bool errors_RELAY = 26;
-	bool errors_BMS_MONITOR = 27;
-	bool errors_VOLTAGES_NOT_READY = 28;
-	bool errors_MCP23017 = 29;
-	bool errors_RADIATOR = 30;
-	bool errors_FAN = 31;
-	bool errors_PUMP = 32;
-	bool errors_ADC_INIT = 33;
-	bool errors_MUX = 34;
-	uint64 _inner_timestamp = 35;
+	bool errors_cell_undervoltage = 1;
+	bool errors_cell_overvoltage = 2;
+	bool errors_battery_open_wire = 3;
+	bool errors_can = 4;
+	bool errors_spi = 5;
+	bool errors_over_current = 6;
+	bool errors_cell_under_temperature = 7;
+	bool errors_cell_over_temperature = 8;
+	bool errors_relay = 9;
+	bool errors_bms_monitor = 10;
+	bool errors_voltages_not_ready = 11;
+	bool errors_mcp23017 = 12;
+	bool errors_radiator = 13;
+	bool errors_fan = 14;
+	bool errors_pump = 15;
+	bool errors_adc_init = 16;
+	bool errors_mux = 17;
+	bool health_signals_lvms_out = 18;
+	bool health_signals_relay_out = 19;
+	bool health_signals_battery_voltage_out = 20;
+	bool health_signals_charger_current = 21;
+	bool health_signals_battery_current = 22;
+	bool health_signals_sign_battery_current = 23;
+	uint64 _inner_timestamp = 24;
 }
-message LV_HEALTH_SIGNALS{
-	bool health_signals_LVMS_OUT = 1;
-	bool health_signals_RELAY_OUT = 2;
-	bool health_signals_BATTERY_VOLTAGE_OUT = 3;
-	bool health_signals_CHARGER_CURRENT = 4;
-	bool health_signals_BATTERY_CURRENT = 5;
-	bool health_signals_SIGN_BATTERY_CURRENT = 6;
-	uint32 health_code = 7;
+message LV_FEEDBACK_TS_VOLTAGE{
+	double bspd = 1;
+	double imd = 2;
+	double hvd = 3;
+	double ams = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_FEEDBACK_SD_VOLTAGE{
+	double sd_end = 1;
+	double lvms = 2;
+	double interlock = 3;
+	double sd_start = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_FEEDBACK_ECLOSURE_VOLTAGE{
+	double lv_encl = 1;
+	double hv_encl_1 = 2;
+	double hv_encl_2 = 3;
+	double backplate = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_FEEDBACK_GPIO_EXTENDER{
+	bool feedback_inverters = 1;
+	bool feedback_pcbs = 2;
+	bool feedback_pumps = 3;
+	bool feedback_radiators = 4;
+	bool feedback_shutdown = 5;
+	bool feedback_hv_fans = 6;
+	bool feedback_autonomous_system_actuation = 7;
 	uint64 _inner_timestamp = 8;
 }
-message LV_FEEDBACKS{
-	bool feedbacks_BSPD_FB = 1;
-	bool feedbacks_HVD_FB = 2;
-	bool feedbacks_LVMS_FB = 3;
-	bool feedbacks_RES_FB = 4;
-	bool feedbacks_LV_ENCL = 5;
-	bool feedbacks_INVC_LID_FB = 6;
-	bool feedbacks_HV_ENCL_2_FB = 7;
-	bool feedbacks_BACK_PLATE_FB = 8;
-	bool feedbacks_INVC_INTERLOCK_FB = 9;
-	bool feedbacks_AMS_FB = 10;
-	bool feedbacks_ASMS_FB = 11;
-	bool feedbacks_INTERLOCK_FB = 12;
-	bool feedbacks_INVERTERS_FB = 13;
-	bool feedbacks_PCBS_FB = 14;
-	bool feedbacks_PUMPS_FB = 15;
-	bool feedbacks_SHUTDOWN_FB = 16;
-	bool feedbacks_RADIATORS_FB = 17;
-	bool feedbacks_FAN_FB = 18;
-	bool feedbacks_AS_ACTUATION_FB = 19;
-	double sd_start = 20;
-	double sd_end = 21;
-	uint64 _inner_timestamp = 22;
-}
-message SHUTDOWN_STATUS{
-	bool input = 1;
-	bool output = 2;
-	uint64 _inner_timestamp = 3;
-}
-message LV_CAN_FLASH_REQ{
+message LV_CAN_FLASH_REQ_STEERING_WHEEL{
 	uint64 _inner_timestamp = 1;
 }
 message LV_CAN_FLASH_ACK{
-	primary_lv_can_flash_ack_response response = 1;
-	uint64 _inner_timestamp = 2;
-}
-message MARKER{
 	uint64 _inner_timestamp = 1;
 }
-message HV_CELLS_VOLTAGE{
-	uint32 start_index = 1;
-	double voltage_0 = 2;
-	double voltage_1 = 3;
-	double voltage_2 = 4;
-	uint64 _inner_timestamp = 5;
+message LV_INVERTER_CONNECTION_STATUS{
+	primary_lv_inverter_connection_status_status status = 1;
+	uint64 _inner_timestamp = 2;
 }
-message HV_CELLS_TEMP{
-	uint32 start_index = 1;
-	double temp_0 = 2;
-	double temp_1 = 3;
-	double temp_2 = 4;
-	double temp_3 = 5;
-	uint64 _inner_timestamp = 6;
+message LV_SET_INVERTER_CONNECTION_STATUS{
+	primary_lv_set_inverter_connection_status_status status = 1;
+	uint64 _inner_timestamp = 2;
 }
-message HV_CELL_BALANCING_STATUS{
-	primary_hv_cell_balancing_status_cellboard_id cellboard_id = 1;
-	primary_hv_cell_balancing_status_balancing_status balancing_status = 2;
-	bool errors_CAN_COMM = 3;
-	bool errors_LTC_COMM = 4;
-	bool errors_TEMP_COMM_0 = 5;
-	bool errors_TEMP_COMM_1 = 6;
-	bool errors_TEMP_COMM_2 = 7;
-	bool errors_TEMP_COMM_3 = 8;
-	bool errors_TEMP_COMM_4 = 9;
-	bool errors_TEMP_COMM_5 = 10;
-	bool errors_OPEN_WIRE = 11;
-	bool balancing_cells_CELL0 = 12;
-	bool balancing_cells_CELL1 = 13;
-	bool balancing_cells_CELL2 = 14;
-	bool balancing_cells_CELL3 = 15;
-	bool balancing_cells_CELL4 = 16;
-	bool balancing_cells_CELL5 = 17;
-	bool balancing_cells_CELL6 = 18;
-	bool balancing_cells_CELL7 = 19;
-	bool balancing_cells_CELL8 = 20;
-	bool balancing_cells_CELL9 = 21;
-	bool balancing_cells_CELL10 = 22;
-	bool balancing_cells_CELL11 = 23;
-	bool balancing_cells_CELL12 = 24;
-	bool balancing_cells_CELL13 = 25;
-	bool balancing_cells_CELL14 = 26;
-	bool balancing_cells_CELL15 = 27;
-	bool balancing_cells_CELL16 = 28;
-	bool balancing_cells_CELL17 = 29;
-	uint64 _inner_timestamp = 30;
+message TLM_STATUS{
+	primary_tlm_status_status status = 1;
+	uint64 _inner_timestamp = 2;
 }
-message SET_CELL_BALANCING_STATUS{
-	primary_set_cell_balancing_status_set_balancing_status set_balancing_status = 1;
-	uint32 balancing_threshold = 2;
+message TLM_SET_STATUS{
+	primary_tlm_set_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HANDCART_STATUS{
+	primary_handcart_status_connected connected = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HANDCART_SETTINGS{
+	double target_voltage = 1;
+	primary_handcart_settings_fans_override fans_override = 2;
+	double fans_speed = 3;
+	double acc_charge_current = 4;
+	double grid_max_current = 5;
+	primary_handcart_settings_status status = 6;
+	uint64 _inner_timestamp = 7;
+}
+message HANDCART_SET_SETTINGS{
+	double target_voltage = 1;
+	primary_handcart_set_settings_fans_override fans_override = 2;
+	double fans_speed = 3;
+	double acc_charge_current = 4;
+	double grid_max_current = 5;
+	primary_handcart_set_settings_status status = 6;
+	uint64 _inner_timestamp = 7;
+}
+message ECU_STATUS{
+	primary_ecu_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
+message ECU_SET_STATUS{
+	primary_ecu_set_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
+message ECU_INVERTER_STATUS{
+	primary_ecu_inverter_status_rl rl = 1;
+	primary_ecu_inverter_status_rr rr = 2;
 	uint64 _inner_timestamp = 3;
 }
-message SPEED{
-	double encoder_r = 1;
-	double encoder_l = 2;
-	double inverter_r = 3;
-	double inverter_l = 4;
+message ECU_CONTROL_STATUS{
+	bool control_enabled = 1;
+	bool control_errors_forced_off = 2;
+	bool control_errors_wrong_maps = 3;
+	bool control_errors_control_watchdog = 4;
 	uint64 _inner_timestamp = 5;
+}
+message ECU_ERRORS{
+	bool error_pedal_adc = 1;
+	bool error_pedal_implausibility = 2;
+	bool error_imu_tout = 3;
+	bool error_irts_tout = 4;
+	bool error_ts_tout = 5;
+	bool error_invl_tout = 6;
+	bool error_invr_tout = 7;
+	bool error_steer_tout = 8;
+	bool error_fsm = 9;
+	uint64 _inner_timestamp = 10;
+}
+message ECU_FEEDBACKS{
+	bool feedbacks_sd_cock_fb = 1;
+	bool feedbacks_sd_fb1 = 2;
+	bool feedbacks_sd_bots_fb = 3;
+	bool feedbacks_sd_interial_fb = 4;
+	bool feedbacks_sd_fb4 = 5;
+	bool feedbacks_sd_in = 6;
+	bool feedbacks_sd_out = 7;
+	bool feedbacks_sd_ctrl_pin = 8;
+	uint64 _inner_timestamp = 9;
+}
+message ECU_POWER_MAPS{
+	double map_pw = 1;
+	double map_sc = 2;
+	double map_tv = 3;
+	uint64 _inner_timestamp = 4;
+}
+message ECU_SET_POWER_MAPS{
+	double map_pw = 1;
+	double map_sc = 2;
+	double map_tv = 3;
+	uint64 _inner_timestamp = 4;
+}
+message ECU_PTT_STATUS{
+	primary_ecu_ptt_status_status status = 1;
+	uint64 _inner_timestamp = 2;
+}
+message ECU_SET_PTT_STATUS{
+	primary_ecu_set_ptt_status_status status = 1;
+	uint64 _inner_timestamp = 2;
 }
 message INV_L_REQUEST{
 	uint32 data_0 = 1;
@@ -961,6 +756,20 @@ message INV_L_REQUEST{
 	uint32 data_6 = 7;
 	uint32 data_7 = 8;
 	uint64 _inner_timestamp = 9;
+}
+message CONTROL_OUTPUT{
+	double estimated_velocity = 1;
+	double torque_max_l = 2;
+	double torque_max_r = 3;
+	double torque_l = 4;
+	double torque_r = 5;
+	uint64 _inner_timestamp = 6;
+}
+message CONTROL_STATUS{
+	double map_pw = 1;
+	double map_sc = 2;
+	double map_tv = 3;
+	uint64 _inner_timestamp = 4;
 }
 message INV_R_REQUEST{
 	uint32 data_0 = 1;
@@ -995,51 +804,101 @@ message INV_R_RESPONSE{
 	uint32 data_6 = 8;
 	uint64 _inner_timestamp = 9;
 }
-message CONTROL_OUTPUT{
-	double estimated_velocity = 1;
-	double tmax_r = 2;
-	double tmax_l = 3;
-	double torque_l = 4;
-	double torque_r = 5;
+message LV_CURRENT_BATTERY{
+	double lv_current = 1;
+	uint64 _inner_timestamp = 2;
+}
+message LV_CURRENT_CHARGER{
+	double charger_current = 1;
+	uint64 _inner_timestamp = 2;
+}
+message LV_TOTAL_VOLTAGE{
+	float total = 1;
+	uint64 _inner_timestamp = 2;
+}
+message LV_CELLS_VOLTAGE{
+	uint32 start_index = 1;
+	double voltage_0 = 2;
+	double voltage_1 = 3;
+	double voltage_2 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_CELLS_VOLTAGE_STATS{
+	double max = 1;
+	double min = 2;
+	double delta = 3;
+	double avg = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_CELLS_TEMP{
+	uint32 start_index = 1;
+	double temp_0 = 2;
+	double temp_1 = 3;
+	double temp_2 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LV_CELLS_TEMP_STATS{
+	double max = 1;
+	double min = 2;
+	double avg = 3;
+	uint64 _inner_timestamp = 4;
+}
+message HV_CURRENT{
+	double current = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HV_POWER{
+	double power = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HV_ENERGY{
+	double energy = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HV_SOC{
+	double soc = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HV_TOTAL_VOLTAGE{
+	double pack = 1;
+	double sum_cell = 2;
+	double bus = 3;
+	uint64 _inner_timestamp = 4;
+}
+message HV_CELLS_VOLTAGE{
+	uint32 start_index = 1;
+	double voltage_0 = 2;
+	double voltage_1 = 3;
+	double voltage_2 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message HV_CELLS_VOLTAGE_STATS{
+	double max = 1;
+	double min = 2;
+	double sum = 3;
+	double avg = 4;
+	uint64 _inner_timestamp = 5;
+}
+message HV_CELLS_TEMP{
+	uint32 start_index = 1;
+	double temp_0 = 2;
+	double temp_1 = 3;
+	double temp_2 = 4;
+	double temp_3 = 5;
 	uint64 _inner_timestamp = 6;
 }
-message LC_RESET{
-	uint64 _inner_timestamp = 1;
+message HV_CELLS_TEMP_STATS{
+	double max = 1;
+	double min = 2;
+	double avg = 3;
+	uint64 _inner_timestamp = 4;
 }
-message HANDCART_STATUS{
-	bool connected = 1;
-	uint64 _inner_timestamp = 2;
-}
-message HANDCART_SETTINGS{
-	double target_voltage = 1;
-	primary_handcart_settings_fans_override fans_override = 2;
-	double fans_speed = 3;
-	double acc_charge_current = 4;
-	double grid_max_current = 5;
-	primary_handcart_settings_status status = 6;
-	uint64 _inner_timestamp = 7;
-}
-message HANDCART_SETTINGS_SET{
-	double target_voltage = 1;
-	primary_handcart_settings_set_fans_override fans_override = 2;
-	double fans_speed = 3;
-	double acc_charge_current = 4;
-	double grid_max_current = 5;
-	primary_handcart_settings_set_status status = 6;
-	uint64 _inner_timestamp = 7;
-}
-message SET_PTT_STATUS{
-	primary_set_ptt_status_status status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message PTT_STATUS{
-	primary_ptt_status_status status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message REGEN_MANUAL_COMMAND{
-	primary_regen_manual_command_status status = 1;
-	double target = 2;
-	uint64 _inner_timestamp = 3;
+message DEBUG_SIGNAL_1{
+	double field_1 = 1;
+	double field_2 = 2;
+	double field_3 = 3;
+	double field_4 = 4;
+	uint64 _inner_timestamp = 5;
 }
 
 
@@ -1052,99 +911,106 @@ message Pack{
 	repeated NLG5_ACT_I NLG5_ACT_I = 6;
 	repeated NLG5_ST NLG5_ST = 7;
 	repeated NLG5_CTL NLG5_CTL = 8;
-	repeated BMS_HV_JMP_TO_BLT BMS_HV_JMP_TO_BLT = 9;
-	repeated FLASH_BMS_HV_TX FLASH_BMS_HV_TX = 10;
-	repeated FLASH_BMS_HV_RX FLASH_BMS_HV_RX = 11;
-	repeated HV_CAN_FORWARD HV_CAN_FORWARD = 12;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 13;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 14;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 15;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 16;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 17;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 18;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 19;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 20;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 21;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 22;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 23;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 24;
-	repeated BMS_LV_JMP_TO_BLT BMS_LV_JMP_TO_BLT = 25;
-	repeated FLASH_BMS_LV_TX FLASH_BMS_LV_TX = 26;
-	repeated FLASH_BMS_LV_RX FLASH_BMS_LV_RX = 27;
-	repeated ECU_JMP_TO_BLT ECU_JMP_TO_BLT = 28;
-	repeated FLASH_ECU_TX FLASH_ECU_TX = 29;
-	repeated FLASH_ECU_RX FLASH_ECU_RX = 30;
-	repeated STEERING_JMP_TO_BLT STEERING_JMP_TO_BLT = 31;
-	repeated FLASH_STEERING_TX FLASH_STEERING_TX = 32;
-	repeated FLASH_STEERING_RX FLASH_STEERING_RX = 33;
-	repeated STEER_VERSION STEER_VERSION = 34;
-	repeated DAS_VERSION DAS_VERSION = 35;
-	repeated MAINBOARD_VERSION MAINBOARD_VERSION = 36;
-	repeated LV_VERSION LV_VERSION = 37;
-	repeated TLM_VERSION TLM_VERSION = 38;
-	repeated CELLBOARD_VERSION CELLBOARD_VERSION = 39;
-	repeated AMBIENT_TEMPERATURE AMBIENT_TEMPERATURE = 40;
-	repeated DATA_LOGGER DATA_LOGGER = 41;
-	repeated SET_TLM_STATUS SET_TLM_STATUS = 42;
-	repeated TLM_STATUS TLM_STATUS = 43;
-	repeated STEER_SYSTEM_STATUS STEER_SYSTEM_STATUS = 44;
-	repeated HV_VOLTAGE HV_VOLTAGE = 45;
-	repeated HV_CELL_VOLTAGE HV_CELL_VOLTAGE = 46;
-	repeated HV_CURRENT HV_CURRENT = 47;
-	repeated HV_TEMP HV_TEMP = 48;
-	repeated HV_ERRORS HV_ERRORS = 49;
-	repeated HV_DEBUG_SIGNALS HV_DEBUG_SIGNALS = 50;
-	repeated HV_FANS_OVERRIDE HV_FANS_OVERRIDE = 51;
-	repeated HV_CAN_FORWARD_STATUS HV_CAN_FORWARD_STATUS = 52;
-	repeated HV_FANS_OVERRIDE_STATUS HV_FANS_OVERRIDE_STATUS = 53;
-	repeated HV_FEEDBACK_STATUS HV_FEEDBACK_STATUS = 54;
-	repeated HV_FEEDBACK_TS_VOLTAGE HV_FEEDBACK_TS_VOLTAGE = 55;
-	repeated HV_FEEDBACK_MISC_VOLTAGE HV_FEEDBACK_MISC_VOLTAGE = 56;
-	repeated HV_FEEDBACK_SD_VOLTAGE HV_FEEDBACK_SD_VOLTAGE = 57;
-	repeated HV_IMD_STATUS HV_IMD_STATUS = 58;
-	repeated TS_STATUS TS_STATUS = 59;
-	repeated SET_TS_STATUS_DAS SET_TS_STATUS_DAS = 60;
-	repeated SET_TS_STATUS_HANDCART SET_TS_STATUS_HANDCART = 61;
-	repeated STEER_STATUS STEER_STATUS = 62;
-	repeated SET_CAR_STATUS SET_CAR_STATUS = 63;
-	repeated SET_PEDAL_CALIBRATION SET_PEDAL_CALIBRATION = 64;
-	repeated PEDAL_CALIBRATION_ACK PEDAL_CALIBRATION_ACK = 65;
-	repeated CAR_STATUS CAR_STATUS = 66;
-	repeated DAS_ERRORS DAS_ERRORS = 67;
-	repeated ECU_FEEDBACKS ECU_FEEDBACKS = 68;
-	repeated LV_STATUS LV_STATUS = 69;
-	repeated LV_CURRENTS LV_CURRENTS = 70;
-	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 71;
-	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 72;
-	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 73;
-	repeated COOLING_STATUS COOLING_STATUS = 74;
-	repeated SET_RADIATOR_SPEED SET_RADIATOR_SPEED = 75;
-	repeated SET_PUMPS_SPEED SET_PUMPS_SPEED = 76;
-	repeated SET_INVERTER_CONNECTION_STATUS SET_INVERTER_CONNECTION_STATUS = 77;
-	repeated INVERTER_CONNECTION_STATUS INVERTER_CONNECTION_STATUS = 78;
-	repeated LV_ERRORS LV_ERRORS = 79;
-	repeated LV_HEALTH_SIGNALS LV_HEALTH_SIGNALS = 80;
-	repeated LV_FEEDBACKS LV_FEEDBACKS = 81;
-	repeated SHUTDOWN_STATUS SHUTDOWN_STATUS = 82;
-	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 83;
-	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 84;
-	repeated MARKER MARKER = 85;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 86;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 87;
-	repeated HV_CELL_BALANCING_STATUS HV_CELL_BALANCING_STATUS = 88;
-	repeated SET_CELL_BALANCING_STATUS SET_CELL_BALANCING_STATUS = 89;
-	repeated SPEED SPEED = 90;
-	repeated INV_L_REQUEST INV_L_REQUEST = 91;
-	repeated INV_R_REQUEST INV_R_REQUEST = 92;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 93;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 94;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 95;
-	repeated LC_RESET LC_RESET = 96;
-	repeated HANDCART_STATUS HANDCART_STATUS = 97;
-	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 98;
-	repeated HANDCART_SETTINGS_SET HANDCART_SETTINGS_SET = 99;
-	repeated SET_PTT_STATUS SET_PTT_STATUS = 100;
-	repeated PTT_STATUS PTT_STATUS = 101;
-	repeated REGEN_MANUAL_COMMAND REGEN_MANUAL_COMMAND = 102;
+	repeated HV_JMP_TO_BLT HV_JMP_TO_BLT = 9;
+	repeated HV_FLASH_MAINBOARD_TX HV_FLASH_MAINBOARD_TX = 10;
+	repeated HV_FLASH_MAINBOARD_RX HV_FLASH_MAINBOARD_RX = 11;
+	repeated HV_FLASH_CELLBOARD_0_TX HV_FLASH_CELLBOARD_0_TX = 12;
+	repeated HV_FLASH_CELLBOARD_0_RX HV_FLASH_CELLBOARD_0_RX = 13;
+	repeated HV_FLASH_CELLBOARD_1_TX HV_FLASH_CELLBOARD_1_TX = 14;
+	repeated HV_FLASH_CELLBOARD_1_RX HV_FLASH_CELLBOARD_1_RX = 15;
+	repeated HV_FLASH_CELLBOARD_2_TX HV_FLASH_CELLBOARD_2_TX = 16;
+	repeated HV_FLASH_CELLBOARD_2_RX HV_FLASH_CELLBOARD_2_RX = 17;
+	repeated HV_FLASH_CELLBOARD_3_TX HV_FLASH_CELLBOARD_3_TX = 18;
+	repeated HV_FLASH_CELLBOARD_3_RX HV_FLASH_CELLBOARD_3_RX = 19;
+	repeated HV_FLASH_CELLBOARD_4_TX HV_FLASH_CELLBOARD_4_TX = 20;
+	repeated HV_FLASH_CELLBOARD_4_RX HV_FLASH_CELLBOARD_4_RX = 21;
+	repeated HV_FLASH_CELLBOARD_5_TX HV_FLASH_CELLBOARD_5_TX = 22;
+	repeated HV_FLASH_CELLBOARD_5_RX HV_FLASH_CELLBOARD_5_RX = 23;
+	repeated LV_JMP_TO_BLT LV_JMP_TO_BLT = 24;
+	repeated LV_FLASH_BMS_TX LV_FLASH_BMS_TX = 25;
+	repeated LV_FLASH_BMS_RX LV_FLASH_BMS_RX = 26;
+	repeated ECU_JMP_TO_BLT ECU_JMP_TO_BLT = 27;
+	repeated ECU_FLASH_TX ECU_FLASH_TX = 28;
+	repeated ECU_FLASH_RX ECU_FLASH_RX = 29;
+	repeated STEERING_WHEEL_JMP_TO_BLT STEERING_WHEEL_JMP_TO_BLT = 30;
+	repeated STEERING_WHEEL_FLASH_TX STEERING_WHEEL_FLASH_TX = 31;
+	repeated STEERING_WHEEL_FLASH_RX STEERING_WHEEL_FLASH_RX = 32;
+	repeated STEERING_WHEEL_VERSION STEERING_WHEEL_VERSION = 33;
+	repeated ECU_VERSION ECU_VERSION = 34;
+	repeated LV_VERSION LV_VERSION = 35;
+	repeated TLM_VERSION TLM_VERSION = 36;
+	repeated HV_MAINBOARD_VERSION HV_MAINBOARD_VERSION = 37;
+	repeated HV_CELLBOARD_0_VERSION HV_CELLBOARD_0_VERSION = 38;
+	repeated HV_CELLBOARD_1_VERSION HV_CELLBOARD_1_VERSION = 39;
+	repeated HV_CELLBOARD_2_VERSION HV_CELLBOARD_2_VERSION = 40;
+	repeated HV_CELLBOARD_3_VERSION HV_CELLBOARD_3_VERSION = 41;
+	repeated HV_CELLBOARD_4_VERSION HV_CELLBOARD_4_VERSION = 42;
+	repeated HV_CELLBOARD_5_VERSION HV_CELLBOARD_5_VERSION = 43;
+	repeated HV_ERRORS HV_ERRORS = 44;
+	repeated HV_DEBUG_SIGNALS HV_DEBUG_SIGNALS = 45;
+	repeated HV_FANS_STATUS HV_FANS_STATUS = 46;
+	repeated HV_SET_FANS_STATUS_HANDCART HV_SET_FANS_STATUS_HANDCART = 47;
+	repeated HV_FEEDBACK_STATUS HV_FEEDBACK_STATUS = 48;
+	repeated HV_FEEDBACK_TS_VOLTAGE HV_FEEDBACK_TS_VOLTAGE = 49;
+	repeated HV_FEEDBACK_MISC_VOLTAGE HV_FEEDBACK_MISC_VOLTAGE = 50;
+	repeated HV_FEEDBACK_SD_VOLTAGE HV_FEEDBACK_SD_VOLTAGE = 51;
+	repeated HV_IMD_STATUS HV_IMD_STATUS = 52;
+	repeated HV_STATUS HV_STATUS = 53;
+	repeated HV_SET_STATUS_ECU HV_SET_STATUS_ECU = 54;
+	repeated HV_SET_STATUS_HANDCART HV_SET_STATUS_HANDCART = 55;
+	repeated HV_BALANCING_STATUS HV_BALANCING_STATUS = 56;
+	repeated HV_SET_BALANCING_STATUS_HANDCART HV_SET_BALANCING_STATUS_HANDCART = 57;
+	repeated LV_STATUS LV_STATUS = 58;
+	repeated LV_RADIATOR_SPEED LV_RADIATOR_SPEED = 59;
+	repeated LV_PUMPS_SPEED LV_PUMPS_SPEED = 60;
+	repeated LV_SET_RADIATOR_SPEED LV_SET_RADIATOR_SPEED = 61;
+	repeated LV_SET_PUMPS_SPEED LV_SET_PUMPS_SPEED = 62;
+	repeated LV_ERRORS LV_ERRORS = 63;
+	repeated LV_FEEDBACK_TS_VOLTAGE LV_FEEDBACK_TS_VOLTAGE = 64;
+	repeated LV_FEEDBACK_SD_VOLTAGE LV_FEEDBACK_SD_VOLTAGE = 65;
+	repeated LV_FEEDBACK_ECLOSURE_VOLTAGE LV_FEEDBACK_ECLOSURE_VOLTAGE = 66;
+	repeated LV_FEEDBACK_GPIO_EXTENDER LV_FEEDBACK_GPIO_EXTENDER = 67;
+	repeated LV_CAN_FLASH_REQ_STEERING_WHEEL LV_CAN_FLASH_REQ_STEERING_WHEEL = 68;
+	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 69;
+	repeated LV_INVERTER_CONNECTION_STATUS LV_INVERTER_CONNECTION_STATUS = 70;
+	repeated LV_SET_INVERTER_CONNECTION_STATUS LV_SET_INVERTER_CONNECTION_STATUS = 71;
+	repeated TLM_STATUS TLM_STATUS = 72;
+	repeated TLM_SET_STATUS TLM_SET_STATUS = 73;
+	repeated HANDCART_STATUS HANDCART_STATUS = 74;
+	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 75;
+	repeated HANDCART_SET_SETTINGS HANDCART_SET_SETTINGS = 76;
+	repeated ECU_STATUS ECU_STATUS = 77;
+	repeated ECU_SET_STATUS ECU_SET_STATUS = 78;
+	repeated ECU_INVERTER_STATUS ECU_INVERTER_STATUS = 79;
+	repeated ECU_CONTROL_STATUS ECU_CONTROL_STATUS = 80;
+	repeated ECU_ERRORS ECU_ERRORS = 81;
+	repeated ECU_FEEDBACKS ECU_FEEDBACKS = 82;
+	repeated ECU_POWER_MAPS ECU_POWER_MAPS = 83;
+	repeated ECU_SET_POWER_MAPS ECU_SET_POWER_MAPS = 84;
+	repeated ECU_PTT_STATUS ECU_PTT_STATUS = 85;
+	repeated ECU_SET_PTT_STATUS ECU_SET_PTT_STATUS = 86;
+	repeated INV_L_REQUEST INV_L_REQUEST = 87;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 88;
+	repeated CONTROL_STATUS CONTROL_STATUS = 89;
+	repeated INV_R_REQUEST INV_R_REQUEST = 90;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 91;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 92;
+	repeated LV_CURRENT_BATTERY LV_CURRENT_BATTERY = 93;
+	repeated LV_CURRENT_CHARGER LV_CURRENT_CHARGER = 94;
+	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 95;
+	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 96;
+	repeated LV_CELLS_VOLTAGE_STATS LV_CELLS_VOLTAGE_STATS = 97;
+	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 98;
+	repeated LV_CELLS_TEMP_STATS LV_CELLS_TEMP_STATS = 99;
+	repeated HV_CURRENT HV_CURRENT = 100;
+	repeated HV_POWER HV_POWER = 101;
+	repeated HV_ENERGY HV_ENERGY = 102;
+	repeated HV_SOC HV_SOC = 103;
+	repeated HV_TOTAL_VOLTAGE HV_TOTAL_VOLTAGE = 104;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 105;
+	repeated HV_CELLS_VOLTAGE_STATS HV_CELLS_VOLTAGE_STATS = 106;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 107;
+	repeated HV_CELLS_TEMP_STATS HV_CELLS_TEMP_STATS = 108;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 109;
 }
 

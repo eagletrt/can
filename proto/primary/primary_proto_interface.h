@@ -430,213 +430,199 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->bms_hv_jmp_to_blt_size(); i++){
+    for(int i = 0; i < pack->hv_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->bms_hv_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->bms_hv_jmp_to_blt(i)._inner_timestamp();
-        (*net_signals)["BMS_HV_JMP_TO_BLT"]["_timestamp"].push(pack->bms_hv_jmp_to_blt(i)._inner_timestamp());
+        if(pack->hv_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_jmp_to_blt(i)._inner_timestamp();
+        (*net_signals)["HV_JMP_TO_BLT"]["_timestamp"].push(pack->hv_jmp_to_blt(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_bms_hv_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_mainboard_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_hv_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_hv_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_HV_TX"]["_timestamp"].push(pack->flash_bms_hv_tx(i)._inner_timestamp());
+        if(pack->hv_flash_mainboard_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_mainboard_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_MAINBOARD_TX"]["_timestamp"].push(pack->hv_flash_mainboard_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_bms_hv_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_mainboard_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_hv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_hv_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_HV_RX"]["_timestamp"].push(pack->flash_bms_hv_rx(i)._inner_timestamp());
+        if(pack->hv_flash_mainboard_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_mainboard_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_MAINBOARD_RX"]["_timestamp"].push(pack->hv_flash_mainboard_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->hv_can_forward_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_0_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_can_forward(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_can_forward(i)._inner_timestamp();
-        (*net_signals)["HV_CAN_FORWARD"]["_timestamp"].push(pack->hv_can_forward(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["HV_CAN_FORWARD"]["can_forward_set"].push(pack->hv_can_forward(i).can_forward_set());
-		primary_hv_can_forward_can_forward_set_enum_to_string((primary_hv_can_forward_can_forward_set)pack->hv_can_forward(i).can_forward_set(), buffer);
-		(*net_strings)["HV_CAN_FORWARD"]["can_forward_set"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->flash_cellboard_0_tx_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_0_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_0_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_0_TX"]["_timestamp"].push(pack->flash_cellboard_0_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_0_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_0_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_0_TX"]["_timestamp"].push(pack->hv_flash_cellboard_0_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_0_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_0_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_0_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_0_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_0_RX"]["_timestamp"].push(pack->flash_cellboard_0_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_0_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_0_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_0_RX"]["_timestamp"].push(pack->hv_flash_cellboard_0_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_1_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_1_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_1_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_1_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_1_TX"]["_timestamp"].push(pack->flash_cellboard_1_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_1_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_1_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_1_TX"]["_timestamp"].push(pack->hv_flash_cellboard_1_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_1_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_1_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_1_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_1_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_1_RX"]["_timestamp"].push(pack->flash_cellboard_1_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_1_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_1_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_1_RX"]["_timestamp"].push(pack->hv_flash_cellboard_1_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_2_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_2_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_2_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_2_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_2_TX"]["_timestamp"].push(pack->flash_cellboard_2_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_2_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_2_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_2_TX"]["_timestamp"].push(pack->hv_flash_cellboard_2_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_2_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_2_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_2_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_2_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_2_RX"]["_timestamp"].push(pack->flash_cellboard_2_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_2_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_2_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_2_RX"]["_timestamp"].push(pack->hv_flash_cellboard_2_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_3_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_3_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_3_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_3_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_3_TX"]["_timestamp"].push(pack->flash_cellboard_3_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_3_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_3_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_3_TX"]["_timestamp"].push(pack->hv_flash_cellboard_3_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_3_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_3_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_3_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_3_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_3_RX"]["_timestamp"].push(pack->flash_cellboard_3_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_3_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_3_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_3_RX"]["_timestamp"].push(pack->hv_flash_cellboard_3_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_4_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_4_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_4_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_4_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_4_TX"]["_timestamp"].push(pack->flash_cellboard_4_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_4_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_4_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_4_TX"]["_timestamp"].push(pack->hv_flash_cellboard_4_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_4_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_4_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_4_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_4_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_4_RX"]["_timestamp"].push(pack->flash_cellboard_4_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_4_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_4_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_4_RX"]["_timestamp"].push(pack->hv_flash_cellboard_4_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_5_tx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_5_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_5_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_5_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_5_TX"]["_timestamp"].push(pack->flash_cellboard_5_tx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_5_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_5_tx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_5_TX"]["_timestamp"].push(pack->hv_flash_cellboard_5_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_cellboard_5_rx_size(); i++){
+    for(int i = 0; i < pack->hv_flash_cellboard_5_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_cellboard_5_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_cellboard_5_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_CELLBOARD_5_RX"]["_timestamp"].push(pack->flash_cellboard_5_rx(i)._inner_timestamp());
+        if(pack->hv_flash_cellboard_5_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_flash_cellboard_5_rx(i)._inner_timestamp();
+        (*net_signals)["HV_FLASH_CELLBOARD_5_RX"]["_timestamp"].push(pack->hv_flash_cellboard_5_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->bms_lv_jmp_to_blt_size(); i++){
+    for(int i = 0; i < pack->lv_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->bms_lv_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->bms_lv_jmp_to_blt(i)._inner_timestamp();
-        (*net_signals)["BMS_LV_JMP_TO_BLT"]["_timestamp"].push(pack->bms_lv_jmp_to_blt(i)._inner_timestamp());
+        if(pack->lv_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_jmp_to_blt(i)._inner_timestamp();
+        (*net_signals)["LV_JMP_TO_BLT"]["_timestamp"].push(pack->lv_jmp_to_blt(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_bms_lv_tx_size(); i++){
+    for(int i = 0; i < pack->lv_flash_bms_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_lv_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_lv_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_LV_TX"]["_timestamp"].push(pack->flash_bms_lv_tx(i)._inner_timestamp());
+        if(pack->lv_flash_bms_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_flash_bms_tx(i)._inner_timestamp();
+        (*net_signals)["LV_FLASH_BMS_TX"]["_timestamp"].push(pack->lv_flash_bms_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_bms_lv_rx_size(); i++){
+    for(int i = 0; i < pack->lv_flash_bms_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_bms_lv_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_bms_lv_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_BMS_LV_RX"]["_timestamp"].push(pack->flash_bms_lv_rx(i)._inner_timestamp());
+        if(pack->lv_flash_bms_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_flash_bms_rx(i)._inner_timestamp();
+        (*net_signals)["LV_FLASH_BMS_RX"]["_timestamp"].push(pack->lv_flash_bms_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -653,97 +639,84 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->flash_ecu_tx_size(); i++){
+    for(int i = 0; i < pack->ecu_flash_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_ecu_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_ecu_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_ECU_TX"]["_timestamp"].push(pack->flash_ecu_tx(i)._inner_timestamp());
+        if(pack->ecu_flash_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_flash_tx(i)._inner_timestamp();
+        (*net_signals)["ECU_FLASH_TX"]["_timestamp"].push(pack->ecu_flash_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_ecu_rx_size(); i++){
+    for(int i = 0; i < pack->ecu_flash_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_ecu_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_ecu_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_ECU_RX"]["_timestamp"].push(pack->flash_ecu_rx(i)._inner_timestamp());
+        if(pack->ecu_flash_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_flash_rx(i)._inner_timestamp();
+        (*net_signals)["ECU_FLASH_RX"]["_timestamp"].push(pack->ecu_flash_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->steering_jmp_to_blt_size(); i++){
+    for(int i = 0; i < pack->steering_wheel_jmp_to_blt_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->steering_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->steering_jmp_to_blt(i)._inner_timestamp();
-        (*net_signals)["STEERING_JMP_TO_BLT"]["_timestamp"].push(pack->steering_jmp_to_blt(i)._inner_timestamp());
+        if(pack->steering_wheel_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->steering_wheel_jmp_to_blt(i)._inner_timestamp();
+        (*net_signals)["STEERING_WHEEL_JMP_TO_BLT"]["_timestamp"].push(pack->steering_wheel_jmp_to_blt(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_steering_tx_size(); i++){
+    for(int i = 0; i < pack->steering_wheel_flash_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_steering_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_steering_tx(i)._inner_timestamp();
-        (*net_signals)["FLASH_STEERING_TX"]["_timestamp"].push(pack->flash_steering_tx(i)._inner_timestamp());
+        if(pack->steering_wheel_flash_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->steering_wheel_flash_tx(i)._inner_timestamp();
+        (*net_signals)["STEERING_WHEEL_FLASH_TX"]["_timestamp"].push(pack->steering_wheel_flash_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->flash_steering_rx_size(); i++){
+    for(int i = 0; i < pack->steering_wheel_flash_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->flash_steering_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->flash_steering_rx(i)._inner_timestamp();
-        (*net_signals)["FLASH_STEERING_RX"]["_timestamp"].push(pack->flash_steering_rx(i)._inner_timestamp());
+        if(pack->steering_wheel_flash_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->steering_wheel_flash_rx(i)._inner_timestamp();
+        (*net_signals)["STEERING_WHEEL_FLASH_RX"]["_timestamp"].push(pack->steering_wheel_flash_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->steer_version_size(); i++){
+    for(int i = 0; i < pack->steering_wheel_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->steer_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->steer_version(i)._inner_timestamp();
-        (*net_signals)["STEER_VERSION"]["_timestamp"].push(pack->steer_version(i)._inner_timestamp());
+        if(pack->steering_wheel_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->steering_wheel_version(i)._inner_timestamp();
+        (*net_signals)["STEERING_WHEEL_VERSION"]["_timestamp"].push(pack->steering_wheel_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["STEER_VERSION"]["component_build_time"].push(pack->steer_version(i).component_build_time());
-		(*net_signals)["STEER_VERSION"]["canlib_build_time"].push(pack->steer_version(i).canlib_build_time());
+		(*net_signals)["STEERING_WHEEL_VERSION"]["component_build_time"].push(pack->steering_wheel_version(i).component_build_time());
+		(*net_signals)["STEERING_WHEEL_VERSION"]["canlib_build_time"].push(pack->steering_wheel_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->das_version_size(); i++){
+    for(int i = 0; i < pack->ecu_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->das_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->das_version(i)._inner_timestamp();
-        (*net_signals)["DAS_VERSION"]["_timestamp"].push(pack->das_version(i)._inner_timestamp());
+        if(pack->ecu_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_version(i)._inner_timestamp();
+        (*net_signals)["ECU_VERSION"]["_timestamp"].push(pack->ecu_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DAS_VERSION"]["component_build_time"].push(pack->das_version(i).component_build_time());
-		(*net_signals)["DAS_VERSION"]["canlib_build_time"].push(pack->das_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->mainboard_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->mainboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->mainboard_version(i)._inner_timestamp();
-        (*net_signals)["MAINBOARD_VERSION"]["_timestamp"].push(pack->mainboard_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["MAINBOARD_VERSION"]["component_build_time"].push(pack->mainboard_version(i).component_build_time());
-		(*net_signals)["MAINBOARD_VERSION"]["canlib_build_time"].push(pack->mainboard_version(i).canlib_build_time());
+		(*net_signals)["ECU_VERSION"]["component_build_time"].push(pack->ecu_version(i).component_build_time());
+		(*net_signals)["ECU_VERSION"]["canlib_build_time"].push(pack->ecu_version(i).canlib_build_time());
 
     }
 
@@ -773,141 +746,94 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->cellboard_version_size(); i++){
+    for(int i = 0; i < pack->hv_mainboard_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->cellboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->cellboard_version(i)._inner_timestamp();
-        (*net_signals)["CELLBOARD_VERSION"]["_timestamp"].push(pack->cellboard_version(i)._inner_timestamp());
+        if(pack->hv_mainboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_mainboard_version(i)._inner_timestamp();
+        (*net_signals)["HV_MAINBOARD_VERSION"]["_timestamp"].push(pack->hv_mainboard_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["CELLBOARD_VERSION"]["cellboard_id"].push(pack->cellboard_version(i).cellboard_id());
-		primary_cellboard_version_cellboard_id_enum_to_string((primary_cellboard_version_cellboard_id)pack->cellboard_version(i).cellboard_id(), buffer);
-		(*net_strings)["CELLBOARD_VERSION"]["cellboard_id"].push(buffer);
-		(*net_signals)["CELLBOARD_VERSION"]["component_version"].push(pack->cellboard_version(i).component_version());
-		(*net_signals)["CELLBOARD_VERSION"]["canlib_build_time"].push(pack->cellboard_version(i).canlib_build_time());
+		(*net_signals)["HV_MAINBOARD_VERSION"]["component_build_time"].push(pack->hv_mainboard_version(i).component_build_time());
+		(*net_signals)["HV_MAINBOARD_VERSION"]["canlib_build_time"].push(pack->hv_mainboard_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->ambient_temperature_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_0_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ambient_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ambient_temperature(i)._inner_timestamp();
-        (*net_signals)["AMBIENT_TEMPERATURE"]["_timestamp"].push(pack->ambient_temperature(i)._inner_timestamp());
+        if(pack->hv_cellboard_0_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_0_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_0_VERSION"]["_timestamp"].push(pack->hv_cellboard_0_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["AMBIENT_TEMPERATURE"]["temp"].push(pack->ambient_temperature(i).temp());
+		(*net_signals)["HV_CELLBOARD_0_VERSION"]["component_build_time"].push(pack->hv_cellboard_0_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_0_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_0_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->data_logger_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_1_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->data_logger(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->data_logger(i)._inner_timestamp();
-        (*net_signals)["DATA_LOGGER"]["_timestamp"].push(pack->data_logger(i)._inner_timestamp());
+        if(pack->hv_cellboard_1_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_1_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_1_VERSION"]["_timestamp"].push(pack->hv_cellboard_1_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DATA_LOGGER"]["placeholder1"].push(pack->data_logger(i).placeholder1());
-		(*net_signals)["DATA_LOGGER"]["placeholder2"].push(pack->data_logger(i).placeholder2());
+		(*net_signals)["HV_CELLBOARD_1_VERSION"]["component_build_time"].push(pack->hv_cellboard_1_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_1_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_1_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->set_tlm_status_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_2_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_tlm_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_tlm_status(i)._inner_timestamp();
-        (*net_signals)["SET_TLM_STATUS"]["_timestamp"].push(pack->set_tlm_status(i)._inner_timestamp());
+        if(pack->hv_cellboard_2_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_2_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_2_VERSION"]["_timestamp"].push(pack->hv_cellboard_2_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_TLM_STATUS"]["tlm_status"].push(pack->set_tlm_status(i).tlm_status());
-		primary_set_tlm_status_tlm_status_enum_to_string((primary_set_tlm_status_tlm_status)pack->set_tlm_status(i).tlm_status(), buffer);
-		(*net_strings)["SET_TLM_STATUS"]["tlm_status"].push(buffer);
+		(*net_signals)["HV_CELLBOARD_2_VERSION"]["component_build_time"].push(pack->hv_cellboard_2_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_2_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_2_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->tlm_status_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_3_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->tlm_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->tlm_status(i)._inner_timestamp();
-        (*net_signals)["TLM_STATUS"]["_timestamp"].push(pack->tlm_status(i)._inner_timestamp());
+        if(pack->hv_cellboard_3_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_3_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_3_VERSION"]["_timestamp"].push(pack->hv_cellboard_3_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["TLM_STATUS"]["tlm_status"].push(pack->tlm_status(i).tlm_status());
-		primary_tlm_status_tlm_status_enum_to_string((primary_tlm_status_tlm_status)pack->tlm_status(i).tlm_status(), buffer);
-		(*net_strings)["TLM_STATUS"]["tlm_status"].push(buffer);
+		(*net_signals)["HV_CELLBOARD_3_VERSION"]["component_build_time"].push(pack->hv_cellboard_3_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_3_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_3_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->steer_system_status_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_4_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->steer_system_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->steer_system_status(i)._inner_timestamp();
-        (*net_signals)["STEER_SYSTEM_STATUS"]["_timestamp"].push(pack->steer_system_status(i)._inner_timestamp());
+        if(pack->hv_cellboard_4_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_4_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_4_VERSION"]["_timestamp"].push(pack->hv_cellboard_4_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["STEER_SYSTEM_STATUS"]["soc_temp"].push(pack->steer_system_status(i).soc_temp());
+		(*net_signals)["HV_CELLBOARD_4_VERSION"]["component_build_time"].push(pack->hv_cellboard_4_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_4_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_4_version(i).canlib_build_time());
 
     }
 
-    for(int i = 0; i < pack->hv_voltage_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_5_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_voltage(i)._inner_timestamp();
-        (*net_signals)["HV_VOLTAGE"]["_timestamp"].push(pack->hv_voltage(i)._inner_timestamp());
+        if(pack->hv_cellboard_5_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_5_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_5_VERSION"]["_timestamp"].push(pack->hv_cellboard_5_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_VOLTAGE"]["pack_voltage"].push(pack->hv_voltage(i).pack_voltage());
-		(*net_signals)["HV_VOLTAGE"]["bus_voltage"].push(pack->hv_voltage(i).bus_voltage());
-
-    }
-
-    for(int i = 0; i < pack->hv_cell_voltage_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cell_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cell_voltage(i)._inner_timestamp();
-        (*net_signals)["HV_CELL_VOLTAGE"]["_timestamp"].push(pack->hv_cell_voltage(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELL_VOLTAGE"]["max_cell_voltage"].push(pack->hv_cell_voltage(i).max_cell_voltage());
-		(*net_signals)["HV_CELL_VOLTAGE"]["min_cell_voltage"].push(pack->hv_cell_voltage(i).min_cell_voltage());
-		(*net_signals)["HV_CELL_VOLTAGE"]["sum_cell_voltage"].push(pack->hv_cell_voltage(i).sum_cell_voltage());
-		(*net_signals)["HV_CELL_VOLTAGE"]["avg_cell_voltage"].push(pack->hv_cell_voltage(i).avg_cell_voltage());
-
-    }
-
-    for(int i = 0; i < pack->hv_current_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_current(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_current(i)._inner_timestamp();
-        (*net_signals)["HV_CURRENT"]["_timestamp"].push(pack->hv_current(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CURRENT"]["current"].push(pack->hv_current(i).current());
-		(*net_signals)["HV_CURRENT"]["power"].push(pack->hv_current(i).power());
-		(*net_signals)["HV_CURRENT"]["energy"].push(pack->hv_current(i).energy());
-		(*net_signals)["HV_CURRENT"]["soc"].push(pack->hv_current(i).soc());
-
-    }
-
-    for(int i = 0; i < pack->hv_temp_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_temp(i)._inner_timestamp();
-        (*net_signals)["HV_TEMP"]["_timestamp"].push(pack->hv_temp(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_TEMP"]["average_temp"].push(pack->hv_temp(i).average_temp());
-		(*net_signals)["HV_TEMP"]["max_temp"].push(pack->hv_temp(i).max_temp());
-		(*net_signals)["HV_TEMP"]["min_temp"].push(pack->hv_temp(i).min_temp());
+		(*net_signals)["HV_CELLBOARD_5_VERSION"]["component_build_time"].push(pack->hv_cellboard_5_version(i).component_build_time());
+		(*net_signals)["HV_CELLBOARD_5_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_5_version(i).canlib_build_time());
 
     }
 
@@ -919,22 +845,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_ERRORS"]["_timestamp"].push(pack->hv_errors(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_ERRORS"]["warnings_cell_low_voltage"].push(pack->hv_errors(i).warnings_cell_low_voltage());
-		(*net_enums)["HV_ERRORS"]["warnings_cell_under_voltage"].push(pack->hv_errors(i).warnings_cell_under_voltage());
-		(*net_enums)["HV_ERRORS"]["warnings_cell_over_voltage"].push(pack->hv_errors(i).warnings_cell_over_voltage());
-		(*net_enums)["HV_ERRORS"]["warnings_cell_high_temperature"].push(pack->hv_errors(i).warnings_cell_high_temperature());
-		(*net_enums)["HV_ERRORS"]["warnings_cell_over_temperature"].push(pack->hv_errors(i).warnings_cell_over_temperature());
-		(*net_enums)["HV_ERRORS"]["warnings_over_current"].push(pack->hv_errors(i).warnings_over_current());
-		(*net_enums)["HV_ERRORS"]["warnings_can"].push(pack->hv_errors(i).warnings_can());
-		(*net_enums)["HV_ERRORS"]["warnings_int_voltage_mismatch"].push(pack->hv_errors(i).warnings_int_voltage_mismatch());
-		(*net_enums)["HV_ERRORS"]["warnings_cellboard_comm"].push(pack->hv_errors(i).warnings_cellboard_comm());
-		(*net_enums)["HV_ERRORS"]["warnings_cellboard_internal"].push(pack->hv_errors(i).warnings_cellboard_internal());
-		(*net_enums)["HV_ERRORS"]["warnings_connector_disconnected"].push(pack->hv_errors(i).warnings_connector_disconnected());
-		(*net_enums)["HV_ERRORS"]["warnings_fans_disconnected"].push(pack->hv_errors(i).warnings_fans_disconnected());
-		(*net_enums)["HV_ERRORS"]["warnings_feedback"].push(pack->hv_errors(i).warnings_feedback());
-		(*net_enums)["HV_ERRORS"]["warnings_feedback_circuitry"].push(pack->hv_errors(i).warnings_feedback_circuitry());
-		(*net_enums)["HV_ERRORS"]["warnings_eeprom_comm"].push(pack->hv_errors(i).warnings_eeprom_comm());
-		(*net_enums)["HV_ERRORS"]["warnings_eeprom_write"].push(pack->hv_errors(i).warnings_eeprom_write());
 		(*net_enums)["HV_ERRORS"]["errors_cell_low_voltage"].push(pack->hv_errors(i).errors_cell_low_voltage());
 		(*net_enums)["HV_ERRORS"]["errors_cell_under_voltage"].push(pack->hv_errors(i).errors_cell_under_voltage());
 		(*net_enums)["HV_ERRORS"]["errors_cell_over_voltage"].push(pack->hv_errors(i).errors_cell_over_voltage());
@@ -962,86 +872,72 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_DEBUG_SIGNALS"]["_timestamp"].push(pack->hv_debug_signals(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_implausibility_detected"].push(pack->hv_debug_signals(i).debug_signals_feedback_implausibility_detected());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_imd_cockpit"].push(pack->hv_debug_signals(i).debug_signals_feedback_imd_cockpit());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsal_green_fault_latched"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsal_green_fault_latched());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_bms_cockpit"].push(pack->hv_debug_signals(i).debug_signals_feedback_bms_cockpit());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_ext_latched"].push(pack->hv_debug_signals(i).debug_signals_feedback_ext_latched());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsal_green"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsal_green());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_ts_over_60v_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_ts_over_60v_status());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airn_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_airn_status());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airp_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_airp_status());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airp_gate"].push(pack->hv_debug_signals(i).debug_signals_feedback_airp_gate());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_airn_gate"].push(pack->hv_debug_signals(i).debug_signals_feedback_airn_gate());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_precharge_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_precharge_status());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_tsp_over_60v_status"].push(pack->hv_debug_signals(i).debug_signals_feedback_tsp_over_60v_status());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_imd_fault"].push(pack->hv_debug_signals(i).debug_signals_feedback_imd_fault());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_check_mux"].push(pack->hv_debug_signals(i).debug_signals_feedback_check_mux());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_end"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_end());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_out"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_out());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_in"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_in());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_bms"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_bms());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_feedback_sd_imd"].push(pack->hv_debug_signals(i).debug_signals_feedback_sd_imd());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_low_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_low_voltage());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_under_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_under_voltage());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_over_voltage"].push(pack->hv_debug_signals(i).debug_signals_error_cell_over_voltage());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_high_temperature"].push(pack->hv_debug_signals(i).debug_signals_error_cell_high_temperature());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cell_over_temperature"].push(pack->hv_debug_signals(i).debug_signals_error_cell_over_temperature());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_over_current"].push(pack->hv_debug_signals(i).debug_signals_error_over_current());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_can"].push(pack->hv_debug_signals(i).debug_signals_error_can());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_int_voltage_mismatch"].push(pack->hv_debug_signals(i).debug_signals_error_int_voltage_mismatch());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cellboard_comm"].push(pack->hv_debug_signals(i).debug_signals_error_cellboard_comm());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_cellboard_internal"].push(pack->hv_debug_signals(i).debug_signals_error_cellboard_internal());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_connector_disconnected"].push(pack->hv_debug_signals(i).debug_signals_error_connector_disconnected());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_fans_disconnected"].push(pack->hv_debug_signals(i).debug_signals_error_fans_disconnected());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_feedback"].push(pack->hv_debug_signals(i).debug_signals_error_feedback());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_feedback_circuitry"].push(pack->hv_debug_signals(i).debug_signals_error_feedback_circuitry());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_eeprom_comm"].push(pack->hv_debug_signals(i).debug_signals_error_eeprom_comm());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["debug_signals_error_eeprom_write"].push(pack->hv_debug_signals(i).debug_signals_error_eeprom_write());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_implausibility_detected"].push(pack->hv_debug_signals(i).feedbacks_implausibility_detected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_imd_cockpit"].push(pack->hv_debug_signals(i).feedbacks_imd_cockpit());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_tsal_green_fault_latched"].push(pack->hv_debug_signals(i).feedbacks_tsal_green_fault_latched());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_bms_cockpit"].push(pack->hv_debug_signals(i).feedbacks_bms_cockpit());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_ext_latched"].push(pack->hv_debug_signals(i).feedbacks_ext_latched());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_tsal_green"].push(pack->hv_debug_signals(i).feedbacks_tsal_green());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_ts_over_60v_status"].push(pack->hv_debug_signals(i).feedbacks_ts_over_60v_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_airn_status"].push(pack->hv_debug_signals(i).feedbacks_airn_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_airp_status"].push(pack->hv_debug_signals(i).feedbacks_airp_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_airp_gate"].push(pack->hv_debug_signals(i).feedbacks_airp_gate());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_airn_gate"].push(pack->hv_debug_signals(i).feedbacks_airn_gate());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_precharge_status"].push(pack->hv_debug_signals(i).feedbacks_precharge_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_tsp_over_60v_status"].push(pack->hv_debug_signals(i).feedbacks_tsp_over_60v_status());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_imd_fault"].push(pack->hv_debug_signals(i).feedbacks_imd_fault());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_check_mux"].push(pack->hv_debug_signals(i).feedbacks_check_mux());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_end"].push(pack->hv_debug_signals(i).feedbacks_sd_end());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_out"].push(pack->hv_debug_signals(i).feedbacks_sd_out());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_in"].push(pack->hv_debug_signals(i).feedbacks_sd_in());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_bms"].push(pack->hv_debug_signals(i).feedbacks_sd_bms());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_imd"].push(pack->hv_debug_signals(i).feedbacks_sd_imd());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_low_voltage"].push(pack->hv_debug_signals(i).errors_cell_low_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_under_voltage"].push(pack->hv_debug_signals(i).errors_cell_under_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_over_voltage"].push(pack->hv_debug_signals(i).errors_cell_over_voltage());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_high_temperature"].push(pack->hv_debug_signals(i).errors_cell_high_temperature());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_over_temperature"].push(pack->hv_debug_signals(i).errors_cell_over_temperature());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_over_current"].push(pack->hv_debug_signals(i).errors_over_current());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_can"].push(pack->hv_debug_signals(i).errors_can());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_int_voltage_mismatch"].push(pack->hv_debug_signals(i).errors_int_voltage_mismatch());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cellboard_comm"].push(pack->hv_debug_signals(i).errors_cellboard_comm());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cellboard_internal"].push(pack->hv_debug_signals(i).errors_cellboard_internal());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_connector_disconnected"].push(pack->hv_debug_signals(i).errors_connector_disconnected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_fans_disconnected"].push(pack->hv_debug_signals(i).errors_fans_disconnected());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_feedback"].push(pack->hv_debug_signals(i).errors_feedback());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_feedback_circuitry"].push(pack->hv_debug_signals(i).errors_feedback_circuitry());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_eeprom_comm"].push(pack->hv_debug_signals(i).errors_eeprom_comm());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_eeprom_write"].push(pack->hv_debug_signals(i).errors_eeprom_write());
 
     }
 
-    for(int i = 0; i < pack->hv_fans_override_size(); i++){
+    for(int i = 0; i < pack->hv_fans_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_fans_override(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_fans_override(i)._inner_timestamp();
-        (*net_signals)["HV_FANS_OVERRIDE"]["_timestamp"].push(pack->hv_fans_override(i)._inner_timestamp());
+        if(pack->hv_fans_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_fans_status(i)._inner_timestamp();
+        (*net_signals)["HV_FANS_STATUS"]["_timestamp"].push(pack->hv_fans_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_FANS_OVERRIDE"]["fans_override"].push(pack->hv_fans_override(i).fans_override());
-		primary_hv_fans_override_fans_override_enum_to_string((primary_hv_fans_override_fans_override)pack->hv_fans_override(i).fans_override(), buffer);
-		(*net_strings)["HV_FANS_OVERRIDE"]["fans_override"].push(buffer);
-		(*net_signals)["HV_FANS_OVERRIDE"]["fans_speed"].push(pack->hv_fans_override(i).fans_speed());
+		(*net_enums)["HV_FANS_STATUS"]["fans_override"].push(pack->hv_fans_status(i).fans_override());
+		primary_hv_fans_status_fans_override_enum_to_string((primary_hv_fans_status_fans_override)pack->hv_fans_status(i).fans_override(), buffer);
+		(*net_strings)["HV_FANS_STATUS"]["fans_override"].push(buffer);
+		(*net_signals)["HV_FANS_STATUS"]["fans_speed"].push(pack->hv_fans_status(i).fans_speed());
 
     }
 
-    for(int i = 0; i < pack->hv_can_forward_status_size(); i++){
+    for(int i = 0; i < pack->hv_set_fans_status_handcart_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_can_forward_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_can_forward_status(i)._inner_timestamp();
-        (*net_signals)["HV_CAN_FORWARD_STATUS"]["_timestamp"].push(pack->hv_can_forward_status(i)._inner_timestamp());
+        if(pack->hv_set_fans_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_fans_status_handcart(i)._inner_timestamp();
+        (*net_signals)["HV_SET_FANS_STATUS_HANDCART"]["_timestamp"].push(pack->hv_set_fans_status_handcart(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_CAN_FORWARD_STATUS"]["can_forward_status"].push(pack->hv_can_forward_status(i).can_forward_status());
-		primary_hv_can_forward_status_can_forward_status_enum_to_string((primary_hv_can_forward_status_can_forward_status)pack->hv_can_forward_status(i).can_forward_status(), buffer);
-		(*net_strings)["HV_CAN_FORWARD_STATUS"]["can_forward_status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->hv_fans_override_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_fans_override_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_fans_override_status(i)._inner_timestamp();
-        (*net_signals)["HV_FANS_OVERRIDE_STATUS"]["_timestamp"].push(pack->hv_fans_override_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["HV_FANS_OVERRIDE_STATUS"]["fans_override"].push(pack->hv_fans_override_status(i).fans_override());
-		primary_hv_fans_override_status_fans_override_enum_to_string((primary_hv_fans_override_status_fans_override)pack->hv_fans_override_status(i).fans_override(), buffer);
-		(*net_strings)["HV_FANS_OVERRIDE_STATUS"]["fans_override"].push(buffer);
-		(*net_signals)["HV_FANS_OVERRIDE_STATUS"]["fans_speed"].push(pack->hv_fans_override_status(i).fans_speed());
+		(*net_enums)["HV_SET_FANS_STATUS_HANDCART"]["fans_override"].push(pack->hv_set_fans_status_handcart(i).fans_override());
+		primary_hv_set_fans_status_handcart_fans_override_enum_to_string((primary_hv_set_fans_status_handcart_fans_override)pack->hv_set_fans_status_handcart(i).fans_override(), buffer);
+		(*net_strings)["HV_SET_FANS_STATUS_HANDCART"]["fans_override"].push(buffer);
+		(*net_signals)["HV_SET_FANS_STATUS_HANDCART"]["fans_speed"].push(pack->hv_set_fans_status_handcart(i).fans_speed());
 
     }
 
@@ -1053,66 +949,10 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_FEEDBACK_STATUS"]["_timestamp"].push(pack->hv_feedback_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_implausibility_detected"].push(pack->hv_feedback_status(i).feedback_implausibility_detected());
-		primary_hv_feedback_status_feedback_implausibility_detected_enum_to_string((primary_hv_feedback_status_feedback_implausibility_detected)pack->hv_feedback_status(i).feedback_implausibility_detected(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_implausibility_detected"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_imd_cockpit"].push(pack->hv_feedback_status(i).feedback_imd_cockpit());
-		primary_hv_feedback_status_feedback_imd_cockpit_enum_to_string((primary_hv_feedback_status_feedback_imd_cockpit)pack->hv_feedback_status(i).feedback_imd_cockpit(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_imd_cockpit"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsal_green_fault_latched"].push(pack->hv_feedback_status(i).feedback_tsal_green_fault_latched());
-		primary_hv_feedback_status_feedback_tsal_green_fault_latched_enum_to_string((primary_hv_feedback_status_feedback_tsal_green_fault_latched)pack->hv_feedback_status(i).feedback_tsal_green_fault_latched(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsal_green_fault_latched"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_bms_cockpit"].push(pack->hv_feedback_status(i).feedback_bms_cockpit());
-		primary_hv_feedback_status_feedback_bms_cockpit_enum_to_string((primary_hv_feedback_status_feedback_bms_cockpit)pack->hv_feedback_status(i).feedback_bms_cockpit(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_bms_cockpit"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_ext_latched"].push(pack->hv_feedback_status(i).feedback_ext_latched());
-		primary_hv_feedback_status_feedback_ext_latched_enum_to_string((primary_hv_feedback_status_feedback_ext_latched)pack->hv_feedback_status(i).feedback_ext_latched(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_ext_latched"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsal_green"].push(pack->hv_feedback_status(i).feedback_tsal_green());
-		primary_hv_feedback_status_feedback_tsal_green_enum_to_string((primary_hv_feedback_status_feedback_tsal_green)pack->hv_feedback_status(i).feedback_tsal_green(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsal_green"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_ts_over_60v_status"].push(pack->hv_feedback_status(i).feedback_ts_over_60v_status());
-		primary_hv_feedback_status_feedback_ts_over_60v_status_enum_to_string((primary_hv_feedback_status_feedback_ts_over_60v_status)pack->hv_feedback_status(i).feedback_ts_over_60v_status(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_ts_over_60v_status"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airn_status"].push(pack->hv_feedback_status(i).feedback_airn_status());
-		primary_hv_feedback_status_feedback_airn_status_enum_to_string((primary_hv_feedback_status_feedback_airn_status)pack->hv_feedback_status(i).feedback_airn_status(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airn_status"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airp_status"].push(pack->hv_feedback_status(i).feedback_airp_status());
-		primary_hv_feedback_status_feedback_airp_status_enum_to_string((primary_hv_feedback_status_feedback_airp_status)pack->hv_feedback_status(i).feedback_airp_status(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airp_status"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airp_gate"].push(pack->hv_feedback_status(i).feedback_airp_gate());
-		primary_hv_feedback_status_feedback_airp_gate_enum_to_string((primary_hv_feedback_status_feedback_airp_gate)pack->hv_feedback_status(i).feedback_airp_gate(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airp_gate"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_airn_gate"].push(pack->hv_feedback_status(i).feedback_airn_gate());
-		primary_hv_feedback_status_feedback_airn_gate_enum_to_string((primary_hv_feedback_status_feedback_airn_gate)pack->hv_feedback_status(i).feedback_airn_gate(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_airn_gate"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_precharge_status"].push(pack->hv_feedback_status(i).feedback_precharge_status());
-		primary_hv_feedback_status_feedback_precharge_status_enum_to_string((primary_hv_feedback_status_feedback_precharge_status)pack->hv_feedback_status(i).feedback_precharge_status(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_precharge_status"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_tsp_over_60v_status"].push(pack->hv_feedback_status(i).feedback_tsp_over_60v_status());
-		primary_hv_feedback_status_feedback_tsp_over_60v_status_enum_to_string((primary_hv_feedback_status_feedback_tsp_over_60v_status)pack->hv_feedback_status(i).feedback_tsp_over_60v_status(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_tsp_over_60v_status"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_imd_fault"].push(pack->hv_feedback_status(i).feedback_imd_fault());
-		primary_hv_feedback_status_feedback_imd_fault_enum_to_string((primary_hv_feedback_status_feedback_imd_fault)pack->hv_feedback_status(i).feedback_imd_fault(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_imd_fault"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_check_mux"].push(pack->hv_feedback_status(i).feedback_check_mux());
-		primary_hv_feedback_status_feedback_check_mux_enum_to_string((primary_hv_feedback_status_feedback_check_mux)pack->hv_feedback_status(i).feedback_check_mux(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_check_mux"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_end"].push(pack->hv_feedback_status(i).feedback_sd_end());
-		primary_hv_feedback_status_feedback_sd_end_enum_to_string((primary_hv_feedback_status_feedback_sd_end)pack->hv_feedback_status(i).feedback_sd_end(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_end"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_out"].push(pack->hv_feedback_status(i).feedback_sd_out());
-		primary_hv_feedback_status_feedback_sd_out_enum_to_string((primary_hv_feedback_status_feedback_sd_out)pack->hv_feedback_status(i).feedback_sd_out(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_out"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_in"].push(pack->hv_feedback_status(i).feedback_sd_in());
-		primary_hv_feedback_status_feedback_sd_in_enum_to_string((primary_hv_feedback_status_feedback_sd_in)pack->hv_feedback_status(i).feedback_sd_in(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_in"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_bms"].push(pack->hv_feedback_status(i).feedback_sd_bms());
-		primary_hv_feedback_status_feedback_sd_bms_enum_to_string((primary_hv_feedback_status_feedback_sd_bms)pack->hv_feedback_status(i).feedback_sd_bms(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_bms"].push(buffer);
-		(*net_enums)["HV_FEEDBACK_STATUS"]["feedback_sd_imd"].push(pack->hv_feedback_status(i).feedback_sd_imd());
-		primary_hv_feedback_status_feedback_sd_imd_enum_to_string((primary_hv_feedback_status_feedback_sd_imd)pack->hv_feedback_status(i).feedback_sd_imd(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["feedback_sd_imd"].push(buffer);
+		(*net_enums)["HV_FEEDBACK_STATUS"]["fans_override"].push(pack->hv_feedback_status(i).fans_override());
+		primary_hv_feedback_status_fans_override_enum_to_string((primary_hv_feedback_status_fans_override)pack->hv_feedback_status(i).fans_override(), buffer);
+		(*net_strings)["HV_FEEDBACK_STATUS"]["fans_override"].push(buffer);
+		(*net_signals)["HV_FEEDBACK_STATUS"]["fans_speed"].push(pack->hv_feedback_status(i).fans_speed());
 
     }
 
@@ -1124,13 +964,13 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_ts_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_ts_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).feedback_ts_over_60v_status());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airn_status"].push(pack->hv_feedback_ts_voltage(i).feedback_airn_status());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airp_status"].push(pack->hv_feedback_ts_voltage(i).feedback_airp_status());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airp_gate"].push(pack->hv_feedback_ts_voltage(i).feedback_airp_gate());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_airn_gate"].push(pack->hv_feedback_ts_voltage(i).feedback_airn_gate());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_precharge_status"].push(pack->hv_feedback_ts_voltage(i).feedback_precharge_status());
-		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["feedback_tsp_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).feedback_tsp_over_60v_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["ts_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).ts_over_60v_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["airn_status"].push(pack->hv_feedback_ts_voltage(i).airn_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["airp_status"].push(pack->hv_feedback_ts_voltage(i).airp_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["airp_gate"].push(pack->hv_feedback_ts_voltage(i).airp_gate());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["airn_gate"].push(pack->hv_feedback_ts_voltage(i).airn_gate());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["precharge_status"].push(pack->hv_feedback_ts_voltage(i).precharge_status());
+		(*net_signals)["HV_FEEDBACK_TS_VOLTAGE"]["tsp_over_60v_status"].push(pack->hv_feedback_ts_voltage(i).tsp_over_60v_status());
 
     }
 
@@ -1142,14 +982,14 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_misc_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_implausibility_detected"].push(pack->hv_feedback_misc_voltage(i).feedback_implausibility_detected());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_imd_cockpit"].push(pack->hv_feedback_misc_voltage(i).feedback_imd_cockpit());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_tsal_green_fault_latched"].push(pack->hv_feedback_misc_voltage(i).feedback_tsal_green_fault_latched());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_bms_cockpit"].push(pack->hv_feedback_misc_voltage(i).feedback_bms_cockpit());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_ext_latched"].push(pack->hv_feedback_misc_voltage(i).feedback_ext_latched());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_tsal_green"].push(pack->hv_feedback_misc_voltage(i).feedback_tsal_green());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["implausibility_detected"].push(pack->hv_feedback_misc_voltage(i).implausibility_detected());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["imd_cockpit"].push(pack->hv_feedback_misc_voltage(i).imd_cockpit());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["tsal_green_fault_latched"].push(pack->hv_feedback_misc_voltage(i).tsal_green_fault_latched());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["bms_cockpit"].push(pack->hv_feedback_misc_voltage(i).bms_cockpit());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["ext_latched"].push(pack->hv_feedback_misc_voltage(i).ext_latched());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["tsal_green"].push(pack->hv_feedback_misc_voltage(i).tsal_green());
 		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["imd_fault"].push(pack->hv_feedback_misc_voltage(i).imd_fault());
-		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["feedback_check_mux"].push(pack->hv_feedback_misc_voltage(i).feedback_check_mux());
+		(*net_signals)["HV_FEEDBACK_MISC_VOLTAGE"]["check_mux"].push(pack->hv_feedback_misc_voltage(i).check_mux());
 
     }
 
@@ -1161,11 +1001,11 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["_timestamp"].push(pack->hv_feedback_sd_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_end"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_end());
-		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_out"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_out());
-		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_in"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_in());
-		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_bms"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_bms());
-		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["feedback_sd_imd"].push(pack->hv_feedback_sd_voltage(i).feedback_sd_imd());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["sd_end"].push(pack->hv_feedback_sd_voltage(i).sd_end());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["sd_out"].push(pack->hv_feedback_sd_voltage(i).sd_out());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["sd_in"].push(pack->hv_feedback_sd_voltage(i).sd_in());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["sd_bms"].push(pack->hv_feedback_sd_voltage(i).sd_bms());
+		(*net_signals)["HV_FEEDBACK_SD_VOLTAGE"]["sd_imd"].push(pack->hv_feedback_sd_voltage(i).sd_imd());
 
     }
 
@@ -1177,10 +1017,8 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_IMD_STATUS"]["_timestamp"].push(pack->hv_imd_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_IMD_STATUS"]["imd_fault"].push(pack->hv_imd_status(i).imd_fault());
-		(*net_enums)["HV_IMD_STATUS"]["imd_status"].push(pack->hv_imd_status(i).imd_status());
-		primary_hv_imd_status_imd_status_enum_to_string((primary_hv_imd_status_imd_status)pack->hv_imd_status(i).imd_status(), buffer);
-		(*net_strings)["HV_IMD_STATUS"]["imd_status"].push(buffer);
+		(*net_signals)["HV_IMD_STATUS"]["imd_fault"].push(pack->hv_imd_status(i).imd_fault());
+		(*net_signals)["HV_IMD_STATUS"]["imd_status"].push(pack->hv_imd_status(i).imd_status());
 		(*net_signals)["HV_IMD_STATUS"]["imd_details"].push(pack->hv_imd_status(i).imd_details());
 		(*net_signals)["HV_IMD_STATUS"]["imd_duty_cycle"].push(pack->hv_imd_status(i).imd_duty_cycle());
 		(*net_signals)["HV_IMD_STATUS"]["imd_freq"].push(pack->hv_imd_status(i).imd_freq());
@@ -1188,169 +1026,104 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->ts_status_size(); i++){
+    for(int i = 0; i < pack->hv_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ts_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ts_status(i)._inner_timestamp();
-        (*net_signals)["TS_STATUS"]["_timestamp"].push(pack->ts_status(i)._inner_timestamp());
+        if(pack->hv_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_status(i)._inner_timestamp();
+        (*net_signals)["HV_STATUS"]["_timestamp"].push(pack->hv_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["TS_STATUS"]["ts_status"].push(pack->ts_status(i).ts_status());
-		primary_ts_status_ts_status_enum_to_string((primary_ts_status_ts_status)pack->ts_status(i).ts_status(), buffer);
-		(*net_strings)["TS_STATUS"]["ts_status"].push(buffer);
+		(*net_enums)["HV_STATUS"]["status"].push(pack->hv_status(i).status());
+		primary_hv_status_status_enum_to_string((primary_hv_status_status)pack->hv_status(i).status(), buffer);
+		(*net_strings)["HV_STATUS"]["status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->set_ts_status_das_size(); i++){
+    for(int i = 0; i < pack->hv_set_status_ecu_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_ts_status_das(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_ts_status_das(i)._inner_timestamp();
-        (*net_signals)["SET_TS_STATUS_DAS"]["_timestamp"].push(pack->set_ts_status_das(i)._inner_timestamp());
+        if(pack->hv_set_status_ecu(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_status_ecu(i)._inner_timestamp();
+        (*net_signals)["HV_SET_STATUS_ECU"]["_timestamp"].push(pack->hv_set_status_ecu(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_TS_STATUS_DAS"]["ts_status_set"].push(pack->set_ts_status_das(i).ts_status_set());
-		primary_set_ts_status_das_ts_status_set_enum_to_string((primary_set_ts_status_das_ts_status_set)pack->set_ts_status_das(i).ts_status_set(), buffer);
-		(*net_strings)["SET_TS_STATUS_DAS"]["ts_status_set"].push(buffer);
+		(*net_enums)["HV_SET_STATUS_ECU"]["hv_status_set"].push(pack->hv_set_status_ecu(i).hv_status_set());
+		primary_hv_set_status_ecu_hv_status_set_enum_to_string((primary_hv_set_status_ecu_hv_status_set)pack->hv_set_status_ecu(i).hv_status_set(), buffer);
+		(*net_strings)["HV_SET_STATUS_ECU"]["hv_status_set"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->set_ts_status_handcart_size(); i++){
+    for(int i = 0; i < pack->hv_set_status_handcart_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_ts_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_ts_status_handcart(i)._inner_timestamp();
-        (*net_signals)["SET_TS_STATUS_HANDCART"]["_timestamp"].push(pack->set_ts_status_handcart(i)._inner_timestamp());
+        if(pack->hv_set_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_status_handcart(i)._inner_timestamp();
+        (*net_signals)["HV_SET_STATUS_HANDCART"]["_timestamp"].push(pack->hv_set_status_handcart(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_TS_STATUS_HANDCART"]["ts_status_set"].push(pack->set_ts_status_handcart(i).ts_status_set());
-		primary_set_ts_status_handcart_ts_status_set_enum_to_string((primary_set_ts_status_handcart_ts_status_set)pack->set_ts_status_handcart(i).ts_status_set(), buffer);
-		(*net_strings)["SET_TS_STATUS_HANDCART"]["ts_status_set"].push(buffer);
+		(*net_enums)["HV_SET_STATUS_HANDCART"]["hv_status_set"].push(pack->hv_set_status_handcart(i).hv_status_set());
+		primary_hv_set_status_handcart_hv_status_set_enum_to_string((primary_hv_set_status_handcart_hv_status_set)pack->hv_set_status_handcart(i).hv_status_set(), buffer);
+		(*net_strings)["HV_SET_STATUS_HANDCART"]["hv_status_set"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->steer_status_size(); i++){
+    for(int i = 0; i < pack->hv_balancing_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->steer_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->steer_status(i)._inner_timestamp();
-        (*net_signals)["STEER_STATUS"]["_timestamp"].push(pack->steer_status(i)._inner_timestamp());
+        if(pack->hv_balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_balancing_status(i)._inner_timestamp();
+        (*net_signals)["HV_BALANCING_STATUS"]["_timestamp"].push(pack->hv_balancing_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["STEER_STATUS"]["map_pw"].push(pack->steer_status(i).map_pw());
-		(*net_signals)["STEER_STATUS"]["map_sc"].push(pack->steer_status(i).map_sc());
-		(*net_signals)["STEER_STATUS"]["map_tv"].push(pack->steer_status(i).map_tv());
+		(*net_enums)["HV_BALANCING_STATUS"]["cellboard_id"].push(pack->hv_balancing_status(i).cellboard_id());
+		primary_hv_balancing_status_cellboard_id_enum_to_string((primary_hv_balancing_status_cellboard_id)pack->hv_balancing_status(i).cellboard_id(), buffer);
+		(*net_strings)["HV_BALANCING_STATUS"]["cellboard_id"].push(buffer);
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_status"].push(pack->hv_balancing_status(i).balancing_status());
+		primary_hv_balancing_status_balancing_status_enum_to_string((primary_hv_balancing_status_balancing_status)pack->hv_balancing_status(i).balancing_status(), buffer);
+		(*net_strings)["HV_BALANCING_STATUS"]["balancing_status"].push(buffer);
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_can_comm"].push(pack->hv_balancing_status(i).errors_can_comm());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_ltc_comm"].push(pack->hv_balancing_status(i).errors_ltc_comm());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_0"].push(pack->hv_balancing_status(i).errors_temp_comm_0());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_1"].push(pack->hv_balancing_status(i).errors_temp_comm_1());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_2"].push(pack->hv_balancing_status(i).errors_temp_comm_2());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_3"].push(pack->hv_balancing_status(i).errors_temp_comm_3());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_4"].push(pack->hv_balancing_status(i).errors_temp_comm_4());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_temp_comm_5"].push(pack->hv_balancing_status(i).errors_temp_comm_5());
+		(*net_enums)["HV_BALANCING_STATUS"]["errors_open_wire"].push(pack->hv_balancing_status(i).errors_open_wire());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell0"].push(pack->hv_balancing_status(i).balancing_cells_cell0());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell1"].push(pack->hv_balancing_status(i).balancing_cells_cell1());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell2"].push(pack->hv_balancing_status(i).balancing_cells_cell2());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell3"].push(pack->hv_balancing_status(i).balancing_cells_cell3());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell4"].push(pack->hv_balancing_status(i).balancing_cells_cell4());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell5"].push(pack->hv_balancing_status(i).balancing_cells_cell5());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell6"].push(pack->hv_balancing_status(i).balancing_cells_cell6());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell7"].push(pack->hv_balancing_status(i).balancing_cells_cell7());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell8"].push(pack->hv_balancing_status(i).balancing_cells_cell8());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell9"].push(pack->hv_balancing_status(i).balancing_cells_cell9());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell10"].push(pack->hv_balancing_status(i).balancing_cells_cell10());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell11"].push(pack->hv_balancing_status(i).balancing_cells_cell11());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell12"].push(pack->hv_balancing_status(i).balancing_cells_cell12());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell13"].push(pack->hv_balancing_status(i).balancing_cells_cell13());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell14"].push(pack->hv_balancing_status(i).balancing_cells_cell14());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell15"].push(pack->hv_balancing_status(i).balancing_cells_cell15());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell16"].push(pack->hv_balancing_status(i).balancing_cells_cell16());
+		(*net_enums)["HV_BALANCING_STATUS"]["balancing_cells_cell17"].push(pack->hv_balancing_status(i).balancing_cells_cell17());
 
     }
 
-    for(int i = 0; i < pack->set_car_status_size(); i++){
+    for(int i = 0; i < pack->hv_set_balancing_status_handcart_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_car_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_car_status(i)._inner_timestamp();
-        (*net_signals)["SET_CAR_STATUS"]["_timestamp"].push(pack->set_car_status(i)._inner_timestamp());
+        if(pack->hv_set_balancing_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_balancing_status_handcart(i)._inner_timestamp();
+        (*net_signals)["HV_SET_BALANCING_STATUS_HANDCART"]["_timestamp"].push(pack->hv_set_balancing_status_handcart(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_CAR_STATUS"]["car_status_set"].push(pack->set_car_status(i).car_status_set());
-		primary_set_car_status_car_status_set_enum_to_string((primary_set_car_status_car_status_set)pack->set_car_status(i).car_status_set(), buffer);
-		(*net_strings)["SET_CAR_STATUS"]["car_status_set"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->set_pedal_calibration_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->set_pedal_calibration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_pedal_calibration(i)._inner_timestamp();
-        (*net_signals)["SET_PEDAL_CALIBRATION"]["_timestamp"].push(pack->set_pedal_calibration(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["SET_PEDAL_CALIBRATION"]["pedal"].push(pack->set_pedal_calibration(i).pedal());
-		primary_set_pedal_calibration_pedal_enum_to_string((primary_set_pedal_calibration_pedal)pack->set_pedal_calibration(i).pedal(), buffer);
-		(*net_strings)["SET_PEDAL_CALIBRATION"]["pedal"].push(buffer);
-		(*net_enums)["SET_PEDAL_CALIBRATION"]["bound"].push(pack->set_pedal_calibration(i).bound());
-		primary_set_pedal_calibration_bound_enum_to_string((primary_set_pedal_calibration_bound)pack->set_pedal_calibration(i).bound(), buffer);
-		(*net_strings)["SET_PEDAL_CALIBRATION"]["bound"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->pedal_calibration_ack_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->pedal_calibration_ack(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->pedal_calibration_ack(i)._inner_timestamp();
-        (*net_signals)["PEDAL_CALIBRATION_ACK"]["_timestamp"].push(pack->pedal_calibration_ack(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["PEDAL_CALIBRATION_ACK"]["pedal"].push(pack->pedal_calibration_ack(i).pedal());
-		primary_pedal_calibration_ack_pedal_enum_to_string((primary_pedal_calibration_ack_pedal)pack->pedal_calibration_ack(i).pedal(), buffer);
-		(*net_strings)["PEDAL_CALIBRATION_ACK"]["pedal"].push(buffer);
-		(*net_enums)["PEDAL_CALIBRATION_ACK"]["bound"].push(pack->pedal_calibration_ack(i).bound());
-		primary_pedal_calibration_ack_bound_enum_to_string((primary_pedal_calibration_ack_bound)pack->pedal_calibration_ack(i).bound(), buffer);
-		(*net_strings)["PEDAL_CALIBRATION_ACK"]["bound"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->car_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->car_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->car_status(i)._inner_timestamp();
-        (*net_signals)["CAR_STATUS"]["_timestamp"].push(pack->car_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["CAR_STATUS"]["inverter_l"].push(pack->car_status(i).inverter_l());
-		primary_car_status_inverter_l_enum_to_string((primary_car_status_inverter_l)pack->car_status(i).inverter_l(), buffer);
-		(*net_strings)["CAR_STATUS"]["inverter_l"].push(buffer);
-		(*net_enums)["CAR_STATUS"]["inverter_r"].push(pack->car_status(i).inverter_r());
-		primary_car_status_inverter_r_enum_to_string((primary_car_status_inverter_r)pack->car_status(i).inverter_r(), buffer);
-		(*net_strings)["CAR_STATUS"]["inverter_r"].push(buffer);
-		(*net_enums)["CAR_STATUS"]["car_status"].push(pack->car_status(i).car_status());
-		primary_car_status_car_status_enum_to_string((primary_car_status_car_status)pack->car_status(i).car_status(), buffer);
-		(*net_strings)["CAR_STATUS"]["car_status"].push(buffer);
-		(*net_enums)["CAR_STATUS"]["controls_slip"].push(pack->car_status(i).controls_slip());
-		(*net_enums)["CAR_STATUS"]["controls_torque_vectoring"].push(pack->car_status(i).controls_torque_vectoring());
-		(*net_enums)["CAR_STATUS"]["controls_regen"].push(pack->car_status(i).controls_regen());
-
-    }
-
-    for(int i = 0; i < pack->das_errors_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->das_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->das_errors(i)._inner_timestamp();
-        (*net_signals)["DAS_ERRORS"]["_timestamp"].push(pack->das_errors(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["DAS_ERRORS"]["das_error_pedal_adc"].push(pack->das_errors(i).das_error_pedal_adc());
-		(*net_enums)["DAS_ERRORS"]["das_error_pedal_implausibility"].push(pack->das_errors(i).das_error_pedal_implausibility());
-		(*net_enums)["DAS_ERRORS"]["das_error_imu_tout"].push(pack->das_errors(i).das_error_imu_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_irts_tout"].push(pack->das_errors(i).das_error_irts_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_ts_tout"].push(pack->das_errors(i).das_error_ts_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_invl_tout"].push(pack->das_errors(i).das_error_invl_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_invr_tout"].push(pack->das_errors(i).das_error_invr_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_steer_tout"].push(pack->das_errors(i).das_error_steer_tout());
-		(*net_enums)["DAS_ERRORS"]["das_error_fsm"].push(pack->das_errors(i).das_error_fsm());
-
-    }
-
-    for(int i = 0; i < pack->ecu_feedbacks_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->ecu_feedbacks(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_feedbacks(i)._inner_timestamp();
-        (*net_signals)["ECU_FEEDBACKS"]["_timestamp"].push(pack->ecu_feedbacks(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_cock_fb"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_cock_fb());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_fb1"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_fb1());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_bots_fb"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_bots_fb());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_interial_fb"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_interial_fb());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_fb4"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_fb4());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_in"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_in());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_out"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_out());
-		(*net_enums)["ECU_FEEDBACKS"]["ecu_feedbacks_sd_ctrl_pin"].push(pack->ecu_feedbacks(i).ecu_feedbacks_sd_ctrl_pin());
+		(*net_enums)["HV_SET_BALANCING_STATUS_HANDCART"]["set_balancing_status"].push(pack->hv_set_balancing_status_handcart(i).set_balancing_status());
+		primary_hv_set_balancing_status_handcart_set_balancing_status_enum_to_string((primary_hv_set_balancing_status_handcart_set_balancing_status)pack->hv_set_balancing_status_handcart(i).set_balancing_status(), buffer);
+		(*net_strings)["HV_SET_BALANCING_STATUS_HANDCART"]["set_balancing_status"].push(buffer);
+		(*net_signals)["HV_SET_BALANCING_STATUS_HANDCART"]["balancing_threshold"].push(pack->hv_set_balancing_status_handcart(i).balancing_threshold());
 
     }
 
@@ -1368,124 +1141,51 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->lv_currents_size(); i++){
+    for(int i = 0; i < pack->lv_radiator_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_currents(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_currents(i)._inner_timestamp();
-        (*net_signals)["LV_CURRENTS"]["_timestamp"].push(pack->lv_currents(i)._inner_timestamp());
+        if(pack->lv_radiator_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_radiator_speed(i)._inner_timestamp();
+        (*net_signals)["LV_RADIATOR_SPEED"]["_timestamp"].push(pack->lv_radiator_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_CURRENTS"]["current_as_battery"].push(pack->lv_currents(i).current_as_battery());
-		(*net_signals)["LV_CURRENTS"]["current_lv_battery"].push(pack->lv_currents(i).current_lv_battery());
-		(*net_signals)["LV_CURRENTS"]["current_charger"].push(pack->lv_currents(i).current_charger());
+		(*net_signals)["LV_RADIATOR_SPEED"]["radiator_speed"].push(pack->lv_radiator_speed(i).radiator_speed());
 
     }
 
-    for(int i = 0; i < pack->lv_cells_voltage_size(); i++){
+    for(int i = 0; i < pack->lv_pumps_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_cells_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_cells_voltage(i)._inner_timestamp();
-        (*net_signals)["LV_CELLS_VOLTAGE"]["_timestamp"].push(pack->lv_cells_voltage(i)._inner_timestamp());
+        if(pack->lv_pumps_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_pumps_speed(i)._inner_timestamp();
+        (*net_signals)["LV_PUMPS_SPEED"]["_timestamp"].push(pack->lv_pumps_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_CELLS_VOLTAGE"]["start_index"].push(pack->lv_cells_voltage(i).start_index());
-		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_0"].push(pack->lv_cells_voltage(i).voltage_0());
-		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_1"].push(pack->lv_cells_voltage(i).voltage_1());
-		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_2"].push(pack->lv_cells_voltage(i).voltage_2());
+		(*net_signals)["LV_PUMPS_SPEED"]["pumps_speed"].push(pack->lv_pumps_speed(i).pumps_speed());
 
     }
 
-    for(int i = 0; i < pack->lv_total_voltage_size(); i++){
+    for(int i = 0; i < pack->lv_set_radiator_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_total_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_total_voltage(i)._inner_timestamp();
-        (*net_signals)["LV_TOTAL_VOLTAGE"]["_timestamp"].push(pack->lv_total_voltage(i)._inner_timestamp());
+        if(pack->lv_set_radiator_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_set_radiator_speed(i)._inner_timestamp();
+        (*net_signals)["LV_SET_RADIATOR_SPEED"]["_timestamp"].push(pack->lv_set_radiator_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_TOTAL_VOLTAGE"]["total_voltage"].push(pack->lv_total_voltage(i).total_voltage());
+		(*net_signals)["LV_SET_RADIATOR_SPEED"]["radiator_speed"].push(pack->lv_set_radiator_speed(i).radiator_speed());
 
     }
 
-    for(int i = 0; i < pack->lv_cells_temp_size(); i++){
+    for(int i = 0; i < pack->lv_set_pumps_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_cells_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_cells_temp(i)._inner_timestamp();
-        (*net_signals)["LV_CELLS_TEMP"]["_timestamp"].push(pack->lv_cells_temp(i)._inner_timestamp());
+        if(pack->lv_set_pumps_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_set_pumps_speed(i)._inner_timestamp();
+        (*net_signals)["LV_SET_PUMPS_SPEED"]["_timestamp"].push(pack->lv_set_pumps_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_CELLS_TEMP"]["start_index"].push(pack->lv_cells_temp(i).start_index());
-		(*net_signals)["LV_CELLS_TEMP"]["temp_0"].push(pack->lv_cells_temp(i).temp_0());
-		(*net_signals)["LV_CELLS_TEMP"]["temp_1"].push(pack->lv_cells_temp(i).temp_1());
-		(*net_signals)["LV_CELLS_TEMP"]["temp_2"].push(pack->lv_cells_temp(i).temp_2());
-
-    }
-
-    for(int i = 0; i < pack->cooling_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->cooling_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->cooling_status(i)._inner_timestamp();
-        (*net_signals)["COOLING_STATUS"]["_timestamp"].push(pack->cooling_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["COOLING_STATUS"]["radiators_speed"].push(pack->cooling_status(i).radiators_speed());
-		(*net_signals)["COOLING_STATUS"]["pumps_speed"].push(pack->cooling_status(i).pumps_speed());
-
-    }
-
-    for(int i = 0; i < pack->set_radiator_speed_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->set_radiator_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_radiator_speed(i)._inner_timestamp();
-        (*net_signals)["SET_RADIATOR_SPEED"]["_timestamp"].push(pack->set_radiator_speed(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["SET_RADIATOR_SPEED"]["radiators_speed"].push(pack->set_radiator_speed(i).radiators_speed());
-
-    }
-
-    for(int i = 0; i < pack->set_pumps_speed_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->set_pumps_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_pumps_speed(i)._inner_timestamp();
-        (*net_signals)["SET_PUMPS_SPEED"]["_timestamp"].push(pack->set_pumps_speed(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["SET_PUMPS_SPEED"]["pumps_speed"].push(pack->set_pumps_speed(i).pumps_speed());
-
-    }
-
-    for(int i = 0; i < pack->set_inverter_connection_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->set_inverter_connection_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_inverter_connection_status(i)._inner_timestamp();
-        (*net_signals)["SET_INVERTER_CONNECTION_STATUS"]["_timestamp"].push(pack->set_inverter_connection_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["SET_INVERTER_CONNECTION_STATUS"]["status"].push(pack->set_inverter_connection_status(i).status());
-		primary_set_inverter_connection_status_status_enum_to_string((primary_set_inverter_connection_status_status)pack->set_inverter_connection_status(i).status(), buffer);
-		(*net_strings)["SET_INVERTER_CONNECTION_STATUS"]["status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->inverter_connection_status_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->inverter_connection_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->inverter_connection_status(i)._inner_timestamp();
-        (*net_signals)["INVERTER_CONNECTION_STATUS"]["_timestamp"].push(pack->inverter_connection_status(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_enums)["INVERTER_CONNECTION_STATUS"]["status"].push(pack->inverter_connection_status(i).status());
-		primary_inverter_connection_status_status_enum_to_string((primary_inverter_connection_status_status)pack->inverter_connection_status(i).status(), buffer);
-		(*net_strings)["INVERTER_CONNECTION_STATUS"]["status"].push(buffer);
+		(*net_signals)["LV_SET_PUMPS_SPEED"]["pumps_speed"].push(pack->lv_set_pumps_speed(i).pumps_speed());
 
     }
 
@@ -1497,23 +1197,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_ERRORS"]["_timestamp"].push(pack->lv_errors(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["LV_ERRORS"]["warnings_cell_undervoltage"].push(pack->lv_errors(i).warnings_cell_undervoltage());
-		(*net_enums)["LV_ERRORS"]["warnings_cell_overvoltage"].push(pack->lv_errors(i).warnings_cell_overvoltage());
-		(*net_enums)["LV_ERRORS"]["warnings_battery_open_wire"].push(pack->lv_errors(i).warnings_battery_open_wire());
-		(*net_enums)["LV_ERRORS"]["warnings_can"].push(pack->lv_errors(i).warnings_can());
-		(*net_enums)["LV_ERRORS"]["warnings_spi"].push(pack->lv_errors(i).warnings_spi());
-		(*net_enums)["LV_ERRORS"]["warnings_over_current"].push(pack->lv_errors(i).warnings_over_current());
-		(*net_enums)["LV_ERRORS"]["warnings_cell_under_temperature"].push(pack->lv_errors(i).warnings_cell_under_temperature());
-		(*net_enums)["LV_ERRORS"]["warnings_cell_over_temperature"].push(pack->lv_errors(i).warnings_cell_over_temperature());
-		(*net_enums)["LV_ERRORS"]["warnings_relay"].push(pack->lv_errors(i).warnings_relay());
-		(*net_enums)["LV_ERRORS"]["warnings_bms_monitor"].push(pack->lv_errors(i).warnings_bms_monitor());
-		(*net_enums)["LV_ERRORS"]["warnings_voltages_not_ready"].push(pack->lv_errors(i).warnings_voltages_not_ready());
-		(*net_enums)["LV_ERRORS"]["warnings_mcp23017"].push(pack->lv_errors(i).warnings_mcp23017());
-		(*net_enums)["LV_ERRORS"]["warnings_radiator"].push(pack->lv_errors(i).warnings_radiator());
-		(*net_enums)["LV_ERRORS"]["warnings_fan"].push(pack->lv_errors(i).warnings_fan());
-		(*net_enums)["LV_ERRORS"]["warnings_pump"].push(pack->lv_errors(i).warnings_pump());
-		(*net_enums)["LV_ERRORS"]["warnings_adc_init"].push(pack->lv_errors(i).warnings_adc_init());
-		(*net_enums)["LV_ERRORS"]["warnings_mux"].push(pack->lv_errors(i).warnings_mux());
 		(*net_enums)["LV_ERRORS"]["errors_cell_undervoltage"].push(pack->lv_errors(i).errors_cell_undervoltage());
 		(*net_enums)["LV_ERRORS"]["errors_cell_overvoltage"].push(pack->lv_errors(i).errors_cell_overvoltage());
 		(*net_enums)["LV_ERRORS"]["errors_battery_open_wire"].push(pack->lv_errors(i).errors_battery_open_wire());
@@ -1531,78 +1214,84 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["LV_ERRORS"]["errors_pump"].push(pack->lv_errors(i).errors_pump());
 		(*net_enums)["LV_ERRORS"]["errors_adc_init"].push(pack->lv_errors(i).errors_adc_init());
 		(*net_enums)["LV_ERRORS"]["errors_mux"].push(pack->lv_errors(i).errors_mux());
+		(*net_enums)["LV_ERRORS"]["health_signals_lvms_out"].push(pack->lv_errors(i).health_signals_lvms_out());
+		(*net_enums)["LV_ERRORS"]["health_signals_relay_out"].push(pack->lv_errors(i).health_signals_relay_out());
+		(*net_enums)["LV_ERRORS"]["health_signals_battery_voltage_out"].push(pack->lv_errors(i).health_signals_battery_voltage_out());
+		(*net_enums)["LV_ERRORS"]["health_signals_charger_current"].push(pack->lv_errors(i).health_signals_charger_current());
+		(*net_enums)["LV_ERRORS"]["health_signals_battery_current"].push(pack->lv_errors(i).health_signals_battery_current());
+		(*net_enums)["LV_ERRORS"]["health_signals_sign_battery_current"].push(pack->lv_errors(i).health_signals_sign_battery_current());
 
     }
 
-    for(int i = 0; i < pack->lv_health_signals_size(); i++){
+    for(int i = 0; i < pack->lv_feedback_ts_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_health_signals(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_health_signals(i)._inner_timestamp();
-        (*net_signals)["LV_HEALTH_SIGNALS"]["_timestamp"].push(pack->lv_health_signals(i)._inner_timestamp());
+        if(pack->lv_feedback_ts_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedback_ts_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["_timestamp"].push(pack->lv_feedback_ts_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_lvms_out"].push(pack->lv_health_signals(i).health_signals_lvms_out());
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_relay_out"].push(pack->lv_health_signals(i).health_signals_relay_out());
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_battery_voltage_out"].push(pack->lv_health_signals(i).health_signals_battery_voltage_out());
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_charger_current"].push(pack->lv_health_signals(i).health_signals_charger_current());
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_battery_current"].push(pack->lv_health_signals(i).health_signals_battery_current());
-		(*net_enums)["LV_HEALTH_SIGNALS"]["health_signals_sign_battery_current"].push(pack->lv_health_signals(i).health_signals_sign_battery_current());
-		(*net_signals)["LV_HEALTH_SIGNALS"]["health_code"].push(pack->lv_health_signals(i).health_code());
+		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["bspd"].push(pack->lv_feedback_ts_voltage(i).bspd());
+		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["imd"].push(pack->lv_feedback_ts_voltage(i).imd());
+		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["hvd"].push(pack->lv_feedback_ts_voltage(i).hvd());
+		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["ams"].push(pack->lv_feedback_ts_voltage(i).ams());
 
     }
 
-    for(int i = 0; i < pack->lv_feedbacks_size(); i++){
+    for(int i = 0; i < pack->lv_feedback_sd_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_feedbacks(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_feedbacks(i)._inner_timestamp();
-        (*net_signals)["LV_FEEDBACKS"]["_timestamp"].push(pack->lv_feedbacks(i)._inner_timestamp());
+        if(pack->lv_feedback_sd_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedback_sd_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACK_SD_VOLTAGE"]["_timestamp"].push(pack->lv_feedback_sd_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_bspd_fb"].push(pack->lv_feedbacks(i).feedbacks_bspd_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_hvd_fb"].push(pack->lv_feedbacks(i).feedbacks_hvd_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_lvms_fb"].push(pack->lv_feedbacks(i).feedbacks_lvms_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_res_fb"].push(pack->lv_feedbacks(i).feedbacks_res_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_lv_encl"].push(pack->lv_feedbacks(i).feedbacks_lv_encl());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_invc_lid_fb"].push(pack->lv_feedbacks(i).feedbacks_invc_lid_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_hv_encl_2_fb"].push(pack->lv_feedbacks(i).feedbacks_hv_encl_2_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_back_plate_fb"].push(pack->lv_feedbacks(i).feedbacks_back_plate_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_invc_interlock_fb"].push(pack->lv_feedbacks(i).feedbacks_invc_interlock_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_ams_fb"].push(pack->lv_feedbacks(i).feedbacks_ams_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_asms_fb"].push(pack->lv_feedbacks(i).feedbacks_asms_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_interlock_fb"].push(pack->lv_feedbacks(i).feedbacks_interlock_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_inverters_fb"].push(pack->lv_feedbacks(i).feedbacks_inverters_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_pcbs_fb"].push(pack->lv_feedbacks(i).feedbacks_pcbs_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_pumps_fb"].push(pack->lv_feedbacks(i).feedbacks_pumps_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_shutdown_fb"].push(pack->lv_feedbacks(i).feedbacks_shutdown_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_radiators_fb"].push(pack->lv_feedbacks(i).feedbacks_radiators_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_fan_fb"].push(pack->lv_feedbacks(i).feedbacks_fan_fb());
-		(*net_enums)["LV_FEEDBACKS"]["feedbacks_as_actuation_fb"].push(pack->lv_feedbacks(i).feedbacks_as_actuation_fb());
-		(*net_signals)["LV_FEEDBACKS"]["sd_start"].push(pack->lv_feedbacks(i).sd_start());
-		(*net_signals)["LV_FEEDBACKS"]["sd_end"].push(pack->lv_feedbacks(i).sd_end());
+		(*net_signals)["LV_FEEDBACK_SD_VOLTAGE"]["sd_end"].push(pack->lv_feedback_sd_voltage(i).sd_end());
+		(*net_signals)["LV_FEEDBACK_SD_VOLTAGE"]["lvms"].push(pack->lv_feedback_sd_voltage(i).lvms());
+		(*net_signals)["LV_FEEDBACK_SD_VOLTAGE"]["interlock"].push(pack->lv_feedback_sd_voltage(i).interlock());
+		(*net_signals)["LV_FEEDBACK_SD_VOLTAGE"]["sd_start"].push(pack->lv_feedback_sd_voltage(i).sd_start());
 
     }
 
-    for(int i = 0; i < pack->shutdown_status_size(); i++){
+    for(int i = 0; i < pack->lv_feedback_eclosure_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->shutdown_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->shutdown_status(i)._inner_timestamp();
-        (*net_signals)["SHUTDOWN_STATUS"]["_timestamp"].push(pack->shutdown_status(i)._inner_timestamp());
+        if(pack->lv_feedback_eclosure_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedback_eclosure_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["_timestamp"].push(pack->lv_feedback_eclosure_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SHUTDOWN_STATUS"]["input"].push(pack->shutdown_status(i).input());
-		(*net_enums)["SHUTDOWN_STATUS"]["output"].push(pack->shutdown_status(i).output());
+		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["lv_encl"].push(pack->lv_feedback_eclosure_voltage(i).lv_encl());
+		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["hv_encl_1"].push(pack->lv_feedback_eclosure_voltage(i).hv_encl_1());
+		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["hv_encl_2"].push(pack->lv_feedback_eclosure_voltage(i).hv_encl_2());
+		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["backplate"].push(pack->lv_feedback_eclosure_voltage(i).backplate());
 
     }
 
-    for(int i = 0; i < pack->lv_can_flash_req_size(); i++){
+    for(int i = 0; i < pack->lv_feedback_gpio_extender_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_can_flash_req(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_can_flash_req(i)._inner_timestamp();
-        (*net_signals)["LV_CAN_FLASH_REQ"]["_timestamp"].push(pack->lv_can_flash_req(i)._inner_timestamp());
+        if(pack->lv_feedback_gpio_extender(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedback_gpio_extender(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACK_GPIO_EXTENDER"]["_timestamp"].push(pack->lv_feedback_gpio_extender(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_inverters"].push(pack->lv_feedback_gpio_extender(i).feedback_inverters());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_pcbs"].push(pack->lv_feedback_gpio_extender(i).feedback_pcbs());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_pumps"].push(pack->lv_feedback_gpio_extender(i).feedback_pumps());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_radiators"].push(pack->lv_feedback_gpio_extender(i).feedback_radiators());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_shutdown"].push(pack->lv_feedback_gpio_extender(i).feedback_shutdown());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_hv_fans"].push(pack->lv_feedback_gpio_extender(i).feedback_hv_fans());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_autonomous_system_actuation"].push(pack->lv_feedback_gpio_extender(i).feedback_autonomous_system_actuation());
+
+    }
+
+    for(int i = 0; i < pack->lv_can_flash_req_steering_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp();
+        (*net_signals)["LV_CAN_FLASH_REQ_STEERING_WHEEL"]["_timestamp"].push(pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -1616,125 +1305,273 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_CAN_FLASH_ACK"]["_timestamp"].push(pack->lv_can_flash_ack(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["LV_CAN_FLASH_ACK"]["response"].push(pack->lv_can_flash_ack(i).response());
-		primary_lv_can_flash_ack_response_enum_to_string((primary_lv_can_flash_ack_response)pack->lv_can_flash_ack(i).response(), buffer);
-		(*net_strings)["LV_CAN_FLASH_ACK"]["response"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->marker_size(); i++){
+    for(int i = 0; i < pack->lv_inverter_connection_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->marker(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->marker(i)._inner_timestamp();
-        (*net_signals)["MARKER"]["_timestamp"].push(pack->marker(i)._inner_timestamp());
+        if(pack->lv_inverter_connection_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_inverter_connection_status(i)._inner_timestamp();
+        (*net_signals)["LV_INVERTER_CONNECTION_STATUS"]["_timestamp"].push(pack->lv_inverter_connection_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["LV_INVERTER_CONNECTION_STATUS"]["status"].push(pack->lv_inverter_connection_status(i).status());
+		primary_lv_inverter_connection_status_status_enum_to_string((primary_lv_inverter_connection_status_status)pack->lv_inverter_connection_status(i).status(), buffer);
+		(*net_strings)["LV_INVERTER_CONNECTION_STATUS"]["status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->hv_cells_voltage_size(); i++){
+    for(int i = 0; i < pack->lv_set_inverter_connection_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_cells_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
-        (*net_signals)["HV_CELLS_VOLTAGE"]["_timestamp"].push(pack->hv_cells_voltage(i)._inner_timestamp());
+        if(pack->lv_set_inverter_connection_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_set_inverter_connection_status(i)._inner_timestamp();
+        (*net_signals)["LV_SET_INVERTER_CONNECTION_STATUS"]["_timestamp"].push(pack->lv_set_inverter_connection_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_CELLS_VOLTAGE"]["start_index"].push(pack->hv_cells_voltage(i).start_index());
-		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_0"].push(pack->hv_cells_voltage(i).voltage_0());
-		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_1"].push(pack->hv_cells_voltage(i).voltage_1());
-		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_2"].push(pack->hv_cells_voltage(i).voltage_2());
+		(*net_enums)["LV_SET_INVERTER_CONNECTION_STATUS"]["status"].push(pack->lv_set_inverter_connection_status(i).status());
+		primary_lv_set_inverter_connection_status_status_enum_to_string((primary_lv_set_inverter_connection_status_status)pack->lv_set_inverter_connection_status(i).status(), buffer);
+		(*net_strings)["LV_SET_INVERTER_CONNECTION_STATUS"]["status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->hv_cells_temp_size(); i++){
+    for(int i = 0; i < pack->tlm_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_cells_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cells_temp(i)._inner_timestamp();
-        (*net_signals)["HV_CELLS_TEMP"]["_timestamp"].push(pack->hv_cells_temp(i)._inner_timestamp());
+        if(pack->tlm_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_status(i)._inner_timestamp();
+        (*net_signals)["TLM_STATUS"]["_timestamp"].push(pack->tlm_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_CELLS_TEMP"]["start_index"].push(pack->hv_cells_temp(i).start_index());
-		(*net_signals)["HV_CELLS_TEMP"]["temp_0"].push(pack->hv_cells_temp(i).temp_0());
-		(*net_signals)["HV_CELLS_TEMP"]["temp_1"].push(pack->hv_cells_temp(i).temp_1());
-		(*net_signals)["HV_CELLS_TEMP"]["temp_2"].push(pack->hv_cells_temp(i).temp_2());
-		(*net_signals)["HV_CELLS_TEMP"]["temp_3"].push(pack->hv_cells_temp(i).temp_3());
+		(*net_enums)["TLM_STATUS"]["status"].push(pack->tlm_status(i).status());
+		primary_tlm_status_status_enum_to_string((primary_tlm_status_status)pack->tlm_status(i).status(), buffer);
+		(*net_strings)["TLM_STATUS"]["status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->hv_cell_balancing_status_size(); i++){
+    for(int i = 0; i < pack->tlm_set_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_cell_balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cell_balancing_status(i)._inner_timestamp();
-        (*net_signals)["HV_CELL_BALANCING_STATUS"]["_timestamp"].push(pack->hv_cell_balancing_status(i)._inner_timestamp());
+        if(pack->tlm_set_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_set_status(i)._inner_timestamp();
+        (*net_signals)["TLM_SET_STATUS"]["_timestamp"].push(pack->tlm_set_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["cellboard_id"].push(pack->hv_cell_balancing_status(i).cellboard_id());
-		primary_hv_cell_balancing_status_cellboard_id_enum_to_string((primary_hv_cell_balancing_status_cellboard_id)pack->hv_cell_balancing_status(i).cellboard_id(), buffer);
-		(*net_strings)["HV_CELL_BALANCING_STATUS"]["cellboard_id"].push(buffer);
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_status"].push(pack->hv_cell_balancing_status(i).balancing_status());
-		primary_hv_cell_balancing_status_balancing_status_enum_to_string((primary_hv_cell_balancing_status_balancing_status)pack->hv_cell_balancing_status(i).balancing_status(), buffer);
-		(*net_strings)["HV_CELL_BALANCING_STATUS"]["balancing_status"].push(buffer);
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_can_comm"].push(pack->hv_cell_balancing_status(i).errors_can_comm());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_ltc_comm"].push(pack->hv_cell_balancing_status(i).errors_ltc_comm());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_0"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_0());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_1"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_1());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_2"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_2());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_3"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_3());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_4"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_4());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_temp_comm_5"].push(pack->hv_cell_balancing_status(i).errors_temp_comm_5());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["errors_open_wire"].push(pack->hv_cell_balancing_status(i).errors_open_wire());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell0"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell0());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell1"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell1());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell2"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell2());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell3"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell3());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell4"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell4());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell5"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell5());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell6"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell6());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell7"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell7());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell8"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell8());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell9"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell9());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell10"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell10());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell11"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell11());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell12"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell12());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell13"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell13());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell14"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell14());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell15"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell15());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell16"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell16());
-		(*net_enums)["HV_CELL_BALANCING_STATUS"]["balancing_cells_cell17"].push(pack->hv_cell_balancing_status(i).balancing_cells_cell17());
+		(*net_enums)["TLM_SET_STATUS"]["status"].push(pack->tlm_set_status(i).status());
+		primary_tlm_set_status_status_enum_to_string((primary_tlm_set_status_status)pack->tlm_set_status(i).status(), buffer);
+		(*net_strings)["TLM_SET_STATUS"]["status"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->set_cell_balancing_status_size(); i++){
+    for(int i = 0; i < pack->handcart_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_cell_balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_cell_balancing_status(i)._inner_timestamp();
-        (*net_signals)["SET_CELL_BALANCING_STATUS"]["_timestamp"].push(pack->set_cell_balancing_status(i)._inner_timestamp());
+        if(pack->handcart_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_status(i)._inner_timestamp();
+        (*net_signals)["HANDCART_STATUS"]["_timestamp"].push(pack->handcart_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_CELL_BALANCING_STATUS"]["set_balancing_status"].push(pack->set_cell_balancing_status(i).set_balancing_status());
-		primary_set_cell_balancing_status_set_balancing_status_enum_to_string((primary_set_cell_balancing_status_set_balancing_status)pack->set_cell_balancing_status(i).set_balancing_status(), buffer);
-		(*net_strings)["SET_CELL_BALANCING_STATUS"]["set_balancing_status"].push(buffer);
-		(*net_signals)["SET_CELL_BALANCING_STATUS"]["balancing_threshold"].push(pack->set_cell_balancing_status(i).balancing_threshold());
+		(*net_enums)["HANDCART_STATUS"]["connected"].push(pack->handcart_status(i).connected());
+		primary_handcart_status_connected_enum_to_string((primary_handcart_status_connected)pack->handcart_status(i).connected(), buffer);
+		(*net_strings)["HANDCART_STATUS"]["connected"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->speed_size(); i++){
+    for(int i = 0; i < pack->handcart_settings_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->speed(i)._inner_timestamp();
-        (*net_signals)["SPEED"]["_timestamp"].push(pack->speed(i)._inner_timestamp());
+        if(pack->handcart_settings(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_settings(i)._inner_timestamp();
+        (*net_signals)["HANDCART_SETTINGS"]["_timestamp"].push(pack->handcart_settings(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["SPEED"]["encoder_r"].push(pack->speed(i).encoder_r());
-		(*net_signals)["SPEED"]["encoder_l"].push(pack->speed(i).encoder_l());
-		(*net_signals)["SPEED"]["inverter_r"].push(pack->speed(i).inverter_r());
-		(*net_signals)["SPEED"]["inverter_l"].push(pack->speed(i).inverter_l());
+		(*net_signals)["HANDCART_SETTINGS"]["target_voltage"].push(pack->handcart_settings(i).target_voltage());
+		(*net_enums)["HANDCART_SETTINGS"]["fans_override"].push(pack->handcart_settings(i).fans_override());
+		primary_handcart_settings_fans_override_enum_to_string((primary_handcart_settings_fans_override)pack->handcart_settings(i).fans_override(), buffer);
+		(*net_strings)["HANDCART_SETTINGS"]["fans_override"].push(buffer);
+		(*net_signals)["HANDCART_SETTINGS"]["fans_speed"].push(pack->handcart_settings(i).fans_speed());
+		(*net_signals)["HANDCART_SETTINGS"]["acc_charge_current"].push(pack->handcart_settings(i).acc_charge_current());
+		(*net_signals)["HANDCART_SETTINGS"]["grid_max_current"].push(pack->handcart_settings(i).grid_max_current());
+		(*net_enums)["HANDCART_SETTINGS"]["status"].push(pack->handcart_settings(i).status());
+		primary_handcart_settings_status_enum_to_string((primary_handcart_settings_status)pack->handcart_settings(i).status(), buffer);
+		(*net_strings)["HANDCART_SETTINGS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->handcart_set_settings_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->handcart_set_settings(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->handcart_set_settings(i)._inner_timestamp();
+        (*net_signals)["HANDCART_SET_SETTINGS"]["_timestamp"].push(pack->handcart_set_settings(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HANDCART_SET_SETTINGS"]["target_voltage"].push(pack->handcart_set_settings(i).target_voltage());
+		(*net_enums)["HANDCART_SET_SETTINGS"]["fans_override"].push(pack->handcart_set_settings(i).fans_override());
+		primary_handcart_set_settings_fans_override_enum_to_string((primary_handcart_set_settings_fans_override)pack->handcart_set_settings(i).fans_override(), buffer);
+		(*net_strings)["HANDCART_SET_SETTINGS"]["fans_override"].push(buffer);
+		(*net_signals)["HANDCART_SET_SETTINGS"]["fans_speed"].push(pack->handcart_set_settings(i).fans_speed());
+		(*net_signals)["HANDCART_SET_SETTINGS"]["acc_charge_current"].push(pack->handcart_set_settings(i).acc_charge_current());
+		(*net_signals)["HANDCART_SET_SETTINGS"]["grid_max_current"].push(pack->handcart_set_settings(i).grid_max_current());
+		(*net_enums)["HANDCART_SET_SETTINGS"]["status"].push(pack->handcart_set_settings(i).status());
+		primary_handcart_set_settings_status_enum_to_string((primary_handcart_set_settings_status)pack->handcart_set_settings(i).status(), buffer);
+		(*net_strings)["HANDCART_SET_SETTINGS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->ecu_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_status(i)._inner_timestamp();
+        (*net_signals)["ECU_STATUS"]["_timestamp"].push(pack->ecu_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_STATUS"]["status"].push(pack->ecu_status(i).status());
+		primary_ecu_status_status_enum_to_string((primary_ecu_status_status)pack->ecu_status(i).status(), buffer);
+		(*net_strings)["ECU_STATUS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->ecu_set_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_set_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_set_status(i)._inner_timestamp();
+        (*net_signals)["ECU_SET_STATUS"]["_timestamp"].push(pack->ecu_set_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_SET_STATUS"]["status"].push(pack->ecu_set_status(i).status());
+		primary_ecu_set_status_status_enum_to_string((primary_ecu_set_status_status)pack->ecu_set_status(i).status(), buffer);
+		(*net_strings)["ECU_SET_STATUS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->ecu_inverter_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_inverter_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_inverter_status(i)._inner_timestamp();
+        (*net_signals)["ECU_INVERTER_STATUS"]["_timestamp"].push(pack->ecu_inverter_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_INVERTER_STATUS"]["rl"].push(pack->ecu_inverter_status(i).rl());
+		primary_ecu_inverter_status_rl_enum_to_string((primary_ecu_inverter_status_rl)pack->ecu_inverter_status(i).rl(), buffer);
+		(*net_strings)["ECU_INVERTER_STATUS"]["rl"].push(buffer);
+		(*net_enums)["ECU_INVERTER_STATUS"]["rr"].push(pack->ecu_inverter_status(i).rr());
+		primary_ecu_inverter_status_rr_enum_to_string((primary_ecu_inverter_status_rr)pack->ecu_inverter_status(i).rr(), buffer);
+		(*net_strings)["ECU_INVERTER_STATUS"]["rr"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->ecu_control_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_control_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_control_status(i)._inner_timestamp();
+        (*net_signals)["ECU_CONTROL_STATUS"]["_timestamp"].push(pack->ecu_control_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_CONTROL_STATUS"]["control_enabled"].push(pack->ecu_control_status(i).control_enabled());
+		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_forced_off"].push(pack->ecu_control_status(i).control_errors_forced_off());
+		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_wrong_maps"].push(pack->ecu_control_status(i).control_errors_wrong_maps());
+		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_control_watchdog"].push(pack->ecu_control_status(i).control_errors_control_watchdog());
+
+    }
+
+    for(int i = 0; i < pack->ecu_errors_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_errors(i)._inner_timestamp();
+        (*net_signals)["ECU_ERRORS"]["_timestamp"].push(pack->ecu_errors(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_ERRORS"]["error_pedal_adc"].push(pack->ecu_errors(i).error_pedal_adc());
+		(*net_enums)["ECU_ERRORS"]["error_pedal_implausibility"].push(pack->ecu_errors(i).error_pedal_implausibility());
+		(*net_enums)["ECU_ERRORS"]["error_imu_tout"].push(pack->ecu_errors(i).error_imu_tout());
+		(*net_enums)["ECU_ERRORS"]["error_irts_tout"].push(pack->ecu_errors(i).error_irts_tout());
+		(*net_enums)["ECU_ERRORS"]["error_ts_tout"].push(pack->ecu_errors(i).error_ts_tout());
+		(*net_enums)["ECU_ERRORS"]["error_invl_tout"].push(pack->ecu_errors(i).error_invl_tout());
+		(*net_enums)["ECU_ERRORS"]["error_invr_tout"].push(pack->ecu_errors(i).error_invr_tout());
+		(*net_enums)["ECU_ERRORS"]["error_steer_tout"].push(pack->ecu_errors(i).error_steer_tout());
+		(*net_enums)["ECU_ERRORS"]["error_fsm"].push(pack->ecu_errors(i).error_fsm());
+
+    }
+
+    for(int i = 0; i < pack->ecu_feedbacks_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_feedbacks(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_feedbacks(i)._inner_timestamp();
+        (*net_signals)["ECU_FEEDBACKS"]["_timestamp"].push(pack->ecu_feedbacks(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_cock_fb"].push(pack->ecu_feedbacks(i).feedbacks_sd_cock_fb());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_fb1"].push(pack->ecu_feedbacks(i).feedbacks_sd_fb1());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_bots_fb"].push(pack->ecu_feedbacks(i).feedbacks_sd_bots_fb());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_interial_fb"].push(pack->ecu_feedbacks(i).feedbacks_sd_interial_fb());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_fb4"].push(pack->ecu_feedbacks(i).feedbacks_sd_fb4());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_in"].push(pack->ecu_feedbacks(i).feedbacks_sd_in());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_out"].push(pack->ecu_feedbacks(i).feedbacks_sd_out());
+		(*net_enums)["ECU_FEEDBACKS"]["feedbacks_sd_ctrl_pin"].push(pack->ecu_feedbacks(i).feedbacks_sd_ctrl_pin());
+
+    }
+
+    for(int i = 0; i < pack->ecu_power_maps_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_power_maps(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_power_maps(i)._inner_timestamp();
+        (*net_signals)["ECU_POWER_MAPS"]["_timestamp"].push(pack->ecu_power_maps(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ECU_POWER_MAPS"]["map_pw"].push(pack->ecu_power_maps(i).map_pw());
+		(*net_signals)["ECU_POWER_MAPS"]["map_sc"].push(pack->ecu_power_maps(i).map_sc());
+		(*net_signals)["ECU_POWER_MAPS"]["map_tv"].push(pack->ecu_power_maps(i).map_tv());
+
+    }
+
+    for(int i = 0; i < pack->ecu_set_power_maps_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_set_power_maps(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_set_power_maps(i)._inner_timestamp();
+        (*net_signals)["ECU_SET_POWER_MAPS"]["_timestamp"].push(pack->ecu_set_power_maps(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ECU_SET_POWER_MAPS"]["map_pw"].push(pack->ecu_set_power_maps(i).map_pw());
+		(*net_signals)["ECU_SET_POWER_MAPS"]["map_sc"].push(pack->ecu_set_power_maps(i).map_sc());
+		(*net_signals)["ECU_SET_POWER_MAPS"]["map_tv"].push(pack->ecu_set_power_maps(i).map_tv());
+
+    }
+
+    for(int i = 0; i < pack->ecu_ptt_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_ptt_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_ptt_status(i)._inner_timestamp();
+        (*net_signals)["ECU_PTT_STATUS"]["_timestamp"].push(pack->ecu_ptt_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_PTT_STATUS"]["status"].push(pack->ecu_ptt_status(i).status());
+		primary_ecu_ptt_status_status_enum_to_string((primary_ecu_ptt_status_status)pack->ecu_ptt_status(i).status(), buffer);
+		(*net_strings)["ECU_PTT_STATUS"]["status"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->ecu_set_ptt_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_set_ptt_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_set_ptt_status(i)._inner_timestamp();
+        (*net_signals)["ECU_SET_PTT_STATUS"]["_timestamp"].push(pack->ecu_set_ptt_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["ECU_SET_PTT_STATUS"]["status"].push(pack->ecu_set_ptt_status(i).status());
+		primary_ecu_set_ptt_status_status_enum_to_string((primary_ecu_set_ptt_status_status)pack->ecu_set_ptt_status(i).status(), buffer);
+		(*net_strings)["ECU_SET_PTT_STATUS"]["status"].push(buffer);
 
     }
 
@@ -1754,6 +1591,36 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_signals)["INV_L_REQUEST"]["data_5"].push(pack->inv_l_request(i).data_5());
 		(*net_signals)["INV_L_REQUEST"]["data_6"].push(pack->inv_l_request(i).data_6());
 		(*net_signals)["INV_L_REQUEST"]["data_7"].push(pack->inv_l_request(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->control_output_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->control_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->control_output(i)._inner_timestamp();
+        (*net_signals)["CONTROL_OUTPUT"]["_timestamp"].push(pack->control_output(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CONTROL_OUTPUT"]["estimated_velocity"].push(pack->control_output(i).estimated_velocity());
+		(*net_signals)["CONTROL_OUTPUT"]["torque_max_l"].push(pack->control_output(i).torque_max_l());
+		(*net_signals)["CONTROL_OUTPUT"]["torque_max_r"].push(pack->control_output(i).torque_max_r());
+		(*net_signals)["CONTROL_OUTPUT"]["torque_l"].push(pack->control_output(i).torque_l());
+		(*net_signals)["CONTROL_OUTPUT"]["torque_r"].push(pack->control_output(i).torque_r());
+
+    }
+
+    for(int i = 0; i < pack->control_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->control_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->control_status(i)._inner_timestamp();
+        (*net_signals)["CONTROL_STATUS"]["_timestamp"].push(pack->control_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CONTROL_STATUS"]["map_pw"].push(pack->control_status(i).map_pw());
+		(*net_signals)["CONTROL_STATUS"]["map_sc"].push(pack->control_status(i).map_sc());
+		(*net_signals)["CONTROL_STATUS"]["map_tv"].push(pack->control_status(i).map_tv());
 
     }
 
@@ -1814,127 +1681,235 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->control_output_size(); i++){
+    for(int i = 0; i < pack->lv_current_battery_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->control_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->control_output(i)._inner_timestamp();
-        (*net_signals)["CONTROL_OUTPUT"]["_timestamp"].push(pack->control_output(i)._inner_timestamp());
+        if(pack->lv_current_battery(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_current_battery(i)._inner_timestamp();
+        (*net_signals)["LV_CURRENT_BATTERY"]["_timestamp"].push(pack->lv_current_battery(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["CONTROL_OUTPUT"]["estimated_velocity"].push(pack->control_output(i).estimated_velocity());
-		(*net_signals)["CONTROL_OUTPUT"]["tmax_r"].push(pack->control_output(i).tmax_r());
-		(*net_signals)["CONTROL_OUTPUT"]["tmax_l"].push(pack->control_output(i).tmax_l());
-		(*net_signals)["CONTROL_OUTPUT"]["torque_l"].push(pack->control_output(i).torque_l());
-		(*net_signals)["CONTROL_OUTPUT"]["torque_r"].push(pack->control_output(i).torque_r());
+		(*net_signals)["LV_CURRENT_BATTERY"]["lv_current"].push(pack->lv_current_battery(i).lv_current());
 
     }
 
-    for(int i = 0; i < pack->lc_reset_size(); i++){
+    for(int i = 0; i < pack->lv_current_charger_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lc_reset(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lc_reset(i)._inner_timestamp();
-        (*net_signals)["LC_RESET"]["_timestamp"].push(pack->lc_reset(i)._inner_timestamp());
+        if(pack->lv_current_charger(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_current_charger(i)._inner_timestamp();
+        (*net_signals)["LV_CURRENT_CHARGER"]["_timestamp"].push(pack->lv_current_charger(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_signals)["LV_CURRENT_CHARGER"]["charger_current"].push(pack->lv_current_charger(i).charger_current());
 
     }
 
-    for(int i = 0; i < pack->handcart_status_size(); i++){
+    for(int i = 0; i < pack->lv_total_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->handcart_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->handcart_status(i)._inner_timestamp();
-        (*net_signals)["HANDCART_STATUS"]["_timestamp"].push(pack->handcart_status(i)._inner_timestamp());
+        if(pack->lv_total_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_total_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_TOTAL_VOLTAGE"]["_timestamp"].push(pack->lv_total_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HANDCART_STATUS"]["connected"].push(pack->handcart_status(i).connected());
+		(*net_signals)["LV_TOTAL_VOLTAGE"]["total"].push(pack->lv_total_voltage(i).total());
 
     }
 
-    for(int i = 0; i < pack->handcart_settings_size(); i++){
+    for(int i = 0; i < pack->lv_cells_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->handcart_settings(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->handcart_settings(i)._inner_timestamp();
-        (*net_signals)["HANDCART_SETTINGS"]["_timestamp"].push(pack->handcart_settings(i)._inner_timestamp());
+        if(pack->lv_cells_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_VOLTAGE"]["_timestamp"].push(pack->lv_cells_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HANDCART_SETTINGS"]["target_voltage"].push(pack->handcart_settings(i).target_voltage());
-		(*net_enums)["HANDCART_SETTINGS"]["fans_override"].push(pack->handcart_settings(i).fans_override());
-		primary_handcart_settings_fans_override_enum_to_string((primary_handcart_settings_fans_override)pack->handcart_settings(i).fans_override(), buffer);
-		(*net_strings)["HANDCART_SETTINGS"]["fans_override"].push(buffer);
-		(*net_signals)["HANDCART_SETTINGS"]["fans_speed"].push(pack->handcart_settings(i).fans_speed());
-		(*net_signals)["HANDCART_SETTINGS"]["acc_charge_current"].push(pack->handcart_settings(i).acc_charge_current());
-		(*net_signals)["HANDCART_SETTINGS"]["grid_max_current"].push(pack->handcart_settings(i).grid_max_current());
-		(*net_enums)["HANDCART_SETTINGS"]["status"].push(pack->handcart_settings(i).status());
-		primary_handcart_settings_status_enum_to_string((primary_handcart_settings_status)pack->handcart_settings(i).status(), buffer);
-		(*net_strings)["HANDCART_SETTINGS"]["status"].push(buffer);
+		(*net_signals)["LV_CELLS_VOLTAGE"]["start_index"].push(pack->lv_cells_voltage(i).start_index());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_0"].push(pack->lv_cells_voltage(i).voltage_0());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_1"].push(pack->lv_cells_voltage(i).voltage_1());
+		(*net_signals)["LV_CELLS_VOLTAGE"]["voltage_2"].push(pack->lv_cells_voltage(i).voltage_2());
 
     }
 
-    for(int i = 0; i < pack->handcart_settings_set_size(); i++){
+    for(int i = 0; i < pack->lv_cells_voltage_stats_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->handcart_settings_set(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->handcart_settings_set(i)._inner_timestamp();
-        (*net_signals)["HANDCART_SETTINGS_SET"]["_timestamp"].push(pack->handcart_settings_set(i)._inner_timestamp());
+        if(pack->lv_cells_voltage_stats(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_voltage_stats(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_VOLTAGE_STATS"]["_timestamp"].push(pack->lv_cells_voltage_stats(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HANDCART_SETTINGS_SET"]["target_voltage"].push(pack->handcart_settings_set(i).target_voltage());
-		(*net_enums)["HANDCART_SETTINGS_SET"]["fans_override"].push(pack->handcart_settings_set(i).fans_override());
-		primary_handcart_settings_set_fans_override_enum_to_string((primary_handcart_settings_set_fans_override)pack->handcart_settings_set(i).fans_override(), buffer);
-		(*net_strings)["HANDCART_SETTINGS_SET"]["fans_override"].push(buffer);
-		(*net_signals)["HANDCART_SETTINGS_SET"]["fans_speed"].push(pack->handcart_settings_set(i).fans_speed());
-		(*net_signals)["HANDCART_SETTINGS_SET"]["acc_charge_current"].push(pack->handcart_settings_set(i).acc_charge_current());
-		(*net_signals)["HANDCART_SETTINGS_SET"]["grid_max_current"].push(pack->handcart_settings_set(i).grid_max_current());
-		(*net_enums)["HANDCART_SETTINGS_SET"]["status"].push(pack->handcart_settings_set(i).status());
-		primary_handcart_settings_set_status_enum_to_string((primary_handcart_settings_set_status)pack->handcart_settings_set(i).status(), buffer);
-		(*net_strings)["HANDCART_SETTINGS_SET"]["status"].push(buffer);
+		(*net_signals)["LV_CELLS_VOLTAGE_STATS"]["max"].push(pack->lv_cells_voltage_stats(i).max());
+		(*net_signals)["LV_CELLS_VOLTAGE_STATS"]["min"].push(pack->lv_cells_voltage_stats(i).min());
+		(*net_signals)["LV_CELLS_VOLTAGE_STATS"]["delta"].push(pack->lv_cells_voltage_stats(i).delta());
+		(*net_signals)["LV_CELLS_VOLTAGE_STATS"]["avg"].push(pack->lv_cells_voltage_stats(i).avg());
 
     }
 
-    for(int i = 0; i < pack->set_ptt_status_size(); i++){
+    for(int i = 0; i < pack->lv_cells_temp_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->set_ptt_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->set_ptt_status(i)._inner_timestamp();
-        (*net_signals)["SET_PTT_STATUS"]["_timestamp"].push(pack->set_ptt_status(i)._inner_timestamp());
+        if(pack->lv_cells_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_temp(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_TEMP"]["_timestamp"].push(pack->lv_cells_temp(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["SET_PTT_STATUS"]["status"].push(pack->set_ptt_status(i).status());
-		primary_set_ptt_status_status_enum_to_string((primary_set_ptt_status_status)pack->set_ptt_status(i).status(), buffer);
-		(*net_strings)["SET_PTT_STATUS"]["status"].push(buffer);
+		(*net_signals)["LV_CELLS_TEMP"]["start_index"].push(pack->lv_cells_temp(i).start_index());
+		(*net_signals)["LV_CELLS_TEMP"]["temp_0"].push(pack->lv_cells_temp(i).temp_0());
+		(*net_signals)["LV_CELLS_TEMP"]["temp_1"].push(pack->lv_cells_temp(i).temp_1());
+		(*net_signals)["LV_CELLS_TEMP"]["temp_2"].push(pack->lv_cells_temp(i).temp_2());
 
     }
 
-    for(int i = 0; i < pack->ptt_status_size(); i++){
+    for(int i = 0; i < pack->lv_cells_temp_stats_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ptt_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ptt_status(i)._inner_timestamp();
-        (*net_signals)["PTT_STATUS"]["_timestamp"].push(pack->ptt_status(i)._inner_timestamp());
+        if(pack->lv_cells_temp_stats(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cells_temp_stats(i)._inner_timestamp();
+        (*net_signals)["LV_CELLS_TEMP_STATS"]["_timestamp"].push(pack->lv_cells_temp_stats(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["PTT_STATUS"]["status"].push(pack->ptt_status(i).status());
-		primary_ptt_status_status_enum_to_string((primary_ptt_status_status)pack->ptt_status(i).status(), buffer);
-		(*net_strings)["PTT_STATUS"]["status"].push(buffer);
+		(*net_signals)["LV_CELLS_TEMP_STATS"]["max"].push(pack->lv_cells_temp_stats(i).max());
+		(*net_signals)["LV_CELLS_TEMP_STATS"]["min"].push(pack->lv_cells_temp_stats(i).min());
+		(*net_signals)["LV_CELLS_TEMP_STATS"]["avg"].push(pack->lv_cells_temp_stats(i).avg());
 
     }
 
-    for(int i = 0; i < pack->regen_manual_command_size(); i++){
+    for(int i = 0; i < pack->hv_current_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->regen_manual_command(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->regen_manual_command(i)._inner_timestamp();
-        (*net_signals)["REGEN_MANUAL_COMMAND"]["_timestamp"].push(pack->regen_manual_command(i)._inner_timestamp());
+        if(pack->hv_current(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_current(i)._inner_timestamp();
+        (*net_signals)["HV_CURRENT"]["_timestamp"].push(pack->hv_current(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["REGEN_MANUAL_COMMAND"]["status"].push(pack->regen_manual_command(i).status());
-		primary_regen_manual_command_status_enum_to_string((primary_regen_manual_command_status)pack->regen_manual_command(i).status(), buffer);
-		(*net_strings)["REGEN_MANUAL_COMMAND"]["status"].push(buffer);
-		(*net_signals)["REGEN_MANUAL_COMMAND"]["target"].push(pack->regen_manual_command(i).target());
+		(*net_signals)["HV_CURRENT"]["current"].push(pack->hv_current(i).current());
+
+    }
+
+    for(int i = 0; i < pack->hv_power_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_power(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_power(i)._inner_timestamp();
+        (*net_signals)["HV_POWER"]["_timestamp"].push(pack->hv_power(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_POWER"]["power"].push(pack->hv_power(i).power());
+
+    }
+
+    for(int i = 0; i < pack->hv_energy_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_energy(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_energy(i)._inner_timestamp();
+        (*net_signals)["HV_ENERGY"]["_timestamp"].push(pack->hv_energy(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_ENERGY"]["energy"].push(pack->hv_energy(i).energy());
+
+    }
+
+    for(int i = 0; i < pack->hv_soc_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_soc(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_soc(i)._inner_timestamp();
+        (*net_signals)["HV_SOC"]["_timestamp"].push(pack->hv_soc(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_SOC"]["soc"].push(pack->hv_soc(i).soc());
+
+    }
+
+    for(int i = 0; i < pack->hv_total_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_total_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_total_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_TOTAL_VOLTAGE"]["_timestamp"].push(pack->hv_total_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_TOTAL_VOLTAGE"]["pack"].push(pack->hv_total_voltage(i).pack());
+		(*net_signals)["HV_TOTAL_VOLTAGE"]["sum_cell"].push(pack->hv_total_voltage(i).sum_cell());
+		(*net_signals)["HV_TOTAL_VOLTAGE"]["bus"].push(pack->hv_total_voltage(i).bus());
+
+    }
+
+    for(int i = 0; i < pack->hv_cells_voltage_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cells_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cells_voltage(i)._inner_timestamp();
+        (*net_signals)["HV_CELLS_VOLTAGE"]["_timestamp"].push(pack->hv_cells_voltage(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_CELLS_VOLTAGE"]["start_index"].push(pack->hv_cells_voltage(i).start_index());
+		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_0"].push(pack->hv_cells_voltage(i).voltage_0());
+		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_1"].push(pack->hv_cells_voltage(i).voltage_1());
+		(*net_signals)["HV_CELLS_VOLTAGE"]["voltage_2"].push(pack->hv_cells_voltage(i).voltage_2());
+
+    }
+
+    for(int i = 0; i < pack->hv_cells_voltage_stats_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cells_voltage_stats(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cells_voltage_stats(i)._inner_timestamp();
+        (*net_signals)["HV_CELLS_VOLTAGE_STATS"]["_timestamp"].push(pack->hv_cells_voltage_stats(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["max"].push(pack->hv_cells_voltage_stats(i).max());
+		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["min"].push(pack->hv_cells_voltage_stats(i).min());
+		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["sum"].push(pack->hv_cells_voltage_stats(i).sum());
+		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["avg"].push(pack->hv_cells_voltage_stats(i).avg());
+
+    }
+
+    for(int i = 0; i < pack->hv_cells_temp_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cells_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cells_temp(i)._inner_timestamp();
+        (*net_signals)["HV_CELLS_TEMP"]["_timestamp"].push(pack->hv_cells_temp(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_CELLS_TEMP"]["start_index"].push(pack->hv_cells_temp(i).start_index());
+		(*net_signals)["HV_CELLS_TEMP"]["temp_0"].push(pack->hv_cells_temp(i).temp_0());
+		(*net_signals)["HV_CELLS_TEMP"]["temp_1"].push(pack->hv_cells_temp(i).temp_1());
+		(*net_signals)["HV_CELLS_TEMP"]["temp_2"].push(pack->hv_cells_temp(i).temp_2());
+		(*net_signals)["HV_CELLS_TEMP"]["temp_3"].push(pack->hv_cells_temp(i).temp_3());
+
+    }
+
+    for(int i = 0; i < pack->hv_cells_temp_stats_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cells_temp_stats(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cells_temp_stats(i)._inner_timestamp();
+        (*net_signals)["HV_CELLS_TEMP_STATS"]["_timestamp"].push(pack->hv_cells_temp_stats(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_CELLS_TEMP_STATS"]["max"].push(pack->hv_cells_temp_stats(i).max());
+		(*net_signals)["HV_CELLS_TEMP_STATS"]["min"].push(pack->hv_cells_temp_stats(i).min());
+		(*net_signals)["HV_CELLS_TEMP_STATS"]["avg"].push(pack->hv_cells_temp_stats(i).avg());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_1_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_1(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_1"]["_timestamp"].push(pack->debug_signal_1(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["DEBUG_SIGNAL_1"]["field_1"].push(pack->debug_signal_1(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_1"]["field_2"].push(pack->debug_signal_1(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_1"]["field_3"].push(pack->debug_signal_1(i).field_3());
+		(*net_signals)["DEBUG_SIGNAL_1"]["field_4"].push(pack->debug_signal_1(i).field_4());
 
     }
 
@@ -2112,8 +2087,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 0: {
-            primary_bms_hv_jmp_to_blt_t* msg = (primary_bms_hv_jmp_to_blt_t*)(device->message);
-            primary::BMS_HV_JMP_TO_BLT* proto_msg = pack->add_bms_hv_jmp_to_blt();
+            primary_hv_jmp_to_blt_t* msg = (primary_hv_jmp_to_blt_t*)(device->message);
+            primary::HV_JMP_TO_BLT* proto_msg = pack->add_hv_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2122,8 +2097,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1: {
-            primary_flash_bms_hv_tx_t* msg = (primary_flash_bms_hv_tx_t*)(device->message);
-            primary::FLASH_BMS_HV_TX* proto_msg = pack->add_flash_bms_hv_tx();
+            primary_hv_flash_mainboard_tx_t* msg = (primary_hv_flash_mainboard_tx_t*)(device->message);
+            primary::HV_FLASH_MAINBOARD_TX* proto_msg = pack->add_hv_flash_mainboard_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2132,8 +2107,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 2: {
-            primary_flash_bms_hv_rx_t* msg = (primary_flash_bms_hv_rx_t*)(device->message);
-            primary::FLASH_BMS_HV_RX* proto_msg = pack->add_flash_bms_hv_rx();
+            primary_hv_flash_mainboard_rx_t* msg = (primary_hv_flash_mainboard_rx_t*)(device->message);
+            primary::HV_FLASH_MAINBOARD_RX* proto_msg = pack->add_hv_flash_mainboard_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2142,9 +2117,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 3: {
-            primary_hv_can_forward_t* msg = (primary_hv_can_forward_t*)(device->message);
-            primary::HV_CAN_FORWARD* proto_msg = pack->add_hv_can_forward();
-			proto_msg->set_can_forward_set((primary::primary_hv_can_forward_can_forward_set)msg->can_forward_set);
+            primary_hv_flash_cellboard_0_tx_t* msg = (primary_hv_flash_cellboard_0_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_0_TX* proto_msg = pack->add_hv_flash_cellboard_0_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2153,8 +2127,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 4: {
-            primary_flash_cellboard_0_tx_t* msg = (primary_flash_cellboard_0_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_0_TX* proto_msg = pack->add_flash_cellboard_0_tx();
+            primary_hv_flash_cellboard_0_rx_t* msg = (primary_hv_flash_cellboard_0_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_0_RX* proto_msg = pack->add_hv_flash_cellboard_0_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2163,8 +2137,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 5: {
-            primary_flash_cellboard_0_rx_t* msg = (primary_flash_cellboard_0_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_0_RX* proto_msg = pack->add_flash_cellboard_0_rx();
+            primary_hv_flash_cellboard_1_tx_t* msg = (primary_hv_flash_cellboard_1_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_1_TX* proto_msg = pack->add_hv_flash_cellboard_1_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2173,8 +2147,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 6: {
-            primary_flash_cellboard_1_tx_t* msg = (primary_flash_cellboard_1_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_1_TX* proto_msg = pack->add_flash_cellboard_1_tx();
+            primary_hv_flash_cellboard_1_rx_t* msg = (primary_hv_flash_cellboard_1_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_1_RX* proto_msg = pack->add_hv_flash_cellboard_1_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2183,8 +2157,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 7: {
-            primary_flash_cellboard_1_rx_t* msg = (primary_flash_cellboard_1_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_1_RX* proto_msg = pack->add_flash_cellboard_1_rx();
+            primary_hv_flash_cellboard_2_tx_t* msg = (primary_hv_flash_cellboard_2_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_2_TX* proto_msg = pack->add_hv_flash_cellboard_2_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2193,8 +2167,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 8: {
-            primary_flash_cellboard_2_tx_t* msg = (primary_flash_cellboard_2_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_2_TX* proto_msg = pack->add_flash_cellboard_2_tx();
+            primary_hv_flash_cellboard_2_rx_t* msg = (primary_hv_flash_cellboard_2_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_2_RX* proto_msg = pack->add_hv_flash_cellboard_2_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2203,8 +2177,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 9: {
-            primary_flash_cellboard_2_rx_t* msg = (primary_flash_cellboard_2_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_2_RX* proto_msg = pack->add_flash_cellboard_2_rx();
+            primary_hv_flash_cellboard_3_tx_t* msg = (primary_hv_flash_cellboard_3_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_3_TX* proto_msg = pack->add_hv_flash_cellboard_3_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2213,8 +2187,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 10: {
-            primary_flash_cellboard_3_tx_t* msg = (primary_flash_cellboard_3_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_3_TX* proto_msg = pack->add_flash_cellboard_3_tx();
+            primary_hv_flash_cellboard_3_rx_t* msg = (primary_hv_flash_cellboard_3_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_3_RX* proto_msg = pack->add_hv_flash_cellboard_3_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2223,8 +2197,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 11: {
-            primary_flash_cellboard_3_rx_t* msg = (primary_flash_cellboard_3_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_3_RX* proto_msg = pack->add_flash_cellboard_3_rx();
+            primary_hv_flash_cellboard_4_tx_t* msg = (primary_hv_flash_cellboard_4_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_4_TX* proto_msg = pack->add_hv_flash_cellboard_4_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2233,8 +2207,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 12: {
-            primary_flash_cellboard_4_tx_t* msg = (primary_flash_cellboard_4_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_4_TX* proto_msg = pack->add_flash_cellboard_4_tx();
+            primary_hv_flash_cellboard_4_rx_t* msg = (primary_hv_flash_cellboard_4_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_4_RX* proto_msg = pack->add_hv_flash_cellboard_4_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2243,8 +2217,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 13: {
-            primary_flash_cellboard_4_rx_t* msg = (primary_flash_cellboard_4_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_4_RX* proto_msg = pack->add_flash_cellboard_4_rx();
+            primary_hv_flash_cellboard_5_tx_t* msg = (primary_hv_flash_cellboard_5_tx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_5_TX* proto_msg = pack->add_hv_flash_cellboard_5_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2253,8 +2227,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 14: {
-            primary_flash_cellboard_5_tx_t* msg = (primary_flash_cellboard_5_tx_t*)(device->message);
-            primary::FLASH_CELLBOARD_5_TX* proto_msg = pack->add_flash_cellboard_5_tx();
+            primary_hv_flash_cellboard_5_rx_t* msg = (primary_hv_flash_cellboard_5_rx_t*)(device->message);
+            primary::HV_FLASH_CELLBOARD_5_RX* proto_msg = pack->add_hv_flash_cellboard_5_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2263,8 +2237,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 15: {
-            primary_flash_cellboard_5_rx_t* msg = (primary_flash_cellboard_5_rx_t*)(device->message);
-            primary::FLASH_CELLBOARD_5_RX* proto_msg = pack->add_flash_cellboard_5_rx();
+            primary_lv_jmp_to_blt_t* msg = (primary_lv_jmp_to_blt_t*)(device->message);
+            primary::LV_JMP_TO_BLT* proto_msg = pack->add_lv_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2273,8 +2247,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 16: {
-            primary_bms_lv_jmp_to_blt_t* msg = (primary_bms_lv_jmp_to_blt_t*)(device->message);
-            primary::BMS_LV_JMP_TO_BLT* proto_msg = pack->add_bms_lv_jmp_to_blt();
+            primary_lv_flash_bms_tx_t* msg = (primary_lv_flash_bms_tx_t*)(device->message);
+            primary::LV_FLASH_BMS_TX* proto_msg = pack->add_lv_flash_bms_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2283,8 +2257,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 17: {
-            primary_flash_bms_lv_tx_t* msg = (primary_flash_bms_lv_tx_t*)(device->message);
-            primary::FLASH_BMS_LV_TX* proto_msg = pack->add_flash_bms_lv_tx();
+            primary_lv_flash_bms_rx_t* msg = (primary_lv_flash_bms_rx_t*)(device->message);
+            primary::LV_FLASH_BMS_RX* proto_msg = pack->add_lv_flash_bms_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2293,16 +2267,6 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 18: {
-            primary_flash_bms_lv_rx_t* msg = (primary_flash_bms_lv_rx_t*)(device->message);
-            primary::FLASH_BMS_LV_RX* proto_msg = pack->add_flash_bms_lv_rx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 19: {
             primary_ecu_jmp_to_blt_t* msg = (primary_ecu_jmp_to_blt_t*)(device->message);
             primary::ECU_JMP_TO_BLT* proto_msg = pack->add_ecu_jmp_to_blt();
 
@@ -2312,9 +2276,19 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
+        case 19: {
+            primary_ecu_flash_tx_t* msg = (primary_ecu_flash_tx_t*)(device->message);
+            primary::ECU_FLASH_TX* proto_msg = pack->add_ecu_flash_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 20: {
-            primary_flash_ecu_tx_t* msg = (primary_flash_ecu_tx_t*)(device->message);
-            primary::FLASH_ECU_TX* proto_msg = pack->add_flash_ecu_tx();
+            primary_ecu_flash_rx_t* msg = (primary_ecu_flash_rx_t*)(device->message);
+            primary::ECU_FLASH_RX* proto_msg = pack->add_ecu_flash_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2323,8 +2297,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 21: {
-            primary_flash_ecu_rx_t* msg = (primary_flash_ecu_rx_t*)(device->message);
-            primary::FLASH_ECU_RX* proto_msg = pack->add_flash_ecu_rx();
+            primary_steering_wheel_jmp_to_blt_t* msg = (primary_steering_wheel_jmp_to_blt_t*)(device->message);
+            primary::STEERING_WHEEL_JMP_TO_BLT* proto_msg = pack->add_steering_wheel_jmp_to_blt();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2333,8 +2307,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 22: {
-            primary_steering_jmp_to_blt_t* msg = (primary_steering_jmp_to_blt_t*)(device->message);
-            primary::STEERING_JMP_TO_BLT* proto_msg = pack->add_steering_jmp_to_blt();
+            primary_steering_wheel_flash_tx_t* msg = (primary_steering_wheel_flash_tx_t*)(device->message);
+            primary::STEERING_WHEEL_FLASH_TX* proto_msg = pack->add_steering_wheel_flash_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2343,18 +2317,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 23: {
-            primary_flash_steering_tx_t* msg = (primary_flash_steering_tx_t*)(device->message);
-            primary::FLASH_STEERING_TX* proto_msg = pack->add_flash_steering_tx();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 24: {
-            primary_flash_steering_rx_t* msg = (primary_flash_steering_rx_t*)(device->message);
-            primary::FLASH_STEERING_RX* proto_msg = pack->add_flash_steering_rx();
+            primary_steering_wheel_flash_rx_t* msg = (primary_steering_wheel_flash_rx_t*)(device->message);
+            primary::STEERING_WHEEL_FLASH_RX* proto_msg = pack->add_steering_wheel_flash_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2363,8 +2327,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 700: {
-            primary_steer_version_t* msg = (primary_steer_version_t*)(device->message);
-            primary::STEER_VERSION* proto_msg = pack->add_steer_version();
+            primary_steering_wheel_version_t* msg = (primary_steering_wheel_version_t*)(device->message);
+            primary::STEERING_WHEEL_VERSION* proto_msg = pack->add_steering_wheel_version();
 			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
@@ -2375,20 +2339,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 701: {
-            primary_das_version_t* msg = (primary_das_version_t*)(device->message);
-            primary::DAS_VERSION* proto_msg = pack->add_das_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 702: {
-            primary_mainboard_version_t* msg = (primary_mainboard_version_t*)(device->message);
-            primary::MAINBOARD_VERSION* proto_msg = pack->add_mainboard_version();
+            primary_ecu_version_t* msg = (primary_ecu_version_t*)(device->message);
+            primary::ECU_VERSION* proto_msg = pack->add_ecu_version();
 			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
@@ -2422,11 +2374,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 705: {
-            primary_cellboard_version_t* msg = (primary_cellboard_version_t*)(device->message);
-            primary::CELLBOARD_VERSION* proto_msg = pack->add_cellboard_version();
-			proto_msg->set_cellboard_id((primary::primary_cellboard_version_cellboard_id)msg->cellboard_id);
-			proto_msg->set_component_version(msg->component_version);
+        case 702: {
+            primary_hv_mainboard_version_t* msg = (primary_hv_mainboard_version_t*)(device->message);
+            primary::HV_MAINBOARD_VERSION* proto_msg = pack->add_hv_mainboard_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2435,10 +2386,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 257: {
-            primary_ambient_temperature_t* msg = (primary_ambient_temperature_t*)(device->message);
-            primary::AMBIENT_TEMPERATURE* proto_msg = pack->add_ambient_temperature();
-			proto_msg->set_temp(msg->temp);
+        case 705: {
+            primary_hv_cellboard_0_version_t* msg = (primary_hv_cellboard_0_version_t*)(device->message);
+            primary::HV_CELLBOARD_0_VERSION* proto_msg = pack->add_hv_cellboard_0_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2446,11 +2398,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1072: {
-            primary_data_logger_t* msg = (primary_data_logger_t*)(device->message);
-            primary::DATA_LOGGER* proto_msg = pack->add_data_logger();
-			proto_msg->set_placeholder1(msg->placeholder1);
-			proto_msg->set_placeholder2(msg->placeholder2);
+        case 706: {
+            primary_hv_cellboard_1_version_t* msg = (primary_hv_cellboard_1_version_t*)(device->message);
+            primary::HV_CELLBOARD_1_VERSION* proto_msg = pack->add_hv_cellboard_1_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2458,10 +2410,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 265: {
-            primary_set_tlm_status_t* msg = (primary_set_tlm_status_t*)(device->message);
-            primary::SET_TLM_STATUS* proto_msg = pack->add_set_tlm_status();
-			proto_msg->set_tlm_status((primary::primary_set_tlm_status_tlm_status)msg->tlm_status);
+        case 707: {
+            primary_hv_cellboard_2_version_t* msg = (primary_hv_cellboard_2_version_t*)(device->message);
+            primary::HV_CELLBOARD_2_VERSION* proto_msg = pack->add_hv_cellboard_2_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2469,10 +2422,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 264: {
-            primary_tlm_status_t* msg = (primary_tlm_status_t*)(device->message);
-            primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
-			proto_msg->set_tlm_status((primary::primary_tlm_status_tlm_status)msg->tlm_status);
+        case 708: {
+            primary_hv_cellboard_3_version_t* msg = (primary_hv_cellboard_3_version_t*)(device->message);
+            primary::HV_CELLBOARD_3_VERSION* proto_msg = pack->add_hv_cellboard_3_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2480,10 +2434,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1801: {
-            primary_steer_system_status_t* msg = (primary_steer_system_status_t*)(device->message);
-            primary::STEER_SYSTEM_STATUS* proto_msg = pack->add_steer_system_status();
-			proto_msg->set_soc_temp(msg->soc_temp);
+        case 709: {
+            primary_hv_cellboard_4_version_t* msg = (primary_hv_cellboard_4_version_t*)(device->message);
+            primary::HV_CELLBOARD_4_VERSION* proto_msg = pack->add_hv_cellboard_4_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2491,11 +2446,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 772: {
-            primary_hv_voltage_converted_t* msg = (primary_hv_voltage_converted_t*)(device->message);
-            primary::HV_VOLTAGE* proto_msg = pack->add_hv_voltage();
-			proto_msg->set_pack_voltage(msg->pack_voltage);
-			proto_msg->set_bus_voltage(msg->bus_voltage);
+        case 710: {
+            primary_hv_cellboard_5_version_t* msg = (primary_hv_cellboard_5_version_t*)(device->message);
+            primary::HV_CELLBOARD_5_VERSION* proto_msg = pack->add_hv_cellboard_5_version();
+			proto_msg->set_component_build_time(msg->component_build_time);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2503,66 +2458,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 804: {
-            primary_hv_cell_voltage_converted_t* msg = (primary_hv_cell_voltage_converted_t*)(device->message);
-            primary::HV_CELL_VOLTAGE* proto_msg = pack->add_hv_cell_voltage();
-			proto_msg->set_max_cell_voltage(msg->max_cell_voltage);
-			proto_msg->set_min_cell_voltage(msg->min_cell_voltage);
-			proto_msg->set_sum_cell_voltage(msg->sum_cell_voltage);
-			proto_msg->set_avg_cell_voltage(msg->avg_cell_voltage);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 836: {
-            primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)(device->message);
-            primary::HV_CURRENT* proto_msg = pack->add_hv_current();
-			proto_msg->set_current(msg->current);
-			proto_msg->set_power(msg->power);
-			proto_msg->set_energy(msg->energy);
-			proto_msg->set_soc(msg->soc);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 868: {
-            primary_hv_temp_converted_t* msg = (primary_hv_temp_converted_t*)(device->message);
-            primary::HV_TEMP* proto_msg = pack->add_hv_temp();
-			proto_msg->set_average_temp(msg->average_temp);
-			proto_msg->set_max_temp(msg->max_temp);
-			proto_msg->set_min_temp(msg->min_temp);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 36: {
+        case 24: {
             primary_hv_errors_t* msg = (primary_hv_errors_t*)(device->message);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
-			proto_msg->set_warnings_cell_low_voltage(msg->warnings_cell_low_voltage);
-			proto_msg->set_warnings_cell_under_voltage(msg->warnings_cell_under_voltage);
-			proto_msg->set_warnings_cell_over_voltage(msg->warnings_cell_over_voltage);
-			proto_msg->set_warnings_cell_high_temperature(msg->warnings_cell_high_temperature);
-			proto_msg->set_warnings_cell_over_temperature(msg->warnings_cell_over_temperature);
-			proto_msg->set_warnings_over_current(msg->warnings_over_current);
-			proto_msg->set_warnings_can(msg->warnings_can);
-			proto_msg->set_warnings_int_voltage_mismatch(msg->warnings_int_voltage_mismatch);
-			proto_msg->set_warnings_cellboard_comm(msg->warnings_cellboard_comm);
-			proto_msg->set_warnings_cellboard_internal(msg->warnings_cellboard_internal);
-			proto_msg->set_warnings_connector_disconnected(msg->warnings_connector_disconnected);
-			proto_msg->set_warnings_fans_disconnected(msg->warnings_fans_disconnected);
-			proto_msg->set_warnings_feedback(msg->warnings_feedback);
-			proto_msg->set_warnings_feedback_circuitry(msg->warnings_feedback_circuitry);
-			proto_msg->set_warnings_eeprom_comm(msg->warnings_eeprom_comm);
-			proto_msg->set_warnings_eeprom_write(msg->warnings_eeprom_write);
 			proto_msg->set_errors_cell_low_voltage(msg->errors_cell_low_voltage);
 			proto_msg->set_errors_cell_under_voltage(msg->errors_cell_under_voltage);
 			proto_msg->set_errors_cell_over_voltage(msg->errors_cell_over_voltage);
@@ -2586,45 +2484,45 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 260: {
+        case 512: {
             primary_hv_debug_signals_t* msg = (primary_hv_debug_signals_t*)(device->message);
             primary::HV_DEBUG_SIGNALS* proto_msg = pack->add_hv_debug_signals();
-			proto_msg->set_debug_signals_feedback_implausibility_detected(msg->debug_signals_feedback_implausibility_detected);
-			proto_msg->set_debug_signals_feedback_imd_cockpit(msg->debug_signals_feedback_imd_cockpit);
-			proto_msg->set_debug_signals_feedback_tsal_green_fault_latched(msg->debug_signals_feedback_tsal_green_fault_latched);
-			proto_msg->set_debug_signals_feedback_bms_cockpit(msg->debug_signals_feedback_bms_cockpit);
-			proto_msg->set_debug_signals_feedback_ext_latched(msg->debug_signals_feedback_ext_latched);
-			proto_msg->set_debug_signals_feedback_tsal_green(msg->debug_signals_feedback_tsal_green);
-			proto_msg->set_debug_signals_feedback_ts_over_60v_status(msg->debug_signals_feedback_ts_over_60v_status);
-			proto_msg->set_debug_signals_feedback_airn_status(msg->debug_signals_feedback_airn_status);
-			proto_msg->set_debug_signals_feedback_airp_status(msg->debug_signals_feedback_airp_status);
-			proto_msg->set_debug_signals_feedback_airp_gate(msg->debug_signals_feedback_airp_gate);
-			proto_msg->set_debug_signals_feedback_airn_gate(msg->debug_signals_feedback_airn_gate);
-			proto_msg->set_debug_signals_feedback_precharge_status(msg->debug_signals_feedback_precharge_status);
-			proto_msg->set_debug_signals_feedback_tsp_over_60v_status(msg->debug_signals_feedback_tsp_over_60v_status);
-			proto_msg->set_debug_signals_feedback_imd_fault(msg->debug_signals_feedback_imd_fault);
-			proto_msg->set_debug_signals_feedback_check_mux(msg->debug_signals_feedback_check_mux);
-			proto_msg->set_debug_signals_feedback_sd_end(msg->debug_signals_feedback_sd_end);
-			proto_msg->set_debug_signals_feedback_sd_out(msg->debug_signals_feedback_sd_out);
-			proto_msg->set_debug_signals_feedback_sd_in(msg->debug_signals_feedback_sd_in);
-			proto_msg->set_debug_signals_feedback_sd_bms(msg->debug_signals_feedback_sd_bms);
-			proto_msg->set_debug_signals_feedback_sd_imd(msg->debug_signals_feedback_sd_imd);
-			proto_msg->set_debug_signals_error_cell_low_voltage(msg->debug_signals_error_cell_low_voltage);
-			proto_msg->set_debug_signals_error_cell_under_voltage(msg->debug_signals_error_cell_under_voltage);
-			proto_msg->set_debug_signals_error_cell_over_voltage(msg->debug_signals_error_cell_over_voltage);
-			proto_msg->set_debug_signals_error_cell_high_temperature(msg->debug_signals_error_cell_high_temperature);
-			proto_msg->set_debug_signals_error_cell_over_temperature(msg->debug_signals_error_cell_over_temperature);
-			proto_msg->set_debug_signals_error_over_current(msg->debug_signals_error_over_current);
-			proto_msg->set_debug_signals_error_can(msg->debug_signals_error_can);
-			proto_msg->set_debug_signals_error_int_voltage_mismatch(msg->debug_signals_error_int_voltage_mismatch);
-			proto_msg->set_debug_signals_error_cellboard_comm(msg->debug_signals_error_cellboard_comm);
-			proto_msg->set_debug_signals_error_cellboard_internal(msg->debug_signals_error_cellboard_internal);
-			proto_msg->set_debug_signals_error_connector_disconnected(msg->debug_signals_error_connector_disconnected);
-			proto_msg->set_debug_signals_error_fans_disconnected(msg->debug_signals_error_fans_disconnected);
-			proto_msg->set_debug_signals_error_feedback(msg->debug_signals_error_feedback);
-			proto_msg->set_debug_signals_error_feedback_circuitry(msg->debug_signals_error_feedback_circuitry);
-			proto_msg->set_debug_signals_error_eeprom_comm(msg->debug_signals_error_eeprom_comm);
-			proto_msg->set_debug_signals_error_eeprom_write(msg->debug_signals_error_eeprom_write);
+			proto_msg->set_feedbacks_implausibility_detected(msg->feedbacks_implausibility_detected);
+			proto_msg->set_feedbacks_imd_cockpit(msg->feedbacks_imd_cockpit);
+			proto_msg->set_feedbacks_tsal_green_fault_latched(msg->feedbacks_tsal_green_fault_latched);
+			proto_msg->set_feedbacks_bms_cockpit(msg->feedbacks_bms_cockpit);
+			proto_msg->set_feedbacks_ext_latched(msg->feedbacks_ext_latched);
+			proto_msg->set_feedbacks_tsal_green(msg->feedbacks_tsal_green);
+			proto_msg->set_feedbacks_ts_over_60v_status(msg->feedbacks_ts_over_60v_status);
+			proto_msg->set_feedbacks_airn_status(msg->feedbacks_airn_status);
+			proto_msg->set_feedbacks_airp_status(msg->feedbacks_airp_status);
+			proto_msg->set_feedbacks_airp_gate(msg->feedbacks_airp_gate);
+			proto_msg->set_feedbacks_airn_gate(msg->feedbacks_airn_gate);
+			proto_msg->set_feedbacks_precharge_status(msg->feedbacks_precharge_status);
+			proto_msg->set_feedbacks_tsp_over_60v_status(msg->feedbacks_tsp_over_60v_status);
+			proto_msg->set_feedbacks_imd_fault(msg->feedbacks_imd_fault);
+			proto_msg->set_feedbacks_check_mux(msg->feedbacks_check_mux);
+			proto_msg->set_feedbacks_sd_end(msg->feedbacks_sd_end);
+			proto_msg->set_feedbacks_sd_out(msg->feedbacks_sd_out);
+			proto_msg->set_feedbacks_sd_in(msg->feedbacks_sd_in);
+			proto_msg->set_feedbacks_sd_bms(msg->feedbacks_sd_bms);
+			proto_msg->set_feedbacks_sd_imd(msg->feedbacks_sd_imd);
+			proto_msg->set_errors_cell_low_voltage(msg->errors_cell_low_voltage);
+			proto_msg->set_errors_cell_under_voltage(msg->errors_cell_under_voltage);
+			proto_msg->set_errors_cell_over_voltage(msg->errors_cell_over_voltage);
+			proto_msg->set_errors_cell_high_temperature(msg->errors_cell_high_temperature);
+			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
+			proto_msg->set_errors_over_current(msg->errors_over_current);
+			proto_msg->set_errors_can(msg->errors_can);
+			proto_msg->set_errors_int_voltage_mismatch(msg->errors_int_voltage_mismatch);
+			proto_msg->set_errors_cellboard_comm(msg->errors_cellboard_comm);
+			proto_msg->set_errors_cellboard_internal(msg->errors_cellboard_internal);
+			proto_msg->set_errors_connector_disconnected(msg->errors_connector_disconnected);
+			proto_msg->set_errors_fans_disconnected(msg->errors_fans_disconnected);
+			proto_msg->set_errors_feedback(msg->errors_feedback);
+			proto_msg->set_errors_feedback_circuitry(msg->errors_feedback_circuitry);
+			proto_msg->set_errors_eeprom_comm(msg->errors_eeprom_comm);
+			proto_msg->set_errors_eeprom_write(msg->errors_eeprom_write);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2632,10 +2530,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 32: {
-            primary_hv_fans_override_converted_t* msg = (primary_hv_fans_override_converted_t*)(device->message);
-            primary::HV_FANS_OVERRIDE* proto_msg = pack->add_hv_fans_override();
-			proto_msg->set_fans_override((primary::primary_hv_fans_override_fans_override)msg->fans_override);
+        case 1536: {
+            primary_hv_fans_status_converted_t* msg = (primary_hv_fans_status_converted_t*)(device->message);
+            primary::HV_FANS_STATUS* proto_msg = pack->add_hv_fans_status();
+			proto_msg->set_fans_override((primary::primary_hv_fans_status_fans_override)msg->fans_override);
 			proto_msg->set_fans_speed(msg->fans_speed);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2644,21 +2542,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 37: {
-            primary_hv_can_forward_status_t* msg = (primary_hv_can_forward_status_t*)(device->message);
-            primary::HV_CAN_FORWARD_STATUS* proto_msg = pack->add_hv_can_forward_status();
-			proto_msg->set_can_forward_status((primary::primary_hv_can_forward_status_can_forward_status)msg->can_forward_status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 773: {
-            primary_hv_fans_override_status_converted_t* msg = (primary_hv_fans_override_status_converted_t*)(device->message);
-            primary::HV_FANS_OVERRIDE_STATUS* proto_msg = pack->add_hv_fans_override_status();
-			proto_msg->set_fans_override((primary::primary_hv_fans_override_status_fans_override)msg->fans_override);
+        case 1032: {
+            primary_hv_set_fans_status_handcart_converted_t* msg = (primary_hv_set_fans_status_handcart_converted_t*)(device->message);
+            primary::HV_SET_FANS_STATUS_HANDCART* proto_msg = pack->add_hv_set_fans_status_handcart();
+			proto_msg->set_fans_override((primary::primary_hv_set_fans_status_handcart_fans_override)msg->fans_override);
 			proto_msg->set_fans_speed(msg->fans_speed);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2667,29 +2554,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 771: {
-            primary_hv_feedback_status_t* msg = (primary_hv_feedback_status_t*)(device->message);
+        case 520: {
+            primary_hv_feedback_status_converted_t* msg = (primary_hv_feedback_status_converted_t*)(device->message);
             primary::HV_FEEDBACK_STATUS* proto_msg = pack->add_hv_feedback_status();
-			proto_msg->set_feedback_implausibility_detected((primary::primary_hv_feedback_status_feedback_implausibility_detected)msg->feedback_implausibility_detected);
-			proto_msg->set_feedback_imd_cockpit((primary::primary_hv_feedback_status_feedback_imd_cockpit)msg->feedback_imd_cockpit);
-			proto_msg->set_feedback_tsal_green_fault_latched((primary::primary_hv_feedback_status_feedback_tsal_green_fault_latched)msg->feedback_tsal_green_fault_latched);
-			proto_msg->set_feedback_bms_cockpit((primary::primary_hv_feedback_status_feedback_bms_cockpit)msg->feedback_bms_cockpit);
-			proto_msg->set_feedback_ext_latched((primary::primary_hv_feedback_status_feedback_ext_latched)msg->feedback_ext_latched);
-			proto_msg->set_feedback_tsal_green((primary::primary_hv_feedback_status_feedback_tsal_green)msg->feedback_tsal_green);
-			proto_msg->set_feedback_ts_over_60v_status((primary::primary_hv_feedback_status_feedback_ts_over_60v_status)msg->feedback_ts_over_60v_status);
-			proto_msg->set_feedback_airn_status((primary::primary_hv_feedback_status_feedback_airn_status)msg->feedback_airn_status);
-			proto_msg->set_feedback_airp_status((primary::primary_hv_feedback_status_feedback_airp_status)msg->feedback_airp_status);
-			proto_msg->set_feedback_airp_gate((primary::primary_hv_feedback_status_feedback_airp_gate)msg->feedback_airp_gate);
-			proto_msg->set_feedback_airn_gate((primary::primary_hv_feedback_status_feedback_airn_gate)msg->feedback_airn_gate);
-			proto_msg->set_feedback_precharge_status((primary::primary_hv_feedback_status_feedback_precharge_status)msg->feedback_precharge_status);
-			proto_msg->set_feedback_tsp_over_60v_status((primary::primary_hv_feedback_status_feedback_tsp_over_60v_status)msg->feedback_tsp_over_60v_status);
-			proto_msg->set_feedback_imd_fault((primary::primary_hv_feedback_status_feedback_imd_fault)msg->feedback_imd_fault);
-			proto_msg->set_feedback_check_mux((primary::primary_hv_feedback_status_feedback_check_mux)msg->feedback_check_mux);
-			proto_msg->set_feedback_sd_end((primary::primary_hv_feedback_status_feedback_sd_end)msg->feedback_sd_end);
-			proto_msg->set_feedback_sd_out((primary::primary_hv_feedback_status_feedback_sd_out)msg->feedback_sd_out);
-			proto_msg->set_feedback_sd_in((primary::primary_hv_feedback_status_feedback_sd_in)msg->feedback_sd_in);
-			proto_msg->set_feedback_sd_bms((primary::primary_hv_feedback_status_feedback_sd_bms)msg->feedback_sd_bms);
-			proto_msg->set_feedback_sd_imd((primary::primary_hv_feedback_status_feedback_sd_imd)msg->feedback_sd_imd);
+			proto_msg->set_fans_override((primary::primary_hv_feedback_status_fans_override)msg->fans_override);
+			proto_msg->set_fans_speed(msg->fans_speed);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2697,16 +2566,16 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 516: {
+        case 528: {
             primary_hv_feedback_ts_voltage_converted_t* msg = (primary_hv_feedback_ts_voltage_converted_t*)(device->message);
             primary::HV_FEEDBACK_TS_VOLTAGE* proto_msg = pack->add_hv_feedback_ts_voltage();
-			proto_msg->set_feedback_ts_over_60v_status(msg->feedback_ts_over_60v_status);
-			proto_msg->set_feedback_airn_status(msg->feedback_airn_status);
-			proto_msg->set_feedback_airp_status(msg->feedback_airp_status);
-			proto_msg->set_feedback_airp_gate(msg->feedback_airp_gate);
-			proto_msg->set_feedback_airn_gate(msg->feedback_airn_gate);
-			proto_msg->set_feedback_precharge_status(msg->feedback_precharge_status);
-			proto_msg->set_feedback_tsp_over_60v_status(msg->feedback_tsp_over_60v_status);
+			proto_msg->set_ts_over_60v_status(msg->ts_over_60v_status);
+			proto_msg->set_airn_status(msg->airn_status);
+			proto_msg->set_airp_status(msg->airp_status);
+			proto_msg->set_airp_gate(msg->airp_gate);
+			proto_msg->set_airn_gate(msg->airn_gate);
+			proto_msg->set_precharge_status(msg->precharge_status);
+			proto_msg->set_tsp_over_60v_status(msg->tsp_over_60v_status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2714,17 +2583,17 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 548: {
-            primary_hv_feedback_misc_voltage_converted_t* msg = (primary_hv_feedback_misc_voltage_converted_t*)(device->message);
+        case 536: {
+            primary_hv_feedback_misc_voltage_t* msg = (primary_hv_feedback_misc_voltage_t*)(device->message);
             primary::HV_FEEDBACK_MISC_VOLTAGE* proto_msg = pack->add_hv_feedback_misc_voltage();
-			proto_msg->set_feedback_implausibility_detected(msg->feedback_implausibility_detected);
-			proto_msg->set_feedback_imd_cockpit(msg->feedback_imd_cockpit);
-			proto_msg->set_feedback_tsal_green_fault_latched(msg->feedback_tsal_green_fault_latched);
-			proto_msg->set_feedback_bms_cockpit(msg->feedback_bms_cockpit);
-			proto_msg->set_feedback_ext_latched(msg->feedback_ext_latched);
-			proto_msg->set_feedback_tsal_green(msg->feedback_tsal_green);
+			proto_msg->set_implausibility_detected(msg->implausibility_detected);
+			proto_msg->set_imd_cockpit(msg->imd_cockpit);
+			proto_msg->set_tsal_green_fault_latched(msg->tsal_green_fault_latched);
+			proto_msg->set_bms_cockpit(msg->bms_cockpit);
+			proto_msg->set_ext_latched(msg->ext_latched);
+			proto_msg->set_tsal_green(msg->tsal_green);
 			proto_msg->set_imd_fault(msg->imd_fault);
-			proto_msg->set_feedback_check_mux(msg->feedback_check_mux);
+			proto_msg->set_check_mux(msg->check_mux);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2732,14 +2601,14 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 580: {
-            primary_hv_feedback_sd_voltage_converted_t* msg = (primary_hv_feedback_sd_voltage_converted_t*)(device->message);
+        case 544: {
+            primary_hv_feedback_sd_voltage_t* msg = (primary_hv_feedback_sd_voltage_t*)(device->message);
             primary::HV_FEEDBACK_SD_VOLTAGE* proto_msg = pack->add_hv_feedback_sd_voltage();
-			proto_msg->set_feedback_sd_end(msg->feedback_sd_end);
-			proto_msg->set_feedback_sd_out(msg->feedback_sd_out);
-			proto_msg->set_feedback_sd_in(msg->feedback_sd_in);
-			proto_msg->set_feedback_sd_bms(msg->feedback_sd_bms);
-			proto_msg->set_feedback_sd_imd(msg->feedback_sd_imd);
+			proto_msg->set_sd_end(msg->sd_end);
+			proto_msg->set_sd_out(msg->sd_out);
+			proto_msg->set_sd_in(msg->sd_in);
+			proto_msg->set_sd_bms(msg->sd_bms);
+			proto_msg->set_sd_imd(msg->sd_imd);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2747,11 +2616,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 803: {
+        case 552: {
             primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)(device->message);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
-			proto_msg->set_imd_status((primary::primary_hv_imd_status_imd_status)msg->imd_status);
+			proto_msg->set_imd_status(msg->imd_status);
 			proto_msg->set_imd_details(msg->imd_details);
 			proto_msg->set_imd_duty_cycle(msg->imd_duty_cycle);
 			proto_msg->set_imd_freq(msg->imd_freq);
@@ -2763,10 +2632,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 84: {
-            primary_ts_status_t* msg = (primary_ts_status_t*)(device->message);
-            primary::TS_STATUS* proto_msg = pack->add_ts_status();
-			proto_msg->set_ts_status((primary::primary_ts_status_ts_status)msg->ts_status);
+        case 560: {
+            primary_hv_status_t* msg = (primary_hv_status_t*)(device->message);
+            primary::HV_STATUS* proto_msg = pack->add_hv_status();
+			proto_msg->set_status((primary::primary_hv_status_status)msg->status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2774,85 +2643,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 82: {
-            primary_set_ts_status_das_t* msg = (primary_set_ts_status_das_t*)(device->message);
-            primary::SET_TS_STATUS_DAS* proto_msg = pack->add_set_ts_status_das();
-			proto_msg->set_ts_status_set((primary::primary_set_ts_status_das_ts_status_set)msg->ts_status_set);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 83: {
-            primary_set_ts_status_handcart_t* msg = (primary_set_ts_status_handcart_t*)(device->message);
-            primary::SET_TS_STATUS_HANDCART* proto_msg = pack->add_set_ts_status_handcart();
-			proto_msg->set_ts_status_set((primary::primary_set_ts_status_handcart_ts_status_set)msg->ts_status_set);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 258: {
-            primary_steer_status_converted_t* msg = (primary_steer_status_converted_t*)(device->message);
-            primary::STEER_STATUS* proto_msg = pack->add_steer_status();
-			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 80: {
-            primary_set_car_status_t* msg = (primary_set_car_status_t*)(device->message);
-            primary::SET_CAR_STATUS* proto_msg = pack->add_set_car_status();
-			proto_msg->set_car_status_set((primary::primary_set_car_status_car_status_set)msg->car_status_set);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1026: {
-            primary_set_pedal_calibration_t* msg = (primary_set_pedal_calibration_t*)(device->message);
-            primary::SET_PEDAL_CALIBRATION* proto_msg = pack->add_set_pedal_calibration();
-			proto_msg->set_pedal((primary::primary_set_pedal_calibration_pedal)msg->pedal);
-			proto_msg->set_bound((primary::primary_set_pedal_calibration_bound)msg->bound);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1032: {
-            primary_pedal_calibration_ack_t* msg = (primary_pedal_calibration_ack_t*)(device->message);
-            primary::PEDAL_CALIBRATION_ACK* proto_msg = pack->add_pedal_calibration_ack();
-			proto_msg->set_pedal((primary::primary_pedal_calibration_ack_pedal)msg->pedal);
-			proto_msg->set_bound((primary::primary_pedal_calibration_ack_bound)msg->bound);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 81: {
-            primary_car_status_t* msg = (primary_car_status_t*)(device->message);
-            primary::CAR_STATUS* proto_msg = pack->add_car_status();
-			proto_msg->set_inverter_l((primary::primary_car_status_inverter_l)msg->inverter_l);
-			proto_msg->set_inverter_r((primary::primary_car_status_inverter_r)msg->inverter_r);
-			proto_msg->set_car_status((primary::primary_car_status_car_status)msg->car_status);
-			proto_msg->set_controls_slip(msg->controls_slip);
-			proto_msg->set_controls_torque_vectoring(msg->controls_torque_vectoring);
-			proto_msg->set_controls_regen(msg->controls_regen);
+        case 32: {
+            primary_hv_set_status_ecu_t* msg = (primary_hv_set_status_ecu_t*)(device->message);
+            primary::HV_SET_STATUS_ECU* proto_msg = pack->add_hv_set_status_ecu();
+			proto_msg->set_hv_status_set((primary::primary_hv_set_status_ecu_hv_status_set)msg->hv_status_set);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2861,17 +2655,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 40: {
-            primary_das_errors_t* msg = (primary_das_errors_t*)(device->message);
-            primary::DAS_ERRORS* proto_msg = pack->add_das_errors();
-			proto_msg->set_das_error_pedal_adc(msg->das_error_pedal_adc);
-			proto_msg->set_das_error_pedal_implausibility(msg->das_error_pedal_implausibility);
-			proto_msg->set_das_error_imu_tout(msg->das_error_imu_tout);
-			proto_msg->set_das_error_irts_tout(msg->das_error_irts_tout);
-			proto_msg->set_das_error_ts_tout(msg->das_error_ts_tout);
-			proto_msg->set_das_error_invl_tout(msg->das_error_invl_tout);
-			proto_msg->set_das_error_invr_tout(msg->das_error_invr_tout);
-			proto_msg->set_das_error_steer_tout(msg->das_error_steer_tout);
-			proto_msg->set_das_error_fsm(msg->das_error_fsm);
+            primary_hv_set_status_handcart_t* msg = (primary_hv_set_status_handcart_t*)(device->message);
+            primary::HV_SET_STATUS_HANDCART* proto_msg = pack->add_hv_set_status_handcart();
+			proto_msg->set_hv_status_set((primary::primary_hv_set_status_handcart_hv_status_set)msg->hv_status_set);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2879,312 +2665,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 777: {
-            primary_ecu_feedbacks_t* msg = (primary_ecu_feedbacks_t*)(device->message);
-            primary::ECU_FEEDBACKS* proto_msg = pack->add_ecu_feedbacks();
-			proto_msg->set_ecu_feedbacks_sd_cock_fb(msg->ecu_feedbacks_sd_cock_fb);
-			proto_msg->set_ecu_feedbacks_sd_fb1(msg->ecu_feedbacks_sd_fb1);
-			proto_msg->set_ecu_feedbacks_sd_bots_fb(msg->ecu_feedbacks_sd_bots_fb);
-			proto_msg->set_ecu_feedbacks_sd_interial_fb(msg->ecu_feedbacks_sd_interial_fb);
-			proto_msg->set_ecu_feedbacks_sd_fb4(msg->ecu_feedbacks_sd_fb4);
-			proto_msg->set_ecu_feedbacks_sd_in(msg->ecu_feedbacks_sd_in);
-			proto_msg->set_ecu_feedbacks_sd_out(msg->ecu_feedbacks_sd_out);
-			proto_msg->set_ecu_feedbacks_sd_ctrl_pin(msg->ecu_feedbacks_sd_ctrl_pin);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 809: {
-            primary_lv_status_t* msg = (primary_lv_status_t*)(device->message);
-            primary::LV_STATUS* proto_msg = pack->add_lv_status();
-			proto_msg->set_status((primary::primary_lv_status_status)msg->status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 835: {
-            primary_lv_currents_converted_t* msg = (primary_lv_currents_converted_t*)(device->message);
-            primary::LV_CURRENTS* proto_msg = pack->add_lv_currents();
-			proto_msg->set_current_as_battery(msg->current_as_battery);
-			proto_msg->set_current_lv_battery(msg->current_lv_battery);
-			proto_msg->set_current_charger(msg->current_charger);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 867: {
-            primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)(device->message);
-            primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage_0(msg->voltage_0);
-			proto_msg->set_voltage_1(msg->voltage_1);
-			proto_msg->set_voltage_2(msg->voltage_2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 899: {
-            primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)(device->message);
-            primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
-			proto_msg->set_total_voltage(msg->total_voltage);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 931: {
-            primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)(device->message);
-            primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp_0(msg->temp_0);
-			proto_msg->set_temp_1(msg->temp_1);
-			proto_msg->set_temp_2(msg->temp_2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 963: {
-            primary_cooling_status_converted_t* msg = (primary_cooling_status_converted_t*)(device->message);
-            primary::COOLING_STATUS* proto_msg = pack->add_cooling_status();
-			proto_msg->set_radiators_speed(msg->radiators_speed);
-			proto_msg->set_pumps_speed(msg->pumps_speed);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 775: {
-            primary_set_radiator_speed_converted_t* msg = (primary_set_radiator_speed_converted_t*)(device->message);
-            primary::SET_RADIATOR_SPEED* proto_msg = pack->add_set_radiator_speed();
-			proto_msg->set_radiators_speed(msg->radiators_speed);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 807: {
-            primary_set_pumps_speed_converted_t* msg = (primary_set_pumps_speed_converted_t*)(device->message);
-            primary::SET_PUMPS_SPEED* proto_msg = pack->add_set_pumps_speed();
-			proto_msg->set_pumps_speed(msg->pumps_speed);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 263: {
-            primary_set_inverter_connection_status_t* msg = (primary_set_inverter_connection_status_t*)(device->message);
-            primary::SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_set_inverter_connection_status();
-			proto_msg->set_status((primary::primary_set_inverter_connection_status_status)msg->status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 259: {
-            primary_inverter_connection_status_t* msg = (primary_inverter_connection_status_t*)(device->message);
-            primary::INVERTER_CONNECTION_STATUS* proto_msg = pack->add_inverter_connection_status();
-			proto_msg->set_status((primary::primary_inverter_connection_status_status)msg->status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 515: {
-            primary_lv_errors_t* msg = (primary_lv_errors_t*)(device->message);
-            primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
-			proto_msg->set_warnings_cell_undervoltage(msg->warnings_cell_undervoltage);
-			proto_msg->set_warnings_cell_overvoltage(msg->warnings_cell_overvoltage);
-			proto_msg->set_warnings_battery_open_wire(msg->warnings_battery_open_wire);
-			proto_msg->set_warnings_can(msg->warnings_can);
-			proto_msg->set_warnings_spi(msg->warnings_spi);
-			proto_msg->set_warnings_over_current(msg->warnings_over_current);
-			proto_msg->set_warnings_cell_under_temperature(msg->warnings_cell_under_temperature);
-			proto_msg->set_warnings_cell_over_temperature(msg->warnings_cell_over_temperature);
-			proto_msg->set_warnings_relay(msg->warnings_relay);
-			proto_msg->set_warnings_bms_monitor(msg->warnings_bms_monitor);
-			proto_msg->set_warnings_voltages_not_ready(msg->warnings_voltages_not_ready);
-			proto_msg->set_warnings_mcp23017(msg->warnings_mcp23017);
-			proto_msg->set_warnings_radiator(msg->warnings_radiator);
-			proto_msg->set_warnings_fan(msg->warnings_fan);
-			proto_msg->set_warnings_pump(msg->warnings_pump);
-			proto_msg->set_warnings_adc_init(msg->warnings_adc_init);
-			proto_msg->set_warnings_mux(msg->warnings_mux);
-			proto_msg->set_errors_cell_undervoltage(msg->errors_cell_undervoltage);
-			proto_msg->set_errors_cell_overvoltage(msg->errors_cell_overvoltage);
-			proto_msg->set_errors_battery_open_wire(msg->errors_battery_open_wire);
-			proto_msg->set_errors_can(msg->errors_can);
-			proto_msg->set_errors_spi(msg->errors_spi);
-			proto_msg->set_errors_over_current(msg->errors_over_current);
-			proto_msg->set_errors_cell_under_temperature(msg->errors_cell_under_temperature);
-			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
-			proto_msg->set_errors_relay(msg->errors_relay);
-			proto_msg->set_errors_bms_monitor(msg->errors_bms_monitor);
-			proto_msg->set_errors_voltages_not_ready(msg->errors_voltages_not_ready);
-			proto_msg->set_errors_mcp23017(msg->errors_mcp23017);
-			proto_msg->set_errors_radiator(msg->errors_radiator);
-			proto_msg->set_errors_fan(msg->errors_fan);
-			proto_msg->set_errors_pump(msg->errors_pump);
-			proto_msg->set_errors_adc_init(msg->errors_adc_init);
-			proto_msg->set_errors_mux(msg->errors_mux);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 291: {
-            primary_lv_health_signals_t* msg = (primary_lv_health_signals_t*)(device->message);
-            primary::LV_HEALTH_SIGNALS* proto_msg = pack->add_lv_health_signals();
-			proto_msg->set_health_signals_lvms_out(msg->health_signals_lvms_out);
-			proto_msg->set_health_signals_relay_out(msg->health_signals_relay_out);
-			proto_msg->set_health_signals_battery_voltage_out(msg->health_signals_battery_voltage_out);
-			proto_msg->set_health_signals_charger_current(msg->health_signals_charger_current);
-			proto_msg->set_health_signals_battery_current(msg->health_signals_battery_current);
-			proto_msg->set_health_signals_sign_battery_current(msg->health_signals_sign_battery_current);
-			proto_msg->set_health_code(msg->health_code);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 323: {
-            primary_lv_feedbacks_converted_t* msg = (primary_lv_feedbacks_converted_t*)(device->message);
-            primary::LV_FEEDBACKS* proto_msg = pack->add_lv_feedbacks();
-			proto_msg->set_feedbacks_bspd_fb(msg->feedbacks_bspd_fb);
-			proto_msg->set_feedbacks_hvd_fb(msg->feedbacks_hvd_fb);
-			proto_msg->set_feedbacks_lvms_fb(msg->feedbacks_lvms_fb);
-			proto_msg->set_feedbacks_res_fb(msg->feedbacks_res_fb);
-			proto_msg->set_feedbacks_lv_encl(msg->feedbacks_lv_encl);
-			proto_msg->set_feedbacks_invc_lid_fb(msg->feedbacks_invc_lid_fb);
-			proto_msg->set_feedbacks_hv_encl_2_fb(msg->feedbacks_hv_encl_2_fb);
-			proto_msg->set_feedbacks_back_plate_fb(msg->feedbacks_back_plate_fb);
-			proto_msg->set_feedbacks_invc_interlock_fb(msg->feedbacks_invc_interlock_fb);
-			proto_msg->set_feedbacks_ams_fb(msg->feedbacks_ams_fb);
-			proto_msg->set_feedbacks_asms_fb(msg->feedbacks_asms_fb);
-			proto_msg->set_feedbacks_interlock_fb(msg->feedbacks_interlock_fb);
-			proto_msg->set_feedbacks_inverters_fb(msg->feedbacks_inverters_fb);
-			proto_msg->set_feedbacks_pcbs_fb(msg->feedbacks_pcbs_fb);
-			proto_msg->set_feedbacks_pumps_fb(msg->feedbacks_pumps_fb);
-			proto_msg->set_feedbacks_shutdown_fb(msg->feedbacks_shutdown_fb);
-			proto_msg->set_feedbacks_radiators_fb(msg->feedbacks_radiators_fb);
-			proto_msg->set_feedbacks_fan_fb(msg->feedbacks_fan_fb);
-			proto_msg->set_feedbacks_as_actuation_fb(msg->feedbacks_as_actuation_fb);
-			proto_msg->set_sd_start(msg->sd_start);
-			proto_msg->set_sd_end(msg->sd_end);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 355: {
-            primary_shutdown_status_t* msg = (primary_shutdown_status_t*)(device->message);
-            primary::SHUTDOWN_STATUS* proto_msg = pack->add_shutdown_status();
-			proto_msg->set_input(msg->input);
-			proto_msg->set_output(msg->output);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1833: {
-            primary_lv_can_flash_req_t* msg = (primary_lv_can_flash_req_t*)(device->message);
-            primary::LV_CAN_FLASH_REQ* proto_msg = pack->add_lv_can_flash_req();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1865: {
-            primary_lv_can_flash_ack_t* msg = (primary_lv_can_flash_ack_t*)(device->message);
-            primary::LV_CAN_FLASH_ACK* proto_msg = pack->add_lv_can_flash_ack();
-			proto_msg->set_response((primary::primary_lv_can_flash_ack_response)msg->response);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 41: {
-            primary_marker_t* msg = (primary_marker_t*)(device->message);
-            primary::MARKER* proto_msg = pack->add_marker();
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 517: {
-            primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)(device->message);
-            primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_voltage_0(msg->voltage_0);
-			proto_msg->set_voltage_1(msg->voltage_1);
-			proto_msg->set_voltage_2(msg->voltage_2);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 549: {
-            primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)(device->message);
-            primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
-			proto_msg->set_start_index(msg->start_index);
-			proto_msg->set_temp_0(msg->temp_0);
-			proto_msg->set_temp_1(msg->temp_1);
-			proto_msg->set_temp_2(msg->temp_2);
-			proto_msg->set_temp_3(msg->temp_3);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 581: {
-            primary_hv_cell_balancing_status_t* msg = (primary_hv_cell_balancing_status_t*)(device->message);
-            primary::HV_CELL_BALANCING_STATUS* proto_msg = pack->add_hv_cell_balancing_status();
-			proto_msg->set_cellboard_id((primary::primary_hv_cell_balancing_status_cellboard_id)msg->cellboard_id);
-			proto_msg->set_balancing_status((primary::primary_hv_cell_balancing_status_balancing_status)msg->balancing_status);
+        case 1544: {
+            primary_hv_balancing_status_t* msg = (primary_hv_balancing_status_t*)(device->message);
+            primary::HV_BALANCING_STATUS* proto_msg = pack->add_hv_balancing_status();
+			proto_msg->set_cellboard_id((primary::primary_hv_balancing_status_cellboard_id)msg->cellboard_id);
+			proto_msg->set_balancing_status((primary::primary_hv_balancing_status_balancing_status)msg->balancing_status);
 			proto_msg->set_errors_can_comm(msg->errors_can_comm);
 			proto_msg->set_errors_ltc_comm(msg->errors_ltc_comm);
 			proto_msg->set_errors_temp_comm_0(msg->errors_temp_comm_0);
@@ -3219,10 +2704,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 512: {
-            primary_set_cell_balancing_status_t* msg = (primary_set_cell_balancing_status_t*)(device->message);
-            primary::SET_CELL_BALANCING_STATUS* proto_msg = pack->add_set_cell_balancing_status();
-			proto_msg->set_set_balancing_status((primary::primary_set_cell_balancing_status_set_balancing_status)msg->set_balancing_status);
+        case 1048: {
+            primary_hv_set_balancing_status_handcart_t* msg = (primary_hv_set_balancing_status_handcart_t*)(device->message);
+            primary::HV_SET_BALANCING_STATUS_HANDCART* proto_msg = pack->add_hv_set_balancing_status_handcart();
+			proto_msg->set_set_balancing_status((primary::primary_hv_set_balancing_status_handcart_set_balancing_status)msg->set_balancing_status);
 			proto_msg->set_balancing_threshold(msg->balancing_threshold);
 
 #ifdef CANLIB_TIMESTAMP
@@ -3231,13 +2716,386 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 520: {
-            primary_speed_converted_t* msg = (primary_speed_converted_t*)(device->message);
-            primary::SPEED* proto_msg = pack->add_speed();
-			proto_msg->set_encoder_r(msg->encoder_r);
-			proto_msg->set_encoder_l(msg->encoder_l);
-			proto_msg->set_inverter_r(msg->inverter_r);
-			proto_msg->set_inverter_l(msg->inverter_l);
+        case 568: {
+            primary_lv_status_t* msg = (primary_lv_status_t*)(device->message);
+            primary::LV_STATUS* proto_msg = pack->add_lv_status();
+			proto_msg->set_status((primary::primary_lv_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1568: {
+            primary_lv_radiator_speed_t* msg = (primary_lv_radiator_speed_t*)(device->message);
+            primary::LV_RADIATOR_SPEED* proto_msg = pack->add_lv_radiator_speed();
+			proto_msg->set_radiator_speed(msg->radiator_speed);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1576: {
+            primary_lv_pumps_speed_t* msg = (primary_lv_pumps_speed_t*)(device->message);
+            primary::LV_PUMPS_SPEED* proto_msg = pack->add_lv_pumps_speed();
+			proto_msg->set_pumps_speed(msg->pumps_speed);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1056: {
+            primary_lv_set_radiator_speed_t* msg = (primary_lv_set_radiator_speed_t*)(device->message);
+            primary::LV_SET_RADIATOR_SPEED* proto_msg = pack->add_lv_set_radiator_speed();
+			proto_msg->set_radiator_speed(msg->radiator_speed);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1064: {
+            primary_lv_set_pumps_speed_t* msg = (primary_lv_set_pumps_speed_t*)(device->message);
+            primary::LV_SET_PUMPS_SPEED* proto_msg = pack->add_lv_set_pumps_speed();
+			proto_msg->set_pumps_speed(msg->pumps_speed);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 576: {
+            primary_lv_errors_t* msg = (primary_lv_errors_t*)(device->message);
+            primary::LV_ERRORS* proto_msg = pack->add_lv_errors();
+			proto_msg->set_errors_cell_undervoltage(msg->errors_cell_undervoltage);
+			proto_msg->set_errors_cell_overvoltage(msg->errors_cell_overvoltage);
+			proto_msg->set_errors_battery_open_wire(msg->errors_battery_open_wire);
+			proto_msg->set_errors_can(msg->errors_can);
+			proto_msg->set_errors_spi(msg->errors_spi);
+			proto_msg->set_errors_over_current(msg->errors_over_current);
+			proto_msg->set_errors_cell_under_temperature(msg->errors_cell_under_temperature);
+			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
+			proto_msg->set_errors_relay(msg->errors_relay);
+			proto_msg->set_errors_bms_monitor(msg->errors_bms_monitor);
+			proto_msg->set_errors_voltages_not_ready(msg->errors_voltages_not_ready);
+			proto_msg->set_errors_mcp23017(msg->errors_mcp23017);
+			proto_msg->set_errors_radiator(msg->errors_radiator);
+			proto_msg->set_errors_fan(msg->errors_fan);
+			proto_msg->set_errors_pump(msg->errors_pump);
+			proto_msg->set_errors_adc_init(msg->errors_adc_init);
+			proto_msg->set_errors_mux(msg->errors_mux);
+			proto_msg->set_health_signals_lvms_out(msg->health_signals_lvms_out);
+			proto_msg->set_health_signals_relay_out(msg->health_signals_relay_out);
+			proto_msg->set_health_signals_battery_voltage_out(msg->health_signals_battery_voltage_out);
+			proto_msg->set_health_signals_charger_current(msg->health_signals_charger_current);
+			proto_msg->set_health_signals_battery_current(msg->health_signals_battery_current);
+			proto_msg->set_health_signals_sign_battery_current(msg->health_signals_sign_battery_current);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 584: {
+            primary_lv_feedback_ts_voltage_converted_t* msg = (primary_lv_feedback_ts_voltage_converted_t*)(device->message);
+            primary::LV_FEEDBACK_TS_VOLTAGE* proto_msg = pack->add_lv_feedback_ts_voltage();
+			proto_msg->set_bspd(msg->bspd);
+			proto_msg->set_imd(msg->imd);
+			proto_msg->set_hvd(msg->hvd);
+			proto_msg->set_ams(msg->ams);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 592: {
+            primary_lv_feedback_sd_voltage_converted_t* msg = (primary_lv_feedback_sd_voltage_converted_t*)(device->message);
+            primary::LV_FEEDBACK_SD_VOLTAGE* proto_msg = pack->add_lv_feedback_sd_voltage();
+			proto_msg->set_sd_end(msg->sd_end);
+			proto_msg->set_lvms(msg->lvms);
+			proto_msg->set_interlock(msg->interlock);
+			proto_msg->set_sd_start(msg->sd_start);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 600: {
+            primary_lv_feedback_eclosure_voltage_converted_t* msg = (primary_lv_feedback_eclosure_voltage_converted_t*)(device->message);
+            primary::LV_FEEDBACK_ECLOSURE_VOLTAGE* proto_msg = pack->add_lv_feedback_eclosure_voltage();
+			proto_msg->set_lv_encl(msg->lv_encl);
+			proto_msg->set_hv_encl_1(msg->hv_encl_1);
+			proto_msg->set_hv_encl_2(msg->hv_encl_2);
+			proto_msg->set_backplate(msg->backplate);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 608: {
+            primary_lv_feedback_gpio_extender_t* msg = (primary_lv_feedback_gpio_extender_t*)(device->message);
+            primary::LV_FEEDBACK_GPIO_EXTENDER* proto_msg = pack->add_lv_feedback_gpio_extender();
+			proto_msg->set_feedback_inverters(msg->feedback_inverters);
+			proto_msg->set_feedback_pcbs(msg->feedback_pcbs);
+			proto_msg->set_feedback_pumps(msg->feedback_pumps);
+			proto_msg->set_feedback_radiators(msg->feedback_radiators);
+			proto_msg->set_feedback_shutdown(msg->feedback_shutdown);
+			proto_msg->set_feedback_hv_fans(msg->feedback_hv_fans);
+			proto_msg->set_feedback_autonomous_system_actuation(msg->feedback_autonomous_system_actuation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 56: {
+            primary_lv_can_flash_req_steering_wheel_t* msg = (primary_lv_can_flash_req_steering_wheel_t*)(device->message);
+            primary::LV_CAN_FLASH_REQ_STEERING_WHEEL* proto_msg = pack->add_lv_can_flash_req_steering_wheel();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 64: {
+            primary_lv_can_flash_ack_t* msg = (primary_lv_can_flash_ack_t*)(device->message);
+            primary::LV_CAN_FLASH_ACK* proto_msg = pack->add_lv_can_flash_ack();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 616: {
+            primary_lv_inverter_connection_status_t* msg = (primary_lv_inverter_connection_status_t*)(device->message);
+            primary::LV_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_lv_inverter_connection_status();
+			proto_msg->set_status((primary::primary_lv_inverter_connection_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 72: {
+            primary_lv_set_inverter_connection_status_t* msg = (primary_lv_set_inverter_connection_status_t*)(device->message);
+            primary::LV_SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_lv_set_inverter_connection_status();
+			proto_msg->set_status((primary::primary_lv_set_inverter_connection_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1584: {
+            primary_tlm_status_t* msg = (primary_tlm_status_t*)(device->message);
+            primary::TLM_STATUS* proto_msg = pack->add_tlm_status();
+			proto_msg->set_status((primary::primary_tlm_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1072: {
+            primary_tlm_set_status_t* msg = (primary_tlm_set_status_t*)(device->message);
+            primary::TLM_SET_STATUS* proto_msg = pack->add_tlm_set_status();
+			proto_msg->set_status((primary::primary_tlm_set_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 624: {
+            primary_handcart_status_t* msg = (primary_handcart_status_t*)(device->message);
+            primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
+			proto_msg->set_connected((primary::primary_handcart_status_connected)msg->connected);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1592: {
+            primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)(device->message);
+            primary::HANDCART_SETTINGS* proto_msg = pack->add_handcart_settings();
+			proto_msg->set_target_voltage(msg->target_voltage);
+			proto_msg->set_fans_override((primary::primary_handcart_settings_fans_override)msg->fans_override);
+			proto_msg->set_fans_speed(msg->fans_speed);
+			proto_msg->set_acc_charge_current(msg->acc_charge_current);
+			proto_msg->set_grid_max_current(msg->grid_max_current);
+			proto_msg->set_status((primary::primary_handcart_settings_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1080: {
+            primary_handcart_set_settings_converted_t* msg = (primary_handcart_set_settings_converted_t*)(device->message);
+            primary::HANDCART_SET_SETTINGS* proto_msg = pack->add_handcart_set_settings();
+			proto_msg->set_target_voltage(msg->target_voltage);
+			proto_msg->set_fans_override((primary::primary_handcart_set_settings_fans_override)msg->fans_override);
+			proto_msg->set_fans_speed(msg->fans_speed);
+			proto_msg->set_acc_charge_current(msg->acc_charge_current);
+			proto_msg->set_grid_max_current(msg->grid_max_current);
+			proto_msg->set_status((primary::primary_handcart_set_settings_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 632: {
+            primary_ecu_status_t* msg = (primary_ecu_status_t*)(device->message);
+            primary::ECU_STATUS* proto_msg = pack->add_ecu_status();
+			proto_msg->set_status((primary::primary_ecu_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 80: {
+            primary_ecu_set_status_t* msg = (primary_ecu_set_status_t*)(device->message);
+            primary::ECU_SET_STATUS* proto_msg = pack->add_ecu_set_status();
+			proto_msg->set_status((primary::primary_ecu_set_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1088: {
+            primary_ecu_inverter_status_t* msg = (primary_ecu_inverter_status_t*)(device->message);
+            primary::ECU_INVERTER_STATUS* proto_msg = pack->add_ecu_inverter_status();
+			proto_msg->set_rl((primary::primary_ecu_inverter_status_rl)msg->rl);
+			proto_msg->set_rr((primary::primary_ecu_inverter_status_rr)msg->rr);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 640: {
+            primary_ecu_control_status_t* msg = (primary_ecu_control_status_t*)(device->message);
+            primary::ECU_CONTROL_STATUS* proto_msg = pack->add_ecu_control_status();
+			proto_msg->set_control_enabled(msg->control_enabled);
+			proto_msg->set_control_errors_forced_off(msg->control_errors_forced_off);
+			proto_msg->set_control_errors_wrong_maps(msg->control_errors_wrong_maps);
+			proto_msg->set_control_errors_control_watchdog(msg->control_errors_control_watchdog);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 648: {
+            primary_ecu_errors_t* msg = (primary_ecu_errors_t*)(device->message);
+            primary::ECU_ERRORS* proto_msg = pack->add_ecu_errors();
+			proto_msg->set_error_pedal_adc(msg->error_pedal_adc);
+			proto_msg->set_error_pedal_implausibility(msg->error_pedal_implausibility);
+			proto_msg->set_error_imu_tout(msg->error_imu_tout);
+			proto_msg->set_error_irts_tout(msg->error_irts_tout);
+			proto_msg->set_error_ts_tout(msg->error_ts_tout);
+			proto_msg->set_error_invl_tout(msg->error_invl_tout);
+			proto_msg->set_error_invr_tout(msg->error_invr_tout);
+			proto_msg->set_error_steer_tout(msg->error_steer_tout);
+			proto_msg->set_error_fsm(msg->error_fsm);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 656: {
+            primary_ecu_feedbacks_t* msg = (primary_ecu_feedbacks_t*)(device->message);
+            primary::ECU_FEEDBACKS* proto_msg = pack->add_ecu_feedbacks();
+			proto_msg->set_feedbacks_sd_cock_fb(msg->feedbacks_sd_cock_fb);
+			proto_msg->set_feedbacks_sd_fb1(msg->feedbacks_sd_fb1);
+			proto_msg->set_feedbacks_sd_bots_fb(msg->feedbacks_sd_bots_fb);
+			proto_msg->set_feedbacks_sd_interial_fb(msg->feedbacks_sd_interial_fb);
+			proto_msg->set_feedbacks_sd_fb4(msg->feedbacks_sd_fb4);
+			proto_msg->set_feedbacks_sd_in(msg->feedbacks_sd_in);
+			proto_msg->set_feedbacks_sd_out(msg->feedbacks_sd_out);
+			proto_msg->set_feedbacks_sd_ctrl_pin(msg->feedbacks_sd_ctrl_pin);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 664: {
+            primary_ecu_power_maps_converted_t* msg = (primary_ecu_power_maps_converted_t*)(device->message);
+            primary::ECU_POWER_MAPS* proto_msg = pack->add_ecu_power_maps();
+			proto_msg->set_map_pw(msg->map_pw);
+			proto_msg->set_map_sc(msg->map_sc);
+			proto_msg->set_map_tv(msg->map_tv);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 88: {
+            primary_ecu_set_power_maps_converted_t* msg = (primary_ecu_set_power_maps_converted_t*)(device->message);
+            primary::ECU_SET_POWER_MAPS* proto_msg = pack->add_ecu_set_power_maps();
+			proto_msg->set_map_pw(msg->map_pw);
+			proto_msg->set_map_sc(msg->map_sc);
+			proto_msg->set_map_tv(msg->map_tv);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1600: {
+            primary_ecu_ptt_status_t* msg = (primary_ecu_ptt_status_t*)(device->message);
+            primary::ECU_PTT_STATUS* proto_msg = pack->add_ecu_ptt_status();
+			proto_msg->set_status((primary::primary_ecu_ptt_status_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1096: {
+            primary_ecu_set_ptt_status_t* msg = (primary_ecu_set_ptt_status_t*)(device->message);
+            primary::ECU_SET_PTT_STATUS* proto_msg = pack->add_ecu_set_ptt_status();
+			proto_msg->set_status((primary::primary_ecu_set_ptt_status_status)msg->status);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3256,6 +3114,34 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_data_5(msg->data_5);
 			proto_msg->set_data_6(msg->data_6);
 			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 672: {
+            primary_control_output_converted_t* msg = (primary_control_output_converted_t*)(device->message);
+            primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
+			proto_msg->set_estimated_velocity(msg->estimated_velocity);
+			proto_msg->set_torque_max_l(msg->torque_max_l);
+			proto_msg->set_torque_max_r(msg->torque_max_r);
+			proto_msg->set_torque_l(msg->torque_l);
+			proto_msg->set_torque_r(msg->torque_r);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 680: {
+            primary_control_status_converted_t* msg = (primary_control_status_converted_t*)(device->message);
+            primary::CONTROL_STATUS* proto_msg = pack->add_control_status();
+			proto_msg->set_map_pw(msg->map_pw);
+			proto_msg->set_map_sc(msg->map_sc);
+			proto_msg->set_map_tv(msg->map_tv);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3317,14 +3203,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 296: {
-            primary_control_output_converted_t* msg = (primary_control_output_converted_t*)(device->message);
-            primary::CONTROL_OUTPUT* proto_msg = pack->add_control_output();
-			proto_msg->set_estimated_velocity(msg->estimated_velocity);
-			proto_msg->set_tmax_r(msg->tmax_r);
-			proto_msg->set_tmax_l(msg->tmax_l);
-			proto_msg->set_torque_l(msg->torque_l);
-			proto_msg->set_torque_r(msg->torque_r);
+        case 1608: {
+            primary_lv_current_battery_converted_t* msg = (primary_lv_current_battery_converted_t*)(device->message);
+            primary::LV_CURRENT_BATTERY* proto_msg = pack->add_lv_current_battery();
+			proto_msg->set_lv_current(msg->lv_current);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3332,9 +3214,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 518: {
-            primary_lc_reset_t* msg = (primary_lc_reset_t*)(device->message);
-            primary::LC_RESET* proto_msg = pack->add_lc_reset();
+        case 1616: {
+            primary_lv_current_charger_converted_t* msg = (primary_lv_current_charger_converted_t*)(device->message);
+            primary::LV_CURRENT_CHARGER* proto_msg = pack->add_lv_current_charger();
+			proto_msg->set_charger_current(msg->charger_current);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3342,10 +3225,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 768: {
-            primary_handcart_status_t* msg = (primary_handcart_status_t*)(device->message);
-            primary::HANDCART_STATUS* proto_msg = pack->add_handcart_status();
-			proto_msg->set_connected(msg->connected);
+        case 1624: {
+            primary_lv_total_voltage_converted_t* msg = (primary_lv_total_voltage_converted_t*)(device->message);
+            primary::LV_TOTAL_VOLTAGE* proto_msg = pack->add_lv_total_voltage();
+			proto_msg->set_total(msg->total);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3353,15 +3236,13 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 800: {
-            primary_handcart_settings_converted_t* msg = (primary_handcart_settings_converted_t*)(device->message);
-            primary::HANDCART_SETTINGS* proto_msg = pack->add_handcart_settings();
-			proto_msg->set_target_voltage(msg->target_voltage);
-			proto_msg->set_fans_override((primary::primary_handcart_settings_fans_override)msg->fans_override);
-			proto_msg->set_fans_speed(msg->fans_speed);
-			proto_msg->set_acc_charge_current(msg->acc_charge_current);
-			proto_msg->set_grid_max_current(msg->grid_max_current);
-			proto_msg->set_status((primary::primary_handcart_settings_status)msg->status);
+        case 1632: {
+            primary_lv_cells_voltage_converted_t* msg = (primary_lv_cells_voltage_converted_t*)(device->message);
+            primary::LV_CELLS_VOLTAGE* proto_msg = pack->add_lv_cells_voltage();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_voltage_0(msg->voltage_0);
+			proto_msg->set_voltage_1(msg->voltage_1);
+			proto_msg->set_voltage_2(msg->voltage_2);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3369,15 +3250,13 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 832: {
-            primary_handcart_settings_set_converted_t* msg = (primary_handcart_settings_set_converted_t*)(device->message);
-            primary::HANDCART_SETTINGS_SET* proto_msg = pack->add_handcart_settings_set();
-			proto_msg->set_target_voltage(msg->target_voltage);
-			proto_msg->set_fans_override((primary::primary_handcart_settings_set_fans_override)msg->fans_override);
-			proto_msg->set_fans_speed(msg->fans_speed);
-			proto_msg->set_acc_charge_current(msg->acc_charge_current);
-			proto_msg->set_grid_max_current(msg->grid_max_current);
-			proto_msg->set_status((primary::primary_handcart_settings_set_status)msg->status);
+        case 1640: {
+            primary_lv_cells_voltage_stats_converted_t* msg = (primary_lv_cells_voltage_stats_converted_t*)(device->message);
+            primary::LV_CELLS_VOLTAGE_STATS* proto_msg = pack->add_lv_cells_voltage_stats();
+			proto_msg->set_max(msg->max);
+			proto_msg->set_min(msg->min);
+			proto_msg->set_delta(msg->delta);
+			proto_msg->set_avg(msg->avg);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3385,10 +3264,13 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 547: {
-            primary_set_ptt_status_t* msg = (primary_set_ptt_status_t*)(device->message);
-            primary::SET_PTT_STATUS* proto_msg = pack->add_set_ptt_status();
-			proto_msg->set_status((primary::primary_set_ptt_status_status)msg->status);
+        case 1648: {
+            primary_lv_cells_temp_converted_t* msg = (primary_lv_cells_temp_converted_t*)(device->message);
+            primary::LV_CELLS_TEMP* proto_msg = pack->add_lv_cells_temp();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_temp_0(msg->temp_0);
+			proto_msg->set_temp_1(msg->temp_1);
+			proto_msg->set_temp_2(msg->temp_2);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3396,10 +3278,12 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 579: {
-            primary_ptt_status_t* msg = (primary_ptt_status_t*)(device->message);
-            primary::PTT_STATUS* proto_msg = pack->add_ptt_status();
-			proto_msg->set_status((primary::primary_ptt_status_status)msg->status);
+        case 1656: {
+            primary_lv_cells_temp_stats_converted_t* msg = (primary_lv_cells_temp_stats_converted_t*)(device->message);
+            primary::LV_CELLS_TEMP_STATS* proto_msg = pack->add_lv_cells_temp_stats();
+			proto_msg->set_max(msg->max);
+			proto_msg->set_min(msg->min);
+			proto_msg->set_avg(msg->avg);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3407,11 +3291,126 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1027: {
-            primary_regen_manual_command_converted_t* msg = (primary_regen_manual_command_converted_t*)(device->message);
-            primary::REGEN_MANUAL_COMMAND* proto_msg = pack->add_regen_manual_command();
-			proto_msg->set_status((primary::primary_regen_manual_command_status)msg->status);
-			proto_msg->set_target(msg->target);
+        case 1664: {
+            primary_hv_current_converted_t* msg = (primary_hv_current_converted_t*)(device->message);
+            primary::HV_CURRENT* proto_msg = pack->add_hv_current();
+			proto_msg->set_current(msg->current);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1672: {
+            primary_hv_power_converted_t* msg = (primary_hv_power_converted_t*)(device->message);
+            primary::HV_POWER* proto_msg = pack->add_hv_power();
+			proto_msg->set_power(msg->power);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1680: {
+            primary_hv_energy_converted_t* msg = (primary_hv_energy_converted_t*)(device->message);
+            primary::HV_ENERGY* proto_msg = pack->add_hv_energy();
+			proto_msg->set_energy(msg->energy);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1688: {
+            primary_hv_soc_converted_t* msg = (primary_hv_soc_converted_t*)(device->message);
+            primary::HV_SOC* proto_msg = pack->add_hv_soc();
+			proto_msg->set_soc(msg->soc);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1696: {
+            primary_hv_total_voltage_converted_t* msg = (primary_hv_total_voltage_converted_t*)(device->message);
+            primary::HV_TOTAL_VOLTAGE* proto_msg = pack->add_hv_total_voltage();
+			proto_msg->set_pack(msg->pack);
+			proto_msg->set_sum_cell(msg->sum_cell);
+			proto_msg->set_bus(msg->bus);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1704: {
+            primary_hv_cells_voltage_converted_t* msg = (primary_hv_cells_voltage_converted_t*)(device->message);
+            primary::HV_CELLS_VOLTAGE* proto_msg = pack->add_hv_cells_voltage();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_voltage_0(msg->voltage_0);
+			proto_msg->set_voltage_1(msg->voltage_1);
+			proto_msg->set_voltage_2(msg->voltage_2);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1712: {
+            primary_hv_cells_voltage_stats_converted_t* msg = (primary_hv_cells_voltage_stats_converted_t*)(device->message);
+            primary::HV_CELLS_VOLTAGE_STATS* proto_msg = pack->add_hv_cells_voltage_stats();
+			proto_msg->set_max(msg->max);
+			proto_msg->set_min(msg->min);
+			proto_msg->set_sum(msg->sum);
+			proto_msg->set_avg(msg->avg);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1720: {
+            primary_hv_cells_temp_converted_t* msg = (primary_hv_cells_temp_converted_t*)(device->message);
+            primary::HV_CELLS_TEMP* proto_msg = pack->add_hv_cells_temp();
+			proto_msg->set_start_index(msg->start_index);
+			proto_msg->set_temp_0(msg->temp_0);
+			proto_msg->set_temp_1(msg->temp_1);
+			proto_msg->set_temp_2(msg->temp_2);
+			proto_msg->set_temp_3(msg->temp_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1728: {
+            primary_hv_cells_temp_stats_converted_t* msg = (primary_hv_cells_temp_stats_converted_t*)(device->message);
+            primary::HV_CELLS_TEMP_STATS* proto_msg = pack->add_hv_cells_temp_stats();
+			proto_msg->set_max(msg->max);
+			proto_msg->set_min(msg->min);
+			proto_msg->set_avg(msg->avg);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1736: {
+            primary_debug_signal_1_converted_t* msg = (primary_debug_signal_1_converted_t*)(device->message);
+            primary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+			proto_msg->set_field_4(msg->field_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

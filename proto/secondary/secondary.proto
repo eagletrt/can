@@ -5,16 +5,16 @@ package secondary;
 
 
 message IMU_ANGULAR_RATE{
-	double ang_rate_x = 1;
-	double ang_rate_y = 2;
-	double ang_rate_z = 3;
+	double x = 1;
+	double y = 2;
+	double z = 3;
 	uint64 _inner_timestamp = 4;
 }
 message IMU_ACCELERATION{
-	double accel_x = 1;
-	double accel_y = 2;
-	double accel_z = 3;
-	int32 temperature = 4;
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	int32 imu_temperature = 4;
 	uint64 _inner_timestamp = 5;
 }
 message IRTS_FL_0{
@@ -138,63 +138,66 @@ message GPS_SPEED{
 	uint32 speed = 1;
 	uint64 _inner_timestamp = 2;
 }
-message PEDALS_OUTPUT{
-	double apps = 1;
-	double bse_front = 2;
-	double bse_rear = 3;
-	uint64 _inner_timestamp = 4;
+message SPEED{
+	double fl = 1;
+	double fr = 2;
+	uint64 _inner_timestamp = 3;
 }
-message STEERING_ANGLE{
+message PEDAL_THROTTLE{
+	double throttle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message PEDAL_BRAKES_PRESSURE{
+	double front = 1;
+	double rear = 2;
+	uint64 _inner_timestamp = 3;
+}
+message STEER_ANGLE{
 	float angle = 1;
 	uint64 _inner_timestamp = 2;
 }
-message CONTROL_STATE{
-	double map_pw = 1;
-	double map_sc = 2;
-	double map_tv = 3;
-	uint64 _inner_timestamp = 4;
+message TPMS_PRESSURE{
+	uint32 fl = 1;
+	uint32 fr = 2;
+	uint32 rl = 3;
+	uint32 rr = 4;
+	uint64 _inner_timestamp = 5;
 }
-message TPMS{
-	uint32 fl_pressure = 1;
-	uint32 fr_pressure = 2;
-	uint32 rl_pressure = 3;
-	uint32 rr_pressure = 4;
-	uint32 fl_temperature = 5;
-	uint32 fr_temperature = 6;
-	uint32 rl_temperature = 7;
-	uint32 rr_temperature = 8;
-	uint64 _inner_timestamp = 9;
+message TPMS_TEMPERATURE{
+	uint32 fl = 1;
+	uint32 fr = 2;
+	uint32 rl = 3;
+	uint32 rr = 4;
+	uint64 _inner_timestamp = 5;
 }
-message LAP_COUNT{
+message TLM_UNIX_TIMESTAMP{
+	uint64 timestamp = 1;
+	uint64 _inner_timestamp = 2;
+}
+message TLM_LAP_TIME{
 	uint32 lap_count = 1;
 	double lap_time = 2;
 	uint64 _inner_timestamp = 3;
 }
-message LC_STATUS{
+message TLM_LAPS_STATS{
 	uint32 lap_number = 1;
 	double best_time = 2;
 	double last_time = 3;
 	uint64 _inner_timestamp = 4;
 }
-message TIMESTAMP{
-	uint64 timestamp = 1;
-	uint64 _inner_timestamp = 2;
-}
-message REAR_AMMO_POS{
+message AMMO_COMPRESSION{
 	float rl = 1;
 	float rr = 2;
+	float fl = 3;
+	float fr = 4;
+	uint64 _inner_timestamp = 5;
+}
+message LINK_DEFORMATION_FL{
+	uint32 rod_id = 1;
+	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
-message FRONT_AMMO_POS{
-	float fl = 1;
-	float fr = 2;
-	uint64 _inner_timestamp = 3;
-}
-message ROD_ELONGATION{
-	float deformation = 1;
-	uint64 _inner_timestamp = 2;
-}
-message DEBUG_SIGNAL{
+message DEBUG_SIGNAL_2{
 	double field_1 = 1;
 	double field_2 = 2;
 	double field_3 = 3;
@@ -231,17 +234,18 @@ message Pack{
 	repeated IRTS_RR_3 IRTS_RR_3 = 18;
 	repeated GPS_COORDS GPS_COORDS = 19;
 	repeated GPS_SPEED GPS_SPEED = 20;
-	repeated PEDALS_OUTPUT PEDALS_OUTPUT = 21;
-	repeated STEERING_ANGLE STEERING_ANGLE = 22;
-	repeated CONTROL_STATE CONTROL_STATE = 23;
-	repeated TPMS TPMS = 24;
-	repeated LAP_COUNT LAP_COUNT = 25;
-	repeated LC_STATUS LC_STATUS = 26;
-	repeated TIMESTAMP TIMESTAMP = 27;
-	repeated REAR_AMMO_POS REAR_AMMO_POS = 28;
-	repeated FRONT_AMMO_POS FRONT_AMMO_POS = 29;
-	repeated ROD_ELONGATION ROD_ELONGATION = 30;
-	repeated DEBUG_SIGNAL DEBUG_SIGNAL = 31;
-	repeated COOLING_TEMP COOLING_TEMP = 32;
+	repeated SPEED SPEED = 21;
+	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 22;
+	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 23;
+	repeated STEER_ANGLE STEER_ANGLE = 24;
+	repeated TPMS_PRESSURE TPMS_PRESSURE = 25;
+	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 26;
+	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 27;
+	repeated TLM_LAP_TIME TLM_LAP_TIME = 28;
+	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 29;
+	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 30;
+	repeated LINK_DEFORMATION_FL LINK_DEFORMATION_FL = 31;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 32;
+	repeated COOLING_TEMP COOLING_TEMP = 33;
 }
 

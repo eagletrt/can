@@ -266,9 +266,9 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["IMU_ANGULAR_RATE"]["_timestamp"].push(pack->imu_angular_rate(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_x"].push(pack->imu_angular_rate(i).ang_rate_x());
-		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_y"].push(pack->imu_angular_rate(i).ang_rate_y());
-		(*net_signals)["IMU_ANGULAR_RATE"]["ang_rate_z"].push(pack->imu_angular_rate(i).ang_rate_z());
+		(*net_signals)["IMU_ANGULAR_RATE"]["x"].push(pack->imu_angular_rate(i).x());
+		(*net_signals)["IMU_ANGULAR_RATE"]["y"].push(pack->imu_angular_rate(i).y());
+		(*net_signals)["IMU_ANGULAR_RATE"]["z"].push(pack->imu_angular_rate(i).z());
 
     }
 
@@ -280,10 +280,10 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["IMU_ACCELERATION"]["_timestamp"].push(pack->imu_acceleration(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["IMU_ACCELERATION"]["accel_x"].push(pack->imu_acceleration(i).accel_x());
-		(*net_signals)["IMU_ACCELERATION"]["accel_y"].push(pack->imu_acceleration(i).accel_y());
-		(*net_signals)["IMU_ACCELERATION"]["accel_z"].push(pack->imu_acceleration(i).accel_z());
-		(*net_signals)["IMU_ACCELERATION"]["temperature"].push(pack->imu_acceleration(i).temperature());
+		(*net_signals)["IMU_ACCELERATION"]["x"].push(pack->imu_acceleration(i).x());
+		(*net_signals)["IMU_ACCELERATION"]["y"].push(pack->imu_acceleration(i).y());
+		(*net_signals)["IMU_ACCELERATION"]["z"].push(pack->imu_acceleration(i).z());
+		(*net_signals)["IMU_ACCELERATION"]["imu_temperature"].push(pack->imu_acceleration(i).imu_temperature());
 
     }
 
@@ -552,154 +552,165 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->pedals_output_size(); i++){
+    for(int i = 0; i < pack->speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->pedals_output(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->pedals_output(i)._inner_timestamp();
-        (*net_signals)["PEDALS_OUTPUT"]["_timestamp"].push(pack->pedals_output(i)._inner_timestamp());
+        if(pack->speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->speed(i)._inner_timestamp();
+        (*net_signals)["SPEED"]["_timestamp"].push(pack->speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["PEDALS_OUTPUT"]["apps"].push(pack->pedals_output(i).apps());
-		(*net_signals)["PEDALS_OUTPUT"]["bse_front"].push(pack->pedals_output(i).bse_front());
-		(*net_signals)["PEDALS_OUTPUT"]["bse_rear"].push(pack->pedals_output(i).bse_rear());
+		(*net_signals)["SPEED"]["fl"].push(pack->speed(i).fl());
+		(*net_signals)["SPEED"]["fr"].push(pack->speed(i).fr());
 
     }
 
-    for(int i = 0; i < pack->steering_angle_size(); i++){
+    for(int i = 0; i < pack->pedal_throttle_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->steering_angle(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->steering_angle(i)._inner_timestamp();
-        (*net_signals)["STEERING_ANGLE"]["_timestamp"].push(pack->steering_angle(i)._inner_timestamp());
+        if(pack->pedal_throttle(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->pedal_throttle(i)._inner_timestamp();
+        (*net_signals)["PEDAL_THROTTLE"]["_timestamp"].push(pack->pedal_throttle(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["STEERING_ANGLE"]["angle"].push(pack->steering_angle(i).angle());
+		(*net_signals)["PEDAL_THROTTLE"]["throttle"].push(pack->pedal_throttle(i).throttle());
 
     }
 
-    for(int i = 0; i < pack->control_state_size(); i++){
+    for(int i = 0; i < pack->pedal_brakes_pressure_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->control_state(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->control_state(i)._inner_timestamp();
-        (*net_signals)["CONTROL_STATE"]["_timestamp"].push(pack->control_state(i)._inner_timestamp());
+        if(pack->pedal_brakes_pressure(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->pedal_brakes_pressure(i)._inner_timestamp();
+        (*net_signals)["PEDAL_BRAKES_PRESSURE"]["_timestamp"].push(pack->pedal_brakes_pressure(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["CONTROL_STATE"]["map_pw"].push(pack->control_state(i).map_pw());
-		(*net_signals)["CONTROL_STATE"]["map_sc"].push(pack->control_state(i).map_sc());
-		(*net_signals)["CONTROL_STATE"]["map_tv"].push(pack->control_state(i).map_tv());
+		(*net_signals)["PEDAL_BRAKES_PRESSURE"]["front"].push(pack->pedal_brakes_pressure(i).front());
+		(*net_signals)["PEDAL_BRAKES_PRESSURE"]["rear"].push(pack->pedal_brakes_pressure(i).rear());
 
     }
 
-    for(int i = 0; i < pack->tpms_size(); i++){
+    for(int i = 0; i < pack->steer_angle_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->tpms(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->tpms(i)._inner_timestamp();
-        (*net_signals)["TPMS"]["_timestamp"].push(pack->tpms(i)._inner_timestamp());
+        if(pack->steer_angle(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->steer_angle(i)._inner_timestamp();
+        (*net_signals)["STEER_ANGLE"]["_timestamp"].push(pack->steer_angle(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["TPMS"]["fl_pressure"].push(pack->tpms(i).fl_pressure());
-		(*net_signals)["TPMS"]["fr_pressure"].push(pack->tpms(i).fr_pressure());
-		(*net_signals)["TPMS"]["rl_pressure"].push(pack->tpms(i).rl_pressure());
-		(*net_signals)["TPMS"]["rr_pressure"].push(pack->tpms(i).rr_pressure());
-		(*net_signals)["TPMS"]["fl_temperature"].push(pack->tpms(i).fl_temperature());
-		(*net_signals)["TPMS"]["fr_temperature"].push(pack->tpms(i).fr_temperature());
-		(*net_signals)["TPMS"]["rl_temperature"].push(pack->tpms(i).rl_temperature());
-		(*net_signals)["TPMS"]["rr_temperature"].push(pack->tpms(i).rr_temperature());
+		(*net_signals)["STEER_ANGLE"]["angle"].push(pack->steer_angle(i).angle());
 
     }
 
-    for(int i = 0; i < pack->lap_count_size(); i++){
+    for(int i = 0; i < pack->tpms_pressure_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lap_count(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lap_count(i)._inner_timestamp();
-        (*net_signals)["LAP_COUNT"]["_timestamp"].push(pack->lap_count(i)._inner_timestamp());
+        if(pack->tpms_pressure(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tpms_pressure(i)._inner_timestamp();
+        (*net_signals)["TPMS_PRESSURE"]["_timestamp"].push(pack->tpms_pressure(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LAP_COUNT"]["lap_count"].push(pack->lap_count(i).lap_count());
-		(*net_signals)["LAP_COUNT"]["lap_time"].push(pack->lap_count(i).lap_time());
+		(*net_signals)["TPMS_PRESSURE"]["fl"].push(pack->tpms_pressure(i).fl());
+		(*net_signals)["TPMS_PRESSURE"]["fr"].push(pack->tpms_pressure(i).fr());
+		(*net_signals)["TPMS_PRESSURE"]["rl"].push(pack->tpms_pressure(i).rl());
+		(*net_signals)["TPMS_PRESSURE"]["rr"].push(pack->tpms_pressure(i).rr());
 
     }
 
-    for(int i = 0; i < pack->lc_status_size(); i++){
+    for(int i = 0; i < pack->tpms_temperature_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lc_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lc_status(i)._inner_timestamp();
-        (*net_signals)["LC_STATUS"]["_timestamp"].push(pack->lc_status(i)._inner_timestamp());
+        if(pack->tpms_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tpms_temperature(i)._inner_timestamp();
+        (*net_signals)["TPMS_TEMPERATURE"]["_timestamp"].push(pack->tpms_temperature(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LC_STATUS"]["lap_number"].push(pack->lc_status(i).lap_number());
-		(*net_signals)["LC_STATUS"]["best_time"].push(pack->lc_status(i).best_time());
-		(*net_signals)["LC_STATUS"]["last_time"].push(pack->lc_status(i).last_time());
+		(*net_signals)["TPMS_TEMPERATURE"]["fl"].push(pack->tpms_temperature(i).fl());
+		(*net_signals)["TPMS_TEMPERATURE"]["fr"].push(pack->tpms_temperature(i).fr());
+		(*net_signals)["TPMS_TEMPERATURE"]["rl"].push(pack->tpms_temperature(i).rl());
+		(*net_signals)["TPMS_TEMPERATURE"]["rr"].push(pack->tpms_temperature(i).rr());
 
     }
 
-    for(int i = 0; i < pack->timestamp_size(); i++){
+    for(int i = 0; i < pack->tlm_unix_timestamp_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->timestamp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->timestamp(i)._inner_timestamp();
-        (*net_signals)["TIMESTAMP"]["_timestamp"].push(pack->timestamp(i)._inner_timestamp());
+        if(pack->tlm_unix_timestamp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_unix_timestamp(i)._inner_timestamp();
+        (*net_signals)["TLM_UNIX_TIMESTAMP"]["_timestamp"].push(pack->tlm_unix_timestamp(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["TIMESTAMP"]["timestamp"].push(pack->timestamp(i).timestamp());
+		(*net_signals)["TLM_UNIX_TIMESTAMP"]["timestamp"].push(pack->tlm_unix_timestamp(i).timestamp());
 
     }
 
-    for(int i = 0; i < pack->rear_ammo_pos_size(); i++){
+    for(int i = 0; i < pack->tlm_lap_time_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->rear_ammo_pos(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->rear_ammo_pos(i)._inner_timestamp();
-        (*net_signals)["REAR_AMMO_POS"]["_timestamp"].push(pack->rear_ammo_pos(i)._inner_timestamp());
+        if(pack->tlm_lap_time(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_lap_time(i)._inner_timestamp();
+        (*net_signals)["TLM_LAP_TIME"]["_timestamp"].push(pack->tlm_lap_time(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["REAR_AMMO_POS"]["rl"].push(pack->rear_ammo_pos(i).rl());
-		(*net_signals)["REAR_AMMO_POS"]["rr"].push(pack->rear_ammo_pos(i).rr());
+		(*net_signals)["TLM_LAP_TIME"]["lap_count"].push(pack->tlm_lap_time(i).lap_count());
+		(*net_signals)["TLM_LAP_TIME"]["lap_time"].push(pack->tlm_lap_time(i).lap_time());
 
     }
 
-    for(int i = 0; i < pack->front_ammo_pos_size(); i++){
+    for(int i = 0; i < pack->tlm_laps_stats_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->front_ammo_pos(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->front_ammo_pos(i)._inner_timestamp();
-        (*net_signals)["FRONT_AMMO_POS"]["_timestamp"].push(pack->front_ammo_pos(i)._inner_timestamp());
+        if(pack->tlm_laps_stats(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_laps_stats(i)._inner_timestamp();
+        (*net_signals)["TLM_LAPS_STATS"]["_timestamp"].push(pack->tlm_laps_stats(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["FRONT_AMMO_POS"]["fl"].push(pack->front_ammo_pos(i).fl());
-		(*net_signals)["FRONT_AMMO_POS"]["fr"].push(pack->front_ammo_pos(i).fr());
+		(*net_signals)["TLM_LAPS_STATS"]["lap_number"].push(pack->tlm_laps_stats(i).lap_number());
+		(*net_signals)["TLM_LAPS_STATS"]["best_time"].push(pack->tlm_laps_stats(i).best_time());
+		(*net_signals)["TLM_LAPS_STATS"]["last_time"].push(pack->tlm_laps_stats(i).last_time());
 
     }
 
-    for(int i = 0; i < pack->rod_elongation_size(); i++){
+    for(int i = 0; i < pack->ammo_compression_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->rod_elongation(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->rod_elongation(i)._inner_timestamp();
-        (*net_signals)["ROD_ELONGATION"]["_timestamp"].push(pack->rod_elongation(i)._inner_timestamp());
+        if(pack->ammo_compression(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ammo_compression(i)._inner_timestamp();
+        (*net_signals)["AMMO_COMPRESSION"]["_timestamp"].push(pack->ammo_compression(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ROD_ELONGATION"]["deformation"].push(pack->rod_elongation(i).deformation());
+		(*net_signals)["AMMO_COMPRESSION"]["rl"].push(pack->ammo_compression(i).rl());
+		(*net_signals)["AMMO_COMPRESSION"]["rr"].push(pack->ammo_compression(i).rr());
+		(*net_signals)["AMMO_COMPRESSION"]["fl"].push(pack->ammo_compression(i).fl());
+		(*net_signals)["AMMO_COMPRESSION"]["fr"].push(pack->ammo_compression(i).fr());
 
     }
 
-    for(int i = 0; i < pack->debug_signal_size(); i++){
+    for(int i = 0; i < pack->link_deformation_fl_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->debug_signal(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->debug_signal(i)._inner_timestamp();
-        (*net_signals)["DEBUG_SIGNAL"]["_timestamp"].push(pack->debug_signal(i)._inner_timestamp());
+        if(pack->link_deformation_fl(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_fl(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_FL"]["_timestamp"].push(pack->link_deformation_fl(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DEBUG_SIGNAL"]["field_1"].push(pack->debug_signal(i).field_1());
-		(*net_signals)["DEBUG_SIGNAL"]["field_2"].push(pack->debug_signal(i).field_2());
-		(*net_signals)["DEBUG_SIGNAL"]["field_3"].push(pack->debug_signal(i).field_3());
-		(*net_signals)["DEBUG_SIGNAL"]["field_4"].push(pack->debug_signal(i).field_4());
+		(*net_signals)["LINK_DEFORMATION_FL"]["rod_id"].push(pack->link_deformation_fl(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION_FL"]["deformation"].push(pack->link_deformation_fl(i).deformation());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_2_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_2(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_2"]["_timestamp"].push(pack->debug_signal_2(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_1"].push(pack->debug_signal_2(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_2"].push(pack->debug_signal_2(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_3"].push(pack->debug_signal_2(i).field_3());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_4"].push(pack->debug_signal_2(i).field_4());
 
     }
 
@@ -730,9 +741,9 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1260: {
             secondary_imu_angular_rate_converted_t* msg = (secondary_imu_angular_rate_converted_t*)(device->message);
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
-			proto_msg->set_ang_rate_x(msg->ang_rate_x);
-			proto_msg->set_ang_rate_y(msg->ang_rate_y);
-			proto_msg->set_ang_rate_z(msg->ang_rate_z);
+			proto_msg->set_x(msg->x);
+			proto_msg->set_y(msg->y);
+			proto_msg->set_z(msg->z);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -743,10 +754,10 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1261: {
             secondary_imu_acceleration_converted_t* msg = (secondary_imu_acceleration_converted_t*)(device->message);
             secondary::IMU_ACCELERATION* proto_msg = pack->add_imu_acceleration();
-			proto_msg->set_accel_x(msg->accel_x);
-			proto_msg->set_accel_y(msg->accel_y);
-			proto_msg->set_accel_z(msg->accel_z);
-			proto_msg->set_temperature(msg->temperature);
+			proto_msg->set_x(msg->x);
+			proto_msg->set_y(msg->y);
+			proto_msg->set_z(msg->z);
+			proto_msg->set_imu_temperature(msg->imu_temperature);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -978,7 +989,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1027: {
+        case 1536: {
             secondary_gps_coords_t* msg = (secondary_gps_coords_t*)(device->message);
             secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
 			proto_msg->set_latitude(msg->latitude);
@@ -990,7 +1001,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1059: {
+        case 1544: {
             secondary_gps_speed_t* msg = (secondary_gps_speed_t*)(device->message);
             secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
 			proto_msg->set_speed(msg->speed);
@@ -1001,12 +1012,11 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 771: {
-            secondary_pedals_output_converted_t* msg = (secondary_pedals_output_converted_t*)(device->message);
-            secondary::PEDALS_OUTPUT* proto_msg = pack->add_pedals_output();
-			proto_msg->set_apps(msg->apps);
-			proto_msg->set_bse_front(msg->bse_front);
-			proto_msg->set_bse_rear(msg->bse_rear);
+        case 1552: {
+            secondary_speed_converted_t* msg = (secondary_speed_converted_t*)(device->message);
+            secondary::SPEED* proto_msg = pack->add_speed();
+			proto_msg->set_fl(msg->fl);
+			proto_msg->set_fr(msg->fr);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1014,9 +1024,32 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 260: {
-            secondary_steering_angle_converted_t* msg = (secondary_steering_angle_converted_t*)(device->message);
-            secondary::STEERING_ANGLE* proto_msg = pack->add_steering_angle();
+        case 1560: {
+            secondary_pedal_throttle_converted_t* msg = (secondary_pedal_throttle_converted_t*)(device->message);
+            secondary::PEDAL_THROTTLE* proto_msg = pack->add_pedal_throttle();
+			proto_msg->set_throttle(msg->throttle);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1568: {
+            secondary_pedal_brakes_pressure_converted_t* msg = (secondary_pedal_brakes_pressure_converted_t*)(device->message);
+            secondary::PEDAL_BRAKES_PRESSURE* proto_msg = pack->add_pedal_brakes_pressure();
+			proto_msg->set_front(msg->front);
+			proto_msg->set_rear(msg->rear);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1576: {
+            secondary_steer_angle_converted_t* msg = (secondary_steer_angle_converted_t*)(device->message);
+            secondary::STEER_ANGLE* proto_msg = pack->add_steer_angle();
 			proto_msg->set_angle(msg->angle);
 
 #ifdef CANLIB_TIMESTAMP
@@ -1025,12 +1058,13 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1281: {
-            secondary_control_state_converted_t* msg = (secondary_control_state_converted_t*)(device->message);
-            secondary::CONTROL_STATE* proto_msg = pack->add_control_state();
-			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
+        case 1584: {
+            secondary_tpms_pressure_t* msg = (secondary_tpms_pressure_t*)(device->message);
+            secondary::TPMS_PRESSURE* proto_msg = pack->add_tpms_pressure();
+			proto_msg->set_fl(msg->fl);
+			proto_msg->set_fr(msg->fr);
+			proto_msg->set_rl(msg->rl);
+			proto_msg->set_rr(msg->rr);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1038,17 +1072,13 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 515: {
-            secondary_tpms_t* msg = (secondary_tpms_t*)(device->message);
-            secondary::TPMS* proto_msg = pack->add_tpms();
-			proto_msg->set_fl_pressure(msg->fl_pressure);
-			proto_msg->set_fr_pressure(msg->fr_pressure);
-			proto_msg->set_rl_pressure(msg->rl_pressure);
-			proto_msg->set_rr_pressure(msg->rr_pressure);
-			proto_msg->set_fl_temperature(msg->fl_temperature);
-			proto_msg->set_fr_temperature(msg->fr_temperature);
-			proto_msg->set_rl_temperature(msg->rl_temperature);
-			proto_msg->set_rr_temperature(msg->rr_temperature);
+        case 1592: {
+            secondary_tpms_temperature_t* msg = (secondary_tpms_temperature_t*)(device->message);
+            secondary::TPMS_TEMPERATURE* proto_msg = pack->add_tpms_temperature();
+			proto_msg->set_fl(msg->fl);
+			proto_msg->set_fr(msg->fr);
+			proto_msg->set_rl(msg->rl);
+			proto_msg->set_rr(msg->rr);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1056,9 +1086,20 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1091: {
-            secondary_lap_count_converted_t* msg = (secondary_lap_count_converted_t*)(device->message);
-            secondary::LAP_COUNT* proto_msg = pack->add_lap_count();
+        case 1600: {
+            secondary_tlm_unix_timestamp_t* msg = (secondary_tlm_unix_timestamp_t*)(device->message);
+            secondary::TLM_UNIX_TIMESTAMP* proto_msg = pack->add_tlm_unix_timestamp();
+			proto_msg->set_timestamp(msg->timestamp);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1608: {
+            secondary_tlm_lap_time_converted_t* msg = (secondary_tlm_lap_time_converted_t*)(device->message);
+            secondary::TLM_LAP_TIME* proto_msg = pack->add_tlm_lap_time();
 			proto_msg->set_lap_count(msg->lap_count);
 			proto_msg->set_lap_time(msg->lap_time);
 
@@ -1068,9 +1109,9 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 770: {
-            secondary_lc_status_converted_t* msg = (secondary_lc_status_converted_t*)(device->message);
-            secondary::LC_STATUS* proto_msg = pack->add_lc_status();
+        case 1616: {
+            secondary_tlm_laps_stats_converted_t* msg = (secondary_tlm_laps_stats_converted_t*)(device->message);
+            secondary::TLM_LAPS_STATS* proto_msg = pack->add_tlm_laps_stats();
 			proto_msg->set_lap_number(msg->lap_number);
 			proto_msg->set_best_time(msg->best_time);
 			proto_msg->set_last_time(msg->last_time);
@@ -1081,32 +1122,11 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 256: {
-            secondary_timestamp_t* msg = (secondary_timestamp_t*)(device->message);
-            secondary::TIMESTAMP* proto_msg = pack->add_timestamp();
-			proto_msg->set_timestamp(msg->timestamp);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1028: {
-            secondary_rear_ammo_pos_converted_t* msg = (secondary_rear_ammo_pos_converted_t*)(device->message);
-            secondary::REAR_AMMO_POS* proto_msg = pack->add_rear_ammo_pos();
+        case 1624: {
+            secondary_ammo_compression_converted_t* msg = (secondary_ammo_compression_converted_t*)(device->message);
+            secondary::AMMO_COMPRESSION* proto_msg = pack->add_ammo_compression();
 			proto_msg->set_rl(msg->rl);
 			proto_msg->set_rr(msg->rr);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1060: {
-            secondary_front_ammo_pos_converted_t* msg = (secondary_front_ammo_pos_converted_t*)(device->message);
-            secondary::FRONT_AMMO_POS* proto_msg = pack->add_front_ammo_pos();
 			proto_msg->set_fl(msg->fl);
 			proto_msg->set_fr(msg->fr);
 
@@ -1116,9 +1136,10 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1092: {
-            secondary_rod_elongation_converted_t* msg = (secondary_rod_elongation_converted_t*)(device->message);
-            secondary::ROD_ELONGATION* proto_msg = pack->add_rod_elongation();
+        case 1632: {
+            secondary_link_deformation_fl_converted_t* msg = (secondary_link_deformation_fl_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_FL* proto_msg = pack->add_link_deformation_fl();
+			proto_msg->set_rod_id(msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
 #ifdef CANLIB_TIMESTAMP
@@ -1127,9 +1148,9 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1024: {
-            secondary_debug_signal_converted_t* msg = (secondary_debug_signal_converted_t*)(device->message);
-            secondary::DEBUG_SIGNAL* proto_msg = pack->add_debug_signal();
+        case 1640: {
+            secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
@@ -1141,7 +1162,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1124: {
+        case 1648: {
             secondary_cooling_temp_converted_t* msg = (secondary_cooling_temp_converted_t*)(device->message);
             secondary::COOLING_TEMP* proto_msg = pack->add_cooling_temp();
 			proto_msg->set_top_left(msg->top_left);

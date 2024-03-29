@@ -15,18 +15,18 @@ extern "C" {
 /* START */
 #define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
-#define IMU_ANGULAR_RATE_ANG_RATE_X "imu_angular_rate_ang_rate_x"
-#define IMU_ANGULAR_RATE_ANG_RATE_Y "imu_angular_rate_ang_rate_y"
-#define IMU_ANGULAR_RATE_ANG_RATE_Z "imu_angular_rate_ang_rate_z"
+#define IMU_ANGULAR_RATE_X "imu_angular_rate_x"
+#define IMU_ANGULAR_RATE_Y "imu_angular_rate_y"
+#define IMU_ANGULAR_RATE_Z "imu_angular_rate_z"
 /* END */
 
 /* START */
 #define IMU_ACCELERATION "IMU_ACCELERATION"
 
-#define IMU_ACCELERATION_ACCEL_X "imu_acceleration_accel_x"
-#define IMU_ACCELERATION_ACCEL_Y "imu_acceleration_accel_y"
-#define IMU_ACCELERATION_ACCEL_Z "imu_acceleration_accel_z"
-#define IMU_ACCELERATION_TEMPERATURE "imu_acceleration_temperature"
+#define IMU_ACCELERATION_X "imu_acceleration_x"
+#define IMU_ACCELERATION_Y "imu_acceleration_y"
+#define IMU_ACCELERATION_Z "imu_acceleration_z"
+#define IMU_ACCELERATION_IMU_TEMPERATURE "imu_acceleration_imu_temperature"
 /* END */
 
 /* START */
@@ -187,88 +187,93 @@ extern "C" {
 /* END */
 
 /* START */
-#define PEDALS_OUTPUT "PEDALS_OUTPUT"
+#define SPEED "SPEED"
 
-#define PEDALS_OUTPUT_APPS "pedals_output_apps"
-#define PEDALS_OUTPUT_BSE_FRONT "pedals_output_bse_front"
-#define PEDALS_OUTPUT_BSE_REAR "pedals_output_bse_rear"
+#define SPEED_FL "speed_fl"
+#define SPEED_FR "speed_fr"
 /* END */
 
 /* START */
-#define STEERING_ANGLE "STEERING_ANGLE"
+#define PEDAL_THROTTLE "PEDAL_THROTTLE"
 
-#define STEERING_ANGLE_ANGLE "steering_angle_angle"
+#define PEDAL_THROTTLE_THROTTLE "pedal_throttle_throttle"
 /* END */
 
 /* START */
-#define CONTROL_STATE "CONTROL_STATE"
+#define PEDAL_BRAKES_PRESSURE "PEDAL_BRAKES_PRESSURE"
 
-#define CONTROL_STATE_MAP_PW "control_state_map_pw"
-#define CONTROL_STATE_MAP_SC "control_state_map_sc"
-#define CONTROL_STATE_MAP_TV "control_state_map_tv"
+#define PEDAL_BRAKES_PRESSURE_FRONT "pedal_brakes_pressure_front"
+#define PEDAL_BRAKES_PRESSURE_REAR "pedal_brakes_pressure_rear"
 /* END */
 
 /* START */
-#define TPMS "TPMS"
+#define STEER_ANGLE "STEER_ANGLE"
 
-#define TPMS_FL_PRESSURE "tpms_fl_pressure"
-#define TPMS_FR_PRESSURE "tpms_fr_pressure"
-#define TPMS_RL_PRESSURE "tpms_rl_pressure"
-#define TPMS_RR_PRESSURE "tpms_rr_pressure"
-#define TPMS_FL_TEMPERATURE "tpms_fl_temperature"
-#define TPMS_FR_TEMPERATURE "tpms_fr_temperature"
-#define TPMS_RL_TEMPERATURE "tpms_rl_temperature"
-#define TPMS_RR_TEMPERATURE "tpms_rr_temperature"
+#define STEER_ANGLE_ANGLE "steer_angle_angle"
 /* END */
 
 /* START */
-#define LAP_COUNT "LAP_COUNT"
+#define TPMS_PRESSURE "TPMS_PRESSURE"
 
-#define LAP_COUNT_LAP_COUNT "lap_count_lap_count"
-#define LAP_COUNT_LAP_TIME "lap_count_lap_time"
+#define TPMS_PRESSURE_FL "tpms_pressure_fl"
+#define TPMS_PRESSURE_FR "tpms_pressure_fr"
+#define TPMS_PRESSURE_RL "tpms_pressure_rl"
+#define TPMS_PRESSURE_RR "tpms_pressure_rr"
 /* END */
 
 /* START */
-#define LC_STATUS "LC_STATUS"
+#define TPMS_TEMPERATURE "TPMS_TEMPERATURE"
 
-#define LC_STATUS_LAP_NUMBER "lc_status_lap_number"
-#define LC_STATUS_BEST_TIME "lc_status_best_time"
-#define LC_STATUS_LAST_TIME "lc_status_last_time"
+#define TPMS_TEMPERATURE_FL "tpms_temperature_fl"
+#define TPMS_TEMPERATURE_FR "tpms_temperature_fr"
+#define TPMS_TEMPERATURE_RL "tpms_temperature_rl"
+#define TPMS_TEMPERATURE_RR "tpms_temperature_rr"
 /* END */
 
 /* START */
-#define TIMESTAMP "TIMESTAMP"
+#define TLM_UNIX_TIMESTAMP "TLM_UNIX_TIMESTAMP"
 
-#define TIMESTAMP_TIMESTAMP "timestamp_timestamp"
+#define TLM_UNIX_TIMESTAMP_TIMESTAMP "tlm_unix_timestamp_timestamp"
 /* END */
 
 /* START */
-#define REAR_AMMO_POS "REAR_AMMO_POS"
+#define TLM_LAP_TIME "TLM_LAP_TIME"
 
-#define REAR_AMMO_POS_RL "rear_ammo_pos_rl"
-#define REAR_AMMO_POS_RR "rear_ammo_pos_rr"
+#define TLM_LAP_TIME_LAP_COUNT "tlm_lap_time_lap_count"
+#define TLM_LAP_TIME_LAP_TIME "tlm_lap_time_lap_time"
 /* END */
 
 /* START */
-#define FRONT_AMMO_POS "FRONT_AMMO_POS"
+#define TLM_LAPS_STATS "TLM_LAPS_STATS"
 
-#define FRONT_AMMO_POS_FL "front_ammo_pos_fl"
-#define FRONT_AMMO_POS_FR "front_ammo_pos_fr"
+#define TLM_LAPS_STATS_LAP_NUMBER "tlm_laps_stats_lap_number"
+#define TLM_LAPS_STATS_BEST_TIME "tlm_laps_stats_best_time"
+#define TLM_LAPS_STATS_LAST_TIME "tlm_laps_stats_last_time"
 /* END */
 
 /* START */
-#define ROD_ELONGATION "ROD_ELONGATION"
+#define AMMO_COMPRESSION "AMMO_COMPRESSION"
 
-#define ROD_ELONGATION_DEFORMATION "rod_elongation_deformation"
+#define AMMO_COMPRESSION_RL "ammo_compression_rl"
+#define AMMO_COMPRESSION_RR "ammo_compression_rr"
+#define AMMO_COMPRESSION_FL "ammo_compression_fl"
+#define AMMO_COMPRESSION_FR "ammo_compression_fr"
 /* END */
 
 /* START */
-#define DEBUG_SIGNAL "DEBUG_SIGNAL"
+#define LINK_DEFORMATION_FL "LINK_DEFORMATION_FL"
 
-#define DEBUG_SIGNAL_FIELD_1 "debug_signal_field_1"
-#define DEBUG_SIGNAL_FIELD_2 "debug_signal_field_2"
-#define DEBUG_SIGNAL_FIELD_3 "debug_signal_field_3"
-#define DEBUG_SIGNAL_FIELD_4 "debug_signal_field_4"
+#define LINK_DEFORMATION_FL_ROD_ID "link_deformation_fl_rod_id"
+#define LINK_DEFORMATION_FL_DEFORMATION "link_deformation_fl_deformation"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
+
+#define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
+#define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
+#define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
+#define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
 /* END */
 
 /* START */
@@ -281,12 +286,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
+	e_secondary_int16_t = -6,
+	e_secondary_uint8_t,
 	e_secondary_uint64_t,
-	e_secondary_uint32_t,
-	e_secondary_float,
 	e_secondary_uint16_t,
-	e_secondary_int16_t,
+	e_secondary_float,
+	e_secondary_uint32_t,
 
 	
 };
