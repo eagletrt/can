@@ -1253,18 +1253,18 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->lv_feedback_eclosure_voltage_size(); i++){
+    for(int i = 0; i < pack->lv_feedback_enclosure_voltage_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_feedback_eclosure_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_feedback_eclosure_voltage(i)._inner_timestamp();
-        (*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["_timestamp"].push(pack->lv_feedback_eclosure_voltage(i)._inner_timestamp());
+        if(pack->lv_feedback_enclosure_voltage(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_feedback_enclosure_voltage(i)._inner_timestamp();
+        (*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["_timestamp"].push(pack->lv_feedback_enclosure_voltage(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["lv_encl"].push(pack->lv_feedback_eclosure_voltage(i).lv_encl());
-		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["hv_encl_1"].push(pack->lv_feedback_eclosure_voltage(i).hv_encl_1());
-		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["hv_encl_2"].push(pack->lv_feedback_eclosure_voltage(i).hv_encl_2());
-		(*net_signals)["LV_FEEDBACK_ECLOSURE_VOLTAGE"]["backplate"].push(pack->lv_feedback_eclosure_voltage(i).backplate());
+		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["lv_encl"].push(pack->lv_feedback_enclosure_voltage(i).lv_encl());
+		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["hv_encl_1"].push(pack->lv_feedback_enclosure_voltage(i).hv_encl_1());
+		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["hv_encl_2"].push(pack->lv_feedback_enclosure_voltage(i).hv_encl_2());
+		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["backplate"].push(pack->lv_feedback_enclosure_voltage(i).backplate());
 
     }
 
@@ -2728,7 +2728,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1568: {
-            primary_lv_radiator_speed_t* msg = (primary_lv_radiator_speed_t*)(device->message);
+            primary_lv_radiator_speed_converted_t* msg = (primary_lv_radiator_speed_converted_t*)(device->message);
             primary::LV_RADIATOR_SPEED* proto_msg = pack->add_lv_radiator_speed();
 			proto_msg->set_radiator_speed(msg->radiator_speed);
 
@@ -2739,7 +2739,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1576: {
-            primary_lv_pumps_speed_t* msg = (primary_lv_pumps_speed_t*)(device->message);
+            primary_lv_pumps_speed_converted_t* msg = (primary_lv_pumps_speed_converted_t*)(device->message);
             primary::LV_PUMPS_SPEED* proto_msg = pack->add_lv_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
 
@@ -2750,7 +2750,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1056: {
-            primary_lv_set_radiator_speed_t* msg = (primary_lv_set_radiator_speed_t*)(device->message);
+            primary_lv_set_radiator_speed_converted_t* msg = (primary_lv_set_radiator_speed_converted_t*)(device->message);
             primary::LV_SET_RADIATOR_SPEED* proto_msg = pack->add_lv_set_radiator_speed();
 			proto_msg->set_radiator_speed(msg->radiator_speed);
 
@@ -2761,7 +2761,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1064: {
-            primary_lv_set_pumps_speed_t* msg = (primary_lv_set_pumps_speed_t*)(device->message);
+            primary_lv_set_pumps_speed_converted_t* msg = (primary_lv_set_pumps_speed_converted_t*)(device->message);
             primary::LV_SET_PUMPS_SPEED* proto_msg = pack->add_lv_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
 
@@ -2833,8 +2833,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 600: {
-            primary_lv_feedback_eclosure_voltage_converted_t* msg = (primary_lv_feedback_eclosure_voltage_converted_t*)(device->message);
-            primary::LV_FEEDBACK_ECLOSURE_VOLTAGE* proto_msg = pack->add_lv_feedback_eclosure_voltage();
+            primary_lv_feedback_enclosure_voltage_converted_t* msg = (primary_lv_feedback_enclosure_voltage_converted_t*)(device->message);
+            primary::LV_FEEDBACK_ENCLOSURE_VOLTAGE* proto_msg = pack->add_lv_feedback_enclosure_voltage();
 			proto_msg->set_lv_encl(msg->lv_encl);
 			proto_msg->set_hv_encl_1(msg->hv_encl_1);
 			proto_msg->set_hv_encl_2(msg->hv_encl_2);

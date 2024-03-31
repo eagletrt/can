@@ -131,19 +131,9 @@ enum primary_ecu_status_status {
 	primary_ecu_status_status_fatal_error = 12;
 }
 enum primary_ecu_set_status_status {
-	primary_ecu_set_status_status_init = 0;
-	primary_ecu_set_status_status_enable_inv_updates = 1;
-	primary_ecu_set_status_status_check_inv_settings = 2;
-	primary_ecu_set_status_status_idle = 3;
-	primary_ecu_set_status_status_start_ts_precharge = 4;
-	primary_ecu_set_status_status_wait_ts_precharge = 5;
-	primary_ecu_set_status_status_wait_driver = 6;
-	primary_ecu_set_status_status_enable_inv_drive = 7;
-	primary_ecu_set_status_status_drive = 8;
-	primary_ecu_set_status_status_disable_inv_drive = 9;
-	primary_ecu_set_status_status_start_ts_discharge = 10;
-	primary_ecu_set_status_status_wait_ts_discharge = 11;
-	primary_ecu_set_status_status_fatal_error = 12;
+	primary_ecu_set_status_status_idle = 0;
+	primary_ecu_set_status_status_ready = 1;
+	primary_ecu_set_status_status_drive = 2;
 }
 enum primary_ecu_inverter_status_rl {
 	primary_ecu_inverter_status_rl_disabled = 0;
@@ -567,19 +557,19 @@ message LV_STATUS{
 	uint64 _inner_timestamp = 2;
 }
 message LV_RADIATOR_SPEED{
-	uint32 radiator_speed = 1;
+	double radiator_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_PUMPS_SPEED{
-	uint32 pumps_speed = 1;
+	double pumps_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_SET_RADIATOR_SPEED{
-	uint32 radiator_speed = 1;
+	double radiator_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_SET_PUMPS_SPEED{
-	uint32 pumps_speed = 1;
+	double pumps_speed = 1;
 	uint64 _inner_timestamp = 2;
 }
 message LV_ERRORS{
@@ -622,7 +612,7 @@ message LV_FEEDBACK_SD_VOLTAGE{
 	double sd_start = 4;
 	uint64 _inner_timestamp = 5;
 }
-message LV_FEEDBACK_ECLOSURE_VOLTAGE{
+message LV_FEEDBACK_ENCLOSURE_VOLTAGE{
 	double lv_encl = 1;
 	double hv_encl_1 = 2;
 	double hv_encl_2 = 3;
@@ -968,7 +958,7 @@ message Pack{
 	repeated LV_ERRORS LV_ERRORS = 63;
 	repeated LV_FEEDBACK_TS_VOLTAGE LV_FEEDBACK_TS_VOLTAGE = 64;
 	repeated LV_FEEDBACK_SD_VOLTAGE LV_FEEDBACK_SD_VOLTAGE = 65;
-	repeated LV_FEEDBACK_ECLOSURE_VOLTAGE LV_FEEDBACK_ECLOSURE_VOLTAGE = 66;
+	repeated LV_FEEDBACK_ENCLOSURE_VOLTAGE LV_FEEDBACK_ENCLOSURE_VOLTAGE = 66;
 	repeated LV_FEEDBACK_GPIO_EXTENDER LV_FEEDBACK_GPIO_EXTENDER = 67;
 	repeated LV_CAN_FLASH_REQ_STEERING_WHEEL LV_CAN_FLASH_REQ_STEERING_WHEEL = 68;
 	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 69;

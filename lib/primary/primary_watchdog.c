@@ -30,7 +30,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 576: return PRIMARY_INTERVAL_LV_ERRORS;
        case 584: return PRIMARY_INTERVAL_LV_FEEDBACK_TS_VOLTAGE;
        case 592: return PRIMARY_INTERVAL_LV_FEEDBACK_SD_VOLTAGE;
-       case 600: return PRIMARY_INTERVAL_LV_FEEDBACK_ECLOSURE_VOLTAGE;
+       case 600: return PRIMARY_INTERVAL_LV_FEEDBACK_ENCLOSURE_VOLTAGE;
        case 608: return PRIMARY_INTERVAL_LV_FEEDBACK_GPIO_EXTENDER;
        case 616: return PRIMARY_INTERVAL_LV_INVERTER_CONNECTION_STATUS;
        case 1584: return PRIMARY_INTERVAL_TLM_STATUS;
@@ -140,7 +140,7 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 576: return PRIMARY_INDEX_LV_ERRORS;
        case 584: return PRIMARY_INDEX_LV_FEEDBACK_TS_VOLTAGE;
        case 592: return PRIMARY_INDEX_LV_FEEDBACK_SD_VOLTAGE;
-       case 600: return PRIMARY_INDEX_LV_FEEDBACK_ECLOSURE_VOLTAGE;
+       case 600: return PRIMARY_INDEX_LV_FEEDBACK_ENCLOSURE_VOLTAGE;
        case 608: return PRIMARY_INDEX_LV_FEEDBACK_GPIO_EXTENDER;
        case 56: return PRIMARY_INDEX_LV_CAN_FLASH_REQ_STEERING_WHEEL;
        case 64: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
@@ -397,10 +397,10 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_FEEDBACK_ECLOSURE_VOLTAGE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_FEEDBACK_ECLOSURE_VOLTAGE] > PRIMARY_INTERVAL_LV_FEEDBACK_ECLOSURE_VOLTAGE * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_FEEDBACK_ENCLOSURE_VOLTAGE)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_FEEDBACK_ENCLOSURE_VOLTAGE] > PRIMARY_INTERVAL_LV_FEEDBACK_ENCLOSURE_VOLTAGE * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_FEEDBACK_ECLOSURE_VOLTAGE);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_FEEDBACK_ENCLOSURE_VOLTAGE);
     }
 
     if (

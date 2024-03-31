@@ -598,12 +598,12 @@ extern "C" {
 /* END */
 
 /* START */
-#define LV_FEEDBACK_ECLOSURE_VOLTAGE "LV_FEEDBACK_ECLOSURE_VOLTAGE"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE "LV_FEEDBACK_ENCLOSURE_VOLTAGE"
 
-#define LV_FEEDBACK_ECLOSURE_VOLTAGE_LV_ENCL "lv_feedback_eclosure_voltage_lv_encl"
-#define LV_FEEDBACK_ECLOSURE_VOLTAGE_HV_ENCL_1 "lv_feedback_eclosure_voltage_hv_encl_1"
-#define LV_FEEDBACK_ECLOSURE_VOLTAGE_HV_ENCL_2 "lv_feedback_eclosure_voltage_hv_encl_2"
-#define LV_FEEDBACK_ECLOSURE_VOLTAGE_BACKPLATE "lv_feedback_eclosure_voltage_backplate"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_LV_ENCL "lv_feedback_enclosure_voltage_lv_encl"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_1 "lv_feedback_enclosure_voltage_hv_encl_1"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_2 "lv_feedback_enclosure_voltage_hv_encl_2"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_BACKPLATE "lv_feedback_enclosure_voltage_backplate"
 /* END */
 
 /* START */
@@ -964,10 +964,10 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint8_t = -4,
-	e_primary_float,
-	e_primary_uint32_t,
+	e_primary_uint32_t = -4,
+	e_primary_uint8_t,
 	e_primary_uint64_t,
+	e_primary_float,
 
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_handcart_fans_override,

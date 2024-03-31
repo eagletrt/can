@@ -431,10 +431,10 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		return 0;
 	case 600:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, LV_FEEDBACK_ECLOSURE_VOLTAGE_LV_ENCL);
-		snprintf(v[1], string_size, LV_FEEDBACK_ECLOSURE_VOLTAGE_HV_ENCL_1);
-		snprintf(v[2], string_size, LV_FEEDBACK_ECLOSURE_VOLTAGE_HV_ENCL_2);
-		snprintf(v[3], string_size, LV_FEEDBACK_ECLOSURE_VOLTAGE_BACKPLATE);
+		snprintf(v[0], string_size, LV_FEEDBACK_ENCLOSURE_VOLTAGE_LV_ENCL);
+		snprintf(v[1], string_size, LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_1);
+		snprintf(v[2], string_size, LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_2);
+		snprintf(v[3], string_size, LV_FEEDBACK_ENCLOSURE_VOLTAGE_BACKPLATE);
 
 		return 0;
 	case 608:
@@ -920,20 +920,10 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 
 		return 0;
 	case 20:
-		if(13 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_ecu_set_status_status_init");
-		snprintf(v[1], string_size, "primary_ecu_set_status_status_enable_inv_updates");
-		snprintf(v[2], string_size, "primary_ecu_set_status_status_check_inv_settings");
-		snprintf(v[3], string_size, "primary_ecu_set_status_status_idle");
-		snprintf(v[4], string_size, "primary_ecu_set_status_status_start_ts_precharge");
-		snprintf(v[5], string_size, "primary_ecu_set_status_status_wait_ts_precharge");
-		snprintf(v[6], string_size, "primary_ecu_set_status_status_wait_driver");
-		snprintf(v[7], string_size, "primary_ecu_set_status_status_enable_inv_drive");
-		snprintf(v[8], string_size, "primary_ecu_set_status_status_drive");
-		snprintf(v[9], string_size, "primary_ecu_set_status_status_disable_inv_drive");
-		snprintf(v[10], string_size, "primary_ecu_set_status_status_start_ts_discharge");
-		snprintf(v[11], string_size, "primary_ecu_set_status_status_wait_ts_discharge");
-		snprintf(v[12], string_size, "primary_ecu_set_status_status_fatal_error");
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
+		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
+		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
 	case 21:
@@ -2216,11 +2206,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_radiator_speed_t tmp;
 		primary_lv_radiator_speed_converted_t tmp_converted;
-		uint32_t r_radiator_speed;
+		float r_radiator_speed;
 
-		sscanf(s, "%" SCNu32 "," ,
+		sscanf(s, "%f,"       ,
 			&r_radiator_speed);
-		tmp_converted.radiator_speed = (uint32_t)r_radiator_speed;
+		tmp_converted.radiator_speed = (float)r_radiator_speed;
 
 		primary_lv_radiator_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_LV_RADIATOR_SPEED_BYTE_SIZE;
@@ -2230,11 +2220,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_pumps_speed_t tmp;
 		primary_lv_pumps_speed_converted_t tmp_converted;
-		uint32_t r_pumps_speed;
+		float r_pumps_speed;
 
-		sscanf(s, "%" SCNu32 "," ,
+		sscanf(s, "%f,"       ,
 			&r_pumps_speed);
-		tmp_converted.pumps_speed = (uint32_t)r_pumps_speed;
+		tmp_converted.pumps_speed = (float)r_pumps_speed;
 
 		primary_lv_pumps_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_LV_PUMPS_SPEED_BYTE_SIZE;
@@ -2244,11 +2234,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_set_radiator_speed_t tmp;
 		primary_lv_set_radiator_speed_converted_t tmp_converted;
-		uint32_t r_radiator_speed;
+		float r_radiator_speed;
 
-		sscanf(s, "%" SCNu32 "," ,
+		sscanf(s, "%f,"       ,
 			&r_radiator_speed);
-		tmp_converted.radiator_speed = (uint32_t)r_radiator_speed;
+		tmp_converted.radiator_speed = (float)r_radiator_speed;
 
 		primary_lv_set_radiator_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_LV_SET_RADIATOR_SPEED_BYTE_SIZE;
@@ -2258,11 +2248,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_set_pumps_speed_t tmp;
 		primary_lv_set_pumps_speed_converted_t tmp_converted;
-		uint32_t r_pumps_speed;
+		float r_pumps_speed;
 
-		sscanf(s, "%" SCNu32 "," ,
+		sscanf(s, "%f,"       ,
 			&r_pumps_speed);
-		tmp_converted.pumps_speed = (uint32_t)r_pumps_speed;
+		tmp_converted.pumps_speed = (float)r_pumps_speed;
 
 		primary_lv_set_pumps_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_LV_SET_PUMPS_SPEED_BYTE_SIZE;
@@ -2424,8 +2414,8 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 600:
 	{
-		primary_lv_feedback_eclosure_voltage_t tmp;
-		primary_lv_feedback_eclosure_voltage_converted_t tmp_converted;
+		primary_lv_feedback_enclosure_voltage_t tmp;
+		primary_lv_feedback_enclosure_voltage_converted_t tmp_converted;
 		float r_lv_encl;
 		float r_hv_encl_1;
 		float r_hv_encl_2;
@@ -2444,9 +2434,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.hv_encl_2 = (float)r_hv_encl_2;
 		tmp_converted.backplate = (float)r_backplate;
 
-		primary_lv_feedback_eclosure_voltage_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_LV_FEEDBACK_ECLOSURE_VOLTAGE_BYTE_SIZE;
-		return primary_lv_feedback_eclosure_voltage_pack(data, &tmp, PRIMARY_LV_FEEDBACK_ECLOSURE_VOLTAGE_BYTE_SIZE);
+		primary_lv_feedback_enclosure_voltage_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_LV_FEEDBACK_ENCLOSURE_VOLTAGE_BYTE_SIZE;
+		return primary_lv_feedback_enclosure_voltage_pack(data, &tmp, PRIMARY_LV_FEEDBACK_ENCLOSURE_VOLTAGE_BYTE_SIZE);
 	}
 	case 608:
 	{
@@ -3879,19 +3869,19 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		return 1;
 	case 1568:
 		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
 		return 1;
 	case 1576:
 		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
 		return 1;
 	case 1056:
 		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
 		return 1;
 	case 1064:
 		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
 		return 1;
 	case 576:
 		if(fields_types_size < 23) return 0;
@@ -4434,20 +4424,10 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 	{
 		if(!strcmp(sgn_name, "status"))
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "enable_inv_updates");
-			sprintf(v[2], "check_inv_settings");
-			sprintf(v[3], "idle");
-			sprintf(v[4], "start_ts_precharge");
-			sprintf(v[5], "wait_ts_precharge");
-			sprintf(v[6], "wait_driver");
-			sprintf(v[7], "enable_inv_drive");
-			sprintf(v[8], "drive");
-			sprintf(v[9], "disable_inv_drive");
-			sprintf(v[10], "start_ts_discharge");
-			sprintf(v[11], "wait_ts_discharge");
-			sprintf(v[12], "fatal_error");
-			return 13;
+			sprintf(v[0], "idle");
+			sprintf(v[1], "ready");
+			sprintf(v[2], "drive");
+			return 3;
 		}
 	}
 	if(!strcmp(msg_name, "ECU_INVERTER_STATUS"))

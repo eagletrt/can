@@ -326,10 +326,10 @@ extern "C" {
 
 enum hv_current_types_id{
 	e_hv_current_uint32_t = -8,
-	e_hv_current_int8_t,
-	e_hv_current_uint64_t,
 	e_hv_current_float,
 	e_hv_current_uint16_t,
+	e_hv_current_int8_t,
+	e_hv_current_uint64_t,
 	e_hv_current_int32_t,
 	e_hv_current_int16_t,
 	e_hv_current_uint8_t,
