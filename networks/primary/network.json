@@ -777,15 +777,7 @@
                 "HANDCART"
             ],
             "contents": {
-                "fans_override": "Toggle",
-                "fans_speed": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "force": "uint16"
-                }
+                "feedbacks": "HvFeedbacks"
             }
         },
         {
@@ -1145,7 +1137,7 @@
                     ],
                     "precision": 0.005
                 },
-                "imd": {
+                "hvd": {
                     "type": "float32",
                     "range": [
                         0,
@@ -1153,7 +1145,7 @@
                     ],
                     "precision": 0.005
                 },
-                "hvd": {
+                "invc_interlock": {
                     "type": "float32",
                     "range": [
                         0,
@@ -1237,7 +1229,7 @@
                     ],
                     "precision": 0.005
                 },
-                "hv_encl_1": {
+                "invc_lid": {
                     "type": "float32",
                     "range": [
                         0,

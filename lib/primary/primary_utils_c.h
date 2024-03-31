@@ -412,8 +412,26 @@ extern "C" {
 /* START */
 #define HV_FEEDBACK_STATUS "HV_FEEDBACK_STATUS"
 
-#define HV_FEEDBACK_STATUS_FANS_OVERRIDE "hv_feedback_status_fans_override"
-#define HV_FEEDBACK_STATUS_FANS_SPEED "hv_feedback_status_fans_speed"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_IMPLAUSIBILITY_DETECTED "hv_feedback_status_feedbacks_implausibility_detected"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_IMD_COCKPIT "hv_feedback_status_feedbacks_imd_cockpit"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_TSAL_GREEN_FAULT_LATCHED "hv_feedback_status_feedbacks_tsal_green_fault_latched"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_BMS_COCKPIT "hv_feedback_status_feedbacks_bms_cockpit"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_EXT_LATCHED "hv_feedback_status_feedbacks_ext_latched"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_TSAL_GREEN "hv_feedback_status_feedbacks_tsal_green"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_TS_OVER_60V_STATUS "hv_feedback_status_feedbacks_ts_over_60v_status"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_AIRN_STATUS "hv_feedback_status_feedbacks_airn_status"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_AIRP_STATUS "hv_feedback_status_feedbacks_airp_status"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_AIRP_GATE "hv_feedback_status_feedbacks_airp_gate"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_AIRN_GATE "hv_feedback_status_feedbacks_airn_gate"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_PRECHARGE_STATUS "hv_feedback_status_feedbacks_precharge_status"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_TSP_OVER_60V_STATUS "hv_feedback_status_feedbacks_tsp_over_60v_status"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_IMD_FAULT "hv_feedback_status_feedbacks_imd_fault"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_CHECK_MUX "hv_feedback_status_feedbacks_check_mux"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_SD_END "hv_feedback_status_feedbacks_sd_end"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_SD_OUT "hv_feedback_status_feedbacks_sd_out"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_SD_IN "hv_feedback_status_feedbacks_sd_in"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_SD_BMS "hv_feedback_status_feedbacks_sd_bms"
+#define HV_FEEDBACK_STATUS_FEEDBACKS_SD_IMD "hv_feedback_status_feedbacks_sd_imd"
 /* END */
 
 /* START */
@@ -583,8 +601,8 @@ extern "C" {
 #define LV_FEEDBACK_TS_VOLTAGE "LV_FEEDBACK_TS_VOLTAGE"
 
 #define LV_FEEDBACK_TS_VOLTAGE_BSPD "lv_feedback_ts_voltage_bspd"
-#define LV_FEEDBACK_TS_VOLTAGE_IMD "lv_feedback_ts_voltage_imd"
 #define LV_FEEDBACK_TS_VOLTAGE_HVD "lv_feedback_ts_voltage_hvd"
+#define LV_FEEDBACK_TS_VOLTAGE_INVC_INTERLOCK "lv_feedback_ts_voltage_invc_interlock"
 #define LV_FEEDBACK_TS_VOLTAGE_AMS "lv_feedback_ts_voltage_ams"
 /* END */
 
@@ -601,7 +619,7 @@ extern "C" {
 #define LV_FEEDBACK_ENCLOSURE_VOLTAGE "LV_FEEDBACK_ENCLOSURE_VOLTAGE"
 
 #define LV_FEEDBACK_ENCLOSURE_VOLTAGE_LV_ENCL "lv_feedback_enclosure_voltage_lv_encl"
-#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_1 "lv_feedback_enclosure_voltage_hv_encl_1"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_INVC_LID "lv_feedback_enclosure_voltage_invc_lid"
 #define LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_2 "lv_feedback_enclosure_voltage_hv_encl_2"
 #define LV_FEEDBACK_ENCLOSURE_VOLTAGE_BACKPLATE "lv_feedback_enclosure_voltage_backplate"
 /* END */
@@ -964,14 +982,13 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint32_t = -4,
-	e_primary_uint8_t,
-	e_primary_uint64_t,
+	e_primary_uint64_t = -4,
+	e_primary_uint32_t,
 	e_primary_float,
+	e_primary_uint8_t,
 
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_handcart_fans_override,
-	e_primary_hv_feedback_status_fans_override,
 	e_primary_hv_status_status,
 	e_primary_hv_set_status_ecu_hv_status_set,
 	e_primary_hv_set_status_handcart_hv_status_set,

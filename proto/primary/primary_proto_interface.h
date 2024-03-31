@@ -949,10 +949,26 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_FEEDBACK_STATUS"]["_timestamp"].push(pack->hv_feedback_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_FEEDBACK_STATUS"]["fans_override"].push(pack->hv_feedback_status(i).fans_override());
-		primary_hv_feedback_status_fans_override_enum_to_string((primary_hv_feedback_status_fans_override)pack->hv_feedback_status(i).fans_override(), buffer);
-		(*net_strings)["HV_FEEDBACK_STATUS"]["fans_override"].push(buffer);
-		(*net_signals)["HV_FEEDBACK_STATUS"]["fans_speed"].push(pack->hv_feedback_status(i).fans_speed());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_implausibility_detected"].push(pack->hv_feedback_status(i).feedbacks_implausibility_detected());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_imd_cockpit"].push(pack->hv_feedback_status(i).feedbacks_imd_cockpit());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_tsal_green_fault_latched"].push(pack->hv_feedback_status(i).feedbacks_tsal_green_fault_latched());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_bms_cockpit"].push(pack->hv_feedback_status(i).feedbacks_bms_cockpit());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_ext_latched"].push(pack->hv_feedback_status(i).feedbacks_ext_latched());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_tsal_green"].push(pack->hv_feedback_status(i).feedbacks_tsal_green());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_ts_over_60v_status"].push(pack->hv_feedback_status(i).feedbacks_ts_over_60v_status());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_airn_status"].push(pack->hv_feedback_status(i).feedbacks_airn_status());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_airp_status"].push(pack->hv_feedback_status(i).feedbacks_airp_status());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_airp_gate"].push(pack->hv_feedback_status(i).feedbacks_airp_gate());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_airn_gate"].push(pack->hv_feedback_status(i).feedbacks_airn_gate());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_precharge_status"].push(pack->hv_feedback_status(i).feedbacks_precharge_status());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_tsp_over_60v_status"].push(pack->hv_feedback_status(i).feedbacks_tsp_over_60v_status());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_imd_fault"].push(pack->hv_feedback_status(i).feedbacks_imd_fault());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_check_mux"].push(pack->hv_feedback_status(i).feedbacks_check_mux());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_sd_end"].push(pack->hv_feedback_status(i).feedbacks_sd_end());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_sd_out"].push(pack->hv_feedback_status(i).feedbacks_sd_out());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_sd_in"].push(pack->hv_feedback_status(i).feedbacks_sd_in());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_sd_bms"].push(pack->hv_feedback_status(i).feedbacks_sd_bms());
+		(*net_enums)["HV_FEEDBACK_STATUS"]["feedbacks_sd_imd"].push(pack->hv_feedback_status(i).feedbacks_sd_imd());
 
     }
 
@@ -1232,8 +1248,8 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 #endif // CANLIB_TIMESTAMP
 
 		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["bspd"].push(pack->lv_feedback_ts_voltage(i).bspd());
-		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["imd"].push(pack->lv_feedback_ts_voltage(i).imd());
 		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["hvd"].push(pack->lv_feedback_ts_voltage(i).hvd());
+		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["invc_interlock"].push(pack->lv_feedback_ts_voltage(i).invc_interlock());
 		(*net_signals)["LV_FEEDBACK_TS_VOLTAGE"]["ams"].push(pack->lv_feedback_ts_voltage(i).ams());
 
     }
@@ -1262,7 +1278,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 #endif // CANLIB_TIMESTAMP
 
 		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["lv_encl"].push(pack->lv_feedback_enclosure_voltage(i).lv_encl());
-		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["hv_encl_1"].push(pack->lv_feedback_enclosure_voltage(i).hv_encl_1());
+		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["invc_lid"].push(pack->lv_feedback_enclosure_voltage(i).invc_lid());
 		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["hv_encl_2"].push(pack->lv_feedback_enclosure_voltage(i).hv_encl_2());
 		(*net_signals)["LV_FEEDBACK_ENCLOSURE_VOLTAGE"]["backplate"].push(pack->lv_feedback_enclosure_voltage(i).backplate());
 
@@ -2555,10 +2571,28 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 520: {
-            primary_hv_feedback_status_converted_t* msg = (primary_hv_feedback_status_converted_t*)(device->message);
+            primary_hv_feedback_status_t* msg = (primary_hv_feedback_status_t*)(device->message);
             primary::HV_FEEDBACK_STATUS* proto_msg = pack->add_hv_feedback_status();
-			proto_msg->set_fans_override((primary::primary_hv_feedback_status_fans_override)msg->fans_override);
-			proto_msg->set_fans_speed(msg->fans_speed);
+			proto_msg->set_feedbacks_implausibility_detected(msg->feedbacks_implausibility_detected);
+			proto_msg->set_feedbacks_imd_cockpit(msg->feedbacks_imd_cockpit);
+			proto_msg->set_feedbacks_tsal_green_fault_latched(msg->feedbacks_tsal_green_fault_latched);
+			proto_msg->set_feedbacks_bms_cockpit(msg->feedbacks_bms_cockpit);
+			proto_msg->set_feedbacks_ext_latched(msg->feedbacks_ext_latched);
+			proto_msg->set_feedbacks_tsal_green(msg->feedbacks_tsal_green);
+			proto_msg->set_feedbacks_ts_over_60v_status(msg->feedbacks_ts_over_60v_status);
+			proto_msg->set_feedbacks_airn_status(msg->feedbacks_airn_status);
+			proto_msg->set_feedbacks_airp_status(msg->feedbacks_airp_status);
+			proto_msg->set_feedbacks_airp_gate(msg->feedbacks_airp_gate);
+			proto_msg->set_feedbacks_airn_gate(msg->feedbacks_airn_gate);
+			proto_msg->set_feedbacks_precharge_status(msg->feedbacks_precharge_status);
+			proto_msg->set_feedbacks_tsp_over_60v_status(msg->feedbacks_tsp_over_60v_status);
+			proto_msg->set_feedbacks_imd_fault(msg->feedbacks_imd_fault);
+			proto_msg->set_feedbacks_check_mux(msg->feedbacks_check_mux);
+			proto_msg->set_feedbacks_sd_end(msg->feedbacks_sd_end);
+			proto_msg->set_feedbacks_sd_out(msg->feedbacks_sd_out);
+			proto_msg->set_feedbacks_sd_in(msg->feedbacks_sd_in);
+			proto_msg->set_feedbacks_sd_bms(msg->feedbacks_sd_bms);
+			proto_msg->set_feedbacks_sd_imd(msg->feedbacks_sd_imd);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2808,8 +2842,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_lv_feedback_ts_voltage_converted_t* msg = (primary_lv_feedback_ts_voltage_converted_t*)(device->message);
             primary::LV_FEEDBACK_TS_VOLTAGE* proto_msg = pack->add_lv_feedback_ts_voltage();
 			proto_msg->set_bspd(msg->bspd);
-			proto_msg->set_imd(msg->imd);
 			proto_msg->set_hvd(msg->hvd);
+			proto_msg->set_invc_interlock(msg->invc_interlock);
 			proto_msg->set_ams(msg->ams);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2836,7 +2870,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_lv_feedback_enclosure_voltage_converted_t* msg = (primary_lv_feedback_enclosure_voltage_converted_t*)(device->message);
             primary::LV_FEEDBACK_ENCLOSURE_VOLTAGE* proto_msg = pack->add_lv_feedback_enclosure_voltage();
 			proto_msg->set_lv_encl(msg->lv_encl);
-			proto_msg->set_hv_encl_1(msg->hv_encl_1);
+			proto_msg->set_invc_lid(msg->invc_lid);
 			proto_msg->set_hv_encl_2(msg->hv_encl_2);
 			proto_msg->set_backplate(msg->backplate);
 

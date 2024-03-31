@@ -10,10 +10,6 @@ enum primary_hv_set_fans_status_handcart_fans_override {
 	primary_hv_set_fans_status_handcart_fans_override_off = 0;
 	primary_hv_set_fans_status_handcart_fans_override_on = 1;
 }
-enum primary_hv_feedback_status_fans_override {
-	primary_hv_feedback_status_fans_override_off = 0;
-	primary_hv_feedback_status_fans_override_on = 1;
-}
 enum primary_hv_status_status {
 	primary_hv_status_status_init = 0;
 	primary_hv_status_status_idle = 1;
@@ -461,9 +457,27 @@ message HV_SET_FANS_STATUS_HANDCART{
 	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACK_STATUS{
-	primary_hv_feedback_status_fans_override fans_override = 1;
-	double fans_speed = 2;
-	uint64 _inner_timestamp = 3;
+	bool feedbacks_implausibility_detected = 1;
+	bool feedbacks_imd_cockpit = 2;
+	bool feedbacks_tsal_green_fault_latched = 3;
+	bool feedbacks_bms_cockpit = 4;
+	bool feedbacks_ext_latched = 5;
+	bool feedbacks_tsal_green = 6;
+	bool feedbacks_ts_over_60v_status = 7;
+	bool feedbacks_airn_status = 8;
+	bool feedbacks_airp_status = 9;
+	bool feedbacks_airp_gate = 10;
+	bool feedbacks_airn_gate = 11;
+	bool feedbacks_precharge_status = 12;
+	bool feedbacks_tsp_over_60v_status = 13;
+	bool feedbacks_imd_fault = 14;
+	bool feedbacks_check_mux = 15;
+	bool feedbacks_sd_end = 16;
+	bool feedbacks_sd_out = 17;
+	bool feedbacks_sd_in = 18;
+	bool feedbacks_sd_bms = 19;
+	bool feedbacks_sd_imd = 20;
+	uint64 _inner_timestamp = 21;
 }
 message HV_FEEDBACK_TS_VOLTAGE{
 	double ts_over_60v_status = 1;
@@ -600,8 +614,8 @@ message LV_ERRORS{
 }
 message LV_FEEDBACK_TS_VOLTAGE{
 	double bspd = 1;
-	double imd = 2;
-	double hvd = 3;
+	double hvd = 2;
+	double invc_interlock = 3;
 	double ams = 4;
 	uint64 _inner_timestamp = 5;
 }
@@ -614,7 +628,7 @@ message LV_FEEDBACK_SD_VOLTAGE{
 }
 message LV_FEEDBACK_ENCLOSURE_VOLTAGE{
 	double lv_encl = 1;
-	double hv_encl_1 = 2;
+	double invc_lid = 2;
 	double hv_encl_2 = 3;
 	double backplate = 4;
 	uint64 _inner_timestamp = 5;
