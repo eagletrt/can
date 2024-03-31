@@ -982,10 +982,10 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint64_t = -4,
-	e_primary_uint32_t,
+	e_primary_uint32_t = -4,
 	e_primary_float,
 	e_primary_uint8_t,
+	e_primary_uint64_t,
 
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_handcart_fans_override,

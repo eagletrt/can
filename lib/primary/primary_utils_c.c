@@ -793,25 +793,15 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 
 		return 0;
 	case 3:
-		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_init");
-		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_idle");
-		snprintf(v[2], string_size, "primary_hv_set_status_ecu_hv_status_set_airn_close");
-		snprintf(v[3], string_size, "primary_hv_set_status_ecu_hv_status_set_precharge");
-		snprintf(v[4], string_size, "primary_hv_set_status_ecu_hv_status_set_airp_close");
-		snprintf(v[5], string_size, "primary_hv_set_status_ecu_hv_status_set_ts_on");
-		snprintf(v[6], string_size, "primary_hv_set_status_ecu_hv_status_set_fatal_error");
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_off");
+		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_on");
 
 		return 0;
 	case 4:
-		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_init");
-		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_idle");
-		snprintf(v[2], string_size, "primary_hv_set_status_handcart_hv_status_set_airn_close");
-		snprintf(v[3], string_size, "primary_hv_set_status_handcart_hv_status_set_precharge");
-		snprintf(v[4], string_size, "primary_hv_set_status_handcart_hv_status_set_airp_close");
-		snprintf(v[5], string_size, "primary_hv_set_status_handcart_hv_status_set_ts_on");
-		snprintf(v[6], string_size, "primary_hv_set_status_handcart_hv_status_set_fatal_error");
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_off");
+		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_on");
 
 		return 0;
 	case 5:
@@ -4339,28 +4329,18 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 	{
 		if(!strcmp(sgn_name, "hv_status_set"))
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "idle");
-			sprintf(v[2], "airn_close");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "airp_close");
-			sprintf(v[5], "ts_on");
-			sprintf(v[6], "fatal_error");
-			return 7;
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
 		}
 	}
 	if(!strcmp(msg_name, "HV_SET_STATUS_HANDCART"))
 	{
 		if(!strcmp(sgn_name, "hv_status_set"))
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "idle");
-			sprintf(v[2], "airn_close");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "airp_close");
-			sprintf(v[5], "ts_on");
-			sprintf(v[6], "fatal_error");
-			return 7;
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
 		}
 	}
 	if(!strcmp(msg_name, "HV_BALANCING_STATUS"))

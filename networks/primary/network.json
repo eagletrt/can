@@ -943,7 +943,7 @@
                 "HV"
             ],
             "contents": {
-                "hv_status_set": "HvStatus"
+                "hv_status_set": "Toggle"
             }
         },
         {
@@ -957,7 +957,7 @@
                 "HV"
             ],
             "contents": {
-                "hv_status_set": "HvStatus"
+                "hv_status_set": "Toggle"
             }
         },
         {
