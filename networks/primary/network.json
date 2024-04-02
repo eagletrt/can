@@ -677,7 +677,6 @@
             "priority": 2,
             "interval": 200,
             "sending": [
-                "ECU",
                 "HANDCART"
             ],
             "receiving": [
@@ -1206,8 +1205,7 @@
             "topic": "HYDRA",
             "priority": 0,
             "sending": [
-                "TLM",
-                "STEERING_WHEEL"
+                "TLM"
             ],
             "receiving": [
                 "LV"
