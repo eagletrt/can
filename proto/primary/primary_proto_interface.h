@@ -1817,7 +1817,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
 		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["max"].push(pack->hv_cells_voltage_stats(i).max());
 		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["min"].push(pack->hv_cells_voltage_stats(i).min());
-		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["sum"].push(pack->hv_cells_voltage_stats(i).sum());
+		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["delta"].push(pack->hv_cells_voltage_stats(i).delta());
 		(*net_signals)["HV_CELLS_VOLTAGE_STATS"]["avg"].push(pack->hv_cells_voltage_stats(i).avg());
 
     }
@@ -3280,7 +3280,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary::HV_CELLS_VOLTAGE_STATS* proto_msg = pack->add_hv_cells_voltage_stats();
 			proto_msg->set_max(msg->max);
 			proto_msg->set_min(msg->min);
-			proto_msg->set_sum(msg->sum);
+			proto_msg->set_delta(msg->delta);
 			proto_msg->set_avg(msg->avg);
 
 #ifdef CANLIB_TIMESTAMP

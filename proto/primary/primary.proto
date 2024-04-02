@@ -853,7 +853,7 @@ message HV_CELLS_VOLTAGE{
 message HV_CELLS_VOLTAGE_STATS{
 	double max = 1;
 	double min = 2;
-	double sum = 3;
+	double delta = 3;
 	double avg = 4;
 	uint64 _inner_timestamp = 5;
 }

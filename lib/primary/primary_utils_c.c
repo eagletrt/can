@@ -704,7 +704,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_CELLS_VOLTAGE_STATS_MAX);
 		snprintf(v[1], string_size, HV_CELLS_VOLTAGE_STATS_MIN);
-		snprintf(v[2], string_size, HV_CELLS_VOLTAGE_STATS_SUM);
+		snprintf(v[2], string_size, HV_CELLS_VOLTAGE_STATS_DELTA);
 		snprintf(v[3], string_size, HV_CELLS_VOLTAGE_STATS_AVG);
 
 		return 0;
@@ -3287,7 +3287,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		primary_hv_cells_voltage_stats_converted_t tmp_converted;
 		float r_max;
 		float r_min;
-		float r_sum;
+		float r_delta;
 		float r_avg;
 
 		sscanf(s, "%f,"       
@@ -3296,11 +3296,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%f,"       ,
 			&r_max,
 			&r_min,
-			&r_sum,
+			&r_delta,
 			&r_avg);
 		tmp_converted.max = (float)r_max;
 		tmp_converted.min = (float)r_min;
-		tmp_converted.sum = (float)r_sum;
+		tmp_converted.delta = (float)r_delta;
 		tmp_converted.avg = (float)r_avg;
 
 		primary_hv_cells_voltage_stats_conversion_to_raw_struct(&tmp, &tmp_converted);

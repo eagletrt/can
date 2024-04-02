@@ -916,7 +916,7 @@ extern "C" {
 
 #define HV_CELLS_VOLTAGE_STATS_MAX "hv_cells_voltage_stats_max"
 #define HV_CELLS_VOLTAGE_STATS_MIN "hv_cells_voltage_stats_min"
-#define HV_CELLS_VOLTAGE_STATS_SUM "hv_cells_voltage_stats_sum"
+#define HV_CELLS_VOLTAGE_STATS_DELTA "hv_cells_voltage_stats_delta"
 #define HV_CELLS_VOLTAGE_STATS_AVG "hv_cells_voltage_stats_avg"
 /* END */
 
@@ -948,9 +948,9 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_float = -5,
-	e_primary_uint64_t,
+	e_primary_uint64_t = -5,
 	e_primary_uint8_t,
+	e_primary_float,
 	e_primary_uint16_t,
 	e_primary_uint32_t,
 
