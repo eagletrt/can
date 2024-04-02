@@ -4,34 +4,6 @@ package secondary;
 
 
 
-message FS_Datalogger_Reserved_6{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Reserved_5{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Reserved_4{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Reserved_3{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Reserved_2{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Reserved_1{
-	uint64 _inner_timestamp = 1;
-}
-message FS_Datalogger_Status{
-	uint32 MsgCnt = 1;
-	bool Status_Ready = 2;
-	bool Status_Logging = 3;
-	bool Status_Triggered_Voltage = 4;
-	bool Status_Triggered_Current = 5;
-	uint32 Voltage = 6;
-	uint32 Current = 7;
-	uint64 _inner_timestamp = 8;
-}
 message IMU_ANGULAR_RATE{
 	double x = 1;
 	double y = 2;
@@ -242,45 +214,38 @@ message COOLING_TEMP{
 
 
 message Pack{
-	repeated FS_Datalogger_Reserved_6 FS_Datalogger_Reserved_6 = 1;
-	repeated FS_Datalogger_Reserved_5 FS_Datalogger_Reserved_5 = 2;
-	repeated FS_Datalogger_Reserved_4 FS_Datalogger_Reserved_4 = 3;
-	repeated FS_Datalogger_Reserved_3 FS_Datalogger_Reserved_3 = 4;
-	repeated FS_Datalogger_Reserved_2 FS_Datalogger_Reserved_2 = 5;
-	repeated FS_Datalogger_Reserved_1 FS_Datalogger_Reserved_1 = 6;
-	repeated FS_Datalogger_Status FS_Datalogger_Status = 7;
-	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 8;
-	repeated IMU_ACCELERATION IMU_ACCELERATION = 9;
-	repeated IRTS_FL_0 IRTS_FL_0 = 10;
-	repeated IRTS_FL_1 IRTS_FL_1 = 11;
-	repeated IRTS_FL_2 IRTS_FL_2 = 12;
-	repeated IRTS_FL_3 IRTS_FL_3 = 13;
-	repeated IRTS_FR_0 IRTS_FR_0 = 14;
-	repeated IRTS_FR_1 IRTS_FR_1 = 15;
-	repeated IRTS_FR_2 IRTS_FR_2 = 16;
-	repeated IRTS_FR_3 IRTS_FR_3 = 17;
-	repeated IRTS_RL_0 IRTS_RL_0 = 18;
-	repeated IRTS_RL_1 IRTS_RL_1 = 19;
-	repeated IRTS_RL_2 IRTS_RL_2 = 20;
-	repeated IRTS_RL_3 IRTS_RL_3 = 21;
-	repeated IRTS_RR_0 IRTS_RR_0 = 22;
-	repeated IRTS_RR_1 IRTS_RR_1 = 23;
-	repeated IRTS_RR_2 IRTS_RR_2 = 24;
-	repeated IRTS_RR_3 IRTS_RR_3 = 25;
-	repeated GPS_COORDS GPS_COORDS = 26;
-	repeated GPS_SPEED GPS_SPEED = 27;
-	repeated SPEED SPEED = 28;
-	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 29;
-	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 30;
-	repeated STEER_ANGLE STEER_ANGLE = 31;
-	repeated TPMS_PRESSURE TPMS_PRESSURE = 32;
-	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 33;
-	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 34;
-	repeated TLM_LAP_TIME TLM_LAP_TIME = 35;
-	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 36;
-	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 37;
-	repeated LINK_DEFORMATION LINK_DEFORMATION = 38;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 39;
-	repeated COOLING_TEMP COOLING_TEMP = 40;
+	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
+	repeated IMU_ACCELERATION IMU_ACCELERATION = 2;
+	repeated IRTS_FL_0 IRTS_FL_0 = 3;
+	repeated IRTS_FL_1 IRTS_FL_1 = 4;
+	repeated IRTS_FL_2 IRTS_FL_2 = 5;
+	repeated IRTS_FL_3 IRTS_FL_3 = 6;
+	repeated IRTS_FR_0 IRTS_FR_0 = 7;
+	repeated IRTS_FR_1 IRTS_FR_1 = 8;
+	repeated IRTS_FR_2 IRTS_FR_2 = 9;
+	repeated IRTS_FR_3 IRTS_FR_3 = 10;
+	repeated IRTS_RL_0 IRTS_RL_0 = 11;
+	repeated IRTS_RL_1 IRTS_RL_1 = 12;
+	repeated IRTS_RL_2 IRTS_RL_2 = 13;
+	repeated IRTS_RL_3 IRTS_RL_3 = 14;
+	repeated IRTS_RR_0 IRTS_RR_0 = 15;
+	repeated IRTS_RR_1 IRTS_RR_1 = 16;
+	repeated IRTS_RR_2 IRTS_RR_2 = 17;
+	repeated IRTS_RR_3 IRTS_RR_3 = 18;
+	repeated GPS_COORDS GPS_COORDS = 19;
+	repeated GPS_SPEED GPS_SPEED = 20;
+	repeated SPEED SPEED = 21;
+	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 22;
+	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 23;
+	repeated STEER_ANGLE STEER_ANGLE = 24;
+	repeated TPMS_PRESSURE TPMS_PRESSURE = 25;
+	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 26;
+	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 27;
+	repeated TLM_LAP_TIME TLM_LAP_TIME = 28;
+	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 29;
+	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 30;
+	repeated LINK_DEFORMATION LINK_DEFORMATION = 31;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 32;
+	repeated COOLING_TEMP COOLING_TEMP = 33;
 }
 

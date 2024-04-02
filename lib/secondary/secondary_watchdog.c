@@ -20,13 +20,6 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
 
 int secondary_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1877: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_6;
-       case 1876: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_5;
-       case 1875: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_4;
-       case 1874: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_3;
-       case 1873: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_2;
-       case 1872: return SECONDARY_INDEX_FS_DATALOGGER_RESERVED_1;
-       case 1072: return SECONDARY_INDEX_FS_DATALOGGER_STATUS;
        case 1260: return SECONDARY_INDEX_IMU_ANGULAR_RATE;
        case 1261: return SECONDARY_INDEX_IMU_ACCELERATION;
        case 1456: return SECONDARY_INDEX_IRTS_FL_0;
@@ -71,7 +64,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 40 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 33 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
