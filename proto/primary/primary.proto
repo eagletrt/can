@@ -47,9 +47,9 @@ enum primary_hv_balancing_status_balancing_status {
 	primary_hv_balancing_status_balancing_status_off = 0;
 	primary_hv_balancing_status_balancing_status_on = 1;
 }
-enum primary_hv_set_balancing_status_handcart_set_balancing_status {
-	primary_hv_set_balancing_status_handcart_set_balancing_status_off = 0;
-	primary_hv_set_balancing_status_handcart_set_balancing_status_on = 1;
+enum primary_hv_set_balancing_status_set_balancing_status {
+	primary_hv_set_balancing_status_set_balancing_status_off = 0;
+	primary_hv_set_balancing_status_set_balancing_status_on = 1;
 }
 enum primary_lv_status_status {
 	primary_lv_status_status_init = 0;
@@ -535,8 +535,8 @@ message HV_BALANCING_STATUS{
 	bool balancing_cells_cell17 = 29;
 	uint64 _inner_timestamp = 30;
 }
-message HV_SET_BALANCING_STATUS_HANDCART{
-	primary_hv_set_balancing_status_handcart_set_balancing_status set_balancing_status = 1;
+message HV_SET_BALANCING_STATUS{
+	primary_hv_set_balancing_status_set_balancing_status set_balancing_status = 1;
 	uint32 balancing_threshold = 2;
 	uint64 _inner_timestamp = 3;
 }
@@ -932,7 +932,7 @@ message Pack{
 	repeated HV_SET_STATUS_ECU HV_SET_STATUS_ECU = 49;
 	repeated HV_SET_STATUS_HANDCART HV_SET_STATUS_HANDCART = 50;
 	repeated HV_BALANCING_STATUS HV_BALANCING_STATUS = 51;
-	repeated HV_SET_BALANCING_STATUS_HANDCART HV_SET_BALANCING_STATUS_HANDCART = 52;
+	repeated HV_SET_BALANCING_STATUS HV_SET_BALANCING_STATUS = 52;
 	repeated LV_STATUS LV_STATUS = 53;
 	repeated LV_RADIATOR_SPEED LV_RADIATOR_SPEED = 54;
 	repeated LV_PUMPS_SPEED LV_PUMPS_SPEED = 55;

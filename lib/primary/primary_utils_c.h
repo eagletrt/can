@@ -499,10 +499,10 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_SET_BALANCING_STATUS_HANDCART "HV_SET_BALANCING_STATUS_HANDCART"
+#define HV_SET_BALANCING_STATUS "HV_SET_BALANCING_STATUS"
 
-#define HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS "hv_set_balancing_status_handcart_set_balancing_status"
-#define HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD "hv_set_balancing_status_handcart_balancing_threshold"
+#define HV_SET_BALANCING_STATUS_SET_BALANCING_STATUS "hv_set_balancing_status_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_BALANCING_THRESHOLD "hv_set_balancing_status_balancing_threshold"
 /* END */
 
 /* START */
@@ -948,10 +948,10 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint64_t = -5,
-	e_primary_uint32_t,
-	e_primary_uint8_t,
+	e_primary_uint32_t = -5,
+	e_primary_uint64_t,
 	e_primary_float,
+	e_primary_uint8_t,
 	e_primary_uint16_t,
 
 	e_primary_hv_cellboard_version_cellboard_id,
@@ -962,7 +962,7 @@ enum primary_types_id{
 	e_primary_hv_set_status_handcart_hv_status_set,
 	e_primary_hv_balancing_status_cellboard_id,
 	e_primary_hv_balancing_status_balancing_status,
-	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
+	e_primary_hv_set_balancing_status_set_balancing_status,
 	e_primary_lv_status_status,
 	e_primary_lv_inverter_connection_status_status,
 	e_primary_lv_set_inverter_connection_status_status,

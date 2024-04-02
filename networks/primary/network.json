@@ -899,8 +899,7 @@
                 "HV"
             ],
             "receiving": [
-                "ECU",
-                "HANDCART"
+                "ECU"
             ],
             "contents": {
                 "cellboard_id": "HvCellboardId",
@@ -914,8 +913,7 @@
             "topic": "HYDRA",
             "priority": 2,
             "sending": [
-                "ECU",
-                "HANDCART"
+                "ECU"
             ],
             "receiving": [
                 "HV"
