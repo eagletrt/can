@@ -2142,7 +2142,7 @@
                     ],
                     "force": "uint16"
                 },
-                "sum": {
+                "delta": {
                     "type": "float32",
                     "range": [
                         0,
