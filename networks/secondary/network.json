@@ -1178,7 +1178,7 @@
       }
     },
     {
-      "name": "LINK_DEFORMATION_FL",
+      "name": "LINK_DEFORMATION",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
