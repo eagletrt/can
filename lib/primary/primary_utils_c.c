@@ -224,10 +224,10 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[1], string_size, HV_FANS_STATUS_FANS_SPEED);
 
 		return 0;
-	case 1032:
+	case 1024:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_SET_FANS_STATUS_HANDCART_FANS_OVERRIDE);
-		snprintf(v[1], string_size, HV_SET_FANS_STATUS_HANDCART_FANS_SPEED);
+		snprintf(v[0], string_size, HV_SET_FANS_STATUS_FANS_OVERRIDE);
+		snprintf(v[1], string_size, HV_SET_FANS_STATUS_FANS_SPEED);
 
 		return 0;
 	case 520:
@@ -344,7 +344,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[28], string_size, HV_BALANCING_STATUS_BALANCING_CELLS_CELL17);
 
 		return 0;
-	case 1048:
+	case 1040:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS);
 		snprintf(v[1], string_size, HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD);
@@ -365,12 +365,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, LV_PUMPS_SPEED_PUMPS_SPEED);
 
 		return 0;
-	case 1056:
+	case 1048:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_SET_RADIATOR_SPEED_RADIATOR_SPEED);
 
 		return 0;
-	case 1064:
+	case 1056:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_SET_PUMPS_SPEED_PUMPS_SPEED);
 
@@ -442,7 +442,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, LV_INVERTER_CONNECTION_STATUS_STATUS);
 
 		return 0;
-	case 72:
+	case 64:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_SET_INVERTER_CONNECTION_STATUS_STATUS);
 
@@ -452,7 +452,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, TLM_STATUS_STATUS);
 
 		return 0;
-	case 1072:
+	case 1064:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, TLM_SET_STATUS_STATUS);
 
@@ -472,7 +472,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[5], string_size, HANDCART_SETTINGS_STATUS);
 
 		return 0;
-	case 1080:
+	case 1072:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, HANDCART_SET_SETTINGS_TARGET_VOLTAGE);
 		snprintf(v[1], string_size, HANDCART_SET_SETTINGS_FANS_OVERRIDE);
@@ -487,12 +487,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, ECU_STATUS_STATUS);
 
 		return 0;
-	case 80:
+	case 72:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_STATUS_STATUS);
 
 		return 0;
-	case 1088:
+	case 1080:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_INVERTER_STATUS_RL);
 		snprintf(v[1], string_size, ECU_INVERTER_STATUS_RR);
@@ -538,7 +538,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[2], string_size, ECU_POWER_MAPS_MAP_TV);
 
 		return 0;
-	case 88:
+	case 80:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_POWER_MAPS_MAP_PW);
 		snprintf(v[1], string_size, ECU_SET_POWER_MAPS_MAP_SC);
@@ -550,7 +550,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, ECU_PTT_STATUS_STATUS);
 
 		return 0;
-	case 1096:
+	case 1088:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_PTT_STATUS_STATUS);
 
@@ -758,8 +758,8 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		return 0;
 	case 2:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_set_fans_status_handcart_fans_override_off");
-		snprintf(v[1], string_size, "primary_hv_set_fans_status_handcart_fans_override_on");
+		snprintf(v[0], string_size, "primary_hv_set_fans_status_fans_override_off");
+		snprintf(v[1], string_size, "primary_hv_set_fans_status_fans_override_on");
 
 		return 0;
 	case 3:
@@ -1719,10 +1719,10 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HV_FANS_STATUS_BYTE_SIZE;
 		return primary_hv_fans_status_pack(data, &tmp, PRIMARY_HV_FANS_STATUS_BYTE_SIZE);
 	}
-	case 1032:
+	case 1024:
 	{
-		primary_hv_set_fans_status_handcart_t tmp;
-		primary_hv_set_fans_status_handcart_converted_t tmp_converted;
+		primary_hv_set_fans_status_t tmp;
+		primary_hv_set_fans_status_converted_t tmp_converted;
 		uint8_t r_fans_override;
 		float r_fans_speed;
 
@@ -1730,12 +1730,12 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%f,"       ,
 			&r_fans_override,
 			&r_fans_speed);
-		tmp_converted.fans_override = (primary_hv_set_fans_status_handcart_fans_override)r_fans_override;
+		tmp_converted.fans_override = (primary_hv_set_fans_status_fans_override)r_fans_override;
 		tmp_converted.fans_speed = (float)r_fans_speed;
 
-		primary_hv_set_fans_status_handcart_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_SET_FANS_STATUS_HANDCART_BYTE_SIZE;
-		return primary_hv_set_fans_status_handcart_pack(data, &tmp, PRIMARY_HV_SET_FANS_STATUS_HANDCART_BYTE_SIZE);
+		primary_hv_set_fans_status_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_SET_FANS_STATUS_BYTE_SIZE;
+		return primary_hv_set_fans_status_pack(data, &tmp, PRIMARY_HV_SET_FANS_STATUS_BYTE_SIZE);
 	}
 	case 520:
 	{
@@ -2139,7 +2139,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HV_BALANCING_STATUS_BYTE_SIZE;
 		return primary_hv_balancing_status_pack(data, &tmp, PRIMARY_HV_BALANCING_STATUS_BYTE_SIZE);
 	}
-	case 1048:
+	case 1040:
 	{
 		primary_hv_set_balancing_status_handcart_t tmp;
 		primary_hv_set_balancing_status_handcart_converted_t tmp_converted;
@@ -2199,7 +2199,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_PUMPS_SPEED_BYTE_SIZE;
 		return primary_lv_pumps_speed_pack(data, &tmp, PRIMARY_LV_PUMPS_SPEED_BYTE_SIZE);
 	}
-	case 1056:
+	case 1048:
 	{
 		primary_lv_set_radiator_speed_t tmp;
 		primary_lv_set_radiator_speed_converted_t tmp_converted;
@@ -2213,7 +2213,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_SET_RADIATOR_SPEED_BYTE_SIZE;
 		return primary_lv_set_radiator_speed_pack(data, &tmp, PRIMARY_LV_SET_RADIATOR_SPEED_BYTE_SIZE);
 	}
-	case 1064:
+	case 1056:
 	{
 		primary_lv_set_pumps_speed_t tmp;
 		primary_lv_set_pumps_speed_converted_t tmp_converted;
@@ -2459,7 +2459,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_INVERTER_CONNECTION_STATUS_BYTE_SIZE;
 		return primary_lv_inverter_connection_status_pack(data, &tmp, PRIMARY_LV_INVERTER_CONNECTION_STATUS_BYTE_SIZE);
 	}
-	case 72:
+	case 64:
 	{
 		primary_lv_set_inverter_connection_status_t tmp;
 		primary_lv_set_inverter_connection_status_converted_t tmp_converted;
@@ -2487,7 +2487,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_TLM_STATUS_BYTE_SIZE;
 		return primary_tlm_status_pack(data, &tmp, PRIMARY_TLM_STATUS_BYTE_SIZE);
 	}
-	case 1072:
+	case 1064:
 	{
 		primary_tlm_set_status_t tmp;
 		primary_tlm_set_status_converted_t tmp_converted;
@@ -2549,7 +2549,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HANDCART_SETTINGS_BYTE_SIZE;
 		return primary_handcart_settings_pack(data, &tmp, PRIMARY_HANDCART_SETTINGS_BYTE_SIZE);
 	}
-	case 1080:
+	case 1072:
 	{
 		primary_handcart_set_settings_t tmp;
 		primary_handcart_set_settings_converted_t tmp_converted;
@@ -2597,7 +2597,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_STATUS_BYTE_SIZE;
 		return primary_ecu_status_pack(data, &tmp, PRIMARY_ECU_STATUS_BYTE_SIZE);
 	}
-	case 80:
+	case 72:
 	{
 		primary_ecu_set_status_t tmp;
 		primary_ecu_set_status_converted_t tmp_converted;
@@ -2611,7 +2611,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_SET_STATUS_BYTE_SIZE;
 		return primary_ecu_set_status_pack(data, &tmp, PRIMARY_ECU_SET_STATUS_BYTE_SIZE);
 	}
-	case 1088:
+	case 1080:
 	{
 		primary_ecu_inverter_status_t tmp;
 		primary_ecu_inverter_status_converted_t tmp_converted;
@@ -2765,7 +2765,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_POWER_MAPS_BYTE_SIZE;
 		return primary_ecu_power_maps_pack(data, &tmp, PRIMARY_ECU_POWER_MAPS_BYTE_SIZE);
 	}
-	case 88:
+	case 80:
 	{
 		primary_ecu_set_power_maps_t tmp;
 		primary_ecu_set_power_maps_converted_t tmp_converted;
@@ -2801,7 +2801,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_PTT_STATUS_BYTE_SIZE;
 		return primary_ecu_ptt_status_pack(data, &tmp, PRIMARY_ECU_PTT_STATUS_BYTE_SIZE);
 	}
-	case 1096:
+	case 1088:
 	{
 		primary_ecu_set_ptt_status_t tmp;
 		primary_ecu_set_ptt_status_converted_t tmp_converted;
@@ -3434,7 +3434,7 @@ int primary_n_fields_from_id(int id)
 		case 24: return 16;
 		case 512: return 36;
 		case 1536: return 2;
-		case 1032: return 2;
+		case 1024: return 2;
 		case 520: return 20;
 		case 528: return 7;
 		case 536: return 8;
@@ -3444,36 +3444,36 @@ int primary_n_fields_from_id(int id)
 		case 32: return 1;
 		case 40: return 1;
 		case 1544: return 29;
-		case 1048: return 2;
+		case 1040: return 2;
 		case 568: return 1;
 		case 1568: return 1;
 		case 1576: return 1;
+		case 1048: return 1;
 		case 1056: return 1;
-		case 1064: return 1;
 		case 576: return 23;
 		case 584: return 4;
 		case 592: return 4;
 		case 600: return 4;
 		case 608: return 7;
+		case 48: return 0;
 		case 56: return 0;
-		case 64: return 0;
 		case 616: return 1;
-		case 72: return 1;
+		case 64: return 1;
 		case 1584: return 1;
-		case 1072: return 1;
+		case 1064: return 1;
 		case 624: return 1;
 		case 1592: return 6;
-		case 1080: return 6;
+		case 1072: return 6;
 		case 632: return 1;
-		case 80: return 1;
-		case 1088: return 2;
+		case 72: return 1;
+		case 1080: return 2;
 		case 640: return 4;
 		case 648: return 9;
 		case 656: return 8;
 		case 664: return 3;
-		case 88: return 3;
+		case 80: return 3;
 		case 1600: return 1;
-		case 1096: return 1;
+		case 1088: return 1;
 		case 513: return 8;
 		case 672: return 5;
 		case 680: return 3;
@@ -3706,9 +3706,9 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[0] = e_primary_hv_fans_status_fans_override;
 		fields_types[1] = e_primary_float;
 		return 2;
-	case 1032:
+	case 1024:
 		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_hv_set_fans_status_handcart_fans_override;
+		fields_types[0] = e_primary_hv_set_fans_status_fans_override;
 		fields_types[1] = e_primary_float;
 		return 2;
 	case 520:
@@ -3816,7 +3816,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[27] = e_primary_uint8_t;
 		fields_types[28] = e_primary_uint8_t;
 		return 29;
-	case 1048:
+	case 1040:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_hv_set_balancing_status_handcart_set_balancing_status;
 		fields_types[1] = e_primary_uint8_t;
@@ -3833,11 +3833,11 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_float;
 		return 1;
-	case 1056:
+	case 1048:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_float;
 		return 1;
-	case 1064:
+	case 1056:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_float;
 		return 1;
@@ -3902,7 +3902,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_lv_inverter_connection_status_status;
 		return 1;
-	case 72:
+	case 64:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_lv_set_inverter_connection_status_status;
 		return 1;
@@ -3910,7 +3910,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_tlm_status_status;
 		return 1;
-	case 1072:
+	case 1064:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_tlm_set_status_status;
 		return 1;
@@ -3927,7 +3927,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[4] = e_primary_float;
 		fields_types[5] = e_primary_handcart_settings_status;
 		return 6;
-	case 1080:
+	case 1072:
 		if(fields_types_size < 6) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_handcart_set_settings_fans_override;
@@ -3940,11 +3940,11 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_status_status;
 		return 1;
-	case 80:
+	case 72:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_status_status;
 		return 1;
-	case 1088:
+	case 1080:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_ecu_inverter_status_rl;
 		fields_types[1] = e_primary_ecu_inverter_status_rr;
@@ -3985,7 +3985,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[1] = e_primary_float;
 		fields_types[2] = e_primary_float;
 		return 3;
-	case 88:
+	case 80:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_float;
@@ -3995,7 +3995,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_ptt_status_status;
 		return 1;
-	case 1096:
+	case 1088:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_ptt_status_status;
 		return 1;
@@ -4181,7 +4181,7 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			return 2;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_FANS_STATUS_HANDCART"))
+	if(!strcmp(msg_name, "HV_SET_FANS_STATUS"))
 	{
 		if(!strcmp(sgn_name, "fans_override"))
 		{

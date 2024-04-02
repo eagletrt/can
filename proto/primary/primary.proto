@@ -14,9 +14,9 @@ enum primary_hv_fans_status_fans_override {
 	primary_hv_fans_status_fans_override_off = 0;
 	primary_hv_fans_status_fans_override_on = 1;
 }
-enum primary_hv_set_fans_status_handcart_fans_override {
-	primary_hv_set_fans_status_handcart_fans_override_off = 0;
-	primary_hv_set_fans_status_handcart_fans_override_on = 1;
+enum primary_hv_set_fans_status_fans_override {
+	primary_hv_set_fans_status_fans_override_off = 0;
+	primary_hv_set_fans_status_fans_override_on = 1;
 }
 enum primary_hv_status_status {
 	primary_hv_status_status_init = 0;
@@ -425,8 +425,8 @@ message HV_FANS_STATUS{
 	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
-message HV_SET_FANS_STATUS_HANDCART{
-	primary_hv_set_fans_status_handcart_fans_override fans_override = 1;
+message HV_SET_FANS_STATUS{
+	primary_hv_set_fans_status_fans_override fans_override = 1;
 	double fans_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
@@ -617,7 +617,7 @@ message LV_FEEDBACK_GPIO_EXTENDER{
 	bool feedback_autonomous_system_actuation = 7;
 	uint64 _inner_timestamp = 8;
 }
-message LV_CAN_FLASH_REQ_STEERING_WHEEL{
+message LV_CAN_FLASH_REQ{
 	uint64 _inner_timestamp = 1;
 }
 message LV_CAN_FLASH_ACK{
@@ -922,7 +922,7 @@ message Pack{
 	repeated HV_ERRORS HV_ERRORS = 39;
 	repeated HV_DEBUG_SIGNALS HV_DEBUG_SIGNALS = 40;
 	repeated HV_FANS_STATUS HV_FANS_STATUS = 41;
-	repeated HV_SET_FANS_STATUS_HANDCART HV_SET_FANS_STATUS_HANDCART = 42;
+	repeated HV_SET_FANS_STATUS HV_SET_FANS_STATUS = 42;
 	repeated HV_FEEDBACK_STATUS HV_FEEDBACK_STATUS = 43;
 	repeated HV_FEEDBACK_TS_VOLTAGE HV_FEEDBACK_TS_VOLTAGE = 44;
 	repeated HV_FEEDBACK_MISC_VOLTAGE HV_FEEDBACK_MISC_VOLTAGE = 45;
@@ -943,7 +943,7 @@ message Pack{
 	repeated LV_FEEDBACK_SD_VOLTAGE LV_FEEDBACK_SD_VOLTAGE = 60;
 	repeated LV_FEEDBACK_ENCLOSURE_VOLTAGE LV_FEEDBACK_ENCLOSURE_VOLTAGE = 61;
 	repeated LV_FEEDBACK_GPIO_EXTENDER LV_FEEDBACK_GPIO_EXTENDER = 62;
-	repeated LV_CAN_FLASH_REQ_STEERING_WHEEL LV_CAN_FLASH_REQ_STEERING_WHEEL = 63;
+	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 63;
 	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 64;
 	repeated LV_INVERTER_CONNECTION_STATUS LV_INVERTER_CONNECTION_STATUS = 65;
 	repeated LV_SET_INVERTER_CONNECTION_STATUS LV_SET_INVERTER_CONNECTION_STATUS = 66;

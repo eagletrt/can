@@ -369,10 +369,10 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_SET_FANS_STATUS_HANDCART "HV_SET_FANS_STATUS_HANDCART"
+#define HV_SET_FANS_STATUS "HV_SET_FANS_STATUS"
 
-#define HV_SET_FANS_STATUS_HANDCART_FANS_OVERRIDE "hv_set_fans_status_handcart_fans_override"
-#define HV_SET_FANS_STATUS_HANDCART_FANS_SPEED "hv_set_fans_status_handcart_fans_speed"
+#define HV_SET_FANS_STATUS_FANS_OVERRIDE "hv_set_fans_status_fans_override"
+#define HV_SET_FANS_STATUS_FANS_SPEED "hv_set_fans_status_fans_speed"
 /* END */
 
 /* START */
@@ -603,7 +603,7 @@ extern "C" {
 /* END */
 
 /* START */
-#define LV_CAN_FLASH_REQ_STEERING_WHEEL "LV_CAN_FLASH_REQ_STEERING_WHEEL"
+#define LV_CAN_FLASH_REQ "LV_CAN_FLASH_REQ"
 
 /* END */
 
@@ -949,14 +949,14 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_uint64_t = -5,
+	e_primary_uint32_t,
 	e_primary_uint8_t,
 	e_primary_float,
 	e_primary_uint16_t,
-	e_primary_uint32_t,
 
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
-	e_primary_hv_set_fans_status_handcart_fans_override,
+	e_primary_hv_set_fans_status_fans_override,
 	e_primary_hv_status_status,
 	e_primary_hv_set_status_ecu_hv_status_set,
 	e_primary_hv_set_status_handcart_hv_status_set,
